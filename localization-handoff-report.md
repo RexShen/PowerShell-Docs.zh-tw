@@ -6,14 +6,14 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/21ac951a63b01a4181edb84ec80a683ea7da9478/dsc/pullServer.md) | HandedOffSuccess | [Details](#3a0ad4ab86a570279e8ebdec35edb9dafc69e9bf51)
+ [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md) | HandedOffSuccess | [Details](#02ce3d08b01e58d6d9506f90142f92cc16304e64148)
 
 ## Item Details
-##### <a name='3a0ad4ab86a570279e8ebdec35edb9dafc69e9bf51'></a> Source: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/21ac951a63b01a4181edb84ec80a683ea7da9478/dsc/pullServer.md)
+##### <a name='02ce3d08b01e58d6d9506f90142f92cc16304e64148'></a> Source: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/cf0ae8b45b1b4138ca7f4c5a97d0433c767039f6/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
-* Handoff Datetime: 2016-03-22 23:53:56
+* Handoff File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/d71b1618a1f8c5ea029ce324e7639a1a7f0b76d9/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.zh-tw.xlf)
+* Handoff Datetime: 2016-03-23 21:11:26
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
