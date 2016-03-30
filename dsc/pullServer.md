@@ -63,7 +63,7 @@ configuration Sample_xDscWebService
 1. 執行設定，傳遞您所建立的自我簽署憑證指紋，作為 **certificateThumbPrint** 參數：
 
 ```powershell
-PS:\>$myCert = Get-ChildItem CERT: | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
+PS:\>$myCert = Get-ChildItem CERT:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
 
@@ -87,6 +87,6 @@ PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint
 
 ## 另請參閱
 * [Windows PowerShell 預期狀態設定概觀](overview.md)
-* [制定設定](enactingConfigurations.md)
+* [施行設定](enactingConfigurations.md)
 * [如何從 DSC 提取伺服器擷取節點資訊](retrieveNodeInfo.md)
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO1-->

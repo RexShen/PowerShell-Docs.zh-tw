@@ -26,6 +26,7 @@
 ### [類別式自訂資源](authoringResourceClass.md)
 ### [複合資源](authoringResourceComposite.md)
 ### [偵錯 DSC 資源](debugResource.md)
+### [資源撰寫檢查清單](resourceAuthoringChecklist.md)
 
 # [設定本機設定管理員 (LCM)](metaConfig.md)
 ## [在 PowerShell 4.0 中設定 LCM](metaConfig4.md)
@@ -52,4 +53,4 @@
 ### [nxService 資源](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys 資源](lnxSshAuthorizedKeysResource.md)
 ### [nxUser 資源](lnxUserResource.md)
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO1-->
