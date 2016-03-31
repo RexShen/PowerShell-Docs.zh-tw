@@ -39,7 +39,6 @@
 #### [以多個設定片段設定節點](dsc_partialconfig.md)
 ##### [支援混合的 RefreshMode](dsc_partialconfig_mixedmode.md)
 #### [以新屬性設定 DSC 引擎](dsc_metaconfiguration.md)
-#### [PUSH 及 PULL 模式的混合及比對](dsc_mixedrefreshmode.md)
 #### [LCM 狀態的詳細資訊](dsc_lcmstate.md)
 #### [RefreshMode 和 ConfigurationMode 的頻率不需要相乘](dsc_freqnomultiple.md)
 #### [RefreshMode 屬性的額外值](dsc_refreshmode.md)
@@ -98,4 +97,8 @@
 
 # [已知的問題和限制](limitation_overview.md)
 ## [預期狀態設定 (DSC) 的已知問題](limitation_dsc.md)
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+
