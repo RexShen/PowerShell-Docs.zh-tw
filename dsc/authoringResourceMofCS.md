@@ -161,4 +161,8 @@ $env: psmodulepath (folder)
 #### 概念
 [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md)
 #### 其他資源
-[撰寫 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)<!--HONumber=Feb16_HO4-->
+[撰寫 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+
+<!--HONumber=Feb16_HO4-->
+
+

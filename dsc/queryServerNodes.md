@@ -36,4 +36,8 @@ $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.
 
 $json.value | Format-Table TargetName, ConfigurationId, ServerChecksum, NodeCompliant, LastComplianceTime, StatusCode
 ```
+
+
 <!--HONumber=Feb16_HO4-->
+
+

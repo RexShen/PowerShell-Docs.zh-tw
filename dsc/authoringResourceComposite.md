@@ -181,4 +181,8 @@ configuration RenameVM
 ### 概念
 * [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md)
 * [開始使用 Windows PowerShell 預期狀態設定](overview.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+

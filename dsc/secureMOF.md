@@ -252,4 +252,8 @@ function Get-EncryptionCertificate
     # Return the thumbprint
     return $returnValue[0]
 }
-```<!--HONumber=Feb16_HO4-->
+```
+
+<!--HONumber=Feb16_HO4-->
+
+

@@ -171,4 +171,8 @@ PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $En
 
 #### 其他資源
 [xDscResourceDesigner 模組](https://powershellgallery.com/packages/xDscResourceDesigner)
+
+
 <!--HONumber=Feb16_HO4-->
+
+

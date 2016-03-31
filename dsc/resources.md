@@ -10,4 +10,8 @@
 
 - [內建 DSC 資源](builtInResource.md)
 - [建置自訂的 DSC 資源](authoringResource.md)
-- [Linux 的內建 DSC 資源](lnxBuiltInResources.md)<!--HONumber=Feb16_HO4-->
+- [Linux 的內建 DSC 資源](lnxBuiltInResources.md)
+
+<!--HONumber=Feb16_HO4-->
+
+

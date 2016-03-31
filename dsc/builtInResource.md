@@ -16,4 +16,8 @@ Windows PowerShell 預期狀態設定 (DSC) 隨附一組內建的設定資源。
 * [使用者資源](userResource.md)
 * [Windows 功能資源](windowsFeatureResource.md)
 * [Windows 處理程序資源](windowsProcessResource.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+
