@@ -1,11 +1,39 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs/blob/a337f528915c0ed3f9235c1a1a6a4414e15fe66c/dsc/decisionMaker.md) | InSyncHandedBackSuccess | [Details](#03159221013064b2c1d77211c88bb8e1c9a9fcb117)
+ [dsc\gettingStarted.md](https://github.com/PowerShell/powerShell-Docs/blob/a337f528915c0ed3f9235c1a1a6a4414e15fe66c/dsc/gettingStarted.md) | InSyncHandedBackSuccess | [Details](#2faac24e90c7925eb22d7a5d95ef6f86831284f522)
 
 ## Item Details
+##### <a name='03159221013064b2c1d77211c88bb8e1c9a9fcb117'></a> Source: [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs/blob/a337f528915c0ed3f9235c1a1a6a4414e15fe66c/dsc/decisionMaker.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/577eb1558de1c72e16c0800b8fa930c281718ef4/dsc/decisionMaker.md)
+* Handoff File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/2dd5d94c45812f26b0a565864cca6b0a70438385/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-tw.xlf)
+* Handoff Datetime: 2016-03-07 19:32:08
+* Handoff Reason: Include
+* Archive File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/0c74b1954e1729f1b3bb956ac7e4b9456d3b2588/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-tw.xlf)
+* Archive Datetime: 2016-03-29 13:11:38
+* Handback File: [decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2d013a9a599967539daba581e067db7ffed0157/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/decisionMaker.01553169f2ba4241995260fad925e2784b5f5567.zh-tw.xlf)
+* Handback Datetime: 2016-04-04 16:27:22
+* [Back to Top](#report-top)
+
+##### <a name='2faac24e90c7925eb22d7a5d95ef6f86831284f522'></a> Source: [dsc\gettingStarted.md](https://github.com/PowerShell/powerShell-Docs/blob/a337f528915c0ed3f9235c1a1a6a4414e15fe66c/dsc/gettingStarted.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\gettingStarted.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/577eb1558de1c72e16c0800b8fa930c281718ef4/dsc/gettingStarted.md)
+* Handoff File: [gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/2dd5d94c45812f26b0a565864cca6b0a70438385/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.zh-tw.xlf)
+* Handoff Datetime: 2016-03-07 19:32:08
+* Handoff Reason: Include
+* Archive File: [gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/0c74b1954e1729f1b3bb956ac7e4b9456d3b2588/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.zh-tw.xlf)
+* Archive Datetime: 2016-03-29 13:11:38
+* Handback File: [gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2d013a9a599967539daba581e067db7ffed0157/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/gettingStarted.92e02d8bd273df5c304475a9b4fa251c22a7ea19.zh-tw.xlf)
+* Handback Datetime: 2016-04-04 16:27:22
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
