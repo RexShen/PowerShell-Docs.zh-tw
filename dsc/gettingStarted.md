@@ -10,9 +10,9 @@
 設定可以有各種形式。 建立新設定的最簡單作法是建立 .ps1 (PowerShell 指令碼) 檔案。 若要這樣做，請開啟您選擇的編輯器。 因為 PowerShell ISE 原本就了解 DSC，所以是不錯的選擇。 將下列項目儲存為 PS1：
 
 ```powershell
-configuration myFirstConfiguration
+configuration MyFirstConfiguration
 {
-    import-dscresource -name WindowsFeature
+    Import-DscResource -Name WindowsFeature
 
     Node localhost
     {
@@ -50,11 +50,15 @@ myFirstConfiguration
 
 制定設定：
 ```powershell
-Start-DscConfiguration -path ./myFirstConfiguration
+Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-這會建立 PowerShell 工作，向外連到設定中的節點，並設定節點。 若要查看工作的輸出，請使用 -wait。 
+這會建立 PowerShell 工作，向外連到設定中的節點，並設定節點。 若要查看工作的輸出，請使用 -Wait。 
 ```powershell
-Start-DscConfiguration -path ./myFirstConfiguration -wait
+Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Mar16_HO1-->
+
+

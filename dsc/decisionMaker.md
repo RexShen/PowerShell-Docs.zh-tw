@@ -4,7 +4,7 @@
 
 ## 什麼是預期狀態設定？ ##
 
-Windows PowerShell 預期狀態設定 (DSC) 提供 Windows 內建的開放式標準設定平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。 
+Windows PowerShell 預期狀態設定 (DSC) 是 Windows 內建的開放式標準設定管理平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。 
 
 DSC 的中心概念是「[設定](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)」，它們是容易讀取的文件，描述由特定特性的電腦 (「節點」) 組成的環境。 這些特性可以簡單到像是確保啟用了特定的 Windows 功能，也可以複雜到像部署 SharePoint。 
 
@@ -16,7 +16,7 @@ DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發�
 
 建立設定即表示，已在單一位置將複雜的部署步驟擷取為「單一事實來源」。 這讓特定電腦集合的重複部署更不容易出錯。 接著，讓部署更快速可靠。 讓複雜的部署快速作業。
 
-設定也可透過 PowerShell 組件庫共用。 這表示您需要完成的工作可能已有常見案例和最佳做法。
+設定也可透過 [PowerShell 資源庫](https://powershellgallery.com)共用。 這表示您需要完成的工作可能已有常見案例和最佳做法。
 
 
 ## 預期狀態設定和 DevOps ##
@@ -31,6 +31,10 @@ DSC 可以用來管理內部部署及外部部署的部署。 在內部部署解
 
 ## DSC 和相容性 ##
 
-DSC 雖是在 Windows Server 2012 R2 引進，卻是透過 Windows Management Framework (WMF) 封裝供低階的作業系統使用。 WMF 詳細資訊請參閱 [PowerShell 登陸頁面](https://msdn.microsoft.com/en-us/powershell/)。 
+DSC 雖是在 Windows Server 2012 R2 引進，卻是透過 Windows Management Framework (WMF) 封裝供低階的作業系統使用。 WMF 詳細資訊請參閱 [PowerShell 首頁](https://msdn.microsoft.com/en-us/powershell/)。 
 
-DSC 也可用來管理 Linux。 如需詳細資訊，請參閱 [Getting Started with DSC for Linux (開始使用 DSC for Linux)](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。<!--HONumber=Feb16_HO4-->
+DSC 也可用來管理 Linux。 如需詳細資訊，請參閱 [Getting Started with DSC for Linux (開始使用 DSC for Linux)](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。
+
+<!--HONumber=Mar16_HO1-->
+
+
