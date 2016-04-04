@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\authoringResourceMOF.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/authoringResourceMOF.md) | InSyncHandedBackSuccess | [Details](#f64cbea29a1e9998b8ade46d69c1ef1c584bd6339)
 
 ## Item Details
-##### <a name='f64cbea29a1e9998b8ade46d69c1ef1c584bd6339'></a> Source: [dsc\authoringResourceMOF.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/authoringResourceMOF.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\authoringResourceMOF.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/bf13ab2ea912f0f754d489bf23d2bebb2e52d7cb/dsc/authoringResourceMOF.md)
-* Handoff File: [authoringResourceMOF.1f503c33425780c369e78193e2f2f4e9242c401b.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/506c7be56453122af68e561b7f1d3ba61357ebb4/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/authoringResourceMOF.1f503c33425780c369e78193e2f2f4e9242c401b.zh-tw.xlf)
-* Handoff Datetime: 2016-02-23 03:02:16
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [authoringResourceMOF.1f503c33425780c369e78193e2f2f4e9242c401b.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/7f8afa50bbe2ebde63da476ab68f30b30cb922d0/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/authoringResourceMOF.1f503c33425780c369e78193e2f2f4e9242c401b.zh-tw.xlf)
-* Handback Datetime: 2016-04-04 10:38:06
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
