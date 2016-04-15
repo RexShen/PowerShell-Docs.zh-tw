@@ -5320,9 +5320,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\dsc_testconfiguration.b0e5afe2c8f173ebe49c97c9ea9a2f11d81ea5fa.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "df17a2af726925e59275f2ecabf702c105b0cdc8": {
@@ -9005,9 +9005,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Performing-Networking-Tasks.8362fd2e8f4dc1c5bbfe156114c53732df1c5b7a.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "58864e55ba0516ff556dd7afe5b55d86987e2f2a": {
@@ -9038,9 +9038,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\PowerShell.exe-Command-Line-Help.39441037095f8787ff5a28644d20bb9768a6e8f7.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "52b3f2d1a390b9194506ccc04698d8b39621a3c1": {
@@ -9067,9 +9067,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Redirecting-Data-with-Out---Cmdlets.ea940e21f55a92ad100d2fe43ad56a005aeeb121.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "ba19c46bed78498fb708014228488ab7dedc10dc": {
@@ -9096,9 +9096,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Removing-Objects-from-the-Pipeline--Where-Object-.534f4b9ed1d438c87590dfa1759c48c2ab43d7ca.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "6ae3e0440a17d83681aff7c3a8d33f25a4d83a63": {
@@ -9125,9 +9125,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.391c05a28821fdc8889f13861f08a18ed5e80550.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "db5bfe5627665af6940fe055f4eb29b9b7833ef9": {
@@ -9154,9 +9154,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Running-Remote-Commands.02abceafc4a52a019a27fce2025b3172df143844.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "6844bc72c2145c639e94fa2ec59f86943559596a": {
@@ -9183,9 +9183,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Selecting-Items-from-a-List-Box.f52d9be11366e20db6a834a7ee2bacd9f515dcef.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "bebe759f2a18dbf06b7b298403548cdcc5d139a4": {
@@ -9212,9 +9212,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Selecting-Parts-of-Objects--Select-Object-.b5699e42b69415cf4909ea0c04d53ad506ce3420.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "3a8408656ec59f58154bfca1b4bca6ea45547ac6": {
@@ -9241,9 +9241,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Sorting-Objects.4ede293800cd1594012bd696f7b07b65d602b79f.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "bca16de7e23e437695424238853da7378256cc0e": {
@@ -9277,9 +9277,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Starting-the-32-Bit-Version-of-Windows-PowerShell.a3ee59968f45c19356cc4737eac2512627555fd2.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "5837bea23fb631a27ff71619684953e1fb84b3ce": {
@@ -9317,9 +9317,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Starting-the-Windows-PowerShell-2.0-Engine.74491f02cdd5554b0d4f74a3211a7aed33fb634e.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "b5e3c279ebf51cea2af7df8c13580d69dae7f2b2": {
@@ -9353,9 +9353,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Starting-Windows-PowerShell.8d4c58bea7cd08c3f118e3e3d42dc3d58d549004.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "faa7485e649b7c3e00fccd4f1d45f2b07773fcb3": {
@@ -9396,9 +9396,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.cec4d0ea5e0928855ea32b8ac08e6a0e2d726377.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "b34db3f79c3148bf0f32970c3b7d7e3ba252ae66": {
@@ -9425,9 +9425,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "d72b78f5bc9928874b3c34871a104ea4304b52e9": {
@@ -9454,9 +9454,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Understanding-the-Windows-PowerShell-Pipeline.d68f19cf786aeaff08dfb7afd9d877b4da84ff88.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "3385c1c66918dc2056dd67c38268f28126c13011": {
@@ -9483,9 +9483,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Familiar-Command-Names.4c82d6814fb3b8e03f7a42800c10e0e033b1a602.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "889615eb40617d7016cb1bb73ba630d57f22a8cb": {
@@ -9512,9 +9512,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Format-Commands-to-Change-Output-View.5d4ba105caa045859db5b6eaa45bbf01b8df7a94.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "f78915fc7d2828bfe1789a37127835f21f4d2a7e": {
@@ -9541,9 +9541,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Static-Classes-and-Methods.3c8ca064c7ac0b21180d51b51a91893e414104c9.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "61677fdf3e268c5a18370290690383d05a262076": {
@@ -9570,9 +9570,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Tab-Expansion.966174213f1c2ba1387ad77b4e94665142dac6cd.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "82222297a0c85990ef98eea7d8cd3236332da4d8": {
@@ -9603,9 +9603,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-the-Windows-PowerShell-ISE.e8ef4089aa560b62261d533e444246c9c7ddfc43.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "670f3b9f1d61e8ddcf00bf9c2670f770392e429c": {
@@ -9632,9 +9632,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Variables-to-Store-Objects.9f89600cef2414f9f0304718dc1d3d30b861c268.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "c34888b1d76d47f8db3f08f862f18012f2a05849": {
@@ -9669,9 +9669,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Windows-PowerShell.caf7a190a660cf0c8c67cd211af152c40427f3e6.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "0058e4840a0caa394278975765832ad26f25d3a5": {
@@ -9698,9 +9698,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Using-Windows-PowerShell-for-Administration.6ba78b3fd68a174b4789fd97213a4b7893bd7692.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "07792854317519ea46e36871d9371347a0f6fa41": {
@@ -9727,9 +9727,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Viewing-Object-Structure--Get-Member-.ada26bec8b91e325dc1ecd4b36b5c751b8b6e2cc.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "8b84ca9e61016cbdf2ac483f99f56d410ccdb467": {
@@ -9760,9 +9760,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\What-s-New-in-the-Windows-PowerShell-ISE.f0bcf8fb54753b119131609d86a420ce315e2da8.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "7e11690102f4f5d692df8bdc140172d8ccdd279f": {
@@ -9811,9 +9811,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\What-s-New-in-Windows-PowerShell.166db661c18622ccef728574c4cfbd23b787f663.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "070a3d10d24d1cc7f251dd1f7efe1531922650fd": {
@@ -9840,9 +9840,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-Basics.712e8bc85c177f606f072f4e19fa40bda7a1895f.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "4979690d7c71031eae35bca42b9c14399d99b9cf": {
@@ -9871,9 +9871,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-Glossary.174250e48847d38ff7390607e845701c279d7b62.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "4a74c53e42a29a730c89643cb2f1c1beeb30a1a7": {
@@ -9902,9 +9902,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.2ecd6ee5f4c53d144be28b9b51460bf9111d1653.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "c8ca306b81ac8fd51c52fd02c2deffca424fa555": {
@@ -9931,9 +9931,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-Navigation.2eaa1b7f36fbafa782b9d0a8df15fd05e42958e9.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "4aee4cafad22bf7a01439ae3eb64ed527883bb8d": {
@@ -9976,9 +9976,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-System-Requirements.32c80f34e47f774b05cc53df387d9eb4620a1b33.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "8ea97e0385ede946dbda123db813deeb6b27babb": {
@@ -10007,9 +10007,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-Tips.6d726ccc76f7561beca6820521c9a462daec4bb5.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "25ca479a06c3099caf9d97f87a6cb929737cd84d": {
@@ -10036,9 +10036,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Windows-PowerShell-User-s-Guide.7ca17eef41dc126bc4f53cd9fa118c5971fff807.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "fcdacb648a9fb5feb9f09f9f7219ed220ea24ccb": {
@@ -10066,9 +10066,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-With-Files,-Folders-and-Registry-Keys.ee869b3e20fda18f4931e6dfefeab3da342b7729.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "292a8f74bf07cc177e34d9b7eea3db7ff69f8135": {
@@ -10095,9 +10095,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-with-Files-and-Folders.4e1f56097f84243bc7927b46c4cdd6ae3d64008d.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "f8dccb30d67fe6e6e9a7465a2bc89a8f7abd289b": {
@@ -10124,9 +10124,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-with-Objects.4334416240e44ca33c8b0ebce8494374a7fffacf.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "2fade94d2b1ed85581e9e0f193ed5dc70379b42d": {
@@ -10153,9 +10153,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-with-Printers.1c99728c8c37b8d307500b00842c4ab95b49f0ea.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "e238e191b3e95a7bf4adf7e1d9fec3307aa1886a": {
@@ -10182,9 +10182,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-with-Registry-Entries.3f9f448cee8c879254467e2c76ae3da08611ffa2.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "23fac6bfaed34ee45e12e630b8e9adbce471b5b3": {
@@ -10211,9 +10211,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-with-Registry-Keys.846ab985dda924b8136e705ffb5c1e588347c9c1.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "87e19c3d66bfebd8dbc3ceb470abdd5c0cd8b379": {
@@ -10240,9 +10240,9 @@
       "HandbackException": null,
       "HandbackFailureTimes": 0,
       "UpdatedDateTime": "0001-01-01T00:00:00",
-      "ArchiveFilePath": null,
-      "ArchiveFileCommit": null,
-      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\Working-with-Software-Installations.f5e56f18052e002a9d29fb1c295ac3d2ca0b54af.zh-tw.xlf",
+      "ArchiveFileCommit": "4ecf5d550eb61e03288d3d4580f9da242f66be61",
+      "ArchiveFileDateTime": "2016-04-15T01:04:41.3287325Z",
       "ArchiveException": null
     },
     "8b473eae7f12242e9995613ec747c5d80ebacd2c": {
