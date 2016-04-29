@@ -5,7 +5,7 @@
 在 PowerShell 5.0 中，預期狀態設定 (DSC) 引進了新功能，可讓您將 DSC 資源當做已套用的設定偵錯。
 
 ## 啟用 DSC 偵錯
-偵錯資源之前，您必須先呼叫 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) Cmdlet 啟用偵錯。 這個 Cmdlet 使用強制參數 **BreakAll**。 您可以查看呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的結果，確認是否啟用偵錯。 下列 PowerShell 輸出會顯示啟用偵錯的結果：
+為資源偵錯前，您必須先呼叫 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) Cmdlet 以啟用偵錯。 這個 Cmdlet 使用強制參數 **BreakAll**。 您可以查看呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的結果，確認是否已啟用偵錯。 下列 PowerShell 輸出會顯示啟用偵錯的結果：
 
 
 ```powershell
@@ -44,7 +44,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-編譯設定之後，再呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 來啟動它。 設定停止的時機為
+編譯設定之後，再呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 加以啟動。 設定停止的時機為
 本機設定管理員 (LCM) 叫入設定的第一個資源。 如果使用 `-Verbose` 和 `-Wait` 參數，輸出會顯示您需要輸入的程式行
 以開始偵錯。
 
@@ -73,8 +73,20 @@ Debug-Runspace -Id 9
 ## 偵錯資源指令碼
 
 啟動 PowerShell ISE 的新執行個體。 在主控台窗格中，輸入 `Start-DscConifiguration` 輸出的最後三行輸出作為命令，將 `<credentials>` 替換成
-有效的使用者認證。 以下為得到的輸出。
+有效的使用者認證。 您現在應該會看到類似這樣的提示︰
+
+```powershell
+[TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
+```
+
+此資源指令碼會在指令碼窗格中開啟，且偵錯工具會停在 **Test-TargetResource** 函式的第一行 (以類別為基礎之資源的 **Test()** 方法)。
+現在您可以在 ISE 中使用偵錯命令逐步執行資源指令碼、查看變數值、檢視呼叫堆疊，並執行其他工作。 如需在 PowerShell ISE 中偵錯的資訊，
+請參閱 [How to Debug Scripts in Windows PowerShell ISE (如何在 Windows PowerShell ISE 中為指令碼偵錯)](https://technet.microsoft.com/en-us/library/dd819480.aspx)。 請記住，資源指令碼 (或類別) 中的每一行均已設為中斷點。
+
+## 另請參閱
+- [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 
+- [使用 PowerShell 類別撰寫自訂的 DSC 資源](authoringResourceClass.md)
+
+<!--HONumber=Mar16_HO2-->
 
 
-
-<!--HONumber=Feb16_HO4-->

@@ -1,7 +1,7 @@
 # 資源撰寫檢查清單
-
+此檢查清單是撰寫新 DSC 資源時的最佳做法清單
 ## 資源模組包含各項資源的 .psd1 檔案和 schema.mof 
-您首先要做的是檢查資源有沒有正確的結構，是否包含所有必要的檔案。 每個資源模組都應該包含 .psd1 檔案，且每個非複合資源都應該有 schema.mof 檔案。 **Get-DscResource** 不會列出不包含結構描述的資源，使用者也不能在撰寫針對 ISE 這些模組的程式碼時，使用 intellisense。 
+您首先要做的是檢查資源有沒有正確的結構，是否包含所有必要的檔案。 每個資源模組都應該包含 .psd1 檔案，且每個非複合資源都應該有 schema.mof 檔案。 **Get-DscResource** 不會列出不包含結構描述的資源，使用者也不能在撰寫針對 ISE 這些模組的程式碼時，使用 IntelliSense。 
 xRemoteFile 資源的範例目錄結構，是 xPSDesiredStateConfiguration 資源模組的一部分，看起來可能像這樣︰
 
 
@@ -104,7 +104,7 @@ File file {
 5.  確認 **Test-DscConfiguration** 傳回 false
 以下是更具體的登錄資源使用範例：
 1.  請從不在預期狀態的登錄機碼開始
-2.  對設定執行 **Start-DscConfiguration** 使它進入預期狀態，並確認通過。
+2.  對設定執行 **Start-DscConfiguration** 使其進入預期狀態，並確認通過。
 3.  執行 **Test-DscConfiguration** 並確認它傳回 true
 4.  修改機碼值，使它不在預期狀態
 5.  執行 **Test-DscConfiguration** 並確認它傳回 false
@@ -114,7 +114,7 @@ Get-TargetResource 應該傳回資源目前狀態的詳細資料。 請確定以
 
 ## 已直接呼叫 **Get/Set/Test-TargetResource** 函式驗證過資源 ##
 
-請務必直接呼叫它們並確認它們如預期運作，以此測試在資源中實作的 **Get/Set/Test-TargetResource** 函式。
+請務必測試在資源中實作的 **Get/Set/Test-TargetResource** 函式，方法是直接呼叫這些函式並確認其如預期般運作。
 
 ## 已使用 **Start-DscConfiguration** 端對端驗證過資源 ##
 
@@ -196,12 +196,12 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 -   精確：確切描述問題
 -   建設性︰建議如何修正問題
 -   有禮︰不責怪使用者或讓他們覺得蠢笨
-請務必驗證端對端案例中的錯誤 (使用 **Start-DscConfiguration**)，因為它們可能會與直接執行資源函式時所傳回的不同。 
+請務必驗證端對端案例中的錯誤 (使用 **Start-DscConfiguration**)，因為它們可能會與直接執行資源函式時所傳回的錯誤不同。 
 
 ## 記錄檔訊息容易了解且提供資訊 (包括 –verbose、–debug 和 ETW 記錄檔) ##
 請確保資源輸出的記錄檔容易了解並向使用者提供值。 資源應該要輸出所有對使用者可能有幫助的資訊，但記錄愈多不一定愈好。 您應該避免備援以及輸出不提供附加價值的資料 – 不要讓使用者翻找數百筆記錄後才找到自己要找的。 當然，全無記錄檔也不是這個問題可以接受的解決方案。 
 
-測試時，您也應該要分析詳細資訊和偵錯記錄檔 (方法是正確執行 **Start-DscConfiguration** 與 –verbose 和 –debug 參數) 以及 ETW 記錄檔。 若要查看 DSC ETW 記錄檔，請移至 [事件檢視器] 並開啟下列資料夾︰[應用程式及服務] - [Microsoft] - [Windows] - [預期狀態設定]。  預設會有操作通道，但請確定啟用分析與偵錯通道 (必須在執行設定前執行)。 
+測試時，您也應該要分析詳細資訊和偵錯記錄 (方法是正確執行 **Start-DscConfiguration** 與 -verbose 和 -debug 參數) 以及 ETW 記錄。 若要查看 DSC ETW 記錄檔，請移至 [事件檢視器] 並開啟下列資料夾︰[應用程式及服務] - [Microsoft] - [Windows] - [預期狀態設定]。  預設會有操作通道，但請確定啟用分析與偵錯通道 (必須在執行設定前執行)。 
 若要啟用分析/偵錯通道，您可以執行下列指令碼︰
 ```powershell
 $statusEnabled = $true
@@ -315,4 +315,8 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 
 這會結束我們的檢查清單。 請記住，這不是完整詳盡的清單，但涵蓋了許多我們在設計、開發和測試 DSC 資源時所遇到的重要問題。 檢查清單有助確保我們不忘記任何層面，事實上，我們自己在 Microsoft 開發 DSC 資源時也使用檢查清單。 
 如果您開發了用於撰寫和測試 DSC 資源的指導方針和最佳做法，請和大家分享！
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO2-->
+
+

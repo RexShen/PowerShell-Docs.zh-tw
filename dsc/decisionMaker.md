@@ -6,7 +6,7 @@
 
 Windows PowerShell 預期狀態設定 (DSC) 是 Windows 內建的開放式標準設定管理平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。 
 
-DSC 的中心概念是「[設定](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)」，它們是容易讀取的文件，描述由特定特性的電腦 (「節點」) 組成的環境。 這些特性可以簡單到像是確保啟用了特定的 Windows 功能，也可以複雜到像部署 SharePoint。 
+DSC 的中心概念是「<ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)">設定</ctype="x-NOTFOUND">」，它們是容易讀取的文件，描述由特定特性的電腦 (「節點」) 組成的環境。 這些特性可以簡單到像是確保啟用了特定的 Windows 功能，也可以複雜到像部署 SharePoint。 
 
 DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發警示，採取動作更正系統。 
 
@@ -16,24 +16,24 @@ DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發�
 
 建立設定即表示，已在單一位置將複雜的部署步驟擷取為「單一事實來源」。 這讓特定電腦集合的重複部署更不容易出錯。 接著，讓部署更快速可靠。 讓複雜的部署快速作業。
 
-設定也可透過 [PowerShell 資源庫](https://powershellgallery.com)共用。 這表示您需要完成的工作可能已有常見案例和最佳做法。
+設定也可透過 <ctype="x-NOTFOUND" mdpre="[" mdpost="](https://powershellgallery.com)">PowerShell 資源庫</ctype="x-NOTFOUND">共用。 這表示您需要完成的工作可能已有常見案例和最佳做法。
 
 
 ## 預期狀態設定和 DevOps ##
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 是人員、技術和文化特性的組合，以利快速部署和反覆運算。 DSC 在設計時即已考慮到 DevOps。 讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將此設定簽入原始檔控制，而作業小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。 
+<ctype="x-NOTFOUND" mdpre="[" mdpost="](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx)">DevOps</ctype="x-NOTFOUND"> 是人員、技術和文化特性的組合，以利快速部署和反覆運算。 DSC 在設計時即已考慮到 DevOps。 讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將此設定簽入原始檔控制，而作業小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。 
 
-設定也是[資料導向](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)，讓作業小組更容易識別及變更環境，不用開發人員介入。 
+設定也是<ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)">資料導向</ctype="x-NOTFOUND">，讓作業小組更容易識別及變更環境，不用開發人員介入。 
 
 ## 內部部署及外部部署的預期狀態設定 ##
 
-DSC 可以用來管理內部部署及外部部署的部署。 在內部部署解決方案方面，預期狀態設定有[提取伺服器](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)可集中管理電腦，並報告其狀態。 在雲端解決方案方面，只要能夠使用 Windows 的地方都可以使用預期狀態設定。 建置在預期狀態設定的 Azure 也有特定項目，例如集中預期狀態設定報告的 [Azure 自動化](https://azure.microsoft.com/en-us/documentation/services/automation/)。 
+DSC 可以用來管理內部部署及外部部署的部署。 在內部部署解決方案方面，預期狀態設定有<ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)">提取伺服器</ctype="x-NOTFOUND">可集中管理電腦，並報告其狀態。 在雲端解決方案方面，只要能夠使用 Windows 的地方都可以使用預期狀態設定。 建置在預期狀態設定的 Azure 也有特定項目，例如集中預期狀態設定報告的 <ctype="x-NOTFOUND" mdpre="[" mdpost="](https://azure.microsoft.com/en-us/documentation/services/automation/)">Azure 自動化</ctype="x-NOTFOUND">。 
 
 ## DSC 和相容性 ##
 
-DSC 雖是在 Windows Server 2012 R2 引進，卻是透過 Windows Management Framework (WMF) 封裝供低階的作業系統使用。 WMF 詳細資訊請參閱 [PowerShell 首頁](https://msdn.microsoft.com/en-us/powershell/)。 
+DSC 雖是在 Windows Server 2012 R2 引進，卻是透過 Windows Management Framework (WMF) 封裝供低階的作業系統使用。 WMF 詳細資訊請參閱 <ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/)">PowerShell 首頁</ctype="x-NOTFOUND">。 
 
-DSC 也可用來管理 Linux。 如需詳細資訊，請參閱 [Getting Started with DSC for Linux (開始使用 DSC for Linux)](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。
+DSC 也可用來管理 Linux。 如需詳細資訊，請參閱<ctype="x-NOTFOUND" mdpre="[" mdpost="](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)">開始使用 DSC for Linux</ctype="x-NOTFOUND">。
 
 <!--HONumber=Mar16_HO1-->
 

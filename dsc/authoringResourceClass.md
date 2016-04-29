@@ -2,7 +2,7 @@
 
 > 適用於：Windows PowerShell Windows 5.0
 
-您可以利用 Windows PowerShell 5.0 引入的 PowerShell 類別，藉由建立類別來定義 DSC 資源。 類別會定義結構描述和資源實作，所以不必建立個別的 MOF 檔案。 以類別為基礎的資源資料夾結構也比較簡單，因為 **DSCResources** 資料夾不是必要的。
+您可以利用 Windows PowerShell 5.0 引入的 PowerShell 類別，藉由建立類別來定義 DSC 資源。 類別會定義結構描述和資源實作，所以不必建立個別的 MOF 檔案。 以類別為基礎的資源資料夾結構也比較簡單，因為不需要 **DSCResources** 資料夾。
 
 在以類別為基礎的 DSC 資源中，結構描述會定義為類別屬性，它可以使用屬性 (attribute) 修改以指定屬性 (property) 類型。 資源是由 **Get()**、**Set()** 和 **Test()** 方法實作，它們相當於指令碼資源的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
 
@@ -20,25 +20,6 @@ $env: psmodulepath (folder)
         |- MyDscResource.psm1 
            MyDscResource.psd1 
 ```
-
-### 巢狀模組
-
-您也可以將資源分割成數個 `.psm1` 檔案，納為巢狀模組。
-這樣做很合理，因為把大量的資源全部放在一個檔案中很難管理。
-
-```
-$env: psmodulepath (folder)
-    |- MyDscResource (folder)
-        |- MyDscResourceA.psm1
-           MyDscResourceB.psm1 
-           MyDscResource.psd1 
-```
-
-您可以在每個檔案中放一個或多個類別。 
-依巢狀模組內的子區域來分群資源很有幫助。
-從使用者的觀點，使用上沒有任何差異。
-`MyDscResource` 模組會顯示所有的資源。
-為方便起見，請將這些巢狀模組視為實作詳細資料來使用。
 
 ## 建立類別
 
@@ -72,7 +53,7 @@ DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性
 
 - **DscProperty(Key)**：必要屬性。 此屬性為索引鍵。 所有標示為索引鍵的屬性值都必須結合，以在設定內唯一識別資源執行個體。
 - **DscProperty(Mandatory)**：必要屬性。
-- **DscProperty(NotConfigurable)**：唯讀屬性。 標示了這個屬性的屬性無法由組態設定，但出現時會由 **Get()** 方法填入。
+- **DscProperty(NotConfigurable)**：唯讀屬性。 標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 **Get()** 方法填入。
 - **DscProperty()**：可設定的非必要屬性。
 
 **$Path** 和 **$SourcePath** 屬性都是字串。 **$CreationTime** 是 [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) 屬性。 **$Ensure** 屬性是列舉類型，定義如下。
@@ -87,9 +68,9 @@ enum Ensure
 
 ### 實作方法
 
-在指令碼資源中，**Get()**、**Set()** 和 **Test()** 方法類似於 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
+**Get()**、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
 
-這個程式碼也包含 CopyFile() 函式，會將檔案從 **$SourcePath** 複製到 **$Path** 的 helper 函式。 
+這個程式碼也包含 CopyFile() 函式，這是會將檔案從 **$SourcePath** 複製到 **$Path** 的 Helper 函式。 
 
 ```powershell
 
@@ -423,7 +404,7 @@ class FileResource
 
 ## 建立資訊清單
 
-若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 
+若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 我們的資訊清單看起來像這樣︰
 
 ```powershell
 @{
@@ -431,45 +412,7 @@ class FileResource
 # Script module or binary module file associated with this manifest.
 RootModule = 'MyDscResource.psm1'
 
-DscResourcesToExport = @('FileResource')
-
-# Version number of this module.
-ModuleVersion = '1.0'
-
-# ID used to uniquely identify this module
-GUID = '81624038-5e71-40f8-8905-b1a87afe22d7'
-
-# Author of this module
-Author = 'Microsoft Corporation'
-
-# Company or vendor of this module
-CompanyName = 'Microsoft Corporation'
-
-# Copyright statement for this module
-Copyright = '(c) 2014 Microsoft. All rights reserved.'
-
-# Description of the functionality provided by this module
-# Description = ''
-
-# Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '5.0'
-
-# Name of the Windows PowerShell host required by this module
-# PowerShellHostName = ''
-} 
-```
-
-如果您使用**巢狀模組**將資源分割成幾個檔案，巢狀模組清單應該放在 `NestedModules` 索引鍵中。
-
-```powershell
-@{
-
-# Don't specify RootModule
-
-# Script module or binary module file associated with this manifest.
-NestedModules = @('MyDscResourceA.psm1', 'MyDscResourceB.psm1')
-
-DscResourcesToExport = @('MyDscResourceA', 'MyDscResourceB')
+DscResourcesToExport = 'FileResource'
 
 # Version number of this module.
 ModuleVersion = '1.0'
@@ -521,6 +464,6 @@ Start-DscConfiguration -Wait -Force Test
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

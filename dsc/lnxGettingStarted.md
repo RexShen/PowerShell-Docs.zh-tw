@@ -29,7 +29,7 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 
 ### 安裝 OMI
 
-Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1。 OMI 可以從開放式群組下載：[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)。
+Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1。 OMI 可以從 The Open Group 下載：[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)。
 
 若要安裝 OMI，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
 
@@ -40,6 +40,8 @@ Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
 ### 安裝 DSC
+
+您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 DSC for Linux。 
 
 若要安裝 DSC，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
 
@@ -92,7 +94,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### 將設定推送至 Linux 電腦
 
-設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 用來建立 Linux 電腦的 CIMSession。
+設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 會用來建立 Linux 電腦的 CIMSession。
 
 下列程式碼示範如何建立 DSC for Linux 的 CIMSession。
 
@@ -112,7 +114,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * 在「推送」模式中，使用者認證必須是在 Linux 電腦上的根使用者。
 * DSC for Linux 僅支援 SSL/TLS 連線，必須使用 New-CimSession 且將 –UseSSL 參數設為 $true。
 * OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/opt/omi/etc/omiserver.conf`，屬性為：pemfile 和 keyfile。
-如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
+如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項 `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
 
 執行下列命令，將 DSC 設定推送至 Linux 節點。
 
@@ -125,17 +127,17 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 ### 在本機使用設定
 
 DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指令碼位於 `/opt/microsoft/dsc/Scripts` 並且包含下列項目：
-* GetConfiguration.py
+* GetDscConfiguration.py
 
  傳回套用到此電腦的目前設定。 類似於 Windows PowerShell Cmdlet 的 Get-DscConfiguration Cmdlet。
 
-`# sudo ./GetConfiguration.py`
+`# sudo ./GetDscConfiguration.py`
 
-* GetMetaConfiguration.py
+* GetDscLocalConfigurationManager.py
 
  傳回套用到此電腦的目前中繼設定。 類似於 [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet。
 
-`# sudo ./GetMetaConfiguration.py`
+`# sudo ./GetDscLocalConfigurationManager.py`
 
 * InstallModule.py
 
@@ -149,17 +151,17 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* SendConfigurationApply.py
+* StartDscLocalConfigurationManager.py 
 
  將設定 MOF 檔案套用至電腦。 類似於 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet。 需要有要套用的設定 MOF 路徑。
 
-`# sudo ./RemoveModule.py cnx_Resource`
+`# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SendMetaConfiguration.py
+* SetDscLocalConfigurationManager.py
 
  將中繼設定 MOF 檔案套用至電腦。 類似於 [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) Cmdlet。 需要有要套用的中繼設定 MOF 路徑。
 
-`# sudo ./SendMetaConfiguration.py –configurationmof /tmp/localhost.meta.mof`
+`# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
 ## Linux 記錄檔的 PowerShell 預期狀態設定
 
@@ -170,6 +172,7 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 |omiserver.log|/opt/omi/var/log/|OMI CIM 伺服器作業相關的訊息。|
 |dsc.log|/opt/omi/var/log/|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=Mar16_HO2-->
 
 
