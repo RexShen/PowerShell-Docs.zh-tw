@@ -22,12 +22,12 @@ ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 
 -   [在 Server Core 上安裝 Windows PowerShell](../Topic/Installing-Windows-PowerShell.md#BKMK_InstallingOnServerCore)
 
--   [部署 Windows PowerShell Web 存取](assetId:///639d0eff-98a3-4124-b52c-26921ebd98b0)
+-   [部署 Windows PowerShell Web 存取](https://technet.microsoft.com/en-us/library/639d0eff-98a3-4124-b52c-26921ebd98b0)
 
 -   [安裝 Windows PowerShell 2.0 引擎](../Topic/Installing-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>在 Windows 8 和 Windows Server 2012 上安裝 Windows PowerShell
-[!INCLUDE[psversion3](../Token/psversion3_md.md)] 預設已安裝、設定且可供使用。 [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] 也已安裝並啟用。 如需啟動 [!INCLUDE[mshshort](../Token/mshshort_md.md)] 的資訊，請參閱 [Starting Windows PowerShell on Windows 8 (在 Windows 8 上啟動 Windows PowerShell)](assetId:///d7be1668-8617-4890-ad90-dd9765fbd2c3) 和 [Starting Windows PowerShell on Windows Server 2012 (在 Windows Server 2012 上啟動 Windows PowerShell)](assetId:///4fc0110a-cc0c-42a4-bbb5-3cc89a0fc968)。
+[!INCLUDE[psversion3](../Token/psversion3_md.md)] 預設已安裝、設定且可供使用。 [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] 也已安裝並啟用。 如需啟動 [!INCLUDE[mshshort](../Token/mshshort_md.md)] 的資訊，請參閱 [Starting Windows PowerShell on Windows 8 (在 Windows 8 上啟動 Windows PowerShell)](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3) 和 [Starting Windows PowerShell on Windows Server 2012 (在 Windows Server 2012 上啟動 Windows PowerShell)](https://technet.microsoft.com/en-us/library/4fc0110a-cc0c-42a4-bbb5-3cc89a0fc968)。
 
 ## <a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows PowerShell
 下列指示說明如何在執行 [!INCLUDE[win7_client_secondref](../Token/win7_client_secondref_md.md)] Service Pack 1 和 [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] Service Pack 1 的電腦上安裝 [!INCLUDE[psversion3](../Token/psversion3_md.md)]。 針對以 [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] 的 Server Core 安裝選項執行的電腦，將在下方提供個別安裝指示。
@@ -96,10 +96,10 @@ ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 
 ## 另請參閱
 [Windows PowerShell 系統需求](../Topic/Windows-PowerShell-System-Requirements.md)
-[啟動 Windows PowerShell [ps]](assetId:///8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[啟動 Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

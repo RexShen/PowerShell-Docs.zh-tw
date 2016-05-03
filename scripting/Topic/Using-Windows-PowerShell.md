@@ -23,7 +23,7 @@ ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 
 -   [Windows PowerShell 整合式指令碼環境 &#40;ISE&#41;](../Topic/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] ISE (圖形化 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 指令碼編輯器與主控台) 文件。
 
--   [Windows PowerShell 預期狀態設定 (DSC) 概觀](assetId:///04c9e716-822c-40f0-8fdf-f2dda8abd888)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 4.0 新功能 Windows PowerShell 預期狀態設定 (DSC) 的簡介。 DSC 可協助系統管理員在 Windows 環境中與裝置上 (例如網路交換器) 達到一致的組態。
+-   [Windows PowerShell 預期狀態設定 (DSC) 概觀](https://technet.microsoft.com/en-us/library/04c9e716-822c-40f0-8fdf-f2dda8abd888)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 4.0 新功能 Windows PowerShell 預期狀態設定 (DSC) 的簡介。 DSC 可協助系統管理員在 Windows 環境中與裝置上 (例如網路交換器) 達到一致的組態。
 
 -   [PowerShell.exe 命令列說明](../Topic/PowerShell.exe-Command-Line-Help.md)。 如何從 Windows 命令提示字元啟動 [!INCLUDE[wps_2](../Token/wps_2_md.md)]，並執行基本 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 命令。
 
@@ -38,7 +38,7 @@ ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 
 -   [Windows PowerShell Web 服務 (Management OData IIS 擴充功能)](http://msdn.microsoft.com/library/windows/desktop/hh880865.aspx)。 [!INCLUDE[wps_2](../Token/wps_2_md.md)] Web 服務是一種架構，可用於透過 Web Server (IIS) 中執行的 OData 型 Web 服務輕鬆公開 [!INCLUDE[wps_2](../Token/wps_2_md.md)] Cmdlet。
 
--   [開始使用 Windows PowerShell 預期狀態設定](assetId:///c134aa32-b085-4656-9a89-955d8ff768d0)。 於 [!INCLUDE[psversion4](../Token/psversion4_md.md)] 引進的 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 預期狀態設定 (DSC) 是 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 中新的管理平台，可用於部署及管理軟體服務與服務執行環境的設定資料。 DSC 提供一組 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 語言擴充功能、新的 Cmdlet 與您可以用來以宣告方式指定如何設定軟體環境狀態的資源。
+-   [開始使用 Windows PowerShell 預期狀態設定](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。 於 [!INCLUDE[psversion4](../Token/psversion4_md.md)] 引進的 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 預期狀態設定 (DSC) 是 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 中新的管理平台，可用於部署及管理軟體服務與服務執行環境的設定資料。 DSC 提供一組 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 語言擴充功能、新的 Cmdlet 與您可以用來以宣告方式指定如何設定軟體環境狀態的資源。
 
 -   [Windows Management Framework 4.0 Preview](http://go.microsoft.com/fwlink/?LinkID=293881) 包含 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 更新、[!INCLUDE[wps_2](../Token/wps_2_md.md)] ISE、[!INCLUDE[wps_2](../Token/wps_2_md.md)] Web 服務 (Management OData IIS 擴充功能)、Windows 遠端管理 (WinRM)、Windows 管理基礎結構 (WMI)、伺服器管理員 WMI 提供者與 4.0 的新功能 [!INCLUDE[wps_2](../Token/wps_2_md.md)] 預期狀態設定 (DSC)。 Windows Management Framework 4.0 Preview 可讓您在執行 [!INCLUDE[win8_server_2](../Token/win8_server_2_md.md)]、[!INCLUDE[win7_client_firstref](../Token/win7_client_firstref_md.md)] SP1 和 [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] SP1 的電腦上，安裝並使用這些技術。
 
@@ -74,6 +74,6 @@ ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

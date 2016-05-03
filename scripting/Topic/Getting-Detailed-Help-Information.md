@@ -13,7 +13,7 @@ Windows PowerShell 包含詳細的說明主題，說明 Windows PowerShell 概�
 您可以在命令提示字元中顯示這些說明主題，或在 Microsoft TechNet Library 中檢視這些主題的最近更新版本。 許多裝載 Windows PowerShell 的程式 (例如 Windows PowerShell 整合式指令碼環境) 都提供額外的說明功能，例如即時線上說明和編譯的說明檔案 (.chm)。
 
 ## 取得 Cmdlet 的說明
-若要取得 Windows PowerShell Cmdlet 的相關說明，請使用 [Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2) Cmdlet。 例如，若要取得 [Get-ChildItem [m2]](assetId:///4b270d63-c995-45b8-b5b4-3f8887efbfcc) Cmdlet 的說明，請輸入：
+若要取得 Windows PowerShell Cmdlet 的相關說明，請使用 [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) Cmdlet。 例如，若要取得 [Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) Cmdlet 的說明，請輸入：
 
 ```
 get-help get-childitem
@@ -126,7 +126,7 @@ get-help c:\ps-test\TestScript.ps1
 
 為顯示 Cmdlet 說明所設計的參數 (例如 *Detailed*、*Full*、*Examples* 和 *Parameter*) 也適用於指令碼說明和函式說明。 不過，當您顯示所有說明時，若輸入"get-help*"，則不會顯示函式和指令碼的說明。
 
-如需撰寫函式和指令碼說明主題的資訊，請參閱 [about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)、[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af) 和 [about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)。
+如需撰寫函式和指令碼說明主題的資訊，請參閱 [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)、[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af) 和 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)。
 
 ## 線上取得說明
 如果您連線到網際網路，取得說明的最佳方式之一是線上檢視說明主題。 由於線上主題很容易更新，因此可能會提供最新的內容。
@@ -163,16 +163,16 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-如需如何提供說明主題之線上支援的資訊，請參閱 [about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)，並請參閱 MSDN (Microsoft Developer Network) Library 中的＜How to Write Cmdlet Help＞(如何撰寫 Cmdlet 說明) ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
+如需如何提供說明主題之線上支援的資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)，並請參閱 MSDN (Microsoft Developer Network) Library 中的＜How to Write Cmdlet Help＞(如何撰寫 Cmdlet 說明) ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
 
 ## 另請參閱
-[about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)
-[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af)
-[about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-[Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+[about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
+[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
+[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+[Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

@@ -14,7 +14,7 @@ ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 > 從 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 3.0 開始，命令窗格和輸出窗格已合併為單一主控台窗格。
 
 ## 功能表列
-功能表列包含 **[檔案]**、**[編輯]**、**[檢視]**、**[工具]**、**[偵錯]**、**[附加元件]** 和 **[說明]** 功能表。 功能表上的按鈕可讓您在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [Windows PowerShell ISE 指令碼物件模型](assetId:///1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1)的指令碼，將 [[附加元件] 功能表](assetId:///412dd662-417a-4661-ada2-558802d0f6d2#submenus)放在功能表列上。
+功能表列包含 **[檔案]**、**[編輯]**、**[檢視]**、**[工具]**、**[偵錯]**、**[附加元件]** 和 **[說明]** 功能表。 功能表上的按鈕可讓您在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [Windows PowerShell ISE 指令碼物件模型](https://technet.microsoft.com/en-us/library/1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1)的指令碼，將 [[附加元件] 功能表](https://technet.microsoft.com/en-us/library/412dd662-417a-4661-ada2-558802d0f6d2#submenus)放在功能表列上。
 
 > [!NOTE]
 > 在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0 中，不提供 **[工具]** 和 **[附加元件]** 功能表。
@@ -73,6 +73,6 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

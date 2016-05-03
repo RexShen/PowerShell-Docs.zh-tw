@@ -72,7 +72,7 @@ PowerShell[.exe] -Help | -? | /?
 決定 Windows PowerShell 的輸出格式。 有效值為 "Text" (文字字串) 或 "XML" (序列化的 CLIXML 格式)。
 
 ### -PSConsoleFile <FilePath>
-載入指定的 Windows PowerShell 主控台檔案。 輸入主控台檔案的路徑和名稱。 若要建立主控台檔案，請在 Windows PowerShell 中使用 [Export-Console](assetId:///4bab1c02-9e61-4aaf-9957-11d1934ef4ef) Cmdlet。
+載入指定的 Windows PowerShell 主控台檔案。 輸入主控台檔案的路徑和名稱。 若要建立主控台檔案，請在 Windows PowerShell 中使用 [Export-Console](https://technet.microsoft.com/en-us/library/4bab1c02-9e61-4aaf-9957-11d1934ef4ef) Cmdlet。
 
 ### -Sta
 使用單一執行緒 Apartment 啟動 Windows PowerShell。 在 [!INCLUDE[psversion3](../Token/psversion3_md.md)] 中，單一執行緒 Apartment (STA) 是預設值。 在 [!INCLUDE[psversion2](../Token/psversion2_md.md)] 中，多執行緒 Apartment (MTA) 是預設值。
@@ -82,7 +82,7 @@ PowerShell[.exe] -Help | -? | /?
 
 如果未安裝 [!INCLUDE[psversion3](../Token/psversion3_md.md)]，唯一有效的值為 "2.0"。 其他值會被忽略。
 
-如需詳細資訊，請參閱[開始使用 Windows PowerShell [舊版 MSDN]](assetId:///69555d95-b481-43e1-86e7-b46d68b3e2dd)中的＜安裝 Windows PowerShell＞。
+如需詳細資訊，請參閱[開始使用 Windows PowerShell [舊版 MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd)中的＜安裝 Windows PowerShell＞。
 
 ### -WindowStyle <Window style>
 設定工作階段的視窗樣式。 有效值為 Normal、Minimized、Maximized 和 Hidden。
@@ -130,6 +130,6 @@ powershell.exe -encodedCommand $encodedCommand
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 
