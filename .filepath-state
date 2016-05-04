@@ -809,25 +809,13 @@
   "1b5cd1d95ae70ea2308d1707b056a3f37f11435f": [
     "scripting\\Topic\\How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md"
   ],
-  "735538c8f0815239131f3f73be770692fb33938c": [
-    "scripting\\Topic\\How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md"
-  ],
   "641d94404b4d0addb5bfc139f1f154c822e7f605": [
-    "scripting\\Topic\\How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md"
-  ],
-  "8375b818eefb8ea1bc3173bc9cd9866a1881312c": [
     "scripting\\Topic\\How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md"
   ],
   "1ced53ee566c0ef82ea7fa246b464e7a7c464077": [
     "scripting\\Topic\\How-to-Use-Profiles-in-Windows-PowerShell-ISE.md"
   ],
-  "ff31562ab62b39dfdd59aac7fe0bc610b7c898ed": [
-    "scripting\\Topic\\How-to-Use-Profiles-in-Windows-PowerShell-ISE.md"
-  ],
   "4c2ad42cfce41094e9149cb3f06b932eb8542ca6": [
-    "scripting\\Topic\\How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md"
-  ],
-  "090066735a8eeff1e66669a876c964e7a9973593": [
     "scripting\\Topic\\How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md"
   ],
   "ae84dd06fe3cef20e2199c2412ac2dbef7d4be4a": [
@@ -836,13 +824,7 @@
   "39991114d99e7d331062068236aef75e24f69bb2": [
     "scripting\\Topic\\How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md"
   ],
-  "bc0ccd3406c09d2b1dee455602908b64b495e49b": [
-    "scripting\\Topic\\How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md"
-  ],
   "e472e6a59e58cf11f8fe8ca3d0561d05ef83af4d": [
-    "scripting\\Topic\\Installing-the-Windows-PowerShell-2.0-Engine.md"
-  ],
-  "aa9b5bac66a322204eb03e0c02d4126bb6a06b12": [
     "scripting\\Topic\\Installing-the-Windows-PowerShell-2.0-Engine.md"
   ],
   "bd4de58b3859affb0ea198e36740d0d6776139a9": [
@@ -914,9 +896,6 @@
   "b15700eeb9f448c60adf6d5aab1d0d5bde17af38": [
     "scripting\\Topic\\Starting-the-Windows-PowerShell-2.0-Engine.md"
   ],
-  "5837bea23fb631a27ff71619684953e1fb84b3ce": [
-    "scripting\\Topic\\Starting-the-Windows-PowerShell-2.0-Engine.md"
-  ],
   "b5e3c279ebf51cea2af7df8c13580d69dae7f2b2": [
     "scripting\\Topic\\Starting-Windows-PowerShell.md"
   ],
@@ -975,9 +954,6 @@
     "scripting\\Topic\\Windows-PowerShell-Glossary.md"
   ],
   "f3c5c7e1dd5961dd05122990816278facba748e6": [
-    "scripting\\Topic\\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md"
-  ],
-  "4a74c53e42a29a730c89643cb2f1c1beeb30a1a7": [
     "scripting\\Topic\\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md"
   ],
   "c8ca306b81ac8fd51c52fd02c2deffca424fa555": [
