@@ -22,11 +22,11 @@ ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 例如，輸入 `get-process -`，然後按 TAB 鍵多次，輪流顯示 Cmdlet 的每個參數。
 
 ## 另請參閱
-[使用 Windows PowerShell ISE](assetId:///777ea82b-dd73-4269-b61a-69a17e6ff16f)
-[如何建立 PowerShell 索引標籤](assetId:///c57fc210-19c8-47b1-9171-26a2144c907c)
+[使用 Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
+[如何建立 PowerShell 索引標籤](https://technet.microsoft.com/en-us/library/c57fc210-19c8-47b1-9171-26a2144c907c)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

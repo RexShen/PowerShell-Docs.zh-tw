@@ -26,12 +26,12 @@ ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
 
 3.  **命令中斷點：** 在指令碼作業期間，當指定的命令即將執行時，就會暫停指令碼。 它可以包含參數，以進一步將中斷點篩選到您需要的唯一作業。 此命令也可以是您已建立的函式。
 
-在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 偵錯環境中，只有行中斷點可以使用功能表或鍵盤快速鍵進行設定。 您也可以設定其他兩種中斷點類型，但會從主控台窗格使用 [Set-PSBreakpoint [m2]](assetId:///88d2d9ad-17dc-44ae-99aa-f841125b9dc8) Cmdlet 進行設定。 本節說明如何使用功能表 (可用時) 在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 中執行偵錯工作，並從主控台窗格使用指令碼執行更廣泛的命令。
+在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 偵錯環境中，只有行中斷點可以使用功能表或鍵盤快速鍵進行設定。 您也可以設定其他兩種中斷點類型，但會從主控台窗格使用 [Set-PSBreakpoint [m2]](https://technet.microsoft.com/en-us/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) Cmdlet 進行設定。 本節說明如何使用功能表 (可用時) 在 [!INCLUDE[ise_2](../Token/ise_2_md.md)] 中執行偵錯工作，並從主控台窗格使用指令碼執行更廣泛的命令。
 
 ### 設定中斷點
 只有在儲存指令碼之後，才能在其中設定中斷點。 以滑鼠右鍵按一下您要設定行中斷點的行，然後按一下 **[切換中斷點]**。 或者，按一下您要設定行中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。
 
-下列指令碼示範如何從主控台窗格使用 [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420) Cmdlet 設定變數中斷點。
+下列指令碼示範如何從主控台窗格使用 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) Cmdlet 設定變數中斷點。
 
 ```
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
@@ -41,7 +41,7 @@ set-psbreakpoint -script sample.ps1 -variable Server
 ### 列出所有中斷點
 顯示目前 [!INCLUDE[wps_1](../Token/wps_1_md.md)] 工作階段中的所有中斷點。
 
-在 **[偵錯]** 功能表上，按一下 **[列出中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Get-PSBreakpoint](assetId:///0bf48936-00ab-411c-b5e0-9b10a812a3c6) Cmdlet 列出所有中斷點。
+在 **[偵錯]** 功能表上，按一下 **[列出中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) Cmdlet 列出所有中斷點。
 
 ```
 # This command lists all breakpoints in the current session. 
@@ -49,7 +49,7 @@ get-psbreakpoint
 ```
 
 ### 移除中斷點
-移除中斷點會將它刪除。  如果您認為稍後可能需要重複使用，請考慮改為將它[停用](#bkmk_disable)。  以滑鼠右鍵按一下您要移除中斷點的行，然後按一下 **[切換中斷點]**。 或者，按一下您要移除中斷點的行，然後在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](assetId:///4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除具有指定識別碼的中斷點。
+移除中斷點會將它刪除。  如果您認為稍後可能需要重複使用，請考慮改為將它[停用](#bkmk_disable)。  以滑鼠右鍵按一下您要移除中斷點的行，然後按一下 **[切換中斷點]**。 或者，按一下您要移除中斷點的行，然後在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除具有指定識別碼的中斷點。
 
 ```
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -59,7 +59,7 @@ remove-psbreakpoint -id 2
 ### 移除所有中斷點
 若要移除目前工作階段中定義的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[移除所有中斷點]**。
 
-下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](assetId:///4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除所有中斷點。
+下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](https://technet.microsoft.com/en-us/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除所有中斷點。
 
 ```
 # This command deletes all of the breakpoints in the current session.
@@ -67,7 +67,7 @@ get-breakpoint | remove-breakpoint
 ```
 
 ### <a name="bkmk_disable"></a>停用中斷點
-停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用特定行中斷點，請以滑鼠右鍵按一下您要停用中斷點的行，然後按一下 **[停用中斷點]**。 或者，按一下您要停用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[停用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](assetId:///d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 移除具有指定識別碼的中斷點。
+停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用特定行中斷點，請以滑鼠右鍵按一下您要停用中斷點的行，然後按一下 **[停用中斷點]**。 或者，按一下您要停用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[停用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 移除具有指定識別碼的中斷點。
 
 ```
 # This command disables the breakpoint with breakpoint ID 0.
@@ -75,7 +75,7 @@ disable-psbreakpoint -id 0
 ```
 
 ### 停用所有中斷點
-停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用目前工作階段中的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[停用所有中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](assetId:///d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 來停用所有中斷點。
+停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用目前工作階段中的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[停用所有中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](https://technet.microsoft.com/en-us/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 來停用所有中斷點。
 
 ```
 # This command disables all breakpoints in the current session. 
@@ -84,7 +84,7 @@ get-psbreakpoint | disable-psbreakpoint
 ```
 
 ### 啟用中斷點
-若要啟用特定中斷點，請以滑鼠右鍵按一下您要啟用中斷點的行，然後按一下 **[啟用中斷點]**。 或者，按一下您要啟用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[啟用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](assetId:///739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 來啟用特定中斷點。
+若要啟用特定中斷點，請以滑鼠右鍵按一下您要啟用中斷點的行，然後按一下 **[啟用中斷點]**。 或者，按一下您要啟用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[啟用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 來啟用特定中斷點。
 
 ```
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -92,7 +92,7 @@ enable-psbreakpoint -id 0, 1, 5
 ```
 
 ### 啟用所有中斷點
-若要啟用目前工作階段中定義的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[啟用所有中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](assetId:///739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 啟用所有中斷點。
+若要啟用目前工作階段中定義的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[啟用所有中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](https://technet.microsoft.com/en-us/library/739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 啟用所有中斷點。
 
 ```
 # This command enables all breakpoints in the current session. 
@@ -101,7 +101,7 @@ get-psbreakpoint | enable-psbreakpoint
 ```
 
 ## <a name="bkmk_2"></a>如何管理偵錯工作階段
-開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點](#bkmk_1)或 [Set-PSBreakpoint](assetId:///6afd5d2c-a285-4796-8607-3cbf49471420)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
+開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點](#bkmk_1)或 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
 
 ### 開始偵錯
 按 **F5** 鍵；按一下工具列中的**執行指令碼**圖示；或在 **[偵錯]** 功能表上，按一下 **[執行/繼續]**。 指令碼會執行，直到它遇到第一個中斷點為止。 然後它會在此暫停作業，並反白暫停的行。
@@ -175,6 +175,6 @@ C:\ps-test\MyScript.ps1
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

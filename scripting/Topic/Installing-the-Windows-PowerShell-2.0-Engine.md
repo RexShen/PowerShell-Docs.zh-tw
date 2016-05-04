@@ -74,11 +74,11 @@ ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ## 另請參閱
 [Windows PowerShell 系統需求](../Topic/Windows-PowerShell-System-Requirements.md)
 [安裝 Windows PowerShell](../Topic/Installing-Windows-PowerShell.md)
-[啟動 Windows PowerShell [ps]](assetId:///8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[啟動 Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 [啟動 Windows PowerShell 2.0 引擎](../Topic/Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

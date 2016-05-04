@@ -20,7 +20,7 @@ ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 您可以在指令碼窗格中開啟和編輯 [!INCLUDE[wps_1](../Token/wps_1_md.md)] 檔案。 [!INCLUDE[wps_1](../Token/wps_1_md.md)] 中需要注意的特定檔案類型包括指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1)。 這些檔案類型是指令碼窗格編輯器中著色的語法。 其他可在指令碼窗格中開啟的常見檔案類型還包括組態檔 (.ps1xml)、XML 檔案和文字檔。
 
 > [!NOTE]
-> [!INCLUDE[wps_2](../Token/wps_2_md.md)] 執行原則會決定您是否可以執行指令碼並載入 Windows PowerShell 設定檔和組態檔。 預設執行原則 “Restricted” 可防止所有指令碼執行，並防止載入設定檔。 若要變更執行原則以允許載入及使用設定檔，請參閱 [Set-ExecutionPolicy[PSITPro5_Security]](assetId:///5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](assetId:///fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
+> [!INCLUDE[wps_2](../Token/wps_2_md.md)] 執行原則會決定您是否可以執行指令碼並載入 Windows PowerShell 設定檔和組態檔。 預設執行原則 “Restricted” 可防止所有指令碼執行，並防止載入設定檔。 若要變更執行原則以允許載入及使用設定檔，請參閱 [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
 
 ### 建立新的指令碼檔案
 按一下工具列中的 **[新增]**，或在 **[檔案]** 功能表上，按一下 **[新增]**。 建立的檔案會顯示在目前 PowerShell 索引標籤下新的檔案索引標籤中。 請記住，只有在有多個 PowerShell 索引標籤時，才會顯示 PowerShell 索引標籤。 預設會建立指令碼類型的檔案 (.ps1)，但您可以使用新名稱和副檔名來儲存這個檔案。 在同一個 PowerShell 索引標籤中，可以建立多個指令碼檔案。
@@ -118,7 +118,7 @@ ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 4.  按一下 **[儲存]**。
 
 ### 以 ASCII 編碼方式儲存指令碼
-根據預設，[!INCLUDE[ise_2](../Token/ise_2_md.md)] 會以 Unicode (BigEndianUnicode) 儲存新的指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1)。 若要以其他編碼方式儲存指令碼，請在 [$psISE.CurrentFile](assetId:///bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) 物件上使用 **Save** 或 **SaveAs** 方法。
+根據預設，[!INCLUDE[ise_2](../Token/ise_2_md.md)] 會以 Unicode (BigEndianUnicode) 儲存新的指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1)。 若要以其他編碼方式儲存指令碼，請在 [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) 物件上使用 **Save** 或 **SaveAs** 方法。
 
 下列命令會以 ASCII 編碼方式，將新的指令碼另存為 MyScript.ps1。
 
@@ -147,6 +147,6 @@ $psise.CurrentFile.encoding
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 
