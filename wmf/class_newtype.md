@@ -103,7 +103,7 @@ $c = [MyClass]::new(@(42,43,44), "Hello")
 
 在這個版本中，New-Object 不能和 Windows PowerShell 中定義的類別一起使用。 這個版本中的類型名稱也只能以語彙方式顯示，亦即在模組或定義類別的指令碼外部不顯示類型名稱。 函式可以傳回 Windows PowerShell 中定義的類別執行個體，而這些執行個體在模組或指令碼外部運作良好。
 
-`Get-Member -Static` 會列出建構函式，您可以像檢視任何其他方法一樣檢視多載。 這個語法的效能也比 New-Object 快得多。
+`Get-Member -Static` 列出建構函式，讓您可以像檢視其他方法般地檢視多載。 這個語法的效能也比 New-Object 快得多。
 
 名為 **new** 的 Pseudo-static 方法可搭配 .NET 類型，如下例所示。
 
@@ -124,7 +124,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## 方法
 
-Windows PowerShell 類別方法會實作為只有 End 區塊的 ScriptBlock。 所有方法都是公用的。 下例說明定義名為 **DoSomething** 的方法。
+Windows PowerShell 類別方法會實作為只有 End 區塊的 ScriptBlock。 所有方法都是公用的。 下例範例說明如何定義名為 **DoSomething** 的方法。.
 
 ```powershell
 class MyClass
@@ -168,7 +168,7 @@ Hidden 成員是公用的，但不會出現在 Get-Member 的輸出中，除非�
 
 ## 屬性
 
-已加入四個新屬性：**DscResource**、**DscResourceKey**、**DscResourceMandatory** 和 **DscResourceOut**。
+加入了兩個新屬性：**DscResource** 及 **DscProperty**。
 
 ## 變數的語彙範圍
 
@@ -324,4 +324,8 @@ function Style
 # and then returns the resulting type.
 #
 function Html ([HTML] $doc) { return $doc }
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Apr16_HO5-->
+
+

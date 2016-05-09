@@ -9,7 +9,7 @@
 * 不需要模組資料夾中的 **DSCResource** 子資料夾。
 * PowerShell 模組檔案可以包含多個 DSC 資源類別。
 
-以下是以類別為基礎的 DSC 資源範例，該範例的內容延伸至相同檔案中的其他類別 DSC 資源。 此檔案會儲存為模組，**MyDSCResource.psm1**。 
+以下是以類別為基礎的 DSC 資源範例，該範例的內容延伸至相同檔案中的其他類別 DSC 資源。 這會儲存為模組 **MyDSCResource.psm1**。. 
 請注意，您必須一律包含至少一個關鍵屬性，以及以類別為基礎的 DSC 資源或其基底類別中的 Get、Set、Test 方法。
 
 ```powershell
@@ -60,7 +60,7 @@ NOTE: This property is required because [DscProperty(Mandatory)] is set.
 [string] $SourcePath
 
 <#
-This property reports the file's creation timestamp.
+This property reports the file creation timestamp.
 
 [DscProperty(NotConfigurable)] attribute indicates the property is not configurable in a DSC configuration. Properties marked this way are populated by the Get() method to report additional details about the resource when it is present.
 #>
@@ -212,13 +212,13 @@ class FileResource : BaseFileResource
     [bool] $IsReadOnly
 
     <#
-    This property reports the file's LastAccessTime timestamp.
+    This property reports the file LastAccessTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastAccessTime
 
     <#
-    This property reports the file's LastWriteTime timestamp.
+    This property reports the file LastWriteTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastWriteTime
@@ -252,7 +252,7 @@ class FileResource : BaseFileResource
 }
 ```
 
-在建立以類別為基礎的 DSC 資源提供者，並將它儲存為模組之後，為模組建立模組資訊清單。 在此範例中，下列的模組資訊清單會儲存為 **MyDscResource.psd1**。
+在建立以類別為基礎的 DSC 資源提供者，並將它儲存為模組之後，為模組建立模組資訊清單。 此範例會將下列模組資訊清單儲存為 **MyDscResource.psd1**。.
 
 ```powershell
 @{
@@ -288,13 +288,13 @@ DscResourcesToExport = @('BaseFileResource','FileResource')
 }
 ```
 
-藉由在 `$env:SystemDrive\Program Files\WindowsPowerShell\Modules` 之下建立 **MyDscResource** 資料夾，您就可以部署新的 DSC 資源提供者。
+只要在其下建立 **MyDscResource** 資料夾，就能部署新的 DSC 資源提供者。 `$env:SystemDrive\Program Files\WindowsPowerShell\Modules`.
 您不需要建立 DSCResource 子資料夾。
 將模組和模組資訊清單檔案複製 (**MyDscResource.psm1** 和 **MyDscResource.psd1**) 到 **MyDscResource** 資料夾。
 
 從現在開始，您可以如同使用任何 DSC 資源一般的建立和執行設定指令碼。 
 以下為參考 MyDSCResource 模組的設定。 
-將此檔案儲存為指令碼，**MyResource.ps1**。
+將此檔案儲存為指令碼 **MyResource.ps1**。.
 
 ```powershell
 Configuration MyConfig
@@ -333,4 +333,8 @@ Get-DscConfiguration
 
 * 如果以類別為基礎 DSC 資源的 Get() 函式傳回複雜類型的話，Get-DscConfiguration 可能會傳回空值 (null) 或錯誤。
 * 複合資源作為以類別為基礎的資源時無法寫入。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Apr16_HO5-->
+
+
