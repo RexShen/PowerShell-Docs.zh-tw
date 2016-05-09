@@ -1,13 +1,17 @@
 # FileInfo 物件的更新
-檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下。 這一版的 WMF Production Preview 將新的 **FileVersionRaw** 和 **ProductVersionRaw** 指令碼屬性加入 FileInfo 物件。 以下是為 powershell.exe 顯示的屬性︰
+檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下。 此版本的 WMF 5.0，已將新的 **FileVersionRaw** 和 **ProductVersionRaw** 
+指令碼屬性加入 FileInfo 物件。 此處是為 powershell.exe 顯示的屬性 (假設 $pid 是 PowerShell 處理程序的識別碼) ︰
 
-PS C:\\&gt; Get-Process -Id $pid -FileVersionInfo | fl \*version\* -Force
+```powershell
+PS C:\> Get-Process -Id $pid -FileVersionInfo | fl *version* -Force
 
-FileVersionRaw : 10.0.10055.0
 
-ProductVersionRaw : 10.0.10055.0
+FileVersionRaw    : 10.0.10586.117
+ProductVersionRaw : 10.0.10586.117
+FileVersion       : 10.0.10586.117 (th2_release.160212-2359)
+ProductVersion    : 10.0.10586.117
 
-FileVersion : 10.0.10055.0 (fbl\_srv2.150402-1826)
 
-ProductVersion : 10.0.10055.0
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=Apr16_HO3-->
+
+

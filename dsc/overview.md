@@ -35,10 +35,10 @@ DSC 也包含一些新的語言關鍵字、Cmdlet 和工具，允許建立設定
 ## 另請參閱
 * [DSC 設定](configurations.md)
 * [DSC 資源](resources.md)
-* [設定本機設定管理員](metaconfig.md)
+* [設定本機設定管理員](metaConfig.md)
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Apr16_HO2-->
 
 

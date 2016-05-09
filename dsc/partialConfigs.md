@@ -7,10 +7,10 @@
 您可以藉由推送模式、提取模式或兩者組合來使用部分設定。
 
 ## 推送模式中的部分設定
-若要在推送模式下使用部分設定，您可以設定目標節點上的 LCM 接收部分設定。 每個部分設定都必須使用 Publish-DSCConfiguration Cmdlet 推送至目標。 目標節點接著將部分設定結合至單一設定中，您也可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來套用設定。
+若要在推送模式下使用部分設定，您可以設定目標節點上的 LCM 接收部分設定。 每個部分設定都必須使用 Publish-DSCConfiguration Cmdlet 推送至目標。 目標節點接著會將部分設定結合至單一設定中，您也可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來套用設定。
 
 ### 設定推送模式部分設定的 LCM
-若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows 設定本機設定管理員](https://technet.microsoft.com/en-us/library/mt421188.aspx)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
+若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](https://technet.microsoft.com/en-us/library/mt421188.aspx)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -34,7 +34,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-每個部分設定的 **RefreshMode** 均設為 "Push"。 **PartialConfiguration** 區塊的名稱 (在此情況下為 "OSInstall" 和 "SharePointConfig") 必須完全符合推送至目標節點的設定名稱。
+每個部分設定的 **RefreshMode** 設為 "Push"。 **PartialConfiguration** 區塊的名稱 (在此情況下為 "OSInstall" 和 "SharePointConfig") 必須完全符合推送至目標節點的設定名稱。
 
 ### 發佈和啟動推送模式部分設定
 ![PartialConfig 資料夾結構](./images/PartialConfig1.jpg)
@@ -43,7 +43,7 @@ PartialConfigDemo
 
 ## 提取模式中的部分設定
 
-部分設定可從一或多個提取伺服器提取 (如需提取伺服器的詳細資訊，請參閱 [Windows PowerShell 期望狀態設定提取伺服器](pullServer.md))。 若要這樣做，您必須在目標節點上設定 LCM，以提取部分設定，並在提取伺服器上適當地命名和放置設定文件。
+部分設定可從一或多個提取伺服器提取 (如需提取伺服器的詳細資訊，請參閱 [Windows PowerShell 期望狀態設定提取伺服器](pullServer.md)。 若要這樣做，您必須在目標節點上設定 LCM，以提取部分設定，並在提取伺服器上適當地命名和放置設定文件。
 
 ### 設定提取節點設定 LCM
 
@@ -78,7 +78,7 @@ configuration PartialConfigDemo
         {
             Description = 'Configuration for the Sharepoint Server'
             ConfigurationSource = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            DependsOn = [PartialConfiguration]OSInstall
+            DependsOn = '[PartialConfiguration]OSInstall'
             RefreshMode = 'Pull'
         }
     }
@@ -97,7 +97,7 @@ PartialConfigDemo
 
 ### 從提取伺服器中執行部分設定
 
-在已設定目標節點上的 LCM 後，並已在提取伺服器上建立設定文件並正確加以命名後，目標節點將會提取部分設定、結合部分設定，並依據 LCM 屬性 **RefreshFrequencyMins** 所指定的固定間隔套用所產生的設定。 如果您想要強制重新整理，您可以呼叫 Update-DscConfiguration Cmdlet 以提取設定，然後呼叫 `Start-DSCConfiguration –UseExisting` 以套用設定。
+已在目標節點上設定 LCM 之後，且已在提取伺服器上建立並正確將設定文件命名之後，目標節點將會提取部分設定、結合部分設定，並依據 LCM 屬性 **RefreshFrequencyMins** 所指定的固定間隔套用所產生的設定。 如果您想要強制重新整理，您可以呼叫 Update-DscConfiguration Cmdlet 以提取設定，然後呼叫 `Start-DSCConfiguration –UseExisting` 以套用設定。
 
 ## 混合推送和提取模式中的部分設定
 
@@ -131,7 +131,7 @@ configuration PartialConfigDemo
            PartialConfiguration SharePointConfig
         {
             Description = 'Configuration for the Sharepoint Server'
-            DependsOn = [PartialConfiguration]OSInstall
+            DependsOn = '[PartialConfiguration]OSInstall'
             RefreshMode = 'Push'
         }
     }
@@ -150,6 +150,6 @@ PartialConfigDemo
 [Windows 設定本機設定管理員](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=Apr16_HO2-->
 
 

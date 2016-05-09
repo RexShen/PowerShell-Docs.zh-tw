@@ -4,7 +4,7 @@
 
 必須告知每個目標節點使用提取模式和指定的 URL，其中它可連絡提取伺服器以取得設定。 若要這樣做，您必須使用必要的資訊來設定本機設定管理員 (LCM)。若要設定 LCM，您可以建立一種特殊的設定，加上 **DSCLocalConfigurationManager** 屬性裝飾。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](metaConfig.md)。
 
-> **注意**：本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)。
+> **注意**：本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[使用 PowerShell 4.0 中的設定識別碼設定提取用戶端](pullClientConfigID4.md)。
 
 下列指令碼會設定 LCM 從名為 "CONTOSO-PullSrv" 的伺服器提取設定：
 
@@ -44,9 +44,9 @@ PullClientConfigID
 
 ## 資源和報表伺服器
 
-如果您只在 LCM 設定中指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如上述範例所示)，提取用戶端會 
+如果在 LCM 設定中只指定了 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如上述範例所示)，提取用戶端將會 
 從指定的伺服器提取資源，但不會傳送報表給伺服器。 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 
-**ReportRepositoryWeb** 區塊才能設定報告。 下列範例示範中繼設定，該中繼設定會設定用戶端以提取設定和資源，並將報告資料傳送至單一
+**ReportRepositoryWeb** 區塊才可設定報告功能。 下列範例示範中繼設定，該中繼設定會設定用戶端以提取設定和資源，並將報告資料傳送至單一
 提取伺服器。
 
 ```powershell
@@ -80,7 +80,7 @@ PullClientConfigID
 ```
 
 
-您也可以對資源和報告指定不同的提取伺服器。 若要指定資源伺服器，您可使用 **ResourceRepositoryWeb** (適用於 Web 提取伺服器) 或 
+您也可以對資源和報告指定不同的提取伺服器。 若要指定資源伺服器，可使用 **ResourceRepositoryWeb** (適用於 Web 提取伺服器) 或 
 **ResourceRepositoryShare** 區塊 (適用於 SMB 提取伺服器)。
 若要指定報表伺服器，您可使用 **ReportRepositoryWeb** 區塊。 報表伺服器不得為 SMB 伺服器。
 下列中繼設定會設定提取用戶端從 **CONTOSO-PullSrv** 取得其設定，並從 **CONTOSO-ResourceSrv** 取得其資源，然後傳送狀態報表給 **CONTOSO-ReportSrv**：
@@ -113,6 +113,7 @@ configuration PullClientConfigID
         ReportServerWeb CONTOSO-ReportSrv
         {
             ServerURL = 'https://CONTOSO-ReportSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = '6b392c6a-818c-4b24-bf38-47124f1e2f14'
         }
     }
 }
@@ -125,6 +126,6 @@ PullClientConfigID
 * [設定 DSC Web 提取伺服器](pullServer.md)
 
 
-<!--HONumber=Mar16_HO4-->
+<!--HONumber=Apr16_HO2-->
 
 

@@ -49,24 +49,154 @@ Active Directory 憑證服務的更多背景資訊，請參閱 [Active Directory
 >EKU。
   
 您可以在_目標節點_上，使用符合這些準則的任何現有憑證來保護 DSC 認證。
- 
+
 ## 建立憑證
 
-由於私密金鑰會用來解密 MOF，因此請務必確保其安全。 最簡單的方法是在*目標節點*上建立私密金鑰憑證，並將公開金鑰 
-憑證複製到要用來將 DSC 設定編譯成 MOF 檔案的電腦。 下列範例會建立憑證、匯出公開金鑰，然後將公開金鑰匯入
-本機憑證存放區的根目錄。
+建立及使用必要的加密憑證 (成對的公用/私密金鑰組) 有兩種方法。
+
+1. 在**目標節點**上建立，並只將公用金鑰匯出至**撰寫節點**
+2. 在**撰寫節點**上建立，並將整組成對的金鑰匯出至**目標節點**
+
+因為用於在 MOF 中解密認證的私密金鑰，會一直保存在目標節點中，所建議採用方法 1。
+
+
+### 在目標節點上建立憑證
+
+由於會使用私密金鑰在**目標節點**上解密 MOF，因此請務必確保其安全。
+最簡單的方法是在**目標節點**上建立私密金鑰憑證，並將**公開金鑰憑證**複製到用於將 DSC 設定撰寫入 MOF 檔案的電腦。
+下列範例︰
+ 1. 在**目標節點**上建立憑證
+ 2. 在**目標節點**上匯出公開金鑰憑證。
+ 3. 在**撰寫節點**上將公開金鑰憑證匯入**我的**憑證存放區。
+
+#### 在目標節點上︰ 建立及匯出憑證
+>撰寫節點︰Windows Server 2016 與 Windows 10
 
 ```powershell
-# create the cert
-$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' 
-# export the cert’s public key
-$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer"  -Force                                                              
-# import the cert’s public key as a trusted root certificate authority so that it is trusted
-Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\Root > $null
+# note: These steps need to be performed in an Administrator PowerShell session
+$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' -HashAlgorithm SHA256
+# export the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+```
+匯出之後，必須將 ```DscPublicKey.cer``` 複製到**撰寫節點**。
+
+>撰寫節點 ︰Windows Server 2012 R2/Windows 8.1 及更早的版本
+
+因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上之 New-SelfSignedCertificate Cmdlet，並不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
+在此情況下，可以使用 ```makecert.exe``` 或 ```certutil.exe``` 來建立憑證。
+
+替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+# and in the folder that contains New-SelfSignedCertificateEx.ps1
+. .\New-SelfSignedCertificateEx.ps1
+New-SelfsignedCertificateEx `
+    -Subject "CN=${ENV:ComputerName}" `
+    -EKU 'Document Encryption' `
+    -KeyUsage 'KeyEncipherment, DataEncipherment' `
+    -SAN ${ENV:ComputerName} `
+    -FriendlyName 'DSC Credential Encryption certificate' `
+    -Exportable `
+    -StoreLocation 'LocalMachine' `
+    -StoreName 'My' `
+    -KeyLength 2048 `
+    -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
+    -AlgorithmName 'RSA' `
+    -SignatureAlgorithm 'SHA256'
+# Locate the newly created certificate
+$Cert = Get-ChildItem -Path cert:\LocalMachine\My `
+    | Where-Object {
+        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') `
+        -and ($_.Subject -eq "CN=${ENV:ComputerName}")
+    } | Select-Object -First 1
+# export the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+```
+匯出之後，必須將 ```DscPublicKey.cer``` 複製到**撰寫節點**。
+
+#### 在撰寫節點上︰匯入憑證的公開金鑰
+```powershell
+# Import to the my store
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-或者，您可以在用來編譯 DSC 設定檔的電腦上建立私密金鑰，使用私密金鑰匯出檔案，再於_目標節點_上匯入。 
-這是目前用來在 Nano Server 上實作 DSC 認證加密的方法。 請務必在傳輸期間確保私密金鑰的安全。
+### 在撰寫節點上建立憑證
+或者，在**撰寫節點**上建立加密憑證，搭配**私密金鑰**作為 PFX 檔案進行匯出，然後再匯入到**目標節點**上。
+這是目前在 _Nano Server_ 上實作 DSC 認證加密的方法。
+雖然有使用密碼保護 PFX，在傳輸期間也應該保持安全狀態。
+下列範例︰
+ 1. 在**撰寫節點**上建立憑證。
+ 2. 在**撰寫節點**上匯出包含私密金鑰的憑證。
+ 3. 從**製作節點**移除私密金鑰 ，但保留**我的**存放區中之公開金鑰憑證。
+ 4. 將私密金鑰憑證匯入**目標節點**的根憑證存放區。
+   - 它必須加入根存放區，才會得到**目標節點**的信任。
+
+#### 在撰寫節點上：建立及匯出憑證
+>目標節點︰Windows Server 2016 與 Windows 10
+
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' -HashAlgorithm SHA256
+# export the private key certificate
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd -Force
+# remove the private key certificate from the node but keep the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+$cert | Remove-Item -Force
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
+```
+匯出之後，必須將 ```DscPrivateKey.cer``` 複製到**目標節點**。
+
+>目標節點︰Windows Server 2012 R2/Windows 8.1 及更早的版本
+
+因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上之 New-SelfSignedCertificate Cmdlet，並不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
+在此情況下，可以使用 ```makecert.exe``` 或 ```certutil.exe``` 來建立憑證。
+
+替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+# and in the folder that contains New-SelfSignedCertificateEx.ps1
+. .\New-SelfSignedCertificateEx.ps1
+New-SelfsignedCertificateEx `
+    -Subject "CN=${ENV:ComputerName}" `
+    -EKU 'Document Encryption' `
+    -KeyUsage 'KeyEncipherment, DataEncipherment' `
+    -SAN ${ENV:ComputerName} `
+    -FriendlyName 'DSC Credential Encryption certificate' `
+    -Exportable `
+    -StoreLocation 'LocalMachine' `
+    -StoreName 'My' `
+    -KeyLength 2048 `
+    -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
+    -AlgorithmName 'RSA' `
+    -SignatureAlgorithm 'SHA256'
+# Locate the newly created certificate
+$Cert = Get-ChildItem -Path cert:\LocalMachine\My `
+    | Where-Object {
+        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') `
+        -and ($_.Subject -eq "CN=${ENV:ComputerName}")
+    } | Select-Object -First 1
+# export the public key certificate
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd -Force
+# remove the private key certificate from the node but keep the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+$cert | Remove-Item -Force
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
+```
+
+#### 在目標節點上︰匯入憑證的私密金鑰作為受信任的根
+```powershell
+# Import to the root store so that it is trusted
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
+```
+
+注意︰如果目標節點為 _Nano Server_，因為無法使用 ```Import-PfxCertificate``` Cmdlet，以應使用 CertOC.exe 應用程式匯入私密金鑰憑證。
+```powershell
+# Import to the root store so that it is trusted
+certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
+```
 
 ## 設定資料
 
@@ -197,7 +327,7 @@ Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 這個範例會將 DSC 設定推送至目標節點。
 如果有一部 DSC 提取伺服器，也可以使用此伺服器套用 DSC 設定。
 
-如需使用 DSC 提取伺服器套用 DSC 設定的詳細資訊，請參閱 [此頁面](PullClient.md)。
+如需使用 DSC 提取伺服器套用 DSC 設定的詳細資訊，請參閱[設定 DSC 提取用戶端](pullClient.md)。
 
 ## 認證加密模組範例
 
@@ -318,6 +448,6 @@ Start-CredentialEncryptionExample
 ```
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=Apr16_HO3-->
 
 

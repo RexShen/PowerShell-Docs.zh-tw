@@ -123,7 +123,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 ```
 > **注意**：**ReportServerWeb** 區段允許將報告資料傳送至提取伺服器。 
 
-中繼設定檔內缺乏 **ConfigurationID** 屬性即隱含表示提取伺服器支援提取伺服器通訊協定 V2 版，因此需要初始註冊。 相反地，**ConfigurationID** 存在則表示會使用提取伺服器通訊協定 V1 版，而且不會處理註冊。
+中繼設定檔內缺乏 **ConfigurationID** 屬性即隱含表示提取伺服器支援提取伺服器通訊協定 V2 版，因此需要初始註冊。 相反地，出現 **ConfigurationID** 則表示會使用提取伺服器通訊協定 V1 版，而且不會處理註冊。
 
 >**注意**︰在 PUSH 案例中，目前版本有 Bug，必須針對尚未向提取伺服器註冊的節點，於中繼設定檔內定義 ConfigurationID 屬性。 這會強制執行 V1 提取伺服器通訊協定，並避免出現註冊失敗訊息。
 
@@ -168,6 +168,6 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [使用 DSC 報表伺服器](reportServer.md)
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=Apr16_HO2-->
 
 

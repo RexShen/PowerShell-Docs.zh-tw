@@ -44,7 +44,7 @@
 ### [Windows PowerShell 瀏覽](Topic/Windows-PowerShell-Navigation.md)
 #### [管理目前的位置](Topic/Managing-Current-Location.md)
 #### [管理 Windows PowerShell 磁碟機](Topic/Managing-Windows-PowerShell-Drives.md)
-#### [使用檔案、資料夾與登錄機碼](Topic/Working-With-Files,-Folders-and-Registry-Keys.md)
+#### [使用檔案、資料夾與登錄機碼](Topic/Working-With-Files-Folders-and-Registry-Keys.md)
 #### [直接操作項目](Topic/Manipulating-Items-Directly.md)
 ### [使用物件](Topic/Working-with-Objects.md)
 #### [取得 WMI 物件 'Get-WmiObject'](Topic/Getting-WMI-Objects--Get-WmiObject-.md)
@@ -67,6 +67,8 @@
 #### [使用登錄機碼](Topic/Working-with-Registry-Keys.md)
 #### [使用登錄項目](Topic/Working-with-Registry-Entries.md)
 #### [執行遠端命令](Topic/Running-Remote-Commands.md)
+## Windows PowerShell 安全性
+### [PowerShell 遠端安全性考量](Topic/WinRMSecurity.md)
 ## [Windows PowerShell 5 的新功能](Topic/What-s-New-in-Windows-PowerShell.md)
 ### [相容性別名](Topic/Appendix-1---Compatibility-Aliases.md)
 ### [建立自訂 PowerShell 捷徑](Topic/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
@@ -74,6 +76,6 @@
 ## [Windows PowerShell 詞彙](Topic/Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO4-->
 
 
