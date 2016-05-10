@@ -32,7 +32,7 @@ Group [string] #ResourceName
 | MembersToInclude| 指出您想要確認的使用者是此群組的成員。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 範例
+## 範例 1
 
 下列範例示範如何確定稱為 TestGroup 的群組不存在。 
 
@@ -45,8 +45,36 @@ Group GroupExample
     GroupName = "TestGroup"
 }
 ```
+## 範例 2
+下列範例顯示如何將 Active Directory 使用者以多電腦實驗室組建 (已經在其內使用本機系統管理員帳戶的 PSCredential) 的一部分，加入本機系統管理員群組。 在網域升級之後，其也會用於網域系統管理員帳戶，然後我們需要將此現有的 PSCredential 轉換為網域能記住的認證，我們如此才可將網域使用者加入成員伺服器上的本機系統管理員群組。
 
+```powershell
+@{
+    AllNodes = @(
+        @{
+            NodeName = '*';
+            DomainName = 'SubTest.contoso.com';
+         }
+     @{
+            NodeName = 'Box2';
+            AdminAccount = 'Admin-Dave_Alexanderson'   
+      }    
+    )
+}
+                  
+$domain = $node.DomainName.split('.')[0]
+$DCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList ("$domain\$($credential.Username)", $Credential.Password)
 
-<!--HONumber=Feb16_HO4-->
+Group AddADUserToLocalAdminGroup
+        {
+            GroupName='Administrators'   
+            Ensure= 'Present'             
+            MembersToInclude= "$domain\$($Node.AdminAccount)"
+            Credential = $dCredential    
+            PsDscRunAsCredential = $DCredential
+        }
+```
+
+<!--HONumber=Apr16_HO3-->
 
 
