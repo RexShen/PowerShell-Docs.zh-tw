@@ -1,12 +1,15 @@
 ---
-title: 物件管線
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
+title:  物件管線
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  523d8ae4-d743-47a4-b79a-806130ca688a
 ---
+
 # 物件管線
 管線就像是一系列連接的管道區段。 沿著管線移動的項目會通過每個區段。 若要在 Windows PowerShell 中建立管線，您可以將命令與管道運算子 "|" 連接在一起。 每個命令的輸出可作為下一個命令的輸入。
 
@@ -16,6 +19,6 @@ ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

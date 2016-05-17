@@ -1,3 +1,14 @@
+---
+title:  DSC 使用者資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 #DSC 使用者資源#
 
  
@@ -52,6 +63,7 @@ User UserExample
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

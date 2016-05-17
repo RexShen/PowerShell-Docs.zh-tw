@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxService 資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxService 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxService** 資源會提供一個機制，在 Linux 節點管理服務。
@@ -48,4 +59,9 @@ Controller = "systemd"
 }
 }
 ```
-<!--HONumber=Mar16_HO1-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

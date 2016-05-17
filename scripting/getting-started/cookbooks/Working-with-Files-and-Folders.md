@@ -1,12 +1,15 @@
 ---
-title: 使用檔案及資料夾
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+title:  使用檔案及資料夾
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ---
+
 # 使用檔案及資料夾
 瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論特定檔案和資料夾的處理操作方法。
 
@@ -140,6 +143,6 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

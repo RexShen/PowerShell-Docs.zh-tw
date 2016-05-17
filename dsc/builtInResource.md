@@ -1,3 +1,14 @@
+---
+title:   內建的 Windows PowerShell 預期狀態設定資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 內建的 Windows PowerShell 預期狀態設定資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -18,6 +29,7 @@ Windows PowerShell 預期狀態設定 (DSC) 隨附一組內建的設定資源。
 * [WindowsProcess 資源](windowsProcessResource.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

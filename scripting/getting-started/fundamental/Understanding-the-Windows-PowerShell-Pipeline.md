@@ -1,12 +1,15 @@
 ---
-title: 了解 Windows PowerShell 管線
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
+title:  了解 Windows PowerShell 管線
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
 ---
+
 # 了解 Windows PowerShell 管線
 管線幾乎可以在 Windows PowerShell 中的所有位置運作。 雖然您會在畫面上看到文字，但是 Windows PowerShell 並不會在命令之間傳送文字， 而是傳送物件。
 
@@ -62,6 +65,6 @@ Windows PowerShell 會使用物件，而不是使用文字讓管線中的命令�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

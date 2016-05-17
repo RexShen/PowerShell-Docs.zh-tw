@@ -1,3 +1,14 @@
+---
+title:   設定 DSC 提取用戶端
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 設定 DSC 提取用戶端
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -10,9 +21,10 @@
 * [使用設定名稱設定提取用戶端](pullClientConfigNames.md)
 * [使用設定識別碼設定提取用戶端](pullClientConfigID.md)
 
-> <ctype="x-NOTFOUND" mdpre="**" mdpost="**">注意</ctype="x-NOTFOUND">：這些主題適用於 PowerShell 5.0。 若要設定 PowerShell 4.0 中的提取用戶端，請參閱<ctype="x-NOTFOUND" mdpre="[" mdpost="](pullClientConfigID4.md)">在 PowerShell 4.0 使用設定識別碼設定提取用戶端</ctype="x-NOTFOUND">。
+> **注意**：這些主題適用於 PowerShell 5.0。 若要設定 PowerShell 4.0 中的提取用戶端，請參閱[使用 PowerShell 4.0 中的設定識別碼設定提取用戶端](pullClientConfigID4.md)。
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

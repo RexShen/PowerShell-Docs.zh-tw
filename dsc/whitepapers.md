@@ -1,3 +1,14 @@
+---
+title:   白皮書
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 白皮書
 
 已發行下列白皮書，在與 PowerShell 所需狀態設定的相關主題下提供其他相關資訊。
@@ -7,6 +18,8 @@
 
 **[下載 PDF](http://aka.ms/thereleasepipelinemodelpdf)**
 
-<!--HONumber=Apr16_HO2-->
+
+
+<!--HONumber=May16_HO3-->
 
 

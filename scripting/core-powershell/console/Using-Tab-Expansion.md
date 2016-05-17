@@ -1,12 +1,15 @@
 ---
-title: 使用 Tab 鍵擴充
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
+title:  使用 Tab 鍵擴充
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 ---
+
 # 使用 Tab 鍵擴充
 命令列殼層通常會提供方法，透過加速命令輸入以及提供提示，來自動完成長檔案或命令的名稱。 Windows PowerShell 可讓您按 **Tab** 鍵來填入檔案名稱和 Cmdlet 名稱。
 
@@ -46,6 +49,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

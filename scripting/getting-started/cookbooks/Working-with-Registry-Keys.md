@@ -1,12 +1,15 @@
 ---
-title: 使用登錄機碼
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
+title:  使用登錄機碼
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ---
+
 # 使用登錄機碼
 因為登錄機碼是 Windows PowerShell 磁碟機上的項目，所以使用它們很像是使用檔案和資料夾。 最大的差別是登錄式 Windows PowerShell 磁碟機上的每個項目都是容器，就像檔案系統磁碟機上的資料夾。 不過，登錄項目及其相關值都是項目的屬性，而非不同的項目。
 
@@ -117,6 +120,6 @@ Remove-Item -Path HKCU:\CurrentVersion\* -Recurse
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

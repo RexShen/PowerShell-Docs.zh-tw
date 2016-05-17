@@ -1,12 +1,15 @@
 ---
-title: 使用物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
+title:  使用物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  7ecc94a4-015c-4459-ae58-85289ea09030
 ---
+
 # 使用物件
 我們已討論過 Windows PowerShell 如何使用物件在 Cmdlet 之間傳送資料，也示範過使用 Get-Member 和 Format Cmdlet 檢視物件詳細資訊的數種方法，來檢視物件的特定屬性。
 
@@ -14,6 +17,6 @@ ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

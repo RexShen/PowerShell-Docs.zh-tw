@@ -3,12 +3,13 @@
 # [設定](configurations.md)
 ## [施行設定](enactingConfigurations.md)
 ## [使用多個版本的資源](sxsResource.md)
+## [以使用者認證執行 DSC](runAsUser.md)
 ## [指定跨節點相依性](crossNodeDependencies.md)
 ## [設定資料](configData.md)
 ### [設定資料中的認證選項](configDataCredentials.md)
-### [以使用者認證執行 DSC](runAsUser.md)
 ## [保護設定 MOF 檔案](secureMOF.md)
 ## [部分設定](partialConfigs.md)
+## [撰寫 DSC 設定的說明](configHelp.md)
 
 # [資源](resources.md)
 ## [內建資源](builtInResource.md)
@@ -89,6 +90,7 @@
 ## [白皮書](whitepapers.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

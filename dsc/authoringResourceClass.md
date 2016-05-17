@@ -1,3 +1,14 @@
+---
+title:   使用 PowerShell 類別撰寫自訂的 DSC 資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 使用 PowerShell 類別撰寫自訂的 DSC 資源
 
 > 適用於：Windows PowerShell Windows 5.0
@@ -464,6 +475,7 @@ Start-DscConfiguration -Wait -Force Test
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

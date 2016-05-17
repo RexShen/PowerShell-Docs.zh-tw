@@ -1,12 +1,15 @@
 ---
-title: 排序物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
+title:  排序物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ---
+
 # 排序物件
 我們會組織顯示的資料，讓您可以使用 **Sort-Object** Cmdlet 更輕鬆地進行掃描。 **Sort-Object** 會使用一或多個屬性的名稱作為排序依據，並傳回根據這些屬性值進行排序的資料。
 
@@ -50,6 +53,6 @@ Wanarp         Running    True Remote Access IP ARP Driver
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

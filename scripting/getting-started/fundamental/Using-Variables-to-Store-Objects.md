@@ -1,12 +1,15 @@
 ---
-title: 使用變數儲存物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
+title:  使用變數儲存物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 ---
+
 # 使用變數儲存物件
 Windows PowerShell 使用物件。 Windows PowerShell 可讓您建立基本上為具名物件的變數，以保留輸出供之後使用。 如果您是用來使用其他殼層中的變數，請記得 Windows PowerShell 變數是物件，而非文字。
 
@@ -98,6 +101,6 @@ C:\WINDOWS
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

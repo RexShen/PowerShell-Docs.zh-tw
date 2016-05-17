@@ -1,12 +1,15 @@
 ---
-title: 變更電腦狀態
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
+title:  變更電腦狀態
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8093268b-27f8-4a49-8871-142c5cc33f01
 ---
+
 # 變更電腦狀態
 若要在 Windows PowerShell 中重設電腦，請使用標準命令列工具或 WMI 類別。 雖然您使用 Windows PowerShell 只是為了執行工具，但是了解如何在 Windows PowerShell 中變更電腦的電源狀態，描述了有關在 Windows PowerShell 中使用外部工具的一些重要詳細資訊。
 
@@ -59,6 +62,6 @@ shutdown.exe -l
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

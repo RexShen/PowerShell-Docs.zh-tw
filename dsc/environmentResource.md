@@ -1,3 +1,14 @@
+---
+title:   DSC 環境資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 環境資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -38,4 +49,9 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

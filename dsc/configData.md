@@ -1,3 +1,14 @@
+---
+title:   分離設定和環境資料
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 分離設定和環境資料
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -207,4 +218,9 @@ configuration MyConfiguration
 ```
 
 完整範例請參閱 [xWebAdministration 模組](https://powershellgallery.com/packages/xWebAdministration)。
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

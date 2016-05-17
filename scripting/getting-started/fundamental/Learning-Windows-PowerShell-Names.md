@@ -1,12 +1,15 @@
 ---
-title: 了解 Windows PowerShell 名稱
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
+title:  了解 Windows PowerShell 名稱
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
+
 # 了解 Windows PowerShell 名稱
 了解大部分命令列介面的命令和命令參數名稱需要投入大量時間。 此問題在於不太有模式可循，因此唯一的了解方式是記住您需要定期使用的每個命令和每個參數。
 
@@ -92,6 +95,6 @@ Windows PowerShell 核心 Cmdlet 針對類似的參數使用標準名稱。 雖�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

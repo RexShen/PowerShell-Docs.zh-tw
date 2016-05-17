@@ -1,3 +1,14 @@
+---
+title:   用來從提取伺服器查詢節點資訊的 DSC 函式。
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 用來從提取伺服器查詢節點資訊的 DSC 函式。
 
 ```powershell
@@ -38,6 +49,7 @@ $json.value | Format-Table TargetName, ConfigurationId, ServerChecksum, NodeComp
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

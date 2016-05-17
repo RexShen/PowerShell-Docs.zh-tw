@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -61,4 +72,10 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 
 > **注意**：針對 **Path** 參數，當您叫用前一個範例中的設定時，您指定的路徑必須與您為 **OutputPath** 參數所指定的路徑相同。
 
-若要查看目前本機設定管理員設定，您可以使用 **Get-DscLocalConfigurationManager** Cmdlet。 如果您叫用的這個 Cmdlet 不含任何參數，依預設會取得您用來執行此 Cmdlet 之節點的本機設定管理員設定。 若要指定另一個節點，請使用這項 Cmdlet 的 **CimSession** 參數。<!--HONumber=Feb16_HO4-->
+若要查看目前本機設定管理員設定，您可以使用 **Get-DscLocalConfigurationManager** Cmdlet。 如果您叫用的這個 Cmdlet 不含任何參數，依預設會取得您用來執行此 Cmdlet 之節點的本機設定管理員設定。 若要指定另一個節點，請使用這項 Cmdlet 的 **CimSession** 參數。
+
+
+
+<!--HONumber=May16_HO3-->
+
+

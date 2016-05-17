@@ -1,12 +1,15 @@
 ---
-title: 取得命令的相關資訊
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
+title:  取得命令的相關資訊
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
+
 # 取得命令的相關資訊
 Windows PowerShell **Get-Command** Cmdlet 能取得您目前工作階段中所有可用的命令。 當您在 Windows PowerShell 命令提示字元輸入 **Get-Command** 時，您會看到如下輸出：
 
@@ -78,6 +81,6 @@ Get-Command -CommandType Script
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

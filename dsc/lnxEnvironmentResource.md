@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxEnvironment 資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxEnvironment 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxEnvironment** 資源會提供在 Linux 節點上管理系統環境變數的機制。
@@ -50,6 +61,6 @@ nxEnvironment EnvironmentExample
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

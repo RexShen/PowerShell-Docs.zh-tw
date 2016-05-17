@@ -1,12 +1,15 @@
 ---
-title: 收集電腦的相關資訊
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
+title:  收集電腦的相關資訊
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
 ---
+
 # 收集電腦的相關資訊
 **Get-WmiObject** 是一般系統管理工作的最重要 Cmdlet。 所有重要的子系統設定都是透過 WMI 公開。 此外，WMI 會將資料視為一或多個項目集合中的物件。 由於 Windows PowerShell 也適用於物件，並具有管線可讓您以相同的方式來處理單一物件或多個物件，因此一般 WMI 存取可讓您不費吹灰之力就能執行一些進階工作。
 
@@ -220,6 +223,6 @@ Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Stat
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
