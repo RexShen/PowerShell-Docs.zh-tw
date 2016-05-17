@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxSshAuthorizedKeys 資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxSshAuthorizedKeys 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxAuthorizedKeys** 資源會提供一個機制，管理指定使用者的授權 SSH 金鑰。
@@ -44,4 +55,8 @@ nxSshAuthorizedKeys myKey{
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
+
+
