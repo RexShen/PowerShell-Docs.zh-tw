@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxScriptResource.md) | InSyncHandedBackSuccess | [Details](#4c575bbf0e0553e19e56bcc6edd605e36586cb9440)
- [dsc\lnxSshAuthorizedKeysResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxSshAuthorizedKeysResource.md) | InSyncHandedBackSuccess | [Details](#edc906b4e9c925320c4ed00c5ab295189066ccb942)
 
 ## Item Details
-##### <a name='4c575bbf0e0553e19e56bcc6edd605e36586cb9440'></a> Source: [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxScriptResource.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/5ed8e6b208c87818a0081b70b6489c5fabd25998/dsc/lnxScriptResource.md)
-* Handoff File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/152a84f183a3ffc7ff1d1b3baf225aa8fe163432/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-tw.xlf)
-* Handoff Datetime: 2016-05-16 23:02:22
-* Handoff Reason: Include
-* Archive File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/1c5f82a2b303068e952bad34d69d804fd82bc999/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-tw.xlf)
-* Archive Datetime: 2016-05-17 13:25:58
-* Handback File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4ea73297ac93fb7bf028ff0f94f0deac4a9a05f6/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.zh-tw.xlf)
-* Handback Datetime: 2016-05-17 21:38:43
-* [Back to Top](#report-top)
-
-##### <a name='edc906b4e9c925320c4ed00c5ab295189066ccb942'></a> Source: [dsc\lnxSshAuthorizedKeysResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/lnxSshAuthorizedKeysResource.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\lnxSshAuthorizedKeysResource.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/5ed8e6b208c87818a0081b70b6489c5fabd25998/dsc/lnxSshAuthorizedKeysResource.md)
-* Handoff File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/152a84f183a3ffc7ff1d1b3baf225aa8fe163432/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-tw.xlf)
-* Handoff Datetime: 2016-05-16 23:02:22
-* Handoff Reason: Include
-* Archive File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/1c5f82a2b303068e952bad34d69d804fd82bc999/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-tw.xlf)
-* Archive Datetime: 2016-05-17 13:25:58
-* Handback File: [lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4ea73297ac93fb7bf028ff0f94f0deac4a9a05f6/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/lnxSshAuthorizedKeysResource.9a647ff238cd38a2fc7da58f3cc5682acf7d3346.zh-tw.xlf)
-* Handback Datetime: 2016-05-17 21:38:43
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
