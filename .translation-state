@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "2a6fc24a1e0169bd1057cced60f941f98247183a",
+  "LastProcessedCommit": "5f17504fcfc0667f90d70ed925b2965b6a144d28",
   "LastTranslatedCommit": "4f1a779c3b6a7cc3ab6dbb35096f2d4a7c4a59ed",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
@@ -23677,6 +23677,36 @@
       "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\msft-dsclocalconfigurationmanager-getmetaconfiguration.56421b2916eff5832f34238a84bacda6cb4d6679.zh-tw.xlf",
       "HandoffFileCommit": "06e9cf59d838519619214815c7ec75e441569581",
       "HandoffDateTime": "2016-05-19T19:02:22.0115507Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "446c9036989c47c03664d978a1dea4e0234ada8d": {
+      "FileHash": "446c9036989c47c03664d978a1dea4e0234ada8d",
+      "SourceFileCommit": "f6e33f82f495a89a4aa28c64b7974c170d50cfe1",
+      "SourceFilePath": "dsc\\groupResource.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "dsc\\groupResource.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\groupResource.d19d416269795c92566b62c36b9782062dcea43e.zh-tw.xlf",
+      "HandoffFileCommit": "958d31ed227c5e03dfa87488490d1e27f1122d17",
+      "HandoffDateTime": "2016-05-19T20:04:29.5508837Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
