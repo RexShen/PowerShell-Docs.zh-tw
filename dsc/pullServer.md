@@ -17,13 +17,13 @@ DSC Web 提取伺服器是一種 Web 服務，在目標節點請求 DSC 設定�
 ## 使用 xWebService 資源
 設定 Web 提取伺服器的最簡單方式，是使用包含在 xPSDesiredStateConfiguration 模組的 xWebService 資源。 下列步驟說明如何使用設定 Web 服務之設定中的資源。
 
-1. 呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。 
+1. 呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組. 
 1. 從您組織或公開授權單位內受信任的憑證授權單位，取得 DSC 提取伺服器的 SSL 憑證。 從授權單位收到的憑證通常使用 PFX 格式。 在即將成為預設位置 (應為 CERT:\LocalMachine\My) 中 DSC 提取伺服器的節點上安裝憑證。 記下憑證指紋。
 1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：'``` [guid]::newGuid()```'。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的[註冊金鑰](#RegKey)一節。
 1. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含於 **xPSDesiredStateConfiguration** 模組的 Example 資料夾的 Sample_xDscWebService.ps1)。 此指令碼會設定提取伺服器。
   
 ```powershell
-configuration Sample_xDscWebService 
+configuration Sample_xDscPullServer
 { 
     param  
     ( 
@@ -44,27 +44,26 @@ configuration Sample_xDscWebService
      { 
          WindowsFeature DSCServiceFeature 
          { 
-             Ensure = "Present" 
-             Name   = "DSC-Service"             
+             Ensure = 'Present'
+             Name   = 'DSC-Service'             
          } 
- 
  
          xDscWebService PSDSCPullServer 
          { 
-             Ensure                  = "Present" 
-             EndpointName            = "PSDSCPullServer" 
+             Ensure                  = 'Present' 
+             EndpointName            = 'PSDSCPullServer' 
              Port                    = 8080 
              PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer" 
              CertificateThumbPrint   = $certificateThumbPrint          
              ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
-             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"             
-             State                   = "Started" 
-             DependsOn               = "[WindowsFeature]DSCServiceFeature"                         
+             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
+             State                   = 'Started'
+             DependsOn               = '[WindowsFeature]DSCServiceFeature'                         
          } 
 
         File RegistrationKeyFile
         {
-            Ensure          ='Present'
+            Ensure          = 'Present'
             Type            = 'File'
             DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
             Contents        = $RegistrationKey
@@ -82,7 +81,10 @@ configuration Sample_xDscWebService
 dir Cert:\LocalMachine\my
 
 # Then include this thumbprint when running the configuration
-Sample_xDSCService -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutpuPath c:\Configs\PullServer
+Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutpuPath c:\Configs\PullServer
+
+# Run the compiled configuration to make the target node a DSC Pull Server
+Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
 ```
 
 ## 註冊金鑰
@@ -99,22 +101,22 @@ configuration PullClientConfigID
     {
         Settings
         {
-            RefreshMode = 'Pull'
+            RefreshMode          = 'Pull'
             RefreshFrequencyMins = 30 
-            RebootNodeIfNeeded = $true
+            RebootNodeIfNeeded   = $true
         }
         
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            RegistrationKey = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
+            ServerURL          = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey    = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
             ConfigurationNames = @('ClientConfig')
         }   
         
         ReportServerWeb CONTOSO-PullSrv
         {
-            ServerURL         = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            RegistrationKey   = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
+            ServerURL       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
         }
     }
 }
@@ -151,7 +153,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1)。
+1. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## 提取用戶端設定 
@@ -168,6 +170,6 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [使用 DSC 報表伺服器](reportServer.md)
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO1-->
 
 
