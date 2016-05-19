@@ -5,7 +5,7 @@
 
 在 WMF 4.0 和 WMF 5.0 Preview 版本中，DSC 不允許組態中的密碼長度超過 121 個字元。 DSC 已強制使用短密碼，即使需要冗長的強式密碼亦同。 這項重大變更允許 DSC 組態中的密碼為任意長度。
 
-**解決方式︰**以 [資料編密] 或 [金鑰編密] 的金鑰使用方式，與 [文件加密增強] 金鑰使用方式 (1.3.6.1.4.1.311.80.1) 重新建立憑證。 Technet 文章 <https://technet.microsoft.com/en-us/library/dn807171.aspx> 有詳細資訊。
+**解決方式︰**以 [資料編密] 或 [金鑰編密] 的金鑰使用方式，與 [文件加密增強] 金鑰使用方式 (1.3.6.1.4.1.311.80.1) 重新建立憑證。 Technet 文章 <https://technet.microsoft.com/en-us/library/dn807171.aspx> 可提供更多詳細資訊。
 
 
 DSC Cmdlet 在安裝 WMF 5.0 RTM 之後可能會失敗
@@ -171,42 +171,28 @@ Start-DscConfiguration -UseExisting -CimSession $session
 WindowsOptionalFeature 不適用於 Windows 7
 -----------------------------------------------------
 
-WindowsOptionalFeature 資源不適用於 Windows 7。 此資源需要 DISM 模組，以及在 Windows 8 起和較新版本 Windows 作業系統中可用的 DISM Cmdlet。
+WindowsOptionalFeature DSC 資源不適用於 Windows 7。 此資源需要 DISM 模組，以及在 Windows 8 起和較新版本 Windows 作業系統中可用的 DISM Cmdlet。
 
+針對以類別為基礎的 DSC 資源，Import-DscResource -ModuleVersion 可能無法如預期般運作   
+------------------------------------------------------------------------------------------
+如果編譯節點有多個版本的以類別為基礎的 DSC 資源模組，`Import-DscResource -ModuleVersion` 就不會選擇指定的版本，並產生下列編譯錯誤。
 
-將無法執行 Set-DscLocalConfigurationManager，以針對 WMF 4.0 或 WMF 5.0 Production Preview 組建設定中繼組態
----------------------------------------------------------------------------------------------------------------------------------------
-
-對舊版 WMF 執行 Set-DscLocalConfiguration 時，會產生回溯相容性問題。 您會看到新增的 -Force 參數無法在目標電腦上使用的錯誤。
-```powershell
-Set-DscLocalConfigurationManager -Path . -Verbose -ComputerName WIN-3B576EM3669
-VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT_DSCLocalConfigurationManager".
-VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendMetaConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
-The WinRM client cannot process the request. The object contains an unrecognized argument: "Force". Verify that the spelling of the argument name is correct.
-+ CategoryInfo : MetadataError: (root/Microsoft/...gurationManager:String) [], CimException
-+ FullyQualifiedErrorId : HRESULT 0x803381e1
-+ PSComputerName : WIN-3B576EM3669
-VERBOSE: Operation 'Invoke CimMethod' complete.
-VERBOSE: Set-DscLocalConfigurationManager finished in 0.121 seconds.
 ```
-**解決方式︰**遵循下列步驟使用 Invoke-CimMethod 直接呼叫基礎 CIM 方法，以設定中繼組態。
-```powershell
-$computerName = "WIN-3B576EM3669"
-$mofPath = "C:\$computerName.meta.mof"
-$configurationData = [Byte[]][System.IO.File]::ReadAllBytes($mofPath)
-$totalSize = [System.BitConverter]::GetBytes($configurationData.Length + 4 )
-$configurationData = $totalSize + $configurationData
-Invoke-CimMethod -Namespace root/microsoft/windows/desiredstateconfiguration -Class MSFT_DSCLocalConfigurationManager -Name SendMetaConfigurationApply -Arguments @{ConfigurationData = [Byte[]]$configurationData} -Verbose -ComputerName $computerName
-VERBOSE: Performing the operation "Invoke-CimMethod: SendMetaConfigurationApply" on target "MSFT_DSCLocalConfigurationManager".
-VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendMetaConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' = root/microsoft/windows/desiredstateconfiguration'.
-VERBOSE: An LCM method call arrived from computer WIN-3B576EM3669 with user sid S-1-5-21-2127521184-1604012920-1887927527-5557045.
-VERBOSE: [WIN-3B576EM3669]: LCM: [ Start Set ]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ Start Resource ] [MSFT_DSCMetaConfiguration]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ Start Set ] [MSFT_DSCMetaConfiguration]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ End Set ] [MSFT_DSCMetaConfiguration] in 0.4060 seconds.
-VERBOSE: [WIN-3B576EM3669]: LCM: [ End Resource ] [MSFT_DSCMetaConfiguration]
-VERBOSE: [WIN-3B576EM3669]: LCM: [ End Set ] in 0.4807 seconds.
-VERBOSE: Operation 'Invoke CimMethod' complete.
+ImportClassResourcesFromModule : Exception calling "ImportClassResourcesFromModule" with "3" argument(s): "Keyword 'MyTestResource' already defined in the configuration."
+At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:2035 char:35
++ ... rcesFound = ImportClassResourcesFromModule -Module $mod -Resources $r ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [ImportClassResourcesFromModule], MethodInvocationException
+    + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-<!--HONumber=Mar16_HO2-->
+**解決方式︰**藉由將 *ModuleSpecification* 物件定義為 `-ModuleName` 並指定 `RequiredVersion` 索引鍵來匯入所需的版本，如下所示︰
+``` PowerShell  
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
+```  
+
+
+
+<!--HONumber=May16_HO1-->
+
+

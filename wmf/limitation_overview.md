@@ -43,4 +43,63 @@ Set-ExecutionPolicy RemoteSigned
 則 Get-ChildItem 將不會產生預期的結果。
 
 **解決方式︰**不理想，但目前的因應措施是在指令碼中實作遞迴，而不要依賴此 Cmdlet。
-<!--HONumber=Mar16_HO2-->
+
+
+Sysprep 在安裝 WMF 5.0 之後失敗
+----------------------------------------
+
+根據您目前執行的 Windows Server 版本而定，有兩種因應措施可解決此問題。
+
+**解決方式：**
+- 針對執行 **Windows Server 2008 R2** 的系統
+  1.    以系統管理員身分開啟 PowerShell
+  2.    執行下列命令
+   ```powershell
+    Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
+   ```
+  3.    執行命令並忽略錯誤 (因為它們如預期般發生)。
+   ```powershell
+    Publish-SilData
+   ```
+  4.    刪除 \Windows\System32\Logfiles\SIL\ 目錄中的檔案
+  ```powershell
+  Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
+  ```
+  5.    安裝所有可用的重要 Windows 更新，然後就能正常開始進行 Sysyprep 操作。
+  
+- 針對執行 **Windows Server 2012** 的系統
+  1.    在伺服器上安裝 WMF 5.0，使其成為 Sysprep 之後，以系統管理員身分登入。
+  2.    將 Generize.xml 從目錄 \Windows\System32\Sysprep\ActionFiles\ 複製到 Windows 目錄之外的位置，例如 C:\。
+  3.    使用「記事本」開啟 Generalize.xml 複本。
+  4.    找出並移除下列文字，每一個都有一個執行個體需要刪除 (它們將位於文件結尾附近)。
+    ```
+    <sysprepOrder order="0x3200"></sysprepOrder>
+    
+    <sysprepOrder order="0x3300"></sysprepOrder>
+    ```
+  5.    儲存編輯過的 Generalize.xml 複本並關閉檔案。
+  6.    以系統管理員身分開啟命令提示字元
+  7.    執行下列命令，以取得 system32 資料夾中 Generalize.xml 檔案的擁有權︰
+    ```
+      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    ```
+  8.    執行下列命令，在檔案中設定適當的權限︰
+    ```
+      Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    ```
+      * 在提示字元中回答 [是]，以進行確認。 
+      * 請注意，您只能使用電腦上系統管理員的使用者名稱來取代 `<AdministratorUserName>`。 例如，"Administrator"。
+      
+  9.    使用下列命令，複製您編輯過的檔案，並儲存到 Sysprep 目錄︰
+      ```
+      xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+      ```
+      * 回答 [是] 以進行覆寫 (注意，如果沒有提示要進行覆寫，請再次檢查所輸入的路徑)。
+      * 假設已將您編輯過的 Generalize.xml 複本複製到 C:\。
+  10.   現在已使用因應措施來更新 Generalize.xml。 請搭配已啟用的一般化選項來執行 Sysprep。
+
+
+
+<!--HONumber=May16_HO1-->
+
+

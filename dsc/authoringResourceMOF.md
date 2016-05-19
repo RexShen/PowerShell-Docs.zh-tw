@@ -10,10 +10,10 @@
 
 ### MOF 資源的資料夾結構
 
-若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.ps1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
+若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.psm1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
 
 ```
-$env: psmodulepath (folder)
+$env:PSModulePath (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
@@ -26,7 +26,7 @@ $env: psmodulepath (folder)
 
 ### MOF 檔案的內容
 
-下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 *Demo_IISWebsite.schema.mof*。
+下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 *Demo_IISWebsite.schema.mof*。.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")] 
@@ -45,18 +45,18 @@ class Demo_IISWebsite : OMI_BaseResource
 
 前列程式碼請注意下列事項：
 
-* `FriendlyName` 定義的名稱，可用來參考 DSC 設定指令碼的這個自訂資源。 在本例中，`Website` 相當於內建 Archive 資源的易記名稱 `Archive`。
-* 您為自訂資源定義的類別必須衍生自 `OMI_BaseResource`。
-* 屬性上的類型限定詞 `[Key]`，表示這個屬性會唯一識別資源執行個體。 `[Key]` 也是必要屬性。
+* `FriendlyName` 定義可用來在 DSC 設定指令碼中參考這個自訂資源的名稱。 在本例中，`Website` 相當於內建 Archive 資源的易記名稱 `Archive`。
+* 您為自訂資源定義的類別必須衍生自 `OMI_BaseResource`.
+* 屬性上的類型限定詞 `[Key]`，表示這個屬性會唯一識別資源執行個體。 至少有一個 `[Key]` 屬性是必要屬性。
 * `[Required]` 限定詞表示必要屬性 (使用這項資源的任何設定指令碼都必須指定的值)。
 * `[write]` 限定詞表示，在設定指令碼中使用自訂資源時，這是選擇性屬性。 `[read]` 限定詞表示設定不能設定屬性，且限用於報告。
-* `Values` 限制可指派給在 `ValueMap` 定義的值清單之屬性的值。 如需詳細資訊，請參閱 [ValueMap and Value Qualifiers (ValueMap 和值限定詞)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)。
-* 建議您在資源中包含叫作 `Ensure` 的屬性，以和內建的 DSC 資源維持一致的樣式。
+* `Values` 限制可指派給在 `ValueMap` 中定義的值清單之屬性的值。 如需詳細資訊，請參閱 [ValueMap 和值限定詞](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).
+* 建議您在資源中包含名為 `Ensure`且值為 `Present` 和 `Absent` 的屬性，以便和內建的 DSC 資源維持一致的樣式。
 * 依下列方式命名自訂資源的結構描述檔案：`classname.schema.mof`，其中 `classname` 是遵循結構描述定義 `class` 關鍵字的識別碼。
 
 ### 撰寫資源指令碼
 
-資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在 <ResourceName>.psm1 檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
+資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放於檔案中，該檔案名稱為 <ResourceName>.psm1。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
 
 > **注意**：當您在資源上多次執行相同的設定指令碼時，您不應該收到任何錯誤，資源的狀態也應該和指令碼只執行一次的狀態相同。 若要達成這個目標，請確認 **Get-TargetResource** 和 **Test-TargetResource** 函式不變更資源，而且以相同參數順序值多次叫用 **Set-TargetResource** 函式永遠等於只叫用一次。
 
@@ -154,7 +154,7 @@ function Set-TargetResource
 }
 ```
 
-最後，**Test-TargetResource** 函式必須和 **Get-TargetResource** 及 **Set-TargetResource** 使用相同的參數集。 在 **Test-TargetResource** 的實作中，檢查於索引鍵參數中指定的資源執行個體狀態。 如果資源執行個體的實際狀態不符合參數集指定的值，則傳回 **$false**。 否則傳回 **$true**。
+最後，**Test-TargetResource** 函式必須和 **Get-TargetResource** 及 **Set-TargetResource** 使用相同的參數集。 在 **Test-TargetResource** 的實作中，檢查於索引鍵參數中指定的資源執行個體狀態。 如果資源執行個體的實際狀態不符合參數集指定的值，則傳回 **$false**。 否則會傳回 **$true**.
 
 下列程式碼會實作 **Test-TargetResource** 函式。
 
@@ -207,7 +207,7 @@ $result
 
 ### 建立模組資訊清單
 
-最後，使用 **New-ModuleManifest** Cmdlet 定義自訂資源模組的 <ResourceName>.psd1 檔案。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 以下為資訊清單檔案範例。
+最後，使用 **New-ModuleManifest** Cmdlet 來定義 <ResourceName>.psd1 檔案，以供自訂資源模組使用。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 以下為資訊清單檔案範例。
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -261,6 +261,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO2-->
 
 
