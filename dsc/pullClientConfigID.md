@@ -4,7 +4,7 @@
 
 必須告知每個目標節點使用提取模式和指定的 URL，其中它可連絡提取伺服器以取得設定。 若要這樣做，您必須使用必要的資訊來設定本機設定管理員 (LCM)。 若要設定 LCM，您可以建立一種特殊的設定，加上 **DSCLocalConfigurationManager** 屬性裝飾。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](metaConfig.md).
 
-> **注意**：本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[使用 PowerShell 4.0 中的設定識別碼設定提取用戶端](pullClientConfigID4.md)。
+> **注意**：本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)。
 
 下列指令碼會設定 LCM 從名為 "CONTOSO-PullSrv" 的伺服器提取設定。
 
@@ -39,7 +39,7 @@ PullClientConfigID
 
 ## 設定識別碼
 
-此指令碼將 LCM 的 **ConfigurationID** 屬性設定為先前針對這個用途建立的 GUID (可透過 **New-Guid** Cmdlet 建立 GUID)。 **ConfigurationID** 供 LCM 用來在提取伺服器上尋找適當設定。 提取伺服器上的設定 MOF 檔案必須命名為 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目標節點 LCM 的 **ConfigurationID** 屬性值。
+此指令碼將 LCM 的 **ConfigurationID** 屬性設為先前針對這個用途建立的 GUID (您可以透過 **New-Guid** Cmdlet 建立 GUID)。 **ConfigurationID** 供 LCM 用來在提取伺服器上尋找適當設定。 提取伺服器上的設定 MOF 檔案必須命名為 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目標節點 LCM 的 **ConfigurationID** 屬性值。
 
 ## SMB 提取伺服器
 
