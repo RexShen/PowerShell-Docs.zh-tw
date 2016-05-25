@@ -175,7 +175,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ## 另請參閱
 [Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？)](http://go.microsoft.com/fwlink/?LinkId=506644)
 [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell Tip of the Week: Selecting Items from a List Box (本週 Windows PowerShell 秘訣︰從清單方塊選取項目)](http://technet.microsoft.com/library/ff730949.aspx)
+[Windows PowerShell Tip of the Week: Selecting Items from a List Box (本週 Windows PowerShell 秘訣︰從清單方塊選取項目）](http://technet.microsoft.com/library/ff730949.aspx)
 
 
 
