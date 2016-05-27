@@ -1,3 +1,14 @@
+---
+title:   開始使用 Linux 預期狀態設定 (DSC)
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 開始使用 Linux 預期狀態設定 (DSC)
 
 本主題說明如何開始使用 Linux 的 PowerShell 預期狀態設定 (DSC)。 如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](overview.md)。
@@ -114,7 +125,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * 在「推送」模式中，使用者認證必須是在 Linux 電腦上的根使用者。
 * DSC for Linux 僅支援 SSL/TLS 連線，必須使用 New-CimSession 且將 –UseSSL 參數設為 $true。
 * OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/opt/omi/etc/omiserver.conf`，屬性為：pemfile 和 keyfile。
-如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
+如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項選擇忽略憑證驗證： `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 執行下列命令，將 DSC 設定推送至 Linux 節點。
 
@@ -173,6 +184,7 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 |dsc.log|/opt/omi/var/log/|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

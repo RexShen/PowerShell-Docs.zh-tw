@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell 預期狀態設定概觀 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell 預期狀態設定概觀 
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -30,7 +41,7 @@ DSC 是用於設定、部署和管理系統的宣告式平台。 它包含三個
 * 資源是被寫入的 DSC 命令式建置組塊，用以建立子系統的各種元件模型，並實作其變更狀態的控制流程。 它們位於 PowerShell 模組，且可以被寫入，將如同檔案或 Windows 處理序一樣普遍的某些項目建立模型，或將如同 IIS 伺服器或 Azure 中執行的 VM 一樣特定的項目建立模型。
 * 本機設定管理員 (LCM) 是 DSC 用於協助資源和設定之間互動的引擎。 LCM 使用資源所實作的控制流程，定期輪詢系統，以確保設定所配置的狀態能保留。 如果系統未符合狀態，LCM 會使用資源內的更多邏輯，根據設定宣告來「保持原狀」。 
 
-DSC 也包含一些新的語言關鍵字、Cmdlet 和工具，允許建立設定、協助建置 DSC 資源、叫用設定並管理 LCM。 許多這些 Cmdlet 位在屬於 Windows 8.1 的 PsDesiredStateConfig 模組中 (包括 `Start-DscConfiguration`、`Set-DscLocalConfigurationManager`和 `Get-DscResource`)。 xDscResourceDesigner (位於 [PowerShell 組件庫](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)) 是一組簡化 DSC 資源開發的 Cmdlet。
+DSC 也包含一些新的語言關鍵字、Cmdlet 和工具，允許建立設定、協助建置 DSC 資源、叫用設定並管理 LCM。 許多這些 Cmdlet 位在屬於 Windows 8.1 的 PSDesiredStateConfiguration 模組中 (包括 `Start-DscConfiguration`、`Set-DscLocalConfigurationManager`和 `Get-DscResource`)。 xDscResourceDesigner (位於 [PowerShell 組件庫](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)) 是一組簡化 DSC 資源開發的 Cmdlet。
 
 ## 另請參閱
 * [DSC 設定](configurations.md)
@@ -39,6 +50,6 @@ DSC 也包含一些新的語言關鍵字、Cmdlet 和工具，允許建立設定
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

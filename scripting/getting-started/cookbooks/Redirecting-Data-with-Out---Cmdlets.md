@@ -1,12 +1,15 @@
 ---
-title: 使用 Out-* Cmdlet 重新導向資料
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
+title:  使用 Out Cmdlet 重新導向資料
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ---
+
 # 使用 Out-* Cmdlet 重新導向資料
 Windows PowerShell 提供幾個可讓您直接控制資料輸出的 Cmdlet。 這些 Cmdlet 有兩個重要特性：
 
@@ -61,8 +64,7 @@ Name    : explorer
 
 這適用於所有 **Out** Cmdlet。 **Out** Cmdlet 一律會出現在管線結尾處。
 
-> [!NOTE]
-> 所有 **Out** Cmdlet 都會使用對主控台視窗有效的格式 (包括行的長度限制)，將輸出轉譯成文字。
+> [!NOTE] 所有 **Out** Cmdlet 都會使用對主控台視窗有效的格式 (包括行的長度限制)，將輸出轉譯成文字。
 
 #### 分頁主控台輸出 (Out-Host)
 根據預設，Windows PowerShell 會將資料傳送至主機視窗，這與 Out-Host Cmdlet 的功能完全相同。 如前所述，Out-Host Cmdlet 主要用於將資料分頁。 例如，下列命令會使用 Out-Host 將 Get-Command Cmdlet 的輸出分頁︰
@@ -153,6 +155,6 @@ Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

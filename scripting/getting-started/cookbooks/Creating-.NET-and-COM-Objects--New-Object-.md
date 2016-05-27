@@ -1,12 +1,15 @@
 ---
-title: 建立 .NET 和 COM 物件 (New-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
+title:  建立 .NET 和 COM 物件 New Object 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2057b113-efeb-465e-8b44-da2f20dbf603
 ---
+
 # 建立 .NET 和 COM 物件 (New-Object)
 您可以透過具有 .NET Framework 和 COM 介面的軟體元件，來執行許多系統管理工作。 Windows PowerShell 可讓您使用這些元件，因此您不再僅限於使用 Cmdlet 執行工作。 Windows PowerShell 的初始版本中有許多 Cmdlet 無法對遠端電腦執行。 我們將示範如何從 Windows PowerShell 直接使用 .NET Framework **System.Diagnostics.EventLog** 類別，以克服管理事件記錄檔時的這項限制。
 
@@ -175,20 +178,11 @@ $Home\Desktop\PSHome.lnk
 
 我們現在有一個名為 **$lnk** 的變數，其中包含新的捷徑參考。 如果您想要查看其成員，您可以將其傳送到 **Get-Member**。 以下的輸出顯示完成建立捷徑所需使用的成員︰
 
-<pre>PS> $lnk | Get-Member
-TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b}
-Name             MemberType   Definition
-----             ----------   ----------
-...
-Save             Method       void Save ()
-...
-TargetPath       Property     string TargetPath () {get} {set}
-...</pre>
+<pre>PS> $lnk | Get-Member TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b} Name             MemberType   Definition ----             ----------   ---------- ...Save             Method       void Save () ...TargetPath       Property     string TargetPath () {get} {set} ...</pre>
 
 我們需要指定 Windows PowerShell 的應用程式資料夾 **TargetPath**，然後再呼叫 **Save** 方法來儲存捷徑 **$lnk**。 Windows PowerShell 應用程式資料夾路徑儲存在變數 **$PSHome** 中，因此我們可以輸入下列命令來執行此作業︰
 
-<pre>$lnk.TargetPath = $PSHome
-$lnk.Save()</pre>
+<pre>$lnk.TargetPath = $PSHome $lnk.Save()</pre>
 
 ### 從 Windows PowerShell 使用 Internet Explorer
 許多應用程式 (包括 Microsoft Office 系列應用程式和 Internet Explorer) 都可以透過 COM 自動化。 Internet Explorer 說明一些與使用 COM 應用程式相關的典型技術和問題。
@@ -266,6 +260,6 @@ At line:1 char:17
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

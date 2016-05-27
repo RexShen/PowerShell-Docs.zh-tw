@@ -1,12 +1,15 @@
 ---
-title: 管理服務
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
+title:  管理服務
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  7a410e4d-514b-4813-ba0c-0d8cef88df31
 ---
+
 # 管理服務
 有八個針對各種服務工作設計的核心服務 Cmdlet。 我們將只探討列出及變更服務執行中狀態的 Cmdlet，但您可以使用 **Get-Help &#42;-Service** 取得服務 Cmdlet 清單，並使用 **Get-Help<Cmdlet 名稱>** (例如 **Get-Help New-Service**) 尋找每個服務 Cmdlet 的相關資訊。
 
@@ -146,6 +149,6 @@ Set-Service Cmdlet 會變更本機或遠端電腦上的服務屬性。 因為服
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

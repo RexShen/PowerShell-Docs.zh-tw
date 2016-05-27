@@ -1,3 +1,14 @@
+---
+title:   DSC for Linux nxFile 資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC for Linux nxFile 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxFile** 資源會提供在 Linux 節點上管理檔案和目錄的機制。
@@ -149,6 +160,6 @@ nxFile FileExample
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

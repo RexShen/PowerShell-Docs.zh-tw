@@ -1,3 +1,8 @@
+---
+title: 複合資源: 使用 DSC 設定作為資源 ms.date: 2016-05-16 keywords: powershell,DSC description:  
+ms.topic:  article author:  eslesar manager:  dongill ms.prod:  powershell
+---
+
 # 複合資源：把 DSC 設定當做資源使用
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -183,6 +188,7 @@ configuration RenameVM
 * [開始使用 Windows PowerShell 預期狀態設定](overview.md)
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

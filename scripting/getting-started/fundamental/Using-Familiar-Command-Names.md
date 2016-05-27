@@ -1,12 +1,15 @@
 ---
-title: 使用熟悉的命令名稱
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
+title:  使用熟悉的命令名稱
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  021e2424-c64e-4fa5-aa98-aa6405758d5d
 ---
+
 # 使用熟悉的命令名稱
 Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名稱來參照命令。 別名可讓具有其他殼層經驗的使用者重複使用他們已經熟悉的一般命令名稱，以在 Windows PowerShell 中執行類似作業。 雖然我們不會詳細討論 Windows PowerShell 別名，但是您在開始使用 Windows PowerShell 時仍然可以使用它們。
 
@@ -59,13 +62,11 @@ Set-Alias -Name gcm -Value Get-Command
 
 在內部，Windows PowerShell 會在啟動期間使用這類命令，但這些別名無法變更。 如果您嘗試實際執行其中一個命令，則會收到說明無法修改別名的錯誤。 例如：
 
-<pre>PS> Set-Alias -Name gi -Value Get-Item
-Set-Alias：無法寫入別名，因為別名 gi 是唯讀或常數，因此無法寫入。
-At line:1 char:10
-+ Set-Alias  <<<< -Name gi -Value Get-Item</pre>
+<pre>PS> Set-Alias -Name gi -Value Get-Item Set-Alias：無法寫入別名，因為別名 gi 是唯讀或常數，因此無法寫入。
+At line:1 char:10 + Set-Alias  <<<< -Name gi -Value Get-Item</pre>
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

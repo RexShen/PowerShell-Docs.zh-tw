@@ -1,3 +1,14 @@
+---
+title:   DSC 群組資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 群組資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -23,18 +34,18 @@ Group [string] #ResourceName
 
 |  屬性  |  描述   | 
 |---|---| 
-| GroupName| 指出您要確保其特定狀態的群組名稱。| 
-| 認證| 表示存取遠端資源所需的認證。 **注意**：此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶加入群組；否則會發生錯誤。
-| 描述| 指出群組的描述。| 
+| GroupName| 您要確保其特定狀態的群組名稱。| 
+| 認證| 存取遠端資源時所需的認證。 **注意**：此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶加入群組；否則會發生錯誤。
+| 描述| 群組的描述。| 
 | Ensure| 指出群組是否存在。 設定此屬性為 "Absent" 以確保群組不存在。 設定此群組為 "Present" (預設值)，可確保此群組存在。| 
-| 成員| 指出您想要確保這些成員會形成群組。| 
-| MembersToExclude| 指出您想要確認的使用者不是此群組的成員。| 
-| MembersToInclude| 指出您想要確認的使用者是此群組的成員。| 
+| 成員| 您可以使用這個屬性，以指定的成員來取代目前的群組成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **MembersToExclude** 或 **MembersToInclude** 屬性。 這樣會產生錯誤。| 
+| MembersToExclude| 使用這個屬性從群組的現有成員資格移除成員。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。| 
+| MembersToInclude| 使用這個屬性將成員新增至群組的現有成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
 ## 範例 1
 
-下列範例示範如何確定稱為 TestGroup 的群組不存在。 
+下列範例示範如何確定名為 "TestGroup" 的群組不存在。 
 
 ```powershell
 Group GroupExample
@@ -75,6 +86,8 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
-<!--HONumber=Apr16_HO3-->
+
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: 了解 Windows PowerShell 重要概念
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
+title:  了解 Windows PowerShell 重要概念
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  3e601e38-4520-4578-a48d-b6779f1d35ee
 ---
+
 # 了解 Windows PowerShell 重要概念
 Windows PowerShell 設計整合許多不同環境的概念。 具有特定殼層或程式設計環境經驗的人員會熟悉其中一些概念，但只有極少數的人員才知道所有這些概念。 查看其中一些概念，可提供有用的殼層概觀。
 
@@ -28,7 +31,7 @@ Cmd.exe 這類介面未提供可讓您直接擴充內建命令集的方法。 �
 ### Windows PowerShell 處理主控台輸入和顯示
 當您輸入命令時，Windows PowerShell 一律會直接處理命令列輸入。 Windows PowerShell 也會格式化您在畫面上看到的輸出。 這十分重要，因為它會減少每個 Cmdlet 所需的工作，並確保您一律可以使用相同的方式來執行動作，而不管使用的 Cmdlet 為何。 如何簡化工具開發人員和使用者作業的其中一個範例是命令列說明。
 
-傳統命令列工具有其專屬方法來要求和顯示說明。 部分命令列工具使用 **\/?** 來觸發說明顯示；其他則使用 **-?**、**\/H** 甚至 **\/\/**。 有一部分會在 GUI 視窗中顯示說明，而不是在主控台顯示中。 有些複雜工具 (例如應用程式更新程式) 會先解壓縮內部檔案，再顯示其說明。 如果您使用錯誤的參數，則工具可能會忽略您輸入的內容，並開始自動執行工作。
+傳統命令列工具有其專屬方法來要求和顯示說明。 部分命令列工具使用 **\/?** 來觸發說明顯示；其他則使用 **\-?**、**\/H** 甚至 **\/\/**。 有一部分會在 GUI 視窗中顯示說明，而不是在主控台顯示中。 有些複雜工具 (例如應用程式更新程式) 會先解壓縮內部檔案，再顯示其說明。 如果您使用錯誤的參數，則工具可能會忽略您輸入的內容，並開始自動執行工作。
 
 當您在 Windows PowerShell 中輸入命令時，Windows PowerShell 會自動剖析並預先處理輸入的所有內容。 如果您使用 **-?** 參數與 Windows PowerShell Cmdlet，則一律表示「顯示此命令的說明」。 Cmdlet 開發人員不需要剖析命令，只需要提供說明文字。
 
@@ -44,6 +47,6 @@ Windows PowerShell 的語法功能和關鍵字與 C# 程式設計語言中所使
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

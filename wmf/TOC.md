@@ -2,7 +2,7 @@
 
 # [安裝詳細資料](requirements.md)
 
-# [已知的產品不相容](productincompat.md)
+# [產品的相容性狀態](productincompat.md)
 
 # [意見](feedback.md)
 
@@ -99,6 +99,6 @@
 ## [預期狀態設定 (DSC) 的已知問題](limitation_dsc.md)
 
 
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=May16_HO4-->
 
 

@@ -1,19 +1,26 @@
-# 已知的產品不相容
+# 產品的相容性狀態
 
-**執行下列伺服器應用程式的系統此階段不應該執行 Windows Management Framework 5.0：**
+## 相容︰
+> 執行下列伺服器應用程式的系統**可執行** Windows Management Framework 5.0：
+
+- Microsoft SharePoint Server 2013
+- System Center 2012 Configuration Manager
+
+## 未測試：
+> 執行下列伺服器應用程式的系統**尚未**對 Windows Management Framework 5.0 進行測試：
+
+- Microsoft SharePoint Server 2010
+- System Center 2012 Virtual Machine Manager
+
+## 不相容：
+> 執行下列伺服器應用程式的系統**不應該執行** Windows Management Framework 5.0：
 
 - Microsoft Exchange Server 2013
 - Microsoft Exchange Server 2010 SP3
-- Microsoft SharePoint Server 2013
-- Microsoft SharePoint Server 2010
-- System Center 2012 Virtual Machine Manager
 - System Center 2012 R2 Service Management Automation
 
-**執行下列應用程式的伺服器現在可以執行 WMF 5.0：**
-
-- System Center 2012 Configuration Manager
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO4-->
 
 

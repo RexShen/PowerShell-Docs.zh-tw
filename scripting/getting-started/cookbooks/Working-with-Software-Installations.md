@@ -1,12 +1,15 @@
 ---
-title: 處理軟體安裝
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
+title:  處理軟體安裝
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ---
+
 # 處理軟體安裝
 設計成使用 Windows Installer 的應用程式可以透過 WMI 的 **Win32\_Product** 類別存取，但並非所有現今使用的應用程式都使用 Windows Installer。 因為 Windows Installer 對處理可安裝的應用程式提供最廣泛的標準技術，我們主要將著重在那些應用程式。 使用替代安裝常式的應用程式通常不受 Windows Installer 管理。 處理那些應用程式的特定技術將視安裝程式軟體與應用程式開發人員的決定而定。
 
@@ -137,8 +140,7 @@ SKC  VC Name                           Property
 ### 安裝應用程式
 您可以在遠端或本機使用 **Win32\_Product** 類別來安裝 Windows Installer 封裝。
 
-> [!NOTE]
-> 在 Windows Vista、Windows Server 2008 與更新版本的 Windows 中，您必須使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell 才能安裝應用程式。
+> [!NOTE] 在 Windows Vista、Windows Server 2008 與更新版本的 Windows 中，您必須使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell 才能安裝應用程式。
 
 進行遠端安裝時，請使用通用命名慣例 (UNC) 網路路徑來指定 .msi 套件的路徑，因為 WMI 子系統不了解 Windows PowerShell 路徑。 例如，若要安裝位於遠端電腦 PC01 上網路共用 \\\\AppServ\\dsp 中的 NewPackage.msi 封裝，請在 Windows PowerShell 提示字元輸入下列命令：
 
@@ -178,6 +180,6 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

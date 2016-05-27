@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '設定用於控制設定代理程式的本機設定管理員設定。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendmetaconfigurationapply'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法'
+title: MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法
@@ -59,6 +62,6 @@ uint32 SendMetaConfigurationApply(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

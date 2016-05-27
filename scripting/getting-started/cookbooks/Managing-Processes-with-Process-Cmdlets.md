@@ -1,12 +1,15 @@
 ---
-title: 使用處理程序 Cmdlet 管理處理程序
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
+title:  使用處理程序 Cmdlet 管理處理程序
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
 ---
+
 # 使用處理程序 Cmdlet 管理處理程序
 您可以使用 Windows PowerShell 中的處理程序 Cmdlet，管理 Windows PowerShell 中的本機和遠端處理程序。
 
@@ -174,6 +177,6 @@ Windows PowerShell 也提供啟動 (或重新啟動)、偵錯處理程序，以�
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

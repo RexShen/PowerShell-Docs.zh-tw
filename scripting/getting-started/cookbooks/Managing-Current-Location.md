@@ -1,12 +1,15 @@
 ---
-title: 管理目前的位置
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
+title:  管理目前的位置
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ---
+
 # 管理目前的位置
 瀏覽檔案總管中的資料夾系統時，您通常有特定的工作位置，亦即目前開啟的資料夾。 只要按一下目前資料夾中的項目，即可輕鬆地操作這些項目。 對於命令列介面 (例如 Cmd.exe)，當位在與特定檔案相同的資料夾中時，您可以指定相對短的名稱來存取該檔案，而不需要指定該檔案的完整路徑。` 目前的目錄稱為工作目錄。
 
@@ -47,10 +50,7 @@ C:\WINDOWS
 
 例如，若目前資料夾為 **C:\Windows**，則句點 (**.**) 代表 **C:\Windows**，而雙句點 (**..**) 代表 **C:**。 輸入下列命令，即可從目前的位置變更到 C: 磁碟機的根目錄：
 
-<pre>PS> Set-Location -Path .. -PassThru
-路徑
-----
-C:\</pre>
+<pre>PS> Set-Location -Path .. -PassThru Path ---- C:\</pre>
 
 相同的方法在並非檔案系統磁碟機的 Windows PowerShell 磁碟機 (例如 **HKLM:**) 上也適用。 輸入下列命令，即可將您的位置設定為登錄中的 HKLM\Software 機碼：
 
@@ -168,6 +168,6 @@ Set-Location : Cannot find path 'D:\' because it does not exist.
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

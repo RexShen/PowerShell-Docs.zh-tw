@@ -1,12 +1,15 @@
 ---
-title: 執行遠端命令
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+title:  執行遠端命令
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
+
 # 執行遠端命令
 您可以使用單一 Windows PowerShell 命令，在一或數百部電腦上執行命令。 Windows PowerShell 透過使用各種技術 (包括 WMI、RPC 與 WS-Management) 支援遠端運算。
 
@@ -46,8 +49,7 @@ Windows PowerShell 遠端執行功能使用 WS-Management 通訊協定，可讓�
 
 若要使用 Windows PowerShell 遠端執行功能，必須針對遠端管理設定遠端電腦。 如需包括指示的詳細資訊，請參閱[關於遠端需求](https://technet.microsoft.com/en-us/library/dd315349.aspx)。
 
-設定 Windows PowerShell 遠端執行功能之後，許多遠端處理策略就可供您使用。 這份文件的其餘部分只列出其中幾個。 如需詳細資訊，請參閱[關於遠端](https://technet.microsoft.com/en-us/library/dd347744.aspx)與 
-[關於遠端常見問題集](https://technet.microsoft.com/en-us/library/dd347744.aspx)。
+設定 Windows PowerShell 遠端執行功能之後，許多遠端處理策略就可供您使用。 這份文件的其餘部分只列出其中幾個。 如需詳細資訊，請參閱[關於遠端](https://technet.microsoft.com/en-us/library/dd347744.aspx)與[關於遠端常見問題集](https://technet.microsoft.com/en-us/library/dd347744.aspx)。
 
 ### 啟動互動式工作階段
 若要啟動與單一遠端電腦的互動式工作階段，請使用 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) Cmdlet。 例如，若要啟動與 Server01 遠端電腦的互動式工作階段，請輸入：
@@ -64,8 +66,7 @@ enter-pssession Server01
 exit-pssession
 ```
 
-如需 Enter\-PSSession 與 Exit\-PSSession Cmdlet 的詳細資訊，請參閱 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 
-與 [Exit-pssession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
+如需 Enter-PSSession 與 Exit-PSSession Cmdlet 的詳細資訊，請參閱 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 與 [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
 
 ### 執行遠端命令
 若要在一或多部遠端電腦上執行任何命令，請使用 [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) Cmdlet。
@@ -124,8 +125,7 @@ invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"
 Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安裝的 Cmdlet，您可以同時建立及設定本機與遠端電腦的遠端工作階段、建立自訂與受限制的工作階段、允許使用者從實際隱含執行於遠端工作階段的遠端工作階段匯入命令，以及設定遠端工作階段安全性等。
 
 為簡化遠端設定，Windows PowerShell 包含 WSMan 提供者。 提供者建立的 WSMAN: 磁碟機可讓您瀏覽本機電腦與遠端電腦上組態設定的階層。
- 如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/en-us/library/dd819476.aspx)與
-  [關於 WS-Management Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 主控台中，輸入 "get\-help wsman"。
+ 如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/en-us/library/dd819476.aspx)與   [關於 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 主控台中，輸入 "get\-help wsman"。
 
 如需詳細資訊，請參閱：
 - [關於遠端常見問題集](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -149,6 +149,6 @@ Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安�
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   DSC 設定
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 設定
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -37,9 +48,9 @@ Configuration MyDscConfiguration {
 Configuration MyDscConfiguration {
 
     param(
-        [string[]]$computerName="localhost"
+        [string[]]$ComputerName="localhost"
     )
-    Node $computerName {
+    Node $ComputerName {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
             Name =  "RSAT"
@@ -52,7 +63,7 @@ Configuration MyDscConfiguration {
 }
 ```
 
-在本例中，您指定節點名稱的方式，是在您 [compile the configuraton] (# 編譯設定) 時把它當做 $computerName 參數傳遞。 預設名稱為 "localhost"。
+在本例中，您指定節點名稱的方式，是在您[編譯設定](# Compiling the configuration) 時將其作為 $ComputerName 參數傳遞。 預設名稱為 "localhost"。
 
 ## 編譯設定
 您必須先將設定編譯成 MOF 文件，才能施行設定。 呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。
@@ -80,7 +91,7 @@ Mode                LastWriteTime         Length Name
 
 ```powershell
 PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
-PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -computerName 'MyTestNode'
+PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -ComputerName 'MyTestNode'
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
@@ -121,6 +132,7 @@ Configuration DependsOnExample {
 * [設定本機設定管理員](metaConfig.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

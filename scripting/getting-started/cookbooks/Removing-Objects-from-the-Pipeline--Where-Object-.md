@@ -1,12 +1,15 @@
 ---
-title: 從管線中移除物件 (Where-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
+title:  從管線中移除物件 Where Object 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ---
+
 # 從管線中移除物件 (Where-Object)
 在 Windows PowerShell 中，您通常會產生並沿著管線傳遞比所需更多的物件。 您可以使用 **Format** Cmdlet 指定要顯示的特定物件屬性，但這樣做並無法解決從顯示中移除整個物件的問題。 您可能需要在結束管線之前篩選物件，以便只對初始產生的物件子集執行動作。
 
@@ -15,8 +18,7 @@ Windows PowerShell 包含 **Where-Object** Cmdlet，可讓您測試管線中的�
 ### 使用 Where-Object 執行簡單的測試
 **FilterScript** 的值是評估為 true 或 false 的*指令碼區塊* (以大括弧 {} 括住的一或多個 Windows PowerShell 命令)。 這些指令碼區塊可以很簡單，但建立時需要了解另一個 Windows PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以 '-' 字元為開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
 
-> [!NOTE]
-> 根據預設，搭配文字使用時，Windows PowerShell 比較運算子不會區分大小寫。
+> [!NOTE] 根據預設，搭配文字使用時，Windows PowerShell 比較運算子不會區分大小寫。
 
 基於剖析考量，不會使用 <、> 和 = 等符號作為比較運算子。 相反地，比較運算子是由字母所組成。 下表列出基本比較運算子。
 
@@ -102,6 +104,6 @@ Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

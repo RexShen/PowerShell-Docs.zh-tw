@@ -1,3 +1,14 @@
+---
+title:   資源撰寫檢查清單
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 資源撰寫檢查清單
 此檢查清單是撰寫新 DSC 資源時的最佳做法清單
 ## 資源模組包含各項資源的 .psd1 檔案和 schema.mof 
@@ -33,8 +44,7 @@ xPSDesiredStateConfiguration
 - [read] 屬性不能和後列任一項並存：[required]、[key]、[write]
 
 
-- 如果除 [read] 以外指定了多個限定詞，則 [key] 優先
-如果指定 [write] 和 [required]，則 [required] 優先
+- 如果除了 [read] 以外指定了多個限定詞，則 [key] 優先；如果指定 [write] 和 [required]，則 [required] 優先
 -   適當的位置會指定 ValueMap
 
 範例：
@@ -44,7 +54,7 @@ xPSDesiredStateConfiguration
 
 -   指定易記的名稱並確認 DSC 命名慣例
 
-範例： 
+範例：
 ```[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]```
 
 -   每個欄位都有具意義的描述
@@ -83,8 +93,7 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-4   資源在正案例中為等冪 
-每個 DSC 資源的其中一個基本特性都應該為等冪。 這表示我們可以多次套用包含該資源的 DSC 設定，不用在初次套用後變更結果。 例如，如果我們建立包含下列檔案資源的設定：
+4   資源在正案例中為等冪：每個 DSC 資源的其中一個基本特性都應該為等冪。 這表示我們可以多次套用包含該資源的 DSC 設定，不用在初次套用後變更結果。 例如，如果我們建立包含下列檔案資源的設定：
 ```powershell
 File file {
     DestinationPath = "C:\test\test.txt"
@@ -101,8 +110,7 @@ File file {
 2.  以資源執行設定
 3.  確認 **Test-DscConfiguration** 傳回 true
 4.  修改不在預期狀態的資源
-5.  確認 **Test-DscConfiguration** 傳回 false
-以下是更具體的登錄資源使用範例：
+5.  驗證 **Test-DscConfiguration** 傳回 false。以下是更具體的登錄資源使用範例：
 1.  請從不在預期狀態的登錄機碼開始
 2.  對設定執行 **Start-DscConfiguration** 使其進入預期狀態，並確認通過。
 3.  執行 **Test-DscConfiguration** 並確認它傳回 true
@@ -195,8 +203,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 -   容易了解︰一般人看得懂，沒有晦澀難懂的錯誤代碼
 -   精確：確切描述問題
 -   建設性︰建議如何修正問題
--   有禮︰不責怪使用者或讓他們覺得蠢笨
-請務必驗證端對端案例中的錯誤 (使用 **Start-DscConfiguration**)，因為它們可能會與直接執行資源函式時所傳回的錯誤不同。 
+-   有禮︰不責怪使用者或讓他們覺得蠢笨。請務必驗證端對端案例中的錯誤 (使用 **Start-DscConfiguration**)，因為它們可能會與直接執行資源函式時所傳回的錯誤不同。 
 
 ## 記錄檔訊息容易了解且提供資訊 (包括 –verbose、–debug 和 ETW 記錄檔) ##
 請確保資源輸出的記錄檔容易了解並向使用者提供值。 資源應該要輸出所有對使用者可能有幫助的資訊，但記錄愈多不一定愈好。 您應該避免備援以及輸出不提供附加價值的資料 – 不要讓使用者翻找數百筆記錄後才找到自己要找的。 當然，全無記錄檔也不是這個問題可以接受的解決方案。 
@@ -256,9 +263,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**最佳做法︰資源資料夾包含產生結構描述的資源設計工具指令碼**
-每個資源都應該包含資源設計工具指令碼，它會產生資源的 MOF 結構描述。 這個檔案應該放在 <ResourceName>\ResourceDesignerScripts 且名為 Generate<ResourceName>Schema.ps1
-至於 xRemoteFile 資源，這個檔案會稱之為 GenerateXRemoteFileSchema.ps1 並包含︰
+**最佳做法︰資源資料夾包含產生結構描述的資源設計工具指令碼**。每個資源都應該包含資源設計工具指令碼，它會產生資源的 MOF 結構描述。 這個檔案應該放在 <ResourceName>\ResourceDesignerScripts 且名為 Generate<ResourceName>Schema.ps1。至於 xRemoteFile 資源，這個檔案會稱為 GenerateXRemoteFileSchema.ps1 並包含︰
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -270,8 +275,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
-22  最佳做法︰資源支援 -whatif
-如果資源執行的是「危險」作業，實作 -whatif 功能是個不錯的做法。 完成後，請確定 whatif 輸出會正確描述不使用 whatif 參數執行命令時，作業會發生的狀況。
+22 最佳做法︰資源支援 -whatif。如果您的資源正在執行「危險」作業，最好實作 -whatif 功能。 完成後，請確定 whatif 輸出會正確描述不使用 whatif 參數執行命令時，作業會發生的狀況。
 亦請確認當出現 –whatif 參數時不執行作業 (不會變更節點狀態)。 
 例如，假設現在要測試檔案資源。 以下的簡單設定會建立有內容 “test” 的檔案 “test.txt”：
 ```powershell
@@ -317,6 +321,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 如果您開發了用於撰寫和測試 DSC 資源的指導方針和最佳做法，請和大家分享！
 
 
-<!--HONumber=Mar16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

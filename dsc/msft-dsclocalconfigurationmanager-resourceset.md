@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '直接在提供者上執行 Set。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceset'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法'
+title:  MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法
 
@@ -32,8 +36,7 @@ uint32 ResourceSet(
 包含要呼叫之資源的模組名稱。
 
 *resourceProperty* \[in\]  
-在雜湊表中指定資源的屬性名稱與其值，分別作為索引鍵和值。 請使用
-[Get-dscresource](https://technet.microsoft.com/en-us/library/dn521625.aspx) Cmdlet，探索資源的屬性和其類型。
+在雜湊表中指定資源的屬性名稱與其值，分別作為索引鍵和值。 使用 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) Cmdlet，探索資源的屬性和其類型。
 
 *RebootRequired* \[out\]  
 傳回時，如果需要重新啟動目標節點，這個屬性會設定為 **true**。
@@ -67,6 +70,6 @@ uint32 ResourceSet(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: 使用靜態類別和方法
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+title:  使用靜態類別和方法
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
+
 # 使用靜態類別和方法
 使用 **New-Object** 並無法建立所有 .NET Framework 類別。 例如，如果您嘗試使用 **New-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰
 
@@ -113,8 +116,7 @@ False
 ### 使用 System.Math 執行數學運算
 System.Math 靜態類別適用於執行一些數學運算。 **System.Math** 的重要成員主要是方法，而使用 **Get-Member** 即可顯示這些方法。
 
-> [!NOTE]
-> System.Math 有數種同名的方法，但透過其參數的類型予以區分。
+> [!NOTE] System.Math 有數種同名的方法，但透過其參數的類型予以區分。
 
 輸入下列命令來列出 **System.Math** 類別的方法。
 
@@ -182,6 +184,6 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

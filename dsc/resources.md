@@ -1,3 +1,14 @@
+---
+title:   DSC 資源
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 資源
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -12,6 +23,8 @@
 - [建置自訂的 DSC 資源](authoringResource.md)
 - [Linux 的內建 DSC 資源](lnxBuiltInResources.md)
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,26 +1,30 @@
+---
+title:   保護 MOF 檔案
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 保護 MOF 檔案
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設定管理員 (LCM) 實作所需設定的目標節點，它們應有的 
-設定的初始化參數。 因為這個檔案包含設定的詳細資料，所以安全防護很重要。 若要這樣做，您可以設定 LCM 檢查 
-使用者認證。 本主題說明如何使用憑證加密將這些認證安全地傳輸到目標節點。
+DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設定管理員 (LCM) 實作所需設定的目標節點，它們應有的設定。 因為這個檔案包含設定的詳細資料，所以安全防護很重要。 若要這樣做，您可以設定 LCM 來檢查使用者認證。 本主題說明如何使用憑證加密將這些認證安全地傳輸到目標節點。
 
->**注意**︰本主題討論用於加密的憑證。 以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。 自我簽署憑證
->*不能*用來進行驗證。 您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
+>**注意**︰本主題討論用於加密的憑證。 以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。 自我簽署憑證*不能*用來進行驗證。 您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
 
 ## 必要條件
 
 若要成功地加密用來保護 DSC 設定的認證，請確定您具備下列項目：
 
-* **發行與散發憑證的一些方法**。 本主題和範例假設您使用的是 Active Directory 憑證授權單位。 如需 
-Active Directory 憑證服務的更多背景資訊，請參閱 [Active Directory 憑證服務概觀](https://technet.microsoft.com/library/hh831740.aspx)和 
-[Windows Server 2008 的 Active Directory 憑證服務](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
+* **發行與散發憑證的一些方法**。 本主題和範例假設您使用的是 Active Directory 憑證授權單位。 如需有關 Active Directory 憑證服務的詳細資訊，請參閱 [Active Directory 憑證服務概觀](https://technet.microsoft.com/library/hh831740.aspx)和 [Windows Server 2008 的 Active Directory 憑證服務](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
 * **目標節點或節點的系統管理存取權**。
-* **每個目標節點在其個人存放區都儲存了支援加密的憑證**。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用 
-「工作站驗證」範本，您可在[預設憑證範本](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它和其他憑證範本。
-* 如果要在目標節點以外的電腦上執行這項設定，請**匯出憑證的公開金鑰**，然後將其匯入要執行 
-設定的電腦。 確定只匯出**公用**金鑰，妥善保管私密金鑰。
+* **每個目標節點在其個人存放區都儲存了支援加密的憑證**。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用 [工作站驗證] 範本，您可在[預設憑證範本](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它和其他憑證範本。
+* 如果在目標節點以外的電腦上執行這項設定，請**匯出憑證的公開金鑰**，將它匯入要執行設定的電腦。 確定只匯出**公用**金鑰，妥善保管私密金鑰。
 
 ## 完整程序
 
@@ -44,9 +48,7 @@ Active Directory 憑證服務的更多背景資訊，請參閱 [Active Directory
  3. *Target Node_ 上有憑證的私密金鑰可用。
  4. 憑證的**提供者**必須是「Microsoft RSA SChannel 密碼編譯提供者」。
  
->**建議的最佳做法**︰雖然您可以使用含有「數位簽章」之金鑰使用方法的憑證，或驗證 EKU 的其中一個憑證，但這會導致加密金鑰 
->更容易被誤用且易於遭受攻擊。 因此，最佳做法是使用專為保護 DSC 認證所建立的憑證，來省略這些金鑰使用方法和 
->EKU。
+>**建議的最佳做法**︰雖然您可以使用含有「數位簽章」之金鑰使用方法的憑證，或驗證 EKU 的其中一個憑證，但這會導致加密金鑰更容易被誤用且很容易遭受攻擊。 因此，最佳做法是使用專為保護 DSC 認證所建立的憑證，來省略這些金鑰使用方法和 EKU。
   
 您可以在_目標節點_上，使用符合這些準則的任何現有憑證來保護 DSC 認證。
 
@@ -62,8 +64,7 @@ Active Directory 憑證服務的更多背景資訊，請參閱 [Active Directory
 
 ### 在目標節點上建立憑證
 
-由於會使用私密金鑰在**目標節點**上解密 MOF，因此請務必確保其安全。
-最簡單的方法是在**目標節點**上建立私密金鑰憑證，並將**公開金鑰憑證**複製到用於將 DSC 設定撰寫入 MOF 檔案的電腦。
+由於會使用私密金鑰在**目標節點**上將 MOF 解密，因此請務必確保其安全。最簡單的方法是在**目標節點**上建立私密金鑰憑證，並將**公開金鑰憑證**複製到用於將 DSC 設定撰寫入 MOF 檔案的電腦。
 下列範例︰
  1. 在**目標節點**上建立憑證
  2. 在**目標節點**上匯出公開金鑰憑證。
@@ -192,12 +193,6 @@ $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-注意︰如果目標節點為 _Nano Server_，因為無法使用 ```Import-PfxCertificate``` Cmdlet，以應使用 CertOC.exe 應用程式匯入私密金鑰憑證。
-```powershell
-# Import to the root store so that it is trusted
-certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
-```
-
 ## 設定資料
 
 設定資料區塊會定義哪些是執行作業的目標節點、是否加密認證、加密方法和其他資訊。 如需設定資料區塊的詳細資訊，請參閱[分離設定和環境資料](configData.md)。
@@ -308,7 +303,7 @@ configuration CredentialEncryptionExample
 
 此時，您可以執行設定，這樣會輸出兩個檔案：
 
- * *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密憑證。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 會套用 *.meta.mof 檔案。
+ * *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來將憑證解密。[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 適用於 * .meta.mof 檔案。
  * 實際套用設定的 MOF 檔案。 Start-DscConfiguration 會套用設定。
 
 這些命令會完成這些步驟：
@@ -448,6 +443,7 @@ Start-CredentialEncryptionExample
 ```
 
 
-<!--HONumber=Apr16_HO3-->
+
+<!--HONumber=May16_HO3-->
 
 

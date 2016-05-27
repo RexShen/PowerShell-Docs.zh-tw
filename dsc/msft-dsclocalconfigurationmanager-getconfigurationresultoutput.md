@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '擷取與特定工作相關的設定代理程式輸出。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationresultoutput'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法'
+title:  MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
@@ -24,7 +27,7 @@ uint32 GetConfigurationResultOutput(
 參數
 ----------
 
-*jobID* \[in\]  
+*jobId* \[in\]  
 取得輸出資料之工作的識別碼。
 
 *resumeOutputBookmark* \[in\]  
@@ -62,6 +65,6 @@ uint32 GetConfigurationResultOutput(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

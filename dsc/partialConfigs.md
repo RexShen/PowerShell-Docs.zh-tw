@@ -1,3 +1,14 @@
+---
+title:   PowerShell 預期狀態設定部分設定
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell 預期狀態設定部分設定
 
 >適用於：Windows PowerShell 5.0
@@ -141,8 +152,69 @@ PartialConfigDemo
 
 請注意，在 Settings 區塊中指定的 **RefreshMode** 為 "Pull"，但 OSInstall 部分設定的 **RefreshMode** 會是 "Push"。
 
-您可如上面所述，對其各自的重新整理模式命名和放置設定文件。 您可以呼叫 **Publish-DSCConfiguration** 來發佈 SharePointInstall 部分設定，然後等待 OSInstall 設定從提取伺服器上提取，或藉由呼叫 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) 強制重新整理。
+如上面所述，對其各自的重新整理模式命名和放置設定 MOF 檔案。 呼叫 **Publish-DSCConfiguration** 來發佈 `SharePointInstall` 部分設定，然後等待 `OSInstall` 設定從提取伺服器上提取，或藉由呼叫 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) 強制重新整理。
 
+## OSInstall 部分設定範例
+
+```powershell
+Configuration OSInstall
+{
+    Param (
+        [Parameter(Mandatory,
+                   HelpMessage="Domain credentials required to add domain\sharepoint_svc to the local Administrators group.")]
+        [ValidateNotNullOrEmpty()]
+        [pscredential]$Credential
+    )
+
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+
+    Node localhost
+    {
+        Group LocalAdmins
+        {
+            GroupName = 'Administrators'
+            MembersToInclude = 'domain\sharepoint_svc',
+                               'admins@example.domain'
+            Ensure = 'Present'
+            Credential = $Credential
+            
+        }
+
+        WindowsFeature Telnet
+        {
+            Name = 'Telnet-Server'
+            Ensure = 'Absent'
+        }
+    }
+}
+OSInstall
+
+```
+## SharePointConfig 部分設定範例
+```powershell
+Configuration SharePointConfig
+{
+    Param (
+        [Parameter(Mandatory)]
+        [ValidateNotNullOrEmpty()]
+        [pscredential]$ProductKey
+    )
+
+    Import-DscResource -ModuleName xSharePoint
+
+    Node localhost
+    {
+        xSPInstall SharePointDefault
+        {
+            Ensure = 'Present'
+            BinaryDir = '\\FileServer\Installers\Sharepoint\'
+            ProductKey = $ProductKey
+        }
+    }
+}
+SharePointConfig
+```
 ##另請參閱 
 
 **概念**
@@ -150,6 +222,7 @@ PartialConfigDemo
 [Windows 設定本機設定管理員](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO4-->
 
 

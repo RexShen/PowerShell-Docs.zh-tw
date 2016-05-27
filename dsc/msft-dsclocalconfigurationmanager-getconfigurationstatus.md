@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '取得設定狀態歷程記錄。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationstatus'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法'
+title:  MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法
@@ -24,8 +27,7 @@ uint32 GetConfigurationStatus(
 ----------
 
 *All* \[in\]  
-為 **true** (如果這個方法應會傳回執行在機器上所有設定的相關資訊，包括
-設定應用程式與一致性檢查)。
+若此方法應傳回機器上所執行所有設定的相關資訊，包括設定應用程式與一致性檢查，即為 **true**。
 
 *configurationStatus* \[out\]  
 在傳回時會包含定義設定的 **MSFT_DSCConfigurationStatus** 類別之內嵌執行個體。
@@ -60,6 +62,6 @@ uint32 GetConfigurationStatus(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

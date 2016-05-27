@@ -1,3 +1,14 @@
+---
+title:   在 PowerShell 4.0 使用設定識別碼設定提取用戶端
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 在 PowerShell 4.0 使用設定識別碼設定提取用戶端
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -15,7 +26,7 @@ Configuration SimpleMetaConfigurationForPull
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
-        RefreshFrequencyMins = 15;
+        RefreshFrequencyMins = 30;
         ConfigurationModeFrequencyMins = 30; 
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
@@ -39,8 +50,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ## 從 SMB 伺服器提取
 
 如果將提取伺服器設定為 SMB 檔案共用，而不是 Web 服務，您會指定 **DscFileDownloadManager**，而不是 **WebDownLoadManager**。
-**DscFileDownloadManager** 採用 **SourcePath** 屬性而非 **ServerUrl**。 下列指令碼會設定 LCM 從
-伺服器 "CONTOSO-SERVER" 上名為 "SmbDscShare" 的 SMB 共用提取設定：
+**DscFileDownloadManager** 採用 **SourcePath** 屬性而非 **ServerUrl**。 下列指令碼會設定 LCM，使其從名為 "CONTOSO-SERVER" 的伺服器上名為 "SmbDscShare" 的 SMB 共用提取設定：
 
 ```powershell
 Configuration SimpleMetaConfigurationForPull 
@@ -51,7 +61,7 @@ Configuration SimpleMetaConfigurationForPull
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
-        RefreshFrequencyMins = 15;
+        RefreshFrequencyMins = 30;
         ConfigurationModeFrequencyMins = 30; 
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
@@ -65,6 +75,8 @@ SimpleMetaConfigurationForPull -Output "."
 - [設定 DSC Web 提取伺服器](pullServer.md)
 - [設定 DSC SMB 提取伺服器](pullServerSMB.md)
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=May16_HO3-->
 
 

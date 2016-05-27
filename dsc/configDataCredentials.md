@@ -1,3 +1,14 @@
+---
+title:   設定資料的認證選項
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 設定資料的認證選項
 >適用於：Windows PowerShell 5.0
 
@@ -15,7 +26,7 @@ DSC 設定資源預設執行為 `Local System`。
 不過，有些資源需要認證，例如當 `Package` 資源需要在特定使用者帳戶下安裝軟體時。
 
 資源過去使用硬式編碼的 `Credential` 屬性名稱來處理這種情形。
-WMF 5.0 為所有資源加入了自動的 `PsDscRunAsCredential` 屬性。
+WMF 5.0 為所有資源加入了自動的 `PsDscRunAsCredential` 屬性。 如需關於使用 `PsDscRunAsCredential` 的相關資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
 較新的資源和自訂的資源可以使用這個自動屬性，不用建立自己專有的認證屬性。
 
 *請注意，某些資源的設計是針對特定原因使用多個認證，所以會有自己的認證屬性。*
@@ -183,4 +194,9 @@ $cd = @{
 ```
 
 現在設定指令碼產生的 MOF 檔案不再有任何錯誤或警告。
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

@@ -1,3 +1,14 @@
+---
+title:   設定本機設定管理員
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 設定本機設定管理員
 
 > 適用於：Windows PowerShell 5.0
@@ -11,7 +22,7 @@
 
 您可以使用一種特殊的設定來設定 LCM，以指定這些行為。 下列章節說明如何設定 LCM。
 
-> **注意**：本主題適用於 Windows PowerShell 5.0 中導入的 LCM。 如需在 Windows PowerShell 4.0 中設定 LCM 的資訊，請參閱 Windows PowerShell 4.0 預期狀態設定本機設定管理員。
+> **注意**：本主題適用於 Windows PowerShell 5.0 中導入的 LCM。 如需在 Windows PowerShell 4.0 中設定 LCM 的資訊，請參閱 [Windows PowerShell 4.0 預期狀態設定本機設定管理員](metaconfig4.md)。
 
 ## 撰寫和制定 LCM 設定
 
@@ -31,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-您可以呼叫並執行設定，以建立 MOF 設定，就如同一般設定 (如需建立 MOF 設定的資訊，請參閱＜開始使用 Windows PowerShell 預期狀態設定＞)。 不同於一般設定，您不必藉由呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來制定 LCM 設定。 相反地，您呼叫 Set-DscLocalConfigurationManager Cmdlet，提供 MOF 設定的路徑作為參數。 制定設定之後，您可以藉由呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet 來查看 LCM 屬性。
+您可以呼叫並執行設定，以建立 MOF 設定，就如同一般設定 (如需建立 MOF 設定的資訊，請參閱 [編譯設定](configurations#compiling-the-configuration))。 不同於一般設定，您不必藉由呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來制定 LCM 設定。 相反地，您呼叫 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) Cmdlet，將 MOF 設定的路徑作為參數提供。 制定設定之後，您可以藉由呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet 來查看 LCM 屬性。
 
 LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中，唯一呼叫的資源是 **Settings**。 其他可用的資源包括：
 
@@ -138,15 +149,19 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 ## 另請參閱 
 
 ### 概念
-開始使用 Windows PowerShell 預期狀態設定 
+[Windows PowerShell 預期狀態設定概觀](overview.md)
+ 
 [設定 DSC 提取伺服器](pullServer.md) 
+
 [Windows PowerShell 4.0 預期狀態設定本機設定管理員](metaConfig4.md) 
 
 ### 其他資源
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
+
 [使用設定名稱設定提取用戶端](pullClientConfigNames.md) 
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 
