@@ -163,11 +163,11 @@ Windows PowerShell 5.0 預設已安裝於 Windows Server® 2016 Technical Previe
 
 -   New-Item、Remove-Item 及 Get-ChildItem 已增強為支援[符號連結](http://en.wikipedia.org/wiki/Symbolic_link)的建立與管理。 New-Item 的 **ItemType** 參數可接受 **SymbolicLink** 這個新值。 現在您可以執行 New-Item Cmdlet，在單一行中建立符號連結。
 
--   Get-ChildItem 也有新的 –Depth 參數，您可將其與 –Recurse 參數搭配使用來限制遞迴。 例如，Get-ChildItem –Recurse –Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
+-   Get-Childitem 也有新的 –Depth 參數，您可將其與 –Recurse 參數搭配使用來限制遞迴。 例如，Get-ChildItem –Recurse –Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
 
 -   Copy\-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [Windows Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 -FromSession 和 -ToSession 參數值指定為 PSSession ID，並加入 –Path 和 –Destination 以分別指定原始路徑和目的地。 例如，Copy-Item -Path c:\myFile.txt -ToSession $s -Destination d:\destinationFolder。
 
--   Windows PowerShell 轉譯已經過改良，因此它不僅能套用至主控台主機 (**powershell.exe**)，也可以套用至所有的裝載應用程式 (例如 Windows PowerShell ISE)。 轉譯選項 (包括啟用全系統轉譯) 可以透過啟用 [打開 PowerShell 轉譯] 群組原則設定 (位於 [系統管理範本\/Windows 元件\/Windows PowerShell]) 來設定。
+-   Windows PowerShell 轉譯已經過改良，因此它不僅能套用至主控台主機 (**powershell.exe**)，也可以套用至所有的裝載應用程式 (例如 Windows PowerShell ISE)。 轉譯選項 (包括啟用全系統轉譯) 可以透過啟用 [打開 PowerShell 轉譯]**** 群組原則設定 (位於 [系統管理範本\/Windows 元件\/Windows PowerShell]) 來設定。
 
 -   新的詳細指令碼追蹤功能可讓您在系統上啟用對 Windows PowerShell 指令碼之使用情況的詳細追蹤和分析。 啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 Windows 事件追蹤 (ETW) 事件記錄檔中：**Microsoft\-Windows\-PowerShell\/Operational**.
 
@@ -398,7 +398,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   OData 動作現在提供在資源上叫用非 CRUD (Create、Read、Update 及 Delete) 方法的機制。 您可以傳送 HTTP POST 要求到為動作定義的 URI 來叫用動作。 動作的參數是在 POST 要求的主體中定義。
 
--   若要與 Microsoft Azure 指導方針一致，應簡化所有 URL。 **Key As Segment** 中包含的變更可以讓單一機碼以區段方式表示。 請注意，使用多個機碼值的參照需要像以前一樣，以逗點分隔值並使用括號括住。
+-   若要與 Windows Azure 指導方針一致，應簡化所有 URL。 **Key As Segment** 中包含的變更可以讓單一機碼以區段方式表示。 請注意，使用多個機碼值的參照需要像以前一樣，以逗點分隔值並使用括號括住。
 
 -   在這一版的 PSWS 之前，執行 Create、Update 或 Delete作業的唯一方式是叫用位於最上層資源的 Post、Put 或 Delete。 這一版 PSWS 的新功能是，Contained Resource 作業可讓使用者在以不那麼直接的方式 (就像原本就包含這些資源一樣) 連線相同的資源時達到相同的結果。
 
