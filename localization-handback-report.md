@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/a5f3025ff222d4a27c0da074df9e84d82c51a46f/dsc/pullServer.md) | InSyncHandedBackSuccess | [Details](#7bbfc31fdebdde83ac1784373b51af40b1dc949276)
- [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/6462873e1dde8822c96c2863b5462a7e0ca40875/wmf/productincompat.md) | InSyncHandedBackSuccess | [Details](#5998288f1a82980b5988eb6d4fff1833ba5067e1309)
 
 ## Item Details
-##### <a name='7bbfc31fdebdde83ac1784373b51af40b1dc949276'></a> Source: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/a5f3025ff222d4a27c0da074df9e84d82c51a46f/dsc/pullServer.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/da17f9cfbbd7ab973334006664e56adfc96f6fe6/dsc/pullServer.md)
-* Handoff File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/fedde5e37f5d50d4361085fe8e98bf0fe18278ba/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
-* Handoff Datetime: 2016-05-27 16:55:05
-* Handoff Reason: Include
-* Archive File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/4b3053dae38a4dcede25ffd5deb1303ff978bf8e/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
-* Archive Datetime: 2016-05-31 13:21:06
-* Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/e1bc8f1958b444b51dc2b334e4a631f2d3195247/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
-* Handback Datetime: 2016-06-08 09:54:38
-* [Back to Top](#report-top)
-
-##### <a name='5998288f1a82980b5988eb6d4fff1833ba5067e1309'></a> Source: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/6462873e1dde8822c96c2863b5462a7e0ca40875/wmf/productincompat.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/da17f9cfbbd7ab973334006664e56adfc96f6fe6/wmf/productincompat.md)
-* Handoff File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/63f0085b21bef239762c93ae031b1930f2f256ea/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
-* Handoff Datetime: 2016-05-27 20:54:35
-* Handoff Reason: Include
-* Archive File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/4b3053dae38a4dcede25ffd5deb1303ff978bf8e/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
-* Archive Datetime: 2016-05-31 13:21:06
-* Handback File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/e1bc8f1958b444b51dc2b334e4a631f2d3195247/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
-* Handback Datetime: 2016-06-08 09:54:38
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
