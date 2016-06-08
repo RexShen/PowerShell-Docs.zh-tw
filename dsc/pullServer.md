@@ -1,3 +1,14 @@
+---
+title:   設定 DSC Web 提取伺服器
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 設定 DSC Web 提取伺服器
 
 > 適用於：Windows PowerShell 5.0
@@ -17,7 +28,7 @@ DSC Web 提取伺服器是一種 Web 服務，在目標節點請求 DSC 設定�
 ## 使用 xWebService 資源
 設定 Web 提取伺服器的最簡單方式，是使用包含在 xPSDesiredStateConfiguration 模組的 xWebService 資源。 下列步驟說明如何使用設定 Web 服務之設定中的資源。
 
-1. 呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)中下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組. 
+1. 呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。 
 1. 從您組織或公開授權單位內受信任的憑證授權單位，取得 DSC 提取伺服器的 SSL 憑證。 從授權單位收到的憑證通常使用 PFX 格式。 在即將成為預設位置 (應為 CERT:\LocalMachine\My) 中 DSC 提取伺服器的節點上安裝憑證。 記下憑證指紋。
 1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：'``` [guid]::newGuid()```'。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的[註冊金鑰](#RegKey)一節。
 1. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含於 **xPSDesiredStateConfiguration** 模組的 Example 資料夾的 Sample_xDscWebService.ps1)。 此指令碼會設定提取伺服器。
@@ -81,7 +92,7 @@ configuration Sample_xDscPullServer
 dir Cert:\LocalMachine\my
 
 # Then include this thumbprint when running the configuration
-Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutpuPath c:\Configs\PullServer
+Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
 
 # Run the compiled configuration to make the target node a DSC Pull Server
 Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
@@ -133,7 +144,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 提取伺服器設定完成之後，提取伺服器設定中 **ConfigurationPath** 和 **ModulePath** 屬性所定義的資料夾會是您放置模組和設定，以供目標節點提取的位置。 這些檔案必須使用特定格式，提取伺服器才能正確地加以處理。 
 
 ### DSC 資源模組封裝格式
-每個資源模組都必須根據下列模式 **{模組名稱}_{模組版本}.zip** 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。 在 WMF 5.0 中包含 DSC 資源之模組的預設格式為「{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\」。 在針對提取伺服器封裝之前，只移除 **{模組版本}** 資料夾，讓路徑成為「{模組資料夾}\DscResources\{DSC 資源資料夾}\」。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
+每個資源模組都必須根據下列模式 **{模組名稱}_{模組版本}.zip** 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。 在 WMF 5.0 中包含 DSC 資源的模組預設格式為 '{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\'。 在為提取伺服器進行封裝前，只要移除 **{模組版本}** 資料夾，路徑就會變成 '{模組資料夾}\DscResources\{DSC 資源資料夾}\'。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
 
 ### 設定 MOF 格式 
 設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。 若要建立總和檢查碼，請呼叫 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) Cmdlet。 此 Cmdlet 會使用 **Path** 參數，指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。 將 MOF 檔案及其相關聯的總和檢查碼檔案放在 **ConfigurationPath** 資料夾中。
@@ -153,7 +164,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
+1. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1)。
 
 
 ## 提取用戶端設定 
@@ -170,6 +181,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [使用 DSC 報表伺服器](reportServer.md)
 
 
-<!--HONumber=May16_HO1-->
+
+<!--HONumber=May16_HO4-->
 
 
