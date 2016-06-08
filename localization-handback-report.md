@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/ede565ef23c36a195f137e9949b215c6632a7e26/dsc/partialConfigs.md) | InSyncHandedBackSuccess | [Details](#9e3052353dd54568eb2dfaf5af5efde7faafd03a71)
- [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/593f0c2ca72e00f19c395c1dae31798d5a5f652d/scripting/core-powershell/Running-Remote-Commands.md) | InSyncHandedBackSuccess | [Details](#75d41569b18e61342809eebcc76b7899ec6363fa151)
 
 ## Item Details
-##### <a name='9e3052353dd54568eb2dfaf5af5efde7faafd03a71'></a> Source: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/ede565ef23c36a195f137e9949b215c6632a7e26/dsc/partialConfigs.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/1e445fbaf44d8b9c54e3e1d82de808f342c164e2/dsc/partialConfigs.md)
-* Handoff File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/75a518b84c64fe914edc8da8cbbf3c49d781aa0d/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-tw.xlf)
-* Handoff Datetime: 2016-05-27 23:54:18
-* Handoff Reason: Include
-* Archive File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/4b3053dae38a4dcede25ffd5deb1303ff978bf8e/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-tw.xlf)
-* Archive Datetime: 2016-05-31 13:21:06
-* Handback File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/05570cd68180ad5ed6807174a02706c377c1c79c/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.zh-tw.xlf)
-* Handback Datetime: 2016-06-08 10:23:20
-* [Back to Top](#report-top)
-
-##### <a name='75d41569b18e61342809eebcc76b7899ec6363fa151'></a> Source: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/593f0c2ca72e00f19c395c1dae31798d5a5f652d/scripting/core-powershell/Running-Remote-Commands.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/1e445fbaf44d8b9c54e3e1d82de808f342c164e2/scripting/core-powershell/Running-Remote-Commands.md)
-* Handoff File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/727c1246c245b11f9182ac1dbd66f49d280685ac/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-tw.xlf)
-* Handoff Datetime: 2016-05-27 16:24:26
-* Handoff Reason: Include
-* Archive File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/4b3053dae38a4dcede25ffd5deb1303ff978bf8e/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-tw.xlf)
-* Archive Datetime: 2016-05-31 13:21:06
-* Handback File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/05570cd68180ad5ed6807174a02706c377c1c79c/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.zh-tw.xlf)
-* Handback Datetime: 2016-06-08 10:23:20
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
