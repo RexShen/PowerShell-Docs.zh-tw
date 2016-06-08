@@ -122,9 +122,6 @@
   "9e3052353dd54568eb2dfaf5af5efde7faafd03a": [
     "dsc\\partialConfigs.md"
   ],
-  "85d81ef4f82ef10c0f838601a9adb79d2fba65e7": [
-    "dsc\\partialConfigs.md"
-  ],
   "95f49fecdf13a54049caf27345d2a48c98b8f09b": [
     "dsc\\pullClient.md"
   ],
@@ -567,9 +564,6 @@
     "scripting\\getting-started\\cookbooks\\Managing-Services.md"
   ],
   "75d41569b18e61342809eebcc76b7899ec6363fa": [
-    "scripting\\core-powershell\\Running-Remote-Commands.md"
-  ],
-  "b68341b6e94bb02882dad27a4acb1627b197674c": [
     "scripting\\core-powershell\\Running-Remote-Commands.md"
   ],
   "7fe92c1266593dd98ab6933fb408558effda5ccb": [
