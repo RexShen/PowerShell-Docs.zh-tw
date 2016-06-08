@@ -9,8 +9,8 @@
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 1
 [ Handback Failed Files ](#handback-failed-list)| 0
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 93
-[ In Sync Handback Files ](#insync-handback-success-list)| 211
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 91
+[ In Sync Handback Files ](#insync-handback-success-list)| 213
 [ Ignored Files ](#ignored-list)| 16
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -38,7 +38,6 @@
  [dsc\metaConfig.md](https://github.com/PowerShell/powerShell-Docs/blob/4cc8668e84405c276be2dfe4b25f622416d1b255/dsc/metaConfig.md) | OutofSyncHandedBackSuccess | [Details](#a451e4b8c4483d9099fa69a553162bd0632ef59a46)
  [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/ede565ef23c36a195f137e9949b215c6632a7e26/dsc/partialConfigs.md) | OutofSyncHandedBackSuccess | [Details](#9e3052353dd54568eb2dfaf5af5efde7faafd03a71)
  [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID.md) | OutofSyncHandedBackSuccess | [Details](#f6569220fbafdba49bac9ac9dca3e6036a7aad0873)
- [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/a5f3025ff222d4a27c0da074df9e84d82c51a46f/dsc/pullServer.md) | OutofSyncHandedBackSuccess | [Details](#7bbfc31fdebdde83ac1784373b51af40b1dc949276)
  [dsc\secureMOF.md](https://github.com/PowerShell/powerShell-Docs/blob/0dc83a1b69f26a25874c819a2f3a027ed7966895/dsc/secureMOF.md) | OutofSyncHandedBackSuccess | [Details](#f0aed5bb627825b74fe4df29cbe2f0bc53f90c2385)
  [scripting\core-powershell\console\PowerShell.exe-Command-Line-Help.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/console/PowerShell.exe-Command-Line-Help.md) | OutofSyncHandedBackSuccess | [Details](#a53a9457712973b4ff43c226b247214d24406592102)
  [scripting\core-powershell\console-guide.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/console-guide.md) | OutofSyncHandedBackSuccess | [Details](#074f3570e9354f2186be8690744640ea4739ef6e101)
@@ -124,7 +123,6 @@
  [scripting\whats-new\What-s-New-in-Windows-PowerShell-50.md](https://github.com/PowerShell/powerShell-Docs/blob/ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c/scripting/whats-new/What-s-New-in-Windows-PowerShell-50.md) | OutofSyncHandedBackSuccess | [Details](#87e4a23f93d19219a8d00671f319ef93a96fbbf6235)
  [scripting\whats-new\What-s-New-With-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/whats-new/What-s-New-With-PowerShell.md) | OutofSyncHandedBackSuccess | [Details](#abb8a868b735a2eb39a2276da6ece611d5423a16236)
  [scripting\Windows-PowerShell-Glossary.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/Windows-PowerShell-Glossary.md) | OutofSyncHandedBackSuccess | [Details](#0cd377653a3ca82052b1b88f00bfe92830f2020f237)
- [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/6462873e1dde8822c96c2863b5462a7e0ca40875/wmf/productincompat.md) | OutofSyncHandedBackSuccess | [Details](#5998288f1a82980b5988eb6d4fff1833ba5067e1309)
 
 ## <a name='insync-handback-success-list'></a> In Sync Handback File Success List
  Source File | Status | Details 
@@ -190,6 +188,7 @@
  [dsc\pullClient.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClient.md) | InSyncHandedBackSuccess | [Details](#95f49fecdf13a54049caf27345d2a48c98b8f09b72)
  [dsc\pullClientConfigID4.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID4.md) | InSyncHandedBackSuccess | [Details](#730f2f26e2811996e79cf0073a4ef65cad39068774)
  [dsc\pullClientConfigNames.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigNames.md) | InSyncHandedBackSuccess | [Details](#32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa75)
+ [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/a5f3025ff222d4a27c0da074df9e84d82c51a46f/dsc/pullServer.md) | InSyncHandedBackSuccess | [Details](#7bbfc31fdebdde83ac1784373b51af40b1dc949276)
  [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullServerSMB.md) | InSyncHandedBackSuccess | [Details](#35ac9b38086b12fb48844c56a488854f63529e2177)
  [dsc\queryServerNodes.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/queryServerNodes.md) | InSyncHandedBackSuccess | [Details](#02bb8458796d60991a05a8250f3bf8f3261ffce178)
  [dsc\registryResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/registryResource.md) | InSyncHandedBackSuccess | [Details](#15e346ecd630a1256477d375bc1373f376e76f6479)
@@ -328,6 +327,7 @@
  [wmf\odata_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/odata_overview.md) | InSyncHandedBackSuccess | [Details](#8849fb46853f12318dd34781d07085419737d196306)
  [wmf\oneget_cmdlets.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/oneget_cmdlets.md) | InSyncHandedBackSuccess | [Details](#75b6354fb83002602ec3d6276246cfa00ce0746a307)
  [wmf\oneget_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/oneget_overview.md) | InSyncHandedBackSuccess | [Details](#967366156ab58d16b085a97f9a08169d3bff75c2308)
+ [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/6462873e1dde8822c96c2863b5462a7e0ca40875/wmf/productincompat.md) | InSyncHandedBackSuccess | [Details](#5998288f1a82980b5988eb6d4fff1833ba5067e1309)
  [wmf\psget_module_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_module_overview.md) | InSyncHandedBackSuccess | [Details](#4dfab3c01259382cb4a7ecfb9954d2fa7eb07aed310)
  [wmf\psget_modulecmdlets.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_modulecmdlets.md) | InSyncHandedBackSuccess | [Details](#809547e4b84077de47f8e9cb8d252b37a26a35e2311)
  [wmf\psget_moduledependency.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_moduledependency.md) | InSyncHandedBackSuccess | [Details](#f723a03aa04ea613f28d31c019b0c4d7e8af7f00312)
@@ -1296,18 +1296,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='7bbfc31fdebdde83ac1784373b51af40b1dc949276'></a> Source: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/a5f3025ff222d4a27c0da074df9e84d82c51a46f/dsc/pullServer.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/da17f9cfbbd7ab973334006664e56adfc96f6fe6/dsc/pullServer.md)
 * Handoff File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/fedde5e37f5d50d4361085fe8e98bf0fe18278ba/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
 * Handoff Datetime: 2016-05-27 16:55:05
 * Handoff Reason: Include
 * Archive File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/4b3053dae38a4dcede25ffd5deb1303ff978bf8e/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
 * Archive Datetime: 2016-05-31 13:21:06
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/221f1d9bd2abe526b43b8aa1e53b975cdf319967/dsc/pullServer.md)
-* Current Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/e94a5a5016deac0a21405942beaab3a1f9e901ff/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
-* Current Handback Datetime: 2016-05-24 23:38:17
+* Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/e1bc8f1958b444b51dc2b334e4a631f2d3195247/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.zh-tw.xlf)
+* Handback Datetime: 2016-06-08 09:54:38
 * [Back to Top](#report-top)
 
 ##### <a name='35ac9b38086b12fb48844c56a488854f63529e2177'></a> Source: [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullServerSMB.md)
@@ -4353,18 +4350,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='5998288f1a82980b5988eb6d4fff1833ba5067e1309'></a> Source: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/6462873e1dde8822c96c2863b5462a7e0ca40875/wmf/productincompat.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/da17f9cfbbd7ab973334006664e56adfc96f6fe6/wmf/productincompat.md)
 * Handoff File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/63f0085b21bef239762c93ae031b1930f2f256ea/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
 * Handoff Datetime: 2016-05-27 20:54:35
 * Handoff Reason: Include
 * Archive File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/4b3053dae38a4dcede25ffd5deb1303ff978bf8e/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
 * Archive Datetime: 2016-05-31 13:21:06
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/fad1c221826246d8c68b506308f2cff5cf04d747/wmf/productincompat.md)
-* Current Handback File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/08e5daa4719d64b0929c252a4fbb384934e6c792/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
-* Current Handback Datetime: 2016-05-27 16:29:02
+* Handback File: [productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/e1bc8f1958b444b51dc2b334e4a631f2d3195247/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/productincompat.62bb00299c0283b5297001553476a745e28a49cb.zh-tw.xlf)
+* Handback Datetime: 2016-06-08 09:54:38
 * [Back to Top](#report-top)
 
 ##### <a name='4dfab3c01259382cb4a7ecfb9954d2fa7eb07aed310'></a> Source: [wmf\psget_module_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/psget_module_overview.md)
