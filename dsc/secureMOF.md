@@ -226,6 +226,7 @@ $ConfigData= @{
     }
 ```
 
+
 ## 設定指令碼
 
 在設定指令碼中，使用 `PsCredential` 參數確保以最短的時間儲存認證。 當您執行提供的範例時，DSC 會提示您輸入認證，在設定資料區塊中使用與目標節點相關聯的 CertificateFile 來加密 MOF 檔案。 這個程式碼範例會從受保護的共用將檔案複製到使用者。
@@ -444,6 +445,6 @@ Start-CredentialEncryptionExample
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
