@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-您可以呼叫並執行設定，以建立 MOF 設定，就如同一般設定 (如需建立 MOF 設定的資訊，請參閱 [編譯設定](configurations#compiling-the-configuration))。 不同於一般設定，您不必藉由呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來制定 LCM 設定。 相反地，您呼叫 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) Cmdlet，將 MOF 設定的路徑作為參數提供。 制定設定之後，您可以藉由呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet 來查看 LCM 屬性。
+您可以呼叫並執行設定，以建立 MOF 設定，就如同一般設定 (如需建立 MOF 設定的資訊，請參閱[編譯設定](configurations.md#compiling-the-configuration))。 不同於一般設定，您不必藉由呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來制定 LCM 設定。 相反地，您呼叫 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) Cmdlet，將 MOF 設定的路徑作為參數提供。 制定設定之後，您可以藉由呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet 來查看 LCM 屬性。
 
 LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中，唯一呼叫的資源是 **Settings**。 其他可用的資源包括：
 
@@ -162,6 +162,6 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
