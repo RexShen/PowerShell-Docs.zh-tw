@@ -1,12 +1,15 @@
 ---
-title: ISEMenuItemCollection 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
+title:  ISEMenuItemCollection 物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0c0f5484-3320-408e-8534-5bd1c8e48512
 ---
+
 # ISEMenuItemCollection 物件
   **ISEMenuItemCollection** 物件是 **ISEMenuItem** 物件的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection 類別的執行個體。 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 物件即為一例，此物件可用來自訂 Windows PowerShell® 整合式指令碼環境 (ISE) 中的 [附加元件] 功能表。
 
@@ -20,10 +23,10 @@ ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
  **DisplayName**
  要加入的功能表顯示名稱。
 
- **動作**
- **System.Management.Automation.ScriptBlock** 物件，可指定與這個功能表項目相關聯的動作。
+ **Action**
+ **System.Management.Automation.ScriptBlock** 物件，可指定與這個功能表項目建立關聯的動作。
 
- **捷徑**
+ **Shortcut**
  動作的鍵盤快速鍵。
 
  **Returns**

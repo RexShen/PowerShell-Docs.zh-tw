@@ -1,3 +1,14 @@
+---
+title:  Windows PowerShell Web 存取的授權規則與安全性功能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell Web 存取的授權規則與安全性功能
 
 更新日期︰2013 年 6 月 24 日
@@ -11,7 +22,7 @@ Windows Server® 2012 R2 和 Windows Server® 2012 中的 Windows PowerShell® W
 -   [工作階段管理](#BKMK_sesmgmt)
 
 
-安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題 [Windows PowerShell Web 存取 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx).
+安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題：[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx) (Windows PowerShell Web 存取 Cmdlet)。
 
 系統管理員可以為 Windows PowerShell Web 存取定義 0-*n* 個驗證規則。 預設的安全性是用來限制動作而不是允許動作；零驗證規則表示沒有任何使用者有權存取任何內容。
 
@@ -128,7 +139,7 @@ Windows PowerShell Web 存取安全性模型在網頁型主控台的一般使用
 <td><p>網頁伺服器 (IIS) 安全性功能，例如用戶端憑證驗證</p></td>
 <td><p>Windows PowerShell Web 存取使用者一律必須提供使用者名稱及密碼，才能在閘道上驗證他們的帳戶。 不過，Windows PowerShell Web 存取系統管理員也可以開啟或關閉選擇性的用戶端憑證驗證 (請參閱<a href="https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx">安裝和使用 Windows PowerShell Web 存取</a>中的＜使用 IIS 管理員在現有的網站中設定閘道＞的步驟 10)。 選擇性用戶端憑證功能要求一般使用者除了使用者名稱及密碼之外還需具備有效的用戶端憑證，而這也是網頁伺服器 (IIS) 設定的一部份。 啟用用戶端憑證層時，Windows PowerShell Web 存取登入頁面會提示使用者提供有效的憑證，才能評估他們的登入認證。 用戶端憑證驗證會自動檢查用戶端憑證。</p>
 <p>如果找不到有效的憑證，Windows PowerShell Web 存取會通知使用者，讓使用者可以提供憑證。 如果找到有效的用戶端憑證，Windows PowerShell Web 存取會為使用者開啟登入頁面，讓他們提供使用者名稱及密碼。</p>
-<p>這是網頁伺服器 (IIS) 提供額外安全性設定的範例。 如需其他 IIS 安全性功能的詳細資訊，請參閱<a href="https://technet.microsoft.com/library/cc731278(ws.10).aspx">設定網頁伺服器安全性 (IIS 7)</a>.</p></td>
+<p>這是網頁伺服器 (IIS) 提供額外安全性設定的範例。 如需其他 IIS 安全性功能的詳細資訊，請參閱<a href="https://technet.microsoft.com/library/cc731278(ws.10).aspx">設定網頁伺服器安全性 (IIS 7)</a>。</p></td>
 </tr>
 <tr class="even">
 <td><p>2</p></td>
@@ -187,25 +198,25 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
-    -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]，然後按一下 [以系統管理員身分執行].
+    -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-    -   在 Windows [開始] 畫面上，以滑鼠右鍵按一下 [Windows PowerShell]，然後按一下 [以系統管理員身分執行].
+    -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
 2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
 
-3.  輸入下列程式碼，然後按 **Enter**.
+3.  輸入下列程式碼，然後按 **Enter**。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1079478f-cd51-4d35-8022-4b532a9d57a4'); "複製到剪貼簿。")
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly 的工作階段設定</span>.
+    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly</span> 的工作階段設定。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "複製到剪貼簿。")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  確認已執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\user | computer\user&gt; -ComputerName** &lt;computer_name&gt; 來建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\JSmith –ComputerName Contoso_214**.
+4.  確認已執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;網域使用者 | 電腦使用者&gt; -ComputerName** &lt;電腦名稱&gt; 建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\JSmith –ComputerName Contoso_214**。
 
 #### 移除授權規則
 
@@ -248,9 +259,9 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 -   系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員建立了一個名為 **Level1Support** 的使用者群組，並定義下列規則：**Level1Support,*,PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
 
--   有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還會建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,*,\*** 和 **BasicSupport,*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦.
+-   有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還會建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,*,\*** 和 **BasicSupport,*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
 
--   某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 系統管理員會執行 <span class="code">Add-PswaAuthorizationRule * * *</span> Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦及所有設定。 此規則相當於下列內容︰<span class="code">Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *</span>.
+-   某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 系統管理員會執行 <span class="code">Add-PswaAuthorizationRule * * *</span> Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦及所有設定。 此規則相當於下列內容︰<span class="code">Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *</span>。
 
     <table>
     <colgroup>
@@ -274,7 +285,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
         Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
 
-    之前的規則範例會在閘道伺服器驗證 Chris，然後授與他存取 *srv1* 的權限。 在登入頁面上，Chris 必須在 [選用連線設定] 區域 (*contoso\chris*) 中提供第二組認證。 閘道伺服器會使用這組額外的認證，在目標電腦 *srv1.contoso.com* 上驗證他.
+    之前的規則範例會在閘道伺服器驗證 Chris，然後授與他存取 *srv1* 的權限。 在登入頁面上，Chris 必須在 [選用連線設定] 區域 (*contoso\chris*) 中提供第二組認證。 閘道伺服器會使用這組額外的認證，在目標電腦 *srv1.contoso.com* 上驗證他。
 
     在先前的案例中，Windows PowerShell Web 存取必須先成功完成下列各項且至少獲得一個授權規則的允許，才能順利建立與目標電腦的連線。
 
@@ -293,7 +304,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
     </thead>
     <tbody>
     <tr class="odd">
-    <td><p>如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱<a href="https://technet.microsoft.com/library/cc794775.aspx">建立網域及樹系信任</a>。 如需如何將工作群組電腦新增至信任主機清單的詳細資訊，請參閱<a href="https://technet.microsoft.com/library/dd759202.aspx">使用伺服器管理員進行遠端管理</a>.</p></td>
+    <td><p>如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱<a href="https://technet.microsoft.com/library/cc794775.aspx">建立網域及樹系信任</a>。 如需如何將工作群組電腦加入信任主機清單的詳細資訊，請參閱<a href="https://technet.microsoft.com/library/dd759202.aspx">使用伺服器管理員進行遠端管理</a>。</p></td>
     </tr>
     </tbody>
     </table>
@@ -359,28 +370,24 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 [安裝和使用 Windows PowerShell Web 存取](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
-[Windows PowerShell Web 存取 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx)
+[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx) (Windows PowerShell Web 存取 Cmdlet)
 
 <span>顯示︰</span> 繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
-是
-否
+是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩餘 1500</span> 個字元</span>
-提交
-請跳過此項
+<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
 
-<span class="stdr-thankyou">感謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
+<span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
 [管理您的設定檔](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 網站意見反應</a>
-網站意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -413,6 +420,7 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

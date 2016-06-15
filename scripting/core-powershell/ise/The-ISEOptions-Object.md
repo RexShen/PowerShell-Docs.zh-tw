@@ -1,12 +1,15 @@
 ---
-title: ISEOptions 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
+title:  ISEOptions 物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ---
+
 # ISEOptions 物件
   **ISEOptions** 物件代表適用於 Windows PowerShell ISE 的各種設定。 它是 **Microsoft.PowerShell.Host.ISE.ISEOptions** 類別的執行個體。
 
@@ -142,7 +145,7 @@ $psISE.Options.RestoreDefaultTokenColors()
 ###  <a name="rdxtc"></a> RestoreDefaultXmlTokenColors()
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 針對顯示於 Windows PowerShell ISE 中的 XML 項目，還原語彙基元色彩的預設值。 另請參閱 [XmlTokenColors](#xtc).
+ 針對顯示於 Windows PowerShell ISE 中的 XML 項目，還原語彙基元色彩的預設值。 另請參閱 [XmlTokenColors](#xtc)。
 
 ```
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -163,7 +166,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
 ###  <a name="cpbc"></a> CommandPaneBackgroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor](#conpbc).
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor](#conpbc)。
 
  指定命令窗格的背景色彩。 它是 **System.Windows.Media.Color** 類別的執行個體。
 
@@ -356,7 +359,7 @@ $psISE.Options.MruCount = 5
 ```
 
 ###  <a name="opbc"></a> OutputPaneBackgroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor](#conpbc).
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor](#conpbc)。
 
  讀取/寫入屬性，可取得或設定輸出窗格本身的背景色彩。 它是 **System.Windows.Media.Color** 類別的執行個體。
 
@@ -367,7 +370,7 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ```
 
 ###  <a name="optfc"></a> OutputPaneTextForegroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneForegroundColor](#conpfc).
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneForegroundColor](#conpfc)。
 
  讀取/寫入屬性，可在 Windows PowerShell ISE 2.0 中變更輸出窗格中文字的前景色彩。
 
@@ -378,7 +381,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 ```
 
 ###  <a name="optbc"></a> OutputPaneTextBackgroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneTextBackgroundColor](#conptbc).
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneTextBackgroundColor](#conptbc)。
 
  讀取/寫入屬性，可變更輸出窗格中文字的背景色彩。
 
@@ -429,7 +432,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 ###  <a name="sds"></a> ShowDefaultSnippets
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定程式碼片段的 **CTRL\+J** 清單是否包括隨附於 Windows PowerShell 的入門集。 設定為 **$false** 時，只有使用者定義的程式碼片段會出現在 **CTRL\+J** 清單中。 預設值為 **$true**.
+ 指定程式碼片段的 **CTRL\+J** 清單是否包括隨附於 Windows PowerShell 的入門集。 設定為 **$false** 時，只有使用者定義的程式碼片段會出現在 **CTRL\+J** 清單中。 預設值為 **$true**。
 
 ```
 # Hide the default snippets from the CTRL+J list.
@@ -439,7 +442,7 @@ $psISe.Options.ShowDefaultSnippets = $false
 ###  <a name="siicp"></a> ShowIntellisenseInConsolePane
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定 IntelliSense 是否會在主控台窗格中提供語法、參數和值的建議。 預設值為 **$true**.
+ 指定 IntelliSense 是否會在主控台窗格中提供語法、參數和值的建議。 預設值為 **$true**。
 
 ```
 # Turn off IntelliSense in the console pane.
@@ -449,7 +452,7 @@ $psISe.Options.ShowIntellisenseInConsolePane = $false
 ###  <a name="siisp"></a> ShowIntellisenseInScriptPane
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定 IntelliSense 是否會在指令碼窗格中提供語法、參數和值的建議。 預設值為 **$true**.
+ 指定 IntelliSense 是否會在指令碼窗格中提供語法、參數和值的建議。 預設值為 **$true**。
 
 ```
 # Turn off IntelliSense in the Script pane.
@@ -459,7 +462,7 @@ $psISe.Options.ShowIntellisenseInScriptPane = $false
 ###  <a name="sln"></a> ShowLineNumbers
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定指令碼窗格是否會在左邊界中顯示行號。 預設值為 **$true**.
+ 指定指令碼窗格是否會在左邊界中顯示行號。 預設值為 **$true**。
 
 ```
 # Turn off line numbers in the Script pane.
@@ -469,7 +472,7 @@ $psISe.Options.ShowLineNumbers = $false
 ###  <a name="so"></a> ShowOutlining
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定指令碼窗格是否會在左邊界中的程式碼區段旁邊顯示可展開和可摺疊的括弧。 如果顯示，您可以按一下文字區塊旁邊的減號 (-) 圖示來摺疊它，或按一下加號 (+) 圖示來展開文字區塊。 預設值為 **$true**.
+ 指定指令碼窗格是否會在左邊界中的程式碼區段旁邊顯示可展開和可摺疊的括弧。 如果顯示，您可以按一下文字區塊旁邊的減號 (-) 圖示來摺疊它，或按一下加號 (+) 圖示來展開文字區塊。 預設值為 **$true**。
 
 ```
 # Turn off outlining in the Script pane.
@@ -479,7 +482,7 @@ $psISe.Options.ShowOutlining = $false
 ###  <a name="stb"></a> ShowToolBar
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
- 指定 ISE 工具列是否會出現在 Windows PowerShell ISE 視窗的頂端。 預設值為 **$true**.
+ 指定 ISE 工具列是否會出現在 Windows PowerShell ISE 視窗的頂端。 預設值為 **$true**。
 
 ```
 # Show the toolbar.
@@ -489,7 +492,7 @@ $psISe.Options.ShowToolBar = $true
 ###  <a name="swbsor"></a> ShowWarningBeforeSavingOnRun
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
- 指定若指令碼在執行之前自動儲存，是否會出現警告訊息。 預設值為 **$true**.
+ 指定若指令碼在執行之前自動儲存，是否會出現警告訊息。 預設值為 **$true**。
 
 ```
 # Enable the warning message when an attempt
@@ -501,7 +504,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun=$true
 ###  <a name="swfdf"></a> ShowWarningForDuplicateFiles
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
- 指定在不同的 PowerShell 索引標籤中開啟同一個檔案時，是否會出現警告訊息。 如果設定為 **$true**，則在多個索引標籤中開啟同一個檔案，會顯示此訊息：「已在另一個 Windows PowerShell 索引標籤中開啟這個檔案的副本。 變更這個檔案將會影響所有已開啟的副本。」 預設值為 **$true**.
+ 指定在不同的 PowerShell 索引標籤中開啟同一個檔案時，是否會出現警告訊息。 如果設定為 **$true**，則在多個索引標籤中開啟同一個檔案，會顯示此訊息：「已在另一個 Windows PowerShell 索引標籤中開啟這個檔案的副本。 變更這個檔案將會影響所有已開啟的副本。」 預設值為 **$true**。
 
 ```
 # Enable the warning message when a file is
@@ -526,7 +529,7 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 ###  <a name="uetsicpi"></a> UseEnterToSelectInConsolePaneIntellisense
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定您是否可以使用 Enter 鍵來選取主控台窗格中 IntelliSense 提供的選項。 預設值為 **$true**.
+ 指定您是否可以使用 Enter 鍵來選取主控台窗格中 IntelliSense 提供的選項。 預設值為 **$true**。
 
 ```
 # Turn off using the ENTER key to select an IntelliSense provided option in the Console pane.
@@ -537,7 +540,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$false
 ###  <a name="uetsispi"></a> UseEnterToSelectInScriptPaneIntellisense
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定您是否可以使用 Enter 鍵來選取指令碼窗格中 IntelliSense 提供的選項。 預設值為 **$true**.
+ 指定您是否可以使用 Enter 鍵來選取指令碼窗格中 IntelliSense 提供的選項。 預設值為 **$true**。
 
 ```
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
@@ -601,7 +604,7 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ###  <a name="xtc"></a> XmlTokenColors
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定一個字典物件，其中包含適用於 Windows PowerShell ISE 中所顯示之 XML 內容的語彙基元類型和色彩的名稱/值組。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另請參閱 [RestoreDefaultXmlTokenColors()](#rdxtc).
+ 指定一個字典物件，其中包含適用於 Windows PowerShell ISE 中所顯示之 XML 內容的語彙基元類型和色彩的名稱/值組。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另請參閱 [RestoreDefaultXmlTokenColors()](#rdxtc)。
 
 ```
 # Sets the color of XML element names to green.
@@ -624,6 +627,7 @@ $psISE.Options.Zoom = 200
 ## 另請參閱
  [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
  [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
 
 
 <!--HONumber=May16_HO2-->

@@ -1,12 +1,15 @@
 ---
-title: ISEMenuItem 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
+title:  ISEMenuItem 物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a16660bd-0aee-46fd-ac17-3f022165d089
 ---
+
 # ISEMenuItem 物件
   **ISEMenuItem** 物件是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 類別的執行個體。 [附加元件] 功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
 
@@ -83,7 +86,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 ```
 
 ## 另請參閱
- [ISEMenuItemCollection 物件](The-ISEMenuItemCollection-Object.md) 
+ [ISEAddOnToolCollection 物件](The-ISEMenuItemCollection-Object.md) 
  [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
  [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)

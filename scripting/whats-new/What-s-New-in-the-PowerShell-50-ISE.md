@@ -1,19 +1,22 @@
 ---
-title: Windows PowerShell ISE 的新功能
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
+title:  PowerShell 50 ISE 的新功能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  38648d47-7c27-4b37-a40e-ad29948519c2
 ---
+
 # Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell® 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
 
 ## <a name="overview"></a>功能說明
 Windows PowerShell ISE 是一個主應用程式，可以讓您在圖形化與直覺式的環境中撰寫、執行及測試指令碼和模組。 語法著色、Tab 鍵自動完成、視覺化偵錯、Unicode 相容性和即時線上說明這類主要功能提供豐富的指令碼撰寫體驗。
 
-如需 Windows PowerShell ISE 的概觀，請參閱 [Windows PowerShell 整合式指令碼環境概觀](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671).
+如需 Windows PowerShell ISE 的概觀，請參閱 [Windows PowerShell Integrated Scripting Environment overview](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671) (Windows PowerShell 整合式指令碼環境 (ISE))。
 
 ## <a name="versions"></a>Windows PowerShell ISE 的新功能和變更功能
 下表列出 Windows PowerShell 中這版 Windows PowerShell ISE 的新功能和變更功能。
@@ -55,12 +58,12 @@ Intellisense 是屬於 Windows PowerShell ISE 一部分的自動完成協助功�
 
 **有哪些不同？**
 
-若要在 Windows PowerShell 3.0 或更新版本中使用程式碼片段，請按一下 [編輯] 功能表上的 [啟動程式碼片段]，或按 **Ctrl\-J**.
+若要在 Windows PowerShell 3.0 或更新版本中使用程式碼片段，請按一下 **[編輯]** 功能表上的 **[啟動片段]**，或按 **Ctrl-J**。
 
 ### <a name="BKMK_AddOnTools"></a>附加元件工具
 **PowerShell 3.0 的新功能**
 
-Windows PowerShell ISE 現在支援附加元件工具，這些工具是使用物件模型所新增的 Windows Presentation Foundation (WPF) 控制項。 附加元件工具可以顯示為主控台中的垂直或水平窗格。 窗格中的多個附加元件工具會顯示成一個索引標籤式控制項。 您也可以新增或移除非 Microsoft 合作廠商製作的附加元件工具。 如需如何匯入或移除附加元件工具的詳細資訊，請參閱 [Windows PowerShell ISE 作業](http://technet.microsoft.com/library/cc732148.aspx).
+Windows PowerShell ISE 現在支援附加元件工具，這些工具是使用物件模型所新增的 Windows Presentation Foundation (WPF) 控制項。 附加元件工具可以顯示為主控台中的垂直或水平窗格。 窗格中的多個附加元件工具會顯示成一個索引標籤式控制項。 您也可以新增或移除非 Microsoft 合作廠商製作的附加元件工具。 如需如何匯入或移除附加元件工具的詳細資訊，請參閱 [Windows PowerShell ISE 作業](http://technet.microsoft.com/library/cc732148.aspx)。
 
 **這個變更增加了什麼價值？**
 
@@ -77,7 +80,7 @@ Windows PowerShell ISE 3.0 和更新版本隨附 **Commands** 附加元件。 **
 
 Windows PowerShell ISE 現在每兩分鐘會自動在不同的位置儲存您未完成的指令碼。  如果 Windows PowerShell ISE 停止運作，或是作業系統重新啟動，則 Windows PowerShell ISE 在重新啟動之後，將會復原上一個工作階段中未完成的指令碼，即使該指令碼之前並未儲存也一樣。
 
-如果要變更自動儲存間隔，請在主控台窗格中執行下列命令：**$psise.Options.AutoSaveMinuteInterval**.
+若要變更自動儲存間隔，請在主控台窗格中執行下列命令：**$psise.Options.AutoSaveMinuteInterval**。
 
 **這個變更增加了什麼價值？**
 
@@ -92,7 +95,7 @@ Windows PowerShell ISE 2.0 不會在重新啟動的情況下自動儲存指令�
 
 Windows PowerShell ISE 現在具有最近使用之檔案的清單。 當您在 Windows PowerShell ISE 中開啟檔案時，該檔案會被新增至 [檔案] 功能表上的 [最近使用的清單]。
 
-若要變更最近使用清單中預設的檔案數目，請在主控台窗格中執行下列命令：**$psise.Options.MruCount**.
+若要變更最近使用清單中預設數目的檔案，請在主控台窗格中執行下列命令：**$psise.Options.MruCount**。
 
 **這個變更增加了什麼價值？**
 
@@ -148,7 +151,7 @@ Windows PowerShell ISE 2.0 具有個別的命令和輸出窗格。
 
 -   *-Help*：顯示 [說明] 視窗
 
--   *\-mta*：以多執行緒 Apartment 模式啟動 Windows PowerShell ISE。 Windows PowerShell ISE 的預設作業模式是單一執行緒 Apartment 模式，或 *-sta*。.
+-   *\-mta*：以多執行緒 Apartment 模式啟動 Windows PowerShell ISE。 Windows PowerShell ISE 的預設作業模式是單一執行緒 Apartment 模式，或 *-sta*。
 
 **這個變更增加了什麼價值？**
 
@@ -167,7 +170,7 @@ Windows PowerShell ISE 其他的編輯功能包括：
 
 -   **括號對稱** Windows PowerShell ISE 包括括號對稱和反白顯示，而且可以透過下列方式使用：(例如，如果已選取左括號，則使用 [移至相符項目] 命令或 **Ctrl \+ ]** 便能找到右括號)。
 
--   **大綱檢視** 指令碼窗格支援大綱功能，按一下左邊界的加號或減號，即允許摺疊或展開程式碼區段。 您可以使用括號或 **#region** 與 **#endregion** 標記，標示可摺疊區段的開頭或結尾。 若要展開或摺疊所有區域，請按 **Ctrl \+ M**.
+-   **大綱檢視** 指令碼窗格支援大綱功能，按一下左邊界的加號或減號，即允許摺疊或展開程式碼區段。 您可以使用括號或 **#region** 與 **#endregion** 標記，標示可摺疊區段的開頭或結尾。 若要展開或摺疊所有區域，請按 **Ctrl + M**。
 
 -   **拖放文字編輯**Windows PowerShell ISE 現在支援拖放文字編輯。 您可以選取任何文字區塊，並將該文字拖曳到編輯器或主控台中的其他位置來移動文字。 如果您在拖曳選取的文字時按住 Ctrl 鍵，則放開滑鼠按鈕時，會將文字複製到新位置。 在此版本及舊版的 Windows PowerShell ISE 中，當您將檔案拖放到 Windows PowerShell ISE 上時，Windows PowerShell ISE 便會開啟該檔案。
 
@@ -177,7 +180,7 @@ Windows PowerShell ISE 其他的編輯功能包括：
 
 -   **RTF 複製與貼上** 複製到 Windows PowerShell ISE 中的剪貼簿將會保留原始選取項目的字型、大小及色彩資訊。
 
--   **區塊選擇** 您可以在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵，或是按 **Alt\+Shift\+方向鍵**，來選取一個區塊的文字。.
+-   **區塊選擇** 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt+Shift+方向鍵**，就可以選取一個區塊的文字。
 
 **這個變更增加了什麼價值？**
 
@@ -190,7 +193,7 @@ Windows PowerShell ISE 2.0 沒有這些編輯增強功能。
 ### <a name="BKMK_NewHelpViewer"></a>新的說明檢視器視窗
 **PowerShell 3.0 的新功能**
 
-當您的游標在 Cmdlet 中或當您反白顯示 Cmdlet 的一部分時，如果按 **F1**，新的說明檢視器就會開啟有關反白顯示 Cmdlet 的即時線上說明。 如果要顯示「關於 Windows PowerShell 說明」，請在主控台窗格中輸入 **operators**，然後按 **F1**.
+當您的游標在 Cmdlet 中或當您反白顯示 Cmdlet 的一部分時，如果按 **F1**，新的說明檢視器就會開啟有關反白顯示 Cmdlet 的即時線上說明。 如果要顯示「關於 Windows PowerShell 」說明，請在主控台窗格中輸入 **operators**，然後按 **F1**。
 
 使用這項功能之前，請先從 Microsoft 網站下載最新版本的 Windows PowerShell 說明主題。 下載說明主題的最簡單方法是以系統管理員身分執行 Windows PowerShell ISE，並於主控台窗格中執行 **Update\-Help** Cmdlet。
 
@@ -225,6 +228,7 @@ Show\-Command 為 Windows PowerShell ISE 3.0 的新功能
 -   [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 
 -   [Script Center](http://technet.microsoft.com/scriptcenter/default)
+
 
 
 <!--HONumber=May16_HO2-->

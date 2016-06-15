@@ -1,3 +1,14 @@
+---
+title:  使用網頁型 Windows PowerShell 主控台
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  使用網頁型 Windows PowerShell 主控台
 
 更新日期︰2013 年 6 月 24 日
@@ -74,7 +85,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ------------------------------------------------------------------------
 
-您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;server\_name&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 ([以系統管理員身分執行]) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。).
+您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;server\_name&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
 
 ### 登入 Windows PowerShell Web 存取
 
@@ -94,15 +105,15 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>如果目的地電腦在工作群組中，請使用下列語法提供您的使用者名稱並登入電腦：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
+    <li><p>如果目的地電腦在工作群組中，請使用下列語法提供您的使用者名稱並登入電腦：&lt;<em>工作群組名稱</em>&gt;\&lt;<em>使用者名稱</em>&gt;。</p></li>
     <li><p>如果目的地電腦是閘道伺服器，您可以在 [電腦名稱]<strong></strong> 欄位中指定 <strong>localhost</strong>。</p></li>
-    <li><p>如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組中，您可以使用 [電腦名稱]<strong></strong> 欄位中的 <strong>localhost</strong>，但不要使用 [使用者名稱]<strong></strong> 欄位中的 localhost\&lt;<em>user_name</em>&gt;。 您必須使用 &lt;<em>workgroup name</em>&gt;\&lt;<em>user_name</em>&gt;.</p></li>
+    <li><p>如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組中，您可以使用 [電腦名稱]<strong></strong> 欄位中的 <strong>localhost</strong>，但不要使用 [使用者名稱]<strong></strong> 欄位中的 localhost\&lt;<em>user_name</em>&gt;。 您必須使用 &lt;<em>工作群組名稱</em>&gt;\&lt;<em>使用者名稱</em>&gt;。</p></li>
     </ul></td>
     </tr>
     </tbody>
     </table>
 
-3.  [選用連線設定] 區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession Cmdlet 說明](https://technet.microsoft.com/library/dd315384.aspx).
+3.  [選用連線設定] 區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](https://technet.microsoft.com/library/dd315384.aspx)。
 
     一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定] 區段，然後提供替代的認證。 否則，請前往步驟 6。
 
@@ -110,7 +121,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 5.  請保留 [驗證類型] 設為 [預設]，除非 Windows PowerShell Web 存取系統管理員指示您不要保留。
 
-6.  按一下 [登入].
+6.  按一下 **[登入]**。
 
 <a href="" id="BKMK_timeout"></a>
 
@@ -129,7 +140,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   在相同的瀏覽器工作階段或相同瀏覽器工作階段的新索引標籤中，嘗試登入以管理不同的遠端電腦。 (這在閘道伺服器執行 Windows Server 2012 R2 時並不適用；Windows Server 2012 R2 上執行的 Windows PowerShell Web 存取不允許在相同的瀏覽器工作階段中有多個使用者工作階段。)如需如何在相同電腦上使用多個使用中工作階段的詳細資訊，請參閱本主題[網頁型主控台的限制](#BKMK_limits)一節中的＜同時連線多部目標電腦＞。
 
--   工作階段 20 分鐘沒有活動。 閘道系統管理員可以自訂沒有活動的逾時期間；如需詳細資訊，請參閱[工作階段管理](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt).
+-   工作階段 20 分鐘沒有活動。 閘道系統管理員可以自訂沒有活動的逾時期間；如需詳細資訊，請參閱[工作階段管理](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt)。
 
     -   如果您因為網路錯誤或其他非計劃中的關機或失敗 (而不是因為您自己關閉了工作階段) 從 Web 型主控台中斷工作階段的連線，Windows PowerShell Web 存取工作階段將繼續執行且連線到目標電腦，直到用戶端的逾時期間結束為止。 根據預設，此逾時期限是 20 分鐘，由閘道管理員所設定。 工作階段會在預設的 20 分鐘或閘道系統管理員所指定的逾時期間之後中斷連線，視何者較短而定。
 
@@ -304,7 +315,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     -   使用 Cmdlet 變更主控台視窗的高度及寬度
 
-        Windows PowerShell Web 存取的主控台視窗可以使用 Cmdlet 來設定，如下所示。 在下列範例中，使用者將 Windows PowerShell Web 存取主控台的寬度變更為 **20**.
+        Windows PowerShell Web 存取的主控台視窗可以使用 Cmdlet 來設定，如下所示。 在下列範例中，使用者將 Windows PowerShell Web 存取主控台的寬度變更為 **20**。
 
         [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_778d5e55-9195-4bd7-b313-d1fbca7876e4'); "複製到剪貼簿。")
 
@@ -317,7 +328,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
         您可以類似的方式變更主控台的高度。
 
-        您可以在 [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)中找到自訂主控台檢視的其他範例。.
+        您可以在 [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)中找到自訂主控台檢視的其他範例。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -328,28 +339,24 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 [Microsoft TechNet 上的 Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
 [TechNet 指令碼中心存放庫](http://gallery.technet.microsoft.com/scriptcenter)
 [指令碼中心 - Hi，Scripting Guy！部落格](https://technet.microsoft.com/scriptcenter)
-[Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)
+[Windows PowerShell Team Blog](http://blogs.msdn.com/b/powershell/) (Windows PowerShell 小組部落格)
 
 <span>顯示︰</span> 繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
-是
-否
+是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩餘 1500</span> 個字元</span>
-提交
-請跳過此項
+<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
 
-<span class="stdr-thankyou">感謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
+<span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
 [管理您的設定檔](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 網站意見反應</a>
-網站意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -382,6 +389,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->

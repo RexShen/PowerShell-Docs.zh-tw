@@ -1,3 +1,14 @@
+---
+title:  PowerShell 的最新消息
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell 的最新消息
 Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
 
@@ -16,6 +27,7 @@ Windows PowerShell 5.0 預設已安裝於 Windows Server® 2016 Technical Previe
 
 -   New features in Windows PowerShell 3.0
 -->
+
 
 
 <!--HONumber=May16_HO2-->

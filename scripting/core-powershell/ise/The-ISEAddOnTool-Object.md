@@ -1,12 +1,15 @@
 ---
-title: ISEAddOnTool 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
+title:  ISEAddOnTool 物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 ---
+
 # ISEAddOnTool 物件
   **ISEAddonTool** 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。 **命令**工具即為一例，您可以依序按一下 [檢視] 和 [顯示命令附加元件] 來顯示此工具。 您接著可以藉由操作各種可用的 **ISEAddOnTool** 物件來存取此工具。
 
@@ -165,6 +168,7 @@ Commands
  [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
  [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md)
  [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
+
 
 
 <!--HONumber=May16_HO2-->

@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell 系統需求
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title:  Windows PowerShell 系統需求
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 # Windows PowerShell 系統需求
 本主題列出 Windows PowerShell 3.0 和 Windows PowerShell 4.0 及特殊功能 (如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令和工作流程) 的系統需求。
 
@@ -74,7 +77,7 @@ Windows PowerShell 是不需要圖形化使用者介面的主控台應用程式�
 
     1.  [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 的 **ShowWindow** 參數。
 
-    2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 和 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet 的 **ShowSecurityDescriptorUi** 參數。
+    2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 的 **ShowSecurityDescriptorUI** 參數和 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet。
 
 ## Windows PowerShell 引擎需求
 Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Windows PowerShell 2.0。 針對 Windows PowerShell 2.0 和 Windows PowerShell 3.0 撰寫的 Cmdlets、提供者、嵌入式管理單元、模組及指令碼，在 Windows PowerShell 4.0 中仍以同樣方式執行。
@@ -83,7 +86,7 @@ Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Wi
 
 Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足這項需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足這項需求。
 
-如需新增或安裝 Windows PowerShell 2.0 引擎以及新增或安裝所需 Microsoft .NET Framework 版本的資訊，請參閱[安裝 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)。 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md).
+如需新增或安裝 Windows PowerShell 2.0 引擎以及新增或安裝所需 Microsoft .NET Framework 版本的資訊，請參閱[安裝 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)。 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
 ## Windows 預先安裝環境
 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能在 Windows 預先安裝環境 (Windows PE) 中執行。 不過，不支援下列 Cmdlet。
@@ -92,7 +95,7 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能�
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent[PSITPro5_Diagnostic]](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+-   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
 -   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
@@ -102,8 +105,10 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能�
 
 ## 另請參閱
 [開始使用 Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+
 [安裝 Windows PowerShell](Installing-Windows-PowerShell.md)
-[啟動 Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+
+[啟動 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 

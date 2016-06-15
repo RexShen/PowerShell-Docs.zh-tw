@@ -1,12 +1,15 @@
 ---
-title: ISEFile 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+title:  ISEFile 物件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ---
+
 # ISEFile 物件
   **ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 類別的執行個體。 本主題列出其成員方法和成員屬性。 **$psISE.CurrentFile** 以及 PowerShell 索引標籤上檔案集合中的檔案就是 Microsoft.PowerShell.Host.ISE.ISEFile 類別的所有執行個體。
 
@@ -17,8 +20,8 @@ ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
  將檔案儲存至磁碟。
 
- **[saveEncoding]** – 選擇性的 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**.
+ **[saveEncoding]** – 選擇性 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
 
  **例外狀況**
  -   **System.IO.IOException**︰無法儲存檔案。
@@ -41,11 +44,10 @@ $myfile.Encoding
 
  使用指定的檔案名稱和編碼方式來儲存檔案。
 
- **filename** - 字串
- 要用來儲存檔案的名稱。
+ **filename** - 字串：要用來儲存檔案的名稱。
 
- **[saveEncoding]** – 選擇性的 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**.
+ **[saveEncoding]** – 選擇性 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
 
  **例外狀況**
  -   **System.ArgumentNullException**：**filename** 參數為 Null。

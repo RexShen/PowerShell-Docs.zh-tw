@@ -1,3 +1,14 @@
+---
+title:  解除安裝 Windows PowerShell Web 存取
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  解除安裝 Windows PowerShell Web 存取
 
 更新日期︰2013 年 6 月 24 日
@@ -10,7 +21,7 @@
 
 ------------------------------------------------------------------------
 
-從閘道伺服器解除安裝 Windows PowerShell Web 存取之前，請執行 <span class="code">Uninstall-PswaWebApplication</span> Cmdlet 移除網站及 Windows PowerShell Web 存取 Web 應用程式，或者使用 IIS 管理員程序，[藉由 IIS 管理員刪除 Windows PowerShell Web 存取網站及 Web 應用程式](#BKMK_delsite).
+從閘道伺服器解除安裝 Windows PowerShell Web 存取之前，請執行 <span class="code">Uninstall-PswaWebApplication</span> Cmdlet 來移除網站及 Windows PowerShell Web 存取 Web 應用程式，或者使用 IIS 管理員程序，[藉由 IIS 管理員刪除 Windows PowerShell Web 存取網站及 Web 應用程式](#BKMK_delsite)。
 
 解除安裝 Windows PowerShell Web 存取不會解除安裝 IIS 或自動安裝的任何其他功能，因為 Windows PowerShell Web 存取需要這些功能才能執行。 解除安裝程序會保留與 Windows PowerShell Web 存取相依的功能；您可以視需要個別解除安裝這些功能。
 
@@ -35,9 +46,9 @@
 
     -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]。
 
-    -   在 Windows [開始] 畫面上，按一下 [Windows PowerShell].
+    -   在 Windows **[開始]** 畫面上，按一下 **[Windows PowerShell]**。
 
-2.  輸入 **Uninstall-PswaWebApplication**，然後按 **Enter** 鍵.
+2.  輸入 **Uninstall-PswaWebApplication**，然後按 **Enter**。
 
 3.  如果您正在使用測試憑證，請新增 <span class="code">DeleteTestCertificate</span> 參數到此 Cmdlet，如以下範例所示。
 
@@ -55,9 +66,9 @@
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。 如果已經開啟工作階段，請移至下一個步驟。
 
-    -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]，然後按一下 [以系統管理員身分執行].
+    -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-    -   在 Windows [開始] 畫面上，以滑鼠右鍵按一下 [Windows PowerShell]，然後按一下 [以系統管理員身分執行].
+    -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
 2.  輸入下列命令，然後按 **Enter**，其中 *computer\_name* 代表要移除 Windows PowerShell Web 存取的遠端伺服器。 如果移除時需要，<span class="code">–Restart</span> 參數會自動重新啟動目的地伺服器。
 
@@ -90,15 +101,15 @@
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。 如果已經開啟，請移至下一個步驟。
 
-    -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 [工具] 功能表上，按一下 [Internet Information Services (IIS) 管理員].
+    -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
 
     -   在 Windows [開始] 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式] 結果時，按一下該捷徑。
 
 2.  在 [IIS 管理員] 樹狀目錄窗格中，選取正在執行 Windows PowerShell Web 存取 Web 應用程式的網站。
 
-3.  在 [動作] 窗格的 [管理網站] 下，按一下 [停止].
+3.  在 **[動作]** 窗格的 **[管理網站]** 下，按一下 **[停止]**。
 
-4.  在樹狀目錄窗格中，以滑鼠右鍵按一下正在執行 Windows PowerShell Web 存取 Web 應用程式之網站中的 Web 應用程式，然後按一下 [移除].
+4.  在樹狀目錄窗格中，以滑鼠右鍵按一下正在執行 Windows PowerShell Web 存取 Web 應用程式之網站中的 Web 應用程式，然後按一下 **[移除]**。
 
 5.  在樹狀目錄窗格中，選取 [應用程式集區]，選取 Windows PowerShell Web 存取應用程式集區資料夾，按一下 [動作] 窗格中的 [停止]，然後按一下內容窗格中的 [移除]。
 
@@ -132,17 +143,17 @@
 
     -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。
 
-    -   在 Windows [開始] 畫面上，按一下 [伺服器管理員].
+    -   在 Windows **[開始]** 畫面上，按一下 **[伺服器管理員]**。
 
-2.  在 [管理] 功能表上，按一下 [移除角色及功能].
+2.  在 **[管理]** 功能表上，按一下 **[移除角色及功能]**。
 
-3.  在 [選取目的地伺服器] 頁面上，選取您想要從中移除功能的伺服器或離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 選取目的地伺服器之後，按一下 [下一步].
+3.  在 [選取目的地伺服器] 頁面上，選取您想要從中移除功能的伺服器或離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 選取目的地伺服器之後，按一下 **[下一步]**。
 
 4.  再按一下 [下一步]，跳至 [移除功能] 頁面。
 
-5.  取消選取 [Windows PowerShell Web 存取] 核取方塊，然後按 [下一步].
+5.  取消選取 **[Windows PowerShell Web 存取]** 核取方塊，然後按一下 **[下一步]**。
 
-6.  在 [確認移除選項] 頁面上，按一下 [移除].
+6.  在 **[確認移除選項]** 頁面上，按一下 **[移除]**。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -155,23 +166,19 @@
 <span>顯示︰</span> 繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
-是
-否
+是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩餘 1500</span> 個字元</span>
-提交
-請跳過此項
+<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
 
-<span class="stdr-thankyou">感謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
+<span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
 [管理您的設定檔](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 網站意見反應</a>
-網站意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -204,6 +211,7 @@
 
 連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->
