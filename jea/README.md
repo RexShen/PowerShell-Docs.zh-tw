@@ -55,13 +55,13 @@ PowerShell 角色功能檔案 (.psrc) 定義屬於某個角色的使用者能夠
 
 ### 探索體驗指南
 準備好建立您的第一個 JEA 端點嗎？
-查看 [JEA 體驗指南](./JEA Guide.md)以了解如何撰寫、部署及使用您自己 JEA 端點。
+請參閱 [JEA Experience Guide](jea-uide.md) (JEA 體驗指南)，了解如何撰寫、部署及使用您專屬的 JEA 端點。
 該指南可讓您快速地開始使用預先建置的 JEA 端點，以了解使用者體驗，然後逐步引導您從頭開始重新建立端點，以協助說明工作階段設定和角色功能。
 
 ### 開始撰寫您自己的 JEA 端點
 撰寫 JEA 端點很容易，您只需要啟用 JEA 的系統和文字編輯器 (例如 PowerShell ISE)。
 一個實用的入門秘訣是使用 `New-PSRoleCapabilityFile -Path <path>` 和 `New-PSSessionCapabilityFile -Path <Path>`但不提供任何其他引數來建立基本架構檔案。
-這些基本架構檔案包含所有適用的設定欄位，以及說明每個欄位可能用途的實用註解。 
+這些基本架構檔案包含所有適用的設定欄位，以及說明每個欄位可能用途的實用註解。
 
 若要更輕鬆地撰寫 JEA 端點，請參閱 [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)，其提供可用來撰寫工作階段設定檔和角色功能檔案的 GUI。
 甚至支援根據 PowerShell 記錄檔產生角色功能，讓您一開始就有使用者為完成工作所經常執行的命令。
