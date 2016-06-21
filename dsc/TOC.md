@@ -30,10 +30,10 @@
 #### [C 的 MOF 型資源#](authoringResourceMofCS.md)
 ### [類別式自訂資源](authoringResourceClass.md)
 ### [複合資源](authoringResourceComposite.md)
-### [偵錯 DSC 資源](debugResource.md)
-### [直接呼叫 DSC 資源方法](directCallResource.md)
 ### [撰寫單一執行個體 DSC 資源 (最佳做法)](singleInstance.md)
 ### [資源撰寫檢查清單](resourceAuthoringChecklist.md)
+## [偵錯 DSC 資源](debugResource.md)
+## [直接呼叫 DSC 資源方法](directCallResource.md)
 
 # [設定本機設定管理員 (LCM)](metaConfig.md)
 ## [在 PowerShell 4.0 中設定 LCM](metaConfig4.md)
@@ -91,6 +91,6 @@
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
