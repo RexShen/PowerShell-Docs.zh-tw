@@ -15,7 +15,7 @@ ms.prod:  powershell
 
 您可以在 DSC 設定中，以註解方式呈現說明。 使用者可以呼叫設定函數加上 `-?`，或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) Cmdlet 存取說明。 如需如何在 PowerShell 中，以註解方式呈現說明的詳細資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。
 
-下列範例顯示的指令碼包含兩種設定，每種設定都以註解方式呈現說明︰
+下列範例顯示包含設定的指令碼及其註解說明︰
 
 ```powershell
 <#
@@ -27,7 +27,7 @@ A brief description of the function or script. This keyword can be used only onc
 A detailed description of the function or script. This keyword can be used only once for each configuration.
 
 
-.PARAMETER computername
+.PARAMETER ComputerName
 The description of a parameter. Add a .PARAMETER keyword for each parameter in the function or script syntax.
 
 Type the parameter name on the same line as the .PARAMETER keyword. Type the parameter description on the lines following the .PARAMETER keyword. 
@@ -37,7 +37,7 @@ The description can include paragraph breaks.
 The Parameter keywords can appear in any order in the comment block, but the function or script syntax determines the order in which the parameters 
 (and their descriptions) appear in help topic. To change the order, change the syntax.
 
-.PARAMETER filePath
+.PARAMETER FilePath
 Provide a PARAMETER section for each parameter that your script or function accepts.
 
 .EXAMPLE
@@ -50,7 +50,7 @@ This example will be labeled "EXAMPLE 2" when help is displayed to the user.
 
 configuration HelpSample1
 {
-    param([string]$computername,[string]$filePath)
+    param([string]$ComputerName,[string]$FilePath)
     File f
     {
         Contents="Hello World"
@@ -74,8 +74,8 @@ SYNOPSIS
     
     
 SYNTAX
-    HelpSample1 [[-InstanceName] <String>] [[-DependsOn] <String[]>] [[-OutputPath] <String>] [[-ConfigurationData] <Hashtable>] [[-computername] 
-    <String>] [[-filePath] <String>] [<CommonParameters>]
+    HelpSample1 [[-InstanceName] <String>] [[-DependsOn] <String[]>] [[-OutputPath] <String>] [[-ConfigurationData] <Hashtable>] [[-ComputerName] 
+    <String>] [[-FilePath] <String>] [<CommonParameters>]
     
     
 DESCRIPTION
@@ -95,6 +95,6 @@ REMARKS
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 

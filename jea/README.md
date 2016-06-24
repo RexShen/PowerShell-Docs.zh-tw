@@ -6,7 +6,7 @@ Just Enough Administration (JEA) 是安全性技術，允許將可透過 PowerSh
 - 透過 "Over The Shoulder" 文字記錄，顯示使用者在工作階段期間實際執行的命令，以**深入了解使用者正在執行的工作**。
 
 為何重要？
-假設在常見的情況下，您的 DNS 伺服器會與 Active Directory 網域控制站共置。
+假設在一般情況下，您的 DNS 伺服器會與 Active Directory 網域控制站共置。
 您的 DNS 系統管理員必須具有本機系統管理員權限，才能修正 DNS 伺服器的問題，但若要這樣做，您必須將其設為具有高度權限之 "Domain Admins" 安全性群組的成員。
 這能有效地讓他們控制您的整個網域，並存取該電腦上的所有資源。
 
@@ -67,6 +67,6 @@ PowerShell 角色功能檔案 (.psrc) 定義屬於某個角色的使用者能夠
 甚至支援根據 PowerShell 記錄檔產生角色功能，讓您一開始就有使用者為完成工作所經常執行的命令。
 
 
-<!--HONumber=Jun16_HO1-->
+<!--HONumber=Jun16_HO3-->
 
 

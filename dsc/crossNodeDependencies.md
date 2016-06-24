@@ -23,7 +23,7 @@ DSC 提供特殊的資源 **WaitForAll**、**WaitForAny** 與 **WaitForSome**，
 
 若要使用 **WaitForXXXX** 資源，需要建立指定要等候之 DSC 資源與節點的該資源類型資源區塊。 然後使用 **DependsOn** 屬性 (在設定中的任一其他資源區塊中)，等候 **WaitForXXXX** 節點內指定的條件成功。
 
-例如，在下列設定中，目標節點正在等候 **xADDomain** 資源以 30 在 **MyDC** 節點上用 15 秒的間隔完成，之後目標節點才能加入網域。
+例如，在下列設定中，目標節點正在等候 **xADDomain** 資源在 **MyDC** 節點上在 15 秒的間隔內最多重試 30 次完成，之後目標節點才能加入網域。
 
 ```PowerShell
 Configuration JoinDomain
@@ -46,14 +46,14 @@ Configuration JoinDomain
         {
             Name             = 'MyPC'
             DomainName       = 'Contoso.com'
-            Credential       = (get-credential)
+            Credential       = (Get-Credential)
             DependsOn        ='[WaitForAll]DC'
         }
     }
 }
 ```
 
->**注意︰**WaitForXXX 資源預設會嘗試一次，然後才會失敗。 雖然並非必要，但通常要指定重試間隔與計數。
+>**注意︰**根據預設，WaitForXXX 資源會嘗試一次，然後才失敗。 雖然並非必要，但通常要指定重試間隔與計數。
 
 ## 另請參閱
 * [DSC 設定](configurations.md)
@@ -62,6 +62,6 @@ Configuration JoinDomain
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
