@@ -41,4 +41,8 @@ Windows PowerShell ISE 現在可讓您執行 PSEdit 命令，在遠端工作階�
 您現在可以附加至已載入 Windows PowerShell 的任何電腦處理程序。 方法是：進入有此處理程序的互動式工作階段，類似執行 Enter-PSSession Cmdlet 進入互動遠端工作階段的方式：
 
 -   Enter-PSHostProcess
--   Exit-PSHostProcess<!--HONumber=Mar16_HO2-->
+-   Exit-PSHostProcess
+
+<!--HONumber=Jun16_HO4-->
+
+

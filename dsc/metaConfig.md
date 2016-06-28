@@ -1,12 +1,16 @@
 ---
-title:   設定本機設定管理員
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "設定本機設定管理員"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 901cf8190252ac344182bf49d550a8adade559a0
+ms.openlocfilehash: c66b8d6abf4886143f71c0de823cbfde86d875ba
+
 ---
 
 # 設定本機設定管理員
@@ -162,6 +166,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

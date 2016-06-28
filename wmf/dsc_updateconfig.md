@@ -2,6 +2,7 @@
 
 新的 Update-DscConfiguration Cmdlet 觸發在中繼設定中定義的提取伺服器提取。 此行為通常稱為「現在提取」。 
 
+
 一旦觸發，提取行為會和在一般的頻率期間觸發時完全相同︰
 
 1. 目前設定的總和檢查碼會和在提取伺服器上設定的總和檢查碼比較。 
@@ -29,4 +30,8 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-WhatIf] 
                             [-Confirm] 
                             [<CommonParameters>]
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

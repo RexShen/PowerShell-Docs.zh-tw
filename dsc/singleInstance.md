@@ -1,12 +1,16 @@
 ---
-title:   撰寫單一執行個體 DSC 資源 (最佳做法)
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "撰寫單一執行個體 DSC 資源 (最佳做法)"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
+
 ---
 
 # 撰寫單一執行個體 DSC 資源 (最佳做法)
@@ -48,8 +52,7 @@ Configuration SetTimeZone
 
 原因是 DSC 資源金鑰的運作方式。 資源必須至少有一個金鑰屬性。 如果資源的所有金鑰屬性值組合皆為唯一，則會將資源執行個體視為唯一。 在其先前實作中，[xTimeZone](https://github.com/PowerShell/xTimeZone) 資源只有一個屬性 (**TimeZone**)，而這個屬性必須是金鑰。 因此，上述這類設定會編譯並執行，而不發出警告。 每個 **xTimeZone** 資源區塊都視為唯一的。 這會導致將設定重複套用至節點，方法是反覆循環時區。
 
-若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。 
-已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。 資源的舊 MOF 結構描述為︰
+若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。 已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。 資源的舊 MOF 結構描述為︰
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -225,6 +228,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
    
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

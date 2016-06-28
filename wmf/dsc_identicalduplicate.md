@@ -84,4 +84,8 @@ Configuration WebApplication
 }
 ```
 
-此非常類似的設定將會失敗，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 資源不再相同，因此發生衝突。<!--HONumber=Mar16_HO2-->
+此非常類似的設定將會失敗，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 資源不再相同，因此發生衝突。
+
+<!--HONumber=Jun16_HO4-->
+
+
