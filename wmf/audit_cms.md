@@ -17,7 +17,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 CMS 加密標準實作公開金錀密碼編譯，這裡用於加密內容的金錀 (*公開金錀*) 和用於解密內容的金錀 (*私密金鑰*) 是分開的。
 
-公開金鑰可以廣泛共用，並非機密資料。 如有任何內容以此公開金鑰加密，只有您的私密金鑰可以解密。 如需公開金鑰密碼編譯的詳細資訊，請參閱︰<http://en.wikipedia.org/wiki/Public-key_cryptography>。
+公開金鑰可以廣泛共用，並非機密資料。 如有任何內容以此公開金鑰加密，只有您的私密金鑰可以解密。 如需公開金鑰加密的詳細資訊，請參閱︰<http://en.wikipedia.org/wiki/Public-key_cryptography>。
 
 為能在 PowerShell 中辨識，加密憑證需要唯一的金鑰使用方法識別碼 (EKU) 來辨識其為資料加密憑證 (就像「程式碼簽署」、「加密郵件」的識別碼一樣)。
 
@@ -81,4 +81,8 @@ Hello World
 
 ```powershell
 dir -DocumentEncryptionCert
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

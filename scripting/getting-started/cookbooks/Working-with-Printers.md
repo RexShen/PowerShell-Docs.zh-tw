@@ -1,13 +1,17 @@
 ---
-title:  使用印表機
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  4f29ead3-f83b-4706-ac3e-f2154ff38dc5
+title: "使用印表機"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 27d3d11b71b95cd79817449cf8bdb1a0a26936bd
+
 ---
 
 # 使用印表機
@@ -57,6 +61,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

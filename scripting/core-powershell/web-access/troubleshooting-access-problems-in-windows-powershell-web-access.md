@@ -1,12 +1,16 @@
 ---
-title:  為 Windows PowerShell Web 存取中的存取問題進行疑難排解
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: "為 Windows PowerShell Web 存取中的存取問題進行疑難排解"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6366ec9c49f721b758b6a520f68cf2b3c5ee0caf
+
 ---
 
 #  疑難排解 Windows PowerShell Web 存取中的存取問題
@@ -65,7 +69,7 @@ ms.prod:  powershell
 </tr>
 <tr class="odd">
 <td><p>無法連線到遠端工作群組電腦</p></td>
-<td><p>如果目的電腦是工作群組的成員，請使用下列語法提供您的使用者名稱並登入電腦：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
+<td><p>如果目的地電腦是工作群組的成員，請使用下列語法提供您的使用者名稱並登入電腦：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p>即使已安裝角色，仍找不到網頁伺服器 (IIS) 管理工具</p></td>
@@ -139,7 +143,7 @@ ms.prod:  powershell
 
 [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 [使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-[about_Remote_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
+[about\_Remote\_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
 
 <span>顯示︰</span> 繼承受保護的
 
@@ -192,6 +196,7 @@ ms.prod:  powershell
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

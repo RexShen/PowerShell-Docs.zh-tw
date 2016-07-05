@@ -1,19 +1,22 @@
 ---
-title:   資源撰寫檢查清單
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "資源撰寫檢查清單"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: bd6af2cbf746e71aa59f509eae14664e647a1b05
+
 ---
 
 # 資源撰寫檢查清單
 此檢查清單是撰寫新 DSC 資源時的最佳做法清單
 ## 資源模組包含各項資源的 .psd1 檔案和 schema.mof 
-您首先要做的是檢查資源有沒有正確的結構，是否包含所有必要的檔案。 每個資源模組都應該包含 .psd1 檔案，且每個非複合資源都應該有 schema.mof 檔案。 **Get-DscResource** 不會列出不包含結構描述的資源，使用者也不能在撰寫針對 ISE 這些模組的程式碼時，使用 IntelliSense。 
-xRemoteFile 資源的範例目錄結構，是 xPSDesiredStateConfiguration 資源模組的一部分，看起來可能像這樣︰
+您首先要做的是檢查資源有沒有正確的結構，是否包含所有必要的檔案。 每個資源模組都應該包含 .psd1 檔案，且每個非複合資源都應該有 schema.mof 檔案。 **Get-DscResource** 不會列出不包含結構描述的資源，使用者也不能在撰寫針對 ISE 這些模組的程式碼時，使用 IntelliSense。 xRemoteFile 資源的範例目錄結構，是 xPSDesiredStateConfiguration 資源模組的一部分，看起來可能像這樣︰
 
 
 ```
@@ -32,8 +35,7 @@ xPSDesiredStateConfiguration
 ```
 
 ## 資源和結構描述正確，並已使用 DscResourceDesigner Cmdlet 驗證 ##
-另一個重要的層面是驗證資源結構描述 (*.schema.mof) 檔案。 
-請確認︰
+另一個重要的層面是驗證資源結構描述 (*.schema.mof) 檔案。 請確認︰
 -   屬性類型正確 (例如，接受數值的屬性不使用字串，應改用 UInt32 或其他數值類型)
 -   已正確指定屬性 (property) 屬性 (attribute) ([key]、[required]、[write]、[read])
 
@@ -126,8 +128,7 @@ Get-TargetResource 應該傳回資源目前狀態的詳細資料。 請確定以
 
 ## 已使用 **Start-DscConfiguration** 端對端驗證過資源 ##
 
-以直接呼叫的方式測試這些 **Get/Set/Test-TargetResource** 函式很重要，但並非所有的問題都能以這種方式發現。 測試重點應該放在使用 **Start-DscConfiguration** 或提取伺服器上。 事實上，這就是使用者使用資源的方法，所以請勿低估這種測試的重要性。 
-可能有的問題類型：
+以直接呼叫的方式測試這些 **Get/Set/Test-TargetResource** 函式很重要，但並非所有的問題都能以這種方式發現。 測試重點應該放在使用 **Start-DscConfiguration** 或提取伺服器上。 事實上，這就是使用者使用資源的方法，所以請勿低估這種測試的重要性。 可能有的問題類型：
 -   因為 DSC 代理程式以服務方式執行，所以認證/工作階段的行為可能不同。  請務必在此端對端測試所有功能。
 -   確認資源顯示的錯誤訊息是有意義的。 例如，**Start-DscConfiguration** 輸出的錯誤，和直接呼叫 **Set-TargetResource** 函式所顯示的錯誤可能不同。
 
@@ -179,8 +180,7 @@ configuration Sample_xRemoteFile_DownloadFile
     }
 } 
 ```
--   包含這樣一種 (註解化) 範例：如何呼叫在範例指令碼結尾有實際值的設定，是個不錯的做法。 
-例如，在上述的設定中，以下做法明顯不是對所有使用者而言的最佳方式，指定 UserAgent 為：
+-   包含這樣一種 (註解化) 範例：如何呼叫在範例指令碼結尾有實際值的設定，是個不錯的做法。 例如，在上述的設定中，以下做法明顯不是對所有使用者而言的最佳方式，指定 UserAgent 為：
 
 `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`  
 這就是我們應該包含註解與設定執行範例的原因︰
@@ -208,8 +208,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 ## 記錄檔訊息容易了解且提供資訊 (包括 –verbose、–debug 和 ETW 記錄檔) ##
 請確保資源輸出的記錄檔容易了解並向使用者提供值。 資源應該要輸出所有對使用者可能有幫助的資訊，但記錄愈多不一定愈好。 您應該避免備援以及輸出不提供附加價值的資料 – 不要讓使用者翻找數百筆記錄後才找到自己要找的。 當然，全無記錄檔也不是這個問題可以接受的解決方案。 
 
-測試時，您也應該要分析詳細資訊和偵錯記錄 (方法是正確執行 **Start-DscConfiguration** 與 -verbose 和 -debug 參數) 以及 ETW 記錄。 若要查看 DSC ETW 記錄檔，請移至 [事件檢視器] 並開啟下列資料夾︰[應用程式及服務] - [Microsoft] - [Windows] - [預期狀態設定]。  預設會有操作通道，但請確定啟用分析與偵錯通道 (必須在執行設定前執行)。 
-若要啟用分析/偵錯通道，您可以執行下列指令碼︰
+測試時，您也應該要分析詳細資訊和偵錯記錄 (方法是正確執行 **Start-DscConfiguration** 與 -verbose 和 -debug 參數) 以及 ETW 記錄。 若要查看 DSC ETW 記錄檔，請移至 [事件檢視器] 並開啟下列資料夾︰[應用程式及服務] - [Microsoft] - [Windows] - [預期狀態設定]。  預設會有操作通道，但請確定啟用分析與偵錯通道 (必須在執行設定前執行)。 若要啟用分析/偵錯通道，您可以執行下列指令碼︰
 ```powershell
 $statusEnabled = $true
 # Use "Analytic" to enable Analytic channel
@@ -256,14 +255,13 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 ## 已徹底測試資源功能 ##
 您要負責確定資源運作正確，因此請手動測試其功能，最好能撰寫自動化。 這份檢查清單包含要測試和/或經常遺漏的重要項目。 還有一些測試，主要是資源特定的功能測試，而這裡未提及。 別忘了反向測試案例。 這可能是資源測試最耗時的部分。 
 ## 最佳做法︰資源模組包含附有 ResourceDesignerTests.ps1 指令碼的測試資料夾 ##
-這是個不錯的做法：在資源模組內建立「測試」資料夾，建立 ResourceDesignerTests.ps1 檔案，並為指定模組中的所有資源加入使用 **Test-xDscResource** 和 **Test-xDscSchema** 的測試。 
-如此就可以快速驗證指定模組中所有資源的結構描述，並在發行前執行例行性檢查。
+這是個不錯的做法：在資源模組內建立「測試」資料夾，建立 ResourceDesignerTests.ps1 檔案，並為指定模組中的所有資源加入使用 **Test-xDscResource** 和 **Test-xDscSchema** 的測試。 如此就可以快速驗證指定模組中所有資源的結構描述，並在發行前執行例行性檢查。
 至於 xRemoteFile，ResourceTests.ps1 可能看起來這麼簡單：
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**最佳做法︰資源資料夾包含產生結構描述的資源設計工具指令碼**。每個資源都應該包含資源設計工具指令碼，它會產生資源的 MOF 結構描述。 這個檔案應該放在 <ResourceName>\ResourceDesignerScripts 且名為 Generate<ResourceName>Schema.ps1。至於 xRemoteFile 資源，這個檔案會稱為 GenerateXRemoteFileSchema.ps1 並包含︰
+**最佳做法︰資源資料夾包含產生結構描述的資源設計工具指令碼**。每個資源都應該包含資源設計工具指令碼，它會產生資源的 MOF 結構描述。 這個檔案應該置於 <ResourceName>\ResourceDesignerScripts，且命名為 Generate<ResourceName>Schema.ps1。若為 xRemoteFile 資源，這個檔案就會稱之為 GenerateXRemoteFileSchema.ps1 且包含︰
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -276,8 +274,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
 22 最佳做法︰資源支援 -whatif。如果您的資源正在執行「危險」作業，最好實作 -whatif 功能。 完成後，請確定 whatif 輸出會正確描述不使用 whatif 參數執行命令時，作業會發生的狀況。
-亦請確認當出現 –whatif 參數時不執行作業 (不會變更節點狀態)。 
-例如，假設現在要測試檔案資源。 以下的簡單設定會建立有內容 “test” 的檔案 “test.txt”：
+亦請確認當出現 –whatif 參數時不執行作業 (不會變更節點狀態)。 例如，假設現在要測試檔案資源。 以下的簡單設定會建立有內容 “test” 的檔案 “test.txt”：
 ```powershell
 configuration config
 {
@@ -317,11 +314,11 @@ VERBOSE: [X]: LCM:  [ End    Set      ]    in  0.1050 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
-這會結束我們的檢查清單。 請記住，這不是完整詳盡的清單，但涵蓋了許多我們在設計、開發和測試 DSC 資源時所遇到的重要問題。 檢查清單有助確保我們不忘記任何層面，事實上，我們自己在 Microsoft 開發 DSC 資源時也使用檢查清單。 
-如果您開發了用於撰寫和測試 DSC 資源的指導方針和最佳做法，請和大家分享！
+這會結束我們的檢查清單。 請記住，這不是完整詳盡的清單，但涵蓋了許多我們在設計、開發和測試 DSC 資源時所遇到的重要問題。 檢查清單有助確保我們不忘記任何層面，事實上，我們自己在 Microsoft 開發 DSC 資源時也使用檢查清單。 如果您開發了用於撰寫和測試 DSC 資源的指導方針和最佳做法，請和大家分享！
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

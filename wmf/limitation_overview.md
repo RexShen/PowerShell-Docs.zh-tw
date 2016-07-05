@@ -39,8 +39,7 @@ Set-ExecutionPolicy RemoteSigned
 如果同時使用 -LiteralPath 和 -Recurse 則 Get-ChildItem 無法運作
 --------------------------------------------------------------------------
 
-同時使用 -LiteralPath 和 -Recurse 時，如果目錄名稱包含無效的萬用字元，
-則 Get-ChildItem 將不會產生預期的結果。
+如果目錄名稱包含無效的萬用字元，在同時使用 -LiteralPath 和 -Recurse 時，Get-ChildItem 不會產生預期的結果。
 
 **解決方式︰**不理想，但目前的因應措施是在指令碼中實作遞迴，而不要依賴此 Cmdlet。
 
@@ -100,6 +99,6 @@ Sysprep 在安裝 WMF 5.0 之後失敗
 
 
 
-<!--HONumber=May16_HO1-->
+<!--HONumber=Jun16_HO4-->
 
 

@@ -98,4 +98,8 @@ Export-ODataEndpointProxy Cmdlet 和它產生的 Proxy Cmdlet，現在支援標�
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -16,6 +16,10 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 **注意：**`–ModuleVersion` 參數只能搭配 `–ModuleName` 參數一起使用。 它不能搭配僅以 `–Name` 參數作為名稱的資源名稱。
 
-在這之前，載入 DSC 資源時指定模組版本的唯一方法是使用模組規格物件，例如︰`–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
+在這之前，載入 DSC 資源時指定模組版本的唯一方法是使用模組規格物件，例如︰ `–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

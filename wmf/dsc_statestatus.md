@@ -26,9 +26,7 @@ LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽�
 | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
 ^
-S<sub>i</sub>︰一系列成功套用的資源
-F<sub>i</sub>︰一系列套用失敗的資源
-r︰需要重新開機的資源
+S<sub>i</sub>：成功套用的一系列資源；F<sub>i</sub>︰未成功套用的一系列資源；r：需要重新開機的資源
 \*
 
 ```powershell
@@ -105,4 +103,8 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

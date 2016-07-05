@@ -2,4 +2,8 @@
 
 [增強的轉譯選項](audit_transcript.md)
 [指令碼追蹤和記錄](audit_script.md)
-[密碼編譯訊息語法 (CMS) Cmdlet](audit_cms.md)<!--HONumber=Mar16_HO2-->
+[密碼編譯訊息語法 (CMS) Cmdlet](audit_cms.md)
+
+<!--HONumber=Jun16_HO4-->
+
+

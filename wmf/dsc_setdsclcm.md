@@ -1,6 +1,6 @@
 # Set-dsclocalconfigurationmanager Cmdlet 支援 -force 參數
 
-我們在 Set-dsclocalconfigurationmanager mdlet 中加入新參數的支援。 這可讓使用者決定重設在電腦上的中繼設定，因為當其他作業在背景執行時 (例如一致性檢查)，會導致所有執行的作業停止。
+我們在 Set-DscLocalConfigurationManager Cmdlet 中加入新參數的支援。 這可讓使用者決定重設在電腦上的中繼設定，因為當其他作業在背景執行時 (例如一致性檢查)，會導致所有執行的作業停止。
 
 嘗試不使用 –Force 參數設定中繼設定時，體驗看起來像這樣。
 ```powershell
@@ -35,4 +35,8 @@ VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \]
 VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \] in 0.1410 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.421 seconds.
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Jun16_HO4-->
+
+

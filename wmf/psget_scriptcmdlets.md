@@ -211,7 +211,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-您也可以使用 Get-Command –Name &lt;安裝的指令碼檔案名稱&gt; 取得它。 第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。
+您也可以使用 Get-Command –Name &lt;InstalledScriptFileName&gt; 取得它。 第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -676,4 +676,8 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 ```
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+
