@@ -1,13 +1,17 @@
 ---
-title:  關於 Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  979654ae-7994-47f8-be43-d79e7a140143
+title: "關於 Windows PowerShell"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: b990fb5c6855aaffeb241e9596c333014050e059
+
 ---
 
 # 關於 Windows PowerShell
@@ -20,12 +24,12 @@ Windows PowerShell 可讓您輕鬆搜尋它的功能。 例如，若要尋找可
 Get-Command *-Service
 ```
 
-搜尋到可完成工作的 Cmdlet 之後，即可使用 Get-Help Cmdlet 進一步了解此 Cmdlet。 例如，若要顯示 Get-Service Cmdlet 的說明，請輸入：
+搜尋到可完成工作的 Cmdlet 之後，即可使用 Get\-Help Cmdlet 進一步了解此 Cmdlet。 例如，若要顯示 Get\-Service Cmdlet 的說明，請輸入：
 
 ```
 Get-Help Get-Service
 ```
-多數 Cmdlet 皆會發出物件，此類物件可操作並轉譯成供顯示用的文字。 若要完全了解該 Cmdlet 的輸出，可將其輸出輸送至 Get-Member Cmdlet。 例如，下列命令會顯示 Get-Service Cmdlet 之物件輸出成員的相關資訊。
+多數 Cmdlet 皆會發出物件，此類物件可操作並轉譯成供顯示用的文字。 若要完全了解該 Cmdlet 的輸出，可將其輸出輸送至 Get\-Member Cmdlet。 例如，下列命令會顯示 Get\-Service Cmdlet 之物件輸出成員的相關資訊。
 
 ```
 Get-Service | Get-Member
@@ -34,9 +38,9 @@ Get-Service | Get-Member
 ## 一致性
 管理系統是一項複雜的工作，因此擁有一致介面的工具有助控制其中的複雜性。 可惜的是，不論命令列工具或可編寫指令碼的 COM 物件都不具有一致性。
 
-因此，Windows PowerShell 的一致性是非常寶貴的資產。 例如，如果您知道如何使用 Sort-Object Cmdlet，即可利用該知識來排序任何 Cmdlet 的輸出， 而不必去了解每個 Cmdlet 的不同排序常式。
+因此，Windows PowerShell 的一致性是非常寶貴的資產。 例如，如果您知道如何使用 Sort\-Object Cmdlet，即可利用該知識來排序任何 Cmdlet 的輸出。 而不必去了解每個 Cmdlet 的不同排序常式。
 
-此外，Cmdlet 開發人員也不需要設計其 Cmdlet 的排序功能。 Windows PowerShell 提供具有基本功能的架構，可強制讓介面的許多方面保持一致。 雖然開發人員針對此架構少了一些選擇權，但是這個架構可讓他們更輕鬆開發出強固和易於使用 Cmdlet。
+此外，Cmdlet 開發人員也不需要設計其 Cmdlet 的排序功能。 Windows PowerShell 提供具有基本功能的架構，可強制讓介面的許多方面保持一致。 雖然開發人員針對此架構少了一些選擇權，但是這個架構可讓他們更輕鬆開發出強固和易於使用的 Cmdlet。
 
 ## 互動式和指令碼環境
 Windows PowerShell 是一種結合的互動式和指令碼環境，可讓您存取命令列工具和 COM 物件，並讓您使用 .NET Framework Class Library (FCL) 的功能。
@@ -53,6 +57,7 @@ Windows PowerShell 可將以互動方式輸入命令的作業，輕鬆轉換為�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
