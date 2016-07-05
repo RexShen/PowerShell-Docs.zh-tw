@@ -1,19 +1,23 @@
 ---
-title:  了解 Windows PowerShell 管線
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
+title: "了解 Windows PowerShell 管線"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 233ec6fafbf1e770190601750be3bdcef2337b7f
+
 ---
 
 # 了解 Windows PowerShell 管線
 管線幾乎可以在 Windows PowerShell 中的所有位置運作。 雖然您會在畫面上看到文字，但是 Windows PowerShell 並不會在命令之間傳送文字， 而是傳送物件。
 
-用於管線的標記法與其他殼層中所使用的標記法類似，因此第一眼時，Windows PowerShell 引進了新項目可能不大明顯。 例如，如果您使用 **Out-Host** Cmdlet 強制逐頁顯示另一個命令的輸出，則輸出看起來就像畫面上所顯示的一般文字 (分成數頁)：
+用於管線的標記法與其他殼層中所使用的標記法類似，因此第一眼時，Windows PowerShell 引進了新項目可能不大明顯。 例如，如果您使用 **Out\-Host** Cmdlet 強制逐頁顯示另一個命令的輸出，則輸出看起來就像畫面上所顯示的一般文字 (分成數頁)：
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32 | Out-Host -Paging
@@ -39,9 +43,9 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-只要有想要慢慢顯示的冗長輸出，Out-Host -Paging 命令就是有用的管線元素。 它特別適用於 CPU 作業十分密集時。 因為有準備好顯示的完整頁面時會將處理傳送給 Out-Host Cmdlet，所以在下一個輸出頁面可用之前，管線中前面的 Cmdlet 會停止作業。 如果您使用 Windows 工作管理員來監視 Windows PowerShell 所使用的 CPU 和記憶體，就可以看到這種狀況。
+只要有想要慢慢顯示的冗長輸出，Out\-Host \-Paging 命令就是有用的管線元素。 它特別適用於 CPU 作業十分密集時。 因為有準備好顯示的完整頁面時會將處理傳送給 Out\-Host Cmdlet，所以在下一個輸出頁面可用之前，管線中前面的 Cmdlet 會停止作業。 如果您使用 Windows 工作管理員來監視 Windows PowerShell 所使用的 CPU 和記憶體，就可以看到這種狀況。
 
-請執行下列命令︰**Get-ChildItem C:\Windows -Recurse**。 比較與這個命令的 CPU 和記憶體使用量︰**Get-ChildItem C:\Windows -Recurse | Out-Host -Paging**。 您在畫面上看到的是文字，但這是因為在主控台視窗中必須將物件呈現為文字。 這只是 Windows PowerShell 內實際進行之作業的呈現。 例如，請考慮使用 Get-Location Cmdlet。 如果您在目前位置是 C 磁碟機的根目錄時輸入 **Get-Location**，則會看到下列輸出︰
+請執行下列命令︰**Get\-ChildItem C:\\Windows \-Recurse**。 和這個命令的 CPU 和記憶體使用量相比較︰**Get\-ChildItem C:\\Windows \-Recurse | Out\-Host \-Paging**。 您在畫面上看到的是文字，但這是因為在主控台視窗中必須將物件呈現為文字。 這只是 Windows PowerShell 內實際進行之作業的呈現。 例如，請考慮使用 Get\-Location Cmdlet。 如果您在目前位置是 C 磁碟機的根目錄時輸入 **Get\-Location**，則會看到下列輸出︰
 
 ```
 PS> Get-Location
@@ -51,13 +55,13 @@ Path
 C:\
 ```
 
-如果 Windows PowerShell 已傳送文字，則發出 **Get-Location | Out-Host** 這類命令會將一組字元依其在畫面上的顯示順序從 **Get-Location** 傳遞到 **Out-Host**。 換句話說，如果您要忽略標題資訊，則 **Out-Host** 會依序接收到下列字元：'**C'**、'**:'** 和 '**\'**。 **Out-Host** Cmdlet 無法判斷與 **Get-Location** Cmdlet 的字元輸出相關聯的意義。
+如果 Windows PowerShell 已傳送文字，則發出 **Get\-Location | Out\-Host** 這類命令會將一組字元依其在畫面上的顯示順序從 **Get\-Location** 傳遞到 **Out\-Host**。 換句話說，如果您要忽略標題資訊，則 **Out\-Host** 會依序接收到下列字元：'**C'**、'**:'** 和 '**\\'**。 **Out\-Host** Cmdlet 無法判斷與 **Get\-Location** Cmdlet 的字元輸出相關聯的意義。
 
 Windows PowerShell 會使用物件，而不是使用文字讓管線中的命令進行通訊。 從使用者的觀點來看，物件會將相關資訊封裝成容易將資訊當成一個單元操作的表單，以及擷取您需要的特定項目。
 
-**Get-Location** 命令不會傳回包含目前路徑的文字。 它會傳回稱為 **PathInfo** 物件的資訊套件，這個物件包含目前路徑與一些其他資訊。 **Out-Host** Cmdlet 接著會將此 **PathInfo** 物件傳送到畫面，而 Windows PowerShell 會根據格式規則來決定要顯示的資訊和其顯示方式。
+**Get\-Location** 命令不會傳回包含目前路徑的文字。 它會傳回稱為 **PathInfo** 物件的資訊套件，這個物件包含目前路徑與一些其他資訊。 **Out\-Host** Cmdlet 接著會將此 **PathInfo** 物件傳送到畫面，而 Windows PowerShell 會根據格式規則來決定要顯示的資訊和其顯示方式。
 
-事實上，**Get-Location** Cmdlet 的標題資訊輸出只會新增在處理程序結尾，作為格式化畫面顯示資料之處理程序的一部分。 您在畫面上看到的內容是資訊摘要，並不是輸出物件的完整呈現。
+事實上，**Get\-Location** Cmdlet 的標題資訊輸出只會新增在處理程序的結尾，作為格式化畫面顯示資料之處理程序的一部分。 您在畫面上看到的內容是資訊摘要，並不是輸出物件的完整呈現。
 
 如果 Windows PowerShell 命令的資訊輸出多於我們在主控台視窗中看到的顯示內容，則如何擷取看不到的元素？ 如何檢視額外資料？ 如果您要使用不同於 Windows PowerShell 一般使用格式的格式來檢視資料，要怎麼做？
 
@@ -65,6 +69,7 @@ Windows PowerShell 會使用物件，而不是使用文字讓管線中的命令�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

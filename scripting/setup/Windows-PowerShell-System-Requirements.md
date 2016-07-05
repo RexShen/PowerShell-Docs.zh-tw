@@ -1,13 +1,17 @@
 ---
-title:  Windows PowerShell 系統需求
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title: "Windows PowerShell 系統需求"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+translationtype: Human Translation
+ms.sourcegitcommit: 1ae9150b226147c039acf0738690de4da8686a71
+ms.openlocfilehash: e2e129c1c90ab7561861a7d9c71fb654569d5712
+
 ---
 
 # Windows PowerShell 系統需求
@@ -43,11 +47,11 @@ Windows PowerShell 4.0 需要完整安裝 Microsoft .NET Framework 4.5。 Window
 
 Windows PowerShell 3.0 需要完整安裝 Microsoft .NET Framework 4。 Windows 8 和 Windows Server 2012 預設會包括 Microsoft .NET Framework 4.5 (這滿足此需求)。
 
-若要安裝 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
+若要安裝 Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe)，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
 
-若要安裝 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完整安裝，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4 (Web 安裝程式)](http://go.microsoft.com/fwlink/?LinkID=212931)。
+若要安裝 Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe) 的完整安裝，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4 (Web 安裝程式)](http://go.microsoft.com/fwlink/?LinkID=212931)。
 
-## WS-Management 3.0
+## WS\-Management 3.0
 Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要可支援 WinRM 服務和 WSMan 通訊協定的 WS\-Management 3.0。 這個程式包含在 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中。
 
 ## Windows Management Instrumentation 3.0
@@ -80,7 +84,7 @@ Windows PowerShell 是不需要圖形化使用者介面的主控台應用程式�
     2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 的 **ShowSecurityDescriptorUI** 參數和 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet。
 
 ## Windows PowerShell 引擎需求
-Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Windows PowerShell 2.0。 針對 Windows PowerShell 2.0 和 Windows PowerShell 3.0 撰寫的 Cmdlets、提供者、嵌入式管理單元、模組及指令碼，在 Windows PowerShell 4.0 中仍以同樣方式執行。
+Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Windows PowerShell 2.0。 針對 Windows PowerShell 2.0 和 Windows PowerShell 3.0 撰寫的 Cmdlet、提供者、嵌入式管理單元、模組及指令碼，在 Windows PowerShell 4.0 中仍以同樣方式執行。
 
 不過，因為 Microsoft .NET Framework 4 中執行階段啟用原則的變更，所以針對 Windows PowerShell 2.0 所撰寫並使用通用語言執行平台 (CLR) 2.0 編譯的 Windows PowerShell 主機程式必須經過修改，才能在 Windows PowerShell 3.0 (使用 CLR 4.0 編譯) 中執行。
 
@@ -112,6 +116,7 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

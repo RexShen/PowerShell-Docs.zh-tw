@@ -1,20 +1,24 @@
 ---
-title:  使用檔案及資料夾
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+title: "使用檔案及資料夾"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: c9bc3460e25063347de3c594ef5ce437b0f8961d
+
 ---
 
 # 使用檔案及資料夾
 瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論特定檔案和資料夾的處理操作方法。
 
 ### 列出資料夾內所有的檔案和資料夾
-您可以使用 **Get-ChildItem** 直接取得資料夾內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會顯示 Windows PowerShell 磁碟機 C (和 Windows 實體磁碟機 C 相同) 的直接內容︰
+您可以使用 **Get\-ChildItem** 直接取得資料夾內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會顯示 Windows PowerShell 磁碟機 C (和 Windows 實體磁碟機 C 相同) 的直接內容︰
 
 ```
 Get-ChildItem -Force C:\
@@ -26,7 +30,7 @@ Get-ChildItem -Force C:\
 Get-ChildItem -Force C:\ -Recurse
 ```
 
-**Get-ChildItem** 可以用它的 **Path**、**Filter**、**Include** 和 **Exclude** 參數來篩選項目，但這些通常只以名稱為基礎。 您可以使用 **Where\-Object** 根據項目的其他屬性來執行複雜的篩選。
+**Get\-ChildItem** 可以用它的 **Path**、**Filter**、**Include** 和 **Exclude** 參數來篩選項目，但項目通常只以名稱為根據。 您可以使用 **Where\-Object** 根據項目的其他屬性來執行複雜的篩選。
 
 下列命令會在 Program Files 資料夾內尋找在 2005 年 10 月 1 日之後修改的、介於 1 MB 到 10 MB 之間的全部可執行檔︰
 
@@ -35,13 +39,13 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 ```
 
 ### 複製檔案與資料夾
-以 **Copy-Item** 完成複製。 下列命令會將 C:\\boot.ini 備份到 C:\\boot.bak：
+以 **Copy\-Item** 完成複製。 下列命令會將 C:\\boot.ini 備份到 C:\\boot.bak：
 
 ```
 Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
 ```
 
-如果目的地檔案已經存在，則複製嘗試就會失敗。 若要覆寫先前\現有的目的地，請使用 Force 參數︰
+如果目的地檔案已經存在，則複製嘗試就會失敗。 若要覆寫已存在的目的地，請使用 Force 參數︰
 
 ```
 Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
@@ -70,7 +74,7 @@ Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
 ### 建立檔案與資料夾
 所有 Windows PowerShell 提供者的建立新項目功能都一樣。 如果 Windows PowerShell 提供者有多個項目類型—例如，FileSystem Windows PowerShell 提供者區分目錄和檔案—您就需要指定項目類型。
 
-這個命令會建立新的資料夾 C:\\temp\\New Folder︰
+這個命令會建立新的資料夾 C:\\temp\\New Folder：
 
 ```
 New-Item -Path 'C:\temp\New Folder' -ItemType "directory"
@@ -112,7 +116,7 @@ subst p: $env:programfiles
 就像使用網路磁碟機，Windows PowerShell 殼層可以立即看到使用 **subst** 在 Windows PowerShell 內對應的磁碟機。
 
 ### 將文字檔讀入陣列
-文字資料最常見的儲存體格式之一，是將檔案中分隔的各行視為不同的資料元素。 **Get-Content** Cmdlet 可以用一個步驟讀取整個檔案，如下所示︰
+文字資料最常見的儲存體格式之一，是將檔案中分隔的各行視為不同的資料元素。 **Get\-Content** Cmdlet 可以用一個步驟來讀取整個檔案，如下所示︰
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -126,14 +130,14 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get-Content** 已經將從檔案讀取的資料視為陣列，檔案內容為每行一個元素。 您可以藉由檢查只要核取傳回內容的 **長度** 即可確認︰
+**Get\-Content** 已經將從檔案讀取的資料視為陣列，檔案內容為每行一個元素。 您可以藉由檢查只要核取傳回內容的 **長度** 即可確認︰
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-這個命令在將資訊清單直接放入 Windows PowerShell 非常有用。 例如，您可能會在檔案 C:\\temp\\domainMembers.txt 中儲存電腦名稱或 IP 位址的清單，一行一個名稱。 您可以使用 **Get-Content** 擷取檔案內容並將內容放入變數 **$Computers**：
+這個命令在將資訊清單直接放入 Windows PowerShell 非常有用。 例如，您可能會在檔案 C:\\temp\\domainMembers.txt 中儲存電腦名稱或 IP 位址的清單，一行一個名稱。 您可以使用 **Get\-Content** 擷取檔案內容並將內容放入變數 **$Computers**：
 
 ```
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
@@ -143,6 +147,7 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

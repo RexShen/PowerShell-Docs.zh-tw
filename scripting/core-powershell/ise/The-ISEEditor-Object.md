@@ -1,13 +1,17 @@
 ---
-title:  ISEEditor 物件
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+title: "ISEEditor 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+
 ---
 
 # ISEEditor 物件
@@ -15,7 +19,7 @@ ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 
 ## 方法
 
-### Clear()
+### 清除\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  清除編輯器中的文字。
@@ -26,7 +30,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.Clear()
 
 ```
 
-### EnsureVisible(int lineNumber)
+### EnsureVisible\(int lineNumber\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  捲動編輯器，即會看見對應至指定 **lineNumber** 參數值的行。 如果指定的行號不在 1 到最後一個定義有效行數的行號範圍內，即會擲回例外狀況。
@@ -40,7 +44,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 
 ```
 
-### Focus()
+### Focus\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將焦點設定到編輯器。
@@ -50,7 +54,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### GetLineLength(int lineNumber)
+### GetLineLength\(int lineNumber \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  針對行號所指定的行，以整數形式設定行的長度。
@@ -66,40 +70,40 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
-### GoToMatch()
+### GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
- 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 ((、[、{) 正前方，或者在右括號、括號或大括號 ()、]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
+ 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\- \(、\[、{ \-) 正前方，或者在右括號、括號或大括號 (\- \)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
-### InsertText( text )
+### InsertText\( text \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  使用文字取代選取範圍，或在目前插入號位置插入文字。
 
- **text** - 字串：要插入的文字。
+ **text** \- 字串：要插入的文字。
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
-### Select( startLine, startColumn, endLine, endColumn )
+### Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  從 **startLine**、**startColumn**、**endLine** 及 **endColumn** 參數選取文字。
 
- **startLine** - 整數：選取範圍開始位置的行。
+ **startLine** \- 整數：選取範圍開始位置的行。
 
- **startColumn** - 整數：選取範圍開始位置之起始行內的欄。
+ **startColumn** \- 整數：選取範圍開始位置之起始行內的欄。
 
- **startLine** - 整數：選取範圍結束位置的行。
+ **startLine** \- 整數：選取範圍結束位置的行。
 
- **endColumn** - 整數：選取範圍結束位置之結尾行內的欄。
+ **endColumn** \- 整數：選取範圍結束位置之結尾行內的欄。
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
-### SelectCaretLine()
+### SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  選取目前包含插入號的整行文字。
@@ -112,21 +116,21 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
 ```
 
-### SetCaretPosition( lineNumber, columnNumber )
+### SetCaretPosition\( lineNumber, columnNumber \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  在行號和欄號設定插入號位置。 如果插入號行號或插入號欄號不在其各自的有效範圍內，就會擲回例外狀況。
 
- **lineNumber** - 整數：插入號的行號。
+ **lineNumber** \- 整數：插入號的行號。
 
- **columnNumber** - 整數：插入號的欄號。
+ **columnNumber** \- 整數：插入號的欄號。
 
 ```
 # Set the CaretPosition.
 $psIse.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
-### ToggleOutliningExpansion()
+### ToggleOutliningExpansion\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  會展開或摺疊所有大綱區段。
@@ -142,7 +146,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
- 唯讀的布林值屬性，可指出插入號是否位於括號、括號或大括號 (()、[]、{}) 旁邊。 如果插入號是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 **$true**。 否則為 **$false**。
+ 唯讀的布林值屬性，可指出插入號是否位於括號、括號或大括號 (\(\)、\[\]、{}) 旁邊。 如果插入號是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 **$true**。 否則為 **$false**。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -248,6 +252,7 @@ $myEditor.InsertText($selection.ToLower())
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

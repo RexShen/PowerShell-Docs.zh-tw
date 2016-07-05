@@ -1,13 +1,17 @@
 ---
-title:  安裝 Windows PowerShell 2.0 引擎
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  82928f2b-f96a-4ae6-a0d0-6e7b181da308
+title: "安裝 Windows PowerShell 2.0 引擎"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 8a61e974e7f7ea479ecc447c2db91c677cd8931f
+
 ---
 
 # 安裝 Windows PowerShell 2.0 引擎
@@ -40,7 +44,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 2.  在 **[應用程式]** 列中按一下 **[設定]**，然後按一下 **[開啟或關閉 Windows 功能]**。
 
-3.  在 [Windows 功能] 方塊中，展開 [Windows PowerShell 2.0] 節點，然後按一下 [Windows PowerShell 2.0 引擎] 方塊加以選取或清除。
+3.  在 [Windows 功能]**** 方塊中，展開 [Windows PowerShell 2.0]**** 節點，然後按一下 [Windows PowerShell 2.0 引擎]**** 方塊加以選取或清除。
 
 ## 在 Windows Server 2012 R2 和 Windows Server 2012 上
 使用下列程序來新增 Windows PowerShell 2.0 引擎和 Microsoft .NET Framework 3.5 功能。 Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 可完成這項需求。
@@ -61,7 +65,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 -   在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]**。
 
-    或者，在 **[伺服器管理員]** 中，按一下 **[所有伺服器]**，以滑鼠右鍵按一下伺服器名稱，然後選取 **[新增角色及功能]**。
+    在 **[伺服器管理員]** 中，按一下 **[所有伺服器]**，以滑鼠右鍵按一下伺服器名稱，然後選取 **[新增角色及功能]**。
 
 -   在 **[安裝類型]** 頁面上，選取 **[角色型或功能型安裝]**。
 
@@ -82,6 +86,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
