@@ -1,21 +1,25 @@
 ---
-title:  ISEMenuItemCollection 物件
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  0c0f5484-3320-408e-8534-5bd1c8e48512
+title: "ISEMenuItemCollection 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: c54c51ab8f5a5a5542ca4b78ea1100d5a4344d26
+
 ---
 
 # ISEMenuItemCollection 物件
-  **ISEMenuItemCollection** 物件是 **ISEMenuItem** 物件的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection 類別的執行個體。 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 物件即為一例，此物件可用來自訂 Windows PowerShell® 整合式指令碼環境 (ISE) 中的 [附加元件] 功能表。
+  **ISEMenuItemCollection** 物件是 **ISEMenuItem** 物件的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection 類別的執行個體。 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 物件即為一例，此物件可用來自訂 Windows PowerShell® 整合式指令碼環境 (ISE) 中的 **[附加元件]** 功能表。
 
 ## 方法
 
-### Add(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut)
+### Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將功能表項目加入至集合。
@@ -38,7 +42,7 @@ ms.assetid:  0c0f5484-3320-408e-8534-5bd1c8e48512
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
 ```
 
-### Clear()
+### 清除\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  從功能表項目中移除所有的子功能表。
@@ -58,6 +62,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 
