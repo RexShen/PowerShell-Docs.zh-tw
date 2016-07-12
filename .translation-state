@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "c1bb25eeb1a4fbda5f2fc8f9ca29213f01487ccb",
-  "LastTranslatedCommit": "d82f94a892d3b6363d72385d1e3ba625b4faf264",
+  "LastTranslatedCommit": "d5204af535ac88e1feede17516f2a36fdd8af6df",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -21074,14 +21074,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "7a8c2b1593f9026975a3e728c488a054e5216fce",
+      "TargetFileCommit": "d5204af535ac88e1feede17516f2a36fdd8af6df",
       "TargetFilePath": "scripting\\core-powershell\\web-access\\troubleshooting-access-problems-in-windows-powershell-web-access.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-tw\\live\\troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf",
-      "HandbackFileCommit": "bb363ea8e91a1a833ecc87f2bf266ba3f9ba1003",
-      "HandbackDateTime": "2016-07-05T09:11:03.5226528Z",
+      "HandbackFileCommit": "5c649a2d358350cdeaf6fd7f53879d21be3a5bd5",
+      "HandbackDateTime": "2016-07-12T17:46:49.6619562Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-07-05T09:11:03.5226528Z",
+      "UpdatedDateTime": "2016-07-12T17:46:49.6619562Z",
       "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf",
       "ArchiveFileCommit": "c05da30c7ba4d429553459b7542c81cdb2af7ecb",
       "ArchiveFileDateTime": "2016-06-28T13:28:59.9067971Z",
