@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "29a2d1357df7f4cd41a3658fcc804e1cc442e835",
+  "LastProcessedCommit": "30bf1f69f1bbdf7e69379e86ddbfc9e7fd90e5d5",
   "LastTranslatedCommit": "0f8d6d7331124cfbceb1c05772909f953bad541e",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
@@ -33374,6 +33374,41 @@
       "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\TOC.60497266061c38453b3db893ec675eb65584af89.zh-tw.xlf",
       "HandoffFileCommit": "ad52bb8354111251d5e985df274f3e7d1c671627",
       "HandoffDateTime": "2016-07-15T16:20:35.9724637Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3": {
+      "FileHash": "bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3",
+      "SourceFileCommit": "3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff",
+      "SourceFilePath": "wmf\\5.1\\features-scenarios-cache\\oneget-improvement.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "wmf\\5.1\\features-scenarios-cache\\oneget-improvement.md"
+      ],
+      "HasMetadata": true,
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\oneget-improvement.5f280305f3daa37cb51ab01097cd9282a4fef551.zh-tw.xlf",
+      "HandoffFileCommit": "5c25fcd5448afde7b640cecc3a38ac6d3124b996",
+      "HandoffDateTime": "2016-07-15T20:51:12.0094822Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
