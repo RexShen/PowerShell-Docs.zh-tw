@@ -52,11 +52,11 @@ ms.openlocfilehash: 6366ec9c49f721b758b6a520f68cf2b3c5ee0caf
 <td><p>當使用者嘗試在 Internet Explorer 視窗登入 Windows PowerShell Web 存取時，會看到 [內部伺服器錯誤]<strong></strong> 頁面或 Internet Explorer 停止回應。 這是只有 Internet Explorer 會發生的問題。</p></td>
 <td><p>當使用者使用含有中文字元的網域名稱登入，或閘道伺服器名稱含有一或多個中文字元時，會發生這個問題。 若要解決這個問題，使用者應<a href="http://ie.microsoft.com/testdrive/info/downloads/Default.html">安裝和執行 Internet Explorer 10</a>，然後執行下列步驟。</p>
 <ol>
-<li><p>將 Internet Explorer <strong>[文件模式]</strong> 設定變更成 <strong>[IE10 standards] (IE10 標準)</strong>。</p>
+<li><p>將 Internet Explorer <strong>[文件模式]</strong> 設定變更成 <strong>[IE10 standards (IE10 標準)]</strong>。</p>
 <ol>
 <li><p>按 <strong>F12</strong> 開啟開發人員工具主控台。</p></li>
 <li><p>在 Internet Explorer 10 中，按一下 <strong>[瀏覽器模式]</strong>，然後選取 <strong>[Internet Explorer 10]</strong>。</p></li>
-<li><p>按一下 <strong>[文件模式]</strong>，然後按一下 <strong>[IE10 standards] (IE10 標準)</strong>。</p></li>
+<li><p>按一下 <strong>[文件模式]</strong>，然後按一下 <strong>[IE10 standards (IE10 標準)]</strong>。</p></li>
 <li><p>再按一次 <strong>F12</strong> 關閉開發人員工具主控台。</p></li>
 </ol></li>
 <li><p>停用自動 Proxy 設定。</p>
