@@ -2958,8 +2958,8 @@
 * Archive Datetime: 2016-06-28 13:28:59
 * Handback File: [troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2238118528f4f24aa8dae401ff2177a2a7a9d648/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf)
 * Handback Datetime: 2016-07-15 14:33:57
-* Bilingual File: [troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5c649a2d358350cdeaf6fd7f53879d21be3a5bd5/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf)
-* Bilingual Datetime: 2016-07-12 17:47:28
+* Bilingual File: [troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2238118528f4f24aa8dae401ff2177a2a7a9d648/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.zh-tw.xlf)
+* Bilingual Datetime: 2016-07-15 14:34:40
 * [Back to Top](#report-top)
 
 ##### <a name='ee5e88ece27add955fcef3a9df0a441a08251e77174'></a> Source: [scripting\core-powershell\web-access\uninstall-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access.md)
