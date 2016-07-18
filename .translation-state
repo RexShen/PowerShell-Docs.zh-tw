@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "30bf1f69f1bbdf7e69379e86ddbfc9e7fd90e5d5",
-  "LastTranslatedCommit": "0f8d6d7331124cfbceb1c05772909f953bad541e",
+  "LastTranslatedCommit": "ef171f74e18b9c1b04e50da31466dc01e9fadea5",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -28256,14 +28256,14 @@
       "TargetFilePath": "dsc\\authoringResourceComposite.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-tw\\live\\authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-tw.xlf",
       "HandbackFileCommit": "501c6d90096263bd952c5e86eb4c81cecb6e4198",
-      "HandbackDateTime": "2016-06-28T15:30:34.1614816Z",
+      "HandbackDateTime": "2016-07-18T08:43:14.9500059Z",
       "HandbackException": {
         "internal_error_code": "handback_transform_failed",
-        "internal_error_message": "Handback file: C:\\ol\\master\\PSD.handback\\7f42c4\\ol-handback\\PowerShell\\powerShell-Docs.zh-tw\\live\\authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-tw.xlf failed.",
+        "internal_error_message": "Handback file: C:\\ol\\master\\PSD.handback\\7f42c4\\ol-handback\\PowerShell\\powerShell-Docs.zh-tw\\live\\poison\\authoringResourceComposite.6d5d1e53e83e25cfc63e26078da390a4fa6737f2.zh-tw.xlf failed.",
         "internal_error_retriable": false,
         "exception_message": "Fail to transform from xliff to markdown with invalid metadata: Invalid yaml header when parsing:\ntitle: 複合資源: 使用 DSC 設定作為資源 ms.date: 2016-05-16 keywords: powershell,DSC description:  \nms.topic:  article author:  eslesar manager:  dongill ms.prod:  powershell\nError message: (Line: 1, Col: 12, Idx: 11) - (Line: 1, Col: 12, Idx: 11): Mapping values are not allowed in this context.",
         "exception_type": "System.IO.InvalidDataException",
-        "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass5_0.<GetHandbackFiles>b__0(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 413",
+        "stack_trace": "   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass7_0.<GetHandbackFiles>b__1(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 418",
         "extended_information": null
       },
       "HandbackFailureTimes": 1,
