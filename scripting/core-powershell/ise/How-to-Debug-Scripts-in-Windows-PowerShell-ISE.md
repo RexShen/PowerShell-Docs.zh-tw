@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: c6d79fc7ef5a896bb3b686468adb540d4327605e
+ms.sourcegitcommit: 669bbe8da3d6b5f4955b86474c21c11c3cfe495b
+ms.openlocfilehash: 080cbfd63838472d9d5405e4b232cda1cc1d028a
 
 ---
 
@@ -70,7 +70,7 @@ remove-psbreakpoint -id 2
 
 ```
 # This command deletes all of the breakpoints in the current session.
-get-breakpoint | remove-breakpoint
+get-psbreakpoint | remove-psbreakpoint
 ```
 
 ### <a name="bkmk_disable"></a>停用中斷點
@@ -183,6 +183,6 @@ C:\ps-test\MyScript.ps1
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 
