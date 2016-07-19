@@ -1,12 +1,16 @@
 ---
-title:   開始使用 Linux 預期狀態設定 (DSC)
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "開始使用 Linux 預期狀態設定 (DSC)"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f9
+
 ---
 
 # 開始使用 Linux 預期狀態設定 (DSC)
@@ -185,6 +189,7 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

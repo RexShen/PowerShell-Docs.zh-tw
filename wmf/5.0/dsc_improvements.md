@@ -9,4 +9,8 @@
 **PSDesiredStateConfiguration 模組版本更新為 1.1**
 
 PsDesiredStateConfiguration 模組版本已更新為 1.1。 DSC 設定在 WMF 5.0 Preview 2015 年 2 月或更早版本上的編譯將無法在 PowerShell/WMF 5.0 上運作。 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -75,8 +75,6 @@
 ### [我可以在哪裡深入了解？](getting-started/more-powershell-learning.md)
 
 ## [核心 PowerShell](core-powershell/core-powershell.md)
-### [指令碼指南](core-powershell/scripting-guide.md)
-### [語言指南](core-powershell/language-guide.md)
 ### [核心模組](core-powershell/core-modules.md)
 ####  [封存模組](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [核心模組](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
@@ -112,6 +110,8 @@
 ####  [PowerShell ISE 簡介](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE 模組](core-powershell/ise/ISE-Module.md)
 ####  [PowerShell ISE 的鍵盤快速鍵](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
+####  [PowerShell 索引標籤物件](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [PowerShell 索引標籤集合物件](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [PowerShell ISE 指令碼物件模型的用途](core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 ####  [ISE 物件模型階層](core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
 ####  [ISE 附加元件工具物件](core-powershell/ise/The-ISEAddOnTool-Object.md)
@@ -124,8 +124,6 @@
 ### [主控台](core-powershell/console-guide.md)
 ####  [主控台命令列參考](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
 ####  [如何在指令碼窗格和主控台窗格中使用 TAB 鍵自動完成](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [PowerShell 索引標籤物件](core-powershell/ise/The-PowerShellTab-Object.md)
-####  [PowerShell 索引標籤集合物件](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [使用 Tab 鍵擴充](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [執行遠端命令](core-powershell/Running-Remote-Commands.md)
@@ -144,6 +142,6 @@
 ## [PowerShell 字彙](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

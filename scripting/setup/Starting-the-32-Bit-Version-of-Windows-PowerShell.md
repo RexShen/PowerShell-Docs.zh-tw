@@ -1,13 +1,17 @@
 ---
-title:  啟動 32 位元版本的 Windows PowerShell
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  12b31890-2609-4a76-8c24-0ebe78084f50
+title: "啟動 32 位元版本的 Windows PowerShell"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
+translationtype: Human Translation
+ms.sourcegitcommit: b6ab9bfdd779a865c1f543bf16e91ec17b43c4b0
+ms.openlocfilehash: 41bbdd302aa3aa0d253bc4c820fdbbeb1b827ccc
+
 ---
 
 # 啟動 32 位元版本的 Windows PowerShell
@@ -58,6 +62,7 @@ ms.assetid:  12b31890-2609-4a76-8c24-0ebe78084f50
 -   透過命令列，輸入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

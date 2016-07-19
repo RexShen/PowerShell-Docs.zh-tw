@@ -1,12 +1,16 @@
 ---
-title:   適合決策者的預期狀態設定概觀 
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "適合決策者的預期狀態設定概觀"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 2d2b142dc862f7655f28aa34e1fd91f63bd6286e
+
 ---
 
 # 適合決策者的預期狀態設定概觀 #
@@ -48,6 +52,7 @@ DSC 也可用來管理 Linux。 如需詳細資訊，請參閱 [Getting Started 
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

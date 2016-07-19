@@ -1,12 +1,16 @@
 ---
-title:   建置自訂的 Windows PowerShell 預期狀態設定資源
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "建置自訂的 Windows PowerShell 預期狀態設定資源"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 5b43723f7b14eb4bca06d0430b5981c3663c5801
+
 ---
 
 # 建置自訂的 Windows PowerShell 預期狀態設定資源
@@ -27,6 +31,7 @@ DSC 資源是 Windows PowerShell 模組。 模組包含資源的結構描述 (�
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

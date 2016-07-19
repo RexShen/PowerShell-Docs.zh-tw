@@ -1,20 +1,23 @@
 ---
-title:   DSC 設定
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC 設定"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+
 ---
 
 # DSC 設定
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC 設定是一種定義特殊類型函式的 PowerShell 指令碼。 
-若要定義設定，請使用 PowerShell 關鍵字 __Configuration__。
+DSC 設定是一種定義特殊類型函式的 PowerShell 指令碼。 若要定義設定，請使用 PowerShell 關鍵字 __Configuration__。
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -121,8 +124,7 @@ Configuration DependsOnExample {
 
 ## 在設定中使用新的資源
 如果執行了前面的範例，您可能會注意到，系統警告使用了未明確匯入的資源。
-現在，DSC 在 PSDesiredStateConfiguration 模組中附有 12 種資源。 外部模組的其他資源必須放置在 `$env:PSModulePath` 中，LCM 才能辨識。 新的 Cmdlet，[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用來決定哪些資源要安裝在系統上並提供 LCM 使用。 
-這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正確辨識後，仍需要載入至設定中。 __Import-DscResource__ 是只能在 __Configuration__ 區塊中辨識的動態關鍵字 (亦即它不是 Cmdlet)。 __Import-DscResource__ 支援兩個參數：
+現在，DSC 在 PSDesiredStateConfiguration 模組中附有 12 種資源。 外部模組的其他資源必須放置在 `$env:PSModulePath` 中，LCM 才能辨識。 新的 Cmdlet，[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用來決定哪些資源要安裝在系統上並提供 LCM 使用。 這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正確辨識後，仍需要載入至設定中。 __Import-DscResource__ 是只能在 __Configuration__ 區塊中辨識的動態關鍵字 (亦即它不是 Cmdlet)。 __Import-DscResource__ 支援兩個參數：
 * __ModuleName__，使用 __Import-DscResource__ 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。 
 * __Name__ 是要匯入的資源名稱。 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回 __ResourceType__)。 
 
@@ -133,6 +135,7 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -31,4 +31,8 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 
 若要報告使用者在 JEA 工作階段期間進行的_動作_，您可以︰
 1. 啟用該 JEA 端點的「即時權限提升」("over-the-shoulder") 記錄，並查閱記錄目錄中每個使用者動作的完整記錄
-2. 開啟 PowerShell 模組的記錄，並檢查 PowerShell 事件記錄檔。<!--HONumber=Mar16_HO2-->
+2. 開啟 PowerShell 模組的記錄，並檢查 PowerShell 事件記錄檔。
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -1,12 +1,16 @@
 ---
-title:   偵錯 DSC 資源
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "偵錯 DSC 資源"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: f5290e085c8949f6b3cdf23f3244a7142da6248d
+
 ---
 
 # 偵錯 DSC 資源
@@ -18,8 +22,7 @@ ms.prod:  powershell
 ## 啟用 DSC 偵錯
 偵錯資源之前，您必須先呼叫 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) Cmdlet 啟用偵錯。 這個 Cmdlet 使用強制參數 **BreakAll**。 
 
-您可以查看呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的結果，確認是否已啟用偵錯。 
-下列 PowerShell 輸出會顯示啟用偵錯的結果：
+您可以查看呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的結果，確認是否已啟用偵錯。 下列 PowerShell 輸出會顯示啟用偵錯的結果：
 
 
 ```powershell
@@ -106,6 +109,7 @@ Debug-Runspace -Id 9
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

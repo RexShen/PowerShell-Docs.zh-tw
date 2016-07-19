@@ -1,12 +1,16 @@
 ---
-title:   施行設定
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "施行設定"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+
 ---
 
 # 施行設定
@@ -30,8 +34,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.mic
 
 ![Pull 模式](images/Pull.png "How pull mode works")
 
-在 Pull 模式中，提取用戶端會設定成從遠端的提取伺服器取得其所需的狀態設定。 同樣地，提取伺服器已設為 DSC 服務主機，佈建了提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的工作，對節點設定執行定期的相容性檢查。 事件第一次觸發時，會讓提取用戶端的本機設定管理員 (LCM) 驗證設定。 
-如果提取用戶端設定為所需，就不會發生任何事。 否則，LCM 就會要求提取伺服器取得指定的設定。 如果提取伺服器上有這個設定，而且它通過了初始驗證檢查，設定就會傳輸到提取用戶端，LCM 會在這裡執行它。
+在 Pull 模式中，提取用戶端會設定成從遠端的提取伺服器取得其所需的狀態設定。 同樣地，提取伺服器已設為 DSC 服務主機，佈建了提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的工作，對節點設定執行定期的相容性檢查。 事件第一次觸發時，會讓提取用戶端的本機設定管理員 (LCM) 驗證設定。 如果提取用戶端設定為所需，就不會發生任何事。 否則，LCM 就會要求提取伺服器取得指定的設定。 如果提取伺服器上有這個設定，而且它通過了初始驗證檢查，設定就會傳輸到提取用戶端，LCM 會在這裡執行它。
 
 如需部署內部部署 DSC 提取伺服器的詳細資訊，請參閱＜DSC 提取伺服器設定和規劃指南＞。
 
@@ -45,6 +48,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.mic
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

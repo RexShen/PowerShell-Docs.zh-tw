@@ -1,12 +1,16 @@
 ---
-title:   撰寫 DSC 設定的說明
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "撰寫 DSC 設定的說明"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: f4dc0265246195cc2320bcaf9d7f9abf7b1405a3
+ms.openlocfilehash: becacd2dcbc6fd0edd9154a45342edc5c536935b
+
 ---
 
 # 撰寫 DSC 設定的說明
@@ -95,6 +99,7 @@ REMARKS
 
 
 
-<!--HONumber=Jun16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

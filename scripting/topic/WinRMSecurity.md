@@ -1,13 +1,17 @@
 ---
-title:  WinRMSecurityRedirect
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: WinRMSecurityRedirect
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
 redirect_url: https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity
+translationtype: Human Translation
+ms.sourcegitcommit: afa259b8611f995bbf5b824179a12e3d8f15df86
+ms.openlocfilehash: 207792452c563ec6cca5c17fbcd122372442d8ac
+
 ---
 
 # PowerShell 遠端安全性考量
@@ -35,8 +39,7 @@ PowerShell 遠端預設僅允許連線系統管理員群組的成員。 工作�
 
 ## 處理程序隔離
 
-PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) 進行電腦之間的通訊。 
-WinRM 以網路服務帳戶的服務方式執行，並會繁衍隔離的處理程序作為使用者帳戶，以主控 PowerShell 執行個體。 PowerShell 的執行個體以一位使用者的身分執行時，無法存取執行為另一位使用者的 PowerShell 執行個體。
+PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) 進行電腦之間的通訊。 WinRM 以網路服務帳戶的服務方式執行，並會繁衍隔離的處理程序作為使用者帳戶，以主控 PowerShell 執行個體。 PowerShell 的執行個體以一位使用者的身分執行時，無法存取執行為另一位使用者的 PowerShell 執行個體。
 
 ## PowerShell 遠端所產生的事件記錄檔
 
@@ -80,8 +83,7 @@ Kerberos 可保證使用者識別與伺服器識別，而不會傳送任何種�
 ## 進行第二次跳躍
 
 PowerShell 遠端預設會使用 (如果提供) Kerberos 或 NTLM 驗證。 這兩種通訊協定驗證遠端電腦時，皆不需要將認證傳送到電腦。
-這是最安全的驗證方式，但因為遠端電腦並沒有使用者的認證，所以無法代替使用者存取其他電腦與服務。 
-這稱為「雙躍點 」問題。
+這是最安全的驗證方式，但因為遠端電腦並沒有使用者的認證，所以無法代替使用者存取其他電腦與服務。 這稱為「雙躍點 」問題。
 
 避免這個問題的方法有數種︰
 
@@ -119,6 +121,7 @@ New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
