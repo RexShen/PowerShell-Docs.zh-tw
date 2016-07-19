@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: d7bd873cde4a4bda12490d69acdd5e2b0ba8cdec
+ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
+ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
 
 ---
 
@@ -40,7 +40,7 @@ WindowsProcess [string] #ResourceName
 |  屬性  |  描述   | 
 |---|---| 
 | 引數| 表示要保持原狀傳遞至處理程序的引數字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。| 
-| 路徑| 表示處理程序可執行檔的路徑。 這個屬性如果設定為可執行檔的名稱，DSC 就會在 __Path__ 變數中查看。 如果您提供完整的網域名稱，此處就一定要有處理程序，因為 DSC 在這種情況下不會檢查 __Path__ 變數。| 
+| 路徑| 處理程序可執行檔的路徑。 如果這是可執行檔的名稱 (不是完整路徑)，則 DSC 資源會搜尋環境 **Path** 變數 (`$env:Path`) 來尋找可執行檔。 如果這個屬性的值是完整路徑，DSC 不會使用 **Path** 環境變數尋找檔案，但若路徑不存在則會擲回錯誤。 不允許相對路徑。| 
 | 認證| 表示啟動處理程序的認證。| 
 | Ensure| 表示處理程序是否存在。 將這個屬性設定為 "Present" 以確保處理程序存在。 否則，請設定為 "Absent"。 預設值是 "Present"。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"``。| 
@@ -52,6 +52,6 @@ WindowsProcess [string] #ResourceName
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

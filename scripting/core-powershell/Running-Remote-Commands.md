@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 translationtype: Human Translation
-ms.sourcegitcommit: 593f0c2ca72e00f19c395c1dae31798d5a5f652d
-ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
+ms.sourcegitcommit: 0f77e2d13a26c58d2a4813e57a76ba54dbcaac46
+ms.openlocfilehash: 48385de53964217b2f7d263d85bfb99b1dbf6507
 
 ---
 
@@ -30,7 +30,7 @@ ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-Hotfix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
 -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
@@ -42,10 +42,10 @@ ms.openlocfilehash: 75d41569b18e61342809eebcc76b7899ec6363fa
 
 -   [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
 
-一般而言，支援遠端處理而不需要特殊設定的 Cmdlet 具有 ComputerName 參數而沒有 Session 參數。 若要在您的工作階段中尋找這些 Cmdlet，請輸入：
+一般而言，支援遠端處理而不需要特殊設定的 Cmdlet 具有 ComputerName 參數，而沒有 Session 參數。 若要在您的工作階段中尋找這些 Cmdlet，請輸入：
 
 ```
-get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
+Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
 ## Windows PowerShell 遠端執行功能
@@ -59,7 +59,7 @@ Windows PowerShell 遠端執行功能使用 WS\-Management 通訊協定，可讓
 若要啟動與單一遠端電腦的互動式工作階段，請使用 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) Cmdlet。 例如，若要啟動與 Server01 遠端電腦的互動式工作階段，請輸入：
 
 ```
-enter-pssession Server01
+Enter-PSSession Server01
 ```
 
 命令提示字元將變更為顯示您所連線之電腦的名稱。 從那時開始，您在提示字元中輸入的所有命令都會在遠端電腦上執行，而結果會顯示本機電腦上。
@@ -67,7 +67,7 @@ enter-pssession Server01
 若要結束互動式工作階段，請輸入：
 
 ```
-exit-pssession
+Exit-PSSession
 ```
 
 如需 Enter\-PSSession 與 Exit\-PSSession 的詳細資訊，請參閱 [Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) 與 [Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)。
@@ -77,7 +77,7 @@ exit-pssession
 例如，若要在 Server01 與 Server02 遠端電腦上執行 [Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) 命令，請輸入：
 
 ```
-invoke-command -computername Server01, Server02 {get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
 ```
 
 輸出會傳回到您的電腦。
@@ -97,7 +97,7 @@ LCID    Name     DisplayName               PSComputerName
 例如，下列命令會在 Server01 與 Server02 遠端電腦上執行 DiskCollect.ps1 指令碼。
 
 ```
-invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
 如需 Invoke\-Command Cmdlet 的詳細資訊，請參閱 [Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx)。
@@ -108,7 +108,7 @@ invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect
 例如，下列命令會在 Server01 電腦上建立遠端工作階段，並在 Server02 電腦上建立另一個遠端工作階段。 它會將該工作階段物件儲存於 $s 變數中。
 
 ```
-$s = new-pssession -computername Server01, Server02
+$s = New-PSSession -ComputerName Server01, Server02
 ```
 
 現在，工作階段已建立，您可以在其中執行任何命令。 因為工作階段是持續性，您可以在單一命令中收集資料，並將它用於後續的命令。
@@ -116,20 +116,20 @@ $s = new-pssession -computername Server01, Server02
 例如，下列命令會在 $s 變數的工作階段中執行 Get\-Hotfix 命令，並將結果儲存在 $h 變數中。 $h 變數會建立在 $s 的各個工作階段中，但不會存在於本機工作階段。
 
 ```
-invoke-command -session $s {$h = get-hotfix}
+Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
 現在您可以在後續命令中使用 $h 變數中的資料，例如下列範例。 結果會顯示在本機電腦上。
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
+Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### 進階遠端處理
 Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安裝的 Cmdlet，您可以同時建立及設定本機與遠端電腦的遠端工作階段、建立自訂與受限制的工作階段、允許使用者從實際隱含執行於遠端工作階段的遠端工作階段匯入命令，以及設定遠端工作階段安全性等。
 
 為簡化遠端設定，Windows PowerShell 包含 WSMan 提供者。 提供者建立的 WSMAN: 磁碟機可讓您瀏覽本機電腦與遠端電腦上組態設定的階層。
-如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/en-us/library/dd819476.aspx)與  [關於 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 主控台中，輸入 "get\-help wsman"。
+如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/en-us/library/dd819476.aspx)與  [關於 WS-Management Cmdlet](https://technet.microsoft.com/en-us/library/dd819481.aspx)，或在 Windows PowerShell 主控台中，輸入 "Get\-Help wsman"。
 
 如需詳細資訊，請參閱：
 - [關於遠端常見問題集](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -154,6 +154,6 @@ Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell 詞彙
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 詞彙"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
+translationtype: Human Translation
+ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
+ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+
 ---
+
 # Windows PowerShell 詞彙
 
 
@@ -15,7 +22,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |二進位模組|根模組是二進位模組檔 (.dll) 的 Windows PowerShell 模組。 二進位模組不一定包括模組資訊清單。|
 |一般參數|Windows PowerShell 引擎新增至所有 Cmdlet 和進階功能的參數。|
 |點溯源|在 Windows PowerShell 中，於命令前面輸入點和空格，來啟動命令。 為點溯源的命令是在目前範圍內執行，而不是在新範圍內。 命令所建立的任何變數、別名、函式或磁碟機都是在目前範圍內建立，並且在命令完成時可供使用者使用。|
-|動態模組|只存在於記憶體中的模組。 Import-PSSession Cmdlet 會建立動態模組。|
+|動態模組|只存在於記憶體中的模組。 New-Module 和 Import-PSSession Cmdlet 會建立動態模組。|
 |動態參數|在特定情況下新增至 Windows PowerShell Cmdlet、函式或指令碼的參數。 Cmdlet、函式、提供者和指令碼可以新增動態參數。|
 |格式檔案|一個 Windows PowerShell XML 檔案，副檔名為 .format.ps1xml 並定義 Windows PowerShell 如何根據 .NET Framework 類型來顯示物件。|
 |全域工作階段狀態|工作階段狀態，內含 Windows PowerShell 工作階段使用者可存取的資料。|
@@ -45,10 +52,10 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |Windows PowerShell|一種命令列殼層和工作指令碼技術，將系統管理工作的完整控制權和自動化提供給 IT 系統管理員。|
 |Windows PowerShell 命令|管線中導致執行動作的元素。 Windows PowerShell 命令是透過鍵盤輸入或透過程式設計方式叫用。|
 |Windows PowerShell 資料檔|副檔名為 .psd1 的文字檔。 Windows PowerShell 會基於各種用途使用資料檔；例如，儲存模組資訊清單資料，以及儲存進行指令碼國際化的已翻譯字串。|
-|Windows PowerShell 磁碟機|直接存取資料存放區的虛擬磁碟機。 它可以由 Windows PowerShell 提供者所定義或在命令列中建立。 在命令列建立的磁碟機是工作階段特定磁碟機，並在關閉工作階段時中斷。|
+|Windows PowerShell 磁碟機|直接存取資料存放區的虛擬磁碟機。 它可以由 Windows PowerShell 提供者所定義或在命令列中建立。 在命令列建立的磁碟機為工作階段特定磁碟機，並在關閉工作階段時中斷。|
 |Windows PowerShell 整合式指令碼環境 (ISE)|Windows PowerShell 主應用程式，可讓您執行命令，以及在易記、語法著色、Unicode 相容的環境中撰寫、測試和偵錯指令碼。|
 |Windows PowerShell 模組|獨立性可重複使用單位，可讓您分割、組織和擷取 Windows PowerShell 程式碼。 模組可以包含 Cmdlet、提供者、函式、變數以及可匯入為單一單位的其他類型資源。|
-|Windows PowerShell 提供者|Microsoft .NET Framework 程式，可讓特殊資料存放區中的資料在 Windows PowerShell 中使用，讓您可以檢視並管理它。|
+|Windows PowerShell 提供者|Microsoft .NET Framework 程式，可讓特殊資料存放區中的資料在 Windows PowerShell 中使用，讓您可以加以檢視並管理。|
 |Windows PowerShell 指令碼|使用 Windows PowerShell 語言所撰寫的指令碼。|
 |Windows PowerShell 指令碼檔案|一個檔案，副檔名為 .ps1 且包含使用 Windows PowerShell 語言所撰寫的指令碼。|
 |Windows PowerShell 嵌入式管理單元|定義可新增至 Windows PowerShell 環境之一組 Cmdlet、提供者和 Microsoft .NET Framework 類型的資源。|
@@ -56,6 +63,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

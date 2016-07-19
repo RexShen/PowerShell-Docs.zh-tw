@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
+ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
 
 ---
 
@@ -72,10 +72,11 @@ Configuration MyDscConfiguration {
 您必須先將設定編譯成 MOF 文件，才能施行設定。 呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。
 >__注意：__若要呼叫設定，函式必須在全域範圍內 (像任何其他 PowerShell 函式一樣)。 執行此作業的方法有二：「點執行」指令碼，或使用 F5 或按一下 ISE 的 __[執行指令碼]__ 按鈕執行設定指令碼。 若要點執行指令碼，請執行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含設定的指令碼檔案名稱。
 
-當您呼叫設定時，它會建立：
+當您呼叫設定時，它會：
 
-- 和設定同名的資料夾，位在目前的目錄中。
-- 名為 _節點名稱_.mof 的檔案，位在新的目錄中，其中_節點名稱_是設定的目標節點名稱。 如果有多個節點，每個節點都會建立一個 MOF 檔案。
+- 解析所有的變數 
+- 在目前的目錄中建立和設定同名的資料夾。
+- 在新的目錄中建立名為 _NodeName_.mof 的檔案，其中 _NodeName_ 是設定的目標節點名稱。 如果有多個節點，每個節點都會建立一個 MOF 檔案。
 
 >__注意：__MOF 檔案包含目標節點全部的設定資訊。 因為這樣，這個檔案的安全防護很重要。 如需詳細資訊，請參閱[保護 MOF 檔案](secureMOF.md)。
 
@@ -136,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

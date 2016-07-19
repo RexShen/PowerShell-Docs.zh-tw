@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "使用 JEA"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 3bac5932c3ed57713bdb08e3a9ed435b228518bc
+translationtype: Human Translation
+ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
+ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
 
 ---
 
@@ -49,7 +50,7 @@ Get-Command
 ```
 
 如您所見，這是一般 PowerShell 視窗 (通常可包含數千個命令) 中非常有限的一小組可用命令。
-具體來說，它只會顯示 7 個預設 JEA Cmdlet (Clear-Host、Exit-PSSession、Get-Command、Get-FormatData、Get-Help、Measure-Object、Out-Default、Select-Object)，以及兩個明確包含在維護角色功能檔案中的命令。
+具體來說，它只會顯示 8 個預設 JEA 命令 (Clear-Host、Exit-PSSession、Get-Command、Get-FormatData、Get-Help、Measure-Object、Out-Default、Select-Object)，以及兩個明確包含在維護角色功能檔案中的命令。
 
 接下來，讓我們看看此工作階段執行所在的使用者內容，方法是叫用包含在維護角色功能檔案中的自訂函式︰
 
@@ -96,6 +97,6 @@ Exit-PSSession
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

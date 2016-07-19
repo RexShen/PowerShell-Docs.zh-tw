@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 13b1fd65b9dddf2570e7ab9c5420c0a6d18ce35e
+ms.sourcegitcommit: c6b87ed59a16ccb147fdd3d98e48cfa1c0aa748d
+ms.openlocfilehash: d1f3c08451b385c56d0c4e084dce8fa5795c278e
 
 ---
 
@@ -31,7 +31,7 @@ rundll32.exe user32.dll,LockWorkStation
 若要關閉終端機伺服器上的特定工作階段，請使用 **tsshutdn.exe** 命令列工具。
 
 ### 登出目前的工作階段
-您可以使用幾項不同的技術，來登出本機系統上的工作階段。 最簡單的方式是使用遠端桌面\/終端機服務命令列工具 **logoff.exe** (如需詳細資訊，請在 Windows PowerShell 命令提示字元中，輸入 **logoff \/?**)。 若要登出目前使用中的工作階段，請輸入 **logoff** 且不加引數。
+您可以使用幾項不同的技術，來登出本機系統上的工作階段。 最簡單的方式是使用遠端桌面/終端機服務命令列工具 **logoff.exe** (如需詳細資訊，請在 Windows PowerShell 命令提示字元中，輸入 **logoff /?**)。 若要登出目前使用中的工作階段，請輸入 **logoff** 且不加引數。
 
 您也可以使用 **shutdown.exe** 工具搭配其登出選項︰
 
@@ -48,7 +48,7 @@ shutdown.exe -l
 如需詳細資訊，以及尋找 Win32Shutdown 方法的其他函式，請參閱 MSDN 中的＜Win32Shutdown Method of the Win32\_OperatingSystem Class＞(Win32_OperatingSystem 類別的 Win32Shutdown 方法)。
 
 ### 關閉或重新啟動電腦
-關閉並重新啟動電腦通常是相同類型的工作。 用來關閉電腦的工具通常也會用來重新啟動電腦，反之亦然。 從 Windows PowerShell 重新啟動電腦有兩個直接的作法。 使用 Tsshutdn.exe 或 Shutdown.exe 加上適當的引數。 您可以從 **tsshutdn.exe \/?** 或 **shutdown.exe \/?** 取得詳細的使用方式資訊。
+關閉並重新啟動電腦通常是相同類型的工作。 用來關閉電腦的工具通常也會用來重新啟動電腦，反之亦然。 從 Windows PowerShell 重新啟動電腦有兩個直接的作法。 使用 Tsshutdn.exe 或 Shutdown.exe 加上適當的引數。 您可以從 **tsshutdn.exe /?** 或 **shutdown.exe /?** 取得詳細的使用資訊。
 
 您也可以直接從 Windows PowerShell 使用 **Win32\_OperatingSystem**，來執行關閉和重新啟動作業。
 
@@ -67,6 +67,6 @@ shutdown.exe -l
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

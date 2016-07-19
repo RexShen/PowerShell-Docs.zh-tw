@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "角色功能"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 5b6dcb205d2c3cbb1a98c6465cb1002b9ed61459
+translationtype: Human Translation
+ms.sourcegitcommit: 81fd386d58576a8930093b4f18ce36a4ff6cecd0
+ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
 
 ---
 
@@ -62,7 +63,7 @@ VisibleExternalCommands = 'C:\Windows\system32\ipconfig.exe'
 因為 "Get" 命令通常不會變更系統狀態，所以這是相對較安全的動作。
 即便如此，還是強烈鼓勵您密切檢查透過 JEA 公開的每個命令。
 
-3.  您使用了 VisibleExternalCommands 來公開一個可執行檔 (ipconfig)。
+3.  您使用了 VisibleExternalCommands 公開可執行檔 (ipconfig)。
 您也可以使用此欄位來公開完整的 PowerShell 指令碼。
 請務必提供外部命令的完整路徑，以確保不會改為執行置於使用者路徑中名稱類似 (且潛在惡意) 的程式。
 
@@ -122,7 +123,7 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_
 # Create a blank script module. You'll use this for custom functions in the next section.
 New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1' -ItemType File
 
-# Create a RoleCapabilities folder in the AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
+# Create a RoleCapabilities folder in the Contoso_AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
 New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities' -ItemType Directory
 
 # Create a blank Role Capability in your RoleCapabilities folder. Running this command without any additional parameters just creates a blank template.
@@ -133,7 +134,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 下一節將使用此檔案。
 
 ## 重要概念
-**角色功能 (.psrc)**：定義使用者在 JEA 端點執行「什麼」工作的檔案。
+**角色功能 (.psrc)**：定義使用者在 JEA 端點執行「哪些」工作的檔案。
 它會詳細列出可見命令、可見主控台應用程式等項目的白名單。
 為了讓 PowerShell 偵測角色功能，您必須將其放在有效 PowerShell 模組的 "RoleCapabilities" 資料夾中。
 
@@ -144,6 +145,6 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7facb78962411d7b96ef6741e3ffa153d5537a0d
-ms.openlocfilehash: e1827e102a9b35ea214f89395f7ff3c5e0a58506
+ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
+ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
 
 ---
 
@@ -62,7 +62,7 @@ Kerberos 可保證使用者識別與伺服器識別，而不會傳送任何種�
       
 但 NTLM 通訊協定並不能保證伺服器識別。 因為所有通訊協定都使用 NTLM 進行驗證，所以可以存取已加入網域之電腦的電腦帳戶之攻擊者，就能叫用網域控制站計算出 NTLM 工作階段金鑰，然後模擬該伺服器。
 
-預設會停用 NTLM 的驗證，但在目標伺服器上設定 SSL 或進行 WinRM TrustedHosts 的設定時，可能會允許。
+預設會停用 NTLM 的驗證，但在目標伺服器上設定 SSL 或在用戶端設定 WinRM TrustedHosts 設定時，可能會允許。
     
 #### NTLM 連線期間使用 SSL 憑證來驗證伺服器識別
 
@@ -121,6 +121,6 @@ New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

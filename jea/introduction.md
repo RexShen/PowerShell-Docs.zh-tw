@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "簡介"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 46f4e5b231d09952f11387cec7c80fbfce9f9d4b
+translationtype: Human Translation
+ms.sourcegitcommit: e6b5107b7222708dcceff14bc26f0e12ef98d728
+ms.openlocfilehash: 00d568234b1453b9161b60d20117374ee4111ab3
 
 ---
 
@@ -26,14 +27,14 @@ ms.openlocfilehash: 46f4e5b231d09952f11387cec7c80fbfce9f9d4b
 此外，RBAC 涵蓋範圍也有間隙。
 例如，在 Windows 中，特殊權限存取主要是二元切換參數，迫使您在將使用者加入 Administrators 群組時，授與不必要的權限。
 
-##  **Just Enough Administration -JEA-** 
-透過 PowerShell 遠端提供角色型存取控制 -RBAC- 平台。
+##  **Just Enough Administration (JEA)** 
+透過 PowerShell 遠端提供角色型存取控制 (RBAC) 平台。
 *它可讓特定使用者在伺服器上執行特定管理工作，而不需要授與系統管理員權限。*
 這可讓您填滿現有 RBAC 解決方案的間隙，並簡化這些設定的管理工作。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

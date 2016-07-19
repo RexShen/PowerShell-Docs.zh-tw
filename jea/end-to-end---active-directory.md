@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "端對端   Active Directory"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
+translationtype: Human Translation
+ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
+ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 
 ---
 
@@ -70,7 +71,7 @@ ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
 現在您已有動作清單，您必須仔細思考每個命令的功能。
 這樣做有兩個重要原因︰
 
-1.  您很容易提供比預期更多的功能給使用者。
+1.  這樣很容易提供使用者超出預計的功能。
 例如，`Set-ADUser` 是非常強大且彈性的命令。
 您可能不想要向技術支援使用者公開它可以執行的所有工作。  
 
@@ -82,25 +83,25 @@ ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
 
 檢閱每個命令之後，您決定做出下列限制︰
 
-1.  `Set-ADUser` 只能搭配 "-Title" 參數執行
+1.  `Set-ADUser` 只能搭配 -Title 參數執行
 
 2.  `Add-ADGroupMember` 和 `Remove-ADGroupMember` 只能用於特定群組
 
 ### 步驟 3：確認這些工作適用於 JEA
 在限制的 JEA 環境中可能無法直接實際使用這些 Cmdlet。
-此外，JEA 會在 *NoLanguage* 模式下執行，以防止使用者使用變數。
+JEA 會在 *NoLanguage* 模式下執行，以防止使用者使用變數。
 為了確保使用者有流暢的體驗，請務必檢查一些事項。
 
 例如，請考慮 `Set-ADAccountPassword`。
-"-NewPassword" 參數需要安全字串。
+-NewPassword 參數需要安全字串。
 通常，使用者會建立安全字串並傳入作為變數 (如下所示)︰
 
 ```PowerShell
-$newPassword = (Read-Host -Prompt "Specify a new password" -AsSecureString)
+$newPassword = Read-Host -Prompt "Specify a new password" -AsSecureString
 Set-ADAccountPassword -Identity mollyd -NewPassword $newPassword -Reset
 ```
 
-不過，NoLanguage 模式會防止使用變數。
+不過，*NoLanguage* 模式會防止使用變數。
 您可以透過兩個方式來解決這項限制︰
 
 1.  您可以要求使用者執行命令，而不指派變數。
@@ -124,7 +125,7 @@ Set-ADAccountPassword -Identity mollyd -NewPassword (Read-Host -Prompt "Specify 
 
 1. 在 PowerShell ISE 中，開啟 "Contoso_AD_Module.psm1"
 ```PowerShell
-ISE 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
+ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
 ```
 
 2. 按 Crtl+J 開啟程式碼片段功能表。
@@ -165,7 +166,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 在[建立角色功能](#role-capability-creation)一節中，您已建立空白角色功能檔案。
 在本節中，您將在該檔案中填入值。
 
-首先在 ISE 中開啟角色功能檔案。
+首先在 PowerShell ISE 中開啟角色功能檔案。
 ```PowerShell
 ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
 ```
@@ -193,7 +194,7 @@ VisibleFunctions = 'Reset-ContosoUserPassword'
 1.  PowerShell 會嘗試自動載入您的角色功能所需的模組。
 如果您注意到模組發生未自動載入的問題，您可能必須在 "ModulesToImport" 欄位中明確地列出模組名稱。
 
-2.  如果您不確定命令是 Cmdlet 或函式，請執行 `Get-Command` 並查看 "CommandType"
+2.  如果您不確定命令是 Cmdlet 或函式，請執行 `Get-Command` 並查看 "CommandType" 屬性。
 
 3.  如果定義一組允許的值並不容易，則 ValidatePattern 可讓您使用規則運算式來限制參數引數。
 您無法對單一參數同時定義 ValidatePattern 和 ValidateSet。
@@ -210,7 +211,7 @@ ise "$env:ProgramData\JEAConfiguration\HelpDeskDemo.pssc"
 如果您在自己的環境中執行，則應該以您自己的非系統管理員使用者或群組取代 "CONTOSO\JEA_NonAdmins_Helpdesk"。
 ```PowerShell
 # OLD: Description = ''
-Description = 'An endpoint for active directory tasks.'
+Description = 'An endpoint for Active Directory tasks.'
 
 # OLD: SessionType = 'Default'
 SessionType = 'RestrictedRemoteServer'
@@ -266,12 +267,12 @@ Exit-PSSession
 如需詳細資訊，請執行 `Get-Help about_Functions`。
 
 **ValidateSet/ValidatePattern**︰公開命令時，您可以限制特定參數的有效引數。
-ValidateSet 是有效命令的特定清單。
+ValidateSet 是有效引數的特定清單。
 ValidatePattern 是該參數引數必須符合的規則運算式。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c
-ms.openlocfilehash: 87e4a23f93d19219a8d00671f319ef93a96fbbf6
+ms.sourcegitcommit: b41a40fd06de6898ba9adf01053d225edaa31b29
+ms.openlocfilehash: cd94291f225851a99253f5f54e10d6174e63f413
 
 ---
 
@@ -38,9 +38,9 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) 較快 (尤其是在 ISE 中)。
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) 有新的參數 –UseExisting，其會重新套用上次套用的設定。
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) 有提供新的參數 –UseExisting，其會重新套用上次套用的設定。
 
-    -   已修正 [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) \-Force。
+    -   已修正 [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force。
 
     -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) 可顯示更實用的引擎狀態資訊。
 
@@ -104,13 +104,13 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   現在，會先強制執行模組版本再套用設定。
 
-    -   現已正確設定 Get\-、Set\- 或 Test\-TargetResource 呼叫的 **DebugPreference**。
+    -   現已正確設定 Get-、Se- 或 Test-TargetResource 呼叫的 **DebugPreference**。
 
 -   認證處理改善
 
     -   現在，如果 **Certificate** 和 **PSDscAllowPlainTextPassword** 兩者皆有指定，則會使用憑證。
 
-    -   系統會解密認證，即使 Get\-TargetResource 亦然。
+    -   系統會將認證解密，即使 Get-TargetResource 亦同。
 
     -   中繼設定認證會經過加密及解密。
 
@@ -142,87 +142,87 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 ### <a name="BKMK_newcore"></a>Windows PowerShell 的新功能
 
--   自 Windows PowerShell 5.0 版開始，您可以透過使用類似其他物件導向之程式設計語言的正式語法和語意，來使用類別進行開發。 **Class**、**Enum** 與其他關鍵字已新增至 Windows PowerShell 語言以支援新功能。 如需使用類別的詳細資訊，請參閱＜about\_Classes＞。
+-   自 Windows PowerShell 5.0 版開始，您可以透過使用類似其他物件導向之程式設計語言的正式語法和語意，以使用類別進行開發。 **Class**、**Enum** 與其他關鍵字已新增至 Windows PowerShell 語言以支援新功能。 如需使用類別的詳細資訊，請參閱＜about_Classes＞。
 
--   Windows PowerShell 5.0 引進新的結構化資訊串流，供您在指令碼與呼叫端 (或主機環境) 之間傳送結構化的資料。 現在，您可以使用 Write\-Host 將輸出發出至資訊串流。 資訊串流也可用於 PowerShell.Streams、工作、已排定的工作和工作流程。 下列功能支援資訊串流。
+-   Windows PowerShell 5.0 引進新的結構化資訊串流，供您在指令碼與呼叫端 (或主機環境) 之間傳送結構化的資料。 現在，您可以使用 Write-Host 將輸出發出至資訊串流。 資訊串流也可用於 PowerShell.Streams、工作、已排定的工作和工作流程。 下列功能支援資訊串流。
 
-    -   新的 Write\-Information Cmdlet 可讓您指定 Windows PowerShell 如何處理命令的資訊串流資料。 Write\-Host 是 Write\-Information 的包裝函式。 Write\-Information 也是支援的工作流程活動。
+    -   新的 Write\-Information Cmdlet 可讓您指定 Windows PowerShell 如何處理命令的資訊串流資料。 Write-Host 是 Write-Information 的包裝函式。 Write-Information 也是支援的工作流程活動。
 
-    -   InformationVariable 和 InformationAction 這兩個是新的一般參數 ，可讓您決定如何顯示來自命令的資訊串流。 InformationAction 的有效值為 SilentlyContinue、Stop、Continue、Inquire、Ignore 或 Suspend，預設值為 SilentlyContinue。 針對來自命令的 Write\-Host 資料，您可使用 InformationVariable 將字串指定為要儲存的變數名稱。
+    -   InformationVariable 和 InformationAction 這兩個是新的一般參數 ，可讓您決定如何顯示來自命令的資訊串流。 InformationAction 的有效值為 SilentlyContinue、Stop、Continue、Inquire、Ignore 或 Suspend，預設值為 SilentlyContinue。 針對來自命令的 Write-Host 資料，您可使用 InformationVariable 將字串指定為要儲存的變數名稱。
 
     -   InformationPreference (新的喜好設定變數) 能指定您在 Windows PowerShell 工作階段中針對資訊串流資料的預設喜好設定。 預設值為 SilentlyContinue。
 
     -   已新增 PSInformation 和 InformationAction 這兩個新的工作流程一般參數。
 
-    -   現在，當您使用 Format\-Table 命令時，系統會評估通過串流的前 300 毫秒資料，以自動格式化資料表資料行。
+    -   現在，當您使用 Forma-Table 命令時，系統會評估通過串流的前 300 毫秒資料，以自動將資料表資料行格式化。
 
--   在與 [Microsoft Research](http://research.microsoft.com/) 合作之下，已新增 ConvertFrom\-String Cmdlet。 ConvertFrom\-String 可讓您擷取及剖析文字字串內容的結構化物件。 如需詳細資訊，請參閱＜ConvertFrom\-String＞。
+-   在與 [Microsoft Research](http://research.microsoft.com/) 合作之下，已新增 ConvertFrom-String Cmdlet。 ConvertFrom-String 可讓您擷取及剖析文字字串內容的結構化物件。 如需詳細資訊，請參閱＜ConvertFrom-String＞。
 
--   新的 Convert\-String Cmdlet 會自動根據您在 \-Example 參數中提供的範例來格式化文字。
+-   新的 Convert-String Cmdlet 會自動根據您在 -Example 參數中提供的範例將文字格式化。
 
 -   新的模組 Microsoft.PowerShell.Archive 包括的 Cmdlet，可讓您將檔案和資料夾壓縮為封存 (也稱為 ZIP) 檔案、從現有的 ZIP 檔案解壓縮檔案，並將 ZIP 檔案更新為已壓縮檔案的較新版本。
 
 -   新的模組 PackageManagement 可讓您在網際網路上探索並安裝軟體套件。 PackageManagement (前稱為 OneGet) 是現有封裝管理員 (也稱為封裝提供者) 的管理員或多工器，可統一 Windows 封裝管理與單一的 Windows PowerShell 介面。
 
--   針對 [PowerShell Gallery](http://www.powershellgallery.com/) (PowerShell 資源庫) 或透過執行 Register\-PSRepository Cmdlet 設定的內部模組存放庫，新的模組 PowerShellGet 可讓您尋找、安裝、發佈及更新其上的模組和 DSC 資源。
+-   針對 [PowerShell 資源庫](http://www.powershellgallery.com/)或透過執行 Register-PSRepository Cmdlet 設定的內部模組存放庫，新的模組 PowerShellGet 可讓您尋找、安裝、發佈及更新其上的模組和 DSC 資源。
 
--   已新增語言關鍵字 **Hidden**，其可將 Get\-Member 結果指定為預設不顯示成員 (屬性或方法)，除非您新增 \-Force 參數。 此外，IntelliSense 結果中也不會顯示已標示為隱藏的屬性或方法，除非您所在內容中的成員應該是可見的；例如，自動變數 $This 在類別方法中應會顯示隱藏的成員。
+-   已新增語言關鍵字 **Hidden**，其可將 Get-Member 結果指定為預設不顯示成員 (屬性或方法)，除非您新增 -Force 參數。 此外，IntelliSense 結果中也不會顯示已標示為隱藏的屬性或方法，除非您所在內容中的成員應該是可見的；例如，自動變數 $This 在類別方法中應會顯示隱藏的成員。
 
--   已增強 New\-Item、Remove\-Item 和 Get\-ChildItem 支援 [Symbolic link](http://en.wikipedia.org/wiki/Symbolic_link) (符號連結) 的建立與管理。 New\-Item 的 **ItemType** 參數可接受 **SymbolicLink** 這個新值。 現在您可以執行 New\-Item Cmdlet，在單一行中建立符號連結。
+-   New-Item、Remove-Item 及 Get-ChildItem 已增強為支援[符號連結](http://en.wikipedia.org/wiki/Symbolic_link)的建立與管理。 New-Item 的 **ItemType** 參數可接受 **SymbolicLink** 這個新值。 現在您可以執行 New-Item Cmdlet，在單一行中建立符號連結。
 
--   Get\-ChildItem 也有新的 –Depth 參數，可以搭配 –Recurse 參數來限制遞迴。 例如，Get\-ChildItem –Recurse –Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
+-   Get-Childitem 也有新的 –Depth 參數，您可將其與 –Recurse 參數搭配使用來限制遞迴。 例如，Get-ChildItem –Recurse –Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
 
--   Copy\-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [Windows Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 \-FromSession 和 \-ToSession 參數值指定為 PSSession ID，並加入 –Path 和 –Destination 以分別指定原始路徑和目的地。 例如，Copy\-Item \-Path c:\\myFile.txt \-ToSession $s \-Destination d:\\destinationFolder。
+-   Copy\-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 -FromSession 和 -ToSession 參數值指定為 PSSession 識別碼，並新增 –Path 和 –Destination 以分別指定原始路徑和目的地。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 -   Windows PowerShell 轉譯已經過改良，因此它不僅能套用至主控台主機 (**powershell.exe**)，也可以套用至所有的裝載應用程式 (例如 Windows PowerShell ISE)。 轉譯選項 (包括啟用全系統轉譯) 可以透過啟用 **[打開 PowerShell 轉譯]** 群組原則設定 (位於 [系統管理範本\/Windows 元件\/Windows PowerShell]) 來設定。
 
--   新的詳細指令碼追蹤功能可讓您在系統上啟用對 Windows PowerShell 指令碼之使用情況的詳細追蹤和分析。 啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 Windows 事件追蹤 (ETW) 事件記錄檔中：**Microsoft\-Windows\-PowerShell\/Operational**。
+-   新的詳細指令碼追蹤功能可讓您在系統上啟用對 Windows PowerShell 指令碼之使用情況的詳細追蹤和分析。 啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 Windows 事件追蹤 (ETW) 事件記錄檔中：**Microsoft\-Windows\-PowerShell\/Operational**
 
--   從 Windows PowerShell 5.0 開始，新的密碼編譯訊息語法 Cmdlet 支援針對受密碼編譯保護之訊息，使用 IETF 標準格式來加密和解密內容，如 [RFC5652](http://tools.ietf.org/html/rfc5652) 所述。 Get\-CmsMessage、Protect\-CmsMessage 和 Unprotect\-CmsMessage Cmdlet 已加入 [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) 模組中。
+-   從 Windows PowerShell 5.0 開始，新的密碼編譯訊息語法 Cmdlet 支援針對受密碼編譯保護之訊息，使用 IETF 標準格式來加密和解密內容，如 [RFC5652](http://tools.ietf.org/html/rfc5652) 所述。 [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) 模組中已新增 Get-CmsMessage、Protect-CmsMessage 以及 Unprotect-CmsMessage Cmdlet。
 
--   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組的新 Cmdlet：Get\-Runspace、Debug\-Runspace、Get\-RunspaceDebug、Enable\-RunspaceDebug 和 Disable\-RunspaceDebug，可讓您設定 Runspace 偵錯選項，並啟動和停止 Runspace 偵錯。 若要偵錯任意 Runspace (即不屬於 Windows PowerShell 主控台或 Windows PowerShell ISE 工作階段預設 Runspace 的 Runspace)，Windows PowerShell 可讓您在指令碼中設定中斷點，並已新增可停止指令碼執行的中斷點，直到您可以附加偵錯 Runspace 指令碼的偵錯工具為止。 Windows PowerShell 針對 Runspace 的指令碼偵錯工具，已新增支援任意 Runspace 的巢狀偵錯。
+-   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組中，新的 Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug 以及 Disable-RunspaceDebug Cmdlet，可讓您設定 Runspace 偵錯選項，並啟動和停止 Runspace 偵錯。 若要偵錯任意 Runspace (即不屬於 Windows PowerShell 主控台或 Windows PowerShell ISE 工作階段預設 Runspace 的 Runspace)，Windows PowerShell 可讓您在指令碼中設定中斷點，並已新增可停止指令碼執行的中斷點，直到您可以附加偵錯 Runspace 指令碼的偵錯工具為止。 Windows PowerShell 針對 Runspace 的指令碼偵錯工具，已新增支援任意 Runspace 的巢狀偵錯。
 
--   新的 Format\-Hex Cmdlet 已加入[Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組中。 Format\-Hex 可讓您以十六進位格式檢視文字或二進位資料。
+-   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組已新增 Format-Hex Cmdlet。 Format-Hex 可讓您以十六進位格式檢視文字或二進位資料。
 
--   Get\-Clipboard 和 Set\-Clipboard Cmdlet 已加入 [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組中，它們可簡化對 Windows PowerShell 工作階段進行傳送，以及自 Windows PowerShell 工作階段進行接收的內容傳輸作業。 剪貼簿 Cmdlet 支援影像、音訊檔、檔案清單和文字。
+-   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組已新增 Get-Clipboard 及 Set-Clipboard Cmdlet，其可簡化與 Windows PowerShell 工作階段之間的內容傳輸作業。 剪貼簿 Cmdlet 支援影像、音訊檔、檔案清單和文字。
 
--   新的 Clear\-RecycleBin Cmdlet 已加入 [Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) 模組中，該 Cmdlet 可清空固定磁碟機的資源回收筒，包含外部磁碟機。 由於這個 Cmdlet 的 ConfirmImpact 屬性設定為 ConfirmImpact.High，因此預設會提示您確認 Clear\-RecycleBin 命令。
+-   [Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) 模組已新增 Clear-RecycleBin Cmdlet，其可清空固定磁碟機的資源回收筒，包含外部磁碟機。 由於此 Cmdlet 的 ConfirmImpact 屬性設定為 ConfirmImpact.High，因此預設會提示您確認 Clear-RecycleBin 命令。
 
--   新的 New\-TemporaryFile Cmdlet 可讓您在進行指令碼處理時建立暫存檔案。 新的暫存檔案預設建立在 C:\\Users\\<user name>\\AppData\\Local\\Temp 中。
+-   新的 New-TemporaryFile Cmdlet 可讓您在進行指令碼處理時建立暫存檔案。 新的暫存檔案預設建立在 ```C:\Users\<user name>\AppData\Local\Temp```。
 
--   Out\-File、Add\-Content 和 Set\-Content Cmdlet 現在有新的 –NoNewline 參數，會省略輸出之後的新行。
+-   Out-File、Add-Content 和 Set-Content Cmdlet 現在有新的 –NoNewline 參數，其只會省略輸出之後的新行。
 
--   New\-Guid Cmdlet 會利用 .NET Framework GUID類別來產生 GUID；在您撰寫指令碼或 DSC 資源時非常實用。
+-   New-Guid Cmdlet 會利用 .NET Framework Guid 類別來產生 GUID；在您撰寫指令碼或 DSC 資源時非常實用。
 
--   由於檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下，因此針對 FileInfo 物件提供新的 FileVersionRaw 和 ProductVersionRaw 指令碼屬性。 例如，您可以執行下列命令，以顯示 PowerShell.exe 的上述屬性值，其中 $pid 包含 Windows Powershell 執行工作階段的處理程序識別碼：Get\-Process \-Id $pid \-FileVersionInfo | Format\-List \*版本\* \-Force。
+-   由於檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下，因此針對 FileInfo 物件提供新的 FileVersionRaw 和 ProductVersionRaw 指令碼屬性。 例如，您可以執行下列命令，以顯示 powershell.exe 的上述屬性值，其中 $pid 包含 Windows PowerShell 執行工作階段的處理程序識別碼：  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
--   新的 Enter\-PSHostProcess 和 Exit\-PSHostProcess Cmdlet 可讓您將處理程序中的 Windows PowerShell 指令碼與目前正在 Windows PowerShell 主控台中執行的處理程序分開，以進行個別偵錯。 您可執行 Enter\-PSHostProcess 來輸入或附加特定處理程序識別碼，然後執行 Get\-Runspace 以傳回處理程序內的使用中 Runspace。 完成處理程序內的指令碼偵錯時，可執行 Exit\-PSHostProcess 以中斷處理程序的連結。
+-   新的 Enter-PSHostProcess 與 Exit-PSHostProcess Cmdlet 可讓您將處理程序中的 Windows PowerShell 指令碼與目前正在 Windows PowerShell 主控台中執行的處理程序分開，以進行個別偵錯。 您可執行 Enter-PSHostProcess 輸入或附加特定處理程序識別碼，然後執行 Get-Runspace 傳回處理程序內的使用中 Runspace。 完成處理程序內的指令碼偵錯時，可執行 Exit-PSHostProcess 以中斷處理程序的連結。
 
--   新的 Wait\-Debugger Cmdlet 已加入 [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組中。 您可以先執行 Wait\-Debugger 來停止偵錯工具中的指令碼，然後執行指令碼中的下一個陳述式。
+-   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) 模組已新增 Wait-Debugger。 您可以先執行 Wait-Debugger 停止偵錯工具中的指令碼，然後再執行指令碼中的下一個陳述式。
 
--   Windows PowerShell 工作流程偵錯工具現已支援命令或 TAB 鍵自動完成，您也可以偵錯巢狀工作流程函式。 現在，您只要按 **Ctrl\+Break**，即可進入執行指令碼、本機和遠端工作階段，以及工作流程指令碼中的偵錯工具。
+-   Windows PowerShell 工作流程偵錯工具現已支援命令或 TAB 鍵自動完成，您也可以偵錯巢狀工作流程函式。 現在，您只要按 **Ctrl+Break**，即可進入執行指令碼、本機和遠端工作階段，以及工作流程指令碼中的偵錯工具。
 
--   Debug\-Job Cmdlet 已加人 [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) 模組中 ，以針對 Windows PowerShell 工作流程、背景，以及正在遠端工作階段中執行之工作的執行工作指令碼進行偵錯。
+-   [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) 模組已新增 Debug-Job Cmdlet，以針對 Windows PowerShell 工作流程、背景，以及正在遠端工作階段中執行之工作的執行工作指令碼進行偵錯。
 
--   Windows PowerShell 工作已新增 AtBreakpoint 狀態。 當工作正在執行的指令碼包含所設的中斷點，且該指令碼已達中斷點時，即會套用 AtBreakpoint 狀態。 當工作在偵錯中斷點停止時，您必須執行 Debug\-Job Cmdlet 以進行工作偵錯。
+-   Windows PowerShell 工作已新增 AtBreakpoint 狀態。 當工作正在執行的指令碼包含所設的中斷點，且該指令碼已達中斷點時，即會套用 AtBreakpoint 狀態。 當工作在偵錯中斷點停止時，您必須執行 Debug-Job Cmdlet 以進行工作偵錯。
 
--   Windows PowerShell 5.0 實作針對 $PSModulePath 中相同資料夾之單一 Windows PowerShell 模組的多個版本支援。 RequiredVersion 屬性已加入 ModuleSpecification 類別中，其有助您取得所需版本的模組；這個屬性和 ModuleVersion 屬性不可以同時存在。 現在，您可將 RequiredVersion 與 Get\-Module、Import\-Module 和 Remove\-Module Cmdlet 的 FullyQualifiedName 參數值一起使用。
+-   Windows PowerShell 5.0 實作針對 $PSModulePath 中相同資料夾之單一 Windows PowerShell 模組的多個版本支援。 ModuleSpecification 類別已新增 RequiredVersion 屬性，其有助您取得所需版本的模組；這個屬性和 ModuleVersion 屬性不可以同時存在。 現在，您可將 RequiredVersion 與 Get-Module、Import-Module 和 Remove-Module Cmdlett 的 FullyQualifiedName 參數值一起使用。
 
--   您現在可以執行 Test\-ModuleManifest Cmdlet 來驗證模組版本。
+-   您現在可以執行 Test-ModuleManifest Cmdlet 來驗證模組版本。
 
--   Get\-Command Cmdlet 的結果現在會顯示 Version 欄；CommandInfo 已新增 Version 屬性。 Get\-Command 會顯示來自多個版本之相同模組的命令。 Version 屬性也屬於 CmdletInfo 和 ApplicationInfo 的一部分，這兩者為 CmdletInfo 的衍生類別。
+-   Get-Command Cmdlet 的結果現在會顯示 Version 欄；CommandInfo 類別已新增 Version 屬性。 Get-Command 會顯示來自多個版本之相同模組的命令。 Version 屬性也屬於 CmdletInfo 和 ApplicationInfo 的一部分，這兩者為 CmdletInfo 的衍生類別。
 
--   Get\-Command 的新參數 \-ShowCommandInfo 會以 PSObjects 形式傳回 ShowCommand 資訊。 當使用 Windows PowerShell 遠端在 Windows PowerShell ISE 中執行 Show\-Command 時，這個功能特別實用。 –ShowCommandInfo 參數已取代 Microsoft.PowerShell.Utility 模組中現有的 Get\-SerializedCommand 函式，但 Get\-SerializedCommand 指令碼仍可支援舊版指令碼。
+-   Get-Command 的新參數 -ShowCommandInfo 會以 PSObjects 形式傳回 ShowCommand 資訊。 當使用 Windows PowerShell 遠端在 Windows PowerShell ISE 中執行 Show-Command 時，此功能特別實用。 –ShowCommandInfo 參數已取代 Microsoft.PowerShell.Utility 模組中現有的 Get-SerializedCommand 函式，但 Get-SerializedCommand 指令碼仍可支援舊版指令碼。
 
--   新的 Get\-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 例如，在舊版的 Windows PowerShell 中，您可以執行下列命令，以取得 PowerShellEngine 登錄機碼之 Application Base 屬性的值：**(Get\-ItemProperty \-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine \-Name ApplicationBase).ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get\-ItemPropertyValue \-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine \-Name ApplicationBase**。
+-   新的 Get-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 例如，在舊版的 Windows PowerShell 中，您可以執行下列命令，以取得 PowerShellEngine 登錄機碼之 Application Base 屬性的值：**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
 
 -   Windows PowerShell 主控台現在和 Windows PowerShell ISE 相同，都是使用語法著色。
 
 -   新的 NetworkSwitch 模組所包含的 Cmdlet 可讓您將交換器、虛擬 LAN (VLAN) 和基本層級 2 網路交換器連接埠設定套用至 Windows Server 2012 R2 標誌認證的網路交換器。
 
--   FullyQualifiedName 參數已加入 Import\-Module 和 Remove\-Module Cmdlet 中 ，以支援儲存單一模組的多個版本。
+-   Import-Module 和 Remove-Module Cmdlet 已新增 FullyQualifiedName 參數，以支援儲存單一模組的多個版本。
 
--   Save\-Help、Update\-Help、Import\-PSSession、Export\-PSSession 和 Get\-Command 皆有 ModuleSpecification 類型的新參數 FullyQualifiedModule。 您可新增這個參數來指定模組的完整名稱。
+-   Save-Help、Update-Help、Import-PSSession、Export-PSSession 和 Get-Command 皆有 ModuleSpecification 類型的新參數 FullyQualifiedModule。 您可新增這個參數來指定模組的完整名稱。
 
 -   **$PSVersionTable.PSVersion** 的值已經更新至 5.0。
 
@@ -759,6 +759,6 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

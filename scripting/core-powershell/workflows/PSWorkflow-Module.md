@@ -1,12 +1,19 @@
 ---
-title: PSWorkflow 模組
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PSWorkflow 模組"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
+translationtype: Human Translation
+ms.sourcegitcommit: 4f67538548a3828f0f2ad2cdb1a7828a0f3db892
+ms.openlocfilehash: 1e30424797ee285e9e4eeae990979e8a1329fd74
+
 ---
+
 # PSWorkflow 模組
 本節包含 **PSWorkflow** 模組的說明主題，此模組包含支援 Windows PowerShell 工作流程功能的 Cmdlet。 **PSWorkflow** 模組是與 Windows PowerShell 一起安裝。
 
@@ -29,8 +36,6 @@ ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
 
 [about_Parallel](https://technet.microsoft.com/en-us/library/104559a8-e89a-49f5-8c08-e5bf72768cbf)
 
-[about_Foreach-Parallel](https://technet.microsoft.com/en-us/library/35704780-dde8-4f5f-9319-5b982148bba7)
-
 [about_Sequence](https://technet.microsoft.com/en-us/library/bda3f81a-be8a-43be-b0df-12bb7e193b9b)
 
 [about_Suspend-Workflow](https://technet.microsoft.com/en-us/library/be2ded75-1eca-493e-96c1-758f92b5f199)
@@ -39,11 +44,12 @@ ms.assetid: 117316fe-2f82-4fc9-b5dc-794ae9e3f258
 [開始使用 Windows PowerShell 工作流程](http://go.microsoft.com/fwlink/?LinkID=252592)
 [撰寫 Windows PowerShell 工作流程](https://technet.microsoft.com/en-us/library/2551ceed-836f-4275-9fc0-ea68446d6a35)
 [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
-[Windows PowerShell 核心的關於主題](../core-modules/Windows-PowerShell-Core-About-Topics.md)
+[Windows PowerShell Core 的關於主題](../core-modules/Windows-PowerShell-Core-About-Topics.md)
 [使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

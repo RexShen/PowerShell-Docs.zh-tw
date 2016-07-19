@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "重現示範端點"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: dabb5023012e90ace3fbc5f347c17821abd92595
+translationtype: Human Translation
+ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
+ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
 
 ---
 
@@ -91,7 +92,7 @@ RoleDefinitions = @{'CONTOSO\JEA_NonAdmin_Operator' = @{ RoleCapabilities =  'Ma
 它會定義誰可以特殊權限帳戶身分執行什麼工作。
 您可以使用此欄位，根據群組成員資格指定任何連線使用者可以使用的功能。
 這是 JEA RBAC 功能的核心。
-在此範例中，您將對 "Contoso\JEA_NonAdmin_Operator" 群組的成員公開預製的「示範」RoleCapability。
+在此範例中，您將對 "Contoso\JEA_NonAdmin_Operator" 群組的成員公開預製的「維護」RoleCapability。
 
 3.  *RunAsVirtualAccount* 欄位指出 PowerShell 應該以此端點的虛擬帳戶身分執行。
 根據預設，虛擬帳戶是內建 Administrator 群組的成員。
@@ -124,7 +125,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 ## 測試您的端點
 對您的新端點重新執行[使用 JEA](using-jea.md)一節中所列的步驟，確認端點如預期般運作。
-提供設定名稱給 Enter-PSSession 時，請務必使用新的端點名稱 (JEADemo2)。
+將設定名稱提供給 `Enter-PSSession` 時，請務必使用新的端點名稱 (JEADemo2)。
 
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
@@ -152,6 +153,6 @@ Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdmi
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
