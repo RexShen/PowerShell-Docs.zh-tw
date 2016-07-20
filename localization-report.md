@@ -4628,8 +4628,8 @@
 * Archive Datetime: 2016-07-12 13:13:24
 * Handback File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d1f451f5954a0db111265ecc9b05f9a6f0a89d6b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-tw.xlf)
 * Handback Datetime: 2016-07-20 23:24:59
-* Bilingual File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5921d99e593c1a08562a7b9387f83abd54a46e7e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-tw.xlf)
-* Bilingual Datetime: 2016-07-12 18:26:19
+* Bilingual File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d1f451f5954a0db111265ecc9b05f9a6f0a89d6b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.zh-tw.xlf)
+* Bilingual Datetime: 2016-07-20 23:25:42
 * [Back to Top](#report-top)
 
 ##### <a name='cdf1f553d0bea91e2dcd051faef42417ad0cbc7a295'></a> Source: [scripting\setup\Accessibility-in-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/51b2182de7b563daefb9d64434bdc8b8ab5e0343/scripting/setup/Accessibility-in-Windows-PowerShell-ISE.md)
