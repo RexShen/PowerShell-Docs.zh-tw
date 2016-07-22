@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 535b25125a0c56feb10147f1872bdfdf3e3ef33a
+ms.sourcegitcommit: df9bb0362e82757ed1580cc4ace27735414a3e6d
+ms.openlocfilehash: 8c8fb7a40c066b048e1a54a741f4953e6b5a47b6
 
 ---
 
@@ -18,6 +18,9 @@ ms.openlocfilehash: 535b25125a0c56feb10147f1872bdfdf3e3ef33a
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的檔案資源會提供一個機制，在目標節點管理檔案和資料夾。
+
+>**注意︰**如果 **MatchSource** 屬性設為 **$false** (此為預設值)，則第一次套用設定時會快取要複製的內容。 
+>後續套用的設定不會檢查由 **SourcePath** 指定的路徑中是否有更新的檔案及/或資料夾。 如果想要在每次套用設定時都檢查 **SourcePath** 中是否有檔案及/或資料夾更新，請將 **MatchSource** 設為 **$true**。 
 
 ## 語法
 ```
@@ -53,7 +56,7 @@ File [string] #ResourceName
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 | SourcePath| 表示要從中複製檔案或資料夾資源的路徑。| 
 | 類型| 表示正在設定的資源是否為目錄或檔案。 將此屬性設定為 "Directory"，表示該資源為目錄。 將此屬性設定為 "File"，表示該資源為檔案。 預設值為 "File"。| 
-| MatchSource| 如果設定為 __$false__ 的預設值，則當第一次套用此設定時，會將來源 (例如檔案 A、B 和 C) 上的任何檔案加入目的地。 如果將新的檔案 (D) 加入來源，就不會將這個檔案加入目的地，即使稍後重新套用此設定亦同。 如果值為 __$true__，則每次套用此設定時，會將此來源 (例如，在此範例中的檔案 D) 上後續找到的新檔案加入目的地。| 
+| MatchSource| 如果設定為 __$false__ 的預設值，則當第一次套用此設定時，會將來源 (例如檔案 A、B 和 C) 上的任何檔案加入目的地。 如果將新的檔案 (D) 加入來源，就不會將這個檔案加入目的地，即使稍後重新套用此設定亦同。 如果值為 __$true__，則每次套用此設定時，會將此來源 (例如，在此範例中的檔案 D) 上後續找到的新檔案加入目的地。 預設值為 **$false**。| 
 
 ## 範例
 
@@ -86,6 +89,6 @@ Configuration FileResourceDemo
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO2-->
 
 

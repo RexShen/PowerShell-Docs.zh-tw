@@ -2,8 +2,8 @@
 title: "PackageManagement (即 OneGet) 改善"
 contributor: jianyunt, quoctruong
 translationtype: Human Translation
-ms.sourcegitcommit: 4c1b57f221d0f502313eecb21dd36b5e85c2de4d
-ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
+ms.sourcegitcommit: 3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff
+ms.openlocfilehash: bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3
 
 ---
 
@@ -36,9 +36,9 @@ ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
 **案例**︰企業案例中，員工的工作環境只能存取內部網路，不能存取網際網路。 在 WMF 5.0 中，OneGet 不支援此種案例。
 
 **解決方案**：
-- 您可以使用有網際網路連線的其他電腦，以 Install-PackageProvider NuGet 命令下載 NuGet 提供者。
+- 您可以使用 "Install-PackageProvider -Name NuGet"命令，將 NuGet 提供者下載到有網際網路連線的其他電腦。
 
-- 在 $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget 或 $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget 下尋找 NuGet 提供者。 
+- 在 $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget 或 $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget 下尋找剛剛安裝的 NuGet 提供者。 
 
 - 將二進位檔複製到 (沒有網際網路的) 電腦也可以存取的資料夾或網路共用位置，然後以 "Install-PackageProvider NuGet -Source <Path to folder>" 安裝 NuGet 提供者。
 
@@ -60,6 +60,6 @@ Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserve
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 

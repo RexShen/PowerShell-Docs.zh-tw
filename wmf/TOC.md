@@ -2,6 +2,11 @@
 
 # [WMF 5.1](5.1/release-notes.md)
 ## [新的案例和功能](5.1/scenarios-features.md)
+### [WMF 5.1 中已修正的 Bug](5.1/bugfixes.md)
+### [PowerShell 主控台改善](5.1/console-improvements.md)
+### [PowerShell 引擎改善](5.1/engine-improvements.md)
+### [預期狀態設定 (DSC) 中的增強功能](5.1/DSC-improvements.md)
+### [OneGet 改善]
 ## [安裝以及設定](5.1/install-configure.md)
 ## [已知問題](5.1/known-issues.md)
 ## [相容性](5.1/Compatibility.md)
@@ -89,6 +94,6 @@
 ### [軟體清查記錄 (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 
