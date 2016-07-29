@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "8248ea4c6e353ae6df1662e080b2aa0156a4fb51",
+  "LastProcessedCommit": "8c31a7878b8c16469fd709d76af8bb9f1b39af1e",
   "LastTranslatedCommit": "b33ab50d0ef704e54140c07b361fa907ce87ddf6",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
@@ -35909,6 +35909,41 @@
       "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\index.087529cd8972c61293d437c5b3a72507e4d1e1d9.zh-tw.xlf",
       "HandoffFileCommit": "c682b9a9130ed9dabf236bd378cac8706f66c3e8",
       "HandoffDateTime": "2016-07-29T17:42:37.0381657Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "97403b5ae385aa568d0eba44eabac2e10b130a76": {
+      "FileHash": "97403b5ae385aa568d0eba44eabac2e10b130a76",
+      "SourceFileCommit": "8c31a7878b8c16469fd709d76af8bb9f1b39af1e",
+      "SourceFilePath": "gallery\\index.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "gallery\\index.md"
+      ],
+      "HasMetadata": true,
+      "TranslationType": 1,
+      "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf",
+      "HandoffFileCommit": "ca568eeb9d44c43d4235447d726810dff50c2cb8",
+      "HandoffDateTime": "2016-07-29T18:12:26.5076091Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
