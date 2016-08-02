@@ -44,7 +44,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 2.  在 **[應用程式]** 列中按一下 **[設定]**，然後按一下 **[開啟或關閉 Windows 功能]**。
 
-3.  在 [Windows 功能]**** 方塊中，展開 [Windows PowerShell 2.0]**** 節點，然後按一下 [Windows PowerShell 2.0 引擎]**** 方塊加以選取或清除。
+3.  在 [Windows 功能] 方塊中，展開 [Windows PowerShell 2.0] 節點，然後按一下 [Windows PowerShell 2.0 引擎] 方塊加以選取或清除。
 
 ## 在 Windows Server 2012 R2 和 Windows Server 2012 上
 使用下列程序來新增 Windows PowerShell 2.0 引擎和 Microsoft .NET Framework 3.5 功能。 Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 可完成這項需求。
@@ -69,7 +69,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 -   在 **[安裝類型]** 頁面上，選取 **[角色型或功能型安裝]**。
 
--   在 **[功能]** 頁面上，展開 **[Windows PowerShell (Installed)] (Windows PowerShell (已安裝))** 節點，然後選取 **[Windows PowerShell 2.0 引擎]**。
+-   在 **[功能]** 頁面上，展開 **[Windows PowerShell (Installed) (Windows PowerShell (已安裝))]** 節點，然後選取 **[Windows PowerShell 2.0 引擎]**。
 
 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
