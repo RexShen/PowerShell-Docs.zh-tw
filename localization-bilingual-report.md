@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [gallery\index.md](https://github.com/PowerShell/powerShell-Docs/blob/8c31a7878b8c16469fd709d76af8bb9f1b39af1e/gallery/index.md) | InSyncHandedBackSuccess | [Details](#97403b5ae385aa568d0eba44eabac2e10b130a76104)
+ [scripting\setup\Installing-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Installing-the-Windows-PowerShell-2.0-Engine.md) | InSyncHandedBackSuccess | [Details](#8a61e974e7f7ea479ecc447c2db91c677cd8931f300)
 
 ## Item Details
-##### <a name='97403b5ae385aa568d0eba44eabac2e10b130a76104'></a> Source: [gallery\index.md](https://github.com/PowerShell/powerShell-Docs/blob/8c31a7878b8c16469fd709d76af8bb9f1b39af1e/gallery/index.md)
+##### <a name='8a61e974e7f7ea479ecc447c2db91c677cd8931f300'></a> Source: [scripting\setup\Installing-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [gallery\index.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/cb6b16d37decf981938a83b285cb935eab0b8a51/gallery/index.md)
-* Handoff File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/ca568eeb9d44c43d4235447d726810dff50c2cb8/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf)
-* Handoff Datetime: 2016-07-29 18:12:26
+* Target File: [scripting\setup\Installing-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/455e6a445be923defba7c317aae1dcf9701939b7/scripting/setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
+* Handoff File: [Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd9ea288d12e82c68285cc6eeeb412114bac97f9/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf)
+* Handoff Datetime: 2016-06-27 20:18:11
 * Handoff Reason: Include
-* Archive File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9b7c24e133ceaa504646f7ed486a62e81d14bd31/ol-archive/PowerShell/powerShell-Docs.zh-tw/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf)
-* Archive Datetime: 2016-08-02 13:12:21
-* Handback File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ebe150d47daac215f3b2c2d45f787cd33af0e7f5/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf)
-* Handback Datetime: 2016-08-02 14:03:58
-* Bilingual File: [index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ebe150d47daac215f3b2c2d45f787cd33af0e7f5/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/index.fb851c60ffb7fc30c83dbadbcac26716f6e1f16d.zh-tw.xlf)
-* Bilingual Datetime: 2016-08-02 14:06:17
+* Archive File: [Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c05da30c7ba4d429553459b7542c81cdb2af7ecb/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf)
+* Archive Datetime: 2016-06-28 13:28:59
+* Handback File: [Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1c7b29a8b32dd32931d805ed24e0b8ec5b0a360d/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf)
+* Handback Datetime: 2016-08-02 22:08:08
+* Bilingual File: [Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/1c7b29a8b32dd32931d805ed24e0b8ec5b0a360d/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Installing-the-Windows-PowerShell-2.0-Engine.190b56ee17b5135bba49f697312b896e5c3755dd.zh-tw.xlf)
+* Bilingual Datetime: 2016-08-02 22:08:52
 * [Back to Top](#report-top)
 
 
