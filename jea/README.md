@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "讀我檔案"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: d4e46653ff31ea7cda71f1c92b12ce5f2811b8a7
-ms.openlocfilehash: e24757029fd3ac9a70f710a7a755c35f440f087c
+ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
+ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
 
 ---
 
@@ -28,7 +28,7 @@ Just Enough Administration (JEA) 是安全性技術，允許將可透過 PowerSh
 
 有了 JEA，您就可以設定 DNS 系統管理員的角色，並讓他們只存取完成其工作所需的所有命令。
 這表示您可以提供適當的存取權以修復有害的 DNS 快取，卻不會無意中給予他們使用 Active Directory、瀏覽檔案、或執行有潛在危險指令碼的權限。
-更棒的是，當 JEA 工作階段設定為使用一次性特殊權限虛擬帳戶時，您的 DNS 系統管理員就可以在使用*非特殊權限*認證連線到伺服器的情況下，仍然能夠執行特殊權限命令。
+更棒的是，當 JEA 工作階段設定為使用一次性特殊權限虛擬帳戶時，您的 DNS 系統管理員就可以在使用*非特殊權限*認證連接到伺服器的情況下，仍然能夠執行特殊權限命令。
 
 ## 可用性
 JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 Windows Management Framework 更新來使用這項功能。
@@ -92,6 +92,6 @@ JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO4-->
 
 

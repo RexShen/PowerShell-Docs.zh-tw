@@ -1,15 +1,15 @@
 ---
 title: "偵錯 DSC 資源"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: f5290e085c8949f6b3cdf23f3244a7142da6248d
+ms.sourcegitcommit: 83ca45d507e39b77751ac7feb6a7b65ae2834280
+ms.openlocfilehash: e1922008a92f00c9ddab28598735839c25219d24
 
 ---
 
@@ -87,7 +87,7 @@ Debug-Runspace -Id 9
 
 ## 偵錯資源指令碼
 
-啟動 PowerShell ISE 的新執行個體。 在主控台窗格中，輸入 `Start-DscConifiguration` 輸出的最後三行輸出作為命令，將 `<credentials>` 替換成有效的使用者認證。 您現在應該會看到類似這樣的提示︰
+啟動 PowerShell ISE 的新執行個體。 在主控台窗格中，輸入 `Start-DscConfiguration` 輸出的最後三行輸出作為命令，將 `<credentials>` 替換成有效的使用者認證。 您現在應該會看到類似這樣的提示︰
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
@@ -110,6 +110,6 @@ Debug-Runspace -Id 9
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO5-->
 
 
