@@ -77,7 +77,7 @@ JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 
 9.  附錄
   - [本指南所使用的重要概念](key-concepts-used-throughout-this-guide.md)  
   -  [建立網域控制站](creating-a-domain-controller.md)  
-  -  [列入黑名單](on-blacklisting.md)  
+  -  [列入封鎖清單](on-blacklisting.md)  
   -  [限制命令時的考量](considerations-when-limiting-commands.md)  
   -  [常見的角色功能問題](common-role-capability-pitfalls.md)
 
