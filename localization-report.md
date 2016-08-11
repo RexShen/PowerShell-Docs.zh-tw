@@ -2802,8 +2802,8 @@
 * Archive Datetime: 2016-08-02 13:12:21
 * Handback File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/42b711fe0edd498707dec0a72b46613606406215/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
 * Handback Datetime: 2016-08-11 07:01:52
-* Bilingual File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5df4110fe8487234166e999bc03cd2cc6ad1c8a7/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
-* Bilingual Datetime: 2016-08-05 12:39:17
+* Bilingual File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/42b711fe0edd498707dec0a72b46613606406215/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
+* Bilingual Datetime: 2016-08-11 07:02:40
 * [Back to Top](#report-top)
 
 ##### <a name='acd2cfbd038250a26236c875d0e8b03a32cd84f9175'></a> Source: [jea\remake-the-demo-endpoint.md](https://github.com/PowerShell/powerShell-Docs/blob/d20ea8418cb7389d756de94ea752cf604b8d07af/jea/remake-the-demo-endpoint.md)
