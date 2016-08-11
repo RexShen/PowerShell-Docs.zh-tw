@@ -2794,14 +2794,14 @@
 
 ##### <a name='bfee5ef59a4085f0350ff454f634fc0bf5d6d837174'></a> Source: [jea\README.md](https://github.com/PowerShell/powerShell-Docs/blob/bd7f637d0889fd0f56c3fa653389819341d2ccff/jea/README.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [jea\README.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/9af5df4ee62b94353b0d10de0e69d5cbd7ae4cd7/jea/README.md)
+* Target File: [jea\README.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/90a68814312e37da6d45959301ff6edaf72c4ad1/jea/README.md)
 * Handoff File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/cdcde1249e0208eeab4594ab2bcbabccb79df403/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
 * Handoff Datetime: 2016-07-28 12:40:43
 * Handoff Reason: Include
 * Archive File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/9b7c24e133ceaa504646f7ed486a62e81d14bd31/ol-archive/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
 * Archive Datetime: 2016-08-02 13:12:21
-* Handback File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5df4110fe8487234166e999bc03cd2cc6ad1c8a7/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
-* Handback Datetime: 2016-08-05 12:38:36
+* Handback File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/42b711fe0edd498707dec0a72b46613606406215/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
+* Handback Datetime: 2016-08-11 07:01:52
 * Bilingual File: [README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5df4110fe8487234166e999bc03cd2cc6ad1c8a7/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.21b5f679157a942d8da32daf52be349e47cf03ae.zh-tw.xlf)
 * Bilingual Datetime: 2016-08-05 12:39:17
 * [Back to Top](#report-top)
