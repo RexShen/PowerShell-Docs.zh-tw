@@ -32,7 +32,7 @@ Windows Server® 2012 R2 和 Windows Server® 2012 中的 Windows PowerShell® W
 
 Windows Server 2012 R2 中的 Add-PswaAuthorizationRule 和 Test-PswaAuthorizationRule 包含可讓您從遠端電腦或從作用中的 Windows PowerShell Web 存取工作階段，新增和測試 Windows PowerShell Web 存取授權規則的 Credential 參數。 如同其他具有 Credential 參數的 Windows PowerShell Cmdlet，您可以將 PSCredential 物件指定為此參數的值。 若要建立 PSCredential 物件且包含您要傳遞至遠端電腦的認證，請執行 [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) Cmdlet。
 
-Windows PowerShell Web 存取驗證規則是白名單規則。 每個規則都是使用者、目標電腦及指定目標電腦上特定 Windows PowerShell [工作階段設定](https://technet.microsoft.com/library/dd819508.aspx) (也稱為端點或 Runspace) 間允許連線的定義。
+Windows PowerShell Web 存取驗證規則是允許清單規則。 每個規則都是使用者、目標電腦及指定目標電腦上特定 Windows PowerShell [工作階段設定](https://technet.microsoft.com/library/dd819508.aspx) (也稱為端點或 Runspace) 間允許連線的定義。
 
 <table>
 <colgroup>
@@ -293,9 +293,9 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
     在先前的案例中，Windows PowerShell Web 存取必須先成功完成下列各項且至少獲得一個授權規則的允許，才能順利建立與目標電腦的連線。
 
-    1.  使用「伺服器名稱\使用者名稱」****格式將使用者名稱新增到授權規則，以便在工作群組閘道伺服器上進行驗證
+    1.  使用「伺服器名稱\使用者名稱」格式將使用者名稱新增到授權規則，以便在工作群組閘道伺服器上進行驗證
 
-    2.  使用登入頁面上 [選用連線設定]**** 區域中提供的替代認證，在目標電腦上進行驗證
+    2.  使用登入頁面上 [選用連線設定] 區域中提供的替代認證，在目標電腦上進行驗證
 
     <table>
     <colgroup>
