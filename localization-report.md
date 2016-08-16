@@ -2683,8 +2683,8 @@
 * Archive Datetime: 2016-07-12 13:13:24
 * Handback File: [considerations-when-limiting-commands.f94b8dd0f9c77bf7e8a6286eb8ff8f20609bf593.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cf0f6a221a667e3dcdfeaef6e0f924c72c9cab8e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/considerations-when-limiting-commands.f94b8dd0f9c77bf7e8a6286eb8ff8f20609bf593.zh-tw.xlf)
 * Handback Datetime: 2016-08-16 07:28:59
-* Bilingual File: [considerations-when-limiting-commands.f94b8dd0f9c77bf7e8a6286eb8ff8f20609bf593.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5921d99e593c1a08562a7b9387f83abd54a46e7e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/considerations-when-limiting-commands.f94b8dd0f9c77bf7e8a6286eb8ff8f20609bf593.zh-tw.xlf)
-* Bilingual Datetime: 2016-07-12 18:26:19
+* Bilingual File: [considerations-when-limiting-commands.f94b8dd0f9c77bf7e8a6286eb8ff8f20609bf593.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cf0f6a221a667e3dcdfeaef6e0f924c72c9cab8e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/considerations-when-limiting-commands.f94b8dd0f9c77bf7e8a6286eb8ff8f20609bf593.zh-tw.xlf)
+* Bilingual Datetime: 2016-08-16 09:00:25
 * [Back to Top](#report-top)
 
 ##### <a name='8473eb668e4da5bab01c2f2b7647cbced413bd22166'></a> Source: [jea\creating-a-domain-controller.md](https://github.com/PowerShell/powerShell-Docs/blob/d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498/jea/creating-a-domain-controller.md)
@@ -2863,8 +2863,8 @@
 * Archive Datetime: 2016-07-12 13:13:24
 * Handback File: [role-capabilities.f5d3ffdf33f9043c1ffa50f8a35842c90ffd6c71.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cf0f6a221a667e3dcdfeaef6e0f924c72c9cab8e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/role-capabilities.f5d3ffdf33f9043c1ffa50f8a35842c90ffd6c71.zh-tw.xlf)
 * Handback Datetime: 2016-08-16 07:28:59
-* Bilingual File: [role-capabilities.f5d3ffdf33f9043c1ffa50f8a35842c90ffd6c71.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/2b745b26946266c2ca6550445e020046dbd38c4d/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/role-capabilities.f5d3ffdf33f9043c1ffa50f8a35842c90ffd6c71.zh-tw.xlf)
-* Bilingual Datetime: 2016-07-19 20:13:30
+* Bilingual File: [role-capabilities.f5d3ffdf33f9043c1ffa50f8a35842c90ffd6c71.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cf0f6a221a667e3dcdfeaef6e0f924c72c9cab8e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/role-capabilities.f5d3ffdf33f9043c1ffa50f8a35842c90ffd6c71.zh-tw.xlf)
+* Bilingual Datetime: 2016-08-16 09:00:25
 * [Back to Top](#report-top)
 
 ##### <a name='fc3b6d859bf3842a857d9519516ea4e275fa1876179'></a> Source: [jea\TOC.MD](https://github.com/PowerShell/powerShell-Docs/blob/877e2df3b80ad730f143f8008a5d8c071eabb9ca/jea/TOC.MD)
@@ -5787,8 +5787,8 @@
 * Archive Datetime: 2016-06-28 13:28:59
 * Handback File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cf0f6a221a667e3dcdfeaef6e0f924c72c9cab8e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-tw.xlf)
 * Handback Datetime: 2016-08-16 07:28:59
-* Bilingual File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8a60d59decff1a0806b8837a76a5e67f80c9d01c/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-tw.xlf)
-* Bilingual Datetime: 2016-07-19 20:07:18
+* Bilingual File: [jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cf0f6a221a667e3dcdfeaef6e0f924c72c9cab8e/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/jea_endpoint.1dc052fe583a907a6c090cf8bfd42293d94d2975.zh-tw.xlf)
+* Bilingual Datetime: 2016-08-16 09:00:25
 * [Back to Top](#report-top)
 
 ##### <a name='811596d4ad7994a12987ff172e626eac534bdf4d376'></a> Source: [wmf\5.0\jea_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/jea_overview.md)
