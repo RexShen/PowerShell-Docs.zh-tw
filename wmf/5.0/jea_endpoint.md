@@ -136,7 +136,7 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的白名單。 如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。
+一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的允許清單。 如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。
 
 <!--HONumber=Jun16_HO4-->
 

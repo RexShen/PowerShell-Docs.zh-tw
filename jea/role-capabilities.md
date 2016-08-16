@@ -23,7 +23,7 @@ ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
 
 ## PowerShell 角色功能簡介
 PowerShell 角色功能定義使用者在 JEA 端點執行「什麼」工作。
-它會詳細列出可見命令、可見應用程式等項目的白名單。
+它會詳細列出可見命令、可見應用程式等項目的允許清單。
 角色功能是由副檔名為 ".psrc" 的檔案定義。
 
 ## 角色功能內容
@@ -135,7 +135,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 
 ## 重要概念
 **角色功能 (.psrc)**：定義使用者在 JEA 端點執行「哪些」工作的檔案。
-它會詳細列出可見命令、可見主控台應用程式等項目的白名單。
+它會詳細列出可見命令、可見主控台應用程式等項目的允許清單。
 為了讓 PowerShell 偵測角色功能，您必須將其放在有效 PowerShell 模組的 "RoleCapabilities" 資料夾中。
 
 **PowerShell 模組**：PowerShell 功能的套件，
