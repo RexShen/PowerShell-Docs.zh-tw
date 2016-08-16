@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [scripting\core-powershell\web-access\authorization-rules-and-security-features-of-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md) | InSyncHandedBackSuccess | [Details](#ed586e55f4533ce5be7c68564e5cc537fed05016233)
 
 ## Item Details
-##### <a name='ed586e55f4533ce5be7c68564e5cc537fed05016233'></a> Source: [scripting\core-powershell\web-access\authorization-rules-and-security-features-of-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\core-powershell\web-access\authorization-rules-and-security-features-of-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/1aa9b57a6d0ba8a60afb3ce684801bd71f3e6f23/scripting/core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
-* Handoff File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/bd9ea288d12e82c68285cc6eeeb412114bac97f9/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
-* Handoff Datetime: 2016-06-27 20:18:11
-* Handoff Reason: Include
-* Archive File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c05da30c7ba4d429553459b7542c81cdb2af7ecb/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/archive/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
-* Archive Datetime: 2016-06-28 13:28:59
-* Handback File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5c22157138bb228d3dd3804cdb03705cb448d1df/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
-* Handback Datetime: 2016-08-16 20:56:57
-* Bilingual File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4a9a0cd5be417272df7f06b56739604b874b4d6d/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
-* Bilingual Datetime: 2016-08-16 13:05:04
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
