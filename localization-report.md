@@ -3749,8 +3749,8 @@
 * Archive Datetime: 2016-06-28 13:28:59
 * Handback File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5c22157138bb228d3dd3804cdb03705cb448d1df/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
 * Handback Datetime: 2016-08-16 20:56:57
-* Bilingual File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4a9a0cd5be417272df7f06b56739604b874b4d6d/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
-* Bilingual Datetime: 2016-08-16 13:05:04
+* Bilingual File: [authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5c22157138bb228d3dd3804cdb03705cb448d1df/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/authorization-rules-and-security-features-of-windows-powershell-web-access.c317fe9a78ba1130929bd001738c2eb57f0037dd.zh-tw.xlf)
+* Bilingual Datetime: 2016-08-16 22:33:26
 * [Back to Top](#report-top)
 
 ##### <a name='d2f78148402f06992f5f58cd40e8c4f624b5e4b5234'></a> Source: [scripting\core-powershell\web-access\install-and-use-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
