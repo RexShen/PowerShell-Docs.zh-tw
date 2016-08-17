@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "877e2df3b80ad730f143f8008a5d8c071eabb9ca",
-  "LastTranslatedCommit": "a4e640c2a70f7cb4743319e561e97d8b586159b3",
+  "LastTranslatedCommit": "8e0b88783294b0f99d58da70175b493dc7b1f530",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -29031,14 +29031,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "f39285139274ffa6495edafb00d7d205b9cbf964",
+      "TargetFileCommit": "8e0b88783294b0f99d58da70175b493dc7b1f530",
       "TargetFilePath": "jea\\on-blacklisting.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.zh-tw\\live\\on-blacklisting.a0a3a6a7999f27e486c2bb0a14d88792ee94f927.zh-tw.xlf",
-      "HandbackFileCommit": "4449be824aaf1f5f73579535f5d533d9603fcd85",
-      "HandbackDateTime": "2016-08-17T03:18:21.2685104Z",
+      "HandbackFileCommit": "d8b2b8ffc7c0e7f2656fb1b9f1e846504644bbed",
+      "HandbackDateTime": "2016-08-17T11:49:58.9635678Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-08-17T03:18:21.2685104Z",
+      "UpdatedDateTime": "2016-08-17T11:49:58.9635678Z",
       "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.zh-tw\\live\\archive\\on-blacklisting.a0a3a6a7999f27e486c2bb0a14d88792ee94f927.zh-tw.xlf",
       "ArchiveFileCommit": "088570763259574de0622d7467a7a5e2a970ea83",
       "ArchiveFileDateTime": "2016-07-12T13:13:24.9550698Z",
