@@ -9,20 +9,20 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 44b218200e4207fba059ce63adabec924fe6eb1d
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 6b3c739ef54596495dad65dd51c3bcb4404c3d94
 
 ---
 
 # ISEAddOnTool 物件
-  **ISEAddonTool** 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。 **命令**工具即為一例，您可以依序按一下 **[檢視]** 和 **[顯示命令附加元件]** 來顯示此工具。 您接著可以藉由操作各種可用的 **ISEAddOnTool** 物件來存取此工具。
+  **ISEAddonTool** 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。 **命令**工具即為一例，您可以依序按一下 [檢視] 和 [顯示命令附加元件] 來顯示此工具。 您接著可以藉由操作各種可用的 **ISEAddOnTool** 物件來存取此工具。
 
  每個附加元件工具都可以與垂直窗格或水平窗格產生關聯。 垂直窗格會停駐於 Windows PowerShell ISE 的右邊。 水平窗格則會停駐於底部。
 
  Windows PowerShell ISE 中的每個 PowerShell 索引標籤都可以安裝一組自己的附加元件工具。 請參閱 [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md) 和 [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)，來存取可供目前所選取索引標籤使用的工具集合，或者 [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) 集合物件中任何 **PowerShellTab** 物件上的相同屬性。
 
 ## 方法
- 沒有任何適用於這個類別物件的 Windows PowerShell ISE 特定方法。
+ 沒有任何 Windows PowerShell ISE 特定的方法適用於這個類別的物件。
 
 ## [內容]
 
@@ -145,7 +145,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 ###  <a name="IsVisible"></a> IsVisible
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 布林值屬性，指出附加元件工具目前是否會顯示於其指派窗格中。 如果顯示，您可以將 **IsVisible** 屬性設定為 **$false** 來隱藏工具，或者將 **IsVisible** 屬性設定為 **$true**，讓附加元件工具可顯示於 PowerShell 索引標籤上。 請注意，隱藏附加元件工具之後，就無法再透過 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 物件來存取，因此無法透過在該物件上使用這個屬性來顯示。
+ 布林值屬性，指出附加元件工具目前是否會顯示於它的指派窗格中。 如果顯示，您可以將 **IsVisible** 屬性設定為 **$false** 來隱藏工具，或者將 **IsVisible** 屬性設定為 **$true**，讓附加元件工具可顯示於 PowerShell 索引標籤上。 請注意，隱藏附加元件工具之後，就無法再透過 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 物件來存取，因此無法透過在該物件上使用這個屬性來顯示。
 
 ```
 # Hide the current tool in the vertical tool pane
@@ -176,6 +176,6 @@ Commands
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

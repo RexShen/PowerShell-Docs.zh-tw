@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 27d3d11b71b95cd79817449cf8bdb1a0a26936bd
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c013124d12a551245152c1703e5f1d8a3f8f5f70
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 27d3d11b71b95cd79817449cf8bdb1a0a26936bd
 您可以使用 WMI 和 WSH 的 WScript.Network COM 物件，用 Windows PowerShell 來管理印表機。 我們會混合使用這兩種工具，來示範特定的工作。
 
 ### 列出印表機連線
-使用 WMI **Win32\_Printer** 類別是列出電腦上已安裝印表機的最簡單方法︰
+使用 WMI **Win32_Printer** 類別是列出電腦上已安裝印表機的最簡單方法︰
 
 ```
 Get-WmiObject -Class Win32_Printer -ComputerName
@@ -40,7 +40,7 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 ```
 
 ### 設定預設印表機
-若要使用 WMI 設定預設印表機，請在 **Win32\_Printer** 集合中找出印表機，然後叫用 **SetDefaultPrinter** 方法：
+若要使用 WMI 設定預設印表機，請在 **Win32_Printer** 集合中找出印表機，然後叫用 **SetDefaultPrinter** 方法：
 
 ```
 (Get-WmiObject -ComputerName . -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
@@ -62,6 +62,6 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

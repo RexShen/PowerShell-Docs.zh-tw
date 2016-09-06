@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: c3bcf9dc6f70383e971d9c1ae75ec78860111de9
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 6216f3e1a766c57a7549a3e3b4fbe76d043a8a41
 
 ---
 
@@ -43,7 +43,7 @@ Path
 C:\temp
 ```
 
-您可以使用 **Get\-Member** 顯示變數內容的相關資訊。 將 $loc 傳送到 Get\-Member 將顯示它是 **PathInfo** 物件，就像 Get\-Location 的輸出一樣：
+您可以使用 **Get-Member** 顯示變數內容的相關資訊。 將 $loc 傳送到 Get-Member 將顯示它是 **PathInfo** 物件，就像 Get-Location 的輸出一樣：
 
 ```
 PS> $loc | Get-Member -MemberType Property
@@ -65,7 +65,7 @@ Windows PowerShell 提供數個命令來操作變數。 您可以查看可讀取
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-除了您在目前 Windows PowerShell 工作階段中建立的變數之外，還有數個系統定義的變數。 您可以使用 **Remove\-Variable** Cmdlet 來清除所有不受 Windows PowerShell 控制的變數。 輸入下列命令以清除所有變數：
+除了您在目前 Windows PowerShell 工作階段中建立的變數之外，還有數個系統定義的變數。 您可以使用 **Remove-Variable** Cmdlet 來清除所有不受 Windows PowerShell 控制的變數。 輸入下列命令以清除所有變數：
 
 ```
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
@@ -81,7 +81,7 @@ Performing operation "Remove Variable" on Target "Name: Error".
 (default is "Y"):A
 ```
 
-如果您之後執行 **Get\-Variable** Cmdlet，則會看到其餘的 Windows PowerShell 變數。 因為也有變數 Windows PowerShell 磁碟機，所以您也可以顯示所有 Windows PowerShell 變數，方法是輸入︰
+如果您之後執行 **Get-Variable** Cmdlet，則會看到其餘的 Windows PowerShell 變數。 因為也有變數 Windows PowerShell 磁碟機，所以您也可以顯示所有 Windows PowerShell 變數，方法是輸入︰
 
 ```
 Get-ChildItem variable:
@@ -106,6 +106,6 @@ C:\WINDOWS
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

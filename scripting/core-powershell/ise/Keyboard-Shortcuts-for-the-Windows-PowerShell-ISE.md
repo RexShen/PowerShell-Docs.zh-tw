@@ -1,14 +1,21 @@
 ---
-title: Windows PowerShell ISE 的鍵盤快速鍵
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell ISE 的鍵盤快速鍵"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 596bbd2a5c272918171833310fc8c8aa5353adb1
+
 ---
+
 # Windows PowerShell ISE 的鍵盤快速鍵
-使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統.
+使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。
 
 ## 編輯文字的鍵盤快速鍵
 編輯文字時，您可以使用下列鍵盤快速鍵。
@@ -40,7 +47,7 @@ ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 |**開啟**|CTRL+O|
 |**執行**|F5|
 |**執行選取項目**|F8|
-|**停止執行**|CTRL+BREAK。 在內容明確 (未選取文字) 的情況下，可以使用 CTRL+C。|
+|**停止執行**|CTRL+BREAK 在內容明確 (未選取文字) 的情況下，可以使用 CTRL+C。|
 |**Tab** (至下一個指令碼)|CTRL+TAB **注意︰**Tab 至下一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 |**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意︰**Tab 至上一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 
@@ -97,8 +104,8 @@ ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 |----------|---------------------|
 |**關閉 PowerShell 索引標籤**|CTRL+W|
 |**新增 PowerShell 索引標籤**|CTRL+T|
-|**上一個 PowerShell 索引標籤**|CTRL+SHIFT+TAB。 只有在任何 Windows PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
-|**下一個 Windows PowerShell 索引標籤**|CTRL+TAB。 只有在任何 Windows PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
+|**上一個 PowerShell 索引標籤**|CTRL+SHIFT+TAB 只有在任何 Windows PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
+|**下一個 Windows PowerShell 索引標籤**|CTRL+TAB 只有在任何 Windows PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 
 ## 開始和結束的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，啟動 Windows PowerShell 主控台 (PowerShell.exe) 或結束 Windows PowerShell ISE。
@@ -113,6 +120,7 @@ ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

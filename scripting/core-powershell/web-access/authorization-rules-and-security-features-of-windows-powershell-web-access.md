@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ed586e55f4533ce5be7c68564e5cc537fed05016
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
 
 ---
 
@@ -178,7 +178,7 @@ Windows PowerShell Web 存取安全性模型在網頁型主控台的一般使用
 
 系統管理員很可能想要針對 Windows PowerShell Web 存取使用者，將已在其環境中定義的同一個授權規則套用到 Windows PowerShell 遠端管理。 本節的第一個程序描述如何新增授與一位使用者存取權、登入以管理一部電腦，以及單一工作階段設定內的安全性規則。 第二個程序描述如何移除不再需要的授權規則。
 
-如果您打算使用自訂工作階段設定來允許特定使用者只能在 Windows PowerShell Web 存取中受限制的 Runspace 內工作，請先建立您的自訂工作階段設定，然後再新增參考這些設定的授權規則。 您不能使用 Windows PowerShell Web 存取 Cmdlet 來建立自訂的工作階段設定。 如需建立自訂工作階段設定的詳細資訊，請參閱 MSDN 上的 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)。
+如果您打算使用自訂工作階段設定來允許特定使用者只能在 Windows PowerShell Web 存取中受限制的 Runspace 內工作，請先建立您的自訂工作階段設定，然後再新增參考這些設定的授權規則。 您不能使用 Windows PowerShell Web 存取 Cmdlet 來建立自訂的工作階段設定。 如需建立自訂工作階段設定的詳細資訊，請參閱 MSDN 上的 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)。
 
 Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 ( \* )。 不支援在字串中使用萬用字元；每一個屬性 (使用者、電腦或工作階段設定) 使用單一星號。
 
@@ -206,7 +206,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
     -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
+2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
 
 3.  輸入下列程式碼，然後按 **Enter**。
 
@@ -214,13 +214,13 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso\_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly</span> 的工作階段設定。
+    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly</span> 的工作階段設定。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "複製到剪貼簿。")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;網域\\使用者 | 電腦\\使用者&gt; -ComputerName** &lt;電腦名稱&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
+4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
 
 #### 移除授權規則
 
@@ -257,7 +257,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 ------------------------------------------------------------------------
 
-每一個 Windows PowerShell 工作階段都會使用一個工作階段設定；如果未針對工作階段指定這類設定，Windows PowerShell 就會使用預設的內建 Windows PowerShell 工作階段設定 (稱為 Microsoft.PowerShell)。 預設的工作階段設定包含電腦可用的所有 Cmdlet。 系統管理員可以使用受限制的 Runspace (一般使用者可以執行之有限範圍內的 Cmdlet 及工作) 來定義工作階段設定，以便限制所有電腦的存取權。 如果已為使用者授與某部電腦的存取權 (無論完整的語言存取權或只能存取 Windows PowerShell 遠端管理 Cmdlet)，該使用者就能連線到已與第一部電腦連線的其他電腦。 定義受限制的 Runspace 可防止使用者從他們允許的 Windows PowerShell Runspace 存取其他電腦，而且還可以提升 Windows PowerShell Web 存取環境的安全性。 工作階段設定可以散佈 (使用群組原則) 到系統管理員想要透過 Windows PowerShell Web 存取來存取的所有電腦。 如需工作階段設定的詳細資訊，請參閱 [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。 下面是這個案例的一些範例。
+每一個 Windows PowerShell 工作階段都會使用一個工作階段設定；如果未針對工作階段指定這類設定，Windows PowerShell 就會使用預設的內建 Windows PowerShell 工作階段設定 (稱為 Microsoft.PowerShell)。 預設的工作階段設定包含電腦可用的所有 Cmdlet。 系統管理員可以使用受限制的 Runspace (一般使用者可以執行之有限範圍內的 Cmdlet 及工作) 來定義工作階段設定，以便限制所有電腦的存取權。 如果已為使用者授與某部電腦的存取權 (無論完整的語言存取權或只能存取 Windows PowerShell 遠端管理 Cmdlet)，該使用者就能連線到已與第一部電腦連線的其他電腦。 定義受限制的 Runspace 可防止使用者從他們允許的 Windows PowerShell Runspace 存取其他電腦，而且還可以提升 Windows PowerShell Web 存取環境的安全性。 工作階段設定可以散佈 (使用群組原則) 到系統管理員想要透過 Windows PowerShell Web 存取來存取的所有電腦。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。 下面是這個案例的一些範例。
 
 -   系統管理員會建立一個含有受限制 Runspace 的端點，稱為 **PswaEndpoint**。 然後，系統管理員會建立 **\*,\*,PswaEndpoint** 規則，並將該端點散佈到其他電腦。 這個規則允許所有使用者存取具有端點 **PswaEndpoint** 的所有電腦。 如果這是規則集中定義的唯一授權規則，就無法存取不具該端點的電腦。
 
@@ -293,7 +293,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
     在先前的案例中，Windows PowerShell Web 存取必須先成功完成下列各項且至少獲得一個授權規則的允許，才能順利建立與目標電腦的連線。
 
-    1.  使用「伺服器名稱\使用者名稱」格式將使用者名稱新增到授權規則，以便在工作群組閘道伺服器上進行驗證
+    1.  利用 *server_name*\\*user_name* 格式將使用者名稱新增到授權規則，以便在工作群組閘道伺服器上進行驗證
 
     2.  使用登入頁面上 [選用連線設定] 區域中提供的替代認證，在目標電腦上進行驗證
 
@@ -373,8 +373,8 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 ------------------------------------------------------------------------
 
 [安裝和使用 Windows PowerShell Web 存取](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
-[about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
-[Windows PowerShell Web 存取 Cmdlet](https://technet.microsoft.com/library/hh918342.aspx)
+[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[Windows PowerShell Web 存取 Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
 
 <span>顯示︰</span> 繼承受保護的
 
@@ -428,6 +428,6 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

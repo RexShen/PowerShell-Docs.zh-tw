@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8a61e974e7f7ea479ecc447c2db91c677cd8931f
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b6189e43fc9579a29d598deb705bb8e4e32e4a4f
 
 ---
 
@@ -53,9 +53,9 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 1.  在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]**。
 
-    在 **[伺服器管理員]** 中，按一下 **[所有伺服器]**，以滑鼠右鍵按一下伺服器名稱，然後選取 **[新增角色及功能]**。
+    或者，在 [伺服器管理員] 中，按一下 [所有伺服器]，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]。
 
-2.  在 **[安裝類型]** 頁面上，選取 **[角色型或功能型安裝]**。
+2.  在 [安裝類型] 頁面上，選取 [角色型或功能型安裝]。
 
 3.  在 **[功能]** 頁面上，展開 **[.NET 3.5 Framework 功能]** 節點，然後選取 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]**。
 
@@ -65,9 +65,9 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 -   在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]**。
 
-    在 **[伺服器管理員]** 中，按一下 **[所有伺服器]**，以滑鼠右鍵按一下伺服器名稱，然後選取 **[新增角色及功能]**。
+    或者，在 [伺服器管理員] 中，按一下 [所有伺服器]，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]。
 
--   在 **[安裝類型]** 頁面上，選取 **[角色型或功能型安裝]**。
+-   在 [安裝類型] 頁面上，選取 [角色型或功能型安裝]。
 
 -   在 **[功能]** 頁面上，展開 **[Windows PowerShell (Installed) (Windows PowerShell (已安裝))]** 節點，然後選取 **[Windows PowerShell 2.0 引擎]**。
 
@@ -87,6 +87,6 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 644dbbb51e98efda9735f0ff23489e936f6b28a2
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
 
 ---
 
@@ -22,9 +22,9 @@ ms.openlocfilehash: 644dbbb51e98efda9735f0ff23489e936f6b28a2
 
 若要自動從可用的選項中填入檔案名稱或路徑，請輸入部分名稱，然後按 **Tab** 鍵。 Windows PowerShell 會自動將名稱擴充到找到的第一個相符項目。 重複按 **Tab** 鍵，會循環顯示所有可用選項。
 
-Cmdlet 名稱的 Tab 鍵擴充略有不同。 若要對 Cmdlet 名稱使用 Tab 鍵擴充，請輸入名稱的完整第一個部分 (動詞) 和後面的連字號。 您可以填入名稱的更多部分來進行局部比對。 例如，如果您輸入 **get\-co**，然後按 **Tab** 鍵，則 Windows PowerShell 會自動將此項目擴充到 **Get\-Command** Cmdlet (請注意，它也會將字母的大小寫變更為其標準形式)。 如果您再次按下 **Tab** 鍵，Windows PowerShell 會將此項目取代為僅其他相符 Cmdlet 名稱 (**Get\-Content**)。
+Cmdlet 名稱的 Tab 鍵擴充略有不同。 若要對 Cmdlet 名稱使用 Tab 鍵擴充，請輸入名稱的完整第一個部分 (動詞) 和後面的連字號。 您可以填入名稱的更多部分來進行局部比對。 例如，如果您輸入 **get-co**，然後按 **Tab** 鍵，則 Windows PowerShell 會自動將此項目擴充到 **Get-Command** Cmdlet (請注意，它也會將字母的大小寫變更為其標準形式)。 如果您再次按下 **Tab** 鍵，Windows PowerShell 會將此項目取代為僅其他相符 Cmdlet 名稱 (**Get-Content**)。
 
-您可以對同一行重複使用 Tab 鍵擴充。 例如，您可以對 **Get\-Content** Cmdlet 的名稱使用 Tab 鍵擴充，方法是輸入：
+您可以對同一行重複使用 Tab 鍵擴充。 例如，您可以對 **Get-Content** Cmdlet 的名稱使用 Tab 鍵擴充，方法是輸入：
 
 ```
 PS> Get-Con<Tab>
@@ -54,6 +54,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

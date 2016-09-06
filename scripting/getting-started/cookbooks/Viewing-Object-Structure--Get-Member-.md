@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8cd074bc4314aeb8d50fa31d74d9a1b2d2a37469
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: acd52c1271013320dafa7f7bf5c72b752e07574b
 
 ---
 
 # 檢視物件結構 (Get-Member)
-因為物件在 Windows PowerShell 中播放這類重要角色，所以有數個設計成使用任意物件類型的原生命令。 最重要的是 **Get\-Member** 命令。
+因為物件在 Windows PowerShell 中播放這類重要角色，所以有數個設計成使用任意物件類型的原生命令。 最重要的是 **Get-Member** 命令。
 
-分析命令所傳回物件的最簡單技巧是將該命令的輸出傳送到 **Get\-Member** Cmdlet。 **Get\-Member** Cmdlet 顯示物件類型的正式名稱以及其成員的完整清單。 所傳回元素的數目有時可能非常龐大。 例如，Process 物件可以有 100 位以上的成員。
+分析命令所傳回物件的最簡單技巧是將該命令的輸出傳送到 **Get-Member** Cmdlet。 **Get-Member** Cmdlet 顯示物件類型的正式名稱以及其成員的完整清單。 所傳回元素的數目有時可能非常龐大。 例如，Process 物件可以有 100 位以上的成員。
 
 若要查看 Process 物件的所有成員，並將輸出分頁，以檢視其所有內容，請輸入︰
 
@@ -42,7 +42,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-我們可以篩選想要查看的元素，以讓這份長資訊清單更為有用。 **Get\-Member** 命令可讓您只列出是屬性的成員。 有數種形式的屬性。 如果我們將 **Get\-MemberMemberType** 參數設為值 **Properties**，這個 Cmdlet 會顯示任何類型的屬性。 產生的清單仍然很長，但更容易管理︰
+我們可以篩選想要查看的元素，以讓這份長資訊清單更為有用。 **Get-Member** 命令可讓您只列出為屬性的成員。 有數種形式的屬性。 如果我們將 **Get-MemberMemberType** 參數設為值 **Properties**，這個 Cmdlet 會顯示任何類型的屬性。 產生的清單仍然很長，但更容易管理︰
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
@@ -77,6 +77,6 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

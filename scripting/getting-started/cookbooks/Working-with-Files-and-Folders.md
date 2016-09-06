@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: c9bc3460e25063347de3c594ef5ce437b0f8961d
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c3f7c226fcb496e5bb51ba601429c54b43de9d52
 
 ---
 
@@ -18,19 +18,19 @@ ms.openlocfilehash: c9bc3460e25063347de3c594ef5ce437b0f8961d
 瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論特定檔案和資料夾的處理操作方法。
 
 ### 列出資料夾內所有的檔案和資料夾
-您可以使用 **Get\-ChildItem** 直接取得資料夾內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會顯示 Windows PowerShell 磁碟機 C (和 Windows 實體磁碟機 C 相同) 的直接內容︰
+您可以使用 **Get-ChildItem** 直接取得資料夾內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會顯示 Windows PowerShell 磁碟機 C (和 Windows 實體磁碟機 C 相同) 的直接內容︰
 
 ```
 Get-ChildItem -Force C:\
 ```
 
-命令只會列出直接包含的項目，很像使用 Cmd.exe 的 **DIR** 命令或 UNIX 殼層的 **ls**。 若要顯示包含的項目，您也必須要指定 **\-Recurse** 參數。 (這可能需要很長時間才能完成)。列出 C 磁碟機上的所有項目︰
+命令只會列出直接包含的項目，很像使用 Cmd.exe 的 **DIR** 命令或 UNIX 殼層的 **ls**。 若要顯示包含的項目，您也必須要指定 **-Recurse** 參數。 (這可能需要很長時間才能完成)。列出 C 磁碟機上的所有項目︰
 
 ```
 Get-ChildItem -Force C:\ -Recurse
 ```
 
-**Get\-ChildItem** 可以用它的 **Path**、**Filter**、**Include** 和 **Exclude** 參數來篩選項目，但項目通常只以名稱為根據。 您可以使用 **Where\-Object** 根據項目的其他屬性來執行複雜的篩選。
+**Get-ChildItem** 可以用它的 **Path**、**Filter**、**Include** 和 **Exclude** 參數來篩選項目，但這些通常只以名稱為基礎。 您可以使用 **Where-Object** 根據項目的其他屬性來執行複雜的篩選。
 
 下列命令會在 Program Files 資料夾內尋找在 2005 年 10 月 1 日之後修改的、介於 1 MB 到 10 MB 之間的全部可執行檔︰
 
@@ -39,13 +39,13 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 ```
 
 ### 複製檔案與資料夾
-以 **Copy\-Item** 完成複製。 下列命令會將 C:\\boot.ini 備份到 C:\\boot.bak：
+以 **Copy-Item** 完成複製。 下列命令會將 C:\\boot.ini 備份到 C:\\boot.bak：
 
 ```
 Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
 ```
 
-如果目的地檔案已經存在，則複製嘗試就會失敗。 若要覆寫已存在的目的地，請使用 Force 參數︰
+如果目的地檔案已經存在，則複製嘗試就會失敗。 若要覆寫既有的目的地，請使用 Force 參數︰
 
 ```
 Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
@@ -87,7 +87,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType "file"
 ```
 
 ### 移除資料夾內所有的檔案和資料夾
-您可以使用 **Remove\-Item** 移除包含的項目，但如果項目包含任何其他項目，系統會提示您確認移除。 例如，如果您嘗試刪除包含其他項目的資料夾 C:\\temp\\DeleteMe，Windows PowerShell 就會先提示您確認再刪除資料夾︰
+您可以使用 **Remove-Item** 移除包含的項目，但如果項目包含任何其他項目，系統會提示您確認移除。 例如，如果您嘗試刪除包含其他項目的資料夾 C:\\temp\\DeleteMe，Windows PowerShell 就會先提示您確認再刪除資料夾︰
 
 ```
 Remove-Item C:\temp\DeleteMe
@@ -116,7 +116,7 @@ subst p: $env:programfiles
 就像使用網路磁碟機，Windows PowerShell 殼層可以立即看到使用 **subst** 在 Windows PowerShell 內對應的磁碟機。
 
 ### 將文字檔讀入陣列
-文字資料最常見的儲存體格式之一，是將檔案中分隔的各行視為不同的資料元素。 **Get\-Content** Cmdlet 可以用一個步驟來讀取整個檔案，如下所示︰
+文字資料最常見的儲存體格式之一，是將檔案中分隔的各行視為不同的資料元素。 **Get-Content** Cmdlet 可以用一個步驟讀取整個檔案，如下所示︰
 
 ```
 PS> Get-Content -Path C:\boot.ini
@@ -130,14 +130,14 @@ multi(0)disk(0)rdisk(0)partition(1)\WINDOWS=" Microsoft Windows XP Professional
 with Data Execution Prevention" /noexecute=optin /fastdetect
 ```
 
-**Get\-Content** 已經將從檔案讀取的資料視為陣列，檔案內容為每行一個元素。 您可以藉由檢查只要核取傳回內容的 **長度** 即可確認︰
+**Get-Content** 已經將從檔案讀取的資料視為陣列，檔案內容為每行一個元素。 您可以藉由檢查只要核取傳回內容的 **長度** 即可確認︰
 
 ```
 PS> (Get-Content -Path C:\boot.ini).Length
 6
 ```
 
-這個命令在將資訊清單直接放入 Windows PowerShell 非常有用。 例如，您可能會在檔案 C:\\temp\\domainMembers.txt 中儲存電腦名稱或 IP 位址的清單，一行一個名稱。 您可以使用 **Get\-Content** 擷取檔案內容並將內容放入變數 **$Computers**：
+這個命令在將資訊清單直接放入 Windows PowerShell 非常有用。 例如，您可能會在檔案 C:\\temp\\domainMembers.txt 中儲存電腦名稱或 IP 位址的清單，一行一個名稱。 您可以使用 **Get-Content** 擷取檔案內容並將內容放入變數 **$Computers**：
 
 ```
 $Computers = Get-Content -Path C:\temp\DomainMembers.txt
@@ -148,6 +148,6 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

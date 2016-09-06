@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: b41a40fd06de6898ba9adf01053d225edaa31b29
-ms.openlocfilehash: cd94291f225851a99253f5f54e10d6174e63f413
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 666590df32157a7477d385961dd5665094275868
 
 ---
 
@@ -232,31 +232,31 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   PSDesiredStateConfiguration 模組中的下列 Cmdlet 已新增 ThrottleLimit 參數： 您可新增 ThrottleLimit 參數來指定要在目標電腦或裝置上同時運作的命令數。
 
-    -   Get\-DscConfiguration
+    -   Get-DscConfiguration
 
-    -   Get\-DscConfigurationStatus
+    -   Get-DscConfigurationStatus
 
-    -   Get\-DscLocalConfigurationManager
+    -   Get-DscLocalConfigurationManager
 
-    -   Restore\-DscConfiguration
+    -   Restore-DscConfiguration
 
-    -   Test\-DscConfiguration
+    -   Test-DscConfiguration
 
-    -   Compare\-DscConfiguration
+    -   Compare-DscConfiguration
 
-    -   Publish\-DscConfiguration
+    -   Publish-DscConfiguration
 
-    -   Set\-DscLocalConfigurationManager
+    -   Set-DscLocalConfigurationManager
 
-    -   Start\-DscConfiguration
+    -   Start-DscConfiguration
 
-    -   Update\-DscConfiguration
+    -   Update-DscConfiguration
 
 -   使用集中式 DSC 錯誤報告時，不只會將豐富的錯誤資訊記錄到事件記錄檔中，還可將其傳送到中央位置以便稍後進行分析。 您可以使用這個中央位置，來儲存任何伺服器在其環境中所發生的 DSC 設定錯誤。 於中繼設定中定義報表伺服器之後，會將所有錯誤傳送到報表伺服器，然後儲存在資料庫中。 不論是否有設定要從提取伺服器提取設定的目標節點，您都可以設定這項功能。
 
 -   針對 Windows PowerShell ISE 的改善能簡化 DSC 資源的撰寫。 您現在可以執行下列操作：
 
-    -   在區塊的空白行輸入 **Ctrl\+空格鍵**，列出 **設定** 或**節點**區塊中的所有 DSC 資源。
+    -   在區塊的空白行輸入 **Ctrl+空格鍵**，列出**設定**或**節點**區塊中的所有 DSC 資源。
 
     -   **列舉**類型資源屬性的自動完成功能。
 
@@ -264,45 +264,45 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   增強的資源屬性值 TAB 鍵自動完成。
 
--   使用者現在可以將 **PSDscRunAsCredential** 屬性新增至節點區塊，以執行指定之認證集合下的資源。 例如，PSDscRunAsCredential \= Get\-Credential Contoso\\DscUser。 這項功能非常適合用來建立設定，以執行 Windows Installer 和可執行的安裝程式、存取每位使用者的登錄區，或執行目前使用者內容以外的其他工作。
+-   使用者現在可以將 **PSDscRunAsCredential** 屬性新增至節點區塊，以執行指定之認證集合下的資源。 例如，PSDscRunAsCredential = Get-Credential Contoso\\DscUser。 這項功能非常適合用來建立設定，以執行 Windows Installer 和可執行安裝程式、存取每位使用者的登錄區，或執行目前使用者內容以外的其他工作。
 
 -   針對 **Configuration** 關鍵字，已可支援 32 位元 (x86 為基礎)。
 
 -   Windows PowerShell 現已支援 DSC 設定的自訂說明，您可透過將 \[CmdletBinding()] 加入產生的設定函式中來進行定義。
 
--   新的 **DscLocalConfigurationManager** 屬性可將設定區塊指定為中繼設定，用於設定 DSC 本機設定管理員。 此屬性會限制住設定，讓它只包含設定 DSC 本機設定管理員的項目。 在處理期間，此設定會產生 \*.meta.mof 檔案，然後會執行 Set\-DscLocalConfigurationManager Cmdlet 以將此檔案傳送至適當的目標節點。
+-   新的 **DscLocalConfigurationManager** 屬性可將設定區塊指定為中繼設定，用於設定 DSC 本機設定管理員。 此屬性會限制住設定，讓它只包含設定 DSC 本機設定管理員的項目。 在處理期間，此設定會產生 \*.meta.mof 檔案，然後會執行 Set-DscLocalConfigurationManager Cmdlet 將此檔案傳送至適當的目標節點。
 
 -   Windows PowerShell 5.0 現已允許部分設定。 您可將設定文件以片段形式傳遞到節點。 若要讓節點接收設定文件的多個片段，您必須先設好該節點的本機設定管理員，以指定預期的片段。
 
--   Windows PowerShell 5.0 的 DSC 中提供跨電腦同步處理的新功能。 使用內建的 WaitFor\* 資源 (**WaitForAll**、**WaitForAny** 和 **WaitForSome**)，您現在可以於設定執行期間在電腦之間指定相依性，而不需要外部協調流程。 這些資源會透過使用 WS\-Man 通訊協定的 CIM 連線提供節點對節點同步處理。 設定可以等候另一部電腦的特定資源狀態變更。
+-   Windows PowerShell 5.0 的 DSC 中提供跨電腦同步處理的新功能。 使用內建 WaitFor\* 資源 (**WaitForAll**、**WaitForAny** 和 **WaitForSome**)，您現在可以於設定執行期間在電腦之間指定相依性，而不需要外部協調流程。 這些資源會透過使用 WS-Man 通訊協定的 CIM 連線提供節點對節點同步處理。 設定可以等候另一部電腦的特定資源狀態變更。
 
 -   Just Enough Administration (JEA) 是一種新的委派安全性功能，它可利用 DSC 和 Windows PowerShell 受限 Runspace 來協助保障企業安全，避免資料遺失或遭到員工洩漏，無論是有意還是無意。 如需 JEA 的詳細資訊，包括可以下載 xJEA DSC 資源的位置，請參閱 [Just Enough Administration, Step by Step (Just Enough Administration 逐步解說)](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx)。
 
 -   PSDesiredStateConfiguration 模組已新增下列新的 Cmdlet。
 
-    -   新的 Get\-DscConfigurationStatus Cmdlet 會從目標節點取得設定狀態的高層級資訊。 您可以取得上一次設定或所有設定的狀態。
+    -   新的 Get-DscConfigurationStatus Cmdlet 會從目標節點取得設定狀態的高層級資訊。 您可以取得上一次設定或所有設定的狀態。
 
-    -   新的 Compare\-DscConfiguration Cmdlet 會針對指定的設定與一或多個目標節點的實際狀態進行比較。
+    -   新的 Compare-DscConfiguration Cmdlet 會針對指定的設定與一或多個目標節點的實際狀態進行比較。
 
-    -   新的 Publish\-DscConfiguration Cmdlet 會將設定 MOF 檔案複製到目標節點，但不會套用設定。 直到下個一致性階段，或當您執行 Update\-DscConfiguration Cmdlet 時才會套用設定。
+    -   新的 Publish-DscConfiguration Cmdlet 會將設定 MOF 檔案複製到目標節點，但不會套用設定。 直到下個一致性階段，或當您執行 Update-DscConfiguration Cmdlet 時才會套用設定。
 
-    -   新的 Test\-DscConfiguration Cmdlet 可讓您驗證產生的設定與所需的設定是否相符：如果設定與所需的設定相符，會傳回 True；如果實際設定與所需的設定不相符會傳回 False。
+    -   新的 Test-DscConfiguration Cmdlet 可讓您驗證產生的設定與所需的設定是否相符：如果設定與所需的設定相符，會傳回 True；如果實際設定與所需的設定不相符，會傳回 False。
 
-    -   新的 Update\-DscConfiguration Cmdlet 會強制處理設定。 如果本機設定管理員處於提取模式，此 Cmdlet 會從提取伺服器取得設定之後才套用。
+    -   新的 Update-DscConfiguration Cmdlet 會強制處理設定。 如果本機設定管理員處於提取模式，此 Cmdlet 會從提取伺服器取得設定之後才套用。
 
 ### <a name="BKMK_newISE"></a>Windows PowerShell ISE 的新功能
 
 -   現在，您可透過執行 Enter\-PSSession 來在存有您要編輯之檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit <path and file name on the remote computer>**，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
 
--   Windows PowerShell ISE 現可支援 Start\-Transcript Cmdlet。
+-   Windows PowerShell ISE 現可支援 Start-Transcript Cmdlet。
 
 -   現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 
--   新的功能表命令 **[全部中斷]** (Ctrl\+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
+-   新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
 ### <a name="BKMK_newOData"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
--   從 Windows PowerShell 5.0 版開始，您可以執行新 [Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) 模組中的 Export\-ODataEndpointProxy Cmdlet，依據特定 OData 端點公開的功能，產生一組 Windows PowerShell Cmdlet。
+-   從 Windows PowerShell 5.0 版開始，您可以藉由執行新的 [Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) 模組中的 Export\-ODataEndpointProxy Cmdlet，以依據特定 OData 端點公開的功能，產生一組 Windows PowerShell Cmdlet。
 
 ### <a name="BKMK_5bugfix"></a>Windows PowerShell 5.0 的重大錯誤修正
 
@@ -333,35 +333,35 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **Windows PowerShell 預期狀態設定** (DSC) 是 Windows PowerShell 4.0 中的新管理系統，可用來部署及管理軟體服務與這些服務執行所在之環境的設定資料。 如需 DSC 的詳細資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
 
--   **Save\-Help** 現可讓您儲存遠端電腦上安裝的模組說明。 您可以使用 Save\-Help 從連線至網際網路的用戶端 (該用戶端上不需要安裝您想要取得說明的所有模組) 下載模組說明，然後將儲存的說明複製到遠端共用資料夾或無法存取網際網路的遠端電腦。
+-   **Save-Help** 現可讓您儲存遠端電腦上所安裝之模組的說明。 您可以使用 Save-Help 從連線至網際網路的用戶端 (該用戶端上不需要安裝您想要取得說明的所有模組) 下載模組說明，然後將儲存的說明複製到遠端共用資料夾或無法存取網際網路的遠端電腦。
 
 -   Windows PowerShell 偵錯工具已經增強，以針對 Windows PowerShell 工作流程及在遠端電腦上執行的指令碼進行偵錯。 Windows PowerShell 工作流程現已可以透過 Windows PowerShell 命令列或 Windows PowerShell ISE 於指令碼層級進行偵錯。 您現可透過遠端工作階段對 Windows PowerShell 指令碼 (包括指令碼工作流程) 進行偵錯。 對於中斷連線並於稍後重新連線的 Windows PowerShell 遠端工作階段，系統會保留遠端偵錯工作階段。
 
--   **Register\-ScheduledJob** 和 **Set\-ScheduledJob** 的 **RunNow** 參數讓您不需要再使用 **Trigger** 參數為工作設定立即開始的日期和時間。
+-   **Register-ScheduledJob** 和 **Set-ScheduledJob** 的 **RunNow** 參數讓您不需要再使用 **Trigger** 參數為工作設定立即開始日期和時間。
 
--   **Invoke\-RestMethod** 和 **Invoke\-WebRequest** 現在可讓您使用 Headers 參數設定所有標頭。 雖然此參數一直都存在，但是它是會導致產生例外狀況或錯誤之 Web Cmdlet 的幾個參數之一。
+-   **Invoke-RestMethod** 與 **Invoke-WebRequest** 現在可讓您使用 Headers 參數設定所有標頭。 雖然此參數一直都存在，但是它是會導致產生例外狀況或錯誤之 Web Cmdlet 的幾個參數之一。
 
--   **Get\-Module** 有新的參數 **FullyQualifiedName**，其類型為 **ModuleSpecification\[]**。 Get\-Module 的 **FullyQualifiedName** 參數現可讓您使用模組的名稱、版本與 (選擇性) 其 GUID 來指定模組。
+-   **Get-Module** 有新的參數 **FullyQualifiedName**，其類型為 **ModuleSpecification\[]**。 Get-Module 的 **FullyQualifiedName** 參數現可讓您使用模組的名稱、版本與 (選擇性) 其 GUID 來指定模組。
 
 -   Windows Server 2012 R2 上的預設執行原則設定是 **RemoteSigned**。 在 Windows 8.1 上，預設設定沒有任何變更。
 
 -   Windows PowerShell 4.0 開始支援使用動態方法名稱來叫用方法。 您可以使用變數來儲存方法名稱，然後透過呼叫變數來動態叫用方法。
 
--   當 **PSElapsedTimeoutSec** 工作流程一般參數所指定的逾時期間過去之後，即不會刪除非同步工作流程工作。
+-   當 **PSElapsedTimeoutSec** 工作流程一般參數所指定的逾時期間過去之後，已經不會再刪除非同步工作流程工作。
 
--   新的參數 **RepeatIndefinitely** 已加入 **New\-JobTrigger** 和 **Set\-JobTrigger** Cmdlet 中。 這讓您不再需要指定 **RepetitionDuration** 參數的 **TimeSpan.MaxValue** 值來重複執行不限期間的排程工作。
+-   **New-JobTrigger** 與 **Set-JobTrigger** Cmdlet 已新增參數 **RepeatIndefinitely**。 這讓您不再需要指定 **RepetitionDuration** 參數的 **TimeSpan.MaxValue** 值來重複執行不限期間的排程工作。
 
--   **Passthru** 參數已加入 **Enable\-JobTrigger** 和 **Disable\-JobTrigger** Cmdlet 中。 Passthru 參數會顯示您的命令所建立或修改的任何物件。
+-   **Enable-JobTrigger** 和 **Disable-JobTrigger** Cmdlet 已新增 **Passthru** 參數。 Passthru 參數會顯示您的命令所建立或修改的任何物件。
 
--   **Add\-Computer** 和 **Remove\-Computer** Cmdlet 中用於指定工作群組的參數名稱現在是一致的。 這兩個 Cmdlet 現在都是使用 **WorkgroupName** 參數。
+-   **Add-Computer** 與 **Remove-Computer** Cmdlet 中用於指定工作群組的參數名稱現在是一致的。 這兩個 Cmdlet 現在都是使用 **WorkgroupName** 參數。
 
 -   已經新增一般參數 **PipelineVariable**。 PipelineVariable 可讓您將管線命令 (或管線命令的一部分) 的結果儲存為可在管線的其餘部分傳遞的變數。
 
--   現在支援使用方法語法篩選集合。 這表示您現在可以使用簡化的語法 (類似於 Where() 或 Where\-Object 的語法，且格式為方法呼叫) 來篩選物件的集合。 範例如下：(Get\-Process).where({$\_.Name \-match 'powershell'})
+-   現在支援使用方法語法篩選集合。 這表示您現在可以使用簡化的語法 (類似於 Where() 或 Where-Object 的語法，且格式為方法呼叫) 來篩選物件的集合。 下列為範例：(Get-Process).where({$_.Name -match 'powershell'})
 
--   **Get\-Process** Cmdlet 有一個新的切換參數：**IncludeUserName**。
+-   **Get-Process** Cmdlet 有一個新的切換參數：**IncludeUserName**。
 
--   已加入新的 **Get\-FileHash** Cmdlet，它會以其中一種指定的檔案格式傳回檔案雜湊。
+-   已新增 **Get-FileHash** Cmdlet，此 Cmdlet 會以指定檔案的幾種格式之一傳回檔案雜湊。
 
 -   在 Windows PowerShell 4.0 中，如果模組在其資訊清單中使用 **DefaultCommandPrefix** 機碼，或如果使用者使用 **Prefix** 參數匯入模組，模組的 **ExportedCommands** 屬性就會顯示模組中具有該前置詞的命令。 當您使用模組完整語法 ModuleName\\CommandName 執行命令時，命令名稱必須包含前置詞。
 
@@ -381,11 +381,11 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   已經大幅增強參數繫結在 Tab 鍵自動完成案例之外的運作效能，例如使用目前 Runspace 中不存在的命令。
 
--   已新增對自訂容器活動的支援至 Windows PowerShell 工作階段。 如果活動參數的類型為 **Activity**、**Activity\[]** (或如果活動參數為活動的泛型集合)，且使用者已經提供指令碼區塊作為引數，則 Windows PowerShell 工作流程將會把指令碼區塊轉換成 XAML，和一般 Windows PowerShell 指令碼轉工作流程的編譯相同。
+-   已新增對自訂容器活動的支援至 Windows PowerShell 工作階段。 如果活動參數的類型為 **Activity**、**Activity\[]** (或如果活動參數為活動的泛型集合)，且使用者已經提供指令碼區塊做為引數，則 Windows PowerShell 工作流程將會把指令碼區塊轉換成 XAML，和一般 Windows PowerShell 指令碼轉工作流程的編譯相同。
 
 -   在當機之後，Windows PowerShell 工作流程會自動重新連線到受管理的節點。
 
--   您現在可以使用 **ThrottleLimit** 屬性對 **Foreach \-Parallel** 活動陳述式進行節流處理。
+-   您現在可以使用 **ThrottleLimit** 屬性對 **Foreach -Parallel** 活動陳述式進行節流處理。
 
 -   **ErrorAction** 一般參數有一個新的有效值 **Suspend**，這是工作流程專用的值。
 
@@ -403,51 +403,51 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   PSWS 現在允許在執行查詢時展開關聯的執行個體。 對於更大的二進位內容 (例如影像、音訊或視訊) 而言，傳輸成本會很可觀，而且二進位資料最好是在沒有編碼的情況下傳輸。 PSWS 會使用具名資源資料流，在不編碼的情況下傳輸。 具名資源資料流是 **Edm.Stream** 類型實體的屬性。 每個具名資源資料流都有個別的 GET 或 UPDATE 作業的 URI。
 
--   OData 動作現在提供在資源上叫用非 CRUD (Create、Read、Update 及 Delete) 方法的機制。 您可以傳送 HTTP POST 要求到為動作定義的 URI 來叫用動作。 動作的參數是在 POST 要求的主體中定義。
+-   OData 動作現在提供在資源上叫用非 CRUD (建立、讀取、更新及刪除) 方法的機制。 您可以傳送 HTTP POST 要求到為動作定義的 URI 來叫用動作。 動作的參數是在 POST 要求的主體中定義。
 
--   若要與 Microsoft Azure 指導方針一致，應簡化所有 URL。 **Key As Segment** 中包含的變更可以讓單一機碼以區段方式表示。 請注意，使用多個機碼值的參照需要像以前一樣，以逗點分隔值並使用括弧括住。
+-   若要與 Microsoft Azure 指導方針一致，應簡化所有 URL。 **Key As Segment** 中包含的變更可以讓單一機碼以區段方式表示。 請注意，使用多個機碼值的參照需要像以前一樣，以逗點分隔值並使用括號括住。
 
--   在這一版的 PSWS 之前，執行 Create、Update 或 Delete 作業的唯一方式是叫用位於最上層資源的 Post、Put 或 Delete。 這一版 PSWS 的新功能是，Contained Resource 作業可讓使用者在以不那麼直接的方式 (就像原本就包含這些資源一樣) 連線相同的資源時達到相同的結果。
+-   在這一版的 PSWS 之前, 執行建立、更新或刪除作業的唯一方式是叫用位於最上層資源的 Post、Put 或 Delete。 這一版 PSWS 的新功能是，Contained Resource 作業可讓使用者在以不那麼直接的方式 (就像原本就包含這些資源一樣) 連線相同的資源時達到相同的結果。
 
 ### <a name="BKMK_powwa"></a>Windows PowerShell Web 存取的新功能
 
--   您可以在網頁導向式的 Windows PowerShell Web 存取主控台中，中斷並重新連接到現有的工作階段。 網頁導向式主控台有一個 **[儲存]** 按鈕，供您在不刪除工作階段的情況下與工作階段中斷連線，然後在其他時間重新連線。
+-   您可以在網頁式 Windows PowerShell Web 存取主控台中與現有工作階段中斷連線，然後重新連線。 網頁式主控台中會有一個 [儲存] 按鈕，供您在不刪除工作階段的情況下與工作階段中斷連線，然後在其他時間重新連線。
 
--   登入頁面會顯示預設參數。 若要顯示預設參數，請在名為 **web.config** 的檔案中，設定登入頁面的 **[選用連線設定]** 區域中顯示之所有設定的值。 您可以使用 **web.config** 檔案來設定除了第二或備用的認證集以外的所有選用連線設定。
+-   登入頁面上可以顯示預設參數。 若要顯示預設參數，請在名為 **web.config** 的檔案中，設定登入頁面的 [選用連線設定] 區域中顯示之所有設定的值。 您可以使用 **web.config** 檔案來設定除了第二或備用的認證集以外的所有選用連線設定。
 
--   在 Windows Server 2012 R2 中，您可以針對 Windows PowerShell Web 存取的授權規則進行遠端管理。 **Add\-PswaAuthorizationRule** 和 **Test\-PswaAuthorizationRule** Cmdlet 現在包含一個 Credential 參數，這個參數可以讓系統管理員從遠端電腦或在 Windows PowerShell Web 存取工作階段中管理授權規則。
+-   在 Windows Server 2012 R2 中，您可以針對 Windows PowerShell Web 存取的授權規則進行遠端管理。 **Add-PswaAuthorizationRule** 與 **Test-PswaAuthorizationRule** Cmdlet 現在包含一個 Credential 參數，此參數可以讓系統管理員從遠端電腦或在 Windows PowerShell Web 存取工作階段中管理授權規則。
 
--   您現在可以透過針對每個工作階段使用一個新的瀏覽器索引標籤，來於單一瀏覽器工作階段中處理多個 Windows PowerShell Web 存取工作階段。 您不需要再開啟新的瀏覽器工作階段來連接至網頁導向式之 Windows PowerShell 主控台的新工作階段。
+-   您現在可以透過針對每個工作階段使用一個新的瀏覽器索引標籤，來於單一瀏覽器工作階段中處理多個 Windows PowerShell Web 存取工作階段。 您不需要再開啟新的瀏覽器工作階段以連線至網頁式 Windows PowerShell 主控台中的新工作階段。
 
 ### <a name="BKMK_bugs"></a>Windows PowerShell 4.0 的重大錯誤修正
 
--   **Get\-Counter** 現可傳回包含法文版 Windows 中單引號字元的計數器。
+-   **Get-Counter** 現可傳回包含法文版 Windows 中單引號字元的計數器。
 
 -   您現在可以檢視已還原序列化之物件上的 **GetType** 方法。
 
--   **\#Requires** 陳述式現在可以讓使用者要求系統管理員存取權限 (如有需要的話)。
+-   **#Requires** 陳述式現在可以讓使用者要求系統管理員存取權限 (如有需要的話)。
 
--   **Import\-Csv** Cmdlet 現在會忽略空白行。
+-   **Import-Csv** Cmdlet 現在會忽略空白行。
 
--   已經修正當您在執行 **Invoke\-WebRequest** 命令時，Windows PowerShell ISE 會使用太多記憶體的問題。
+-   已經修正當您在執行 **Invoke-WebRequest** 命令時，Windows PowerShell ISE 會使用太多記憶體的問題。
 
--   **Get\-Module** 現在會在 **Version** 欄中顯示模組版本。
+-   **Get-Module** 現在會在 **Version** 欄中顯示模組版本。
 
--   Remove\-Item –Recurse 現在可以如預期般移除子資料夾中的項目。
+-   Remove-Item –Recurse 現在可以如預期般移除子資料夾中的項目。
 
--   **UserName** 屬性已加入 **Get\-Process** 輸出物件中。
+-   已新增一個 **UserName** 屬性到 **Get-Process** 輸出物件。
 
--   **Invoke\-RestMethod** Cmdlet 現在會傳回所有可用結果。
+-   **Invoke-RestMethod** Cmdlet 現在會傳回所有可用結果。
 
--   **Add\-Member** 現在可以在雜湊表上生效，即使尚未存取雜湊表也一樣。
+-   **Add-Member** 現在可以在雜湊表上生效，即使尚未存取雜湊表也一樣。
 
--   **Select\-Object –Expand** 不會再於屬性值是 Null 或空白時失敗或產生例外狀況。
+-   **Select-Object –Expand** 不會再於屬性值是 Null 或空白時失敗或產生例外狀況。
 
--   現在，**Get\-Process** 可以在管線中搭配使用可從物件取得 **ComputerName** 屬性的其他命令。
+-   現在，**Get-Process** 可以在管線中搭配使用可從物件取得 **ComputerName** 屬性的其他命令。
 
--   **ConvertTo\-Json** 和 **ConvertFrom\-Json** 現在可以接受以雙引號括住的詞彙，而且其錯誤訊息已經當地語系化。
+-   **ConvertTo-Json** 與 **ConvertFrom-Json** 現在可以接受以雙引號括住的詞彙，而且其錯誤訊息已經當地語系化。
 
--   **Get\-Job** 現在會傳回任何已完成的排程工作，即使是新工作階段中的工作也一樣。
+-   **Get-Job** 現在會傳回任何已完成的排程工作，即使是新工作階段中的工作也一樣。
 
 -   已經修正使用 Windows PowerShell 4.0 中的 **FileSystem** 提供者所導致的裝載及卸載 VHD 問題。 現在，於相同工作階段中掛接新的磁碟機時，Windows PowerShell 將可以偵測新的磁碟機。
 
@@ -521,7 +521,7 @@ Windows PowerShell® 工作階段將 Windows Workflow Foundation 的功能帶給
 
 下列為 Windows PowerShell 工作流程的好處
 
--   **自動化長時間執行的連續性工作。**
+-   **自動化連續性、長時間執行的工作。**
 
 -   **遠端監視長時間執行的工作**。 隨時可觀看活動的狀態與進度。
 
@@ -537,10 +537,10 @@ Windows PowerShell® 工作階段將 Windows Workflow Foundation 的功能帶給
 
 -   **排程。** 工作流程工作的排定方式和任何 Windows PowerShell Cmdlet 或指令碼一樣。
 
--   **工作流程與連線節流處理。** 針對工作流程的執行與節點的連線，您可以進行節流處理，以確保延展性與高可用性。
+-   **工作流程與連線節流處理。** 可以針對工作流程執行與節點的連線進行節流處理，這可以提供延展性與高可用性。
 
 ### <a name="BKMK_WebAccess"></a>Windows PowerShell Web 存取
-Windows PowerShell® Web 存取是一項 Windows Server 2012 功能，可以讓使用者在網頁導向式主控台中執行 Windows PowerShell 命令與指令碼。 使用網頁導向式主控台的裝置不需要 Windows PowerShell、遠端管理軟體，或瀏覽器外掛程式安裝。 它們只需要正確設定的 Windows PowerShell Web 存取閘道，以及支援 JavaScript® 並接受 Cookie 的用戶端裝置瀏覽器。
+Windows PowerShell® Web 存取是一個 Windows Server 2012 功能，可以讓使用者在網頁式主控台中執行 Windows PowerShell 命令與指令碼。 使用網頁式主控台的裝置不需要 Windows PowerShell、遠端管理軟體，或瀏覽器外掛程式安裝。 它們只需要正確設定的 Windows PowerShell Web 存取閘道，以及支援 JavaScript® 並接受 Cookie 的用戶端裝置瀏覽器。
 
 如需詳細資訊，請參閱[部署 Windows PowerShell Web 存取](http://go.microsoft.com/fwlink/p/?LinkID=221050)。
 
@@ -554,13 +554,13 @@ Windows PowerShell 是針對 Common Language Runtime 4.0 所建立。 Cmdlet、�
 Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Windows PE) 4.0 的選用元件。 Windows PE 是啟動尚未安裝作業系統之電腦的最小作業系統，並且可以讓電腦準備好以安裝 Windows。 Windows PE 可以用來分割及格式化硬碟、複製磁碟映像至電腦，以及從網路共用位置起始 Windows 安裝程式。 Windows PowerShell 3.0 可以在 Windows PE 上使用，以管理部署、診斷與修復案例。
 
 ### <a name="BKMK_Disconnected"></a>已中斷連線的工作階段
-從 Windows PowerShell 3.0 開始，您使用 New\-PSSession Cmdlet 建立之持續性使用者管理的工作階段 ("PSSessions") 會儲存在遠端電腦上。 它們已經不再與它們建立所在的工作階段相依。
+從 Windows PowerShell 3.0 開始，您使用 New-PSSession Cmdlet 建立的持續性使用者管理的工作階段 ("PSSessions") 會儲存在遠端電腦上。 它們已經不再與它們建立所在的工作階段相依。
 
 您現在可以與工作階段中斷連線，而不會中斷工作階段中正在執行的命令。 您可以關閉工作階段並關閉您的電腦。 稍後您可以在相同或不同的電腦上，從不同的工作階段重新連線至工作階段。
 
 [Get-PSSession](https://technet.microsoft.com/en-us/library/b2b10531-d0df-4746-b877-e75c09955cb6) Cmdlet 的 **ComputerName** 參數現在可以取得已連線到電腦的所有使用者工作階段，即使它們是在其他電腦上不同的工作階段中啟動。 您可以連線至工作階段、取得命令的結果、啟動新的命令，然後與工作階段中斷連線。
 
-新增可支援「已中斷連線的工作階段」功能的 Cmdlet，包括 [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060) 與 Receive\-PSSession，亦已新增參數至管理 PSSessions 的 Cmdlet，例如 [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) Cmdlet 的 **InDisconnectedSession** 參數。
+新增可支援「已中斷連線的工作階段」功能的 Cmdlet，包括 [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060) 與 Receive-PSSession，亦已新增參數至管理 PSSessions 的 Cmdlet，例如 [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) Cmdlet 的 **InDisconnectedSession** 參數。
 
 只有在位於連線起始端 (用戶端) 與終止端 (伺服器) 的電腦是執行 Windows PowerShell 3.0 時，才支援「已中斷連線的工作階段」功能。
 
@@ -569,7 +569,7 @@ Windows PowerShell 3.0 會偵測用戶端與伺服器之間是否發生未預期
 
 如果是使用 InvokeCommand 啟動中斷連線的工作階段，Windows PowerShell 會為中斷連線的工作階段建立一個工作，使其更容易重新連線及繼續執行。
 
-這些功能可提供更可靠且更容易修復的遠端體驗，並可讓使用者執行需要健全工作階段的長時間執行工作，例如工作流程。
+這些功能可提供更可靠且更容易修復的遠端體驗，且可允許使用者執行需要健全工作階段的長時間執行工作，例如工作流程。
 
 ### <a name="BKMK_UpHelp"></a>可更新的說明系統
 您現在可以為您模組中的 Cmdlet 下載已更新的說明檔案。 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 可識別最新的說明檔案，將其從網際網路下載、解壓縮、驗證，然後安裝在模組的正確語言特定目錄中。
@@ -597,14 +597,14 @@ Get-Help <cmdlet-name> -Online
 
 Windows PowerShell 會在您的預設網際網路瀏覽器中開啟說明主題的線上版本。
 
-Windows PowerShell 3.0 中的 **Get\-Help \-Online** 功能現在更強大了，因為即使電腦上沒有安裝 Cmdlet 的說明檔案，它也可以運作。 **Get\-Help \-Online** 功能會從 Cmdlet 與進階函式的 HelpUri 屬性取得線上說明主題的 URI。
+Windows PowerShell 3.0 中的 **Get-Help -Online** 功能現在更強大了，因為即使電腦上沒有安裝 Cmdlet 的說明檔案，它也可以運作。 **Get-Help -Online** 功能會從 Cmdlet 與進階函式的 HelpUri 屬性取得線上說明主題的 URI。
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
 http://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
-從 Windows PowerShell 3.0 開始，C\# Cmdlet 的作者可以透過在 Cmdlet 類別上建立 **HelpUri** 屬性來填入 **HelpUri** 內容。 進階函式的作者可以在 **CmdletBinding** 屬性上定義 **HelpUri** 屬性。 **HelpUri** 屬性的值必須以 "http" 或 "https" 作為開頭。
+從 Windows PowerShell 3.0 開始，C# Cmdlet 的作者可以透過在 Cmdlet 類別上建立 **HelpUri** 屬性來填入 **HelpUri** 內容。 進階函式的作者可以在 **CmdletBinding** 屬性上定義 **HelpUri** 屬性。 **HelpUri** 屬性的值必須以 "http" 或 "https" 作為開頭。
 
 您也可以在以 XML 為基礎之 Cmdlet 說明檔案的第一個相關連結中包含 **HelpUri** 值，或在函式中包含以註解為基礎之說明的 .Link 指示詞。
 
@@ -631,68 +631,68 @@ Windows PowerShell 排程工作為 Windows PowerShell 背景工作及工作排�
 
 排程工作就像 Windows PowerShell 背景工作一樣，會在背景中以非同步方式執行。 您可使用 Job Cmdlet 來管理已完成之排程工作的執行個體，例如 [Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) 與 [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad)。
 
-就像 [工作排程器] 工作一樣，您可以在單次或週期性排程中執行排程工作，或在偵測到某個動作或事件時執行排程工作。 您可以在工作排程器中檢視及管理排程工作、視需要啟用及停用排程工作、將排程工作做為範例來執行或使用，以及設定工作啟動時所依據的條件。
+就像工作排程器工作一樣，您可以在單次或週期性排程中執行排程工作，或在偵測到某個動作或事件時執行排程工作。 您可以在工作排程器中檢視及管理排程工作、視需要啟用及停用排程工作、將排程工作做為範例來執行或使用，以及設定工作啟動時所依據的條件。
 
 此外，排程工作也隨附一組自訂的 Cmdlet 以用於管理排程工作。 這些 Cmdlet 可讓您建立、編輯、管理、停用及重新啟用排程工作、建立排程工作觸發程序，以及設定排程工作選項。
 
 如需排程工作的詳細資訊，請參閱 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)。
 
 ### <a name="BKMK_Lang"></a>Windows PowerShell 語言增強功能
-Windows PowerShell 3.0 包括許多為了使其語言更簡單、更容易使用，以及避免發生一般錯誤所設計的功能。 這些改善項目包括屬性列舉、純量物件的計數和長度屬性、新的重新導向運算子、$Using 範圍修飾詞、PSItem 自動變數、彈性指令碼格式設定、變數屬性、簡化的屬性引數、數字命令名稱、Stop-Parsing 運算子、改善的陣列展開、全新位元運算子、排序的字典、PSCustomObject 轉換，以及改善的註解型說明。
+Windows PowerShell 3.0 包括許多為了使其語言更簡單、更容易使用，以及避免發生一般錯誤所設計的功能。 這些改善項目包括屬性列舉、純量物件的計數和長度屬性、新的重新導向運算子、$Using 範圍修飾詞、PSItem 自動變數、彈性指令碼格式設定、變數屬性、簡化的屬性引數、數字命令名稱、Stop-Parsing 運算子、改善的陣列展開、全新位元運算子、排序的字典、PSCustomObject 轉換，以及改善的以註解為基礎的說明。
 
 ### <a name="BKMK_Core"></a>新的核心 Cmdlet
 新的 Cmdlet 已經新增至 Windows PowerShell 核心安裝，包括用來管理排程工作、已中斷連線的工作階段、CIM 整合，以及可更新的說明系統的 Cmdlet。
 
 |||
 |-|-|
-|Add\-JobTrigger|New\-JobTrigger|
-|Connect\-PSSession|New\-PSSessionConfigurationFile|
-|ConvertFrom\-Json|New\-PSTransportOption|
-|ConvertTo\-Json|New\-PSWorkflowExecutionOption|
-|Disable\-JobTrigger|New\-PSWorkflowSession|
-|Disable\-ScheduledJob|New\-ScheduledJobOption|
-|Disconnect\-PSSession|New\-WinEvent|
-|Enable\-JobTrigger|Receive\-PSSession|
-|Enable\-ScheduledJob|Register\-CimIndicationEvent|
-|Get\-CimAssociatedInstance|Register\-ScheduledJob|
-|Get\-CimClass|Remove\-CimInstance|
-|Get\-CimInstance|Remove\-CimSession|
-|Get\-CimSession|Remove\-TypeData|
-|Get\-ControlPanelItem|Rename\-Computer|
-|Get\-IseSnippet|Resume\-Job|
-|Get\-JobTrigger|Save\-Help|
-|Get\-ScheduledJob|Set\-CimInstance|
-|Get\-ScheduledJobOption|Set\-JobTrigger|
-|Get\-TypeData|Set\-ScheduledJob|
-|Import\-IseSnippet|Set\-ScheduledJobOption|
-|Invoke\-AsWorkflow|Show\-Command|
-|Invoke\-CimMethod|Show\-ControlPanelItem|
-|Invoke\-RestMethod|Suspend\-Job|
-|Invoke\-WebRequest|Test\-PSSessionConfigurationFile|
-|New\-CimInstance|Unblock\-File|
-|New\-CimSession|Unregister\-ScheduledJob|
-|New\-CimSessionOption|Update\-Help|
-|New\-IseSnippet||
+|Add-JobTrigger|New-JobTrigger|
+|Connect-PSSession|New-PSSessionConfigurationFile|
+|ConvertFrom-Json|New-PSTransportOption|
+|ConvertTo-Json|New-PSWorkflowExecutionOption|
+|Disable-JobTrigger|New-PSWorkflowSession|
+|Disable-ScheduledJob|New-ScheduledJobOption|
+|Disconnect-PSSession|New-WinEvent|
+|Enable-JobTrigger|Receive-PSSession|
+|Enable-ScheduledJob|Register-CimIndicationEvent|
+|Get-CimAssociatedInstance|Register-ScheduledJob|
+|Get-CimClass|Remove-CimInstance|
+|Get-CimInstance|Remove-CimSession|
+|Get-CimSession|Remove-TypeData|
+|Get-ControlPanelItem|Rename-Computer|
+|Get-IseSnippet|Resume-Job|
+|Get-JobTrigger|Save-Help|
+|Get-ScheduledJob|Set-CimInstance|
+|Get-ScheduledJobOption|Set-JobTrigger|
+|Get-TypeData|Set-ScheduledJob|
+|Import-IseSnippet|Set-ScheduledJobOption|
+|Invoke-AsWorkflow|Show-Command|
+|Invoke-CimMethod|Show-ControlPanelItem|
+|Invoke-RestMethod|Suspend-Job|
+|Invoke-WebRequest|Test-PSSessionConfigurationFile|
+|New-CimInstance|Unblock-File|
+|New-CimSession|Unregister-ScheduledJob|
+|New-CimSessionOption|Update-Help|
+|New-IseSnippet||
 
 ### <a name="BKMK_Prov"></a>對現有核心 Cmdlet 與提供者的改善
-Windows PowerShell 3.0 包含針對現有 Cmdlet 的新功能，包括簡化的語法，以及下列 Cmdlet 的新參數：Computer Cmdlet、CSV Cmdlet、Get\-ChildItem、Get\-Command、Get\-Content、Get\-History、Measure\-Object、Security Cmdlet、Select\-Object、Select\-String、Split\-Path、Start\-Process、Tee\-Object、Test\-Connection、Add\-Member 和 WMI Cmdlet。
+Windows PowerShell 3.0 包含針對現有 Cmdlet 的新功能，包括簡化的語法，以及下列 Cmdlet 的新參數：Computer Cmdlet、CSV Cmdlet、Get\-ChildItem、Get\-Command、Get\-Content、Get\-History、Measure\-Object、Security Cmdlet、Select\-Object、Select\-String、Split\-Path、Start\-Process、Tee\-Object、Test\-Connection、Add\-Member 與 WMI Cmdlet。
 
 Windows PowerShell 提供者也已經大幅改善，包括用於管理虛擬主機之安全通訊端層 (SSL) 憑證的憑證提供者支援，認證支援、持續性網路磁碟機，以及檔案系統磁碟機中的替代資料流。
 
 ### <a name="BKMK_REM"></a>遠端模組匯入及探索
-Windows PowerShell 3.0 可延伸遠端電腦上的模組探索、匯入及隱含遠端執行功能。 Module Cmdlet 可使用 Windows PowerShell 遠端執行功能取得遠端電腦上的模組，並且將模組匯入到遠端或本機電腦。 新的 CIM 工作階段支援讓您可將在遠端電腦上以隱含方式執行的命令匯入本機電腦，以使用 CIM 和 WMI 來管理非 Windows 電腦。
+Windows PowerShell 3.0 可延伸遠端電腦上的模組探索、匯入及隱含遠端執行功能。 Module Cmdlet 可使用 Windows PowerShell 遠端執行功能取得遠端電腦上的模組，並且將模組匯入到遠端或本機電腦。 新的 CIM 工作階段支援可讓您透過將在遠端電腦上以隱含方式執行的命令匯入到本機電腦，以使用 CIM 和 WMI 來管理非 Windows 電腦。
 
 如需詳細資訊，請參閱 [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) 與 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
 
 ### <a name="BKMK_TAB"></a>增強的 Tab 鍵自動完成
-Windows PowerShell 主控台中的 Tab 鍵自動完成現在可以完成 Cmdlet、參數、參數值、列舉、.NET Frameworks 類型、COM 物件、隱藏目錄及其他項目的名稱。 TAB 鍵自動完成功能可以依據新的剖析器與抽象語法樹來重新撰寫，以支援更多案例，包括記憶體內部剖析樹狀結構和中線 Tab 鍵自動完成。
+Windows PowerShell 主控台中的 Tab 鍵自動完成現在可以完成 Cmdlet、參數、參數值、列舉、.NET Frameworks 類型、COM 物件、隱藏目錄及其他項目的名稱。 Tab 鍵自動完成功能可以依據新的剖析器與抽象語法樹來重新撰寫，以支援更多案例，包括記憶體內部剖析樹狀結構和中線 Tab 鍵自動完成。
 
 ### <a name="BKMK_AutoLoad"></a>模組自動載入
 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 現在可取得電腦上安裝之全部模組的所有 Cmdlet 和函式，即使模組沒有匯入目前的工作階段中也一樣。
 
 當您取得您需要的 Cmdlet 時，您可以立即使用，不需要匯入任何模組。 Windows PowerShell 模組現在會在您使用模組中的任何 Cmdlet 時自動匯入。 您不需要再搜尋及匯入模組，就可以使用模組的 Cmdlet。
 
-觸發自動匯入模組的方式是，在命令中使用 Cmdlet、執行不含萬用字元之 Cmdlet 的 **Get\-Command**，或執行不含萬用字元之 Cmdlet 的 [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)。
+觸發自動匯入模組的方式是，在命令中使用 Cmdlet、執行不含萬用字元之 Cmdlet 的 **Get-Command**，或執行不含萬用字元之 Cmdlet 的 [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)。
 
 您可以使用 **$PSModuleAutoLoadingPreference** 喜好設定變數來啟用、停用及設定自動匯入模組。
 
@@ -707,15 +707,15 @@ Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新
 
 3.  模組 (包括巢狀模組) 的新 **ExportedCommands** 屬性，結合了所有類型的命令
 
-4.  改善的可用 (未匯入) 模組探索功能，包括在同一命令中允許使用 **Path** 和 **ListAvailable** 參數。
+4.  改善的可用 (未匯入) 模組探索功能，包括在同一命令中允許使用 **Path** 與 **ListAvailable** 參數
 
 5.  模組資訊清單中新的 **DefaultCommandPrefix** 索引鍵，可在不變更模組程式碼的情況下避免名稱衝突
 
-6.  改善的模組需求，包括完整的必要模組 (包含版本與 GUID)，以及自動匯入必要模組。
+6.  改善的模組需求，包括完整的必要模組 (包含版本與 GUID)，以及自動匯入必要模組
 
 7.  更安靜、更簡化的 [New-ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) Cmdlet 運作。
 
-8.  \#Requires 的新 **Module** 參數
+8.  #Requires 的新 **Module** 參數
 
 9. 改善的 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet (包含 **MinimumVersion** 與 **RequiredVersion** 參數)
 
@@ -728,10 +728,10 @@ Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新
 Windows PowerShell 3.0 透過支援 Windows 事件追蹤 (ETW) 記錄檔、模組的可編輯 **LogPipelineExecutionDetails** 屬性，以及「開啟模組記錄」群組原則設定，改善了命令與模組的記錄與追蹤支援。 您現在可以透過顯示記錄內容，來從記錄詳細資料中取得參數值。
 
 ### <a name="BKMK_OUT"></a>格式設定與輸出改善
-新的格式設定與輸出改善項目改善了所有 Windows PowerShell 使用者的效率。 改善項目包括所有資料流的輸出重新導向、在沒有 Format.ps1xml 檔案的情況下動態新增類型的已增強 Update\-Type Cmdlet、在輸出中自動換行、自訂物件的預設格式設定屬性、**PSCustomObject** 類型、改善的 WMI 物件與異質物件格式設定，以及支援探索方法多載。
+新的格式設定與輸出改善項目改善了所有 Windows PowerShell 使用者的效率。 改善項目包括所有資料流的輸出重新導向、在沒有 Format.ps1xml 檔案的情況下動態新增類型的已增強 Update-Type Cmdlet、在輸出中自動換行、自訂物件的預設格式設定屬性、**PSCustomObject** 類型、改善的 WMI 物件與異質物件格式設定，以及支援探索方法多載。
 
 ### <a name="BKMK_HOST"></a>增強的主控台主機體驗
-Windows PowerShell 主控台主機程式在 Windows PowerShell 3.0 中擁有新的功能，包括預設的單一執行緒 Apartment。 檔案總管中新的 [用 PowerShell 執行] 選項，讓您只要以滑鼠右鍵按一下，就可在不受限制的工作階段中執行指令碼。 新的主控台主機啟動邏輯可以更快速地啟動 Windows PowerShell，而新字型則可以讓您將熟悉的主控台視窗體驗個人化。
+Windows PowerShell 主控台主機程式在 Windows PowerShell 3.0 中擁有新的功能，包括預設的單一執行緒 Apartment。 檔案總管中新的 [用 PowerShell 執行] 選項，可讓您只要以滑鼠右鍵按一下，就可以在不受限制的工作階段中執行指令碼。 新的主控台主機啟動邏輯可以更快速地啟動 Windows PowerShell，而新字型則可以讓您將熟悉的主控台視窗體驗個人化。
 
 如需詳細資訊，請參閱 [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)。
 
@@ -759,6 +759,6 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

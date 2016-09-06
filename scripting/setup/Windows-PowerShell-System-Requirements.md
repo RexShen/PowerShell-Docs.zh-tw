@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 translationtype: Human Translation
-ms.sourcegitcommit: 1ae9150b226147c039acf0738690de4da8686a71
-ms.openlocfilehash: e2e129c1c90ab7561861a7d9c71fb654569d5712
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b5b797ed09f9f43bfd0259e4af8b3754655d7c84
 
 ---
 
@@ -47,12 +47,12 @@ Windows PowerShell 4.0 需要完整安裝 Microsoft .NET Framework 4.5。 Window
 
 Windows PowerShell 3.0 需要完整安裝 Microsoft .NET Framework 4。 Windows 8 和 Windows Server 2012 預設會包括 Microsoft .NET Framework 4.5 (這滿足此需求)。
 
-若要安裝 Microsoft .NET Framework 4.5 (dotNetFx45\_Full\_setup.exe)，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
+若要安裝 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
 
-若要安裝 Microsoft .NET Framework 4 (dotNetFx40\_Full\_setup.exe) 的完整安裝，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4 (Web 安裝程式)](http://go.microsoft.com/fwlink/?LinkID=212931)。
+若要安裝 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完整安裝，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4 (Web 安裝程式)](http://go.microsoft.com/fwlink/?LinkID=212931)。
 
-## WS\-Management 3.0
-Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要可支援 WinRM 服務和 WSMan 通訊協定的 WS\-Management 3.0。 這個程式包含在 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中。
+## WS-Management 3.0
+Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要可支援 WinRM 服務和 WSMan 通訊協定的 WS-Management 3.0。 這個程式包含在 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中。
 
 ## Windows Management Instrumentation 3.0
 Windows PowerShell 3.0 和 Windows PowerShell 4.0 需要 Windows Management Instrumentation 3.0 (WMI)。 這個程式包含在 Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、Windows Management Framework 4.0 和 Windows Management Framework 3.0 中。 如果電腦上未安裝此程式，則不會執行需要 WMI 的功能 (例如 CIM 命令)。
@@ -117,6 +117,6 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

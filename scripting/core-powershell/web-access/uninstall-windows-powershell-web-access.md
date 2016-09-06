@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
 ---
 
@@ -48,7 +48,7 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
-    -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]****。
+    -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]。
 
     -   在 Windows **[開始]** 畫面上，按一下 **[Windows PowerShell]**。
 
@@ -74,7 +74,7 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
     -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  輸入下列命令，然後按 **Enter**，其中「電腦名稱」**代表要移除 Windows PowerShell Web 存取的遠端伺服器。 如果移除時需要，<span class="code">–Restart</span> 參數會自動重新啟動目的地伺服器。
+2.  輸入下列命令，然後按 **Enter**，其中 *computer_name* 代表要移除 Windows PowerShell Web 存取的遠端伺服器。 如果移除時需要，<span class="code">–Restart</span> 參數會自動重新啟動目的地伺服器。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "複製到剪貼簿。")
 
@@ -86,7 +86,7 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
         Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
 
-3.  完成移除後，請確認是否已移除 Windows PowerShell Web 存取，方法是在 [伺服器管理員] 中開啟 [所有伺服器]**** 頁面，選取移除功能的伺服器，並檢視所選伺服器頁面上的 [角色和功能]**** 磚。 您也可以針對所選伺服器執行 <span class="code">Get-WindowsFeature</span> Cmdlet (Get-WindowsFeature -ComputerName &lt;電腦名稱**&gt;) 來檢視伺服器上安裝的角色和功能清單。
+3.  完成移除後，請確認是否已移除 Windows PowerShell Web 存取，方法是在 [伺服器管理員] 中開啟 [所有伺服器] 頁面，選取移除功能的伺服器，並檢視所選伺服器頁面上的 [角色和功能] 磚。 您也可以針對所選伺服器執行 <span class="code">Get-WindowsFeature</span> Cmdlet (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;) 來檢視伺服器上安裝的角色和功能清單。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自訂解除安裝</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
@@ -105,9 +105,9 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。 如果已經開啟，請移至下一個步驟。
 
-    -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員]**** 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
+    -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
 
-    -   在 Windows [開始]**** 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式]**** 結果時，按一下該捷徑。
+    -   在 Windows [開始] 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式] 結果時，按一下該捷徑。
 
 2.  在 [IIS 管理員] 樹狀目錄窗格中，選取正在執行 Windows PowerShell Web 存取 Web 應用程式的網站。
 
@@ -115,7 +115,7 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
 4.  在樹狀目錄窗格中，以滑鼠右鍵按一下正在執行 Windows PowerShell Web 存取 Web 應用程式之網站中的 Web 應用程式，然後按一下 **[移除]**。
 
-5.  在樹狀目錄窗格中，選取 [應用程式集區]****，選取 Windows PowerShell Web 存取應用程式集區資料夾，按一下 [動作]**** 窗格中的 [停止]****，然後按一下內容窗格中的 [移除]****。
+5.  在樹狀目錄窗格中，選取 [應用程式集區]，選取 Windows PowerShell Web 存取應用程式集區資料夾，按一下 [動作] 窗格中的 [停止]，然後按一下內容窗格中的 [移除]。
 
 6.  關閉 [IIS 管理員]。
 
@@ -145,15 +145,15 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
 1.  如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
 
-    -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員]**** 來啟動 [伺服器管理員]。
+    -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。
 
     -   在 Windows **[開始]** 畫面上，按一下 **[伺服器管理員]**。
 
 2.  在 **[管理]** 功能表上，按一下 **[移除角色及功能]**。
 
-3.  在 [選取目的地伺服器]**** 頁面上，選取您想要從中移除功能的伺服器或離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 選取目的地伺服器之後，按一下 **[下一步]**。
+3.  在 [選取目的地伺服器] 頁面上，選取您想要從中移除功能的伺服器或離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 選取目的地伺服器之後，按一下 **[下一步]**。
 
-4.  再按一下 [下一步]****，跳至 [移除功能]**** 頁面。
+4.  再按一下 [下一步]，跳至 [移除功能] 頁面。
 
 5.  取消選取 **[Windows PowerShell Web 存取]** 核取方塊，然後按一下 **[下一步]**。
 
@@ -219,6 +219,6 @@ ms.openlocfilehash: ee5e88ece27add955fcef3a9df0a441a08251e77
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

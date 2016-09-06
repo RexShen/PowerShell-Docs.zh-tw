@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell 核心的關於主題
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 核心的關於主題"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
+
 ---
+
 # Windows PowerShell 核心的關於主題
 本節包含適用於所有 Windows PowerShell 模組的概念性 (「關於」) 說明主題。 如需其他模組的 [關於] 主題，請參閱特定模組的說明主題。
 
@@ -18,7 +25,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Assignment_Operators [v4]](https://technet.microsoft.com/en-us/library/ac2e399d-9cdc-422c-8b44-7746d93d1db5)|描述將值指派給變數的運算子。|
 |[about_Automatic_Variables [v4]](https://technet.microsoft.com/en-us/library/68bc622f-eb7e-4cf5-9c56-a289737efc99)|描述自動變數，可儲存 Windows PowerShell 的狀態資訊。|
 |[about_Break [v4]](https://technet.microsoft.com/en-us/library/fb810374-761e-46f2-8748-eac12557cf54)|說明如何使用 **Break** 陳述式，也就是立即結束 **Foreach**、**For**、**While**、**Do** 以及 **Switch** 陳述式的陳述式。|
-|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|描述該 Checkpoint\-Workflow 活動，接受工作流程中的檢查點。|
+|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|描述該 Checkpoint-Workflow 活動，接受工作流程中的檢查點。|
 |[about_Command_Precedence [v4]](https://technet.microsoft.com/en-us/library/fb14a05e-d461-432d-a253-e9371b54bd2e)|描述 Windows PowerShell 如何決定要執行哪個命令。|
 |[about_Command_Syntax [v4]](https://technet.microsoft.com/en-us/library/f39782e8-fe76-46ea-b8b5-b50bbee8da4b)|說明 Windows PowerShell 中的命令格式。|
 |[about_Comment_Based_Help [v4]](https://technet.microsoft.com/en-us/library/c270e198-6da2-4825-b6eb-35d5c8a5cf3d)|說明如何撰寫函式和指令碼的註解式說明主題。|
@@ -31,7 +38,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Debuggers [v4]](https://technet.microsoft.com/en-us/library/2b2ce8b3-f881-4528-bd30-f453dea06755)|描述 Windows PowerShell 指令碼偵錯工具，這是一組用來為指令碼和函式偵錯的 Cmdlet。|
 |[about_Do [v4]](https://technet.microsoft.com/en-us/library/d1f65c4e-6231-44e2-b21c-78a91845ad6c)|描述 Do 陳述式，可根據 While 或 Until 條件，執行指令碼區塊一或多次。|
 |[about_Environment_Variables [v4]](https://technet.microsoft.com/en-us/library/998c8863-3794-42a8-8971-a5cadef72772)|說明如何在 Windows PowerShell 中存取 Windows 環境變數。|
-|[about_Escape_Characters [v4]](https://technet.microsoft.com/en-us/library/576ca013-c4ca-4ade-bf46-b0d1ce2c778f)|介紹 Windows PowerShell 中的逸出字元 (`)，並說明其效用。|
+|[about_Escape_Characters [v4]](https://technet.microsoft.com/en-us/library/576ca013-c4ca-4ade-bf46-b0d1ce2c778f)|介紹 Windows PowerShell 中的逸出字元 (\`)，並說明其效用。|
 |[about_Eventlogs [v4]](https://technet.microsoft.com/en-us/library/8b5279cd-daf1-4ed1-8575-2df4baf7042d)|描述事件檢視器中的 Windows PowerShell 事件記錄檔。|
 |[about_Execution_Policies [v4]](https://technet.microsoft.com/en-us/library/347708dc-1515-4d74-978b-8334603472e6)|描述 Windows PowerShell 執行原則，並說明如何管理這些原則。|
 |[about_For [v4]](https://technet.microsoft.com/en-us/library/a2eb48d6-7d47-4087-a8d6-deb1d029a957)|描述 Windows PowerShell 中的 **For** 迴圈。|
@@ -67,7 +74,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Path_Syntax [v4]](https://technet.microsoft.com/en-us/library/4d2789b0-8c37-4227-acf3-717a0bc155bc)|描述在 Windows PowerShell 中的完整和相對路徑名稱格式。|
 |[about_Pipelines [v4]](https://technet.microsoft.com/en-us/library/f39a6658-4309-42a7-afe8-871bd4c6b01a)|說明如何在 Windows PowerShell 中將命令結合成管線。|
 |[about_PowerShell.exe](https://technet.microsoft.com/en-us/library/d5548671-5362-4b0b-b22c-4360c71d7f26)|顯示 PowerShell.exe 命令列工具的說明。|
-|[about_PowerShell_Ise.exe](https://technet.microsoft.com/en-us/library/f78d2891-de05-4403-8c91-e856abbd4fb6)|顯示 PowerShell\_ISE.exe 命令列工具的說明。|
+|[about_PowerShell_Ise.exe](https://technet.microsoft.com/en-us/library/f78d2891-de05-4403-8c91-e856abbd4fb6)|顯示 PowerShell_ISE.exe 命令列工具的說明。|
 |[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b)|描述自訂 Windows PowerShell 的喜好設定變數。|
 |[about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)|說明如何建立和使用 Windows PowerShell 設定檔。|
 |[about_Prompts [v4]](https://technet.microsoft.com/en-us/library/251843dc-4db3-4e21-aac6-acd3135b3ef6)|說明如何建立和使用 Windows PowerShell 設定檔。|
@@ -91,7 +98,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Requires [v4]](https://technet.microsoft.com/en-us/library/0f9a5a00-f64c-4305-b2e7-076aab68ca6f)|描述 **Requires** 陳述式，此陳述式可防止指令碼在沒有所需嵌入式管理單元和版本的情況下執行。|
 |[about_Reserved_Words [v4]](https://technet.microsoft.com/en-us/library/f3dc2da5-d6c3-4a28-8a13-51fbc61c4e51)|列出保留給 Windows PowerShell 的關鍵字。|
 |[about_Return [v4]](https://technet.microsoft.com/en-us/library/5c4e116d-a8be-4e13-906c-c4f74bb06f46)|結束目前的範圍，這可以是函式、指令碼或指令碼區塊。|
-|[about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)|說明如何使用 [檔案總管] 中，以滑鼠右鍵按一下項目的 [用 PowerShell 執行] 功能執行指令碼。|
+|[about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)|說明如何以滑鼠右鍵按一下 [檔案總管] 中的項目來使用「使用 PowerShell 執行 」功能執行指令碼。|
 |[about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)|描述排程工作並說明如何在 Windows PowerShell 和工作排程器中，使用及管理排程工作。|
 |[about_Scheduled_Jobs_Basics](https://technet.microsoft.com/en-us/library/859d8bfd-e655-4dc3-ab65-19813301eb57)|說明如何建立及管理排程工作。|
 |[about_Scheduled_Jobs_Advanced](https://technet.microsoft.com/en-us/library/6aea5423-fb96-461c-a1cb-1fb705930eee)|說明進階排程工作主題，包括構成排程工作基礎的檔案結構。|
@@ -124,7 +131,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|描述 Windows Management Instrumentation (WMI)，這是 Microsoft 的 Web 架構企業管理 (WBEM) 業界標準的實作。|
 |[about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)|提供關於 Windows Management Instrumentation (WMI) 和 Windows PowerShell 的背景資訊。|
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|描述 WMI 查詢語言 (WQL)，這可用於取得 Windows PowerShell 中的 WMI 物件。|
-|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|描述 Microsoft.WsMan.Management 模組中的 Cmdlet。 說明如何一起使用這些 Cmdlet 管理 WS\-Management 功能，包括 WSMan 提供者磁碟機。|
+|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|描述 Microsoft.WsMan.Management 模組中的 Cmdlet。 說明如何一起使用這些 Cmdlet 管理 WS-Management 功能，包括 WSMan 提供者磁碟機。|
 
 ## 另請參閱
 [使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
@@ -137,6 +144,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

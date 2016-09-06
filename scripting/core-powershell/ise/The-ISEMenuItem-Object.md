@@ -9,20 +9,20 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8b8c960604457fd41f5f7fefe0035003b675e13a
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e067519d58ca381fc4e5c746fe9bbd16bdc68c60
 
 ---
 
 # ISEMenuItem 物件
-  **ISEMenuItem** 物件是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 類別的執行個體。 **[附加元件]** 功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
+  **ISEMenuItem** 物件是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 類別的執行個體。 [附加元件] 功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
 
 ## [內容]
 
 ###  <a name="DisplayName"></a> DisplayName
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 唯讀\-屬性，可取得功能表項目的顯示名稱。
+ 唯讀屬性，可取得功能表項目的顯示名稱。
 
 ```
 # Get the display name of the Add-ons menu item
@@ -35,7 +35,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 ###  <a name="Action"></a> 動作
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 唯讀\-屬性，可取得指令碼的區塊。 當您按一下功能表項目，它會叫用動作。
+ 唯讀屬性，可取得指令碼的區塊。 當您按一下功能表項目，它會叫用動作。
 
 ```
 # Get the action associated with the first submenu item.
@@ -99,6 +99,6 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

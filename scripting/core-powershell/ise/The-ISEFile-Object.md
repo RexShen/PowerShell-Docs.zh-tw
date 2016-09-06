@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: ce9364e8fb73a2d31b728430c590fef4175ebe26
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
 
 ---
 
@@ -48,7 +48,7 @@ $myfile.Encoding
 
  使用指定的檔案名稱和編碼方式來儲存檔案。
 
- **filename** \- 字串：要用來儲存檔案的名稱。
+ **filename** - 字串：要用來儲存檔案的名稱。
 
  **\[saveEncoding\]** – 選擇性 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
  可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
@@ -74,7 +74,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 ###  <a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案]**** 索引標籤上。 名稱結尾出現的星號 \(\*\) 表示檔案有尚未儲存的變更。
+ 唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案] 索引標籤上。 名稱結尾出現的星號 \(\*\) 表示檔案有尚未儲存的變更。
 
 ```
 # Shows the display name of the file.
@@ -85,7 +85,7 @@ $psIse.CurrentFile.DisplayName
 ###  <a name="Editor"></a> Editor
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 唯讀屬性，可取得用於指定檔案的 [編輯器物件](The-ISEEditor-Object.md)。
+ 唯讀屬性，可取得用於指定檔案的[編輯器物件](The-ISEEditor-Object.md)。
 
 ```
 # Gets the editor and the text.
@@ -107,7 +107,7 @@ $psIse.CurrentFile.Encoding
 ###  <a name="FullPath"></a> FullPath
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 唯讀屬性，可取得指定已開啟檔案之完整讀取路徑的字串。
+ 唯讀屬性，可取得指定已開啟檔案之完整路徑的字串。
 
 ```
 # Shows the full path for the file. 
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

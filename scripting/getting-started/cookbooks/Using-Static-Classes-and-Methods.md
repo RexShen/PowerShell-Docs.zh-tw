@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 50ebc8a737b50aba5a5af49716b59905da74669a
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 28bc665c3ffb1b74a2ff922584c31a8657842a0f
 
 ---
 
 # 使用靜態類別和方法
-不是所有的 .NET Framework 類別都能使用 **New\-Object** 建立。 例如，如果您嘗試使用 **New\-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰
+並非所有的 .NET Framework 類別都能使用 **New-Object** 建立。 例如，如果您嘗試使用 **New-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰
 
 ```
 PS> New-Object System.Environment
@@ -33,7 +33,7 @@ At line:1 char:11
 這些錯誤的發生原因是沒有方法可透過這些類別建立新的物件。 這些類別是未變更狀態之方法和屬性的參考程式庫。 您不需要建立它們，而只需要使用它們。 這類類別和方法稱為*靜態類別*，因為不會建立、破壞或變更它們。 為了讓這個概念更為清楚，我們將提供使用靜態類別的範例。
 
 ### 使用 System.Environment 取得環境資料
-通常，在 Windows PowerShell 中使用物件的第一個步驟是使用 Get\-Member 來找出它包含的成員。 運用靜態類別時，處理方式會有些不同，因為實際類別不是物件。
+通常，在 Windows PowerShell 中使用物件的第一個步驟是使用 Get-Member 來找出它包含的成員。 運用靜態類別時，處理方式會有些不同，因為實際類別不是物件。
 
 #### 參考靜態 System.Environment 類別
 使用方括弧括住類別名稱，即可參考靜態類別。 例如，在方括弧內輸入名稱，即可參考 **System.Environment**。 這麼做會顯示一些泛型類型資訊︰
@@ -47,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 如前所述，Windows PowerShell 會自動將 '**System.**' 加到類型名稱的前面 (使用 **New\-Object** 時)。 使用以方括弧括住的類型名稱時會發生相同的作業，因此您可以將 **\[System.Environment]** 指定為 **\[Environment]**。
+> 如前所述，Windows PowerShell 會自動將 '**System.**' 加到類型名稱的前面 (使用 **New-Object** 時)。 使用以方括弧括住的類型名稱時會發生相同的作業，因此您可以將 **\[System.Environment]** 指定為 **\[Environment]**。
 
 **System.Environment** 類別包含目前處理處序之運作環境的一般資訊 (在 Windows PowerShell 內運作時為 powershell.exe)。
 
-如果您輸入 **\[System.Environment] | Get\-Member** 來嘗試檢視這個類別的詳細資訊，則物件類型會回報為 **System.RuntimeType** ，而非 **System.Environment**：
+如果您輸入 **\[System.Environment] | Get-Member** 來嘗試檢視這個類別的詳細資訊，則物件類型會回報為 **System.RuntimeType**，而非 **System.Environment**：
 
 ```
 PS> [System.Environment] | Get-Member
@@ -59,7 +59,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-若要使用 Get\-Member 來檢視靜態成員，請指定 **Static** 參數︰
+若要使用 Get-Member 來檢視靜態成員，請指定 **Static** 參數︰
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -118,7 +118,7 @@ False
 ```
 
 ### 使用 System.Math 執行數學運算
-System.Math 靜態類別適用於執行一些數學運算。 **System.Math** 的重要成員主要是方法，而使用 **Get\-Member** 即可顯示這些方法。
+System.Math 靜態類別適用於執行一些數學運算。 **System.Math** 的重要成員主要是方法，而使用 **Get-Member** 即可顯示這些方法。
 
 > [!NOTE]
 > System.Math 有數種同名的方法，但透過其參數的類型予以區分。
@@ -190,6 +190,6 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

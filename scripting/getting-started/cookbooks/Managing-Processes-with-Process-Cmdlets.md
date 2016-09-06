@@ -9,16 +9,16 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 6857cf5e73252f646e563fa12a8252b4bdc2e1e5
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 5a635485387bb367f4e43982085f9d36765a95e5
 
 ---
 
 # 使用處理程序 Cmdlet 管理處理程序
 您可以使用 Windows PowerShell 中的處理程序 Cmdlet，管理 Windows PowerShell 中的本機和遠端處理程序。
 
-## 取得處理程序 (Get\-Process)
-若要取得在本機電腦上執行的處理程序，請在不使用參數的情況下執行 **Get\-Process**。
+## 取得處理程序 (Get-Process)
+若要取得在本機電腦上執行的處理程序，請在不使用參數的情況下執行 **Get-Process**。
 
 您可以藉由指定處理程序的名稱或識別碼，來取得特定處理程序。 下列命令會取得閒置處理程序︰
 
@@ -29,7 +29,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-雖然 Cmdlet 在某些情況下未傳回任何資料是正常的，但是當您依處理程序的 ProcessId 指定處理程序時，由於一般目的是擷取已知的執行中處理程序，因此如果 **Get\-Process** 找不到任何相符項目，則會產生錯誤。 如果沒有該識別碼的處理程序，很可能是識別碼不正確，或感興趣的處理程序已經結束：
+雖然 Cmdlet 在某些情況下未傳回任何資料是正常的，但是當您依處理程序的 ProcessId 指定處理程序時，由於一般目的是擷取已知的執行中處理程序，因此如果 **Get-Process** 找不到任何相符項目，則會產生錯誤。 如果沒有該識別碼的處理程序，很可能是識別碼不正確，或感興趣的處理程序已經結束：
 
 ```
 PS> Get-Process -Id 99
@@ -38,7 +38,7 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-您可以使用 Get\-Process Cmdlet 的 Name 參數，根據處理序名稱指定處理程序的子集。 Name 參數可以接受以逗號分隔的多個名稱清單，而且支援使用萬用字元，因此您可以輸入名稱模式。
+您可以使用 Get-Process Cmdlet 的 Name 參數，根據處理序名稱指定處理程序的子集。 Name 參數可以接受以逗號分隔的多個名稱清單，而且支援使用萬用字元，因此您可以輸入名稱模式。
 
 例如，下列命令會取得名稱開頭為 "ex" 的處理程序。
 
@@ -52,7 +52,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 因為 .NET System.Diagnostics.Process 類別是 Windows PowerShell 處理程序的基礎，所以它會遵循 System.Diagnostics.Process 所使用的一些慣例。 其中一個慣例是可執行檔的處理程序名稱，絕對不可以在可執行檔名稱結尾包含 ".exe"。
 
-**Get\-Process** 也接受 Name 參數有多個值。
+**Get-Process** 也接受 Name 參數有多個值。
 
 ```
 PS> Get-Process -Name exp*,power* 
@@ -62,7 +62,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-您可以使用 Get\-Process 的 ComputerName 參數取得遠端電腦上的處理程序。 例如，下列命令會取得本機電腦 (以 "localhost" 表示) 和兩部遠端電腦上的 PowerShell 處理程序。
+您可以使用 Get-Process 的 ComputerName 參數取得遠端電腦上的處理程序。 例如，下列命令會取得本機電腦 (以 "localhost" 表示) 和兩部遠端電腦上的 PowerShell 處理程序。
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -73,7 +73,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-電腦名稱雖然未出現在此顯示中，但儲存在 Get\-Process 所傳回之處理程序物件的 MachineName 屬性中。 下列命令會使用 Format\-Table Cmdlet 顯示處理程序物件的處理程序 ID、ProcessName 和 MachineName (ComputerName) 屬性。
+電腦名稱雖然未出現在此顯示中，但儲存在 Get-Process 所傳回之處理程序物件的 MachineName 屬性中。 下列命令會使用 Format-Table Cmdlet 顯示處理程序物件的處理程序 ID、ProcessName 和 MachineName (ComputerName) 屬性。
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
@@ -84,7 +84,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-這個更複雜的命令會將 MachineName 屬性新增至標準 Get\-Process 顯示。 倒單引號 (\`)(ASCII 96) 是 Windows PowerShell 接續字元。
+這個更複雜的命令會將 MachineName 屬性新增至標準 Get-Process 顯示。 倒單引號 (\`)(ASCII 96) 是 Windows PowerShell 接續字元。
 
 ```
 get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
@@ -103,10 +103,10 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## 停止處理程序 (Stop\-Process)
+## 停止處理程序 (Stop-Process)
 Windows PowerShell 可讓您彈性地列出處理程序，但停止處理程序又如何？
 
-**Stop\-Process** Cmdlet 接受使用 Name 或 ID 指定您要停止的處理程序。 您是否能夠停止處理程序取決於您的權限。 某些處理程序無法停止。 例如，如果您嘗試停止閒置處理程序，您會收到錯誤︰
+**Stop-Process** Cmdlet 接受使用 Name 或 Id 指定您要停止的處理程序。 您是否能夠停止處理程序取決於您的權限。 某些處理程序無法停止。 例如，如果您嘗試停止閒置處理程序，您會收到錯誤︰
 
 ```
 PS> Stop-Process -Name Idle
@@ -138,13 +138,13 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-您可以在其他情況下使用相同的方法。 例如，假設當使用者啟動另一個應用程式時，次要通知區域應用程式會自動執行。 您可能會發現這在終端機服務工作階段中無法正常運作，但您仍然想要在實體電腦主控台上執行的工作階段中予以保留。 連線到實體電腦桌面之工作階段的工作階段識別碼一律為 0，因此您可以使用 **Where\-Object** 和處理程序 **SessionId**，停止該處理程序在其他工作階段中的所有執行個體：
+您可以在其他情況下使用相同的方法。 例如，假設當使用者啟動另一個應用程式時，次要通知區域應用程式會自動執行。 您可能會發現這在終端機服務工作階段中無法正常運作，但您仍然想要在實體電腦主控台上執行的工作階段中予以保留。 連線到實體電腦桌面之工作階段的工作階段識別碼一律為 0，因此您可以使用 **Where-Object** 和處理程序 **SessionId**，停止該處理程序在其他工作階段中的所有執行個體：
 
 ```
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-Stop\-Process Cmdlet 沒有 ComputerName 參數。 因此，若要在遠端電腦上執行停止處理程序命令，您需要使用 Invoke\-Command Cmdlet。 例如，若要停止 Server01 遠端電腦上的 PowerShell 處理程序，請輸入：
+Stop-Process Cmdlet 沒有 ComputerName 參數。 因此，若要在遠端電腦上執行停止處理程序命令，您需要使用 Invoke-Command Cmdlet。 例如，若要停止 Server01 遠端電腦上的 PowerShell 處理程序，請輸入：
 
 ```
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
@@ -182,6 +182,6 @@ Windows PowerShell 也提供啟動 (或重新啟動)、偵錯處理程序，以�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

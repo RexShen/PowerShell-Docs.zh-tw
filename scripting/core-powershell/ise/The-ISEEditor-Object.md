@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
 ---
 
@@ -73,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
- 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\- \(、\[、{ \-) 正前方，或者在右括號、括號或大括號 (\- \)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
+ 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -84,7 +84,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  使用文字取代選取範圍，或在目前插入號位置插入文字。
 
- **text** \- 字串：要插入的文字。
+ **text** - 字串：要插入的文字。
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
@@ -93,13 +93,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  從 **startLine**、**startColumn**、**endLine** 及 **endColumn** 參數選取文字。
 
- **startLine** \- 整數：選取範圍開始位置的行。
+ **startLine** - 整數：選取範圍開始位置的行。
 
- **startColumn** \- 整數：選取範圍開始位置之起始行內的欄。
+ **startColumn** - 整數：選取範圍開始位置之起始行內的欄。
 
- **startLine** \- 整數：選取範圍結束位置的行。
+ **endLine** - 整數：選取範圍結束位置的行。
 
- **endColumn** \- 整數：選取範圍結束位置之結尾行內的欄。
+ **endColumn** - 整數：選取範圍結束位置之結尾行內的欄。
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
@@ -121,9 +121,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  在行號和欄號設定插入號位置。 如果插入號行號或插入號欄號不在其各自的有效範圍內，就會擲回例外狀況。
 
- **lineNumber** \- 整數：插入號的行號。
+ **lineNumber** - 整數：插入號的行號。
 
- **columnNumber** \- 整數：插入號的欄號。
+ **columnNumber** - 整數：插入號的欄號。
 
 ```
 # Set the CaretPosition.
@@ -253,6 +253,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

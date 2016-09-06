@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
 translationtype: Human Translation
-ms.sourcegitcommit: c6b87ed59a16ccb147fdd3d98e48cfa1c0aa748d
-ms.openlocfilehash: d1f3c08451b385c56d0c4e084dce8fa5795c278e
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 1779b9de13a30a43236e24793e5196261a7db77f
 
 ---
 
@@ -39,18 +39,18 @@ rundll32.exe user32.dll,LockWorkStation
 shutdown.exe -l
 ```
 
-第三個選項是使用 WMI。 Win32\_OperatingSystem 類別具有 Win32Shutdown 方法。 叫用方法加上 0 旗標會起始登出︰
+第三個選項是使用 WMI。 Win32_OperatingSystem 類別具有 Win32Shutdown 方法。 叫用方法加上 0 旗標會起始登出︰
 
 ```
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
-如需詳細資訊，以及尋找 Win32Shutdown 方法的其他函式，請參閱 MSDN 中的＜Win32Shutdown Method of the Win32\_OperatingSystem Class＞(Win32_OperatingSystem 類別的 Win32Shutdown 方法)。
+如需詳細資訊，以及尋找 Win32Shutdown 方法的其他函式，請參閱 MSDN 中的＜Win32Shutdown Method of the Win32_OperatingSystem Class＞(Win32_OperatingSystem 類別的 Win32Shutdown 方法)。
 
 ### 關閉或重新啟動電腦
 關閉並重新啟動電腦通常是相同類型的工作。 用來關閉電腦的工具通常也會用來重新啟動電腦，反之亦然。 從 Windows PowerShell 重新啟動電腦有兩個直接的作法。 使用 Tsshutdn.exe 或 Shutdown.exe 加上適當的引數。 您可以從 **tsshutdn.exe /?** 或 **shutdown.exe /?** 取得詳細的使用資訊。
 
-您也可以直接從 Windows PowerShell 使用 **Win32\_OperatingSystem**，來執行關閉和重新啟動作業。
+您也可以直接從 Windows PowerShell 使用 **Win32_OperatingSystem**，來執行關閉和重新啟動作業。
 
 若要關閉電腦，請使用 Win32Shutdown 方法加上 **1** 旗標。
 
@@ -67,6 +67,6 @@ shutdown.exe -l
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,24 +1,30 @@
 ---
-title: ISESnippetCollection 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "ISESnippetCollection 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: d7debb2ca5560839f7fdb986d26255dba930d8f5
+
 ---
+
 # ISESnippetCollection 物件
   **ISESnippetCollection** 物件是 **ISESnippet** 物件的集合。 與 **PowerShellTab** 物件相關聯的檔案集合是這個類別的成員。 **$psISE.CurrentPowerShellTab.Files** 集合即為一例。
 
 ## 方法
 
-### Load( FilePathName )
+### Load\( FilePathName \)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  載入 .snippets.ps1xml 檔案，其中包含使用者定義的程式碼片段。 建立程式碼片段的最簡單方式是使用 New-IseSnippet Cmdlet，自動將它們儲存於您的設定檔資料夾中，如此一來，每當您啟動 Windows PowerShell ISE 時就會自動載入它們。
 
- **FilePathName** – 字串
- .snippets.ps1xml 檔案的路徑和檔案名稱，其中包含程式碼片段定義。
+ **FilePathName** – .snippets.ps1xml 檔案的路徑和檔案名稱，其中包含程式碼片段定義。
 
 ```
 # Loads a custom snippet file into the current PowerShell tab.
@@ -35,6 +41,7 @@ $SnipFile = Join-Path ( Split-Path $profile) “Snippets\MySnips.snippets.ps1xml
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

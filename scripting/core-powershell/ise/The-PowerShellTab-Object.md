@@ -1,12 +1,19 @@
 ---
-title: PowerShellTab 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PowerShellTab 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: f3f2d27c3c82406f8e8967fd1784a6e07579c1fa
+
 ---
+
 # PowerShellTab 物件
   **PowerShellTab** 物件代表 Windows PowerShell 執行階段環境。
 
@@ -20,8 +27,7 @@ ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 > [!NOTE]
 >  此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 它不會傳回任何物件或值。 如果指令碼會修改任何變數，則那些變更將會保存在據以叫用命令的索引標籤上。
 
- **Script** \- System.Management.Automation.ScriptBlock or String
- 要執行的指令碼區塊。
+ **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 
 ```
 # Manually create a second PowerShell tab before running this script.
@@ -37,14 +43,13 @@ $psise.PowerShellTabs[1].Invoke({dir})
 > [!NOTE]
 >  此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 此指令碼區塊會執行，且從指令碼傳回的任何值會傳回到您從中叫用命令的環境。 如果命令執行的時間比 **millesecondsTimeout** 值指定的時間更長，命令就會失敗並發生例外狀況：「作業逾時。」
 
- **Script** \- System.Management.Automation.ScriptBlock or String
- 要執行的指令碼區塊。
+ **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 
- **\[useNewScope\]** \-  選用的布林值，預設值為 **$true**
- 如果設為 **$true**，則會建立命令要在其中執行的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
+ **\[useNewScope\]** - 預設為 **$true** 的選用布林值
+：如果設定為 **$true**，則會建立一個在其中執行命令的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
 
- **\[millisecondsTimeout\]** \-  選用的整數，預設為 **500**.
- 如果命令沒有在指定的時間內完成，則命令會產生 **TimeoutException** 並顯示「作業逾時」訊息。
+ **\[millisecondsTimeout\]** - 選用的整數，預設為 **500**。
+如果命令沒有在指定的時間內完成，則命令會產生 **TimeoutException** 並顯示「作業逾時」訊息。
 
 ```
 # create a new PowerShell tab and then switch back to the first
@@ -106,7 +111,7 @@ $secondTab.CanInvoke
 ```
 
 ###  <a name="Commandpane"></a> Consolepane
-  在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。  在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane**.
+  在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。  在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane**。
 
  唯讀屬性，可取得主控台窗格 [editor](../ise/The-ISEEditor-Object.md) 物件。
 
@@ -119,7 +124,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 ###  <a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 可讀寫屬性，可取得或設定顯示在 PowerShell 索引標籤上的文字。 根據預設，索引標籤會命名為 "PowerShell \#"，其中 \# 代表數字。
+ 可讀寫屬性，可取得或設定顯示在 PowerShell 索引標籤上的文字。 根據預設，索引標籤會命名為 "PowerShell #"，其中 # 代表數字。
 
 ```
 $newTab = $psise.PowerShellTabs.Add()
@@ -153,7 +158,7 @@ $newFile.Editor.LineCount
 ###  <a name="Output"></a> 輸出
   此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  在更新版本的 Windows PowerShell ISE 中，您可以使用 **ConsolePane** 物件達到相同的目的。
 
- 唯讀屬性，可取得目前 [editor](../ise/The-ISEEditor-Object.md) 的 [輸出] 窗格.
+ 唯讀屬性，可取得目前 [editor](../ise/The-ISEEditor-Object.md) 的 [輸出] 窗格。
 
 ```
 # Clears the text in the Output pane.
@@ -223,6 +228,7 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

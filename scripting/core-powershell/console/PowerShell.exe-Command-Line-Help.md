@@ -1,12 +1,19 @@
 ---
-title: PowerShell.exe 命令列說明
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PowerShell.exe 命令列說明"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: e4635890a5433e199d5ddbce0ac1475a134ecd57
+
 ---
+
 # PowerShell.exe 命令列說明
 啟動 Windows PowerShell 工作階段。 您可以使用 PowerShell.exe 從其他工具的命令列 (例如 Cmd.exe) 啟動 Windows PowerShell 工作階段，或在 Windows PowerShell 命令列中使用以啟動新的工作階段。 使用參數可自訂工作階段。
 
@@ -41,7 +48,7 @@ PowerShell[.exe] -Help | -? | /?
 ### -ExecutionPolicy <ExecutionPolicy>
 設定目前工作階段的預設執行原則並且儲存至 $env:PSExecutionPolicyPreference 環境變數中。 此參數不會變更已在登錄中設定的 Windows PowerShell 執行原則。 如需 Windows PowerShell 執行原則的資訊，包括有效值清單，請參閱 about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170)。
 
-### -File <FilePath> [<Parameters>]
+### -File <FilePath> \[<Parameters>]
 在本機領域 (「點來源」) 執行指定指令碼，讓指令碼建立的函式和變數在目前的工作階段可用。 輸入指令碼檔案路徑和任何參數。 **File** 必須是命令中的最後一個參數，因為在 **File** 參數名稱後輸入的所有字元，會解譯為後面加上指令碼參數及其值的指令碼檔案路徑。
 
 您可以將指令碼的參數和參數值包含在 **File** 參數的值中。 例如： `-File .\Get-Script.ps1 -Domain Central`
@@ -82,7 +89,7 @@ PowerShell[.exe] -Help | -? | /?
 
 如果未安裝 Windows PowerShell 3.0，唯一有效的值為 "2.0"。 其他值會被忽略。
 
-如需詳細資訊，請參閱[開始使用 Windows PowerShell [舊版 MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd)中的＜安裝 Windows PowerShell＞。.
+如需詳細資訊，請參閱[開始使用 Windows PowerShell [舊版 MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd)中的＜安裝 Windows PowerShell＞。
 
 ### -WindowStyle <Window style>
 設定工作階段的視窗樣式。 有效值為 Normal、Minimized、Maximized 和 Hidden。
@@ -90,7 +97,7 @@ PowerShell[.exe] -Help | -? | /?
 ### -Command
 就如同在 Windows PowerShell 命令提示字元輸入一樣，執行指定的命令 (和任何參數)，然後結束，除非指定了 NoExit 參數。
 
-Command 的值可以是 "-"、字串 或指令碼區塊。 如果 Command 的值是 "-"，則會從標準輸入讀取命令文字。
+Command 的值可以是 "-"、字串。 或指令碼區塊。 如果 Command 的值是 "-"，則會從標準輸入讀取命令文字。
 
 指令碼區塊必須以大括弧 ({}) 括住。 只有在 Windows PowerShell 中執行 PowerShell.exe 時，您才可以指定指令碼區塊。 指令碼的結果會當做已還原序列化的 XML 物件 (而不是即時物件) 傳回到父殼層。
 
@@ -104,7 +111,7 @@ Command 的值可以是 "-"、字串 或指令碼區塊。 如果 Command 的值
 
 其中的引號代表字串，它會呼叫 (&) 運算子，使命令執行。
 
-### -Help、-?、/?
+### -Help, -?, /?
 顯示此訊息。 如果您正在 Windows PowerShell 中輸入 PowerShell.exe 命令，命令參數之前要加上連字號 (-)，而不是正斜線 (/)。 在 Cmd.exe 中，您可以使用連字號或正斜線。
 
 > [!NOTE]
@@ -130,6 +137,7 @@ powershell.exe -encodedCommand $encodedCommand
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,12 +1,19 @@
 ---
-title: PSReadline 模組
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PSReadline 模組"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: bf079dec-4d26-40e7-b7a9-154c69e485ba
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 483d96a5df9a1bbbbdaa0cb76657a4aba0dafe80
+
 ---
+
 # PSReadline 模組
 本節包含 **PSReadline** 模組的說明主題。 **PSReadline** 模組包含可讓您在 Windows PowerShell 中自訂命令列編輯環境的 Cmdlet。
 
@@ -15,10 +22,11 @@ ms.assetid: bf079dec-4d26-40e7-b7a9-154c69e485ba
 
 ## 另請參閱
 [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-[使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+[使用 Windows PowerShell 編寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

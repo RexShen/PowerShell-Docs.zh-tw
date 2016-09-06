@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 02964dd763ccccbf27a963c0f8eef20aa23cc117
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 9c633d457db9d15621285b2662244c4190550f63
 
 ---
 
@@ -89,13 +89,13 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ------------------------------------------------------------------------
 
-您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;伺服器名稱&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
+您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;server_name&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
 
 ### 登入 Windows PowerShell Web 存取
 
 1.  在網際網路瀏覽器視窗或索引標籤中開啟 Windows PowerShell Web 存取網站。
 
-2.  在 Windows PowerShell Web 存取登入頁面，提供您的網路使用者名稱、密碼以及您想要管理 (而且是已授權使用者) 的電腦名稱。 如果 Windows PowerShell Web 存取系統管理員指示您使用自訂網站或 Proxy 伺服器的 URI，而不是電腦名稱，請在 [連線類型]**** 欄位中選取 [連線 URI]****，然後提供 URI。
+2.  在 Windows PowerShell Web 存取登入頁面，提供您的網路使用者名稱、密碼以及您想要管理 (而且是已授權使用者) 的電腦名稱。 如果 Windows PowerShell Web 存取系統管理員指示您使用自訂網站或 Proxy 伺服器的 URI，而不是電腦名稱，請在 [連線類型] 欄位中選取 [連線 URI]，然後提供 URI。
 
     <table>
     <colgroup>
@@ -117,13 +117,13 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     </tbody>
     </table>
 
-3.  [選用連線設定]**** 區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](https://technet.microsoft.com/library/dd315384.aspx)。
+3.  [選用連線設定] 區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](https://technet.microsoft.com/library/dd315384.aspx)。
 
-    一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定]**** 區段，然後提供替代的認證。 否則，請前往步驟 6。
+    一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定] 區段，然後提供替代的認證。 否則，請前往步驟 6。
 
-4.  如果 Windows PowerShell Web 存取系統管理員已經針對 Windows PowerShell Web 存取使用者建立自訂工作階段設定，請在 [組態名稱]**** 欄位中輸入工作階段設定的名稱。 如需工作階段設定的詳細資訊，請參閱 Microsoft 網站上的 [about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。
+4.  如果 Windows PowerShell Web 存取系統管理員已經針對 Windows PowerShell Web 存取使用者建立自訂工作階段設定，請在 [組態名稱] 欄位中輸入工作階段設定的名稱。 如需工作階段設定的詳細資訊，請參閱 Microsoft 網站上的 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。
 
-5.  請保留 [驗證類型]**** 設為 [預設]****，除非 Windows PowerShell Web 存取系統管理員指示您不要保留。
+5.  請保留 [驗證類型] 設為 [預設]，除非 Windows PowerShell Web 存取系統管理員指示您不要保留。
 
 6.  按一下 **[登入]**。
 
@@ -136,11 +136,11 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 下列其中一項會將您登出網頁型 Windows PowerShell 工作階段。
 
--   按一下主控台右下角的 [登出]****。 (僅限 Windows Server 2012)
+-   按一下主控台右下角的 [登出]。 (僅限 Windows Server 2012)
 
--   按一下主控台右下角的 [儲存]**** 或 [結束]**** (僅限 Windows Server 2012 R2)。 按一下 [儲存]**** 儲存並關閉您的 Windows PowerShell Web 存取工作階段；您稍後可以重新連線至工作階段。 當您重新登入 Windows PowerShell Web 存取時，Windows PowerShell Web 存取會顯示一份已儲存工作階段的清單；您可以選取並重新連線至已儲存的工作階段，或者啟動新的工作階段。 允許使用者開啟的工作階段數目上限 (包括已儲存和使用中)，由閘道管理員所設定。
+-   按一下主控台右下角的 [儲存] 或 [結束] (僅限 Windows Server 2012 R2)。 按一下 [儲存] 儲存並關閉您的 Windows PowerShell Web 存取工作階段；您稍後可以重新連線至工作階段。 當您重新登入 Windows PowerShell Web 存取時，Windows PowerShell Web 存取會顯示一份已儲存工作階段的清單；您可以選取並重新連線至已儲存的工作階段，或者啟動新的工作階段。 允許使用者開啟的工作階段數目上限 (包括已儲存和使用中)，由閘道管理員所設定。
 
-    按一下 [結束]**** 會將您登出 Windows PowerShell Web 存取工作階段而不加以儲存。
+    按一下 [結束] 會將您登出 Windows PowerShell Web 存取工作階段而不加以儲存。
 
 -   在相同的瀏覽器工作階段或相同瀏覽器工作階段的新索引標籤中，嘗試登入以管理不同的遠端電腦。 (這在閘道伺服器執行 Windows Server 2012 R2 時並不適用；Windows Server 2012 R2 上執行的 Windows PowerShell Web 存取不允許在相同的瀏覽器工作階段中有多個使用者工作階段。)如需如何在相同電腦上使用多個使用中工作階段的詳細資訊，請參閱本主題[網頁型主控台的限制](#BKMK_limits)一節中的＜同時連線多部目標電腦＞。
 
@@ -154,7 +154,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   關閉正在執行瀏覽器的用戶端裝置，或者中斷網路連線。
 
--   在 Web 主控台執行 [結束]**** 命令。 如果您連線的工作階段設定支援 [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) 模式，或在受限制的 Runspace 中，則這個命令無效。
+-   在 Web 主控台執行 [結束] 命令。 如果您連線的工作階段設定支援 [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) 模式，或在受限制的 Runspace 中，則這個命令無效。
 
 如果您想要重新登入，請再次開啟 Windows PowerShell Web 存取網頁，然後遵循本主題[登入 Windows PowerShell Web 存取](#BKMK_signin)的步驟來登入。
 
@@ -303,9 +303,9 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     -   環境變數
 
--   登入 **NoLanguage** 工作階段設定或 Windows PowerShell Web Access 中限制的 runspace 的使用者無法執行 [結束]**** 命令來結束工作階段。 若要登出，使用者應該按一下主控台頁面上的 [登出]****。
+-   登入 **NoLanguage** 工作階段設定或 Windows PowerShell Web Access 中限制的 runspace 的使用者無法執行 [結束] 命令來結束工作階段。 若要登出，使用者應該按一下主控台頁面上的 [登出]。
 
--   <span class="label">同時連線到多部目標電腦。</span>   如果閘道伺服器執行 Windows Server 2012，則 Windows PowerShell Web 存取只會允許每個瀏覽器工作階段連線到一部遠端電腦；它不允許使用者登入一次，然後使用個別的瀏覽器索引標籤連線到多部遠端電腦。 當您開啟新索引標籤或新瀏覽器視窗時，Windows PowerShell Web 存取會提示您中斷目前工作階段的連線，然後啟動新的工作階段，如此您就可以連線到新的 (或相同的) 遠端電腦。 不過，如果需要針對不同的遠端電腦使用兩個或多個獨立的工作階段，Internet Explorer 中的功能可以讓您建立新工作階段。 若要在 Internet Explorer 中啟動新的瀏覽器工作階段，請按下 **ALT**，開啟 [檔案]**** 功能表，然後選取 [新增工作階段]****。 然後，在新的工作階段中，開啟 Windows PowerShell Web 存取網站，並登入以存取另一部遠端電腦。
+-   <span class="label">同時連線到多部目標電腦。</span>   如果閘道伺服器執行 Windows Server 2012，則 Windows PowerShell Web 存取只會允許每個瀏覽器工作階段連線到一部遠端電腦；它不允許使用者登入一次，然後使用個別的瀏覽器索引標籤連線到多部遠端電腦。 當您開啟新索引標籤或新瀏覽器視窗時，Windows PowerShell Web 存取會提示您中斷目前工作階段的連線，然後啟動新的工作階段，如此您就可以連線到新的 (或相同的) 遠端電腦。 不過，如果需要針對不同的遠端電腦使用兩個或多個獨立的工作階段，Internet Explorer 中的功能可以讓您建立新工作階段。 若要在 Internet Explorer 中啟動新的瀏覽器工作階段，請按下 **ALT**，開啟 [檔案] 功能表，然後選取 [新增工作階段]。 然後，在新的工作階段中，開啟 Windows PowerShell Web 存取網站，並登入以存取另一部遠端電腦。
 
     當 Windows PowerShell Web 存取閘道在 Windows Server 2012 R2 上執行時，使用者可以在不同的瀏覽器索引標籤中開啟多個遠端電腦連線。 如果您想要使用網頁型 Windows PowerShell 主控台開啟多個遠端電腦連線，請檢查您的 Windows PowerShell Web 存取閘道管理員，以查看閘道伺服器是否支援此功能。
 
@@ -397,6 +397,6 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

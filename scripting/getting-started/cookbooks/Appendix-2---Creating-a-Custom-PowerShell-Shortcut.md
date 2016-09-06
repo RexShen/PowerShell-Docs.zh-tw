@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: ceec1038516ddd4c29df770d14981c0a69437498
 
 ---
 
@@ -19,7 +19,7 @@ ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
 
 1.  建立指向 Powershell.exe 的捷徑。
 
-2.  以滑鼠右鍵按一下捷徑，然後按一下 **[內容]**。
+2.  以滑鼠右鍵按一下捷徑，然後按一下 [內容]。
 
 3.  按一下 **[選項]** 索引標籤。
 
@@ -46,6 +46,6 @@ ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -9,16 +9,16 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: e986e85a5d7416d8deaec06c0784263ee09fc9ff
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 4c0f405a46e16935211b3886a40c9f7d1afc7260
 
 ---
 
 # 建立 .NET 和 COM 物件 (New-Object)
 您可以透過具有 .NET Framework 和 COM 介面的軟體元件，來執行許多系統管理工作。 Windows PowerShell 可讓您使用這些元件，因此您不再僅限於使用 Cmdlet 執行工作。 Windows PowerShell 的初始版本中有許多 Cmdlet 無法對遠端電腦執行。 我們將示範如何從 Windows PowerShell 直接使用 .NET Framework **System.Diagnostics.EventLog** 類別，以克服管理事件記錄檔時的這項限制。
 
-### 使用 New\-Object 存取事件記錄檔
-.NET Framework 類別庫包含名為 **System.Diagnostics.EventLog** 的類別，可用來管理事件記錄檔。 您可以使用 **New\-Object** Cmdlet 搭配 **TypeName** 參數，建立 .NET Framework 類別的新執行個體。 例如，下列命令會建立事件記錄檔參考：
+### 使用 New-Object 存取事件記錄檔
+.NET Framework 類別庫包含名為 **System.Diagnostics.EventLog** 的類別，可用來管理事件記錄檔。 您可以使用 **New-Object** Cmdlet 搭配 **TypeName** 參數，建立 .NET Framework 類別的新執行個體。 例如，下列命令會建立事件記錄檔參考：
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog
@@ -29,8 +29,8 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 雖然此命令已建立 EventLog 類別的執行個體，但是該執行個體不會包含任何資料。 這是因為我們並未指定特定事件記錄檔。 如何取得實際事件記錄檔？
 
-#### 搭配使用建構函式和 New\-Object
-若要參考特定事件記錄檔，您需要指定記錄檔的名稱。 **New\-Object** 具有 **ArgumentList** 參數。 物件的特殊啟動方法會使用您以值傳遞給這個參數的引數。 該方法稱為*建構函式*，因為它可用來建構物件。 例如，若要取得應用程式記錄檔參考，您會將字串 'Application' 指定為引數︰
+#### 搭配使用建構函式和 New-Object
+若要參考特定事件記錄檔，您需要指定記錄檔的名稱。 **New-Object** 具有 **ArgumentList** 參數。 物件的特殊啟動方法會使用您以值傳遞給這個參數的引數。 該方法稱為*建構函式*，因為它可用來建構物件。 例如，若要取得應用程式記錄檔參考，您會將字串 'Application' 指定為引數︰
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
@@ -62,8 +62,8 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### 使用 New\-Object 存取遠端事件記錄檔
-上一節所使用的命令是以本機電腦為目標，**Get\-EventLog** Cmdlet 可以執行該作業。 若要存取遠端電腦上的應用程式記錄檔，您必須同時提供記錄檔名稱和電腦名稱 (或 IP 位址) 作為引數。
+#### 使用 New-Object 存取遠端事件記錄檔
+上一節所使用的命令是以本機電腦為目標；**Get-EventLog** Cmdlet 可以執行該作業。 若要存取遠端電腦上的應用程式記錄檔，您必須同時提供記錄檔名稱和電腦名稱 (或 IP 位址) 作為引數。
 
 ```
 PS> $RemoteAppLog = New-Object -TypeName System.Diagnostics.EventLog Application,192.168.1.81
@@ -77,7 +77,7 @@ PS> $RemoteAppLog
 將事件記錄檔參考儲存在 $RemoteAppLog 變數之後，可對其執行哪些工作？
 
 #### 使用物件方法清除事件記錄檔
-物件通常具有可呼叫以執行工作的方法。 您可以使用 **Get\-Member**，顯示與物件相關聯的方法。 下列命令和選取的輸出顯示 EventLog 類別的一些方法︰
+物件通常具有可呼叫以執行工作的方法。 您可以使用 **Get-Member**，顯示與物件相關聯的方法。 下列命令和選取的輸出顯示 EventLog 類別的一些方法︰
 
 ```
 PS> $RemoteAppLog | Get-Member -MemberType Method
@@ -116,10 +116,10 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### 使用 New\-Object 建立 COM 物件
-您可以使用 **New\-Object** 來處理元件物件模型 (COM) 元件。 元件範圍從 Windows Script Host (WSH) 隨附的各種程式庫，到安裝在大多數系統上的 ActiveX 應用程式 (例如 Internet Explorer)。
+### 使用 New-Object 建立 COM 物件
+您可以使用 **New-Object** 來處理元件物件模型 (COM) 元件。 元件範圍從 Windows Script Host (WSH) 隨附的各種程式庫，到安裝在大多數系統上的 ActiveX 應用程式 (例如 Internet Explorer)。
 
-**New\-Object** 使用 .NET Framework 執行階段可呼叫包裝函式來建立 COM 物件，因此與呼叫 COM 物件時具有相同的 .NET Framework 限制。 若要建立 COM 物件，您需要指定 **ComObject** 參數，並提供所要使用之 COM 類別的程式設計識別碼 (或 *ProgID*)。 COM 使用限制及判斷系統上可用 ProgID 的完整探討不在本使用者指南的討論範圍內，但 WSH 等環境中的大部分已知物件都可以在 Windows PowerShell 中使用。
+**New-Object** 使用 .NET Framework 執行階段可呼叫包裝函式來建立 COM 物件，因此與呼叫 COM 物件時具有相同的 .NET Framework 限制。 若要建立 COM 物件，您需要指定 **ComObject** 參數，並提供所要使用之 COM 類別的程式設計識別碼 (或 *ProgID*)。 COM 使用限制及判斷系統上可用 ProgID 的完整探討不在本使用者指南的討論範圍內，但 WSH 等環境中的大部分已知物件都可以在 Windows PowerShell 中使用。
 
 您可以透過指定下列 ProgID 來建立 WSH 物件︰**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary** 和 **Scripting.FileSystemObject**。 下列命令會建立這些物件：
 
@@ -139,7 +139,7 @@ New-Object -ComObject Scripting.FileSystemObject
 $WshShell = New-Object -ComObject WScript.Shell
 ```
 
-Get\-Member 可以搭配 COM 物件，因此輸入下列命令可以瀏覽物件成員︰
+Get-Member 可用於 COM 物件，因此您可以輸入下列命令瀏覽物件成員︰
 
 ```
 PS> $WshShell | Get-Member
@@ -153,7 +153,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get\-Member** 具有選擇性 **InputObject** 參數，您可以改用此參數而不是管道來提供輸入至 **Get\-Member**。 如果您改用命令 **Get\-Member \-InputObject $WshShell**，會得到如上所示的相同輸出。 如果您使用 **InputObject**，它會將其引數視為單一項目。 這表示如果您在變數中有數個物件，**Get\-Member** 會將其視為物件的陣列。 例如：
+**Get-Member** 具有選擇性 **InputObject** 參數，您可以改用此參數提供輸入而不是傳送到 **Get-Member**。 如果您改用命令 **Get-Member -InputObject $WshShell**，會得到如上所示的相同輸出。 如果您使用 **InputObject**，它會將其引數視為單一項目。 這表示如果您在變數中有數個物件，**Get-Member** 會將其視為物件的陣列。 例如：
 
 ```
 PS> $a = 1,2,"three"
@@ -180,7 +180,7 @@ PS> '$Home\Desktop\PSHome.lnk'
 $Home\Desktop\PSHome.lnk
 ```
 
-我們現在有一個名為 **$lnk** 的變數，其中包含新的捷徑參考。 如果您想要查看其成員，您可以將其傳送到 **Get\-Member**。 以下的輸出顯示完成建立捷徑所需使用的成員︰
+我們現在有一個名為 **$lnk** 的變數，其中包含新的捷徑參考。 如果您想要查看其成員，您可以將其傳送到 **Get-Member**。 以下的輸出顯示完成建立捷徑所需使用的成員︰
 
 <pre>PS> $lnk | Get-Member TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b} Name             MemberType   Definition ----             ----------   ---------- ...Save             Method       void Save () ...TargetPath       Property     string TargetPath () {get} {set} ...</pre>
 
@@ -197,12 +197,12 @@ $Home\Desktop\PSHome.lnk
 $ie = New-Object -ComObject InternetExplorer.Application
 ```
 
-此命令會啟動但不會顯示 Internet Explorer。 如果您輸入 Get\-Process，您可以看到名為 iexplore 的處理序正在執行。 事實上，如果您結束 Windows PowerShell，該處理序會繼續執行。 您必須重新啟動電腦或使用工作管理員等工具，才能結束 iexplore 處理序。
+此命令會啟動但不會顯示 Internet Explorer。 如果您輸入 Get-Process，您可以看到名為 iexplore 的處理序正在執行。 事實上，如果您結束 Windows PowerShell，該處理序會繼續執行。 您必須重新啟動電腦或使用工作管理員等工具，才能結束 iexplore 處理序。
 
 > [!NOTE]
 > 以個別處理序啟動的 COM 物件通常稱為*ActiveX 可執行檔*，啟動時不一定會顯示使用者介面視窗。 像是 Internet Explorer，如果建立但未顯示視窗，通常會將焦點移至 Windows 桌面，而您必須顯示視窗才能與其互動。
 
-您可以輸入 **$ie | Get\-Member**，檢視 Internet Explorer 的內容和方法。 若要看到 Internet Explorer 視窗，請輸入下列命令將 Visible 屬性設定為 $true︰
+您可以輸入 **$ie | Get-Member**，以檢視 Internet Explorer 的內容和方法。 若要看到 Internet Explorer 視窗，請輸入下列命令將 Visible 屬性設定為 $true︰
 
 ```
 $ie.Visible = $true
@@ -237,7 +237,7 @@ At line:1 char:16
 + $ie | Get-Member <<<<
 ```
 
-您可以使用 $ie \= $null 等命令移除其餘參考，或輸入下列命令完全移除變數︰
+您可以使用 $ie = $null 等命令移除其餘參考，或輸入下列命令完全移除變數︰
 
 ```
 Remove-Variable ie
@@ -247,7 +247,7 @@ Remove-Variable ie
 > 當您移除 ActiveX 可執行檔參考時，ActiveX 可執行檔會結束或繼續執行，並沒有通用標準。 根據應用程式是否顯示、其中是否正在執行編輯的文件，甚至是根據 Windows PowerShell 是否仍在執行等情況，應用程式可能結束，也可能不會結束。 因此，您應該針對要在 Windows PowerShell 中使用的每個 ActiveX 可執行檔，測試其終止行為。
 
 ### 取得 .NET Framework 包裝之 COM 物件的相關警告
-在某些情況下，COM 物件可能會有相關聯的 .NET Framework 執行階段可呼叫包裝函式** (RCW)，**New\-Object** 會使用此包裝函式。 因為 RCW 的行為可能與一般 COM 物件的行為不同，所以 **New\-Object** 提供了 **Strict** 參數，以警告您 RCW 的存取。 如果您指定 **Strict** 參數，然後建立使用 RCW 的 COM 物件，您會收到警告訊息︰
+在某些情況下，COM 物件可能會有相關聯的 .NET Framework *執行階段可呼叫包裝函式* (或 RCW)，**New-Object** 將會使用此包裝函式。 因為 RCW 的行為可能與一般 COM 物件的行為不同，所以 **New-Object** 提供了 **Strict** 參數，以警告您 RCW 的存取。 如果您指定 **Strict** 參數，然後建立使用 RCW 的 COM 物件，您會收到警告訊息︰
 
 ```
 PS> $xl = New-Object -ComObject Excel.Application -Strict
@@ -265,6 +265,6 @@ At line:1 char:17
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

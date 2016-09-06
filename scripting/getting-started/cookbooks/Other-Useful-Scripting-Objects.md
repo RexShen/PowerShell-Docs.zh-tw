@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 translationtype: Human Translation
-ms.sourcegitcommit: ebf9d61bd67cc352d6d6404a9b592f856c99759e
-ms.openlocfilehash: c68e6d7d26a8a9b1e32a35e82dd705d95480c9bf
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
 
 ---
 
@@ -33,7 +33,7 @@ psUnsupportedConsoleApplications
 ```
 
 ### $psLocalHelp
- 這個字典物件會在本機編譯的 HTML 說明檔中，維護說明主題及其相關聯連結之間內容相關性的對應。 您可以使用它來尋找特定主題的本機說明。 您可以新增或刪除此清單中的主題。 下列程式碼範例示範一些 **$psLocalHelp** 中所含的機碼值組範例。
+ 這個字典物件會在本機編譯的 HTML 說明檔中，維護說明主題及其相關聯連結之間內容相關性的對應。 您可以使用它來尋找特定主題的本機說明。 您可以新增或刪除此清單中的主題。 下列程式碼範例示範一些 **$psLocalHelp** 中所含的索引鍵值組範例。
 
 ```
 # See the local help map
@@ -45,8 +45,8 @@ $psLocalHelp | Format-List
 
 |||
 |-|-|
-|機碼︰Add\-Computer|值：WindowsPowerShellHelp.chm::\/html\/093f660c\-b8d5\-43cf\-aa0c\-54e5e54e76f9.htm|
-|機碼：Add\-Content|值：WindowsPowerShellHelp.chm::\/html\/0c836a1b\-f389\-4e9a\-9325\-0f415686d194.htm|
+|索引鍵：Add-Computer|值： WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
+|索引鍵：Add-Content|值︰WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
 
  下列指令碼會在清單中新增項目。
 
@@ -66,8 +66,8 @@ $psOnlineHelp | Format-List
 
 |||
 |-|-|
-|機碼︰Add\-Computer|值：http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=135194|
-|機碼：Add\-Content|值：http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=113278|
+|索引鍵：Add-Computer|值︰http://go.microsoft.com/fwlink/p/?LinkID=135194|
+|索引鍵：Add-Content|值︰http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
  下列指令碼會在清單中新增項目。
 
@@ -82,6 +82,6 @@ $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

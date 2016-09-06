@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 9f60be9bebe9dfaa98f495c8e9a9c0d8c2fa5cc2
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 13fdac5369d70289d7a0b5115a04879f707e47fc
 
 ---
 
 # 處理軟體安裝
-設計成使用 Windows Installer 的應用程式可以透過 WMI 的 **Win32\_Product** 類別存取，但並非所有現今使用的應用程式都使用 Windows Installer。 因為 Windows Installer 對處理可安裝的應用程式提供最廣泛的標準技術，我們主要將著重在那些應用程式。 使用替代安裝常式的應用程式通常不受 Windows Installer 管理。 處理那些應用程式的特定技術將視安裝程式軟體與應用程式開發人員的決定而定。
+設計成使用 Windows Installer 的應用程式可以透過 WMI 的 **Win32_Product** 類別存取，但並非所有現今使用的應用程式都使用 Windows Installer。 因為 Windows Installer 對處理可安裝的應用程式提供最廣泛的標準技術，我們主要將著重在那些應用程式。 使用替代安裝常式的應用程式通常不受 Windows Installer 管理。 處理那些應用程式的特定技術將視安裝程式軟體與應用程式開發人員的決定而定。
 
 > [!NOTE]
 > 透過將應用程式檔案複製到電腦來安裝的應用程式通常無法使用這裡討論的技術來管理。 您可以使用＜處理檔案與資料夾＞一節中所討論的技術，將這些應用程式當成檔案與資料夾來管理。
@@ -32,7 +32,7 @@ Version           : 2.0.50727
 Caption           : Microsoft .NET Framework 2.0
 ```
 
-若要在螢幕上顯示 Win32\_Product 物件的所有屬性，請使用格式化 Cmdlet (例如 Format\-List Cmdlet) 的 Properties 參數，加上 \* (全部) 值。
+若要在螢幕上顯示 Win32_Product 物件的所有屬性，請使用格式化 Cmdlet (例如 Format-List Cmdlet) 的 Properties 參數，加上 \* (全部) 值。
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
@@ -50,7 +50,7 @@ SKUNumber         :
 Vendor            : Microsoft Corporation
 ```
 
-或者，您可以使用 **Get\-WmiObject Filter** 參數只選取 Microsoft .NET Framework 2.0。 因為此命令中使用的篩選器是 WMI 篩選器，所以它使用 WMI 查詢語言 (WQL) 語法，而不是 Windows PowerShell 語法。 而是：
+或者，您可以使用 **Get-WmiObject Filter** 參數來只選取 Microsoft .NET Framework 2.0。 因為此命令中使用的篩選器是 WMI 篩選器，所以它使用 WMI 查詢語言 (WQL) 語法，而不是 Windows PowerShell 語法。 而是：
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
@@ -77,7 +77,7 @@ IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
 ...
 ```
 
-最後，如果只要尋找已安裝應用程式的名稱，使用簡單的 **Format\-Wide** 陳述式可簡化輸出：
+最後，如果只要尋找已安裝應用程式的名稱，使用簡單的 **Format-Wide** 陳述式可簡化輸出：
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
@@ -88,7 +88,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 ### 列出所有可解除安裝應用程式
 雖然沒有方法可以保證找出系統上所有應用程式，但可以尋找 [新增或移除程式] 對話方塊顯示之清單中的所有程式。 [新增或移除程式] 會在下列登錄機碼中尋找這些應用程式：
 
-**HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**。
+**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**。
 
 我們也可以檢查此機碼來尋找應用程式。 為了讓您更輕鬆地檢視 Uninstall 機碼，我們可以將 Windows PowerShell 磁碟機對應至此登錄位置：
 
@@ -101,7 +101,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
 
 > [!NOTE]
-> **HKLM:** 磁碟機已對應到 **HKEY\_LOCAL\_MACHINE** 的根目錄，因此我們在指向 Uninstall 機碼的路徑中使用該磁碟機。 除了 **HKLM:** 之外，以前也可以使用 **HKLM** 或 **HKEY\_LOCAL\_MACHINE** 指定登錄路徑。 使用現有登錄磁碟機的好處是可以使用 TAB 鍵自動完成來填入機碼名稱，因此我們不需要手動輸入。
+> **HKLM:** 磁碟機已對應到 **HKEY_LOCAL_MACHINE** 的根目錄，因此我們在指向 Uninstall 機碼的路徑中使用該磁碟機。 除了 **HKLM:** 之外，我們可以使用 **HKLM** 或 **HKEY_LOCAL_MACHINE** 其中之一指定登錄路徑。 使用現有登錄磁碟機的好處是可以使用 Tab 鍵自動完成來填入機碼名稱，因此我們不需要手動輸入。
 
 我們現在有了名為 "Uninstall" 的磁碟機，它可以用來快速又方便地尋找應用程式安裝。 我們可以計算 Uninstall: Windows PowerShell 磁碟機中的登錄機碼數目，找出安裝的應用程式數目：
 
@@ -110,14 +110,14 @@ PS> (Get-ChildItem -Path Uninstall:).Count
 459
 ```
 
-我們可以使用各種不同的技術來進一步搜尋此應用程式清單，首先是 **Get\-ChildItem**。 若要取得應用程式清單並將它們儲存在 **$UninstallableApplications** 變數中，請使用下列命令：
+我們可以使用各種不同的技術來進一步搜尋此應用程式清單，首先是 **Get-ChildItem**。 若要取得應用程式清單並將它們儲存在 **$UninstallableApplications** 變數中，請使用下列命令：
 
 ```
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
 > [!NOTE]
-> 為了清楚說明，在這裡我們使用冗長的變數名稱。 在實際使用時，就沒有必要使用長名稱。 雖然您可以使用 TAB 鍵自動完成輸入變數名稱，但您也可以為了加快速度使用 1 至 2 個字元的名稱。 較長的描述性名稱在您開發重複使用的程式碼時最有幫助。
+> 為了清楚說明，在這裡我們使用冗長的變數名稱。 在實際使用時，就沒有必要使用長名稱。 雖然您可以使用 Tab 鍵自動完成輸入變數名稱，但您也可以為了加快速度使用 1 至 2 個字元的名稱。 較長的描述性名稱在您開發重複使用的程式碼時最有幫助。
 
 若要顯示 Uninstall 下登錄機碼中登錄項目的值，請使用登錄機碼的 GetValue 方法。 方法的值是登錄項目的名稱。
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
 ```
 
 ### 安裝應用程式
-您可以在遠端或本機使用 **Win32\_Product** 類別來安裝 Windows Installer 套件。
+您可以在遠端或本機使用 **Win32_Product** 類別來安裝 Windows Installer 封裝。
 
 > [!NOTE]
 > 在 Windows Vista、Windows Server 2008 與更新版本的 Windows 中，您必須使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell 才能安裝應用程式。
@@ -186,6 +186,6 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: abb8a868b735a2eb39a2276da6ece611d5423a16
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: edb3be980d23cafb8c9b9923a7153308481e6c67
 
 ---
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 預設已安裝於 Windows Server® 2016 Technical Previe
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,30 +1,34 @@
 ---
-title: ISEAddOnToolCollection 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "ISEAddOnToolCollection 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: eb02179871cd6dc6ff6cc5ba16d2074a037dbfa1
+
 ---
+
 # ISEAddOnToolCollection 物件
   **ISEAddOnToolCollection** 物件是 **ISEAddOnTool** 物件的集合。 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** 物件即為一例。
 
 ## 方法
 
-### Add( Name, ControlType, [IsVisible] )
+### Add\( Name, ControlType, \[IsVisible\] \)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  將新的附加元件工具加入到集合。 它會傳回新加入的附加元件工具。 執行此命令之前，您必須在本機電腦上安裝附加元件工具並載入組件。
 
- **Name** – 字串
- 指定要加入到 Windows PowerShell ISE 的附加元件工具顯示名稱。
+ **Name** – 字串：指定要加入到 Windows PowerShell ISE 的附加元件工具顯示名稱。
 
- **ControlType** – 類型
- 指定已加入的控制項。
+ **ControlType** – 類型：指定新加入的控制項。
 
- **[IsVisible]** – 選用布林值
- 如果設定為 **$true**，附加元件工具就會立即顯示於相關聯的工具窗格中。
+ **\[IsVisible\]** – 選用的布林值：如果設定為 **$true**，附加元件工具會立即顯示在相關聯的工具窗格中。
 
 ```
 # Load a DLL with an add-on and then add it to the ISE
@@ -33,13 +37,12 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
 ```
 
-### Remove( Item )
+### Remove\( Item \)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  從集合中移除指定的附加元件工具。
 
- **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool
- 指定要從 Windows PowerShell ISE 中移除的物件。
+ **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool：指定要從 Windows PowerShell ISE 移除的物件。
 
 ```
 # Load a DLL with an add-on and then add it to the ISE
@@ -48,13 +51,12 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
 ```
 
-### SetSelectedPowerShellTab( psTab )
+### SetSelectedPowerShellTab\( psTab \)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  選取 **psTab** 參數指定的 PowerShell 索引標籤。
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab
- 要選取的 PowerShell 索引標籤。
+ **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab：要選取的 PowerShell 索引標籤。
 
 ```
 
@@ -64,13 +66,12 @@ $newTab.DisplayName="Brand New Tab"
 
 ```
 
-### Remove( psTab )
+### Remove\( psTab \)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  移除 **psTab** 參數指定的 PowerShell 索引標籤。
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab
- 要移除的 PowerShell 索引標籤。
+ **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab：要移除的 PowerShell 索引標籤。
 
 ```
 
@@ -90,6 +91,7 @@ $psISE.PowerShellTabs.Remove($newTab)
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

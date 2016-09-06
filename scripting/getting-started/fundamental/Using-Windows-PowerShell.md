@@ -1,12 +1,19 @@
 ---
-title: 使用 Windows PowerShell
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "使用 Windows PowerShell"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+
 ---
+
 # 使用 Windows PowerShell
 Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言，專為系統管理所設計。 Windows PowerShell 是以 .NET Framework 為基礎所建置，可協助 IT 專業人員與進階使用者控制和自動化管理 Windows 作業系統與在 Windows 上執行的應用程式。
 
@@ -32,7 +39,7 @@ Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自�
 
 -   [Windows PowerShell 工作流程](http://technet.microsoft.com/library/jj134242.aspx)。 Windows PowerShell 工作流程於 Windows PowerShell 3.0 中首度引進，可讓 IT 專業人員和開發人員利用 [Windows Workflow Foundation](http://msdn.microsoft.com/library/ee342461.aspx) 的優點，以及 Windows PowerShell 的自動化功能與簡易性。
 
--   [Windows PowerShell Web 存取](http://technet.microsoft.com/library/hh831611.aspx)。 Windows PowerShell Web Access 於 Windows Server 2012 中首度引進，做為 Windows PowerShell 閘道，提供一個以遠端電腦為目標的網頁型 Windows PowerShell 主控台。 它可讓 IT 專業人員在網頁瀏覽器中，從 Windows PowerShell 主控台執行 Windows PowerShell 命令和指令碼，且用戶端裝置上不需要安裝 Windows PowerShell、遠端管理軟體或瀏覽器外掛程式。
+-   [Windows PowerShell Web 存取](http://technet.microsoft.com/library/hh831611.aspx)。 Windows PowerShell Web Access 於 Windows Server 2012 中首度引進，做為 Windows PowerShell 閘道，提供一個以遠端電腦為目標的網頁型 Windows PowerShell 主控台。 它可讓 IT 專業人員在網頁瀏覽器中，從 Windows PowerShell 主控台執行 Windows PowerShell 命令和指令碼，而不需要 Windows PowerShell、遠端管理軟體，或者在用戶端裝置上安裝瀏覽器外掛程式。
 
 -   [Windows PowerShell Web 服務 (Management OData IIS 擴充功能)](http://msdn.microsoft.com/library/windows/desktop/hh880865.aspx)。 Windows PowerShell Web 服務是一種架構，可用於透過 Web Server (IIS) 中執行的 OData 型 Web 服務輕鬆公開 Windows PowerShell Cmdlet。
 
@@ -62,13 +69,15 @@ Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自�
 
 -   [Update-Help](http://technet.microsoft.com/library/hh849720.aspx) Cmdlet。 會在您的電腦上下載並安裝最新版本 Windows PowerShell 模組說明主題的 Windows PowerShell Cmdlet。
 
-    如需 Windows PowerShell 中可更新說明系統的詳細資訊，包含如何在未連線到網路的電腦上安裝可更新說明，請參閱 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)、[Save-Help](http://technet.microsoft.com/library/hh849724.aspx) 與[支援可更新的說明](http://msdn.microsoft.com/library/hh852754.aspx)。.
+    如需 Windows PowerShell 中可更新說明系統的詳細資訊，包含如何在未連線到網路的電腦上安裝可更新說明，請參閱 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)、[Save-Help](http://technet.microsoft.com/library/hh849724.aspx) 與[支援可更新的說明](http://msdn.microsoft.com/library/hh852754.aspx)。
 
 -   [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) Cmdlet 來存取說明。 可讓您深入了解 Cmdlet 與系統上安裝之提供者的 Windows PowerShell Cmdlet。
 
--   若要在已發行的說明檔案有任何更新時接收通知，請訂閱下列 RSS 摘要：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
+-   若要在已發行的說明檔案有任何更新時接收通知，請訂閱下列 RSS 摘要：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)。
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

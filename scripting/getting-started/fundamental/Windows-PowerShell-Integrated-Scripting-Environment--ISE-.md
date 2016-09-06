@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell 整合式指令碼環境 (ISE)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 整合式指令碼環境 ISE"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 061e22c26853664c89adc023d43802628859b9a6
+
 ---
+
 # Windows PowerShell 整合式指令碼環境 (ISE)
 Windows PowerShell 整合式指令碼環境 (ISE) 是 Windows PowerShell 引擎和語言之兩部主機的其中一部。 您可以使用它，透過 Windows PowerShell 主控台中無法使用的方式來撰寫、執行和測試指令碼。 ISE 新增語法著色、Tab 鍵自動完成、IntelliSense、視覺化偵錯和即時線上說明。
 
@@ -20,9 +27,9 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 **程式碼片段**是可輕鬆地插入所撰寫指令碼的簡短程式碼區段。 有用程式碼片段的集合包含在方塊中，而且使用 **New-Snippet** Cmdlet 可以有更多的程式碼片段。
 
-撰寫與 [Windows PowerShell ISE 指令碼物件模型](https://technet.microsoft.com/en-us/library/dd819478.aspx)互動的程式碼，即可建立將功能新增至 ISE 的**附加元件工具**。 這些工具可以在索引標籤式窗格中顯示控制項，或在背景無形地工作。 **命令**附加元件是不錯的範例，並包含 3.0 版和更新版本，以顯示可用命令的清單和其說明。
+**附加元件工具**可將功能新增至 ISE，藉由撰寫與 [Windows PowerShell ISE 指令碼物件模型](https://technet.microsoft.com/en-us/library/dd819478.aspx)互動的程式碼即可建立。 這些工具可以在索引標籤式窗格中顯示控制項，或在背景無形地工作。 **命令**附加元件是不錯的範例，並包含 3.0 版和更新版本，會顯示可用命令的清單和其說明。
 
-**[重新啟動管理員和自動儲存]** 每兩分鐘會自動儲存您的指令碼，協助您避免在當機或意外重新啟動時遺失工作。
+**重新啟動管理員和自動儲存**每兩分鐘會自動儲存您的指令碼，協助您避免在當機或意外重新啟動時遺失工作。
 
 **[最近使用的清單]** 現在是 [開啟舊檔] 功能表的一部分，讓您更輕鬆地取得您最常使用的檔案。
 
@@ -34,7 +41,7 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 -   **XML 語法著色**。 ISE 編輯器現在將 XML 語法著色，方法與將 Windows PowerShell 程式碼語法著色相同。
 
--   **括號對稱**。 Windows PowerShell ISE 會反白顯示對稱的括號，協助您確保左右括號數目相符。 使用 CTRL- [ 找出與游標所在左括號對稱的右括號。
+-   **括號對稱**。 Windows PowerShell ISE 會反白顯示對稱的括號，協助您確保左右括號數目相符。 使用 CTRL- \[ 找出與游標所在左括號對稱的右括號。
 
 -   **大綱檢視**。 您可以按一下左邊界的加號和減號，來摺疊或展開程式碼區段。 這可讓您更輕鬆地找到您要在長指令碼中尋找的程式碼。
 
@@ -42,17 +49,17 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 -   **剖析錯誤顯示**。 當您輸入時，Windows PowerShell 會檢查您的指令碼。 如果它偵測到錯誤，則會在違規程式碼下顯示紅色曲線。 暫留於指示的錯誤時，工具提示會顯示發現的問題。
 
--   **縮放**。 您可以使用 ISE 視窗右下角的滑桿來放大文字，以輕鬆地讀取或縮小來查看較大的圖片。
+-   **縮放**。 您可以使用 ISE 視窗右下角的滑桿來放大文字以輕鬆地讀取，或縮小來查看較大的圖片。
 
 -   **RTF 複製與貼上**。 從 ISE 複製到剪貼簿時，會包括所選取文字的字型、大小和色彩資訊。
 
--   **區塊選擇**。 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt\+Shift\+方向鍵**，就可以選取一個區塊形狀的文字區塊。.
+-   **區塊選擇**。 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt+Shift+方向鍵**，就可以選取一個區塊形狀的文字區塊。
 
 ### PowerShell 2.0 的新功能 (Windows Server 2008 R2、Windows 7)
 ISE 是在 PowerShell 2.0 版引進。
 
 ## Windows PowerShell ISE 的執行需求
-ISE 可以在任何可執行 Windows PowerShell 2.0 版或更新版本的電腦上使用。 每個版本的 Windows 和 Windows Server 都包括某個版本的 Windows PowerShell 和 ISE，但您可以安裝 Windows Management Framework 來升級到最新可用版本。 執行這項搜尋來尋找可用的最新版本︰[下載試用](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。 請注意，任何標示 "Preview" 的項目都是搶鮮版程式碼，而不是完整功能。
+ISE 可以在任何可執行 Windows PowerShell 2.0 版或更新版本的電腦上使用。 每個版本的 Windows 和 Windows Server 都包括某個版本的 Windows PowerShell 和 ISE，但您可以安裝 Windows Management Framework 來升級到最新可用版本。 執行這項搜尋來尋找可用的最新版本︰[下載試用](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。 請注意，任何標示 "Preview" 的項目都是發行前版本程式碼，而不是完整功能。
 
 > [!NOTE]
 > 因為 Windows PowerShell ISE 需要圖形化使用者介面，所以無法在 Windows Server 的 Server Core 選項上執行它。
@@ -62,6 +69,7 @@ ISE 可以在任何可執行 Windows PowerShell 2.0 版或更新版本的電腦�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 
