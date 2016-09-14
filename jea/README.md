@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "讀我檔案"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
-ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
+ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
+ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
 
 ---
 
@@ -83,7 +83,7 @@ JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 
 
 ## 開始撰寫您自己的 JEA 端點
 撰寫 JEA 端點很容易，您只需要啟用 JEA 的系統和文字編輯器 (例如 PowerShell ISE)。
-一個實用的入門秘訣是使用 `New-PSRoleCapabilityFile -Path <path>` 和 `New-PSSessionCapabilityFile -Path <Path>`但不提供任何其他引數來建立基本架構檔案。
+其中一項實用的入門秘訣是使用 [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) 和 [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx)但不提供任何其他引數來建立基本架構檔案。
 這些基本架構檔案包含所有適用的設定欄位，以及說明每個欄位可能用途的實用註解。
 
 若要更輕鬆地撰寫 JEA 端點，請參閱 [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)，其提供可用來撰寫工作階段設定檔和角色功能檔案的 GUI。
@@ -92,6 +92,6 @@ JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 

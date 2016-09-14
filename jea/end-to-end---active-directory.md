@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: "端對端   Active Directory"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
-ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
+ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
+ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 
 ---
 
@@ -27,7 +27,7 @@ ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 為了逐步進行本節，您必須在網域控制站上執行。
 如果您無權存取網域控制站，別擔心。
 請針對您熟悉的一些其他案例或角色執行，並嘗試跟著做。
-如果您要快速地設定新的網域控制站，請參閱附錄：[建立網域控制站](#creating-a-domain-controller)。
+若要快速地設定新的網域控制站，請參閱[建立網域控制站附錄](.\creating-a-domain-controller.md)。
 
 ## 建立新的角色功能和工作階段設定的步驟
 
@@ -163,7 +163,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 現在，您的使用者只要呼叫 `Reset-ContosoUserPassword`，就能建立內嵌安全字串，而不需要記住此語法。
 
 ## 步驟 4：編輯角色功能檔案
-在[建立角色功能](#role-capability-creation)一節中，您已建立空白角色功能檔案。
+在[建立角色功能](./role-capabilities.md#role-capability-creation)一節中，您已建立空白角色功能檔案。
 在本節中，您將在該檔案中填入值。
 
 首先在 PowerShell ISE 中開啟角色功能檔案。
@@ -273,6 +273,6 @@ ValidatePattern 是該參數引數必須符合的規則運算式。
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

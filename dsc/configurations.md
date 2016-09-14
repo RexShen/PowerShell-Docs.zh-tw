@@ -1,15 +1,15 @@
 ---
 title: "DSC 設定"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
-ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
+ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
+ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
 
 ---
 
@@ -45,7 +45,7 @@ Configuration MyDscConfiguration {
 - 一個或多個 **Node** 區塊。 它們會定義您要設定的節點 (電腦或 VM)。 上述設定有一個 **Node** 區塊，以名為 "TEST-PC1" 的電腦為目標。
 - 一個或多個資源區塊。 設定就在這裡為它要設定的資源設定屬性。 本例有兩個資源區塊，兩個都呼叫 "WindowsFeature" 資源。
 
-只要可以在 PoweShell 函式中執行的作業，通常在 **Configuration** 區塊內都可以執行。 例如，在前一個範例中，如果設定的目標電腦名稱不想使用硬式編碼，您可以為節點名稱加入參數：
+只要可以在 PowerShell 函式中執行的作業，通常在 **[設定]** 區塊內都可以執行。 例如，在前一個範例中，如果設定的目標電腦名稱不想使用硬式編碼，您可以為節點名稱加入參數：
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -137,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

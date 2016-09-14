@@ -16,6 +16,8 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 ```
 我們支援建立類別目錄第 1 版和第 2 版。 第 1 版使用 SHA1 雜湊演算法建立檔案雜湊，第 2 版使用 SHA256。 *Windows Server 2008 R2* 和 *Windows 7* 不支援第 2 版的類別目錄。 如果使用 *Windows 8*、*Windows Server 2012* 和更新版本的平台，建議使用第 2 版的類別目錄。  
 
+若要在現有的模組使用此命令，請指定 CatalogFilePath 和 Path 變數，以符合模組資訊清單的位置。 下列範例中，模組資訊清單位於 C:\Program Files\Windows PowerShell\Modules\Pester。 
+
 ![](../../images/NewFileCatalog.jpg)
 
 這會建立類別目錄檔案。 
@@ -42,6 +44,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 
 
-<!--HONumber=Jul16_HO3-->
+
+<!--HONumber=Aug16_HO5-->
 
 
