@@ -286,7 +286,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   新的 Publish-DscConfiguration Cmdlet 會將設定 MOF 檔案複製到目標節點，但不會套用設定。 直到下個一致性階段，或當您執行 Update-DscConfiguration Cmdlet 時才會套用設定。
 
-    -   新的 Test-DscConfiguration Cmdlet 可讓您驗證產生的設定與所需的設定是否相符：如果設定與所需的設定相符，會傳回 True；如果實際設定與所需的設定不相符，會傳回 False。
+    -   新的 Test-DscConfiguration Cmdlet 可讓您驗證所產生的設定與所需的設定是否相符：如果設定與所需的相符，會傳回 True；如果實際設定與所需的不符，會傳回 False。
 
     -   新的 Update-DscConfiguration Cmdlet 會強制處理設定。 如果本機設定管理員處於提取模式，此 Cmdlet 會從提取伺服器取得設定之後才套用。
 
@@ -311,7 +311,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 -   Windows PowerShell 工作階段中第一次 Tab 鍵自動完成的效能獲得了顯著的改善，Tab 鍵自動完成時間幾乎縮短 500 毫秒。
 
 ## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 的新功能
-Windows PowerShell 4.0 與舊版相容。 針對 Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，可在不進行變更的情況下於 Windows PowerShell 4.0 中運作。
+Windows PowerShell 4.0 與舊版相容。 針對 Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，均可在不進行變更的情況下於 Windows PowerShell 4.0 中運作。
 
 Windows PowerShell 4.0 預設已安裝於 Windows® 8.1 和 Windows Server 2012 R2 之上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安裝 Windows PowerShell 4.0，請下載並安裝 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，然後再安裝 Windows Management Framework 4.0。
 
@@ -341,13 +341,13 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **Invoke-RestMethod** 與 **Invoke-WebRequest** 現在可讓您使用 Headers 參數設定所有標頭。 雖然此參數一直都存在，但是它是會導致產生例外狀況或錯誤之 Web Cmdlet 的幾個參數之一。
 
--   **Get-Module** 有新的參數 **FullyQualifiedName**，其類型為 **ModuleSpecification\[]**。 Get-Module 的 **FullyQualifiedName** 參數現可讓您使用模組的名稱、版本與 (選擇性) 其 GUID 來指定模組。
+-   **Get-Module** 有新的參數 **FullyQualifiedName**，其類型為 **ModuleSpecification\[]**。 Get-Module 的 **FullyQualifiedName** 參數現可讓您使用模組的名稱、版本與其 GUID (選擇性) 來指定模組。
 
 -   Windows Server 2012 R2 上的預設執行原則設定是 **RemoteSigned**。 在 Windows 8.1 上，預設設定沒有任何變更。
 
 -   Windows PowerShell 4.0 開始支援使用動態方法名稱來叫用方法。 您可以使用變數來儲存方法名稱，然後透過呼叫變數來動態叫用方法。
 
--   當 **PSElapsedTimeoutSec** 工作流程一般參數所指定的逾時期間過去之後，已經不會再刪除非同步工作流程工作。
+-   當 **PSElapsedTimeoutSec** 工作流程一般參數所指定的逾時期間過去之後，便不會再刪除非同步工作流程工作。
 
 -   **New-JobTrigger** 與 **Set-JobTrigger** Cmdlet 已新增參數 **RepeatIndefinitely**。 這讓您不再需要指定 **RepetitionDuration** 參數的 **TimeSpan.MaxValue** 值來重複執行不限期間的排程工作。
 
@@ -361,7 +361,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **Get-Process** Cmdlet 有一個新的切換參數：**IncludeUserName**。
 
--   已新增 **Get-FileHash** Cmdlet，此 Cmdlet 會以指定檔案的幾種格式之一傳回檔案雜湊。
+-   已新增 **Get-FileHash** Cmdlet，此 Cmdlet 會根據所指定檔案，以其中一種檔案格式傳回檔案雜湊。
 
 -   在 Windows PowerShell 4.0 中，如果模組在其資訊清單中使用 **DefaultCommandPrefix** 機碼，或如果使用者使用 **Prefix** 參數匯入模組，模組的 **ExportedCommands** 屬性就會顯示模組中具有該前置詞的命令。 當您使用模組完整語法 ModuleName\\CommandName 執行命令時，命令名稱必須包含前置詞。
 
@@ -445,7 +445,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   現在，**Get-Process** 可以在管線中搭配使用可從物件取得 **ComputerName** 屬性的其他命令。
 
--   **ConvertTo-Json** 與 **ConvertFrom-Json** 現在可以接受以雙引號括住的詞彙，而且其錯誤訊息已經當地語系化。
+-   **ConvertTo-Json** 與 **ConvertFrom-Json** 現在可以接受以雙引號括住的詞彙，而且其錯誤訊息已可當地語系化。
 
 -   **Get-Job** 現在會傳回任何已完成的排程工作，即使是新工作階段中的工作也一樣。
 
