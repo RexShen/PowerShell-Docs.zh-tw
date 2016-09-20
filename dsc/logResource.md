@@ -1,15 +1,15 @@
 ---
 title: "DSC 記錄檔資源"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 97ffa20191016584fc2fba459c457787365d11ee
+ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
+ms.openlocfilehash: 60085295fa7df6179a81cd98859cd33e6923150f
 
 ---
 
@@ -29,6 +29,12 @@ Log [string] #ResourceName
 }
 ```
 
+注意︰根據預設只會啟用 DSC 的作業記錄檔。
+必須先啟用分析記錄檔，才可加以使用或顯示。
+請參閱以下文章。
+
+[DSC 事件記錄檔在哪裡？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+
 ## [內容]
 |  屬性  |  描述   | 
 |---|---| 
@@ -42,15 +48,24 @@ Log [string] #ResourceName
 > **注意**：如果您在設定此資源的情況下執行 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)，它一律會傳回 **$false**。
 
 ```powershell 
-Log LogExample
+Configuration logResourceTest
 {
-    Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
-} 
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    Node localhost
+
+    {
+        Log LogExample
+        {
+            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+        }
+    }
+}
 ```
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 
