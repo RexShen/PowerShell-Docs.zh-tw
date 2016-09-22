@@ -1,15 +1,15 @@
 ---
 title: "設定本機設定管理員"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 901cf8190252ac344182bf49d550a8adade559a0
-ms.openlocfilehash: c66b8d6abf4886143f71c0de823cbfde86d875ba
+ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
+ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
 
 ---
 
@@ -65,7 +65,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 |----------- |------- |--------------- | 
 | ConfigurationModeFrequencyMins| UInt32| 檢查並套用目前設定的頻率 (以分鐘為單位)。 如果 ConfigurationMode 屬性設定為 ApplyOnly，就會忽略這個屬性。 預設值為 15。 <br> __注意__：這個屬性的值必須是 __RefreshFrequencyMins__ 屬性值的倍數，或者 __RefreshFrequencyMins__ 屬性值必須是這個屬性值的倍數。| 
 | RebootNodeIfNeeded| bool| 在套用需要重新開機的設定之後，請將此設為 __$true__ 以自動重新啟動節點。 否則，您將必須手動重新啟動任何設定所需的節點。 預設值為 __$false__。| 
-| ConfigurationMode| 字串 | 指定 LCM 實際上如何將設定套用至目標節點。 可能的值為 __"ApplyOnly"__、__"ApplyandMonitior"(預設)__ 和 __"ApplyandAutoCorrect"__。 <ul><li>__ApplyOnly__：DSC 會套用此設定，並且不執行任何進一步的動作，除非新的設定已推送至目標節點，或從伺服器提取新的設定。 第一次套用新設定之後，DSC 不會檢查與先前設定狀態的偏離。</li><li> __ApplyAndMonitor__：這是預設值。 LCM 適用於任何新的設定。 第一次套用新設定之後，如果目標節點偏離預期狀態，則 DSC 會回報記錄中的差異。</li><li>__ApplyAndAutoCorrect__：DSC 會套用任何新的設定。 第一次套用新設定之後，如果目標節點偏離預期狀態，則 DSC 會報告記錄檔中的差異，然後重新套用目前設定。</li></ul>| 
+| ConfigurationMode| 字串 | 指定 LCM 實際上如何將設定套用至目標節點。 可能的值為 __"ApplyOnly"__、__"ApplyandMonitior"(預設)__ 和 __"ApplyandAutoCorrect"__。 <ul><li>__ApplyOnly__：DSC 會套用此設定，並且不執行任何進一步的動作，除非新的設定已推送至目標節點，或從伺服器提取新的設定。 第一次套用新設定之後，DSC 不會檢查與先前設定狀態的偏離。 請注意，在 __ApplyOnly__ 生效之前，DSC 不斷嘗試套用此組態，直到成功為止 。 </li><li> __ApplyAndMonitor__：這是預設值。 LCM 適用於任何新的設定。 第一次套用新設定之後，如果目標節點偏離預期狀態，則 DSC 會回報記錄中的差異。 請注意，在 __ApplyAndMonitor__ 生效之前，DSC 不斷嘗試套用此組態，直到成功為止 。</li><li>__ApplyAndAutoCorrect__：DSC 會套用任何新的設定。 第一次套用新設定之後，如果目標節點偏離預期狀態，則 DSC 會報告記錄檔中的差異，然後重新套用目前設定。</li></ul>| 
 | ActionAfterReboot| 字串| 指定套用設定期間在重新開機後的動作。 可能的值為 __"ContinueConfiguration(default)"__ 和 __"StopConfiguration"__。 <ul><li> __ContinueConfiguration__︰機器重新開機後繼續套用目前的設定。</li><li>__StopConfiguration__：機器重新開機後停止目前的設定。</li></ul>| 
 | RefreshMode| 字串| 指定 LCM 取得設定的方式。 可能的值為 __"Disabled"__、__"Push(default)"__ 和 __"Pull"__。 <ul><li>__Disabled__：會為此節點停用 DSC 設定。</li><li> __Push__：藉由呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 啟動設定。 設定會立即套用至節點。 這是預設值。</li><li>__Pull__：節點設定為定期檢查提取伺服器的設定。 如果這個屬性設為 __Pull__，您就必須在 __ConfigurationRepositoryWeb__ 或 __ConfigurationRepositoryShare__ 區塊指定提取伺服器。 如需提取伺服器的詳細資訊，請參閱[設定 DSC 提取伺服器](pullServer.md)。</li></ul>| 
 | CertificateID| 字串| GUID 會指定憑證，用來保護存取設定的憑證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。| 
@@ -98,7 +98,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 |AllowUnsecureConnection|bool|設為 **$TRUE** 即允許從節點到伺服器的未經驗證連線。 設為 **$FALSE** 表示需要驗證。|
 |CertificateID|字串|表示用來向伺服器驗證憑證的 GUID。|
 |ConfigurationNames|String[]|要由目標節點提取之設定名稱的陣列。 僅有在使用 **RegistrationKey** 向提取伺服器註冊此節點時，才會使用這些設定。 如需詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。|
-|RegistrationKey|字串|向提取伺服器註冊節點的 GUID。 如需詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。|
+|RegistrationKey|字串|向提取伺服器註冊節點的 GUID。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](pullClientConfigNames.md)。|
 |ServerURL|字串|設定伺服器的 URL。|
 
 若要定義 SMB 設定伺服器，請建立 **ConfigurationRepositoryShare** 區塊。 **ConfigurationRepositoryShare** 定義下列屬性。
@@ -167,6 +167,6 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -2,8 +2,8 @@
 title: "PowerShell 引擎增強功能"
 author: jasonsh
 translationtype: Human Translation
-ms.sourcegitcommit: 6813902aec214aee9ede27ff79dd291364e9f443
-ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
+ms.sourcegitcommit: 47c963343c541d0f2ace194f365de5fcd809ccc5
+ms.openlocfilehash: 1b35a25312b44d14ec8771be9e17aaa43e270b61
 
 ---
 
@@ -19,7 +19,7 @@ PowerShell 5.1 已實作核心 PowerShell 引擎的下列改善︰
 1. 啟動
 2. 管線到 ForEach-Object 和 Where-Object 等 Cmdlet 大約快了 50% 
 
-一些改善範例 (結果隨硬體而有不同)： 
+一些改進項目的的範例 (結果會取決於您的硬體)： 
 
 | 案例 | 5.0 的時間 (毫秒) | 5.1 的時間 (毫秒) |
 | -------- | :---------------: | :---------------: |
@@ -49,7 +49,7 @@ WMF 5.1 將此行為變更為完全接受 `$env:PSModulePath`。 這讓使用者
 
 ### 檔案重新導向不再需要硬式編碼 `-Encoding Unicode` ###
 
-所有舊版的 PowerShell 都不可能控制檔案重新導向運算子所使用的檔案編碼，例如 `get-childitem > out.txt`，因為 PowerShell 新增了 `-Encoding Unicode`。
+所有舊版的 PowerShell 都不可能控制檔案重新導向運算子所使用的檔案編碼，例如 `Get-ChildItem > out.txt`，因為 PowerShell 新增了 `-Encoding Unicode`。
 
 但從 WMF 5.1 開始，您可以設定 `$PSDefaultParameterValues` 來變更重新導向的檔案編碼方式，例如︰
 
@@ -60,7 +60,7 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### 修正存取下列項目成員時的迴歸問題： `System.Reflection.TypeInfo` ###
 
 WMF5 引入的迴歸會中斷存取 `System.Reflection.RuntimeType` 成員的程序，例如 `[int].ImplementedInterfaces`。
-WMF5.1 已修正這個 Bug。
+WMF 5.1 已修正這個 Bug。
 
 
 ### 修正 COM 物件的一些問題 ###
@@ -73,7 +73,7 @@ WMF5 引入新的 COM 繫結器，可對 COM 物件叫用方法以及存取 COM 
 在下例中︰
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -100,7 +100,7 @@ $x = Get-COMDictionary
 
 ### `[ordered]` 在類別中不允許 ###
 
-WMF5 引入了類別，其具有類別所用的類型常值驗證。  `[ordered]` 看起來像類型常值，卻不是真正的 .Net 類型。  WMF5 誤報類別內發生 `[ordered]` 錯誤︰
+WMF5 引入了類別，其具有類別所用的類型常值驗證。  `[ordered]` 看起來像類型常值，卻不是真正的 .NET 類型。  WMF5 誤報類別內發生 `[ordered]` 錯誤︰
 
 ```
 class CThing
@@ -123,6 +123,6 @@ Get-Help 不提供指定所需說明版本的方法，因應措施是瀏覽到�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 

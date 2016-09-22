@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
+ms.sourcegitcommit: b14aaee5a66a80295420fe9b517ba1fc652c86bf
+ms.openlocfilehash: 290d9237e20b35ec603f0967854b1e0d193e6cbb
 
 ---
 
 # 如何在指令碼窗格和主控台窗格中使用 TAB 鍵自動完成
-當您在指令碼窗格或命令窗格中輸入時，TAB 鍵自動完成會提供自動協助。 使用下列步驟以利用這項功能︰
+Tab 鍵自動完成功能可以在您在 [指令碼窗格] 或 [命令窗格] 中輸入時，自動為您提供協助。 使用下列步驟以利用這項功能︰
 
 ## 自動完成命令項目
 在命令窗格或指令碼窗格中，輸入命令的幾個字元，然後按 TAB 鍵選取所需的完成文字。 如果有多個項目以您初始輸入的文字為開頭，請連續按 TAB 鍵，直到出現您想要的項目。 TAB 鍵自動完成可協助輸入 Cmdlet 名稱、參數名稱、變數名稱、物件屬性名稱或檔案路徑。
@@ -26,15 +26,15 @@ ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
 ## 自動完成 Cmdlet 參數項目
 在命令窗格或指令碼窗格中輸入一個 Cmdlet，後面接著虛線，然後按 TAB 鍵。
 
-例如，輸入 `get-process -`，然後按 TAB 鍵多次，輪流顯示 Cmdlet 的每個參數。
+例如，輸入 `Get-Process -`，然後按 TAB 鍵多次，輪流顯示 Cmdlet 的每個參數。
 
 ## 另請參閱
-[使用 Windows PowerShell ISE](using-the-windows-powershell-ise.md)
-[建立 PowerShell 索引標籤](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell ISE](using-the-windows-powershell-ise.md)
+- [如何建立 PowerShell 索引標籤](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

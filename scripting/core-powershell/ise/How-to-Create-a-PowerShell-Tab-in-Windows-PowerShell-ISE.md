@@ -1,19 +1,26 @@
 ---
-title: 如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
+translationtype: Human Translation
+ms.sourcegitcommit: d015dfae1990c66ea75aa45004b366d1609fb36f
+ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
+
 ---
+
 # 如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
-Windows PowerShell® 整合式指令碼環境 (ISE) 中的索引標籤可讓您在同一個應用程式內，同時建立並使用數種執行環境。 每個 PowerShell 索引標籤會對應到不同的執行環境或工作階段。
+Windows PowerShell® 整合式指令碼環境 (ISE) 中的索引標籤讓您可以在同一個應用程式內，同時建立及使用數種執行環境。 每個 PowerShell 索引標籤會對應到不同的執行環境或工作階段。
 
 > [!NOTE]
 > 您在一個索引標籤中建立的變數、函式和別名不會延續到另一個索引標籤。 它們是不同的 Windows PowerShell 工作階段。
 
-使用下列步驟，在 Windows PowerShell 中開啟或關閉索引標籤。 若要重新命名索引標籤，可在 Windows PowerShell 索引標籤指令碼物件上設定 [DisplayName](https://technet.microsoft.com/en-us/library/a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) 屬性。
+使用下列步驟，在 Windows PowerShell 中開啟或關閉索引標籤。 若要重新命名索引標籤，可在 Windows PowerShell 索引標籤指令碼物件上設定 [DisplayName](The-PowerShellTab-Object.md#Displayname) 屬性。
 
 ## 建立及使用新的 PowerShell 索引標籤
 在 **[檔案]** 功能表上，按一下 **[新增 PowerShell 索引標籤]**。 新的 PowerShell 索引標籤一律會以使用中視窗開啟。 PowerShell 索引標籤是依其開啟順序以累加方式編號。 每個索引標籤會與自己的 Windows PowerShell 主控台視窗建立關聯。 您一次最多可以開啟 32 個 PowerShell 索引標籤 (在 Windows PowerShell ISE 2.0 中僅限 8 個)，每個索引標籤會有自己的工作階段。
@@ -32,14 +39,15 @@ Windows PowerShell® 整合式指令碼環境 (ISE) 中的索引標籤可讓您�
 
 -   在 **[檔案]** 功能表上，按一下 **[關閉 PowerShell 索引標籤]**，或在使用中的索引標籤上，按一下 [關閉] 按鈕 (**X**) 以關閉索引標籤。
 
-如果您在要關閉的 PowerShell 索引標籤中，有已開啟且未儲存的檔案，系統會提示您儲存或捨棄檔案。 如需如何儲存指令碼的詳細資訊，請參閱[如何儲存指令碼](https://technet.microsoft.com/en-us/library/162f594d-efd3-4234-9960-45e56e6eadc8).
+如果您在要關閉的 PowerShell 索引標籤中，有已開啟且未儲存的檔案，系統會提示您儲存或捨棄檔案。 如需如何儲存指令碼的詳細資訊，請參閱[如何儲存指令碼](https://technet.microsoft.com/library/162f594d-efd3-4234-9960-45e56e6eadc8)。
 
 ## 另請參閱
-[使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-[如何在 Windows PowerShell ISE 中使用主控台窗格](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [如何在 Windows PowerShell ISE 中使用主控台窗格](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Sep16_HO3-->
 
 

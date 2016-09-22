@@ -9,18 +9,18 @@ ms.date: 2016-06-22
 title: "常見的角色功能問題"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0e221c840f083ce0b8ecbcbb34c184bcdbc0c73e
+ms.sourcegitcommit: 2c42f8d6eaadee43a3baff1811aafb6b5c1a9be3
+ms.openlocfilehash: 2b2dfd9c39fe5d7bf4a52032653108729715e6bf
 
 ---
 
 ### 常見的角色功能問題
-當您自行執行此處理程序時，可能會遇到一些常見的問題。
+當您執行這項程序時，可能會發生一些常見的錯誤。
 下列快速指南說明如何在修改及建立新端點時，找出並修正這些問題︰
 
 #### 函式與Cmdlet
-以 PowerShell 撰寫的 PowerShell 命令是 PowerShell 函式。
-撰寫為特定 .NET 類別的 PowerShell 命令是 PowerShell Cmdlet。
+使用 PowerShell 撰寫的 PowerShell 命令稱為 PowerShell 函式。
+撰寫成特定 .NET 類別的 PowerShell 命令稱為 PowerShell Cmdlet。
 您可以執行 `Get-Command` 來查看命令類型。
 
 #### VisibleProviders
@@ -33,6 +33,6 @@ ms.openlocfilehash: 0e221c840f083ce0b8ecbcbb34c184bcdbc0c73e
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Sep16_HO3-->
 
 

@@ -65,8 +65,23 @@ Core
 ### 選項 1︰封裝將多個版本的 PowerShell 作為目標的模組
 
 #### 模組資料夾內容
-
- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll Microsoft.Windows.PowerShell.ScriptAnalyzer.dll PSScriptAnalyzer.psd1 PSScriptAnalyzer.psm1 ScriptAnalyzer.format.ps1xml ScriptAnalyzer.types.ps1xml coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll en-US\about_PSScriptAnalyzer.help.txt en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll Settings\CmdletDesign.psd1 Settings\DSC.psd1 Settings\ScriptFunctions.psd1 Settings\ScriptingStyle.psd1 Settings\ScriptSecurity.psd1
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- PSScriptAnalyzer.psd1
+- PSScriptAnalyzer.psm1
+- ScriptAnalyzer.format.ps1xml
+- ScriptAnalyzer.types.ps1xml
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- en-US\about_PSScriptAnalyzer.help.txt
+- en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- Settings\CmdletDesign.psd1
+- Settings\DSC.psd1
+- Settings\ScriptFunctions.psd1
+- Settings\ScriptingStyle.psd1
+- Settings\ScriptSecurity.psd1
 
 #### PSScriptAnalyzer.psd1 檔案的內容
 
@@ -214,8 +229,9 @@ Find-Module -Tag PSEditon_Core
 ## 更多詳細資料
 ### [搭配 PSEditions 的指令碼](../script/scriptwithpseditionsupport.md)
 ### [PowerShellGallery 的 PSEditions 支援](../../psgallery/psgallery_pseditions.md)
+### [更新模組資訊清單] (./psget_update-modulemanifest.md)
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Sep16_HO2-->
 
 

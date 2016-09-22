@@ -1,15 +1,15 @@
 ---
 title: "DSC 登錄資源"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 15e346ecd630a1256477d375bc1373f376e76f64
+ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
+ms.openlocfilehash: 48b68a99baa489dad38e7072b171db10ee0f7386
 
 ---
 
@@ -64,19 +64,28 @@ Registry [string] #ResourceName
 <li>可擴充的字串 (REG_EXPAND_SZ)</li></ul>
 
 ## 範例
+此範例可確保 **HKEY\_LOCAL\_MACHINE** 登錄區包含名為"ExampleKey"的索引鍵。
 ```powershell
-Registry RegistryExample
+Configuration RegistryTest
 {
-    Ensure = "Present"  # You can also set Ensure to "Absent"
-    Key = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
-    ValueName = "TestValue"
-    ValueData = "TestData"
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        ValueName   = "TestValue"
+        ValueData   = "TestData"
+    }
 }
 ```
 
+>**注意︰**變更 **HKEY\_CURRENT\_USER** 中的登錄設定必須以使用者認證執行設定，而不是使用系統。
+>您可以使用 **PsDscRunAsCredential** 屬性指定設定時所要使用的使用者認證。 如需範例，請參閱＜[使用使用者認證執行 DSC](runAsUser.md)＞
 
 
 
-<!--HONumber=Jun16_HO4-->
+
+
+
+<!--HONumber=Sep16_HO3-->
 
 
