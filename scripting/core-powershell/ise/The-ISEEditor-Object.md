@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
+ms.sourcegitcommit: 0f045cbeaa8116b15ba6e24210e66348b82e063a
+ms.openlocfilehash: 020c94511ab5c0b4a19611967071e071242fadad
 
 ---
 
@@ -24,10 +24,9 @@ ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
  清除編輯器中的文字。
 
-```
+```PowerShell
 # Clears the text in the Console pane.
-$psIse.CurrentPowerShellTab.ConsolePane.Clear()
-
+$psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
 ### EnsureVisible\(int lineNumber\)
@@ -38,10 +37,9 @@ $psIse.CurrentPowerShellTab.ConsolePane.Clear()
  **lineNumber**
  要顯示的行號。
 
-```
+```PowerShell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
-$psIse.CurrentFile.Editor.EnsureVisible(5)
-
+$psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
 ### Focus\(\)
@@ -49,7 +47,7 @@ $psIse.CurrentFile.Editor.EnsureVisible(5)
 
  將焦點設定到編輯器。
 
-```
+```PowerShell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
@@ -65,9 +63,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
  **Returns**
  位於指定行號之行的行長度。
 
-```
+```PowerShell
 # Gets the length of the first line in the text of the Command pane. 
-$psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
+$psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
 ### GoToMatch\(\)
@@ -75,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
 
-```
+```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
@@ -108,12 +106,11 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  選取目前包含插入號的整行文字。
 
-```
+```PowerShell
 # First, set the caret position on line 5.
-$psIse.CurrentFile.Editor.SetCaretPosition(5,1) 
+$psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
-$psIse.CurrentFile.Editor.SelectCaretLine()
-
+$psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
 ### SetCaretPosition\( lineNumber, columnNumber \)
@@ -125,9 +122,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  **columnNumber** - 整數：插入號的欄號。
 
-```
+```PowerShell
 # Set the CaretPosition.
-$psIse.CurrentFile.Editor.SetCaretPosition(5,1)
+$psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
 ### ToggleOutliningExpansion\(\)
@@ -135,10 +132,9 @@ $psIse.CurrentFile.Editor.SetCaretPosition(5,1)
 
  會展開或摺疊所有大綱區段。
 
-```
+```PowerShell
 # Toggle the outlining expansion
-$psIse.CurrentFile.Editor.ToggleOutliningExpansion()
-
+$psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
 ## [內容]
@@ -148,10 +144,9 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 
  唯讀的布林值屬性，可指出插入號是否位於括號、括號或大括號 (\(\)、\[\]、{}) 旁邊。 如果插入號是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 **$true**。 否則為 **$false**。
 
-```
+```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
-$psIse.CurrentFile.Editor.CanGoToMatch
-
+$psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
 ###  <a name="CaretColumn"></a> CaretColumn
@@ -159,10 +154,9 @@ $psIse.CurrentFile.Editor.CanGoToMatch
 
  唯讀屬性，可取得對應至插入號位置的欄號。
 
-```
+```PowerShell
 # Get the CaretColumn.
-$psIse.CurrentFile.Editor.CaretColumn
-
+$psISE.CurrentFile.Editor.CaretColumn
 ```
 
 ###  <a name="CaretLine"></a> CaretLine
@@ -170,10 +164,9 @@ $psIse.CurrentFile.Editor.CaretColumn
 
  唯讀屬性，可取得包含插入號的行號。
 
-```
+```PowerShell
 # Get the CaretLine.
-$psIse.CurrentFile.Editor.CaretLine
-
+$psISE.CurrentFile.Editor.CaretLine
 ```
 
 ###  <a name="caretlinetext"></a> CaretLineText
@@ -181,10 +174,9 @@ $psIse.CurrentFile.Editor.CaretLine
 
  唯讀屬性，可取得包含插入號的整行文字。
 
-```
+```PowerShell
 # Get all of the text on the line that contains the caret.
-$psIse.CurrentFile.Editor.CaretLineText
-
+$psISE.CurrentFile.Editor.CaretLineText
 ```
 
 ###  <a name="LineCount"></a> LineCount
@@ -192,10 +184,9 @@ $psIse.CurrentFile.Editor.CaretLineText
 
  唯讀屬性，可從編輯器取得行數。
 
-```
+```PowerShell
 # Get the LineCount.
-$psIse.CurrentFile.Editor.LineCount
-
+$psISE.CurrentFile.Editor.LineCount
 ```
 
 ###  <a name="SelectedText"></a> SelectedText
@@ -214,13 +205,12 @@ $psIse.CurrentFile.Editor.LineCount
 
 ##  <a name="example"></a> 指令碼範例
 
-```
-
+```PowerShell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.
 # Begin by getting a variable that points to the editor.
-$myEditor=$psIse.CurrentFile.Editor
+$myEditor = $psISE.CurrentFile.Editor
 # Clear the text in the current file editor.
 $myEditor.Clear()
 
@@ -253,6 +243,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO4-->
 
 
