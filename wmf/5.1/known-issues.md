@@ -9,14 +9,18 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: f413ba6470985622e55bb4bd175d7c5d4b94c7d9
-ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
+ms.sourcegitcommit: 3dde62efa7ba595ed5160cc81b4e2b17a54e52a2
+ms.openlocfilehash: d4c9e88ddd6cfaec611527d19d00cbd4db9f5d1d
 
 ---
 
 #WMF 5.1 (預覽) 的已知問題 #
 
 > 注意：本資訊尚屬初始版本，後續有可能變更。
+
+##以系統管理員身分啟動 PowerShell 捷徑
+安裝 WMF 時，如果您嘗試以系統管理員身分從捷徑啟動 PowerShell，可能會收到「未指定的錯誤」訊息。
+請以非系統管理員身分重新開啟捷徑，捷徑現在將會以系統管理員身分正常運作。
 
 ##Pester
 在此版本中，當您在 Nano 伺服器使用 Pester 時有兩個問題應該要注意︰
@@ -30,6 +34,6 @@ ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
