@@ -1,7 +1,7 @@
 ---
 title: "DSC WindowsOptionalFeatureSet 資源"
 ms.date: 2016-05-24
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -57,6 +57,6 @@ WindowsOptionalFeature [string] #ResourceName
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

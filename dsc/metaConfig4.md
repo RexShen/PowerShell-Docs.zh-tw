@@ -1,7 +1,7 @@
 ---
 title: "Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -81,6 +81,6 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,7 +1,7 @@
 ---
 title: "以使用者認證執行 DSC"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -66,6 +66,6 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

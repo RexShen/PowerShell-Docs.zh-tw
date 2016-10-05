@@ -1,7 +1,7 @@
 ---
 title: "在 PowerShell 4.0 使用設定識別碼設定提取用戶端"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -82,6 +82,6 @@ SimpleMetaConfigurationForPull -Output "."
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
