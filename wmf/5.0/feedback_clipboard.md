@@ -21,6 +21,6 @@ Mode LastWriteTime Length Name
 剪貼簿 Cmdlet 支援影像、音訊檔、檔案清單和文字。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

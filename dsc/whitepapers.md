@@ -1,7 +1,7 @@
 ---
 title: "白皮書"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -25,6 +25,6 @@ ms.openlocfilehash: 434ebc17f2bc7b7ee868788e87dc5b34cef61529
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

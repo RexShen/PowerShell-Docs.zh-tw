@@ -1,7 +1,7 @@
 ---
 title: "Windows PowerShell 預期狀態設定概觀"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -55,6 +55,6 @@ DSC 也包含一些新的語言關鍵字、Cmdlet 和工具，允許建立設定
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

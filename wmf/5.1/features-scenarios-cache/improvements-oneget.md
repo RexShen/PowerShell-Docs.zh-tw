@@ -1,7 +1,7 @@
 ---
 title: "WMF 5.1 (Preview) 的 OneGet 改善"
 ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
+keywords: "PowerShell、DSC、WMF"
 description: 
 ms.topic: article
 author: keithb
@@ -70,6 +70,6 @@ Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserve
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

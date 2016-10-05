@@ -9,19 +9,19 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 0a53817d6af625822d9183d2a0d5bc7bf4d2b264
-ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
+ms.sourcegitcommit: c88163b5a7d8805d0dea82d321796d8f41d17bb8
+ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
 
 ---
 
 # 安裝及設定 WMF 5.1 (預覽) #
 
 ## 安裝 .Net 4.6
-您必須先安裝 .Net Framework 4.6 才能使用 WMF 5.1。 需要此項才能啟用新的類別目錄簽署功能，其會影響模組的多個區域及 WMF 5.1 中的指令碼載入。 
+您必須先安裝 .NET Framework 4.6 才能使用 WMF 5.1。 需要此項才能啟用新的類別目錄簽署功能，其會影響模組的多個區域及 WMF 5.1 中的指令碼載入。 
 
-[.Net Framework 4.6 可於 KB 3045560 取得](https://support.microsoft.com/en-us/kb/3045560)。 下載位置上有安裝指示。
+[.NET Framework 4.6 可於 KB 3045560 取得](https://support.microsoft.com/en-us/kb/3045560)。 下載位置上有安裝指示。
 
-> **注意︰**WMF 5.1 Preview 安裝程式未偵測到 .NET 4.6 需求為已知問題，所以您可以在安裝 .Net 4.6 之前安裝 WMF 5.1 Preview。 我們的測試顯示，您在安裝 WMF 5.1 Preview 後可以安裝 .Net 4.6。 WMF 5.1 的最終版本將會正確地在安裝前檢查此必要條件需求。 
+> **注意︰**WMF 5.1 Preview 安裝程式未偵測到 .NET 4.6 需求為已知問題，所以您可以在安裝 .NET 4.6 之前安裝 WMF 5.1 Preview。 我們的測試顯示，您在安裝 WMF 5.1 Preview 後可以安裝 .NET 4.6。 WMF 5.1 的最終版本將會正確地在安裝前檢查此必要條件需求。 
 
 ## 下載並安裝 WMF 5.1 Preview
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
 
 ## 從 [命令提示字元] 安裝 WMF 5.1##
 
-1. 下載您電腦架構的正確封裝之後，以提高的使用者權限 (以系統管理員身分執行) 開啟 [命令提示字元] 視窗。 在 Windows Server 2012 R2 或 Windows Server 2012 或 Windows Server 2008 R2 SP1 的 Server Core 安裝選項上，預設會以提高的使用者權限開啟 [命令提示字元]。
+1. 下載您電腦架構的正確封裝之後，以提高的使用者權限 (以系統管理員身分執行) 開啟 [命令提示字元] 視窗。 在 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 SP1 的 Server Core 安裝選項上，預設會以提高的使用者權限開啟 [命令提示字元]。
 
 2. 將目錄變更為您已下載或複製 WMF 5.1 安裝封裝的資料夾。
 
@@ -67,6 +67,6 @@ ms.openlocfilehash: 058d18deeb3d4926970ea25a157f92ad14836e4b
 
 
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -14,7 +14,7 @@ ms.openlocfilehash: bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3
 
 1 **版本別名**
 
-**案例**︰假設系統上已安裝 1.0 及 2.0 版的封裝 P1，而您想要將 1.0 版解除安裝，所以執行 "uninstall-package -name P1 -version 1.0"。 您希望執行 Cmdlet 後會將 1.0 版解除安裝。 不過，結果卻是將 2.0 版解除安裝。 
+**案例**︰假設系統上已安裝 1.0 及 2.0 版的封裝 P1，而您想要將 1.0 版解除安裝，所以執行 "uninstall-package -name P1 -version 1.0"。 您希望執行 Cmdlet 後會將 1.0 版解除安裝。 但卻解除安裝了 2.0 版。 
     
 此問題的成因是 "-version" 參數是 "-minimumversion" 參數的別名。 當 OneGet 在尋找至少 1.0 版的完整封裝時，會傳回最新的版本。 正常情況下會發生此行為，因為大多數的人都想尋找最新版本。 只不過，不應該套用到將封裝解除安裝的情況上。
     
@@ -60,6 +60,6 @@ Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserve
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

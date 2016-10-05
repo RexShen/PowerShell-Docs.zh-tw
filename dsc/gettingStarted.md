@@ -1,7 +1,7 @@
 ---
 title: "開始使用 PowerShell 預期狀態設定"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -75,6 +75,6 @@ Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

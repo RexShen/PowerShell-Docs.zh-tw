@@ -12,6 +12,6 @@ Pester 在 Nano 上的**已知問題**
 * 目前一項程式碼涵蓋範圍測試失敗，因為 Nano 上沒有 *WindowsFeature* DSC 資源。 這些失敗是通常是無害的。
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 
