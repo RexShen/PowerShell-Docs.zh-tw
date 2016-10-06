@@ -1,7 +1,7 @@
 ---
 title: "指定跨節點相依性"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -67,6 +67,6 @@ Configuration JoinDomain
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

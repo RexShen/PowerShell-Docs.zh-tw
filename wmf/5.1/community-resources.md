@@ -1,7 +1,7 @@
 ---
 title: "社群資源 (預覽)"
 ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
+keywords: "PowerShell、DSC、WMF"
 description: 
 ms.topic: article
 author: keithb
@@ -22,6 +22,6 @@ ms.openlocfilehash: a1e178e907a9edbe652b5da32ad286550f95076f
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

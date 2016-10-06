@@ -1,7 +1,7 @@
 ---
 title: "WMF 5.1 (Preview) 的 Bug 修正"
 ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
+keywords: "PowerShell、DSC、WMF"
 description: 
 ms.topic: article
 author: keithb
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 90d57af0c8b90e709769525455ae39557b9c7176
+ms.sourcegitcommit: be3659b02cb1bc58cc13aa9d8f92946b2afa37b1
+ms.openlocfilehash: 8a7774b36f15ff790c31d4c1a8bc69be257b8508
 
 ---
 
@@ -28,9 +28,9 @@ WMF 5.1 將此行為變更為完全接受 `$env:PSModulePath`。 這讓使用者
 
 ### 檔案重新導向不再需要硬式編碼 `-Encoding Unicode` ###
 
-所有舊版的 PowerShell 都不可能控制檔案重新導向運算子所使用的檔案編碼，例如 `get-childitem > out.txt`，因為 PowerShell 新增了 `-Encoding Unicode`。
+所有舊版的 PowerShell 都不可能控制檔案重新導向運算子所使用的檔案編碼，例如 `Get-ChildItem > out.txt`，因為 PowerShell 新增了 `-Encoding Unicode`。
 
-但從 WMF 5.1 開始，您可以設定 `$PSDefaultParameterValues` 來變更重新導向的檔案編碼方式，例如︰
+但從 WMF 5.1 開始，您可以設定 `$PSDefaultParameterValues` 來變更重新導向的檔案編碼方式︰
 
 ```
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -39,20 +39,19 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### 修正存取下列項目成員時的迴歸問題： `System.Reflection.TypeInfo` ###
 
 WMF 5.0 引入的迴歸會中斷存取 `System.Reflection.RuntimeType` 成員的程序，例如 `[int].ImplementedInterfaces`。
-WMF5.1 已修正這個 Bug。
+WMF 5.1 已修正這個 Bug。
 
 
 ### 修正 COM 物件的一些問題 ###
 
-WMF 5.0 引入新的 COM 繫結器，可對 COM 物件叫用方法以及存取 COM 物件的屬性。
-此新的繫結器大幅改善了效能，卻也造成了一些 Bug，WMF5.1 已加以修正。
+WMF 5.0 引入新的 COM 繫結器，可對 COM 物件叫用方法以及存取 COM 物件的屬性。 此新的繫結器大幅改善了效能，卻也造成了一些 Bug，WMF5.1 已加以修正。
 
 #### 不一定會正確執行引數轉換 ####
 
 在下例中︰
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -80,7 +79,8 @@ $x = Get-COMDictionary
 
 ### `[ordered]` 在類別中不允許 ###
 
-WMF5 引入了類別，其具有類別所用的類型常值驗證。  `[ordered]` 看起來像類型常值，卻不是真正的 .Net 類型。  WMF5 誤報類別內發生 `[ordered]` 錯誤︰
+WMF 5.0 引入了類別，其具有類別所用的類型常值驗證。  
+`[ordered]` 看起來像類型常值，卻不是真正的 .NET 類型。 WMF 5.0 誤報類別內發生 `[ordered]` 錯誤︰
 
 ```
 class CThing
@@ -99,10 +99,10 @@ class CThing
 
 WMF 5.1 藉由傳回最新版本的說明主題，以修正此問題。
 
-Get-Help 不提供指定所需說明版本的方法。 若要解決這個問題，請瀏覽到模組目錄，直接使用您偏好的編輯器等工具檢視說明。 
+`Get-Help` 不提供指定所需說明版本的方法。 若要解決這個問題，請瀏覽到模組目錄，直接使用您偏好的編輯器等工具檢視說明。 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

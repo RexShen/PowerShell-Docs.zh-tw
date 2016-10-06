@@ -1,7 +1,7 @@
 ---
 title: "使用多個版本的資源"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -97,6 +97,6 @@ configuration VersionTest
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,6 +4,6 @@
 
 如需詳細資訊，請參閱[撰寫 DSC 設定的說明](https://msdn.microsoft.com/powershell/dsc/confighelp)。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

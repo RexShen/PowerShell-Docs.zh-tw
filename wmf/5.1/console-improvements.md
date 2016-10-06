@@ -1,7 +1,7 @@
 ---
 title: "WMF 5.1 (Preview) 的主控台改善"
 ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
+keywords: "PowerShell、DSC、WMF"
 description: 
 ms.topic: article
 author: keithb
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
+ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
+ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
 
 ## PowerShell 主控台改善
 
-WMF 5.1 的 Powershell.exe 已進行下列變更，以改善主控台體驗︰
+WMF 5.1 的 powershell.exe 已進行下列變更，以改善主控台體驗︰
 
 ###VT100 支援
 
@@ -51,12 +51,12 @@ else
 
 在舊版中，重新導向 stdin 且要以互動方式輸入命令時，需要使用 `powershell -File -` 啟動 PowerShell。
 
-有了 WMF 5.1，即不再需要這個難以探索的選項，您可以不用任何選項啟動 PowerShell，例如 `powershell`。
+有了 WMF 5.1，即不再需要此難以探索的選項。 可以啟動 PowerShell 而不使用任何選項，例如 `powershell`。
 
-請注意，PSReadline 目前不支援重新導向的 stdin，而附重新導向的 stdin 的內建命令列編輯經驗極受限制，例如方向鍵無法運作。  新版的 PSReadline 應該會解決這個問題。   
+請注意，PSReadline 目前不支援重新導向的 stdin，而附重新導向的 stdin 的內建命令列編輯經驗極受限制，例如方向鍵無法運作。 新版的 PSReadline 應該會解決這個問題。   
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

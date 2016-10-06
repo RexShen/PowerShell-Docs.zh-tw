@@ -1,7 +1,7 @@
 ---
 title: "資源撰寫檢查清單"
 ms.date: 2016-07-11
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -302,6 +302,6 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

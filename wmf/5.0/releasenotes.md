@@ -15,6 +15,6 @@ WMF 5.0 RTM 取代了 [WMF 5.0 Production Preview](http://blogs.msdn.com/b/power
 *注意︰* 如果執行的是 Windows 10，只要更新至 Windows 10 的 11 月更新 (版本 1511)，即可取得和 WMF 5.0 RTM 同樣的功能集。 如尚未更新 Windows 10 系統，請選取 [開始] 按鈕，然後選取 [設定] > [更新與安全性] > [Windows Update] > 檢查更新。 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,7 +1,7 @@
 ---
 title: "DSC 資源"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -30,6 +30,6 @@ ms.openlocfilehash: 0a27a40b995393c41f0496a5f7fa3f56fbd865dd
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

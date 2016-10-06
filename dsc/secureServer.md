@@ -1,7 +1,7 @@
 ---
 title: "提取伺服器最佳做法"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -22,6 +22,6 @@ ms.openlocfilehash: 94944d7bd265aa788b77359ad44721f79870bfa0
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

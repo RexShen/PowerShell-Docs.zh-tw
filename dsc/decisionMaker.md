@@ -1,7 +1,7 @@
 ---
 title: "適合決策者的預期狀態設定概觀"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -53,6 +53,6 @@ DSC 也可用來管理 Linux。 如需詳細資訊，請參閱 [Getting Started 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

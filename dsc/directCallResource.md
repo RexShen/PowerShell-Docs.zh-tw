@@ -1,7 +1,7 @@
 ---
 title: "直接呼叫 DSC 資源方法"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -62,6 +62,6 @@ $result.ItemValue | fl
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

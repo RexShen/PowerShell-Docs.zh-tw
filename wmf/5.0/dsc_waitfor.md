@@ -4,6 +4,6 @@
 
 如需詳細資訊，請參閱[指定跨節點相依性](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies)。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

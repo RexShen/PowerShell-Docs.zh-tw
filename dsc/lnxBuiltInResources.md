@@ -1,7 +1,7 @@
 ---
 title: "適用於 Linux 的內建預期狀態設定資源"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -35,6 +35,6 @@ ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

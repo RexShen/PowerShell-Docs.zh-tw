@@ -11,6 +11,6 @@
 如需軟體清查記錄 Cmdlet 的詳細資訊和相關文件，請參閱＜ Windows Server 2012 R2 線上資源＞(<http://technet.microsoft.com/library/dn383584.aspx>)。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

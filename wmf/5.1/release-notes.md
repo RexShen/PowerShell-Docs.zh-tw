@@ -4,13 +4,13 @@ ms.date: 2016-07-27
 keywords: "PowerShell、DSC、WMF"
 description: 
 ms.topic: article
-author: keithb
+author: jkeithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 5eb9eae6257cdb57f4f778b5dddf5aa7ef9d10bb
-ms.openlocfilehash: 12f2c084ab92134b733ee037c3d9fbd512af2e4c
+ms.sourcegitcommit: ebbd7d4d39cd335d994dd6cd3a06dd644df6d919
+ms.openlocfilehash: 83061e651b190bab3e5914bb6270a5857f7aa7a5
 
 ---
 
@@ -27,7 +27,7 @@ WMF 5.1 Preview 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI�
 
 **重要事項：**
 
-- **WMF 5.1 Preview 需要 Windows Management Framework 4.6**。 安裝會成功，但若未安裝 .Net 4.6，主要功能將會失敗。 您可在[安裝和設定 WMF 5.1 (Preview)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) 主題中取得指示。 
+- **WMF 5.1 Preview 需要 .NET Framework 4.6**。 安裝會成功，但若未安裝 .NET 4.6，主要功能將會失敗。 您可在[安裝和設定 WMF 5.1 (Preview)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) 主題中取得指示。 
 - 此次**不支援將 WMF 5.1 Preview 用於生產環境**部署。 其旨在提供版本相關功能的早期資訊，並讓您得以將意見反應提供給 PowerShell 小組。
 - WMF 5.1 Preview 可直接透過 WMF 5.0 安裝。
 - 目前在 Windows 7 及 Windows Server 2008 上安裝 WMF 5.1 Preview 時需要 WMF 4.0 為已知問題。 預計在最終發行版本前移除這項需求。
@@ -35,6 +35,7 @@ WMF 5.1 Preview 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI�
 
 
 
-<!--HONumber=Jul16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

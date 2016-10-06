@@ -1,7 +1,7 @@
 ---
 title: "撰寫 DSC 設定的說明"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -100,6 +100,6 @@ REMARKS
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

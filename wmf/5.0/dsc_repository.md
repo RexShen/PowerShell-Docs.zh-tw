@@ -4,6 +4,6 @@
 
 如需詳細資訊，請參閱[使用設定識別碼設定提取用戶端](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid)或[使用設定名稱設定提取用戶端](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

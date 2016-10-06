@@ -11,6 +11,6 @@
 此加密僅適用於設定 MOF 文件 (pending.MOF、current.MOF、previous.MOF 和部分 MOF)。 因為它們比較不可能包含密碼，所以中繼設定 MOF 仍然以純文字的格式儲存。
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

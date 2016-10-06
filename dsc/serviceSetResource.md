@@ -1,7 +1,7 @@
 ---
 title: "DSC ServiceSet 資源"
 ms.date: 2016-05-23
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
@@ -76,6 +76,6 @@ configuration ServiceSetTest
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
