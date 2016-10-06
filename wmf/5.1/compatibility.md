@@ -1,7 +1,7 @@
 ---
 title: "WMF 5.1 作業系統相容性 (預覽)"
 ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
+keywords: "PowerShell、DSC、WMF"
 description: 
 ms.topic: article
 author: keithb
@@ -39,6 +39,6 @@ ms.openlocfilehash: 8e7dd69fc5ba29e719aec353afcac2471ecb2352
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
