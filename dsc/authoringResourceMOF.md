@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 4d685e518acd3a18f4872417b645dbe66f758421
+ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
+ms.openlocfilehash: 50b99917f15d290db30da1b1b752d668d886ec50
 
 ---
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: 4d685e518acd3a18f4872417b645dbe66f758421
 若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.psm1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
 
 ```
-$env:PSModulePath (folder)
+$env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
@@ -279,6 +279,6 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 
