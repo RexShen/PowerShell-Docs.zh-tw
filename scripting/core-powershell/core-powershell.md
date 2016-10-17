@@ -8,25 +8,24 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: cd6e130d9f6f70449084d25eb386a3c0a2b84737
-ms.openlocfilehash: 4c22e1a2543690a971836813cb32ace74ababb4a
+ms.sourcegitcommit: ab536969fac8ded0e540da3eb138448b4f444f67
+ms.openlocfilehash: c8f97c3b565e0718b38a8e62a2b9cb9558451fc5
 
 ---
 
-#  核心 PowerShell
+#  常用的 PowerShell
 本節包含適用於 PowerShell 的所有參考資料和深入指南。  
 本節內容：
--  [PowerShell 核心模組指南](core-modules.md)
--  [PowerShell 整合式指令碼環境 -ISE- 指南](ise-guide.md)
--  [PowerShell 主控台視窗指南](console-guide.md)
--  [PowerShell 遠端管理指南](Running-Remote-Commands.md)
--  [PowerShell 工作流程指南](workflows-guide.md)
--  [PowerShell Web 存取指南](web-access.md)
+-  [PowerShell 常用模組](core-modules.md)
+-  [PowerShell 整合式指令碼環境 -ISE-](ise-guide.md)
+-  [PowerShell 主控台視窗](console-guide.md)
+-  [PowerShell 遠端管理](Running-Remote-Commands.md)
+-  [PowerShell 工作流程](workflows-guide.md)
+-  [PowerShell Web 存取](web-access.md)
 -  [Windows PowerShell 字彙](../Windows-PowerShell-Glossary.md)
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

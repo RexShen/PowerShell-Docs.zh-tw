@@ -1,12 +1,19 @@
 ---
-title: 從清單方塊選取項目
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "從清單方塊選取項目"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00
+
 ---
+
 # 從清單方塊選取項目
 使用 Windows PowerShell 3.0 和更新的版本，來建立讓使用者從清單方塊控制項選取項目的對話方塊。
 
@@ -137,7 +144,7 @@ $listBox.Height = 80
 在下一節中，您可以指定您希望清單方塊向使用者顯示的值。
 
 > [!NOTE]
-> 此指令碼所建立的清單方塊只允許選取一個項目。 若要建立允許多重選取的清單方塊，請指定值給 **SelectionMode** 屬性，如下所示：`$listBox.SelectionMode = "MultiExtended"`。 如需詳細資訊，請參閱[多重選擇清單方塊](Multiple-selection-List-Boxes.md).
+> 此指令碼所建立的清單方塊只允許選取一個項目。 若要建立允許多重選取的清單方塊，請指定值給 **SelectionMode** 屬性，如下所示：`$listBox.SelectionMode = "MultiExtended"`。 如需詳細資訊，請參閱[多重選擇清單方塊](Multiple-selection-List-Boxes.md)。
 
 ```
 [void] $listBox.Items.Add("atl-dc-001")
@@ -173,12 +180,13 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 另請參閱
-[Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？)](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell Tip of the Week: Selecting Items from a List Box (本週 Windows PowerShell 秘訣︰從清單方塊選取項目）](http://technet.microsoft.com/library/ff730949.aspx)
+[Hey Scripting Guy: Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)
+ (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？)[GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+(GitHub：Dave Wyatt 的 WinFormsExampleUpdates)[本週 Windows PowerShell 秘訣：從清單方塊選取項目](http://technet.microsoft.com/library/ff730949.aspx)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

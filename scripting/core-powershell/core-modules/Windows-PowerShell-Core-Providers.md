@@ -1,16 +1,23 @@
 ---
-title: Windows PowerShell 核心提供者
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 核心提供者"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: f6b1ca1a3253c941c76826c6644079a14f19ddcf
+
 ---
+
 # Windows PowerShell 核心提供者
 本節包含描述 **Microsoft.PowerShell.Core** 模組中 Windows PowerShell 提供者的說明主題。
 
-Windows PowerShell 提供者是 .NET 程式，可讓特殊資料存放區中的資料在 Windows PowerShell 中使用，讓您可以輕鬆地檢視並管理它。 提供者所公開的資料會出現在磁碟機中，非常類似檔案系統磁碟機。 如需詳細資訊，請參閱 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)。.
+Windows PowerShell 提供者是 .NET 程式，可讓特殊資料存放區中的資料在 Windows PowerShell 中使用，讓您可以輕鬆地檢視並管理它。 提供者所公開的資料會出現在磁碟機中，非常類似檔案系統磁碟機。 如需詳細資訊，請參閱 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)。
 
 |提供者|描述|
 |------------|---------------|
@@ -29,6 +36,7 @@ Windows PowerShell 提供者是 .NET 程式，可讓特殊資料存放區中的�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

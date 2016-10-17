@@ -1,6 +1,33 @@
+---
+title: "更多了解 PowerShell 的方式"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 05205ff8fcf0a3b23e66a6ac756be0d9a5055bd2
+
+---
+
 #  更多了解 PowerShell 的方式
 
-了解 PowerShell 的其他來源
+了解 PowerShell 的其他來源  
+
+## 適用於 Windows PowerShell 使用者的資源
+
+除了命令列的可用說明之外，下列資源還會為想要執行 Windows PowerShell 的使用者提供更多詳細資訊。
+
+-   [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)。 直接向 Windows PowerShell 產品小組學習的最佳資源。
+-   [Windows PowerShell 客戶連線](http://Connect.Microsoft.com/PowerShell)。 提供建議、傳送意見反應，或為 Windows PowerShell 小組提出錯誤。 您可以提出程式碼錯誤、文件錯誤或當地語系化 (語言翻譯) 錯誤。
+-   [指令碼高手您好！部落格](http://www.scriptingguys.com/blog)每天都發行新的內容，且一直排名在所有 Microsoft 部落格中的前五名。 文章都為案例導向，並以吸引人且生動的方式撰寫。
+-   [學習 PowerShell 頁面](http://www.scriptingguys.com/learnpowershell)是 TechNet 指令碼中心上的 Windows PowerShell 中心。 此頁面提供一系列 Microsoft Scripting Guy Ed Wilson 所主講的初學者視訊研討會。 它也包含 Windows PowerShell 測驗、社群內容連結等等。
+-   有使用 Windows PowerShell 的相關問題嗎？ 與[官方 Scripting Guy 論壇](http://social.technet.microsoft.com/forums/itcg/threads/)上數百位有同樣興趣的其他人員連線。
+-   [Microsoft 指令碼中心](https://technet.microsoft.com/scriptcenter)。 通往許多 Windows PowerShell 實用資源的入口網站，包含[指令碼中心存放庫](http://gallery.technet.microsoft.com/scriptcenter/)。 要了解指令碼撰寫的其中一個最佳方式，就是實際觀看範例。 搜尋數千個 Windows PowerShell 指令碼，全部就緒可供您評估，並依您的需求調整。
+-   參加 Windows PowerShell 使用者社群。 請參閱[指令碼中心社群頁面](https://technet.microsoft.com/scriptcenter/hh182567.aspx)取得數十個 Windows PowerShell 使用者群組的位置 - 您附近很可能就有一個。 也請持續關注 Microsoft Scripting Guy 社群活動。
 
 ## 訓練影片
 
@@ -23,7 +50,16 @@
 -  [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 4 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
 -  [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 5 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
+## 適用於 Windows PowerShell 開發人員的資源
 
-<!--HONumber=May16_HO2-->
+下列資源提供可協助開發人員建立其 Windows PowerShell 模組、函數、Cmdlet、提供者與主控應用程式的資源。
+
+-   [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595)。 提供參考內容。
+-   [Windows PowerShell 程式設計人員手冊](http://go.microsoft.com/fwlink/p/?LinkID=89596)。 提供教學課程。 也包含基礎 Windows PowerShell 概念的資訊。
+
+
+
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,24 +1,30 @@
 ---
-title: ISEFileCollection 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "ISEFileCollection 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: c334a38d6686be45101f4569f38411e9703c8fea
+
 ---
+
 # ISEFileCollection 物件
   **ISEFileCollection** 物件是 **ISEFile** 物件的集合。 $psISE.CurrentPowerShellTab.Files 集合即為一例。
 
 ## 方法
 
-### Add( [fullPath] )
+### Add\( \[fullPath\] \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 建立並傳回未命名的新檔案，並將它加入至集合。 新建立檔案的 **IsUntitled** 屬性是 **$true**.
+ 建立並傳回未命名的新檔案，並將它加入至集合。 新建立檔案的 **IsUntitled** 屬性是 **$true**。
 
- **[fullPath]** – 選擇性字串
- 完整指定的檔案路徑。 如果您包含 **fullPath** 參數和相對路徑，或者使用檔案名稱而非完整路徑，即會產生例外狀況。
+ **\[fullPath\]** – 選擇性字串：完整指定的檔案路徑。 如果您包含 **fullPath** 參數和相對路徑，或者使用檔案名稱而非完整路徑，即會產生例外狀況。
 
 ```
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -29,16 +35,14 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
 ```
 
-### Remove( File, [Force] )
+### Remove\( File, \[Force\] \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  從目前的 PowerShell 索引標籤中移除指定的檔案。
 
- **File** – 字串
- 您想要從集合中移除的 ISEFile 檔案。 如果檔案尚未儲存，這個方法就會擲回例外狀況。 使用 **Force** 切換參數，強制移除尚未儲存的檔案。
+ **File** – 字串：您想要從集合中移除的 ISEFile 檔案。 如果檔案尚未儲存，這個方法就會擲回例外狀況。 使用 **Force** 切換參數，強制移除尚未儲存的檔案。
 
- **[Force]** – 選擇性的布林值
- 如果設定為 **$true**，就會授與權限來移除檔案，即使檔案在最後一次使用之後尚未儲存也一樣。 預設值為 **$false**.
+ **\[Force\]** – 選擇性布林值：如果設定為 **$true**，就會授與權限來移除檔案，即使檔案在最後一次使用之後尚未儲存也一樣。 預設值為 **$false**。
 
 ```
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -51,13 +55,12 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### SetSelectedFile( selectedFile )
+### SetSelectedFile\( selectedFile \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  選取 **selectedFile** 參數所指定的檔案。
 
- **selectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile
- 您想要選取 ISEFile 檔案。
+ **selectedFile** – Microsoft.PowerShell.Host.ISE.ISEFile。您想要選取 ISEFile 檔案。
 
 ```
 
@@ -76,6 +79,7 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 
