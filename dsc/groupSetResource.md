@@ -1,7 +1,7 @@
 ---
 title: "DSC GroupSet 資源"
 ms.date: 2016-05-16
-keywords: powershell, DSC, built-in, resource
+keywords: "powershell, DSC, 內建, 資源"
 description: "提供在目標節點管理本機群組的機制。"
 ms.topic: article
 author: eslesar
@@ -86,6 +86,6 @@ GroupSetTest -ConfigurationData $cd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,15 +1,15 @@
 ---
 title: "開始使用 Linux 預期狀態設定 (DSC)"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: "PowerShell，DSC"
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f9
+ms.sourcegitcommit: e4385f0ed482b97e8794cde968de549902cc358e
+ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
 
 ---
 
@@ -184,12 +184,12 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 
 |記錄檔|Directory|描述|
 |---|---|---|
-|omiserver.log|/opt/omi/var/log/|OMI CIM 伺服器作業相關的訊息。|
-|dsc.log|/opt/omi/var/log/|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
+|omiserver.log|/var/opt/omi/log|OMI CIM 伺服器作業相關的訊息。|
+|dsc.log|/var/opt/omi/log|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

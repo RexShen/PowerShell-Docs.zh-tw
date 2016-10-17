@@ -1,18 +1,25 @@
 ---
-title: PowerShellTabCollection 物件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PowerShellTabCollection 物件"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 4456b1e165130fd52249ffdbd7c22ff591061a8e
+
 ---
+
 # PowerShellTabCollection 物件
   **PowerShellTab** 集合物件是 **PowerShellTab** 物件的集合。 每個 **PowerShellTab** 物件功能都可做為個別的執行階段環境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 類別的執行個體。 範例是 **$psISE.PowerShellTabs** 物件。
 
 ## 方法
 
-### Add\(\)
+### 新增\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將新的 PowerShell 索引標籤新增到集合。 它會傳回新加入的索引標籤。
@@ -67,6 +74,7 @@ $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

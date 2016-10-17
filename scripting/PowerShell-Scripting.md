@@ -8,12 +8,26 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 32b4e11f150fe0374472d2d4c75f8de6c3575abb
-ms.openlocfilehash: 8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3
+ms.sourcegitcommit: b38cfd053cc2356fa7ca99605dbd84190d342327
+ms.openlocfilehash: fc6307be4dafb378350b6d9667b2b6aca0e2e6d4
 
 ---
 
-#  PowerShell 指令碼
+#  PowerShell
+
+Windows PowerShell 是以 .NET Framework 為基礎所建置，而且是以工作為基礎的命令列殼層和指令碼語言；專為系統管理員和進階使用者所設計，可快速自動化管理多個作業系統 (Linux、OSX、Unix 和 Windows)，以及與在這些作業系統上執行之應用程式相關的程序。
+
+###  PowerShell 現在是開放原始碼
+
+PowerShell 基本原始程式碼現在可在 GitHub 中取得並且開放進行社群貢獻，請參閱 [PowerShell](https://github.com/powershell/powershell)。
+
+您可以從 [get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell) 所需的位元開始。
+或者，可能是從[開始使用](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)的快速入門開始
+
+>  **注意：**  
+>  GitHub 中 PowerShell 的所有連結都會將您帶至 GitHub。
+
+#  文件
 
 文件集合分為 4 大區段︰
 
@@ -34,20 +48,19 @@ ms.openlocfilehash: 8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3
 -  一系列的 [&lt;使用量&gt; 基本操作手冊](getting-started/cookbooks/basic-cookbooks-reference.md) 主題，提供執行檔案、檔案系統、登錄、處理序、服務和類似之日常主題標準工作的訣竅。
 -  [了解 PowerShell](getting-started/more-powershell-learning.md) 的其他來源策劃導覽。
 
-##  [核心 PowerShell](core-powershell/core-powershell.md)
-本節包含適用於 PowerShell 的所有參考資料和深入指南。  
+##  [常用的 PowerShell](core-powershell/core-powershell.md)
+本節包含所有參考資料 PowerShell。  
 本節內容：
--  [PowerShell 核心模組指南](core-powershell/core-modules.md)
--  [PowerShell 整合式指令碼環境 -ISE- 指南](core-powershell/ise-guide.md)
--  [PowerShell 主控台視窗指南](core-powershell/console-guide.md)
--  [PowerShell 遠端管理指南](core-powershell/Running-Remote-Commands.md)
--  [PowerShell 工作流程指南](core-powershell/workflows-guide.md)
--  [PowerShell Web 存取指南](core-powershell/web-access.md)
+-  [PowerShell 常用模組](core-powershell/core-modules.md)
+-  [PowerShell 整合式指令碼環境 \(ISE\)](core-powershell/ise-guide.md)
+-  [PowerShell 主控台視窗](core-powershell/console-guide.md)
+-  [PowerShell 遠端管理](core-powershell/Running-Remote-Commands.md)
+-  [PowerShell 工作流程](core-powershell/workflows-guide.md)
+-  [PowerShell Web 存取](core-powershell/web-access.md)
 -  [Windows PowerShell 字彙](Windows-PowerShell-Glossary.md)
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 
