@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
@@ -74,17 +74,17 @@ ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
     -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  輸入下列命令，然後按 **Enter**，其中 *computer_name* 代表要移除 Windows PowerShell Web 存取的遠端伺服器。 如果移除時需要，<span class="code">–Restart</span> 參數會自動重新啟動目的地伺服器。
+2.  輸入下列命令，然後按 **Enter**，其中 *computer_name* 代表要移除 Windows PowerShell Web 存取的遠端伺服器。 如果移除時需要，<span class="code">-Restart</span> 參數會自動重新啟動目的地伺服器。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "複製到剪貼簿。")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
     若要從離線 VHD 移除角色及功能，您必須新增 <span class="code">-ComputerName</span> 參數及 <span class="code">-VHD</span> 參數。 <span class="code">-ComputerName</span> 參數包含要掛接 VHD 的伺服器名稱，<span class="code">-VHD</span> 參數則包含指定伺服器上 VHD 檔案的路徑。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5d8f91ee-b91a-4653-b7df-e745187fd72d'); "複製到剪貼簿。")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
 3.  完成移除後，請確認是否已移除 Windows PowerShell Web 存取，方法是在 [伺服器管理員] 中開啟 [所有伺服器] 頁面，選取移除功能的伺服器，並檢視所選伺服器頁面上的 [角色和功能] 磚。 您也可以針對所選伺服器執行 <span class="code">Get-WindowsFeature</span> Cmdlet (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;) 來檢視伺服器上安裝的角色和功能清單。
 
@@ -213,12 +213,12 @@ ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
 
 © 2016 Microsoft
 
-連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 - http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

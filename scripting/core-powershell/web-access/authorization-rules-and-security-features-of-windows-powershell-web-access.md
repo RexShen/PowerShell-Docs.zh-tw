@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
 
 ---
 
@@ -212,15 +212,15 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1079478f-cd51-4d35-8022-4b532a9d57a4'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly</span> 的工作階段設定。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
+4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
 #### 移除授權規則
 
@@ -265,7 +265,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 -   有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還會建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
 
--   某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 系統管理員會執行 <span class="code">Add-PswaAuthorizationRule \* \* \*</span> Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦及所有設定。 此規則相當於下列內容︰<span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>。
+-   某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 系統管理員會執行 <span class="code">Add-PswaAuthorizationRule \* \* \*</span> Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦及所有設定。 此規則相當於下列內容︰<span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>。
 
     <table>
     <colgroup>
@@ -287,7 +287,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8d183d3d-1c19-44b8-9297-530b0efc7c79'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
+        Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 
     之前的規則範例會在閘道伺服器驗證 Chris，然後授與他存取 *srv1* 的權限。 在登入頁面上，Chris 必須在 **[選用連線設定]** 區域 (*contoso\\chris*) 中提供第二組認證。 閘道伺服器會使用這組額外的認證，在目標電腦 *srv1.contoso.com* 上驗證他。
 
@@ -422,12 +422,12 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 © 2016 Microsoft
 
-連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 - http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
+ms.sourcegitcommit: fa0a541965b4121b8e8ac677b3c38e6f316b4553
+ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 ---
 
@@ -31,7 +31,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 -   透過命令列，輸入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows Server 2012 中
+#### 在 Windows Server® 2012 中
 
 -   在 **[開始]** 畫面上，輸入 **PowerShell**，然後按一下 **[Windows PowerShell (x86)]**。
 
@@ -41,7 +41,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 -   透過命令列，輸入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows 8.1 中
+#### 在 Windows® 8.1 中
 
 -   在 **[開始]** 畫面上，輸入 **Windows PowerShell (x86)**。 按一下 **[Windows PowerShell x86]** 並排顯示。
 
@@ -51,7 +51,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
    
 -   透過命令列，輸入： `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### 在 Windows 8 中
+#### 在 Windows® 8 中
 
 -   在 **[開始]** 畫面上，將游標移到右上角，並依序按一下 **[設定]** 和 **[並排顯示]**，然後將 **[顯示系統管理工具]** 移到 [是]。 然後輸入 **PowerShell**，並按一下 **[Windows PowerShell (x86)]**。
 
@@ -63,6 +63,6 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

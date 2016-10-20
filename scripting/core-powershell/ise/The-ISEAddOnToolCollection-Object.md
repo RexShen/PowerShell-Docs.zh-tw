@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 translationtype: Human Translation
-ms.sourcegitcommit: 457451343b51891e336b0df6f979c285fb6144eb
-ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
 
 ---
 
@@ -24,11 +24,11 @@ ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
 
  將新的附加元件工具加入到集合。 它會傳回新加入的附加元件工具。 執行此命令之前，您必須在本機電腦上安裝附加元件工具並載入組件。
 
- **Name** – 字串：指定要加入到 Windows PowerShell ISE 的附加元件工具顯示名稱。
+ **Name** - 字串：指定要新增至 Windows PowerShell ISE 的附加元件工具顯示名稱。
 
- **ControlType** – 類型：指定新加入的控制項。
+ **ControlType** - 類型：指定新增的控制項。
 
- **\[IsVisible\]** – 選用的布林值：如果設定為 **$true**，附加元件工具會立即顯示在相關聯的工具窗格中。
+ **\[IsVisible\]** - 選用的布林值：如果設定為 **$true**，附加元件工具會立即顯示在相關聯的工具窗格中。
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -41,7 +41,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  從集合中移除指定的附加元件工具。
 
- **Item** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool：指定要從 Windows PowerShell ISE 移除的物件。
+ **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool：指定要從 Windows PowerShell ISE 移除的物件。
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  選取 **psTab** 參數指定的 PowerShell 索引標籤。
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab：要選取的 PowerShell 索引標籤。
+ **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab：要選取的 PowerShell 索引標籤。
 
 ```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
@@ -67,7 +67,7 @@ $newTab.DisplayName="Brand New Tab"
 
  移除 **psTab** 參數指定的 PowerShell 索引標籤。
 
- **psTab** – Microsoft.PowerShell.Host.ISE.PowerShellTab：要移除的 PowerShell 索引標籤。
+ **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab：要移除的 PowerShell 索引標籤。
 
 ```PowerShell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -87,6 +87,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1f285a1d1beb35c931c17f5944d7ec697cb152e
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 09e9006286ca960efafe7badd250f0357b21f608
 
 ---
 
 # 探索 Windows PowerShell ISE
-您可以使用 Windows PowerShell® 整合式指令碼環境 (ISE)，來建立、執行和偵錯命令和指令碼。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
+您可以使用 Windows PowerShell® 整合式指令碼環境 (ISE) 建立及執行命令和指令碼，並對其偵錯。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
 
 > [!NOTE]
 > 從 Windows PowerShell ISE 3.0 開始，命令窗格和輸出窗格已合併為單一主控台窗格。
@@ -76,11 +76,11 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 **[說明]** 功能表上按一下 **[Windows PowerShell ISE 說明]**，或在在指令碼窗格或主控台窗格的任何位置按下 F1 鍵 (但游標不可以在 Cmdlet 名稱上方)。 您也可以從 [說明] 功能表執行 Update-Help Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
 
 ## 另請參閱
-[使用 Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

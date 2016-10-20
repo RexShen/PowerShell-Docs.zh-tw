@@ -8,13 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: edb3be980d23cafb8c9b9923a7153308481e6c67
+ms.sourcegitcommit: 18949229d4d9e3867cdc265c3fd958d2598186b4
+ms.openlocfilehash: 77ac8a58f87371a176ca7a3613c1f319aa69baff
 
 ---
 
 # PowerShell 的最新消息
-Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
+Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。  主要的改善範圍包括期望狀態設定、安全性、效能、遠端處理和語言增強功能。
 
 Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，通常可在不進行變更的情況下於 Windows PowerShell 5.0 中運作。
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 預設已安裝於 Windows Server® 2016 Technical Previe
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

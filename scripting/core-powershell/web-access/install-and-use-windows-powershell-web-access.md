@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 75e9b6525d74a8bc632b9fe2e64183717f59776f
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
 
 ---
 
@@ -167,7 +167,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "複製到剪貼簿。")
 
-        Install-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
+        Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
 
     <table>
     <colgroup>
@@ -189,7 +189,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d841d509-347e-49d0-bf54-8d1f306bece6'); "複製到剪貼簿。")
 
-        Install-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
+        Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
 
 3.  完成安裝後，在使用提高的使用者權限開啟的 Windows PowerShell 主控台中，藉由在目的地伺服器上執行 **Get-WindowsFeature** Cmdlet，來確認 Windows PowerShell Web 存取已安裝於目的地伺服器上。 您也可以在 [所有伺服器] 頁面上選取目的地伺服器，然後檢視所選伺服器的 [角色和功能] 磚，藉以確認 Windows PowerShell Web 存取已安裝於伺服器管理員主控台中。 您也可以檢視 Windows PowerShell Web 存取的讀我檔案。
 
@@ -266,7 +266,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     -   PhysicalPath：%*windir*%/Web/PowerShellWebAccess/wwwroot
 
-    <span class="label">範例︰</span><span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
+    <span class="label">範例︰</span><span class="code">Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate</span>
 
     在這個範例中，針對 Windows PowerShell Web 存取產生的網站是 https://&lt; *server_name*&gt;/myWebApp。
 
@@ -367,15 +367,15 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f9e7959b-75d0-4d63-8f8e-02334a8dd09d'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly</span> 的工作階段設定。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ebd5bc5e-ec5d-4955-a86a-63843e480e37'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
+4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
 設定授權規則之後，授權使用者就可以開始登入網頁型主控台，並開始使用 Windows PowerShell Web 存取。
 
@@ -601,15 +601,15 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4df22c91-f56f-4bb5-91e7-99f9b365ed5d'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 在下列範例中，<span class="code">Contoso</span> 網域中名為 <span class="code">JSmith</span> 的使用者會被授與管理電腦 <span class="code">Contoso_214</span> 的存取權，並使用名為 <span class="code">NewAdminsOnly</span> 的工作階段設定。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efc3999a-2905-453f-86cd-014b41658ffc'); "複製到剪貼簿。")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
+4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
 設定授權規則之後，授權使用者就可以開始登入網頁型主控台，並開始使用 Windows PowerShell Web 存取。
 
@@ -707,12 +707,12 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 © 2016 Microsoft
 
-連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 – http://www.asp.net/ajaxlibrary/CDN.ashx。
+連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 - http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

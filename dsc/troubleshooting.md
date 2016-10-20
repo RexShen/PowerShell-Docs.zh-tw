@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7fb70aba7d4c3c44cc89b5f8c4f6ff5aeb3b14c9
-ms.openlocfilehash: 4830be14b105485c50446f06e9d36491b4c4fe44
+ms.sourcegitcommit: c7b198d6206c57ef663ea5f4c8cef5ab5678a823
+ms.openlocfilehash: d06b330e3a64705e2f86230e8a9e344e85b8d4be
 
 ---
 
@@ -296,7 +296,7 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 ### 取得 DSC 事件的詳細資訊
 
-`Trace-xDscOperation1 cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation. Typically, when you find a failure in any of the operations using `Get-xDscOperation`，您要追蹤該作業，以找出導致失敗的事件。
+`Trace-xDscOperation1` Cmdlet 傳回的物件包含了事件集合、其事件類型，以及從特定 DSC 作業產生的訊息輸出。 一般而言，當您使用 `Get-xDscOperation` 在任何作業中發現失敗時，您都可以追蹤該作業，找出導致失敗的事件。
 
 使用 `SequenceID` 參數以取得特定電腦的特定作業事件。 例如，`SequenceID` 如果指定為 9，則 `Trace-xDscOperaion` 就會取得上一個作業的第 9 筆 DSC 作業追蹤記錄︰
 
@@ -626,6 +626,6 @@ onlyProperty                            PSComputerName
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

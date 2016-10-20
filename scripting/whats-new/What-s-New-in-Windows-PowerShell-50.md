@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 666590df32157a7477d385961dd5665094275868
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
 
 ---
 
@@ -38,7 +38,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) 較快 (尤其是在 ISE 中)。
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) 有提供新的參數 –UseExisting，其會重新套用上次套用的設定。
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) 有提供新的參數 -UseExisting，其會重新套用上次套用的設定。
 
     -   已修正 [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force。
 
@@ -170,9 +170,9 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   New-Item、Remove-Item 及 Get-ChildItem 已增強為支援[符號連結](http://en.wikipedia.org/wiki/Symbolic_link)的建立與管理。 New-Item 的 **ItemType** 參數可接受 **SymbolicLink** 這個新值。 現在您可以執行 New-Item Cmdlet，在單一行中建立符號連結。
 
--   Get-Childitem 也有新的 –Depth 參數，您可將其與 –Recurse 參數搭配使用來限制遞迴。 例如，Get-ChildItem –Recurse –Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
+-   Get-Childitem 也有新的 -Depth 參數，您可將其與 -Recurse 參數搭配使用來限制遞迴。 例如，Get-ChildItem -Recurse -Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
 
--   Copy\-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 -FromSession 和 -ToSession 參數值指定為 PSSession 識別碼，並新增 –Path 和 –Destination 以分別指定原始路徑和目的地。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
+-   Copy\-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 -FromSession 和 -ToSession 參數值指定為 PSSession 識別碼，並新增 -Path 和 -Destination 以分別指定原始路徑和目的地。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 -   Windows PowerShell 轉譯已經過改良，因此它不僅能套用至主控台主機 (**powershell.exe**)，也可以套用至所有的裝載應用程式 (例如 Windows PowerShell ISE)。 轉譯選項 (包括啟用全系統轉譯) 可以透過啟用 **[打開 PowerShell 轉譯]** 群組原則設定 (位於 [系統管理範本\/Windows 元件\/Windows PowerShell]) 來設定。
 
@@ -190,7 +190,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   新的 New-TemporaryFile Cmdlet 可讓您在進行指令碼處理時建立暫存檔案。 新的暫存檔案預設建立在 ```C:\Users\<user name>\AppData\Local\Temp```。
 
--   Out-File、Add-Content 和 Set-Content Cmdlet 現在有新的 –NoNewline 參數，其只會省略輸出之後的新行。
+-   Out-File、Add-Content 和 Set-Content Cmdlet 現在有新的 -NoNewline 參數，其只會省略輸出之後的新行。
 
 -   New-Guid Cmdlet 會利用 .NET Framework Guid 類別來產生 GUID；在您撰寫指令碼或 DSC 資源時非常實用。
 
@@ -212,7 +212,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   Get-Command Cmdlet 的結果現在會顯示 Version 欄；CommandInfo 類別已新增 Version 屬性。 Get-Command 會顯示來自多個版本之相同模組的命令。 Version 屬性也屬於 CmdletInfo 和 ApplicationInfo 的一部分，這兩者為 CmdletInfo 的衍生類別。
 
--   Get-Command 的新參數 -ShowCommandInfo 會以 PSObjects 形式傳回 ShowCommand 資訊。 當使用 Windows PowerShell 遠端在 Windows PowerShell ISE 中執行 Show-Command 時，此功能特別實用。 –ShowCommandInfo 參數已取代 Microsoft.PowerShell.Utility 模組中現有的 Get-SerializedCommand 函式，但 Get-SerializedCommand 指令碼仍可支援舊版指令碼。
+-   Get-Command 的新參數 -ShowCommandInfo 會以 PSObjects 形式傳回 ShowCommand 資訊。 當使用 Windows PowerShell 遠端在 Windows PowerShell ISE 中執行 Show-Command 時，此功能特別實用。 -ShowCommandInfo 參數已取代 Microsoft.PowerShell.Utility 模組中現有的 Get-SerializedCommand 函式，但 Get-SerializedCommand 指令碼仍可支援舊版指令碼。
 
 -   新的 Get-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 例如，在舊版的 Windows PowerShell 中，您可以執行下列命令，以取得 PowerShellEngine 登錄機碼之 Application Base 屬性的值：**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
 
@@ -367,7 +367,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **$PSVersionTable.PSVersion** 的值已經更新至 4.0。
 
--   **Where()** 運算子行為已經改變。 `Collection.Where('property –match name')` 已不再接受 `"Property –CompareOperator Value"` 格式的字串運算式。 但是，**Where()** 運算子還是可以接受 Scriptblock 格式的字串運算式。
+-   **Where()** 運算子行為已經改變。 `Collection.Where('property -match name')` 已不再接受 `"Property -CompareOperator Value"` 格式的字串運算式。 但是，**Where()** 運算子還是可以接受 Scriptblock 格式的字串運算式。
 
 ### <a name="BKMK_ise"></a>Windows PowerShell 整合式指令碼環境 (ISE) 的新功能
 
@@ -433,7 +433,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **Get-Module** 現在會在 **Version** 欄中顯示模組版本。
 
--   Remove-Item –Recurse 現在可以如預期般移除子資料夾中的項目。
+-   Remove-Item -Recurse 現在可以如預期般移除子資料夾中的項目。
 
 -   已新增一個 **UserName** 屬性到 **Get-Process** 輸出物件。
 
@@ -441,7 +441,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **Add-Member** 現在可以在雜湊表上生效，即使尚未存取雜湊表也一樣。
 
--   **Select-Object –Expand** 不會再於屬性值是 Null 或空白時失敗或產生例外狀況。
+-   **Select-Object -Expand** 不會再於屬性值是 null 或空白時失敗或產生例外狀況。
 
 -   現在，**Get-Process** 可以在管線中搭配使用可從物件取得 **ComputerName** 屬性的其他命令。
 
@@ -759,6 +759,6 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

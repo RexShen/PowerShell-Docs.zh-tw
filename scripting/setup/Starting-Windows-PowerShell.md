@@ -9,12 +9,14 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: f8406a2066ef54ea0fdaaff6e612bb0d43b12ab6
+ms.sourcegitcommit: 7ffb26f12766a7ac1eb282459ab2c62293bcb3ed
+ms.openlocfilehash: 13bd92f65aebb5692844356feb6ac0c079b2ca20
 
 ---
 
 # 啟動 Windows PowerShell
+PowerShell 是指令碼引擎 dll，且會內嵌到多部主機中。  互動式命令列 PowerShell.exe 和互動式指令碼環境 PowerShell_ISE.exe 是您將啟動的最常見主機。  
+
 若要在 Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012 及 Windows 8 上啟動 Windows PowerShell®，請參閱[常見管理工作及瀏覽方式](http://technet.microsoft.com/library/hh831491.aspx)。
 
 本節的主題說明如何在舊版作業系統上啟動 Windows PowerShell。
@@ -34,6 +36,6 @@ ms.openlocfilehash: f8406a2066ef54ea0fdaaff6e612bb0d43b12ab6
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

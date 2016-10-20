@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: c378e9f38c6cc9ea94ce07c320d7a42dd3f102b5
 
 ---
 
@@ -150,11 +150,11 @@ Windows PowerShell ISE 支援下列編碼選項︰ASCII、BigEndianUnicode、Uni
 Windows PowerShell ISE 不會變更以其他編輯器建立之指令碼的編碼方式，即使在 Windows PowerShell ISE 中使用 [儲存] 或 [另存新檔] 命令亦然。
 
 ## 另請參閱
-[使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
