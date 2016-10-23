@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_find command
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 7d46f02106785b0f94f73e60231fb4623002cfb6
+
+---
+
 # Find-Command
 
 尋找模組中的 PowerShell 命令。
@@ -67,6 +84,9 @@ Find-Command -Tag Azure, DSC
 
 ```
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

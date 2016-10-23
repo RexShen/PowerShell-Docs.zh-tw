@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
+ms.sourcegitcommit: 27512f637dd44485eee38936fea4723cd17b6218
+ms.openlocfilehash: b67024fb27c08e1079caad891cfc3e621a354b27
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
 命令列殼層通常會提供方法，透過加速命令輸入以及提供提示，來自動完成長檔案或命令的名稱。 Windows PowerShell 可讓您按 **Tab** 鍵來填入檔案名稱和 Cmdlet 名稱。
 
 > [!NOTE]
-> Tab 鍵擴充是透過內部函式 TabExpansion 所控制。 因為可以修改或覆寫這個函式，所以這項討論只是預設 Windows PowerShell 設定行為的指南。
+> Tab 鍵擴充由內部函式 TabExpansion 或 TabExpansion2 所控制。 因為可以修改或覆寫這個函式，所以這項討論只是預設 Windows PowerShell 設定行為的指南。
 
 若要自動從可用的選項中填入檔案名稱或路徑，請輸入部分名稱，然後按 **Tab** 鍵。 Windows PowerShell 會自動將名稱擴充到找到的第一個相符項目。 重複按 **Tab** 鍵，會循環顯示所有可用選項。
 
@@ -54,6 +54,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 

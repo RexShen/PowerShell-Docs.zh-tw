@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_search_syntax
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: bb42496bdc9794b8d33dc9869f33771a241d31db
+
+---
+
 # 組件庫搜尋語法
 
 PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵字運算式來縮小搜尋結果範圍。
@@ -83,6 +100,7 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

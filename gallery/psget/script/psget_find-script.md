@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_find script
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 5651989acde9d47a7a07fac9284aebae84f28174
+
+---
+
 # Find-Script
 
 尋找來自線上組件庫且符合所指定準則的 PowerShell 指令檔。
@@ -142,6 +159,8 @@ Cmdlet                         {}
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

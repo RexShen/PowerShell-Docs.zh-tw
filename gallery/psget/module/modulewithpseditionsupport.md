@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: modulewithpseditionsupport
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: dc8836607e2d2f03d34e5c90a8d20fe4cf0ae76f
+
+---
+
 # 具有相容 PowerShell 版本的模組
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
 
@@ -232,6 +249,8 @@ Find-Module -Tag PSEditon_Core
 ### [更新模組資訊清單] (./psget_update-modulemanifest.md)
 
 
-<!--HONumber=Sep16_HO2-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

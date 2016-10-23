@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_pseditions
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: a2e6f87603795e7781115239b87c73a076e5e6ca
+
+---
+
 # 具有相容 PowerShell 版本的項目
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
 
@@ -22,6 +39,9 @@
 ### [PSEditions 的模組](../psget/module/modulewithpseditionsupport.md)
 ### [搭配 PSEditions 的指令碼](../psget/script/scriptwithpseditionsupport.md)
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

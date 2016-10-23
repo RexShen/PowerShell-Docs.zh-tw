@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_gettingstarted
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: d6f36a62c95a4444f456cf7c14f7f3dc08236447
+
+---
+
 # 開始使用 PowerShell Gallery
 
 ## 什麼是 PowerShell Gallery？
@@ -105,6 +122,8 @@ PowerShellGet 也是可在[這裡](http://go.microsoft.com/fwlink/?LinkId=398175
 同樣地，若要找出您已從 PowerShell Gallery 安裝的指令碼，請執行 [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

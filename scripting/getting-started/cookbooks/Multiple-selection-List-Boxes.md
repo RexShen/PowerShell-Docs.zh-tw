@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 6898a585228dc506f0c3232188d2b6679d28026b
+ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
+ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
 
 ---
 
@@ -138,6 +138,7 @@ $listBox.Location = New-Object System.Drawing.Point(10,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 ```
 
+
 以下說明您如何指定您希望允許使用者從清單中選取多個值。
 
 ```
@@ -184,13 +185,13 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 另請參閱
-[Hey Scripting Guy: Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)
- (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？) [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
- (GitHub：Dave Wyatt 的 WinFormsExampleUpdates) [本週 Windows PowerShell 祕訣︰複選清單方塊 -- 及其他事項！](http://technet.microsoft.com/library/ff730950.aspx)
+- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？)](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows PowerShell 本週提示︰複選清單方塊及更多功能！](http://technet.microsoft.com/library/ff730950.aspx)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 

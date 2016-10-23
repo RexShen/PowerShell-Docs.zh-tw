@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_dispute_resolution
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
+
+---
+
 # 爭端解決
 
 本文件為建議社群成員使用的爭端解決程序，以協助解決與其他 PowerShell 資源庫發行者的爭端。
@@ -29,6 +46,8 @@ PowerShellGallery.com 支援小組會參與其中，並嘗試解決此問題。
 **本原則可能隨 PowerShell 資源庫而變更。**
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

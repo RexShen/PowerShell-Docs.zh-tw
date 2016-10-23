@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 18949229d4d9e3867cdc265c3fd958d2598186b4
-ms.openlocfilehash: 77ac8a58f87371a176ca7a3613c1f319aa69baff
+ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
+ms.openlocfilehash: 035fc8adc08df500069e800cfb94c5dcff46d88f
 
 ---
 
@@ -18,7 +18,7 @@ Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、�
 
 Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，通常可在不進行變更的情況下於 Windows PowerShell 5.0 中運作。
 
-Windows PowerShell 5.0 預設已安裝於 Windows Server® 2016 Technical Preview 和 Windows 10® 之上。 若要在 Windows Server 2012 R2、Windows 8.1 企業版或 Windows 8.1 專業版上安裝 Windows PowerShell 5.0，請下載並安裝 [Windows Management Framework 5.0 Preview](http://go.microsoft.com/fwlink/?LinkID=395058)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，再安裝 Windows Management Framework 5.0 Preview。
+Windows Server® 2016 及 Windows® 10 Windows 預設會安裝 PowerShell 5.0。 若要在 Windows Server 2012 R2、Windows 8.1 企業版或 Windows 8.1 專業版上安裝 Windows PowerShell 5.0，請下載並安裝 [Windows Management Framework 5.0](https://go.microsoft.com/fwlink/?linkid=830436)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，再安裝 Windows Management Framework 5.0 Preview。
 
 ## 本主題內容
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 預設已安裝於 Windows Server® 2016 Technical Previe
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 

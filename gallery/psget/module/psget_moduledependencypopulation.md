@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_moduledependencypopulation
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: a6ace8faebd6f37d3c41ee5a3fef2bda70b8c651
+
+---
+
 # 在發行作業期間準備模組相依性的邏輯
 1.  列為 RequiredModules 一部分的模組視為相依性。
 2.  列為 NestedModules 一部分的模組 (其模組基底不在指定的模組基底下) 視為相依性。
@@ -19,6 +36,8 @@
 *請確定在發行作業期間，系統的 $env:PSModulePath 下具有您模組的相依性。*
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

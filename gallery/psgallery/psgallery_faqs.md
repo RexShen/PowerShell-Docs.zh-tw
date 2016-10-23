@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_faqs
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 96d38c487a311852a0f670b7d3de4929fab68e4d
+
+---
+
 # 常見問題集
 
 ## 什麼是 PowerShell 模組？
@@ -158,6 +175,9 @@ PowerShell Gallery 是修改過的 [NuGet Gallery](http://www.nuget.org/) 版本
 
 建議 PowerShell 社群一起合作，來解決任何可能在項目擁有者與其他項目之擁有者間發生的爭議。  在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](psgallery_dispute_resolution.md)。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

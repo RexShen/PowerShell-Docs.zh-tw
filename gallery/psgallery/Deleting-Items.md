@@ -1,3 +1,21 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: "刪除項目"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 4e0258ccf05ef5ab0dc799a5113b05becc3dbb05
+
+---
+
+
 # 刪除項目
 
 PowerShell 資源庫不支援永久刪除項目，因為這樣會中斷任何仰賴該項目維持可用的人員。
@@ -6,6 +24,9 @@ PowerShell 資源庫不支援永久刪除項目，因為這樣會中斷任何仰
 
 如果您遇到例外狀況，且認為您的其中一個項目必須刪除時，PowerShell 資源庫小組可以手動處理此狀況。 例如，若發生著作權侵權問題，或是可能有害的內容，即有充分的理由可將其刪除。 在此類情況下，您應透過 [PowerShell 資源庫] (http://www.PowerShellGallery.com) 提交支援要求。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

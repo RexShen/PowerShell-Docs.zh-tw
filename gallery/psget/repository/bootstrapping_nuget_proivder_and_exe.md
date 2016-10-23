@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: bootstrapping_nuget_proivder_and_exe
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 0e0e1287dbe0912e90dfeabee8e22cdf78d9e82a
+
+---
+
 # 使用單一提示訊息來啟動載入 NuGet 提供者和 NuGet.exe 以進行發行作業，並且只啟動載入 NuGet 提供者以進行非發行作業。
 
 NuGet.exe 會從最新 NuGet 提供者中移除。 針對發行模組/指令碼，PowerShellGet 需要 NuGet.exe 建立 .nupkg 檔案，並將其推入存放庫。 需要有 NuGet 提供者才能進行非發行作業 (例如尋找、安裝、更新和儲存)。
@@ -84,6 +101,9 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: "傳訊給項目擁有者"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 00fe57762c6b2bb690255ecaea642f97124f4328
+
+---
+
 # 傳訊給項目擁有者
 
 PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人定義。
@@ -67,6 +84,9 @@ PowerShell 資源庫系統管理員可存取任何項目的 [管理擁有者] �
 我們只會在驗證您應為擁有者後這樣做，而且其程序會因情況而有所不同。
 通常，我們會使用項目的專案 URL 找到連絡專案擁有者的方法，但我們可能也會使用 Twitter、電子郵件或其他方式連絡專案擁有者。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

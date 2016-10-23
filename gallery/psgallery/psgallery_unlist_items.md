@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_unlist_items
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 95e0bb58eb110a9060615e409cb55fa9231d505f
+
+---
+
 # 將項目從清單移除
 
 **為什麼從 PowerShell 資源庫移除項目未公開為選項？**
@@ -28,6 +45,7 @@ PowerShell 資源庫不支援使用者永久刪除項目。 這可讓其他人�
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

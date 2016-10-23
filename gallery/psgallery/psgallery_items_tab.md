@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,cmdlet,組件庫"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_items_tab
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 6edf1451cb869f0b9400b353b3143c99c3568382
+
+---
+
 項目索引標籤
 ==========
 
@@ -35,6 +52,9 @@
 [搜尋] 方塊可讓使用者根據關鍵字來搜尋項目。  
 如需詳細資訊，請參閱[搜尋語法](./psgallery_search_syntax.md)。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 
