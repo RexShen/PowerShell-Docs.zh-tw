@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
-ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
+ms.sourcegitcommit: 4ddd5099ce33263d43dcbad0930e654b573a8937
+ms.openlocfilehash: fa7e5c84ac82fa72836536ece507f1751e099077
 
 ---
 
@@ -86,10 +86,6 @@ PowerShell 遠端預設會使用 (如果提供) Kerberos 或 NTLM 驗證。 這�
 
 避免這個問題的方法有數種︰
 
-### Kerberos 限制委派
-
-若是高度受信任的伺服器，可以啟用 [Kerberos 限制委派](https://technet.microsoft.com/en-us/library/cc995228.aspx)。 遠端伺服器如此即可對指定的電腦與服務清單，模擬已經過驗證的使用者。
-
 ### 遠端電腦之間的信任
 
 如果信任使用者從遠端連線到 *Server1*，取用 *Server2* 的資源，可以明確授與 *Server1* 存取這些資源。
@@ -121,6 +117,6 @@ New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 
