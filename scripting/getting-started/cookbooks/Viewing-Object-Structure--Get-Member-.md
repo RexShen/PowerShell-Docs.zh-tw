@@ -14,7 +14,7 @@ ms.openlocfilehash: acd52c1271013320dafa7f7bf5c72b752e07574b
 
 ---
 
-# 檢視物件結構 (Get-Member)
+# <a name="viewing-object-structure-getmember"></a>檢視物件結構 (Get-Member)
 因為物件在 Windows PowerShell 中播放這類重要角色，所以有數個設計成使用任意物件類型的原生命令。 最重要的是 **Get-Member** 命令。
 
 分析命令所傳回物件的最簡單技巧是將該命令的輸出傳送到 **Get-Member** Cmdlet。 **Get-Member** Cmdlet 顯示物件類型的正式名稱以及其成員的完整清單。 所傳回元素的數目有時可能非常龐大。 例如，Process 物件可以有 100 位以上的成員。
@@ -77,6 +77,6 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

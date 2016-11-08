@@ -14,7 +14,7 @@ ms.openlocfilehash: 28bc665c3ffb1b74a2ff922584c31a8657842a0f
 
 ---
 
-# 使用靜態類別和方法
+# <a name="using-static-classes-and-methods"></a>使用靜態類別和方法
 並非所有的 .NET Framework 類別都能使用 **New-Object** 建立。 例如，如果您嘗試使用 **New-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰
 
 ```
@@ -32,10 +32,10 @@ At line:1 char:11
 
 這些錯誤的發生原因是沒有方法可透過這些類別建立新的物件。 這些類別是未變更狀態之方法和屬性的參考程式庫。 您不需要建立它們，而只需要使用它們。 這類類別和方法稱為*靜態類別*，因為不會建立、破壞或變更它們。 為了讓這個概念更為清楚，我們將提供使用靜態類別的範例。
 
-### 使用 System.Environment 取得環境資料
+### <a name="getting-environment-data-with-systemenvironment"></a>使用 System.Environment 取得環境資料
 通常，在 Windows PowerShell 中使用物件的第一個步驟是使用 Get-Member 來找出它包含的成員。 運用靜態類別時，處理方式會有些不同，因為實際類別不是物件。
 
-#### 參考靜態 System.Environment 類別
+#### <a name="referring-to-the-static-systemenvironment-class"></a>參考靜態 System.Environment 類別
 使用方括弧括住類別名稱，即可參考靜態類別。 例如，在方括弧內輸入名稱，即可參考 **System.Environment**。 這麼做會顯示一些泛型類型資訊︰
 
 ```
@@ -92,7 +92,7 @@ TickCount                               ExitCode
 
 我們現在可以從 System.Environment 中選取要檢視的屬性。
 
-#### 顯示 System.Environment 的靜態屬性
+#### <a name="displaying-static-properties-of-systemenvironment"></a>顯示 System.Environment 的靜態屬性
 System.Environment 的屬性也是靜態的，而且指定的方式必須與一般屬性不同。 我們使用 **::** 向 Windows PowerShell 表示我們想要使用靜態方法或屬性。 若要查看已用來啟動 Windows PowerShell 的命令，我們會檢查 **CommandLine** 屬性，方法是輸入︰
 
 ```
@@ -117,7 +117,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### 使用 System.Math 執行數學運算
+### <a name="doing-math-with-systemmath"></a>使用 System.Math 執行數學運算
 System.Math 靜態類別適用於執行一些數學運算。 **System.Math** 的重要成員主要是方法，而使用 **Get-Member** 即可顯示這些方法。
 
 > [!NOTE]
@@ -190,6 +190,6 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

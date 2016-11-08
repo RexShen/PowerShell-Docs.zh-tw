@@ -14,12 +14,12 @@ ms.openlocfilehash: de9e8af7908ac6a72a100fd2c86b52c30c390c39
 
 ---
 
-# 取得 WMI 物件 (Get-WmiObject)
+# <a name="getting-wmi-objects-getwmiobject"></a>取得 WMI 物件 (Get-WmiObject)
 
-## 取得 WMI 物件 (Get-WmiObject)
+## <a name="getting-wmi-objects-getwmiobject"></a>取得 WMI 物件 (Get-WmiObject)
 Windows Management Instrumentation (WMI) 可以一致地公開各種不同的資訊，因此成為 Windows 系統管理的核心技術。 由於 WMI 的強大功能，用於存取 WMI 物件的 Windows PowerShell Cmdlet **Get-WmiObject** 是執行實際工作的最實用工具之一。 我們將討論如何使用 Get-WmiObject 存取 WMI 物件，並接著討論如何使用 WMI 物件執行特定動作。
 
-### 列出 WMI 類別
+### <a name="listing-wmi-classes"></a>列出 WMI 類別
 大多數 WMI 使用者遇到的第一個問題，就是嘗試了解使用 WMI 可執行的動作。 WMI 類別描述可管理的資源。 有數百個 WMI 類別，其中一些類別包含數十個屬性。
 
 **Get-WmiObject** 讓 WMI 變成可搜尋，以解決此問題。 您可以輸入下列命令，取得本機電腦上可用的 WMI 類別清單：
@@ -72,7 +72,7 @@ __Provider                              __Win32Provider
 ...
 ```
 
-### 顯示 WMI 類別詳細資料
+### <a name="displaying-wmi-class-details"></a>顯示 WMI 類別詳細資料
 如果您已經知道 WMI 類別的名稱，您可以使用它來立即取得資訊。 例如，常用於擷取電腦相關資訊的其中一個 WMI 類別是 **Win32_OperatingSystem**。
 
 ```
@@ -109,7 +109,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ...
 ```
 
-#### 使用 Format Cmdlet 顯示非預設屬性
+#### <a name="displaying-nondefault-properties-with-format-cmdlets"></a>使用 Format Cmdlet 顯示非預設屬性
 如果您需要預設未顯示之 **Win32_OperatingSystem** 類別中所包含的資訊，您可以使用 **Format** Cmdlet 顯示此類別。 例如，如果您想要顯示可用記憶體資料，請輸入︰
 
 ```
@@ -139,6 +139,6 @@ FreeSpaceInPagingFiles : 1556644
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
