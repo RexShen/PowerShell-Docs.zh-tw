@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 9c232f47eba22790dfc98e4948c71e181616d2ae
+ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
+ms.openlocfilehash: e3899a183cb1c8652adff7d01ffc09efde7f49b4
 
 ---
 
@@ -138,13 +138,13 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 另請參閱
-[Hey Scripting Guy: Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644)
- (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？) [GitHub: Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
- (GitHub：Dave Wyatt 的 WinFormsExampleUpdates) [本週 Windows PowerShell 秘訣︰建立圖形化日期選擇器](http://technet.microsoft.com/library/ff730942.aspx)
+- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？)](http://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [本週 Windows PowerShell 秘訣︰建立圖形化日期選擇器](http://technet.microsoft.com/library/ff730942.aspx)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO3-->
 
 
