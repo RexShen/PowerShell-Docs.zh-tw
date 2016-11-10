@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
-ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 567ab9528402c7d39d80a997bc14b6c6992cf772
 
 ---
 
-# DSC 設定
+# <a name="dsc-configurations"></a>DSC 設定
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Configuration MyDscConfiguration {
 
 將指令碼儲存為 .ps1 檔案。
 
-## 設定語法
+## <a name="configuration-syntax"></a>設定語法
 
 設定指令碼包含下列項目：
 
@@ -68,7 +68,7 @@ Configuration MyDscConfiguration {
 
 在本例中，您指定節點名稱的方式，是在您[編譯設定](# Compiling the configuration) 時將其作為 $ComputerName 參數傳遞。 預設名稱為 "localhost"。
 
-## 編譯設定
+## <a name="compiling-the-configuration"></a>編譯設定
 您必須先將設定編譯成 MOF 文件，才能施行設定。 呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。
 >__注意：__若要呼叫設定，函式必須在全域範圍內 (像任何其他 PowerShell 函式一樣)。 執行此作業的方法有二：「點執行」指令碼，或使用 F5 或按一下 ISE 的 __[執行指令碼]__ 按鈕執行設定指令碼。 若要點執行指令碼，請執行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含設定的指令碼檔案名稱。
 
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-## 使用 DependsOn
+## <a name="using-dependson"></a>使用 DependsOn
 有用的 DSC 關鍵字是 __DependsOn__。 通常 (但不一定永遠)，DSC 會依設定內的資源出現順序套用資源。 不過，__DependsOn__ 會指定哪一個資源依存於其他資源，而 LCM 則確保它們依正確順序套用，不管資源執行個體的定義順序。 例如，設定可能會指定 __User__ 資源的執行個體依存於 __Group__ 執行個體的存在與否：
 
 ```powershell
@@ -123,13 +123,13 @@ Configuration DependsOnExample {
 }
 ```
 
-## 在設定中使用新的資源
+## <a name="using-new-resources-in-your-configuration"></a>在設定中使用新的資源
 如果執行了前面的範例，您可能會注意到，系統警告使用了未明確匯入的資源。
 現在，DSC 在 PSDesiredStateConfiguration 模組中附有 12 種資源。 外部模組的其他資源必須放置在 `$env:PSModulePath` 中，LCM 才能辨識。 新的 Cmdlet，[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用來決定哪些資源要安裝在系統上並提供 LCM 使用。 這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正確辨識後，仍需要載入至設定中。 __Import-DscResource__ 是只能在 __Configuration__ 區塊中辨識的動態關鍵字 (亦即它不是 Cmdlet)。 __Import-DscResource__ 支援兩個參數：
 * __ModuleName__，使用 __Import-DscResource__ 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。 
 * __Name__ 是要匯入的資源名稱。 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回 __ResourceType__)。 
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 * [Windows PowerShell 預期狀態設定概觀](overview.md)
 * [DSC 資源](resources.md)
 * [設定本機設定管理員](metaConfig.md)
@@ -137,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 
