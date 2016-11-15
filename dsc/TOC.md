@@ -1,15 +1,17 @@
 # [概觀](overview.md)
 
 # [設定](configurations.md)
-## [施行設定](enactingConfigurations.md)
+## [制定組態](enactingConfigurations.md)
 ## [使用多個版本的資源](sxsResource.md)
-## [以使用者認證執行 DSC](runAsUser.md)
-## [指定跨節點相依性](crossNodeDependencies.md)
+## [使用使用者認證執行 DSC](runAsUser.md)
+## [指定節點之間的相依性](crossNodeDependencies.md)
 ## [設定資料](configData.md)
 ### [設定資料中的認證選項](configDataCredentials.md)
 ## [保護設定 MOF 檔案](secureMOF.md)
-## [部分設定](partialConfigs.md)
-## [撰寫 DSC 設定的說明](configHelp.md)
+## [部分組態](partialConfigs.md)
+## [撰寫 DSC 組態的說明](configHelp.md)
+## [使用 DSC 在初始開機時設定虛擬機器](bootstrapDsc.md)
+### [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md)
 
 # [資源](resources.md)
 ## [內建資源](builtInResource.md)
@@ -18,7 +20,7 @@
 ### [檔案資源](fileResource.md)
 ### [群組資源](groupResource.md)
 ### [記錄檔資源](logResource.md)
-### [套件資源](packageResource.md)
+### [封裝資源](packageResource.md)
 ### [登錄資源](registryResource.md)
 ### [指令碼資源](scriptResource.md)
 ### [服務資源](serviceResource.md)
@@ -26,13 +28,13 @@
 ### [WindowsFeature 資源](windowsfeatureResource.md)
 ### [WindowsProcess 資源](windowsProcessResource.md)
 ## [撰寫自訂資源](authoringResource.md) 
-### [MOF 型自訂資源](authoringResourceMOF.md)
-#### [C 的 MOF 型資源#](authoringResourceMofCS.md)
-### [類別式自訂資源](authoringResourceClass.md)
+### [使用 MOF 的自訂資源](authoringResourceMOF.md)
+#### [C# 中使用 MOF 的資源](authoringResourceMofCS.md)
+### [使用類別的自訂資源](authoringResourceClass.md)
 ### [複合資源](authoringResourceComposite.md)
-### [撰寫單一執行個體 DSC 資源 (最佳做法)](singleInstance.md)
+### [撰寫單一執行個體的 DSC 資源 (最佳做法)](singleInstance.md)
 ### [資源撰寫檢查清單](resourceAuthoringChecklist.md)
-## [偵錯 DSC 資源](debugResource.md)
+## [對 DSC 資源執行偵錯](debugResource.md)
 ## [直接呼叫 DSC 資源方法](directCallResource.md)
 
 # [設定本機設定管理員 (LCM)](metaConfig.md)
@@ -45,9 +47,9 @@
 ### [使用設定名稱設定提取用戶端](pullClientConfigNames.md)
 ### [使用設定識別碼設定提取用戶端](pullClientConfigID.md)
 ## [使用 DSC 報表伺服器](reportServer.md)
-## [提取伺服器最佳做法](secureServer.md)
+## [提取伺服器的最佳做法](secureServer.md)
 
-# [疑難排解 DSC](troubleshooting.md)
+# [疑難排解 DSC 的問題](troubleshooting.md)
 
 # [在 Nano Server 上使用 DSC](nanoDsc.md)
 
@@ -91,6 +93,6 @@
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 
