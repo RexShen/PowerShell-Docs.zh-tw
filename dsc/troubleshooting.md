@@ -8,18 +8,18 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: c7b198d6206c57ef663ea5f4c8cef5ab5678a823
-ms.openlocfilehash: d06b330e3a64705e2f86230e8a9e344e85b8d4be
+ms.sourcegitcommit: 99c1ea706ca5c3fb008065e98cc99fef463b1011
+ms.openlocfilehash: caf661fe58faf8cf24c789b408505051429df3f4
 
 ---
 
-# 疑難排解 DSC
+# <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題會說明問題發生時針對 DSC 進行疑難排解的方法。
 
-## 使用 Get-DscConfigurationStatus
+## <a name="using-getdscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
 [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) Cmdlet 會從目標節點取得設定狀態的相關資訊。 高級物件已傳回，此物件包含關於設定是否順利執行的高等級資訊。 您可以深入了解此物件，以探索有關設定執行的詳細資料，例如︰
 
@@ -46,7 +46,7 @@ Get-DscConfigurationStatus  -All
                             [<CommonParameters>]
 ```
 
-## 範例
+## <a name="example"></a>範例
 
 ```powershell
 PS C:\> $Status = Get-DscConfigurationStatus 
@@ -79,11 +79,11 @@ StartDate               :   11/24/2015  3:44:56
 PSComputerName          :
 ```
 
-## 我的指令碼不執行：使用 DSC 記錄診斷指令碼錯誤
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>我的指令碼不執行：使用 DSC 記錄診斷指令碼錯誤
 
 像所有的 Windows 軟體一樣，DSC 會在[記錄檔](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx)中記錄錯誤和事件，[[事件檢視器]](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer) 可檢視這些記錄。 檢查這些記錄檔可以幫助您了解特定作業失敗的原因，以及如何避免失敗再度發生。 撰寫設定指令碼可能很困難，因此為方便您在撰寫時追蹤錯誤，請使用 DSC 記錄資源在 DSC 分析事件記錄檔中追蹤設定進度。
 
-## DSC 事件記錄檔在哪裡？
+## <a name="where-are-dsc-event-logs"></a>DSC 事件記錄檔在哪裡？
 
 在 [事件檢視器] 中，DSC 事件位於：**Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
@@ -103,7 +103,7 @@ TimeCreated                     Id LevelDisplayName Message
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 ```
 
-## DSC 記錄檔包含哪些內容？
+## <a name="what-do-dsc-logs-contain"></a>DSC 記錄檔包含哪些內容？
 
 DSC 記錄檔會根據訊息的重要性分成三個記錄檔通道。 DSC 的作業記錄檔包含所有錯誤訊息，可用來識別問題。 分析記錄檔掌握巨量的事件，可以識別錯誤發生的位置。 這個通道也包含詳細資訊訊息 (如果有的話)。 偵錯記錄檔包含的記錄可以幫助您了解錯誤是如何發生的。 DSC 事件訊息的結構為，每個事件訊息的開頭都是唯一代表 DSC 作業的工作識別碼。 下例嘗試取得記入作業 DSC 記錄檔的第一筆事件的訊息。
 
@@ -120,7 +120,7 @@ DSC 事件的特定記錄結構，能讓使用者彙總一個 DSC 工作的事�
 **工作識別碼：<Guid>**
 **<Event Message>**
 
-## 收集單一 DSC 作業的事件
+## <a name="gathering-events-from-a-single-dsc-operation"></a>收集單一 DSC 作業的事件
 
 DSC 事件記錄檔包含各種 DSC 作業產生的事件。 不過，您通常只關心某個特定作業的詳細資料。 DSC 的所有記錄都是依照每個 DSC 作業的唯一工作識別碼屬性分組 。 所有 DSC 事件的第一個屬性值都是顯示工作識別碼。 下列步驟說明如何將所有事件累計到分組的陣列結構中。
 
@@ -185,7 +185,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 您可以使用 [Where-Object](https://technet.microsoft.com/library/ee177028.aspx) 擷取變數 `$SeparateDscOperations` 中的資料。 下面有五個案例，您要擷取其資料以疑難排解 DSC：
 
-### 1：作業失敗
+### <a name="1-operations-failures"></a>1：作業失敗
 
 所有的事件都有[嚴重性層級](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 這項資訊可以用來識別錯誤事件：
 
@@ -196,9 +196,9 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### 2：過去半小時內執行的作業詳細資料
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2：過去半小時內執行的作業詳細資料
 
-`TimeCreated`是每個 Windows 事件都有的屬性，指出事件的建立時間。 比較這個屬性和特定的日期/時間物件，可用以篩選所有事件：
+`TimeCreated` 是每個 Windows 事件都有的屬性，指出事件的建立時間。 比較這個屬性和特定的日期/時間物件，可用以篩選所有事件：
 
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
@@ -208,7 +208,7 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}   
 ```
 
-### 3：最新作業的訊息
+### <a name="3-messages-from-the-latest-operation"></a>3：最新作業的訊息
 
 最新的作業會儲存在陣列群組 `$SeparateDscOperations` 的第一個索引中。 查詢索引 0 的群組訊息會傳回最新作業的所有訊息：
 
@@ -230,7 +230,7 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed. 
 ```
 
-### 4：近期的作業失敗錯誤訊息記錄
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4：近期的作業失敗錯誤訊息記錄
 
 `$SeparateDscOperations[0].Group` 包含最新作業的事件集。 執行 `Where-Object` Cmdlet 會根據層級顯示名稱篩選事件。 結果儲存在 `$myFailedEvent` 變數中，可進一步解析以取得事件訊息：
 
@@ -245,7 +245,7 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1 
 ```
 
-### 5：針對特定工作識別碼產生的所有事件。
+### <a name="5-all-events-generated-for-a-particular-job-id"></a>5：針對特定工作識別碼產生的所有事件。
 
 `$SeparateDscOperations` 是群組陣列，每一個都有和唯一工作識別碼相同的名稱。 執行 `Where-Object` Cmdlet 就可以擷取這些有特定工作識別碼的事件群組：
 
@@ -262,11 +262,11 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...  
 ```
 
-## 使用 xDscDiagnostics 分析 DSC 記錄
+## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>使用 xDscDiagnostics 分析 DSC 記錄
 
 **xDscDiagnostics** 是 PowerShell 模組，由數個可協助分析電腦上 DSC 失敗的函數組成。 這些函式可協助您識別過去 DSC 作業的所有本機事件，或 (具有效認證的) 遠端電腦的 DSC 事件。 本文中，DSC 作業一詞是用來定義從開始到結束的單一唯一 DSC 執行。 例如，`Test-DscConfiguration` 就會是另外一個 DSC 作業。 同樣地，DSC 中每個其他的 Cmdlet (例如 `Get-DscConfiguration`、`Start-DscConfiguration` 等等) 各自都可能被視為個別的 DSC 作業。 [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) 會說明函數。 執行 `Get-Help <cmdlet name>` 即可取得說明。
 
-### 取得 DSC 作業的詳細資訊 
+### <a name="getting-details-of-dsc-operations"></a>取得 DSC 作業的詳細資訊 
 
 `Get-xDscOperation` 函數可讓您尋找在一或多部電腦上執行的 DSC 作業結果，並傳回物件，其中包含每個 DSC 作業產生的事件集合。 例如，在下列輸出中，執行了三個命令。 第一個成功，而其他兩個失敗了。 這些結果會摘述在 `Get-xDscOperation` 輸出中。
 
@@ -294,9 +294,9 @@ SRV1   4          6/23/2016 4:36:54 PM  Success  5c06402a-399b-11e6-9165-00155d3
 SRV1   5          6/23/2016 4:36:51 PM  Success                                        {@{Message=; TimeC...
 ```
 
-### 取得 DSC 事件的詳細資訊
+### <a name="getting-details-of-dsc-events"></a>取得 DSC 事件的詳細資訊
 
-`Trace-xDscOperation1` Cmdlet 傳回的物件包含了事件集合、其事件類型，以及從特定 DSC 作業產生的訊息輸出。 一般而言，當您使用 `Get-xDscOperation` 在任何作業中發現失敗時，您都可以追蹤該作業，找出導致失敗的事件。
+`Trace-xDscOperation` Cmdlet 傳回的物件包含了事件集合、其事件類型，以及從特定 DSC 作業產生的訊息輸出。 一般而言，當您使用 `Get-xDscOperation` 在任何作業中發現失敗時，您都可以追蹤該作業，找出導致失敗的事件。
 
 使用 `SequenceID` 參數以取得特定電腦的特定作業事件。 例如，`SequenceID` 如果指定為 9，則 `Trace-xDscOperaion` 就會取得上一個作業的第 9 筆 DSC 作業追蹤記錄︰
 
@@ -401,7 +401,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 理想的情況是先使用 `Get-xDscOperation` 列出電腦上執行的最新幾個 DSC 設定。 接著使用 `Trace-xDscOperation` 檢查任何單一作業 (使用其 SequenceID 或 JobID)，探索它在幕後的工作內容。
 
-### 取得遠端電腦的事件
+### <a name="getting-events-for-a-remote-computer"></a>取得遠端電腦的事件
 
 使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
 
@@ -447,7 +447,7 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## 我的資源不更新：如何重設快取
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>我的資源不更新：如何重設快取
 
 基於效率考量，DSC 引擎會快取實作為 PowerShell 模組的資源。 不過，這可能會在撰寫並同時測試資源時造成問題，因為在程序重新啟動前，DSC 會載入快取的版本。 讓 DSC 載入較新版本的唯一方法，是明確結束主控 DSC 引擎的程序。
 
@@ -471,7 +471,7 @@ Select-Object -ExpandProperty HostProcessIdentifier
 Get-Process -Id $dscProcessID | Stop-Process
 ```
 
-## 使用 DebugMode
+## <a name="using-debugmode"></a>使用 DebugMode
 
 您可以設定 DSC 本機設定管理員 (LCM) 使用 `DebugMode` 在重新啟動主機處理程序時，一律清除快取。 設為 **TRUE** 時，會讓引擎一律重新載入 PowerShell DSC 資源。 資源完成撰寫後，您就可以將它設回 **FALSE**，引擎會還原成快取模組行為。
 
@@ -612,20 +612,20 @@ onlyProperty                            PSComputerName
 14                                      localhost
 ```
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
-### 參考資料
+### <a name="reference"></a>參考資料
 * [DSC 記錄檔資源](logResource.md)
 
-### 概念
+### <a name="concepts"></a>概念
 * [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 
-### 其他資源
+### <a name="other-resources"></a>其他資源
 * [Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO4-->
 
 
