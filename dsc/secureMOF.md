@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 0dc83a1b69f26a25874c819a2f3a027ed7966895
-ms.openlocfilehash: f0aed5bb627825b74fe4df29cbe2f0bc53f90c23
+ms.sourcegitcommit: be32b4acbfca788532e1b173809a7879ac4ecba0
+ms.openlocfilehash: 68a203ea1c445c3d0269c48ec92c02c407bcd5e1
 
 ---
 
-# 保護 MOF 檔案
+# <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設�
 
 >**注意**︰本主題討論用於加密的憑證。 以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。 自我簽署憑證*不能*用來進行驗證。 您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
 若要成功地加密用來保護 DSC 設定的認證，請確定您具備下列項目：
 
@@ -30,7 +30,7 @@ DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設�
 * **每個目標節點在其個人存放區都儲存了支援加密的憑證**。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用 [工作站驗證] 範本，您可在[預設憑證範本](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它和其他憑證範本。
 * 如果在目標節點以外的電腦上執行這項設定，請**匯出憑證的公開金鑰**，將它匯入要執行設定的電腦。 確定只匯出**公用**金鑰，妥善保管私密金鑰。
 
-## 完整程序
+## <a name="overall-process"></a>完整程序
 
  1. 設定憑證、金鑰和指紋，並確定每個目標節點都有憑證複本，而設定電腦則有公開金鑰和指紋。
  2. 建立包含公開金鑰路徑和指紋的設定資料區塊。
@@ -39,7 +39,7 @@ DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設�
 
 ![Diagram1](images/CredentialEncryptionDiagram1.png)
 
-## 憑證需求
+## <a name="certificate-requirements"></a>憑證需求
 
 若要制定認證加密，用來撰寫 DSC 設定之電腦所**信任**的_目標節點_上必須有公開金鑰憑證可用。
 此公開金鑰憑證具有可讓其用於 DSC 認證加密的特定需求︰
@@ -56,7 +56,7 @@ DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設�
   
 您可以在_目標節點_上，使用符合這些準則的任何現有憑證來保護 DSC 認證。
 
-## 建立憑證
+## <a name="certificate-creation"></a>建立憑證
 
 建立及使用必要的加密憑證 (成對的公用/私密金鑰組) 有兩種方法。
 
@@ -66,7 +66,7 @@ DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設�
 因為用於在 MOF 中解密認證的私密金鑰，會一直保存在目標節點中，所建議採用方法 1。
 
 
-### 在目標節點上建立憑證
+### <a name="creating-the-certificate-on-the-target-node"></a>在目標節點上建立憑證
 
 由於會使用私密金鑰在**目標節點**上將 MOF 解密，因此請務必確保其安全。最簡單的方法是在**目標節點**上建立私密金鑰憑證，並將**公開金鑰憑證**複製到用於將 DSC 設定撰寫入 MOF 檔案的電腦。
 下列範例︰
@@ -74,7 +74,7 @@ DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設�
  2. 在**目標節點**上匯出公開金鑰憑證。
  3. 在**撰寫節點**上將公開金鑰憑證匯入**我的**憑證存放區。
 
-#### 在目標節點上︰ 建立及匯出憑證
+#### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目標節點上︰ 建立及匯出憑證
 >撰寫節點︰Windows Server 2016 與 Windows 10
 
 ```powershell
@@ -119,13 +119,13 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 匯出之後，必須將 ```DscPublicKey.cer``` 複製到**撰寫節點**。
 
-#### 在撰寫節點上︰匯入憑證的公開金鑰
+#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>在撰寫節點上︰匯入憑證的公開金鑰
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### 在撰寫節點上建立憑證
+### <a name="creating-the-certificate-on-the-authoring-node"></a>在撰寫節點上建立憑證
 或者，在**撰寫節點**上建立加密憑證，搭配**私密金鑰**作為 PFX 檔案進行匯出，然後再匯入到**目標節點**上。
 這是目前在 _Nano Server_ 上實作 DSC 認證加密的方法。
 雖然有使用密碼保護 PFX，在傳輸期間也應該保持安全狀態。
@@ -136,7 +136,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
  4. 將私密金鑰憑證匯入**目標節點**的根憑證存放區。
    - 它必須加入根存放區，才會得到**目標節點**的信任。
 
-#### 在撰寫節點上：建立及匯出憑證
+#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在撰寫節點上：建立及匯出憑證
 >目標節點︰Windows Server 2016 與 Windows 10
 
 ```powershell
@@ -170,7 +170,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `
@@ -190,14 +189,14 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### 在目標節點上︰匯入憑證的私密金鑰作為受信任的根
+#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>在目標節點上︰匯入憑證的私密金鑰作為受信任的根
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-## 設定資料
+## <a name="configuration-data"></a>設定資料
 
 設定資料區塊會定義哪些是執行作業的目標節點、是否加密認證、加密方法和其他資訊。 如需設定資料區塊的詳細資訊，請參閱[分離設定和環境資料](configData.md)。
 
@@ -231,7 +230,7 @@ $ConfigData= @{
 ```
 
 
-## 設定指令碼
+## <a name="configuration-script"></a>設定指令碼
 
 在設定指令碼中，使用 `PsCredential` 參數確保以最短的時間儲存認證。 當您執行提供的範例時，DSC 會提示您輸入認證，在設定資料區塊中使用與目標節點相關聯的 CertificateFile 來加密 MOF 檔案。 這個程式碼範例會從受保護的共用將檔案複製到使用者。
 
@@ -257,7 +256,7 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## 設定解密
+## <a name="setting-up-decryption"></a>設定解密
 
 您必須先使用 CertificateID 資源來驗證憑證的指紋，通知每個目標節點上的本機設定管理員要使用哪項憑證來解密認證，[`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) 才能運作。 這個範例函式會尋找合適的本機憑證 (您可能需要自訂，讓它找到您想要使用的確切憑證)：
 
@@ -304,7 +303,7 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## 執行設定
+## <a name="running-the-configuration"></a>執行設定
 
 此時，您可以執行設定，這樣會輸出兩個檔案：
 
@@ -329,7 +328,7 @@ Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 
 如需使用 DSC 提取伺服器套用 DSC 設定的詳細資訊，請參閱[設定 DSC 提取用戶端](pullClient.md)。
 
-## 認證加密模組範例
+## <a name="credential-encryption-module-example"></a>認證加密模組範例
 
 以下是完整的範例，包含所有的步驟，以及匯出及複製公開金鑰的協助程式 Cmdlet：
 
@@ -450,6 +449,6 @@ Start-CredentialEncryptionExample
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

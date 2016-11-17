@@ -8,24 +8,67 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: ebd74549e2671a332ef6abf131ab984a4d0865a6
-ms.openlocfilehash: 8a3ae5fdf5d70de999ca6b992efb14533408c305
+ms.sourcegitcommit: 3038854786edaa9f24b6cf39b7c0c49b3d5206e3
+ms.openlocfilehash: 448cddf17a67ace9d228d1d8a9dc39109d0c91d5
 
 ---
 
-# 分離設定和環境資料
+# <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-在 Windows PowerShell 預期狀態設定 (DSC) 中，設定資料和設定邏輯是可以分離的。 另一個查看方式是將結構化設定 (例如，設定可能需要安裝 IIS) 和環境設定視為分開的 (也就是說，無論情況是測試環境或生產環境，節點名稱可能不同，但它們套用的設定都是一樣的)。 這有下列優點：
+您可以使用內建的 DSC **ConfigurationData** 參數，定義可用於設定中的資料。 這可讓您建立可用於多個節點或不同環境的單一設定。 例如，如果您要開發應用程式，您可以針對開發和生產環境使用一個設定，並使用設定資料來指定每個環境的資料。
 
-* 設定資料可重複使用於不同的資源、節點和設定。
-* 如果設定邏輯不含硬式編碼資料，會增加重複使用性。 這類似很好的函式指令碼處理指導方針。
-* 如有某些資料需要變更，您只要在一個位置變更資料，省時並減少錯誤。
+讓我們看看一個非常簡單的範例，以了解其運作方式。 我們將建立單一設定，確保 **IIS** 位於一些節點上，而 **HYPER-V** 位於另一些節點上： 
 
-## 基本概念和範例
+```powershell
+Configuration MyDscConfiguration {
+    
+    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+    {
+        WindowsFeature IISInstall {
+            Ensure = 'Present'
+            Name   = 'Web-Server'
+        }
+        
+    }
+    Node $AllNodes.Where($_.Role -eq "VMHost").NodeName
+    {
+        WindowsFeature HyperVInstall {
+            Ensure = 'Present'
+            Name   = 'Hyper-V'
+        }
+    }
+}
 
-DSC 使用 **ConfigurationData** 參數指定設定的環境部分，它是雜湊表 (或使用包含雜湊表的 .psd1 檔案)。 這個雜湊表至少要有一個具有結構化值的索引鍵 **AllNodes**。 例如：
+$MyData = 
+@{
+    AllNodes =
+    @(
+        @{
+            NodeName    = 'VM-1'
+            Role = 'WebServer'
+        }
+
+        @{
+            NodeName    = 'VM-2'
+            FeatureName = 'VMHost'
+        }
+    )
+}
+
+MyDscConfiguration -ConfigurationData $MyData
+```
+
+此指令碼中的最後一行會將設定編譯為 MOF 文件，並傳遞 `$MyData` 作為 **ConfigurationData** 參數值。 `$MyData` 指定兩個不同的節點，各有其專屬的 `NodeName` 和 `Role`。 此設定會從 `$MyData` 取得節點集合 (亦即 `$AllNodes`)，然後針對 `Role` 屬性篩選該集合，藉此以動態方式建立 **Node** 區塊。
+
+現在讓我們更詳細地看看其運作方式。
+
+## <a name="the-configurationdata-parameter"></a>ConfigurationData 參數
+
+DSC 設定使用名為 **ConfigurationData** 的參數，這是編譯設定時所指定的參數。 如需編譯設定的資訊，請參閱 [DSC 設定](configurations.md)。
+
+**ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。 它也可以包含其他索引鍵：
 
 ```powershell
 $MyData = 
@@ -35,7 +78,7 @@ $MyData =
 }
 ```
 
-請注意，AllNodes 索引鍵的值是陣列。 這個陣列的每個元素也是雜湊表，需要 NodeName 作為索引鍵：
+**AllNodes** 索引鍵的值是陣列。 此陣列的每個元素也是至少必須有一個名為 **NodeName** 之索引鍵的雜湊表：
 
 ```powershell
 $MyData = 
@@ -61,7 +104,7 @@ $MyData =
 }
 ```
 
-AllNodes 中的每個雜湊表項目都會對應到設定節點的設定資料。 除了必要的 NodeName 索引鍵，雜湊表中也可以加入其他索引鍵，例如：
+您也可以將其他索引鍵新增至每個雜湊表：
 
 ```powershell
 $MyData = 
@@ -90,75 +133,7 @@ $MyData =
 }
 ```
 
-DSC 提供三個特殊變數，在設定指令碼中使用：
-
-* **$AllNodes**：指是所有的節點。 您可以使用篩選搭配 **.Where()** 和 **.ForEach()**，不使用硬式編碼節點名稱為動作選取特定的節點，您可以撰寫類似下面的內容，在上例中選取 VM-1 和 VM-3：
-
-```powershell
-configuration MyConfiguration
-{
-    node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
-    {
-    }
-}
-```
-
-* **$Node**：只要篩選過節點集，您就可以使用 $Node 參考特定的項目。 例如：
-
-```powershell
-configuration MyConfiguration
-{
-    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
-    node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
-    {
-        xWebsite Site
-        {
-            Name         = $Node.SiteName
-            PhysicalPath = $Node.SiteContents
-            Ensure       = "Present"
-        }
-    }
-}
-```
-
-若要將屬性套用至所有節點，您可以設定 NodeName = “*”。 例如，您可以如下為每個節點提供 LogPath 屬性：
-
-```
-$MyData = 
-@{
-    AllNodes = 
-    @(
-        @{
-            NodeName           = "*"
-            LogPath            = "C:\Logs"
-        },
-
- 
-        @{
-            NodeName = "VM-1"
-            Role     = "WebServer"
-            SiteContents = "C:\Site1"
-            SiteName = "Website1"
-        },
-
- 
-        @{
-            NodeName = "VM-2"
-            Role     = "SQLServer"
-        },
-
- 
-        @{
-            NodeName = "VM-3"
-            Role     = "WebServer"
-            SiteContents = "C:\Site2"
-            SiteName = "Website3"
-        }
-    );
-}
-```
-
-* **$ConfigurationData**：您可以在設定內使用這個變數，存取當做參數傳遞的設定資料雜湊表。 例如：
+若要將屬性套用至所有節點，您可以建立 **AllNodes** 陣列的成員，其 **NodeName** 為 `*`。 例如，您可以如下為每個節點提供 `LogPath` 屬性：
 
 ```powershell
 $MyData = 
@@ -166,66 +141,223 @@ $MyData =
     AllNodes = 
     @(
         @{
-            NodeName           = "*"
-            LogPath            = "C:\Logs"
+            NodeName     = "*"
+            LogPath      = "C:\Logs"
         },
 
  
         @{
-            NodeName = "VM-1"
-            Role     = "WebServer"
+            NodeName     = "VM-1"
+            Role         = "WebServer"
             SiteContents = "C:\Site1"
-            SiteName = "Website1"
+            SiteName     = "Website1"
         },
 
  
         @{
-            NodeName = "VM-2"
-            Role     = "SQLServer"
+            NodeName     = "VM-2"
+            Role         = "SQLServer"
         },
- 
 
+ 
         @{
-            NodeName = "VM-3"
-            Role     = "WebServer"
+            NodeName     = "VM-3"
+            Role         = "WebServer"
             SiteContents = "C:\Site2"
-            SiteName = "Website3"
+            SiteName     = "Website3"
         }
     );
-
-    NonNodeData = 
-    @{
-        ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
-
-configuration MyConfiguration
-{
-    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
-
-    node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
-    {
-        xWebsite Site
-        {
-            Name         = $Node.SiteName
-            PhysicalPath = $Node.SiteContents
-            Ensure       = "Present"
-        }
-
-        File ConfigFile
-        {
-            DestinationPath = $Node.SiteContents + "\\config.xml"
-            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
-        }
-    }
 }
 ```
 
-完整範例請參閱 [xWebAdministration 模組](https://powershellgallery.com/packages/xWebAdministration)。
+這相當於將名稱為 `LogPath` 且值為 `"C:\Logs"` 的屬性新增至每個其他區塊 (`VM-1`、`VM-2` 和 `VM-3`)。
+
+## <a name="defining-the-configurationdata-hashtable"></a>定義 ConfigurationData 雜湊表
+
+您可以將 **ConfigurationData** 定義為與設定位於相同指令碼檔案中的變數 (如上述範例)，或個別 .psd1 檔案中的變數。 若要在 .psd1 檔案中定義 **ConfigurationData**，請建立只包含代表設定資料之雜湊表的檔案。
+
+例如，您可以建立具有下列內容的檔案，並命名為 `MyData.psd1`：
+
+```powershell
+@{
+    AllNodes =
+    @(
+        @{
+            NodeName    = 'VM-1'
+            FeatureName = 'Web-Server'
+        }
+
+        @{
+            NodeName    = 'VM-2'
+            FeatureName = 'Hyper-V'
+        }
+    )
+}
+```
+
+若要使用在 .psd1 檔案中定義的設定資料，您可以在編譯設定時，傳遞該檔案的路徑和名稱作為 **ConfigurationData** 參數值：
+
+```powershell
+MyDscConfiguration -ConfigurationData .\MyData.psd1
+```
+
+## <a name="using-configurationdata-variables-in-a-configuration"></a>在設定中使用 ConfigurationData 變數
+
+DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$Node** 和 **$ConfigurationData**。
+
+- **$AllNodes** 代表 **ConfigurationData** 中所定義的整個節點集合。 您可以使用 **.Where()** 和 **.ForEach()** 篩選 **AllNodes** 集合。
+- **Node** 代表 **AllNodes** 集合使用 **.Where()** 或 **.ForEach()** 篩選後所包含的特定項目。
+- **ConfigurationData** 代表編譯設定時，當做參數傳遞的整個雜湊表。
+
+## <a name="devops-example"></a>DevOps 範例
+
+讓我們看看一個完整的範例，該範例使用單一設定來設定網站的開發和生產環境。 在開發環境中，IIS 和 SQL Server 會安裝在單一節點上。 在生產環境中，IIS 和 SQL Server 會安裝在不同的節點上。 我們將使用設定資料檔案 .psd1，來指定這兩個不同環境的資料。
+
+### <a name="configuration-data-file"></a>設定資料檔案
+
+我們將在名為 `DevProdEnvData.psd1` 的檔案中定義開發和生產環境資料，如下所示：
+
+```powershell
+@{
+
+    AllNodes = @(
+
+        @{
+            NodeName        = "*"
+            SQLServerName   = "MySQLServer"
+            SqlSource       = "C:\Software\Sql"
+            DotNetSrc       = "C:\Software\sxs"
+        },
+
+        @{
+            NodeName        = "Prod-SQL"
+            Role            = "MSSQL"
+        },
+
+        @{
+            NodeName        = "Prod-IIS"
+            Role            = "Web"
+            SiteContents    = "C:\Website\Prod\SiteContents\"
+            SitePath        = "\\Prod-IIS\Website\"
+        }
+
+        @{
+            NodeName         = "Dev"
+            Role             = "MSSQL", "Web"
+            SiteContents     = "C:\Website\Dev\SiteContents\"
+            SitePath         = "\\Dev\Website\"
+
+        }
+
+    )
+
+}
+
+    )
+
+}
+```
+
+### <a name="configuration-file"></a>設定檔案
+
+現在，在設定中，我們將依節點的角色 (`MSSQL`、`Dev` 或兩者)，來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此進行設定。 開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。 網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
+
+在設定指令碼結尾處，我們會呼叫設定 (將其編譯為 MOF 文件)，並傳遞 `DevProdEnvData.psd1` 作為 `$ConfigurationData` 參數。
+
+```powershell
+Configuration MyWebApp
+{
+    Import-DscResource -Module PSDesiredStateConfiguration
+    Import-DscResource -Module xSqlPs
+
+    Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
+   {
+        # Install prerequisites
+        WindowsFeature installdotNet35
+        {            
+            Ensure      = "Present"
+            Name        = "Net-Framework-Core"
+            Source      = "c:\software\sxs"
+        }
+
+        # Install SQL Server
+        xSqlServerInstall InstallSqlServer
+        {
+            InstanceName = $Node.SQLServerName
+            SourcePath   = $Node.SqlSource
+            Features     = "SQLEngine,SSMS"
+            DependsOn    = "[WindowsFeature]installdotNet35"
+
+        }
+   }
+
+   Node $AllNodes.Where($_.Role -contains "Web")
+   {
+        # Install the IIS role
+        WindowsFeature IIS
+        {
+            Ensure       = 'Present'
+            Name         = 'Web-Server'
+        }
+
+        # Install the ASP .NET 4.5 role
+        WindowsFeature AspNet45
+        {
+            Ensure       = 'Present'
+            Name         = 'Web-Asp-Net45'
+
+        }
+
+        # Stop the default website
+        xWebsite DefaultSite 
+        {
+            Ensure       = 'Present'
+            Name         = 'Default Web Site'
+            State        = 'Stopped'
+            PhysicalPath = 'C:\inetpub\wwwroot'
+            DependsOn    = '[WindowsFeature]IIS'
+
+        }
+
+        # Copy the website content
+        File WebContent
+
+        {
+            Ensure          = 'Present'
+            SourcePath      = $Node.SiteContents
+            DestinationPath = $Node.SitePath
+            Recurse         = $true
+            Type            = 'Directory'
+            DependsOn       = '[WindowsFeature]AspNet45'
+
+        }       
 
 
+        # Create the new Website
+
+        xWebsite NewWebsite
+
+        {
+
+            Ensure          = 'Present'
+            Name            = $WebSiteName
+            State           = 'Started'
+            PhysicalPath    = $Node.SitePath
+            DependsOn       = '[File]WebContent'
+        }
+
+    }
+
+MyWebApp -ConfigurationData DevProdEnvData.psd1
+
+}
+```
+
+## <a name="see-also"></a>另請參閱
+- [設定資料的認證選項](configDataCredentials.md)
+- [DSC 設定](configurations.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

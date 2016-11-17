@@ -8,29 +8,29 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
 
 ---
 
-# 施行設定
+# <a name="enacting-configurations"></a>施行設定
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 PowerShell 預期狀態設定 (DSC) 設定有兩種施行方式：Push 模式和 Pull 模式。
 
-## Push 模式
+## <a name="push-mode"></a>Push 模式
 
 ![Push 模式](images/Push.png "How push mode works")
 
 Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet，將設定積極套用至目標節點。
 
-建立及編譯設定後，您可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet，設定 MOF 所在路徑之 Cmdlet 的 -Path 參數，以 Push 模式施行設定。 例如，如果設定 MOF 位於 `C:\DSC\Configurations\localhost.mof`，您可以使用下列命令將其套用到本機電腦： `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+建立及編譯設定後，您可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet，設定 MOF 所在路徑之 Cmdlet 的 -Path 參數，以 Push 模式施行設定。 例如，如果設定 MOF 位於 `C:\DSC\Configurations\localhost.mof`，您可以使用下列命令將其套用到本機電腦：`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
-> __注意__：DSC 預設將設定當做背景工作執行。 若要以互動方式執行設定，請呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 配以 __-Wait__ 參數。
+> __注意__：DSC 預設將設定當做背景工作執行。 若要以互動方式執行設定，請呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 配以 __-Wait__ 參數。
 
 
-## Pull 模式
+## <a name="pull-mode"></a>Pull 模式
 
 ![Pull 模式](images/Pull.png "How pull mode works")
 
@@ -49,6 +49,6 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.mic
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
