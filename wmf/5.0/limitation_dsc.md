@@ -45,7 +45,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ------------------------------------------------------------------------------------------------------------------------
 如果 LCM 處於 DebugMode 中，則嘗試停止 Get-DscConfiguration 所啟動的作業時，Stop-DscConfiguration 可能會停止回應
 
-**解決方式︰**完成 Get-DscConfiguration 所啟動作業的偵錯，如[偵錯 DSC 資源](../../dsc/debugResource.md)一節中所述。
+**解決方式︰**完成 Get-DscConfiguration 所啟動作業的偵錯，如[偵錯 DSC 資源](https://msdn.microsoft.com/powershell/dsc/debugresource)一節中所述。
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>在 DebugMode 中不顯示詳細的錯誤訊息
@@ -77,7 +77,7 @@ Invoke-DscResource Cmdlet 不會以 LCM 或 DSC 資源產生這些作業的順�
 
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>以 Invoke-DscResource 使用 DSC 資源時，無法輕易偵錯 DSC 資源
 -----------------------------------------------------------------------
-LCM 在偵錯模式執行時 (如需詳細資訊，請參閱[偵錯 DSC 資源](../../dsc/debugResource.md))，Invoke-DscResource Cmdlet 並不提供連接到 Runspace 以偵錯的資訊。
+LCM 在偵錯模式執行時 (如需詳細資訊，請參閱[偵錯 DSC 資源](https://msdn.microsoft.com/powershell/dsc/debugresource))，Invoke-DscResource Cmdlet 並不提供連接到 Runspace 以偵錯的資訊。
 **解決方式︰**使用 Cmdlets **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace** 和 **Debug-Runspace** 探索並附加至 Runspace，以偵錯 DSC 資源。
 
 ```powershell
@@ -228,6 +228,6 @@ Configuration $configName
 ```
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 
