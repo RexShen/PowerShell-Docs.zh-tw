@@ -9,21 +9,21 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: c88163b5a7d8805d0dea82d321796d8f41d17bb8
-ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
+ms.sourcegitcommit: 0c136264c9fe4e92771e4423011c2fa959f30e93
+ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
 
 ---
 
-# 安裝及設定 WMF 5.1 (預覽) #
+# <a name="install-and-configure-wmf-51-preview"></a>安裝及設定 WMF 5.1 (預覽) #
 
-## 安裝 .Net 4.6
+## <a name="install-net-46"></a>安裝 .Net 4.6
 您必須先安裝 .NET Framework 4.6 才能使用 WMF 5.1。 需要此項才能啟用新的類別目錄簽署功能，其會影響模組的多個區域及 WMF 5.1 中的指令碼載入。 
 
 [.NET Framework 4.6 可於 KB 3045560 取得](https://support.microsoft.com/en-us/kb/3045560)。 下載位置上有安裝指示。
 
 > **注意︰**WMF 5.1 Preview 安裝程式未偵測到 .NET 4.6 需求為已知問題，所以您可以在安裝 .NET 4.6 之前安裝 WMF 5.1 Preview。 我們的測試顯示，您在安裝 WMF 5.1 Preview 後可以安裝 .NET 4.6。 WMF 5.1 的最終版本將會正確地在安裝前檢查此必要條件需求。 
 
-## 下載並安裝 WMF 5.1 Preview
+## <a name="download-and-install-the-wmf-51-preview"></a>下載並安裝 WMF 5.1 Preview
 
 為適用於其安裝所在的作業系統和架構下載 WMF 5.1 封裝︰
 
@@ -36,13 +36,13 @@ ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
 | Windows 7 SP1          | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> [SHA-2 程式碼簽署](https://technet.microsoft.com/en-us/library/security/3033929)的安全性更新 | **x64:** [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) </br> **x86:** [Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823590) |
 
 
-## 從 Windows 檔案總管 (或 Windows Server 2012 R2 或 Windows 8.1 檔案總管) 安裝 WMF 5.1
+## <a name="install-wmf-51-from-windows-explorer-or-file-explorer-in-windows-server-2012-r2-or-windows-81"></a>從 Windows 檔案總管 (或 Windows Server 2012 R2 或 Windows 8.1 檔案總管) 安裝 WMF 5.1
 
 1. 瀏覽至您用來下載 MSU 檔案的資料夾。
 
 2. 按兩下 MSU 以執行。
 
-## 從 [命令提示字元] 安裝 WMF 5.1##
+## <a name="install-wmf-51-from-the-command-prompt"></a>從 [命令提示字元] 安裝 WMF 5.1##
 
 1. 下載您電腦架構的正確封裝之後，以提高的使用者權限 (以系統管理員身分執行) 開啟 [命令提示字元] 視窗。 在 Windows Server 2012 R2、Windows Server 2012 或 Windows Server 2008 R2 SP1 的 Server Core 安裝選項上，預設會以提高的使用者權限開啟 [命令提示字元]。
 
@@ -55,8 +55,8 @@ ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
     - 在執行 Windows 8.1 x86 的電腦上執行 `Win8.1-KB3156422-x86.msu /quiet`。
     - 在執行 Windows 7 SP1 x86 的電腦上執行 `Win7-KB3156424-x86.msu /quiet`。
 
-## Windows Server 2008 SP1 和 Windows 7 SP1 的其他安裝注意事項︰##
-在 Windows Server 2008 SP1 或 Windows 7 SP1 上安裝 WMF 5.1，需要安裝︰
+## <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安裝注意事項##
+在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安裝 WMF 5.1，需要安裝︰
 - 最新的 Service Pack。
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
 - WMF 5.1 需要 [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560)。 您可以遵循下載位置的指示來安裝 Microsoft.NET Framework 4.6。
@@ -67,6 +67,6 @@ ms.openlocfilehash: 26a325dc7a18ba167ddc56ca226fce3eded79f52
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
