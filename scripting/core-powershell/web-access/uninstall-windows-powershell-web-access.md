@@ -13,7 +13,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
-#  解除安裝 Windows PowerShell Web 存取
+#  <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
 更新日期︰2013 年 6 月 24 日
 
@@ -44,7 +44,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 如果您已經指定您自訂的網站名稱，請將 <span class="code">WebsiteName</span> 參數新增至您的命令並指定網站名稱。 如果您已經使用自訂的 Web 應用程式 (不是預設應用程式 **pswa**)，請將 <span class="code">WebApplicationName</span> 參數新增至您的命令，並指定 Web 應用程式的名稱。
 
-#### 使用 Uninstall-PswaWebApplication Cmdlet 刪除網站及 Web 應用程式
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstallpswawebapplication-cmdlet"></a>使用 Uninstall-PswaWebApplication Cmdlet 刪除網站及 Web 應用程式
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -66,7 +66,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ------------------------------------------------------------------------
 
-#### 使用 Windows PowerShell Cmdlet 解除安裝 Windows PowerShell Web 存取
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 解除安裝 Windows PowerShell Web 存取
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。 如果已經開啟工作階段，請移至下一個步驟。
 
@@ -101,7 +101,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ------------------------------------------------------------------------
 
-#### 使用 IIS 管理員刪除 Windows PowerShell Web 存取網站及 Web 應用程式
+#### <a name="to-delete-the-windows-powershell-web-access-website-and-web-applications-by-using-iis-manager"></a>使用 IIS 管理員刪除 Windows PowerShell Web 存取網站及 Web 應用程式
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。 如果已經開啟，請移至下一個步驟。
 
@@ -141,7 +141,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ------------------------------------------------------------------------
 
-#### 使用移除角色及功能精靈解除安裝 Windows PowerShell Web 存取
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-the-remove-roles-and-features-wizard"></a>使用移除角色及功能精靈解除安裝 Windows PowerShell Web 存取
 
 1.  如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
 
@@ -167,14 +167,14 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 [安裝和使用 Windows PowerShell Web 存取](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
 [IIS 管理員 7.0 說明](https://technet.microsoft.com/library/cc732664.aspx)
 
-<span>顯示︰</span> 繼承受保護的
+<span>顯示︰</span>繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
 是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
+<span class="stdr-count">剩下 <span class="stdr-charcnt">1500</span> 個字元</span> 提交 略過
 
 <span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
@@ -182,7 +182,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span> 網站意見反應</a> 網站意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -198,13 +198,13 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 請告訴我們更多資訊
 
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
+-   [電子快訊](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [與我們連絡](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [隱私權聲明](https://privacy.microsoft.com/privacystatement)
 -   |
--   [使用條款](https://technet.microsoft.com/cc300389.aspx)
+-   [使用規定](https://technet.microsoft.com/cc300389.aspx)
 -   |
 -   [商標](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |

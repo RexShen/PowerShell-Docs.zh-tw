@@ -13,7 +13,7 @@ ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
 
 ---
 
-# Windows PowerShell Web 存取的授權規則與安全性功能
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
 更新日期︰2013 年 6 月 24 日
 
@@ -198,7 +198,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 </tbody>
 </table>
 
-#### 新增限制性授權規則
+#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -206,7 +206,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
     -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
+2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
 
 3.  輸入下列程式碼，然後按 **Enter**。
 
@@ -222,7 +222,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-#### 移除授權規則
+#### <a name="to-remove-an-authorization-rule"></a>移除授權規則
 
 1.  如果尚未開啟 Windows PowerShell 工作階段，請參閱本節中[新增非限制性授權規則](#BKMK_arar)的步驟 1。
 
@@ -253,7 +253,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 <a href="" id="BKMK_others"></a>
 ####
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">其他授權規則案例</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">其他授權規則案例範例</span></a>
 
 ------------------------------------------------------------------------
 
@@ -265,7 +265,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 -   有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還會建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
 
--   某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 系統管理員會執行 <span class="code">Add-PswaAuthorizationRule \* \* \*</span> Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦及所有設定。 此規則相當於下列內容︰<span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>。
+-   某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 系統管理員會執行 <span class="code">Add-PswaAuthorizationRule\* \* \*</span> Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦及所有設定。 此規則相當於下列內容︰<span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>。
 
     <table>
     <colgroup>
@@ -376,14 +376,14 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 [Windows PowerShell Web 存取 Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)
 
-<span>顯示︰</span> 繼承受保護的
+<span>顯示︰</span>繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
 是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
+<span class="stdr-count">剩下 <span class="stdr-charcnt">1500</span> 個字元</span> 提交 略過
 
 <span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
@@ -391,7 +391,7 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span> 網站意見反應</a> 網站意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -407,13 +407,13 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 請告訴我們更多資訊
 
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
+-   [電子快訊](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [與我們連絡](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [隱私權聲明](https://privacy.microsoft.com/privacystatement)
 -   |
--   [使用條款](https://technet.microsoft.com/cc300389.aspx)
+-   [使用規定](https://technet.microsoft.com/cc300389.aspx)
 -   |
 -   [商標](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |

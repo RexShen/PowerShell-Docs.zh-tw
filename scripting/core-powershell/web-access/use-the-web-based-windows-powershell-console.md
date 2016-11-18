@@ -13,7 +13,7 @@ ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
 
 ---
 
-#  使用網頁型 Windows PowerShell 主控台
+#  <a name="use-the-webbased-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
 更新日期︰2013 年 6 月 24 日
 
@@ -91,7 +91,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;server_name&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
 
-### 登入 Windows PowerShell Web 存取
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>登入 Windows PowerShell Web 存取
 
 1.  在網際網路瀏覽器視窗或索引標籤中開啟 Windows PowerShell Web 存取網站。
 
@@ -109,9 +109,9 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>如果目的地電腦在工作群組中，請使用下列語法提供您的使用者名稱並登入電腦：&lt;<em>工作群組名稱</em>&gt;\&lt;<em>使用者名稱</em>&gt;。</p></li>
+    <li><p>如果目的地電腦在工作群組中，請使用下列語法提供您的使用者名稱並登入電腦：&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     <li><p>如果目的地電腦是閘道伺服器，您可以在 [電腦名稱]<strong></strong> 欄位中指定 <strong>localhost</strong>。</p></li>
-    <li><p>如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組中，則 <strong>[電腦名稱]</strong> 欄位可以使用 <strong>localhost</strong>，但 <strong>[使用者名稱]</strong> 欄位不要使用 localhost\&lt;<em>使用者名稱</em>&gt;。 您必須使用 &lt;<em>工作群組名稱</em>&gt;\&lt;<em>使用者名稱</em>&gt;。</p></li>
+    <li><p>如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組中，則 [電腦名稱]<strong></strong> 欄位可以使用 <strong>localhost</strong>，但 [使用者名稱]<strong></strong> 欄位不要使用 localhost\&lt;<em>user_name</em>&gt;。 您必須使用 &lt;<em>工作群組名稱</em>&gt;\&lt;<em>user_name</em>&gt;。</p></li>
     </ul></td>
     </tr>
     </tbody>
@@ -345,14 +345,14 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 [指令碼中心 - Hi，Scripting Guy！部落格](https://technet.microsoft.com/scriptcenter)
 [Windows PowerShell Team Blog](http://blogs.msdn.com/b/powershell/) (Windows PowerShell 小組部落格)
 
-<span>顯示︰</span> 繼承受保護的
+<span>顯示︰</span>繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
 是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
+<span class="stdr-count">剩下 <span class="stdr-charcnt">1500</span> 個字元</span> 提交 略過
 
 <span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
@@ -360,7 +360,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span> 網站意見反應</a> 網站意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -376,13 +376,13 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 請告訴我們更多資訊
 
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
+-   [電子快訊](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [與我們連絡](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [隱私權聲明](https://privacy.microsoft.com/privacystatement)
 -   |
--   [使用條款](https://technet.microsoft.com/cc300389.aspx)
+-   [使用規定](https://technet.microsoft.com/cc300389.aspx)
 -   |
 -   [商標](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |

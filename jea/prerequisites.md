@@ -14,9 +14,9 @@ ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
 
 ---
 
-# 必要條件
+# <a name="prerequisites"></a>必要條件
 
-## 初始狀態
+## <a name="initial-state"></a>初始狀態
 開始本節之前，請確認下列事項︰
 
 1. 系統上有 JEA 可用。 如需目前支援的作業系統和所需的下載項目，請參閱[讀我檔案](./README.md)。
@@ -24,7 +24,7 @@ ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
 3. 電腦已加入網域。
 請參閱[建立網域控制站](#creating-a-domain-controller)一節，以快速在伺服器上設定新的網域 (如果還沒有)。
 
-## 啟用 PowerShell 遠端
+## <a name="enable-powershell-remoting"></a>啟用 PowerShell 遠端
 JEA 管理是透過 PowerShell 遠端進行。
 在系統管理員的 PowerShell 視窗中執行下列命令，以確保這項功能已啟用且正確設定︰
 
@@ -34,7 +34,7 @@ Enable-PSRemoting
 
 如果您不熟悉 PowerShell 遠端，建議執行 `Get-Help about_Remote` 來了解此重要的基本概念。
 
-## 識別您的使用者或群組
+## <a name="identify-your-users-or-groups"></a>識別您的使用者或群組
 為了示範 JEA 的操作方式，您必須識別要在本指南中使用的非系統管理員使用者和群組。
 
 如果您使用現有的網域，請識別或建立一些非特殊權限使用者和群組。
@@ -45,7 +45,7 @@ Enable-PSRemoting
 請使用附錄中的[設定使用者和群組](creating-a-domain-controller.md#set-up-users-and-groups)一節，來建立非系統管理員使用者和群組。
 `$NonAdministrator` 的預設值會是在該節中建立的群組。
 
-## 設定維護角色功能檔案
+## <a name="set-up-maintenance-role-capability-file"></a>設定維護角色功能檔案
 在 PowerShell 中執行下列命令，建立我們將在下一節中使用的示範角色功能檔案。
 稍後在本指南中，您將了解此檔案的用途。
 
@@ -68,7 +68,7 @@ New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapa
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc" @MaintenanceRoleCapabilityCreationParams
 ```
 
-## 建立及登錄示範工作階段設定檔
+## <a name="create-and-register-demo-session-configuration-file"></a>建立及登錄示範工作階段設定檔
 執行下列命令，建立及登錄我們將在下一節中使用的示範工作階段設定檔。
 稍後在本指南中，您將了解此檔案的用途。
 
@@ -110,7 +110,7 @@ New-PSSessionConfigurationFile -Path "$env:ProgramData\JEAConfiguration\JEADemo.
 Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc"
 ```
 
-## 啟用 PowerShell 模組記錄 (選擇性)
+## <a name="enable-powershell-module-logging-optional"></a>啟用 PowerShell 模組記錄 (選擇性)
 下列步驟可啟用系統上所有 PowerShell 動作的記錄。
 您不需要啟用此設定就能執行 JEA，但此設定在 [JEA 上的報告](reporting-on-jea.md)一節中會很有用。
 
@@ -129,6 +129,6 @@ Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEACo
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 

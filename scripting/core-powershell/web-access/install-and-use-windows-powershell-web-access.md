@@ -13,7 +13,7 @@ ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
 
 ---
 
-#  安裝和使用 Windows PowerShell Web 存取
+#  <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
 更新日期︰2013 年 11 月 5 日
 
@@ -139,7 +139,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ------------------------------------------------------------------------
 
-#### 使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -226,7 +226,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   [使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道](#BKMK_gencert)
 
-#### 使用 Install-PswaWebApplication 以測試憑證設定 Windows PowerShell Web 存取閘道
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-installpswawebapplication"></a>使用 Install-PswaWebApplication 以測試憑證設定 Windows PowerShell Web 存取閘道
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -286,7 +286,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     </tbody>
     </table>
 
-#### 使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-installpswawebapplication-and-iis-manager"></a>使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -353,7 +353,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 如需 Windows PowerShell Web 存取授權規則和安全性的詳細資訊，請參閱 [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-#### 新增限制性授權規則
+#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -361,7 +361,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
+2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
 
 3.  輸入下列程式碼，然後按 **Enter**。
 
@@ -395,7 +395,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ------------------------------------------------------------------------
 
-#### 使用新增角色及功能精靈安裝 Windows PowerShell Web 存取
+#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>使用新增角色及功能精靈安裝 Windows PowerShell Web 存取
 
 1.  如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
 
@@ -447,7 +447,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   
 
-#### 使用 IIS 管理員在現有的網站中設定閘道
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>使用 IIS 管理員在現有的網站中設定閘道
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。
 
@@ -469,7 +469,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 8.  在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設位置 %windir%/Web/PowerShellWebAccess/wwwroot。 按一下 **[確定]**。
 
-9.  依照本主題的[在 IIS 管理員中設定 SSL 憑證](#BKMK_cert)程序中的步驟進行。
+9.  請遵照本主題之 [在 IIS 管理員中設定 SSL 憑證](#BKMK_cert) 程序中的步驟執行。
 
 10. <span class="label">選擇性安全性步驟：</span>在樹狀目錄窗格中選取網站後，按兩下內容窗格中的 [SSL 設定]。 選取 [需要 SSL]，然後在 [動作] 窗格中，按一下 [套用]。 您也可以選擇性地在 [SSL 設定] 窗格中，要求連線到 Windows PowerShell Web 存取網站的使用者必須擁有用戶端憑證。 用戶端憑證可協助確認用戶端裝置使用者的身份。 如需要求用戶端憑證如何增加 Windows PowerShell Web 存取安全性的詳細資訊，請參閱本指南中的 [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
@@ -509,7 +509,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### 使用 IIS 管理員以測試憑證將閘道設定為根網站
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>使用 IIS 管理員以測試憑證將閘道設定為根網站
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。
 
@@ -587,7 +587,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 如需 Windows PowerShell Web 存取授權規則和安全性的詳細資訊，請參閱 [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-#### 新增限制性授權規則
+#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -595,7 +595,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
     -   在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
+2.  <span class="label">使用工作階段設定來限制使用者存取的選擇性步驟：</span>確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 MSDN 上 [about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx) 中建立工作階段設定的指示。
 
 3.  輸入下列程式碼，然後按 **Enter**。
 
@@ -622,7 +622,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 若要安全的生產環境，請一律使用由憑證授權單位 (CA) 簽署的有效 SSL 憑證。 本節中的程序說明如何從 CA 取得有效的 SSL 憑證並加以套用。
 
-### 在 IIS 管理員中設定 SSL 憑證
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>在 IIS 管理員中設定 SSL 憑證
 
 1.  在 [IIS 管理員] 樹狀目錄窗格中，選取安裝 Windows PowerShell Web 存取的伺服器。
 
@@ -661,14 +661,14 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 [設定網頁伺服器安全性 (IIS 7)](https://technet.microsoft.com/library/cc731278.aspx)
 [IPsec 部屬資源](https://technet.microsoft.com/network/bb531150)
 
-<span>顯示︰</span> 繼承受保護的
+<span>顯示︰</span>繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
 是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
+<span class="stdr-count">剩下 <span class="stdr-charcnt">1500</span> 個字元</span> 提交 略過
 
 <span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
@@ -676,7 +676,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span> 網站意見反應</a> 網站意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -692,13 +692,13 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 請告訴我們更多資訊
 
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
+-   [電子快訊](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [與我們連絡](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [隱私權聲明](https://privacy.microsoft.com/privacystatement)
 -   |
--   [使用條款](https://technet.microsoft.com/cc300389.aspx)
+-   [使用規定](https://technet.microsoft.com/cc300389.aspx)
 -   |
 -   [商標](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |
