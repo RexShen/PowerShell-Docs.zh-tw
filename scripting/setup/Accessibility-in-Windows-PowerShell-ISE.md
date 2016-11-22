@@ -9,12 +9,12 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b4d97b1c96a99bcfc43fb20ce9a4ecfa528ea024
+ms.sourcegitcommit: 2aa04e8094fee4b0da3d5e7025cca215d542355e
+ms.openlocfilehash: b81bcbd37cdfebc04fbc7ef92d76f0769c135713
 
 ---
 
-# Windows PowerShell ISE 的協助工具
+# <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 本主題說明 Windows PowerShell® 整合式指令碼環境 (ISE) 的協助工具功能，您可能會發現這些功能很有幫助。
 
 * [如何變更主控台和指令碼窗格的大小和位置](#bkmk_1)
@@ -35,16 +35,16 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 
 -   文字大小變更
 
-## <a name="bkmk_1"></a>如何變更主控台和指令碼窗格的大小和位置
+## <a name="a-namebkmk1ahow-to-change-the-size-and-location-of-the-console-and-script-panes"></a><a name="bkmk_1"></a>如何變更主控台和指令碼窗格的大小和位置
 您可以使用下列步驟來變更主控台窗格和指令碼窗格的位置和大小。 當您再次開啟 Windows PowerShell ISE 時，即會保留您所做的大小和位置變更。
 
-### 若要調整指令碼窗格和主控台窗格的大小
+### <a name="to-resize-the-script-pane-and-console-pane"></a>若要調整指令碼窗格和主控台窗格的大小
 
 1.  將指標停在指令碼窗格和主控台窗格的分割線上。
 
 2.  當滑鼠指標變成雙頭箭號時，拖曳框線以變更窗格的大小。
 
-### 若要移動指令碼窗格和主控台窗格
+### <a name="to-move-the-script-pane-and-console-pane"></a>若要移動指令碼窗格和主控台窗格
 執行下列其中一個動作：
 
 -   若要將指令碼窗格移動到主控台窗格上方，請按 **CTRL+1**，或者按一下工具列的**靠上顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠上顯示指令碼窗格]。
@@ -57,7 +57,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 
 -   若要在主控台窗格最大化時顯示指令碼窗格，請按一下**顯示指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以選取 **[顯示指令碼窗格]** 功能表選項。
 
-## <a name="bkmk_2"></a>編輯文字的鍵盤快速鍵
+## <a name="a-namebkmk2akeyboard-shortcuts-for-editing-text"></a><a name="bkmk_2"></a>編輯文字的鍵盤快速鍵
 編輯文字時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|使用位置|
@@ -74,7 +74,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**全選**|CTRL+A|指令碼窗格，主控台窗格|
 |**復原**|CTRL+Z|指令碼窗格，主控台窗格|
 
-## <a name="bkmk_3"></a>執行指令碼的鍵盤快速鍵
+## <a name="a-namebkmk3akeyboard-shortcuts-for-running-scripts"></a><a name="bkmk_3"></a>執行指令碼的鍵盤快速鍵
 在指令碼窗格中執行指令碼時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -87,7 +87,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**Tab** (至下一個指令碼)|CTRL+TAB **注意︰**Tab 至下一個指令碼僅適用於開啟單一 PowerShell 索引標籤的情況下，或開啟多個 PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 |**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意︰**Tab 至上一個指令碼僅適用於開啟單一 PowerShell 索引標籤的情況下，或開啟多個 PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 
-## <a name="bkmk_4"></a>自訂檢視的鍵盤快速鍵
+## <a name="a-namebkmk4akeyboard-shortcuts-for-customizing-the-view"></a><a name="bkmk_4"></a>自訂檢視的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，在 Windows PowerShell ISE 中自訂檢視。 您可從應用程式的所有窗格存取這些快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -103,7 +103,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**放大**|CTRL+加號|
 |**縮小**|CTRL+減號|
 
-## <a name="bkmk_5"></a>偵錯指令碼的鍵盤快速鍵
+## <a name="a-namebkmk5akeyboard-shortcuts-for-debugging-scripts"></a><a name="bkmk_5"></a>偵錯指令碼的鍵盤快速鍵
 偵錯程式碼時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|使用位置|
@@ -133,7 +133,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**列出指令碼**|L|偵錯指令碼時的主控台窗格|
 |**顯示主控台偵錯命令**|H 或 ?|偵錯指令碼時的主控台窗格|
 
-## <a name="bkmk_6"></a>Windows PowerShell 索引標籤的鍵盤快速鍵
+## <a name="a-namebkmk6akeyboard-shortcuts-for-windows-powershell-tabs"></a><a name="bkmk_6"></a>Windows PowerShell 索引標籤的鍵盤快速鍵
 使用 Windows PowerShell 索引標籤時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -143,7 +143,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**上一個 PowerShell 索引標籤**|CTRL+SHIFT+TAB 僅有當任何 PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 |**下一個 Windows PowerShell 索引標籤**|CTRL+TAB 僅有當任何 PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 
-## <a name="bkmk_7"></a>開始和結束的鍵盤快速鍵
+## <a name="a-namebkmk7akeyboard-shortcuts-for-starting-and-exiting"></a><a name="bkmk_7"></a>開始和結束的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，啟動 Windows PowerShell 主控台 (PowerShell.exe) 或結束 Windows PowerShell ISE。
 
 |動作|鍵盤快速鍵|
@@ -151,12 +151,12 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**結束**|ALT+F4|
 |**啟動 PowerShell.exe** (Windows PowerShell 主控台)|CTRL+SHIFT+P|
 
-## 另請參閱
-[使用 Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+## <a name="see-also"></a>另請參閱
+- [使用 Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO3-->
 
 
