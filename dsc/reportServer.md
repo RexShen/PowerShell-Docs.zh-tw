@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 59793e1701740dc783439cf1408c6efabd53cbcf
-ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
+ms.sourcegitcommit: 1e7bc38f03dd72fc29d004eb92bf130c416e490a
+ms.openlocfilehash: f7f2699287e76970d0b2565f7bbd45a5d75ac93a
 
 ---
 
-# 使用 DSC 報表伺服器
+# <a name="using-a-dsc-report-server"></a>使用 DSC 報表伺服器
 
 > 適用於：Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
 
 節點的本機設定管理員 (LCM) 可以設定為將設定狀態相關報表傳送至提取伺服器，然後可查詢以擷取該資料。 每次節點檢查並套用設定時，皆會將報表傳送至報表伺服器。 這些報表會儲存在伺服器上的資料庫，而且可以藉由呼叫報告 Web 服務來擷取。 每份報表包含已套用的設定、是否成功套用、使用的資源、所擲回的任何錯誤，以及開始和完成時間等資訊。
 
-## 設定要傳送報表的節點
+## <a name="configuring-a-node-to-send-reports"></a>設定要傳送報表的節點
 
 您可告知節點將報表傳送至伺服器，方法是使用該節點 LCM 設定內的 **ReportServerWeb** 區塊 (如需關於設定 LCM 的相關資訊，請參閱[設定本機設定管理員](metaConfig.md))。 節點傳送報表的目標伺服器必須設定為 Web 提取伺服器 (您無法將報表傳送至 SMB 共用)。 如需設定提取伺服器的資訊，請參閱[設定 DSC Web 提取伺服器](pullServer.md)。 報表伺服器的服務可以與節點從中提取設定和取得資源的服務相同，或可以是不同的服務。
  
@@ -94,7 +94,7 @@ PullClientConfig
 
 >**注意**：當您設定提取伺服器時，您可以為 Web 服務指定任何名稱，但 **ServerURL** 屬性必須符合服務名稱。
 
-## 取得報表資料
+## <a name="getting-report-data"></a>取得報表資料
 
 傳送到提取伺服器的報表會輸入到該伺服器上的資料庫中。 可透過呼叫 Web 服務使用報表。 若要擷取特定節點的報表，請以下列形式將 HTTP 要求傳送到報表 Web 服務：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` 其中 `MyNodeAgentId` 是您要取得報表之節點的 AgentId。 您也可以呼叫該節點上的 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 以取得節點的 AgentID。
 
@@ -105,8 +105,8 @@ PullClientConfig
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCReportServer.svc")
-    $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
+    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    $requestUri = "$serviceURL/Node(ConfigurationId= '$AgentId')/StatusReports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
                -ErrorAction SilentlyContinue -ErrorVariable ev
@@ -115,7 +115,7 @@ function GetReport
 }
 ```
     
-## 檢視報表資料
+## <a name="viewing-report-data"></a>檢視報表資料
 
 如果您將變數設定為 **GetReport** 函式的結果，您就可以在傳回陣列的項目中檢視個別欄位：
 
@@ -222,7 +222,7 @@ InDesiredState    : True
 
 請注意，這些範例主要供您了解可以如何處理報表資料。 如需在 PowerShell 中搭配使用 JSON 的簡介，請參閱[Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (以 JSON 和 PowerShell 播放)。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [設定本機設定管理員](metaConfig.md)
 - [設定 DSC Web 提取伺服器](pullServer.md)
 - [使用設定名稱設定提取用戶端](pullClientConfigNames.md)
@@ -230,6 +230,6 @@ InDesiredState    : True
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO3-->
 
 
