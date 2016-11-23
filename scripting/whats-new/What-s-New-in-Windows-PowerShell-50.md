@@ -14,19 +14,19 @@ ms.openlocfilehash: 966cab74cb2519893d4744e8bd0ca12f93f73136
 
 ---
 
-# Windows PowerShell 的新功能
+# <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 的新功能
 Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
 
 Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，通常可在不進行變更的情況下於 Windows PowerShell 5.0 中運作。
 
-# 安裝 Windows PowerShell
+# <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
 Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows PowerShell 5.0。 
 
 若要在 Windows Server 2012 R2、Windows 8.1 企業版或 Windows 8.1 專業版上安裝 Windows PowerShell 5.0，請下載並安裝 [Windows Management Framework 5.0](http://aka.ms/wmf5download)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，然後再安裝 Windows Management Framework 5.0。
 
-## 本主題內容
+## <a name="in-this-topic"></a>本主題內容
 
--   [KB 3000850 中的 Windows PowerShell 4.0 DSC 更新](#BKMK_3000850)
+-   [KB 3000850 的 Windows PowerShell 4.0 DSC 更新](#BKMK_3000850)
 
 -   [Windows PowerShell 5.0 的新功能](#BKMK_new50)
 
@@ -34,7 +34,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   [Windows PowerShell 3.0 的新功能](#BKMK_wps3)
 
-## <a name="BKMK_3000850"></a>2014 年 11 月的 Windows PowerShell 4.0 更新彙總套件 (KB 3000850)
+## <a name="a-namebkmk3000850awindows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a><a name="BKMK_3000850"></a>2014 年 11 月的 Windows PowerShell 4.0 更新彙總套件 (KB 3000850)
 [2014 年 11 月的 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 更新彙總套件](https://support.microsoft.com/kb/3000850/) (KB 3000850) 針對 Windows PowerShell 4.0 中的 Windows PowerShell 預期狀態設定 (DSC) 提供了許多更新與改善。 您可以在 Windows PowerShell 中執行 `Get-Hotfix -Id KB3000850`，以判斷系統是否已安裝 KB 3000850。
 
 -   更新 [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) 模組中現有的 Cmdlet。
@@ -131,7 +131,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   [封存資源](http://technet.microsoft.com/library/dn249917.aspx)現可支援認證。
 
-## <a name="BKMK_new50"></a>Windows PowerShell 5.0 的新功能
+## <a name="a-namebkmknew50anew-features-in-windows-powershell-50"></a><a name="BKMK_new50"></a>Windows PowerShell 5.0 的新功能
 
 -   [Windows PowerShell 的新功能](#BKMK_newcore)
 
@@ -143,7 +143,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   [Windows PowerShell 5.0 的重大錯誤修正](#BKMK_5bugfix)
 
-### <a name="BKMK_newcore"></a>Windows PowerShell 的新功能
+### <a name="a-namebkmknewcoreanew-features-in-windows-powershell"></a><a name="BKMK_newcore"></a>Windows PowerShell 的新功能
 
 -   自 Windows PowerShell 5.0 版開始，您可以透過使用類似其他物件導向之程式設計語言的正式語法和語意，以使用類別進行開發。 **Class**、**Enum** 與其他關鍵字已新增至 Windows PowerShell 語言以支援新功能。 如需使用類別的詳細資訊，請參閱＜about_Classes＞。
 
@@ -197,7 +197,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   New-Guid Cmdlet 會利用 .NET Framework Guid 類別來產生 GUID；在您撰寫指令碼或 DSC 資源時非常實用。
 
--   由於檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下，因此針對 FileInfo 物件提供新的 FileVersionRaw 和 ProductVersionRaw 指令碼屬性。 例如，您可以執行下列命令，以顯示 powershell.exe 的上述屬性值，其中 $pid 包含 Windows PowerShell 執行工作階段的處理程序識別碼：  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+-   由於檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下，因此針對 FileInfo 物件提供新的 FileVersionRaw 和 ProductVersionRaw 指令碼屬性。 例如，您可以執行下列命令，以顯示 powershell.exe 的上述屬性值，其中 $pid 包含 Windows PowerShell 執行中工作階段的處理序識別碼：  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
 -   新的 Enter-PSHostProcess 與 Exit-PSHostProcess Cmdlet 可讓您將處理程序中的 Windows PowerShell 指令碼與目前正在 Windows PowerShell 主控台中執行的處理程序分開，以進行個別偵錯。 您可執行 Enter-PSHostProcess 輸入或附加特定處理程序識別碼，然後執行 Get-Runspace 傳回處理程序內的使用中 Runspace。 完成處理程序內的指令碼偵錯時，可執行 Exit-PSHostProcess 以中斷處理程序的連結。
 
@@ -229,7 +229,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   **$PSVersionTable.PSVersion** 的值已經更新至 5.0。
 
-### <a name="BKMK_newDSC"></a>Windows PowerShell 預期狀態設定的新功能
+### <a name="a-namebkmknewdscanew-features-in-windows-powershell-desired-state-configuration"></a><a name="BKMK_newDSC"></a>Windows PowerShell 預期狀態設定的新功能
 
 -   Windows PowerShell 語言增強功能可讓您使用類別來定義 Windows PowerShell 預期狀態設定 (DSC) 資源。 Import\-DscResource 現為真實動態關鍵字；Windows PowerShell 會剖析指定模組的根模組，搜尋包含 DscResource 屬性的類別。 現在，您可以使用類別來定義 DSC 資源；在這種情況下，模組資料夾中不需具備 MOF 檔案，也不需要 DSCResource 子資料夾。 Windows PowerShell 模組檔案可以包含多個 DSC 資源類別。
 
@@ -293,7 +293,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
     -   新的 Update-DscConfiguration Cmdlet 會強制處理設定。 如果本機設定管理員處於提取模式，此 Cmdlet 會從提取伺服器取得設定之後才套用。
 
-### <a name="BKMK_newISE"></a>Windows PowerShell ISE 的新功能
+### <a name="a-namebkmknewiseanew-features-in-windows-powershell-ise"></a><a name="BKMK_newISE"></a>Windows PowerShell ISE 的新功能
 
 -   現在，您可透過執行 Enter\-PSSession 來在存有您要編輯之檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit <path and file name on the remote computer>**，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
 
@@ -303,17 +303,17 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
-### <a name="BKMK_newOData"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
+### <a name="a-namebkmknewodataanew-features-in-windows-powershell-web-services-management-odata-iis-extension"></a><a name="BKMK_newOData"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
 -   從 Windows PowerShell 5.0 版開始，您可以藉由執行新的 [Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) 模組中的 Export\-ODataEndpointProxy Cmdlet，以依據特定 OData 端點公開的功能，產生一組 Windows PowerShell Cmdlet。
 
-### <a name="BKMK_5bugfix"></a>Windows PowerShell 5.0 的重大錯誤修正
+### <a name="a-namebkmk5bugfixanotable-bug-fixes-in-windows-powershell-50"></a><a name="BKMK_5bugfix"></a>Windows PowerShell 5.0 的重大錯誤修正
 
 -   Windows PowerShell 5.0 包含新的 COM 實作，它在您使用 COM 物件時可提供大幅的效能改善。 如需效果的示範影片，請參閱 [Com_Perf_Improvements](http://1drv.ms/1qu3UPZ)。
 
 -   Windows PowerShell 工作階段中第一次 Tab 鍵自動完成的效能獲得了顯著的改善，Tab 鍵自動完成時間幾乎縮短 500 毫秒。
 
-## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 的新功能
+## <a name="a-namebkmkwps4anew-features-in-windows-powershell-40"></a><a name="BKMK_wps4"></a>Windows PowerShell 4.0 的新功能
 Windows PowerShell 4.0 與舊版相容。 針對 Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，均可在不進行變更的情況下於 Windows PowerShell 4.0 中運作。
 
 Windows PowerShell 4.0 預設已安裝於 Windows® 8.1 和 Windows Server 2012 R2 之上。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安裝 Windows PowerShell 4.0，請下載並安裝 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，然後再安裝 Windows Management Framework 4.0。
@@ -332,7 +332,7 @@ Windows PowerShell 4.0 預設已安裝於 Windows® 8.1 和 Windows Server 2012 
 
 Windows PowerShell 4.0 包括下列新功能。
 
-### <a name="BKMK_core"></a>Windows PowerShell 的新功能
+### <a name="a-namebkmkcoreanew-features-in-windows-powershell"></a><a name="BKMK_core"></a>Windows PowerShell 的新功能
 
 -   **Windows PowerShell 預期狀態設定** (DSC) 是 Windows PowerShell 4.0 中的新管理系統，可用來部署及管理軟體服務與這些服務執行所在之環境的設定資料。 如需 DSC 的詳細資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
 
@@ -372,13 +372,13 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   **Where()** 運算子行為已經改變。 `Collection.Where('property -match name')` 已不再接受 `"Property -CompareOperator Value"` 格式的字串運算式。 但是，**Where()** 運算子還是可以接受 Scriptblock 格式的字串運算式。
 
-### <a name="BKMK_ise"></a>Windows PowerShell 整合式指令碼環境 (ISE) 的新功能
+### <a name="a-namebkmkiseanew-features-in-windows-powershell-integrated-scripting-environment-ise"></a><a name="BKMK_ise"></a>Windows PowerShell 整合式指令碼環境 (ISE) 的新功能
 
 -   Windows PowerShell ISE 同時支援 Windows PowerShell 工作流程偵錯和遠端指令碼偵錯。
 
 -   已新增對 Windows PowerShell 預期狀態設定之提供者與設定的 IntelliSense 支援。
 
-### <a name="BKMK_workflow"></a>Windows PowerShell 工作流程的新功能
+### <a name="a-namebkmkworkflowanew-features-in-windows-powershell-workflow"></a><a name="BKMK_workflow"></a>Windows PowerShell 工作流程的新功能
 
 -   已在反覆運算管線環境中新增對新的 **PipelineVariable** 一般參數的支援，例如 System Center Orchestrator 所使用的一般參數；也就是單純地從左至右執行命令的管線，與使用資料流執行時的方向相反。
 
@@ -394,7 +394,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   現在如果沒有作用中工作階段、沒有進行中的工作，以及沒有擱置中的工作，工作流程端點就會自動關閉。 在達到自動關閉條件時，此功能可以節省做為工作流程伺服器使用之電腦上的資源。
 
-### <a name="BKMK_psws"></a>Windows PowerShell Web 服務的新功能
+### <a name="a-namebkmkpswsanew-features-in-windows-powershell-web-services"></a><a name="BKMK_psws"></a>Windows PowerShell Web 服務的新功能
 
 -   當 Cmdlet 執行時，若 Windows PowerShell Web 服務 (PSWS，亦稱為「管理 OData IIS 擴充功能」) 發生錯誤，將會傳回更多詳細的錯誤訊息給呼叫者。 此外，錯誤碼會以 [Windows Azure REST API 錯誤碼指導方針](http://msdn.microsoft.com/library/windowsazure/dd179357.aspx)為依據。
 
@@ -412,7 +412,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   在這一版的 PSWS 之前, 執行建立、更新或刪除作業的唯一方式是叫用位於最上層資源的 Post、Put 或 Delete。 這一版 PSWS 的新功能是，Contained Resource 作業可讓使用者在以不那麼直接的方式 (就像原本就包含這些資源一樣) 連線相同的資源時達到相同的結果。
 
-### <a name="BKMK_powwa"></a>Windows PowerShell Web 存取的新功能
+### <a name="a-namebkmkpowwaanew-features-in-windows-powershell-web-access"></a><a name="BKMK_powwa"></a>Windows PowerShell Web 存取的新功能
 
 -   您可以在網頁式 Windows PowerShell Web 存取主控台中與現有工作階段中斷連線，然後重新連線。 網頁式主控台中會有一個 [儲存] 按鈕，供您在不刪除工作階段的情況下與工作階段中斷連線，然後在其他時間重新連線。
 
@@ -422,7 +422,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   您現在可以透過針對每個工作階段使用一個新的瀏覽器索引標籤，來於單一瀏覽器工作階段中處理多個 Windows PowerShell Web 存取工作階段。 您不需要再開啟新的瀏覽器工作階段以連線至網頁式 Windows PowerShell 主控台中的新工作階段。
 
-### <a name="BKMK_bugs"></a>Windows PowerShell 4.0 的重大錯誤修正
+### <a name="a-namebkmkbugsanotable-bug-fixes-in-windows-powershell-40"></a><a name="BKMK_bugs"></a>Windows PowerShell 4.0 的重大錯誤修正
 
 -   **Get-Counter** 現可傳回包含法文版 Windows 中單引號字元的計數器。
 
@@ -458,7 +458,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   已經改善匯入定義巢狀工作流程之工作流程的處理效能；現在執行此程序的速度比以前更快。
 
-## <a name="BKMK_wps3"></a>Windows PowerShell 3.0 的新功能
+## <a name="a-namebkmkwps3anew-features-in-windows-powershell-30"></a><a name="BKMK_wps3"></a>Windows PowerShell 3.0 的新功能
 Windows PowerShell 3.0 包括下列新功能。
 
 -   [Windows PowerShell 工作流程](#BKMK_Workflow)
@@ -473,7 +473,7 @@ Windows PowerShell 3.0 包括下列新功能。
 
 -   [已中斷連線的工作階段](#BKMK_Disconnected)
 
--   [健全的工作階段連線](#BKMK_Robust)
+-   [強固的工作階段連線](#BKMK_Robust)
 
 -   [可更新的說明系統](#BKMK_UpHelp)
 
@@ -481,15 +481,15 @@ Windows PowerShell 3.0 包括下列新功能。
 
 -   [CIM 整合](#BKMK_CIM)
 
--   [工作階段設定檔案](#BKMK_ConfigFile)
+-   [工作階段設定檔](#BKMK_ConfigFile)
 
--   [排程工作與工作排程器整合](#BKMK_ScheduledJob)
+-   [排程的工作與工作排程器整合](#BKMK_ScheduledJob)
 
 -   [Windows PowerShell 語言增強功能](#BKMK_Lang)
 
 -   [新的核心 Cmdlet](#BKMK_Core)
 
--   [對現有核心 Cmdlet 與提供者的改善](#BKMK_Prov)
+-   [現有核心 Cmdlet 與提供者的改進](#BKMK_Prov)
 
 -   [遠端模組匯入及探索](#BKMK_REM)
 
@@ -497,25 +497,25 @@ Windows PowerShell 3.0 包括下列新功能。
 
 -   [模組自動載入](#BKMK_AutoLoad)
 
--   [模組體驗改善](#BKMK_MOD)
+-   [模組體驗改進](#BKMK_MOD)
 
 -   [簡化的命令探索](#BKMK_SIMPLE)
 
--   [改善的記錄、診斷與群組原則支援](#BKMK_LOG)
+-   [改進的記錄、診斷與群組原則支援](#BKMK_LOG)
 
--   [格式設定與輸出改善](#BKMK_OUT)
+-   [格式設定與輸出的改進](#BKMK_OUT)
 
 -   [增強的主控台主機體驗](#BKMK_HOST)
 
 -   [新的 Cmdlet 與裝載 API](#BKMK_API)
 
--   [效能改善](#BKMK_PERF)
+-   [效能改進](#BKMK_PERF)
 
 -   [RunAs 與共用主機支援](#BKMK_RUNAS)
 
--   [特殊字元處理改善](#BKMK_CHAR)
+-   [特殊字元處理的改進](#BKMK_CHAR)
 
-### <a name="BKMK_Workflow"></a>Windows PowerShell 工作流程
+### <a name="a-namebkmkworkflowawindows-powershell-workflow"></a><a name="BKMK_Workflow"></a>Windows PowerShell 工作流程
 Windows PowerShell® 工作階段將 Windows Workflow Foundation 的功能帶給 Windows PowerShell。 您現在可以使用 XAML 或使用 Windows PowerShell 語言來撰寫工作流程，以及透過與 Cmdlet 相同的執行方式來執行工作流程。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 可取得工作流程命令，而 [Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 可取得工作流程的說明。
 
 工作流程是一系列長時間執行、可重複、經常性、平行式、可中斷、可暫停，以及可重新啟動的多部電腦管理活動。 工作流程可以從蓄意或意外中斷 (例如網路中斷、Windows 重新啟動，或電源中斷) 中恢復繼續運作。
@@ -524,39 +524,39 @@ Windows PowerShell® 工作階段將 Windows Workflow Foundation 的功能帶給
 
 下列為 Windows PowerShell 工作流程的好處
 
--   **自動化連續性、長時間執行的工作。**
+-   **將連續性、長時間執行的工作自動化。**
 
 -   **遠端監視長時間執行的工作**。 隨時可觀看活動的狀態與進度。
 
 -   **多部電腦管理。** 在數百個受管理節點上以工作流程形式同時執行工作。 Windows PowerShell 工作流程包括一個一般管理參數的內建程式庫，例如 **PSComputerName**，它可以支援多部電腦管理案例。
 
--   **以單一工作執行方式執行複雜的處理程序。** 您可以將實作整個端對端案例的相關指令碼結合成單一工作流程。
+-   **以單一工作執行複雜的處理程序。** 您可以將實作整個端對端案例的相關指令碼結合成單一工作流程。
 
 -   **持續性**：工作流程會在其作者定義的特定時間點儲存 (或建立檢查點)，因此您可以從上一個持續工作 (或檢查點) 繼續工作流程，而不需要從頭開始重新啟動工作流程。
 
--   **健全性。** 自動化失敗修復。 工作流程可在計劃性與非計劃性重新啟動之後繼續執行。 您可以暫停工作流程執行，然後從上一個持續時間點繼續工作流程。 工作流程作者可以指定在一或多個受管理節點失敗時，要重新執行的特定活動。
+-   **強固性。** 自動化失敗修復。 工作流程可在計劃性與非計劃性重新啟動之後繼續執行。 您可以暫停工作流程執行，然後從上一個持續時間點繼續工作流程。 工作流程作者可以指定在一或多個受管理節點失敗時，要重新執行的特定活動。
 
--   **可以在已中斷連線的工作階段中中斷連線、重新連線，以及執行的能力。** 使用者可以與工作流程伺服器連線及中斷連線，但是工作流程會繼續執行。 您可以登出用戶端電腦或重新啟動用戶端電腦，以及在不中斷工作流程的情況下從另一部電腦監視工作流程執行。
+-   **具備在中斷連線的工作階段中中斷連線、重新連線，以及執行的能力。** 使用者可以與工作流程伺服器連線及中斷連線，但是工作流程會繼續執行。 您可以登出用戶端電腦或重新啟動用戶端電腦，以及在不中斷工作流程的情況下從另一部電腦監視工作流程執行。
 
 -   **排程。** 工作流程工作的排定方式和任何 Windows PowerShell Cmdlet 或指令碼一樣。
 
--   **工作流程與連線節流處理。** 可以針對工作流程執行與節點的連線進行節流處理，這可以提供延展性與高可用性。
+-   **工作流程與連線節流。** 可以針對工作流程執行與節點的連線進行節流處理，這可以提供延展性與高可用性。
 
-### <a name="BKMK_WebAccess"></a>Windows PowerShell Web 存取
+### <a name="a-namebkmkwebaccessawindows-powershell-web-access"></a><a name="BKMK_WebAccess"></a>Windows PowerShell Web 存取
 Windows PowerShell® Web 存取是一個 Windows Server 2012 功能，可以讓使用者在網頁式主控台中執行 Windows PowerShell 命令與指令碼。 使用網頁式主控台的裝置不需要 Windows PowerShell、遠端管理軟體，或瀏覽器外掛程式安裝。 它們只需要正確設定的 Windows PowerShell Web 存取閘道，以及支援 JavaScript® 並接受 Cookie 的用戶端裝置瀏覽器。
 
 如需詳細資訊，請參閱[部署 Windows PowerShell Web 存取](http://go.microsoft.com/fwlink/p/?LinkID=221050)。
 
-### <a name="BKMK_ISE"></a>新的 Windows PowerShell ISE 功能
+### <a name="a-namebkmkiseanew-windows-powershell-ise-features"></a><a name="BKMK_ISE"></a>Windows PowerShell ISE 的新功能
 Windows PowerShell® 整合式指令碼環境 (ISE) 針對 Windows PowerShell 3.0 有許多新功能，包括 IntelliSense、顯示命令視窗、統一的主控台窗格、程式碼片段、括號對稱、展開折疊區段、自動儲存、最近使用的項目清單、多種內容複製、區塊複製，以及針對撰寫 Windows PowerShell 指令碼工作流程的完整支援。 如需詳細資訊，請參閱 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
 
-### <a name="BKMK_NET4"></a>支援 Microsoft .NET Framework 4
+### <a name="a-namebkmknet4asupport-for-microsoft-net-framework-4"></a><a name="BKMK_NET4"></a>支援 Microsoft .NET Framework 4.0
 Windows PowerShell 是針對 Common Language Runtime 4.0 所建立。 Cmdlet、指令碼與工作流程作者可以使用 Windows PowerShell 中新的 Microsoft .NET Framework 4 類別，其功能包括應用程式相容性與部署、Managed Extensibility Framework、平行運算、網路、Windows Communication Foundation 及 Windows Workflow Foundation。
 
-### <a name="BKMK_WinPE"></a>支援 Windows 預先安裝環境
+### <a name="a-namebkmkwinpeasupport-for-windows-preinstallation-environment"></a><a name="BKMK_WinPE"></a>支援 Windows 預先安裝環境
 Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Windows PE) 4.0 的選用元件。 Windows PE 是啟動尚未安裝作業系統之電腦的最小作業系統，並且可以讓電腦準備好以安裝 Windows。 Windows PE 可以用來分割及格式化硬碟、複製磁碟映像至電腦，以及從網路共用位置起始 Windows 安裝程式。 Windows PowerShell 3.0 可以在 Windows PE 上使用，以管理部署、診斷與修復案例。
 
-### <a name="BKMK_Disconnected"></a>已中斷連線的工作階段
+### <a name="a-namebkmkdisconnectedadisconnected-sessions"></a><a name="BKMK_Disconnected"></a>已中斷連線的工作階段
 從 Windows PowerShell 3.0 開始，您使用 New-PSSession Cmdlet 建立的持續性使用者管理的工作階段 ("PSSessions") 會儲存在遠端電腦上。 它們已經不再與它們建立所在的工作階段相依。
 
 您現在可以與工作階段中斷連線，而不會中斷工作階段中正在執行的命令。 您可以關閉工作階段並關閉您的電腦。 稍後您可以在相同或不同的電腦上，從不同的工作階段重新連線至工作階段。
@@ -567,14 +567,14 @@ Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Wi
 
 只有在位於連線起始端 (用戶端) 與終止端 (伺服器) 的電腦是執行 Windows PowerShell 3.0 時，才支援「已中斷連線的工作階段」功能。
 
-### <a name="BKMK_Robust"></a>健全的工作階段連線
+### <a name="a-namebkmkrobustarobust-session-connectivity"></a><a name="BKMK_Robust"></a>健全的工作階段連線
 Windows PowerShell 3.0 會偵測用戶端與伺服器之間是否發生未預期的連線中斷，並嘗試自動重新建立連線及繼續執行。 如果無法在配置的時間內重新建立用戶端伺服器連線，就會通知使用者並中斷連線工作階段。 嘗試重新連線期間，Windows PowerShell 會持續向使用者提供回饋。
 
 如果是使用 InvokeCommand 啟動中斷連線的工作階段，Windows PowerShell 會為中斷連線的工作階段建立一個工作，使其更容易重新連線及繼續執行。
 
 這些功能可提供更可靠且更容易修復的遠端體驗，且可允許使用者執行需要健全工作階段的長時間執行工作，例如工作流程。
 
-### <a name="BKMK_UpHelp"></a>可更新的說明系統
+### <a name="a-namebkmkuphelpaupdatable-help-system"></a><a name="BKMK_UpHelp"></a>可更新的說明系統
 您現在可以為您模組中的 Cmdlet 下載已更新的說明檔案。 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 可識別最新的說明檔案，將其從網際網路下載、解壓縮、驗證，然後安裝在模組的正確語言特定目錄中。
 
 若要使用已更新的說明檔案，只要輸入 `Get-Help` 即可。 您不需要重新啟動 Windows 或 Windows PowerShell。 若要為 $pshome 目錄中的模組更新說明檔案，請使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell。
@@ -589,7 +589,7 @@ Windows 8 與 Windows Server 2012 模組並沒有包含說明檔案。 若要下
 
 任何模組作者都可以為其模組的可更新的說明提供支援。 您可以在模組中包括說明檔案並使用「可更新的說明」來更新說明檔案，或在模組中省略說明檔案並使用「可更新的說明」來安裝說明檔案。 如需支援「可更新的說明」的詳細資訊，請參閱 MSDN 中的[支援可更新的說明](http://go.microsoft.com/FWLink/?LinkID=242129)。
 
-### <a name="BKMK_Online"></a>增強的線上說明
+### <a name="a-namebkmkonlineaenhanced-online-help"></a><a name="BKMK_Online"></a>增強的線上說明
 Windows PowerShell 線上說明對所有使用者來說都是很寶貴的資源，但是對於沒有或無法安裝更新的說明檔案的使用者而言，更是特別重要。
 
 若要針對任何 Windows PowerShell Cmdlet 取得線上說明，請輸入：
@@ -613,10 +613,10 @@ http://go.microsoft.com/fwlink/?LinkID=223923
 
 如需支援「可更新的說明」的詳細資訊，請參閱 MSDN 中的[支援線上說明](http://go.microsoft.com/fwlink/?LinkId=242132)。
 
-### <a name="BKMK_CIM"></a>CIM 整合
+### <a name="a-namebkmkcimacim-integration"></a><a name="BKMK_CIM"></a>CIM 整合
 Windows PowerShell 3.0 支援通用訊息模型 (CIM)，它可為系統、網路、應用程式及服務提供管理資訊的一般定義，讓它們能夠在異質系統之間交換管理資訊。 Windows PowerShell 3.0 中對 CIM 的支援，包括依據新的或現有的 CIM 類別編寫 Windows PowerShell Cmdlet 的能力、依據 Cmdlet 定義 XML 檔案編寫命令的能力，以及針對 CIM .NET Framework 的支援。 API、CIM 管理 Cmdlet 與 WMI 2.0 提供者。
 
-### <a name="BKMK_ConfigFile"></a>工作階段設定檔案
+### <a name="a-namebkmkconfigfileasession-configuration-files"></a><a name="BKMK_ConfigFile"></a>工作階段設定檔案
 從 Windows PowerShell 3.0 開始，您可以使用檔案來設計自訂工作階段設定。 新的工作階段設定檔案可讓您決定使用工作階段設定之工作階段的環境，包括要在工作階段中載入哪些模組、指令碼及格式檔案、使用者可以使用哪些 Cmdlet 和語言元素、使用者可以執行哪些模組和指令碼，以及使用者可以看見哪些變數。
 
 您可以設計一個工作階段，讓使用者只能在裡面執行來自某個特定模組的 Cmdlet，或設計一個工作階段，讓使用者在裡面擁有完整語言、所有模組的完整存取權，以及可執行進階工作之指令碼的完整存取權。
@@ -627,7 +627,7 @@ Windows PowerShell 3.0 支援通用訊息模型 (CIM)，它可為系統、網路
 
 如需詳細資訊，請參閱 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 與 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
 
-### <a name="BKMK_ScheduledJob"></a>排程工作與工作排程器整合
+### <a name="a-namebkmkscheduledjobascheduled-jobs-and-task-scheduler-integration"></a><a name="BKMK_ScheduledJob"></a>排程工作與工作排程器整合
 您現在可以排程 Windows PowerShell 背景工作，並在 Windows PowerShell 和工作排程器中管理它們。
 
 Windows PowerShell 排程工作為 Windows PowerShell 背景工作及工作排程器工作的有用混合體。
@@ -640,10 +640,10 @@ Windows PowerShell 排程工作為 Windows PowerShell 背景工作及工作排�
 
 如需排程工作的詳細資訊，請參閱 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)。
 
-### <a name="BKMK_Lang"></a>Windows PowerShell 語言增強功能
+### <a name="a-namebkmklangawindows-powershell-language-enhancements"></a><a name="BKMK_Lang"></a>Windows PowerShell 語言增強功能
 Windows PowerShell 3.0 包括許多為了使其語言更簡單、更容易使用，以及避免發生一般錯誤所設計的功能。 這些改善項目包括屬性列舉、純量物件的計數和長度屬性、新的重新導向運算子、$Using 範圍修飾詞、PSItem 自動變數、彈性指令碼格式設定、變數屬性、簡化的屬性引數、數字命令名稱、Stop-Parsing 運算子、改善的陣列展開、全新位元運算子、排序的字典、PSCustomObject 轉換，以及改善的以註解為基礎的說明。
 
-### <a name="BKMK_Core"></a>新的核心 Cmdlet
+### <a name="a-namebkmkcoreanew-core-cmdlets"></a><a name="BKMK_Core"></a>新的核心 Cmdlet
 新的 Cmdlet 已經新增至 Windows PowerShell 核心安裝，包括用來管理排程工作、已中斷連線的工作階段、CIM 整合，以及可更新的說明系統的 Cmdlet。
 
 |||
@@ -677,20 +677,20 @@ Windows PowerShell 3.0 包括許多為了使其語言更簡單、更容易使用
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="BKMK_Prov"></a>對現有核心 Cmdlet 與提供者的改善
+### <a name="a-namebkmkprovaimprovements-to-existing-core-cmdlets-and-providers"></a><a name="BKMK_Prov"></a>對現有核心 Cmdlet 與提供者的改善
 Windows PowerShell 3.0 包含針對現有 Cmdlet 的新功能，包括簡化的語法，以及下列 Cmdlet 的新參數：Computer Cmdlet、CSV Cmdlet、Get\-ChildItem、Get\-Command、Get\-Content、Get\-History、Measure\-Object、Security Cmdlet、Select\-Object、Select\-String、Split\-Path、Start\-Process、Tee\-Object、Test\-Connection、Add\-Member 與 WMI Cmdlet。
 
 Windows PowerShell 提供者也已經大幅改善，包括用於管理虛擬主機之安全通訊端層 (SSL) 憑證的憑證提供者支援，認證支援、持續性網路磁碟機，以及檔案系統磁碟機中的替代資料流。
 
-### <a name="BKMK_REM"></a>遠端模組匯入及探索
+### <a name="a-namebkmkremaremote-module-import-and-discovery"></a><a name="BKMK_REM"></a>遠端模組匯入及探索
 Windows PowerShell 3.0 可延伸遠端電腦上的模組探索、匯入及隱含遠端執行功能。 Module Cmdlet 可使用 Windows PowerShell 遠端執行功能取得遠端電腦上的模組，並且將模組匯入到遠端或本機電腦。 新的 CIM 工作階段支援可讓您透過將在遠端電腦上以隱含方式執行的命令匯入到本機電腦，以使用 CIM 和 WMI 來管理非 Windows 電腦。
 
 如需詳細資訊，請參閱 [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) 與 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
 
-### <a name="BKMK_TAB"></a>增強的 Tab 鍵自動完成
+### <a name="a-namebkmktabaenhanced-tab-completion"></a><a name="BKMK_TAB"></a>增強的 Tab 鍵自動完成
 Windows PowerShell 主控台中的 Tab 鍵自動完成現在可以完成 Cmdlet、參數、參數值、列舉、.NET Frameworks 類型、COM 物件、隱藏目錄及其他項目的名稱。 Tab 鍵自動完成功能可以依據新的剖析器與抽象語法樹來重新撰寫，以支援更多案例，包括記憶體內部剖析樹狀結構和中線 Tab 鍵自動完成。
 
-### <a name="BKMK_AutoLoad"></a>模組自動載入
+### <a name="a-namebkmkautoloadamodule-auto-loading"></a><a name="BKMK_AutoLoad"></a>模組自動載入
 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 現在可取得電腦上安裝之全部模組的所有 Cmdlet 和函式，即使模組沒有匯入目前的工作階段中也一樣。
 
 當您取得您需要的 Cmdlet 時，您可以立即使用，不需要匯入任何模組。 Windows PowerShell 模組現在會在您使用模組中的任何 Cmdlet 時自動匯入。 您不需要再搜尋及匯入模組，就可以使用模組的 Cmdlet。
@@ -701,7 +701,7 @@ Windows PowerShell 主控台中的 Tab 鍵自動完成現在可以完成 Cmdlet�
 
 如需詳細資訊，請參閱 [about_Modules [v4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b) 及 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 與 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
 
-### <a name="BKMK_MOD"></a>模組體驗改善
+### <a name="a-namebkmkmodamodule-experience-improvements"></a><a name="BKMK_MOD"></a>模組體驗改善
 Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新功能。
 
 1.  個別模組的模組記錄 (LogPipelineExecutionDetails) 和新的「開啟模組記錄」群組原則設定。
@@ -722,39 +722,39 @@ Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新
 
 9. 改善的 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet (包含 **MinimumVersion** 與 **RequiredVersion** 參數)
 
-### <a name="BKMK_SIMPLE"></a>簡化的命令探索
+### <a name="a-namebkmksimpleasimplified-command-discovery"></a><a name="BKMK_SIMPLE"></a>簡化的命令探索
 您不需要再匯入所有模組即可探索您的工作階段中可用的命令。 在 Windows PowerShell 3.0 中，[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 會從所有已安裝的模組中取得所有命令。 而且，當您使用命令時，匯出命令的模組就會自動匯入到您的工作階段。
 
 新的 [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) Cmdlet 是特別為初學者所設計。 您可以在視窗中搜尋命令。 您可以直接在視窗中檢視所有命令或依模組篩選命令、按一下按鈕來匯入模組、使用文字方塊與下拉式清單建構有效的命令，然後複製或執行命令。
 
-### <a name="BKMK_LOG"></a>改善的記錄、診斷與群組原則支援
+### <a name="a-namebkmklogaimproved-logging-diagnostics-and-group-policy-support"></a><a name="BKMK_LOG"></a>改善的記錄、診斷與群組原則支援
 Windows PowerShell 3.0 透過支援 Windows 事件追蹤 (ETW) 記錄檔、模組的可編輯 **LogPipelineExecutionDetails** 屬性，以及「開啟模組記錄」群組原則設定，改善了命令與模組的記錄與追蹤支援。 您現在可以透過顯示記錄內容，來從記錄詳細資料中取得參數值。
 
-### <a name="BKMK_OUT"></a>格式設定與輸出改善
+### <a name="a-namebkmkoutaformatting-and-output-improvements"></a><a name="BKMK_OUT"></a>格式設定與輸出改善
 新的格式設定與輸出改善項目改善了所有 Windows PowerShell 使用者的效率。 改善項目包括所有資料流的輸出重新導向、在沒有 Format.ps1xml 檔案的情況下動態新增類型的已增強 Update-Type Cmdlet、在輸出中自動換行、自訂物件的預設格式設定屬性、**PSCustomObject** 類型、改善的 WMI 物件與異質物件格式設定，以及支援探索方法多載。
 
-### <a name="BKMK_HOST"></a>增強的主控台主機體驗
+### <a name="a-namebkmkhostaenhanced-console-host-experience"></a><a name="BKMK_HOST"></a>增強的主控台主機體驗
 Windows PowerShell 主控台主機程式在 Windows PowerShell 3.0 中擁有新的功能，包括預設的單一執行緒 Apartment。 檔案總管中新的 [用 PowerShell 執行] 選項，可讓您只要以滑鼠右鍵按一下，就可以在不受限制的工作階段中執行指令碼。 新的主控台主機啟動邏輯可以更快速地啟動 Windows PowerShell，而新字型則可以讓您將熟悉的主控台視窗體驗個人化。
 
 如需詳細資訊，請參閱 [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)。
 
-### <a name="BKMK_API"></a>新的 Cmdlet 與裝載 API
+### <a name="a-namebkmkapianew-cmdlet-and-hosting-apis"></a><a name="BKMK_API"></a>新的 Cmdlet 與裝載 API
 新的 Cmdlet API 與裝載 API 包括公用進階語法樹 (AST) API，以及用於管線分頁、巢狀管線、Runspace 集區 Tab 鍵自動完成、Windows RT、過時 Cmdlet 屬性，以及 FunctionInfo 物件之 Verb 與 Noun 屬性的 API。
 
-### <a name="BKMK_PERF"></a>效能改善
-Windows PowerShell 中效能大幅改善的原因是來自全新的語言剖析器 (以 .NET Framework 4 中的動態執行階段語言 (DLR) 為基礎所建立) 以及改善的執行階段指令碼編譯、引擎可靠性，而 [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) 的演算法變更改善了它的效能，特別是在搜尋網路共用時。
+### <a name="a-namebkmkperfaperformance-improvements"></a><a name="BKMK_PERF"></a>效能改善
+Windows PowerShell 中效能大幅改善的原因是來自全新的語言剖析器 (以 .NET Framework 4.0 中的動態執行階段語言 (DLR) 為基礎所建立) 以及改善的執行階段指令碼編譯、引擎可靠性，而 [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) 的演算法變更改善了它的效能，特別是在搜尋網路共用時。
 
-### <a name="BKMK_RUNAS"></a>RunAs 與共用主機支援
+### <a name="a-namebkmkrunasarunas-and-shared-host-support"></a><a name="BKMK_RUNAS"></a>RunAs 與共用主機支援
 Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 
 *RunAs* 功能是針對 Windows PowerShell 工作流程所設計，可讓工作階段設定的使用者建立使用共用使用者帳戶之權限執行的工作階段。 這可以讓權限較少的使用者以系統管理員權限執行特定命令與指令碼，以及減少新增較初階使用者至 Administrators 群組的需求。
 
 **SharedHost** 功能可允許多部電腦上的多名使用者同時連線至工作流程工作階段，並監視工作流程的進度。 使用者可以在某一部電腦上啟動工作流程，然後連線至另一部電腦上的工作流程工作階段，不需要與原始電腦中的工作階段中斷連線。 使用者必須具備相同權限，並使用相同的工作階段設定。 如需詳細資訊，請參閱＜開始使用 Windows PowerShell 工作流程＞中的＜執行 Windows PowerShell 工作流程＞。
 
-### <a name="BKMK_CHAR"></a>特殊字元處理改善
+### <a name="a-namebkmkcharaspecial-character-handling-improvements"></a><a name="BKMK_CHAR"></a>特殊字元處理改善
 為改善 Windows PowerShell 3.0 解譯及正確處理特殊字元的能力，用來處理路徑中特殊字元的 **LiteralPath** 參數在所有擁有 **Path** 參數的 Cmdlet (包括新的 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 與 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Cmdlet) 上幾乎都是有效的。 剖析器也包含特殊邏輯，可改善對檔案名稱與路徑中的倒引號字元 (\`) 及方括弧的處理能力。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
 - [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
@@ -762,6 +762,6 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 
 
 
-<!--HONumber=Oct16_HO5-->
+<!--HONumber=Nov16_HO3-->
 
 

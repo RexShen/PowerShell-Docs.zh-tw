@@ -7,6 +7,7 @@
 ### [PowerShell 引擎中的改善功能](5.1/engine-improvements.md)
 ### [封裝管理中的改善功能](5.1/package-management-improvements.md)
 ### [JEA 中的改善功能](5.1/jea-improvements.md)
+### [類別目錄 Cmdlet](5.1/catalog-cmdlets.md)
 ### [WMF 5.1 中已修正的 Bug](5.1/bugfixes.md)
 ## [安裝以及設定](5.1/install-configure.md)
 ## [已知問題](5.1/known-issues.md)
@@ -95,6 +96,6 @@
 ### [軟體清查記錄 (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO3-->
 
 

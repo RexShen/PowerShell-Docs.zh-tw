@@ -14,7 +14,7 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 
 ---
 
-# Windows PowerShell 核心的關於主題
+# <a name="windows-powershell-core-about-topics"></a>Windows PowerShell 核心的關於主題
 本節包含適用於所有 Windows PowerShell 模組的概念性 (「關於」) 說明主題。 如需其他模組的 [關於] 主題，請參閱特定模組的說明主題。
 
 |主題|描述|
@@ -133,9 +133,9 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|描述 WMI 查詢語言 (WQL)，這可用於取得 Windows PowerShell 中的 WMI 物件。|
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|描述 Microsoft.WsMan.Management 模組中的 Cmdlet。 說明如何一起使用這些 Cmdlet 管理 WS-Management 功能，包括 WSMan 提供者磁碟機。|
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-- [Windows PowerShell 核心](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)
 - [about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)
@@ -145,6 +145,6 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO3-->
 
 
