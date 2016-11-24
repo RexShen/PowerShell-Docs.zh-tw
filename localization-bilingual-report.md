@@ -1,28 +1,11 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [reference\README.md](https://github.com/PowerShell/powerShell-Docs/blob/6f2cc23f6fce9c267e793fa8653f292e6a6b98ec/reference/README.md) | InSyncHandedBackSuccess | [Details](#edafde9188cad3b21d0cd2b30cfaaf1bede9b1952174)
 
 ## Item Details
-##### <a name='edafde9188cad3b21d0cd2b30cfaaf1bede9b1952174'></a> Source: [reference\README.md](https://github.com/PowerShell/powerShell-Docs/blob/6f2cc23f6fce9c267e793fa8653f292e6a6b98ec/reference/README.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [reference\README.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/189e42af5d607b83333c274f3eff7d1381aa2b12/reference/README.md)
-* Handoff File: [README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-tw.xlf)
-* Handoff Datetime: 2016-11-23 22:08:56
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/38a138f9be3f769d2925702137fff5c6cf7382de/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-tw.xlf)
-* Handback Datetime: 2016-11-24 15:03:01
-* Bilingual File: [README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/38a138f9be3f769d2925702137fff5c6cf7382de/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/README.cf2da502d5141d3c542b8221274cee500c801dc1.zh-tw.xlf)
-* Bilingual Datetime: 2016-11-24 15:06:43
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
