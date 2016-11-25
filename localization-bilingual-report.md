@@ -1,11 +1,43 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [scripting\core-powershell\core-modules\Microsoft.PowerShell.Host-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md) | InSyncHandedBackSuccess | [Details](#201152ec2c4e9033041717f496b0cd26dee2355c2183)
+ [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md) | InSyncHandedBackSuccess | [Details](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
 
 ## Item Details
+##### <a name='201152ec2c4e9033041717f496b0cd26dee2355c2183'></a> Source: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Host-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Host-Module.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/1f9aed48550d2ef84a09e85c3b78bad70dc1f6b9/scripting/core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md)
+* Handoff File: [Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf)
+* Handoff Datetime: 2016-11-23 22:08:56
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf)
+* Handback Datetime: 2016-11-25 14:10:48
+* Bilingual File: [Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:49
+* [Back to Top](#report-top)
+
+##### <a name='61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248'></a> Source: [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/1f9aed48550d2ef84a09e85c3b78bad70dc1f6b9/scripting/getting-started/cookbooks/Managing-Services.md)
+* Handoff File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
+* Handoff Datetime: 2016-11-23 22:08:56
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
+* Handback Datetime: 2016-11-25 14:10:48
+* Bilingual File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:49
+* [Back to Top](#report-top)
+
 
 ## Error Details
 

@@ -28995,8 +28995,8 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf)
 * Handback Datetime: 2016-11-25 14:10:48
-* Bilingual File: [Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ca918b85b52231f96eadccded1d6910b321d2020/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf)
-* Bilingual Datetime: 2016-06-16 14:31:03
+* Bilingual File: [Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Microsoft.PowerShell.Host-Module.f7e8e946a81fe0f0747b2ed86d068b078f2bdad1.zh-tw.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:49
 * [Back to Top](#report-top)
 
 ##### <a name='33a2652eaccf42f130b86a5411930aec6a20e2bf2184'></a> Source: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Management-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Management-Module.md)
@@ -30086,8 +30086,8 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
 * Handback Datetime: 2016-11-25 14:10:48
-* Bilingual File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/bb363ea8e91a1a833ecc87f2bf266ba3f9ba1003/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
-* Bilingual Datetime: 2016-07-05 09:12:02
+* Bilingual File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:49
 * [Back to Top](#report-top)
 
 ##### <a name='d266a109b1acd97c03594f988ce2fab3c697b80c2249'></a> Source: [scripting\getting-started\cookbooks\Managing-Windows-PowerShell-Drives.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
