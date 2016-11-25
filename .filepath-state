@@ -659,9 +659,6 @@
   "61c98c54ca1b555f6b2e827fb31228bf6a2cc71d": [
     "scripting\\getting-started\\cookbooks\\Managing-Services.md"
   ],
-  "a9d6ece1df3b66090b2abf9d85019fee4db946b5": [
-    "scripting\\getting-started\\cookbooks\\Managing-Services.md"
-  ],
   "d36a862d27ed4bb8a4bed2ae58f9479ba1b29d21": [
     "scripting\\core-powershell\\Running-Remote-Commands.md"
   ],
@@ -816,12 +813,6 @@
     "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Diagnostics-Module.md"
   ],
   "201152ec2c4e9033041717f496b0cd26dee2355c": [
-    "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Host-Module.md"
-  ],
-  "10dff4577e717b2c74604515f7fa696dc7fb996b": [
-    "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Host-Module.md"
-  ],
-  "8c8923d99fda92682ddd2e4f863a727313e5ec98": [
     "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Host-Module.md"
   ],
   "33a2652eaccf42f130b86a5411930aec6a20e2bf": [
