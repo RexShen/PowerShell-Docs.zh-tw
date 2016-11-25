@@ -1,11 +1,28 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [scripting\core-powershell\ise\Using-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md) | InSyncHandedBackSuccess | [Details](#6363aff01a6018f1fc3a850c6e40ad96e485f5542223)
 
 ## Item Details
+##### <a name='6363aff01a6018f1fc3a850c6e40ad96e485f5542223'></a> Source: [scripting\core-powershell\ise\Using-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\core-powershell\ise\Using-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/4965004e24a1d53bb6e952f8389998c3b10d96f0/scripting/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+* Handoff File: [Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.zh-tw.xlf)
+* Handoff Datetime: 2016-11-23 22:08:56
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ad3b0fccecccd5a7b6b794d8209a10424467cdea/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.zh-tw.xlf)
+* Handback Datetime: 2016-11-25 15:27:38
+* Bilingual File: [Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ad3b0fccecccd5a7b6b794d8209a10424467cdea/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.zh-tw.xlf)
+* Bilingual Datetime: 2016-11-25 15:28:49
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
