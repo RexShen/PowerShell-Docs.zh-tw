@@ -8,9 +8,9 @@
 [ Handoff Success Files ](#handoff-success-list)| 2193
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 17
-[ Handback Failed Files ](#handback-failed-list)| 2
+[ Handback Failed Files ](#handback-failed-list)| 3
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
-[ In Sync Handback Files ](#insync-handback-success-list)| 175
+[ In Sync Handback Files ](#insync-handback-success-list)| 174
 [ Ignored Files ](#ignored-list)| 36
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -2243,6 +2243,7 @@
  ----------- | ------ | ------- 
  [dsc\authoringResourceComposite.md](https://github.com/PowerShell/powerShell-Docs/blob/48cfed9e0c31e24c441eafb388a799bd7fc7415f/dsc/authoringResourceComposite.md) | HandedBackFailed | [Details](#6631d60d7d82e71c315c26a0196aa3e4c1b60b1510)
  [gallery\psgallery\PackageManagement_Architecture .md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/PackageManagement_Architecture%20.md) | HandedBackFailed | [Details](#c84ff58e4378feffa15c91485826b74f421c737e120)
+ [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md) | HandedBackFailed | [Details](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
 
 ## <a name='outofsync-handback-success-list'></a> Out Of Sync Handback Success File List
 
@@ -2340,7 +2341,6 @@
  [scripting\core-powershell\ise\Using-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md) | InSyncHandedBackSuccess | [Details](#6363aff01a6018f1fc3a850c6e40ad96e485f5542223)
  [scripting\core-powershell\workflows-guide.md](https://github.com/PowerShell/powerShell-Docs/blob/4f760ef9a62d16ec709f8d25e62c2a03b8d841a5/scripting/core-powershell/workflows-guide.md) | InSyncHandedBackSuccess | [Details](#4cdd2c913eb33d29e9734c3845994d7e776db2b12232)
  [scripting\getting-started\cookbooks\Collecting-Information-About-Computers.md](https://github.com/PowerShell/powerShell-Docs/blob/d698cdd29bfe165b87494696ca2dc3486be4ab0e/scripting/getting-started/cookbooks/Collecting-Information-About-Computers.md) | InSyncHandedBackSuccess | [Details](#96204a0ce674cacd5b830f9f8b820ce3e1cbbc202241)
- [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md) | InSyncHandedBackSuccess | [Details](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
  [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#0148f4631e34e65a4336c5d1d50e313fb66397482278)
  [scripting\topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/afa259b8611f995bbf5b824179a12e3d8f15df86/scripting/topic/WinRMSecurity.md) | InSyncHandedBackSuccess | [Details](#207792452c563ec6cca5c17fbcd122372442d8ac2306)
  [wmf\5.0\audit_cms.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/audit_cms.md) | InSyncHandedBackSuccess | [Details](#2160a4b932075c98df6806c61d263d30f650b9f42311)
@@ -30074,7 +30074,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248'></a> Source: [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md)
-* Status: InSyncHandedBackSuccess
+* Status: HandedBackFailed
 * Target File: [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs.zh-tw/blob/1f9aed48550d2ef84a09e85c3b78bad70dc1f6b9/scripting/getting-started/cookbooks/Managing-Services.md)
 * Handoff File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
 * Handoff Datetime: 2016-11-23 22:08:56
@@ -30082,7 +30082,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
-* Handback Datetime: 2016-11-25 14:10:48
+* Handback Datetime: 2016-11-29 15:48:51
+* Handback Error: [handback_file_rejected](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248handback_file_rejected)
 * Bilingual File: [Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d3d9c716db16f70789b0179e2adc4f49190b2b9b/ol-handback/PowerShell/powerShell-Docs.zh-tw/live/Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf)
 * Bilingual Datetime: 2016-11-25 14:11:49
 * [Back to Top](#report-top)
@@ -32739,6 +32740,12 @@
 * Error Message: Handoff source file: reference\5.1\README.md transformed failed.
 * Retriable: False
 * Error Details: {"internal_error_code":"handoff_transform_failed","internal_error_message":"Handoff source file: reference\\5.1\\README.md transformed failed.","internal_error_retriable":false,"exception_message":"reference\\5.1\\README.md file with commit id 0914b7a791ec27eb70eb1b5408ada090922d067a can not be found","exception_type":"System.IO.FileNotFoundException","stack_trace":"   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass11_0.<CreateHandoffFiles>b__0(Tuple`5 handoff) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandoffCore.cs:line 276","extended_information":null}
+
+##### <a name='61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248handback_file_rejected'></a> Source: [scripting\getting-started\cookbooks\Managing-Services.md](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
+* Error Code: handback_file_rejected
+* Error Message: file Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.zh-tw.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
 
 Generated by OpenLocalization.
