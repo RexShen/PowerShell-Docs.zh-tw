@@ -8,19 +8,17 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "使用 JEA"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
-ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
-
+ms.openlocfilehash: 55c8f2d6a8e2bb9f33a3e9af5c3ee94fa5259716
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 JEA
+# <a name="using-jea"></a>使用 JEA
 本節主要在於了解*使用 JEA* 的使用者體驗。
 在＜必要條件＞一節中，您已建立一個 JEA 端點示範。
 我們將使用此示範來說明 JEA 的操作方式。
 在稍後的章節中，本指南會回頭介紹讓該使用者體驗變成可能的動作和檔案。
 
-## 以非系統管理員身分使用 JEA
+## <a name="using-jea-as-a-non-administrator"></a>以非系統管理員身分使用 JEA
 為了示範 JEA 的操作方式，您必須以非系統管理員使用者身分使用 PowerShell 遠端。
 在新的 PowerShell 視窗中執行下列命令：   
 
@@ -93,10 +91,4 @@ Exit-PSSession
 ```
 
 這會中斷您與遠端 PowerShell 工作階段的連線。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

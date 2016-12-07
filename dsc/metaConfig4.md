@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
-
+ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
+# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本機設定管理員是 Windows PowerShell 預期狀態設定 (DSC) 引擎， 會在所有目標節點上執行，負責呼叫包含在 DSC 設定指令碼中的設定資源。 本主題列出本機設定管理員屬性，並說明如何修改目標節點上的本機設定管理員設定。
 
-## 本機設定管理員屬性
+## <a name="local-configuration-manager-properties"></a>本機設定管理員屬性
 以下列出您可以設定或擷取的本機設定管理員屬性。
  
 * **AllowModuleOverwrite**：控制是否允許從設定伺服器下載新設定，以覆寫目標節點上舊的設定。 可能的值為 True 和 False。
@@ -37,7 +35,7 @@ ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
 * **RefreshFrequencyMins**：當您設定「提取」伺服器時使用。 代表的本機設定管理員連絡「提取」伺服器來下載目前設定的頻率 (以分鐘為單位)。 這個值可以搭配 ConfigurationModeFrequencyMins 設定。 當 RefreshMode 設定為 PULL 時，目標節點會連絡「提取」伺服器，頻率為 RefreshFrequencyMins 所設定的間隔，並下載目前的設定。 在 ConfigurationModeFrequencyMins 所設定的間隔中，一致性引擎接著會套用已下載至目標節點的最新設定。 如果 RefreshFrequencyMins 未設定為 ConfigurationModeFrequencyMins 的整數倍數，則系統會無條件進位。 預設值為 30。
 * **RefreshMode**：可能的值為 **Push** (預設值) 和 **Pull**。 在 “push” 設定中，您必須使用任何用戶端電腦，在每個目標節點上放置設定檔。 在 “pull” 模式中，您必須設定 「提取」伺服器，供本機設定管理員來連絡及存取設定檔。
 
-### 更新本機設定管理員設定的範例
+### <a name="example-of-updating-local-configuration-manager-settings"></a>更新本機設定管理員設定的範例
 
 您可以更新目標節點的本機設定管理員設定，方法是在設定指令碼中節點區塊內加入 **LocalConfigurationManager** 區塊，如下列範例所示。
 
@@ -77,10 +75,4 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 > **注意**：針對 **Path** 參數，當您叫用前一個範例中的設定時，您指定的路徑必須與您為 **OutputPath** 參數所指定的路徑相同。
 
 若要查看目前本機設定管理員設定，您可以使用 **Get-DscLocalConfigurationManager** Cmdlet。 如果您叫用的這個 Cmdlet 不含任何參數，依預設會取得您用來執行此 Cmdlet 之節點的本機設定管理員設定。 若要指定另一個節點，請使用這項 Cmdlet 的 **CimSession** 參數。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

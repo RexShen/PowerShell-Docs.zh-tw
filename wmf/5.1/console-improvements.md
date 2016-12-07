@@ -8,19 +8,17 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
-ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
-
+ms.openlocfilehash: 574fec8e1f4948021988d8489532d7325277fed6
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="console-improvements-in-wmf-51-preview"></a>WMF 5.1 (Preview) 的主控台改善#
 
-# WMF 5.1 (Preview) 的主控台改善#
-
-## PowerShell 主控台改善
+## <a name="powershell-console-improvements"></a>PowerShell 主控台改善
 
 WMF 5.1 的 powershell.exe 已進行下列變更，以改善主控台體驗︰
 
-###VT100 支援
+###<a name="vt100-support"></a>VT100 支援
 
 Windows 10 新增了對 [VT100 逸出序列](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx)的支援。
 PowerShell 在計算表格寬度時，會忽略某些 VT100 格式逸出序列。
@@ -43,20 +41,14 @@ else
 
 請注意，從 Windows 10 年度更新版開始才支援 VT100 逸出序列，舊版系統不支援。   
 
-### PSReadline 的 Vi 模式支援
+### <a name="vi-mode-support-in-psreadline"></a>PSReadline 的 Vi 模式支援
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) 加入了對 vi 模式的支援。 若要使用 vi 模式，請執行 `Set-PSReadline -EditMode vi`。
 
-### 以互動輸入重新導向的 stdin 
+### <a name="redirected-stdin-with-interactive-input"></a>以互動輸入重新導向的 stdin 
 
 在舊版中，重新導向 stdin 且要以互動方式輸入命令時，需要使用 `powershell -File -` 啟動 PowerShell。
 
 有了 WMF 5.1，即不再需要此難以探索的選項。 可以啟動 PowerShell 而不使用任何選項，例如 `powershell`。
 
 請注意，PSReadline 目前不支援重新導向的 stdin，而附重新導向的 stdin 的內建命令列編輯經驗極受限制，例如方向鍵無法運作。 新版的 PSReadline 應該會解決這個問題。   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

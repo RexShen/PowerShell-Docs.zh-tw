@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_save module
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: ee03101cc5b54ac515cfdcc318b97d9c3178cda1
-
+ms.openlocfilehash: 9e83f1eeeb8e4bee666aeb845702f6562a487d6b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Save-Module
+# <a name="save-module"></a>Save-Module
 
 在本機儲存模組，而不進行安裝。
 
-## 描述
+## <a name="description"></a>描述
 
 Save-Module Cmdlet 會在本機儲存來自所指定存放庫的模組，以進行檢查。 尚未安裝模組。
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -60,10 +58,4 @@ Find-Command -Name "Get-NestedRequiredModule4" -Repository "INT" | Save-Module -
 Find-RoleCapability -Name Maintenance,MyJeaRole | Save-Module -Path C:\MyModulesPath
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 適用於 Linux 的內建預期狀態設定資源
+# <a name="built-in-desired-state-configuration-resources-for-linux"></a>適用於 Linux 的內建預期狀態設定資源
 
 資源是可讓您撰寫 PowerShell 預期狀態設定 (DSC) 指令碼的建置組塊。 DSC for Linux 隨附一組內建功能，可用於設定資源，例如檔案和資料夾、套件、環境變數，以及服務和處理序。
 
-## 內建資源 
+## <a name="built-in-resources"></a>內建資源 
 
 下表提供這些資源和主題詳細資訊的連結清單。
 
@@ -32,9 +30,3 @@ ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
 * [nxSshAuthorizedKeys 資 源](lnxSshAuthorizedKeysResource.md) ─ 管理 Linux 使用者的公用 SSH 金鑰。 
 * [nxUser 資源 ](lnxUserResource.md) ─ 管理本機 Linux 使用者。 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

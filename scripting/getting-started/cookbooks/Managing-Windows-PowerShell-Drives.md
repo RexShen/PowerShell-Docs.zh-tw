@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d266a109b1acd97c03594f988ce2fab3c697b80c
-
+ms.openlocfilehash: 776e55de817dd200142965e19ce84bbe776fcb9d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 管理 Windows PowerShell 磁碟機
+# <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 磁碟機
 *Windows PowerShell 磁碟機*是一個資料存放區位置，存取該位置的方式就像存取 Windows PowerShell 中的檔案系統磁碟機一樣。 Windows PowerShell 提供者會為您建立一些磁碟機，例如檔案系統磁碟機 (包括 C: 與 D:)、登錄磁碟機 (HKCU: 與 HKLM:) 與憑證磁碟機 (Cert:)，而且您可以建立自己的 Windows PowerShell 磁碟機。 這些磁碟機非常實用，但只能在 Windows PowerShell 中使用。 您無法使用其他 Windows 工具 (例如 [檔案總管] 或 Cmd.exe) 來存取它們。
 
 Windows PowerShell 會為可搭配 Windows PowerShell 磁碟機使用的命令使用名詞 **PSDrive**。 如需 Windows PowerShell 工作階段中的 Windows PowerShell 磁碟機清單，請使用 **Get-PSDrive** Cmdlet。
@@ -69,7 +67,7 @@ D          FileSystem    D:\
 
 <pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
 
-### 新增 Windows PowerShell 磁碟機 (New-PSDrive)
+### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>新增 Windows PowerShell 磁碟機 (New-PSDrive)
 您可以使用 **New-PSDrive** 命令來新增自己的 Windows PowerShell 磁碟機。 若要取得 **New-PSDrive** 命令的語法，請輸入 **Get-Command** 命令並指定 **Syntax** 參數：
 
 ```
@@ -118,7 +116,7 @@ Windows PowerShell 磁碟機可以讓許多工作變得更簡單。 例如，Win
 
 New-PsDrive Cmdlet 會將新磁碟機只新增到目前的 Windows PowerShell 工作階段。 若關閉該 Windows PowerShell 視窗，該新磁碟機就會消失。 若要儲存 Windows PowerShell 磁碟機，請使用 Export-Console Cmdlet 來匯出目前的 Windows PowerShell 工作階段，然後使用 PowerShell.exe **PSConsoleFile** 參數來匯入它。 或者，將新磁碟機新增到您的 Windows PowerShell 設定檔。
 
-### 刪除 Windows PowerShell 磁碟機 (Remove-PSDrive)
+### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>刪除 Windows PowerShell 磁碟機 (Remove-PSDrive)
 您可以使用 **Remove-PSDrive** Cmdlet 從 Windows PowerShell 刪除磁碟機。 **Remove-PSDrive** Cmdlet 使用方式很簡單；若要刪除特定 Windows PowerShell 磁碟機，您只需要提供 Windows PowerShell 磁碟機名稱即可。
 
 例如，若已新增 **Office:** Windows PowerShell 磁碟機 (如 **New-PSDrive** 主題所示)，您可以輸入下列命令將它刪除：
@@ -143,12 +141,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### 在 Windows PowerShell 之外新增及移除磁碟機
+### <a name="adding-and-removing-drives-outside-windows-powershell"></a>在 Windows PowerShell 之外新增及移除磁碟機
 Windows PowerShell 會偵測 Windows 中新增或移除的檔案系統磁碟機，包括對應的網路磁碟機、連接的 USB 磁碟機，以及使用 **net use** 命令或從 Windows Script Host (WSH) 指令碼使用 **WScript.NetworkMapNetworkDrive** 與 **RemoveNetworkDrive** 方法刪除的磁碟機。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

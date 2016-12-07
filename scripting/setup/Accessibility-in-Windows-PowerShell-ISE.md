@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-translationtype: Human Translation
-ms.sourcegitcommit: 2aa04e8094fee4b0da3d5e7025cca215d542355e
-ms.openlocfilehash: b81bcbd37cdfebc04fbc7ef92d76f0769c135713
-
+ms.openlocfilehash: 698cef0d283b061a53d9230d42062c547666d127
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 本主題說明 Windows PowerShell® 整合式指令碼環境 (ISE) 的協助工具功能，您可能會發現這些功能很有幫助。
 
@@ -153,10 +151,4 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 
 ## <a name="see-also"></a>另請參閱
 - [使用 Windows PowerShell ISE](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

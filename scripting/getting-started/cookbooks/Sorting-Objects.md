@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 88753c43124cfce3581af2259449be5f01579ae8
-
+ms.openlocfilehash: 99ca62261f8302673f886149a7715ce06efa16cb
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 排序物件
+# <a name="sorting-objects"></a>排序物件
 我們會組織顯示的資料，讓您可以使用 **Sort-Object** Cmdlet 更輕鬆地進行掃描。 **Sort-Object** 會使用一或多個屬性的名稱作為排序依據，並傳回根據這些屬性值進行排序的資料。
 
 請考慮列出 Win32_SystemDriver 執行個體的問題。 如果我們要依序根據 **State** 和 **Name** 來進行排序，則做法是輸入：
@@ -54,10 +52,4 @@ wdmaud         Running    True Microsoft WINMM WDM Audio Compatibility Driver
 Wanarp         Running    True Remote Access IP ARP Driver
 ...
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

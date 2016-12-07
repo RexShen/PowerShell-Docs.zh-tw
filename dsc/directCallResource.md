@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 1fe624c2532e44ed675762f3c141934fb4f0b60d
-
+ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 直接呼叫 DSC 資源方法
+# <a name="calling-dsc-resource-methods-directly"></a>直接呼叫 DSC 資源方法
 
 >適用於：Windows PowerShell 5.0
 
@@ -25,7 +23,7 @@ ms.openlocfilehash: 1fe624c2532e44ed675762f3c141934fb4f0b60d
 
 直接呼叫資源方法的範例如下︰
 
-## 請確定檔案存在
+## <a name="ensure-a-file-is-present"></a>請確定檔案存在
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -34,7 +32,7 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-## 請測試檔案存在
+## <a name="test-that-a-file-is-present"></a>請測試檔案存在
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -43,7 +41,7 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-## 請取得檔案的內容
+## <a name="get-the-contents-of-file"></a>請取得檔案的內容
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -54,14 +52,8 @@ $result.ItemValue | fl
 
 >**注意︰** 不支援直接呼叫複合資源方法。 請改為呼叫組成複合資源之基礎資源的方法。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 
 - [使用 PowerShell 類別撰寫自訂的 DSC 資源](authoringResourceClass.md)
-- [偵錯 DSC 資源](debugResource.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+- [對 DSC 資源執行偵錯](debugResource.md)
 

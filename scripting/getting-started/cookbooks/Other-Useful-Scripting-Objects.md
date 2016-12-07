@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
-
+ms.openlocfilehash: 114f7b60bf44e0cfc2c9e2bad223552cb141d145
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 其他有用的指令碼物件
+# <a name="other-useful-scripting-objects"></a>其他有用的指令碼物件
   下列物件會提供 Windows PowerShell ISE 中額外的指令碼功能。 它們不屬於 **$psISE** 階層。
 
-## 有用的指令碼物件
+## <a name="useful-scripting-objects"></a>有用的指令碼物件
 
-### $psUnsupportedConsoleApplications
+### <a name="psunsupportedconsoleapplications"></a>$psUnsupportedConsoleApplications
  有一些關於 Windows PowerShell ISE 與主控台應用程式互動方式的限制。 需要使用者介入的命令或自動化指令碼，可能無法依照它從 Windows PowerShell 主控台運作的方式來運作。 您可能想要封鎖這些命令或指令碼在 [Windows PowerShell ISE 命令] 窗格中執行。 **$psUnsupportedConsoleApplications** 物件會保留這類命令的清單。 如果您嘗試執行此清單中的命令，您會收到不支援這類命令的訊息。 下列指令碼會在清單中新增項目。
 
 ```
@@ -32,7 +30,7 @@ psUnsupportedConsoleApplications
 
 ```
 
-### $psLocalHelp
+### <a name="pslocalhelp"></a>$psLocalHelp
  這個字典物件會在本機編譯的 HTML 說明檔中，維護說明主題及其相關聯連結之間內容相關性的對應。 您可以使用它來尋找特定主題的本機說明。 您可以新增或刪除此清單中的主題。 下列程式碼範例示範一些 **$psLocalHelp** 中所含的索引鍵值組範例。
 
 ```
@@ -41,7 +39,7 @@ $psLocalHelp | Format-List
 
 ```
 
-### 取樣輸出
+### <a name="sample-output"></a>取樣輸出
 
 |||
 |-|-|
@@ -54,7 +52,7 @@ $psLocalHelp | Format-List
 $psLocalHelp.Add("get-myNoun","c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-57ae-aa0c-87b5e5a84712.htm")
 ```
 
-### $psOnlineHelp
+### <a name="psonlinehelp"></a>$psOnlineHelp
  這個字典物件會維護說明主題的主題標題及其相關聯外部 URL 之間內容相關性的對應。 您可以使用它，在 Web 上尋找特定主題的說明。 您可以新增或刪除此清單中的主題。
 
 ```
@@ -62,7 +60,7 @@ $psOnlineHelp | Format-List
 
 ```
 
-### 取樣輸出
+### <a name="sample-output"></a>取樣輸出
 
 |||
 |-|-|
@@ -75,13 +73,7 @@ $psOnlineHelp | Format-List
 $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 ```
 
-## 另請參閱
- [Windows PowerShell ISE 指令碼物件模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>另請參閱
+- [Windows PowerShell ISE 指令碼物件模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO4-->
-
-

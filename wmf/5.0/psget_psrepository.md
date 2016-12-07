@@ -1,4 +1,4 @@
-# 註冊 PowerShell 存放庫
+# <a name="register-a-powershell-repository"></a>註冊 PowerShell 存放庫
 您可以設定 PowerShellGet 操作內部存放庫。 做法是使用新增下列項目︰
 - Register-PSRepository：為目前的使用者註冊存放庫。
 - Unregister-PSRepository：移除目前使用者已註冊的存放庫。
@@ -31,7 +31,3 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

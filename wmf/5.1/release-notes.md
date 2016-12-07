@@ -8,12 +8,10 @@ author: jkeithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 965669e580e5322889f75f8a7684174a017d89b8
-ms.openlocfilehash: e3d71b09896865ab24032f4e069e486b448d937a
-
+ms.openlocfilehash: 60350cdc816e3a480a033adb3721ad4dabddfff9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="windows-management-framework-wmf-51-preview-release-notes"></a>Windows Management Framework (WMF) 5.1 Preview 版本資訊 #
 
 WMF 5.1 Preview 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM，以及軟體清查和授權 (SIL) 元件。 WMF 5.1 可以在 Windows 7、Windows 8.1、Windows Server 2008 R2、2012 及 2012 R2 上安裝，並提供許多對 WMF 5.0 RTM 的改善，包括︰
@@ -32,10 +30,4 @@ WMF 5.1 Preview 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI�
 - WMF 5.1 Preview 可直接透過 WMF 5.0 安裝。
 - 目前在 Windows 7 及 Windows Server 2008 R2 上安裝 WMF 5.1 Preview 時需要 WMF 4.0 為已知問題。 預計在最終發行版本前移除這項需求。
 - 安裝包括 RTM 版本在內的 WMF 5.1 未來版本時，即需要將 WMF 5.1 Preview 解除安裝。
-
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

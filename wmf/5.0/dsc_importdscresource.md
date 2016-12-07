@@ -1,4 +1,4 @@
-# Import-DscResource 關鍵字支援 -ModuleVersion 參數
+# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 關鍵字支援 -ModuleVersion 參數
 
 我們將新的參數新增至撰寫 DSC 設定時可用的 `Import-DscResource` 動態關鍵字。 設定作者現在可以指定要從哪個模組版本中載入 DSC 資源。 新關鍵字的語法為︰
 
@@ -16,10 +16,5 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-Mod
 
 **注意：**`–ModuleVersion` 參數只能搭配 `–ModuleName` 參數一起使用。 它不能搭配僅以 `–Name` 參數作為名稱的資源名稱。
 
-在這之前，載入 DSC 資源時指定模組版本的唯一方法是使用模組規格物件，例如︰ `–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+在這之前，載入 DSC 資源時指定模組版本的唯一方法是使用模組規格物件，例如︰`–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
 

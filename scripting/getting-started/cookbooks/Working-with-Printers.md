@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c013124d12a551245152c1703e5f1d8a3f8f5f70
-
+ms.openlocfilehash: 2142d7ef1d1cc9b20ecc1ab35b9685817c838347
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用印表機
+# <a name="working-with-printers"></a>使用印表機
 您可以使用 WMI 和 WSH 的 WScript.Network COM 物件，用 Windows PowerShell 來管理印表機。 我們會混合使用這兩種工具，來示範特定的工作。
 
-### 列出印表機連線
+### <a name="listing-printer-connections"></a>列出印表機連線
 使用 WMI **Win32_Printer** 類別是列出電腦上已安裝印表機的最簡單方法︰
 
 ```
@@ -32,14 +30,14 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 
 因為這個命令會傳回簡單的連接埠名稱和印表機裝置名稱字串集合，但沒有任何特殊的標籤，所以不容易解譯。
 
-### 新增網路印表機
+### <a name="adding-a-network-printer"></a>新增網路印表機
 若要新增網路印表機，請使用 **WScript.Network**：
 
 ```
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
 ```
 
-### 設定預設印表機
+### <a name="setting-a-default-printer"></a>設定預設印表機
 若要使用 WMI 設定預設印表機，請在 **Win32_Printer** 集合中找出印表機，然後叫用 **SetDefaultPrinter** 方法：
 
 ```
@@ -52,16 +50,10 @@ Get-WmiObject -Class Win32_Printer -ComputerName
 (New-Object -ComObject WScript.Network).SetDefaultPrinter('HP LaserJet 5Si')
 ```
 
-### 移除印表機連線
+### <a name="removing-a-printer-connection"></a>移除印表機連線
 若要移除印表機連線，請使用 **WScript.Network RemovePrinterConnection** 方法︰
 
 ```
 (New-Object -ComObject WScript.Network).RemovePrinterConnection("\\Printserver01\Xerox5")
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

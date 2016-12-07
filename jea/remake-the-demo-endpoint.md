@@ -8,17 +8,15 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "重現示範端點"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
-ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
-
+ms.openlocfilehash: 4a56272b6f995500d443d441f5e03db85dac6f96
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 重現示範端點
+# <a name="remake-the-demo-endpoint"></a>重現示範端點
 在本節中，您將了解如何產生您在上一節中所使用之示範端點的相同複本。
 本節將介紹了解 JEA 所需的核心概念，包括 PowerShell 工作階段設定和角色功能。
 
-## PowerShell 工作階段設定
+## <a name="powershell-session-configurations"></a>PowerShell 工作階段設定
 當您在上一節中使用 JEA 時，首先會執行下列命令︰
 
 ```PowerShell
@@ -41,14 +39,14 @@ Enter-PSSession -ComputerName . -ConfigurationName JEA_Demo -Credential $NonAdmi
 Get-PSSessionConfiguration
 ```
 
-## PowerShell 工作階段設定檔
+## <a name="powershell-session-configuration-files"></a>PowerShell 工作階段設定檔
 您可以登錄新的 *PowerShell 工作階段設定檔*，來建立新的工作階段設定。
 工作階段設定檔的副檔名為 ".pssc"。
 您可以使用 New-PSSessionConfigurationFile Cmdlet 產生工作階段設定檔。
 
 接下來，您將為 JEA 建立並登錄新的工作階段設定。
 
-## 產生及修改您的 PowerShell 工作階段設定
+## <a name="generate-and-modify-your-powershell-session-configuration"></a>產生及修改您的 PowerShell 工作階段設定
 執行下列命令，產生 PowerShell 工作階段設定「基本架構」檔案。
 
 ```PowerShell
@@ -107,7 +105,7 @@ RoleDefinitions = @{'CONTOSO\JEA_NonAdmin_Operator' = @{ RoleCapabilities =  'Ma
 
 最後，將變更儲存至 *JEADemo2.pssc*。
 
-## 套用 PowerShell 工作階段設定
+## <a name="apply-the-powershell-session-configuration"></a>套用 PowerShell 工作階段設定
 
 若要從工作階段設定檔建立端點，您必須登錄該檔案。
 這需要幾項資訊︰
@@ -123,7 +121,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 恭喜您！ 您已設定 JEA 端點。
 
-## 測試您的端點
+## <a name="test-out-your-endpoint"></a>測試您的端點
 對您的新端點重新執行[使用 JEA](using-jea.md)一節中所列的步驟，確認端點如預期般運作。
 將設定名稱提供給 `Enter-PSSession` 時，請務必使用新的端點名稱 (JEADemo2)。
 
@@ -131,7 +129,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
 ```
 
-## 重要概念
+## <a name="key-concepts"></a>重要概念
 **PowerShell 工作階段設定**︰有時稱為 *PowerShell 端點*，這是使用者連線並存取 PowerShell 功能的象徵性「位置」。
 您可以執行 `Get-PSSessionConfiguration`，列出系統上已登錄的工作階段設定。
 以特定方式設定時，PowerShell 工作階段設定可稱為 *JEA 端點*。
@@ -149,10 +147,4 @@ Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdmi
 **PowerShell 文字記錄**︰包含 PowerShell 工作階段之 "Over-The-Shoulder" 檢視的檔案。
 您可以將 PowerShell 設定為使用 TranscriptDirectory 欄位來產生 JEA 工作階段的文字記錄。
 如需文字記錄的詳細資訊，請參閱這篇[部落格文章](https://technet.microsoft.com/en-us/magazine/ff687007.aspx)。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

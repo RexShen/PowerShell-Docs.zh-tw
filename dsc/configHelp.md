@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: f4dc0265246195cc2320bcaf9d7f9abf7b1405a3
-ms.openlocfilehash: becacd2dcbc6fd0edd9154a45342edc5c536935b
-
+ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 撰寫 DSC 設定的說明
+# <a name="writing-help-for-dsc-configurations"></a>撰寫 DSC 設定的說明
 
 >適用於：Windows PowerShell Windows 5.0
 
@@ -63,7 +61,7 @@ configuration HelpSample1
 }
 ```
 
-## 檢視設定說明
+## <a name="viewing-configuration-help"></a>檢視設定說明
 
 若要檢視設定的說明，請使用 **Get-help** Cmdlet 加上函數名稱，或輸入函數名稱加上 `-?`。 以下是將前一個函數傳遞給 **Get-help** 後的輸出：
 
@@ -94,12 +92,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 * [DSC 設定](configurations.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -8,12 +8,10 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "先決條件"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
-
+ms.openlocfilehash: 6cd57c2fab63d2184cb5c792b63df99dbd782235
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="prerequisites"></a>必要條件
 
 ## <a name="initial-state"></a>初始狀態
@@ -125,10 +123,4 @@ Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEACo
 注意︰您也可以透過 [群組原則] 啟用全系統 PowerShell 文字記錄。
 
 **恭喜，您現在已設定電腦和示範端點，並準備好開始使用 JEA！**
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -8,12 +8,10 @@ contributor: kriscv
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 0c136264c9fe4e92771e4423011c2fa959f30e93
 ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="install-and-configure-wmf-51-preview"></a>安裝及設定 WMF 5.1 (預覽) #
 
 ## <a name="install-net-46"></a>安裝 .Net 4.6
@@ -63,10 +61,4 @@ ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
 - [SHA-2 程式碼簽署](https://technet.microsoft.com/en-us/library/security/3033929)的安全性更新。 需要此項才能將新的 PowerShell Cmdlet 用於 Windows 類別目錄檔案。 
 
 > **WinRM Dependency：**Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上預設不啟用 WinRM。 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 `Set-WSManQuickConfig`。
-
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

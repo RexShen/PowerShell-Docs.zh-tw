@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "列入封鎖清單"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 8892e5e08a763fbc66d782bbc9252d1f3a7dcfcf
-
+ms.openlocfilehash: e823cc0b130500fb7ea60e65acf27f90ad3f3802
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### 列入封鎖清單
+### <a name="on-blacklisting"></a>列入封鎖清單
 試用 JEA 之後，您可能想知道它是否可以將命令列入封鎖清單。
 這是合理的要求，但目前不在 JEA 的規劃中，原因如下︰
 
@@ -32,10 +30,4 @@ ms.openlocfilehash: 8892e5e08a763fbc66d782bbc9252d1f3a7dcfcf
 除非您了解要公開的所有命令，否則您無法保證不會發生特定動作。
 不論使用允許清單或封鎖清單，您都有責任了解要公開哪些命令。
 您無法管理封鎖清單會公開的命令數目，因此 JEA 會改用允許清單實作。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,23 +7,21 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: 50b99917f15d290db30da1b1b752d668d886ec50
-
+ms.openlocfilehash: 1fc28589633d6279d0428179a70e7e561d753ea8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 撰寫自訂的 DSC 資源與 MOF
+# <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題中，我們會在 MOF 檔案中定義 Windows PowerShell 預期狀態設定 (DSC) 自訂資源的結構描述，並在 Windows PowerShell 指令碼檔案中實作資源。 這個自訂的資源是用於建立和維護網站。
 
-## 建立 MOF 結構描述
+## <a name="creating-the-mof-schema"></a>建立 MOF 結構描述
 
 結構描述會定義可由 DSC 設定指令碼設定之資源的屬性。
 
-### MOF 資源的資料夾結構
+### <a name="folder-structure-for-a-mof-resource"></a>MOF 資源的資料夾結構
 
 若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.psm1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
 
@@ -39,7 +37,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 請注意，你必須在最上層的資料夾下建立名為 DSCResources 的資料夾，而且每個資源的資料夾都必須和資源同名。
 
-### MOF 檔案的內容
+### <a name="the-contents-of-the-mof-file"></a>MOF 檔案的內容
 
 下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 *Demo_IISWebsite.schema.mof*。
 
@@ -60,16 +58,16 @@ class Demo_IISWebsite : OMI_BaseResource
 
 前列程式碼請注意下列事項：
 
-* `FriendlyName` 定義可用來在 DSC 設定指令碼中參考這個自訂資源的名稱。 在本例中，`Website` 相當於內建 Archive 資源的易記名稱 `Archive`。
+* `FriendlyName` 定義的名稱，可用來參考 DSC 設定指令碼的這個自訂資源。 在本例中，`Website` 相當於內建 Archive 資源的易記名稱 `Archive`。
 * 您為自訂資源定義的類別必須衍生自 `OMI_BaseResource`。
 * 屬性上的類型限定詞 `[Key]`，表示這個屬性會唯一識別資源執行個體。 至少有一個 `[Key]` 屬性是必要屬性。
 * `[Required]` 限定詞表示必要屬性 (使用這項資源的任何設定指令碼都必須指定的值)。
 * `[write]` 限定詞表示，在設定指令碼中使用自訂資源時，這是選擇性屬性。 `[read]` 限定詞表示設定不能設定屬性，且限用於報告。
-* `Values` 限制可指派給在 `ValueMap` 中定義的值清單之屬性的值。 如需詳細資訊，請參閱 [ValueMap and Value Qualifiers (ValueMap 和值限定詞)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)。
+* `Values` 限制可指派給在 `ValueMap` 定義的值清單之屬性的值。 如需詳細資訊，請參閱 [ValueMap and Value Qualifiers (ValueMap 和值限定詞)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)。
 * 建議您在資源中包含名為 `Ensure`且值為 `Present` 和 `Absent` 的屬性，以便和內建的 DSC 資源維持一致的樣式。
 * 依下列方式命名自訂資源的結構描述檔案：`classname.schema.mof`，其中 `classname` 是遵循結構描述定義 `class` 關鍵字的識別碼。
 
-### 撰寫資源指令碼
+### <a name="writing-the-resource-script"></a>撰寫資源指令碼
 
 資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在 <ResourceName>.psm1 檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
 
@@ -220,7 +218,7 @@ $result
 
 **注意**：為方便偵錯，請在前述三個函式實作中使用 **Write-Verbose** Cmdlet。 這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。 預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
 
-### 建立模組資訊清單
+### <a name="creating-the-module-manifest"></a>建立模組資訊清單
 
 最後，使用 **New-ModuleManifest** Cmdlet 定義自訂資源模組的 <ResourceName>.psd1 檔案。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 以下為資訊清單檔案範例。
 
@@ -275,10 +273,4 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 # HelpInfoURI = ''
 }
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4809eb60ba1a5529343c2ab3c88493bf2c32389b
-
+ms.openlocfilehash: 6af4884948c44f7f256d62d0c61f1c71b47994f3
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用登錄機碼
+# <a name="working-with-registry-keys"></a>使用登錄機碼
 因為登錄機碼是 Windows PowerShell 磁碟機上的項目，所以使用它們很像是使用檔案和資料夾。 最大的差別是登錄式 Windows PowerShell 磁碟機上的每個項目都是容器，就像檔案系統磁碟機上的資料夾。 不過，登錄項目及其相關值都是項目的屬性，而非不同的項目。
 
-### 列出登錄機碼所有的子機碼
+### <a name="listing-all-subkeys-of-a-registry-key"></a>列出登錄機碼所有的子機碼
 您可以使用 **Get-ChildItem** 直接顯示登錄機碼內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會直接顯示 Windows PowerShell 磁碟機 HKCU: 內的項目，與 HKEY_CURRENT_USER 登錄區相對應︰
 
 ```
@@ -60,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### 複製機碼
+### <a name="copying-keys"></a>複製機碼
 以 **Copy-Item** 完成複製。 下列命令會將 HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion 及其所有屬性複製到 HKCU:\\，建立名為 "CurrentVersion" 的新機碼︰
 
 ```
@@ -75,7 +73,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 您仍然可以使用現有的其他工具執行檔案系統複製作業。 您可以在 Windows PowerShell 中使用任何登錄編輯工具，包括 reg.exe、regini.exe、regedit.exe 和支援登錄編輯的 COM 物件 (如 WScript.Shell 和 WMI 的 StdRegProv 類別)。
 
-### 建立機碼
+### <a name="creating-keys"></a>建立機碼
 在登錄中建立新機碼比在檔案系統中建立新項目簡單。 因為所有的登錄機碼都是容器，所以不需要指定項目類型，只要提供明確的路徑，例如︰
 
 ```
@@ -88,7 +86,7 @@ New-Item -Path hkcu:\software_DeleteMe
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### 刪除機碼
+### <a name="deleting-keys"></a>刪除機碼
 所有提供者的項目刪除作業本質上是相同的。 下列命令會以無訊息模式移除項目︰
 
 ```
@@ -96,7 +94,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### 移除特定機碼下的所有機碼
+### <a name="removing-all-keys-under-a-specific-key"></a>移除特定機碼下的所有機碼
 您可以使用 **Remove-Item** 移除包含的項目，但如果項目包含任何其他項目，系統會提示您確認移除。 例如，如果我們嘗試刪除之前建立的 HKCU:\\CurrentVersion 子機碼，我們會看到︰
 
 ```
@@ -121,10 +119,4 @@ Remove-Item -Path HKCU:\CurrentVersion -Recurse
 ```
 Remove-Item -Path HKCU:\CurrentVersion\* -Recurse
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

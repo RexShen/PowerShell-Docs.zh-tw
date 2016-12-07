@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1779b9de13a30a43236e24793e5196261a7db77f
-
+ms.openlocfilehash: 60652b67a98179f0dab137e3360766d2e6936d81
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 變更電腦狀態
+# <a name="changing-computer-state"></a>變更電腦狀態
 若要在 Windows PowerShell 中重設電腦，請使用標準命令列工具或 WMI 類別。 雖然您使用 Windows PowerShell 只是為了執行工具，但是了解如何在 Windows PowerShell 中變更電腦的電源狀態，描述了有關在 Windows PowerShell 中使用外部工具的一些重要詳細資訊。
 
-### 鎖定電腦
+### <a name="locking-a-computer"></a>鎖定電腦
 透過可用的標準工具直接鎖定電腦的唯一方式，是呼叫 **user32.dll** 中的 **LockWorkstation()** 函式：
 
 ```
@@ -30,7 +28,7 @@ rundll32.exe user32.dll,LockWorkStation
 
 若要關閉終端機伺服器上的特定工作階段，請使用 **tsshutdn.exe** 命令列工具。
 
-### 登出目前的工作階段
+### <a name="logging-off-the-current-session"></a>登出目前的工作階段
 您可以使用幾項不同的技術，來登出本機系統上的工作階段。 最簡單的方式是使用遠端桌面/終端機服務命令列工具 **logoff.exe** (如需詳細資訊，請在 Windows PowerShell 命令提示字元中，輸入 **logoff /?**)。 若要登出目前使用中的工作階段，請輸入 **logoff** 且不加引數。
 
 您也可以使用 **shutdown.exe** 工具搭配其登出選項︰
@@ -47,7 +45,7 @@ shutdown.exe -l
 
 如需詳細資訊，以及尋找 Win32Shutdown 方法的其他函式，請參閱 MSDN 中的＜Win32Shutdown Method of the Win32_OperatingSystem Class＞(Win32_OperatingSystem 類別的 Win32Shutdown 方法)。
 
-### 關閉或重新啟動電腦
+### <a name="shutting-down-or-restarting-a-computer"></a>關閉或重新啟動電腦
 關閉並重新啟動電腦通常是相同類型的工作。 用來關閉電腦的工具通常也會用來重新啟動電腦，反之亦然。 從 Windows PowerShell 重新啟動電腦有兩個直接的作法。 使用 Tsshutdn.exe 或 Shutdown.exe 加上適當的引數。 您可以從 **tsshutdn.exe /?** 或 **shutdown.exe /?** 取得詳細的使用資訊。
 
 您也可以直接從 Windows PowerShell 使用 **Win32_OperatingSystem**，來執行關閉和重新啟動作業。
@@ -63,10 +61,4 @@ shutdown.exe -l
 ```
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

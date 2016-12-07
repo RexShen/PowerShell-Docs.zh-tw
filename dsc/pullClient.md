@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 95f49fecdf13a54049caf27345d2a48c98b8f09b
-
+ms.openlocfilehash: c6cc140d838c2a2bab35772d2a345d1d665964ec
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 設定 DSC 提取用戶端
+# <a name="setting-up-a-dsc-pull-client"></a>設定 DSC 提取用戶端
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -26,10 +24,4 @@ ms.openlocfilehash: 95f49fecdf13a54049caf27345d2a48c98b8f09b
 * [使用設定識別碼設定提取用戶端](pullClientConfigID.md)
 
 > **注意**：這些主題適用於 PowerShell 5.0。 若要設定 PowerShell 4.0 中的提取用戶端，請參閱[使用 PowerShell 4.0 中的設定識別碼設定提取用戶端](pullClientConfigID4.md)。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

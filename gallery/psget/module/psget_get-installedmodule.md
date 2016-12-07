@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_get installedmodule
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 40a79a74117f28407758367f4e27b7ae26917078
-
+ms.openlocfilehash: a3c7c96bcb288dcc44aa1e4039d85def4ddb014e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Get-InstalledModule
+# <a name="get-installedmodule"></a>Get-InstalledModule
 
 取得電腦上的已安裝模組。
 
-## 描述
+## <a name="description"></a>描述
 
 Get-InstalledModule Cmdlet 會將 PowerShell 模組安裝在使用 Install-Module Cmdlet 安裝的電腦上。
 
@@ -32,16 +30,16 @@ Get-InstalledModule Cmdlet 會將 PowerShell 模組安裝在使用 Install-Modul
   - 如果未指定 RequiredVersion 參數，Get-InstalledModule 會傳回等於或大於所指定最小版本之已安裝模組的最新版本，或未指定最小版本之模組的最新版本。 
   - 如果指定 RequiredVersion 參數，Get-InstalledModule 只會傳回完全符合所指定版本之已安裝模組的版本。
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 
@@ -105,7 +103,7 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-## PSGetRepositoryItemInfo 物件中的 InstalledDate 和 UpdatedDate 屬性
+## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a>PSGetRepositoryItemInfo 物件中的 InstalledDate 和 UpdatedDate 屬性
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value
@@ -131,10 +129,4 @@ Name          InstalledDate         UpdatedDate
 ----          -------------         -----------
 ContosoServer 2/29/2016 11:59:14 AM 2/29/2016 12:00:15 PM
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

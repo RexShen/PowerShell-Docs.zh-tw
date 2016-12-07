@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
-
+ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsProcess 資源
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsProcess** 資源提供了在目標節點設定程序的機制。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 引數| 表示要保持原狀傳遞至處理程序的引數字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| 表示標準輸入的位置。| 
 | StandardOutputPath| 表示寫入標準輸出的位置。 此處的所有檔案都會被覆寫。| 
 | WorkingDirectory| 表示會用為處理程序目前工作目錄的位置。| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

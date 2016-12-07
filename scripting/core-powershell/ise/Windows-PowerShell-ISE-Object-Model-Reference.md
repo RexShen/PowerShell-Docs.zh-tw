@@ -8,15 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
-translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: c60a7adb5cce55392d5dc09c7ca357bfc4c73e15
-
+ms.openlocfilehash: 44d5f142c6d2c68c1a70b3a1017a8e6e57a58abe
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE 物件模型參考
+# <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE 物件模型參考
   
-## 物件模型參考
+## <a name="object-model-reference"></a>物件模型參考
  本節提供定義 Windows PowerShell® 整合式指令碼環境 (ISE) 中各種物件之基礎類別的參考。 若要依物件階層組織查看物件，請參閱 [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)。
 
  [ISEAddOnTool 物件](The-ISEAddOnTool-Object.md)
@@ -50,13 +48,7 @@ ms.openlocfilehash: c60a7adb5cce55392d5dc09c7ca357bfc4c73e15
  [PowerShellTabCollection 物件](The-PowerShellTabCollection-Object.md)
  範例︰$psISE.PowerShellTabs。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-

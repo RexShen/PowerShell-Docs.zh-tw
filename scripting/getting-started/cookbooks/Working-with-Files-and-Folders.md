@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c3f7c226fcb496e5bb51ba601429c54b43de9d52
-
+ms.openlocfilehash: be0960062182bbce161fdb26340825a7f6360382
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用檔案及資料夾
+# <a name="working-with-files-and-folders"></a>使用檔案及資料夾
 瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論特定檔案和資料夾的處理操作方法。
 
-### 列出資料夾內所有的檔案和資料夾
+### <a name="listing-all-the-files-and-folders-within-a-folder"></a>列出資料夾內所有的檔案和資料夾
 您可以使用 **Get-ChildItem** 直接取得資料夾內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會顯示 Windows PowerShell 磁碟機 C (和 Windows 實體磁碟機 C 相同) 的直接內容︰
 
 ```
@@ -38,7 +36,7 @@ Get-ChildItem -Force C:\ -Recurse
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt "2005-10-01") -and ($_.Length -ge 1m) -and ($_.Length -le 10m)}
 ```
 
-### 複製檔案與資料夾
+### <a name="copying-files-and-folders"></a>複製檔案與資料夾
 以 **Copy-Item** 完成複製。 下列命令會將 C:\\boot.ini 備份到 C:\\boot.bak：
 
 ```
@@ -71,7 +69,7 @@ Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile("c:\boot.ini", "c:\boot.bak")
 ```
 
-### 建立檔案與資料夾
+### <a name="creating-files-and-folders"></a>建立檔案與資料夾
 所有 Windows PowerShell 提供者的建立新項目功能都一樣。 如果 Windows PowerShell 提供者有多個項目類型—例如，FileSystem Windows PowerShell 提供者區分目錄和檔案—您就需要指定項目類型。
 
 這個命令會建立新的資料夾 C:\\temp\\New Folder：
@@ -86,7 +84,7 @@ New-Item -Path 'C:\temp\New Folder' -ItemType "directory"
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType "file"
 ```
 
-### 移除資料夾內所有的檔案和資料夾
+### <a name="removing-all-files-and-folders-within-a-folder"></a>移除資料夾內所有的檔案和資料夾
 您可以使用 **Remove-Item** 移除包含的項目，但如果項目包含任何其他項目，系統會提示您確認移除。 例如，如果您嘗試刪除包含其他項目的資料夾 C:\\temp\\DeleteMe，Windows PowerShell 就會先提示您確認再刪除資料夾︰
 
 ```
@@ -106,7 +104,7 @@ sure you want to continue?
 Remove-Item C:\temp\DeleteMe -Recurse
 ```
 
-### 將本機資料夾對應為 Windows 可存取磁碟機
+### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>將本機資料夾對應為 Windows 可存取磁碟機
 您也可以使用 **subst** 命令對應本機資料夾。 下列命令會在本機的 Program Files 目錄下建立本機磁碟機 P:︰
 
 ```
@@ -115,7 +113,7 @@ subst p: $env:programfiles
 
 就像使用網路磁碟機，Windows PowerShell 殼層可以立即看到使用 **subst** 在 Windows PowerShell 內對應的磁碟機。
 
-### 將文字檔讀入陣列
+### <a name="reading-a-text-file-into-an-array"></a>將文字檔讀入陣列
 文字資料最常見的儲存體格式之一，是將檔案中分隔的各行視為不同的資料元素。 **Get-Content** Cmdlet 可以用一個步驟讀取整個檔案，如下所示︰
 
 ```
@@ -144,10 +142,4 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
 **$Computers** 現在是每個元素包含一個電腦名稱的陣列。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

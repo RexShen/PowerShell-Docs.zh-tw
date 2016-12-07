@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 撰寫單一執行個體 DSC 資源 (最佳做法)
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>撰寫單一執行個體 DSC 資源 (最佳做法)
 
 >**注意︰**本主題所描述的最佳做法用於定義設定中僅允許單一執行個體的 DSC 資源。 目前，沒有任何內建 DSC 功能可以執行這項作業。 這在未來可能會變更。
 
@@ -226,9 +224,3 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
    
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 012a0e5c4f2a1f60ecea869d588b9c54e0567ced
-
+ms.openlocfilehash: f9754be3f803d3232189985faa41fb209bfcfe46
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsProcess 資源
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
 
 > 適用於：Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **ProcessSet** 資源提供了在目標節點設定程序的機制。 此資源是為 `GroupName` 參數中指定的每個群組呼叫 [WindowsProcess 資源](windowsProcessResource.md)的[複合資源](authoringResourceComposite.md)。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 引數| 內含的引數要保持原狀傳遞至處理程序的字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardOutputPath| 處理程序要寫入標準輸出的檔案路徑。 此處的所有檔案都會被覆寫。| 
 | WorkingDirectory| 用為處理程序目前工作目錄的位置。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"``。| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

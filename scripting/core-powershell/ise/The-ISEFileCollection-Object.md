@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 86cb3485445fdb00c9b99a20694b9bf12a6e8f2c
-
+ms.openlocfilehash: 01de8e108c5b54a192462779a31b0d8b07687705
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="the-isefilecollection-object"></a>ISEFileCollection 物件
   **ISEFileCollection** 物件是 **ISEFile** 物件的集合。 $psISE.CurrentPowerShellTab.Files 集合即為一例。
 
@@ -77,9 +75,3 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 - [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Nov16_HO3-->
-
-

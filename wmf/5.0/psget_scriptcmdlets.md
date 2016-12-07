@@ -1,6 +1,6 @@
-# 適用於指令碼管理的 PowerShellGet Cmdlet
+# <a name="powershellget-cmdlets-for-script-management"></a>適用於指令碼管理的 PowerShellGet Cmdlet
 
-## Find-Script Cmdlet
+## <a name="find-script-cmdlet"></a>Find-Script Cmdlet
 Find-Script Cmdlet 可讓您使用不同的搜尋準則探索指令碼檔案，例如名稱、標記、篩選、命令名稱、版本範圍、正確版本、所有版本，包括其相依性和特定或所有已註冊的存放庫。
 
 使用範例：
@@ -139,7 +139,7 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## Save-Script Cmdlet
+## <a name="save-script-cmdlet"></a>Save-Script Cmdlet
 Save-Script Cmdlet 可讓您將指令碼檔案儲存到指定的位置，藉以檢閱指令碼檔案。
 ```powershell
 \# Save a script file to the specified location for the script analysis
@@ -152,7 +152,7 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## Install-Script 和 Get-InstalledScript Cmdlet
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script 和 Get-InstalledScript Cmdlet
 Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。 根據預設，指令碼會安裝在 AllUsers 範圍。 Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。
 
 使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。 如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。 Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。
@@ -333,7 +333,7 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## Update-Script Cmdlet
+## <a name="update-script-cmdlet"></a>Update-Script Cmdlet
 Update-Script Cmdlet 可讓您使用 Install-Script Cmdlet 就地更新已安裝的指令碼檔案。
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
@@ -375,7 +375,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## Uninstall-Script Cmdlet
+## <a name="uninstall-script-cmdlet"></a>Uninstall-Script Cmdlet
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -412,7 +412,7 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## New-ScriptFileInfo 和 Test-ScriptFileInfo Cmdlet
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>New-ScriptFileInfo 和 Test-ScriptFileInfo Cmdlet
 New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。Test-ScriptFileInfo Cmdlet 可讓您驗證並取得指令碼檔案中繼資料。
 ```powershell
 \# Create a new script file with minimum required metadata values
@@ -564,7 +564,7 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## Update-ScriptFileInfo Cmdlet
+## <a name="update-scriptfileinfo-cmdlet"></a>Update-ScriptFileInfo Cmdlet
 Update-ScriptFileInfo Cmdlet 可讓您更新現有的指令碼檔案中繼資料。
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -575,7 +575,7 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## 具指令碼共用支援的 Register-PSRepository 和 Set-PSRepository Cmdlet
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>具指令碼共用支援的 Register-PSRepository 和 Set-PSRepository Cmdlet
 使用 Register-PSRepository/Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 加入 PSRepository 中。
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
@@ -633,7 +633,7 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## Publish-Script Cmdlet
+## <a name="publish-script-cmdlet"></a>Publish-Script Cmdlet
 Publish-Script Cmdlet 可讓您發佈具有效中繼資料的指令碼檔案，例如版本、GUID、作者和描述等等。
 ```powershell
 \# Publish the really basic script file with required metadata
@@ -675,9 +675,4 @@ Repository : GalleryINT
 PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

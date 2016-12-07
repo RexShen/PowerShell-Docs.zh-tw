@@ -9,18 +9,16 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_install script
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: df04c387f09ad603d001bb94ee4cdeabc6d9d5a6
-
+ms.openlocfilehash: ac2473283a80e76d4823d85d4c4481d349a95a12
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Install-Script
+# <a name="install-script"></a>Install-Script
 
 將 PowerShell 指令檔從線上存放庫安裝至本機電腦。
 
 
-## 描述
+## <a name="description"></a>描述
 
 Install-Script Cmdlet 需要存放庫中的指令碼裝載，並確認裝載是有效的 PowerShell 指令碼，然後將指令檔複製至指定的安裝位置。
 
@@ -43,7 +41,7 @@ Install-Script Cmdlet 會從線上組件庫取得符合所指定準則的一或�
 
 Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script 和 Uninstall-Script Cmdlet 的 -Name 中不支援萬用字元。
 
-### 領域
+### <a name="scope"></a>領域
 指定模組的安裝範圍。 此參數接受的值包括：AllUsers 和 CurrentUser。
 
 預設安裝範圍是 AllUsers。
@@ -58,7 +56,7 @@ CurrentUser 範圍只會將模組安裝至 "$home\Documents\WindowsPowerShell\Mo
 AllUsers 範圍指定將指令碼安裝至 %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts，讓指令碼可供所有使用者使用。 CurrentUser 範圍指定將指令碼安裝至 $home\Documents\WindowsPowerShell\Scripts，讓指令碼僅可供目前使用者使用。
 
 
-## NoPathUpdate
+## <a name="nopathupdate"></a>NoPathUpdate
 
 - Install-Script Cmdlet 上的 NoPathUpdate 切換參數不會提示將指令碼安裝位置新增至 PATH 環境變數。
 - 任何使用指定的命令 WITH –NoPathUpdate 都會導致不進行提示，並且正在更新 PATH NOT (在這裡可以忽略 force)。
@@ -67,7 +65,7 @@ AllUsers 範圍指定將指令碼安裝至 %systemdrive%:\ProgramFiles\WindowsPo
 - 只有第一次在指定範圍中使用 Install-Script 時，才會套用所有這些項目。
 
 
-## 附註
+## <a name="notes"></a>附註
 
 這個 Cmdlet 會在 Windows PowerShell 3.0 或更新版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。
 
@@ -84,17 +82,17 @@ AllUsers 範圍指定將指令碼安裝至 %systemdrive%:\ProgramFiles\WindowsPo
 為了協助避免執行包含惡意程式碼的模組，安裝不會自動匯入已安裝的模組。 安全性最佳做法是在第一次執行模組中的任何 Cmdlet 或函數之前評估模組程式碼。
 
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Install-Script](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 
@@ -476,7 +474,7 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-## 管線作業中的 Install-Script Cmdlet
+## <a name="install-script-cmdlet-in-pipeline-operations"></a>管線作業中的 Install-Script Cmdlet
 
 ```powershell
 
@@ -503,11 +501,11 @@ Get-InstalledModule
 
 ```
 
-## PowerShell 5.0 或更新版本的並存版本支援
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 或更新版本的並存版本支援
 
 PowerShellGet 支援在 Windows PowerShell 5.0 或更新版本執行之 Install-Script、Update-Script 和 Publish-Script Cmdlet 中的並存 (SxS) 模組版本支援。
 
-### Install-Script 範例
+### <a name="install-script-examples"></a>Install-Script 範例
 
 ```powershell
 # Install a version of the module
@@ -539,7 +537,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## 安裝具有其相依性的模組
+## <a name="install-module-with-its-dependencies"></a>安裝具有其相依性的模組
 
 ```powershell
 
@@ -633,7 +631,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## 錯誤狀況
+## <a name="error-scenarios"></a>錯誤狀況
 
 ```powershell
 
@@ -651,7 +649,7 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-## 使用相依的指令碼和模組來安裝指令碼
+## <a name="installing-a-script-with-dependent-scripts-and-modules"></a>使用相依的指令碼和模組來安裝指令碼
 
 ```powershell
 # Installing a script with dependent scripts and modules
@@ -724,7 +722,7 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## Install-Script 和 Get-InstalledScript Cmdlet
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script 和 Get-InstalledScript Cmdlet
 Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。 根據預設，指令碼會安裝在 AllUsers 範圍。 Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。
 
 使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。 如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。 Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。
@@ -904,10 +902,4 @@ Param()
 Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

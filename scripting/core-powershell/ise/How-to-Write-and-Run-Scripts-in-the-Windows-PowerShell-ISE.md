@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 068ea5b8de5463c492c894d313ac1f266c449797
-
+ms.openlocfilehash: f38c9f310c528a9daff2784ab3a686309e624ecb
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 本主題說明如何在指令碼窗格中建立、編輯、執行和儲存指令碼。
 
@@ -151,10 +149,4 @@ Windows PowerShell ISE 不會變更以其他編輯器建立之指令碼的編碼
 
 ## <a name="see-also"></a>另請參閱
 - [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

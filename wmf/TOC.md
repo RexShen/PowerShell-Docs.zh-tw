@@ -94,8 +94,3 @@
 ### [根據 OData 端點產生 PowerShell Cmdlet](5.0/odata_overview.md)
 ### [使用 PowerShell 管理網路交換器](5.0/networkswitch_overview.md)
 ### [軟體清查記錄 (SIL)](5.0/sil_overview.md)
-
-
-<!--HONumber=Nov16_HO3-->
-
-

@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-translationtype: Human Translation
-ms.sourcegitcommit: d698cdd29bfe165b87494696ca2dc3486be4ab0e
-ms.openlocfilehash: 96204a0ce674cacd5b830f9f8b820ce3e1cbbc20
-
+ms.openlocfilehash: 4f53fb9bd096b63e23763e737dae03da2126ec56
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 收集電腦的相關資訊
+# <a name="collecting-information-about-computers"></a>收集電腦的相關資訊
 **Get-WmiObject** 是一般系統管理工作最重要的 Cmdlet。 所有重要的子系統設定都是透過 WMI 公開。 此外，WMI 會將資料視為一或多個項目集合中的物件。 由於 Windows PowerShell 也適用於物件，並具有管線可讓您以相同的方式來處理單一物件或多個物件，因此一般 WMI 存取可讓您不費吹灰之力就能執行一些進階工作。
 
 下列範例示範如何對任意電腦使用 **Get-WmiObject** 來收集特定資訊。 我們以點值 (**.**) 指定 **ComputerName** 參數，以代表本機電腦。 您可以指定與可透過 WMI 連線之任何電腦來建立關聯的名稱或 IP 位址。 若要擷取本機電腦的相關資訊，您可以省略 **-ComputerName.**。
 
-### 列出桌面設定
+### <a name="listing-desktop-settings"></a>列出桌面設定
 我們一開始會使用命令，收集本機電腦上的桌面資訊。
 
 ```
@@ -37,14 +35,14 @@ Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-
 
 若要篩選出中繼資料，請使用管線運算子 (|) 將 Get-WmiObject 命令的結果傳送至 **Select-Object -Property [a-z]***。
 
-### 列出 BIOS 資訊
+### <a name="listing-bios-information"></a>列出 BIOS 資訊
 WMI Win32_BIOS 類別會傳回本機電腦上 BIOS 系統極精簡且完整的相關資訊︰
 
 ```
 Get-WmiObject -Class Win32_BIOS -ComputerName .
 ```
 
-### 列出處理器資訊
+### <a name="listing-processor-information"></a>列出處理器資訊
 您可以使用 WMI 的 **Win32_Processor** 類別擷取一般處理器資訊，不過您可能會想要篩選此資訊︰
 
 ```
@@ -60,7 +58,7 @@ SystemType
 X86-based PC
 ```
 
-### 列出電腦製造商和型號
+### <a name="listing-computer-manufacturer-and-model"></a>列出電腦製造商和型號
 **Win32_ComputerSystem** 也會提供電腦型號資訊。 顯示的標準輸出不需要任何篩選，就能提供 OEM 資料︰
 
 ```
@@ -75,7 +73,7 @@ TotalPhysicalMemory : 804765696
 
 類似此命令的輸出會直接傳回一些硬體的資訊，只會顯示您擁有的資料。 有些資訊未經過硬體製造商的正確設定，因此可能無法使用。
 
-### 列出安裝的 Hotfix
+### <a name="listing-installed-hotfixes"></a>列出安裝的 Hotfix
 您可以使用 **Win32_QuickFixEngineering** ，列出所有安裝的 Hotfix：
 
 ```
@@ -123,7 +121,7 @@ HotFixId
 KB910437
 ```
 
-### 列出作業系統版本資訊
+### <a name="listing-operating-system-version-information"></a>列出作業系統版本資訊
 **Win32_OperatingSystem** 類別屬性包含版本和 Service Pack 資訊。 您可以明確地只選取這些屬性，以從 **Win32_OperatingSystem** 取得版本資訊摘要：
 
 ```
@@ -142,7 +140,7 @@ ServicePackMajorVersion : 2
 ServicePackMinorVersion : 0
 ```
 
-### 列出本機使用者和擁有者
+### <a name="listing-local-users-and-owner"></a>列出本機使用者和擁有者
 選取 **Win32_OperatingSystem** 屬性可找到本機使用者的一般資訊 (授權使用者數目、目前的使用者數目和擁有者名稱)。 您可以明確地選取要顯示的屬性，如下所示︰
 
 ```
@@ -155,7 +153,7 @@ Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Prop
 Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### 取得可用的磁碟空間
+### <a name="getting-available-disk-space"></a>取得可用的磁碟空間
 若要查看本機磁碟機的磁碟空間和可用空間，您可以使用 WMI Win32_LogicalDisk 類別。 您只需要查看 DriveType 為 3 的執行個體 (WMI 針對固定式硬碟使用此值)。
 
 ```
@@ -178,21 +176,21 @@ VolumeName   : New Volume
 Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName . | Measure-Object -Property FreeSpace,Size -Sum | Select-Object -Property Property,Sum
 ```
 
-### 取得登入工作階段資訊
+### <a name="getting-logon-session-information"></a>取得登入工作階段資訊
 您可以透過 WMI Win32_LogonSession 類別，取得與使用者相關聯之登入工作階段的一般資訊︰
 
 ```
 Get-WmiObject -Class Win32_LogonSession -ComputerName .
 ```
 
-### 取得登入電腦的使用者
+### <a name="getting-the-user-logged-on-to-a-computer"></a>取得登入電腦的使用者
 您可以使用 Win32_ComputerSystem，顯示登入特定電腦系統的使用者。 此命令只會傳回登入系統桌面的使用者︰
 
 ```
 Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### 取得電腦的當地時間
+### <a name="getting-local-time-from-a-computer"></a>取得電腦的當地時間
 您可以使用 WMI Win32_LocalTime 類別，擷取特定電腦上的目前當地時間。 由於此類別預設會顯示所有中繼資料，因此建議您使用 **Select-Object** 加以篩選：
 
 ```
@@ -210,7 +208,7 @@ WeekInMonth  : 3
 Year         : 2006
 ```
 
-### 顯示服務狀態
+### <a name="displaying-service-status"></a>顯示服務狀態
 若要檢視特定電腦上的所有服務狀態，您可以在本機使用上述 **Get-Service** Cmdlet。 若為遠端系統，您可以使用 WMI Win32_Service 類別。 如果您同時使用 **Select-Object** 將結果篩選為 **Status**、**Name** 和 **DisplayName**，輸出格式會與 **Get-Service** 的輸出格式幾乎完全相同：
 
 ```
@@ -222,10 +220,4 @@ Get-WmiObject -Class Win32_Service -ComputerName . | Select-Object -Property Sta
 ```
 Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

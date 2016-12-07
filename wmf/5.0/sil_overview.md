@@ -1,4 +1,4 @@
-# 軟體清查記錄 (SIL)
+# <a name="software-inventory-logging-sil"></a>軟體清查記錄 (SIL)
 
 **重要：** *在已執行 SIL 的 Windows Server 2012 R2 伺服器上安裝 WMF 5.0 時，在 WMF 安裝之後，必須執行一次 Start-SilLogging Cmdlet，因為安裝程序會不當停止軟體清查記錄功能。*
 
@@ -9,8 +9,3 @@
 此功能不會將這份資料傳送給 Microsoft。 軟體清查記錄資料和功能僅供伺服器軟體授權擁有者及系統管理員使用。
 
 如需軟體清查記錄 Cmdlet 的詳細資訊和相關文件，請參閱＜ Windows Server 2012 R2 線上資源＞(<http://technet.microsoft.com/library/dn383584.aspx>)。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

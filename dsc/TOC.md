@@ -93,8 +93,3 @@
 # 其他資源
 ## [白皮書](whitepapers.md)
 
-
-
-<!--HONumber=Nov16_HO3-->
-
-

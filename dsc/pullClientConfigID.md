@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: f6569220fbafdba49bac9ac9dca3e6036a7aad08
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用設定識別碼設定提取用戶端
+# <a name="setting-up-a-pull-client-using-configuration-id"></a>使用設定識別碼設定提取用戶端
 
 > 適用於：Windows PowerShell 5.0
 
@@ -50,13 +48,13 @@ PullClientConfigID
 
 執行這個指令碼之後，它會建立新的輸出資料夾，名為 **PullClientConfigID**，並在該處放入中繼設定 MOF 檔案。 在此情況下，中繼設定 MOF 檔案將名為 `localhost.meta.mof`。
 
-若要套用設定，請呼叫 **Set-DscLocalConfigurationManager** Cmdlet，其中 **Path** 設為中繼設定 MOF 檔案的位置。 例如： `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+若要套用設定，請呼叫 **Set-DscLocalConfigurationManager** Cmdlet，其中 **Path** 設為中繼設定 MOF 檔案的位置。 例如：`Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
 
-## 設定識別碼
+## <a name="configuration-id"></a>設定識別碼
 
 此指令碼將 LCM 的 **ConfigurationID** 屬性設為先前針對這個用途建立的 GUID (您可以透過 **New-Guid** Cmdlet 建立 GUID)。 **ConfigurationID** 供 LCM 用來在提取伺服器上尋找適當設定。 提取伺服器上的設定 MOF 檔案必須命名為 _ConfigurationID_.mof，其中 _ConfigurationID_ 是目標節點 LCM 的 **ConfigurationID** 屬性值。
 
-## SMB 提取伺服器
+## <a name="smb-pull-server"></a>SMB 提取伺服器
 
 若要設定用戶端從 SMB 伺服器提取設定，請使用 **ConfigurationRepositoryShare** 區塊。 在 **ConfigurationRepositoryShare** 區塊中，您可以設定 **SourcePath** 屬性指定伺服器的路徑。 下列中繼設定會設定目標節點從名為 **SMBPullServer** 的 SMB 提取伺服器提取。
 
@@ -83,7 +81,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## 資源和報表伺服器
+## <a name="resource-and-report-servers"></a>資源和報表伺服器
 
 如果在 LCM 設定中只指定了 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如上述範例所示)，提取用戶端將會從指定的伺服器提取資源，但不會將報表傳送給伺服器。 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 **ReportRepositoryWeb** 區塊才可設定報告功能。 
 
@@ -157,13 +155,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
-* [使用設定名稱設定提取用戶端](pullClientConfigNames.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+* [以設定名稱設定提取用戶端](pullClientConfigNames.md)
 

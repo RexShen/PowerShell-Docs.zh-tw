@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_cmdlets_troubleshooting
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 740c72620e1a5a114716f924f859c57cad125614
-
+ms.openlocfilehash: 4758c650933b082f467c66ad4accb4c8a1fb514e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-## 如何解決「警告：無法下載封裝『您的封裝名稱』」問題？
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>如何解決「警告：無法下載封裝『您的封裝名稱』」問題？
 
 
 
@@ -31,10 +29,4 @@ Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
 Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

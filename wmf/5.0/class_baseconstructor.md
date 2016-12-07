@@ -1,4 +1,4 @@
-# 呼叫基底類別建構函式
+# <a name="call-base-class-constructor"></a>呼叫基底類別建構函式
 
 若要從子類別中呼叫基底類別建構函式，請使用關鍵字 **base**：
 
@@ -29,7 +29,3 @@ class C : B
     C([int]$c) {}
 }
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

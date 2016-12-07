@@ -9,31 +9,29 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_publish script
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: bcf1abe7021c9b48fa35f08762f4d4a0a710dfa3
-
+ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Publish-Script
+# <a name="publish-script"></a>Publish-Script
 
 Publish-Script Cmdlet 會將指定的指令碼發行至線上組件庫。
 
-## 描述
+## <a name="description"></a>描述
 
 Publish-Script Cmdlet 可讓您發佈具有效中繼資料的指令碼檔案，例如版本、GUID、作者和描述等等。Publish-Script Cmdlet 上的 Force 切換參數會啟動載入 NuGet.exe，而不予提示。
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -80,10 +78,4 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

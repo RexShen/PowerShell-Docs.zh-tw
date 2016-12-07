@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "多電腦部署和維護"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 784806197a64eb30af1ecea4af55575434ce7b87
-
+ms.openlocfilehash: 8117d0d12c062b460cb7117b54c138c8db5a1d0c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 多電腦部署和維護
+# <a name="multi-machine-deployment-and-maintenance"></a>多電腦部署和維護
 此時，您已多次將 JEA 部署到本機系統。
 因為您的生產環境可能是由多部電腦所組成，所以請務必逐步執行部署處理程序中必須在每部電腦上重複的重要步驟。
 
-## 高階步驟︰
+## <a name="high-level-steps"></a>高階步驟︰
 1.  將您的模組 (及角色功能) 複製到每個節點。
 2.  將您的工作階段設定檔複製到每個節點。
 3.  使用您的工作階段設定執行 `Register-PSSessionConfiguration`。
 4.  將一份工作階段設定和工具組複本保留在安全的位置。
 當您修改時，最好有一個「單一信任來源」。
 
-## 範例指令碼
+## <a name="example-script"></a>範例指令碼
 以下是部署的範例指令碼。
 若要在您的環境中使用，您必須使用實際檔案共用和模組的名稱/路徑。
 ```PowerShell
@@ -55,20 +53,14 @@ Invoke-Command –ComputerName 'Node1', 'Node2', 'Node3', 'NodeN' -FilePath 'C:\
 Remove-Item -Path '\\FileShare\JEA\Demo.pssc'
 Remove-Item -Path '\\FileShare\JEA\SomeModule' -Recurse
 ```
-## 修改功能
+## <a name="modifying-capabilities"></a>修改功能
 當處理多部電腦時，請務必以一致的方式公開修改。
 一旦 JEA 擁有 DSC 資源，這將有助於確保您的環境保持同步。
 在這之前，強烈建議您保留工作階段設定的主要複本，並在每次修改時重新部署。
 
-## 移除功能
+## <a name="removing-capabilities"></a>移除功能
 若要從您的系統中移除 JEA 設定，請在每部電腦上使用下列命令︰
 ```PowerShell
 Unregister-PSSessionConfiguration -Name JEADemo
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

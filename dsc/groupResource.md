@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: f6e33f82f495a89a4aa28c64b7974c170d50cfe1
-ms.openlocfilehash: 446c9036989c47c03664d978a1dea4e0234ada8d
-
+ms.openlocfilehash: 12c6ad6f30b4e1b67296289c927e59fd64079675
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC 群組資源
+# <a name="dsc-group-resource"></a>DSC 群組資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的群組資源會提供一個機制，在目標節點管理本機群組。
 
-##語法##
+##<a name="syntax"></a>語法##
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +32,7 @@ Group [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -47,7 +45,7 @@ Group [string] #ResourceName
 | MembersToInclude| 使用這個屬性將成員新增至群組的現有成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 範例 1
+## <a name="example-1"></a>範例 1
 
 下列範例示範如何確定名為 "TestGroup" 的群組不存在。 
 
@@ -60,7 +58,7 @@ Group GroupExample
     GroupName = "TestGroup"
 }
 ```
-## 範例 2
+## <a name="example-2"></a>範例 2
 下列範例顯示如何將 Active Directory 使用者以多電腦實驗室組建 (已經在其內使用本機系統管理員帳戶的 PSCredential) 的一部分，加入本機系統管理員群組。 在網域升級之後，其也會用於網域系統管理員帳戶，然後我們需要將此現有的 PSCredential 轉換為網域能記住的認證，我們如此才可將網域使用者加入成員伺服器上的本機系統管理員群組。
 
 ```powershell
@@ -89,10 +87,4 @@ Group AddADUserToLocalAdminGroup
             PsDscRunAsCredential = $DCredential
         }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

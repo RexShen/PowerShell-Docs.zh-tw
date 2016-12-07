@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
-ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
-
+ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 設定本機設定管理員
+# <a name="configuring-the-local-configuration-manager"></a>設定本機設定管理員
 
 > 適用於：Windows PowerShell 5.0
 
@@ -28,7 +26,7 @@ ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
 
 > **注意**：本主題適用於 Windows PowerShell 5.0 中導入的 LCM。 如需在 Windows PowerShell 4.0 中設定 LCM 的資訊，請參閱 [Windows PowerShell 4.0 預期狀態設定本機設定管理員](metaconfig4.md)。
 
-## 撰寫和制定 LCM 設定
+## <a name="writing-and-enacting-an-lcm-configuration"></a>撰寫和制定 LCM 設定
 
 若要設定 LCM，您可以建立並執行一種特殊的設定。 若要指定 LCM 設定，您可以使用 DscLocalConfigurationManager 屬性。 下圖顯示簡單的設定，可將 LCM 設定為推入模式。
 
@@ -57,7 +55,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 * **ReportServerWeb**：指定傳送報表的目標 HTTP 提取伺服器。
 * **PartialConfiguration**：指定部分設定。
 
-## 基本設定
+## <a name="basic-settings"></a>基本設定
 
 除了指定提取伺服器與部分設定之外，所有的 LCM 屬性都在 **Settings** 區塊中設定。 下列屬性可用於 **Settings** 區塊。
 
@@ -79,7 +77,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 | PartialConfigurations| CimInstance| 未實作。 請勿使用。| 
 | StatusRetentionTimeInDays | UInt32| LCM 會保留目前設定狀態的天數。| 
 
-## 提取伺服器
+## <a name="pull-servers"></a>提取伺服器
 
 提取伺服器是作為 DSC 檔案中央位置使用的 OData Web 服務或 SMB 共用。 LCM 設定支援定義下列提取伺服器類型：
 
@@ -89,7 +87,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 
 如需設定和使用提取伺服器的相關資訊，請參閱[設定 DSC 提取伺服器](pullServer.md)。
 
-## 設定伺服器區塊
+## <a name="configuration-server-blocks"></a>設定伺服器區塊
 
 若要定義 Web 設定伺服器，請建立 **ConfigurationRepositoryWeb** 區塊。 **ConfigurationRepositoryWeb** 定義下列屬性。
 
@@ -108,7 +106,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 |認證|MSFT_Credential|用來向 SMB 驗證的認證。|
 |SourcePath|字串|SMB 共用的路徑。|
 
-## 資源伺服器區塊
+## <a name="resource-server-blocks"></a>資源伺服器區塊
 
 若要定義 Web 資源伺服器，請建立 **ResourceRepositoryWeb** 區塊。 **ResourceRepositoryWeb** 定義下列屬性。
 
@@ -126,7 +124,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 |認證|MSFT_Credential|用來向 SMB 驗證的認證。|
 |SourcePath|字串|SMB 共用的路徑。|
 
-## 報表伺服器區塊
+## <a name="report-server-blocks"></a>報表伺服器區塊
 
 報表伺服器必須是 OData Web 服務。 若要定義報表伺服器，請建立 **ReportServerWeb** 區塊。 **ReportServerWeb** 定義下列屬性。
 
@@ -137,7 +135,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 |RegistrationKey|字串|GUID，識別提取伺服器的節點。 如需詳細資訊，請參閱＜如何向 DSC 提取伺服器註冊節點＞。|
 |ServerURL|字串|設定伺服器的 URL。|
 
-## 部分設定
+## <a name="partial-configurations"></a>部分設定
 
 若要定義部分設定，請建立 **PartialConfiguration** 區塊。 如需部分設定的詳細資訊，請參閱 [DSC 部分設定](partialConfigs.md)。 **PartialConfiguration** 定義下列屬性。
 
@@ -150,23 +148,17 @@ LCM 設定可以包含一組僅限於有限資源的區塊。 在上述範例中
 |RefreshMode|字串|指定 LCM 如何取得這個部分設定。 可能的值為 __"Disabled"__、__"Push(default)"__ 和 __"Pull"__。 <ul><li>__Disabled__：停用此部分設定。</li><li> __Push__：藉由呼叫 [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) Cmdlet 將部分設定推送到節點。 節點的所有部分設定從伺服器發送或提取之後，就可以藉由呼叫 `Start-DscConfiguration –UseExisting` 來啟動。 這是預設值。</li><li>__Pull__：節點設定為定期檢查提取伺服器的部分設定。 如果這個屬性設為 __Pull__，您就必須在 __ConfigurationSource__ 屬性中指定提取伺服器。 如需提取伺服器的詳細資訊，請參閱[設定 DSC 提取伺服器](pullServer.md)。</li></ul>|
 |ResourceModuleSource|string[]|要從中下載此部分設定所需資源的資源伺服器名稱陣列。 這些名稱必須參考 **ResourceRepositoryWeb** 和 **ResourceRepositoryShare** 區塊中預先定義的資源伺服器。|
 
-## 另請參閱 
+## <a name="see-also"></a>另請參閱 
 
-### 概念
+### <a name="concepts"></a>概念
 [Windows PowerShell 預期狀態設定概觀](overview.md)
  
 [設定 DSC 提取伺服器](pullServer.md) 
 
 [Windows PowerShell 4.0 預期狀態設定本機設定管理員](metaConfig4.md) 
 
-### 其他資源
+### <a name="other-resources"></a>其他資源
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
 
-[使用設定名稱設定提取用戶端](pullClientConfigNames.md) 
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
+[以設定名稱設定提取用戶端](pullClientConfigNames.md) 
 

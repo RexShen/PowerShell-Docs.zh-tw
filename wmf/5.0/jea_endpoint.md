@@ -1,4 +1,4 @@
-# 建立及連接到 JEA 端點
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>建立及連接到 JEA 端點
 若要建立 JEA 端點，您必須建立並註冊特別設定的 PowerShell 工作階段組態檔，該組態檔可使用 **New-PSSessionConfigurationFile** Cmdlet 產生，
 
 ```powershell
@@ -130,14 +130,10 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-## 連接到 JEA 端點
+## <a name="connect-to-a-jea-endpoint"></a>連接到 JEA 端點
 連接到 JEA 端點與連接到其他 PowerShell 端點的運作方式一樣。  您只需要提供您的 JEA 端點名稱作為 **New-PSSession**、**Invoke-Command**或 **Enter-PSSession** 的 "ConfigurationName" 參數。
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的允許清單。 如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。
-
-<!--HONumber=Aug16_HO3-->
-
-

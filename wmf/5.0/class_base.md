@@ -1,4 +1,4 @@
-# 宣告基底類別
+# <a name="declare-base-class"></a>宣告基底類別
 您可以將 Windows PowerShell 類別宣告為另一個 Windows PowerShell 類別的基底類型。
 
 ```PowerShell
@@ -29,7 +29,3 @@ $list.Add(100)
 
 $list[0] # return 100
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

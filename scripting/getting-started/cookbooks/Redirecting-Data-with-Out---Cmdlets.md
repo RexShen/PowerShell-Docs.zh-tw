@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: e62ae14e4d7334d0cd42681c7e2591692c089187
-
+ms.openlocfilehash: b48cc5fbd5c229d0339a24402e186fe9ef69e97b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 Out-* Cmdlet 重新導向資料
+# <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重新導向資料
 Windows PowerShell 提供幾個可讓您直接控制資料輸出的 Cmdlet。 這些 Cmdlet 有兩個重要特性：
 
 首先，它們通常會將資料轉換成某種文字格式。 這樣做是因為它們會將資料輸出至需要文字輸入的系統元件， 所以必須以文字表示物件。 因此，文字會格式化為您在 Windows PowerShell 主控台視窗中看到的樣子。
@@ -71,7 +69,7 @@ Name    : explorer
 > [!NOTE]
 > 所有 **Out** Cmdlet 都會使用對主控台視窗有效的格式 (包括行的長度限制)，將輸出轉譯成文字。
 
-#### 分頁主控台輸出 (Out-Host)
+#### <a name="paging-console-output-out-host"></a>分頁主控台輸出 (Out-Host)
 根據預設，Windows PowerShell 會將資料傳送至主機視窗，這與 Out-Host Cmdlet 的功能完全相同。 如前所述，Out-Host Cmdlet 主要用於將資料分頁。 例如，下列命令會使用 Out-Host 將 Get-Command Cmdlet 的輸出分頁︰
 
 ```
@@ -95,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### 捨棄輸出 (Out-Null)
+#### <a name="discarding-output-out-null"></a>捨棄輸出 (Out-Null)
 **Out-Null** Cmdlet 設計成可立即捨棄任何收到的輸入。 這在捨棄因執行命令的副作用所得到的不必要資料時會很有用。 輸入下列命令時，命令不會傳回任何項目︰
 
 ```
@@ -112,14 +110,14 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### 列印資料 (Out-Printer)
+#### <a name="printing-data-out-printer"></a>列印資料 (Out-Printer)
 您可以使用 **Out-Printer** Cmdlet 列印資料。 如果您未提供印表機名稱，**Out-Printer** Cmdlet 會使用預設印表機。 您可以使用任何 Windows 印表機，方法是指定其顯示名稱。 您不需要任何印表機連接埠對應，或甚至是真正的實體印表機。 例如，如果您已安裝 Microsoft Office Document Imaging 工具，您可以輸入下列命令將資料傳送至影像檔︰
 
 ```
 PS> Get-Command Get-Command | Out-Printer -Name "Microsoft Office Document Image Writer"
 ```
 
-#### 儲存資料 (Out-File)
+#### <a name="saving-data-out-file"></a>儲存資料 (Out-File)
 您可以使用 **Out-File** Cmdlet 將輸出傳送至檔案，而不是主控台視窗。 下列命令列會將處理程序清單傳送至檔案 **C:\\temp\\processlist.txt**：
 
 ```
@@ -157,10 +155,4 @@ Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
 當您想要以輸出主控台上的顯示格式來儲存輸出時，**Out-File** Cmdlet 會很有用。 如需更細微地控制輸出格式，您需要更進階的工具。 我們將在下一章探討這些工具，以及有關物件操作的一些詳細資訊。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

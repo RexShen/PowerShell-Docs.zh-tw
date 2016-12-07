@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 99c1ea706ca5c3fb008065e98cc99fef463b1011
-ms.openlocfilehash: caf661fe58faf8cf24c789b408505051429df3f4
-
+ms.openlocfilehash: f933d5d821d71a497d20e8ff66ebe26af9661f50
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題會說明問題發生時針對 DSC 進行疑難排解的方法。
 
-## <a name="using-getdscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
+## <a name="using-get-dscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
 [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) Cmdlet 會從目標節點取得設定狀態的相關資訊。 高級物件已傳回，此物件包含關於設定是否順利執行的高等級資訊。 您可以深入了解此物件，以探索有關設定執行的詳細資料，例如︰
 
@@ -622,10 +620,4 @@ onlyProperty                            PSComputerName
 
 ### <a name="other-resources"></a>其他資源
 * [Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

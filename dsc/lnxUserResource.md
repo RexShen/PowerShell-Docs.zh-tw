@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 7813185313845b74e2a37dfa4ec6bb109f32f0eb
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC for Linux nxUser 資源
+# <a name="dsc-for-linux-nxuser-resource"></a>DSC for Linux nxUser 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxUser** 資源會提供一個機制，在 Linux 節點管理本機使用者。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 nxUser <string> #ResourceName
@@ -37,7 +35,7 @@ nxUser <string> #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性 |  指出您要確保其特定狀態的帳戶名稱。 | 
 |---|---|
@@ -52,7 +50,7 @@ nxUser <string> #ResourceName
 | GroupID| 使用者主要群組識別碼。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 "ResourceName"，而它的類型是 "ResourceType"，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 範例
+## <a name="example"></a>範例
 
 下列範例會確保使用者 "monuser" 存在，而且是 "DBusers" 群組的成員。
 
@@ -76,10 +74,4 @@ nxGroup GroupExample{
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

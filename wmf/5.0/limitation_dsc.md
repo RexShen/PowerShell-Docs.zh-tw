@@ -33,7 +33,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-getdscconfiguration-in-debugmode"></a>在 DebugMode 中使用 Get-DscConfiguration 時，LCM 可能會陷入不穩定的狀態
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>在 DebugMode 中使用 Get-DscConfiguration 時，LCM 可能會陷入不穩定的狀態
 -------------------------------------------------------------------------------
 
 如果 LCM 處於 DebugMode 中，若按下 CTRL + C 來停止 Get-DscConfiguration 執行，可能會造成 LCM 陷入不穩定的狀態，使得大部分的 DSC Cmdlet 將無法運作。
@@ -41,7 +41,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 **解決方式︰**在偵錯 Get-DscConfiguration Cmdlet 時，請勿按 CTRL + C。
 
 
-<a name="stopdscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration 可能會在 DebugMode 中停止回應
+<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration 可能會在 DebugMode 中停止回應
 ------------------------------------------------------------------------------------------------------------------------
 如果 LCM 處於 DebugMode 中，則嘗試停止 Get-DscConfiguration 所啟動的作業時，Stop-DscConfiguration 可能會停止回應
 
@@ -55,27 +55,27 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 **解決方式︰**停用 *DebugMode* 以查看資源中的詳細訊息
 
 
-<a name="invokedscresource-operations-cannot-be-retrieved-by-getdscconfigurationstatus-cmdlet"></a>DscConfigurationStatus Cmdlet 無法擷取 Invoke-DscResource 作業
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>DscConfigurationStatus Cmdlet 無法擷取 Invoke-DscResource 作業
 --------------------------------------------------------------------------------------
 使用 Invoke-DscResource Cmdlet 來直接叫用任何資源方法之後，這類作業的記錄無法透過 Get-DscConfigurationStatus 在稍後擷取。
 
 **解決方式︰**無。
 
 
-<a name="getdscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus 傳回提取循環作業，作為類型*一致性*
+<a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus 傳回提取循環作業，作為類型*一致性*
 ---------------------------------------------------------------------------------
 當節點設定為 PULL 重新整理模式時，對於每個執行的提取作業，Get-DscConfigurationStatus Cmdlet 會報告作業類型，作為*一致性*，而不是*初始*
 
 **解決方式︰**無。
 
-<a name="invokedscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource Cmdlet 不會以這些作業所產生的順序傳回訊息
+<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource Cmdlet 不會以這些作業所產生的順序傳回訊息
 ---------------------------------------------------------------------------------
 Invoke-DscResource Cmdlet 不會以 LCM 或 DSC 資源產生這些作業的順序傳回詳細、警告和錯誤訊息
 
 **解決方式︰**無。
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>以 Invoke-DscResource 使用 DSC 資源時，無法輕易偵錯 DSC 資源
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>以 Invoke-DscResource 使用 DSC 資源時，無法輕易偵錯 DSC 資源
 -----------------------------------------------------------------------
 LCM 在偵錯模式執行時 (如需詳細資訊，請參閱[偵錯 DSC 資源](https://msdn.microsoft.com/powershell/dsc/debugresource))，Invoke-DscResource Cmdlet 並不提供連接到 Runspace 以偵錯的資訊。
 **解決方式︰**使用 Cmdlets **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace** 和 **Debug-Runspace** 探索並附加至 Runspace，以偵錯 DSC 資源。
@@ -114,7 +114,7 @@ Debug-Runspace -Id 2
 **解決方式︰**在不同的部分組態使用不同的資源名稱 (即使是相同的資源)。
 
 
-<a name="startdscconfiguration-useexisting-does-not-work-with-credential"></a>Start-DscConfiguration –UseExisting 無法使用 -Credential
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration –UseExisting 無法使用 -Credential
 ------------------------------------------------------------------
 
 以 – UseExisting 參數使用 Start-DscConfiguration 時，會忽略 –Credential 參數。 DSC 會使用預設處理序身分識別，繼續作業； 而如果在遠端節點上繼續作業時需要不同的認證，這樣做會導致錯誤。
@@ -133,14 +133,14 @@ Start-DscConfiguration -UseExisting -CimSession $session
 **解決方式︰**無。
 
 
-<a name="debugging-of-classbased-dsc-resources"></a>以類別為基礎的 DSC 資源偵錯
+<a name="debugging-of-class-based-dsc-resources"></a>以類別為基礎的 DSC 資源偵錯
 --------------------------------------
 在此版本中，不支援以類別為基礎的 DSC 資源偵錯。
 
 **解決方式︰**無。
 
 
-<a name="variables-functions-defined-in-script-scope-in-dsc-classbased-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>在 DSC 以類別為基礎的資源之 $script 範圍中定義的變數和函數，不會在對 DSC 資源的多個呼叫之間保留 
+<a name="variables-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>在 DSC 以類別為基礎的資源之 $script 範圍中定義的變數和函數，不會在對 DSC 資源的多個呼叫之間保留 
 -------------------------------------------------------------------------------------------------------------------------------------
 
 如果組態使用任何以類別為基礎的資源，且該資源具有 $script 範圍中定義的變數或函數時，對 Start-DSCConfiguration 的多個連續呼叫將失敗。
@@ -161,7 +161,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 **解決方式︰**使用 Credential 屬性 (如果有的話)。 範例 ServiceSet 和 WindowsFeatureSet
 
 
-<a name="getdscresource-syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource-Syntax* 不會正確反映 PsDscRunAsCredential
+<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource-Syntax* 不會正確反映 PsDscRunAsCredential
 -------------------------------------------------------------------------
 當資源將 PsDscRunAsCredential 標記為強制，或資源對其不支援時，Get-DscResource -Syntax 不會正確反映 PsDscRunAsCredential。
 
@@ -173,7 +173,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 
 WindowsOptionalFeature 資源不適用於 Windows 7。 此資源需要 DISM 模組，以及在 Windows 8 起和較新版本 Windows 作業系統中可用的 DISM Cmdlet。
 
-<a name="for-classbased-dsc-resources-importdscresource-moduleversion-may-not-work-as-expected"></a>針對以類別為基礎的 DSC 資源，Import-DscResource -ModuleVersion 可能無法如預期般運作   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>針對以類別為基礎的 DSC 資源，Import-DscResource -ModuleVersion 可能無法如預期般運作   
 ------------------------------------------------------------------------------------------
 如果編譯節點有多個版本的以類別為基礎的 DSC 資源模組，`Import-DscResource -ModuleVersion` 就不會選擇指定的版本，並產生下列編譯錯誤。
 
@@ -226,8 +226,3 @@ Configuration $configName
     }
 }
 ```
-
-
-<!--HONumber=Nov16_HO2-->
-
-

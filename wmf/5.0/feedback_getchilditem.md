@@ -1,4 +1,4 @@
-# Get-ChildItem 具有 -Depth 參數
+# <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem 具有 -Depth 參數
 **Get-ChildItem** 現在有 **–Depth** 參數，搭配 **–Recurse** 用來限制遞迴︰
 
 PS C:\\Users\\slee\\Downloads\\Example&gt; Get-ChildItem -Recurse -Depth 0
@@ -40,8 +40,3 @@ Mode LastWriteTime Length Name
 ---- ------------- ------ ----
 
 d----- 4/14/2015 5:33 PM Depth1
-
-
-<!--HONumber=Aug16_HO3-->
-
-

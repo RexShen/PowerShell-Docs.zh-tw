@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
-translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: 9563e58d2840c7cc2120b58b041660aaeee12830
-
+ms.openlocfilehash: 0e5ee17b9c08edbcd46649fa2000c043a9c95776
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 Windows PowerShell
+# <a name="using-windows-powershell"></a>使用 Windows PowerShell
 Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言，專為系統管理所設計。 Windows PowerShell 是以 .NET Framework 為基礎所建置，可協助 IT 專業人員與進階使用者控制和自動化管理 Windows 作業系統與在 Windows 上執行的應用程式。
 
 本章節中的資源可協助您了解 Windows PowerShell、Windows PowerShell 包含的功能，以及圖形化的 Windows PowerShell 編輯器，Windows PowerShell 整合式指令碼環境。
 
-## 本節內容
+## <a name="whats-in-this-section"></a>本節內容
 本章節內容可協助您深入了解 Windows PowerShell、如何使用 Windows PowerShell，以及 Windows PowerShell 最新版本中的新功能。
 
 -   [Windows PowerShell 的新功能](../../whats-new/What-s-New-in-Windows-PowerShell-50.md). 本主題說明 Windows PowerShell 3.0 與 Windows PowerShell 4.0 的變更。
@@ -34,7 +32,7 @@ Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言�
 
 -   [Windows PowerShell 詞彙](../../Windows-PowerShell-Glossary.md)。 深入了解 Windows PowerShell 和其文件中使用的通用詞彙。
 
-## 相關技術
+## <a name="related-technologies"></a>相關技術
 Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自動化 Windows 電腦的遠端管理。 有關這些技術的詳細資訊連結會包含在此處。
 
 -   [Windows PowerShell 工作流程](http://technet.microsoft.com/library/jj134242.aspx)。 Windows PowerShell 工作流程於 Windows PowerShell 3.0 中首度引進，可讓 IT 專業人員和開發人員利用 [Windows Workflow Foundation](http://msdn.microsoft.com/library/ee342461.aspx) 的優點，以及 Windows PowerShell 的自動化功能與簡易性。
@@ -49,7 +47,7 @@ Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自�
 
 -   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 包含 Windows PowerShell、Windows PowerShell ISE、Windows PowerShell Web 服務 (Management OData IIS 擴充功能)、Windows 遠端管理 (WinRM)、Windows 管理基礎結構 (WMI) 以及伺服器管理員 WMI 提供者的更新。 Windows Management Framework 3.0 允許您在執行 Windows® 7 SP1、Windows Server 2008 SP2 和 Windows Server 2008 R2 SP1 的電腦上安裝及使用這些技術。
 
-## 學習 Windows PowerShell
+## <a name="learning-windows-powershell"></a>學習 Windows PowerShell
 若要開始學習 Windows PowerShell，請從下列資源開始：
 
 -   [Microsoft Virtual Academy︰ 開始使用 PowerShell 3.0 快速入門](https://mva.microsoft.com/en-us/training-courses/getting-started-with-powershell-3-0-jump-start-8276)。 此《快速入門》旨在教導忙碌的 IT 專業人員、系統管理員與支援工程師如何使用 Windows PowerShell 改善管理功能、自動化重複工作與適當管理環境。 向專家 Jeffrey Snover 同時也是 Windows PowerShell 的發明者，以及 Concentrated Technology 資深技術人員 Jason Helmick 學習 Windows PowerShell 的運作方式與使用方式。
@@ -64,7 +62,7 @@ Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自�
 
 -   [使用 Windows PowerShell 進行 System Center 自動化](https://technet.microsoft.com/en-us/library/mt156962.aspx)。 針對 Microsoft System Center 元件包含的 Windows PowerShell 模組，依字母順序排序的說明主題清單。
 
-## 下載及更新 Windows PowerShell 說明
+## <a name="downloading-and-updating-windows-powershell-help"></a>下載及更新 Windows PowerShell 說明
 下列主題說明如何取得 Windows PowerShell 的最新說明，並在 Windows PowerShell 命令提示字元中顯示。
 
 -   [Update-Help](http://technet.microsoft.com/library/hh849720.aspx) Cmdlet。 會在您的電腦上下載並安裝最新版本 Windows PowerShell 模組說明主題的 Windows PowerShell Cmdlet。
@@ -74,10 +72,4 @@ Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自�
 -   [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) Cmdlet 來存取說明。 可讓您深入了解 Cmdlet 與系統上安裝之提供者的 Windows PowerShell Cmdlet。
 
 -   若要在已發行的說明檔案有任何更新時接收通知，請訂閱下列 RSS 摘要：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)。
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

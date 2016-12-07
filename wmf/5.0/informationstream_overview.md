@@ -1,4 +1,4 @@
-# 資訊串流
+# <a name="information-stream"></a>資訊串流
 
 新的結構化資訊串流現在可用來在指令碼與主機之間傳送結構化的資料。 **Write-Host** 也已更新為將其輸出發出到資訊串流，您可以在資訊串流上立即擷取輸出或將輸出轉為無回應。 搭配 **-InformationVariable** 和 **-InformationAction** 一般參數使用新的 **Write-Information** Cmdlet (以及對應的 WriteInformation API) 可帶來更多彈性和功能。
 
@@ -112,8 +112,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

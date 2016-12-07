@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
-
+ms.openlocfilehash: a62e258812960ce59f050e59d2ef3acc296663a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  <a name="use-the-webbased-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
+#  <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
 更新日期︰2013 年 6 月 24 日
 
@@ -305,7 +303,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   登入 **NoLanguage** 工作階段設定或 Windows PowerShell Web Access 中限制的 runspace 的使用者無法執行 [結束] 命令來結束工作階段。 若要登出，使用者應該按一下主控台頁面上的 [登出]。
 
--   <span class="label">同時連線到多部目標電腦。</span>   如果閘道伺服器執行 Windows Server 2012，則 Windows PowerShell Web 存取只會允許每個瀏覽器工作階段連線到一部遠端電腦；它不允許使用者登入一次，然後使用個別的瀏覽器索引標籤連線到多部遠端電腦。 當您開啟新索引標籤或新瀏覽器視窗時，Windows PowerShell Web 存取會提示您中斷目前工作階段的連線，然後啟動新的工作階段，如此您就可以連線到新的 (或相同的) 遠端電腦。 不過，如果需要針對不同的遠端電腦使用兩個或多個獨立的工作階段，Internet Explorer 中的功能可以讓您建立新工作階段。 若要在 Internet Explorer 中啟動新的瀏覽器工作階段，請按下 **ALT**，開啟 [檔案] 功能表，然後選取 [新增工作階段]。 然後，在新的工作階段中，開啟 Windows PowerShell Web 存取網站，並登入以存取另一部遠端電腦。
+-   <span class="label">同時連線到多部目標電腦。</span>   如果閘道伺服器執行 Windows Server 2012，則 Windows PowerShell Web 存取只會允許每個瀏覽器工作階段連線到一部遠端電腦；它不允許使用者登入一次，然後使用個別的瀏覽器索引標籤連線到多部遠端電腦。 當您開啟新索引標籤或新瀏覽器視窗時，Windows PowerShell Web 存取會提示您中斷目前工作階段的連線，然後啟動新的工作階段，如此您就可以連線到新的 (或相同的) 遠端電腦。 不過，如果需要針對不同的遠端電腦使用兩個或多個獨立的工作階段，Internet Explorer 中的功能可以讓您建立新工作階段。 若要在 Internet Explorer 中啟動新的瀏覽器工作階段，請按下 **ALT**，開啟 [檔案] 功能表，然後選取 [新增工作階段]。 然後，在新的工作階段中，開啟 Windows PowerShell Web 存取網站，並登入以存取另一部遠端電腦。
 
     當 Windows PowerShell Web 存取閘道在 Windows Server 2012 R2 上執行時，使用者可以在不同的瀏覽器索引標籤中開啟多個遠端電腦連線。 如果您想要使用網頁型 Windows PowerShell 主控台開啟多個遠端電腦連線，請檢查您的 Windows PowerShell Web 存取閘道管理員，以查看閘道伺服器是否支援此功能。
 
@@ -393,10 +391,4 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 - http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

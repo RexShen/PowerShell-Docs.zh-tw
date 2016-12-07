@@ -8,20 +8,12 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: e7069571249447bffc587d3665ffdb8f75bd9c25
-
+ms.openlocfilehash: 6319732807785d88ef477382c4b6205d10b957ea
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用物件
+# <a name="working-with-objects"></a>使用物件
 我們已討論過 Windows PowerShell 如何使用物件在 Cmdlet 之間傳送資料，也示範過使用 Get-Member 和 Format Cmdlet 檢視物件詳細資訊的數種方法，來檢視物件的特定屬性。
 
 物件的效用是讓您存取很多的複雜資料，而它們已相互關聯。 使用一些簡單的技巧，您就可以進一步操作物件執行更多的工作。 本章會帶您了解一些特定的物件類型以及操作它們的方法。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

@@ -1,4 +1,4 @@
-# Test-DscConfiguration Cmdlet 支援參考設定
+# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Test-DscConfiguration Cmdlet 支援參考設定
 
 Test-DscConfiguration Cmdlet 已更新，允許進行一個或多個目標節點所需設定狀態的測試 (藉由比較指定的參考設定文件來完成測試)。
 
@@ -35,8 +35,3 @@ Test-DscConfiguration   -ReferenceConfiguration <string>
                         [-AsJob] 
                         [<CommonParameters>]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

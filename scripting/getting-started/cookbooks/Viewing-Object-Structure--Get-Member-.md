@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: acd52c1271013320dafa7f7bf5c72b752e07574b
-
+ms.openlocfilehash: 041b58f5fcfdf2225704adcb943de864c94502c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="viewing-object-structure-getmember"></a>檢視物件結構 (Get-Member)
+# <a name="viewing-object-structure-get-member"></a>檢視物件結構 (Get-Member)
 因為物件在 Windows PowerShell 中播放這類重要角色，所以有數個設計成使用任意物件類型的原生命令。 最重要的是 **Get-Member** 命令。
 
 分析命令所傳回物件的最簡單技巧是將該命令的輸出傳送到 **Get-Member** Cmdlet。 **Get-Member** Cmdlet 顯示物件類型的正式名稱以及其成員的完整清單。 所傳回元素的數目有時可能非常龐大。 例如，Process 物件可以有 100 位以上的成員。
@@ -73,10 +71,4 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 > Windows PowerShell 使用名稱結尾為 .format.ps1xml 的 XML 檔案中所儲存的資訊，來決定如何顯示物件類型。 Process 物件 (即 .NET System.Diagnostics.Process 物件) 的格式資料儲存在 PowerShellCore.format.ps1xml 中。
 
 如果您需要查看 Windows PowerShell 預設所顯示屬性以外的屬性，則需要自行格式化輸出資料。 使用格式 Cmdlet 來完成這個動作。
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

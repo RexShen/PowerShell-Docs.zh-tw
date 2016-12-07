@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 12438bc9c6e4211b6a31550fa25334a20fde6846
-ms.openlocfilehash: 871d697626a0376e8f1f27bdbbf16d8612a56a79
-
+ms.openlocfilehash: 798609d7e1e7d88e7a9f76f5fff12f63c6109c76
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC ServiceSet 資源
+# <a name="dsc-serviceset-resource"></a>DSC ServiceSet 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -22,7 +20,7 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **ServiceSet** 資源提供了�
 
 當您想要將多項服務設定成相同的狀態，請使用此資源。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 Service [string] #ResourceName
@@ -38,7 +36,7 @@ Service [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -52,7 +50,7 @@ Service [string] #ResourceName
 
 
 
-## 範例
+## <a name="example"></a>範例
 
 下列設定會啟動「Windows 音訊」和「遠端桌面服務」服務。
 
@@ -72,10 +70,4 @@ configuration ServiceSetTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

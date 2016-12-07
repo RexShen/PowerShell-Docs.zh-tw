@@ -7,12 +7,10 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
-
+ms.openlocfilehash: 9e03bca75eeb6acf3f1433a9baaed0c1674ab1be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 #  <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
 更新日期︰2013 年 6 月 24 日
@@ -44,7 +42,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 如果您已經指定您自訂的網站名稱，請將 <span class="code">WebsiteName</span> 參數新增至您的命令並指定網站名稱。 如果您已經使用自訂的 Web 應用程式 (不是預設應用程式 **pswa**)，請將 <span class="code">WebApplicationName</span> 參數新增至您的命令，並指定 Web 應用程式的名稱。
 
-#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstallpswawebapplication-cmdlet"></a>使用 Uninstall-PswaWebApplication Cmdlet 刪除網站及 Web 應用程式
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstall-pswawebapplication-cmdlet"></a>使用 Uninstall-PswaWebApplication Cmdlet 刪除網站及 Web 應用程式
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -215,10 +213,4 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 - http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

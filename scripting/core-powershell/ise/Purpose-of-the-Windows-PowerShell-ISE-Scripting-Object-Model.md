@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-translationtype: Human Translation
-ms.sourcegitcommit: 641b6b2169824296b459691e67cdb771f3a07294
-ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
-
+ms.openlocfilehash: 3213279588df19a677940b67fa1752a29a678e36
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE 指令碼物件模型的用途
+# <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 指令碼物件模型的用途
   物件會關聯至 Windows PowerShell 整合式指令碼環境 (ISE) 的表單和函式。 物件模型參考提供有關成員屬性的詳細資料以及這些物件公開的方法。 我們將提供範例來示範您如何使用指令碼直接存取這些方法與屬性。 指令碼物件模型讓您更容易進行下列範圍內的工作。
 
-## 自訂 Windows PowerShell ISE 的外觀
+## <a name="customizing-the-appearance-of-windows-powershell-ise"></a>自訂 Windows PowerShell ISE 的外觀
  您可以使用物件模型來修改應用程式設定和選項。 例如，您可以使用如下方式來修改它們︰
 
 -   您可以變更錯誤、警告、詳細資訊輸出及偵錯輸出的色彩。
@@ -32,7 +30,7 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
 -   您可以在指令碼窗格和輸出窗格並排顯示的檢視，以及指令碼窗格位於輸出窗格上方的檢視之間進行切換。 您可以將命令窗格停駐於輸出窗格的下方或上方。
 
-## 增強 Windows PowerShell ISE 功能
+## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>增強 Windows PowerShell ISE 功能
  您可以使用物件模型來增強 Windows PowerShell ISE 功能。 例如，您可以：
 
 -   新增和修改 Windows PowerShell ISE 本身的執行個體。 例如，若要變更功能表，您可以新增功能表項目，並將新的功能表項目對應至指令碼。
@@ -67,18 +65,12 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
     -   選取檔案。
 
-## 自動化工作
+## <a name="automating-tasks"></a>自動化工作
  您可以使用指令碼物件模型，針對經常執行的作業建立鍵盤快速鍵。
 
-## 另請參閱
- - [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md) 
- - [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- - [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>另請參閱
+- [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md) 
+- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Sep16_HO3-->
-
-

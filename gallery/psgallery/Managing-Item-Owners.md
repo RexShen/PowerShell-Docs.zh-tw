@@ -9,24 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: "傳訊給項目擁有者"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 00fe57762c6b2bb690255ecaea642f97124f4328
-
+ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 傳訊給項目擁有者
+# <a name="managing-item-owners"></a>傳訊給項目擁有者
 
 PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人定義。
 有時候，這個中繼資料必須在初步發行項目時另外受到管理，這表示擁有者中繼資料必須可變動，項目本身則不可變動。
 
 所有項目擁有者均為同儕。 這表示任何項目擁有者均可發行新版本的項目。 而且任何項目擁有者也都可以移除其他任何項目擁有者。 沒有任何擁有者的權限高於其他擁有者。  
 
-## 設定項目的初始擁有者 
+## <a name="setting-an-items-initial-owner"></a>設定項目的初始擁有者 
 
 當新的項目發行到 PowerShell 資源庫時，會由發行該項目的使用者定義初始擁有者。 這取決於 Publish-Module cmdlet 中使用了誰的 API 金鑰。
 
-## 新增擁有者
+## <a name="adding-owners"></a>新增擁有者
 
 一旦將項目發行到 PowerShell 資源庫，就能輕易邀請其他使用者成為項目擁有者。
 
@@ -45,7 +43,7 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 請注意，"Authors" 中繼資料單純為自由格式的文字，只有 "Owners" 受到控制。
 
 
-## 移除擁有者
+## <a name="removing-owners"></a>移除擁有者
 當項目有多個擁有者，而需要移除其中一個時，程序很簡單：
 
 1. 使用項目目前擁有者的帳戶[登入](https://powershellgallery.com/users/account/LogOn) PowerShell 資源庫；
@@ -55,7 +53,7 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 
 
 
-## 移轉項目擁有權
+## <a name="transferring-item-ownership"></a>移轉項目擁有權
 我們有時候會收到將項目擁有權從一名使用者移轉到另一名的支援要求，但您幾乎可以隨時自行完成。
 只要結合上述兩項功能，就能將擁有權從一位使用者移轉給另一位。
 
@@ -68,7 +66,7 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 * 意外使用錯誤帳戶發行了項目
 
 
-## 孤立的項目
+## <a name="orphaned-items"></a>孤立的項目
 發生了最後一個案例，但不常發生。
 項目已被孤立，而無法使用唯一的項目擁有者帳戶新增使用者。
 這裡有這個案例的一些範例：
@@ -83,10 +81,4 @@ PowerShell 資源庫系統管理員可存取任何項目的 [管理擁有者] �
 如果我們判斷您應為項目擁有者，就會自行使用項目的 [管理擁有者] 連結，並傳送成為擁有者的邀請給您。
 我們只會在驗證您應為擁有者後這樣做，而且其程序會因情況而有所不同。
 通常，我們會使用項目的專案 URL 找到連絡專案擁有者的方法，但我們可能也會使用 Twitter、電子郵件或其他方式連絡專案擁有者。
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

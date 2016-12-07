@@ -8,10 +8,9 @@ author: keithb
 manager: carolz
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: ecf70f38bbf48f410eb59b75f86eea767637757a
-ms.openlocfilehash: 72df0311a1d187dc6c7c1d29b0a3d2fd243848f0
-
+ms.openlocfilehash: 6986e7b8543ce38c0330e6428ac908ca7f126e08
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
 # <a name="catalog-cmdlets"></a>類別目錄 Cmdlet  
 
@@ -52,9 +51,3 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 此 Cmdlet 會將所有檔案及在類別目錄檔案中找到和其相關之路徑的雜湊，與磁碟上儲存的雜湊進行比較。 若在檔案雜湊與路徑之間偵測到任何不相符，其會傳回狀態 `ValidationFailed`。 使用者可以使用 `Detailed` 參數擷取所有此資訊。 和對類別目錄檔案類別目錄呼叫 [Get-authenticodesignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) Cmdlet 一樣，類別目錄的簽署狀態也會顯示在 `Signature` 欄位中。 使用者也可使用 `FilesToSkip` 參數，在驗證期間跳過任何檔案。 
-
-
-
-<!--HONumber=Nov16_HO3-->
-
-

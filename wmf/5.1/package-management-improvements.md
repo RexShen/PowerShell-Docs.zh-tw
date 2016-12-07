@@ -9,18 +9,16 @@ contributor: jianyunt, quoctruong
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 0a5dcec1089bd07b968c61b18ca4e6d59d0afd3b
-ms.openlocfilehash: 615bdf1a82dc5078ee2f37eec70a64e25b42bda2
-
+ms.openlocfilehash: fd1fb6dd12b0a9ddcf69d159d83595955af62bc5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="improvements-to-package-management-in-wmf-51-preview"></a>WMF 5.1 (預覽) 中封裝管理的改善 #
 
-# WMF 5.1 (預覽) 中封裝管理的改善 #
-
-## 封裝管理的改善 ##
+## <a name="improvements-in-packagemanagement"></a>封裝管理的改善 ##
 以下是 WMF 5.1 中所做的修正︰ 
 
-### 版本別名
+### <a name="version-alias"></a>版本別名
 
 **案例**︰您的系統上若是安裝了 1.0 及 2.0 版的 P1 套件，而您想要解除安裝 1.0 版，可以執行 `Uninstall-Package -Name P1 -Version 1.0`。預期在執行 Cmdlet 之後，應會解除安裝 1.0 版， 但卻解除安裝了 2.0 版。  
     
@@ -28,7 +26,7 @@ ms.openlocfilehash: 615bdf1a82dc5078ee2f37eec70a64e25b42bda2
     
 **解決方法**︰將 `-Version` 從 PackageManagement (又稱為 OneGet) 及 PowerShellGet 中完全移除。 
 
-### 多次提示啟動載入 NuGet 提供者
+### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>多次提示啟動載入 NuGet 提供者
 
 **案例**︰當您第一次在電腦上執行 `Find-Module`、`Install-Module` 或其他 PackageManagement Cmdlet 時，PackageManagement 會嘗試啟動 NuGet 提供者。 這是因為 PowerShellGet 提供者也使用 NuGet 提供者下載 PowerShell 模組。 PackageManagement 會提示使用者提供安裝 NuGet 提供者的權限。 在使用者選取 [是] 啟動載入之後，就會安裝最新版的 NuGet 提供者。 
     
@@ -39,7 +37,7 @@ ms.openlocfilehash: 615bdf1a82dc5078ee2f37eec70a64e25b42bda2
 如果 $env: ProgramFiles\PackageManagement\ProviderAssemblies $env: LOCALAPPDATA\PackageManagement\ProviderAssemblies 有舊版的 NuGet 提供者，您也可以手動刪除舊版 (NuGet Anycpu.exe) 解決這個問題。
 
 
-### 只有可以存取內部網路的電腦才支援 PackageManagement
+### <a name="support-for-packagemanagement-on-computers-with-intranet-access-only"></a>只有可以存取內部網路的電腦才支援 PackageManagement
 
 **案例**︰在企業環境中，員工的工作環境通常無法存取網際網路，而只能存取內部網路。 在 WMF 5.0 中，PackageManagement 不支援此狀況。
 
@@ -54,28 +52,22 @@ ms.openlocfilehash: 615bdf1a82dc5078ee2f37eec70a64e25b42bda2
 3. 將二進位檔複製到內部網路電腦能夠存取的資料夾或網路共用位置，然後使用 `Install-PackageProvider -Name NuGet -Source <Path to folder>` 安裝 NuGet 提供者。
 
 
-### 事件記錄的改善
+### <a name="event-logging-improvements"></a>事件記錄的改善
 
 安裝封裝即是變更電腦的狀態。 現在在 WMF 5.1 中，PackageManagement 已會將事件記錄到 `Install-Package`、`Uninstall-Package` 及 `Save-Package` 活動的 Windows 事件記錄檔中。 事件記錄檔與 PowerShell 相同，亦即 `Microsoft-Windows-PowerShell, Operational`。
 
-### 支援基本驗證
+### <a name="support-for-basic-authentication"></a>支援基本驗證
 
 在 WMF 5.1 中，PackageManagement 可讓您從需要基本驗證的存放庫尋找及安裝套件。 您可以將您的認證提供給 `Find-Package` 及 `Install-Package` Cmdlet。 例如：
 
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
-### 在 Proxy 後方使用 PackageManagement 的支援
+### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>在 Proxy 後方使用 PackageManagement 的支援
 
 現在在 WMF 5.1 l 中，PackageManagement 也接受新的 Proxy 參數 `-ProxyCredential` 及 `-Proxy`。 您可以使用這些參數，在 PackageManagement Cmdlet 中指定 Proxy URL 及認證。 預設使用系統 Proxy 設定。 例如：
 
 ``` PowerShell
 Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

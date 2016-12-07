@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
-
+ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 PowerShell 類別撰寫自訂的 DSC 資源
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
 > 適用於：Windows PowerShell Windows 5.0
 
@@ -25,7 +23,7 @@ ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
 
 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 
-## 類別資源的資料夾結構
+## <a name="folder-structure-for-a-class-resource"></a>類別資源的資料夾結構
 
 若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。 此類別在 **MyDscResource.psm1** 中定義，而模組資訊清單則在 **MyDscResource.psd1** 中定義。
 
@@ -36,7 +34,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## 建立類別
+## <a name="create-the-class"></a>建立類別
 
 您要使用類別關鍵字來建立 PowerShell 類別。 若要明確指出類別是 DSC 資源，請使用 **DscResource()** 屬性。 類別名稱是 DSC 資源的名稱。
 
@@ -46,7 +44,7 @@ class FileResource {
 }
 ```
 
-### 宣告屬性
+### <a name="declare-properties"></a>宣告屬性
 
 DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性，如下所示。
 
@@ -81,7 +79,7 @@ enum Ensure
 }
 ```
 
-### 實作方法
+### <a name="implementing-the-methods"></a>實作方法
 
 **Get()**、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
 
@@ -218,7 +216,7 @@ enum Ensure
     }
 ```
 
-### 完整的檔案
+### <a name="the-complete-file"></a>完整的檔案
 完整的類別檔案如下。
 
 ```powershell
@@ -417,7 +415,7 @@ class FileResource
 ```
 
 
-## 建立資訊清單
+## <a name="create-a-manifest"></a>建立資訊清單
 
 若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 我們的資訊清單看起來像這樣︰
 
@@ -455,7 +453,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## 測試資源
+## <a name="test-the-resource"></a>測試資源
 
 如前文所述將類別和資訊清單檔儲存在資料夾結構中後，您就可以建立使用新資源的設定。 如需如何執行 DSC 設定的資訊，請參閱[施行設定](enactingConfigurations.md)。 下列設定會檢查 `c:\test\test.txt` 的檔案是否存在，如果不存在，會從 `c:\test.txt` 複製檔案 (您應該先建立 `c:\test.txt` 再執行設定)。
 
@@ -474,13 +472,7 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## 另請參閱
-### 概念
+## <a name="see-also"></a>另請參閱
+### <a name="concepts"></a>概念
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

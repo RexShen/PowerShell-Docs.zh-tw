@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
-
+ms.openlocfilehash: 84ed3408cfef1dbc99f6f3147ae36be09bca67e4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#DSC 使用者資源#
+#<a name="dsc-user-resource"></a>DSC 使用者資源#
 
  
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -22,7 +20,7 @@ ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
 Windows PowerShell 預期狀態設定 (DSC) 的 __User__ 資源，會提供在目標節點管理本機使用者帳戶的機制。
 
 
-##語法##
+##<a name="syntax"></a>語法##
 
 ```
 User [string] #ResourceName
@@ -40,7 +38,7 @@ User [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | UserName| 指出您要確保其特定狀態的帳戶名稱。| 
@@ -54,7 +52,7 @@ User [string] #ResourceName
 | PasswordNeverExpires| 表示密碼是否會到期。 為確保這個帳戶的密碼永遠不會到期，請將這個屬性設定為 __$true__，如果密碼會到期請將它設定為 __$false__。 預設值為 __$false__。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 範例
+## <a name="example"></a>範例
 
 ```powershell
 User UserExample
@@ -65,10 +63,4 @@ User UserExample
     DependsOn = “[Group]GroupExample" # Configures GroupExample first
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

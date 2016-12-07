@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2ba44df5dd6c91371cbbfe95d48184a4ff4a7738
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC for Linux nxFile 資源
+# <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxFile** 資源會提供在 Linux 節點上管理檔案和目錄的機制。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 nxFile <string> #ResourceName
@@ -39,7 +37,7 @@ nxFile <string> #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -56,7 +54,7 @@ nxFile <string> #ResourceName
 | 模式| 以八進位或符號標記法指定資源的預期權限。 (例如，777 或 rwxrwxrwx)。 如果使用符號標記法，就不會提供表示目錄或檔案的第一個字元。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 其他資訊
+## <a name="additional-information"></a>其他資訊
 
 
 Linux 和 Windows 預設在文字檔案中使用不同分行符號字元，而在 Linux 電腦上以 __nxFile__ 設定某些檔案時，可能會導致非預期的結果。 有多種方式來管理 Linux 檔案的內容，同時避免非預期的分行符號字元所造成的問題：
@@ -134,7 +132,7 @@ nxFile resolvConf
 }
 ```
 
-## 範例
+## <a name="example"></a>範例
 
 下列範例可確保目錄 `/opt/mydir` 存在，且具有指定內容的檔案存在於此目錄中。
 
@@ -161,10 +159,4 @@ nxFile FileExample
 } 
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

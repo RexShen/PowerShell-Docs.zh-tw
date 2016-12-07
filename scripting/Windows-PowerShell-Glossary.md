@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 5c6f660f9de9039355f3a991da440b75e97275eb
-
+ms.openlocfilehash: 9e5bb79b0d022b85441f5f6aab2f8cce141fe9c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 詞彙
+# <a name="windows-powershell-glossary"></a>Windows PowerShell 詞彙
 
 
 |詞彙|定義|
@@ -60,10 +58,4 @@ ms.openlocfilehash: 5c6f660f9de9039355f3a991da440b75e97275eb
 |Windows PowerShell 指令碼檔案|一個檔案，副檔名為 .ps1 且包含使用 Windows PowerShell 語言所撰寫的指令碼。|
 |Windows PowerShell 嵌入式管理單元|定義可新增至 Windows PowerShell 環境之一組 Cmdlet、提供者和 Microsoft .NET Framework 類型的資源。|
 |Windows PowerShell 工作流程|工作流程是一系列經過程式設計、相互連結的步驟，能夠執行長期的工作，或是需要與多部裝置或受管理節點上的多個步驟協調進行。 Windows PowerShell 工作流程可讓 IT 專業人員和開發人員將連續的多重裝置管理活動或工作流程內的單一工作，編寫為工作流程。 Windows PowerShell 工作流程可讓您調整並執行 Windows PowerShell 指令碼和 XAML 檔案作為工作流程。|
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 
