@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_update script
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 8c5211a51a9ff8bce641fde8deacd2d288916602
-
+ms.openlocfilehash: b95ab77ba04d70d470a9740b452f415c872f8fa7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Update-Script
+# <a name="update-script"></a>Update-Script
 
 Update-Script Cmdlet 可讓您使用 Install-Script Cmdlet 就地更新已安裝的指令碼檔案。
 
-## 描述
+## <a name="description"></a>描述
 
 Update-Script Cmdlet 會更新先前從中安裝之存放庫中所指定的指令碼。
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -72,10 +70,4 @@ Version Name Type Repository Description
 2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

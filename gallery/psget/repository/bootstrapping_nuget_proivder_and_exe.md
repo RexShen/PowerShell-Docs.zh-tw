@@ -9,18 +9,16 @@ ms.date: 2016-10-14
 contributor: manikb
 title: bootstrapping_nuget_proivder_and_exe
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 0e0e1287dbe0912e90dfeabee8e22cdf78d9e82a
-
+ms.openlocfilehash: 3ba2289f83f2de5f7be7e4e0cced1988ee17b466
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用單一提示訊息來啟動載入 NuGet 提供者和 NuGet.exe 以進行發行作業，並且只啟動載入 NuGet 提供者以進行非發行作業。
+# <a name="bootstrap-both-nuget-provider-and-nugetexe-for-publish-operations-with-single-prompt-message-and-bootstrap-only-nuget-provider-for-non-publish-operations"></a>使用單一提示訊息來啟動載入 NuGet 提供者和 NuGet.exe 以進行發行作業，並且只啟動載入 NuGet 提供者以進行非發行作業。
 
 NuGet.exe 會從最新 NuGet 提供者中移除。 針對發行模組/指令碼，PowerShellGet 需要 NuGet.exe 建立 .nupkg 檔案，並將其推入存放庫。 需要有 NuGet 提供者才能進行非發行作業 (例如尋找、安裝、更新和儲存)。
 已新增邏輯，可使用單一提示訊息來啟動載入 NuGet 提供者和 NuGet.exe 以進行發行作業，並且只啟動載入 NuGet 提供者以進行非發行作業。
 
-## NuGet 提供者無法使用時
+## <a name="when-nuget-provider-is-not-available"></a>NuGet 提供者無法使用時
 
 ```powershell                                
 PS C:\windows\system32> find-module -Repository dtlgalleryint -verbose -name contoso
@@ -51,7 +49,7 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     dtlgalleryint        Contoso module
 ```
 
-## 在發行作業期間可以使用 NuGet 提供者以及無法使用 NuGet.exe 時
+## <a name="when-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation"></a>在發行作業期間可以使用 NuGet 提供者以及無法使用 NuGet.exe 時
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -75,7 +73,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
                    
-## 在發行作業期間無法使用 NuGet 提供者和 NuGet.exe 時
+## <a name="when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation"></a>在發行作業期間無法使用 NuGet 提供者和 NuGet.exe 時
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -100,10 +98,4 @@ VERBOSE: Installing NuGet provider.
 VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

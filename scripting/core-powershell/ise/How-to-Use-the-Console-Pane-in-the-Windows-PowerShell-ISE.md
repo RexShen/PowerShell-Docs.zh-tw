@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
-translationtype: Human Translation
-ms.sourcegitcommit: 117b3fe541b7a92479e9c68e07fa21fc8add9678
-ms.openlocfilehash: 4588577c0c05fadee6b443e2fa4c32049cf99ac3
-
+ms.openlocfilehash: 100697bc474c46d0381bccf5bc169474f4213aac
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 如何在 Windows PowerShell ISE 中使用主控台窗格
+# <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用主控台窗格
 Windows PowerShell® 整合式指令碼環境 (ISE) 的 [主控台] 窗格與獨立 Windows PowerShell ISE 的 [主控台] 視窗全都以相同的方式運作。
 
 若要在主控台窗格中執行命令，請輸入命令，然後按 ENTER 鍵。 若要輸入您要依序執行的多個命令，請在每個命令之間輸入 SHIFT+ENTER。 如需協助輸入命令，請參閱[如何在指令碼窗格和主控台窗格中使用 TAB 鍵自動完成](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)。
@@ -29,12 +27,6 @@ Windows PowerShell® 整合式指令碼環境 (ISE) 的 [主控台] 窗格與獨
 
 -   清除主控台窗格中的所有文字。 若要清除主控台窗格，您可以按一下工具列中的清除主控台窗格圖示，或是執行命令 **Clear-Host** 或其別名 **cls**。
 
-## 另請參閱
-[使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
+## <a name="see-also"></a>另請參閱
+- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
 

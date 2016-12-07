@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-translationtype: Human Translation
-ms.sourcegitcommit: b59186234a513cf34d2615d90643ee749bd60d3f
-ms.openlocfilehash: d0f9c059f6f5286388af3cfc07995fe46e7321c3
-
+ms.openlocfilehash: 590996f2db730a7841eb7a85036e4f36e59e46ff
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="exploring-the-windows-powershell-ise"></a>探索 Windows PowerShell ISE
 您可以使用 Windows PowerShell® 整合式指令碼環境 (ISE) 建立及執行命令和指令碼，並對其偵錯。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
 
@@ -77,10 +75,4 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 ## <a name="see-also"></a>另請參閱
 - [使用 Windows PowerShell ISE](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

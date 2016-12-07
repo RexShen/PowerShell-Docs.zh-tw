@@ -8,15 +8,13 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 270f2a458a40f005f462d3de5236defbb91a7362
-ms.openlocfilehash: c88c145c3585befcee194499f7e21aaeac67c0f3
-
+ms.openlocfilehash: 53c3bcb76f2bb9284339a4e506f28375a14285ae
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
-#WMF 5.1 的預期狀態設定 (DSC) 改善
-
-## DSC 類別資源改善
+## <a name="dsc-class-resource-improvements"></a>DSC 類別資源改善
 
 WMF 5.1 中已修正下列已知問題︰
 * 如果類別型 DSC 資源的 Get() 函式傳回複雜/雜湊表類型，Get-DscConfiguration 可能會傳回空值 (null) 或錯誤。
@@ -26,20 +24,20 @@ WMF 5.1 中已修正下列已知問題︰
 * 類別型資源不能用為獨佔資源。
 
 
-## DSC 資源偵錯改善
+## <a name="dsc-resource-debugging-improvements"></a>DSC 資源偵錯改善
 
 在 WMF 5.0 中，PowerShell 偵錯工具並未直接停在類別資源方法 (Get/Set/Test)。
 在 WMF 5.1 中，偵錯工具會停在類別資源方法，方式如同 MOF 資源方法。
 
-## DSC 提取用戶端支援 TLS1.1 和 TLS1.2 
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC 提取用戶端支援 TLS1.1 和 TLS1.2 
 DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制使用更安全的通訊協定時，提取用戶端就會停止運作。 在 WMF 5.1 中，DSC 提取用戶端不再支援 SSL 3.0，卻新增了更安全的 TLS 1.1 和 TLS 1.2 通訊協定支援。  
 
-## 改善的提取伺服器登錄 ##
+## <a name="improved-pull-server-registration"></a>改善的提取伺服器登錄 ##
 
 在舊版的 WMF 中，在使用 ESENT 資料庫時，同時登錄/報告 DSC 提取伺服器的要求，會導致 LCM 無法登錄及 (或) 報告。 在這種情況下，提取伺服器的事件記錄檔就會出現「執行個體名稱已在使用中」的錯誤。
 這是因為在多執行緒案例中使用不正確的模式存取 ESENT 資料庫。 WMF 5.1 已修正此問題。 WMF 5.1 中可以正常同時登錄或報告 (包含 ESENT 資料庫)。 只有 ESENT 資料庫會發生這個問題，OLEDB 資料庫無此問題。 
 
-##提取命名慣例的部分設定
+##<a name="pull-partial-configuration-naming-convention"></a>提取命名慣例的部分設定
 在舊版中，提取伺服器/服務的部分設定命名慣例 MOF 檔案名稱，應該符合本機設定管理員設定中指定的部分設定名稱，該本機設定管理員設定必須依次比對 MOF 檔案中內嵌的設定名稱。 
 
 請參閱下方的快照集︰
@@ -132,7 +130,7 @@ PartialOne
    slcm -Path .\RegistrationMetaConfig -Verbose
  ```
 
-# 使用 PsDscRunAsCredential 和 DSC 複合資源   
+# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>使用 PsDscRunAsCredential 和 DSC 複合資源   
 
 我們新增了支援以使用 [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 和 DSC [複合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)資源。    
 
@@ -177,14 +175,14 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ```
 
-##DSC 模組和設定簽署驗證
+##<a name="dsc-module-and-configuration-signing-validations"></a>DSC 模組和設定簽署驗證
 在 DSC 中，設定和模組會從提取伺服器散發到受管理的電腦。 如果提取伺服器遭到入侵，攻擊者可以修改提取伺服器上的設定和模組，將其散發到所有受管理的節點以危害所有節點。 
 
  在 WMF 5.1 中，DSC 支援驗證類別目錄和設定 (.MOF) 檔案的數位簽章。 這項功能會防止執行未經受信任簽署者簽署的設定或模組檔案，或經受信任簽署者簽署後遭竄改的檔案。 
 
 
 
-###如何簽署設定和模組 
+###<a name="how-to-sign-configuration-and-module"></a>如何簽署設定和模組 
 ***
 * 設定檔 (.MOF)：現有的 PowerShell Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 已擴充，可支援簽署 MOF 檔案。  
 * 模組：已透過簽署對應的模組類別目錄完成模組簽署，使用步驟如下： 
@@ -195,9 +193,9 @@ InstallWindowsFeature -ConfigurationData $configData
     3. 將類別目錄檔案放在模組資料夾內。
 依照慣例，模組類別目錄檔案應該位於與模組同名的模組資料夾內。
 
-###啟用簽署驗證的 LocalConfigurationManager 設定
+###<a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>啟用簽署驗證的 LocalConfigurationManager 設定
 
-####提取
+####<a name="pull"></a>提取
 節點的 LocalConfigurationManager 會根據其目前的設定，執行模組和設定的簽署驗證。 預設停用簽章驗證。 將 'SignatureValidation' 區塊加入節點的中繼設定定義可啟用簽章驗證，如下所示：
 
 ```PowerShell
@@ -248,7 +246,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 ![錯誤輸出模組範例](../images/PullUnisgnedCatalog.png)
 
-####推入
+####<a name="push"></a>推入
 透過使用推入所傳遞的設定，可能在傳送到節點之前即已在來源遭到竄改。 本機設定管理員會對已推入或發行的設定，執行類似的簽章驗證步驟。
 以下是推入簽章驗證的完整範例。
 
@@ -301,10 +299,4 @@ Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 * 嘗試推入簽署的 MOF 檔案。
 
 ![SignMofFile](../images/PushSignedMof.png)
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

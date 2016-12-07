@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: carolz
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d87f81867181d6110532dc0afff1572ebc5bfff3
-ms.openlocfilehash: b7e0e4e8dba43ff85c77446a2ec593f42316f460
-
+ms.openlocfilehash: 938dcdfe6ef4254819068703d1c267934df913b4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="using-dsc-on-microsoft-azure"></a>使用 Microsoft Azure 的 DSC
 
 Microsoft Azure 透過 [Azure 預期狀態設定延伸模組處理常式](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview) 及透過 [Azure 自動化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 支援預期狀態設定 (DSC)。
@@ -32,10 +30,4 @@ Azure DSC 延伸模組允許 VM 裝載在 Microsoft Azure 上由 DSC 管理。 �
 - [Azure 自動化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [開始使用 Azure 自動化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 - [將機器上架交由 Azure 自動化 DSC 管理](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

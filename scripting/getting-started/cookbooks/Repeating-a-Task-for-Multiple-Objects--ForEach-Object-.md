@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 8dd7904611fb697f9b398161e12765454b4f3441
-
+ms.openlocfilehash: 4b219e4499482eafa6eddf1461b74c62ba091d1a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 針對多個物件重複工作 (ForEach-Object)
+# <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>針對多個物件重複工作 (ForEach-Object)
 **ForEach-Object** Cmdlet 針對目前的管線物件使用指令碼區塊和 $_ 描述元，讓您能夠在管線中的每個物件上執行命令。 這可以用來執行一些複雜的工作。
 
 一個可能適用的情況是操控資料，使其更加實用。 例如，您可以使用 WMI 中的 Win32_LogicalDisk 類別，傳回每個本機磁碟的可用空間資訊。 傳回的資料是以位元組為單位，不過這會很難閱讀︰
@@ -53,10 +51,4 @@ eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 ```
 
 您可以使用一些進階技術來重新組織資料，但更簡單的方法是使用 **Select-Object** 建立新的物件。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 
