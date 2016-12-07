@@ -8,25 +8,23 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "角色功能"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 81fd386d58576a8930093b4f18ce36a4ff6cecd0
-ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
-
+ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="role-capabilities"></a>角色功能
 
-# 角色功能
-
-## 概觀
+## <a name="overview"></a>概觀
 在上一節中，您學到 "RoleDefinitions" 欄位會定義哪些群組有權存取哪些角色功能。
 您可能想知道：「什麼是角色功能？」
 本節將會回答這個問題。  
 
-## PowerShell 角色功能簡介
+## <a name="introducing-powershell-role-capabilities"></a>PowerShell 角色功能簡介
 PowerShell 角色功能定義使用者在 JEA 端點執行「什麼」工作。
 它會詳細列出可見命令、可見應用程式等項目的允許清單。
 角色功能是由副檔名為 ".psrc" 的檔案定義。
 
-## 角色功能內容
+## <a name="role-capability-contents"></a>角色功能內容
 我們將從檢查及修改您先前使用的示範角色功能檔案開始。
 假設您在環境中已部署自己的工作階段設定，但收到意見反應，指出您必須變更公開給使用者的功能。
 操作員必須能夠重新啟動電腦，而且他們也想要能夠取得網路設定的相關資訊。
@@ -102,7 +100,7 @@ Restart-Service WSearch # This should fail
 Exit-PSSession
 ```
 
-## 建立角色功能
+## <a name="role-capability-creation"></a>建立角色功能
 在下一節中，您將為 AD 技術支援使用者建立 JEA 端點。
 為了準備，我們將針對該節建立要填入的空白角色功能檔案。
 角色功能必須在有效 PowerShell 模組的 "RoleCapabilities" 資料夾中建立，才能在工作階段啟動時進行解析。
@@ -133,7 +131,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 恭喜，您已建立空白角色功能檔案。
 下一節將使用此檔案。
 
-## 重要概念
+## <a name="key-concepts"></a>重要概念
 **角色功能 (.psrc)**：定義使用者在 JEA 端點執行「哪些」工作的檔案。
 它會詳細列出可見命令、可見主控台應用程式等項目的允許清單。
 為了讓 PowerShell 偵測角色功能，您必須將其放在有效 PowerShell 模組的 "RoleCapabilities" 資料夾中。
@@ -141,10 +139,4 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 **PowerShell 模組**：PowerShell 功能的套件，
 可包含 PowerShell 函式、Cmdlet、DSC 資源、角色功能等等。
 若要自動載入，PowerShell 模組必須位於 `$env:PSModulePath` 中的路徑下。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

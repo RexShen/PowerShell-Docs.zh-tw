@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC for Linux nxPackage 資源
+# <a name="dsc-for-linux-nxpackage-resource"></a>DSC for Linux nxPackage 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxPackage** 資源會提供一個機制，在 Linux 節點管理套件。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 nxPackage <string> #ResourceName
@@ -34,7 +32,7 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -47,7 +45,7 @@ nxPackage <string> #ResourceName
 | ReturnCode| 預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 範例
+## <a name="example"></a>範例
 
 下列範例會確保名為 "httpd" 的套件已使用 "Yum" 套件管理員安裝在 Linux 電腦上。
 
@@ -63,10 +61,4 @@ nxPackage httpd
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

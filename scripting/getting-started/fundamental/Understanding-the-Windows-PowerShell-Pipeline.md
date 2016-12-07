@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d90bf940a1047b629f7b59d239aab50a78748251
-
+ms.openlocfilehash: 34e641329388436074f2d0f05647ec4fa7efdf83
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 了解 Windows PowerShell 管線
+# <a name="understanding-the-windows-powershell-pipeline"></a>了解 Windows PowerShell 管線
 管線幾乎可以在 Windows PowerShell 中的所有位置運作。 雖然您會在畫面上看到文字，但是 Windows PowerShell 並不會在命令之間傳送文字， 而是傳送物件。
 
 用於管線的標記法與其他殼層中所使用的標記法類似，因此第一眼時，Windows PowerShell 引進了新項目可能不大明顯。 例如，如果您使用 **Out-Host** Cmdlet 強制逐頁顯示另一個命令的輸出，則輸出看起來就像畫面上所顯示的一般文字 (分成數頁)：
@@ -66,10 +64,4 @@ Windows PowerShell 會使用物件，而不是使用文字讓管線中的命令�
 如果 Windows PowerShell 命令的資訊輸出多於我們在主控台視窗中看到的顯示內容，則如何擷取看不到的元素？ 如何檢視額外資料？ 如果您要使用不同於 Windows PowerShell 一般使用格式的格式來檢視資料，要怎麼做？
 
 本章的其餘部分將討論如何選取特定項目並對其格式化以更輕鬆地顯示來探索特定 Windows PowerShell 物件的結構，以及如何將此資訊傳送至替代輸出位置 (例如檔案和印表機)。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

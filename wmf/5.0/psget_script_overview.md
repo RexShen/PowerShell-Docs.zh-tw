@@ -1,4 +1,4 @@
-# 使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼
 
 WMF 5.0 RTM 版本中，PowerShellGet 加入了 PowerShell 指令碼共用功能。
 下列新的 Cmdlet 會加入 PowerShellGet 模組中，支援 PowerShell 指令碼。
@@ -66,8 +66,3 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -7,12 +7,10 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
-ms.openlocfilehash: 035fc8adc08df500069e800cfb94c5dcff46d88f
-
+ms.openlocfilehash: e3c7634462800736f0f321481e8f26074359f40b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="what39s-new-with-powershell"></a>PowerShell 的最新消息
 Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。  主要的改善範圍包括期望狀態設定、安全性、效能、遠端處理和語言增強功能。
 
@@ -31,10 +29,4 @@ Windows Server® 2016 及 Windows® 10 Windows 預設會安裝 PowerShell 5.0。
 
 -   New features in Windows PowerShell 3.0
 -->
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

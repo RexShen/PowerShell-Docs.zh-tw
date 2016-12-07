@@ -1,4 +1,4 @@
-# 呼叫基底類別方法
+# <a name="call-base-class-method"></a>呼叫基底類別方法
 
 您可以覆寫子類別中現有的方法。 若要這樣做，請使用相同的名稱和簽章宣告方法︰
 
@@ -46,7 +46,3 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

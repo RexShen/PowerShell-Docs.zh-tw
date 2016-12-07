@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 0148f4631e34e65a4336c5d1d50e313fb6639748
-
+ms.openlocfilehash: f7c9164e09e253e8138820708ba8864841ddfff2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用 Windows PowerShell 撰寫指令碼
+# <a name="scripting-with-windows-powershell"></a>使用 Windows PowerShell 撰寫指令碼
 
 Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言，專為系統管理所設計。 Windows PowerShell 是以 .NET Framework 為基礎所建置，可協助 IT 專業人員與進階使用者控制和自動化管理 Windows 作業系統與在 Windows 上執行的應用程式。
 
@@ -28,10 +26,4 @@ Windows PowerShell 包含下列功能：
 -   作業系統的簡化命令型瀏覽，可讓使用者使用瀏覽檔案系統的相同技巧，瀏覽登錄與其他資料存放區。
 -   強大的物件操作功能。 物件可以直接操作或傳送到其他工具或資料庫。
 -   可延伸介面。 獨立軟體廠商和企業開發人員可以建置自訂工具和公用程式來管理其軟體。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e4385f0ed482b97e8794cde968de549902cc358e
-ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
-
+ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 開始使用 Linux 預期狀態設定 (DSC)
+# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
 本主題說明如何開始使用 Linux 的 PowerShell 預期狀態設定 (DSC)。 如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](overview.md)。
 
-## 支援的 Linux 作業系統版本
+## <a name="supported-linux-operation-system-versions"></a>支援的 Linux 作業系統版本
 
 DSC for Linux 支援下列 Linux 作業系統版本。
 - CentOS 5、6 和 7 (x86/x64)
@@ -38,11 +36,11 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 | ctypes| Python CTypes 程式庫| 必須符合 Python 版本| 
 | libcurl| cURL http 用戶端程式庫| 7.15.1| 
 
-## 安裝 DSC for Linux
+## <a name="installing-dsc-for-linux"></a>安裝 DSC for Linux
 
 您必須先安裝[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)，才能安裝 DSC for Linux。
 
-### 安裝 OMI
+### <a name="installing-omi"></a>安裝 OMI
 
 Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1。 OMI 可以從開放式群組下載：[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)。
 
@@ -54,7 +52,7 @@ Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### 安裝 DSC
+### <a name="installing-dsc"></a>安裝 DSC
 
 您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 Linux 的 DSC。 
 
@@ -67,11 +65,11 @@ Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-## 使用 DSC for Linux
+## <a name="using-dsc-for-linux"></a>使用 DSC for Linux
 
 下列章節說明如何在 Linux 電腦上建立並執行 DSC 設定。
 
-### 建立設定 MOF 文件
+### <a name="creating-a-configuration-mof-document"></a>建立設定 MOF 文件
 
 Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就像 Linux 電腦一樣。 下列步驟說明如何使用 Windows PowerShell 建立 Linux 電腦的設定文件。
 
@@ -107,7 +105,7 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-### 將設定推送至 Linux 電腦
+### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
 
 設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 用來建立 Linux 電腦的 CIMSession。
 
@@ -129,17 +127,17 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * 在「推送」模式中，使用者認證必須是在 Linux 電腦上的根使用者。
 * DSC for Linux 僅支援 SSL/TLS 連線，必須使用 New-CimSession 且將 –UseSSL 參數設為 $true。
 * OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/opt/omi/etc/omiserver.conf`，屬性為：pemfile 和 keyfile。
-如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項選擇忽略憑證驗證： `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
+如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
 
 執行下列命令，將 DSC 設定推送至 Linux 節點。
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### 以提取伺服器散發設定
+### <a name="distribute-the-configuration-with-a-pull-server"></a>以提取伺服器散發設定
 
 可以用提取伺服器來散發設定給 Linux 電腦，就像 Windows 電腦一樣。 如需使用提取伺服器的指引，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](pullServer.md)。 如需使用提取伺服器與 Linux 電腦的其他資訊與限制，請參閱 Linux 的預期狀態設定版本資訊。
 
-### 在本機使用設定
+### <a name="working-with-configurations-locally"></a>在本機使用設定
 
 DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指令碼位於 `/opt/microsoft/dsc/Scripts` 並且包含下列項目：
 * GetDscConfiguration.py
@@ -178,7 +176,7 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## Linux 記錄檔的 PowerShell 預期狀態設定
+## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>Linux 記錄檔的 PowerShell 預期狀態設定
 
 會對 DSC for Linux 訊息產生下列記錄檔。
 
@@ -186,10 +184,4 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 |---|---|---|
 |omiserver.log|/var/opt/omi/log|OMI CIM 伺服器作業相關的訊息。|
 |dsc.log|/var/opt/omi/log|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

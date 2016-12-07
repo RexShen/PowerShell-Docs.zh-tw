@@ -1,4 +1,4 @@
-# DSC 設定的依需求 PULL
+# <a name="on-demand-pull-of-dsc-configurations"></a>DSC 設定的依需求 PULL
 
 新的 Update-DscConfiguration Cmdlet 觸發在中繼設定中定義的提取伺服器提取。 此行為通常稱為「現在提取」。 
 
@@ -31,7 +31,3 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-Confirm] 
                             [<CommonParameters>]
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

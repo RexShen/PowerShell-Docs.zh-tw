@@ -1,4 +1,4 @@
-# 新的內建 DSC 資源
+# <a name="new-built-in-dsc-resources"></a>新的內建 DSC 資源
 
 WMF 5.0 RTM 有 4 個新的 DSC 資源︰ 
 * WindowsFeatureSet
@@ -8,7 +8,7 @@ WMF 5.0 RTM 有 4 個新的 DSC 資源︰
 
 這些資源提供了簡單的方法來設定使用單一資源呼叫的多個執行個體。
 
-## WindowsFeatureSet
+## <a name="windowsfeatureset"></a>WindowsFeatureSet
 
 ```powershell
 # Get the syntax of WindowsFeatureSet resource
@@ -26,7 +26,7 @@ WindowsFeatureSet [String] #ResourceName
 }
 ```
 
-## WindowsOptionalFeatureSet 
+## <a name="windowsoptionalfeatureset"></a>WindowsOptionalFeatureSet 
 
 ```powershell
 # Get the syntax of WindowsOptionalFeatureSet resource
@@ -45,7 +45,7 @@ WindowsOptionalFeatureSet [String] #ResourceName
 }
 ```
 
-## ServiceSet 
+## <a name="serviceset"></a>ServiceSet 
 
 ```powershell
 # Get the syntax of ServiceSet resource
@@ -63,7 +63,7 @@ ServiceSet [String] #ResourceName
 }
 ```
 
-## ProcessSet 
+## <a name="processset"></a>ProcessSet 
 
 ```powershell
 # Get the syntax of ProcessSet resource
@@ -81,8 +81,3 @@ ProcessSet [String] #ResourceName
     [WorkingDirectory = [String]]
 }
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

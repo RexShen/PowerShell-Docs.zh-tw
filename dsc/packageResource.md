@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: d07b11c148dfa747b3f9c0157191b83efb6c65df
-
+ms.openlocfilehash: 343bd3c625e2df9f34480ea8065e3039d6069d61
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC 套件資源
+# <a name="dsc-package-resource"></a>DSC 套件資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 中的 **Package** 資源，提供一個機制在目標節點上安裝或解除安裝套件，例如 Windows Installer 和 setup.exe 套件。
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 Package [string] #ResourceName
@@ -36,7 +34,7 @@ Package [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 名稱| 指出您要確保其特定狀態的套件名稱。| 
@@ -49,7 +47,7 @@ Package [string] #ResourceName
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 | ReturnCode| 指出預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。| 
 
-## 範例
+## <a name="example"></a>範例
 
 這個範例會執行 .msi 安裝程式，其位於指定路徑，且具有指定的產品識別碼。
 
@@ -65,10 +63,4 @@ Configuration PackageTest
     } 
 }
 ```
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

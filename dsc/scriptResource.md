@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 6b060d17fb106089528b0737ab03cc7d592d412a
-
+ms.openlocfilehash: 56eb7ef230d84cc5f5679f39e13e2019205c65f5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Script 資源
+# <a name="dsc-script-resource"></a>DSC Script 資源
 
  
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -29,7 +27,7 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目
 若您需要使用 `GetScript`、`TestScript` 或 `SetScript` 指令碼區塊中設定指令碼的變數，請使用 `$using:` 範圍 (請參閱下方範例)
 
 
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 Script [string] #ResourceName
@@ -42,7 +40,7 @@ Script [string] #ResourceName
 }
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -52,7 +50,7 @@ Script [string] #ResourceName
 | 認證| 如果需要認證，表示執行這個指令碼所要使用的認證。| 
 | DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。
 
-## 範例 1
+## <a name="example-1"></a>範例 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -74,7 +72,7 @@ Configuration ScriptTest
 }
 ```
 
-## 範例 2
+## <a name="example-2"></a>範例 2
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -106,10 +104,4 @@ Configuration ScriptTest
 ```
 
 此資源正在將設定的版本寫入文字檔。 用戶端電腦上可以使用此版本，但在其餘節點則無法使用，所以必須以 PowerShell 的 `using` 範圍，將其傳遞至各個 `Script` 資源的指令碼區塊。 產生節點的 MOF 檔案時，會從用戶端電腦的文字檔讀取 `$version` 變數的值。 DSC 會以 `$version` 變數的值，取代各個指令碼區塊中的 `$using:version` 變數。
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

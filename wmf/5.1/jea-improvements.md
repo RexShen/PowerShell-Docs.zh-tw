@@ -8,12 +8,10 @@ contributor: ryanpu
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 37edecc88cf36cfb2f1800452b9586f15ce3a088
-ms.openlocfilehash: bd01ff0d208717511505a1aedf9eeaa303d08dbe
-
+ms.openlocfilehash: 1b054b67bfd7b3660bac134bc8b023baf5644507
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) 的改善功能
 
 ## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>限制 JEA 端點間的檔案複製
@@ -96,9 +94,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定︰Windows Server 2008 R2 現在支援虛擬帳戶
 在 WMF 5.1 中，您現在可於 Windows Server 2008 R2 使用虛擬帳戶，讓 Windows Server 2008 R2 - 2016 上的設定和功能同位一致。
 在 Windows 7 上使用 JEA 時，仍不支援虛擬帳戶。
-
-
-
-<!--HONumber=Nov16_HO2-->
-
-
