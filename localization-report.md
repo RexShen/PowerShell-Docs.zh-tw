@@ -5,10 +5,10 @@
  -------- | ----- 
  Total Files | 2428
 [ Handoff Failed Files ](#handoff-failed-list)| 1
-[ Handoff Success Files ](#handoff-success-list)| 2141
+[ Handoff Success Files ](#handoff-success-list)| 2139
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 12
-[ Handback Failed Files ](#handback-failed-list)| 16
+[ Handback Failed Files ](#handback-failed-list)| 18
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 158
 [ Ignored Files ](#ignored-list)| 100
@@ -45,11 +45,9 @@
  [gallery\psgallery\Managing-Item-Owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Managing-Item-Owners.md) | HandedOffSuccess | [Details](#00fe57762c6b2bb690255ecaea642f97124f4328119)
  [gallery\psgallery\psgallery_contacting_administrators.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_administrators.md) | HandedOffSuccess | [Details](#0268fed62bc4c30f5e299af0cc29a0f2316ce731121)
  [gallery\psgallery\psgallery_contacting_item_owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_item_owners.md) | HandedOffSuccess | [Details](#1e86d285ba2d9fb7fb3d652a7c941c458f888a53122)
- [gallery\psgallery\psgallery_deploy_to_azure_automation.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_deploy_to_azure_automation.md) | HandedOffSuccess | [Details](#c028bf6145b41c13bccda9543a782b838bd730ff123)
  [gallery\psgallery\psgallery_dispute_resolution.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_dispute_resolution.md) | HandedOffSuccess | [Details](#6d7015a14f0d0a75bc28e201dceefe6c9c682b31124)
  [gallery\psgallery\psgallery_faqs.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_faqs.md) | HandedOffSuccess | [Details](#96d38c487a311852a0f670b7d3de4929fab68e4d125)
  [gallery\psgallery\psgallery_filelist_feature.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_filelist_feature.md) | HandedOffSuccess | [Details](#ffd07e9666ed903fbed6b8f27e365f6182f1c131126)
- [gallery\psgallery\psgallery_gettingstarted.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_gettingstarted.md) | HandedOffSuccess | [Details](#d6f36a62c95a4444f456cf7c14f7f3dc08236447127)
  [gallery\psgallery\psgallery_items_tab.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_items_tab.md) | HandedOffSuccess | [Details](#6edf1451cb869f0b9400b353b3143c99c3568382128)
  [gallery\psgallery\psgallery_pseditions.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_pseditions.md) | HandedOffSuccess | [Details](#a2e6f87603795e7781115239b87c73a076e5e6ca129)
  [gallery\psgallery\psgallery_report_abuse.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_report_abuse.md) | HandedOffSuccess | [Details](#218211100c929be4c9523732f5faa69e91f16801130)
@@ -2188,6 +2186,8 @@
  [dsc\DSCAutomationHostEnabled.md](https://github.com/PowerShell/powerShell-Docs/blob/260490003335923d4e1c6b6873b11ee71ba780c0/dsc/DSCAutomationHostEnabled.md) | HandedBackFailed | [Details](#24842d755aa34ab29c6a5b4f973052476bc907e526)
  [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/49ddf6faf98a51f7ad5252e9563b1543478ed113/dsc/enactingConfigurations.md) | HandedBackFailed | [Details](#9090f4be2987b8a56ba4d839f54e05082a8bcfa027)
  [gallery\psgallery\PackageManagement_Architecture .md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/PackageManagement_Architecture%20.md) | HandedBackFailed | [Details](#c84ff58e4378feffa15c91485826b74f421c737e120)
+ [gallery\psgallery\psgallery_deploy_to_azure_automation.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_deploy_to_azure_automation.md) | HandedBackFailed | [Details](#c028bf6145b41c13bccda9543a782b838bd730ff123)
+ [gallery\psgallery\psgallery_gettingstarted.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_gettingstarted.md) | HandedBackFailed | [Details](#d6f36a62c95a4444f456cf7c14f7f3dc08236447127)
  [reference\README.md](https://github.com/PowerShell/powerShell-Docs/blob/6f2cc23f6fce9c267e793fa8653f292e6a6b98ec/reference/README.md) | HandedBackFailed | [Details](#edafde9188cad3b21d0cd2b30cfaaf1bede9b1952178)
  [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md) | HandedBackFailed | [Details](#5a404bca8e9435a9eab29b8b4cfa8c336d024c382186)
  [scripting\core-powershell\core-modules\Microsoft.PowerShell.Host-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md) | HandedBackFailed | [Details](#201152ec2c4e9033041717f496b0cd26dee2355c2187)
@@ -4187,7 +4187,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='c028bf6145b41c13bccda9543a782b838bd730ff123'></a> Source: [gallery\psgallery\psgallery_deploy_to_azure_automation.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_deploy_to_azure_automation.md)
-* Status: HandedOffSuccess
+* Status: HandedBackFailed
 * Target File: 
 * Handoff File: [psgallery_deploy_to_azure_automation.e2979f4b7a0b957862c90510816406977e8c9b76.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/psgallery_deploy_to_azure_automation.e2979f4b7a0b957862c90510816406977e8c9b76.zh-tw.xlf)
 * Handoff Datetime: 2016-11-23 22:08:56
@@ -4195,7 +4195,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback Datetime: 2016-12-08 04:24:39
+* Handback Error: [handback_file_rejected](#c028bf6145b41c13bccda9543a782b838bd730ff123handback_file_rejected)
 * [Back to Top](#report-top)
 
 ##### <a name='6d7015a14f0d0a75bc28e201dceefe6c9c682b31124'></a> Source: [gallery\psgallery\psgallery_dispute_resolution.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_dispute_resolution.md)
@@ -4235,7 +4236,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='d6f36a62c95a4444f456cf7c14f7f3dc08236447127'></a> Source: [gallery\psgallery\psgallery_gettingstarted.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_gettingstarted.md)
-* Status: HandedOffSuccess
+* Status: HandedBackFailed
 * Target File: 
 * Handoff File: [psgallery_gettingstarted.a7579de98fd8f80af14a1190c18e388a9f1b7b5d.zh-tw.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/96c3d575bfb668adbedb83e2cd96e106b31807c3/ol-handoff/PowerShell/powerShell-Docs.zh-tw/live/psgallery_gettingstarted.a7579de98fd8f80af14a1190c18e388a9f1b7b5d.zh-tw.xlf)
 * Handoff Datetime: 2016-11-23 22:08:56
@@ -4243,7 +4244,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback Datetime: 2016-12-08 04:24:39
+* Handback Error: [handback_file_rejected](#d6f36a62c95a4444f456cf7c14f7f3dc08236447127handback_file_rejected)
 * [Back to Top](#report-top)
 
 ##### <a name='6edf1451cb869f0b9400b353b3143c99c3568382128'></a> Source: [gallery\psgallery\psgallery_items_tab.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_items_tab.md)
@@ -32696,6 +32698,18 @@
 * Error Message: Handback file name: PackageManagement_Architecture%20.342c41f221a468f60c1ece4ef6d32b4005ca3c94.zh-tw is different with handoff file name: PackageManagement_Architecture .342c41f221a468f60c1ece4ef6d32b4005ca3c94.zh-tw.
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_validate_file_name_invalide","internal_error_message":"Handback file name: PackageManagement_Architecture%20.342c41f221a468f60c1ece4ef6d32b4005ca3c94.zh-tw is different with handoff file name: PackageManagement_Architecture .342c41f221a468f60c1ece4ef6d32b4005ca3c94.zh-tw.","internal_error_retriable":false,"exception_message":"Handback file name: PackageManagement_Architecture%20.342c41f221a468f60c1ece4ef6d32b4005ca3c94.zh-tw is different with handoff file name: PackageManagement_Architecture .342c41f221a468f60c1ece4ef6d32b4005ca3c94.zh-tw.","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
+##### <a name='c028bf6145b41c13bccda9543a782b838bd730ff123handback_file_rejected'></a> Source: [gallery\psgallery\psgallery_deploy_to_azure_automation.md](#c028bf6145b41c13bccda9543a782b838bd730ff123)
+* Error Code: handback_file_rejected
+* Error Message: file psgallery_deploy_to_azure_automation.e2979f4b7a0b957862c90510816406977e8c9b76.zh-tw.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file psgallery_deploy_to_azure_automation.e2979f4b7a0b957862c90510816406977e8c9b76.zh-tw.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file psgallery_deploy_to_azure_automation.e2979f4b7a0b957862c90510816406977e8c9b76.zh-tw.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
+##### <a name='d6f36a62c95a4444f456cf7c14f7f3dc08236447127handback_file_rejected'></a> Source: [gallery\psgallery\psgallery_gettingstarted.md](#d6f36a62c95a4444f456cf7c14f7f3dc08236447127)
+* Error Code: handback_file_rejected
+* Error Message: file psgallery_gettingstarted.a7579de98fd8f80af14a1190c18e388a9f1b7b5d.zh-tw.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file psgallery_gettingstarted.a7579de98fd8f80af14a1190c18e388a9f1b7b5d.zh-tw.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file psgallery_gettingstarted.a7579de98fd8f80af14a1190c18e388a9f1b7b5d.zh-tw.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
 ##### <a name='f7f96e082f28e7cfb3a3f437bc759ec9a163875b2175handoff_transform_failed'></a> Source: [reference\5.1\README.md](#f7f96e082f28e7cfb3a3f437bc759ec9a163875b2175)
 * Error Code: handoff_transform_failed
