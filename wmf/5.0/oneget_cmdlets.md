@@ -1,4 +1,4 @@
-# PackageManagement Cmdlet
+# <a name="packagemanagement-cmdlets"></a>PackageManagement Cmdlet
 這是支援軟體探索、安裝和清查 (SDII) 的 PackageManagement 核心。 試試看這些作業的 Cmdlet︰
 -   Find-Package
 -   Find-PackageProvider
@@ -20,7 +20,7 @@ PS C:\> Install-Module PackageManagement –Force
 ```
 在本例中，您必須重新進入 PowerShell 工作階段，以切換至新版的 PackageManagement。
 
-## [Find-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+## <a name="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx"></a>[Find-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890709.aspx)
 這個 Cmdlet 可讓您使用載入的封裝提供者在可用的封裝來源中探索軟體封裝。
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -40,7 +40,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## [Find-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx"></a>[Find-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676544.aspx)
 Find-PackageProvider Cmdlet 會在向 PowerShellGet 註冊的封裝來源中尋找相符的 PackageManagement 提供者。 這些是可使用 Install-PackageProvider Cmdlet 進行安裝的封裝提供者。 根據預設，這包括 PowerShell Gallery 提供之具有 'PackageManagement' 和 'Provider' 標記的模組。 
 
 Find-PackageProvider 也會尋找相符的 PackageManagement 提供者，它們可在 PackageManagement Azure Blob 存放區中取得，我們在此存放區中使用 PackageManagement boostrapper 提供者尋找及安裝它們。
@@ -55,7 +55,7 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-## [Get-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx"></a>[Get-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890704.aspx)
 這個 Cmdlet 會傳回所有已使用 PackageManagement 安裝的軟體封裝清單。
 ```powershell
 # Get all the packages installed by Programs provider
@@ -66,7 +66,7 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-## [Get-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/dn890703.aspx)
+## <a name="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx"></a>[Get-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/dn890703.aspx)
 您可以使用 Cmdlet 清查本機電腦上已載入並準備使用的封裝提供者。
 ```powershell
 # Get all currently loaded package providers
@@ -76,7 +76,7 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-## [Get-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890705.aspx)
+## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[Get-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890705.aspx)
 這個 Cmdlet 會取得封裝提供者註冊的封裝來源清單。
 ```powershelll
 # Get all package sources
@@ -86,7 +86,7 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-## [Import-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676545.aspx)
+## <a name="import-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676545aspx"></a>[Import-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676545.aspx)
 這個 Cmdlet 會在目前的工作階段中加入封裝管理封裝提供者。
 ```powershell
 # Import a package provider from the local machine
@@ -108,7 +108,7 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-##[ Install-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890711.aspx)
+##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[ Install-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890711.aspx)
 
 這個 Cmdlet 可讓您使用載入的封裝提供者在可用的封裝來源中安裝軟體封裝。
 ```powershell
@@ -122,7 +122,7 @@ Install-Package -Name jquery -Source nuget.org -Destination c:\test
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination c:\test
 ```
 
-## [Install-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676543.aspx)
+## <a name="install-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676543aspx"></a>[Install-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676543.aspx)
 這個 Cmdlet 會安裝一個或多個封裝管理封裝提供者。
 ```powershell
 # Install a package provider from the PowerShell Gallery
@@ -139,14 +139,14 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-## [Register-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
+## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[Register-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890701.aspx)
 這個 Cmdlet 會加入指定封裝提供者的封裝來源。
 每個 PackageManagement 提供者都可能會有一個或多個軟體來源或是存放庫。 PackageManagement 提供 PowerShell Cmdlet 來新增/移除/查詢來源。 例如，您可以註冊 NuGet 提供者的封裝來源：
 ```powershell
 Register-PackageSource -Name "NugetSource" -Location "http://www.nuget.org/api/v2" –ProviderName nuget
 ```
 
-## [Save-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890708.aspx)
+## <a name="save-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890708aspx"></a>[Save-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890708.aspx)
 這個 Cmdlet 會將封裝儲存到本機電腦，而不加以安裝。
 ```powershell
 # Saves jquery package to c:\test using NuGetProvider
@@ -158,14 +158,14 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-## [Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
 這個 Cmdlet 會變更現有封裝來源的相關資訊。 
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
 ```
 
-## [Uninstall-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
+## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Uninstall-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
 這個 Cmdlet 會解除安裝本機電腦上安裝的封裝。
 ```powershell
 # Uninstall jquery using nuget
@@ -175,13 +175,8 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-## [Unregister-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[Unregister-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890707.aspx)
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

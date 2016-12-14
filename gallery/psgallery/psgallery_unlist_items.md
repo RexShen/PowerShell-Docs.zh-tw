@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_unlist_items
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 95e0bb58eb110a9060615e409cb55fa9231d505f
-
+ms.openlocfilehash: ede07cce7b65b795f48d16cb2862880f84c3eda2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 將項目從清單移除
+# <a name="unlisting-items"></a>將項目從清單移除
 
 **為什麼從 PowerShell 資源庫移除項目未公開為選項？**
 
@@ -41,11 +39,5 @@ PowerShell 資源庫不支援使用者永久刪除項目。 這可讓其他人�
 - 項目包含敏感性資料。
 
 若要提交「刪除項目要求」給 PowerShell 資源庫系統管理員，請前往項目的詳細資料頁面，然後選取 [連絡支援服務]。  
-
-
-
-
-
-<!--HONumber=Oct16_HO2-->
 
 

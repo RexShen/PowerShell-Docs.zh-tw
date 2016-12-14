@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
-translationtype: Human Translation
-ms.sourcegitcommit: 53d9bf77ef39c878d3e729548181d91f01a50ea2
-ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
-
+ms.openlocfilehash: 8e192fa1a1a7b43852296ed23b8729feabc55dc5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISE 物件模型階層
+# <a name="the-ise-object-model-hierarchy"></a>ISE 物件模型階層
   本主題說明隸屬於 Windows PowerShell 整合式指令碼環境 (ISE) 一部分的物件階層。 Windows PowerShell ISE 隨附於 Windows PowerShell 3.0 和 Windows PowerShell 4.0。 按一下物件，即會帶領您進入定義物件之類別的參考文件。
 
-##  <a name="psISE"></a> **$psISE 物件**
+##  <a name="a-namepsisea-psise-object"></a><a name="psISE"></a> **$psISE 物件**
  **$psISE** 物件是 Windows PowerShell ISE 物件階層的[根物件](The-ObjectModelRoot-Object.md)。 它位於最上層，可提供下列物件來編寫指令碼︰
 
 -   **[$psISE.CurrentFile](#currentfile)**
@@ -32,14 +30,14 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.PowerShellTabs](#powershelltabs)**
 
-##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
+##  <a name="a-namecurrentfilea-psisecurrentfilethe-isefile-objectmd"></a><a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
  **$psISE.CurrentFile** 物件是 [ISEFile](The-ISEFile-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
 -   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
 
 -   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)** 這個物件是 [ISEEditor](The-ISEEditor-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -51,9 +49,9 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
     -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[文字](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
--   **[編碼](The-ISEFile-Object.md#Encoding)**
+-   **[Encoding](The-ISEFile-Object.md#Encoding)**
 
 -   **[FullPath](The-ISEFile-Object.md#FullPath)**
 
@@ -61,7 +59,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+##  <a name="a-namecurrentpowershelltaba-psisecurrentpowershelltabthe-powershelltab-objectmd"></a><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
  **$psISE.CurrentPowerShellTab** 物件是 [PowerShellTab](The-PowerShellTab-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)** 這個物件是 [ISEMenuItem](The-ISEMenuItem-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
@@ -78,7 +76,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)** 這個物件是 [ISEEditor](The-ISEEditor-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -90,7 +88,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
     -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[文字](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
 -   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
 
@@ -118,25 +116,25 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
-##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
+##  <a name="a-namecurrentvisiblehorizontaltoola-psisecurrentvisiblehorizontaltool"></a><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
  **$psISE.CurrentVisibleHorizontalTool** 物件是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 類別的執行個體。 它代表目前停駐於 Windows PowerShell ISE 視窗頂端的已安裝附加元件工具。 這個物件可提供下列物件來編寫指令碼︰
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
+##  <a name="a-namecurrentvisibleverticaltoola-psisecurrentvisibleverticaltool"></a><a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
  **$psISE.CurrentVisibleHorizontalTool** 物件是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 類別的執行個體。 它代表目前停駐於 Windows PowerShell ISE 視窗右邊的已安裝附加元件工具。 這個物件可提供下列物件來編寫指令碼︰
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="Options"></a> **$psISE.Options**
+##  <a name="a-nameoptionsa-psiseoptions"></a><a name="Options"></a> **$psISE.Options**
  **$psISE.Options** 物件可提供下列物件來編寫指令碼︰
 
 -   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
@@ -193,7 +191,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
 
--   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
+-   **[$psISE.Options.UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
 
 -   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
 
@@ -209,16 +207,10 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+##  <a name="a-namepowershelltabsa-psisepowershelltabsthe-powershelltabcollection-objectmd"></a><a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
  **$psISE.PowerShellTabs** 物件是 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) 類別的執行個體。 它是所有目前開啟的 PowerShell 索引標籤集合，代表本機電腦上或連線的遠端電腦上可用的 Windows PowerShell 執行環境。 集合中的每個成員都是 [PowerShellTab](The-PowerShellTab-Object.md) 類別的執行個體。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-
-
-
-<!--HONumber=Sep16_HO4-->
-
 

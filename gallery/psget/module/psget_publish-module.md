@@ -4,43 +4,41 @@ manager: carolz
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
+keywords: "powershell,cmdlet,資源庫"
 ms.date: 2016-10-14
 contributor: manikb
 title: psget_publish module
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: c62ab4b7ab5266d7285d4c444105f0a8291563c1
-
+ms.openlocfilehash: a21351837d0cc63e56254911a1a436175a2734cd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="publish-module"></a>Publish-Module
 
-# Publish-Module
+將指定的模組從本機電腦發行至線上資源庫。
 
-將指定的模組從本機電腦發行至線上組件庫。
+## <a name="description"></a>描述
 
-## 描述
-
-**Publish-Module** Cmdlet 會使用 API 金鑰將模組發行至線上 NuGet 型組件庫，而這個 API 金鑰儲存為組件庫中使用者設定檔的一部分)。 您可以指定依模組名稱，或依包含模組之資料夾的路徑來發行模組。
+**Publish-Module** Cmdlet 會使用 API 金鑰將模組發行至線上 NuGet 型資源庫，而這個 API 金鑰儲存為資源庫中使用者設定檔的一部分)。 您可以指定依模組名稱，或依包含模組之資料夾的路徑來發行模組。
 
 依名稱指定模組時，**Publish-Module** 會發行透過執行 `Get-Module -ListAvailable <Name>` 所找到的第一個模組。 如果您指定發行模組的最小版本，則 **Publish-Module** 發行版本大於或等於所指定最小版本的第一個模組。
 
-發行模組時需要在模組之組件庫頁面上所顯示的中繼資料。 必要的中繼資料包含模組名稱、版本、描述和作者。 雖然大部分的中繼資料都是取自模組資訊清單，但是有些中繼資料必須指定於 **Publish-Module** 參數 (例如 *Tag、ReleaseNote、IconUri、ProjectUri* 和 *LicenseUri*)，因為這些參數符合 NuGet 型組件庫中的欄位。
+發行模組時需要在模組之資源庫頁面上所顯示的中繼資料。 必要的中繼資料包含模組名稱、版本、描述和作者。 雖然大部分的中繼資料都是取自模組資訊清單，但是有些中繼資料必須指定於 **Publish-Module** 參數 (例如 *Tag、ReleaseNote、IconUri、ProjectUri* 和 *LicenseUri*)，因為這些參數符合 NuGet 型組件庫中的欄位。
 
 RequiredVersion 參數可讓您指定要發行之模組的確切版本。
 Path 參數也支援具有版本資料夾的模組基底路徑。
 Publish-Module Cmdlet 上的 Force 切換參數會啟動載入 NuGet.exe，而不予提示。
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Publish-Module -Module PowerShellGet -Syntax
 ```
 
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=398575)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 ContosoServer module with different versions to be published.
@@ -72,12 +70,12 @@ _------ ---- ---------- -----------
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
 
-## 發行具有相依性的模組
+## <a name="publishing-a-module-with-dependencies"></a>發行具有相依性的模組
 
-### 建立具有相依性和版本範圍的模組，這些相依性和版本範圍是在其模組資訊清單的 RequiredModules 屬性中所指定。
+### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>建立具有相依性和版本範圍的模組，這些相依性和版本範圍是在其模組資訊清單的 RequiredModules 屬性中所指定。
 
 **注意：**
-  - \* 只在 MaximumVersion 中予以支援，同時應該位於版本字串尾端。 
+  - \*只在 MaximumVersion 中予以支援，同時應該位於版本字串尾端。 
   - \* 取代為版本物件中的 999999999。
 
 ```powershell
@@ -88,13 +86,13 @@ PS C:\windows\system32> cd C:\MyModules\ModuleWithDependencies
 PS C:\MyModules\ModuleWithDependencies> New-ModuleManifest -Path .\ModuleWithDependencies.psd1 -ModuleVersion 1.0 -RequiredModules $requiredModules -Description 'ModuleWithDependencies demo module'
 ```
 
-### 將具有相依性的 ModuleWithDependencies 模組發行至存放庫。
+### <a name="publish-modulewithdependencies-module-with-dependencies-to-the-repository"></a>將具有相依性的 ModuleWithDependencies 模組發行至存放庫。
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Publish-Module -Path C:\MyModules\ModuleWithDependencies -Repository LocalRepo
 ```
 
-### 指定 -IncludeDependencies 來尋找具有其相依性的 ModuleWithDependencies 模組
+### <a name="find-modulewithdependencies-module-with-its-dependencies-by-specifying--includedependencies"></a>指定 -IncludeDependencies 來尋找具有其相依性的 ModuleWithDependencies 模組
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Find-Module -Name ModuleWithDependencies -Repository LocalRepo -IncludeDependencies
@@ -106,7 +104,7 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-### 安裝具有相依性的 ModuleWithDependencies 模組。
+### <a name="install-the-modulewithdependencies-module-with-dependencies"></a>安裝具有相依性的 ModuleWithDependencies 模組。
 請注意，在相依性安裝期間會使用版本範圍。
 
 ```powershell
@@ -123,7 +121,7 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-### ModuleWithDependencies2 模組資訊清單檔案的內容
+### <a name="contents-of-modulewithdependencies2-module-manifest-file"></a>ModuleWithDependencies2 模組資訊清單檔案的內容
 
 ```powershell
 @{
@@ -178,17 +176,11 @@ PrivateData = @{
 ```
 
 
-### 外部相依性
+### <a name="external-dependencies"></a>外部相依性
 有些模組相依性可以在外部進行管理，在該情況下，應該將它們新增至模組資訊清單的 PSData 區段中的 ExternalModuleDependencies 項目。
 
 如果存放庫上沒有 'SnippetPx'，則會擲回下列錯誤。
 ```powershell
 Publish-PSArtifactUtility : PowerShellGet cannot resolve the module dependency 'SnippetPx' of the module 'TypePx' on the repository 'LocalRepo'. Verify that the dependent module 'SnippetPx' is available in the repository 'LocalRepo'. If this dependent 'SnippetPx' is managed externally, add it to the ExternalModuleDependencies entry in the PSData section of the module manifest.
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

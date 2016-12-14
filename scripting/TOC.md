@@ -84,7 +84,7 @@
 ####  [本機帳戶模組](core-powershell/core-modules/PSLocalAccount5-Module.md)
 ####  [管理模組](core-powershell/core-modules/Microsoft.PowerShell.Management-Module.md)
 ####  [OData Utils 模組](core-powershell/core-modules/Microsoft.PowerShell.ODataUtils-Module.md)
-####  [封裝管理模組](core-powershell/core-modules/PackageManagement-Module.md)
+####  [套件管理模組](core-powershell/core-modules/PackageManagement-Module.md)
 ####  [PowerShell 核心的說明主題](core-powershell/core-modules/Windows-PowerShell-Core-About-Topics.md)
 ####  [Readline 模組](core-powershell/core-modules/PSReadline-Module.md)
 ####  [排程的工作模組](core-powershell/core-modules/PSScheduledJob-Module.md)
@@ -135,13 +135,8 @@
 ### [Web 存取](core-powershell/web-access.md)
 ####  [Windows PowerShell Web 存取的授權規則與安全性功能](core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md)
 ####  [安裝和使用 Windows PowerShell Web 存取](core-powershell/web-access/install-and-use-windows-powershell-web-access.md)
-####  [疑難排解 Windows PowerShell Web 存取中的存取問題](core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
+####  [為 Windows PowerShell Web 存取中的存取問題進行疑難排解](core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
 ####  [解除安裝 Windows PowerShell Web 存取](core-powershell/web-access/uninstall-windows-powershell-web-access.md)
 ####  [使用網頁型 Windows PowerShell 主控台](core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
 
 ## [PowerShell 字彙](Windows-PowerShell-Glossary.md)
-
-
-<!--HONumber=Oct16_HO1-->
-
-

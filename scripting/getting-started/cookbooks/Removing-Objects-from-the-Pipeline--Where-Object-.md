@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 94117fcf337ecf550d6df1d167e608ba64582c03
-
+ms.openlocfilehash: f616fbbc073c5e8870d7c8c55d6d2eb40fd3957c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 從管線中移除物件 (Where-Object)
+# <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
 在 Windows PowerShell 中，您通常會產生並沿著管線傳遞比所需更多的物件。 您可以使用 **Format** Cmdlet 指定要顯示的特定物件屬性，但這樣做並無法解決從顯示中移除整個物件的問題。 您可能需要在結束管線之前篩選物件，以便只對初始產生的物件子集執行動作。
 
 Windows PowerShell 包含 **Where-Object** Cmdlet，可讓您測試管線中的每個物件，並只在符合特定測試條件時才沿著管線傳遞。 未通過測試的物件會從管線中移除。 您會將測試條件當做 **Where-ObjectFilterScript** 參數的值來提供。
 
-### 使用 Where-Object 執行簡單的測試
+### <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 執行簡單的測試
 **FilterScript** 的值是評估為 true 或 false 的*指令碼區塊* (以大括弧 {} 括住的一或多個 Windows PowerShell 命令)。 這些指令碼區塊可以很簡單，但建立時需要了解另一個 Windows PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以 '-' 字元開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
 
 > [!NOTE]
@@ -48,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### 根據物件屬性篩選
+### <a name="filtering-based-on-object-properties"></a>根據物件屬性篩選
 因為 $_ 參照了目前的管線物件，所以我們可以針對測試來存取其屬性。
 
 例如，我們可以檢視 WMI 中的 Win32_SystemDriver 類別。 一部系統上可能會有數百個系統驅動程式，但您可能只對某一組系統驅動程式感興趣，例如目前執行中的驅動程式。 如果您使用 Get-Member 檢視 Win32_SystemDriver 成員 (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType 屬性**)，您會看到相關屬性為 State，而且當驅動程式正在執行時，其值為 "Running"。 您可以輸入下列命令來篩選系統驅動程式，只選取執行中的驅動程式︰
@@ -106,10 +104,4 @@ Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State
 |-or|邏輯 or；若任一側為 true 即為 true|(1 -eq 1) -or (1 -eq 2)|
 |-not|邏輯 not；將 true 與 false 反轉|-not (1 -eq 2)|
 |\!|邏輯 not；將 true 與 false 反轉|\!(1 -eq 2)|
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

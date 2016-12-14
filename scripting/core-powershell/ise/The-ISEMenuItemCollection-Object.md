@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
-translationtype: Human Translation
-ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
-ms.openlocfilehash: f5bb35c3689350cab2c56c462914f1754e005da2
-
+ms.openlocfilehash: 89f62e1dc70886bd4c3bf84a3ffc27dfdcba7a3e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISEMenuItemCollection 物件
+# <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection 物件
   **ISEMenuItemCollection** 物件是 **ISEMenuItem** 物件的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection 類別的執行個體。 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 物件即為一例，此物件可用來自訂 Windows PowerShell® 整合式指令碼環境 (ISE) 中的 [附加元件] 功能表。
 
-## 方法
+## <a name="method"></a>方法
 
-### Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將功能表項目加入至集合。
@@ -42,7 +40,7 @@ ms.openlocfilehash: f5bb35c3689350cab2c56c462914f1754e005da2
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
 ```
 
-### 清除\(\)
+### <a name="clear"></a>Clear\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  從功能表項目中移除所有的子功能表。
@@ -53,16 +51,10 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 ```
 
-## 另請參閱
- [ISEMenuItem 物件](The-ISEMenuItem-Object.md) 
- [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>另請參閱
+- [ISEMenuItem 物件](The-ISEMenuItem-Object.md) 
+- [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-

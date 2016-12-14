@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "讀我檔案"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
-ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
-
+ms.openlocfilehash: b0ef4ff685b82e1a4e9ab83a45736720df7b39a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 Just Enough Administration (JEA) 是安全性技術，允許將可透過 PowerShell 管理的任何項目委派管理。
 使用 JEA，您可以︰
 - 利用虛擬帳戶，代表一般使用者執行特殊權限動作，以**減少電腦上的系統管理員數目**。
@@ -30,7 +28,7 @@ Just Enough Administration (JEA) 是安全性技術，允許將可透過 PowerSh
 這表示您可以提供適當的存取權以修復有害的 DNS 快取，卻不會無意中給予他們使用 Active Directory、瀏覽檔案、或執行有潛在危險指令碼的權限。
 更棒的是，當 JEA 工作階段設定為使用一次性特殊權限虛擬帳戶時，您的 DNS 系統管理員就可以在使用*非特殊權限*認證連接到伺服器的情況下，仍然能夠執行特殊權限命令。
 
-## 可用性
+## <a name="availability"></a>可用性
 JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 Windows Management Framework 更新來使用這項功能。
 目前的 JEA 版本適用於下列平台︰
 
@@ -45,7 +43,7 @@ JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 
 \* Windows Server 2008 R2 或 Windows 7 目前不提供 JEA 工作階段中的虛擬帳戶支援。
 
 
-## 探索體驗指南
+## <a name="explore-the-experience-guide"></a>探索體驗指南
 準備好了解如何撰寫、部署及使用您專屬的 JEA 端點了嗎？
 
 本指南可讓您快速開始使用預先建置的 JEA 端點，以了解使用者體驗，然後逐步引導您從頭開始重新建立端點，以利示範工作階段設定和角色功能等概念。
@@ -81,17 +79,11 @@ JEA 是與 Windows Server 2016 同期開發的功能，舊版 Windows 可透過 
   -  [限制命令時的考量](considerations-when-limiting-commands.md)  
   -  [常見的角色功能問題](common-role-capability-pitfalls.md)
 
-## 開始撰寫您自己的 JEA 端點
+## <a name="start-authoring-your-own-jea-endpoints"></a>開始撰寫您自己的 JEA 端點
 撰寫 JEA 端點很容易，您只需要啟用 JEA 的系統和文字編輯器 (例如 PowerShell ISE)。
 其中一項實用的入門秘訣是使用 [`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) 和 [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx)但不提供任何其他引數來建立基本架構檔案。
 這些基本架構檔案包含所有適用的設定欄位，以及說明每個欄位可能用途的實用註解。
 
 若要更輕鬆地撰寫 JEA 端點，請參閱 [JEA Toolkit Helper](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)，其提供可用來撰寫工作階段設定檔和角色功能檔案的 GUI。
 甚至支援根據 PowerShell 記錄檔產生角色功能，讓您一開始就有使用者為完成工作所經常執行的命令。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

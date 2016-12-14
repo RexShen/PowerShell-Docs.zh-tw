@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-translationtype: Human Translation
-ms.sourcegitcommit: 416d21d2a2fa3d837eba19b1023e4045a124e23c
-ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
-
+ms.openlocfilehash: 2564ab148fb1de1cb58ee775d2000d321a1d36c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 準備好使用 Windows PowerShell
+# <a name="getting-ready-to-use-windows-powershell"></a>準備好使用 Windows PowerShell
 安裝並啟動 Windows PowerShell 之後，請考慮下列安裝選項。 您可以隨時執行這些工作。
 
 -   **安裝說明檔。** Windows PowerShell 3.0 中包含的 Cmdlet 沒有說明檔。 不過，您可以使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 將最新的說明檔下載並安裝到您的電腦 安裝檔案之後，您可以使用 [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 直接在命令列顯示。 如需詳細資訊，請參閱 [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)。
@@ -27,13 +25,7 @@ ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
 
     注意︰如果在執行 Windows PowerShell 2.0 的電腦上啟用了遠端功能，當您安裝 Windows Management Framework 3.0 之後仍會啟用遠端功能。 不過，在 Windows Server 2008 (不是 Windows Server 2008 R2) 上，您必須在安裝 Windows Management Framework 3.0 之後重新啟用遠端功能。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [安裝 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 - [啟動 Windows PowerShell [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

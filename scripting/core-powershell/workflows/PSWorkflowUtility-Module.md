@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c62a363a-caa2-4b6e-a079-d6e8543bc4c6
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: c49b8f4f5969faa017a858f8b66fe9bfc5515c36
-
+ms.openlocfilehash: ae1be5a6204c93b3c8600c4fe7ea6e958904a6b2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PSWorkflowUtility 模組
+# <a name="psworkflowutility-module"></a>PSWorkflowUtility 模組
 本節包含 **PSWorkflowUtility** 模組的說明主題，此模組包含可用於管理 Windows PowerShell 工作流程功能的命令。 **PSWorkflowUtility** 模組是與 Windows PowerShell 一起安裝。
 
-## 說明主題
+## <a name="help-topics"></a>說明主題
 [工作流程公用程式 Cmdlet](http://go.microsoft.com/fwlink/?LinkId=254141)
 
 [PSWorkflow 模組](PSWorkflow-Module.md)
@@ -26,16 +24,10 @@ ms.openlocfilehash: c49b8f4f5969faa017a858f8b66fe9bfc5515c36
 
 [about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Windows PowerShell 工作流程簡介](https://technet.microsoft.com/en-us/library/jj134242.aspx)
 - [撰寫 Windows PowerShell 工作流程](https://technet.microsoft.com/en-us/library/jj574157.aspx)
 - [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
 - [Windows PowerShell 核心的關於主題](../core-modules/Windows-PowerShell-Core-About-Topics.md)
 - [使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

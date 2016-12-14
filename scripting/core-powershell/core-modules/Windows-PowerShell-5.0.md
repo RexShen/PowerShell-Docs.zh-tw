@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2ae52a0d-2eb5-4c71-971f-fb3f612d281b
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
-
+ms.openlocfilehash: 841c3ce80a625b1f52a1ce50e989ca348c65f93b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 5.0
+# <a name="windows-powershell-50"></a>Windows PowerShell 5.0
 此主題列出隨 Windows PowerShell 包含的 Cmdlet 與函式模組。 此清單中的 Windows PowerShell 模組提供 Windows PowerShell 的基本功能。
 
 下表也顯示針對每個模組發行的最新版說明。 使用下列連結可存取 TechNet 文件庫中的說明，或者您也可以使用「可更新的說明」檔案形式取得說明。 「可更新的說明」是隨著 Windows PowerShell 3.0 引進，可讓您在本機電腦上取得最新的說明主題。 如需詳細資訊，請參閱 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)。
@@ -22,7 +20,7 @@ ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
 > [!NOTE]
 > 如需舊版 Windows PowerShell 的詳細資訊，請參閱 TechNet 文件庫中的 [http://technet.microsoft.com/library/hh847741(v=wps.620).aspx](http://technet.microsoft.com/library/hh847741(v=wps.620).aspx)。
 
-## Windows PowerShell 核心模組
+## <a name="windows-powershell-core-modules"></a>Windows PowerShell 核心模組
 
 |模組名稱|網頁版的標題與連結|最新版本|
 |---------------|---------------------------------|------------------|
@@ -45,10 +43,4 @@ ms.openlocfilehash: 8adf724740b2f09bff6d5cafb822566f4747780c
 |PSScriptAnalyzer|[Windows PowerShell PSScriptAnalyzer Cmdlet](http://technet.microsoft.com/library/dn927161.aspx)|5.0.1.0|
 |PSWorkflow|[Windows PowerShell 工作流程 Cmdlet](http://technet.microsoft.com/library/A6B6D03A-6FDF-478A-B08A-0C145AB690BD)|5.0.1.0|
 |PSWorkflowUtility|[Windows PowerShell 工作流程公用程式 Cmdlet](http://technet.microsoft.com/library/D33B1B65-7140-431C-9A70-F768D025074A)|5.0.1.0|
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

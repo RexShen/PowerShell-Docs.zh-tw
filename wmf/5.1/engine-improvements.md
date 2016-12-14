@@ -8,18 +8,16 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 45182af45b2d1510b7ad8e9f2ac35fa5346ddb66
-ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
-
+ms.openlocfilehash: 118cb91528824b75e28a1eadaa377a696c67f2dd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#PowerShell 引擎改善
+#<a name="powershell-engine-improvements"></a>PowerShell 引擎改善
 
 WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 
 
-## 效能 ##
+## <a name="performance"></a>效能 ##
 
 某些重要區域的效能已改善︰
 
@@ -31,8 +29,8 @@ WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 | 案例 | 5.0 的時間 (毫秒) | 5.1 的時間 (毫秒) |
 | -------- | :---------------: | :---------------: |
 | `powershell -command "echo 1"` | 900 | 250 |
-| PowerShell 首次執行︰ `powershell -command "Unknown-Command"` | 30000 | 13000 |
-| 命令分析快取組建︰ `powershell -command "Unknown-Command"` | 7000 | 520 |
+| PowerShell 首次執行︰`powershell -command "Unknown-Command"` | 30000 | 13000 |
+| 命令分析快取組建︰`powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
 > 注意：與啟動相關的一項變更，可能影響到某些不受支援的案例。 
@@ -42,9 +40,3 @@ WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 
 另一個明顯的變更，是 PowerShell 如何快取匯出的命令和安裝在系統上的模組其他資訊。 以往，此快取儲存於 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 目錄。 在 WMF 5.1，快取是單一的 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache` 檔案。
 如需詳細資料，請參閱[模組分析快取](scenarios-features.md#module-analysis-cache)。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

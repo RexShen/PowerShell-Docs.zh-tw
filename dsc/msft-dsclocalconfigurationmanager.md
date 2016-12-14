@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 26db4a48af3aa3d6a9a2054fb85da8779626f284
 ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# MSFT_DSCLocalConfigurationManager 類別
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別
 
 本機設定管理員 (LCM) 可控制設定檔的狀態，並會使用設定代理程式套用設定。
 
 下列語法已經過受管理物件格式 (MOF) 程式碼簡化，並包含所有已繼承的屬性。
 
-## 語法
+## <a name="syntax"></a>語法
 ------
 
 ``` syntax
@@ -29,14 +27,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## 成員
+## <a name="members"></a>成員
 -------
 
 **MSFT_DSCLocalConfigurationManager** 類別有以下成員：
 
 -   [方法][]
 
-### 方法
+### <a name="methods"></a>方法
 
 **MSFT_DSCLocalConfigurationManager** 類別有這些方法。
 
@@ -54,7 +52,7 @@ class MSFT_DSCLocalConfigurationManager
 | [ResourceGet](msft-dsclocalconfigurationmanager-resourceget.md)| 直接呼叫 DSC 資源的 **Get** 方法。| 
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| 直接呼叫 DSC 資源的 **Set** 方法。| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| 直接呼叫 DSC 資源的 **Test** 方法。| 
-| [復原](msft-dsclocalconfigurationmanager-rollback.md)| 復原回先前的設定。| 
+| [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| 復原回先前的設定。| 
 | [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 將設定文件傳送到受管理的節點，並將其儲存為擱置變更。| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| 將設定文件傳送到受管理的節點，並使用設定代理程式套用設定。| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| 將設定文件傳送到受管理的節點，並開始使用設定代理程式套用設定。 使用 GetConfigurationResultOutput 來擷取結果輸出。| 
@@ -66,7 +64,7 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-## 需求
+## <a name="requirements"></a>需求
 ------------
 >**MOF：**DscCore.mof
 
@@ -78,11 +76,5 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

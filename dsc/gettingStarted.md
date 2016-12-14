@@ -7,18 +7,16 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: c5ee7f7e7678b60700edb1ab1b66139791ea67c6
-
+ms.openlocfilehash: 3a59f76919c0a63f269ca587d358020825412be4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 開始使用 PowerShell 預期狀態設定 #
+# <a name="getting-started-with-powershell-desired-state-configuration"></a>開始使用 PowerShell 預期狀態設定 #
 
 本指南說明如何開始建立 PowerShell 預期狀態設定文件，並套用至電腦。 本指南假設您大致熟悉 PowerShell Cmdlet、模組和函式。 
 
 
-## 建立設定 ##
+## <a name="create-a-configuration"></a>建立設定 ##
 
 [**設定**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)是描述環境的文件。 環境包含「**節點**」，通常是虛擬或實體機器。 
 
@@ -41,7 +39,7 @@ configuration MyFirstConfiguration
 
 }
 ```
-## 設定的組件 ##
+## <a name="parts-of-a-configuration"></a>設定的組件 ##
 **設定**是 PowerShell 4.0 中已加入的關鍵字， 表示一種特殊的預期狀態設定所使用的 PowerShell 函式。 在這個範例中，此函式稱為 myFirstConfiguration。 
 
 下一行是匯入陳述式，類似於匯入模組， 將在稍後討論。
@@ -71,10 +69,4 @@ Start-DscConfiguration -Path ./myFirstConfiguration
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

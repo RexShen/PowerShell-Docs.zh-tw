@@ -8,28 +8,20 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 249a0ece77a11fd9aa54a6ff4170e44f42b377c9
-
+ms.openlocfilehash: f1c54761db169a3f79efb06124be916185c3fb28
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Microsoft.PowerShell.Archive 模組
+# <a name="microsoftpowershellarchive-module"></a>Microsoft.PowerShell.Archive 模組
 本節包含與 Windows PowerShell **Microsoft.PowerShell.Archive** 模組一起安裝之 Cmdlet 的說明主題。 封存模組包含可讓您建立和解壓縮封存檔案或 ZIP 檔案的 Cmdlet。
 
-## Microsoft.PowerShell.Archive Cmdlet
+## <a name="microsoftpowershellarchive-cmdlets"></a>Microsoft.PowerShell.Archive Cmdlet
 
 |||
 |-|-|
 |[Compress-Archive](http://technet.microsoft.com/library/dn841358.aspx)|將一或多個指定的檔案或資料夾壓縮到封存檔案。|
 |[Expand-Archive](http://technet.microsoft.com/library/dn841359.aspx)|將封存 (或 ZIP) 檔案的內容解壓縮到指定的目的地。|
 
-## 另請參閱
-[Windows PowerShell 中的核心模組](http://technet.microsoft.com/library/hh847741.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+## <a name="see-also"></a>另請參閱
+- [Windows PowerShell 中的核心模組](http://technet.microsoft.com/library/hh847741.aspx)
 

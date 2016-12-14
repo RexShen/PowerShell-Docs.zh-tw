@@ -4,7 +4,7 @@
 ### [健康情況狀態](psgallery/psgallery_status.md)
 ### [資源庫常見問題集](psgallery/psgallery_faqs.md)
 ### [資源庫項目索引標籤](psgallery/psgallery_items_tab.md)
-### [資源庫搜尋語法](psgallery/psgallery_search_syntax.md)
+### [組件庫搜尋語法](psgallery/psgallery_search_syntax.md)
 ### [相容 PSEditions 的項目](psgallery/psgallery_pseditions.md)
 ### [FileList 檢視](psgallery/psgallery_filelist_feature.md)
 ### [部署至 Azure 自動化](psgallery/psgallery_deploy_to_azure_automation.md)
@@ -16,7 +16,7 @@
 ### [連絡項目擁有者](psgallery/psgallery_contacting_item_owners.md)
 ### [連絡系統管理員](psgallery/psgallery_contacting_administrators.md)
 
-# [PowerShellGet](psget/overview.md)
+# [PowershellGet](psget/overview.md)
 ## 模組
 ### [尋找模組](psget/module/psget_find-module.md)
 ### [尋找 DSC 資源](psget/module/psget_find-dscresource.md)
@@ -52,9 +52,4 @@
 ### [修改已註冊的存放庫](psget/repository/psget_set-psrepository.md)
 ### [取消註冊存放庫](psget/repository/psget_unregister-psrepository.md)
 
-## [PackageManagement cmdlet](psget/oneget/PackageManagement_cmdlets.md)
-
-
-<!--HONumber=Sep16_HO2-->
-
-
+## [PackageManagement Cmdlet](psget/oneget/PackageManagement_cmdlets.md)

@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: a735582afc1293108cfa16d4137648e0e65b564f
-
+ms.openlocfilehash: 88f3edf9f5e1cad0979626af6a435b9331bfb04d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISEEditor 物件
+# <a name="the-iseeditor-object"></a>ISEEditor 物件
   **ISEEditor** 物件是 Microsoft.PowerShell.Host.ISE.ISEEditor 類別的執行個體。 主控台窗格是 **ISEEditor** 物件。 每個 [ISEFile](The-ISEFile-Object.md) 物件都有相關聯的 **ISEEditor** 物件。 下列各節將列出 **ISEEditor** 物件的方法和屬性。
 
-## 方法
+## <a name="methods"></a>方法
 
-### 清除\(\)
+### <a name="clear"></a>Clear\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  清除編輯器中的文字。
@@ -29,7 +27,7 @@ ms.openlocfilehash: a735582afc1293108cfa16d4137648e0e65b564f
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
-### EnsureVisible\(int lineNumber\)
+### <a name="ensurevisibleint-linenumber"></a>EnsureVisible\(int lineNumber\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  捲動編輯器，即會看見對應至指定 **lineNumber** 參數值的行。 如果指定的行號不在 1 到最後一個定義有效行數的行號範圍內，即會擲回例外狀況。
@@ -42,7 +40,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
-### Focus\(\)
+### <a name="focus"></a>Focus\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將焦點設定到編輯器。
@@ -52,7 +50,7 @@ $psISE.CurrentFile.Editor.EnsureVisible(5)
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### GetLineLength\(int lineNumber \)
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  針對行號所指定的行，以整數形式設定行的長度。
@@ -68,7 +66,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
-### GoToMatch\(\)
+### <a name="gotomatch"></a>GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
@@ -77,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
-### InsertText\( text \)
+### <a name="inserttext-text-"></a>InsertText\( text \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  使用文字取代選取範圍，或在目前插入號位置插入文字。
@@ -86,7 +84,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
-### Select\( startLine, startColumn, endLine, endColumn \)
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  從 **startLine**、**startColumn**、**endLine** 及 **endColumn** 參數選取文字。
@@ -101,7 +99,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
-### SelectCaretLine\(\)
+### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  選取目前包含插入號的整行文字。
@@ -113,7 +111,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### SetCaretPosition\( lineNumber, columnNumber \)
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  在行號和欄號設定插入號位置。 如果插入號行號或插入號欄號不在其各自的有效範圍內，就會擲回例外狀況。
@@ -127,7 +125,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
-### ToggleOutliningExpansion\(\)
+### <a name="toggleoutliningexpansion"></a>ToggleOutliningExpansion\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  會展開或摺疊所有大綱區段。
@@ -137,9 +135,9 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+###  <a name="a-namecangotomatcha-cangotomatch"></a><a name="CanGoToMatch"></a> CanGoToMatch
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀的布林值屬性，可指出插入點是否位於括弧、括號或大括弧 (\(\)、\[\]、{}) 旁邊。 如果插入號是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 **$true**。 否則為 **$false**。
@@ -149,7 +147,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+###  <a name="a-namecaretcolumna-caretcolumn"></a><a name="CaretColumn"></a> CaretColumn
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得對應至插入號位置的欄號。
@@ -159,7 +157,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+###  <a name="a-namecaretlinea-caretline"></a><a name="CaretLine"></a> CaretLine
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得包含插入號的行號。
@@ -169,7 +167,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="caretlinetext"></a> CaretLineText
+###  <a name="a-namecaretlinetexta-caretlinetext"></a><a name="CaretLineText"></a> CaretLineText
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得包含插入號的整行文字。
@@ -179,7 +177,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+###  <a name="a-namelinecounta-linecount"></a><a name="LineCount"></a> LineCount
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可從編輯器取得行數。
@@ -189,21 +187,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+###  <a name="a-nameselectedtexta-selectedtext"></a><a name="SelectedText"></a> SelectedText
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可從編輯器取得選取的文字。
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
-###  <a name="Text"></a> 文字
+###  <a name="a-nametexta-text"></a><a name="Text"></a> Text
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可在編輯器中取得或設定文字。
 
  請參閱本主題稍後的[指令碼範例](#example)。
 
-##  <a name="example"></a> 指令碼範例
+##  <a name="a-nameexamplea-scripting-example"></a><a name="example"></a> 指令碼範例
 
 ```PowerShell
 # This illustrates how you can use the length of a line to
@@ -232,17 +230,11 @@ $myEditor.Clear()
 $myEditor.InsertText($selection.ToLower())
 ```
 
-## 另請參閱
- [ISEFile 物件](The-ISEFile-Object.md) 
- [PowerShellTab 物件](The-PowerShellTab-Object.md) 
- [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>另請參閱
+- [ISEFile 物件](The-ISEFile-Object.md) 
+- [PowerShellTab 物件](The-PowerShellTab-Object.md) 
+- [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-

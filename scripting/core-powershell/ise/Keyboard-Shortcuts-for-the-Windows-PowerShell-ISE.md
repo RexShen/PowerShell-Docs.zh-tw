@@ -8,21 +8,19 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
-
+ms.openlocfilehash: 3cf2d8cea6f99cbc3bd778138c730643bd021268
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE 的鍵盤快速鍵
+# <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。
 
-## 編輯文字的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-editing-text"></a>編輯文字的鍵盤快速鍵
 編輯文字時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|使用位置|
 |----------|----------------------|----------|
-|**[說明]**|F1|指令碼窗格 **重要︰**您可以指定 F1 說明來自 TechNet Library 網站或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
+|**說明**|F1|指令碼窗格 **重要︰**您可以指定 F1 說明來自 TechNet Library 網站或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
 |**複製**|CTRL+C|指令碼窗格, 命令窗格, 輸出窗格|
 |**剪下**|CTRL+X|指令碼窗格, 命令窗格|
 |**展開或摺疊大綱**|CTRL+M|指令碼窗格|
@@ -38,7 +36,7 @@ ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
 |**顯示程式碼片段**|CTRL+J|指令碼窗格, 命令窗格|
 |**復原**|CTRL+Z|指令碼窗格, 命令窗格|
 
-## 執行指令碼的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-running-scripts"></a>執行指令碼的鍵盤快速鍵
 在指令碼窗格中執行指令碼時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -51,7 +49,7 @@ ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
 |**Tab** (至下一個指令碼)|CTRL+TAB **注意︰**Tab 至下一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 |**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意︰**Tab 至上一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 
-## 自訂檢視的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自訂檢視的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，在 Windows PowerShell ISE 中自訂檢視。 您可從應用程式的所有窗格存取這些快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -67,7 +65,7 @@ ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
 |**放大**|CTRL+加號|
 |**縮小**|CTRL+減號|
 
-## 偵錯指令碼的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-debugging-scripts"></a>偵錯指令碼的鍵盤快速鍵
 偵錯程式碼時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|使用位置|
@@ -97,7 +95,7 @@ ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
 |**列出指令碼**|L|偵錯指令碼時的主控台窗格|
 |**顯示主控台偵錯命令**|H 或 ?|偵錯指令碼時的主控台窗格|
 
-## Windows PowerShell 索引標籤的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell 索引標籤的鍵盤快速鍵
 使用 Windows PowerShell 索引標籤時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -107,7 +105,7 @@ ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
 |**上一個 PowerShell 索引標籤**|CTRL+SHIFT+TAB 只有在任何 Windows PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 |**下一個 Windows PowerShell 索引標籤**|CTRL+TAB 只有在任何 Windows PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 
-## 開始和結束的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始和結束的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，啟動 Windows PowerShell 主控台 (PowerShell.exe) 或結束 Windows PowerShell ISE。
 
 |動作|鍵盤快速鍵|
@@ -115,12 +113,6 @@ ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
 |**結束**|ALT+F4|
 |**啟動 PowerShell.exe** (Windows PowerShell 主控台)|CTRL+SHIFT+P|
 
-## 另請參閱
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
+## <a name="see-also"></a>另請參閱
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (PowerShell 雜誌：Windows PowerShell ISE 鍵盤快速鍵的完整清單)
 

@@ -1,4 +1,4 @@
-# 系統需求
+# <a name="system-requirements"></a>系統需求
 
 - 先安裝最新的 Windows 更新，然後安裝 WMF 5.0 RTM。
 - 您只能在下列作業系統上安裝 WMF 5.0 RTM：
@@ -11,15 +11,15 @@
     | Windows 8.1 | Pro、Enterprise | | **x64：** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86：** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
     | Windows 7 SP1 | 全部 | 已安裝 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) 和 [.NET Framework 4.5 或更新的版本](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx) | **x64：** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86：** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
 
-# 安裝指示
+# <a name="installation-instructions"></a>安裝指示
 
-### 若要從 Windows 檔案總管 (或檔案總管) 安裝 WMF 5.0：
+### <a name="to-install-wmf-50-from-windows-explorer-or-file-explorer"></a>若要從 Windows 檔案總管 (或檔案總管) 安裝 WMF 5.0：
 
 1. 瀏覽至您用來下載 MSU 檔案的資料夾。
 
 2. 按兩下 MSU 以執行。
 
-### 若要從 [命令提示字元] 安裝 WMF 5.0：
+### <a name="to-install-wmf-50-from-command-prompt"></a>若要從 [命令提示字元] 安裝 WMF 5.0：
 
 1. 下載您電腦架構的正確封裝之後，以提高的使用者權限 (以系統管理員身分執行) 開啟 [命令提示字元] 視窗。 在 Windows Server 2012 R2 或 Windows Server 2012 或 Windows Server 2008 R2 SP1 的 Server Core 安裝選項上，預設會以提高的使用者權限開啟 [命令提示字元]。
 
@@ -32,7 +32,7 @@
     - 在執行 Windows 8.1 x86 的電腦上執行 **Win8.1-KB3134758-x86.msu /quiet**。
     - 在執行 x86 Windows 7 SP1 的電腦上執行 **Win7-KB3134760-x86.msu /quiet**。
 
-### Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安裝注意事項︰
+### <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安裝注意事項︰
 
 請確定已符合下列先決條件︰
 - 已安裝最新的 Service Pack。
@@ -55,9 +55,9 @@ Windows Server 2008 R2 SP1 和 Windows 7 SP1 系統內建 PowerShell 2.0、WinRM
 
 Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上預設不啟用 WinRM。 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 **Set-WSManQuickConfig**。
 
-# 解除安裝指示
+# <a name="uninstallation-instructions"></a>解除安裝指示
 
-### 使用 [命令提示字元]
+### <a name="using-command-prompt"></a>使用 [命令提示字元]
 
 1.  開啟 **[命令提示字元]**。
 
@@ -76,7 +76,7 @@ wusa /uninstall /kb:3134759
 wusa /uninstall /kb:3134760
 ```
 
-### 使用 [控制台]
+### <a name="using-control-panel"></a>使用 [控制台]
 
 1.  開啟 **[控制台]**。
 
@@ -85,8 +85,3 @@ wusa /uninstall /kb:3134760
 3.  按一下 **[檢視安裝的更新]**。
 
 4.  從已安裝的更新清單中選取 **[Windows Management Framework 5.0]**。 這會對應到 *KB3134758*、*KB3134759* 或 *KB3134760*。 按一下 **[解除安裝]**。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

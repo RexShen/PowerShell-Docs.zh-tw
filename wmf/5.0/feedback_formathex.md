@@ -1,4 +1,4 @@
-# Format-Hex
+# <a name="format-hex"></a>Format-Hex
 **Format-Hex** 可讓您以十六進位格式檢視文字或二進位資料。 以下是範例，看看字串的十六進位表示法，以及 Word 文件的二進位表示法。
 
 PS C:\\&gt; "hello world" | Format-Hex
@@ -26,8 +26,3 @@ PS C:\\&gt; Format-Hex -Path 'C:\\Users\\slee\\Downloads\\DSP1009\_1 1 1.doc'
 00000050 DC 01 00 00 DD 01 00 00 DE 01 00 00 E3 01 00 00 Ü...Ý...Þ...ã...
 
 00000060 4F 02 00 00 D8 02 00 00 79 03 00 00 FF FF FF FF O...Ø...y.......
-
-
-<!--HONumber=Aug16_HO3-->
-
-

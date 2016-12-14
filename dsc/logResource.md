@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 60085295fa7df6179a81cd98859cd33e6923150f
-
+ms.openlocfilehash: fe905237f5f0672f6e5e0cd399e1b71058417d9c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC 記錄檔資源 
+# <a name="dsc-log-resource"></a>DSC 記錄檔資源 
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -35,13 +33,13 @@ Log [string] #ResourceName
 
 [DSC 事件記錄檔在哪裡？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 訊息| 表示要寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔的訊息。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再寫入這個登入訊息。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## 範例
+## <a name="example"></a>範例
 
 下列範例示範如何將訊息加入 Microsoft Windows 預期狀態設定/分析事件記錄檔中。
 
@@ -62,10 +60,4 @@ Configuration logResourceTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

@@ -1,4 +1,4 @@
-# 安裝指示
+# <a name="installation-instructions"></a>安裝指示
 
 下載您的作業系統和架構的正確封裝︰
 
@@ -19,7 +19,7 @@
 
 2. 按兩下 MSU 以執行。
 
-**若要從 [命令提示字元] 安裝 WMF 5.0：** 
+**從 [命令提示字元] 安裝 WMF 5.0：** 
 
 1. 下載您電腦架構的正確封裝之後，以提高的使用者權限 (以系統管理員身分執行) 開啟 [命令提示字元] 視窗。 在 Windows Server 2012 R2 或 Windows Server 2012 或 Windows Server 2008 R2 SP1 的 Server Core 安裝選項上，預設會以提高的使用者權限開啟 [命令提示字元]。
 
@@ -39,10 +39,5 @@
 - 已安裝 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)。
 
 *WinRM Dependency：*Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上預設不啟用 WinRM。 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 **Set-WSManQuickConfig**。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -8,24 +8,22 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "建立網域控制站"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498
-ms.openlocfilehash: 8473eb668e4da5bab01c2f2b7647cbced413bd22
-
+ms.openlocfilehash: 80b957ed666ca626c6083041cf99c263e2e0dc27
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### 建立網域控制站
+### <a name="creating-a-domain-controller"></a>建立網域控制站
 
 本文假設您的電腦已加入網域。
 如果您目前沒有可加入的網域，本節可協助您使用 DSC 快速地建立網域控制站。
 
-#### 必要條件
+#### <a name="prerequisites"></a>必要條件
 
 1.  電腦位於內部網路
 2.  電腦未加入現有的網域
 3.  電腦執行 Windows Server 2016 或已安裝 WMF 5.0
 
-#### 安裝 xActiveDirectory
+#### <a name="install-xactivedirectory"></a>安裝 xActiveDirectory
 如果您的電腦具有使用中的網際網路連線，請在提升權限的 PowerShell 視窗中執行下列命令︰
 ```PowerShell
 Install-Module xActiveDirectory -Force
@@ -37,9 +35,9 @@ Install-Module xActiveDirectory -Force
 Get-Module xActiveDirectory -ListAvailable
 ```
 
-#### 使用 DSC 設定網域
+#### <a name="set-up-a-domain-with-dsc"></a>使用 DSC 設定網域
 複製 PowerShell 中的下列指令碼，將您的電腦設為新網域中的網域控制站。
-**作者的附註︰有所提供的認證未使用的已知問題。  為了安全起見，請記住您的本機系統管理員密碼。**
+**作者的附註︰有所提供的認證未使用的已知問題。為了安全起見，請記住您的本機系統管理員密碼。**
 
 ```PowerShell
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value $env:COMPUTERNAME -Force
@@ -115,7 +113,7 @@ Start-DSCConfiguration -path .\DomainController -ComputerName $env:Computername 
 您的電腦會重新啟動幾次。
 一旦您看到 "C:\temp.txt" 檔案包含「網域已建立」，就知道處理程序完成。
 
-#### 設定使用者和群組
+#### <a name="set-up-users-and-groups"></a>設定使用者和群組
 下列命令會設定您網域中的 Operator 和 Helpdesk 群組，以及屬於該群組的對應非系統管理員使用者。
 ```PowerShell
 # Make Groups
@@ -134,10 +132,4 @@ Enable-ADAccount -Identity $HelpDeskUser
 Add-ADGroupMember -Identity $NonAdminOperatorGroup -Members $OperatorUser
 Add-ADGroupMember -Identity $NonAdminHelpDeskGroup -Members $HelpDeskUser
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

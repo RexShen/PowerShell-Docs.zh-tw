@@ -8,17 +8,15 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-translationtype: Human Translation
-ms.sourcegitcommit: 7caac42751c580d588fcf19db7253c8b75d6c865
-ms.openlocfilehash: 7af27dc9bd8e93d1df5258b0d8df8af12726f568
-
+ms.openlocfilehash: 8df8b9bb74eba5921263ad9d802dcece41261f9a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 安裝 Windows PowerShell SDK
+# <a name="installing-the-windows-powershell-sdk"></a>安裝 Windows PowerShell SDK
 
 下列主題說明如何在不同版本的 Windows 上安裝 PowerShell SDK。
 
-## 安裝適用於 Windows 8 及 Windows Server 2012 的 Windows PowerShell 3.0 SDK
+## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>安裝適用於 Windows 8 及 Windows Server 2012 的 Windows PowerShell 3.0 SDK
 
 Windows 8 及 Windows Server 2012 會自動安裝 Windows PowerShell 3.0。
 您也可以下載並安裝 Windows PowerShell 3.0 的參考組件，當做 Windows 8 SDK 的一部分。
@@ -32,33 +30,33 @@ Windows 8 及 Windows Server 2012 會自動安裝 Windows PowerShell 3.0。
 如需如何下載 Windows PowerShell 2.0 SDK 的詳細資訊，請參閱以下內容。
 (請注意，雖然 2.0 程式碼範例與 Windows 8 和 Windows PowerShell 3.0 相容，但 Windows 8 平台無法安裝 Windows PowerShell 2.0。)
 
-##安裝適用於 Windows 7 及 Windows Server 2008 R2 的 Windows PowerShell 3.0 SDK
+##<a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>安裝適用於 Windows 7 及 Windows Server 2008 R2 的 Windows PowerShell 3.0 SDK
 
 Windows 7 及 Windows Server 2008 R2 會自動安裝 PowerShell 2.0。
 您也可以在這些系統上安裝 PowerShell 3.0。
 (如需詳細資訊，請參閱[安裝 Windows PowerShell](Installing-Windows-PowerShell.md)。)
 如上所述，您也可以在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows 8 SDK。
 
-## 安裝適用於 Windows 7、Vista、XP、Server 2003 及 Server 2008 的 Windows PowerShell 2.0 SDK
+## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>安裝適用於 Windows 7、Vista、XP、Server 2003 及 Server 2008 的 Windows PowerShell 2.0 SDK
 
 Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式所需的參考組件，並提供作為開始撰寫程式碼的起點 C# 範例程式碼。
 
 若要安裝此 SDK，請參閱 [Windows PowerShell 2.0 SDK](http://go.microsoft.com/fwlink/?LinkId=184611)。
 
-## 參考組件
+## <a name="reference-assemblies"></a>參考組件
 
 參考組件預設會安裝在下列位置︰`c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0`。
 
 > **注意**：針對 Windows PowerShell 2.0 組件編譯的程式碼無法載入 Windows PowerShell 1.0 安裝。
 >不過，針對 Windows PowerShell 1.0 組件編譯的程式碼可以載入至 Windows PowerShell 2.0 安裝。
 
-## 範例
+## <a name="samples"></a>範例
 
 程式碼範例預設會安裝在下列位置︰`C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。
 
 以下各節提供每個範例之用途的簡要說明。
 
-## Cmdlet 範例
+## <a name="cmdlet-samples"></a>Cmdlet 範例
 **GetProcessSample01**
 
 示範如何撰寫簡易的 Cmdlet，進而取得本機電腦上的所有處理序。
@@ -105,7 +103,7 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 
 示範如何宣告參數集 (Cmdlet 用作輸入的物件)，以及如何指定要使用的預設參數集。
 
-## 遠端範例
+## <a name="remoting-samples"></a>遠端範例
 
 **RemoteRunspace01**
 
@@ -127,7 +125,7 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 
 示範如何查看現有的 .NET 類別，並確定此類別和衍生類別的執行個體都會還原序列化 (解除凍結) 成實際 .NET 物件。
 
-## 事件範例
+## <a name="event-samples"></a>事件範例
 
 **Event01**
 
@@ -138,7 +136,7 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 示範如何接收遠端電腦上所產生的 Windows PowerShell 事件的通知。
 其會使用透過 [Runspace](https://technet.microsoft.com/library/system.management.automation.runspaces.runspace.aspx) 類別公開的 PSEventReceived 事件。
 
-## 主控應用程式範例
+## <a name="hosting-application-samples"></a>主控應用程式範例
 
 **Runspace01**
 
@@ -204,7 +202,7 @@ Proxy 命令接著會加入用來建立受限 Runspace 的初始工作階段狀�
 
 示範如何使用 Runspace 集區同時執行多個命令。
 
-## 主機範例
+## <a name="host-samples"></a>主機範例
 
 **Host01**
 
@@ -236,7 +234,7 @@ Proxy 命令接著會加入用來建立受限 Runspace 的初始工作階段狀�
 示範如何建置互動式主控台主應用程式，從命令列讀取命令、執行命令，然後在主控台顯示結果。
 此外，這個範例會使用權杖化工具 API 指定使用者所輸入的文字色彩。
 
-## 提供者範例
+## <a name="provider-samples"></a>提供者範例
 
 **AccessDBProviderSample01**
 
@@ -271,9 +269,3 @@ Proxy 命令接著會加入用來建立受限 Runspace 的初始工作階段狀�
 示範如何覆寫內容方法來支援呼叫 Clear-Content、Get-Content 及 Set-Content Cmdlet。
 當使用者需要管理資料存放區的項目內容時，就應該實作這些方法。
 此範例中的提供者類別衍生自 [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) 類別，且其會實作 [IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) 介面。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -4,38 +4,36 @@ manager: carolz
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
+keywords: "powershell,cmdlet,資源庫"
 ms.date: 2016-10-14
 contributor: manikb
 title: psget_unregister psrepository
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 7d9c24ebb20756a2f7852692532ac6ec7e558ca9
-
+ms.openlocfilehash: c90710db47dbfdc58e1ca7f84c6d6fd8f04b5109
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Unregister-PSRepository
+# <a name="unregister-psrepository"></a>Unregister-PSRepository
 
 取消註冊存放庫。
 
-## 描述
+## <a name="description"></a>描述
 
 Unregister-PSRepository Cmdlet 會取消註冊目前使用者的存放庫。
 - 企業和中斷連線的案例允許取消註冊和重新註冊 PSGallery 存放庫。
-- 使用者只要執行下列命令，就可以重新註冊 PSGallery `Register-PSRepository -Default`
+- 使用者只要執行 `Register-PSRepository -Default`，就可以重新註冊 PSGallery
 - 因為 PSGallery 是 Publish-Module 和 Publish-Script Cmdlet 中的預設發行存放庫，所以如果已註冊的存放庫清單中沒有 PSGallery，則會擲回錯誤。
 
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Unregister-PSRepository -Module PowerShellGet -Syntax
 ```
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Unregister-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517130)
 
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 Unregister-PSRepository -Name "MyPrivateGallery"
@@ -43,7 +41,7 @@ Unregister-PSRepository -Name "MyPrivateGallery"
 Get-PSRepository exp | Unregister-PSRepository
 ```
 
-### 企業和中斷連線的案例允許取消註冊和重新註冊 PSGallery 存放庫。
+### <a name="unregistration-and-re-registration-of-the-psgallery-repository-is-allowed-for-an-enterprise-and-disconnected-scenarios"></a>企業和中斷連線的案例允許取消註冊和重新註冊 PSGallery 存放庫。
 ```powershell
 
 # Unregister PSGallery repository
@@ -61,10 +59,4 @@ At line:1 char:1
 # Re-register PSGallery repository
 Register-PSRepository -Default
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 
