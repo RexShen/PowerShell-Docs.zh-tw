@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 57ccd656e0b869da8aadece97e9bb871764c3f70
-
+ms.openlocfilehash: b91b68f6d7bfee668edc4731f23b21233d9367d5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 取得命令的相關資訊
+# <a name="getting-information-about-commands"></a>取得命令的相關資訊
 Windows PowerShell **Get-Command** Cmdlet 能取得您目前工作階段中所有可用的命令。 當您在 Windows PowerShell 命令提示字元輸入 **Get-Command** 時，您會看到如下輸出：
 
 ```
@@ -49,7 +47,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### 顯示可用的命令類型
+### <a name="displaying-available-command-types"></a>顯示可用的命令類型
 **Get-Command** 命令不會列出 Windows PowerShell 中所有可用的命令。 反之，**Get-Command** 命令只會列出目前工作階段中的 Cmdlet。 Windows PowerShell 實際上支援一些其他類型的命令。 雖然 Windows PowerShell 使用者手冊中沒有詳細討論別名、函式與指令碼，但它們也是 Windows PowerShell 命令。 可執行或具有已登錄檔案類型處理常式的外部檔案，也分類為命令。
 
 若要取得工作階段中的所有命令，請輸入：
@@ -82,10 +80,4 @@ Get-Command -CommandType Function
 ```
 Get-Command -CommandType Script
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

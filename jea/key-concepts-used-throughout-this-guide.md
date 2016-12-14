@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "本指南所使用的重要概念"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 178fea44987b0c457b8e5d23fbe851ee12f03b31
-
+ms.openlocfilehash: 873ab19fdf43ec4ac41cc546aa94b64fbc607984
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 本指南所使用的重要概念
+# <a name="key-concepts-used-throughout-this-guide"></a>本指南所使用的重要概念
 **JEA 到底是什麼？**
 
 JEA 是 PowerShell [限制端點](http://blogs.technet.com/b/heyscriptingguy/archive/2014/03/31/introduction-to-powershell-endpoints.aspx)的延伸模組，其新增了角色定義、虛擬帳戶及其他幾項增強功能，讓您更輕鬆地鎖定管理端點。
@@ -53,10 +51,4 @@ JEA 會限制可透過 PowerShell 遠端使用的功能。
 
 **「已連線」的使用者**︰連線到 JEA 端點且已指派角色的非系統管理員使用者。
 這位使用者執行的任何命令，都會在 RunAs 使用者或虛擬帳戶的內容下執行。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

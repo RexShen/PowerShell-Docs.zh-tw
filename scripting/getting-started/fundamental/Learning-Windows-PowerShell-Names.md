@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1dd7dade688b56e3ac544c0562ad6bad4a4284a7
-
+ms.openlocfilehash: 6bd3c3d9b9f05f8ea633ee23fdce7608e985abd7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 了解 Windows PowerShell 名稱
+# <a name="learning-windows-powershell-names"></a>了解 Windows PowerShell 名稱
 了解大部分命令列介面的命令和命令參數名稱需要投入大量時間。 此問題在於不太有模式可循，因此唯一的了解方式是記住您需要定期使用的每個命令和每個參數。
 
 當您使用新命令或參數時，通常無法運用您既有的知識，而必須尋找及了解新名稱。 如果您看一下介面如何從具有累加新增功能的一小組工具成長為功能性介面，便不難了解此結構無法標準化的原因。 特別是命令名稱，乍聽之下可能很有邏輯 (因為每個命令都是個別工具)，但其實還有更好的方法來處理命令名稱。
@@ -27,7 +25,7 @@ ms.openlocfilehash: 1dd7dade688b56e3ac544c0562ad6bad4a4284a7
 
 Windows PowerShell 利用這些相似之處，減少為了解及使用 Cmdlet 所需知道的不同名稱數量。
 
-### Cmdlet 使用「動詞-名詞」名稱降低記住命令的需求
+### <a name="cmdlets-use-verb-noun-names-to-reduce-command-memorization"></a>Cmdlet 使用「動詞-名詞」名稱降低記住命令的需求
 Windows PowerShell 使用「動詞-名詞」命名系統，其中每個 Cmdlet 名稱是由一個標準動詞後面接著連字號和一個特定名詞所組成。 Windows PowerShell 動詞不一定是英文動詞，但會表示 Windows PowerShell 中的特定動作。 名詞很像是任何語言中的名詞，用於描述系統管理中重要物件的特定類型。 藉由檢視一些動詞和名詞範例，就能輕鬆地示範這些由兩部分組成的名稱如何減少學習工作。
 
 名詞的限制較少，但一律會描述命令的作用。 Windows PowerShell 具有 **Get-Process**、**Stop-Process**、**Get-Service** 和 **Stop-Service** 等命令。
@@ -76,7 +74,7 @@ CommandType     Name                            Definition
 Function        Clear-Host                      $spaceType = [System.Managem...
 ```
 
-### Cmdlet 使用標準參數
+### <a name="cmdlets-use-standard-parameters"></a>Cmdlet 使用標準參數
 如前所述，傳統命令列介面中所使用的命令通常不會有一致的參數名稱。 有時候參數完全沒有名稱。 這種情況的參數通常是可快速輸入，但新使用者不容易了解的單字或縮寫字。
 
 不同於其他大部分傳統命令列介面，Windows PowerShell 會直接處理這些參數，並透過直接存取參數及開發人員指引來標準化參數名稱。 雖然這並不保證每個 Cmdlet 一律會符合標準，但會鼓勵其符合標準。
@@ -86,20 +84,14 @@ Function        Clear-Host                      $spaceType = [System.Managem...
 
 以下是一些標準參數名稱和使用方式的一般特性。
 
-#### 說明參數 (?)
+#### <a name="the-help-parameter-"></a>說明參數 (?)
 當您指定 **-?** 參數給任何 Cmdlet 時，不會執行此 Cmdlet。 相反地，Windows PowerShell 會顯示此 Cmdlet 的說明。
 
-#### 一般參數
+#### <a name="common-parameters"></a>一般參數
 Windows PowerShell 有幾個稱為*一般參數*的參數。 因為這些參數是由 Windows PowerShell 引擎所控制，所以每當 Cmdlet 實作參數時，這些參數一律會以相同方式運作。 一般參數包括 **WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable** 和 **OutBuffer**。
 
-#### 建議的參數
+#### <a name="suggested-parameters"></a>建議的參數
 Windows PowerShell 核心 Cmdlet 針對類似的參數使用標準名稱。 雖然不會強制使用參數名稱，但針對使用方式有明確的指引，以鼓勵標準化。
 
 例如，該指引建議命名指向電腦的參數時，依照 **ComputerName** 等名稱，而不是依照 Server、Host、System、Node 或其他常見的替代文字。 重要的建議參數名稱包括 **Force**、**Exclude**、**Include**、**PassThru**、**Path**, 和 **CaseSensitive**。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

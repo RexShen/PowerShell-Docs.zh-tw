@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 7a0ca395008106a6459f992103ecb7e5dc1d12a6
-
+ms.openlocfilehash: 7b3455f240358992941ab4c4cc5e0f2b16e9e4f2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShellTab 物件
+# <a name="the-powershelltab-object"></a>PowerShellTab 物件
   **PowerShellTab** 物件代表 Windows PowerShell 執行階段環境。
 
-## 方法
+## <a name="methods"></a>方法
 
-###  <a name="invoke"></a> Invoke\( Script \)
+###  <a name="a-nameinvokea-invoke-script-"></a><a name="invoke"></a> Invoke\( Script \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  在 PowerShell 索引標籤中執行指定的指令碼。
@@ -35,7 +33,7 @@ ms.openlocfilehash: 7a0ca395008106a6459f992103ecb7e5dc1d12a6
 $psise.PowerShellTabs[1].Invoke({dir})
 ```
 
-### InvokeSynchronous\( Script, \[useNewScope\], millisecondsTimeout \)
+### <a name="invokesynchronous-script-usenewscope-millisecondstimeout-"></a>InvokeSynchronous\( Script, \[useNewScope\], millisecondsTimeout \)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  在 PowerShell 索引標籤中執行指定的指令碼。
@@ -71,9 +69,9 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 
 ```
 
-## [內容]
+## <a name="properties"></a>[內容]
 
-###  <a name="AddOnsMenu"></a> AddOnsMenu
+###  <a name="a-nameaddonsmenua-addonsmenu"></a><a name="AddOnsMenu"></a> AddOnsMenu
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得 PowerShell 索引標籤的附加元件功能表。
@@ -91,7 +89,7 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
-###  <a name="CanExecute"></a> CanInvoke
+###  <a name="a-namecanexecutea-caninvoke"></a><a name="CanExecute"></a> CanInvoke
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，如果指令碼可透過 [Invoke( Script )](#invoke) 方法叫用，則會傳回 **$true** 值。
@@ -110,7 +108,7 @@ $secondTab.CanInvoke
 
 ```
 
-###  <a name="Commandpane"></a> Consolepane
+###  <a name="a-namecommandpanea-consolepane"></a><a name="Commandpane"></a> Consolepane
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。  在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane**。
 
  唯讀屬性，可取得主控台窗格 [editor](../ise/The-ISEEditor-Object.md) 物件。
@@ -121,7 +119,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ```
 
-###  <a name="Displayname"></a> DisplayName
+###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  可讀寫屬性，可取得或設定顯示在 PowerShell 索引標籤上的文字。 根據預設，索引標籤會命名為 "PowerShell #"，其中 # 代表數字。
@@ -132,7 +130,7 @@ $newTab = $psise.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-###  <a name="ExpandedScript"></a> ExpandedScript
+###  <a name="a-nameexpandedscripta-expandedscript"></a><a name="ExpandedScript"></a> ExpandedScript
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  可讀寫布林值屬性，可決定 [指令碼] 窗格為展開或隱藏。
@@ -143,7 +141,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 
 ```
 
-###  <a name="Files"></a> 檔案
+###  <a name="a-namefilesa-files"></a><a name="Files"></a> Files
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得 PowerShell 索引標籤中開啟的[指令碼檔案集合](../ise/The-ISEFileCollection-Object.md)。
@@ -155,7 +153,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-###  <a name="Output"></a> 輸出
+###  <a name="a-nameoutputa-output"></a><a name="Output"></a> Output
   此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  在更新版本的 Windows PowerShell ISE 中，您可以使用 **ConsolePane** 物件達到相同的目的。
 
  唯讀屬性，可取得目前 [editor](../ise/The-ISEEditor-Object.md) 的 [輸出] 窗格。
@@ -165,7 +163,7 @@ $newFile.Editor.LineCount
 $psise.CurrentPowerShellTab.output.clear()
 ```
 
-###  <a name="Prompt"></a> Prompt
+###  <a name="a-nameprompta-prompt"></a><a name="Prompt"></a> Prompt
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得目前的提示文字。 注意：**Prompt** 功能可以透過使用者設定檔覆寫。 如果結果不是簡單字串，則此屬性不會傳回任何項目。
@@ -175,7 +173,7 @@ $psise.CurrentPowerShellTab.output.clear()
 $psISE.CurrentPowerShellTab.Prompt
 ```
 
-###  <a name="ShowCommands"></a> ShowCommands
+###  <a name="a-nameshowcommandsa-showcommands"></a><a name="ShowCommands"></a> ShowCommands
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  可讀寫屬性，指出目前是否顯示 [命令] 窗格。
@@ -187,7 +185,7 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
-###  <a name="StatusText"></a> StatusText
+###  <a name="a-namestatustexta-statustext"></a><a name="StatusText"></a> StatusText
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得 **PowerShellTab** 狀態文字。
@@ -197,7 +195,7 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 $psISE.CurrentPowerShellTab.StatusText
 ```
 
-###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
+###  <a name="a-namehorizontaladdontoolspaneopeneda-horizontaladdontoolspaneopened"></a><a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，指出水平附加元件工具窗格目前是否開啟。
@@ -207,7 +205,7 @@ $psISE.CurrentPowerShellTab.StatusText
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
+###  <a name="a-nameverticaladdontoolspaneopeneda-verticaladdontoolspaneopened"></a><a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，指出垂直附加元件工具窗格目前是否開啟。
@@ -219,16 +217,10 @@ $psISE.CurrentPowerShellTab.ShowCommands=$True
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [PowerShellTabCollection 物件](The-PowerShellTabCollection-Object.md) 
 - [Windows PowerShell ISE 指令碼物件模型](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE 物件模型參考](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [ISE 物件模型階層](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

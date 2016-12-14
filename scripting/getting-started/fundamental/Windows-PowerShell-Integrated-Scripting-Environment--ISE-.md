@@ -8,21 +8,19 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: bfb36e6313379080ee071ec1df41992b945d2d83
-
+ms.openlocfilehash: 411d7cce5c93d274ab1f10d77f5efba2154c74a8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 整合式指令碼環境 (ISE)
+# <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 整合式指令碼環境 (ISE)
 Windows PowerShell 整合式指令碼環境 (ISE) 是 Windows PowerShell 引擎和語言之兩部主機的其中一部。 您可以使用它，透過 Windows PowerShell 主控台中無法使用的方式來撰寫、執行和測試指令碼。 ISE 新增語法著色、Tab 鍵自動完成、IntelliSense、視覺化偵錯和即時線上說明。
 
 ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可用來同時檢視您的指令碼和可插入 ISE 之其他工具的原始碼。 您甚至可以同時開啟多個指令碼視窗，這在所偵錯的指令碼使用其他指令碼或模組中所定義的函式時特別有用。
 
-## 新功能
+## <a name="whats-new"></a>新功能
 以下是一些已在最新版的 PowerShell ISE 中新增的功能。
 
-### PowerShell 3.0 的新功能 (Windows Server 2012、Windows 8)
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>PowerShell 3.0 的新功能 (Windows Server 2012、Windows 8)
 在您輸入文字時，**IntelliSense** 透過顯示與輸入文字相符的 Cmdlet、參數、參數值、檔案或資料夾的功能表，來自動完成命令。
 
 **程式碼片段**是可輕鬆地插入所撰寫指令碼的簡短程式碼區段。 有用程式碼片段的集合包含在方塊中，而且使用 **New-Snippet** Cmdlet 可以有更多的程式碼片段。
@@ -55,21 +53,15 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 -   **區塊選擇**。 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt+Shift+方向鍵**，就可以選取一個區塊形狀的文字區塊。
 
-### PowerShell 2.0 的新功能 (Windows Server 2008 R2、Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 的新功能 (Windows Server 2008 R2、Windows 7)
 ISE 是在 PowerShell 2.0 版引進。
 
-## Windows PowerShell ISE 的執行需求
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>Windows PowerShell ISE 的執行需求
 ISE 可以在任何可執行 Windows PowerShell 2.0 版或更新版本的電腦上使用。 每個版本的 Windows 和 Windows Server 都包括某個版本的 Windows PowerShell 和 ISE，但您可以安裝 Windows Management Framework 來升級到最新可用版本。 執行這項搜尋來尋找可用的最新版本︰[下載試用](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。 請注意，任何標示 "Preview" 的項目都是發行前版本程式碼，而不是完整功能。
 
 > [!NOTE]
 > 因為 Windows PowerShell ISE 需要圖形化使用者介面，所以無法在 Windows Server 的 Server Core 選項上執行它。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [使用 Windows PowerShell 整合式指令碼環境](http://technet.microsoft.com/library/cc732148.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

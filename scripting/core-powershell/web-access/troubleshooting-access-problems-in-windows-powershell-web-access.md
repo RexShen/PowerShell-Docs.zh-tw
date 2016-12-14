@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
-
+ms.openlocfilehash: e22fa0d8712321e8b0f61b849d46c0c610049c86
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  疑難排解 Windows PowerShell Web 存取中的存取問題
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
 更新日期︰2013 年 6 月 24 日
 
@@ -126,7 +124,7 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 </ul></td>
 </tr>
 <tr class="odd">
-<td><p>授權規則顯示安全性識別碼 (SID)，而不是 <em>user_name</em>/<em>computer_name 語法</em> </p></td>
+<td><p>授權規則顯示安全性識別碼 (SID)，而不是 <em>user_name</em>/<em>computer_name</em>  語法</p></td>
 <td><p>可能是規則不再有效，或者 Active Directory 網域服務查詢失敗。 當閘道伺服器曾經位於工作群組，但之後加入網域的案例中，授權規則通常會無效。</p></td>
 </tr>
 <tr class="even">
@@ -136,7 +134,8 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
+另請參閱</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -145,14 +144,14 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 [使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
 [about_Remote_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
 
-<span>顯示︰</span> 繼承受保護的
+<span>顯示︰</span>繼承受保護的
 
 <span class="stdr-votetitle">此頁面是否有幫助？</span>
 是 否
 
 其他意見反應？
 
-<span class="stdr-count"><span class="stdr-charcnt">剩下 1500</span> 個字元</span> 提交略過此步驟
+<span class="stdr-count">剩下 <span class="stdr-charcnt">1500</span> 個字元</span> 提交 略過
 
 <span class="stdr-thankyou">謝謝您！</span> <span class="stdr-appreciate">我們非常感謝您的意見反應。</span>
 
@@ -160,7 +159,7 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> 站台意見反應</a> 站台意見反應
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /></span> 網站意見反應</a> 網站意見反應
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -176,13 +175,13 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 
 請告訴我們更多資訊
 
--   [Flash Newsletter](https://technet.microsoft.com/cc543196.aspx)
+-   [電子快訊](https://technet.microsoft.com/cc543196.aspx)
 -   |
 -   [與我們連絡](https://technet.microsoft.com/cc512759.aspx)
 -   |
 -   [隱私權聲明](https://privacy.microsoft.com/privacystatement)
 -   |
--   [使用條款](https://technet.microsoft.com/cc300389.aspx)
+-   [使用規定](https://technet.microsoft.com/cc300389.aspx)
 -   |
 -   [商標](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
 -   |
@@ -193,10 +192,4 @@ ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 
 連結至此網站或由此網站參照之第三方指令碼和程式碼，係由擁有此類程式碼之第三方授權予　貴用戶，而非 Microsoft 所授予。 請參閱 ASP.NET Ajax CDN 使用條款 - http://www.asp.net/ajaxlibrary/CDN.ashx。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

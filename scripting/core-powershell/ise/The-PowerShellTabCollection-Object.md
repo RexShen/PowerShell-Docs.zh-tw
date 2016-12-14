@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4456b1e165130fd52249ffdbd7c22ff591061a8e
-
+ms.openlocfilehash: 79edc4e41522b187cd6421be0bd897663b42bb44
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShellTabCollection 物件
+# <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection 物件
   **PowerShellTab** 集合物件是 **PowerShellTab** 物件的集合。 每個 **PowerShellTab** 物件功能都可做為個別的執行階段環境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 類別的執行個體。 範例是 **$psISE.PowerShellTabs** 物件。
 
-## 方法
+## <a name="methods"></a>方法
 
-### 新增\(\)
+### <a name="add"></a>Add\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將新的 PowerShell 索引標籤新增到集合。 它會傳回新加入的索引標籤。
@@ -29,7 +27,7 @@ $NewTab=$psISE.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-### Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  移除 **psTab** 參數指定的索引標籤。
@@ -46,7 +44,7 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a>SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  選取 **psTab** 參數指定的 PowerShell 索引標籤，使其成為目前作用中的 PowerShell 索引標籤。
@@ -65,16 +63,10 @@ $newTab.DisplayName="Brand New Tab"
 $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
 ```
 
-## 另請參閱
- [PowerShellTab 物件](The-PowerShellTab-Object.md) 
- [Windows PowerShell ISE 指令碼物件模型](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE 物件模型參考](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE 物件模型階層](../ise/The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>另請參閱
+- [PowerShellTab 物件](The-PowerShellTab-Object.md) 
+- [Windows PowerShell ISE 指令碼物件模型](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE 物件模型參考](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE 物件模型階層](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

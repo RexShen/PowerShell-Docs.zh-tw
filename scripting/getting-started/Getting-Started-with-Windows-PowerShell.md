@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: a031bad99e8aca1d7598f99e157723bf4360cf56
-
+ms.openlocfilehash: bb852b8d5cb5202568a80517074cc8ff6f40ea0f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 開始使用 Windows PowerShell
+# <a name="getting-started-with-windows-powershell"></a>開始使用 Windows PowerShell
 Windows PowerShell 是專為系統管理員所設計的 Windows 命令列殼層。 Windows PowerShell 包含互動式提示和指令碼環境，可獨立使用或搭配使用。
 
 不同於大部分殼層會接受並傳回文字，Windows PowerShell 是以 .NET Framework Common Language Runtime (CLR) 和 .NET Framework 為建置基礎，因此會接受並傳回 .NET Framework 物件。 環境的這項基本變更，為 Windows 的管理和設定帶來全新的工具和方法。
@@ -34,10 +32,4 @@ Windows PowerShell 引進 Cmdlet (唸成 "command-let") 概念，這是內建於
 -   [啟動 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
 -   [準備好使用 Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

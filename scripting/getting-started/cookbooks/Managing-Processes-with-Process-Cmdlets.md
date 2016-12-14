@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 3812d0492da1879df50538533740ff857af7b15d
-
+ms.openlocfilehash: 7f7097966aff6ae73b50521b86f932ffdfadf937
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 使用處理程序 Cmdlet 管理處理程序
+# <a name="managing-processes-with-process-cmdlets"></a>使用處理程序 Cmdlet 管理處理程序
 您可以使用 Windows PowerShell 中的處理程序 Cmdlet，管理 Windows PowerShell 中的本機和遠端處理程序。
 
-## 取得處理程序 (Get-Process)
+## <a name="getting-processes-get-process"></a>取得處理程序 (Get-Process)
 若要取得在本機電腦上執行的處理程序，請在不使用參數的情況下執行 **Get-Process**。
 
 您可以藉由指定處理程序的名稱或識別碼，來取得特定處理程序。 下列命令會取得閒置處理程序︰
@@ -103,7 +101,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## 停止處理程序 (Stop-Process)
+## <a name="stopping-processes-stop-process"></a>停止處理程序 (Stop-Process)
 Windows PowerShell 可讓您彈性地列出處理程序，但停止處理程序又如何？
 
 **Stop-Process** Cmdlet 接受使用 Name 或 Id 指定您要停止的處理程序。 您是否能夠停止處理程序取決於您的權限。 某些處理程序無法停止。 例如，如果您嘗試停止閒置處理程序，您會收到錯誤︰
@@ -150,7 +148,7 @@ Stop-Process Cmdlet 沒有 ComputerName 參數。 因此，若要在遠端電腦
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
-## 停止所有其他 Windows PowerShell 工作階段
+## <a name="stopping-all-other-windows-powershell-sessions"></a>停止所有其他 Windows PowerShell 工作階段
 能夠停止目前工作階段以外的所有執行中 PowerShell 工作階段有時可能會很有用。 如果工作階段使用太多資源或無法存取 (可能在遠端執行或在其他桌面工作階段中)，您可能無法直接將它停止。 不過如果您嘗試停止所有執行中的工作階段，可能反而終止目前的工作階段。
 
 每個 Windows PowerShell 工作階段都有包含 Windows PowerShell 處理程序識別碼的環境變數 PID。 您可以根據每個工作階段的識別碼檢查 $PID，並只終止具有不同識別碼的 Windows PowerShell 工作階段。 下列管線命令會執行這項操作，並傳回終止的工作階段清單 (因為使用了 **PassThru** 參數)：
@@ -168,19 +166,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## 啟動、偵錯及等候處理程序
+## <a name="starting-debugging-and-waiting-for-processes"></a>啟動、偵錯及等候處理程序
 Windows PowerShell 也提供啟動 (或重新啟動)、偵錯處理程序，以及等候處理程序完成再執行命令的 Cmdlet。 如需這些 Cmdlet 的資訊，請參閱每個 Cmdlet 的 Cmdlet 說明主題。
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

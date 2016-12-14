@@ -8,19 +8,17 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 4334a1ff099072c2287af299d65caed3f16032fe
-
+ms.openlocfilehash: 27b9d9c71412a06a8890b56163d0e6acb7ecd1f4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 處理軟體安裝
+# <a name="working-with-software-installations"></a>處理軟體安裝
 設計成使用 Windows Installer 的應用程式可以透過 WMI 的 **Win32_Product** 類別存取，但並非所有現今使用的應用程式都使用 Windows Installer。 因為 Windows Installer 對處理可安裝的應用程式提供最廣泛的標準技術，我們主要將著重在那些應用程式。 使用替代安裝常式的應用程式通常不受 Windows Installer 管理。 處理那些應用程式的特定技術將視安裝程式軟體與應用程式開發人員的決定而定。
 
 > [!NOTE]
 > 透過將應用程式檔案複製到電腦來安裝的應用程式通常無法使用這裡討論的技術來管理。 您可以使用＜處理檔案與資料夾＞一節中所討論的技術，將這些應用程式當成檔案與資料夾來管理。
 
-### 列出 Windows Installer 應用程式
+### <a name="listing-windows-installer-applications"></a>列出 Windows Installer 應用程式
 若要列出在本機或遠端系統上使用 Windows Installer 安裝的應用程式，請使用下列簡單的 WMI 查詢：
 
 ```
@@ -85,7 +83,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 雖然我們現在有數種方式可查看使用 Windows Installer 安裝的應用程式，但我們還沒有考慮其他應用程式。 因為大部分的標準應用程式會向 Windows 登錄其解除安裝程式，所以我們可以透過在 Windows 登錄中尋找這些應用程式，以在本機處理它們。
 
-### 列出所有可解除安裝應用程式
+### <a name="listing-all-uninstallable-applications"></a>列出所有可解除安裝應用程式
 雖然沒有方法可以保證找出系統上所有應用程式，但可以尋找 [新增或移除程式] 對話方塊顯示之清單中的所有程式。 [新增或移除程式] 會在下列登錄機碼中尋找這些應用程式：
 
 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**。
@@ -141,13 +139,13 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### 安裝應用程式
+### <a name="installing-applications"></a>安裝應用程式
 您可以在遠端或本機使用 **Win32_Product** 類別來安裝 Windows Installer 封裝。
 
 > [!NOTE]
 > 在 Windows Vista、Windows Server 2008 與更新版本的 Windows 中，您必須使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell 才能安裝應用程式。
 
-進行遠端安裝時，請使用通用命名慣例 (UNC) 網路路徑來指定 .msi 套件的路徑，因為 WMI 子系統不了解 Windows PowerShell 路徑。 例如，若要安裝位於遠端電腦 PC01 上網路共用 \\\\AppServ\\dsp 中的 NewPackage.msi套件，請在 Windows PowerShell 提示字元輸入下列命令：
+進行遠端安裝時，請使用通用命名慣例 (UNC) 網路路徑來指定 .msi 套件的路徑，因為 WMI 子系統不了解 Windows PowerShell 路徑。 例如，若要安裝位於遠端電腦 PC01 上網路共用 \\\\AppServ\\dsp 中的 NewPackage.msi 套件，請在 Windows PowerShell 提示字元輸入下列命令：
 
 ```
 (Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
@@ -155,7 +153,7 @@ SKC  VC Name                           Property
 
 不使用 Windows Installer 技術的應用程式可能會有應用程式專屬，且適用於自動化部署的方法。 若要判斷是否有自動化部署的方法，請檢查應用程式的文件或洽詢應用程式廠商的支援系統。 在某些情況下，即使應用程式廠商沒有特別將應用程式設計成自動化安裝，但安裝程式軟體製造商可能會有一些自動化技術。
 
-### 移除應用程式
+### <a name="removing-applications"></a>移除應用程式
 使用 Windows PowerShell 移除 Windows Installer 套件的方法，與安裝套件的方法大致相同。 以下是範例，其中根據封裝的名稱選取要解除安裝的封裝；在某些情況下，使用 **IdentifyingNumber** 來篩選可能會比較容易：
 
 ```
@@ -176,16 +174,10 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 不過，這些字串在未經修改之前，可能無法直接用於 Windows PowerShell 提示字元。
 
-### 升級 Windows Installer 應用程式
+### <a name="upgrading-windows-installer-applications"></a>升級 Windows Installer 應用程式
 若要升級應用程式，您需要知道應用程式的名稱，以及應用程式升級套件的路徑。 有了該資訊之後，您就可以使用單一的 Windows PowerShell 命令升級應用程式：
 
 ```
 (Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

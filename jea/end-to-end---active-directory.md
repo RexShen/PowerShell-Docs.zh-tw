@@ -8,13 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "端對端   Active Directory"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
-ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
-
+ms.openlocfilehash: 3108f5dad96ef54feb3cf559fae38812ed46849c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 端對端 - Active Directory
+# <a name="end-to-end---active-directory"></a>端對端 - Active Directory
 假設您的程式範圍已增加。
 您現在有責任將 JEA 加入網域控制站，以執行 Active Directory 動作。
 技術支援人員將使用 JEA 解除鎖定帳戶、重設密碼，以及執行其他類似動作。
@@ -23,13 +21,13 @@ ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 除此之外，您還必須公開許多現有的 Active Directory 指令碼。
 本節將逐步引導您撰寫這項工作所需的工作階段設定和角色功能。
 
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 為了逐步進行本節，您必須在網域控制站上執行。
 如果您無權存取網域控制站，別擔心。
 請針對您熟悉的一些其他案例或角色執行，並嘗試跟著做。
 若要快速地設定新的網域控制站，請參閱[建立網域控制站附錄](.\creating-a-domain-controller.md)。
 
-## 建立新的角色功能和工作階段設定的步驟
+## <a name="steps-to-make-a-new-role-capability-and-session-configuration"></a>建立新的角色功能和工作階段設定的步驟
 
 建立新的角色功能乍看之下可能令人卻步，但這項作業可以分成幾個相當簡單的步驟︰
 
@@ -39,26 +37,26 @@ ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 4.  將這些工作放在角色功能檔案中
 5.  登錄公開該角色功能的工作階段設定
 
-## 步驟 1︰識別必須公開的內容
+## <a name="step-1-identify-what-needs-to-be-exposed"></a>步驟 1︰識別必須公開的內容
 建立新的角色功能或工作階段設定之前，您必須識別使用者需要透過 JEA 端點執行的所有工作，以及如何透過 PowerShell 來執行這些工作。
 這涉及相當大量的需求收集和研究。
 您進行此處理程序的方式將取決於您的組織和目標。
 請注意，需求收集和研究在真實世界的處理程序中是不可或缺的一部分。
 這可能是採用 JEA 的過程中最困難的步驟。
 
-### 尋找資源
+### <a name="find-resources"></a>尋找資源
 以下是研究如何建立 Active Directory 管理端點時可參閱的一組線上資源︰
--   [Active Directory PowerShell Overview (Active Directory PowerShell 概觀)](http://blogs.msdn.com/b/adpowershell/archive/2009/03/05/active-directory-powershell-overview.aspx)
--   [CMD to PowerShell Guide for Active Directory (適用於 Active Directory 的 CMD 到 PowerShell 指南)](http://blogs.technet.com/b/ashleymcglone/archive/2013/01/02/free-download-cmd-to-powershell-guide-for-ad.aspx)
+-   [Active Directory PowerShell Overview](http://blogs.msdn.com/b/adpowershell/archive/2009/03/05/active-directory-powershell-overview.aspx) (Active Directory PowerShell 概觀)
+-   [CMD to PowerShell Guide for Active Directory](http://blogs.technet.com/b/ashleymcglone/archive/2013/01/02/free-download-cmd-to-powershell-guide-for-ad.aspx) (適用於 Active Directory 的 CMD 到 PowerShell 指南)
 
-### 建立清單
+### <a name="make-a-list"></a>建立清單
 以下是您將在本節其餘部分執行的一組十個動作。
 請記住，這只是範例，您的組織需求可能不同︰
 
 |動作                                                         |PowerShell 命令                                             |
 |---------------------------------------------------------------|---------------------------------------------------------------|
 |解除鎖定帳戶                                                 |`Unlock-ADAccount`                                             |
-|密碼重設                                                 |`Set-ADAccountPassword` 與 `Set-ADUser -ChangePasswordAtLogon`|
+|密碼重設                                                 |`Set-ADAccountPassword` 和 `Set-ADUser -ChangePasswordAtLogon`|
 |變更使用者的職稱                                          |`Set-ADUser -Title`                                            |  
 |尋找已鎖定、已停用、非作用中等 AD 帳戶 |`Search-ADAccount`                                             |
 |新增使用者至群組                                              |`Add-ADGroupMember -Identity (with whitelist) -Members`        |
@@ -66,7 +64,7 @@ ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 |啟用使用者帳戶                                          |`Enable-ADAccount`                                             |
 |停用使用者帳戶                                         |`Disable-ADAccount`                                            |
 
-## 步驟 2：視需要限制工作
+## <a name="step-2-restrict-tasks-as-necessary"></a>步驟 2：視需要限制工作
 
 現在您已有動作清單，您必須仔細思考每個命令的功能。
 這樣做有兩個重要原因︰
@@ -87,7 +85,7 @@ ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 
 2.  `Add-ADGroupMember` 和 `Remove-ADGroupMember` 只能用於特定群組
 
-### 步驟 3：確認這些工作適用於 JEA
+### <a name="step-3-confirm-the-tasks-work-with-jea"></a>步驟 3：確認這些工作適用於 JEA
 在限制的 JEA 環境中可能無法直接實際使用這些 Cmdlet。
 JEA 會在 *NoLanguage* 模式下執行，以防止使用者使用變數。
 為了確保使用者有流暢的體驗，請務必檢查一些事項。
@@ -116,7 +114,7 @@ Set-ADAccountPassword -Identity mollyd -NewPassword (Read-Host -Prompt "Specify 
 這種方法簡化了使用者體驗、避免發生錯誤、減少所需的 PowerShell 知識，並降低不小心公開過多功能的情況。
 唯一的缺點就是撰寫和維護函式的成本。
 
-### 題外話：新增函式至模組
+### <a name="aside-adding-a-function-to-your-module"></a>題外話：新增函式至模組
 您將採取第二個方法，撰寫稱為 `Reset-ContosoUserPassword` 的 PowerShell 函式。
 此函式將會執行重設使用者的密碼時所需進行的所有作業。
 在您的組織中，這可能涉及執行精密複雜的作業。
@@ -162,7 +160,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 ```
 現在，您的使用者只要呼叫 `Reset-ContosoUserPassword`，就能建立內嵌安全字串，而不需要記住此語法。
 
-## 步驟 4：編輯角色功能檔案
+## <a name="step-4-edit-the-role-capability-file"></a>步驟 4：編輯角色功能檔案
 在[建立角色功能](./role-capabilities.md#role-capability-creation)一節中，您已建立空白角色功能檔案。
 在本節中，您將在該檔案中填入值。
 
@@ -199,7 +197,7 @@ VisibleFunctions = 'Reset-ContosoUserPassword'
 3.  如果定義一組允許的值並不容易，則 ValidatePattern 可讓您使用規則運算式來限制參數引數。
 您無法對單一參數同時定義 ValidatePattern 和 ValidateSet。
 
-## 步驟 5：登錄新的工作階段設定
+## <a name="step-5-register-a-new-session-configuration"></a>步驟 5：登錄新的工作階段設定
 接下來，您將建立新的工作階段設定檔，該檔案會向 "JEA_NonAdmin_HelpDesk" AD 群組的成員公開您的角色功能。
 
 首先在 PowerShell ISE 中建立及開啟新的空白工作階段設定檔。
@@ -229,7 +227,7 @@ RoleDefinitions = @{ 'CONTOSO\JEA_NonAdmin_HelpDesk' = @{ RoleCapabilities =  'A
 ```PowerShell
 Register-PSSessionConfiguration -Name ADHelpDesk -Path "$env:ProgramData\JEAConfiguration\HelpDeskDemo.pssc"
 ```
-## 測試看看！
+## <a name="test-it-out"></a>測試看看！
 取得您的非系統管理員使用者認證︰
 ```PowerShell
 $HelpDeskCred = Get-Credential
@@ -259,7 +257,7 @@ Add-ADGroupMember TestGroup -Member OperatorUser -Verbose
 ```PowerShell
 Exit-PSSession
 ```
-## 重要概念
+## <a name="key-concepts"></a>重要概念
 **NoLanguage 模式**：當 PowerShell 在 "NoLanguage" 模式時，使用者只能執行命令，而不能使用任何語言項目。
 如需詳細資訊，請執行 `Get-Help about_Language_Modes`。
 
@@ -269,10 +267,4 @@ Exit-PSSession
 **ValidateSet/ValidatePattern**︰公開命令時，您可以限制特定參數的有效引數。
 ValidateSet 是有效引數的特定清單。
 ValidatePattern 是該參數引數必須符合的規則運算式。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

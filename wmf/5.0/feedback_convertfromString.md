@@ -1,4 +1,4 @@
-# 從字串擷取和剖析結構化物件
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>從字串擷取和剖析結構化物件
 本主題也將介紹 ConvertFrom-String Cmdlet 的一些額外功能︰
 
 -   預設情況下會移除範圍文字屬性， 您可以使用 IncludeExtent 參數將此屬性加入。
@@ -8,7 +8,7 @@
 -   新的 -UpdateTemplate 參數，可將學習演算法的結果儲存成範本檔案中的註解， 使得學習程序 (最慢的階段) 成為單次成本。 現在使用包含已編碼學習演算法的範本，幾乎可以瞬間執行 Convert-String。
 
 
-從字串內容擷取和剖析結構化物件
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>從字串內容擷取和剖析結構化物件
 ----------------------------------------------------------
 
 在與 [Microsoft Research](http://research.microsoft.com/) 合作之下，已新增 **ConvertFrom-String** Cmdlet。
@@ -79,10 +79,5 @@ P1    P2
 > ----------                     ----               ----     -----
 > Ana Trujillo...              Ana Trujillo       Redmond  WA Antonio Moreno...            Antonio Moreno     Renton   WA Thomas Hardy...              Thomas Hardy       Seattle  WA Christina Berglund...        Christina Berglund Redmond  WA Hanna Moos...                Hanna Moos         Puyallup WA
 
-若要在擷取的文字上執行其他資料操作，**ExtentText** 屬性可從擷取記錄中擷取未經處理的文字。 若要提供這項功能的意見反應，或共用您在撰寫時遇到困難的範例內容，請將電子郵件寄至 <psdmfb@microsoft.com>。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+若要在擷取的文字上執行其他資料操作，**ExtentText** 屬性可從擷取記錄中擷取未經處理的文字。 若要提供這項功能的意見反應，或共用您在撰寫時遇到困難的範例內容，請寄電子郵件至 <psdmfb@microsoft.com>。
 

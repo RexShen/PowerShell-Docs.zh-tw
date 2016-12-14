@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 6fffd6406a7570e06fc4403cd238804ef0f51360
-
+ms.openlocfilehash: f7e27957db90430b4f550e56df18c227b2971a0d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 建立自訂輸入方塊
+# <a name="creating-a-custom-input-box"></a>建立自訂輸入方塊
 使用 Windows PowerShell 3.0 和更新版本中 Microsoft .NET Framework 的表單建立功能，撰寫圖形化自訂輸入方塊的指令碼。
 
-## 建立自訂的圖形化輸入方塊
+## <a name="create-a-custom-graphical-input-box"></a>建立自訂的圖形化輸入方塊
 將下列程式碼複製並貼上到 Windows PowerShell ISE，然後將它儲存為 Windows PowerShell 指令碼 (.ps1)。
 
 ```
@@ -76,11 +74,11 @@ $form = New-Object System.Windows.Forms.Form
 
 建立 Form 類別的執行個體之後，指派值給此類別的三個屬性。
 
--   **Text。** 這會成為視窗的標題。
+-   **Text**。 這會成為視窗的標題。
 
--   **Size。** 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
+-   **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
 
--   **StartingPosition。** 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
+-   **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
 
 ```
 $form.Text = "Data Entry Form"
@@ -159,14 +157,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 另請參閱
-- [Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (指令碼高手您好：這些 PowerShell GUI 範例為何無法運作？)](http://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: Creating a Custom Input Box (本週 Windows PowerShell 秘訣︰建立自訂輸入方塊)](http://technet.microsoft.com/library/ff730941.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
+## <a name="see-also"></a>另請參閱
+- [Hey Scripting Guy：Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy：PowerShell GUI 範例為什麼動不起來？)
+- [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
+- [Windows PowerShell Tip of the Week: Creating a Custom Input Box](http://technet.microsoft.com/library/ff730941.aspx) (本週 Windows PowerShell 秘訣︰建立自訂輸入方塊)
 

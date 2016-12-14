@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 04d650aca06977883c029684b37838da01b456aa
-
+ms.openlocfilehash: 5af4891107394981679e38cd0a7fd4c86346dc01
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISESnippetObject
+# <a name="the-isesnippetobject"></a>ISESnippetObject
   **ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。 **$psISE.CurrentPowerShellTab.Snippets** 集合的成員都是 **ISESnippet** 物件的範例。 建立程式碼片段的最簡單方式是使用 [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) Cmdlet。
 
-## [內容]
+## <a name="properties"></a>[內容]
 
-###  <a name="DisplayName"></a> 作者
+###  <a name="a-namedisplaynamea-author"></a><a name="DisplayName"></a> Author
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，可取得程式碼片段的作者名稱。
@@ -30,7 +28,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 
 ```
 
-###  <a name="Action"></a> CodeFragment
+###  <a name="a-nameactiona-codefragment"></a><a name="Action"></a> CodeFragment
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，可取得要插入至編輯器的程式碼片段。
@@ -41,7 +39,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 
 ```
 
-###  <a name="Shortcut"></a> 捷徑
+###  <a name="a-nameshortcuta-shortcut"></a><a name="Shortcut"></a> Shortcut
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，可取得功能表項目的 Windows 鍵盤快速鍵。
@@ -53,16 +51,10 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [ISESnippetCollection 物件](The-ISESnippetCollection-Object.md) 
 - [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

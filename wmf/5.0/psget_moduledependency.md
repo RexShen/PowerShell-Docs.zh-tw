@@ -1,4 +1,4 @@
-# 安裝模組相依性
+# <a name="installation-of-module-dependencies"></a>安裝模組相依性
 
 在 Windows PowerShell 5.0 或更新版本中執行的 Install-Module、Update-Module 和 Publish-Module Cmdlet 現在都有並存 (SxS) 模組版本支援。
 我們還在 Publish-Module Cmdlet 中加入了 -RequiredVersion 參數來指定要發佈的版本。 Path 參數現在支援有版本資料夾的模組基底路徑。
@@ -67,7 +67,7 @@ ModuleType Version Name ExportedCommands
 Manifest 2.0 ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-**ModuleWithDependencies2 模組資訊清單檔案的內容︰**
+**ModuleWithDependencies2 模組資訊清單檔案的內容：**
 ```powershell
 @{
 \# Version number of this module.
@@ -192,7 +192,3 @@ _------ ---- ---------- -----------
 1.5 ContosoServer LocalRepo ContosoServer module
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-
