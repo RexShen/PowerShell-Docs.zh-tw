@@ -1,32 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-06-22
-title: "簡介"
+ms.date: 2016-12-05
+title: Just Enough Administration
 ms.technology: powershell
-ms.openlocfilehash: 71264d1001228249d9f2bb0f72473e9761170bf0
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+redirect_url: https://msdn.microsoft.com/powershell/jea/overview
+ms.openlocfilehash: 7e1f598e7af5231002cbd90629d53d40c1887518
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="introduction"></a>簡介
-
-##  <a name="motivation"></a>**動機**  
-當您將系統的特殊權限存取授與某人時，就是將您的信任界限延伸到該人員。
-這會帶來風險，因為系統管理員是受攻擊面。
-內部攻擊和認證遭竊是常見的真實情況。
-
-##  <a name="not-a-new-problem"></a>**不是新問題**  
-您可能很熟悉最低權限原則，並可能透過應用程式使用其提供的某種角色型存取控制 (RBAC)。
-不過，這些解決方案的效率和管理能力通常因其廣泛的範圍和不精確而受到限制。
-此外，RBAC 涵蓋範圍也有間隙。
-例如，在 Windows 中，特殊權限存取主要是二元切換參數，迫使您在將使用者加入 Administrators 群組時，授與不必要的權限。
-
-##  <a name="just-enough-administration-jea"></a>**Just Enough Administration (JEA)** 
-透過 PowerShell 遠端提供角色型存取控制 (RBAC) 平台。
-它可讓特定使用者在伺服器上執行特定管理工作，而不需要授與系統管理員權限。
-這可讓您填滿現有 RBAC 解決方案的間隙，並簡化這些設定的管理工作。
-

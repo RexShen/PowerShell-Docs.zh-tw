@@ -1,15 +1,16 @@
 ---
-title: "Windows PowerShell 50 的新功能"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "Windows PowerShell 50 的新功能"
+ms.technology: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: b3823319cef457c7d04ebdaf521857f1f3e096b9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f5413c0638ff297d4505ba2b25fcbd203f56530d
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 的新功能
@@ -552,7 +553,7 @@ Windows PowerShell® 整合式指令碼環境 (ISE) 針對 Windows PowerShell 3.
 Windows PowerShell 是針對 Common Language Runtime 4.0 所建立。 Cmdlet、指令碼與工作流程作者可以使用 Windows PowerShell 中新的 Microsoft .NET Framework 4 類別，其功能包括應用程式相容性與部署、Managed Extensibility Framework、平行運算、網路、Windows Communication Foundation 及 Windows Workflow Foundation。
 
 ### <a name="a-namebkmkwinpeasupport-for-windows-preinstallation-environment"></a><a name="BKMK_WinPE"></a>支援 Windows 預先安裝環境
-Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Windows PE) 4.0 的選用元件。 Windows PE 是啟動尚未安裝作業系統之電腦的最小作業系統，並且可以讓電腦準備好以安裝 Windows。 Windows PE 可以用來分割及格式化硬碟、複製磁碟映像至電腦，以及從網路共用位置起始 Windows 安裝程式。 Windows PowerShell 3.0 可以在 Windows PE 上使用，以管理部署、診斷與修復案例。
+Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Windows PE) 4.0 的選用元件。 Windows PE 是啟動尚未安裝作業系統之電腦的最小作業系統，並且可以讓電腦準備好以安裝 Windows。 Windows PE 可以用來分割及格式化硬碟、複製磁碟映像至電腦，以及從網路共用位置起始 Windows 安裝程式。 Windows PowerShell 3.0 可以在 Windows PE 上使用，以管理部署、診斷與修復案例。
 
 ### <a name="a-namebkmkdisconnectedadisconnected-sessions"></a><a name="BKMK_Disconnected"></a>已中斷連線的工作階段
 從 Windows PowerShell 3.0 開始，您使用 New-PSSession Cmdlet 建立的持續性使用者管理的工作階段 ("PSSessions") 會儲存在遠端電腦上。 它們已經不再與它們建立所在的工作階段相依。

@@ -1,15 +1,16 @@
 ---
-title: "PowerShell.exe 命令列說明"
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: "PowerShell.exe 命令列說明"
+ms.technology: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: f2a682671bb39de943fac47488e2a1c651423b53
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 609682294c344129f96afd0241116bb19154d19e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令列說明
@@ -55,7 +56,7 @@ PowerShell[.exe] -Help | -? | /?
 
 在罕見的情況下，您可能需要提供切換參數的布林值。 若要在 **File** 參數的值中提供切換參數值的布林值，請以大括弧括住參數名稱和值，如下所示︰`-File .\Get-Script.ps1 {-All:$False}`
 
-### <a name="-inputformat-text-xml"></a>-InputFormat {Text | XML}
+### <a name="-inputformat-text--xml"></a>-InputFormat {Text | XML}
 描述傳送至 Windows PowerShell 的資料格式。 有效值為 "Text" (文字字串) 或 "XML" (序列化的 CLIXML 格式)。
 
 ### <a name="-mta"></a>-Mta
@@ -73,7 +74,7 @@ PowerShell[.exe] -Help | -? | /?
 ### <a name="-noprofile"></a>-NoProfile
 不載入 Windows PowerShell 設定檔。
 
-### <a name="-outputformat-text-xml"></a>-OutputFormat {Text | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {Text | XML}
 決定 Windows PowerShell 的輸出格式。 有效值為 "Text" (文字字串) 或 "XML" (序列化的 CLIXML 格式)。
 
 ### <a name="-psconsolefile-filepath"></a>-PSConsoleFile <FilePath>
