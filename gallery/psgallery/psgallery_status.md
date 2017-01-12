@@ -9,12 +9,21 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 2e9eed63e0cc6fbf66543ea528581c2728e999c7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 40ebfa510abe647d80a85fa15f0b777d697ffdfb
+ms.sourcegitcommit: 26c3acb3dae9f7c3868a5f0d6144e9e1a0d02557
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell 資源庫狀態
 =========================
+
+
+## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>12/15/2016 - 無法透過 PowerShellGallery 網站傳送電子郵件
+
+__影響的摘要__：在 12/13/2016 和 12/15/2016 之間，PowerShell 資源庫系統管理員未收到透過「連絡擁有者」、「管理擁有者」、「連絡支援人員」或「檢舉不當使用」傳送的任何訊息。  
+__根本原因__︰工程師找出其肇因為 SMTP 伺服器的驗證問題。  
+__解決方法__︰工程師能夠解決驗證問題並還原 SMTP 伺服器連線。  
+__後續步驟__︰如果您在這段期間使用連絡「擁有者」、「管理擁有者」、「連絡支援人員」或「檢舉不當使用」連結來傳送郵件給 cgadmin@microsoft.com，而我們沒有回應，請再試一次。 造成您的不便，我們深感抱歉。  
+
 
 
 ## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>2016/8/10 - 已解決︰無法傳送電子郵件給 cgadmin@microsoft.com

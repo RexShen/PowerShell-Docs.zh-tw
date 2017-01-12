@@ -1,14 +1,15 @@
 ---
-title: WinRMSecurity
-ms.date: 2016-05-11
-keywords: powershell,cmdlet
 description: 
+manager: carmonm
 ms.topic: article
-author: eslesar
-manager: dongill
+author: jpjofre
 ms.prod: powershell
-ms.openlocfilehash: d1a75f4167a2f0af60801f33b79fb07cf7fe9398
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: powershell,cmdlet
+ms.date: 2016-12-12
+title: WinRMSecurity
+ms.technology: powershell
+ms.openlocfilehash: 31b5ec784d394568c462a1e133b501f0a8884f2e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 遠端安全性考量
@@ -80,30 +81,11 @@ Kerberos 可保證使用者識別與伺服器識別，而不會傳送任何種�
 ## <a name="making-the-second-hop"></a>進行第二次跳躍
 
 PowerShell 遠端預設會使用 (如果提供) Kerberos 或 NTLM 驗證。 這兩種通訊協定驗證遠端電腦時，皆不需要將認證傳送到電腦。
-這是最安全的驗證方式，但因為遠端電腦並沒有使用者的認證，所以無法代替使用者存取其他電腦與服務。 這稱為「雙躍點 」問題。
+這是最安全的驗證方式，但因為遠端電腦並沒有使用者的認證，所以無法代替使用者存取其他電腦與服務。 這稱為「第二個躍點問題」。
 
-避免這個問題的方法有數種︰
+避免這個問題的方法有數種。 如需這些方法的描述，以及每一項的優缺點，請參閱[Making the second hop in PowerShell Remoting](PS-remoting-second-hop.md) (在 PowerShell 遠端中進行第二次跳躍)。
 
-### <a name="trust-between-remote-computers"></a>遠端電腦之間的信任
 
-如果信任使用者從遠端連線到 *Server1*，取用 *Server2* 的資源，可以明確授與 *Server1* 存取這些資源。
-
-### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>存取遠端資源時使用明確認證
-
-您可以使用 Cmdlet 的 **Credential** 參數，明確地將認證傳遞至遠端資源。 例如：
-
-```powershell
-$myCredential = Get-Credential
-New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
-```
-
-### <a name="credssp"></a>CredSSP
-
-您可以使用[認證安全性支援提供者 (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) 進行驗證 (藉由將 "CredSSP"指定為呼叫 [New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) Cmdlet 的 `Authentication` 參數值。 CredSSP 會以純文字將認證傳遞至伺服器，因此加以使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
-
-如需使用 PowerShell 遠端的 CredSSP 時，安全性考量的詳細資訊，請參閱 [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp) (意外妨害：注意 CredSSP)。
-
-如需認證遭竊攻擊的詳細資訊，請參閱[降低傳遞雜湊 (PtH) 攻擊與竊取其他認證](https://www.microsoft.com/en-us/download/details.aspx?id=36036)。
 
 
 

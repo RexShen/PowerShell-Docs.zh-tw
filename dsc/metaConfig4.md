@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
@@ -21,7 +21,7 @@ translationtype: HT
 以下列出您可以設定或擷取的本機設定管理員屬性。
  
 * **AllowModuleOverwrite**：控制是否允許從設定伺服器下載新設定，以覆寫目標節點上舊的設定。 可能的值為 True 和 False。
-* **CertificateID**：GUID 憑證，用來保護存取設定的憑證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。
+* **CertificateID**：憑證指紋，用來保護在設定中傳遞的認證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。
 * **ConfigurationID**：指出用來從設定為「提取」伺服器取得特定設定檔的 GUID。 此 GUID 可確保存取正確的設定檔。
 * **ConfigurationMode**：指定本機設定管理員實際上如何將設定套用至目標節點。 它可以接受下列值：
     - **ApplyOnly**：若設定此選項，藉由直接將新設定傳送到目標節點 (“push”)，或如果已設定「提取」伺服器，而且當 DSC 檢查「提取」伺服器時探索到新的設定時，DSC 會套用此設定，除非偵測的新設定，否則不執行進一步動作。 如果目標節點的設定偏離，就不採取任何動作。
