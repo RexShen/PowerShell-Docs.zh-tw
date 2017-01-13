@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 8f1b550e92c3c280b84664e0b1f9695172370522
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 的已知問題 #
@@ -18,7 +18,7 @@ translationtype: HT
 
 ## <a name="starting-powershell-shortcut-as-administrator"></a>以系統管理員身分啟動 PowerShell 捷徑
 安裝 WMF 時，如果您嘗試以系統管理員身分從捷徑啟動 PowerShell，可能會收到「未指定的錯誤」訊息。
-請以非系統管理員身分重新開啟捷徑，捷徑現在將會以系統管理員身分正常運作。
+您現在可以系統管理員以外的身分重新開啟捷徑，捷徑將會以系統管理員身分運作。
 
 ## <a name="pester"></a>Pester
 在此版本中，當您在 Nano 伺服器使用 Pester 時有兩個問題應該要注意︰
@@ -28,7 +28,7 @@ translationtype: HT
 
 ## <a name="operation-validation"></a>作業驗證 
 
-* Microsoft.PowerShell.Operation.Validation 模組的 Update-Help 會因為無法運作的說明 URI 而失敗
+* 因為不具有效的說明 URI，導致 Microsoft.PowerShell.Operation.Validation 模組的 Update-Help 失敗
 
 ## <a name="dsc-after-uninstall-wmf"></a>解除安裝 WMF 之後的 DSC 
 * 解除安裝 WMF 不會從組態資料夾中刪除 DSC MOF 文件。 若 MOF 文件包含更新且無法在舊版系統上使用的內容，DSC 便無法正常運作。 在此情況下，請從提高權限的 PowerShell 主控台中執行下列指令碼，以清除 DSC 狀態。

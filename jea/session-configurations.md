@@ -8,8 +8,8 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-12-05
 title: "JEA 工作階段設定"
 ms.technology: powershell
-ms.openlocfilehash: 1d410e345ff31a5f8149810fb9c3b07e92b27e05
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
@@ -49,7 +49,9 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 - Get-Help
 - Measure-Object (measure)
 - Out-Default
-- Select-Object (select) 沒有 PowerShell 提供者可供使用，也無法使用任何外部程式 (可執行檔、指令碼等等)。
+- Select-Object (select)
+
+沒有 PowerShell 提供者或任何外部程式 (可執行檔、指令碼等等) 可用。
 
 您有想要為 JEA 工作階段設定的數個其他欄位。
 下列各節會介紹它們。
