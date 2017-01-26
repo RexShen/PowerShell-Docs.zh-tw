@@ -29,7 +29,7 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 一旦將項目發行到 PowerShell 資源庫，就能輕易邀請其他使用者成為項目擁有者。
 
 1. 使用項目目前擁有者的帳戶[登入](https://powershellgallery.com/users/account/LogOn) PowerShell 資源庫。
-2. 使用 [項目] 索引標籤瀏覽到項目頁面，進行搜尋或依序按一下您的使用者名稱及 [管理我的項目][](https://www.powershellgallery.com/account/Packages)。
+2. 使用 [項目] 索引標籤瀏覽到項目頁面，進行搜尋或依序按一下您的使用者名稱及 [**[管理我的項目]**](https://www.powershellgallery.com/account/Packages)。
 3. 以項目擁有者身分登入時，左側會有 [管理擁有者] 連結可點選。
 4. 輸入要新增為擁有者的人員使用者名稱，然後按一下 [新增]。
 5. 新的共同擁有者接著便會收到電子郵件，即成為項目擁有者的邀請。
