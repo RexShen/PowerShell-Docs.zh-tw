@@ -47,7 +47,7 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 當項目有多個擁有者，而需要移除其中一個時，程序很簡單：
 
 1. 使用項目目前擁有者的帳戶[登入](https://powershellgallery.com/users/account/LogOn) PowerShell 資源庫；
-2. 使用 [項目] 索引標籤瀏覽到項目頁面，進行搜尋或依序按一下您的使用者名稱及 [管理我的項目][](https://www.powershellgallery.com/account/Packages)。
+2. 使用 [項目] 索引標籤瀏覽到項目頁面，進行搜尋或依序按一下您的使用者名稱及 [**[管理我的項目]**](https://www.powershellgallery.com/account/Packages)。
 3. 以項目擁有者身分登入時，左側會有 [管理擁有者] 連結可點選；
 4. 在要移除的擁有者旁按一下 [移除] 連結。
 
