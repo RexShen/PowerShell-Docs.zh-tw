@@ -55,7 +55,7 @@
 
 # Linux 上的 DSC
 ## [開始使用 DSC for Linux](lnxGettingStarted.md)
-## [Linux 的內建資源](lnxBuiltInResources.md)
+## [適用於 Linux 的內建資源](lnxBuiltInResources.md)
 ### [nxArchive 資源](lnxArchiveResource.md)
 ### [nxEnvironment 資源](lnxEnvironmentResource.md)
 ### [nxFile 資源](lnxFileResource.md)

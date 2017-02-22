@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 01af336f34928aec63cac7402c1ab20c701579fe
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f833eed14a30d80b1fcc3a9e5e67811c53096bf5
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 # <a name="dsc-configurations"></a>DSC 設定
@@ -30,7 +30,9 @@ Configuration MyDscConfiguration {
             Name = "Bitlocker"
         }
     }
-}
+} 
+
+MyDscConfiguration 
 ```
 
 將指令碼儲存為 .ps1 檔案。
@@ -62,12 +64,14 @@ Configuration MyDscConfiguration {
         }
     }
 }
+
+MyDscConfiguration 
 ```
 
-在本例中，您指定節點名稱的方式，是在您[編譯設定](# Compiling the configuration) 時將其作為 $ComputerName 參數傳遞。 預設名稱為 "localhost"。
+在本例中，您指定節點名稱的方式，是在您編譯設定時將它做為 $ComputerName 參數傳遞。 預設名稱為 "localhost"。
 
 ## <a name="compiling-the-configuration"></a>編譯設定
-您必須先將設定編譯成 MOF 文件，才能施行設定。 呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。
+您必須先將設定編譯成 MOF 文件，才能施行設定。 呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。  範例的最後一行僅包含設定名稱，並會呼叫設定。
 >__注意：__若要呼叫設定，函式必須在全域範圍內 (像任何其他 PowerShell 函式一樣)。 執行此作業的方法有二：「點執行」指令碼，或使用 F5 或按一下 ISE 的 __[執行指令碼]__ 按鈕執行設定指令碼。 若要點執行指令碼，請執行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含設定的指令碼檔案名稱。
 
 當您呼叫設定時，它會：
@@ -119,6 +123,8 @@ Configuration DependsOnExample {
         }
     }
 }
+
+DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>在設定中使用新的資源

@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: 260a3bc443302f2d582f455aafb30ed717d95c84
+ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 的已知問題 #
@@ -41,3 +41,25 @@ translationtype: HT
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
  ```  
+
+## <a name="jea-virtual-accounts"></a>JEA 虛擬帳戶
+WMF 5.0 中設定為使用虛擬帳戶的 JEA 端點與工作階段設定，在升級為 WMF 5.1 之後將不會設定為使用虛擬帳戶。
+這表示在 JEA 工作階段中執行的命令將會以連線使用者的身分執行，而不是使用暫時的系統管理員帳戶，這將能避免使用者執行需要提高權限的命令。
+若要還原虛擬帳戶，您需要取消註冊，然後重新註冊使用虛擬帳戶的所有工作階段設定。
+
+```powershell
+# Find the JEA endpoint by its name
+$jea = Get-PSSessionConfiguration -Name MyJeaEndpoint
+
+# Copy the cached PSSC file so it can be re-registered
+$pssc = Copy-Item $jea.ConfigFilePath $env:temp -PassThru
+
+# Unregister the current PSSC
+Unregister-PSSessionConfiguration -Name $jea.Name
+
+# Re-register the PSSC
+Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
+
+# Ensure the access policies remain the same
+Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
+```

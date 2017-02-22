@@ -7,18 +7,21 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 8a8af7f4b82b856460427a68ec536e98f7cd981b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 5436b047052f522e930e60925aef1de2f5e81fcb
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="running-dsc-with-user-credentials"></a>以使用者認證執行 DSC 
 
-> 適用於：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0、Windows PowerShell 5.1
 
 您可以在設定中使用自動 **PsDscRunAsCredential** 屬性，以一組指定的認證來執行 DSC 資源。 DSC 預設會使用系統帳戶執行每項資源， 但有些時候仍須以使用者身分執行，例如在特定使用者內容中安裝 MSI 封裝；設定使用者的登錄機碼；存取使用者的特定本機目錄；或存取網路共用等等。
 
 每項 DSC 資源都有 **PsDscRunAsCredential** 屬性可設為任何使用者的認證 ([PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) 物件)。
 此認證可硬式編碼成設定中的屬性值，也可將此值設為 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，如此將會在編譯設定時提示使用者輸入認證 (如需編譯設定的相關資訊，請參閱[設定](configurations.md)。
+
+>**注意︰**在 PowerShell 5.0 中，不支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。 
+>在 PowerShell 5.1 中，支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。
 
 >**注意：**PowerShell 4.0 中無法使用 **PsDscRunAsCredential** 屬性。
 

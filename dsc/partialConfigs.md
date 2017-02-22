@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 02f1cc45f30c0892e777a9e05d87f440f628fbf5
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: fba9b3ed183d82cf532e2431de4a9e2c30243197
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell 預期狀態設定部分設定
 
->適用於：Windows PowerShell 5.0
+>適用於︰Windows PowerShell 5.0 及更新版本。
 
 在 PowerShell 5.0 中，預期狀態設定 (DSC) 可讓設定以片段形式和從多個來源傳送。 目標節點上本機設定管理員 (LCM) 先將片段放在一起，再當成單一設定套用。 這項功能可讓團隊或個人之間共用設定控制權。 例如，如果兩個或多個開發人員小組在一項服務共同作業，便有可能每個人都想要建立設定來管理服務的一部分。 每一種設定可能提取自不同提取伺服器，因此無法將它們加入開發的不同階段。 部分設定也可讓不同的個人或小組控制設定節點的不同層面，而不需要協調單一設定文件的編輯。 例如，一個小組可能會負責部署 VM 和作業系統，而另一個小組負責在該 VM 上部署其他應用程式和服務。 藉由部分設定，每個小組都可以建立自己的設定，而不會讓任一組的設定不必要地複雜。
 
@@ -53,7 +53,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>發佈和啟動推送模式部分設定
 
-然後您可對每個設定呼叫 [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md)，傳遞包含設定文件的資料夾作為 **Path** 參數。 `Publish-DSCConfiguration` 將設定 MOF 檔案放至目標節點。 發佈這兩種設定之後，您可以在目標節點上呼叫 `Start-DSCConfiguration –UseExisting`。
+然後您可對每個設定呼叫 [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)，傳遞包含設定文件的資料夾作為 **Path** 參數。 `Publish-DSCConfiguration` 將設定 MOF 檔案放至目標節點。 發佈這兩種設定之後，您可以在目標節點上呼叫 `Start-DSCConfiguration –UseExisting`。
 
 例如，如果您編譯了撰寫節點上的下列設定 MOF 文件︰
 
@@ -98,8 +98,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**注意︰**使用者執行 
-
+>**注意：**執行 [Publish-DSCConfiguration (英文)](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) Cmdlet 的使用者必須在目標節點上具備系統管理員權限。
 
 ## <a name="partial-configurations-in-pull-mode"></a>提取模式中的部分設定
 
@@ -194,7 +193,16 @@ PartialConfigDemo
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>在提取伺服器上放置設定文件並為其命名 (ConfigurationNames)
 
-部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。 設定文件必須命名如下：`ConfigurationName.mof`，其中 _ConfigurationName_ 是部分設定的名稱。 在此範例中，設定文件應該命名如下：
+部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。 
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>PowerShell 5.1 中命名提取伺服器上的命名設定文件
+
+如果您僅從個別提取伺服器提取單一部分設定，設定文件可以使用任何名稱。 如果您從提取伺服器提取多個部分設定，設定文件可以命名為 `<ConfigurationName>.mof` (其中 _ConfigurationName_ 是部分設定的名稱) 或是 `<ConfigurationName>.<NodeName>.mof` (其中 _ConfigurationName_ 是部分設定的名稱，而 _NodeName_ 是目標節點的名稱)。 這可讓您從 Azure 自動化 DSC 提取伺服器提取設定。
+
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 中命名提取伺服器上的命名設定文件
+
+設定文件必須命名如下：`ConfigurationName.mof`，其中 _ConfigurationName_ 是部分設定的名稱。 在此範例中，設定文件應該命名如下：
 
 ```
 ServiceAccountConfig.mof
@@ -222,7 +230,7 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>混合推送和提取模式中的部分設定
 
-您也可以混和部分設定的推送和提取模式。 也就是說，推送另一個部分設定時，您可能會有一個從提取伺服器提取的部分設定。 請根據前一節所述的重新整理模式，像平常一樣處理每個部分設定。 例如，下列中繼設定描述相同的範例，其中服務帳戶部分設定位在提取模式下，而 SharePoint 部分設定位在推送模式下。
+您也可以混和部分設定的推送和提取模式。 也就是說，推送另一個部分設定時，您可能會有一個從提取伺服器提取的部分設定。 指定每個部分設定的重新整理模式，如同先前小節中所述。 例如，下列中繼設定描述相同的範例，其中 `ServiceAccountConfig` 部分設定處於 Pull 模式，而 `SharePointConfig` 部分設定則處於 Push 模式。
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>使用 ConfigurationNames 的混合推送和提取模式
 
@@ -301,7 +309,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-請注意，在 Settings 區塊中指定的 **RefreshMode** 為 "Pull"，但 SharePointConfig 部分設定的 **RefreshMode** 會是 "Push"。
+請注意，在 Settings 區塊中指定的 **RefreshMode** 為 "Pull"，但 `SharePointConfig` 部分設定的 **RefreshMode** 則是 "Push"。
 
 如上面所述，對其各自的重新整理模式命名和放置設定 MOF 檔案。 呼叫 **Publish-DSCConfiguration** 來發佈 `SharePointConfig` 部分設定，然後等待 `ServiceAccountConfig` 設定從提取伺服器上提取，或藉由呼叫 [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) 強制重新整理。
 

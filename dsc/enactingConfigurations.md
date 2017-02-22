@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 69248223a67c8dbbea421f80b57cb245489fbc4f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
+ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
 translationtype: HT
 ---
 # <a name="enacting-configurations"></a>施行設定
@@ -19,7 +19,7 @@ PowerShell 預期狀態設定 (DSC) 設定有兩種施行方式：Push 模式和
 
 ## <a name="push-mode"></a>Push 模式
 
-![Push 模式](images/Push.png "How push mode works")
+![Push 模式](images/Push.png "Push 模式的運作方式")
 
 Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet，將設定積極套用至目標節點。
 
@@ -30,11 +30,13 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.mic
 
 ## <a name="pull-mode"></a>Pull 模式
 
-![Pull 模式](images/Pull.png "How pull mode works")
+![Pull 模式](images/Pull.png "Pull 模式的運作方式")
 
-在 Pull 模式中，提取用戶端會設定成從遠端的提取伺服器取得其所需的狀態設定。 同樣地，提取伺服器已設為 DSC 服務主機，佈建了提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的工作，對節點設定執行定期的相容性檢查。 事件第一次觸發時，會讓提取用戶端的本機設定管理員 (LCM) 驗證設定。 如果提取用戶端設定為所需，就不會發生任何事。 否則，LCM 就會要求提取伺服器取得指定的設定。 如果提取伺服器上有這個設定，而且它通過了初始驗證檢查，設定就會傳輸到提取用戶端，LCM 會在這裡執行它。
+在 Pull 模式中，提取用戶端會設定成從遠端的提取伺服器取得其所需的狀態設定。 同樣地，提取伺服器已設為 DSC 服務主機，佈建了提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的工作，對節點設定執行定期的相容性檢查。 當第一次觸發事件時，提取用戶端上的本機設定管理員 (LCM) 會向提取伺服器提出要求，以取得 LCM 中指定的設定。 如果提取伺服器上有這個設定，而且它通過了初始驗證檢查，設定就會傳輸到提取用戶端，LCM 會在這裡執行它。
 
-如需部署內部部署 DSC 提取伺服器的詳細資訊，請參閱＜DSC 提取伺服器設定和規劃指南＞。
+LCM 會依照 LCM 的 **ConfigurationModeFrequencyMins** 屬性所指定的固定間隔，檢查用戶端是否符合設定。 LCM 會依照 LCM 的 **RefreshModeFrequency** 屬性所指定的固定間隔，檢查提取伺服器上的更新設定。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](metaConfig.md)。
+
+如需設定 DSC 提取伺服器的詳細資訊，請參閱[設定 DSC Web 提取伺服器](pullServer.md)。
 
 如果想要利用線上服務裝載提取伺服器功能，請參閱 [Azure 自動化 DSC](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/) 服務。
 

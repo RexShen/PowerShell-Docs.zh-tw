@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 09316fef0594697a60a1bd4acabf39588f75edc2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 8957f4709c95ccb5b72c4fa9b42c9fe9ef93dffe
+ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
 translationtype: HT
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正#
@@ -98,3 +98,16 @@ class CThing
 WMF 5.1 藉由傳回最新版本的說明主題，以修正此問題。
 
 `Get-Help` 不提供指定所需說明版本的方法。 若要解決這個問題，請瀏覽到模組目錄，直接使用您偏好的編輯器等工具檢視說明。 
+
+### <a name="powershellexe-reading-from-stdin-stopped-working"></a>從 STDIN 讀取的 powershell.exe 停止運作
+
+客戶會使用原生應用程式的 `powershell -command -` 來執行透過 STDIN 在指令碼中傳遞的 PowerShell，不過，這已因為主控台主機的其他變更而無法運作。
+
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
+
+### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>powershell.exe 在啟動時會造成 CPU 使用量突然增加
+
+PowerShell 會使用 WMI 查詢來檢查它是否透過「群組原則」啟動，以避免造成登入時的延遲。
+WMI 查詢最後會將 tzres.mui.dll 插入系統上的每一個處理序，因為 WMI Win32_Process 類別會嘗試擷取本地時區資訊。
+這會導致 wmiprvse (WMI 提供者主機) 出現大量的 CPU 使用量。
+修正方法是以 Win32 API 呼叫取代 WMI 來取得相同的資訊。

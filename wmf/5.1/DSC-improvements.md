@@ -8,11 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 581d80d476e918a78775291521abfd254703a7b7
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
 ## <a name="dsc-class-resource-improvements"></a>DSC 類別資源改善
 
@@ -25,7 +25,6 @@ WMF 5.1 中已修正下列已知問題︰
 
 
 ## <a name="dsc-resource-debugging-improvements"></a>DSC 資源偵錯改善
-
 在 WMF 5.0 中，PowerShell 偵錯工具並未直接停在類別資源方法 (Get/Set/Test)。
 在 WMF 5.1 中，偵錯工具會停在類別資源方法，方式如同 MOF 資源方法。
 
@@ -37,16 +36,26 @@ DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制�
 在舊版的 WMF 中，在使用 ESENT 資料庫時，同時登錄/報告 DSC 提取伺服器的要求，會導致 LCM 無法登錄及 (或) 報告。 在這種情況下，提取伺服器的事件記錄檔就會出現「執行個體名稱已在使用中」的錯誤。
 這是因為在多執行緒案例中使用不正確的模式存取 ESENT 資料庫。 WMF 5.1 已修正此問題。 WMF 5.1 中可以正常同時登錄或報告 (包含 ESENT 資料庫)。 只有 ESENT 資料庫會發生這個問題，OLEDB 資料庫無此問題。 
 
-##<a name="pull-partial-configuration-naming-convention"></a>提取命名慣例的部分設定
+## <a name="enable-circular-log-on-esent-database-instance"></a>在 ESENT 資料庫執行個體上啟用循環記錄
+在舊版的 DSC-PullServer 中，ESENT 資料庫記錄檔會填滿提取伺服器的磁碟空間，因為資料庫執行個體是在沒有循環記錄的情況下建立的。 在此版本中，客戶將可選擇使用提取伺服器的 web.config，控制執行個體的循環記錄行為。 根據預設，CircularLogging 會設定為 TRUE。
+```
+<appSettings>
+     <add key="dbprovider" value="ESENT" />
+    <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
+    <add key="CheckpointDepthMaxKB" value="512" />
+    <add key="UseCircularESENTLogs" value="TRUE" />
+  </appSettings>
+```
+## <a name="pull-partial-configuration-naming-convention"></a>提取命名慣例的部分設定
 在舊版中，提取伺服器/服務的部分設定命名慣例 MOF 檔案名稱，應該符合本機設定管理員設定中指定的部分設定名稱，該本機設定管理員設定必須依次比對 MOF 檔案中內嵌的設定名稱。 
 
 請參閱下方的快照集︰
 
-•   本機組態設定，定義允許接收節點的部分設定。
+•    本機組態設定，定義允許節點接收的部分設定。
 
 ![中繼設定範例](../images/MetaConfigPartialOne.png)
 
-•   部分設定定義範例 
+•    部分設定定義範例 
 
 ```PowerShell
 Configuration PartialOne
@@ -63,11 +72,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-•   內嵌在產生之 MOF 檔案中的 'ConfigurationName'。
+•    內嵌在產生之 MOF 檔案中的 'ConfigurationName'。
 
 ![產生的 MOF 檔案範例](../images/PartialGeneratedMof.png)
 
-•   提取設定存放庫中的檔案名稱 
+•    提取設定存放庫中的檔案名稱 
 
 ![設定存放庫中的檔案名稱](../images/PartialInConfigRepository.png)
 

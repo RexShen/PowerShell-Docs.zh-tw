@@ -1,8 +1,16 @@
 ---
-title: 複合資源: 使用 DSC 設定作為資源 ms.date: 2016-05-16 keywords: powershell,DSC description:  
-ms.topic:  article author:  eslesar manager:  dongill ms.prod:  powershell
+title: "複合資源：把 DSC 設定當做資源使用"
+ms.date: 2016-05-16
+keywords: "PowerShell，DSC"
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.openlocfilehash: 36851c9616cfb9a2fc79925e4187effa913341ad
+ms.sourcegitcommit: c7577f7a1e902a41df6d337e5d85361d1814f90a
+translationtype: HT
 ---
-
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合資源：把 DSC 設定當做資源使用
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
