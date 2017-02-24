@@ -268,7 +268,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   使用者現在可以將 **PSDscRunAsCredential** 屬性新增至節點區塊，以執行指定之認證集合下的資源。 例如，PSDscRunAsCredential = Get-Credential Contoso\\DscUser。 這項功能非常適合用來建立設定，以執行 Windows Installer 和可執行安裝程式、存取每位使用者的登錄區，或執行目前使用者內容以外的其他工作。
 
--   針對 **Configuration** 關鍵字，已可支援 32 位元 (x86 為基礎)。
+-   針對 **Configuration** 關鍵字，已可支援&32; 位元 (x86 為基礎)。
 
 -   Windows PowerShell 現已支援 DSC 設定的自訂說明，您可透過將 \[CmdletBinding()] 加入產生的設定函式中來進行定義。
 
@@ -300,7 +300,7 @@ Windows Server® 2016 Technical Preview 和 Windows 10® 預設會安裝 Windows
 
 -   現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 
--   新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
+-   新的功能表命令 「全部中斷」 (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
 ### <a name="a-namebkmknewodataanew-features-in-windows-powershell-web-services-management-odata-iis-extension"></a><a name="BKMK_newOData"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
@@ -383,7 +383,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 -   已經大幅增強參數繫結在 Tab 鍵自動完成案例之外的運作效能，例如使用目前 Runspace 中不存在的命令。
 
--   已新增對自訂容器活動的支援至 Windows PowerShell 工作階段。 如果活動參數的類型為 **Activity**、**Activity\[]** (或如果活動參數為活動的泛型集合)，且使用者已經提供指令碼區塊做為引數，則 Windows PowerShell 工作流程將會把指令碼區塊轉換成 XAML，和一般 Windows PowerShell 指令碼轉工作流程的編譯相同。
+-   已新增對自訂容器活動的支援至 Windows PowerShell 工作階段。 如果活動參數的類型為 **Activity**、**Activity\[]** \(或如果活動參數為活動的泛型集合)，且使用者已經提供指令碼區塊做為引數，則 Windows PowerShell 工作流程將會把指令碼區塊轉換成 XAML，和一般 Windows PowerShell 指令碼轉工作流程的編譯相同。
 
 -   在當機之後，Windows PowerShell 工作流程會自動重新連線到受管理的節點。
 
@@ -717,7 +717,7 @@ Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新
 
 7.  更安靜、更簡化的 [New-ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) Cmdlet 運作。
 
-8.  #Requires 的新 **Module** 參數
+8.  &#35;Requires 的新 **Module** 參數
 
 9. 改善的 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet (包含 **MinimumVersion** 與 **RequiredVersion** 參數)
 
