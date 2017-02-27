@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: f8f8ef06cd79af294bad7bb8cf3d6676ab9a69bc
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: 27d9a259d119099c45d7ecd3a15cd26654071d42
+ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
 translationtype: HT
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
@@ -46,7 +46,7 @@ $MyData =
         @{
             NodeName    = 'VM-1'
             Role = 'WebServer'
-        }
+        },
 
         @{
             NodeName    = 'VM-2'
@@ -183,7 +183,7 @@ $MyData =
         @{
             NodeName    = 'VM-1'
             FeatureName = 'Web-Server'
-        }
+        },
 
         @{
             NodeName    = 'VM-2'
@@ -211,7 +211,7 @@ DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$
 
 讓我們看看一個完整的範例，該範例使用單一設定來設定網站的開發和生產環境。 在開發環境中，IIS 和 SQL Server 會安裝在單一節點上。 在生產環境中，IIS 和 SQL Server 會安裝在不同的節點上。 我們將使用設定資料檔案 .psd1，來指定這兩個不同環境的資料。
 
-### <a name="configuration-data-file"></a>設定資料檔案
+ ### <a name="configuration-data-file"></a>設定資料檔案
 
 我們將在名為 `DevProdEnvData.psd1` 的檔案中定義開發和生產環境資料，如下所示：
 
@@ -237,7 +237,7 @@ DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$
             Role            = "Web"
             SiteContents    = "C:\Website\Prod\SiteContents\"
             SitePath        = "\\Prod-IIS\Website\"
-        }
+        },
 
         @{
             NodeName         = "Dev"
@@ -250,23 +250,22 @@ DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$
     )
 
 }
-
-    )
-
-}
 ```
 
-### <a name="configuration-file"></a>設定檔案
+### <a name="configuration-script-file"></a>設定指令檔
 
-現在，在設定中，我們將依節點的角色 (`MSSQL`、`Dev` 或兩者)，來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此進行設定。 開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。 網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
+現在，在 .ps1 檔案定義的設定中，我們會依節點的角色 (`MSSQL`、`Dev` 或兩者)，來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此加以設定。 開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。 網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
 
 在設定指令碼結尾處，我們會呼叫設定 (將其編譯為 MOF 文件)，並傳遞 `DevProdEnvData.psd1` 作為 `$ConfigurationData` 參數。
+
+>**注意︰**這項設定要求在目標節點上安裝模組 `xSqlPs` 和 `xWebAdministration`。
 
 ```powershell
 Configuration MyWebApp
 {
     Import-DscResource -Module PSDesiredStateConfiguration
     Import-DscResource -Module xSqlPs
+    Import-DscResource -Module xWebAdministration
 
     Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
    {
@@ -289,7 +288,7 @@ Configuration MyWebApp
         }
    }
 
-   Node $AllNodes.Where($_.Role -contains "Web")
+   Node $AllNodes.Where($_.Role -contains "Web").NodeName
    {
         # Install the IIS role
         WindowsFeature IIS
