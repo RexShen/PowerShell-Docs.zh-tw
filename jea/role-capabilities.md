@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "JEA 角色功能"
 ms.technology: powershell
-ms.openlocfilehash: e67b38344e2d1d0d347c7850f2097e31c0945e15
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
@@ -236,7 +236,6 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 規則如下︰
 
-
 1. 如果 Cmdlet 只在一個角色中設為可見，具有任何適用的參數條件約束的使用者將可看見它。
 2. 如果 Cmdlet 在多個角色中設為可見，而且每個角色都對 Cmdlet 具有相同的條件約束，則具有這些條件約束的使用者將可看見該 Cmdlet。
 3. 如果 Cmdlet 在多個角色中設為可見，而且每個角色允許不同的參數集，則使用者將可看見該 Cmdlet 及在每個角色定義的所有參數。 如果一個角色對參數沒有條件約束，將允許所有參數。
@@ -245,19 +244,29 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 6. 如果在多個角色中針對相同的 Cmdlet 參數定義驗證模式，將允許符合任何模式的任何值。
 7. 如果在一或多個角色中定義驗證集，並且在另一個角色中針對相同 Cmdlet 參數定義驗證模式，將會忽略驗證集，並套用規則 (6) 至其餘的驗證模式。
 
-下表顯示此邏輯的一些實用範例，使用 A 和 B 兩個角色，它們都已在 JEA 工作階段中指派給使用者。
+以下是角色如何根據這些規則合併的範例：
 
-規則 | 角色 A VisibleCmdlets                                                                          | 角色 B VisibleCmdlets                                                                             | 有效的使用者權限
------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
-1    | `Get-Service`                                                                                  | 不適用                                                                                               | `Get-Service`
-1    | 不適用                                                                                            | `Get-Service`                                                                                     | `Get-Service`
-2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
-4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
-5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
-6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = '顯示名稱'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
-7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = '顯示名稱'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+```powershell
+# Role A Visible Cmdlets
+$roleA = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' } }
+}
+
+# Role B Visible Cmdlets
+$roleB = @{
+    VisibleCmdlets = @{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' } },
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
+}
+
+# Resulting permisisons for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
+$mergedAandB = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
+}
+```
 
 
 

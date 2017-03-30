@@ -1,4 +1,7 @@
 # [概觀](overview.md)
+## [適合決策者的預期狀態設定概觀](decisionMaker.md)
+## [適合工程師的預期狀態設定概觀](DscForEngineers.md)
+## [DSC 快速入門](quickStart.md)
 
 # [設定](configurations.md)
 ## [制定組態](enactingConfigurations.md)

@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.date: 2017-03-08
 title: "JEA 工作階段設定"
 ms.technology: powershell
-ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
@@ -175,55 +175,13 @@ RoleDefinitions = @{
 如果系統上有多個相同一般名稱的角色功能，PowerShell 將使用其隱含搜尋順序，來選取有效的角色功能檔案。
 它將**不會**提供存取權給同名的所有角色功能檔案。
 
-JEA 角色功能的搜尋順序是由 `$env:PSModulePath` 中的路徑排序和父模組名稱所決定。
-在 PowerShell 中的預設模組路徑如下所示︰
+JEA 使用 `$env:PSModulePath` 環境變數來判斷要掃描哪些路徑以取得角色功能檔案。
+在每個路徑中，JEA 會尋找包含 "RoleCapabilities" 子資料夾的有效 PowerShell 模組。
+如同匯入模組一般，相較於具有相同名稱的自訂角色功能，JEA 較偏好 Windows 隨附的角色功能。
+針對所有其他的命名衝突，會由 Windows 列舉目錄中檔案的順序來決定順序 (不保證依字母順序)。
+第一個符合需求名稱的角色功能檔案將會用於連線使用者。
 
-```powershell
-PS C:\> $env:PSModulePath
-
-
-C:\Users\Alice\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
-```
-
-出現在 PSModulePath 清單中較早處 (左邊) 的路徑優先順序高於右邊的路徑。
-
-在每條路徑內，可能會有 0 個或更多的 PowerShell 模組。
-角色功能會依字母順序，從包含符合想要名稱之角色功能檔案的第一個模組選取。
-
-為了說明此優先順序，可參考以下範例，其中加號 (+) 指出資料夾，而減號 (-) 指出檔案。
-
-```
-+ C:\Program Files\WindowsPowerShell\Modules
-    + ContosoMaintenance
-        - ContosoMaintenance.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - DnsOperator.psrc
-            - DnsAuditor.psrc
-    + FabrikamModule
-        - FabrikamModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - FileServerAdmin.psrc
-
-+ C:\Windows\System32\WindowsPowerShell\v1.0\Modules
-    + BuiltInModule
-        - BuiltInModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - OtherBuiltinRole.psrc
-```
-
-在此系統上安裝了數個角色功能檔案。
-若工作階段設定檔提供使用者 "DnsAdmin" 角色的存取權將會有何影響？
-
-
-有效的角色功能檔案將是位於 "C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoMaintenance\\RoleCapabilities\\DnsAdmin.psrc" 的檔案。
-
-如果您想知道為什麼，請記住 2 種優先順序︰
-
-1. `$env:PSModulePath` 變數將 Program Files 資料夾列在 System32 資料夾前面，因此它會偏好來自 Program Files 資料夾的檔案。
-2. 依字母順序，ContosoMaintenance 模組在 FabrikamModule 前面，因此它會從 ContosoMaintenance 選取 DnsAdmin 角色。
+由於在兩個 (或更多) 角色功能共用相同名稱時，角色功能搜尋順序具有不確定性，「強烈建議」您確保電腦上的角色功能都使用唯一的名稱。
 
 ### <a name="conditional-access-rules"></a>條件式存取原則
 
