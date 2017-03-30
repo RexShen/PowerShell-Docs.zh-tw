@@ -9,8 +9,8 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_faqs
 ms.technology: powershell
-ms.openlocfilehash: acde09c9b9953371236e64b21186568a430fee67
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: c352fe48c5833e9bbb2c86e6b23037a4a8f84596
+ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
 translationtype: HT
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
@@ -27,14 +27,14 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 模組一般最適合用於共用，但是我們將啟用指令碼共用，讓您更輕鬆地將工作流程和指令碼提供給社群。 如需詳細資訊，請參閱下列部落格︰
 
-- [不要撰寫指令碼，撰寫 PowerShell 模組](http://blogs.technet.com/b/heyscriptingguy/archive/2011/06/27/don-t-write-scripts-write-powershell-modules.aspx)
-- [了解 PowerShell 模組](http://blogs.technet.com/b/heyscriptingguy/archive/2015/07/10/understanding-powershell-modules.aspx)
+- [不要撰寫指令碼，撰寫 PowerShell 模組](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
+- [了解 PowerShell 模組](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>如何發行至 PowerShell 資源庫？
 
 您必須在 PowerShell 資源庫中註冊帳戶，才能將項目發行至資源庫。 原因是發行項目需要註冊時所提供的 NuGetApiKey。 若要註冊，請使用您的個人、工作或學校帳戶登入 PowerShell 資源庫。 第一次登入時，需要單次註冊程序。 之後，就可以在設定檔頁面上使用 NuGetApiKey。
 
-您在資源庫中進行註冊之後，請使用 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 將您的項目發行至資源庫。 如需如何執行這些 Cmdlet 的詳細資訊，請瀏覽 [發行] 索引標籤，或閱讀 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文件。
+您在資源庫中進行註冊之後，請使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 將您的項目發行至資源庫。 如需如何執行這些 Cmdlet 的詳細資訊，請瀏覽 [發行] 索引標籤，或閱讀 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文件。
 
 **您不需要註冊或登入資源庫，就可以安裝或儲存項目。**
 
@@ -51,7 +51,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>為什麼無法使用我的個人帳戶登入，但我昨天還可以登入？
 
-請注意，組件庫帳戶無法容納主要電子郵件別名的變更。 如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](http://windows.microsoft.com/en-us/windows/outlook/add-alias-account)。
+請注意，組件庫帳戶無法容納主要電子郵件別名的變更。 如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account)。
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>選取 [項目] 索引標籤上的所有 [類別] 核取方塊時，為什麼看不到所有組件庫項目？
 
@@ -59,29 +59,29 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>將模組發行至 PowerShell 資源庫的需求為何？
 
-任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」(.psd1) 檔案或從 [**Publish-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發行程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
+任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」(.psd1) 檔案或從 [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發行程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
 
 - 版本
 - 描述
 - 作者
-- 模組授權條款 URI (為資訊清單之 **PrivateData** 區段的一部分，或在 [**Publish-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數中)。
+- 模組授權條款 URI (為資訊清單之 **PrivateData** 區段的一部分，或在 [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數中)。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>如何建立格式正確的模組資訊清單？
 
-建立模組資訊清單的最簡單方式是執行 [**New-ModuleManifest**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 在 PowerShell 5.0 或更新版本中，New-ModuleManifest 會使用有用中繼資料的空白欄位來產生格式正確的模組資訊清單 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的資訊清單作為正確格式的範例。
+建立模組資訊清單的最簡單方式是執行 [**New-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 在 PowerShell 5.0 或更新版本中，New-ModuleManifest 會使用有用中繼資料的空白欄位來產生格式正確的模組資訊清單 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的資訊清單作為正確格式的範例。
 
-若要確認已正確地填入所有必要中繼資料欄位，請使用 [**Test-ModuleManifest**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
+若要確認已正確地填入所有必要中繼資料欄位，請使用 [**Test-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
 
-若要更新模組資訊清單檔案欄位，請使用 [**Update-ModuleManifest**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
+若要更新模組資訊清單檔案欄位，請使用 [**Update-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>將指令碼發行至資源庫的需求為何？
 
-任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。 若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從指令檔的 *PSScriptInfo* 或從 [**Publish-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發行程序的一部分。 所有發行至資源庫的指令碼都必須具有中繼資料資訊。 任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
+任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。 若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從指令檔的 *PSScriptInfo* 或從 [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發行程序的一部分。 所有發行至資源庫的指令碼都必須具有中繼資料資訊。 任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
 
 - 版本
 - 描述
 - 作者
-- 指令碼授權條款 URI (為指令碼之 **PSScriptInfo** 區段的一部分，或在 [**Publish-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數中)。
+- 指令碼授權條款 URI (為指令碼之 **PSScriptInfo** 區段的一部分，或在 [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數中)。
 
 ## <a name="how-do-i-search"></a>如何進行搜尋？
 
@@ -97,11 +97,11 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>如何建立格式正確的指令檔？
 
-建立格式正確之指令檔的最簡單方式是執行 [**New-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 在 PowerShell 5.0 中，New-ScriptFileInfo 會使用有用中繼資料的空白欄位來產生格式正確的指令檔 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的指令檔作為正確格式的範例。
+建立格式正確之指令檔的最簡單方式是執行 [**New-ScriptFileInfo**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 在 PowerShell 5.0 中，New-ScriptFileInfo 會使用有用中繼資料的空白欄位來產生格式正確的指令檔 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的指令檔作為正確格式的範例。
 
 若要確認已正確地填入所有必要中繼資料欄位，請使用 [**Test-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
 
-若要更新指令碼中繼資料欄位，請使用 [**Update-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
+若要更新指令碼中繼資料欄位，請使用 [**Update-ScriptFileInfo**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
 
 ## <a name="what-other-types-of-powershell-modules-exist"></a>是否還有其他類型的 PowerShell 模組？
 
@@ -115,17 +115,17 @@ PowerShell 模組這個詞也是指實作實際功能的檔案。 指令碼模�
 
 PackageManagement 是處理任何套件管理員的通用介面。 最後，不論處理 PowerShell 模組、MSI、Ruby 寶石、NuGet 套件還是 Perl 模組，您應該可以使用 PackageManagement 的命令 (Find-Package 和 Install-Package) 來進行尋找並安裝。 PackageManagement 的做法是具有插入 PackageManagement 之每個套件管理員的套件提供者。 提供者會執行所有實際工作；他們會從存放庫提取內容，並將內容安裝在本機。 套件提供者通常只需要包裝所指定套件類型的現有套件管理員工具。
 
-PowerShellGet 是 PowerShell 項目的套件管理員。 具有可透過 PackageManagement 公開 PowerShellGet 功能的 PSModule 套件提供者。 因此，您可以執行 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 以從 PowerShell Gallery 安裝模組。 無法透過 PackageManagement 命令存取特定 PowerShellGet 功能 (包含 [Update-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409))。
+PowerShellGet 是 PowerShell 項目的套件管理員。 具有可透過 PackageManagement 公開 PowerShellGet 功能的 PSModule 套件提供者。 因此，您可以執行 [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 以從 PowerShell Gallery 安裝模組。 無法透過 PackageManagement 命令存取特定 PowerShellGet 功能 (包含 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409))。
 
 總而言之，PowerShellGet 只著重於具有 PowerShell 內容的高階套件管理體驗。 PackageManagement 著重於透過一組通用工作來公開所有套件管理體驗。 如果您不滿意這個回答，則在本文件底端的 **PackageManagement 實際上與 PowerShellGet 的關聯為何？**一節中會有較長的回答。
 
-如需詳細資訊，請瀏覽 [PackageManagement 專案頁面](http://oneget.org/)。
+如需詳細資訊，請瀏覽 [PackageManagement 專案頁面](https://oneget.org/)。
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>NuGet 與 PowerShellGet 的關聯為何？
 
-PowerShell 資源庫是修改過的 [NuGet Gallery](http://www.nuget.org/) 版本。 PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerShell 資源庫)。
+PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版本。 PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerShell 資源庫)。
 
-您可以對任何有效的 NuGet 存放庫或檔案共用使用 PowerShellGet。 您只需要執行 [**Register-PSRepository**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet，即可新增存放庫。
+您可以對任何有效的 NuGet 存放庫或檔案共用使用 PowerShellGet。 您只需要執行 [**Register-PSRepository**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet，即可新增存放庫。
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>是否表示我可以使用 NuGet.exe 來處理 Gallery？
 
@@ -135,7 +135,7 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](http://www.nuget.org/) 版�
 
 其實，PowerShellGet 大量採用 PackageManagement 基礎結構。
 
-在 PowerShell Cmdlet 層，[Install-Module](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 實際上是 Install-Package -Provider PSModule 的精簡型包裝函式。
+在 PowerShell Cmdlet 層，[Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 實際上是 Install-Package -Provider PSModule 的精簡型包裝函式。
 
 在 PackageManagement 套件提供者層，PSModule 套件提供者實際上會呼叫其他 PackageManagement 套件提供者。 例如，當您處理 NuGet 型組件庫 (例如 PowerShell Gallery) 時，PSModule 套件提供者會使用 NuGet 套件提供者來處理存放庫。
 
@@ -172,4 +172,3 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](http://www.nuget.org/) 版�
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>如何對待違反我的項目授權的項目擁有者？
 
 建議 PowerShell 社群一起合作，來解決任何可能在項目擁有者與其他項目之擁有者間發生的爭議。  在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](psgallery_dispute_resolution.md)。
-
