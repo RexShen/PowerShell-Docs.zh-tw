@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: d215289675ee9c2b7121fa3d785549c48733d2e8
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
+ms.openlocfilehash: ec773688540a3f4a2f128f66d311926fd5b9a935
+ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
 translationtype: HT
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell 預期狀態設定概觀 
@@ -18,8 +18,8 @@ translationtype: HT
 DSC 是 PowerShell 中的管理平台，可讓您以程式碼形式的設定來管理 IT 和開發基礎結構。
 
 - 如需使用 DSC 的商務優點概觀，請參閱[適合決策者的預期狀態設定概觀](decisionMaker.md)。
-- 如需使用 DSC 的工程優點概觀，請參閱[適合工程師的預期狀態設定概觀]DscForEngineers.md)。
-- 若要快速開始使用 DSC，請參閱 [DSC 快速入門]quickStart.md。
+- 如需使用 DSC 的工程優點概觀，請參閱[適合工程師的預期狀態設定概觀](DscForEngineers.md)。
+- 若要快速開始使用 DSC，請參閱 [DSC 快速入門](quickStart.md)。
 
 ## <a name="key-concepts"></a>重要概念
 
