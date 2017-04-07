@@ -5,11 +5,13 @@
 
 # [設定](configurations.md)
 ## [制定組態](enactingConfigurations.md)
+## [分離設定和環境資料](separatingEnvData.md)
 ## [使用多個版本的資源](sxsResource.md)
 ## [使用使用者認證執行 DSC](runAsUser.md)
 ## [指定節點之間的相依性](crossNodeDependencies.md)
 ## [設定資料](configData.md)
 ### [設定資料中的認證選項](configDataCredentials.md)
+## [巢狀設定](compositeConfigs.md)
 ## [保護設定 MOF 檔案](secureMOF.md)
 ## [部分組態](partialConfigs.md)
 ## [撰寫 DSC 組態的說明](configHelp.md)
