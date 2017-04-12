@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 1bb0e73a1aae6926040373e017494c2ef5e5fd3e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: a920e02d891492c170e672db2f0771950dcb758c
+ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
 translationtype: HT
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet 資源
 
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsFeatureSet** 資源提供一個機制，確保可在目標節點上新增或移除角色和功能。
 此資源是為 `Name` 屬性中指定的每項功能呼叫 [WindowsFeature 資源](windowsfeatureResource.md)的[複合資源](authoringResourceComposite.md)。
