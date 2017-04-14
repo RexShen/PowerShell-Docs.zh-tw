@@ -9,12 +9,20 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 48f554793d25c2d5ea10bc202489845f4225b2b9
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
+ms.openlocfilehash: 1886715c4b948e4bc59a51fb96d54b56b5b5afed
+ms.sourcegitcommit: 809e4f1bdf218b283e84438151030bfa94ca956d
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell 資源庫狀態
 =========================
+
+## <a name="04112017---users-unable-to-log-in"></a>2017 年 4 月 11 日 - 使用者無法登入
+
+__影響摘要__：有些使用者無法使用 Azure AD 帳戶登入 PowerShell 資源庫。 PowerShell 資源庫作業小組正在調查這個問題。 這問題似乎不會影響使用 Microsoft 帳戶的使用者 (使用 Outlook.com、Live.com 這類網域的使用者)。 
+ 
+__根本原因__：TBD  
+
+__後續步驟__：我們正與 Azure AD 小組合作調查問題。 
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017 年 3 月 27 日 - 已解決：無法看到個別模組和指令碼頁面
 
