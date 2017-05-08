@@ -9,9 +9,11 @@ ms.date: 2016-12-12
 title: "處理軟體安裝"
 ms.technology: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 123ad074fc626bc2c93c4c61f30f056e92cd9d51
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 3ab302d585b69df69faa59c0561216899dd7ee9a
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="working-with-software-installations"></a>處理軟體安裝
 設計成使用 Windows Installer 的應用程式可以透過 WMI 的 **Win32_Product** 類別存取，但並非所有現今使用的應用程式都使用 Windows Installer。 因為 Windows Installer 對處理可安裝的應用程式提供最廣泛的標準技術，我們主要將著重在那些應用程式。 使用替代安裝常式的應用程式通常不受 Windows Installer 管理。 處理那些應用程式的特定技術將視安裝程式軟體與應用程式開發人員的決定而定。
@@ -92,7 +94,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 我們也可以檢查此機碼來尋找應用程式。 為了讓您更輕鬆地檢視 Uninstall 機碼，我們可以將 Windows PowerShell 磁碟機對應至此登錄位置：
 
 ```
-PS>    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
