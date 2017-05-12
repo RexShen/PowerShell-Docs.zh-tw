@@ -5,12 +5,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: powershell,cmdlet,jea
-ms.date: 2017-03-08
+ms.date: 2017-04-25
 title: "JEA 工作階段設定"
 ms.technology: powershell
-ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
 
@@ -40,7 +42,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 您可以在任何文字編輯器中開啟工作階段設定檔。
 `-SessionType RestrictedRemoteServer` 欄位指出 JEA 將使用工作階段設定以進行安全管理。
-以這種方式設定的工作階段會以 [NoLanguage 模式](https://technet.microsoft.com/en-us/library/dn433292.aspx)運作，且只能使用下列 8 種預設 Cmdlet (和別名)︰
+以這種方式設定的工作階段會以 [NoLanguage 模式 (英文)](https://technet.microsoft.com/en-us/library/dn433292.aspx) 運作，且只能使用下列 8 種預設命令 (和別名)︰
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -139,7 +141,7 @@ MountUserDrive = $true
 ```
 
 根據預設，使用者磁碟機可讓您儲存每個使用者最多 50 MB 的資料。
-您可以使用 *UserDriveMaxmimumSize* 欄位限制使用者可以取用的資料量。
+您可以使用 *UserDriveMaximumSize* 欄位限制使用者可以取用的資料量。
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -169,6 +171,15 @@ RoleDefinitions = @{
 
 如果使用者屬於角色定義中的多個群組，他們將可以存取每個群組的角色。
 如果兩個角色授與對相同 Cmdlet 的存取權，使用者將獲得最寬鬆的參數集。
+
+在角色定義欄位中指定本機使用者或群組時，務必在反斜線前使用電腦名稱 (而非 *localhost* 或 *.*)。
+您可以藉由檢查 `$env:computername` 變數來檢查電腦名稱。
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### <a name="role-capability-search-order"></a>角色功能搜尋順序
 如上述範例所示，會以角色功能檔案的一般名稱 (不含副檔名的檔名) 來參考角色功能。

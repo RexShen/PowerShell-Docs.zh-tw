@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 12c6ad6f30b4e1b67296289c927e59fd64079675
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: db2a12141ab1eaca73bf958b5a27ef2a356d5b8f
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="dsc-group-resource"></a>DSC 群組資源
 
@@ -17,18 +19,18 @@ translationtype: HT
 
 Windows PowerShell 預期狀態設定 (DSC) 的群組資源會提供一個機制，在目標節點管理本機群組。
 
-##<a name="syntax"></a>語法##
+## <a name="syntax"></a>語法
 ```
 Group [string] #ResourceName
 {
-    GroupName = [string]
-    [ Credential = [PSCredential] ]
-    [ Description = [string[]] ]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ Members = [string[]] ]
+    GroupName          = [string]
+    [ Credential       = [PSCredential] ]
+    [ Description      = [string[]] ]
+    [ Ensure           = [string] { Absent | Present }  ]
+    [ Members          = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ MembersToInclude = [string[]] ]
-    [ DependsOn = [string[]] ]
+    [ DependsOn        = [string[]] ]
 }
 ```
 
@@ -37,11 +39,11 @@ Group [string] #ResourceName
 |  屬性  |  描述   | 
 |---|---| 
 | GroupName| 您要確保其特定狀態的群組名稱。| 
-| 認證| 存取遠端資源時所需的認證。 **注意**：此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶加入群組；否則會發生錯誤。
+| 認證| 存取遠端資源時所需的認證。 **注意**：此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶加入群組；否則，在目標節點上執行設定時會發生錯誤。  
 | 描述| 群組的描述。| 
 | Ensure| 指出群組是否存在。 設定此屬性為 "Absent" 以確保群組不存在。 設定此群組為 "Present" (預設值)，可確保此群組存在。| 
-| 成員| 您可以使用這個屬性，以指定的成員來取代目前的群組成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **MembersToExclude** 或 **MembersToInclude** 屬性。 這樣會產生錯誤。| 
-| MembersToExclude| 使用這個屬性從群組的現有成員資格移除成員。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。| 
+| 成員| 您可以使用這個屬性，以指定的成員來取代目前的群組成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **MembersToExclude** 或 **MembersToInclude** 屬性。 這麼做會產生錯誤。| 
+| MembersToExclude| 使用這個屬性從群組的現有成員資格移除成員。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這麼做會產生錯誤。| 
 | MembersToInclude| 使用這個屬性將成員新增至群組的現有成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
@@ -52,7 +54,7 @@ Group [string] #ResourceName
 ```powershell
 Group GroupExample
 {
-    # This will remove TestGroup, if present
+    # This removes TestGroup, if present
     # To create a new group, set Ensure to "Present“
     Ensure = "Absent"
     GroupName = "TestGroup"
@@ -88,3 +90,22 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
+## <a name="example-3"></a>範例 3
+下列範例示範如何確定伺服器 TigerTeamSource.Contoso.Com 上的本機群組 TigerTeamAdmins 不包含特定的網域帳戶 Contoso\JerryG。  
+
+```powershell
+
+Configuration SecureTigerTeamSrouce 
+{
+  Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+  
+  Node TigerTeamSource.Contoso.Com {
+  Group TigerTeamAdmins
+    {
+       GroupName        = 'TigerTeamAdmins'   
+       Ensure           = 'Absent'             
+       MembersToInclude = "Contoso\JerryG"
+    }
+  }
+}
+```

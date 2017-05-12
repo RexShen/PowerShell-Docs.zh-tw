@@ -8,9 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-12-05
 title: "使用 JEA"
 ms.technology: powershell
-ms.openlocfilehash: 4f1fad1d28b9ced462c392210449d73af325b132
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 62e5f74d60b2fd09e302ecc12996f97e90b73f2f
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -134,7 +136,6 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 ```csharp
 
 // using System.Management.Automation;
-
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
 var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
@@ -146,7 +147,6 @@ WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     "/wsman",              // WSMan Path
                     string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
                     creds);                // Credentials
-
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -173,7 +173,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>搭配使用 PowerShell Direct 和 JEA
 
-在 Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession)，這項功能允許 Hyper-V 系統管理員使用 PowerShell 管理虛擬機器，即使 VM 位於不同的網路上亦然。
+在 Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession)，這項功能允許 Hyper-V 系統管理員使用 PowerShell 管理虛擬機器，不論虛擬機器上的網路設定或遠端管理設定為何。
 
 您可以使用 PowerShell Direct 搭配 JEA，讓您的 Hyper-V 系統管理員具有 VM 的有限存取權，這適用於您失去 VM 的網路連線，且需要資料中心系統管理員修正網路設定的情況。
 
@@ -192,4 +192,4 @@ Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential '
 強烈建議您建立沒有其他系統管理權限的專屬本機使用者，供您的 Hyper-V 系統管理員使用。
 請記住，根據預設，即使無權限的使用者也仍然可以登入 Windows 電腦，包括使用不受限制的 PowerShell。
 那樣會允許他們瀏覽 (部分) 檔案系統，並深入了解您的作業系統環境。
-若要將 Hyper-V 系統管理員鎖定於只能使用 PowerShell Direct 與 JEA 來存取 VM，您將會拒絕 Hyper-V 系統管理員 JEA 帳戶的本機登入權限。
+若要將 Hyper-V 系統管理員鎖定於只能使用 PowerShell Direct 與 JEA 來存取 VM，您將會需要拒絕 Hyper-V 系統管理員 JEA 帳戶的本機登入權限。

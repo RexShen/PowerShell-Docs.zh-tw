@@ -8,9 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -33,14 +35,14 @@ DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制�
 
 ## <a name="improved-pull-server-registration"></a>改善的提取伺服器登錄 ##
 
-在舊版的 WMF 中，在使用 ESENT 資料庫時，同時登錄/報告 DSC 提取伺服器的要求，會導致 LCM 無法登錄及 (或) 報告。 在這種情況下，提取伺服器的事件記錄檔就會出現「執行個體名稱已在使用中」的錯誤。
+在舊版的 WMF 中，在使用 ESENT 資料庫時，同時登錄/報告 DSC 提取伺服器的要求，會導致 LCM 無法登錄及 (或) 報告。 在這種情況下，提取伺服器的事件記錄檔會出現「執行個體名稱已在使用中」的錯誤。
 這是因為在多執行緒案例中使用不正確的模式存取 ESENT 資料庫。 WMF 5.1 已修正此問題。 WMF 5.1 中可以正常同時登錄或報告 (包含 ESENT 資料庫)。 只有 ESENT 資料庫會發生這個問題，OLEDB 資料庫無此問題。 
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>在 ESENT 資料庫執行個體上啟用循環記錄
-在舊版的 DSC-PullServer 中，ESENT 資料庫記錄檔會填滿提取伺服器的磁碟空間，因為資料庫執行個體是在沒有循環記錄的情況下建立的。 在此版本中，客戶將可選擇使用提取伺服器的 web.config，控制執行個體的循環記錄行為。 根據預設，CircularLogging 會設定為 TRUE。
+在舊版的 DSC-PullServer 中，ESENT 資料庫記錄檔會填滿提取伺服器的磁碟空間，因為資料庫執行個體是在沒有循環記錄的情況下建立的。 在此版本中，您可以選擇使用提取伺服器的 web.config，控制執行個體的循環記錄行為。 根據預設，CircularLogging 會設定為 TRUE。
 ```
 <appSettings>
-     <add key="dbprovider" value="ESENT" />
+    <add key="dbprovider" value="ESENT" />
     <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
     <add key="CheckpointDepthMaxKB" value="512" />
     <add key="UseCircularESENTLogs" value="TRUE" />
@@ -80,7 +82,7 @@ PartialOne
 
 ![設定存放庫中的檔案名稱](../images/PartialInConfigRepository.png)
 
-Azure 自動化服務名稱以前產生的 MOF 檔案為 `<ConfigurationName>.<NodeName>.mof`。 所以下面的設定會編譯為 PartialOne.localhost.mof。
+Azure 自動化服務名稱以前產生的 MOF 檔案為 `<ConfigurationName>.<NodeName>.mof`。 因此下面的設定會編譯為 PartialOne.localhost.mof。
 
 如此即不可能從 Azure 自動化服務提取您其中一項部分設定。
 
@@ -99,7 +101,7 @@ Configuration PartialOne
 PartialOne
 ```
 
-在 WMF 5.1 中，提取伺服器/服務中的部分設定可以命名為 `<ConfigurationName>.<NodeName>.mof`。 但若電腦從提取伺服器/服務中提取了單一設定，則提取伺服器存放庫上的設定檔可以有任意的檔案名稱。 此命名彈性可讓您使用 Azure 自動化服務部分管理節點，其中節點的某些設定來自 Azure 自動化 DSC，且某項部分設定是您曾想在本機管理的。
+在 WMF 5.1 中，提取伺服器/服務中的部分設定可以命名為 `<ConfigurationName>.<NodeName>.mof`。 但若電腦從提取伺服器/服務中提取了單一設定，則提取伺服器存放庫上的設定檔可以有任意的檔案名稱。 此命名彈性可讓您使用 Azure 自動化服務部分管理節點，其中節點的某些設定來自 Azure 自動化 DSC，且某項部分設定是您在本機管理的。
 
 下面的中繼設定會設定由本機及 Azure 自動化服務管理的節點。
 
@@ -136,14 +138,14 @@ PartialOne
    }
 
    RegistrationMetaConfig
-   slcm -Path .\RegistrationMetaConfig -Verbose
+   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
  ```
 
 # <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>使用 PsDscRunAsCredential 和 DSC 複合資源   
 
 我們新增了支援以使用 [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 和 DSC [複合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)資源。    
 
-在設定內使用複合資源時，使用者現在可以指定一個 PsDscRunAsCredential 值。 指定後，複合資源內的所有資源都會以 RunAs 使用者身分執行。 如果複合資源呼叫另一項複合資源，也會以 RunAs 使用者身分執行其所有資源。 RunAs 認證會傳播至複合資源階層的所有層級。 如果複合資源內的任何資源指定自己的 PsDscRunAsCredential 值，則設定編譯期間就會發生合併錯誤。
+在設定內使用複合資源時，您現在可以指定一個 PsDscRunAsCredential 值。 指定後，複合資源內的所有資源都會以 RunAs 使用者身分執行。 如果複合資源呼叫另一項複合資源，也會以 RunAs 使用者身分執行其所有資源。 RunAs 認證會傳播至複合資源階層的所有層級。 如果複合資源內的任何資源指定自己的 PsDscRunAsCredential 值，則設定編譯期間就會發生合併錯誤。
 
 本範例示範如何使用包含在 PSDesiredStateConfiguration 模組內的 [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) 複合資源。 
 
@@ -187,7 +189,7 @@ InstallWindowsFeature -ConfigurationData $configData
 ##<a name="dsc-module-and-configuration-signing-validations"></a>DSC 模組和設定簽署驗證
 在 DSC 中，設定和模組會從提取伺服器散發到受管理的電腦。 如果提取伺服器遭到入侵，攻擊者可以修改提取伺服器上的設定和模組，將其散發到所有受管理的節點以危害所有節點。 
 
- 在 WMF 5.1 中，DSC 支援驗證類別目錄和設定 (.MOF) 檔案的數位簽章。 這項功能會防止執行未經受信任簽署者簽署的設定或模組檔案，或經受信任簽署者簽署後遭竄改的檔案。 
+ 在 WMF 5.1 中，DSC 支援驗證類別目錄和設定 (.MOF) 檔案的數位簽章。 這項功能會防止節點執行未經受信任簽署者簽署的設定或模組檔案，或經受信任簽署者簽署後遭竄改的檔案。 
 
 
 
@@ -223,7 +225,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
+        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
     }
@@ -251,7 +253,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 ![錯誤輸出設定範例](../images/PullUnsignedConfigFail.png)
 
-同樣地，提取類別目錄未經簽署的模組也會產生下列錯誤：
+同樣地，提取目錄未經簽署的模組也會產生下列錯誤：
 
 ![錯誤輸出模組範例](../images/PullUnisgnedCatalog.png)
 

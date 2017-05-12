@@ -1,14 +1,23 @@
-
 ---
-標題：DSCAutomationHostEnabled 登錄金鑰 ms.date:  2016-05-16 關鍵字： powershell,DSC 描述：  
-ms.topic:  article author:  eslesar manager:  dongill ms.prod:  powershell
+title: "DSCAutomationHostEnabled 登錄機碼"
+ms.date: 2016-05-16
+keywords: "PowerShell，DSC"
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.openlocfilehash: eb5889668136def1b47a4999374711460a08179c
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
-
 >適用對象：Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>DSCAutomationHostEnabled 登錄機碼
 
-DSC 使用 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies ** 下的 **DSCAutomationHostEnabled** 登錄機碼在初始開機時自動設定電腦。
+DSC 使用 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** 下的 **DSCAutomationHostEnabled** 登錄機碼，在初始開機時啟用電腦的設定。
 DSCAutomationHostEnabled 支援三種模式︰
 
 |  DSCAutomationHostEnabled 值  |  描述   | 

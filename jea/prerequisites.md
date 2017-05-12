@@ -8,9 +8,11 @@ keywords: powershell,cmdlet,jea
 ms.date: 2017-03-07
 title: "JEA 必要條件"
 ms.technology: powershell
-ms.openlocfilehash: e4ae3ebd0b2c330a76d3183e6c9c1106f769feb3
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: a38c9e948190b9384c62eec3e40758a782c9f72b
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="prerequisites"></a>必要條件
 
@@ -29,22 +31,23 @@ JEA 適用於 Windows PowerShell 5.0 和更新版本，但如需完整的功能�
 Windows Server 2016       | 預先安裝
 Windows Server 2012 R2    | 具完整功能性的 WMF 5.1
 Windows Server 2012       | 具完整功能性的 WMF 5.1
-Windows Server 2008 R2    | 具完整功能性的 WMF 5.1
+Windows Server 2008 R2    | 功能有限 <sup>1</sup> 的 WMF 5.1
 
 您也可以在家用或工作電腦上使用 JEA：
 
 用戶端作業系統   | JEA 可用性
 --------------------------|-----------------------------------------------------
-Windows 10 1607           | 預先安裝
-Windows 10 1603、1511     | 預先安裝，功能有限<sup>1</sup>
+Windows 10 1607+          | 預先安裝
+Windows 10 1603、1511     | 預先安裝，功能有限<sup>2</sup>
 Windows 10 1507           | 無法使用
 Windows 8、8.1            | 具完整功能性的 WMF 5.1
-Windows 7                 | 功能有限的 WMF 5.1<sup>2</sup>
+Windows 7                 | 功能有限 <sup>1</sup> 的 WMF 5.1
 
-<sup>1</sup> Windows 10 1511 和 1603 版本不支援下列 JEA 功能︰使用群組受管理的服務帳戶身分執行、工作階段設定中的條件式存取規則、使用者磁碟機，以及授與存取權給本機使用者帳戶。
+<sup>1</sup> 在 Windows Server 2008 R2 或 Windows 7 無法設定 JEA 使用群組受管理的服務帳戶。
+*支援*虛擬帳戶和其他 JEA 功能。
+
+<sup>2</sup> Windows 10 1511 和 1603 版不支援下列 JEA 功能︰使用群組受管理的服務帳戶身分執行、工作階段設定中的條件式存取規則、使用者磁碟機，以及授與存取權給本機使用者帳戶。
 若要取得這些功能的支援，請將 Windows 更新為 1607 版 (年度更新版) 或更高版本。
-
-<sup>2</sup> JEA 無法設定為在 Windows 7 上使用虛擬帳戶。
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>檢查已安裝哪個版本的 PowerShell
 

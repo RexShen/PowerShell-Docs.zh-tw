@@ -7,15 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: df994500ce5f46d62f143af07d8ce86dddf44c3e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: f16af7664ac5d07b5884070534bed20e8cf2fcd9
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 提取伺服器是 SMB 檔案共用，可在目標節點要求時，將 DSC 設定檔及 (或) DSC 資源提供給這些節點使用。
+DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 提取伺服器是裝載 SMB 檔案共用的電腦，可在目標節點要求時，將 DSC 設定檔和 DSC 資源提供給這些節點使用。
 
 若要針對 DSC 使用 SMB 提取伺服器，您必須︰
 - 在執行 PowerShell 4.0 或更新版本的伺服器上設定 SMB 檔案共用
@@ -32,7 +34,7 @@ DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 提取伺�
 
 ### <a name="create-the-directory-and-file-share"></a>建立目錄和檔案共用
 
-下列設定使用 [File](fileResource.md) 資源為共用建立目錄，並使用 **xSmbShare** 設定 SMB 共用︰
+下列設定使用 [File](fileResource.md) 資源為共用建立目錄，並使用 **xSmbShare** 資源設定 SMB 共用︰
 
 ```powershell
 Configuration SmbShare {
@@ -67,7 +69,7 @@ Import-DscResource -ModuleName xSmbShare
 }
 ```
 
-此設定會建立目錄 `C:\DscSmbShare` (如果尚未存在)，然後使用該目錄作為 SMB 檔案共用。 **FullAccess** 應該授予需要寫入檔案共用或從中刪除的任何帳戶，而 **ReadAccess** 必須授予會從共用取得設定且 (或) DSC 資源的任何用戶端節點 (這是因為 DSC 預設會以系統帳戶執行，因此電腦本身必須具有共用的存取權)。
+此設定會建立目錄 `C:\DscSmbShare` (如果尚未存在)，然後使用該目錄作為 SMB 檔案共用。 **FullAccess** 應該授與需要寫入檔案共用或從中刪除的任何帳戶，而 **ReadAccess** 必須授與會從共用取得設定及/或 DSC 資源的任何用戶端節點 (這是因為 DSC 預設會以系統帳戶執行，因此電腦本身必須具有共用的存取權)。
 
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>將檔案系統存取權授與提取用戶端
@@ -135,7 +137,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 >**注意**︰如果您使用 SMB 提取伺服器，就必須使用設定識別碼。 SMB 不支援設定名稱。
 
-每個資源模組都必須根據下列模式 `{Module Name}_{Module Version}.zip` 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。 在 WMF 5.0 中包含 DSC 資源的模組預設格式為 '{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\'。 在為提取伺服器進行封裝前，只要移除 **{模組版本}** 資料夾，路徑就會變成 '{模組資料夾}\DscResources\{DSC 資源資料夾}\'。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 SMB 共用資料夾中。 
+每個資源模組都必須根據下列模式 `{Module Name}_{Module Version}.zip` 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您需要對目錄結構進行小幅變更。 在 WMF 5.0 中包含 DSC 資源的模組預設格式為 '{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\'。 在為提取伺服器進行封裝前，只要移除 **{模組版本}** 資料夾，路徑就會變成 '{模組資料夾}\DscResources\{DSC 資源資料夾}\'。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 SMB 共用資料夾中。 
 
 ## <a name="creating-the-mof-checksum"></a>建立 MOF 總和檢查碼
 設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。 若要建立總和檢查碼，請呼叫 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) Cmdlet。 此 Cmdlet 會使用 **Path** 參數，指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。
@@ -146,7 +148,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 ## <a name="setting-up-a-pull-client-for-smb"></a>設定 SMB 的提取用戶端
 
-若要設定從 SMB 共用提取設定及/或資源的用戶端，您可以使用 **ConfigurationRepositoryShare** 和 **ResourceRepositoryShare** blpcks 設定本機設定管理員 (LCM)，指定要從中提取的共用。
+若要設定從 SMB 共用提取設定及/或資源的用戶端，您可以使用 **ConfigurationRepositoryShare** 和 **ResourceRepositoryShare** 區塊設定用戶端的本機設定管理員 (LCM)，指定要從中提取設定和 DSC 資源的共用。
 
 如需設定 LCM 的詳細資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigID.md)。
 

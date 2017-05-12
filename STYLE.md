@@ -40,7 +40,7 @@ Header 2
 * PowerShell 命令的開頭請勿使用 "C:\ PS>"
 * PowerShell 命令發出的輸出應該加上註解，以防止它接收語法醒目提示
 * 屬性名稱和參數名稱應使用「粗體」
-
+* PowerShell Cmdlet 使用「[帕斯卡命名法 (英文)](https://en.wikipedia.org/wiki/PascalCase)」。 使用連字號分隔動詞和名詞。
 
 ## <a name="lists"></a>清單
 
