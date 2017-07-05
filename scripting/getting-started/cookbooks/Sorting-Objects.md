@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "排序物件"
-ms.technology: powershell
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
-ms.openlocfilehash: 00ee71337331c730f37723152175e2ca10263191
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 2df45c64656e74dc8b72957ce59f2a5e5ee663b6
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="sorting-objects"></a>排序物件
 我們會組織顯示的資料，讓您可以使用 **Sort-Object** Cmdlet 更輕鬆地進行掃描。 **Sort-Object** 會使用一或多個屬性的名稱作為排序依據，並傳回根據這些屬性值進行排序的資料。

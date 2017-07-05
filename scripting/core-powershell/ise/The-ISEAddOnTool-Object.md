@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "ISEAddOnTool 物件"
-ms.technology: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: c1ab4220fdede7cabec99fd2d9dfb39648503f28
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool 物件
   **ISEAddonTool** 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。 **命令**工具即為一例，您可以依序按一下 [檢視] 和 [顯示命令附加元件] 來顯示此工具。 您接著可以藉由操作各種可用的 **ISEAddOnTool** 物件來存取此工具。
@@ -25,7 +21,7 @@ translationtype: HT
 
 ## <a name="properties"></a>[內容]
 
-###  <a name="a-namecontrola-control"></a><a name="Control"></a> Control
+###  <a name="Control"></a> Control
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
  **Control** 屬性可提供許多命令附加元件詳細資料的讀取權。
@@ -141,7 +137,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="a-nameisvisiblea-isvisible"></a><a name="IsVisible"></a> IsVisible
+###  <a name="IsVisible"></a> IsVisible
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
  布林值屬性，指出附加元件工具目前是否會顯示於它的指派窗格中。 如果顯示，您可以將 **IsVisible** 屬性設定為 **$false** 來隱藏工具，或者將 **IsVisible** 屬性設定為 **$true**，讓附加元件工具可顯示於 PowerShell 索引標籤上。 請注意，隱藏附加元件工具之後，就無法再透過 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 物件來存取，因此無法透過在該物件上使用這個屬性來顯示。
@@ -154,7 +150,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="a-namenamea-name"></a><a name="name"></a> Name
+###  <a name="name"></a> Name
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
  可取得附加元件工具名稱的唯讀屬性。

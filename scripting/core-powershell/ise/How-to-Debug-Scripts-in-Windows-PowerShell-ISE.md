@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "如何在 Windows PowerShell ISE 中偵錯指令碼"
-ms.technology: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: 8574754ccdf4717d29c4076f88d41691501da471
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中偵錯指令碼
 本主題說明如何使用 Windows PowerShell® 整合式指令碼環境 (ISE) 視覺化偵錯功能，對本機電腦上的指令碼執行偵錯。
@@ -21,7 +17,7 @@ translationtype: HT
 [如何在偵錯時逐程序、逐步執行及跳出](#bkmk_3)
 [如何在偵錯時顯示變數的值](#bkmk_4)
 
-## <a name="a-namebkmk1ahow-to-manage-breakpoints"></a><a name="bkmk_1"></a>如何管理中斷點
+## <a name="bkmk_1"></a>如何管理中斷點
 中斷點是您要在指令碼中暫停作業的指定位置，以便您可以檢查變數及指令碼執行所在之環境的目前狀態。 在中斷點暫停指令碼之後，您可以在主控台窗格中執行命令，以檢查指令碼的狀態。  您可以輸出變數或執行其他命令。 您甚至可以修改目前執行中指令碼內容所顯示的任何變數值。 檢查您要查看的項目之後，您可以繼續指令碼作業。
 
 您可以在 Windows PowerShell 偵錯環境中，設定三種中斷點類型︰
@@ -72,7 +68,7 @@ Remove-PSBreakpoint -Id 2
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="a-namebkmkdisableadisable-a-breakpoint"></a><a name="bkmk_disable"></a>停用中斷點
+### <a name="bkmk_disable"></a>停用中斷點
 停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用特定行中斷點，請以滑鼠右鍵按一下您要停用中斷點的行，然後按一下 [停用中斷點]。 或者，按一下您要停用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[停用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 移除具有指定識別碼的中斷點。
 
 ``` PowerShell
@@ -106,7 +102,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="a-namebkmk2ahow-to-manage-a-debugging-session"></a><a name="bkmk_2"></a>如何管理偵錯工作階段
+## <a name="bkmk_2"></a>如何管理偵錯工作階段
 開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點](#bkmk_1)或 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
 
 ### <a name="to-start-debugging"></a>開始偵錯
@@ -123,7 +119,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ### <a name="to-stop-debugging"></a>停止偵錯
 按 **SHIFT-F5**；在 [偵錯] 功能表上，按一下 [停止偵錯工具]；或者，在主控台窗格中輸入 **Q**，然後按 **ENTER** 鍵。
 
-## <a name="a-namebkmk3ahow-to-step-over-step-into-and-step-out-while-debugging"></a><a name="bkmk_3"></a>如何在偵錯時逐程序、逐步執行及跳出
+## <a name="bkmk_3"></a>如何在偵錯時逐程序、逐步執行及跳出
 逐步執行是一次執行一個陳述式的程序。 您可以在某行程式碼停止，然後檢查變數值和系統狀態。 下表說明常見的偵錯工作，例如逐程序、逐步執行及跳出。
 
 | 偵錯工作 | 描述 | 如何在 PowerShell ISE 中完成 |
@@ -133,7 +129,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 | **跳出** | 移離目前的函式，並在函式為巢狀時移到上一層。 如果在主體中，指令碼會執行到結尾，或到下一個中斷點。 這會執行已跳過的陳述式，但不會逐步執行。 | 請執行下列其中一個動作：按 **SHIFT+F11**、在 [偵錯] 功能表上，按一下 [跳出]、在主控台窗格中輸入 **O**，然後按 **ENTER** 鍵。 |
 | **繼續** | 繼續執行到結尾，或到下一個中斷點。 這會執行已跳過的函式和引動過程，但不會逐步執行。 | 請執行下列其中一個動作：按 **F5**、在 [偵錯] 功能表上，按一下 [執行/繼續]、在主控台窗格中輸入 **C**，然後按 **ENTER** 鍵。 |
 
-## <a name="a-namebkmk4ahow-to-display-the-values-of-variables-while-debugging"></a><a name="bkmk_4"></a>如何在偵錯時顯示變數的值
+## <a name="bkmk_4"></a>如何在偵錯時顯示變數的值
 當您逐步執行程式碼時，您可以顯示指令碼中變數的目前值。
 
 ### <a name="to-display-the-values-of-standard-variables"></a>顯示標準變數的值

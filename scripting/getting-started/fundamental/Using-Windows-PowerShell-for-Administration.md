@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "使用 Windows PowerShell 進行管理"
-ms.technology: powershell
 ms.assetid: db6334ec-ace6-436d-ab88-77aefc817511
-ms.openlocfilehash: c0a15bc813e6fdb850fe2d957711f1ad005d853d
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: fa87745b9be04d14de37a308d870b73c5a98cf83
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="using-windows-powershell-for-administration"></a>使用 Windows PowerShell 進行管理
 Windows PowerShell 的基本目標是透過互動方式或指令碼，對系統提供更好且更輕鬆的系統管理控制。 本章逐步解說使用 Windows PowerShell 管理 Windows 系統的許多特定問題的解決方案。 雖然我們未在《Windows PowerShell 使用者手冊》中討論指令碼或函式，但是稍後可以透過指令碼或作為函式來使用解決方案。 我們將顯示的範例會將函式包含為解決方案一部分來解決問題。

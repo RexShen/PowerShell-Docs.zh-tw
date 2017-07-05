@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "如何在 Windows PowerShell ISE 中撰寫和執行指令碼"
-ms.technology: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 2478db382639ef315574bb7c79faec7cf2ae1c96
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 本主題說明如何在指令碼窗格中建立、編輯、執行和儲存指令碼。
@@ -22,7 +18,7 @@ translationtype: HT
 
 -   [如何儲存指令碼](#bkmk_3)
 
-## <a name="a-namebkmk1ahow-to-create-and-run-scripts"></a><a name="bkmk_1"></a>如何建立和執行指令碼
+## <a name="bkmk_1"></a>如何建立和執行指令碼
 您可以在指令碼窗格中開啟和編輯 Windows PowerShell® 檔案。 Windows PowerShell® 中需要注意的特定檔案類型包括指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1)。 這些檔案類型是指令碼窗格編輯器中著色的語法。 其他可在指令碼窗格中開啟的常見檔案類型還包括組態檔 (.ps1xml)、XML 檔案和文字檔。
 
 > [!NOTE]
@@ -58,7 +54,7 @@ translationtype: HT
 ### <a name="to-stop-a-running-script"></a>停止執行中的指令碼
 請執行下列其中一個動作︰按一下工具列中的 [停止操作]、按 CTRL+BREAK、在 [檔案] 功能表上，按一下 [停止操作]。 除非目前已選取一些文字，否則按 **CTRL+C** 也適用；如果已選取文字，**CTRL+C** 會對應至選取文字的複製功能。
 
-## <a name="a-namebkmk2ahow-to-write-and-edit-text-in-the-script-pane"></a><a name="bkmk_2"></a>如何在指令碼窗格中撰寫和編輯文字
+## <a name="bkmk_2"></a>如何在指令碼窗格中撰寫和編輯文字
 使用下列步驟在指令碼窗格中編輯文字。 您可以複製、剪下、貼上、尋找和取代文字。 您也可以復原和取消復原剛才執行的上一個動作。 執行這些動作的鍵盤快速鍵與所有 Windows 應用程式所使用的鍵盤快速鍵相同。
 
 ### <a name="to-enter-text-in-the-script-pane"></a>在指令碼窗格中輸入文字
@@ -107,7 +103,7 @@ translationtype: HT
 ### <a name="to-redo-an-action-in-the-script-pane"></a>在指令碼窗格中取消復原動作
 按 **CTRL+Y**；按一下工具列中的取消復原圖示；或者在 [編輯] 功能表上，按一下 [取消復原]。
 
-## <a name="a-namebkmk3ahow-to-save-a-script"></a><a name="bkmk_3"></a>如何儲存指令碼
+## <a name="bkmk_3"></a>如何儲存指令碼
 使用下列步驟儲存並命名指令碼。 指令碼名稱旁若出現星號，表示檔案自變更後尚未儲存。 儲存檔案之後，星號就會消失。
 
 ### <a name="to-save-a-script"></a>儲存指令碼

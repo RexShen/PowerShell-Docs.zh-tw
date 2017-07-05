@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "取得詳細的說明資訊"
-ms.technology: powershell
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 63a002058d7e305cacdf6933bc8e16c1c56d4c63
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="getting-detailed-help-information"></a>取得詳細的說明資訊
 Windows PowerShell 包含詳細的說明主題，說明 Windows PowerShell 概念和 Windows PowerShell 語言。 此外，還有針對每個 Cmdlet 和提供者，以及許多函式和指令碼的說明主題。

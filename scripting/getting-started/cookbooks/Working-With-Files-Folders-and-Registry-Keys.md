@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "使用檔案、資料夾與登錄機碼"
-ms.technology: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 5d76098261c0288c83b4a27063ca36c23d606103
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用檔案、資料夾與登錄機碼
 Windows PowerShell 使用名詞 **Item** 參照在 Windows PowerShell 磁碟機上找到的項目。 使用 Windows PowerShell FileSystem 提供者時，**Item** 可能是檔案、資料夾或 Windows PowerShell 磁碟機。 在大部分的系統管理設定中，列出及使用這些項目是很重要的基本工作，因此，我們要詳細討論這些工作。
@@ -124,7 +120,19 @@ Get-ChildItem -Path C:\Windows\[xz]*
 
 類似 **w\&#42;32\&#42;.dll** 的運算式會尋找滿足上述條件的所有 DLL，但也會傳回名稱中包含 "95" 或 "16" 的 Windows 95 及 16 位元的 Windows 相容 DLL。 您可以使用 **Exclude** 參數搭配模式 **\&#42;\[9516]\&#42;**，以省略名稱中含有這些數字中之任一數字的檔案：
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
+Mode                LastWriteTime     Length Name
+----                -------------     ------ ----
+-a---        2004-08-04   8:00 AM     174592 w32time.dll
+-a---        2004-08-04   8:00 AM      22016 w32topl.dll
+-a---        2004-08-04   8:00 AM     101888 win32spl.dll
+-a---        2004-08-04   8:00 AM     172032 wldap32.dll
+-a---        2004-08-04   8:00 AM     264192 wow32.dll
+-a---        2004-08-04   8:00 AM      82944 ws2_32.dll
+-a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
+-a---        2004-08-04   8:00 AM      22528 wsock32.dll
+-a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
 #### <a name="mixing-get-childitem-parameters"></a>混合使用 Get-ChildItem 參數
 您可以在同一個命令中使用 **Get-ChildItem** Cmdlet 的數個參數。 在混合使用參數之前，請確定您了解萬用字元比對的原則。 例如，下列命令不會傳回任何結果：

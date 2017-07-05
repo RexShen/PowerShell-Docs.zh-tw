@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Microsoft.PowerShell.Host 模組"
-ms.technology: powershell
 ms.assetid: 580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
-ms.openlocfilehash: 81e0ca9773c9b4c6efb418cdb9ef4f0a8a4a0d2a
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 18229db227d0cbcc2172b5b70d616659f5fc05b6
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="microsoftpowershellhost-module"></a>Microsoft.PowerShell.Host 模組
 本節包含 **Microsoft.PowerShell.Host** 模組的說明主題。 **Microsoft.PowerShell.Host** 模組包含可用來管理主控 Windows PowerShell 之程式的功能的 Cmdlet。 此模組是與 Windows PowerShell 一起安裝。

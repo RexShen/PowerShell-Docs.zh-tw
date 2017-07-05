@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "PSScriptAnalyzer 模組"
-ms.technology: powershell
 ms.assetid: 8734c1e1-898e-4fc1-8fc0-d1ad7d3cf077
-ms.openlocfilehash: e5429cc727f3fe2e56eadfb6e2c7abb34c2d52ed
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 808d2e2766aeb46cbc58add547dcca64170bb036
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="psscriptanalyzer-module"></a>PSScriptAnalyzer 模組
 本節包含 **PSScriptAnalyzer** 模組的說明主題，您可以在 Windows PowerShell® 中使用此模組來檢查指令碼和模組中的問題。 此模組是與 Windows PowerShell 一起安裝。

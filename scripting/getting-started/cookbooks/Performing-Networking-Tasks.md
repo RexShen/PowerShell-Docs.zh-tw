@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "執行網路工作"
-ms.technology: powershell
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 1c938500da191c2791b3178971cdcea28f57aacd
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 4d7a91595b9d9d637ce915be2c2be9c20879dd8b
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="performing-networking-tasks"></a>執行網路工作
 由於 TCP/IP 是最常使用的網路通訊協定，因此大多數低階網路通訊協定管理工作都涉及 TCP/IP。 在本節中，我們使用 Windows PowerShell 和 WMI 來執行這些工作。
@@ -31,7 +27,12 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -C
 
 若要了解為何會出現大括弧，請使用 Get-Member Cmdlet 來檢查 **IPAddress** 屬性︰
 
-<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter Configuration Name      MemberType Definition ----      ---------- ---------- IPAddress Property   System.String[] IPAddress {get;}</pre>
+<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress
+TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter
+Configuration
+Name      MemberType Definition
+----      ---------- ----------
+IPAddress Property   System.String[] IPAddress {get;}</pre>
 
 每個網路介面卡的 IPAddress 屬性其實是一個陣列。 定義中的大括弧表示 **IPAddress** 不是 **System.String** 值，而是 **System.String** 值的陣列。
 

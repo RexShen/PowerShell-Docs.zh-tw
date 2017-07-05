@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "執行遠端命令"
-ms.technology: powershell
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: c05981e43e59869e85c6b834d4af9df86ec1230b
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a8645a348ebc25533f60cd049ed5872e49565b96
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="running-remote-commands"></a>執行遠端命令
 您可以使用單一 Windows PowerShell 命令，在一或數百部電腦上執行命令。 Windows PowerShell 透過使用各種技術 (包括 WMI、RPC 與 WS) 支援遠端運算。

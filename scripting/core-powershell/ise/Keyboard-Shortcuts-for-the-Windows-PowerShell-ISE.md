@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Windows PowerShell ISE 的鍵盤快速鍵"
-ms.technology: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 7a6c848fe14cfed57e046ab6cf8c576f26b1bf3e
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。

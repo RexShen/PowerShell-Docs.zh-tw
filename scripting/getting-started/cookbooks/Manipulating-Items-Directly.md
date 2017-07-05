@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "直接操作項目"
-ms.technology: powershell
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: e99ea91b6e17ab898815480d615b23cbd29061d5
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: d9aa95dcb0da2e8203cbe32d64b95bf33d914166
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="manipulating-items-directly"></a>直接操作項目
 您在 Windows PowerShell 磁碟機中看到的項目 (例如檔案系統磁碟機中的檔案與資料夾，以及 Windows PowerShell 登錄磁碟機中的登錄機碼) 在 Windows PowerShell 中稱為*項目*。 用於處理項目之 Cmdlet 的名稱中具有名詞 **Item**。

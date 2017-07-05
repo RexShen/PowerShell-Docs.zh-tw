@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "管理 Windows PowerShell 磁碟機"
-ms.technology: powershell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: aa2e116589d93bc160f697b25666838bbbe5cb6b
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 磁碟機
 *Windows PowerShell 磁碟機*是一個資料存放區位置，存取該位置的方式就像存取 Windows PowerShell 中的檔案系統磁碟機一樣。 Windows PowerShell 提供者會為您建立一些磁碟機，例如檔案系統磁碟機 (包括 C: 與 D:)、登錄磁碟機 (HKCU: 與 HKLM:) 與憑證磁碟機 (Cert:)，而且您可以建立自己的 Windows PowerShell 磁碟機。 這些磁碟機非常實用，但只能在 Windows PowerShell 中使用。 您無法使用其他 Windows 工具 (例如 [檔案總管] 或 Cmd.exe) 來存取它們。
@@ -62,11 +58,20 @@ D          FileSystem    D:\
 
 若要檢視代表登錄區的 Windows PowerShell 磁碟機，請使用 **PSProvider** 參數以便只顯示 Windows PowerShell 登錄提供者所支援的 Windows PowerShell 磁碟機：
 
-<pre>PS> Get-PSDrive -PSProvider Registry Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- HKCU       Registry      HKEY_CURRENT_USER HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+<pre>PS> Get-PSDrive -PSProvider Registry
+Name       Provider      Root                                   CurrentLocation
+----       --------      ----                                   ---------------
+HKCU       Registry      HKEY_CURRENT_USER
+HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
 
 您也可以使用標準 Location Cmdlet 來搭配 Windows PowerShell 磁碟機：
 
-<pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
+<pre>PS> Set-Location HKLM:\SOFTWARE
+PS> Push-Location .\Microsoft
+PS> Get-Location
+Path
+----
+HKLM:\SOFTWARE\Microsoft</pre>
 
 ### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>新增 Windows PowerShell 磁碟機 (New-PSDrive)
 您可以使用 **New-PSDrive** 命令來新增自己的 Windows PowerShell 磁碟機。 若要取得 **New-PSDrive** 命令的語法，請輸入 **Get-Command** 命令並指定 **Syntax** 參數：
@@ -105,7 +110,11 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 Windows PowerShell 磁碟機可以讓許多工作變得更簡單。 例如，Windows 登錄中的某些重要機碼具有極長的路徑，使得它們不容易存取且難以記住。 重要設定資訊位於 **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**。 若要檢視及變更 CurrentVersion 登錄機碼中的項目，您可以建立根目錄為該機碼的 Windows PowerShell 磁碟機，方式是輸入下列命令：
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W indows\CurrentVersion Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
+indows\CurrentVersion
+Name       Provider      Root                                   CurrentLocation
+----       --------      ----                                   ---------------
+cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 接著，您可以將位置變更至 **cvkey:** 磁碟機，就像存取任何其他磁碟機一樣：
 
@@ -113,7 +122,10 @@ Windows PowerShell 磁碟機可以讓許多工作變得更簡單。 例如，Win
 
 或者：
 
-<pre>PS> Set-Location cvkey: -PassThru Path ---- cvkey:\</pre>
+<pre>PS> Set-Location cvkey: -PassThru
+Path
+----
+cvkey:\</pre>
 
 New-PsDrive Cmdlet 會將新磁碟機只新增到目前的 Windows PowerShell 工作階段。 若關閉該 Windows PowerShell 視窗，該新磁碟機就會消失。 若要儲存 Windows PowerShell 磁碟機，請使用 Export-Console Cmdlet 來匯出目前的 Windows PowerShell 工作階段，然後使用 PowerShell.exe **PSConsoleFile** 參數來匯入它。 或者，將新磁碟機新增到您的 Windows PowerShell 設定檔。
 

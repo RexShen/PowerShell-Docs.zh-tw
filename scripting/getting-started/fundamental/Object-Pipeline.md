@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "物件管線"
-ms.technology: powershell
 ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
-ms.openlocfilehash: 531c3c00ddcc0cc8299875392832fb1dad9f49d8
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 3fa41cc744cf3ab66fc5ef186ead8eb919429a76
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="object-pipeline"></a>物件管線
 管線就像是一系列連接的管道區段。 沿著管線移動的項目會通過每個區段。 若要在 Windows PowerShell 中建立管線，您可以將命令與管道運算子 "|" 連接在一起。 每個命令的輸出可作為下一個命令的輸入。

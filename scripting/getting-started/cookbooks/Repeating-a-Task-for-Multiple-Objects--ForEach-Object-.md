@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "針對多個物件重複工作 ForEach Object"
-ms.technology: powershell
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: ba366c62686ee289ccdfc7b2f7c93d0b60f3f51b
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 33ae2c76a512a651ba1b91d15d876608f0d43ccc
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>針對多個物件重複工作 (ForEach-Object)
 **ForEach-Object** Cmdlet 針對目前的管線物件使用指令碼區塊和 $_ 描述元，讓您能夠在管線中的每個物件上執行命令。 這可以用來執行一些複雜的工作。

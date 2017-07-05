@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "從管線中移除物件 Where Object"
-ms.technology: powershell
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: ecbbc834bd5f02f7c8daf02e41e9a0ad07ca6dcf
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 4140c4c3ebb26223d03ca139992fedf6e184a38b
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
 在 Windows PowerShell 中，您通常會產生並沿著管線傳遞比所需更多的物件。 您可以使用 **Format** Cmdlet 指定要顯示的特定物件屬性，但這樣做並無法解決從顯示中移除整個物件的問題。 您可能需要在結束管線之前篩選物件，以便只對初始產生的物件子集執行動作。

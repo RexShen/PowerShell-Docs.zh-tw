@@ -1,24 +1,20 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "ISEFile 物件"
-ms.technology: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: fe0b2396de747bf88e780df505f5f7991e3e0b6f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 0e1c09c4a92868448d76cc7b4954d250773ce2f2
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
   **ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 類別的執行個體。 本主題列出其成員方法和成員屬性。 **$psISE.CurrentFile** 以及 PowerShell 索引標籤上檔案集合中的檔案就是 Microsoft.PowerShell.Host.ISE.ISEFile 類別的所有執行個體。
 
 ## <a name="methods"></a>方法
 
-###  <a name="a-namesave-overridea-save-saveencoding-"></a><a name="save-override"></a> Save\( \[saveEncoding\] \)
+###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  將檔案儲存至磁碟。
@@ -42,7 +38,7 @@ $myfile.Encoding
 
 ```
 
-###  <a name="a-namesaveasa-saveasfilename-saveencoding"></a><a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
+###  <a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  使用指定的檔案名稱和編碼方式來儲存檔案。
@@ -70,7 +66,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 
 ## <a name="properties"></a>[內容]
 
-###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
+###  <a name="Displayname"></a> DisplayName
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案] 索引標籤上。 名稱結尾的星號 \(\*\) 表示檔案有尚未儲存的變更。
@@ -81,7 +77,7 @@ $psIse.CurrentFile.DisplayName
 
 ```
 
-###  <a name="a-nameeditora-editor"></a><a name="Editor"></a> Editor
+###  <a name="Editor"></a> Editor
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得用於指定檔案的[編輯器物件](The-ISEEditor-Object.md)。
@@ -92,7 +88,7 @@ $psIse.CurrentFile.Editor.Text
 
 ```
 
-###  <a name="a-nameencodinga-encoding"></a><a name="Encoding"></a> Encoding
+###  <a name="Encoding"></a> Encoding
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得原始的檔案編碼方式。 這是 **System.Text.Encoding** 物件。
@@ -103,7 +99,7 @@ $psIse.CurrentFile.Encoding
 
 ```
 
-###  <a name="a-namefullpatha-fullpath"></a><a name="FullPath"></a> FullPath
+###  <a name="FullPath"></a> FullPath
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得指定已開啟檔案之完整路徑的字串。
@@ -114,7 +110,7 @@ $psIse.CurrentFile.FullPath
 
 ```
 
-###  <a name="a-nameissaveda-issaved"></a><a name="IsSaved"></a> IsSaved
+###  <a name="IsSaved"></a> IsSaved
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀的布林值屬性，如果檔案在上次修改後已儲存，即會傳回 **$true**。
@@ -126,7 +122,7 @@ $myfile.IsSaved
 
 ```
 
-###  <a name="a-nameisuntitleda-isuntitled"></a><a name="IsUntitled"></a> IsUntitled
+###  <a name="IsUntitled"></a> IsUntitled
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，如果檔案不具標題，即會傳回 **$true**。
