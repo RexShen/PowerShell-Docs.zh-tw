@@ -1,17 +1,17 @@
 ---
-title: "使用 DSC 報表伺服器"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 17b56a0ce25d3154e21f18269926a0c41aae833b
-ms.sourcegitcommit: d7b28f28a09caa7fa48b0f66c5c437f128ce316f
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "使用 DSC 報表伺服器"
+ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="using-a-dsc-report-server"></a>使用 DSC 報表伺服器
+<a id="using-a-dsc-report-server" class="xliff"></a>
+# 使用 DSC 報表伺服器
 
 > 適用於：Windows PowerShell 5.0
 
@@ -19,7 +19,8 @@ translationtype: HT
 
 節點的本機設定管理員 (LCM) 可以設定為將設定狀態相關報表傳送至提取伺服器，然後可查詢以擷取該資料。 每次節點檢查並套用設定時，皆會將報表傳送至報表伺服器。 這些報表會儲存在伺服器上的資料庫，而且可以藉由呼叫報告 Web 服務來擷取。 每份報表包含已套用的設定、是否成功套用、使用的資源、所擲回的任何錯誤，以及開始和完成時間等資訊。
 
-## <a name="configuring-a-node-to-send-reports"></a>設定要傳送報表的節點
+<a id="configuring-a-node-to-send-reports" class="xliff"></a>
+## 設定要傳送報表的節點
 
 您可告知節點將報表傳送至伺服器，方法是使用該節點 LCM 設定內的 **ReportServerWeb** 區塊 (如需關於設定 LCM 的相關資訊，請參閱[設定本機設定管理員](metaConfig.md))。 節點傳送報表的目標伺服器必須設定為 Web 提取伺服器 (您無法將報表傳送至 SMB 共用)。 如需設定提取伺服器的資訊，請參閱[設定 DSC Web 提取伺服器](pullServer.md)。 報表伺服器的服務可以與節點從中提取設定和取得資源的服務相同，或可以是不同的服務。
  
@@ -92,7 +93,8 @@ PullClientConfig
 
 >**注意**：當您設定提取伺服器時，您可以為 Web 服務指定任何名稱，但 **ServerURL** 屬性必須符合服務名稱。
 
-## <a name="getting-report-data"></a>取得報表資料
+<a id="getting-report-data" class="xliff"></a>
+## 取得報表資料
 
 傳送到提取伺服器的報表會輸入到該伺服器上的資料庫中。 可透過呼叫 Web 服務使用報表。 若要擷取特定節點的報表，請以下列形式將 HTTP 要求傳送到報表 Web 服務：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` 其中 `MyNodeAgentId` 是您要取得報表之節點的 AgentId。 您也可以呼叫該節點上的 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 以取得節點的 AgentID。
 
@@ -113,7 +115,8 @@ function GetReport
 }
 ```
     
-## <a name="viewing-report-data"></a>檢視報表資料
+<a id="viewing-report-data" class="xliff"></a>
+## 檢視報表資料
 
 如果您將變數設定為 **GetReport** 函式的結果，您就可以在傳回陣列的項目中檢視個別欄位：
 
@@ -220,7 +223,8 @@ InDesiredState    : True
 
 請注意，這些範例主要供您了解可以如何處理報表資料。 如需在 PowerShell 中搭配使用 JSON 的簡介，請參閱[Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (以 JSON 和 PowerShell 播放)。
 
-## <a name="see-also"></a>另請參閱
+<a id="see-also" class="xliff"></a>
+## 另請參閱
 - [設定本機設定管理員](metaConfig.md)
 - [設定 DSC Web 提取伺服器](pullServer.md)
 - [使用設定名稱設定提取用戶端](pullClientConfigNames.md)

@@ -1,38 +1,41 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_update modulemanifest
-ms.technology: powershell
-ms.openlocfilehash: 85153872326c5af8f869bc2254040eca1a152f8b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Update-ModuleManifest
+ms.openlocfilehash: ce3f6f173535d98648eb51adb1dbf84764e4f434
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="update-modulemanifest"></a>Update-ModuleManifest
+<a id="update-modulemanifest" class="xliff"></a>
+# Update-ModuleManifest
 更新模組資訊清單檔案。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Update-ModuleManifest Cmdlet 會更新模組資訊清單 (.psd1) 檔案。
 
-### <a name="notes"></a>注意
+<a id="notes" class="xliff"></a>
+### 注意
     - 只有最新 5.0 版的 PowerShell 才支援 DscResourcesToExport。 若是在此版之前的舊版 PowerShell 上執行，便無法更新此欄位。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 這個新的 Cmdlet 是用來協助以輸入屬性值更新資訊清單檔。 它會採用 New-ModuleManifest 執行的所有參數。
 

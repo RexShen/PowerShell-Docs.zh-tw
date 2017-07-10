@@ -1,4 +1,16 @@
-# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>允許在設定中的相同重複資源
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: d3a625d05eaf4e7448b4abf90499f6a94e2f7718
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="allowing-for-identical-duplicate-resources-in-a-configuration" class="xliff"></a>
+# 允許在設定中的相同重複資源
 
 DSC 不允許或不處理設定中定義的衝突資源。 它並不會去嘗試解決衝突，而是只會失敗。 當設定重複使用透過複合資源而變得更有用時，衝突發生頻率將會提高。 當衝突資源的定義相同時，DSC 應該進行智慧判斷並允許此情況。 在此版本中，我們支援具有相同定義的多個資源執行個體︰
 
@@ -85,3 +97,4 @@ Configuration WebApplication
 ```
 
 此非常類似的設定將會失敗，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 資源不再相同，因此發生衝突。
+

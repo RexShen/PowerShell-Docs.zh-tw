@@ -1,21 +1,22 @@
 ---
-title: "DSC for Linux nxSshAuthorizedKeys 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: edc906b4e9c925320c4ed00c5ab295189066ccb9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC for Linux nxSshAuthorizedKeys 資源"
+ms.openlocfilehash: 3c145eeb86d971dc00e1c7cea60fb50c83d7b9a2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC for Linux nxSshAuthorizedKeys 資源
+<a id="dsc-for-linux-nxsshauthorizedkeys-resource" class="xliff"></a>
+# DSC for Linux nxSshAuthorizedKeys 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxAuthorizedKeys** 資源會提供一個機制，管理指定使用者的授權 SSH 金鑰。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 nxAuthorizedKeys <string> #ResourceName
@@ -29,7 +30,8 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -39,7 +41,8 @@ nxAuthorizedKeys <string> #ResourceName
 | 按鍵| 金鑰的內容。 如果 **Ensure** 設為 "Present"，則必須有此項。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下列範例會定義使用者 "monuser" 的公用 SSH 授權金鑰。
 

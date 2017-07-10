@@ -1,21 +1,22 @@
 ---
-title: "DSC for Linux nxPackage 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC for Linux nxPackage 資源"
+ms.openlocfilehash: 11019b1cd12f23b0b498b7cb9a06e02c46c3c279
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxpackage-resource"></a>DSC for Linux nxPackage 資源
+<a id="dsc-for-linux-nxpackage-resource" class="xliff"></a>
+# DSC for Linux nxPackage 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxPackage** 資源會提供一個機制，在 Linux 節點管理套件。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 nxPackage <string> #ResourceName
@@ -32,7 +33,8 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -45,7 +47,8 @@ nxPackage <string> #ResourceName
 | ReturnCode| 預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下列範例會確保名為 "httpd" 的套件已使用 "Yum" 套件管理員安裝在 Linux 電腦上。
 

@@ -1,17 +1,17 @@
 ---
-title: "撰寫 DSC 設定的說明"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "撰寫 DSC 設定的說明"
+ms.openlocfilehash: bcf5c4b1af3cfd8d2e6376c1b7344c7babcaba9a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-help-for-dsc-configurations"></a>撰寫 DSC 設定的說明
+<a id="writing-help-for-dsc-configurations" class="xliff"></a>
+# 撰寫 DSC 設定的說明
 
 >適用於：Windows PowerShell Windows 5.0
 
@@ -61,7 +61,8 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a>檢視設定說明
+<a id="viewing-configuration-help" class="xliff"></a>
+## 檢視設定說明
 
 若要檢視設定的說明，請使用 **Get-help** Cmdlet 加上函數名稱，或輸入函數名稱加上 `-?`。 以下是將前一個函數傳遞給 **Get-help** 後的輸出：
 
@@ -92,6 +93,7 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a>另請參閱
+<a id="see-also" class="xliff"></a>
+## 另請參閱
 * [DSC 設定](configurations.md)
 

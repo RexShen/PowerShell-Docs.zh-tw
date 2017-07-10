@@ -1,25 +1,25 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "登錄 JEA 設定"
-ms.technology: powershell
-ms.openlocfilehash: 2dcf541f1ed9975a680b31ca5e00e0fbbbddb22e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="registering-jea-configurations"></a>登錄 JEA 設定
+<a id="registering-jea-configurations" class="xliff"></a>
+# 登錄 JEA 設定
 
 > 適用對象：Windows PowerShell 5.0
 
 您建立[角色功能](role-capabilities.md)和[工作階段設定檔](session-configurations.md)之後，只要再登錄 JEA 端點即可使用 JEA。
 此程序會將工作階段設定資訊套用至系統，並可讓端點可供使用者和自動化引擎使用。
 
-## <a name="single-machine-configuration"></a>單一電腦設定
+<a id="single-machine-configuration" class="xliff"></a>
+## 單一電腦設定
 
 針對小型環境，您可以藉由使用 [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) Cmdlet 登錄工作階段設定檔來部署 JEA。
 
@@ -58,7 +58,8 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 如果登錄成功，您便可以[使用 JEA](using-jea.md)。
 您可以隨時刪除工作階段設定檔；在登錄之後便不會使用它。
 
-## <a name="multi-machine-configuration-with-dsc"></a>DSC 的多電腦設定
+<a id="multi-machine-configuration-with-dsc" class="xliff"></a>
+## DSC 的多電腦設定
 
 如果您要在多部電腦上部署 JEA，最簡單的部署模型是使用 JEA [期望狀態設定](https://msdn.microsoft.com/en-us/powershell/dsc/overview)資源快速且一致地在每部機器上部署 JEA。
 
@@ -118,7 +119,8 @@ Configuration JEAMaintenance
 DSC 資源也可讓您取代預設的 Microsoft.PowerShell 遠端端點。
 如果您這麼做，資源會自動登錄名為 "Microsoft.PowerShell.Restricted" 的備份無限制端點，它具有預設 WinRM ACL (允許遠端管理使用者與本機系統管理員群組成員能夠存取它)。
 
-## <a name="unregistering-jea-configurations"></a>取消登錄 JEA 設定
+<a id="unregistering-jea-configurations" class="xliff"></a>
+## 取消登錄 JEA 設定
 
 若要移除系統上的 JEA 端點，請使用 [Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) Cmdlet。
 取消登錄 JEA 端點會使新使用者無法在系統上建立新的 JEA 工作階段。
@@ -134,6 +136,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 > 這會中斷大部分正在進行中的遠端管理操作，包括其他的 PowerShell 工作階段、WMI 引動過程，以及某些管理工具。
 > 只在計劃的維護期間取消登錄 PowerShell 端點。
 
-## <a name="next-steps"></a>接下來的步驟
+<a id="next-steps" class="xliff"></a>
+## 接下來的步驟
 
 - [測試 JEA 端點](using-jea.md)
+

@@ -1,4 +1,16 @@
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Set-dsclocalconfigurationmanager Cmdlet 支援 -force 參數
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 0aff3ff1fe12fbc7acce20cf7c802f58ace77bb9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
+# Set-dsclocalconfigurationmanager Cmdlet 支援 -force 參數
 
 我們在 Set-DscLocalConfigurationManager Cmdlet 中加入新參數的支援。 這可讓使用者決定重設在電腦上的中繼設定，因為當其他作業在背景執行時 (例如一致性檢查)，會導致所有執行的作業停止。
 
@@ -36,3 +48,4 @@ VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \] in 0.1410 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.421 seconds.
 ```
+

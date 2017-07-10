@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find command
-ms.technology: powershell
-ms.openlocfilehash: 99091130ea89023495e5e3aacafb292f67f2db30
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Find-Command
+ms.openlocfilehash: f867f12b1c6efad30a04581c6f36c5a77a2fb2ae
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-command"></a>Find-Command
+<a id="find-command" class="xliff"></a>
+# Find-Command
 
 尋找模組中的 PowerShell 命令。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 Find-Command Cmdlet 會尋找 PowerShell 命令，例如 Cmdlet、別名、函數和工作流程。 Find-Command 會搜尋已註冊存放庫中的模組。
 針對這個 Cmdlet 找到的每個命令，它會傳回 PSGetCommandInfo 物件。 您可以將 PSGetCommandInfo 物件傳遞至 Install-Module Cmdlet，以安裝包含這個命令的模組。
 
@@ -30,16 +29,19 @@ Find-Command Cmdlet 會尋找 PowerShell 命令，例如 Cmdlet、別名、函�
 - Find-Command 可以使用 -Filter 參數篩選存放庫特定的搜尋語言。
 - Find-Command 可以篩選所有或部分已註冊存放庫中的模組。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 ```powershell
 
 # Find a specific command

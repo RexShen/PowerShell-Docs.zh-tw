@@ -1,17 +1,17 @@
 ---
-title: "DSC 檔案資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: ba625f5130e806b3b8e14a0f6ed91fd5a1aabc54
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC 檔案資源"
+ms.openlocfilehash: f16bfbc31489ef7d1b0e5e4ec3a4f30069c24c79
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-file-resource"></a>DSC 檔案資源
+<a id="dsc-file-resource" class="xliff"></a>
+# DSC 檔案資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -20,7 +20,8 @@ Windows PowerShell 預期狀態設定 (DSC) 的檔案資源會提供一個機制
 >**注意︰**如果 **MatchSource** 屬性設為 **$false** (此為預設值)，則第一次套用設定時會快取要複製的內容。 
 >後續套用的設定不會檢查由 **SourcePath** 指定的路徑中是否有更新的檔案及/或資料夾。 如果想要在每次套用設定時都檢查 **SourcePath** 中是否有檔案及/或資料夾更新，請將 **MatchSource** 設為 **$true**。 
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 ```
 File [string] #ResourceName
 {
@@ -39,7 +40,8 @@ File [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -56,7 +58,8 @@ File [string] #ResourceName
 | 類型| 表示正在設定的資源是否為目錄或檔案。 將此屬性設定為 "Directory"，表示該資源為目錄。 將此屬性設定為 "File"，表示該資源為檔案。 預設值為 "File"。| 
 | MatchSource| 如果設定為 __$false__ 的預設值，則當第一次套用此設定時，會將來源 (例如檔案 A、B 和 C) 上的任何檔案加入目的地。 如果將新的檔案 (D) 加入來源，就不會將這個檔案加入目的地，即使稍後重新套用此設定亦同。 如果值為 __$true__，則每次套用此設定時，會將此來源 (例如，在此範例中的檔案 D) 上後續找到的新檔案加入目的地。 預設值為 **$false**。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下列範例示範如何使用檔案資源，以確保來源電腦上路徑為 `C:\Users\Public\Documents\DSCDemo\DemoSource` (例如「提取」伺服器) 的目錄 (以及所有子目錄) 也會出現在目標節點上。 此外，也會在完成時將確認訊息寫入記錄檔，並包含陳述式，以確保記錄作業之前先執行檔案檢查作業。
 

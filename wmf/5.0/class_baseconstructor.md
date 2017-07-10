@@ -1,4 +1,16 @@
-# <a name="call-base-class-constructor"></a>呼叫基底類別建構函式
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 403a79e17b832b5c58fd21a138fcebb8adb76d40
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="call-base-class-constructor" class="xliff"></a>
+# 呼叫基底類別建構函式
 
 若要從子類別中呼叫基底類別建構函式，請使用關鍵字 **base**：
 
@@ -29,3 +41,4 @@ class C : B
     C([int]$c) {}
 }
 ```
+

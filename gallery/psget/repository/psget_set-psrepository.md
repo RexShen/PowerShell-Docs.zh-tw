@@ -1,36 +1,38 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_set psrepository
-ms.technology: powershell
-ms.openlocfilehash: be2c16a79a3e6873c0f7a364092def881d490091
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Set-PSRepository
+ms.openlocfilehash: 2e850947b67d43254ee9d1b3c1c571167435234c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="set-psrepository"></a>Set-PSRepository
+<a id="set-psrepository" class="xliff"></a>
+# Set-PSRepository
 
 Set-PSRepository 會設定已註冊存放庫的值。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Set-PSRepository Cmdlet 會設定已註冊模組存放庫的值。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -49,7 +51,8 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>具有指令碼共用支援的 Set-PSRepository Cmdlet
+<a id="set-psrepository-cmdlet-with-script-sharing-support" class="xliff"></a>
+### 具有指令碼共用支援的 Set-PSRepository Cmdlet
 
 使用 Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 新增至 PSRepository。
 ```powershell

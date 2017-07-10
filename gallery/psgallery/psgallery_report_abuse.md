@@ -1,19 +1,17 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_report_abuse
-ms.technology: powershell
-ms.openlocfilehash: 402ab9342d947bf4e85229a7e9236340441fb954
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 989860a9be3a182f54a055724b8a26be3a286a7c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="report-abuse"></a>檢舉不當使用
+<a id="report-abuse" class="xliff"></a>
+# 檢舉不當使用
 
 如果您發現有項目違反其中任一項目，請按一下項目詳細資料頁面上的 [檢舉不當使用] 連結並提交報告。
 

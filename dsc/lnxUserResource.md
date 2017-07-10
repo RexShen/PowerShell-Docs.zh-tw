@@ -1,21 +1,22 @@
 ---
-title: "DSC for Linux nxUser 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 9d27299aca8dee3e0390c9c8fc900832eb7e960c
-ms.sourcegitcommit: b3724fac99e52c712b18c4effbb9ee13711d0238
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC for Linux nxUser 資源"
+ms.openlocfilehash: d708edcee592835ce448752465125d451afbd45b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxuser-resource"></a>DSC for Linux nxUser 資源
+<a id="dsc-for-linux-nxuser-resource" class="xliff"></a>
+# DSC for Linux nxUser 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxUser** 資源會提供一個機制，在 Linux 節點管理本機使用者。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 nxUser <string> #ResourceName
@@ -34,7 +35,8 @@ nxUser <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性 |  指出您要確保其特定狀態的帳戶名稱。 | 
 |---|---|
@@ -49,7 +51,8 @@ nxUser <string> #ResourceName
 | GroupID| 使用者主要群組識別碼。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 "ResourceName"，而它的類型是 "ResourceType"，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下列範例會確保使用者 "monuser" 存在，而且是 "DBusers" 群組的成員。
 

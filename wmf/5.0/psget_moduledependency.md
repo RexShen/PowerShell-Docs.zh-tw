@@ -1,4 +1,16 @@
-# <a name="installation-of-module-dependencies"></a>安裝模組相依性
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 06a1ae284975a56d092c708f8bb57e2ae8b46e54
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="installation-of-module-dependencies" class="xliff"></a>
+# 安裝模組相依性
 
 在 Windows PowerShell 5.0 或更新版本中執行的 Install-Module、Update-Module 和 Publish-Module Cmdlet 現在都有並存 (SxS) 模組版本支援。
 我們還在 Publish-Module Cmdlet 中加入了 -RequiredVersion 參數來指定要發佈的版本。 Path 參數現在支援有版本資料夾的模組基底路徑。
@@ -192,3 +204,4 @@ _------ ---- ---------- -----------
 1.5 ContosoServer LocalRepo ContosoServer module
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
+

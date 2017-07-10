@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find script
-ms.technology: powershell
-ms.openlocfilehash: 09f4d6eca9cf04d03fddbe23beea6a5bc0243657
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Find-Script
+ms.openlocfilehash: 15bf23b803250c7893fe970c2580592ea7c0a4b6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-script"></a>Find-Script
+<a id="find-script" class="xliff"></a>
+# Find-Script
 
 尋找來自線上組件庫且符合所指定準則的 PowerShell 指令檔。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Find-Script 會探索已註冊存放庫中符合所指定準則的指令檔。
 針對每個找到的指令碼，Find-Script 會傳回可選擇性地傳送至 Install-Script 以安裝指令碼的 PSRepositoryItemInfo 物件。
@@ -35,17 +34,20 @@ Find-Script Cmdlet 可讓您使用不同的搜尋準則探索指令碼檔案，�
 
 **注意：**已註冊的 PSRepository 應該會有有效的 ScriptSourceLocation。 您可以使用 Set-PSRepository 設定 ScriptSourceLocation 值。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation

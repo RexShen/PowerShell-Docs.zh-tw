@@ -1,17 +1,32 @@
-# <a name="archive-cmdlets"></a>封存 Cmdlet
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: d23cfc2aaa680c247aaab91d8875c64c9d62187e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="archive-cmdlets" class="xliff"></a>
+# 封存 Cmdlet
 
 兩個新的 Cmdlet，**Compress-Archive** 和 **Expand-Archive**，讓您可以壓縮和解壓縮 ZIP 檔案。
 
-## <a name="compress-archive"></a>Compress-Archive
+<a id="compress-archive" class="xliff"></a>
+## Compress-Archive
 **Compress-Archive** Cmdlet 會從指定的檔案中建立新的封存檔案。 封存檔案可讓多個檔案進行封裝，並可選擇性地壓縮成單一檔案，以方便處理和儲存。 封存檔案可以用 **-CompressionLevel** 參數中指定的壓縮演算法壓縮。
 ```PowerShell
 Compress-Archive -LiteralPath <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>] 
 Compress-Archive [-Path] <String[]> [-DestinationPath] <String> [-Update] [-CompressionLevel <Microsoft.PowerShell.Commands.CompressionLevel>]
 ```
 
-## <a name="expand-archive"></a>Expand-Archive
+<a id="expand-archive" class="xliff"></a>
+## Expand-Archive
 **Expand-Archive** Cmdlet 會從指定的封存檔案中解壓縮檔案。 封存檔案可讓多個檔案進行封裝，並可選擇性地壓縮成單一檔案，以方便處理和儲存。
 ```PowerShell
 Expand-Archive -LiteralPath <String> [-DestinationPath] <String>
 Expand-Archive [-Path] <String> [-DestinationPath] <String>
 ```
+

@@ -1,30 +1,31 @@
 ---
-title: "DSC 登錄資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: d94f178fb75d15b12268ad783f78183ceba9f2b3
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC 登錄資源"
+ms.openlocfilehash: 649cb60578c053c04a7fcc7446881fb76daee26a
+ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
-# <a name="dsc-registry-resource"></a>DSC 登錄資源
+<a id="dsc-registry-resource" class="xliff"></a>
+# DSC 登錄資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **Registry** 資源會提供一個機制，在目標節點管理登錄機碼和值。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 Registry [string] #ResourceName
 {
     Key = [string]
     ValueName = [string]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Force =  [bool]   ]
     [ Hex = [bool] ]
     [ DependsOn = [string[]] ]
@@ -33,13 +34,14 @@ Registry [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 按鍵| 指出您要確保其特定狀態的登錄機碼路徑。 此路徑必須包含登錄區。| 
-| ValueName| 指出登錄值的名稱。| 
+| ValueName| 指出登錄值的名稱。 若要新增或移除登錄機碼，請將此屬性指定為空字串，且不指定 ValueType 或 ValueData。 若要修改或移除登錄機碼的預設值，請將此屬性指定為空字串，同時也指定 ValueType 或 ValueData。| 
 | Ensure| 指出金鑰和值是否存在。 若要確定存在，可將此屬性設定為 "Present"。 若要確定不存在，可將此屬性設定為 "Absent"。 預設值為 "Present"。| 
-| Force| 如果指定的登錄機碼存在，__Force__ 會以新值覆寫登錄機碼。| 
+| Force| 如果指定的登錄機碼存在，__Force__ 會以新值覆寫登錄機碼。 如果要刪除含有子機碼的登錄機碼，這必須是 __$true__| 
 | Hex| 指出資料是否以十六進位格式表示。 如果指定為 Hex，則 DWORD/QWORD 值資料會以十六進位格式顯示。 不適用於其他類型。 預設值為 __$false__。| 
 | DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 | ValueData| 登錄值的資料。| 
@@ -61,7 +63,8 @@ Registry [string] #ResourceName
 
 <li>可擴充的字串 (REG_EXPAND_SZ)</li></ul>
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 此範例可確保 **HKEY\_LOCAL\_MACHINE** 登錄區包含名為"ExampleKey"的索引鍵。
 ```powershell
 Configuration RegistryTest

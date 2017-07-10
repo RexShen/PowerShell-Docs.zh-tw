@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_install module
-ms.technology: powershell
-ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Install-Module
+ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="install-module"></a>Install-Module
+<a id="install-module" class="xliff"></a>
+# Install-Module
 
 將 PowerShell 模組從線上存放庫安裝至本機電腦。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Install-Module Cmdlet 會從線上組件庫下載一或多個模組，並在本機電腦上驗證它們，然後將它們安裝至指定的安裝範圍。
 
@@ -33,7 +32,8 @@ Install-Module Cmdlet 會從線上組件庫取得符合所指定準則的一或�
 - -Force 會重新安裝已安裝的模組
 - RequiredVersion 會在 PowerShell 5.0 版或更新版本上將 SxS 中的指定版本安裝為現有版本 。
 
-### <a name="scope"></a>領域
+<a id="scope" class="xliff"></a>
+### 領域
 指定模組的安裝範圍。 此參數接受的值包括：AllUsers 和 CurrentUser。
 
 預設安裝範圍是 AllUsers。
@@ -42,7 +42,8 @@ AllUsers 範圍會將模組安裝至電腦之所有使用者可存取的位置�
 
 CurrentUser 範圍只會將模組安裝至 "$home\Documents\WindowsPowerShell\Modules"，讓模組僅可供目前使用者使用。
 
-## <a name="notes"></a>附註
+<a id="notes" class="xliff"></a>
+## 附註
 
 這個 Cmdlet 會在 Windows PowerShell 3.0 或更新版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。
 
@@ -59,16 +60,19 @@ CurrentUser 範圍只會將模組安裝至 "$home\Documents\WindowsPowerShell\Mo
 為了協助避免執行包含惡意程式碼的模組，安裝不會自動匯入已安裝的模組。 安全性最佳做法是在第一次執行模組中的任何 Cmdlet 或函數之前評估模組程式碼。
 
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 ```powershell
 
@@ -109,7 +113,8 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a>管線作業中的 Install-Module Cmdlet
+<a id="install-module-cmdlet-in-pipeline-operations" class="xliff"></a>
+## 管線作業中的 Install-Module Cmdlet
 
 ```powershell
 
@@ -136,11 +141,13 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 或更新版本的並存版本支援
+<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
+## PowerShell 5.0 或更新版本的並存版本支援
 
 PowerShellGet 支援在 Windows PowerShell 5.0 或更新版本執行之 Install-Module、Update-Module 和 Publish-Module Cmdlet 中的並存 (SxS) 模組版本支援。
 
-### <a name="install-module-examples"></a>Install-Module 範例
+<a id="install-module-examples" class="xliff"></a>
+### Install-Module 範例
 
 ```powershell
 # Install a version of the module
@@ -172,7 +179,8 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a>安裝具有其相依性的模組
+<a id="install-module-with-its-dependencies" class="xliff"></a>
+## 安裝具有其相依性的模組
 
 ```powershell
 
@@ -266,7 +274,8 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a>錯誤狀況
+<a id="error-scenarios" class="xliff"></a>
+## 錯誤狀況
 
 ```powershell
 

@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_update scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: 7e71e2cbd5ce5bad5899e40f077bf16050dcd763
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Update-ScriptFileInfo
+ms.openlocfilehash: 3af12d2754b7b3c94ac63db8ca6a564c924a2bde
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="update-scriptfileinfo"></a>Update-ScriptFileInfo
+<a id="update-scriptfileinfo" class="xliff"></a>
+# Update-ScriptFileInfo
 
 Update-ScriptFileInfo Cmdlet 可讓您更新現有的指令碼檔案中繼資料。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Update-ScriptFileInfo Cmdlet 會更新指令碼的資訊。
 - 只有在使用 New-ScriptFileInfo Cmdlet 建立指令檔或指令檔具有有效 PSScriptInfo 註解時，Update-ScriptFileInfo Cmdlet 才會更新其中繼資料。
@@ -25,16 +24,19 @@ Update-ScriptFileInfo Cmdlet 會更新指令碼的資訊。
 - 如果指定 –Force，請嘗試將中繼資料新增至未使用 New-ScriptFileInfo Cmdlet 所建立的現有指令檔。
 - 如果 Test-ScriptFileInfo 因剖析錯誤而失敗，則在現有檔案前面加上指令碼中繼資料之後，將會擲回指出下列類似內容的錯誤：「無法將中繼資料新增至現有檔案，您可以使用 new-scriptfileinfo Cmdlet 將中繼資料新增至未使用 New-ScriptFileInfo Cmdlet 所建立的現有指令檔」。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name Update-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619793)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 ```powershell
 # Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -48,7 +50,8 @@ Version Name Author Description
 ```
 
 
-### <a name="adding-the-script-metadata-to-the-existing-script-file"></a>將指令碼中繼資料新增至現有指令檔
+<a id="adding-the-script-metadata-to-the-existing-script-file" class="xliff"></a>
+### 將指令碼中繼資料新增至現有指令檔
 
 ```powershell
 PS C:\WINDOWS\system32> New-ScriptFileInfo -Description "Script file description." -PassThru

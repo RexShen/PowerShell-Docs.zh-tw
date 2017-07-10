@@ -1,23 +1,23 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
 title: "WMF 5.1 的 PowerShell 引擎改善"
-ms.date: 2016-07-13
-keywords: "PowerShell、DSC、WMF"
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: c8ad4ac8f3c7bf705114edc06c1b85846336dfff
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 6c8000ccfc59ab46de95dc4f67161e12a5a41199
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-#<a name="powershell-engine-improvements"></a>PowerShell 引擎改善
+<a id="powershell-engine-improvements" class="xliff"></a>
+#PowerShell 引擎改善
 
 WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 
 
-## <a name="performance"></a>效能 ##
+<a id="performance" class="xliff"></a>
+## 效能 ##
 
 某些重要區域的效能已改善︰
 
@@ -40,3 +40,4 @@ WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 
 另一個明顯的變更，是 PowerShell 如何快取匯出的命令和安裝在系統上的模組其他資訊。 以往，此快取儲存於 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 目錄。 在 WMF 5.1，快取是單一的 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache` 檔案。
 如需詳細資料，請參閱[模組分析快取](scenarios-features.md#module-analysis-cache)。
+

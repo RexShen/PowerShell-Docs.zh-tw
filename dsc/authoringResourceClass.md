@@ -1,17 +1,17 @@
 ---
-title: "使用 PowerShell 類別撰寫自訂的 DSC 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
-ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "使用 PowerShell 類別撰寫自訂的 DSC 資源"
+ms.openlocfilehash: 6e482f45c7d09898d46de20f43dcf16ecf3da7da
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
+<a id="writing-a-custom-dsc-resource-with-powershell-classes" class="xliff"></a>
+# 使用 PowerShell 類別撰寫自訂的 DSC 資源
 
 > 適用於：Windows PowerShell Windows 5.0
 
@@ -25,7 +25,8 @@ translationtype: HT
 
 >**注意：**以類別為基礎的資源不支援泛型集合。
 
-## <a name="folder-structure-for-a-class-resource"></a>類別資源的資料夾結構
+<a id="folder-structure-for-a-class-resource" class="xliff"></a>
+## 類別資源的資料夾結構
 
 若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。 此類別在 **MyDscResource.psm1** 中定義，而模組資訊清單則在 **MyDscResource.psd1** 中定義。
 
@@ -36,7 +37,8 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## <a name="create-the-class"></a>建立類別
+<a id="create-the-class" class="xliff"></a>
+## 建立類別
 
 您要使用類別關鍵字來建立 PowerShell 類別。 若要明確指出類別是 DSC 資源，請使用 **DscResource()** 屬性。 類別名稱是 DSC 資源的名稱。
 
@@ -46,7 +48,8 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a>宣告屬性
+<a id="declare-properties" class="xliff"></a>
+### 宣告屬性
 
 DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性，如下所示。
 
@@ -81,7 +84,8 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a>實作方法
+<a id="implementing-the-methods" class="xliff"></a>
+### 實作方法
 
 **Get()**、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
 
@@ -218,7 +222,8 @@ enum Ensure
     }
 ```
 
-### <a name="the-complete-file"></a>完整的檔案
+<a id="the-complete-file" class="xliff"></a>
+### 完整的檔案
 完整的類別檔案如下。
 
 ```powershell
@@ -417,7 +422,8 @@ class FileResource
 ```
 
 
-## <a name="create-a-manifest"></a>建立資訊清單
+<a id="create-a-manifest" class="xliff"></a>
+## 建立資訊清單
 
 若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 我們的資訊清單看起來像這樣︰
 
@@ -455,7 +461,8 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## <a name="test-the-resource"></a>測試資源
+<a id="test-the-resource" class="xliff"></a>
+## 測試資源
 
 如前文所述將類別和資訊清單檔儲存在資料夾結構中後，您就可以建立使用新資源的設定。 如需如何執行 DSC 設定的資訊，請參閱[施行設定](enactingConfigurations.md)。 下列設定會檢查 `c:\test\test.txt` 的檔案是否存在，如果不存在，會從 `c:\test.txt` 複製檔案 (您應該先建立 `c:\test.txt` 再執行設定)。
 
@@ -474,7 +481,49 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## <a name="see-also"></a>另請參閱
-### <a name="concepts"></a>概念
+<a id="supporting-psdscrunascredential" class="xliff"></a>
+## 支援 PsDscRunAsCredential
+
+>**注意：**支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
+
+您可以在 [DSC 設定](configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
+如需詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
+
+<a id="require-or-disallow-psdscrunascredential-for-your-resource" class="xliff"></a>
+### 針對您的資源要求使用或不允許使用 PsDscRunAsCredential
+
+**DscResource()** 屬性可接受選擇性的參數 **RunAsCredential**。
+此參數可接受下列三個值其中之一：
+
+- `Optional`：對呼叫此資源的設定來說，可以選擇是否使用 **PsDscRunAsCredential**。 這是預設值。
+- `Mandatory`：對呼叫此資源的所有設定來說，必須使用 **PsDscRunAsCredential**。
+- `NotSupported`：呼叫此資源的設定無法使用 **PsDscRunAsCredential**。
+- `Default`：與 `Optional` 相同。
+
+例如，使用下列屬性可以指定您的自訂資源不支援使用 **PsDscRunAsCredential**：
+
+```powershell
+[DscResource(RunAsCredential=NotSupported)]
+class FileResource {
+}
+```
+
+<a id="access-the-user-context" class="xliff"></a>
+### 存取使用者內容
+
+若要從自訂資源內存取使用者內容，您可以使用自動變數 `$global:PsDscContext`。
+
+例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $global:PsDscContext.RunAsUser";
+}
+```
+
+<a id="see-also" class="xliff"></a>
+## 另請參閱
+<a id="concepts" class="xliff"></a>
+### 概念
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 

@@ -1,17 +1,17 @@
 ---
-title: "撰寫單一執行個體 DSC 資源 (最佳做法)"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "撰寫單一執行個體 DSC 資源 (最佳做法)"
+ms.openlocfilehash: fe7c50c39ba08e290076ea7a058372ce57898325
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>撰寫單一執行個體 DSC 資源 (最佳做法)
+<a id="writing-a-single-instance-dsc-resource-best-practice" class="xliff"></a>
+# 撰寫單一執行個體 DSC 資源 (最佳做法)
 
 >**注意︰**本主題所描述的最佳做法用於定義設定中僅允許單一執行個體的 DSC 資源。 目前，沒有任何內建 DSC 功能可以執行這項作業。 這在未來可能會變更。
 

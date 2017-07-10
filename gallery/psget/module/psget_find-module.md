@@ -1,22 +1,21 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find module
-ms.technology: powershell
-ms.openlocfilehash: b6fe3ffcbb366ee237acf0304ec4804b93e2b8ad
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Find-Module
+ms.openlocfilehash: 5c878a04d186f7f5970fba9e7f3cdb480cef21f6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-module"></a>Find-Module
+<a id="find-module" class="xliff"></a>
+# Find-Module
 尋找來自線上組件庫且符合所指定準則的模組。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 Find-Module 會探索已註冊存放庫中符合所指定準則的模組。
 針對每個找到的模組，Find-Module 會傳回可選擇性地傳送至 Install-Module 以安裝模組的 PSRepositoryItemInfo 物件。
 
@@ -30,16 +29,19 @@ Find-Module 會探索已註冊存放庫中符合所指定準則的模組。
 - Find-Module 可以使用 -Filter 參數篩選存放庫特定的搜尋語言。
 - Find-Module 可以篩選所有或部分已註冊存放庫中的模組。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 ```powershell
 # Find a specific module
 Find-Module Azure

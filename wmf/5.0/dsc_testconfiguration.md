@@ -1,4 +1,16 @@
-# <a name="test-dscconfiguration-cmdlet-supports-reference-configurations"></a>Test-DscConfiguration Cmdlet 支援參考設定
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 2d629d98b59c455011f4a5d955ef666218ae2f3f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="test-dscconfiguration-cmdlet-supports-reference-configurations" class="xliff"></a>
+# Test-DscConfiguration Cmdlet 支援參考設定
 
 Test-DscConfiguration Cmdlet 已更新，允許進行一個或多個目標節點所需設定狀態的測試 (藉由比較指定的參考設定文件來完成測試)。
 
@@ -35,3 +47,4 @@ Test-DscConfiguration   -ReferenceConfiguration <string>
                         [-AsJob] 
                         [<CommonParameters>]
 ```
+

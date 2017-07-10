@@ -1,17 +1,17 @@
 ---
-title: "DSC WindowsOptionalFeatureSet 資源"
-ms.date: 2016-05-24
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 1fab04dfcd4ce927bbe526b93c826cf3749a42a5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC WindowsOptionalFeatureSet 資源"
+ms.openlocfilehash: 3bf6a993d0ec9ce71c1e9222ddaa3bb429accb15
+ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/26/2017
 ---
-# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet 資源
+<a id="dsc-windowsoptionalfeatureset-resource" class="xliff"></a>
+# DSC WindowsOptionalFeatureSet 資源
 
 > 適用於：Windows PowerShell 5.0
 
@@ -19,13 +19,14 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsOptionalFeatureSet** �
 
 當您想要將多個 Windows 選用功能設定成相同的狀態，請使用此資源。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string[]]
-    [ Ensure = [string] { Absent | Present }  ]
+    [ Ensure = [string] { Enable | Disable }  ]
     [ Source = [string] ] 
     [ RemoveFilesOnDisable = [bool] ]  
     [ LogPath = [string] ]
@@ -36,12 +37,13 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性  |  描述   | 
 |---|---| 
 | 名稱| 表示您想要確保啟用或停用的功能名稱。| 
-| Ensure| 指定是否啟用功能。 若要確保啟用功能，請將這個屬性設為 "Present"。若要確保停用功能，請將屬性設為 "Absent"。|
+| Ensure| 指定是否啟用功能。 若要確保將功能啟用，請將此屬性設定為 "Enable"。若要確保將功能停用，請將此屬性設定為 "Disable"。|
 | 來源| 未實作。|
 | NoWindowsUpdateCheck| 指定在搜尋來源檔案以啟用功能時，DISM 是否連絡 Windows Update (WU)。 如果是 $true，則 DISM 不連絡 WU。|
 | RemoveFilesOnDisable| 停用時 (亦即 **Ensure** 設為 "Absent")，設為 **$true** 會移除所有與這些功能相關聯的檔案。|

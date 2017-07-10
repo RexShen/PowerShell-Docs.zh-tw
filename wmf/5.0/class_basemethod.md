@@ -1,4 +1,16 @@
-# <a name="call-base-class-method"></a>呼叫基底類別方法
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 28da6d12d3f7a59777425e1cc4531a609a793ddb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="call-base-class-method" class="xliff"></a>
+# 呼叫基底類別方法
 
 您可以覆寫子類別中現有的方法。 若要這樣做，請使用相同的名稱和簽章宣告方法︰
 
@@ -46,3 +58,4 @@ $list = [MyIntList]::new()
 $list.Add(100)
 $list[0] # return 200
 ```
+

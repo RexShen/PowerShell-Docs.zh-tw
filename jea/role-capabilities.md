@@ -1,18 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "JEA 角色功能"
-ms.technology: powershell
-ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="jea-role-capabilities"></a>JEA 角色功能
+<a id="jea-role-capabilities" class="xliff"></a>
+# JEA 角色功能
 
 > 適用對象：Windows PowerShell 5.0
 
@@ -21,7 +20,8 @@ translationtype: HT
 
 本主題說明如何建立 JEA 使用者的 PowerShell 角色功能檔案。
 
-## <a name="determine-which-commands-to-allow"></a>決定允許哪些命令
+<a id="determine-which-commands-to-allow" class="xliff"></a>
+## 決定允許哪些命令
 
 建立角色功能檔案時的第一步是考慮被指派該角色的使用者將需要存取什麼。
 這項需求收集程序可能需要一段時間，但這是非常重要的程序。
@@ -41,14 +41,16 @@ translationtype: HT
 以下是一些命令範例，如果允許其為未受限制的狀態，將可能惡意地使用它們。
 請注意，這不是詳盡的清單，應該僅作為警告的起點。
 
-### <a name="examples-of-potentially-dangerous-commands"></a>有潛在危險的命令範例
+<a id="examples-of-potentially-dangerous-commands" class="xliff"></a>
+### 有潛在危險的命令範例
 
 風險 | 範例 | 相關的命令
 -----|---------|-----------------
 授與連線使用者系統管理員權限以略過 JEA | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`、`dsadd.exe`
 執行任意程式碼，例如惡意程式碼、入侵或自訂指令碼來略過防護 | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-## <a name="create-a-role-capability-file"></a>建立角色功能檔案
+<a id="create-a-role-capability-file" class="xliff"></a>
+## 建立角色功能檔案
 
 您可以使用 [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) Cmdlet 建立新的 PowerShell 角色功能檔案。
 
@@ -59,7 +61,8 @@ New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 所產生的角色功能檔案可以在文字編輯器中開啟並修改，以允許角色所需的命令。
 PowerShell 說明文件包含數個檔案設定方式的範例。
 
-### <a name="allowing-powershell-cmdlets-and-functions"></a>允許 PowerShell Cmdlet 和函式
+<a id="allowing-powershell-cmdlets-and-functions" class="xliff"></a>
+### 允許 PowerShell Cmdlet 和函式
 
 若要授權使用者執行 PowerShell Cmdlet 或函式、新增 Cmdlet 或函式名稱至 VisbibleCmdlets 或 VisibleFunctions 欄位。
 如果您不確定命令是 Cmdlet 或函式，可以執行 `Get-Command <name>` 並檢查輸出中的 "CommandType" 屬性。
@@ -115,7 +118,8 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 
 如需 ValidatePattern 的詳細資訊，請參閱[這篇 *Hey, Scripting Guy!* 文章](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 規則運算式](https://technet.microsoft.com/en-us/library/hh847880.aspx)參考內容。
 
-### <a name="allowing-external-commands-and-powershell-scripts"></a>允許外部命令及 PowerShell 指令碼
+<a id="allowing-external-commands-and-powershell-scripts" class="xliff"></a>
+### 允許外部命令及 PowerShell 指令碼
 
 若要允許使用者在 JEA 工作階段中執行可執行檔和 PowerShell 指令碼 (.ps1)，您必須在 VisibleExternalCommands 欄位中新增每個程式的完整路徑。
 
@@ -134,7 +138,8 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 當提供外部命令給使用者在 JEA 工作階段中使用時，請一律指定可執行檔的完整路徑，以確保不會改為執行放置在系統上別處、名稱類似 (且可能惡意) 的程式。
 
-### <a name="allowing-access-to-powershell-providers"></a>允許存取 PowerShell 提供者
+<a id="allowing-access-to-powershell-providers" class="xliff"></a>
+### 允許存取 PowerShell 提供者
 
 根據預設，在 JEA 工作階段中不能使用 PowerShell 提供者。
 
@@ -151,7 +156,8 @@ VisibleProviders = 'Registry'
 函式、Cmdlet 和 JEA 工作階段中可用的外部程式不受限於與 JEA 相同的條件約束 -- 它們預設可以存取任何提供者。
 另外也請考慮當需要在與 JEA 端點之間複製檔案時，使用[使用者磁碟機](session-configurations.md#user-drive)。
 
-### <a name="creating-custom-functions"></a>建立自訂函式
+<a id="creating-custom-functions" class="xliff"></a>
+### 建立自訂函式
 
 您可以在角色功能檔案中撰寫自訂函式，簡化一般使用者的複雜工作。
 當您需要 Cmdlet 參數值的進階驗證邏輯時，自訂函式也十分有用。
@@ -189,7 +195,8 @@ JEA 工作階段中的任何受限制 Cmdlet 從函式叫用時會展現相同�
 如果您要撰寫大量自訂函式，將它們放在 [PowerShell 指令碼模組](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)可能會比較輕鬆。
 接著您可以使用 VisibleFunctions 欄位將那些函式設為在 JEA 工作階段中可見，就像是使用內建和協力廠商模組一樣。
 
-## <a name="place-role-capabilities-in-a-module"></a>將角色功能放置在模組中
+<a id="place-role-capabilities-in-a-module" class="xliff"></a>
+## 將角色功能放置在模組中
 
 為了讓 PowerShell 尋找角色功能檔案，它必須儲存在 PowerShell 模組的 "RoleCapabilities" 資料夾中。
 模組可以儲存在 `$env:PSModulePath` 環境變數中包含的任何資料夾中，但您不應該將它放在 System32 資料夾中 (保留給內建模組)，或是不受信任的連線使用者可以修改其中檔案的資料夾。
@@ -212,7 +219,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 如需 PowerShell 模組、模組資訊清單和 PSModulePath 環境變數的詳細資訊，請參閱[了解 PowerShell 模組](https://msdn.microsoft.com/en-us/library/dd878324.aspx)。
 
-## <a name="updating-role-capabilities"></a>更新角色功能
+<a id="updating-role-capabilities" class="xliff"></a>
+## 更新角色功能
 
 
 您只要儲存對角色功能檔案的變更，即可隨時更新角色功能檔案。
@@ -225,7 +233,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 針對想要鎖定角色功能存取權的系統管理員，請確定本機系統對於角色功能檔案和包含的模組具有讀取存取權。
 
-## <a name="how-role-capabilities-are-merged"></a>如何合併角色功能
+<a id="how-role-capabilities-are-merged" class="xliff"></a>
+## 如何合併角色功能
 
 可以根據[工作階段設定檔](session-configurations.md)中的角色對應，在使用者進入 JEA 工作階段時授與使用者對多個角色功能的存取權。
 發生這種情況時，JEA 會嘗試授與使用者任何角色所允許的*最寬鬆*的命令集。
@@ -279,6 +288,8 @@ JEA 使用者將可以使用一個角色功能中的任何命令、別名、提�
 例如，如果一個角色允許 `Remove-Item` Cmdlet，另一個允許 `FileSystem` 提供者，便會有 JEA 使用者刪除您電腦上任意檔案的風險。
 如需識別使用者有效權限的詳細資訊，請參閱[稽核 JEA 主題](audit-and-report.md)。
 
-## <a name="next-steps"></a>接下來的步驟
+<a id="next-steps" class="xliff"></a>
+## 接下來的步驟
 
 - [建立工作階段設定檔](session-configurations.md)
+

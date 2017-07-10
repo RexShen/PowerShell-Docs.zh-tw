@@ -1,4 +1,16 @@
-# <a name="register-a-powershell-repository"></a>註冊 PowerShell 存放庫
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 81ce13a082ad1d7a13ba5fd76a7595b55708f54e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="register-a-powershell-repository" class="xliff"></a>
+# 註冊 PowerShell 存放庫
 您可以設定 PowerShellGet 操作內部存放庫。 做法是使用新增下列項目︰
 - Register-PSRepository：為目前的使用者註冊存放庫。
 - Unregister-PSRepository：移除目前使用者已註冊的存放庫。
@@ -31,3 +43,4 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
+

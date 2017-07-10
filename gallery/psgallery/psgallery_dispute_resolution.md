@@ -1,23 +1,22 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,資源庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_dispute_resolution
-ms.technology: powershell
-ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dispute-resolution"></a>爭端解決
+<a id="dispute-resolution" class="xliff"></a>
+# 爭端解決
 
 本文件為建議社群成員使用的爭端解決程序，以協助解決與其他 PowerShell 資源庫發行者的爭端。
 
-## <a name="process"></a>處理程序
+<a id="process" class="xliff"></a>
+## 處理程序
 
 1. 使用項目詳細資料頁面上的 [連絡擁有者] 連結，連絡有爭端的項目擁有者。
 以和善、適當的口吻說明您的問題。
@@ -26,7 +25,8 @@ translationtype: HT
 PowerShellGallery.com 支援小組會參與其中，並嘗試解決此問題。
 
 
-## <a name="prohibited-use"></a>禁止用途
+<a id="prohibited-use" class="xliff"></a>
+## 禁止用途
 
 公用 PowerShell 資源庫不允許下列事項，並會在未經討論的情況下立即移除。  項目擁有者會在項目遭移除時收到通知。
 

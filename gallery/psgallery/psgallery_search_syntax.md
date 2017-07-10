@@ -1,36 +1,37 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_search_syntax
-ms.technology: powershell
-ms.openlocfilehash: 36b551cd6576b1d2a9ca696f2bfdab570ea2523f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="gallery-search-syntax"></a>組件庫搜尋語法
+<a id="gallery-search-syntax" class="xliff"></a>
+# 組件庫搜尋語法
 
 PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵字運算式來縮小搜尋結果範圍。
 
-## <a name="search-by-keywords"></a>依關鍵字搜尋
+<a id="search-by-keywords" class="xliff"></a>
+## 依關鍵字搜尋
 
     dsc azure sql
 
 搜尋會盡全力尋找包含所有 3 個關鍵字的相關文件，並傳回相符文件。
 
-## <a name="search-using-phrases-and-keywords"></a>使用片語和關鍵字搜尋
+<a id="search-using-phrases-and-keywords" class="xliff"></a>
+## 使用片語和關鍵字搜尋
 
     "azure sql" deployment
 
 輸入加上引號 ("") 的片語，會變更搜尋以尋找特定片語，而非個別關鍵字。
 相符文件通常應該會包含精確片語 "azure sql" (包含大寫變化，例如"Azure SQL")，通常也會包含 'deployment' 這個字。
 
-## <a name="filtering-on-fields"></a>根據欄位進行篩選
+<a id="filtering-on-fields" class="xliff"></a>
+## 根據欄位進行篩選
 
 您可以搜尋特定項目識別碼 (或者 'Id' 或 'id')，或在搜尋詞彙前面加上欄位名稱來搜尋特定其他欄位。
 
@@ -38,7 +39,8 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
 
 [識別碼與標題的差異為何？ 識別碼是您在主控台中使用的名稱。 標題是搜尋結果中項目頁面頂端所顯示的內容。]
 
-## <a name="examples"></a>範例
+<a id="examples" class="xliff"></a>
+## 範例
 
     ID:"PSReadline"
     id:"AzureRM.Profile"

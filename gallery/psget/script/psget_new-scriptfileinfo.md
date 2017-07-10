@@ -1,45 +1,49 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_new scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: d6b8790c3dd7ce366d608ff7bfd083ca12b201fd
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: New-ScriptFileInfo
+ms.openlocfilehash: 9aed0e16f2dec3681ca4b58595aae8d4972a3808
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
+<a id="new-scriptfileinfo" class="xliff"></a>
+# New-ScriptFileInfo
 
 建立含有中繼資料的指令檔。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 New-ScriptFileInfo Cmdlet 會建立 PowerShell 指令檔 (包括指令碼的中繼資料)。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
-### <a name="passthru-parameter"></a>PassThru 參數
+<a id="passthru-parameter" class="xliff"></a>
+### PassThru 參數
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-### <a name="new-scriptfileinfo-cmdlet"></a>New-ScriptFileInfo Cmdlet
+<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
+### New-ScriptFileInfo Cmdlet
 New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。 
 
 ```powershell

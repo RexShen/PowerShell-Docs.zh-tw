@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "為 Windows PowerShell Web 存取中的存取問題進行疑難排解"
-ms.technology: powershell
-ms.openlocfilehash: 26de977d2c85e26f445eecb1278e6a7278e7dfd6
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
+<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
+#  疑難排解 Windows PowerShell Web 存取中的存取問題
 
 更新日期︰2013 年 6 月 24 日
 
@@ -79,7 +76,7 @@ translationtype: HT
 <td><p>如果在 Internet Explorer 啟用增強式安全性設定 (IE ESC)，您可以新增 Windows PowerShell Web 存取網站到受信任站台清單中，或者停用 IE ESC。 您可以在 [伺服器管理員] 中 [本機伺服器]<strong></strong> 頁面上的 [屬性]<strong></strong> 磚中停用 IE ESC。</p></td>
 </tr>
 <tr class="even">
-<td><p>當閘道伺服器為目的電腦且同時位於工作群組時嘗試連線，會顯示下列錯誤訊息：<strong>授權失敗。 請確認您已獲授權可連線至目的電腦。</strong></p></td>
+<td><p>當閘道伺服器為目的電腦且同時位於工作群組時嘗試連線，會顯示下列錯誤訊息：<strong>授權失敗。請確認您已獲授權而可連線至目的電腦。</strong></p></td>
 <td><p>當閘道伺服器也是目的伺服器且位於工作群組時，請指定使用者名稱、電腦名稱，以及下表顯示的使用者群組名稱。 請勿單獨使用點 (.) 來代表電腦名稱。</p>
 <div>
 <table>
@@ -121,7 +118,7 @@ translationtype: HT
 <ul>
 <li><p><em>Server_name</em>\<em>user_name</em></p></li>
 <li><p>Localhost\<em>user_name</em></p></li>
-<li><p>.\<em>使用者名稱</em></p></li>
+<li><p>.\<em>user_name</em></p></li>
 </ul></td>
 </tr>
 <tr class="odd">
@@ -135,8 +132,7 @@ translationtype: HT
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
-另請參閱</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------

@@ -1,37 +1,39 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_test scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
+<a id="test-scriptfileinfo" class="xliff"></a>
+# Test-ScriptFileInfo
 
 驗證指令檔的中繼資料註解區塊。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Test-ScriptFileInfo Cmdlet 會驗證將使用 Publish-Script Cmdlet 發行之指令碼開頭的註解區塊。
 如果中繼資料註解區塊發生錯誤，這個 Cmdlet 會傳回錯誤位置或其更正方式的資訊。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"

@@ -1,4 +1,16 @@
-# <a name="script-tracing-and-logging"></a>指令碼追蹤和記錄
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="script-tracing-and-logging" class="xliff"></a>
+# 指令碼追蹤和記錄
 
 雖然 Windows PowerShell 已有 **LogPipelineExecutionDetails** 群組原則設定會記錄 Cmdlet 的引動過程，但 PowerShell 的指令碼語言仍有許多功能，您可能想要記錄和/或稽核。 新的詳細指令碼追蹤功能可讓您啟用在系統上使用的 Windows PowerShell 指令碼詳細追蹤和分析。 啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 ETW 事件記錄檔中：**Microsoft-Windows-PowerShell/Operational**。 如果某個指令碼區塊建立了另一個指令碼區塊 (例如，字串上稱之為 Invoke-Expression Cmdlet 的指令碼)，也會記錄產生的指令碼區塊。
 
@@ -96,3 +108,4 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 如同具有有限保留緩衝區 (亦即 ETW 記錄檔) 的所有記錄系統，針對這個基礎結構的一種攻擊是濫發假性的事件記錄檔以隱藏較早的辨識項。 若要防範這種攻擊，請確定您已設定某種形式的事件記錄檔集合 (亦即 Windows 事件轉送，[利用 Windows 事件記錄檔監視找出敵人](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf))，儘快將事件記錄檔移出電腦。
+

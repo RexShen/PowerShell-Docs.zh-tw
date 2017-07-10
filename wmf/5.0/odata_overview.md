@@ -1,5 +1,18 @@
-# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>根據 OData 端點產生 PowerShell Cmdlet
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>根據 OData 端點產生 Windows PowerShell Cmdlet
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 11891587f59dc8a38e4ce267018160f7f9a28178
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="generate-powershell-cmdlets-based-on-odata-endpoint" class="xliff"></a>
+# 根據 OData 端點產生 PowerShell Cmdlet
+<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint" class="xliff"></a>
+根據 OData 端點產生 Windows PowerShell Cmdlet
 --------------------------------------------------------------
 
 **Export-ODataEndpointProxy** 是 Cmdlet，它會根據指定的 OData 端點所公開的功能產生一組 Windows PowerShell Cmdlet。
@@ -40,7 +53,8 @@ ipmo 'C:\Users\user\Generated.psd1'
 -   關聯
 -   傳遞資料流
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>根據具有 ODataUtils 的 OData 端點產生 Windows PowerShell Cmdlet
+<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils" class="xliff"></a>
+根據具有 ODataUtils 的 OData 端點產生 Windows PowerShell Cmdlet
 ------------------------------------------------------------------------------
 ODataUtils 模組可以從支援 OData 的 REST 端點產生 Windows PowerShell Cmdlet。 下列的累加增強功能位在 Microsoft.PowerShell.ODataUtils Windows PowerShell 模組中。
 -   從伺服器端端點到用戶端的通道其他資訊。
@@ -98,3 +112,4 @@ Export-ODataEndpointProxy Cmdlet 和它產生的 Proxy Cmdlet，現在支援標�
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
+

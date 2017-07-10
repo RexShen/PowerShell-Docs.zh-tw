@@ -1,23 +1,24 @@
 ---
-title: "DSC WindowsProcess 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC WindowsProcess 資源"
+ms.openlocfilehash: c34d3cb1d4d9b899b45fba7b4b148a7c977f5365
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
+<a id="dsc-windowsprocess-resource" class="xliff"></a>
+# DSC WindowsProcess 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsProcess** 資源提供了在目標節點設定程序的機制。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -34,7 +35,8 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 引數| 表示要保持原狀傳遞至處理程序的引數字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。| 

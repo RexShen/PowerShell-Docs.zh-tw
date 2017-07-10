@@ -1,30 +1,30 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: "傳訊給項目擁有者"
-ms.technology: powershell
-ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="managing-item-owners"></a>傳訊給項目擁有者
+<a id="managing-item-owners" class="xliff"></a>
+# 傳訊給項目擁有者
 
 PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人定義。
 有時候，這個中繼資料必須在初步發行項目時另外受到管理，這表示擁有者中繼資料必須可變動，項目本身則不可變動。
 
 所有項目擁有者均為同儕。 這表示任何項目擁有者均可發行新版本的項目。 而且任何項目擁有者也都可以移除其他任何項目擁有者。 沒有任何擁有者的權限高於其他擁有者。  
 
-## <a name="setting-an-items-initial-owner"></a>設定項目的初始擁有者 
+<a id="setting-an-items-initial-owner" class="xliff"></a>
+## 設定項目的初始擁有者 
 
 當新的項目發行到 PowerShell 資源庫時，會由發行該項目的使用者定義初始擁有者。 這取決於 Publish-Module cmdlet 中使用了誰的 API 金鑰。
 
-## <a name="adding-owners"></a>新增擁有者
+<a id="adding-owners" class="xliff"></a>
+## 新增擁有者
 
 一旦將項目發行到 PowerShell 資源庫，就能輕易邀請其他使用者成為項目擁有者。
 
@@ -43,7 +43,8 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 請注意，"Authors" 中繼資料單純為自由格式的文字，只有 "Owners" 受到控制。
 
 
-## <a name="removing-owners"></a>移除擁有者
+<a id="removing-owners" class="xliff"></a>
+## 移除擁有者
 當項目有多個擁有者，而需要移除其中一個時，程序很簡單：
 
 1. 使用項目目前擁有者的帳戶[登入](https://powershellgallery.com/users/account/LogOn) PowerShell 資源庫；
@@ -53,7 +54,8 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 
 
 
-## <a name="transferring-item-ownership"></a>移轉項目擁有權
+<a id="transferring-item-ownership" class="xliff"></a>
+## 移轉項目擁有權
 我們有時候會收到將項目擁有權從一名使用者移轉到另一名的支援要求，但您幾乎可以隨時自行完成。
 只要結合上述兩項功能，就能將擁有權從一位使用者移轉給另一位。
 
@@ -66,7 +68,8 @@ PowerShell 資源庫中的項目擁有權由將該項目發行到資源庫的人
 * 意外使用錯誤帳戶發行了項目
 
 
-## <a name="orphaned-items"></a>孤立的項目
+<a id="orphaned-items" class="xliff"></a>
+## 孤立的項目
 發生了最後一個案例，但不常發生。
 項目已被孤立，而無法使用唯一的項目擁有者帳戶新增使用者。
 這裡有這個案例的一些範例：

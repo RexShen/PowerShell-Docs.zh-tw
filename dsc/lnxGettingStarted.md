@@ -1,21 +1,22 @@
 ---
-title: "開始使用 Linux 預期狀態設定 (DSC)"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "開始使用 Linux 預期狀態設定 (DSC)"
+ms.openlocfilehash: 2d4276a0ffcb4fd7b872cbc4771f86cb850c0b83
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
+<a id="get-started-with-desired-state-configuration-dsc-for-linux" class="xliff"></a>
+# 開始使用 Linux 預期狀態設定 (DSC)
 
 本主題說明如何開始使用 Linux 的 PowerShell 預期狀態設定 (DSC)。 如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](overview.md)。
 
-## <a name="supported-linux-operation-system-versions"></a>支援的 Linux 作業系統版本
+<a id="supported-linux-operation-system-versions" class="xliff"></a>
+## 支援的 Linux 作業系統版本
 
 DSC for Linux 支援下列 Linux 作業系統版本。
 - CentOS 5、6 和 7 (x86/x64)
@@ -36,11 +37,13 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 | ctypes| Python CTypes 程式庫| 必須符合 Python 版本| 
 | libcurl| cURL http 用戶端程式庫| 7.15.1| 
 
-## <a name="installing-dsc-for-linux"></a>安裝 DSC for Linux
+<a id="installing-dsc-for-linux" class="xliff"></a>
+## 安裝 DSC for Linux
 
 您必須先安裝[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)，才能安裝 DSC for Linux。
 
-### <a name="installing-omi"></a>安裝 OMI
+<a id="installing-omi" class="xliff"></a>
+### 安裝 OMI
 
 Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1。 OMI 可以從開放式群組下載：[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)。
 
@@ -52,7 +55,8 @@ Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### <a name="installing-dsc"></a>安裝 DSC
+<a id="installing-dsc" class="xliff"></a>
+### 安裝 DSC
 
 您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 Linux 的 DSC。 
 
@@ -65,11 +69,13 @@ Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-## <a name="using-dsc-for-linux"></a>使用 DSC for Linux
+<a id="using-dsc-for-linux" class="xliff"></a>
+## 使用 DSC for Linux
 
 下列章節說明如何在 Linux 電腦上建立並執行 DSC 設定。
 
-### <a name="creating-a-configuration-mof-document"></a>建立設定 MOF 文件
+<a id="creating-a-configuration-mof-document" class="xliff"></a>
+### 建立設定 MOF 文件
 
 Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就像 Linux 電腦一樣。 下列步驟說明如何使用 Windows PowerShell 建立 Linux 電腦的設定文件。
 
@@ -105,7 +111,8 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
+<a id="push-the-configuration-to-the-linux-computer" class="xliff"></a>
+### 將設定推送至 Linux 電腦
 
 設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 用來建立 Linux 電腦的 CIMSession。
 
@@ -133,11 +140,13 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### <a name="distribute-the-configuration-with-a-pull-server"></a>以提取伺服器散發設定
+<a id="distribute-the-configuration-with-a-pull-server" class="xliff"></a>
+### 以提取伺服器散發設定
 
 可以用提取伺服器來散發設定給 Linux 電腦，就像 Windows 電腦一樣。 如需使用提取伺服器的指引，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](pullServer.md)。 如需使用提取伺服器與 Linux 電腦的其他資訊與限制，請參閱 Linux 的預期狀態設定版本資訊。
 
-### <a name="working-with-configurations-locally"></a>在本機使用設定
+<a id="working-with-configurations-locally" class="xliff"></a>
+### 在本機使用設定
 
 DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指令碼位於 `/opt/microsoft/dsc/Scripts` 並且包含下列項目：
 * GetDscConfiguration.py
@@ -176,7 +185,8 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>Linux 記錄檔的 PowerShell 預期狀態設定
+<a id="powershell-desired-state-configuration-for-linux-log-files" class="xliff"></a>
+## Linux 記錄檔的 PowerShell 預期狀態設定
 
 會對 DSC for Linux 訊息產生下列記錄檔。
 

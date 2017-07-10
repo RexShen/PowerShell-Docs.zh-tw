@@ -1,20 +1,21 @@
 ---
-title: "設定資料的認證選項"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "設定資料的認證選項"
+ms.openlocfilehash: 7fadce447c418b229a534e92d12bc2131365a37a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
+<a id="credentials-options-in-configuration-data" class="xliff"></a>
+# 設定資料的認證選項
 >適用於：Windows PowerShell 5.0
 
-## <a name="plain-text-passwords-and-domain-users"></a>純文字密碼和網域使用者
+<a id="plain-text-passwords-and-domain-users" class="xliff"></a>
+## 純文字密碼和網域使用者
 
 包含未加密認證的 DSC 設定會產生有關純文字密碼的錯誤訊息。
 DSC 也會在使用網域認證時產生警告。
@@ -124,7 +125,8 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a>處理 DSC 的認證
+<a id="handling-credentials-in-dsc" class="xliff"></a>
+## 處理 DSC 的認證
 
 DSC 設定資源預設執行為 `Local System`。
 不過，有些資源需要認證，例如當 `Package` 資源需要在特定使用者帳戶下安裝軟體時。
@@ -160,7 +162,8 @@ Group [String] #ResourceName
 
 如需 `PsDscRunAsCredential` 屬性的詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
 
-## <a name="example-the-group-resource-credential-property"></a>範例：Group 資源 Credential 屬性
+<a id="example-the-group-resource-credential-property" class="xliff"></a>
+## 範例：Group 資源 Credential 屬性
 
 DSC 在 `Local System` 下執行，所以它已有可變更本機使用者和群組的權限。
 如果新增成員是本機帳戶，就不需要認證。
@@ -170,7 +173,8 @@ Active Directory 不允許匿名查詢。
 `Group` 資源的 `Credential` 屬性是用來查詢 Active Directory 的網域帳戶。
 就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以*讀取* Active Directory 大部分的物件。
 
-## <a name="example-configuration"></a>設定範例
+<a id="example-configuration" class="xliff"></a>
+## 設定範例
 
 以下程式碼範例會使用 DSC 以網域使用者填入本機群組：
 
@@ -225,7 +229,8 @@ for node 'localhost'.
 1.  錯誤說明不建議純文字密碼
 2.  警告建議不要使用網域認證
 
-## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
+<a id="psdscallowplaintextpassword" class="xliff"></a>
+## PsDscAllowPlainTextPassword
 
 第一個錯誤訊息有文件的 URL。
 這個連結說明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 結構和憑證加密密碼。
@@ -270,7 +275,8 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **Microsoft 不建議您使用純文字密碼，以免造成嚴重的安全性風險。**
 
-## <a name="domain-credentials"></a>網域認證
+<a id="domain-credentials" class="xliff"></a>
+## 網域認證
 
 再次執行範例設定指令碼 (加密或不加密)，仍會產生警告，指出不建議使用網域帳戶進行認證。
 使用本機帳戶可降低暴露其他伺服器也可使用之網域認證的可能性。
@@ -280,7 +286,8 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 如果憑證的 `Username` 屬性中有 '\' 或 '@'，DSC 會將其視為網域帳戶。
 使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。
 
-## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
+<a id="psdscallowdomainuser" class="xliff"></a>
+## PSDscAllowDomainUser
 
 在上述的 DSC `Group` 資源範例中，查詢 Active Directory 網域*需要*網域帳戶。
 發生這種情況時，請將 `PSDscAllowDomainUser` 屬性加入 `ConfigurationData` 區塊中，如下所示：

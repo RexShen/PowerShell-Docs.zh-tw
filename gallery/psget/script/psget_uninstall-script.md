@@ -1,36 +1,38 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_uninstall script
-ms.technology: powershell
-ms.openlocfilehash: 9cc6ee62720bfca858e7f783753adabe8a53fb29
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Uninstall-Script
+ms.openlocfilehash: 7973524cf9268d629b5375f0726fe70164bdeddb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="uninstall-script"></a>Uninstall-Script
+<a id="uninstall-script" class="xliff"></a>
+# Uninstall-Script
 
 解除安裝使用 PowerShellGet 所安裝的指令檔。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Uninstall-Script Cmdlet 會解除安裝已從線上存放庫安裝的指定指令檔。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

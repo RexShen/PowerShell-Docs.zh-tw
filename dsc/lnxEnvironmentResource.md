@@ -1,21 +1,22 @@
 ---
-title: "DSC for Linux nxEnvironment 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 0a7ab24ff278defd7fc0a80f1dbd45bfa0e16427
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC for Linux nxEnvironment 資源"
+ms.openlocfilehash: 3d09c9642f35627e939460c9c13dfe48d14030c3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxenvironment-resource"></a>DSC for Linux nxEnvironment 資源
+<a id="dsc-for-linux-nxenvironment-resource" class="xliff"></a>
+# DSC for Linux nxEnvironment 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxEnvironment** 資源會提供在 Linux 節點上管理系統環境變數的機制。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 nxEnvironment <string> #ResourceName
@@ -29,7 +30,8 @@ nxEnvironment <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -39,12 +41,14 @@ nxEnvironment <string> #ResourceName
 | 路徑| 定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設為 **$true**，否則請設為 **$false**。 預設值為 **$false**。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="additional-information"></a>其他資訊
+<a id="additional-information" class="xliff"></a>
+## 其他資訊
 
 * 如果 **Path** 不存在，或設為 **$false**，環境變數會在 `/etc/environment` 中受到管理。 您的程式或指令碼可能需要設定為以 `/etc/environment` 檔為來源，以存取受管理的環境變數。
 * 如果 **Path** 設為 **$true**，則環境變數會在檔案 `/etc/profile.d/DSCenvironment.sh` 中受到管理。 如果不存在，則會建立這個檔案。 如果 **Ensure** 設定成 "Absent"，而 **Path** 設定成 **$true**，則現有的環境變數只會從 `/etc/profile.d/DSCenvironment.sh` 中移除，而不會從其他檔案中移除。
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下列範例示範如何使用 **nxEnvironment** 資源以確保 **TestEnvironmentVariable** 存在且具有值 "Test-Value"。 如果 **TestEnvironmentVariable** 不存在，就會加以建立。
 

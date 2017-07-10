@@ -1,4 +1,16 @@
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>從字串擷取和剖析結構化物件
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
+# 從字串擷取和剖析結構化物件
 本主題也將介紹 ConvertFrom-String Cmdlet 的一些額外功能︰
 
 -   預設情況下會移除範圍文字屬性， 您可以使用 IncludeExtent 參數將此屬性加入。
@@ -8,7 +20,8 @@
 -   新的 -UpdateTemplate 參數，可將學習演算法的結果儲存成範本檔案中的註解， 使得學習程序 (最慢的階段) 成為單次成本。 現在使用包含已編碼學習演算法的範本，幾乎可以瞬間執行 Convert-String。
 
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>從字串內容擷取和剖析結構化物件
+<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
+從字串內容擷取和剖析結構化物件
 ----------------------------------------------------------
 
 在與 [Microsoft Research](http://research.microsoft.com/) 合作之下，已新增 **ConvertFrom-String** Cmdlet。
@@ -17,8 +30,7 @@
 
 根據預設，分隔的剖析將輸入從空白字元位置分割，並將屬性名稱指派給產生的群組。 您可以自訂分隔符號︰
 
-> 1 \[C:\\temp\]
-> &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
+> 1 \[C:\\temp\] &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
 
 P1    P2
 --    --

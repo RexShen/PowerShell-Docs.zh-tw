@@ -1,4 +1,16 @@
-# <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>使用 PackageManagement 探索、安裝及清查軟體
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 419223884b521487064dbfe53770a94e894c6138
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="software-discovery-install-and-inventory-with-packagemanagement" class="xliff"></a>
+# 使用 PackageManagement 探索、安裝及清查軟體
 
 PackageManagement (也稱為 OneGet) 是一種從網路探索與安裝軟體封裝的新方法。 它是現有封裝管理員 (也稱為封裝提供者) 的管理員或多工器，可統一 Windows 封裝管理與單一的 Windows PowerShell 介面。 使用 PackageManagement 可以執行下列項目。
 
@@ -8,3 +20,4 @@ PackageManagement (也稱為 OneGet) 是一種從網路探索與安裝軟體封�
 -   順暢地安裝、解除安裝和清查一個或多個軟體存放庫中的封裝
 
 如需詳細資訊，請參閱 http://oneget.org/。
+

@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "Windows PowerShell Web 存取的授權規則與安全性功能"
-ms.technology: powershell
-ms.openlocfilehash: f2ed4355536ed92048dde66617d36d36958fd75f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
+<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
+# Windows PowerShell Web 存取的授權規則與安全性功能
 
 更新日期︰2013 年 6 月 24 日
 
@@ -27,7 +24,7 @@ Windows Server® 2012 R2 和 Windows Server® 2012 中的 Windows PowerShell® W
 
 安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題：[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx) (Windows PowerShell Web 存取 Cmdlet)。
 
-系統管理員可以為 Windows PowerShell Web 存取定義 0-*n* 個驗證規則。 預設的安全性是用來限制動作而不是允許動作；零驗證規則表示沒有任何使用者有權存取任何內容。
+系統管理員可以為「Windows PowerShell Web 存取」定義 0-*n* 個驗證規則。 預設的安全性是用來限制動作而不是允許動作；零驗證規則表示沒有任何使用者有權存取任何內容。
 
 Windows Server 2012 R2 中的 Add-PswaAuthorizationRule 和 Test-PswaAuthorizationRule 包含可讓您從遠端電腦或從作用中的 Windows PowerShell Web 存取工作階段，新增和測試 Windows PowerShell Web 存取授權規則的 Credential 參數。 如同其他具有 Credential 參數的 Windows PowerShell Cmdlet，您可以將 PSCredential 物件指定為此參數的值。 若要建立 PSCredential 物件且包含您要傳遞至遠端電腦的認證，請執行 [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) Cmdlet。
 
@@ -197,7 +194,8 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 </tbody>
 </table>
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+#### 新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -221,7 +219,8 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-#### <a name="to-remove-an-authorization-rule"></a>移除授權規則
+<a id="to-remove-an-authorization-rule" class="xliff"></a>
+#### 移除授權規則
 
 1.  如果尚未開啟 Windows PowerShell 工作階段，請參閱本節中[新增非限制性授權規則](#BKMK_arar)的步驟 1。
 

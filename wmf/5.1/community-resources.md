@@ -1,18 +1,17 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
 title: "社群資源"
-ms.date: 2016-05-16
-keywords: "PowerShell、DSC、WMF"
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 82e6539484aa11bb370f3011bb12ea51f9d55047
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 1a4b49f0773c7d54b6dbb504a9d44cae7e0ef924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="community-resources"></a>社群資源 #
+<a id="community-resources" class="xliff"></a>
+# 社群資源 #
 > 注意：本資訊尚屬初始版本，後續有可能變更。
 
 PowerShell 小組歡迎並鼓勵客戶提供產品的意見反應，並且支援多種方法，讓使用者與我們連絡。
@@ -32,5 +31,5 @@ PowerShell 小組管理了 [UserVoice 論壇](https://windowsserver.uservoice.co
 * [Powershell-Docs](https://github.com/PowerShell/powershell-docs)，其中會維護所有文件 (包括此內容)。 
 * [PowerShell](https://github.com/PowerShell/powershell) 是 PowerShell Core 的位置，它是未來版本的 PowerShell。 這是提出功能建議的位置，也可以提出針對 PowerShell Core 的問題。   
 * [PowerShellGet](https://github.com/PowerShell/powershellget) 存放庫是針對 PowerShellGet 模組和 Cmdlet。
-* [DSCResources](https://github.com/PowerShell/DscResources) 包含一組由 PowerShell 小組所維護的 PowerShell DSC 模組，並且發行至 DSC Resource Kit 中的 PowerShell Gallery。
+* [DSCResources](https://github.com/PowerShell/DscResources) 包含一組 DSC 模組，這組模組是由 PowerShell 小組所維護的，並已發行至「PowerShell 資源庫」的 DSC Resource Kit 中。
 

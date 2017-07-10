@@ -1,23 +1,24 @@
 ---
-title: "DSC 環境資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4a51b56091aea23568674cdc7d4d4128c78b239c
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC 環境資源"
+ms.openlocfilehash: 7c98798fa0e8fc865798ea30530e41ac87b2dadc
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-environment-resource"></a>DSC 環境資源
+<a id="dsc-environment-resource" class="xliff"></a>
+# DSC 環境資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的__環境__資源會提供管理系統環境變數的機制。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 ``` mof
 Environment [string] #ResourceName
 {
@@ -29,7 +30,8 @@ Environment [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -39,7 +41,8 @@ Environment [string] #ResourceName
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 | 值| 要指派給環境變數的值。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下例確保 __TestEnvironmentVariable__ 存在，且有值 __TestValue__。 如果不存在，就會建立它。
 

@@ -1,21 +1,22 @@
 ---
-title: "DSC for Linux nxScript 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4c575bbf0e0553e19e56bcc6edd605e36586cb94
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC for Linux nxScript 資源"
+ms.openlocfilehash: 381d8d214654641a34eeebcb54a81a25d61ee644
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxscript-resource"></a>DSC for Linux nxScript 資源
+<a id="dsc-for-linux-nxscript-resource" class="xliff"></a>
+# DSC for Linux nxScript 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxScript** 資源會提供一個機制，在 Linux 節點上執行 Linux 指令碼。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 nxScript <string> #ResourceName
@@ -30,7 +31,8 @@ nxScript <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -41,7 +43,8 @@ nxScript <string> #ResourceName
 | 群組| 要執行指令碼的群組。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 下列範例示範如何使用 **nxScript** 資源來執行其他設定管理。
 

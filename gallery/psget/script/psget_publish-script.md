@@ -1,37 +1,39 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_publish script
-ms.technology: powershell
-ms.openlocfilehash: 2619738ba76ed3b3c84d1a77771531ebd6955d6f
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
+title: Publish-Script
+ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="publish-script"></a>Publish-Script
+<a id="publish-script" class="xliff"></a>
+# Publish-Script
 
 Publish-Script Cmdlet 會將指定的指令碼發行至線上組件庫。
 
-## <a name="description"></a>描述
+<a id="description" class="xliff"></a>
+## 描述
 
 Publish-Script Cmdlet 可讓您發佈具有效中繼資料的指令碼檔案，例如版本、GUID、作者和描述等等。Publish-Script Cmdlet 上的 Force 切換參數會啟動載入 NuGet.exe，而不予提示。
 
-## <a name="cmdlet-syntax"></a>Cmdlet 語法
+<a id="cmdlet-syntax" class="xliff"></a>
+## Cmdlet 語法
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+## Cmdlet 線上說明參考資料
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a>範例命令
+<a id="example-commands" class="xliff"></a>
+## 範例命令
 
 ```powershell
 # Publish the really basic script file with required metadata

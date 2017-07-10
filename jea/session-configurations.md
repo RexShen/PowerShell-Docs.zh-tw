@@ -1,20 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-04-25
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "JEA 工作階段設定"
-ms.technology: powershell
-ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
+ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/22/2017
 ---
-# <a name="jea-session-configurations"></a>JEA 工作階段設定
+<a id="jea-session-configurations" class="xliff"></a>
+# JEA 工作階段設定
 
 > 適用對象：Windows PowerShell 5.0
 
@@ -24,7 +21,8 @@ JEA 端點透過以特定方式建立和登錄 PowerShell 工作階段設定檔�
 
 本主題描述如何建立 PowerShell 工作階段設定檔，並登錄 JEA 端點。
 
-## <a name="create-a-session-configuration-file"></a>建立工作階段設定檔
+<a id="create-a-session-configuration-file" class="xliff"></a>
+## 建立工作階段設定檔
 
 為了登錄 JEA 端點，您必須指定該端點應該如何設定。
 在這裡有許多選項要考慮，最重要的一項是誰應該可以存取 JEA 端點、將指派什麼角色給他們、JEA 將在幕後使用哪一個身分識別，以及 JEA 端點的名稱為何。
@@ -58,12 +56,14 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 您有想要為 JEA 工作階段設定的數個其他欄位。
 下列各節會介紹它們。
 
-### <a name="choose-the-jea-identity"></a>選擇 JEA 身分識別
+<a id="choose-the-jea-identity" class="xliff"></a>
+### 選擇 JEA 身分識別
 
 在幕後，JEA 執行連線使用者的命令時，需要一個可使用的身分識別 (帳戶) 。
 您決定 JEA 將在工作階段設定檔中使用哪一個身分識別。
 
-#### <a name="local-virtual-account"></a>本機虛擬帳戶
+<a id="local-virtual-account" class="xliff"></a>
+#### 本機虛擬帳戶
 
 如果此 JEA 端點支援的角色全都用來管理本機電腦，且本機系統管理員帳戶就足以順利執行命令，則您應該將 JEA 設定為使用本機虛擬帳戶。
 虛擬帳戶是特定使用者獨有的暫時帳戶，並且持續時間僅限於他們的 PowerShell 工作階段期間。
@@ -86,7 +86,8 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
 
-#### <a name="group-managed-service-account"></a>群組受管理的服務帳戶
+<a id="group-managed-service-account" class="xliff"></a>
+#### 群組受管理的服務帳戶
 
 
 針對需要 JEA 使用者以存取網路資源，例如其他電腦或 Web 服務的情況，群組受管理的服務帳戶 (gMSA) 是更適合使用的身分識別。
@@ -96,7 +97,7 @@ gMSA 帳戶提供給您的權限由您正在存取的資源決定。
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
-GroupManagedServiceAccount = 'MyJEAgMSA'
+GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
 gMSA 帳戶應該只用於因為一些原因而需要存取網路資源時︰
@@ -109,11 +110,13 @@ gMSA 帳戶應該只用於因為一些原因而需要存取網路資源時︰
 > 群組受管理的服務帳戶僅適用於 Windows PowerShell 5.1 或更新版本，以及在已加入網域的電腦上。
 
 
-#### <a name="more-information-about-run-as-users"></a>執行身分使用者的詳細資訊
+<a id="more-information-about-run-as-users" class="xliff"></a>
+#### 執行身分使用者的詳細資訊
 
 如需執行身分識別的詳細資訊，以及它們如何納入 JEA 工作階段的安全性，請參閱[安全性考量](security-considerations.md)文章。
 
-### <a name="session-transcripts"></a>工作階段文字記錄
+<a id="session-transcripts" class="xliff"></a>
+### 工作階段文字記錄
 
 建議您將 JEA 工作階段設定檔設定為自動記錄使用者工作階段的文字記錄。
 PowerShell 工作階段文字記錄包含連線使用者、指派給他們的執行身分識別，以及使用者所執行的命令等相關資訊。
@@ -129,7 +132,8 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 本機系統帳戶會將文字記錄寫入資料夾，這需要該目錄的讀取和寫入權限。
 標準使用者應該無法存取該資料夾，並且只有有限的一組安全性系統管理員有權可稽核文字記錄。
 
-### <a name="user-drive"></a>使用者磁碟機
+<a id="user-drive" class="xliff"></a>
+### 使用者磁碟機
 
 如果您的連線使用者將需要從 JEA 端點複製檔案或將檔案複製到 JEA 端點才能執行命令，則您可以啟用工作階段設定檔中的使用者磁碟機。
 使用者磁碟機是 [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)，且對應至每個連線使用者的唯一資料夾。
@@ -154,7 +158,8 @@ UserDriveMaximumSize = 524288000
 > [!NOTE]
 > 使用者磁碟機僅適用於 Windows PowerShell 5.1 或更新版本。
 
-### <a name="role-definitions"></a>角色定義
+<a id="role-definitions" class="xliff"></a>
+### 角色定義
 
 工作階段設定檔中的角色定義會定義「使用者」對「角色」的對應。
 此欄位包含的每個使用者或群組會在登錄 JEA 端點時自動獲得 JEA 端點的權限。
@@ -181,7 +186,8 @@ RoleDefinitions = @{
 }
 ```
 
-### <a name="role-capability-search-order"></a>角色功能搜尋順序
+<a id="role-capability-search-order" class="xliff"></a>
+### 角色功能搜尋順序
 如上述範例所示，會以角色功能檔案的一般名稱 (不含副檔名的檔名) 來參考角色功能。
 如果系統上有多個相同一般名稱的角色功能，PowerShell 將使用其隱含搜尋順序，來選取有效的角色功能檔案。
 它將**不會**提供存取權給同名的所有角色功能檔案。
@@ -194,7 +200,8 @@ JEA 使用 `$env:PSModulePath` 環境變數來判斷要掃描哪些路徑以取�
 
 由於在兩個 (或更多) 角色功能共用相同名稱時，角色功能搜尋順序具有不確定性，「強烈建議」您確保電腦上的角色功能都使用唯一的名稱。
 
-### <a name="conditional-access-rules"></a>條件式存取原則
+<a id="conditional-access-rules" class="xliff"></a>
+### 條件式存取原則
 
 包含在 RoleDefinitions 欄位的所有使用者和群組會自動獲得 JEA 端點的存取權。
 條件式存取規則可讓您精簡此存取權，並要求使用者屬於不會影響指派給他們之角色的其他安全性群組。
@@ -219,18 +226,21 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > [!NOTE]
 > 條件式存取原則僅適用於 Windows PowerShell 5.1 或更新版本。
 
-### <a name="other-properties"></a>其他屬性
+<a id="other-properties" class="xliff"></a>
+### 其他屬性
 工作階段設定檔也可以執行工作角色功能檔案的一切操作，但無法提供連線使用者對不同命令的存取權。
 如果您想要允許所有使用者存取特定 Cmdlet、函式或提供者，則您可以直接在工作階段設定檔中完成。
 如需工作階段設定檔中支援屬性的完整清單，請執行 `Get-Help New-PSSessionConfigurationFile -Full`。
 
-## <a name="testing-a-session-configuration-file"></a>測試工作階段設定檔
+<a id="testing-a-session-configuration-file" class="xliff"></a>
+## 測試工作階段設定檔
 
 您可以使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) Cmdlet 測試工作階段設定。
 如果您已使用文字編輯器手動編輯 pssc 檔案，強烈建議您測試您的工作階段設定檔，以確定語法正確。
 如果工作階段設定檔未通過此測試，它將無法順利在系統上登錄。
 
-## <a name="sample-session-configuration-file"></a>範例工作階段設定檔
+<a id="sample-session-configuration-file" class="xliff"></a>
+## 範例工作階段設定檔
 
 以下是完整的範例，示範如何建立及驗證 JEA 的工作階段設定。
 請注意，為了便利性和可讀性起見，角色定義會建立並儲存在 `$roles` 變數。
@@ -247,12 +257,15 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a>更新工作階段設定檔
+<a id="updating-session-configuration-files" class="xliff"></a>
+## 更新工作階段設定檔
 
 如果您需要變更 JEA 工作階段設定的屬性，包括將使用者對應至角色，您必須[取消登錄](register-jea.md#unregistering-jea-configurations)並[重新登錄](register-jea.md) JEA 工作階段設定。
 當您重新登錄 JEA 工作階段設定時，請使用包含您想要之變更的已更新 PowerShell 工作階段設定檔。
 
-## <a name="next-steps"></a>接下來的步驟
+<a id="next-steps" class="xliff"></a>
+## 接下來的步驟
 
 - [登錄 JEA 設定](register-jea.md)
 - [編寫 JEA 角色](role-capabilities.md)
+

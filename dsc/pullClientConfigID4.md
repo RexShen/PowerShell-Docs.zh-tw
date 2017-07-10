@@ -1,17 +1,17 @@
 ---
-title: "在 PowerShell 4.0 使用設定識別碼設定提取用戶端"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 730f2f26e2811996e79cf0073a4ef65cad390687
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "在 PowerShell 4.0 使用設定識別碼設定提取用戶端"
+ms.openlocfilehash: 19328018d276cddd0877869b0ec69c14c51e4b85
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>在 PowerShell 4.0 使用設定識別碼設定提取用戶端
+<a id="setting-up-a-pull-client-using-configuration-id-in-powershell-40" class="xliff"></a>
+# 在 PowerShell 4.0 使用設定識別碼設定提取用戶端
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -46,10 +46,12 @@ SimpleMetaConfigurationForPull -Output "."
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
 
-## <a name="configuration-id"></a>設定識別碼
+<a id="configuration-id" class="xliff"></a>
+## 設定識別碼
 此指令碼將 LCM 的 **ConfigurationID** 屬性設為先前針對這個用途建立的 GUID (可透過 **New-Guid** Cmdlet 建立 GUID)。 **ConfigurationID** 供 LCM 用來在提取伺服器上尋找適當設定。 提取伺服器上的設定 MOF 檔案必須命名為 `ConfigurationID.mof`，其中 *ConfigurationID* 是目標節點 LCM 的 **ConfigurationID** 屬性值。
 
-## <a name="pulling-from-an-smb-server"></a>從 SMB 伺服器提取
+<a id="pulling-from-an-smb-server" class="xliff"></a>
+## 從 SMB 伺服器提取
 
 如果將提取伺服器設定為 SMB 檔案共用，而不是 Web 服務，您會指定 **DscFileDownloadManager**，而不是 **WebDownLoadManager**。
 **DscFileDownloadManager** 採用 **SourcePath** 屬性而非 **ServerUrl**。 下列指令碼會設定 LCM，使其從名為 "CONTOSO-SERVER" 的伺服器上名為 "SmbDscShare" 的 SMB 共用提取設定：
@@ -72,7 +74,8 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-## <a name="see-also"></a>另請參閱
+<a id="see-also" class="xliff"></a>
+## 另請參閱
 
 - [設定 DSC Web 提取伺服器](pullServer.md)
 - [設定 DSC SMB 提取伺服器](pullServerSMB.md)

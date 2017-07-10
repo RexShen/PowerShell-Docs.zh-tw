@@ -1,17 +1,17 @@
 ---
-title: "直接呼叫 DSC 資源方法"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "直接呼叫 DSC 資源方法"
+ms.openlocfilehash: ab00e66d526eda244500a41e450c56b0151274ee
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="calling-dsc-resource-methods-directly"></a>直接呼叫 DSC 資源方法
+<a id="calling-dsc-resource-methods-directly" class="xliff"></a>
+# 直接呼叫 DSC 資源方法
 
 >適用於：Windows PowerShell 5.0
 
@@ -23,7 +23,8 @@ translationtype: HT
 
 直接呼叫資源方法的範例如下︰
 
-## <a name="ensure-a-file-is-present"></a>請確定檔案存在
+<a id="ensure-a-file-is-present" class="xliff"></a>
+## 請確定檔案存在
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -32,7 +33,8 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-## <a name="test-that-a-file-is-present"></a>請測試檔案存在
+<a id="test-that-a-file-is-present" class="xliff"></a>
+## 請測試檔案存在
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -41,7 +43,8 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-## <a name="get-the-contents-of-file"></a>請取得檔案的內容
+<a id="get-the-contents-of-file" class="xliff"></a>
+## 請取得檔案的內容
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -52,7 +55,8 @@ $result.ItemValue | fl
 
 >**注意︰** 不支援直接呼叫複合資源方法。 請改為呼叫組成複合資源之基礎資源的方法。
 
-## <a name="see-also"></a>另請參閱
+<a id="see-also" class="xliff"></a>
+## 另請參閱
 - [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 
 - [使用 PowerShell 類別撰寫自訂的 DSC 資源](authoringResourceClass.md)
 - [對 DSC 資源執行偵錯](debugResource.md)

@@ -1,23 +1,24 @@
 ---
-title: "建置自訂的 Windows PowerShell 預期狀態設定資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: fe2697de322be99e9b5dfe79090fda4082a73623
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "建置自訂的 Windows PowerShell 預期狀態設定資源"
+ms.openlocfilehash: 75b494db4ee6e381491decb11d35b60105217a0f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>建置自訂的 Windows PowerShell 預期狀態設定資源
+<a id="build-custom-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
+# 建置自訂的 Windows PowerShell 預期狀態設定資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 有內建資源，可用以設定您的環境。 (如需詳細資訊，請參閱[內建的 Windows PowerShell 預期狀態設定資源](builtInResource.md)。)本主題提供開發資源概述以及特定資訊和範例的主題連結。
 
-## <a name="dsc-resource-components"></a>DSC 資源元件
+<a id="dsc-resource-components" class="xliff"></a>
+## DSC 資源元件
 
 DSC 資源是 Windows PowerShell 模組。 模組包含資源的結構描述 (可設定的屬性定義) 和實作 (真正執行設定所指定工作的程式碼)。 DSC 資源結構描述可以在 MOF 檔案中定義，並由指令碼模組執行實作。 從第 5 版的 PowerShell 類別支援開始，結構描述和實作都可以在類別中定義。 下列主題會詳細說明如何建立 DSC 資源。
 

@@ -1,23 +1,24 @@
 ---
-title: "MSFT_DSCLocalConfigurationManager 類別"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "MSFT_DSCLocalConfigurationManager 類別"
+ms.openlocfilehash: 35f732698fcc58f7bd43945edd10c143ffb79af9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別
+<a id="msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# MSFT_DSCLocalConfigurationManager 類別
 
 本機設定管理員 (LCM) 可控制設定檔的狀態，並會使用設定代理程式套用設定。
 
 下列語法已經過受管理物件格式 (MOF) 程式碼簡化，並包含所有已繼承的屬性。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 ------
 
 ``` syntax
@@ -27,14 +28,16 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## <a name="members"></a>成員
+<a id="members" class="xliff"></a>
+## 成員
 -------
 
 **MSFT_DSCLocalConfigurationManager** 類別有以下成員：
 
 -   [方法][]
 
-### <a name="methods"></a>方法
+<a id="methods" class="xliff"></a>
+### 方法
 
 **MSFT_DSCLocalConfigurationManager** 類別有這些方法。
 
@@ -64,7 +67,8 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-## <a name="requirements"></a>需求
+<a id="requirements" class="xliff"></a>
+## 需求
 ------------
 >**MOF：**DscCore.mof
 

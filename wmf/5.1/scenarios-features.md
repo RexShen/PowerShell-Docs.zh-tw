@@ -1,22 +1,22 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
 title: "WMF 5.1 的新案例和功能"
-ms.date: 2016-07-13
-keywords: "PowerShell、DSC、WMF"
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1ea650d5dd69251c0407133f649ea8efb1315dd2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 02c27711c886916da56bb382b1bc0187f1e30805
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能 #
+<a id="new-scenarios-and-features-in-wmf-51" class="xliff"></a>
+# WMF 5.1 的新案例和功能 #
 
 > 注意：本資訊尚屬初始版本，後續有可能變更。
 
-## <a name="powershell-editions"></a>PowerShell 版本 ##
+<a id="powershell-editions" class="xliff"></a>
+## PowerShell 版本 ##
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
 
 - **Desktop Edition︰**建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
@@ -28,11 +28,13 @@ translationtype: HT
 - [依據 CompatiblePSEditions 篩選 Get-Module 結果]()
 - [只有在相容的 PowerShell 版本上執行才會執行指令碼]()
 
-## <a name="catalog-cmdlets"></a>類別目錄 Cmdlet  
+<a id="catalog-cmdlets" class="xliff"></a>
+## 類別目錄 Cmdlet  
 
 [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。  
 
-###<a name="new-filecatalog"></a>New-FileCatalog 
+<a id="new-filecatalog" class="xliff"></a>
+###New-FileCatalog 
 --------------------------------
 
 New-FileCatalog 會建立 Windows 類別目錄檔案，供資料夾和檔案集合使用。 此類別目錄檔案包含指定路徑中的所有檔案雜湊。 使用者可以散發資料夾集合以及代表這些資料夾的對應類別目錄檔案。 這項資訊對驗證資料夾在類別目錄建立後是否有任何變更，非常有用。    
@@ -53,7 +55,8 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 若要驗證類別目錄檔案 (上例中為 Pester.cat) 的完整性，請使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) Cmdlet 來加以簽署。   
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+<a id="test-filecatalog" class="xliff"></a>
+###Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog 會驗證代表資料夾集合的類別目錄。 
@@ -67,7 +70,8 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 此 Cmdlet 會比較所有的檔案雜湊及在 *catalog* 和 *disk* 中找到的相對路徑。 如果檔案雜湊和路徑中偵測到任何不相符的項目，就會傳回 *ValidationFailed* 狀態。 使用者可以使用 *-Detailed* 參數來擷取此資訊的完整內容。 它也會在 *Signature* 屬性中顯示類別目錄的簽署狀態，和呼叫 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) Cmdlet 一模一樣。 使用者也可以使用 *-FilesToSkip* 參數，在驗證期間略過任何檔案。 
 
 
-## <a name="module-analysis-cache"></a>模組分析快取 ##
+<a id="module-analysis-cache" class="xliff"></a>
+## 模組分析快取 ##
 從 WMF 5.1 開始，PowerShell 可以控制快取模組資料所用的檔案，例如匯出的命令。
 
 此快取預設儲存在 `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` 檔案中。
@@ -94,7 +98,8 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 此環境變數設定會立即在目前的程序中生效。
 
-##<a name="specifying-module-version"></a>指定模組版本
+<a id="specifying-module-version" class="xliff"></a>
+##指定模組版本
 
 在 WMF 5.1 中，`using module` 與 PowerShell 中其他模組相關的語法結構表現一致。 以往，您無法指定特定的模組版本；如果有多個版本存在，這會導致錯誤。
 
@@ -108,7 +113,9 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 * 如果模組有多個版本，PowerShell 會使用與 `Import-Module` **相同的解析邏輯**，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
 
 
-##<a name="improvements-to-pester"></a>Pester 的改善
+<a id="improvements-to-pester" class="xliff"></a>
+##Pester 的改善
 在 WMF 5.1 中，PowerShell 隨附的 Pester 版本已從 3.3.5 更新至 3.4.0，加上認可 https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，讓 Pester 在 Nano Server 上有更好的表現。 
 
 您可以檢查 https://github.com/pester/Pester/blob/master/CHANGELOG.md 的 ChangeLog.md 檔案，檢閱 3.3.5 版至 3.4.0 版的變更。
+

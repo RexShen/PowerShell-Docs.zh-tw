@@ -1,27 +1,29 @@
 ---
-title: "撰寫自訂的 DSC 資源與 MOF"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 1fc28589633d6279d0428179a70e7e561d753ea8
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "撰寫自訂的 DSC 資源與 MOF"
+ms.openlocfilehash: 58d6ba3995d3d6dea2787cfa347e0b1386bc40af
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
+<a id="writing-a-custom-dsc-resource-with-mof" class="xliff"></a>
+# 撰寫自訂的 DSC 資源與 MOF
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題中，我們會在 MOF 檔案中定義 Windows PowerShell 預期狀態設定 (DSC) 自訂資源的結構描述，並在 Windows PowerShell 指令碼檔案中實作資源。 這個自訂的資源是用於建立和維護網站。
 
-## <a name="creating-the-mof-schema"></a>建立 MOF 結構描述
+<a id="creating-the-mof-schema" class="xliff"></a>
+## 建立 MOF 結構描述
 
 結構描述會定義可由 DSC 設定指令碼設定之資源的屬性。
 
-### <a name="folder-structure-for-a-mof-resource"></a>MOF 資源的資料夾結構
+<a id="folder-structure-for-a-mof-resource" class="xliff"></a>
+### MOF 資源的資料夾結構
 
 若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.psm1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
 
@@ -37,12 +39,13 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 請注意，你必須在最上層的資料夾下建立名為 DSCResources 的資料夾，而且每個資源的資料夾都必須和資源同名。
 
-### <a name="the-contents-of-the-mof-file"></a>MOF 檔案的內容
+<a id="the-contents-of-the-mof-file" class="xliff"></a>
+### MOF 檔案的內容
 
 下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 *Demo_IISWebsite.schema.mof*。
 
 ```
-[ClassVersion("1.0.0"), FriendlyName("Website")] 
+[ClassVersion("1.0.0"), FriendlyName("Website")]
 class Demo_IISWebsite : OMI_BaseResource
 {
   [Key] string Name;
@@ -67,7 +70,8 @@ class Demo_IISWebsite : OMI_BaseResource
 * 建議您在資源中包含名為 `Ensure`且值為 `Present` 和 `Absent` 的屬性，以便和內建的 DSC 資源維持一致的樣式。
 * 依下列方式命名自訂資源的結構描述檔案：`classname.schema.mof`，其中 `classname` 是遵循結構描述定義 `class` 關鍵字的識別碼。
 
-### <a name="writing-the-resource-script"></a>撰寫資源指令碼
+<a id="writing-the-resource-script" class="xliff"></a>
+### 撰寫資源指令碼
 
 資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在 <ResourceName>.psm1 檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
 
@@ -77,10 +81,10 @@ class Demo_IISWebsite : OMI_BaseResource
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
-function Get-TargetResource 
+function Get-TargetResource
 {
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -110,7 +114,7 @@ function Get-TargetResource
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
         $getTargetResourceResult = @{
-                                      Name = $Website.Name; 
+                                      Name = $Website.Name;
                                         Ensure = $ensureResult;
                                         PhysicalPath = $Website.physicalPath;
                                         State = $Website.state;
@@ -134,11 +138,11 @@ function Get-TargetResource
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
-function Set-TargetResource 
+function Set-TargetResource
 {
     [CmdletBinding(SupportsShouldProcess=$true)]
-    param 
-    (       
+    param
+    (
         [ValidateSet("Present", "Absent")]
         [string]$Ensure = "Present",
 
@@ -212,13 +216,16 @@ $ApplicationPool
 #Include logic to 
 $result = [System.Boolean]
 #Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
-$result 
+$result
 }
 ```
 
-**注意**：為方便偵錯，請在前述三個函式實作中使用 **Write-Verbose** Cmdlet。 這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。 預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
+**注意**：為方便偵錯，請在前述三個函式實作中使用 **Write-Verbose** Cmdlet。 
+>這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。 
+>預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
 
-### <a name="creating-the-module-manifest"></a>建立模組資訊清單
+<a id="creating-the-module-manifest" class="xliff"></a>
+### 建立模組資訊清單
 
 最後，使用 **New-ModuleManifest** Cmdlet 定義自訂資源模組的 <ResourceName>.psd1 檔案。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 以下為資訊清單檔案範例。
 
@@ -273,4 +280,25 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 # HelpInfoURI = ''
 }
 ```
+
+<a id="supporting-psdscrunascredential" class="xliff"></a>
+## 支援 PsDscRunAsCredential
+
+>**注意：**支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
+
+您可以在 [DSC 設定](configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
+如需詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
+
+若要從自訂資源內存取使用者內容，您可以使用自動變數 `$PsDscContext`。
+
+例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
+}
+```
+
+
+
 

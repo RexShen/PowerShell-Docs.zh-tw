@@ -1,24 +1,25 @@
 ---
-title: "使用 DSC 在初始開機時設定虛擬機器"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 38751d62a56dc90ff69fe3ab6e92829fb33edb2b
-ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "使用 DSC 在初始開機時設定虛擬機器"
+ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
 >適用於：Windows PowerShell 5.0
 
->**注意︰本主題所述的 ****DSCAutomationHostEnabled** 登錄機碼無法在 PowerShell 4.0 中使用。
+>**注意︰本主題所述的** **DSCAutomationHostEnabled** 登錄機碼無法在 PowerShell 4.0 中使用。
 如需如何在 PowerShell 4.0 初始開機時設定新的虛擬機器，請參閱 [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) (想要使用 DSC 在初始開機時自動設定您的電腦嗎？)
 
-# <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>使用 DSC 在初始開機時設定虛擬機器
+<a id="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc" class="xliff"></a>
+# 使用 DSC 在初始開機時設定虛擬機器
 
-## <a name="requirements"></a>需求
+<a id="requirements" class="xliff"></a>
+## 需求
 
 若要執行這些範例，您需要︰
 
@@ -39,7 +40,8 @@ translationtype: HT
 >**注意︰**您可以同時將 `Pending.mof` 及 `MetaConfig.mof` 插入同一部電腦。
 當這兩個檔案同時存在時，`MetaConfig.mof` 中所指定的設定會優先執行。
 
-## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>將設定 MOF 文件插入 VHD
+<a id="inject-a-configuration-mof-document-into-a-vhd" class="xliff"></a>
+## 將設定 MOF 文件插入 VHD
 
 若要制定初始開機時的組態，可以將預先編譯的設定 MOF 文件用為 `Pending.mof` 檔案插入 VHD。
 若 **DSCAutomationHostEnabled** 登錄機碼設定為 2 (預設值)，當電腦第一次開機時，DSC 會套用 `Pending.mof` 所定義的組態。
@@ -62,7 +64,8 @@ Configuration SampleIISInstall
 }
 ```
 
-### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>將設定 MOF 文件插入 VHD
+<a id="to-inject-the-configuration-mof-document-on-the-vhd" class="xliff"></a>
+### 將設定 MOF 文件插入 VHD
 
 1. 呼叫 [掛接 VHD](https://technet.microsoft.com/library/hh848551.aspx) Cmdlet，以掛接組態所要插入的 VHD。 例如：
 
@@ -95,7 +98,8 @@ Configuration SampleIISInstall
 7. 使用安裝有 DSC MOF 文件的 VHD 建立 VM。 初始開機並安裝作業系統之後，會接著安裝 IIS。
 您可以呼叫 [Get-windowsfeature](https://technet.microsoft.com/library/jj205469.aspx) Cmdlet 加以驗證。
 
-## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>將 DSC metaconfiguration 插入 VHD
+<a id="inject-a-dsc-metaconfiguration-into-a-vhd" class="xliff"></a>
+## 將 DSC metaconfiguration 插入 VHD
 
 您也可以將中繼設定用為 VHD 的 `MetaConfig.mof` 檔案插入 VHD，將電腦設定成在初始開機時提取組態以提取在初始啟動的組態 (請參閱 [設定本機設定管理員 (LCM)](metaConfig.md))。
 若 **DSCAutomationHostEnabled** 登錄機碼設為 2 (預設值)，則電腦第一次開機時，DSC 將會套用 `MetaConfig.mof` 所定義的中繼設定。
@@ -126,7 +130,8 @@ configuration PullClientBootstrap
 }
 ```
 
-### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>將中繼設定 MOF 文件插入 VHD
+<a id="to-inject-the-metaconfiguration-mof-document-on-the-vhd" class="xliff"></a>
+### 將中繼設定 MOF 文件插入 VHD
 
 1. 呼叫 [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) Cmdlet，掛接您要插入中繼設定的 VHD。 例如：
 
@@ -164,7 +169,8 @@ configuration PullClientBootstrap
 初始開機並安裝作業系統之後，DSC 會從提取伺服器提取組態，然後安裝 IIS。
 您可以呼叫 [Get-windowsfeature](https://technet.microsoft.com/library/jj205469.aspx) Cmdlet 加以驗證。
 
-## <a name="disable-dsc-at-boot-time"></a>開機時停用 DSC
+<a id="disable-dsc-at-boot-time" class="xliff"></a>
+## 開機時停用 DSC
 
 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** 機碼的值預設為 2，這表示當電腦處於暫止或目前的狀態時，允許 DSC 組態執行。 對於不想在初始開機時執行的組態，您必須將此機碼值設為 0：
 
@@ -199,9 +205,11 @@ configuration PullClientBootstrap
     reg unload HKLM\Vhd
     ```
 
-## <a name="see-also"></a>另請參閱
+<a id="see-also" class="xliff"></a>
+## 另請參閱
 
 - [DSC 設定](configurations.md)
 - [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md)
 - [設定本機設定管理員 (LCM)](metaConfig.md)
 - [設定 DSC Web 提取伺服器](pullServer.md)
+

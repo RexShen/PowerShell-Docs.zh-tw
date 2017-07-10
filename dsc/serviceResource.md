@@ -1,24 +1,25 @@
 ---
-title: "DSC Service 資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6c1dce6a3f1b801f7bdf5bf778df8033e3d76280
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "DSC Service 資源"
+ms.openlocfilehash: 611729e5d971ebaf15ac947454cffadc6797927b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-service-resource"></a>DSC Service 資源
+<a id="dsc-service-resource" class="xliff"></a>
+# DSC Service 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **Service** 資源提供了管理目標節點服務的機制。
 
-## <a name="syntax"></a>語法
+<a id="syntax" class="xliff"></a>
+## 語法
 
 ```
 Service [string] #ResourceName
@@ -36,7 +37,8 @@ Service [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+<a id="properties" class="xliff"></a>
+## [內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -51,7 +53,8 @@ Service [string] #ResourceName
 | Ensure | 表示系統上是否有目標服務。 請將此屬性設定為**Absent** 以確保目標服務不存在。 屬性設定為 **Present** (預設值)，可確保目標服務存在。|
 | 路徑 | 表示新服務的二進位檔路徑。| 
 
-## <a name="example"></a>範例
+<a id="example" class="xliff"></a>
+## 範例
 
 ```powershell
 configuration ServiceTest

@@ -1,4 +1,16 @@
-# <a name="installation-instructions"></a>安裝指示
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 668a5b20add58ff5e23f35d6cebddc39c64ce926
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="installation-instructions" class="xliff"></a>
+# 安裝指示
 
 下載您的作業系統和架構的正確封裝︰
 

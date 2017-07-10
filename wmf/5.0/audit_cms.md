@@ -1,4 +1,16 @@
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a>密碼編譯訊息語法 (CMS) Cmdlet
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: 9556f0d9a12807cbfe38aaade6798088f051596d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
+# 密碼編譯訊息語法 (CMS) Cmdlet
 
 密碼編譯訊息語法 Cmdlet 支援使用 IETF 標準格式加密和解密內容，進行密碼編譯保護訊息，如 [RFC5652](http://tools.ietf.org/html/rfc5652) 所述。
 
@@ -82,3 +94,4 @@ Hello World
 ```powershell
 dir -DocumentEncryptionCert
 ```
+

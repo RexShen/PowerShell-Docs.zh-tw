@@ -1,4 +1,16 @@
-# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 關鍵字支援 -ModuleVersion 參數
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
+ms.openlocfilehash: b839b476bb4ef7f8d73b158d61f0e8cbc1265e60
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
+---
+<a id="import-dscresource-keyword-supports--moduleversion-parameter" class="xliff"></a>
+# Import-DscResource 關鍵字支援 -ModuleVersion 參數
 
 我們將新的參數新增至撰寫 DSC 設定時可用的 `Import-DscResource` 動態關鍵字。 設定作者現在可以指定要從哪個模組版本中載入 DSC 資源。 新關鍵字的語法為︰
 
@@ -6,7 +18,7 @@
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
 ```
 
-* **名稱**︰要匯入的一個或多個資源名稱。
+* **名稱**︰要匯入之一個或多個資源的名稱。
 * **ModuleName**︰要匯入之一個或多個模組的名稱或 ModuleSpecification 物件。
 * **ModuleVersion**︰要匯入的模組版本。 如果使用了的話，ModuleName 必須只以名稱代表一個模組。 
 

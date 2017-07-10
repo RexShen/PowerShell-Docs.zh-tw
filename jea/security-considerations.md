@@ -1,18 +1,17 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: powershell,cmdlet,jea
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: "jea,powershell,安全性"
 title: "JEA 安全性考量"
-ms.technology: powershell
-ms.openlocfilehash: 02384465e3c1b6d9633cc346ba88a2566fea1af1
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="jea-security-considerations"></a>JEA 安全性考量
+<a id="jea-security-considerations" class="xliff"></a>
+# JEA 安全性考量
 
 > 適用對象：Windows PowerShell 5.0
 
@@ -23,7 +22,8 @@ JEA 可協助您減少電腦上的永久系統管理員數目來改善安全性�
 
 本主題會更詳細地描述 JEA 安全性模型與最佳做法。
 
-## <a name="run-as-account"></a>執行身分帳戶
+<a id="run-as-account" class="xliff"></a>
+## 執行身分帳戶
 
 每個 JEA 端點有指定的「執行身分」帳戶，也就是執行連線使用者動作所用的帳戶。
 此帳戶是可在[工作階段設定檔](session-configurations.md)中設定，且您選擇的帳戶與端點的安全性有很大的關係。
@@ -81,7 +81,8 @@ JEA 端點設定為使用 gMSA 帳戶之後，所有 JEA 使用者的動作會�
 
 您不應該在 JEA 端點上使用 RunAsCredential，因為難以從動作回溯到特定的使用者，並且也缺乏將使用者對應至角色的支援。
 
-## <a name="winrm-endpoint-acl"></a>WinRM 端點 ACL
+<a id="winrm-endpoint-acl" class="xliff"></a>
+## WinRM 端點 ACL
 
 如同一般的 PowerShell 遠端端點，每個 JEA 端點在 WinRM 設定中都有個別的存取控制清單 (ACL) 設定，控制誰可以向 JEA 端點進行驗證。
 如果設定不當，受信任的使用者可能無法存取 JEA 端點，和/或不受信任的使用者可能取得存取權。
@@ -115,7 +116,8 @@ CONTOSO\JEA_Lev2 AccessAllowed
 您可以藉由執行 `Get-PSSessionCapability` 稽核 JEA 端點中的使用者權限。
 請參閱 [JEA 上的稽核和報告](audit-and-report.md)一文，以取得有關稽核使用者可在 JEA 端點存取之命令的詳細資訊。
 
-## <a name="least-privilege-roles"></a>最低權限角色
+<a id="least-privilege-roles" class="xliff"></a>
+## 最低權限角色
 
 在設計 JEA 角色時，請務必記得在幕後執行的虛擬或群組受管理的服務帳戶，通常具有無限制的存取權可管理本機電腦。
 透過限制可使用特殊權限的內容執行的應用程式與命令，JEA 角色功能可協助限制該帳戶的用途。
@@ -144,7 +146,8 @@ CONTOSO\JEA_Lev2 AccessAllowed
 
 請避免在角色功能使用萬用字元，並且務必要定期[稽核有效的使用者權限](audit-and-report.md#check-effective-rights-for-a-specific-user)，以了解使用者可以存取哪些命令。
 
-## <a name="jea-does-not-protect-against-admins"></a>JEA 無法防止系統管理員
+<a id="jea-does-not-protect-against-admins" class="xliff"></a>
+## JEA 無法防止系統管理員
 
 JEA 的核心原則之一是它可讓非系統管理員執行「一些」管理工作。
 JEA 無法防止已經有系統管理員權限的使用者。
@@ -155,3 +158,4 @@ JEA 無法防止已經有系統管理員權限的使用者。
 
 常見的做法是使用 JEA 進行一般日常維護，並且擁有「即時 」(Just-in-Time) 的特殊權限存取管理解決方案，可讓使用者在緊急情況下暫時成為本機系統管理員。
 這有助於確保使用者在系統上不是永久的系統管理員，但如果 (並且唯有) 他們完成的工作流程會記錄他們對那些權限的使用，便可以取得那些權限。
+

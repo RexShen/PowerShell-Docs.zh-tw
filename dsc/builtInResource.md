@@ -1,17 +1,17 @@
 ---
-title: "內建的 Windows PowerShell 預期狀態設定資源"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 1cbe3ac8de217d659f717cb960b4b57cb2d4fdd9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "內建的 Windows PowerShell 預期狀態設定資源"
+ms.openlocfilehash: 181cafde60d44a1cd663472279dab01f38833522
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>內建的 Windows PowerShell 預期狀態設定資源
+<a id="built-in-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
+# 內建的 Windows PowerShell 預期狀態設定資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 

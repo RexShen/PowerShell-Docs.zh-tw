@@ -1,19 +1,17 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,資源庫"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: "資源庫,powershell,cmdlet,psget"
 title: psget_moduledependencypopulation
-ms.technology: powershell
-ms.openlocfilehash: 3d89dddf2fc31a9fdb1a57f21baaf757990989c7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 126cd65ac35a31f4118474bc36dac1836ec0f22e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>在發行作業期間準備模組相依性的邏輯
+<a id="logic-for-preparing-the-module-dependencies-during-publish-operation" class="xliff"></a>
+# 在發行作業期間準備模組相依性的邏輯
 1.  列為 RequiredModules 一部分的模組視為相依性。
 2.  列為 NestedModules 一部分的模組 (其模組基底不在指定的模組基底下) 視為相依性。
 
