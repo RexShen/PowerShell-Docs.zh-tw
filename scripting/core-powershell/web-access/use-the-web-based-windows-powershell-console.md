@@ -1,18 +1,15 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
 title: "使用網頁型 Windows PowerShell 主控台"
-ms.technology: powershell
-ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
+<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
+#  使用網頁型 Windows PowerShell 主控台
 
 更新日期︰2013 年 6 月 24 日
 
@@ -90,7 +87,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;server_name&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>登入 Windows PowerShell Web 存取
+<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
+### 登入 Windows PowerShell Web 存取
 
 1.  在網際網路瀏覽器視窗或索引標籤中開啟 Windows PowerShell Web 存取網站。
 
@@ -137,7 +135,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   按一下主控台右下角的 [登出]。 (僅限 Windows Server 2012)
 
--   按一下主控台右下角的 [儲存] 或 [結束] (僅限 Windows Server 2012 R2)。 按一下 [儲存] 儲存並關閉您的 Windows PowerShell Web 存取工作階段；您稍後可以重新連線至工作階段。 當您重新登入 Windows PowerShell Web 存取時，Windows PowerShell Web 存取會顯示一份已儲存工作階段的清單；您可以選取並重新連線至已儲存的工作階段，或者啟動新的工作階段。 允許使用者開啟的工作階段數目上限 (包括已儲存和使用中)，由閘道管理員所設定。
+-   按一下主控台右下角的 [儲存] 或 [結束]\(僅限 Windows Server 2012 R2)。 按一下 [儲存] 儲存並關閉您的 Windows PowerShell Web 存取工作階段；您稍後可以重新連線至工作階段。 當您重新登入 Windows PowerShell Web 存取時，Windows PowerShell Web 存取會顯示一份已儲存工作階段的清單；您可以選取並重新連線至已儲存的工作階段，或者啟動新的工作階段。 允許使用者開啟的工作階段數目上限 (包括已儲存和使用中)，由閘道管理員所設定。
 
     按一下 [結束] 會將您登出 Windows PowerShell Web 存取工作階段而不加以儲存。
 
