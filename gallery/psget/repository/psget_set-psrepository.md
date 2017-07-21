@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-psrepository" class="xliff"></a>
-# Set-PSRepository
+# <a name="set-psrepository"></a><span data-ttu-id="c2d58-103">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="c2d58-103">Set-PSRepository</span></span>
 
-Set-PSRepository 會設定已註冊存放庫的值。
+<span data-ttu-id="c2d58-104">Set-PSRepository 會設定已註冊存放庫的值。</span><span class="sxs-lookup"><span data-stu-id="c2d58-104">Set-PSRepository sets values for a registered repository.</span></span>
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a><span data-ttu-id="c2d58-105">描述</span><span class="sxs-lookup"><span data-stu-id="c2d58-105">Description</span></span>
 
-Set-PSRepository Cmdlet 會設定已註冊模組存放庫的值。
+<span data-ttu-id="c2d58-106">Set-PSRepository Cmdlet 會設定已註冊模組存放庫的值。</span><span class="sxs-lookup"><span data-stu-id="c2d58-106">The Set-PSRepository cmdlet sets values for a registered module repository.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="c2d58-107">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="c2d58-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="c2d58-108">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="c2d58-108">Cmdlet online help reference</span></span>
 
-[Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
+[<span data-ttu-id="c2d58-109">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="c2d58-109">Set-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a><span data-ttu-id="c2d58-110">範例命令</span><span class="sxs-lookup"><span data-stu-id="c2d58-110">Example commands</span></span>
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -51,10 +46,9 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-<a id="set-psrepository-cmdlet-with-script-sharing-support" class="xliff"></a>
-### 具有指令碼共用支援的 Set-PSRepository Cmdlet
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a><span data-ttu-id="c2d58-111">具有指令碼共用支援的 Set-PSRepository Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c2d58-111">Set-PSRepository cmdlet with script sharing support</span></span>
 
-使用 Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 新增至 PSRepository。
+<span data-ttu-id="c2d58-112">使用 Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 新增至 PSRepository。</span><span class="sxs-lookup"><span data-stu-id="c2d58-112">Use Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 # Add script sharing locations to an existing PSRepository using Set-PSRepository object.
 Set-PSRepository -Name MyGallery `

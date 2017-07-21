@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApplyAsync 方法
+# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="f02f4-103">MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApplyAsync 方法</span><span class="sxs-lookup"><span data-stu-id="f02f4-103">SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-將設定文件非同步地傳送到受管理的節點，並使用設定代理程式套用設定。
+<span data-ttu-id="f02f4-104">將設定文件非同步地傳送到受管理的節點，並使用設定代理程式套用設定。</span><span class="sxs-lookup"><span data-stu-id="f02f4-104">Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="f02f4-105">語法</span><span class="sxs-lookup"><span data-stu-id="f02f4-105">Syntax</span></span>
 ------
 
 ```mof
@@ -27,43 +25,38 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="f02f4-106">參數</span><span class="sxs-lookup"><span data-stu-id="f02f4-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-設定的環境資料。
+<span data-ttu-id="f02f4-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="f02f4-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="f02f4-108">設定的環境資料。</span><span class="sxs-lookup"><span data-stu-id="f02f4-108">The environment data for the configuration.</span></span>
 
-*force* \[in\]  
-**true** 表示強制停止該設定。
+<span data-ttu-id="f02f4-109">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="f02f4-109">*force* \[in\]</span></span>  
+<span data-ttu-id="f02f4-110">**true** 表示強制停止該設定。</span><span class="sxs-lookup"><span data-stu-id="f02f4-110">**true** to force the configuration to stop.</span></span>
 
-*jobId* \[in\]  
-傳送設定之工作的識別碼。
+<span data-ttu-id="f02f4-111">*jobId* \[in\]</span><span class="sxs-lookup"><span data-stu-id="f02f4-111">*jobId* \[in\]</span></span>  
+<span data-ttu-id="f02f4-112">傳送設定之工作的識別碼。</span><span class="sxs-lookup"><span data-stu-id="f02f4-112">The ID of the job for which to send the configuration.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="f02f4-113">傳回值</span><span class="sxs-lookup"><span data-stu-id="f02f4-113">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="f02f4-114">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="f02f4-114">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="f02f4-115">備註</span><span class="sxs-lookup"><span data-stu-id="f02f4-115">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="f02f4-116">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="f02f4-116">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="f02f4-117">需求</span><span class="sxs-lookup"><span data-stu-id="f02f4-117">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="f02f4-118">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="f02f4-118">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="f02f4-119">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="f02f4-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="f02f4-120">另請參閱</span><span class="sxs-lookup"><span data-stu-id="f02f4-120">See also</span></span>
+
+
+[<span data-ttu-id="f02f4-121">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="f02f4-121">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

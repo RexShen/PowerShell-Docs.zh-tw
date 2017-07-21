@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-script" class="xliff"></a>
-# Update-Script
+# <a name="update-script"></a><span data-ttu-id="d6d79-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="d6d79-103">Update-Script</span></span>
 
-Update-Script Cmdlet 可讓您使用 Install-Script Cmdlet 就地更新已安裝的指令碼檔案。
+<span data-ttu-id="d6d79-104">Update-Script Cmdlet 可讓您使用 Install-Script Cmdlet 就地更新已安裝的指令碼檔案。</span><span class="sxs-lookup"><span data-stu-id="d6d79-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a><span data-ttu-id="d6d79-105">描述</span><span class="sxs-lookup"><span data-stu-id="d6d79-105">Description</span></span>
 
-Update-Script Cmdlet 會更新先前從中安裝之存放庫中所指定的指令碼。
+<span data-ttu-id="d6d79-106">Update-Script Cmdlet 會更新先前從中安裝之存放庫中所指定的指令碼。</span><span class="sxs-lookup"><span data-stu-id="d6d79-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="d6d79-107">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="d6d79-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="d6d79-108">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="d6d79-108">Cmdlet online help reference</span></span>
 
-[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
+[<span data-ttu-id="d6d79-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="d6d79-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a><span data-ttu-id="d6d79-110">範例命令</span><span class="sxs-lookup"><span data-stu-id="d6d79-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script

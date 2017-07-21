@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
-# 用來從提取伺服器查詢節點資訊的 DSC 函式。
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="f5c5b-103">用來從提取伺服器查詢節點資訊的 DSC 函式。</span><span class="sxs-lookup"><span data-stu-id="f5c5b-103">DSC function to query node information from pull server.</span></span>
 
 ```powershell
 function QueryNodeInformation
@@ -40,9 +39,9 @@ Param (
 }
 ```
 
-將 `Uri` 參數取代為提取伺服器的 URI。 如果您希望節點資訊為 XML 格式，請將 `ContentType` 設定為 `application/xml`。
+<span data-ttu-id="f5c5b-104">將 `Uri` 參數取代為提取伺服器的 URI。</span><span class="sxs-lookup"><span data-stu-id="f5c5b-104">Replace the `Uri` parameter with the URI for your pull server.</span></span> <span data-ttu-id="f5c5b-105">如果您希望節點資訊為 XML 格式，請將 `ContentType` 設定為 `application/xml`。</span><span class="sxs-lookup"><span data-stu-id="f5c5b-105">If you want the node information in XML format, set `ContentType` to `application/xml`.</span></span>
 
-若要從 `$json` 參數擷取節點資訊，請使用下列命令：
+<span data-ttu-id="f5c5b-106">若要從 `$json` 參數擷取節點資訊，請使用下列命令：</span><span class="sxs-lookup"><span data-stu-id="f5c5b-106">To retrieve the node information from the `$json` parameter, use the following:</span></span>
 
 ```powershell
 $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.svc/Status 

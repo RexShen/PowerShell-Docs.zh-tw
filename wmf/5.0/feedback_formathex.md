@@ -9,19 +9,17 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="format-hex" class="xliff"></a>
-# Format-Hex
-**Format-Hex** 可讓您以十六進位格式檢視文字或二進位資料；請參閱 [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)
+# <a name="format-hex"></a><span data-ttu-id="6ff7a-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="6ff7a-102">Format-Hex</span></span>
+<span data-ttu-id="6ff7a-103">**Format-Hex** 可讓您以十六進位格式檢視文字或二進位資料；請參閱 [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span><span class="sxs-lookup"><span data-stu-id="6ff7a-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
 
-<a id="example-1" class="xliff"></a>
-## 範例 1
-檢視十六進位格式的字串內容。
+## <a name="example-1"></a><span data-ttu-id="6ff7a-104">範例 1</span><span class="sxs-lookup"><span data-stu-id="6ff7a-104">Example 1</span></span>
+<span data-ttu-id="6ff7a-105">檢視十六進位格式的字串內容。</span><span class="sxs-lookup"><span data-stu-id="6ff7a-105">View the contents of a string in hexadecimal format.</span></span>
 
 ```PowerShell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
-輸出
+<span data-ttu-id="6ff7a-106">輸出</span><span class="sxs-lookup"><span data-stu-id="6ff7a-106">Outputs</span></span>
 ```
 PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 

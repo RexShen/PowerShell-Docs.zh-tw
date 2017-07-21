@@ -10,12 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-log-resource" class="xliff"></a>
-# DSC 記錄檔資源 
+# <a name="dsc-log-resource"></a><span data-ttu-id="ee36f-103">DSC 記錄檔資源</span><span class="sxs-lookup"><span data-stu-id="ee36f-103">DSC Log Resource</span></span> 
 
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+> <span data-ttu-id="ee36f-104">適用於：Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ee36f-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-Windows PowerShell 預期狀態設定 (DSC) 的 __Log__ 資源會提供一個機制，將訊息寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔。
+<span data-ttu-id="ee36f-105">Windows PowerShell 預期狀態設定 (DSC) 的 __Log__ 資源會提供一個機制，將訊息寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔。</span><span class="sxs-lookup"><span data-stu-id="ee36f-105">The __Log__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
 
 ```
 Syntax
@@ -27,25 +26,23 @@ Log [string] #ResourceName
 }
 ```
 
-注意︰根據預設只會啟用 DSC 的作業記錄檔。
-必須先啟用分析記錄檔，才可加以使用或顯示。
-請參閱以下文章。
+<span data-ttu-id="ee36f-106">注意︰根據預設只會啟用 DSC 的作業記錄檔。</span><span class="sxs-lookup"><span data-stu-id="ee36f-106">NOTE: By default only the Operational logs for DSC are enabled.</span></span>
+<span data-ttu-id="ee36f-107">必須先啟用分析記錄檔，才可加以使用或顯示。</span><span class="sxs-lookup"><span data-stu-id="ee36f-107">Before the Analytic log will be available or visible, it must be enabled.</span></span>
+<span data-ttu-id="ee36f-108">請參閱以下文章。</span><span class="sxs-lookup"><span data-stu-id="ee36f-108">See the following article.</span></span>
 
-[DSC 事件記錄檔在哪裡？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+[<span data-ttu-id="ee36f-109">DSC 事件記錄檔在哪裡？</span><span class="sxs-lookup"><span data-stu-id="ee36f-109">Where are DSC Event Logs?</span></span>](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
-<a id="properties" class="xliff"></a>
-## [內容]
-|  屬性  |  描述   | 
+## <a name="properties"></a><span data-ttu-id="ee36f-110">[內容]</span><span class="sxs-lookup"><span data-stu-id="ee36f-110">Properties</span></span>
+|  <span data-ttu-id="ee36f-111">屬性</span><span class="sxs-lookup"><span data-stu-id="ee36f-111">Property</span></span>  |  <span data-ttu-id="ee36f-112">描述</span><span class="sxs-lookup"><span data-stu-id="ee36f-112">Description</span></span>   | 
 |---|---| 
-| 訊息| 表示要寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔的訊息。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再寫入這個登入訊息。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
+| <span data-ttu-id="ee36f-113">訊息</span><span class="sxs-lookup"><span data-stu-id="ee36f-113">Message</span></span>| <span data-ttu-id="ee36f-114">表示要寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔的訊息。</span><span class="sxs-lookup"><span data-stu-id="ee36f-114">Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>| 
+| <span data-ttu-id="ee36f-115">DependsOn</span><span class="sxs-lookup"><span data-stu-id="ee36f-115">DependsOn</span></span> | <span data-ttu-id="ee36f-116">表示必須先執行另一個資源的設定，再寫入這個登入訊息。</span><span class="sxs-lookup"><span data-stu-id="ee36f-116">Indicates that the configuration of another resource must run before this log message gets written.</span></span> <span data-ttu-id="ee36f-117">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="ee36f-117">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a><span data-ttu-id="ee36f-118">範例</span><span class="sxs-lookup"><span data-stu-id="ee36f-118">Example</span></span>
 
-下列範例示範如何將訊息加入 Microsoft Windows 預期狀態設定/分析事件記錄檔中。
+<span data-ttu-id="ee36f-119">下列範例示範如何將訊息加入 Microsoft Windows 預期狀態設定/分析事件記錄檔中。</span><span class="sxs-lookup"><span data-stu-id="ee36f-119">The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
 
-> **注意**：如果您在設定此資源的情況下執行 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)，它一律會傳回 **$false**。
+> <span data-ttu-id="ee36f-120">**注意**：如果您在設定此資源的情況下執行 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)，它一律會傳回 **$false**。</span><span class="sxs-lookup"><span data-stu-id="ee36f-120">**Note**: if you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.</span></span>
 
 ```powershell 
 Configuration logResourceTest

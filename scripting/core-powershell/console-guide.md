@@ -8,9 +8,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-#  <a name="powershell-console-window-guide"></a>PowerShell 主控台視窗指南
+#  <a name="powershell-console-window-guide"></a><span data-ttu-id="6238e-103">PowerShell 主控台視窗指南</span><span class="sxs-lookup"><span data-stu-id="6238e-103">PowerShell Console Window Guide</span></span>
 
-本指南內容：
--  [PowerShell.exe 命令列說明](console/PowerShell.exe-Command-Line-Help.md)
--  [使用 Tab 鍵擴充](console/Using-Tab-Expansion.md)
+<span data-ttu-id="6238e-104">本指南內容：</span><span class="sxs-lookup"><span data-stu-id="6238e-104">Find in this guide:</span></span>
+-  [<span data-ttu-id="6238e-105">PowerShell.exe 命令列說明</span><span class="sxs-lookup"><span data-stu-id="6238e-105">PowerShell.exe Command Line Help</span></span>](console/PowerShell.exe-Command-Line-Help.md)
+-  [<span data-ttu-id="6238e-106">使用 Tab 鍵擴充</span><span class="sxs-lookup"><span data-stu-id="6238e-106">Using Tab Expansion</span></span>](console/Using-Tab-Expansion.md)
 

@@ -10,122 +10,113 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/26/2017
 ---
-<a id="get-started-with-the-powershell-gallery" class="xliff"></a>
-# 開始使用 PowerShell Gallery
+# <a name="get-started-with-the-powershell-gallery"></a><span data-ttu-id="d1fc9-103">開始使用 PowerShell Gallery</span><span class="sxs-lookup"><span data-stu-id="d1fc9-103">Get Started with the PowerShell Gallery</span></span>
 
-<a id="what-is-the-powershell-gallery" class="xliff"></a>
-## 什麼是 PowerShell Gallery？
+## <a name="what-is-the-powershell-gallery"></a><span data-ttu-id="d1fc9-104">什麼是 PowerShell Gallery？</span><span class="sxs-lookup"><span data-stu-id="d1fc9-104">What is the PowerShell Gallery?</span></span>
 
-PowerShell 資源庫是 PowerShell 內容的集中存放庫。
-您可以在其中找到包含 PowerShell 命令或預期狀態設定 (DSC) 資源的有用 PowerShell 模組。 您也可以尋找 PowerShell 指令碼，其中有些可能會包含 PowerShell 工作流程，有些則概述一組工作並提供這些工作的序列。
-這些項目有一部分是由 Microsoft 所撰寫，其他則是由 PowerShell 社群所撰寫。
+<span data-ttu-id="d1fc9-105">PowerShell 資源庫是 PowerShell 內容的集中存放庫。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-105">The PowerShell Gallery is the central repository for PowerShell content.</span></span>
+<span data-ttu-id="d1fc9-106">您可以在其中找到包含 PowerShell 命令或預期狀態設定 (DSC) 資源的有用 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-106">In it, you can find useful PowerShell modules containing PowerShell commands and Desired State Configuration (DSC) resources.</span></span> <span data-ttu-id="d1fc9-107">您也可以尋找 PowerShell 指令碼，其中有些可能會包含 PowerShell 工作流程，有些則概述一組工作並提供這些工作的序列。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-107">You can also find PowerShell scripts, some of which may contain PowerShell workflows, and which outline a set of tasks and provide sequencing for those tasks.</span></span>
+<span data-ttu-id="d1fc9-108">這些項目有一部分是由 Microsoft 所撰寫，其他則是由 PowerShell 社群所撰寫。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-108">Some of these items are authored by Microsoft, and others are authored by the PowerShell community.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="d1fc9-109">需求</span><span class="sxs-lookup"><span data-stu-id="d1fc9-109">Requirements</span></span>
 
-將項目從 PowerShell Gallery 下載至系統時，需要 [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 模組。 您可以在下列任何一項中尋找 PowerShellGet 模組。 您不需要登入，就可以從 PowerShell Gallery 下載項目。
+<span data-ttu-id="d1fc9-110">將項目從 PowerShell Gallery 下載至系統時，需要 [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 模組。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-110">Downloading items from the PowerShell Gallery to your system requires the [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) module.</span></span> <span data-ttu-id="d1fc9-111">您可以在下列任何一項中尋找 PowerShellGet 模組。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-111">You can find the PowerShellGet module in any of the following.</span></span> <span data-ttu-id="d1fc9-112">您不需要登入，就可以從 PowerShell Gallery 下載項目。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-112">You do not need to sign in to download items from the PowerShell Gallery.</span></span>
 
--   [Windows 10](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)
--   [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkId=398175)
--   [MSI Installer (適用於 PowerShell 3 和 4)](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
+-   [<span data-ttu-id="d1fc9-113">Windows 10</span><span class="sxs-lookup"><span data-stu-id="d1fc9-113">Windows 10</span></span>](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)
+-   [<span data-ttu-id="d1fc9-114">Windows Management Framework 5.0</span><span class="sxs-lookup"><span data-stu-id="d1fc9-114">Windows Management Framework 5.0</span></span>](http://go.microsoft.com/fwlink/?LinkId=398175)
+-   [<span data-ttu-id="d1fc9-115">MSI Installer (適用於 PowerShell 3 和 4)</span><span class="sxs-lookup"><span data-stu-id="d1fc9-115">MSI Installer (for PowerShell 3 and 4)</span></span>](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
-PowerShellGet 也需要 [NuGet 提供者](http://go.microsoft.com/fwlink/?LinkId=722208)，才能處理 PowerShell Gallery。 如果 NuGet 提供者不在下列其中一個位置中，則系統會在第一次使用 PowerShellGet 時提示您安裝 NuGet 提供者：
+<span data-ttu-id="d1fc9-116">PowerShellGet 也需要 [NuGet 提供者](http://go.microsoft.com/fwlink/?LinkId=722208)，才能處理 PowerShell Gallery。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-116">PowerShellGet also requires the [NuGet provider](http://go.microsoft.com/fwlink/?LinkId=722208) to work with the PowerShell Gallery.</span></span> <span data-ttu-id="d1fc9-117">如果 NuGet 提供者不在下列其中一個位置中，則系統會在第一次使用 PowerShellGet 時提示您安裝 NuGet 提供者：</span><span class="sxs-lookup"><span data-stu-id="d1fc9-117">You will be prompted to install the NuGet provider automatically upon first use of PowerShellGet if the NuGet provider is not in one of the following locations:</span></span>
 
 - `$env:ProgramFiles\PackageManagement\ProviderAssemblies`
 - `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies`
 
-或者，您可以執行 `Install-PackageProvider -Name NuGet -Force` 來自動下載和安裝 NuGet 提供者。
+<span data-ttu-id="d1fc9-118">或者，您可以執行 `Install-PackageProvider -Name NuGet -Force` 來自動下載和安裝 NuGet 提供者。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-118">Or, you can run `Install-PackageProvider -Name NuGet -Force` to automate the download and installation of the NuGet provider.</span></span>
 
   
-如果您的版本比 NuGet 2.8.5.201 還要舊，則需要呼叫下列 PowerShell Cmdlet 來安裝並切換至最新版本的 NuGet。
+<span data-ttu-id="d1fc9-119">如果您的版本比 NuGet 2.8.5.201 還要舊，則需要呼叫下列 PowerShell Cmdlet 來安裝並切換至最新版本的 NuGet。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-119">If you have a version older than 2.8.5.201 of NuGet, you will need to call the following PowerShell cmdlets to install and switch to the latest version of NuGet.</span></span>
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
-3.  從上述安裝的位置中，刪除舊版本的 NuGet。
+3.  <span data-ttu-id="d1fc9-120">從上述安裝的位置中，刪除舊版本的 NuGet。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-120">Delete the older version of NuGet from the above installed location.</span></span>
 
-如需詳細資訊，請參閱 <http://oneget.org/>。
+<span data-ttu-id="d1fc9-121">如需詳細資訊，請參閱 <http://oneget.org/>。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-121">For more information, see <http://oneget.org/> .</span></span>
 
   
-注意︰因為封裝格式變更，所以建議您更新至最新版本的 PowerShellGet 和 PackageManagement，以安裝最近更新過的項目。 PowerShellGet 包含可在[這裡](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)進一步了解的 Windows 10 中。
-PowerShellGet 也是可在[這裡](http://go.microsoft.com/fwlink/?LinkId=398175)下載之 Windows Management Framework (WMF) 5.0 的一部分。
+<span data-ttu-id="d1fc9-122">注意︰因為封裝格式變更，所以建議您更新至最新版本的 PowerShellGet 和 PackageManagement，以安裝最近更新過的項目。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-122">Note: Due to changes in packaging formats, we recommend you update to the latest version of PowerShellGet and PackageManagement to install items that have been updated recently.</span></span> <span data-ttu-id="d1fc9-123">PowerShellGet 包含可在[這裡](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)進一步了解的 Windows 10 中。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-123">PowerShellGet is included in Windows 10, which you can learn more about [here](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409).</span></span>
+<span data-ttu-id="d1fc9-124">PowerShellGet 也是可在[這裡](http://go.microsoft.com/fwlink/?LinkId=398175)下載之 Windows Management Framework (WMF) 5.0 的一部分。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-124">PowerShellGet is also part of the Windows Management Framework (WMF) 5.0, which you can download [here](http://go.microsoft.com/fwlink/?LinkId=398175).</span></span>
 
-<a id="discovering-items-from-the-powershell-gallery" class="xliff"></a>
-## 探索 PowerShell Gallery 中的項目
+## <a name="discovering-items-from-the-powershell-gallery"></a><span data-ttu-id="d1fc9-125">探索 PowerShell Gallery 中的項目</span><span class="sxs-lookup"><span data-stu-id="d1fc9-125">Discovering items from the PowerShell Gallery</span></span>
 
-在這個網站上使用 **Search** 控制項，或瀏覽 [模組] 和 [指令碼] 頁面，即可尋找 PowerShell Gallery 中的項目。 您也可以將 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet (視項目類型而定) 與 `-Repository PSGallery` 搭配執行，以從「PowerShell 資源庫」尋找項目。
+<span data-ttu-id="d1fc9-126">在這個網站上使用 **Search** 控制項，或瀏覽 [模組] 和 [指令碼] 頁面，即可尋找 PowerShell Gallery 中的項目。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-126">You can find items in the PowerShell Gallery by using the **Search** control on this website, or by browsing through the Modules and Scripts pages.</span></span> <span data-ttu-id="d1fc9-127">您也可以將 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet (視項目類型而定) 與 `-Repository PSGallery` 搭配執行，以從「PowerShell 資源庫」尋找項目。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-127">You can also find items from the PowerShell Gallery by running the [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlets, depending on the item type, with `-Repository PSGallery`.</span></span>
 
-若要篩選來自「資源庫」的結果，請使用下列 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 參數
+<span data-ttu-id="d1fc9-128">若要篩選來自「資源庫」的結果，請使用下列 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 參數</span><span class="sxs-lookup"><span data-stu-id="d1fc9-128">Filtering results from the Gallery can be done by using the following parameters of [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)</span></span>
 
-- 名稱
-- AllVersions
-- MinimumVersion
-- RequiredVersion
-- 標籤
-- Includes
-- DscResource
-- RoleCapability
-- 命令
-- 篩選器
+- <span data-ttu-id="d1fc9-129">名稱</span><span class="sxs-lookup"><span data-stu-id="d1fc9-129">Name</span></span>
+- <span data-ttu-id="d1fc9-130">AllVersions</span><span class="sxs-lookup"><span data-stu-id="d1fc9-130">AllVersions</span></span>
+- <span data-ttu-id="d1fc9-131">MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="d1fc9-131">MinimumVersion</span></span>
+- <span data-ttu-id="d1fc9-132">RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="d1fc9-132">RequiredVersion</span></span>
+- <span data-ttu-id="d1fc9-133">標籤</span><span class="sxs-lookup"><span data-stu-id="d1fc9-133">Tag</span></span>
+- <span data-ttu-id="d1fc9-134">Includes</span><span class="sxs-lookup"><span data-stu-id="d1fc9-134">Includes</span></span>
+- <span data-ttu-id="d1fc9-135">DscResource</span><span class="sxs-lookup"><span data-stu-id="d1fc9-135">DscResource</span></span>
+- <span data-ttu-id="d1fc9-136">RoleCapability</span><span class="sxs-lookup"><span data-stu-id="d1fc9-136">RoleCapability</span></span>
+- <span data-ttu-id="d1fc9-137">命令</span><span class="sxs-lookup"><span data-stu-id="d1fc9-137">Command</span></span>
+- <span data-ttu-id="d1fc9-138">篩選器</span><span class="sxs-lookup"><span data-stu-id="d1fc9-138">Filter</span></span>
 
-如果您只想要探索 Gallery 中的特定 DSC 資源，則可以執行 [**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。
-[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 會傳回 Gallery 中所含 DSC 資源的資料。 由於 DSC 資源一律是隨著模組一起傳遞，因此您仍然需要執行 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 來安裝這些 DSC 資源。
+<span data-ttu-id="d1fc9-139">如果您只想要探索 Gallery 中的特定 DSC 資源，則可以執行 [**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-139">If you're only interested in discovering specific DSC resources in the Gallery, you can run the [**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span>
+<span data-ttu-id="d1fc9-140">[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 會傳回 Gallery 中所含 DSC 資源的資料。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-140">[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) returns data on DSC resources contained in the Gallery.</span></span> <span data-ttu-id="d1fc9-141">由於 DSC 資源一律是隨著模組一起傳遞，因此您仍然需要執行 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 來安裝這些 DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-141">Because DSC resources are always delivered as part of a module, you still need to run [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) to install those DSC resources.</span></span>
 
-<a id="learning-about-items-in-the-powershell-gallery" class="xliff"></a>
-## 了解 PowerShell Gallery 中的項目
+## <a name="learning-about-items-in-the-powershell-gallery"></a><span data-ttu-id="d1fc9-142">了解 PowerShell Gallery 中的項目</span><span class="sxs-lookup"><span data-stu-id="d1fc9-142">Learning about items in the PowerShell Gallery</span></span>
 
-在您識別到感興趣的項目之後，可能會想要深入了解。 做法是檢查 Galler 上項目的特定頁面。 在該頁面上，您可以看到所有與項目一起上傳的中繼資料。 項目的這個中繼資料是由項目作者所提供，未經 Microsoft 驗證。 項目的 [擁有者] 與用來發行項目的 Gallery 帳戶緊密連結，而且比 [作者] 欄位更為可靠。
+<span data-ttu-id="d1fc9-143">在您識別到感興趣的項目之後，可能會想要深入了解。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-143">Once you've identified an item you're interested in, you may want to learn more about it.</span></span> <span data-ttu-id="d1fc9-144">做法是檢查 Galler 上項目的特定頁面。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-144">You can do this by examining that item's specific page on the Gallery.</span></span> <span data-ttu-id="d1fc9-145">在該頁面上，您可以看到所有與項目一起上傳的中繼資料。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-145">On that page, you'll be able to see all of the metadata uploaded with the item.</span></span> <span data-ttu-id="d1fc9-146">項目的這個中繼資料是由項目作者所提供，未經 Microsoft 驗證。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-146">This metadata for an item is provided by the item's author, and is not verified by Microsoft.</span></span> <span data-ttu-id="d1fc9-147">項目的 [擁有者] 與用來發行項目的 Gallery 帳戶緊密連結，而且比 [作者] 欄位更為可靠。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-147">The Owner of the item is strongly tied to the Gallery account used to publish the item, and is more trustworthy than the Author field.</span></span>
 
-如果您發現可能未以誠信方式發行的項目，請按一下該項目之頁面上的 [檢舉不當使用]。
+<span data-ttu-id="d1fc9-148">如果您發現可能未以誠信方式發行的項目，請按一下該項目之頁面上的 [檢舉不當使用]。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-148">If you discover an item that you feel is not published in good faith, click **Report Abuse** on that item's page.</span></span>
 
-如果您執行的是 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)，則可以在所傳回的 PSGetModuleInfo 物件中檢視此資料。 例如，執行 [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 會傳回 Gallery 中 PSReadLine 模組的資料。
+<span data-ttu-id="d1fc9-149">如果您執行的是 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)，則可以在所傳回的 PSGetModuleInfo 物件中檢視此資料。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-149">If you're running [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), you can view this data in the returned PSGetModuleInfo object.</span></span> <span data-ttu-id="d1fc9-150">例如，執行 [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 會傳回 Gallery 中 PSReadLine 模組的資料。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-150">For example, running [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) returns data on the PSReadLine module in the Gallery.</span></span>
 
-<a id="downloading-items-from-the-powershell-gallery" class="xliff"></a>
-## 從 PowerShell Gallery 下載項目
+## <a name="downloading-items-from-the-powershell-gallery"></a><span data-ttu-id="d1fc9-151">從 PowerShell Gallery 下載項目</span><span class="sxs-lookup"><span data-stu-id="d1fc9-151">Downloading items from the PowerShell Gallery</span></span>
 
-從 PowerShell Gallery 下載項目時，建議使用下列程序︰
+<span data-ttu-id="d1fc9-152">從 PowerShell Gallery 下載項目時，建議使用下列程序︰</span><span class="sxs-lookup"><span data-stu-id="d1fc9-152">We encourage the following process when downloading items from the PowerShell Gallery:</span></span>
 
-<a id="inspect" class="xliff"></a>
-### 檢查
+### <a name="inspect"></a><span data-ttu-id="d1fc9-153">檢查</span><span class="sxs-lookup"><span data-stu-id="d1fc9-153">Inspect</span></span>
 
-若要下載 Gallery 中的項目來進行檢查，請執行 [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet (視項目類型而定)。 這可讓您在本機儲存項目，而不需要安裝它，並且檢查項目內容。 請記得手動刪除儲存的項目。
+<span data-ttu-id="d1fc9-154">若要下載 Gallery 中的項目來進行檢查，請執行 [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet (視項目類型而定)。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-154">To download an item from the Gallery for inspection, run either the [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet, depending on the item type.</span></span> <span data-ttu-id="d1fc9-155">這可讓您在本機儲存項目，而不需要安裝它，並且檢查項目內容。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-155">This lets you save the item locally without installing it, and inspect the item contents.</span></span> <span data-ttu-id="d1fc9-156">請記得手動刪除儲存的項目。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-156">Remember to delete the saved item manually.</span></span>
 
-這些項目有一部分是由 Microsoft 所撰寫，其他則是由 PowerShell 社群所撰寫。 Microsoft 建議您檢閱這個組件庫上項目的內容和程式碼，再進行安裝。
+<span data-ttu-id="d1fc9-157">這些項目有一部分是由 Microsoft 所撰寫，其他則是由 PowerShell 社群所撰寫。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-157">Some of these items are authored by Microsoft, and others are authored by the PowerShell community.</span></span> <span data-ttu-id="d1fc9-158">Microsoft 建議您檢閱這個組件庫上項目的內容和程式碼，再進行安裝。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-158">Microsoft recommends that you review the contents and code of items on this gallery prior to installation.</span></span>
 
-如果您發現可能未以誠信方式發行的項目，請按一下該項目之頁面上的 [檢舉不當使用]。
+<span data-ttu-id="d1fc9-159">如果您發現可能未以誠信方式發行的項目，請按一下該項目之頁面上的 [檢舉不當使用]。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-159">If you discover an item that you feel is not published in good faith, click **Report Abuse** on that item's page.</span></span>
 
-<a id="install" class="xliff"></a>
-### 安裝
+### <a name="install"></a><span data-ttu-id="d1fc9-160">安裝</span><span class="sxs-lookup"><span data-stu-id="d1fc9-160">Install</span></span>
 
-若要安裝 Gallery 中的項目來進行使用，請執行 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet (視項目類型而定)。
+<span data-ttu-id="d1fc9-161">若要安裝 Gallery 中的項目來進行使用，請執行 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet (視項目類型而定)。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-161">To install an item from the Gallery for use, run either the [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet, depending on the item type.</span></span>
 
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 預設會將模組安裝至 `$env:ProgramFiles\WindowsPowerShell\Modules`。 這需要系統管理員帳戶。 如果您新增 `-Scope
-CurrentUser` 參數，模組就會安裝至 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`。
+<span data-ttu-id="d1fc9-162">[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 預設會將模組安裝至 `$env:ProgramFiles\WindowsPowerShell\Modules`。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-162">[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by default.</span></span> <span data-ttu-id="d1fc9-163">這需要系統管理員帳戶。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-163">This requires an administrator account.</span></span> <span data-ttu-id="d1fc9-164">如果您新增 `-Scope
+CurrentUser` 參數，模組就會安裝至 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules`。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-164">If you add the `-Scope
+CurrentUser` parameter, the module is installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .</span></span>
 
-[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 預設會將指令碼安裝至 `$env:ProgramFiles\WindowsPowerShell\Scripts`。 這需要系統管理員帳戶。 如果您新增 `-Scope
-CurrentUser` 參數，指令碼就會安裝至 `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`。
+<span data-ttu-id="d1fc9-165">[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 預設會將指令碼安裝至 `$env:ProgramFiles\WindowsPowerShell\Scripts`。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-165">[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installs the script to `$env:ProgramFiles\WindowsPowerShell\Scripts` by default.</span></span> <span data-ttu-id="d1fc9-166">這需要系統管理員帳戶。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-166">This requires an administrator account.</span></span> <span data-ttu-id="d1fc9-167">如果您新增 `-Scope
+CurrentUser` 參數，指令碼就會安裝至 `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts`。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-167">If you add the `-Scope
+CurrentUser` parameter, the script is installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .</span></span>
 
-[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 預設會安裝項目的最新版本。 若要安裝項目的舊版本，請新增 `-RequiredVersion` 參數。
+<span data-ttu-id="d1fc9-168">[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 預設會安裝項目的最新版本。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-168">By default, [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installs the most current version of an item.</span></span> <span data-ttu-id="d1fc9-169">若要安裝項目的舊版本，請新增 `-RequiredVersion` 參數。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-169">To install an older version of the item, add the `-RequiredVersion` parameter.</span></span>
 
-<a id="deploy" class="xliff"></a>
-### 在客體叢集部署
+### <a name="deploy"></a><span data-ttu-id="d1fc9-170">在客體叢集部署</span><span class="sxs-lookup"><span data-stu-id="d1fc9-170">Deploy</span></span>
 
-若要將項目從 PowerShell Gallery 部署至 Azure 自動化，請按一下項目詳細資料頁面上的 [Deploy to Azure Automation] \(部署至 Azure 自動化)。 會將您重新導向至使用 Azure 帳戶認證所登入的 Azure 管理入口網站。 請注意，部署包含相依性的項目時會將所有相依性部署至 Azure 自動化。 將 **AzureAutomationNotSupported** 標記新增至項目中繼資料，即可停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕。
+<span data-ttu-id="d1fc9-171">若要將項目從 PowerShell Gallery 部署至 Azure 自動化，請按一下項目詳細資料頁面上的 [Deploy to Azure Automation] \(部署至 Azure 自動化)。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-171">To deploy an item from the PowerShell Gallery to Azure Automation, click **Deploy to Azure Automation** on the item details page.</span></span> <span data-ttu-id="d1fc9-172">會將您重新導向至使用 Azure 帳戶認證所登入的 Azure 管理入口網站。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-172">You will be redirected to the Azure Management Portal, where you sign in by using your Azure account credentials.</span></span> <span data-ttu-id="d1fc9-173">請注意，部署包含相依性的項目時會將所有相依性部署至 Azure 自動化。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-173">Note that deploying items with dependencies will deploy all the dependencies to Azure Automation.</span></span> <span data-ttu-id="d1fc9-174">將 **AzureAutomationNotSupported** 標記新增至項目中繼資料，即可停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-174">The 'Deploy to Azure Automation' button can be disabled by adding the **AzureAutomationNotSupported** tag to your item metadata.</span></span>
 
-若要深入了解 Azure 自動化，請參閱 [Azure 自動化網站](http://azure.microsoft.com/en-us/services/automation/)。
+<span data-ttu-id="d1fc9-175">若要深入了解 Azure 自動化，請參閱 [Azure 自動化網站](http://azure.microsoft.com/en-us/services/automation/)。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-175">To learn more about Azure Automation, see the [Azure Automation website](http://azure.microsoft.com/en-us/services/automation/).</span></span>
 
-<a id="updating-items-from-the-powershell-gallery" class="xliff"></a>
-## 更新 PowerShell Gallery 中的項目
+## <a name="updating-items-from-the-powershell-gallery"></a><span data-ttu-id="d1fc9-176">更新 PowerShell Gallery 中的項目</span><span class="sxs-lookup"><span data-stu-id="d1fc9-176">Updating items from the PowerShell Gallery</span></span>
 
-若要更新從「PowerShell 資源庫」安裝的項目，請執行 [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 如果執行時未包含任何其他參數，[**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 就會嘗試更新透過執行 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 來安裝的每個模組。
-若要選擇性地更新模組，請新增 `-Name` 參數。
+<span data-ttu-id="d1fc9-177">若要更新從「PowerShell 資源庫」安裝的項目，請執行 [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-177">To update items installed from the PowerShell Gallery, run either the [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span> <span data-ttu-id="d1fc9-178">如果執行時未包含任何其他參數，[**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 就會嘗試更新透過執行 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 來安裝的每個模組。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-178">When run without any additional parameters, [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) attempts to update each module installed by running [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).</span></span>
+<span data-ttu-id="d1fc9-179">若要選擇性地更新模組，請新增 `-Name` 參數。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-179">To selectively update modules, add the `-Name` parameter.</span></span>
 
-同樣地，如果執行時未包含任何其他參數，[**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 也會嘗試更新透過執行 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 來安裝的每個指令碼。
-若要選擇性地更新指令碼，請新增 `-Name` 參數。
+<span data-ttu-id="d1fc9-180">同樣地，如果執行時未包含任何其他參數，[**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 也會嘗試更新透過執行 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 來安裝的每個指令碼。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-180">Similarly, when run without any additional parameters, [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) also attempts to update each script installed by running [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).</span></span>
+<span data-ttu-id="d1fc9-181">若要選擇性地更新指令碼，請新增 `-Name` 參數。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-181">To selectively update scripts, add the `-Name` parameter.</span></span>
 
-<a id="list-items-that-you-have-installed-from-the-powershell-gallery" class="xliff"></a>
-## 列出您已從 PowerShell Gallery 安裝的項目
+## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a><span data-ttu-id="d1fc9-182">列出您已從 PowerShell Gallery 安裝的項目</span><span class="sxs-lookup"><span data-stu-id="d1fc9-182">List items that you have installed from the PowerShell Gallery</span></span>
 
-若要找出您已從 PowerShell Gallery 安裝的模組，請執行 [**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有模組。
+<span data-ttu-id="d1fc9-183">若要找出您已從 PowerShell Gallery 安裝的模組，請執行 [**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-183">To find out which modules you have installed from the PowerShell Gallery, run the [**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span> <span data-ttu-id="d1fc9-184">這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有模組。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-184">This command lists all of the modules you have on your system that were installed directly from the PowerShell Gallery.</span></span>
 
-同樣地，若要找出您已從 PowerShell Gallery 安裝的指令碼，請執行 [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。
+<span data-ttu-id="d1fc9-185">同樣地，若要找出您已從 PowerShell Gallery 安裝的指令碼，請執行 [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-185">Similarly, to find out which scripts you have installed from the PowerShell Gallery, run the [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span> <span data-ttu-id="d1fc9-186">這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。</span><span class="sxs-lookup"><span data-stu-id="d1fc9-186">This command lists all of the scripts you have on your system that were installed directly from the PowerShell Gallery.</span></span>
 

@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
->注意︰請提供建議的描述性標題和簡短描述
+><span data-ttu-id="2ad3e-103">注意︰請提供建議的描述性標題和簡短描述</span><span class="sxs-lookup"><span data-stu-id="2ad3e-103">Note: provide a proposed descriptive title and a brief description</span></span>
 
-<a id="example-erroneous-executionpolicy-errors" class="xliff"></a>
-## 範例：錯誤的 ExecutionPolicy 錯誤 ##
-在 Windows 7 上，使用 PowerShell 模組和 DSC 資源可能會報告 ExecutionPolicy 的相關錯誤。
+## <a name="example-erroneous-executionpolicy-errors"></a><span data-ttu-id="2ad3e-104">範例：錯誤的 ExecutionPolicy 錯誤</span><span class="sxs-lookup"><span data-stu-id="2ad3e-104">Example: Erroneous ExecutionPolicy errors</span></span> ##
+<span data-ttu-id="2ad3e-105">在 Windows 7 上，使用 PowerShell 模組和 DSC 資源可能會報告 ExecutionPolicy 的相關錯誤。</span><span class="sxs-lookup"><span data-stu-id="2ad3e-105">On Windows 7, the use of PowerShell modules and DSC resources may result in errors reported about ExecutionPolicy.</span></span>
 
-<a id="resolution" class="xliff"></a>
-### 解決方法
+### <a name="resolution"></a><span data-ttu-id="2ad3e-106">解決方法</span><span class="sxs-lookup"><span data-stu-id="2ad3e-106">Resolution</span></span>
 
-若要解決此問題，請在提升權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，將 **ExecutionPolicy** 設定為 **RemoteSigned**：
+<span data-ttu-id="2ad3e-107">若要解決此問題，請在提升權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，將 **ExecutionPolicy** 設定為 **RemoteSigned**：</span><span class="sxs-lookup"><span data-stu-id="2ad3e-107">To resolve, set the **ExecutionPolicy** to **RemoteSigned** by running the following command in an elevated PowerShell session (Run as Administrator):</span></span>
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned

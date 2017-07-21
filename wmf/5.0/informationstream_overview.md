@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="information-stream" class="xliff"></a>
-# 資訊串流
+# <a name="information-stream"></a><span data-ttu-id="cbb84-102">資訊串流</span><span class="sxs-lookup"><span data-stu-id="cbb84-102">Information Stream</span></span>
 
-新的結構化資訊串流現在可用來在指令碼與主機之間傳送結構化的資料。 **Write-Host** 也已更新為將其輸出發出到資訊串流，您可以在資訊串流上立即擷取輸出或將輸出轉為無回應。 搭配 **-InformationVariable** 和 **-InformationAction** 一般參數使用新的 **Write-Information** Cmdlet (以及對應的 WriteInformation API) 可帶來更多彈性和功能。
+<span data-ttu-id="cbb84-103">新的結構化資訊串流現在可用來在指令碼與主機之間傳送結構化的資料。</span><span class="sxs-lookup"><span data-stu-id="cbb84-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="cbb84-104">**Write-Host** 也已更新為將其輸出發出到資訊串流，您可以在資訊串流上立即擷取輸出或將輸出轉為無回應。</span><span class="sxs-lookup"><span data-stu-id="cbb84-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="cbb84-105">搭配 **-InformationVariable** 和 **-InformationAction** 一般參數使用新的 **Write-Information** Cmdlet (以及對應的 WriteInformation API) 可帶來更多彈性和功能。</span><span class="sxs-lookup"><span data-stu-id="cbb84-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script

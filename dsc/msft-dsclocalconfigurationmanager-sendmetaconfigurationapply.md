@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法
+# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="57d59-103">MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法</span><span class="sxs-lookup"><span data-stu-id="57d59-103">SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-設定用於控制設定代理程式的本機設定管理員設定。
+<span data-ttu-id="57d59-104">設定用於控制設定代理程式的本機設定管理員設定。</span><span class="sxs-lookup"><span data-stu-id="57d59-104">Sets the Local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="57d59-105">語法</span><span class="sxs-lookup"><span data-stu-id="57d59-105">Syntax</span></span>
 ------
 
 ```mof
@@ -26,40 +24,35 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="57d59-106">參數</span><span class="sxs-lookup"><span data-stu-id="57d59-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-設定的環境資料。
+<span data-ttu-id="57d59-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="57d59-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="57d59-108">設定的環境資料。</span><span class="sxs-lookup"><span data-stu-id="57d59-108">The environment data for the configuration.</span></span>
 
-*force* \[in\]  
-**true** 表示強制停止該設定。
+<span data-ttu-id="57d59-109">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="57d59-109">*force* \[in\]</span></span>  
+<span data-ttu-id="57d59-110">**true** 表示強制停止該設定。</span><span class="sxs-lookup"><span data-stu-id="57d59-110">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="57d59-111">傳回值</span><span class="sxs-lookup"><span data-stu-id="57d59-111">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="57d59-112">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="57d59-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="57d59-113">備註</span><span class="sxs-lookup"><span data-stu-id="57d59-113">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="57d59-114">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="57d59-114">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="57d59-115">需求</span><span class="sxs-lookup"><span data-stu-id="57d59-115">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="57d59-116">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="57d59-116">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="57d59-117">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="57d59-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="57d59-118">另請參閱</span><span class="sxs-lookup"><span data-stu-id="57d59-118">See also</span></span>
+
+
+[<span data-ttu-id="57d59-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="57d59-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

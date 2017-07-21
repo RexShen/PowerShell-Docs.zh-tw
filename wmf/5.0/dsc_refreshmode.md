@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="additional-value-for-refreshmode-property" class="xliff"></a>
-# RefreshMode 屬性的額外值
+# <a name="additional-value-for-refreshmode-property"></a><span data-ttu-id="f2320-102">RefreshMode 屬性的額外值</span><span class="sxs-lookup"><span data-stu-id="f2320-102">Additional value for RefreshMode property</span></span>
 
-此版本導入新的 `RefreshMode` 值 - **Disabled**。 當設定為此模式時，LCM 不會執行文件管理。 如需詳細資訊，請參閱[設定本機設定管理員](https://msdn.microsoft.com/powershell/dsc/metaconfig)。
+<span data-ttu-id="f2320-103">此版本導入新的 `RefreshMode` 值 - **Disabled**。</span><span class="sxs-lookup"><span data-stu-id="f2320-103">This release introduces a new `RefreshMode` value, **Disabled**.</span></span> <span data-ttu-id="f2320-104">當設定為此模式時，LCM 不會執行文件管理。</span><span class="sxs-lookup"><span data-stu-id="f2320-104">When this mode is set, LCM does not do document management.</span></span> <span data-ttu-id="f2320-105">如需詳細資訊，請參閱[設定本機設定管理員](https://msdn.microsoft.com/powershell/dsc/metaconfig)。</span><span class="sxs-lookup"><span data-stu-id="f2320-105">For more information, see [Configuring the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).</span></span>
 

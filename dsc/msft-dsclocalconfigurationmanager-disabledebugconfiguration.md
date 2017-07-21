@@ -10,49 +10,42 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法
+# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="7617b-103">MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="7617b-103">DisableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-停用 DSC 資源偵錯。
+<span data-ttu-id="7617b-104">停用 DSC 資源偵錯。</span><span class="sxs-lookup"><span data-stu-id="7617b-104">Disables DSC resource debugging.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="7617b-105">語法</span><span class="sxs-lookup"><span data-stu-id="7617b-105">Syntax</span></span>
 ------
 
 ```mof
 uint32 DisableDebugConfiguration();
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="7617b-106">參數</span><span class="sxs-lookup"><span data-stu-id="7617b-106">Parameters</span></span>
 ----------
 
-這個方法沒有任何參數。
+<span data-ttu-id="7617b-107">這個方法沒有任何參數。</span><span class="sxs-lookup"><span data-stu-id="7617b-107">This method has no parameters.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="7617b-108">傳回值</span><span class="sxs-lookup"><span data-stu-id="7617b-108">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="7617b-109">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="7617b-109">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="7617b-110">備註</span><span class="sxs-lookup"><span data-stu-id="7617b-110">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="7617b-111">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="7617b-111">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="7617b-112">需求</span><span class="sxs-lookup"><span data-stu-id="7617b-112">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="7617b-113">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="7617b-113">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="7617b-114">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="7617b-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="7617b-115">另請參閱</span><span class="sxs-lookup"><span data-stu-id="7617b-115">See also</span></span>
+
+
+[<span data-ttu-id="7617b-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="7617b-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
  
 

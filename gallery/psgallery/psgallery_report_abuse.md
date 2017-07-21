@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-abuse" class="xliff"></a>
-# 檢舉不當使用
+# <a name="report-abuse"></a><span data-ttu-id="d6814-103">檢舉不當使用</span><span class="sxs-lookup"><span data-stu-id="d6814-103">Report Abuse</span></span>
 
-如果您發現有項目違反其中任一項目，請按一下項目詳細資料頁面上的 [檢舉不當使用] 連結並提交報告。
+<span data-ttu-id="d6814-104">如果您發現有項目違反其中任一項目，請按一下項目詳細資料頁面上的 [檢舉不當使用] 連結並提交報告。</span><span class="sxs-lookup"><span data-stu-id="d6814-104">If you find a item that is in violation of any of these items, click the **Report Abuse** link on the item details page and submit a report.</span></span>
 

@@ -9,12 +9,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
-# Set-dsclocalconfigurationmanager Cmdlet 支援 -force 參數
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="eac24-102">Set-dsclocalconfigurationmanager Cmdlet 支援 -force 參數</span><span class="sxs-lookup"><span data-stu-id="eac24-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
 
-我們在 Set-DscLocalConfigurationManager Cmdlet 中加入新參數的支援。 這可讓使用者決定重設在電腦上的中繼設定，因為當其他作業在背景執行時 (例如一致性檢查)，會導致所有執行的作業停止。
+<span data-ttu-id="eac24-103">我們在 Set-DscLocalConfigurationManager Cmdlet 中加入新參數的支援。</span><span class="sxs-lookup"><span data-stu-id="eac24-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="eac24-104">這可讓使用者決定重設在電腦上的中繼設定，因為當其他作業在背景執行時 (例如一致性檢查)，會導致所有執行的作業停止。</span><span class="sxs-lookup"><span data-stu-id="eac24-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
 
-嘗試不使用 –Force 參數設定中繼設定時，體驗看起來像這樣。
+<span data-ttu-id="eac24-105">嘗試不使用 –Force 參數設定中繼設定時，體驗看起來像這樣。</span><span class="sxs-lookup"><span data-stu-id="eac24-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -29,7 +28,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-當我們使用 –force時，它藉由取消目前電腦上正在執行的作業，成功的更新系統上的中繼設定。
+<span data-ttu-id="eac24-106">當我們使用 –force時，它藉由取消目前電腦上正在執行的作業，成功的更新系統上的中繼設定。</span><span class="sxs-lookup"><span data-stu-id="eac24-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".

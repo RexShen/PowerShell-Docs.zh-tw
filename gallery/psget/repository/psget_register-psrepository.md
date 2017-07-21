@@ -10,36 +10,30 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="register-psrepository" class="xliff"></a>
-# Register-PSRepository
+# <a name="register-psrepository"></a><span data-ttu-id="d1db4-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="d1db4-103">Register-PSRepository</span></span>
 
-取得電腦上的已註冊存放庫。
+<span data-ttu-id="d1db4-104">取得電腦上的已註冊存放庫。</span><span class="sxs-lookup"><span data-stu-id="d1db4-104">Gets the registered repositories on a computer.</span></span>
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a><span data-ttu-id="d1db4-105">描述</span><span class="sxs-lookup"><span data-stu-id="d1db4-105">Description</span></span>
 
-Register-PSRepository Cmdlet 會註冊 PowerShell 模組的線上存放庫。 註冊存放庫之後，即可透過 Find-Module、Install-Module 和 Publish-Module Cmdlet 進行參考。 已註冊的存放庫會變成 Find-Module 和 Install-Module 中的預設存放庫。 
+<span data-ttu-id="d1db4-106">Register-PSRepository Cmdlet 會註冊 PowerShell 模組的線上存放庫。</span><span class="sxs-lookup"><span data-stu-id="d1db4-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="d1db4-107">註冊存放庫之後，即可透過 Find-Module、Install-Module 和 Publish-Module Cmdlet 進行參考。</span><span class="sxs-lookup"><span data-stu-id="d1db4-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="d1db4-108">已註冊的存放庫會變成 Find-Module 和 Install-Module 中的預設存放庫。</span><span class="sxs-lookup"><span data-stu-id="d1db4-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span> 
 
-已註冊的存放庫是使用者特有的。 它們並未註冊在整個系統內容中。
+<span data-ttu-id="d1db4-109">已註冊的存放庫是使用者特有的。</span><span class="sxs-lookup"><span data-stu-id="d1db4-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="d1db4-110">它們並未註冊在整個系統內容中。</span><span class="sxs-lookup"><span data-stu-id="d1db4-110">They are not registered in a system-wide context.</span></span>
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="d1db4-111">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="d1db4-111">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="d1db4-112">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="d1db4-112">Cmdlet online help reference</span></span>
 
-[Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
+[<span data-ttu-id="d1db4-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="d1db4-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a><span data-ttu-id="d1db4-114">範例命令</span><span class="sxs-lookup"><span data-stu-id="d1db4-114">Example commands</span></span>
 
-<a id="register-a-powershell-repository" class="xliff"></a>
-### 註冊 PowerShell 存放庫
-您可以設定 PowerShellGet 處理內部存放庫。 註冊存放庫後，您可以使用 Find-Module 和 Install-Module 搭配存放庫。
+### <a name="register-a-powershell-repository"></a><span data-ttu-id="d1db4-115">註冊 PowerShell 存放庫</span><span class="sxs-lookup"><span data-stu-id="d1db4-115">Register a PowerShell Repository</span></span>
+<span data-ttu-id="d1db4-116">您可以設定 PowerShellGet 處理內部存放庫。</span><span class="sxs-lookup"><span data-stu-id="d1db4-116">You can configure PowerShellGet to work against internal repositories.</span></span> <span data-ttu-id="d1db4-117">註冊存放庫後，您可以使用 Find-Module 和 Install-Module 搭配存放庫。</span><span class="sxs-lookup"><span data-stu-id="d1db4-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 # Register a default repository
@@ -68,10 +62,9 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
-### 具指令碼共用支援的 Register-PSRepository 和 Set-PSRepository Cmdlet
+### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="d1db4-118">具指令碼共用支援的 Register-PSRepository 和 Set-PSRepository Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d1db4-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
 
-使用 Register-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 新增至 PSRepository。
+<span data-ttu-id="d1db4-119">使用 Register-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 新增至 PSRepository。</span><span class="sxs-lookup"><span data-stu-id="d1db4-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 
 ```powershell
 

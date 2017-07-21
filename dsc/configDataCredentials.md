@@ -10,22 +10,20 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="credentials-options-in-configuration-data" class="xliff"></a>
-# 設定資料的認證選項
->適用於：Windows PowerShell 5.0
+# <a name="credentials-options-in-configuration-data"></a><span data-ttu-id="3a0fe-103">設定資料的認證選項</span><span class="sxs-lookup"><span data-stu-id="3a0fe-103">Credentials Options in Configuration Data</span></span>
+><span data-ttu-id="3a0fe-104">適用於：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="3a0fe-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<a id="plain-text-passwords-and-domain-users" class="xliff"></a>
-## 純文字密碼和網域使用者
+## <a name="plain-text-passwords-and-domain-users"></a><span data-ttu-id="3a0fe-105">純文字密碼和網域使用者</span><span class="sxs-lookup"><span data-stu-id="3a0fe-105">Plain Text Passwords and Domain Users</span></span>
 
-包含未加密認證的 DSC 設定會產生有關純文字密碼的錯誤訊息。
-DSC 也會在使用網域認證時產生警告。
-若要隱藏這些錯誤和警告訊息，請使用 DSC 設定資料關鍵字：
-* **PsDscAllowPlainTextPassword**
-* **PsDscAllowDomainUser**
+<span data-ttu-id="3a0fe-106">包含未加密認證的 DSC 設定會產生有關純文字密碼的錯誤訊息。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-106">DSC configurations containing a credential without encryption will generate an error messages about plain text passwords.</span></span>
+<span data-ttu-id="3a0fe-107">DSC 也會在使用網域認證時產生警告。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-107">Also, DSC will generate a warning when using domain credentials.</span></span>
+<span data-ttu-id="3a0fe-108">若要隱藏這些錯誤和警告訊息，請使用 DSC 設定資料關鍵字：</span><span class="sxs-lookup"><span data-stu-id="3a0fe-108">To suppress these error and warning messages use the DSC configuration data keywords:</span></span>
+* <span data-ttu-id="3a0fe-109">**PsDscAllowPlainTextPassword**</span><span class="sxs-lookup"><span data-stu-id="3a0fe-109">**PsDscAllowPlainTextPassword**</span></span>
+* <span data-ttu-id="3a0fe-110">**PsDscAllowDomainUser**</span><span class="sxs-lookup"><span data-stu-id="3a0fe-110">**PsDscAllowDomainUser**</span></span>
 
->**注意**︰使用純文字密碼並不安全。 建議您使用本主題稍後所涵蓋的技術來保護認證。
+><span data-ttu-id="3a0fe-111">**注意**︰使用純文字密碼並不安全。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-111">**Note:** Using plaintext passwords is not secure.</span></span> <span data-ttu-id="3a0fe-112">建議您使用本主題稍後所涵蓋的技術來保護認證。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-112">Securing credentials by using the techniques covered later in this topic is recommended.</span></span>
 
-傳遞純文字認證的範例如下︰
+<span data-ttu-id="3a0fe-113">傳遞純文字認證的範例如下︰</span><span class="sxs-lookup"><span data-stu-id="3a0fe-113">The following is an example of passing plain text credentials:</span></span>
 
 ```powershell
 #Prompt user for their credentials
@@ -125,19 +123,18 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-<a id="handling-credentials-in-dsc" class="xliff"></a>
-## 處理 DSC 的認證
+## <a name="handling-credentials-in-dsc"></a><span data-ttu-id="3a0fe-114">處理 DSC 的認證</span><span class="sxs-lookup"><span data-stu-id="3a0fe-114">Handling Credentials in DSC</span></span>
 
-DSC 設定資源預設執行為 `Local System`。
-不過，有些資源需要認證，例如當 `Package` 資源需要在特定使用者帳戶下安裝軟體時。
+<span data-ttu-id="3a0fe-115">DSC 設定資源預設執行為 `Local System`。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-115">DSC configuration resources run as `Local System` by default.</span></span>
+<span data-ttu-id="3a0fe-116">不過，有些資源需要認證，例如當 `Package` 資源需要在特定使用者帳戶下安裝軟體時。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-116">However, some resources need a credential, for example when the `Package` resource needs to install software under a specific user account.</span></span>
 
-資源過去使用硬式編碼的 `Credential` 屬性名稱來處理這種情形。
-WMF 5.0 為所有資源加入了自動的 `PsDscRunAsCredential` 屬性。 如需關於使用 `PsDscRunAsCredential` 的相關資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
-較新的資源和自訂的資源可以使用這個自動屬性，不用建立自己專有的認證屬性。
+<span data-ttu-id="3a0fe-117">資源過去使用硬式編碼的 `Credential` 屬性名稱來處理這種情形。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-117">Earlier resources used a hard-coded `Credential` property name to handle this.</span></span>
+<span data-ttu-id="3a0fe-118">WMF 5.0 為所有資源加入了自動的 `PsDscRunAsCredential` 屬性。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-118">WMF 5.0 added an automatic `PsDscRunAsCredential` property for all resources.</span></span> <span data-ttu-id="3a0fe-119">如需關於使用 `PsDscRunAsCredential` 的相關資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-119">For information about using `PsDscRunAsCredential`, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="3a0fe-120">較新的資源和自訂的資源可以使用這個自動屬性，不用建立自己專有的認證屬性。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-120">Newer resources and custom resources can use this automatic property instead of creating their own property for credentials.</span></span>
 
-請注意，某些資源的設計是針對特定原因使用多個認證，所以會有自己的認證屬性。
+<span data-ttu-id="3a0fe-121">請注意，某些資源的設計是針對特定原因使用多個認證，所以會有自己的認證屬性。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-121">*Note that the design of some resources are to use multiple credentials for a specific reason, and they will have their own credential properties.*</span></span>
 
-若要在資源上尋找可用的認證屬性，請使用 `Get-DscResource -Name ResourceName -Syntax` 或 ISE 的 Intellisense (`CTRL+SPACE`)。
+<span data-ttu-id="3a0fe-122">若要在資源上尋找可用的認證屬性，請使用 `Get-DscResource -Name ResourceName -Syntax` 或 ISE 的 Intellisense (`CTRL+SPACE`)。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-122">To find the available credential properties on a resource use either `Get-DscResource -Name ResourceName -Syntax` or the Intellisense in the ISE (`CTRL+SPACE`).</span></span>
 
 ```PowerShell
 PS C:\> Get-DscResource -Name Group -Syntax
@@ -155,28 +152,26 @@ Group [String] #ResourceName
 }
 ```
 
-本例使用 `PSDesiredStateConfiguration` 內建 DSC 資源模組的 [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) 資源。
-它會建立本機群組並新增或移除成員。
-它接受 `Credential` 屬性和自動的 `PsDscRunAsCredential` 屬性。
-不過，資源只會使用 `Credential` 屬性。
+<span data-ttu-id="3a0fe-123">本例使用 `PSDesiredStateConfiguration` 內建 DSC 資源模組的 [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) 資源。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-123">This example uses a [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) resource from the `PSDesiredStateConfiguration` built-in DSC resource module.</span></span>
+<span data-ttu-id="3a0fe-124">它會建立本機群組並新增或移除成員。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-124">It can create local groups and add or remove members.</span></span>
+<span data-ttu-id="3a0fe-125">它接受 `Credential` 屬性和自動的 `PsDscRunAsCredential` 屬性。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-125">It accepts both the `Credential` property and the automatic `PsDscRunAsCredential` property.</span></span>
+<span data-ttu-id="3a0fe-126">不過，資源只會使用 `Credential` 屬性。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-126">However, the resource only uses the `Credential` property.</span></span>
 
-如需 `PsDscRunAsCredential` 屬性的詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
+<span data-ttu-id="3a0fe-127">如需 `PsDscRunAsCredential` 屬性的詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-127">For more information about the `PsDscRunAsCredential` property, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-<a id="example-the-group-resource-credential-property" class="xliff"></a>
-## 範例：Group 資源 Credential 屬性
+## <a name="example-the-group-resource-credential-property"></a><span data-ttu-id="3a0fe-128">範例：Group 資源 Credential 屬性</span><span class="sxs-lookup"><span data-stu-id="3a0fe-128">Example: The Group resource Credential property</span></span>
 
-DSC 在 `Local System` 下執行，所以它已有可變更本機使用者和群組的權限。
-如果新增成員是本機帳戶，就不需要認證。
-如果 `Group` 資源在本機群組中加入網域帳戶，就需要認證。
+<span data-ttu-id="3a0fe-129">DSC 在 `Local System` 下執行，所以它已有可變更本機使用者和群組的權限。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-129">DSC runs under `Local System`, so it already has permissions to change local users and groups.</span></span>
+<span data-ttu-id="3a0fe-130">如果新增成員是本機帳戶，就不需要認證。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-130">If the member added is a local account, then no credential is necessary.</span></span>
+<span data-ttu-id="3a0fe-131">如果 `Group` 資源在本機群組中加入網域帳戶，就需要認證。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-131">If the `Group` resource adds a domain account to the local group, then a credential is necessary.</span></span>
 
-Active Directory 不允許匿名查詢。
-`Group` 資源的 `Credential` 屬性是用來查詢 Active Directory 的網域帳戶。
-就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以*讀取* Active Directory 大部分的物件。
+<span data-ttu-id="3a0fe-132">Active Directory 不允許匿名查詢。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-132">Anonymous queries to Active Directory are not allowed.</span></span>
+<span data-ttu-id="3a0fe-133">`Group` 資源的 `Credential` 屬性是用來查詢 Active Directory 的網域帳戶。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-133">The `Credential` property of the `Group` resource is the domain account used to query Active Directory.</span></span>
+<span data-ttu-id="3a0fe-134">就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以*讀取* Active Directory 大部分的物件。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-134">For most purposes this could be a generic user account, because by default users can *read* most of the objects in Active Directory.</span></span>
 
-<a id="example-configuration" class="xliff"></a>
-## 設定範例
+## <a name="example-configuration"></a><span data-ttu-id="3a0fe-135">設定範例</span><span class="sxs-lookup"><span data-stu-id="3a0fe-135">Example Configuration</span></span>
 
-以下程式碼範例會使用 DSC 以網域使用者填入本機群組：
+<span data-ttu-id="3a0fe-136">以下程式碼範例會使用 DSC 以網域使用者填入本機群組：</span><span class="sxs-lookup"><span data-stu-id="3a0fe-136">The following example code uses DSC to populate a local group with a domain user:</span></span>
 
 ```PowerShell
 Configuration DomainCredentialExample
@@ -202,7 +197,7 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred
 ```
 
-這個程式碼會產生錯誤和警告訊息：
+<span data-ttu-id="3a0fe-137">這個程式碼會產生錯誤和警告訊息：</span><span class="sxs-lookup"><span data-stu-id="3a0fe-137">This code generates both an error and warning message:</span></span>
 
 ```
 ConvertTo-MOFInstance : System.InvalidOperationException error processing
@@ -225,18 +220,17 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-本範例有兩個問題：
-1.  錯誤說明不建議純文字密碼
-2.  警告建議不要使用網域認證
+<span data-ttu-id="3a0fe-138">本範例有兩個問題：</span><span class="sxs-lookup"><span data-stu-id="3a0fe-138">This example has two issues:</span></span>
+1.  <span data-ttu-id="3a0fe-139">錯誤說明不建議純文字密碼</span><span class="sxs-lookup"><span data-stu-id="3a0fe-139">An error explains that plain text passwords are not recommended</span></span>
+2.  <span data-ttu-id="3a0fe-140">警告建議不要使用網域認證</span><span class="sxs-lookup"><span data-stu-id="3a0fe-140">A warning advises against using a domain credential</span></span>
 
-<a id="psdscallowplaintextpassword" class="xliff"></a>
-## PsDscAllowPlainTextPassword
+## <a name="psdscallowplaintextpassword"></a><span data-ttu-id="3a0fe-141">PsDscAllowPlainTextPassword</span><span class="sxs-lookup"><span data-stu-id="3a0fe-141">PsDscAllowPlainTextPassword</span></span>
 
-第一個錯誤訊息有文件的 URL。
-這個連結說明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 結構和憑證加密密碼。
-如需憑證和 DSC 的詳細資訊，請[閱讀這篇文章](http://aka.ms/certs4dsc)。
+<span data-ttu-id="3a0fe-142">第一個錯誤訊息有文件的 URL。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-142">The first error message has a URL with documentation.</span></span>
+<span data-ttu-id="3a0fe-143">這個連結說明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 結構和憑證加密密碼。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-143">This link explains how to encrypt passwords using a [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) structure and a certificate.</span></span>
+<span data-ttu-id="3a0fe-144">如需憑證和 DSC 的詳細資訊，請[閱讀這篇文章](http://aka.ms/certs4dsc)。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-144">For more information on certificates and DSC [read this post](http://aka.ms/certs4dsc).</span></span>
 
-若要強制施作純文字密碼，資源在設定資料區段中需要有 `PsDscAllowPlainTextPassword` 關鍵字，如下所示：
+<span data-ttu-id="3a0fe-145">若要強制施作純文字密碼，資源在設定資料區段中需要有 `PsDscAllowPlainTextPassword` 關鍵字，如下所示：</span><span class="sxs-lookup"><span data-stu-id="3a0fe-145">To force a plain text password, the resource requires the `PsDscAllowPlainTextPassword` keyword in the configuration data section as follows:</span></span>
 
 ```PowerShell
 Configuration DomainCredentialExample
@@ -271,26 +265,24 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
-*請注意，`NodeName` 不得等同星號，必須有特定的節點名稱。*
+<span data-ttu-id="3a0fe-146">*請注意，`NodeName` 不得等同星號，必須有特定的節點名稱。*</span><span class="sxs-lookup"><span data-stu-id="3a0fe-146">*Note that `NodeName` cannot equal asterisk, a specific node name is mandatory.*</span></span>
 
-**Microsoft 不建議您使用純文字密碼，以免造成嚴重的安全性風險。**
+<span data-ttu-id="3a0fe-147">**Microsoft 不建議您使用純文字密碼，以免造成嚴重的安全性風險。**</span><span class="sxs-lookup"><span data-stu-id="3a0fe-147">**Microsoft advises to avoid plain text passwords due to the significant security risk.**</span></span>
 
-<a id="domain-credentials" class="xliff"></a>
-## 網域認證
+## <a name="domain-credentials"></a><span data-ttu-id="3a0fe-148">網域認證</span><span class="sxs-lookup"><span data-stu-id="3a0fe-148">Domain Credentials</span></span>
 
-再次執行範例設定指令碼 (加密或不加密)，仍會產生警告，指出不建議使用網域帳戶進行認證。
-使用本機帳戶可降低暴露其他伺服器也可使用之網域認證的可能性。
+<span data-ttu-id="3a0fe-149">再次執行範例設定指令碼 (加密或不加密)，仍會產生警告，指出不建議使用網域帳戶進行認證。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-149">Running the example configuration script again (with or without encryption), still generates the warning that using a domain account for a credential is not recommended.</span></span>
+<span data-ttu-id="3a0fe-150">使用本機帳戶可降低暴露其他伺服器也可使用之網域認證的可能性。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-150">Using a local account eliminates potential exposure of domain credentials that could be used on other servers.</span></span>
 
-**認證搭配 DSC 資源使用時，請盡可能使用本機帳戶，而不用網域帳戶。**
+<span data-ttu-id="3a0fe-151">**認證搭配 DSC 資源使用時，請盡可能使用本機帳戶，而不用網域帳戶。**</span><span class="sxs-lookup"><span data-stu-id="3a0fe-151">**When using credentials with DSC resources, prefer a local account over a domain account when possible.**</span></span>
 
-如果憑證的 `Username` 屬性中有 '\' 或 '@'，DSC 會將其視為網域帳戶。
-使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。
+<span data-ttu-id="3a0fe-152">如果憑證的 `Username` 屬性中有 '\' 或 '@'，DSC 會將其視為網域帳戶。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-152">If there is a '\' or '@' in the `Username` property of the credential, then DSC will treat it as a domain account.</span></span>
+<span data-ttu-id="3a0fe-153">使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-153">There is an exception for "localhost", "127.0.0.1", and "::1" in the domain portion of the user name.</span></span>
 
-<a id="psdscallowdomainuser" class="xliff"></a>
-## PSDscAllowDomainUser
+## <a name="psdscallowdomainuser"></a><span data-ttu-id="3a0fe-154">PSDscAllowDomainUser</span><span class="sxs-lookup"><span data-stu-id="3a0fe-154">PSDscAllowDomainUser</span></span>
 
-在上述的 DSC `Group` 資源範例中，查詢 Active Directory 網域*需要*網域帳戶。
-發生這種情況時，請將 `PSDscAllowDomainUser` 屬性加入 `ConfigurationData` 區塊中，如下所示：
+<span data-ttu-id="3a0fe-155">在上述的 DSC `Group` 資源範例中，查詢 Active Directory 網域*需要*網域帳戶。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-155">In the DSC `Group` resource example above, querying an Active Directory domain *requires* a domain account.</span></span>
+<span data-ttu-id="3a0fe-156">發生這種情況時，請將 `PSDscAllowDomainUser` 屬性加入 `ConfigurationData` 區塊中，如下所示：</span><span class="sxs-lookup"><span data-stu-id="3a0fe-156">In this case add the `PSDscAllowDomainUser` property to the `ConfigurationData` block as follows:</span></span>
 
 ```PowerShell
 $cd = @{
@@ -305,5 +297,5 @@ $cd = @{
 }
 ```
 
-現在設定指令碼產生的 MOF 檔案不再有任何錯誤或警告。
+<span data-ttu-id="3a0fe-157">現在設定指令碼產生的 MOF 檔案不再有任何錯誤或警告。</span><span class="sxs-lookup"><span data-stu-id="3a0fe-157">Now the configuration script will generate the MOF file with no errors or warnings.</span></span>
 

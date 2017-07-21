@@ -9,18 +9,18 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="microsoftwsmanmanagement-module"></a>Microsoft.WSMan.Management 模組
-本節包含 **Microsoft.WSMan.Management** 模組的說明主題，此模組包含 [WSMan 提供者 [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)，以及可用來管理 Web Services for Management (WS-Management) 與 Windows 遠端管理 (WinRM) 的 Cmdlet。 **Microsoft.WSMan.Management** 模組是與 Windows PowerShell 一起安裝。
+# <a name="microsoftwsmanmanagement-module"></a><span data-ttu-id="7ff84-103">Microsoft.WSMan.Management 模組</span><span class="sxs-lookup"><span data-stu-id="7ff84-103">Microsoft.WSMan.Management Module</span></span>
+<span data-ttu-id="7ff84-104">本節包含 **Microsoft.WSMan.Management** 模組的說明主題，此模組包含 [WSMan 提供者 [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)，以及可用來管理 Web Services for Management (WS-Management) 與 Windows 遠端管理 (WinRM) 的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="7ff84-104">This section contains the help topics for the **Microsoft.WSMan.Management** module, which contains the [WSMan Provider [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7) and cmdlets that manage Web Services for Management (WS-Management) and Windows Remote Management (WinRM).</span></span> <span data-ttu-id="7ff84-105">**Microsoft.WSMan.Management** 模組是與 Windows PowerShell 一起安裝。</span><span class="sxs-lookup"><span data-stu-id="7ff84-105">The **Microsoft.WSMan.Management** module is installed with Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>說明主題
-[Windows PowerShell WS-Management Cmdlet](http://go.microsoft.com/fwlink/?LinkID=245863)
+## <a name="help-topics"></a><span data-ttu-id="7ff84-106">說明主題</span><span class="sxs-lookup"><span data-stu-id="7ff84-106">Help Topics</span></span>
+[<span data-ttu-id="7ff84-107">Windows PowerShell WS-Management Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7ff84-107">Windows PowerShell WS-Management Cmdlets</span></span>](http://go.microsoft.com/fwlink/?LinkID=245863)
 
-[about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
+[<span data-ttu-id="7ff84-108">about_WS-Management_Cmdlets</span><span class="sxs-lookup"><span data-stu-id="7ff84-108">about_WS-Management_Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
 
-[WSMan 提供者 [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
+[<span data-ttu-id="7ff84-109">WSMan 提供者 [v3]</span><span class="sxs-lookup"><span data-stu-id="7ff84-109">WSMan Provider [v3]</span></span>](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 
-## <a name="see-also"></a>另請參閱
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-- [Windows PowerShell Core](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="7ff84-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="7ff84-110">See Also</span></span>
+- [<span data-ttu-id="7ff84-111">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="7ff84-111">Windows PowerShell 5.0</span></span>](Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="7ff84-112">Windows PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="7ff84-112">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="7ff84-113">使用 Windows PowerShell 撰寫指令碼</span><span class="sxs-lookup"><span data-stu-id="7ff84-113">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

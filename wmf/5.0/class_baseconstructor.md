@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="call-base-class-constructor" class="xliff"></a>
-# 呼叫基底類別建構函式
+# <a name="call-base-class-constructor"></a><span data-ttu-id="247a9-102">呼叫基底類別建構函式</span><span class="sxs-lookup"><span data-stu-id="247a9-102">Call Base Class Constructor</span></span>
 
-若要從子類別中呼叫基底類別建構函式，請使用關鍵字 **base**：
+<span data-ttu-id="247a9-103">若要從子類別中呼叫基底類別建構函式，請使用關鍵字 **base**：</span><span class="sxs-lookup"><span data-stu-id="247a9-103">To call a base class constructor from a subclass, use the keyword **base**:</span></span>
 
 ```PowerShell
 class A 
@@ -33,7 +32,7 @@ class B : A
 [B]::new().a # return 103
 ```
 
-如果基底類別有預設的 (無參數) 建構函式，您可以省略明確的建構函式呼叫︰
+<span data-ttu-id="247a9-104">如果基底類別有預設的 (無參數) 建構函式，您可以省略明確的建構函式呼叫︰</span><span class="sxs-lookup"><span data-stu-id="247a9-104">If a base class has a default (no parameter) constructor, you can omit an explicit constructor call:</span></span>
 
 ```PowerShell
 class C : B

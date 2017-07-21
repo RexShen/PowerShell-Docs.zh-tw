@@ -1,34 +1,34 @@
 ---
-title: "以使用者認證執行 DSC"
-ms.date: 2016-05-16
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 5436b047052f522e930e60925aef1de2f5e81fcb
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "以使用者認證執行 DSC"
+ms.openlocfilehash: f15b2e4bfb888e2f3646a33cc0191e33a7ebb8ab
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="running-dsc-with-user-credentials"></a>以使用者認證執行 DSC 
+# <a name="running-dsc-with-user-credentials"></a><span data-ttu-id="85df4-103">以使用者認證執行 DSC</span><span class="sxs-lookup"><span data-stu-id="85df4-103">Running DSC with user credentials</span></span> 
 
-> 適用於：Windows PowerShell 5.0、Windows PowerShell 5.1
+> <span data-ttu-id="85df4-104">適用於：Windows PowerShell 5.0、Windows PowerShell 5.1</span><span class="sxs-lookup"><span data-stu-id="85df4-104">Applies To: Windows PowerShell 5.0, Windows PowerShell 5.1</span></span>
 
-您可以在設定中使用自動 **PsDscRunAsCredential** 屬性，以一組指定的認證來執行 DSC 資源。 DSC 預設會使用系統帳戶執行每項資源， 但有些時候仍須以使用者身分執行，例如在特定使用者內容中安裝 MSI 封裝；設定使用者的登錄機碼；存取使用者的特定本機目錄；或存取網路共用等等。
+<span data-ttu-id="85df4-105">您可以在設定中使用自動 **PsDscRunAsCredential** 屬性，以一組指定的認證來執行 DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="85df4-105">You can run a DSC resource under a specified set of credentials by using the automatic **PsDscRunAsCredential** property in the configuration.</span></span> <span data-ttu-id="85df4-106">DSC 預設會使用系統帳戶執行每項資源，</span><span class="sxs-lookup"><span data-stu-id="85df4-106">By default, DSC runs each resource as the system account.</span></span>
+<span data-ttu-id="85df4-107">但有些時候仍須以使用者身分執行，例如在特定使用者內容中安裝 MSI 封裝；設定使用者的登錄機碼；存取使用者的特定本機目錄；或存取網路共用等等。</span><span class="sxs-lookup"><span data-stu-id="85df4-107">There are times when running as a user is necessary, such as installing MSI packages in a specific user context, setting a user's registry keys, accessing a user's specific local directory, or accessing a network share.</span></span>
 
-每項 DSC 資源都有 **PsDscRunAsCredential** 屬性可設為任何使用者的認證 ([PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) 物件)。
-此認證可硬式編碼成設定中的屬性值，也可將此值設為 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，如此將會在編譯設定時提示使用者輸入認證 (如需編譯設定的相關資訊，請參閱[設定](configurations.md)。
+<span data-ttu-id="85df4-108">每項 DSC 資源都有 **PsDscRunAsCredential** 屬性可設為任何使用者的認證 ([PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) 物件)。</span><span class="sxs-lookup"><span data-stu-id="85df4-108">Every DSC resource has a **PsDscRunAsCredential** property that can be set to any user credentials (a [PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) object).</span></span>
+<span data-ttu-id="85df4-109">此認證可硬式編碼成設定中的屬性值，也可將此值設為 [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx)，如此將會在編譯設定時提示使用者輸入認證 (如需編譯設定的相關資訊，請參閱[設定](configurations.md)。</span><span class="sxs-lookup"><span data-stu-id="85df4-109">The credential can be hard-coded as the value of the property in the configuration, or you can set the value to [Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx), which will prompt the user for a credential when the configuration is compiled (for information about compiling configurations, see [Configurations](configurations.md).</span></span>
 
->**注意︰**在 PowerShell 5.0 中，不支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。 
->在 PowerShell 5.1 中，支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。
+><span data-ttu-id="85df4-110">**注意︰**在 PowerShell 5.0 中，不支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。</span><span class="sxs-lookup"><span data-stu-id="85df4-110">**Note:** In PowerShell 5.0, using the **PsDscRunAsCredential** property in configurations calling composite resources was not supported.</span></span> 
+><span data-ttu-id="85df4-111">在 PowerShell 5.1 中，支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。</span><span class="sxs-lookup"><span data-stu-id="85df4-111">In PowerShell 5.1, the **PsDscRunAsCredential** property is supported in configurations calling composite resources.</span></span>
 
->**注意：**PowerShell 4.0 中無法使用 **PsDscRunAsCredential** 屬性。
+><span data-ttu-id="85df4-112">**注意：**PowerShell 4.0 中無法使用 **PsDscRunAsCredential** 屬性。</span><span class="sxs-lookup"><span data-stu-id="85df4-112">**Note:** The **PsDscRunAsCredential** property is not available in PowerShell 4.0.</span></span>
 
-下列範例使用了 **Get-Credential** 提示使用者提供認證。 [Registry](registryResource.md) 資源可用於變更指定Windows 命令提示字元視窗背景色彩的登錄機碼。
+<span data-ttu-id="85df4-113">下列範例使用了 **Get-Credential** 提示使用者提供認證。</span><span class="sxs-lookup"><span data-stu-id="85df4-113">In the following example, **Get-Credential** is used to prompt the user for credentials.</span></span> <span data-ttu-id="85df4-114">[Registry](registryResource.md) 資源可用於變更指定Windows 命令提示字元視窗背景色彩的登錄機碼。</span><span class="sxs-lookup"><span data-stu-id="85df4-114">The [Registry](registryResource.md) resource is used to change the registry key that specifies the background color for the Windows command prompt window.</span></span>
 
 ```powershell
-Configuration ChangeCmdBackGroundColor    
+Configuration ChangeCmdBackGroundColor
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
@@ -45,7 +45,7 @@ Configuration ChangeCmdBackGroundColor
             Hex                  = $true
             PsDscRunAsCredential = Get-Credential
         }
-    }                   
+    }
 }
 
 $configData = @{
@@ -61,6 +61,6 @@ $configData = @{
 
 ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
->**注意︰**此範例假設您的 `C:\publicKeys\targetNode.cer` 中包含有效的憑證，且該憑證的指紋即是所顯示的值。
->如需如何在 DSC 設定 MOF 檔案中加密認證的資訊，請參閱[保護 MOF 檔案](secureMOF.md)。
+><span data-ttu-id="85df4-115">**注意︰**此範例假設您的 `C:\publicKeys\targetNode.cer` 中包含有效的憑證，且該憑證的指紋即是所顯示的值。</span><span class="sxs-lookup"><span data-stu-id="85df4-115">**Note:** This example assumes that you have a valid certificate at `C:\publicKeys\targetNode.cer`, and that the thumbprint of that certificate is the value shown.</span></span>
+><span data-ttu-id="85df4-116">如需如何在 DSC 設定 MOF 檔案中加密認證的資訊，請參閱[保護 MOF 檔案](secureMOF.md)。</span><span class="sxs-lookup"><span data-stu-id="85df4-116">For information about encrypting credentials in DSC configuration MOF files, see [Securing the MOF file](secureMOF.md).</span></span>
 

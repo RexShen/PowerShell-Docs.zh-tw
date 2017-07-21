@@ -10,10 +10,8 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="when-to-include-a-project-site-license-url-custom-icon" class="xliff"></a>
-## 何時包含專案網站、授權 URL、自訂圖示？
+## <a name="when-to-include-a-project-site-license-url-custom-icon"></a><span data-ttu-id="cf438-103">何時包含專案網站、授權 URL、自訂圖示？</span><span class="sxs-lookup"><span data-stu-id="cf438-103">When to include a project site, license URL, custom icon?</span></span>
 
 
-<a id="what-is-minimum-powershell-version" class="xliff"></a>
-## 什麼是最小 PowerShell 版本？
+## <a name="what-is-minimum-powershell-version"></a><span data-ttu-id="cf438-104">什麼是最小 PowerShell 版本？</span><span class="sxs-lookup"><span data-stu-id="cf438-104">What is minimum PowerShell version?</span></span>
 

@@ -33,10 +33,14 @@
 ### [服務資源](serviceResource.md)
 ### [ServiceSet 資源](serviceSetResource.md)
 ### [使用者資源](userResource.md)
+### [WaitForAllResource](waitForAllResource.md)
+### [WaitForAnyResource](waitForAnyResource.md)
+### [WaitForSomeResource](waitForSomeResource.md)
 ### [WindowsFeature 資源](windowsfeatureResource.md)
 ### [WindowsFeatureSet 資源](windowsFeatureSetResource.md)
 ### [WindowsOptionalFeature 資源](windowsOptionalFeatureResource.md)
 ### [WindowsOptionalFeatureSet 資源](windowsOptionalFeatureSetResource.md)
+### [WindowsPackageCab 資源](windowsPackageCabResource.md)
 ### [WindowsProcess 資源](windowsProcessResource.md)
 ## [撰寫自訂資源](authoringResource.md) 
 ### [使用 MOF 的自訂資源](authoringResourceMOF.md)
@@ -59,6 +63,10 @@
 ### [使用設定識別碼設定提取用戶端](pullClientConfigID.md)
 ## [使用 DSC 報表伺服器](reportServer.md)
 ## [提取伺服器的最佳做法](secureServer.md)
+
+# [DSC 範例](dscExamples.md)
+## [使用 DSC、Pester 及 Visual Studio Team Services 來建置 CI/CD 管線](dscCiCd.md)
+## [分離設定和環境資料](separatingEnvData.md)
 
 # [疑難排解 DSC 的問題](troubleshooting.md)
 

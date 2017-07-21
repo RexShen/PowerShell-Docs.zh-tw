@@ -10,78 +10,71 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-started-with-desired-state-configuration-dsc-for-linux" class="xliff"></a>
-# 開始使用 Linux 預期狀態設定 (DSC)
+# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a><span data-ttu-id="c382b-103">開始使用 Linux 預期狀態設定 (DSC)</span><span class="sxs-lookup"><span data-stu-id="c382b-103">Get started with Desired State Configuration (DSC) for Linux</span></span>
 
-本主題說明如何開始使用 Linux 的 PowerShell 預期狀態設定 (DSC)。 如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](overview.md)。
+<span data-ttu-id="c382b-104">本主題說明如何開始使用 Linux 的 PowerShell 預期狀態設定 (DSC)。</span><span class="sxs-lookup"><span data-stu-id="c382b-104">This topic explains how to get started using PowerShell Desired State Configuration (DSC) for Linux.</span></span> <span data-ttu-id="c382b-105">如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](overview.md)。</span><span class="sxs-lookup"><span data-stu-id="c382b-105">For general information about DSC, see [Get Started with Windows PowerShell Desired State Configuration](overview.md).</span></span>
 
-<a id="supported-linux-operation-system-versions" class="xliff"></a>
-## 支援的 Linux 作業系統版本
+## <a name="supported-linux-operation-system-versions"></a><span data-ttu-id="c382b-106">支援的 Linux 作業系統版本</span><span class="sxs-lookup"><span data-stu-id="c382b-106">Supported Linux operation system versions</span></span>
 
-DSC for Linux 支援下列 Linux 作業系統版本。
-- CentOS 5、6 和 7 (x86/x64)
-- Debian GNU/Linux 6 和 7 (x86/x64)
-- Oracle Linux 5、6 和 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5、6 和 7 (x86/x64)
-- SUSE Linux Enterprise Server 10、11 和 12 (x86/x64)
-- Ubuntu Server 12.04 LTS 和 14.04 LTS (x86/x64)
+<span data-ttu-id="c382b-107">DSC for Linux 支援下列 Linux 作業系統版本。</span><span class="sxs-lookup"><span data-stu-id="c382b-107">The following Linux operating system versions are supported for DSC for Linux.</span></span>
+- <span data-ttu-id="c382b-108">CentOS 5、6 和 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="c382b-108">CentOS 5, 6, and 7 (x86/x64)</span></span>
+- <span data-ttu-id="c382b-109">Debian GNU/Linux 6 和 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="c382b-109">Debian GNU/Linux 6 and 7 (x86/x64)</span></span>
+- <span data-ttu-id="c382b-110">Oracle Linux 5、6 和 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="c382b-110">Oracle Linux 5, 6 and 7 (x86/x64)</span></span>
+- <span data-ttu-id="c382b-111">Red Hat Enterprise Linux Server 5、6 和 7 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="c382b-111">Red Hat Enterprise Linux Server 5, 6 and 7 (x86/x64)</span></span>
+- <span data-ttu-id="c382b-112">SUSE Linux Enterprise Server 10、11 和 12 (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="c382b-112">SUSE Linux Enterprise Server 10, 11 and 12 (x86/x64)</span></span>
+- <span data-ttu-id="c382b-113">Ubuntu Server 12.04 LTS 和 14.04 LTS (x86/x64)</span><span class="sxs-lookup"><span data-stu-id="c382b-113">Ubuntu Server 12.04 LTS and 14.04 LTS (x86/x64)</span></span>
 
-下表描述 DSC for Linux 必要的套件相依性。
+<span data-ttu-id="c382b-114">下表描述 DSC for Linux 必要的套件相依性。</span><span class="sxs-lookup"><span data-stu-id="c382b-114">The following table describes the required package dependencies for DSC for Linux.</span></span>
 
-|  必要的套件 |  描述 |  最低版本 | 
+|  <span data-ttu-id="c382b-115">必要的套件</span><span class="sxs-lookup"><span data-stu-id="c382b-115">Required package</span></span> |  <span data-ttu-id="c382b-116">描述</span><span class="sxs-lookup"><span data-stu-id="c382b-116">Description</span></span> |  <span data-ttu-id="c382b-117">最低版本</span><span class="sxs-lookup"><span data-stu-id="c382b-117">Minimum version</span></span> | 
 |---|---|---|
-| glibc| GNU 程式庫| 2…4 – 31.30| 
-| python| Python| 2.4 – 3.4| 
-| omiserver| 開放式管理基礎結構| 1.0.8.1| 
-| openssl| OpenSSL 程式庫| 0.9.8 或 1.0| 
-| ctypes| Python CTypes 程式庫| 必須符合 Python 版本| 
-| libcurl| cURL http 用戶端程式庫| 7.15.1| 
+| <span data-ttu-id="c382b-118">glibc</span><span class="sxs-lookup"><span data-stu-id="c382b-118">glibc</span></span>| <span data-ttu-id="c382b-119">GNU 程式庫</span><span class="sxs-lookup"><span data-stu-id="c382b-119">GNU Library</span></span>| <span data-ttu-id="c382b-120">2…4 – 31.30</span><span class="sxs-lookup"><span data-stu-id="c382b-120">2…4 – 31.30</span></span>| 
+| <span data-ttu-id="c382b-121">python</span><span class="sxs-lookup"><span data-stu-id="c382b-121">python</span></span>| <span data-ttu-id="c382b-122">Python</span><span class="sxs-lookup"><span data-stu-id="c382b-122">Python</span></span>| <span data-ttu-id="c382b-123">2.4 – 3.4</span><span class="sxs-lookup"><span data-stu-id="c382b-123">2.4 – 3.4</span></span>| 
+| <span data-ttu-id="c382b-124">omiserver</span><span class="sxs-lookup"><span data-stu-id="c382b-124">omiserver</span></span>| <span data-ttu-id="c382b-125">開放式管理基礎結構</span><span class="sxs-lookup"><span data-stu-id="c382b-125">Open Management Infrastructure</span></span>| <span data-ttu-id="c382b-126">1.0.8.1</span><span class="sxs-lookup"><span data-stu-id="c382b-126">1.0.8.1</span></span>| 
+| <span data-ttu-id="c382b-127">openssl</span><span class="sxs-lookup"><span data-stu-id="c382b-127">openssl</span></span>| <span data-ttu-id="c382b-128">OpenSSL 程式庫</span><span class="sxs-lookup"><span data-stu-id="c382b-128">OpenSSL Libraries</span></span>| <span data-ttu-id="c382b-129">0.9.8 或 1.0</span><span class="sxs-lookup"><span data-stu-id="c382b-129">0.9.8 or 1.0</span></span>| 
+| <span data-ttu-id="c382b-130">ctypes</span><span class="sxs-lookup"><span data-stu-id="c382b-130">ctypes</span></span>| <span data-ttu-id="c382b-131">Python CTypes 程式庫</span><span class="sxs-lookup"><span data-stu-id="c382b-131">Python CTypes library</span></span>| <span data-ttu-id="c382b-132">必須符合 Python 版本</span><span class="sxs-lookup"><span data-stu-id="c382b-132">Must match Python version</span></span>| 
+| <span data-ttu-id="c382b-133">libcurl</span><span class="sxs-lookup"><span data-stu-id="c382b-133">libcurl</span></span>| <span data-ttu-id="c382b-134">cURL http 用戶端程式庫</span><span class="sxs-lookup"><span data-stu-id="c382b-134">cURL http client library</span></span>| <span data-ttu-id="c382b-135">7.15.1</span><span class="sxs-lookup"><span data-stu-id="c382b-135">7.15.1</span></span>| 
 
-<a id="installing-dsc-for-linux" class="xliff"></a>
-## 安裝 DSC for Linux
+## <a name="installing-dsc-for-linux"></a><span data-ttu-id="c382b-136">安裝 DSC for Linux</span><span class="sxs-lookup"><span data-stu-id="c382b-136">Installing DSC for Linux</span></span>
 
-您必須先安裝[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)，才能安裝 DSC for Linux。
+<span data-ttu-id="c382b-137">您必須先安裝[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)，才能安裝 DSC for Linux。</span><span class="sxs-lookup"><span data-stu-id="c382b-137">You must install the [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) before installing DSC for Linux.</span></span>
 
-<a id="installing-omi" class="xliff"></a>
-### 安裝 OMI
+### <a name="installing-omi"></a><span data-ttu-id="c382b-138">安裝 OMI</span><span class="sxs-lookup"><span data-stu-id="c382b-138">Installing OMI</span></span>
 
-Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1。 OMI 可以從開放式群組下載：[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)。
+<span data-ttu-id="c382b-139">Linux 的預期狀態設定需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1。</span><span class="sxs-lookup"><span data-stu-id="c382b-139">Desired State Configuration for Linux requires the Open Management Infrastructure (OMI) CIM server, version 1.0.8.1.</span></span> <span data-ttu-id="c382b-140">OMI 可以從開放式群組下載：[開放式管理基礎結構 (OMI)](https://collaboration.opengroup.org/omi/)。</span><span class="sxs-lookup"><span data-stu-id="c382b-140">OMI can be downloaded from The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/).</span></span>
 
-若要安裝 OMI，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
+<span data-ttu-id="c382b-141">若要安裝 OMI，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。</span><span class="sxs-lookup"><span data-stu-id="c382b-141">To install OMI, install the package that is appropriate for your Linux system (.rpm or .deb) and OpenSSL version (ssl_098 or ssl_100), and architecture (x64/x86).</span></span> <span data-ttu-id="c382b-142">RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。</span><span class="sxs-lookup"><span data-stu-id="c382b-142">RPM packages are appropriate for CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server, and Oracle Linux.</span></span> <span data-ttu-id="c382b-143">DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。</span><span class="sxs-lookup"><span data-stu-id="c382b-143">DEB packages are appropriate for Debian GNU/Linux and Ubuntu Server.</span></span> <span data-ttu-id="c382b-144">ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。</span><span class="sxs-lookup"><span data-stu-id="c382b-144">The ssl_098 packages are appropriate for computers with OpenSSL 0.9.8 installed while the ssl_100 packages are appropriate for computers with OpenSSL 1.0 installed.</span></span>
 
-> **注意**：若要判斷已安裝的 OpenSSL 版本，請執行命令 `openssl version`。
+> <span data-ttu-id="c382b-145">**注意**：若要判斷已安裝的 OpenSSL 版本，請執行命令 `openssl version`。</span><span class="sxs-lookup"><span data-stu-id="c382b-145">**Note**: To determine the installed OpenSSL version, run the command `openssl version`.</span></span>
 
-執行下列命令，在 CentOS 7 x64 系統上安裝 OMI。
+<span data-ttu-id="c382b-146">執行下列命令，在 CentOS 7 x64 系統上安裝 OMI。</span><span class="sxs-lookup"><span data-stu-id="c382b-146">Run the following command to install OMI on a CentOS 7 x64 system.</span></span>
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-<a id="installing-dsc" class="xliff"></a>
-### 安裝 DSC
+### <a name="installing-dsc"></a><span data-ttu-id="c382b-147">安裝 DSC</span><span class="sxs-lookup"><span data-stu-id="c382b-147">Installing DSC</span></span>
 
-您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 Linux 的 DSC。 
+<span data-ttu-id="c382b-148">您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 Linux 的 DSC。</span><span class="sxs-lookup"><span data-stu-id="c382b-148">DSC for Linux is available for download [here](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest).</span></span> 
 
-若要安裝 DSC，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
+<span data-ttu-id="c382b-149">若要安裝 DSC，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。</span><span class="sxs-lookup"><span data-stu-id="c382b-149">To install DSC, install the package that is appropriate for your Linux system (.rpm or .deb) and OpenSSL version (ssl_098 or ssl_100), and architecture (x64/x86).</span></span> <span data-ttu-id="c382b-150">RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。</span><span class="sxs-lookup"><span data-stu-id="c382b-150">RPM packages are appropriate for CentOS, Red Hat Enterprise Linux, SUSE Linux Enterprise Server, and Oracle Linux.</span></span> <span data-ttu-id="c382b-151">DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。</span><span class="sxs-lookup"><span data-stu-id="c382b-151">DEB packages are appropriate for Debian GNU/Linux and Ubuntu Server.</span></span> <span data-ttu-id="c382b-152">ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。</span><span class="sxs-lookup"><span data-stu-id="c382b-152">The ssl_098 packages are appropriate for computers with OpenSSL 0.9.8 installed while the ssl_100 packages are appropriate for computers with OpenSSL 1.0 installed.</span></span>
 
-> **注意**：若要判斷已安裝的 OpenSSL 版本，請執行命令 openssl version。
+> <span data-ttu-id="c382b-153">**注意**：若要判斷已安裝的 OpenSSL 版本，請執行命令 openssl version。</span><span class="sxs-lookup"><span data-stu-id="c382b-153">**Note**: To determine the installed OpenSSL version, run the command openssl version.</span></span>
  
-執行下列命令，在 CentOS 7 x64 系統上安裝 DSC。
+<span data-ttu-id="c382b-154">執行下列命令，在 CentOS 7 x64 系統上安裝 DSC。</span><span class="sxs-lookup"><span data-stu-id="c382b-154">Run the following command to install DSC on a CentOS 7 x64 system.</span></span>
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-<a id="using-dsc-for-linux" class="xliff"></a>
-## 使用 DSC for Linux
+## <a name="using-dsc-for-linux"></a><span data-ttu-id="c382b-155">使用 DSC for Linux</span><span class="sxs-lookup"><span data-stu-id="c382b-155">Using DSC for Linux</span></span>
 
-下列章節說明如何在 Linux 電腦上建立並執行 DSC 設定。
+<span data-ttu-id="c382b-156">下列章節說明如何在 Linux 電腦上建立並執行 DSC 設定。</span><span class="sxs-lookup"><span data-stu-id="c382b-156">The following sections explain how to create and run DSC configurations on Linux computers.</span></span>
 
-<a id="creating-a-configuration-mof-document" class="xliff"></a>
-### 建立設定 MOF 文件
+### <a name="creating-a-configuration-mof-document"></a><span data-ttu-id="c382b-157">建立設定 MOF 文件</span><span class="sxs-lookup"><span data-stu-id="c382b-157">Creating a configuration MOF document</span></span>
 
-Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就像 Linux 電腦一樣。 下列步驟說明如何使用 Windows PowerShell 建立 Linux 電腦的設定文件。
+<span data-ttu-id="c382b-158">Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就像 Linux 電腦一樣。</span><span class="sxs-lookup"><span data-stu-id="c382b-158">The Windows PowerShell Configuration keyword is used to create a configuration for Linux computers, just like for Windows computers.</span></span> <span data-ttu-id="c382b-159">下列步驟說明如何使用 Windows PowerShell 建立 Linux 電腦的設定文件。</span><span class="sxs-lookup"><span data-stu-id="c382b-159">The following steps describe the creation of a configuration document for a Linux computer using Windows PowerShell.</span></span>
 
-1. 匯入 nx 模組。 Nx Windows PowerShell 模組包含 DSC for Linux 內建資源的結構描述，並且必須安裝到本機電腦，然後匯入設定中。
+1. <span data-ttu-id="c382b-160">匯入 nx 模組。</span><span class="sxs-lookup"><span data-stu-id="c382b-160">Import the nx module.</span></span> <span data-ttu-id="c382b-161">Nx Windows PowerShell 模組包含 DSC for Linux 內建資源的結構描述，並且必須安裝到本機電腦，然後匯入設定中。</span><span class="sxs-lookup"><span data-stu-id="c382b-161">The nx Windows PowerShell module contains the schema for Built-In resources for DSC for Linux, and must be installed to your local computer and imported in the configuration.</span></span>
 
-    若要安裝 nx 模組，請將 nx 模組目錄複製到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules`。 nx 模組包含在 DSC for Linux 安裝套件 (MSI) 中。 若要在您的設定中匯入 nx 模組，請使用 __Import-DSCResource__ 命令：
+    <span data-ttu-id="c382b-162">若要安裝 nx 模組，請將 nx 模組目錄複製到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules`。</span><span class="sxs-lookup"><span data-stu-id="c382b-162">-To install the nx module, copy the nx module directory to either `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` or `$PSHOME\Modules`.</span></span> <span data-ttu-id="c382b-163">nx 模組包含在 DSC for Linux 安裝套件 (MSI) 中。</span><span class="sxs-lookup"><span data-stu-id="c382b-163">The nx module is included in the DSC for Linux installation package (MSI).</span></span> <span data-ttu-id="c382b-164">若要在您的設定中匯入 nx 模組，請使用 __Import-DSCResource__ 命令：</span><span class="sxs-lookup"><span data-stu-id="c382b-164">To import the nx module in your configuration, use the __Import-DSCResource__ command:</span></span>
     
 ```powershell
 Configuration ExampleConfiguration{
@@ -90,7 +83,7 @@ Configuration ExampleConfiguration{
 
 }
 ```
-2. 定義設定，然後產生設定文件：
+2. <span data-ttu-id="c382b-165">定義設定，然後產生設定文件：</span><span class="sxs-lookup"><span data-stu-id="c382b-165">Define a configuration and generate the configuration document:</span></span>
 
 ```powershell
 Configuration ExampleConfiguration{
@@ -111,12 +104,11 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-<a id="push-the-configuration-to-the-linux-computer" class="xliff"></a>
-### 將設定推送至 Linux 電腦
+### <a name="push-the-configuration-to-the-linux-computer"></a><span data-ttu-id="c382b-166">將設定推送至 Linux 電腦</span><span class="sxs-lookup"><span data-stu-id="c382b-166">Push the configuration to the Linux computer</span></span>
 
-設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 用來建立 Linux 電腦的 CIMSession。
+<span data-ttu-id="c382b-167">設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。</span><span class="sxs-lookup"><span data-stu-id="c382b-167">Configuration documents (MOF files) can be pushed to the Linux computer using the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.</span></span> <span data-ttu-id="c382b-168">為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。</span><span class="sxs-lookup"><span data-stu-id="c382b-168">In order to use this cmdlet, along with the [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, or [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlets, remotely to a Linux computer, you must use a CIMSession.</span></span> <span data-ttu-id="c382b-169">[New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 用來建立 Linux 電腦的 CIMSession。</span><span class="sxs-lookup"><span data-stu-id="c382b-169">The [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet is used to create a CIMSession to the Linux computer.</span></span>
 
-下列程式碼示範如何建立 DSC for Linux 的 CIMSession。
+<span data-ttu-id="c382b-170">下列程式碼示範如何建立 DSC for Linux 的 CIMSession。</span><span class="sxs-lookup"><span data-stu-id="c382b-170">The following code shows how to create a CIMSession for DSC for Linux.</span></span>
 
 ```powershell
 $Node = "ostc-dsc-01"
@@ -130,68 +122,65 @@ $opt = New-CimSessionOption -UseSsl:$true
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
 ```
 
-> **注意**：
-* 在「推送」模式中，使用者認證必須是在 Linux 電腦上的根使用者。
-* DSC for Linux 僅支援 SSL/TLS 連線，必須使用 New-CimSession 且將 –UseSSL 參數設為 $true。
-* OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/opt/omi/etc/omiserver.conf`，屬性為：pemfile 和 keyfile。
-如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
+> <span data-ttu-id="c382b-171">**注意**：</span><span class="sxs-lookup"><span data-stu-id="c382b-171">**Note**:</span></span>
+* <span data-ttu-id="c382b-172">在「推送」模式中，使用者認證必須是在 Linux 電腦上的根使用者。</span><span class="sxs-lookup"><span data-stu-id="c382b-172">For “Push” mode, the user credential must be the root user on the Linux computer.</span></span>
+* <span data-ttu-id="c382b-173">DSC for Linux 僅支援 SSL/TLS 連線，必須使用 New-CimSession 且將 –UseSSL 參數設為 $true。</span><span class="sxs-lookup"><span data-stu-id="c382b-173">Only SSL/TLS connections are supported for DSC for Linux, the New-CimSession must be used with the –UseSSL parameter set to $true.</span></span>
+* <span data-ttu-id="c382b-174">OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/opt/omi/etc/omiserver.conf`，屬性為：pemfile 和 keyfile。</span><span class="sxs-lookup"><span data-stu-id="c382b-174">The SSL certificate used by OMI (for DSC) is specified in the file: `/opt/omi/etc/omiserver.conf` with the properties: pemfile and keyfile.</span></span>
+<span data-ttu-id="c382b-175">如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證</span><span class="sxs-lookup"><span data-stu-id="c382b-175">If this certificate is not trusted by the Windows computer that you are running the [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) cmdlet on, you can choose to ignore certificate validation with the CIMSession Options: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`</span></span>
 
-執行下列命令，將 DSC 設定推送至 Linux 節點。
+<span data-ttu-id="c382b-176">執行下列命令，將 DSC 設定推送至 Linux 節點。</span><span class="sxs-lookup"><span data-stu-id="c382b-176">Run the following command to push the DSC configuration to the Linux node.</span></span>
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-<a id="distribute-the-configuration-with-a-pull-server" class="xliff"></a>
-### 以提取伺服器散發設定
+### <a name="distribute-the-configuration-with-a-pull-server"></a><span data-ttu-id="c382b-177">以提取伺服器散發設定</span><span class="sxs-lookup"><span data-stu-id="c382b-177">Distribute the configuration with a pull server</span></span>
 
-可以用提取伺服器來散發設定給 Linux 電腦，就像 Windows 電腦一樣。 如需使用提取伺服器的指引，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](pullServer.md)。 如需使用提取伺服器與 Linux 電腦的其他資訊與限制，請參閱 Linux 的預期狀態設定版本資訊。
+<span data-ttu-id="c382b-178">可以用提取伺服器來散發設定給 Linux 電腦，就像 Windows 電腦一樣。</span><span class="sxs-lookup"><span data-stu-id="c382b-178">Configurations can be distributed to a Linux computer with a pull server, just like for Windows computers.</span></span> <span data-ttu-id="c382b-179">如需使用提取伺服器的指引，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](pullServer.md)。</span><span class="sxs-lookup"><span data-stu-id="c382b-179">For guidance on using a pull server, see [Windows PowerShell Desired State Configuration Pull Servers](pullServer.md).</span></span> <span data-ttu-id="c382b-180">如需使用提取伺服器與 Linux 電腦的其他資訊與限制，請參閱 Linux 的預期狀態設定版本資訊。</span><span class="sxs-lookup"><span data-stu-id="c382b-180">For additional information and limitations related to using Linux computers with a pull server, see the Release Notes for Desired State Configuration for Linux.</span></span>
 
-<a id="working-with-configurations-locally" class="xliff"></a>
-### 在本機使用設定
+### <a name="working-with-configurations-locally"></a><span data-ttu-id="c382b-181">在本機使用設定</span><span class="sxs-lookup"><span data-stu-id="c382b-181">Working with configurations locally</span></span>
 
-DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指令碼位於 `/opt/microsoft/dsc/Scripts` 並且包含下列項目：
-* GetDscConfiguration.py
+<span data-ttu-id="c382b-182">DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。</span><span class="sxs-lookup"><span data-stu-id="c382b-182">DSC for Linux includes scripts to work with configuration from the local Linux computer.</span></span> <span data-ttu-id="c382b-183">這些指令碼位於 `/opt/microsoft/dsc/Scripts` 並且包含下列項目：</span><span class="sxs-lookup"><span data-stu-id="c382b-183">These scripts are locate in `/opt/microsoft/dsc/Scripts` and include the following:</span></span>
+* <span data-ttu-id="c382b-184">GetDscConfiguration.py</span><span class="sxs-lookup"><span data-stu-id="c382b-184">GetDscConfiguration.py</span></span>
 
- 傳回套用到此電腦的目前設定。 類似於 Windows PowerShell Cmdlet 的 Get-DscConfiguration Cmdlet。
+ <span data-ttu-id="c382b-185">傳回套用到此電腦的目前設定。</span><span class="sxs-lookup"><span data-stu-id="c382b-185">Returns the current configuration applied to the computer.</span></span> <span data-ttu-id="c382b-186">類似於 Windows PowerShell Cmdlet 的 Get-DscConfiguration Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c382b-186">Similar to the Windows PowerShell cmdlet Get-DscConfiguration cmdlet.</span></span>
 
 `# sudo ./GetDscConfiguration.py`
 
-* GetDscLocalConfigurationManager.py
+* <span data-ttu-id="c382b-187">GetDscLocalConfigurationManager.py</span><span class="sxs-lookup"><span data-stu-id="c382b-187">GetDscLocalConfigurationManager.py</span></span>
 
- 傳回套用到此電腦的目前中繼設定。 類似於 [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet。
+ <span data-ttu-id="c382b-188">傳回套用到此電腦的目前中繼設定。</span><span class="sxs-lookup"><span data-stu-id="c382b-188">Returns the current meta-configuration applied to the computer.</span></span> <span data-ttu-id="c382b-189">類似於 [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c382b-189">Similar to the cmdlet [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) cmdlet.</span></span>
 
 `# sudo ./GetDscLocalConfigurationManager.py`
 
-* InstallModule.py
+* <span data-ttu-id="c382b-190">InstallModule.py</span><span class="sxs-lookup"><span data-stu-id="c382b-190">InstallModule.py</span></span>
 
- 安裝自訂 DSC 資源模組。 需要包含模組共用物件的程式庫和結構描述 MOF 檔案的 .zip 檔案路徑。
+ <span data-ttu-id="c382b-191">安裝自訂 DSC 資源模組。</span><span class="sxs-lookup"><span data-stu-id="c382b-191">Installs a custom DSC resource module.</span></span> <span data-ttu-id="c382b-192">需要包含模組共用物件的程式庫和結構描述 MOF 檔案的 .zip 檔案路徑。</span><span class="sxs-lookup"><span data-stu-id="c382b-192">Requires the path to a .zip file containing the module shared object library and schema MOF files.</span></span>
 
 `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
-* RemoveModule.py
+* <span data-ttu-id="c382b-193">RemoveModule.py</span><span class="sxs-lookup"><span data-stu-id="c382b-193">RemoveModule.py</span></span>
 
- 移除自訂的 DSC 資源模組。 需要有要移除的模組名稱。
+ <span data-ttu-id="c382b-194">移除自訂的 DSC 資源模組。</span><span class="sxs-lookup"><span data-stu-id="c382b-194">Removes a custom DSC resource module.</span></span> <span data-ttu-id="c382b-195">需要有要移除的模組名稱。</span><span class="sxs-lookup"><span data-stu-id="c382b-195">Requires the name of the module to remove.</span></span>
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* <span data-ttu-id="c382b-196">StartDscLocalConfigurationManager.py</span><span class="sxs-lookup"><span data-stu-id="c382b-196">StartDscLocalConfigurationManager.py</span></span> 
 
- 將設定 MOF 檔案套用至電腦。 類似於 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet。 需要有要套用的設定 MOF 路徑。
+ <span data-ttu-id="c382b-197">將設定 MOF 檔案套用至電腦。</span><span class="sxs-lookup"><span data-stu-id="c382b-197">Applies a configuration MOF file to the computer.</span></span> <span data-ttu-id="c382b-198">類似於 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c382b-198">Similar to the [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) cmdlet.</span></span> <span data-ttu-id="c382b-199">需要有要套用的設定 MOF 路徑。</span><span class="sxs-lookup"><span data-stu-id="c382b-199">Requires the path to the configuration MOF to apply.</span></span>
 
 `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SetDscLocalConfigurationManager.py
+* <span data-ttu-id="c382b-200">SetDscLocalConfigurationManager.py</span><span class="sxs-lookup"><span data-stu-id="c382b-200">SetDscLocalConfigurationManager.py</span></span>
 
- 將中繼設定 MOF 檔案套用至電腦。 類似於 [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) Cmdlet。 需要有要套用的中繼設定 MOF 路徑。
+ <span data-ttu-id="c382b-201">將中繼設定 MOF 檔案套用至電腦。</span><span class="sxs-lookup"><span data-stu-id="c382b-201">Applies a Meta Configuration MOF file to the computer.</span></span> <span data-ttu-id="c382b-202">類似於 [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c382b-202">Similar to the [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) cmdlet.</span></span> <span data-ttu-id="c382b-203">需要有要套用的中繼設定 MOF 路徑。</span><span class="sxs-lookup"><span data-stu-id="c382b-203">Requires the path to the Meta Configuration MOF to apply.</span></span>
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-<a id="powershell-desired-state-configuration-for-linux-log-files" class="xliff"></a>
-## Linux 記錄檔的 PowerShell 預期狀態設定
+## <a name="powershell-desired-state-configuration-for-linux-log-files"></a><span data-ttu-id="c382b-204">Linux 記錄檔的 PowerShell 預期狀態設定</span><span class="sxs-lookup"><span data-stu-id="c382b-204">PowerShell Desired State Configuration for Linux Log Files</span></span>
 
-會對 DSC for Linux 訊息產生下列記錄檔。
+<span data-ttu-id="c382b-205">會對 DSC for Linux 訊息產生下列記錄檔。</span><span class="sxs-lookup"><span data-stu-id="c382b-205">The following log files are generated for DSC for Linux messages.</span></span>
 
-|記錄檔|Directory|描述|
+|<span data-ttu-id="c382b-206">記錄檔</span><span class="sxs-lookup"><span data-stu-id="c382b-206">Log file</span></span>|<span data-ttu-id="c382b-207">Directory</span><span class="sxs-lookup"><span data-stu-id="c382b-207">Directory</span></span>|<span data-ttu-id="c382b-208">描述</span><span class="sxs-lookup"><span data-stu-id="c382b-208">Description</span></span>|
 |---|---|---|
-|omiserver.log|/var/opt/omi/log|OMI CIM 伺服器作業相關的訊息。|
-|dsc.log|/var/opt/omi/log|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
+|<span data-ttu-id="c382b-209">omiserver.log</span><span class="sxs-lookup"><span data-stu-id="c382b-209">omiserver.log</span></span>|<span data-ttu-id="c382b-210">/var/opt/omi/log</span><span class="sxs-lookup"><span data-stu-id="c382b-210">/var/opt/omi/log</span></span>|<span data-ttu-id="c382b-211">OMI CIM 伺服器作業相關的訊息。</span><span class="sxs-lookup"><span data-stu-id="c382b-211">Messages relating to the operation of the OMI CIM server.</span></span>|
+|<span data-ttu-id="c382b-212">dsc.log</span><span class="sxs-lookup"><span data-stu-id="c382b-212">dsc.log</span></span>|<span data-ttu-id="c382b-213">/var/opt/omi/log</span><span class="sxs-lookup"><span data-stu-id="c382b-213">/var/opt/omi/log</span></span>|<span data-ttu-id="c382b-214">與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。</span><span class="sxs-lookup"><span data-stu-id="c382b-214">Messages relating to the operation of the Local Configuration Manager (LCM) and DSC resource operations.</span></span>|
 

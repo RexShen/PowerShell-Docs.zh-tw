@@ -9,15 +9,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="detailed-information-about-lcm-state" class="xliff"></a>
-# LCM 狀態的詳細資訊
+# <a name="detailed-information-about-lcm-state"></a><span data-ttu-id="b797a-102">LCM 狀態的詳細資訊</span><span class="sxs-lookup"><span data-stu-id="b797a-102">Detailed information about LCM state</span></span>
 
-我們在公開有關 LCM 狀態詳細資料的方面上進行了改善。 由 Get-DscLocalConfigurationManager 傳回的 LCMState 現在可包含下列值︰
+<span data-ttu-id="b797a-103">我們在公開有關 LCM 狀態詳細資料的方面上進行了改善。</span><span class="sxs-lookup"><span data-stu-id="b797a-103">We have made improvements in exposing details about the LCM state.</span></span> <span data-ttu-id="b797a-104">由 Get-DscLocalConfigurationManager 傳回的 LCMState 現在可包含下列值︰</span><span class="sxs-lookup"><span data-stu-id="b797a-104">The LCMState that is returned by Get-DscLocalConfigurationManager can now contain the following values:</span></span>
 
-* **Idle**
-* **Busy**
-* **PendingReboot**
-* **PendingConfiguration**
+* <span data-ttu-id="b797a-105">**Idle**</span><span class="sxs-lookup"><span data-stu-id="b797a-105">**Idle**</span></span>
+* <span data-ttu-id="b797a-106">**Busy**</span><span class="sxs-lookup"><span data-stu-id="b797a-106">**Busy**</span></span>
+* <span data-ttu-id="b797a-107">**PendingReboot**</span><span class="sxs-lookup"><span data-stu-id="b797a-107">**PendingReboot**</span></span>
+* <span data-ttu-id="b797a-108">**PendingConfiguration**</span><span class="sxs-lookup"><span data-stu-id="b797a-108">**PendingConfiguration**</span></span>
 
-我們也加入了 LCMStateDetail 屬性，其中包含狀態的詳細資訊。
+<span data-ttu-id="b797a-109">我們也加入了 LCMStateDetail 屬性，其中包含狀態的詳細資訊。</span><span class="sxs-lookup"><span data-stu-id="b797a-109">We have also added an LCMStateDetail property that contains more information about the state.</span></span>
 

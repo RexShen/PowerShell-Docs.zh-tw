@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
+# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="ef691-103">MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法</span><span class="sxs-lookup"><span data-stu-id="ef691-103">GetConfigurationResultOutput method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-擷取與特定工作相關聯的設定代理程式輸出。
+<span data-ttu-id="ef691-104">擷取與特定工作相關聯的設定代理程式輸出。</span><span class="sxs-lookup"><span data-stu-id="ef691-104">Gets the Configuration Agent output associated with a specific job.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="ef691-105">語法</span><span class="sxs-lookup"><span data-stu-id="ef691-105">Syntax</span></span>
 ------
 
 ```mof
@@ -27,43 +25,38 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="ef691-106">參數</span><span class="sxs-lookup"><span data-stu-id="ef691-106">Parameters</span></span>
 ----------
 
-*jobId* \[in\]  
-取得輸出資料之工作的識別碼。
+<span data-ttu-id="ef691-107">*jobId* \[in\]</span><span class="sxs-lookup"><span data-stu-id="ef691-107">*jobId* \[in\]</span></span>  
+<span data-ttu-id="ef691-108">取得輸出資料之工作的識別碼。</span><span class="sxs-lookup"><span data-stu-id="ef691-108">The ID of the job for which to get output data.</span></span>
 
-*resumeOutputBookmark* \[in\]  
-指定輸出應該接續前一個書籤。
+<span data-ttu-id="ef691-109">*resumeOutputBookmark* \[in\]</span><span class="sxs-lookup"><span data-stu-id="ef691-109">*resumeOutputBookmark* \[in\]</span></span>  
+<span data-ttu-id="ef691-110">指定輸出應該接續前一個書籤。</span><span class="sxs-lookup"><span data-stu-id="ef691-110">Specifies that the output should be a continuation from a previous bookmark.</span></span>
 
-*output* \[out\]  
-所指定之工作的輸出。
+<span data-ttu-id="ef691-111">*output* \[out\]</span><span class="sxs-lookup"><span data-stu-id="ef691-111">*output* \[out\]</span></span>  
+<span data-ttu-id="ef691-112">所指定之工作的輸出。</span><span class="sxs-lookup"><span data-stu-id="ef691-112">The output for the specified job.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="ef691-113">傳回值</span><span class="sxs-lookup"><span data-stu-id="ef691-113">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="ef691-114">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="ef691-114">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="ef691-115">備註</span><span class="sxs-lookup"><span data-stu-id="ef691-115">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="ef691-116">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="ef691-116">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="ef691-117">需求</span><span class="sxs-lookup"><span data-stu-id="ef691-117">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="ef691-118">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="ef691-118">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="ef691-119">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="ef691-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="ef691-120">另請參閱</span><span class="sxs-lookup"><span data-stu-id="ef691-120">See also</span></span>
+
+
+[<span data-ttu-id="ef691-121">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="ef691-121">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
  
 

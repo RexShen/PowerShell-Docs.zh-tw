@@ -9,13 +9,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="psreadline-module"></a>PSReadline 模組
-本節包含 **PSReadline** 模組的說明主題。 **PSReadline** 模組包含可讓您在 Windows PowerShell 中自訂命令列編輯環境的 Cmdlet。
+# <a name="psreadline-module"></a><span data-ttu-id="c6bd0-103">PSReadline 模組</span><span class="sxs-lookup"><span data-stu-id="c6bd0-103">PSReadline Module</span></span>
+<span data-ttu-id="c6bd0-104">本節包含 **PSReadline** 模組的說明主題。</span><span class="sxs-lookup"><span data-stu-id="c6bd0-104">This section contains the help topics for the **PSReadline** module.</span></span> <span data-ttu-id="c6bd0-105">**PSReadline** 模組包含可讓您在 Windows PowerShell 中自訂命令列編輯環境的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="c6bd0-105">The **PSReadline** module contains cmdlets that let you customize the command-line editing environment in Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>說明主題
-[Windows PowerShell PSReadline Cmdlet](https://technet.microsoft.com/en-us/library/ed48e832-95f9-4577-bf56-a7e5aa9630ba)
+## <a name="help-topics"></a><span data-ttu-id="c6bd0-106">說明主題</span><span class="sxs-lookup"><span data-stu-id="c6bd0-106">Help Topics</span></span>
+[<span data-ttu-id="c6bd0-107">Windows PowerShell PSReadline Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c6bd0-107">Windows PowerShell PSReadline Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/ed48e832-95f9-4577-bf56-a7e5aa9630ba)
 
-## <a name="see-also"></a>另請參閱
-- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-- [使用 Windows PowerShell 撰寫指令碼](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="c6bd0-108">另請參閱</span><span class="sxs-lookup"><span data-stu-id="c6bd0-108">See Also</span></span>
+- [<span data-ttu-id="c6bd0-109">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="c6bd0-109">Windows PowerShell 5.0</span></span>](Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="c6bd0-110">使用 Windows PowerShell 撰寫指令碼</span><span class="sxs-lookup"><span data-stu-id="c6bd0-110">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

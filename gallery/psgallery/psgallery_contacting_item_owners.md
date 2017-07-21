@@ -10,11 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contacting-item-owners" class="xliff"></a>
-# 連絡項目擁有者
+# <a name="contacting-item-owners"></a><span data-ttu-id="7dcdd-103">連絡項目擁有者</span><span class="sxs-lookup"><span data-stu-id="7dcdd-103">Contacting Item Owners</span></span>
 
-若要連絡特定項目的擁有者，請瀏覽到項目詳細資料頁面。
-左側功能表列中會有連絡擁有者連結。
-按一下該連結，您就會前往新的頁面。
-您可以從這裡傳送訊息。
+<span data-ttu-id="7dcdd-104">若要連絡特定項目的擁有者，請瀏覽到項目詳細資料頁面。</span><span class="sxs-lookup"><span data-stu-id="7dcdd-104">To contact owner of a particular item, navigate to the item detail page.</span></span>
+<span data-ttu-id="7dcdd-105">左側功能表列中會有連絡擁有者連結。</span><span class="sxs-lookup"><span data-stu-id="7dcdd-105">There is a contact Owners link in the left menu bar.</span></span>
+<span data-ttu-id="7dcdd-106">按一下該連結，您就會前往新的頁面。</span><span class="sxs-lookup"><span data-stu-id="7dcdd-106">Clicking on the link will take you to a new page.</span></span>
+<span data-ttu-id="7dcdd-107">您可以從這裡傳送訊息。</span><span class="sxs-lookup"><span data-stu-id="7dcdd-107">You can send a message from here.</span></span>
 

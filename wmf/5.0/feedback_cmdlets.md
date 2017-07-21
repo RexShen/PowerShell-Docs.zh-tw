@@ -9,7 +9,6 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-and-updated-cmdlets-based-on-community-feedback" class="xliff"></a>
-# 根據社群意見反應增加了全新且更新過的 Cmdlet 
-我們加入了一些新的公用程式 Cmdlet，並透過 [Connect](https://connect.microsoft.com/powershell) 根據社群的意見反應更新了現有 Cmdlet。 我們將繼續瀏覽意見反應，並且盡可能的處理您的要求。
+# <a name="new-and-updated-cmdlets-based-on-community-feedback"></a><span data-ttu-id="5f0cd-102">根據社群意見反應增加了全新且更新過的 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="5f0cd-102">New and updated cmdlets based on community feedback</span></span> 
+<span data-ttu-id="5f0cd-103">我們加入了一些新的公用程式 Cmdlet，並透過 [Connect](https://connect.microsoft.com/powershell) 根據社群的意見反應更新了現有 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5f0cd-103">We have added some new Utility cmdlets, and updated existing cmdlets based on feedback from the community via [Connect](https://connect.microsoft.com/powershell).</span></span> <span data-ttu-id="5f0cd-104">我們將繼續瀏覽意見反應，並且盡可能的處理您的要求。</span><span class="sxs-lookup"><span data-stu-id="5f0cd-104">We continue to go through the feedback, and address as many of your requests as possible.</span></span>
 

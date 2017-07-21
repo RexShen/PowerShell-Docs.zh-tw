@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-node-with-multiple-configuration-fragments-partial-configurations" class="xliff"></a>
-# 以多個設定片段 (部分設定) 來設定節點
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a><span data-ttu-id="7df17-102">以多個設定片段 (部分設定) 來設定節點</span><span class="sxs-lookup"><span data-stu-id="7df17-102">Configure Node with multiple configuration fragments (partial configurations)</span></span>
 
-WMF 5.0 會協助您在片段中將設定文件傳遞到節點。 如需詳細資訊，請參閱[部分設定](https://msdn.microsoft.com/powershell/dsc/partialconfigs)。
+<span data-ttu-id="7df17-103">WMF 5.0 會協助您在片段中將設定文件傳遞到節點。</span><span class="sxs-lookup"><span data-stu-id="7df17-103">WMF 5.0 helps you deliver configuration documents to a node in fragments.</span></span> <span data-ttu-id="7df17-104">如需詳細資訊，請參閱[部分設定](https://msdn.microsoft.com/powershell/dsc/partialconfigs)。</span><span class="sxs-lookup"><span data-stu-id="7df17-104">For more information, see [Partial configurations](https://msdn.microsoft.com/powershell/dsc/partialconfigs).</span></span>
 

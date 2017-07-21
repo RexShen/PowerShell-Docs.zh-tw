@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 EnableDebugConfiguration 方法
+# <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="4c3eb-103">MSFT_DSCLocalConfigurationManager 類別的 EnableDebugConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="4c3eb-103">EnableDebugConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-啟用 DSC 資源偵錯。
+<span data-ttu-id="4c3eb-104">啟用 DSC 資源偵錯。</span><span class="sxs-lookup"><span data-stu-id="4c3eb-104">Enables DSC resource debugging.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="4c3eb-105">語法</span><span class="sxs-lookup"><span data-stu-id="4c3eb-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,37 +23,32 @@ uint32 EnableDebugConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="4c3eb-106">參數</span><span class="sxs-lookup"><span data-stu-id="4c3eb-106">Parameters</span></span>
 ----------
 
-*BreakAll* \[in\]  
-在資源指令碼的每一行中設定中斷點。
+<span data-ttu-id="4c3eb-107">*BreakAll* \[in\]</span><span class="sxs-lookup"><span data-stu-id="4c3eb-107">*BreakAll* \[in\]</span></span>  
+<span data-ttu-id="4c3eb-108">在資源指令碼的每一行中設定中斷點。</span><span class="sxs-lookup"><span data-stu-id="4c3eb-108">Sets a breakpoint at every line in the resource script.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="4c3eb-109">傳回值</span><span class="sxs-lookup"><span data-stu-id="4c3eb-109">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="4c3eb-110">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="4c3eb-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="4c3eb-111">備註</span><span class="sxs-lookup"><span data-stu-id="4c3eb-111">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="4c3eb-112">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="4c3eb-112">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="4c3eb-113">需求</span><span class="sxs-lookup"><span data-stu-id="4c3eb-113">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="4c3eb-114">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="4c3eb-114">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="4c3eb-115">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="4c3eb-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="4c3eb-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="4c3eb-116">See also</span></span>
+
+
+[<span data-ttu-id="4c3eb-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="4c3eb-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
  
 
  

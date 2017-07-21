@@ -10,14 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-help-for-dsc-configurations" class="xliff"></a>
-# 撰寫 DSC 設定的說明
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="9d477-103">撰寫 DSC 設定的說明</span><span class="sxs-lookup"><span data-stu-id="9d477-103">Writing help for DSC configurations</span></span>
 
->適用於：Windows PowerShell Windows 5.0
+><span data-ttu-id="9d477-104">適用於：Windows PowerShell Windows 5.0</span><span class="sxs-lookup"><span data-stu-id="9d477-104">Applies To: Windows Windows PowerShell 5.0</span></span>
 
-您可以在 DSC 設定中，以註解方式呈現說明。 使用者可以呼叫設定函數加上 `-?`，或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) Cmdlet 存取說明。 如需如何在 PowerShell 中，以註解方式呈現說明的詳細資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。
+<span data-ttu-id="9d477-105">您可以在 DSC 設定中，以註解方式呈現說明。</span><span class="sxs-lookup"><span data-stu-id="9d477-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="9d477-106">使用者可以呼叫設定函數加上 `-?`，或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) Cmdlet 存取說明。</span><span class="sxs-lookup"><span data-stu-id="9d477-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="9d477-107">如需如何在 PowerShell 中，以註解方式呈現說明的詳細資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。</span><span class="sxs-lookup"><span data-stu-id="9d477-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span></span>
 
-下列範例顯示包含設定的指令碼及其註解說明︰
+<span data-ttu-id="9d477-108">下列範例顯示包含設定的指令碼及其註解說明︰</span><span class="sxs-lookup"><span data-stu-id="9d477-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
 
 ```powershell
 <#
@@ -61,10 +60,9 @@ configuration HelpSample1
 }
 ```
 
-<a id="viewing-configuration-help" class="xliff"></a>
-## 檢視設定說明
+## <a name="viewing-configuration-help"></a><span data-ttu-id="9d477-109">檢視設定說明</span><span class="sxs-lookup"><span data-stu-id="9d477-109">Viewing configuration help</span></span>
 
-若要檢視設定的說明，請使用 **Get-help** Cmdlet 加上函數名稱，或輸入函數名稱加上 `-?`。 以下是將前一個函數傳遞給 **Get-help** 後的輸出：
+<span data-ttu-id="9d477-110">若要檢視設定的說明，請使用 **Get-help** Cmdlet 加上函數名稱，或輸入函數名稱加上 `-?`。</span><span class="sxs-lookup"><span data-stu-id="9d477-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="9d477-111">以下是將前一個函數傳遞給 **Get-help** 後的輸出：</span><span class="sxs-lookup"><span data-stu-id="9d477-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -93,7 +91,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
-* [DSC 設定](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="9d477-112">另請參閱</span><span class="sxs-lookup"><span data-stu-id="9d477-112">See Also</span></span>
+* [<span data-ttu-id="9d477-113">DSC 設定</span><span class="sxs-lookup"><span data-stu-id="9d477-113">DSC Configurations</span></span>](configurations.md)
 

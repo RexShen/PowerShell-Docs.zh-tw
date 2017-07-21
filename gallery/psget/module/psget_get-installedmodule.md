@@ -10,38 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedmodule" class="xliff"></a>
-# Get-InstalledModule
+# <a name="get-installedmodule"></a><span data-ttu-id="08c0b-103">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="08c0b-103">Get-InstalledModule</span></span>
 
-取得電腦上的已安裝模組。
+<span data-ttu-id="08c0b-104">取得電腦上的已安裝模組。</span><span class="sxs-lookup"><span data-stu-id="08c0b-104">Gets installed modules on a computer.</span></span>
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a><span data-ttu-id="08c0b-105">描述</span><span class="sxs-lookup"><span data-stu-id="08c0b-105">Description</span></span>
 
-Get-InstalledModule Cmdlet 會將 PowerShell 模組安裝在使用 Install-Module Cmdlet 安裝的電腦上。
+<span data-ttu-id="08c0b-106">Get-InstalledModule Cmdlet 會將 PowerShell 模組安裝在使用 Install-Module Cmdlet 安裝的電腦上。</span><span class="sxs-lookup"><span data-stu-id="08c0b-106">The Get-InstalledModule cmdlet gets installed PowerShell modules on a computer which were installed using Install-Module cmdlet.</span></span>
 
-針對每個已安裝的模組，Get-InstalledModule 會傳回可選擇性地傳送至 Uninstall-Module 的 PSRepositoryItemInfo 物件，以解除安裝已安裝的模組。
+<span data-ttu-id="08c0b-107">針對每個已安裝的模組，Get-InstalledModule 會傳回可選擇性地傳送至 Uninstall-Module 的 PSRepositoryItemInfo 物件，以解除安裝已安裝的模組。</span><span class="sxs-lookup"><span data-stu-id="08c0b-107">For each installed module, Get-InstalledModule returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Module for uninstalling the installed modules.</span></span>
 
-- Get-InstalledModule 可以根據名稱和版本參數來篩選已安裝的模組。
-- Get-InstalledModule 可以使用版本參數 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 進行篩選。
-  - 這些參數互斥 (MinmimumVersion 和 MaximumVersion 除外)。
-  - 只有不含任何萬用字元的單一模組名稱才允許使用這些版本參數。
-  - 如果未指定 RequiredVersion 參數，Get-InstalledModule 會傳回等於或大於所指定最小版本之已安裝模組的最新版本，或未指定最小版本之模組的最新版本。 
-  - 如果指定 RequiredVersion 參數，Get-InstalledModule 只會傳回完全符合所指定版本之已安裝模組的版本。
+- <span data-ttu-id="08c0b-108">Get-InstalledModule 可以根據名稱和版本參數來篩選已安裝的模組。</span><span class="sxs-lookup"><span data-stu-id="08c0b-108">Get-InstalledModule can filter installed modules based on name, version parameters.</span></span>
+- <span data-ttu-id="08c0b-109">Get-InstalledModule 可以使用版本參數 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 進行篩選。</span><span class="sxs-lookup"><span data-stu-id="08c0b-109">Get-InstalledModule can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="08c0b-110">這些參數互斥 (MinmimumVersion 和 MaximumVersion 除外)。</span><span class="sxs-lookup"><span data-stu-id="08c0b-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="08c0b-111">只有不含任何萬用字元的單一模組名稱才允許使用這些版本參數。</span><span class="sxs-lookup"><span data-stu-id="08c0b-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="08c0b-112">如果未指定 RequiredVersion 參數，Get-InstalledModule 會傳回等於或大於所指定最小版本之已安裝模組的最新版本，或未指定最小版本之模組的最新版本。</span><span class="sxs-lookup"><span data-stu-id="08c0b-112">If the RequiredVersion parameter is not specified, Get-InstalledModule returns the latest version of the installed module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="08c0b-113">如果指定 RequiredVersion 參數，Get-InstalledModule 只會傳回完全符合所指定版本之已安裝模組的版本。</span><span class="sxs-lookup"><span data-stu-id="08c0b-113">If the RequiredVersion parameter is specified, Get-InstalledModule only returns the version of installed module that exactly matches the specified version.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="08c0b-114">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="08c0b-114">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="08c0b-115">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="08c0b-115">Cmdlet online help reference</span></span>
 
-[Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
+[<span data-ttu-id="08c0b-116">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="08c0b-116">Get-InstalledModule</span></span>](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a><span data-ttu-id="08c0b-117">範例命令</span><span class="sxs-lookup"><span data-stu-id="08c0b-117">Example commands</span></span>
 
 ```powershell
 
@@ -105,8 +100,7 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-<a id="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object" class="xliff"></a>
-## PSGetRepositoryItemInfo 物件中的 InstalledDate 和 UpdatedDate 屬性
+## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a><span data-ttu-id="08c0b-118">PSGetRepositoryItemInfo 物件中的 InstalledDate 和 UpdatedDate 屬性</span><span class="sxs-lookup"><span data-stu-id="08c0b-118">InstalledDate and UpdatedDate properties in PSGetRepositoryItemInfo object</span></span>
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value

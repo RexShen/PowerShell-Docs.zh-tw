@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-script" class="xliff"></a>
-# Uninstall-Script
+# <a name="uninstall-script"></a><span data-ttu-id="b3d2b-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="b3d2b-103">Uninstall-Script</span></span>
 
-解除安裝使用 PowerShellGet 所安裝的指令檔。
+<span data-ttu-id="b3d2b-104">解除安裝使用 PowerShellGet 所安裝的指令檔。</span><span class="sxs-lookup"><span data-stu-id="b3d2b-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a><span data-ttu-id="b3d2b-105">描述</span><span class="sxs-lookup"><span data-stu-id="b3d2b-105">Description</span></span>
 
-Uninstall-Script Cmdlet 會解除安裝已從線上存放庫安裝的指定指令檔。
+<span data-ttu-id="b3d2b-106">Uninstall-Script Cmdlet 會解除安裝已從線上存放庫安裝的指定指令檔。</span><span class="sxs-lookup"><span data-stu-id="b3d2b-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a><span data-ttu-id="b3d2b-107">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="b3d2b-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="b3d2b-108">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="b3d2b-108">Cmdlet online help reference</span></span>
 
-[Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
+[<span data-ttu-id="b3d2b-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="b3d2b-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a><span data-ttu-id="b3d2b-110">範例命令</span><span class="sxs-lookup"><span data-stu-id="b3d2b-110">Example commands</span></span>
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 StopConfiguration 方法
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="d2acd-103">MSFT_DSCLocalConfigurationManager 類別的 StopConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="d2acd-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-停止進行中的設定變更。
+<span data-ttu-id="d2acd-104">停止進行中的設定變更。</span><span class="sxs-lookup"><span data-stu-id="d2acd-104">Stops the configuration change that is in progress.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="d2acd-105">語法</span><span class="sxs-lookup"><span data-stu-id="d2acd-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,37 +23,32 @@ uint32 StopConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="d2acd-106">參數</span><span class="sxs-lookup"><span data-stu-id="d2acd-106">Parameters</span></span>
 ----------
 
-*force* \[in\]  
-**true** 表示強制停止該設定。
+<span data-ttu-id="d2acd-107">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="d2acd-107">*force* \[in\]</span></span>  
+<span data-ttu-id="d2acd-108">**true** 表示強制停止該設定。</span><span class="sxs-lookup"><span data-stu-id="d2acd-108">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="d2acd-109">傳回值</span><span class="sxs-lookup"><span data-stu-id="d2acd-109">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="d2acd-110">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="d2acd-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="d2acd-111">備註</span><span class="sxs-lookup"><span data-stu-id="d2acd-111">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="d2acd-112">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="d2acd-112">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="d2acd-113">需求</span><span class="sxs-lookup"><span data-stu-id="d2acd-113">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="d2acd-114">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="d2acd-114">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="d2acd-115">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d2acd-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="d2acd-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d2acd-116">See also</span></span>
+
+
+[<span data-ttu-id="d2acd-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d2acd-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

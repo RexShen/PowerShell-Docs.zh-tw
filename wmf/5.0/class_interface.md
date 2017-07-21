@@ -9,10 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="declare-implemented-interface" class="xliff"></a>
-# 宣告實作的介面
+# <a name="declare-implemented-interface"></a><span data-ttu-id="179f7-102">宣告實作的介面</span><span class="sxs-lookup"><span data-stu-id="179f7-102">Declare Implemented Interface</span></span>
 
-如未指定基底類型，您可以在基底類型之後或緊跟在冒號 (:) 之後宣告實作的介面。 使用逗號分隔所有類型名稱。 非常類似 C# 語法。
+<span data-ttu-id="179f7-103">如未指定基底類型，您可以在基底類型之後或緊跟在冒號 (:) 之後宣告實作的介面。</span><span class="sxs-lookup"><span data-stu-id="179f7-103">You can declare implemented interfaces after base types, or immediately after a colon (:), if there is no base type specified.</span></span> <span data-ttu-id="179f7-104">使用逗號分隔所有類型名稱。</span><span class="sxs-lookup"><span data-stu-id="179f7-104">Separate all type names by using commas.</span></span> <span data-ttu-id="179f7-105">非常類似 C# 語法。</span><span class="sxs-lookup"><span data-stu-id="179f7-105">It’s very similar to C# syntax.</span></span>
 
 ```PowerShell
 class MyComparable : system.IComparable

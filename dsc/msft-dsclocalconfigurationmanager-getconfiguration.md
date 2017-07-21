@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 GetConfiguration 方法
+# <a name="getconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="2f310-103">MSFT_DSCLocalConfigurationManager 類別的 GetConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="2f310-103">GetConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-將設定文件傳送到受管理的節點，並使用設定代理程式的 **Get** 方法來套用設定。
+<span data-ttu-id="2f310-104">將設定文件傳送到受管理的節點，並使用設定代理程式的 **Get** 方法來套用設定。</span><span class="sxs-lookup"><span data-stu-id="2f310-104">Sends the configuration document to the managed node and uses the **Get** method of the Configuration Agent to apply the configuration.</span></span>
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a><span data-ttu-id="2f310-105">語法</span><span class="sxs-lookup"><span data-stu-id="2f310-105">Syntax</span></span>
 ------
 
 ```mof
@@ -26,40 +24,35 @@ uint32 GetConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a><span data-ttu-id="2f310-106">參數</span><span class="sxs-lookup"><span data-stu-id="2f310-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-指定要傳送的設定資料。
+<span data-ttu-id="2f310-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="2f310-107">*configurationData* \[in\]</span></span>  
+<span data-ttu-id="2f310-108">指定要傳送的設定資料。</span><span class="sxs-lookup"><span data-stu-id="2f310-108">Specifies the configuration data to send.</span></span>
 
-*configurations* \[out\]  
-傳回時，包含設定的內嵌執行個體。
+<span data-ttu-id="2f310-109">*configurations* \[out\]</span><span class="sxs-lookup"><span data-stu-id="2f310-109">*configurations* \[out\]</span></span>  
+<span data-ttu-id="2f310-110">傳回時，包含設定的內嵌執行個體。</span><span class="sxs-lookup"><span data-stu-id="2f310-110">On return, contains an embedded instance of the configurations.</span></span>
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a><span data-ttu-id="2f310-111">傳回值</span><span class="sxs-lookup"><span data-stu-id="2f310-111">Return value</span></span>
 ------------
 
-若成功即傳回零；否則傳回錯誤碼。
+<span data-ttu-id="2f310-112">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="2f310-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a><span data-ttu-id="2f310-113">備註</span><span class="sxs-lookup"><span data-stu-id="2f310-113">Remarks</span></span>
 
-此為靜態方法。
+<span data-ttu-id="2f310-114">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="2f310-114">This is a static method.</span></span>
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a><span data-ttu-id="2f310-115">需求</span><span class="sxs-lookup"><span data-stu-id="2f310-115">Requirements</span></span>
 ------------
->**MOF：**DscCore.mof
+><span data-ttu-id="2f310-116">**MOF：**DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="2f310-116">**MOF:** DscCore.mof</span></span>
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+><span data-ttu-id="2f310-117">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="2f310-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="2f310-118">另請參閱</span><span class="sxs-lookup"><span data-stu-id="2f310-118">See also</span></span>
+
+
+[<span data-ttu-id="2f310-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="2f310-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
  
 
  
