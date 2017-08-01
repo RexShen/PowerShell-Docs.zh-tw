@@ -1,29 +1,12 @@
-## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 開放原始碼管理辦法
+<span data-ttu-id="6705c-101">[![組建狀態](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)</span><span class="sxs-lookup"><span data-stu-id="6705c-101">[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)</span></span>
 
-本專案已採用 [Microsoft 開放原始碼管理辦法 (英文)](https://opensource.microsoft.com/codeofconduct/)。
-如需詳細資訊，請參閱[管理辦法常見問題集 (英文)](https://opensource.microsoft.com/codeofconduct/faq/)。如果有任何其他疑問或意見，請連絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)。
+# <a name="powershell-documentation"></a><span data-ttu-id="6705c-102">PowerShell 文件</span><span class="sxs-lookup"><span data-stu-id="6705c-102">PowerShell Documentation</span></span>
 
-[![組建狀態](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+<span data-ttu-id="6705c-103">歡迎使用裝載正式 Windows PowerShell 文件的 PowerShell-Docs 存放庫，[可在 MSDN 取得](https://msdn.microsoft.com/powershell/dsc/overview)。</span><span class="sxs-lookup"><span data-stu-id="6705c-103">Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview).</span></span> 
 
-# <a name="powershell-documentation"></a>PowerShell 文件
+> <span data-ttu-id="6705c-104">**請注意**︰此存放庫目前僅適用於 PowerShell [期望狀態設定 (DSC)](https://msdn.microsoft.com/en-us/powershell/dsc/overview) 內容和 [Windows Management Framework (WMF) 版本資訊](https://msdn.microsoft.com/en-us/powershell/wmf/releasenotes)。</span><span class="sxs-lookup"><span data-stu-id="6705c-104">**Note**: Currently, this repository is intended only for PowerShell [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/powershell/dsc/overview) content and [Windows Management Framework (WMF) release notes](https://msdn.microsoft.com/en-us/powershell/wmf/releasenotes).</span></span> <span data-ttu-id="6705c-105">在未來，儲存機制將會擴展至包含範圍更廣的 PowerShell 文件。</span><span class="sxs-lookup"><span data-stu-id="6705c-105">In the future, the repo will be expanded to include a wider range of PowerShell documentation.</span></span> 
 
-歡迎使用裝載正式 Windows PowerShell 文件的 PowerShell-Docs 存放庫。 
+## <a name="contributing"></a><span data-ttu-id="6705c-106">貢獻</span><span class="sxs-lookup"><span data-stu-id="6705c-106">Contributing</span></span>
 
-## <a name="repository-structure"></a>存放庫結構
-此存放庫中的每個資料夾都會發佈至 [MSDN (英文)](https://msdn.microsoft.com/en-us/powershell)。 資料夾對應至下列 PowerShell 資產：
-* [/dsc/](https://msdn.microsoft.com/en-us/powershell/dsc/) 適用於「預期狀態設定」功能
-* [/gallery/](https://msdn.microsoft.com/powershell/gallery) 適用於 [PowerShell 資源庫 (英文)](https://www.powershellgallery.com/)
-* [/jea/](https://msdn.microsoft.com/powershell/jea/) 適用於 Just Enough Administration 功能
-* [/reference/](https://msdn.microsoft.com/powershell/reference/) 適用於 PowerShell 模組參考，包括版本 2.0、3.0、4.0、5.0、5.1 和 6.0
-  * 未來可透過 `Get-Help` Cmdlet 擷取此內容
-* [/scripting/](https://msdn.microsoft.com/en-us/powershell/scripting/) 是一般的 PowerShell 參考內容
-* [/wmf](https://msdn.microsoft.com/en-us/powershell/wmf/readme) 包含 Windows Management Framework 的版本資訊，這是用來將新的 PowerShell 版本發佈至舊版 Windows 的套件。 
-
-
-
-## <a name="contributing"></a>貢獻
-
-我們透過[提取要求](https://help.github.com/articles/using-pull-requests/)到「預備」分支，主動將貢獻合併到此存放庫。 請注意，您提交提取要求之前，必須先[簽署貢獻授權合約](https://cla.microsoft.com/)，以確保社群可以自由使用您提出的內容。
-如需如何貢獻的詳細資訊，請閱讀我們的[貢獻指南](CONTRIBUTING.md)。
-進行貢獻之前，請先檢閱[樣式指南](./STYLE.md)草稿。
-請使用「問題」和「提取要求」範本，以協助維持文件在不同版本之間的一致性。 
+<span data-ttu-id="6705c-107">我們透過[提取要求](https://help.github.com/articles/using-pull-requests/)到「預備」分支，主動將貢獻合併到此存放庫。</span><span class="sxs-lookup"><span data-stu-id="6705c-107">We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch.</span></span> <span data-ttu-id="6705c-108">請注意，您提交提取要求之前，必須先[簽署貢獻授權合約](https://cla.microsoft.com/)，以確保社群可以自由使用您提出的內容。</span><span class="sxs-lookup"><span data-stu-id="6705c-108">Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.</span></span>
+<span data-ttu-id="6705c-109">如需如何貢獻的詳細資訊，請閱讀我們的[貢獻指南](CONTRIBUTING.md)。</span><span class="sxs-lookup"><span data-stu-id="6705c-109">For more information on contributing, read our [contributions guide](CONTRIBUTING.md).</span></span>
