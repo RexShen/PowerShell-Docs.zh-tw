@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-dsc-lcm-with-new-meta-configuration-attribute" class="xliff"></a>
-# 使用新的中繼設定屬性設定 DSC LCM
+# <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a>使用新的中繼設定屬性設定 DSC LCM
 
 `DscLocalConfigurationManager` 屬性將設定區塊指定為中繼設定，用於設定 DSC 本機設定管理員。 
 

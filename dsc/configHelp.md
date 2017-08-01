@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-help-for-dsc-configurations" class="xliff"></a>
-# 撰寫 DSC 設定的說明
+# <a name="writing-help-for-dsc-configurations"></a>撰寫 DSC 設定的說明
 
 >適用於：Windows PowerShell Windows 5.0
 
@@ -61,8 +60,7 @@ configuration HelpSample1
 }
 ```
 
-<a id="viewing-configuration-help" class="xliff"></a>
-## 檢視設定說明
+## <a name="viewing-configuration-help"></a>檢視設定說明
 
 若要檢視設定的說明，請使用 **Get-help** Cmdlet 加上函數名稱，或輸入函數名稱加上 `-?`。 以下是將前一個函數傳遞給 **Get-help** 後的輸出：
 
@@ -93,7 +91,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 * [DSC 設定](configurations.md)
 

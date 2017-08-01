@@ -10,11 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contact-gallery-administrators" class="xliff"></a>
-# 連絡資源庫管理員
+# <a name="contact-gallery-administrators"></a>連絡資源庫管理員
 
-<a id="when-to-contact-gallery-administrators" class="xliff"></a>
-## 連絡資源庫管理員的時機
+## <a name="when-to-contact-gallery-administrators"></a>連絡資源庫管理員的時機
 
 您應在下列情況連絡系統管理員︰
 
@@ -24,8 +22,7 @@ ms.lasthandoff: 06/12/2017
 4. 您與其他使用者發生項目名稱爭議，而您無法透過連絡使用者解決此問題。
 5. 資源庫管理員與您連絡，內容有關您在資源庫中的項目，而您想要回覆。
 
-<a id="how-to-contact-gallery-administrators" class="xliff"></a>
-## 連絡資源庫管理員的方式
+## <a name="how-to-contact-gallery-administrators"></a>連絡資源庫管理員的方式
 
 1. 傳送電子郵件給我們：cgadmin@microsoft.com。
 2. 若您要檢舉不當使用的項目，可於左方面板項目資訊下方找到 [檢舉不當使用] 連結。

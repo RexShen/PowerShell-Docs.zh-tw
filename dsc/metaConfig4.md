@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm" class="xliff"></a>
-# Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
+# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本機設定管理員是 Windows PowerShell 預期狀態設定 (DSC) 引擎， 會在所有目標節點上執行，負責呼叫包含在 DSC 設定指令碼中的設定資源。 本主題列出本機設定管理員屬性，並說明如何修改目標節點上的本機設定管理員設定。
 
-<a id="local-configuration-manager-properties" class="xliff"></a>
-## 本機設定管理員屬性
+## <a name="local-configuration-manager-properties"></a>本機設定管理員屬性
 以下列出您可以設定或擷取的本機設定管理員屬性。
  
 * **AllowModuleOverwrite**：控制是否允許從設定伺服器下載新設定，以覆寫目標節點上舊的設定。 可能的值為 True 和 False。
@@ -36,8 +34,7 @@ ms.lasthandoff: 06/12/2017
 * **RefreshFrequencyMins**：當您設定「提取」伺服器時使用。 代表的本機設定管理員連絡「提取」伺服器來下載目前設定的頻率 (以分鐘為單位)。 這個值可以搭配 ConfigurationModeFrequencyMins 設定。 當 RefreshMode 設定為 PULL 時，目標節點會連絡「提取」伺服器，頻率為 RefreshFrequencyMins 所設定的間隔，並下載目前的設定。 在 ConfigurationModeFrequencyMins 所設定的間隔中，一致性引擎接著會套用已下載至目標節點的最新設定。 如果 RefreshFrequencyMins 未設定為 ConfigurationModeFrequencyMins 的整數倍數，則系統會無條件進位。 預設值為 30。
 * **RefreshMode**：可能的值為 **Push** (預設值) 和 **Pull**。 在 “push” 設定中，您必須使用任何用戶端電腦，在每個目標節點上放置設定檔。 在 “pull” 模式中，您必須設定 「提取」伺服器，供本機設定管理員來連絡及存取設定檔。
 
-<a id="example-of-updating-local-configuration-manager-settings" class="xliff"></a>
-### 更新本機設定管理員設定的範例
+### <a name="example-of-updating-local-configuration-manager-settings"></a>更新本機設定管理員設定的範例
 
 您可以更新目標節點的本機設定管理員設定，方法是在設定指令碼中節點區塊內加入 **LocalConfigurationManager** 區塊，如下列範例所示。
 

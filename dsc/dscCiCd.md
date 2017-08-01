@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc" class="xliff"></a>
-# 使用 DSC 來建置持續整合和持續部署管線
+# <a name="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 
 此範例示範如何使用 PowerShell、DSC、Pester 及 Visual Studio Team Foundation Server (TFS) 來建置「持續整合/持續部署」(CI/CD) 管線。
 
@@ -19,8 +18,7 @@ ms.lasthandoff: 06/12/2017
 
 自動化的 CI/CD 管線可協助您以更快且更可靠的方式更新軟體，確保所有程式碼都經過測試，並且您程式碼的最新組建隨時可供使用。
 
-<a id="prerequisites" class="xliff"></a>
-## 必要條件
+## <a name="prerequisites"></a>必要條件
 
 若要使用此範例，您應該熟悉下列各項知識：
 
@@ -29,13 +27,11 @@ ms.lasthandoff: 06/12/2017
 - [Pester](https://github.com/pester/Pester) 測試架構
 - [Team Foundation Server](https://www.visualstudio.com/tfs/)
 
-<a id="what-you-will-need" class="xliff"></a>
-## 您將需要
+## <a name="what-you-will-need"></a>您將需要
 
 若要建置和執行此範例，您將需要一個有數台電腦和/或虛擬機器的環境。
 
-<a id="client" class="xliff"></a>
-### Client
+### <a name="client"></a>Client
 
 這是您將進行所有設定和執行範例之工作的電腦。
 
@@ -44,14 +40,12 @@ ms.lasthandoff: 06/12/2017
 - 從 https://github.com/PowerShell/Demo_CI 複製的本機 Git 儲存機制
 - 文字編輯器，例如 [Visual Studio Code](https://code.visualstudio.com/)
 
-<a id="tfssrv1" class="xliff"></a>
-### TFSSrv1
+### <a name="tfssrv1"></a>TFSSrv1
 
 裝載 TFS 伺服器且您將定義組建和版本的電腦。
 此電腦上必須安裝 [Team Foundation Server 2017](https://www.visualstudio.com/tfs/)。
 
-<a id="buildagent" class="xliff"></a>
-### BuildAgent
+### <a name="buildagent"></a>BuildAgent
 
 執行建置專案之 Windows 組建代理程式的電腦。
 此電腦上必須安裝及執行 Windows 組建代理程式。
@@ -59,20 +53,17 @@ ms.lasthandoff: 06/12/2017
 
 您還必須在此電腦上安裝 `xDnsServer` 和 `xNetworking` DSC 模組。
 
-<a id="testagent1" class="xliff"></a>
-### TestAgent1
+### <a name="testagent1"></a>TestAgent1
 
 這是此範例中的 DSC 設定所設定為 DNS 伺服器的電腦。
 此電腦必須執行 [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)。
 
-<a id="testagent2" class="xliff"></a>
-### TestAgent2
+### <a name="testagent2"></a>TestAgent2
 
 這是裝載此範例所設定之網站的電腦。
 此電腦必須執行 [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)。 
 
-<a id="add-the-code-to-tfs" class="xliff"></a>
-## 將程式碼新增至 TFS
+## <a name="add-the-code-to-tfs"></a>將程式碼新增至 TFS
 
 我們一開始會在 TFS 中建立 Git 儲存機制，並從您在用戶端電腦上的本機儲存機制匯入程式碼。
 如果您尚未將 Demo_CI 儲存機制複製到您的用戶端電腦上，請立即執行下列 Git 命令來執行此操作：
@@ -98,14 +89,12 @@ ms.lasthandoff: 06/12/2017
 >**注意：**此範例會使用 Git 儲存機制之 `ci-cd-example` 分支中的程式碼。
 >請務必指定此分支作為您 TFS 專案中及您所建立之 CI/CD 觸發程序的預設分支。
 
-<a id="understanding-the-code" class="xliff"></a>
-## 了解程式碼
+## <a name="understanding-the-code"></a>了解程式碼
 
 在建立這些組建與部署管線之前，讓我們先來看看部分程式碼以了解情況。
 在您的用戶端電腦上，開啟您慣用的文字編輯器，然後瀏覽至 Demo_CI Git 儲存機制的根目錄。
 
-<a id="the-dsc-configuration" class="xliff"></a>
-### DSC 設定
+### <a name="the-dsc-configuration"></a>DSC 設定
 
 開啟檔案 `DNSServer.ps1` (從本機 Demo_CI 儲存機制的根目錄路徑為 `./InfraDNS/Configs/DNSServer.ps1`)。
 
@@ -173,8 +162,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 請注意，兩個 `xDnsRecord` 區塊皆包裝在 `foreach` 迴圈中，這些迴圈會逐一查看設定資料中的陣列。
 此設定資料同樣也是 `DevEnv.ps1` 指令碼所建立的，接下來將會探討此設定資料。
 
-<a id="configuration-data" class="xliff"></a>
-### 設定資料
+### <a name="configuration-data"></a>設定資料
 
 `DevEnv.ps1` 檔案 (從本機 Demo_CI 儲存機制的根目錄路徑為 `./InfraDNS/DevEnv.ps1`) 會在雜湊表中指定環境特定設定資料，然後將該雜湊表傳遞給對 `DscPipelineTools.psm` (`./Assets/DscPipelineTools/DscPipelineTools.psm1`) 中定義之 `New-DscConfigurationDataDocument` 函式的呼叫。
 
@@ -209,8 +197,7 @@ Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath 
 
 在我們的案例中，只使用 `RawEnvData` 參數。
 
-<a id="the-psake-build-script" class="xliff"></a>
-### psake 建置指令碼
+### <a name="the-psake-build-script"></a>psake 建置指令碼
 
 `Build.ps1` (從 Demo_CI 儲存機制的根目錄路徑為 `./InfraDNS/Build.ps1`) 中定義的 [psake](https://github.com/psake/psake) 建置指令碼會定義組建所含的工作。
 它也定義每個工作所依存的其他工作。 當叫用 psake 指令碼時，它會確保指定的工作 (如果未指定任何工作，則是名為 `Default` 的工作) 執行，並且所有相依項目也一併執行 (這是遞迴的，因此相依項目的相依項目也會執行，依此類推)。
@@ -249,97 +236,80 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 建置指令碼會定義下列工作：
 
-<a id="generateenvironmentfiles" class="xliff"></a>
-#### GenerateEnvironmentFiles
+#### <a name="generateenvironmentfiles"></a>GenerateEnvironmentFiles
 
 會執行 `DevEnv.ps1` 以產生設定資料檔。
 
-<a id="installmodules" class="xliff"></a>
-#### InstallModules
+#### <a name="installmodules"></a>InstallModules
 
 會安裝設定 `DNSServer.ps1` 所需的模組。
 
-<a id="scriptanalysis" class="xliff"></a>
-#### ScriptAnalysis
+#### <a name="scriptanalysis"></a>ScriptAnalysis
 
 會呼叫 [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer)。
 
-<a id="unittests" class="xliff"></a>
-#### UnitTests
+#### <a name="unittests"></a>UnitTests
 
 會執行 [Pester](https://github.com/pester/Pester/wiki) 單元測試。
 
-<a id="compileconfigs" class="xliff"></a>
-#### CompileConfigs
+#### <a name="compileconfigs"></a>CompileConfigs
 
 會使用 `GenerateEnvironmentFiles` 工作所產生的設定資料，將設定 (`DNSServer.ps1`) 編譯成 MOF 檔案。
 
-<a id="clean" class="xliff"></a>
-#### Clean
+#### <a name="clean"></a>Clean
 
 會建立用於範例的資料夾，並移除來自先前回合的所有測試結果、設定資料檔及模組。
 
-<a id="the-psake-deploy-script" class="xliff"></a>
-### psake 部署指令碼
+### <a name="the-psake-deploy-script"></a>psake 部署指令碼
 
 `Deploy.ps1` (從 Demo_CI 儲存機制的根目錄路徑為 `./InfraDNS/Deploy.ps1`) 中定義的 [psake](https://github.com/psake/psake) 部署指令碼會定義部署和執行設定的工作。
 
 `Deploy.ps1` 會定義下列工作：
 
-<a id="deploymodules" class="xliff"></a>
-#### DeployModules
+#### <a name="deploymodules"></a>DeployModules
 
 會在 `TestAgent1` 上啟動 PowerShell 工作階段，並安裝包含設定所需 DSC 資源的模組。
 
-<a id="deployconfigs" class="xliff"></a>
-#### DeployConfigs
+#### <a name="deployconfigs"></a>DeployConfigs
 
 會呼叫 [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) Cmdlet 以在 `TestAgent1` 上執行設定。
 
-<a id="integrationtests" class="xliff"></a>
-#### IntegrationTests
+#### <a name="integrationtests"></a>IntegrationTests
 
 會執行 [Pester](https://github.com/pester/Pester/wiki) 整合測試。
 
-<a id="acceptancetests" class="xliff"></a>
-#### AcceptanceTests
+#### <a name="acceptancetests"></a>AcceptanceTests
 
 會執行 [Pester](https://github.com/pester/Pester/wiki) 接受度測試。
 
-<a id="clean" class="xliff"></a>
-#### Clean
+#### <a name="clean"></a>Clean
 
 會移除在先前回合中安裝的所有模組，並確保測試結果資料夾存在。
 
-<a id="test-scripts" class="xliff"></a>
-### 測試指令碼
+### <a name="test-scripts"></a>測試指令碼
 
 接受度、整合及單元測試是在 `Tests` 資料夾 (從 Demo_CI 儲存機制的根目錄路徑為 `./InfraDNS/Tests`) 內的指令碼中定義的，各分別在其個別資料夾內名為 `DNSServer.tests.ps1` 的檔案中。
 
 測試指令碼會使用 [Pester](https://github.com/pester/Pester/wiki) 和 [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) 語法。
 
-<a id="unit-tests" class="xliff"></a>
-#### 單元測試
+#### <a name="unit-tests"></a>單元測試
 
 單元測試會測試 DSC 設定本身，以確保設定在執行時會執行預期執行的工作。
 單元測試指令碼會使用 [Pester](https://github.com/pester/Pester/wiki)。
 
-<a id="integration-tests" class="xliff"></a>
-#### 整合測試
+#### <a name="integration-tests"></a>整合測試
 
 整合測試會測試系統的設定，以確保當與其他元件整合時，會依照預期的方式設定系統。 使用 DSC 來設定這些測試之後，這些測試就會在目標節點上執行。
 整合測試指令碼會混合使用 [Pester](https://github.com/pester/Pester/wiki) 和 [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) 語法。
 
-<a id="acceptance-tests" class="xliff"></a>
-#### 接受度測試
+#### <a name="acceptance-tests"></a>接受度測試
 
 接受度測試會測試系統，以確保系統依照預期的方式運作。
 例如，它會測試來確保在查詢時，網頁會傳回正確的資訊。
 這些測試會從目標節點的遠端執行，以測試真實世界案例。
 整合測試指令碼會混合使用 [Pester](https://github.com/pester/Pester/wiki) 和 [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) 語法。
 
-<a id="define-the-build" class="xliff"></a>
-## 定義組建
+## <a name="define-the-build"></a>定義組建
 
 既然我們已將程式碼上傳到 TFS 並查看其功能，現在即可開始定義組建。
 
@@ -355,8 +325,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 新增這些建置步驟之後，請依下列方式編輯每個步驟的屬性：
 
-<a id="powershell-script" class="xliff"></a>
-### PowerShell 指令碼
+### <a name="powershell-script"></a>PowerShell 指令碼
 
 1. 將 [類型] 屬性設定為 `File Path`。
 1. 將 [指令碼路徑] 屬性設定為 `initiate.ps1`。
@@ -364,8 +333,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 此建置步驟會執行 `initiate.ps1` 檔案以呼叫 psake 建置指令碼。
 
-<a id="publish-test-results" class="xliff"></a>
-### 發行測試結果
+### <a name="publish-test-results"></a>發行測試結果
 
 1. 將 [測試結果格式] 設定為 `NUnit`
 1. 將 [測試結果檔案] 設定為 `InfraDNS/Tests/Results/*.xml`
@@ -374,8 +342,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 此建置步驟會執行我們先前查看之 Pester 指令碼中的單元測試，然後將結果儲存在 `InfraDNS/Tests/Results/*.xml` 資料夾中。
 
-<a id="copy-files" class="xliff"></a>
-### 複製檔案
+### <a name="copy-files"></a>複製檔案
 
 1. 將下列每一行新增到 [內容] 中：
 
@@ -390,16 +357,14 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 此步驟會將建置和測試指令碼複製到暫存目錄中，以便供下一個步驟發行成組建成品。
 
-<a id="publish-artifact" class="xliff"></a>
-### 發行成品
+### <a name="publish-artifact"></a>發行成品
 
 1. 將 [要發行的路徑] 設定為 `$(Build.ArtifactStagingDirectory)\`
 1. 將 [成品名稱] 設定為 `Deploy`
 1. 將 [成品類型] 設定為 `Server`
 1. 在 [控制選項] 中選取 [`Enabled`]
 
-<a id="enable-continuous-integration" class="xliff"></a>
-## 啟用持續整合
+## <a name="enable-continuous-integration"></a>啟用持續整合
 
 現在我們將設定一個觸發程序，此觸發程序會在每當有任何變更簽入 Git 儲存機制的 `ci-cd-example` 分支中時，便促使專案進行建置。
 
@@ -411,8 +376,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 現在 TFS Git 儲存機制中的任何變更都會觸發自動化建置。
 
-<a id="create-the-release-definition" class="xliff"></a>
-## 建立發行定義
+## <a name="create-the-release-definition"></a>建立發行定義
 
 讓我們來建立一個發行定義，以便在每次簽入程式碼時，都將專案部署到開發環境。
 
@@ -428,38 +392,33 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 依下列方式編輯步驟：
 
-<a id="powershell-script" class="xliff"></a>
-### PowerShell 指令碼
+### <a name="powershell-script"></a>PowerShell 指令碼
 
 1. 將 [指令碼路徑] 欄位設定為 `$(Build.DefinitionName)\Deploy\initiate.ps1"`
 1. 將 [引數] 欄位設定為 `-fileName Deploy`
 
-<a id="first-publish-test-results" class="xliff"></a>
-### 第一個發行測試結果
+### <a name="first-publish-test-results"></a>第一個發行測試結果
 
 1. 為 [測試結果格式] 欄位選取 [`NUnit`]
 1. 將 [測試結果檔案] 欄位設定為 `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
 1. 將 [測試回合標題] 設定為 `Integration`
 1. 在 [控制選項] 底下，選取 [永遠執行]
 
-<a id="second-publish-test-results" class="xliff"></a>
-### 第二個發行測試結果
+### <a name="second-publish-test-results"></a>第二個發行測試結果
 
 1. 為 [測試結果格式] 欄位選取 [`NUnit`]
 1. 將 [測試結果檔案] 欄位設定為 `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
 1. 將 [測試回合標題] 設定為 `Acceptance`
 1. 在 [控制選項] 底下，選取 [永遠執行]
 
-<a id="verify-your-results" class="xliff"></a>
-## 驗證您的結果
+## <a name="verify-your-results"></a>驗證您的結果
 
 現在，每當您將 `ci-cd-example` 分支中的變更推送到 TFS 時，就會開始一個新的組建。
 如果組建順利完成，就會觸發新的部署。
 
 您可以在用戶端電腦上開啟瀏覽器並瀏覽至 `www.contoso.com`，來檢查部署結果。
 
-<a id="next-steps" class="xliff"></a>
-## 接下來的步驟
+## <a name="next-steps"></a>接下來的步驟
 
 此範例會設定 DNS 伺服器 `TestAgent1`，讓 URL `www.contoso.com` 解析成 `TestAgent2`，但它並不會實際部署網站。
 儲存機制的 `WebApp` 資料夾底下有提供此做法的基本架構。

@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-built-in-dsc-resources" class="xliff"></a>
-# 新的內建 DSC 資源
+# <a name="new-built-in-dsc-resources"></a>新的內建 DSC 資源
 
 WMF 5.0 RTM 有 4 個新的 DSC 資源︰ 
 * WindowsFeatureSet
@@ -20,8 +19,7 @@ WMF 5.0 RTM 有 4 個新的 DSC 資源︰
 
 這些資源提供了簡單的方法來設定使用單一資源呼叫的多個執行個體。
 
-<a id="windowsfeatureset" class="xliff"></a>
-## WindowsFeatureSet
+## <a name="windowsfeatureset"></a>WindowsFeatureSet
 
 ```powershell
 # Get the syntax of WindowsFeatureSet resource
@@ -39,8 +37,7 @@ WindowsFeatureSet [String] #ResourceName
 }
 ```
 
-<a id="windowsoptionalfeatureset" class="xliff"></a>
-## WindowsOptionalFeatureSet 
+## <a name="windowsoptionalfeatureset"></a>WindowsOptionalFeatureSet 
 
 ```powershell
 # Get the syntax of WindowsOptionalFeatureSet resource
@@ -59,8 +56,7 @@ WindowsOptionalFeatureSet [String] #ResourceName
 }
 ```
 
-<a id="serviceset" class="xliff"></a>
-## ServiceSet 
+## <a name="serviceset"></a>ServiceSet 
 
 ```powershell
 # Get the syntax of ServiceSet resource
@@ -78,8 +74,7 @@ ServiceSet [String] #ResourceName
 }
 ```
 
-<a id="processset" class="xliff"></a>
-## ProcessSet 
+## <a name="processset"></a>ProcessSet 
 
 ```powershell
 # Get the syntax of ProcessSet resource

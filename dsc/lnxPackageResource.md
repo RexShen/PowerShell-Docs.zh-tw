@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxpackage-resource" class="xliff"></a>
-# DSC for Linux nxPackage 資源
+# <a name="dsc-for-linux-nxpackage-resource"></a>DSC for Linux nxPackage 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxPackage** 資源會提供一個機制，在 Linux 節點管理套件。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 nxPackage <string> #ResourceName
@@ -33,8 +31,7 @@ nxPackage <string> #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -47,8 +44,7 @@ nxPackage <string> #ResourceName
 | ReturnCode| 預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 
 下列範例會確保名為 "httpd" 的套件已使用 "Yum" 套件管理員安裝在 Linux 電腦上。
 

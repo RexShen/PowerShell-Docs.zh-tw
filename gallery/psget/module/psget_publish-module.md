@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="publish-module" class="xliff"></a>
-# Publish-Module
+# <a name="publish-module"></a>Publish-Module
 
 將指定的模組從本機電腦發行至線上資源庫。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 **Publish-Module** Cmdlet 會使用 API 金鑰將模組發行至線上 NuGet 型資源庫，而這個 API 金鑰儲存為資源庫中使用者設定檔的一部分)。 您可以指定依模組名稱，或依包含模組之資料夾的路徑來發行模組。
 
@@ -28,19 +26,16 @@ RequiredVersion 參數可讓您指定要發行之模組的確切版本。
 Path 參數也支援具有版本資料夾的模組基底路徑。
 Publish-Module Cmdlet 上的 Force 切換參數會啟動載入 NuGet.exe，而不予提示。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Publish-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=398575)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 ContosoServer module with different versions to be published.
@@ -72,11 +67,9 @@ _------ ---- ---------- -----------
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
 
-<a id="publishing-a-module-with-dependencies" class="xliff"></a>
-## 發行具有相依性的模組
+## <a name="publishing-a-module-with-dependencies"></a>發行具有相依性的模組
 
-<a id="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest" class="xliff"></a>
-### 建立具有相依性和版本範圍的模組，這些相依性和版本範圍是在其模組資訊清單的 RequiredModules 屬性中所指定。
+### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>建立具有相依性和版本範圍的模組，這些相依性和版本範圍是在其模組資訊清單的 RequiredModules 屬性中所指定。
 
 **注意：**
   - \*只在 MaximumVersion 中予以支援，同時應該位於版本字串尾端。 
@@ -90,15 +83,13 @@ PS C:\windows\system32> cd C:\MyModules\ModuleWithDependencies
 PS C:\MyModules\ModuleWithDependencies> New-ModuleManifest -Path .\ModuleWithDependencies.psd1 -ModuleVersion 1.0 -RequiredModules $requiredModules -Description 'ModuleWithDependencies demo module'
 ```
 
-<a id="publish-modulewithdependencies-module-with-dependencies-to-the-repository" class="xliff"></a>
-### 將具有相依性的 ModuleWithDependencies 模組發行至存放庫。
+### <a name="publish-modulewithdependencies-module-with-dependencies-to-the-repository"></a>將具有相依性的 ModuleWithDependencies 模組發行至存放庫。
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Publish-Module -Path C:\MyModules\ModuleWithDependencies -Repository LocalRepo
 ```
 
-<a id="find-modulewithdependencies-module-with-its-dependencies-by-specifying--includedependencies" class="xliff"></a>
-### 指定 -IncludeDependencies 來尋找具有其相依性的 ModuleWithDependencies 模組
+### <a name="find-modulewithdependencies-module-with-its-dependencies-by-specifying--includedependencies"></a>指定 -IncludeDependencies 來尋找具有其相依性的 ModuleWithDependencies 模組
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Find-Module -Name ModuleWithDependencies -Repository LocalRepo -IncludeDependencies
@@ -110,8 +101,7 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-<a id="install-the-modulewithdependencies-module-with-dependencies" class="xliff"></a>
-### 安裝具有相依性的 ModuleWithDependencies 模組。
+### <a name="install-the-modulewithdependencies-module-with-dependencies"></a>安裝具有相依性的 ModuleWithDependencies 模組。
 請注意，在相依性安裝期間會使用版本範圍。
 
 ```powershell
@@ -128,8 +118,7 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-<a id="contents-of-modulewithdependencies2-module-manifest-file" class="xliff"></a>
-### ModuleWithDependencies2 模組資訊清單檔案的內容
+### <a name="contents-of-modulewithdependencies2-module-manifest-file"></a>ModuleWithDependencies2 模組資訊清單檔案的內容
 
 ```powershell
 @{
@@ -184,8 +173,7 @@ PrivateData = @{
 ```
 
 
-<a id="external-dependencies" class="xliff"></a>
-### 外部相依性
+### <a name="external-dependencies"></a>外部相依性
 有些模組相依性可以在外部進行管理，在該情況下，應該將它們新增至模組資訊清單的 PSData 區段中的 ExternalModuleDependencies 項目。
 
 如果存放庫上沒有 'SnippetPx'，則會擲回下列錯誤。

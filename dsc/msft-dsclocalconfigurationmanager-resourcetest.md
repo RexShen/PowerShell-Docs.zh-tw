@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 ResourceTest 方法
+# <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 ResourceTest 方法
 
 直接呼叫 DSC 資源的 **Test** 方法。
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a>語法
 ------
 
 ```mof
@@ -28,8 +26,7 @@ uint32 ResourceTest(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a>參數
 ----------
 
 *ResourceType* \[in\]  
@@ -44,27 +41,23 @@ uint32 ResourceTest(
 *InDesiredState* \[out\]  
 傳回時，如果目標節點是想要的狀態，這個屬性會設定為 **true**。
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a>傳回值
 ------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a>備註
 
 此為靜態方法。
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a>需求
 ------------
 >**MOF：**DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

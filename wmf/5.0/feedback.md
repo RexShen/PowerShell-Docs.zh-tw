@@ -9,7 +9,6 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="feedback" class="xliff"></a>
-# 意見
+# <a name="feedback"></a>意見
 如需報告問題或提供意見反應，請使用 [PowerShell UserVoice 網站](http://windowsserver.uservoice.com/forums/301869-powershell)。
 

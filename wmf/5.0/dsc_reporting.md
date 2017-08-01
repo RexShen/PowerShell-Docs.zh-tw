@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-configuration-status-to-central-location" class="xliff"></a>
-# 將設定狀態回報到中央位置
+# <a name="report-configuration-status-to-central-location"></a>將設定狀態回報到中央位置
 
 DSC 設定狀態的詳細資訊可以傳送到執行 DSC 服務的伺服器。 
 

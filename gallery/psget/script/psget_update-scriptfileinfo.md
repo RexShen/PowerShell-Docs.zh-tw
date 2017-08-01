@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-scriptfileinfo" class="xliff"></a>
-# Update-ScriptFileInfo
+# <a name="update-scriptfileinfo"></a>Update-ScriptFileInfo
 
 Update-ScriptFileInfo Cmdlet 可讓您更新現有的指令碼檔案中繼資料。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Update-ScriptFileInfo Cmdlet 會更新指令碼的資訊。
 - 只有在使用 New-ScriptFileInfo Cmdlet 建立指令檔或指令檔具有有效 PSScriptInfo 註解時，Update-ScriptFileInfo Cmdlet 才會更新其中繼資料。
@@ -24,19 +22,16 @@ Update-ScriptFileInfo Cmdlet 會更新指令碼的資訊。
 - 如果指定 –Force，請嘗試將中繼資料新增至未使用 New-ScriptFileInfo Cmdlet 所建立的現有指令檔。
 - 如果 Test-ScriptFileInfo 因剖析錯誤而失敗，則在現有檔案前面加上指令碼中繼資料之後，將會擲回指出下列類似內容的錯誤：「無法將中繼資料新增至現有檔案，您可以使用 new-scriptfileinfo Cmdlet 將中繼資料新增至未使用 New-ScriptFileInfo Cmdlet 所建立的現有指令檔」。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Update-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619793)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 # Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -50,8 +45,7 @@ Version Name Author Description
 ```
 
 
-<a id="adding-the-script-metadata-to-the-existing-script-file" class="xliff"></a>
-### 將指令碼中繼資料新增至現有指令檔
+### <a name="adding-the-script-metadata-to-the-existing-script-file"></a>將指令碼中繼資料新增至現有指令檔
 
 ```powershell
 PS C:\WINDOWS\system32> New-ScriptFileInfo -Description "Script file description." -PassThru

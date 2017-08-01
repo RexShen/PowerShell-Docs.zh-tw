@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="setting-up-a-dsc-pull-client" class="xliff"></a>
-# 設定 DSC 提取用戶端
+# <a name="setting-up-a-dsc-pull-client"></a>設定 DSC 提取用戶端
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 

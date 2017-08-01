@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="how-to-resolve-warning-package-your-package-name-failed-to-download-issue" class="xliff"></a>
-## 如何解決「警告：無法下載封裝『您的封裝名稱』」問題？
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>如何解決「警告：無法下載封裝『您的封裝名稱』」問題？
 
 
 

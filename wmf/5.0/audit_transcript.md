@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="enhanced-transcription-options" class="xliff"></a>
-# 增強的轉譯選項
+# <a name="enhanced-transcription-options"></a>增強的轉譯選項
 
 Windows PowerShell 轉譯已經過改良，可套用至所有的裝載應用程式 (例如 Windows PowerShell ISE)，而不只是主控台主機 (powershell.exe)。
 

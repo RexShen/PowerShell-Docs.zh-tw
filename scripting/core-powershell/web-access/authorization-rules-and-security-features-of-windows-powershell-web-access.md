@@ -8,8 +8,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
-# Windows PowerShell Web 存取的授權規則與安全性功能
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
 更新日期︰2013 年 6 月 24 日
 
@@ -194,8 +193,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 </tbody>
 </table>
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-#### 新增限制性授權規則
+#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -219,8 +217,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 4.  執行 **Get-PswaAuthorizationRule** Cmdlet 或 **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt;，確認已建立規則。 例如，**Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-<a id="to-remove-an-authorization-rule" class="xliff"></a>
-#### 移除授權規則
+#### <a name="to-remove-an-authorization-rule"></a>移除授權規則
 
 1.  如果尚未開啟 Windows PowerShell 工作階段，請參閱本節中[新增非限制性授權規則](#BKMK_arar)的步驟 1。
 

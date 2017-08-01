@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-script-resource" class="xliff"></a>
-# DSC Script 資源
+# <a name="dsc-script-resource"></a>DSC Script 資源
 
  
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -27,8 +26,7 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目
 若您需要使用 `GetScript`、`TestScript` 或 `SetScript` 指令碼區塊中設定指令碼的變數，請使用 `$using:` 範圍 (請參閱下方範例)
 
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 Script [string] #ResourceName
@@ -41,8 +39,7 @@ Script [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -52,8 +49,7 @@ Script [string] #ResourceName
 | 認證| 如果需要認證，表示執行這個指令碼所要使用的認證。| 
 | DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。
 
-<a id="example-1" class="xliff"></a>
-## 範例 1
+## <a name="example-1"></a>範例 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -75,8 +71,7 @@ Configuration ScriptTest
 }
 ```
 
-<a id="example-2" class="xliff"></a>
-## 範例 2
+## <a name="example-2"></a>範例 2
 ```powershell
 $version = Get-Content 'version.txt'
 

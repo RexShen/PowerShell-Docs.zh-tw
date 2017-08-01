@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-psrepository" class="xliff"></a>
-# Set-PSRepository
+# <a name="set-psrepository"></a>Set-PSRepository
 
 Set-PSRepository 會設定已註冊存放庫的值。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Set-PSRepository Cmdlet 會設定已註冊模組存放庫的值。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -51,8 +46,7 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-<a id="set-psrepository-cmdlet-with-script-sharing-support" class="xliff"></a>
-### 具有指令碼共用支援的 Set-PSRepository Cmdlet
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>具有指令碼共用支援的 Set-PSRepository Cmdlet
 
 使用 Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 新增至 PSRepository。
 ```powershell

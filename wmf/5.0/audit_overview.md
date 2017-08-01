@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="audit-powershell-usage-using-transcription-and-logging" class="xliff"></a>
-# 使用轉譯和記錄稽核 PowerShell 使用狀況
+# <a name="audit-powershell-usage-using-transcription-and-logging"></a>使用轉譯和記錄稽核 PowerShell 使用狀況
 
 - [增強的轉譯選項](audit_transcript.md)
 - [指令碼追蹤和記錄](audit_script.md)

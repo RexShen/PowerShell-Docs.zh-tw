@@ -10,14 +10,12 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-engine-improvements" class="xliff"></a>
-#PowerShell 引擎改善
+#<a name="powershell-engine-improvements"></a>PowerShell 引擎改善
 
 WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 
 
-<a id="performance" class="xliff"></a>
-## 效能 ##
+## <a name="performance"></a>效能 ##
 
 某些重要區域的效能已改善︰
 

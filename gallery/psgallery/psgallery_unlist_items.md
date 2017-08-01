@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unlisting-items" class="xliff"></a>
-# 將項目從清單移除
+# <a name="unlisting-items"></a>將項目從清單移除
 
 **為什麼從 PowerShell 資源庫移除項目未公開為選項？**
 

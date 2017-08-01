@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-windowsoptionalfeature-resource" class="xliff"></a>
-# DSC WindowsOptionalFeature 資源
+# <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature 資源
 
 > 適用於：Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsOptionalFeature** 資源提供一個機制，確保可在目標節點上啟用選用功能。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -35,8 +33,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性  |  描述   | 
 |---|---| 

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-configurations" class="xliff"></a>
-# DSC 設定
+# <a name="dsc-configurations"></a>DSC 設定
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -37,8 +36,7 @@ MyDscConfiguration
 
 將指令碼儲存為 .ps1 檔案。
 
-<a id="configuration-syntax" class="xliff"></a>
-## 設定語法
+## <a name="configuration-syntax"></a>設定語法
 
 設定指令碼包含下列項目：
 
@@ -71,8 +69,7 @@ MyDscConfiguration
 
 在本範例中，您指定節點名稱的方式，是在您編譯設定時將它做為 **ComputerName** 參數傳遞。 預設名稱為 "localhost"。
 
-<a id="compiling-the-configuration" class="xliff"></a>
-## 編譯設定
+## <a name="compiling-the-configuration"></a>編譯設定
 
 您必須先將設定編譯成 MOF 文件，才能施行設定。 呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。  
 範例的最後一行僅包含設定名稱，並會呼叫設定。
@@ -119,8 +116,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-<a id="using-dependson" class="xliff"></a>
-## 使用 DependsOn
+## <a name="using-dependson"></a>使用 DependsOn
 
 有用的 DSC 關鍵字是 **DependsOn**。 通常 (但不一定永遠)，DSC 會依設定內的資源出現順序套用資源。 不過，**DependsOn** 會指定哪一個資源依存於其他資源，而 LCM 則確保它們依正確順序套用，不管資源執行個體的定義順序。 例如，設定可能會指定 **User** 資源的執行個體依存於 **Group** 執行個體的存在與否：
 
@@ -144,8 +140,7 @@ Configuration DependsOnExample {
 DependsOnExample
 ```
 
-<a id="using-new-resources-in-your-configuration" class="xliff"></a>
-## 在設定中使用新的資源
+## <a name="using-new-resources-in-your-configuration"></a>在設定中使用新的資源
 
 如果執行了前面的範例，您可能會注意到，系統警告使用了未明確匯入的資源。
 現在，DSC 在 PSDesiredStateConfiguration 模組中附有 12 種資源。 外部模組的其他資源必須放置在 `$env:PSModulePath` 中，LCM 才能辨識。 新的 Cmdlet，[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用來決定哪些資源要安裝在系統上並提供 LCM 使用。 這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正確辨識後，仍需要載入至設定中。 
@@ -154,8 +149,7 @@ DependsOnExample
 - **ModuleName**，使用 **Import-DscResource** 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。 
 - **Name** 是要匯入的資源名稱。 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回 **ResourceType**)。 
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 * [Windows PowerShell 預期狀態設定概觀](overview.md)
 * [DSC 資源](resources.md)
 * [設定本機設定管理員](metaConfig.md)

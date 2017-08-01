@@ -10,12 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-module" class="xliff"></a>
-# Find-Module
+# <a name="find-module"></a>Find-Module
 尋找來自線上組件庫且符合所指定準則的模組。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 Find-Module 會探索已註冊存放庫中符合所指定準則的模組。
 針對每個找到的模組，Find-Module 會傳回可選擇性地傳送至 Install-Module 以安裝模組的 PSRepositoryItemInfo 物件。
 
@@ -29,19 +27,16 @@ Find-Module 會探索已註冊存放庫中符合所指定準則的模組。
 - Find-Module 可以使用 -Filter 參數篩選存放庫特定的搜尋語言。
 - Find-Module 可以篩選所有或部分已註冊存放庫中的模組。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 ```powershell
 # Find a specific module
 Find-Module Azure

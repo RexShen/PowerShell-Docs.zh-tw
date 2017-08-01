@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="network-switch-management-with-powershell" class="xliff"></a>
-# 使用 PowerShell 管理網路交換器
+# <a name="network-switch-management-with-powershell"></a>使用 PowerShell 管理網路交換器
 
 **Get-NetworkSwitchEthernetPort** Cmdlet 現在會藉執行個體傳回下列其他資訊︰
 
@@ -19,8 +18,7 @@ ms.lasthandoff: 06/12/2017
 - AccessVLAN – 在存取模式中與這個連接埠相關聯的 VLAN 識別碼
 - TrunkedVLANList – 在主幹模式中與這個連接埠相關聯的VLAN 識別碼清單
 
-<a id="fundamental-network-switch-management-with-windows-powershell" class="xliff"></a>
-## 使用 Windows PowerShell 管理基本的網路交換器
+## <a name="fundamental-network-switch-management-with-windows-powershell"></a>使用 Windows PowerShell 管理基本的網路交換器
 
 網路交換器 Cmdlet，在 WMF 5.0 中引進，可讓您將交換器、虛擬 LAN (VLAN) 和基本層級 2 網路交換器連接埠設定套用至 Windows Server 2012 R2 標誌認證的網路交換器。 Microsoft 努力不懈地支援[資料中心抽象](http://technet.microsoft.com/en-us/cloud/dal.aspx)層 (DAL) 的願景，並為我們的客戶和合作夥伴展現這個領域的價值。 使用這些 Cmdlet 可以執行︰
 

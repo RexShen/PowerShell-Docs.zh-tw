@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-archive-resource" class="xliff"></a>
-# DSC 封存資源
+# <a name="dsc-archive-resource"></a>DSC 封存資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的封存資源會提供一個機制，將封存 (.zip) 檔案解壓縮在特定路徑。
 
-<a id="syntax" class="xliff"></a>
-## 語法 
+## <a name="syntax"></a>語法 
 ```MOF
 Archive [string] #ResourceName
 {
@@ -32,8 +30,7 @@ Archive [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性  |  描述   | 
 |---|---| 
@@ -45,8 +42,7 @@ Archive [string] #ResourceName
 | 驗證| 使用 Checksum 屬性判斷封存是否符合簽章。 如果指定 Checksum 但無 Validate，設定會失敗。 如果指定 Validate 但無 Checksum，預設使用 SHA-256 總和檢查碼。| 
 | Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 Force 屬性會覆寫此類錯誤。 預設值為 False。| 
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 
 下列範例示範如何使用封存資源以確保 Test.zip 封存檔案的內容存在，並會解壓縮在指定的目的地。
 

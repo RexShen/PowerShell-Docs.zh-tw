@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="logic-for-preparing-the-module-dependencies-during-publish-operation" class="xliff"></a>
-# 在發行作業期間準備模組相依性的邏輯
+# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>在發行作業期間準備模組相依性的邏輯
 1.  列為 RequiredModules 一部分的模組視為相依性。
 2.  列為 NestedModules 一部分的模組 (其模組基底不在指定的模組基底下) 視為相依性。
 

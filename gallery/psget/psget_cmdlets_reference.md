@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-cmdlet-reference" class="xliff"></a>
-# PowerShellGet Cmdlet 參考資料
+# <a name="powershellget-cmdlet-reference"></a>PowerShellGet Cmdlet 參考資料
 
 - [Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
 - [Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)

@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxscript-resource" class="xliff"></a>
-# DSC for Linux nxScript 資源
+# <a name="dsc-for-linux-nxscript-resource"></a>DSC for Linux nxScript 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxScript** 資源會提供一個機制，在 Linux 節點上執行 Linux 指令碼。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 nxScript <string> #ResourceName
@@ -31,8 +29,7 @@ nxScript <string> #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -43,8 +40,7 @@ nxScript <string> #ResourceName
 | 群組| 要執行指令碼的群組。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 
 下列範例示範如何使用 **nxScript** 資源來執行其他設定管理。
 

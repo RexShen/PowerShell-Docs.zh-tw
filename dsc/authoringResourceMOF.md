@@ -10,20 +10,17 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-custom-dsc-resource-with-mof" class="xliff"></a>
-# 撰寫自訂的 DSC 資源與 MOF
+# <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題中，我們會在 MOF 檔案中定義 Windows PowerShell 預期狀態設定 (DSC) 自訂資源的結構描述，並在 Windows PowerShell 指令碼檔案中實作資源。 這個自訂的資源是用於建立和維護網站。
 
-<a id="creating-the-mof-schema" class="xliff"></a>
-## 建立 MOF 結構描述
+## <a name="creating-the-mof-schema"></a>建立 MOF 結構描述
 
 結構描述會定義可由 DSC 設定指令碼設定之資源的屬性。
 
-<a id="folder-structure-for-a-mof-resource" class="xliff"></a>
-### MOF 資源的資料夾結構
+### <a name="folder-structure-for-a-mof-resource"></a>MOF 資源的資料夾結構
 
 若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.psm1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
 
@@ -39,8 +36,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 請注意，你必須在最上層的資料夾下建立名為 DSCResources 的資料夾，而且每個資源的資料夾都必須和資源同名。
 
-<a id="the-contents-of-the-mof-file" class="xliff"></a>
-### MOF 檔案的內容
+### <a name="the-contents-of-the-mof-file"></a>MOF 檔案的內容
 
 下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 *Demo_IISWebsite.schema.mof*。
 
@@ -70,8 +66,7 @@ class Demo_IISWebsite : OMI_BaseResource
 * 建議您在資源中包含名為 `Ensure`且值為 `Present` 和 `Absent` 的屬性，以便和內建的 DSC 資源維持一致的樣式。
 * 依下列方式命名自訂資源的結構描述檔案：`classname.schema.mof`，其中 `classname` 是遵循結構描述定義 `class` 關鍵字的識別碼。
 
-<a id="writing-the-resource-script" class="xliff"></a>
-### 撰寫資源指令碼
+### <a name="writing-the-resource-script"></a>撰寫資源指令碼
 
 資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在 <ResourceName>.psm1 檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
 
@@ -224,8 +219,7 @@ $result
 >這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。 
 >預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
 
-<a id="creating-the-module-manifest" class="xliff"></a>
-### 建立模組資訊清單
+### <a name="creating-the-module-manifest"></a>建立模組資訊清單
 
 最後，使用 **New-ModuleManifest** Cmdlet 定義自訂資源模組的 <ResourceName>.psd1 檔案。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 以下為資訊清單檔案範例。
 
@@ -281,8 +275,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-## 支援 PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
 >**注意：**支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
 

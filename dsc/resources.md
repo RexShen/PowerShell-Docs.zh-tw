@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-resources" class="xliff"></a>
-# DSC 資源
+# <a name="dsc-resources"></a>DSC 資源
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 

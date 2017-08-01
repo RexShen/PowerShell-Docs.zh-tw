@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-jea" class="xliff"></a>
-# 使用 JEA
+# <a name="using-jea"></a>使用 JEA
 
 > 適用對象：Windows PowerShell 5.0
 
 本主題說明您可以連線到並使用 JEA 端點的各種方式。
 
-<a id="using-jea-interactively" class="xliff"></a>
-## 以互動方式使用 JEA
+## <a name="using-jea-interactively"></a>以互動方式使用 JEA
 
 如果您要測試您的 JEA 設定，或有要讓使用者執行的簡單工作，可以像一般 PowerShell 遠端工作階段一樣地使用 JEA。
 針對複雜的遠端工作，建議改用[隱含遠端](#using-jea-with-implicit-remoting)，允許使用者在本機操作資料物件，以便讓您的使用者可以比較輕鬆。
@@ -62,8 +60,7 @@ Start-VM -VMName 'SQL01'
 
 如需使這種方法變困難的更複雜命令引動過程，請考慮使用[隱含遠端](#using-jea-with-implicit-remoting)或[建立自訂函式](role-capabilities.md#creating-custom-functions)，包裝您想要的功能。
 
-<a id="using-jea-with-implicit-remoting" class="xliff"></a>
-## 以隱含遠端來使用 JEA
+## <a name="using-jea-with-implicit-remoting"></a>以隱含遠端來使用 JEA
 
 PowerShell 支援替代遠端模型，您可以在本機電腦上，從遠端電腦匯入 Proxy Cmdlet，並與其互動，如同它們是本機命令。
 這稱為隱含遠端，會在[這篇 *Hey, Scripting Guy!* 部落格文章](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/)中詳細說明。
@@ -112,8 +109,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 您也可以使用 [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 從隱含遠端保存代理 Cmdlet。
 如需隱含遠端的詳細資訊，請參閱 [Import-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) 的說明文件。
 
-<a id="using-jea-programatically" class="xliff"></a>
-## 以程式設計方式使用 JEA
+## <a name="using-jea-programatically"></a>以程式設計方式使用 JEA
 
 JEA 也可用在自動化系統和使用者應用程式，例如公司內部的技術支援應用程式和網站。
 方式與建置和未受限制之 PowerShell 端點通訊的應用程式相同，但有一點要注意，程式應該要注意 JEA 會限制可以在遠端工作階段中執行的命令。
@@ -171,8 +167,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 }
 ```
 
-<a id="using-jea-with-powershell-direct" class="xliff"></a>
-## 搭配使用 PowerShell Direct 和 JEA
+## <a name="using-jea-with-powershell-direct"></a>搭配使用 PowerShell Direct 和 JEA
 
 在 Windows 10 和 Windows Server 2016 中的 Hyper-V 提供 [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession)，這項功能允許 Hyper-V 系統管理員使用 PowerShell 管理虛擬機器，不論虛擬機器上的網路設定或遠端管理設定為何。
 

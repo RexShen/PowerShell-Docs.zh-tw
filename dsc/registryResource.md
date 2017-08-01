@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-registry-resource" class="xliff"></a>
-# DSC 登錄資源
+# <a name="dsc-registry-resource"></a>DSC 登錄資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **Registry** 資源會提供一個機制，在目標節點管理登錄機碼和值。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 Registry [string] #ResourceName
@@ -34,8 +32,7 @@ Registry [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 按鍵| 指出您要確保其特定狀態的登錄機碼路徑。 此路徑必須包含登錄區。| 
@@ -63,8 +60,7 @@ Registry [string] #ResourceName
 
 <li>可擴充的字串 (REG_EXPAND_SZ)</li></ul>
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 此範例可確保 **HKEY\_LOCAL\_MACHINE** 登錄區包含名為"ExampleKey"的索引鍵。
 ```powershell
 Configuration RegistryTest

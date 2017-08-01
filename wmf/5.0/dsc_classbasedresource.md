@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="class-based-dsc-resources" class="xliff"></a>
-# 以類別為基礎的 DSC 資源
+# <a name="class-based-dsc-resources"></a>以類別為基礎的 DSC 資源
 
-<a id="defining-dsc-resources-with-classes" class="xliff"></a>
-## 以類別定義 DSC 資源
+## <a name="defining-dsc-resources-with-classes"></a>以類別定義 DSC 資源
 
 根據意見反應，我們讓撰寫以類別為基礎的 DSC 資源更簡單且更容易了解。 以類別為基礎的 DSC 資源和 Cmdlet DSC 資源提供者之間的主要差異如下︰
 

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="authoring-a-dsc-resource-in-c" class="xliff"></a>
-# 用 C`#` 撰寫 DSC 資源
+# <a name="authoring-a-dsc-resource-in-c"></a>用 C`#` 撰寫 DSC 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -19,12 +18,10 @@ ms.lasthandoff: 06/12/2017
 
 除了用 C# 將資源當做 Cmdlet 實作，建立 MOF 結構描述、建立資料夾結構、匯入和使用自訂之 DSC 資源的程序，一如[撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 中所述。
 
-<a id="writing-a-cmdlet-based-resource" class="xliff"></a>
-## 撰寫 Cmdlet 式的資源
+## <a name="writing-a-cmdlet-based-resource"></a>撰寫 Cmdlet 式的資源
 本例中，我們會實作簡單的資源，管理文字檔案及其內容。
 
-<a id="writing-the-mof-schema" class="xliff"></a>
-### 撰寫 MOF 結構描述
+### <a name="writing-the-mof-schema"></a>撰寫 MOF 結構描述
 
 以下是 MOF 資源定義。
 
@@ -38,10 +35,8 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-<a id="setting-up-the-visual-studio-project" class="xliff"></a>
-### 設定 Visual Studio 專案
-<a id="setting-up-a-cmdlet-project" class="xliff"></a>
-#### 設定 Cmdlet 專案
+### <a name="setting-up-the-visual-studio-project"></a>設定 Visual Studio 專案
+#### <a name="setting-up-a-cmdlet-project"></a>設定 Cmdlet 專案
 
 1. 開啟 Visual Studio。
 1. 建立 C# 專案並提供名稱。
@@ -50,8 +45,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. 在專案中加入 System.Automation.Management.dll 的組件參考。
 1. 變更組件名稱使符合資源名稱。 如此，組件應命名為 **MSFT_XDemoFile**。
 
-<a id="writing-the-cmdlet-code" class="xliff"></a>
-### 撰寫 Cmdlet 程式碼
+### <a name="writing-the-cmdlet-code"></a>撰寫 Cmdlet 程式碼
 
 下列 C# 程式碼會實作 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** Cmdlet。
 
@@ -269,8 +263,7 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-<a id="deploying-the-resource" class="xliff"></a>
-### 部署資源
+### <a name="deploying-the-resource"></a>部署資源
 
 已編譯的 DLL 檔案應該儲存在類似於指令碼式資源的檔案結構中。 以下是這項資源的資料夾結構。
 
@@ -285,12 +278,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-<a id="see-also" class="xliff"></a>
-### 另請參閱
-<a id="concepts" class="xliff"></a>
-#### 概念
+### <a name="see-also"></a>另請參閱
+#### <a name="concepts"></a>概念
 [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md)
-<a id="other-resources" class="xliff"></a>
-#### 其他資源
+#### <a name="other-resources"></a>其他資源
 [撰寫 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 

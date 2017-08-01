@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-module" class="xliff"></a>
-# Update-Module
+# <a name="update-module"></a>Update-Module
 
 將來自線上組件庫之指定模組的最新版本下載並安裝至本機電腦。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Update-Module Cmdlet 會在本機電腦上執行 Install-Module，以安裝已從線上組件庫安裝的較新 Windows PowerShell 模組版本。
 
@@ -24,8 +22,7 @@ Update-Module Cmdlet 會在本機電腦上執行 Install-Module，以安裝已�
 
 執行不含 Name 參數的 Update-Module 會更新可在本機電腦上更新的所有模組。
 
-<a id="notes" class="xliff"></a>
-### 附註
+### <a name="notes"></a>附註
 
 - 這個 Cmdlet 會在 Windows PowerShell 3.0 或更新版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。
 - 如果未使用 Install-Module 來安裝利用 Name 參數所指定的模組，則會發生錯誤。 您只能在執行 Install-Module 以從線上組件庫所安裝的模組上執行 Update-Module。
@@ -33,20 +30,17 @@ Update-Module Cmdlet 會在本機電腦上執行 Install-Module，以安裝已�
 - 在 PowerShell 5.0 或更新版本上，當 Update-Module 更新模組時，會新增最新 (或指定) 版本的模組，因此新舊版本現在會並存在相同的目錄中。 這十分有用，而且可用來顯示這些命令的輸出範例。
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
@@ -90,8 +84,7 @@ Version Name Repository Description
 ```
 
 
-<a id="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies" class="xliff"></a>
-###  更新具相依性的 TestDepWithNestedRequiredModules1 模組。
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>更新具相依性的 TestDepWithNestedRequiredModules1 模組。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="deleting-items" class="xliff"></a>
-# 刪除項目
+# <a name="deleting-items"></a>刪除項目
 
 PowerShell 資源庫不支援永久刪除項目，因為這樣會中斷任何仰賴該項目維持可用的人員。
 

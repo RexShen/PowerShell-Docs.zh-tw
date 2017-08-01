@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contacting-item-owners" class="xliff"></a>
-# 連絡項目擁有者
+# <a name="contacting-item-owners"></a>連絡項目擁有者
 
 若要連絡特定項目的擁有者，請瀏覽到項目詳細資料頁面。
 左側功能表列中會有連絡擁有者連結。

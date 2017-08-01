@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-script-discovery-install-and-management-with-powershellget" class="xliff"></a>
-# 使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼
 
 WMF 5.0 RTM 版本中，PowerShellGet 加入了 PowerShell 指令碼共用功能。
 下列新的 Cmdlet 會加入 PowerShellGet 模組中，支援 PowerShell 指令碼。

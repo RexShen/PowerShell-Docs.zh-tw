@@ -10,16 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="providing-feedback-via-social-media-or-comments" class="xliff"></a>
-# 透過社交媒體或評論提供意見反應
+# <a name="providing-feedback-via-social-media-or-comments"></a>透過社交媒體或評論提供意見反應
 
 「Powershell 資源庫」支援兩種可供使用者針對項目提供公開意見反映的方法：
 
 * 使用左邊緣上的連結以在 Facebook、LinkedIn 或 Twitter 等社交媒體網站中「分享」項目；
 * 使用「評論」功能來針對項目張貼評論，並允許「作者」監看他們所發行之項目的相關評論。
 
-<a id="social-media-feedback" class="xliff"></a>
-## 社交媒體意見反應
+## <a name="social-media-feedback"></a>社交媒體意見反應
 在「PowerShell 資源庫」中每個項目頁面的左邊會有 Facebook、LinkedIn 及 Twitter 的連結。   
 按一下這些連結將會開啟社交媒體網站，並可快速分享項目的連結。
 
@@ -29,8 +27,7 @@ ms.lasthandoff: 06/12/2017
 由於這只會顯示某個項目的分享次數，因此將會把這項數據解釋為其他使用者「喜好」該項目。
 
 
-<a id="comments" class="xliff"></a>
-## 評價
+## <a name="comments"></a>評價
 「PowerShell 資源庫」使用 LiveFyre 服務來允許使用者對項目提出評論。
 使用者如果有建議或意見反應，便可使用此功能來提供對瀏覽項目頁面的所有人公開的意見反應。
 項目擁有者可以「關注」此意見反應，如此一來，只要有人張貼評論，擁有者便可收到通知。 

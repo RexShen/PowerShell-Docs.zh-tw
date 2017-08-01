@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-examples" class="xliff"></a>
-# DSC 範例
+# <a name="dsc-examples"></a>DSC 範例
 
 本節包含 DSC 範例：
 

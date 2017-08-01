@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="script-tracing-and-logging" class="xliff"></a>
-# 指令碼追蹤和記錄
+# <a name="script-tracing-and-logging"></a>指令碼追蹤和記錄
 
 雖然 Windows PowerShell 已有 **LogPipelineExecutionDetails** 群組原則設定會記錄 Cmdlet 的引動過程，但 PowerShell 的指令碼語言仍有許多功能，您可能想要記錄和/或稽核。 新的詳細指令碼追蹤功能可讓您啟用在系統上使用的 Windows PowerShell 指令碼詳細追蹤和分析。 啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 ETW 事件記錄檔中：**Microsoft-Windows-PowerShell/Operational**。 如果某個指令碼區塊建立了另一個指令碼區塊 (例如，字串上稱之為 Invoke-Expression Cmdlet 的指令碼)，也會記錄產生的指令碼區塊。
 

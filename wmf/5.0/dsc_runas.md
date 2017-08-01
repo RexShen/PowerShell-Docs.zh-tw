@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="automatic-runas-support-for-dsc-resources" class="xliff"></a>
-# DSC 資源的自動 RunAs 支援
+# <a name="automatic-runas-support-for-dsc-resources"></a>DSC 資源的自動 RunAs 支援
 
 WMF 5.0 包含在指定認證下執行**任何** DSC 資源的支援，方法是使用屬性 `PsDscRunAsCredential`。 
 

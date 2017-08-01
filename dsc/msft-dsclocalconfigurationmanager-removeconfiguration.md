@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
+# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
 
 移除設定檔。
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a>語法
 ------
 
 ```mof
@@ -26,8 +24,7 @@ uint32 RemoveConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a>參數
 ----------
 
 *Stage* \[in\]  
@@ -42,27 +39,23 @@ uint32 RemoveConfiguration(
 *Force* \[in\]  
 **true** 表示強制移除設定。
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a>傳回值
 ------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a>備註
 
 此為靜態方法。
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a>需求
 ------------
 >**MOF：**DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

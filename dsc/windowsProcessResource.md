@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowsprocess-resource" class="xliff"></a>
-# DSC WindowsProcess 資源
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsProcess** 資源提供了在目標節點設定程序的機制。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 WindowsProcess [string] #ResourceName
@@ -35,8 +33,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 引數| 表示要保持原狀傳遞至處理程序的引數字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。| 

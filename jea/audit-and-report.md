@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="auditing-and-reporting-on-jea" class="xliff"></a>
-# JEA 上的稽核和報告
+# <a name="auditing-and-reporting-on-jea"></a>JEA 上的稽核和報告
 
 > 適用對象：Windows PowerShell 5.0
 
@@ -20,8 +19,7 @@ ms.lasthandoff: 06/12/2017
 
 本主題說明您可以稽核 JEA 端點的各種方式。
 
-<a id="find-registered-jea-sessions-on-a-machine" class="xliff"></a>
-## 在電腦上尋找已註冊的 JEA 工作階段
+## <a name="find-registered-jea-sessions-on-a-machine"></a>在電腦上尋找已註冊的 JEA 工作階段
 
 若要檢查哪些 JEA 工作階段已在電腦上註冊，請使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) Cmdlet。
 
@@ -50,8 +48,7 @@ $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
 ```
 
-<a id="find-available-role-capabilities-on-the-machine" class="xliff"></a>
-## 在電腦上尋找可用的角色功能
+## <a name="find-available-role-capabilities-on-the-machine"></a>在電腦上尋找可用的角色功能
 
 角色功能檔案將只會在它們儲存於有效 PowerShell 模組內的 "RoleCapabilities" 資料夾時才會被 JEA 使用。
 您可以搜尋可用模組清單，以在電腦上尋找所有可用的角色功能。
@@ -76,8 +73,7 @@ function Find-LocalRoleCapability {
 > [!NOTE]
 > 如果多個角色功能共用相同的名稱，則此函式的結果順序不一定是角色功能的選取順序。
 
-<a id="check-effective-rights-for-a-specific-user" class="xliff"></a>
-## 檢查特定使用者的有效權限
+## <a name="check-effective-rights-for-a-specific-user"></a>檢查特定使用者的有效權限
 
 一旦您設定好 JEA 端點，便可以檢查哪些命令可供特定使用者在 JEA 工作階段中使用。
 您可以使用 [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) 列舉所有適用於使用者的命令，如果他們要使用其目前群組成員資格來啟動 JEA 工作階段。
@@ -91,8 +87,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 使用 Just-in-Time 特殊權限的存取管理系統來允許使用者暫時屬於某個安全性群組時，通常會是如此。
 請務必仔細評估使用者與角色的對應，以及每個角色的內容，以確保使用者只能夠存取成功執行其工作所需的最少命令。
 
-<a id="powershell-event-logs" class="xliff"></a>
-## PowerShell 事件記錄檔
+## <a name="powershell-event-logs"></a>PowerShell 事件記錄檔
 
 如果您已在系統上啟用模組和/或指令碼區塊記錄，將可在 Windows 事件記錄檔中，找到使用者在其 JEA 工作階段中執行之每個命令的事件。
 若要尋找這些事件，請開啟 Windows 事件檢視器、瀏覽至 [Microsoft-Windows-PowerShell/Operational] 事件記錄檔，然後尋找事件識別碼為 **4104** 的事件。
@@ -101,8 +96,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 對於 JEA 工作階段，這包含 **ConnectedUser** 的重要資訊，它是建立 JEA 工作階段的實際使用者，也包含 **RunAsUser** 的重要資訊，這會識別 JEA 用來執行命令的帳戶。
 應用程式事件記錄檔會顯示 RunAsUser 正在進行的變更，因此啟用文字記錄或模組/指令碼記錄十分重要，如此才能從特定命令引動過程回溯到使用者。
 
-<a id="application-event-logs" class="xliff"></a>
-## 應用程式事件記錄檔
+## <a name="application-event-logs"></a>應用程式事件記錄檔
 
 當您在與外部應用程式或服務互動的 JEA 工作階段中執行命令時，這些應用程式可能會將事件記錄到自己的事件記錄檔。
 不同於 PowerShell 記錄檔和文字記錄，其他記錄機制不會擷取 JEA 工作階段的連線使用者，而只會記錄虛擬執行身分使用者或群組受管理的服務帳戶。
@@ -111,8 +105,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 WinRM 記錄檔也可協助您相互關聯應用程式事件記錄檔中的執行身分使用者與連線使用者。
 **Microsoft-Windows-Windows 遠端管理/作業**記錄檔中的事件識別碼 **193** 會記錄每次建立 JEA 工作階段時，連線使用者與執行身分使用者的安全性識別碼 (SID) 和帳戶名稱。
 
-<a id="session-transcripts" class="xliff"></a>
-## 工作階段文字記錄
+## <a name="session-transcripts"></a>工作階段文字記錄
 
 如果您已設定 JEA 為每個使用者工作階段建立文字記錄，每個使用者動作的文字副本將儲存在指定的資料夾。
 
@@ -154,8 +147,7 @@ ParameterBindings 接在每個 CommandInvocation 之後，告訴您與命令一�
 每個命令的輸出也會觸發 CommandInvocation，通常為 Out-Default。 Out-Default 的 InputObject 是由命令傳回的 PowerShell 物件。
 物件的詳細資料會列印在下面幾行，密切模擬使用者會看到的情況。
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 - [在 JEA 工作階段中稽核使用者動作](audit-and-report.md)
 - [*PowerShell ♥ 藍色小組*安全性部落格文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

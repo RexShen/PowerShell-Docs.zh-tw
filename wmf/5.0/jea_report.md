@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="reporting-on-jea" class="xliff"></a>
-# JEA 上的報告
+# <a name="reporting-on-jea"></a>JEA 上的報告
 若要報告 JEA 組態的狀態，您可以使用︰
 1.  **Get-PSSessionConfiguration** 以傳回指定電腦上所有註冊端點的清單。
 2.  **Get-PSSessionCapability** 以報告任何指定使用者在特定端點上具備的功能。

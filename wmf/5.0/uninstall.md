@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstallation-instructions" class="xliff"></a>
-# 解除安裝指示
+# <a name="uninstallation-instructions"></a>解除安裝指示
 
-<a id="using-command-prompt" class="xliff"></a>
-## 使用 [命令提示字元]
+## <a name="using-command-prompt"></a>使用 [命令提示字元]
 1.  開啟 **[命令提示字元]**。
 2.  執行 [Windows Update 獨立啟動器](https://support.microsoft.com/en-us/kb/934307)，如下所示︰
 
@@ -30,8 +28,7 @@ wusa /uninstall /kb:3134759
 wusa /uninstall /kb:3134760
 ```
 
-<a id="using-control-panel" class="xliff"></a>
-## 使用 [控制台]
+## <a name="using-control-panel"></a>使用 [控制台]
 1.  開啟 **[控制台]**。
 2.  開啟 **[程式集]**，然後開啟 **[解除安裝程式]**。
 3.  按一下 **[檢視安裝的更新]**。

@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-a-powershell-gallery-account" class="xliff"></a>
-## 建立 PowerShell 資源庫帳戶
+## <a name="creating-a-powershell-gallery-account"></a>建立 PowerShell 資源庫帳戶
 
 將任何項目發行至「PowerShell 資源庫」之前，必須先建立「PowerShell 資源庫」帳戶。 「PowerShell 資源庫」帳戶必須連結至已啟用電子郵件功能的 Azure Active Directory 帳戶，或是 Microsoft 電子郵件帳戶 (網域為 outlook.com、hotmail.com 等)
 
@@ -26,8 +25,7 @@ ms.lasthandoff: 06/12/2017
 注意：此帳戶名稱建立後即無法變更。  
 如需其他相關的詳細資料，請參閱[管理項目擁有者](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)。
 
-<a id="recommended-practices-for-powershell-gallery-accounts" class="xliff"></a>
-## 建議的 PowerShell 資源庫帳戶做法
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>建議的 PowerShell 資源庫帳戶做法
 
 主動監視與「PowerShell 資源庫」帳戶搭配使用的電子郵件帳戶相當重要。
 與「PowerShell 資源庫」項目擁有者進行的一切溝通，都會透過與「PowerShell 資源庫」帳戶關聯的電子郵件地址進行。

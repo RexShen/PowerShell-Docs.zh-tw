@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-user-resource" class="xliff"></a>
-#DSC 使用者資源#
+#<a name="dsc-user-resource"></a>DSC 使用者資源#
 
  
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -20,8 +19,7 @@ ms.lasthandoff: 06/12/2017
 Windows PowerShell 預期狀態設定 (DSC) 的 __User__ 資源，會提供在目標節點管理本機使用者帳戶的機制。
 
 
-<a id="syntax" class="xliff"></a>
-##語法##
+##<a name="syntax"></a>語法##
 
 ```
 User [string] #ResourceName
@@ -39,8 +37,7 @@ User [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | UserName| 指出您要確保其特定狀態的帳戶名稱。| 
@@ -54,8 +51,7 @@ User [string] #ResourceName
 | PasswordNeverExpires| 表示密碼是否會到期。 為確保這個帳戶的密碼永遠不會到期，請將這個屬性設定為 __$true__，如果密碼會到期請將它設定為 __$false__。 預設值為 __$false__。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 
 ```powershell
 User UserExample

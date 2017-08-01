@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
-# 用來從提取伺服器查詢節點資訊的 DSC 函式。
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a>用來從提取伺服器查詢節點資訊的 DSC 函式。
 
 ```powershell
 function QueryNodeInformation

@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="enacting-configurations" class="xliff"></a>
-# 施行設定
+# <a name="enacting-configurations"></a>施行設定
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 PowerShell 預期狀態設定 (DSC) 設定有兩種施行方式：Push 模式和 Pull 模式。
 
-<a id="push-mode" class="xliff"></a>
-## Push 模式
+## <a name="push-mode"></a>Push 模式
 
 ![Push 模式](images/Push.png "Push 模式的運作方式")
 
@@ -29,8 +27,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.mic
 > __注意__：DSC 預設將設定當做背景工作執行。 若要以互動方式執行設定，請呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 配以 __-Wait__ 參數。
 
 
-<a id="pull-mode" class="xliff"></a>
-## Pull 模式
+## <a name="pull-mode"></a>Pull 模式
 
 ![Pull 模式](images/Pull.png "Pull 模式的運作方式")
 

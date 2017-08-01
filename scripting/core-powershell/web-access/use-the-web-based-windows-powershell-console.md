@@ -8,8 +8,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
-#  使用網頁型 Windows PowerShell 主控台
+#  <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
 更新日期︰2013 年 6 月 24 日
 
@@ -87,8 +86,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 您的 Windows PowerShell Web 存取系統管理員應該提供您組織的 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，這個網址是 https://&lt;server_name&gt;/pswa。 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://technet.microsoft.com/magazine/ff700227.aspx)。 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
 
-<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
-### 登入 Windows PowerShell Web 存取
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>登入 Windows PowerShell Web 存取
 
 1.  在網際網路瀏覽器視窗或索引標籤中開啟 Windows PowerShell Web 存取網站。
 

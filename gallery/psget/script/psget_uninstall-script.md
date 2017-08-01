@@ -10,29 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-script" class="xliff"></a>
-# Uninstall-Script
+# <a name="uninstall-script"></a>Uninstall-Script
 
 解除安裝使用 PowerShellGet 所安裝的指令檔。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Uninstall-Script Cmdlet 會解除安裝已從線上存放庫安裝的指定指令檔。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

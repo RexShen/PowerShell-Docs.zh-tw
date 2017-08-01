@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="calling-dsc-resource-methods-directly" class="xliff"></a>
-# 直接呼叫 DSC 資源方法
+# <a name="calling-dsc-resource-methods-directly"></a>直接呼叫 DSC 資源方法
 
 >適用於：Windows PowerShell 5.0
 
@@ -23,8 +22,7 @@ ms.lasthandoff: 06/12/2017
 
 直接呼叫資源方法的範例如下︰
 
-<a id="ensure-a-file-is-present" class="xliff"></a>
-## 請確定檔案存在
+## <a name="ensure-a-file-is-present"></a>請確定檔案存在
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -33,8 +31,7 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-<a id="test-that-a-file-is-present" class="xliff"></a>
-## 請測試檔案存在
+## <a name="test-that-a-file-is-present"></a>請測試檔案存在
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -43,8 +40,7 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-<a id="get-the-contents-of-file" class="xliff"></a>
-## 請取得檔案的內容
+## <a name="get-the-contents-of-file"></a>請取得檔案的內容
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -55,8 +51,7 @@ $result.ItemValue | fl
 
 >**注意︰** 不支援直接呼叫複合資源方法。 請改為呼叫組成複合資源之基礎資源的方法。
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 - [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 
 - [使用 PowerShell 類別撰寫自訂的 DSC 資源](authoringResourceClass.md)
 - [對 DSC 資源執行偵錯](debugResource.md)

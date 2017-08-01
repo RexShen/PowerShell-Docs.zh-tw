@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="deploy-to-azure-automation" class="xliff"></a>
-部署至 Azure 自動化
+<a name="deploy-to-azure-automation"></a>部署至 Azure 自動化
 ===========================
 
 項目詳細資料頁面上的 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕會將項目從 PowerShell Gallery 部署至 Azure 自動化。

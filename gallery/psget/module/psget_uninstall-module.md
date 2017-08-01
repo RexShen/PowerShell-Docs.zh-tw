@@ -10,34 +10,28 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-module" class="xliff"></a>
-# Uninstall-Module
+# <a name="uninstall-module"></a>Uninstall-Module
 
 解除安裝使用 PowerShellGet Cmdlet 所安裝的模組。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Uninstall-Module Cmdlet 會從本機電腦中解除安裝指定的模組。 如果某些其他模組具有模組的相依性，則無法解除安裝模組。
 Uninstall-Module Cmdlet 也會驗證是否正在使用所解除安裝的模組。 如果模組使用中，則會擲回錯誤。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Uninstall-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
 
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
-<a id="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget" class="xliff"></a>
-###  執行 Uninstall-Module Cmdlet 來解除安裝您使用 PowerShellGet 安裝的模組。
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>執行 Uninstall-Module Cmdlet 來解除安裝您使用 PowerShellGet 安裝的模組。
 如想刪除相依於此模組的任何其他模組，PowerShellGet 會擲回錯誤。
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -50,8 +44,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it" class="xliff"></a>
-### 在某些其他模組具有模組的相依性時解除安裝模組。
+### <a name="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it"></a>在某些其他模組具有模組的相依性時解除安裝模組。
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -66,16 +59,14 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.3\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet" class="xliff"></a>
-### 覆寫方式是在 Uninstall-Module Cmdlet 上指定 -Force 選項
+### <a name="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet"></a>覆寫方式是在 Uninstall-Module Cmdlet 上指定 -Force 選項
 **注意：**這不是建議的做法。 其他模組會因這個動作而中斷。
 
 ```powershell
 Uninstall-Module SnippetPx -Force
 ```
 
-<a id="uninstall-a-module-which-is-already-in-use" class="xliff"></a>
-### 解除安裝已在使用中的模組
+### <a name="uninstall-a-module-which-is-already-in-use"></a>解除安裝已在使用中的模組
 
 ```powershell
 Get-InstalledModule TypePx,SnippetPx
@@ -86,8 +77,7 @@ Version    Name                                Repository           Description
 1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experi...
 ```
 
-<a id="uninstall-snippetpx-fails-due-to-the-dependent-module" class="xliff"></a>
-### 因為模組相依，所以解除安裝 SnippetPx 失敗
+### <a name="uninstall-snippetpx-fails-due-to-the-dependent-module"></a>因為模組相依，所以解除安裝 SnippetPx 失敗
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -104,8 +94,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstall-typepx-then-uninstall-the-snippetpx" class="xliff"></a>
-### 解除安裝 TypePx，然後解除安裝 SnippetPx
+### <a name="uninstall-typepx-then-uninstall-the-snippetpx"></a>解除安裝 TypePx，然後解除安裝 SnippetPx
 
 ```powershell
 Uninstall-Module TypePx
@@ -124,8 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 ```
 
 
-<a id="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets" class="xliff"></a>
-### 針對不是使用 PowerShellGet Cmdlet 所安裝的模組名稱
+### <a name="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets"></a>針對不是使用 PowerShellGet Cmdlet 所安裝的模組名稱
 
 ```powershell
 Uninstall-Module SnipptPx

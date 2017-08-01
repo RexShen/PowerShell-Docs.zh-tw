@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="scriptanazlyer-rule-profile-for-gallery" class="xliff"></a>
-# 資源庫的 ScriptAnazlyer 規則設定檔
+# <a name="scriptanazlyer-rule-profile-for-gallery"></a>資源庫的 ScriptAnazlyer 規則設定檔
 為了確保發行至 PowerShell 資源庫的項目品質，我們會執行 [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) 規則，判斷提交的指令碼中是否有任何違規。
 
 您可以在 ScriptAnalyzer [GitHub 頁面](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1)找到我們所執行的規則清單。

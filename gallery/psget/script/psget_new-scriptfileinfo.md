@@ -10,40 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-scriptfileinfo" class="xliff"></a>
-# New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 建立含有中繼資料的指令檔。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 New-ScriptFileInfo Cmdlet 會建立 PowerShell 指令檔 (包括指令碼的中繼資料)。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
-<a id="passthru-parameter" class="xliff"></a>
-### PassThru 參數
+### <a name="passthru-parameter"></a>PassThru 參數
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
-### New-ScriptFileInfo Cmdlet
+### <a name="new-scriptfileinfo-cmdlet"></a>New-ScriptFileInfo Cmdlet
 New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。 
 
 ```powershell

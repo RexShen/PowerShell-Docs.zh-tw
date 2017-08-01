@@ -8,8 +8,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-<a id="install-and-use-windows-powershell-web-access" class="xliff"></a>
-#  安裝和使用 Windows PowerShell Web 存取
+#  <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
 更新日期︰2013 年 11 月 5 日
 
@@ -135,8 +134,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ------------------------------------------------------------------------
 
-<a id="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets" class="xliff"></a>
-#### 使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -223,8 +221,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   [使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道](#BKMK_gencert)
 
-<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication" class="xliff"></a>
-#### 使用 Install-PswaWebApplication 以測試憑證設定 Windows PowerShell Web 存取閘道
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>使用 Install-PswaWebApplication 以測試憑證設定 Windows PowerShell Web 存取閘道
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -284,8 +281,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     </tbody>
     </table>
 
-<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager" class="xliff"></a>
-#### 使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道
 
 1.  執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -352,8 +348,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 如需 Windows PowerShell Web 存取授權規則和安全性的詳細資訊，請參閱 [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-#### 新增限制性授權規則
+#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -395,8 +390,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ------------------------------------------------------------------------
 
-<a id="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard" class="xliff"></a>
-#### 使用新增角色及功能精靈安裝 Windows PowerShell Web 存取
+#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>使用新增角色及功能精靈安裝 Windows PowerShell Web 存取
 
 1.  如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
 
@@ -448,8 +442,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 -   
 
-<a id="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website" class="xliff"></a>
-#### 使用 IIS 管理員在現有的網站中設定閘道
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>使用 IIS 管理員在現有的網站中設定閘道
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。
 
@@ -511,8 +504,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-<a id="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate" class="xliff"></a>
-#### 使用 IIS 管理員以測試憑證將閘道設定為根網站
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>使用 IIS 管理員以測試憑證將閘道設定為根網站
 
 1.  執行下列其中一項動作以開啟 IIS 管理員主控台。
 
@@ -590,8 +582,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 如需 Windows PowerShell Web 存取授權規則和安全性的詳細資訊，請參閱 [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)。
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-#### 新增限制性授權規則
+#### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
 1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
@@ -626,8 +617,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 若要安全的生產環境，請一律使用由憑證授權單位 (CA) 簽署的有效 SSL 憑證。 本節中的程序說明如何從 CA 取得有效的 SSL 憑證並加以套用。
 
-<a id="to-configure-an-ssl-certificate-in-iis-manager" class="xliff"></a>
-### 在 IIS 管理員中設定 SSL 憑證
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>在 IIS 管理員中設定 SSL 憑證
 
 1.  在 [IIS 管理員] 樹狀目錄窗格中，選取安裝 Windows PowerShell Web 存取的伺服器。
 

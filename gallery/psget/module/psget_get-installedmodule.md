@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedmodule" class="xliff"></a>
-# Get-InstalledModule
+# <a name="get-installedmodule"></a>Get-InstalledModule
 
 取得電腦上的已安裝模組。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Get-InstalledModule Cmdlet 會將 PowerShell 模組安裝在使用 Install-Module Cmdlet 安裝的電腦上。
 
@@ -29,19 +27,16 @@ Get-InstalledModule Cmdlet 會將 PowerShell 模組安裝在使用 Install-Modul
   - 如果未指定 RequiredVersion 參數，Get-InstalledModule 會傳回等於或大於所指定最小版本之已安裝模組的最新版本，或未指定最小版本之模組的最新版本。 
   - 如果指定 RequiredVersion 參數，Get-InstalledModule 只會傳回完全符合所指定版本之已安裝模組的版本。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 
@@ -105,8 +100,7 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-<a id="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object" class="xliff"></a>
-## PSGetRepositoryItemInfo 物件中的 InstalledDate 和 UpdatedDate 屬性
+## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a>PSGetRepositoryItemInfo 物件中的 InstalledDate 和 UpdatedDate 屬性
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value

@@ -10,40 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="save-script" class="xliff"></a>
-# Save-Script
+# <a name="save-script"></a>Save-Script
 
 Save-Script Cmdlet 可讓您將指令碼檔案儲存到指定的位置，藉以檢閱指令碼檔案。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Save-Script Cmdlet 會儲存指定的指令碼。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Save-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Save-Script](http://go.microsoft.com/fwlink/?LinkId=619786)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
-<a id="example-1-save-a-script-from-a-repository" class="xliff"></a>
-### 範例 1︰儲存存放庫中的指令碼
+### <a name="example-1-save-a-script-from-a-repository"></a>範例 1︰儲存存放庫中的指令碼
 這個命令會將 GalleryINT 存放庫中之指令碼 Fabrikam-ClientScript 的最新版本儲存至本機資料夾 C:\ScriptSharingDemo
 
 ```powershell
 Save-Script -Name Fabrikam-ClientScript -Repository GalleryINT -Path C:\ScriptSharingDemo
 ```
 
-<a id="example-2-save-a-version-of-a-script-by-piping-from-the-find-script-cmdlet" class="xliff"></a>
-### 範例 2：從 Find-Script Cmdlet 傳送以儲存指令碼版本
+### <a name="example-2-save-a-version-of-a-script-by-piping-from-the-find-script-cmdlet"></a>範例 2：從 Find-Script Cmdlet 傳送以儲存指令碼版本
 
 第一個命令會尋找 GalleryINT 存放庫中是否有 1.5 版的 Fabrikam-ClientScript，並將它儲存至資料夾 C:\ScriptSharingDemo
 

@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
-# PowerShell 5.0 或更新版本的並存版本支援
+# <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 或更新版本的並存版本支援
 
 在 Windows PowerShell 5.0 或更新版本中執行的 Install-Module、Update-Module 和 Publish-Module Cmdlet 現在都有並存 (SxS) 模組版本支援。
 我們還在 Publish-Module Cmdlet 中加入了 -RequiredVersion 參數來指定要發佈的版本。 Path 參數現在支援有版本資料夾的模組基底路徑。

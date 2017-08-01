@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="setting-up-a-pull-client-using-configuration-names" class="xliff"></a>
-# 使用設定名稱設定提取用戶端
+# <a name="setting-up-a-pull-client-using-configuration-names"></a>使用設定名稱設定提取用戶端
 
 > 適用於：Windows PowerShell 5.0
 
@@ -73,8 +72,7 @@ Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Ve
 您仍然必須使用 **ConfigurationID** 與 SMB 提取伺服器。
 如需使用 **ConfigurationID** 設定提取伺服器的資訊，請參閱[使用設定識別碼設定提取用戶端](PullClientConfigNames.md)
 
-<a id="resource-and-report-servers" class="xliff"></a>
-## 資源和報表伺服器
+## <a name="resource-and-report-servers"></a>資源和報表伺服器
 
 如果在 LCM 設定中只指定了 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如上述範例所示)，提取用戶端將會從指定的伺服器提取資源，但不會將報表傳送給伺服器。
 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 **ReportRepositoryWeb** 區塊才可設定報告功能。
@@ -149,8 +147,7 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 * [以設定識別碼設定提取用戶端](PullClientConfigNames.md)
 * [設定 DSC Web 提取伺服器](pullServer.md)

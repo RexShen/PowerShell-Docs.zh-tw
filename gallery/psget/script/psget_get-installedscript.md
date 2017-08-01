@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedscript" class="xliff"></a>
-# Get-InstalledScript
+# <a name="get-installedscript"></a>Get-InstalledScript
 
 取得電腦上的已安裝指令碼。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Get-InstalledScript Cmdlet 會取得電腦上的已安裝 PowerShell 指令碼。
 
@@ -29,20 +27,17 @@ Get-InstalledScript Cmdlet 會取得電腦上的已安裝 PowerShell 指令碼�
   - 如果未指定 RequiredVersion 參數，Get-InstalledScript 會傳回等於或大於所指定最小版本之已安裝指令碼的最新版本，或未指定最小版本之指令碼的最新版本。 
   - 如果指定 RequiredVersion 參數，Get-InstalledScript 只會傳回完全符合所指定版本之已安裝指令碼的版本。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 

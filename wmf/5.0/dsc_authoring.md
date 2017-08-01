@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="authoring-improvements-using-powershell-ise" class="xliff"></a>
-# 使用 PowerShell ISE 撰寫增強功能
+# <a name="authoring-improvements-using-powershell-ise"></a>使用 PowerShell ISE 撰寫增強功能
 
 以 Windows PowerShell ISE 撰寫 DSC 設定更容易，這都多虧了下列的增強功能︰
 

@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-packagemanagement-resource" class="xliff"></a>
-# DSC PackageManagement 資源
+# <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 中的 **PackageManagement** 資源，提供在目標節點上安裝或解除安裝「套件管理」套件的機制。 此資源需要 **PackageManagement** 模組，可從 http://PowerShellGallery.com 取得。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```
 PackageManagement [string] #ResourceName
@@ -35,8 +33,7 @@ PackageManagement [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 |  屬性  |  描述   | 
 |---|---| 
 | 名稱| 指定要安裝或解除安裝之套件的名稱。| 
@@ -49,16 +46,14 @@ PackageManagement [string] #ResourceName
 | ProviderName| 指定套件提供者名稱，以針對它設定套件搜尋的範圍。 您可以執行 Get-PackageProvider Cmdlet 來取得套件提供者名稱。| 
 | AdditionalParameters| 以雜湊表傳遞的提供者特定參數。 例如，針對 NuGet 提供者，您可以傳遞 DestinationPath 之類的其他參數。| 
 
-<a id="additional-parameters" class="xliff"></a>
-## 其他參數
+## <a name="additional-parameters"></a>其他參數
 下表列出 AdditionalParameters 屬性的選項。
 |  參數  | 描述   | 
 |---|---|
 | DestinationPath| 由內建 Nuget 提供者之類的提供者使用。 指定您想要安裝套件的檔案位置。|
 | InstallationPolicy| 由內建 Nuget 提供者之類的提供者使用。 判斷您是否信任套件來源。 只能是 "Untrusted" 或 "Trusted"。|
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 
 此範例會使用 **PackageManagement** DSC 資源安裝 **JQuery** NuGet 套件和 **GistProvider** PowerShell 模組。 此範例會先確認必要的套件來源可以使用，然後定義 **JQuery** 和 **GistProvider** 套件 (分別是 NuGet 和 PowerShell) 的預期狀態 。
 

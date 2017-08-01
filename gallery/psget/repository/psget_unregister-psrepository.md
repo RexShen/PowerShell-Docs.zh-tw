@@ -10,32 +10,27 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unregister-psrepository" class="xliff"></a>
-# Unregister-PSRepository
+# <a name="unregister-psrepository"></a>Unregister-PSRepository
 
 取消註冊存放庫。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Unregister-PSRepository Cmdlet 會取消註冊目前使用者的存放庫。
 - 企業和中斷連線的案例允許取消註冊和重新註冊 PSGallery 存放庫。
 - 使用者只要執行 `Register-PSRepository -Default`，就可以重新註冊 PSGallery
 - 因為 PSGallery 是 Publish-Module 和 Publish-Script Cmdlet 中的預設發行存放庫，所以如果已註冊的存放庫清單中沒有 PSGallery，則會擲回錯誤。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 
 ```powershell
 Get-Command -Name Unregister-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Unregister-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517130)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 ```powershell
 Unregister-PSRepository -Name "MyPrivateGallery"
@@ -43,8 +38,7 @@ Unregister-PSRepository -Name "MyPrivateGallery"
 Get-PSRepository exp | Unregister-PSRepository
 ```
 
-<a id="unregistration-and-re-registration-of-the-psgallery-repository-is-allowed-for-an-enterprise-and-disconnected-scenarios" class="xliff"></a>
-### 企業和中斷連線的案例允許取消註冊和重新註冊 PSGallery 存放庫。
+### <a name="unregistration-and-re-registration-of-the-psgallery-repository-is-allowed-for-an-enterprise-and-disconnected-scenarios"></a>企業和中斷連線的案例允許取消註冊和重新註冊 PSGallery 存放庫。
 ```powershell
 
 # Unregister PSGallery repository

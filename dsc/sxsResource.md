@@ -10,15 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-resources-with-multiple-versions" class="xliff"></a>
-# 使用多個版本的資源
+# <a name="using-resources-with-multiple-versions"></a>使用多個版本的資源
 
 > 適用於：Windows PowerShell 5.0
 
 在 PowerShell 5.0，DSC 資源可以有多個版本，且各版本可於一部電腦上並存安裝。 而其運作方式則是在相同的模組資料夾中，包含多個版本的資源模組。
 
-<a id="installing-multiple-resource-versions-side-by-side" class="xliff"></a>
-## 並存安裝多個資源版本
+## <a name="installing-multiple-resource-versions-side-by-side"></a>並存安裝多個資源版本
 
 您可以使用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 的 **MinimumVersion**、**MaximumVersion** 與 **RequiredVersion** 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
 
@@ -45,8 +43,7 @@ PowerShell      xCluster                  xFailOverCluster               1.1    
 PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, Name, ...
 ```
 
-<a id="specifying-a-resource-version-in-a-configuration" class="xliff"></a>
-## 在設定中指定資源版本
+## <a name="specifying-a-resource-version-in-a-configuration"></a>在設定中指定資源版本
 
 如果在電腦上安裝了多個資源，當您在設定中使用該資源時，必須指定版本。 若要這麼做，請指定 **Import-DscResource** 關鍵字的 **ModuleVersion** 參數。 若您無法指定安裝了多重版本之資源的資源模組版本，設定便會產生錯誤。
 
@@ -90,8 +87,7 @@ configuration VersionTest
 
 這也適用於 PowerShell 5.0 版，但仍然建議您使用 **ModuleVersion** 參數。
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 * [DSC 設定](configurations.md)
 * [DSC 資源](resources.md)
 

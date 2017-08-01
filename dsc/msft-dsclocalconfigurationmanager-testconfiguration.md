@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-# MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法
+# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法
 
 將設定文件傳送到受管理的節點，並對文件驗證目前的設定。
 
-<a id="syntax" class="xliff"></a>
-語法
+<a name="syntax"></a>語法
 ------
 
 ```mof
@@ -28,8 +26,7 @@ uint32 TestConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-參數
+<a name="parameters"></a>參數
 ----------
 
 *configurationData* \[in\]  
@@ -44,27 +41,23 @@ uint32 TestConfiguration(
 *ResourcesNotInDesiredState* \[out\]  
 傳回時，包含指定資源不為所需狀態之 **MSFT_ResourceNotInDesiredState** 類別的內嵌執行個體。
 
-<a id="return-value" class="xliff"></a>
-## 傳回值
+## <a name="return-value"></a>傳回值
 ------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
-<a id="remarks" class="xliff"></a>
-## 備註
+## <a name="remarks"></a>備註
 
 此為靜態方法。
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a>需求
 ------------
 >**MOF：**DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -9,13 +9,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-language-features-in-powershell-50" class="xliff"></a>
-# PowerShell 5.0 的新語言功能 
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能 
 
 PowerShell 5.0 在 Windows PowerShell 中引進了下列新的語言元素︰
 
-<a id="class-keyword" class="xliff"></a>
-## Class 關鍵字
+## <a name="class-keyword"></a>Class 關鍵字
 
 **class** 關鍵字會定義新的類別。 這是真的 .NET Framework 類型。 類別成員是公用的，但只在模組範圍內公用。
 類型名稱不能當做字串參考 (例如，`New-Object` 不作用)，而且在這個版本中，您無法在已定義類別的指令碼/模組檔案外部使用類型常值 (例如，`[MyClass]`)。
@@ -27,8 +25,7 @@ class MyClass
 }
 ```
 
-<a id="enum-keyword-and-enumerations" class="xliff"></a>
-## Enum 關鍵字和列舉
+## <a name="enum-keyword-and-enumerations"></a>Enum 關鍵字和列舉
 
 已加入對 **enum** 關鍵字的支援，使用新行字元為分隔符號。
 目前的限制︰您不能根據列舉程式本身定義列舉程式，但可以根據另一個 enum 初始化某個 enum，如下例所示。
@@ -60,14 +57,12 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-<a id="import-dscresource" class="xliff"></a>
-## Import-DscResource
+## <a name="import-dscresource"></a>Import-DscResource
 
 **Import-DscResource** 現在是真的動態關鍵字。
 PowerShell 會剖析指定模組的根模組，搜尋包含 **DscResource** 屬性的類別。
 
-<a id="implementingassembly" class="xliff"></a>
-## ImplementingAssembly
+## <a name="implementingassembly"></a>ImplementingAssembly
 
 新的欄位 **ImplementingAssembly**，已加入 ModuleInfo 中。 如果指令碼定義類別，它會設定成為指令碼模組所建立的動態組件，或二進位模組的載入組件。 當 ModuleType = Manifest 時不設定。 
 
@@ -93,8 +88,7 @@ $s = "hello"
 
 所有成員都是公用的。 
 
-<a id="constructors-and-instantiation" class="xliff"></a>
-## 建構函式和實例
+## <a name="constructors-and-instantiation"></a>建構函式和實例
 
 Windows PowerShell 的類別可以有建構函式，名稱與其類別相同。 可以多載建構函式。 支援靜態的建構函式。 使用初始化運算式的屬性會先初始化，然後建構函式中的所有程式碼才執行。 靜態屬性會在靜態建構函式主體之前初始化，執行個體屬性則在非靜態建構函式主體之前初始化。 目前沒有任何語法可從另一個建構函式呼叫建構函式 (例如 C\# 語法："this()")。 因應措施是定義通用的 Init 方法。 
 
@@ -138,8 +132,7 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-<a id="methods" class="xliff"></a>
-## 方法
+## <a name="methods"></a>方法
 
 Windows PowerShell 類別方法會實作為只有 End 區塊的 ScriptBlock。 所有方法都是公用的。 下例說明定義名為 **DoSomething** 的方法。
 
@@ -163,15 +156,13 @@ $b.DoSomething(42)
 
 也支援多載的方法，也就是那些與現有方法同名，但依指定值區別的方法。
 
-<a id="properties" class="xliff"></a>
-## [內容] 
+## <a name="properties"></a>[內容] 
 
 所有屬性都是公用的。 屬性需要新行字元或分號。 如不指定任何物件類型，屬性類型就是物件。
 
 使用驗證屬性或引數轉換屬性 (例如 `[ValidateSet("aaa")]`) 的屬性運作一如預期。
 
-<a id="hidden" class="xliff"></a>
-## Hidden
+## <a name="hidden"></a>Hidden
 
 已加入新的關鍵字 **Hidden**。 **Hidden** 可以套用至屬性和方法 (包括建構函式)。
 
@@ -181,18 +172,15 @@ Hidden 成員是公用的，但不會出現在 Get-Member 的輸出中，除非�
 
 已加入新屬性 **System.Management.Automation.HiddenAttribute**，所以 C# 程式碼在 Windows PowerShell 內有相同的語意。
 
-<a id="return-types" class="xliff"></a>
-## 傳回類型
+## <a name="return-types"></a>傳回類型
 
 傳回類型是合約，傳回值會轉換成預期的類型。 如未指定任何傳回類型，傳回類型為 void。 沒有任何物件資料流，物件無法故意或意外寫入管線。
 
-<a id="attributes" class="xliff"></a>
-## 屬性
+## <a name="attributes"></a>屬性
 
 加入了兩個新屬性：**DscResource** 及 **DscProperty**。
 
-<a id="lexical-scoping-of-variables" class="xliff"></a>
-## 變數的語彙範圍
+## <a name="lexical-scoping-of-variables"></a>變數的語彙範圍
 
 下例說明語彙範圍在這個版本中的運作方式。
 
@@ -220,8 +208,7 @@ $v = bar
 $v -eq $d # true
 ```
 
-<a id="end-to-end-example" class="xliff"></a>
-## 端對端範例
+## <a name="end-to-end-example"></a>端對端範例
 
 下例會建立數個新的自訂類別以實作 HTML 動態樣式表語言 (DSL)。 然後，範例會加入 Helper 函式來建立特定的元素類型，當做元素類別的一部分，例如標題樣式和資料表，因為類型不能用在模組範圍外。
 

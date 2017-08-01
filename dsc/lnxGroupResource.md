@@ -10,13 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxgroup-resource" class="xliff"></a>
-# DSC for Linux nxGroup 資源
+# <a name="dsc-for-linux-nxgroup-resource"></a>DSC for Linux nxGroup 資源
 
 PowerShell 預期狀態設定 (DSC) 的 **nxGroup** 資源會提供一個機制，在 Linux 節點管理本機群組。
 
-<a id="syntax" class="xliff"></a>
-## 語法
+## <a name="syntax"></a>語法
 
 ```powershell
 nxGroup <string> #ResourceName
@@ -31,8 +29,7 @@ nxGroup <string> #ResourceName
 
 ```
 
-<a id="properties" class="xliff"></a>
-## [內容]
+## <a name="properties"></a>[內容]
 
 |  屬性 |  描述 | 
 |---|---|
@@ -44,8 +41,7 @@ nxGroup <string> #ResourceName
 | PreferredGroupID| 如果可能的話，將群組識別碼設定為提供的值。 如果群組識別碼目前正在使用中，就會使用下一個可用的群組識別碼。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
-<a id="example" class="xliff"></a>
-## 範例
+## <a name="example"></a>範例
 
 下列範例會確保使用者 “monuser” 存在，而且是 "DBusers" 群組的成員。
 

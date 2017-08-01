@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unified-and-consistent-state-and-status-representation" class="xliff"></a>
-# 統一且一致的狀態和狀態表示法
+# <a name="unified-and-consistent-state-and-status-representation"></a>統一且一致的狀態和狀態表示法
 
 已在此版本中為自動化組建 LCM 狀態與 DSC 狀態增加了一系列的增強功能。 這些包括整合且一致的狀態和狀態表示法、由 Get-DscConfigurationStatus Cmdlet傳回之狀態物件的可管理 datetime 屬性，及由 Get-DscLocalConfigurationManager Cmdlet 傳回之增強的 LCM 狀態詳細資料屬性。
 
@@ -49,8 +48,7 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
-<a id="enhancement-in-get-dscconfigurationstatus-cmdlet" class="xliff"></a>
-## Get-DscConfigurationStatus Cmdlet 中的增強功能
+## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus Cmdlet 中的增強功能
 
 已在此版本中對 Get-DscConfigurationStatus Cmdlet 進行了一些增強功能。 先前由 Cmdlet 傳回的物件 StartDate 屬性為字串類型。 現在，它是 Datetime 類型，可根據 Datetime 物件內建內容讓複雜的選取和篩選更為容易。
 ```powershell
@@ -92,8 +90,7 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-<a id="enhancement-in-get-dsclocalconfigurationmanager-cmdlet" class="xliff"></a>
-## Get-DscLocalConfigurationManager Cmdlet 中的增強功能
+## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager Cmdlet 中的增強功能
 LCMStateDetail 的新欄位加入至從 Get-DscLocalConfigurationManager Cmdlet 傳回的物件。 LCMState「忙碌」時，就會將此欄位填滿。 它可以由下列 Cmdlet 擷取：
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail

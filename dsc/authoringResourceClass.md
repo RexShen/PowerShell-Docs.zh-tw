@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-custom-dsc-resource-with-powershell-classes" class="xliff"></a>
-# 使用 PowerShell 類別撰寫自訂的 DSC 資源
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
 > 適用於：Windows PowerShell Windows 5.0
 
@@ -25,8 +24,7 @@ ms.lasthandoff: 06/12/2017
 
 >**注意：**以類別為基礎的資源不支援泛型集合。
 
-<a id="folder-structure-for-a-class-resource" class="xliff"></a>
-## 類別資源的資料夾結構
+## <a name="folder-structure-for-a-class-resource"></a>類別資源的資料夾結構
 
 若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。 此類別在 **MyDscResource.psm1** 中定義，而模組資訊清單則在 **MyDscResource.psd1** 中定義。
 
@@ -37,8 +35,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-<a id="create-the-class" class="xliff"></a>
-## 建立類別
+## <a name="create-the-class"></a>建立類別
 
 您要使用類別關鍵字來建立 PowerShell 類別。 若要明確指出類別是 DSC 資源，請使用 **DscResource()** 屬性。 類別名稱是 DSC 資源的名稱。
 
@@ -48,8 +45,7 @@ class FileResource {
 }
 ```
 
-<a id="declare-properties" class="xliff"></a>
-### 宣告屬性
+### <a name="declare-properties"></a>宣告屬性
 
 DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性，如下所示。
 
@@ -84,8 +80,7 @@ enum Ensure
 }
 ```
 
-<a id="implementing-the-methods" class="xliff"></a>
-### 實作方法
+### <a name="implementing-the-methods"></a>實作方法
 
 **Get()**、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
 
@@ -222,8 +217,7 @@ enum Ensure
     }
 ```
 
-<a id="the-complete-file" class="xliff"></a>
-### 完整的檔案
+### <a name="the-complete-file"></a>完整的檔案
 完整的類別檔案如下。
 
 ```powershell
@@ -422,8 +416,7 @@ class FileResource
 ```
 
 
-<a id="create-a-manifest" class="xliff"></a>
-## 建立資訊清單
+## <a name="create-a-manifest"></a>建立資訊清單
 
 若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 我們的資訊清單看起來像這樣︰
 
@@ -461,8 +454,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-<a id="test-the-resource" class="xliff"></a>
-## 測試資源
+## <a name="test-the-resource"></a>測試資源
 
 如前文所述將類別和資訊清單檔儲存在資料夾結構中後，您就可以建立使用新資源的設定。 如需如何執行 DSC 設定的資訊，請參閱[施行設定](enactingConfigurations.md)。 下列設定會檢查 `c:\test\test.txt` 的檔案是否存在，如果不存在，會從 `c:\test.txt` 複製檔案 (您應該先建立 `c:\test.txt` 再執行設定)。
 
@@ -481,16 +473,14 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-## 支援 PsDscRunAsCredential
+## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
 >**注意：**支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
 
 您可以在 [DSC 設定](configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
 
-<a id="require-or-disallow-psdscrunascredential-for-your-resource" class="xliff"></a>
-### 針對您的資源要求使用或不允許使用 PsDscRunAsCredential
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>針對您的資源要求使用或不允許使用 PsDscRunAsCredential
 
 **DscResource()** 屬性可接受選擇性的參數 **RunAsCredential**。
 此參數可接受下列三個值其中之一：
@@ -508,8 +498,7 @@ class FileResource {
 }
 ```
 
-<a id="access-the-user-context" class="xliff"></a>
-### 存取使用者內容
+### <a name="access-the-user-context"></a>存取使用者內容
 
 若要從自訂資源內存取使用者內容，您可以使用自動變數 `$global:PsDscContext`。
 
@@ -521,9 +510,7 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
-<a id="concepts" class="xliff"></a>
-### 概念
+## <a name="see-also"></a>另請參閱
+### <a name="concepts"></a>概念
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 

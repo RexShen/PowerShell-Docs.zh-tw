@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="installation-instructions" class="xliff"></a>
-# 安裝指示
+# <a name="installation-instructions"></a>安裝指示
 
 下載您的作業系統和架構的正確封裝︰
 

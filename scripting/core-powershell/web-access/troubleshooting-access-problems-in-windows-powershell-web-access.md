@@ -8,8 +8,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/08/2017
 ---
-<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
-#  疑難排解 Windows PowerShell Web 存取中的存取問題
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
 更新日期︰2013 年 6 月 24 日
 

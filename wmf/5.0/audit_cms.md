@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
-# 密碼編譯訊息語法 (CMS) Cmdlet
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>密碼編譯訊息語法 (CMS) Cmdlet
 
 密碼編譯訊息語法 Cmdlet 支援使用 IETF 標準格式加密和解密內容，進行密碼編譯保護訊息，如 [RFC5652](http://tools.ietf.org/html/rfc5652) 所述。
 

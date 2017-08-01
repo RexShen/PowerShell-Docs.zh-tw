@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-and-publishing-an-item" class="xliff"></a>
-# 建立和發行項目 
+# <a name="creating-and-publishing-an-item"></a>建立和發行項目 
 「PowerShell 資源庫」是可供您發行及與更廣大的 PowerShell 使用者社群共用穩定的 PowerShell 模組、指令碼及 DSC 資源的地方。    
 
 本文涵蓋準備指令碼或模組並將其發行至「PowerShell 資源庫」的機制和重要步驟。
@@ -27,8 +26,7 @@ ms.lasthandoff: 06/12/2017
  
 「PowerShell 資源庫」接受 PowerShell 模組和 PowerShell 指令碼。 當我們提到指令碼時，是指本身是單一檔案而不屬於較大模組之一部分的 PowerShell 指令碼。 
 
-<a id="powershell-gallery-account-and-api-key" class="xliff"></a>
-## PowerShell 資源庫帳戶和 API 金鑰
+## <a name="powershell-gallery-account-and-api-key"></a>PowerShell 資源庫帳戶和 API 金鑰
 如需了解如何設定您的「PowerShell 資源庫」帳戶，請參閱[建立 PowerShell 資源庫帳戶](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account) \(英文\)。 
 
 建立帳戶之後，您可以取得發行項目所需的 API 金鑰。
@@ -36,8 +34,7 @@ ms.lasthandoff: 06/12/2017
 
 注意：必須小心保管 API 金鑰，就像對待您的登錄和密碼一樣。 您或任何其他使用者只要有了這個金鑰，便可更新「PowerShell 資源庫」中您擁有的所有項目。 建議您定期更新此金鑰，只要使用 [我的帳戶] 頁面上的 [重設金鑰]，即可完成此操作。
 
-<a id="required-metadata-for-items-published-to-the-powershell-gallery" class="xliff"></a>
-## 發行至 PowerShell 資源庫之項目的必要中繼資料
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>發行至 PowerShell 資源庫之項目的必要中繼資料
 
 「PowerShell 資源庫」會將從指令碼或模組資訊清單所包含之中繼資料欄位取得的資訊，提供給資源庫使用者。
 建立或修改要發行至「PowerShell 資源庫」的項目時，針對在項目資訊清單中提供的資訊有一些要求。 強烈建議您檢閱[發行指導方針](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) \(英文\) 的 ＜項目中繼資料＞ (Item Metadata) 一節，以了解如何為您項目的使用者提供最佳資訊。 
@@ -62,8 +59,7 @@ ms.lasthandoff: 06/12/2017
 * 將「作者」設為已知的小組名稱 (例如 Azure SDK 小組) 或 Microsoft Corporation。
 
 
-<a id="pre-validate-your-item" class="xliff"></a>
-## 預先驗證您的項目
+## <a name="pre-validate-your-item"></a>預先驗證您的項目
 
 將項目發行至「PowerShell 資源庫」之前，有一些您必須針對程式碼執行的工具：
 
@@ -80,8 +76,7 @@ ms.lasthandoff: 06/12/2017
 同樣地，[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) 會驗證指令碼中的資訊清單，且必須先在每個指令碼 (與模組個別發行) 上執行，才能將指令碼發行至「PowerShell 資源庫」。 
 
 
-<a id="publishing-items" class="xliff"></a>
-## 發行項目
+## <a name="publishing-items"></a>發行項目
 
 您必須使用 [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) 或 [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) 將項目發行至「PowerShell 資源庫」。
 這些命令都需要 

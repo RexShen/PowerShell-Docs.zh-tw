@@ -10,32 +10,26 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-modulemanifest" class="xliff"></a>
-# Update-ModuleManifest
+# <a name="update-modulemanifest"></a>Update-ModuleManifest
 更新模組資訊清單檔案。
 
-<a id="description" class="xliff"></a>
-## 描述
+## <a name="description"></a>描述
 
 Update-ModuleManifest Cmdlet 會更新模組資訊清單 (.psd1) 檔案。
 
-<a id="notes" class="xliff"></a>
-### 注意
+### <a name="notes"></a>注意
     - 只有最新 5.0 版的 PowerShell 才支援 DscResourcesToExport。 若是在此版之前的舊版 PowerShell 上執行，便無法更新此欄位。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-## Cmdlet 語法
+## <a name="cmdlet-syntax"></a>Cmdlet 語法
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-## Cmdlet 線上說明參考資料
+## <a name="cmdlet-online-help-reference"></a>Cmdlet 線上說明參考資料
 
 [Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 
 這個新的 Cmdlet 是用來協助以輸入屬性值更新資訊清單檔。 它會採用 New-ModuleManifest 執行的所有參數。
 

@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-temporaryfile" class="xliff"></a>
-# New-TemporaryFile
+# <a name="new-temporaryfile"></a>New-TemporaryFile
 有時候在您的指令碼中，您必須建立暫存檔案。 您可以使用 **New-TemporaryFile**Cmdlet 輕鬆執行這項操作︰
 
 PS C:\\&gt; $tempFile = New-TemporaryFile

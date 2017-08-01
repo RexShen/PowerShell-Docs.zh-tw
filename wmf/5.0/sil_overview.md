@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="software-inventory-logging-sil" class="xliff"></a>
-# 軟體清查記錄 (SIL)
+# <a name="software-inventory-logging-sil"></a>軟體清查記錄 (SIL)
 
 **重要：***在已執行 SIL 的 Windows Server 2012 R2 伺服器上安裝 WMF 5.0 時，在 WMF 安裝之後，必須執行一次 Start-SilLogging Cmdlet，因為安裝程序會不當停止軟體清查記錄功能。*
 

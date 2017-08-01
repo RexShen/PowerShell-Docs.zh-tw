@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="additional-value-for-refreshmode-property" class="xliff"></a>
-# RefreshMode 屬性的額外值
+# <a name="additional-value-for-refreshmode-property"></a>RefreshMode 屬性的額外值
 
 此版本導入新的 `RefreshMode` 值 - **Disabled**。 當設定為此模式時，LCM 不會執行文件管理。 如需詳細資訊，請參閱[設定本機設定管理員](https://msdn.microsoft.com/powershell/dsc/metaconfig)。
 

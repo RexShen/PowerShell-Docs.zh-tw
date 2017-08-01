@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-module-discovery-install-and-inventory-with-powershellget" class="xliff"></a>
-# 使用 PowerShellGet 探索、安裝及清查 PowerShell 模組
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>使用 PowerShellGet 探索、安裝及清查 PowerShell 模組
  
 PowerShellGet 隨附於這一版的 WMF：
 -   Find-Module 可以使用 -Tag 參數篩選模組中繼資料
@@ -19,8 +18,7 @@ PowerShellGet 隨附於這一版的 WMF：
 -   Find-DscResource 可以在存放庫中探索個別的 DSC 資源
 -   支援使用 NuGet 從檔案共用安裝和發佈至檔案共用
 
-<a id="example-commands" class="xliff"></a>
-## 範例命令
+## <a name="example-commands"></a>範例命令
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -55,8 +53,7 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-<a id="new-features-in-powershellget" class="xliff"></a>
-## PowerShellGet 的新功能
+## <a name="new-features-in-powershellget"></a>PowerShellGet 的新功能
 -   Windows PowerShell 5.0 或更新版本的並存版本支援
 -   模組相依性安裝支援
 -   三個新的 Cmdlet
