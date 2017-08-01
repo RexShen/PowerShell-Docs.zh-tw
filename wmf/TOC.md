@@ -12,7 +12,6 @@
 ## [安裝以及設定](5.1/install-configure.md)
 ## [已知問題](5.1/known-issues.md)
 ## [相容性](5.1/Compatibility.md)
-## [產品相容性](5.1/productincompat.md)
 
 # [WMF 5.0](5.0/releasenotes.md)
 ## [安裝詳細資料](5.0/requirements.md)

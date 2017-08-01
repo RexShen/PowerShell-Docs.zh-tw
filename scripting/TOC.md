@@ -15,7 +15,6 @@
 ### [安裝 Windows PowerShell SDK](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [安全性](setup/security.md)
 #### [PowerShell 遠端安全性考量](setup/WinRMSecurity.md)
-#### [在 PowerShell 遠端中進行第二次跳躍](setup/PS-remoting-second-hop.md)
 ### [協助工具](setup/Accessibility-in-Windows-PowerShell-ISE.md)
 
 ## [開始使用](getting-started/Getting-Started-with-Windows-PowerShell.md)
