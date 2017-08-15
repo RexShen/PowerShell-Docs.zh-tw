@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "附錄 2 建立自訂 PowerShell 捷徑"
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ms.openlocfilehash: 31fdc388ae8859191f75c3c4120667cdbeff1669
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>附錄 2 - 建立自訂 PowerShell 捷徑
 下列程序說明如何建立指向 Windows PowerShell 的捷徑，並在其中自訂幾個便利的選項。

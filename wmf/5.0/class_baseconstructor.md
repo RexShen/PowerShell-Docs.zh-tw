@@ -1,20 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 403a79e17b832b5c58fd21a138fcebb8adb76d40
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 1fd6d80d6b7effb4bd98c1594d64e531c4e5c9b5
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="call-base-class-constructor" class="xliff"></a>
-# 呼叫基底類別建構函式
+# <a name="call-base-class-constructor"></a>呼叫基底類別建構函式
 
 若要從子類別中呼叫基底類別建構函式，請使用關鍵字 **base**：
 
-```PowerShell
+```powershell
 class A 
 {
     [int]$a
@@ -35,7 +34,7 @@ class B : A
 
 如果基底類別有預設的 (無參數) 建構函式，您可以省略明確的建構函式呼叫︰
 
-```PowerShell
+```powershell
 class C : B
 {
     C([int]$c) {}

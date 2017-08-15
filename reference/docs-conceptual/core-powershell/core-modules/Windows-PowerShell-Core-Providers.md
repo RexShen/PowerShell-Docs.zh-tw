@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell 核心提供者"
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
 ms.openlocfilehash: fdfdfee86884d3ac18a33ac424828faa96ecd8bd
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="windows-powershell-core-providers"></a>Windows PowerShell 核心提供者
 本節包含描述 **Microsoft.PowerShell.Core** 模組中 Windows PowerShell 提供者的說明主題。

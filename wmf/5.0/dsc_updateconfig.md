@@ -1,16 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 410fa4b6c6d3e2708da78414cbb9b80dd3ca1387
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f2ddde78f436e6f03f521a9a8246dbda93e7a57a
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="on-demand-pull-of-dsc-configurations" class="xliff"></a>
-# DSC 設定的依需求 PULL
+# <a name="on-demand-pull-of-dsc-configurations"></a>DSC 設定的依需求 PULL
 
 新的 Update-DscConfiguration Cmdlet 觸發在中繼設定中定義的提取伺服器提取。 此行為通常稱為「現在提取」。 
 
@@ -23,7 +22,7 @@ ms.lasthandoff: 06/12/2017
 
 **注意︰** 如果中繼設定 RefreshMode = 'Push' 時，此 Cmdlet 會傳回錯誤，因此目標節點處在 'Push' 模式時此 Cmdlet 一律不會執行任何動作。
 
-```PowerShell
+```powershell
 Update-DscConfiguration     [[-ComputerName] <string[]>] 
                             [-Wait]
                             [-Force] 

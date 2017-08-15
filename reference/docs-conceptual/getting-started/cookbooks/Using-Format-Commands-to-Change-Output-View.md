@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "使用格式命令變更輸出檢視"
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
 ms.openlocfilehash: 0163fcb21d586fc98902d9bdcfab6fe4eb97c225
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令變更輸出檢視
 Windows PowerShell 的一組 Cmdlet 可讓您控制針對特定物件所顯示的屬性。 所有 Cmdlet 名稱的開頭都是動詞 **Format**。 它們可讓您選取要顯示的一或多個屬性。

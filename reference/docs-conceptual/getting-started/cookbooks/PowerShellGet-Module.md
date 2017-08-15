@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "PowerShellGet 模組"
 ms.assetid: e4d6867f-a32a-4564-9e43-409babee97a7
 ms.openlocfilehash: 24b392cf71a1644b995ff3ebdb8361f394d21ccc
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="powershellget-module"></a>PowerShellGet 模組
 本節包含 **PowerShellGet** 模組的說明主題。 **PowerShellGet** 模組是與 Windows PowerShell 5.0 以及更新版本的 Windows PowerShell 一起安裝。

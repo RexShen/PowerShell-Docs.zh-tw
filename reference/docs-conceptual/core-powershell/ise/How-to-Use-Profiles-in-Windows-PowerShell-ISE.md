@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中使用設定檔"
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: 45d0187504ff2dc8f45824bf50aad39e55f7a224
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 97fe9d241fa8a33e0c9b798a7408f06e3381530d
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用設定檔
 本主題說明如何在 Windows PowerShell® 整合式指令碼環境 (ISE) 中使用設定檔。 建議您在執行本節所述的工作之前，先檢閱 [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))，或在 [主控台] 窗格中輸入 `Get-Help about_Profiles`，然後按 **ENTER** 鍵。
@@ -38,28 +38,28 @@ Windows PowerShell ISE 支援目前使用者和所有使用者的設定檔。 �
 ## <a name="to-create-a-new-profile"></a>建立新的設定檔
 若要建立新的 “Current user, Windows PowerShell ISE” 設定檔，請執行下列命令︰
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE )) 
 { New-Item -Type File -Path $PROFILE -Force }
 ```
 
 若要建立新的 “All users, Windows PowerShell ISE” 設定檔，請執行下列命令︰
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersCurrentHost)) 
 { New-Item -Type File -Path $PROFILE.AllUsersCurrentHost -Force }
 ```
 
 若要建立新的 “Current user, All Hosts” 設定檔，請執行下列命令︰
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts)) 
 { New-Item -Type File -Path $PROFILE.CurrentUserAllHosts -Force }
 ```
 
 若要建立新的 “All users, All Hosts” 設定檔，請輸入︰
 
-```PowerShell
+```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) 
 { New-Item -Type File -Path $PROFILE.AllUsersAllHosts -Force }
 ```

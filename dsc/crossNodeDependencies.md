@@ -1,17 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "指定跨節點相依性"
-ms.openlocfilehash: dcdf9f8ef4b74d23bd083767db2cc4aafc0ee83b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 885c130fb050629aac4c072e18a147d77b9deb8f
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="specifying-cross-node-dependencies" class="xliff"></a>
-# 指定跨節點相依性
+# <a name="specifying-cross-node-dependencies"></a>指定跨節點相依性
 
 > 適用於：Windows PowerShell 5.0
 
@@ -21,8 +20,7 @@ DSC 提供特殊的資源 **WaitForAll**、**WaitForAny** 與 **WaitForSome**，
 * **WaitForAny**︰如果指定的資源在定義於 **NodeName** 屬性中的至少一個目標節點上，為所需的狀態，即會成功。
 * **WaitForSome**：除了 **NodeName** 屬性外，指定一個 **NodeCount** 屬性。 如果資源至少有在最少的節點數目 (由 **NodeName** 屬性所定義的 **NodeCount** 指定) 上為所需的狀態，該資源即成功。 
 
-<a id="using-waitforxxxx-resources" class="xliff"></a>
-## 使用 WaitForXXXX 資源
+## <a name="using-waitforxxxx-resources"></a>使用 WaitForXXXX 資源
 
 若要使用 **WaitForXXXX** 資源，需要建立指定要等候之 DSC 資源與節點的該資源類型資源區塊。 然後使用 **DependsOn** 屬性 (在設定中的任一其他資源區塊中)，等候 **WaitForXXXX** 節點內指定的條件成功。
 
@@ -34,7 +32,7 @@ Configuration JoinDomain
 {
     Import-DscResource -Module xComputerManagement, xActiveDirectory
 
-    Node myPC
+    Node myDC
     {
         WindowsFeature InstallAD
         {
@@ -78,8 +76,7 @@ Configuration JoinDomain
 
 >**注意︰**根據預設，WaitForXXX 資源會嘗試一次，然後才失敗。 雖然並非必要，但通常要指定重試間隔與計數。
 
-<a id="see-also" class="xliff"></a>
-## 另請參閱
+## <a name="see-also"></a>另請參閱
 * [DSC 設定](configurations.md)
 * [DSC 資源](resources.md)
 * [設定本機設定管理員](metaConfig.md)

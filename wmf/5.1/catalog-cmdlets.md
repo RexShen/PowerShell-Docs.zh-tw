@@ -1,27 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
 title: "類別目錄 Cmdlet"
-ms.openlocfilehash: 88ca8a3366f7b1d83ba2596d7ae1230427797cf4
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: f0869e8c174ab127996866775ad20d056f877345
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="catalog-cmdlets" class="xliff"></a>
-# 類別目錄 Cmdlet  
+# <a name="catalog-cmdlets"></a>類別目錄 Cmdlet  
 
 [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，以產生和驗證 Windows 類別目錄檔案。  
 
-<a id="new-filecatalog" class="xliff"></a>
-## New-FileCatalog 
+## <a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 `New-FileCatalog` 會為一組資料夾及檔案建立 Windows 類別目錄檔案。 類別目錄檔案包含指定路徑中所有檔案的雜湊。 使用者在散發資料夾組時，可以一併散發代表這些資料夾的對應類別目錄檔案。 內容接收者可以利用類別目錄檔案，驗證資料夾自類別目錄建立之後有無任何變更。    
 
-```PowerShell
+```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 我們支援建立類別目錄第 1 版和第 2 版。 第 1 版使用 SHA1 雜湊演算法建立檔案雜湊，第 2 版使用 SHA256。 *Windows Server 2008 R2* 和 *Windows 7* 不支援第 2 版的類別目錄。 如果使用 *Windows 8*、*Windows Server 2012* 和更新版本的平台，建議使用第 2 版的類別目錄。  
@@ -39,13 +37,12 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 為能確認類別目錄檔案 (在上例中為 Pester.cat) 的完整性，應使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) Cmdlet 簽署該檔案。   
 
 
-<a id="test-filecatalog" class="xliff"></a>
-## Test-FileCatalog 
+## <a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 `Test-FileCatalog` 會驗證代表資料夾組的類別目錄。 
 
-```PowerShell
+```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 

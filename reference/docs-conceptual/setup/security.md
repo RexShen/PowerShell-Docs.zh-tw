@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "安全性"
 ms.openlocfilehash: 9ed7971d36e14b3db9046da0e899f9758d21ea5c
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="security-module"></a>安全性模組
 本節包含 **Microsoft.PowerShell.Security** 模組的說明主題。 **Microsoft.PowerShell.Security** 模組包含[憑證提供者 [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)，以及可管理 Windows PowerShell 之安全性功能 (包括執行原則) 的 Cmdlet。 **Microsoft.PowerShell.Security** 模組是與 Windows PowerShell 一起安裝。

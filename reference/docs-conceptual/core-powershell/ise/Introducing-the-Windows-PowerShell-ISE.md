@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 簡介"
 ms.assetid: a0de70ca-909a-4807-94d1-6da86e5b52a0
 ms.openlocfilehash: 61d31fc2555d91bc7872d7b90cfb1f2a9832ff9c
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Windows PowerShell ISE 簡介
 Windows PowerShell 整合式指令碼環境 (ISE) 是適用於 Windows PowerShell 的主機應用程式。 在 Windows PowerShell ISE 中，您可以在單一 Windows 架構的圖形化使用者介面中執行命令，以及撰寫、測試及偵錯指令碼，此介面支援多行編輯、Tab 鍵自動完成、語法著色、選擇式執行、即時線上說明，以及從右至左的語言支援。

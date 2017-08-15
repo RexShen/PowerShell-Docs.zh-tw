@@ -1,32 +1,29 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "預期狀態設定快速入門"
-ms.openlocfilehash: 64c9cea7d65d0723e76c205aea104c3ec9423c1d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
+ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/02/2017
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-<a id="desired-state-configuration-quick-start" class="xliff"></a>
-# 預期狀態設定快速入門
+# <a name="desired-state-configuration-quick-start"></a>預期狀態設定快速入門
 
 這個練習會從頭開始完整地逐步建立並套用預期狀態設定 (DSC)。
 我們將使用的範例會確保伺服器已啟用 `Web-Server` (IIS) 功能，且在該伺服器的 `intetpub\wwwroot` 目錄中有簡單 "Hello World" 網站的內容。
 
-如需 DSC 及其運作方式的概觀，請參閱[適合決策者的預期狀態設定概觀](DscForEngineers.md)。
+如需 DSC 及其運作方式的概觀，請參閱[適合決策者的預期狀態設定概觀](decisionMaker.md)。
 
-<a id="requirements" class="xliff"></a>
-## 需求
+## <a name="requirements"></a>需求
 
 若要執行此範例，您將需要執行 Windows Server 2012 或更新版本的電腦，以及 PowerShell 4.0 或更新版本。
 
-<a id="write-and-place-the-indexhtm-file" class="xliff"></a>
-## 撰寫並放置 index.htm 檔案
+## <a name="write-and-place-the-indexhtm-file"></a>撰寫並放置 index.htm 檔案
 
 首先，我們會建立 HTML 檔案，將它用來做為網站內容。
 
@@ -43,8 +40,7 @@ ms.lasthandoff: 06/12/2017
 
 將此內容在您稍早建立的 `test` 資料夾中另存為 `index.htm`。 
 
-<a id="write-the-configuration" class="xliff"></a>
-## 撰寫設定
+## <a name="write-the-configuration"></a>撰寫設定
 
 [DSC 設定](configurations.md)是特殊的 PowerShell 函式，可定義您想要設定一或多部目標電腦 (節點) 的方式。
 
@@ -62,7 +58,7 @@ Configuration WebsiteTest {
         # The first resource block ensures that the Web-Server (IIS) feature is enabled.
         WindowsFeature WebServer {
             Ensure = "Present"
-            Name =  "Web-Server"
+            Name   = "Web-Server"
         }
 
         # The second resource block ensures that the website content copied to the website root folder.
@@ -72,7 +68,7 @@ Configuration WebsiteTest {
             DestinationPath = 'c:\inetpub\wwwroot'
         }
     }
-} 
+}
 ```
 
 將檔案儲存為 `WebsiteTest.ps1`。
@@ -84,8 +80,7 @@ Configuration WebsiteTest {
 設定會呼叫兩個[資源](resources.md)，[WindowsFeature](windowsFeatureResource.md) 和 [File](fileResource.md)。
 資源會確保目標節點處於設定所定義的狀態。
 
-<a id="compile-the-configuration" class="xliff"></a>
-## 編譯設定
+## <a name="compile-the-configuration"></a>編譯設定
 
 DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。
 若要這麼做，您要如函式一般執行設定。
@@ -102,20 +97,20 @@ WebsiteTest
 Directory: C:\ConfigurationTest\WebsiteTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                                       
-----                -------------         ------ ----                                                                                                                                                       
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
 第一行會使設定函式可在主控台中使用。
 第二行會執行設定。
 結果會在目前資料夾中，建立名為 `WebsiteTest` 的新子資料夾。
-`WebsiteTest` 資料夾包含名稱為 `localhost.mof` 的檔案。 此檔案即為可套用至目標節點的檔案。
+`WebsiteTest` 資料夾包含名稱為 `localhost.mof` 的檔案。
+此檔案即為可套用至目標節點的檔案。
 
-<a id="apply-the-configuration" class="xliff"></a>
-## 套用設定
+## <a name="apply-the-configuration"></a>套用設定
 
-現在您已經有已編譯的 MOF，您接著可呼叫 [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) Cmdlet 來將設定套用至目標節點 (在本範例中為本機電腦)。
+現在您已經有已編譯的 MOF，您接著可呼叫 [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration) Cmdlet 來將設定套用至目標節點 (在本範例中為本機電腦)。
 
 `Start-DscConfiguration` Cmdlet 會要求[本機設定管理員 (LCM)](metaConfig.md) (也就是 DSC 的引擎) 套用設定。
 LCM 會呼叫 DSC 資源以套用設定。
@@ -126,15 +121,14 @@ LCM 會呼叫 DSC 資源以套用設定。
 Start-DscConfiguration .\WebsiteTest
 ```
 
-<a id="test-the-configuration" class="xliff"></a>
-## 測試組態
+## <a name="test-the-configuration"></a>測試組態
 
-您可以呼叫 [Get DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus.md) Cmdlet 來查看設定是否成功。 
+您可以呼叫 [Get DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) Cmdlet 來查看設定是否成功。 
 
-您也可以直接測試結果，在本範例中是透過網頁瀏覽器瀏覽至 `http://localhost/`。 您應該會看到您做為本範例的第一個步驟所建立的 "Hello World" HTML 頁面。
+您也可以直接測試結果，在本範例中是透過網頁瀏覽器瀏覽至 `http://localhost/`。
+您應該會看到您做為本範例的第一個步驟所建立的 "Hello World" HTML 頁面。
 
-<a id="next-steps" class="xliff"></a>
-## 接下來的步驟
+## <a name="next-steps"></a>接下來的步驟
 
 - 在 [DSC 設定](configurations.md)中深入了解 DSC 設定。
 - 在 [DSC 資源](resources.md)中查看可用的 DSC 資源，以及如何建立自訂 DSC 資源。

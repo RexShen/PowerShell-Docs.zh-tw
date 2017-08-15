@@ -1,20 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 28da6d12d3f7a59777425e1cc4531a609a793ddb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 7817769c3fc060a51c833b7469f7b556b9b40e87
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="call-base-class-method" class="xliff"></a>
-# 呼叫基底類別方法
+# <a name="call-base-class-method"></a>呼叫基底類別方法
 
 您可以覆寫子類別中現有的方法。 若要這樣做，請使用相同的名稱和簽章宣告方法︰
 
-```PowerShell
+```powershell
 class baseClass
 {
     [int]foo() {return 100500}
@@ -30,7 +29,7 @@ class childClass1 : baseClass
 
 若要從覆寫的實作呼叫基底類別方法，請在引動過程上轉換為基底類別 ([baseClass]$this)︰
 
-```PowerShell
+```powershell
 class childClass2 : baseClass
 {
     [int]foo()
@@ -44,7 +43,7 @@ class childClass2 : baseClass
 
 所有的 PowerShell 方法都是虛擬的。 您可以使用與覆寫作業相同的語法，將非虛擬的 .NET 方法隱藏在子類別中︰只宣告名稱和簽章相同的方法。
 
-```PowerShell
+```powershell
 class MyIntList : system.collections.generic.list[int]
 {
     # Add is final in system.collections.generic.list

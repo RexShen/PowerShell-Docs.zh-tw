@@ -1,19 +1,18 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
-ms.openlocfilehash: b64464eb2b4dd87ebe716e159fb916ac328b3b37
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: fa972b68015d9b6e14508ccda562cfa5ebd632ac
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="modules-support-for-declaring-version-ranges-1-etc" class="xliff"></a>
-# 宣告版本範圍 (1.* 等等) 的模組支援
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>宣告版本範圍 (1.* 等等) 的模組支援
 結合 **-MinimumVersion** 之後，**-MaximumVersion** 現在可讓使用者在特定範圍內取得/匯入模組。 此參數也支援 **.***。 下列範例會顯示其運作方式︰
 
-```PowerShell
+```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
 
 PS C:\> Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*

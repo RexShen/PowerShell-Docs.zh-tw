@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: powershell,cmdlet
 title: "建立 .NET 和 COM 物件 New Object"
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: 534e1a9a759d67cfc62ce658a7abddf02f767212
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>建立 .NET 和 COM 物件 (New-Object)
 您可以透過具有 .NET Framework 和 COM 介面的軟體元件，來執行許多系統管理工作。 Windows PowerShell 可讓您使用這些元件，因此您不再僅限於使用 Cmdlet 執行工作。 Windows PowerShell 的初始版本中有許多 Cmdlet 無法對遠端電腦執行。 我們將示範如何從 Windows PowerShell 直接使用 .NET Framework **System.Diagnostics.EventLog** 類別，以克服管理事件記錄檔時的這項限制。
