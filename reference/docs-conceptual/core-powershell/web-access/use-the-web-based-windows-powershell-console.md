@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用網頁型 Windows PowerShell 主控台"
 ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -35,7 +35,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支援的桌上型電腦瀏覽器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支援的桌上型電腦瀏覽器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -51,7 +51,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">通過基本測試的行動裝置或瀏覽器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">通過基本測試的行動裝置或瀏覽器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -65,7 +65,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">瀏覽器需求</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">瀏覽器需求</span></a>
 
 ------------------------------------------------------------------------
 
@@ -79,8 +79,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_sign"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登入 Windows PowerShell Web 存取</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登入 Windows PowerShell Web 存取</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -124,8 +124,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_timeout"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登出及逾時</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">登出與逾時</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -155,8 +155,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_web"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">網頁型 Windows PowerShell 主控台的差異</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">網頁型 Windows PowerShell 主控台中的差異</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -164,7 +164,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">與 PowerShell.exe 的功能差異</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">與 PowerShell.exe 的功能差異</span></a>
 
 ------------------------------------------------------------------------
 
@@ -276,7 +276,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 <a href="" id="BKMK_limits"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">網頁型主控台的限制</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">網頁型主控台的限制</span></a>
 
 ------------------------------------------------------------------------
 
@@ -329,8 +329,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
         您可以在 [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)中找到自訂主控台檢視的其他範例。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
