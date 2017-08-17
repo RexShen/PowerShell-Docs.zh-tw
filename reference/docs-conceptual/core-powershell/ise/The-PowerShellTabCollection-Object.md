@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "PowerShellTabCollection 物件"
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: dcdc16ae126453b6ade64917ac4950cc05e5f8ad
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection 物件
   **PowerShellTab** 集合物件是 **PowerShellTab** 物件的集合。 每個 **PowerShellTab** 物件功能都可做為個別的執行階段環境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 類別的執行個體。 範例是 **$psISE.PowerShellTabs** 物件。
@@ -29,8 +29,7 @@ $newTab.DisplayName="Brand New Tab"
 
  移除 **psTab** 參數指定的索引標籤。
 
- **psTab**
- 要移除的 PowerShell 索引標籤。
+ **psTab** 要移除的 PowerShell 索引標籤。
 
 ```
 
@@ -46,8 +45,7 @@ $psISE.PowerShellTabs.Remove($newTab)
 
  選取 **psTab** 參數指定的 PowerShell 索引標籤，使其成為目前作用中的 PowerShell 索引標籤。
 
- **psTab**
- 要選取的 PowerShell 索引標籤。
+ **psTab** 要選取的 PowerShell 索引標籤。
 
 ```
 # Save the current tab in a variable and rename it

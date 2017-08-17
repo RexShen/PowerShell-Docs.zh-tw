@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "解除安裝 Windows PowerShell Web 存取"
 ms.openlocfilehash: 7231d5eadceda8e3b28d9a81c2b5dcbe43680ff2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
@@ -24,8 +24,8 @@ ms.lasthandoff: 06/08/2017
 
 解除安裝 Windows PowerShell Web 存取不會解除安裝 IIS 或自動安裝的任何其他功能，因為 Windows PowerShell Web 存取需要這些功能才能執行。 解除安裝程序會保留與 Windows PowerShell Web 存取相依的功能；您可以視需要個別解除安裝這些功能。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">建議 (快速) 解除安裝</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">建議的 (快速) 解除安裝</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：刪除 Web 應用程式</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：刪除 Web 應用程式</span></a>
 
 ------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：解除安裝 Windows PowerShell Web 存取</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：將 Windows PowerShell Web 存取解除安裝</span></a>
 
 ------------------------------------------------------------------------
 
@@ -83,8 +83,8 @@ ms.lasthandoff: 06/08/2017
 
 3.  完成移除後，請確認是否已移除 Windows PowerShell Web 存取，方法是在 [伺服器管理員] 中開啟 [所有伺服器] 頁面，選取移除功能的伺服器，並檢視所選伺服器頁面上的 [角色和功能] 磚。 您也可以針對所選伺服器執行 <span class="code">Get-WindowsFeature</span> Cmdlet (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;) 來檢視伺服器上安裝的角色和功能清單。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自訂解除安裝</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自訂解除安裝</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：刪除 Web 應用程式</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：刪除 Web 應用程式</span></a>
 
 ------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ ms.lasthandoff: 06/08/2017
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：解除安裝 Windows PowerShell Web 存取</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：將 Windows PowerShell Web 存取解除安裝</span></a>
 
 ------------------------------------------------------------------------
 
@@ -154,8 +154,8 @@ ms.lasthandoff: 06/08/2017
 
 6.  在 **[確認移除選項]** 頁面上，按一下 **[移除]**。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 

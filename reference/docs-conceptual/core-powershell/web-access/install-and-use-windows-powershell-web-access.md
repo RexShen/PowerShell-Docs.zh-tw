@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "安裝和使用 Windows PowerShell Web 存取"
 ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -34,7 +34,7 @@ Windows PowerShell® Web 存取是在 Windows Server® 2012 中首度引進來�
 
 下圖顯示 Windows PowerShell Web 存取的運作方式。
 
-<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web Access diagram" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
+<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web 存取圖表" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
 
 本主題內容：
 
@@ -50,8 +50,8 @@ Windows PowerShell® Web 存取是在 Windows Server® 2012 中首度引進來�
 
 <a href="" id="BKMK_reqs"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">執行 Windows PowerShell Web 存取的需求</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">執行 Windows PowerShell Web 存取的需求</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -61,8 +61,8 @@ Windows PowerShell Web 存取允許遠端使用者，在網頁瀏覽器中使用
 
 <a href="" id="BKMK_browser"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">瀏覽器及用戶端裝置支援</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">瀏覽器與用戶端裝置支援</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -70,7 +70,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支援的桌上型電腦瀏覽器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">支援的桌上型電腦瀏覽器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -86,7 +86,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">通過基本測試的行動裝置或瀏覽器</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">通過基本測試的行動裝置或瀏覽器</span></a>
 
 ------------------------------------------------------------------------
 
@@ -100,7 +100,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">瀏覽器需求</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">瀏覽器需求</span></a>
 
 ------------------------------------------------------------------------
 
@@ -114,8 +114,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_recm"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">建議 (快速) 部署</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">建議的 (快速) 部署</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -130,7 +130,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 <a href="" id="BKMK_step1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：安裝 Windows PowerShell Web 存取</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：安裝 Windows PowerShell Web 存取</span></a>
 
 ------------------------------------------------------------------------
 
@@ -193,7 +193,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 <a href="" id="BKMK_step2"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：設定閘道</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：設定閘道</span></a>
 
 ------------------------------------------------------------------------
 
@@ -207,7 +207,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性注意事項 </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性提示</span></th>
 </tr>
 </thead>
 <tbody>
@@ -239,7 +239,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性注意事項 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性提示</span></th>
     </tr>
     </thead>
     <tbody>
@@ -337,10 +337,14 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     </tbody>
     </table>
 
-<a href="" id="BKMK_step3"></a>
+<a href="" id="BKMK_step3">
+
+
+</a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 3：設定限制性授權規則</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 3：設定限制性授權規則</span></a>
 
 ------------------------------------------------------------------------
 
@@ -376,8 +380,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_custom"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自訂部署</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">自訂部署</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -386,7 +390,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 <a href="" id="BKMK_custom1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：安裝 Windows PowerShell Web 存取</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 1：安裝 Windows PowerShell Web 存取</span></a>
 
 ------------------------------------------------------------------------
 
@@ -430,7 +434,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：設定閘道</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 2：設定閘道</span></a>
 
 ------------------------------------------------------------------------
 
@@ -574,7 +578,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 3：設定限制性授權規則</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">步驟 3：設定限制性授權規則</span></a>
 
 ------------------------------------------------------------------------
 
@@ -610,8 +614,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_configcert"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">設定正版憑證</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">設定正版憑證</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -639,15 +643,15 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 <a href="" id="BKMK_using"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">使用網頁型 Windows PowerShell 主控台</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_5" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">使用網頁型 Windows PowerShell 主控台</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_5" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
 依本主題所述方式安裝 Windows PowerShell Web 存取並完成閘道設定之後，就可以使用 Windows PowerShell 網頁型主控台。 如需開始使用網頁型主控台的詳細資訊，請參閱[使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 

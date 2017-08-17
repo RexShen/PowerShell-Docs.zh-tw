@@ -4,16 +4,15 @@ author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
 title: "WMF 5.1 版本資訊"
-ms.openlocfilehash: f80c1ec5886578e3e43f2c96981f40152db000d1
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ce9bc7791facfcc2cce9468689e88a26154bda7d
+ms.sourcegitcommit: 3f49bd2e0b786e69c71393c00ad85d05a8466753
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/04/2017
 ---
-<a id="windows-management-framework-wmf-51-release-notes" class="xliff"></a>
-# Windows Management Framework (WMF) 5.1 版本資訊 #
+# <a name="windows-management-framework-wmf-51-release-notes"></a>Windows Management Framework (WMF) 5.1 版本資訊 #
 
-WMF 5.1 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM，以及軟體清查和授權 (SIL) 元件。
+WMF 5.1 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM，以及軟體清查記錄 (SIL) 元件。
 WMF 5.1 可以在 Windows 7、Windows 8.1、Windows Server 2008 R2、2012 及 2012 R2 上安裝，並提供許多對 WMF 5.0 RTM 的改善，包括︰
 
 - 新的 Cmdlet︰本機使用者和群組；Get-ComputerInfo
@@ -25,7 +24,7 @@ WMF 5.1 可以在 Windows 7、Windows 8.1、Windows Server 2008 R2、2012 及 20
 
 **重要事項：**
 
-- **WMF 5.1 需要 .NET Framework 4.5.2**。 安裝會成功，但若未安裝 .NET 4.5.2，主要功能將會失敗。 您可在[安裝和設定 WMF 5.1](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) 主題中取得指示。
+- **WMF 5.1 需要 .NET Framework 4.5.2** (或更新版本)。 雖然安裝會成功，但若未安裝 .NET 4.5.2 (或更新版本)，主要功能將會失敗。 您可在[安裝和設定 WMF 5.1](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure) 主題中取得指示。
 - 安裝 WMF 5.1 RTM 之前，必須先解除安裝 WMF 5.1 Preview。
 - WMF 5.1 可直接透過 WMF 5.0 或 WMF 4.0 安裝。
 - 在 Windows 7 和 Windows Server 2008 R2 上安裝 WMF 5.1 之前，__不需要__先安裝 WMF 4.0。 WMF 5.1 Preview 版本有問題，並且已解決。  

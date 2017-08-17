@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "PowerShellTab 物件"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 物件
   **PowerShellTab** 物件代表 Windows PowerShell 執行階段環境。
@@ -40,8 +40,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
 
  **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 
- **\[useNewScope\]** - 預設為 **$true** 的選用布林值
-：如果設定為 **$true**，則會建立一個在其中執行命令的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
+ **\[useNewScope\]** -  預設為 **$true** 的選擇性布林值，若設定為 **$true**，就會建立一個在其中執行命令的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
 
  **\[millisecondsTimeout\]** - 選用的整數，預設為 **500**。
 如果命令沒有在指定的時間內完成，則命令會產生 **TimeoutException** 並顯示「作業逾時」訊息。

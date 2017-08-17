@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 存取的授權規則與安全性功能"
 ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -35,7 +35,7 @@ Windows PowerShell Web 存取驗證規則是允許清單規則。 每個規則�
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性注意事項 </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性提示</span></th>
 </tr>
 </thead>
 <tbody>
@@ -111,7 +111,7 @@ Windows PowerShell Web 存取驗證規則是允許清單規則。 每個規則�
 <a href="" id="BKMK_sec"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">安全性</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">安全性</span></a>
 
 ------------------------------------------------------------------------
 
@@ -164,10 +164,13 @@ Windows PowerShell Web 存取安全性模型在網頁型主控台的一般使用
 </tbody>
 </table>
 
-<a href="" id="BKMK_configrules"></a>
+<a href="" id="BKMK_configrules">
+
+</a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">設定授權規則</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">設定授權規則</span></a>
 
 ------------------------------------------------------------------------
 
@@ -245,10 +248,13 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
     </tbody>
     </table>
 
-<a href="" id="BKMK_others"></a>
+<a href="" id="BKMK_others">
+
+</a>
 ####
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">其他授權規則案例範例</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">其他授權規則案例範例</span></a>
 
 ------------------------------------------------------------------------
 
@@ -268,7 +274,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性注意事項 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> 安全性提示</span></th>
     </tr>
     </thead>
     <tbody>
@@ -310,7 +316,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">對多個站台使用一組授權規則</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">對多個站台使用一組授權規則</span></a>
 
 ------------------------------------------------------------------------
 
@@ -320,8 +326,8 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 <a href="" id="BKMK_sesmgmt"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">工作階段管理</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">工作階段管理</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 
@@ -331,7 +337,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">設定登入頁面的預設參數</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">設定登入頁面的預設參數</span></a>
 
 ------------------------------------------------------------------------
 
@@ -352,7 +358,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">逾時和非計劃的連線中斷</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">逾時與不在計劃中的中斷連線</span></a>
 
 ------------------------------------------------------------------------
 
@@ -362,8 +368,8 @@ Windows PowerShell Web 存取工作階段逾時。 在 Windows Server 2012 上�
 
 如果閘道伺服器正在執行 Windows Server 2012 R2，Windows PowerShell Web 存取就能讓使用者在稍後重新連線到已儲存的工作階段，但如果工作階段是因為網路錯誤、非計劃性關機或其他失敗而中斷連線，則在閘道系統管理員指定的逾時期間結束之前，使用者將無法檢視或重新連線到已儲存的工作階段。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="摺疊"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">另請參閱</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="以滑鼠右鍵按一下來複製及分享此章節的連結"></a>
 
 ------------------------------------------------------------------------
 

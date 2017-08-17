@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 詞彙"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 9b8ff47a568b8a71cc51f50b3f3ba5ad3dab1ad1
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 詞彙
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 06/08/2017
 |詞彙|定義|
 |--------|--------------|
 |二進位模組|根模組是二進位模組檔 (.dll) 的 Windows PowerShell 模組。 二進位模組不一定包括模組資訊清單。|
-|一般參數|Windows PowerShell 引擎新增至所有 Cmdlet 和進階功能的參數。|
+|一般參數|由 Windows PowerShell 引擎新增至所有 Cmdlet、進階功能及工作流程的參數。|
 |點溯源|在 Windows PowerShell 中，於命令前面輸入點和空格，來啟動命令。 為點溯源的命令是在目前範圍內執行，而不是在新範圍內。 命令所建立的任何變數、別名、函式或磁碟機都是在目前範圍內建立，並且在命令完成時可供使用者使用。|
 |動態模組|只存在於記憶體中的模組。 New-Module 和 Import-PSSession Cmdlet 會建立動態模組。|
 |動態參數|在特定情況下新增至 Windows PowerShell Cmdlet、函式或指令碼的參數。 Cmdlet、函式、提供者和指令碼可以新增動態參數。|

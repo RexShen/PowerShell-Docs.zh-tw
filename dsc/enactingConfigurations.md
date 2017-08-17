@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "施行設定"
-ms.openlocfilehash: db82788650186eb82f67b30b24cd45b719bbe314
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: db3a999f3e413ebb88e79f5ec04a7449db543030
+ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/02/2017
 ---
 # <a name="enacting-configurations"></a>施行設定
 
@@ -31,7 +31,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.mic
 
 ![Pull 模式](images/Pull.png "Pull 模式的運作方式")
 
-在 Pull 模式中，提取用戶端會設定成從遠端的提取伺服器取得其所需的狀態設定。 同樣地，提取伺服器已設為 DSC 服務主機，佈建了提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的工作，對節點設定執行定期的相容性檢查。 當第一次觸發事件時，提取用戶端上的本機設定管理員 (LCM) 會向提取伺服器提出要求，以取得 LCM 中指定的設定。 如果提取伺服器上有這個設定，而且它通過了初始驗證檢查，設定就會傳輸到提取用戶端，LCM 會在這裡執行它。
+在 Pull 模式中，提取用戶端會設定成從遠端的提取伺服器取得其所需的狀態設定。 同樣地，提取伺服器已設為 DSC 服務主機，佈建了提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的工作，對節點設定執行定期的相容性檢查。 事件初次觸發時，提取用戶端上的本機設定管理員 (LCM) 會向提取伺服器提出要求，以取得 LCM 中指定的設定。 如果提取伺服器上有這個設定，而且它通過了初始驗證檢查，設定就會傳輸到提取用戶端，LCM 會在這裡執行它。
 
 LCM 會依照 LCM 的 **ConfigurationModeFrequencyMins** 屬性所指定的固定間隔，檢查用戶端是否符合設定。 LCM 會依照 LCM 的 **RefreshModeFrequency** 屬性所指定的固定間隔，檢查提取伺服器上的更新設定。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](metaConfig.md)。
 

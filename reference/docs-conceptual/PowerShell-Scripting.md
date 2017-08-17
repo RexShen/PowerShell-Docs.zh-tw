@@ -2,15 +2,15 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 指令碼"
-ms.openlocfilehash: 4e27f81bd06f0994a86ffa3bd23e8fa6f4fe344d
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 98b95339fb30ee95a006d10d68e266ed8243cd68
+ms.sourcegitcommit: 289fe8fbf8ff48ca8999aca10aebd3af44bf9b23
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/07/2017
 ---
 #  <a name="powershell"></a>PowerShell
 
-Windows PowerShell 是以 .NET Framework 為基礎所建置，而且是以工作為基礎的命令列殼層和指令碼語言；專為系統管理員和進階使用者所設計，可快速自動化管理多個作業系統 (Linux、OSX、Unix 和 Windows)，以及與在這些作業系統上執行之應用程式相關的程序。
+Windows PowerShell 建基於 .NET Framework，是以工作為基礎的命令列殼層與指令碼語言；專為系統管理員和進階使用者所設計，可快速將多個作業系統 (Linux、macOS、Unix 及 Windows) 的管理，以及這些作業系統上執行的應用程式相關處理序自動化。
 
 ###  <a name="powershell-is-now-open-source"></a>PowerShell 現在是開放原始碼
 
@@ -40,7 +40,7 @@ PowerShell 基本原始程式碼現在可在 GitHub 中取得並且開放進行�
 -   [準備使用 Windows PowerShell](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md) 會說明安裝 PowerShell 的必要步驟，以執行並嘗試＜開始使用 PowerShell＞一節中列出的所有程式碼和命令片段。
 -  [基本概念](getting-started/fundamental-concepts.md) 導覽會說明什麼是 PowerShell 以及開始使用它的基本概念。
 -  一系列涵蓋 PowerShell 基本概念的 [了解 &lt;概念&gt;](getting-started/understanding-concepts-reference.md) 主題。
--  一系列的 [&lt;使用量&gt; 基本操作手冊](getting-started/cookbooks/basic-cookbooks-reference.md) 主題，提供執行檔案、檔案系統、登錄、處理序、服務和類似之日常主題標準工作的訣竅。
+-  一系列的「[&lt;使用方式&gt;逐步指南](getting-started/cookbooks/basic-cookbooks-reference.md)」主題，提供對檔案、檔案系統、登錄、處理序、服務及類似的日常主題執行標準工作的訣竅。
 -  [了解 PowerShell](getting-started/more-powershell-learning.md) 的其他來源策劃導覽。
 
 ##  <a name="common-powershellcore-powershellcore-powershellmd"></a>[常用的 PowerShell](core-powershell/core-powershell.md)
