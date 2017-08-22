@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: "建立及發行項目"
-ms.openlocfilehash: e71381d1a3efda73832fab6189bda26cee411d9e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b6bcd3e923b77ad7d19a1d92aeb78222bff7ea7e
+ms.sourcegitcommit: e08f036021e9f115dbb52c697941706cc4ee51dd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/15/2017
 ---
 # <a name="creating-and-publishing-an-item"></a>建立和發行項目 
 「PowerShell 資源庫」是可供您發行及與更廣大的 PowerShell 使用者社群共用穩定的 PowerShell 模組、指令碼及 DSC 資源的地方。    

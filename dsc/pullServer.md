@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "設定 DSC Web 提取伺服器"
-ms.openlocfilehash: 1dd4aa63c598a359a052f6f00a9e48fc6fa6c113
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 865b4a871a75dab18071904983f6b14a10ff7e96
+ms.sourcegitcommit: 4ccf1a64e7a8335797daef6152244a9d4b9a89b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/17/2017
 ---
 # <a name="setting-up-a-dsc-web-pull-server"></a>設定 DSC Web 提取伺服器
 
@@ -34,72 +34,72 @@ DSC Web 提取伺服器是一種 Web 服務，在目標節點請求 DSC 設定�
 1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：'``` [guid]::newGuid()```' 或 '```New-Guid```'。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
 1. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含於 **xPSDesiredStateConfiguration** 模組的 Example 資料夾的 Sample_xDscWebService.ps1)。 此指令碼會設定提取伺服器。
   
-```powershell
-configuration Sample_xDscPullServer
-{ 
-    param  
-    ( 
-            [string[]]$NodeName = 'localhost', 
-            
-            [ValidateNotNullOrEmpty()] 
-            [string] $certificateThumbPrint,
-            
-            [Parameter(Mandatory)]
-            [ValidateNotNullOrEmpty()]
-            [string] $RegistrationKey 
-     ) 
- 
- 
-     Import-DSCResource -ModuleName xPSDesiredStateConfiguration
-     Import-DSCResource –ModuleName PSDesiredStateConfiguration
+    ```powershell
+    configuration Sample_xDscPullServer
+    { 
+        param  
+        ( 
+                [string[]]$NodeName = 'localhost', 
 
-     Node $NodeName 
-     { 
-         WindowsFeature DSCServiceFeature 
-         { 
-             Ensure = 'Present'
-             Name   = 'DSC-Service'             
-         } 
- 
-         xDscWebService PSDSCPullServer 
-         { 
-             Ensure                   = 'Present' 
-             EndpointName             = 'PSDSCPullServer' 
-             Port                     = 8080 
-             PhysicalPath             = "$env:SystemDrive\inetpub\PSDSCPullServer" 
-             CertificateThumbPrint    = $certificateThumbPrint          
-             ModulePath               = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
-             ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
-             State                    = 'Started'
-             DependsOn                = '[WindowsFeature]DSCServiceFeature'     
-             UseSecurityBestPractices = $false
-         } 
+                [ValidateNotNullOrEmpty()] 
+                [string] $certificateThumbPrint,
 
-        File RegistrationKeyFile
-        {
-            Ensure          = 'Present'
-            Type            = 'File'
-            DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
-            Contents        = $RegistrationKey
+                [Parameter(Mandatory)]
+                [ValidateNotNullOrEmpty()]
+                [string] $RegistrationKey 
+         ) 
+
+
+         Import-DSCResource -ModuleName xPSDesiredStateConfiguration
+         Import-DSCResource –ModuleName PSDesiredStateConfiguration
+
+         Node $NodeName 
+         { 
+             WindowsFeature DSCServiceFeature 
+             { 
+                 Ensure = 'Present'
+                 Name   = 'DSC-Service'             
+             } 
+
+             xDscWebService PSDSCPullServer 
+             { 
+                 Ensure                   = 'Present' 
+                 EndpointName             = 'PSDSCPullServer' 
+                 Port                     = 8080 
+                 PhysicalPath             = "$env:SystemDrive\inetpub\PSDSCPullServer" 
+                 CertificateThumbPrint    = $certificateThumbPrint          
+                 ModulePath               = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
+                 ConfigurationPath        = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
+                 State                    = 'Started'
+                 DependsOn                = '[WindowsFeature]DSCServiceFeature'     
+                 UseSecurityBestPractices = $false
+             } 
+
+            File RegistrationKeyFile
+            {
+                Ensure          = 'Present'
+                Type            = 'File'
+                DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
+                Contents        = $RegistrationKey
+            }
         }
     }
-}
 
-```
+    ```
 
-5. 執行設定，傳遞 SSL 憑證的指紋作為 **certificateThumbPrint** 參數，以及 GUID 註冊金鑰作為 **RegistrationKey** 參數：
+1. 執行設定，傳遞 SSL 憑證的指紋作為 **certificateThumbPrint** 參數，以及 GUID 註冊金鑰作為 **RegistrationKey** 參數：
 
-```powershell
-# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
-# and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
-dir Cert:\LocalMachine\my
+    ```powershell
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    dir Cert:\LocalMachine\my
 
-# Then include this thumbprint when running the configuration
-Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
+    # Then include this thumbprint when running the configuration
+    Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
 
-# Run the compiled configuration to make the target node a DSC Pull Server
-Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
-```
+    # Run the compiled configuration to make the target node a DSC Pull Server
+    Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
+    ```
 
 ## <a name="registration-key"></a>註冊金鑰
 若要讓用戶端向伺服器註冊，使其可以使用設定名稱，而非設定識別碼，上述設定所建立的註冊金鑰會儲存在 `C:\Program Files\WindowsPowerShell\DscService` 中名為 `RegistrationKeys.txt` 的檔案。 註冊金鑰會當作共用密碼，在用戶端向提取伺服器初始註冊期間使用。 用戶端會產生自我簽署的憑證，以在成功完成註冊之後，用來向提取伺服器進行唯一驗證。 此憑證的指紋會儲存在本機，並與提取伺服器的 URL 相關聯。
@@ -162,16 +162,16 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 為了讓您更輕鬆地設定、驗證和管理提取伺服器，下列工具將納入作為最新版 xPSDesiredStateConfiguration 模組中的範例︰
 1. 有助於封裝 DSC 資源模組和設定檔以供提取伺服器使用的模組。 [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1)。 範例如下：
 
-```powershell
-    # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-     $moduleList = @("xWebAdministration", "xPhp") 
-     Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
-     
-     # Example 2 - Package modules and mof documents from c:\LocalDepot
-     Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
-```
+    ```powershell
+        # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
+         $moduleList = @("xWebAdministration", "xPhp") 
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
 
-2. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1)。
+         # Example 2 - Package modules and mof documents from c:\LocalDepot
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
+    ```
+
+1. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1)。
 
 
 ## <a name="pull-client-configuration"></a>提取用戶端設定 
