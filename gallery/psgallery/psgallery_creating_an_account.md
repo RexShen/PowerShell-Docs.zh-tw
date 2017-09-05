@@ -14,7 +14,7 @@ ms.lasthandoff: 06/12/2017
 
 將任何項目發行至「PowerShell 資源庫」之前，必須先建立「PowerShell 資源庫」帳戶。 「PowerShell 資源庫」帳戶必須連結至已啟用電子郵件功能的 Azure Active Directory 帳戶，或是 Microsoft 電子郵件帳戶 (網域為 outlook.com、hotmail.com 等)
 
-若要建立「PowerShell 資源庫」帳戶，請移至 https://PowerShellGallery.com 並按一下 [註冊] (請參閱下圖)。 
+若要建立「PowerShell 資源庫」帳戶，請移至 https://PowerShellGallery.com 並按一下 [註冊]\(請參閱下圖)。 
 
 ![註冊新帳戶](./images/CreatingAccount-Register.png)
 
