@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中撰寫和執行指令碼"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 577ecf96027618a0a8f98d5bcefe7ec949f337cc
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 本主題說明如何在指令碼窗格中建立、編輯、執行和儲存指令碼。
 
--   [如何建立及執行指令碼](#bkmk_1)
+-   [如何建立及執行指令碼]()
 
--   [如何在指令碼窗格中撰寫及編輯文字](#bkmk_2)
+-   [如何在指令碼窗格中撰寫及編輯文字]()
 
--   [如何儲存指令碼](#bkmk_3)
+-   [如何儲存指令碼]()
 
 ## <a name="bkmk_1"></a>如何建立和執行指令碼
 您可以在指令碼窗格中開啟和編輯 Windows PowerShell® 檔案。 Windows PowerShell® 中需要注意的特定檔案類型包括指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1)。 這些檔案類型是指令碼窗格編輯器中著色的語法。 其他可在指令碼窗格中開啟的常見檔案類型還包括組態檔 (.ps1xml)、XML 檔案和文字檔。
@@ -25,7 +25,7 @@ ms.lasthandoff: 08/03/2017
 > Windows PowerShell 執行原則會決定您是否可以執行指令碼，以及載入 Windows PowerShell 設定檔和組態檔。 預設執行原則 “Restricted” 可防止所有指令碼執行，並防止載入設定檔。 若要變更執行原則以允許載入及使用設定檔，請參閱 [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
 
 ### <a name="to-create-a-new-script-file"></a>建立新的指令碼檔案
-按一下工具列中的 **[新增]**，或在 **[檔案]** 功能表上，按一下 **[新增]**。 建立的檔案會顯示在目前 PowerShell 索引標籤下新的檔案索引標籤中。 請記住，只有在有多個 PowerShell 索引標籤時，才會顯示 PowerShell 索引標籤。 預設會建立指令碼類型的檔案 (.ps1)，但您可以使用新名稱和副檔名來儲存這個檔案。 在同一個 PowerShell 索引標籤中，可以建立多個指令碼檔案。
+按一下工具列中的 **[新增]**，或在 **[檔案]** 功能表上，按一下 **[新增]**。 建立的檔案會顯示在目前 PowerShell 索引標籤下新的檔案索引標籤中。請記住，只有在有多個 PowerShell 索引標籤時，才會顯示 PowerShell 索引標籤。 預設會建立指令碼類型的檔案 (.ps1)，但您可以使用新名稱和副檔名來儲存這個檔案。 在同一個 PowerShell 索引標籤中，可以建立多個指令碼檔案。
 
 ### <a name="to-open-an-existing-script"></a>開啟現有的指令碼
 按一下工具列中的 **[開啟...]**，或在 **[檔案]** 功能表上，按一下 **[開啟]**。 在 **[開啟]** 對話方塊中，選取您要開啟的檔案。 開啟的檔案會顯示在新的索引標籤中。

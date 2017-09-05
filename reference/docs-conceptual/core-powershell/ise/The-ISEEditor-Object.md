@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEEditor 物件"
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 物件
   **ISEEditor** 物件是 Microsoft.PowerShell.Host.ISE.ISEEditor 類別的執行個體。 主控台窗格是 **ISEEditor** 物件。 每個 [ISEFile](The-ISEFile-Object.md) 物件都有相關聯的 **ISEEditor** 物件。 下列各節將列出 **ISEEditor** 物件的方法和屬性。
@@ -63,7 +63,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
- 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch](#cangotomatch)。
+ 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch]()。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +76,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - 字串：要插入的文字。
 
- 請參閱本主題稍後的[指令碼範例](#example)。
+ 請參閱本主題稍後的[指令碼範例]()。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
@@ -91,7 +91,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - 整數：選取範圍結束位置之結尾行內的欄。
 
- 請參閱本主題稍後的[指令碼範例](#example)。
+ 請參閱本主題稍後的[指令碼範例]()。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
@@ -186,14 +186,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  唯讀屬性，可從編輯器取得選取的文字。
 
- 請參閱本主題稍後的[指令碼範例](#example)。
+ 請參閱本主題稍後的[指令碼範例]()。
 
 ###  <a name="Text"></a> Text
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可在編輯器中取得或設定文字。
 
- 請參閱本主題稍後的[指令碼範例](#example)。
+ 請參閱本主題稍後的[指令碼範例]()。
 
 ##  <a name="example"></a> 指令碼範例
 

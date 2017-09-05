@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: ISESnippetObject
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-ms.openlocfilehash: 5cc49cd504a1343a5737f78eb886bb41591d087d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 6112f5252d2d1e868092da4a6cd04feb1875b597
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
   **ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。 **$psISE.CurrentPowerShellTab.Snippets** 集合的成員都是 **ISESnippet** 物件的範例。 建立程式碼片段的最簡單方式是使用 [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) Cmdlet。
 
 ## <a name="properties"></a>[內容]
 
-###  <a name="DisplayName"></a> Author
+### <a name="author"></a>作者
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，可取得程式碼片段的作者名稱。
@@ -25,7 +25,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 
 ```
 
-###  <a name="Action"></a> CodeFragment
+### <a name="codefragment"></a>CodeFragment
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，可取得要插入至編輯器的程式碼片段。
@@ -36,7 +36,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+### <a name="shortcut"></a>捷徑
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀屬性，可取得功能表項目的 Windows 鍵盤快速鍵。

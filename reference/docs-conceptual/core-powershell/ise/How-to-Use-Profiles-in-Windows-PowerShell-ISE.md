@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中使用設定檔"
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: 97fe9d241fa8a33e0c9b798a7408f06e3381530d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 6b16291b7025928a307380cbae75fcdbdb51a73d
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用設定檔
 本主題說明如何在 Windows PowerShell® 整合式指令碼環境 (ISE) 中使用設定檔。 建議您在執行本節所述的工作之前，先檢閱 [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))，或在 [主控台] 窗格中輸入 `Get-Help about_Profiles`，然後按 **ENTER** 鍵。
@@ -70,7 +70,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 2.  將一些項目新增至您的設定檔。 以下是一些可協助您開始的範例︰
 
-    -   若要將主控台窗格的預設背景色彩變更為藍色，請在設定檔中輸入︰`$psISE.Options.OutputPaneBackground = 'blue'`。 如需 $psISE 變數的詳細資訊，請參閱 [Windows PowerShell ISE 物件模型參考](#windows-powershell-ise-object-model-reference)。
+    -   若要將主控台窗格的預設背景色彩變更為藍色，請在設定檔中輸入︰`$psISE.Options.OutputPaneBackground = 'blue'`。 如需 $psISE 變數的詳細資訊，請參閱 [Windows PowerShell ISE 物件模型參考]()。
 
     -   若要將字型大小變更為 20，請在設定檔中輸入︰`$psISE.Options.FontSize =20`
 

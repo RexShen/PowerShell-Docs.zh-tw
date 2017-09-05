@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "開始使用 Linux 預期狀態設定 (DSC)"
-ms.openlocfilehash: 2d4276a0ffcb4fd7b872cbc4771f86cb850c0b83
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 9dbc4c22cff9df4028c5655cdfba3bb1aac1bb90
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -106,7 +106,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
 
-設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 用來建立 Linux 電腦的 CIMSession。
+設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) Cmdlet 用來建立 Linux 電腦的 CIMSession。
 
 下列程式碼示範如何建立 DSC for Linux 的 CIMSession。
 
@@ -126,7 +126,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * 在「推送」模式中，使用者認證必須是在 Linux 電腦上的根使用者。
 * DSC for Linux 僅支援 SSL/TLS 連線，必須使用 New-CimSession 且將 –UseSSL 參數設為 $true。
 * OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/opt/omi/etc/omiserver.conf`，屬性為：pemfile 和 keyfile。
-如果此憑證不受您正在執行 [New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
+如果此憑證不受您正在執行 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` 選擇忽略憑證驗證
 
 執行下列命令，將 DSC 設定推送至 Linux 節點。
 

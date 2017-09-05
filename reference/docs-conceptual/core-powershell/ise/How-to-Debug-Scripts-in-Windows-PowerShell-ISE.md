@@ -1,21 +1,21 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中偵錯指令碼"
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2b8313c3f2ae1a8fb670099baa8950db49722330
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中偵錯指令碼
 本主題說明如何使用 Windows PowerShell® 整合式指令碼環境 (ISE) 視覺化偵錯功能，對本機電腦上的指令碼執行偵錯。
 
-[如何管理中斷點](#bkmk_1)
-[如何管理偵錯工作階段](#bkmk_2)
-[如何在偵錯時逐程序、逐步執行及跳出](#bkmk_3)
-[如何在偵錯時顯示變數的值](#bkmk_4)
+[如何管理中斷點]()
+[如何管理偵錯工作階段]()
+[如何在偵錯時逐程序、逐步執行及跳出]()
+[如何在偵錯時顯示變數的值]()
 
 ## <a name="bkmk_1"></a>如何管理中斷點
 中斷點是您要在指令碼中暫停作業的指定位置，以便您可以檢查變數及指令碼執行所在之環境的目前狀態。 在中斷點暫停指令碼之後，您可以在主控台窗格中執行命令，以檢查指令碼的狀態。  您可以輸出變數或執行其他命令。 您甚至可以修改目前執行中指令碼內容所顯示的任何變數值。 檢查您要查看的項目之後，您可以繼續指令碼作業。
@@ -51,7 +51,7 @@ Get-PSBreakpoint
 ```
 
 ### <a name="remove-a-breakpoint"></a>移除中斷點
-移除中斷點會將它刪除。  如果您認為稍後可能需要重複使用，請考慮改為將它[停用](#bkmk_disable)。  以滑鼠右鍵按一下您要移除中斷點的行，然後按一下 [切換中斷點]。 或者，按一下您要移除中斷點的行，然後在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除具有指定識別碼的中斷點。
+移除中斷點會將它刪除。  如果您認為稍後可能需要重複使用，請考慮改為將它[停用]()。  以滑鼠右鍵按一下您要移除中斷點的行，然後按一下 [切換中斷點]。 或者，按一下您要移除中斷點的行，然後在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除具有指定識別碼的中斷點。
 
 ``` PowerShell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -103,7 +103,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="bkmk_2"></a>如何管理偵錯工作階段
-開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點](#bkmk_1)或 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
+開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點]()或 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
 
 ### <a name="to-start-debugging"></a>開始偵錯
 按 **F5** 鍵；按一下工具列中的**執行指令碼**圖示；或在 [偵錯] 功能表上，按一下 [執行/繼續]。 指令碼會執行，直到它遇到第一個中斷點為止。 然後它會在此暫停作業，並反白暫停的行。
