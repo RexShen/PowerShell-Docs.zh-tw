@@ -1,210 +1,210 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISE 物件模型階層"
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
-ms.openlocfilehash: 0d0370ed9f64464038e643ae2cd241891fa74f33
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: b6e251eac7db56896490362392e0a1c4c10a8d4a
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE 物件模型階層
   本主題說明隸屬於 Windows PowerShell 整合式指令碼環境 (ISE) 一部分的物件階層。 Windows PowerShell ISE 隨附於 Windows PowerShell 3.0 和 Windows PowerShell 4.0。 按一下物件，即會帶領您進入定義物件之類別的參考文件。
 
-##  <a name="psISE"></a> **$psISE 物件**
+##  <a name="psise-object"></a>**$psISE 物件**
  **$psISE** 物件是 Windows PowerShell ISE 物件階層的[根物件](The-ObjectModelRoot-Object.md)。 它位於最上層，可提供下列物件來編寫指令碼︰
 
--   **[$psISE.CurrentFile](#currentfile)**
+-   **[$psISE.CurrentFile]()**
 
--   **[$psISE.CurrentPowerShellTab](#currentpowershelltab)**
+-   **[$psISE.CurrentPowerShellTab]()**
 
--   **[$psISE.CurrentVisibleHorizontalTool](#CurrentVisibleHorizontalTool)**
+-   **[$psISE.CurrentVisibleHorizontalTool]()**
 
--   **[$psISE.CurrentVisibleVerticalTool](#CurrentVisibleVerticalTool)**
+-   **[$psISE.CurrentVisibleVerticalTool]()**
 
--   **[$psISE.Options](#options)**
+-   **[$psISE.Options]()**
 
--   **[$psISE.PowerShellTabs](#powershelltabs)**
+-   **[$psISE.PowerShellTabs]()**
 
-##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
+##  <a name="psisecurrentfilethe-isefile-objectmd"></a>**[$psISE.CurrentFile](The-ISEFile-Object.md)**
  **$psISE.CurrentFile** 物件是 [ISEFile](The-ISEFile-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
--   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
+-   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md)**
 
 -   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)** 這個物件是 [ISEEditor](The-ISEEditor-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
+    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md)**
 
-    -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
+    -   **[CaretColumn](The-ISEEditor-Object.md)**
 
-    -   **[CaretLine](The-ISEEditor-Object.md#CaretLine)**
+    -   **[CaretLine](The-ISEEditor-Object.md)**
 
-    -   **[$psISE.CurrentFile.Editor.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**
+    -   **[$psISE.CurrentFile.Editor.CaretLineText](The-ISEEditor-Object.md)**
 
-    -   **[LineCount](The-ISEEditor-Object.md#LineCount)**
+    -   **[LineCount](The-ISEEditor-Object.md)**
 
-    -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
+    -   **[SelectedText](The-ISEEditor-Object.md)**
 
-    -   **[Text](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md)**
 
--   **[Encoding](The-ISEFile-Object.md#Encoding)**
+-   **[EncodingThe-ISEFile-Object.md]()**
 
--   **[FullPath](The-ISEFile-Object.md#FullPath)**
+-   **[FullPathThe-ISEFile-Object.md]()**
 
--   **[IsSaved](The-ISEFile-Object.md#IsSaved)**
+-   **[IsSavedThe-ISEFile-Object.md]()**
 
--   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
+-   **[IsUntitledThe-ISEFile-Object.md]()**
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+##  <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>**[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
  **$psISE.CurrentPowerShellTab** 物件是 [PowerShellTab](The-PowerShellTab-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)** 這個物件是 [ISEMenuItem](The-ISEMenuItem-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Action](The-ISEMenuItem-Object.md#Action)**
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.ActionThe-ISEMenuItem-Object.md]()**
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName](The-ISEMenuItem-Object.md#DisplayName)**
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayNameThe-ISEMenuItem-Object.md]()**
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Shortcut](The-ISEMenuItem-Object.md#Shortcut)**
+    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.ShortcutThe-ISEMenuItem-Object.md]()**
 
     -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](The-ISEMenuItemCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.CanInvoke](The-PowerShellTab-Object.md#CanExecute)**
+-   **[$psISE.CurrentPowerShellTab.CanInvokeThe-PowerShellTab-Object.md]()**
 
 -   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)** 這個物件是 [ISEEditor](The-ISEEditor-Object.md) 類別的執行個體，可提供下列物件來編寫指令碼︰
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatchThe-ISEEditor-Object.md]()**
 
-    -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
+    -   **[CaretColumnThe-ISEEditor-Object.md]()**
 
-    -   **[CaretLine](The-ISEEditor-Object.md#CaretLine)**
+    -   **[CaretLineThe-ISEEditor-Object.md]()**
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineTextThe-ISEEditor-Object.md]()**
 
-    -   **[LineCount](The-ISEEditor-Object.md#LineCount)**
+    -   **[LineCountThe-ISEEditor-Object.md]()**
 
-    -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
+    -   **[SelectedTextThe-ISEEditor-Object.md]()**
 
-    -   **[Text](The-ISEEditor-Object.md#Text)**
+    -   **[TextThe-ISEEditor-Object.md]()**
 
--   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
+-   **[$psISE.CurrentPowerShellTab.DisplayNameThe-PowerShellTab-Object.md]()**
 
--   **[$psISE.CurrentPowerShellTab.ExpandedScript](The-PowerShellTab-Object.md#ExpandedScript)**
+-   **[$psISE.CurrentPowerShellTab.ExpandedScriptThe-PowerShellTab-Object.md]()**
 
 -   **[$psISE.CurrentPowerShellTab.Files](The-ISEFileCollection-Object.md)**
 
 -   **[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**
+-   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpenedThe-PowerShellTab-Object.md]()**
 
--   **[$psISE.CurrentPowerShellTab.Prompt](The-PowerShellTab-Object.md#Prompt)**
+-   **[$psISE.CurrentPowerShellTab.PromptThe-PowerShellTab-Object.md]()**
 
--   **[$psISE.CurrentPowerShellTab.ShowCommands](The-PowerShellTab-Object.md#ShowCommands)**
+-   **[$psISE.CurrentPowerShellTab.ShowCommandsThe-PowerShellTab-Object.md]()**
 
 -   **[$psISE.CurrentPowerShellTab.Snippets](The-ISESnippetCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.StatusText](The-PowerShellTab-Object.md#StatusText)**
+-   **[$psISE.CurrentPowerShellTab.StatusTextThe-PowerShellTab-Object.md]()**
 
 -   **[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
--   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**
+-   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpenedThe-PowerShellTab-Object.md]()**
 
 -   **[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
-##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
+##  <a name="psisecurrentvisiblehorizontaltool"></a>**$psISE.CurrentVisibleHorizontalTool**
  **$psISE.CurrentVisibleHorizontalTool** 物件是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 類別的執行個體。 它代表目前停駐於 Windows PowerShell ISE 視窗頂端的已安裝附加元件工具。 這個物件可提供下列物件來編寫指令碼︰
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.ControlThe-ISEAddOnTool-Object.md]()**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisibleThe-ISEAddOnTool-Object.md]()**
 
--   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
+-   **[$psISE.CurrentVisibleHorizontalTool.NameThe-ISEAddOnTool-Object.md]()**
 
-##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
+##  <a name="psisecurrentvisibleverticaltool"></a>**$psISE.CurrentVisibleVerticalTool**
  **$psISE.CurrentVisibleHorizontalTool** 物件是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 類別的執行個體。 它代表目前停駐於 Windows PowerShell ISE 視窗右邊的已安裝附加元件工具。 這個物件可提供下列物件來編寫指令碼︰
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.ControlThe-ISEAddOnTool-Object.md]()**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisibleThe-ISEAddOnTool-Object.md]()**
 
--   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
+-   **[$psISE.CurrentVisibleHorizontalTool.NameThe-ISEAddOnTool-Object.md]()**
 
-##  <a name="Options"></a> **$psISE.Options**
+##  <a name="psiseoptions"></a>**$psISE.Options**
  **$psISE.Options** 物件可提供下列物件來編寫指令碼︰
 
--   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
+-   **[$psISE.Options.AutoSaveMinuteIntervalThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ConsolePaneBackgroundColor](The-ISEOptions-Object.md#cpbc)**
+-   **[$psISE.Options.ConsolePaneBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#conpfc)**
+-   **[$psISE.Options.ConsolePaneTextForegroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#conptbc)**
+-   **[$psISE.Options.ConsolePaneTextBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#contc)**
+-   **[$psISE.Options.ConsoleTokenColorsThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.DebugBackgroundColor](The-ISEOptions-Object.md#dbc)**
+-   **[$psISE.Options.DebugBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.DebugForegroundColor](The-ISEOptions-Object.md#dfc)**
+-   **[$psISE.Options.DebugForegroundColorThe-ISEOptions-Object.md]()**
 
 -   **[$psISE.Options.DefaultOptions](The-ISEOptions-Object.md)**
 
--   **[$psISE.Options.ErrorBackgroundColor](The-ISEOptions-Object.md#ebc)**
+-   **[$psISE.Options.ErrorBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ErrorForegroundColor](The-ISEOptions-Object.md#efc)**
+-   **[$psISE.Options.ErrorForegroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.FontName](The-ISEOptions-Object.md#fn)**
+-   **[$psISE.Options.FontNameThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.Fontsize](The-ISEOptions-Object.md#fs)**
+-   **[$psISE.Options.FontsizeThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.IntellisenseTimeoutInSeconds](The-ISEOptions-Object.md#itis)**
+-   **[$psISE.Options.IntellisenseTimeoutInSecondsThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.MRUCount](The-ISEOptions-Object.md#mc)**
+-   **[$psISE.Options.MRUCountThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ScriptPaneBackgroundColor](The-ISEOptions-Object.md#spbc)**
+-   **[$psISE.Options.ScriptPaneBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ScriptPaneForegroundColor](The-ISEOptions-Object.md#spfc)**
+-   **[$psISE.Options.ScriptPaneForegroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.SelectedScriptPaneState](The-ISEOptions-Object.md#ssps)**
+-   **[$psISE.Options.SelectedScriptPaneStateThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowDefaultSnippets](The-ISEOptions-Object.md#sds)**
+-   **[$psISE.Options.ShowDefaultSnippetsThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowIntellisenseInConsolePane](The-ISEOptions-Object.md#siicp)**
+-   **[$psISE.Options.ShowIntellisenseInConsolePaneThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowIntellisenseInScriptPane](The-ISEOptions-Object.md#siisp)**
+-   **[$psISE.Options.ShowIntellisenseInScriptPaneThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowLineNumbers](The-ISEOptions-Object.md#sln)**
+-   **[$psISE.Options.ShowLineNumbersThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowOutlining](The-ISEOptions-Object.md#so)**
+-   **[$psISE.Options.ShowOutliningThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowToolBar](The-ISEOptions-Object.md#stb)**
+-   **[$psISE.Options.ShowToolBarThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowWarningBeforeSavingOnRun](The-ISEOptions-Object.md#swbsor)**
+-   **[$psISE.Options.ShowWarningBeforeSavingOnRunThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.ShowWarningForDuplicateFiles](The-ISEOptions-Object.md#swfdf)**
+-   **[$psISE.Options.ShowWarningForDuplicateFilesThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.TokenColors](The-ISEOptions-Object.md#tc)**
+-   **[$psISE.Options.TokenColorsThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
+-   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisenseThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
+-   **[$psISE.Options.UseEnterToSelectScriptPaneIntellisenseThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
+-   **[$psISE.Options.UseLocalHelpThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.VerboseBackgroundColor](The-ISEOptions-Object.md#vbc)**
+-   **[$psISE.Options.VerboseBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.VerboseForegroundColor](The-ISEOptions-Object.md#vfc)**
+-   **[$psISE.Options.VerboseForegroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.WarningBackgroundColor](The-ISEOptions-Object.md#wbc)**
+-   **[$psISE.Options.WarningBackgroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.WarningForegroundColor](The-ISEOptions-Object.md#wfc)**
+-   **[$psISE.Options.WarningForegroundColorThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.XmlTokenColors](The-ISEOptions-Object.md#xtc)**
+-   **[$psISE.Options.XmlTokenColorsThe-ISEOptions-Object.md]()**
 
--   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
+-   **[$psISE.Options.ZoomThe-ISEOptions-Object.md]()**
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+##  <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>**[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
  **$psISE.PowerShellTabs** 物件是 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) 類別的執行個體。 它是所有目前開啟的 PowerShell 索引標籤集合，代表本機電腦上或連線的遠端電腦上可用的 Windows PowerShell 執行環境。 集合中的每個成員都是 [PowerShellTab](The-PowerShellTab-Object.md) 類別的執行個體。
 
 ## <a name="see-also"></a>另請參閱

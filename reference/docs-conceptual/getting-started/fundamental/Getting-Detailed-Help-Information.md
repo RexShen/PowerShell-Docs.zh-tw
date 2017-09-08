@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "取得詳細的說明資訊"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="getting-detailed-help-information"></a>取得詳細的說明資訊
 Windows PowerShell 包含詳細的說明主題，說明 Windows PowerShell 概念和 Windows PowerShell 語言。 此外，還有針對每個 Cmdlet 和提供者，以及許多函式和指令碼的說明主題。
@@ -75,7 +75,7 @@ get-help get-childitem -parameter *
 get-help get-childitem -examples
 ```
 
-如需如何為您撰寫的 Cmdlet 撰寫說明主題的資訊，請參閱 MSDN 中的＜How to Write Cmdlet Help＞(如何撰寫 Cmdlet 說明) 主題。
+如需如何為您撰寫的 Cmdlet 撰寫說明主題的資訊，請參閱 MSDN Library 中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (如何撰寫 Cmdlet 說明)。
 
 ## <a name="getting-conceptual-help"></a>取得概念性說明
 Get-Help Cmdlet 也會顯示有關 Windows PowerShell 中概念性主題的相關資訊，包括 Windows PowerShell 語言的相關主題。 概念性說明主題是以 "about_" 前置詞為開頭，例如 about_line_editing。 (概念性主題的名稱必須以英文輸入，即使是在非英文版的 Windows PowerShell 中也一樣)。
@@ -165,7 +165,7 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-如需如何提供說明主題之線上支援的資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)，並請參閱 MSDN (Microsoft Developer Network) Library 中的＜How to Write Cmdlet Help＞(如何撰寫 Cmdlet 說明) ([http://go.microsoft.com/fwlink/?LinkID=123415](http://go.microsoft.com/fwlink/?LinkID=123415))。
+如需如何提供說明主題之線上支援的資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)，並請參閱 MSDN Library 中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (如何撰寫 Cmdlet 說明)。
 
 ## <a name="see-also"></a>另請參閱
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)

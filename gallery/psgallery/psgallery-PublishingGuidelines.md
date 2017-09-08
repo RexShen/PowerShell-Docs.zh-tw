@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "發行者的指導方針"
 title: "PowerShell 資源庫發行指導方針與最佳做法"
-ms.openlocfilehash: 394e69e189761f3c5a4bb54dfa8df15c4ab240d6
-ms.sourcegitcommit: e63f09c005b6bbf39c3c001944f307c2b155765b
+ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -69,9 +69,9 @@ PSScriptAnalyzer 會識別出 PowerShell 程式碼中最常見的問題，且通
 使用者通常會略過沒有文件的項目，因為可以選擇閱讀程式碼來了解該項目是什麼及如何使用它。
 MSDN 中提供數篇有關如何隨 PowerShell 項目提供文件的文章，包括：
 
-* 如需提供說明的指導方針，請參閱[如何撰寫 Cmdlet 說明](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx) \(英文\)
+* 如需提供說明的指導方針，請參閱[如何撰寫 Cmdlet 說明](https://go.microsoft.com/fwlink/?LinkID=123415) \(英文\)
 * 建立 Cmdlet 說明，這是適用於所有 PowerShell 指令碼、函式或 Cmdlet 的最佳做法。
-  如需有關如何建立 Cmdlet 說明的資訊，請從 MSDN (Microsoft Developer Network) 文件庫中的[如何撰寫 Cmdlet 說明](http://go.microsoft.com/fwlink/?LinkID=123415) \(英文\) 開始著手。
+  如需如何建立 Cmdlet 說明的資訊，請從 MSDN Library 中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (如何撰寫 Cmdlet 說明) 開始著手。
   若要在指令碼中新增說明，請參閱[關於註解型說明](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help) \(英文\)。
 * 許多模組也包含文字格式的文件，例如 MarkDown 檔案。
   當 Github 中有大量使用 Markdown 格式的專案網站時，這會特別有用。

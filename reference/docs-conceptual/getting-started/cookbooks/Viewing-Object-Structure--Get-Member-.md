@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "檢視物件結構 Get Member"
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: eaa6cc44ecab04c76b90418115f388f6ff30e437
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="viewing-object-structure-get-member"></a>檢視物件結構 (Get-Member)
 因為物件在 Windows PowerShell 中播放這類重要角色，所以有數個設計成使用任意物件類型的原生命令。 最重要的是 **Get-Member** 命令。
@@ -37,7 +37,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-我們可以篩選想要查看的元素，以讓這份長資訊清單更為有用。 **Get-Member** 命令可讓您只列出為屬性的成員。 有數種形式的屬性。 如果我們將 **Get-MemberMemberType** 參數設為值 **Properties**，這個 Cmdlet 會顯示任何類型的屬性。 產生的清單仍然很長，但更容易管理︰
+我們可以篩選想要查看的元素，以讓這份長資訊清單更為有用。 **Get-Member** 命令可讓您只列出為屬性的成員。 有數種形式的屬性。 如果我們將 **Get-Member MemberType** 參數設為值 **Properties**，則這個 Cmdlet 會顯示任何類型的屬性。 產生的清單仍然很長，但更容易管理︰
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
@@ -65,7 +65,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 處理序有 60 個以上的屬性。 Windows PowerShell 通常僅顯示任何已知物件之少數屬性的原因，在於顯示其所有項目將會產生無法管理的資訊量。
 
 > [!NOTE]
-> Windows PowerShell 使用名稱結尾為 .format.ps1xml 的 XML 檔案中所儲存的資訊，來決定如何顯示物件類型。 Process 物件 (即 .NET System.Diagnostics.Process 物件) 的格式資料儲存在 PowerShellCore.format.ps1xml 中。
+> Windows PowerShell 使用名稱結尾為 .format.ps1xml 的 XML 檔案中所儲存的資訊，來決定如何顯示物件類型。 Process 物件 (即 .NET System.Diagnostics.Process 物件) 的格式資料儲存在 DotNetTypes.format.ps1xml 中。
 
 如果您需要查看 Windows PowerShell 預設所顯示屬性以外的屬性，則需要自行格式化輸出資料。 使用格式 Cmdlet 來完成這個動作。
 
