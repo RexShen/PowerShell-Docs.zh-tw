@@ -2,12 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEEditor 物件"
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 物件
   **ISEEditor** 物件是 Microsoft.PowerShell.Host.ISE.ISEEditor 類別的執行個體。 主控台窗格是 **ISEEditor** 物件。 每個 [ISEFile](The-ISEFile-Object.md) 物件都有相關聯的 **ISEEditor** 物件。 下列各節將列出 **ISEEditor** 物件的方法和屬性。
@@ -63,7 +62,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
- 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。 請參閱 [CanGoToMatch]()。
+ 如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - 字串：要插入的文字。
 
- 請參閱本主題稍後的[指令碼範例]()。
+ 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
@@ -91,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - 整數：選取範圍結束位置之結尾行內的欄。
 
- 請參閱本主題稍後的[指令碼範例]()。
+ 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
@@ -131,7 +130,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## <a name="properties"></a>[內容]
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+### <a name="cangotomatch"></a>CanGoToMatch
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 
 
  唯讀的布林值屬性，可指出插入點是否位於括弧、括號或大括弧 (\(\)、\[\]、{}) 旁邊。 如果插入號是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 **$true**。 否則為 **$false**。
@@ -141,7 +140,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+### <a name="caretcolumn"></a>CaretColumn
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得對應至插入號位置的欄號。
@@ -151,7 +150,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+### <a name="caretline"></a>CaretLine
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得包含插入號的行號。
@@ -161,7 +160,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="CaretLineText"></a> CaretLineText
+### <a name="caretlinetext"></a>CaretLineText
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得包含插入號的整行文字。
@@ -171,7 +170,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+### <a name="linecount"></a>LineCount
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可從編輯器取得行數。
@@ -181,21 +180,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+### <a name="selectedtext"></a>SelectedText
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可從編輯器取得選取的文字。
 
- 請參閱本主題稍後的[指令碼範例]()。
+ 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
 
-###  <a name="Text"></a> Text
+### <a name="text"></a>文字
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可在編輯器中取得或設定文字。
 
- 請參閱本主題稍後的[指令碼範例]()。
+ 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
 
-##  <a name="example"></a> 指令碼範例
+## <a name="scripting-example"></a>指令碼範例
 
 ```powershell
 # This illustrates how you can use the length of a line to

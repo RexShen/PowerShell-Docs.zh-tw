@@ -8,15 +8,15 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: install pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: c15215935eb70f082d13b93a0bf040aaf00a04de
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: a608a6272d3eae56ccf808b9d94525ca39df50cb
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="install-pswawebapplication"></a>Install-PswaWebApplication
+# <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
-##  <a name="synopsis"></a>概要
+## <a name="synopsis"></a>概要
 
 在 IIS 中設定 Windows PowerShell® Web 存取 Web 應用程式。
 
@@ -106,7 +106,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 此 Cmdlet 不會接受任何輸入。
 
-##  <a name="outputs"></a>輸出
+## <a name="outputs"></a>輸出
 
 此 Cmdlet 不會產生任何輸出。
 
@@ -128,9 +128,9 @@ Install-PswaWebApplication
 Install-PswaWebApplication -UseTestCertificate
 ```
 
-##  <a name="related-topics"></a>相關主題
+## <a name="related-topics"></a>相關主題
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

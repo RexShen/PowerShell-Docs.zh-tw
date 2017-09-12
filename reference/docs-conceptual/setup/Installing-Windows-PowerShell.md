@@ -2,11 +2,11 @@
 ms.date: 2017-08-09
 keywords: "powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7"
 title: "安裝 Windows PowerShell"
-ms.openlocfilehash: 7a1a4bff461e3012a06a82faf4015a05b8560895
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: 7ccbee66d01dd8e0e6e6ab09c6c8a399bee59ce8
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
 
@@ -14,8 +14,8 @@ ms.lasthandoff: 08/18/2017
 
 想要在機器中安裝 **PowerShell 6** (beta) 的 Linux、macOS 和 Windows 使用者，必須：
 
-1.  從 [GitHub](https://github.com/powershell/powershell#get-powershell) 取得特定 OS 和版本適用的 PowerShell
-1.  依照安裝指示操作
+1. 從 [GitHub](https://github.com/powershell/powershell#get-powershell) 取得特定 OS 和版本適用的 PowerShell
+1. 依照安裝指示操作
   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
   - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
   - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)

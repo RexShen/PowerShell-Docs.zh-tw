@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "管理 Windows PowerShell 磁碟機"
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e2908246bb584291f04b67dc8635caec93d3b72e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 磁碟機
 *Windows PowerShell 磁碟機*是一個資料存放區位置，存取該位置的方式就像存取 Windows PowerShell 中的檔案系統磁碟機一樣。 Windows PowerShell 提供者會為您建立一些磁碟機，例如檔案系統磁碟機 (包括 C: 與 D:)、登錄磁碟機 (HKCU: 與 HKLM:) 與憑證磁碟機 (Cert:)，而且您可以建立自己的 Windows PowerShell 磁碟機。 這些磁碟機非常實用，但只能在 Windows PowerShell 中使用。 您無法使用其他 Windows 工具 (例如 [檔案總管] 或 Cmd.exe) 來存取它們。
@@ -86,11 +86,11 @@ ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 
 若要建立新的 Windows PowerShell 磁碟機，您必須提供三個參數：
 
--   磁碟機的名稱 (您可以使用任何有效的 Windows PowerShell 名稱)
+- 磁碟機的名稱 (您可以使用任何有效的 Windows PowerShell 名稱)
 
--   PSProvider (使用 "FileSystem" 代表檔案系統位置；使用 "Registry" 代表登錄位置)
+- PSProvider (使用 "FileSystem" 代表檔案系統位置；使用 "Registry" 代表登錄位置)
 
--   根目錄，亦即新磁碟機的根目錄路徑
+- 根目錄，亦即新磁碟機的根目錄路徑
 
 例如，您可以建立名為 "Office" 的磁碟機，將它對應到您電腦上包含 Microsoft Office 應用程式的資料夾，例如 **C:\\Program Files\\Microsoft Office\\OFFICE11**。 若要建立該磁碟機，請輸入下列命令：
 

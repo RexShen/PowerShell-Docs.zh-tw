@@ -1,20 +1,20 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEMenuItem 物件"
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-ms.openlocfilehash: 33de866d706ec2b0894c5bfe49e07fee142b95c0
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 5561955040e56110a6af0619c286548f5812fb47
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem 物件
   **ISEMenuItem** 物件是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 類別的執行個體。 [附加元件] 功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
 
 ## <a name="properties"></a>[內容]
 
-###  <a name="DisplayName"></a> DisplayName
+### <a name="displayname"></a>DisplayName
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得功能表項目的顯示名稱。
@@ -27,7 +27,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="Action"></a> Action
+### <a name="action"></a>動作
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得指令碼的區塊。 當您按一下功能表項目，它會叫用動作。
@@ -42,7 +42,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+### <a name="shortcut"></a>捷徑
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得功能表項目的 Windows 輸入鍵盤快速鍵。
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="Submenus"></a> Submenus
+### <a name="submenus"></a>子功能表
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可取得功能表項目的[子功能表清單](The-ISEMenuItemCollection-Object.md)。
@@ -87,7 +87,5 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 ## <a name="see-also"></a>另請參閱
 - [ISEMenuItemCollection 物件](The-ISEMenuItemCollection-Object.md) 
 - [Windows PowerShell ISE 指令碼物件模型](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE 物件模型參考](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [ISE 物件模型階層](The-ISE-Object-Model-Hierarchy.md)
-
-  

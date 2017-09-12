@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中使用設定檔"
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: 6b16291b7025928a307380cbae75fcdbdb51a73d
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: f959aeb91eecc8056c91c56162ea9bff53537be9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用設定檔
 本主題說明如何在 Windows PowerShell® 整合式指令碼環境 (ISE) 中使用設定檔。 建議您在執行本節所述的工作之前，先檢閱 [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))，或在 [主控台] 窗格中輸入 `Get-Help about_Profiles`，然後按 **ENTER** 鍵。
@@ -22,9 +22,9 @@ Windows PowerShell ISE 支援目前使用者和所有使用者的設定檔。 �
 
 您使用的設定檔取決於您使用 Windows PowerShell 和 Windows PowerShell ISE 的方式。
 
--   如果只使用 Windows PowerShell ISE 來執行 Windows PowerShell，則要將所有項目儲存到 ISE 特定的其中一個設定檔，例如，適用於 Windows PowerShell ISE 的 CurrentUserCurrentHost 設定檔，或者適用於 Windows PowerShell ISE 的 AllUsersCurrentHost 設定檔。
+- 如果只使用 Windows PowerShell ISE 來執行 Windows PowerShell，則要將所有項目儲存到 ISE 特定的其中一個設定檔，例如，適用於 Windows PowerShell ISE 的 CurrentUserCurrentHost 設定檔，或者適用於 Windows PowerShell ISE 的 AllUsersCurrentHost 設定檔。
 
--   如果使用多個主機程式來執行 Windows PowerShell，請在影響所有主機程式的設定檔 (例如 CurrentUserAllHosts 或 AllUsersAllHosts 設定檔) 中儲存您的函式、別名、變數和命令，並在適用於 Windows PowerShell ISE 設定檔的 CurrentUserCurrentHost 設定檔或適用於 Windows PowerShell ISE 的 AllUsersCurrentHost 設定檔中儲存 ISE 特定的功能 (例如色彩和字型自訂)。
+- 如果使用多個主機程式來執行 Windows PowerShell，請在影響所有主機程式的設定檔 (例如 CurrentUserAllHosts 或 AllUsersAllHosts 設定檔) 中儲存您的函式、別名、變數和命令，並在適用於 Windows PowerShell ISE 設定檔的 CurrentUserCurrentHost 設定檔或適用於 Windows PowerShell ISE 的 AllUsersCurrentHost 設定檔中儲存 ISE 特定的功能 (例如色彩和字型自訂)。
 
 以下是可在 Windows PowerShell ISE 中建立及使用的設定檔。 每個設定檔會儲存到自己的特定路徑。
 
@@ -66,15 +66,15 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>編輯設定檔
 
-1.  若要開啟設定檔，請執行命令 psedit，並提供指定您要編輯之設定檔的變數。 例如，若要開啟 “Current user, Windows PowerShell ISE” 設定檔，請輸入︰`psEdit $PROFILE`
+1. 若要開啟設定檔，請執行命令 psedit，並提供指定您要編輯之設定檔的變數。 例如，若要開啟 “Current user, Windows PowerShell ISE” 設定檔，請輸入︰`psEdit $PROFILE`
 
-2.  將一些項目新增至您的設定檔。 以下是一些可協助您開始的範例︰
+2. 將一些項目新增至您的設定檔。 以下是一些可協助您開始的範例︰
 
-    -   若要將主控台窗格的預設背景色彩變更為藍色，請在設定檔中輸入︰`$psISE.Options.OutputPaneBackground = 'blue'`。 如需 $psISE 變數的詳細資訊，請參閱 [Windows PowerShell ISE 物件模型參考]()。
+    -   若要將主控台窗格的預設背景色彩變更為藍色，請在設定檔中輸入︰`$psISE.Options.OutputPaneBackground = 'blue'`。 如需 $psISE 變數的詳細資訊，請參閱 [Windows PowerShell ISE 物件模型參考](The-ISE-Object-Model-Hierarchy.md)。
 
     -   若要將字型大小變更為 20，請在設定檔中輸入︰`$psISE.Options.FontSize =20`
 
-3.  若要儲存設定檔，請在 **[檔案]** 功能表上，按一下 **[儲存]**。 下次當您開啟 Windows PowerShell ISE 時，便會套用您的自訂。
+3. 若要儲存設定檔，請在 **[檔案]** 功能表上，按一下 **[儲存]**。 下次當您開啟 Windows PowerShell ISE 時，便會套用您的自訂。
 
 ## <a name="see-also"></a>另請參閱
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))

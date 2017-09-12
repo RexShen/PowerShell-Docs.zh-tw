@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 整合式指令碼環境 ISE"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 93b3322ae5634d3611f3c2743e7460e266dc7ab8
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e5c4e6ef002d6d6ede014a3147d1fed15f6d76d8
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 整合式指令碼環境 (ISE)
 Windows PowerShell 整合式指令碼環境 (ISE) 是 Windows PowerShell 引擎和語言之兩部主機的其中一部。 您可以使用它，透過 Windows PowerShell 主控台中無法使用的方式來撰寫、執行和測試指令碼。 ISE 新增語法著色、Tab 鍵自動完成、IntelliSense、視覺化偵錯和即時線上說明。
@@ -34,21 +34,21 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 **新編輯器功能**可輕鬆地建立和讀取您的程式碼︰
 
--   **XML 語法著色**。 ISE 編輯器現在將 XML 語法著色，方法與將 Windows PowerShell 程式碼語法著色相同。
+- **XML 語法著色**。 ISE 編輯器現在將 XML 語法著色，方法與將 Windows PowerShell 程式碼語法著色相同。
 
--   **括號對稱**。 Windows PowerShell ISE 會反白顯示對稱的括號，協助您確保左右括號數目相符。 使用 CTRL- \[ 找出與游標所在左括號對稱的右括號。
+- **括號對稱**。 Windows PowerShell ISE 會反白顯示對稱的括號，協助您確保左右括號數目相符。 使用 CTRL- \[ 找出與游標所在左括號對稱的右括號。
 
--   **大綱檢視**。 您可以按一下左邊界的加號和減號，來摺疊或展開程式碼區段。 這可讓您更輕鬆地找到您要在長指令碼中尋找的程式碼。
+- **大綱檢視**。 您可以按一下左邊界的加號和減號，來摺疊或展開程式碼區段。 這可讓您更輕鬆地找到您要在長指令碼中尋找的程式碼。
 
--   **拖放文字編輯**。 您可以選取某區塊的文字，並將它拖曳至另一個位置來移動它。 如果您在按住 Ctrl 鍵時拖曳選取的文字，則會進行複製，而不是移動。
+- **拖放文字編輯**。 您可以選取某區塊的文字，並將它拖曳至另一個位置來移動它。 如果您在按住 Ctrl 鍵時拖曳選取的文字，則會進行複製，而不是移動。
 
--   **剖析錯誤顯示**。 當您輸入時，Windows PowerShell 會檢查您的指令碼。 如果它偵測到錯誤，則會在違規程式碼下顯示紅色曲線。 暫留於指示的錯誤時，工具提示會顯示發現的問題。
+- **剖析錯誤顯示**。 當您輸入時，Windows PowerShell 會檢查您的指令碼。 如果它偵測到錯誤，則會在違規程式碼下顯示紅色曲線。 暫留於指示的錯誤時，工具提示會顯示發現的問題。
 
--   **縮放**。 您可以使用 ISE 視窗右下角的滑桿來放大文字以輕鬆地讀取，或縮小來查看較大的圖片。
+- **縮放**。 您可以使用 ISE 視窗右下角的滑桿來放大文字以輕鬆地讀取，或縮小來查看較大的圖片。
 
--   **RTF 複製與貼上**。 從 ISE 複製到剪貼簿時，會包括所選取文字的字型、大小和色彩資訊。
+- **RTF 複製與貼上**。 從 ISE 複製到剪貼簿時，會包括所選取文字的字型、大小和色彩資訊。
 
--   **區塊選擇**。 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt+Shift+方向鍵**，就可以選取一個區塊形狀的文字區塊。
+- **區塊選擇**。 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt+Shift+方向鍵**，就可以選取一個區塊形狀的文字區塊。
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 的新功能 (Windows Server 2008 R2、Windows 7)
 ISE 是在 PowerShell 2.0 版引進。

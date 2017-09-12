@@ -2,13 +2,13 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "解除安裝 Windows PowerShell Web 存取"
-ms.openlocfilehash: 6b75eadb7264d7478fb3c9bc2b2ff355772ef4c2
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 7c71a245be244c1883598cdcddbf35e43c0fc7b0
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
+# <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
 更新日期︰2013 年 6 月 24 日
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 08/31/2017
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>步驟 2：使用 Cmdlet 解除安裝 Windows PowerShell Web 存取
 
-1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。 如果已經開啟工作階段，請移至下一個步驟。
+1. 執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。 如果已經開啟工作階段，請移至下一個步驟。
 
     -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 

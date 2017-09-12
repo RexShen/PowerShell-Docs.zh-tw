@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "啟動 Windows PowerShell"
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: ec7ecc3214d727d55b41282fc5a5cb2e77cb84ba
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: a8dcf04078228624023387cea3ab8e81ee6eb0a4
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-windows-powershell"></a>啟動 Windows PowerShell
 PowerShell 是指令碼引擎 dll，且會內嵌到多部主機中。  互動式命令列 PowerShell.exe 和互動式指令碼環境 PowerShell_ISE.exe 是您將啟動的最常見主機。  
@@ -18,11 +18,11 @@ PowerShell 是指令碼引擎 dll，且會內嵌到多部主機中。  互動式
 
 主題包括：
 
--   [在舊版 Windows 上啟動 Windows PowerShell](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
+- [在舊版 Windows 上啟動 Windows PowerShell](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 
--   [啟動 32 位元版本的 Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+- [啟動 32 位元版本的 Windows PowerShell](Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
 
--   [啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)
+- [啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="see-also"></a>另請參閱
 - [Windows PowerShell 系統需求](Windows-PowerShell-System-Requirements.md)

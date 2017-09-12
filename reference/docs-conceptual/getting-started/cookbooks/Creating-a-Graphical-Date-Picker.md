@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "建立圖形化日期選擇器"
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 5cb952264092d345945318968cf0b3028b11f3e9
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 7be72be7e9732737f00b15b6b2b83adcca4393ae
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="creating-a-graphical-date-picker"></a>建立圖形化日期選擇器
 使用 Windows PowerShell 3.0 與更新的版本建立表單，表單上具有圖形化日曆樣式控制項，可讓使用者選取月份中的某個日期。
@@ -65,11 +65,11 @@ $form = New-Object Windows.Forms.Form
 
 建立 Form 類別的執行個體之後，指派值給此類別的三個屬性。
 
--   **Text**。 這會成為視窗的標題。
+- **Text**。 這會成為視窗的標題。
 
--   **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 243 像素寬、230 像素高的表單。
+- **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 243 像素寬、230 像素高的表單。
 
--   **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
+- **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
 
 ```
 $form.Text = "Select a Date" 

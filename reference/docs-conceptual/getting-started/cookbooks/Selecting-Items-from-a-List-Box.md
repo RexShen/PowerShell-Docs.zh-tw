@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "從清單方塊選取項目"
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: 39a5375b7f00c4b8332b28bf6ead011c4b21883e
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 5b41ebfb193062a17abcc6ad6ddf1a2d9241a39e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="selecting-items-from-a-list-box"></a>從清單方塊選取項目
 使用 Windows PowerShell 3.0 和更新的版本，來建立讓使用者從清單方塊控制項選取項目的對話方塊。
@@ -81,11 +81,11 @@ Add-Type -AssemblyName System.Drawing
 
 建立 Form 類別的執行個體之後，指派值給此類別的三個屬性。
 
--   **Text**。 這會成為視窗的標題。
+- **Text**。 這會成為視窗的標題。
 
--   **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
+- **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
 
--   **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
+- **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
 
 ```
 $form.Text = "Select a Computer"

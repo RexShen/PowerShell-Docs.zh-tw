@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "多重選擇清單方塊"
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-ms.openlocfilehash: 85167ea25044f0ee587dc817460e8f13869be4bd
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 122014888bc5cf93c1c709b9d534d572037f5ffe
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="multiple-selection-list-boxes"></a>多重選擇清單方塊
 使用 Windows PowerShell 3.0 與更新的版本，在自訂的 Windows Form 中建立多重選擇清單方塊控制項。
@@ -79,11 +79,11 @@ $form = New-Object System.Windows.Forms.Form
 
 建立 Form 類別的執行個體之後，指派值給此類別的三個屬性。
 
--   **Text**。 這會成為視窗的標題。
+- **Text**。 這會成為視窗的標題。
 
--   **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
+- **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
 
--   **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
+- **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將 **StartingPosition** 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
 
 ```
 $form.Text = "Data Entry Form"

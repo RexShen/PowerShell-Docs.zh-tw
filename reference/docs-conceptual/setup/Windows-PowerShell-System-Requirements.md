@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 系統需求"
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 550d8adab18941da3204e0aea8fc8a70f890c289
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 13ec699d39400b6698b6220c28cd12d06b5e681e
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
 本主題列出 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
@@ -17,39 +17,39 @@ Windows® 8.1 和 Windows Server® 2012 R2 包含所有必要的程式。 本主
 ## <a name="operating-system-requirements"></a>作業系統需求
 Windows PowerShell 5.0 在下列版本的 Windows 上執行。
 
--   Windows Server 2016；預設會加以安裝
+- Windows Server 2016；預設會加以安裝
 
--   Windows Server 2012 R2；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows Server 2012 R2；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
 
--   Windows Server 2012；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows Server 2012；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
 
--   Windows Server® 2008 R2 Service Pack 1)；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows Server® 2008 R2 Service Pack 1)；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
 
--   Windows 8.1
+- Windows 8.1
 
--   Windows 7 Service Pack 1；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows 7 Service Pack 1；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
 
 Windows PowerShell 4.0 是在下列版本的 Windows 上執行。
 
--   預設安裝的 Windows 8.1
+- 預設安裝的 Windows 8.1
 
--   預設安裝的 Windows Server 2012 R2
+- 預設安裝的 Windows Server 2012 R2
 
--   Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) 來執行 Windows PowerShell 4.0
+- Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) 來執行 Windows PowerShell 4.0
 
--   Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) 來執行 Windows PowerShell 4.0
+- Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) 來執行 Windows PowerShell 4.0
 
 Windows PowerShell 3.0 是在下列版本的 Windows 上執行。
 
--   預設安裝的 Windows 8
+- 預設安裝的 Windows 8
 
--   預設安裝的 Windows Server 2012
+- 預設安裝的 Windows Server 2012
 
--   Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
+- Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
--   Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
+- Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
--   Windows Server 2008 (含 Service Pack 2)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
+- Windows Server 2008 (含 Service Pack 2)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework 需求
 Windows PowerShell 5.0 需要安裝完整的 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 預設包含 Microsoft .NET Framework 4.5。
@@ -79,9 +79,9 @@ Windows PowerShell 是不需要圖形化使用者介面的主控台應用程式�
 
 不過，某些項目 (例如下列項目) 需要圖形化使用者介面。 如需詳細資料，請參閱每個項目的說明主題。
 
--   Windows PowerShell 整合式指令碼環境 (ISE)
+- Windows PowerShell 整合式指令碼環境 (ISE)
 
--   Cmdlet
+- Cmdlet
 
     1.  [Out-GridView](https://technet.microsoft.com/en-us/library/70915a86-d753-464e-8349-cba02316154c)
 
@@ -91,7 +91,7 @@ Windows PowerShell 是不需要圖形化使用者介面的主控台應用程式�
 
     4.  [Show-EventLog](https://technet.microsoft.com/en-us/library/a3b0f5ad-0438-42c7-915b-d1b4793a431c)
 
--   參數
+- 參數
 
     1.  [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 的 **ShowWindow** 參數。
 
@@ -109,15 +109,15 @@ Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 
 ## <a name="windows-preinstallation-environment"></a>Windows 預先安裝環境
 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能在 Windows 預先安裝環境 (Windows PE) 中執行。 不過，不支援下列 Cmdlet。
 
--   [背景智慧型傳送服務 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [背景智慧型傳送服務 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
 
--   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
+- [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+- [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
--   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
+- [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
--   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
+- [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
 此外，Windows PE 上沒有 **WinRm** 服務。
 

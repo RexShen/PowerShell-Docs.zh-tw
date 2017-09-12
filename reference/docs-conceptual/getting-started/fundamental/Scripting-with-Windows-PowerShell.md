@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用 Windows PowerShell 撰寫指令碼"
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: ac276938c71fa1627a2c9d3346269b89950184d9
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="scripting-with-windows-powershell"></a>使用 Windows PowerShell 撰寫指令碼
 
@@ -17,10 +17,10 @@ Windows PowerShell 命令 (稱為 *Cmdlet*) 可讓您從命令列管理電腦。
 
 Windows PowerShell 包含下列功能：
 
--   用來執行一般系統管理工作 (例如管理登錄、服務、處理程序與事件記錄檔) 以及使用 Windows Management Instrumentation (WMI) 的 Cmdlet。
--   適用於現有指令碼和命令列工具的工作型指令碼語言與支援。
--   一致的設計。 因為 Cmdlet 和系統資料存放區使用通用語法和命名慣例，資料可以輕易地共用，且一個 Cmdlet 的輸出可以做為另一個 Cmdlet 的輸入，而不需要重新格式化或操作。
--   作業系統的簡化命令型瀏覽，可讓使用者使用瀏覽檔案系統的相同技巧，瀏覽登錄與其他資料存放區。
--   強大的物件操作功能。 物件可以直接操作或傳送到其他工具或資料庫。
--   可延伸介面。 獨立軟體廠商和企業開發人員可以建置自訂工具和公用程式來管理其軟體。
+- 用來執行一般系統管理工作 (例如管理登錄、服務、處理程序與事件記錄檔) 以及使用 Windows Management Instrumentation (WMI) 的 Cmdlet。
+- 適用於現有指令碼和命令列工具的工作型指令碼語言與支援。
+- 一致的設計。 因為 Cmdlet 和系統資料存放區使用通用語法和命名慣例，資料可以輕易地共用，且一個 Cmdlet 的輸出可以做為另一個 Cmdlet 的輸入，而不需要重新格式化或操作。
+- 作業系統的簡化命令型瀏覽，可讓使用者使用瀏覽檔案系統的相同技巧，瀏覽登錄與其他資料存放區。
+- 強大的物件操作功能。 物件可以直接操作或傳送到其他工具或資料庫。
+- 可延伸介面。 獨立軟體廠商和企業開發人員可以建置自訂工具和公用程式來管理其軟體。
 

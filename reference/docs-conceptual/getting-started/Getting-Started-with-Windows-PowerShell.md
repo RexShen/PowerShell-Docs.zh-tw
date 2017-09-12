@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "開始使用 Windows PowerShell"
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: 8dbdd5d7b2dcb80e5562ff0f0f211b2baf5357cf
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="getting-started-with-windows-powershell"></a>開始使用 Windows PowerShell
 Windows PowerShell 是專為系統管理員所設計的 Windows 命令列殼層。 Windows PowerShell 包含互動式提示和指令碼環境，可獨立使用或搭配使用。
@@ -22,11 +22,11 @@ Windows PowerShell 引進 Cmdlet (唸成 "command-let") 概念，這是內建於
 
 本主題內容：
 
--   [Windows PowerShell 系統需求](../setup/Windows-PowerShell-System-Requirements.md)
+- [Windows PowerShell 系統需求](../setup/Windows-PowerShell-System-Requirements.md)
 
--   [安裝 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
+- [安裝 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
--   [啟動 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
+- [啟動 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
 
--   [準備好使用 Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
+- [準備好使用 Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)
 

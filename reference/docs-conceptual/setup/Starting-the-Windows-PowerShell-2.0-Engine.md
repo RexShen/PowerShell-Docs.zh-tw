@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "啟動 Windows PowerShell 2.0 引擎"
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 15f578e2fbf0b10afa307cde0a32123a8026a282
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>啟動 Windows PowerShell 2.0 引擎
 本節說明如何在 Windows 8.1、Windows Server 2012 R2、Windows 8 及 Windows Server 2012 (其中包括 Windows PowerShell 2.0 引擎) 上啟動 Windows PowerShell 2.0 引擎，以及在安裝 Windows PowerShell 2.0、Windows PowerShell 3.0 及 Windows PowerShell 4.0 的其他系統上啟動此引擎。
@@ -39,7 +39,7 @@ PowerShell.exe -Version 2
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>啟動遠端 Windows PowerShell 2.0 工作階段
 
-1.  若要建立需要 Windows PowerShell 2.0 引擎的工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數 (值為 "2.0")。 在「伺服器端」或連線接收端的電腦上，執行此命令。
+1. 若要建立需要 Windows PowerShell 2.0 引擎的工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數 (值為 "2.0")。 在「伺服器端」或連線接收端的電腦上，執行此命令。
 
     下列範例命令會在 Server01 電腦上建立 PS2 工作階段設定。 若要執行此命令，使用 [以系統管理員身分執行] 選項來啟動 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
 
@@ -47,7 +47,7 @@ PowerShell.exe -Version 2
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  若要在 Server01 電腦上建立使用 PS2 工作階段設定的工作階段，請使用建立遠端工作階段之 Cmdlet 的 **ConfigurationName** 參數 (例如 [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) Cmdlet)。
+2. 若要在 Server01 電腦上建立使用 PS2 工作階段設定的工作階段，請使用建立遠端工作階段之 Cmdlet 的 **ConfigurationName** 參數 (例如 [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) Cmdlet)。
 
     當使用工作階段設定的工作階段啟動時，會將 Windows PowerShell 2.0 引擎自動載入工作階段。
 

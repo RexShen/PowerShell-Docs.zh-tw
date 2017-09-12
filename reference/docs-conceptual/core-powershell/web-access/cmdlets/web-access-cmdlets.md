@@ -8,13 +8,13 @@ keywords: powershell,cmdlet
 ms.date: 2016-12-12
 title: "Web 存取 Cmdlet"
 ms.technology: powershell
-ms.openlocfilehash: ac8717c2aa97d0482b4d88f1b57d621d7ff47535
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web 存取 Cmdlet
+# <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web 存取 Cmdlet
 
 本參考文件提供所有 Windows PowerShell® Web 存取特定 Cmdlet 的 Cmdlet 說明和語法。 Cmdlet 清單以 Cmdlet 開頭動詞的字母順序排列。
 
@@ -54,13 +54,13 @@ ms.lasthandoff: 08/31/2017
 
 如需詳細資訊，您可以執行下列任一個 Cmdlet：
 
--  `Get-Help `&lt;Cmdlet 名稱&gt;` -Detailed`
--  `Get-Help `&lt;Cmdlet 名稱&gt;` -Examples`
--  `Get-Help `&lt;Cmdlet 名稱&gt;` -Full`
+- `Get-Help `&lt;Cmdlet 名稱&gt;` -Detailed`
+- `Get-Help `&lt;Cmdlet 名稱&gt;` -Examples`
+- `Get-Help `&lt;Cmdlet 名稱&gt;` -Full`
 
 ### <a name="more-information"></a>更多資訊
 
 如需 PowerShell Web 存取的詳細資訊，請參閱：
 
--   [安裝和使用 Windows PowerShell Web 存取](../install-and-use-windows-powershell-web-access.md)
+- [安裝和使用 Windows PowerShell Web 存取](../install-and-use-windows-powershell-web-access.md)
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用檔案、資料夾與登錄機碼"
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用檔案、資料夾與登錄機碼
 Windows PowerShell 使用名詞 **Item** 參照在 Windows PowerShell 磁碟機上找到的項目。 使用 Windows PowerShell FileSystem 提供者時，**Item** 可能是檔案、資料夾或 Windows PowerShell 磁碟機。 在大部分的系統管理設定中，列出及使用這些項目是很重要的基本工作，因此，我們要詳細討論這些工作。
@@ -77,11 +77,11 @@ Get-ChildItem -Path C:\Windows -Force
 
 因為萬用字元比對是由 Windows PowerShell 引擎處理，接受萬用字元的所有 Cmdlet 都會使用相同的標記法，並有相同的比對行為。 Windows PowerShell 萬用字元標記法包括：
 
--   星號 (\*) 會比對任一字元零次或更多次。
+- 星號 (\*) 會比對任一字元零次或更多次。
 
--   問號 (?) 會精確比對一個字元。
+- 問號 (?) 會精確比對一個字元。
 
--   左中括弧 (\[) 字元與右中括弧 (]) 字元是用來夾住要比對的一組字元。
+- 左中括弧 (\[) 字元與右中括弧 (]) 字元是用來夾住要比對的一組字元。
 
 以下是萬用字元規格如何運作的一些範例。
 
