@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEOptions 物件"
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
-ms.openlocfilehash: a43628a216b0757e1bf7738439975ed1b081b9ec
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 5e04adeebacfb9214bf39d9ec9c5f0e01f5729ee
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 物件
   **ISEOptions** 物件代表適用於 Windows PowerShell ISE 的各種設定。 它是 **Microsoft.PowerShell.Host.ISE.ISEOptions** 類別的執行個體。
@@ -16,7 +16,7 @@ ms.lasthandoff: 08/31/2017
 
 ## <a name="methods"></a>方法
 
-###  <a name="restoredefaultconsoletokencolors"></a>RestoreDefaultConsoleTokenColors\(\)
+### <a name="restoredefaultconsoletokencolors"></a>RestoreDefaultConsoleTokenColors\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
  還原主控台窗格中語彙基元色彩的預設值。
@@ -27,7 +27,7 @@ $psISE.Options.ConsoleTokenColors["Command"] = "red"
 $psISE.Options.RestoreDefaultConsoleTokenColors()
 ```
 
-###  <a name="restoredefaults"></a>RestoreDefaults\(\)
+### <a name="restoredefaults"></a>RestoreDefaults\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
  還原主控台窗格中所有選項設定的預設值。 它也會重設各種警告訊息的行為，提供標準的核取方塊來防止再次顯示訊息。
@@ -52,7 +52,7 @@ $psISE.Options.RestoreDefaultTokenColors()
 ### <a name="restoredefaultxmltokencolors"></a>RestoreDefaultXmlTokenColors\(\)
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 針對顯示於 Windows PowerShell ISE 中的 XML 項目，還原語彙基元色彩的預設值。 另請參閱 [XmlTokenColors]()。
+ 針對顯示於 Windows PowerShell ISE 中的 XML 項目，還原語彙基元色彩的預設值。 另請參閱 [XmlTokenColors](#xmltokencolors)。
 
 ```
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -73,7 +73,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
 ### <a name="commandpanebackgroundcolor"></a>CommandPaneBackgroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor]()。
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor](#consolepanebackgroundcolor)。
 
  指定命令窗格的背景色彩。 它是 **System.Windows.Media.Color** 類別的執行個體。
 
@@ -127,7 +127,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = "pink"
 ### <a name="consoletokencolors"></a>ConsoleTokenColors
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 在 Windows PowerShell ISE 主控台窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於主控台窗格的語彙基元類型及色彩的名稱/值組。 若要變更指令碼窗格中 IntelliSense 語彙基元的色彩，請參閱 [TokenColors]。 若要將色彩重設為預設值，請參閱 [RestoreDefaultConsoleTokenColors()]()。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 在 Windows PowerShell ISE 主控台窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於主控台窗格的語彙基元類型及色彩的名稱/值組。 若要變更指令碼窗格中 IntelliSense 語彙基元的色彩，請參閱 [TokenColors](#tokencolors)。 若要將色彩重設為預設值，請參閱 [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -266,7 +266,7 @@ $psISE.Options.MruCount = 5
 ```
 
 ### <a name="outputpanebackgroundcolor"></a>OutputPaneBackgroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor]()。
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneBackgroundColor](#consolepanebackgroundcolor)。
 
  讀取/寫入屬性，可取得或設定輸出窗格本身的背景色彩。 它是 **System.Windows.Media.Color** 類別的執行個體。
 
@@ -277,7 +277,7 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ```
 
 ### <a name="outputpanetextforegroundcolor"></a>OutputPaneTextForegroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneForegroundColor]()。
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneForegroundColor](#consolepaneforegroundcolor)。
 
  讀取/寫入屬性，可在 Windows PowerShell ISE 2.0 中變更輸出窗格中文字的前景色彩。
 
@@ -288,7 +288,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 ```
 
 ### <a name="outputpanetextbackgroundcolor"></a>OutputPaneTextBackgroundColor
-  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneTextBackgroundColor]()。
+  此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  如需更新版本，請參閱 [ConsolePaneTextBackgroundColor](#consolepanetextbackgroundcolor)。
 
  讀取/寫入屬性，可變更輸出窗格中文字的背景色彩。
 
@@ -305,7 +305,7 @@ $psISE.Options.OutputPaneTextBackgroundColor = "pink"
 ```
 
 # Sets the color of the script pane background to yellow.
-$psISE.Options.ScriptPaneBackgroundColor = â€yellowâ€
+$psISE.Options.ScriptPaneBackgroundColor = 'yellow'
 
 ```
 
@@ -313,7 +313,7 @@ $psISE.Options.ScriptPaneBackgroundColor = â€yellowâ€
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
  讀取/寫入屬性，可取得或設定指令碼窗格中非指令碼檔案的前景色彩。
-若要設定指令碼檔案的前景色彩，請使用 [TokenColors]()The-ISEOptions-Object.md 屬性。
+若要設定指令碼檔案的前景色彩，請使用 [TokenColors](#tokencolors)。
 
 ```
 # Sets the foreground to color of non-script files in the script pane to green.
@@ -423,7 +423,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 ### <a name="tokencolors"></a>TokenColors
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
- 在 Windows PowerShell ISE 指令碼窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於指令碼窗格的語彙基元類型及色彩的名稱/值組。 若要變更主控台窗格中 IntelliSense 語彙基元的色彩，請參閱 [ConsoleTokenColors]。 若要將色彩重設為預設值，請參閱 [RestoreDefaultTokenColors()]()。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
+ 在 Windows PowerShell ISE 指令碼窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於指令碼窗格的語彙基元類型及色彩的名稱/值組。 若要變更主控台窗格中 IntelliSense 語彙基元的色彩，請參閱 [ConsoleTokenColors](#consoletokencolors)。 若要將色彩重設為預設值，請參閱 [RestoreDefaultTokenColors](#restoredefaulttokencolors)。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```
 # Sets the color of commands to green.
@@ -485,7 +485,7 @@ $psISE.Options.VerboseBackgroundColor ='#0000FF'
 
 ```
 # Changes the foreground color for verbose text to yellow.
-$psISE.Options.VerboseForegroundColor =â€yellowâ€
+$psISE.Options.VerboseForegroundColor ='yellow'
 ```
 
 ### <a name="warningbackgroundcolor"></a>WarningBackgroundColor
@@ -505,13 +505,13 @@ $psISE.Options.WarningBackgroundColor ='#0000FF'
 
 ```
 # Changes the foreground color for warning text to yellow.
-$psISE.Options.WarningForegroundColor =â€yellowâ€
+$psISE.Options.WarningForegroundColor ='yellow'
 ```
 
 ### <a name="xmltokencolors"></a>XmlTokenColors
   在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
- 指定一個字典物件，其中包含適用於 Windows PowerShell ISE 中所顯示之 XML 內容的語彙基元類型和色彩的名稱/值組。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另請參閱 [RestoreDefaultXmlTokenColors()]()。
+ 指定一個字典物件，其中包含適用於 Windows PowerShell ISE 中所顯示之 XML 內容的語彙基元類型和色彩的名稱/值組。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另請參閱 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors)。
 
 ```
 # Sets the color of XML element names to green.

@@ -3,15 +3,15 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 9556f0d9a12807cbfe38aaade6798088f051596d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60055b6755a31397c49686ea9ee1a69ada3516de
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="cryptographic-message-syntax-cms-cmdlets"></a>密碼編譯訊息語法 (CMS) Cmdlet
 
-密碼編譯訊息語法 Cmdlet 支援使用 IETF 標準格式加密和解密內容，進行密碼編譯保護訊息，如 [RFC5652](http://tools.ietf.org/html/rfc5652) 所述。
+密碼編譯訊息語法 Cmdlet 支援使用 IETF 標準格式加密和解密內容，進行密碼編譯保護訊息，如 [RFC5652](https://tools.ietf.org/html/rfc5652) 所述。
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -28,7 +28,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 CMS 加密標準實作公開金錀密碼編譯，這裡用於加密內容的金錀 (*公開金錀*) 和用於解密內容的金錀 (*私密金鑰*) 是分開的。
 
-公開金鑰可以廣泛共用，並非機密資料。 如有任何內容以此公開金鑰加密，只有您的私密金鑰可以解密。 如需公開金鑰加密的詳細資訊，請參閱︰<http://en.wikipedia.org/wiki/Public-key_cryptography>。
+公開金鑰可以廣泛共用，並非機密資料。 如有任何內容以此公開金鑰加密，只有您的私密金鑰可以解密。 如需詳細資訊，請參閱[公開金鑰加密](https://en.wikipedia.org/wiki/Public-key_cryptography)。
 
 為能在 PowerShell 中辨識，加密憑證需要唯一的金鑰使用方法識別碼 (EKU) 來辨識其為資料加密憑證 (就像「程式碼簽署」、「加密郵件」的識別碼一樣)。
 

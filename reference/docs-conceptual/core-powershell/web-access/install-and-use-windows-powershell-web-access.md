@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "安裝和使用 Windows PowerShell Web 存取"
-ms.openlocfilehash: d30bacea8f0edb62e6bb42c118e54010d5401467
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: a4b812e2aa32450bc68f761e7b85e8f2ee2b34ee
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 08/31/2017
 
 ## <a name="introduction"></a>簡介
 
-Windows PowerShell Web 存取於 Windows Server 2012 中首度引進，作為 Windows PowerShell 閘道，提供一個以遠端電腦為目標的網頁型 Windows PowerShell 主控台。 它可讓 IT 專業人員在網頁瀏覽器中，從 Windows PowerShell 主控台執行 Windows PowerShell 命令和指令碼，而不需要 Windows PowerShell、遠端管理軟體，或者在用戶端裝置上安裝瀏覽器外掛程式。 執行網頁型 Windows PowerShell 主控台只需要正確設定的 Windows PowerShell Web 存取閘道，以及支援 JavaScriptÂ® 且接受 Cookie 的用戶端裝置瀏覽器。
+Windows PowerShell Web 存取於 Windows Server 2012 中首度引進，作為 Windows PowerShell 閘道，提供一個以遠端電腦為目標的網頁型 Windows PowerShell 主控台。 它可讓 IT 專業人員在網頁瀏覽器中，從 Windows PowerShell 主控台執行 Windows PowerShell 命令和指令碼，而不需要 Windows PowerShell、遠端管理軟體，或者在用戶端裝置上安裝瀏覽器外掛程式。 執行網頁型 Windows PowerShell 主控台只要有正確設定的 Windows PowerShell Web 存取閘道，以及支援 JavaScript 並接受 Cookie 的用戶端裝置瀏覽器即可。
 
 用戶端裝置的範例包含膝上型電腦、非工作用個人電腦、租借電腦、平板電腦、網路工作站、執行非 Windows 作業系統的電腦以及行動電話瀏覽器。 IT 專業人員能夠從可以存取網際網路連線的裝置及網頁瀏覽器，執行遠端 Windows 伺服器的重要管理工作。
 
@@ -24,9 +24,9 @@ Windows PowerShell Web 存取於 Windows Server 2012 中首度引進，作為 Wi
 
 安裝和設定 Windows PowerShell Web 存取時需要執行三個步驟：
 
-1. [安裝 Windows PowerShell Web 存取]()
-2. [設定閘道]()
-3. [設定授權規則]()
+1. [安裝 Windows PowerShell Web 存取](#install-windows-powershell-web-access)
+1. [設定閘道](#configure-the-gateway)
+1. [設定限制性授權規則](#configure-a-restrictive-authorization-rule)
 
 安裝和設定 Windows PowerShell Web 存取之前，建議您完整閱讀本指南，其中包含如何安裝、保護和解除安裝 Windows PowerShell Web 存取的相關指示。
 [使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)主題說明使用者如何登入網頁型主控台，並涵蓋了網頁型 Windows PowerShell 主控台和 **powershell.exe** 主控台之間的限制及差異。 網頁型主控台的終端使用者應該閱讀[使用網頁型 Windows PowerShell 主控台](use-the-web-based-windows-powershell-console.md)，但不需要閱讀本指南的其他章節。
@@ -124,7 +124,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     - 在 Windows **[開始]** 畫面上，按一下 **[Windows PowerShell]**。
 
-2.  輸入下列程式碼，然後按 **Enter**。
+2. 輸入下列程式碼，然後按 **Enter**。
 
     **Install-PswaWebApplication -UseTestCertificate**
 
@@ -184,9 +184,9 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 5. 選取您已安裝 Windows PowerShell Web 存取 Web 應用程式的網站。 在 **[動作]** 窗格中，按一下 **[繫結]**。
 
-6.  在 **[站台繫結]** 對話方塊中，按一下 **[新增]**。
+6. 在 **[站台繫結]** 對話方塊中，按一下 **[新增]**。
 
-7.  在 **[新增站台繫結]** 對話方塊的 **[類型]** 欄位中選取 **[https]**。
+7. 在 **[新增站台繫結]** 對話方塊的 **[類型]** 欄位中選取 **[https]**。
 
 8. 在 [SSL 憑證] 欄位中，從下拉式功能表中選取您已簽署的憑證。 按一下 **[確定]**。 如需如何取得憑證的詳細資訊，請參閱本主題中的[在 IIS 管理員設定 SSL 憑證](#to-configure-an-ssl-certificate-in-iis-Manager)。
 
@@ -239,21 +239,21 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 #### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>使用新增角色及功能精靈安裝 Windows PowerShell Web 存取
 
-1.  如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
+1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
 
     - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。
 
     - 在 Windows **[開始]** 畫面上，按一下 **[伺服器管理員]**。
 
-2.  在 **[管理]** 功能表上，按一下 **[新增角色及功能]**。
+2. 在 **[管理]** 功能表上，按一下 **[新增角色及功能]**。
 
-3.  在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝]。 按 **[下一步]**。
+3. 在 [選取安裝類型] 頁面上，選取 [角色型或功能型安裝]。 按 **[下一步]**。
 
-4.  在 [選取目的地伺服器] 頁面上，從伺服器集區選取伺服器，或選取離線 VHD。 若要選取離線 VHD 做為目的地伺服器，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 如需如何將伺服器新增到伺服器集區的相關資訊，請參閱伺服器管理員說明。 選取目的地伺服器之後，按一下 **[下一步]**。
+4. 在 [選取目的地伺服器] 頁面上，從伺服器集區選取伺服器，或選取離線 VHD。 若要選取離線 VHD 做為目的地伺服器，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 如需如何將伺服器新增到伺服器集區的相關資訊，請參閱伺服器管理員說明。 選取目的地伺服器之後，按一下 **[下一步]**。
 
-5.  在精靈的 **[選取功能]** 頁面上，展開 **[Windows PowerShell]**，然後選取 **[Windows PowerShell Web 存取]**。
+5. 在精靈的 **[選取功能]** 頁面上，展開 **[Windows PowerShell]**，然後選取 **[Windows PowerShell Web 存取]**。
 
-6.  請注意，系統會提示您新增必要的功能，例如 .NET Framework 4.5 以及網頁伺服器 (IIS) 的角色服務。 新增必要的功能，然後繼續。
+6. 請注意，系統會提示您新增必要的功能，例如 .NET Framework 4.5 以及網頁伺服器 (IIS) 的角色服務。 新增必要的功能，然後繼續。
 
     >**![注意](images/note.jpeg) 注意** 
     >
@@ -269,27 +269,27 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 #### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>使用 IIS 管理員在現有的網站中設定閘道
 
-1.  執行下列其中一項動作以開啟 IIS 管理員主控台。
+1. 執行下列其中一項動作以開啟 IIS 管理員主控台。
 
     - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
 
     - 在 Windows [開始] 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式] 結果時，按一下該捷徑。
 
-2.  為 Windows PowerShell Web 存取建立新的應用程式集區。 在 [IIS 管理員] 樹狀目錄窗格中展開閘道伺服器的節點，選取 [應用程式集區]，然後在 [動作] 窗格中按一下 [新增應用程式集區]。
+2. 為 Windows PowerShell Web 存取建立新的應用程式集區。 在 [IIS 管理員] 樹狀目錄窗格中展開閘道伺服器的節點，選取 [應用程式集區]，然後在 [動作] 窗格中按一下 [新增應用程式集區]。
 
-3.  新增名為 **pswa_pool** (或提供另一個名稱) 的新應用程式集區。 按一下 **[確定]**。
+3. 新增名為 **pswa_pool** (或提供另一個名稱) 的新應用程式集區。 按一下 **[確定]**。
 
-4.  在 [IIS 管理員] 樹狀目錄窗格中，展開安裝 Windows PowerShell Web 存取的伺服器節點，直到可以看到 [站台] 資料夾為止。 選取 [站台] 資料夾。
+4. 在 [IIS 管理員] 樹狀目錄窗格中，展開安裝 Windows PowerShell Web 存取的伺服器節點，直到可以看到 [站台] 資料夾為止。 選取 [站台] 資料夾。
 
-5.  以滑鼠右鍵按一下您想要新增 Windows PowerShell Web 存取網站的網站 (例如 **[預設的網站]**)，然後按一下 **[新增應用程式]**。
+5. 以滑鼠右鍵按一下您想要新增 Windows PowerShell Web 存取網站的網站 (例如 **[預設的網站]**)，然後按一下 **[新增應用程式]**。
 
-6.  在 [別名] 欄位中輸入 pswa，或者提供另一個別名。 別名會成為虛擬目錄名稱。 例如，下列 URL 中的 **pswa** 代表在這個步驟中指定的別名：**https://\<伺服器名稱\>/pswa**。
+6. 在 [別名] 欄位中輸入 pswa，或者提供另一個別名。 別名會成為虛擬目錄名稱。 例如，下列 URL 中的 **pswa** 代表在這個步驟中指定的別名：**https://\<伺服器名稱\>/pswa**。
 
-7.  在 [應用程式集區] 欄位中，選取您在步驟 3 建立的應用程式集區。
+7. 在 [應用程式集區] 欄位中，選取您在步驟 3 建立的應用程式集區。
 
-8.  在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設位置 %windir%/Web/PowerShellWebAccess/wwwroot。 按一下 **[確定]**。
+8. 在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設位置 %windir%/Web/PowerShellWebAccess/wwwroot。 按一下 **[確定]**。
 
-9.  依照本主題的＜在 IIS 管理員中設定 SSL 憑證＞(#to-configure-an-ssl-certificate-in-iis-Manager) 程序中的步驟進行。
+9. 依照本主題的＜在 IIS 管理員中設定 SSL 憑證＞(#to-configure-an-ssl-certificate-in-iis-Manager) 程序中的步驟進行。
 
 10. ![](images/SecurityNote.jpeg) 選擇性的安全性步驟：
 
@@ -318,29 +318,29 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 #### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>使用 IIS 管理員以測試憑證將閘道設定為根網站
 
-1.  執行下列其中一項動作以開啟 IIS 管理員主控台。
+1. 執行下列其中一項動作以開啟 IIS 管理員主控台。
 
     - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
 
     - 在 Windows [開始] 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式] 結果時，按一下該捷徑。
 
-2.  在 [IIS 管理員] 樹狀目錄窗格中，展開安裝 Windows PowerShell Web 存取的伺服器節點，直到可以看到 [站台] 資料夾為止。 選取 [站台] 資料夾。
+2. 在 [IIS 管理員] 樹狀目錄窗格中，展開安裝 Windows PowerShell Web 存取的伺服器節點，直到可以看到 [站台] 資料夾為止。 選取 [站台] 資料夾。
 
-3.  在 **[動作]** 窗格中，按一下 **[Add Website] \(新增網站)**。
+3. 在 **[動作]** 窗格中，按一下 **[Add Website] \(新增網站)**。
 
-4.  輸入網站的名稱，例如 **Windows PowerShell Web Access**。
+4. 輸入網站的名稱，例如 **Windows PowerShell Web Access**。
 
-5.  此時會自動為新網站建立應用程式集區。 若要使用不同的應用程式集區，按一下 [選取]，以選取要與新網站相關聯的應用程式集區。 在 **[選取應用程式集區]** 對話方塊中選取替代的應用程式集區，然後按一下 **[確定]**。
+5. 此時會自動為新網站建立應用程式集區。 若要使用不同的應用程式集區，按一下 [選取]，以選取要與新網站相關聯的應用程式集區。 在 **[選取應用程式集區]** 對話方塊中選取替代的應用程式集區，然後按一下 **[確定]**。
 
-6.  在 [實體路徑] 文字方塊中，瀏覽到 %*windir*%/Web/PowerShellWebAccess/wwwroot。
+6. 在 [實體路徑] 文字方塊中，瀏覽到 %*windir*%/Web/PowerShellWebAccess/wwwroot。
 
-7.  在 **[繫結]** 區域的 **[類型]** 欄位中，選取 **[https]**。
+7. 在 **[繫結]** 區域的 **[類型]** 欄位中，選取 **[https]**。
 
-8.  為其他站台或應用程式尚未使用的網站指派連接埠號碼。 若要尋找開放的連接埠，可以在命令提示字元視窗中執行 **netstat** 命令。 預設連接埠號碼為 443。
+8. 為其他站台或應用程式尚未使用的網站指派連接埠號碼。 若要尋找開放的連接埠，可以在命令提示字元視窗中執行 **netstat** 命令。 預設連接埠號碼為 443。
 
     如果另一個網站已經使用 443，或者有其他需要變更連接埠號碼的安全性原因，請變更預設連接埠。 如果在閘道伺服器上執行的另一個網站正在使用您選取的連接埠，當您在 [新增網站] 對話方塊中按一下 [確定] 時，就會顯示警告。 您必須使用未使用的連接埠來執行 Windows PowerShell Web 存取。
 
-9.  或者，如果組織有需要，可以指定對組織及使用者有意義的主機名稱，例如 **www.contoso.com**。按一下 **[確定]**。
+9. 或者，如果組織有需要，可以指定對組織及使用者有意義的主機名稱，例如 **www.contoso.com**。按一下 **[確定]**。
 
 10. 如需更安全的生產環境，強烈建議您提供 CA 簽署的有效憑證。 您必須提供 SSL 憑證，因為使用者只能透過 HTTPS 網站連線到 Windows PowerShell Web 存取。 如需如何取得憑證的詳細資訊，請參閱本主題中的[在 IIS 管理員中設定 SSL 憑證](#to-configure-an-ssl-certificate-in-iis-Manager)。
 
@@ -377,27 +377,27 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
-1.  執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
+1. 執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
     - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
     - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2.  ![安全性注意事項](images/SecurityNote.jpeg) 使用工作階段設定限制使用者存取的選擇性步驟：
+2. ![安全性注意事項](images/SecurityNote.jpeg) 使用工作階段設定限制使用者存取的選擇性步驟：
 
     確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
 
-3.  輸入下列程式碼，然後按 **Enter**。
+3. 輸入下列程式碼，然後按 **Enter**。
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 
+    這個授權規則允許特定使用者存取網路 (他們通常擁有其存取權) 上的一部電腦，並能夠存取範圍是使用者一般指令碼編寫及 cmdlet 需求的特定工作階段設定。 
     
     在下列範例中，`JSmith` 網域中的使用者 `Contoso` 被授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  執行 `Get-PswaAuthorizationRule` Cmdlet 或 `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` 確認已建立規則。 
+4. 執行 `Get-PswaAuthorizationRule` Cmdlet 或 `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` 確認已建立規則。 
 
     例如，`Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`。
 
@@ -409,11 +409,11 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 ### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>在 IIS 管理員中設定 SSL 憑證
 
-1.  在 [IIS 管理員] 樹狀目錄窗格中，選取安裝 Windows PowerShell Web 存取的伺服器。
+1. 在 [IIS 管理員] 樹狀目錄窗格中，選取安裝 Windows PowerShell Web 存取的伺服器。
 
-2.  在內容窗格中，按兩下 **[伺服器憑證]**。
+2. 在內容窗格中，按兩下 **[伺服器憑證]**。
 
-3.  在 [動作] 窗格中，執行下列其中一項。 如需在 IIS 中設定伺服器憑證的詳細資訊，請參閱[在 IIS 7 中設定伺服器憑證](https://technet.microsoft.com/library/cc732230.aspx)。
+3. 在 [動作] 窗格中，執行下列其中一項。 如需在 IIS 中設定伺服器憑證的詳細資訊，請參閱[在 IIS 7 中設定伺服器憑證](https://technet.microsoft.com/library/cc732230.aspx)。
 
     - 按一下 [匯入]，從網路上的位置匯入現有的有效憑證。
 
@@ -423,11 +423,11 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     - 按一下 [建立自我簽署憑證]，建立您可以立即使用的憑證，稍後視需要交由 CA 簽署。 為自我簽署的憑證指定易記名稱，例如 **Windows PowerShell Web 存取**。 這個選項並不安全，建議只用於私人測試環境。
 
-4.  建立或取得憑證之後，在 [IIS 管理員] 樹狀目錄窗格中選取要套用此憑證的網站 (例如 [預設的網站])，然後在 [動作] 窗格中按一下 [繫結]。
+4. 建立或取得憑證之後，在 [IIS 管理員] 樹狀目錄窗格中選取要套用此憑證的網站 (例如 [預設的網站])，然後在 [動作] 窗格中按一下 [繫結]。
 
-5.  如果尚未顯示繫結，請在 [新增站台繫結] 對話方塊中，新增站台的 [https] 繫結。 如果您不是使用自我簽署的憑證，請指定這個程序步驟 3 所指定的主機名稱。 如果您使用的是自我簽署的憑證，就不需要這個步驟。
+5. 如果尚未顯示繫結，請在 [新增站台繫結] 對話方塊中，新增站台的 [https] 繫結。 如果您不是使用自我簽署的憑證，請指定這個程序步驟 3 所指定的主機名稱。 如果您使用的是自我簽署的憑證，就不需要這個步驟。
 
-6.  選取您在這個程序的步驟 3 取得或建立的憑證，然後按一下 **[確定]**。
+6. 選取您在這個程序的步驟 3 取得或建立的憑證，然後按一下 **[確定]**。
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 

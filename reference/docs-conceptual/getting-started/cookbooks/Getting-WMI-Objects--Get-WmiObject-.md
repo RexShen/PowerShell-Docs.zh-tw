@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "取得 WMI 物件 Get WmiObject"
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: e7b10648e91d1c0dc1424944e55177dc7407fe36
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>取得 WMI 物件 (Get-WmiObject)
 
@@ -110,14 +110,13 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-Table -Property TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
 
-TotalVirtualMemorySize TotalVisibleMem FreePhysicalMem FreeVirtualMemo FreeSpaceInPagi
-                              ory              ry         ngFiles
---------------- --------------- --------------- --------------- ---------------
-        2097024          785904          305808         2056724         1558232
+TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
+---------------------- ---------------    ------------------ -==--------------------- ---------------
+               2097024          785904                305808           2056724                1558232
 ```
 
 > [!NOTE]
-> **Format-Table** 中的屬性名稱可以使用萬用字元，因此最後的管線項目可縮減為 **Format-Table -Property TotalV\&#42;,Free\&#42;**
+> **Format-Table** 中的屬性名稱可以使用萬用字元，因此最後的管線元素可縮減為 **Format-Table -Property Total*,Free*
 
 如果您輸入下列命令，將記憶體資料格式化為清單，可能更容易閱讀︰
 

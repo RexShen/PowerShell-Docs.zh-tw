@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShellTab 物件"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 482984272b2f1be027cf2be49bdfa2c6e2c52070
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 15d9a7474e4c2cf2a9ff8edb88802106489cdba1
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 物件
   **PowerShellTab** 物件代表 Windows PowerShell 執行階段環境。
@@ -20,7 +20,7 @@ ms.lasthandoff: 08/31/2017
  在 PowerShell 索引標籤中執行指定的指令碼。
 
 > [!NOTE]
->  此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 它不會傳回任何物件或值。 如果指令碼會修改任何變數，則那些變更將會保存在據以叫用命令的索引標籤上。
+> 此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 它不會傳回任何物件或值。 如果指令碼會修改任何變數，則那些變更將會保存在據以叫用命令的索引標籤上。
 
  **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 
@@ -36,7 +36,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
  在 PowerShell 索引標籤中執行指定的指令碼。
 
 > [!NOTE]
->  此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 此指令碼區塊會執行，且從指令碼傳回的任何值會傳回到您從中叫用命令的環境。 如果命令執行的時間比 **millesecondsTimeout** 值指定的時間更長，命令就會失敗並發生例外狀況：「作業逾時。」
+> 此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 此指令碼區塊會執行，且從指令碼傳回的任何值會傳回到您從中叫用命令的環境。 如果命令執行的時間比 **millesecondsTimeout** 值指定的時間更長，命令就會失敗並發生例外狀況：「作業逾時。」
 
  **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 
@@ -52,7 +52,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
+# You can switch to the other tab and type 'œ$x' to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -88,7 +88,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 ### <a name="caninvoke"></a>CanInvoke
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
- 唯讀屬性，如果指令碼可透過 [Invoke( Script )]() 方法叫用，則會傳回 **$true** 值。
+ 唯讀屬性，如果指令碼可透過 [Invoke( Script )](#invoke-script-) 方法叫用，則會傳回 **$true** 值。
 
 ```
 # CanInvoke will be false if the PowerShell

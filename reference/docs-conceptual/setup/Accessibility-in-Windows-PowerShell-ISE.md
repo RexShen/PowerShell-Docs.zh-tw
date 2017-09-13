@@ -3,14 +3,14 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 的協助工具"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 05e7b8c3166b3530552d082dd4b0431dd7046b90
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: fce9e2e2f177174a7359351738a0e02201448fc6
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
-本主題說明 Windows PowerShell® 整合式指令碼環境 (ISE) 的協助工具功能，您可能會發現這些功能很有幫助。
+本主題說明 Windows PowerShell 整合式指令碼環境 (ISE) 的協助工具功能，對您來說可能很實用。
 
 * [如何變更主控台和指令碼窗格的大小和位置]()
 * [編輯文字的鍵盤快速鍵]()
@@ -22,37 +22,37 @@ ms.lasthandoff: 08/31/2017
 
 Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下列主題提供可更方便殘障人士使用 Windows PowerShell ISE 的功能、產品及服務的相關資訊。
 
-Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可透過 Cmdlet 使用中斷點資訊來管理中斷點，例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中偵錯指令碼](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)中的＜如何管理中斷點＞。 除了 Microsoft Windows 中的協助工具功能和公用程式之外，下列功能也可以讓 Windows PowerShell ISE 更方便殘障人士使用：
+Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可透過 Cmdlet 使用中斷點資訊來管理中斷點，例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中偵錯指令碼](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)的＜如何管理中斷點＞。 除了 Microsoft Windows 中的協助工具功能和公用程式之外，下列功能也可以讓 Windows PowerShell ISE 更方便殘障人士使用：
 
--   鍵盤快速鍵
+- 鍵盤快速鍵
 
--   語法著色表，以及可使用 [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 指令碼物件修改其他多項色彩設定的功能。
+- 語法著色表，以及可使用 [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 指令碼物件修改其他多項色彩設定的功能。
 
--   文字大小變更
+- 文字大小變更
 
-## <a name="bkmk_1"></a>如何變更主控台和指令碼窗格的大小和位置
+## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>如何變更主控台和指令碼窗格的大小和位置
 您可以使用下列步驟來變更主控台窗格和指令碼窗格的位置和大小。 當您再次開啟 Windows PowerShell ISE 時，即會保留您所做的大小和位置變更。
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>若要調整指令碼窗格和主控台窗格的大小
 
-1.  將指標停在指令碼窗格和主控台窗格的分割線上。
+1. 將指標停在指令碼窗格和主控台窗格的分割線上。
 
-2.  當滑鼠指標變成雙頭箭號時，拖曳框線以變更窗格的大小。
+2. 當滑鼠指標變成雙頭箭號時，拖曳框線以變更窗格的大小。
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>若要移動指令碼窗格和主控台窗格
 執行下列其中一個動作：
 
--   若要將指令碼窗格移動到主控台窗格上方，請按 **CTRL+1**，或者按一下工具列的**靠上顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠上顯示指令碼窗格]。
+- 若要將指令碼窗格移動到主控台窗格上方，請按 **CTRL+1**，或者按一下工具列的**靠上顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠上顯示指令碼窗格]。
 
--   若要將指令碼窗格移動到主控台窗格右方，請按 **CTRL+2**；或者，按一下工具列的 [靠右顯示指令碼窗格] 圖示，或在 [檢視] 功能表中，按一下 [靠右顯示指令碼窗格]。
+- 若要將指令碼窗格移動到主控台窗格右方，請按 **CTRL+2**；或者，按一下工具列的 [靠右顯示指令碼窗格] 圖示，或在 [檢視] 功能表中，按一下 [靠右顯示指令碼窗格]。
 
--   若要將指令碼窗格最大化，請按 **CTRL+3**；或者，按一下工具列的 [顯示最大化的指令碼窗格] 圖示，或在 [檢視] 功能表中，按一下 [顯示最大化的指令碼窗格]。
+- 若要將指令碼窗格最大化，請按 **CTRL+3**；或者，按一下工具列的 [顯示最大化的指令碼窗格] 圖示，或在 [檢視] 功能表中，按一下 [顯示最大化的指令碼窗格]。
 
--   若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下**隱藏指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
+- 若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下**隱藏指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
 
--   若要在主控台窗格最大化時顯示指令碼窗格，請按一下**顯示指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以選取 **[顯示指令碼窗格]** 功能表選項。
+- 若要在主控台窗格最大化時顯示指令碼窗格，請按一下**顯示指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以選取 **[顯示指令碼窗格]** 功能表選項。
 
-## <a name="bkmk_2"></a>編輯文字的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-editing-text"></a>編輯文字的鍵盤快速鍵
 編輯文字時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|使用位置|
@@ -69,7 +69,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**全選**|CTRL+A|指令碼窗格，主控台窗格|
 |**復原**|CTRL+Z|指令碼窗格，主控台窗格|
 
-## <a name="bkmk_3"></a>執行指令碼的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-running-scripts"></a>執行指令碼的鍵盤快速鍵
 在指令碼窗格中執行指令碼時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -82,7 +82,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**Tab** (至下一個指令碼)|CTRL+TAB **注意︰**Tab 至下一個指令碼僅適用於開啟單一 PowerShell 索引標籤的情況下，或開啟多個 PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 |**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意︰**Tab 至上一個指令碼僅適用於開啟單一 PowerShell 索引標籤的情況下，或開啟多個 PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 
-## <a name="bkmk_4"></a>自訂檢視的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自訂檢視的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，在 Windows PowerShell ISE 中自訂檢視。 您可從應用程式的所有窗格存取這些快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -98,7 +98,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**放大**|CTRL+加號|
 |**縮小**|CTRL+減號|
 
-## <a name="bkmk_5"></a>偵錯指令碼的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-debugging-scripts"></a>偵錯指令碼的鍵盤快速鍵
 偵錯程式碼時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|使用位置|
@@ -128,7 +128,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**列出指令碼**|L|偵錯指令碼時的主控台窗格|
 |**顯示主控台偵錯命令**|H 或 ?|偵錯指令碼時的主控台窗格|
 
-## <a name="bkmk_6"></a>Windows PowerShell 索引標籤的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell 索引標籤的鍵盤快速鍵
 使用 Windows PowerShell 索引標籤時，您可以使用下列鍵盤快速鍵。
 
 |動作|鍵盤快速鍵|
@@ -138,7 +138,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**上一個 PowerShell 索引標籤**|CTRL+SHIFT+TAB 僅有當任何 PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 |**下一個 Windows PowerShell 索引標籤**|CTRL+TAB 僅有當任何 PowerShell 索引標籤上沒有檔案開啟時，才適用這個快速鍵。|
 
-## <a name="bkmk_7"></a>開始和結束的鍵盤快速鍵
+## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始和結束的鍵盤快速鍵
 您可以使用下列鍵盤快速鍵，啟動 Windows PowerShell 主控台 (PowerShell.exe) 或結束 Windows PowerShell ISE。
 
 |動作|鍵盤快速鍵|

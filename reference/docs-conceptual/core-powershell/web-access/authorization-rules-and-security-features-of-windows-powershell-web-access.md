@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 存取的授權規則與安全性功能"
-ms.openlocfilehash: 4b076ca1ecdab293f3acadc466d39ba3e7a6444f
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -14,7 +14,7 @@ ms.lasthandoff: 08/31/2017
 
 適用目標︰Windows Server 2012 R2、Windows Server 2012
 
-Windows ServerÂ® 2012 R2 和 Windows ServerÂ® 2012 中的 Windows PowerShellÂ® Web 存取具有受限制的安全性模型。
+Windows Server 2012 R2 和 Windows Server 2012 中的 Windows PowerShell Web 存取具有受限制的安全性模型。
 您必須明確授與使用者存取權，他們才能登入 Windows PowerShell Web 存取閘道並使用網頁型 Windows PowerShell 主控台。
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>設定授權規則及站台安全性
@@ -48,7 +48,7 @@ Windows PowerShell Web 存取驗證規則是允許清單規則。
 如果使用者無法通過上述任何安全性階層，他們會在瀏覽器視窗收到一般「拒絕存取」訊息。
 雖然閘道伺服器會記錄安全性細節，但是不會對一般使用者顯示他們通過多少安全性階層，或在哪一個階層發生登入或驗證失敗。
 
-如需設定授權規則的詳細資訊，請參閱本主題中的[設定授權規則]()。
+如需設定授權規則的詳細資訊，請參閱本主題中的[設定授權規則](#configuring-authorization-rules-and-site-security)。
 
 ### <a name="security"></a>安全性
 
@@ -62,17 +62,17 @@ Windows PowerShell Web 存取系統管理員可以在 IIS 管理員主控台中�
 
 |層級|階層|
 |-|-|
-|1|[IIS 網頁伺服器安全性功能]()|
-|2|[Windows PowerShell Web 存取表單型閘道驗證]()|
-|3|[Windows PowerShell Web 存取授權規則]()|
-|4|[目標驗證及授權規則]()|
+|1|[IIS 網頁伺服器安全性功能](#iis-web-server-security-features)|
+|2|[Windows PowerShell Web 存取表單型閘道驗證](#windows-powershell-web-access-forms-based-gateway-authentication)|
+|3|[Windows PowerShell Web 存取授權規則](#windows-powershell-web-access-authorization-rules)|
+|4|[目標驗證及授權規則](#target-authentication-and-authorization-rules)|
 
 您可以在下列標題下找到每個階層的詳細資訊：
 
 #### <a name="iis-web-server-security-features"></a>IIS 網頁伺服器安全性功能
 
 Windows PowerShell Web 存取使用者一律必須提供使用者名稱及密碼，才能在閘道上驗證他們的帳戶。
-不過，Windows PowerShell Web 存取系統管理員也可以開啟或關閉選擇性的用戶端憑證驗證 (請參閱[安裝和使用 Windows PowerShell Web 存取]()以啟用測試憑證，並在稍後了解如何設定正版憑證)。
+不過，Windows PowerShell Web 存取系統管理員也可以開啟或關閉選擇性的用戶端憑證驗證 (請參閱[安裝和使用 Windows PowerShell Web 存取](install-and-use-windows-powershell-web-access.md)以啟用測試憑證，並在稍後了解如何設定正版憑證)。
 
 選擇性用戶端憑證功能要求一般使用者除了使用者名稱及密碼之外還需具備有效的用戶端憑證，而這也是網頁伺服器 (IIS) 設定的一部份。
 啟用用戶端憑證層時，Windows PowerShell Web 存取登入頁面會提示使用者提供有效的憑證，才能評估他們的登入認證。
@@ -89,7 +89,7 @@ Windows PowerShell Web 存取登入頁面會要求一組認證 (使用者名稱�
 如果使用者沒有提供替代認證，就會使用連線閘道的主要使用者名稱及密碼來連線目標電腦。
 
 所需的認證會在 Windows PowerShell Web 存取閘道上進行驗證。
-這些認證必須是本機 Windows PowerShell Web 存取閘道伺服器上或 Active DirectoryÂ® 中的有效使用者帳戶。
+這些認證必須是本機 Windows PowerShell Web 存取閘道伺服器上或 Active Directory 中的有效使用者帳戶。
 
 #### <a name="windows-powershell-web-access-authorization-rules"></a>Windows PowerShell Web 存取授權規則
 
@@ -129,7 +129,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 > **注意**
 >
-> 如需更多您可以使用授權規則來授與使用者存取權及協助保護 Windows PowerShell Web 存取環境的方法，請參閱本主題中的[其他授權規則案例]()。
+> 如需更多您可以使用授權規則來授與使用者存取權及協助保護 Windows PowerShell Web 存取環境的方法，請參閱本主題中的[其他授權規則案例](#other-authorization-rule-scenario-examples)。
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>新增限制性授權規則
 
@@ -144,7 +144,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
     確認您要使用的工作階段設定已存在於規則中。
 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files) 中建立工作階段設定的指示。
 
-3. 這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 輸入下列程式碼，然後按 **Enter**。
+3. 這個授權規則允許特定使用者存取網路 (他們通常擁有其存取權) 上的一部電腦，並能夠存取範圍是使用者一般指令碼編寫及 cmdlet 需求的特定工作階段設定。 輸入下列程式碼，然後按 **Enter**。
 
 ```powershell
 Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
@@ -160,7 +160,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 #### <a name="to-remove-an-authorization-rule"></a>移除授權規則
 
-1. 如果尚未開啟 Windows PowerShell 工作階段，請參閱本節中[新增限制性授權規則]()的步驟 1。
+1. 如果尚未開啟 Windows PowerShell 工作階段，請參閱本節中[新增限制性授權規則](#to-add-a-restrictive-authorization-rule)的步驟 1。
 
 2. 輸入下列資訊，然後按下 **Enter**，其中 *rule ID* 代表您想要移除之規則的唯一識別碼。
 
@@ -181,9 +181,9 @@ Remove-PswaAuthorizationRule -ID <rule ID>
 
 - 系統管理員會建立一個含有受限制 Runspace 的端點，稱為 **PswaEndpoint**。 然後，系統管理員會建立 **\*,\*,PswaEndpoint** 規則，並將該端點散佈到其他電腦。 這個規則允許所有使用者存取具有端點 **PswaEndpoint** 的所有電腦。 如果這是規則集中定義的唯一授權規則，就無法存取不具該端點的電腦。
 
--   系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員建立了一個名為 **Level1Support** 的使用者群組，並定義下列規則：**Level1Support,\*,PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
+- 系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員建立了一個名為 **Level1Support** 的使用者群組，並定義下列規則：**Level1Support,\*,PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
 
--   有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還會建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
+- 有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還會建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
 
 - 某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。
   - 系統管理員執行 Cmdlet `Add-PswaAuthorizationRule * * *`，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦以及所有設定。
@@ -209,7 +209,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.con
 
   >**注意**：
   >
-  >如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱[建立網域及樹系信任](https://technet.microsoft.com/library/cc794775.aspx")。 如需如何將工作群組電腦新增至信任主機清單的詳細資訊，請參閱[使用伺服器管理員進行遠端管理](href="https://technet.microsoft.com/library/dd759202.aspx)
+  >如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱[建立網域及樹系信任](https://technet.microsoft.com/library/cc794775.aspx")。 如需如何將工作群組電腦新增至信任主機清單的詳細資訊，請參閱[使用伺服器管理員進行遠端管理](https://technet.microsoft.com/library/dd759202.aspx)
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>對多個站台使用一組授權規則
 
@@ -219,7 +219,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.con
 
 ## <a name="session-management"></a>工作階段管理
 
-根據預設，Windows PowerShell Web 存取會將使用者限制為一次三個工作階段。 您可以在 IIS 管理員中編輯 Web 應用程式的 **web.config** 檔案，以支援每位使用者不同的工作階段數目。
+根據預設，Windows PowerShell Web 存取會將使用者限制為一次三個工作階段。 您可以在 IIS Manager 中編輯 Web 應用程式的 **web.config** 檔案，以支援每位使用者不同的工作階段數目。
 **web.config** 檔案的路徑為 _$Env:Windir\\Web\\PowerShellWebAccess\\wwwroot\\Web.config_。
 
 根據預設，只要編輯任何設定，IIS 網頁伺服器就會重新啟動應用程式集區。 例如，如果變更 **web.config** 檔案，就會重新啟動應用程式集區。
