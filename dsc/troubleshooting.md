@@ -623,5 +623,5 @@ onlyProperty                            PSComputerName
 * [<span data-ttu-id="c31c8-236">建置自訂的 Windows PowerShell 預期狀態設定資源</span><span class="sxs-lookup"><span data-stu-id="c31c8-236">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
 
 ### <a name="other-resources"></a><span data-ttu-id="c31c8-237">其他資源</span><span class="sxs-lookup"><span data-stu-id="c31c8-237">Other Resources</span></span>
-* [<span data-ttu-id="c31c8-238">Windows PowerShell 預期狀態設定 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c31c8-238">Windows PowerShell Desired State Configuration Cmdlets</span></span>](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* <span data-ttu-id="c31c8-238">[Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)</span><span class="sxs-lookup"><span data-stu-id="c31c8-238">[Windows PowerShell Desired State Configuration Cmdlets](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)</span></span>
 
