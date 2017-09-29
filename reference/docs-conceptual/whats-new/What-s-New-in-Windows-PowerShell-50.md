@@ -296,7 +296,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 - 現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 
-- 新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
+- 新的功能表命令 [全部中斷]\(Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
