@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "保護 MOF 檔案"
-ms.openlocfilehash: 70dec03f3b883eb88661e27c411248b8e1bb2177
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: dc900f53c954637a407fbd026d24d20c2fdabf6e
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -147,7 +147,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
-匯出之後，必須將 ```DscPrivateKey.cer``` 複製到**目標節點**。
+匯出之後，必須將 ```DscPrivateKey.pfx``` 複製到**目標節點**。
 
 >目標節點︰Windows Server 2012 R2/Windows 8.1 及更早的版本
 

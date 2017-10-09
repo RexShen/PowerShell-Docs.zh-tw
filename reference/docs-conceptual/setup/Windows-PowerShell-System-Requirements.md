@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 系統需求"
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 13ec699d39400b6698b6220c28cd12d06b5e681e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
 本主題列出 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
@@ -19,15 +19,15 @@ Windows PowerShell 5.0 在下列版本的 Windows 上執行。
 
 - Windows Server 2016；預設會加以安裝
 
-- Windows Server 2012 R2；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows Server 2012 R2；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
-- Windows Server 2012；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows Server 2012；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
-- Windows Server® 2008 R2 Service Pack 1)；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows Server® 2008 R2 Service Pack 1)；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
 - Windows 8.1
 
-- Windows 7 Service Pack 1；必須安裝 [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) 才能執行 Windows PowerShell 5.0
+- Windows 7 Service Pack 1；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
 Windows PowerShell 4.0 是在下列版本的 Windows 上執行。
 
@@ -35,9 +35,9 @@ Windows PowerShell 4.0 是在下列版本的 Windows 上執行。
 
 - 預設安裝的 Windows Server 2012 R2
 
-- Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) 來執行 Windows PowerShell 4.0
+- Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) 來執行 Windows PowerShell 4.0
 
-- Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) 來執行 Windows PowerShell 4.0
+- Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) 來執行 Windows PowerShell 4.0
 
 Windows PowerShell 3.0 是在下列版本的 Windows 上執行。
 
@@ -45,11 +45,11 @@ Windows PowerShell 3.0 是在下列版本的 Windows 上執行。
 
 - 預設安裝的 Windows Server 2012
 
-- Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
+- Windows® 7 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
-- Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
+- Windows Server® 2008 R2 (含 Service Pack 1)，請安裝 [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
-- Windows Server 2008 (含 Service Pack 2)，請安裝 [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
+- Windows Server 2008 (含 Service Pack 2)，請安裝 [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework 需求
 Windows PowerShell 5.0 需要安裝完整的 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 預設包含 Microsoft .NET Framework 4.5。
@@ -83,19 +83,19 @@ Windows PowerShell 是不需要圖形化使用者介面的主控台應用程式�
 
 - Cmdlet
 
-    1.  [Out-GridView](https://technet.microsoft.com/en-us/library/70915a86-d753-464e-8349-cba02316154c)
+    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41)
+    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Show-ControlPanelItem](https://technet.microsoft.com/en-us/library/0685d42c-37cc-498f-acf6-0ecfeb0cb162)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Show-EventLog](https://technet.microsoft.com/en-us/library/a3b0f5ad-0438-42c7-915b-d1b4793a431c)
+    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - 參數
 
-    1.  [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 的 **ShowWindow** 參數。
+    1.  [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet 的 **ShowWindow** 參數。
 
-    2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 的 **ShowSecurityDescriptorUI** 參數和 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet。
+    2.  [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) 的 **ShowSecurityDescriptorUI** 參數和 [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) Cmdlet。
 
 ## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell 引擎需求
 Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Windows PowerShell 2.0。 針對 Windows PowerShell 2.0 和 Windows PowerShell 3.0 撰寫的 Cmdlet、提供者、嵌入式管理單元、模組及指令碼，在 Windows PowerShell 4.0 中仍以同樣方式執行。
@@ -111,18 +111,18 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能�
 
 - [背景智慧型傳送服務 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
+- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
+- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 此外，Windows PE 上沒有 **WinRm** 服務。
 
 ## <a name="see-also"></a>另請參閱
 - [開始使用 Windows PowerShell](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [安裝 Windows PowerShell](Installing-Windows-PowerShell.md)
-- [啟動 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [啟動 Windows PowerShell](Starting-Windows-PowerShell.md)
 

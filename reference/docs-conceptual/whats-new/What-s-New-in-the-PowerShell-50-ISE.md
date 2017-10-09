@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 50 ISE 的新功能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 1e315351d0e5dde146881b0e6527c38e59777a1e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
@@ -22,16 +22,16 @@ Windows PowerShell ISE 是一個主應用程式，可以讓您在圖形化與直
 
 |特色/功能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense]()**|X|X||
-|**[程式碼片段]()**|X|X||
-|**[附加元件工具]()**|X|X||
-|**[重新啟動管理員和自動儲存]()**|X|X||
-|**[主控台窗格]()**|X|X||
-|**[最近使用的清單]()**|X|X||
-|**[命令列參數]()**|X|X||
-|**[新編輯器功能]()**|X|X||
-|**[新的說明檢視器視窗]()**|X|X||
-|**[Show-Command Cmdlet]()**|X|X||
+|**[IntelliSense](#intellisense)**|X|X||
+|**[程式碼片段](#snippets)**|X|X||
+|**[附加元件工具](#add-on-tools)**|X|X||
+|**[重新啟動管理員和自動儲存](#restart-manager-and-auto-save)**|X|X||
+|**[最近使用的清單](#most-recently-used-list)**|X|X||
+|**[主控台窗格](#console-pane)**|X|X||
+|**[命令列參數](#command-line-switches)**|X|X||
+|**[新編輯器功能](#new-editor-features)**|X|X||
+|**[新的說明檢視器視窗](#new-help-viewer-window)**|X|X||
+|**[Show-Command Cmdlet](#show-command-cmdlet)**|X|X||
 
 ### <a name="intellisense"></a>IntelliSense
 **ISE 3.0 的新功能**

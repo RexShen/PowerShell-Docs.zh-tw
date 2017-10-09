@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "啟動 Windows PowerShell 2.0 引擎"
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 88d4374891e38501f6bbcd0793c86692eaed2f22
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>啟動 Windows PowerShell 2.0 引擎
 本節說明如何在 Windows 8.1、Windows Server 2012 R2、Windows 8 及 Windows Server 2012 (其中包括 Windows PowerShell 2.0 引擎) 上啟動 Windows PowerShell 2.0 引擎，以及在安裝 Windows PowerShell 2.0、Windows PowerShell 3.0 及 Windows PowerShell 4.0 的其他系統上啟動此引擎。
@@ -66,5 +66,5 @@ PowerShell.exe -Version 2
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-如需背景工作的詳細資訊，請參閱 [about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)。
+如需背景工作的詳細資訊，請參閱 [about_Jobs [v4]](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_jobs?view=powershell-4.0)。
 

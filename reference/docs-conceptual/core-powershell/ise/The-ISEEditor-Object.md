@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "ISEEditor 物件"
-ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: c593eeebf0b9a94769841efd2aa78f84a3829ca5
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 物件
   **ISEEditor** 物件是 Microsoft.PowerShell.Host.ISE.ISEEditor 類別的執行個體。 主控台窗格是 **ISEEditor** 物件。 每個 [ISEFile](The-ISEFile-Object.md) 物件都有相關聯的 **ISEEditor** 物件。 下列各節將列出 **ISEEditor** 物件的方法和屬性。
@@ -75,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - 字串：要插入的文字。
 
- 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
+ 請參閱本主題稍後的[指令碼範例](#scripting-example)。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
@@ -90,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - 整數：選取範圍結束位置之結尾行內的欄。
 
- 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
+ 請參閱本主題稍後的[指令碼範例](#scripting-example)。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
@@ -185,14 +185,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  唯讀屬性，可從編輯器取得選取的文字。
 
- 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
+ 請參閱本主題稍後的[指令碼範例](#scripting-example)。
 
 ### <a name="text"></a>文字
   在 Windows PowerShell ISE 2.0 與更新的版本中支援。 
 
  唯讀屬性，可在編輯器中取得或設定文字。
 
- 請參閱本主題稍後的[指令碼範例](#-scripting-example)。
+ 請參閱本主題稍後的[指令碼範例](#scripting-example)。
 
 ## <a name="scripting-example"></a>指令碼範例
 

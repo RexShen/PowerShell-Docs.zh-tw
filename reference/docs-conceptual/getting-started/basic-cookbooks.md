@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "基本操作手冊"
-ms.openlocfilehash: 275bd60f4731d789ccff07d687a1a66f7ae03c8a
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: f100d7a1680358b9cb2463e6c5b90cd7243412e0
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="basic-cookbooks-referencecookbooksbasic-cookbooks-referencemd"></a>[基本操作手冊參考](cookbooks/basic-cookbooks-reference.md)
 
@@ -26,7 +26,6 @@ ms.lasthandoff: 09/08/2017
 - [多重選擇清單方塊](cookbooks/Multiple-selection-List-Boxes.md)
 - [其他有用的指令碼物件](cookbooks/Other-Useful-Scripting-Objects.md)
 - [執行網路工作](cookbooks/Performing-Networking-Tasks.md)
-- [PowerShellGet 模組](cookbooks/PowerShellGet-Module.md)
 - [使用 Out Cmdlet 重新導向資料](cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
 - [從管線中移除物件 Where Object](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
 - [針對多個物件重複工作 ForEach Object](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)

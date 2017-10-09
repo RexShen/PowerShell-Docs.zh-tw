@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用 Windows PowerShell"
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
-ms.openlocfilehash: c942caa6cea3b24fe5e6442e28600363466380bd
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 874c6fc6f0b09b0f586725ed7df7bc68c31e1733
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="using-windows-powershell"></a>使用 Windows PowerShell
 Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言，專為系統管理所設計。 Windows PowerShell 是以 .NET Framework 為基礎所建置，可協助 IT 專業人員與進階使用者控制和自動化管理 Windows 作業系統與在 Windows 上執行的應用程式。
@@ -67,6 +67,3 @@ Windows PowerShell 是屬於一系列相關的指令碼技術，可協助您自�
     如需 Windows PowerShell 中可更新說明系統的詳細資訊，包含如何在未連線到網路的電腦上安裝可更新說明，請參閱 [about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)、[Save-Help](http://technet.microsoft.com/library/hh849724.aspx) 與[支援可更新的說明](http://msdn.microsoft.com/library/hh852754.aspx)。
 
 - [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) Cmdlet 來存取說明。 可讓您深入了解 Cmdlet 與系統上安裝之提供者的 Windows PowerShell Cmdlet。
-
-- 若要在已發行的說明檔案有任何更新時接收通知，請訂閱下列 RSS 摘要：[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)。
-

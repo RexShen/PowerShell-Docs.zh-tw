@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "更多了解 PowerShell 的方式"
-ms.openlocfilehash: c1bc3c25c34aa4501eae15fb2b4f629a77e90006
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="more-powershell-learning"></a>更多了解 PowerShell 的方式
 
@@ -18,8 +18,8 @@ ms.lasthandoff: 09/08/2017
 
 - [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)。 直接向 Windows PowerShell 產品小組學習的最佳資源。
 - [Windows PowerShell 客戶連線](http://Connect.Microsoft.com/PowerShell)。 提供建議、傳送意見反應，或為 Windows PowerShell 小組提出錯誤。 您可以提出程式碼錯誤、文件錯誤或當地語系化 (語言翻譯) 錯誤。
-- [指令碼高手您好！部落格](http://www.scriptingguys.com/blog)每天都發行新的內容，且一直排名在所有 Microsoft 部落格中的前五名。 文章都為案例導向，並以吸引人且生動的方式撰寫。
-- [學習 PowerShell 頁面](http://www.scriptingguys.com/learnpowershell)是 TechNet 指令碼中心上的 Windows PowerShell 中心。 此頁面提供一系列 Microsoft Scripting Guy Ed Wilson 所主講的初學者視訊研討會。 它也包含 Windows PowerShell 測驗、社群內容連結等等。
+- [指令碼高手您好！部落格](https://blogs.technet.microsoft.com/heyscriptingguy/)每天都發行新的內容，且一直排名在所有 Microsoft 部落格中的前五名。 文章都為案例導向，並以吸引人且生動的方式撰寫。
+- [學習 PowerShell 頁面](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/)是 TechNet 指令碼中心上的 Windows PowerShell 中心。 此頁面提供一系列 Microsoft Scripting Guy Ed Wilson 所主講的初學者視訊研討會。 它也包含 Windows PowerShell 測驗、社群內容連結等等。
 - 有使用 Windows PowerShell 的相關問題嗎？ 與[官方 Scripting Guy 論壇](http://social.technet.microsoft.com/forums/itcg/threads/)上數百位有同樣興趣的其他人員連線。
 - [Microsoft 指令碼中心](https://technet.microsoft.com/scriptcenter)。 通往許多 Windows PowerShell 實用資源的入口網站，包含[指令碼中心存放庫](http://gallery.technet.microsoft.com/scriptcenter/)。 要了解指令碼撰寫的其中一個最佳方式，就是實際觀看範例。 搜尋數千個 Windows PowerShell 指令碼，全部就緒可供您評估，並依您的需求調整。
 - 參加 Windows PowerShell 使用者社群。 請參閱[指令碼中心社群頁面](https://technet.microsoft.com/scriptcenter/hh182567.aspx)取得數十個 Windows PowerShell 使用者群組的位置 - 您附近很可能就有一個。 也請持續關注 Microsoft Scripting Guy 社群活動。

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 指令碼"
-ms.openlocfilehash: 33e5ff3c84b6b34a3072a32165187a8bb811605c
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 8d2386dc49c59a106ecdddf0feabe3344834a86d
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -46,7 +46,6 @@ PowerShell 基本原始程式碼現在可在 GitHub 中取得並且開放進行�
 ## <a name="common-powershellcore-powershellcore-powershellmd"></a>[常用的 PowerShell](core-powershell/core-powershell.md)
 本節包含所有參考資料 PowerShell。  
 本節內容：
-- [PowerShell 常用模組](core-powershell/core-modules.md)
 - [PowerShell 整合式指令碼環境 \(ISE\)](core-powershell/ise-guide.md)
 - [PowerShell 主控台視窗](core-powershell/console-guide.md)
 - [PowerShell 遠端管理](core-powershell/Running-Remote-Commands.md)
