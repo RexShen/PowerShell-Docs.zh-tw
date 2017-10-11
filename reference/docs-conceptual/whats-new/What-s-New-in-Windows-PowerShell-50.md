@@ -1,15 +1,14 @@
 ---
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
-title: "Windows PowerShell 50 的新功能"
-ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: e3c4e840469f3a3caa28a887dc079839f053dc4d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+title: "Windows PowerShell 5.0 的新功能"
+ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
+ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/05/2017
 ---
-# <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell 的新功能
+# <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
 
 Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，通常可在不進行變更的情況下於 Windows PowerShell 5.0 中運作。
@@ -21,13 +20,10 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 ## <a name="in-this-topic"></a>本主題內容
 
-- [KB 3000850 的 Windows PowerShell 4.0 DSC 更新]()
-
-- [Windows PowerShell 5.0 的新功能]()
-
-- [Windows PowerShell 4.0 的新功能]()
-
-- [Windows PowerShell 3.0 的新功能]()
+- [KB 3000850 的 Windows PowerShell 4.0 DSC 更新](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
+- [Windows PowerShell 5.0 的新功能](#new-features-in-windows-powershell-50)
+- [Windows PowerShell 4.0 的新功能](#new-features-in-windows-powershell-40)
+- [Windows PowerShell 3.0 的新功能](#new-features-in-windows-powershell-30)
 
 ## <a name="windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a>2014 年 11 月的 Windows PowerShell 4.0 更新彙總套件 (KB 3000850)
 [2014 年 11 月的 Windows RT 8.1、Windows 8.1 和 Windows Server 2012 R2 更新彙總套件](https://support.microsoft.com/kb/3000850/) (KB 3000850) 針對 Windows PowerShell 4.0 中的 Windows PowerShell 預期狀態設定 (DSC) 提供了許多更新與改善。 您可以在 Windows PowerShell 中執行 `Get-Hotfix -Id KB3000850`，以判斷系統是否已安裝 KB 3000850。
@@ -128,15 +124,11 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 ## <a name="new-features-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 
-- [Windows PowerShell 的新功能]()
-
-- [Windows PowerShell 預期狀態設定的新功能]()
-
-- [Windows PowerShell ISE 的新功能]()
-
-- [Windows PowerShell Web 服務的新功能]()
-
-- [Windows PowerShell 5.0 的重大錯誤修正]()
+- [Windows PowerShell 的新功能](#new-features-in-windows-powershell)
+- [Windows PowerShell 預期狀態設定的新功能](#new-features-in-windows-powershell-desired-state-configuration)
+- [Windows PowerShell ISE 的新功能](#new-features-in-windows-powershell-ise)
+- [Windows PowerShell Web 服務的新功能](#new-features-in-windows-powershell-web-services-management-odata-iis-extension)
+- [Windows PowerShell 5.0 的重大錯誤修正](#notable-bug-fixes-in-windows-powershell-50)
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell 的新功能
 
@@ -170,7 +162,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 - Get-Childitem 也有新的 -Depth 參數，您可將其與 -Recurse 參數搭配使用來限制遞迴。 例如，Get-ChildItem -Recurse -Depth 2 傳回的結果包括：來自目前資料夾、目前資料夾中所有子資料夾，以及所有子資料夾內之資料夾的項目。
 
-- Copy-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [NanoÂ Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 -FromSession 和 -ToSession 參數值指定為 PSSession 識別碼，並新增 -Path 和 -Destination 以分別指定原始路徑和目的地。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
+- Copy\-Item 現可讓您將檔案或資料夾從某個 Windows PowerShell 工作階段複製到另一個 Windows PowerShell 工作階段，這表示您可以將檔案複製到已連線至遠端電腦的工作階段 (包括執行 [Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) 的電腦 ，因此不會有其他介面)。 若要複製檔案，請將新的 -FromSession 和 -ToSession 參數值指定為 PSSession 識別碼，並新增 -Path 和 -Destination 以分別指定原始路徑和目的地。 例如，Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder。
 
 - Windows PowerShell 轉譯已經過改良，因此它不僅能套用至主控台主機 (**powershell.exe**)，也可以套用至所有的裝載應用程式 (例如 Windows PowerShell ISE)。 轉譯選項 (包括啟用全系統轉譯) 可以透過啟用 **[打開 PowerShell 轉譯]** 群組原則設定 (位於 [系統管理範本\/Windows 元件\/Windows PowerShell]) 來設定。
 
@@ -296,7 +288,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 - 現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 
-- 新的功能表命令 [全部中斷]\(Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
+- 新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
@@ -311,19 +303,14 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 ## <a name="new-features-in-windows-powershell-40"></a>Windows PowerShell 4.0 的新功能
 Windows PowerShell 4.0 與舊版相容。 針對 Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，均可在不進行變更的情況下於 Windows PowerShell 4.0 中運作。
 
-根據預設，Windows PowerShell 4.0 已安裝於 Windows 8.1 和 Windows Server 2012 R2。 若要在 WindowsÂ 7Â SP1 或 WindowsÂ ServerÂ 2008Â R2 上安裝 Windows PowerShell 4.0，請下載並安裝 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，然後再安裝 Windows Management Framework 4.0。
+根據預設，Windows PowerShell 4.0 已安裝於 Windows 8.1 和 Windows Server 2012 R2。 若要在 Windows 7 SP1 或 Windows Server 2008 R2 上安裝 Windows PowerShell 4.0，請下載並安裝 [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，然後再安裝 Windows Management Framework 4.0。
 
-- [Windows PowerShell 的新功能]()
-
-- [Windows PowerShell 整合式指令碼環境 (ISE) 的新功能]()
-
-- [Windows PowerShell 工作流程的新功能]()
-
-- [Windows PowerShell Web 服務的新功能]()
-
-- [Windows PowerShell Web 存取的新功能]()
-
-- [Windows PowerShell 4.0 的重大錯誤修正]()
+- [Windows PowerShell 的新功能](#new-features-in-windows-powershell-1)
+- [Windows PowerShell 整合式指令碼環境 (ISE) 的新功能](#new-features-in-windows-powershell-integrated-scripting-environment-ise)
+- [Windows PowerShell 工作流程的新功能](#new-features-in-windows-powershell-workflow)
+- [Windows PowerShell Web 服務的新功能](#new-features-in-windows-powershell-web-services)
+- [Windows PowerShell Web 存取的新功能](#new-features-in-windows-powershell-web-access)
+- [Windows PowerShell 4.0 的重大錯誤修正](#notable-bug-fixes-in-windows-powershell-40)
 
 Windows PowerShell 4.0 包括下列新功能。
 
@@ -456,59 +443,33 @@ Windows PowerShell 4.0 包括下列新功能。
 ## <a name="new-features-in-windows-powershell-30"></a>Windows PowerShell 3.0 的新功能
 Windows PowerShell 3.0 包括下列新功能。
 
-- [Windows PowerShell 工作流程]()
-
-- [Windows PowerShell Web 存取]()
-
-- [新的 Windows PowerShell ISE 功能]()
-
-- [支援 Microsoft .NET Framework 4.0]()
-
-- [支援 Windows 預先安裝環境]()
-
-- [已中斷連線的工作階段]()
-
-- [強固的工作階段連線]()
-
-- [可更新的說明系統]()
-
-- [增強的線上說明]()
-
-- [CIM 整合]()
-
-- [工作階段設定檔]()
-
-- [排程的工作與工作排程器整合]()
-
-- [Windows PowerShell 語言增強功能]()
-
-- [新的核心 Cmdlet]()
-
-- [現有核心 Cmdlet 與提供者的改進]()
-
-- [遠端模組匯入及探索]()
-
-- [增強的 Tab 鍵自動完成]()
-
-- [模組自動載入]()
-
-- [模組體驗改進]()
-
-- [簡化的命令探索]()
-
-- [改進的記錄、診斷與群組原則支援]()
-
-- [格式設定與輸出的改進]()
-
-- [增強的主控台主機體驗]()
-
-- [新的 Cmdlet 與裝載 API]()
-
-- [效能改進]()
-
-- [RunAs 與共用主機支援]()
-
-- [特殊字元處理的改進]()
+- [Windows PowerShell 工作流程](#windows-powershell-workflow)
+- [Windows PowerShell Web 存取](#windows-powershell-web-access)
+- [新的 Windows PowerShell ISE 功能](#new-windows-powershell-ise-features)
+- [支援 Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
+- [支援 Windows 預先安裝環境](#support-for-windows-preinstallation-environment)
+- [已中斷連線的工作階段](#disconnected-sessions)
+- [強固的工作階段連線](#robust-session-connectivity)
+- [可更新的說明系統](#updatable-help-system)
+- [增強的線上說明](#enhanced-online-help)
+- [CIM 整合](#cim-integration)
+- [工作階段設定檔](#session-configuration-files)
+- [排程的工作與工作排程器整合](#scheduled-jobs-and-task-scheduler-integration)
+- [Windows PowerShell 語言增強功能](#windows-powershell-language-enhancements)
+- [新的核心 Cmdlet](#new-core-cmdlets)
+- [現有核心 Cmdlet 與提供者的改進](#improvements-to-existing-core-cmdlets-and-providers)
+- [遠端模組匯入及探索](#remote-module-import-and-discovery)
+- [增強的 Tab 鍵自動完成](#enhanced-tab-completion)
+- [模組自動載入](#module-auto-loading)
+- [模組體驗改進](#module-experience-improvements)
+- [簡化的命令探索](#simplified-command-discovery)
+- [改進的記錄、診斷與群組原則支援](#improved-logging-diagnostics-and-group-policy-support)
+- [格式設定與輸出的改進](#formatting-and-output-improvements)
+- [增強的主控台主機體驗](#enhanced-console-host-experience)
+- [新的 Cmdlet 與裝載 API](#new-cmdlet-and-hosting-apis)
+- [效能改進](#performance-improvements)
+- [RunAs 與共用主機支援](#runas-and-shared-host-support)
+- [特殊字元處理的改進](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
 Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Foundation 的功能。 您現在可以使用 XAML 或使用 Windows PowerShell 語言來撰寫工作流程，以及透過與 Cmdlet 相同的執行方式來執行工作流程。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 可取得工作流程命令，而 [Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 可取得工作流程的說明。
@@ -549,7 +510,7 @@ Windows PowerShell Web 存取是一項 Windows Server 2012 功能，可讓使用
 Windows PowerShell 是針對 Common Language Runtime 4.0 所建立。 Cmdlet、指令碼與工作流程作者可以使用 Windows PowerShell 中新的 Microsoft .NET Framework 4 類別，其功能包括應用程式相容性與部署、Managed Extensibility Framework、平行運算、網路、Windows Communication Foundation 及 Windows Workflow Foundation。
 
 ### <a name="support-for-windows-preinstallation-environment"></a>支援 Windows 預先安裝環境
-Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Windows PE) 4.0 的選用元件。 WindowsÂ PE 是啟動尚未安裝作業系統之電腦的最小作業系統，並且可以讓電腦準備好以安裝 Windows。 WindowsÂ PE 可以用來分割及格式化硬碟、複製磁碟映像至電腦，以及從網路共用位置起始 Windows 安裝程式。 Windows PowerShell 3.0 可以在 Windows PE 上使用，以管理部署、診斷與修復案例。
+Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Windows PE) 4.0 的選用元件。 Windows PE 是啟動尚未安裝作業系統之電腦的最小作業系統，並且可以讓電腦準備好以安裝 Windows。 Windows PE 可以用來分割及格式化硬碟、複製磁碟映像至電腦，以及從網路共用位置起始 Windows 安裝程式。 Windows PowerShell 3.0 可以在 Windows PE 上使用，以管理部署、診斷與修復案例。
 
 ### <a name="disconnected-sessions"></a>已中斷連線的工作階段
 從 Windows PowerShell 3.0 開始，您使用 New-PSSession Cmdlet 建立的持續性使用者管理的工作階段 ("PSSessions") 會儲存在遠端電腦上。 它們已經不再與它們建立所在的工作階段相依。
@@ -750,7 +711,6 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 為改善 Windows PowerShell 3.0 解譯及正確處理特殊字元的能力，用來處理路徑中特殊字元的 **LiteralPath** 參數在所有擁有 **Path** 參數的 Cmdlet (包括新的 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 與 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Cmdlet) 上幾乎都是有效的。 剖析器也包含特殊邏輯，可改善對檔案名稱與路徑中的倒引號字元 (\`) 及方括弧的處理能力。
 
 ## <a name="see-also"></a>另請參閱
-- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 

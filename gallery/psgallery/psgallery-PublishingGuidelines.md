@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "發行者的指導方針"
 title: "PowerShell 資源庫發行指導方針與最佳做法"
-ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 72b6ca4cb4815900a3fa48f965e581a6f6130123
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -32,7 +32,7 @@ ms.lasthandoff: 08/31/2017
 * 包含文件和範例
 * 針對意見反應做出回應
 * 提供模組而不是指令碼
-* 依循 [SemVer] 指導方針來進行版本設定
+* 依循 [SemVer](http://semver.org/) 指導方針來進行版本設定
 * 提供專案網站的連結
 * 在模組中隨附測試
 * 包含和/或連結至授權條款

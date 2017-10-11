@@ -3,22 +3,22 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 的協助工具"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: fce9e2e2f177174a7359351738a0e02201448fc6
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 本主題說明 Windows PowerShell 整合式指令碼環境 (ISE) 的協助工具功能，對您來說可能很實用。
 
-* [如何變更主控台和指令碼窗格的大小和位置]()
-* [編輯文字的鍵盤快速鍵]()
-* [執行指令碼的鍵盤快速鍵]()
-* [自訂檢視的鍵盤快速鍵]()
-* [偵錯指令碼的鍵盤快速鍵]()
-* [Windows PowerShell 索引標籤的鍵盤快速鍵]()
-* [開始和結束的鍵盤快速鍵]()
+* [如何變更主控台和指令碼窗格的大小和位置](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
+* [編輯文字的鍵盤快速鍵](#keyboard-shortcuts-for-editing-text)
+* [執行指令碼的鍵盤快速鍵](#keyboard-shortcuts-for-running-scripts)
+* [自訂檢視的鍵盤快速鍵](#keyboard-shortcuts-for-customizing-the-view)
+* [偵錯指令碼的鍵盤快速鍵](#keyboard-shortcuts-for-debugging-scripts)
+* [Windows PowerShell 索引標籤的鍵盤快速鍵](#keyboard-shortcuts-for-windows-powershell-tabs)
+* [開始和結束的鍵盤快速鍵](#keyboard-shortcuts-for-starting-and-exiting)
 
 Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下列主題提供可更方便殘障人士使用 Windows PowerShell ISE 的功能、產品及服務的相關資訊。
 
@@ -113,7 +113,8 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**移除所有中斷點**|CTRL+SHIFT+F9|偵錯指令碼時的指令碼窗格|
 |**停止偵錯工具**|SHIFT+F5|偵錯指令碼時的指令碼窗格|
 
-> [!NOTE]
+> ![注意](../core-powershell/web-access/images/Note.jpeg)**注意**
+>
 > 當您在 Windows PowerShell ISE 中進行指令碼偵錯時，也可以使用專為 Windows PowerShell 主控台設計的鍵盤快速鍵。 若要使用這些快速鍵，您必須在主控台窗格中輸入捷徑，然後按 ENTER 鍵。
 
 |動作|鍵盤快速鍵|使用位置|

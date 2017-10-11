@@ -4,24 +4,21 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "資源庫,powershell,cmdlet,psgallery,psget"
 title: "PowerShell 資源庫"
-ms.openlocfilehash: 3e324f15b251822163c3ea9b6655767419a5ac4e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 83a1f4e20b985a502637aee9d50ecc1d3f9a4616
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/29/2017
 ---
-<a id="the-powershell-gallery" class="xliff"></a>
-# PowerShell 資源庫
+# <a name="the-powershell-gallery"></a>PowerShell 資源庫
 
 PowerShell 資源庫是 PowerShell 內容的集中存放庫。 您可以在資源庫中找到新的 PowerShell 命令或預期狀態設定 (DSC) 資源。
 
-<a id="powershellget-overview" class="xliff"></a>
-## PowerShellGet 概觀
+## <a name="powershellget-overview"></a>PowerShellGet 概觀
 
 PowerShellGet 模組包含來自 https://www.PowerShellGallery.com 及其他私用存放庫，用於探索、安裝、更新及發行 PowerShell 成品 (例如模組、DSC 資源、角色功能與指令碼) 的 Cmdlet。
 
-<a id="getting-started-with-the-gallery" class="xliff"></a>
-## 開始使用資源庫
+## <a name="getting-started-with-the-gallery"></a>開始使用資源庫
 
 要從資源庫安裝項目需要最新版本的 PowerShellGet 模組，其在 Windows 10、Windows Management Framework (WMF) 5.0 或 MSI 安裝程式 (適用於 PowerShell 3 及 4) 均有提供。
 
@@ -31,16 +28,15 @@ PowerShellGet 模組包含來自 https://www.PowerShellGallery.com 及其他私�
 
 使用最新 [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 模組，您可以：
 
--   使用 [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 與 [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 在資源庫中搜尋項目
--   使用 [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 與 [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 從資源庫將項目儲存到您的系統
--   使用 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 與 [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 從資源庫安裝項目
--   使用 [**Publish-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 與 [**Publish-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 將項目上傳到資源庫
--   使用 [**Register-PSRepository**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 新增您自己的自訂存放庫
+-   使用 [Find-Module](https://go.microsoft.com/fwlink/?LinkId=821658) 與 [Find-Script](https://go.microsoft.com/fwlink/?LinkId=822322) 在資源庫中搜尋項目
+-   使用 [Save-Module](https://go.microsoft.com/fwlink/?LinkId=821669) 與 [Save-Script](https://go.microsoft.com/fwlink/?LinkId=822334) 從資源庫將項目儲存到您的系統
+-   使用 [Install-Module](https://go.microsoft.com/fwlink/?LinkId=821663) 與 [Install-Script](https://go.microsoft.com/fwlink/?LinkId=822327) 從資源庫安裝項目
+-   使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkId=821666) 與 [Publish-Script](https://go.microsoft.com/fwlink/?LinkId=822331) 將項目上傳到資源庫
+-   使用 [Register-PSRepository](https://go.microsoft.com/fwlink/?LinkId=821668) 新增您自己的自訂存放庫
 
 如需如何在資源庫使用 PowerShellGet 命令的詳細資訊，請查看[開始使用](psgallery/psgallery_gettingstarted.md)頁面。 您也可以執行 *Update-Help -Module PowerShellGet* 以安裝這些命令的本機說明。
 
-<a id="supported-operating-systems" class="xliff"></a>
-## 支援的作業系統
+## <a name="supported-operating-systems"></a>支援的作業系統
 
 **PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本**。
 
@@ -50,15 +46,14 @@ PowerShellGet 模組包含來自 https://www.PowerShellGallery.com 及其他私�
 - Windows 8.1 專業版
 - Windows 8.1 Enterprise
 - Windows 7 SP1
-- Windows Server 2016 TP5
+- Windows Server 2016
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
 
 
-<a id="got-a-question-have-feedback" class="xliff"></a>
-## 有任何問題嗎？ 想提供任何意見？
+## <a name="got-a-question-have-feedback"></a>有任何問題嗎？ 想提供任何意見？
 
 如需 PowerShell 資源庫與 PowerShellGet 的詳細資料，請前往[開始使用](psgallery/psgallery_gettingstarted.md)頁面。 請使用 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) 提供意見反應及回報問題。
 

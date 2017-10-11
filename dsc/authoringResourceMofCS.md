@@ -3,14 +3,14 @@ ms.date: 2017-06-12
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
-title: "用 C` 撰寫 DSC 資源"
-ms.openlocfilehash: 502a4f42f685642d0966a8ee1ee745902005d61c
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: "使用 C# 撰寫 DSC 資源"
+ms.openlocfilehash: c1dc97d4e05499d03450d6172d9674b06a674393
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/29/2017
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>用 C`#` 撰寫 DSC 資源
+# <a name="authoring-a-dsc-resource-in-c"></a>使用 C# 撰寫 DSC 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 整合式指令碼環境 ISE"
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: e5c4e6ef002d6d6ede014a3147d1fed15f6d76d8
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 整合式指令碼環境 (ISE)
 Windows PowerShell 整合式指令碼環境 (ISE) 是 Windows PowerShell 引擎和語言之兩部主機的其中一部。 您可以使用它，透過 Windows PowerShell 主控台中無法使用的方式來撰寫、執行和測試指令碼。 ISE 新增語法著色、Tab 鍵自動完成、IntelliSense、視覺化偵錯和即時線上說明。
@@ -22,7 +22,7 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 **程式碼片段**是可輕鬆地插入所撰寫指令碼的簡短程式碼區段。 有用程式碼片段的集合包含在方塊中，而且使用 **New-Snippet** Cmdlet 可以有更多的程式碼片段。
 
-**附加元件工具**可將功能新增至 ISE，藉由撰寫與 [Windows PowerShell ISE 指令碼物件模型](https://technet.microsoft.com/en-us/library/dd819478.aspx)互動的程式碼即可建立。 這些工具可以在索引標籤式窗格中顯示控制項，或在背景無形地工作。 **命令**附加元件是不錯的範例，並包含 3.0 版和更新版本，會顯示可用命令的清單和其說明。
+**附加元件工具**可將功能新增至 ISE，藉由撰寫與 [Windows PowerShell ISE 指令碼物件模型](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)互動的程式碼即可建立。 這些工具可以在索引標籤式窗格中顯示控制項，或在背景無形地工作。 **命令**附加元件是不錯的範例，並包含 3.0 版和更新版本，會顯示可用命令的清單和其說明。
 
 **重新啟動管理員和自動儲存**每兩分鐘會自動儲存您的指令碼，協助您避免在當機或意外重新啟動時遺失工作。
 
@@ -54,11 +54,14 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 ISE 是在 PowerShell 2.0 版引進。
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Windows PowerShell ISE 的執行需求
-ISE 可以在任何可執行 Windows PowerShell 2.0 版或更新版本的電腦上使用。 每個版本的 Windows 和 Windows Server 都包括某個版本的 Windows PowerShell 和 ISE，但您可以安裝 Windows Management Framework 來升級到最新可用版本。 執行這項搜尋來尋找可用的最新版本︰[下載試用](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。 請注意，任何標示 "Preview" 的項目都是發行前版本程式碼，而不是完整功能。
+ISE 可以在任何可執行 Windows PowerShell 2.0 版或更新版本的 Windows 電腦上使用。
+每個版本的 Windows 和 Windows Server 都包括某個版本的 Windows PowerShell 和 ISE，但您可以安裝 Windows Management Framework 來升級到最新可用版本。
+執行這項搜尋來尋找可用的最新版本︰[下載試用](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。
+請注意，任何標示 "Preview" 的項目都是發行前版本程式碼，而不是完整功能。
 
 > [!NOTE]
 > 因為 Windows PowerShell ISE 需要圖形化使用者介面，所以無法在 Windows Server 的 Server Core 選項上執行它。
 
 ## <a name="see-also"></a>另請參閱
-- [使用 Windows PowerShell 整合式指令碼環境](http://technet.microsoft.com/library/cc732148.aspx)
+- [使用 Windows PowerShell 整合式指令碼環境](Using-the-Windows-PowerShell-ISE.md)
 
