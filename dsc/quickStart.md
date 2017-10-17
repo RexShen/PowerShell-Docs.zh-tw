@@ -1,21 +1,21 @@
 ---
-ms.date: 2017-06-12T00:00:00.000Z
+ms.date: 2017-06-12
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "預期狀態設定快速入門"
-ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
-ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
+ms.openlocfilehash: 295a78f3fd85464239d51d7be0defa04d2344689
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 10/13/2017
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 # <a name="desired-state-configuration-quick-start"></a>預期狀態設定快速入門
 
 這個練習會從頭開始完整地逐步建立並套用預期狀態設定 (DSC)。
-我們將使用的範例會確保伺服器已啟用 `Web-Server` (IIS) 功能，且在該伺服器的 `intetpub\wwwroot` 目錄中有簡單 "Hello World" 網站的內容。
+我們將使用的範例會確保伺服器已啟用 `Web-Server` (IIS) 功能，且在該伺服器的 `intepub\wwwroot` 目錄中有簡單 "Hello World" 網站的內容。
 
 如需 DSC 及其運作方式的概觀，請參閱[適合決策者的預期狀態設定概觀](decisionMaker.md)。
 

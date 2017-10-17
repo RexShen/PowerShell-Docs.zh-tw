@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell.exe 命令列說明"
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: b2236decb3295ee5b543f72f083e516c91fa4b5f
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: c2583dac14f32db414f0a4377b1694ab7fa7523b
+ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/11/2017
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令列說明
 啟動 Windows PowerShell 工作階段。 您可以使用 PowerShell.exe 從其他工具的命令列 (例如 Cmd.exe) 啟動 Windows PowerShell 工作階段，或在 Windows PowerShell 命令列中使用以啟動新的工作階段。 使用參數可自訂工作階段。
@@ -16,8 +16,11 @@ ms.lasthandoff: 09/08/2017
 
 ```syntax
 PowerShell[.exe]
+       [-Command { - | <script-block> [-args <arg-array>]
+                     | <string> [<CommandParameters>] } ]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]
+       [-File <FilePath> [<Args>]]
        [-InputFormat {Text | XML}] 
        [-Mta]
        [-NoExit]
@@ -28,9 +31,7 @@ PowerShell[.exe]
        [-PSConsoleFile <FilePath> | -Version <Windows PowerShell version>]
        [-Sta]
        [-WindowStyle <style>]
-       [-File <FilePath> [<Args>]]
-       [-Command { - | <script-block> [-args <arg-array>]
-                     | <string> [<CommandParameters>] } ]
+        
 
 PowerShell[.exe] -Help | -? | /?
 ```
@@ -115,15 +116,19 @@ Command 的值可以是 "-"、字串。 或指令碼區塊。 如果 Command 的
 ## <a name="examples"></a>範例
 
 ```
+# Create a new PowerShell session and load a saved console file
 PowerShell -PSConsoleFile sqlsnapin.psc1
 
+# Create a new PowerShell V2 session with text input, XML output, and no logo
 PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
 
+# Execute a Powerhell Command in a session
 PowerShell -Command "Get-EventLog -LogName security"
 
-# in an existing PowerShell session that understands the curly braces mean a script block
+# Run a script block in a session
 PowerShell -Command {Get-EventLog -LogName security}
 
+# An alternate wayh to run a command in a new session
 PowerShell -Command "& {Get-EventLog -LogName security}"
 
 # To use the -EncodedCommand parameter:

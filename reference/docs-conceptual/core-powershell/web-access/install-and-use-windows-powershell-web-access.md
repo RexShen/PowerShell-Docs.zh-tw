@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "安裝和使用 Windows PowerShell Web 存取"
-ms.openlocfilehash: a4b812e2aa32450bc68f761e7b85e8f2ee2b34ee
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -52,16 +52,16 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 - 適用於 Microsoft Windows 8.0、9.0、10.0 和 11.0 的 Windows Internet Explorer
 - Mozilla Firefox 10.0.2
-- 適用於 Windows 的 Google Chromeâ 17.0.963.56m
+- 適用於 Windows 的 Google Chrome 17.0.963.56m
 - 適用於 Windows 的 Apple Safari 5.1.2
 - 適用於 Mac OS 的 Apple Safari 5.1.2
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>通過基本測試的行動裝置或瀏覽器
 
-- WindowsÂ Phone 7 和 7.5
-- Google Android WebKit 3.1 BrowserÂ Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 和 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - 適用於 iPhone 作業系統 5.0.1 的 Apple Safari
-- 適用於 iPad 2Â 作業系統 5.0.1 的 Apple Safari
+- 適用於 iPad 2 作業系統 5.0.1 的 Apple Safari
 
 ### <a name="browser-requirements"></a>瀏覽器需求
 
