@@ -19,6 +19,8 @@
 ### [連絡項目擁有者](psgallery/psgallery_contacting_item_owners.md)
 ### [連絡系統管理員](psgallery/psgallery_contacting_administrators.md)
 ### [透過社交媒體或評論提供意見反應](psgallery/psgallery-SocialMediaFeedback.md)
+### [項目詳細資料上的必須接受授權](psgallery/psgallery_requires_license_acceptance.md)
+### [部署至 Azure 自動化上的必須接受授權](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
 
 # [PowershellGet](psget/overview.md)
 ## [取得 PowerShellGet 模組](psget/get_psget_module.md)
@@ -36,6 +38,7 @@
 ### [更新模組資訊清單](psget/module/psget_update-modulemanifest.md)
 ### [發行](psget/module/psget_publish-module.md)
 ### [PSEditions 的模組](psget/module/modulewithpseditionsupport.md)
+### [必須接受授權的模組](psget/module/RequireLicenseAcceptance.md)
 ### [疑難排解](psget/psget_cmdlets_troubleshooting.md)
 
 ## 指令碼
@@ -50,6 +53,7 @@
 ### [更新指令碼檔中繼資料](psget/script/psget_update-scriptfileinfo.md)
 ### [發行](psget/script/psget_publish-script.md)
 ### [搭配 PSEditions 的指令碼](psget/script/scriptwithpseditionsupport.md)
+### [指令碼上的必須接受授權](psget/script/script_RequireLicenseAcceptance.md)
 
 ## 存放庫管理
 ### [啟動 NuGet 提供者與 NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
