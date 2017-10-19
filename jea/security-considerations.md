@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 安全性考量"
-ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 2dcce34113998a1c31709b6afe6d0a21c991e79d
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="jea-security-considerations"></a>JEA 安全性考量
 
@@ -68,7 +68,7 @@ gMSA 的有效權限由 gMSA 帳戶所屬安全性群組 (本機或網域) 定�
 JEA 端點設定為使用 gMSA 帳戶之後，所有 JEA 使用者的動作會顯示為來自相同的群組受管理的服務帳戶。
 從動作回溯到特定使用者的唯一方法，是在 PowerShell 工作階段文字記錄中識別執行的命令集合。
 
-**傳遞認證**的使用時機，是您未指定執行身份帳戶，並想要讓 PowerShell 使用連線使用者的認證在遠端伺服器上執行命令時。
+**傳遞認證**適合下列情況使用：您未指定執行身分帳戶，但想要讓 PowerShell 使用連線使用者的認證在遠端伺服器上執行命令。
 「不」建議針對 JEA 使用此設定，因為您需要授與連線使用者對特殊權限管理群組的直接存取權。
 如果連線使用者已經有系統管理員權限，他們可以完全避免使用 JEA 並透過其他未受限制的方式來管理系統。
 請參閱下節，了解 [JEA 無法防止系統管理員](#jea-does-not-protect-against-admins)的詳細資訊。

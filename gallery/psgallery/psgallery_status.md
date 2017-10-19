@@ -1,20 +1,37 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_status
-ms.technology: powershell
-ms.openlocfilehash: a260b9b696b41947fbbb789fd165dfe4bdac1dc3
-ms.sourcegitcommit: 214b8442f05618d078837889cbb6a30b42c01edb
-translationtype: HT
+ms.openlocfilehash: af6111d3c511273571bd978c6d0e7447726c2917
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/13/2017
 ---
 <a name="powershell-gallery-status"></a>PowerShell 資源庫狀態
 =========================
+## <a name="10102017---powershell-gallery-unavailable-for-2-hours-101017"></a>2017 年 10 月 10 日 - PowerShell 資源庫於 2017 年 10 月 10 日出現 2 個小時無法使用的情況
+
+__影響摘要__：PowerShell 資源庫有一段時間出現非常高的延遲，因而導致間歇性的連線問題。此情況於 2017 年 10 月 10 日，大約下午 5 點 (PDT) 開始出現。 為了解決此問題，網站於大約下午 10 點 (PDT) 開始離線 2 個小時。 網站已在 2017 年 10 月 10 日的午夜之前還原。 
+ 
+__根本原因__：目前仍在調查造成高延遲的根本原因。
+
+__解決方法__：必須使 Web 服務離線並還原以解決主要問題。 
+
+__後續步驟__：持續調查造成原始問題的根本原因。
+
+## <a name="06012017---deploy-to-azure-automation-currently-unavailable"></a>2017 年 6 月 1 日 - 目前無法部署至 Azure 自動化
+
+__影響摘要__：目前無法將具有相依性的項目從「PowerShell 資源庫」部署至「Azure 自動化」。  仍然無法從「Azure 自動化」內部自「PowerShell 資源庫」匯入項目。  
+ 
+__根本原因__：項目如果與其他項目相依且先前已部署至「Azure 自動化」，系統就不會將其部署至「Azure 自動化」。 針對「部署至 Azure 自動化」功能，工程師已找出一個與為具有相依性的項目產生 ARM 範本有關的問題。
+
+__解決方法__：工程師正在努力解決此問題。  使用者目前的因應措施是從「Azure 自動化」內部自「PowerShell 資源庫」匯入項目。 
+
+__後續步驟__：工程師將在稍後發行修正。  在此同時，請使用建議的因應措施。 
+
 
 ## <a name="04112017---users-unable-to-log-in-with-azure-active-directory-aad-accounts"></a>04/11/2017 - 使用者無法登入 Azure Active Directory (AAD) 帳戶
 
@@ -58,7 +75,7 @@ __後續步驟__︰若您曾在這段期間使用 [與我們連絡] 連結，或
 
 __影響摘要__：2016/7/11 到 2016/7/13 之間，有一些客戶出現無法從 PowerShell 資源庫下載項目的問題。 此問題可能會顯示在 Install-Module/Install-Script 與 Save-Module/Save-Script 傳回的下列錯誤訊息中︰
 
-```PowerShell
+```powershell
 PS C:\> Install-Module xStorage 
 PackageManagement\Install-Package : Package 'xStorage' failed to be installed because: 
 End of Central Directory record could not be found. At C:\Program 
@@ -77,7 +94,7 @@ __後續步驟__︰調查最根本的原因，並制定解決方法，以避免�
 ## <a name="5192016---download-items-failed"></a>2016/5/19 - 下載項目失敗
 __影響摘要__：2016/5/17 到 2016/5/19 之間，有一些客戶出現無法從 PowerShell 資源庫下載項目的問題。 此問題可能會顯示在 Install-Module/Install-Script 與 Save-Module/Save-Script 傳回的下列錯誤訊息中︰
 
-```PowerShell
+```powershell
 VERBOSE: Hash for package 'AzureRM.OperationalInsights' does not match hash provided from the server.
 VERBOSE: InstallPackageLocal' - name='AzureRM.OperationalInsights', version='1.0.8',
 destination='C:\Users\jbritt\AppData\Local\Temp\2\1741355729'

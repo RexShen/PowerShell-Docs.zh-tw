@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "適合決策者的預期狀態設定概觀"
-ms.openlocfilehash: e8cb26c659dbacde814b1ceaedc0b1fb8dae9d63
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適合決策者的預期狀態設定概觀
 
@@ -27,9 +27,9 @@ DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發�
 
 設定應設計為易於讀取、儲存及更新。 設定會宣告目標裝置應有的狀態，不需要撰寫如何成就裝置狀態的指示。 這可讓您以更經濟的成本透過 DSC 了解、採用、實作和維護設定。 
 
-建立設定即表示，已在單一位置將複雜的部署步驟擷取為「單一事實來源」。 這讓特定電腦集合的重複部署更不容易出錯。 接著，讓部署更快速可靠。 讓複雜的部署快速作業。
+建立設定即表示，已在單一位置將複雜的部署步驟擷取為「單一事實來源」。 這讓特定電腦集合的重複部署更不容易出錯。 也因此可讓部署更快速且更可靠，藉此縮短複雜部署的完成時間。
 
-設定也可透過 [PowerShell 資源庫](https://powershellgallery.com)共用。 這表示您需要完成的工作可能已有常見案例和最佳做法。
+設定也可透過 [PowerShell 資源庫](https://powershellgallery.com) \(英文\) 來分享，亦即針對您要完成的工作，可能已經有共同的案例與最佳做法。
 
 
 ## <a name="desired-state-configuration-and-devops"></a>預期狀態設定和 DevOps

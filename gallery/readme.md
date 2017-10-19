@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "資源庫,powershell,cmdlet,psgallery,psget"
 title: "PowerShell 資源庫"
-ms.openlocfilehash: 83a1f4e20b985a502637aee9d50ecc1d3f9a4616
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fe341e4b297764321f3b3f07caca8ef4b8b40e0
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫
 
@@ -16,7 +16,7 @@ PowerShell 資源庫是 PowerShell 內容的集中存放庫。 您可以在資�
 
 ## <a name="powershellget-overview"></a>PowerShellGet 概觀
 
-PowerShellGet 模組包含來自 https://www.PowerShellGallery.com 及其他私用存放庫，用於探索、安裝、更新及發行 PowerShell 成品 (例如模組、DSC 資源、角色功能與指令碼) 的 Cmdlet。
+PowerShellGet 模組包含來自 [PowerShell 資源庫](https://www.PowerShellGallery.com)及其他私用存放庫，用於探索、安裝、更新及發行 PowerShell 成品 (例如模組、DSC 資源、角色功能與指令碼) 的 Cmdlet。
 
 ## <a name="getting-started-with-the-gallery"></a>開始使用資源庫
 

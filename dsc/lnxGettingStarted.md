@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "開始使用 Linux 預期狀態設定 (DSC)"
-ms.openlocfilehash: bf87125309a3f6b556fd7546057cb9491fb34229
-ms.sourcegitcommit: 4ab9a86e47b6effe8fe22ebeb81e8fadff41d31c
+ms.openlocfilehash: f88167cd039077574c3a84aa07ba78186adfa181
+ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -106,7 +106,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
 
-設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 為了從遠端對 Linux 電腦使用這個 Cmdlet，以及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx, 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet，您必須使用 CIMSession。 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) Cmdlet 用來建立 Linux 電腦的 CIMSession。
+設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 推送至 Linux 電腦。 若要從遠端針對 Linux 電腦使用此 Cmdlet 及 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) \(英文\) 或 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) \(英文\) Cmdlet，您必須使用 CIMSession。 [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) Cmdlet 用來建立 Linux 電腦的 CIMSession。
 
 下列程式碼示範如何建立 DSC for Linux 的 CIMSession。
 
