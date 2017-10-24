@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "管理目前的位置"
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: 20b3828d12587e675ed51863e5d96c37839b62d6
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: cbdebb84b3191e3bd549a1cf344cbeefaa91a23c
+ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="managing-current-location"></a>管理目前的位置
 瀏覽 [檔案總管] 中的資料夾系統時，您通常有特定的工作位置，亦即目前開啟的資料夾。 只要按一下目前資料夾中的項目，即可輕鬆地操作這些項目。 對於命令列介面 (例如 Cmd.exe)，當位在與特定檔案相同的資料夾中時，您可以指定相對短的名稱來存取該檔案，而不需要指定該檔案的完整路徑。 目前的目錄稱為工作目錄。
@@ -49,10 +49,13 @@ C:\WINDOWS
 
 例如，若目前資料夾為 **C:\\Windows**，則句點 (**.**) 代表 **C:\\Windows**，而雙句點 (**..**) 代表 **C:**。 輸入下列命令，即可從目前的位置變更到 C: 磁碟機的根目錄：
 
-<pre>PS> Set-Location -Path .. -PassThru
+```powershell
+PS> Set-Location -Path .. -PassThru
+
 Path
 ----
-C:\</pre>
+C:\
+```
 
 相同的方法在並非檔案系統磁碟機的 Windows PowerShell 磁碟機 (例如 **HKLM:**) 上也適用。 輸入下列命令，即可將您的位置設定為登錄中的 HKLM\\Software 機碼：
 
