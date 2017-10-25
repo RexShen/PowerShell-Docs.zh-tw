@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="import-dscresource-keyword-supports--moduleversion-parameter" class="xliff"></a>
-# Import-DscResource 關鍵字支援 -ModuleVersion 參數
+# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 關鍵字支援 -ModuleVersion 參數
 
 我們將新的參數新增至撰寫 DSC 設定時可用的 `Import-DscResource` 動態關鍵字。 設定作者現在可以指定要從哪個模組版本中載入 DSC 資源。 新關鍵字的語法為︰
 

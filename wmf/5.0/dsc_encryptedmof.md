@@ -9,8 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="mof-documents-are-encrypted-by-default" class="xliff"></a>
-# MOF 文件預設為加密
+# <a name="mof-documents-are-encrypted-by-default"></a>MOF 文件預設為加密
 
 設定文件包含機密資訊。 在舊版的 DSC 中，您必須先發佈和管理憑證，才能保護設定中的認證。 對許多人來說，即進行了所有所需的工作，這依然是重大的管理負擔，而且您還必須面對一些既沒有被保護，也無法被保護的設定資訊。 
 

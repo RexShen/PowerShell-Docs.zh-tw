@@ -10,8 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 06/12/2017
 ---
-<a id="just-enough-administration" class="xliff"></a>
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 
 Just Enough Administration (JEA) 是安全性技術，允許將可透過 PowerShell 管理的任何項目委派管理。
 使用 JEA，您可以︰
@@ -37,8 +36,7 @@ JEA 有助於解決這個問題，因為它可以協助您採用*最低權限*�
 更棒的是，當 JEA 工作階段設定為使用暫時性特殊權限虛擬帳戶時，您的 DNS 系統管理員就可以在使用「非系統管理員」認證連接到伺服器的情況下，仍然能夠執行通常需要系統管理權限的命令。
 這項功能可讓您從廣泛權限的本機/網域系統管理員角色移除使用者，並改為小心控制他們能夠在每部電腦上執行的事項。
 
-<a id="get-started-with-jea" class="xliff"></a>
-## 開始使用 JEA
+## <a name="get-started-with-jea"></a>開始使用 JEA
 
 您可以在執行 Windows Server 2016 或 Windows 10 的任何電腦上立即開始使用 JEA。
 您也可以在具有 Windows Management Framework 更新的舊版作業系統上執行 JEA。
@@ -52,8 +50,7 @@ JEA 有助於解決這個問題，因為它可以協助您採用*最低權限*�
 - [安全性考量](security-considerations.md) - 檢閱安全性最佳做法和 JEA 設定選項的影響。
 - [JEA 上的稽核和報告](audit-and-report.md) - 了解如何在 JEA 端點進行稽核和報告。
 
-<a id="samples-and-dsc-resource" class="xliff"></a>
-## 範例和 DSC 資源
+## <a name="samples-and-dsc-resource"></a>範例和 DSC 資源
 
 您可以在 [JEA GitHub 存放庫 (英文)](https://github.com/PowerShell/JEA) 中找到範例 JEA 設定和 JEA DSC 資源。
 
