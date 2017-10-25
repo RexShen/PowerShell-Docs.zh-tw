@@ -1,18 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
 title: "WMF 5.1 的 DSC 改善"
-ms.date: 2016-07-13
-keywords: "PowerShell、DSC、WMF"
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
-ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.openlocfilehash: ce897dab2344455453e9bf2d0b5a897f9abb4392
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -53,13 +49,13 @@ DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制�
 
 請參閱下方的快照集︰
 
-•    本機組態設定，定義允許節點接收的部分設定。
+•   本機組態設定，定義允許接收節點的部分設定。
 
 ![中繼設定範例](../images/MetaConfigPartialOne.png)
 
-•    部分設定定義範例 
+•   部分設定定義範例 
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -74,11 +70,11 @@ Configuration PartialOne
 PartialOne
 ```
 
-•    內嵌在產生之 MOF 檔案中的 'ConfigurationName'。
+•   內嵌在產生之 MOF 檔案中的 'ConfigurationName'。
 
 ![產生的 MOF 檔案範例](../images/PartialGeneratedMof.png)
 
-•    提取設定存放庫中的檔案名稱 
+•   提取設定存放庫中的檔案名稱 
 
 ![設定存放庫中的檔案名稱](../images/PartialInConfigRepository.png)
 
@@ -86,7 +82,7 @@ Azure 自動化服務名稱以前產生的 MOF 檔案為 `<ConfigurationName>.<N
 
 如此即不可能從 Azure 自動化服務提取您其中一項部分設定。
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -105,7 +101,7 @@ PartialOne
 
 下面的中繼設定會設定由本機及 Azure 自動化服務管理的節點。
 
-```PowerShell
+```powershell
   [DscLocalConfigurationManager()]
    Configuration RegistrationMetaConfig
    {
@@ -209,7 +205,7 @@ InstallWindowsFeature -ConfigurationData $configData
 ####<a name="pull"></a>提取
 節點的 LocalConfigurationManager 會根據其目前的設定，執行模組和設定的簽署驗證。 預設停用簽章驗證。 將 'SignatureValidation' 區塊加入節點的中繼設定定義可啟用簽章驗證，如下所示：
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -263,7 +259,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 * 在節點上啟用簽章驗證。
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -282,7 +278,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ``` 
 * 建立設定檔範例。
 
-```PowerShell
+```powershell
 # Sample configuration
 Configuration Test
 {
@@ -298,7 +294,7 @@ Test
 
 * 嘗試將未經簽署的設定檔推入至節點。 
 
-```PowerShell
+```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)

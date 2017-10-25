@@ -1,16 +1,15 @@
 ---
-title: "安裝與設定 WMF 5.1"
-ms.date: 2017-01-18
-keywords: "PowerShell、DSC、WMF"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "wmf,powershell,設定"
 contributor: keithb
-manager: carmonm
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 55a2e03385b90c7631d1b0373bf85602aa7d769b
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+title: "安裝與設定 WMF 5.1"
+ms.openlocfilehash: ea9b2fb184f2dd9a8e7a09c3a36278087f795172
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1 #
 
@@ -19,10 +18,10 @@ translationtype: HT
 
 為適用於其安裝所在的作業系統和架構下載 WMF 5.1 封裝︰
 
-| 作業系統         | 必要條件       | 封裝連結             |
+| 作業系統       | 必要條件       | 封裝連結             |
 |------------------------|---------------------|---------------------------|
 | Windows Server 2012 R2 | | [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516)|
-| Windows Server 2012     | | [W2K12-KB3191565-x64.msu](https://go.microsoft.com/fwlink/?linkid=839513)|
+| Windows Server 2012    | | [W2K12-KB3191565-x64.msu](https://go.microsoft.com/fwlink/?linkid=839513)|
 | Windows Server 2008 R2 | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) | 
 | Windows 8.1            |  | **x64：**[Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516) </br> **x86：**[Win8.1-KB3191564-x86.msu](https://go.microsoft.com/fwlink/?linkid=839521) |
 | Windows 7 SP1          | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | **x64：**[Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) </br> **x86：**[Win7-KB3191566-x86.ZIP](https://go.microsoft.com/fwlink/?linkid=839522)
@@ -54,7 +53,7 @@ Install-WMF5.1.ps1 會採用下列參數以簡化針對 Windows Server 2008 R2 �
 在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安裝 WMF 5.1 需要下列各項：
 - 必須安裝最新的 Service Pack。
 - 「不可以」安裝 WMF 3.0。 在具有 WMF 3.0 的情況下安裝 WMF 5.1 會導致 PSModulePath 遺失，這可能造成其他應用程式失敗。 在安裝 WMF 5.1 之前，您必須將 WMF 3.0 解除安裝，或是儲存 PSModulePath，並在完成 WMF 5.1 安裝之後，將它手動還原。 
-- WMF 5.1 需要 [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642)。您可以依照下載位置的指示安裝 Microsoft .NET Framework 4.5.2。
+- WMF 5.1 需要至少 [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642)。您可以遵循下載位置的指示安裝 Microsoft .NET Framework 4.5.2。
 
 **WinRM 相依性** 
 

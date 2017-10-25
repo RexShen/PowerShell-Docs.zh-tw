@@ -1,24 +1,21 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgalleryint_status
-ms.technology: powershell
-ms.openlocfilehash: 58f06ca061a4f171288e75b30698910c701f1da1
-ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
-translationtype: HT
+ms.openlocfilehash: 0b2f1ebcb365fcd24438a028a9c8181449266a8b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
 <a name="powershell-gallery-status"></a>PowerShell 資源庫狀態
 =========================
 
 ## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017 年 3 月 27 日 - 已解決：無法看到個別模組和指令碼頁面
 
-__影響摘要__：https://www.powershellgallery.com 上個別模組和指令碼頁面的直接連結已中斷。 所有區域均回報此問題。 這並未影響任何 PowerShellGet Cmdlet，Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module、Publish-Script 仍繼續運作。
+__影響摘要__：https://www.powershellgallery.com 上個別模組和指令碼頁面的直接連結已中斷。 所有區域均回報此問題。 這並未影響任何 PowerShellGet Cmdlet，亦即 Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module、Publish-Script 仍繼續運作。
 
 __根本原因__：工程師確認原因出自將社交媒體按鈕 (例如 Facebook) 引入到頁面上。  
 

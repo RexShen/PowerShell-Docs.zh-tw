@@ -1,17 +1,14 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,cmdlet,組件庫"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_faqs
-ms.technology: powershell
-ms.openlocfilehash: c352fe48c5833e9bbb2c86e6b23037a4a8f84596
-ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
-translationtype: HT
+ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -172,3 +169,4 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 ## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>如何對待違反我的項目授權的項目擁有者？
 
 建議 PowerShell 社群一起合作，來解決任何可能在項目擁有者與其他項目之擁有者間發生的爭議。  在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](psgallery_dispute_resolution.md)。
+

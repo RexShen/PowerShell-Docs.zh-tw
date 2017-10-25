@@ -1,15 +1,14 @@
 ---
-title: "巢狀設定"
-ms.date: 2017-03-27
-keywords: "PowerShell，DSC"
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: 3afc4c87b1bc54e5f251a3a54eab5f448900f124
-ms.sourcegitcommit: 65250232157bb1c742d7d385933b8abc24a570fb
-translationtype: HT
+ms.topic: conceptual
+keywords: "dsc,powershell,設定,安裝"
+title: "巢狀設定"
+ms.openlocfilehash: 4de53b94056df46d74923dda56e02841cfac2cd1
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="nesting-dsc-configurations"></a>巢狀 DSC 設定
 
@@ -59,3 +58,4 @@ Configuration NestedFileConfig
 ## <a name="see-also"></a>另請參閱
 
 - [複合資源 -- 把 DSC 設定當做資源使用](authoringResourceComposite.md)
+
