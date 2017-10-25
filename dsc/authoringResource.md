@@ -24,5 +24,5 @@ ms.lasthandoff: 06/12/2017
 * [<span data-ttu-id="07cca-114">在 C# 中實作 DSC 資源</span><span class="sxs-lookup"><span data-stu-id="07cca-114">Implementing a DSC resource in C#</span></span>](authoringResourceMofCS.md) 
 * [<span data-ttu-id="07cca-115">使用 PowerShell 類別撰寫自訂的 DSC 資源</span><span class="sxs-lookup"><span data-stu-id="07cca-115">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md) 
 * [<span data-ttu-id="07cca-116">複合資源：把 DSC 設定當做資源使用</span><span class="sxs-lookup"><span data-stu-id="07cca-116">Composite resources: Using a DSC configuration as a resource</span></span>](authoringResourceComposite.md) 
-* [<span data-ttu-id="07cca-117">使用 [資源設計工具] 工具</span><span class="sxs-lookup"><span data-stu-id="07cca-117">Using the Resource Designer tool</span></span>](authoringResourceMofDesigner.md) 
+* <span data-ttu-id="07cca-117">[使用 [資源設計工具] 工具](authoringResourceMofDesigner.md)</span><span class="sxs-lookup"><span data-stu-id="07cca-117">[Using the Resource Designer tool](authoringResourceMofDesigner.md)</span></span> 
 
