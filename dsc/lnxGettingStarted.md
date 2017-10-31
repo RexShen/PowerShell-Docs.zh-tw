@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "開始使用 Linux 預期狀態設定 (DSC)"
-ms.openlocfilehash: f88167cd039077574c3a84aa07ba78186adfa181
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 10/25/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -18,11 +18,11 @@ ms.lasthandoff: 10/16/2017
 
 DSC for Linux 支援下列 Linux 作業系統版本。
 - CentOS 5、6 和 7 (x86/x64)
-- Debian GNU/Linux 6 和 7 (x86/x64)
+- Debian GNU/Linux 6、7 及 8 (x86/x64)
 - Oracle Linux 5、6 和 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5、6 和 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11 和 12 (x86/x64)
-- Ubuntu Server 12.04 LTS 和 14.04 LTS (x86/x64)
+- Ubuntu Server 12.04 LTS、14.04 LTS 及 16.04 LTS (x86/x64)
 
 下表描述 DSC for Linux 必要的套件相依性。
 

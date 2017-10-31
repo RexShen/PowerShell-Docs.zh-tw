@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "設定資料的認證選項"
-ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 10/25/2017
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 >適用於：Windows PowerShell 5.0
@@ -21,7 +21,7 @@ DSC 也會在使用網域認證時產生警告。
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**注意**︰使用純文字密碼並不安全。 建議您使用本主題稍後所涵蓋的技術來保護認證。
+>**注意：** <p>儲存/傳輸未加密的純文字密碼通常是不安全的。 建議您使用本主題稍後所涵蓋的技術來保護認證。</p> <p>Azure Automation DSC 服務能讓您集中管理及安全儲存要在設定中編譯的認證。  如需資訊，請參閱：[編譯 DSC 設定/認證資產](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)</p>
 
 傳遞純文字認證的範例如下︰
 
@@ -129,10 +129,11 @@ DSC 設定資源預設執行為 `Local System`。
 不過，有些資源需要認證，例如當 `Package` 資源需要在特定使用者帳戶下安裝軟體時。
 
 資源過去使用硬式編碼的 `Credential` 屬性名稱來處理這種情形。
-WMF 5.0 為所有資源加入了自動的 `PsDscRunAsCredential` 屬性。 如需關於使用 `PsDscRunAsCredential` 的相關資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
+WMF 5.0 為所有資源加入了自動的 `PsDscRunAsCredential` 屬性。
+如需關於使用 `PsDscRunAsCredential` 的相關資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
 較新的資源和自訂的資源可以使用這個自動屬性，不用建立自己專有的認證屬性。
 
-請注意，某些資源的設計是針對特定原因使用多個認證，所以會有自己的認證屬性。
+>**注意：**某些資源的目的是為特定原因使用多個認證，所以會有自己的認證屬性。
 
 若要在資源上尋找可用的認證屬性，請使用 `Get-DscResource -Name ResourceName -Syntax` 或 ISE 的 Intellisense (`CTRL+SPACE`)。
 
@@ -265,9 +266,10 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
-*請注意，`NodeName` 不得等同星號，必須有特定的節點名稱。*
+>**注意：**`NodeName` 不得等同星號，必須有特定的節點名稱。
 
 **Microsoft 不建議您使用純文字密碼，以免造成嚴重的安全性風險。**
+使用 Azure Automation DSC 服務時則為例外，這是因為資料一律會以加密過的狀態儲存 (傳輸中、在服務中待用以及在節點上待用)。
 
 ## <a name="domain-credentials"></a>網域認證
 
@@ -298,4 +300,3 @@ $cd = @{
 ```
 
 現在設定指令碼產生的 MOF 檔案不再有任何錯誤或警告。
-
