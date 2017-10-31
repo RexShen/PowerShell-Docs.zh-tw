@@ -362,7 +362,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 15. 開啟新的 Windows PowerShell Web 存取網站。
 
-    由於根網站會指向 Windows PowerShell Web 存取資料夾，因此，當您開啟 **https://\<匣道伺服器名稱**\>** 時，瀏覽器應該會顯示 Windows PowerShell Web 存取登入頁面。 您應該不需要在 URL 中新增 **/pswa**。
+    由於根網站會指向 Windows PowerShell Web 存取資料夾，因此，當您開啟 **https://\<匣道伺服器名稱\>** 時，瀏覽器應該會顯示 Windows PowerShell Web 存取登入頁面。 您應該不需要在 URL 中新增 **/pswa**。
 
     >**![注意](images/note.jpeg) 注意** 
     > 
