@@ -5,11 +5,11 @@ ms.topic: reference
 keywords: "wmf,powershell,設定"
 contributor: keithb
 title: "安裝與設定 WMF 5.1"
-ms.openlocfilehash: ea9b2fb184f2dd9a8e7a09c3a36278087f795172
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 74c19d2eb04b77b1e2b1c8d8977f9b4db6e94e4f
+ms.sourcegitcommit: 9910675e8758042b5949c99b381a926d2b4e8c21
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1 #
 
@@ -53,7 +53,8 @@ Install-WMF5.1.ps1 會採用下列參數以簡化針對 Windows Server 2008 R2 �
 在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安裝 WMF 5.1 需要下列各項：
 - 必須安裝最新的 Service Pack。
 - 「不可以」安裝 WMF 3.0。 在具有 WMF 3.0 的情況下安裝 WMF 5.1 會導致 PSModulePath 遺失，這可能造成其他應用程式失敗。 在安裝 WMF 5.1 之前，您必須將 WMF 3.0 解除安裝，或是儲存 PSModulePath，並在完成 WMF 5.1 安裝之後，將它手動還原。 
-- WMF 5.1 需要至少 [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642)。您可以遵循下載位置的指示安裝 Microsoft .NET Framework 4.5.2。
+- WMF 5.1 需要至少[.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642)。
+您可以遵循下載位置的指示來安裝 Microsoft.NET Framework 4.5.2。
 
 **WinRM 相依性** 
 
