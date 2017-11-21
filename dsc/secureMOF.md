@@ -1,22 +1,31 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-10-31
 author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "保護 MOF 檔案"
-ms.openlocfilehash: dc900f53c954637a407fbd026d24d20c2fdabf6e
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: f4ef2962710c7458ac947bf33270175a09de643c
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 11/07/2017
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC 將具有相關資訊的 MOF 檔案傳送至每個節點，告訴本機設定管理員 (LCM) 實作所需設定的目標節點，它們應有的設定。 因為這個檔案包含設定的詳細資料，所以安全防護很重要。 若要這樣做，您可以設定 LCM 來檢查使用者認證。 本主題說明如何使用憑證加密將這些認證安全地傳輸到目標節點。
+DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的設定，而 MOF 檔案是本機系統管理員 (LCM) 實作所需結束狀態的位置。
+因為這個檔案包含設定的詳細資料，所以安全防護很重要。
+本主題說明如何確保目標節點加密檔案。
 
->**注意**︰本主題討論用於加密的憑證。 以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。 自我簽署憑證*不能*用來進行驗證。 您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
+從 PowerShell 5.0 版開始，使用 **Start-DSCConfiguration** Cmdlet 將 MOF 檔案套用到節點時，會根據預設加密整個 MOF 檔案。
+當憑證未受管理，使用提取服務通訊協定來實作解決方案時，才需要文中所述的程序來確保目標節點所下載的設定在套用前能夠讓系統解密和讀取 (例如，Windows Server 提供的提取服務)。
+向 [Azure 自動化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) 註冊的節點會自動安裝憑證，並交由服務管理而不需任何管理費用。
+
+>**注意**︰本主題討論用於加密的憑證。
+>以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。
+>自我簽署憑證*不能*用來進行驗證。
+>您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
 
 ## <a name="prerequisites"></a>必要條件
 
