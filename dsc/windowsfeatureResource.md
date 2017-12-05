@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC WindowsFeature 資源"
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature 資源
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  屬性  |  描述   | 
 |---|---| 
-| 名稱| 表示您想要確保新增或移除的角色或功能名稱。 這與來自 [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) Cmdlet 的 __Name__ 屬性相同，不是角色或功能的顯示名稱。| 
+| 名稱| 表示您想要確保新增或移除的角色或功能名稱。 這與來自 [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) Cmdlet 的 __Name__ 屬性相同，不是角色或功能的顯示名稱。| 
 | 認證| 表示要用以新增或移除角色或功能的認證。| 
 | Ensure| 表示角色或功能是否新增。 若要確保新增角色或功能，這個屬性請設為 "Present"。若要確保移除角色或功能，請將屬性設定為 "Absent"。| 
 | IncludeAllSubFeature| 這個屬性設為 __$true__ 可讓您使用以 __Name__ 屬性指定的功能狀態來確保所有必要子功能的狀態。| 
