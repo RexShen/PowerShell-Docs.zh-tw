@@ -3,7 +3,8 @@ title: "網路交換器管理員 Cmdlet 失敗"
 contributor: vaibch
 ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
 ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.translationtype: HT
+ms.contentlocale: zh-TW
 ---
 網路交換器管理員 Cmdlet 可用來透過 WSMAN 管理網路交換器。 此模組的數個 Cmdlet 都能接受來自管線的值。 在 WMF 5.1 Preview 中，當值未透過管線傳遞時，可接受來自管線之值的 Cmdlet 即無法執行。
 
