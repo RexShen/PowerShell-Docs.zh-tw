@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "使用 DSC 在初始開機時設定虛擬機器"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >適用於：Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 06/12/2017
 
 若要執行這些範例，您需要︰
 
-- 可開機使用的 VHD。 您可以從   [TechNet 評估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。 您可以在 [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
+- 可開機使用的 VHD。 您可以從 [TechNet 評估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。 您可以在 [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
 - 已啟用 HYPER-V 的主機電腦。 如需資訊，請參閱 [HYPER-V 概觀](https://technet.microsoft.com/library/hh831531.aspx)。
 
 藉由使用 DSC，您可以在初始開機時自動安裝軟體及設定電腦。
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 使用 [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) Cmdlet 將該檔案重新命名為 `Pending.mof`，再將其移至 VHD 上正確的位置。 例如：
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. 呼叫 [DISMOUNT-VHD](https://technet.microsoft.com/library/hh848562.aspx) Cmdlet 可卸載 VHD。 例如：
 
