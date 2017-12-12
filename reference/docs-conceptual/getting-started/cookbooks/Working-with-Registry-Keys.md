@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "使用登錄機碼"
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: efb2c016afa2212c2907c0740ad26c4e4cddd3af
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e7c16fe5f03330da3ea8f60b141d9e35eed474b9
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="working-with-registry-keys"></a>使用登錄機碼
 因為登錄機碼是 Windows PowerShell 磁碟機上的項目，所以使用它們很像是使用檔案和資料夾。 最大的差別是登錄式 Windows PowerShell 磁碟機上的每個項目都是容器，就像檔案系統磁碟機上的資料夾。 不過，登錄項目及其相關值都是項目的屬性，而非不同的項目。
