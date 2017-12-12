@@ -4,45 +4,45 @@ contributor: manikb
 ms.topic: reference
 keywords: "資源庫,powershell,cmdlet,psget"
 title: Find-Script
-ms.openlocfilehash: 15bf23b803250c7893fe970c2580592ea7c0a4b6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="find-script"></a><span data-ttu-id="e5404-103">Find-Script</span><span class="sxs-lookup"><span data-stu-id="e5404-103">Find-Script</span></span>
+# <a name="find-script"></a><span data-ttu-id="6f94b-103">Find-Script</span><span class="sxs-lookup"><span data-stu-id="6f94b-103">Find-Script</span></span>
 
-<span data-ttu-id="e5404-104">尋找來自線上組件庫且符合所指定準則的 PowerShell 指令檔。</span><span class="sxs-lookup"><span data-stu-id="e5404-104">Finds the PowerShell script files from an online gallery that match specified criteria.</span></span>
+<span data-ttu-id="6f94b-104">尋找來自線上組件庫且符合所指定準則的 PowerShell 指令檔。</span><span class="sxs-lookup"><span data-stu-id="6f94b-104">Finds the PowerShell script files from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a><span data-ttu-id="e5404-105">描述</span><span class="sxs-lookup"><span data-stu-id="e5404-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="6f94b-105">描述</span><span class="sxs-lookup"><span data-stu-id="6f94b-105">Description</span></span>
 
-<span data-ttu-id="e5404-106">Find-Script 會探索已註冊存放庫中符合所指定準則的指令檔。</span><span class="sxs-lookup"><span data-stu-id="e5404-106">Find-Script discovers the script files from registered repositories that matches the specified criteria.</span></span>
-<span data-ttu-id="e5404-107">針對每個找到的指令碼，Find-Script 會傳回可選擇性地傳送至 Install-Script 以安裝指令碼的 PSRepositoryItemInfo 物件。</span><span class="sxs-lookup"><span data-stu-id="e5404-107">For each script found, Find-Script returns a PSRepositoryItemInfo object which can optionally be piped to Install-Script for installing the scripts.</span></span>
-<span data-ttu-id="e5404-108">Find-Script Cmdlet 可讓您使用不同的搜尋準則探索指令碼檔案，例如名稱、標記、篩選、命令名稱、版本範圍、正確版本、所有版本，包括其相依性和特定或所有已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="e5404-108">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
+<span data-ttu-id="6f94b-106">Find-Script 會探索已註冊存放庫中符合所指定準則的指令檔。</span><span class="sxs-lookup"><span data-stu-id="6f94b-106">Find-Script discovers the script files from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="6f94b-107">針對每個找到的指令碼，Find-Script 會傳回可選擇性地傳送至 Install-Script 以安裝指令碼的 PSRepositoryItemInfo 物件。</span><span class="sxs-lookup"><span data-stu-id="6f94b-107">For each script found, Find-Script returns a PSRepositoryItemInfo object which can optionally be piped to Install-Script for installing the scripts.</span></span>
+<span data-ttu-id="6f94b-108">Find-Script Cmdlet 可讓您使用不同的搜尋準則探索指令碼檔案，例如名稱、標記、篩選、命令名稱、版本範圍、正確版本、所有版本，包括其相依性和特定或所有已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="6f94b-108">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-- <span data-ttu-id="e5404-109">Find-Script 可以使用 -Command 和 -Includes 參數根據指令碼內容進行篩選。</span><span class="sxs-lookup"><span data-stu-id="e5404-109">Find-Script can filter based on script contents with the -Command and -Includes parameters.</span></span>
-- <span data-ttu-id="e5404-110">Find-Script 可以使用版本參數 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 進行篩選。</span><span class="sxs-lookup"><span data-stu-id="e5404-110">Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="e5404-111">這些參數互斥 (MinmimumVersion 和 MaximumVersion 除外)。</span><span class="sxs-lookup"><span data-stu-id="e5404-111">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="e5404-112">只有不含任何萬用字元的單一指令碼名稱才允許使用這些版本參數。</span><span class="sxs-lookup"><span data-stu-id="e5404-112">These version parameters are allowed only with the single script name without any wildcards.</span></span>
-  - <span data-ttu-id="e5404-113">如果未指定 RequiredVersion 參數，Find-Script 會傳回等於或大於所指定最小版本之指令碼的最新版本，或未指定最小版本之指令碼的最新版本。</span><span class="sxs-lookup"><span data-stu-id="e5404-113">If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="e5404-114">如果指定 RequiredVersion 參數，Find-Script 只會傳回完全符合所指定版本之指令碼的版本。</span><span class="sxs-lookup"><span data-stu-id="e5404-114">If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.</span></span>
-- <span data-ttu-id="e5404-115">Find-Script 可以使用 -Tag 參數篩選指令碼中繼資料。</span><span class="sxs-lookup"><span data-stu-id="e5404-115">Find-Script can filter on script metadata with the -Tag parameter.</span></span>
-- <span data-ttu-id="e5404-116">Find-Script 可以使用 -Filter 參數篩選存放庫特定的搜尋語言。</span><span class="sxs-lookup"><span data-stu-id="e5404-116">Find-Script can filter on repository-specific search language with the -Filter parameter.</span></span>
-- <span data-ttu-id="e5404-117">Find-Script 可以篩選所有或部分已註冊存放庫中的指令碼。</span><span class="sxs-lookup"><span data-stu-id="e5404-117">Find-Script can filter on scripts from all or few of the registered repositories.</span></span>
+- <span data-ttu-id="6f94b-109">Find-Script 可以使用 -Command 和 -Includes 參數根據指令碼內容進行篩選。</span><span class="sxs-lookup"><span data-stu-id="6f94b-109">Find-Script can filter based on script contents with the -Command and -Includes parameters.</span></span>
+- <span data-ttu-id="6f94b-110">Find-Script 可以使用版本參數 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 進行篩選。</span><span class="sxs-lookup"><span data-stu-id="6f94b-110">Find-Script can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="6f94b-111">這些參數互斥 (MinmimumVersion 和 MaximumVersion 除外)。</span><span class="sxs-lookup"><span data-stu-id="6f94b-111">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="6f94b-112">只有不含任何萬用字元的單一指令碼名稱才允許使用這些版本參數。</span><span class="sxs-lookup"><span data-stu-id="6f94b-112">These version parameters are allowed only with the single script name without any wildcards.</span></span>
+  - <span data-ttu-id="6f94b-113">如果未指定 RequiredVersion 參數，Find-Script 會傳回等於或大於所指定最小版本之指令碼的最新版本，或未指定最小版本之指令碼的最新版本。</span><span class="sxs-lookup"><span data-stu-id="6f94b-113">If the RequiredVersion parameter is not specified, Find-Script returns the latest version of the script that is equal to or greater than the minimum version specified or the latest version of the script if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="6f94b-114">如果指定 RequiredVersion 參數，Find-Script 只會傳回完全符合所指定版本之指令碼的版本。</span><span class="sxs-lookup"><span data-stu-id="6f94b-114">If the RequiredVersion parameter is specified, Find-Script only returns the version of script that exactly matches the specified version.</span></span>
+- <span data-ttu-id="6f94b-115">Find-Script 可以使用 -Tag 參數篩選指令碼中繼資料。</span><span class="sxs-lookup"><span data-stu-id="6f94b-115">Find-Script can filter on script metadata with the -Tag parameter.</span></span>
+- <span data-ttu-id="6f94b-116">Find-Script 可以使用 -Filter 參數篩選存放庫特定的搜尋語言。</span><span class="sxs-lookup"><span data-stu-id="6f94b-116">Find-Script can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="6f94b-117">Find-Script 可以篩選所有或部分已註冊存放庫中的指令碼。</span><span class="sxs-lookup"><span data-stu-id="6f94b-117">Find-Script can filter on scripts from all or few of the registered repositories.</span></span>
 
-<span data-ttu-id="e5404-118">**注意：**已註冊的 PSRepository 應該會有有效的 ScriptSourceLocation。</span><span class="sxs-lookup"><span data-stu-id="e5404-118">**NOTE:** Registered PSRepository should have a valid ScriptSourceLocation.</span></span> <span data-ttu-id="e5404-119">您可以使用 Set-PSRepository 設定 ScriptSourceLocation 值。</span><span class="sxs-lookup"><span data-stu-id="e5404-119">You can use the Set-PSRepository to set ScriptSourceLocation value.</span></span>
+<span data-ttu-id="6f94b-118">**注意：**已註冊的 PSRepository 應該會有有效的 ScriptSourceLocation。</span><span class="sxs-lookup"><span data-stu-id="6f94b-118">**NOTE:** Registered PSRepository should have a valid ScriptSourceLocation.</span></span> <span data-ttu-id="6f94b-119">您可以使用 Set-PSRepository 設定 ScriptSourceLocation 值。</span><span class="sxs-lookup"><span data-stu-id="6f94b-119">You can use the Set-PSRepository to set ScriptSourceLocation value.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="e5404-120">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="e5404-120">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="6f94b-120">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="6f94b-120">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="e5404-121">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="e5404-121">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="6f94b-121">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="6f94b-121">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="e5404-122">Find-Script</span><span class="sxs-lookup"><span data-stu-id="e5404-122">Find-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619785)
+[<span data-ttu-id="6f94b-122">Find-Script</span><span class="sxs-lookup"><span data-stu-id="6f94b-122">Find-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-## <a name="example-commands"></a><span data-ttu-id="e5404-123">範例命令</span><span class="sxs-lookup"><span data-stu-id="e5404-123">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="6f94b-123">範例命令</span><span class="sxs-lookup"><span data-stu-id="6f94b-123">Example commands</span></span>
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation
@@ -73,6 +73,9 @@ Find-Script -Name Connect-O365 -MinimumVersion 1.1 -MaximumVersion 1.6.2
 
 # Find a script with exact version
 Find-Script -Name Connect-O365 -RequiredVersion 1.5.7
+
+# Find a script with a specific pre-release version
+Find-Script -Name Connect-O365 -RequiredVersion 1.3.2-alpha -AllowPrerelease
 
 # Find a script from the specified repository
 Find-Script -Name Fabrikam-ServerScript -Repository MyLocalRepo
