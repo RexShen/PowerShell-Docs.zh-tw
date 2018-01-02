@@ -4,92 +4,82 @@ contributor: manikb
 ms.topic: reference
 keywords: "資源庫,powershell,cmdlet,psget"
 title: Install-Script
-ms.openlocfilehash: 4c3fd9393ccb7ee5c3b010f1114b6596a74fdee2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 9ce4125329ea2a38f27f9305b169c7fcf3e9df42
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="install-script"></a><span data-ttu-id="a7052-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="a7052-103">Install-Script</span></span>
+# <a name="install-script"></a><span data-ttu-id="ba3fc-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="ba3fc-103">Install-Script</span></span>
 
-<span data-ttu-id="a7052-104">將 PowerShell 指令檔從線上存放庫安裝至本機電腦。</span><span class="sxs-lookup"><span data-stu-id="a7052-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
+<span data-ttu-id="ba3fc-104">將 PowerShell 指令檔從線上存放庫安裝至本機電腦。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
 
+## <a name="description"></a><span data-ttu-id="ba3fc-105">描述</span><span class="sxs-lookup"><span data-stu-id="ba3fc-105">Description</span></span>
 
-## <a name="description"></a><span data-ttu-id="a7052-105">描述</span><span class="sxs-lookup"><span data-stu-id="a7052-105">Description</span></span>
+<span data-ttu-id="ba3fc-106">Install-Script Cmdlet 會從線上資源庫尋找並下載一或多個指令碼，並在本機電腦上驗證它們，然後將它們安裝至指定的安裝範圍。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-106">The Install-Script cmdlet finds and downloads one or more scripts from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-<span data-ttu-id="a7052-106">Install-Script Cmdlet 需要存放庫中的指令碼裝載，並確認裝載是有效的 PowerShell 指令碼，然後將指令檔複製至指定的安裝位置。</span><span class="sxs-lookup"><span data-stu-id="a7052-106">The Install-Script cmdlet acquires a script payload from a repository, verifies that the payload is a valid PowerShell script, and copies the script file to a specified installation location.</span></span>
+<span data-ttu-id="ba3fc-107">未定義任何範圍時，或 Scope 參數的值是 AllUsers 時，會將指令碼安裝至 %systemdrive%:\Program Files\WindowsPowerShell\scripts。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-107">When no scope is defined, or when the value of the Scope parameter is AllUsers, the script is installed to %systemdrive%:\Program Files\WindowsPowerShell\scripts.</span></span> <span data-ttu-id="ba3fc-108">Scope 的值是 CurrentUser 時，會將指令碼安裝至 $home\Documents\WindowsPowerShell\scripts。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-108">When the value of Scope is CurrentUser, the script is installed to $home\Documents\WindowsPowerShell\scripts.</span></span>
 
-<span data-ttu-id="a7052-107">透過 Register-PSRepository、Set-PSRepository、Unregister-PSRepository 和 Get-PSRepository Cmdlet，可以設定 Install-Script 對其操作的預設存放庫。</span><span class="sxs-lookup"><span data-stu-id="a7052-107">The default repositories Install-Script operates against are configurable through the Register-PSRepository, Set-PSRepository, Unregister-PSRepository, and Get-PSRepository cmdlets.</span></span> <span data-ttu-id="a7052-108">針對多個存放庫操作時，Install-Script 會從第一個存放庫安裝第一個符合所指定搜尋準則 (Name、MinimumVersion 或 MaximumVersion) 的指令碼，而未發生任何錯誤。</span><span class="sxs-lookup"><span data-stu-id="a7052-108">When operating against multiple repositories, Install-Script installs the first script that matches the specified search criteria (Name, MinimumVersion, or MaximumVersion) from the first repository without any error.</span></span>
+<span data-ttu-id="ba3fc-109">您可以根據所指定指令碼的最小和實際版本來篩選結果。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-109">You can filter your results based on minimum and exact versions of specified scripts.</span></span>
 
+<span data-ttu-id="ba3fc-110">一些重要注意事項：</span><span class="sxs-lookup"><span data-stu-id="ba3fc-110">Some important notes:</span></span>
+- <span data-ttu-id="ba3fc-111">指令碼是已安裝的單一檔案。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-111">Scripts are installed single files.</span></span> <span data-ttu-id="ba3fc-112">因此，只會安裝一份指令碼複本，而且無法在系統上並行安裝多個版本的指令碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-112">As a result, only one copy of a script is installed, and multiple versions of scripts cannot be installed side-by-side on a system.</span></span> 
+- <span data-ttu-id="ba3fc-113">指令碼可能會定義對外部模組的相依性，這些模組將會在執行 Install-Script 時安裝。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-113">Scripts may define dependencies on external modules, which will  be installed when Install-Script is run.</span></span>
+- <span data-ttu-id="ba3fc-114">**未受信任的提示：**使用者需要接受，才能安裝未受信任存放庫中的指令碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-114">**Untrusted prompt:** User acceptance is required for installing the scripts from an untrusted repository.</span></span>
+- <span data-ttu-id="ba3fc-115">RequiredVersion 會在 PowerShell 5.0 版或更新版本上將 SxS 中的指定版本安裝為現有版本 。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-<span data-ttu-id="a7052-109">Install-Script Cmdlet 會從線上組件庫下載一或多個模組，並在本機電腦上驗證它們，然後將它們安裝至指定的安裝範圍。</span><span class="sxs-lookup"><span data-stu-id="a7052-109">Install-Script cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
+<span data-ttu-id="ba3fc-116">Install-Script、Save-Script 和 Uninstall-Script Cmdlet 的 -Name 中不支援萬用字元。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-116">Wildcards are not supported in -Name on Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
 
-<span data-ttu-id="a7052-110">Install-Script Cmdlet 會從線上組件庫取得符合所指定準則的一或多個模組，並確認搜尋結果是有效的模組，然後將模組資料夾複製至安裝位置。</span><span class="sxs-lookup"><span data-stu-id="a7052-110">The Install-Script cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
+### <a name="scope"></a><span data-ttu-id="ba3fc-117">領域</span><span class="sxs-lookup"><span data-stu-id="ba3fc-117">Scope</span></span>
+<span data-ttu-id="ba3fc-118">指定指令碼的安裝範圍。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-118">Specifies the installation scope of the script.</span></span> <span data-ttu-id="ba3fc-119">此參數接受的值包括：AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-119">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="a7052-111">未定義任何範圍時，或 Scope 參數的值是 AllUsers 時，會將模組安裝至 %systemdrive%:\Program Files\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="a7052-111">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="a7052-112">Scope 的值是 CurrentUser 時，會將模組安裝至 $home\Documents\WindowsPowerShell\Modules。</span><span class="sxs-lookup"><span data-stu-id="a7052-112">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
+<span data-ttu-id="ba3fc-120">預設安裝範圍是 AllUsers。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-120">The default installation scope is AllUsers.</span></span>
 
-<span data-ttu-id="a7052-113">您可以根據所指定模組的最小和實際版本來篩選結果。</span><span class="sxs-lookup"><span data-stu-id="a7052-113">You can filter your results based on minimum and exact versions of specified modules.</span></span>
+<span data-ttu-id="ba3fc-121">AllUsers 範圍會將指令碼安裝至電腦之所有使用者可存取的位置，即 "$env:SystemDrive\Program Files\WindowsPowerShell\scripts"。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-121">The AllUsers scope lets scripts be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\scripts".</span></span>
 
-- <span data-ttu-id="a7052-114">PowerShell 指令檔不支援並存版本支援</span><span class="sxs-lookup"><span data-stu-id="a7052-114">No Side-by-side version support for PowerShell Script files</span></span>
-- <span data-ttu-id="a7052-115">指令碼相依性安裝支援</span><span class="sxs-lookup"><span data-stu-id="a7052-115">Script dependency installation support</span></span>
-- <span data-ttu-id="a7052-116">**未受信任的提示：**使用者需要接受，才能安裝未受信任存放庫中的模組。</span><span class="sxs-lookup"><span data-stu-id="a7052-116">**Untrusted prompt:** User acceptance is required for installing the modules from an untrusted repository.</span></span>
-- <span data-ttu-id="a7052-117">-Force 會重新安裝已安裝的模組</span><span class="sxs-lookup"><span data-stu-id="a7052-117">-Force reinstalls the installed module</span></span>
-- <span data-ttu-id="a7052-118">RequiredVersion 會在 PowerShell 5.0 版或更新版本上將 SxS 中的指定版本安裝為現有版本 。</span><span class="sxs-lookup"><span data-stu-id="a7052-118">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
-
-<span data-ttu-id="a7052-119">Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script 和 Uninstall-Script Cmdlet 的 -Name 中不支援萬用字元。</span><span class="sxs-lookup"><span data-stu-id="a7052-119">Wildcards are not supported in -Name on Install-Module, Save-Module, Uninstall-Module, Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
-
-### <a name="scope"></a><span data-ttu-id="a7052-120">領域</span><span class="sxs-lookup"><span data-stu-id="a7052-120">Scope</span></span>
-<span data-ttu-id="a7052-121">指定模組的安裝範圍。</span><span class="sxs-lookup"><span data-stu-id="a7052-121">Specifies the installation scope of the module.</span></span> <span data-ttu-id="a7052-122">此參數接受的值包括：AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="a7052-122">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
-
-<span data-ttu-id="a7052-123">預設安裝範圍是 AllUsers。</span><span class="sxs-lookup"><span data-stu-id="a7052-123">The default installation scope is AllUsers.</span></span>
-
-<span data-ttu-id="a7052-124">AllUsers 範圍會將模組安裝至電腦之所有使用者可存取的位置，即 "$env:SystemDrive\Program Files\WindowsPowerShell\Modules"。</span><span class="sxs-lookup"><span data-stu-id="a7052-124">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
-
-<span data-ttu-id="a7052-125">CurrentUser 範圍只會將模組安裝至 "$home\Documents\WindowsPowerShell\Modules"，讓模組僅可供目前使用者使用。</span><span class="sxs-lookup"><span data-stu-id="a7052-125">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
+<span data-ttu-id="ba3fc-122">CurrentUser 範圍只會將指令碼安裝至 "$home\Documents\WindowsPowerShell\scripts"，讓指令碼僅可供目前使用者使用。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-122">The CurrentUser scope lets scripts be installed only to "$home\Documents\WindowsPowerShell\scripts", so that the script is available only to the current user.</span></span>
 
 
-<span data-ttu-id="a7052-126">指定指令碼的安裝範圍。</span><span class="sxs-lookup"><span data-stu-id="a7052-126">Specifies the installation scope of the script.</span></span> <span data-ttu-id="a7052-127">有效值為︰AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="a7052-127">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="a7052-128">預設值為 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="a7052-128">The default is CurrentUser.</span></span>
+<span data-ttu-id="ba3fc-123">指定指令碼的安裝範圍。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-123">Specifies the installation scope of the script.</span></span> <span data-ttu-id="ba3fc-124">有效值為︰AllUsers 和 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-124">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="ba3fc-125">預設值為 CurrentUser。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-125">The default is CurrentUser.</span></span>
 
-<span data-ttu-id="a7052-129">AllUsers 範圍指定將指令碼安裝至 %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts，讓指令碼可供所有使用者使用。</span><span class="sxs-lookup"><span data-stu-id="a7052-129">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="a7052-130">CurrentUser 範圍指定將指令碼安裝至 $home\Documents\WindowsPowerShell\Scripts，讓指令碼僅可供目前使用者使用。</span><span class="sxs-lookup"><span data-stu-id="a7052-130">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
-
-
-## <a name="nopathupdate"></a><span data-ttu-id="a7052-131">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="a7052-131">NoPathUpdate</span></span>
-
-- <span data-ttu-id="a7052-132">Install-Script Cmdlet 上的 NoPathUpdate 切換參數不會提示將指令碼安裝位置新增至 PATH 環境變數。</span><span class="sxs-lookup"><span data-stu-id="a7052-132">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
-- <span data-ttu-id="a7052-133">任何使用指定的命令 WITH –NoPathUpdate 都會導致不進行提示，並且正在更新 PATH NOT (在這裡可以忽略 force)。</span><span class="sxs-lookup"><span data-stu-id="a7052-133">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
-- <span data-ttu-id="a7052-134">沒有 –NoPathUpdate 的 -Force 將不會出現提示，並更新 PATH。</span><span class="sxs-lookup"><span data-stu-id="a7052-134">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
-- <span data-ttu-id="a7052-135">如果未指定 –Force 和 –NoPathUpdate，則使用者會看到提示。</span><span class="sxs-lookup"><span data-stu-id="a7052-135">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
-- <span data-ttu-id="a7052-136">只有第一次在指定範圍中使用 Install-Script 時，才會套用所有這些項目。</span><span class="sxs-lookup"><span data-stu-id="a7052-136">All of this only applies the first time Install-Script is used in a given scope.</span></span>
+<span data-ttu-id="ba3fc-126">AllUsers 範圍指定將指令碼安裝至 %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts，讓指令碼可供所有使用者使用。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-126">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="ba3fc-127">CurrentUser 範圍指定將指令碼安裝至 $home\Documents\WindowsPowerShell\Scripts，讓指令碼僅可供目前使用者使用。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-127">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
 
 
-## <a name="notes"></a><span data-ttu-id="a7052-137">附註</span><span class="sxs-lookup"><span data-stu-id="a7052-137">Notes</span></span>
+## <a name="nopathupdate"></a><span data-ttu-id="ba3fc-128">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="ba3fc-128">NoPathUpdate</span></span>
 
-<span data-ttu-id="a7052-138">這個 Cmdlet 會在 Windows PowerShell 3.0 或更新版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。</span><span class="sxs-lookup"><span data-stu-id="a7052-138">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
-
-<span data-ttu-id="a7052-139">如果無法匯入已安裝的模組 (即，它在資料夾內沒有同名的 .psm1、.psd1 或 .dll 時)，安裝會失敗，除非您將 Force 參數新增至您的命令。</span><span class="sxs-lookup"><span data-stu-id="a7052-139">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
-
-<span data-ttu-id="a7052-140">如果電腦上的模組版本符合指定的 Name 參數值，而且您尚未新增 MinimumVersion 或 RequiredVersion 參數，則 Install-Script 會以無訊息模式繼續，而不需要安裝該模組。</span><span class="sxs-lookup"><span data-stu-id="a7052-140">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that module.</span></span> <span data-ttu-id="a7052-141">如果指定 MinimumVersion 或 RequiredVersion 參數，而且現有模組不符合該參數中的值，則會發生錯誤。</span><span class="sxs-lookup"><span data-stu-id="a7052-141">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="a7052-142">更具體地說，如果目前已安裝模組的版本低於 MinimumVersion 參數的值，或不等於 RequiredVersion 參數的值，則會發生錯誤。</span><span class="sxs-lookup"><span data-stu-id="a7052-142">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="a7052-143">如果已安裝模組的版本大於 MinimumVersion 參數的值，或等於 RequiredVersion 參數的值，則 Install-Script 會以無訊息模式繼續，而不需要安裝該模組。</span><span class="sxs-lookup"><span data-stu-id="a7052-143">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that module.</span></span>
-
-<span data-ttu-id="a7052-144">如果線上組件庫中沒有符合所指定名稱的模組，Install-Script 會傳回錯誤。</span><span class="sxs-lookup"><span data-stu-id="a7052-144">Install-Script returns an error if no module exists in the online gallery that matches the specified name.</span></span>
-
-<span data-ttu-id="a7052-145">若要安裝多個模組，請指定以逗號區隔的模組名稱陣列。</span><span class="sxs-lookup"><span data-stu-id="a7052-145">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="a7052-146">如果您指定多個模組名稱，則無法新增 MinimumVersion 或 RequiredVersion。</span><span class="sxs-lookup"><span data-stu-id="a7052-146">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
-
-<span data-ttu-id="a7052-147">模組預設會安裝至 Program Files 資料夾，避免在安裝 Windows PowerShell 預期狀態設定 (DSC) 資源時混淆。您可以將多個 PSGetItemInfo 物件傳送至 Install-Script；這是指定透過單一命令安裝多個模組的另一種方法。</span><span class="sxs-lookup"><span data-stu-id="a7052-147">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple modules to install in a single command.</span></span>
-
-<span data-ttu-id="a7052-148">為了協助避免執行包含惡意程式碼的模組，安裝不會自動匯入已安裝的模組。</span><span class="sxs-lookup"><span data-stu-id="a7052-148">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="a7052-149">安全性最佳做法是在第一次執行模組中的任何 Cmdlet 或函數之前評估模組程式碼。</span><span class="sxs-lookup"><span data-stu-id="a7052-149">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
+- <span data-ttu-id="ba3fc-129">Install-Script Cmdlet 上的 NoPathUpdate 切換參數不會提示將指令碼安裝位置新增至 PATH 環境變數。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-129">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
+- <span data-ttu-id="ba3fc-130">任何使用指定的命令 WITH –NoPathUpdate 都會導致不進行提示，並且正在更新 PATH NOT (在這裡可以忽略 force)。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-130">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
+- <span data-ttu-id="ba3fc-131">沒有 –NoPathUpdate 的 -Force 將不會出現提示，並更新 PATH。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-131">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
+- <span data-ttu-id="ba3fc-132">如果未指定 –Force 和 –NoPathUpdate，則使用者會看到提示。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-132">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
+- <span data-ttu-id="ba3fc-133">只有第一次在指定範圍中使用 Install-Script 時，才會套用所有這些項目。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-133">All of this only applies the first time Install-Script is used in a given scope.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="a7052-150">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="a7052-150">Cmdlet syntax</span></span>
+## <a name="notes"></a><span data-ttu-id="ba3fc-134">附註</span><span class="sxs-lookup"><span data-stu-id="ba3fc-134">Notes</span></span>
+
+<span data-ttu-id="ba3fc-135">這個 Cmdlet 會在 Windows PowerShell 3.0 或更新版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-135">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+
+<span data-ttu-id="ba3fc-136">如果電腦上的指令碼版本符合指定的 Name 參數值，而且您尚未新增 MinimumVersion 或 RequiredVersion 參數，則 Install-Script 會以無訊息模式繼續，而不需要安裝該指令碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-136">If a version of the script on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span> <span data-ttu-id="ba3fc-137">如果指定 MinimumVersion 或 RequiredVersion 參數，而且現有指令碼不符合該參數中的值，則會發生錯誤。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-137">If the MinimumVersion or RequiredVersion parameters are specified, and the existing script does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="ba3fc-138">更具體地說，如果目前已安裝指令碼的版本低於 MinimumVersion 參數的值，或不等於 RequiredVersion 參數的值，則會發生錯誤。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-138">To be more specific: if the version of the currently-installed script is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="ba3fc-139">如果已安裝指令碼的版本大於 MinimumVersion 參數的值，或等於 RequiredVersion 參數的值，則 Install-Script 會以無訊息模式繼續，而不需要安裝該指令碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-139">If the version of the installed script is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span>
+
+<span data-ttu-id="ba3fc-140">如果線上資源庫中沒有符合所指定名稱的指令碼，Install-Script 會傳回錯誤。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-140">Install-Script returns an error if no script exists in the online gallery that matches the specified name.</span></span>
+
+<span data-ttu-id="ba3fc-141">若要安裝多個指令碼，請指定以逗號區隔的指令碼名稱陣列。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-141">To install multiple scripts, specify an array of the script names, separated by commas.</span></span> <span data-ttu-id="ba3fc-142">如果您指定多個指令碼名稱，則無法新增 MinimumVersion 或 RequiredVersion。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-142">You cannot add MinimumVersion or RequiredVersion if you specify multiple script names.</span></span>
+
+<span data-ttu-id="ba3fc-143">指令碼預設會安裝至 Program Files 資料夾。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-143">By default, scripts are installed to the Program Files folder.</span></span> <span data-ttu-id="ba3fc-144">您可以使用管線將多個 PSGetItemInfo 物件傳送到 Install-Script；這是指定多個指令碼以單一命令安裝的另一種方式。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-144">You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple scripts to install in a single command.</span></span>
+
+<span data-ttu-id="ba3fc-145">為了協助避免執行包含惡意程式碼的指令碼，安裝不會自動匯入已安裝的指令碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-145">To help prevent running scripts that contain malicious code, installed scripts are not automatically imported by installation.</span></span> <span data-ttu-id="ba3fc-146">安全性最佳做法是在第一次執行指令碼中的任何 Cmdlet 或函式之前評估指令碼程式碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-146">As a security best practice, evaluate script code before running any cmdlets or functions in a script for the first time.</span></span>
+
+
+## <a name="cmdlet-syntax"></a><span data-ttu-id="ba3fc-147">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="ba3fc-147">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="a7052-151">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="a7052-151">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="ba3fc-148">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="ba3fc-148">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="a7052-152">Install-Script</span><span class="sxs-lookup"><span data-stu-id="a7052-152">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
+[<span data-ttu-id="ba3fc-149">Install-Script</span><span class="sxs-lookup"><span data-stu-id="ba3fc-149">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-## <a name="example-commands"></a><span data-ttu-id="a7052-153">範例命令</span><span class="sxs-lookup"><span data-stu-id="a7052-153">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="ba3fc-150">範例命令</span><span class="sxs-lookup"><span data-stu-id="ba3fc-150">Example commands</span></span>
 
 ```powershell
 
@@ -283,7 +273,7 @@ Get-InstalledScript
 
 ```
 
-<span data-ttu-id="a7052-154">您也可以使用 Get-Command –Name <InstalledScriptFileName> 取得它。</span><span class="sxs-lookup"><span data-stu-id="a7052-154">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="a7052-155">第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。</span><span class="sxs-lookup"><span data-stu-id="a7052-155">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="ba3fc-151">您也可以使用 Get-Command –Name <InstalledScriptFileName> 取得它。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-151">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="ba3fc-152">第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-152">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -297,42 +287,46 @@ ExternalScript Required-Script2.ps1 C:\\Users\\manikb\\Documents\\WindowsPowerSh
 
 ```powershell
 
-# Install a module by name
-Install-Script -Name MyDscModule
+# Install a script by name
+Install-Script -Name MyDscscript
 
-# Install multiple modules
+# Install multiple scripts
 Install-Script ContosoClient,ContosoServer
 
-# Install a module using its minimum version
+# Install a script using its minimum version
 Install-Script -Name ContosoServer -MinimumVersion 1.0
 
-# Install a specific version of a module
+# Install a specific version of a script
 Install-Script -Name ContosoServer -RequiredVersion 1.1.3
 
-# Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
+# Install a specific prerelease version of a script
+Install-Script -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a script to $home\Documents\WindowsPowerShell\scripts.
 Install-Script -Name ContosoServer -Scope CurrentUser
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -RequiredVersion 1.5
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -MinimumVersion 2.5
 
-# Install multiple modules from multiple registered repositories
+# Install multiple scripts from multiple registered repositories
 Install-Script ContosoClient,ContosoServer -Repository PSGallery, PrivatePSGallery
 
-# Install a module with -WhatIf
+# Install a script with -WhatIf
 Install-Script ContosoClient -WhatIf
 
-# Install a module with -Confirm. A prompt will be displayed to confirm the installation.
+# Install a script with -Confirm. A prompt will be displayed to confirm the installation.
 Install-Script ContosoClient -WhatIf
 
-# -Force option reinstalls the installed module
+# -Force option reinstalls the installed script
 Install-Script ContosoClient -Force
 
-# Install a module with dependencies
-Install-Script -Name 
+# Install a script with dependencies
+Install-Script -Name ContosoClient
 
+# Install a script 
 
 # Install a script from the registered repository with ScriptSourceLocation
 Install-Script Connect-AzureVM
@@ -471,164 +465,31 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="a7052-156">管線作業中的 Install-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="a7052-156">Install-Script cmdlet in pipeline operations</span></span>
+## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="ba3fc-153">管線作業中的 Install-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="ba3fc-153">Install-Script cmdlet in pipeline operations</span></span>
 
 ```powershell
 
-# Find a module and install it
+# Find a script and install it
 Find-Script -Name "MyDSC*" | Install-Script
 
-# Find a module and install it to the CurrentUser scope
+# Find a script and install it to the CurrentUser scope
 Find-Script -Name "MyDSC*" | Install-Script -Scope CurrentUser
 
 # Find commands by name and install them
 # The first command finds the specified commands in the INT repository, and then uses the pipeline operator to pass them to Install-Script to install them.
-# The second command uses Get-InstalledModule to verify the modules from the prior command are installed.
+# The second command uses Get-Installedscript to verify the scripts from the prior command are installed.
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Script
-Get-InstalledModule
-
-# This command finds the resource named MyResource and passes it to the Install-Script cmdlet by using the pipeline operator. The Install-Script cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Script cmdlet from the same module, Install-Script attempts to install the module only once. 
-Find-DscResource -Name "MyResource" | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 # Find multiple role capabilities and install them
 Find-RoleCapability -Name MyJeaRole, Maintenance | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="a7052-157">PowerShell 5.0 或更新版本的並存版本支援</span><span class="sxs-lookup"><span data-stu-id="a7052-157">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
-
-<span data-ttu-id="a7052-158">PowerShellGet 支援在 Windows PowerShell 5.0 或更新版本執行之 Install-Script、Update-Script 和 Publish-Script Cmdlet 中的並存 (SxS) 模組版本支援。</span><span class="sxs-lookup"><span data-stu-id="a7052-158">PowerShellGet supports the side-by-side (SxS) module version support in Install-Script, Update-Script, and Publish-Script cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-
-### <a name="install-script-examples"></a><span data-ttu-id="a7052-159">Install-Script 範例</span><span class="sxs-lookup"><span data-stu-id="a7052-159">Install-Script examples</span></span>
-
-```powershell
-# Install a version of the module
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.0 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name : PSScriptAnalyzer
-Version : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Install another version of the module in Side-by-Side with already installed version.
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name       : PSScriptAnalyzer 
-Version    : 1.1.1
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
-Name       : PSScriptAnalyzer
-Version    : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Get all versions of an installed module
-Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
-1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 
 
-```
-
-## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="a7052-160">安裝具有其相依性的模組</span><span class="sxs-lookup"><span data-stu-id="a7052-160">Install module with its dependencies</span></span>
-
-```powershell
-
-# Find a module
-Find-Module -Name TypePx -Repository PSGallery
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-# Find a module and its dependencies
-Find-Module -Name TypePx -Repository PSGallery -IncludeDependencies
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-
-# Discover the dependencies list without adding -IncludeDependencies
-$result = Find-Module -Name TypePx -Repository PSGallery
-$result.Dependencies
-
-Name                           Value
-----                           -----
-Name                           SnippetPx
-CanonicalId                    powershellget:SnippetPx/#https://www.powershellgallery.com/api/v2/
-
-
-# Now install the module along with its dependencies
-Install-Script -Name TypePx -Repository PSGallery -Verbose
-
-VERBOSE: Repository details, Name = 'PSGallery', Location = 'https://www.powershellgallery.com/api/v2/'; IsTrusted =
-'False'; IsRegistered = 'True'.
-VERBOSE: Using the provider 'PowerShellGet' for searching packages.
-VERBOSE: Using the specified source names : 'PSGallery'.
-VERBOSE: Getting the provider object for the PackageManagement Provider 'NuGet'.
-VERBOSE: The specified Location is 'https://www.powershellgallery.com/api/v2/' and PackageManagementProvider is
-'NuGet'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Total package yield:'1' for the specified package 'TypePx'.
-VERBOSE: Performing the operation "Install-Script" on target "Version '2.0.1.20' of module 'TypePx'".
-
-Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
-VERBOSE: The installation scope is specified to be 'AllUsers'.
-VERBOSE: The specified module will be installed in 'C:\Program Files\WindowsPowerShell\Modules'.
-VERBOSE: The specified Location is 'NuGet' and PackageManagementProvider is 'NuGet'.
-VERBOSE: Downloading module 'TypePx' with version '2.0.1.20' from the repository
-'https://www.powershellgallery.com/api/v2/'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='SnippetPx'' for ''.
-VERBOSE: InstallPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\SnippetPx\SnippetPx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'SnippetPx'.
-VERBOSE: Hash for package 'SnippetPx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: InstallPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\TypePx\TypePx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'TypePx'.
-VERBOSE: Hash for package 'TypePx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: Installing the dependency module 'SnippetPx' with version '1.0.5.18' for the module 'TypePx'.
-VERBOSE: Module 'SnippetPx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\SnippetPx\1.0.5.18'.
-VERBOSE: Module 'TypePx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\TypePx\2.0.1.20'.
-
-
-# Get the installed modules
-Get-InstalledModule
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-```
-
-## <a name="error-scenarios"></a><span data-ttu-id="a7052-161">錯誤狀況</span><span class="sxs-lookup"><span data-stu-id="a7052-161">Error scenarios</span></span>
+## <a name="error-scenarios"></a><span data-ttu-id="ba3fc-154">錯誤狀況</span><span class="sxs-lookup"><span data-stu-id="ba3fc-154">Error scenarios</span></span>
 
 ```powershell
 
@@ -646,83 +507,10 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-## <a name="installing-a-script-with-dependent-scripts-and-modules"></a><span data-ttu-id="a7052-162">使用相依的指令碼和模組來安裝指令碼</span><span class="sxs-lookup"><span data-stu-id="a7052-162">Installing a script with dependent scripts and modules</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="ba3fc-155">Install-Script 和 Get-InstalledScript Cmdlet</span><span class="sxs-lookup"><span data-stu-id="ba3fc-155">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="ba3fc-156">Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-156">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="ba3fc-157">根據預設，指令碼會安裝在 AllUsers 範圍。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-157">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="ba3fc-158">Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-158">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-```powershell
-# Installing a script with dependent scripts and modules
-Find-Script -Repository GalleryINT -Name Script-WithDependencies2 -IncludeDependencies
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.5 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-Get-InstalledModule
-Install-Script -Repository GalleryINT -Name Script-WithDependencies2 -Scope CurrentUser
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-Get-InstalledModule
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-
-# Contents of Script-WithDependencies2 file.
-<#PSScriptInfo
-.VERSION 2.0
-.GUID 90082fa1-0b84-49fb-a00e-0a624fbb6584
-.AUTHOR manikb
-.COMPANYNAME Microsoft Corporation
-.COPYRIGHT (c) 2015 Microsoft Corporation. All rights reserved.
-.TAGS Tag1 Tag2 Tag-Script-WithDependencies2-2.0
-.LICENSEURI http://script-withdependencies2.com/license
-.PROJECTURI http://script-withdependencies2.com/
-.ICONURI http://script-withdependencies2.com/icon
-.EXTERNALMODULEDEPENDENCIES
-.REQUIREDSCRIPTS Required-Script1,Required-Script2,Required-Script3
-.EXTERNALSCRIPTDEPENDENCIES
-.RELEASENOTES
-Script-WithDependencies2 release notes
-#>
-#Requires -Module RequiredModule1
-#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}
-#Requires -Module @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}
-#Requires -Module @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}
-#Requires -Module @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}
-<#
-.DESCRIPTION
-Description for the Script-WithDependencies2 script
-#>
-Param()
-Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
-Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
-```
-
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="a7052-163">Install-Script 和 Get-InstalledScript Cmdlet</span><span class="sxs-lookup"><span data-stu-id="a7052-163">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="a7052-164">Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。</span><span class="sxs-lookup"><span data-stu-id="a7052-164">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="a7052-165">根據預設，指令碼會安裝在 AllUsers 範圍。</span><span class="sxs-lookup"><span data-stu-id="a7052-165">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="a7052-166">Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。</span><span class="sxs-lookup"><span data-stu-id="a7052-166">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
-
-<span data-ttu-id="a7052-167">使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。</span><span class="sxs-lookup"><span data-stu-id="a7052-167">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="a7052-168">如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。</span><span class="sxs-lookup"><span data-stu-id="a7052-168">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="a7052-169">Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。</span><span class="sxs-lookup"><span data-stu-id="a7052-169">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="ba3fc-159">使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-159">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="ba3fc-160">如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-160">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="ba3fc-161">Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-161">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 # Install locations for scripts:
 # Default scope is AllUsers.
@@ -778,7 +566,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="a7052-170">您也可以使用 Get-Command –Name <InstalledScriptFileName> 取得它。</span><span class="sxs-lookup"><span data-stu-id="a7052-170">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="a7052-171">第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。</span><span class="sxs-lookup"><span data-stu-id="a7052-171">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="ba3fc-162">您也可以使用 Get-Command –Name <InstalledScriptFileName> 取得它。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-162">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="ba3fc-163">第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。</span><span class="sxs-lookup"><span data-stu-id="ba3fc-163">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
