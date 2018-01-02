@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
-contributor: manikb
+ms.date: 2017-10-17
+contributor: keithb
 ms.topic: reference
 keywords: "資源庫,powershell,cmdlet,psget"
 title: Save-Script
-ms.openlocfilehash: 7b692d33e3f86a89505b8d37c0da4177f3dff2c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b54e8ba074b7cadd52df781c9021332ccc90f9fd
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 # <a name="save-script"></a>Save-Script
 
@@ -49,5 +49,12 @@ Test-ScriptFileInfo C:\\ScriptSharingDemo\\Fabrikam-ClientScript.ps1
 Version Name Author Description
 ------- ---- ------ -----------
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
+```
+
+### <a name="example-3-save-a-prerelease-version-of-a-script-from-a-repository"></a>範例 3：儲存存放庫中指令碼的發行前版本
+這個命令會將 GalleryINT 存放庫中之指令碼 Fabrikam-ClientScript 的最新版本儲存至本機資料夾 C:\ScriptSharingDemo
+
+```powershell
+Save-Script -Name Fabrikam-ClientScript -Path C:\ScriptSharingDemo -AllowPrerelease
 ```
 

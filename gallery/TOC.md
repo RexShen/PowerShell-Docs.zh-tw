@@ -39,6 +39,7 @@
 ### [發行](psget/module/psget_publish-module.md)
 ### [PSEditions 的模組](psget/module/modulewithpseditionsupport.md)
 ### [必須接受授權的模組](psget/module/RequireLicenseAcceptance.md)
+### [發行前版本](psget/module/PreReleaseModule.md)
 ### [疑難排解](psget/psget_cmdlets_troubleshooting.md)
 
 ## 指令碼
@@ -53,8 +54,8 @@
 ### [更新指令碼檔中繼資料](psget/script/psget_update-scriptfileinfo.md)
 ### [發行](psget/script/psget_publish-script.md)
 ### [搭配 PSEditions 的指令碼](psget/script/scriptwithpseditionsupport.md)
-### [指令碼上的必須接受授權](psget/script/script_RequireLicenseAcceptance.md)
-
+### [適用於指令碼的必須接受授權](psget/script/script_RequireLicenseAcceptance.md)
+### [發行前版本](psget/script/PreReleaseScript.md)
 ## 存放庫管理
 ### [啟動 NuGet 提供者與 NuGet.exe](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [註冊存放庫](psget/repository/psget_register-psrepository.md)
