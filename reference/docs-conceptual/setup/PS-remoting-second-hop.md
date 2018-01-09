@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "在 PowerShell 遠端中進行第二次跳躍"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -256,12 +256,12 @@ JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行�
 - 不需要特殊的伺服器設定。
 - 適用於執行 WMF 2.0 或更新版本的任何伺服器。
 
-## <a name="cons"></a>缺點
+### <a name="cons"></a>缺點
 
 - 需要使用不便的程式碼技巧。
 - 如果執行 WMF 2.0，需要不同的語法以便傳遞引數至遠端工作階段。
 
-## <a name="example"></a>範例
+### <a name="example"></a>範例
 
 下列範例示範如何在 **Invoke-Command** 指令碼區塊中傳遞認證︰
 
