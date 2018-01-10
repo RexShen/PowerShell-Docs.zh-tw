@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "適合決策者的預期狀態設定概觀"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適合決策者的預期狀態設定概觀
 
@@ -34,7 +34,7 @@ DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發�
 
 ## <a name="desired-state-configuration-and-devops"></a>預期狀態設定和 DevOps
 
-[DevOps (英文)](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 是人員、技術和文化特性的組合，以利快速部署和反覆運算。 DSC 在設計時即已考慮到 DevOps。 讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將此設定簽入原始檔控制，而作業小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 是人員、流程和工具的組合，可允許快速建置與反覆開發週期，為內部或外部的終端使用者創造價值。 DSC 在設計時即已考慮到 DevOps。 讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將此設定簽入原始檔控制，而作業小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。 
 
 設定也是[資料導向](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)，讓作業小組更容易識別及變更環境，不用開發人員介入。 
 

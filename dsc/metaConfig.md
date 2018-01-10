@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "設定本機設定管理員"
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>設定本機設定管理員
 
@@ -77,7 +77,7 @@ LCM 設定可以包含一組僅限於有限資源的區塊。
 | AllowModuleOverwrite| bool| 若允許以自提取服務下載的新設定覆寫目標節點上的舊設定，即為 __$TRUE__。 否則為 $FALSE。|
 | CertificateID| 字串| 憑證指紋，用來保護在設定中傳遞的憑證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)。 <br> __注意：__若使用 Azure 自動化 DSC 提取服務，系統會自動管理此設定。|
 | ConfigurationDownloadManagers| CimInstance[]| 已過時。 使用 __ConfigurationRepositoryWeb__ 和 __ConfigurationRepositoryShare__ 區塊來定義設定提取服務端點。|
-| ConfigurationID| 字串| 用於與較舊提取服務版本之間的回溯相容性。 識別要從提取服務取得之設定檔的 GUID。 如果設定 MOF 的名稱為 ConfigurationID.mof，節點將會在提取服務上提取設定。<br> __注意：__如果您設定此屬性，使用 __RegistrationKey__ 向提取服務註冊節點將會無法運作。 如需詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。|
+| ConfigurationID| 字串| 用於與較舊提取服務版本之間的回溯相容性。 識別要從提取服務取得之設定檔的 GUID。 如果設定 MOF 的名稱為 ConfigurationID.mof，節點將會在提取服務上提取設定。<br> __注意：__如果您設定此屬性，使用 __RegistrationKey__ 向提取服務註冊節點將會無法運作。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](pullClientConfigNames.md)。|
 | ConfigurationMode| 字串 | 指定 LCM 實際上如何將設定套用至目標節點。 可能的值為 __"ApplyOnly"__、__"ApplyandMonitior"__ 和 __"ApplyandAutoCorrect"__。 <ul><li>__ApplyOnly__：DSC 會套用設定，並且不執行任何進一步的動作，除非有新的設定推送至目標節點，或是從服務提取新的設定。 第一次套用新設定之後，DSC 不會檢查與先前設定狀態的偏離。 請注意，在 __ApplyOnly__ 生效之前，DSC 不斷嘗試套用此組態，直到成功為止 。 </li><li> __ApplyAndMonitor__：這是預設值。 LCM 適用於任何新的設定。 第一次套用新設定之後，如果目標節點偏離預期狀態，則 DSC 會回報記錄中的差異。 請注意，在 __ApplyAndMonitor__ 生效之前，DSC 不斷嘗試套用此組態，直到成功為止 。</li><li>__ApplyAndAutoCorrect__：DSC 會套用任何新的設定。 第一次套用新設定之後，如果目標節點偏離預期狀態，則 DSC 會報告記錄檔中的差異，然後重新套用目前設定。</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| 檢查並套用目前設定的頻率 (以分鐘為單位)。 如果 ConfigurationMode 屬性設定為 ApplyOnly，就會忽略這個屬性。 預設值為 15。|
 | DebugMode| 字串| 可能的值為 __None__、__ForceModuleImport__ 和 __All__。 <ul><li>設為 __None__ 會使用快取資源。 這是預設，而且應該用於實際執行的案例。</li><li>設為 __ForceModuleImport__，會導致 LCM 重新載入任何 DSC 資源模組，即使先前已載入這些模組並已快取。 這會影響 DSC 作業的效能，因為每個模組會在使用時重新載入。 通常會在為資源偵錯時使用此值</li><li>在這一版本中，__All__ 與 __ForceModuleImport__ 相同</li></ul> |
@@ -133,8 +133,8 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 |---|---|---| 
 |AllowUnsecureConnection|bool|設為 **$TRUE** 即允許從節點到伺服器的未經驗證連線。 設為 **$FALSE** 表示需要驗證。|
 |CertificateID|字串|用來向伺服器驗證的憑證指紋。|
-|ConfigurationNames|String[]|要由目標節點提取之設定名稱的陣列。 僅有在使用 **RegistrationKey** 向提取服務註冊節點時，才會使用這些設定。 如需詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。|
-|RegistrationKey|字串|向提取服務註冊節點的 GUID。 如需詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。|
+|ConfigurationNames|String[]|要由目標節點提取之設定名稱的陣列。 僅有在使用 **RegistrationKey** 向提取服務註冊節點時，才會使用這些設定。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](pullClientConfigNames.md)。|
+|RegistrationKey|字串|向提取服務註冊節點的 GUID。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](pullClientConfigNames.md)。|
 |ServerURL|字串|設定服務的 URL。|
 
 如需能簡化針對內部部署節點設定 ConfigurationRepositoryWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)

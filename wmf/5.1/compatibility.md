@@ -4,11 +4,11 @@ author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
 title: "WMF 5.1 作業系統相容性"
-ms.openlocfilehash: b8724538a03ab67529682b9efb29e3ab947339b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
+ms.sourcegitcommit: 5dbf78ba0db482efa79e31a0e4963f8cbeb3df54
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/15/2017
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 作業系統相容性 #
 
@@ -33,4 +33,6 @@ ms.lasthandoff: 06/12/2017
 有關「隨產品附贈*」：WMF 5.0 的功能已包含在原始的 Windows 10 RTM 版本中。
 WMF 5.1 的功能已包含在 Windows Server 2016 和 Windows 10 Anniversary Edition 中。 WMF 5.1 不適用於這些作業系統版本，因為更新會透過 Windows Update 提供。
 
+
+要注意的是 Windows 並不會隨附 WMF。 WMF 為升級套件，可以為先前發行的 Windows 版本提供一組 Windows 功能。 在針對這些功能尋求協助時，這將會是重要的差異，因為這些元件的版本將不會符合原始作業系統所隨附元件的版本。
 

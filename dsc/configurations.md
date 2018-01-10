@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC 設定"
-ms.openlocfilehash: c0cf0e7aa1d18898c50a0662e4fc76ab02932f08
-ms.sourcegitcommit: 7bb75bfb8d12aaa6b6071dcb2ca639d4ecceef26
+ms.openlocfilehash: 2c2f8183ef586ff9371e4af7ea83db3e04fa68a4
+ms.sourcegitcommit: 378c7ed4e8c8c1c5fe71417b9ba672a4c990630b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2017
+ms.lasthandoff: 01/05/2018
 ---
 # <a name="dsc-configurations"></a>DSC 設定
 
@@ -63,11 +63,11 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration
+MyDscConfiguration -ComputerName <MyComputer>
 
 ```
 
-在本範例中，您指定節點名稱的方式，是在您編譯設定時將它做為 **ComputerName** 參數傳遞。 預設名稱為 "localhost"。
+在本範例中，您在編譯設定時將節點名稱當作 **ComputerName** 參數來傳遞，藉以指定節點名稱。 預設名稱為 "localhost"。
 
 ## <a name="compiling-the-configuration"></a>編譯設定
 
