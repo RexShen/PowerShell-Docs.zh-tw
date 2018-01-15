@@ -72,8 +72,17 @@
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
         - name: ISE 指南
           href: core-powershell/ise-guide.md
+        - name: Visual Studio Code
+          items:
+            - name: 使用 Visual Studio Code
+              href: core-powershell/vscode/using-vscode.md
         - name: 執行遠端命令
           href: core-powershell/running-remote-commands.md
+          items:
+            - name: 透過 SSH 的 PowerShell 遠端處理
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: PowerShell Core 中的 WS-Management (WSMan) 遠端處理
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Web 存取
           href: core-powershell/web-access.md
           items:
@@ -207,6 +216,10 @@
     - name: 安裝程式
       href: ''
       items:
+        - name: 在 Windows 上安裝 PowerShell Core
+          href: setup/Installing-PowerShell-Core-on-Windows.md
+        - name: 在 macOS 與 Linux 上安裝 PowerShell Core
+          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
         - name: Windows PowerShell ISE 的協助工具
           href: setup/accessibility-in-windows-powershell-ise.md
         - name: 安裝 Windows PowerShell 2.0 引擎
@@ -234,11 +247,15 @@
     - name: 新功能
       href: ''
       items:
-        - name: PowerShell 50 ISE 的新功能
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-        - name: Windows PowerShell 50 的新功能
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: PowerShell 的新功能
+        - name: PowerShell 的最新消息
           href: whats-new/what-s-new-with-powershell.md
+        - name: Windows PowerShell 5.0 的新功能
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: PowerShell 5.0 ISE 的新功能
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: PowerShell Core 6.0 的新功能
+          href: whats-new/what-s-new-in-powershell-core-60.md
+    - name: PowerShell Core 支援週期
+      href: PowerShell-Core-Support.md
     - name: 詞彙
       href: windows-powershell-glossary.md
