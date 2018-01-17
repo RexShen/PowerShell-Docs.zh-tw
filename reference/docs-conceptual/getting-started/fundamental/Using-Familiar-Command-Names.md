@@ -14,7 +14,7 @@ Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名�
 
 別名會將您所輸入的命令名稱與另一個命令產生關聯。 例如，Windows PowerShell 的內部函式 **Clear-Host** 會清除輸出視窗。 如果您在命令提示字元中輸入 **cls** 或 **clear** 命令，則 Windows PowerShell 會解譯這是 **Clear-Host** 函式的別名，並執行 **Clear-Host** 函式。
 
-這項功能可協助使用者了解 Windows PowerShell。 首先，大部分 Cmd.exe 和 UNIX 使用者都有使用者已經透過名稱知道的大型命令庫，而且雖然 Windows PowerShell 對等項目可能不會產生相同的結果，但是它們夠接近使用者可以使用它們來執行工作的形式，而不需要先記下 Windows PowerShell 名稱。 其次，使用者在已熟悉其他殼層時學習新殼層的主要挫折來源是「finger 記憶體」所造成的錯誤。 如果您已使用 Cmd.exe 數年，則整個畫面已填滿輸出而且想要予以清除時，則應該輸入 **cls** 命令並按 ENTER 鍵。 **Clear-Host** 函式在 Windows PowerShell 中沒有別名，因此您只會收到錯誤訊息「'cls' 無法辨識為 Cmdlet、函式、作業程式或指令碼檔案。」， 而且不知道怎麼清除輸出。
+這項功能可協助使用者了解 Windows PowerShell。 首先，大部分 Cmd.exe 和 UNIX 使用者都有使用者已經透過名稱知道的大型命令庫，而且雖然 Windows PowerShell 對等項目可能不會產生相同的結果，但是它們夠接近使用者可以使用它們來執行工作的形式，而不需要先記下 Windows PowerShell 名稱。 其次，使用者在已熟悉其他殼層時學習新殼層的主要挫折來源是「手指慣性記憶」所造成的錯誤。 如果您已使用 Cmd.exe 數年，則整個畫面已填滿輸出而且想要予以清除時，則應該輸入 **cls** 命令並按 ENTER 鍵。 **Clear-Host** 函式在 Windows PowerShell 中沒有別名，因此您只會收到錯誤訊息「'cls' 無法辨識為 Cmdlet、函式、作業程式或指令碼檔案。」， 而且不知道怎麼清除輸出。
 
 下列是您可在 Windows PowerShell 內使用的常見 Cmd.exe 和 UNIX 命令的簡短清單︰
 
@@ -25,7 +25,7 @@ Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名�
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
 |cls|history|pushd|tee|
-|copy|kill|pwd|型別|
+|copy|kill|pwd|type|
 |del|lp|r|write|
 |diff|ls|ren||
 
