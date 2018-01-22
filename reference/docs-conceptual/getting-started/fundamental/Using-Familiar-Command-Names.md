@@ -20,7 +20,7 @@ Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名�
 
 |||||
 |-|-|-|-|
-|cat|dir|掛上 - mount|rm|
+|cat|dir|mount|rm|
 |cd|echo|move|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
