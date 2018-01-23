@@ -13,7 +13,7 @@ Windows PowerShell 已使用 .NET Framework 執行階段來裝載 PowerShell 引
 
 .NET Core 與 .NET Framework 之間共用的 API 定義為 [.NET Standard][] 的一部分。
 
-如需這如何影響 PowerShell Core 與 Windows PowerShell 之間模組/指令碼相容性的詳細資訊，請參閱[與 Windows PowerShell 的回溯相容性][#backwards-compatibility-with-windows-powershell]
+如需這如何影響 PowerShell Core 與 Windows PowerShell 之間模組/指令碼相容性的詳細資訊，請參閱[與 Windows PowerShell 的回溯相容性](#backwards-compatibility-with-windows-powershell).
 
 ## <a name="support-for-macos-and-linux"></a>macOS 和 Linux 支援
 
