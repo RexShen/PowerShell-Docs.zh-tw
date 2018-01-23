@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC ProcessSet 資源"
-ms.openlocfilehash: b713d1a9c34eab6966de4f342991ead32c19df5d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: ec1d6a04b5debc22fe2f3b4a4396c385514a3b0c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
 
@@ -33,7 +32,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>Properties
 |  屬性  |  描述   | 
 |---|---| 
 | 引數| 內含的引數要保持原狀傳遞至處理程序的字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。| 

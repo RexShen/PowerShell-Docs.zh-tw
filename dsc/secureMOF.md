@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-31
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "保護 MOF 檔案"
-ms.openlocfilehash: ed9d259e2cd963560ad6f5b60702c54e2fa36900
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -81,7 +80,7 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
  3. 在**撰寫節點**上將公開金鑰憑證匯入**我的**憑證存放區。
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目標節點上︰ 建立及匯出憑證
->撰寫節點︰Windows Server 2016 與 Windows 10
+>目標節點︰Windows Server 2016 與 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -91,7 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 匯出之後，必須將 ```DscPublicKey.cer``` 複製到**撰寫節點**。
 
->撰寫節點 ︰Windows Server 2012 R2/Windows 8.1 及更早的版本
+>目標節點︰Windows Server 2012 R2/Windows 8.1 及更早的版本
 
 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上之 New-SelfSignedCertificate Cmdlet，並不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
 在此情況下，可以使用 ```makecert.exe``` 或 ```certutil.exe``` 來建立憑證。
@@ -109,7 +108,6 @@ New-SelfsignedCertificateEx `
     -FriendlyName 'DSC Credential Encryption certificate' `
     -Exportable `
     -StoreLocation 'LocalMachine' `
-    -StoreName 'My' `
     -KeyLength 2048 `
     -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
     -AlgorithmName 'RSA' `

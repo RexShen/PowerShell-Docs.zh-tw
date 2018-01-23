@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC for Linux nxGroup 資源"
-ms.openlocfilehash: fcd1dfd3110b1358ed7ef9ca8d57154186b271f6
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: bc01f6ae5ed61aff63958fe55f30d82f9b81b2b9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC for Linux nxGroup 資源
 
@@ -29,7 +28,7 @@ nxGroup <string> #ResourceName
 
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>Properties
 
 |  屬性 |  描述 | 
 |---|---|

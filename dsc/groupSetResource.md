@@ -1,15 +1,14 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 description: "提供在目標節點管理本機群組的機制。"
 title: "DSC GroupSet 資源"
-ms.openlocfilehash: 0907a968bfc660adc873c28e8be6572d1d5cb993
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 158cb28747c5fe1987eb62b2cc0f6d6f6fb14332
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 資源
 
@@ -32,7 +31,7 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>Properties
 
 |  屬性  |  描述   | 
 |---|---| 

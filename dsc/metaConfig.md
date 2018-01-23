@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "設定本機設定管理員"
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>設定本機設定管理員
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 套用設定至 LCM 的程序和套用 DSC 設定類似。
@@ -130,7 +129,7 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 **ConfigurationRepositoryWeb** 定義下列屬性。
 
 |屬性|類型|描述|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|bool|設為 **$TRUE** 即允許從節點到伺服器的未經驗證連線。 設為 **$FALSE** 表示需要驗證。|
 |CertificateID|字串|用來向伺服器驗證的憑證指紋。|
 |ConfigurationNames|String[]|要由目標節點提取之設定名稱的陣列。 僅有在使用 **RegistrationKey** 向提取服務註冊節點時，才會使用這些設定。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](pullClientConfigNames.md)。|
@@ -191,7 +190,7 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 **PartialConfiguration** 定義下列屬性。
 
 |屬性|類型|描述|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|string[]|先前在 **ConfigurationRepositoryWeb** 和 **ConfigurationRepositoryShare** 區塊中定義的設定伺服器名稱陣列，部分設定會從中提取。|
 |DependsOn|string{}|必須在套用部分設定之前先完成的其他設定名稱清單。|
 |描述|字串|用來描述部分設定的文字。|
@@ -201,11 +200,11 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 
 __請注意：__雖然 Azure 自動化 DSC 支援部分設定，但從每個節點的每個自動化帳戶一次只能提取一個設定。
 
-## <a name="see-also"></a>另請參閱 
+## <a name="see-also"></a>另請參閱
 
 ### <a name="concepts"></a>概念
 [Desired State Configuration 概觀](overview.md)
- 
+
 [開始使用 Azure 自動化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>其他資源

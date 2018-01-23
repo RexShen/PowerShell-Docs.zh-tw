@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC WindowsPackageCab 資源"
-ms.openlocfilehash: 9b1bf3cb95abcbe46976ae0fd328280a3a8d7f28
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 1d7c8d9bf45d2eda8734daa8877315d219662c75
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab 資源
 
@@ -31,7 +30,7 @@ Windows PowerShell 預期狀態設定 (DSC) 中的 **WindowsPackageCab** 資源�
 }
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>Properties
 
 |  屬性  |  描述   | 
 |---|---| 

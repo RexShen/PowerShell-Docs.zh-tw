@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC WindowsOptionalFeatureSet 資源"
-ms.openlocfilehash: 3bf6a993d0ec9ce71c1e9222ddaa3bb429accb15
-ms.sourcegitcommit: 79e8f03afb8d0b0bb0a167e56464929b27f51990
+ms.openlocfilehash: 6912e5cf92f23058342bc566bd66dc4be3357a30
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/26/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet 資源
 
@@ -35,7 +34,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>Properties
 
 |  屬性  |  描述   | 
 |---|---| 

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "Windows PowerShell 預期狀態設定概觀"
-ms.openlocfilehash: 154a3c78a9bf2a029577ca6862f333b6bfe69878
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 1d6ba0b2fdb514e703ddad11adf4cdace5c001a9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell 預期狀態設定概觀 
 

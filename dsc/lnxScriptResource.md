@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC for Linux nxScript 資源"
-ms.openlocfilehash: 5fc448d15f9bec77be64b5f9ee801f6616cf7208
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: c12fb3b405d84eedd13e4cbebf2b2bf0d7cfb4d3
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC for Linux nxScript 資源
 
@@ -29,7 +28,7 @@ nxScript <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>Properties
 
 |  屬性 |  描述 | 
 |---|---|

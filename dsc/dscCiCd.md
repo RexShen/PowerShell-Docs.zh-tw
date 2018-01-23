@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "使用 DSC 來建置持續整合和持續部署管線"
-ms.openlocfilehash: baa56088d83fba56d3a19cff7954d3081f341f9a
-ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
+ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/17/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 

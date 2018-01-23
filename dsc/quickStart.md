@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "預期狀態設定快速入門"
-ms.openlocfilehash: 295a78f3fd85464239d51d7be0defa04d2344689
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/17/2018
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
