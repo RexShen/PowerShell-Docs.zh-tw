@@ -31,7 +31,7 @@ nxFileLine <string> #ResourceName
 |  屬性 |  描述 | 
 |---|---|
 | FilePath| 在目標節點上要管理程式碼行的檔案完整路徑。| 
-| ContainsLine| 確保存在於檔案中的程式碼行。 如果不存在於檔案中，這一行就會附加至檔案。 **ContainsLine** 是必要的，但如不需要，也可以設為空字串 ('ContainsLine = ‘’``)。| 
+| ContainsLine| 確保存在於檔案中的程式碼行。 如果不存在於檔案中，這一行就會附加至檔案。 **ContainsLine** 是必要的，但如不需要，也可以設為空字串 (`ContainsLine = ‘’``)。| 
 | DoesNotContainPattern| 不應該存在於檔案中的程式碼行的規則運算式模式。 對於存在於符合這個規則運算式檔案中的任何程式碼行，會從檔案中移除該行。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
 
