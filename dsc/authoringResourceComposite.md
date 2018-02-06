@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "複合資源：把 DSC 設定當做資源使用"
-ms.openlocfilehash: 4a9574081d3579ffa910bf2ee595ba2550f40a15
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1d5fb89eb9845820de8543f388ddb6aaeaaa3e44
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合資源：把 DSC 設定當做資源使用
 
@@ -200,7 +200,7 @@ configuration RenameVM
 例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：
 
 ```powershell
-if (PsDscContext.RunAsUser) {
+if ($PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
