@@ -11,6 +11,7 @@
 ### [建立 PowerShell 資源庫帳戶](psgallery/psgallery_creating_an_account.md)
 ### [建立和發行項目](psgallery/Creating-and-Publishing-an-item.md)
 ### [發行指導方針與最佳做法](psgallery/psgallery-PublishingGuidelines.md)
+### [項目資訊清單與資源庫 UI](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [將項目從清單移除](psgallery/psgallery_unlist_items.md)
 ### [刪除項目](psgallery/Deleting-Items.md)
 ### [管理項目擁有者](psgallery/Managing-Item-Owners.md)
