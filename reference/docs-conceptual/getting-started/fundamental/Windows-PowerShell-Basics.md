@@ -3,14 +3,14 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 基本概念"
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="windows-powershell-basics"></a>Windows PowerShell 基本概念
-圖形化使用者介面使用大部分電腦使用者熟知的一些基本概念。 使用者會依賴對這些介面的熟悉度來完成工作。 作業系統會向使用者呈現可瀏覽項目的圖形化呈現，通常是使用下拉式功能表來存取特定功能，以及使用操作功能表來存取內容特定功能。
+圖形化使用者介面使用大部分電腦使用者熟知的一些基本概念。 使用者會依賴對這些介面的熟悉度來完成工作。 作業系統會向使用者呈現可瀏覽項目的圖形化呈現，通常是使用下拉式功能表來存取特定功能，以及使用操作功能表來存取上下文特定功能。
 
 命令列介面 (CLI) (例如 Windows PowerShell) 必須使用不同的方式來公開資訊，因為它沒有可協助使用者的功能表或圖形化系統。 您需要先知道命令名稱，才能使用它們。 雖然您可以輸入相當於 GUI 環境中功能的複雜命令，但是您必須熟悉常用命令和命令參數。
 
@@ -18,13 +18,10 @@ ms.lasthandoff: 09/08/2017
 
 Windows PowerShell 是設計成利用使用者過往對 CLI 的了解。 在本章中，我們會討論一些可用來快速了解 Windows PowerShell 的基本工具和概念。 其中包括：
 
-- 使用 Get-Command
+- 使用 [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command)
 
-- 使用 Cmd.exe 和 UNIX 命令
+- 使用 [Cmd.exe](/windows-server/administration/windows-commands/cmd) 和 [UNIX 命令](/windows/wsl/reference)
 
-- 使用外部命令
+- [使用 Tab 鍵自動完成](../../core-powershell/console/using-tab-expansion.md)
 
-- 使用 TAB 鍵自動完成
-
-- 使用 Get-Help
-
+- [使用 Get-Help](./getting-detailed-help-information.md)

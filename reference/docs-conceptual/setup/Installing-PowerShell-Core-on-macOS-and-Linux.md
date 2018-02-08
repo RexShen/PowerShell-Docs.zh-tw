@@ -2,11 +2,9 @@
 
 支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.04][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 25][fed25]、[Fedora 26][fed26]、[Arch Linux][arch] 和 [macOS 10.12][mac]。
 
-針對未正式支援的 Linux 發行版本，您可以嘗試使用 [PowerShell AppImage][lai]。
-您也可以直接使用 Linux [`tar.gz` 封存][tar]嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中的作業系統，設定必要的相依性。
+針對未正式支援的 Linux 發行版本，您可以嘗試使用 [PowerShell AppImage][lai]。 您也可以直接使用 Linux [`tar.gz` 封存][tar]嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中的作業系統，設定必要的相依性。
 
-GitHub [版本][]頁面上提供所有套件。
-安裝套件之後，請從終端機執行 `pwsh`。
+GitHub [版本][]頁面上提供所有套件。 安裝套件之後，請從終端機執行 `pwsh`。
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
@@ -27,8 +25,7 @@ GitHub [版本][]頁面上提供所有套件。
 
 ### <a name="installation-via-package-repository---ubuntu-1404"></a>透過套件存放庫安裝 - Ubuntu 14.04
 
-PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
-這是慣用方法。
+PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。 這是慣用方法。
 
 ```sh
 # Import the public repository GPG keys
@@ -51,12 +48,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>透過直接下載安裝 - Ubuntu 14.04
 
-將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-rc-1.ubuntu.14.04_amd64.deb` 下載至 Ubuntu 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-1.ubuntu.14.04_amd64.deb` 下載到 Ubuntu 電腦。
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.14.04_amd64.deb
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.ubuntu.14.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -96,12 +97,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>透過直接下載安裝 - Ubuntu 16.04
 
-將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-1.ubuntu.16.04_amd64.deb` 下載到 Ubuntu 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.16.04_amd64.deb
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -141,12 +146,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1704"></a>透過直接下載安裝 - Ubuntu 17.04
 
-將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-rc-1.ubuntu.17.04_amd64.deb` 下載至 Ubuntu 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-1.ubuntu.17.04_amd64.deb` 下載到 Ubuntu 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.17.04_amd64.deb
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.ubuntu.17.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.17.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -190,12 +199,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-8"></a>透過直接下載安裝 - Debian 8
 
-將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-rc-1.debian.8_amd64.deb` 下載至 Debian 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-1.debian.8_amd64.deb` 下載到 Debian 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.8_amd64.deb
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.debian.8_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.debian.8_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -239,12 +252,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>透過直接下載安裝 - Debian 9
 
-將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-rc-1.debian.9_amd64.deb` 下載至 Debian 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.0.0-1.debian.9_amd64.deb` 下載到 Debian 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.9_amd64.deb
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dpkg -i powershell_6.0.0-rc-1.debian.9_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -279,18 +296,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>透過直接下載安裝 - CentOS 7
 
-使用 [CentOS 7][]，將[版本][]頁面上的 RPM 套件 `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。
+使用 [CentOS 7][]，將[版本][]頁面上的 RPM 套件 `powershell-6.0.0-1.rhel.7.x86_64.rpm` 下載到 CentOS 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo yum install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 您也可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>解除安裝 - CentOS 7
@@ -322,18 +343,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7
 
-將[版本][]頁面上的 RPM 套件 `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。
+將[版本][]頁面上的 RPM 套件 `powershell-6.0.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.debian.9_amd64.deb
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo yum install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 您也可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>解除安裝 - Red Hat Enterprise Linux (RHEL) 7
@@ -372,18 +397,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---opensuse-422"></a>透過直接下載安裝 - OpenSUSE 42.2
 
-將[版本][]頁面上的 RPM 套件 `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` 下載到 OpenSUSE 電腦。
+將[版本][]頁面上的 RPM 套件 `powershell-6.0.0-1.rhel.7.x86_64.rpm` 下載到 OpenSUSE 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo zypper install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 您也可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---opensuse-422"></a>解除安裝 - OpenSUSE 42.2
@@ -417,18 +446,22 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-25"></a>透過直接下載安裝 - Fedora 25
 
-將[版本][]頁面上的 RPM 套件 `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。
+將[版本][]頁面上的 RPM 套件 `powershell-6.0.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dnf install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 您也可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-25"></a>解除安裝 - Fedora 25
@@ -465,14 +498,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-26"></a>透過直接下載安裝 - Fedora 26
 
-將[版本][]頁面上的 RPM 套件 `powershell-6.0.0_rc-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。
+將[版本][]頁面上的 RPM 套件 `powershell-6.0.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦：
+
+```sh
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
+```
 
 然後在終端機上執行下列作業：
 
 ```sh
 sudo dnf update
 sudo dnf install compat-openssl10
-sudo dnf install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 您也可以不使用下載的中繼步驟來安裝 RPM：
@@ -480,7 +517,7 @@ sudo dnf install powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
 ```sh
 sudo dnf update
 sudo dnf install compat-openssl10
-sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0_rc-1.rhel.7.x86_64.rpm
+sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---fedora-26"></a>解除安裝 - Fedora 26
@@ -508,18 +545,16 @@ AUR 中的套件由社群維護 - 沒有官方支援。
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
-使用最新的 Linux 發行版本，將[版本][]頁面上的 AppImage `powershell-6.0.0-rc-x86_64.AppImage` 下載到 Linux 電腦。
+使用最新的 Linux 發行版本，將[版本][]頁面上的 AppImage `powershell-6.0.0-x86_64.AppImage` 下載到 Linux 電腦。
 
 然後在終端機上執行下列作業：
 
 ```bash
-chmod a+x powershell-6.0.0-rc-x86_64.AppImage
-./powershell-6.0.0-rc-x86_64.AppImage
+chmod a+x powershell-6.0.0-x86_64.AppImage
+./powershell-6.0.0-x86_64.AppImage
 ```
 
-[AppImage][] 讓您不用安裝就可執行 PowerShell。
-它是將 PowerShell 及其相依性 (包括.NET Core 系統相依性) 組合成一個緊密套件的可攜式應用程式。
-此套件運作不受使用者的 Linux 發行版本影響，且是單一的二進位檔。
+[AppImage][] 讓您不用安裝就可執行 PowerShell。 它是將 PowerShell 及其相依性 (包括.NET Core 系統相依性) 組合成一個緊密套件的可攜式應用程式。 此套件運作不受使用者的 Linux 發行版本影響，且是單一的二進位檔。
 
 [appimage]: http://appimage.org/
 
@@ -527,11 +562,9 @@ chmod a+x powershell-6.0.0-rc-x86_64.AppImage
 
 ### <a name="installation-via-homebrew-preferred---macos-1012"></a>透過 Homebrew 安裝 (慣用) - macOS 10.12
 
-[Homebrew][ brew] 是 macOS 遺漏的套件管理員。
-如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
+[Homebrew][ brew] 是 macOS 遺漏的套件管理員。 如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
 
-安裝好 Homebrew 之後，安裝 PowerShell 就很容易。
-首先，安裝 [Homebrew-Cask][cask]，以便安裝更多套件：
+安裝好 Homebrew 之後，安裝 PowerShell 就很容易。 首先，安裝 [Homebrew-Cask][cask]，以便安裝更多套件：
 
 ```sh
 brew tap caskroom/cask
@@ -557,12 +590,12 @@ brew cask reinstall powershell
 
 ### <a name="installation-via-direct-download---macos-1012"></a>透過直接下載安裝 - macOS 10.12
 
-使用 macOS 10.12，將[版本][]頁面上的 PKG 套件 `powershell-6.0.0-rc-osx.10.12-x64.pkg` 下載至 macOS 電腦。
+使用 macOS 10.12，將[版本][]頁面上的 PKG 套件 `powershell-6.0.0-osx.10.12-x64.pkg` 下載至 macOS 電腦。
 
 按兩下檔案依提示執行作業，或從終端機安裝：
 
 ```sh
-sudo installer -pkg powershell-6.0.0-rc-osx.10.12-x64.pkg -target /
+sudo installer -pkg powershell-6.0.0-osx.10.12-x64.pkg -target /
 ```
 
 ### <a name="uninstallation---macos-1012"></a>解除安裝 - macOS 10.12
@@ -579,8 +612,7 @@ brew cask uninstall powershell
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-若要解除安裝其他的 PowerShell 路徑 (例如使用者設定檔路徑)，請參閱本文件下文中的[路徑][ paths]一節，使用 `sudo rm` 移除所要的路徑。
-(注意：如果使用 Homebrew 安裝，此即非必要。)
+若要解除安裝其他的 PowerShell 路徑 (例如使用者設定檔路徑)，請參閱本文件下文中的[路徑][ paths]一節，使用 `sudo rm` 移除所要的路徑。 (注意：如果使用 Homebrew 安裝，此即非必要。)
 
 [paths]:#paths
 
@@ -589,13 +621,14 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ### <a name="installation"></a>安裝
 
 ```sh
-# Install prerequisites
-apt-get install libunwind8 libicu55
+# Download & Install prerequisites
+sudo apt-get install libunwind8 libicu55
 wget http://security.debian.org/debian-security/pool/updates/main/o/openssl/libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
-dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
+sudo dpkg -i libssl1.0.0_1.0.1t-1+deb8u6_amd64.deb
 
-# Install PowerShell
-dpkg -i powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
+# Download & Install PowerShell
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell_6.0.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell_6.0.0-1.ubuntu.16.04_amd64.deb
 
 # Start PowerShell
 pwsh
@@ -605,19 +638,19 @@ pwsh
 
 ```sh
 # Grab the latest App Image
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-x86_64.AppImage
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-x86_64.AppImage
 
 # Make executable
-chmod a+x powershell-6.0.0-rc-x86_64.AppImage
+chmod a+x powershell-6.0.0-x86_64.AppImage
 
 # Start PowerShell
-./powershell-6.0.0-rc-x86_64.AppImage
+./powershell-6.0.0-x86_64.AppImage
 ```
 
 ### <a name="uninstallation---kali"></a>解除安裝 - Kali
 
 ```sh
-dpkg -r powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
+sudo dpkg -r powershell-6.0.0-x86_64.AppImage
 ```
 
 ## <a name="raspbian"></a>Raspbian
@@ -631,13 +664,13 @@ dpkg -r powershell_6.0.0-rc-1.ubuntu.16.04_amd64.deb
 sudo apt-get install libunwind8
 
 # Grab the latest tar.gz
-wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-linux-arm32.tar.gz
+wget https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-linux-arm32.tar.gz
 
 # Make folder to put powershell
 mkdir ~/powershell
 
 # Unpack the tar.gz file
-tar -xvf ./powershell-6.0.0-rc-linux-arm32.tar.gz -C ~/powershell
+tar -xvf ./powershell-6.0.0-linux-arm32.tar.gz -C ~/powershell
 
 # Start PowerShell
 ~/powershell/pwsh
@@ -670,8 +703,7 @@ macOS 和 Linux 平台有 PowerShell 二進位 `tar.gz` 封存，以啟用進階
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 <br> Fedora 25 | libunwind、libcurl、openssl-libs、libicu |
 | Fedora 26          | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
-為在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。
-例如，[Amazon Linux dockerfile][amazon-dockerfile] 會先安裝相依性，再解壓縮 Linux `tar.gz` 封存。
+為在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。 例如，[Amazon Linux dockerfile][amazon-dockerfile] 會先安裝相依性，再解壓縮 Linux `tar.gz` 封存。
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell/blob/master/docker/community/amazonlinux/Dockerfile
 
@@ -681,38 +713,38 @@ macOS 和 Linux 平台有 PowerShell 二進位 `tar.gz` 封存，以啟用進階
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-linux-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-linux-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/6.0.0-rc
+sudo mkdir -p /opt/microsoft/powershell/6.0.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.0.0-rc
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.0.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.0.0-rc/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.0.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/6.0.0-rc/pwsh /usr/bin/pwsh
+sudo ln -s /opt/microsoft/powershell/6.0.0/pwsh /usr/bin/pwsh
 ```
 
 #### <a name="macos"></a>macOS
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0-rc/powershell-6.0.0-rc-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.0.0/powershell-6.0.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.0.0-rc
+sudo mkdir -p /usr/local/microsoft/powershell/6.0.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.0.0-rc
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.0.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.0.0-rc/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.0.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.0.0-rc/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.0.0/pwsh /usr/local/bin/pwsh
 ```
 
 ### <a name="uninstallation---binary-archives"></a>解除安裝 - 二進位封存
@@ -731,7 +763,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>路徑
 
-* `$PSHOME` 是 `/opt/microsoft/powershell/6.0.0-rc/`
+* `$PSHOME` 是 `/opt/microsoft/powershell/6.0.0/`
 * 會從 `~/.config/powershell/profile.ps1` 讀取使用者設定檔
 * 會從 `$PSHOME/profile.ps1` 讀取預設設定檔
 * 會從 `~/.local/share/powershell/Modules` 讀取使用者模組
@@ -743,8 +775,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 在 Linux 及 macOS 上，遵循 [XDG 基底目錄規格][xdg-bds]。
 
-請注意，因為 macOS 是 BSD 而非 `/opt` 的衍生項，所以使用的前置詞是 `/usr/local`。
-因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/6.0.0-rc/`，而且符號連結放在 `/usr/local/bin/pwsh`。
+請注意，因為 macOS 是 BSD 而非 `/opt` 的衍生項，所以使用的前置詞是 `/usr/local`。 因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/6.0.0/`，而且符號連結放在 `/usr/local/bin/pwsh`。
 
 [版本]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
