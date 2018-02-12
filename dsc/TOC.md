@@ -108,7 +108,7 @@
 
 # DSC 提取模型
 
-## [設定 Web 提取伺服器](pullServer.md)
+## [DSC 提取服務](pullServer.md)
 
 ## [設定 DSC SMB 提取伺服器](pullServerSMB.md)
 
