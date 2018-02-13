@@ -2,11 +2,11 @@
 ms.date: 2017-08-09
 keywords: "powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7"
 title: "安裝 Windows PowerShell"
-ms.openlocfilehash: 781bf50b6ac649e72bcdbb708555275fb7422d94
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 09/29/2017
 1. 從 [GitHub](https://github.com/powershell/powershell#get-powershell) 取得特定 OS 和版本適用的 PowerShell
 1. 依照安裝指示操作
   - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012)
+  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
   - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
 
 Docker 也可以使用 PowerShell 6；請參閱 [Docker 安裝](https://github.com/PowerShell/PowerShell/tree/master/docker)指示。

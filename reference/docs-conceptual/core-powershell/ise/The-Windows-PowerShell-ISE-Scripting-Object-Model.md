@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 指令碼物件模型"
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 ms.openlocfilehash: 705378c927fcd8d38c2a697584aad771d7bd6c49
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 指令碼物件模型
   Windows PowerShell® 整合式指令碼環境 (ISE) 透過基礎的指令碼物件模型公開其功能，該模型可讓使用者撰寫 Windows PowerShell 指令碼，以操作 Windows PowerShell ISE 的各種視覺及功能層面。 指令碼物件的屬性及其方法皆專為此用途而定義。

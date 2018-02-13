@@ -4,10 +4,10 @@ keywords: powershell,cmdlet
 title: "ISE 模組"
 ms.assetid: fd03c995-4cdb-4d14-a315-9cfbd1e81b10
 ms.openlocfilehash: 846d1c858f6d72009985221267e664f3f40395ac
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="ise-module"></a>ISE 模組
 本節包含 **ISE** 模組的說明主題，此模組中包含可在 Windows PowerShell 整合式指令碼環境 (ISE) 中使用的命令。 **ISE** 模組是與 Windows PowerShell 一起安裝。
