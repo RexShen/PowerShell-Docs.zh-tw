@@ -2,16 +2,18 @@
 ms.date: 2017-10-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
-title: "Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)"
-ms.openlocfilehash: 6ff8fa75f8ed33dc8da5285373ec1f3858cfa917
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: "在舊版 Windows PowerShell 中設定本機設定管理員"
+ms.openlocfilehash: 65eb2a8d5a99e977cf2f3dbd726240ec2d5a6142
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 預期狀態設定本機設定管理員 (LCM)
+# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>在舊版 Windows PowerShell 中設定本機設定管理員
 
 >適用於：Windows PowerShell 4.0
+
+**如需 Windows PowerShell 5.0 及更新版本的相關資訊，請參閱[設定本機設定管理員](metaConfig.md)。**
 
 本機設定管理員是 Windows PowerShell 預期狀態設定 (DSC) 引擎，
 會在所有目標節點上執行，負責呼叫包含在 DSC 設定指令碼中的設定資源。
