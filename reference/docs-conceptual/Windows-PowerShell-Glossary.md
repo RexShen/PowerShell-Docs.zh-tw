@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell 詞彙"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 詞彙
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |主機|Windows PowerShell 引擎用來與使用者通訊的介面。 例如，主機指定如何處理 Windows PowerShell 與使用者之間的提示。|
 |主應用程式|一種程式，將 Windows PowerShell 引擎載入其處理序中，並使用它來執行作業。|
 |輸入處理方法|Cmdlet 可用來處理接收為輸入之記錄的方法。 輸入處理方法包括 BeginProcessing 方法、ProcessRecord 方法、EndProcessing 方法和 StopProcessing 方法。|
-|資訊清單模組|具有資訊清單且其 ModulesToProcess 索引鍵空白的 Windows PowerShell 模組。|
+|資訊清單模組|具有資訊清單且其 RootModule 索引鍵空白的 Windows PowerShell 模組。|
 |模組資訊清單|描述模組內容並控制模組處理方式的 Windows PowerShell 資料檔 (.psd1)。|
 |模組工作階段狀態|工作階段狀態，內含 Windows PowerShell 模組的公用和私用資料。 Windows PowerShell 工作階段使用者無法使用此工作階段狀態中的私用資料。|
 |非終止錯誤|不會停止 Windows PowerShell 繼續處理命令的錯誤。|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |管道|在 Windows PowerShell 中，將上一個命令的結果傳送為管線中下一個命令的輸入。|
 |管線|透過管線運算子 (&#124;) (ASCII 124) 連接的一系列命令。 每一個管線運算子都會將上一個命令的結果傳送為下一個命令的輸入。|
 |PSSession|使用者所建立、管理和關閉之 Windows PowerShell 工作階段的類型。|
-|根模組|模組資訊清單中 ModuleToProcess 索引鍵所指定的模組。|
+|根模組|模組資訊清單中 RootModule 索引鍵所指定的模組。|
 |Runspace|在 Windows PowerShell 中，於其中執行管線中每個命令的作業環境。|
 |指令碼區塊|在 Windows PowerShell 程式設計語言中，可用作單一單元的陳述式或運算式集合。 指令碼區塊可以接受引數和傳回值。|
 |指令碼模組|根模組是指令碼模組檔案 (.psm1) 的 Windows PowerShell 模組。 指令碼模組不一定包括模組資訊清單。|
@@ -45,7 +45,7 @@ ms.lasthandoff: 08/08/2017
 |類型檔案|一個 Windows PowerShell XML 檔案，副檔名為 .ps1xml 並擴充 Windows PowerShell 中 Microsoft .NET Framework 類型的內容。|
 |動詞|Windows PowerShell Cmdlet 名稱中連字號前面的文字。 動詞描述 Cmdlet 所執行的動作。|
 |Windows PowerShell|一種命令列殼層和工作指令碼技術，將系統管理工作的完整控制權和自動化提供給 IT 系統管理員。|
-|Windows PowerShell 命令|管線中導致執行動作的元素。 Windows PowerShell 命令是透過鍵盤輸入或透過程式設計方式叫用。|
+|Windows PowerShell 命令|管線中導致執行動作的元素。Windows PowerShell 命令是透過鍵盤輸入或透過程式設計方式叫用。|
 |Windows PowerShell 資料檔|副檔名為 .psd1 的文字檔。 Windows PowerShell 會基於各種用途使用資料檔；例如，儲存模組資訊清單資料，以及儲存進行指令碼國際化的已翻譯字串。|
 |Windows PowerShell 磁碟機|直接存取資料存放區的虛擬磁碟機。 它可以由 Windows PowerShell 提供者所定義或在命令列中建立。 在命令列建立的磁碟機是工作階段特定磁碟機，並在關閉工作階段時中斷。|
 |Windows PowerShell 整合式指令碼環境 (ISE)|Windows PowerShell 主應用程式，可讓您執行命令，以及在易記、語法著色、Unicode 相容的環境中撰寫、測試和偵錯指令碼。|
