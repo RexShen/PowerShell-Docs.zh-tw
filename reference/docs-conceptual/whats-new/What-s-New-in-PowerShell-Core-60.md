@@ -361,8 +361,8 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
   - 作業系統平台 (`$PSVersionTable.OSDescription`)
   - 確切 PowerShell 版本 (`$PSVersionTable.GitCommitId`)
 
-如果您想要退出此遙測，只需要刪除 `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`。
-刪除此檔案會略過第一次執行 PowerShell 之前的所有遙測資料。
+如果您想要選擇退出這個遙測，只需刪除 `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY`，或是搭配下列其中一個值來建立 `POWERSHELL_TELEMETRY_OPTOUT` 環境變數：`true`、`1` 或 `yes`。
+刪除此檔案或建立變數，都會略過第一次執行 PowerShell 之前的所有遙測。
 我們也想要公開此遙測資料，以及我們在[社群儀表板][community-dashboard]中從遙測搜集到的深入資訊。
 您可以深入了解我們如何在這個[部落格文章][telemetry-blog]中使用這項資料。
 
