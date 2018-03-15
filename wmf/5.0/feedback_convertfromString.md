@@ -4,10 +4,10 @@ author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
 ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
-ms.translationtype: HT
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>從字串擷取和剖析結構化物件
 本主題也將介紹 ConvertFrom-String Cmdlet 的一些額外功能︰
@@ -89,5 +89,5 @@ P1    P2
 > ----------                     ----               ----     -----
 > Ana Trujillo...              Ana Trujillo       Redmond  WA Antonio Moreno...            Antonio Moreno     Renton   WA Thomas Hardy...              Thomas Hardy       Seattle  WA Christina Berglund...        Christina Berglund Redmond  WA Hanna Moos...                Hanna Moos         Puyallup WA
 
-若要在擷取的文字上執行其他資料操作，**ExtentText** 屬性可從擷取記錄中擷取未經處理的文字。 若要提供這項功能的意見反應，或共用您在撰寫時遇到困難的範例內容，請寄電子郵件至 <psdmfb@microsoft.com>。
+若要在擷取的文字上執行其他資料操作，**ExtentText** 屬性可從擷取記錄中擷取未經處理的文字。 若要提供意見反應這項功能，或共用的內容，您會撰寫時遇到困難範例，請寄電子郵件<psdmfb@microsoft.com>。
 
