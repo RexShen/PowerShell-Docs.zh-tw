@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "為 Windows PowerShell Web 存取中的存取問題進行疑難排解"
-ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
@@ -34,7 +34,7 @@ ms.lasthandoff: 08/31/2017
 
   確認已在使用者嘗試連線的電腦上啟用遠端管理。
 
-  如需詳細資訊，請參閱 [How to Configure Your Computer for Remoting](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting) (如何設定電腦的遠端功能)。
+  如需詳細資訊，請參閱 [How to Configure Your Computer for Remoting](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting) (如何設定電腦的遠端功能)。
 
 ## <a name="internal-server-error"></a>內部伺服器錯誤
 
@@ -132,7 +132,7 @@ ComputerName | 伺服器名稱
 若要使用 IPv6 位址指定目的電腦，請在授權規則使用原始 IPv6 位址 (包含冒號)。
 在 [Windows PowerShell Web 存取] 登入頁面中，支援以網域及數字 (含冒號) IPv6 位址做為目標電腦名稱，但在授權規則中則不行。 
 
-如需 IPv6 位址的詳細資訊，請參閱 [How IPv6 Works](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx) (IPv6 的運作方式)。
+如需 IPv6 位址的詳細資訊，請參閱 [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx) (IPv6 的運作方式)。
 
 ## <a name="see-also"></a>另請參閱
 

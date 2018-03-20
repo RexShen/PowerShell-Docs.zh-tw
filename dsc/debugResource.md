@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "偵錯 DSC 資源"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>偵錯 DSC 資源
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 在 PowerShell 5.0 中，預期狀態設定 (DSC) 引進了新功能，可讓您將 DSC 資源當做已套用的設定偵錯。
 
 ## <a name="enabling-dsc-debugging"></a>啟用 DSC 偵錯
-偵錯資源之前，您必須先呼叫 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) Cmdlet 啟用偵錯。 這個 Cmdlet 使用強制參數 **BreakAll**。 
+偵錯資源之前，您必須先呼叫 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) Cmdlet 啟用偵錯。 這個 Cmdlet 使用強制參數 **BreakAll**。 
 
-您可以查看呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) 的結果，確認是否已啟用偵錯。
+您可以查看呼叫 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) 的結果，確認是否已啟用偵錯。
 
 下列 PowerShell 輸出會顯示啟用偵錯的結果：
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-編譯設定之後，再呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 加以啟動。 設定停止的時機為本機設定管理員 (LCM) 叫入設定的第一個資源。 如果使用 `-Verbose` 和 `-Wait` 參數，輸出會顯示您需要輸入的程式行以開始偵錯。
+編譯設定之後，再呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 加以啟動。 設定停止的時機為本機設定管理員 (LCM) 叫入設定的第一個資源。 如果使用 `-Verbose` 和 `-Wait` 參數，輸出會顯示您需要輸入的程式行以開始偵錯。
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ Debug-Runspace -Id 9
 
 ## <a name="disabling-dsc-debugging"></a>停用 DSC 偵錯
 
-呼叫 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) 後，所有對 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) 的呼叫將會導致設定中斷並進入偵錯工具。 若要使設定正常執行，您必須透過呼叫 [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) Cmdlet 來停用偵錯。
+呼叫 [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) 後，所有對 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 的呼叫將會導致設定中斷並進入偵錯工具。 若要使設定正常執行，您必須透過呼叫 [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) Cmdlet 來停用偵錯。
 
 >**注意︰**重新開機不會變更 LCM 的偵錯狀態。 若啟用偵錯，則重新開機後啟動設定時仍然會中斷並進入偵錯工具。
 

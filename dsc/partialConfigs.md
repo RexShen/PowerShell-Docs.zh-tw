@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "PowerShell 預期狀態設定部分設定"
-ms.openlocfilehash: 66791bb7b14898d292b9da38dd27ba45b7c75d88
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 4401ea80cffd09f4b92c9fcca16d5dcad7f6a327
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell 預期狀態設定部分設定
 
@@ -18,10 +18,10 @@ ms.lasthandoff: 01/17/2018
 您可以藉由推送模式、提取模式或兩者組合來使用部分設定。
 
 ## <a name="partial-configurations-in-push-mode"></a>推送模式中的部分設定
-若要在推送模式下使用部分設定，您可以設定目標節點上的 LCM 接收部分設定。 每個部分設定都必須使用 Publish-DSCConfiguration Cmdlet 推送至目標。 目標節點接著會將部分設定結合至單一設定中，您也可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 來套用設定。
+若要在推送模式下使用部分設定，您可以設定目標節點上的 LCM 接收部分設定。 每個部分設定都必須使用 Publish-DSCConfiguration Cmdlet 推送至目標。 目標節點接著會將部分設定結合至單一設定中，您也可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet 來套用設定。
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>設定推送模式部分設定的 LCM
-若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](https://technet.microsoft.com/en-us/library/mt421188.aspx)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
+若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](https://technet.microsoft.com/library/mt421188.aspx)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -51,7 +51,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>發佈和啟動推送模式部分設定
 
-然後您可對每個設定呼叫 [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)，傳遞包含設定文件的資料夾作為 **Path** 參數。 `Publish-DSCConfiguration` 將設定 MOF 檔案放至目標節點。 發佈這兩種設定之後，您可以在目標節點上呼叫 `Start-DSCConfiguration –UseExisting`。
+然後您可對每個設定呼叫 [Publish-DSCConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration)，傳遞包含設定文件的資料夾作為 **Path** 參數。 `Publish-DSCConfiguration` 將設定 MOF 檔案放至目標節點。 發佈這兩種設定之後，您可以在目標節點上呼叫 `Start-DSCConfiguration –UseExisting`。
 
 例如，如果您編譯了撰寫節點上的下列設定 MOF 文件︰
 
@@ -96,7 +96,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**注意：**執行 [Publish-DSCConfiguration (英文)](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) Cmdlet 的使用者必須在目標節點上具備系統管理員權限。
+>**注意：**執行 [Publish-DSCConfiguration (英文)](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) Cmdlet 的使用者必須在目標節點上具備系統管理員權限。
 
 ## <a name="partial-configurations-in-pull-mode"></a>提取模式中的部分設定
 
@@ -377,5 +377,5 @@ SharePointConfig
 **概念**
 [Windows PowerShell 預期狀態設定提取伺服器](pullServer.md) 
 
-[Windows 設定本機設定管理員](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows 設定本機設定管理員](https://technet.microsoft.com/library/mt421188.aspx) 
 

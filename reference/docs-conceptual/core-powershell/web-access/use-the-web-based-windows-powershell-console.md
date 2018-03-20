@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "使用網頁型 Windows PowerShell 主控台"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -58,7 +58,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。
 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。
-如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting)。
+如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting)。
 
 設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 (**[以系統管理員身分執行]**) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
 
@@ -74,7 +74,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
     > - 如果目的地電腦是閘道伺服器，您可以在 [電腦名稱] 欄位中指定 `localhost`
     > - 如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組，您必須在 [使用者名稱] 欄位中使用 `<workgroup name>\<user_name>`。 您可以在 [電腦名稱] 欄位中使用 `localhost`。
 
-1. [選用連線設定] 區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet 說明。
+1. [選用連線設定] 區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet 說明。
 
     一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定] 區段，然後提供替代的認證。 否則，請前往步驟 6。
 

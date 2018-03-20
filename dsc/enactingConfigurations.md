@@ -3,11 +3,11 @@ ms.date: 2017-10-16
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "施行設定"
-ms.openlocfilehash: 4285dbe04c9745ec2a859e479848da2881c18de0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 01294b85d33e147593299de8ecf46c027a69f7a3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="enacting-configurations"></a>施行設定
 
@@ -19,9 +19,9 @@ PowerShell 預期狀態設定 (DSC) 設定有兩種施行方式：Push 模式和
 
 ![Push 模式](images/pushModel.png "Push 模式的運作方式")
 
-Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet，將設定積極套用至目標節點。
+Push 模式指的是使用者呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet，將設定積極套用至目標節點。
 
-建立及編譯設定後，您可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet，設定 MOF 所在路徑之 Cmdlet 的 -Path 參數，以 Push 模式施行設定。
+建立及編譯設定後，您可以呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet，設定 MOF 所在路徑之 Cmdlet 的 -Path 參數，以 Push 模式施行設定。
 例如，如果設定 MOF 位於 `C:\DSC\Configurations\localhost.mof`，您可以使用下列命令將其套用到本機電腦：`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > __注意__：DSC 預設將設定當做背景工作執行。 若要以互動方式執行設定，請呼叫 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) 配以 __-Wait__ 參數。
@@ -40,7 +40,7 @@ LCM 會依照 LCM 的 **ConfigurationModeFrequencyMins** 屬性所指定的固�
 LCM 會依照 LCM 的 **RefreshModeFrequency** 屬性所指定的固定間隔，檢查提取服務上的更新設定。
 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](metaConfig.md)。
 
-託管提取服務的建議解決方案為 DSC 雲端服務：[Azure 自動化](https://azure.microsoft.com/en-us/services/automation/)。
+託管提取服務的建議解決方案為 DSC 雲端服務：[Azure 自動化](https://azure.microsoft.com/services/automation/)。
 此託管解決方案能提供圖形化管理、報告，以及集中化的系統管理。
 
 如需在 Windows Server 上設定提取服務的詳細資訊，請參閱[設定 DSC Web 提取伺服器](pullServer.md)。

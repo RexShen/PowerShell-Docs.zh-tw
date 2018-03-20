@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "Windows PowerShell ISE 的協助工具"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 本主題說明 Windows PowerShell 整合式指令碼環境 (ISE) 的協助工具功能，對您來說可能很實用。
@@ -22,7 +22,7 @@ ms.lasthandoff: 09/29/2017
 
 Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下列主題提供可更方便殘障人士使用 Windows PowerShell ISE 的功能、產品及服務的相關資訊。
 
-Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可透過 Cmdlet 使用中斷點資訊來管理中斷點，例如 [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中偵錯指令碼](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)的＜如何管理中斷點＞。 除了 Microsoft Windows 中的協助工具功能和公用程式之外，下列功能也可以讓 Windows PowerShell ISE 更方便殘障人士使用：
+Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可透過 Cmdlet 使用中斷點資訊來管理中斷點，例如 [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) 和 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)。 如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中偵錯指令碼](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)的＜如何管理中斷點＞。 除了 Microsoft Windows 中的協助工具功能和公用程式之外，下列功能也可以讓 Windows PowerShell ISE 更方便殘障人士使用：
 
 - 鍵盤快速鍵
 

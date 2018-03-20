@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "使用多個版本的資源"
-ms.openlocfilehash: 8bd8b1dab9418c6d8cf64cd682c527a7f039cdb4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 5ca4eadfe23a4675e1b81b86d4274d7f113228fe
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-resources-with-multiple-versions"></a>使用多個版本的資源
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 01/17/2018
 
 ## <a name="installing-multiple-resource-versions-side-by-side"></a>並存安裝多個資源版本
 
-您可以使用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 的 **MinimumVersion**、**MaximumVersion** 與 **RequiredVersion** 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
+您可以使用 [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) Cmdlet 的 **MinimumVersion**、**MaximumVersion** 與 **RequiredVersion** 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
 
 例如，多個版本的 **xFailOverCluster** 模組，每個皆包含 **xCluster** 資源。 呼叫 **Install-Module** 但未指定版本號碼的結果如下：
 

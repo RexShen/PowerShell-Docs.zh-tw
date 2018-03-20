@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 6cba004890fc4b1dfac40920f751f61b0530cce9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 134c22efe4fb86045ffb326e109dfbcc741bcf2f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement Cmdlet
 這是支援軟體探索、安裝和清查 (SDII) 的 PackageManagement 核心。 試試看這些作業的 Cmdlet︰
@@ -31,7 +31,7 @@ PS C:\> Install-Module PackageManagement –Force
 ```
 在本例中，您必須重新進入 PowerShell 工作階段，以切換至新版的 PackageManagement。
 
-## <a name="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx"></a>[Find-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+## <a name="find-package-cmdlethttpstechnetmicrosoftcomlibrarydn890709aspx"></a>[Find-Package Cmdlet](https://technet.microsoft.com/library/dn890709.aspx)
 這個 Cmdlet 可讓您使用載入的封裝提供者在可用的封裝來源中探索軟體封裝。
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -51,7 +51,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx"></a>[Find-PackageProvider Cmdlet](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Find-PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
 Find-PackageProvider Cmdlet 會在向 PowerShellGet 註冊的封裝來源中尋找相符的 PackageManagement 提供者。 這些是可使用 Install-PackageProvider Cmdlet 進行安裝的封裝提供者。 根據預設，這包括 PowerShell Gallery 提供之具有 'PackageManagement' 和 'Provider' 標記的模組。 
 
 Find-PackageProvider 也會尋找相符的 PackageManagement 提供者，它們可在 PackageManagement Azure Blob 存放區中取得，我們在此存放區中使用 PackageManagement boostrapper 提供者尋找及安裝它們。
@@ -66,7 +66,7 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx"></a>[Get-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Get-Package Cmdlet](https://technet.microsoft.com/library/dn890704.aspx)
 這個 Cmdlet 會傳回所有已使用 PackageManagement 安裝的軟體封裝清單。
 ```powershell
 # Get all the packages installed by Programs provider

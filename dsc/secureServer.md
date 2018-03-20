@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "提取伺服器最佳做法"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/17/2018
 ## <a name="abstract"></a>摘要
 
 本文件旨在為規劃 Windows PowerShell 期望狀態設定提取伺服器實作的任何人提供官方指引。 提取伺服器是一項簡單的服務，部署只需要幾分鐘。 雖然這份文件會提供可用於部署的技術指引，但本文件的價值如同最佳做法和部署前考慮事項的參考。
-讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](https://technet.microsoft.com/en-us/library/dn249912.aspx)主題。
+讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](https://technet.microsoft.com/library/dn249912.aspx)主題。
 因為 DSC 預期依雲端節奏發展，所以包含提取伺服器的基礎技術也預期會發展並推出新功能。 本文件附錄中的版本表提供有關舊版的參考，以及鼓勵展望未來設計的解決方案參考。
 
 本文件分為兩大部分︰
@@ -43,7 +43,7 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 ### <a name="pull-server-role"></a>提取伺服器角色  
 提取伺服器提供集中式服務以儲存將來可存取的目標節點設定。
  
-提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。 將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](https://technet.microsoft.com/en-us/library/dn249913.aspx)和[發送及提取設定模式](https://technet.microsoft.com/en-us/library/dn249913.aspx)。
+提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。 將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](https://technet.microsoft.com/library/dn249913.aspx)和[發送及提取設定模式](https://technet.microsoft.com/library/dn249913.aspx)。
 
 ## <a name="configuration-planning"></a>設定規劃
 

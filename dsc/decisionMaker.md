@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "適合決策者的預期狀態設定概觀"
-ms.openlocfilehash: cbde5d22f9cf118485a0302e53ee0a75eb4b8843
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 42335d674bd23a109ad8f818d3e22ef221884ca7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適合決策者的預期狀態設定概觀
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 01/17/2018
 
 Windows PowerShell 預期狀態設定 (DSC) 是 Windows 內建的開放式標準設定管理平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。 
 
-DSC 的中心概念是「[設定](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)」。
+DSC 的中心概念是「[設定](https://msdn.microsoft.com/powershell/dsc/configurations)」。
 設定是容易讀取的文件，描述由特定特性的電腦 (「節點」) 組成的環境。 這些特性可以簡單到像是確保已啟用特定的 Windows 功能，也可以複雜到像是部署 SharePoint。 
 
 DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發警示，採取動作更正系統。 
@@ -35,11 +35,11 @@ DSC 也有內建的監視和報告。 如果系統不再相容，DSC 會引發�
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 是人員、流程和工具的組合，可允許快速建置與反覆開發週期，為內部或外部的終端使用者創造價值。 DSC 在設計時即已考慮到 DevOps。 讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將此設定簽入原始檔控制，而作業小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。 
 
-設定也是[資料導向](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)，讓作業小組更容易識別及變更環境，不用開發人員介入。 
+設定也是[資料導向](https://msdn.microsoft.com/powershell/dsc/configdata)，讓作業小組更容易識別及變更環境，不用開發人員介入。 
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>內部部署及外部部署的預期狀態設定
 
-DSC 可同時用來管理內部部署及外部部署的部署。 在內部部署解決方案方面，DSC 具有[提取伺服器](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)，可用來集中管理電腦並回報其狀態。 在雲端解決方案方面，只要能夠使用 Windows 的地方都可以使用 DSC。 建置在預期狀態設定之上的 Azure 也有特定項目，例如能集中 DSC 報告的 [Azure 自動化](https://azure.microsoft.com/en-us/documentation/services/automation/)。 
+DSC 可同時用來管理內部部署及外部部署的部署。 在內部部署解決方案方面，DSC 具有[提取伺服器](https://msdn.microsoft.com/powershell/dsc/pullserver)，可用來集中管理電腦並回報其狀態。 在雲端解決方案方面，只要能夠使用 Windows 的地方都可以使用 DSC。 建置在預期狀態設定之上的 Azure 也有特定項目，例如能集中 DSC 報告的 [Azure 自動化](https://azure.microsoft.com/en-us/documentation/services/automation/)。 
 
 ## <a name="dsc-and-compatibility"></a>DSC 和相容性
 

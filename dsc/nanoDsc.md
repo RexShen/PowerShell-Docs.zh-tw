@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "在 Nano Server 上使用 DSC"
-ms.openlocfilehash: 7427d6bb7644f513b9b523f284109f5ae0f8ef27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c8f3669ee9c2ed6107c14ba9f4460d82276e1932
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>在 Nano Server 上使用 DSC
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 01/17/2018
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package
 ```
 
-如需安裝及使用 Nano Server 以及如何透過 PowerShell 遠端來管理 Nano Server 的相關資訊，請參閱 [Getting Started with Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx) (開始使用 Nano Server)。
+如需安裝及使用 Nano Server 以及如何透過 PowerShell 遠端來管理 Nano Server 的相關資訊，請參閱 [Getting Started with Nano Server](https://technet.microsoft.com/library/mt126167.aspx) (開始使用 Nano Server)。
 
 
 ## <a name="dsc-features-available-on-nano-server"></a>Nano Server 提供的 DSC 功能
@@ -32,8 +32,8 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 推入與提取模式
 
 * 完整版 Windows Server 的所有現有 DSC Cmdlet 包括︰ 
-  * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)   
+  * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)     
   * [啟用-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
   * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
@@ -124,5 +124,5 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 因為 Nano Server 上僅提供有限的 Windows API 與 CLR 程式庫，所以在 Windows 完整 CLR 版能執行的 DSC 資源，在 Nano Server 上不一定有效。 請先完成端對端測試，再將任何 DSC 自訂資源部署至生產環境。
 
 ## <a name="see-also"></a>另請參閱
-- [開始使用 Nano Server](https://technet.microsoft.com/en-us/library/mt126167.aspx)
+- [開始使用 Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
 

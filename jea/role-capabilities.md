@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 角色功能"
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> 一律會允許[一般的 PowerShell 參數](https://technet.microsoft.com/en-us/library/hh847884.aspx)，即使是您限制了可用的參數。
+> 一律會允許[一般的 PowerShell 參數](https://technet.microsoft.com/library/hh847884.aspx)，即使是您限制了可用的參數。
 > 您不應該將其明確列在 Parameters 欄位中。
 
 下表說明您可以自訂可見 Cmdlet 或函式的各種方式。
@@ -111,7 +111,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 
 如果您這樣做，ValidatePattern 會覆寫 ValidateSet。
 
-如需 ValidatePattern 的詳細資訊，請參閱[這篇 *Hey, Scripting Guy!* 文章](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 規則運算式](https://technet.microsoft.com/en-us/library/hh847880.aspx)參考內容。
+如需 ValidatePattern 的詳細資訊，請參閱[這篇 *Hey, Scripting Guy!* 文章](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 規則運算式](https://technet.microsoft.com/library/hh847880.aspx)參考內容。
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>允許外部命令及 PowerShell 指令碼
 
@@ -128,7 +128,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 例如，請考慮檔案伺服器系統管理員的角色，系統管理員想要檢查本機電腦裝載哪些網路共用。
 其中一個檢查方式是使用 `net share`。
 不過，允許 net.exe 非常危險，因為系統管理員可以輕鬆地以 `net group Administrators unprivilegedjeauser /add` 使用命令取得系統管理員權限。
-更好的方法是允許 [Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx)，這可達到相同的結果，但範圍的限制多了許多。
+更好的方法是允許 [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx)，這可達到相同的結果，但範圍的限制多了許多。
 
 當提供外部命令給使用者在 JEA 工作階段中使用時，請一律指定可執行檔的完整路徑，以確保不會改為執行放置在系統上別處、名稱類似 (且可能惡意) 的程式。
 

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中偵錯指令碼"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中偵錯指令碼
 
@@ -26,7 +26,7 @@ ms.lasthandoff: 09/29/2017
 在 Windows PowerShell ISE 偵錯環境中，只有行中斷點可以使用功能表或鍵盤快速鍵來設定。 另有其他兩種中斷點類型可供設定，但必須使用 [Set-PSBreakpoint](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) Cmdlet 從 [主控台] 設定。 本節說明如何使用功能表 (可用時) 在 Windows PowerShell ISE 中執行偵錯工作，並從主控台窗格中使用指令碼執行更廣泛的命令。
 
 ### <a name="to-set-a-breakpoint"></a>設定中斷點
-只有在儲存指令碼之後，才能在其中設定中斷點。 以滑鼠右鍵按一下您要設定行中斷點的行，然後按一下切換中斷點。 或者，按一下您要設定行中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。
+只有在儲存指令碼之後，才能在其中設定中斷點。 以滑鼠右鍵按一下您要設定行中斷點的行，然後按一下 [切換中斷點]。 或者，按一下您要設定行中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。
 
 下列指令碼示範如何從主控台窗格使用 [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420) Cmdlet 設定變數中斷點。
 
@@ -42,7 +42,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 在 **[偵錯]** 功能表上，按一下 **[列出中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) Cmdlet 列出所有中斷點。
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -51,7 +51,7 @@ Get-PSBreakpoint
 移除中斷點會將它刪除。
 
 如果您認為稍後可能需要再度使用，請考慮改為[停用中斷點](#disable-a-breakpoint)。
-以滑鼠右鍵按一下您要移除中斷點的行，然後按一下切換中斷點。
+以滑鼠右鍵按一下您要移除中斷點的行，然後按一下 [切換中斷點]。
 或者，按一下您要移除中斷點的行，然後在 **[偵錯]** 功能表上，按一下 **[切換中斷點]**。
 下列指令碼示範如何從主控台窗格使用 [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) Cmdlet 移除具有指定識別碼的中斷點。
 
@@ -71,7 +71,7 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 ### <a name="disable-a-breakpoint"></a>停用中斷點
-停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用特定行中斷點，請以滑鼠右鍵按一下您要停用中斷點的行，然後按一下停用中斷點。 或者，按一下您要停用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[停用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 移除具有指定識別碼的中斷點。
+停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用特定行中斷點，請以滑鼠右鍵按一下您要停用中斷點的行，然後按一下 [停用中斷點]。 或者，按一下您要停用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[停用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 移除具有指定識別碼的中斷點。
 
 ``` PowerShell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -82,13 +82,13 @@ Disable-PSBreakpoint -Id 0
 停用中斷點不會將它移除，而是將它關閉直到再次啟用為止。  若要停用目前工作階段中的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[停用所有中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) Cmdlet 來停用所有中斷點。
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
 
 ### <a name="enable-a-breakpoint"></a>啟用中斷點
-若要啟用特定中斷點，請以滑鼠右鍵按一下您要啟用中斷點的行，然後按一下啟用中斷點。 或者，按一下您要啟用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[啟用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 來啟用特定中斷點。
+若要啟用特定中斷點，請以滑鼠右鍵按一下您要啟用中斷點的行，然後按一下 [啟用中斷點]。 或者，按一下您要啟用中斷點的行，然後按 **F9** 鍵，或在 **[偵錯]** 功能表上，按一下 **[啟用中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 來啟用特定中斷點。
 
 ``` PowerShell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 若要啟用目前工作階段中定義的所有中斷點，請在 **[偵錯]** 功能表上，按一下 **[啟用所有中斷點]**。 下列指令碼示範如何從主控台窗格使用 [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) Cmdlet 啟用所有中斷點。
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>如何管理偵錯工作階段
-開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點](#how-to-manage-breakpoints)或 [Set-PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
+開始偵錯之前，您必須設定一或多個中斷點。 您必須儲存要偵錯的指令碼，才能設定中斷點。 如需如何設定中斷點的指示，請參閱[如何管理中斷點](#how-to-manage-breakpoints)或 [Set-PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint)。 開始偵錯之後，直到停止偵錯為止，都無法編輯指令碼。 已設定一或多個中斷點的指令碼會自動儲存後再執行。
 
 ### <a name="to-start-debugging"></a>開始偵錯
 按 **F5** 鍵；按一下工具列中的**執行指令碼**圖示；或在 [偵錯] 功能表上，按一下 [執行/繼續]。 指令碼會執行，直到它遇到第一個中斷點為止。 然後它會在此暫停作業，並反白暫停的行。
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>另請參閱
-- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [探索 Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

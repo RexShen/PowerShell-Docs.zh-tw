@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 遠端安全性考量
 
@@ -14,7 +14,7 @@ ms.lasthandoff: 09/08/2017
 
 ## <a name="what-is-powershell-remoting"></a>什麼是 PowerShell 遠端？
 
-PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx)，這是[管理的 Web 服務 (WS 管理)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 通訊協定的 Microsoft 實作，可讓使用者在遠端電腦上執行 PowerShell 命令。 您可以在[執行遠端命令](https://technet.microsoft.com/en-us/library/dd819505.aspx)處找到有關使用 PowerShell 遠端的詳細資訊。
+PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx)，這是[管理的 Web 服務 (WS 管理)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 通訊協定的 Microsoft 實作，可讓使用者在遠端電腦上執行 PowerShell 命令。 您可以在[執行遠端命令](https://technet.microsoft.com/library/dd819505.aspx)處找到有關使用 PowerShell 遠端的詳細資訊。
 
 PowerShell 遠端和使用 Cmdlet 的 **ComputerName** 參數在遠端電腦上執行不同，其使用遠端程序呼叫 (RPC) 作為其基礎通訊協定。
 
@@ -33,7 +33,7 @@ PowerShell 遠端預設僅允許連線系統管理員群組的成員。 工作�
 
 ## <a name="process-isolation"></a>處理程序隔離
 
-PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) 進行電腦之間的通訊。 WinRM 以網路服務帳戶的服務方式執行，並會繁衍隔離的處理程序作為使用者帳戶，以主控 PowerShell 執行個體。 PowerShell 的執行個體以一位使用者的身分執行時，無法存取執行為另一位使用者的 PowerShell 執行個體。
+PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) 進行電腦之間的通訊。 WinRM 以網路服務帳戶的服務方式執行，並會繁衍隔離的處理程序作為使用者帳戶，以主控 PowerShell 執行個體。 PowerShell 的執行個體以一位使用者的身分執行時，無法存取執行為另一位使用者的 PowerShell 執行個體。
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell 遠端所產生的事件記錄檔
 
@@ -50,10 +50,10 @@ FireEye 提供了一份良好的摘要，其中內含 PowerShell 遠端工作階
 
 驗證會確認用戶端至伺服器的身分識別，在理想的情況下，也會確認伺服器到用戶端的身分識別。
     
-當用戶端使用其電腦名稱 (例如︰server01 或 server01.contoso.com) 連線到網域伺服器時，預設的驗證通訊協定是 [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx)。
+當用戶端使用其電腦名稱 (例如︰server01 或 server01.contoso.com) 連線到網域伺服器時，預設的驗證通訊協定是 [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx)。
 Kerberos 可保證使用者識別與伺服器識別，而不會傳送任何種類可重複使用的認證。
 
-當用戶端使用其 IP 位址連線到網域伺服器時，或連線到工作群組伺服器時，便無法進行 Kerberos 驗證。 在此情況下，PowerShell 遠端會仰賴 [NTLM 驗證通訊協定](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx)。 NTLM 驗證通訊協定可保證使用者識別，且不會傳送任何種類可委派的認證。 為了要證明使用者識別，NTLM 通訊協定需要用戶端與伺服器從使用者的密碼來計算工作階段金鑰，而不會交換密碼本身。 伺服器通常不知道使用者的密碼，因此會和知道使用者密碼的網域控制站互相通訊，並為伺服器計算出工作階段金鑰。 
+當用戶端使用其 IP 位址連線到網域伺服器時，或連線到工作群組伺服器時，便無法進行 Kerberos 驗證。 在此情況下，PowerShell 遠端會仰賴 [NTLM 驗證通訊協定](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx)。 NTLM 驗證通訊協定可保證使用者識別，且不會傳送任何種類可委派的認證。 為了要證明使用者識別，NTLM 通訊協定需要用戶端與伺服器從使用者的密碼來計算工作階段金鑰，而不會交換密碼本身。 伺服器通常不知道使用者的密碼，因此會和知道使用者密碼的網域控制站互相通訊，並為伺服器計算出工作階段金鑰。 
       
 但 NTLM 通訊協定並不能保證伺服器識別。 因為所有通訊協定都使用 NTLM 進行驗證，所以可以存取已加入網域之電腦的電腦帳戶之攻擊者，就能叫用網域控制站計算出 NTLM 工作階段金鑰，然後模擬該伺服器。
 

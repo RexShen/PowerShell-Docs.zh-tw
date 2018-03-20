@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: "資源庫,powershell,cmdlet,psget"
 title: Find-DscResource
-ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6c5713f122d48e9c9d5e0aa45dc14047afc56102
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="find-dscresource"></a>Find-DscResource
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="description"></a>描述
 
-Find-DscResource Cmdlet 會從已註冊存放庫中尋找符合指定準則之模組中所含的[預期狀態設定 (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) 資源。
+Find-DscResource Cmdlet 會從已註冊存放庫中尋找符合指定準則之模組中所含的[預期狀態設定 (DSC)](https://msdn.microsoft.com/PowerShell/dsc/overview) 資源。
 針對這個 Cmdlet 所找到的每個群組，Find-DscResource 會傳回 PSGetDscResourceInfo 物件，而您可以將這個物件傳送至 Install-Module，來安裝包含這個 Cmdlet 所傳回之資源的模組。
 
 DSC 是 Windows PowerShell 中的新管理平台，可讓您部署和管理軟體服務的設定資料及管理這些服務執行的環境。

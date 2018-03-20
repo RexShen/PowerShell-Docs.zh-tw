@@ -2,8 +2,8 @@
 
 本主題為發行者提供如何修改其 PowerShell 資源庫出版物資訊清單的摘要資訊，以影響 PowerShellGet Cmdlet 的功能和 PowerShell 資源庫 UI。 本內容是根據出現變更的位置來組織，首先從中間的區段開始，然後是左側的瀏覽區域。 其中有詳述標籤的小節，列出重要的標籤和一些較常用的標籤。 有兩個主題提供資訊清單範例： 
 
-* 針對模組，請參閱[更新模組資訊清單](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)
-* 針對指令碼，請參閱[建立含有中繼資料的指令碼檔](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)
+* 針對模組，請參閱[更新模組資訊清單](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)
+* 針對指令碼，請參閱[建立含有中繼資料的指令碼檔](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>由資訊清單控制的 PowerShell 資源庫功能元素
 
@@ -14,18 +14,18 @@
 | --- | --- | --- | --- |
 | **Title** (標題) | 這是發行到資源庫之項目的名稱  | 否 | 否 |
 | **Version** (版本) | 顯示的版本是中繼資料中的版本字串，若指定則會顯示為發行前版本。 模組資訊清單中版本的主要部分是 ModuleVersion。 針對指令碼，會以 .VERSION 識別。 若指定發行前版本字串，系統會將它附加到模組的 ModuleVersion，或是指定為指令碼之 .VERSION 的一部分。 如需詳細資訊，請參閱有關在[模組](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)中和在[指令碼](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript)中指定發行前版本字串的文件 | 是 | 是 |
-|  (描述) | 這是模組資訊清單中的 Description，而在指令碼檔案資訊清單中是 .DESCRIPTION | 是 | 是 |
+| **描述** | 這是模組資訊清單中的 Description，而在指令碼檔案資訊清單中是 .DESCRIPTION | 是 | 是 |
 | **Require license acceptance** (必須接受授權) | 模組可以要求使用者接受授權，方法是以 RequireLicenseAcceptance = $true 修改模組資訊清單、提供 LicenseURI，並在模組資料夾的根資料夾提供 license.txt 檔案。 其他資訊可在[必須接受授權](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance)主題取得。 | 是 | 否 |
-| **Release notes** (版本資訊) | 針對模組，此資訊是取自 PSData\PrivateData 下的 [ReleaseNotes] 區段。 在指令碼資訊清單中，它是 .RELEASENOTES 元素。 | 是 | 是 |
+| **版本資訊** | 針對模組，此資訊是取自 PSData\PrivateData 下的 [ReleaseNotes] 區段。 在指令碼資訊清單中，它是 .RELEASENOTES 元素。 | 是 | 是 |
 | **Owners** (擁有者) | 擁有者是可以更新項目的 PowerShell 資源庫使用者清單。 擁有者清單未包含在項目資訊清單中。 描述如何[管理項目擁有者](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)的其他文件。 | 否 | 否 |
 | **Author** (作者) | 此項目以 Author 包含在模組資訊清單中，而在指令碼清單中是 .AUTHOR。 Author 欄位通常是用於指定與某個項目相關聯的公司或組織。 | 是 | 是 |
 | **Copyright** (著作權) | 這是模組資訊清單中的 [Copyright] 欄位，而在指令碼資訊清單中是 .COPYRIGHT。 | 是 | 是 |
 | **FileList** (檔案清單) | 當套件發佈到 PowerShell 資源庫時，會從套件取得檔案清單。 它不是由資訊清單資訊控制。 注意：每個項目在 PowerShell 資源庫中都列出一個額外的 .nuspec 檔案，但是在系統上安裝項目之後不會顯示該檔案。 這是該項目的 Nuget 套件資訊清單，可以忽略它。 | 否 | 否 |
 | **Tags** (標籤) | 針對模組，Tags 包含在 PSData\PrivateData 之下。 針對指令碼，該區段標記為 .TAGS。 請注意，標籤不能包含空格，即使當它們在引號中亦然。 標籤具有其他需求和意義，稍後會在本主題的＜標籤詳細資訊＞一節中說明。 | 是 | 是 |
 | **Cmdlet** | 此項目在模組資訊清單中使用 CmdletsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可以改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
-| **Functions** (函式) | 此項目在模組資訊清單中使用 FunctionsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可以改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
-| **DSC Resources** (DSC 資源) | 針對將會用於 PowerShell 5.0 版和以上版本的模組，此項目在資訊清單中是使用 DscResourcesToExport 來提供。 如果模組是在 PowerShell 4 中使用，則不應使用 DSCResourcesToExport，因為它不是受支援的資訊清單金鑰 (PowerShell 4 之前的版本不支援 DSC)。 | 是 | 否 |
-| **Workflows** (工作流程) | 工作流程會以指令碼的形式發佈到 PowerShell 資源庫，並在程式碼中識別為工作流程 (如需範例，請參閱 [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1))。 此項目不是由資訊清單控制。 | 否 | 否 |
+| **函式** | 此項目在模組資訊清單中使用 FunctionsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可以改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
+| **DSC 資源** | 針對將會用於 PowerShell 5.0 版和以上版本的模組，此項目在資訊清單中是使用 DscResourcesToExport 來提供。 如果模組是在 PowerShell 4 中使用，則不應使用 DSCResourcesToExport，因為它不是受支援的資訊清單金鑰 (PowerShell 4 之前的版本不支援 DSC)。 | 是 | 否 |
+| **工作流程** | 工作流程會以指令碼的形式發佈到 PowerShell 資源庫，並在程式碼中識別為工作流程 (如需範例，請參閱 [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1))。 此項目不是由資訊清單控制。 | 否 | 否 |
 | **Role capabilities** (角色功能) | 當模組發佈到 PowerShell 資源庫且包含一或多個角色功能 (.psrc) 檔案 (由 JEA 使用) 時，系統會列出此清單。 如需[角色功能](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities)的詳細資訊，請參閱 JEA 文件。 | 是 | 否 |
 | **PowerShell Editions** (PowerShell 版本) | 此項目是在指令碼或模組資訊清單中指定。 針對專門為 PowerShell 5.0 和以下版本設計的模組，此項目使用 Tags 控制。 針對 Desktop，請使用 PSEdition_Desktop 標籤；針對 Core，請使用 PSEdition_Core。 針對只會在 PowerShell 5.1 和以上版本使用的模組，在主要資訊清單中有 CompatiblePSEditions 金鑰。 如需其他詳細資料，請檢閱 [PowerShell Get 文件](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport)中的 PS Edition 功能。 | 是 | 是 |
 | **Dependencies** (相依性) | 相依性是 PowerShell 資源庫中的模組以 RequiredModules 宣告的模組，或是指令碼資訊清單中以 #Requires –Module (名稱) 宣告的模組。 | 是 | 是 |
@@ -38,15 +38,15 @@
 
 PowerShell 資源庫 [Edit item] \(編輯項目\) 頁面可讓發行者變更針對項目顯示的數個欄位，特別是：
 
-* Title (標題)
-* Description (描述)
-* Summary (摘要)
+* Title
+* 描述
+* 摘要
 * Icon URL (圖示 URL)
 * Project home page URL (專案首頁 URL)
-* Authors (作者)
-* Copyright (著作權)
-* Tags (標記)
-* Release notes (版本資訊)
+* 作者
+* 著作權
+* 標記
+* 版本資訊
 * Require license (需要授權)
 
 通常不建議使用此方法，除非在需要修正舊版模組顯示的資訊時才使用。 取得模組的使用者將會看到中繼資料與 PowerShell 資源庫中顯示的項目不符合，這會讓使用者對項目產生疑慮。 此情況通常會造成使用者向項目擁有者詢問以確認變更。 強烈建議每次使用此方法時，也應該發佈具有相同變更的新版項目。 
@@ -76,7 +76,7 @@ PowerShell 資源庫 [Edit item] \(編輯項目\) 頁面可讓發行者變更針
 | **ActiveDirectory** | 目前它本身未使用 AD  |
 | **SQLServer** |  |
 | **DBA** |  |
-| **Security** | Defense 較不精確 |
+| **安全性** | Defense 較不精確 |
 | **Database** | 不建議使用 Databases (複數) |
 | **DevOps** |  |
 | **Windows** |  |

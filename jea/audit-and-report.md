@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 上的稽核和報告"
-ms.openlocfilehash: 60bc7a4213c75735628207bb21078bf90f7b1ca3
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA 上的稽核和報告
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="find-registered-jea-sessions-on-a-machine"></a>在電腦上尋找已註冊的 JEA 工作階段
 
-若要檢查哪些 JEA 工作階段已在電腦上註冊，請使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) Cmdlet。
+若要檢查哪些 JEA 工作階段已在電腦上註冊，請使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) Cmdlet。
 
 ```powershell
 # Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations

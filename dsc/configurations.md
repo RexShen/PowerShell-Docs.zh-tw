@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC 設定"
-ms.openlocfilehash: 3fd2846d0fbfb0ae9baa44cde66afe1f5be65cf7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 14db60126fd6c3d11d425a28c749a8e8b81122ca
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-configurations"></a>DSC 設定
 
@@ -62,7 +62,7 @@ Configuration MyDscConfiguration {
         }
     }
 }
-MyDscConfiguration -ComputerName <MyComputer>
+MyDscConfiguration -ComputerName $ComputerName
 
 ```
 
@@ -141,11 +141,11 @@ Configuration DependsOnExample {
 ## <a name="using-new-resources-in-your-configuration"></a>在設定中使用新的資源
 
 如果執行了前面的範例，您可能會注意到，系統警告使用了未明確匯入的資源。
-現在，DSC 在 PSDesiredStateConfiguration 模組中附有 12 種資源。 外部模組的其他資源必須放置在 `$env:PSModulePath` 中，LCM 才能辨識。 新的 Cmdlet，[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)，可用來決定哪些資源要安裝在系統上並提供 LCM 使用。 這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 正確辨識後，仍需要載入至設定中。 
+現在，DSC 在 PSDesiredStateConfiguration 模組中附有 12 種資源。 外部模組的其他資源必須放置在 `$env:PSModulePath` 中，LCM 才能辨識。 新的 Cmdlet，[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx)，可用來決定哪些資源要安裝在系統上並提供 LCM 使用。 這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 正確辨識後，仍需要載入至設定中。 
 **Import-DscResource** 是只能在 **Configuration** 區塊中辨識的動態關鍵字 (亦即它不是 Cmdlet)。 
 **Import-DscResource** 支援兩個參數：
 - **ModuleName**，使用 **Import-DscResource** 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。 
-- **Name** 是要匯入的資源名稱。 [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) 傳回 **ResourceType**)。 
+- **Name** 是要匯入的資源名稱。 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) 傳回 **ResourceType**)。 
 
 ## <a name="see-also"></a>另請參閱
 * [Windows PowerShell 預期狀態設定概觀](overview.md)

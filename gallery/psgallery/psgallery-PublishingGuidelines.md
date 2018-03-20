@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 description: "發行者的指導方針"
 title: "PowerShell 資源庫發行指導方針與最佳做法"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 10/13/2017
 以下是一些指導方針，說明哪些是良好「PowerShell 資源庫」項目的構成要素、哪些選擇性「資訊清單」設定最重要、如何利用初始檢閱者和 [Powershell 指令碼分析程式](https://aka.ms/psscriptanalyzer)的意見反應來改善您的程式碼，以及如何為模組、文件、測試和範例設定版本來指定如何使用您已共用的項目。
 本文件大部分皆依循發行[高品質 DSC 資源模組](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md) \(英文\) 的指導方針。
 
-如需了解將項目發行至「PowerShell 資源」的技巧，請參閱[建立和發行項目](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item)。
+如需了解將項目發行至「PowerShell 資源」的技巧，請參閱[建立和發行項目](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item)。
 
 歡迎您提供有關這些指導方針的意見反應。 如果您確實有意見反應，請在我們的 [Github 文件儲存機制](https://github.com/powershell/powershell-docs/) \(英文\) 中提出問題。
 
@@ -71,7 +71,7 @@ MSDN 中提供數篇有關如何隨 PowerShell 項目提供文件的文章，包
 * 如需提供說明的指導方針，請參閱[如何撰寫 Cmdlet 說明](https://go.microsoft.com/fwlink/?LinkID=123415) \(英文\)
 * 建立 Cmdlet 說明，這是適用於所有 PowerShell 指令碼、函式或 Cmdlet 的最佳做法。
   如需如何建立 Cmdlet 說明的資訊，請從 MSDN Library 中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (如何撰寫 Cmdlet 說明) 開始著手。
-  若要在指令碼中新增說明，請參閱[關於註解型說明](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help) \(英文\)。
+  若要在指令碼中新增說明，請參閱[關於註解型說明](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help) \(英文\)。
 * 許多模組也包含文字格式的文件，例如 MarkDown 檔案。
   當 Github 中有大量使用 Markdown 格式的專案網站時，這會特別有用。
   最佳做法是使用[具備 Github 特色的 Markdown](https://help.github.com/categories/writing-on-github/) \(英文\)

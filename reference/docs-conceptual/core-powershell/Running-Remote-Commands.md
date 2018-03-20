@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "執行遠端命令"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
-ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
+ms.openlocfilehash: 24648e8f35fbc28c9ba9f9b7176ac23e72ffbe78
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="running-remote-commands"></a>執行遠端命令
 
@@ -48,9 +48,9 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell 遠端執行功能
 Windows PowerShell 遠端執行功能使用 WS-Management 通訊協定，可讓您在一或多部遠端電腦上執行任何 Windows PowerShell 命令。 它可讓您建立持續連線、啟動 1:1 互動式工作階段，以及在多部電腦上執行指令碼。
 
-若要使用 Windows PowerShell 遠端執行功能，必須針對遠端管理設定遠端電腦。 如需包括指示的詳細資訊，請參閱[關於遠端需求](https://technet.microsoft.com/en-us/library/dd315349.aspx)。
+若要使用 Windows PowerShell 遠端執行功能，必須針對遠端管理設定遠端電腦。 如需包括指示的詳細資訊，請參閱[關於遠端需求](https://technet.microsoft.com/library/dd315349.aspx)。
 
-設定 Windows PowerShell 遠端執行功能之後，許多遠端處理策略就可供您使用。 這份文件的其餘部分只列出其中幾個。 如需詳細資訊，請參閱[關於遠端](https://technet.microsoft.com/en-us/library/dd347744.aspx)與[關於遠端常見問題集](https://technet.microsoft.com/en-us/library/dd347744.aspx)。
+設定 Windows PowerShell 遠端執行功能之後，許多遠端處理策略就可供您使用。 這份文件的其餘部分只列出其中幾個。 如需詳細資訊，請參閱[關於遠端](https://technet.microsoft.com/library/dd347744.aspx)與[關於遠端常見問題集](https://technet.microsoft.com/library/dd347744.aspx)。
 
 ### <a name="start-an-interactive-session"></a>啟動互動式工作階段
 若要啟動與單一遠端電腦的互動式工作階段，請使用 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) Cmdlet。

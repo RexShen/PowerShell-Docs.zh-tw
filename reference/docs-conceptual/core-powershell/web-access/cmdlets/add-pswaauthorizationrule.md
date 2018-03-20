@@ -7,11 +7,11 @@ ms.date: 2016-12-12
 title: add pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 196797215a678e6f674592dc6b289816aced3c01
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -167,7 +167,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
 這個 Cmdlet 支援一般參數：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。
-如需詳細資訊，請參閱 [about_CommonParameters](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)。
+如需詳細資訊，請參閱 [about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)。
 
 ## <a name="inputs"></a>輸入
 
@@ -190,7 +190,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 ### <a name="example-1"></a>範例 1
 
 此範例會授權 *SMAdmins* 群組中的使用者，存取 *srv2* 上的工作階段設定 *PSWAEndpoint* 或受限制的 Runspace。\
-**注意**：電腦名稱必須是完整網域名稱 (FQDN)。 系統管理員會定義受限制的工作階段設定或 Runspace，也就是終端使用者可以執行之一組有限的 Cmdlet 和工作。 定義受限制的 Runspace 可防止使用者存取不在允許的 Windows PowerShell® Runspace 中的其他電腦，因此提供更安全的連線。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) 或[安裝和使用 Windows PowerShell Web 存取](../install-and-use-windows-powershell-web-access.md)。
+**注意**：電腦名稱必須是完整網域名稱 (FQDN)。 系統管理員會定義受限制的工作階段設定或 Runspace，也就是終端使用者可以執行之一組有限的 Cmdlet 和工作。 定義受限制的 Runspace 可防止使用者存取不在允許的 Windows PowerShell® Runspace 中的其他電腦，因此提供更安全的連線。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) 或[安裝和使用 Windows PowerShell Web 存取](../install-and-use-windows-powershell-web-access.md)。
 
 ```PowerShell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint

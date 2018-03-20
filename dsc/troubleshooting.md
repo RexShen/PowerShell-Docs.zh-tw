@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "疑難排解 DSC"
-ms.openlocfilehash: 4141e1f3304460dcaf310ce603fdc5d9550a5069
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: cdb11a80daecec0e0d01071752612663ac69ac6d
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
@@ -21,7 +21,7 @@ Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Serve
 
 ## <a name="using-get-dscconfigurationstatus"></a>使用 Get-DscConfigurationStatus
 
-[Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx) Cmdlet 會從目標節點取得設定狀態的相關資訊。 高級物件已傳回，此物件包含關於設定是否順利執行的高等級資訊。 您可以深入了解此物件，以探索有關設定執行的詳細資料，例如︰
+[Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) Cmdlet 會從目標節點取得設定狀態的相關資訊。 高級物件已傳回，此物件包含關於設定是否順利執行的高等級資訊。 您可以深入了解此物件，以探索有關設定執行的詳細資料，例如︰
 
 * 所有失敗的資源
 * 要求重新開機的任何資源
@@ -621,5 +621,5 @@ onlyProperty                            PSComputerName
 * [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 
 ### <a name="other-resources"></a>其他資源
-* [Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/en-us/library/dn521624(v=wps.630).aspx)
+* [Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
 

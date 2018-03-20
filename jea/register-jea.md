@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "登錄 JEA 設定"
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>登錄 JEA 設定
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="single-machine-configuration"></a>單一電腦設定
 
-針對小型環境，您可以藉由使用 [Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) Cmdlet 登錄工作階段設定檔來部署 JEA。
+針對小型環境，您可以藉由使用 [Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) Cmdlet 登錄工作階段設定檔來部署 JEA。
 
 開始之前，請確定符合下列先決條件：
 - 建立一或多個角色並放置在有效 PowerShell 模組的 'RoleCapabilities' 資料夾中。
@@ -28,7 +28,7 @@ ms.lasthandoff: 06/12/2017
 
 您也必須選取 JEA 端點的名稱。
 當使用者想要使用 JEA 連線到系統時，需要 JEA 端點的名稱。
-您可以使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) Cmdlet 來檢查系統上的現有端點名稱。
+您可以使用 [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) Cmdlet 來檢查系統上的現有端點名稱。
 開頭為 'microsoft' 的端點通常都與 Windows 一起出貨。
 'microsoft.powershell' 端點是在連線到遠端 PowerShell 端點時使用的預設端點。
 

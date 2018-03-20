@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC for Linux nxFile 資源"
-ms.openlocfilehash: e4916414e4de29ab15d9c82c492671ebc16d5412
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile 資源
 
@@ -76,7 +76,7 @@ nxFile resolvConf
 ```
 
 
-步驟 2：設定 __$OFS__ 屬性後，以 [Get-content](https://technet.microsoft.com/en-us/library/hh849787.aspx) 讀取 PowerShell 指令碼中的檔案內容，以使用 Linux 換行字元。
+步驟 2：設定 __$OFS__ 屬性後，以 [Get-content](https://technet.microsoft.com/library/hh849787.aspx) 讀取 PowerShell 指令碼中的檔案內容，以使用 Linux 換行字元。
 
 
 ```

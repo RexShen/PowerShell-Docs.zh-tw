@@ -367,7 +367,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 您可以深入了解我們如何在這個[部落格文章][telemetry-blog]中使用這項資料。
 
 [github]: https://github.com/PowerShell/PowerShell
-[.NET Core 2.0]: https://docs.microsoft.com/en-us/dotnet/core/
+[.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
 [.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
@@ -380,7 +380,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 [.NET 部落格]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [常見問題集]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXML]: https://msdn.microsoft.com/en-us/library/jj542525(v=vs.85).aspx
+[CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

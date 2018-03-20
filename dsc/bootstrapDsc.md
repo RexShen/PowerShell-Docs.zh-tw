@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "使用 DSC 在初始開機時設定虛擬機器"
-ms.openlocfilehash: 76c990ee7c98ea47d1fc3d7bd955ce6a993e28a6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 >適用於：Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 01/17/2018
 
 若要執行這些範例，您需要︰
 
-- 可開機使用的 VHD。 您可以從 [TechNet 評估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。 您可以在 [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
+- 可開機使用的 VHD。 您可以從 [TechNet 評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。 您可以在 [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/library/gg318049.aspx) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
 - 已啟用 HYPER-V 的主機電腦。 如需資訊，請參閱 [HYPER-V 概觀](https://technet.microsoft.com/library/hh831531.aspx)。
 
 藉由使用 DSC，您可以在初始開機時自動安裝軟體及設定電腦。

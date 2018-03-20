@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 必要條件"
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>必要條件
 
@@ -72,7 +72,7 @@ Windows 10 使用者應安裝最新的功能更新，以取得目前版本的 Wi
 ## <a name="enable-powershell-remoting"></a>啟用 PowerShell 遠端
 
 PowerShell 遠端提供 JEA 建置的基礎。
-因此必須確保已在系統上啟用 PowerShell 遠端並[經過適當保護](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)，才能使用 JEA。
+因此必須確保已在系統上啟用 PowerShell 遠端並[經過適當保護](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)，才能使用 JEA。
 
 Windows Server 2012、2012 R2 和 2016 中預設已啟用 PowerShell 遠端。
 您可以在提升權限的 PowerShell 視窗中執行下列命令，來啟用 PowerShell 遠端。
@@ -109,6 +109,6 @@ JEA 不需要 PowerShell 模組記錄，不過強烈建議您將它開啟，以�
 
 ## <a name="see-also"></a>另請參閱
 
-- [PowerShell 遠端和 WinRM 安全性的詳細資訊](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [PowerShell 遠端和 WinRM 安全性的詳細資訊](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ 藍色小組*安全性部落格文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

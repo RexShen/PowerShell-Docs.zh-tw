@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "撰寫 DSC 設定的說明"
-ms.openlocfilehash: c868fa0565baff833423db090a5d62824ab4cad8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c5d499ec887829c864c0f63f64af2d0a7738220b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-help-for-dsc-configurations"></a>撰寫 DSC 設定的說明
 
 >適用於：Windows PowerShell Windows 5.0
 
-您可以在 DSC 設定中，以註解方式呈現說明。 使用者可以呼叫設定函數加上 `-?`，或使用 [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) Cmdlet 存取說明。 如需如何在 PowerShell 中，以註解方式呈現說明的詳細資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)。
+您可以在 DSC 設定中，以註解方式呈現說明。 使用者可以呼叫設定函數加上 `-?`，或使用 [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) Cmdlet 存取說明。 如需如何在 PowerShell 中，以註解方式呈現說明的詳細資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx)。
 
 下列範例顯示包含設定的指令碼及其註解說明︰
 

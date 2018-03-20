@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "設定資料的認證選項"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 >適用於：Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-本例使用 `PSDesiredStateConfiguration` 內建 DSC 資源模組的 [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) 資源。
+本例使用 `PSDesiredStateConfiguration` 內建 DSC 資源模組的 [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) 資源。
 它會建立本機群組並新增或移除成員。
 它接受 `Credential` 屬性和自動的 `PsDscRunAsCredential` 屬性。
 不過，資源只會使用 `Credential` 屬性。
@@ -231,7 +231,7 @@ for node 'localhost'.
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 第一個錯誤訊息有文件的 URL。
-這個連結說明如何使用 [ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 結構和憑證加密密碼。
+這個連結說明如何使用 [ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) 結構和憑證加密密碼。
 如需憑證和 DSC 的詳細資訊，請[閱讀這篇文章](http://aka.ms/certs4dsc)。
 
 若要強制施作純文字密碼，資源在設定資料區段中需要有 `PsDscAllowPlainTextPassword` 關鍵字，如下所示：

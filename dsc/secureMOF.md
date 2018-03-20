@@ -3,11 +3,11 @@ ms.date: 2017-10-31
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "保護 MOF 檔案"
-ms.openlocfilehash: fdb8fa17e9b5e92b56e0a62bf850529c241eee41
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 1bb257f3237344f32c9035f3836dd317b75eef0a
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -19,7 +19,7 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 從 PowerShell 5.0 版開始，使用 **Start-DSCConfiguration** Cmdlet 將 MOF 檔案套用到節點時，會根據預設加密整個 MOF 檔案。
 當憑證未受管理，使用提取服務通訊協定來實作解決方案時，才需要文中所述的程序來確保目標節點所下載的設定在套用前能夠讓系統解密和讀取 (例如，Windows Server 提供的提取服務)。
-向 [Azure 自動化 DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) 註冊的節點會自動安裝憑證，並交由服務管理而不需任何管理費用。
+向 [Azure 自動化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 註冊的節點會自動安裝憑證，並交由服務管理而不需任何管理費用。
 
 >**注意**︰本主題討論用於加密的憑證。
 >以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。
@@ -262,7 +262,7 @@ configuration CredentialEncryptionExample
 
 ## <a name="setting-up-decryption"></a>設定解密
 
-您必須先使用 CertificateID 資源來驗證憑證的指紋，通知每個目標節點上的本機設定管理員要使用哪項憑證來解密認證，[`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) 才能運作。 這個範例函式會尋找合適的本機憑證 (您可能需要自訂，讓它找到您想要使用的確切憑證)：
+您必須先使用 CertificateID 資源來驗證憑證的指紋，通知每個目標節點上的本機設定管理員要使用哪項憑證來解密認證，[`Start-DscConfiguration`](https://technet.microsoft.com/library/dn521623.aspx) 才能運作。 這個範例函式會尋找合適的本機憑證 (您可能需要自訂，讓它找到您想要使用的確切憑證)：
 
 ```powershell
 # Get the certificate that works for encryption 
@@ -311,7 +311,7 @@ configuration CredentialEncryptionExample
 
 此時，您可以執行設定，這樣會輸出兩個檔案：
 
- * *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密憑證。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) 會套用 *.meta.mof 檔案。
+ * *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密憑證。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 會套用 *.meta.mof 檔案。
  * 實際套用設定的 MOF 檔案。 Start-DscConfiguration 會套用設定。
 
 這些命令會完成這些步驟：

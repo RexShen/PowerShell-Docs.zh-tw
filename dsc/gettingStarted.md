@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "開始使用 PowerShell 預期狀態設定"
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>開始使用 PowerShell 預期狀態設定 #
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 01/17/2018
 
 ## <a name="create-a-configuration"></a>建立設定 ##
 
-[**設定**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)是描述環境的文件。 環境包含「**節點**」，通常是虛擬或實體機器。 
+[**設定**](https://msdn.microsoft.com/powershell/dsc/configurations)是描述環境的文件。 環境包含「**節點**」，通常是虛擬或實體機器。 
 
 設定可以有各種形式。 建立新設定的最簡單作法是建立 .ps1 (PowerShell 指令碼) 檔案。 若要這樣做，請開啟您選擇的編輯器。 因為 PowerShell ISE 原本就了解 DSC，所以是不錯的選擇。 將下列項目儲存為 PS1：
 
@@ -44,9 +44,9 @@ configuration MyFirstConfiguration
 
 「節點」定義這個設定將產生作用的目標電腦名稱。 雖然這項設定在本機進行編輯，設定仍可連接到遠端節點，並加以設定。 
 
-節點可以是電腦名稱或 IP 位址。 在單一設定文件中可以有多個節點。 使用[設定資料](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)時，您也可以將相同設定套用到多個節點。 在此情況下，節點會是 "localhost"，表示本機電腦。 
+節點可以是電腦名稱或 IP 位址。 在單一設定文件中可以有多個節點。 使用[設定資料](https://msdn.microsoft.com/powershell/dsc/configdata)時，您也可以將相同設定套用到多個節點。 在此情況下，節點會是 "localhost"，表示本機電腦。 
 
-下一個項目是[**資源**](https://msdn.microsoft.com/en-us/powershell/dsc/resources)。 資源是設定的建置組塊。 每個資源都是模組，其中定義單一電腦層面的實作邏輯。 您也可以在 PowerShell 中執行 **Get-DscResource** 檢視電腦上的每個資源。 資源必須存在於本機電腦上，並先匯入，然後才可用於 **Import-DscResource** 的設定，其位於這項設定的第二行。 
+下一個項目是[**資源**](https://msdn.microsoft.com/powershell/dsc/resources)。 資源是設定的建置組塊。 每個資源都是模組，其中定義單一電腦層面的實作邏輯。 您也可以在 PowerShell 中執行 **Get-DscResource** 檢視電腦上的每個資源。 資源必須存在於本機電腦上，並先匯入，然後才可用於 **Import-DscResource** 的設定，其位於這項設定的第二行。 
 
 **制定設定**
 

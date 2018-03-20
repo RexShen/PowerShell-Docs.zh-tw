@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "使用 [資源設計工具] 工具"
-ms.openlocfilehash: c21602e219b5830877cc211e092e93bb7fc8ad9c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
@@ -15,7 +15,7 @@ ms.lasthandoff: 01/17/2018
 
 資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 在本主題中，我們會建立管理 Active Directory 使用者的 DSC 資源。
-請使用 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 安裝 **xDscResourceDesigner** 模組。
+請使用 [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) Cmdlet 安裝 **xDscResourceDesigner** 模組。
 
 >**注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
 

@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "jea,powershell,安全性"
 title: "JEA 工作階段設定"
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 您可以在任何文字編輯器中開啟工作階段設定檔。
 `-SessionType RestrictedRemoteServer` 欄位指出 JEA 將使用工作階段設定以進行安全管理。
-以這種方式設定的工作階段會以 [NoLanguage 模式 (英文)](https://technet.microsoft.com/en-us/library/dn433292.aspx) 運作，且只能使用下列 8 種預設命令 (和別名)︰
+以這種方式設定的工作階段會以 [NoLanguage 模式 (英文)](https://technet.microsoft.com/library/dn433292.aspx) 運作，且只能使用下列 8 種預設命令 (和別名)︰
 
 - Clear-Host (cls, clear)
 - Exit-PSSession (exsn, exit)
@@ -128,7 +128,7 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ### <a name="user-drive"></a>使用者磁碟機
 
 如果您的連線使用者將需要從 JEA 端點複製檔案或將檔案複製到 JEA 端點才能執行命令，則您可以啟用工作階段設定檔中的使用者磁碟機。
-使用者磁碟機是 [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)，且對應至每個連線使用者的唯一資料夾。
+使用者磁碟機是 [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)，且對應至每個連線使用者的唯一資料夾。
 這個資料夾可作為他們在系統中複製檔案的空間，而不讓他們存取完整的檔案系統或公開檔案系統提供者。
 使用者磁碟機內容會在工作階段之間持續存在，以應付網路連線可能中斷的情況。
 

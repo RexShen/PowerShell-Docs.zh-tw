@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "使用 PowerShell 類別撰寫自訂的 DSC 資源"
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -69,7 +69,7 @@ DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性
 - **DscProperty(NotConfigurable)**：唯讀屬性。 標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 **Get()** 方法填入。
 - **DscProperty()**：可設定的非必要屬性。
 
-**$Path** 和 **$SourcePath** 屬性都是字串。 **$CreationTime** 是 [DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) 屬性。 **$Ensure** 屬性是列舉類型，定義如下。
+**$Path** 和 **$SourcePath** 屬性都是字串。 **$CreationTime** 是 [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) 屬性。 **$Ensure** 屬性是列舉類型，定義如下。
 
 ```powershell
 enum Ensure 
