@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>開始使用 PowerShell Gallery
 
@@ -103,7 +103,7 @@ CurrentUser` 參數，指令碼就會安裝至 `$env:USERPROFILE\Documents\Windo
 
 若要將項目從 PowerShell Gallery 部署至 Azure 自動化，請按一下項目詳細資料頁面上的 [Deploy to Azure Automation] \(部署至 Azure 自動化)。 會將您重新導向至使用 Azure 帳戶認證所登入的 Azure 管理入口網站。 請注意，部署包含相依性的項目時會將所有相依性部署至 Azure 自動化。 將 **AzureAutomationNotSupported** 標記新增至項目中繼資料，即可停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕。
 
-若要深入了解 Azure 自動化，請參閱 [Azure 自動化網站](http://azure.microsoft.com/en-us/services/automation/)。
+若要深入了解 Azure 自動化，請參閱 [Azure 自動化網站](http://azure.microsoft.com/services/automation/)。
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>更新 PowerShell Gallery 中的項目
 

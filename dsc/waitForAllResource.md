@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC WaitForAll 資源"
-ms.openlocfilehash: 2054d2af7cd7dd839c62e77c1d4b6eee5cff34ab
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll 資源
 
@@ -36,7 +36,7 @@ WaitForAll [string] #ResourceName
 
 |  屬性  |  描述   | 
 |---|---| 
-| ResourceName| 所要依據的資源名稱。| 
+| ResourceName| 所要依據的資源名稱。 若此資源屬於其他設定，請將名稱的格式設定為 "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"| 
 | NodeName| 所要依據之資源的目標節點。| 
 | RetryIntervalSec| 進行重試之前的秒數。 最小值為 1。| 
 | RetryCount| 重試次數上限。| 

@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: powershell,cmdlet
 title: "安裝和使用 Windows PowerShell Web 存取"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -29,7 +29,7 @@ Windows PowerShell Web 存取於 Windows Server 2012 中首度引進，作為 Wi
 1. [設定限制性授權規則](#configure-a-restrictive-authorization-rule)
 
 安裝和設定 Windows PowerShell Web 存取之前，建議您完整閱讀本指南，其中包含如何安裝、保護和解除安裝 Windows PowerShell Web 存取的相關指示。
-[使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)主題說明使用者如何登入網頁型主控台，並涵蓋了網頁型 Windows PowerShell 主控台和 **powershell.exe** 主控台之間的限制及差異。 網頁型主控台的終端使用者應該閱讀[使用網頁型 Windows PowerShell 主控台](use-the-web-based-windows-powershell-console.md)，但不需要閱讀本指南的其他章節。
+[使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx)主題說明使用者如何登入網頁型主控台，並涵蓋了網頁型 Windows PowerShell 主控台和 **powershell.exe** 主控台之間的限制及差異。 網頁型主控台的終端使用者應該閱讀[使用網頁型 Windows PowerShell 主控台](use-the-web-based-windows-powershell-console.md)，但不需要閱讀本指南的其他章節。
 
 本主題不提供深入的 IIS 網頁伺服器操作指導方針；只會說明設定 Windows PowerShell Web 存取閘道所需的步驟。 如需設定和保護 IIS 網站安全的詳細資訊，請參閱＜另請參閱＞一節中的 IIS 文件資源。
 
@@ -213,7 +213,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2. 使用工作階段設定來限制使用者存取的選擇性步驟：確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
+2. 使用工作階段設定來限制使用者存取的選擇性步驟：確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
 
 3. 輸入下列程式碼，然後按 **Enter**。
 
@@ -297,7 +297,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 11. 開啟用戶端裝置的瀏覽器工作階段。 如需支援的瀏覽器及裝置的詳細資訊，請參閱本主題的[瀏覽器及用戶端裝置支援](#browser-and-client-device-support)。
 
-12. 開啟新的 Windows PowerShell Web 存取網站 **https://\<匣道伺服器名稱**\>/pswa**。
+12. 開啟新的 Windows PowerShell Web 存取網站 **https://\<*gateway-server-name*\>/pswa**。
 
     瀏覽器應該會顯示 Windows PowerShell Web 存取主控台登入頁面。
 
@@ -362,7 +362,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 15. 開啟新的 Windows PowerShell Web 存取網站。
 
-    由於根網站會指向 Windows PowerShell Web 存取資料夾，因此，當您開啟 **https://\<匣道伺服器名稱\>** 時，瀏覽器應該會顯示 Windows PowerShell Web 存取登入頁面。 您應該不需要在 URL 中新增 **/pswa**。
+    由於根網站會指向 Windows PowerShell Web 存取資料夾，因此，當您開啟 **https://\<*gateway_server_name*\>** 時，瀏覽器應該會顯示 Windows PowerShell Web 存取登入頁面。 您應該不需要在 URL 中新增 **/pswa**。
 
     >**![注意](images/note.jpeg) 注意** 
     > 
@@ -385,7 +385,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 2. ![安全性注意事項](images/SecurityNote.jpeg) 使用工作階段設定限制使用者存取的選擇性步驟：
 
-    確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
+    確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
 
 3. 輸入下列程式碼，然後按 **Enter**。
 

@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -18,7 +18,7 @@ PowerShell 模組是包含一些 PowerShell 功能的可重複使用套件。 Po
 
 ## <a name="what-is-a-powershell-script"></a>什麼是 PowerShell 指令碼？
 
-PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重複使用和共用。 PowerShell 工作流程也是 PowerShell 指令碼，可概述一組工作並提供這些工作的序列。 如需詳細資訊，請參閱[開始使用 PowerShell 工作流程](https://technet.microsoft.com/en-us/library/jj134242.aspx)。
+PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重複使用和共用。 PowerShell 工作流程也是 PowerShell 指令碼，可概述一組工作並提供這些工作的序列。 如需詳細資訊，請參閱[開始使用 PowerShell 工作流程](https://technet.microsoft.com/library/jj134242.aspx)。
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>PowerShell 指令碼與 PowerShell 模組的差異為何？
 
@@ -41,14 +41,14 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 - **指定的 API 金鑰無效。**
      請確定您已透過帳戶指定有效的 API 金鑰。 若要取得您的 API 金鑰，請檢視設定檔頁面。
-- **指定的項目名稱不是歸您所有。**
+- **指定的項目名稱不屬於您。**
      如果您已確認 API 金鑰正確，則可能已有與您嘗試使用之項目同名的項目。 擁有者可能未列出項目，在此情況下，它不會出現在任何搜尋結果中。 若要判斷是否已有同名的項目，請開啟瀏覽器，並瀏覽至項目的詳細資料頁面：`https://www.powershellgallery.com/packages/<itemName>`。 例如，直接瀏覽至 `https://www.powershellgallery.com/packages/pester` 會將您帶往 Pester 模組的詳細資料頁面 (不論是否列出)。 如果已有具有衝突名稱的項目，而且未列出，則可以︰
     - 為您的項目選取另一個名稱。
     - 連絡現有項目的擁有者。
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>為什麼無法使用我的個人帳戶登入，但我昨天還可以登入？
 
-請注意，組件庫帳戶無法容納主要電子郵件別名的變更。 如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account)。
+請注意，組件庫帳戶無法容納主要電子郵件別名的變更。 如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](https://windows.microsoft.com/windows/outlook/add-alias-account)。
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>選取 [項目] 索引標籤上的所有 [類別] 核取方塊時，為什麼看不到所有組件庫項目？
 
@@ -156,7 +156,7 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
+**PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>是否可以保留未來發行之項目的名稱？
 

@@ -4,18 +4,18 @@ author: JKeithB
 ms.topic: reference
 keywords: "wmf,powershell,設定"
 title: "WMF 5.1 的新案例和功能"
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能 #
 
 > 注意：本資訊尚屬初始版本，後續有可能變更。
 
 ## <a name="powershell-editions"></a>PowerShell 版本 ##
-從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
+從 5.1 版開始，PowerShell 提供代表各種功能集和平台相容性的不同版本。
 
 - **Desktop Edition︰**建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
 - **Core Edition︰**建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
@@ -28,7 +28,7 @@ ms.lasthandoff: 08/18/2017
 
 ## <a name="catalog-cmdlets"></a>類別目錄 Cmdlet  
 
-[Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。  
+[Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。  
 
 ###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-此 Cmdlet 會比較所有的檔案雜湊及在 *catalog* 和 *disk* 中找到的相對路徑。 如果檔案雜湊和路徑中偵測到任何不相符的項目，就會傳回 *ValidationFailed* 狀態。 使用者可以使用 *-Detailed* 參數來擷取此資訊的完整內容。 它也會在 *Signature* 屬性中顯示類別目錄的簽署狀態，和呼叫 [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) Cmdlet 一模一樣。 使用者也可以使用 *-FilesToSkip* 參數，在驗證期間略過任何檔案。 
+此 Cmdlet 會比較所有的檔案雜湊及在 *catalog* 和 *disk* 中找到的相對路徑。 如果檔案雜湊和路徑中偵測到任何不相符的項目，就會傳回 *ValidationFailed* 狀態。 使用者可以使用 *-Detailed* 參數來擷取此資訊的完整內容。 它也會在 *Signature* 屬性中顯示類別目錄的簽署狀態，和呼叫 [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) Cmdlet 一模一樣。 使用者也可以使用 *-FilesToSkip* 參數，在驗證期間略過任何檔案。 
 
 
 ## <a name="module-analysis-cache"></a>模組分析快取 ##
@@ -107,7 +107,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 
 ##<a name="improvements-to-pester"></a>Pester 的改善
-在 WMF 5.1 中，PowerShell 隨附的 Pester 版本已從 3.3.5 更新至 3.4.0，加上認可 https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，讓 Pester 在 Nano Server 上有更好的表現。 
+在 WMF 5.1 中，PowerShell 隨附的 Pester 版本已從 3.3.5 更新至 3.4.0 並附帶認可 https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，讓 Pester 在 Nano 伺服器上有更好的表現。 
 
-您可以檢查 https://github.com/pester/Pester/blob/master/CHANGELOG.md 的 ChangeLog.md 檔案，檢閱 3.3.5 版至 3.4.0 版的變更。
+您可以調查 ChangeLog.md 檔案來檢視 3.3.5 版到 3.4.0 版之間的變更，位置在：https://github.com/pester/Pester/blob/master/CHANGELOG.md
 

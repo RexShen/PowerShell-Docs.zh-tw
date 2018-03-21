@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "DSC WaitForSome 資源"
-ms.openlocfilehash: cbe16c543f0eeb62dbe1fb439af2f9147f1bc210
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 8b0ad0dbd31816cc673c7f77945927987e90e08b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome 資源
 
@@ -40,12 +40,12 @@ WaitForSome [String] #ResourceName
 |---|---| 
 | NodeCount| 若要將此資源視為成功，必須處於預期狀態的節點數目下限。|
 | NodeName| 所要依據之資源的目標節點。| 
-| ResourceName| 所要依據的資源名稱。| 
+| ResourceName| 所要依據的資源名稱。 若此資源屬於其他設定，請將名稱的格式設定為 "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"| 
 | RetryIntervalSec| 進行重試之前的秒數。 最小值為 1。| 
 | RetryCount| 重試次數上限。| 
 | ThrottleLimit| 可同時連線的電腦數目。 預設值為 new-cimsession default。| 
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
-| PsDscRunAsCredential | 請參閱[以使用者認證執行 DSC](https://docs.microsoft.com/en-us/powershell/dsc/runasuser) |
+| PsDscRunAsCredential | 請參閱[以使用者認證執行 DSC](https://docs.microsoft.com/powershell/dsc/runasuser) |
 
 
 ## <a name="example"></a>範例

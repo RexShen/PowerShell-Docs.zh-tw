@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "PowerShell 50 ISE 的新功能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
@@ -15,7 +15,7 @@ ms.lasthandoff: 09/29/2017
 ## <a name="feature-description"></a>功能說明
 Windows PowerShell ISE 是一個主應用程式，可以讓您在圖形化與直覺式的環境中撰寫、執行及測試指令碼和模組。 語法標色、TAB 鍵自動完成、視覺化偵錯、Unicode 相容性、即時線上說明等主要功能，提供豐富的指令碼撰寫體驗。
 
-如需 Windows PowerShell ISE 的概觀，請參閱 [Windows PowerShell Integrated Scripting Environment overview](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671) (Windows PowerShell 整合式指令碼環境 (ISE))。
+如需 Windows PowerShell ISE 的概觀，請參閱 [Windows PowerShell Integrated Scripting Environment overview](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671) (Windows PowerShell 整合式指令碼環境 (ISE))。
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能和變更功能
 下表列出 Windows PowerShell 中這版 Windows PowerShell ISE 的新功能和變更功能。
@@ -222,7 +222,7 @@ Show-Command 為 Windows PowerShell ISE 3.0 的新功能
 ## <a name="see-also"></a>另請參閱
 如需在 Windows PowerShell 中使用 Windows PowerShell ISE 的詳細資訊，請參閱下列連結。
 
-- [使用 Windows PowerShell 整合式指令碼環境](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [探索 Windows PowerShell 整合式指令碼環境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
 

@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: powershell,cmdlet
 title: "Windows PowerShell Web 存取的授權規則與安全性功能"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -24,7 +24,7 @@ Windows Server 2012 R2 和 Windows Server 2012 中的 Windows PowerShell Web 存
 沒有適用於新增或管理授權規則的 GUI。
 請參閱 [Windows PowerShell Web 存取 Cmdlet](cmdlets/web-access-cmdlets.md)。
 
-系統管理員可以為「Windows PowerShell Web 存取」定義 0-*n* 個驗證規則。
+系統管理員可以為 Windows PowerShell Web 存取定義 0-*n* 個驗證規則。
 預設的安全性是用來限制動作而不是允許動作；零驗證規則表示沒有任何使用者有權存取任何內容。
 
 Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) 和 [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) 包含可讓您從遠端電腦或從作用中的 Windows PowerShell Web 存取工作階段，新增和測試 Windows PowerShell Web 存取授權規則的 Credential 參數。
@@ -32,7 +32,7 @@ Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthor
 若要建立 PSCredential 物件且包含您要傳遞至遠端電腦的認證，請執行 [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) Cmdlet。
 
 Windows PowerShell Web 存取驗證規則是允許清單規則。
-每個規則都是使用者、目標電腦及指定目標電腦上特定 Windows PowerShellÂ [工作階段設定](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (也稱為端點或 _Runspace_) 間允許連線的定義。
+每個規則都是使用者、目標電腦及指定目標電腦上特定 Windows PowerShellÂ [工作階段設定](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (也稱為端點或 _Runspace_) 間允許連線的定義。
 如需 **Runspace** 的說明，請參閱 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/) (開始使用 PowerShell Runspace)
 
 > **安全性提示**
@@ -103,7 +103,7 @@ Windows PowerShell Web 存取登入頁面會要求一組認證 (使用者名稱�
 Windows PowerShell Web 存取的最終安全性階層是目標電腦本身的安全性設定。
 使用者必須在目標電腦上及 Windows PowerShell Web 存取授權規則中設定適當的存取權，才能執行 Windows PowerShell 網頁型主控台，透過 Windows PowerShell Web 存取來影響目標電腦。
 
-這個階層提供的安全性機制，與使用者嘗試在 Windows PowerShell 內執行 [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) 或 [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) Cmdlet，以建立目標電腦的遠端 Windows PowerShell 工作階段時所用的評估連線嘗試安全性機制相同。
+這個階層提供的安全性機制，與使用者嘗試在 Windows PowerShell 內執行 [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) 或 [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) Cmdlet，以建立目標電腦的遠端 Windows PowerShell 工作階段時所用的評估連線嘗試安全性機制相同。
 
 根據預設，Windows PowerShell Web 存取在閘道及目標電腦上都會使用主要的使用者名稱和密碼進行驗證。
 網頁型登入頁面會在標題為 [選用連線設定] 的區段中提供選項，讓使用者可視需要為目標電腦提供不同的認證。

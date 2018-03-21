@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: powershell,cmdlet
 title: "如何在 Windows PowerShell ISE 中撰寫和執行指令碼"
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 本主題說明如何在指令碼窗格中建立、編輯、執行和儲存指令碼。
@@ -16,7 +16,7 @@ ms.lasthandoff: 09/08/2017
 您可以在指令碼窗格中開啟和編輯 Windows PowerShell 檔案。 Windows PowerShell 中需要注意的特定檔案類型包括指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1)。 這些檔案類型是指令碼窗格編輯器中著色的語法。 其他可在指令碼窗格中開啟的常見檔案類型還包括組態檔 (.ps1xml)、XML 檔案和文字檔。
 
 > [!NOTE]
-> Windows PowerShell 執行原則會決定您是否可以執行指令碼，以及載入 Windows PowerShell 設定檔和組態檔。 預設執行原則 “Restricted” 可防止所有指令碼執行，並防止載入設定檔。 若要變更執行原則以允許載入及使用設定檔，請參閱 [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
+> Windows PowerShell 執行原則會決定您是否可以執行指令碼，以及載入 Windows PowerShell 設定檔和組態檔。 預設執行原則 “Restricted” 可防止所有指令碼執行，並防止載入設定檔。 若要變更執行原則以允許載入及使用設定檔，請參閱 [Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab) 和 [about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)。
 
 ### <a name="to-create-a-new-script-file"></a>建立新的指令碼檔案
 按一下工具列中的 **[新增]**，或在 **[檔案]** 功能表上，按一下 **[新增]**。 建立的檔案會顯示在目前 PowerShell 索引標籤下新的檔案索引標籤中。請記住，只有在有多個 PowerShell 索引標籤時，才會顯示 PowerShell 索引標籤。 預設會建立指令碼類型的檔案 (.ps1)，但您可以使用新名稱和副檔名來儲存這個檔案。 在同一個 PowerShell 索引標籤中，可以建立多個指令碼檔案。
@@ -109,7 +109,7 @@ ms.lasthandoff: 09/08/2017
 
 2. 在 **[檔案名稱]** 方塊中，輸入檔案的名稱。
 
-3. 在 **[檔案類型]** 方塊中，選取檔案類型。 例如，在 [檔案類型] 方塊中，選取 [PowerShell 指令碼 (\* .ps1)]。
+3. 在 **[檔案類型]** 方塊中，選取檔案類型。 例如，在 [存檔類型] 方塊中，選取 [œPowerShell Scripts (\* .ps1)]。
 
 4. 按一下 **[儲存]**。
 
@@ -139,5 +139,4 @@ Windows PowerShell ISE 支援下列編碼選項︰ASCII、BigEndianUnicode、Uni
 Windows PowerShell ISE 不會變更以其他編輯器建立之指令碼的編碼方式，即使在 Windows PowerShell ISE 中使用 [儲存] 或 [另存新檔] 命令亦然。
 
 ## <a name="see-also"></a>另請參閱
-- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
-
+- [探索 Windows PowerShell ISE](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

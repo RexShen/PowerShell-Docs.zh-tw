@@ -3,17 +3,17 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "dsc,powershell,設定,安裝"
 title: "設定 DSC SMB 提取伺服器"
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 提取伺服器是裝載 SMB 檔案共用的電腦，可在目標節點要求時，將 DSC 設定檔和 DSC 資源提供給這些節點使用。
+DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) 提取伺服器是裝載 SMB 檔案共用的電腦，可在目標節點要求時，將 DSC 設定檔和 DSC 資源提供給這些節點使用。
 
 若要針對 DSC 使用 SMB 提取伺服器，您必須︰
 - 在執行 PowerShell 4.0 或更新版本的伺服器上設定 SMB 檔案共用
@@ -25,7 +25,7 @@ DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) 提取伺�
 
 ### <a name="install-the-xsmbshare-resource"></a>安裝 xSmbShare 資源
 
-呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 安裝 **xSmbShare** 模組。
+呼叫 [Install-Module](https://technet.microsoft.com/library/dn807162.aspx) Cmdlet 安裝 **xSmbShare** 模組。
 >**注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。 **XSmbShare** 包含 DSC 資源 **xSmbShare**，可用來建立 SMB 檔案共用。
 
 ### <a name="create-the-directory-and-file-share"></a>建立目錄和檔案共用
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 特別感謝下列人士：
 
 - Mike F. Robbins，本主題中的內容參考了他所撰寫有關針對 DSC 使用 SMB 的文章。 他的部落格位於 [Mike F Robbins](http://mikefrobbins.com/)。
-- Serge Nikalaichyk，負責撰寫 **cNtfsAccessControl** 模組。 此模組的原始檔位於 https://github.com/SNikalaichyk/cNtfsAccessControl。
+- Serge Nikalaichyk，負責撰寫 **cNtfsAccessControl** 模組。 此模組的來源位置為 https://github.com/SNikalaichyk/cNtfsAccessControl。
 
 ## <a name="see-also"></a>另請參閱
 - [Windows PowerShell 預期狀態設定概觀](overview.md)
