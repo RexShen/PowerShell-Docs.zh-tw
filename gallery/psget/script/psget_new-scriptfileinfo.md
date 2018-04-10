@@ -1,43 +1,43 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: New-ScriptFileInfo
-ms.openlocfilehash: 9aed0e16f2dec3681ca4b58595aae8d4972a3808
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 2b19421111cd3daef9f7a953cc59223a38fcb79c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-scriptfileinfo"></a><span data-ttu-id="591a8-103">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="591a8-103">New-ScriptFileInfo</span></span>
+# <a name="new-scriptfileinfo"></a><span data-ttu-id="1587f-103">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="1587f-103">New-ScriptFileInfo</span></span>
 
-<span data-ttu-id="591a8-104">建立含有中繼資料的指令檔。</span><span class="sxs-lookup"><span data-stu-id="591a8-104">Creates a script file with metadata.</span></span>
+<span data-ttu-id="1587f-104">建立含有中繼資料的指令檔。</span><span class="sxs-lookup"><span data-stu-id="1587f-104">Creates a script file with metadata.</span></span>
 
-## <a name="description"></a><span data-ttu-id="591a8-105">描述</span><span class="sxs-lookup"><span data-stu-id="591a8-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="1587f-105">描述</span><span class="sxs-lookup"><span data-stu-id="1587f-105">Description</span></span>
 
-<span data-ttu-id="591a8-106">New-ScriptFileInfo Cmdlet 會建立 PowerShell 指令檔 (包括指令碼的中繼資料)。</span><span class="sxs-lookup"><span data-stu-id="591a8-106">The New-ScriptFileInfo cmdlet creates a PowerShell script file, including metadata about the script.</span></span>
+<span data-ttu-id="1587f-106">New-ScriptFileInfo Cmdlet 會建立 PowerShell 指令檔 (包括指令碼的中繼資料)。</span><span class="sxs-lookup"><span data-stu-id="1587f-106">The New-ScriptFileInfo cmdlet creates a PowerShell script file, including metadata about the script.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="591a8-107">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="591a8-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="1587f-107">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="1587f-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="591a8-108">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="591a8-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="1587f-108">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="1587f-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="591a8-109">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="591a8-109">New-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619792)
+[<span data-ttu-id="1587f-109">New-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="1587f-109">New-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-## <a name="example-commands"></a><span data-ttu-id="591a8-110">範例命令</span><span class="sxs-lookup"><span data-stu-id="591a8-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="1587f-110">範例命令</span><span class="sxs-lookup"><span data-stu-id="1587f-110">Example commands</span></span>
 
-### <a name="passthru-parameter"></a><span data-ttu-id="591a8-111">PassThru 參數</span><span class="sxs-lookup"><span data-stu-id="591a8-111">PassThru parameter</span></span>
+### <a name="passthru-parameter"></a><span data-ttu-id="1587f-111">PassThru 參數</span><span class="sxs-lookup"><span data-stu-id="1587f-111">PassThru parameter</span></span>
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-### <a name="new-scriptfileinfo-cmdlet"></a><span data-ttu-id="591a8-112">New-ScriptFileInfo Cmdlet</span><span class="sxs-lookup"><span data-stu-id="591a8-112">New-ScriptFileInfo cmdlet</span></span>
-<span data-ttu-id="591a8-113">New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。</span><span class="sxs-lookup"><span data-stu-id="591a8-113">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc.</span></span> 
+### <a name="new-scriptfileinfo-cmdlet"></a><span data-ttu-id="1587f-112">New-ScriptFileInfo Cmdlet</span><span class="sxs-lookup"><span data-stu-id="1587f-112">New-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="1587f-113">New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。</span><span class="sxs-lookup"><span data-stu-id="1587f-113">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc.</span></span>
 
 ```powershell
 # Create a new script file with minimum required metadata values
@@ -73,11 +73,11 @@ Version Name Author Description
 
 # Add function and workflow to the script file
 Add-Content -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Value @"
-   
+
     Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
-   
+
     Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
-   
+
     Demo-ScriptFunction
     Demo-ScriptWorkflow
 "@
@@ -118,11 +118,11 @@ New-ScriptFileInfo -Path 'C:\ScriptSharingDemo\Demo-ScriptWithCompletePSScriptIn
 
 # Add function and workflow to the script file
 Add-Content -Path 'C:\ScriptSharingDemo\Demo-ScriptWithCompletePSScriptInfo.ps1' -Value @"
-   
+
     Function Demo-ScriptFunction { 'Demo-ScriptFunction' }
-   
+
     Workflow Demo-ScriptWorkflow { 'Demo-ScriptWorkflow' }
-   
+
     Demo-ScriptFunction
     Demo-ScriptWorkflow
 "@
@@ -192,4 +192,3 @@ DefinedCommands : {Demo-ScriptFunction, Demo-ScriptWorkflow}
 DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
-

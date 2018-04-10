@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: Test-ScriptFileInfo
-ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 56f75007be6e952572aaed7942a1e8714d4104b0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="test-scriptfileinfo"></a><span data-ttu-id="34e0a-103">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="34e0a-103">Test-ScriptFileInfo</span></span>
+# <a name="test-scriptfileinfo"></a><span data-ttu-id="9cc1e-103">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="9cc1e-103">Test-ScriptFileInfo</span></span>
 
-<span data-ttu-id="34e0a-104">驗證指令檔的中繼資料註解區塊。</span><span class="sxs-lookup"><span data-stu-id="34e0a-104">Validates the metadata comment block of a script file.</span></span>
+<span data-ttu-id="9cc1e-104">驗證指令檔的中繼資料註解區塊。</span><span class="sxs-lookup"><span data-stu-id="9cc1e-104">Validates the metadata comment block of a script file.</span></span>
 
-## <a name="description"></a><span data-ttu-id="34e0a-105">描述</span><span class="sxs-lookup"><span data-stu-id="34e0a-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="9cc1e-105">描述</span><span class="sxs-lookup"><span data-stu-id="9cc1e-105">Description</span></span>
 
-<span data-ttu-id="34e0a-106">Test-ScriptFileInfo Cmdlet 會驗證將使用 Publish-Script Cmdlet 發行之指令碼開頭的註解區塊。</span><span class="sxs-lookup"><span data-stu-id="34e0a-106">The Test-ScriptFileInfo cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.</span></span>
-<span data-ttu-id="34e0a-107">如果中繼資料註解區塊發生錯誤，這個 Cmdlet 會傳回錯誤位置或其更正方式的資訊。</span><span class="sxs-lookup"><span data-stu-id="34e0a-107">If the metadata comment block has an error, this cmdlet returns information about where the error is located or how to correct it.</span></span>
+<span data-ttu-id="9cc1e-106">Test-ScriptFileInfo Cmdlet 會驗證將使用 Publish-Script Cmdlet 發行之指令碼開頭的註解區塊。</span><span class="sxs-lookup"><span data-stu-id="9cc1e-106">The Test-ScriptFileInfo cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.</span></span>
+<span data-ttu-id="9cc1e-107">如果中繼資料註解區塊發生錯誤，這個 Cmdlet 會傳回錯誤位置或其更正方式的資訊。</span><span class="sxs-lookup"><span data-stu-id="9cc1e-107">If the metadata comment block has an error, this cmdlet returns information about where the error is located or how to correct it.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="34e0a-108">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="34e0a-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="9cc1e-108">Cmdlet 語法</span><span class="sxs-lookup"><span data-stu-id="9cc1e-108">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="34e0a-109">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="34e0a-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="9cc1e-109">Cmdlet 線上說明參考資料</span><span class="sxs-lookup"><span data-stu-id="9cc1e-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="34e0a-110">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="34e0a-110">Test-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619791)
+[<span data-ttu-id="9cc1e-110">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="9cc1e-110">Test-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## <a name="example-commands"></a><span data-ttu-id="34e0a-111">範例命令</span><span class="sxs-lookup"><span data-stu-id="34e0a-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="9cc1e-111">範例命令</span><span class="sxs-lookup"><span data-stu-id="9cc1e-111">Example commands</span></span>
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"
@@ -74,4 +74,3 @@ At line:1 char:1
     + FullyQualifiedErrorId : MissingPSScriptInfo,Test-ScriptFileInfo
 
 ```
-

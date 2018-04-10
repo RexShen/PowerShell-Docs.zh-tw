@@ -1,17 +1,17 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 4ccbdcc0eb3cd07b46ab51b63689fe21873cdd7e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 41a676939cb45e780b572b8e718ae315d641d4f8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="information-stream"></a><span data-ttu-id="cbb84-102">資訊串流</span><span class="sxs-lookup"><span data-stu-id="cbb84-102">Information Stream</span></span>
+# <a name="information-stream"></a><span data-ttu-id="364be-102">資訊串流</span><span class="sxs-lookup"><span data-stu-id="364be-102">Information Stream</span></span>
 
-<span data-ttu-id="cbb84-103">新的結構化資訊串流現在可用來在指令碼與主機之間傳送結構化的資料。</span><span class="sxs-lookup"><span data-stu-id="cbb84-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="cbb84-104">**Write-Host** 也已更新為將其輸出發出到資訊串流，您可以在資訊串流上立即擷取輸出或將輸出轉為無回應。</span><span class="sxs-lookup"><span data-stu-id="cbb84-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="cbb84-105">搭配 **-InformationVariable** 和 **-InformationAction** 一般參數使用新的 **Write-Information** Cmdlet (以及對應的 WriteInformation API) 可帶來更多彈性和功能。</span><span class="sxs-lookup"><span data-stu-id="cbb84-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
+<span data-ttu-id="364be-103">新的結構化資訊串流現在可用來在指令碼與主機之間傳送結構化的資料。</span><span class="sxs-lookup"><span data-stu-id="364be-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="364be-104">**Write-Host** 也已更新為將其輸出發出到資訊串流，您可以在資訊串流上立即擷取輸出或將輸出轉為無回應。</span><span class="sxs-lookup"><span data-stu-id="364be-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="364be-105">搭配 **-InformationVariable** 和 **-InformationAction** 一般參數使用新的 **Write-Information** Cmdlet (以及對應的 WriteInformation API) 可帶來更多彈性和功能。</span><span class="sxs-lookup"><span data-stu-id="364be-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script
@@ -91,7 +91,7 @@ WARNING: Some important logging information
 PS C:\Users\demo>
 PS C:\Users\demo> ## All output includes useful properties that you would expect
 PS C:\Users\demo> ## of a generic event stream
-PS C:\Users\demo> $ivOutput.Process 
+PS C:\Users\demo> $ivOutput.Process
 MessageData     : System.Diagnostics.Process (powershell)
 Source          : c:\temp\OutputGusher.ps1
 TimeGenerated   : 2/9/2015 5:08:52 PM
@@ -104,7 +104,7 @@ ManagedThreadId : 8
 
 PS C:\Users\demo> ## And of course, this works from hosting applications.
 PS C:\Users\demo> $ps = [PowerShell]::Create()
-PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke() 
+PS C:\Users\demo> $ps.AddCommand('c:\temp\OutputGusher.ps1').Invoke()
 
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
@@ -123,4 +123,3 @@ ProcessId       : 4008
 NativeThreadId  : 2276
 ManagedThreadId : 14
 ```
-

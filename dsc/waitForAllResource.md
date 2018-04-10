@@ -1,24 +1,24 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC WaitForAll 資源"
-ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: DSC WaitForAll 資源
+ms.openlocfilehash: 7cb2fc134f4391de0e5df2cd719902097bf2ebf5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="dsc-waitforall-resource"></a><span data-ttu-id="5c66e-103">DSC WaitForAll 資源</span><span class="sxs-lookup"><span data-stu-id="5c66e-103">DSC WaitForAll Resource</span></span>
+# <a name="dsc-waitforall-resource"></a><span data-ttu-id="3f3ea-103">DSC WaitForAll 資源</span><span class="sxs-lookup"><span data-stu-id="3f3ea-103">DSC WaitForAll Resource</span></span>
 
-> <span data-ttu-id="5c66e-104">適用於︰Windows PowerShell 5.0 及更新版本</span><span class="sxs-lookup"><span data-stu-id="5c66e-104">Applies To: Windows PowerShell 5.0 and later</span></span>
+> <span data-ttu-id="3f3ea-104">適用於︰Windows PowerShell 5.0 及更新版本</span><span class="sxs-lookup"><span data-stu-id="3f3ea-104">Applies To: Windows PowerShell 5.0 and later</span></span>
 
-<span data-ttu-id="5c66e-105">您可以在 [DSC 設定](configurations.md)中的節點區塊內使用 **WaitForAll**「預期狀態設定」(DSC) 資源，以指定與其他節點上之設定的相依性。</span><span class="sxs-lookup"><span data-stu-id="5c66e-105">The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md) to specify dependencies on configurations on other nodes.</span></span>
+<span data-ttu-id="3f3ea-105">您可以在 [DSC 設定](configurations.md)中的節點區塊內使用 **WaitForAll**「預期狀態設定」(DSC) 資源，以指定與其他節點上之設定的相依性。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-105">The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md) to specify dependencies on configurations on other nodes.</span></span>
 
-<span data-ttu-id="5c66e-106">如果 **ResourceName** 屬性所指定的資源在 **NodeName** 屬性所定義的所有目標節點上都處於預期狀態，此資源即可視為成功。</span><span class="sxs-lookup"><span data-stu-id="5c66e-106">This resource succeeds if if the resource specified by the **ResourceName** property is in the desired state on all target nodes defined in the **NodeName** property.</span></span>
+<span data-ttu-id="3f3ea-106">如果 **ResourceName** 屬性所指定的資源在 **NodeName** 屬性所定義的所有目標節點上都處於預期狀態，此資源即可視為成功。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-106">This resource succeeds if if the resource specified by the **ResourceName** property is in the desired state on all target nodes defined in the **NodeName** property.</span></span>
 
 
-## <a name="syntax"></a><span data-ttu-id="5c66e-107">語法</span><span class="sxs-lookup"><span data-stu-id="5c66e-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="3f3ea-107">語法</span><span class="sxs-lookup"><span data-stu-id="3f3ea-107">Syntax</span></span>
 
 ```
 WaitForAll [string] #ResourceName
@@ -26,25 +26,24 @@ WaitForAll [string] #ResourceName
     ResourceName = [string]
     NodeName = [string]
     [ RetryIntervalSec = [Uint64] ]
-    [ RetryCount = [Uint32] ] 
+    [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="5c66e-108">Properties</span><span class="sxs-lookup"><span data-stu-id="5c66e-108">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="3f3ea-108">Properties</span><span class="sxs-lookup"><span data-stu-id="3f3ea-108">Properties</span></span>
 
-|  <span data-ttu-id="5c66e-109">屬性</span><span class="sxs-lookup"><span data-stu-id="5c66e-109">Property</span></span>  |  <span data-ttu-id="5c66e-110">描述</span><span class="sxs-lookup"><span data-stu-id="5c66e-110">Description</span></span>   | 
-|---|---| 
-| <span data-ttu-id="5c66e-111">ResourceName</span><span class="sxs-lookup"><span data-stu-id="5c66e-111">ResourceName</span></span>| <span data-ttu-id="5c66e-112">所要依據的資源名稱。</span><span class="sxs-lookup"><span data-stu-id="5c66e-112">The resource name to depend on.</span></span> <span data-ttu-id="5c66e-113">若此資源屬於其他設定，請將名稱的格式設定為 "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"</span><span class="sxs-lookup"><span data-stu-id="5c66e-113">If this resource belongs to a different configuration, format the name as "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"</span></span>| 
-| <span data-ttu-id="5c66e-114">NodeName</span><span class="sxs-lookup"><span data-stu-id="5c66e-114">NodeName</span></span>| <span data-ttu-id="5c66e-115">所要依據之資源的目標節點。</span><span class="sxs-lookup"><span data-stu-id="5c66e-115">The target nodes of the resource to depend on.</span></span>| 
-| <span data-ttu-id="5c66e-116">RetryIntervalSec</span><span class="sxs-lookup"><span data-stu-id="5c66e-116">RetryIntervalSec</span></span>| <span data-ttu-id="5c66e-117">進行重試之前的秒數。</span><span class="sxs-lookup"><span data-stu-id="5c66e-117">The number of seconds before retrying.</span></span> <span data-ttu-id="5c66e-118">最小值為 1。</span><span class="sxs-lookup"><span data-stu-id="5c66e-118">Minimum is 1.</span></span>| 
-| <span data-ttu-id="5c66e-119">RetryCount</span><span class="sxs-lookup"><span data-stu-id="5c66e-119">RetryCount</span></span>| <span data-ttu-id="5c66e-120">重試次數上限。</span><span class="sxs-lookup"><span data-stu-id="5c66e-120">The maximum number of times to retry.</span></span>| 
-| <span data-ttu-id="5c66e-121">ThrottleLimit</span><span class="sxs-lookup"><span data-stu-id="5c66e-121">ThrottleLimit</span></span>| <span data-ttu-id="5c66e-122">可同時連線的電腦數目。</span><span class="sxs-lookup"><span data-stu-id="5c66e-122">Number of machines to connect simultaneously.</span></span> <span data-ttu-id="5c66e-123">預設值為 new-cimsession default。</span><span class="sxs-lookup"><span data-stu-id="5c66e-123">Default is new-cimsession default.</span></span>| 
-| <span data-ttu-id="5c66e-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="5c66e-124">DependsOn</span></span> | <span data-ttu-id="5c66e-125">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="5c66e-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="5c66e-126">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="5c66e-126">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|  <span data-ttu-id="3f3ea-109">屬性</span><span class="sxs-lookup"><span data-stu-id="3f3ea-109">Property</span></span>  |  <span data-ttu-id="3f3ea-110">描述</span><span class="sxs-lookup"><span data-stu-id="3f3ea-110">Description</span></span>   |
+|---|---|
+| <span data-ttu-id="3f3ea-111">ResourceName</span><span class="sxs-lookup"><span data-stu-id="3f3ea-111">ResourceName</span></span>| <span data-ttu-id="3f3ea-112">所要依據的資源名稱。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-112">The resource name to depend on.</span></span> <span data-ttu-id="3f3ea-113">若此資源屬於其他設定，請將名稱的格式設定為 "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"</span><span class="sxs-lookup"><span data-stu-id="3f3ea-113">If this resource belongs to a different configuration, format the name as "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"</span></span>|
+| <span data-ttu-id="3f3ea-114">NodeName</span><span class="sxs-lookup"><span data-stu-id="3f3ea-114">NodeName</span></span>| <span data-ttu-id="3f3ea-115">所要依據之資源的目標節點。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-115">The target nodes of the resource to depend on.</span></span>|
+| <span data-ttu-id="3f3ea-116">RetryIntervalSec</span><span class="sxs-lookup"><span data-stu-id="3f3ea-116">RetryIntervalSec</span></span>| <span data-ttu-id="3f3ea-117">進行重試之前的秒數。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-117">The number of seconds before retrying.</span></span> <span data-ttu-id="3f3ea-118">最小值為 1。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-118">Minimum is 1.</span></span>|
+| <span data-ttu-id="3f3ea-119">RetryCount</span><span class="sxs-lookup"><span data-stu-id="3f3ea-119">RetryCount</span></span>| <span data-ttu-id="3f3ea-120">重試次數上限。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-120">The maximum number of times to retry.</span></span>|
+| <span data-ttu-id="3f3ea-121">ThrottleLimit</span><span class="sxs-lookup"><span data-stu-id="3f3ea-121">ThrottleLimit</span></span>| <span data-ttu-id="3f3ea-122">可同時連線的電腦數目。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-122">Number of machines to connect simultaneously.</span></span> <span data-ttu-id="3f3ea-123">預設值為 new-cimsession default。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-123">Default is new-cimsession default.</span></span>|
+| <span data-ttu-id="3f3ea-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="3f3ea-124">DependsOn</span></span> | <span data-ttu-id="3f3ea-125">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="3f3ea-126">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="3f3ea-126">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
 
 
-## <a name="example"></a><span data-ttu-id="5c66e-127">範例</span><span class="sxs-lookup"><span data-stu-id="5c66e-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3f3ea-127">範例</span><span class="sxs-lookup"><span data-stu-id="3f3ea-127">Example</span></span>
 
-<span data-ttu-id="5c66e-128">如需有關如何使用此資源的範例，請參閱[指定跨節點相依性](crossNodeDependencies.md)</span><span class="sxs-lookup"><span data-stu-id="5c66e-128">For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)</span></span>
-
+<span data-ttu-id="3f3ea-128">如需有關如何使用此資源的範例，請參閱[指定跨節點相依性](crossNodeDependencies.md)</span><span class="sxs-lookup"><span data-stu-id="3f3ea-128">For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)</span></span>

@@ -1,50 +1,50 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="script-tracing-and-logging"></a><span data-ttu-id="0bd93-102">指令碼追蹤和記錄</span><span class="sxs-lookup"><span data-stu-id="0bd93-102">Script Tracing and Logging</span></span>
+# <a name="script-tracing-and-logging"></a><span data-ttu-id="bc045-102">指令碼追蹤和記錄</span><span class="sxs-lookup"><span data-stu-id="bc045-102">Script Tracing and Logging</span></span>
 
-<span data-ttu-id="0bd93-103">雖然 Windows PowerShell 已有 **LogPipelineExecutionDetails** 群組原則設定會記錄 Cmdlet 的引動過程，但 PowerShell 的指令碼語言仍有許多功能，您可能想要記錄和/或稽核。</span><span class="sxs-lookup"><span data-stu-id="0bd93-103">While Windows PowerShell already has the **LogPipelineExecutionDetails** Group Policy setting to log the invocation of cmdlets, PowerShell’s scripting language has plenty of features that you might want to log and/or audit.</span></span> <span data-ttu-id="0bd93-104">新的詳細指令碼追蹤功能可讓您啟用在系統上使用的 Windows PowerShell 指令碼詳細追蹤和分析。</span><span class="sxs-lookup"><span data-stu-id="0bd93-104">The new Detailed Script Tracing feature lets you enable detailed tracking and analysis of Windows PowerShell scripting use on a system.</span></span> <span data-ttu-id="0bd93-105">啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 ETW 事件記錄檔中：**Microsoft-Windows-PowerShell/Operational**。</span><span class="sxs-lookup"><span data-stu-id="0bd93-105">After you enable detailed script tracing, Windows PowerShell logs all script blocks to the ETW event log, **Microsoft-Windows-PowerShell/Operational**.</span></span> <span data-ttu-id="0bd93-106">如果某個指令碼區塊建立了另一個指令碼區塊 (例如，字串上稱之為 Invoke-Expression Cmdlet 的指令碼)，也會記錄產生的指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="0bd93-106">If a script block creates another script block (for example, a script that calls the Invoke-Expression cmdlet on a string), that resulting script block is logged as well.</span></span>
+<span data-ttu-id="bc045-103">雖然 Windows PowerShell 已有 **LogPipelineExecutionDetails** 群組原則設定會記錄 Cmdlet 的引動過程，但 PowerShell 的指令碼語言仍有許多功能，您可能想要記錄和/或稽核。</span><span class="sxs-lookup"><span data-stu-id="bc045-103">While Windows PowerShell already has the **LogPipelineExecutionDetails** Group Policy setting to log the invocation of cmdlets, PowerShell’s scripting language has plenty of features that you might want to log and/or audit.</span></span> <span data-ttu-id="bc045-104">新的詳細指令碼追蹤功能可讓您啟用在系統上使用的 Windows PowerShell 指令碼詳細追蹤和分析。</span><span class="sxs-lookup"><span data-stu-id="bc045-104">The new Detailed Script Tracing feature lets you enable detailed tracking and analysis of Windows PowerShell scripting use on a system.</span></span> <span data-ttu-id="bc045-105">啟用詳細指令碼追蹤後，Windows PowerShell 會將所有指令碼區塊記錄在 ETW 事件記錄檔中：**Microsoft-Windows-PowerShell/Operational**。</span><span class="sxs-lookup"><span data-stu-id="bc045-105">After you enable detailed script tracing, Windows PowerShell logs all script blocks to the ETW event log, **Microsoft-Windows-PowerShell/Operational**.</span></span> <span data-ttu-id="bc045-106">如果某個指令碼區塊建立了另一個指令碼區塊 (例如，字串上稱之為 Invoke-Expression Cmdlet 的指令碼)，也會記錄產生的指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="bc045-106">If a script block creates another script block (for example, a script that calls the Invoke-Expression cmdlet on a string), that resulting script block is logged as well.</span></span>
 
-<span data-ttu-id="0bd93-107">您可以透過 **[打開 PowerShell 指令碼區塊記錄]** 群組原則設定 (位於 [系統管理範本] -> Windows Components -> Windows PowerShell)，啟用這些事件的記錄作業。</span><span class="sxs-lookup"><span data-stu-id="0bd93-107">Logging of these events can be enabled through the **Turn on PowerShell Script Block Logging** Group Policy setting (in Administrative Templates -> Windows Components -> Windows PowerShell).</span></span>
+<span data-ttu-id="bc045-107">您可以透過 **[打開 PowerShell 指令碼區塊記錄]** 群組原則設定 (位於 [系統管理範本] -> Windows Components -> Windows PowerShell)，啟用這些事件的記錄作業。</span><span class="sxs-lookup"><span data-stu-id="bc045-107">Logging of these events can be enabled through the **Turn on PowerShell Script Block Logging** Group Policy setting (in Administrative Templates -> Windows Components -> Windows PowerShell).</span></span>
 
-<span data-ttu-id="0bd93-108">這些事件為︰</span><span class="sxs-lookup"><span data-stu-id="0bd93-108">The events are:</span></span>
+<span data-ttu-id="bc045-108">這些事件為︰</span><span class="sxs-lookup"><span data-stu-id="bc045-108">The events are:</span></span>
 
-| <span data-ttu-id="0bd93-109">頻道</span><span class="sxs-lookup"><span data-stu-id="0bd93-109">Channel</span></span> | <span data-ttu-id="0bd93-110">操作</span><span class="sxs-lookup"><span data-stu-id="0bd93-110">Operational</span></span>                                 |
+| <span data-ttu-id="bc045-109">頻道</span><span class="sxs-lookup"><span data-stu-id="bc045-109">Channel</span></span> | <span data-ttu-id="bc045-110">操作</span><span class="sxs-lookup"><span data-stu-id="bc045-110">Operational</span></span>                                 |
 |---------|---------------------------------------------|
-| <span data-ttu-id="0bd93-111">層級</span><span class="sxs-lookup"><span data-stu-id="0bd93-111">Level</span></span>   | <span data-ttu-id="0bd93-112">Verbose</span><span class="sxs-lookup"><span data-stu-id="0bd93-112">Verbose</span></span>                                     |
-| <span data-ttu-id="0bd93-113">OpCode</span><span class="sxs-lookup"><span data-stu-id="0bd93-113">Opcode</span></span>  | <span data-ttu-id="0bd93-114">建立</span><span class="sxs-lookup"><span data-stu-id="0bd93-114">Create</span></span>                                      |
-| <span data-ttu-id="0bd93-115">工作</span><span class="sxs-lookup"><span data-stu-id="0bd93-115">Task</span></span>    | <span data-ttu-id="0bd93-116">CommandStart</span><span class="sxs-lookup"><span data-stu-id="0bd93-116">CommandStart</span></span>                                |
-| <span data-ttu-id="0bd93-117">關鍵字</span><span class="sxs-lookup"><span data-stu-id="0bd93-117">Keyword</span></span> | <span data-ttu-id="0bd93-118">Runspace</span><span class="sxs-lookup"><span data-stu-id="0bd93-118">Runspace</span></span>                                    |
-| <span data-ttu-id="0bd93-119">事件識別碼</span><span class="sxs-lookup"><span data-stu-id="0bd93-119">EventId</span></span> | <span data-ttu-id="0bd93-120">Engine_ScriptBlockCompiled (0x1008 = 4104)</span><span class="sxs-lookup"><span data-stu-id="0bd93-120">Engine_ScriptBlockCompiled (0x1008 = 4104)</span></span>  |
-| <span data-ttu-id="0bd93-121">訊息</span><span class="sxs-lookup"><span data-stu-id="0bd93-121">Message</span></span> | <span data-ttu-id="0bd93-122">建立指令碼區塊文字 (%2 之 %1)：</span><span class="sxs-lookup"><span data-stu-id="0bd93-122">Creating Scriptblock text (%1 of %2):</span></span> </br> <span data-ttu-id="0bd93-123">%3</span><span class="sxs-lookup"><span data-stu-id="0bd93-123">%3</span></span> </br> <span data-ttu-id="0bd93-124">ScriptBlock 識別碼：%4</span><span class="sxs-lookup"><span data-stu-id="0bd93-124">ScriptBlock ID: %4</span></span> |
+| <span data-ttu-id="bc045-111">層級</span><span class="sxs-lookup"><span data-stu-id="bc045-111">Level</span></span>   | <span data-ttu-id="bc045-112">Verbose</span><span class="sxs-lookup"><span data-stu-id="bc045-112">Verbose</span></span>                                     |
+| <span data-ttu-id="bc045-113">OpCode</span><span class="sxs-lookup"><span data-stu-id="bc045-113">Opcode</span></span>  | <span data-ttu-id="bc045-114">建立</span><span class="sxs-lookup"><span data-stu-id="bc045-114">Create</span></span>                                      |
+| <span data-ttu-id="bc045-115">工作</span><span class="sxs-lookup"><span data-stu-id="bc045-115">Task</span></span>    | <span data-ttu-id="bc045-116">CommandStart</span><span class="sxs-lookup"><span data-stu-id="bc045-116">CommandStart</span></span>                                |
+| <span data-ttu-id="bc045-117">關鍵字</span><span class="sxs-lookup"><span data-stu-id="bc045-117">Keyword</span></span> | <span data-ttu-id="bc045-118">Runspace</span><span class="sxs-lookup"><span data-stu-id="bc045-118">Runspace</span></span>                                    |
+| <span data-ttu-id="bc045-119">事件識別碼</span><span class="sxs-lookup"><span data-stu-id="bc045-119">EventId</span></span> | <span data-ttu-id="bc045-120">Engine_ScriptBlockCompiled (0x1008 = 4104)</span><span class="sxs-lookup"><span data-stu-id="bc045-120">Engine_ScriptBlockCompiled (0x1008 = 4104)</span></span>  |
+| <span data-ttu-id="bc045-121">訊息</span><span class="sxs-lookup"><span data-stu-id="bc045-121">Message</span></span> | <span data-ttu-id="bc045-122">建立指令碼區塊文字 (%2 之 %1)：</span><span class="sxs-lookup"><span data-stu-id="bc045-122">Creating Scriptblock text (%1 of %2):</span></span> </br> <span data-ttu-id="bc045-123">%3</span><span class="sxs-lookup"><span data-stu-id="bc045-123">%3</span></span> </br> <span data-ttu-id="bc045-124">ScriptBlock 識別碼：%4</span><span class="sxs-lookup"><span data-stu-id="bc045-124">ScriptBlock ID: %4</span></span> |
 
 
-<span data-ttu-id="0bd93-125">訊息中的內嵌文字是編譯的指令碼區塊範圍。</span><span class="sxs-lookup"><span data-stu-id="0bd93-125">The text embedded in the message is the extent of the script block compiled.</span></span> <span data-ttu-id="0bd93-126">識別碼是保留給指令碼區塊存留期的 GUID。</span><span class="sxs-lookup"><span data-stu-id="0bd93-126">The ID is a GUID that is retained for the life of the script block.</span></span>
+<span data-ttu-id="bc045-125">訊息中的內嵌文字是編譯的指令碼區塊範圍。</span><span class="sxs-lookup"><span data-stu-id="bc045-125">The text embedded in the message is the extent of the script block compiled.</span></span> <span data-ttu-id="bc045-126">識別碼是保留給指令碼區塊存留期的 GUID。</span><span class="sxs-lookup"><span data-stu-id="bc045-126">The ID is a GUID that is retained for the life of the script block.</span></span>
 
-<span data-ttu-id="0bd93-127">當您啟用詳細資訊記錄時，此功能會寫入開始和結束標記︰</span><span class="sxs-lookup"><span data-stu-id="0bd93-127">When you enable verbose logging, the feature writes begin and end markers:</span></span>
+<span data-ttu-id="bc045-127">當您啟用詳細資訊記錄時，此功能會寫入開始和結束標記︰</span><span class="sxs-lookup"><span data-stu-id="bc045-127">When you enable verbose logging, the feature writes begin and end markers:</span></span>
 
-| <span data-ttu-id="0bd93-128">頻道</span><span class="sxs-lookup"><span data-stu-id="0bd93-128">Channel</span></span> | <span data-ttu-id="0bd93-129">操作</span><span class="sxs-lookup"><span data-stu-id="0bd93-129">Operational</span></span>                                            |
+| <span data-ttu-id="bc045-128">頻道</span><span class="sxs-lookup"><span data-stu-id="bc045-128">Channel</span></span> | <span data-ttu-id="bc045-129">操作</span><span class="sxs-lookup"><span data-stu-id="bc045-129">Operational</span></span>                                            |
 |---------|--------------------------------------------------------|
-| <span data-ttu-id="0bd93-130">層級</span><span class="sxs-lookup"><span data-stu-id="0bd93-130">Level</span></span>   | <span data-ttu-id="0bd93-131">Verbose</span><span class="sxs-lookup"><span data-stu-id="0bd93-131">Verbose</span></span>                                                |
-| <span data-ttu-id="0bd93-132">OpCode</span><span class="sxs-lookup"><span data-stu-id="0bd93-132">Opcode</span></span>  | <span data-ttu-id="0bd93-133">開啟 (/ 關閉)</span><span class="sxs-lookup"><span data-stu-id="0bd93-133">Open (/ Close)</span></span>                                         |
-| <span data-ttu-id="0bd93-134">工作</span><span class="sxs-lookup"><span data-stu-id="0bd93-134">Task</span></span>    | <span data-ttu-id="0bd93-135">CommandStart (/ CommandStop)</span><span class="sxs-lookup"><span data-stu-id="0bd93-135">CommandStart (/ CommandStop)</span></span>                           |
-| <span data-ttu-id="0bd93-136">關鍵字</span><span class="sxs-lookup"><span data-stu-id="0bd93-136">Keyword</span></span> | <span data-ttu-id="0bd93-137">Runspace</span><span class="sxs-lookup"><span data-stu-id="0bd93-137">Runspace</span></span>                                               |
-| <span data-ttu-id="0bd93-138">事件識別碼</span><span class="sxs-lookup"><span data-stu-id="0bd93-138">EventId</span></span> | <span data-ttu-id="0bd93-139">ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) /</span><span class="sxs-lookup"><span data-stu-id="0bd93-139">ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) /</span></span> </br> <span data-ttu-id="0bd93-140">ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106)</span><span class="sxs-lookup"><span data-stu-id="0bd93-140">ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106)</span></span> |
-| <span data-ttu-id="0bd93-141">訊息</span><span class="sxs-lookup"><span data-stu-id="0bd93-141">Message</span></span> | <span data-ttu-id="0bd93-142">已啟動 (/ 已完成) ScriptBlock 識別碼的引動過程：%1</span><span class="sxs-lookup"><span data-stu-id="0bd93-142">Started (/ Completed) invocation of ScriptBlock ID: %1</span></span> </br> <span data-ttu-id="0bd93-143">Runspace 識別碼：%2</span><span class="sxs-lookup"><span data-stu-id="0bd93-143">Runspace ID: %2</span></span> |
+| <span data-ttu-id="bc045-130">層級</span><span class="sxs-lookup"><span data-stu-id="bc045-130">Level</span></span>   | <span data-ttu-id="bc045-131">Verbose</span><span class="sxs-lookup"><span data-stu-id="bc045-131">Verbose</span></span>                                                |
+| <span data-ttu-id="bc045-132">OpCode</span><span class="sxs-lookup"><span data-stu-id="bc045-132">Opcode</span></span>  | <span data-ttu-id="bc045-133">開啟 (/ 關閉)</span><span class="sxs-lookup"><span data-stu-id="bc045-133">Open (/ Close)</span></span>                                         |
+| <span data-ttu-id="bc045-134">工作</span><span class="sxs-lookup"><span data-stu-id="bc045-134">Task</span></span>    | <span data-ttu-id="bc045-135">CommandStart (/ CommandStop)</span><span class="sxs-lookup"><span data-stu-id="bc045-135">CommandStart (/ CommandStop)</span></span>                           |
+| <span data-ttu-id="bc045-136">關鍵字</span><span class="sxs-lookup"><span data-stu-id="bc045-136">Keyword</span></span> | <span data-ttu-id="bc045-137">Runspace</span><span class="sxs-lookup"><span data-stu-id="bc045-137">Runspace</span></span>                                               |
+| <span data-ttu-id="bc045-138">事件識別碼</span><span class="sxs-lookup"><span data-stu-id="bc045-138">EventId</span></span> | <span data-ttu-id="bc045-139">ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) /</span><span class="sxs-lookup"><span data-stu-id="bc045-139">ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) /</span></span> </br> <span data-ttu-id="bc045-140">ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106)</span><span class="sxs-lookup"><span data-stu-id="bc045-140">ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106)</span></span> |
+| <span data-ttu-id="bc045-141">訊息</span><span class="sxs-lookup"><span data-stu-id="bc045-141">Message</span></span> | <span data-ttu-id="bc045-142">已啟動 (/ 已完成) ScriptBlock 識別碼的引動過程：%1</span><span class="sxs-lookup"><span data-stu-id="bc045-142">Started (/ Completed) invocation of ScriptBlock ID: %1</span></span> </br> <span data-ttu-id="bc045-143">Runspace 識別碼：%2</span><span class="sxs-lookup"><span data-stu-id="bc045-143">Runspace ID: %2</span></span> |
 
-<span data-ttu-id="0bd93-144">識別碼是代表指令碼區塊的 GUID (可與事件識別碼 0x1008 相互關聯)，Runspace 識別碼則代表之前執行這個指令碼區塊的 Runspace。</span><span class="sxs-lookup"><span data-stu-id="0bd93-144">The ID is the GUID representing the script block (that can be correlated with event ID 0x1008), and the Runspace ID represents the runspace in which this script block was run.</span></span>
+<span data-ttu-id="bc045-144">識別碼是代表指令碼區塊的 GUID (可與事件識別碼 0x1008 相互關聯)，Runspace 識別碼則代表之前執行這個指令碼區塊的 Runspace。</span><span class="sxs-lookup"><span data-stu-id="bc045-144">The ID is the GUID representing the script block (that can be correlated with event ID 0x1008), and the Runspace ID represents the runspace in which this script block was run.</span></span>
 
-<span data-ttu-id="0bd93-145">引動過程訊息中的百分比符號代表結構化的 ETW 屬性。</span><span class="sxs-lookup"><span data-stu-id="0bd93-145">Percent signs in the invocation message represent structured ETW properties.</span></span> <span data-ttu-id="0bd93-146">雖以訊息文字中的實際值取代了它們，但更健全的存取方式是以 Get-WinEvent Cmdlet 擷取訊息，然後使用訊息的**屬性**陣列。</span><span class="sxs-lookup"><span data-stu-id="0bd93-146">While they are replaced with the actual values in the message text, a more robust way to access them is to retrieve the message with the Get-WinEvent cmdlet, and then use the **Properties** array of the message.</span></span>
+<span data-ttu-id="bc045-145">引動過程訊息中的百分比符號代表結構化的 ETW 屬性。</span><span class="sxs-lookup"><span data-stu-id="bc045-145">Percent signs in the invocation message represent structured ETW properties.</span></span> <span data-ttu-id="bc045-146">雖以訊息文字中的實際值取代了它們，但更健全的存取方式是以 Get-WinEvent Cmdlet 擷取訊息，然後使用訊息的**屬性**陣列。</span><span class="sxs-lookup"><span data-stu-id="bc045-146">While they are replaced with the actual values in the message text, a more robust way to access them is to retrieve the message with the Get-WinEvent cmdlet, and then use the **Properties** array of the message.</span></span>
 
-<span data-ttu-id="0bd93-147">下例說明這項功能如何協助解除包裝加密和模糊化指令碼的惡意嘗試：</span><span class="sxs-lookup"><span data-stu-id="0bd93-147">Here's an example of how this functionality can help unwrap a malicious attempt to encrypt and obfuscate a script:</span></span>
+<span data-ttu-id="bc045-147">下例說明這項功能如何協助解除包裝加密和模糊化指令碼的惡意嘗試：</span><span class="sxs-lookup"><span data-stu-id="bc045-147">Here's an example of how this functionality can help unwrap a malicious attempt to encrypt and obfuscate a script:</span></span>
 
 ```powershell
 ## Malware
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -66,7 +66,7 @@ $decrypted = SuperDecrypt "FUIwQitCNkInQm9CCkItQjFCNkJiQmVCEkI1QixCJkJlQg=="
 Invoke-Expression $decrypted
 ```
 
-<span data-ttu-id="0bd93-148">執行這項功能會產生下列記錄項目︰</span><span class="sxs-lookup"><span data-stu-id="0bd93-148">Running this generates the following log entries:</span></span>
+<span data-ttu-id="bc045-148">執行這項功能會產生下列記錄項目︰</span><span class="sxs-lookup"><span data-stu-id="bc045-148">Running this generates the following log entries:</span></span>
 
 ```
 Compiling Scriptblock text (1 of 1):
@@ -98,7 +98,7 @@ Write-Host 'Pwnd'
 ScriptBlock ID: 5e618414-4e77-48e3-8f65-9a863f54b4c8
 ```
 
-如果指令碼區塊的長度超過 ETW 能保存在單一事件中的長度，Windows PowerShell 就會將指令碼切分成多個部分。 <span data-ttu-id="0bd93-150">以下是從其記錄檔訊息重新合併指令碼的範例程式碼：</span><span class="sxs-lookup"><span data-stu-id="0bd93-150">Here is sample code to recombine a script from its log messages:</span></span>
+如果指令碼區塊的長度超過 ETW 能保存在單一事件中的長度，Windows PowerShell 就會將指令碼切分成多個部分。 <span data-ttu-id="bc045-150">以下是從其記錄檔訊息重新合併指令碼的範例程式碼：</span><span class="sxs-lookup"><span data-stu-id="bc045-150">Here is sample code to recombine a script from its log messages:</span></span>
 
 ```powershell
 $created = Get-WinEvent -FilterHashtable @{ ProviderName="Microsoft-Windows-PowerShell"; Id = 4104 } | Where-Object { $_.<...> }
@@ -106,5 +106,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-<span data-ttu-id="0bd93-151">如同具有有限保留緩衝區 (亦即 ETW 記錄檔) 的所有記錄系統，針對這個基礎結構的一種攻擊是濫發假性的事件記錄檔以隱藏較早的辨識項。</span><span class="sxs-lookup"><span data-stu-id="0bd93-151">As with all logging systems that have a limited retention buffer (i.e. ETW logs), one attack against this infrastructure is to flood the log with spurious events to hide earlier evidence.</span></span> <span data-ttu-id="0bd93-152">若要防範這種攻擊，請確定您已設定某種形式的事件記錄檔集合 (亦即 Windows 事件轉送，[利用 Windows 事件記錄檔監視找出敵人](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf))，儘快將事件記錄檔移出電腦。</span><span class="sxs-lookup"><span data-stu-id="0bd93-152">To protect yourself from this attack, ensure that you have some form of event log collection set up (i.e., Windows Event Forwarding, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) to move event logs off of the computer as soon as possible.</span></span>
-
+<span data-ttu-id="bc045-151">如同具有有限保留緩衝區 (亦即 ETW 記錄檔) 的所有記錄系統，針對這個基礎結構的一種攻擊是濫發假性的事件記錄檔以隱藏較早的辨識項。</span><span class="sxs-lookup"><span data-stu-id="bc045-151">As with all logging systems that have a limited retention buffer (i.e. ETW logs), one attack against this infrastructure is to flood the log with spurious events to hide earlier evidence.</span></span> <span data-ttu-id="bc045-152">若要防範這種攻擊，請確定您已設定某種形式的事件記錄檔集合 (亦即 Windows 事件轉送，[利用 Windows 事件記錄檔監視找出敵人](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf))，儘快將事件記錄檔移出電腦。</span><span class="sxs-lookup"><span data-stu-id="bc045-152">To protect yourself from this attack, ensure that you have some form of event log collection set up (i.e., Windows Event Forwarding, [Spotting the Adversary with Windows Event Log Monitoring](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)) to move event logs off of the computer as soon as possible.</span></span>
