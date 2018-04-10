@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-title: "WMF 5.1 的 Bug 修正"
-ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+title: WMF 5.1 的 Bug 修正
+ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正#
 
@@ -18,9 +18,11 @@ WMF 5.1 已修正下列重大 Bug︰
 
 ### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>完全接受模組自動探索 `$env:PSModulePath` ###
 
-WMF 3 中引進了模組自動探索 (呼叫命令時自動載入模組，不需要明確的 Import-Module)。 當初引入後，PowerShell 會先檢查 `$PSHome\Modules` 中有沒有命令，再使用 `$env:PSModulePath`。
+WMF 3 中引進了模組自動探索 (呼叫命令時自動載入模組，不需要明確的 Import-Module)。
+當初引入後，PowerShell 會先檢查 `$PSHome\Modules` 中有沒有命令，再使用 `$env:PSModulePath`。
 
-WMF 5.1 將此行為變更為完全接受 `$env:PSModulePath`。 這讓使用者撰寫之定義 PowerShell 所提供命令的模組 (例如 `Get-ChildItem`) 自動載入並正確覆寫內建的命令。
+WMF 5.1 將此行為變更為完全接受 `$env:PSModulePath`。
+這讓使用者撰寫之定義 PowerShell 所提供命令的模組 (例如 `Get-ChildItem`) 自動載入並正確覆寫內建的命令。
 
 ### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>檔案重新導向不再需要硬式編碼 `-Encoding Unicode` ###
 
@@ -40,7 +42,8 @@ WMF 5.1 已修正這個 Bug。
 
 ### <a name="fixed-some-issues-with-com-objects"></a>修正 COM 物件的一些問題 ###
 
-WMF 5.0 引入新的 COM 繫結器，可對 COM 物件叫用方法以及存取 COM 物件的屬性。 此新的繫結器大幅改善了效能，卻也造成了一些 Bug，WMF5.1 已加以修正。
+WMF 5.0 引入新的 COM 繫結器，可對 COM 物件叫用方法以及存取 COM 物件的屬性。
+此新的繫結器大幅改善了效能，卻也造成了一些 Bug，WMF5.1 已加以修正。
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>不一定會正確執行引數轉換 ####
 
@@ -75,8 +78,9 @@ $x = Get-COMDictionary
 
 ### <a name="ordered-was-not-allowed-inside-classes"></a>在類別中不允許 `[ordered]` ###
 
-WMF 5.0 引入了類別，其具有類別所用的類型常值驗證。  
-`[ordered]` 看起來像類型常值，卻不是真正的 .NET 類型。 WMF 5.0 誤報類別內發生 `[ordered]` 錯誤︰
+WMF 5.0 引入了類別，其具有類別所用的類型常值驗證。
+`[ordered]` 看起來像類型常值，卻不是真正的 .NET 類型。
+WMF 5.0 誤報類別內發生 `[ordered]` 錯誤︰
 
 ```
 class CThing
@@ -95,7 +99,8 @@ class CThing
 
 WMF 5.1 藉由傳回最新版本的說明主題，以修正此問題。
 
-`Get-Help` 不提供指定所需說明版本的方法。 若要解決這個問題，請瀏覽到模組目錄，直接使用您偏好的編輯器等工具檢視說明。 
+`Get-Help` 不提供指定所需說明版本的方法。
+若要解決這個問題，請瀏覽到模組目錄，直接使用您偏好的編輯器等工具檢視說明。
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>從 STDIN 讀取的 powershell.exe 停止運作
 
@@ -109,4 +114,3 @@ PowerShell 會使用 WMI 查詢來檢查它是否透過「群組原則」啟動�
 WMI 查詢最後會將 tzres.mui.dll 插入系統上的每一個處理序，因為 WMI Win32_Process 類別會嘗試擷取本地時區資訊。
 這會導致 wmiprvse (WMI 提供者主機) 出現大量的 CPU 使用量。
 修正方法是以 Win32 API 呼叫取代 WMI 來取得相同的資訊。
-

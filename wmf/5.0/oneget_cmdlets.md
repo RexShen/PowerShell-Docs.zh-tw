@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 134c22efe4fb86045ffb326e109dfbcc741bcf2f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: wmf,powershell,設定
+ms.openlocfilehash: a282ba375c9ee796c1f3d7923f7478e200cd3b19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement Cmdlet
 這是支援軟體探索、安裝和清查 (SDII) 的 PackageManagement 核心。 試試看這些作業的 Cmdlet︰
@@ -52,7 +52,7 @@ Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nug
 ```
 
 ## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Find-PackageProvider Cmdlet](https://technet.microsoft.com/library/mt676544.aspx)
-Find-PackageProvider Cmdlet 會在向 PowerShellGet 註冊的封裝來源中尋找相符的 PackageManagement 提供者。 這些是可使用 Install-PackageProvider Cmdlet 進行安裝的封裝提供者。 根據預設，這包括 PowerShell Gallery 提供之具有 'PackageManagement' 和 'Provider' 標記的模組。 
+Find-PackageProvider Cmdlet 會在向 PowerShellGet 註冊的封裝來源中尋找相符的 PackageManagement 提供者。 這些是可使用 Install-PackageProvider Cmdlet 進行安裝的封裝提供者。 根據預設，這包括 PowerShell Gallery 提供之具有 'PackageManagement' 和 'Provider' 標記的模組。
 
 Find-PackageProvider 也會尋找相符的 PackageManagement 提供者，它們可在 PackageManagement Azure Blob 存放區中取得，我們在此存放區中使用 PackageManagement boostrapper 提供者尋找及安裝它們。
 ```powershell
@@ -170,10 +170,10 @@ Find-Package -source c:\test
 ```
 
 ## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource Cmdlet](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-這個 Cmdlet 會變更現有封裝來源的相關資訊。 
+這個 Cmdlet 會變更現有封裝來源的相關資訊。
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
-Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
+Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
 ## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Uninstall-Package Cmdlet](https://technet.microsoft.com/en-us/library/dn890702.aspx)
@@ -191,4 +191,3 @@ Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Pack
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
-

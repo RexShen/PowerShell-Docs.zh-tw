@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "巢狀設定"
-ms.openlocfilehash: 89badda86707a129909b1c3cc3f79afa0b5f5df6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 巢狀設定
+ms.openlocfilehash: 9c6dbce462f7481e5714039a95ae85f85be0072e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="nesting-dsc-configurations"></a>巢狀 DSC 設定
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 01/17/2018
 讓我們看一個簡單範例：
 
 ```powershell
-Configuration FileConfig 
+Configuration FileConfig
 {
     param (
         [Parameter(Mandatory = $true)]
@@ -35,7 +35,7 @@ Configuration FileConfig
            DestinationPath = $CopyTo
            Ensure = 'Present'
        }
-    
+
 }
 
 Configuration NestedFileConfig
@@ -51,10 +51,10 @@ Configuration NestedFileConfig
 }
 ```
 
-在此範例中，`FileConfig` 採用兩個必要參數 **CopyFrom** 和 **CopyTo**，這兩個參數是用來做為 `File` 資源區塊中**SourcePath** 和 **DestinationPath** 屬性的值。 `NestedConfig` 設定會將 `FileConfig` 當成資源般來呼叫。
+在此範例中，`FileConfig` 採用兩個必要參數 **CopyFrom** 和 **CopyTo**，這兩個參數是用來做為 `File` 資源區塊中**SourcePath** 和 **DestinationPath** 屬性的值。
+`NestedConfig` 設定會將 `FileConfig` 當成資源般來呼叫。
 `NestedConfig` 資源區塊中的屬性 (**CopyFrom** 和 **CopyTo**) 是 `FileConfig` 設定的參數。
 
 ## <a name="see-also"></a>另請參閱
 
 - [複合資源 -- 把 DSC 設定當做資源使用](authoringResourceComposite.md)
-

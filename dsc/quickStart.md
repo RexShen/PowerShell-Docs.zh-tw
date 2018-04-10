@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "預期狀態設定快速入門"
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 預期狀態設定快速入門
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ ms.lasthandoff: 01/17/2018
 </body>
 ```
 
-將此內容在您稍早建立的 `test` 資料夾中另存為 `index.htm`。 
+將此內容在您稍早建立的 `test` 資料夾中另存為 `index.htm`。
 
 ## <a name="write-the-configuration"></a>撰寫設定
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>測試組態
 
-您可以呼叫 [Get DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) Cmdlet 來查看設定是否成功。 
+您可以呼叫 [Get DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) Cmdlet 來查看設定是否成功。
 
 您也可以直接測試結果，在本範例中是透過網頁瀏覽器瀏覽至 `http://localhost/`。
 您應該會看到您做為本範例的第一個步驟所建立的 "Hello World" HTML 頁面。
@@ -132,6 +132,3 @@ Start-DscConfiguration .\WebsiteTest
 - 在 [DSC 設定](configurations.md)中深入了解 DSC 設定。
 - 在 [DSC 資源](resources.md)中查看可用的 DSC 資源，以及如何建立自訂 DSC 資源。
 - 在 [PowerShell 資源庫 (英文)](https://www.powershellgallery.com/) 中尋找 DSC 設定和資源。
-
-
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea,powershell,安全性"
-title: "JEA 安全性考量"
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea,powershell,安全性
+title: JEA 安全性考量
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>JEA 安全性考量
 
@@ -153,4 +153,3 @@ JEA 無法防止已經有系統管理員權限的使用者。
 
 常見的做法是使用 JEA 進行一般日常維護，並且擁有「即時 」(Just-in-Time) 的特殊權限存取管理解決方案，可讓使用者在緊急情況下暫時成為本機系統管理員。
 這有助於確保使用者在系統上不是永久的系統管理員，但如果 (並且唯有) 他們完成的工作流程會記錄他們對那些權限的使用，便可以取得那些權限。
-

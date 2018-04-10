@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>組件庫搜尋語法
 
@@ -49,7 +49,7 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
 'Id' 篩選是子字串比對，因此，如果您搜尋下列項目︰
 
     Id:"azure"
-    
+
 您會收到與 'AzureRM.Profile' 和 'Azure.Storage' 類似的結果。
 
 您也可以在單一欄位中搜尋多個關鍵字。 或者，混合使用和比對欄位。
@@ -71,7 +71,7 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
     Functions:"Update-AzureRM"
 
 使用指定的 Cmdlet 搜尋所有項目。
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 使用指定的「DSC 資源」名稱搜尋所有項目。
@@ -88,8 +88,7 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
 最後，如果您使用不支援的欄位 (例如 'commands')，則只會略過它，並搜尋所有欄位。 因此，下列查詢
 
     commands:blobs storage
-    
+
 會解譯成與這個查詢完全相同︰
 
     blobs storage
-

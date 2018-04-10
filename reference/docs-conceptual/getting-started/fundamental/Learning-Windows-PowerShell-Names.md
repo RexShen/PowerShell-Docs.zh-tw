@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "了解 Windows PowerShell 名稱"
+title: 了解 Windows PowerShell 名稱
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 381aa619a41ccacb2ff3a4cdbc2b75b7f04282d1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="learning-windows-powershell-names"></a>了解 Windows PowerShell 名稱
 了解大部分命令列介面的命令和命令參數名稱需要投入大量時間。 此問題在於不太有模式可循，因此唯一的了解方式是記住您需要定期使用的每個命令和每個參數。
@@ -57,7 +57,7 @@ Cmdlet          Resume-Service                  Resume-Service [-Name] <Stri...
 Cmdlet          Set-Service                     Set-Service [-Name] <String>...
 Cmdlet          Start-Service                   Start-Service [-Name] <Strin...
 Cmdlet          Stop-Service                    Stop-Service [-Name] <String...
-Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str... 
+Cmdlet          Suspend-Service                 Suspend-Service [-Name] <Str...
 ...
 ```
 
@@ -91,4 +91,3 @@ Windows PowerShell 有幾個稱為*一般參數*的參數。 因為這些參數�
 Windows PowerShell 核心 Cmdlet 針對類似的參數使用標準名稱。 雖然不會強制使用參數名稱，但針對使用方式有明確的指引，以鼓勵標準化。
 
 例如，該指引建議命名指向電腦的參數時，依照 **ComputerName** 等名稱，而不是依照 Server、Host、System、Node 或其他常見的替代文字。 重要的建議參數名稱包括 **Force**、**Exclude**、**Include**、**PassThru**、**Path**, 和 **CaseSensitive**。
-

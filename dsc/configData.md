@@ -1,106 +1,112 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "使用設定資料"
-ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 使用設定資料
+ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-您可以使用內建的 DSC **ConfigurationData** 參數，定義可用於設定中的資料。 這可讓您建立可用於多個節點或不同環境的單一設定。 例如，如果您要開發應用程式，您可以針對開發和生產環境使用一個設定，並使用設定資料來指定每個環境的資料。
+您可以使用內建的 DSC **ConfigurationData** 參數，定義可用於設定中的資料。
+這可讓您建立可用於多個節點或不同環境的單一設定。
+例如，如果您要開發應用程式，您可以針對開發和生產環境使用一個設定，並使用設定資料來指定每個環境的資料。
 
-本主題將說明 **ConfigurationData** 雜湊表的結構。 如需如何使用設定資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
+本主題將說明 **ConfigurationData** 雜湊表的結構。
+如需如何使用設定資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
 
 ## <a name="the-configurationdata-common-parameter"></a>ConfigurationData 一般參數
 
-DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所指定的參數。 如需編譯設定的資訊，請參閱 [DSC 設定](configurations.md)。
+DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所指定的參數。
+如需編譯設定的資訊，請參閱 [DSC 設定](configurations.md)。
 
-**ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。 它也可以包含一或多個其他索引鍵。
+**ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。
+它也可以包含一或多個其他索引鍵。
 
 >**注意：**本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是名為 **AllNodes** 的索引鍵)，但是您可以包含任何數目的額外索引鍵，並將它們任意命名。
 
 ```powershell
-$MyData = 
+$MyData =
 @{
     AllNodes = @()
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 **AllNodes** 索引鍵的值是陣列。 此陣列的每個元素也是至少必須有一個名為 **NodeName** 之索引鍵的雜湊表：
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
         },
 
- 
+
         @{
             NodeName = "VM-2"
         },
 
- 
+
         @{
             NodeName = "VM-3"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 您也可以將其他索引鍵新增至每個雜湊表：
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
             Role     = "WebServer"
         },
 
- 
+
         @{
             NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
- 
+
         @{
             NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
-若要將屬性套用至所有節點，您可以建立 **AllNodes** 陣列的成員，其 **NodeName** 為 `*`。 例如，您可以如下為每個節點提供 `LogPath` 屬性：
+若要將屬性套用至所有節點，您可以建立 **AllNodes** 陣列的成員，其 **NodeName** 為 `*`。
+例如，您可以如下為每個節點提供 `LogPath` 屬性：
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName     = "*"
             LogPath      = "C:\Logs"
         },
 
- 
+
         @{
             NodeName     = "VM-1"
             Role         = "WebServer"
@@ -108,13 +114,13 @@ $MyData =
             SiteName     = "Website1"
         },
 
- 
+
         @{
             NodeName     = "VM-2"
             Role         = "SQLServer"
         },
 
- 
+
         @{
             NodeName     = "VM-3"
             Role         = "WebServer"
@@ -129,7 +135,8 @@ $MyData =
 
 ## <a name="defining-the-configurationdata-hashtable"></a>定義 ConfigurationData 雜湊表
 
-您可以將 **ConfigurationData** 定義為與設定位於相同指令碼檔內的變數 (如上述範例)，或個別 `.psd1` 檔案中的變數。 若要在 `.psd1` 檔案中定義 **ConfigurationData**，請建立只包含代表設定資料之雜湊表的檔案。
+您可以將 **ConfigurationData** 定義為與設定位於相同指令碼檔內的變數 (如上述範例)，或個別 `.psd1` 檔案中的變數。
+若要在 `.psd1` 檔案中定義 **ConfigurationData**，請建立只包含代表設定資料之雜湊表的檔案。
 
 例如，您可以建立具有下列內容的檔案，並命名為 `MyData.psd1`：
 
@@ -186,11 +193,11 @@ DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$
 ## <a name="using-non-node-data"></a>使用非節點資料
 
 如我們在先前的範例中所見，**ConfigurationData** 雜湊表除了必要的 **AllNodes** 索引鍵之外，還可以有一或多個索引鍵。
-在本主題的範例中，我們只使用了單一額外節點，並將它命名為 `NonNodeData`。 不過，您可以定義任何數目的額外索引鍵，並將它們任意命名。
+在本主題的範例中，我們只使用了單一額外節點，並將它命名為 `NonNodeData`。
+不過，您可以定義任何數目的額外索引鍵，並將它們任意命名。
 
 如需有關使用非節點資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
 
 ## <a name="see-also"></a>另請參閱
 - [設定資料的認證選項](configDataCredentials.md)
 - [DSC 設定](configurations.md)
-

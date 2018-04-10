@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC 環境資源"
-ms.openlocfilehash: 9c166d719ba3f168c936278acd6fb5fb7658613e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC 環境資源
+ms.openlocfilehash: 4f024afe2d70c13e19406745ec7fd69821ab229b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境資源
 
@@ -29,13 +29,13 @@ Environment [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 指出您要確保其特定狀態的環境變數名稱。| 
-| Ensure| 指出變數是否存在。 如果沒有環境變數，請將這個屬性設為 __Present__ 以建立環境變數；或如果已有變數，則確保其值符合透過 __Value__ 屬性所提供的值。 如果有變數，將它設為 __Absent__ 可刪除變數。| 
-| 路徑| 定義設定中的環境變數。 如果變數是 __Path__ 變數，請將這個屬性設為 __$true__，否則請設為 __$false__。 預設值為 __$false__。 如果要設定的變數是 __Path__ 變數，則透過 __Value__ 屬性提供的值就會附加至現有的值。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
-| 值| 要指派給環境變數的值。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 指出您要確保其特定狀態的環境變數名稱。|
+| Ensure| 指出變數是否存在。 如果沒有環境變數，請將這個屬性設為 __Present__ 以建立環境變數；或如果已有變數，則確保其值符合透過 __Value__ 屬性所提供的值。 如果有變數，將它設為 __Absent__ 可刪除變數。|
+| 路徑| 定義設定中的環境變數。 如果變數是 __Path__ 變數，請將這個屬性設為 __$true__，否則請設為 __$false__。 預設值為 __$false__。 如果要設定的變數是 __Path__ 變數，則透過 __Value__ 屬性提供的值就會附加至現有的值。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
+| 值| 要指派給環境變數的值。|
 
 ## <a name="example"></a>範例
 
@@ -49,4 +49,3 @@ Environment EnvironmentExample
     Value = "TestValue"
 }
 ```
-

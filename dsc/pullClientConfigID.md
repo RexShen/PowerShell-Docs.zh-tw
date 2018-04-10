@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "使用設定識別碼設定提取用戶端"
-ms.openlocfilehash: 6e3dda1de0bfbf52fb876fdcd2dd2e99da4583dd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 使用設定識別碼設定提取用戶端
+ms.openlocfilehash: 93e533fd4e729e1af0124ad69ca7e384e1cb3aa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id"></a>使用設定識別碼設定提取用戶端
 
@@ -29,14 +29,14 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
-        }      
+
+        }
     }
 }
 PullClientConfigID
@@ -66,14 +66,14 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
         ConfigurationRepositoryShare SMBPullServer
         {
             SourcePath = '\\SMBPullServer\PullSource'
-            
-        }     
+
+        }
     }
 }
 PullClientConfigID
@@ -81,7 +81,7 @@ PullClientConfigID
 
 ## <a name="resource-and-report-servers"></a>資源和報表伺服器
 
-如果在 LCM 設定中只指定了 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如上述範例所示)，提取用戶端將會從指定的伺服器提取資源，但不會將報表傳送給伺服器。 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 **ReportRepositoryWeb** 區塊才可設定報告功能。 
+如果在 LCM 設定中只指定了 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如上述範例所示)，提取用戶端將會從指定的伺服器提取資源，但不會將報表傳送給伺服器。 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 **ReportRepositoryWeb** 區塊才可設定報告功能。
 
 下列範例示範中繼設定，該中繼設定會設定用戶端以提取設定和資源，並將報告資料傳送至單一提取伺服器。
 
@@ -95,17 +95,17 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
-        
+
+
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
@@ -129,16 +129,16 @@ configuration PullClientConfigID
         {
             RefreshMode = 'Pull'
             ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
         }
 
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            
+
         }
-        
+
         ResourceRepositoryWeb CONTOSO-ResourceSrv
         {
             ServerURL = 'https://CONTOSO-REsourceSrv:8080/PSDSCPullServer.svc'
@@ -156,4 +156,3 @@ PullClientConfigID
 ## <a name="see-also"></a>另請參閱
 
 * [以設定名稱設定提取用戶端](pullClientConfigNames.md)
-

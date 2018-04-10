@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: Get-InstalledScript
-ms.openlocfilehash: f35e57cdadd1448bd9032ab007d692003c4cf4a2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 668327905b0dab40119940a3134b674c452f538d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-installedscript"></a>Get-InstalledScript
 
@@ -24,7 +24,7 @@ Get-InstalledScript Cmdlet 會取得電腦上的已安裝 PowerShell 指令碼�
 - Get-InstalledScript 可以使用版本參數 MinimumVersion、MaximumVersion、RequiredVersion、AllVersions 進行篩選。
   - 這些參數互斥 (MinmimumVersion 和 MaximumVersion 除外)。
   - 只有不含任何萬用字元的單一指令碼名稱才允許使用這些版本參數。
-  - 如果未指定 RequiredVersion 參數，Get-InstalledScript 會傳回等於或大於所指定最小版本之已安裝指令碼的最新版本，或未指定最小版本之指令碼的最新版本。 
+  - 如果未指定 RequiredVersion 參數，Get-InstalledScript 會傳回等於或大於所指定最小版本之已安裝指令碼的最新版本，或未指定最小版本之指令碼的最新版本。
   - 如果指定 RequiredVersion 參數，Get-InstalledScript 只會傳回完全符合所指定版本之已安裝指令碼的版本。
 
 ## <a name="cmdlet-syntax"></a>Cmdlet 語法
@@ -98,4 +98,3 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-

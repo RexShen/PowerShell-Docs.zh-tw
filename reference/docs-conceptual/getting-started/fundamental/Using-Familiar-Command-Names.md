@@ -1,31 +1,31 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用熟悉的命令名稱"
+title: 使用熟悉的命令名稱
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 5e72e721bdb9d48684092344a0169907e7e25d40
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名稱
 Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名稱來參照命令。 別名可讓具有其他殼層經驗的使用者重複使用他們已經熟悉的一般命令名稱，以在 Windows PowerShell 中執行類似作業。 雖然我們不會詳細討論 Windows PowerShell 別名，但是您在開始使用 Windows PowerShell 時仍然可以使用它們。
 
 別名會將您所輸入的命令名稱與另一個命令產生關聯。 例如，Windows PowerShell 的內部函式 **Clear-Host** 會清除輸出視窗。 如果您在命令提示字元中輸入 **cls** 或 **clear** 命令，則 Windows PowerShell 會解譯這是 **Clear-Host** 函式的別名，並執行 **Clear-Host** 函式。
 
-這項功能可協助使用者了解 Windows PowerShell。 首先，大部分 Cmd.exe 和 UNIX 使用者都有使用者已經透過名稱知道的大型命令庫，而且雖然 Windows PowerShell 對等項目可能不會產生相同的結果，但是它們夠接近使用者可以使用它們來執行工作的形式，而不需要先記下 Windows PowerShell 名稱。 其次，使用者在已熟悉其他殼層時學習新殼層的主要挫折來源是「手指慣性記憶」所造成的錯誤。 如果您已使用 Cmd.exe 數年，則整個畫面已填滿輸出而且想要予以清除時，則應該輸入 **cls** 命令並按 ENTER 鍵。 **Clear-Host** 函式在 Windows PowerShell 中沒有別名，因此您只會收到錯誤訊息「'cls' 無法辨識為 Cmdlet、函式、作業程式或指令碼檔案。」， 而且不知道怎麼清除輸出。
+這項功能可協助使用者了解 Windows PowerShell。 首先，大部分 Cmd.exe 和 UNIX 使用者都有使用者已經透過名稱知道的大型命令庫，而且雖然 Windows PowerShell 對等項目可能不會產生相同的結果，但是它們夠接近使用者可以使用它們來執行工作的形式，而不需要先記下 Windows PowerShell 名稱。 其次，使用者在已熟悉其他殼層時學習新殼層的主要挫折來源是「finger 記憶體」所造成的錯誤。 如果您已使用 Cmd.exe 數年，則整個畫面已填滿輸出而且想要予以清除時，則應該輸入 **cls** 命令並按 ENTER 鍵。 **Clear-Host** 函式在 Windows PowerShell 中沒有別名，因此您只會收到錯誤訊息「'cls' 無法辨識為 Cmdlet、函式、作業程式或指令碼檔案。」， 而且不知道怎麼清除輸出。
 
 下列是您可在 Windows PowerShell 內使用的常見 Cmd.exe 和 UNIX 命令的簡短清單︰
 
 |||||
 |-|-|-|-|
-|cat|dir|mount|rm|
+|cat|dir|掛上 - mount|rm|
 |cd|echo|move|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
 |cls|history|pushd|tee|
-|copy|kill|pwd|type|
+|copy|kill|pwd|型別|
 |del|lp|r|write|
 |diff|ls|ren||
 
@@ -67,4 +67,3 @@ Set-Alias : Alias is not writeable because alias gi is read-only or constant and
 At line:1 char:10
 + Set-Alias  <<<< -Name gi -Value Get-Item
 ```
-

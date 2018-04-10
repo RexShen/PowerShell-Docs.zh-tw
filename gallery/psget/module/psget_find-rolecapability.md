@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: Find-RoleCapability
-ms.openlocfilehash: 77c5b492d9681fa05315401fba410c508af1d13b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 89aacd604d54f6a5e9752790be65cc3bcc77c8e1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-rolecapability"></a>Find-RoleCapability
 
 尋找模組中的角色功能。
 
 ## <a name="description"></a>描述
-Find-RoleCapability Cmdlet 會尋找模組中的 PowerShell 角色功能。 Find-RoleCapability 會搜尋已註冊存放庫中的模組。 針對這個 Cmdlet 找到的每個角色功能，它會傳回 PSGetRoleCapabilityInfo 物件。 您可以將 PSGetRoleCapabilityInfo 物件傳遞至 Install-Module Cmdlet，以安裝包含這個角色功能的模組。
+Find-RoleCapability Cmdlet 會尋找模組中的 PowerShell 角色功能。 Find-RoleCapability 會搜尋已註冊存放庫中的模組。
+針對這個 Cmdlet 找到的每個角色功能，它會傳回 PSGetRoleCapabilityInfo 物件。 您可以將 PSGetRoleCapabilityInfo 物件傳遞至 Install-Module Cmdlet，以安裝包含這個角色功能的模組。
 PowerShell 角色功能會定義使用者可在 Just Enough Administration (JEA) 端點使用的命令、應用程式等。 角色功能是由副檔名為 .psrc 的檔案所定義。
 
 - Find-RoleCapability 可以使用版本參數 MinimumVersion、RequiredVersion、AllVersions 進行篩選。
@@ -78,4 +79,3 @@ Find-RoleCapability -Filter RBAC
 Find-RoleCapability -Tag Azure, DSC
 
 ```
-

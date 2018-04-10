@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 306241bc5ec854c0e2ed835009a79b21fc249f14
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-and-limitations"></a>已知的問題和限制
 
@@ -63,23 +63,23 @@ Set-ExecutionPolicy RemoteSigned
 **解決方法：**
 - 針對執行 **Windows Server 2008 R2** 的系統
   1. 以系統管理員身分開啟 PowerShell
-  2. 執行下列命令 
-  
+  2. 執行下列命令
+
   ```powershell
     Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
   ```
   3. 執行命令並忽略錯誤 (因為它們如預期般發生)。
-  
+
   ```powershell
     Publish-SilData
    ```
   4. 刪除 \Windows\System32\Logfiles\SIL\ 目錄中的檔案
-  
+
   ```powershell
     Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
   ```
   5. 安裝所有可用的重要 Windows 更新，然後就能正常開始進行 Sysyprep 操作。
-  
+
 - 針對執行 **Windows Server 2012** 的系統
   1.    在伺服器上安裝 WMF 5.0，使其成為 Sysprep 之後，以系統管理員身分登入。
   2.    將 Generize.xml 從目錄 \Windows\System32\Sysprep\ActionFiles\ 複製到 Windows 目錄之外的位置，例如 C:\。
@@ -96,24 +96,23 @@ Set-ExecutionPolicy RemoteSigned
   7.    執行下列命令，以取得 system32 資料夾中 Generalize.xml 檔案的擁有權︰
 
     ```
-    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
 
   8.    執行下列命令，在檔案中設定適當的權限︰
 
     ```
-    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
     ```
-      * 在提示字元中回答 [是]，以進行確認。 
+      * 在提示字元中回答 [是]，以進行確認。
       * 請注意，您只能使用電腦上系統管理員的使用者名稱來取代 `<AdministratorUserName>`。 例如，"Administrator"。
-      
+
   9.    使用下列命令，複製您編輯過的檔案，並儲存到 Sysprep 目錄︰
 
     ```
-    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
       * 回答 [是] 以進行覆寫 (注意，如果沒有提示要進行覆寫，請再次檢查所輸入的路徑)。
       * 假設已將您編輯過的 Generalize.xml 複本複製到 C:\。
 
   10.   現在已使用因應措施來更新 Generalize.xml。 請搭配已啟用的一般化選項來執行 Sysprep。
-

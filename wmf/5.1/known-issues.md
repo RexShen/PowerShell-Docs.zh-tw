@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-title: "WMF 5.1 的已知問題"
-ms.openlocfilehash: bb8967a55ec32f0ce21812e065725985010bfc8e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: wmf,powershell,設定
+title: WMF 5.1 的已知問題
+ms.openlocfilehash: 467a191f40d85bfca7c794915d6274a9a1b201e7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 的已知問題 #
 
@@ -21,14 +21,14 @@ ms.lasthandoff: 07/27/2017
 ## <a name="pester"></a>Pester
 在此版本中，當您在 Nano 伺服器使用 Pester 時有兩個問題應該要注意︰
 
-* 因為完整 CLR 和核心 CLR 之間的差異，針對 Pester 本身執行測試時會導致某些失敗。 尤其 XmlDocument 不提供類型驗證方法。 已知有六個嘗試驗證 NUnit 輸出記錄檔結構描述的測試會失敗。 
+* 因為完整 CLR 和核心 CLR 之間的差異，針對 Pester 本身執行測試時會導致某些失敗。 尤其 XmlDocument 不提供類型驗證方法。 已知有六個嘗試驗證 NUnit 輸出記錄檔結構描述的測試會失敗。
 * 有一個程式碼涵蓋範圍測試失敗起因於 Nano 伺服器沒有 *WindowsFeature* DSC 資源。 不過，這些失敗通常是無害的，可以放心地忽略。
 
-## <a name="operation-validation"></a>作業驗證 
+## <a name="operation-validation"></a>作業驗證
 
 * 因為不具有效的說明 URI，導致 Microsoft.PowerShell.Operation.Validation 模組的 Update-Help 失敗
 
-## <a name="dsc-after-uninstall-wmf"></a>解除安裝 WMF 之後的 DSC 
+## <a name="dsc-after-uninstall-wmf"></a>解除安裝 WMF 之後的 DSC
 * 解除安裝 WMF 不會從組態資料夾中刪除 DSC MOF 文件。 若 MOF 文件包含更新且無法在舊版系統上使用的內容，DSC 便無法正常運作。 在此情況下，請從提高權限的 PowerShell 主控台中執行下列指令碼，以清除 DSC 狀態。
  ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -38,7 +38,7 @@ ms.lasthandoff: 07/27/2017
            )
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
- ```  
+ ```
 
 ## <a name="jea-virtual-accounts"></a>JEA 虛擬帳戶
 WMF 5.0 中設定為使用虛擬帳戶的 JEA 端點與工作階段設定，在升級為 WMF 5.1 之後將不會設定為使用虛擬帳戶。
@@ -61,4 +61,3 @@ Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
 # Ensure the access policies remain the same
 Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
 ```
-

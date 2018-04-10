@@ -1,28 +1,29 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "檢視物件結構 Get Member"
+title: 檢視物件結構 Get Member
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="viewing-object-structure-get-member"></a>檢視物件結構 (Get-Member)
+
 因為物件在 Windows PowerShell 中播放這類重要角色，所以有數個設計成使用任意物件類型的原生命令。 最重要的是 **Get-Member** 命令。
 
 分析命令所傳回物件的最簡單技巧是將該命令的輸出傳送到 **Get-Member** Cmdlet。 **Get-Member** Cmdlet 顯示物件類型的正式名稱以及其成員的完整清單。 所傳回元素的數目有時可能非常龐大。 例如，Process 物件可以有 100 位以上的成員。
 
 若要查看 Process 物件的所有成員，並將輸出分頁，以檢視其所有內容，請輸入︰
 
-```
-PS> Get-Process | Get-Member | Out-Host -Paging
+```powershell
+Get-Process | Get-Member | Out-Host -Paging
 ```
 
 此命令的輸出看起來如下︰
 
-```
+```output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -68,4 +69,3 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 > Windows PowerShell 使用名稱結尾為 .format.ps1xml 的 XML 檔案中所儲存的資訊，來決定如何顯示物件類型。 Process 物件 (即 .NET System.Diagnostics.Process 物件) 的格式資料儲存在 DotNetTypes.format.ps1xml 中。
 
 如果您需要查看 Windows PowerShell 預設所顯示屬性以外的屬性，則需要自行格式化輸出資料。 使用格式 Cmdlet 來完成這個動作。
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: uninstall pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 表示已刪除 **Install\_PswaWebApplication** Cmdlet (搭配 **UseTestCertificate** 參數) 所建立的測試憑證。
 只會移除與 **Install-PswaWebApplication** Cmdlet 所建立的測試憑證同名的測試憑證。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -49,7 +49,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 
 指定要解除安裝的 Web 應用程式名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -62,7 +62,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 
 指定 Web 應用程式安裝所在的網站名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -75,7 +75,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 
 執行 Cmdlet 之前先提示您確認。
 
-|||  
+|||
 |-|-|
 | 必要？                            | false                                |
 | 位置？                            | 具名                                |
@@ -88,7 +88,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 顯示執行 Cmdlet 後會發生的情況。
 未執行 Cmdlet。
 
-|||  
+|||
 |-|-|
 | 必要？                            | false                                |
 | 位置？                            | 具名                                |

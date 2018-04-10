@@ -1,13 +1,13 @@
 ---
-ms.date: 2018-02-02
+ms.date: 02/02/2018
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC 提取服務"
-ms.openlocfilehash: d5e24dcc093c73d8ebbaa618517193dacc4f2aaf
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+keywords: dsc,powershell,設定,安裝
+title: DSC 提取服務
+ms.openlocfilehash: 1547092d5ea6733296bf89f05dd96f70c0a000ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -67,7 +67,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 設定 Web 提取伺服器的最簡單方式，是使用包含在 xPSDesiredStateConfiguration 模組的 xWebService 資源。
 下列步驟說明如何使用設定 Web 服務之設定中的資源。
 
-1. 呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。 
+1. 呼叫 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
 1. 在組織或公開授權單位中，從信任的憑證授權單位取得 DSC 提取伺服器的 SSL 憑證。 從授權單位收到的憑證通常為 PFX 格式。 在即將成為預設位置 (應為 CERT:\LocalMachine\My) 中 DSC 提取伺服器的節點上安裝憑證。 記下憑證指紋。
 1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：'``` [guid]::newGuid()```' 或 '```New-Guid```'。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
 1. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含於 **xPSDesiredStateConfiguration** 模組的 Example 資料夾的 Sample_xDscWebService.ps1)。 此指令碼會設定提取伺服器。
@@ -127,7 +127,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 1. 執行設定，傳遞 SSL 憑證的指紋作為 **certificateThumbPrint** 參數，以及 GUID 註冊金鑰作為 **RegistrationKey** 參數：
 
 ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store 
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
     # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
     dir Cert:\LocalMachine\my
 
@@ -142,7 +142,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 #### <a name="registration-key"></a>註冊金鑰
 
 若要讓用戶端向伺服器註冊，使其可以使用設定名稱，而非設定識別碼，上述設定所建立的註冊金鑰會儲存在 `C:\Program Files\WindowsPowerShell\DscService` 中名為 `RegistrationKeys.txt` 的檔案。 註冊金鑰會當作共用密碼，在用戶端向提取伺服器初始註冊期間使用。 用戶端會產生自我簽署的憑證，以在成功完成註冊之後，用來向提取伺服器進行唯一驗證。 此憑證的指紋會儲存在本機，並與提取伺服器的 URL 相關聯。
-> **注意**：PowerShell 4.0 中不支援註冊金鑰。 
+> **注意**：PowerShell 4.0 中不支援註冊金鑰。
 
 若要設定節點向提取伺服器進行驗證，對於要向此提取伺服器註冊的任何目標節點，其中繼設定內都必須要有註冊金鑰。 請注意，成功註冊目標電腦之後，會移除下面中繼設定內的 **RegistrationKey**，而且值 '140a952b-b9d6-406b-b416-e0f759c9c0e4' 必須符合儲存在提取伺服器之 RegistrationKeys.txt 檔案中的值。 請務必保護註冊金鑰值，因為知道此值可向提取伺服器註冊任何目標電腦。
 
@@ -155,7 +155,7 @@ configuration PullClientConfigID
         Settings
         {
             RefreshMode          = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded   = $true
         }
 
@@ -223,8 +223,8 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @("xWebAdministration", "xPhp") 
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList 
+         $moduleList = @("xWebAdministration", "xPhp")
+         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
          # Example 2 - Package modules and mof documents from c:\LocalDepot
          Publish-DSCModuleAndMof -Source C:\LocalDepot -Force

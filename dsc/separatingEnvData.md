@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "分離設定和環境資料"
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 分離設定和環境資料
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
@@ -26,18 +26,19 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="a-simple-example"></a>一個簡單的範例
 
-讓我們看看一個非常簡單的範例，以了解其運作方式。 我們將建立單一設定，確保 **IIS** 位於一些節點上，而 **HYPER-V** 位於另一些節點上： 
+讓我們看看一個非常簡單的範例，以了解其運作方式。
+我們將建立單一設定，確保 **IIS** 位於一些節點上，而 **HYPER-V** 位於另一些節點上：
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -75,12 +76,12 @@ MyDscConfiguration -ConfigurationData $MyData
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
+
 `$MyData` 指定兩個不同的節點，各有其專屬的 `NodeName` 和 `Role`。 此設定會從 `$MyData` 取得節點集合 (亦即 `$AllNodes`)，然後針對 `Role` 屬性篩選該集合，藉此以動態方式建立 **Node** 區塊。
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>使用設定資料定義開發和生產環境
@@ -128,7 +129,9 @@ Mode                LastWriteTime         Length Name
 
 ### <a name="configuration-script-file"></a>設定指令檔
 
-現在，在定義於 `.ps1` 檔案的設定中，我們會依其角色 (`MSSQL`、`Dev` 或兩者) 來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此加以設定。 開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。 網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
+現在，在定義於 `.ps1` 檔案的設定中，我們會依其角色 (`MSSQL`、`Dev` 或兩者) 來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此加以設定。
+開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。
+網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
 
 在設定指令碼結尾處，我們會呼叫設定 (將其編譯為 MOF 文件)，並傳遞 `DevProdEnvData.psd1` 作為 `$ConfigurationData` 參數。
 
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -232,10 +235,10 @@ MyWebApp -ConfigurationData DevProdEnvData.psd1
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
@@ -257,39 +260,39 @@ Mode                LastWriteTime         Length Name
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,14 +301,14 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
@@ -313,4 +316,3 @@ configuration WebsiteConfig
 - [使用設定資料](configData.md)
 - [設定資料的認證選項](configDataCredentials.md)
 - [DSC 設定](configurations.md)
-

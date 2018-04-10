@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 2c3cc6d5d226daf22c7ee83a1b7068d6a08b7f45
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: b440ea4a8208d5c576fa566a19e2de377bf5f475
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="script-tracing-and-logging"></a>指令碼追蹤和記錄
 
@@ -52,7 +52,7 @@ function SuperDecrypt
 {
     param($script)
     $bytes = [Convert]::FromBase64String($script)
-             
+
     ## XOR “encryption”
     $xorKey = 0x42
     for($counter = 0; $counter -lt $bytes.Length; $counter++)
@@ -107,4 +107,3 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 如同具有有限保留緩衝區 (亦即 ETW 記錄檔) 的所有記錄系統，針對這個基礎結構的一種攻擊是濫發假性的事件記錄檔以隱藏較早的辨識項。 若要防範這種攻擊，請確定您已設定某種形式的事件記錄檔集合 (亦即 Windows 事件轉送，[利用 Windows 事件記錄檔監視找出敵人](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf))，儘快將事件記錄檔移出電腦。
-

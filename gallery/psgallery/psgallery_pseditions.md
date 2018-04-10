@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_pseditions
-ms.openlocfilehash: 6634da5c2dadee9c0c6470b3d3e8883e6d02160f
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 0b30c1da53832a6b74be7aa14ed9331b1e9fe643
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="items-with-compatible-powershell-editions"></a>具有相容 PowerShell 版本的項目
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
@@ -33,4 +33,3 @@ ms.lasthandoff: 06/12/2017
 ## <a name="more-details-on-authoring-and-finding-the-items-with-compatible-powershell-editions"></a>撰寫和尋找與 PowerShell 版本相容之項目的詳細資訊
 ### <a name="modules-with-pseditionspsgetmodulemodulewithpseditionsupportmd"></a>[PSEditions 的模組](../psget/module/modulewithpseditionsupport.md)
 ### <a name="scripts-with-pseditionspsgetscriptscriptwithpseditionsupportmd"></a>[搭配 PSEditions 的指令碼](../psget/script/scriptwithpseditionsupport.md)
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: Update-Module
-ms.openlocfilehash: 66535cd5b1f44e108c2bc47fa343c77c86bb21dc
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 89b0111eda4421606843f108dca90519b2c9379e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="update-module"></a>Update-Module
 
@@ -22,7 +22,7 @@ Update-Module Cmdlet 會在本機電腦上執行 Install-Module，以安裝已�
 
 執行不含 Name 參數的 Update-Module 會更新可在本機電腦上更新的所有模組。
 
-### <a name="notes"></a>附註
+### <a name="notes"></a>注意
 
 - 這個 Cmdlet 會在 Windows PowerShell 3.0 或更新版本的 Windows PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。
 - 如果未使用 Install-Module 來安裝利用 Name 參數所指定的模組，則會發生錯誤。 您只能在執行 Install-Module 以從線上組件庫所安裝的模組上執行 Update-Module。
@@ -140,4 +140,3 @@ Version    Name                                Repository  Description
 
 
 ```
-

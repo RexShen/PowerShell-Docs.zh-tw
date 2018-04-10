@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 8b414331bbfb7dc71d960241a6bc83b0b22641db
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 7eaa4dfb68bc299ad31bce81af96b6a760c4fcc5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>使用 PowerShell 類別建立自訂類型
 
@@ -20,4 +20,3 @@ ms.lasthandoff: 06/12/2017
 -   具有 PowerShell 類別和類別基底 DSC 資源的繼承支援
 -   使用 PowerShell 語言偵錯類型
 -   使用正式的機制在正確的層級產生和處理例外狀況
-

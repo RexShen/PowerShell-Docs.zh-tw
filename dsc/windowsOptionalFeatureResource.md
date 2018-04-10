@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC WindowsOptionalFeature 資源"
-ms.openlocfilehash: d9b8cc316255f06d2de71fedc47ce4472cc8b382
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC WindowsOptionalFeature 資源
+ms.openlocfilehash: 4cb59151d69adb2a01b7c4bdcaf0e961c24b29a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature 資源
 
@@ -28,23 +28,19 @@ WindowsOptionalFeature [string] #ResourceName
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 表示您想要確保啟用或停用的功能名稱。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 表示您想要確保啟用或停用的功能名稱。|
 | Ensure| 指定是否啟用功能。 若要確保將功能啟用，請將此屬性設定為 "Enable"。若要確保將功能停用，請將此屬性設定為 "Disable"。|
 | 來源| 未實作。|
 | NoWindowsUpdateCheck| 指定在搜尋來源檔案以啟用功能時，DISM 是否連絡 Windows Update (WU)。 如果是 $true，則 DISM 不連絡 WU。|
 | RemoveFilesOnDisable| 停用時 (亦即 **Ensure** 設為 "Absent")，設為 **$true** 會移除所有與此功能相關聯的檔案。|
 | LogLevel| 記錄中顯示的最大輸出等級。 接受的值包括："ErrorsOnly" (僅記錄錯誤)、"ErrorsAndWarning" (記錄錯誤與警告)，以及 "ErrorsAndWarningAndInformation" (記錄錯誤、警告和偵錯資訊)。|
-| LogPath| 要讓資源提供者記錄作業的記錄檔路徑。| 
-| DependsOn| 指定必須先執行另一項資源的設定，再設定這項資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
- 
-
-
-
+| LogPath| 要讓資源提供者記錄作業的記錄檔路徑。|
+| DependsOn| 指定必須先執行另一項資源的設定，再設定這項資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|

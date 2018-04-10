@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell 基本概念"
+title: Windows PowerShell 基本概念
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b21c6cd84ea29d5e8085ccf8df2a5a9199e1d859
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-basics"></a>Windows PowerShell 基本概念
-圖形化使用者介面使用大部分電腦使用者熟知的一些基本概念。 使用者會依賴對這些介面的熟悉度來完成工作。 作業系統會向使用者呈現可瀏覽項目的圖形化呈現，通常是使用下拉式功能表來存取特定功能，以及使用操作功能表來存取上下文特定功能。
+圖形化使用者介面使用大部分電腦使用者熟知的一些基本概念。 使用者會依賴對這些介面的熟悉度來完成工作。 作業系統會向使用者呈現可瀏覽項目的圖形化呈現，通常是使用下拉式功能表來存取特定功能，以及使用操作功能表來存取內容特定功能。
 
 命令列介面 (CLI) (例如 Windows PowerShell) 必須使用不同的方式來公開資訊，因為它沒有可協助使用者的功能表或圖形化系統。 您需要先知道命令名稱，才能使用它們。 雖然您可以輸入相當於 GUI 環境中功能的複雜命令，但是您必須熟悉常用命令和命令參數。
 

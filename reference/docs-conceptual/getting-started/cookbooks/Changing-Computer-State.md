@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "變更電腦狀態"
+title: 變更電腦狀態
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 636690c72b16bf19826b0a7e54ce00114ce30fb6
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="changing-computer-state"></a>變更電腦狀態
+
 若要在 Windows PowerShell 中重設電腦，請使用標準命令列工具或 WMI 類別。 雖然您使用 Windows PowerShell 只是為了執行工具，但是了解如何在 Windows PowerShell 中變更電腦的電源狀態，描述了有關在 Windows PowerShell 中使用外部工具的一些重要詳細資訊。
 
 ### <a name="locking-a-computer"></a>鎖定電腦
+
 透過可用的標準工具直接鎖定電腦的唯一方式，是呼叫 **user32.dll** 中的 **LockWorkstation()** 函式：
 
 ```
@@ -26,6 +28,7 @@ rundll32.exe user32.dll,LockWorkStation
 若要關閉終端機伺服器上的特定工作階段，請使用 **tsshutdn.exe** 命令列工具。
 
 ### <a name="logging-off-the-current-session"></a>登出目前的工作階段
+
 您可以使用幾項不同的技術，來登出本機系統上的工作階段。 最簡單的方式是使用遠端桌面/終端機服務命令列工具 **logoff.exe** (如需詳細資訊，請在 Windows PowerShell 命令提示字元中，輸入 **logoff /?**)。 若要登出目前使用中的工作階段，請輸入 **logoff** 且不加引數。
 
 您也可以使用 **shutdown.exe** 工具搭配其登出選項︰
@@ -36,26 +39,26 @@ shutdown.exe -l
 
 第三個選項是使用 WMI。 Win32_OperatingSystem 類別具有 Win32Shutdown 方法。 叫用方法加上 0 旗標會起始登出︰
 
-```
+```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
 如需詳細資訊，以及尋找 Win32Shutdown 方法的其他函式，請參閱 MSDN 中的＜Win32Shutdown Method of the Win32_OperatingSystem Class＞(Win32_OperatingSystem 類別的 Win32Shutdown 方法)。
 
 ### <a name="shutting-down-or-restarting-a-computer"></a>關閉或重新啟動電腦
+
 關閉並重新啟動電腦通常是相同類型的工作。 用來關閉電腦的工具通常也會用來重新啟動電腦，反之亦然。 從 Windows PowerShell 重新啟動電腦有兩個直接的作法。 使用 Tsshutdn.exe 或 Shutdown.exe 加上適當的引數。 您可以從 **tsshutdn.exe /?** 或 **shutdown.exe /?** 取得詳細的使用資訊。
 
 您也可以直接從 Windows PowerShell 使用 **Win32_OperatingSystem**，來執行關閉和重新啟動作業。
 
 若要關閉電腦，請使用 Win32Shutdown 方法加上 **1** 旗標。
 
-```
+```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
 ```
 
 若要重新啟動電腦，請使用 Win32Shutdown 方法加上 **2** 旗標。
 
-```
+```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
 ```
-

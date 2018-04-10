@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea,powershell,安全性"
-title: "JEA 角色功能"
-ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea,powershell,安全性
+title: JEA 角色功能
+ms.openlocfilehash: bd6d61443faf30e4056930a010103e6807c015c9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -280,4 +280,3 @@ JEA 使用者將可以使用一個角色功能中的任何命令、別名、提�
 ## <a name="next-steps"></a>接下來的步驟
 
 - [建立工作階段設定檔](session-configurations.md)
-

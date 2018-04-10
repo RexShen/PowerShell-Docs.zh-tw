@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: psget_moduledependencypopulation
-ms.openlocfilehash: 126cd65ac35a31f4118474bc36dac1836ec0f22e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c4c9f203e9c526ff532c2388acb6334515d66934
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>在發行作業期間準備模組相依性的邏輯
 1.  列為 RequiredModules 一部分的模組視為相依性。
@@ -29,4 +29,3 @@ ms.lasthandoff: 06/12/2017
 模組安裝期間，上方已備妥的相依性清單為安裝相依性之用。
 
 請確定在發行作業期間，系統的 $env:PSModulePath 下具有您模組的相依性。
-

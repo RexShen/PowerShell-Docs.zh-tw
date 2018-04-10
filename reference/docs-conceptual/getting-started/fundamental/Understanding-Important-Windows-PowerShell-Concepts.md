@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "了解 Windows PowerShell 重要概念"
+title: 了解 Windows PowerShell 重要概念
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 07ceaa2f3e6a192c6281cb4c99aed4c3f66afc7e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>了解 Windows PowerShell 重要概念
 Windows PowerShell 設計整合許多不同環境的概念。 具有特定殼層或程式設計環境經驗的人員會熟悉其中一些概念，但只有極少數的人員才知道所有這些概念。 查看其中一些概念，可提供有用的殼層概觀。
@@ -20,7 +20,7 @@ Windows PowerShell 設計整合許多不同環境的概念。 具有特定殼層
 ### <a name="the-command-family-is-extensible"></a>命令系列可進行擴充
 Cmd.exe 這類介面未提供可讓您直接擴充內建命令集的方法。 您可以建立在 Cmd.exe 中執行的外部命令列工具，但這些外部工具沒有服務 (例如說明整合)，而且 Cmd.exe 不會自動得知它們是否為有效命令。
 
-您所建立的 Cmdlet 以及使用嵌入式管理單元新增至 Windows PowerShell 的 Cmdlet，可以增強 Windows PowerShell 中的原生二進位命令 (稱為 *Cmdlet*，唸成 command-let)。 Windows PowerShell *嵌入式管理單元*會進行編譯，就像任何其他介面中的二進位工具一樣。 您可以使用它們將 Windows PowerShell 提供者新增至殼層，以及新的 Cmdlet。
+您所建立的 Cmdlet 以及使用嵌入式管理單元新增至 Windows PowerShell 的 Cmdlet，可以增強 Windows PowerShell 中的原生二進位命令 (稱為 *Cmdlet*，唸成 command-let)。Windows PowerShell *嵌入式管理單元*會進行編譯，就像任何其他介面中的二進位工具一樣。 您可以使用它們將 Windows PowerShell 提供者新增至殼層，以及新的 Cmdlet。
 
 基於 Windows PowerShell 內部命令的特殊本質，我們將其稱為 *Cmdlet*。
 
@@ -43,4 +43,3 @@ Cmd.exe 這類介面未提供可讓您直接擴充內建命令集的方法。 �
 Windows PowerShell 的語法功能和關鍵字與 C# 程式設計語言中所使用的語法功能和關鍵字十分類似，因為 Windows PowerShell 是以 .NET Framework 為基礎。 如果您對 C# 語言感興趣，則學習 Windows PowerShell 更容易了解該語言。
 
 如果您不是 C# 程式設計人員，則這項相似性不重要。 不過，如果您已經熟悉 C#，則相似性可讓學習 Windows PowerShell 更為簡單。
-

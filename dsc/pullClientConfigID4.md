@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "在 PowerShell 4.0 使用設定識別碼設定提取用戶端"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 在 PowerShell 4.0 使用設定識別碼設定提取用戶端
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>在 PowerShell 4.0 使用設定識別碼設定提取用戶端
 
@@ -18,28 +18,28 @@ ms.lasthandoff: 01/17/2018
 下列指令碼會設定 LCM 從名為 "PullServer" 的伺服器提取設定：
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-在此指令碼中，**DownloadManagerCustomData** 會傳遞提取伺服器的 URL，並 (適用於此範例) 允許不安全的連線。 
+在此指令碼中，**DownloadManagerCustomData** 會傳遞提取伺服器的 URL，並 (適用於此範例) 允許不安全的連線。
 
 執行這個指令碼之後，它會建立新的輸出資料夾，稱為 **SimpleMetaConfigurationForPull**，並在該處放入中繼設定 MOF 檔案。
 
-若要套用此設定，請以 **ComputerName** (使用 "localhost") 和 **Path** (目標節點的 localhost.meta.mof 檔案位置路徑) 參數使用 **Set-DscLocalConfigurationManager**。 例如： 
+若要套用此設定，請以 **ComputerName** (使用 "localhost") 和 **Path** (目標節點的 localhost.meta.mof 檔案位置路徑) 參數使用 **Set-DscLocalConfigurationManager**。 例如：
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 **DscFileDownloadManager** 採用 **SourcePath** 屬性而非 **ServerUrl**。 下列指令碼會設定 LCM，使其從名為 "CONTOSO-SERVER" 的伺服器上名為 "SmbDscShare" 的 SMB 共用提取設定：
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [設定 DSC Web 提取伺服器](pullServer.md)
 - [設定 DSC SMB 提取伺服器](pullServerSMB.md)
-

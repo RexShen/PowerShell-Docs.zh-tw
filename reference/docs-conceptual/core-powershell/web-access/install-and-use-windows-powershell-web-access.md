@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "安裝和使用 Windows PowerShell Web 存取"
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: 安裝和使用 Windows PowerShell Web 存取
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -96,7 +96,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
    >**![注意](images/note.jpeg) 注意**
    >
    >使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取，預設不會新增網頁伺服器 (IIS) 管理工具。 如果您想要在與 Windows PowerShell Web 存取閘道相同的伺服器上安裝管理工具，可將 `-IncludeManagementTools` 參數新增至安裝命令 (如本步驟所提供)。 如果您從遠端電腦管理 Windows PowerShell Web 存取網站，在您要用來管理閘道的電腦上，透過安裝 [Windows 8.1 的遠端伺服器管理工具](http://go.microsoft.com/fwlink/?LinkID=304145)或 [Windows 8 的遠端伺服器管理工具](http://go.microsoft.com/fwlink/p/?LinkID=238560)來安裝 [IIS 管理員] 嵌入式管理單元。
-   
+
    若要在離線 VHD 安裝角色及功能，您必須新增 `-ComputerName` 參數及 `-VHD` 參數。 `-ComputerName` 參數包含要掛接 VHD 的伺服器名稱，`-VHD` 參數則包含指定伺服器上的 VHD 檔案路徑。
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -113,8 +113,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 您可以執行 `Install-PswaWebApplication` Cmdlet 或在 IIS 管理員中執行 GUI 設定步驟，來完成 Windows PowerShell Web 存取 Web 應用程式設定。 根據預設，Cmdlet 會在 [IIS 管理員] 上顯示的 [預設的網站] 容器中，安裝 Web 應用程式 **pswa** (以及應用程式集區 **pswa_pool**)；如有需要，可以指示 Cmdlet 變更 Web 應用程式的預設網站容器。 IIS 管理員提供 Web 應用程式可用的設定選項，例如變更連接埠號碼或安全通訊端層 (SSL) 憑證。
 
 >**![安全性提示](images/securitynote.jpeg) 安全性提示**
-> 
->強烈建議系統管理員將閘道設定為使用 CA 簽署的有效憑證。 
+>
+>強烈建議系統管理員將閘道設定為使用 CA 簽署的有效憑證。
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>使用 Install-PswaWebApplication 以測試憑證設定 Windows PowerShell Web 存取閘道
 
@@ -146,8 +146,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 在這個範例中，針對 Windows PowerShell Web 存取產生的網站是 https://\<伺服器名稱\>/myWebApp。
 
->**![注意](images/note.jpeg) 注意** 
-> 
+>**![注意](images/note.jpeg) 注意**
+>
 >必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。 如需詳細資訊，請參閱[設定限制性授權規則](#configure-a-restrictive-authorization-rule)和 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>使用 Install-PswaWebApplication 和 IIS 管理員以正版憑證設定 Windows PowerShell Web 存取閘道
@@ -194,9 +194,9 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     您可以在瀏覽器視窗中開啟 **https://\<伺服器名稱\>/pswa**，來存取 Windows PowerShell Web 存取。
 
->**![注意](images/note.jpeg) 注意** 
-> 
->必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。 
+>**![注意](images/note.jpeg) 注意**
+>
+>必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。
 >如需詳細資訊，請參閱本主題中的[設定限制性授權規則](#configure-a-restrictive-authorization-rule)，以及 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>設定限制性授權規則
@@ -220,7 +220,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。
-   
+
    在下列範例中，`JSmith` 網域中的使用者 `Contoso` 被授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -255,7 +255,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 6. 請注意，系統會提示您新增必要的功能，例如 .NET Framework 4.5 以及網頁伺服器 (IIS) 的角色服務。 新增必要的功能，然後繼續。
 
-    >**![注意](images/note.jpeg) 注意** 
+    >**![注意](images/note.jpeg) 注意**
     >
     >使用 [新增角色及功能精靈] 安裝 Windows PowerShell Web 存取，也會安裝網頁伺服器 (IIS)，包括 [IIS 管理員] 嵌入式管理單元。 如果您使用 [新增角色及功能精靈]，預設會安裝嵌入式管理單元及其他 IIS 管理工具。 如果您依下列程序中所述方式使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取，預設不會新增管理工具。
 
@@ -293,7 +293,10 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 10. ![](images/SecurityNote.jpeg) 選擇性的安全性步驟：
 
-    在樹狀目錄窗格中選取網站後，按兩下 [內容] 窗格中的 [SSL 設定]。 選取 [需要 SSL]，然後在 [動作] 窗格中，按一下 [套用]。 您也可以選擇性地在 [SSL 設定] 窗格中，要求連線到 Windows PowerShell Web 存取網站的使用者必須擁有用戶端憑證。 用戶端憑證可協助確認用戶端裝置使用者的身份。 如需要求用戶端憑證如何增加 Windows PowerShell Web 存取安全性的詳細資訊，請參閱本指南中的 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
+    在樹狀目錄窗格中選取網站後，按兩下 [內容] 窗格中的 [SSL 設定]。
+選取 [需要 SSL]，然後在 [動作] 窗格中，按一下 [套用]。
+您也可以選擇性地在 [SSL 設定] 窗格中，要求連線到 Windows PowerShell Web 存取網站的使用者必須擁有用戶端憑證。 用戶端憑證可協助確認用戶端裝置使用者的身份。
+如需要求用戶端憑證如何增加 Windows PowerShell Web 存取安全性的詳細資訊，請參閱本指南中的 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
 11. 開啟用戶端裝置的瀏覽器工作階段。 如需支援的瀏覽器及裝置的詳細資訊，請參閱本主題的[瀏覽器及用戶端裝置支援](#browser-and-client-device-support)。
 
@@ -301,9 +304,9 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     瀏覽器應該會顯示 Windows PowerShell Web 存取主控台登入頁面。
 
-    >**![注意](images/note.jpeg) 注意** 
-    > 
-    >必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。 
+    >**![注意](images/note.jpeg) 注意**
+    >
+    >必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。
     >如需詳細資訊，請參閱本主題中的[設定限制性授權規則](#configure-a-restrictive-authorization-rule)，以及 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
 13. 在使用提高的使用者權限 (以系統管理員身分執行) 開啟的 Windows PowerShell 工作階段中，執行下列指令碼，其中 *application_pool_name* 代表您在步驟 3 建立的應用程式集區名稱，以便授與該應用程式集區授權檔案的存取權。
@@ -364,9 +367,9 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     由於根網站會指向 Windows PowerShell Web 存取資料夾，因此，當您開啟 **https://\<*gateway_server_name*\>** 時，瀏覽器應該會顯示 Windows PowerShell Web 存取登入頁面。 您應該不需要在 URL 中新增 **/pswa**。
 
-    >**![注意](images/note.jpeg) 注意** 
-    > 
-    >必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。 
+    >**![注意](images/note.jpeg) 注意**
+    >
+    >必須透過新增授權規則，讓使用者獲得網站存取權，才能進行登入。
     >如需詳細資訊，請參閱本主題中的[設定限制性授權規則](#configure-a-restrictive-authorization-rule)，以及 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>設定限制性授權規則
@@ -391,13 +394,13 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    這個授權規則允許特定使用者存取網路 (他們通常擁有其存取權) 上的一部電腦，並能夠存取範圍是使用者一般指令碼編寫及 cmdlet 需求的特定工作階段設定。 
-    
+    這個授權規則允許特定使用者存取網路 (他們通常擁有其存取權) 上的一部電腦，並能夠存取範圍是使用者一般指令碼編寫及 cmdlet 需求的特定工作階段設定。
+
     在下列範例中，`JSmith` 網域中的使用者 `Contoso` 被授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. 執行 `Get-PswaAuthorizationRule` Cmdlet 或 `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` 確認已建立規則。 
+4. 執行 `Get-PswaAuthorizationRule` Cmdlet 或 `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` 確認已建立規則。
 
     例如，`Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214`。
 

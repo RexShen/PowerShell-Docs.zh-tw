@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC 套件資源"
-ms.openlocfilehash: 68b996e0f51e60bc178c27e3a71f07fb7220f847
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC 套件資源
+ms.openlocfilehash: cfa9d53d5ea588b0ec97e5503302a451caa09e03
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-package-resource"></a>DSC 套件資源
 
@@ -33,17 +33,17 @@ Package [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Properties
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 指出您要確保其特定狀態的套件名稱。| 
-| 路徑| 指出套件所在的檔案路徑| 
-| ProductId| 指出唯一識別套件的產品識別碼。| 
-| 引數| 列出將如同所提供來傳遞至套件的引數字串。| 
-| 認證| 提供遠端來源套件的存取權。 這個屬性不會用於安裝套件。 在本機系統上一律安裝此套件。| 
-| Ensure| 指出是否要安裝此套件。 設定此屬性為 "Absent" 以確保不會安裝此套件 (或如果已安裝，則解除安裝此套件)。 將它設定為 "Present" (預設值) 以確保已安裝此套件。| 
-| LogPath| 指出您想要提供者儲存記錄檔來安裝或解除安裝此套件的完整路徑。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
-| ReturnCode| 指出預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 指出您要確保其特定狀態的套件名稱。|
+| 路徑| 指出套件所在的檔案路徑|
+| ProductId| 指出唯一識別套件的產品識別碼。|
+| 引數| 列出將如同所提供來傳遞至套件的引數字串。|
+| 認證| 提供遠端來源套件的存取權。 這個屬性不會用於安裝套件。 在本機系統上一律安裝此套件。|
+| Ensure| 指出是否要安裝此套件。 設定此屬性為 "Absent" 以確保不會安裝此套件 (或如果已安裝，則解除安裝此套件)。 將它設定為 "Present" (預設值) 以確保已安裝此套件。|
+| LogPath| 指出您想要提供者儲存記錄檔來安裝或解除安裝此套件的完整路徑。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
+| ReturnCode| 指出預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。|
 
 ## <a name="example"></a>範例
 
@@ -58,7 +58,6 @@ Configuration PackageTest
         Path        = "$Env:SystemDrive\TestFolder\TestProject.msi"
         Name        = "TestPackage"
         ProductId   = "ACDDCDAF-80C6-41E6-A1B9-8ABD8A05027E"
-    } 
+    }
 }
 ```
-

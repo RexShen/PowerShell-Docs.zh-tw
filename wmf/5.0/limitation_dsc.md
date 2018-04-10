@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 66ceea383b78b2654caa4f1de16a30beea0e7fd3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>預期狀態設定 (DSC) 的已知問題和限制
 
@@ -30,7 +30,7 @@ Start-DscConfiguration 和其他 DSC Cmdlet 可能會在安裝 WMF 5.0 RTM 之�
 ```
 
 **解決方式︰**在提高權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，以刪除 DSCEngineCache.mof︰
-    
+
 ```powershell
 Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
@@ -151,7 +151,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 **解決方式︰**無。
 
 
-<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>在 DSC 以類別為基礎的資源之 $script 範圍中定義的變數和函數，不會在對 DSC 資源的多個呼叫之間保留 
+<a name="variables--functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>在 DSC 以類別為基礎的資源之 $script 範圍中定義的變數和函數，不會在對 DSC 資源的多個呼叫之間保留
 -------------------------------------------------------------------------------------------------------------------------------------
 
 如果組態使用任何以類別為基礎的資源，且該資源具有 $script 範圍中定義的變數或函數時，對 Start-DSCConfiguration 的多個連續呼叫將失敗。
@@ -184,7 +184,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 
 WindowsOptionalFeature 資源不適用於 Windows 7。 此資源需要 DISM 模組，以及在 Windows 8 起和較新版本 Windows 作業系統中可用的 DISM Cmdlet。
 
-<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>針對以類別為基礎的 DSC 資源，Import-DscResource -ModuleVersion 可能無法如預期般運作   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>針對以類別為基礎的 DSC 資源，Import-DscResource -ModuleVersion 可能無法如預期般運作
 ------------------------------------------------------------------------------------------
 如果編譯節點有多個版本的以類別為基礎的 DSC 資源模組，`Import-DscResource -ModuleVersion` 就不會選擇指定的版本，並產生下列編譯錯誤。
 
@@ -198,16 +198,16 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 ```
 
 **解決方式︰**藉由將 *ModuleSpecification* 物件定義為 `-ModuleName` 並指定 `RequiredVersion` 索引鍵來匯入所需的版本，如下所示︰
-``` PowerShell  
-Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}  
-```  
+``` PowerShell
+Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
+```
 
 <a name="some-dsc-resources-like-registry-resource-may-start-to-take-a-long-time-to-process-the-request"></a>某些像登錄資源這樣的 DSC 資源可能會啟動，花費較長的時間來處理要求。
 --------------------------------------------------------------------------------------------------------------------------------
 
 **解決方法 1：**建立排程工作，定期清除下列資料夾。
-``` PowerShell 
-$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis 
+``` PowerShell
+$env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
 **解決方法 2：**變更 DSC 設定，清除設定結尾的 *CommandAnalysis* 資料夾。
@@ -226,7 +226,7 @@ Configuration $configName
         ValueData = $Node.RegisteredOwnerData
     }
     #
-    # Script to delete the config 
+    # Script to delete the config
     #
     script DeleteCommandAnalysisCache
     {
@@ -237,4 +237,3 @@ Configuration $configName
     }
 }
 ```
-

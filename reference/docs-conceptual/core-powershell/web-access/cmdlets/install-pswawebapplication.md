@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: install pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: ce4d01fbe8a83924e7023d792c68c903a32e07d4
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c7f7768a41b6784d8c29afa1fccf0b855160b777
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
@@ -35,7 +35,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 指定建立測試憑證。 如果這個參數設定為 true，則此 Cmdlet 會建立測試憑證，並設定 Windows PowerShell Web 存取 Web 應用程式針對 HTTPS 要求使用憑證。 如果這個參數設定為 false，則不會建立憑證或繫結。 如果使用其他憑證進行 Windows PowerShell Web 存取，請將此值設定為 false。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -48,7 +48,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 指定 Web 應用程式的名稱。 這會顯示為 Windows PowerShell Web 存取 URL 的最後一部分。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -61,7 +61,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 指定要安裝此 Windows PowerShell Web 存取 Web 應用程式之網頁伺服器 (IIS) 網站的名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -74,7 +74,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 執行 Cmdlet 之前先提示您確認。
 
-|||  
+|||
 |-|-|
 | 必要？                            | false                                |
 | 位置？                            | 具名                                |
@@ -87,7 +87,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 顯示執行 Cmdlet 後會發生的情況。
 未執行 Cmdlet。
 
-|||  
+|||
 |-|-|
 | 必要？                            | false                                |
 | 位置？                            | 具名                                |

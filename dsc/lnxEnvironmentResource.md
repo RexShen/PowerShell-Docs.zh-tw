@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC for Linux nxEnvironment 資源"
-ms.openlocfilehash: 61e0c7e77e486cea878351f1929d73f1f80710d8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC for Linux nxEnvironment 資源
+ms.openlocfilehash: 6d1d5e578e9a7ddda0e70063f86867de2e87a52e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC for Linux nxEnvironment 資源
 
@@ -29,13 +29,13 @@ nxEnvironment <string> #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性 |  描述 | 
+|  屬性 |  描述 |
 |---|---|
-| 名稱| 指出您要確保其特定狀態的環境變數名稱。| 
-| 值| 要指派給環境變數的值。| 
-| Ensure| 決定是否要檢查變數存在。 將此屬性設定為 "Present" 以確保變數存在。 設為 "Absent" 以確保此變數不存在。 預設值為 "Present"。| 
-| 路徑| 定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設為 **$true**，否則請設為 **$false**。 預設值為 **$false**。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
+| 名稱| 指出您要確保其特定狀態的環境變數名稱。|
+| 值| 要指派給環境變數的值。|
+| Ensure| 決定是否要檢查變數存在。 將此屬性設定為 "Present" 以確保變數存在。 設為 "Absent" 以確保此變數不存在。 預設值為 "Present"。|
+| 路徑| 定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設為 **$true**，否則請設為 **$false**。 預設值為 **$false**。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="additional-information"></a>其他資訊
 
@@ -47,7 +47,7 @@ nxEnvironment <string> #ResourceName
 下列範例示範如何使用 **nxEnvironment** 資源以確保 **TestEnvironmentVariable** 存在且具有值 "Test-Value"。 如果 **TestEnvironmentVariable** 不存在，就會加以建立。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 
 nxEnvironment EnvironmentExample
@@ -57,5 +57,3 @@ nxEnvironment EnvironmentExample
     Value = “TestValue”
 }
 ```
-
-

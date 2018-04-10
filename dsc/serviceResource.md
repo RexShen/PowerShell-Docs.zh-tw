@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC Service 資源"
-ms.openlocfilehash: a549530edc19496a68c036fecbd18b0072cc6d74
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC Service 資源
+ms.openlocfilehash: 59d7c0c7147bf28b92d64a25c0d67c277e0bb210
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-service-resource"></a>DSC Service 資源
 
@@ -36,18 +36,18 @@ Service [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 表示服務名稱。 請注意，有時候和顯示名稱不同。 您可以使用 Get-Service Cmdlet 取得服務清單及其目前狀態。| 
-| BuiltInAccount| 表示用於服務的登入帳戶。 這個屬性所允許的值為：**LocalService**、**LocalSystem** 和 **NetworkService**。| 
-| 認證| 表示執行服務的帳戶認證。 這個屬性與 __BuiltinAccount__ 屬性不能同時使用。| 
-| DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
-| StartupType| 表示服務的啟動類型。 這個屬性所允許的值為：**Automatic**、**Disabled** 和 **Manual**| 
-| State| 表示您要確保的服務狀態。| 
-| 描述 | 表示目標服務的描述。| 
-| DisplayName | 表示目標服務的顯示名稱。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 表示服務名稱。 請注意，有時候和顯示名稱不同。 您可以使用 Get-Service Cmdlet 取得服務清單及其目前狀態。|
+| BuiltInAccount| 表示用於服務的登入帳戶。 這個屬性所允許的值為：**LocalService**、**LocalSystem** 和 **NetworkService**。|
+| 認證| 表示執行服務的帳戶認證。 這個屬性與 __BuiltinAccount__ 屬性不能同時使用。|
+| DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
+| StartupType| 表示服務的啟動類型。 這個屬性所允許的值為：**Automatic**、**Disabled** 和 **Manual**|
+| State| 表示您要確保的服務狀態。|
+| 描述 | 表示目標服務的描述。|
+| DisplayName | 表示目標服務的顯示名稱。|
 | Ensure | 表示系統上是否有目標服務。 請將此屬性設定為**Absent** 以確保目標服務不存在。 屬性設定為 **Present** (預設值)，可確保目標服務存在。|
-| 路徑 | 表示新服務的二進位檔路徑。| 
+| 路徑 | 表示新服務的二進位檔路徑。|
 
 ## <a name="example"></a>範例
 
@@ -63,8 +63,7 @@ configuration ServiceTest
             Name        = "TermService"
             StartupType = "Manual"
             State       = "Running"
-        } 
+        }
     }
 }
 ```
-

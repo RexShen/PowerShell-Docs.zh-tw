@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>建立及連接到 JEA 端點
 若要建立 JEA 端點，您必須建立並註冊特別設定的 PowerShell 工作階段組態檔，該組態檔可使用 **New-PSSessionConfigurationFile** Cmdlet 產生，
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-如此會建立工作階段組態檔，看起來像這樣︰ 
+如此會建立工作階段組態檔，看起來像這樣︰
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 建立 JEA 端點時，必須設定下列參數的命令 (和檔案中的對應金鑰)︰
 1.  將 SessionType 設為 RestrictedRemoteServer
@@ -64,7 +64,7 @@ RoleDefinitions = @{
 RoleDefinitions 欄位會定義群組與角色功能的存取權之對應關係。  角色功能是一個檔案，定義將向連接的使用者公開的一組功能。  您可以使用 **New-PSRoleCapabilityFile** 命令建立角色功能，
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 如此將產生一種範本角色功能，看起來像這樣︰
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 若要供 JEA 工作階段組態使用，必須在名為 “RoleCapabilities” 的資料夾中，將角色功能儲存為有效的 PowerShell 模組。 如有需要，模組可能會有多個角色功能檔案。
@@ -138,7 +138,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 最後，當您完成自訂工作階段組態和相關角色功能後，請執行 **Register-PSSessionConfiguration** 註冊此工作階段組態並建立端點。
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>連接到 JEA 端點
@@ -148,4 +148,3 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的允許清單。 如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。
-

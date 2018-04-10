@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cc4ab8d41d4c6aace72cbeeabcf510fab6d3a999
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有相容 PowerShell 版本的模組
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
@@ -68,7 +68,7 @@ Core
 
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>模組作者可以發行以其中一個 PowerShell 版本 (桌面和核心) 或兩者同時為目標的單一模組 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>模組作者可以發行以其中一個 PowerShell 版本 (桌面和核心) 或兩者同時為目標的單一模組
 
 單一模組可在桌面和核心版本上使用，作者需在該模組的 RootModule 中或使用 $PSEdition 變數的模組資訊清單中，新增必要的邏輯。
 模組可以有兩組以 CoreCLR 和 FullCLR 為目標的編譯 DLL。
@@ -77,18 +77,18 @@ Core
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>選項 1︰封裝將多個版本的 PowerShell 作為目標的模組
 
 #### <a name="module-folder-contents"></a>模組資料夾內容
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
 - PSScriptAnalyzer.psm1
 - ScriptAnalyzer.format.ps1xml
 - ScriptAnalyzer.types.ps1xml
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - en-US\about_PSScriptAnalyzer.help.txt
 - en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - Settings\CmdletDesign.psd1
 - Settings\DSC.psd1
 - Settings\ScriptFunctions.psd1
@@ -99,7 +99,7 @@ Core
 
 ```powershell
 @{
- 
+
 # Author of this module
 Author = 'Microsoft Corporation'
 
@@ -137,7 +137,7 @@ else
 {
     if ($PSVersionTable.PSVersion -lt [Version]'5.0') {
         $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }    
+    }
 }
 
 $binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
@@ -146,14 +146,14 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 # When the module is unloaded, remove the nested binary module that was loaded with it
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
-} 
+}
 
 ```
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>選項 2︰在 PSD1 檔案中使用 $PSEdition 變數，以載入適當的 Dll 和巢狀/必要的模組
 
 PS 5.1 或更新版本的模組資訊清單檔案中允許 $PSEdition 全域變數。
-模組作者可透過使用此變數，指定模組資訊清單檔案中的條件值。 在限制的語言模式或 [資料] 區段中，可以參考 $PSEdition 變數。 
+模組作者可透過使用此變數，指定模組資訊清單檔案中的條件值。 在限制的語言模式或 [資料] 區段中，可以參考 $PSEdition 變數。
 
 「請注意」一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單，或使用 $PSEdition 變數，就無法在較低版本的 PowerShell 上進行匯入。
 
@@ -161,9 +161,9 @@ PS 5.1 或更新版本的模組資訊清單檔案中允許 $PSEdition 全域變�
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>使用 CompatiblePSEditions 金鑰的模組資訊清單檔案範例
 
 ```powershell
-@{ 
+@{
 # - - -
- 
+
 # Script module or binary module file associated with this manifest.
 RootModule = if($PSEdition -eq 'Core')
 {
@@ -173,10 +173,10 @@ else # Desktop
 {
 'clr\MyFullClrRM.dll'
 }
- 
+
 # Supported PSEditions
 CompatiblePSEditions = 'Desktop', 'Core'
- 
+
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = if($PSEdition -eq 'Core')
 {
@@ -188,7 +188,7 @@ else # Desktop
 'clr\MyFullClrNM1.dll',
 'clr\MyFullClrNM2.dll'
 }
- 
+
 # -- - -
 }
 ```
@@ -198,30 +198,30 @@ else # Desktop
 ```powershell
 
 PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
- 
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
-d-----         7/5/2016   1:37 PM                clr                                                                                 
-d-----         7/5/2016   1:36 PM                coreclr                                                                             
--a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1                                                             
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/5/2016   1:37 PM                clr
+d-----         7/5/2016   1:36 PM                coreclr
+-a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl                                                                      
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
 ## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell 資源庫使用者可以使用 PSEdition_Desktop 和 PSEdition_Core 標記，尋找特定 PowerShell 版本支援的模組清單。
@@ -242,4 +242,3 @@ Find-Module -Tag PSEditon_Core
 ### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[搭配 PSEditions 的指令碼](../script/scriptwithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery 的 PSEditions 支援](../../psgallery/psgallery_pseditions.md)
 ### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[更新模組資訊清單] (./psget_update-modulemanifest.md)
-

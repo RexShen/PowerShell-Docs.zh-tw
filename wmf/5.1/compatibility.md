@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-title: "WMF 5.1 作業系統相容性"
-ms.openlocfilehash: 04217c5abb0f04a5dc6b15cd956a632f7b84c9bb
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
-ms.translationtype: MT
+keywords: wmf,powershell,設定
+title: WMF 5.1 作業系統相容性
+ms.openlocfilehash: a20c8a15e1d05253d99f25b5b8ae8e5d7f816089
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 作業系統相容性 #
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 03/15/2018
 | 作業系統版本 | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
 | Windows Server 2016 | 隨產品附贈* |  |  |  |  |
-| Windows 10 | 隨產品附贈* | 隨產品附贈*  | | | |  
+| Windows 10 | 隨產品附贈* | 隨產品附贈*  | | | |
 | Windows Server 2012 R2| 是 | 是 | 隨產品附贈 |  |  |
 | Windows 8.1 | 是 | 是 |  隨產品附贈 |  |  |
 | Windows Server 2012 | 是 | 是 | 是 |  隨產品附贈 | |
@@ -31,8 +31,10 @@ ms.lasthandoff: 03/15/2018
 
 
 有關「隨產品附贈*」：WMF 5.0 的功能已包含在原始的 Windows 10 RTM 版本中。
-WMF 5.1 的功能已包含在 Windows Server 2016 和 Windows 10 Anniversary Edition 中。 WMF 5.1 不適用於這些作業系統版本，因為更新會透過 Windows Update 提供。
+WMF 5.1 的功能已包含在 Windows Server 2016 和 Windows 10 Anniversary Edition 中。
+WMF 5.1 不適用於這些作業系統版本，因為更新會透過 Windows Update 提供。
 
 
-要注意的是 Windows 並不會隨附 WMF。 WMF 為升級套件，可以為先前發行的 Windows 版本提供一組 Windows 功能。 在針對這些功能尋求協助時，這將會是重要的差異，因為這些元件的版本將不會符合原始作業系統所隨附元件的版本。
-
+要注意的是 Windows 並不會隨附 WMF。
+WMF 為升級套件，可以為先前發行的 Windows 版本提供一組 Windows 功能。
+在針對這些功能尋求協助時，這將會是重要的差異，因為這些元件的版本將不會符合原始作業系統所隨附元件的版本。

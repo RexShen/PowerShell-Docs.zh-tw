@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell 5.0 的新功能"
-ms.openlocfilehash: 3a412b35c593c99fb8ea8307b12ccc05871863f4
-ms.sourcegitcommit: e2360ac94fe4deb0ed0f5c8c8d9b293551ec8030
+title: Windows PowerShell 5.0 的新功能
+ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
@@ -14,7 +14,7 @@ Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改
 Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Windows PowerShell 3.0 及 Windows PowerShell 2.0 所設計的 Cmdlet、提供者、模組、嵌入式管理單元、指令碼、函式及設定檔，通常可在不進行變更的情況下於 Windows PowerShell 5.0 中運作。
 
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
-根據預設，Windows PowerShell 5.0 已安裝於 Windows Server 2016 Technical Preview 和 Windows 10。 
+根據預設，Windows PowerShell 5.0 已安裝於 Windows Server 2016 Technical Preview 和 Windows 10。
 
 若要在 Windows Server 2012 R2、Windows 8.1 企業版或 Windows 8.1 專業版上安裝 Windows PowerShell 5.0，請下載並安裝 [Windows Management Framework 5.0](http://aka.ms/wmf5download)。 請務必先閱讀下載詳細資料，並確認符合所有系統需求，然後再安裝 Windows Management Framework 5.0。
 
@@ -288,7 +288,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 - 現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 
-- 新的功能表命令 [全部中斷]\ (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
+- 新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
@@ -713,4 +713,3 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 ## <a name="see-also"></a>另請參閱
 - [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
-

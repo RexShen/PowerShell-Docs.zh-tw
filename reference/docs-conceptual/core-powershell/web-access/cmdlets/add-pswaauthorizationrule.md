@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: add pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 指定 Active Directory 網域服務 (AD DS) 或本機群組中，此規則授與存取權的電腦群組名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -75,7 +75,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 指定此規則授與存取權的電腦名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -88,7 +88,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 指定此規則授與存取權的 Windows PowerShell 工作階段設定名稱，也稱為 Runspace。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -101,7 +101,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 指定您要用來變更 Windows PowerShell Web 存取授權規則之使用者帳戶的 **PSCredential** 物件。 如果您未新增這個參數，此 Cmdlet 就會使用目前登入的使用者帳戶。 若要取得從遠端新增授權規則所需的 **PSCredential** 物件，請執行 [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) Cmdlet。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -115,7 +115,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 強制執行命令而不要求使用者確認。\
 此外，當您輸入簡單或簡短電腦名稱時 (例如非網域名稱的名稱或不完整的名稱)，它也會提示確認。 為了安全起見會要求確認，讓您只有在電腦位於工作群組時，才能使用簡單名稱來新增電腦。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -128,7 +128,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 指定此規則的易記名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -141,7 +141,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 指定 AD DS 或本機群組中，此規則授與存取權的一或多個使用者群組名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -155,7 +155,7 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 指定此規則授與存取權的一或多個使用者。 使用者名稱可以是閘道電腦上的本機使用者帳戶，或是 AD DS 中的使用者。
 格式是 `domain\user` 或 `computer\user`。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -217,9 +217,9 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 此範例示範所有參數如何依屬性名稱採用來自管線的值。
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

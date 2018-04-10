@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC WindowsFeatureSet 資源"
-ms.openlocfilehash: a2bb008852ccfdc04998a57d3e64e08bf05e6433
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC WindowsFeatureSet 資源
+ms.openlocfilehash: a6fecba0397b88ce39f6f1a1be6cc366c8a983a6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet 資源
 
@@ -23,28 +23,28 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsFeatureSet** 資源提�
 ```
 WindowsFeatureSet [string] #ResourceName
 {
-    Name = [string[]] 
+    Name = [string[]]
     [ Ensure = [string] { Absent | Present }  ]
     [ Source = [string] ]
     [ IncludeAllSubFeature = [bool] ]
     [ Credential = [PSCredential] ]
     [ LogPath = [string] ]
     [ DependsOn = [string[]] ]
-    
+
 }
 ```
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 您想要確保新增或移除的角色或功能名稱。 這與 [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) Cmdlet 的 **Name** 屬性相同，且不是角色或功能的顯示名稱。| 
-| 認證| 用以新增或移除角色或功能的認證。| 
-| Ensure| 表示是否已新增角色或功能。 若要確保新增角色或功能，這個屬性請設為 "Present"。若要確保移除角色或功能，請將屬性設定為 "Absent"。| 
-| IncludeAllSubFeature| 這個屬性設為 **$true** 可讓您使用以 **Name** 屬性指定的功能包含所有必要的子功能。| 
-| LogPath| 要讓資源提供者記錄作業的記錄檔路徑。| 
-| DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
-| 來源| 如有必要，表示用於安裝的來源檔案位置。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 您想要確保新增或移除的角色或功能名稱。 這與 [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) Cmdlet 的 **Name** 屬性相同，且不是角色或功能的顯示名稱。|
+| 認證| 用以新增或移除角色或功能的認證。|
+| Ensure| 表示是否已新增角色或功能。 若要確保新增角色或功能，這個屬性請設為 "Present"。若要確保移除角色或功能，請將屬性設定為 "Absent"。|
+| IncludeAllSubFeature| 這個屬性設為 **$true** 可讓您使用以 **Name** 屬性指定的功能包含所有必要的子功能。|
+| LogPath| 要讓資源提供者記錄作業的記錄檔路徑。|
+| DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
+| 來源| 如有必要，表示用於安裝的來源檔案位置。|
 
 ## <a name="example"></a>範例
 
@@ -62,8 +62,7 @@ configuration FeatureSetTest
             Name                    = @("SMTP-Server", "Web-Server")
             Ensure                  = 'Present'
             IncludeAllSubFeature    = $true
-        } 
+        }
     }
 }
 ```
-

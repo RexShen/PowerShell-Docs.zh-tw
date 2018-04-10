@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: Register-PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="register-psrepository"></a>Register-PSRepository
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 09/29/2017
 
 ## <a name="description"></a>描述
 
-Register-PSRepository Cmdlet 會註冊 PowerShell 模組的線上存放庫。 註冊存放庫之後，即可透過 Find-Module、Install-Module 和 Publish-Module Cmdlet 進行參考。 已註冊的存放庫會變成 Find-Module 和 Install-Module 中的預設存放庫。 
+Register-PSRepository Cmdlet 會註冊 PowerShell 模組的線上存放庫。 註冊存放庫之後，即可透過 Find-Module、Install-Module 和 Publish-Module Cmdlet 進行參考。 已註冊的存放庫會變成 Find-Module 和 Install-Module 中的預設存放庫。
 
 已註冊的存放庫是使用者特有的。 它們並未註冊在整個系統內容中。
 
@@ -33,7 +33,8 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ## <a name="example-commands"></a>範例命令
 
 ### <a name="register-a-powershell-repository"></a>註冊 PowerShell 存放庫
-您可以設定 PowerShellGet 處理內部存放庫。 註冊存放庫後，您可以使用 Find-Module 和 Install-Module 搭配存放庫。
+您可以設定 PowerShellGet 處理內部存放庫。
+註冊存放庫後，您可以使用 Find-Module 和 Install-Module 搭配存放庫。
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

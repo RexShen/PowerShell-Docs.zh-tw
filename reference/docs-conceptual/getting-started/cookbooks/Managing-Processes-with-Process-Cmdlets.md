@@ -1,24 +1,27 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用處理程序 Cmdlet 管理處理程序"
+title: 使用處理程序 Cmdlet 管理處理程序
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-ms.openlocfilehash: 3786fb77167746d6a477dffdd4ea13e863c99964
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d6d7daa810dce2d476566e4d30f03cc95bf730e6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>使用處理程序 Cmdlet 管理處理程序
+
 您可以使用 Windows PowerShell 中的處理程序 Cmdlet，管理 Windows PowerShell 中的本機和遠端處理程序。
 
 ## <a name="getting-processes-get-process"></a>取得處理程序 (Get-Process)
+
 若要取得在本機電腦上執行的處理程序，請在不使用參數的情況下執行 **Get-Process**。
 
 您可以藉由指定處理程序的名稱或識別碼，來取得特定處理程序。 下列命令會取得閒置處理程序︰
 
 ```
 PS> Get-Process -id 0
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
       0       0        0         16     0               0 Idle
@@ -28,6 +31,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 ```
 PS> Get-Process -Id 99
+
 Get-Process : No process with process ID 99 was found.
 At line:1 char:12
 + Get-Process  <<<< -Id 99
@@ -39,6 +43,7 @@ At line:1 char:12
 
 ```
 PS> Get-Process -Name ex*
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     234       7     5572      12484   134     2.98   1684 EXCEL
@@ -50,7 +55,8 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 **Get-Process** 也接受 Name 參數有多個值。
 
 ```
-PS> Get-Process -Name exp*,power* 
+PS> Get-Process -Name exp*,power*
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     540      15    35172      48148   141    88.44    408 explorer
@@ -61,6 +67,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     258       8    29772      38636   130            3700 powershell
@@ -72,6 +79,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
+
   Id ProcessName MachineName
   -- ----------- -----------
 3700 powershell  Server01
@@ -79,17 +87,17 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-這個更複雜的命令會將 MachineName 屬性新增至標準 Get-Process 顯示。 倒單引號 (\`)(ASCII 96) 是 Windows PowerShell 接續字元。
+這個更複雜的命令會將 MachineName 屬性新增至標準 Get-Process 顯示。
 
 ```
-get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
-                    @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, `
-                    @{Label="PM(K)";Expression={[int]($_.PM/1024)}}, `
-                    @{Label="WS(K)";Expression={[int]($_.WS/1024)}}, `
-                    @{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, `
-                    @{Label="CPU(s)";Expression={if ($_.CPU -ne $()` 
-                    {$_.CPU.ToString("N")}}}, `                                                                         
-                    Id, ProcessName, MachineName -auto
+PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
+    Format-Table -Property Handles,
+        @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}},
+        @{Label="PM(K)";Expression={[int]($_.PM/1024)}},
+        @{Label="WS(K)";Expression={[int]($_.WS/1024)}},
+        @{Label="VM(M)";Expression={[int]($_.VM/1MB)}},
+        @{Label="CPU(s)";Expression={if ($_.CPU -ne $() {$_.CPU.ToString("N")}}},
+        Id, ProcessName, MachineName -auto
 
 Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
 -------  ------  ----- ----- ----- ------  -- -----------  -----------
@@ -99,6 +107,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
 ```
 
 ## <a name="stopping-processes-stop-process"></a>停止處理程序 (Stop-Process)
+
 Windows PowerShell 可讓您彈性地列出處理程序，但停止處理程序又如何？
 
 **Stop-Process** Cmdlet 接受使用 Name 或 Id 指定您要停止的處理程序。 您是否能夠停止處理程序取決於您的權限。 某些處理程序無法停止。 例如，如果您嘗試停止閒置處理程序，您會收到錯誤︰
@@ -129,30 +138,31 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 
 您可以使用一些物件篩選 Cmdlet 來管理複雜的處理程序。 因為當處理程序物件不再回應時的 Responding 屬性為 true，所以您可以使用下列命令停止所有無回應的應用程式︰
 
-```
+```powershell
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
 您可以在其他情況下使用相同的方法。 例如，假設當使用者啟動另一個應用程式時，次要通知區域應用程式會自動執行。 您可能會發現這在終端機服務工作階段中無法正常運作，但您仍然想要在實體電腦主控台上執行的工作階段中予以保留。 連線到實體電腦桌面之工作階段的工作階段識別碼一律為 0，因此您可以使用 **Where-Object** 和處理程序 **SessionId**，停止該處理程序在其他工作階段中的所有執行個體：
 
-```
+```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
 Stop-Process Cmdlet 沒有 ComputerName 參數。 因此，若要在遠端電腦上執行停止處理程序命令，您需要使用 Invoke-Command Cmdlet。 例如，若要停止 Server01 遠端電腦上的 PowerShell 處理程序，請輸入：
 
-```
+```powershell
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
 ## <a name="stopping-all-other-windows-powershell-sessions"></a>停止所有其他 Windows PowerShell 工作階段
+
 能夠停止目前工作階段以外的所有執行中 PowerShell 工作階段有時可能會很有用。 如果工作階段使用太多資源或無法存取 (可能在遠端執行或在其他桌面工作階段中)，您可能無法直接將它停止。 不過如果您嘗試停止所有執行中的工作階段，可能反而終止目前的工作階段。
 
-每個 Windows PowerShell 工作階段都有包含 Windows PowerShell 處理程序識別碼的環境變數 PID。 您可以根據每個工作階段的識別碼檢查 $PID，並只終止具有不同識別碼的 Windows PowerShell 工作階段。 下列管線命令會執行這項操作，並傳回終止的工作階段清單 (因為使用了 **PassThru** 參數)：
+每個 Windows PowerShell 工作階段都有包含 Windows PowerShell 處理程序識別碼的環境變數 PID。 您可以根據每個工作階段的識別碼檢查 $PID，並只終止具有不同識別碼的 Windows PowerShell 工作階段。下列管線命令會執行這項操作，並傳回終止的工作階段清單 (因為使用了 **PassThru** 參數)：
 
 ```
-PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -
-PassThru
+PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -PassThru
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     334       9    23348      29136   143     1.03    388 powershell
@@ -164,13 +174,14 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 ## <a name="starting-debugging-and-waiting-for-processes"></a>啟動、偵錯及等候處理程序
+
 Windows PowerShell 也提供啟動 (或重新啟動)、偵錯處理程序，以及等候處理程序完成再執行命令的 Cmdlet。 如需這些 Cmdlet 的資訊，請參閱每個 Cmdlet 的 Cmdlet 說明主題。
 
 ## <a name="see-also"></a>另請參閱
+
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-

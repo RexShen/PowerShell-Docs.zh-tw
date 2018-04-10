@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "為 Windows PowerShell Web 存取中的存取問題進行疑難排解"
-ms.openlocfilehash: 6e51df3f4c6ac196c855ad918a91394d02c7d75e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: 為 Windows PowerShell Web 存取中的存取問題進行疑難排解
+ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
@@ -130,7 +130,7 @@ ComputerName | 伺服器名稱
 授權規則不支援網域名稱格式的 IPv6 位址。
 
 若要使用 IPv6 位址指定目的電腦，請在授權規則使用原始 IPv6 位址 (包含冒號)。
-在 [Windows PowerShell Web 存取] 登入頁面中，支援以網域及數字 (含冒號) IPv6 位址做為目標電腦名稱，但在授權規則中則不行。 
+在 [Windows PowerShell Web 存取] 登入頁面中，支援以網域及數字 (含冒號) IPv6 位址做為目標電腦名稱，但在授權規則中則不行。
 
 如需 IPv6 位址的詳細資訊，請參閱 [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx) (IPv6 的運作方式)。
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC for Linux nxGroup 資源"
-ms.openlocfilehash: bc01f6ae5ed61aff63958fe55f30d82f9b81b2b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC for Linux nxGroup 資源
+ms.openlocfilehash: 750b7c38a38fb8a7781585a3a7776f832ee62495
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC for Linux nxGroup 資源
 
@@ -30,22 +30,22 @@ nxGroup <string> #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性 |  描述 | 
+|  屬性 |  描述 |
 |---|---|
-| GroupName| 指出您要確保其特定狀態的群組名稱。| 
-| Ensure| 決定是否要檢查群組存在。 將此屬性設定為 "Present" 以確保群組存在。 設為 "Absent" 以確保此群組不存在。 預設值為 "Present"。| 
-| 成員| 指定組成群組的成員。| 
-| MembersToInclude| 指定您想要確認的使用者是此群組的成員。| 
-| MembersToExclude| 指定您想要確認的使用者不是此群組的成員。| 
-| PreferredGroupID| 如果可能的話，將群組識別碼設定為提供的值。 如果群組識別碼目前正在使用中，就會使用下一個可用的群組識別碼。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
+| GroupName| 指出您要確保其特定狀態的群組名稱。|
+| Ensure| 決定是否要檢查群組存在。 將此屬性設定為 "Present" 以確保群組存在。 設為 "Absent" 以確保此群組不存在。 預設值為 "Present"。|
+| 成員| 指定組成群組的成員。|
+| MembersToInclude| 指定您想要確認的使用者是此群組的成員。|
+| MembersToExclude| 指定您想要確認的使用者不是此群組的成員。|
+| PreferredGroupID| 如果可能的話，將群組識別碼設定為提供的值。 如果群組識別碼目前正在使用中，就會使用下一個可用的群組識別碼。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="example"></a>範例
 
 下列範例會確保使用者 “monuser” 存在，而且是 "DBusers" 群組的成員。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 
@@ -56,13 +56,12 @@ nxUser UserExample{
    Ensure = "Present"
    HomeDirectory = "/home/monuser"
 }
- 
+
 nxGroup GroupExample{
    GroupName = "DBusers"
    Ensure = "Present"
    MembersToInclude = "monuser"
-   DependsOn = "[nxUser]UserExample"            
+   DependsOn = "[nxUser]UserExample"
 }
 }
 ```
-

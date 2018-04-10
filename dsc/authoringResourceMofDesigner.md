@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "使用 [資源設計工具] 工具"
-ms.openlocfilehash: c39b48f67d3874ee3cd2f2704aeb7390fa186fe4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 使用 [資源設計工具] 工具
+ms.openlocfilehash: e0282671861755a5f147de4d07783a4680024ec5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
@@ -21,7 +21,7 @@ ms.lasthandoff: 03/15/2018
 
 ## <a name="creating-resource-properties"></a>建立資源屬性
 首先決定資源要公開的屬性。 本例中，我們會定義具有下列屬性的 Active Directory 使用者。
- 
+
 參數名稱描述
 * **UserName**：唯一識別使用者的索引鍵屬性。
 * **Ensure**：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
@@ -33,7 +33,7 @@ ms.lasthandoff: 03/15/2018
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
 $Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
-$DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCredential -Attribute Write
+$DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 

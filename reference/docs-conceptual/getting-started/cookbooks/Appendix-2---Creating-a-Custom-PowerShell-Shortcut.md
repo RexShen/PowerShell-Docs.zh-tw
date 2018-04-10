@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "附錄 2 建立自訂 PowerShell 捷徑"
+title: 附錄 2 建立自訂 PowerShell 捷徑
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-ms.openlocfilehash: d5e554f6f062fc5bf1beddd2aca1acf0b93d2133
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>附錄 2 - 建立自訂 PowerShell 捷徑
+
 下列程序說明如何建立指向 Windows PowerShell 的捷徑，並在其中自訂幾個便利的選項。
 
 1. 建立指向 Powershell.exe 的捷徑。
@@ -37,4 +38,3 @@ ms.lasthandoff: 09/08/2017
 11. 如果您想要將開啟的主控台放在桌面上的特定位置，請清除 **[視窗位置]** 區段中的 **[由系統安排視窗位置]** 核取方塊，然後在 **[視窗位置]** 區段中，變更 **[左]** 和 **[上]** 方塊中的值。
 
 12. 按一下 **[確定]**。
-

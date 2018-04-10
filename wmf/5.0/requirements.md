@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>系統需求
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 03/15/2018
 Windows Server 2008 R2 SP1 和 Windows 7 SP1 系統內建 PowerShell 2.0、WinRM 和 WMI。 發行 Windows Server 2008 R2 SP1 和 Windows 7 SP1 之後，已發行 WMF 3.0 和 WMF 4.0 套件，可更新這些內建元件。 安裝/解除安裝 WMF 3.0 和 WMF 4.0 套件在下列升級路徑中有一些問題︰
 
 - 內建 --> WMF 4.0
-- 內建 --> WMF 3.0 --> WMF4.0。 
+- 內建 --> WMF 3.0 --> WMF4.0。
 
 我們在 WMF 4.0 套件中已修正上述所有問題。 因此，您必須有 WMF 4.0，才能在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上安裝 WMF 5.0。 以下是未安裝 WMF 4.0 便升級至 WMF 5.0 可能遇到的特定問題︰
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  按一下 **[檢視安裝的更新]**。
 
 4.  從已安裝的更新清單中選取 **[Windows Management Framework 5.0]**。 這會對應到 *KB3134758*、*KB3134759* 或 *KB3134760*。 按一下 **[解除安裝]**。
-

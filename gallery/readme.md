@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "資源庫,powershell,cmdlet,psgallery,psget"
-title: "PowerShell 資源庫"
-ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: 資源庫,powershell,cmdlet,psgallery,psget
+title: PowerShell 資源庫
+ms.openlocfilehash: 9519b8bcca9f43419a33db380c3b852e9bb354ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫
 
@@ -56,4 +56,3 @@ PowerShellGet 模組包含來自 [PowerShell 資源庫](https://www.PowerShellGa
 ## <a name="got-a-question-have-feedback"></a>有任何問題嗎？ 想提供任何意見？
 
 如需 PowerShell 資源庫與 PowerShellGet 的詳細資料，請前往[開始使用](psgallery/psgallery_gettingstarted.md)頁面。 請使用 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) 提供意見反應及回報問題。
-

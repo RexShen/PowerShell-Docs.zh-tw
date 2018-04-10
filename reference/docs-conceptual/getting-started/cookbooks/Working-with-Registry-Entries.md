@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用登錄項目"
+title: 使用登錄項目
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 039203a1a6549d4ba33424a278e4803a5e143d4d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: bffdf80931fc4dc570b584623487077dc5d449dc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-registry-entries"></a>使用登錄項目
+
 因為登錄項目是機碼的屬性，所以無法直接瀏覽，在使用時，必須採取稍微不同的方法。
 
 ### <a name="listing-registry-entries"></a>列出登錄項目
+
 有許多方法可以檢查登錄項目。 最簡單的方法是取得與機碼相關聯的屬性名稱。 例如，若要查看登錄機碼 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** 中的項目名稱，請使用 **Get-Item**。 登錄機碼有一個具有一般名稱 "Property" 的屬性，是機碼中之登錄項目的清單。 下列命令會選取 Property 屬性並展開項目，使項目顯示於清單中：
 
 ```
@@ -52,13 +54,13 @@ PF_AccessoriesName  : Accessories
 
 您可以使用 "**.**" 標記法以參照目前的位置。 您可以先使用 **Set-Location** 來變更為 **CurrentVersion** 登錄容器：
 
-```
+```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
 或者，您可以使用內建的 HKLM PSDrive 來搭配 **Set-Location**：
 
-```
+```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
@@ -76,6 +78,7 @@ ProgramFilesDir     : C:\Program Files
 路徑擴充的作用與在檔案系統中一致，因此從這個位置，您可以使用 **Get-ItemProperty -Path ..\\Help** 取得 **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** 的 **ItemProperty** 清單。
 
 ### <a name="getting-a-single-registry-entry"></a>取得單一登錄項目
+
 若要抓取登錄機碼中的特定項目，您可以使用數種可行方法之一。 這個範例會在 **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** 中尋找 **DevicePath** 的值。
 
 使用 **Get-ItemProperty** 時，請使用 **Path** 參數來指定機碼的名稱，並使用 **Name** 參數來指定 **DevicePath** 項目的名稱。
@@ -117,6 +120,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 ```
 
 ### <a name="creating-new-registry-entries"></a>建立新的登錄項目
+
 若要將名為 "PowerShellPath" 的新項目新增至 **CurrentVersion** 機碼，請搭配機碼路徑、項目名稱與項目值使用 **New-ItemProperty**。 對於此範例，我們將接受 Windows PowerShell 變數 **$PSHome** 的值，它儲存 Windows PowerShell 安裝目錄的路徑。
 
 您可以使用下列命令將新項目新增至機碼，此命令也會傳回關於新項目的資訊：
@@ -148,30 +152,31 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 > [!NOTE]
 > 為 **Path** 參數指定值陣列，可以將某個登錄項目新增至多個位置：
 
-```
+```powershell
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
 ```
 
 您也可以將 **Force** 參數新增至任一 **New-ItemProperty** 命令，以覆寫已存在的登錄項目值。
 
 ### <a name="renaming-registry-entries"></a>重新命名登錄項目
+
 若要將 **PowerShellPath** 項目重新命名為 "PSHome"，請使用 **Rename-ItemProperty**：
 
-```
+```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
 若要顯示重新命名的值，請將 **PassThru** 參數新增至命令。
 
-```
+```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
 ### <a name="deleting-registry-entries"></a>刪除登錄項目
+
 若要刪除 PSHome 與 PowerShellPath 登錄項目，請使用 **Remove-ItemProperty**：
 
-```
+```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome
 Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath
 ```
-

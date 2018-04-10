@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤"
+title: 如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 3cfeb18babe6b63f0e02da8cf0fd460950f1afce
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 4d4388d889f2178b2cd24cb0f3350aee37327625
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
+
 Windows PowerShell 整合式指令碼環境 (ISE) 中的索引標籤讓您可以在同一個應用程式內，同時建立及使用數種執行環境。
 每個 PowerShell 索引標籤會對應到不同的執行環境或工作階段。
 
@@ -53,6 +54,5 @@ PowerShell 索引標籤是依其開啟順序以累加方式編號。
 
 ## <a name="see-also"></a>另請參閱
 
-- [使用 Windows PowerShell ISE](Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE 簡介](Introducing-the-Windows-PowerShell-ISE.md)
 - [如何在 Windows PowerShell ISE 中使用主控台窗格](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
-

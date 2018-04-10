@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "開始使用 PowerShell 預期狀態設定"
-ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 開始使用 PowerShell 預期狀態設定
+ms.openlocfilehash: b5aff5008db5a5e45b77d8094b0e48ad98dc63fa
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>開始使用 PowerShell 預期狀態設定 #
 
-本指南說明如何開始建立 PowerShell 預期狀態設定文件，並套用至電腦。 本指南假設您大致熟悉 PowerShell Cmdlet、模組和函式。 
+本指南說明如何開始建立 PowerShell 預期狀態設定文件，並套用至電腦。 本指南假設您大致熟悉 PowerShell Cmdlet、模組和函式。
 
 
 ## <a name="create-a-configuration"></a>建立設定 ##
 
-[**設定**](https://msdn.microsoft.com/powershell/dsc/configurations)是描述環境的文件。 環境包含「**節點**」，通常是虛擬或實體機器。 
+[**設定**](https://msdn.microsoft.com/powershell/dsc/configurations)是描述環境的文件。 環境包含「**節點**」，通常是虛擬或實體機器。
 
 設定可以有各種形式。 建立新設定的最簡單作法是建立 .ps1 (PowerShell 指令碼) 檔案。 若要這樣做，請開啟您選擇的編輯器。 因為 PowerShell ISE 原本就了解 DSC，所以是不錯的選擇。 將下列項目儲存為 PS1：
 
@@ -32,21 +32,21 @@ configuration MyFirstConfiguration
             Name = "IIS"
 
         }
-        
+
     }
 
 }
 ```
 ## <a name="parts-of-a-configuration"></a>設定的組件 ##
-**設定**是 PowerShell 4.0 中已加入的關鍵字， 表示一種特殊的預期狀態設定所使用的 PowerShell 函式。 在這個範例中，此函式稱為 myFirstConfiguration。 
+**設定**是 PowerShell 4.0 中已加入的關鍵字， 表示一種特殊的預期狀態設定所使用的 PowerShell 函式。 在這個範例中，此函式稱為 myFirstConfiguration。
 
 下一行是匯入陳述式，類似於匯入模組， 將在稍後討論。
 
-「節點」定義這個設定將產生作用的目標電腦名稱。 雖然這項設定在本機進行編輯，設定仍可連接到遠端節點，並加以設定。 
+「節點」定義這個設定將產生作用的目標電腦名稱。 雖然這項設定在本機進行編輯，設定仍可連接到遠端節點，並加以設定。
 
-節點可以是電腦名稱或 IP 位址。 在單一設定文件中可以有多個節點。 使用[設定資料](https://msdn.microsoft.com/powershell/dsc/configdata)時，您也可以將相同設定套用到多個節點。 在此情況下，節點會是 "localhost"，表示本機電腦。 
+節點可以是電腦名稱或 IP 位址。 在單一設定文件中可以有多個節點。 使用[設定資料](https://msdn.microsoft.com/powershell/dsc/configdata)時，您也可以將相同設定套用到多個節點。 在此情況下，節點會是 "localhost"，表示本機電腦。
 
-下一個項目是[**資源**](https://msdn.microsoft.com/powershell/dsc/resources)。 資源是設定的建置組塊。 每個資源都是模組，其中定義單一電腦層面的實作邏輯。 您也可以在 PowerShell 中執行 **Get-DscResource** 檢視電腦上的每個資源。 資源必須存在於本機電腦上，並先匯入，然後才可用於 **Import-DscResource** 的設定，其位於這項設定的第二行。 
+下一個項目是[**資源**](https://msdn.microsoft.com/powershell/dsc/resources)。 資源是設定的建置組塊。 每個資源都是模組，其中定義單一電腦層面的實作邏輯。 您也可以在 PowerShell 中執行 **Get-DscResource** 檢視電腦上的每個資源。 資源必須存在於本機電腦上，並先匯入，然後才可用於 **Import-DscResource** 的設定，其位於這項設定的第二行。
 
 **制定設定**
 
@@ -63,8 +63,7 @@ myFirstConfiguration
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration
 ```
-這會建立 PowerShell 工作，向外連到設定中的節點，並設定節點。 若要查看工作的輸出，請使用 -Wait。 
+這會建立 PowerShell 工作，向外連到設定中的節點，並設定節點。 若要查看工作的輸出，請使用 -Wait。
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-

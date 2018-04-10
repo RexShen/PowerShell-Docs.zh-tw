@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7"
-title: "安裝 Windows PowerShell"
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.date: 08/09/2017
+keywords: powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7
+title: 安裝 Windows PowerShell
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
 從 Windows 7 SP1 和 Windows Server 2008 R2 SP1 開始，根據預設，每個 Windows 中都已預先安裝 Windows PowerShell。
@@ -45,7 +45,8 @@ Windows 7 SP1 | 按一下左下角 Windows 圖示，在搜尋方塊開始鍵入 
 
 在所有 Core 版本中，當您登入伺服器時，會看到 Windows 命令提示字元視窗。
 
-鍵入 `powershell` 並按 **ENTER**，以在命令提示字元工作階段內啟動 PowerShell。 鍵入 `exit` 以終止 PowerShell 工作階段，並返回命令提示字元。
+鍵入 `powershell` 並按 **ENTER**，以在命令提示字元工作階段內啟動 PowerShell。
+鍵入 `exit` 以終止 PowerShell 工作階段，並返回命令提示字元。
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server Desktop 版本
 

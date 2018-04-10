@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "設定 DSC SMB 提取伺服器"
-ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 設定 DSC SMB 提取伺服器
+ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
@@ -37,19 +37,19 @@ Configuration SmbShare {
 
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -57,11 +57,11 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
-        
+
     }
- 
+
 }
 ```
 
@@ -78,19 +78,19 @@ Configuration DSCSMB {
 Import-DscResource -ModuleName PSDesiredStateConfiguration
 Import-DscResource -ModuleName xSmbShare
 Import-DscResource -ModuleName cNtfsAccessControl
- 
+
     Node localhost {
- 
+
         File CreateFolder {
- 
+
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
- 
+
         }
- 
+
         xSMBShare CreateShare {
- 
+
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -98,11 +98,11 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
- 
+
         }
 
         cNtfsPermissionEntry PermissionSet1 {
-            
+
         Ensure = 'Present'
         Path = 'C:\DSCSMB'
         Principal = 'myDomain\Contoso-Server$'
@@ -116,12 +116,12 @@ Import-DscResource -ModuleName cNtfsAccessControl
             }
         )
         DependsOn = '[File]CreateFolder'
-        
+
         }
- 
-        
+
+
     }
- 
+
 }
 ```
 
@@ -133,10 +133,12 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 >**注意**︰如果您使用 SMB 提取伺服器，就必須使用設定識別碼。 SMB 不支援設定名稱。
 
-每個資源模組都必須根據下列模式 `{Module Name}_{Module Version}.zip` 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您需要對目錄結構進行小幅變更。 在 WMF 5.0 中包含 DSC 資源的模組預設格式為 '{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\'。 在為提取伺服器進行封裝前，只要移除 **{模組版本}** 資料夾，路徑就會變成 '{模組資料夾}\DscResources\{DSC 資源資料夾}\'。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 SMB 共用資料夾中。 
+每個資源模組都必須根據下列模式 `{Module Name}_{Module Version}.zip` 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您需要對目錄結構進行小幅變更。 在 WMF 5.0 中包含 DSC 資源的模組預設格式為 '{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\'。 在為提取伺服器進行封裝前，只要移除 **{模組版本}** 資料夾，路徑就會變成 '{模組資料夾}\DscResources\{DSC 資源資料夾}\'。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 SMB 共用資料夾中。
 
 ## <a name="creating-the-mof-checksum"></a>建立 MOF 總和檢查碼
-設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。 若要建立總和檢查碼，請呼叫 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) Cmdlet。 此 Cmdlet 會使用 **Path** 參數，指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。
+設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。
+若要建立總和檢查碼，請呼叫 [New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) Cmdlet。 此 Cmdlet 會使用 **Path** 參數，指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。
+如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。
 
 總和檢查碼檔案必須存在於和設定 MOF 檔案相同的目錄中 (預設為 `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`)，而且具有相同名稱，附加副檔名為 `.checksum`。
 
@@ -164,12 +166,12 @@ configuration SmbCredTest
         Settings
         {
             RefreshMode = 'Pull'
-            RefreshFrequencyMins = 30 
+            RefreshFrequencyMins = 30
             RebootNodeIfNeeded = $true
             ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
         }
-         
-         ConfigurationRepositoryShare SmbConfigShare      
+
+         ConfigurationRepositoryShare SmbConfigShare
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
@@ -179,8 +181,8 @@ configuration SmbCredTest
         {
             SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
             Credential = $mycreds
-            
-        }      
+
+        }
     }
 }
 
@@ -198,7 +200,7 @@ $ConfigurationData = @{
 
         })
 
-        
+
 
 }
 ```
@@ -214,5 +216,3 @@ $ConfigurationData = @{
 - [Windows PowerShell 預期狀態設定概觀](overview.md)
 - [制定組態](enactingConfigurations.md)
 - [使用設定識別碼設定提取用戶端](pullClientConfigID.md)
-
- 

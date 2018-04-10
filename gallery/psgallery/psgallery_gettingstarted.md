@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>開始使用 PowerShell Gallery
 
@@ -33,7 +33,7 @@ PowerShellGet 也需要 [NuGet 提供者](http://go.microsoft.com/fwlink/?LinkId
 
 或者，您可以執行 `Install-PackageProvider -Name NuGet -Force` 來自動下載和安裝 NuGet 提供者。
 
-  
+
 如果您的版本比 NuGet 2.8.5.201 還要舊，則需要呼叫下列 PowerShell Cmdlet 來安裝並切換至最新版本的 NuGet。
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ PowerShellGet 也需要 [NuGet 提供者](http://go.microsoft.com/fwlink/?LinkId
 
 如需詳細資訊，請參閱 <http://oneget.org/>。
 
-  
+
 注意︰因為封裝格式變更，所以建議您更新至最新版本的 PowerShellGet 和 PackageManagement，以安裝最近更新過的項目。 PowerShellGet 包含可在[這裡](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)進一步了解的 Windows 10 中。
 PowerShellGet 也是可在[這裡](http://go.microsoft.com/fwlink/?LinkId=398175)下載之 Windows Management Framework (WMF) 5.0 的一部分。
 
@@ -118,4 +118,3 @@ CurrentUser` 參數，指令碼就會安裝至 `$env:USERPROFILE\Documents\Windo
 若要找出您已從 PowerShell 資源庫安裝的模組，請執行 [Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有模組。
 
 同樣地，若要找出您已從 PowerShell 資源庫安裝的指令碼，請執行 [Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。
-

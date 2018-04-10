@@ -1,16 +1,24 @@
 ---
-title: "網路交換器管理員 Cmdlet 失敗"
+ms.date: 06/12/2017
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,設定
 contributor: vaibch
-ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
+title: 網路交換器管理員 Cmdlet 失敗
+ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
+ms.lasthandoff: 04/09/2018
 ---
-網路交換器管理員 Cmdlet 可用來透過 WSMAN 管理網路交換器。 此模組的數個 Cmdlet 都能接受來自管線的值。 在 WMF 5.1 Preview 中，當值未透過管線傳遞時，可接受來自管線之值的 Cmdlet 即無法執行。
+網路交換器管理員 Cmdlet 可用來透過 WSMAN 管理網路交換器。
+此模組的數個 Cmdlet 都能接受來自管線的值。
+在 WMF 5.1 Preview 中，當值未透過管線傳遞時，可接受來自管線之值的 Cmdlet 即無法執行。
 
 若未使用 "InputObject" 參數，Cmdlet 應可繼續執行而不會失敗。
 
-以下是受影響的 Cmdlet 清單，意即這些 Cmdlet 可接受來自管線的 "InputObject" 參數值。 若此值未透過管線傳遞，Cmdlet 便會執行失敗。
+以下是受影響的 Cmdlet 清單，意即這些 Cmdlet 可接受來自管線的 "InputObject" 參數值。
+若此值未透過管線傳遞，Cmdlet 便會執行失敗。
 
 - Disable-NetworkSwitchEthernetPort
 - Enable-NetworkSwitchEthernetPort

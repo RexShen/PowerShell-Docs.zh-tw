@@ -1,4 +1,4 @@
-# <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 遠端處理 
+# <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>建立遠端端點的指示
 
@@ -28,19 +28,19 @@ PowerShell 安裝可以使用 `New-PSSession` 和 `Enter-PSSession` 建立遠端
 
 #### <a name="executed-by-the-instance-of-powershell-that-it-will-register"></a>透過其將註冊的 PowerShell 執行個體來執行
 
-``` powershell
+```powershell
 Install-PowerShellRemoting.ps1
 ```
 
 #### <a name="executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register"></a>另一個 PowerShell 執行個體代表其將註冊的執行個體來執行
 
-``` powershell
+```powershell
 <path to powershell>\Install-PowerShellRemoting.ps1 -PowerShellHome "<absolute path to the instance's $PSHOME>"
 ```
 
 例如：
 
-``` powershell
+```powershell
 Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
@@ -51,7 +51,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 
 指定 `-ConfigurationName "some endpoint name"`，以建立與新 PowerShell 端點的新 PowerShell 工作階段。 若要連線至上述範例中的 PowerShell 執行個體，請使用：
 
-``` powershell
+```powershell
 New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```

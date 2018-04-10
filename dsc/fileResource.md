@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC 檔案資源"
-ms.openlocfilehash: 54d01bf0769eeed0354606eb3543973b0f850a6f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC 檔案資源
+ms.openlocfilehash: 7964eabe5f4585600ae80f3e5ff7439c0d954769
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-file-resource"></a>DSC 檔案資源
 
@@ -15,8 +15,8 @@ ms.lasthandoff: 01/17/2018
 
 Windows PowerShell 預期狀態設定 (DSC) 的檔案資源會提供一個機制，在目標節點管理檔案和資料夾。
 
->**注意︰**如果 **MatchSource** 屬性設為 **$false** (此為預設值)，則第一次套用設定時會快取要複製的內容。 
->後續套用的設定不會檢查由 **SourcePath** 指定的路徑中是否有更新的檔案及/或資料夾。 如果想要在每次套用設定時都檢查 **SourcePath** 中是否有檔案及/或資料夾更新，請將 **MatchSource** 設為 **$true**。 
+>**注意︰**如果 **MatchSource** 屬性設為 **$false** (此為預設值)，則第一次套用設定時會快取要複製的內容。
+>後續套用的設定不會檢查由 **SourcePath** 指定的路徑中是否有更新的檔案及/或資料夾。 如果想要在每次套用設定時都檢查 **SourcePath** 中是否有檔案及/或資料夾更新，請將 **MatchSource** 設為 **$true**。
 
 ## <a name="syntax"></a>語法
 ```
@@ -27,32 +27,32 @@ File [string] #ResourceName
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
     [ Contents = [string] ]
     [ Credential = [PSCredential] ]
-    [ Ensure = [string] { Absent | Present } ] 
+    [ Ensure = [string] { Absent | Present } ]
     [ Force = [bool] ]
     [ Recurse = [bool] ]
     [ DependsOn = [string[]] ]
     [ SourcePath = [string] ]
-    [ Type = [string] { Directory | File } ] 
+    [ Type = [string] { Directory | File } ]
     [ MatchSource = [bool] ]
 }
 ```
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   | 
-|---|---| 
-| DestinationPath| 表示您要確認檔案或目錄狀態的位置。| 
-| 屬性| 指定目標檔案或目錄的屬性所需狀態。| 
-| 總和檢查碼| 指出判斷兩個檔案是否相同時所使用的密碼總和類型。 如不指定 __Checksum__，只會使用檔案或目錄名稱進行比較。 有效值包括：SHA-1、SHA-256、SHA-512、createdDate、modifiedDate。| 
-| 內容| 指定檔案的內容，例如特定字串。| 
-| 認證| 指出存取資源的必要認證，例如來源檔案 (如果需要這類存取)。| 
-| Ensure| 表示檔案或目錄是否存在。 設定此屬性為 "Absent" 以確保檔案或目錄不存在。 將此屬性設定為 "Present"，以確保檔案或目錄存在。 預設值是 "Present"。| 
-| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 Force 屬性會覆寫此類錯誤。 預設值為 __$false__。| 
-| Recurse| 表示是否包含子目錄。 將此屬性設定為 __$true__，表示您想要包含子目錄。 預設值為 __$false__。 **注意**：僅當 Type 屬性設定為 Directory 時，這個屬性才有效。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
-| SourcePath| 表示要從中複製檔案或資料夾資源的路徑。| 
-| 類型| 表示正在設定的資源是否為目錄或檔案。 將此屬性設定為 "Directory"，表示該資源為目錄。 將此屬性設定為 "File"，表示該資源為檔案。 預設值為 "File"。| 
-| MatchSource| 如果設定為 __$false__ 的預設值，則當第一次套用此設定時，會將來源 (例如檔案 A、B 和 C) 上的任何檔案加入目的地。 如果將新的檔案 (D) 加入來源，就不會將這個檔案加入目的地，即使稍後重新套用此設定亦同。 如果值為 __$true__，則每次套用此設定時，會將此來源 (例如，在此範例中的檔案 D) 上後續找到的新檔案加入目的地。 預設值為 **$false**。| 
+|  屬性  |  描述   |
+|---|---|
+| DestinationPath| 表示您要確認檔案或目錄狀態的位置。|
+| 屬性| 指定目標檔案或目錄的屬性所需狀態。|
+| 總和檢查碼| 指出判斷兩個檔案是否相同時所使用的密碼總和類型。 如不指定 __Checksum__，只會使用檔案或目錄名稱進行比較。 有效值包括：SHA-1、SHA-256、SHA-512、createdDate、modifiedDate。|
+| 內容| 指定檔案的內容，例如特定字串。|
+| 認證| 指出存取資源的必要認證，例如來源檔案 (如果需要這類存取)。|
+| Ensure| 表示檔案或目錄是否存在。 設定此屬性為 "Absent" 以確保檔案或目錄不存在。 將此屬性設定為 "Present"，以確保檔案或目錄存在。 預設值是 "Present"。|
+| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 Force 屬性會覆寫此類錯誤。 預設值為 __$false__。|
+| Recurse| 表示是否包含子目錄。 將此屬性設定為 __$true__，表示您想要包含子目錄。 預設值為 __$false__。 **注意**：僅當 Type 屬性設定為 Directory 時，這個屬性才有效。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
+| SourcePath| 表示要從中複製檔案或資料夾資源的路徑。|
+| 類型| 表示正在設定的資源是否為目錄或檔案。 將此屬性設定為 "Directory"，表示該資源為目錄。 將此屬性設定為 "File"，表示該資源為檔案。 預設值為 "File"。|
+| MatchSource| 如果設定為 __$false__ 的預設值，則當第一次套用此設定時，會將來源 (例如檔案 A、B 和 C) 上的任何檔案加入目的地。 如果將新的檔案 (D) 加入來源，就不會將這個檔案加入目的地，即使稍後重新套用此設定亦同。 如果值為 __$true__，則每次套用此設定時，會將此來源 (例如，在此範例中的檔案 D) 上後續找到的新檔案加入目的地。 預設值為 **$false**。|
 
 ## <a name="example"></a>範例
 
@@ -69,7 +69,7 @@ Configuration FileResourceDemo
             Type = "Directory" # Default is "File".
             Recurse = $true # Ensure presence of subdirectories, too
             SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
-            DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"    
+            DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
         Log AfterDirectoryCopy
@@ -81,4 +81,3 @@ Configuration FileResourceDemo
     }
 }
 ```
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 4d32ced8e75042f494477408424b97be8958854e
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 1f165afbcd8fe8dc5f72cc7ea557d21ce2884e91
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="nonewline-parameter"></a>NoNewLine 參數
 **Out-File****Add-Content** 和 **Set-Content** 現在有新的 **–NoNewline** 參數，只會省略輸出之後的新行。
@@ -38,4 +38,3 @@ a single
 
 sentence.
 ```
-

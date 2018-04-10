@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: d3a625d05eaf4e7448b4abf90499f6a94e2f7718
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: d5ba6a5c5ba8ff54a4f4d6ba07cf04124baf65ef
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>允許在設定中的相同重複資源
 
@@ -52,7 +52,7 @@ Configuration WebApplication
 }
 ```
 
-在舊版中，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 執行個體在盡力確保 「網頁伺服器」 角色已安裝時發生衝突，因此會出現編譯失敗的結果。 請注意在這兩種設定中，*所有*正在設定的屬性都是相同的。 由於這兩個資源中的*所有*屬性相同，現在這會讓編譯成功完成。 
+在舊版中，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 執行個體在盡力確保 「網頁伺服器」 角色已安裝時發生衝突，因此會出現編譯失敗的結果。 請注意在這兩種設定中，*所有*正在設定的屬性都是相同的。 由於這兩個資源中的*所有*屬性相同，現在這會讓編譯成功完成。
 
 如果任何屬性在兩個資源之間的有所差異，它們將不會被視為相同，而且編譯會失敗︰
 
@@ -96,4 +96,3 @@ Configuration WebApplication
 ```
 
 此非常類似的設定將會失敗，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 資源不再相同，因此發生衝突。
-

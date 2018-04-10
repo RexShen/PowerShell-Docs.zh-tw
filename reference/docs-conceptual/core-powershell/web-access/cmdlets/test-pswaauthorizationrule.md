@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: test pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 指定要測試的元件名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -60,7 +60,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 指定要測試的 Windows PowerShell 工作階段設定名稱，也稱為端點或 Runspace。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -73,7 +73,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 指定要測試的連線 URI。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -86,7 +86,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 指定您要用來測試 Windows PowerShell Web 存取授權規則之使用者帳戶的 **PSCredential** 物件。 如果您未新增這個參數，此 Cmdlet 就會使用目前登入的使用者帳戶。 若要取得從遠端測試授權規則所需的 **PSCredential** 物件，請執行 [Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) Cmdlet。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -99,7 +99,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 指定要測試的規則子集。 如果未指定這個參數，則此 Cmdlet 會測試所有授權規則。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -112,7 +112,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 指定要測試的使用者名稱。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |

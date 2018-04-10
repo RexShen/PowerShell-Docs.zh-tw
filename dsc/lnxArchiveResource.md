@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC for Linux nxArchive 資源"
-ms.openlocfilehash: e91ef5bcf4bdf413844c23d1d3bd823a535b536f
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC for Linux nxArchive 資源
+ms.openlocfilehash: 142f0317914f1bd3a0523d706b19662f3f64c8b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC for Linux nxArchive 資源
 
@@ -29,21 +29,21 @@ nxArchive <string> #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性 |  描述 | 
+|  屬性 |  描述 |
 |---|---|
-| SourcePath| 指定封存檔案的來源路徑。 這應該是 .tar、.zip 或 .tar.gz 檔案。 | 
-| DestinationPath| 指定您想要確保的封存內容解壓縮位置。| 
-| 總和檢查碼| 定義判斷是否已更新來源封存檔時所使用的類型。 值為："ctime"、"mtime" 或 "md5"。 預設值為 "md5"。| 
-| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **$false**。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
-| Ensure| 當**目的地**有封存內容時，決定是否要檢查。 請將這個屬性設為 "Present" 以確保有內容。 設為 "Absent" 以確保它們不存在。 預設值為 "Present"。| 
+| SourcePath| 指定封存檔案的來源路徑。 這應該是 .tar、.zip 或 .tar.gz 檔案。 |
+| DestinationPath| 指定您想要確保的封存內容解壓縮位置。|
+| 總和檢查碼| 定義判斷是否已更新來源封存檔時所使用的類型。 值為："ctime"、"mtime" 或 "md5"。 預設值為 "md5"。|
+| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **$false**。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
+| Ensure| 當**目的地**有封存內容時，決定是否要檢查。 請將這個屬性設為 "Present" 以確保有內容。 設為 "Absent" 以確保它們不存在。 預設值為 "Present"。|
 
 ## <a name="example"></a>範例
 
 下列範例示範如何使用 **nxArchive** 資源以確保 `website.tar` 封存檔案的內容存在，並會解壓縮在指定的目的地。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 nxFile SyncArchiveFromWeb
 {
@@ -60,6 +60,5 @@ nxArchive SyncWebDir
    DestinationPath = “/usr/local/apache2/htdocs/”
    Force = $false
    DependsOn = "[nxFile]SyncArchiveFromWeb"
-} 
+}
 ```
-

@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用檔案、資料夾與登錄機碼"
+title: 使用檔案、資料夾與登錄機碼
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用檔案、資料夾與登錄機碼
+
 Windows PowerShell 使用名詞 **Item** 參照在 Windows PowerShell 磁碟機上找到的項目。 使用 Windows PowerShell FileSystem 提供者時，**Item** 可能是檔案、資料夾或 Windows PowerShell 磁碟機。 在大部分的系統管理設定中，列出及使用這些項目是很重要的基本工作，因此，我們要詳細討論這些工作。
 
 ### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>列舉檔案、資料夾與登錄機碼 (Get-ChildItem)
+
 從特定位置取得項目集合是很常見的工作，因此，**Get-ChildItem** Cmdlet 專門設計為傳回容器 (例如資料夾) 內的所有項目。
 
 若要傳回直接包含於資料夾 C:\\Windows 內的所有檔案和資料夾，請輸入：
@@ -20,6 +22,7 @@ Windows PowerShell 使用名詞 **Item** 參照在 Windows PowerShell 磁碟機�
 ```
 PS> Get-ChildItem -Path C:\Windows
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\Windows
+
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2006-05-16   8:10 AM          0 0.log
@@ -32,13 +35,14 @@ Mode                LastWriteTime     Length Name
 
 您可以使用 **Get-ChildItem** Cmdlet 的參數執行極為複雜的清單。 我們接下來會介紹幾個案例。 您可以輸入以下命令以查看 **Get-ChildItem** Cmdlet 的語法：
 
-```
-PS> Get-Command -Name Get-ChildItem -Syntax
+```powershell
+Get-Command -Name Get-ChildItem -Syntax
 ```
 
 這些參數可混合使用以得到高度自訂的輸出。
 
 #### <a name="listing-all-contained-items--recurse"></a>列出所有包含的項目 (-Recurse)
+
 若要查看 Windows 資料夾內的項目和子資料夾中包含的任何項目，請使用 **Get-ChildItem** 的 **Recurse** 參數。 清單會顯示 Windows 資料夾中的所有項目和子資料夾中的項目。 例如：
 
 ```
@@ -53,6 +57,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 #### <a name="filtering-items-by-name--name"></a>依名稱篩選項目 (-Name)
+
 若只要顯示項目的名稱，請使用 **Get-Childitem** 的 **Name** 參數：
 
 ```
@@ -64,15 +69,17 @@ assembly
 ```
 
 #### <a name="forcibly-listing-hidden-items--force"></a>強制列出隱藏的項目 (-Force)
+
 通常在 [檔案總管] 或 Cmd.exe 中不可見的項目，則不會顯示在 **Get-ChildItem** 命令的輸出中。 若要顯示隱藏的項目，請使用 **Get-ChildItem** 的 **Force** 參數。 例如：
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows -Force
 ```
 
 此參數之所以名為 Force，是因為您可以強制覆寫 **Get-ChildItem** 命令的正常行為。 Force 是廣泛使用的參數，會強制執行 Cmdlet 一般不會執行的動作，但並不會執行危害系統安全性的任何動作。
 
 #### <a name="matching-item-names-with-wildcards"></a>使用萬用字元比對項目名稱
+
 **Get-ChildItem** 命令可接受在要列出的項目路徑中使用萬用字元。
 
 因為萬用字元比對是由 Windows PowerShell 引擎處理，接受萬用字元的所有 Cmdlet 都會使用相同的標記法，並有相同的比對行為。 Windows PowerShell 萬用字元標記法包括：
@@ -89,6 +96,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 ```
 PS> Get-ChildItem -Path C:\Windows\?????.log
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\Windows
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -103,24 +111,27 @@ Mode                LastWriteTime     Length Name
 
 若要在 Windows 目錄中尋找開頭是字母 **x** 的所有檔案，請輸入：
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows\x*
 ```
 
 若要尋找名稱開頭是 **x** 或 **z** 的所有檔案，請輸入：
 
-```
+```powershell
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
 #### <a name="excluding-items--exclude"></a>排除項目 (-Exclude)
+
 您可以使用 Get-ChildItem 的 **Exclude** 參數排除特定項目。 這可讓您在單一陳述式中執行複雜的篩選。
 
 例如，假設您嘗試在 [System32] 資料夾中尋找 Windows 時間服務 DLL，而您只記得 DLL 名稱的開頭是 "W" 且其中含有 "32"。
 
 類似 **w\&#42;32\&#42;.dll** 的運算式會尋找滿足上述條件的所有 DLL，但也會傳回名稱中包含 "95" 或 "16" 的 Windows 95 及 16 位元的 Windows 相容 DLL。 您可以使用 **Exclude** 參數搭配模式 **\&#42;\[9516]\&#42;**，以省略名稱中含有這些數字中之任一數字的檔案：
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+```
+PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
+
 Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
 Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
@@ -132,13 +143,15 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      82944 ws2_32.dll
 -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
 -a---        2004-08-04   8:00 AM      22528 wsock32.dll
--a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+-a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
+```
 
 #### <a name="mixing-get-childitem-parameters"></a>混合使用 Get-ChildItem 參數
+
 您可以在同一個命令中使用 **Get-ChildItem** Cmdlet 的數個參數。 在混合使用參數之前，請確定您了解萬用字元比對的原則。 例如，下列命令不會傳回任何結果：
 
-```
-PS> Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
+```powershell
+Get-ChildItem -Path C:\Windows\*.dll -Recurse -Exclude [a-y]*.dll
 ```
 
 即使 Windows 資料夾中有兩個開頭是字母 "z" 的 DLL 也不會有任何結果。
@@ -162,4 +175,3 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2004-08-04   8:00 AM     337920 zipfldr.dll
 ```
-

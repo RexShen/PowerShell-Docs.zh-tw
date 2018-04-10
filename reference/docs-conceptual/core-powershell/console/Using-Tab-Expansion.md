@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用 Tab 鍵擴充"
+title: 使用 Tab 鍵擴充
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-ms.openlocfilehash: 8412bd97a95719f07b16c6671d3b8801bbfab8e3
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 3d047bf0691c8a304d7637aa50fba6ae99709a82
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-tab-expansion"></a>使用 Tab 鍵擴充
+
 命令列殼層通常會提供方法，透過加速命令輸入以及提供，來自動完成長檔案或命令的名稱。 Windows PowerShell 可讓您按 **Tab** 鍵來填入檔案名稱和 Cmdlet 名稱。
 
 > [!NOTE]
@@ -45,4 +46,3 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > Tab 鍵擴充處理程序的一個限制是一律會將 Tab 鍵解譯為嘗試完成文字。 若您將命令範例複製並貼上 PowerShell 主控台，請確認未在該範例使用 Tab 鍵，如果有的話將無法預測結果，而且幾乎可以肯定不是您所預期的結果。
-

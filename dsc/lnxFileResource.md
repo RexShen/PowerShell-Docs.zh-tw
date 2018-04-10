@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC for Linux nxFile 資源"
-ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: DSC for Linux nxFile 資源
+ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile 資源
 
@@ -37,20 +37,20 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性 |  描述 | 
+|  屬性 |  描述 |
 |---|---|
-| DestinationPath| 指定您要確認檔案或目錄狀態的位置。| 
-| SourcePath| 指定要從中複製檔案或資料夾資源的路徑。 此路徑可以是本機路徑，或 `http/https/ftp` URL。 當 **Type** 屬性的值是檔案，才支援遠端 `http/https/ftp` URL。| 
-| Ensure| 決定是否要檢查檔案存在。 將此屬性設定為 "Present" 以確保檔案存在。 設為 "Absent" 以確保此檔案不存在。 預設值為 "Present"。| 
-| 類型| 指定要設定的資源是目錄或檔案。 將此屬性設定為 "directory"，表示該資源為目錄。 將此屬性設定為 "file"，表示該資源為檔案。 預設值為 "file"。| 
-| 內容| 指定檔案的內容，例如特定字串。| 
-| 總和檢查碼| 定義判斷兩個檔案是否相同時所使用的類型。 如不指定 **Checksum**，只會使用檔案或目錄名稱進行比較。 值為："ctime"、"mtime" 或 "md5"。| 
-| Recurse| 表示是否包含子目錄。 將此屬性設定為 **$true**，表示您想要包含子目錄。 預設值為 **$false**。 **注意**：僅當 **Type** 屬性設定為 directory 時，這個屬性才有效。| 
-| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **$false**。| 
-| 連結| 指定符號連結的預期行為。 設定此屬性為 "follow"，以遵循符號連結，並在連結目標上執行 (例如， 複製檔案而非連結)。 設定此屬性為 "manage" 以在連結上執行 (例如， 複製連結本身)。 設定此屬性為 "ignore" 以忽略符號連結。| 
-| 群組| 要擁有檔案或目錄的 **Group** 名稱。| 
-| 模式| 以八進位或符號標記法指定資源的預期權限。 (例如，777 或 rwxrwxrwx)。 如果使用符號標記法，就不會提供表示目錄或檔案的第一個字元。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
+| DestinationPath| 指定您要確認檔案或目錄狀態的位置。|
+| SourcePath| 指定要從中複製檔案或資料夾資源的路徑。 此路徑可以是本機路徑，或 `http/https/ftp` URL。 當 **Type** 屬性的值是檔案，才支援遠端 `http/https/ftp` URL。|
+| Ensure| 決定是否要檢查檔案存在。 將此屬性設定為 "Present" 以確保檔案存在。 設為 "Absent" 以確保此檔案不存在。 預設值為 "Present"。|
+| 類型| 指定要設定的資源是目錄或檔案。 將此屬性設定為 "directory"，表示該資源為目錄。 將此屬性設定為 "file"，表示該資源為檔案。 預設值為 "file"。|
+| 內容| 指定檔案的內容，例如特定字串。|
+| 總和檢查碼| 定義判斷兩個檔案是否相同時所使用的類型。 如不指定 **Checksum**，只會使用檔案或目錄名稱進行比較。 值為："ctime"、"mtime" 或 "md5"。|
+| Recurse| 表示是否包含子目錄。 將此屬性設定為 **$true**，表示您想要包含子目錄。 預設值為 **$false**。 **注意**：僅當 **Type** 屬性設定為 directory 時，這個屬性才有效。|
+| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **$false**。|
+| 連結| 指定符號連結的預期行為。 設定此屬性為 "follow"，以遵循符號連結，並在連結目標上執行 (例如， 複製檔案而非連結)。 設定此屬性為 "manage" 以在連結上執行 (例如， 複製連結本身)。 設定此屬性為 "ignore" 以忽略符號連結。|
+| 群組| 要擁有檔案或目錄的 **Group** 名稱。|
+| 模式| 以八進位或符號標記法指定資源的預期權限。 (例如，777 或 rwxrwxrwx)。 如果使用符號標記法，就不會提供表示目錄或檔案的第一個字元。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="additional-information"></a>其他資訊
 
@@ -67,11 +67,11 @@ nxFile resolvConf
 {
     SourcePath = "http://10.185.85.11/conf/resolv.conf"
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
-    
+
 }
-        
+
 }
 ```
 
@@ -89,7 +89,7 @@ $Contents = Get-Content C:\temp\resolv.conf
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = "$Contents"
 }
@@ -122,10 +122,10 @@ $Contents = LinuxString $Contents
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = $Contents
-    
+
 }
 }
 ```
@@ -135,7 +135,7 @@ nxFile resolvConf
 下列範例可確保目錄 `/opt/mydir` 存在，且具有指定內容的檔案存在於此目錄中。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxFile DirectoryExample
@@ -151,10 +151,9 @@ nxFile FileExample
     Destinationpath = "/opt/mydir/myfile"
     Contents=@"
 #!/bin/bash`necho "hello world"`n
-"@ 
+"@
     Mode = “755”
     DependsOn = "[nxFile]DirectoryExample"
-} 
+}
 }
 ```
-

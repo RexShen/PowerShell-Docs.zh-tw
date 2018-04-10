@@ -1,30 +1,32 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "以使用者認證執行 DSC"
-ms.openlocfilehash: 11c13d852b506be3e202b798d135eba73d84cfe0
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 以使用者認證執行 DSC
+ms.openlocfilehash: 37e6ff64c9c6d3960653d417e22a6c93c653230c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="running-dsc-with-user-credentials"></a>以使用者認證執行 DSC 
+# <a name="running-dsc-with-user-credentials"></a>以使用者認證執行 DSC
 
 > 適用於：Windows PowerShell 5.0、Windows PowerShell 5.1
 
-您可以在設定中使用自動 **PsDscRunAsCredential** 屬性，以一組指定的認證來執行 DSC 資源。 DSC 預設會使用系統帳戶執行每項資源，
+您可以在設定中使用自動 **PsDscRunAsCredential** 屬性，以一組指定的認證來執行 DSC 資源。
+DSC 預設會使用系統帳戶執行每項資源，
 但有些時候仍須以使用者身分執行，例如在特定使用者內容中安裝 MSI 封裝；設定使用者的登錄機碼；存取使用者的特定本機目錄；或存取網路共用等等。
 
 每項 DSC 資源都有 **PsDscRunAsCredential** 屬性可設為任何使用者的認證 ([PSCredential](https://msdn.microsoft.com/library/ms572524(v=VS.85).aspx) 物件)。
 此認證可硬式編碼成設定中的屬性值，也可將此值設為 [Get-Credential](https://technet.microsoft.com/library/hh849815.aspx)，如此將會在編譯設定時提示使用者輸入認證 (如需編譯設定的相關資訊，請參閱[設定](configurations.md)。
 
->**注意︰**在 PowerShell 5.0 中，不支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。 
+>**注意︰**在 PowerShell 5.0 中，不支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。
 >在 PowerShell 5.1 中，支援在呼叫複合資源的設定中使用 **PsDscRunAsCredential** 屬性。
 
 >**注意：**PowerShell 4.0 中無法使用 **PsDscRunAsCredential** 屬性。
 
-下列範例使用了 **Get-Credential** 提示使用者提供認證。 [Registry](registryResource.md) 資源可用於變更指定Windows 命令提示字元視窗背景色彩的登錄機碼。
+下列範例使用了 **Get-Credential** 提示使用者提供認證。
+[Registry](registryResource.md) 資源可用於變更指定Windows 命令提示字元視窗背景色彩的登錄機碼。
 
 ```powershell
 Configuration ChangeCmdBackGroundColor
@@ -62,4 +64,3 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 ```
 >**注意︰**此範例假設您的 `C:\publicKeys\targetNode.cer` 中包含有效的憑證，且該憑證的指紋即是所顯示的值。
 >如需如何在 DSC 設定 MOF 檔案中加密認證的資訊，請參閱[保護 MOF 檔案](secureMOF.md)。
-

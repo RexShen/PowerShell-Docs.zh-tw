@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "使用 DSC 在初始開機時設定虛擬機器"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 使用 DSC 在初始開機時設定虛擬機器
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >適用於：Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Configuration SampleIISInstall
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. 使用安裝有 DSC MOF 文件的 VHD 建立 VM。 初始開機並安裝作業系統之後，會接著安裝 IIS。
+7. 使用安裝有 DSC MOF 文件的 VHD 建立 VM。
+初始開機並安裝作業系統之後，會接著安裝 IIS。
 您可以呼叫 [Get-windowsfeature](https://technet.microsoft.com/library/jj205469.aspx) Cmdlet 加以驗證。
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>將 DSC metaconfiguration 插入 VHD
@@ -203,4 +204,3 @@ configuration PullClientBootstrap
 - [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md)
 - [設定本機設定管理員 (LCM)](metaConfig.md)
 - [設定 DSC Web 提取伺服器](pullServer.md)
-

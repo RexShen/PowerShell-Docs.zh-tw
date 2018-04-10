@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC for Linux nxService 資源"
-ms.openlocfilehash: 4273ad59f15eedd08b07888ebb6ee51d039b72b3
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC for Linux nxService 資源
+ms.openlocfilehash: b02fb1153570f628682533cb57a7d429e5cc8762
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC for Linux nxService 資源
 
@@ -28,13 +28,13 @@ nxService <string> #ResourceName
 ```
 
 ## <a name="properties"></a>Properties
-|  屬性 |  描述 | 
+|  屬性 |  描述 |
 |---|---|
-| 名稱| 要設定的服務/精靈名稱。| 
-| 控制器| 設定服務時所要使用的服務控制站類型。| 
-| 啟用| 指出是否在開機時啟動服務。| 
-| State| 表示服務是否正在執行。 設定此屬性為 "Stopped"，以確保服務未在執行中。 設定為 "Running"，以確保服務未在執行中。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
+| 名稱| 要設定的服務/精靈名稱。|
+| 控制器| 設定服務時所要使用的服務控制站類型。|
+| 啟用| 指出是否在開機時啟動服務。|
+| State| 表示服務是否正在執行。 設定此屬性為 "Stopped"，以確保服務未在執行中。 設定為 "Running"，以確保服務未在執行中。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
 
 ## <a name="additional-information"></a>其他資訊
@@ -46,11 +46,11 @@ nxService <string> #ResourceName
 下列範例顯示 “httpd” 服務設定 (適用於 Apache HTTP Server)，且向 **SystemD** 服務控制站登錄。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 #Apache Service
-nxService ApacheService 
+nxService ApacheService
 {
 Name = "httpd"
 State = "running"
@@ -59,4 +59,3 @@ Controller = "systemd"
 }
 }
 ```
-

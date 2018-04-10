@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "使用網頁型 Windows PowerShell 主控台"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+title: 使用網頁型 Windows PowerShell 主控台
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -18,15 +18,18 @@ Windows PowerShell Web 存取可讓使用者登入受保護的網站，以使用
 
 因為 Windows PowerShell 主控台在網頁瀏覽器中執行，所以可以從各種用戶端裝置開啟 (幾乎所有具有網頁瀏覽器的裝置都適用)。
 
-網頁型 Windows PowerShell 主控台用於使用者在登入處理程序中指定的遠端電腦。 
+網頁型 Windows PowerShell 主控台用於使用者在登入處理程序中指定的遠端電腦。
 
 本主題說明如何登入並開始使用 Windows PowerShell Web 存取網頁型主控台。
 
-本主題不會說明如何使用 Windows PowerShell，或執行 Cmdlet 或指令碼。 如需如何使用 Windows PowerShell 及指令碼資源的資訊，請參閱本主題結尾的[另請參閱](#see-also)一節。
+本主題不會說明如何使用 Windows PowerShell，或執行 Cmdlet 或指令碼。
+如需如何使用 Windows PowerShell 及指令碼資源的資訊，請參閱本主題結尾的[另請參閱](#see-also)一節。
 
 ## <a name="supported-browsers-and-client-devices"></a>支援的瀏覽器及用戶端裝置
 
-Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未正式支援行動瀏覽器，但很多行動瀏覽器應該都可以執行網頁型 Windows PowerShell 主控台。 其他接受 Cookie、執行 JavaScript 以及執行 HTTPS 網站的瀏覽器預期也可以運作，但尚未經過正式測試。
+Windows PowerShell Web 存取支援下列網際網路瀏覽器。
+雖然並未正式支援行動瀏覽器，但很多行動瀏覽器應該都可以執行網頁型 Windows PowerShell 主控台。
+其他接受 Cookie、執行 JavaScript 以及執行 HTTPS 網站的瀏覽器預期也可以運作，但尚未經過正式測試。
 
 ### <a name="supported-desktop-computer-browsers"></a>支援的桌上型電腦瀏覽器
 

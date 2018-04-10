@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "指定跨節點相依性"
-ms.openlocfilehash: f4411161d819d96803f57600646409d5bfe827b9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 指定跨節點相依性
+ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="specifying-cross-node-dependencies"></a>指定跨節點相依性
 
@@ -17,7 +17,7 @@ DSC 提供特殊的資源 **WaitForAll**、**WaitForAny** 與 **WaitForSome**，
 
 * **WaitForAll**︰如果指定的資源在定義於 **NodeName** 屬性中的所有目標節點上，皆為所需的狀態，即會成功。
 * **WaitForAny**︰如果指定的資源在定義於 **NodeName** 屬性中的至少一個目標節點上，為所需的狀態，即會成功。
-* **WaitForSome**：除了 **NodeName** 屬性外，指定一個 **NodeCount** 屬性。 如果資源至少有在最少的節點數目 (由 **NodeName** 屬性所定義的 **NodeCount** 指定) 上為所需的狀態，該資源即成功。 
+* **WaitForSome**：除了 **NodeName** 屬性外，指定一個 **NodeCount** 屬性。 如果資源至少有在最少的節點數目 (由 **NodeName** 屬性所定義的 **NodeCount** 指定) 上為所需的狀態，該資源即成功。
 
 ## <a name="using-waitforxxxx-resources"></a>使用 WaitForXXXX 資源
 
@@ -35,13 +35,13 @@ Configuration JoinDomain
     {
         WindowsFeature InstallAD
         {
-            Ensure = 'Present' 
-            Name = 'AD-Domain-Services' 
+            Ensure = 'Present'
+            Name = 'AD-Domain-Services'
         }
 
-        xADDomain NewDomain 
-        { 
-            DomainName = 'Contoso.com'            
+        xADDomain NewDomain
+        {
+            DomainName = 'Contoso.com'
             DomainAdministratorCredential = (Get-Credential)
             SafemodeAdministratorPassword = (Get-Credential)
             DatabasePath = "C:\Windows\NTDS"
@@ -79,4 +79,3 @@ Configuration JoinDomain
 * [DSC 設定](configurations.md)
 * [DSC 資源](resources.md)
 * [設定本機設定管理員](metaConfig.md)
-

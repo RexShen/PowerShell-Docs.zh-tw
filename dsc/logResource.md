@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC 記錄檔資源"
-ms.openlocfilehash: 3bc4bf38b376cc62e42107eee1024eaabc93485a
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC 記錄檔資源
+ms.openlocfilehash: f1a528767508d4a0e7f0ea2e58fd27a6a4d7ec75
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="dsc-log-resource"></a>DSC 記錄檔資源 
+# <a name="dsc-log-resource"></a>DSC 記錄檔資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -32,10 +32,10 @@ Log [string] #ResourceName
 [DSC 事件記錄檔在哪裡？](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
 ## <a name="properties"></a>Properties
-|  屬性  |  描述   | 
-|---|---| 
-| 訊息| 表示要寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔的訊息。| 
-| DependsOn | 表示必須先執行另一個資源的設定，再寫入這個登入訊息。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。| 
+|  屬性  |  描述   |
+|---|---|
+| 訊息| 表示要寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔的訊息。|
+| DependsOn | 表示必須先執行另一個資源的設定，再寫入這個登入訊息。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
 ## <a name="example"></a>範例
 
@@ -43,7 +43,7 @@ Log [string] #ResourceName
 
 > **注意**：如果您在設定此資源的情況下執行 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)，它一律會傳回 **$false**。
 
-```powershell 
+```powershell
 Configuration logResourceTest
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
@@ -58,4 +58,3 @@ Configuration logResourceTest
     }
 }
 ```
-

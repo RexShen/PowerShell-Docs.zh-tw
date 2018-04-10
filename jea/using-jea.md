@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "jea,powershell,安全性"
-title: "使用 JEA"
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: jea,powershell,安全性
+title: 使用 JEA
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 您也可以使用 [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 從隱含遠端保存代理 Cmdlet。
@@ -189,4 +189,3 @@ Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential '
 請記住，根據預設，即使無權限的使用者也仍然可以登入 Windows 電腦，包括使用不受限制的 PowerShell。
 那樣會允許他們瀏覽 (部分) 檔案系統，並深入了解您的作業系統環境。
 若要將 Hyper-V 系統管理員鎖定於只能使用 PowerShell Direct 與 JEA 來存取 VM，您將會需要拒絕 Hyper-V 系統管理員 JEA 帳戶的本機登入權限。
-

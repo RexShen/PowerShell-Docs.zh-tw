@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "資源庫,powershell,cmdlet,psget"
+keywords: 資源庫,powershell,cmdlet,psget
 title: Uninstall-Module
-ms.openlocfilehash: 3c4d8faa63aba6b4434d42a19a219baf84122591
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 90f26e64a8a6bc95faf444b1d3ce82a8e3bbefc1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-module"></a>Uninstall-Module
 
@@ -16,7 +16,8 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="description"></a>描述
 
-Uninstall-Module Cmdlet 會從本機電腦中解除安裝指定的模組。 如果某些其他模組具有模組的相依性，則無法解除安裝模組。
+Uninstall-Module Cmdlet 會從本機電腦中解除安裝指定的模組。
+如果某些其他模組具有模組的相依性，則無法解除安裝模組。
 Uninstall-Module Cmdlet 也會驗證是否正在使用所解除安裝的模組。 如果模組使用中，則會擲回錯誤。
 
 ## <a name="cmdlet-syntax"></a>Cmdlet 語法
@@ -126,4 +127,3 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-

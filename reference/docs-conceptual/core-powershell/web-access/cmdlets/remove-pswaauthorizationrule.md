@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
+ms.date: 12/12/2016
 title: remove pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 28dbfe84827d6ccb99dce1ebb520cae66dc8c50e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
@@ -40,7 +40,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 在不提示確認的情況下執行 Cmdlet。 根據預設，此 Cmdlet 會先要求確認，再繼續進行。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | false                                |
@@ -53,7 +53,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 指定要移除之一或多個規則的識別碼。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -66,7 +66,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 指定要移除的規則。
 
-|||  
+|||
 |-|-|
 | 別名                              | 無                                 |
 | 必要？                            | true                                 |
@@ -79,7 +79,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 執行 Cmdlet 之前先提示您確認。
 
-|||  
+|||
 |-|-|
 | 必要？                            | false                                |
 | 位置？                            | 具名                                |
@@ -91,7 +91,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 顯示執行 Cmdlet 後會發生的情況。 未執行 Cmdlet。
 
-|||  
+|||
 |-|-|
 | 必要？                            | false                                |
 | 位置？                            | 具名                                |

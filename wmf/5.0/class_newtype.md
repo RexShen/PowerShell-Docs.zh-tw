@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能 
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能
 
 PowerShell 5.0 在 Windows PowerShell 中引進了下列新的語言元素︰
 
 ## <a name="class-keyword"></a>Class 關鍵字
 
-**class** 關鍵字會定義新的類別。 這是真的 .NET Framework 類型。 類別成員是公用的，但只在模組範圍內公用。
+**class** 關鍵字會定義新的類別。 這是真的 .NET Framework 類型。
+類別成員是公用的，但只在模組範圍內公用。
 類型名稱不能當做字串參考 (例如，`New-Object` 不作用)，而且在這個版本中，您無法在已定義類別的指令碼/模組檔案外部使用類型常值 (例如，`[MyClass]`)。
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell 會剖析指定模組的根模組，搜尋包含 **DscResource** 屬�
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-新的欄位 **ImplementingAssembly**，已加入 ModuleInfo 中。 如果指令碼定義類別，它會設定成為指令碼模組所建立的動態組件，或二進位模組的載入組件。 當 ModuleType = Manifest 時不設定。 
+新的欄位 **ImplementingAssembly**，已加入 ModuleInfo 中。 如果指令碼定義類別，它會設定成為指令碼模組所建立的動態組件，或二進位模組的載入組件。 當 ModuleType = Manifest 時不設定。
 
 **ImplementingAssembly** 欄位的反映會探索模組中的資源。 這表示您可以探索以 PowerShell 或其他 Managed 語言撰寫的資源。
 
-有初始設定式的欄位︰      
+有初始設定式的欄位︰
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ static [int] $count = 0
 $s = "hello"
 ```
 
-所有成員都是公用的。 
+所有成員都是公用的。
 
 ## <a name="constructors-and-instantiation"></a>建構函式和實例
 
-Windows PowerShell 的類別可以有建構函式，名稱與其類別相同。 可以多載建構函式。 支援靜態的建構函式。 使用初始化運算式的屬性會先初始化，然後建構函式中的所有程式碼才執行。 靜態屬性會在靜態建構函式主體之前初始化，執行個體屬性則在非靜態建構函式主體之前初始化。 目前沒有任何語法可從另一個建構函式呼叫建構函式 (例如 C\# 語法："this()")。 因應措施是定義通用的 Init 方法。 
+Windows PowerShell 的類別可以有建構函式，名稱與其類別相同。 可以多載建構函式。 支援靜態的建構函式。 使用初始化運算式的屬性會先初始化，然後建構函式中的所有程式碼才執行。 靜態屬性會在靜態建構函式主體之前初始化，執行個體屬性則在非靜態建構函式主體之前初始化。 目前沒有任何語法可從另一個建構函式呼叫建構函式 (例如 C\# 語法："this()")。 因應措施是定義通用的 Init 方法。
 
 以下是這個版本建立類別實例的方法。
 
@@ -151,12 +152,12 @@ class MyClass
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 也支援多載的方法，也就是那些與現有方法同名，但依指定值區別的方法。
 
-## <a name="properties"></a>[內容] 
+## <a name="properties"></a>Properties
 
 所有屬性都是公用的。 屬性需要新行字元或分號。 如不指定任何物件類型，屬性類型就是物件。
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>端對端範例
 
-下例會建立數個新的自訂類別以實作 HTML 動態樣式表語言 (DSL)。 然後，範例會加入 Helper 函式來建立特定的元素類型，當做元素類別的一部分，例如標題樣式和資料表，因為類型不能用在模組範圍外。
+下例會建立數個新的自訂類別以實作 HTML 動態樣式表語言 (DSL)。
+然後，範例會加入 Helper 函式來建立特定的元素類型，當做元素類別的一部分，例如標題樣式和資料表，因為類型不能用在模組範圍外。
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-requiring-license-acceptance"></a>必須接受授權的模組
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 10/11/2017
 ## <a name="publish-requirements-for-modules"></a>針對模組的發行要求
 
 想要求使用者接受授權的模組，應該要滿足下列需求：
-    
+
 - 模組資訊清單的 PSData 區段應包含 RequireLicenseAcceptance = $True。
 - 模組的根目錄應包含 license.txt 檔案。
 - 模組資訊清單應包含授權 URI。
@@ -31,13 +31,13 @@ ms.lasthandoff: 10/11/2017
     - **Save-Module：**系統會將模組複製到使用者的系統
     - **Install-Module：**系統會 (根據範圍) 將模組複製到使用者系統上適當的資料夾
     - **Update-Module：**系統會更新模組。
-  - 若授權已被拒絕。 
+  - 若授權已被拒絕。
     - 作業將會取消。
 - 所有的 Cmdlet 都會針對表示必須接受授權的中繼資料 (requireLicenseAcceptance 和格式版本) 進行檢查
   - 若用戶端的格式版本早於 2.0 版，作業將會失敗並要求使用者更新用戶端。
   - 若模組是以早於 2.0 版的格式版本發行，系統將會忽略 requireLicenseAcceptance 旗標。
 
-    
+
  ## <a name="module-dependencies"></a>模組相依性
 - 在 Install/Save/Update 作業期間，若相依模組 (相依於模組的其他項目) 必須接受授權，則會要求 (上述的) 授權接受行為。
 - 如果模組版本已於本機目錄中列為已安裝在系統上，將會略過授權檢查。
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 此命令會更新資訊清單檔案，並將 RequireLicenseAcceptance 旗標設定為 True。
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 此命令會顯示來自 license.txt 檔案的授權，並提示使用者接受授權。
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>範例 6：Install 模組具有必須接受授權的相依性和 -AcceptLicense
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 此命令會顯示來自 license.txt 檔案的授權，並提示使用者接受授權。
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 此命令會顯示來自 license.txt 檔案的授權，並提示使用者接受授權。
 

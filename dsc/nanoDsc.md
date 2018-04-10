@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "在 Nano Server 上使用 DSC"
-ms.openlocfilehash: c8f3669ee9c2ed6107c14ba9f4460d82276e1932
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 在 Nano Server 上使用 DSC
+ms.openlocfilehash: 9ebc1f046893c360538009b5ecbcfb6456f92bbb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-dsc-on-nano-server"></a>在 Nano Server 上使用 DSC
 
@@ -25,22 +25,22 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 ## <a name="dsc-features-available-on-nano-server"></a>Nano Server 提供的 DSC 功能
 
  相較於完整版的 Windows Server，Nano Server 僅支援一組有限的 API，所以目前 Nano Server 上的 DSC 和執行於完整 SKU 上的 DSC 相較，並不具備完整的同位功能。 Nano Server 上的 DSC 正在開發中，功能還不夠完備。
- 
- 目前於 Nano Server 上提供的 DSC 功能如下︰ 
+
+ 目前於 Nano Server 上提供的 DSC 功能如下︰
 
 
 * 推入與提取模式
 
-* 完整版 Windows Server 的所有現有 DSC Cmdlet 包括︰ 
+* 完整版 Windows Server 的所有現有 DSC Cmdlet 包括︰
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)     
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn521621.aspx)
   * [啟用-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
+  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
-  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)      
-  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
+  * [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx)
+  * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx)
   * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
@@ -48,7 +48,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
-  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
+  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
 
 * 編譯設定 (請參閱 [DSC 設定](configurations.md))。
 
@@ -61,10 +61,10 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 類別型資源 (請參閱[使用 PowerShell 類別撰寫自訂 DSC 資源](authoringResourceClass.md))
 
 * 為 DSC 資源偵錯 (請參閱[為 DSC 資源偵錯](debugresource.md))
-  
+
   **問題︰** 如果資源使用 PsDscRunAsCredential 則無法運作 (請參閱[以使用者認證執行 DSC](runAsUser.md))
 
-* [指定節點之間的相依性](crossNodeDependencies.md) 
+* [指定節點之間的相依性](crossNodeDependencies.md)
 
 * [資源的版本管理](sxsResource.md)
 
@@ -72,7 +72,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 * [部分設定 (提取與推送)](partialConfigs.md)
 
-* [回報至提取伺服器](reportServer.md) 
+* [回報至提取伺服器](reportServer.md)
 
 * MOF 加密
 
@@ -97,32 +97,32 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 * 部分運作的資源
   * [群組](groupResource.md)
   * GroupSet
-  
+
   **問題︰** 若呼叫特定執行個體兩次 (執行兩次相同的設定)，則上述資源會失敗
-  
+
   * [Service](serviceResource.md)
   * ServiceSet
-  
+
   **問題︰** 只適用於開始/停止 (狀態) 服務。 如果嘗試變更啟動類型、認證、描述等其他服務屬性，則會失敗。 擲回的錯誤類似如下︰
-  
+
   找不到類型 [management.managementobject]：請確認已載入包含此類型的組件。
-  
+
 * 無法正常運作的資源
   * [User](userResource.md)
-  
+
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server 上不提供的 DSC 功能
 
 目前於 Nano Server 上沒有提供下列 DSC 功能︰
 
-* 使用加密密碼將 MOF 文件解密 
+* 使用加密密碼將 MOF 文件解密
 * 提取伺服器 -- 目前無法在 Nano Server 上設定提取伺服器
 * 任何不在功能清單中的項目皆可使用
 
 ## <a name="using-custom-dsc-resources-on-nano-server"></a>在 Nano Server 上使用自訂 DSC 資源
- 
-因為 Nano Server 上僅提供有限的 Windows API 與 CLR 程式庫，所以在 Windows 完整 CLR 版能執行的 DSC 資源，在 Nano Server 上不一定有效。 請先完成端對端測試，再將任何 DSC 自訂資源部署至生產環境。
+
+因為 Nano Server 上僅提供有限的 Windows API 與 CLR 程式庫，所以在 Windows 完整 CLR 版能執行的 DSC 資源，在 Nano Server 上不一定有效。
+請先完成端對端測試，再將任何 DSC 自訂資源部署至生產環境。
 
 ## <a name="see-also"></a>另請參閱
 - [開始使用 Nano Server](https://technet.microsoft.com/library/mt126167.aspx)
-

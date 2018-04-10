@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "撰寫單一執行個體 DSC 資源 (最佳做法)"
-ms.openlocfilehash: 4510bec5b4600334b845831ec6700da01e1a110c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 撰寫單一執行個體 DSC 資源 (最佳做法)
+ms.openlocfilehash: fc118fd8b0d91d2001030769ac7e3c6321972905
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>撰寫單一執行個體 DSC 資源 (最佳做法)
 
@@ -16,39 +16,40 @@ ms.lasthandoff: 01/17/2018
 有時，您不想允許在設定中多次使用資源。 例如，在 [xTimeZone](https://github.com/PowerShell/xTimeZone) 資源的先前實作中，於每個資源區塊中將時區設為不同的設定，設定即可多次呼叫資源：
 
 ```powershell
-Configuration SetTimeZone 
-{ 
-    Param 
-    ( 
-        [String[]]$NodeName = $env:COMPUTERNAME 
+Configuration SetTimeZone
+{
+    Param
+    (
+        [String[]]$NodeName = $env:COMPUTERNAME
 
-    ) 
+    )
 
-    Import-DSCResource -ModuleName xTimeZone 
- 
- 
-    Node $NodeName 
-    { 
-         xTimeZone TimeZoneExample 
-         { 
-        
-            TimeZone = 'Eastern Standard Time' 
-         } 
+    Import-DSCResource -ModuleName xTimeZone
+
+
+    Node $NodeName
+    {
+         xTimeZone TimeZoneExample
+         {
+
+            TimeZone = 'Eastern Standard Time'
+         }
 
          xTimeZone TimeZoneExample2
          {
 
             TimeZone = 'Pacific Standard Time'
 
-         }        
+         }
 
-    } 
-} 
+    }
+}
 ```
 
 原因是 DSC 資源金鑰的運作方式。 資源必須至少有一個金鑰屬性。 如果資源的所有金鑰屬性值組合皆為唯一，則會將資源執行個體視為唯一。 在其先前實作中，[xTimeZone](https://github.com/PowerShell/xTimeZone) 資源只有一個屬性 (**TimeZone**)，而這個屬性必須是金鑰。 因此，上述這類設定會編譯並執行，而不發出警告。 每個 **xTimeZone** 資源區塊都視為唯一的。 這會導致將設定重複套用至節點，方法是反覆循環時區。
 
-若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。 已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。 資源的舊 MOF 結構描述為︰
+若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。
+已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。 資源的舊 MOF 結構描述為︰
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -117,10 +118,10 @@ function Set-TargetResource
         [String]
         $TimeZone
     )
-    
+
     #Output the result of Get-TargetResource function.
     $CurrentTimeZone = Get-TimeZone
-    
+
     if($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
     {
         try
@@ -152,7 +153,7 @@ function Test-TargetResource
         [parameter(Mandatory = $true)]
         [ValidateSet('Yes')]
         [String]
-        $IsSingleInstance, 
+        $IsSingleInstance,
 
         [parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
@@ -205,9 +206,9 @@ Export-ModuleMember -Function *-TargetResource
 請注意，**TimeZone** 屬性不再是索引鍵。 現在，如果設定嘗試設定時區兩次 (使用兩個具有不同 **TimeZone** 值的不同 **xTimeZone** 區塊)，則嘗試編譯設定將會導致錯誤︰
 
 ```powershell
-Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and 
-'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the 
-following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property 
+Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and
+'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the
+following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property
 values so that they are identical in both cases.
 At line:271 char:9
 +         Test-ConflictingResources $keywordName $canonicalizedValue $k ...
@@ -221,4 +222,3 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + CategoryInfo          : InvalidOperation: (SetTimeZone:String) [], InvalidOperationException
     + FullyQualifiedErrorId : FailToProcessConfiguration
 ```
-   

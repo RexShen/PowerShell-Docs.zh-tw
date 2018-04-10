@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "使用靜態類別和方法"
+title: 使用靜態類別和方法
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-static-classes-and-methods"></a>使用靜態類別和方法
 並非所有的 .NET Framework 類別都能使用 **New-Object** 建立。 例如，如果您嘗試使用 **New-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 我們現在可以從 System.Environment 中選取要檢視的屬性。
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>顯示 System.Environment 的靜態屬性
+
 System.Environment 的屬性也是靜態的，而且指定的方式必須與一般屬性不同。 我們使用 **::** 向 Windows PowerShell 表示我們想要使用靜態方法或屬性。 若要查看已用來啟動 Windows PowerShell 的命令，我們會檢查 **CommandLine** 屬性，方法是輸入︰
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>使用 System.Math 執行數學運算
+
 System.Math 靜態類別適用於執行一些數學運算。 **System.Math** 的重要成員主要是方法，而使用 **Get-Member** 即可顯示這些方法。
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

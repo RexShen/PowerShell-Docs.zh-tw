@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "開始使用 Linux 預期狀態設定 (DSC)"
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 開始使用 Linux 預期狀態設定 (DSC)
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -25,14 +25,14 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 
 下表描述 DSC for Linux 必要的套件相依性。
 
-|  必要的套件 |  描述 |  最低版本 | 
+|  必要的套件 |  描述 |  最低版本 |
 |---|---|---|
-| glibc| GNU 程式庫| 2…4 – 31.30| 
-| python| Python| 2.4 – 3.4| 
-| omiserver| 開放式管理基礎結構| 1.0.8.1| 
-| openssl| OpenSSL 程式庫| 0.9.8 或 1.0| 
-| ctypes| Python CTypes 程式庫| 必須符合 Python 版本| 
-| libcurl| cURL http 用戶端程式庫| 7.15.1| 
+| glibc| GNU 程式庫| 2…4 – 31.30|
+| python| Python| 2.4 – 3.4|
+| omiserver| 開放式管理基礎結構| 1.0.8.1|
+| openssl| OpenSSL 程式庫| 0.9.8 或 1.0|
+| ctypes| Python CTypes 程式庫| 必須符合 Python 版本|
+| libcurl| cURL http 用戶端程式庫| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>安裝 DSC for Linux
 
@@ -52,12 +52,12 @@ Linux 的 Desired State Configuration 需要開放式管理基礎結構 (OMI) CI
 
 ### <a name="installing-dsc"></a>安裝 DSC
 
-您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 Linux 的 DSC。 
+您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)下載 Linux 的 DSC。
 
 若要安裝 DSC，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
 
 > **注意**：若要判斷已安裝的 OpenSSL 版本，請執行命令 openssl version。
- 
+
 執行下列命令，在 CentOS 7 x64 系統上安裝 DSC。
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就�
 1. 匯入 nx 模組。 Nx Windows PowerShell 模組包含 DSC for Linux 內建資源的結構描述，並且必須安裝到本機電腦，然後匯入設定中。
 
     若要安裝 nx 模組，請將 nx 模組目錄複製到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules`。 nx 模組包含在 DSC for Linux 安裝套件 (MSI) 中。 若要在您的設定中匯入 nx 模組，請使用 __Import-DSCResource__ 命令：
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
@@ -117,8 +117,8 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **注意**：
@@ -162,7 +162,7 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  將設定 MOF 檔案套用至電腦。 類似於 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet。 需要有要套用的設定 MOF 路徑。
 
@@ -182,4 +182,3 @@ DSC for Linux 包含指令碼以使用本機 Linux 電腦的設定。 這些指�
 |---|---|---|
 |omiserver.log|/var/opt/omi/log|OMI CIM 伺服器作業相關的訊息。|
 |dsc.log|/var/opt/omi/log|與本機設定管理員 (LCM) 和 DSC 資源作業的作業相關的訊息。|
-

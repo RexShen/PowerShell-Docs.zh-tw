@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "PowerShell 50 ISE 的新功能"
+title: PowerShell 50 ISE 的新功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
@@ -225,4 +225,3 @@ Show-Command 為 Windows PowerShell ISE 3.0 的新功能
 - [探索 Windows PowerShell 整合式指令碼環境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [Script Center](http://technet.microsoft.com/scriptcenter/default)
-

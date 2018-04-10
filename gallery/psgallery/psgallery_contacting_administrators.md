@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: gallery,powershell,cmdlet,psgallery
 title: psgallery_contacting_administrators
-ms.openlocfilehash: a405fb5f5517c86900d07ad09f980b96ba8e2fe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6091d247ca5674fbecf6e00131e18fe6686f1d25
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="contact-gallery-administrators"></a>連絡資源庫管理員
 
@@ -27,4 +27,3 @@ ms.lasthandoff: 06/12/2017
 1. 傳送電子郵件給我們：cgadmin@microsoft.com。
 2. 若您要檢舉不當使用的項目，可於左方面板項目資訊下方找到 [檢舉不當使用] 連結。
 3. 若為任何其他資源庫相關的一般問題，請將您的問題提交至 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)
-

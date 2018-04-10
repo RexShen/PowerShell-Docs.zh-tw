@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: powershell,cmdlet
-title: "解除安裝 Windows PowerShell Web 存取"
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+title: 解除安裝 Windows PowerShell Web 存取
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
@@ -29,7 +29,7 @@ ms.lasthandoff: 09/29/2017
 
 - Windows PowerShell Web 存取 Web 應用程式，以及
 - Windows PowerShell Web 存取功能
- 
+
 其藉由使用 Windows PowerShell Cmdlet 來完成。
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>步驟 1：使用 Cmdlet 刪除 Web 應用程式
@@ -38,7 +38,7 @@ ms.lasthandoff: 09/29/2017
 
     -   在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]。
 
-    -   在 Windows [開始]  畫面上，按一下 [Windows PowerShell] 。
+    -   在 Windows **[開始]** 畫面上，按一下 **[Windows PowerShell]**。
 
 2. 輸入 `Uninstall-PswaWebApplication`，然後按 **Enter** 鍵。
    1. 如果您已經指定您自訂的網站名稱，請將 `-WebsiteName` 參數新增至您的命令並指定網站名稱。
@@ -63,7 +63,7 @@ ms.lasthandoff: 09/29/2017
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
-    若要從離線 VHD 移除角色及功能，您必須新增 `-ComputerName` 參數及 `-VHD` 參數。 `-ComputerName` 參數包含要掛接 VHD 的伺服器名稱， `-VHD` 參數則包含指定伺服器上的 VHD 檔案路徑。
+    若要從離線 VHD 移除角色及功能，您必須新增 `-ComputerName` 參數及 `-VHD` 參數。 `-ComputerName` 參數包含要掛接 VHD 的伺服器名稱，`-VHD` 參數則包含指定伺服器上的 VHD 檔案路徑。
 
         Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
@@ -96,9 +96,9 @@ ms.lasthandoff: 09/29/2017
 
 > ![警告注意](images/SecurityNote.jpeg)**注意**：
 >
-> 解除安裝期間不會刪除憑證。 
+> 解除安裝期間不會刪除憑證。
 >
-> 如果您建立自我簽署憑證，或使用測試憑證並想要將它移除，請在 IIS 管理員中刪除憑證。 
+> 如果您建立自我簽署憑證，或使用測試憑證並想要將它移除，請在 IIS 管理員中刪除憑證。
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>步驟 2：使用移除角色及功能精靈解除安裝 Windows PowerShell Web 存取
 
@@ -110,11 +110,11 @@ ms.lasthandoff: 09/29/2017
 
 1. 在 **[管理]** 功能表上，按一下 **[移除角色及功能]**。
 
-1. 在 [選取目的地伺服器]  頁面上，選取您想要移除功能的伺服器或離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 選取目的地伺服器之後，按 [下一步] 。
+1. 在 [選取目的地伺服器] 頁面上，選取您想要從中移除功能的伺服器或離線 VHD。 若要選取離線 VHD，請先選取要掛接 VHD 的伺服器，然後選取 VHD 檔案。 選取目的地伺服器之後，按一下 **[下一步]**。
 
-1. 再按 [下一步]  ，跳至 [移除功能]  頁面。
+1. 再按一下 [下一步]，跳至 [移除功能] 頁面。
 
-1. 取消選取 [Windows PowerShell Web 存取] 核取方塊，然後按 [下一步] 。
+1. 取消選取 **[Windows PowerShell Web 存取]** 核取方塊，然後按一下 **[下一步]**。
 
 1. 在 **[確認移除選項]** 頁面上，按一下 **[移除]**。
 

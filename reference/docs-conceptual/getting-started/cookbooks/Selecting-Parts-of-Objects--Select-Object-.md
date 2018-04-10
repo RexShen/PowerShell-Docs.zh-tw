@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "選取物件的組件 Select Object"
+title: 選取物件的組件 Select Object
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
-ms.openlocfilehash: 8c9633e80f63e1d474c46fa772108aee4f79751d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 323c57ba4462e20d9713fb74732989584f5a993f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>選取物件的組件 (Select-Object)
+
 您可以使用 **Select-Object** Cmdlet 來建立新的自訂 Windows PowerShell 物件，這些物件包含從用來建立它們的物件中選取的屬性。 輸入下列命令，以建立只包括 Win32_LogicalDisk WMI 類別的 Name 和 FreeSpace 屬性的新物件：
 
 ```
@@ -45,4 +46,3 @@ Name                                                                  FreeSpace
 ----                                                                  ---------
 C:                                                                48317.7265625
 ```
-

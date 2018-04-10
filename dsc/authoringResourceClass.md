@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "使用 PowerShell 類別撰寫自訂的 DSC 資源"
-ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
+ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -30,8 +30,8 @@ ms.lasthandoff: 03/15/2018
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1 
-           MyDscResource.psd1 
+        |- MyDscResource.psm1
+           MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>建立類別
@@ -72,10 +72,10 @@ DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性
 **$Path** 和 **$SourcePath** 屬性都是字串。 **$CreationTime** 是 [DateTime](https://technet.microsoft.com/library/system.datetime.aspx) 屬性。 **$Ensure** 屬性是列舉類型，定義如下。
 
 ```powershell
-enum Ensure 
-{ 
-    Absent 
-    Present 
+enum Ensure
+{
+    Absent
+    Present
 }
 ```
 
@@ -83,7 +83,7 @@ enum Ensure
 
 **Get()**、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
 
-這個程式碼也包含 CopyFile() 函式，這是會將檔案從 **$SourcePath** 複製到 **$Path** 的 Helper 函式。 
+這個程式碼也包含 CopyFile() 函式，這是會將檔案從 **$SourcePath** 複製到 **$Path** 的 Helper 函式。
 
 ```powershell
 
@@ -450,7 +450,7 @@ PowerShellVersion = '5.0'
 
 # Name of the Windows PowerShell host required by this module
 # PowerShellHostName = ''
-} 
+}
 ```
 
 ## <a name="test-the-resource"></a>測試資源
@@ -466,7 +466,7 @@ Configuration Test
         Path = "C:\test\test.txt"
         SourcePath = "c:\test.txt"
         Ensure = "Present"
-    } 
+    }
 }
 Test
 Start-DscConfiguration -Wait -Force Test
@@ -512,4 +512,3 @@ if (PsDscContext.RunAsUser) {
 ## <a name="see-also"></a>另請參閱
 ### <a name="concepts"></a>概念
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
-

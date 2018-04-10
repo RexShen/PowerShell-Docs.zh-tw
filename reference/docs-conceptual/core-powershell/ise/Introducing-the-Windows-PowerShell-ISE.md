@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "Windows PowerShell ISE 簡介"
-ms.openlocfilehash: 7b529c9da7c91c6ca699c70f2674c8bc8734dd33
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+title: Windows PowerShell ISE 簡介
+ms.openlocfilehash: b09e64d0258d11f1f16f96b319ef232ebdfa0c49
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Windows PowerShell ISE 簡介
 
@@ -20,13 +20,13 @@ Windows PowerShell 整合式指令碼環境 (ISE) 是適用於 Windows PowerShel
 
 Windows PowerShell ISE 可讓您自訂其部分外觀。 它也有自己的 Windows PowerShell 設定檔，您可以在其中儲存您在 Windows PowerShell ISE 中使用的函式、別名、變數與命令。
 
-### <a name="to-start-the-windows-powershell-ise"></a>啟動 Windows PowerShell ISE
+## <a name="to-start-the-windows-powershell-ise"></a>啟動 Windows PowerShell ISE
 
 執行下列其中一個動作：
 
 - 按一下 **[開始]**、指向 **[所有程式]**、指向 **[Windows PowerShell V2]**，然後按一下 **[Windows PowerShell ISE]**。
 - 在 Windows PowerShell 主控台 Cmd.exe 或 [執行] 方塊中，輸入 **powershell_ise.exe**。
 
-### <a name="to-get-help-in-the-windows-powershell-ise"></a>在 Windows PowerShell ISE 中取得說明
+## <a name="to-get-help-in-the-windows-powershell-ise"></a>在 Windows PowerShell ISE 中取得說明
 
 在 **[說明]** 功能表上，按一下 **[Windows PowerShell 說明]**。 或者，按下 F1。 開啟的檔案會描述 Windows PowerShell ISE 與 Windows PowerShell，包括可從 Get-Help Cmdlet 取得的所有說明。

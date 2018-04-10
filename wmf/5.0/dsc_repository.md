@@ -1,17 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 48dc7c8c47b28b65117dbeb568e23a802a9b0a49
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: eb84892525689b95f0577aecb6f142117e94f615
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="separation-of-configuration-resource-and-report-repositories"></a>隔離設定、資源及報表的存放庫
 
-在此版本中我們讓您擁有所需的彈性，以對一個或多個 DSC 提取伺服器進行提取和報告。 每個端點可以分開定義，所以您可以從一個位置提取設定、從另一個位置提取資源，再從另一個位置提取報告。 
+在此版本中我們讓您擁有所需的彈性，以對一個或多個 DSC 提取伺服器進行提取和報告。 每個端點可以分開定義，所以您可以從一個位置提取設定、從另一個位置提取資源，再從另一個位置提取報告。
 
 如需詳細資訊，請參閱[使用設定識別碼設定提取用戶端](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid)或[使用設定名稱設定提取用戶端](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)。
-
