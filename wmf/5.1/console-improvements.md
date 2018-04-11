@@ -1,19 +1,16 @@
 ---
-title: "WMF 5.1 的主控台改善"
-ms.date: 2016-07-13
-keywords: "PowerShell、DSC、WMF"
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: fc0c78f59a2c4cda5c6aad625a5eaf5121485bad
-ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
+ms.date: 06/12/2017
+author: JKeithB
+ms.topic: reference
+keywords: wmf,powershell,設定
+title: WMF 5.1 的主控台改善
+ms.openlocfilehash: 2abc02010c6c1d9f7fc617e9831b2d1243e0a3ee
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="console-improvements-in-wmf-51"></a>WMF 5.1 的主控台改善#
+# <a name="console-improvements-in-wmf-51"></a>WMF 5.1# 的主控台改善
 
 ## <a name="powershell-console-improvements"></a>PowerShell 主控台改善
 
@@ -24,7 +21,8 @@ WMF 5.1 的 powershell.exe 已進行下列變更，以改善主控台體驗︰
 Windows 10 新增了對 [VT100 逸出序列](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx)的支援。
 PowerShell 在計算表格寬度時，會忽略某些 VT100 格式逸出序列。
 
-PowerShell 也新增了可用於將程式碼格式化的新 API，以判斷是否支援 VT100。 例如：
+PowerShell 也新增了可用於將程式碼格式化的新 API，以判斷是否支援 VT100。
+例如：
 
 ```
 if ($host.UI.SupportsVirtualTerminal)
@@ -40,16 +38,18 @@ else
 以下是可用來反白 Select-String 相符項目的完整[範例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)。
 將範例儲存在名為 `MatchInfo.format.ps1xml` 的檔案中，然後在您的設定檔或其他位置執行 `Update-FormatData -Prepend MatchInfo.format.ps1xml` 以便加以使用。
 
-請注意，從 Windows 10 年度更新版開始才支援 VT100 逸出序列，舊版系統不支援。   
+請注意，從 Windows 10 年度更新版開始才支援 VT100 逸出序列，舊版系統不支援。
 
 ### <a name="vi-mode-support-in-psreadline"></a>PSReadline 的 Vi 模式支援
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) 加入了對 vi 模式的支援。 若要使用 vi 模式，請執行 `Set-PSReadlineOption -EditMode Vi`。
 
-### <a name="redirected-stdin-with-interactive-input"></a>以互動輸入重新導向的 stdin 
+### <a name="redirected-stdin-with-interactive-input"></a>以互動輸入重新導向的 stdin
 
 在舊版中，重新導向 stdin 且要以互動方式輸入命令時，需要使用 `powershell -File -` 啟動 PowerShell。
 
-有了 WMF 5.1，即不再需要此難以探索的選項。 可以啟動 PowerShell 而不使用任何選項，例如 `powershell`。
+有了 WMF 5.1，即不再需要此難以探索的選項。
+可以啟動 PowerShell 而不使用任何選項，例如 `powershell`。
 
-請注意，PSReadline 目前不支援重新導向的 stdin，而附重新導向的 stdin 的內建命令列編輯經驗極受限制，例如方向鍵無法運作。 新版的 PSReadline 應該會解決這個問題。   
+請注意，PSReadline 目前不支援重新導向的 stdin，而附重新導向的 stdin 的內建命令列編輯經驗極受限制，例如方向鍵無法運作。
+新版的 PSReadline 應該會解決這個問題。

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法"
-ms.openlocfilehash: 3486ef559102929f8d05994a4bf6e45d49a0c140
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法
+ms.openlocfilehash: b5f437a123bd38df21f30d11e71d2c3b36bc9f3a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法
 
@@ -28,17 +28,13 @@ uint32 ResourceSet(
 <a name="parameters"></a>參數
 ----------
 
-*ResourceType* \[in\]  
-要呼叫的資源名稱。
+*ResourceType* \[in\] 要呼叫的資源名稱。
 
-*ModuleName* \[in\]  
-包含要呼叫之資源的模組名稱。
+*ModuleName* \[in\] 包含要呼叫之資源的模組名稱。
 
-*resourceProperty* \[in\]  
-在雜湊表中指定資源的屬性名稱與其值，分別作為索引鍵和值。 使用 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) Cmdlet，探索資源的屬性和其類型。
+*resourceProperty* \[in\] 在雜湊表中指定資源的屬性名稱與其值，分別作為索引鍵和值。 使用 [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) Cmdlet，探索資源的屬性和其類型。
 
-*RebootRequired* \[out\]  
-傳回時，如果需要重新啟動目標節點，這個屬性會設定為 **true**。
+*RebootRequired* \[out\] 傳回時，如果需要重新啟動目標節點，這個屬性會設定為 **true**。
 
 ## <a name="return-value"></a>傳回值
 ------------
@@ -60,10 +56,3 @@ uint32 ResourceSet(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

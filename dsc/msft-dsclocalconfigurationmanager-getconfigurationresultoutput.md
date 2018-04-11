@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法"
-ms.openlocfilehash: f6106bb28dc20004b5bbb6df2d8e719cf0c453f0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
+ms.openlocfilehash: f4c2ddaa37cdafeff1a442f3f1fa656788a1c6c8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
 
@@ -27,14 +27,11 @@ uint32 GetConfigurationResultOutput(
 <a name="parameters"></a>參數
 ----------
 
-*jobId* \[in\]  
-取得輸出資料之工作的識別碼。
+*jobId* \[in\] 取得輸出資料之工作的識別碼。
 
-*resumeOutputBookmark* \[in\]  
-指定輸出應該接續前一個書籤。
+*resumeOutputBookmark* \[in\] 指定輸出應該接續前一個書籤。
 
-*output* \[out\]  
-所指定之工作的輸出。
+*output* \[out\] 指定之工作的輸出。
 
 ## <a name="return-value"></a>傳回值
 ------------
@@ -56,10 +53,3 @@ uint32 GetConfigurationResultOutput(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

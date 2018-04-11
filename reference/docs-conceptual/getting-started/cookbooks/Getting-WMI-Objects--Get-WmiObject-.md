@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: powershell,cmdlet
-title: "取得 WMI 物件 Get WmiObject"
+title: 取得 WMI 物件 Get WmiObject
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>取得 WMI 物件 (Get-WmiObject)
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>取得 WMI 物件 (Get-WmiObject)
+
 Windows Management Instrumentation (WMI) 可以一致地公開各種不同的資訊，因此成為 Windows 系統管理的核心技術。 由於 WMI 的強大功能，用於存取 WMI 物件的 Windows PowerShell Cmdlet **Get-WmiObject** 是執行實際工作的最實用工具之一。 我們將討論如何使用 Get-WmiObject 存取 WMI 物件，並接著討論如何使用 WMI 物件執行特定動作。
 
 ### <a name="listing-wmi-classes"></a>列出 WMI 類別
+
 大多數 WMI 使用者遇到的第一個問題，就是嘗試了解使用 WMI 可執行的動作。 WMI 類別描述可管理的資源。 有數百個 WMI 類別，其中一些類別包含數十個屬性。
 
 **Get-WmiObject** 讓 WMI 變成可搜尋，以解決此問題。 您可以輸入下列命令，取得本機電腦上可用的 WMI 類別清單：
@@ -48,7 +50,7 @@ __ProviderRegistration                  __ObjectProviderRegistration
 
 您甚至可以在連線到本機系統時包含 ComputerName。 您可以使用本機電腦的名稱、其 IP 位址 (或迴路位址 127.0.0.1) 或 WMI 樣式 '.' 作為電腦名稱。 如果您在名為 Admin01 且 IP 位址為 192.168.1.90 的電腦上執行 Windows PowerShell，下列命令全部會傳回該電腦的 WMI 類別清單︰
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>顯示 WMI 類別詳細資料
+
 如果您已經知道 WMI 類別的名稱，您可以使用它來立即取得資訊。 例如，常用於擷取電腦相關資訊的其中一個 WMI 類別是 **Win32_OperatingSystem**。
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 雖然我們會顯示所有參數，但命令可以更簡潔的方式來表示。 連線到本機系統時，不需要 **ComputerName** 參數。 顯示此參數是為了示範最常見的案例，並提醒您有此參數。 **Namespace** 預設為 root/cimv2，您也可以加以省略。 最後，大多數 Cmdlet 允許您省略一般參數的名稱。 使用 Get-WmiObject，如果未指定第一個參數的名稱，Windows PowerShell 會將它視為 **Class** 參數。 這表示最後一個命令可能已藉由輸入下列命令發出︰
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>使用 Format Cmdlet 顯示非預設屬性
+
 如果您需要預設未顯示之 **Win32_OperatingSystem** 類別中所包含的資訊，您可以使用 **Format** Cmdlet 顯示此類別。 例如，如果您想要顯示可用記憶體資料，請輸入︰
 
 ```
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

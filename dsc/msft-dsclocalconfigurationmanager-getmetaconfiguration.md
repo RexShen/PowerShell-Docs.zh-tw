@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "MSFT_DSCLocalConfigurationManager 類別的 GetMetaConfiguration 方法"
-ms.openlocfilehash: 695be4ee6490567295fda0cc44635870362d24b8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: MSFT_DSCLocalConfigurationManager 類別的 GetMetaConfiguration 方法
+ms.openlocfilehash: ddc016402239bcdea060a717fbac9ab7ea42698c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 GetMetaConfiguration 方法
 
@@ -25,8 +25,7 @@ uint32 GetMetaConfiguration(
 <a name="parameters"></a>參數
 ----------
 
-*MetaConfiguration* \[out\]  
-傳回時，包含定義設定之 **MSFT_DSCMetaConfiguration** 類別的內嵌執行個體。
+*MetaConfiguration* \[out\] 傳回時，包含定義設定之 **MSFT_DSCMetaConfiguration** 類別的內嵌執行個體。
 
 ## <a name="return-value"></a>傳回值
 ------------
@@ -48,11 +47,3 @@ uint32 GetMetaConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

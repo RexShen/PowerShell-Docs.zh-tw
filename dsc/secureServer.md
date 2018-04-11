@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "提取伺服器最佳做法"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: dsc,powershell,設定,安裝
+title: 提取伺服器最佳做法
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -17,8 +17,8 @@ ms.lasthandoff: 03/15/2018
 
 | |文件資訊|
 |:---|:---|
-作者 | Michael Greene  
-審閱者 | Ben Gelens、Ravikanth Chaganti、Aleksandar Nikolic  
+作者 | Michael Greene
+審閱者 | Ben Gelens、Ravikanth Chaganti、Aleksandar Nikolic
 已發行 | 2015 年 4 月
 
 ## <a name="abstract"></a>摘要
@@ -31,8 +31,8 @@ ms.lasthandoff: 03/15/2018
 
  - 設定規劃
  - 安裝指南
- 
-### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework 版本 
+
+### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework 版本
 本文件中的資訊適用於 Windows Management Framework 5.0。 雖然部署及操作提取伺服器不需要 WMF 5.0，但 5.0 版是本文的焦點。
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration (Windows PowerShell 期望狀態設定)
@@ -40,10 +40,11 @@ ms.lasthandoff: 03/15/2018
 
 Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可用來建立與管理宣告式設定。
 
-### <a name="pull-server-role"></a>提取伺服器角色  
+### <a name="pull-server-role"></a>提取伺服器角色
 提取伺服器提供集中式服務以儲存將來可存取的目標節點設定。
- 
-提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。 將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](https://technet.microsoft.com/library/dn249913.aspx)和[發送及提取設定模式](https://technet.microsoft.com/library/dn249913.aspx)。
+
+提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。
+將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](https://technet.microsoft.com/library/dn249913.aspx)和[發送及提取設定模式](https://technet.microsoft.com/library/dn249913.aspx)。
 
 ## <a name="configuration-planning"></a>設定規劃
 
@@ -59,7 +60,9 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 包含名為 DSC 服務的功能。 DSC 服務功能提供提取伺服器功能，包括支援 OData 端點的二進位檔。 WMF 包含在 Windows Server 中，並隨不定期發行的 Windows Server 更新。 [新版 WMF 5.0](http://aka.ms/wmf5latest) 可包含 DSC 服務功能的更新。 基於這個理由，最好下載最新版的 WMF，並檢閱版本資訊來判斷版本是否包含 DSC 服務功能的更新。 您也應該檢閱指出更新或案例的設計狀態列為穩定或實驗性的版本資訊一節。 為保持彈性靈活的發行週期，個別功能可以宣告穩定，這表示 WMF 發行預覽版本時，功能已就緒可用於生產環境。
+Windows Server 2012 R2 包含名為 DSC 服務的功能。 DSC 服務功能提供提取伺服器功能，包括支援 OData 端點的二進位檔。
+WMF 包含在 Windows Server 中，並隨不定期發行的 Windows Server 更新。 [新版 WMF 5.0](http://aka.ms/wmf5latest) 可包含 DSC 服務功能的更新。 基於這個理由，最好下載最新版的 WMF，並檢閱版本資訊來判斷版本是否包含 DSC 服務功能的更新。 您也應該檢閱指出更新或案例的設計狀態列為穩定或實驗性的版本資訊一節。
+為保持彈性靈活的發行週期，個別功能可以宣告穩定，這表示 WMF 發行預覽版本時，功能已就緒可用於生產環境。
 WMF 版本過去更新的其他功能 (詳細資訊請參閱 WMF 版本資訊)︰
 
  - Windows PowerShell Windows PowerShell 整合式指令碼
@@ -77,7 +80,7 @@ WMF 版本過去更新的其他功能 (詳細資訊請參閱 WMF 版本資訊)�
 Install-Module xPSDesiredStateConfiguration
 ```
 
-**PowerShellGet** 模組會將模組下載至︰ 
+**PowerShellGet** 模組會將模組下載至︰
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Install-Module xPSDesiredStateConfiguration
 
 實體和虛擬伺服器都支援提取伺服器部署。 提取伺服器的大小需求與 Windows Server 2012 R2 的需求一致。
 
-CPU：1.4 GHz 64 位元處理器  
-記憶體：512 MB  
-磁碟空間：32 GB  
-網路︰Gigabit 乙太網路介面卡  
+CPU：1.4 GHz 64 位元處理器 記憶體：512 MB 磁碟空間：32 GB 網路︰Gigabit 乙太網路介面卡
 
 規劃工作|
 ---|
@@ -107,15 +107,22 @@ CPU：1.4 GHz 64 位元處理器
 
 ### <a name="accounts"></a>帳戶
 
-部署提取伺服器執行個體沒有任何服務帳戶需求。 不過有些時候網站會以本機使用者帳戶的內容執行。 例如，如果需要存取網站內容的儲存體共用，但 Windows Server 或裝載儲存體共用的裝置未加入網域。
+部署提取伺服器執行個體沒有任何服務帳戶需求。
+不過有些時候網站會以本機使用者帳戶的內容執行。
+例如，如果需要存取網站內容的儲存體共用，但 Windows Server 或裝載儲存體共用的裝置未加入網域。
 
 ### <a name="dns-records"></a>DNS 記錄
 
-設定用戶端使用提取伺服器環境時需要使用伺服器名稱。 測試環境通常會使用伺服器主機名稱，但若無法使用 DNS 名稱解析，則使用伺服器的 IP 位址。 在生產環境或用來表示生產部署的實驗室環境中，最佳做法是建立 DNS CNAME 記錄。
+設定用戶端使用提取伺服器環境時需要使用伺服器名稱。
+測試環境通常會使用伺服器主機名稱，但若無法使用 DNS 名稱解析，則使用伺服器的 IP 位址。
+在生產環境或用來表示生產部署的實驗室環境中，最佳做法是建立 DNS CNAME 記錄。
 
-DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。 其他名稱記錄的目的，是如果以後需要變更時能夠增加彈性。 CNAME 可以協助隔離用戶端設定，以便伺服器環境的變更，例如取代提取伺服器或新增其他提取伺服器，不需要與用戶端設定相對應的變更。
+DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。
+其他名稱記錄的目的，是如果以後需要變更時能夠增加彈性。
+CNAME 可以協助隔離用戶端設定，以便伺服器環境的變更，例如取代提取伺服器或新增其他提取伺服器，不需要與用戶端設定相對應的變更。
 
-在選擇 DNS 記錄名稱時，請牢記解決方案架構。 如果使用負載平衡，則用來保護 HTTPS 流量的憑證就需要與 DNS 記錄共用相同的名稱。 
+在選擇 DNS 記錄名稱時，請牢記解決方案架構。
+如果使用負載平衡，則用來保護 HTTPS 流量的憑證就需要與 DNS 記錄共用相同的名稱。
 
 案例 |最佳做法
 :---|:---
@@ -134,7 +141,8 @@ DNS 記錄要求的平均迴轉時間為何？|
 
 ### <a name="public-key-infrastructure"></a>公開金鑰基礎結構
 
-現今大部分的組織都需要網路流量，特別是包含伺服器設定方式等機密資料的流量，必須在傳送時驗證及/或加密。 雖然您可以部署使用 HTTP 的提取伺服器來方便用戶端以純文字提出要求，但最好的做法卻是保護使用 HTTPS 的流量。 您可以在 DSC 資源 **xPSDesiredStateConfiguration** 中使用一組參數，設定服務使用 HTTPS。
+現今大部分的組織都需要網路流量，特別是包含伺服器設定方式等機密資料的流量，必須在傳送時驗證及/或加密。
+雖然您可以部署使用 HTTP 的提取伺服器來方便用戶端以純文字提出要求，但最好的做法卻是保護使用 HTTPS 的流量。 您可以在 DSC 資源 **xPSDesiredStateConfiguration** 中使用一組參數，設定服務使用 HTTPS。
 
 保護提取伺服器 HTTPS 流量的憑證需求，和保護任何其他 HTTPS 網站的沒有不同。 Windows Server 憑證服務的 **Web 伺服器**範本符合所需功能。
 
@@ -149,9 +157,11 @@ DNS 記錄要求的平均迴轉時間為何？|
 
 ### <a name="choosing-an-architecture"></a>選擇架構
 
-您可以使用裝載於 IIS 的 Web 服務或 SMB 檔案共用來部署提取伺服器。 在大部分情況下，Web 服務選項會提供較大的彈性。 HTTPS 流量周遊網路界限很常見，但 SMB 流量通常會在網路間被篩選或封鎖。 Web 服務也提供包含相容伺服器或 Web 報告管理員的選項 (本文件會在未來版本中處理這兩個主題)，提供一個機制供用戶端向伺服器回報狀態，以集中處理。 SMB 讓原則規定不該使用 Web 伺服器的環境，以及不要求 Web 伺服器角色的其他環境需求，有選擇的機會。 無論哪一種情況，請記得評估簽署與加密流量的需求。 HTTPS、SMB 簽署和 IPSEC 原則都是值得考慮的選項。
+您可以使用裝載於 IIS 的 Web 服務或 SMB 檔案共用來部署提取伺服器。 在大部分情況下，Web 服務選項會提供較大的彈性。 HTTPS 流量周遊網路界限很常見，但 SMB 流量通常會在網路間被篩選或封鎖。 Web 服務也提供包含相容伺服器或 Web 報告管理員的選項 (本文件會在未來版本中處理這兩個主題)，提供一個機制供用戶端向伺服器回報狀態，以集中處理。
+SMB 讓原則規定不該使用 Web 伺服器的環境，以及不要求 Web 伺服器角色的其他環境需求，有選擇的機會。
+無論哪一種情況，請記得評估簽署與加密流量的需求。 HTTPS、SMB 簽署和 IPSEC 原則都是值得考慮的選項。
 
-#### <a name="load-balancing"></a>負載平衡  
+#### <a name="load-balancing"></a>負載平衡
 與 Web 服務互動的用戶端提出以單一回應傳回資訊的要求。 不需要任何循序要求，因此負載平衡平台沒必要確保隨時在單一伺服器上維護工作階段。
 
 規劃工作|
@@ -166,11 +176,11 @@ DNS 記錄要求的平均迴轉時間為何？|
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>提取伺服器上的預備設定和模組
 
-您需要思考提取伺服器要裝載哪些 DSC 模組和設定，這是設定規劃的一部分。 為達成設定規劃的目的，對如何準備內容並將其部署到提取伺服器，一定要有基本的了解。 
+您需要思考提取伺服器要裝載哪些 DSC 模組和設定，這是設定規劃的一部分。 為達成設定規劃的目的，對如何準備內容並將其部署到提取伺服器，一定要有基本的了解。
 
-未來會擴展本節的內容，並收錄到 DSC 提取伺服器的操作指南中。  本指南會討論管理模組和設定日常程序的自動化進程。 
+未來會擴展本節的內容，並收錄到 DSC 提取伺服器的操作指南中。  本指南會討論管理模組和設定日常程序的自動化進程。
 
-#### <a name="dsc-modules"></a>DSC 模組  
+#### <a name="dsc-modules"></a>DSC 模組
 要求設定的用戶端會需要必要的 DSC 模組。 提取伺服器有一項功能是將 DSC 模組自動隨選散佈給用戶端。 如果您是第一次部署提取伺服器，可能是基於實驗室或證明概念的需要，您可能會相依於從 PowerShell 組件庫等公用存放庫或 DSC 模組的 PowerShell.org GitHub 存放庫取得的 DSC 模組。
 
 請務必記住，即使是受信任的線上來源，例如 PowerShell 組件庫，從公開存放庫下載的任何模組，都應該由具有 PowerShell 經驗和環境知識的人員檢閱，而在該環境中模組的使用早於生產前。 完成此工作的同時，也是檢查模組中是否有可移除的任何其他裝載的好時機，例如文件和範例指令碼。 透過網路將模組從伺服器下載到用戶端時，這會降低每個用戶端之第一個要求的網路頻寬。
@@ -194,7 +204,8 @@ New-DscCheckSum -ConfigurationPath .\ -OutPath .\
 
 #### <a name="dsc-configurations"></a>DSC 設定
 
-提取伺服器的目的是提供集中式機制，將 DSC 設定散發到用戶端節點。 設定在伺服器上儲存為 MOF 文件。 每份文件都會使用唯一的 GUID 命名。 當用戶端設定連接提取伺服器時，也會收到他們應該要求的設定 GUID。 這個依 GUID 參考設定的系統保證全域唯一性，且靈活到設定可以套用到每個節點，或以角色設定方式跨越許多應該具有相同設定的伺服器。
+提取伺服器的目的是提供集中式機制，將 DSC 設定散發到用戶端節點。 設定在伺服器上儲存為 MOF 文件。
+每份文件都會使用唯一的 GUID 命名。 當用戶端設定連接提取伺服器時，也會收到他們應該要求的設定 GUID。 這個依 GUID 參考設定的系統保證全域唯一性，且靈活到設定可以套用到每個節點，或以角色設定方式跨越許多應該具有相同設定的伺服器。
 
 #### <a name="guids"></a>GUID
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>其他參考資料、程式碼片段和範例
 
-本範例示範如何以手動方式啟動用戶端連線 (需要 WMF5) 以進行測試。 
+本範例示範如何以手動方式啟動用戶端連線 (需要 WMF5) 以進行測試。
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) Cmdlet 用於將 CNAME 記錄類型新增至 DNS 區域。 
+[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) Cmdlet 用於將 CNAME 記錄類型新增至 DNS 區域。
 
 [Create a Checksum and Publish DSC MOF to SMB Pull Server](http://bit.ly/1E46BhI) (建立總和檢查碼並將 DSC MOF 發行至 SMB 提取伺服器) 的 PowerShell 函式會自動產生所需的總和檢查碼，然後將 MOF 設定和總和檢查碼檔案複製到 SMB 提取伺服器。
 
@@ -518,10 +529,7 @@ Update-DSCConfiguration –Wait -Verbose
 
 儲存資料檔案是為了建立含 OData Web 服務的提取伺服器在部署期間的資訊。 檔案類型視作業系統而定，如下所述。
 
- - **Windows Server 2012**  
-檔案類型一律為 .mdb。
- - **Windows Server 2012 R2**  
-除非設定中指定 .mdb，否則檔案類型預設為 .edb
+ - **Windows Server 2012** 檔案類型一律為 .mdb
+ - **Windows Server 2012 R2** 除非設定中指定 .mdb，否則檔案類型預設為 .edb
 
 在安裝提取伺服器的[進階範例指令碼](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)中，您也會找到如何自動控制 web.config 檔案設定，防止因檔案類型而發生任何錯誤的範例。
-

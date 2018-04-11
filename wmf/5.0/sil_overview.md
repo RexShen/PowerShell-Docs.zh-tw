@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 4a2dfd651f1c74e7441e5f5e357c1c26453adc07
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: wmf,powershell,設定
+ms.openlocfilehash: 4db2237678649c23729bd1f41bf88f1b9f8f0eef
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="software-inventory-logging-sil"></a>軟體清查記錄 (SIL)
 
@@ -19,5 +19,4 @@ ms.lasthandoff: 06/12/2017
 
 此功能不會將這份資料傳送給 Microsoft。 軟體清查記錄資料和功能僅供伺服器軟體授權擁有者及系統管理員使用。
 
-如需軟體清查記錄 Cmdlet 的詳細資訊和相關文件，請參閱＜ Windows Server 2012 R2 線上資源＞(<http://technet.microsoft.com/library/dn383584.aspx>)。
-
+如需軟體清查記錄 Cmdlet 的詳細資訊和相關文件，請參閱 <http://technet.microsoft.com/library/dn383584.aspx> 的 Windows Server 2012 R2 線上資源。

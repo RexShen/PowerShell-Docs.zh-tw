@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "wmf,powershell,設定"
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
-ms.translationtype: MT
+keywords: wmf,powershell,設定
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>從字串擷取和剖析結構化物件
 本主題也將介紹 ConvertFrom-String Cmdlet 的一些額外功能︰
@@ -67,7 +67,7 @@ P1    P2
 
     Renton, WA
 
-   
+
 
 以大括號括住您想要擷取的資料，在這麼做的時候，提供一個名稱。 因為 **Name** 屬性 (和與其相關聯的其他屬性) 可以出現多次，所以請使用星號 (\*)，表示這會產生多筆記錄 (而非將一大堆內容擷取成一個記錄)︰
 
@@ -89,5 +89,4 @@ P1    P2
 > ----------                     ----               ----     -----
 > Ana Trujillo...              Ana Trujillo       Redmond  WA Antonio Moreno...            Antonio Moreno     Renton   WA Thomas Hardy...              Thomas Hardy       Seattle  WA Christina Berglund...        Christina Berglund Redmond  WA Hanna Moos...                Hanna Moos         Puyallup WA
 
-若要在擷取的文字上執行其他資料操作，**ExtentText** 屬性可從擷取記錄中擷取未經處理的文字。 若要提供意見反應這項功能，或共用的內容，您會撰寫時遇到困難範例，請寄電子郵件<psdmfb@microsoft.com>。
-
+若要在擷取的文字上執行其他資料操作，**ExtentText** 屬性可從擷取記錄中擷取未經處理的文字。 若要提供這項功能的意見反應，或共用您在撰寫時遇到困難的範例內容，請寄電子郵件至 <psdmfb@microsoft.com>。

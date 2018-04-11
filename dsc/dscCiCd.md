@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "使用 DSC 來建置持續整合和持續部署管線"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: 使用 DSC 來建置持續整合和持續部署管線
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 
 此範例示範如何使用 PowerShell、DSC、Pester 及 Visual Studio Team Foundation Server (TFS) 來建置「持續整合/持續部署」(CI/CD) 管線。
 
-建置並設定管線之後，您便可以使用它來完整部署、設定及測試 DNS 伺服器和相關的主機記錄。 此程序會模擬將在開發環境中使用之管線的第一個部分。
+建置並設定管線之後，您便可以使用它來完整部署、設定及測試 DNS 伺服器和相關的主機記錄。
+此程序會模擬將在開發環境中使用之管線的第一個部分。
 
 自動化的 CI/CD 管線可協助您以更快且更可靠的方式更新軟體，確保所有程式碼都經過測試，並且您程式碼的最新組建隨時可供使用。
 
@@ -60,7 +61,7 @@ ms.lasthandoff: 01/17/2018
 ### <a name="testagent2"></a>TestAgent2
 
 這是裝載此範例所設定之網站的電腦。
-此電腦必須執行 [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)。 
+此電腦必須執行 [Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)。
 
 ## <a name="add-the-code-to-tfs"></a>將程式碼新增至 TFS
 
@@ -156,7 +157,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 進行 CI 時，使用設定資料來定義節點相當重要，因為節點資訊在環境之間可能會有所變更，而使用設定資料則可讓您不須變更設定程式碼，即可輕鬆對節點資訊進行變更。
 
-在第一個資源區塊中，此設定會呼叫 [WindowsFeature](windowsFeatureResource.md) 以確保啟用 DNS 功能。 接下來的資源區塊會從 [xDnsServer](https://github.com/PowerShell/xDnsServer) 模組呼叫資源，以設定主要區域和 DNS 記錄。
+在第一個資源區塊中，此設定會呼叫 [WindowsFeature](windowsFeatureResource.md) 以確保啟用 DNS 功能。
+接下來的資源區塊會從 [xDnsServer](https://github.com/PowerShell/xDnsServer) 模組呼叫資源，以設定主要區域和 DNS 記錄。
 
 請注意，兩個 `xDnsRecord` 區塊皆包裝在 `foreach` 迴圈中，這些迴圈會逐一查看設定資料中的陣列。
 此設定資料同樣也是 `DevEnv.ps1` 指令碼所建立的，接下來將會探討此設定資料。
@@ -199,7 +201,8 @@ Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath 
 ### <a name="the-psake-build-script"></a>psake 建置指令碼
 
 `Build.ps1` (從 Demo_CI 儲存機制的根目錄路徑為 `./InfraDNS/Build.ps1`) 中定義的 [psake](https://github.com/psake/psake) 建置指令碼會定義組建所含的工作。
-它也定義每個工作所依存的其他工作。 當叫用 psake 指令碼時，它會確保指定的工作 (如果未指定任何工作，則是名為 `Default` 的工作) 執行，並且所有相依項目也一併執行 (這是遞迴的，因此相依項目的相依項目也會執行，依此類推)。
+它也定義每個工作所依存的其他工作。
+當叫用 psake 指令碼時，它會確保指定的工作 (如果未指定任何工作，則是名為 `Default` 的工作) 執行，並且所有相依項目也一併執行 (這是遞迴的，因此相依項目的相依項目也會執行，依此類推)。
 
 在此範例中，`Default` 是定義為：
 
@@ -422,10 +425,3 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 此範例會設定 DNS 伺服器 `TestAgent1`，讓 URL `www.contoso.com` 解析成 `TestAgent2`，但它並不會實際部署網站。
 儲存機制的 `WebApp` 資料夾底下有提供此做法的基本架構。
 您可以使用提供的 Stub 來建立 psake 指令碼、Pester 測試及 DSC 設定，以部署您自己的網站。
-
-
-
-
-
-
-

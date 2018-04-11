@@ -1,16 +1,16 @@
 ---
-description: "深入了解 Azure 中的 Desired State Configuration (DSC) 版本歷程記錄。"
-ms.date: 2018-03-14
+description: 深入了解 Azure 中的 Desired State Configuration (DSC) 版本歷程記錄。
+ms.date: 03/14/2018
 ms.topic: conceptual
-keywords: "dsc, powershell, azure, 延伸模組"
-title: "Azure DSC 延伸模組版本歷程記錄"
+keywords: dsc, powershell, azure, 延伸模組
+title: Azure DSC 延伸模組版本歷程記錄
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: e324ff9db2aff36a7e13c3a222e3c50f6f1c5d39
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 延伸模組版本歷程記錄
 
@@ -38,9 +38,9 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
   - WMF 4.0
 - **環境：**
   - Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
-  - 在 GitHub 最近對 TLS1.2 進行的變更後，您無法再利用從可從 Azure Marketplace 取得的自製資源管理員範本將 VM 導入 Azure 自動化 DSC，或使用 DSC 延伸模組取得任何託管在 GitHub 上的設定。 當您部署延伸模組時，會看見類似下例的的錯誤：
+  - 在 GitHub 最近對 TLS 1.2 進行的變更後，您無法再利用從可從 Azure Marketplace 取得的自製資源管理員範本將 VM 導入 Azure 自動化 DSC，或使用 DSC 延伸模組取得任何託管在 GitHub 上的設定。 當您部署延伸模組時，會看見類似下例的的錯誤：
 
     ```json
     {
@@ -101,7 +101,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows 用戶端 7/8.1/10、Nano 伺服器
 - **WMF 支援：**WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - Bug 修正與改善會簡化透過入口網站 UI 與資源管理員範本使用 DSC Azure 自動化的流程。  如需詳細資訊，請參閱 DSC 延伸模組文件中的[預設設定指令碼](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-dsc-overview#default-configuration-script)。
 
@@ -111,7 +111,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows 用戶端 7/8.1/10、Nano 伺服器
 - **WMF 支援：**WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - 遙測改善。
 
@@ -121,7 +121,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows 用戶端 7/8.1/10、Nano 伺服器
 - **WMF 支援：**WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - 新增多項 Bug 修正與其他小幅改善項目。
 
@@ -131,7 +131,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano 伺服器
 - **WMF 支援：**WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - 將 VM UUID 與 DSC 代理程式識別碼公開為延伸模組中繼資料。 同時新增其他小幅度改善項目。
 
@@ -141,7 +141,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano 伺服器
 - **WMF 支援：**WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - 新增大量 Bug 修正與其他改善項目。
 
@@ -151,7 +151,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano 伺服器
 - **WMF 支援：**WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - DSC 延伸模組現在具備 WMF 5.1 的支援。
   - 同時新增其他小幅度改善項目。
@@ -162,7 +162,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **OS 支援：**Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano 伺服器
 - **WMF 支援：**WMF 5.1 Preview、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境：**Azure
-- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (安裝 WMF 需要重新開機)。 針對 Nano，DSC 角色會安裝到 VM 上。
+- **備註：**此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - DSC 延伸模組現可在 Nano 伺服器上使用。 此版本主要包含在 Nano 伺服器上執行延伸模組的程式碼變更。
   - 同時新增其他小幅度改善項目。

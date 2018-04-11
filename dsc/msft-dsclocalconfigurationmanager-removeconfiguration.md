@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法"
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>參數
 ----------
 
-*Stage* \[in\]  
-指定要移除的設定文件。 下列是有效值：
+*Stage* \[in\] 指定要移除的設定文件。 下列是有效值：
 
 |值 |描述 |
 |:--- |:---|
@@ -35,8 +34,7 @@ uint32 RemoveConfiguration(
 |**2** | **擱置中的**設定文件 (pending.mof)。  |
 |**4** | **之前的**設定文件 (previous.mof)。 |
 
-*Force* \[in\]  
-**true** 表示強制移除設定。
+*Force* \[in\] **true** 表示強制移除設定。
 
 ## <a name="return-value"></a>傳回值
 ------------
@@ -58,11 +56,3 @@ uint32 RemoveConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
 keywords: powershell,cmdlet
-ms.date: 2016-12-12
-title: "Web 存取 Cmdlet"
+ms.date: 12/12/2016
+title: Web 存取 Cmdlet
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web 存取 Cmdlet
 
@@ -46,9 +46,7 @@ ms.lasthandoff: 01/17/2018
 >
 > `Get-Command –Module PowerShellWebAccess` Cmdlet。
 
-如需任何 Cmdlet 的詳細資訊或語法，請使用：  
-`Get-Help `*&lt;Cmdlet 名稱&gt;*  
-其中 &lt;Cmdlet 名稱&gt; 是您要查詢的 Cmdlet 名稱。
+如需任何 Cmdlet 的詳細資訊和語法，請使用 `Get-Help `&lt;cmdlet 名稱&gt;，其中 &lt;cmdlet 名稱&gt;是您想搜尋之 Cmdlet 的名稱。
 
 如需詳細資訊，您可以執行下列任一個 Cmdlet：
 
@@ -61,4 +59,3 @@ ms.lasthandoff: 01/17/2018
 如需 PowerShell Web 存取的詳細資訊，請參閱：
 
 - [安裝和使用 Windows PowerShell Web 存取](../install-and-use-windows-powershell-web-access.md)
-

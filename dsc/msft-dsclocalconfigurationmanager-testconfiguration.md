@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法"
-ms.openlocfilehash: 04f0f3146473dc71f492086449d9dce5467c55db
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法
+ms.openlocfilehash: 7815d458a9a67639a31c917510097212d104eb8a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法
 
@@ -28,17 +28,13 @@ uint32 TestConfiguration(
 <a name="parameters"></a>參數
 ----------
 
-*configurationData* \[in\]  
-設定的環境資料。
+*configurationData* \[in\] 設定的環境資料。
 
-*InDesiredState* \[out\]  
-傳回時，指定受管理的節點是否為設定文件所指定的狀態。
+*InDesiredState* \[out\] 傳回時，指定受控節點是否為設定文件所指定的狀態。
 
-*ResourcesInDesiredState* \[out\]  
-傳回時，包含指定資源為所需狀態之 **MSFT_ResourceInDesiredState** 類別的內嵌執行個體。
+*ResourcesInDesiredState* \[out\] 傳回時，包含指定資源為所需狀態之 **MSFT_ResourceInDesiredState** 類別的內嵌執行個體。
 
-*ResourcesNotInDesiredState* \[out\]  
-傳回時，包含指定資源不為所需狀態之 **MSFT_ResourceNotInDesiredState** 類別的內嵌執行個體。
+*ResourcesNotInDesiredState* \[out\] 傳回時，包含指定資源不為所需狀態之 **MSFT_ResourceNotInDesiredState** 類別的內嵌執行個體。
 
 ## <a name="return-value"></a>傳回值
 ------------
@@ -60,11 +56,3 @@ uint32 TestConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

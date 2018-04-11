@@ -133,7 +133,7 @@ PowerShell 小組正在與這些產品小組和團隊合作，驗證其現有模
 首先，從 PowerShell 資源庫安裝 `WindowsPSModulePath` 模組：
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 
@@ -160,7 +160,7 @@ PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版�
 
 如需設定和使用以 SSH 為基礎的遠端的詳細資訊，請參閱[透過 SSH 的 PowerShell 遠端][ssh-remoting]。
 
-## <a name="default-encoding-is-utf-8-without-a-bom"></a>預設編碼是沒有 BOM 的 UTF-8
+## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>預設編碼是沒有 BOM 的 UTF-8 (New-ModuleManifest 除外)
 
 過去，`Get-Content`、`Set-Content` 這類 Windows PowerShell Cmdlet 已使用不同編碼，例如 ASCII 和 UTF-16。
 編碼預設值中的變化已在混合使用 Cmdlet 但未指定編碼時產生問題。
@@ -179,7 +179,6 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 - Format-Hex
 - Get-Content
 - Import-Csv
-- New-ModuleManifest
 - Out-File
 - Select-String
 - Send-MailMessage
@@ -190,6 +189,8 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 `$OutputEncoding` 的預設值也已變更為 UTF-8。
 
 最佳做法是您應該使用 `-Encoding` 參數明確設定指令碼中編碼，跨平台產生決定性行為。
+
+`New-ModuleManifest` Cmdlet 沒有**編碼**參數。 使用 `New-ModuleManifest` cmdlet 建立之模組資訊清單 (.psd1) 檔案的編碼會視環境而定：如果它是在 Linux 上執行的 PowerShell 核心，則編碼為 UTF-8 (無 BOM)；否則編碼為 UTF-16 (包含 BOM)。 (#3940)
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>支援含 & 符號 (`&`) 之管線的背景 (#3360)
 
@@ -225,7 +226,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
   - `GitCommitId`：這是在其中建置 PowerShell 之 Git 分支或標記的 Git 認可識別碼。
     在發行的組建上，它可能會與 `PSVersion` 相同。
   - `OS`：這是 `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` 所傳回的作業系統版本字串
-  - `Platform`：這是 `[System.Environment]::OSVersion.Platform` 所傳回。它在 Windows 上設為 `Win32NT`、在 macOS 上設為 `MacOSX`，而在 Linux 上設為 `Unix`。
+  - `Platform`：這是 `[System.Environment]::OSVersion.Platform` 所傳回。它在 Windows 上設為 `Win32NT`、在 macOS 上設為 `Unix`，而在 Linux 上設為 `Unix`。
 - 已從 `$PSVersionTable` 移除 `BuildVersion` 屬性。
   此屬性已緊密繫結至 Windows 組建版本。
   相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。 (#3877) (感謝 @iSazonov！)

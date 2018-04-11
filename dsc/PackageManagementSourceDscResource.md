@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC PackageManagementSource 資源"
-ms.openlocfilehash: 1c904c70369a75802484c3c0520df63602760361
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC PackageManagementSource 資源
+ms.openlocfilehash: 8c0cb5a3b0a019ddb5ed995406f499298103b07c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource 資源
 
@@ -30,14 +30,14 @@ PSModule [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Properties
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 指定要在您的系統上註冊或取消註冊的套件來源名稱。| 
-| Ensure| 判斷套件來源是否已註冊或已取消註冊。| 
-| InstallationPolicy| 判斷您是否信任套件來源。 只能是 "Untrusted" 或 "Trusted"。| 
-| ProviderName| 指定 OneGet 提供者的名稱，您可透過它與套件來源進行 interop。| 
-| SourceUri| 指定套件來源的 URI。| 
-| SourceCredential| 提供遠端來源套件的存取權。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 指定要在您的系統上註冊或取消註冊的套件來源名稱。|
+| Ensure| 判斷套件來源是否已註冊或已取消註冊。|
+| InstallationPolicy| 判斷您是否信任套件來源。 只能是 "Untrusted" 或 "Trusted"。|
+| ProviderName| 指定 OneGet 提供者的名稱，您可透過它與套件來源進行 interop。|
+| SourceUri| 指定套件來源的 URI。|
+| SourceCredential| 提供遠端來源套件的存取權。|
 
 ## <a name="example"></a>範例
 
@@ -45,15 +45,14 @@ PSModule [string] #ResourceName
 
 ```powershell
 Configuration PackageManagementSourceTest
-{    
+{
     PackageManagementSource SourceRepository
     {
-        Ensure      = "Present" 
-        Name        = "MyNuget" 
-        ProviderName= "Nuget" 
-        SourceUri   = "http://nuget.org/api/v2/"   
-        InstallationPolicy ="Trusted" 
+        Ensure      = "Present"
+        Name        = "MyNuget"
+        ProviderName= "Nuget"
+        SourceUri   = "http://nuget.org/api/v2/"
+        InstallationPolicy ="Trusted"
     }
 }
 ```
-

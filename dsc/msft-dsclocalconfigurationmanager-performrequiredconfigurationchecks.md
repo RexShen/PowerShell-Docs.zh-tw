@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法"
-ms.openlocfilehash: 687c92f2dac5e8855731713e81390ac67615231e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
+ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
 
@@ -25,8 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 <a name="parameters"></a>參數
 ----------
 
-*Flags* \[in\]  
-位元遮罩，指定要執行的一致性檢查類型。 下列值有效，且可以透過位元 **OR** 運算進行結合︰
+*Flags* \[in\] 位元遮罩，指定要執行的一致性檢查類型。 下列值有效，且可以透過位元 **OR** 運算進行結合︰
 
 |值 |描述 |
 |:--- |:---|
@@ -55,11 +54,3 @@ uint32 PerformRequiredConfigurationChecks(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

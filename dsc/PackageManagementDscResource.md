@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "dsc,powershell,設定,安裝"
-title: "DSC PackageManagement 資源"
-ms.openlocfilehash: 4cd7625af7ed0bb3fe971c826ac2075841cdfdc5
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: dsc,powershell,設定,安裝
+title: DSC PackageManagement 資源
+ms.openlocfilehash: e6eea9f0bae42e131976dacb9813da759ff31239
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 資源
 
@@ -33,21 +33,21 @@ PackageManagement [string] #ResourceName
 ```
 
 ## <a name="properties"></a>Properties
-|  屬性  |  描述   | 
-|---|---| 
-| 名稱| 指定要安裝或解除安裝之套件的名稱。| 
-| 來源| 指定可以找到套件的套件來源名稱。 這可以是 URI，或是向 Register-PackageSource 或 PackageManagementSource DSC 資源註冊的來源。 DSC 資源 MSFT_PackageManagementSource 也可以註冊套件來源。| 
-| Ensure| 判斷是否要安裝或解除安裝套件。| 
-| RequiredVersion| 指定您要安裝之套件的確切版本。 如果未指定此參數，此 DSC 資源會安裝套件的最新可用版本，同時也會滿足 MaximumVersion 參數所指定的最高允許版本。| 
-| MinimumVersion| 指定您要安裝之套件的最低允許版本。 如果您沒有加入此參數，此 DSC 資源會安裝套件的最高可用版本，同時也會滿足 MaximumVersion 參數所指定的最高允許版本。| 
-| MaximumVersion| 指定您要安裝之套件的最高允許版本。 如果未指定此參數，此 DSC 資源會安裝套件的最高編號可用版本。| 
-| SourceCredential | 指定有權限安裝指定套件提供者或來源之套件的使用者帳戶。| 
-| ProviderName| 指定套件提供者名稱，以針對它設定套件搜尋的範圍。 您可以執行 Get-PackageProvider Cmdlet 來取得套件提供者名稱。| 
-| AdditionalParameters| 以雜湊表傳遞的提供者特定參數。 例如，針對 NuGet 提供者，您可以傳遞 DestinationPath 之類的其他參數。| 
+|  屬性  |  描述   |
+|---|---|
+| 名稱| 指定要安裝或解除安裝之套件的名稱。|
+| 來源| 指定可以找到套件的套件來源名稱。 這可以是 URI，或是向 Register-PackageSource 或 PackageManagementSource DSC 資源註冊的來源。 DSC 資源 MSFT_PackageManagementSource 也可以註冊套件來源。|
+| Ensure| 判斷是否要安裝或解除安裝套件。|
+| RequiredVersion| 指定您要安裝之套件的確切版本。 如果未指定此參數，此 DSC 資源會安裝套件的最新可用版本，同時也會滿足 MaximumVersion 參數所指定的最高允許版本。|
+| MinimumVersion| 指定您要安裝之套件的最低允許版本。 如果您沒有加入此參數，此 DSC 資源會安裝套件的最高可用版本，同時也會滿足 MaximumVersion 參數所指定的最高允許版本。|
+| MaximumVersion| 指定您要安裝之套件的最高允許版本。 如果未指定此參數，此 DSC 資源會安裝套件的最高編號可用版本。|
+| SourceCredential | 指定有權限安裝指定套件提供者或來源之套件的使用者帳戶。|
+| ProviderName| 指定套件提供者名稱，以針對它設定套件搜尋的範圍。 您可以執行 Get-PackageProvider Cmdlet 來取得套件提供者名稱。|
+| AdditionalParameters| 以雜湊表傳遞的提供者特定參數。 例如，針對 NuGet 提供者，您可以傳遞 DestinationPath 之類的其他參數。|
 
 ## <a name="additional-parameters"></a>其他參數
 下表列出 AdditionalParameters 屬性的選項。
-|  參數  | 描述   | 
+|  參數  | 描述   |
 |---|---|
 | DestinationPath| 由內建 Nuget 提供者之類的提供者使用。 指定您想要安裝套件的檔案位置。|
 | InstallationPolicy| 由內建 Nuget 提供者之類的提供者使用。 判斷您是否信任套件來源。 只能是 "Untrusted" 或 "Trusted"。|
@@ -58,41 +58,40 @@ PackageManagement [string] #ResourceName
 
 ```powershell
 Configuration PackageTest
-{    
-    PackageManagementSource SourceRepository 
-    { 
-        Ensure      = "Present" 
-        Name        = "MyNuget" 
-        ProviderName= "Nuget" 
-        SourceUri   = "http://nuget.org/api/v2/"   
-        InstallationPolicy ="Trusted" 
-    }    
-    
-    PackageManagementSource PSGallery 
-    { 
-        Ensure      = "Present" 
-        Name        = "psgallery" 
-        ProviderName= "PowerShellGet" 
-        SourceUri   = "https://www.powershellgallery.com/api/v2/"   
-        InstallationPolicy ="Trusted" 
-    } 
-          
-    PackageManagement NugetPackage 
-    { 
-        Ensure               = "Present"  
+{
+    PackageManagementSource SourceRepository
+    {
+        Ensure      = "Present"
+        Name        = "MyNuget"
+        ProviderName= "Nuget"
+        SourceUri   = "http://nuget.org/api/v2/"
+        InstallationPolicy ="Trusted"
+    }
+
+    PackageManagementSource PSGallery
+    {
+        Ensure      = "Present"
+        Name        = "psgallery"
+        ProviderName= "PowerShellGet"
+        SourceUri   = "https://www.powershellgallery.com/api/v2/"
+        InstallationPolicy ="Trusted"
+    }
+
+    PackageManagement NugetPackage
+    {
+        Ensure               = "Present"
         Name                 = "JQuery"
         AdditionalParameters = "$env:HomeDrive\nuget"
-        RequiredVersion      = "2.0.1" 
-        DependsOn            = "[PackageManagementSource]SourceRepository" 
+        RequiredVersion      = "2.0.1"
+        DependsOn            = "[PackageManagementSource]SourceRepository"
     }
-    
-    PackageManagement PSModule 
-    { 
-        Ensure               = "Present"  
+
+    PackageManagement PSModule
+    {
+        Ensure               = "Present"
         Name                 = "gistprovider"
         Source               = "PSGallery"
-        DependsOn            = "[PackageManagementSource]PSGallery" 
+        DependsOn            = "[PackageManagementSource]PSGallery"
     }
 }
 ```
-
