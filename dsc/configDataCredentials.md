@@ -283,7 +283,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **認證搭配 DSC 資源使用時，請盡可能使用本機帳戶，而不用網域帳戶。**
 
-如果憑證的 `Username` 屬性中有 '\' 或 '@'，DSC 會將其視為網域帳戶。
+如果憑證的 `Username` 屬性中有 '\' 或 '\@'，DSC 會將其視為網域帳戶。
 使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
