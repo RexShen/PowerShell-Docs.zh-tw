@@ -1,17 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 設定 DSC SMB 提取伺服器
-ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
 DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) 提取伺服器是裝載 SMB 檔案共用的電腦，可在目標節點要求時，將 DSC 設定檔和 DSC 資源提供給這些節點使用。
 

@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用檔案及資料夾
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>使用檔案及資料夾
 
-瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論特定檔案和資料夾的處理操作方法。
+瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論如何使用 PowerShell 來處理特定檔案和資料夾操作工作。
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>列出資料夾內所有的檔案和資料夾
 
 您可以使用 **Get-ChildItem** 直接取得資料夾內的所有項目。 加入選用的 **Force** 參數，以顯示隱藏或系統項目。 例如，這個命令會顯示 Windows PowerShell 磁碟機 C (和 Windows 實體磁碟機 C 相同) 的直接內容︰
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 命令只會列出直接包含的項目，很像使用 Cmd.exe 的 **DIR** 命令或 UNIX 殼層的 **ls**。 若要顯示包含的項目，您也必須要指定 **-Recurse** 參數。 (這可能需要很長時間才能完成)。列出 C 磁碟機上的所有項目︰
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** 可以用它的 **Path**、**Filter**、**Include** 和 **Exclude** 參數來篩選項目，但這些通常只以名稱為基礎。 您可以使用 **Where-Object** 根據項目的其他屬性來執行複雜的篩選。
@@ -40,33 +40,33 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 以 **Copy-Item** 完成複製。 下列命令會將 C:\\boot.ini 備份到 C:\\boot.bak：
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-如果目的地檔案已經存在，則複製嘗試就會失敗。 若要覆寫既有的目的地，請使用 Force 參數︰
+如果目的地檔案已經存在，則複製嘗試就會失敗。 若要覆寫既有的目的地，請使用 **Force** 參數：
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 這個命令對唯讀的目的地也有效。
 
-複製資料夾的方式也相同。 這個命令會將資料夾 C:\\temp\\test1 以遞迴方式複製到新的資料夾 c:\\temp\\DeleteMe︰
+複製資料夾的方式也相同。 這個命令會將資料夾 C:\\temp\\test1 以遞迴方式複製到新的資料夾 C:\\temp\\DeleteMe：
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 您也可以複製選取的項目。 下列命令會將 c:\\data 中任何位置的所有 .txt 檔案複製到 c:\\temp\\text︰
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 您仍然可以使用其他工具執行檔案系統複製。 XCOPY、ROBOCOPY 和 COM 物件，如 **Scripting.FileSystemObject**，在 Windows PowerShell 中都有效。 例如，您可以使用 Windows Script Host **Scripting.FileSystem COM** 類別將 C:\\boot.ini 備份到 C:\\boot.bak︰
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>建立檔案與資料夾
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 您可以使用 **Remove-Item** 移除包含的項目，但如果項目包含任何其他項目，系統會提示您確認移除。 例如，如果您嘗試刪除包含其他項目的資料夾 C:\\temp\\DeleteMe，Windows PowerShell 就會先提示您確認再刪除資料夾︰
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 如果不想每個包含項目都出現提示，請指定 **Recurse** 參數：
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>將本機資料夾對應為 Windows 可存取磁碟機

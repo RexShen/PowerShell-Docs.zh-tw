@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d8d8667e2fc608e0c5948a0b5046bf92801b49db
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
 摘要︰本文件旨在包含程序和擴充性以協助準備解決方案的工程師。 詳細資訊應該提供客戶找到的最佳做法，經產品小組驗證後確認所提供的建議可穩定應對未來問題。
 
