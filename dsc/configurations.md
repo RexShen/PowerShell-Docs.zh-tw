@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: DSC 設定
-ms.openlocfilehash: 8b44fd9a715c217ee198ea343cdffbfab1193625
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
 # <a name="dsc-configurations"></a>DSC 設定
 
@@ -72,7 +72,7 @@ MyDscConfiguration -ComputerName $ComputerName
 ## <a name="compiling-the-configuration"></a>編譯設定
 
 您必須先將設定編譯成 MOF 文件，才能施行設定。
-呼叫設定即可完成此作業，就像您在 PowerShell 函式中做的一樣。
+呼叫設定即可完成此作業，就像您呼叫 PowerShell 函式一樣。
 範例的最後一行僅包含設定名稱，並會呼叫設定。
 
 >**注意：**若要呼叫設定，函式必須在全域範圍內 (像任何其他 PowerShell 函式一樣)。

@@ -4,33 +4,35 @@ author: JKeithB
 ms.topic: reference
 keywords: wmf,powershell,設定
 title: WMF 5.1 的新案例和功能
-ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能 #
+# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能
 
 > 注意：本資訊尚屬初始版本，後續有可能變更。
 
-## <a name="powershell-editions"></a>PowerShell 版本 ##
+## <a name="powershell-editions"></a>PowerShell 版本
+
 從 5.1 版開始，PowerShell 提供代表各種功能集和平台相容性的不同版本。
 
-- **Desktop Edition︰**建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
-- **Core Edition︰**建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Desktop Edition**︰建置在 .NET Framework 上，並與 Server Core 和 Windows Desktop 等完整版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。
+- **Core Edition**︰建置在 .NET Core 上，並與 Nano Server 和 Windows IoT 等縮減版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。
 
 **深入了解使用 PowerShell 版本**
-- [判斷執行的 PowerShell 版本]()
-- [宣告特定 PowerShell 版本的模組相容性]()
-- [依據 CompatiblePSEditions 篩選 Get-Module 結果]()
-- [只有在相容的 PowerShell 版本上執行才會執行指令碼]()
+
+- [使用 PSVersionTable 來判斷執行的 PowerShell 版本](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [使用 PSEdition 參數並依據 CompatiblePSEditions 篩選 Get-Module 結果](/powershell/module/microsoft.powershell.core/get-module)
+- [只有在相容的 PowerShell 版本上執行才會執行指令碼](/powershell/gallery/psget/script/scriptwithpseditionsupport)
+- [宣告特定 PowerShell 版本的模組相容性](/powershell/gallery/psget/module/modulewithpseditionsupport)
 
 ## <a name="catalog-cmdlets"></a>類別目錄 Cmdlet
 
-[Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。
+[Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。
 
-###<a name="new-filecatalog"></a>New-FileCatalog
+### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
 New-FileCatalog 會建立 Windows 類別目錄檔案，供資料夾和檔案集合使用。
@@ -41,6 +43,7 @@ New-FileCatalog 會建立 Windows 類別目錄檔案，供資料夾和檔案集�
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
 支援類別目錄第 1 版和第 2 版。
 第 1 版使用 SHA1 雜湊演算法建立檔案雜湊，第 2 版使用 SHA256。
 *Windows Server 2008 R2* 或 *Windows 7* 不支援第 2 版的類別目錄。
@@ -56,8 +59,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 
 若要驗證類別目錄檔案 (上例中為 Pester.cat) 的完整性，請使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) Cmdlet 來加以簽署。
 
-
-###<a name="test-filecatalog"></a>Test-FileCatalog
+### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
 Test-FileCatalog 會驗證代表資料夾集合的類別目錄。
@@ -74,8 +76,8 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 它也會在 *Signature* 屬性中顯示類別目錄的簽署狀態，和呼叫 [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) Cmdlet 一模一樣。
 使用者也可以使用 *-FilesToSkip* 參數，在驗證期間略過任何檔案。
 
+## <a name="module-analysis-cache"></a>模組分析快取
 
-## <a name="module-analysis-cache"></a>模組分析快取 ##
 從 WMF 5.1 開始，PowerShell 可以控制快取模組資料所用的檔案，例如匯出的命令。
 
 此快取預設儲存在 `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` 檔案中。
@@ -106,23 +108,22 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 此環境變數設定會立即在目前的程序中生效。
 
-##<a name="specifying-module-version"></a>指定模組版本
+## <a name="specifying-module-version"></a>指定模組版本
 
 在 WMF 5.1 中，`using module` 與 PowerShell 中其他模組相關的語法結構表現一致。
 以往，您無法指定特定的模組版本；如果有多個版本存在，這會導致錯誤。
 
-
 在 WMF 5.1 中：
 
-* 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](https://msdn.microsoft.com/library/jj136290)。
+- 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](https://msdn.microsoft.com/library/jj136290)。
 此雜湊表與 `Get-Module -FullyQualifiedName` 的格式相同。
 
 **範例：**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-* 如果模組有多個版本，PowerShell 會使用與 `Import-Module` **相同的解析邏輯**，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
+- 如果模組有多個版本，PowerShell 會使用與 `Import-Module` **相同的解析邏輯**，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
 
+## <a name="improvements-to-pester"></a>Pester 的改善
 
-##<a name="improvements-to-pester"></a>Pester 的改善
 在 WMF 5.1 中，PowerShell 隨附的 Pester 版本已從 3.3.5 更新至 3.4.0 並附帶認可 https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，讓 Pester 在 Nano 伺服器上有更好的表現。
 
 您可以調查 ChangeLog.md 檔案來檢視 3.3.5 版到 3.4.0 版之間的變更，位置在：https://github.com/pester/Pester/blob/master/CHANGELOG.md

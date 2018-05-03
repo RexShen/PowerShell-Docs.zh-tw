@@ -8,7 +8,8 @@
 啟動它之前，請先確定系統上有 PowerShell。
 若為 Windows、macOS 和 Linux 上的新型工作負載，請參閱：
 
-- [在 macOS 與 Linux 上安裝 PowerShell Core][install-pscore-linux]
+- [在 Linux 上安裝 PowerShell Core][install-pscore-linux]
+- [在 macOS 上安裝 PowerShell Core][install-pscore-macos]
 - [在 Windows 上安裝 PowerShell Core][install-pscore-windows]
 
 若為傳統的 Windows PowerShell 工作負載，請參閱[安裝 Windows PowerShell][install-winps]。
@@ -171,7 +172,8 @@
 - [在 Visual Studio Code 中偵錯 PowerShell 指令碼 – 第 2 部分][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
