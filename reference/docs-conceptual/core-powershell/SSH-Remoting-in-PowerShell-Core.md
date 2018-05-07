@@ -34,30 +34,40 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 
 ## <a name="setup-on-windows-machine"></a>Windows 電腦上的安裝
 
-1. [安裝最新 PowerShell Core for Windows 版本][]
+1. 最新 [PowerShell Core for Windows] 版本
     - 您可以查看針對 New-PSSession 所設定的參數，得知它是否具有 SSH 遠端支援
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. 使用[安裝]指示，安裝 GitHub 中的最新 [Win32 OpenSSH] 組建
 1. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
     - 確定已啟用密碼驗證
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - 新增 PowerShell 子系統項目，以將 `c:/program files/powershell/6.0.0/pwsh.exe` 取代為您想要使用之版本的正確路徑
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - 選擇性啟用金鑰驗證
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. 重新啟動 sshd 服務
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. 將安裝 OpenSSH 的路徑新增至路徑環境變數
     - 這應該是與 `C:\Program Files\OpenSSH\` 行一起
     - 這樣可以找到 ssh.exe
@@ -66,24 +76,33 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 
 1. 安裝 GitHub 中的最新 [PowerShell for Linux] 組建
 1. 視需要安裝 [Ubuntu SSH]
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. 編輯 /etc/ssh 位置中的 sshd_config 檔案
     - 確定已啟用密碼驗證
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - 新增 PowerShell 子系統項目
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - 選擇性啟用金鑰驗證
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. 重新啟動 sshd 服務
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
       - 允許存取適當的使用者
 1. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案
     - 使用您慣用的編輯器，或
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - 確定已啟用密碼驗證
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - 新增 PowerShell 子系統項目
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - 選擇性啟用金鑰驗證
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. 重新啟動 sshd 服務
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo 命令不適用於 Linux 電腦的遠端工作階段。
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [安裝]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
