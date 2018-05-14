@@ -1,130 +1,84 @@
 - name: 概觀
   href: readme.md
+- name: 安裝 PowerShellGet
+  href: installing-psget.md
+- name: 開始使用
+  href: getting-started.md
+- name: 操作說明
   items:
-    - name: 組件庫
+    - name: 尋找資源庫中的項目
       items:
-        - name: 開始使用
-          href: psgallery/psgallery_gettingstarted.md
-        - name: 健康情況狀態
-          href: psgallery/psgallery_status.md
-        - name: 資源庫常見問題集
-          href: psgallery/psgallery_faqs.md
-        - name: 資源庫項目索引標籤
-          href: psgallery/psgallery_items_tab.md
-        - name: 資源庫搜尋語法
-          href: psgallery/psgallery_search_syntax.md
-        - name: 相容 PSEditions 的項目
-          href: psgallery/psgallery_pseditions.md
-        - name: FileList 檢視
-          href: psgallery/psgallery_filelist_feature.md
-        - name: 部署至 Azure 自動化
-          href: psgallery/psgallery_deploy_to_azure_automation.md
-        - name: 建立 PowerShell 資源庫帳戶
-          href: psgallery/psgallery_creating_an_account.md
+        - name: 搜尋項目
+          href: how-to/finding-items/search-syntax.md
+        - name: 依 PSEdition 來搜尋
+          href: how-to/finding-items/searching-by-psedition.md
+        - name: 篩選搜尋結果
+          href: how-to/finding-items/filtering-items.md
+    - name: 發佈至資源庫
+      items:
         - name: 建立及發佈項目
-          href: psgallery/Creating-and-Publishing-an-item.md
-        - name: 發佈指導方針與最佳做法
-          href: psgallery/psgallery-PublishingGuidelines.md
-        - name: 項目資訊清單與資源庫 UI
-          href: psgallery/psgallery_ItemManifestAffectingUI.md
+          href: how-to/publishing-items/publishing-an-item.md
+        - name: 建立 PowerShell 資源庫帳戶
+          href: how-to/publishing-items/creating-an-account.md
         - name: 將項目從清單移除
-          href: psgallery/psgallery_unlist_items.md
+          href: how-to/publishing-items/unlisting-items.md
         - name: 刪除項目
-          href: psgallery/Deleting-Items.md
+          href: how-to/publishing-items/deleting-items.md
         - name: 管理項目擁有者
-          href: psgallery/Managing-Item-Owners.md
-        - name: 檢舉不當使用
-          href: psgallery/psgallery_report_abuse.md
-        - name: 爭端解決
-          href: psgallery/psgallery_dispute_resolution.md
+          href: how-to/publishing-items/managing-item-owners.md
+    - name: 使用項目
+      items:
+        - name: FileList 檢視
+          href: how-to/working-with-items/filelist-view.md
+        - name: 部署至 Azure 自動化
+          href: how-to/working-with-items/deploy-to-azure-automation.md
+        - name: 必須接受授權的項目
+          href: how-to/working-with-items/items-that-require-license-acceptance.md
         - name: 連絡項目擁有者
-          href: psgallery/psgallery_contacting_item_owners.md
-        - name: 連絡系統管理員
-          href: psgallery/psgallery_contacting_administrators.md
+          href: how-to/working-with-items/contacting-item-owners.md
         - name: 透過社交媒體或評論提供意見反應
-          href: psgallery/psgallery-SocialMediaFeedback.md
-        - name: 項目詳細資料的必須接受授權
-          href: psgallery/psgallery_requires_license_acceptance.md
-        - name: 部署至 Azure 自動化上的必須接受授權
-          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
-        - name: PowerShell 資源庫 GDPR 合規性
-          href: psgallery/psgallery_gdpr_dsr.md
-- name: PowerShellGet
-  href: psget/overview.md
+          href: how-to/working-with-items/social-media-feedback.md
+- name: 概念
   items:
-    - name: 取得 PowerShellGet 模組
-      href: psget/get_psget_module.md
-    - name: 模組
+    - name: 發佈指導方針與最佳做法
+      href: concepts/publishing-guidelines.md
+    - name: 項目資訊清單與資源庫 UI
+      href: concepts/item-manifest-affecting-ui.md
+    - name: 需要特定的 PSEdition
       items:
-        - name: 尋找模組
-          href: psget/module/psget_find-module.md
-        - name: 尋找 DSC 資源
-          href: psget/module/psget_find-dscresource.md
-        - name: 尋找角色功能
-          href: psget/module/psget_find-rolecapability.md
-        - name: 尋找命令
-          href: psget/module/psget_find-command.md
-        - name: 儲存
-          href: psget/module/psget_save-module.md
-        - name: 安裝
-          href: psget/module/psget_install-module.md
-        - name: 更新
-          href: psget/module/psget_update-module.md
-        - name: 解除安裝
-          href: psget/module/psget_uninstall-module.md
-        - name: 取得已安裝的模組
-          href: psget/module/psget_get-installedmodule.md
-        - name: 更新模組資訊清單
-          href: psget/module/psget_update-modulemanifest.md
-        - name: 發行
-          href: psget/module/psget_publish-module.md
-        - name: PSEditions 的模組
-          href: psget/module/modulewithpseditionsupport.md
-        - name: 必須接受授權的模組
-          href: psget/module/RequireLicenseAcceptance.md
-        - name: 發行前版本
-          href: psget/module/PreReleaseModule.md
-        - name: 疑難排解
-          href: psget/psget_cmdlets_troubleshooting.md
-    - name: 指令碼
+        - name: 撰寫支援 PSEdition 的指令碼
+          href: concepts/script-psedition-support.md
+        - name: 撰寫支援 PSEdition 的模組
+          href: concepts/module-psedition-support.md
+    - name: 必須接受授權
       items:
-        - name: 尋找
-          href: psget/script/psget_find-script.md
-        - name: 儲存
-          href: psget/script/psget_save-script.md
-        - name: 安裝
-          href: psget/script/psget_install-script.md
-        - name: 更新
-          href: psget/script/psget_update-script.md
-        - name: 解除安裝
-          href: psget/script/psget_uninstall-script.md
-        - name: 取得已安裝的指令碼
-          href: psget/script/psget_get-installedscript.md
-        - name: 建立含有中繼資料的指令碼檔
-          href: psget/script/psget_new-scriptfileinfo.md
-        - name: 測試指令碼檔中繼資料
-          href: psget/script/psget_test-scriptfileinfo.md
-        - name: 更新指令碼檔中繼資料
-          href: psget/script/psget_update-scriptfileinfo.md
-        - name: 發行
-          href: psget/script/psget_publish-script.md
-        - name: 搭配 PSEditions 的指令碼
-          href: psget/script/scriptwithpseditionsupport.md
         - name: 適用於指令碼的必須接受授權
-          href: psget/script/script_RequireLicenseAcceptance.md
-        - name: 發行前版本
-          href: psget/script/PreReleaseScript.md
-    - name: 存放庫管理
+          href: concepts/script-license-acceptance.md
+        - name: 模組必須接受授權
+          href: concepts/module-license-acceptance.md
+    - name: 將項目定義為發行前版本
       items:
-        - name: 啟動 NuGet 提供者與 NuGet.exe
-          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
-        - name: 註冊存放庫
-          href: psget/repository/psget_register-psrepository.md
-        - name: 列出已註冊的存放庫
-          href: psget/repository/psget_get-psrepository.md
-        - name: 修改已註冊的存放庫
-          href: psget/repository/psget_set-psrepository.md
-        - name: 取消註冊存放庫
-          href: psget/repository/psget_unregister-psrepository.md
-    - name: PackageManagement cmdlet
-      href: psget/oneget/PackageManagement_cmdlets.md
+        - name: 將模組定義為發行前版本
+          href: concepts/module-prerelease-support.md
+        - name: 將指令碼定義為發行前版本
+          href: concepts/script-prerelease-support.md
+    - name: PSScriptAnalyzer 規則設定檔
+      href: concepts/scriptanalyzer-rule-profile.md
+- name: 取得支援
+  items:
+    - name: 檢舉不當使用
+      href: how-to/getting-support/report-abuse.md
+    - name: 爭端解決
+      href: how-to/getting-support/dispute-resolution.md
+    - name: 連絡系統管理員
+      href: how-to/getting-support/contacting-administrators.md
+    - name: 疑難排解
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: 啟動 NuGet 提供者與 NuGet.exe
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR 合規性
+      href: how-to/getting-support/gdpr-dsr-policy.md
+- name: 資源庫常見問題集
+  href: faqs.md
+- name: PowerShellGet Cmdlet
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
