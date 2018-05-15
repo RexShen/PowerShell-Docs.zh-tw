@@ -25,7 +25,7 @@
 > [!IMPORTANT]
 > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
 > 完成這項作業最簡單的方式是安裝 [Homebrew](http://brew.sh/) ，然後執行 `brew install openssl`。
-> PowerShell 延伸模組現在可以順利載入。
+> 現在，VS Code 可以成功載入 PowerShell 延伸模組。
 
 - **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
 
@@ -38,8 +38,8 @@
 
 - 按 **Ctrl+P** (Mac 是 **Cmd+P**) 啟動 [快速開啟]。
 - 在 [快速開啟] 中鍵入 `ext install powershell` 並點擊 **Enter**。
-- [延伸模組] 檢視會在提要欄位中開啟。 從 Microsoft 選取 PowerShell 延伸模組。
-  您會看到類似下面的內容：
+- 提要欄位上隨即開啟 [延伸模組] 檢視。 從 Microsoft 選取 PowerShell 延伸模組。
+  您應該會看到類似如下的畫面︰
 
   ![VSCode](../../images/vscode.png)
 
@@ -55,10 +55,10 @@
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 的特定安裝版本
 
-如果想要使用 PowerShell 特定安裝和 Visual Studio Code，您需要在使用者設定檔中新增新的變數。
+如果您想要搭配使用特定安裝的 PowerShell 與 Visual Studio Code，則必須在使用者設定檔中新增變數。
 
 1. 按一下 [檔案]-> [喜好設定]-> [設定]
-1. 會出現兩個編輯器窗格。
+1. 隨即出現兩個編輯器窗格。
    在最右邊的窗格中 (`settings.json`)，在兩個大括弧中間 (`{`和`}`) 插入下列適用於您作業系統的設定，使用已安裝的 PowerShell 版本取代 *<version>*：
 
   ```json
@@ -96,7 +96,7 @@
 
 使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。
 只要以 [檔案]->[開啟檔案...] 開啟 PowerShell 指令碼檔案，在行中設定中斷點 (按 F9)，然後按 F5 啟動偵錯。
-您會看到 [偵錯] 動作窗格出現，它可讓您開始偵錯工具、逐步執行、繼續和停止偵錯。
+您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
@@ -120,7 +120,7 @@
    選擇 [PowerShell]。
 
    當您這樣做時，Visual Studio Code 會在工作區資料夾的根目錄中建立目錄和檔案：".vscode\launch.json"。
-   這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要認可 launch.json 檔案。
+   這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要修訂 launch.json 檔案。
    Launch.json 檔案的內容如下：
 
 ```json

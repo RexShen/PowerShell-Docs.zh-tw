@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 保護 MOF 檔案
-ms.openlocfilehash: 80ef37ef1bdcb0a8b0ad343b4eab99f1bc66e116
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 00a33a5d628921bcd04aa904a1aa8ee4345af48f
+ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/07/2018
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -137,7 +137,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
  1. 在**撰寫節點**上建立憑證。
  2. 在**撰寫節點**上匯出包含私密金鑰的憑證。
  3. 從**製作節點**移除私密金鑰 ，但保留**我的**存放區中之公開金鑰憑證。
- 4. 將私密金鑰憑證匯入**目標節點**的根憑證存放區。
+ 4. 將私密金鑰憑證匯入**目標節點**上我的 (個人) 憑證存放區。
    - 它必須加入根存放區，才會得到**目標節點**的信任。
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在撰寫節點上：建立及匯出憑證
