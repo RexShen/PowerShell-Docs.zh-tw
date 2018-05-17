@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 分離設定和環境資料
-ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3308b83555b3a917e2aa993efcbfa0b946e44048
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
@@ -90,7 +90,7 @@ Mode                LastWriteTime         Length Name
 
  ### <a name="configuration-data-file"></a>設定資料檔案
 
-我們將在名為 `DevProdEnvData.psd1` 的檔案中定義開發和生產環境資料，如下所示：
+我們將在名為 `DevProdEnvData.psd1` 的檔案中定義開發與生產環境資料，如下所示：
 
 ```powershell
 @{
@@ -135,7 +135,7 @@ Mode                LastWriteTime         Length Name
 
 在設定指令碼結尾處，我們會呼叫設定 (將其編譯為 MOF 文件)，並傳遞 `DevProdEnvData.psd1` 作為 `$ConfigurationData` 參數。
 
->**注意︰**這項設定要求在目標節點上安裝模組 `xSqlPs` 和 `xWebAdministration`。
+>**注意︰** 這項設定要求在目標節點上安裝模組 `xSqlPs` 和 `xWebAdministration`。
 
 讓我們在名為 `MyWebApp.ps1` 的檔案中定義設定：
 
