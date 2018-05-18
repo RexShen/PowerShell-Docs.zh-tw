@@ -45,7 +45,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-<span data-ttu-id="0c733-122">**注意：**遠端註冊指令碼將重新啟動 WinRM，因此所有現有 PSRP 工作階段會在指令碼執行之後立即終止。</span><span class="sxs-lookup"><span data-stu-id="0c733-122">**NOTE:** The remoting registration script will restart WinRM, so all existing PSRP sessions will terminate immediately after the script is run.</span></span> <span data-ttu-id="0c733-123">如果在遠端工作階段期間執行，這會終止連線。</span><span class="sxs-lookup"><span data-stu-id="0c733-123">If run during a remote session, this will terminate the connection.</span></span>
+<span data-ttu-id="0c733-122">**注意：** 遠端註冊指令碼將重新啟動 WinRM，因此所有現有 PSRP 工作階段會在指令碼執行之後立即終止。</span><span class="sxs-lookup"><span data-stu-id="0c733-122">**NOTE:** The remoting registration script will restart WinRM, so all existing PSRP sessions will terminate immediately after the script is run.</span></span> <span data-ttu-id="0c733-123">如果在遠端工作階段期間執行，這會終止連線。</span><span class="sxs-lookup"><span data-stu-id="0c733-123">If run during a remote session, this will terminate the connection.</span></span>
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a><span data-ttu-id="0c733-124">如何連線至新端點</span><span class="sxs-lookup"><span data-stu-id="0c733-124">How to Connect to the New Endpoint</span></span>
 
