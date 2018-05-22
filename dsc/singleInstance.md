@@ -1,17 +1,16 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 撰寫單一執行個體 DSC 資源 (最佳做法)
-ms.openlocfilehash: fc118fd8b0d91d2001030769ac7e3c6321972905
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9494964b1b13eaa082ad5cbc279b4586bb7211cc
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>撰寫單一執行個體 DSC 資源 (最佳做法)
 
->**注意︰**本主題所描述的最佳做法用於定義設定中僅允許單一執行個體的 DSC 資源。 目前，沒有任何內建 DSC 功能可以執行這項作業。 這在未來可能會變更。
+>**注意︰** 本主題所描述的最佳做法用於定義設定中僅允許單一執行個體的 DSC 資源。 目前，沒有任何內建 DSC 功能可以執行這項作業。 這在未來可能會變更。
 
 有時，您不想允許在設定中多次使用資源。 例如，在 [xTimeZone](https://github.com/PowerShell/xTimeZone) 資源的先前實作中，於每個資源區塊中將時區設為不同的設定，設定即可多次呼叫資源：
 

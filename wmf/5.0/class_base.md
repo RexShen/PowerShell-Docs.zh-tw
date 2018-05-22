@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 43b26426a76b6503a83e35ae0c02a0af69902ed6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 188ede0c558210a746ad0f6c6cef6f571b280878
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="declare-base-class"></a>宣告基底類別
 您可以將 Windows PowerShell 類別宣告為另一個 Windows PowerShell 類別的基底類型。

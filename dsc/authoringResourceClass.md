@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: 23669a6db17855e8d69aa0144c541bb4c799a9eb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -21,7 +20,7 @@ ms.lasthandoff: 04/09/2018
 
 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 
->**注意：**以類別為基礎的資源不支援泛型集合。
+>**注意：** 以類別為基礎的資源不支援泛型集合。
 
 ## <a name="folder-structure-for-a-class-resource"></a>類別資源的資料夾結構
 
@@ -474,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：**支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
+>**注意：** 支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
 
 您可以在 [DSC 設定](configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。

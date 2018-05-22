@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法
-ms.openlocfilehash: 9392a721a542c89be8794882a800b374f11ca5fd
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: fef4337e4e9c5cc72b457704899498624476f131
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法
 
@@ -36,7 +35,7 @@ uint32 DisableDebugConfiguration();
 
 ## <a name="requirements"></a>需求
 ------------
->**MOF：**DscCore.mof
+>**MOF：** DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 

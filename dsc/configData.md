@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 使用設定資料
-ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
 
@@ -28,7 +27,7 @@ DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所�
 **ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。
 它也可以包含一或多個其他索引鍵。
 
->**注意：**本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是名為 **AllNodes** 的索引鍵)，但是您可以包含任何數目的額外索引鍵，並將它們任意命名。
+>**注意：** 本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是名為 **AllNodes** 的索引鍵)，但是您可以包含任何數目的額外索引鍵，並將它們任意命名。
 
 ```powershell
 $MyData =

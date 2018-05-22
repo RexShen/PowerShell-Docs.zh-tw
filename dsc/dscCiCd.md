@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 來建置持續整合和持續部署管線
-ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 
@@ -86,7 +85,7 @@ ms.lasthandoff: 04/09/2018
     `git push tfs --all`
 1. 將會在 TFS 儲存機制中填入 Demo_CI 程式碼。
 
->**注意：**此範例會使用 Git 儲存機制之 `ci-cd-example` 分支中的程式碼。
+>**注意：** 此範例會使用 Git 儲存機制之 `ci-cd-example` 分支中的程式碼。
 >請務必指定此分支作為您 TFS 專案中及您所建立之 CI/CD 觸發程序的預設分支。
 
 ## <a name="understanding-the-code"></a>了解程式碼

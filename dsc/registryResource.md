@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: DSC 登錄資源
-ms.openlocfilehash: 98e9a6251cb4e55443498bd770b4c563c25c7509
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: 8819b3704fa1a61d2be5ce11c974542f48177e09
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-registry-resource"></a>DSC 登錄資源
 
@@ -74,5 +73,5 @@ Configuration RegistryTest
 }
 ```
 
->**注意︰**變更 **HKEY\_CURRENT\_USER** 中的登錄設定必須以使用者認證執行設定，而不是使用系統。
+>**注意︰** 變更 **HKEY\_CURRENT\_USER** 中的登錄設定必須以使用者認證執行設定，而不是使用系統。
 >您可以使用 **PsDscRunAsCredential** 屬性指定設定時所要使用的使用者認證。 如需範例，請參閱＜[使用使用者認證執行 DSC](runAsUser.md)＞

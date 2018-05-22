@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 設定資料的認證選項
-ms.openlocfilehash: 3f1c75c65b357220856dd8e50694eb77808dee41
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 >適用於：Windows PowerShell 5.0
@@ -283,7 +282,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **認證搭配 DSC 資源使用時，請盡可能使用本機帳戶，而不用網域帳戶。**
 
-如果憑證的 `Username` 屬性中有 '\' 或 '\@'，DSC 會將其視為網域帳戶。
+如果憑證的 `Username` 屬性中有 '\' 或 '@'，DSC 會將其視為網域帳戶。
 使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser

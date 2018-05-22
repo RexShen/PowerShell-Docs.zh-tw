@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
-ms.openlocfilehash: 4e336e837d2153fecab8325cb8714ffed85a6175
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 50b5f2eddbac4571f5351b32648d45c54ded167e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
@@ -276,7 +275,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：**支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
+>**注意：** 支援 **PsDscRunAsCredential** 的是 PowerShell 5.0 和更新版本。
 
 您可以在 [DSC 設定](configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。

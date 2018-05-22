@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: DSC 檔案資源
-ms.openlocfilehash: 7964eabe5f4585600ae80f3e5ff7439c0d954769
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 86a5dcd97b4163b3780038c815d3de5a523ce4bf
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="dsc-file-resource"></a>DSC 檔案資源
 
@@ -15,7 +14,7 @@ ms.lasthandoff: 04/09/2018
 
 Windows PowerShell 預期狀態設定 (DSC) 的檔案資源會提供一個機制，在目標節點管理檔案和資料夾。
 
->**注意︰**如果 **MatchSource** 屬性設為 **$false** (此為預設值)，則第一次套用設定時會快取要複製的內容。
+>**注意︰** 如果 **MatchSource** 屬性設為 **$false** (此為預設值)，則第一次套用設定時會快取要複製的內容。
 >後續套用的設定不會檢查由 **SourcePath** 指定的路徑中是否有更新的檔案及/或資料夾。 如果想要在每次套用設定時都檢查 **SourcePath** 中是否有檔案及/或資料夾更新，請將 **MatchSource** 設為 **$true**。
 
 ## <a name="syntax"></a>語法

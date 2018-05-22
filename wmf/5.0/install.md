@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 89f0deaece27e2d207dfb820d4df80e427c9cb94
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3679c13c2d28f28f3102b24f6369f1dc264d6884
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="installation-instructions"></a>安裝指示
 
@@ -49,4 +47,4 @@ ms.lasthandoff: 04/09/2018
 - 已安裝最新的 Service Pack。
 - 已安裝 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)。
 
-*WinRM Dependency：*Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上預設不啟用 WinRM。 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 **Set-WSManQuickConfig**。
+*WinRM Dependency：* Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Server 2008 R2 和 Windows 7 上預設不啟用 WinRM。 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 **Set-WSManQuickConfig**。

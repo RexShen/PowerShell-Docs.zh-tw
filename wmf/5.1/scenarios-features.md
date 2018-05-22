@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的新案例和功能
-ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
-ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
+ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能
 
@@ -18,8 +17,8 @@ ms.lasthandoff: 04/27/2018
 
 從 5.1 版開始，PowerShell 提供代表各種功能集和平台相容性的不同版本。
 
-- **Desktop Edition**︰建置在 .NET Framework 上，並與 Server Core 和 Windows Desktop 等完整版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。
-- **Core Edition**︰建置在 .NET Core 上，並與 Nano Server 和 Windows IoT 等縮減版 Windows 上執行之目標 PowerShell 版本的指令碼和模組相容。
+- **Desktop Edition︰** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Core Edition︰** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
 
 **深入了解使用 PowerShell 版本**
 

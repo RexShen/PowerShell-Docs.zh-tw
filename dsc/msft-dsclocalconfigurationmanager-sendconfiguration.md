@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法
-ms.openlocfilehash: 07ae48dd456e68be4ad0b09127ba9801359fd101
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: b4d4c901268344ba67d77e4dc982042bfc2abd78
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法
 
@@ -41,7 +40,7 @@ uint32 SendConfiguration(
 
 ## <a name="requirements"></a>需求
 ------------
->**MOF：**DscCore.mof
+>**MOF：** DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 

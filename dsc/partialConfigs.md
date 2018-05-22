@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: PowerShell 預期狀態設定部分設定
-ms.openlocfilehash: cd2812724c2279a7effc4739f23193c1dc836ce5
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e6d80b065ad9e68517d2952b7643e4c611d82a0f
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell 預期狀態設定部分設定
 
@@ -49,7 +48,7 @@ PartialConfigDemo
 
 每個部分設定的 **RefreshMode** 設為 "Push"。 **PartialConfiguration** 區塊的名稱 (在此情況下為 "ServiceAccountConfig" 和 "SharePointConfig") 必須完全符合推送至目標節點的設定名稱。
 
->**注意︰**每個 **PartialConfiguration** 區塊的名稱都必須符合設定在設定指令碼中指定的實際名稱，不是應為目標節點或 `localhost` 名稱的 MOF 檔案名稱。
+>**注意︰** 每個 **PartialConfiguration** 區塊的名稱都必須符合設定在設定指令碼中指定的實際名稱，不是應為目標節點或 `localhost` 名稱的 MOF 檔案名稱。
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>發佈和啟動推送模式部分設定
 
@@ -98,7 +97,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**注意：**執行 [Publish-DSCConfiguration (英文)](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) Cmdlet 的使用者必須在目標節點上具備系統管理員權限。
+>**注意：** 執行 [Publish-DSCConfiguration (英文)](https://msdn.microsoft.com/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) Cmdlet 的使用者必須在目標節點上具備系統管理員權限。
 
 ## <a name="partial-configurations-in-pull-mode"></a>提取模式中的部分設定
 

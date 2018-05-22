@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 EnableDebugConfiguration 方法
-ms.openlocfilehash: 9fe41fa806a6abff1d36dadd0c041a5cf0e78caf
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9e2a978f9d16abaed959be022229db4da5fd65bd
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="enabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 EnableDebugConfiguration 方法
 
@@ -38,7 +37,7 @@ uint32 EnableDebugConfiguration(
 
 ## <a name="requirements"></a>需求
 ------------
->**MOF：**DscCore.mof
+>**MOF：** DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 

@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 指定跨節點相依性
-ms.openlocfilehash: c563563118c4df8aeee442d3b30b79f7b7700fc7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c1802d6baa1f2b3449603e0374a83e213abf598e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="specifying-cross-node-dependencies"></a>指定跨節點相依性
 
@@ -73,7 +72,7 @@ Configuration JoinDomain
 }
 ```
 
->**注意︰**根據預設，WaitForXXX 資源會嘗試一次，然後才失敗。 雖然並非必要，但通常要指定重試間隔與計數。
+>**注意︰** 根據預設，WaitForXXX 資源會嘗試一次，然後才失敗。 雖然並非必要，但通常要指定重試間隔與計數。
 
 ## <a name="see-also"></a>另請參閱
 * [DSC 設定](configurations.md)

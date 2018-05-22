@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 適用於 Linux 的內建預期狀態設定資源
-ms.openlocfilehash: 77617b72584f39c46fc4b9eb67235378bbfc19aa
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: ea700d24c7ff4377af671944184abb3f201852e8
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="built-in-desired-state-configuration-resources-for-linux"></a>適用於 Linux 的內建預期狀態設定資源
 

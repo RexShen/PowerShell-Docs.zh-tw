@@ -1,13 +1,11 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 89e996942cdc2609c670e8e5ba2c576ff6342a9c
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 02aebbd2557298b1b88229fdf5f67bdd08cea452
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="powershellget-cmdlets-for-module-management"></a>適用於模組管理的 PowerShellGet Cmdlet
 
@@ -287,4 +285,4 @@ PrivateData = @{
     } # End of PSData hashtable
 } # End of PrivateData hashtable
 ```
-***注意：***只有最新的 PowerShell 5.0 版才支援 DscResourcesToExport。 如果執行舊版的 PowerShell，就無法更新欄位。
+***注意：*** 只有最新的 PowerShell 5.0 版才支援 DscResourcesToExport。 如果執行舊版的 PowerShell，就無法更新欄位。

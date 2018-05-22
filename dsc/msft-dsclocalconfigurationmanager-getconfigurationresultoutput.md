@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
-ms.openlocfilehash: f4c2ddaa37cdafeff1a442f3f1fa656788a1c6c8
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 73d10a8b44e5056e3fce1598518630a84aff6ceb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
 
@@ -44,7 +43,7 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="requirements"></a>需求
 ------------
->**MOF：**DscCore.mof
+>**MOF：** DscCore.mof
 
 >**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 

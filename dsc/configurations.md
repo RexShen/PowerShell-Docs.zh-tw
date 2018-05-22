@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: DSC 設定
-ms.openlocfilehash: ffeb953048c0a65352618d2ab141ee10ead4c663
-ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
+ms.openlocfilehash: d98bf0e85c12103d9b1eeded155bab1af364bd4c
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="dsc-configurations"></a>DSC 設定
 
@@ -75,7 +74,7 @@ MyDscConfiguration -ComputerName $ComputerName
 呼叫設定即可完成此作業，就像您呼叫 PowerShell 函式一樣。
 範例的最後一行僅包含設定名稱，並會呼叫設定。
 
->**注意：**若要呼叫設定，函式必須在全域範圍內 (像任何其他 PowerShell 函式一樣)。
+>**注意：** 若要呼叫設定，函式必須在全域範圍內 (像任何其他 PowerShell 函式一樣)。
 >執行此作業的方法有二：「點執行」指令碼，或使用 F5 或按一下 ISE 的 **[執行指令碼]** 按鈕執行設定指令碼。
 >若要點執行指令碼，請執行命令 `. .\myConfig.ps1`，其中 `myConfig.ps1` 是包含設定的指令碼檔案名稱。
 
@@ -86,7 +85,7 @@ MyDscConfiguration -ComputerName $ComputerName
 - 在新的目錄中建立名為 _NodeName_.mof 的檔案，其中 _NodeName_ 是設定的目標節點名稱。
     如果有多個節點，每個節點都會建立一個 MOF 檔案。
 
->**注意：**MOF 檔案包含目標節點全部的設定資訊。 因為這樣，這個檔案的安全防護很重要。
+>**注意：** MOF 檔案包含目標節點全部的設定資訊。 因為這樣，這個檔案的安全防護很重要。
 >如需詳細資訊，請參閱[保護 MOF 檔案](secureMOF.md)。
 
 編譯上述第一個設定會導致下列的資料夾結構：

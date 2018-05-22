@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 在初始開機時設定虛擬機器
-ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d6dd997e607152d09d24b55370bb2f85810b333e
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 >適用於：Windows PowerShell 5.0
 
@@ -34,7 +33,7 @@ ms.lasthandoff: 04/09/2018
 - 將 DSC metaconfiguration 插入 VHD
 - 開機時停用 DSC
 
->**注意︰**您可以同時將 `Pending.mof` 及 `MetaConfig.mof` 插入同一部電腦。
+>**注意︰** 您可以同時將 `Pending.mof` 及 `MetaConfig.mof` 插入同一部電腦。
 當這兩個檔案同時存在時，`MetaConfig.mof` 中所指定的設定會優先執行。
 
 ## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>將設定 MOF 文件插入 VHD

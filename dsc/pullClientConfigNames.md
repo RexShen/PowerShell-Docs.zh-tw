@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 使用設定名稱設定提取用戶端
-ms.openlocfilehash: 7c8f204cc646e52ad5e953d6c7ad9e4e906d8a5b
-ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
+ms.openlocfilehash: d71376d84b9d4b0e74fdccab4b9249b2ca4263cb
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/16/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>使用設定名稱設定提取用戶端
 
@@ -58,7 +57,7 @@ PullClientConfigNames
 **ConfigurationNames** 屬性是陣列，會指定用於用戶端節點的設定名稱。
 在該提取伺服器上，此用戶端節點的設定 MOF 檔案名稱必須為 *ConfigurationNames*.mof，其中 *ConfigurationNames* 符合您在此中繼設定中設定的 **ConfigurationNames** 屬性值。
 
->**注意：**如果您在 **ConfigurationNames**指定一個以上的值，就也必須在設定中指定 **PartialConfiguration** 區塊。
+>**注意：** 如果您在 **ConfigurationNames**指定一個以上的值，就也必須在設定中指定 **PartialConfiguration** 區塊。
 如需部分設定的相關資訊，請參閱 [PowerShell 預期狀態設定部分設定](partialConfigs.md)。
 
 執行這個指令碼之後，它會建立新的輸出資料夾，名為 **PullClientConfigNames**，並在該處放入中繼設定 MOF 檔案。
