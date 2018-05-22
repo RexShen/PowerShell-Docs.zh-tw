@@ -1,24 +1,23 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsPackageCab 資源
-ms.openlocfilehash: af45956c1fe8cffa1d7fd779847eded9e3f6b51e
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8c4de193c8ea787dd125436f86aa0b5eafdb1509
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="dsc-windowspackagecab-resource"></a><span data-ttu-id="509de-103">DSC WindowsPackageCab 資源</span><span class="sxs-lookup"><span data-stu-id="509de-103">DSC WindowsPackageCab Resource</span></span>
+# <a name="dsc-windowspackagecab-resource"></a><span data-ttu-id="b5a01-103">DSC WindowsPackageCab 資源</span><span class="sxs-lookup"><span data-stu-id="b5a01-103">DSC WindowsPackageCab Resource</span></span>
 
-> <span data-ttu-id="509de-104">適用於︰Windows PowerShell 5.1 及更新版本</span><span class="sxs-lookup"><span data-stu-id="509de-104">Applies To: Windows PowerShell 5.1 and later</span></span>
+> <span data-ttu-id="b5a01-104">適用於︰Windows PowerShell 5.1 及更新版本</span><span class="sxs-lookup"><span data-stu-id="b5a01-104">Applies To: Windows PowerShell 5.1 and later</span></span>
 
-<span data-ttu-id="509de-105">Windows PowerShell 預期狀態設定 (DSC) 中的 **WindowsPackageCab** 資源提供一個機制，可在目標節點上安裝或解除安裝 Windows 封包 (.cab) 套件。</span><span class="sxs-lookup"><span data-stu-id="509de-105">The **WindowsPackageCab** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall Windows cabinet (.cab) packages on a target node.</span></span>
+<span data-ttu-id="b5a01-105">Windows PowerShell 預期狀態設定 (DSC) 中的 **WindowsPackageCab** 資源提供一個機制，可在目標節點上安裝或解除安裝 Windows 封包 (.cab) 套件。</span><span class="sxs-lookup"><span data-stu-id="b5a01-105">The **WindowsPackageCab** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall Windows cabinet (.cab) packages on a target node.</span></span>
 
-<span data-ttu-id="509de-106">目標節點上必須安裝 DISM PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="509de-106">The target node must have the DISM PowerShell module installed.</span></span> <span data-ttu-id="509de-107">如需相關資訊，請參閱[在 Windows PowerShell 中使用 DISM](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14)。</span><span class="sxs-lookup"><span data-stu-id="509de-107">For information, see [Use DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).</span></span>
+<span data-ttu-id="b5a01-106">目標節點上必須安裝 DISM PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="b5a01-106">The target node must have the DISM PowerShell module installed.</span></span> <span data-ttu-id="b5a01-107">如需相關資訊，請參閱[在 Windows PowerShell 中使用 DISM](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14)。</span><span class="sxs-lookup"><span data-stu-id="b5a01-107">For information, see [Use DISM in Windows PowerShell](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14).</span></span>
 
 
-## <a name="syntax"></a><span data-ttu-id="509de-108">語法</span><span class="sxs-lookup"><span data-stu-id="509de-108">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b5a01-108">語法</span><span class="sxs-lookup"><span data-stu-id="b5a01-108">Syntax</span></span>
 
 ```
 {
@@ -30,19 +29,19 @@ ms.lasthandoff: 04/09/2018
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="509de-109">Properties</span><span class="sxs-lookup"><span data-stu-id="509de-109">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="b5a01-109">Properties</span><span class="sxs-lookup"><span data-stu-id="b5a01-109">Properties</span></span>
 
-|  <span data-ttu-id="509de-110">屬性</span><span class="sxs-lookup"><span data-stu-id="509de-110">Property</span></span>  |  <span data-ttu-id="509de-111">描述</span><span class="sxs-lookup"><span data-stu-id="509de-111">Description</span></span>   |
+|  <span data-ttu-id="b5a01-110">屬性</span><span class="sxs-lookup"><span data-stu-id="b5a01-110">Property</span></span>  |  <span data-ttu-id="b5a01-111">描述</span><span class="sxs-lookup"><span data-stu-id="b5a01-111">Description</span></span>   |
 |---|---|
-| <span data-ttu-id="509de-112">名稱</span><span class="sxs-lookup"><span data-stu-id="509de-112">Name</span></span>| <span data-ttu-id="509de-113">指出您想要確保其特定狀態的套件名稱。</span><span class="sxs-lookup"><span data-stu-id="509de-113">Indicates the name of the package for you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="509de-114">Ensure</span><span class="sxs-lookup"><span data-stu-id="509de-114">Ensure</span></span>| <span data-ttu-id="509de-115">指出是否要安裝此套件。</span><span class="sxs-lookup"><span data-stu-id="509de-115">Indicates if the package is installed.</span></span> <span data-ttu-id="509de-116">設定此屬性為 "Absent" 以確保不會安裝此套件 (或如果已安裝，則解除安裝此套件)。</span><span class="sxs-lookup"><span data-stu-id="509de-116">Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="509de-117">將它設定為 "Present" (預設值) 以確保已安裝此套件。</span><span class="sxs-lookup"><span data-stu-id="509de-117">Set it to "Present" (the default value) to ensure the package is installed.</span></span>|
-| <span data-ttu-id="509de-118">路徑</span><span class="sxs-lookup"><span data-stu-id="509de-118">Path</span></span>| <span data-ttu-id="509de-119">指出套件所在的檔案路徑</span><span class="sxs-lookup"><span data-stu-id="509de-119">Indicates the path where the package resides.</span></span>|
-| <span data-ttu-id="509de-120">LogPath</span><span class="sxs-lookup"><span data-stu-id="509de-120">LogPath</span></span>| <span data-ttu-id="509de-121">指出您想要提供者儲存記錄檔來安裝或解除安裝此套件的完整路徑。</span><span class="sxs-lookup"><span data-stu-id="509de-121">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span>|
-| <span data-ttu-id="509de-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="509de-122">DependsOn</span></span> | <span data-ttu-id="509de-123">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="509de-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="509de-124">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="509de-124">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is \`DependsOn = "[ResourceType]ResourceName"\`\`.</span></span>|
+| <span data-ttu-id="b5a01-112">名稱</span><span class="sxs-lookup"><span data-stu-id="b5a01-112">Name</span></span>| <span data-ttu-id="b5a01-113">指出您想要確保其特定狀態的套件名稱。</span><span class="sxs-lookup"><span data-stu-id="b5a01-113">Indicates the name of the package for you want to ensure a specific state.</span></span>|
+| <span data-ttu-id="b5a01-114">Ensure</span><span class="sxs-lookup"><span data-stu-id="b5a01-114">Ensure</span></span>| <span data-ttu-id="b5a01-115">指出是否要安裝此套件。</span><span class="sxs-lookup"><span data-stu-id="b5a01-115">Indicates if the package is installed.</span></span> <span data-ttu-id="b5a01-116">設定此屬性為 "Absent" 以確保不會安裝此套件 (或如果已安裝，則解除安裝此套件)。</span><span class="sxs-lookup"><span data-stu-id="b5a01-116">Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="b5a01-117">將它設定為 "Present" (預設值) 以確保已安裝此套件。</span><span class="sxs-lookup"><span data-stu-id="b5a01-117">Set it to "Present" (the default value) to ensure the package is installed.</span></span>|
+| <span data-ttu-id="b5a01-118">路徑</span><span class="sxs-lookup"><span data-stu-id="b5a01-118">Path</span></span>| <span data-ttu-id="b5a01-119">指出套件所在的檔案路徑</span><span class="sxs-lookup"><span data-stu-id="b5a01-119">Indicates the path where the package resides.</span></span>|
+| <span data-ttu-id="b5a01-120">LogPath</span><span class="sxs-lookup"><span data-stu-id="b5a01-120">LogPath</span></span>| <span data-ttu-id="b5a01-121">指出您想要提供者儲存記錄檔來安裝或解除安裝此套件的完整路徑。</span><span class="sxs-lookup"><span data-stu-id="b5a01-121">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span>|
+| <span data-ttu-id="b5a01-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="b5a01-122">DependsOn</span></span> | <span data-ttu-id="b5a01-123">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="b5a01-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="b5a01-124">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="b5a01-124">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is \`DependsOn = "[ResourceType]ResourceName"\`\`.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="509de-125">範例</span><span class="sxs-lookup"><span data-stu-id="509de-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b5a01-125">範例</span><span class="sxs-lookup"><span data-stu-id="b5a01-125">Example</span></span>
 
-<span data-ttu-id="509de-126">以下範例設定會接受輸入參數，並確保安裝 `$Name` 參數所指定的 .cab 檔案。</span><span class="sxs-lookup"><span data-stu-id="509de-126">The following example configuration takes input parameters, and ensures that the .cab file specified by the `$Name` parameter is installed.</span></span>
+<span data-ttu-id="b5a01-126">以下範例設定會接受輸入參數，並確保安裝 `$Name` 參數所指定的 .cab 檔案。</span><span class="sxs-lookup"><span data-stu-id="b5a01-126">The following example configuration takes input parameters, and ensures that the .cab file specified by the `$Name` parameter is installed.</span></span>
 
 ```powershell
 Configuration Sample_WindowsPackageCab

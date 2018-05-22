@@ -1,46 +1,45 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: 類別目錄 Cmdlet
-ms.openlocfilehash: f46fb99b61ff8008c247f6db4ed57ae6e6e81b9b
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="catalog-cmdlets"></a><span data-ttu-id="86598-103">類別目錄 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="86598-103">Catalog Cmdlets</span></span>
+# <a name="catalog-cmdlets"></a><span data-ttu-id="e1a4f-103">類別目錄 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="e1a4f-103">Catalog Cmdlets</span></span>
 
-<span data-ttu-id="86598-104">[Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，以產生和驗證 Windows 類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="86598-104">We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) module to generate and validate windows catalog files.</span></span>
+<span data-ttu-id="e1a4f-104">[Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，以產生和驗證 Windows 類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-104">We have added two new cmdlets in [Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) module to generate and validate windows catalog files.</span></span>
 
-## <a name="new-filecatalog"></a><span data-ttu-id="86598-105">New-FileCatalog</span><span class="sxs-lookup"><span data-stu-id="86598-105">New-FileCatalog</span></span>
+## <a name="new-filecatalog"></a><span data-ttu-id="e1a4f-105">New-FileCatalog</span><span class="sxs-lookup"><span data-stu-id="e1a4f-105">New-FileCatalog</span></span>
 --------------------------------
 
-<span data-ttu-id="86598-106">`New-FileCatalog` 會為一組資料夾及檔案建立 Windows 類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="86598-106">`New-FileCatalog` creates a windows catalog file for set of folders and files.</span></span> <span data-ttu-id="86598-107">類別目錄檔案包含指定路徑中所有檔案的雜湊。</span><span class="sxs-lookup"><span data-stu-id="86598-107">A catalog file contains hashes for all files in specified paths.</span></span> <span data-ttu-id="86598-108">使用者在散發資料夾組時，可以一併散發代表這些資料夾的對應類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="86598-108">Users can distribute the set of folders along with corresponding the catalog file that represents those folders.</span></span> <span data-ttu-id="86598-109">內容接收者可以利用類別目錄檔案，驗證資料夾自類別目錄建立之後有無任何變更。</span><span class="sxs-lookup"><span data-stu-id="86598-109">A catalog file can be used by the recipient of content to validate whether any changes were made to the folders after the catalog was created.</span></span>
+<span data-ttu-id="e1a4f-106">`New-FileCatalog` 會為一組資料夾及檔案建立 Windows 類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-106">`New-FileCatalog` creates a windows catalog file for set of folders and files.</span></span> <span data-ttu-id="e1a4f-107">類別目錄檔案包含指定路徑中所有檔案的雜湊。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-107">A catalog file contains hashes for all files in specified paths.</span></span> <span data-ttu-id="e1a4f-108">使用者在散發資料夾組時，可以一併散發代表這些資料夾的對應類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-108">Users can distribute the set of folders along with corresponding the catalog file that represents those folders.</span></span> <span data-ttu-id="e1a4f-109">內容接收者可以利用類別目錄檔案，驗證資料夾自類別目錄建立之後有無任何變更。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-109">A catalog file can be used by the recipient of content to validate whether any changes were made to the folders after the catalog was created.</span></span>
 
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
-<span data-ttu-id="86598-110">我們支援建立類別目錄第 1 版和第 2 版。</span><span class="sxs-lookup"><span data-stu-id="86598-110">We support creating catalog version 1 and 2.</span></span> <span data-ttu-id="86598-111">第 1 版使用 SHA1 雜湊演算法建立檔案雜湊，第 2 版使用 SHA256。</span><span class="sxs-lookup"><span data-stu-id="86598-111">Version 1 uses SHA1 hashing algorithm to create file hashes and version 2 uses SHA256.</span></span> <span data-ttu-id="86598-112">*Windows Server 2008 R2* 和 *Windows 7* 不支援第 2 版的類別目錄。</span><span class="sxs-lookup"><span data-stu-id="86598-112">Catalog version 2 is not supported on *Windows Server 2008 R2* and *Windows 7*.</span></span> <span data-ttu-id="86598-113">如果使用 *Windows 8*、*Windows Server 2012* 和更新版本的平台，建議使用第 2 版的類別目錄。</span><span class="sxs-lookup"><span data-stu-id="86598-113">It is recommended to use catalog version 2 if using platforms *Windows 8*, *Windows Server 2012* and above.</span></span>
+<span data-ttu-id="e1a4f-110">我們支援建立類別目錄第 1 版和第 2 版。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-110">We support creating catalog version 1 and 2.</span></span> <span data-ttu-id="e1a4f-111">第 1 版使用 SHA1 雜湊演算法建立檔案雜湊，第 2 版使用 SHA256。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-111">Version 1 uses SHA1 hashing algorithm to create file hashes and version 2 uses SHA256.</span></span> <span data-ttu-id="e1a4f-112">*Windows Server 2008 R2* 和 *Windows 7* 不支援第 2 版的類別目錄。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-112">Catalog version 2 is not supported on *Windows Server 2008 R2* and *Windows 7*.</span></span> <span data-ttu-id="e1a4f-113">如果使用 *Windows 8*、*Windows Server 2012* 和更新版本的平台，建議使用第 2 版的類別目錄。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-113">It is recommended to use catalog version 2 if using platforms *Windows 8*, *Windows Server 2012* and above.</span></span>
 
-<span data-ttu-id="86598-114">若要在現有的模組使用此命令，請指定 CatalogFilePath 和 Path 變數，以符合模組資訊清單的位置。</span><span class="sxs-lookup"><span data-stu-id="86598-114">To use this command on an existing module, specify the CatalogFilePath and Path variables to match the location of the module manifest.</span></span> <span data-ttu-id="86598-115">下列範例中，模組資訊清單位於 C:\Program Files\Windows PowerShell\Modules\Pester。</span><span class="sxs-lookup"><span data-stu-id="86598-115">In the example below, the module manifest is in C:\Program Files\Windows PowerShell\Modules\Pester.</span></span>
+<span data-ttu-id="e1a4f-114">若要在現有的模組使用此命令，請指定 CatalogFilePath 和 Path 變數，以符合模組資訊清單的位置。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-114">To use this command on an existing module, specify the CatalogFilePath and Path variables to match the location of the module manifest.</span></span> <span data-ttu-id="e1a4f-115">下列範例中，模組資訊清單位於 C:\Program Files\Windows PowerShell\Modules\Pester。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-115">In the example below, the module manifest is in C:\Program Files\Windows PowerShell\Modules\Pester.</span></span>
 
 ![](../images/NewFileCatalog.jpg)
 
-<span data-ttu-id="86598-116">這會建立類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="86598-116">This creates the catalog file.</span></span>
+<span data-ttu-id="e1a4f-116">這會建立類別目錄檔案。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-116">This creates the catalog file.</span></span>
 
 ![](../images/CatalogFile1.jpg)
 
 ![](../images/CatalogFile2.jpg)
 
-<span data-ttu-id="86598-117">為能確認類別目錄檔案 (在上例中為 Pester.cat) 的完整性，應使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) Cmdlet 簽署該檔案。</span><span class="sxs-lookup"><span data-stu-id="86598-117">To verify the integrity of a catalog file (Pester.cat in above exmaple) it should be signed using the [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.</span></span>
+<span data-ttu-id="e1a4f-117">為能確認類別目錄檔案 (在上例中為 Pester.cat) 的完整性，應使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) Cmdlet 簽署該檔案。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-117">To verify the integrity of a catalog file (Pester.cat in above exmaple) it should be signed using the [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) cmdlet.</span></span>
 
 
-## <a name="test-filecatalog"></a><span data-ttu-id="86598-118">Test-FileCatalog</span><span class="sxs-lookup"><span data-stu-id="86598-118">Test-FileCatalog</span></span>
+## <a name="test-filecatalog"></a><span data-ttu-id="e1a4f-118">Test-FileCatalog</span><span class="sxs-lookup"><span data-stu-id="e1a4f-118">Test-FileCatalog</span></span>
 --------------------------------
 
-<span data-ttu-id="86598-119">`Test-FileCatalog` 會驗證代表資料夾組的類別目錄。</span><span class="sxs-lookup"><span data-stu-id="86598-119">`Test-FileCatalog` validates the catalog representing a set of folders.</span></span>
+<span data-ttu-id="e1a4f-119">`Test-FileCatalog` 會驗證代表資料夾組的類別目錄。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-119">`Test-FileCatalog` validates the catalog representing a set of folders.</span></span>
 
 ```powershell
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -48,6 +47,6 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-<span data-ttu-id="86598-120">此 Cmdlet 會將所有檔案及在類別目錄檔案中找到和其相關之路徑的雜湊，與磁碟上儲存的雜湊進行比較。</span><span class="sxs-lookup"><span data-stu-id="86598-120">This cmdlet compares the hashes of all files and their relative paths found in the catalog file with ones saved to disk.</span></span> <span data-ttu-id="86598-121">若在檔案雜湊與路徑之間偵測到任何不相符，其會傳回狀態 `ValidationFailed`。</span><span class="sxs-lookup"><span data-stu-id="86598-121">If it detects any mismatch between file hashes and paths it returns a status of `ValidationFailed`.</span></span>
-<span data-ttu-id="86598-122">使用者可以使用 `Detailed` 參數擷取所有此資訊。</span><span class="sxs-lookup"><span data-stu-id="86598-122">Users can retrieve all this information using the `Detailed` switch.</span></span> <span data-ttu-id="86598-123">和對類別目錄檔案類別目錄呼叫 [Get-authenticodesignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) Cmdlet 一樣，類別目錄的簽署狀態也會顯示在 `Signature` 欄位中。</span><span class="sxs-lookup"><span data-stu-id="86598-123">The signing status of the catalog is displayed as the `Signature` field, which is same as calling the [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file.</span></span>
-<span data-ttu-id="86598-124">使用者也可使用 `FilesToSkip` 參數，在驗證期間跳過任何檔案。</span><span class="sxs-lookup"><span data-stu-id="86598-124">Users can also skip any file during validation by using the `FilesToSkip` parameter.</span></span>
+<span data-ttu-id="e1a4f-120">此 Cmdlet 會將所有檔案及在類別目錄檔案中找到和其相關之路徑的雜湊，與磁碟上儲存的雜湊進行比較。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-120">This cmdlet compares the hashes of all files and their relative paths found in the catalog file with ones saved to disk.</span></span> <span data-ttu-id="e1a4f-121">若在檔案雜湊與路徑之間偵測到任何不相符，其會傳回狀態 `ValidationFailed`。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-121">If it detects any mismatch between file hashes and paths it returns a status of `ValidationFailed`.</span></span>
+<span data-ttu-id="e1a4f-122">使用者可以使用 `Detailed` 參數擷取所有此資訊。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-122">Users can retrieve all this information using the `Detailed` switch.</span></span> <span data-ttu-id="e1a4f-123">和對類別目錄檔案類別目錄呼叫 [Get-authenticodesignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) Cmdlet 一樣，類別目錄的簽署狀態也會顯示在 `Signature` 欄位中。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-123">The signing status of the catalog is displayed as the `Signature` field, which is same as calling the [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) cmdlet on the catalog file.</span></span>
+<span data-ttu-id="e1a4f-124">使用者也可使用 `FilesToSkip` 參數，在驗證期間跳過任何檔案。</span><span class="sxs-lookup"><span data-stu-id="e1a4f-124">Users can also skip any file during validation by using the `FilesToSkip` parameter.</span></span>

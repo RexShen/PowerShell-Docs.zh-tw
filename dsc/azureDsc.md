@@ -1,32 +1,31 @@
 ---
 ms.date: 03/15/2018
-ms.topic: conceptual
 keywords: dsc,powershell,設定,安裝
 title: 使用 Microsoft Azure 的 DSC
-ms.openlocfilehash: 5b0d577e1fecdeac38c2c5f8e955a2d23b1eb707
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d35488c3f66895e930eaa84360f3d3ec9d74e9c7
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="using-dsc-on-microsoft-azure"></a><span data-ttu-id="bb237-103">使用 Microsoft Azure 的 DSC</span><span class="sxs-lookup"><span data-stu-id="bb237-103">Using DSC on Microsoft Azure</span></span>
+# <a name="using-dsc-on-microsoft-azure"></a><span data-ttu-id="1f485-103">使用 Microsoft Azure 的 DSC</span><span class="sxs-lookup"><span data-stu-id="1f485-103">Using DSC on Microsoft Azure</span></span>
 
-<span data-ttu-id="bb237-104">Microsoft Azure 透過 [Azure 預期狀態設定延伸模組處理常式](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview) 及透過 [Azure 自動化 DSC](/azure/automation/automation-dsc-overview) 支援預期狀態設定 (DSC)。</span><span class="sxs-lookup"><span data-stu-id="bb237-104">Desired State Configuration (DSC) is supported in Microsoft Azure through the [Azure Desired State Configuration extension handler](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview) and through [Azure Automation DSC](/azure/automation/automation-dsc-overview).</span></span>
+<span data-ttu-id="1f485-104">Microsoft Azure 透過 [Azure 預期狀態設定延伸模組處理常式](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview) 及透過 [Azure 自動化 DSC](/azure/automation/automation-dsc-overview) 支援預期狀態設定 (DSC)。</span><span class="sxs-lookup"><span data-stu-id="1f485-104">Desired State Configuration (DSC) is supported in Microsoft Azure through the [Azure Desired State Configuration extension handler](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview) and through [Azure Automation DSC](/azure/automation/automation-dsc-overview).</span></span>
 
-## <a name="azure-desired-state-configuration-extension-handler"></a><span data-ttu-id="bb237-105">Azure 預期狀態設定延伸模組處理常式</span><span class="sxs-lookup"><span data-stu-id="bb237-105">Azure Desired State Configuration extension handler</span></span>
+## <a name="azure-desired-state-configuration-extension-handler"></a><span data-ttu-id="1f485-105">Azure 預期狀態設定延伸模組處理常式</span><span class="sxs-lookup"><span data-stu-id="1f485-105">Azure Desired State Configuration extension handler</span></span>
 
-<span data-ttu-id="bb237-106">Azure DSC 延伸模組允許 VM 裝載在 Microsoft Azure 上由 DSC 管理。</span><span class="sxs-lookup"><span data-stu-id="bb237-106">The Azure DSC extension allows VMs hosted in Microsoft Azure to be managed with DSC.</span></span>
-<span data-ttu-id="bb237-107">如需詳細資訊，請參閱下列主題：</span><span class="sxs-lookup"><span data-stu-id="bb237-107">For more information, see the following topics:</span></span>
+<span data-ttu-id="1f485-106">Azure DSC 延伸模組允許 VM 裝載在 Microsoft Azure 上由 DSC 管理。</span><span class="sxs-lookup"><span data-stu-id="1f485-106">The Azure DSC extension allows VMs hosted in Microsoft Azure to be managed with DSC.</span></span>
+<span data-ttu-id="1f485-107">如需詳細資訊，請參閱下列主題：</span><span class="sxs-lookup"><span data-stu-id="1f485-107">For more information, see the following topics:</span></span>
 
-- [<span data-ttu-id="bb237-108">Azure 預期狀態設定延伸模組處理常式</span><span class="sxs-lookup"><span data-stu-id="bb237-108">Azure Desired State Configuration extension handler</span></span>](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)
-- [<span data-ttu-id="bb237-109">Azure Resource Manager 範本中的 Windows VMSS 與預期狀態設定</span><span class="sxs-lookup"><span data-stu-id="bb237-109">Windows VMSS and Desired State Configuration with Azure Resource Manager templates</span></span>](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-template)
-- [<span data-ttu-id="bb237-110">將認證傳遞至 Azure DSC 延伸模組處理常式</span><span class="sxs-lookup"><span data-stu-id="bb237-110">Passing credentials to the Azure DSC extension handler</span></span>](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-credentials)
-- [<span data-ttu-id="bb237-111">Azure Desired State Configuration 延伸模組歷程記錄</span><span class="sxs-lookup"><span data-stu-id="bb237-111">Azure Desired State Configuration extension history</span></span>](azureDscexthistory.md)
+- [<span data-ttu-id="1f485-108">Azure 預期狀態設定延伸模組處理常式</span><span class="sxs-lookup"><span data-stu-id="1f485-108">Azure Desired State Configuration extension handler</span></span>](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)
+- [<span data-ttu-id="1f485-109">Azure Resource Manager 範本中的 Windows VMSS 與預期狀態設定</span><span class="sxs-lookup"><span data-stu-id="1f485-109">Windows VMSS and Desired State Configuration with Azure Resource Manager templates</span></span>](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-template)
+- [<span data-ttu-id="1f485-110">將認證傳遞至 Azure DSC 延伸模組處理常式</span><span class="sxs-lookup"><span data-stu-id="1f485-110">Passing credentials to the Azure DSC extension handler</span></span>](/azure/virtual-machines/virtual-machines-windows-extensions-dsc-credentials)
+- [<span data-ttu-id="1f485-111">Azure Desired State Configuration 延伸模組歷程記錄</span><span class="sxs-lookup"><span data-stu-id="1f485-111">Azure Desired State Configuration extension history</span></span>](azureDscexthistory.md)
 
-## <a name="azure-automation-dsc"></a><span data-ttu-id="bb237-112">Azure 自動化 DSC</span><span class="sxs-lookup"><span data-stu-id="bb237-112">Azure Automation DSC</span></span>
+## <a name="azure-automation-dsc"></a><span data-ttu-id="1f485-112">Azure 自動化 DSC</span><span class="sxs-lookup"><span data-stu-id="1f485-112">Azure Automation DSC</span></span>
 
-<span data-ttu-id="bb237-113">[Azure 自動化服務](https://azure.microsoft.com/services/automation/) 可讓您從 Azure 內部管理 DSC 組態、資源及的受管理的節點。</span><span class="sxs-lookup"><span data-stu-id="bb237-113">The [Azure Automation service](https://azure.microsoft.com/services/automation/) allows you to manage DSC configurations, resources, and managed nodes from within Azure.</span></span> <span data-ttu-id="bb237-114">如需詳細資訊，請參閱下列主題：</span><span class="sxs-lookup"><span data-stu-id="bb237-114">For more information, see the following topics:</span></span>
+<span data-ttu-id="1f485-113">[Azure 自動化服務](https://azure.microsoft.com/services/automation/) 可讓您從 Azure 內部管理 DSC 組態、資源及的受管理的節點。</span><span class="sxs-lookup"><span data-stu-id="1f485-113">The [Azure Automation service](https://azure.microsoft.com/services/automation/) allows you to manage DSC configurations, resources, and managed nodes from within Azure.</span></span> <span data-ttu-id="1f485-114">如需詳細資訊，請參閱下列主題：</span><span class="sxs-lookup"><span data-stu-id="1f485-114">For more information, see the following topics:</span></span>
 
-- [<span data-ttu-id="bb237-115">Azure 自動化 DSC</span><span class="sxs-lookup"><span data-stu-id="bb237-115">Azure Automation DSC</span></span>](/azure/automation/automation-dsc-overview)
-- [<span data-ttu-id="bb237-116">開始使用 Azure 自動化 DSC</span><span class="sxs-lookup"><span data-stu-id="bb237-116">Getting started with Azure Automation DSC</span></span>](/azure/automation/automation-dsc-getting-started)
-- [<span data-ttu-id="bb237-117">將機器上架交由 Azure 自動化 DSC 管理</span><span class="sxs-lookup"><span data-stu-id="bb237-117">Onboarding machines for management by Azure Automation DSC</span></span>](/azure/automation/automation-dsc-onboarding)
+- [<span data-ttu-id="1f485-115">Azure 自動化 DSC</span><span class="sxs-lookup"><span data-stu-id="1f485-115">Azure Automation DSC</span></span>](/azure/automation/automation-dsc-overview)
+- [<span data-ttu-id="1f485-116">開始使用 Azure 自動化 DSC</span><span class="sxs-lookup"><span data-stu-id="1f485-116">Getting started with Azure Automation DSC</span></span>](/azure/automation/automation-dsc-getting-started)
+- [<span data-ttu-id="1f485-117">將機器上架交由 Azure 自動化 DSC 管理</span><span class="sxs-lookup"><span data-stu-id="1f485-117">Onboarding machines for management by Azure Automation DSC</span></span>](/azure/automation/automation-dsc-onboarding)
