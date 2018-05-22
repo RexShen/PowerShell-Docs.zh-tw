@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 指令碼
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell 的設計目的是消除長久以來的問題並加入新功�
 ### <a name="discoverability"></a>可搜尋性
 Windows PowerShell 可讓您輕鬆搜尋它的功能。 例如，若要尋找可檢視和變更 Windows 服務的 Cmdlet 清單，請輸入：
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 搜尋到可完成工作的 Cmdlet 之後，即可使用 Get-Help Cmdlet 進一步了解此 Cmdlet。 例如，若要顯示 Get-Service Cmdlet 的說明，請輸入：
 
-```
+```powershell
 Get-Help Get-Service
 ```
 多數 Cmdlet 皆會發出物件，此類物件可操作並轉譯成供顯示用的文字。 若要完全了解該 Cmdlet 的輸出，可將其輸出輸送至 Get-Member Cmdlet。 例如，下列命令會顯示 Get-Service Cmdlet 之物件輸出成員的相關資訊。
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 
