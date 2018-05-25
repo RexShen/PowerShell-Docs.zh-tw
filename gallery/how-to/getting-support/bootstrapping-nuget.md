@@ -1,6 +1,13 @@
-
 ---
-ms.date :  06/12/2017 參與者:  manikb ms.topic:  參考關鍵字:  資源庫,powershell,cmdlet,psget 標題:  NuGet 啟動程序
+ms.date: 06/12/2017
+contributor: manikb
+keywords: 資源庫,powershell,cmdlet,psget
+title: 啟動載入 NuGet
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet 提供者與 NuGet.exe 的啟動程序
 

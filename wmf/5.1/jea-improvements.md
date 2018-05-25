@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
+ms.topic: conceptual
 keywords: wmf,powershell,設定
 contributor: ryanpu
 title: Just Enough Administration (JEA) 的改善功能
-ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) 的改善功能
 
@@ -50,7 +49,7 @@ Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 
 在某些情況下，使用者需要在 JEA 工作階段中執行的工作可能需要存取本機電腦以外的資源。
 JEA 工作階段設定為使用虛擬帳戶時，任何嘗試連接到此類資源的行為將會顯示為來自本機電腦的身分識別，而非來自虛擬帳戶或連接的使用者。
-在 TP5 中，我們已啟用支援在 [群組受控服務帳戶] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) 內容下執行 JEA，使其更容易使用網域身分識別存取網路資源。
+在 TP5 中，我們已支援在 [群組受控服務帳戶] (https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) 內容下執行 JEA，可讓您更容易使用網域身分識別來存取網路資源。
 
 若要將 JEA 工作階段設為在 gMSA 帳戶下執行，請使用您 PSSC 檔案中的下列新金鑰︰
 

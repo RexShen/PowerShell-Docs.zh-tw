@@ -1,14 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-ms.topic: conceptual
-keywords: 資源庫,powershell,cmdlet,psgallery,psget
-title: PowerShell 資源庫
-ms.openlocfilehash: cffb2f0182ffe9072f9fbbc7f4cdfcf28de276db
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
-ms.translationtype: HT
-ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
+ 以及 --- ms.date:  06/12/2017 參與者:  JKeithB 關鍵字:  gallery,powershell,cmdlet,psgallery,psget 標題:  PowerShell 資源庫
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫
 
@@ -28,9 +18,9 @@ PowerShellGet 模組包含來自 [PowerShell 資源庫](https://www.PowerShellGa
 
 ## <a name="supported-operating-systems"></a>支援的作業系統
 
-**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本**。
+**PowerShellGet** 模組需要 **Windows PowerShell 3.0 或更新版本**，或是 **PowerShell Core 6.0 或更新版本**。
 
-因此，**PowerShellGet** 需要下列其中一個作業系統：
+下列作業系統都有適用的 **Windows PowerShell** 版本：
 
 - Windows 10
 - Windows 8.1 專業版
@@ -41,6 +31,10 @@ PowerShellGet 模組包含來自 [PowerShell 資源庫](https://www.PowerShellGa
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
+
+**PowerShell Core** 支援許多作業系統。 如需完整的清單，請參閱[這篇文章](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)。
+
+資源庫中裝載的眾多模組將會支援不同的 OS 並具有額外的需求。 如需詳細資訊，請參考模組的文件。
 
 ## <a name="got-a-question-have-feedback"></a>有任何問題嗎？ 想提供任何意見？
 
