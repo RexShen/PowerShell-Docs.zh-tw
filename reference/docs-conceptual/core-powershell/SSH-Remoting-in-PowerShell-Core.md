@@ -131,7 +131,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
     - 新增 PowerShell 子系統項目
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - 選擇性啟用金鑰驗證
@@ -242,7 +242,7 @@ GitCommitId                    v6.0.0-alpha.17
 1. sudo 命令不適用於 Linux 電腦的遠端工作階段。
 
 [PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
+[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [安裝]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
