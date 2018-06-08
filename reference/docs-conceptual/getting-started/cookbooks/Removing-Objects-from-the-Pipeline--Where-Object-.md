@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 從管線中移除物件 Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753833"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
 
 在 Windows PowerShell 中，您通常會產生並沿著管線傳遞比所需更多的物件。 您可以使用 **Format** Cmdlet 指定要顯示的特定物件屬性，但這樣做並無法解決從顯示中移除整個物件的問題。 您可能需要在結束管線之前篩選物件，以便只對初始產生的物件子集執行動作。
 
-Windows PowerShell 包含 **Where-Object** Cmdlet，可讓您測試管線中的每個物件，並只在符合特定測試條件時才沿著管線傳遞。 未通過測試的物件會從管線中移除。 您會將測試條件當做 **Where-ObjectFilterScript** 參數的值來提供。
+Windows PowerShell 包含了 `Where-Object` Cmdlet，可讓您測試管線中的每個物件，並只在符合特定測試條件時才沿著管線傳遞。 未通過測試的物件會從管線中移除。 您會將測試條件提供為 `Where-Object` **FilterScript** 參數的值。
 
 ### <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 執行簡單的測試
 
-**FilterScript** 的值是評估為 true 或 false 的*指令碼區塊* (以大括弧 {} 括住的一或多個 Windows PowerShell 命令)。 這些指令碼區塊可以很簡單，但建立時需要了解另一個 Windows PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以 '-' 字元開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
+**FilterScript** 的值是評估為 true 或 false 的指令碼區塊 (以大括弧 {} 括住的一或多個 Windows PowerShell 命令)。 這些指令碼區塊可以很簡單，但建立時需要了解另一個 Windows PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以 '-' 字元開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
 
 > [!NOTE]
 > 根據預設，搭配文字使用時，Windows PowerShell 比較運算子不會區分大小寫。
