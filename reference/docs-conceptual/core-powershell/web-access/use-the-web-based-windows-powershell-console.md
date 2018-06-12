@@ -2,11 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用網頁型 Windows PowerShell 主控台
-ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483146"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -81,7 +82,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
     一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定] 區段，然後提供替代的認證。 否則，請前往步驟 6。
 
-1. 如果 Windows PowerShell Web 存取系統管理員已經針對 Windows PowerShell Web 存取使用者建立自訂工作階段設定，請在 [組態名稱] 欄位中輸入工作階段設定的名稱。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations)。
+1. 如果 Windows PowerShell Web 存取系統管理員已經針對 Windows PowerShell Web 存取使用者建立自訂工作階段設定，請在 [組態名稱] 欄位中輸入工作階段設定的名稱。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations)。
 
 1. 請保留 [驗證類型] 設為 [預設]，除非 Windows PowerShell Web 存取系統管理員指示您不要保留。
 

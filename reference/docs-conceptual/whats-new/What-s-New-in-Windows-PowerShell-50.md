@@ -2,11 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: f1134a37e7027b00c948ce1db186a21dc5a311c6
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483180"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
@@ -316,7 +317,7 @@ Windows PowerShell 4.0 包括下列新功能。
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell 的新功能
 
-- **Windows PowerShell 預期狀態設定** (DSC) 是 Windows PowerShell 4.0 中的新管理系統，可用來部署及管理軟體服務與這些服務執行所在之環境的設定資料。 如需 DSC 的詳細資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
+- **Windows PowerShell 預期狀態設定** (DSC) 是 Windows PowerShell 4.0 中的新管理系統，可用來部署及管理軟體服務與這些服務執行所在之環境的設定資料。 如需 DSC 的詳細資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0)。
 
 - **Save-Help** 現可讓您儲存遠端電腦上所安裝之模組的說明。 您可以使用 Save-Help 從連線至網際網路的用戶端 (該用戶端上不需要安裝您想要取得說明的所有模組) 下載模組說明，然後將儲存的說明複製到遠端共用資料夾或無法存取網際網路的遠端電腦。
 
@@ -472,7 +473,7 @@ Windows PowerShell 3.0 包括下列新功能。
 - [特殊字元處理的改進](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
-Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Foundation 的功能。 您現在可以使用 XAML 或使用 Windows PowerShell 語言來撰寫工作流程，以及透過與 Cmdlet 相同的執行方式來執行工作流程。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 可取得工作流程命令，而 [Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 可取得工作流程的說明。
+Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Foundation 的功能。 您現在可以使用 XAML 或使用 Windows PowerShell 語言來撰寫工作流程，以及透過與 Cmdlet 相同的執行方式來執行工作流程。 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 可取得工作流程命令，而 [Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 可取得工作流程的說明。
 
 工作流程是一系列長時間執行、可重複、經常性、平行式、可中斷、可暫停，以及可重新啟動的多部電腦管理活動。 工作流程可以從蓄意或意外中斷 (例如網路中斷、Windows 重新啟動，或電源中斷) 中恢復繼續運作。
 
@@ -504,7 +505,7 @@ Windows PowerShell Web 存取是一項 Windows Server 2012 功能，可讓使用
 如需詳細資訊，請參閱[部署 Windows PowerShell Web 存取](http://go.microsoft.com/fwlink/p/?LinkID=221050)。
 
 ### <a name="new-windows-powershell-ise-features"></a>新的 Windows PowerShell ISE 功能
-對於 Windows PowerShell 3.0，Windows PowerShell 整合式指令碼環境 (ISE) 有許多新功能，包括 IntelliSense、顯示命令視窗、統一的主控台窗格、程式碼片段、括號對稱、展開/折疊區段、自動儲存、最近使用的項目清單、多種內容複製、區塊複製，以及撰寫 Windows PowerShell 指令碼工作流程的完整支援。 如需詳細資訊，請參閱 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
+對於 Windows PowerShell 3.0，Windows PowerShell 整合式指令碼環境 (ISE) 有許多新功能，包括 IntelliSense、顯示命令視窗、統一的主控台窗格、程式碼片段、括號對稱、展開/折疊區段、自動儲存、最近使用的項目清單、多種內容複製、區塊複製，以及撰寫 Windows PowerShell 指令碼工作流程的完整支援。 如需詳細資訊，請參閱 [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)。
 
 ### <a name="support-for-microsoft-net-framework-4"></a>支援 Microsoft .NET Framework 4
 Windows PowerShell 是針對 Common Language Runtime 4.0 所建立。 Cmdlet、指令碼與工作流程作者可以使用 Windows PowerShell 中新的 Microsoft .NET Framework 4 類別，其功能包括應用程式相容性與部署、Managed Extensibility Framework、平行運算、網路、Windows Communication Foundation 及 Windows Workflow Foundation。
@@ -517,9 +518,9 @@ Windows PowerShell 3.0 是適用於 Windows 8 之 Windows 預先安裝環境 (Wi
 
 您現在可以與工作階段中斷連線，而不會中斷工作階段中正在執行的命令。 您可以關閉工作階段並關閉您的電腦。 稍後您可以在相同或不同的電腦上，從不同的工作階段重新連線至工作階段。
 
-[Get-PSSession](https://technet.microsoft.com/en-us/library/b2b10531-d0df-4746-b877-e75c09955cb6) Cmdlet 的 **ComputerName** 參數現在可以取得已連線到電腦的所有使用者工作階段，即使它們是在其他電腦上不同的工作階段中啟動。 您可以連線至工作階段、取得命令的結果、啟動新的命令，然後與工作階段中斷連線。
+[Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) Cmdlet 的 **ComputerName** 參數現在可以取得已連線到電腦的所有使用者工作階段，即使它們是在其他電腦上不同的工作階段中啟動。 您可以連線至工作階段、取得命令的結果、啟動新的命令，然後與工作階段中斷連線。
 
-新增可支援「已中斷連線的工作階段」功能的 Cmdlet，包括 [Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060) 與 Receive-PSSession，亦已新增參數至管理 PSSessions 的 Cmdlet，例如 [Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) Cmdlet 的 **InDisconnectedSession** 參數。
+新增可支援「已中斷連線的工作階段」功能的 Cmdlet，包括 [Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060) 與 Receive-PSSession，亦已新增參數至管理 PSSessions 的 Cmdlet，例如 [Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) Cmdlet 的 **InDisconnectedSession** 參數。
 
 只有在位於連線起始端 (用戶端) 與終止端 (伺服器) 的電腦是執行 Windows PowerShell 3.0 時，才支援「已中斷連線的工作階段」功能。
 
@@ -531,17 +532,17 @@ Windows PowerShell 3.0 會偵測用戶端與伺服器之間是否發生未預期
 這些功能可提供更可靠且更容易修復的遠端體驗，且可允許使用者執行需要健全工作階段的長時間執行工作，例如工作流程。
 
 ### <a name="updatable-help-system"></a>可更新的說明系統
-您現在可以為您模組中的 Cmdlet 下載已更新的說明檔案。 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 可識別最新的說明檔案，將其從網際網路下載、解壓縮、驗證，然後安裝在模組的正確語言特定目錄中。
+您現在可以為您模組中的 Cmdlet 下載已更新的說明檔案。 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 可識別最新的說明檔案，將其從網際網路下載、解壓縮、驗證，然後安裝在模組的正確語言特定目錄中。
 
 若要使用已更新的說明檔案，只要輸入 `Get-Help` 即可。 您不需要重新啟動 Windows 或 Windows PowerShell。 若要為 $pshome 目錄中的模組更新說明檔案，請使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell。
 
-為支援沒有連線網際網路的使用者以及位於防火牆後方的使用者，新的 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Cmdlet 會將說明檔案下載到檔案系統目錄，例如檔案共用。 使用者即可使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 從檔案共用取得已更新的說明檔案。
+為支援沒有連線網際網路的使用者以及位於防火牆後方的使用者，新的 [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Cmdlet 會將說明檔案下載到檔案系統目錄，例如檔案共用。 使用者即可使用 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 從檔案共用取得已更新的說明檔案。
 
-您可以使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet，針對所有支援的 UI 文化特性中的所有或特定模組，更新其說明檔案。 您甚至可以在 Windows PowerShell 設定檔中放入 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 命令。 依照預設，Windows PowerShell 一天只會為一個模組下載說明檔案一次。
+您可以使用 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet，針對所有支援的 UI 文化特性中的所有或特定模組，更新其說明檔案。 您甚至可以在 Windows PowerShell 設定檔中放入 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) 命令。 依照預設，Windows PowerShell 一天只會為一個模組下載說明檔案一次。
 
-Windows 8 與 Windows Server 2012 模組並沒有包含說明檔案。 若要下載最新的說明檔案，請輸入 `Update-Help`。 如需詳細資訊，請輸入 `Get-Help` (不含參數) 或請參閱 [about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)。
+Windows 8 與 Windows Server 2012 模組並沒有包含說明檔案。 若要下載最新的說明檔案，請輸入 `Update-Help`。 如需詳細資訊，請輸入 `Get-Help` (不含參數) 或請參閱 [about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)。
 
-當電腦上沒有安裝 Cmdlet 的說明檔案時，[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 現在會顯示自動產生的說明。 自動產生的說明包括使用 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 下載說明檔案的命令語法與指示。
+當電腦上沒有安裝 Cmdlet 的說明檔案時，[Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 現在會顯示自動產生的說明。 自動產生的說明包括使用 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) Cmdlet 下載說明檔案的命令語法與指示。
 
 任何模組作者都可以為其模組的可更新的說明提供支援。 您可以在模組中包括說明檔案並使用「可更新的說明」來更新說明檔案，或在模組中省略說明檔案並使用「可更新的說明」來安裝說明檔案。 如需支援「可更新的說明」的詳細資訊，請參閱 MSDN 中的[支援可更新的說明](http://go.microsoft.com/FWLink/?LinkID=242129)。
 
@@ -579,22 +580,22 @@ Windows PowerShell 3.0 支援通用訊息模型 (CIM)，它可為系統、網路
 
 在舊版的 Windows PowerShell 中，只有能夠撰寫 C\# 程式或複雜啟動指令碼的人員才能執行此層級的控制。 現在電腦上 Administrators 群組的任何成員都可以使用設定檔案來自訂工作階段設定。
 
-若要建立工作階段設定檔案，請使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) Cmdlet。 若要將工作階段設定檔案套用到工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 或 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet。
+若要建立工作階段設定檔案，請使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) Cmdlet。 若要將工作階段設定檔案套用到工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 或 [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet。
 
-如需詳細資訊，請參閱 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 與 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
+如需詳細資訊，請參閱 [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 與 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>排程工作與工作排程器整合
 您現在可以排程 Windows PowerShell 背景工作，並在 Windows PowerShell 和工作排程器中管理它們。
 
 Windows PowerShell 排程工作為 Windows PowerShell 背景工作及工作排程器工作的有用混合體。
 
-排程工作就像 Windows PowerShell 背景工作一樣，會在背景中以非同步方式執行。 您可使用 Job Cmdlet 來管理已完成之排程工作的執行個體，例如 [Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) 與 [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad)。
+排程工作就像 Windows PowerShell 背景工作一樣，會在背景中以非同步方式執行。 您可使用 Job Cmdlet 來管理已完成之排程工作的執行個體，例如 [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) 與 [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad)。
 
 就像工作排程器工作一樣，您可以在單次或週期性排程中執行排程工作，或在偵測到某個動作或事件時執行排程工作。 您可以在工作排程器中檢視及管理排程工作、視需要啟用及停用排程工作、將排程工作做為範例來執行或使用，以及設定工作啟動時所依據的條件。
 
 此外，排程工作也隨附一組自訂的 Cmdlet 以用於管理排程工作。 這些 Cmdlet 可讓您建立、編輯、管理、停用及重新啟用排程工作、建立排程工作觸發程序，以及設定排程工作選項。
 
-如需排程工作的詳細資訊，請參閱 [about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)。
+如需排程工作的詳細資訊，請參閱 [about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92)。
 
 ### <a name="windows-powershell-language-enhancements"></a>Windows PowerShell 語言增強功能
 Windows PowerShell 3.0 包括許多為了使其語言更簡單、更容易使用，以及避免發生一般錯誤所設計的功能。 這些改善項目包括屬性列舉、純量物件的計數和長度屬性、新的重新導向運算子、$Using 範圍修飾詞、PSItem 自動變數、彈性指令碼格式設定、變數屬性、簡化的屬性引數、數字命令名稱、Stop-Parsing 運算子、改善的陣列展開、全新位元運算子、排序的字典、PSCustomObject 轉換，以及改善的以註解為基礎的說明。
@@ -641,21 +642,21 @@ Windows PowerShell 提供者也已經大幅改善，包括用於管理虛擬主�
 ### <a name="remote-module-import-and-discovery"></a>遠端模組匯入及探索
 Windows PowerShell 3.0 可延伸遠端電腦上的模組探索、匯入及隱含遠端執行功能。 Module Cmdlet 可使用 Windows PowerShell 遠端執行功能取得遠端電腦上的模組，並且將模組匯入到遠端或本機電腦。 新的 CIM 工作階段支援可讓您透過將在遠端電腦上以隱含方式執行的命令匯入到本機電腦，以使用 CIM 和 WMI 來管理非 Windows 電腦。
 
-如需詳細資訊，請參閱 [Get-Module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) 與 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
+如需詳細資訊，請參閱 [Get-Module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1) 與 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
 
 ### <a name="enhanced-tab-completion"></a>增強的 Tab 鍵自動完成
 Windows PowerShell 主控台中的 Tab 鍵自動完成現在可以完成 Cmdlet、參數、參數值、列舉、.NET Frameworks 類型、COM 物件、隱藏目錄及其他項目的名稱。 Tab 鍵自動完成功能可以依據新的剖析器與抽象語法樹來重新撰寫，以支援更多案例，包括記憶體內部剖析樹狀結構和中線 Tab 鍵自動完成。
 
 ### <a name="module-auto-loading"></a>模組自動載入
-[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 現在可取得電腦上安裝之全部模組的所有 Cmdlet 和函式，即使模組沒有匯入目前的工作階段中也一樣。
+[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 現在可取得電腦上安裝之全部模組的所有 Cmdlet 和函式，即使模組沒有匯入目前的工作階段中也一樣。
 
 當您取得您需要的 Cmdlet 時，您可以立即使用，不需要匯入任何模組。 Windows PowerShell 模組現在會在您使用模組中的任何 Cmdlet 時自動匯入。 您不需要再搜尋及匯入模組，就可以使用模組的 Cmdlet。
 
-觸發自動匯入模組的方式是，在命令中使用 Cmdlet、執行不含萬用字元之 Cmdlet 的 **Get-Command**，或執行不含萬用字元之 Cmdlet 的 [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)。
+觸發自動匯入模組的方式是，在命令中使用 Cmdlet、執行不含萬用字元之 Cmdlet 的 **Get-Command**，或執行不含萬用字元之 Cmdlet 的 [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)。
 
 您可以使用 **$PSModuleAutoLoadingPreference** 喜好設定變數來啟用、停用及設定自動匯入模組。
 
-如需詳細資訊，請參閱 [about_Modules [v4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b) 及 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 與 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
+如需詳細資訊，請參閱 [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) 及 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 與 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
 
 ### <a name="module-experience-improvements"></a>模組體驗改善
 Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新功能。
@@ -672,16 +673,16 @@ Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新
 
 6. 改善的模組需求，包括完整的必要模組 (包含版本與 GUID)，以及自動匯入必要模組
 
-7. 更安靜、更簡化的 [New-ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) Cmdlet 運作。
+7. 更安靜、更簡化的 [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) Cmdlet 運作。
 
 8. &#35;Requires 的新 **Module** 參數
 
-9. 改善的 [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet (包含 **MinimumVersion** 與 **RequiredVersion** 參數)
+9. 改善的 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet (包含 **MinimumVersion** 與 **RequiredVersion** 參數)
 
 ### <a name="simplified-command-discovery"></a>簡化的命令探索
-您不需要再匯入所有模組即可探索您的工作階段中可用的命令。 在 Windows PowerShell 3.0 中，[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 會從所有已安裝的模組中取得所有命令。 而且，當您使用命令時，匯出命令的模組就會自動匯入到您的工作階段。
+您不需要再匯入所有模組即可探索您的工作階段中可用的命令。 在 Windows PowerShell 3.0 中，[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 會從所有已安裝的模組中取得所有命令。 而且，當您使用命令時，匯出命令的模組就會自動匯入到您的工作階段。
 
-新的 [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) Cmdlet 是特別為初學者所設計。 您可以在視窗中搜尋命令。 您可以直接在視窗中檢視所有命令或依模組篩選命令、按一下按鈕來匯入模組、使用文字方塊與下拉式清單建構有效的命令，然後複製或執行命令。
+新的 [Show-Command](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) Cmdlet 是特別為初學者所設計。 您可以在視窗中搜尋命令。 您可以直接在視窗中檢視所有命令或依模組篩選命令、按一下按鈕來匯入模組、使用文字方塊與下拉式清單建構有效的命令，然後複製或執行命令。
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>改善的記錄、診斷與群組原則支援
 Windows PowerShell 3.0 透過支援 Windows 事件追蹤 (ETW) 記錄檔、模組的可編輯 **LogPipelineExecutionDetails** 屬性，以及「開啟模組記錄」群組原則設定，改善了命令與模組的記錄與追蹤支援。 您現在可以透過顯示記錄內容，來從記錄詳細資料中取得參數值。
@@ -692,13 +693,13 @@ Windows PowerShell 3.0 透過支援 Windows 事件追蹤 (ETW) 記錄檔、模�
 ### <a name="enhanced-console-host-experience"></a>增強的主控台主機體驗
 Windows PowerShell 主控台主機程式在 Windows PowerShell 3.0 中擁有新的功能，包括預設的單一執行緒 Apartment。 檔案總管中新的 [用 PowerShell 執行] 選項，可讓您只要以滑鼠右鍵按一下，就可以在不受限制的工作階段中執行指令碼。 新的主控台主機啟動邏輯可以更快速地啟動 Windows PowerShell，而新字型則可以讓您將熟悉的主控台視窗體驗個人化。
 
-如需詳細資訊，請參閱 [about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)。
+如需詳細資訊，請參閱 [about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)。
 
 ### <a name="new-cmdlet-and-hosting-apis"></a>新的 Cmdlet 與裝載 API
 新的 Cmdlet API 與裝載 API 包括公用進階語法樹 (AST) API，以及用於管線分頁、巢狀管線、Runspace 集區 Tab 鍵自動完成、Windows RT、過時 Cmdlet 屬性，以及 FunctionInfo 物件之 Verb 與 Noun 屬性的 API。
 
 ### <a name="performance-improvements"></a>效能改善
-Windows PowerShell 中效能大幅改善的原因是來自全新的語言剖析器 (以 .NET Framework 4 中的動態執行階段語言 (DLR) 為基礎所建立) 以及改善的執行階段指令碼編譯、引擎可靠性，而 [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) 的演算法變更改善了它的效能，特別是在搜尋網路共用時。
+Windows PowerShell 中效能大幅改善的原因是來自全新的語言剖析器 (以 .NET Framework 4 中的動態執行階段語言 (DLR) 為基礎所建立) 以及改善的執行階段指令碼編譯、引擎可靠性，而 [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) 的演算法變更改善了它的效能，特別是在搜尋網路共用時。
 
 ### <a name="runas-and-shared-host-support"></a>RunAs 與共用主機支援
 Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
@@ -708,8 +709,8 @@ Windows PowerShell 3.0 支援 RunAs 與共用主機功能。
 **SharedHost** 功能可允許多部電腦上的多名使用者同時連線至工作流程工作階段，並監視工作流程的進度。 使用者可以在某一部電腦上啟動工作流程，然後連線至另一部電腦上的工作流程工作階段，不需要與原始電腦中的工作階段中斷連線。 使用者必須具備相同權限，並使用相同的工作階段設定。 如需詳細資訊，請參閱＜開始使用 Windows PowerShell 工作流程＞中的＜執行 Windows PowerShell 工作流程＞。
 
 ### <a name="special-character-handling-improvements"></a>特殊字元處理改善
-為改善 Windows PowerShell 3.0 解譯及正確處理特殊字元的能力，用來處理路徑中特殊字元的 **LiteralPath** 參數在所有擁有 **Path** 參數的 Cmdlet (包括新的 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) 與 [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Cmdlet) 上幾乎都是有效的。 剖析器也包含特殊邏輯，可改善對檔案名稱與路徑中的倒引號字元 (\`) 及方括弧的處理能力。
+為改善 Windows PowerShell 3.0 解譯及正確處理特殊字元的能力，用來處理路徑中特殊字元的 **LiteralPath** 參數在所有擁有 **Path** 參數的 Cmdlet (包括新的 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) 與 [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) Cmdlet) 上幾乎都是有效的。 剖析器也包含特殊邏輯，可改善對檔案名稱與路徑中的倒引號字元 (\`) 及方括弧的處理能力。
 
 ## <a name="see-also"></a>另請參閱
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)

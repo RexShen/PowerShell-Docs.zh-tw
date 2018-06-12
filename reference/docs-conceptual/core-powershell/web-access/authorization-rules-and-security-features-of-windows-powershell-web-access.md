@@ -2,11 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483129"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -112,7 +113,7 @@ Windows PowerShell Web 存取的最終安全性階層是目標電腦本身的安
 授權規則可用來允許使用者存取特定工作階段設定。
 您可以為 Windows PowerShell Web 存取建立_受限制的 Runspace_ 或工作階段設定，並允許特定使用者在登入 Windows PowerShell Web 存取時只能連線到特定的工作階段設定。
 您可以使用存取控制清單 (ACL) 來判斷哪些使用者有權存取特定端點，然後使用本節描述的授權規則進一步限制特定使用者組的端點存取權。
-如需受限制之 Runspace 的詳細資訊，請參閱 [Creating a constrained runspace](https://msdn.microsoft.com/en-us/library/dn614668) (建立受限制的 Runspace)。
+如需受限制之 Runspace 的詳細資訊，請參閱 [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668) (建立受限制的 Runspace)。
 
 ### <a name="configuring-authorization-rules"></a>設定授權規則
 
@@ -122,7 +123,7 @@ Windows PowerShell Web 存取的最終安全性階層是目標電腦本身的安
 
 如果您打算使用自訂工作階段設定來允許特定使用者只能在 Windows PowerShell Web 存取中受限制的 Runspace 內工作，請先建立您的自訂工作階段設定，再新增參考這些設定的授權規則。
 您不能使用 Windows PowerShell Web 存取 Cmdlet 來建立自訂的工作階段設定。
-如需建立自訂工作階段設定的詳細資訊，請參閱 [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)。
+如需建立自訂工作階段設定的詳細資訊，請參閱 [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)。
 
 Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 ( \* )。
 不支援在字串中使用萬用字元；每一個屬性 (使用者、電腦或工作階段設定) 使用單一星號。
@@ -142,7 +143,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 2. **選擇性步驟**：若要使用工作階段設定限制使用者存取：
 
     確認您要使用的工作階段設定已存在於規則中。
-如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files) 中建立工作階段設定的指示。
+如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files) 中建立工作階段設定的指示。
 
 3. 這個授權規則允許特定使用者存取網路 (他們通常擁有其存取權) 上的一部電腦，並能夠存取範圍是使用者一般指令碼編寫及 cmdlet 需求的特定工作階段設定。 輸入下列程式碼，然後按 **Enter**。
 
@@ -253,6 +254,6 @@ Windows PowerShell Web 存取工作階段逾時。在 Windows Server 2012 上執
 
 ## <a name="see-also"></a>另請參閱
 
-- [安裝和使用 Windows PowerShell Web 存取](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [安裝和使用 Windows PowerShell Web 存取](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web 存取 Cmdlet](cmdlets/web-access-cmdlets.md)

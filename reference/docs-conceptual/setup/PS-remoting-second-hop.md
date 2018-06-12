@@ -2,11 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
-ms.openlocfilehash: 893b4353c4244dc96c4b234bb4062b583a5cd36d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483010"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -21,7 +22,7 @@ ms.lasthandoff: 04/09/2018
 
 ## <a name="credssp"></a>CredSSP
 
-您可以使用[認證安全性支援提供者 (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) 進行驗證。 CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
+您可以使用[認證安全性支援提供者 (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) 進行驗證。 CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
 
 如需使用 PowerShell 遠端的 CredSSP 時，安全性考量的詳細資訊，請參閱 [Accidental Sabotage: Beware of CredSSP](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp) (意外妨害：注意 CredSSP)。
 
@@ -175,7 +176,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-在此範例中，`$using` 變數用來使 _ServerB_ 可看見 `$ServerC` 變數。 如需 `$using` 變數的詳細資訊，請參閱 [about_Remote_Variables](https://technet.microsoft.com/en-us/library/jj149005.aspx)。
+在此範例中，`$using` 變數用來使 _ServerB_ 可看見 `$ServerC` 變數。 如需 `$using` 變數的詳細資訊，請參閱 [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx)。
 
 若要允許多部伺服器委派認證給 _ServerC_，請將 _ServerC_ 上 **PrincipalsAllowedToDelegateToAccount** 參數的值設為陣列︰
 
@@ -212,8 +213,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 1 部分)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 2 部分)
 - [了解使用整合式 Windows 驗證之 Azure Active Directory 應用程式 Proxy 部署的 Kerberos 限制委派](http://aka.ms/kcdpaper)
-- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/en-us/library/hh554126.aspx) ([MS-ADA2]: Active Directory 架構屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity)
-- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2Proxy](https://msdn.microsoft.com/en-us/library/cc246079.aspx) ([MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx) ([MS-ADA2]: Active Directory 架構屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity)
+- [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2Proxy](https://msdn.microsoft.com/library/cc246079.aspx) ([MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy)
 - [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/) (以資源為基礎的 Kerberos 限制委派)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/) (使用 PrincipalsAllowedToDelegateToAccount 進行遠端系統管理，而不需要限制委派)
 
@@ -236,7 +237,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行哪些命令。 它可以用來解決第二個躍點問題。
 
-如需 JEA 的資訊，請參閱 [Just Enough Administration](https://docs.microsoft.com/en-us/powershell/jea/overview)。
+如需 JEA 的資訊，請參閱 [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview)。
 
 ### <a name="pros"></a>優點
 
@@ -249,7 +250,7 @@ JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行�
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>在 Invoke-Command 指令碼區塊內傳遞認證
 
-您可以在呼叫 [Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) Cmdlet 的 **ScriptBlock** 參數內傳遞認證。
+您可以在呼叫 [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) Cmdlet 的 **ScriptBlock** 參數內傳遞認證。
 
 ### <a name="pros"></a>優點
 

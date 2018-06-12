@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 系統需求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: a15b5b33b5296befae833e520cfdfbd41a07b122
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483044"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
 本主題列出 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
@@ -83,19 +84,19 @@ Windows PowerShell 是不需要圖形化使用者介面的主控台應用程式�
 
 - Cmdlet
 
-    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
+    1.  [Out-GridView](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
+    2.  [Show-Command](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
+    4.  [Show-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - 參數
 
-    1.  [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet 的 **ShowWindow** 參數。
+    1.  [Get-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet 的 **ShowWindow** 參數。
 
-    2.  [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) 的 **ShowSecurityDescriptorUI** 參數和 [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) Cmdlet。
+    2.  [Register-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) 的 **ShowSecurityDescriptorUI** 參數和 [Set-PSSessionConfiguration](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) Cmdlet。
 
 ## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell 引擎需求
 Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Windows PowerShell 2.0。 針對 Windows PowerShell 2.0 和 Windows PowerShell 3.0 撰寫的 Cmdlet、提供者、嵌入式管理單元、模組及指令碼，在 Windows PowerShell 4.0 中仍以同樣方式執行。
@@ -111,13 +112,13 @@ Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能�
 
 - [背景智慧型傳送服務 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
+- [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
+- [Get-WinEvent](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
+- [Save-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
+- [Update-Help](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 此外，Windows PE 上沒有 **WinRm** 服務。
 

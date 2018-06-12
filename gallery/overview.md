@@ -1,4 +1,14 @@
- 以及 --- ms.date:  06/12/2017 參與者:  JKeithB 關鍵字:  gallery,powershell,cmdlet,psgallery,psget 標題:  PowerShell 資源庫
+---
+ms.date: 06/12/2017
+contributor: JKeithB
+keywords: 資源庫,powershell,cmdlet,psgallery,psget
+title: PowerShell 資源庫
+ms.openlocfilehash: dc7e8dd7e4d96d8424a62cb3256c3164b63a3684
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482925"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫
 

@@ -1,11 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 2627b9d02788bd31a5384587406df533faf2cfaf
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b8f175cee0a1de501b64890fdc2798f4f6421a14
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251478"
 ---
 # <a name="script-tracing-and-logging"></a>指令碼追蹤和記錄
 
@@ -104,4 +105,4 @@ $sortedScripts = $created | sort { $_.Properties[0].Value }
 $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
-如同具有有限保留緩衝區 (亦即 ETW 記錄檔) 的所有記錄系統，針對這個基礎結構的一種攻擊是濫發假性的事件記錄檔以隱藏較早的辨識項。 若要防範這種攻擊，請確定您已設定某種形式的事件記錄檔集合 (亦即 Windows 事件轉送，[利用 Windows 事件記錄檔監視找出敵人](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf))，儘快將事件記錄檔移出電腦。
+如同具有有限保留緩衝區 (亦即 ETW 記錄檔) 的所有記錄系統，針對這個基礎結構的一種攻擊是濫發假性的事件記錄檔以隱藏較早的辨識項。 若要防範這種攻擊，請確定您已設定某種形式的事件記錄檔集合 (亦即 Windows 事件轉送，[利用 Windows 事件記錄檔監視找出敵人](https://www.iad.gov/iad/library/reports/spotting-the-adversary-with-windows-event-log-monitoring.cfm))，儘快將事件記錄檔移出電腦。

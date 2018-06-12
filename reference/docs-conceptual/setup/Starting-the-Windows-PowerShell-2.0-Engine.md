@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 啟動 Windows PowerShell 2.0 引擎
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 585e1003554362d11fe99414bd3e80c497799a88
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482959"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>啟動 Windows PowerShell 2.0 引擎
 
@@ -37,13 +38,13 @@ PowerShell.exe -Version 2
 
 這是通常由系統管理員所執行的進階工作。
 
-下列程序使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數，來建立使用 Windows PowerShell 2.0 引擎的工作階段設定。 您也可以使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) Cmdlet 的 **PowerShellVersion** 參數來建立可載入 Windows PowerShell 2.0 引擎之工作階段的工作階段設定檔，以及使用 [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) 參數的 **PSVersion** 參數來將工作階段設定變更為使用 Windows PowerShell 2.0 引擎。
+下列程序使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數，來建立使用 Windows PowerShell 2.0 引擎的工作階段設定。 您也可以使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) Cmdlet 的 **PowerShellVersion** 參數來建立可載入 Windows PowerShell 2.0 引擎之工作階段的工作階段設定檔，以及使用 [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) 參數的 **PSVersion** 參數來將工作階段設定變更為使用 Windows PowerShell 2.0 引擎。
 
-如需工作階段組態檔的詳細資訊，請參閱 [about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)。如需工作階段組態 (包括設定和安全性) 的資訊，請參閱 [about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)。
+如需工作階段組態檔的詳細資訊，請參閱 [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)。如需工作階段組態 (包括設定和安全性) 的資訊，請參閱 [about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab)。
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>啟動遠端 Windows PowerShell 2.0 工作階段
 
-1. 若要建立需要 Windows PowerShell 2.0 引擎的工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數 (值為 "2.0")。 在「伺服器端」或連線接收端的電腦上，執行此命令。
+1. 若要建立需要 Windows PowerShell 2.0 引擎的工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數 (值為 "2.0")。 在「伺服器端」或連線接收端的電腦上，執行此命令。
 
    下列範例命令會在 Server01 電腦上建立 PS2 工作階段設定。 若要執行此命令，使用 [以系統管理員身分執行] 選項來啟動 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
 
@@ -51,7 +52,7 @@ PowerShell.exe -Version 2
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. 若要在 Server01 電腦上建立使用 PS2 工作階段設定的工作階段，請使用建立遠端工作階段之 Cmdlet 的 **ConfigurationName** 參數 (例如 [New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) Cmdlet)。
+2. 若要在 Server01 電腦上建立使用 PS2 工作階段設定的工作階段，請使用建立遠端工作階段之 Cmdlet 的 **ConfigurationName** 參數 (例如 [New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) Cmdlet)。
 
    當使用工作階段設定的工作階段啟動時，會將 Windows PowerShell 2.0 引擎自動載入工作階段。
 
@@ -63,7 +64,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>如何使用 Windows PowerShell 2.0 引擎啟動背景工作
 
-若要使用 Windows PowerShell 2.0 引擎啟動背景工作，請使用 [Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) Cmdlet 的 **PSVersion** 參數。
+若要使用 Windows PowerShell 2.0 引擎啟動背景工作，請使用 [Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) Cmdlet 的 **PSVersion** 參數。
 
 下列命令會使用 Windows PowerShell 2.0 引擎啟動背景工作。
 
