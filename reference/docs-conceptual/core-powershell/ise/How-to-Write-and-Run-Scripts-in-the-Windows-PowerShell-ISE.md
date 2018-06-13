@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483112"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 
@@ -130,7 +131,7 @@ ms.lasthandoff: 04/09/2018
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>以 ASCII 編碼方式儲存指令碼
 
-根據預設，Windows PowerShell ISE 會將新的指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1) 儲存為 Unicode (BigEndianUnicode)。若要以其他編碼 (例如 ASCII (ANSI)) 儲存指令碼，請在 [$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) 物件使用 **Save** 或 **SaveAs** 方法。
+根據預設，Windows PowerShell ISE 會將新的指令碼檔案 (.ps1)、指令碼資料檔案 (.psd1) 和指令碼模組檔案 (.psm1) 儲存為 Unicode (BigEndianUnicode)。若要以其他編碼 (例如 ASCII (ANSI)) 儲存指令碼，請在 [$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) 物件使用 **Save** 或 **SaveAs** 方法。
 
 下列命令會以 ASCII 編碼方式，將新的指令碼另存為 MyScript.ps1。
 

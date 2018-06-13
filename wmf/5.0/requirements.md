@@ -1,96 +1,15 @@
 ---
-ms.date: 06/12/2017
+ms.date: 05/22/2018
 keywords: wmf,powershell,設定
-ms.openlocfilehash: ce68bc57a5da049cf895165420ba7c4e21b3e63b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c1c591f8fbfff3bfeae8398548f2839dbb121f8
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482891"
 ---
-# <a name="system-requirements"></a>系統需求
-
-- 先安裝最新的 Windows 更新，然後安裝 WMF 5.0 RTM。
-- 您只能在下列作業系統上安裝 WMF 5.0 RTM：
-
-    | 作業系統       | 版本         | 必要條件        |  封裝連結 |
-    |------------------------|--------------|------------------|----------------------| --------------|
-    | Windows Server 2012 R2 |  |  | [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) |
-    | Windows Server 2012    |  |  | [W2K12-KB3134759-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717506) |
-    | Windows Server 2008 R2 SP1 | 全部，IA64 除外 | 已安裝 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) 和 [.NET Framework 4.5 或更新的版本](https://msdn.microsoft.com/library/5a4x27ek.aspx)| [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)|
-    | Windows 8.1 | Pro、Enterprise | | **x64：** [Win8.1AndW2K12R2-KB3134758-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717507) </br> **x86：** [Win8.1-KB3134758-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717963)|
-    | Windows 7 SP1 | All | 已安裝 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) 和 [.NET Framework 4.5 或更新的版本](https://msdn.microsoft.com/library/5a4x27ek.aspx) | **x64：** [Win7AndW2K8R2-KB3134760-x64.msu](http://go.microsoft.com/fwlink/?LinkId=717504)  </br> **x86：** [Win7-KB3134760-x86.msu](http://go.microsoft.com/fwlink/?LinkID=717962)|
-
 # <a name="installation-instructions"></a>安裝指示
 
-### <a name="to-install-wmf-50-from-windows-explorer-or-file-explorer"></a>若要從 Windows 檔案總管 (或檔案總管) 安裝 WMF 5.0：
+如 WMF 5.1 的[開發](https://blogs.msdn.microsoft.com/powershell/2016/04/06/windows-management-framework-5-0-updates-and-wmf-5-1/)與[發行](https://blogs.msdn.microsoft.com/powershell/2017/03/28/windows-management-framework-wmf-5-1-now-in-microsoft-update-catalog/)期間所述，從 2017 年 6 月 1 日起，使用 WMF 5.0 的使用者都必須升級至 WMF 5.1 才能獲得支援。
 
-1. 瀏覽至您用來下載 MSU 檔案的資料夾。
-
-2. 按兩下 MSU 以執行。
-
-### <a name="to-install-wmf-50-from-command-prompt"></a>若要從 [命令提示字元] 安裝 WMF 5.0：
-
-1. 下載您電腦架構的正確封裝之後，以提高的使用者權限 (以系統管理員身分執行) 開啟 [命令提示字元] 視窗。 在 Windows Server 2012 R2 或 Windows Server 2012 或 Windows Server 2008 R2 SP1 的 Server Core 安裝選項上，預設會以提高的使用者權限開啟 [命令提示字元]。
-
-2. 將目錄變更為您已下載或複製 WMF 5.0 安裝封裝的資料夾。
-
-3. 執行下列其中一個命令：
-    - 在執行 Windows Server 2012 R2 或 Windows 8.1 x64 的電腦上執行 **Win8.1AndW2K12R2-KB3134758-x64.msu /quiet**。
-    - 在執行 Windows Server 2012 的電腦上執行 **W2K12-KB3134759-x64.msu /quiet**。
-    - 在執行 Windows Server 2008 R2 SP1 或 Windows 7 SP1 x64 的電腦上執行 **Win7AndW2K8R2-KB3134760-x64.msu /quiet**。
-    - 在執行 Windows 8.1 x86 的電腦上執行 **Win8.1-KB3134758-x86.msu /quiet**。
-    - 在執行 x86 Windows 7 SP1 的電腦上執行 **Win7-KB3134760-x86.msu /quiet**。
-
-### <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 和 Windows 7 SP1 的其他安裝注意事項︰
-
-請確定已符合下列先決條件︰
-- 已安裝最新的 Service Pack。
-- 已安裝 [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)。
-- [已安裝 .NET framework 4.5 或更新版本](https://msdn.microsoft.com/library/5a4x27ek.aspx)。
-
-**WMF 4.0 相依性**
-
-Windows Server 2008 R2 SP1 和 Windows 7 SP1 系統內建 PowerShell 2.0、WinRM 和 WMI。 發行 Windows Server 2008 R2 SP1 和 Windows 7 SP1 之後，已發行 WMF 3.0 和 WMF 4.0 套件，可更新這些內建元件。 安裝/解除安裝 WMF 3.0 和 WMF 4.0 套件在下列升級路徑中有一些問題︰
-
-- 內建 --> WMF 4.0
-- 內建 --> WMF 3.0 --> WMF4.0。
-
-我們在 WMF 4.0 套件中已修正上述所有問題。 因此，您必須有 WMF 4.0，才能在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上安裝 WMF 5.0。 以下是未安裝 WMF 4.0 便升級至 WMF 5.0 可能遇到的特定問題︰
-
-- 在 Windows 7 SP1 和 Windows Server 2008 R2 SP1 中解除安裝 WMF 3.0 或 WMF 5.0 (而未安裝必要的 WMF 4.0) 之後，轉送的事件記錄無法使用，而且事件檢視器中未顯示 EventCollector 記錄 ([KB2809215](https://support.microsoft.com/en-us/kb/2809215))。
-- *PSModulePath* 環境變數的自訂在下列情況會重設為預設值：當您在 Windows 7 SP1 和 Windows Server 2008 R2 SP1 中，從內建 PowerShell 2.0 直接升級至 WMF 5.0 時 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035))，或是從 WMF 3.0 直接升級至 WMF 5.0 時 ([KB2872047](https://support.microsoft.com/en-us/kb/2872047))。
-
-**WinRM 相依性**
-
-Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上預設不啟用 WinRM。 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 **Set-WSManQuickConfig**。
-
-# <a name="uninstallation-instructions"></a>解除安裝指示
-
-### <a name="using-command-prompt"></a>使用 [命令提示字元]
-
-1.  開啟 **[命令提示字元]**。
-
-2.  執行 [Windows Update 獨立啟動器](https://support.microsoft.com/en-us/kb/934307)，如下所示︰
-
-在 Windows Server 2012 R2 和 Windows 8.1 上：
-```powershell
-wusa /uninstall /kb:3134758
-```
-在 Windows Server 2012 上：
-```powershell
-wusa /uninstall /kb:3134759
-```
-在 Windows Server 2008 R2 SP1 和 Windows 7 SP1 上：
-```powershell
-wusa /uninstall /kb:3134760
-```
-
-### <a name="using-control-panel"></a>使用 [控制台]
-
-1.  開啟 **[控制台]**。
-
-2.  開啟 **[程式集]**，然後開啟 **[解除安裝程式]**。
-
-3.  按一下 **[檢視安裝的更新]**。
-
-4.  從已安裝的更新清單中選取 **[Windows Management Framework 5.0]**。 這會對應到 *KB3134758*、*KB3134759* 或 *KB3134760*。 按一下 **[解除安裝]**。
+請遵循 [WMF 5.1 的安裝指示](..\5.1\install-configure.md) 

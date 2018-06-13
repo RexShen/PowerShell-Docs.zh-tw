@@ -74,7 +74,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) 電腦上的安裝
 
-1. 安裝 GitHub 中的最新 [PowerShell for Linux] 組建
+1. 安裝 GitHub 中的最新 [PowerShell Core for Linux] 組建
 1. 視需要安裝 [Ubuntu SSH]
 
     ```bash
@@ -109,7 +109,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 
 ## <a name="setup-on-macos-machine"></a>MacOS 電腦上的安裝
 
-1. 安裝最新 [PowerShell for MacOS] 組建
+1. 安裝最新 [PowerShell Core for MacOS] 組建
     - 確定已遵循下列步驟來啟用 SSH 遠端：
       - 開啟 `System Preferences`
       - 按一下 `Sharing`
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo 命令不適用於 Linux 電腦的遠端工作階段。
 
-[PowerShell Core for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[PowerShell Core for Windows]: ../setup/installing-powershell-core-on-windows.md#msi
+[PowerShell Core for Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
+[PowerShell Core for MacOS]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [安裝]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
