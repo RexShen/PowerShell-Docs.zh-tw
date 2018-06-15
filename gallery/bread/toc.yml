@@ -1,6 +1,6 @@
 - name: PowerShell
   tocHref: /powershell/
-  topicHref: /powershell/index
+  topicHref: /powershell
   items:
     - name: 組件庫
       tocHref: /powershell/gallery/
