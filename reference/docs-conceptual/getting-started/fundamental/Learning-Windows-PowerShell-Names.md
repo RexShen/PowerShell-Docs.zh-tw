@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953468"
 ---
 # <a name="learning-windows-powershell-names"></a>了解 Windows PowerShell 名稱
 了解大部分命令列介面的命令和命令參數名稱需要投入大量時間。 此問題在於不太有模式可循，因此唯一的了解方式是記住您需要定期使用的每個命令和每個參數。

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219482"
 ---
 # <a name="software-discovery-install-and-inventory-with-packagemanagement"></a>使用 PackageManagement 探索、安裝及清查軟體
 

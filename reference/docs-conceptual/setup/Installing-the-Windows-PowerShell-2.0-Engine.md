@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952336"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安裝 Windows PowerShell 2.0 引擎
 本主題說明如何安裝 Windows PowerShell 2.0 引擎。

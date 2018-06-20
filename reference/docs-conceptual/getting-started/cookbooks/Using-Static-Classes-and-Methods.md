@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951846"
 ---
 # <a name="using-static-classes-and-methods"></a>使用靜態類別和方法
 並非所有的 .NET Framework 類別都能使用 **New-Object** 建立。 例如，如果您嘗試使用 **New-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰

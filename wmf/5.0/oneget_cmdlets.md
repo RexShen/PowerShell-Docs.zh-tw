@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221947"
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement Cmdlet
 這是支援軟體探索、安裝和清查 (SDII) 的 PackageManagement 核心。 試試看這些作業的 Cmdlet︰

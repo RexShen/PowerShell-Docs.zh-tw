@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34217986"
 ---
 # <a name="new-temporaryfile"></a>New-TemporaryFile
 有時候在您的指令碼中，您必須建立暫存檔案。 您可以使用 **New-TemporaryFile**Cmdlet 輕鬆執行這項操作︰

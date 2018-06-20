@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951064"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>了解 Windows PowerShell 管線
 管線幾乎可以在 Windows PowerShell 中的所有位置運作。 雖然您會在畫面上看到文字，但是 Windows PowerShell 並不會在命令之間傳送文字， 而是傳送物件。

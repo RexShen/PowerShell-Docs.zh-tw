@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219900"
 ---
 # <a name="declare-base-class"></a>宣告基底類別
 您可以將 Windows PowerShell 類別宣告為另一個 Windows PowerShell 類別的基底類型。

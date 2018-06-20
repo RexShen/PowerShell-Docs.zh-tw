@@ -7,6 +7,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677241"
 ---
 # <a name="whats-new-with-powershell-50"></a>PowerShell 5.0 的新功能
 Windows PowerShell® 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。  主要的改善範圍包括期望狀態設定、安全性、效能、遠端處理和語言增強功能。

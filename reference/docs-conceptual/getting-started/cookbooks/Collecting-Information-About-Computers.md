@@ -8,6 +8,7 @@ ms.sourcegitcommit: 4a841ebda3339ae2477e0f5f5be8c01740221232
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/07/2018
+ms.locfileid: "33677309"
 ---
 # <a name="collecting-information-about-computers"></a>收集電腦的相關資訊
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187488"
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id"></a>使用設定識別碼設定提取用戶端
 

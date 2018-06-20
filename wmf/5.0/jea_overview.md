@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188491"
 ---
 # <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 Just Enough Administration 是 WMF 5.0 中的新功能，可透過 PowerShell 遠端處理，啟用以角色為基礎的管理。  它會擴充現有受條件約束的端點基礎結構，方法是允許非系統管理員以系統管理員身分執行特定命令、指令碼和可執行檔。  這可讓您減少環境中具完整權限的系統管理員，並改善您的安全性。  JEA 適用於透過 PowerShell 所管理的所有項目；如果您可以運用 PowerShell 來管理某項目，則 JEA 可以協助您更安全地執行該動作。  如需深入了解 Just Enough Administration，請參閱[體驗指南](http://aka.ms/JEA)。

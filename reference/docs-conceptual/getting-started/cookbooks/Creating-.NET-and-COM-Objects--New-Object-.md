@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953383"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>建立 .NET 和 COM 物件 (New-Object)
 

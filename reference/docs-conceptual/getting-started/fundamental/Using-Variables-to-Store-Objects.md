@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953322"
 ---
 # <a name="using-variables-to-store-objects"></a>使用變數儲存物件
 PowerShell 可以搭配物件來使用。 PowerShell 可讓您建立基本上為具名物件的變數，以保留輸出供之後使用。 如果您習慣使用其他殼層中的變數，請記得 PowerShell 變數是物件，而非文字。

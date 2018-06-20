@@ -41,7 +41,7 @@ Modern 生命週期原則也需要 Microsoft 在中斷產品 (即 PowerShell Cor
 * CentOS 7
 * Red Hat Enterprise Linux 7
 * OpenSUSE 42.2
-* Fedora 25、26
+* Fedora 27、28
 * macOS 10.12+
 
 我們的社群也提供下列平台的套件，但未正式進行支援：

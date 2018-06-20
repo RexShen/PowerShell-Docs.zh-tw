@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218071"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>預期狀態設定 (DSC) 中的增強功能
 

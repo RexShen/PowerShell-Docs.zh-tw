@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948205"
 ---
 # <a name="object-pipeline"></a>物件管線
 管線就像是一系列連接的管道區段。 沿著管線移動的項目會通過每個區段。 若要在 Windows PowerShell 中建立管線，您可以將命令與管道運算子 "|" 連接在一起。 每個命令的輸出可作為下一個命令的輸入。

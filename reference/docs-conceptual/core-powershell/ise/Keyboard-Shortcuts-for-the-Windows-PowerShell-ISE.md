@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953815"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
@@ -19,7 +20,7 @@ ms.lasthandoff: 04/09/2018
 
 |動作|鍵盤快速鍵|使用位置|
 |----------|----------------------|----------|
-|**說明**|F1|指令碼窗格 **重要︰**您可以指定 F1 說明來自 TechNet Library 網站或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
+|**說明**|F1|指令碼窗格 **重要︰** 您可以指定 F1 說明來自 TechNet Library 網站或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
 |**複製**|CTRL+C|指令碼窗格, 命令窗格, 輸出窗格|
 |**剪下**|CTRL+X|指令碼窗格, 命令窗格|
 |**展開或摺疊大綱**|CTRL+M|指令碼窗格|
@@ -46,8 +47,8 @@ ms.lasthandoff: 04/09/2018
 |**執行**|F5|
 |**執行選取項目**|F8|
 |**停止執行**|CTRL+BREAK 在內容明確 (未選取文字) 的情況下，可以使用 CTRL+C。|
-|**Tab** (至下一個指令碼)|CTRL+TAB **注意︰**Tab 至下一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
-|**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意︰**Tab 至上一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
+|**Tab** (至下一個指令碼)|CTRL+TAB **注意︰** Tab 至下一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
+|**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意︰** Tab 至上一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況下，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格中的情況。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自訂檢視的鍵盤快速鍵
 
