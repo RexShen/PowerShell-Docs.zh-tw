@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950687"
 ---
 # <a name="the-ise-object-model-hierarchy"></a><span data-ttu-id="9f802-103">ISE 物件模型階層</span><span class="sxs-lookup"><span data-stu-id="9f802-103">The ISE Object Model Hierarchy</span></span>
 

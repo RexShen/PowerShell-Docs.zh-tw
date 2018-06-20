@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952217"
 ---
 # <a name="managing-current-location"></a><span data-ttu-id="d38c0-103">管理目前的位置</span><span class="sxs-lookup"><span data-stu-id="d38c0-103">Managing Current Location</span></span>
 

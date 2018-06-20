@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219577"
 ---
 # <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="91514-102">使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼</span><span class="sxs-lookup"><span data-stu-id="91514-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189664"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a><span data-ttu-id="6f662-103">設定 DSC SMB 提取伺服器</span><span class="sxs-lookup"><span data-stu-id="6f662-103">Setting up a DSC SMB pull server</span></span>
 

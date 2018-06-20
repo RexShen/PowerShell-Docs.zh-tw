@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189613"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a><span data-ttu-id="87647-103">直接呼叫 DSC 資源方法</span><span class="sxs-lookup"><span data-stu-id="87647-103">Calling DSC resource methods directly</span></span>
 

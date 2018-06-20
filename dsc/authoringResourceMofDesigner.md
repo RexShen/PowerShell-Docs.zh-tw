@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186938"
 ---
 # <a name="using-the-resource-designer-tool"></a><span data-ttu-id="c45d4-103">使用 [資源設計工具] 工具</span><span class="sxs-lookup"><span data-stu-id="c45d4-103">Using the Resource Designer tool</span></span>
 

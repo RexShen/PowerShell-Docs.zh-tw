@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218921"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a><span data-ttu-id="c5c2d-103">DSC for Linux nxUser 資源</span><span class="sxs-lookup"><span data-stu-id="c5c2d-103">DSC for Linux nxUser Resource</span></span>
 

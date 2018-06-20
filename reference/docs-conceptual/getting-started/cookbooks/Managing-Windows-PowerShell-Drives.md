@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951863"
 ---
 # <a name="managing-windows-powershell-drives"></a><span data-ttu-id="fdf32-103">管理 Windows PowerShell 磁碟機</span><span class="sxs-lookup"><span data-stu-id="fdf32-103">Managing Windows PowerShell Drives</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048293"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a><span data-ttu-id="e0f8a-103">影響 PowerShell 資源庫 UI 的項目資訊清單值</span><span class="sxs-lookup"><span data-stu-id="e0f8a-103">Item manifest values that impact the PowerShell Gallery UI</span></span>
 

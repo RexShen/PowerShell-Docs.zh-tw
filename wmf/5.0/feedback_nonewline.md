@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189800"
 ---
 # <a name="nonewline-parameter"></a><span data-ttu-id="76e24-102">NoNewLine 參數</span><span class="sxs-lookup"><span data-stu-id="76e24-102">NoNewLine parameter</span></span>
 <span data-ttu-id="76e24-103">**Out-File****Add-Content** 和 **Set-Content** 現在有新的 **–NoNewline** 參數，只會省略輸出之後的新行。</span><span class="sxs-lookup"><span data-stu-id="76e24-103">**Out-File**, **Add-Content**, and **Set-Content** now have a new **–NoNewline** switch which simply omits a new line after the output.</span></span>

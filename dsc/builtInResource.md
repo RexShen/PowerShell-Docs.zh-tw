@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218275"
 ---
 # <a name="built-in-windows-powershell-desired-state-configuration-resources"></a><span data-ttu-id="b89eb-103">內建的 Windows PowerShell 預期狀態設定資源</span><span class="sxs-lookup"><span data-stu-id="b89eb-103">Built-In Windows PowerShell Desired State Configuration Resources</span></span>
 
