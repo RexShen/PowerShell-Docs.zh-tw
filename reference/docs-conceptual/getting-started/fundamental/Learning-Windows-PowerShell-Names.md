@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953468"
 ---
 # <a name="learning-windows-powershell-names"></a><span data-ttu-id="cf902-103">了解 Windows PowerShell 名稱</span><span class="sxs-lookup"><span data-stu-id="cf902-103">Learning Windows PowerShell Names</span></span>
 <span data-ttu-id="cf902-104">了解大部分命令列介面的命令和命令參數名稱需要投入大量時間。</span><span class="sxs-lookup"><span data-stu-id="cf902-104">Learning names of commands and command parameters is a significant time investment with most command-line interfaces.</span></span> <span data-ttu-id="cf902-105">此問題在於不太有模式可循，因此唯一的了解方式是記住您需要定期使用的每個命令和每個參數。</span><span class="sxs-lookup"><span data-stu-id="cf902-105">The issue is that there are very few patterns, so the only way to learn is by memorizing each command and each parameter that you need to use on a regular basis.</span></span>

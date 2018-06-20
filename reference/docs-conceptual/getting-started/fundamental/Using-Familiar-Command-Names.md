@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952676"
 ---
 # <a name="using-familiar-command-names"></a><span data-ttu-id="f1cf0-103">使用熟悉的命令名稱</span><span class="sxs-lookup"><span data-stu-id="f1cf0-103">Using Familiar Command Names</span></span>
 <span data-ttu-id="f1cf0-104">Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名稱來參照命令。</span><span class="sxs-lookup"><span data-stu-id="f1cf0-104">Using a mechanism called *aliasing*, Windows PowerShell allows users to refer to commands by alternate names.</span></span> <span data-ttu-id="f1cf0-105">別名可讓具有其他殼層經驗的使用者重複使用他們已經熟悉的一般命令名稱，以在 Windows PowerShell 中執行類似作業。</span><span class="sxs-lookup"><span data-stu-id="f1cf0-105">Aliasing allows users with experience in other shells to reuse common command names that they already know to perform similar operations in Windows PowerShell.</span></span> <span data-ttu-id="f1cf0-106">雖然我們不會詳細討論 Windows PowerShell 別名，但是您在開始使用 Windows PowerShell 時仍然可以使用它們。</span><span class="sxs-lookup"><span data-stu-id="f1cf0-106">Although we will not discuss Windows PowerShell aliases in detail, you can still use them as you get started with Windows PowerShell.</span></span>

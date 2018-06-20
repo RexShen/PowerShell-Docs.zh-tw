@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189324"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a><span data-ttu-id="ede8c-103">DSC for Linux nxScript 資源</span><span class="sxs-lookup"><span data-stu-id="ede8c-103">DSC for Linux nxScript Resource</span></span>
 

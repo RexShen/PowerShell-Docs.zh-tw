@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951846"
 ---
 # <a name="using-static-classes-and-methods"></a><span data-ttu-id="63a5f-103">使用靜態類別和方法</span><span class="sxs-lookup"><span data-stu-id="63a5f-103">Using Static Classes and Methods</span></span>
 <span data-ttu-id="63a5f-104">並非所有的 .NET Framework 類別都能使用 **New-Object** 建立。</span><span class="sxs-lookup"><span data-stu-id="63a5f-104">Not all .NET Framework classes can be created by using **New-Object**.</span></span> <span data-ttu-id="63a5f-105">例如，如果您嘗試使用 **New-Object** 來建立 **System.Environment** 或 **System.Math** 物件，則會收到下列錯誤訊息︰</span><span class="sxs-lookup"><span data-stu-id="63a5f-105">For example, if you try to create a **System.Environment** or a **System.Math** object with **New-Object**, you will get the following error messages:</span></span>

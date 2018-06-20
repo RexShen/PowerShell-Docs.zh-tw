@@ -7,6 +7,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34047844"
 ---
 # <a name="more-powershell-learning"></a><span data-ttu-id="56db8-103">更多了解 PowerShell 的方式</span><span class="sxs-lookup"><span data-stu-id="56db8-103">More PowerShell learning</span></span>
 

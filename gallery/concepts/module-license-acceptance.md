@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048285"
 ---
 # <a name="modules-requiring-license-acceptance"></a><span data-ttu-id="39842-103">必須接受授權的模組</span><span class="sxs-lookup"><span data-stu-id="39842-103">Modules Requiring License Acceptance</span></span>
 

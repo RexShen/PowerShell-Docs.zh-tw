@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188458"
 ---
 # <a name="dsc-resource-script-debugging"></a><span data-ttu-id="2324d-102">DSC 資源指令碼偵錯</span><span class="sxs-lookup"><span data-stu-id="2324d-102">DSC Resource Script Debugging</span></span>
 

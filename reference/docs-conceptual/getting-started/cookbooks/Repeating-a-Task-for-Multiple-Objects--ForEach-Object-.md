@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954274"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a><span data-ttu-id="1349d-103">針對多個物件重複工作 (ForEach-Object)</span><span class="sxs-lookup"><span data-stu-id="1349d-103">Repeating a Task for Multiple Objects (ForEach-Object)</span></span>
 

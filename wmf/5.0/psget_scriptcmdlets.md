@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189545"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="7d75b-102">適用於指令碼管理的 PowerShellGet Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-102">PowerShellGet Cmdlets for Script Management</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189358"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="7b48f-103">複合資源：把 DSC 設定當做資源使用</span><span class="sxs-lookup"><span data-stu-id="7b48f-103">Composite resources: Using a DSC configuration as a resource</span></span>
 

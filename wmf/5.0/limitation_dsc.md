@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190055"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a><span data-ttu-id="e4636-102">預期狀態設定 (DSC) 的已知問題和限制</span><span class="sxs-lookup"><span data-stu-id="e4636-102">Desired State Configuration (DSC) Known Issues and Limitations</span></span>
 

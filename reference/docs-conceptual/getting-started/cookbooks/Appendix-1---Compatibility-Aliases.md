@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954631"
 ---
 # <a name="appendix-1---compatibility-aliases"></a><span data-ttu-id="da646-103">附錄 1 - 相容性別名</span><span class="sxs-lookup"><span data-stu-id="da646-103">Appendix 1 - Compatibility Aliases</span></span>
 

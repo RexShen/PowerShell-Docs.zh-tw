@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187294"
 ---
 # <a name="dsc-environment-resource"></a><span data-ttu-id="c0950-103">DSC 環境資源</span><span class="sxs-lookup"><span data-stu-id="c0950-103">DSC Environment Resource</span></span>
 

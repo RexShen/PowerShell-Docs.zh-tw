@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952897"
 ---
 # <a name="introducing-the-windows-powershell-ise"></a><span data-ttu-id="fabc5-103">Windows PowerShell ISE 簡介</span><span class="sxs-lookup"><span data-stu-id="fabc5-103">Introducing the Windows PowerShell ISE</span></span>
 

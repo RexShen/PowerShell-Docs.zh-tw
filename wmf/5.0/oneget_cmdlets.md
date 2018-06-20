@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221947"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="0c8c4-102">PackageManagement Cmdlet</span><span class="sxs-lookup"><span data-stu-id="0c8c4-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="0c8c4-103">這是支援軟體探索、安裝和清查 (SDII) 的 PackageManagement 核心。</span><span class="sxs-lookup"><span data-stu-id="0c8c4-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="0c8c4-104">試試看這些作業的 Cmdlet︰</span><span class="sxs-lookup"><span data-stu-id="0c8c4-104">Try out the cmdlets for these operations:</span></span>

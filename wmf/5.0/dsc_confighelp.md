@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186971"
 ---
 # <a name="help-support-for-dsc-configurations"></a><span data-ttu-id="70928-102">DSC 設定的說明支援</span><span class="sxs-lookup"><span data-stu-id="70928-102">Help support for DSC configurations</span></span>
 

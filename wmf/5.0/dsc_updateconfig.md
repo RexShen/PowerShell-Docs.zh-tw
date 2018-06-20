@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34220337"
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a><span data-ttu-id="1650b-102">DSC 設定的依需求 PULL</span><span class="sxs-lookup"><span data-stu-id="1650b-102">On-demand PULL of DSC Configurations</span></span>
 

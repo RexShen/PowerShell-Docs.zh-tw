@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951064"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="8fa0c-103">了解 Windows PowerShell 管線</span><span class="sxs-lookup"><span data-stu-id="8fa0c-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="8fa0c-104">管線幾乎可以在 Windows PowerShell 中的所有位置運作。</span><span class="sxs-lookup"><span data-stu-id="8fa0c-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="8fa0c-105">雖然您會在畫面上看到文字，但是 Windows PowerShell 並不會在命令之間傳送文字，</span><span class="sxs-lookup"><span data-stu-id="8fa0c-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="8fa0c-106">而是傳送物件。</span><span class="sxs-lookup"><span data-stu-id="8fa0c-106">Instead, it pipes objects.</span></span>

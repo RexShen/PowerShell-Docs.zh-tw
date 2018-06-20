@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954325"
 ---
 # <a name="using-windows-powershell-for-administration"></a><span data-ttu-id="2f072-103">使用 Windows PowerShell 進行管理</span><span class="sxs-lookup"><span data-stu-id="2f072-103">Using Windows PowerShell for Administration</span></span>
 <span data-ttu-id="2f072-104">Windows PowerShell 的基本目標是透過互動方式或指令碼，對系統提供更好且更輕鬆的系統管理控制。</span><span class="sxs-lookup"><span data-stu-id="2f072-104">The fundamental goal of Windows PowerShell is providing better, easier administrative control over systems, either interactively or from script.</span></span> <span data-ttu-id="2f072-105">本章逐步解說使用 Windows PowerShell 管理 Windows 系統的許多特定問題的解決方案。</span><span class="sxs-lookup"><span data-stu-id="2f072-105">This chapter walks through solutions to many specific problems in administering Windows systems with Windows PowerShell.</span></span> <span data-ttu-id="2f072-106">雖然我們未在《Windows PowerShell 使用者手冊》中討論指令碼或函式，但是稍後可以透過指令碼或作為函式來使用解決方案。</span><span class="sxs-lookup"><span data-stu-id="2f072-106">Although we have not talked about scripts or functions in the Windows PowerShell User's Guide, the solutions can be used from scripts or as functions later.</span></span> <span data-ttu-id="2f072-107">我們將顯示的範例會將函式包含為解決方案一部分來解決問題。</span><span class="sxs-lookup"><span data-stu-id="2f072-107">We will show examples that include functions as part of the solution to solve problems.</span></span>

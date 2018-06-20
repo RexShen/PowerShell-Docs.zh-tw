@@ -8,6 +8,7 @@ ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31201014"
 ---
 # <a name="working-with-files-and-folders"></a><span data-ttu-id="2bc4a-103">使用檔案及資料夾</span><span class="sxs-lookup"><span data-stu-id="2bc4a-103">Working with Files and Folders</span></span>
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951013"
 ---
 # <a name="windows-powershell-glossary"></a><span data-ttu-id="2de53-103">Windows PowerShell 詞彙</span><span class="sxs-lookup"><span data-stu-id="2de53-103">Windows PowerShell Glossary</span></span>
 

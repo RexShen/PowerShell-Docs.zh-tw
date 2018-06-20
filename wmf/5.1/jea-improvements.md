@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222412"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a><span data-ttu-id="9a1b6-103">Just Enough Administration (JEA) 的改善功能</span><span class="sxs-lookup"><span data-stu-id="9a1b6-103">Improvements to Just Enough Administration (JEA)</span></span>
 

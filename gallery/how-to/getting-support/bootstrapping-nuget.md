@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221794"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a><span data-ttu-id="a9681-103">NuGet 提供者與 NuGet.exe 的啟動程序</span><span class="sxs-lookup"><span data-stu-id="a9681-103">Bootstrap the NuGet provider and NuGet.exe</span></span>
 

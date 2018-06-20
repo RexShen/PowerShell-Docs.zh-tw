@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188117"
 ---
 # <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="8ceac-103">分離設定和環境資料</span><span class="sxs-lookup"><span data-stu-id="8ceac-103">Separating configuration and environment data</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953400"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a><span data-ttu-id="1f5bd-103">如何在 Windows PowerShell ISE 中偵錯指令碼</span><span class="sxs-lookup"><span data-stu-id="1f5bd-103">How to Debug Scripts in Windows PowerShell ISE</span></span>
 

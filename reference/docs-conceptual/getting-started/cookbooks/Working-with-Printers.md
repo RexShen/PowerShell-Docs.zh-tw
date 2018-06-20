@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954495"
 ---
 # <a name="working-with-printers"></a><span data-ttu-id="33e45-103">使用印表機</span><span class="sxs-lookup"><span data-stu-id="33e45-103">Working with Printers</span></span>
 

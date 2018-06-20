@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952302"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="b0e19-103">使用檔案、資料夾與登錄機碼</span><span class="sxs-lookup"><span data-stu-id="b0e19-103">Working With Files, Folders and Registry Keys</span></span>
 

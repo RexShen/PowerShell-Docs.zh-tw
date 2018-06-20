@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218326"
 ---
 # <a name="report-abuse"></a><span data-ttu-id="6d4a7-103">檢舉不當使用</span><span class="sxs-lookup"><span data-stu-id="6d4a7-103">Report abuse</span></span>
 

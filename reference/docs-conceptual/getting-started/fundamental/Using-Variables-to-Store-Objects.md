@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953322"
 ---
 # <a name="using-variables-to-store-objects"></a><span data-ttu-id="1fef8-103">使用變數儲存物件</span><span class="sxs-lookup"><span data-stu-id="1fef8-103">Using Variables to Store Objects</span></span>
 <span data-ttu-id="1fef8-104">PowerShell 可以搭配物件來使用。</span><span class="sxs-lookup"><span data-stu-id="1fef8-104">PowerShell works with objects.</span></span> <span data-ttu-id="1fef8-105">PowerShell 可讓您建立基本上為具名物件的變數，以保留輸出供之後使用。</span><span class="sxs-lookup"><span data-stu-id="1fef8-105">PowerShell lets you create variables, essentially named objects, to preserve output for later use.</span></span> <span data-ttu-id="1fef8-106">如果您習慣使用其他殼層中的變數，請記得 PowerShell 變數是物件，而非文字。</span><span class="sxs-lookup"><span data-stu-id="1fef8-106">If you are used to working with variables in other shells remember that PowerShell variables are objects, not text.</span></span>

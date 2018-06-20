@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221998"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="c0ed6-102">使用改進的 Item Cmdlet 與符號連結互動</span><span class="sxs-lookup"><span data-stu-id="c0ed6-102">Interact with Symbolic links using improved Item cmdlets</span></span>
 

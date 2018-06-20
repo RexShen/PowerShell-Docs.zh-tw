@@ -6,6 +6,7 @@ ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/25/2018
+ms.locfileid: "34482908"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a><span data-ttu-id="ada39-102">統一且一致的狀態和狀態表示法</span><span class="sxs-lookup"><span data-stu-id="ada39-102">Unified and Consistent State and Status Representation</span></span>
 

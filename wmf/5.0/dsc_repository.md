@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221812"
 ---
 # <a name="separation-of-configuration-resource-and-report-repositories"></a><span data-ttu-id="e4b4f-102">隔離設定、資源及報表的存放庫</span><span class="sxs-lookup"><span data-stu-id="e4b4f-102">Separation of Configuration, Resource and Report Repositories</span></span>
 
