@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189562"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>從字串擷取和剖析結構化物件
 本主題也將介紹 ConvertFrom-String Cmdlet 的一些額外功能︰

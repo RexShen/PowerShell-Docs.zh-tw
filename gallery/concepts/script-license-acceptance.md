@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048231"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>必須接受指令碼的授權
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951319"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 指令碼物件模型的用途
 

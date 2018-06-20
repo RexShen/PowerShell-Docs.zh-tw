@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949480"
 ---
 # <a name="getting-started-with-windows-powershell"></a>開始使用 Windows PowerShell
 Windows PowerShell 是專為系統管理員所設計的 Windows 命令列殼層。 Windows PowerShell 包含互動式提示和指令碼環境，可獨立使用或搭配使用。

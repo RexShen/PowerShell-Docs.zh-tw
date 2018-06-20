@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188423"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>建立及連接到 JEA 端點
 若要建立 JEA 端點，您必須建立並註冊特別設定的 PowerShell 工作階段組態檔，該組態檔可使用 **New-PSSessionConfigurationFile** Cmdlet 產生，

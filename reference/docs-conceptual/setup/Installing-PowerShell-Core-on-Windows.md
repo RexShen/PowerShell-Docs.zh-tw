@@ -4,15 +4,15 @@
 
 若要在 Windows 用戶端或 Windows Server 上安裝 PowerShell (適用於 Windows 7 SP1、Server 2008 R2 和更新版本)，請從我們的 GitHub [版本][]頁面下載 MSI 套件。
 
-MSI 檔案看起來像這樣 - `PowerShell-6.0.0.<buildversion>.<os-arch>.msi`
+MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 下載後，按兩下安裝程式，並依提示操作。
 
 安裝時會在 [開始] 功能表中放置捷徑。
 
-- 套件預設安裝在 `$env:ProgramFiles\PowerShell\`
-- 您可以透過 [開始] 功能表或 `$env:ProgramFiles\PowerShell\pwsh.exe` 啟動 PowerShell
+- 套件預設安裝在 `$env:ProgramFiles\PowerShell\<version>`
+- 您可以透過 [開始] 功能表或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 啟動 PowerShell
 
 ### <a name="prerequisites"></a>必要條件
 
@@ -126,12 +126,12 @@ Nano Server 是一種「無周邊」作業系統。 目前有兩種方法可以�
 PowerShell Core 支援 WSMan 和 SSH 上的 PowerShell 遠端通訊協定 (PSRP)。
 如需詳細資訊，請參閱：
 
-- [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
-- [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]
+- [PowerShell Core 中的 SSH 遠端][ssh-remoting]
+- [PowerShell Core 中的 WSMan 遠端處理][wsman-remoting]
 
 ## <a name="artifact-installation-instructions"></a>成品安裝指示
 
-我們在每個以 [AppVeyor][] 建置的 CI 上發行具有 CoreCLR 位元的封存。
+針對每個以 [AppVeyor][] 建置的 CI ，我們發行了具有 CoreCLR 的封存。
 
 若要從 CoreCLR 成品安裝 PowerShell Core：
 
@@ -140,8 +140,4 @@ PowerShell Core 支援 WSMan 和 SSH 上的 PowerShell 遠端通訊協定 (PSRP)
 3. 將 ZIP 檔案解壓縮至 `bin` 目錄
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[版本]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

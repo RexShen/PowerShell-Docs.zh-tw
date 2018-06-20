@@ -8,6 +8,7 @@ ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/10/2018
+ms.locfileid: "34048293"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的項目資訊清單值
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187906"
 ---
 # <a name="network-switch-management-with-powershell"></a>使用 PowerShell 管理網路交換器
 

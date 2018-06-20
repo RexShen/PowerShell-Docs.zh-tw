@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188678"
 ---
 網路交換器管理員 Cmdlet 可用來透過 WSMAN 管理網路交換器。
 此模組的數個 Cmdlet 都能接受來自管線的值。
