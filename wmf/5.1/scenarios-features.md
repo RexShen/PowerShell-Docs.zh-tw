@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的新案例和功能
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190310"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090358"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能
 
@@ -25,12 +25,12 @@ ms.locfileid: "34190310"
 
 - [使用 PSVersionTable 來判斷執行的 PowerShell 版本](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [使用 PSEdition 參數並依據 CompatiblePSEditions 篩選 Get-Module 結果](/powershell/module/microsoft.powershell.core/get-module)
-- [只有在相容的 PowerShell 版本上執行才會執行指令碼](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [宣告特定 PowerShell 版本的模組相容性](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [只有在相容的 PowerShell 版本上執行才會執行指令碼](/powershell/gallery/concepts/script-psedition-support)
+- [宣告特定 PowerShell 版本的模組相容性](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>類別目錄 Cmdlet
 
-[Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。
+[Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) 模組中新增了兩個新的 Cmdlet，它們會產生和驗證 Windows 類別目錄檔案。
 
 ### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 
 ![](../images/CatalogFile2.jpg)
 
-若要驗證類別目錄檔案 (上例中為 Pester.cat) 的完整性，請使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) Cmdlet 來加以簽署。
+若要驗證類別目錄檔案 (上例中為 Pester.cat) 的完整性，請使用 [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) Cmdlet 來加以簽署。
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 此 Cmdlet 會比較所有的檔案雜湊及在 *catalog* 和 *disk* 中找到的相對路徑。
 如果檔案雜湊和路徑中偵測到任何不相符的項目，就會傳回 *ValidationFailed* 狀態。
 使用者可以使用 *-Detailed* 參數來擷取此資訊的完整內容。
-它也會在 *Signature* 屬性中顯示類別目錄的簽署狀態，和呼叫 [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) Cmdlet 一模一樣。
+它也會在 *Signature* 屬性中顯示類別目錄的簽署狀態，和呼叫 [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) Cmdlet 一模一樣。
 使用者也可以使用 *-FilesToSkip* 參數，在驗證期間略過任何檔案。
 
 ## <a name="module-analysis-cache"></a>模組分析快取
@@ -115,7 +115,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 在 WMF 5.1 中：
 
-- 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](https://msdn.microsoft.com/library/jj136290)。
+- 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)。
 此雜湊表與 `Get-Module -FullyQualifiedName` 的格式相同。
 
 **範例：**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
