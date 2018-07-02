@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: be53ebbfceefdbaabb76ccefa84aaa7746fee1f4
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
+ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189545"
+ms.lasthandoff: 06/20/2018
+ms.locfileid: "36271172"
 ---
-# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="7d75b-102">適用於指令碼管理的 PowerShellGet Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-102">PowerShellGet Cmdlets for Script Management</span></span>
+# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="b5bdf-102">適用於指令碼管理的 PowerShellGet Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-102">PowerShellGet Cmdlets for Script Management</span></span>
 
-## <a name="find-script-cmdlet"></a><span data-ttu-id="7d75b-103">Find-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-103">Find-Script cmdlet</span></span>
-<span data-ttu-id="7d75b-104">Find-Script Cmdlet 可讓您使用不同的搜尋準則探索指令碼檔案，例如名稱、標記、篩選、命令名稱、版本範圍、正確版本、所有版本，包括其相依性和特定或所有已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="7d75b-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
+## <a name="find-script-cmdlet"></a><span data-ttu-id="b5bdf-103">Find-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-103">Find-Script cmdlet</span></span>
+<span data-ttu-id="b5bdf-104">Find-Script Cmdlet 可讓您使用不同的搜尋準則探索指令碼檔案，例如名稱、標記、篩選、命令名稱、版本範圍、正確版本、所有版本，包括其相依性和特定或所有已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-<span data-ttu-id="7d75b-105">使用範例：</span><span class="sxs-lookup"><span data-stu-id="7d75b-105">Example usage:</span></span>
+<span data-ttu-id="b5bdf-105">使用範例：</span><span class="sxs-lookup"><span data-stu-id="b5bdf-105">Example usage:</span></span>
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -149,8 +149,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a><span data-ttu-id="7d75b-106">Save-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-106">Save-Script cmdlet</span></span>
-<span data-ttu-id="7d75b-107">Save-Script Cmdlet 可讓您將指令碼檔案儲存到指定的位置，藉以檢閱指令碼檔案。</span><span class="sxs-lookup"><span data-stu-id="7d75b-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
+## <a name="save-script-cmdlet"></a><span data-ttu-id="b5bdf-106">Save-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-106">Save-Script cmdlet</span></span>
+<span data-ttu-id="b5bdf-107">Save-Script Cmdlet 可讓您將指令碼檔案儲存到指定的位置，藉以檢閱指令碼檔案。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -162,10 +162,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="7d75b-108">Install-Script 和 Get-InstalledScript Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-108">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="7d75b-109">Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。</span><span class="sxs-lookup"><span data-stu-id="7d75b-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="7d75b-110">根據預設，指令碼會安裝在 AllUsers 範圍。</span><span class="sxs-lookup"><span data-stu-id="7d75b-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="7d75b-111">Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。</span><span class="sxs-lookup"><span data-stu-id="7d75b-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="b5bdf-108">Install-Script 和 Get-InstalledScript Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-108">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="b5bdf-109">Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="b5bdf-110">根據預設，指令碼會安裝在 AllUsers 範圍。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="b5bdf-111">Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-<span data-ttu-id="7d75b-112">使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。</span><span class="sxs-lookup"><span data-stu-id="7d75b-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="7d75b-113">如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。</span><span class="sxs-lookup"><span data-stu-id="7d75b-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="7d75b-114">Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。</span><span class="sxs-lookup"><span data-stu-id="7d75b-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="b5bdf-112">使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="b5bdf-113">如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="b5bdf-114">Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -221,7 +221,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="7d75b-115">您也可以使用 Get-Command –Name &lt;InstalledScriptFileName&gt; 取得它。</span><span class="sxs-lookup"><span data-stu-id="7d75b-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="7d75b-116">第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。</span><span class="sxs-lookup"><span data-stu-id="7d75b-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="b5bdf-115">您也可以使用 Get-Command –Name &lt;InstalledScriptFileName&gt; 取得它。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="b5bdf-116">第一次使用指定範圍時，PATH 環境變數中會加入兩個安裝位置。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -329,11 +329,11 @@ Version Name Type Repository Description
 .RELEASENOTES
 Script-WithDependencies2 release notes
 \#&gt;
-**\#Requires -Module RequiredModule1**
-**\#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}**
-**\#Requires -Module @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}**
-**\#Requires -Module @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}**
-**\#Requires -Module @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}**
+**\#Requires -Modules RequiredModule1**
+**\#Requires -Modules @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}**
+**\#Requires -Modules @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}**
+**\#Requires -Modules @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}**
+**\#Requires -Modules @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}**
 &lt;\#
 .DESCRIPTION
 Description for the Script-WithDependencies2 script
@@ -343,8 +343,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a><span data-ttu-id="7d75b-117">Update-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-117">Update-Script cmdlet</span></span>
-<span data-ttu-id="7d75b-118">Update-Script Cmdlet 可讓您使用 Install-Script Cmdlet 就地更新已安裝的指令碼檔案。</span><span class="sxs-lookup"><span data-stu-id="7d75b-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
+## <a name="update-script-cmdlet"></a><span data-ttu-id="b5bdf-117">Update-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-117">Update-Script cmdlet</span></span>
+<span data-ttu-id="b5bdf-118">Update-Script Cmdlet 可讓您使用 Install-Script Cmdlet 就地更新已安裝的指令碼檔案。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -385,7 +385,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="7d75b-119">Uninstall-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-119">Uninstall-Script cmdlet</span></span>
+## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="b5bdf-119">Uninstall-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-119">Uninstall-Script cmdlet</span></span>
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -422,8 +422,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="7d75b-120">New-ScriptFileInfo 和 Test-ScriptFileInfo Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
-<span data-ttu-id="7d75b-121">New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。Test-ScriptFileInfo Cmdlet 可讓您驗證並取得指令碼檔案中繼資料。</span><span class="sxs-lookup"><span data-stu-id="7d75b-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="b5bdf-120">New-ScriptFileInfo 和 Test-ScriptFileInfo Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
+<span data-ttu-id="b5bdf-121">New-ScriptFileInfo Cmdlet 可讓您建立具中繼資料的新指令碼檔案，例如版本、GUID、作者和描述等等。Test-ScriptFileInfo Cmdlet 可讓您驗證並取得指令碼檔案中繼資料。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -532,12 +532,12 @@ Feature 3
 Feature 4
 Feature 5
 \#&gt;
-\#Requires -Module RequiredModule1
-\#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.0'}
-\#Requires -Module @{RequiredVersion = '2.0'; ModuleName = 'RequiredModule3'}
-\#Requires -Module @{ModuleVersion = '0.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '1.\*'}
-\#Requires -Module @{MaximumVersion = '1.\*'; ModuleName = 'RequiredModule5'}
-\#Requires -Module ExternalModule1
+\#Requires -Modules RequiredModule1
+\#Requires -Modules @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.0'}
+\#Requires -Modules @{RequiredVersion = '2.0'; ModuleName = 'RequiredModule3'}
+\#Requires -Modules @{ModuleVersion = '0.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '1.\*'}
+\#Requires -Modules @{MaximumVersion = '1.\*'; ModuleName = 'RequiredModule5'}
+\#Requires -Modules ExternalModule1
 &lt;\#
 .DESCRIPTION
 my new script file
@@ -574,8 +574,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="7d75b-122">Update-ScriptFileInfo Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-122">Update-ScriptFileInfo cmdlet</span></span>
-<span data-ttu-id="7d75b-123">Update-ScriptFileInfo Cmdlet 可讓您更新現有的指令碼檔案中繼資料。</span><span class="sxs-lookup"><span data-stu-id="7d75b-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
+## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="b5bdf-122">Update-ScriptFileInfo Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-122">Update-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="b5bdf-123">Update-ScriptFileInfo Cmdlet 可讓您更新現有的指令碼檔案中繼資料。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -585,8 +585,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="7d75b-124">具指令碼共用支援的 Register-PSRepository 和 Set-PSRepository Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
-<span data-ttu-id="7d75b-125">使用 Register-PSRepository/Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 加入 PSRepository 中。</span><span class="sxs-lookup"><span data-stu-id="7d75b-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="b5bdf-124">具指令碼共用支援的 Register-PSRepository 和 Set-PSRepository Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+<span data-ttu-id="b5bdf-125">使用 Register-PSRepository/Set-PSRepository Cmdlet 將 **ScriptSourceLocation** 和 **ScriptPublishLocation** 加入 PSRepository 中。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -643,8 +643,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a><span data-ttu-id="7d75b-126">Publish-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7d75b-126">Publish-Script cmdlet</span></span>
-<span data-ttu-id="7d75b-127">Publish-Script Cmdlet 可讓您發佈具有效中繼資料的指令碼檔案，例如版本、GUID、作者和描述等等。</span><span class="sxs-lookup"><span data-stu-id="7d75b-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
+## <a name="publish-script-cmdlet"></a><span data-ttu-id="b5bdf-126">Publish-Script Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b5bdf-126">Publish-Script cmdlet</span></span>
+<span data-ttu-id="b5bdf-127">Publish-Script Cmdlet 可讓您發佈具有效中繼資料的指令碼檔案，例如版本、GUID、作者和描述等等。</span><span class="sxs-lookup"><span data-stu-id="b5bdf-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose
