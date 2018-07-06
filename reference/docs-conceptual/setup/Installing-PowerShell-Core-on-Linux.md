@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.04][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發行版本，您可以嘗試使用 [PowerShell AppImage][lai]。
 您也可以直接使用 Linux [`tar.gz` 封存][tar]嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中的作業系統，設定必要的相依性。
@@ -10,7 +10,7 @@ GitHub [版本][]頁面上提供所有套件。
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1704
+[u17]: #ubuntu-1710
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -20,6 +20,21 @@ GitHub [版本][]頁面上提供所有套件。
 [arch]: #arch-linux
 [lai]: #linux-appimage
 [tar]: #binary-archives
+
+## <a name="installing-preview-releases"></a>安裝預覽版本
+
+透過套件存放庫安裝 Linux 的 PowerShell Core Preview 版本時，套件名稱會從 `powershell` 變更為 `powershell-preview`。
+
+透過直接下載的安裝不會變更，但檔案名稱除外。
+
+下表是使用各種套件管理員安裝穩定和預覽套件的命令：
+
+|散發|穩定命令 | 預覽命令 |
+|---------------|---------------|-----------------|
+| Ubuntu、Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| CentOS、RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
+| Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
 
@@ -59,7 +74,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.14.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> 請注意，`dpkg -i` 會因為不符合相依性而失敗；下一個命令 `apt-get install -f` 則會解決這些問題，然後完成 PowerShell 套件設定。
+> [!NOTE]
+> `dpkg -i` 命令因相依性不相符而失敗。
+> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
 ### <a name="uninstallation---ubuntu-1404"></a>解除安裝 - Ubuntu 14.04
 
@@ -104,7 +121,9 @@ sudo dpkg -i powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
-> 請注意，`dpkg -i` 會因為不符合相依性而失敗；下一個命令 `apt-get install -f` 則會解決這些問題，然後完成 PowerShell 套件設定。
+> [!NOTE]
+> `dpkg -i` 命令因相依性不相符而失敗。
+> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
 ### <a name="uninstallation---ubuntu-1604"></a>解除安裝 - Ubuntu 16.04
 
@@ -112,9 +131,12 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1704"></a>Ubuntu 17.04
+## <a name="ubuntu-1710"></a>Ubuntu 17.10
 
-### <a name="installation-via-package-repository---ubuntu-1704"></a>透過套件存放庫安裝 - Ubuntu 17.04
+> [!NOTE]
+> 在 `6.1.0-preview.2` 之後已新增 Ubuntu 17.04 支援
+
+### <a name="installation-via-package-repository---ubuntu-1710"></a>透過套件存放庫安裝 - Ubuntu 17.10
 
 PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
 這是慣用方法。
@@ -124,7 +146,7 @@ PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更�
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
 # Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.04/prod.list
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
 
 # Update the list of products
 sudo apt-get update
@@ -138,20 +160,72 @@ pwsh
 
 以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
 
-### <a name="installation-via-direct-download---ubuntu-1704"></a>透過直接下載安裝 - Ubuntu 17.04
+### <a name="installation-via-direct-download---ubuntu-1710"></a>透過直接下載安裝 - Ubuntu 17.10
 
-將[版本][]頁面上的 Debian 套件 `powershell_6.0.2-1.ubuntu.17.04_amd64.deb` 下載至 Ubuntu 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` 下載至 Ubuntu 電腦。
 
 然後在終端機上執行下列作業：
 
 ```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.04_amd64.deb
+sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
 sudo apt-get install -f
 ```
 
-> 請注意，`dpkg -i` 會因為不符合相依性而失敗；下一個命令 `apt-get install -f` 則會解決這些問題，然後完成 PowerShell 套件設定。
+> [!NOTE]
+> `dpkg -i` 命令因相依性不相符而失敗。
+> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
-### <a name="uninstallation---ubuntu-1704"></a>解除安裝 - Ubuntu 17.04
+### <a name="uninstallation---ubuntu-1710"></a>解除安裝 - Ubuntu 17.10
+
+```sh
+sudo apt-get remove powershell
+```
+
+## <a name="ubuntu-1804"></a>Ubuntu 18.04
+
+> [!NOTE]
+> 在 `6.1.0-preview.2` 之後已新增 Ubuntu 18.04 支援
+
+### <a name="installation-via-package-repository---ubuntu-1804"></a>透過套件存放庫安裝 - Ubuntu 18.04
+
+PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
+這是慣用方法。
+
+```sh
+# Import the public repository GPG keys
+curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+
+# Register the Microsoft Ubuntu repository
+sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
+
+以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
+
+### <a name="installation-via-direct-download---ubuntu-1804"></a>透過直接下載安裝 - Ubuntu 18.04
+
+將[版本][]頁面上的 Debian 套件 `powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。
+
+然後在終端機上執行下列作業：
+
+```sh
+sudo dpkg -i powershell_6.1.0-preview.3-1.ubuntu.18.04_amd64.deb
+sudo apt-get install -f
+```
+
+> [!NOTE]
+> `dpkg -i` 命令因相依性不相符而失敗。
+> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
+
+### <a name="uninstallation---ubuntu-1710"></a>解除安裝 - Ubuntu 17.10
 
 ```sh
 sudo apt-get remove powershell
@@ -199,8 +273,8 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> 請注意，`dpkg -i` 會因 unmet 相依性而失敗。
-> 請注意，`apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
+> `dpkg -i` 命令因相依性不相符而失敗。
+> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
 ### <a name="uninstallation---debian-8"></a>解除安裝 - Debian 8
 
@@ -249,10 +323,6 @@ sudo dpkg -i powershell_6.0.2-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-> [!NOTE]
-> 請注意，`dpkg -i` 會因 unmet 相依性而失敗。
-> 請注意，`apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
-
 ### <a name="uninstallation---debian-9"></a>解除安裝 - Debian 9
 
 ```sh
@@ -261,6 +331,7 @@ sudo apt-get remove powershell
 
 ## <a name="centos-7"></a>CentOS 7
 
+> [!NOTE]
 > 此套件也適用於 Oracle Linux 7。
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>透過套件存放庫安裝 (慣用) - CentOS 7
@@ -347,22 +418,21 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> [!NOTE]
-> 安裝 PowerShell Core 時，`zypper` 可能會回報以下錯誤：
->
-> ```Output
-> Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
->  Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
->  Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
-> ```
->
-> 在此情況下，請確認下列命令會顯示 `libcurl` 套件為已安裝，來驗證存在符合規範的 `libcurl4` 程式庫：
->
-> ```sh
-> zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-> ```
->
-> 然後在安裝 PowerShell 套件時，選擇 `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` 解決方案。
+安裝 PowerShell Core 時，`zypper` 可能會回報以下錯誤：
+
+```Output
+Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
+ Solution 1: do not install powershell-6.0.1-1.rhel.7.x86_64
+ Solution 2: break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies
+```
+
+在此情況下，請確認下列命令會顯示 `libcurl` 套件為已安裝，來驗證存在符合規範的 `libcurl4` 程式庫：
+
+```sh
+zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
+```
+
+然後在安裝 PowerShell 套件時，選擇 `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` 解決方案。
 
 ### <a name="installation-via-package-repository-preferred---opensuse-422"></a>透過套件存放庫安裝 (慣用) - OpenSUSE 42.2
 
@@ -408,6 +478,9 @@ sudo zypper remove powershell
 ```
 
 ## <a name="fedora"></a>Fedora
+
+> [!NOTE]
+> 只有 PowerShell Core 6.1 和更新版本才支援 Fedora 28。
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>透過套件存放庫安裝 (慣用) - Fedora 27、Fedora 28
 
@@ -459,6 +532,9 @@ sudo dnf remove powershell
 
 ## <a name="arch-linux"></a>Arch Linux
 
+> [!NOTE]
+> Arch 支援為實驗性。
+
 PowerShell 可從 [Arch Linux][] 使用者存放庫 (AUR) 取得。
 
 * 它可以使用[最新的標記版本][arch-release]編譯
@@ -476,6 +552,9 @@ AUR 中的套件由社群維護 - 沒有官方支援。
 
 ## <a name="linux-appimage"></a>Linux AppImage
 
+> [!NOTE]
+> AppImage 支援為實驗性
+
 使用最新的 Linux 發行版本，將[版本][]頁面上的 AppImage `powershell-6.0.1-x86_64.AppImage` 下載到 Linux 電腦。
 
 然後在終端機上執行下列作業：
@@ -492,6 +571,9 @@ chmod a+x powershell-6.0.1-x86_64.AppImage
 [appimage]: http://appimage.org/
 
 ## <a name="kali"></a>Kali
+
+> [!NOTE]
+> Kali 支援為實驗性。
 
 ### <a name="installation"></a>安裝
 
@@ -528,6 +610,9 @@ sudo dpkg -r powershell_6.0.2-1.ubuntu.16.04_amd64.deb
 ```
 
 ## <a name="raspbian"></a>Raspbian
+
+> [!NOTE]
+> Raspbian 支援為實驗性。
 
 目前只有 Raspbian Stretch 支援 PowerShell。
 
@@ -587,7 +672,8 @@ PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。
 | ------------------ | ------------ |
 | Ubuntu 14.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Ubuntu 16.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55 |
-| Ubuntu 17.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57 |
+| Ubuntu 17.10       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57 |
+| Ubuntu 18.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60 |
 | Debian 8 (Jessie)  | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Debian 9 (Stretch) | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57 |
 | CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind、libcurl、openssl-libs、libicu |

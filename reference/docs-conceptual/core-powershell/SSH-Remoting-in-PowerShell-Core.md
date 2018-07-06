@@ -55,6 +55,22 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+    
+    > [!NOTE]
+    OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。
+    請參閱 [GitHub 上的這個問題來取得詳細資訊](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
+    
+    其中一種解決方案是建立未包含空格之 Powershell 安裝目錄的符號連結：
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    然後在子系統中輸入它：
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+    ```
 
     - 選擇性啟用金鑰驗證
 

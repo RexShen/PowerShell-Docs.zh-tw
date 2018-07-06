@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用設定資料
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189681"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940373"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
 
->適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 您可以使用內建的 DSC **ConfigurationData** 參數，定義可用於設定中的資料。
 這可讓您建立可用於多個節點或不同環境的單一設定。
@@ -28,7 +28,8 @@ DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所�
 **ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。
 它也可以包含一或多個其他索引鍵。
 
->**注意：** 本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是名為 **AllNodes** 的索引鍵)，但是您可以包含任何數目的額外索引鍵，並將它們任意命名。
+> [!NOTE]
+> 本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是具名 **AllNodes** 索引鍵)，但是您可以包含任意數目的額外索引鍵，並將它們任意命名。
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$
 
 - **$AllNodes** 代表 **ConfigurationData** 中所定義的整個節點集合。 您可以使用 **.Where()** 和 **.ForEach()** 篩選 **AllNodes** 集合。
 - **Node** 代表 **AllNodes** 集合使用 **.Where()** 或 **.ForEach()** 篩選後所包含的特定項目。
+  - 您可以在 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 中深入閱讀這些方法
 - **ConfigurationData** 代表編譯設定時，當做參數傳遞的整個雜湊表。
 
 ## <a name="using-non-node-data"></a>使用非節點資料
@@ -199,5 +201,6 @@ DSC 提供三種特殊變數，可用於設定指令碼中︰**$AllNodes**、**$
 如需有關使用非節點資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
 
 ## <a name="see-also"></a>另請參閱
+
 - [設定資料的認證選項](configDataCredentials.md)
 - [DSC 設定](configurations.md)

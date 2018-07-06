@@ -1,14 +1,14 @@
 ---
 description: 深入了解 Azure 中的 Desired State Configuration (DSC) 版本歷程記錄。
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 延伸模組
 title: Azure DSC 延伸模組版本歷程記錄
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189936"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940322"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 延伸模組版本歷程記錄
 
@@ -16,12 +16,12 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 
 本文將提供有關各 Azure DSC VM 延伸模組版本的資訊、其所支援的環境，以及對新功能或變更的註解。
 
-## <a name="latest-versions"></a>最新版本
+## <a name="latest-version"></a>最新版本
 
 ### <a name="version-276"></a>版本 2.76
 
 - **發行日期：**
-  - 2018 年 5 月 9 日
+  - 2018 年 5 月 9 日 (Azure) | 2018 年 6 月 21 日 (Azure 中國、Azure Government)
 - **OS 支援：**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
   - WMF 4.0
 - **環境：**
   - Azure
+  - Azure 中國
+  - Azure Government
 - **備註：** 此版本會使用 Windows Server 2016 內附的 DSC；針對其他 Windows OS，則會安裝 [Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) (安裝 WMF 需要重新開機)。 針對 Nano 伺服器，DSC 角色會安裝到 VM 上。
 - **新功能：**
   - 已改進子狀態與其他次要 Bug 修正的延伸模組中繼資料。
-
-### <a name="version-219"></a>2.19 版
-
-- **發行日期：**
-  - 2016 年 6 月 3 日
-- **OS 支援：**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF 支援：**
-  - WMF 5.0 RTM
-  - WMF 4.0 Update
-  - WMF 4.0
-- **環境：**
-  - Azure
-  - Azure 中國
-  - Azure Government
-- **備註：** 此版本會使用 Windows Server 2016 Technical Preview 內附的 DSC；針對其他 OS，則會安裝 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (安裝 WMF 需要重新開機)。
-- **新功能：**
-  - DSC 延伸模組現已於 Azure 中國上架。 此版本主要包含在 Azure 中國上執行延伸模組的修正。
 
 ## <a name="supported-versions"></a>支援的版本
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 來建置持續整合和持續部署管線
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190548"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940339"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 
@@ -36,6 +36,7 @@ ms.locfileid: "34190548"
 這是您將進行所有設定和執行範例之工作的電腦。
 
 用戶端電腦必須是已安裝下列各項的 Windows 電腦：
+
 - [Git](https://git-scm.com/)
 - 從 https://github.com/PowerShell/Demo_CI 複製的本機 Git 儲存機制
 - 文字編輯器，例如 [Visual Studio Code](https://code.visualstudio.com/)
@@ -73,21 +74,22 @@ ms.locfileid: "34190548"
 1. 在您的用戶端電腦上，於網頁瀏覽器中瀏覽至您的 TFS 伺服器。
 1. 在 TFS 中，[建立一個新的小組專案](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project)並命名為 Demo_CI。
 
-    請確定將 [版本控制] 設定為 [Git]。
+   請確定將 [版本控制] 設定為 [Git]。
 1. 在您的用戶端電腦上，使用下列命令為您剛在 TFS 中建立的儲存機制新增遠端：
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    其中 `<YourTFSRepoURL>` 是您在上一個步驟中所建立之 TFS 儲存機制的複製 URL。
+   其中 `<YourTFSRepoURL>` 是您在上一個步驟中所建立之 TFS 儲存機制的複製 URL。
 
-    如果您不知道哪裡可以找到此 URL，請參閱[複製現有的 Git 儲存機制](https://www.visualstudio.com/en-us/docs/git/tutorial/clone) \(英文\)。
+   如果您不知道哪裡可以找到此 URL，請參閱[複製現有的 Git 儲存機制](https://www.visualstudio.com/en-us/docs/git/tutorial/clone) \(英文\)。
 1. 使用下列命令將程式碼從您的本機儲存機制推送到 TFS 儲存機制：
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. 將會在 TFS 儲存機制中填入 Demo_CI 程式碼。
 
->**注意：** 此範例會使用 Git 儲存機制之 `ci-cd-example` 分支中的程式碼。
->請務必指定此分支作為您 TFS 專案中及您所建立之 CI/CD 觸發程序的預設分支。
+> [!NOTE]
+> 本範例使用 Git 存放庫之 `ci-cd-example` 分支中的程式碼。
+> 請務必指定此分支作為您 TFS 專案中及您所建立之 CI/CD 觸發程序的預設分支。
 
 ## <a name="understanding-the-code"></a>了解程式碼
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 這會尋找[設定資料](configData.md) (由 `DevEnv.ps1` 指令碼所建立) 中所有已定義為具備 `DNSServer` 角色的節點。
+
+您可以在 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 中深入閱讀 `Where` 方法
 
 進行 CI 時，使用設定資料來定義節點相當重要，因為節點資訊在環境之間可能會有所變更，而使用設定資料則可讓您不須變更設定程式碼，即可輕鬆對節點資訊進行變更。
 
@@ -348,12 +352,12 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 1. 將下列每一行新增到 [內容] 中：
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. 將 [目標資料夾] 設定為 `$(Build.ArtifactStagingDirectory)\`
 
