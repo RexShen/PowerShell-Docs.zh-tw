@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
-ms.openlocfilehash: c68d17d38336dec08e078366ea5f2071fcf7c5a8
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 03555cc73da1272bdebebc3d93b26aaf8fabc18e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189732"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892679"
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
 
 移除設定檔。
 
-<a name="syntax"></a>語法
-------
+## <a name="syntax"></a>語法
 
 ```mof
 uint32 RemoveConfiguration(
@@ -23,8 +22,7 @@ uint32 RemoveConfiguration(
 );
 ```
 
-<a name="parameters"></a>參數
-----------
+## <a name="parameters"></a>參數
 
 *Stage* \[in\] 指定要移除的設定文件。 下列是有效值：
 
@@ -37,7 +35,6 @@ uint32 RemoveConfiguration(
 *Force* \[in\] **true** 表示強制移除設定。
 
 ## <a name="return-value"></a>傳回值
-------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
@@ -46,13 +43,11 @@ uint32 RemoveConfiguration(
 此為靜態方法。
 
 ## <a name="requirements"></a>需求
-------------
->**MOF：** DscCore.mof
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF：** DscCore.mof
 
+**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

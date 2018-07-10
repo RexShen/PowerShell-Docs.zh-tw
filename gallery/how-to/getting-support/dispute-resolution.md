@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 爭端解決
-ms.openlocfilehash: 2a291773ae9391e417e14c4ec0b75379e0bf4640
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a3a3b160366dc17f2fe0d1721d275387700e71e4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221817"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892335"
 ---
 # <a name="dispute-resolution"></a>爭端解決
 
@@ -17,11 +17,11 @@ ms.locfileid: "34221817"
 ## <a name="process"></a>處理程序
 
 1. 使用項目詳細資料頁面上的 [連絡擁有者] 連結，連絡有爭端的項目擁有者。
-以和善、適當的口吻說明您的問題。
+   以和善、適當的口吻說明您的問題。
 2. 將您的訊息副本傳送到 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，讓 PowerShell 資源庫系統管理員了解到您的爭端。
 3. 如果等候 30 天後仍沒有解決方法，請再次通知 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)。
-PowerShellGallery.com 支援小組會參與其中，並嘗試解決此問題。
 
+PowerShellGallery.com 支援小組會參與其中，並嘗試解決此問題。
 
 ## <a name="prohibited-use"></a>禁止用途
 
@@ -32,9 +32,8 @@ PowerShellGallery.com 支援小組會參與其中，並嘗試解決此問題。
 - 侵害著作權或違反使用權；
 - 內容不合法；
 - 「佔用」您打算使用但未實際使用的項目名稱。 這也包括發行生產內容為零的項目。
-請發行程式碼並開始執行，或將名稱讓給其他實際上有產品要出貨的人；以及
+  請發行程式碼並開始執行，或將名稱讓給其他實際上有產品要出貨的人；以及
 - 嘗試讓資源庫執行未明確設計要執行的事項。
-
 
 如果您發現有項目違反其中任一項目，請按一下項目詳細資料頁面上的 [檢舉不當使用] 連結並提交報告。
 

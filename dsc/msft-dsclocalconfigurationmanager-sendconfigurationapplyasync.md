@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApplyAsync 方法
-ms.openlocfilehash: acd8f380f1c49eb008563398c2c3de3fce5477f9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b028079cf826719967858f50e357b441ba8f9d79
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186672"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893887"
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApplyAsync 方法
 
 將設定文件非同步地傳送到受管理的節點，並使用設定代理程式套用設定。
 
-<a name="syntax"></a>語法
-------
+## <a name="syntax"></a>語法
 
 ```mof
 uint32 SendConfigurationApplyAsync(
@@ -24,8 +23,7 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a name="parameters"></a>參數
-----------
+## <a name="parameters"></a>參數
 
 *ConfigurationData* \[in\] 設定的環境資料。
 
@@ -34,7 +32,6 @@ uint32 SendConfigurationApplyAsync(
 *jobId* \[in\] 傳送設定之工作的識別碼。
 
 ## <a name="return-value"></a>傳回值
-------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
@@ -43,13 +40,11 @@ uint32 SendConfigurationApplyAsync(
 此為靜態方法。
 
 ## <a name="requirements"></a>需求
-------------
->**MOF：** DscCore.mof
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF：** DscCore.mof
 
+**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

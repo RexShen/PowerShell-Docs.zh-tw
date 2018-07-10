@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 RollBack 方法
-ms.openlocfilehash: d2f9b7025d611912e119800408e25fcb66bc0228
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 4956900ecd2c9cb7f2e2b5bcab94616f9f5d5565
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219873"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893013"
 ---
 # <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 RollBack 方法
 
 將設定復原回先前的版本。
 
-<a name="syntax"></a>語法
-------
+## <a name="syntax"></a>語法
 
 ```mof
 uint32 RollBack(
@@ -22,13 +21,11 @@ uint32 RollBack(
 );
 ```
 
-<a name="parameters"></a>參數
-----------
+## <a name="parameters"></a>參數
 
 *configurationNumber* \[in\] 指定要求的設定。
 
 ## <a name="return-value"></a>傳回值
-------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
@@ -37,13 +34,11 @@ uint32 RollBack(
 此為靜態方法。
 
 ## <a name="requirements"></a>需求
-------------
->**MOF：** DscCore.mof
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF：** DscCore.mof
 
+**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

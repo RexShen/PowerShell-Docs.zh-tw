@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
-ms.openlocfilehash: c3fdaa23875815b1cf5cbf0b6e21c633e00664aa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186689"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893224"
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
 
 使用工作排程器開始一致性檢查。
 
-<a name="syntax"></a>語法
-------
+## <a name="syntax"></a>語法
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
@@ -22,8 +21,7 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a name="parameters"></a>參數
-----------
+## <a name="parameters"></a>參數
 
 *Flags* \[in\] 位元遮罩，指定要執行的一致性檢查類型。 下列值有效，且可以透過位元 **OR** 運算進行結合︰
 
@@ -35,7 +33,6 @@ uint32 PerformRequiredConfigurationChecks(
 |**8** | 將狀態傳送到報表伺服器。 |
 
 ## <a name="return-value"></a>傳回值
-------------
 
 若成功即傳回零；否則傳回錯誤碼。
 
@@ -44,13 +41,11 @@ uint32 PerformRequiredConfigurationChecks(
 此為靜態方法。
 
 ## <a name="requirements"></a>需求
-------------
->**MOF：** DscCore.mof
 
->**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF：** DscCore.mof
 
+**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
