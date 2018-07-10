@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法
-ms.openlocfilehash: b4d4c901268344ba67d77e4dc982042bfc2abd78
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3529bc56ecba19ed0fbbf070a4e86d0692824d39
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222202"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892438"
 ---
-# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="0c424-103">MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="0c424-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="99d7f-103">MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法</span><span class="sxs-lookup"><span data-stu-id="99d7f-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="0c424-104">將設定文件傳送到受管理的節點，並將其儲存為擱置變更。</span><span class="sxs-lookup"><span data-stu-id="0c424-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
+<span data-ttu-id="99d7f-104">將設定文件傳送到受管理的節點，並將其儲存為擱置變更。</span><span class="sxs-lookup"><span data-stu-id="99d7f-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="0c424-105">語法</span><span class="sxs-lookup"><span data-stu-id="0c424-105">Syntax</span></span>
-------
+## <a name="syntax"></a><span data-ttu-id="99d7f-105">語法</span><span class="sxs-lookup"><span data-stu-id="99d7f-105">Syntax</span></span>
 
 ```mof
 uint32 SendConfiguration(
@@ -23,30 +22,26 @@ uint32 SendConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="0c424-106">參數</span><span class="sxs-lookup"><span data-stu-id="0c424-106">Parameters</span></span>
-----------
+## <a name="parameters"></a><span data-ttu-id="99d7f-106">參數</span><span class="sxs-lookup"><span data-stu-id="99d7f-106">Parameters</span></span>
 
-<span data-ttu-id="0c424-107">*ConfigurationData* \[in\] 設定的環境資料。</span><span class="sxs-lookup"><span data-stu-id="0c424-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
+<span data-ttu-id="99d7f-107">*ConfigurationData* \[in\] 設定的環境資料。</span><span class="sxs-lookup"><span data-stu-id="99d7f-107">*ConfigurationData* \[in\] The environment data for the configuration.</span></span>
 
-<span data-ttu-id="0c424-108">*force* \[in\] **true** 表示強制停止該設定。</span><span class="sxs-lookup"><span data-stu-id="0c424-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
+<span data-ttu-id="99d7f-108">*force* \[in\] **true** 表示強制停止該設定。</span><span class="sxs-lookup"><span data-stu-id="99d7f-108">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="0c424-109">傳回值</span><span class="sxs-lookup"><span data-stu-id="0c424-109">Return value</span></span>
-------------
+## <a name="return-value"></a><span data-ttu-id="99d7f-109">傳回值</span><span class="sxs-lookup"><span data-stu-id="99d7f-109">Return value</span></span>
 
-<span data-ttu-id="0c424-110">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="0c424-110">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="99d7f-110">若成功即傳回零；否則傳回錯誤碼。</span><span class="sxs-lookup"><span data-stu-id="99d7f-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="0c424-111">備註</span><span class="sxs-lookup"><span data-stu-id="0c424-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="99d7f-111">備註</span><span class="sxs-lookup"><span data-stu-id="99d7f-111">Remarks</span></span>
 
-<span data-ttu-id="0c424-112">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="0c424-112">This is a static method.</span></span>
+<span data-ttu-id="99d7f-112">此為靜態方法。</span><span class="sxs-lookup"><span data-stu-id="99d7f-112">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="0c424-113">需求</span><span class="sxs-lookup"><span data-stu-id="0c424-113">Requirements</span></span>
-------------
-><span data-ttu-id="0c424-114">**MOF：** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="0c424-114">**MOF:** DscCore.mof</span></span>
+## <a name="requirements"></a><span data-ttu-id="99d7f-113">需求</span><span class="sxs-lookup"><span data-stu-id="99d7f-113">Requirements</span></span>
 
-><span data-ttu-id="0c424-115">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="0c424-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+<span data-ttu-id="99d7f-114">**MOF：** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="99d7f-114">**MOF:** DscCore.mof</span></span>
 
+<span data-ttu-id="99d7f-115">**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="99d7f-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="0c424-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="0c424-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="99d7f-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="99d7f-116">See also</span></span>
 
-
-[<span data-ttu-id="0c424-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="0c424-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+[<span data-ttu-id="99d7f-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="99d7f-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
