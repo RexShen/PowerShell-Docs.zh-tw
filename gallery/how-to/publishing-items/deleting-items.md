@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 刪除項目
-ms.openlocfilehash: 3f67f78d63e5cf797d00ce43f95fb3b4f62d6f7c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 454cd404437bf1c31b9a1b81cd9dd0ac81e6b0f6
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218224"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893088"
 ---
 # <a name="deleting-items"></a>刪除項目
 
@@ -20,4 +20,4 @@ PowerShell 資源庫不支援永久刪除項目，因為這樣會中斷任何仰
 
 如果您遇到例外狀況，且認為您的其中一個項目必須刪除時，PowerShell 資源庫小組可以手動處理此狀況。
 例如，若發生著作權侵權問題，或是可能有害的內容，即有充分的理由可將其刪除。
-在此類情況下，您應透過 [PowerShell 資源庫] (http://www.PowerShellGallery.com) 提交支援要求。
+在該種情況下，您應透過 [PowerShell 資源庫](http://www.PowerShellGallery.com) \(英文\) 提交支援要求。

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: 1efc016df6882fa962f59dfd3e53eaa6d6b0c121
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 04ad6940f443bc23d5e2347952b2d173aceac408
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190293"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893445"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
->適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
@@ -27,27 +27,32 @@ ms.locfileid: "34190293"
 ## <a name="abstract"></a>摘要
 
 本文件旨在為規劃 Windows PowerShell 期望狀態設定提取伺服器實作的任何人提供官方指引。 提取伺服器是一項簡單的服務，部署只需要幾分鐘。 雖然這份文件會提供可用於部署的技術指引，但本文件的價值如同最佳做法和部署前考慮事項的參考。
-讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](https://technet.microsoft.com/library/dn249912.aspx)主題。
+讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](/powershell/dsc/overview)主題。
 因為 DSC 預期依雲端節奏發展，所以包含提取伺服器的基礎技術也預期會發展並推出新功能。 本文件附錄中的版本表提供有關舊版的參考，以及鼓勵展望未來設計的解決方案參考。
 
 本文件分為兩大部分︰
 
- - 設定規劃
- - 安裝指南
+- 設定規劃
+- 安裝指南
 
 ### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework 版本
+
 本文件中的資訊適用於 Windows Management Framework 5.0。 雖然部署及操作提取伺服器不需要 WMF 5.0，但 5.0 版是本文的焦點。
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration (Windows PowerShell 期望狀態設定)
-預期狀態設定 (DSC) 是一個管理平台，使用名為管理物件格式 (MOF) 的業界語法描述通用訊息模型 (CIM)，來部署和管理設定資料。 開放式管理基礎結構 (OMI) 這個開放原始碼專案，可跨 Linux 等平台與網路硬體作業系統進一步開發這些標準。 如需詳細資訊，請參閱[連結至 MOF 規格的 DMTF 頁面](http://dmtf.org/standards/cim)以及 [OMI 文件和來源](https://collaboration.opengroup.org/omi/documents.php)。
+
+預期狀態設定 (DSC) 是一個管理平台，使用名為管理物件格式 (MOF) 的業界語法描述通用訊息模型 (CIM)，來部署和管理設定資料。 開放式管理基礎結構 (OMI) 這個開放原始碼專案，可跨 Linux 等平台與網路硬體作業系統進一步開發這些標準。 如需詳細資訊，請參閱[連結至 MOF 規格的 DMTF 頁面](https://www.dmtf.org/standards/cim)以及 [OMI 文件和來源](https://collaboration.opengroup.org/omi/documents.php)。
 
 Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可用來建立與管理宣告式設定。
 
 ### <a name="pull-server-role"></a>提取伺服器角色
+
 提取伺服器提供集中式服務以儲存將來可存取的目標節點設定。
 
 提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。
-將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定提取伺服器](https://technet.microsoft.com/library/dn249913.aspx)和[發送及提取設定模式](https://technet.microsoft.com/library/dn249913.aspx)。
+將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell Desired State Configuration 提取伺服器](/powershell/dsc/pullServer)及
+
+[推送和提取設定模式](/powershell/dsc/pullServer)。
 
 ## <a name="configuration-planning"></a>設定規劃
 
@@ -64,20 +69,20 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 包含名為 DSC 服務的功能。 DSC 服務功能提供提取伺服器功能，包括支援 OData 端點的二進位檔。
-WMF 包含在 Windows Server 中，並隨不定期發行的 Windows Server 更新。 [新版 WMF 5.0](http://aka.ms/wmf5latest) 可包含 DSC 服務功能的更新。 基於這個理由，最好下載最新版的 WMF，並檢閱版本資訊來判斷版本是否包含 DSC 服務功能的更新。 您也應該檢閱指出更新或案例的設計狀態列為穩定或實驗性的版本資訊一節。
+WMF 包含在 Windows Server 中，並隨不定期發行的 Windows Server 更新。 [新版 WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) 可包含 DSC 服務功能的更新。 基於這個理由，最好下載最新版的 WMF，並檢閱版本資訊來判斷版本是否包含 DSC 服務功能的更新。 您也應該檢閱指出更新或案例的設計狀態列為穩定或實驗性的版本資訊一節。
 為保持彈性靈活的發行週期，個別功能可以宣告穩定，這表示 WMF 發行預覽版本時，功能已就緒可用於生產環境。
 WMF 版本過去更新的其他功能 (詳細資訊請參閱 WMF 版本資訊)︰
 
- - Windows PowerShell Windows PowerShell 整合式指令碼
- - 環境 (ISE) Windows PowerShell Web 服務 (Management OData
- - IIS延伸模組) Windows PowerShell 預期狀態設定 (DSC)
- - Windows 遠端管理 (WinRM) Windows Management Instrumentation (WMI)
+- Windows PowerShell Windows PowerShell 整合式指令碼
+- 環境 (ISE) Windows PowerShell Web 服務 (Management OData
+- IIS延伸模組) Windows PowerShell 預期狀態設定 (DSC)
+- Windows 遠端管理 (WinRM) Windows Management Instrumentation (WMI)
 
 ### <a name="dsc-resource"></a>DSC 資源
 
 佈建使用 DSC 設定指令碼的服務，可以簡化提取伺服器部署。 本文件包含可用來部署生產就緒伺服器節點的設定指令碼。 若要使用設定指令碼，需要不包含在 Windows Server 中的 DSC 模組。 所需模組名稱是 **xPSDesiredStateConfiguration**，其中包含 DSC 資源 **xDscWebService**。 您可以在[這裡](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)下載 xPSDesiredStateConfiguration 模組。
 
-使用 **PowerShellGet** 模組的 **Install-Module** Cmdlet。
+使用 **PowerShellGet** 模組的 `Install-Module` Cmdlet。
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -132,7 +137,7 @@ CNAME 可以協助隔離用戶端設定，以便伺服器環境的變更，例�
 測試環境 |可能的話，請重新產生規劃的生產環境。 伺服器主機名稱適用於簡單的設定。 若無 DNS 可用，主機名稱可使用 IP 位址。|
 單一節點部署 |建立指向伺服器主機名稱的 DNS CNAME 記錄。|
 
-如需詳細資訊，請參閱[在 Windows Server 中設定 DNS 循環配置資源](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx)。
+如需詳細資訊，請參閱[在 Windows Server 中設定 DNS 循環配置資源](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10))。
 
 規劃工作|
 ---|
@@ -165,6 +170,7 @@ SMB 讓原則規定不該使用 Web 伺服器的環境，以及不要求 Web 伺
 無論哪一種情況，請記得評估簽署與加密流量的需求。 HTTPS、SMB 簽署和 IPSEC 原則都是值得考慮的選項。
 
 #### <a name="load-balancing"></a>負載平衡
+
 與 Web 服務互動的用戶端提出以單一回應傳回資訊的要求。 不需要任何循序要求，因此負載平衡平台沒必要確保隨時在單一伺服器上維護工作階段。
 
 規劃工作|
@@ -184,6 +190,7 @@ SMB 讓原則規定不該使用 Web 伺服器的環境，以及不要求 Web 伺
 未來會擴展本節的內容，並收錄到 DSC 提取伺服器的操作指南中。  本指南會討論管理模組和設定日常程序的自動化進程。
 
 #### <a name="dsc-modules"></a>DSC 模組
+
 要求設定的用戶端會需要必要的 DSC 模組。 提取伺服器有一項功能是將 DSC 模組自動隨選散佈給用戶端。 如果您是第一次部署提取伺服器，可能是基於實驗室或證明概念的需要，您可能會相依於從 PowerShell 組件庫等公用存放庫或 DSC 模組的 PowerShell.org GitHub 存放庫取得的 DSC 模組。
 
 請務必記住，即使是受信任的線上來源，例如 PowerShell 組件庫，從公開存放庫下載的任何模組，都應該由具有 PowerShell 經驗和環境知識的人員檢閱，而在該環境中模組的使用早於生產前。 完成此工作的同時，也是檢查模組中是否有可移除的任何其他裝載的好時機，例如文件和範例指令碼。 透過網路將模組從伺服器下載到用戶端時，這會降低每個用戶端之第一個要求的網路頻寬。
@@ -191,7 +198,7 @@ SMB 讓原則規定不該使用 Web 伺服器的環境，以及不要求 Web 伺
 每個模組都必須以特定格式封裝為包含模組裝載之 ModuleName_Version.zip 的 ZIP 檔案。 將檔案複製到伺服器之後，就必須建立總和檢查碼檔案。 當用戶端連接到伺服器時，會使用總和檢查碼確認 DSC 模組的內容自發行以來是否變更。
 
 ```powershell
-New-DscCheckSum -ConfigurationPath .\ -OutPath .\
+New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 規劃工作|
@@ -214,10 +221,10 @@ New-DscCheckSum -ConfigurationPath .\ -OutPath .\
 
 當您思考整個提取伺服器部署時，設定 GUID 規劃值得多加注意。 如何處理 GUID 沒有特定的需求，但每個環境的程序很可能是唯一的。 程序從簡單到複雜︰集中儲存的 CSV 檔案、簡易 SQL 資料表、CMDB 或需要整合其他工具或軟體方案的複雜解決方案。 有兩種一般方法︰
 
- - **每部伺服器都指派 GUID** — 提供確保個別控制每部伺服器設定的量值。 這會提供更新前後一定程度的準確性，在只有幾部伺服器的環境中運作良好。
- - **每個伺服器角色都指派 GUID** — 執行相同功能的所有伺服器，例如 Web 伺服器，使用相同的 GUID 參考所需的設定資料。  請注意，如果有許多伺服器共用相同的 GUID，設定變更時，它們全部都會同時更新。
+- **每部伺服器都指派 GUID** — 提供確保個別控制每部伺服器設定的量值。 這會提供更新前後一定程度的準確性，在只有幾部伺服器的環境中運作良好。
+- **每個伺服器角色都指派 GUID** — 執行相同功能的所有伺服器，例如 Web 伺服器，使用相同的 GUID 參考所需的設定資料。  請注意，如果有許多伺服器共用相同的 GUID，設定變更時，它們全部都會同時更新。
 
-GUID 應該視為機密資訊，因為它可用來進行惡意攻擊，取得您環境如何部署與設定伺服器的情報。 如需詳細資訊，請參閱 [Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](http://blogs.msdn.com/b/powershell/archive/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode.aspx) (在 PowerShell 預期狀態設定提取模式中安全配置 GUID)。
+  GUID 應該視為機密資訊，因為它可用來進行惡意攻擊，取得您環境如何部署與設定伺服器的情報。 如需詳細資訊，請參閱 [Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (在 PowerShell 預期狀態設定提取模式中安全配置 GUID)。
 
 規劃工作|
 ---|
@@ -243,7 +250,6 @@ $PSVersionTable.PSVersion
 可能的話，請升級至最新版的 Windows Management Framework。
 然後，使用下列命令下載 `xPsDesiredStateConfiguration` 模組。
 
-
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
@@ -251,14 +257,13 @@ Install-Module xPSDesiredStateConfiguration
 命令會要求您核准後才下載模組。
 
 ### <a name="installation-and-configuration-scripts"></a>安裝與設定指令碼
--
 
 部署 DSC 提取伺服器的最佳方法是使用 DSC 設定指令碼。 本文件顯示的指令碼，包括只設定 DSC Web 服務的基本設定，以及設定 Windows Server 端對端 (包括 DSC Web 服務) 的進階設定。
 
 注意︰目前 `xPSDesiredStateConfiguation` DSC 模組需要伺服器使用 EN-US 地區設定。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 基本設定
--------------------------------------------
+
 ```powershell
 # This is a very basic Configuration to deploy a pull server instance in a lab environment on Windows Server 2012.
 
@@ -355,6 +360,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ServerDisabledByDefault
         {
             Ensure = 'Present'
@@ -363,6 +369,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientEnabled
         {
             Ensure = 'Present'
@@ -371,6 +378,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientDisabledByDefault
         {
             Ensure = 'Present'
@@ -379,6 +387,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry SSL2ServerDisabled
         {
             Ensure = 'Present'
@@ -449,6 +458,7 @@ Configuration PullServer {
         }
     }
 }
+
 $configData = @{
     AllNodes = @(
         @{
@@ -467,6 +477,7 @@ $configData = @{
             }
         )
     }
+
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
@@ -474,16 +485,18 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 # .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
-
 ### <a name="verify-pull-server-functionality"></a>確認提取伺服器功能
 
 ```powershell
 # This function is meant to simplify a check against a DSC pull server. If you do not use the default service URL, you will need to adjust accordingly.
 function Verify-DSCPullServer ($fqdn) {
-    ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
+    ([xml](Invoke-WebRequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN'
 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
+```
+
+```output
 Expected Result:
 Action
 Module
@@ -511,28 +524,28 @@ Configuration PullClient {
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
 }
+
 PullClient -ID 'INSERTGUID' -Server 'INSERTSERVER' -Output 'C:\DSCConfig\'
 Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\' -Verbose
 ```
-
 
 ## <a name="additional-references-snippets-and-examples"></a>其他參考資料、程式碼片段和範例
 
 本範例示範如何以手動方式啟動用戶端連線 (需要 WMF5) 以進行測試。
 
 ```powershell
-Update-DSCConfiguration –Wait -Verbose
+Update-DscConfiguration –Wait -Verbose
 ```
 
 [Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) Cmdlet 用於將 CNAME 記錄類型新增至 DNS 區域。
 
-[Create a Checksum and Publish DSC MOF to SMB Pull Server](http://bit.ly/1E46BhI) (建立總和檢查碼並將 DSC MOF 發行至 SMB 提取伺服器) 的 PowerShell 函式會自動產生所需的總和檢查碼，然後將 MOF 設定和總和檢查碼檔案複製到 SMB 提取伺服器。
+[Create a Checksum and Publish DSC MOF to SMB Pull Server](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) (建立總和檢查碼並將 DSC MOF 發行至 SMB 提取伺服器) 的 PowerShell 函式會自動產生所需的總和檢查碼，然後將 MOF 設定和總和檢查碼檔案複製到 SMB 提取伺服器。
 
 ## <a name="appendix---understanding-odata-service-data-file-types"></a>附錄：了解 ODATA 服務的資料檔案類型
 
 儲存資料檔案是為了建立含 OData Web 服務的提取伺服器在部署期間的資訊。 檔案類型視作業系統而定，如下所述。
 
- - **Windows Server 2012** 檔案類型一律為 .mdb
- - **Windows Server 2012 R2** 除非設定中指定 .mdb，否則檔案類型預設為 .edb
+- **Windows Server 2012** 檔案類型一律為 .mdb
+- **Windows Server 2012 R2** 除非設定中指定 .mdb，否則檔案類型預設為 .edb
 
 在安裝提取伺服器的[進階範例指令碼](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)中，您也會找到如何自動控制 web.config 檔案設定，防止因檔案類型而發生任何錯誤的範例。

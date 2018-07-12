@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 contributor: ryanpu
 title: Just Enough Administration (JEA) 的改善功能
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222412"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892713"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) 的改善功能
 
@@ -18,7 +18,7 @@ ms.locfileid: "34222412"
 您現在可遠端將檔案複製到 JEA 端點及從中複製檔案，並可確保連接的使用者無法隨意複製*任何*一項系統上的檔案。
 方法是將 PSSC 檔案設定為掛接連接使用者的使用者磁碟機。
 使用者磁碟機是新的 PSDrive，對每個連接的使用者而言皆為唯一，並在工作階段之間保存。
-使用 Copy-Item 將檔案複製到 JEA 端點或從中複製檔案時，其會受限為僅允許存取使用者磁碟機。
+使用 `Copy-Item` 將檔案複製到 JEA 工作階段或從中複製檔案時，其會受限為僅允許存取使用者磁碟機。
 嘗試將檔案複製到任何其他 PSDrive 將會失敗。
 
 若要在您的 JEA 工作階段設定檔中設定使用者磁碟機，請使用下列新欄位︰
@@ -30,7 +30,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 支援使用者磁碟機的資料夾將會建立於 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-若要利用使用者磁碟機，並將檔案複製到設為公開使用者磁碟機的 JEA 端點及從中複製檔案，請使用 Copy-Item 上的 `-ToSession` 和 `-FromSession` 參數。
+若要利用使用者磁碟機，並將檔案複製到設為公開使用者磁碟機的 JEA 端點及從中複製檔案，請使用 `Copy-Item` 上的 `-ToSession` 和 `-FromSession` 參數。
 
 ```powershell
 # Connect to the JEA endpoint
@@ -64,7 +64,8 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **注意︰** 群組受管理服務帳戶無法承受隔離或受限的虛擬帳戶範圍。
+> [!NOTE]
+> 群組受管理的服務帳戶無法承受隔離或受限的虛擬帳戶範圍。
 > 每個連接的使用者會共用相同 gMSA 身分識別，其可能具備整個企業的權限。
 > 若選取使用 gMSA，請務必特別小心，並一律盡可能優先選擇僅限於本機電腦的虛擬帳戶。
 
@@ -91,5 +92,6 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定︰Windows Server 2008 R2 現在支援虛擬帳戶
+
 在 WMF 5.1 中，您現在可於 Windows Server 2008 R2 使用虛擬帳戶，讓 Windows Server 2008 R2 - 2016 上的設定和功能同位一致。
 在 Windows 7 上使用 JEA 時，仍不支援虛擬帳戶。

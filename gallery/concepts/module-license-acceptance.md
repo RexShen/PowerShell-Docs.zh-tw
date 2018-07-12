@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 必須接受授權的模組
-ms.openlocfilehash: fe197ea271e18580a221ad4d5245b685bd81775b
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048285"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893105"
 ---
 # <a name="modules-requiring-license-acceptance"></a>必須接受授權的模組
 
@@ -35,29 +35,26 @@ ms.locfileid: "34048285"
     - **Update-Module：** 系統會更新模組。
   - 若授權已被拒絕。
     - 作業將會取消。
-- 所有的 Cmdlet 都會針對表示必須接受授權的中繼資料 (requireLicenseAcceptance 和格式版本) 進行檢查
-  - 若用戶端的格式版本早於 2.0 版，作業將會失敗並要求使用者更新用戶端。
-  - 若模組是以早於 2.0 版的格式版本發行，系統將會忽略 requireLicenseAcceptance 旗標。
+    - 所有的 Cmdlet 都會針對表示必須接受授權的中繼資料 (requireLicenseAcceptance 和格式版本) 進行檢查
+    - 若用戶端的格式版本早於 2.0 版，作業將會失敗並要求使用者更新用戶端。
+    - 若模組是以早於 2.0 版的格式版本發行，系統將會忽略 requireLicenseAcceptance 旗標。
 
+## <a name="module-dependencies"></a>模組相依性
 
- ## <a name="module-dependencies"></a>模組相依性
 - 在 Install/Save/Update 作業期間，若相依模組 (相依於模組的其他項目) 必須接受授權，則會要求 (上述的) 授權接受行為。
 - 如果模組版本已於本機目錄中列為已安裝在系統上，將會略過授權檢查。
 - 在 Install/Save/Update 作業期間，若相依模組要求授權，且接受授權並沒有發生，則該作業將會失敗，並依循項目安裝/儲存/更新失敗的一般程序執行。
 
- ## <a name="impact-on--force"></a>對 -Force 的影響
+## <a name="impact-on--force"></a>對 -Force 的影響
 
-指定 –Force 並不足以接受授權。 需要 –AcceptLicense 以取得安裝的權限。 若指定 –Force，且 RequiredLicenseAcceptance 為 True，而且沒有指定 –AcceptLicense，則作業將會失敗。
+指定 `–Force` 並不足以接受授權。 需要 `–AcceptLicense` 以取得安裝的權限。 若指定 `–Force` 且 RequiredLicenseAcceptance 為 True，而且未指定 `–AcceptLicense`，則作業將會失敗。
 
 ## <a name="examples"></a>範例
 
 ### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>範例 1：更新模組資訊清單以要求接受授權
 
-```PowerShell
-PS> Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance
-
-PrivateData = @{
-
+```powershell
+Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
     PSData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
@@ -70,9 +67,11 @@ PrivateData = @{
 
 ### <a name="example-2-install-module-requiring-license-acceptance"></a>範例 2：Install 模組要求接受授權
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -85,23 +84,25 @@ copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
-
 ```
 
 此命令會顯示來自 license.txt 檔案的授權，並提示使用者接受授權。
 
 ### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>範例 3：Install 模組要求接受授權並搭配 -AcceptLicense
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
 模組會在沒有任何接受授權的提示之下安裝。
 
 ### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>範例 4：Install 模組要求接受授權並搭配 -Force
 
-```PowerShell
-PS> Install-Module -Name ModuleRequireLicenseAcceptance -Force
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance -Force
+```
+
+```output
 PackageManagement\Install-Package : License Acceptance is required for module 'ModuleRequireLicenseAcceptance'. Please specify '-AcceptLicense' to perform this operation.
 At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm1:1837 char:21
 + ...          $null = PackageManagement\Install-Package @PSBoundParameters
@@ -116,9 +117,11 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
 
 模組 'ModuleWithDependency' 相依於模組 'ModuleRequireLicenseAcceptance'。 系統會提示使用者接受授權。
 
-```PowerShell
-PS> Install-Module -Name ModuleWithDependency
+```powershell
+Install-Module -Name ModuleWithDependency
+```
 
+```output
 License Acceptance
 MIT License 2.0
 Copyright (c) 2016 PowerShell Team
@@ -136,24 +139,27 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 模組 'ModuleWithDependency' 相依於模組 'ModuleRequireLicenseAcceptance'。 由於已指定 -AcceptLicense，系統將不會提示使用者接受授權。
 
-```PowerShell
-PS>  Install-Module -Name ModuleWithDependency -AcceptLicense
+```powershell
+Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
 ### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>範例 7：Install 模組在早於 PSGetFormatVersion 2.0 的用戶端上要求接受授權
 
-```PowerShell
-PS C:\windows\system32> Install-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Install-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
-
 ```
 
 ### <a name="example-8-save-module-requiring-license-acceptance"></a>範例 8：Save 模組要求接受授權
 
-```PowerShell
-PS> Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+```powershell
+Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -172,17 +178,19 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>範例 9：Save 模組要求接受授權並搭配 -AcceptLicense
 
-```PowerShell
-PS> Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
+```powershell
+Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 ```
 
 模組會在沒有任何接受授權的提示之下儲存。
 
 ### <a name="example-10-update-module-requiring-license-acceptance"></a>範例 10：Update 模組要求接受授權
 
-```PowerShell
-PS> Update-Module -Name ModuleRequireLicenseAcceptance
+```powershell
+Update-Module -Name ModuleRequireLicenseAcceptance
+```
 
+```output
 License Acceptance
 
 License 2.0
@@ -201,16 +209,16 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>範例 11：Update 模組要求接受授權並搭配 -AcceptLicense
 
-```PowerShell
-PS> Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
+```powershell
+Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 ```
 
 模組會在沒有任何接受授權的提示之下更新。
 
 ## <a name="more-details"></a>更多詳細資料
 
-### <a name="require-license-acceptance-for-scriptsscript-license-acceptancemd"></a>[適用於指令碼的必須接受授權](./script-license-acceptance.md)
+[適用於指令碼的必須接受授權](./script-license-acceptance.md)
 
-### <a name="require-license-acceptance-support-on-powershellgalleryhow-toworking-with-itemsitems-that-require-license-acceptancemd"></a>[PowerShellGallery 上的必須接受授權支援](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[PowerShellGallery 上的必須接受授權支援](../how-to/working-with-items/items-that-require-license-acceptance.md)
 
-### <a name="require-license-acceptance-on-deploy-to-azure-automationhow-toworking-with-itemsdeploy-to-azure-automationmd"></a>[部署至 Azure 自動化上的必須接受授權](../how-to/working-with-items/deploy-to-azure-automation.md)
+[部署至 Azure 自動化上的必須接受授權](../how-to/working-with-items/deploy-to-azure-automation.md)

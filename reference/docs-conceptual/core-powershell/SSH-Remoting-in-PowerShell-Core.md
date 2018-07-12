@@ -1,3 +1,4 @@
+
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
 ## <a name="overview"></a>概觀
@@ -11,9 +12,9 @@ PowerShell SSH 遠端可讓您在 Windows 與 Linux 電腦之間執行基本 Pow
 做法是在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。
 最終，這會變更為與 WinRM 運作方式類似的更一般裝載模型，以支援端點設定和 JEA。
 
-New-PSSession、Enter-PSSession 和 Invoke-Command Cmdlet 現在有新的參數集，可方便進行這個新的遠端連線
+`New-PSSession`、`Enter-PSSession` 和 `Invoke-Command` Cmdlet 現在有新的參數集，可方便進行這個新的遠端連線
 
-```powershell
+```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
@@ -25,7 +26,7 @@ New-PSSession、Enter-PSSession 和 Invoke-Command Cmdlet 現在有新的參數�
 ## <a name="general-setup-information"></a>一般安裝資訊
 
 需要有 SSH 才能安裝在所有電腦上。
-您應該同時安裝用戶端 (ssh.exe) 和伺服器 (sshd.exe)，讓您可以試驗往返電腦的遠端執行。
+您應該同時安裝用戶端 (`ssh.exe`) 和伺服器 (`sshd.exe`)，讓您可以試驗往返電腦的遠端執行。
 針對 Windows，您需要[從 GitHub 安裝 Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)。
 針對 Linux，您需要安裝您平台適用的 SSH (包含 sshd 伺服器)。
 您也需要來自 GitHub 且具有 SSH 遠端功能的新 PowerShell 組建或套件。
@@ -34,134 +35,139 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 
 ## <a name="setup-on-windows-machine"></a>Windows 電腦上的安裝
 
-1. 最新 [PowerShell Core for Windows] 版本
-    - 您可以查看針對 New-PSSession 所設定的參數，得知它是否具有 SSH 遠端支援
+1. 安裝最新的 [PowerShell Core for Windows] 版本
+   - 您可以查看針對 `New-PSSession` 所設定的參數，得知它是否具有 SSH 遠端支援
 
-    ```powershell
-    PS> Get-Command New-PSSession -syntax
-    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
-    ```
+   ```powershell
+   Get-Command New-PSSession -syntax
+   ```
 
-1. 使用[安裝]指示，安裝 GitHub 中的最新 [Win32 OpenSSH] 組建
-1. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
-    - 確定已啟用密碼驗證
+   ```output
+   New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
+   ```
 
-    ```
-    PasswordAuthentication yes
-    ```
+2. 使用 [安裝] 指示，安裝 GitHub 中最新的 [Win32 OpenSSH] 組建
+3. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
+   - 確定已啟用密碼驗證
 
-    - 新增 PowerShell 子系統項目，以將 `c:/program files/powershell/6.0.0/pwsh.exe` 取代為您想要使用之版本的正確路徑
+   ```
+   PasswordAuthentication yes
+   ```
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
-    
+
     > [!NOTE]
     OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。
     請參閱 [GitHub 上的這個問題來取得詳細資訊](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
-    
+
     其中一種解決方案是建立未包含空格之 Powershell 安裝目錄的符號連結：
-    
+
     ```powershell
     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
     ```
 
     然後在子系統中輸入它：
- 
+
     ```
     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
-    - 選擇性啟用金鑰驗證
+   ```
+   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+   ```
 
-    ```
-    PubkeyAuthentication yes
-    ```
+   - 選擇性啟用金鑰驗證
 
-1. 重新啟動 sshd 服務
+   ```
+   PubkeyAuthentication yes
+   ```
 
-    ```powershell
-    Restart-Service sshd
-    ```
+4. 重新啟動 sshd 服務
 
-1. 將安裝 OpenSSH 的路徑新增至路徑環境變數
-    - 這應該是與 `C:\Program Files\OpenSSH\` 行一起
-    - 這樣可以找到 ssh.exe
+   ```powershell
+   Restart-Service sshd
+   ```
+
+5. 將安裝 OpenSSH 的路徑新增至路徑環境變數
+   - 這應該是與 `C:\Program Files\OpenSSH\` 行一起
+   - 這樣可以找到 ssh.exe
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) 電腦上的安裝
 
-1. 安裝 GitHub 中的最新 [PowerShell Core for Linux] 組建
-1. 視需要安裝 [Ubuntu SSH]
+1. 安裝 GitHub 中最新的 [PowerShell Core for Linux] 組建
+2. 視需要安裝 [Ubuntu SSH]
 
-    ```bash
-    sudo apt install openssh-client
-    sudo apt install openssh-server
-    ```
+   ```bash
+   sudo apt install openssh-client
+   sudo apt install openssh-server
+   ```
 
-1. 編輯 /etc/ssh 位置中的 sshd_config 檔案
-    - 確定已啟用密碼驗證
+3. 編輯 /etc/ssh 位置中的 sshd_config 檔案
+   - 確定已啟用密碼驗證
 
-    ```
-    PasswordAuthentication yes
-    ```
+   ```
+   PasswordAuthentication yes
+   ```
 
-    - 新增 PowerShell 子系統項目
+   - 新增 PowerShell 子系統項目
 
-    ```
-    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
-    ```
+   ```
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
+   ```
 
-    - 選擇性啟用金鑰驗證
+   - 選擇性啟用金鑰驗證
 
-    ```
-    PubkeyAuthentication yes
-    ```
+   ```
+   PubkeyAuthentication yes
+   ```
 
-1. 重新啟動 sshd 服務
+4. 重新啟動 sshd 服務
 
-    ```bash
-    sudo service sshd restart
-    ```
+   ```bash
+   sudo service sshd restart
+   ```
 
 ## <a name="setup-on-macos-machine"></a>MacOS 電腦上的安裝
 
-1. 安裝最新 [PowerShell Core for MacOS] 組建
-    - 確定已遵循下列步驟來啟用 SSH 遠端：
-      - 開啟 `System Preferences`
-      - 按一下 `Sharing`
-      - 檢查 `Remote Login` - 應該為 `Remote Login: On`
-      - 允許存取適當的使用者
-1. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案
-    - 使用您慣用的編輯器，或
+1. 安裝最新的 [PowerShell Core for MacOS] 組建
+   - 確定已遵循下列步驟來啟用 SSH 遠端：
+     - 開啟 `System Preferences`
+     - 按一下 `Sharing`
+     - 檢查 `Remote Login` - 應該為 `Remote Login: On`
+     - 允許存取適當的使用者
+2. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案
+   - 使用您慣用的編輯器，或
 
-    ```bash
-    sudo nano /private/etc/ssh/sshd_config
-    ```
+     ```bash
+     sudo nano /private/etc/ssh/sshd_config
+     ```
 
-    - 確定已啟用密碼驗證
+   - 確定已啟用密碼驗證
 
-    ```
-    PasswordAuthentication yes
-    ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    - 新增 PowerShell 子系統項目
+   - 新增 PowerShell 子系統項目
 
-    ```
-    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+     ```
 
-    - 選擇性啟用金鑰驗證
+   - 選擇性啟用金鑰驗證
 
-    ```
-    PubkeyAuthentication yes
-    ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-1. 重新啟動 sshd 服務
+3. 重新啟動 sshd 服務
 
-    ```bash
-    sudo launchctl stop com.openssh.sshd
-    sudo launchctl start com.openssh.sshd
-    ```
+   ```bash
+   sudo launchctl stop com.openssh.sshd
+   sudo launchctl start com.openssh.sshd
+   ```
 
 ## <a name="powershell-remoting-example"></a>PowerShell 遠端範例
 
@@ -174,67 +180,107 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 #
 # Linux to Linux
 #
-PS /home/TestUser> $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
+$session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
+```
+
+```output
 The authenticity of host 'UbuntuVM1 (9.129.17.107)' cannot be established.
 ECDSA key fingerprint is SHA256:2kCbnhT2dUE6WCGgVJ8Hyfu1z2wE4lifaJXLO7QJy0Y.
 Are you sure you want to continue connecting (yes/no)?
 TestUser@UbuntuVM1s password:
+```
 
-PS /home/TestUser> $session
+```powershell
+$session
+```
 
+```output
  Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
  -- ----            ------------    ------------    -----         -----------------     ------------
   1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+```
 
-PS /home/TestUser> Enter-PSSession $session
+```powershell
+Enter-PSSession $session
+```
 
+```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
 Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
+```
 
-PS /home/TestUser> Invoke-Command $session -ScriptBlock { Get-Process powershell }
+```powershell
+Invoke-Command $session -ScriptBlock { Get-Process powershell }
+```
 
+```output
 Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName                    PSComputerName
 -------  ------    -----      -----     ------     --  -- -----------                    --------------
       0       0        0         19       3.23  10635 635 powershell                     UbuntuVM1
       0       0        0         21       4.92  11033 017 powershell                     UbuntuVM1
       0       0        0         20       3.07  11076 076 powershell                     UbuntuVM1
+```
 
-
+```powershell
 #
 # Linux to Windows
 #
-PS /home/TestUser> Enter-PSSession -HostName WinVM1 -UserName PTestName
+Enter-PSSession -HostName WinVM1 -UserName PTestName
+```
+
+```output
 PTestName@WinVM1s password:
+```
 
+```powershell
 [WinVM1]: PS C:\Users\PTestName\Documents> cmd /c ver
+```
 
+```output
 Microsoft Windows [Version 10.0.10586]
+```
 
-[WinVM1]: PS C:\Users\PTestName\Documents>
-
+```powershell
 #
 # Windows to Windows
 #
 C:\Users\PSUser\Documents>pwsh.exe
+```
+
+```output
 PowerShell
 Copyright (c) Microsoft Corporation. All rights reserved.
+```
 
-PS C:\Users\PSUser\Documents> $session = New-PSSession -HostName WinVM2 -UserName PSRemoteUser
+```powershell
+$session = New-PSSession -HostName WinVM2 -UserName PSRemoteUser
+```
+
+```output
 The authenticity of host 'WinVM2 (10.13.37.3)' can't be established.
 ECDSA key fingerprint is SHA256:kSU6slAROyQVMEynVIXAdxSiZpwDBigpAF/TXjjWjmw.
 Are you sure you want to continue connecting (yes/no)?
 Warning: Permanently added 'WinVM2,10.13.37.3' (ECDSA) to the list of known hosts.
 PSRemoteUser@WinVM2's password:
-PS C:\Users\PSUser\Documents> $session
+```
 
+```powershell
+$session
+```
+
+```output
  Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
  -- ----            ------------    ------------    -----         -----------------     ------------
   1 SSH1            WinVM2          RemoteMachine   Opened        DefaultShell             Available
+```
 
+```powershell
+Enter-PSSession -Session $session
+```
 
-PS C:\Users\PSUser\Documents> Enter-PSSession -Session $session
+```output
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents> $PSVersionTable
 
 Name                           Value
@@ -255,11 +301,18 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>已知問題
 
-1. sudo 命令不適用於 Linux 電腦的遠端工作階段。
+- sudo 命令不適用於 Linux 電腦的遠端工作階段。
 
-[PowerShell Core for Windows]: ../setup/installing-powershell-core-on-windows.md#msi
-[PowerShell Core for Linux]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
-[PowerShell Core for MacOS]: ../setup/installing-powershell-core-on-macos.md
-[Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[安裝]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
+## <a name="see-also"></a>另請參閱
+
+[PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi)
+
+[PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404)
+
+[PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md)
+
+[Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
+
+[安裝](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
+
+[Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

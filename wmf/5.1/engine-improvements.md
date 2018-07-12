@@ -3,24 +3,23 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 PowerShell 引擎改善
-ms.openlocfilehash: 98095904157a675bbe84616b1d9cbb22689cd059
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218513"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892887"
 ---
-#<a name="powershell-engine-improvements"></a>PowerShell 引擎改善
+# <a name="powershell-engine-improvements"></a>PowerShell 引擎改善
 
 WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 
-
-## <a name="performance"></a>效能 ##
+## <a name="performance"></a>效能
 
 某些重要區域的效能已改善︰
 
 - 啟動
-- 管線到 ForEach-Object 和 Where-Object 等 Cmdlet 大約快了 50%
+- 透過管線傳送到像是 `ForEach-Object` 和 `Where-Object` 的 Cmdlet 速度大約可提高 50%
 
 一些改善範例 (結果取決於您的硬體而有所不同)：
 
@@ -31,10 +30,11 @@ WMF 5.1 已實作核心 PowerShell 引擎的下列改善︰
 | 命令分析快取組建︰`powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
 
-> 注意：與啟動相關的一項變更，可能影響到某些不受支援的案例。
+> [!Note]
+> 與啟動相關的一項變更，可能影響到某些不受支援的案例。
 > PowerShell 不再讀取 `$pshome\*.ps1xml` 檔案，這些檔案已轉換成 C#，以避免處理 XML 檔案的一些檔案和 CPU 負荷。
-這些檔案對 V2 的支援仍然不變，因此，若變更檔案內容，對 V5 沒有任何效果，只對 V2 有效果。
-請注意，變更這些檔案內容向來是不受支援的案例。
+> 這些檔案對 V2 的支援仍然不變，因此，若變更檔案內容，對 V5 沒有任何效果，只對 V2 有效果。
+> 請注意，變更這些檔案內容向來是不受支援的案例。
 
 另一個明顯的變更，是 PowerShell 如何快取匯出的命令和安裝在系統上的模組其他資訊。
 以往，此快取儲存於 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` 目錄。

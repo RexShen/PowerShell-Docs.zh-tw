@@ -1,59 +1,61 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
-ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
+ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34482908"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892564"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一且一致的狀態和狀態表示法
 
-已在此版本中為自動化組建 LCM 狀態與 DSC 狀態增加了一系列的增強功能。 這些包括整合且一致的狀態和狀態表示法、由 Get-DscConfigurationStatus Cmdlet傳回之狀態物件的可管理 datetime 屬性，及由 Get-DscLocalConfigurationManager Cmdlet 傳回之增強的 LCM 狀態詳細資料屬性。
+已在此版本中為自動化組建 LCM 狀態與 DSC 狀態增加了一系列的增強功能。 這些包括整合且一致的狀態和狀態表示法、由 `Get-DscConfigurationStatus` Cmdlet 傳回之狀態物件的可管理 datetime 屬性，以及由 `Get-DscLocalConfigurationManager` Cmdlet 傳回之增強的 LCM 狀態詳細資料屬性。
 
 LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽和整合︰
-1.  Notprocessed 資源不會影響 LCM 狀態與 DSC 狀態。
-2.  一旦遇到要求重新開機的資源，LCM 就會停止處理更多資源。
-3.  要求重新開機的資源不處於所需的狀態，直到重新開機真正發生。
-4.  在發生失敗的資源之後，只要其他資源不是依存於失敗的資源，LCM 就會持續處理更多資源。
-5.  Get-DscConfigurationStatus Cmdlet 所傳回的整體狀態是所有資源狀態的超集。
-6.  PendingReboot 狀態為 PendingConfiguration 狀態的超集。
 
-下表說明一些典型狀況下的結果狀態和與狀態相關的屬性。
+1. Notprocessed 資源不會影響 LCM 狀態與 DSC 狀態。
+2. 一旦遇到要求重新開機的資源，LCM 就會停止處理更多資源。
+3. 要求重新開機的資源不處於所需的狀態，直到重新開機真正發生。
+4. 在發生失敗的資源之後，只要其他資源不是依存於失敗的資源，LCM 就會持續處理更多資源。
+5. `Get-DscConfigurationStatus` Cmdlet 所傳回的整體狀態是所有資源狀態的超集。
+6. PendingReboot 狀態為 PendingConfiguration 狀態的超集。
 
-| 案例                    | LCMState       | 狀態 | 要求重新開機  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | 閒置                 | Success    | $false        | S                            | $null                          |
-| F**^**                          | PendingConfiguration | 失敗    | $false        | $null                        | F                              |
-| S,F                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
-| F,S                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
-| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-| S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
-| F, r                            | PendingReboot        | 失敗    | $true         | $null                        | F, r                           |
-| r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
-| r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
+   下表說明一些典型狀況下的結果狀態和與狀態相關的屬性。
 
-^ S<sub>i</sub>：已成功套用的一系列資源；F<sub>i</sub>︰未成功套用的一系列資源；r：需要重新開機的資源\*
+   | 案例                    | LCMState       | 狀態 | 要求重新開機  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
+   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+   | S**^**                          | 閒置                 | Success    | $false        | S                            | $null                          |
+   | F**^**                          | PendingConfiguration | 失敗    | $false        | $null                        | F                              |
+   | S,F                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
+   | F,S                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
+   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+   | S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
+   | F, r                            | PendingReboot        | 失敗    | $true         | $null                        | F, r                           |
+   | r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
+   | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
-```powershell
-$LCMState = (Get-DscLocalConfigurationManager).LCMState
-$Status = (Get-DscConfigurationStatus).Status
+   ^
+   S<sub>i</sub>：成功套用的一系列資源；F<sub>i</sub>︰未成功套用的一系列資源；r：需要重新開機的資源\*
 
-$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+   ```powershell
+   $LCMState = (Get-DscLocalConfigurationManager).LCMState
+   $Status = (Get-DscConfigurationStatus).Status
 
-$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-```
+   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+
+   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+   ```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus Cmdlet 中的增強功能
 
-已在此版本中對 Get-DscConfigurationStatus Cmdlet 進行了一些增強功能。 先前由 Cmdlet 傳回的物件 StartDate 屬性為字串類型。 現在，它是 Datetime 類型，可根據 Datetime 物件內建內容讓複雜的選取和篩選更為容易。
+已在此版本中對 `Get-DscConfigurationStatus` Cmdlet 提供一些增強功能。 先前由 Cmdlet 傳回的物件 StartDate 屬性為字串類型。 現在，它是 Datetime 類型，可根據 Datetime 物件內建內容讓複雜的選取和篩選更為容易。
 
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl *
+(Get-DscConfigurationStatus).StartDate | Format-List *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -73,15 +75,15 @@ Year : 2015
 以下為傳回所有 DSC 作業記錄的範例，此作業記錄發生在每週和今天相同的日子。
 
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-不變更節點設定的作業記錄 (也就是唯讀作業)。 因此，Test-DscConfiguration、Get-DscConfiguration 作業不會再次混入從 Get-DscConfigurationStatus Cmdlet 傳回的物件。
-中繼設定的設定作業記錄會加入至 Get-DscConfigurationStatus Cmdlet 傳回的物件。
+不變更節點設定的作業記錄 (也就是唯讀作業)。 因此，`Test-DscConfiguration`、`Get-DscConfiguration` 作業無法在從 `Get-DscConfigurationStatus` Cmdlet 傳回的物件中攙雜使用。
+中繼設定的設定作業記錄會加入至 `Get-DscConfigurationStatus` Cmdlet 傳回的物件。
 
-以下是從 Get-DscConfigurationStatus –All Cmdlet 傳回結果的範例。
+以下是從 `Get-DscConfigurationStatus` –All Cmdlet 傳回的結果範例。
 
-```powershell
+```output
 All configuration operations:
 
 Status StartDate Type RebootRequested
@@ -95,7 +97,7 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager Cmdlet 中的增強功能
 
-LCMStateDetail 的新欄位加入至從 Get-DscLocalConfigurationManager Cmdlet 傳回的物件。 LCMState「忙碌」時，就會將此欄位填滿。 它可以由下列 Cmdlet 擷取：
+LCMStateDetail 的新欄位會加入至從 `Get-DscLocalConfigurationManager` Cmdlet 傳回的物件。 LCMState「忙碌」時，就會將此欄位填滿。 它可以由下列 Cmdlet 擷取：
 
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
@@ -103,7 +105,7 @@ LCMStateDetail 的新欄位加入至從 Get-DscLocalConfigurationManager Cmdlet 
 
 以下是連續監控設定的範例輸出，它需要遠端節點上的兩次重新開機。
 
-```powershell
+```output
 Start a configuration that requires two reboots
 
 Monitor LCM State:

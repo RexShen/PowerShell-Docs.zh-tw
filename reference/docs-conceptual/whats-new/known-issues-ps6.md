@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
-ms.openlocfilehash: 6ad1bcaf1de06f204b57eb8ce23b3053ba4a5b38
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309603"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893683"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -64,14 +64,17 @@ Linux/macOS 上的 PowerShell 使用 .NET Core，這是 Microsoft Windows 上完
 
 請使用 `Get-Content` 將檔案的內容寫入至管線中。
 
-使用預設的 UTF-8 編碼時，重新導向的輸出將會包含 Unicode 位元組順序標記 (BOM)。 與不預期會有 BOM 的公用程式搭配運作，或將 BOM 附加至檔案時，BOM 會導致發生問題。 請使用 `-Encoding Ascii` 來寫入 ASCII 文字 (因為不是 Unicode，所以不會有 BOM)。 (注意：請參閱 [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71)，以提供有關改進所有平台 PowerShell Core 編碼體驗的意見反應。 我們正努力支援不含 BOM 的 UTF-8，並可能變更各個平台上各種 Cmdlet 的編碼行為)。
+使用預設的 UTF-8 編碼時，重新導向的輸出將會包含 Unicode 位元組順序標記 (BOM)。 與不預期會有 BOM 的公用程式搭配運作，或將 BOM 附加至檔案時，BOM 會導致發生問題。 請使用 `-Encoding Ascii` 來寫入 ASCII 文字 (因為不是 Unicode，所以不會有 BOM)。
+
+> [!Note]
+> 請參閱 [RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) \(英文\)，以提供有關改進在所有平台上對於 PowerShell Core 之編碼體驗的意見反應。 我們正努力支援不含 BOM 的 UTF-8，並且可能會變更各個平台上各種 Cmdlet 的編碼預設值。
 
 ### <a name="job-control"></a>工作控制
 
 Linux/macOS 上的 PowerShell 不支援工作控制。
 無法使用 `fg` 和 `bg` 命令。
 
-目前，您可以使用 [PowerShell 工作](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_jobs)來跨所有平台執行工作。
+目前，您可以使用 [PowerShell 工作](/powershell/module/microsoft.powershell.core/about/about_jobs)來跨所有平台執行工作。
 
 ### <a name="remoting-support"></a>遠端處理支援
 
@@ -87,7 +90,7 @@ Linux/macOS 上的 PowerShell 目前不支援可建立有限系統管理 (JEA) �
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`、`exec` 及 PowerShell
 
-由於 PowerShell 會在記憶體中執行大多數命令 (例如 Python 或 Ruby)，因此您無法將 sudo 直接與 PowerShell 內建項搭配使用。(當然，您可以從 sudo 執行 `powershell`)。如果有必要從 PowerShell 內搭配 sudo 執行 PowerShell Cmdlet (例如 `sudo Set-Date 8/18/2016`)，則您會執行 `sudo powershell Set-Date 8/18/2016`。 同樣地，您無法直接執行 PowerShell 內建項。 您將必須改為執行 `exec powershell item_to_exec`。
+由於 PowerShell 會在記憶體中執行大多數命令 (例如 Python 或 Ruby)，因此您無法將 sudo 直接與 PowerShell 內建項搭配使用。(當然，您可以從 sudo 執行 `powershell`)。如果必須從 PowerShell 內搭配 sudo 執行 PowerShell Cmdlet (例如 `sudo `Set-Date` 8/18/2016`)，則您會執行 `sudo powershell `Set-Date` 8/18/2016`。 同樣地，您無法直接執行 PowerShell 內建項。 您將必須改為執行 `exec powershell item_to_exec`。
 
 此問題目前已納入 #3232 一併追蹤。
 
@@ -99,45 +102,13 @@ Linux/macOS 上的 PowerShell 目前不支援可建立有限系統管理 (JEA) �
 
 下表列出已知在 Linux/macOS 上的 PowerShell 中無法運作的命令。
 
-<table>
-<th>命令</th><th>作業狀態</th><th>注意</th>
-<tr>
-<td>Get-Service、New-Service、Restart-Service、Resume-Service、Set-Service、Start-Service、Stop-Service、Suspend-Service
-<td>無法使用。
-<td>系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。
-</tr>
-<tr>
-<td>Get-Acl、Set-Acl
-<td>無法使用。
-<td>系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。
-</tr>
-<tr>
-<td>Get-AuthenticodeSignature、Set-AuthenticodeSignature
-<td>無法使用。
-<td>系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。
-</tr>
-<tr>
-<td>Wait-Process
-<td>可以使用，但無法正確運作。 <td>例如 `Start-Process gvim -PassThru | Wait-Process` 沒有作用；無法等候處理序。
-</tr>
-<tr>
-<td>Register-PSSessionConfiguration、Unregister-PSSessionConfiguration、Get-PSSessionConfiguration
-<td>可以使用，但沒有作用。
-<td>會撰寫一則錯誤訊息，指出命令無法運作。 在未來的版本中應該會修正這些問題。
-</tr>
-<tr>
-<td>Get-Event、New-Event、Register-EngineEvent、Register-WmiEvent、Remove-Event、Unregister-Event
-<td>可以使用，但沒有任何可用的事件來源。
-<td>PowerShell 事件處理命令存在，但與這些命令搭配使用的大多數事件來源 (例如 System.Timers.Timer) 在 Linux 上都未提供，使得這些命令在 Alpha 版中毫無用處。
-</tr>
-<tr>
-<td>Set-ExecutionPolicy
-<td>可以使用，但沒有作用。
-<td>會傳回一則訊息，指出在此平台上並不支援。 執行原則是一個以使用者為焦點的「安全帶」，可協助防止使用者犯下重大錯誤。 它不是一個安全性界限。
-</tr>
-<tr>
-<td>New-PSSessionOption、New-PSTransportOption
-<td>可以使用，但 New-PSSession 沒有作用。
-<td>由於 New-PSSession 可運作，因此目前並未驗證 New-PSSessionOption 和 New-PSTransportOption 是否可運作。
-</tr>
-</table>
+|命令 |作業狀態 | 注意|
+|---------|------------------|------|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
+|`Get-Acl`、`Set-Acl`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
+|`Get-AuthenticodeSignature`、`Set-AuthenticodeSignature`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
+|`Wait-Process`|可以使用，但無法正確運作。 |例如，`Start-Process gvim -PassThru | Wait-Process` 沒有作用；無法等候處理序。|
+|`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|可以使用，但沒有作用。|會撰寫一則錯誤訊息，指出命令無法運作。 在未來的版本中應該會修正這些問題。|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|可以使用，但沒有任何可用的事件來源。|PowerShell 事件處理命令存在，但與這些命令搭配使用的大多數事件來源 (例如 System.Timers.Timer) 在 Linux 上都未提供，使得這些命令在 Alpha 版中毫無用處。|
+|`Set-ExecutionPolicy`|可以使用，但沒有作用。|會傳回一則訊息，指出在此平台上並不支援。 執行原則是一個以使用者為焦點的「安全帶」，可協助防止使用者犯下重大錯誤。 它不是一個安全性界限。|
+|`New-PSSessionOption`、`New-PSTransportOption`|可以使用，但 `New-PSSession` 沒有作用。|`New-PSSessionOption` 和 `New-PSTransportOption` 目前尚未通過驗證來運作以使 `New-PSSession` 產生作用。|

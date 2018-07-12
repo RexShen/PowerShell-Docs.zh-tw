@@ -2,40 +2,43 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 在初始開機時設定虛擬機器
-ms.openlocfilehash: d6dd997e607152d09d24b55370bb2f85810b333e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2f228a38379d1e65b31c03594e876f7226474fc3
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190259"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893347"
 ---
->適用於：Windows PowerShell 5.0
-
->**注意︰本主題所述的** **DSCAutomationHostEnabled** 登錄機碼無法在 PowerShell 4.0 中使用。
-如需如何在 PowerShell 4.0 初始開機時設定新的虛擬機器，請參閱 [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) (想要使用 DSC 在初始開機時自動設定您的電腦嗎？)
-
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>使用 DSC 在初始開機時設定虛擬機器
+
+> [!IMPORTANT]
+> 適用於：Windows PowerShell 5.0
 
 ## <a name="requirements"></a>需求
 
+> [!NOTE] 
+> 本主題所述的 **DSCAutomationHostEnabled** 登錄機碼無法在 PowerShell 4.0 中使用。
+> 如需如何在 PowerShell 4.0 中初始開機時設定新虛擬機器的相關資訊，請參閱 [想要使用 DSC 在初始開機時自動設定您的電腦嗎？]> (https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)
+
 若要執行這些範例，您需要︰
 
-- 可開機使用的 VHD。 您可以從 [TechNet 評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。 您可以在 [Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/library/gg318049.aspx) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
-- 已啟用 HYPER-V 的主機電腦。 如需資訊，請參閱 [HYPER-V 概觀](https://technet.microsoft.com/library/hh831531.aspx)。
+- 可開機使用的 VHD。 您可以從 [TechNet 評估中心](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。 您可以在 [Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
+- 已啟用 HYPER-V 的主機電腦。 如需資訊，請參閱 [HYPER-V 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
 
-藉由使用 DSC，您可以在初始開機時自動安裝軟體及設定電腦。
-您可以將設定 MOF 文件或 metaconfiguration 插入可開機的媒體 (例如 VHD)，於初始開機程序期間加以執行。
-此行為由 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** 下的 [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md) 登錄機碼。
-此機碼的值預設為 2，表示允許 DSC 在開機時執行。
+  藉由使用 DSC，您可以在初始開機時自動安裝軟體及設定電腦。
+  您可以將設定 MOF 文件或 metaconfiguration 插入可開機的媒體 (例如 VHD)，於初始開機程序期間加以執行。
+  此行為是由 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies` 下方的 [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md) 登錄機碼所設定的。
+  此機碼的值預設為 2，表示允許 DSC 在開機時執行。
 
-若您不想在開機時執行 DSC，請將 [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md) 登錄機碼設為 0。
+  若您不想在開機時執行 DSC，請將 [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md) 登錄機碼設為 0。
 
 - 將設定 MOF 文件插入 VHD
 - 將 DSC metaconfiguration 插入 VHD
 - 開機時停用 DSC
 
->**注意︰** 您可以同時將 `Pending.mof` 及 `MetaConfig.mof` 插入同一部電腦。
-當這兩個檔案同時存在時，`MetaConfig.mof` 中所指定的設定會優先執行。
+> [!NOTE]
+> 您可以同時將 `Pending.mof` 和 `MetaConfig.mof` 插入到同一部電腦。
+> 當這兩個檔案同時存在時，`MetaConfig.mof` 中所指定的設定會優先執行。
 
 ## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>將設定 MOF 文件插入 VHD
 
@@ -62,35 +65,38 @@ Configuration SampleIISInstall
 
 ### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>將設定 MOF 文件插入 VHD
 
-1. 呼叫 [掛接 VHD](https://technet.microsoft.com/library/hh848551.aspx) Cmdlet，以掛接組態所要插入的 VHD。 例如：
+1. 呼叫 [掛接 VHD](/powershell/module/hyper-v/mount-vhd) Cmdlet，以掛接組態所要插入的 VHD。 例如：
 
-    ```powershell
-    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+   Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
+
 2. 在執行 PowerShell 5.0 或更新版本的電腦上，將上述組態 (**SampleIISInstall**) 另存為 PowerShell 指令碼 (.ps1) 檔案。
 
 3. 在 PowerShell 主控台中，瀏覽至用以儲存.ps1 檔案的資料夾。
 
 4. 執行下列 PowerShell 命令編譯 MOF 文件 (如需如何編譯 DSC 組態的資訊，請參閱 [DSC 組態](configurations.md)：
 
-    ```powershell
-    . .\SampleIISInstall.ps1
-    SampleIISInstall
-    ```
+   ```powershell
+   . .\SampleIISInstall.ps1
+   SampleIISInstall
+   ```
 
 5. 這會在名為 `SampleIISInstall` 的新資料夾中建立 `localhost.mof` 檔案。
-使用 [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) Cmdlet 將該檔案重新命名為 `Pending.mof`，再將其移至 VHD 上正確的位置。 例如：
+   使用 [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) Cmdlet 將該檔案重新命名為 `Pending.mof`，再將其移至 VHD 上正確的位置。 例如：
 
-    ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
-    ```
-6. 呼叫 [DISMOUNT-VHD](https://technet.microsoft.com/library/hh848562.aspx) Cmdlet 可卸載 VHD。 例如：
+   ```powershell
+       Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
+   ```
 
-    ```powershell
-    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+6. 呼叫 [DISMOUNT-VHD](/powershell/module/hyper-v/dismount-vhd) Cmdlet 可卸載 VHD。 例如：
+
+   ```powershell
+   Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
 7. 使用安裝有 DSC MOF 文件的 VHD 建立 VM。
+
 初始開機並安裝作業系統之後，會接著安裝 IIS。
 您可以呼叫 [Get-windowsfeature](https://technet.microsoft.com/library/jj205469.aspx) Cmdlet 加以驗證。
 
@@ -127,11 +133,11 @@ configuration PullClientBootstrap
 
 ### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>將中繼設定 MOF 文件插入 VHD
 
-1. 呼叫 [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) Cmdlet，掛接您要插入中繼設定的 VHD。 例如：
+1. 呼叫 [Mount-VHD](/powershell/module/hyper-v/mount-vhd) Cmdlet，掛接您要插入中繼設定的 VHD。 例如：
 
-    ```powershell
-    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+   Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
 2. [設定 DSC Web 提取伺服器](pullServer.md)，並將 **SampleIISInistall** 組態儲存到適當的資料夾。
 
@@ -141,66 +147,70 @@ configuration PullClientBootstrap
 
 5. 執行下列 PowerShell 命令編譯中繼設定 MOF 文件 (如需如何編譯 DSC 組態的資訊，請參閱 [DSC 組態](configurations.md)：
 
-    ```powershell
-    . .\PullClientBootstrap.ps1
-    PullClientBootstrap
-    ```
+   ```powershell
+   . .\PullClientBootstrap.ps1
+   PullClientBootstrap
+   ```
 
 6. 這會在名為 `PullClientBootstrap` 的新資料夾中建立 `localhost.meta.mof` 檔案。
-使用 `MetaConfig.mof`Move-Item[ Cmdlet 將該檔案重新命名為 ](https://technet.microsoft.comlibrary/hh849852.aspx)，再將其移至 VHD 上正確的位置。
+   使用 `MetaConfig.mof`Move-Item[ Cmdlet 將該檔案重新命名為 ](https://technet.microsoft.comlibrary/hh849852.aspx)，再將其移至 VHD 上正確的位置。
 
-    ```powershell
-    Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\Sytem32\Configuration\MetaConfig.mof
-    ```
+   ```powershell
+   Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\System32\Configuration\MetaConfig.mof
+   ```
 
-7. 呼叫 [DISMOUNT-VHD](https://technet.microsoft.com/library/hh848562.aspx) Cmdlet 可卸載 VHD。 例如：
+7. 呼叫 [DISMOUNT-VHD](/powershell/module/hyper-v/dismount-vhd) Cmdlet 可卸載 VHD。 例如：
 
-    ```powershell
-    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+   Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
 8. 使用安裝有 DSC MOF 文件的 VHD 建立 VM。
+
 初始開機並安裝作業系統之後，DSC 會從提取伺服器提取組態，然後安裝 IIS。
 您可以呼叫 [Get-windowsfeature](https://technet.microsoft.com/library/jj205469.aspx) Cmdlet 加以驗證。
 
 ## <a name="disable-dsc-at-boot-time"></a>開機時停用 DSC
 
-**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** 機碼的值預設為 2，這表示當電腦處於暫止或目前的狀態時，允許 DSC 組態執行。 對於不想在初始開機時執行的組態，您必須將此機碼值設為 0：
+預設會將 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` 機碼的值設為 2，讓 DSC 設定可以在電腦處於擱置或目前狀態時執行。 對於不想在初始開機時執行的組態，您必須將此機碼值設為 0：
 
-1. 呼叫 [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) Cmdlet，以掛接 VHD。 例如：
+1. 呼叫 [Mount-VHD](/powershell/module/hyper-v/mount-vhd) Cmdlet，以掛接 VHD。 例如：
 
-    ```powershell
-    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
-    ```
+   ```powershell
+   Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
+   ```
 
-2. 呼叫 `reg load`，以從 VHD 載入機碼的 **HKLM\Software** 子機碼。
+2. 呼叫 `reg load`，以從 VHD 載入登錄 `HKLM\Software` 子機碼。
 
-    ```
-    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
-    ```
+   ```powershell
+   reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+   ```
 
-3. 使用 PowerShell 登錄提供者，瀏覽至 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\***。
+3. 使用 PowerShell 登錄提供者瀏覽至 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*`。
 
-    ```powershell
-    Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
-    ```
+   ```powershell
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   ```
 
 4. 將 `DSCAutomationHostEnabled` 的值變更為 0。
 
-    ```powershell
-    Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
-    ```
+   ```powershell
+   Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
+   ```
 
 5. 執行下列命令，以卸載此機碼︰
 
-    ```powershell
-    [gc]::Collect()
-    reg unload HKLM\Vhd
-    ```
+   ```powershell
+   [gc]::Collect()
+   reg unload HKLM\Vhd
+   ```
 
 ## <a name="see-also"></a>另請參閱
 
-- [DSC 設定](configurations.md)
-- [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md)
-- [設定本機設定管理員 (LCM)](metaConfig.md)
-- [設定 DSC Web 提取伺服器](pullServer.md)
+[DSC 設定](configurations.md)
+
+[DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md)
+
+[設定本機設定管理員 (LCM)](metaConfig.md)
+
+[設定 DSC Web 提取伺服器](pullServer.md)

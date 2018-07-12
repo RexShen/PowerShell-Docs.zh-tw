@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具有相容 PowerShell 版本的模組
-ms.openlocfilehash: fbbfda2f913d54c3e69c0724fea4d977923279c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 653cfa82be9d0150da8d8765c96e35be99497262
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189511"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892316"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有相容 PowerShell 版本的模組
 
@@ -21,7 +21,9 @@ ms.locfileid: "34189511"
 
 ```powershell
 $PSVersionTable
+```
 
+```output
 Name                           Value
 ----                           -----
 PSVersion                      5.1.14300.1000
@@ -36,41 +38,54 @@ SerializationVersion           1.1.0.1
 
 ## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>模組作者可以使用 CompatiblePSEditions 模組資訊清單金鑰，宣告其模組與一或多個 PowerShell 版本相容。 僅限 PowerShell 5.1 或更新版本支援此金鑰。
 
-「請注意」一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單，就無法在較低版本的 PowerShell 上進行匯入。
+> [!NOTE]
+> 一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單之後，就無法在較低版本的 PowerShell 上匯入它。
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
 $ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
 $ModuleInfo.CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
+```
 
+```powershell
 $ModuleInfo | Get-Member CompatiblePSEditions
+```
 
+```output
    TypeName: System.Management.Automation.PSModuleInfo
 
 Name                 MemberType Definition
 ----                 ---------- ----------
 CompatiblePSEditions Property   System.Collections.Generic.IEnumerable[string] CompatiblePSEditions {get;}
-
 ```
 
 取得可用的模組清單時，您可以依據 PowerShell 版本篩選該清單。
 
 ```powershell
 Get-Module -ListAvailable -PSEdition Desktop
+```
 
+```output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
 
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
+```
 
+```powershell
 Get-Module -ListAvailable -PSEdition Core | % CompatiblePSEditions
+```
+
+```output
 Desktop
 Core
-
 ```
 
 ## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>模組作者可以發行以其中一個 PowerShell 版本 (桌面和核心) 或兩者同時為目標的單一模組
@@ -162,8 +177,8 @@ $PSModule.OnRemove = {
 PS 5.1 或更新版本的模組資訊清單檔案中允許 $PSEdition 全域變數。
 模組作者可透過使用此變數，指定模組資訊清單檔案中的條件值。 在限制的語言模式或 [資料] 區段中，可以參考 $PSEdition 變數。
 
-「請注意」一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單，或使用 $PSEdition 變數，就無法在較低版本的 PowerShell 上進行匯入。
-
+> [!NOTE]
+> 一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單，或使用 $PSEdition 變數之後，就無法在較低版本的 PowerShell 上匯入它。
 
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>使用 CompatiblePSEditions 金鑰的模組資訊清單檔案範例
 
@@ -203,9 +218,10 @@ else # Desktop
 #### <a name="module-contents"></a>模組內容
 
 ```powershell
+dir -Recurse
+```
 
-PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
-
+```output
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
 
 Mode                LastWriteTime         Length Name
@@ -245,9 +261,10 @@ Find-Module -Tag PSEdition_Core
 
 ```
 
-
 ## <a name="more-details"></a>更多詳細資料
 
-- [搭配 PSEditions 的指令碼](script-psedition-support.md)
-- [PowerShellGallery 的 PSEditions 支援](../how-to/finding-items/searching-by-psedition.md)
-- [更新模組資訊清單] (/powershell/module/powershellget/update-modulemanifest)
+[搭配 PSEditions 的指令碼](script-psedition-support.md)
+
+[PowerShellGallery 的 PSEditions 支援](../how-to/finding-items/searching-by-psedition.md)
+
+[更新模組資訊清單](/powershell/module/powershellget/update-modulemanifest)

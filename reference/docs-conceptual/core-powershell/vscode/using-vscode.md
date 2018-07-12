@@ -22,19 +22,19 @@
 
 - **macOS**：遵循 [Running VS Code on macOS](https://code.visualstudio.com/docs/setup/mac) (在 macOS 上執行 VS Code) 頁面的安裝指示操作
 
-> [!IMPORTANT]
-> 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
-> 完成這項作業最簡單的方式是安裝 [Homebrew](http://brew.sh/) ，然後執行 `brew install openssl`。
-> 現在，VS Code 可以成功載入 PowerShell 延伸模組。
+  > [!IMPORTANT]
+  > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
+  > 完成這項作業最簡單的方式是安裝 [Homebrew](http://brew.sh/) ，然後執行 `brew install openssl`。
+  > 現在，VS Code 可以成功載入 PowerShell 延伸模組。
 
 - **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
 
 ### <a name="2-installing-powershell-extension"></a>2.安裝 PowerShell 延伸模組
 
 - 啟動 Visual Studio Code 應用程式：
-    - **Windows**：在您的 PowerShell 工作階段鍵入 `code`
-    - **Linux**：在您的終端機上鍵入 `code`
-    - **macOS**：在您的終端機上鍵入 `code`
+  - **Windows**：在您的 PowerShell 工作階段鍵入 `code`
+  - **Linux**：在您的終端機上鍵入 `code`
+  - **macOS**：在您的終端機上鍵入 `code`
 
 - 按 **Ctrl+P** (Mac 是 **Cmd+P**) 啟動 [快速開啟]。
 - 在 [快速開啟] 中鍵入 `ext install powershell` 並點擊 **Enter**。
@@ -58,10 +58,10 @@
 如果您想要搭配使用特定安裝的 PowerShell 與 Visual Studio Code，則必須在使用者設定檔中新增變數。
 
 1. 按一下 [檔案]-> [喜好設定]-> [設定]
-1. 隨即出現兩個編輯器窗格。
+2. 隨即出現兩個編輯器窗格。
    在最右邊的窗格中 (`settings.json`)，在兩個大括弧中間 (`{`和`}`) 插入下列適用於您作業系統的設定，使用已安裝的 PowerShell 版本取代 *<version>*：
 
-  ```json
+   ```json
     // On Windows:
     "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
 
@@ -70,9 +70,10 @@
 
     // On macOS:
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-  ```
-1. 以所需 PowerShell 可執行檔的路徑取代設定
-1. 儲存設定檔並重新啟動 Visual Studio Code
+   ```
+
+3. 以所需 PowerShell 可執行檔的路徑取代設定
+4. 儲存設定檔並重新啟動 Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code 的組態設定
 
@@ -112,19 +113,19 @@
 - 啟動偵錯工具中的互動式工作階段
 - 將偵錯工具附加至 PowerShell 主機處理程序
 
-請遵循下列步驟建立您的偵錯設定檔：
+  請遵循下列步驟建立您的偵錯設定檔：
 
-1. 按 **Ctrl+Shift+D** (Mac 是 **Cmd+Shift+D**) 開啟 [偵錯] 檢視。
-1. 按工具列中的**設定**齒輪圖示。
-1. Visual Studio Code 會提示您 [選取環境]。
-   選擇 [PowerShell]。
+  1. 按 **Ctrl+Shift+D** (Mac 是 **Cmd+Shift+D**) 開啟 [偵錯] 檢視。
+  2. 按工具列中的**設定**齒輪圖示。
+  3. Visual Studio Code 會提示您 [選取環境]。
+  選擇 [PowerShell]。
 
-   當您這樣做時，Visual Studio Code 會在工作區資料夾的根目錄中建立目錄和檔案：".vscode\launch.json"。
-   這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要修訂 launch.json 檔案。
-   Launch.json 檔案的內容如下：
+  當您這樣做時，Visual Studio Code 會在工作區資料夾的根目錄中建立目錄和檔案：".vscode\launch.json"。
+  這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要修訂 launch.json 檔案。
+  Launch.json 檔案的內容如下：
 
-```json
-{
+  ```json
+  {
     "version": "0.2.0",
     "configurations": [
         {
@@ -149,19 +150,21 @@
             "cwd": "${workspaceRoot}"
         }
     ]
-}
-```
+  }
+  ```
 
-這表示常見的偵錯案例。
-不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定] 按鈕。
-您可以按此按鈕新增多個 PowerShell 偵錯設定。 **PowerShell：啟動指令碼**是可以新增的方便設定。
-使用此設定時，您可以指定有選擇性引數的特定檔案，只要按下 F5 就應該啟動，無論編輯器中當時作用的是哪個檔案。
+  這表示常見的偵錯案例。
+  不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定] 按鈕。
+  您可以按此按鈕新增多個 PowerShell 偵錯設定。 **PowerShell：啟動指令碼**是可以新增的方便設定。
+  使用此設定時，您可以指定有選擇性引數的特定檔案，只要按下 F5 就應該啟動，無論編輯器中當時作用的是哪個檔案。
 
-建立偵錯設定之後，您就可以從 [偵錯] 檢視工具列的偵錯設定下拉式清單中擇一，選取在偵錯工作階段期間想要使用的設定。
+  建立偵錯設定之後，您就可以從 [偵錯] 檢視工具列的偵錯設定下拉式清單中擇一，選取在偵錯工作階段期間想要使用的設定。
 
-有幾個部落格可以協助您開始使用適用於 Visual Studio Code 的 PowerShell 延伸模組
+  有幾個部落格可以協助您開始使用適用於 Visual Studio Code 的 PowerShell 延伸模組
 
-- Visual Studio Code：[PowerShell 延伸模組][ps-extension]
+Visual Studio Code：
+
+- [PowerShell 延伸模組][ps-extension]
 - [在 Visual Studio Code 中撰寫和偵錯 PowerShell 指令碼][debug]
 - [偵錯 Visual Studio Code 指引][vscode-guide]
 - [在 Visual Studio Code 中偵錯 PowerShell][ps-vscode]
@@ -176,15 +179,15 @@
 [install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
-[ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
-[debug]:https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
-[vscode-guide]:https://johnpapa.net/debugging-with-visual-studio-code/
-[ps-vscode]:https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[getting-started]:https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
-[editing-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
-[editing-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
-[debugging-part1]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
-[debugging-part2]:https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
+[ps-extension]: https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[debug]: https://blogs.msdn.microsoft.com/powershell/2015/11/16/announcing-powershell-language-support-for-visual-studio-code-and-more/
+[vscode-guide]: https://johnpapa.net/debugging-with-visual-studio-code/
+[ps-vscode]: https://github.com/PowerShell/vscode-powershell/tree/master/examples
+[getting-started]: https://blogs.technet.microsoft.com/heyscriptingguy/2016/12/05/get-started-with-powershell-development-in-visual-studio-code/
+[editing-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/11/visual-studio-code-editing-features-for-powershell-development-part-1/
+[editing-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/01/12/visual-studio-code-editing-features-for-powershell-development-part-2/
+[debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
+[debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
 ## <a name="powershell-extension-for-visual-studio-code"></a>適用於 Visual Studio Code 的 PowerShell 延伸模組
 

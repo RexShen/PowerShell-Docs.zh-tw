@@ -3,12 +3,12 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: 資源庫,powershell,psgallery,GDPR
 title: PowerShell 資源庫 GDPR 合規性
-ms.openlocfilehash: dca1a82952c284980a84caafa13b2807e47e25a0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189749"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893241"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell 資源庫 GDPR 合規性
 
@@ -25,9 +25,9 @@ GDPR 對公司、政府機關、非營利組織以及其他為歐盟 (EU) 居民
 
 PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可能包含個人資訊：
 
-* PowerShell 資源庫帳戶
-* 發行至 PowerShell 資源庫的項目
-* 與 PowerShell 資源庫小組來往的電子郵件
+- PowerShell 資源庫帳戶
+- 發行至 PowerShell 資源庫的項目
+- 與 PowerShell 資源庫小組來往的電子郵件
 
 大部分的使用者不會建立 PowerShell 資源庫帳戶。
 除非您將會發行項目或是使用 PowerShell 資源庫中的「連絡擁有者」功能，否則不需要帳戶。
@@ -45,15 +45,15 @@ PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可
 
 往來電子郵件可包含下列任一項：
 
-* 若程式碼分析掃描偵測到已發行至 PowerShell 資源庫的任何項目發生問題，會傳送電子郵件給 PowerShell 資源庫項目的擁有者
-* 使用「與我們連絡」頁面 (cgadmin@microsoft.com) 中的電子郵件地址，任何人皆可傳送電子郵件給 PowerShell 資源庫小組
-* 使用 PowerShell 資源庫中「連絡擁有者」功能的註冊使用者，可傳送電子郵件給 PowerShell 資源庫中項目的擁有者
+- 若程式碼分析掃描偵測到已發行至 PowerShell 資源庫的任何項目發生問題，會傳送電子郵件給 PowerShell 資源庫項目的擁有者
+- 任何人皆可使用 [與我們連絡] 頁面 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) 中的電子郵件地址，傳送電子郵件給 PowerShell 資源庫小組
+- 使用 PowerShell 資源庫中「連絡擁有者」功能的註冊使用者，可傳送電子郵件給 PowerShell 資源庫中項目的擁有者
 
 與 PowerShell 資源庫往來的電子郵件，保留原則為 90 天，以進行可能的安全性調查，探索在 PowerShell 資源庫上是否有惡意程式碼。
 電子郵件依原則將會在 90 天後刪除。
 
 您可申請前 90 天對您電子郵件地址以及 PowerShell 資源庫所傳送或接收之所有電子郵件的副本。
-若要申請這些往來郵件，請傳送電子郵件至 cgadmin@microsoft.com，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
+若要申請這些往來郵件，請傳送電子郵件至 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
 在訊息內文中，請陳述您要申請的資訊 (例如：請傳送給我所有此電子郵件地址所傳送或接收之電子郵件。)您可在 7 個工作天內，收到發出申請 90 天內您電子郵件地址相關的所有電子郵件。
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell 資源庫帳戶資訊
@@ -78,13 +78,13 @@ PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可
 您可使用下列 PowerShell 命令，下載此指令碼：
 
 ```powershell
-Save-Script GetPSGalleryItemsForAuthor -path <local folder location> -repository psgallery
+Save-Script Get-repository psgallery
 ```
 
 然後您可執行下列 PowerShell 命令，直接執行該指令碼：
 
 ```powershell
-cd <local folder location >
+# cd <local folder location>
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
@@ -95,9 +95,9 @@ cd <local folder location >
 若要刪除您的 PowerShell 資源庫帳戶或任何您在 PowerShell 資源庫中所擁有的項目，請傳送電子郵件至 cgadmin@microsoft.com，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
 在訊息內文中，請陳述您希望刪除的資訊。 例如：
 
-* 請刪除我的項目「項目名稱」之版本 x.y.z
-* 請刪除我的項目「項目名稱」之所有版本
-* 請刪除我的 PowerShell 資源庫帳戶
+- 請刪除我的項目「項目名稱」之版本 x.y.z
+- 請刪除我的項目「項目名稱」之所有版本
+- 請刪除我的 PowerShell 資源庫帳戶
 
 PowerShell 資源庫系統管理員將會於 7 個工作天內回覆您。
 指定的項目將於提出申請之後的 30 天內刪除。

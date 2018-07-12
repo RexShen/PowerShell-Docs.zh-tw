@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 其他有用的指令碼物件
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 0e87e9919199e011ab5abec5b07dccc8494ad64a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949820"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893275"
 ---
 # <a name="other-useful-scripting-objects"></a>其他有用的指令碼物件
 
@@ -33,14 +33,14 @@ $psUnsupportedConsoleApplications
 
 ### <a name="pslocalhelp"></a>$psLocalHelp
 
-這個字典物件會在本機編譯的 HTML 說明檔中，維護說明主題及其相關聯連結之間內容相關性的對應。 您可以使用它來尋找特定主題的本機說明。 您可以新增或刪除此清單中的主題。 下列程式碼範例示範一些 **$psLocalHelp** 中所含的索引鍵值組範例。
+這個字典物件會在本機編譯的 HTML 說明檔中，維護說明主題及其相關聯連結之間內容相關性的對應。 您可以使用它來尋找特定主題的本機說明。 您可以新增或刪除此清單中的主題。 下列程式碼範例示範一些 `$psLocalHelp` 中所含的索引鍵值組範例。
 
 ```powershell
 # See the local help map
 $psLocalHelp | Format-List
 ```
 
-### <a name="sample-output"></a>取樣輸出
+### <a name="pslocalhelp-sample-output"></a>$psLocalHelp 範例輸出
 
 |||
 |-|-|
@@ -61,14 +61,14 @@ $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-5
 $psOnlineHelp | Format-List
 ```
 
-### <a name="sample-output"></a>取樣輸出
+## <a name="psonilnehelp-sample-output"></a>$psOnilneHelp 範例輸出
 
 |||
 |-|-|
 |索引鍵：Add-Computer|值：http://go.microsoft.com/fwlink/p/?LinkID=135194|
 |索引鍵：Add-Content|值：http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
- 下列指令碼會在清單中新增項目。
+下列指令碼會在清單中新增項目。
 
 ```powershell
 $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
@@ -76,4 +76,4 @@ $psOnlineHelp.Add("get-myNoun", "http://www.mydomain.com/MyNoun.html")
 
 ## <a name="see-also"></a>另請參閱
 
-- [Windows PowerShell ISE 指令碼物件模型的用途](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+[Windows PowerShell ISE 指令碼物件模型的用途](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

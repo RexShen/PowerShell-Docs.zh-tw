@@ -2,18 +2,18 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC PackageManagement 資源
-ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753782"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892496"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 資源
 
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
+適用於：Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
 
-Windows PowerShell 預期狀態設定 (DSC) 中的 **PackageManagement** 資源，提供在目標節點上安裝或解除安裝「套件管理」套件的機制。 此資源需要 **PackageManagement** 模組，可從 http://PowerShellGallery.com 取得。
+Windows PowerShell 預期狀態設定 (DSC) 中的 **PackageManagement** 資源，提供在目標節點上安裝或解除安裝「套件管理」套件的機制。 此資源需要 **PackageManagement** 模組，可從 [http://PowerShellGallery.com](http://PowerShellGallery.com) 取得。
 
 > [!IMPORTANT]
 > **PackageManagement** 模組至少應為 1.1.7.0 版，以下才是正確的屬性資訊。

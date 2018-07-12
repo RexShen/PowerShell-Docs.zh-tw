@@ -2,21 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 報表伺服器
-ms.openlocfilehash: 143e0bdd9b637cee87a676ed327fe6ff3a7fd719
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bcd414e9cc6d3b321676aaab6bbc3ca1b02e80aa
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188542"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893132"
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 報表伺服器
 
-> 適用於：Windows PowerShell 5.0
+適用於：Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
-
->**注意**：本主題所描述的報表伺服器不適用於 PowerShell 4.0。
+>
+> **注意**：本主題所描述的報表伺服器不適用於 PowerShell 4.0。
 
 節點的本機設定管理員 (LCM) 可以設定為將設定狀態相關報表傳送至提取伺服器，然後可查詢以擷取該資料。 每次節點檢查並套用設定時，皆會將報表傳送至報表伺服器。 這些報表會儲存在伺服器上的資料庫，而且可以藉由呼叫報告 Web 服務來擷取。 每份報表包含已套用的設定、是否成功套用、使用的資源、所擲回的任何錯誤，以及開始和完成時間等資訊。
 
@@ -56,6 +56,7 @@ configuration ReportClientConfig
         }
     }
 }
+
 ReportClientConfig
 ```
 
@@ -91,11 +92,12 @@ configuration PullClientConfig
 PullClientConfig
 ```
 
->**注意**：當您設定提取伺服器時，您可以為 Web 服務指定任何名稱，但 **ServerURL** 屬性必須符合服務名稱。
+> [!NOTE]
+> 當您設定提取伺服器時，可以為 Web 服務指定任何名稱，但 **ServerURL** 屬性必須符合服務名稱。
 
 ## <a name="getting-report-data"></a>取得報表資料
 
-傳送到提取伺服器的報表會輸入到該伺服器上的資料庫中。 可透過呼叫 Web 服務使用報表。 若要擷取特定節點的報表，請以下列形式將 HTTP 要求傳送到報表 Web 服務：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` 其中 `MyNodeAgentId` 是您要取得報表之節點的 AgentId。 您也可以呼叫該節點上的 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) 以取得節點的 AgentID。
+傳送到提取伺服器的報表會輸入到該伺服器上的資料庫中。 可透過呼叫 Web 服務使用報表。 若要擷取特定節點的報表，請以下列形式將 HTTP 要求傳送到報表 Web 服務：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports` 其中 `MyNodeAgentId` 是您要取得報表之節點的 AgentId。 您也可以呼叫該節點上的 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) 以取得節點的 AgentID。
 
 報表會以 JSON 物件的陣列傳回。
 
@@ -104,7 +106,12 @@ PullClientConfig
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    param
+    (
+        $AgentId = "$((glcm).AgentId)", 
+        $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
+    )
+
     $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
@@ -121,8 +128,9 @@ function GetReport
 ```powershell
 $reports = GetReport
 $reports[1]
+```
 
-
+```output
 JobId                : 019dfbe5-f99f-11e5-80c6-001dd8b8065c
 OperationType        : Consistency
 RefreshMode          : Pull
@@ -168,7 +176,9 @@ $reportMostRecent = $reportsByStartTime[0]
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
 $statusData
+```
 
+```output
 StartDate                  : 2016-04-04T11:21:41.2990000-07:00
 IPV6Addresses              : {2001:4898:d8:f2f2:852b:b255:b071:283b, fe80::852b:b255:b071:283b%12, ::2000:0:0:0, ::1...}
 DurationInSeconds          : 25
@@ -205,7 +215,9 @@ Mode                       : Pull
 
 ```powershell
 $statusData.ResourcesInDesiredState
+```
 
+```output
 SourceInfo        : C:\ReportTest\Sample_xFirewall_AddFirewallRule.ps1::16::9::Archive
 ModuleName        : PSDesiredStateConfiguration
 DurationInSeconds : 2.672
@@ -222,6 +234,9 @@ InDesiredState    : True
 請注意，這些範例主要供您了解可以如何處理報表資料。 如需在 PowerShell 中搭配使用 JSON 的簡介，請參閱[Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (以 JSON 和 PowerShell 播放)。
 
 ## <a name="see-also"></a>另請參閱
-- [設定本機設定管理員](metaConfig.md)
-- [設定 DSC Web 提取伺服器](pullServer.md)
-- [使用設定名稱設定提取用戶端](pullClientConfigNames.md)
+
+[設定本機設定管理員](metaConfig.md)
+
+[設定 DSC Web 提取伺服器](pullServer.md)
+
+[使用設定名稱設定提取用戶端](pullClientConfigNames.md)

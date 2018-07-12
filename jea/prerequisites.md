@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 必要條件
-ms.openlocfilehash: a5cf5519b30b24d44c12bdeedcf4cd763e2edbde
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189766"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893030"
 ---
 # <a name="prerequisites"></a>必要條件
 
@@ -49,8 +49,10 @@ Windows 7                 | 功能有限 <sup>1</sup> 的 WMF 5.1
 若要檢查哪個版本的 PowerShell 安裝在您的系統上，請在 Windows PowerShell 提示字元中檢查 `$PSVersionTable` 變數。
 
 ```powershell
-PS C:\> $PSVersionTable.PSVersion
+$PSVersionTable.PSVersion
+```
 
+```output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  1000
@@ -62,7 +64,7 @@ Major  Minor  Build  Revision
 ### <a name="install-windows-management-framework"></a>安裝 Windows Management Framework
 
 如果您執行較舊版本的 PowerShell，必須更新您的系統，使用最新的 Windows Management Framework (WMF) 更新。
-更新套件和最新 WMF 版本資訊的連結都提供在[下載中心](https://aka.ms/WMF5)。
+更新套件和最新 WMF 版本資訊的連結都提供在[下載中心](https://blogs.msdn.microsoft.com/powershell/2016/02/24/windows-management-framework-wmf-5-0-rtm-packages-has-been-republished/)。
 
 強烈建議您先測試工作負載的 WMF 相容性，再升級所有的伺服器。
 
@@ -71,7 +73,7 @@ Windows 10 使用者應安裝最新的功能更新，以取得目前版本的 Wi
 ## <a name="enable-powershell-remoting"></a>啟用 PowerShell 遠端
 
 PowerShell 遠端提供 JEA 建置的基礎。
-因此必須確保已在系統上啟用 PowerShell 遠端並[經過適當保護](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)，才能使用 JEA。
+因此必須確保已在系統上啟用 PowerShell 遠端並[經過適當保護](/powershell/scripting/setup/winrmsecurity)，才能使用 JEA。
 
 Windows Server 2012、2012 R2 和 2016 中預設已啟用 PowerShell 遠端。
 您可以在提升權限的 PowerShell 視窗中執行下列命令，來啟用 PowerShell 遠端。
@@ -92,21 +94,23 @@ JEA 不需要 PowerShell 模組記錄，不過強烈建議您將它開啟，以�
 3. 按兩下 [開啟模組記錄]
 4. 按一下 [啟用]
 5. 在 [選項] 區段中，按一下模組名稱旁邊的 [顯示]
-6. 在快顯視窗中輸入 "**\***"。 這會指示 PowerShell 記錄來自所有模組的命令。
+6. 在快顯視窗中輸入 `\*`。 這會指示 PowerShell 記錄來自所有模組的命令。
 7. 按一下 [確定] 設定原則
 8. 按兩下 [開啟 PowerShell 指令碼區塊記錄]
 9. 按一下 [啟用]
 10. 按一下 [確定] 設定原則
-11. (僅限已加入網域的電腦) 執行 **gpupdate** 或等待群組原則處理已更新的原則並套用設定
+11. (僅限已加入網域的電腦) 執行 `gpupdate` 或等待群組原則處理已更新的原則並套用設定
 
 您也可以透過 [群組原則] 啟用全系統 PowerShell 文字記錄。
 
 ## <a name="next-steps"></a>接下來的步驟
 
-- [建立角色功能檔案](role-capabilities.md)
-- [建立工作階段設定檔](session-configurations.md)
+[建立角色功能檔案](role-capabilities.md)
+
+[建立工作階段設定檔](session-configurations.md)
 
 ## <a name="see-also"></a>另請參閱
 
-- [PowerShell 遠端和 WinRM 安全性的詳細資訊](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
-- [*PowerShell ♥ 藍色小組*安全性部落格文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[PowerShell 遠端和 WinRM 安全性的詳細資訊](/powershell/scripting/setup/winrmsecurity)
+
+[*PowerShell ♥ 藍色小組*安全性部落格文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

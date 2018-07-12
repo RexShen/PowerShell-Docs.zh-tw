@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 description: 提供在目標節點管理本機群組的機制。
 title: DSC GroupSet 資源
-ms.openlocfilehash: 3d6fdcaef6053964d3fb3b709a5263d291a7c840
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 487a76ca7703b2c57b940b4c5bd176eada6c8019
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222348"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892421"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 資源
 
@@ -18,7 +18,8 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **GroupSet** 資源會提供一�
 
 當您想要新增及 (或) 移除多個群組的相同成員清單、移除多個群組，或新增具有相同成員清單的多個群組時，請使用此資源。
 
-##<a name="syntax"></a>語法##
+## <a name="syntax"></a>語法
+
 ```
 Group [string] #ResourceName
 {
@@ -43,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| 使用這個屬性將成員新增至群組的現有成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。|
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
-## <a name="example-1"></a>範例 1
+## <a name="example-1-ensuring-groups-are-present"></a>範例 1：確定群組存在
 
 下例示範如何確保 "myGroup" 和 "myOtherGroup" 兩個群組會出現。
 
@@ -73,8 +74,8 @@ $cd = @{
     )
 }
 
-
 GroupSetTest -ConfigurationData $cd
 ```
 
->**注意︰** 為求簡潔，本例使用純文字認證。 如需如何在設定 MOF 檔案中加密認證的相關資訊，請參閱[保護 MOF 檔案](secureMOF.md)。
+> [!NOTE] 
+> 為求簡潔，本範例使用純文字認證。 如需如何在設定 MOF 檔案中加密認證的相關資訊，請參閱[保護 MOF 檔案](secureMOF.md)。
