@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188423"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093713"
 ---
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="973c2-102">建立及連接到 JEA 端點</span><span class="sxs-lookup"><span data-stu-id="973c2-102">Creating and Connecting to a JEA Endpoint</span></span>
-<span data-ttu-id="973c2-103">若要建立 JEA 端點，您必須建立並註冊特別設定的 PowerShell 工作階段組態檔，該組態檔可使用 **New-PSSessionConfigurationFile** Cmdlet 產生，</span><span class="sxs-lookup"><span data-stu-id="973c2-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="52a68-102">建立及連接到 JEA 端點</span><span class="sxs-lookup"><span data-stu-id="52a68-102">Creating and Connecting to a JEA Endpoint</span></span>
+<span data-ttu-id="52a68-103">若要建立 JEA 端點，您必須建立並註冊特別設定的 PowerShell 工作階段組態檔，該組態檔可使用 **New-PSSessionConfigurationFile** Cmdlet 產生，</span><span class="sxs-lookup"><span data-stu-id="52a68-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-<span data-ttu-id="973c2-104">如此會建立工作階段組態檔，看起來像這樣︰</span><span class="sxs-lookup"><span data-stu-id="973c2-104">This will create a session configuration file that looks like this:</span></span>
+<span data-ttu-id="52a68-104">如此會建立工作階段組態檔，看起來像這樣︰</span><span class="sxs-lookup"><span data-stu-id="52a68-104">This will create a session configuration file that looks like this:</span></span>
 ```powershell
 @{
 
@@ -53,20 +53,20 @@ RoleDefinitions = @{
 
 }
 ```
-<span data-ttu-id="973c2-105">建立 JEA 端點時，必須設定下列參數的命令 (和檔案中的對應金鑰)︰</span><span class="sxs-lookup"><span data-stu-id="973c2-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
-1.  <span data-ttu-id="973c2-106">將 SessionType 設為 RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="973c2-106">SessionType to RestrictedRemoteServer</span></span>
-2.  <span data-ttu-id="973c2-107">將 RunAsVirtualAccount 設為 **$true**</span><span class="sxs-lookup"><span data-stu-id="973c2-107">RunAsVirtualAccount to **$true**</span></span>
-3.  <span data-ttu-id="973c2-108">將 TranscriptPath 設為將在每個工作階段之後儲存 "Over The Shoulder" 文字記錄之目錄</span><span class="sxs-lookup"><span data-stu-id="973c2-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
-4.  <span data-ttu-id="973c2-109">將 RoleDefinitions 設為定義群組與可存取之 "Role Capabilities" 對應關係的雜湊表。</span><span class="sxs-lookup"><span data-stu-id="973c2-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="973c2-110">此欄位會定義各種**人員**可以在此端點上執行的各種**動作**。</span><span class="sxs-lookup"><span data-stu-id="973c2-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="973c2-111">角色功能是特殊的檔案，將在稍後說明。</span><span class="sxs-lookup"><span data-stu-id="973c2-111">Role Capabilities are special files that will be explained shortly.</span></span>
+<span data-ttu-id="52a68-105">建立 JEA 端點時，必須設定下列參數的命令 (和檔案中的對應金鑰)︰</span><span class="sxs-lookup"><span data-stu-id="52a68-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
+1.  <span data-ttu-id="52a68-106">將 SessionType 設為 RestrictedRemoteServer</span><span class="sxs-lookup"><span data-stu-id="52a68-106">SessionType to RestrictedRemoteServer</span></span>
+2.  <span data-ttu-id="52a68-107">將 RunAsVirtualAccount 設為 **$true**</span><span class="sxs-lookup"><span data-stu-id="52a68-107">RunAsVirtualAccount to **$true**</span></span>
+3.  <span data-ttu-id="52a68-108">將 TranscriptPath 設為將在每個工作階段之後儲存 "Over The Shoulder" 文字記錄之目錄</span><span class="sxs-lookup"><span data-stu-id="52a68-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
+4.  <span data-ttu-id="52a68-109">將 RoleDefinitions 設為定義群組與可存取之 "Role Capabilities" 對應關係的雜湊表。</span><span class="sxs-lookup"><span data-stu-id="52a68-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="52a68-110">此欄位會定義各種**人員**可以在此端點上執行的各種**動作**。</span><span class="sxs-lookup"><span data-stu-id="52a68-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="52a68-111">角色功能是特殊的檔案，將在稍後說明。</span><span class="sxs-lookup"><span data-stu-id="52a68-111">Role Capabilities are special files that will be explained shortly.</span></span>
 
 
-<span data-ttu-id="973c2-112">RoleDefinitions 欄位會定義群組與角色功能的存取權之對應關係。</span><span class="sxs-lookup"><span data-stu-id="973c2-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="973c2-113">角色功能是一個檔案，定義將向連接的使用者公開的一組功能。</span><span class="sxs-lookup"><span data-stu-id="973c2-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="973c2-114">您可以使用 **New-PSRoleCapabilityFile** 命令建立角色功能，</span><span class="sxs-lookup"><span data-stu-id="973c2-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
+<span data-ttu-id="52a68-112">RoleDefinitions 欄位會定義群組與角色功能的存取權之對應關係。</span><span class="sxs-lookup"><span data-stu-id="52a68-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="52a68-113">角色功能是一個檔案，定義將向連接的使用者公開的一組功能。</span><span class="sxs-lookup"><span data-stu-id="52a68-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="52a68-114">您可以使用 **New-PSRoleCapabilityFile** 命令建立角色功能，</span><span class="sxs-lookup"><span data-stu-id="52a68-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
-<span data-ttu-id="973c2-115">如此將產生一種範本角色功能，看起來像這樣︰</span><span class="sxs-lookup"><span data-stu-id="973c2-115">This will generate a template role capability that looks like this:</span></span>
+<span data-ttu-id="52a68-115">如此將產生一種範本角色功能，看起來像這樣︰</span><span class="sxs-lookup"><span data-stu-id="52a68-115">This will generate a template role capability that looks like this:</span></span>
 ```
 @{
 
@@ -128,22 +128,24 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
-<span data-ttu-id="973c2-116">若要供 JEA 工作階段組態使用，必須在名為 “RoleCapabilities” 的資料夾中，將角色功能儲存為有效的 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="973c2-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="973c2-117">如有需要，模組可能會有多個角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="973c2-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="973c2-118">若要開始設定使用者可存取的哪些 Cmdlet、函數、別名及指令碼可在連接到 JEA 工作階段時存取，請遵循註解化的範本，將您自己的規則加入角色功能檔案中。</span><span class="sxs-lookup"><span data-stu-id="973c2-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="973c2-119">如需深入了解如何設定角色功能，請參閱完整的[體驗指南](http://aka.ms/JEA)。</span><span class="sxs-lookup"><span data-stu-id="973c2-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+<span data-ttu-id="52a68-116">若要供 JEA 工作階段組態使用，必須在名為 “RoleCapabilities” 的資料夾中，將角色功能儲存為有效的 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="52a68-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="52a68-117">如有需要，模組可能會有多個角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="52a68-117">A module may have multiple role capability files, if desired.</span></span>
 
-<span data-ttu-id="973c2-120">最後，當您完成自訂工作階段組態和相關角色功能後，請執行 **Register-PSSessionConfiguration** 註冊此工作階段組態並建立端點。</span><span class="sxs-lookup"><span data-stu-id="973c2-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
+<span data-ttu-id="52a68-118">若要開始設定使用者可存取的哪些 Cmdlet、函數、別名及指令碼可在連接到 JEA 工作階段時存取，請遵循註解化的範本，將您自己的規則加入角色功能檔案中。</span><span class="sxs-lookup"><span data-stu-id="52a68-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="52a68-119">如需深入了解如何設定角色功能，請參閱完整的[體驗指南](http://aka.ms/JEA)。</span><span class="sxs-lookup"><span data-stu-id="52a68-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
+
+<span data-ttu-id="52a68-120">最後，當您完成自訂工作階段組態和相關角色功能後，請執行 **Register-PSSessionConfiguration** 註冊此工作階段組態並建立端點。</span><span class="sxs-lookup"><span data-stu-id="52a68-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="973c2-121">連接到 JEA 端點</span><span class="sxs-lookup"><span data-stu-id="973c2-121">Connect to a JEA Endpoint</span></span>
-<span data-ttu-id="973c2-122">連接到 JEA 端點與連接到其他 PowerShell 端點的運作方式一樣。</span><span class="sxs-lookup"><span data-stu-id="973c2-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="973c2-123">您只需要提供您的 JEA 端點名稱作為 **New-PSSession**、**Invoke-Command**或 **Enter-PSSession** 的 "ConfigurationName" 參數。</span><span class="sxs-lookup"><span data-stu-id="973c2-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
+## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="52a68-121">連接到 JEA 端點</span><span class="sxs-lookup"><span data-stu-id="52a68-121">Connect to a JEA Endpoint</span></span>
+
+<span data-ttu-id="52a68-122">連接到 JEA 端點與連接到其他 PowerShell 端點的運作方式一樣。</span><span class="sxs-lookup"><span data-stu-id="52a68-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="52a68-123">您只需要提供您的 JEA 端點名稱作為 **New-PSSession**、**Invoke-Command**或 **Enter-PSSession** 的 "ConfigurationName" 參數。</span><span class="sxs-lookup"><span data-stu-id="52a68-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-<span data-ttu-id="973c2-124">一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的允許清單。</span><span class="sxs-lookup"><span data-stu-id="973c2-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="973c2-125">如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。</span><span class="sxs-lookup"><span data-stu-id="973c2-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
+
+<span data-ttu-id="52a68-124">一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的允許清單。</span><span class="sxs-lookup"><span data-stu-id="52a68-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="52a68-125">如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。</span><span class="sxs-lookup"><span data-stu-id="52a68-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
