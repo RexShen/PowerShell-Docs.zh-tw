@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188423"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093713"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>建立及連接到 JEA 端點
 若要建立 JEA 端點，您必須建立並註冊特別設定的 PowerShell 工作階段組態檔，該組態檔可使用 **New-PSSessionConfigurationFile** Cmdlet 產生，
@@ -128,8 +128,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 若要供 JEA 工作階段組態使用，必須在名為 “RoleCapabilities” 的資料夾中，將角色功能儲存為有效的 PowerShell 模組。 如有需要，模組可能會有多個角色功能檔案。
 
 若要開始設定使用者可存取的哪些 Cmdlet、函數、別名及指令碼可在連接到 JEA 工作階段時存取，請遵循註解化的範本，將您自己的規則加入角色功能檔案中。 如需深入了解如何設定角色功能，請參閱完整的[體驗指南](http://aka.ms/JEA)。
@@ -141,9 +141,11 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>連接到 JEA 端點
+
 連接到 JEA 端點與連接到其他 PowerShell 端點的運作方式一樣。  您只需要提供您的 JEA 端點名稱作為 **New-PSSession**、**Invoke-Command**或 **Enter-PSSession** 的 "ConfigurationName" 參數。
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 一旦您已經連接到 JEA 工作階段，將限制您可執行的命令，這些命令必須列在您可存取之角色功能中的允許清單。 如果您嘗試執行任何您的角色不允許的命令，將會發生錯誤。

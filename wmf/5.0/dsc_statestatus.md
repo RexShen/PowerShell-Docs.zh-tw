@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892564"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093876"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一且一致的狀態和狀態表示法
 
@@ -15,11 +15,11 @@ ms.locfileid: "37892564"
 LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽和整合︰
 
 1. Notprocessed 資源不會影響 LCM 狀態與 DSC 狀態。
-2. 一旦遇到要求重新開機的資源，LCM 就會停止處理更多資源。
-3. 要求重新開機的資源不處於所需的狀態，直到重新開機真正發生。
-4. 在發生失敗的資源之後，只要其他資源不是依存於失敗的資源，LCM 就會持續處理更多資源。
-5. `Get-DscConfigurationStatus` Cmdlet 所傳回的整體狀態是所有資源狀態的超集。
-6. PendingReboot 狀態為 PendingConfiguration 狀態的超集。
+1. 一旦遇到要求重新開機的資源，LCM 就會停止處理更多資源。
+1. 要求重新開機的資源不處於所需的狀態，直到重新開機真正發生。
+1. 在發生失敗的資源之後，只要其他資源不是依存於失敗的資源，LCM 就會持續處理更多資源。
+1. `Get-DscConfigurationStatus` Cmdlet 所傳回的整體狀態是所有資源狀態的超集。
+1. PendingReboot 狀態為 PendingConfiguration 狀態的超集。
 
    下表說明一些典型狀況下的結果狀態和與狀態相關的屬性。
 

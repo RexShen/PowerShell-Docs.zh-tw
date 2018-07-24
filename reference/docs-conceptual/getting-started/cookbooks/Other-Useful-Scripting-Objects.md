@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 其他有用的指令碼物件
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: 2ae9bc1864daedbcb0070c5f3862a6c98f8db2d4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 58acfd05ff1ae1d9aa5f3a3576b8fb320ba4abbd
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893275"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093900"
 ---
 # <a name="other-useful-scripting-objects"></a>其他有用的指令碼物件
 
@@ -40,12 +40,13 @@ $psUnsupportedConsoleApplications
 $psLocalHelp | Format-List
 ```
 
-### <a name="pslocalhelp-sample-output"></a>$psLocalHelp 範例輸出
+```output
+Key   : Add-Computer
+Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
-|||
-|-|-|
-|索引鍵：Add-Computer|值： WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
-|索引鍵：Add-Content|值︰WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
+Key   : Add-Content
+Value : WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm
+```
 
 下列指令碼會在清單中新增項目。
 
@@ -61,12 +62,13 @@ $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-5
 $psOnlineHelp | Format-List
 ```
 
-## <a name="psonilnehelp-sample-output"></a>$psOnilneHelp 範例輸出
+```output
+Key   : Add-Computer
+Value : http://go.microsoft.com/fwlink/p/?LinkID=135194
 
-|||
-|-|-|
-|索引鍵：Add-Computer|值：http://go.microsoft.com/fwlink/p/?LinkID=135194|
-|索引鍵：Add-Content|值：http://go.microsoft.com/fwlink/p/?LinkID=113278|
+Key   : Add-Content
+Value : http://go.microsoft.com/fwlink/p/?LinkID=113278
+```
 
 下列指令碼會在清單中新增項目。
 

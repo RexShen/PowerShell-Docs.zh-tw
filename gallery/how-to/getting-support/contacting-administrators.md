@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 連絡資源庫系統管理員
-ms.openlocfilehash: 6673b1a8e92312f343d6f809b4a708c400ef20f2
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218887"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093816"
 ---
 # <a name="contact-gallery-administrators"></a>連絡資源庫系統管理員
 
@@ -24,6 +24,6 @@ ms.locfileid: "34218887"
 
 ## <a name="how-to-contact-gallery-administrators"></a>連絡資源庫管理員的方式
 
-1. 傳送電子郵件給我們：cgadmin@microsoft.com。
+1. 傳送電子郵件給我們：<cgadmin@microsoft.com>。
 2. 若您要檢舉不當使用的項目，可於左方面板項目資訊下方找到 [檢舉不當使用] 連結。
 3. 若為任何其他資源庫相關的一般問題，請將您的問題提交至 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

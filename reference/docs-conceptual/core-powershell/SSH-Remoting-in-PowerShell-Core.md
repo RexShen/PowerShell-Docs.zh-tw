@@ -46,8 +46,8 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 使用 [安裝] 指示，安裝 GitHub 中最新的 [Win32 OpenSSH] 組建
-3. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
+1. 使用 [安裝] 指示，安裝 GitHub 中最新的 [Win32 OpenSSH] 組建
+1. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
    - 確定已啟用密碼驗證
 
    ```
@@ -59,8 +59,8 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
     ```
 
     > [!NOTE]
-    OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。
-    請參閱 [GitHub 上的這個問題來取得詳細資訊](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
+    > OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。
+    > 請參閱 [GitHub 上的這個問題來取得詳細資訊](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
 
     其中一種解決方案是建立未包含空格之 Powershell 安裝目錄的符號連結：
 
@@ -84,27 +84,27 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
    PubkeyAuthentication yes
    ```
 
-4. 重新啟動 sshd 服務
+1. 重新啟動 sshd 服務
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. 將安裝 OpenSSH 的路徑新增至路徑環境變數
+1. 將安裝 OpenSSH 的路徑新增至路徑環境變數
    - 這應該是與 `C:\Program Files\OpenSSH\` 行一起
    - 這樣可以找到 ssh.exe
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) 電腦上的安裝
 
 1. 安裝 GitHub 中最新的 [PowerShell Core for Linux] 組建
-2. 視需要安裝 [Ubuntu SSH]
+1. 視需要安裝 [Ubuntu SSH]
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. 編輯 /etc/ssh 位置中的 sshd_config 檔案
+1. 編輯 /etc/ssh 位置中的 sshd_config 檔案
    - 確定已啟用密碼驗證
 
    ```
@@ -123,7 +123,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
    PubkeyAuthentication yes
    ```
 
-4. 重新啟動 sshd 服務
+1. 重新啟動 sshd 服務
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
      - 按一下 `Sharing`
      - 檢查 `Remote Login` - 應該為 `Remote Login: On`
      - 允許存取適當的使用者
-2. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案
+1. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案
    - 使用您慣用的編輯器，或
 
      ```bash
@@ -162,7 +162,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
      PubkeyAuthentication yes
      ```
 
-3. 重新啟動 sshd 服務
+1. 重新啟動 sshd 服務
 
    ```bash
    sudo launchctl stop com.openssh.sshd

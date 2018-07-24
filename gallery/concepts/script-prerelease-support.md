@@ -3,12 +3,12 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 指令碼的發行前版本
-ms.openlocfilehash: 5b93da418b836d537491d3f1e4e29fa2e61f2f77
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7d4cec9d2b4ee5ad0b19ad5d9c68bb68747abd57
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188559"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093843"
 ---
 # <a name="prerelease-versions-of-scripts"></a>指令碼的發行前版本
 
@@ -38,7 +38,6 @@ ms.locfileid: "34188559"
 ...
 
 #>
-
 ```
 
 若要使用發行前版本的尾碼，版本字串必須符合下列需求：

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 設定資料的認證選項
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190038"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093672"
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 >適用於：Windows PowerShell 5.0
@@ -273,8 +273,6 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > `NodeName` 得等同星號，必須有特定的節點名稱。
 
 **Microsoft 不建議您使用純文字密碼，以免造成嚴重的安全性風險。**
-
-使用 Azure Automation DSC 服務時則為例外，這是因為資料一律會以加密過的狀態儲存 (傳輸中、在服務中待用以及在節點上待用)。
 
 ## <a name="domain-credentials"></a>網域認證
 
