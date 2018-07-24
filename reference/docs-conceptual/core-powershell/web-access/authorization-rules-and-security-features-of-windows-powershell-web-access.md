@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893717"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094240"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -86,7 +86,7 @@ Windows PowerShell Web 存取的最終安全性階層是目標電腦本身的安
 根據預設，Windows PowerShell Web 存取在閘道及目標電腦上都會使用主要的使用者名稱和密碼進行驗證。 網頁型登入頁面會在標題為**選用連線設定**的區段中提供選項，讓使用者可視需要為目標電腦提供不同的認證。 如果使用者沒有提供替代認證，就會使用連線閘道的主要使用者名稱及密碼來連線目標電腦。
 
 授權規則可用來允許使用者存取特定工作階段設定。 您可以為 Windows PowerShell Web 存取建立_受限制的 Runspace_ 或工作階段設定，並允許特定使用者在登入 Windows PowerShell Web 存取時只能連線到特定的工作階段設定。 您可以使用存取控制清單 (ACL) 來判斷哪些使用者有權存取特定端點，然後使用本節描述的授權規則進一步限制特定使用者組的端點存取權。
-如需受限制之 Runspace 的詳細資訊，請參閱[建立受限制的 Runspace](https://msdn.microsoft.com/library/dn614668) \(英文\)。
+如需受限制之 Runspace 的詳細資訊，請參閱 [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668) (建立受限制的 Runspace)。
 
 ### <a name="configuring-authorization-rules"></a>設定授權規則
 
@@ -103,9 +103,9 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 1. 執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
-   - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]，然後按一下 [以系統管理員身分執行]。
+   - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-   - 在 Windows [開始] 畫面上，以滑鼠右鍵按一下 [Windows PowerShell]，然後按一下 [以系統管理員身分執行]。
+   - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
 2. **選擇性步驟**：若要使用工作階段設定限制使用者存取：
 
@@ -163,9 +163,8 @@ Get-PswaAuthorizationRule `
 
 - 某系統管理員已經設定私人測試環境，且想要讓所有已獲授權的網路使用者在網路上存取他們通常可以存取的所有電腦，以及存取他們通常可以存取的所有工作階段設定。 因為這是私人測試環境，所以系統管理員建立的授權規則並不安全。 - 系統管理員執行 `Add-PswaAuthorizationRule * * *` Cmdlet，其中使用萬用字元 **\*** 來代表所有使用者、所有電腦以及所有設定。 - 這個規則相當於下列項目：`Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *`。
 
-  >[!NOTE]
-  >
-  >如需安全的環境，不建議使用這個規則，並略過 Windows PowerShell Web 存取所提供的授權規則安全性階層。
+  > [!NOTE]
+  > 如需安全的環境，不建議使用這個規則，並略過 Windows PowerShell Web 存取所提供的授權規則安全性階層。
 
 - 系統管理員必須讓使用者在包含工作群組和網域的環境中連線到目標電腦，在這種環境中，工作群組電腦偶爾會用來連線到網域的目標電腦，而網域中的電腦偶爾也會用來連線工作群組中的目標電腦。 系統管理員在工作群組中有閘道伺服器 *PswaServer*；網域中則有目標電腦 *srv1.contoso.com*。 使用者 *Chris* 是工作群組閘道伺服器和目標電腦上的授權本機使用者。 他在工作群組伺服器的使用者名稱為 *chrisLocal*，而他在目標電腦的使用者名稱為 *contoso\\chris*。 如果要授與 Chris 存取 srv1.contoso.com 的權限，系統管理員要新增下列規則。
 
@@ -174,16 +173,15 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
    -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 ```
 
-之前的規則範例會在閘道伺服器驗證 Chris，然後授與他存取 *srv1* 的權限。 在登入頁面上，Chris 必須在 [選用連線設定] 區域 (*contoso\\chris*) 中提供第二組認證。 閘道伺服器會使用這組額外的認證，在目標電腦 *srv1.contoso.com* 上驗證他。
+之前的規則範例會在閘道伺服器驗證 Chris，然後授與他存取 *srv1* 的權限。 在登入頁面上，Chris 必須在 **[選用連線設定]** 區域 (*contoso\\chris*) 中提供第二組認證。 閘道伺服器會使用這組額外的認證，在目標電腦 *srv1.contoso.com* 上驗證他。
 
 在先前的案例中，Windows PowerShell Web 存取必須先成功完成下列各項且至少獲得一個授權規則的允許，才能順利建立與目標電腦的連線。
 
 1. 利用 *server_name*\\*user_name* 格式將使用者名稱新增到授權規則，以便在工作群組閘道伺服器上進行驗證
 
-2. 使用登入頁面上 [選用連線設定] 區域中提供的替代認證，在目標電腦上進行驗證
+1. 使用登入頁面上 [選用連線設定] 區域中提供的替代認證，在目標電腦上進行驗證
 
    > [!NOTE]
-   >
    > 如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱[建立網域及樹系信任](https://technet.microsoft.com/library/cc794775.aspx")。
    > 如需如何將工作群組電腦新增至信任主機清單的詳細資訊，請參閱[使用伺服器管理員進行遠端管理](https://technet.microsoft.com/library/dd759202.aspx)
 
