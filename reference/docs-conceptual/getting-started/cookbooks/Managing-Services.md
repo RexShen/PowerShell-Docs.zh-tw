@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理服務
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: f3231d1922568e552534f3d3face3864d1610d65
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951193"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094165"
 ---
 # <a name="managing-services"></a>管理服務
 
-有八個針對各種服務工作設計的核心服務 Cmdlet。 我們將只探討列出及變更服務執行中狀態的 Cmdlet，但您可以使用 **Get-Help \&#42;-Service** 取得服務 Cmdlet 清單，並使用 **Get-Help<Cmdlet-Name>** (例如 **Get-Help New-Service**) 尋找每個服務 Cmdlet 的相關資訊。
+有八個針對各種服務工作設計的核心服務 Cmdlet。 我們只會探討列出及變更服務的執行中狀態，但您可以使用 **Get-Help \*-Service** 取得服務 Cmdlet 清單，以及使用 **Get-Help \<Cmdlet 名稱\>** (例如 **Get-Help New-Service**) 尋找各個服務 Cmdlet 的相關資訊。
 
 ## <a name="getting-services"></a>取得服務
 

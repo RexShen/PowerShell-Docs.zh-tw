@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190004"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094063"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
@@ -24,10 +24,10 @@ Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。 在 Windows Serve
 [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) Cmdlet 會從目標節點取得設定狀態的相關資訊。
 高級物件已傳回，此物件包含關於設定是否順利執行的高等級資訊。 您可以深入了解此物件，以探索有關設定執行的詳細資料，例如︰
 
-* 所有失敗的資源
-* 要求重新開機的任何資源
-* 在設定執行時中繼設定的設定
-* 等。
+- 所有失敗的資源
+- 要求重新開機的任何資源
+- 在設定執行時中繼設定的設定
+- 等。
 
 下列的參數集傳回上次設定執行時的狀態資訊︰
 
@@ -118,8 +118,8 @@ Consistency engine was run successfully.
 
 DSC 事件的特定記錄結構，能讓使用者彙總一個 DSC 工作的事件。 結構如下：
 
-**工作識別碼：<Guid>**
-**<Event Message>**
+**作業識別碼：\<Guid\>**
+**\<事件訊息\>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>收集單一 DSC 作業的事件
 
@@ -281,7 +281,6 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
 您也可以使用 `Newest` 參數指定只要最近作業的結果︰
@@ -618,10 +617,13 @@ onlyProperty                            PSComputerName
 ## <a name="see-also"></a>另請參閱
 
 ### <a name="reference"></a>參考資料
-* [DSC 記錄檔資源](logResource.md)
+
+- [DSC 記錄檔資源](logResource.md)
 
 ### <a name="concepts"></a>概念
-* [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
+
+- [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)
 
 ### <a name="other-resources"></a>其他資源
-* [Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell 預期狀態設定 Cmdlet](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
