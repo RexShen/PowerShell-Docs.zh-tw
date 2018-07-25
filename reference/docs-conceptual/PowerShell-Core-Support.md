@@ -31,24 +31,47 @@ Modern 生命週期原則也需要 Microsoft 在中斷產品 (即 PowerShell Cor
 
 ## <a name="supported-platforms"></a>支援的平台
 
-下列平台正式支援 PowerShell Core：
+請參閱下表，以了解您使用的 PowerShell Core 版本所正式支援的平台。
 
-* Windows 7、8.1 和 10
-* Windows Server 2008 R2、2012 R2、2016
-* [Windows Server 半年通道][semi-annual]
-* Ubuntu 14.04、16.04 和 17.04
-* Debian 8.7+ 和 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27、28
-* macOS 10.12+
+我們的社群也針對部分平台貢獻了套件，但這些套件未受正式支援。
+這些套件在表格中標示為 `Community`。
 
-我們的社群也提供下列平台的套件，但未正式進行支援：
+列為 `Experimental` 的平台為非正式支援，但可用於實驗和提供意見反應。
 
-* Arch Linux
-* Kali Linux
-* AppImage (作用於多個 Linux 平台)
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7、8.1 和 10                            | 支援   | 支援   |
+| Windows Server 2008 R2、2012 R2、2016             | 支援   | 支援   |
+| [Windows Server 半年通道][semi-annual] | 支援   | 支援   |
+| Ubuntu 14.04 和 16.04                           | 支援   | 支援   |
+| Ubuntu 17.10 和 18.04                           |             | 支援   |
+| Debian 8.7+ 和 9                                | 支援   | 支援   |
+| CentOS 7                                          | 支援   | 支援   |
+| Red Hat Enterprise Linux 7                        | 支援   | 支援   |
+| OpenSUSE 42.2                                     | 支援   | 支援   |
+| Fedora 27                                         | 支援   | 支援   |
+| Fedora 28                                         |             | 支援   |
+| macOS 10.12+                                      | 支援   | 支援   |
+| Arch                                              | 群體   | 群體   |
+| Raspbian                                          | Experimental| 群體   |
+| Kali                                              | 群體   | 群體   |
+| AppImage (作用於多個 Linux 平台)     | 群體   | 群體   |
+
+## <a name="platform-which-are-out-of-support"></a>支援終止的平台
+
+當平台版本到達平台擁有者所定義的生命週期結束時，PowerShell Core 也會停止對該平台版本提供支援。 先前推出的套件仍然可供需要存取的客戶取得，但將不再提供任何類型的正式支援和更新。
+
+因此，以下版本的支援已經由發行版本擁有者終止，且不受支援。
+
+| 作業系統       | 版本 | 生命週期結束                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| openSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| openSUSE | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 
 ## <a name="notes-on-licensing"></a>授權附註
 
