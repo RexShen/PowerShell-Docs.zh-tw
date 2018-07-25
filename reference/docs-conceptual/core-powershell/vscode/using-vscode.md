@@ -58,8 +58,8 @@
 如果您想要搭配使用特定安裝的 PowerShell 與 Visual Studio Code，則必須在使用者設定檔中新增變數。
 
 1. 按一下 [檔案]-> [喜好設定]-> [設定]
-2. 隨即出現兩個編輯器窗格。
-   在最右邊的窗格中 (`settings.json`)，在兩個大括弧中間 (`{`和`}`) 插入下列適用於您作業系統的設定，使用已安裝的 PowerShell 版本取代 *<version>*：
+1. 隨即出現兩個編輯器窗格。
+   在最右邊的窗格中 (`settings.json`)，在兩個大括弧中間 (`{`和`}`) 插入下列適用於您作業系統的設定，並使用所安裝 PowerShell 的版本來取代 **\<version\>**：
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. 以所需 PowerShell 可執行檔的路徑取代設定
-4. 儲存設定檔並重新啟動 Visual Studio Code
+1. 以所需 PowerShell 可執行檔的路徑取代設定
+1. 儲存設定檔並重新啟動 Visual Studio Code
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code 的組態設定
 

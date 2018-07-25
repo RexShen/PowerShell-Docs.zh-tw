@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的項目資訊清單值
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893472"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093968"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的項目資訊清單值
 
@@ -84,65 +84,67 @@ PowerShell 資源庫 [Edit item] \(編輯項目\) 頁面可讓發行者變更針
 在某些案例中，標籤旁邊列有相似但可能較不理想的選項。
 最佳做法是使用「偏好的標籤」，因為這樣會造成的干擾較少，且取用者有較佳的搜尋結果。
 
-| **偏好的標籤** | **替代選項和注意事項** |
+| 偏好的標籤 | 替代選項和注意事項 |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration 太長，因此不建議使用 |
-| **ResourceManager** | ARM 是用於描述處理器群組，不應該用於 Azure Resource Manager | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | 目前它本身未使用 AD  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **安全性** | Defense 較不精確 |
-| **Database** | 不建議使用 Databases (複數) |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Deployment** | 相較之下較少使用 Deploy |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | 不建議使用 Testing |
-| **VersionControl** | Version 較不精確，但使用的頻率較高  |
-| **Logging** | 建議用於將「記錄」當成一個動作 |
-| **Log** | 建議用於將「記錄」當成一個東西 |
-| **Backup** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Network** | Networking 為相似的字，但較少使用 |
-| **SharePoint** |  |
-| **Reporting** | Reporting 是一個動作，Report 是一個東西 |
-| **Report** | Report 是一個東西 |
-| **WinRM** |  |
-| **Monitoring** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Color** |  |
-| **DNS** |  |
-| **Office365** | 建議拼為 Office。 雖然 O365 較簡短，但較少使用 | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | 通常不以 HyperV 作為標籤 |
-| **Configuration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | 主要用於 AzureRM 模組 |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration 太長，因此不建議使用 |
+| ResourceManager | ARM 是用於描述處理器群組，不應該用於 Azure Resource Manager |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| 自動化 |  |
+| REST |  |
+| ActiveDirectory | 目前它本身未使用 AD  |
+| SQLServer |  |
+| DBA |  |
+| 安全性 | Defense 較不精確 |
+| 資料庫 | 不建議使用 Databases (複數) |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| 部署 | 相較之下較少使用 Deploy |
+| 雲端 |  |
+| GIT |  |
+| Test | 不建議使用 Testing |
+| VersionControl | Version 較不精確，但使用的頻率較高  |
+| 記錄 | 建議用於將「記錄」當成一個動作 |
+| 記錄檔 | 建議用於將「記錄」當成一個東西 |
+| 備用 |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| 存放 |  |
+| GitHub |  |
+| Json |  |
+| Exchange |  |
+| 網路 | Networking 為相似的字，但較少使用 |
+| SharePoint |  |
+| 報告 | Reporting 是一個動作，Report 是一個東西 |
+| 報告 | Report 是一個東西 |
+| WinRM |  |
+| 監視 |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Color |  |
+| DNS |  |
+| Office365 | 建議拼為 Office。 雖然 O365 較簡短，但較少使用 |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | 通常不以 HyperV 作為標籤 |
+| 設定 |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI |  |
+| 防火牆 |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | 主要用於 AzureRM 模組 |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

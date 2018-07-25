@@ -1,19 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218717"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093757"
 ---
 # <a name="reporting-on-jea"></a>JEA 上的報告
-若要報告 JEA 組態的狀態，您可以使用︰
-1.  **Get-PSSessionConfiguration** 以傳回指定電腦上所有註冊端點的清單。
-2.  **Get-PSSessionCapability** 以報告任何指定使用者在特定端點上具備的功能。
 
-以下是 **Get PSSessionCapability** 的範例：
+若要報告 JEA 組態的狀態，您可以使用︰
+
+1. **Get-PSSessionConfiguration** 以傳回指定電腦上所有註冊端點的清單。
+1. **Get-PSSessionCapability** 以報告任何指定使用者在特定端點上具備的功能。
+
+以下是 **Get-PSSessionCapability** 的範例：
+
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -35,8 +38,6 @@ Function        Measure-Object
 Function        Out-Default
 Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
-
-
 ```
 
 若要報告使用者在 JEA 工作階段期間進行的_動作_，您可以︰
