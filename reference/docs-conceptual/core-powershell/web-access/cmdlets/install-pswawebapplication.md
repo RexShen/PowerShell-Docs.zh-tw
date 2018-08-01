@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: powershell,cmdlet
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189596"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268294"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>概要
 
-在 IIS 中設定 Windows PowerShell® Web 存取 Web 應用程式。
+在 IIS 中設定 Windows PowerShell Web 存取 Web 應用程式。
 
 ## <a name="syntax"></a>語法
 
@@ -25,7 +25,8 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>描述
 
-**Install-PswaWebApplication** Cmdlet 會設定 Windows PowerShell Web 存取 Web 應用程式。 此 Cmdlet 會安裝 Web 應用程式、將它與網站建立關聯，並選擇性地使用 **useTestCertificate** 參數建立測試 SSL 憑證。 為了安全起見，網站管理員不應該將測試憑證用於生產環境。
+**Install-PswaWebApplication** Cmdlet 會設定 Windows PowerShell Web 存取 Web 應用程式。
+此 Cmdlet 會安裝 Web 應用程式、將它與網站建立關聯，並選擇性地使用 **useTestCertificate** 參數建立測試 SSL 憑證。 為了安全起見，網站管理員不應該將測試憑證用於生產環境。
 
 ## <a name="parameters"></a>參數
 
@@ -42,7 +43,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 | 接受管線輸入？               | false                                |
 | 接受萬用字元？          | false                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 指定 Web 應用程式的名稱。 這會顯示為 Windows PowerShell Web 存取 URL 的最後一部分。
 
@@ -55,7 +56,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 | 接受管線輸入？               | false                                |
 | 接受萬用字元？          | false                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
+### <a name="-websitename"></a>-WebSiteName
 
 指定要安裝此 Windows PowerShell Web 存取 Web 應用程式之網頁伺服器 (IIS) 網站的名稱。
 
@@ -95,8 +96,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-這個 Cmdlet 支援一般參數：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。
-如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)。
+這個 Cmdlet 支援一般參數：-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer 和 -OutVariable。 如需詳細資訊，請參閱 [about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)。
 
 ## <a name="inputs"></a>輸入
 

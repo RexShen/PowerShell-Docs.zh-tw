@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: cd3338ae305896e282056a871974e5f899ef6ff5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093757"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268573"
 ---
 # <a name="reporting-on-jea"></a>JEA 上的報告
 
 若要報告 JEA 組態的狀態，您可以使用︰
 
 1. **Get-PSSessionConfiguration** 以傳回指定電腦上所有註冊端點的清單。
-1. **Get-PSSessionCapability** 以報告任何指定使用者在特定端點上具備的功能。
+2. **Get-PSSessionCapability** 以報告任何指定使用者在特定端點上具備的功能。
 
 以下是 **Get-PSSessionCapability** 的範例：
 
@@ -41,5 +41,6 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 ```
 
 若要報告使用者在 JEA 工作階段期間進行的_動作_，您可以︰
+
 1. 啟用該 JEA 端點的「即時權限提升」("over-the-shoulder") 記錄，並查閱記錄目錄中每個使用者動作的完整記錄
 2. 開啟 PowerShell 模組的記錄，並檢查 PowerShell 事件記錄檔。
