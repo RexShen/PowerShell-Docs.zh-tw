@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
-ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893683"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267995"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -102,8 +102,8 @@ Linux/macOS 上的 PowerShell 目前不支援可建立有限系統管理 (JEA) �
 
 下表列出已知在 Linux/macOS 上的 PowerShell 中無法運作的命令。
 
-|命令 |作業狀態 | 注意|
-|---------|------------------|------|
+|命令|作業狀態|注意|
+|--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
 |`Get-Acl`、`Set-Acl`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
 |`Get-AuthenticodeSignature`、`Set-AuthenticodeSignature`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
