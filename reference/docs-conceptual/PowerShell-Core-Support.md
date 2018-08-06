@@ -48,7 +48,7 @@ Modern 生命週期原則也需要 Microsoft 在中斷產品 (即 PowerShell Cor
 | Debian 8.7+ 和 9                                | 支援   | 支援   |
 | CentOS 7                                          | 支援   | 支援   |
 | Red Hat Enterprise Linux 7                        | 支援   | 支援   |
-| OpenSUSE 42.2                                     | 支援   | 支援   |
+| OpenSUSE 42.3                                     | 支援   | 支援   |
 | Fedora 27                                         | 支援   | 支援   |
 | Fedora 28                                         |             | 支援   |
 | macOS 10.12+                                      | 支援   | 支援   |
