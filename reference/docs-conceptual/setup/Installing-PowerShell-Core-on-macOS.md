@@ -4,19 +4,28 @@ PowerShell Core 支援 macOS 10.12 和更版本。
 GitHub [版本][]頁面上提供所有套件。
 安裝套件之後，請從終端機執行 `pwsh`。
 
-### <a name="installation-via-homebrew-on-macos-1012"></a>在 macOS 10.12 上透過 Homebrew 進行安裝
+### <a name="installation-via-homebrew-on-macos-1012"></a>在 macOS 10.12+ 上透過 Homebrew 進行安裝
 
 [Homebrew][ brew] 是 macOS 首選的套件管理員。
-如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
+從終端機視窗中，輸入 `brew` 來執行 Homebrew。  如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
 
-安裝好 Homebrew 之後，安裝 PowerShell 就很容易。
-首先，安裝 [Homebrew-Cask][cask]，以便安裝更多套件：
-
+> [!NOTE]
+> 如果您過去已安裝 Homebrew，那麼，比較好的辦法是執行 'brew update-reset' 與 'brew update'。
 ```sh
-brew tap caskroom/cask
+brew update-reset
+brew update
 ```
 
-現在，您可以安裝 PowerShell：
+> 較舊的 Homebrew 版本會使用 tap 'caskroom/cask'，其已被取代並遷移到 'homebrew/cask'。  詳細資訊位於 [Homebrew-cask][cask]。 使用 'brew tap' 命令來列出您目前的點選。  如果您看到 'caskroom/cask'，您可以使用 'brew update' 來讓 Homebrew 遷移點選。
+
+```sh
+brew tap
+brew update
+```
+
+當您安裝/更新 Homebrew 之後，安裝 PowerShell 就很容易。
+
+安裝 PowerShell：
 
 ```sh
 brew cask install powershell
@@ -26,6 +35,11 @@ brew cask install powershell
 
 ```sh
 pwsh
+```
+
+若要結束 PowerShell 並返回 Bash，請使用 'exit' 命令。 
+```sh
+exit
 ```
 
 發行新的 PowerShell 版本時，只要更新 Homebrew 的公式並升級 PowerShell 即可：
@@ -38,8 +52,45 @@ brew cask upgrade powershell
 > [!NOTE]
 > 您可從 PowerShell (pwsh) 主機內呼叫上命令，但必須結束並重新啟動 PowerShell 殼層，才能完成升級並重新整理 $PSVersionTable 中顯示的值。
 
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
+### <a name="installing-preview-via-homebrew-on-macos-1012"></a>在 macOS 10.12+ 上透過 Homebrew 安裝預覽
+
+[Homebrew][ brew] 是 macOS 首選的套件管理員。
+從終端機視窗中，輸入 `brew` 來執行 Homebrew。  如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
+
+> [!NOTE]
+> 如果您過去已安裝 Homebrew，那麼，比較好的辦法是執行 'brew update-reset' 與 'brew update'。
+```sh
+brew update-reset
+brew update
+```
+
+接著，您必須點選 `versions` casks 存放庫來取得預覽套件：
+
+```sh
+brew tap homebrew/cask-versions
+```
+
+安裝 PowerShell 預覽：
+
+```sh
+brew cask install powershell-preview
+```
+
+最後，確認您的安裝可以正常執行：
+
+```sh
+pwsh-preview
+```
+
+發行新的 PowerShell 版本時，只需更新 Homebrew 的公式並升級 PowerShell 預覽即可：
+
+```sh
+brew update
+brew cask upgrade powershell-preview
+```
+
+> [!NOTE]
+> 您可從 PowerShell (pwsh) 主機內呼叫上命令，但必須結束並重新啟動 PowerShell 殼層，才能完成升級並重新整理 $PSVersionTable 中顯示的值。
 
 ### <a name="installation-via-direct-download"></a>透過直接下載來安裝
 
@@ -113,5 +164,15 @@ PowerShell 遵循 macOS 上的 [XDG 基底目錄規格][xdg-bds]。
 因為 macOS 是 BSD 的衍生項，所以使用的前置詞是 `/usr/local` 而非 `/opt`。
 因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/6.0.2/`，而且符號連結放在 `/usr/local/bin/pwsh`。
 
+## <a name="additional-resources"></a>其他資源
+
+* [Homebrew Web][brew]
+* [Homebrew Github 存放庫][GitHub]
+* [Homebrew-Cask][cask]
+
+
+[brew]: http://brew.sh/
+[GitHub]: https://github.com/Homebrew
+[Cask]: https://github.com/Homebrew/homebrew-cask
 [版本]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

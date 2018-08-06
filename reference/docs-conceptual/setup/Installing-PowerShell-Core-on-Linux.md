@@ -1,6 +1,6 @@
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.2][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發行版本，您可以嘗試使用 [PowerShell AppImage][lai]。
 您也可以直接使用 Linux [`tar.gz` 封存][tar]嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中的作業系統，設定必要的相依性。
@@ -11,11 +11,12 @@ GitHub [版本][]頁面上提供所有套件。
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u17]: #ubuntu-1710
+[u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse-422
+[opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
 [lai]: #linux-appimage
@@ -29,7 +30,7 @@ GitHub [版本][]頁面上提供所有套件。
 
 下表是使用各種套件管理員安裝穩定和預覽套件的命令：
 
-|散發|穩定命令 | 預覽命令 |
+|發行版本|穩定命令 | 預覽命令 |
 |---------------|---------------|-----------------|
 | Ubuntu、Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS、RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
@@ -205,7 +206,7 @@ sudo apt-get update
 sudo apt-get install -y powershell-preview
 
 # Start PowerShell
-pwsh
+pwsh-preview
 ```
 
 以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
@@ -225,7 +226,7 @@ sudo apt-get install -f
 > `dpkg -i` 命令因相依性不相符而失敗。
 > 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
-### <a name="uninstallation---ubuntu-1710"></a>解除安裝 - Ubuntu 17.10
+### <a name="uninstallation---ubuntu-1804"></a>解除安裝 - Ubuntu 18.04
 
 ```sh
 sudo apt-get remove powershell
@@ -416,7 +417,7 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.0
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-422"></a>OpenSUSE 42.2
+## <a name="opensuse-423"></a>OpenSUSE 42.3
 
 安裝 PowerShell Core 時，`zypper` 可能會回報以下錯誤：
 
@@ -434,7 +435,7 @@ zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
 
 然後在安裝 PowerShell 套件時，選擇 `break powershell-6.0.1-1.rhel.7.x86_64 by ignoring some of its dependencies` 解決方案。
 
-### <a name="installation-via-package-repository-preferred---opensuse-422"></a>透過套件存放庫安裝 (慣用) - OpenSUSE 42.2
+### <a name="installation-via-package-repository-preferred---opensuse-423"></a>透過套件存放庫安裝 (慣用) - OpenSUSE 42.3
 
 PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫進行簡易安裝 (及更新)。
 
@@ -442,8 +443,8 @@ PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫進行簡易安�
 # Register the Microsoft signature key
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 
-# Add the Microsoft Product feed
-curl https://packages.microsoft.com/config/rhel/7/prod.repo | sudo tee /etc/zypp/repos.d/microsoft.repo
+# Add the Microsoft Repository
+zypper ar https://packages.microsoft.com/rhel/7/prod/
 
 # Update the list of products
 sudo zypper update
@@ -455,7 +456,7 @@ sudo zypper install powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-422"></a>透過直接下載安裝 - OpenSUSE 42.2
+### <a name="installation-via-direct-download---opensuse-423"></a>透過直接下載安裝 - OpenSUSE 42.3
 
 將[版本][]頁面上的 RPM 套件 `powershell-6.0.2-1.rhel.7.x86_64.rpm` 下載到 OpenSUSE 電腦。
 
@@ -471,7 +472,7 @@ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
 sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.0.2/powershell-6.0.2-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---opensuse-422"></a>解除安裝 - OpenSUSE 42.2
+### <a name="uninstallation---opensuse-423"></a>解除安裝 - OpenSUSE 42.3
 
 ```sh
 sudo zypper remove powershell
@@ -566,7 +567,7 @@ chmod a+x powershell-6.0.1-x86_64.AppImage
 
 [AppImage][] 讓您不用安裝就可執行 PowerShell。
 它是將 PowerShell 及其相依性 (包括.NET Core 系統相依性) 組合成一個緊密套件的可攜式應用程式。
-此套件的運作不受使用者的 Linux 發行版本影響，且是單一的二進位檔。
+此套件是單一的二進位檔，可不受使用者的 Linux 發行版本影響而運作。
 
 [appimage]: http://appimage.org/
 
@@ -676,7 +677,7 @@ PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。
 | Ubuntu 18.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60 |
 | Debian 8 (Jessie)  | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Debian 9 (Stretch) | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE 42.2 | libunwind、libcurl、openssl-libs、libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind、libcurl、openssl-libs、libicu |
 | Fedora 27 <br> Fedora 28 | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
 若要在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。

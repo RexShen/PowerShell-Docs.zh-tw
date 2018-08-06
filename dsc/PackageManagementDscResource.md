@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC PackageManagement 資源
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892496"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268087"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC PackageManagement 資源
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   |
-|---|---|
+| 屬性 | 描述 |
+| --- | --- |
 | 名稱| 指定要安裝或解除安裝之套件的名稱。|
 | AdditionalParameters| 針對將傳至 `Get-Package -AdditionalArguments` 的參數，特定提供者的雜湊表。 例如，針對 NuGet 提供者，您可以傳遞 DestinationPath 之類的其他參數。|
 | Ensure| 判斷是否要安裝或解除安裝套件。|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>其他參數
 
 下表列出 AdditionalParameters 屬性的選項。
-|  參數  | 描述   |
-|---|---|
+
+| 參數 | 描述 |
+| --- | --- |
 | DestinationPath| 由內建 Nuget 提供者之類的提供者使用。 指定您想要安裝套件的檔案位置。|
-| InstallationPolicy| 由內建 Nuget 提供者之類的提供者使用。 判斷您是否信任套件來源。 只能是 "Untrusted" 或 "Trusted"。|
+| InstallationPolicy| 由內建 Nuget 提供者之類的提供者使用。 判斷您是否信任套件來源。 值為：`Untrusted` 或 `Trusted` 其中一個。|
 
 ## <a name="example"></a>範例
 

@@ -3,22 +3,22 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理服務
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: e2388f5d73a320a69faae0772c8403a7d77f8b52
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 81fd8802215da80ce22fa3fd4750b1df6efe8206
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094165"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268070"
 ---
 # <a name="managing-services"></a>管理服務
 
-有八個針對各種服務工作設計的核心服務 Cmdlet。 我們只會探討列出及變更服務的執行中狀態，但您可以使用 **Get-Help \*-Service** 取得服務 Cmdlet 清單，以及使用 **Get-Help \<Cmdlet 名稱\>** (例如 **Get-Help New-Service**) 尋找各個服務 Cmdlet 的相關資訊。
+有八個針對各種服務工作設計的核心服務 Cmdlet。 我們只會探討列出及變更服務的執行中狀態，但您可以使用 `Get-Help \*-Service` 取得服務 Cmdlet 清單，以及使用 `Get-Help <Cmdlet-Name>` (例如 `Get-Help New-Service`) 尋找各個服務 Cmdlet 的相關資訊。
 
 ## <a name="getting-services"></a>取得服務
 
-您可以使用 **Get-Service** Cmdlet 取得本機或遠端電腦上的服務。 如同 **Get-Process**，在不使用參數的情況下使用 **Get-Service** 命令會傳回所有服務。 您可以依名稱篩選，甚至可以使用星號作為萬用字元︰
+您可以使用 `Get-Service` Cmdlet 取得本機或遠端電腦上的服務。 如同 `Get-Process`，在不使用參數的情況下使用 `Get-Service` 命令會傳回所有服務。 您可以依名稱篩選，甚至可以使用星號作為萬用字元︰
 
-```
+```powershell
 PS> Get-Service -Name se*
 
 Status   Name               DisplayName
@@ -30,7 +30,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 因為服務的實際名稱不一定很明顯，所以您有時可能需要依顯示名稱尋找服務。 您可以依特定名稱、使用萬用字元或使用顯示名稱清單來執行這項操作︰
 
-```
+```powershell
 PS> Get-Service -DisplayName se*
 
 Status   Name               DisplayName
@@ -63,7 +63,7 @@ Get-Service Cmdlet 有兩個對服務管理很有用的參數。 DependentServic
 
 下列命令會取得 LanmanWorkstation 服務所需的服務。
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
 
 Status   Name               DisplayName
@@ -76,7 +76,7 @@ Running  NSI                Network Store Interface Service
 
 下列命令會取得需要 LanmanWorkstation 服務的服務。
 
-```
+```powershell
 PS> Get-Service -Name LanmanWorkstation -DependentServices
 
 Status   Name               DisplayName
@@ -94,6 +94,7 @@ Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>停止、啟動、暫停及重新啟動服務
+
 所有服務 Cmdlet 都有相同的一般形式。 服務可以使用一般名稱或顯示名稱來指定，並接受清單和萬用字元作為值。 若要停止列印多工緩衝處理器，請使用：
 
 ```powershell
@@ -112,9 +113,9 @@ Start-Service -Name spooler
 Suspend-Service -Name spooler
 ```
 
-**Restart-Service** Cmdlet 與其他服務 Cmdlet 的運作方式相同，不過我們將示範一些更複雜的範例。 最簡單的使用方式是指定服務的名稱︰
+`Restart-Service` Cmdlet 與其他服務 Cmdlet 的運作方式相同，不過我們將示範一些更複雜的範例。 最簡單的使用方式是指定服務的名稱︰
 
-```
+```powershell
 PS> Restart-Service -Name spooler
 
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
@@ -126,7 +127,7 @@ PS>
 
 如果您想要重新啟動多項服務，您可以取得服務清單、加以篩選，然後執行重新啟動︰
 
-```
+```powershell
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
 
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
@@ -147,9 +148,10 @@ Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 
 ## <a name="setting-service-properties"></a>設定服務屬性
 
-Set-Service Cmdlet 會變更本機或遠端電腦上的服務屬性。 因為服務狀態是屬性，所以您可以使用這個 Cmdlet 來啟動、停止及暫停服務。 Set-Service Cmdlet 也有 StartupType 參數，可讓您變更服務啟動類型。
+`Set-Service` Cmdlet 會變更本機或遠端電腦上的服務屬性。 因為服務狀態是屬性，所以您可以使用這個 Cmdlet 來啟動、停止及暫停服務。
+Set-Service Cmdlet 也有 StartupType 參數，可讓您變更服務啟動類型。
 
-若要在 Windows Vista 和更新的 Windows 版本上使用 Set-Service，請使用 [以系統管理員身分執行] 選項開啟 Windows PowerShell。
+若要在 Windows Vista 和更新的 Windows 版本上使用 `Set-Service`，請使用 [以系統管理員身分執行] 選項開啟 Windows PowerShell。
 
 如需詳細資訊，請參閱 [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)。
 

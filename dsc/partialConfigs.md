@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: PowerShell 預期狀態設定部分設定
-ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 1b9ff8534f4c11d6859587830a04075be55a7d54
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093927"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268376"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell 預期狀態設定部分設定
 
-> 適用於︰Windows PowerShell 5.0 及更新版本。
+_適用於︰Windows PowerShell 5.0 及更新版本。_
 
-在 PowerShell 5.0 中，預期狀態設定 (DSC) 可讓設定以片段形式和從多個來源傳送。 目標節點上本機設定管理員 (LCM) 先將片段放在一起，再當成單一設定套用。 這項功能可讓團隊或個人之間共用設定控制權。
-例如，如果兩個或多個開發人員小組在一項服務共同作業，便有可能每個人都想要建立設定來管理服務的一部分。 每一種設定可能提取自不同提取伺服器，因此無法將它們加入開發的不同階段。 部分設定也可讓不同的個人或小組控制設定節點的不同層面，而不需要協調單一設定文件的編輯。 例如，一個小組可能會負責部署 VM 和作業系統，而另一個小組負責在該 VM 上部署其他應用程式和服務。 藉由部分設定，每個小組都可以建立自己的設定，而不會讓任一組的設定不必要地複雜。
+在 PowerShell 5.0 中，預期狀態設定 (DSC) 可讓設定以片段形式和從多個來源傳送。 目標節點上本機設定管理員 (LCM) 先將片段放在一起，再當成單一設定套用。 這項功能可讓團隊或個人之間共用設定控制權。 例如，如果兩個或多個開發人員小組在一項服務共同作業，便有可能每個人都想要建立設定來管理服務的一部分。 每一種設定可能提取自不同提取伺服器，因此無法將它們加入開發的不同階段。 部分設定也可讓不同的個人或小組控制設定節點的不同層面，而不需要協調單一設定文件的編輯。 例如，一個小組可能會負責部署 VM 和作業系統，而另一個小組負責在該 VM 上部署其他應用程式和服務。 藉由部分設定，每個小組都可以建立自己的設定，而不會讓任一組的設定不必要地複雜。
 
 您可以藉由推送模式、提取模式或兩者組合來使用部分設定。
 
@@ -24,8 +23,7 @@ ms.locfileid: "39093927"
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>設定推送模式部分設定的 LCM
 
-若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](/powershell/dsc/metaConfig)。
-下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
+若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](/powershell/dsc/metaConfig)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -111,8 +109,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 若要設定 LCM 從提取伺服器提取部分設定，您必須在 **ConfigurationRepositoryWeb** (適用於 HTTP 提取伺服器) 或 **ConfigurationRepositoryShare** (適用於 SMB 提取伺服器) 區塊定義提取伺服器。 接著建立 **PartialConfiguration** 區塊，該區塊可使用 **ConfigurationSource** 屬性參考提取伺服器。 您也需要建立 **Settings** 區塊以指定 LCM 使用提取模式，並指定提取伺服器與目標節點用來識別設定的 **ConfigurationNames** 或 **ConfigurationID**。 下列中繼設定會定義名為 CONTOSO-PullSrv 的 HTTP 提取伺服器，和使用該提取伺服器的兩個部分設定。
 
-如需使用 **ConfigurationNames** 設定 LCM 的詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。
-如需使用 **ConfigurationID** 設定 LCM 的相關資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigID.md)。
+如需使用 **ConfigurationNames** 設定 LCM 的詳細資訊，請參閱[使用設定名稱設定提取用戶端](pullClientConfigNames.md)。 如需使用 **ConfigurationID** 設定 LCM 的相關資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigID.md)。
 
 #### <a name="configuring-the-lcm-for-pull-mode-configurations-using-configuration-names"></a>使用設定名稱設定提取節點設定的 LCM
 
@@ -196,13 +193,12 @@ PartialConfigDemo
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>在提取伺服器上放置設定文件並為其命名 (ConfigurationNames)
 
-部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。
+部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program
+Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>PowerShell 5.1 中命名提取伺服器上的命名設定文件
 
-如果您僅從個別提取伺服器提取單一部分設定，設定文件可以使用任何名稱。
-如果您從提取伺服器提取多個部分設定，設定文件可以命名為 `<ConfigurationName>.mof` (其中 *ConfigurationName* 是部分設定的名稱) 或是 `<ConfigurationName>.<NodeName>.mof` (其中 *ConfigurationName* 是部分設定的名稱，而 *NodeName* 是目標節點的名稱)。
-這可讓您從 Azure 自動化 DSC 提取伺服器提取設定。
+如果您僅從個別提取伺服器提取單一部分設定，設定文件可以使用任何名稱。 如果您從提取伺服器提取多個部分設定，設定文件可以命名為 `<ConfigurationName>.mof` (其中 *ConfigurationName* 是部分設定的名稱) 或是 `<ConfigurationName>.<NodeName>.mof` (其中 *ConfigurationName* 是部分設定的名稱，而 *NodeName* 是目標節點的名稱)。 這可讓您從 Azure 自動化 DSC 提取伺服器提取設定。
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 中命名提取伺服器上的命名設定文件
 
@@ -217,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>在提取伺服器上放置設定文件並為其命名 (ConfigurationID)
 
-部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。 設定文件名稱必須如下命名：_ConfigurationName_。 *ConfigurationID8`.mof`，其中 _ConfigurationName_ 是部分設定的名稱，而 _ConfigurationID_ 是目標節點上 LCM 中所定義的設定識別碼。 在此範例中，設定文件應該命名如下：
+部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。 設定文件必須命名如下：`<ConfigurationName>.<ConfigurationID>.mof`，其中 _ConfigurationName_ 是部分設定的名稱，而 _ConfigurationID_ 是目標節點上 LCM 中所定義的設定識別碼。 在此範例中，設定文件應該命名如下：
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -232,8 +228,7 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>混合推送和提取模式中的部分設定
 
-您也可以混和部分設定的推送和提取模式。 也就是說，推送另一個部分設定時，您可能會有一個從提取伺服器提取的部分設定。 指定每個部分設定的重新整理模式，如同先前小節中所述。
-例如，下列中繼設定描述相同的範例，其中 `ServiceAccountConfig` 部分設定處於 Pull 模式，而 `SharePointConfig` 部分設定則處於 Push 模式。
+您也可以混和部分設定的推送和提取模式。 也就是說，推送另一個部分設定時，您可能會有一個從提取伺服器提取的部分設定。 指定每個部分設定的重新整理模式，如同先前小節中所述。 例如，下列中繼設定描述相同的範例，其中 `ServiceAccountConfig` 部分設定處於 Pull 模式，而 `SharePointConfig` 部分設定則處於 Push 模式。
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>使用 ConfigurationNames 的混合推送和提取模式
 
@@ -314,7 +309,8 @@ PartialConfigDemo
 
 請注意，在 Settings 區塊中指定的 **RefreshMode** 為 "Pull"，但 `SharePointConfig` 部分設定的 **RefreshMode** 則是 "Push"。
 
-如上面所述，對其各自的重新整理模式命名和放置設定 MOF 檔案。 呼叫 `Publish-DSCConfiguration` 來發佈 `SharePointConfig` 部分設定，然後等待 `ServiceAccountConfig` 設定從提取伺服器上提取，或藉由呼叫 [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) 強制重新整理。
+如上面所述，對其各自的重新整理模式命名和放置設定 MOF 檔案。
+呼叫 `Publish-DSCConfiguration` 來發佈 `SharePointConfig` 部分設定，然後等待 `ServiceAccountConfig` 設定從提取伺服器上提取，或藉由呼叫 [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) 強制重新整理。
 
 ## <a name="example-serviceaccountconfig-partial-configuration"></a>ServiceAccountConfig 部分設定範例
 
@@ -381,4 +377,4 @@ SharePointConfig
 
 [Windows PowerShell 預期狀態設定提取伺服器](pullServer.md)
 
-[Windows 設定本機設定管理員](/powershell/dsc/metaConfig)
+[Windows 設定本機設定管理員](metaConfig.md)

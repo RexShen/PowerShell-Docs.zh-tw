@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC 登錄資源
-ms.openlocfilehash: b77710d7a6fc599949e78c17af309ad88a1a0872
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 8d74473d167b70182c3a16c1d39d2a9e797afb1b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093580"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267716"
 ---
 # <a name="dsc-registry-resource"></a>DSC 登錄資源
 
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+_適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **Registry** 資源會提供一個機制，在目標節點管理登錄機碼和值。
 
@@ -33,8 +33,8 @@ Registry [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   |
-|---|---|
+| 屬性 | 描述 |
+| --- | --- |
 | 按鍵| 指出您要確保其特定狀態的登錄機碼路徑。 此路徑必須包含登錄區。|
 | ValueName| 指出登錄值的名稱。 若要新增或移除登錄機碼，請將此屬性指定為空字串，且不指定 ValueType 或 ValueData。 若要修改或移除登錄機碼的預設值，請將此屬性指定為空字串，同時也指定 ValueType 或 ValueData。|
 | Ensure| 指出金鑰和值是否存在。 若要確定存在，可將此屬性設定為 "Present"。 若要確定不存在，可將此屬性設定為 "Absent"。 預設值為 "Present"。|
@@ -62,4 +62,4 @@ Configuration RegistryTest
 ```
 
 > [!NOTE]
-> 變更 **HKEY\_CURRENT\_USER** 登錄區中的登錄設定必須以使用者認證執行設定，而不是使用系統認證。 您可以使用 **PsDscRunAsCredential** 屬性指定設定時所要使用的使用者認證。 如需範例，請參閱[以使用者認證執行 DSC](runAsUser.md)。
+> 變更 `HKEY\CURRENT\USER` 登錄區中的登錄設定必須以使用者認證執行設定，而不是使用系統認證。 您可以使用 **PsDscRunAsCredential** 屬性指定設定時所要使用的使用者認證。 如需範例，請參閱[以使用者認證執行 DSC](runAsUser.md)。

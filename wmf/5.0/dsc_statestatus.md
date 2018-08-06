@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093876"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267934"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一且一致的狀態和狀態表示法
 
@@ -15,40 +15,41 @@ ms.locfileid: "39093876"
 LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽和整合︰
 
 1. Notprocessed 資源不會影響 LCM 狀態與 DSC 狀態。
-1. 一旦遇到要求重新開機的資源，LCM 就會停止處理更多資源。
-1. 要求重新開機的資源不處於所需的狀態，直到重新開機真正發生。
-1. 在發生失敗的資源之後，只要其他資源不是依存於失敗的資源，LCM 就會持續處理更多資源。
-1. `Get-DscConfigurationStatus` Cmdlet 所傳回的整體狀態是所有資源狀態的超集。
-1. PendingReboot 狀態為 PendingConfiguration 狀態的超集。
+2. 一旦遇到要求重新開機的資源，LCM 就會停止處理更多資源。
+3. 要求重新開機的資源不處於所需的狀態，直到重新開機真正發生。
+4. 在發生失敗的資源之後，只要其他資源不是依存於失敗的資源，LCM 就會持續處理更多資源。
+5. `Get-DscConfigurationStatus` Cmdlet 所傳回的整體狀態是所有資源狀態的超集。
+6. PendingReboot 狀態為 PendingConfiguration 狀態的超集。
 
-   下表說明一些典型狀況下的結果狀態和與狀態相關的屬性。
+下表說明一些典型狀況下的結果狀態和與狀態相關的屬性。
 
-   | 案例                    | LCMState       | 狀態 | 要求重新開機  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-   | S**^**                          | 閒置                 | Success    | $false        | S                            | $null                          |
-   | F**^**                          | PendingConfiguration | 失敗    | $false        | $null                        | F                              |
-   | S,F                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
-   | F,S                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
-   | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
-   | F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
-   | S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
-   | F, r                            | PendingReboot        | 失敗    | $true         | $null                        | F, r                           |
-   | r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
-   | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
+| 案例                        | LCMState             | 狀態     | 要求重新開機 | ResourcesInDesiredState   | ResourcesNotInDesiredState |
+|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+| S**^**                          | 閒置                 | Success    | $false        | S                            | $null                          |
+| F**^**                          | PendingConfiguration | 失敗    | $false        | $null                        | F                              |
+| S,F                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
+| F,S                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
+| S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
+| F<sub>1</sub>, S, F<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S                            | F<sub>1</sub>, F<sub>2</sub>   |
+| S, r                            | PendingReboot        | Success    | $true         | S                            | r                              |
+| F, r                            | PendingReboot        | 失敗    | $true         | $null                        | F, r                           |
+| r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
+| r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
-   ^
-   S<sub>i</sub>：成功套用的一系列資源；F<sub>i</sub>︰未成功套用的一系列資源；r：需要重新開機的資源\*
+- S<sub>i</sub>︰一系列成功套用的資源
+- F<sub>i</sub>︰一系列套用失敗的資源
+- r︰需要重新開機的資源
 
-   ```powershell
-   $LCMState = (Get-DscLocalConfigurationManager).LCMState
-   $Status = (Get-DscConfigurationStatus).Status
+```powershell
+$LCMState = (Get-DscLocalConfigurationManager).LCMState
+$Status = (Get-DscConfigurationStatus).Status
 
-   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
-   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-   ```
+$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus Cmdlet 中的增強功能
 
@@ -56,32 +57,32 @@ LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽�
 
 ```powershell
 (Get-DscConfigurationStatus).StartDate | Format-List *
-DateTime : Friday, November 13, 2015 1:39:44 PM
-Date : 11/13/2015 12:00:00 AM
-Day : 13
-DayOfWeek : Friday
-DayOfYear : 317
-Hour : 13
-Kind : Local
+
+DateTime    : Friday, November 13, 2015 1:39:44 PM
+Date        : 11/13/2015 12:00:00 AM
+Day         : 13
+DayOfWeek   : Friday
+DayOfYear   : 317
+Hour        : 13
+Kind        : Local
 Millisecond : 886
-Minute : 39
-Month : 11
-Second : 44
-Ticks : 635830187848860000
-TimeOfDay : 13:39:44.8860000
-Year : 2015
+Minute      : 39
+Month       : 11
+Second      : 44
+Ticks       : 635830187848860000
+TimeOfDay   : 13:39:44.8860000
+Year        : 2015
 ```
 
-以下為傳回所有 DSC 作業記錄的範例，此作業記錄發生在每週和今天相同的日子。
+下列範例會傳回所有 DSC 作業記錄，這些記錄會發生在每週和當天相同的日子。
 
 ```powershell
 (Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-不變更節點設定的作業記錄 (也就是唯讀作業)。 因此，`Test-DscConfiguration`、`Get-DscConfiguration` 作業無法在從 `Get-DscConfigurationStatus` Cmdlet 傳回的物件中攙雜使用。
-中繼設定的設定作業記錄會加入至 `Get-DscConfigurationStatus` Cmdlet 傳回的物件。
+不變更節點設定的作業記錄 (也就是唯讀作業)。 因此，`Test-DscConfiguration`、`Get-DscConfiguration` 作業無法在從 `Get-DscConfigurationStatus` Cmdlet 傳回的物件中攙雜使用。 中繼設定的設定作業記錄會加入至 `Get-DscConfigurationStatus` Cmdlet 傳回的物件。
 
-以下是從 `Get-DscConfigurationStatus` –All Cmdlet 傳回的結果範例。
+以下是從 `Get-DscConfigurationStatus –All` Cmdlet 傳回的結果範例。
 
 ```output
 All configuration operations:

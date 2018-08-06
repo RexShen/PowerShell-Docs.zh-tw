@@ -3,18 +3,19 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具備相容 PowerShell 版本的指令碼
-ms.openlocfilehash: 386e65295641fb6932c13047246742531aeaec64
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093655"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267808"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>具備相容 PowerShell 版本的指令碼
 
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
 
 - **Desktop Edition︰** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
+
 - **Core Edition︰** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
 
 $PSVersionTable PSEdition 屬性會顯示正在執行的 PowerShell 版本。
@@ -34,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-除非在 #requires 陳述式上使用 PSEdition 參數的相容 PowerShell 版本上執行指令碼，否則指令碼作者可能會防止執行指令碼。
+指令碼作者可在 `#requires` 陳述式上使用 PSEdition 參數，只允許指令碼在相容的 PowerShell 版本上執行。
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
