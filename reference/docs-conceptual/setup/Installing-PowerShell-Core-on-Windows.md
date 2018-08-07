@@ -126,12 +126,12 @@ Nano Server 是一種「無周邊」作業系統。 目前有兩種方法可以�
 PowerShell Core 支援 WSMan 和 SSH 上的 PowerShell 遠端通訊協定 (PSRP)。
 如需詳細資訊，請參閱：
 
-- [PowerShell Core 中的 SSH 遠端][ssh-remoting]
-- [PowerShell Core 中的 WSMan 遠端處理][wsman-remoting]
+- [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
+- [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]
 
 ## <a name="artifact-installation-instructions"></a>成品安裝指示
 
-針對每個以 [AppVeyor][] 建置的 CI ，我們發行了具有 CoreCLR 的封存。
+我們在每個以 [AppVeyor][] 建置的 CI 上發行具有 CoreCLR 位元的封存。
 
 若要從 CoreCLR 成品安裝 PowerShell Core：
 
@@ -140,4 +140,9 @@ PowerShell Core 支援 WSMan 和 SSH 上的 PowerShell 遠端通訊協定 (PSRP)
 3. 將 ZIP 檔案解壓縮至 `bin` 目錄
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO --> [releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO -->
+
+[版本]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
