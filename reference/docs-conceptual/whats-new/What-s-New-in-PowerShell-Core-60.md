@@ -1,3 +1,14 @@
+---
+title: PowerShell Core 6.0 的新功能
+description: PowerShell Core 6.0 中發行的新功能與變更
+ms.date: 08/06/2018
+ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587239"
+---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 的新功能
 
 [PowerShell Core 6.0][github] 是新的 PowerShell 版本，其為跨平台 (Windows、macOS 和 Linux)、開放原始碼，並針對異質環境和混合式雲端所建置。
