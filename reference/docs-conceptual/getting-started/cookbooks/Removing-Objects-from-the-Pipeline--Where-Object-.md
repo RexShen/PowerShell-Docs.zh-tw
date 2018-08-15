@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 從管線中移除物件 Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753833"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587137"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
 
@@ -38,7 +38,7 @@ Windows PowerShell 包含了 `Where-Object` Cmdlet，可讓您測試管線中的
 |-contains|包含|1,2,3 -contains 1|
 |-notcontains|不包含|1,2,3 -notcontains 4|
 
-Where-Object 指令碼區塊使用特殊變數 '$_' 來參照管線中的目前物件。 以下示範其運作方式。 如果您有一份數值清單，並且只想要傳回小於 3 的數值，您可以輸入下列命令使用 Where-Object 來篩選數值︰
+Where-Object 指令碼區塊使用特殊變數 `$_` 來參照管線中的目前物件。 以下示範其運作方式。 如果您有一份數值清單，並且只想要傳回小於 3 的數值，您可以輸入下列命令使用 Where-Object 來篩選數值︰
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -48,7 +48,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### <a name="filtering-based-on-object-properties"></a>根據物件屬性篩選
 
-因為 $_ 參照了目前的管線物件，所以我們可以針對測試來存取其屬性。
+因為 `$_` 參照了目前的管線物件，所以我們可以針對測試來存取其屬性。
 
 例如，我們可以檢視 WMI 中的 Win32_SystemDriver 類別。 一部系統上可能會有數百個系統驅動程式，但您可能只對某一組系統驅動程式感興趣，例如目前執行中的驅動程式。 如果您使用 Get-Member 檢視 Win32_SystemDriver 成員 (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType 屬性**)，您會看到相關屬性為 State，而且當驅動程式正在執行時，其值為 "Running"。 您可以輸入下列命令來篩選系統驅動程式，只選取執行中的驅動程式︰
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具備相容 PowerShell 版本的指令碼
-ms.openlocfilehash: 0ab655ff1c5dd0f48ec41a16ad394251b6c70748
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 2313131fe17dcd9508db514883ae3dcb837fb07e
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267808"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587205"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>具備相容 PowerShell 版本的指令碼
 
@@ -45,7 +45,7 @@ Get-Content C:\script.ps1
 Get-Process -Name PowerShell
 
 C:\script.ps1
-C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell Core edition. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
+C:\script.ps1 : The script 'script.ps1' cannot be run because it contained a "#requires" statement for PowerShell editions 'Core'. The edition of PowerShell that is required by the script does not match the currently running PowerShell Desktop edition.
 At line:1 char:1
 + C:\script.ps1
 + ~~~~~~~~~~~~~
@@ -54,14 +54,14 @@ At line:1 char:1
 ```
 
 PowerShell Gallery 使用者可以尋找特定 PowerShell 版本上所支援的指令碼清單。
-沒有 PSEdition_Desktop 和 PSEditon_Core 的指令碼可以在 PowerShell Desktop 版本上運作良好。
+沒有 PSEdition_Desktop 與 PSEdition_Core 標記的指令碼會被視為可在 PowerShell Desktop 版本上正常運作。
 
 ```powershell
 # Find scripts supported on PowerShell Desktop edition
-Find-Script -Tag PSEditon_Desktop
+Find-Script -Tag PSEdition_Desktop
 
-# Find scripts supported on PowerShell Core editions
-Find-Script -Tag PSEditon_Core
+# Find scripts supported on PowerShell Core edition
+Find-Script -Tag PSEdition_Core
 ```
 
 ## <a name="more-details"></a>更多詳細資料

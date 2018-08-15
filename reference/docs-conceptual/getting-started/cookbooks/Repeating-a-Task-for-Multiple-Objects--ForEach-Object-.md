@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 針對多個物件重複工作 ForEach Object
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954274"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587256"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>針對多個物件重複工作 (ForEach-Object)
 
-**ForEach-Object** Cmdlet 針對目前的管線物件使用指令碼區塊和 $_ 描述元，讓您能夠在管線中的每個物件上執行命令。 這可以用來執行一些複雜的工作。
+**ForEach-Object** Cmdlet 針對目前的管線物件使用指令碼區塊和 `$_` 描述元，讓您能夠在管線中的每個物件上執行命令。 這可以用來執行一些複雜的工作。
 
 一個可能適用的情況是操控資料，使其更加實用。 例如，您可以使用 WMI 中的 Win32_LogicalDisk 類別，傳回每個本機磁碟的可用空間資訊。 傳回的資料是以位元組為單位，不過這會很難閱讀︰
 
