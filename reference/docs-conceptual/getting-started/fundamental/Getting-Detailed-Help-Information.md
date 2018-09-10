@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 取得詳細的說明資訊
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483027"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134029"
 ---
-# <a name="getting-detailed-help-information"></a><span data-ttu-id="4ff2b-103">取得詳細的說明資訊</span><span class="sxs-lookup"><span data-stu-id="4ff2b-103">Getting Detailed Help Information</span></span>
-<span data-ttu-id="4ff2b-104">Windows PowerShell 包含詳細的說明主題，說明 Windows PowerShell 概念和 Windows PowerShell 語言。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-104">Windows PowerShell includes detailed Help topics that explain Windows PowerShell concepts and the Windows PowerShell language.</span></span> <span data-ttu-id="4ff2b-105">此外，還有針對每個 Cmdlet 和提供者，以及許多函式和指令碼的說明主題。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-105">There are also Help topics for each cmdlet and provider and Help topics for many functions and scripts.</span></span>
+# <a name="getting-detailed-help-information"></a><span data-ttu-id="a7203-103">取得詳細的說明資訊</span><span class="sxs-lookup"><span data-stu-id="a7203-103">Getting detailed help information</span></span>
 
-<span data-ttu-id="4ff2b-106">您可以在命令提示字元中顯示這些說明主題，或在 Microsoft TechNet Library 中檢視這些主題的最近更新版本。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-106">You can display these Help topics at the command prompt or view the most recently updated versions of these topics in the Microsoft TechNet Library.</span></span> <span data-ttu-id="4ff2b-107">許多裝載 Windows PowerShell 的程式 (例如 Windows PowerShell 整合式指令碼環境) 都提供額外的說明功能，例如即時線上說明和編譯的說明檔案 (.chm)。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-107">Many programs that host Windows PowerShell, such as Windows PowerShell Integrated Scripting Environment, provide additional Help features, such as context-sensitive Help and compiled Help file (.chm).</span></span>
+<span data-ttu-id="a7203-104">PowerShell 包含詳細的說明文章，可說明 PowerShell 概念與 PowerShell 語言。</span><span class="sxs-lookup"><span data-stu-id="a7203-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="a7203-105">此外，還有針對每個 Cmdlet 和提供者，以及許多函式與指令碼的說明文章。</span><span class="sxs-lookup"><span data-stu-id="a7203-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
 
-## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="4ff2b-108">取得 Cmdlet 的說明</span><span class="sxs-lookup"><span data-stu-id="4ff2b-108">Getting Help for Cmdlets</span></span>
-<span data-ttu-id="4ff2b-109">若要取得 Windows PowerShell Cmdlet 的相關說明，請使用 [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-109">To get Help about Windows PowerShell cmdlets, use the [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet.</span></span> <span data-ttu-id="4ff2b-110">例如，若要取得 [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) Cmdlet 的說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-110">For example, to get Help for the [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, type:</span></span>
+<span data-ttu-id="a7203-106">您可以在命令提示字元中顯示這些說明文章，或在 [PowerShell](/powershell/scripting/powershell-scripting) 文件中線上檢視這些文章的最近更新版本。</span><span class="sxs-lookup"><span data-stu-id="a7203-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/powershell-scripting) documentation online.</span></span>
 
-```
-get-help get-childitem
-```
+## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="a7203-107">取得 Cmdlet 的說明</span><span class="sxs-lookup"><span data-stu-id="a7203-107">Getting help for cmdlets</span></span>
 
-<span data-ttu-id="4ff2b-111">或</span><span class="sxs-lookup"><span data-stu-id="4ff2b-111">or</span></span>
+<span data-ttu-id="a7203-108">若要取得 PowerShell Cmdlet 的相關說明，請使用 [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="a7203-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="a7203-109">例如，若要取得 `Get-ChildItem` Cmdlet 的說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-childitem -?
+```powershell
+Get-Help Get-ChildItem
 ```
 
-<span data-ttu-id="4ff2b-112">您甚至可以取得 Get-Help Cmdlet 的相關說明。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-112">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="4ff2b-113">例如：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-113">For example:</span></span>
+<span data-ttu-id="a7203-110">或</span><span class="sxs-lookup"><span data-stu-id="a7203-110">or</span></span>
 
-```
-get-help get-help
-```
-
-<span data-ttu-id="4ff2b-114">若要取得工作階段中的所有 Cmdlet 說明主題清單，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="4ff2b-114">To get a list of all the cmdlet Help topics in your session, type:</span></span>
-
-```
-get-help -category cmdlet
+```powershell
+Get-ChildItem -?
 ```
 
-<span data-ttu-id="4ff2b-115">若要一次顯示一頁說明主題，請使用 **help** 函式或其別名 **man**。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-115">To display one page of each Help topic at a time, use the **help** function or its alias **man**.</span></span> <span data-ttu-id="4ff2b-116">例如，若要顯示 Get-ChildItem Cmdlet 的說明，請輸入</span><span class="sxs-lookup"><span data-stu-id="4ff2b-116">For example, to display Help for the Get-ChildItem cmdlet, type</span></span>
+<span data-ttu-id="a7203-111">您甚至可以取得 Get-Help Cmdlet 的相關說明。</span><span class="sxs-lookup"><span data-stu-id="a7203-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="a7203-112">例如：</span><span class="sxs-lookup"><span data-stu-id="a7203-112">For example:</span></span>
 
-```
-man get-childitem
-```
-
-<span data-ttu-id="4ff2b-117">或</span><span class="sxs-lookup"><span data-stu-id="4ff2b-117">or</span></span>
-
-```
-help get-childitem
+```powershell
+Get-Help Get-Help
 ```
 
-<span data-ttu-id="4ff2b-118">若要顯示 Cmdlet、函式或指令碼的詳細資訊，包括其參數的描述及其使用範例，請使用 Get-Help Cmdlet 的 *Detailed* 參數。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-118">To display detailed information about a cmdlet, function, or script, including descriptions of its parameters and examples of its use, use the *Detailed* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="4ff2b-119">例如，若要取得 Get-ChildItem Cmdlet 的詳細資訊，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-119">For example, to get detailed information about the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="a7203-113">若要取得工作階段中的所有 Cmdlet 說明文章清單，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
 
-```
-get-help get-childitem -detailed
-```
-
-<span data-ttu-id="4ff2b-120">若要顯示說明主題中的所有內容，請使用 Get-Help Cmdlet 的 *Full* 參數。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-120">To display all content in the Help topic, use the *Full* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="4ff2b-121">例如，若要顯示 Get-ChildItem Cmdlet 之說明主題中的所有內容，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-121">For example, to display all content in the Help topic for the Get-ChildItem cmdlet, type:</span></span>
-
-```
-get-help get-childitem -full
+```powershell
+Get-Help -Category Cmdlet
 ```
 
-<span data-ttu-id="4ff2b-122">若要取得 Cmdlet 之參數的詳細說明，請使用 Get-Help Cmdlet 的 *Parameter* 參數。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-122">To get detailed Help about the parameters of a cmdlet, use the *Parameter* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="4ff2b-123">例如，若要取得 Get-ChildItem Cmdlet 之所有參數的詳細說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-123">For example, to get detailed Help for all of the parameters of the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="a7203-114">若要一次顯示一頁說明文章，請使用 `help` 函式或其別名 `man`。</span><span class="sxs-lookup"><span data-stu-id="a7203-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
+<span data-ttu-id="a7203-115">例如，若要顯示 `Get-ChildItem` Cmdlet 的說明，請輸入</span><span class="sxs-lookup"><span data-stu-id="a7203-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
 
-```
-get-help get-childitem -parameter *
-```
-
-<span data-ttu-id="4ff2b-124">若只要顯示說明主題中的範例，請使用 Get-Help 的 *Example* 參數。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-124">To display only the examples in a Help topic, use the *Example* parameter of the Get-Help.</span></span> <span data-ttu-id="4ff2b-125">例如，若只要顯示 Get-ChildItem Cmdlet 之說明主題中的範例，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-125">For example, to display only the examples in the Help topic for the Get-ChildItem cmdlet, type:</span></span>
-
-```
-get-help get-childitem -examples
+```powershell
+man Get-ChildItem
 ```
 
-<span data-ttu-id="4ff2b-126">如需如何為您撰寫的 Cmdlet 撰寫說明主題的資訊，請參閱 MSDN Library 中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (如何撰寫 Cmdlet 說明)。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-126">For information about how to write Help topics for the cmdlets that you write, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.</span></span>
+<span data-ttu-id="a7203-116">或</span><span class="sxs-lookup"><span data-stu-id="a7203-116">or</span></span>
 
-## <a name="getting-conceptual-help"></a><span data-ttu-id="4ff2b-127">取得概念性說明</span><span class="sxs-lookup"><span data-stu-id="4ff2b-127">Getting Conceptual Help</span></span>
-<span data-ttu-id="4ff2b-128">Get-Help Cmdlet 也會顯示有關 Windows PowerShell 中概念性主題的相關資訊，包括 Windows PowerShell 語言的相關主題。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-128">The Get-Help cmdlet also displays information about conceptual topics in Windows PowerShell, including topics about the Windows PowerShell language.</span></span> <span data-ttu-id="4ff2b-129">概念性說明主題是以 "about_" 前置詞為開頭，例如 about_line_editing。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-129">Conceptual Help topics begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="4ff2b-130">(概念性主題的名稱必須以英文輸入，即使是在非英文版的 Windows PowerShell 中也一樣)。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-130">(The name of the conceptual topic must be entered in English even on non-English versions of Windows PowerShell.)</span></span>
-
-<span data-ttu-id="4ff2b-131">若要顯示概念性主題清單，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="4ff2b-131">To display a list of conceptual topics, type:</span></span>
-
-```
-get-help about_*
+```powershell
+help Get-ChildItem
 ```
 
-<span data-ttu-id="4ff2b-132">若要顯示特定說明主題，請輸入主題名稱，例如︰</span><span class="sxs-lookup"><span data-stu-id="4ff2b-132">To display a particular Help topic, type the topic name, for example:</span></span>
+<span data-ttu-id="a7203-117">若要顯示詳細資訊，請使用 `Get-Help` Cmdlet 的 **Detailed** 參數。</span><span class="sxs-lookup"><span data-stu-id="a7203-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a7203-118">例如，若要取得 `Get-ChildItem` Cmdlet 的詳細資訊，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-help about_command_syntax
-```
-
-<span data-ttu-id="4ff2b-133">Get-Help 的參數 (例如 *Detailed*、*Parameter* 和 *Examples*) 不會影響概念性說明主題的顯示方式。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-133">The parameters of Get-Help, such as *Detailed*, *Parameter*, and *Examples*, have no effect on the display of conceptual Help topics.</span></span>
-
-## <a name="getting-help-about-providers"></a><span data-ttu-id="4ff2b-134">取得提供者的相關說明</span><span class="sxs-lookup"><span data-stu-id="4ff2b-134">Getting Help About Providers</span></span>
-<span data-ttu-id="4ff2b-135">Get-Help Cmdlet 會顯示 Windows PowerShell 提供者的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-135">The Get-Help cmdlet displays information about Windows PowerShell providers.</span></span> <span data-ttu-id="4ff2b-136">若要取得提供者的說明，請輸入 "Get-Help"，後面接著提供者名稱。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-136">To get Help for a provider, type "Get-Help" followed by the provider name.</span></span> <span data-ttu-id="4ff2b-137">例如，若要取得登錄提供者的說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-137">For example, to get Help for the Registry provider, type:</span></span>
-
-```
-get-help registry
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-<span data-ttu-id="4ff2b-138">若要取得工作階段中的所有提供者說明主題清單，請輸入</span><span class="sxs-lookup"><span data-stu-id="4ff2b-138">To get a list of all the provider Help topics in your session, type</span></span>
+<span data-ttu-id="a7203-119">若要顯示說明文章中的所有內容，請使用 `Get-Help` Cmdlet 的 **Full** 參數。</span><span class="sxs-lookup"><span data-stu-id="a7203-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a7203-120">例如，若要顯示 `Get-ChildItem` Cmdlet 之說明文章中的所有內容，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-help -category provider
-```
-
-<span data-ttu-id="4ff2b-139">Get-Help 的參數 (例如 *Detailed*、*Parameter* 和 *Examples*) 不會影響提供者說明主題的顯示方式。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-139">The parameters of Get-Help, such as *Detailed*, *Parameter*, and *Examples*, have no effect on the display of provider Help topics.</span></span>
-
-## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="4ff2b-140">取得指令碼和函式的相關說明</span><span class="sxs-lookup"><span data-stu-id="4ff2b-140">Getting Help About Scripts and Functions</span></span>
-<span data-ttu-id="4ff2b-141">Windows PowerShell 中的許多指令碼和函式都有說明主題。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-141">Many scripts and functions in Windows PowerShell have Help topics.</span></span> <span data-ttu-id="4ff2b-142">使用 Get-Help Cmdlet 可顯示指令碼和函式的說明主題。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-142">Use the Get-Help cmdlet to display the Help topics for scripts and functions.</span></span>
-
-<span data-ttu-id="4ff2b-143">若要顯示函式的說明，請輸入"get-help"，後面接著函式名稱。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-143">To display the Help for a function, type "get-help" followed by the function name.</span></span> <span data-ttu-id="4ff2b-144">例如，若要取得 Disable-PSRemoting 函式的說明，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="4ff2b-144">For example, to get Help for the Disable-PSRemoting function, type:</span></span>
-
-```
-get-help disable-psremoting
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-<span data-ttu-id="4ff2b-145">若要顯示指令碼的說明，請輸入指令碼檔案的完整路徑。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-145">To display the Help for a script, type the fully qualified path to the script file.</span></span> <span data-ttu-id="4ff2b-146">如果指令碼位於 Path 環境變數中所列的路徑，您可以省略命令中的路徑。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-146">If the script is in a path that is listed in the Path environment variable, you can omit the path from the command.</span></span>
+<span data-ttu-id="a7203-121">若要取得 Cmdlet 之參數的詳細說明，請使用 `Get-Help` Cmdlet 的 **Parameter** 參數。</span><span class="sxs-lookup"><span data-stu-id="a7203-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a7203-122">例如，若要取得 `Get-ChildItem` Cmdlet 之所有參數的詳細說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
 
-<span data-ttu-id="4ff2b-147">例如，如果您的 C:\\PS-Test 目錄中有稱為 "TestScript.ps1" 的指令碼，若要顯示該指令碼的說明主題，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="4ff2b-147">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help topic for the script, type:</span></span>
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Get-ChildItem -Parameter *
 ```
 
-<span data-ttu-id="4ff2b-148">為顯示 Cmdlet 說明所設計的參數 (例如 *Detailed*、*Full*、*Examples* 和 *Parameter*) 也適用於指令碼說明和函式說明。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-148">The parameters that were designed for displaying cmdlet Help, such as *Detailed*, *Full*, *Examples*, and *Parameter*, work for script Help and function Help, too.</span></span> <span data-ttu-id="4ff2b-149">不過，當您顯示所有說明時，若輸入"get-help \*"，則不會顯示函式和指令碼的說明。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-149">However, when you display all Help, by typing "get-help \*", Help for functions and scripts does not appear.</span></span>
+<span data-ttu-id="a7203-123">若只要顯示說明文章中的範例，請使用 `Get-Help` 的 **Example** 參數。</span><span class="sxs-lookup"><span data-stu-id="a7203-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
+<span data-ttu-id="a7203-124">例如，若只要顯示 `Get-ChildItem ` Cmdlet 之說明文章中的範例，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-124">For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:</span></span>
 
-<span data-ttu-id="4ff2b-150">如需撰寫函式和指令碼說明主題的資訊，請參閱 [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)、[about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af) 和 [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-150">For information about writing Help topics for your functions and scripts, see [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), and [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).</span></span>
-
-## <a name="getting-help-online"></a><span data-ttu-id="4ff2b-151">線上取得說明</span><span class="sxs-lookup"><span data-stu-id="4ff2b-151">Getting Help Online</span></span>
-<span data-ttu-id="4ff2b-152">如果您連線到網際網路，取得說明的最佳方式之一是線上檢視說明主題。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-152">If you are connected to the Internet, one of the best ways to get Help is to view the Help topics online.</span></span> <span data-ttu-id="4ff2b-153">由於線上主題很容易更新，因此可能會提供最新的內容。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-153">Because online topics are easy to update, they are likely to provide the most current content.</span></span>
-
-<span data-ttu-id="4ff2b-154">若要線上取得說明，請嘗試 Get-Help Cmdlet 的 *Online* 參數。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-154">To get Help online, try the *Online* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="4ff2b-155">Get-Help Cmdlet 的 *Online* 參數只適用於 Cmdlet 說明、函式說明和指令碼說明。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-155">The *Online* parameter of the Get-Help cmdlet works only for cmdlet Help, function Help, and script Help.</span></span> <span data-ttu-id="4ff2b-156">您無法對概念性 (關於) 主題或提供者說明主題使用 *Online* 參數。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-156">You cannot use the *Online* parameter with conceptual (About) topics or provider Help topics.</span></span> <span data-ttu-id="4ff2b-157">此外，由於這是選擇性功能，因此並非每一個 Cmdlet、函式或指令碼說明主題都適用。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-157">Also, because this feature is optional, it does not work for every cmdlet, function, or script Help topic.</span></span>
-
-<span data-ttu-id="4ff2b-158">不過，您可以在 Microsoft TechNet Library 的 [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) 區段中，線上取得 Windows PowerShell 隨附的所有說明主題，包括提供者說明和概念性 (關於) 說明主題。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-158">However, all the Help topics that come with Windows PowerShell, including provider Help and conceptual (About) Help topics, are available online in the [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) section of the Microsoft TechNet Library.</span></span>
-
-<span data-ttu-id="4ff2b-159">若要使用 Get-Help Cmdlet 的 *Online*e 參數，請使用下列命令格式。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-159">To use the *Online* parameter of the Get-Help cmdlet, use the following command format.</span></span>
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help Get-ChildItem -Examples
 ```
 
-<span data-ttu-id="4ff2b-160">例如，若要取得 Get-ChildItem Cmdlet 相關說明主題的線上版本，請輸入：</span><span class="sxs-lookup"><span data-stu-id="4ff2b-160">For example, to get the online version of the Help topic about the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="a7203-125">如需如何為您撰寫的 Cmdlet 撰寫說明文章的相關資訊，請參閱[如何撰寫 Cmdlet 說明](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)。</span><span class="sxs-lookup"><span data-stu-id="a7203-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
 
-```
-get-help get-childitem -online
-```
+## <a name="getting-conceptual-help"></a><span data-ttu-id="a7203-126">取得概念性說明</span><span class="sxs-lookup"><span data-stu-id="a7203-126">Getting conceptual help</span></span>
 
-<span data-ttu-id="4ff2b-161">如果此說明主題有線上版本可用，就會在您的預設瀏覽器中開啟。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-161">If an online version of the Help topic is available, it will open in your default browser.</span></span>
+<span data-ttu-id="a7203-127">`Get-Help` Cmdlet 也會顯示 PowerShell 中概念性文章的相關資訊，包括 PowerShell 語言的相關文章。</span><span class="sxs-lookup"><span data-stu-id="a7203-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="a7203-128">概念性說明文章是以 "about_" 前置詞為開頭，例如 about_line_editing</span><span class="sxs-lookup"><span data-stu-id="a7203-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="a7203-129">(概念性文章的名稱必須以英文輸入，即使是在非英文版的 PowerShell 中也一樣)。</span><span class="sxs-lookup"><span data-stu-id="a7203-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
 
-<span data-ttu-id="4ff2b-162">如果某個說明主題支援線上說明，您也可以檢視該說明主題的網際網路位址 (URL)。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-162">If online Help is supported for a Help topic, you can also view the Internet address (URL) of the Help topic.</span></span> <span data-ttu-id="4ff2b-163">網際網路位址會出現在說明主題的 [相關連結] 區段中。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-163">The Internet address appears in the Related Links section of a Help topic.</span></span>
+<span data-ttu-id="a7203-130">若要顯示概念性文章清單，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-130">To display a list of conceptual articles, type:</span></span>
 
-<span data-ttu-id="4ff2b-164">例如，若要查看 Add-Computer Cmdlet 的線上版本 URL，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="4ff2b-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
-
-```
-get-help add-computer
+```powershell
+Get-Help about_*
 ```
 
-<span data-ttu-id="4ff2b-165">該主題之 [相關連結] 區段中的第一行會如下所示。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-165">The first line in the Related Links section of the topic is shown below.</span></span>
+<span data-ttu-id="a7203-131">若要顯示特定說明文章，請輸入文章名稱，例如：</span><span class="sxs-lookup"><span data-stu-id="a7203-131">To display a particular Help article, type the article name, for example:</span></span>
 
+```powershell
+Get-Help about_command_syntax
 ```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+
+<span data-ttu-id="a7203-132">`Get-Help` 的參數 (例如 **Detailed**、**Parameter** 與 **Examples**) 不會影響概念性說明文章的顯示方式。</span><span class="sxs-lookup"><span data-stu-id="a7203-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
+
+## <a name="getting-help-about-providers"></a><span data-ttu-id="a7203-133">取得提供者的相關說明</span><span class="sxs-lookup"><span data-stu-id="a7203-133">Getting help about providers</span></span>
+
+<span data-ttu-id="a7203-134">`Get-Help` Cmdlet 會顯示 PowerShell 提供者的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="a7203-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="a7203-135">若要取得提供者的說明，請輸入 `Get-Help`，後面接著提供者名稱。</span><span class="sxs-lookup"><span data-stu-id="a7203-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="a7203-136">例如，若要取得登錄提供者的說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-136">For example, to get Help for the Registry provider, type:</span></span>
+
+```powershell
+Get-Help registry
 ```
 
-<span data-ttu-id="4ff2b-166">如需如何提供說明主題之線上支援的資訊，請參閱 [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)，並請參閱 MSDN Library 中的 [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) (如何撰寫 Cmdlet 說明)。</span><span class="sxs-lookup"><span data-stu-id="4ff2b-166">For information about how to provide online support for your Help topics, see [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), and see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.</span></span>
+<span data-ttu-id="a7203-137">若要取得工作階段中的所有提供者說明文章清單，請輸入</span><span class="sxs-lookup"><span data-stu-id="a7203-137">To get a list of all the provider Help articles in your session, type</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="4ff2b-167">另請參閱</span><span class="sxs-lookup"><span data-stu-id="4ff2b-167">See Also</span></span>
-- <span data-ttu-id="4ff2b-168">[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)</span><span class="sxs-lookup"><span data-stu-id="4ff2b-168">[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)</span></span>
-- [<span data-ttu-id="4ff2b-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="4ff2b-169">about_Scripts</span></span>](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [<span data-ttu-id="4ff2b-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="4ff2b-170">about_Comment_Based_Help</span></span>](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- <span data-ttu-id="4ff2b-171">[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)</span><span class="sxs-lookup"><span data-stu-id="4ff2b-171">[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)</span></span>
+```powershell
+Get-Help -Category provider
+```
+
+<span data-ttu-id="a7203-138">`Get-Help` 的參數 (例如 **Detailed**、**Parameter** 與 **Examples**) 不會影響提供者說明文章的顯示方式。</span><span class="sxs-lookup"><span data-stu-id="a7203-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
+
+## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="a7203-139">取得指令碼與函式的相關說明</span><span class="sxs-lookup"><span data-stu-id="a7203-139">Getting help about scripts and functions</span></span>
+
+<span data-ttu-id="a7203-140">PowerShell 中的許多指令碼與函式都有說明文章。</span><span class="sxs-lookup"><span data-stu-id="a7203-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="a7203-141">使用 `Get-Help` Cmdlet 可顯示指令碼與函式的說明文章。</span><span class="sxs-lookup"><span data-stu-id="a7203-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
+
+<span data-ttu-id="a7203-142">若要顯示函式的說明，請輸入 `Get-Help`，後面接著函式名稱。</span><span class="sxs-lookup"><span data-stu-id="a7203-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="a7203-143">例如，若要取得 `Disable-PSRemoting` 函式的說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
+
+```powershell
+Get-Help Disable-PSRemoting
+```
+
+<span data-ttu-id="a7203-144">若要顯示指令碼的說明，請輸入指令碼檔案的路徑。</span><span class="sxs-lookup"><span data-stu-id="a7203-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="a7203-145">如果指令碼不在 Path 環境變數所列的路徑中，您必須使用完整路徑。</span><span class="sxs-lookup"><span data-stu-id="a7203-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
+
+<span data-ttu-id="a7203-146">例如，如果您的 C:\\PS-Test 目錄中有稱為 "TestScript.ps1" 的指令碼，若要顯示該指令碼的說明文章，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
+```
+
+<span data-ttu-id="a7203-147">設計來顯示 Cmdlet 說明的參數也適用於指令碼與函式說明。</span><span class="sxs-lookup"><span data-stu-id="a7203-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="a7203-148">不過，函式與指令碼的說明不會在您執行 `Get-Help *` 時顯示。</span><span class="sxs-lookup"><span data-stu-id="a7203-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
+
+<span data-ttu-id="a7203-149">如需撰寫函式與指令碼之說明文章的相關資訊，請參閱下列文章：</span><span class="sxs-lookup"><span data-stu-id="a7203-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
+
+- [<span data-ttu-id="a7203-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="a7203-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="a7203-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="a7203-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="a7203-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="a7203-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a><span data-ttu-id="a7203-153">線上取得說明</span><span class="sxs-lookup"><span data-stu-id="a7203-153">Getting help online</span></span>
+
+<span data-ttu-id="a7203-154">線上檢視說明文章是取得協助的最佳方式之一。</span><span class="sxs-lookup"><span data-stu-id="a7203-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="a7203-155">線上文章可以更輕鬆地更新，並提供最新的內容。</span><span class="sxs-lookup"><span data-stu-id="a7203-155">Online articles are easier to update and provide the most current content.</span></span>
+
+<span data-ttu-id="a7203-156">若要線上取得說明，請使用 `Get-Help` Cmdlet 的 **Online** 參數。</span><span class="sxs-lookup"><span data-stu-id="a7203-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="a7203-157">PowerShell 隨附的所有說明文章 (包括提供者說明與概念性 (關於) 說明文章) 都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文件中線上取得。</span><span class="sxs-lookup"><span data-stu-id="a7203-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="a7203-158">您無法對概念性 (about_\*) 或提供者說明文章使用 **Online** 參數。</span><span class="sxs-lookup"><span data-stu-id="a7203-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
+> <span data-ttu-id="a7203-159">線上說明是選擇性的，因此並非每一個 Cmdlet、函式或指令碼都適用。</span><span class="sxs-lookup"><span data-stu-id="a7203-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
+
+<span data-ttu-id="a7203-160">例如，若要取得 `Get-ChildItem` Cmdlet 相關說明文章的線上版本，請輸入：</span><span class="sxs-lookup"><span data-stu-id="a7203-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
+
+```powershell
+Get-Help Get-ChildItem -Online
+```
+
+<span data-ttu-id="a7203-161">PowerShell 會在預設瀏覽器中開啟文章。</span><span class="sxs-lookup"><span data-stu-id="a7203-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="a7203-162">如果某篇說明文章支援線上說明，您也可以檢視該說明文章的 URL。</span><span class="sxs-lookup"><span data-stu-id="a7203-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="a7203-163">URL 會出現在說明文章的 [相關連結] 區段中。</span><span class="sxs-lookup"><span data-stu-id="a7203-163">The URL appears in the Related Links section of a Help article.</span></span>
+
+<span data-ttu-id="a7203-164">例如，若要查看 Add-Computer Cmdlet 的線上版本 URL，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="a7203-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
+
+```powershell
+Get-Help Add-Computer
+```
+
+<span data-ttu-id="a7203-165">該文章之 [相關連結] 區段中的第一行如下所示。</span><span class="sxs-lookup"><span data-stu-id="a7203-165">The first line in the Related Links section of the article is shown below.</span></span>
+
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+<span data-ttu-id="a7203-166">如需如何提供說明文章線上支援的相關資訊，請參閱 [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)。</span><span class="sxs-lookup"><span data-stu-id="a7203-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="a7203-167">另請參閱</span><span class="sxs-lookup"><span data-stu-id="a7203-167">See also</span></span>
+
+- [<span data-ttu-id="a7203-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="a7203-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="a7203-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="a7203-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="a7203-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="a7203-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="a7203-171">Get-Help</span><span class="sxs-lookup"><span data-stu-id="a7203-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)

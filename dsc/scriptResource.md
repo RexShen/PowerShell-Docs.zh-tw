@@ -1,31 +1,21 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/24/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC Script 資源
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189443"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133888"
 ---
-# <a name="dsc-script-resource"></a><span data-ttu-id="7d640-103">DSC Script 資源</span><span class="sxs-lookup"><span data-stu-id="7d640-103">DSC Script Resource</span></span>
+# <a name="dsc-script-resource"></a><span data-ttu-id="d3d49-103">DSC Script 資源</span><span class="sxs-lookup"><span data-stu-id="d3d49-103">DSC Script Resource</span></span>
 
+> <span data-ttu-id="d3d49-104">適用於：Windows PowerShell 4.0、Windows PowerShell 5.x</span><span class="sxs-lookup"><span data-stu-id="d3d49-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-> <span data-ttu-id="7d640-104">適用於：Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="7d640-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+<span data-ttu-id="d3d49-105">Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目標節點執行 Windows PowerShell 指令碼區塊的機制。</span><span class="sxs-lookup"><span data-stu-id="d3d49-105">The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.</span></span> <span data-ttu-id="d3d49-106">**Script** 資源會使用 `GetScript`、`SetScript` 和 `TestScript` 屬性，其中包含您定義來執行對應 DSC 狀態作業的指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="d3d49-106">The **Script** resource uses `GetScript`, `SetScript`, and `TestScript` properties that contain script blocks you define to perform the corresponding DSC state operations.</span></span>
 
-<span data-ttu-id="7d640-105">Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目標節點執行 Windows PowerShell 指令碼區塊的機制。</span><span class="sxs-lookup"><span data-stu-id="7d640-105">The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.</span></span> <span data-ttu-id="7d640-106">`Script`資源有`GetScript`、`SetScript` 和`TestScript` 屬性。</span><span class="sxs-lookup"><span data-stu-id="7d640-106">The `Script` resource has `GetScript`, `SetScript`, and `TestScript` properties.</span></span> <span data-ttu-id="7d640-107">應該要對將會在每個目標節點上執行的指令碼區塊，設定這些屬性。</span><span class="sxs-lookup"><span data-stu-id="7d640-107">These properties should be set to script blocks that will run on each target node.</span></span>
-
-<span data-ttu-id="7d640-108">`GetScript` 指令碼區塊應該會傳回代表目前節點狀態的雜湊表。</span><span class="sxs-lookup"><span data-stu-id="7d640-108">The `GetScript` script block should return a hashtable representing the state of the current node.</span></span> <span data-ttu-id="7d640-109">雜湊表必須只包含一個機碼 `Result`，且值必須是 `String` 類型。</span><span class="sxs-lookup"><span data-stu-id="7d640-109">The hashtable must only contain one key `Result` and the value must be of type `String`.</span></span> <span data-ttu-id="7d640-110">不需要傳回任何內容。</span><span class="sxs-lookup"><span data-stu-id="7d640-110">It is not required to return anything.</span></span> <span data-ttu-id="7d640-111">DSC 不會對此指令碼區塊的輸出進行任何動作。</span><span class="sxs-lookup"><span data-stu-id="7d640-111">DSC doesn't do anything with the output of this script block.</span></span>
-
-<span data-ttu-id="7d640-112">`TestScript` 指令碼區塊必須判斷目前的節點是否需要修改。</span><span class="sxs-lookup"><span data-stu-id="7d640-112">The `TestScript` script block should determine if the current node needs to be modified.</span></span> <span data-ttu-id="7d640-113">若該節點處於最新的狀態，應傳回 `$true`。</span><span class="sxs-lookup"><span data-stu-id="7d640-113">It should return `$true` if the node is up-to-date.</span></span> <span data-ttu-id="7d640-114">若節點的設定已過期，應傳回 `$false`，並使用 `SetScript` 指令碼區塊進行更新。</span><span class="sxs-lookup"><span data-stu-id="7d640-114">It should return `$false` if the node's configuration is out-of-date and should be updated by the `SetScript` script block.</span></span> <span data-ttu-id="7d640-115">`TestScript` 指令碼區塊由 DSC 呼叫。</span><span class="sxs-lookup"><span data-stu-id="7d640-115">The `TestScript` script block is called by DSC.</span></span>
-
-<span data-ttu-id="7d640-116">`SetScript` 指令碼區塊應修改該節點。</span><span class="sxs-lookup"><span data-stu-id="7d640-116">The `SetScript` script block should modify the node.</span></span> <span data-ttu-id="7d640-117">若 `TestScript` 區塊傳回 `$false`，會由 DSC 加以呼叫。</span><span class="sxs-lookup"><span data-stu-id="7d640-117">It is called by DSC if the `TestScript` block return `$false`.</span></span>
-
-<span data-ttu-id="7d640-118">若您需要使用 `GetScript`、`TestScript` 或 `SetScript` 指令碼區塊中設定指令碼的變數，請使用 `$using:` 範圍 (請參閱下方範例)</span><span class="sxs-lookup"><span data-stu-id="7d640-118">If you need to use variables from your configuration script in the `GetScript`, `TestScript`, or `SetScript` script blocks, use the `$using:` scope (see below for an example).</span></span>
-
-
-## <a name="syntax"></a><span data-ttu-id="7d640-119">語法</span><span class="sxs-lookup"><span data-stu-id="7d640-119">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="d3d49-107">語法</span><span class="sxs-lookup"><span data-stu-id="d3d49-107">Syntax</span></span>
 
 ```
 Script [string] #ResourceName
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="7d640-120">Properties</span><span class="sxs-lookup"><span data-stu-id="7d640-120">Properties</span></span>
+> [!NOTE]
+> <span data-ttu-id="d3d49-108">`GetScript`、`TestScript` 與 `SetScript` 區塊會以字串形式儲存。</span><span class="sxs-lookup"><span data-stu-id="d3d49-108">The `GetScript`, `TestScript`, and `SetScript` blocks are stored as strings.</span></span>
 
-|  <span data-ttu-id="7d640-121">屬性</span><span class="sxs-lookup"><span data-stu-id="7d640-121">Property</span></span>  |  <span data-ttu-id="7d640-122">描述</span><span class="sxs-lookup"><span data-stu-id="7d640-122">Description</span></span>   |
-|---|---|
-| <span data-ttu-id="7d640-123">GetScript</span><span class="sxs-lookup"><span data-stu-id="7d640-123">GetScript</span></span>| <span data-ttu-id="7d640-124">提供叫用 [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) Cmdlet 時所執行的 Windows PowerShell 指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="7d640-124">Provides a block of Windows PowerShell script that runs when you invoke the [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet.</span></span> <span data-ttu-id="7d640-125">這個區塊必須傳回雜湊表。</span><span class="sxs-lookup"><span data-stu-id="7d640-125">This block must return a hashtable.</span></span> <span data-ttu-id="7d640-126">雜湊表必須只包含一個機碼 **Result**，且值必須是 **String** 類型。</span><span class="sxs-lookup"><span data-stu-id="7d640-126">The hashtable must only contain one key **Result** and the value must be of type **String**.</span></span>|
-| <span data-ttu-id="7d640-127">SetScript</span><span class="sxs-lookup"><span data-stu-id="7d640-127">SetScript</span></span>| <span data-ttu-id="7d640-128">提供 Windows PowerShell 指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="7d640-128">Provides a block of Windows PowerShell script.</span></span> <span data-ttu-id="7d640-129">當您叫用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet 時，**TestScript** 區塊會先執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-129">When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, the **TestScript** block runs first.</span></span> <span data-ttu-id="7d640-130">如果 **TestScript** 區塊傳回 **$false**，則 **SetScript** 區塊就會執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-130">If the **TestScript** block returns **$false**, the **SetScript** block will run.</span></span> <span data-ttu-id="7d640-131">如果 **TestScript** 區塊傳回 **$true**，則 **SetScript** 區塊就會執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-131">If the **TestScript** block returns **$true**, the **SetScript** block will not run.</span></span>|
-| <span data-ttu-id="7d640-132">TestScript</span><span class="sxs-lookup"><span data-stu-id="7d640-132">TestScript</span></span>| <span data-ttu-id="7d640-133">提供 Windows PowerShell 指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="7d640-133">Provides a block of Windows PowerShell script.</span></span> <span data-ttu-id="7d640-134">當您叫用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet 時，這個區塊就會執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-134">When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, this block runs.</span></span> <span data-ttu-id="7d640-135">如果傳回 **$false**，SetScript 區塊就會執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-135">If it returns **$false**, the SetScript block will run.</span></span> <span data-ttu-id="7d640-136">如果傳回 **$true**，SetScript 區塊就不會執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-136">If it returns **$true**, the SetScript block will not run.</span></span> <span data-ttu-id="7d640-137">**TestScript** 區塊也會在叫用 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet 時執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-137">The **TestScript** block also runs when you invoke the [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet.</span></span> <span data-ttu-id="7d640-138">不過，在此情況下，無論 TestScript 區塊傳回何值，**SetScript** 區塊都不會執行。</span><span class="sxs-lookup"><span data-stu-id="7d640-138">However, in this case, the **SetScript** block will not run, no matter what value the TestScript block returns.</span></span> <span data-ttu-id="7d640-139">如果實際的設定符合目前的預期狀態設定，則 **TestScript** 區塊必須傳回 True；如果不符合，則為 False。</span><span class="sxs-lookup"><span data-stu-id="7d640-139">The **TestScript** block must return True if the actual configuration matches the current desired state configuration, and False if it does not match.</span></span> <span data-ttu-id="7d640-140">(目前的預期狀態設定是上次使用 DSC 的節點上施行的設定)。</span><span class="sxs-lookup"><span data-stu-id="7d640-140">(The current desired state configuration is the last configuration enacted on the node that is using DSC.)</span></span>|
-| <span data-ttu-id="7d640-141">認證</span><span class="sxs-lookup"><span data-stu-id="7d640-141">Credential</span></span>| <span data-ttu-id="7d640-142">如果需要認證，表示執行這個指令碼所要使用的認證。</span><span class="sxs-lookup"><span data-stu-id="7d640-142">Indicates the credentials to use for running this script, if credentials are required.</span></span>|
-| <span data-ttu-id="7d640-143">DependsOn</span><span class="sxs-lookup"><span data-stu-id="7d640-143">DependsOn</span></span>| <span data-ttu-id="7d640-144">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="7d640-144">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="7d640-145">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="7d640-145">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>
+## <a name="properties"></a><span data-ttu-id="d3d49-109">屬性</span><span class="sxs-lookup"><span data-stu-id="d3d49-109">Properties</span></span>
 
-## <a name="example-1"></a><span data-ttu-id="7d640-146">範例 1</span><span class="sxs-lookup"><span data-stu-id="7d640-146">Example 1</span></span>
+|<span data-ttu-id="d3d49-110">屬性</span><span class="sxs-lookup"><span data-stu-id="d3d49-110">Property</span></span>|<span data-ttu-id="d3d49-111">描述</span><span class="sxs-lookup"><span data-stu-id="d3d49-111">Description</span></span>|
+|--------|-----------|
+|<span data-ttu-id="d3d49-112">GetScript</span><span class="sxs-lookup"><span data-stu-id="d3d49-112">GetScript</span></span>|<span data-ttu-id="d3d49-113">指令碼區塊，會傳回節點的目前狀態。</span><span class="sxs-lookup"><span data-stu-id="d3d49-113">A script block that returns the current state of the Node.</span></span>|
+|<span data-ttu-id="d3d49-114">SetScript</span><span class="sxs-lookup"><span data-stu-id="d3d49-114">SetScript</span></span>|<span data-ttu-id="d3d49-115">指令碼區塊，DSC 會在節點未處於預期狀態時，用來強制執行合規性。</span><span class="sxs-lookup"><span data-stu-id="d3d49-115">A script block that DSC uses to enforce compliance when the Node is not in the desired state.</span></span>|
+|<span data-ttu-id="d3d49-116">TestScript</span><span class="sxs-lookup"><span data-stu-id="d3d49-116">TestScript</span></span>|<span data-ttu-id="d3d49-117">指令碼區塊，可判斷節點是否處於預期狀態。</span><span class="sxs-lookup"><span data-stu-id="d3d49-117">A script block that determines if the Node is in the desired state.</span></span>|
+|<span data-ttu-id="d3d49-118">認證</span><span class="sxs-lookup"><span data-stu-id="d3d49-118">Credential</span></span>| <span data-ttu-id="d3d49-119">如果需要認證，表示執行這個指令碼所要使用的認證。</span><span class="sxs-lookup"><span data-stu-id="d3d49-119">Indicates the credentials to use for running this script, if credentials are required.</span></span>|
+|<span data-ttu-id="d3d49-120">DependsOn</span><span class="sxs-lookup"><span data-stu-id="d3d49-120">DependsOn</span></span>| <span data-ttu-id="d3d49-121">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="d3d49-121">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="d3d49-122">例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。</span><span class="sxs-lookup"><span data-stu-id="d3d49-122">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>
+
+### <a name="getscript"></a><span data-ttu-id="d3d49-123">GetScript</span><span class="sxs-lookup"><span data-stu-id="d3d49-123">GetScript</span></span>
+
+<span data-ttu-id="d3d49-124">DSC 不會使用 `GetScript` 的輸出。</span><span class="sxs-lookup"><span data-stu-id="d3d49-124">DSC does not use the output from `GetScript`.</span></span> <span data-ttu-id="d3d49-125">[Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) Cmdlet 會執行 `GetScript` 以擷取節點的目前狀態。</span><span class="sxs-lookup"><span data-stu-id="d3d49-125">The [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet executes the `GetScript` to retrieve a node's current state.</span></span> <span data-ttu-id="d3d49-126">`GetScript` 不需要傳回值。</span><span class="sxs-lookup"><span data-stu-id="d3d49-126">A return value is not required from `GetScript`.</span></span> <span data-ttu-id="d3d49-127">如果您指定傳回值，它必須是 `hashtable`，其中包含值為 `String` 的 **Result** 機碼。</span><span class="sxs-lookup"><span data-stu-id="d3d49-127">If you specify a return value, it must be a `hashtable` containing a **Result** key whose value is a `String`.</span></span>
+
+### <a name="testscript"></a><span data-ttu-id="d3d49-128">TestScript</span><span class="sxs-lookup"><span data-stu-id="d3d49-128">TestScript</span></span>
+
+<span data-ttu-id="d3d49-129">`TestScript` 會透過 DSC 執行，以判斷是否應該執行 `SetScript`。</span><span class="sxs-lookup"><span data-stu-id="d3d49-129">The `TestScript` is executed by DSC to determine if the `SetScript` should be run.</span></span> <span data-ttu-id="d3d49-130">如果 `TestScript` 傳回 `$false`，DSC 就會執行 `SetScript`，以讓節點回到預期狀態。</span><span class="sxs-lookup"><span data-stu-id="d3d49-130">If the `TestScript` returns `$false`, DSC executes the `SetScript` to bring the node back to the desired state.</span></span> <span data-ttu-id="d3d49-131">它必須傳回 `boolean` 值。</span><span class="sxs-lookup"><span data-stu-id="d3d49-131">It must return a `boolean` value.</span></span> <span data-ttu-id="d3d49-132">`$true` 的結果指出節點符合規範，而且 `SetScript` 應該不會執行。</span><span class="sxs-lookup"><span data-stu-id="d3d49-132">A result of `$true` indicates that the node is compliant and `SetScript` should not executed.</span></span>
+
+<span data-ttu-id="d3d49-133">[Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) Cmdlet 會執行 `TestScript`，利用 **Script** 資源來擷取節點合規性。</span><span class="sxs-lookup"><span data-stu-id="d3d49-133">The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet, executes the `TestScript` to retrieve the nodes compliance with the  **Script** resources.</span></span> <span data-ttu-id="d3d49-134">不過，在此情況下，無論 `TestScript` 區塊傳回什麼，`SetScript` 都不會執行。</span><span class="sxs-lookup"><span data-stu-id="d3d49-134">However, in this case, the `SetScript` does not run, no matter what the `TestScript` block returns.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="d3d49-135">來自您 `TestScript` 的所有輸出都是其傳回值的一部分。</span><span class="sxs-lookup"><span data-stu-id="d3d49-135">All output from your `TestScript` is part of its return value.</span></span> <span data-ttu-id="d3d49-136">PowerShell 會將非隱藏的輸出解譯為非零值，這表示不論節點的狀態為何，您的 `TestScript` 都將傳回 `$true`。</span><span class="sxs-lookup"><span data-stu-id="d3d49-136">PowerShell interprets unsuppressed output as non-zero, which means that your `TestScript` will return `$true` regardless of your node's state.</span></span>
+> <span data-ttu-id="d3d49-137">這會產生無法預期的結果、誤判，並導致疑難排解期間出現問題。</span><span class="sxs-lookup"><span data-stu-id="d3d49-137">This results in unpredictable results, false positives, and causes difficulty during troubleshooting.</span></span>
+
+### <a name="setscript"></a><span data-ttu-id="d3d49-138">SetScript</span><span class="sxs-lookup"><span data-stu-id="d3d49-138">SetScript</span></span>
+
+<span data-ttu-id="d3d49-139">`SetScript` 會修改節點以強制進入預期狀態。</span><span class="sxs-lookup"><span data-stu-id="d3d49-139">The `SetScript` modifies the node to enfore the desired state.</span></span> <span data-ttu-id="d3d49-140">如果 `TestScript` 指令碼區塊傳回 `$false`，則會由 DSC 加以呼叫。</span><span class="sxs-lookup"><span data-stu-id="d3d49-140">It is called by DSC if the `TestScript` script block returns `$false`.</span></span> <span data-ttu-id="d3d49-141">`SetScript` 應該不會傳回值。</span><span class="sxs-lookup"><span data-stu-id="d3d49-141">The `SetScript` should have no return value.</span></span>
+
+## <a name="examples"></a><span data-ttu-id="d3d49-142">範例</span><span class="sxs-lookup"><span data-stu-id="d3d49-142">Examples</span></span>
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a><span data-ttu-id="d3d49-143">範例 1：使用 Script 資源撰寫範例文字</span><span class="sxs-lookup"><span data-stu-id="d3d49-143">Example 1: Write sample text using a Script resource</span></span>
+
+<span data-ttu-id="d3d49-144">此範例會在每個節點上測試 `C:\TempFolder\TestFile.txt` 是否存在。</span><span class="sxs-lookup"><span data-stu-id="d3d49-144">This example tests for the existence of `C:\TempFolder\TestFile.txt` on each node.</span></span> <span data-ttu-id="d3d49-145">如果不存在，就會使用 `SetScript` 建立它。</span><span class="sxs-lookup"><span data-stu-id="d3d49-145">If it does not exist, it creates it using the `SetScript`.</span></span> <span data-ttu-id="d3d49-146">`GetScript` 會傳回檔案的內容，而且不會使用它的傳回值。</span><span class="sxs-lookup"><span data-stu-id="d3d49-146">The `GetScript` returns the contents of the file, and its return value is not used.</span></span>
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a><span data-ttu-id="7d640-147">範例 2</span><span class="sxs-lookup"><span data-stu-id="7d640-147">Example 2</span></span>
+### <a name="example-2-compare-version-information-using-a-script-resource"></a><span data-ttu-id="d3d49-147">範例 2︰使用 Script 資源比較版本資訊</span><span class="sxs-lookup"><span data-stu-id="d3d49-147">Example 2: Compare version information using a Script resource</span></span>
+
+<span data-ttu-id="d3d49-148">此範例會從撰寫電腦上的文字檔擷取「符合規範」的版本資訊，並將它儲存在 `$version` 變數中。</span><span class="sxs-lookup"><span data-stu-id="d3d49-148">This example retrieves the *compliant* version information from a text file on the authoring computer and stores it in the `$version` variable.</span></span> <span data-ttu-id="d3d49-149">產生節點的 MOF 檔案時，DSC 會使用 `$version` 變數的值，來取代每個指令碼區塊中的 `$using:version` 變數。</span><span class="sxs-lookup"><span data-stu-id="d3d49-149">When generating the node's MOF file, DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.</span></span> <span data-ttu-id="d3d49-150">執行期間，「符合規範」的版本會儲存在每個節點的文字檔中，並與後續執行進行比較及更新。</span><span class="sxs-lookup"><span data-stu-id="d3d49-150">During execution, the *compliant* version is stored in a text file on each Node and compared and updated on subsequent executions.</span></span>
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-<span data-ttu-id="7d640-148">此資源正在將設定的版本寫入文字檔。</span><span class="sxs-lookup"><span data-stu-id="7d640-148">This resource is writing the configuration's version to a text file.</span></span> <span data-ttu-id="7d640-149">用戶端電腦上可以使用此版本，但在其餘節點則無法使用，所以必須以 PowerShell 的 `using` 範圍，將其傳遞至各個 `Script` 資源的指令碼區塊。</span><span class="sxs-lookup"><span data-stu-id="7d640-149">This version is available on the client computer, but isn't on any of the nodes, so it has to be passed to each of the `Script` resource's script blocks with PowerShell's `using` scope.</span></span> <span data-ttu-id="7d640-150">產生節點的 MOF 檔案時，會從用戶端電腦的文字檔讀取 `$version` 變數的值。</span><span class="sxs-lookup"><span data-stu-id="7d640-150">When generating the node's MOF file, the value of the `$version` variable is read from a text file on the client computer.</span></span> <span data-ttu-id="7d640-151">DSC 會以 `$version` 變數的值，取代各個指令碼區塊中的 `$using:version` 變數。</span><span class="sxs-lookup"><span data-stu-id="7d640-151">DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.</span></span>
