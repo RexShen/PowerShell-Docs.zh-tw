@@ -1,37 +1,39 @@
 ---
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
-ms.date: 08/06/2018
-ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.date: 08/14/2018
+ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587494"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133149"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
 ## <a name="overview"></a>概觀
 
-PowerShell 遠端通常會使用 WinRM 進行連線交涉和資料傳輸。 已選擇 SSH 進行此遠端實作，因為它現在適用於 Linux 和 Windows 平台，並允許真正多平台 PowerShell 遠端。 不過，WinRM 也提供穩固的裝載模型，來進行這項實作尚未執行的 PowerShell 遠端工作階段。 這表示，這項實作尚未支援 PowerShell 遠端端點設定和 JEA (Just Enough Administration)。
+PowerShell 遠端通常會使用 WinRM 進行連線交涉和資料傳輸。 SSH 目前適用於 Linux 與 Windows 平台，而且能夠執行真正的多平台 PowerShell 遠端功能。
 
-PowerShell SSH 遠端可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端。 做法是在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。 最終，這會變更為與 WinRM 運作方式類似的更一般裝載模型，以支援端點設定和 JEA。
+WinRM 提供一個健全裝載模型以供 PowerShell 遠端工作階段使用。 使用這個實作時，SSH 型遠端功能目前不支援遠端端點設定和 JEA (Just Enough Administration)。
 
-`New-PSSession`、`Enter-PSSession` 和 `Invoke-Command` Cmdlet 現在有新的參數集，可方便進行這個新的遠端連線
+SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端功能。 SSH 遠端功能會在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。
+最後，我們將實作一般裝載模型 (類似 WinRM) 以支援端點設定與 JEA。
+
+`New-PSSession`、`Enter-PSSession` 與 `Invoke-Command` Cmdlet 現在有新的參數集，可支援這個新的遠端連線。
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-這個新的參數集很可能會變更，但現在可讓您建立 SSH PSSession，以從命令列與之互動或在其上叫用命令和指令碼。 您可以使用 HostName 參數指定目標電腦，並使用 UserName 來提供使用者名稱。 在 PowerShell 命令列以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。 但是，您也可以選擇使用 SSH 金鑰驗證，並使用 KeyFilePath 參數提供私密金鑰檔案路徑。
+若要建立遠端工作階段，您可以使用 `HostName` 參數來指定目標電腦，並使用 `UserName` 來提供使用者名稱。 以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。 您也可以搭配 `KeyFilePath` 參數使用私密金鑰檔案，來使用 SSH 金鑰驗證。
 
 ## <a name="general-setup-information"></a>一般安裝資訊
 
-需要有 SSH 才能安裝在所有電腦上。 您應該同時安裝用戶端 (`ssh.exe`) 和伺服器 (`sshd.exe`)，讓您可以試驗往返電腦的遠端執行。 針對 Windows，您需要[從 GitHub 安裝 Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)。
-針對 Linux，您需要安裝您平台適用的 SSH (包含 sshd 伺服器)。 您也需要來自 GitHub 且具有 SSH 遠端功能的新 PowerShell 組建或套件。
-SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要設定 SSH 伺服器。 此外，您必須啟用密碼驗證，以及選擇性地啟用金鑰型驗證。
+SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 針對 Windows，[從 GitHub 安裝 Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) \(英文\)。
+針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell Core 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 您也必須設定啟用密碼或以金鑰為基礎的驗證。
 
-## <a name="setup-on-windows-machine"></a>Windows 電腦上的安裝
+## <a name="set-up-on-windows-machine"></a>在 Windows 電腦上進行安裝
 
 1. 安裝最新的 [PowerShell Core for Windows] 版本
 
@@ -55,27 +57,22 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
-     > OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。
-     > 請參閱 [GitHub 上的這個問題來取得詳細資訊](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
+     > OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。 如需詳細資訊，請參閱[這個 GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784) \(英文\)。
 
-     其中一種解決方案是建立未包含空格之 Powershell 安裝目錄的符號連結：
+     解決方案之一是建立未包含空格之 PowerShell 安裝目錄的符號連結：
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
      ```
 
      然後在子系統中輸入它：
 
      ```
      Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-     ```
-
-     ```
-     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
    - 選擇性啟用金鑰驗證
@@ -90,12 +87,9 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
    Restart-Service sshd
    ```
 
-5. 將安裝 OpenSSH 的路徑新增至路徑環境變數
+5. 將 OpenSSH 安裝所在的路徑新增至 Path 環境變數。 例如，`C:\Program Files\OpenSSH\`。 這個項目能夠允許程式找到 ssh.exe。
 
-   - 這應該是與 `C:\Program Files\OpenSSH\` 行一起
-   - 這樣可以找到 ssh.exe
-
-## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) 電腦上的安裝
+## <a name="set-up-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 電腦上進行安裝
 
 1. 安裝 GitHub 中最新的 [PowerShell Core for Linux] 組建
 2. 視需要安裝 [Ubuntu SSH]
@@ -131,7 +125,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
    sudo service sshd restart
    ```
 
-## <a name="setup-on-macos-machine"></a>MacOS 電腦上的安裝
+## <a name="set-up-on-macos-machine"></a>在 MacOS 電腦上進行安裝
 
 1. 安裝最新的 [PowerShell Core for MacOS] 組建
 
@@ -176,7 +170,7 @@ SSH 子系統用來在遠端電腦上建立 PowerShell 處理序，因此需要�
 
 ## <a name="powershell-remoting-example"></a>PowerShell 遠端範例
 
-測試遠端功能的最簡單方式是只在單一電腦上試用。 我將在這裡建立回到 Linux 方塊上相同電腦的遠端工作階段。 請注意，我將會從命令提示字元使用 PowerShell Cmdlet，因此我們會看到要求驗證主機電腦的 SSH 提示以及密碼提示。 您可以在 Windows 電腦上執行相同的動作以確保遠端功能也可以運作，然後在電腦之間執行遠端功能，方法是只要變更主機名稱。
+測試遠端功能的最簡單方式是在單一電腦上進行試用。 在此範例中，我們會建立回到相同 Linux 電腦的遠端工作階段。 我們會以互動方式使用 PowerShell Cmdlet，因此，我們會看到要求驗證主機電腦的 SSH 提示以及密碼提示。 您可以在 Windows 電腦上執行相同的動作以確保遠端功能正在運作。 接著，透過變更主機名稱，在電腦之間執行遠端功能。
 
 ```powershell
 #
@@ -197,9 +191,9 @@ $session
 ```
 
 ```output
- Id Name            ComputerName    ComputerType    State         ConfigurationName     Availability
- -- ----            ------------    ------------    -----         -----------------     ------------
-  1 SSH1            UbuntuVM1       RemoteMachine   Opened        DefaultShell             Available
+ Id Name   ComputerName    ComputerType    State    ConfigurationName     Availability
+ -- ----   ------------    ------------    -----    -----------------     ------------
+  1 SSH1   UbuntuVM1       RemoteMachine   Opened   DefaultShell             Available
 ```
 
 ```powershell

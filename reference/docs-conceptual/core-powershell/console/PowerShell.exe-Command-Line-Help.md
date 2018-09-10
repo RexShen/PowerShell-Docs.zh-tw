@@ -1,14 +1,14 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: PowerShell.exe 命令列說明
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 60b6a7e310821a4092b0972b7abbdae0e2d5f738
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952574"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133080"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令列說明
 
@@ -49,12 +49,9 @@ PowerShell[.exe] -Help | -? | /?
 
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 
-在本機領域 (「點來源」) 執行指定指令碼，讓指令碼建立的函式和變數在目前的工作階段可用。 輸入指令碼檔案路徑和任何參數。 **File** 必須是命令中的最後一個參數，因為在 **File** 參數名稱後輸入的所有字元，會解譯為後面加上指令碼參數及其值的指令碼檔案路徑。
+在本機領域 (「點來源」) 執行指定指令碼，讓指令碼建立的函式和變數在目前的工作階段可用。 輸入指令碼檔案路徑和任何參數。 **File** 必須是命令中的最後一個參數。 在 **-File** 參數之後輸入的所有值都會解譯為指令碼檔案路徑以及要傳遞給該指令碼的參數。
 
-您可以將指令碼的參數和參數值包含在 **File** 參數的值中。 例如：`-File .\Get-Script.ps1 -Domain Central`。請注意，參數會以常值字串形式 (經過目前的殼層解譯後) 傳遞至指令碼。
-舉例來說，如果您想要在 cmd.exe 中傳遞環境變數值，應使用 cmd.exe 語法：`powershell -File .\test.ps1 -Sample %windir%`。反之，若您在此範例中使用 PowerShell 語法，則會收到 "$env:windir" 常值，而非該環境變數的值：`powershell -File .\test.ps1 -Sample $env:windir`
-
-一般而言，指令碼的切換參數可以包含或省略。 例如，下列命令會使用 Get-Script.ps1 指令碼檔案的 **All** 參數：`-File .\Get-Script.ps1 -All`
+參數會以常值字串形式 (經過目前的殼層解譯後) 傳遞至指令碼。 例如，如果您想要在 cmd.exe 中傳遞環境變數值，應使用 cmd.exe 語法：`powershell -File .\test.ps1 -Sample %windir%`。在此範例中，指令碼會接收到常值字串 `$env:windir`，而非該環境變數的值：`powershell -File .\test.ps1 -Sample $env:windir`
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -102,12 +99,12 @@ PowerShell[.exe] -Help | -? | /?
 
 ### <a name="-windowstyle-window-style"></a>-WindowStyle <Window style>
 
-設定工作階段的視窗樣式。 有效值為 Normal、Minimized、Maximized 和 Hidden。
+設定工作階段的視窗樣式。 有效值為 Normal、Minimized、Maximized 與 Hidden。
 
 ### <a name="-command"></a>-Command
 
-就如同在 PowerShell 命令提示字元鍵入一樣，除非指定了 NoExit 參數，否則執行指定的命令 (和任何參數)，然後結束即可。
-基本上，任何在 `-Command` 之後的文字都會作為單一命令列傳送至 PowerShell，這與 `-File` 處理傳送至指令碼之參數的方法不同。
+執行指定的命令 (搭配任何參數)，就如同在 PowerShell 命令提示字元中輸入它們一樣。 執行之後，除非指定了 `-NoExit` 參數，否則 PowerShell 就會結束。
+`-Command` 之後的任何文字都會以單一命令列形式傳送至 PowerShell。 這與 `-File` 處理要傳送至指令碼之參數的方法不同。
 
 Command 的值可以是 "-"、字串。 或指令碼區塊。 如果 Command 的值是 "-"，則會從標準輸入讀取命令文字。
 
@@ -121,11 +118,11 @@ Command 的值可以是 "-"、字串。 或指令碼區塊。 如果 Command 的
 "& {<command>}"
 ```
 
-其中的引號代表字串，它會呼叫 (&) 運算子，使命令執行。
+引號代表字串，而叫用運算子 (&) 會導致命令執行。
 
 ### <a name="-help---"></a>-Help, -?, /?
 
-顯示此訊息。 若要在 PowerShell 中鍵入 PowerShell.exe 命令，命令參數之前要加上連字號 (-)，而不是正斜線 (/)。 在 Cmd.exe 中，您可以使用連字號或正斜線。
+顯示 powershell.exe 的語法。 若要在 PowerShell 中輸入 PowerShell.exe 命令，命令參數之前要加上連字號 (-)，而不是正斜線 (/)。 在 Cmd.exe 中，您可以使用連字號或正斜線。
 
 > [!NOTE]
 > 疑難排解注意事項︰在 PowerShell 2.0 中，啟動 Windows PowerShell 主控台中的某些程式會失敗，LastExitCode 為 0xc0000142。

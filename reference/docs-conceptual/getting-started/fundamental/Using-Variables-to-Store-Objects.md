@@ -1,21 +1,22 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用變數儲存物件
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953322"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353213"
 ---
 # <a name="using-variables-to-store-objects"></a>使用變數儲存物件
-PowerShell 可以搭配物件來使用。 PowerShell 可讓您建立基本上為具名物件的變數，以保留輸出供之後使用。 如果您習慣使用其他殼層中的變數，請記得 PowerShell 變數是物件，而非文字。
 
-變數一律會指定起始字元 $，而且可以在其名稱中包括任何英數字元或底線。
+PowerShell 可以搭配物件來使用。 PowerShell 可讓您建立稱為變數的具名物件。
+變數名稱可以包括底線字元與任何英數字元。 在 PowerShell 中使用時，變數一律使用 \$ 字元後面接著變數名稱來指定。
 
-### <a name="creating-a-variable"></a>建立變數
+## <a name="creating-a-variable"></a>建立變數
+
 您可以輸入有效的變數名稱來建立變數︰
 
 ```
@@ -23,13 +24,14 @@ PS> $loc
 PS>
 ```
 
-這不會傳回任何結果，因為 **$loc** 沒有值。 您可以在相同的步驟中建立變數並指派其值。 PowerShell 只會建立不存在的變數；否則，它會將指定的值指派給現有變數。 若要將您的目前位置儲存在變數 **$loc** 中，請輸入：
+此範例不會傳回任何結果，因為 `$loc` 沒有值。 您可以在相同的步驟中建立變數並指派其值。 PowerShell 只有在變數不存在時才會加以建立。
+否則，它會將指定的值指派給現有變數。 下列範例會將目前的位置儲存在變數 `$loc` 中：
 
-```
+```powershell
 $loc = Get-Location
 ```
 
-輸入這個命令時未顯示任何輸出，因為輸出會傳送至 $loc。 在 PowerShell 中，未導向的資料一律會傳送至螢幕，因而導致顯示輸出。 輸入 $loc 將顯示目前的位置：
+當您輸入此命令時，PowerShell 不會顯示任何輸出。 PowerShell 會將 'Get-location' 的輸出傳送到 `$loc`。 在 PowerShell 中，會將未指派或重新導向的資料傳送到畫面。 輸入 `$loc` 會顯示您的目前位置：
 
 ```
 PS> $loc
@@ -39,9 +41,9 @@ Path
 C:\temp
 ```
 
-您可以使用 **Get-Member** 顯示變數內容的相關資訊。 將 $loc 傳送到 Get-Member 將顯示它是 **PathInfo** 物件，就像 Get-Location 的輸出一樣：
+您可以使用 `Get-Member` 來顯示變數內容的相關資訊。 `Get-Member` 會顯示 `$loc` 為 **PathInfo** 物件，就像來自 `Get-Location` 的輸出：
 
-```
+```powershell
 PS> $loc | Get-Member -MemberType Property
 
    TypeName: System.Management.Automation.PathInfo
@@ -54,47 +56,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### <a name="manipulating-variables"></a>操作變數
+## <a name="manipulating-variables"></a>操作變數
+
 PowerShell 提供數個命令來操作變數。 您可以查看可讀取形式的完整清單，方法是輸入︰
 
-```
+```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-除了您在目前 PowerShell 工作階段中建立的變數之外，還有數個系統定義的變數。 您可以使用 **Remove-Variable** Cmdlet 來清除所有不受 PowerShell 控制的變數。 輸入下列命令以清除所有變數：
+PowerShell 也會建立數個系統定義的變數。 您可以使用 `Remove-Variable` Cmdlet，從目前的工作階段移除所有不受 PowerShell 控制的變數。 輸入下列命令以清除所有變數：
 
-```
+```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-這將產生您在下面看到的確認提示。
+執行上一個命令之後，`Get-Variable` Cmdlet 會顯示 PowerShell 系統變數。
 
-```
-Confirm
-Are you sure you want to perform this action?
-Performing operation "Remove Variable" on Target "Name: Error".
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help
-(default is "Y"):A
-```
+PowerShell 也會建立變數磁碟機。 使用下列範例，利用變數磁碟機來顯示所有 PowerShell 變數：
 
-如果之後執行 **Get-Variable** Cmdlet，就會看到其餘的 PowerShell 變數。 因為也有 PowerShell 驅動的變數，所以也可以輸入下列命令來顯示所有 PowerShell 變數︰
-
-```
+```powershell
 Get-ChildItem variable:
 ```
 
-### <a name="using-cmdexe-variables"></a>使用 Cmd.exe 變數
-雖然 PowerShell 不是 Cmd.exe，但是會在命令殼層環境中執行，而且可以在 Windows 的任何環境中使用相同的變數。 這些變數是透過名為 **env** 的磁碟機公開： 您可以檢視這些變數，方法是輸入︰
+## <a name="using-cmdexe-variables"></a>使用 Cmd.exe 變數
 
-```
+PowerShell 可以使用可供任何 Windows 處理序 (包括 **cmd.exe**) 使用的相同環境變數。 這些變數會透過名為 `env:` 的磁碟機來公開。 您可以輸入下列命令來檢視這些變數：
+
+```powershell
 Get-ChildItem env:
 ```
 
-雖然標準變數 Cmdlet 未設計成使用 **env:** 變數，但是您仍然可以指定 **env:** 前置詞來使用它們。 例如，若要查看作業系統根目錄，您可以輸入下列命令，以便從 PowerShell 使用命令殼層 **%SystemRoot%** 變數︰
+標準的 `*-Variable` Cmdlet 不是設計來使用環境變數。 環境變數可以使用 `env:` 磁碟機前置詞來存取。 例如，**cmd.exe** 中的 **%SystemRoot%** 變數包含作業系統的根目錄名稱。 在 PowerShell 中，您會使用 `$env:SystemRoot` 來存取相同的值。
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-您也可以從 PowerShell 建立和修改環境變數。 從 Windows PowerShell 存取的環境變數符合 Windows 中其他位置之環境變數的一般規則。
+您也可以從 PowerShell 建立和修改環境變數。 PowerShell 中的環境變數會遵循在作業系統中其他地方所使用之環境變數的相同規則。 下列範例會建立新的環境變數：
+
+```powershell
+$env:LIB_PATH='/usr/local/lib'
+```
+
+雖然並非必要，但通常會針對環境變數名稱全部使用大寫字母。

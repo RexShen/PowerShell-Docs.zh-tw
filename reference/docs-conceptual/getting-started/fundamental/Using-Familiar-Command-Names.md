@@ -1,58 +1,84 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用熟悉的命令名稱
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952676"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353244"
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名稱
-Windows PowerShell 使用稱為*別名*的機制，讓使用者依據替代名稱來參照命令。 別名可讓具有其他殼層經驗的使用者重複使用他們已經熟悉的一般命令名稱，以在 Windows PowerShell 中執行類似作業。 雖然我們不會詳細討論 Windows PowerShell 別名，但是您在開始使用 Windows PowerShell 時仍然可以使用它們。
 
-別名會將您所輸入的命令名稱與另一個命令產生關聯。 例如，Windows PowerShell 的內部函式 **Clear-Host** 會清除輸出視窗。 如果您在命令提示字元中輸入 **cls** 或 **clear** 命令，則 Windows PowerShell 會解譯這是 **Clear-Host** 函式的別名，並執行 **Clear-Host** 函式。
+PowerShell 支援別名，以使用替代名稱來參考命令。 別名讓具有其他殼層使用體驗的使用者能夠使用他們已經知道的常見命令名稱，在 PowerShell 中執行類似作業。
 
-這項功能可協助使用者了解 Windows PowerShell。 首先，大部分 Cmd.exe 和 UNIX 使用者都有使用者已經透過名稱知道的大型命令庫，而且雖然 Windows PowerShell 對等項目可能不會產生相同的結果，但是它們夠接近使用者可以使用它們來執行工作的形式，而不需要先記下 Windows PowerShell 名稱。 其次，使用者在已熟悉其他殼層時學習新殼層的主要挫折來源是「finger 記憶體」所造成的錯誤。 如果您已使用 Cmd.exe 數年，則整個畫面已填滿輸出而且想要予以清除時，則應該輸入 **cls** 命令並按 ENTER 鍵。 **Clear-Host** 函式在 Windows PowerShell 中沒有別名，因此您只會收到錯誤訊息「'cls' 無法辨識為 Cmdlet、函式、作業程式或指令碼檔案。」， 而且不知道怎麼清除輸出。
+別名會將新名稱與另一個命令產生關聯。 例如，PowerShell 具有會清除輸出視窗的內部函式 `Clear-Host`。 您可以在命令提示字元中輸入 `cls` 或 `clear` 別名。 PowerShell 會解譯這些別名並執行 `Clear-Host` 函式。
 
-下列是您可在 Windows PowerShell 內使用的常見 Cmd.exe 和 UNIX 命令的簡短清單︰
+此功能可協助使用者學習 PowerShell。 首先，大部分的 **cmd.exe** 與 Unix 使用者都具備他們已經透過名稱知道的大量命令技能。 PowerShell 對應項可能不會產生相同的結果。 不過，結果非常接近，足以讓使用者在不知道 PowerShell 命令名稱的情況下執行動作。 在學習新的命令殼層時，「手指記憶」是挫折的另一個主要來源。 如果您已使用 **cmd.exe** 多年，您可能會反過來輸入 `cls` 命令來清除畫面。 如果沒有 `Clear-Host` 的別名，您就會收到錯誤訊息，而且不知道該怎麼清除輸出。
+
+下列清單顯示一些您可以在 PowerShell 中使用的常見 **cmd.exe** 與 Unix 命令：
 
 |||||
 |-|-|-|-|
-|cat|dir|掛上 - mount|rm|
+|cat|dir|mount|rm|
 |cd|echo|move|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
 |cls|history|pushd|tee|
-|copy|kill|pwd|型別|
+|copy|kill|pwd|type|
 |del|lp|r|write|
 |diff|ls|ren||
 
-如果您發現自己使用其中一個命令，並且想要了解原生 Windows PowerShell 命令的實際名稱，則可以使用 **Get-Alias** 命令：
+`Get-Alias` Cmdlet 會顯示與別名相關聯之原生 PowerShell 命令的實際名稱。
 
-```
+```powershell
 PS> Get-Alias cls
-
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
 ```
 
-若要讓範例更容易閱讀，《Windows PowerShell 使用者手冊》一般會避免使用別名。 不過，如果您正在使用其他來源中的任意 Windows PowerShell 程式碼片段，或想要定義您自己的別名，則更早深入了解別名仍然十分有用。 本節的其餘部分將討論標準別名，以及如何定義您自己的別名。
-
-### <a name="interpreting-standard-aliases"></a>解譯標準別名
-與上述的別名不同 (是針對與其他介面的名稱相容性所設計)，Windows PowerShell 內建的別名通常是針對簡潔性所設計。 這些較短的名稱可以快速輸入，但在您不知道它們所參考的項目時則無法讀取。
-
-Windows PowerShell 嘗試在詳細性與簡潔性之間取得妥協，方法是提供根據一般動詞和名詞之縮寫名稱的一組標準別名。 在您知道縮寫名稱時，這允許可讀取之常見 Cmdlet 的一組核心別名。 例如，在標準別名中，動詞 **Get** 縮寫為 **g**動詞 **Set** 縮寫為 **s**、名詞 **Item** 縮寫為 **i**、名詞 **Location** 縮寫為 **l**，而名詞 Command 縮寫為 **cm**。
-
-以下是說明其運作方式的簡單範例。 Get-Item 的標準別名是合併 **g** (代表 Get) 與 **i** (代表 Item)：**gi**。 Set-Item 的標準別名是合併 **s** (代表 Set) 與 **i** (代表 Item)：**si**。 Get-Location 的標準別名是合併 **g** (代表 Get) 與 **l** (代表 Location)：**gl**。 Set-Location 的標準別名是合併 **s** (代表 Set) 與 **l** (代表 Location)：**sl**。 Get-Command 的標準別名是合併 **g** (代表 Get) 與 **cm** (代表 Command)：**gcm**。 沒有 Set-Command Cmdlet，但是如果有的話，我們可以猜出標準別名來自 **s** (代表 Set) 和 **cm** (代表 Command)：**scm**。 甚至，熟悉 Windows PowerShell 別名的人員在遇到 **scm** 時，可以猜出別名參照 Set-Command。
-
-### <a name="creating-new-aliases"></a>建立新別名
-您可以使用 Set-Alias Cmdlet 來建立專屬別名。 例如，下列陳述式會建立＜解譯標準別名＞中所討論的標準 Cmdlet 別名︰
-
+```Output
+CommandType     Name                               Version    Source
+-----------     ----                               -------    ------
+Alias           cls -> Clear-Host
 ```
+
+## <a name="interpreting-standard-aliases"></a>解譯標準別名
+
+先前提到的別名是針對與其他命令殼層的名稱相容性而設計的。
+PowerShell 內建的大部分別名都是基於簡潔性而設計的。 較短的名稱比較容易輸入，但如果您不知道它們指的是什麼，就會變得不容易閱讀。
+
+PowerShell 別名試圖在清晰度與簡潔性之間做出妥協。 PowerShell 會針對常見名詞與指令動詞使用一組標準別名。
+
+範例縮寫：
+
+| 名詞或指令動詞 | 縮寫 |
+|--------------|--------------|
+| Get          | g            |
+| Set          | s            |
+| Item         | i            |
+| Location     | l            |
+| Command      | cm           |
+| Alias        | al           |
+
+當您知道縮寫名稱，就能了解這些別名。
+
+| Cmdlet 名稱    | 別名 |
+|----------------|-------|
+| `Get-Item `    | gi    |
+| `Set-Item`     | si    |
+| `Get-Location` | gl    |
+| `Set-Location` | sl    |
+| `Get-Command`  | gcm   |
+| `Get-Alias`    | gal   |
+
+一旦您熟悉 PowerShell 別名之後，很容易就能猜出 **sal** 別名是指 `Set-Alias`。
+
+## <a name="creating-new-aliases"></a>建立新別名
+
+您可以使用 `Set-Alias` Cmdlet 來建立自己的別名。 例如，下列陳述式會建立先前所討論的標準 Cmdlet 別名：
+
+```powershell
 Set-Alias -Name gi -Value Get-Item
 Set-Alias -Name si -Value Set-Item
 Set-Alias -Name gl -Value Get-Location
@@ -60,7 +86,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-在內部，Windows PowerShell 會在啟動期間使用這類命令，但這些別名無法變更。 如果您嘗試實際執行其中一個命令，則會收到說明無法修改別名的錯誤。 例如：
+在內部，PowerShell 會在啟動期間使用類似命令，但這些別名無法變更。
+如果您嘗試執行這其中一個命令，則會收到說明無法修改別名的錯誤。 例如：
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item

@@ -1,29 +1,19 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/24/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC Script 資源
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189443"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133888"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 資源
 
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
-
-Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目標節點執行 Windows PowerShell 指令碼區塊的機制。 `Script`資源有`GetScript`、`SetScript` 和`TestScript` 屬性。 應該要對將會在每個目標節點上執行的指令碼區塊，設定這些屬性。
-
-`GetScript` 指令碼區塊應該會傳回代表目前節點狀態的雜湊表。 雜湊表必須只包含一個機碼 `Result`，且值必須是 `String` 類型。 不需要傳回任何內容。 DSC 不會對此指令碼區塊的輸出進行任何動作。
-
-`TestScript` 指令碼區塊必須判斷目前的節點是否需要修改。 若該節點處於最新的狀態，應傳回 `$true`。 若節點的設定已過期，應傳回 `$false`，並使用 `SetScript` 指令碼區塊進行更新。 `TestScript` 指令碼區塊由 DSC 呼叫。
-
-`SetScript` 指令碼區塊應修改該節點。 若 `TestScript` 區塊傳回 `$false`，會由 DSC 加以呼叫。
-
-若您需要使用 `GetScript`、`TestScript` 或 `SetScript` 指令碼區塊中設定指令碼的變數，請使用 `$using:` 範圍 (請參閱下方範例)
-
+Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目標節點執行 Windows PowerShell 指令碼區塊的機制。 **Script** 資源會使用 `GetScript`、`SetScript` 和 `TestScript` 屬性，其中包含您定義來執行對應 DSC 狀態作業的指令碼區塊。
 
 ## <a name="syntax"></a>語法
 
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+> [!NOTE]
+> `GetScript`、`TestScript` 與 `SetScript` 區塊會以字串形式儲存。
 
-|  屬性  |  描述   |
-|---|---|
-| GetScript| 提供叫用 [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) Cmdlet 時所執行的 Windows PowerShell 指令碼區塊。 這個區塊必須傳回雜湊表。 雜湊表必須只包含一個機碼 **Result**，且值必須是 **String** 類型。|
-| SetScript| 提供 Windows PowerShell 指令碼區塊。 當您叫用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet 時，**TestScript** 區塊會先執行。 如果 **TestScript** 區塊傳回 **$false**，則 **SetScript** 區塊就會執行。 如果 **TestScript** 區塊傳回 **$true**，則 **SetScript** 區塊就會執行。|
-| TestScript| 提供 Windows PowerShell 指令碼區塊。 當您叫用 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) Cmdlet 時，這個區塊就會執行。 如果傳回 **$false**，SetScript 區塊就會執行。 如果傳回 **$true**，SetScript 區塊就不會執行。 **TestScript** 區塊也會在叫用 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet 時執行。 不過，在此情況下，無論 TestScript 區塊傳回何值，**SetScript** 區塊都不會執行。 如果實際的設定符合目前的預期狀態設定，則 **TestScript** 區塊必須傳回 True；如果不符合，則為 False。 (目前的預期狀態設定是上次使用 DSC 的節點上施行的設定)。|
-| 認證| 如果需要認證，表示執行這個指令碼所要使用的認證。|
-| DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。
+## <a name="properties"></a>屬性
 
-## <a name="example-1"></a>範例 1
+|屬性|描述|
+|--------|-----------|
+|GetScript|指令碼區塊，會傳回節點的目前狀態。|
+|SetScript|指令碼區塊，DSC 會在節點未處於預期狀態時，用來強制執行合規性。|
+|TestScript|指令碼區塊，可判斷節點是否處於預期狀態。|
+|認證| 如果需要認證，表示執行這個指令碼所要使用的認證。|
+|DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。
+
+### <a name="getscript"></a>GetScript
+
+DSC 不會使用 `GetScript` 的輸出。 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) Cmdlet 會執行 `GetScript` 以擷取節點的目前狀態。 `GetScript` 不需要傳回值。 如果您指定傳回值，它必須是 `hashtable`，其中包含值為 `String` 的 **Result** 機碼。
+
+### <a name="testscript"></a>TestScript
+
+`TestScript` 會透過 DSC 執行，以判斷是否應該執行 `SetScript`。 如果 `TestScript` 傳回 `$false`，DSC 就會執行 `SetScript`，以讓節點回到預期狀態。 它必須傳回 `boolean` 值。 `$true` 的結果指出節點符合規範，而且 `SetScript` 應該不會執行。
+
+[Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) Cmdlet 會執行 `TestScript`，利用 **Script** 資源來擷取節點合規性。 不過，在此情況下，無論 `TestScript` 區塊傳回什麼，`SetScript` 都不會執行。
+
+> [!NOTE]
+> 來自您 `TestScript` 的所有輸出都是其傳回值的一部分。 PowerShell 會將非隱藏的輸出解譯為非零值，這表示不論節點的狀態為何，您的 `TestScript` 都將傳回 `$true`。
+> 這會產生無法預期的結果、誤判，並導致疑難排解期間出現問題。
+
+### <a name="setscript"></a>SetScript
+
+`SetScript` 會修改節點以強制進入預期狀態。 如果 `TestScript` 指令碼區塊傳回 `$false`，則會由 DSC 加以呼叫。 `SetScript` 應該不會傳回值。
+
+## <a name="examples"></a>範例
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>範例 1：使用 Script 資源撰寫範例文字
+
+此範例會在每個節點上測試 `C:\TempFolder\TestFile.txt` 是否存在。 如果不存在，就會使用 `SetScript` 建立它。 `GetScript` 會傳回檔案的內容，而且不會使用它的傳回值。
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>範例 2
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>範例 2︰使用 Script 資源比較版本資訊
+
+此範例會從撰寫電腦上的文字檔擷取「符合規範」的版本資訊，並將它儲存在 `$version` 變數中。 產生節點的 MOF 檔案時，DSC 會使用 `$version` 變數的值，來取代每個指令碼區塊中的 `$using:version` 變數。 執行期間，「符合規範」的版本會儲存在每個節點的文字檔中，並與後續執行進行比較及更新。
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-此資源正在將設定的版本寫入文字檔。 用戶端電腦上可以使用此版本，但在其餘節點則無法使用，所以必須以 PowerShell 的 `using` 範圍，將其傳遞至各個 `Script` 資源的指令碼區塊。 產生節點的 MOF 檔案時，會從用戶端電腦的文字檔讀取 `$version` 變數的值。 DSC 會以 `$version` 變數的值，取代各個指令碼區塊中的 `$using:version` 變數。

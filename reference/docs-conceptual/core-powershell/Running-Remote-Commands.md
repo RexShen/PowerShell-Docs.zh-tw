@@ -1,47 +1,44 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: 執行遠端命令
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: d21d1def1e25895f65b3578bf2892d56f14cc150
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 2001b5509acde6ec4259bb1442944958a67aa66f
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482874"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133081"
 ---
 # <a name="running-remote-commands"></a>執行遠端命令
 
-您可以使用單一 Windows PowerShell 命令，在一或數百部電腦上執行命令。 Windows PowerShell 透過使用各種技術 (包括 WMI、RPC 與 WS) 支援遠端運算。
+您可以使用單一 PowerShell 命令，在一部或數百部電腦上執行命令。 Windows PowerShell 透過使用各種技術 (包括 WMI、RPC 與 WS) 支援遠端運算。
 
-## <a name="remoting-in-powershell-core"></a>PowerShell Core 中的遠端
+PowerShell Core 支援 WMI、WS-Management 與 SSH 遠端功能。 不再支援 RPC。
 
-PowerShell Core 是 Windows、macOS 和 Linux 上的較新 PowerShell 版本，支援 WMI、WS-Management 和 SSH 遠端 
-(不再支援 RPC)。
+如需 PowerShell Core 中遠端功能的詳細資訊，請參閱下列文章：
 
-如需進行這項設定的詳細資訊，請參閱：
+- [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
+- [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]
 
-* [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
-* [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]
+## <a name="windows-powershell-remoting-without-configuration"></a>不需設定的 Windows PowerShell 遠端功能
 
-## <a name="remoting-without-configuration"></a>不需要進行設定的遠端執行功能
+許多 Windows PowerShell Cmdlet 都有 ComputerName 參數，可讓您收集資料，並變更一或多部遠端電腦的設定。 這些 Cmdlet 使用各種不同的通訊協定，在不需任何特殊設定的所有 Windows 作業系統上運作。
 
-許多 Windows PowerShell Cmdlet 都有 ComputerName 參數，可讓您收集資料，並變更一或多部遠端電腦的設定。 它們使用各種通訊技術，且許多都能在 Windows PowerShell 支援的所有 Windows 作業系統上運作，而不需要特殊設定。
+這些 Cmdlet 包括：
 
-這些 Cmdlet 包含：
+- [Restart-Computer](/powershell/module/microsoft.powershell.management/restart-computer)
+- [Test-Connection](/powershell/module/microsoft.powershell.management/test-connection)
+- [Clear-EventLog](/powershell/module/microsoft.powershell.management/clear-eventlog)
+- [Get-EventLog](/powershell/module/microsoft.powershell.management/get-eventlog)
+- [Get-HotFix](/powershell/module/microsoft.powershell.management/get-hotfix)
+- [Get-Process](/powershell/module/microsoft.powershell.management/get-process)
+- [Get-Service](/powershell/module/microsoft.powershell.management/get-service)
+- [Set-Service](/powershell/module/microsoft.powershell.management/set-service)
+- [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/get-winevent)
+- [Get-WmiObject](/powershell/module/microsoft.powershell.management/get-wmiobject)
 
-* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
-* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
-* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
-* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
-* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
-* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
-* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
-* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
-* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
-
-一般而言，支援遠端處理而不需要特殊設定的 Cmdlet 具有 ComputerName 參數，而沒有 Session 參數。 若要在您的工作階段中尋找這些 Cmdlet，請輸入：
+一般而言，不需特殊設定即可支援遠端功能的 Cmdlet 具有 ComputerName 參數，而且沒有 Session 參數。 若要在您的工作階段中尋找這些 Cmdlet，請輸入：
 
 ```powershell
 Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
@@ -49,22 +46,24 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 
 ## <a name="windows-powershell-remoting"></a>Windows PowerShell 遠端執行功能
 
-Windows PowerShell 遠端執行功能使用 WS-Management 通訊協定，可讓您在一或多部遠端電腦上執行任何 Windows PowerShell 命令。 它可讓您建立持續連線、啟動 1:1 互動式工作階段，以及在多部電腦上執行指令碼。
+使用 WS-Management 通訊協定，Windows PowerShell 遠端功能可讓您在一或多部遠端電腦上執行任何 Windows PowerShell 命令。 您可以建立持續連線、啟動互動式工作階段，以及在遠端電腦上執行指令碼。
 
-若要使用 Windows PowerShell 遠端執行功能，必須針對遠端管理設定遠端電腦。 如需包括指示的詳細資訊，請參閱[關於遠端需求](https://technet.microsoft.com/library/dd315349.aspx)。
+若要使用 Windows PowerShell 遠端執行功能，必須針對遠端管理設定遠端電腦。
+如需包括指示的詳細資訊，請參閱[關於遠端需求](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)。
 
-設定 Windows PowerShell 遠端執行功能之後，許多遠端處理策略就可供您使用。 這份文件的其餘部分只列出其中幾個。 如需詳細資訊，請參閱[關於遠端](https://technet.microsoft.com/library/dd347744.aspx)與[關於遠端常見問題集](https://technet.microsoft.com/library/dd347744.aspx)。
+設定 Windows PowerShell 遠端功能之後，就有許多遠端處理策略可供您使用。
+本文只列出其中幾個。 如需詳細資訊，請參閱[關於遠端](/powershell/module/microsoft.powershell.core/about/about_remote)。
 
 ### <a name="start-an-interactive-session"></a>啟動互動式工作階段
 
-若要啟動與單一遠端電腦的互動式工作階段，請使用 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) Cmdlet。
+若要啟動與單一遠端電腦的互動式工作階段，請使用 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet。
 例如，若要啟動與 Server01 遠端電腦的互動式工作階段，請輸入：
 
 ```powershell
 Enter-PSSession Server01
 ```
 
-命令提示字元將變更為顯示您所連線之電腦的名稱。 從那時開始，您在提示字元中輸入的所有命令都會在遠端電腦上執行，而結果會顯示本機電腦上。
+此命令提示字元會變更以顯示遠端電腦的名稱。 您在提示字元中輸入的所有命令都會在遠端電腦上執行，而結果均會顯示於本機電腦上。
 
 若要結束互動式工作階段，請輸入：
 
@@ -72,12 +71,14 @@ Enter-PSSession Server01
 Exit-PSSession
 ```
 
-如需 Enter-PSSession 與 Exit-PSSession Cmdlet 的詳細資訊，請參閱 [Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) 與 [Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478)。
+如需 Enter-PSSession 與 Exit-PSSession Cmdlet 的詳細資訊，請參閱：
+
+- [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession)
+- [Exit-PSSession](/powershell/module/microsoft.powershell.core/exit-pssession)
 
 ### <a name="run-a-remote-command"></a>執行遠端命令
 
-若要在一或多部遠端電腦上執行任何命令，請使用 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) Cmdlet。
-例如，若要在 Server01 與 Server02 遠端電腦上執行 [Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) 命令，請輸入：
+若要在一或多部遠端電腦上執行命令，請使用 [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) Cmdlet。 例如，若要在 Server01 與 Server02 遠端電腦上執行 [Get-UICulture](/powershell/module/microsoft.powershell.utility/get-uiculture) 命令，請輸入：
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -92,39 +93,33 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
 
-如需 Invoke-Command Cmdlet 的詳細資訊，請參閱 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)。
-
 ### <a name="run-a-script"></a>執行指令碼
 
-若要在一或多部遠端電腦上執行指令碼，請使用 Invoke-Command Cmdlet 的 FilePath 參數。 您的本機電腦上必須有該指令碼或可存取該指令碼。 結果會傳回到您的本機電腦。
+若要在一或多部遠端電腦上執行指令碼，請使用 `Invoke-Command` Cmdlet 的 FilePath 參數。 您的本機電腦上必須有該指令碼或可存取該指令碼。 結果會傳回到您的本機電腦。
 
-例如，下列命令會在 Server01 與 Server02 遠端電腦上執行 DiskCollect.ps1 指令碼。
+例如，下列命令會在遠端電腦 (Server01 與 Server02) 上執行 DiskCollect.ps1 指令碼。
 
 ```powershell
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-如需 Invoke-Command Cmdlet 的詳細資訊，請參閱 [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)。
-
 ### <a name="establish-a-persistent-connection"></a>建立持續連線
 
-若要執行一系列共用資料的相關命令，請在遠端電腦上建立工作階段，然後使用 Invoke-Command Cmdlet 在您建立的工作階段中執行命令。 若要建立遠端工作階段，請使用 New-PSSession Cmdlet。
-
-例如，下列命令會在 Server01 電腦上建立遠端工作階段，並在 Server02 電腦上建立另一個遠端工作階段。 它會將該工作階段物件儲存於 $s 變數中。
+使用 `New-PSSession` Cmdlet，在遠端電腦上建立一個持續性工作階段。 下列範例會在 Server01 與 Server02 上建立遠端工作階段。 工作階段物件會儲存在 `$s` 變數中。
 
 ```powershell
 $s = New-PSSession -ComputerName Server01, Server02
 ```
 
-現在，工作階段已建立，您可以在其中執行任何命令。 因為工作階段是持續性，您可以在單一命令中收集資料，並將它用於後續的命令。
+現在，工作階段已建立，您可以在其中執行任何命令。 此外，由於工作階段是持續性的，因此，您可以從單一命令收集資料，並將它用於其他命令中。
 
-例如，下列命令會在 $s 變數的工作階段中執行 Get-HotFix 命令，並將結果儲存在 $h 變數中。 $h 變數會建立在 $s 的各個工作階段中，但不會存在於本機工作階段。
+例如，下列命令會在 $s 變數的工作階段中執行 Get-HotFix 命令，並將結果儲存在 $h 變數中。 $h 變數是在 $s 的每個工作階段中所建立，但在本機工作階段中不存在。
 
 ```powershell
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-現在您可以在後續命令中使用 $h 變數中的資料，例如下列範例。 結果會顯示在本機電腦上。
+現在，您可以搭配相同工作階段中的其他命令來使用 `$h` 變數中的資料。 結果會顯示在本機電腦上。 例如：
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -134,8 +129,9 @@ Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}
 
 Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安裝的 Cmdlet，您可以同時建立及設定本機與遠端電腦的遠端工作階段、建立自訂與受限制的工作階段、允許使用者從實際隱含執行於遠端工作階段的遠端工作階段匯入命令，以及設定遠端工作階段安全性等。
 
-為簡化遠端設定，Windows PowerShell 包含 WSMan 提供者。 提供者建立的 WSMAN: 磁碟機可讓您瀏覽本機電腦與遠端電腦上組態設定的階層。
-如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/library/dd819476.aspx)與[關於 WS-Management Cmdlet](https://technet.microsoft.com/library/dd819481.aspx)，或在 Windows PowerShell 主控台中，輸入 "Get-Help wsman"。
+Windows PowerShell 包含 WSMan 提供者。 提供者會建立 `WSMAN:` 磁碟機，讓您可以完整瀏覽本機電腦與遠端電腦上組態設定的階層。
+
+如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/library/dd819476.aspx) \(英文\) 與[關於 WS-Management Cmdlet](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets)，或在 Windows PowerShell 主控台中，輸入 `Get-Help wsman`。
 
 如需詳細資訊，請參閱：
 
@@ -153,7 +149,7 @@ Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安�
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

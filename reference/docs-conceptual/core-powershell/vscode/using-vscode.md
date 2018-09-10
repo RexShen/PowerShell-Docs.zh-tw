@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: f8e1e9af257037fc7bd74549e4197c9a1695e952
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587426"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134095"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -17,13 +17,13 @@ ms.locfileid: "39587426"
 使用 Windows 10 或安裝適用於低階 Windows 作業系統 (例如 Windows 8.1 等) 的 [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395)，即可以在 Windows 上使用 Visual Studio Code 與 PowerShell 第 5 版。
 
 啟動它之前，請先確定系統上有 PowerShell。
-若為 Windows、macOS 和 Linux 上的新型工作負載，請參閱：
+針對 Windows、macOS 和 Linux 上的新型工作負載，請參閱：
 
 - [在 Linux 上安裝 PowerShell Core][install-pscore-linux]
 - [在 macOS 上安裝 PowerShell Core][install-pscore-macos]
 - [在 Windows 上安裝 PowerShell Core][install-pscore-windows]
 
-若為傳統的 Windows PowerShell 工作負載，請參閱[安裝 Windows PowerShell][install-winps]。
+針對傳統的 Windows PowerShell 工作負載，請參閱[安裝 Windows PowerShell][install-winps]。
 
 ## <a name="editing-with-visual-studio-code"></a>使用 Visual Studio Code 編輯
 
@@ -35,20 +35,20 @@ ms.locfileid: "39587426"
 
   > [!IMPORTANT]
   > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
-  > 完成這項作業最簡單的方式是安裝 [Homebrew](http://brew.sh/) ，然後執行 `brew install openssl`。
-  > 現在，VS Code 可以成功載入 PowerShell 延伸模組。
+  > 完成此作業最簡單的方式是安裝 [Homebrew](http://brew.sh/) ，然後執行 `brew install openssl`。
+  > VS Code 現在可以成功載入 PowerShell 延伸模組。
 
 - **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
 
 ### <a name="2-installing-powershell-extension"></a>2.安裝 PowerShell 延伸模組
 
 - 啟動 Visual Studio Code 應用程式：
-  - **Windows**：在您的 PowerShell 工作階段鍵入 `code`
-  - **Linux**：在您的終端機上鍵入 `code`
-  - **macOS**：在您的終端機上鍵入 `code`
+  - **Windows**：在您的 PowerShell 工作階段輸入 `code`
+  - **Linux**：在您的終端機上輸入 `code`
+  - **macOS**：在您的終端機上輸入 `code`
 
 - 按 **Ctrl+P** (Mac 是 **Cmd+P**) 啟動 [快速開啟]。
-- 在 [快速開啟] 中鍵入 `ext install powershell` 並點擊 **Enter**。
+- 在 [快速開啟] 中輸入 `ext install powershell` 並點擊 **Enter**。
 - 提要欄位上隨即開啟 [延伸模組] 檢視。 從 Microsoft 選取 PowerShell 延伸模組。
   您應該會看到類似如下的畫面︰
 
@@ -107,12 +107,12 @@ ms.locfileid: "39587426"
 ### <a name="no-workspace-debugging"></a>無工作區偵錯
 
 使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。
-只要以 [檔案]->[開啟檔案...] 開啟 PowerShell 指令碼檔案，在行中設定中斷點 (按 F9)，然後按 F5 啟動偵錯。
+只要以 [檔案]-> [開啟檔案] 開啟 PowerShell 指令碼檔案，在行中設定中斷點 (按 F9)，然後按 F5 啟動偵錯。
 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
-工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾...]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
+工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
 您開啟的資料夾通常是 PowerShell 專案資料夾及/或 Git 存放庫的根目錄。
 
 即使在此模式中，只要按下 F5 就可以開始偵錯目前選取的 PowerShell 指令碼。
