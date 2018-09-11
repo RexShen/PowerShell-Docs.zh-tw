@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267934"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339866"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一且一致的狀態和狀態表示法
 
@@ -25,8 +25,8 @@ LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽�
 
 | 案例                        | LCMState             | 狀態     | 要求重新開機 | ResourcesInDesiredState   | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | 閒置                 | Success    | $false        | S                            | $null                          |
-| F**^**                          | PendingConfiguration | 失敗    | $false        | $null                        | F                              |
+| S<sub>i</sub>                   | 閒置                 | Success    | $false        | S                            | $null                          |
+| F<sub>i</sub>                   | PendingConfiguration | 失敗    | $false        | $null                        | F                              |
 | S,F                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
 | F,S                             | PendingConfiguration | 失敗    | $false        | S                            | F                              |
 | S<sub>1</sub>, F, S<sub>2</sub> | PendingConfiguration | 失敗    | $false        | S<sub>1</sub>, S<sub>2</sub> | F                              |
