@@ -2,22 +2,22 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 適合決策者的預期狀態設定概觀
-ms.openlocfilehash: 70fc5c55266970165dc16eac85f6b850cf409d64
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7c36aa5fadeab8bcb381f316288d102b5ce402e2
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189868"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339832"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適合決策者的預期狀態設定概觀
 
-本文件說明使用 PowerShell 預期狀態設定 (DSC) 的商業優勢。 這不是技術指南。
+本文件說明使用 Windows PowerShell Desired State Configuration (DSC) 的商務優勢。 這不是技術指南。
 
 ## <a name="what-is-desired-state-configuration"></a>什麼是預期狀態設定？
 
-Windows PowerShell 預期狀態設定 (DSC) 是 Windows 內建的開放式標準設定管理平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。
+PowerShell Desired State Configuration 是 Windows 內建的開放式標準設定管理平台。 DSC 的彈性足以因應部署生命週期 (開發、測試、生產階段前，生產環境) 各階段穩定且一致的運作，向外延展時亦然。
 
-DSC 的中心概念是「[設定](https://msdn.microsoft.com/powershell/dsc/configurations)」。
+DSC 的中心概念是[設定](configurations.md)。
 設定是容易讀取的文件，描述由特定特性的電腦 (「節點」) 組成的環境。
 這些特性可以簡單到像是確保已啟用特定的 Windows 功能，也可以複雜到像是部署 SharePoint。
 
@@ -34,27 +34,26 @@ DSC 也有內建的監視和報告。
 這讓特定電腦集合的重複部署更不容易出錯。
 也因此可讓部署更快速且更可靠，藉此縮短複雜部署的完成時間。
 
-設定也可透過 [PowerShell 資源庫](https://powershellgallery.com) \(英文\) 來分享，亦即針對您要完成的工作，可能已經有共同的案例與最佳做法。
+設定也可透過 [PowerShell 資源庫](https://powershellgallery.com)來分享，亦即對於要完成的工作，可能已經有共通案例與最佳做法。
 
 
 ## <a name="desired-state-configuration-and-devops"></a>預期狀態設定和 DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 是人員、流程和工具的組合，可允許快速建置與反覆開發週期，為內部或外部的終端使用者創造價值。
-DSC 在設計時即已考慮到 DevOps。
-讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將此設定簽入原始檔控制，而作業小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。
+DSC 的設計過程納入了 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) 考量，是人員、流程和工具的組合，可允許快速建置與反覆開發週期，為內部或外部的終端使用者創造價值。
+讓單一設定定義環境即表示，開發人員可以將需求編碼成設定、將該設定簽入原始檔控制，而維運小組可以輕鬆部署程式碼，不必進行可能會出錯的手動程序。
 
-設定也是[資料導向](https://msdn.microsoft.com/powershell/dsc/configdata)，讓作業小組更容易識別及變更環境，不用開發人員介入。
+設定也[以資料為動力](configData.md)，讓維運小組更容易識別及變更環境，而不必開發人員介入。
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>內部部署及外部部署的預期狀態設定
 
-DSC 可同時用來管理內部部署及外部部署的部署。
-在內部部署解決方案方面，DSC 具有[提取伺服器](https://msdn.microsoft.com/powershell/dsc/pullserver)，可用來集中管理電腦並回報其狀態。
+DSC 可以用來管理內部部署及外部部署的部署。
+在內部部署解決方案方面，DSC 有[提取伺服器](pullServer.md)可集中管理電腦，並報告其狀態。
 在雲端解決方案方面，只要能夠使用 Windows 的地方都可以使用 DSC。
-建置在預期狀態設定之上的 Azure 也有特定項目，例如能集中 DSC 報告的 [Azure 自動化](https://azure.microsoft.com/en-us/documentation/services/automation/)。
+建置在預期狀態設定之上的 Azure 也有特定供應項目，例如能集中 DSC 報告的 [Azure 自動化](https://azure.microsoft.com/en-us/documentation/services/automation/)。
 
 ## <a name="dsc-and-compatibility"></a>DSC 和相容性
 
-DSC 雖是在 Windows Server 2012 R2 引進，卻是透過 Windows Management Framework (WMF) 封裝供低階的作業系統使用。
-WMF 詳細資訊請參閱 [PowerShell 首頁](https://msdn.microsoft.com/en-us/powershell/)。
+DSC 雖是在 Windows Server 2012 R2 引進，卻是透過 Windows Management Framework (WMF) 套件供低階的作業系統使用。
+WMF 詳細資訊請參閱 [PowerShell 首頁](/powershell/)。
 
-DSC 也可用來管理 Linux。 如需詳細資訊，請參閱[開始使用 DSC for Linux](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)。
+DSC 也可用來管理 Linux。 如需詳細資訊，請參閱[開始使用 DSC for Linux](lnxGettingStarted.md)。
