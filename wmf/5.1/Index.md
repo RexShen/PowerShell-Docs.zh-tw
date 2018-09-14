@@ -3,12 +3,12 @@ ms.date: 08/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 版本資訊
-ms.openlocfilehash: 3512d2e80501a596e1fd6d7b33d4d75286cef1b9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3081d200f0c6aac6074719bb1c204900aabf96c2
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189783"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522900"
 ---
 # <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1 #
 
@@ -23,17 +23,17 @@ WMF 5.1 可以在 Windows 7、Windows 8.1、Windows Server 2008 R2、2012 及 20
 - 安全性增強功能包括強制執行來自提取伺服器的目錄簽署模組，以及在使用 PowerShellGet Cmdlet 時加以強制執行
 - 回應數個使用者要求和問題
 
-若要了解此版本中的最新消息，請瀏覽[新的案例與功能](https://docs.microsoft.com/en-us/powershell/wmf/5.1/scenarios-features)下列出的主題。
+若要了解此版本中的最新消息，請瀏覽[新的案例與功能](https://docs.microsoft.com/powershell/wmf/5.1/scenarios-features)下列出的主題。
 
-[安裝與設定](https://docs.microsoft.com/en-us/powershell/wmf/5.1/install-configure)主題列出了需求，且提供 WMF 的安裝指示。
+[安裝與設定](https://docs.microsoft.com/powershell/wmf/5.1/install-configure)主題列出了需求，且提供 WMF 的安裝指示。
 
-[相容性](https://docs.microsoft.com/en-us/powershell/wmf/5.1/compatibility)主題列出了各 Windows 版本可安裝的 WMF 版本。
+[相容性](https://docs.microsoft.com/powershell/wmf/5.1/compatibility)主題列出了各 Windows 版本可安裝的 WMF 版本。
 
-[產品相容性](https://docs.microsoft.com/en-us/powershell/wmf/5.1/productincompat)列出了目前尚未核准使用 WMF 5.1 的 Microsoft 應用程式。
+[產品相容性](https://docs.microsoft.com/powershell/wmf/5.1/productincompat)列出了目前尚未核准使用 WMF 5.1 的 Microsoft 應用程式。
 
 MSDN 文件中提供了 WMF 元件的詳細資料：
 
-- [PowerShell 5.1](https://docs.microsoft.com/en-us/powershell/)
-- [WMI](https://msdn.microsoft.com/en-us/library/jj152383(v=vs.85).aspx)
-- [WinRM](https://msdn.microsoft.com/en-us/library/aa384426(v=vs.85).aspx)
-- [軟體清查記錄](https://technet.microsoft.com/en-us/library/dn383584(v=ws.11).aspx)
+- [PowerShell 5.1](https://docs.microsoft.com/powershell/)
+- [WMI](https://msdn.microsoft.com/library/jj152383(v=vs.85).aspx)
+- [WinRM](https://msdn.microsoft.com/library/aa384426(v=vs.85).aspx)
+- [軟體清查記錄](https://technet.microsoft.com/library/dn383584(v=ws.11).aspx)
