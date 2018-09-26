@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 3aca76f8904c7eb64e5c96ae4f0f26014e0d2609
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190327"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523010"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -172,12 +172,12 @@ PowerShell 透過兩種主要的方法來支援程式碼簽署驗證：
 - 類別目錄簽署模組
 
 簽署 PowerShell 檔案是一個廣為接受的方法，可確保所要執行的程式碼是由可靠的來源產生的，並且尚未經過修改。
-如需有關如何簽署 PowerShell 指令碼檔的詳細資料，請參閱[關於簽署](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) \(英文\) 主題。
+如需有關如何簽署 PowerShell 指令碼檔的詳細資料，請參閱[關於簽署](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing) \(英文\) 主題。
 大致而言，您可以將簽章新增至 PowerShell 在載入指令碼時驗證的任何 .PS1 檔案中。
-您可以使用[執行原則](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) Cmdlet 來限制 PowerShell，以確保所使用的是已簽署的指令碼。
+您可以使用[執行原則](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) Cmdlet 來限制 PowerShell，以確保所使用的是已簽署的指令碼。
 
 類別目錄簽署模組是 PowerShell 5.1 版中新增的功能。
-如需了解如何簽署模組，請參閱[類別目錄 Cmdlet](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets) 主題。
+如需了解如何簽署模組，請參閱[類別目錄 Cmdlet](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets) 主題。
 大致而言，簽署類別目錄的方式是建立類別目錄檔案 (包含模組中每個檔案的雜湊值)，然後簽署該檔案。
 PowerShellGet publish-module、install-module、save-module 及 update-module Cmdlet 會檢查簽章以確保檔案有效，然後確認每個項目的雜湊值與類別目錄中的內容相符。
 如果系統上已安裝舊版的模組，install-module 將會確認新版本的簽署授權單位與先前安裝的相符。

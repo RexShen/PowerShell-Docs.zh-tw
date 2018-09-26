@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 DSC 改善
-ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309537"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523017"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -154,7 +154,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>使用 PsDscRunAsCredential 和 DSC 複合資源
 
-我們新增了支援以使用 [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 和 DSC [複合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)資源。
+我們新增了支援以使用 [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) 和 DSC [複合](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite)資源。
 
 在設定內使用複合資源時，您現在可以指定一個 PsDscRunAsCredential 值。
 指定後，複合資源內的所有資源都會以 RunAs 使用者身分執行。
@@ -162,7 +162,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 RunAs 認證會傳播至複合資源階層的所有層級。
 如果複合資源內的任何資源指定自己的 PsDscRunAsCredential 值，則設定編譯期間就會發生合併錯誤。
 
-本範例示範如何使用包含在 PSDesiredStateConfiguration 模組內的 [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) 複合資源。
+本範例示範如何使用包含在 PSDesiredStateConfiguration 模組內的 [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) 複合資源。
 
 ```powershell
 Configuration InstallWindowsFeature

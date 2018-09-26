@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 建立及發行項目
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189528"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522958"
 ---
 # <a name="creating-and-publishing-an-item"></a>建立及發行項目
 
 「PowerShell 資源庫」是可供您發行及與更廣大的 PowerShell 使用者社群共用穩定的 PowerShell 模組、指令碼及 DSC 資源的地方。
 
 本文涵蓋準備指令碼或模組並將其發行至「PowerShell 資源庫」的機制和重要步驟。
-強烈建議您檢閱[發行指導分針](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) \(英文\)，以了解如何確保您發行的項目將更廣泛地獲得「PowerShell 資源庫」使用者接受。
+強烈建議您檢閱[發行指導分針](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) \(英文\)，以了解如何確保您發行的項目將更廣泛地獲得「PowerShell 資源庫」使用者接受。
 
 將項目發行至「PowerShell 資源庫」的最低需求包括：
 
@@ -30,7 +30,7 @@ ms.locfileid: "34189528"
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell 資源庫帳戶和 API 金鑰
 
-如需了解如何設定您的「PowerShell 資源庫」帳戶，請參閱[建立 PowerShell 資源庫帳戶](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account) \(英文\)。
+如需了解如何設定您的「PowerShell 資源庫」帳戶，請參閱[建立 PowerShell 資源庫帳戶](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account) \(英文\)。
 
 建立帳戶之後，您可以取得發行項目所需的 API 金鑰。
 使用帳戶進行登入之後，您的使用者名稱將會顯示在「PowerShell 資源庫」頁面的頂端，而不會顯示 [註冊]。
@@ -44,9 +44,9 @@ ms.locfileid: "34189528"
 
 「PowerShell 資源庫」會將從指令碼或模組資訊清單所包含之中繼資料欄位取得的資訊，提供給資源庫使用者。
 建立或修改要發行至「PowerShell 資源庫」的項目時，針對在項目資訊清單中提供的資訊有一些要求。
-強烈建議您檢閱[發行指導方針](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) \(英文\) 的 ＜項目中繼資料＞ (Item Metadata) 一節，以了解如何為您項目的使用者提供最佳資訊。
+強烈建議您檢閱[發行指導方針](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines) \(英文\) 的 ＜項目中繼資料＞ (Item Metadata) 一節，以了解如何為您項目的使用者提供最佳資訊。
 
-[New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) 和 [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) Cmdlet 將會為您建立資訊清單範本，其中會包含所有資訊清單元素的預留位置。
+[New-ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) 和 [New-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) Cmdlet 將會為您建立資訊清單範本，其中會包含所有資訊清單元素的預留位置。
 
 兩個資訊清單都有兩個對發行而言相當重要的區段，即「主索引鍵資料」和 PrivateData 的 PSData 區域。PowerShell 模組資訊清單中的主索引鍵資料係指 PrivateData 區段外的所有資料。
 主索引鍵組會繫結至使用中的 PowerShell 版本，且不支援設為未定義。
@@ -86,14 +86,14 @@ PrivateData 支援新增金鑰，因此「PowerShell 資源庫」特定的元素
 「資源庫作業」小組將會連絡項目擁有者來解決所發現的問題。
 
 如果「PowerShell 資源庫」基礎結構無法讀取您項目中的資訊清單資訊，您將無法發行該項目。
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) 會捕捉將造成模組在安裝後無法使用的常見問題。 您必須先針對每個模組執行此 Cmdlet，才能將模組發行至「PowerShell 資源庫」。
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) 會捕捉將造成模組在安裝後無法使用的常見問題。 您必須先針對每個模組執行此 Cmdlet，才能將模組發行至「PowerShell 資源庫」。
 
-同樣地，[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) 會驗證指令碼中的資訊清單，且必須先在每個指令碼 (與模組個別發行) 上執行，才能將指令碼發行至「PowerShell 資源庫」。
+同樣地，[Test-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) 會驗證指令碼中的資訊清單，且必須先在每個指令碼 (與模組個別發行) 上執行，才能將指令碼發行至「PowerShell 資源庫」。
 
 
 ## <a name="publishing-items"></a>發行項目
 
-您必須使用 [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) 或 [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) 將項目發行至「PowerShell 資源庫」。
+您必須使用 [Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) 或 [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) 將項目發行至「PowerShell 資源庫」。
 這些命令都需要
 
 - 您將發行之項目的路徑。 針對模組，請使用針對您模組命名的資料夾。 如果您指定的資料夾包含同一個模組的多個版本，您就必須指定 RequiredVersion。

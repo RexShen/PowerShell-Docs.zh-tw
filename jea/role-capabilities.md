@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190531"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522934"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -181,9 +181,9 @@ FunctionDefinitions = @{
 
 Select-Object 是所有 JEA 工作階段中受限制的預設 Cmdlet，它不允許您選取物件上的任何屬性。
 若要使用未受限制的 Select-Object，您必須指定 FQMN，以明確地要求完整實作。
-JEA 工作階段中的任何受限制 Cmdlet 從函式叫用時會展現相同行為，與 PowerShell 的[命令優先順序](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)一致。
+JEA 工作階段中的任何受限制 Cmdlet 從函式叫用時會展現相同行為，與 PowerShell 的[命令優先順序](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)一致。
 
-如果您要撰寫大量自訂函式，將它們放在 [PowerShell 指令碼模組](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)可能會比較輕鬆。
+如果您要撰寫大量自訂函式，將它們放在 [PowerShell 指令碼模組](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx)可能會比較輕鬆。
 接著您可以使用 VisibleFunctions 欄位將那些函式設為在 JEA 工作階段中可見，就像是使用內建和協力廠商模組一樣。
 
 ## <a name="place-role-capabilities-in-a-module"></a>將角色功能放置在模組中
@@ -207,7 +207,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-如需 PowerShell 模組、模組資訊清單和 PSModulePath 環境變數的詳細資訊，請參閱[了解 PowerShell 模組](https://msdn.microsoft.com/en-us/library/dd878324.aspx)。
+如需 PowerShell 模組、模組資訊清單和 PSModulePath 環境變數的詳細資訊，請參閱[了解 PowerShell 模組](https://msdn.microsoft.com/library/dd878324.aspx)。
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 

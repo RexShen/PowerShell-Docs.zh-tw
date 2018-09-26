@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 登錄 JEA 設定
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188508"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522842"
 ---
 # <a name="registering-jea-configurations"></a>登錄 JEA 設定
 
@@ -57,7 +57,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC 的多電腦設定
 
-如果您要在多部電腦上部署 JEA，最簡單的部署模型是使用 JEA [期望狀態設定](https://msdn.microsoft.com/en-us/powershell/dsc/overview)資源快速且一致地在每部機器上部署 JEA。
+如果您要在多部電腦上部署 JEA，最簡單的部署模型是使用 JEA [期望狀態設定](https://msdn.microsoft.com/powershell/dsc/overview)資源快速且一致地在每部機器上部署 JEA。
 
 若要使用 DSC 部署 JEA，您必須確定符合下列先決條件︰
 - 已撰寫一或多個角色功能並新增至有效的 PowerShell 模組。
@@ -110,7 +110,7 @@ Configuration JEAMaintenance
 }
 ```
 
-這個設定便可以藉由[直接叫用本機設定管理員](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig)或更新[提取伺服器設定](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)，以套用在系統上。
+這個設定便可以藉由[直接叫用本機設定管理員](https://msdn.microsoft.com/powershell/dsc/metaconfig)或更新[提取伺服器設定](https://msdn.microsoft.com/powershell/dsc/pullserver)，以套用在系統上。
 
 DSC 資源也可讓您取代預設的 Microsoft.PowerShell 遠端端點。
 如果您這麼做，資源會自動登錄名為 "Microsoft.PowerShell.Restricted" 的備份無限制端點，它具有預設 WinRM ACL (允許遠端管理使用者與本機系統管理員群組成員能夠存取它)。

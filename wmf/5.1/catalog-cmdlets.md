@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: 類別目錄 Cmdlet
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189062"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522883"
 ---
 # <a name="catalog-cmdlets"></a>類別目錄 Cmdlet
 
-[Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，以產生和驗證 Windows 類別目錄檔案。
+[Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) 模組中新增了兩個新的 Cmdlet，以產生和驗證 Windows 類別目錄檔案。
 
 ## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -49,5 +49,5 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 此 Cmdlet 會將所有檔案及在類別目錄檔案中找到和其相關之路徑的雜湊，與磁碟上儲存的雜湊進行比較。 若在檔案雜湊與路徑之間偵測到任何不相符，其會傳回狀態 `ValidationFailed`。
-使用者可以使用 `Detailed` 參數擷取所有此資訊。 和對類別目錄檔案類別目錄呼叫 [Get-authenticodesignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) Cmdlet 一樣，類別目錄的簽署狀態也會顯示在 `Signature` 欄位中。
+使用者可以使用 `Detailed` 參數擷取所有此資訊。 和對類別目錄檔案類別目錄呼叫 [Get-authenticodesignature](https://technet.microsoft.com/library/hh849805.aspx) Cmdlet 一樣，類別目錄的簽署狀態也會顯示在 `Signature` 欄位中。
 使用者也可使用 `FilesToSkip` 參數，在驗證期間跳過任何檔案。

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 工作階段設定
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190089"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522949"
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
 
@@ -221,7 +221,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 
 ## <a name="testing-a-session-configuration-file"></a>測試工作階段設定檔
 
-您可以使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) Cmdlet 測試工作階段設定。
+您可以使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) Cmdlet 測試工作階段設定。
 如果您已使用文字編輯器手動編輯 pssc 檔案，強烈建議您測試您的工作階段設定檔，以確定語法正確。
 如果工作階段設定檔未通過此測試，它將無法順利在系統上登錄。
 
