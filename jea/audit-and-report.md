@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 上的稽核和報告
-ms.openlocfilehash: e68206cd6fe94c51507f42ae2c3e6702f6fd4e0f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188847"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851215"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA 上的稽核和報告
 
@@ -149,5 +149,4 @@ Out-Default 的 InputObject 是由命令傳回的 PowerShell 物件。
 
 ## <a name="see-also"></a>另請參閱
 
-- [在 JEA 工作階段中稽核使用者動作](audit-and-report.md)
 - [*PowerShell ♥ 藍色小組*安全性部落格文章](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
