@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 取得詳細的說明資訊
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134029"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851267"
 ---
 # <a name="getting-detailed-help-information"></a>取得詳細的說明資訊
 
@@ -149,7 +149,7 @@ Get-Help c:\ps-test\TestScript.ps1
 若要線上取得說明，請使用 `Get-Help` Cmdlet 的 **Online** 參數。 PowerShell 隨附的所有說明文章 (包括提供者說明與概念性 (關於) 說明文章) 都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文件中線上取得。
 
 > [!NOTE]
-> 您無法對概念性 (about_*) 或提供者說明文章使用 **Online** 參數。
+> 您無法對概念性 (about_\*) 或提供者說明文章使用 **Online** 參數。
 > 線上說明是選擇性的，因此並非每一個 Cmdlet、函式或指令碼都適用。
 
 例如，若要取得 `Get-ChildItem` Cmdlet 相關說明文章的線上版本，請輸入：
