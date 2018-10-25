@@ -1,3 +1,4 @@
+items:
 - name: 概觀
   href: readme.md
 - name: 安裝 PowerShellGet
@@ -6,79 +7,93 @@
   href: getting-started.md
 - name: 操作說明
   items:
-    - name: 尋找資源庫中的項目
-      items:
-        - name: 搜尋項目
-          href: how-to/finding-items/search-syntax.md
-        - name: 依 PSEdition 來搜尋
-          href: how-to/finding-items/searching-by-psedition.md
-        - name: 篩選搜尋結果
-          href: how-to/finding-items/filtering-items.md
-    - name: 發佈至資源庫
-      items:
-        - name: 建立及發佈項目
-          href: how-to/publishing-items/publishing-an-item.md
-        - name: 建立 PowerShell 資源庫帳戶
-          href: how-to/publishing-items/creating-an-account.md
-        - name: 將項目從清單移除
-          href: how-to/publishing-items/unlisting-items.md
-        - name: 刪除項目
-          href: how-to/publishing-items/deleting-items.md
-        - name: 管理項目擁有者
-          href: how-to/publishing-items/managing-item-owners.md
-    - name: 使用項目
-      items:
-        - name: FileList 檢視
-          href: how-to/working-with-items/filelist-view.md
-        - name: 部署至 Azure 自動化
-          href: how-to/working-with-items/deploy-to-azure-automation.md
-        - name: 必須接受授權的項目
-          href: how-to/working-with-items/items-that-require-license-acceptance.md
-        - name: 連絡項目擁有者
-          href: how-to/working-with-items/contacting-item-owners.md
-        - name: 透過社交媒體或評論提供意見反應
-          href: how-to/working-with-items/social-media-feedback.md
+  - name: 尋找資源庫中的項目
+    items:
+    - name: 搜尋項目
+      href: how-to/finding-items/search-syntax.md
+    - name: 依 PSEdition 來搜尋
+      href: how-to/finding-items/searching-by-psedition.md
+    - name: 篩選搜尋結果
+      href: how-to/finding-items/filtering-items.md
+  - name: 發佈至資源庫
+    items:
+    - name: 建立及發佈項目
+      href: how-to/publishing-items/publishing-an-item.md
+    - name: 建立 PowerShell 資源庫帳戶
+      href: how-to/publishing-items/creating-an-account.md
+    - name: 將項目從清單移除
+      href: how-to/publishing-items/unlisting-items.md
+    - name: 刪除項目
+      href: how-to/publishing-items/deleting-items.md
+    - name: 管理項目擁有者
+      href: how-to/publishing-items/managing-item-owners.md
+  - name: 使用項目
+    items:
+    - name: FileList 檢視
+      href: how-to/working-with-items/filelist-view.md
+    - name: 部署至 Azure 自動化
+      href: how-to/working-with-items/deploy-to-azure-automation.md
+    - name: 手動下載套件
+      href: how-to/working-with-items/manual-download.md
+    - name: 必須接受授權的項目
+      href: how-to/working-with-items/items-that-require-license-acceptance.md
+    - name: 連絡項目擁有者
+      href: how-to/working-with-items/contacting-item-owners.md
+    - name: 透過社交媒體或評論提供意見反應
+      href: how-to/working-with-items/social-media-feedback.md
+  - name: 管理帳戶設定檔
+    items:
+    - name: PowerShell 資源庫帳戶設定
+      href: how-to/managing-profile/managing-account.md
+    - name: 管理 API 金鑰
+      href: how-to/managing-profile/creating-apikeys.md
 - name: 概念
   items:
-    - name: 發佈指導方針與最佳做法
-      href: concepts/publishing-guidelines.md
-    - name: 項目資訊清單與資源庫 UI
-      href: concepts/item-manifest-affecting-ui.md
-    - name: 需要特定的 PSEdition
-      items:
-        - name: 撰寫支援 PSEdition 的指令碼
-          href: concepts/script-psedition-support.md
-        - name: 撰寫支援 PSEdition 的模組
-          href: concepts/module-psedition-support.md
-    - name: 必須接受授權
-      items:
-        - name: 適用於指令碼的必須接受授權
-          href: concepts/script-license-acceptance.md
-        - name: 模組必須接受授權
-          href: concepts/module-license-acceptance.md
-    - name: 將項目定義為發行前版本
-      items:
-        - name: 將模組定義為發行前版本
-          href: concepts/module-prerelease-support.md
-        - name: 將指令碼定義為發行前版本
-          href: concepts/script-prerelease-support.md
-    - name: PSScriptAnalyzer 規則設定檔
-      href: concepts/scriptanalyzer-rule-profile.md
+  - name: 發佈指導方針與最佳做法
+    href: concepts/publishing-guidelines.md
+  - name: 項目資訊清單與資源庫 UI
+    href: concepts/item-manifest-affecting-ui.md
+  - name: 需要特定的 PSEdition
+    items:
+    - name: 撰寫支援 PSEdition 的指令碼
+      href: concepts/script-psedition-support.md
+    - name: 撰寫支援 PSEdition 的模組
+      href: concepts/module-psedition-support.md
+  - name: 必須接受授權
+    items:
+    - name: 適用於指令碼的必須接受授權
+      href: concepts/script-license-acceptance.md
+    - name: 模組必須接受授權
+      href: concepts/module-license-acceptance.md
+  - name: 將項目定義為發行前版本
+    items:
+    - name: 將模組定義為發行前版本
+      href: concepts/module-prerelease-support.md
+    - name: 將指令碼定義為發行前版本
+      href: concepts/script-prerelease-support.md
+  - name: PSScriptAnalyzer 規則設定檔
+    href: concepts/scriptanalyzer-rule-profile.md
 - name: 取得支援
   items:
-    - name: 檢舉不當使用
-      href: how-to/getting-support/report-abuse.md
-    - name: 爭端解決
-      href: how-to/getting-support/dispute-resolution.md
-    - name: 連絡系統管理員
-      href: how-to/getting-support/contacting-administrators.md
-    - name: 疑難排解
-      href: how-to/getting-support/troubleshooting-cmdlets.md
-    - name: 啟動 NuGet 提供者與 NuGet.exe
-      href: how-to/getting-support/bootstrapping-nuget.md
-    - name: GDPR 合規性
-      href: how-to/getting-support/gdpr-dsr-policy.md
+  - name: 檢舉不當使用
+    href: how-to/getting-support/report-abuse.md
+  - name: 爭端解決
+    href: how-to/getting-support/dispute-resolution.md
+  - name: 連絡系統管理員
+    href: how-to/getting-support/contacting-administrators.md
+  - name: 疑難排解
+    href: how-to/getting-support/troubleshooting-cmdlets.md
+  - name: 啟動 NuGet 提供者與 NuGet.exe
+    href: how-to/getting-support/bootstrapping-nuget.md
+  - name: GDPR 合規性
+    href: how-to/getting-support/gdpr-dsr-policy.md
 - name: 資源庫常見問題集
   href: faqs.md
 - name: PowerShellGet Cmdlet
-  href: 'https://docs.microsoft.com/powershell/module/powershellget/'
+  href: https://docs.microsoft.com/powershell/module/powershellget/
+ms.openlocfilehash: 32577b81229d456922a6be9bfdc8156d337fd719
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522917"

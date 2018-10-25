@@ -1,223 +1,232 @@
+items:
 - name: 概觀
   href: overview.md
   items:
-    - name: 適合決策者的預期狀態設定概觀
-      href: decisionMaker.md
-    - name: 適合工程師的預期狀態設定概觀
-      href: DscForEngineers.md
-    - name: DSC 快速入門
-      href: quickStart.md
+  - name: 適合決策者的預期狀態設定概觀
+    href: decisionMaker.md
+  - name: 適合工程師的預期狀態設定概觀
+    href: DscForEngineers.md
+  - name: DSC 快速入門
+    href: quickStart.md
 - name: 設定
   href: configurations.md
   items:
-    - name: 施行設定
-      href: enactingConfigurations.md
-    - name: 分離設定和環境資料
-      href: separatingEnvData.md
-    - name: 使用多個版本的資源
-      href: sxsResource.md
-    - name: 以使用者認證執行 DSC
-      href: runAsUser.md
-    - name: 指定跨節點相依性
-      href: crossNodeDependencies.md
-    - name: 設定資料
-      href: configData.md
-      items:
-        - name: 設定資料中的認證選項
-          href: configDataCredentials.md
-    - name: 巢狀設定
-      href: compositeConfigs.md
-    - name: 保護設定 MOF 檔案
-      href: secureMOF.md
-    - name: 部分設定
-      href: partialConfigs.md
-    - name: 撰寫 DSC 設定的說明
-      href: configHelp.md
-    - name: 使用 DSC 在起始開機時設定虛擬機器
-      href: bootstrapDsc.md
-      items:
-        - name: DSCAutomationHostEnabled 登錄機碼
-          href: DSCAutomationHostEnabled.md
+  - name: 施行設定
+    href: enactingConfigurations.md
+  - name: 分離設定和環境資料
+    href: separatingEnvData.md
+  - name: 使用多個版本的資源
+    href: sxsResource.md
+  - name: 以使用者認證執行 DSC
+    href: runAsUser.md
+  - name: 指定跨節點相依性
+    href: crossNodeDependencies.md
+  - name: 設定資料
+    href: configData.md
+    items:
+    - name: 設定資料中的認證選項
+      href: configDataCredentials.md
+  - name: 巢狀設定
+    href: compositeConfigs.md
+  - name: 保護設定 MOF 檔案
+    href: secureMOF.md
+  - name: 部分設定
+    href: partialConfigs.md
+  - name: 撰寫 DSC 設定的說明
+    href: configHelp.md
+  - name: 使用 DSC 在起始開機時設定虛擬機器
+    href: bootstrapDsc.md
+    items:
+    - name: DSCAutomationHostEnabled 登錄機碼
+      href: DSCAutomationHostEnabled.md
 - name: 資源
   href: resources.md
   items:
-    - name: 內建資源
-      href: builtInResource.md
+  - name: 內建資源
+    href: builtInResource.md
+    items:
+    - name: 封存資源
+      href: archiveResource.md
+    - name: 環境資源
+      href: environmentResource.md
+    - name: 檔案資源
+      href: fileResource.md
+    - name: 群組資源
+      href: groupResource.md
+    - name: GroupSet 資源
+      href: groupSetResource.md
+    - name: 記錄檔資源
+      href: logResource.md
+    - name: 套件資源
+      href: packageResource.md
+    - name: ProcessSet 資源
+      href: processSetResource.md
+    - name: 登錄資源
+      href: registryResource.md
+    - name: 指令碼資源
+      href: scriptResource.md
+    - name: 服務資源
+      href: serviceResource.md
+    - name: ServiceSet 資源
+      href: serviceSetResource.md
+    - name: 使用者資源
+      href: userResource.md
+    - name: WaitForAllResource
+      href: waitForAllResource.md
+    - name: WaitForAnyResource
+      href: waitForAnyResource.md
+    - name: WaitForSomeResource
+      href: waitForSomeResource.md
+    - name: WindowsFeature 資源
+      href: windowsfeatureResource.md
+    - name: WindowsFeatureSet 資源
+      href: windowsFeatureSetResource.md
+    - name: WindowsOptionalFeature 資源
+      href: windowsOptionalFeatureResource.md
+    - name: WindowsOptionalFeatureSet 資源
+      href: windowsOptionalFeatureSetResource.md
+    - name: WindowsPackageCab 資源
+      href: windowsPackageCabResource.md
+    - name: WindowsProcess 資源
+      href: windowsProcessResource.md
+  - name: 撰寫自訂資源
+    href: authoringResource.md
+    items:
+    - name: MOF 型自訂資源
+      href: authoringResourceMOF.md
       items:
-        - name: 封存資源
-          href: archiveResource.md
-        - name: 環境資源
-          href: environmentResource.md
-        - name: 檔案資源
-          href: fileResource.md
-        - name: 群組資源
-          href: groupResource.md
-        - name: GroupSet 資源
-          href: groupSetResource.md
-        - name: 記錄檔資源
-          href: logResource.md
-        - name: 套件資源
-          href: packageResource.md
-        - name: ProcessSet 資源
-          href: processSetResource.md
-        - name: 登錄資源
-          href: registryResource.md
-        - name: 指令碼資源
-          href: scriptResource.md
-        - name: 服務資源
-          href: serviceResource.md
-        - name: ServiceSet 資源
-          href: serviceSetResource.md
-        - name: 使用者資源
-          href: userResource.md
-        - name: WaitForAllResource
-          href: waitForAllResource.md
-        - name: WaitForAnyResource
-          href: waitForAnyResource.md
-        - name: WaitForSomeResource
-          href: waitForSomeResource.md
-        - name: WindowsFeature 資源
-          href: windowsfeatureResource.md
-        - name: WindowsFeatureSet 資源
-          href: windowsFeatureSetResource.md
-        - name: WindowsOptionalFeature 資源
-          href: windowsOptionalFeatureResource.md
-        - name: WindowsOptionalFeatureSet 資源
-          href: windowsOptionalFeatureSetResource.md
-        - name: WindowsPackageCab 資源
-          href: windowsPackageCabResource.md
-        - name: WindowsProcess 資源
-          href: windowsProcessResource.md
-    - name: 撰寫自訂資源
-      href: authoringResource.md
-      items:
-        - name: MOF 型自訂資源
-          href: authoringResourceMOF.md
-          items:
-            - name: 'C# 中使用 MOF 的資源'
-              href: authoringResourceMofCS.md
-        - name: 類別式自訂資源
-          href: authoringResourceClass.md
-        - name: 複合資源
-          href: authoringResourceComposite.md
-        - name: 撰寫單一執行個體 DSC 資源 (最佳做法)
-          href: singleInstance.md
-        - name: 資源撰寫檢查清單
-          href: resourceAuthoringChecklist.md
-    - name: 偵錯 DSC 資源
-      href: debugResource.md
-    - name: 直接呼叫 DSC 資源方法
-      href: directCallResource.md
+      - name: C# 中使用 MOF 的資源
+        href: authoringResourceMofCS.md
+    - name: 類別式自訂資源
+      href: authoringResourceClass.md
+    - name: 複合資源
+      href: authoringResourceComposite.md
+    - name: 用於撰寫和共同作業的進階 DSC 撰寫
+      href: authoringAdvanced.md
+    - name: 撰寫單一執行個體 DSC 資源 (最佳做法)
+      href: singleInstance.md
+    - name: 資源撰寫檢查清單
+      href: resourceAuthoringChecklist.md
+  - name: 偵錯 DSC 資源
+    href: debugResource.md
+  - name: 直接呼叫 DSC 資源方法
+    href: directCallResource.md
 - name: 本機設定管理員
   items:
-    - name: 設定本機設定管理員 (LCM)
-      href: metaConfig.md
-    - name: 在 PowerShell 4.0 中設定 LCM
-      href: metaConfig4.md
+  - name: 設定本機設定管理員 (LCM)
+    href: metaConfig.md
+  - name: 在 PowerShell 4.0 中設定 LCM
+    href: metaConfig4.md
 - name: DSC 提取模型
   items:
-    - name: DSC 提取服務
-      href: pullServer.md
-    - name: 設定 DSC SMB 提取伺服器
-      href: pullServerSMB.md
-    - name: 設定提取用戶端
-      href: pullClient.md
-      items:
-        - name: 使用設定名稱設定提取用戶端
-          href: pullClientConfigNames.md
-        - name: 使用設定識別碼設定提取用戶端
-          href: pullClientConfigID.md
-    - name: 使用 DSC 報表伺服器
-      href: reportServer.md
-    - name: 提取伺服器最佳做法
-      href: secureServer.md
+  - name: DSC 提取服務
+    href: pullServer.md
+  - name: 設定 DSC SMB 提取伺服器
+    href: pullServerSMB.md
+  - name: 設定提取用戶端
+    href: pullClient.md
+    items:
+    - name: 使用設定名稱設定提取用戶端
+      href: pullClientConfigNames.md
+    - name: 使用設定識別碼設定提取用戶端
+      href: pullClientConfigID.md
+  - name: 使用 DSC 報表伺服器
+    href: reportServer.md
+  - name: 提取伺服器最佳做法
+    href: secureServer.md
 - name: DSC 範例
   href: dscExamples.md
   items:
-    - name: 使用 DSC、Pester 及 Visual Studio Team Services 來建置 CI/CD 管線
-      href: dscCiCd.md
-    - name: 分離設定和環境資料
-      href: separatingEnvData.md
+  - name: 使用 DSC、Pester 及 Visual Studio Team Services 來建置 CI/CD 管線
+    href: dscCiCd.md
+  - name: 分離設定和環境資料
+    href: separatingEnvData.md
 - name: 疑難排解 DSC
   href: troubleshooting.md
 - name: 在 Nano Server 上使用 DSC
   href: nanoDsc.md
 - name: Linux 上的 DSC
   items:
-    - name: 開始使用 DSC for Linux
-      href: lnxGettingStarted.md
-    - name: 適用於 Linux 的內建資源
-      href: lnxBuiltInResources.md
-      items:
-        - name: nxArchive 資源
-          href: lnxArchiveResource.md
-        - name: nxEnvironment 資源
-          href: lnxEnvironmentResource.md
-        - name: nxFile 資源
-          href: lnxFileResource.md
-        - name: nxFileLine 資源
-          href: lnxFileLineResource.md
-        - name: nxGroup 資源
-          href: lnxGroupResource.md
-        - name: nxPackage 資源
-          href: lnxPackageResource.md
-        - name: nxScript 資源
-          href: lnxScriptResource.md
-        - name: nxService 資源
-          href: lnxServiceResource.md
-        - name: nxSshAuthorizedKeys 資源
-          href: lnxSshAuthorizedKeysResource.md
-        - name: nxUser 資源
-          href: lnxUserResource.md
+  - name: 開始使用 DSC for Linux
+    href: lnxGettingStarted.md
+  - name: 適用於 Linux 的內建資源
+    href: lnxBuiltInResources.md
+    items:
+    - name: nxArchive 資源
+      href: lnxArchiveResource.md
+    - name: nxEnvironment 資源
+      href: lnxEnvironmentResource.md
+    - name: nxFile 資源
+      href: lnxFileResource.md
+    - name: nxFileLine 資源
+      href: lnxFileLineResource.md
+    - name: nxGroup 資源
+      href: lnxGroupResource.md
+    - name: nxPackage 資源
+      href: lnxPackageResource.md
+    - name: nxScript 資源
+      href: lnxScriptResource.md
+    - name: nxService 資源
+      href: lnxServiceResource.md
+    - name: nxSshAuthorizedKeys 資源
+      href: lnxSshAuthorizedKeysResource.md
+    - name: nxUser 資源
+      href: lnxUserResource.md
 - name: 使用 Microsoft Azure 的 DSC
   href: azureDsc.md
   items:
-    - name: DSC 延伸模組歷程記錄
-      href: azureDscexthistory.md
+  - name: DSC 延伸模組歷程記錄
+    href: azureDscexthistory.md
 - name: DSC MOF 參考
   items:
-    - name: MSFT_DSCLocalConfigurationManager 類別
-      href: msft-dsclocalconfigurationmanager.md
-      items:
-        - name: MSFT_DSCLocalConfigurationManager 類別的 ApplyConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 EnableDebugConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 GetConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
-          href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法
-          href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 GetMetaConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
-          href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 ResourceGet 方法
-          href: msft-dsclocalconfigurationmanager-resourceget.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法
-          href: msft-dsclocalconfigurationmanager-resourceset.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 ResourceTest 方法
-          href: msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 RollBack 方法
-          href: msft-dsclocalconfigurationmanager-rollback.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApply 方法
-          href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApplyAsync 方法
-          href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法
-          href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 StopConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法
-          href: msft-dsclocalconfigurationmanager-testconfiguration.md
+  - name: MSFT_DSCLocalConfigurationManager 類別
+    href: msft-dsclocalconfigurationmanager.md
+    items:
+    - name: MSFT_DSCLocalConfigurationManager 類別的 ApplyConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-applyconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 EnableDebugConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 GetConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-getconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationResultOutput 方法
+      href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法
+      href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 GetMetaConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
+      href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-removeconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 ResourceGet 方法
+      href: msft-dsclocalconfigurationmanager-resourceget.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 ResourceSet 方法
+      href: msft-dsclocalconfigurationmanager-resourceset.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 ResourceTest 方法
+      href: msft-dsclocalconfigurationmanager-resourcetest.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 RollBack 方法
+      href: msft-dsclocalconfigurationmanager-rollback.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 SendConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-sendconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApply 方法
+      href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 SendConfigurationApplyAsync 方法
+      href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 SendMetaConfigurationApply 方法
+      href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 StopConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-stopconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager 類別的 TestConfiguration 方法
+      href: msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: 其他資源
   items:
-    - name: 白皮書
-      href: whitepapers.md
+  - name: 白皮書
+    href: whitepapers.md
+ms.openlocfilehash: d8c8af17c36b543dccda07172a04f253e533abe1
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611500"
