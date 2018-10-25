@@ -2,16 +2,16 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell 指令碼
-ms.openlocfilehash: 754805148dc815a12c5c77e4894fb598c6927f7e
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43133988"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851181"
 ---
 # <a name="powershell"></a>PowerShell
 
-PowerShell 是工作型命令列殼層與指令碼語言，並建置在 .NET Framework 之上。
+PowerShell 是工作型命令列殼層與指令碼語言，並建置在 .NET 之上。
 PowerShell 可協助系統管理員與進階使用者快速地將管理作業系統 (Linux、macOS 與 Windows) 與處理序的工作自動化。
 
 PowerShell 命令可讓您從命令列管理電腦。 PowerShell 提供者可讓您如同存取檔案系統般輕易地存取資料存放區 (例如登錄與憑證存放區)。 PowerShell 包含豐富的運算式剖析器與完整開發的指令碼語言。

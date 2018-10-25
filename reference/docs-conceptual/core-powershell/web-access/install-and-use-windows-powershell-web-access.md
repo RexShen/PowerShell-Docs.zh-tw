@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安裝和使用 Windows PowerShell Web 存取
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268410"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48851319"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -121,7 +121,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 1. 執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
    - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 [Windows PowerShell]。
-   - 在 Windows [開始] 畫面上，按一下 [Windows PowerShell]。
+   - 在 Windows **[開始]** 畫面上，按一下 **[Windows PowerShell]**。
 
 2. 輸入下列程式碼，然後按 **Enter**。
 
@@ -271,7 +271,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 7. 在 [應用程式集區] 欄位中，選取您在步驟 3 建立的應用程式集區。
 
-8. 在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設的位置，`%windir%/Web/PowerShellWebAccess/wwwroot`。 按一下 [確定]。
+8. 在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設的位置，`%windir%/Web/PowerShellWebAccess/wwwroot`。 按一下 **[確定]**。
 
 9. 請依照本主題之[在 IIS 管理員中設定 SSL 憑證](#to-configure-an-ssl-certificate-in-iis-Manager)程序中的步驟執行。
 
@@ -327,7 +327,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    如果另一個網站已經使用 443，或者有其他需要變更連接埠號碼的安全性原因，請變更預設連接埠。 如果在閘道伺服器上執行的另一個網站正在使用您選取的連接埠，當您在 [新增網站] 對話方塊中按一下 [確定] 時，就會顯示警告。 您必須使用未使用的連接埠來執行 Windows PowerShell Web 存取。
 
-1. 或者，如果組織有需要，可以指定對組織及使用者有意義的主機名稱，例如 **www.contoso.com**。 按一下 **[確定]**。
+1. 或者，如果組織有需要，可以指定對組織及使用者具有意義的主機名稱，例如 **`www.contoso.com`**。 按一下 **[確定]**。
 
 1. 如需更安全的生產環境，強烈建議您提供 CA 簽署的有效憑證。 您必須提供 SSL 憑證，因為使用者只能透過 HTTPS 網站連線到 Windows PowerShell Web 存取。 如需如何取得憑證的詳細資訊，請參閱本主題中的[在 IIS 管理員中設定 SSL 憑證](#to-configure-an-ssl-certificate-in-iis-Manager)。
 
@@ -406,7 +406,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - 按一下 [匯入]，從網路上的位置匯入現有的有效憑證。
    - 按一下 [建立憑證要求]，向 CA (例如 [VeriSign](http://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)) 要求憑證。 憑證的一般名稱必須符合要求中的主機標頭。
 
-     例如，如果用戶端瀏覽器要求 http://www.contoso.com/，則一般名稱也必須為 http://www.contoso.com/。 這是提供憑證給 Windows PowerShell Web 存取閘道最安全且最建議的選項。
+     例如，如果用戶端瀏覽器要求 `http://www.contoso.com/`，則一般名稱也必須為 `http://www.contoso.com/`。 這是提供憑證給 Windows PowerShell Web 存取閘道最安全且最建議的選項。
 
    - 按一下 [建立自我簽署憑證]，建立您可以立即使用的憑證，稍後視需要交由 CA 簽署。 為自我簽署的憑證指定易記名稱，例如 **Windows PowerShell Web 存取**。 這個選項並不安全，建議只用於私人測試環境。
 

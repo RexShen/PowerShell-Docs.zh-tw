@@ -3,16 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 開始使用 PowerShell Gallery
-ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190157"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523021"
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>開始使用 PowerShell Gallery
 
-將項目從 PowerShell Gallery 下載至系統時，需要 [PowerShellGet](/powershell/module/powershellget) 模組。 您可以在下列任何一項中尋找 PowerShellGet 模組。 您不需要登入，就可以從 PowerShell Gallery 下載項目。
+從 PowerShell 資源庫安裝項目之適當方式是使用 [PowerShellGet](/powershell/module/powershellget) 模組中的 Cmdlet。 您不需要登入，就可以從 PowerShell Gallery 下載項目。
+
+> [!NOTE]
+> 您可以從 PowerShell 資源庫直接下載套件，但這不是建議的方法。 如需詳細資訊，請參閱[手動下載套件](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md)。  
+
 
 ## <a name="discovering-items-from-the-powershell-gallery"></a>探索 PowerShell Gallery 中的項目
 
@@ -40,7 +44,8 @@ ms.locfileid: "34190157"
 
 如果您發現可能未以誠信方式發行的項目，請按一下該項目之頁面上的 [檢舉不當使用]。
 
-如果您是執行 [Find-Module][] 或 [Find-Script][]，則可以在所傳回的 PSGetModuleInfo 物件中檢視這個資料。 例如，執行 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` 可傳回資源庫中 PSReadLine 模組的資料。
+如果您是執行 [Find-Module][] 或 [Find-Script][]，則可以在所傳回的 PSGetModuleInfo 物件中檢視這個資料。 例如，執行 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member`
+會傳回資源庫中 PSReadLine 模組的相關資料。
 
 ## <a name="downloading-items-from-the-powershell-gallery"></a>從 PowerShell Gallery 下載項目
 

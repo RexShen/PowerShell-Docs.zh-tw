@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133149"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851232"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -35,7 +35,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
 
 ## <a name="set-up-on-windows-machine"></a>在 Windows 電腦上進行安裝
 
-1. 安裝最新的 [PowerShell Core for Windows] 版本
+1. 最新 [PowerShell Core for Windows](../setup/installing-powershell-core-on-windows.md#msi) 版本
 
    - 您可以查看針對 `New-PSSession` 所設定的參數，得知它是否具有 SSH 遠端支援
 
@@ -47,7 +47,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 使用 [安裝] 指示，安裝 GitHub 中最新的 [Win32 OpenSSH] 組建
+2. 使用[安裝](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)指示，安裝 GitHub 中的最新 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) 組建
 3. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
 
    - 確定已啟用密碼驗證
@@ -91,8 +91,8 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 電腦上進行安裝
 
-1. 安裝 GitHub 中最新的 [PowerShell Core for Linux] 組建
-2. 視需要安裝 [Ubuntu SSH]
+1. 安裝 GitHub 中的最新 [PowerShell Core for Linux](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) 組建
+2. 視需要安裝 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
 
 ## <a name="set-up-on-macos-machine"></a>在 MacOS 電腦上進行安裝
 
-1. 安裝最新的 [PowerShell Core for MacOS] 組建
+1. 安裝最新 [PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md) 組建
 
    - 確定已遵循下列步驟來啟用 SSH 遠端：
      - 開啟 `System Preferences`
@@ -167,6 +167,14 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## <a name="authentication"></a>驗證
+
+透過 SSH 的 PowerShell 遠端功能需要在 SSH 用戶端與 SSH 服務之間交換驗證，本身並不會實作任何驗證配置。
+這表示任何已設定的驗證配置 (包括多重要素驗證) 都是由 SSH 處理，與 PowerShell 無關。
+例如，您可以設定 SSH 服務要求公開金鑰驗證及單次密碼來增強安全性。
+設定多重要素驗證不在本文件的討論範圍內。
+請參閱 SSH 文件，以了解如何正確地設定多重要素驗證，並驗證它在 PowerShell 之外是否運作正常，再嘗試與 PowerShell 遠端功能搭配使用。
 
 ## <a name="powershell-remoting-example"></a>PowerShell 遠端範例
 
@@ -308,7 +316,5 @@ sudo 命令不適用於連至 Linux 電腦的遠端工作階段。
 [PowerShell Core for MacOS](../setup/installing-powershell-core-on-macos.md)
 
 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[安裝](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

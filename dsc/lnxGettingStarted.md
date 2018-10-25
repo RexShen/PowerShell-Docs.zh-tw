@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 開始使用 Linux 預期狀態設定 (DSC)
-ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: d436fc3b451efb8a12dfdc44909824934b5fcbe4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893591"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523009"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -75,7 +75,7 @@ Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就�
 
 1. 匯入 nx 模組。 Nx Windows PowerShell 模組包含 DSC for Linux 內建資源的結構描述，並且必須安裝到本機電腦，然後匯入設定中。
 
-   - 若要安裝 nx 模組，請將 nx 模組目錄複製到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules`。 nx 模組包含在 DSC for Linux 安裝套件 (MSI) 中。 若要在您的設定中匯入 nx 模組，請使用 `Import-DSCResource` 命令：
+   - 若要安裝 nx 模組，請將 nx 模組目錄複製到 `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` 或 `$PSHOME\Modules`。 nx 模組包含在 DSC for Linux 安裝套件中。 若要在您的設定中匯入 nx 模組，請使用 `Import-DSCResource` 命令：
 
    ```powershell
    Configuration ExampleConfiguration{

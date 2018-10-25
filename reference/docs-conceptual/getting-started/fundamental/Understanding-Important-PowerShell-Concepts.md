@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 重要概念
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353189"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850992"
 ---
 # <a name="understanding-important-powershell-concepts"></a>了解 PowerShell 重要概念
 
@@ -23,7 +23,7 @@ PowerShell 設計整合了許多不同環境的概念。 對於具有殼層或�
 
 ## <a name="the-command-family-is-extensible"></a>命令系列可進行擴充
 
-**Cmd.exe** 之類的介面並未提供可讓您直接擴充內建命令集的方式。 您可以建立要在 **cmd.exe** 中執行的外部命令列工具。 但這些外部工具不會提供任何服務，例如說明整合。 **cmd.exe** 不會自動得知這些外部工具為有效命令。
+**cmd.exe** 之類的介面並未提供可讓您直接擴充內建命令集的方式。 您可以建立要在 **cmd.exe** 中執行的外部命令列工具。 但這些外部工具不會提供任何服務，例如說明整合。 **cmd.exe** 不會自動得知這些外部工具為有效命令。
 
 PowerShell 中的原生命令稱為 *Cmdlet* (唸成 command-let)。 您可以使用已編譯的程式碼或指令碼來建立自己的 Cmdlet 模組與函式。 模組可將 Cmdlet 與提供者新增到殼層。 PowerShell 也支援與 UNIX 殼層指令碼和 **Cmd.exe** 批次檔案類似的指令碼。
 

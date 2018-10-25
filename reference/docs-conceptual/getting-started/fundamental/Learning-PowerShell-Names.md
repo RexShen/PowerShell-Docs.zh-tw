@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 名稱
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353261"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851250"
 ---
 # <a name="learning-powershell-names"></a>了解 PowerShell 名稱
 
@@ -92,11 +92,12 @@ Get-Command -Name Clear-Host
 
 ### <a name="the-help-parameter-"></a>說明參數 (?)
 
-當您在任何 Cmdlet 上指定 `-Help` 或 `-?` 時，PowerShell 會顯示該 Cmdlet 的說明。 未執行 Cmdlet。
+當您在任何 Cmdlet 上指定 `-?` 參數時，PowerShell 會顯示該 Cmdlet 的說明。
+未執行 Cmdlet。
 
 ### <a name="common-parameters"></a>一般參數
 
-PowerShell 提供數個「一般參數」。 這些參數是由 PowerShell 引擎所控制。 一般參數一律會以相同方式運作。 一般參數包括 **WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable** 與 **OutBuffer**。
+PowerShell 提供數個「一般參數」。 這些參數是由 PowerShell 引擎所控制。 一般參數一律會以相同方式運作。 一般參數包括 **WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable** 和 **OutBuffer**。
 
 ### <a name="recommended-parameter-names"></a>建議的參數名稱
 

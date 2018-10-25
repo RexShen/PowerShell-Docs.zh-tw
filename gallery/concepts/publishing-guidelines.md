@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523010"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851164"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -39,6 +39,7 @@ ms.locfileid: "45523010"
 - 依循 [SemVer](http://semver.org/) 指導方針來進行版本設定
 - 使用「常用的 PowerShell 資源庫」標記中記載的常用標記
 - 使用本機存放庫來測試發行
+- 使用 PowerShellGet 發佈
 
 下面各節將簡要說明這上述每一個做法。
 
@@ -215,6 +216,12 @@ PowerShell 資源庫並不適合作為測試發行程序的目標。
 另外為測試發行補充一點：您發行到 PowerShell 資源庫的任何項目都必須在營運團隊的協助下才能刪除，因此他們會確認沒有任何內容相依於您要發行的項目。
 基於此原因，我們不支援將 PowerShell 資源庫用作測試目標，且會與任何這樣做的發行者連絡。
 
+## <a name="use-powershellget-to-publish"></a>使用 PowerShellGet 發佈
+
+強烈建議發行者搭配 PowerShell 資源庫使用 Publish-Module 和 Publish-Script Cmdlet。 已建立 PowerShellGet，因此您不需要記住透過發佈至 PowerShell 資源庫進行安裝的重要詳細資料。 有時候，發行者會選擇略過 PowerShellGet 並使用 NuGet 用戶端或 PackageManagement Cmdlet，而不是使用 Publish-Module。 有幾個容易忽略的詳細資料會導致各種不同的支援要求。
+
+如有任何原因導致您無法使用 Publish-Module 或 Publish-Script，請讓我們知道。 請在 PowerShellGet GitHub 存放庫中提出問題，並提供導致您選擇 NuGet 或 PackageManagement 的詳細原因。 
+
 ## <a name="recommended-workflow"></a>建議的工作流程
 
 針對發行至「PowerShell 資源庫」的項目，我們找到的最成功方法是：
@@ -229,3 +236,4 @@ PowerShell 資源庫並不適合作為測試發行程序的目標。
 - 決定是否要以程式碼簽署您的項目
 - 當您覺得專案已經準備好在生產環境中使用時，將 1.0.0 版本發行至「PowerShell 資源庫」
 - 繼續收集意見反應並根據使用者提供的意見逐一查看您的程式碼
+
