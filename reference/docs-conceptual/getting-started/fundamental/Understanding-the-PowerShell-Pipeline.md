@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 管線
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 3ee03f001668fb24ff9be1ea6ecb3817e319d0ee
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134121"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002850"
 ---
 # <a name="understanding-pipelines"></a>了解管線
 
@@ -61,7 +61,7 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 分頁還會降低 CPU 使用率，因為處理控制權會在其已準備好要顯示的完成頁面時移轉給 `Out-Host` Cmdlet。 管線中在它前面的 Cmdlet 會暫停執行，直到輸出的下一個分頁可供使用為止。
 
-您可以看到不同的 Windows 工作管理員監視 PowerShell 所使用的 CPU 和記憶體。 執行下列命令：`Get-ChildItem C:\\Windows -Recurse`。 將 CPU 和記憶體使用量與這個命令進行比較：`Get-ChildItem C:\\Windows -Recurse | Out-Host -Paging`。
+您可以看到不同的 Windows 工作管理員監視 PowerShell 所使用的 CPU 和記憶體。 執行下列命令：`Get-ChildItem C:\Windows -Recurse`。 將 CPU 和記憶體使用量與這個命令進行比較：`Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`。
 
 ## <a name="objects-in-the-pipeline"></a>管線中的物件
 

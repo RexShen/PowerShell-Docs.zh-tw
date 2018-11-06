@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 管理 API 金鑰
 ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523129"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002508"
 ---
 # <a name="managing-api-keys"></a>管理 API 金鑰
 

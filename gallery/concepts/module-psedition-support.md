@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具有相容 PowerShell 版本的模組
-ms.openlocfilehash: 7f38e6e1d4f4d45814bf331f33e962e06f4e03c1
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 0a95b47b506fbdddbb98b455a1d10d0f08ce402b
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268699"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002679"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有相容 PowerShell 版本的模組
 
@@ -94,7 +94,7 @@ Core
 
 模組作者可以發行以其中一個 PowerShell 版本 (電腦版和 Core) 或兩者同時為目標的單一模組。
 
-單一模組可在電腦版和核心版本上使用，作者需在該模組的 RootModule 中或使用 $PSEdition 變數的模組資訊清單中，新增必要的邏輯。 模組可以有兩組以 CoreCLR 和 FullCLR 為目標的編譯 DLL。 以下幾個選項可用來將邏輯封裝至您的模組，以載入適當的 dll。
+單一模組可在桌面和核心版本上使用，作者需在該模組的 RootModule 中或使用 $PSEdition 變數的模組資訊清單中，新增必要的邏輯。 模組可以有兩組以 CoreCLR 和 FullCLR 為目標的編譯 DLL。 以下幾個選項可用來將邏輯封裝至您的模組，以載入適當的 dll。
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>選項 1︰封裝將多個版本的 PowerShell 作為目標的模組
 
@@ -124,13 +124,13 @@ PSScriptAnalyzer.psd1 檔案的內容
 @{
 
 # Author of this module
-Author = 'Microsoft Corporation'
+Author = 'Microsoft Corporation'
 
 # Script module or binary module file associated with this manifest.
-RootModule = 'PSScriptAnalyzer.psm1'
+RootModule = 'PSScriptAnalyzer.psm1'
 
 # Version number of this module.
-ModuleVersion = '1.6.1'
+ModuleVersion = '1.6.1'
 
 # ---
 }
@@ -144,33 +144,33 @@ PSScriptAnalyzer.psm1 檔案的內容：
 #
 # Script module for module 'PSScriptAnalyzer'
 #
-Set-StrictMode -Version Latest
+Set-StrictMode -Version Latest
 
 # Set up some helper variables to make it easier to work with the module
-$PSModule = $ExecutionContext.SessionState.Module
-$PSModuleRoot = $PSModule.ModuleBase
+$PSModule = $ExecutionContext.SessionState.Module
+$PSModuleRoot = $PSModule.ModuleBase
 
 # Import the appropriate nested binary module based on the current PowerShell version
-$binaryModuleRoot = $PSModuleRoot
+$binaryModuleRoot = $PSModuleRoot
 
 
-if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
-    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
+if (($PSVersionTable.Keys -contains "PSEdition") -and ($PSVersionTable.PSEdition -ne 'Desktop')) {
+    $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'coreclr'
 }
 else
 {
-    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
+    if ($PSVersionTable.PSVersion -lt [Version]'5.0')
     {
-        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }
+        $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
+    }
 }
 
-$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
-$binaryModule = Import-Module -Name $binaryModulePath -PassThru
+$binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
+$binaryModule = Import-Module -Name $binaryModulePath -PassThru
 
 # When the module is unloaded, remove the nested binary module that was loaded with it
-$PSModule.OnRemove = {
-    Remove-Module -ModuleInfo $binaryModule
+$PSModule.OnRemove = {
+    Remove-Module -ModuleInfo $binaryModule
 }
 ```
 
@@ -246,7 +246,7 @@ Mode           LastWriteTime   Length Name
 
 PowerShell 資源庫使用者可以使用 PSEdition_Desktop 和 PSEdition_Core 標記，尋找特定 PowerShell 版本支援的模組清單。
 
-模組若不具 PSEdition_Desktop 和 PSEdition_Core 標籤 ，則會視為在 PowerShell 電腦版上正常運作。
+模組若不具 PSEdition_Desktop 和 PSEdition_Core 標籤 ，則會視為在 PowerShell Desktop 上正常運作。
 
 ```powershell
 # Find modules supported on PowerShell Desktop edition
@@ -260,6 +260,6 @@ Find-Module -Tag PSEdition_Core
 
 [搭配 PSEditions 的指令碼](script-psedition-support.md)
 
-[PowerShellGallery 的 PSEditions 支援](../how-to/finding-items/searching-by-psedition.md)
+[PowerShellGallery 的 PSEditions 支援](../how-to/finding-packages/searching-by-psedition.md)
 
 [更新模組資訊清單](/powershell/module/powershellget/update-modulemanifest)

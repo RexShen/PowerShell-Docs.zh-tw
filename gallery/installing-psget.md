@@ -3,25 +3,25 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 安裝 PowerShellGet
-ms.openlocfilehash: c385f7fbf6b688a11face9c3ebf4e6475a7b4c33
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893955"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002212"
 ---
 # <a name="installing-powershellget"></a>安裝 PowerShellGet
 
 ## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet 是下列版本中的內建模組
 
-- [Windows 10](https://www.microsoft.com/en-us/windows) 或更新版本
+- [Windows 10](https://www.microsoft.com/windows) 或更新版本
 - [Windows Server 2016](/windows-server/windows-server) 或更新版本
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 或更新版本
+- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) 或更新版本
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>取得適用於 PowerShell 3.0 和 4.0 版的 PowerShellGet 模組
 
-- [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
+- [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
 
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>從 PowerShell 資源庫取的最新版本
 
@@ -48,7 +48,7 @@ ms.locfileid: "37893955"
   Exit
   ```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomen-usdownloaddetailsaspxid51451"></a>針對執行 PowerShell 3 或 PowerShell 4 且已安裝 [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451) 的系統
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a>針對執行 PowerShell 3 或 PowerShell 4 且已安裝 [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451) 的系統
 
 - 從已提升權限的 PowerShell 工作階段中使用下列 PowerShellGet Cmdlet 將模組儲存至本機目錄
 

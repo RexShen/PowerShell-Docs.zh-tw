@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 必須接受指令碼的授權
-ms.openlocfilehash: 6374c8c8536dd0c8f27580a5b8895b8db18424f9
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048231"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002577"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>必須接受指令碼的授權
 
@@ -49,5 +49,5 @@ PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ## <a name="more-details"></a>更多詳細資料
 
 - [適用於模組的必須接受授權支援](module-license-acceptance.md)
-- [PowerShellGallery 上的必須接受授權支援](../how-to/working-with-items/items-that-require-license-acceptance.md)
-- [部署至 Azure 自動化上的必須接受授權](../how-to/working-with-items/deploy-to-azure-automation.md)
+- [PowerShellGallery 上的必須接受授權支援](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
+- [部署至 Azure 自動化上的必須接受授權](../how-to/working-with-packages/deploy-to-azure-automation.md)

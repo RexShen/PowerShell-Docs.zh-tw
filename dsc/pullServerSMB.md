@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定 DSC SMB 提取伺服器
-ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: ebf9ac7923a7c226bc01014d890d993d452af578
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892860"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225857"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
@@ -132,7 +132,7 @@ Configuration DSCSMB
 > [!NOTE]
 > 如果您使用 SMB 提取伺服器，就必須使用設定識別碼。 SMB 不支援設定名稱。
 
-每個資源模組都必須根據下列模式 `{Module Name}_{Module Version}.zip` 進行壓縮及命名。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您需要對目錄結構進行小幅變更。 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。 針對提取伺服器進行封裝之前，只需移除 `{Module version}` 資料夾，以便讓路徑變成 `{Module Folder}\DscResources\{DSC Resource Folder}\`。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 SMB 共用資料夾中。
+每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您需要對目錄結構進行小幅變更。 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。 針對提取伺服器進行封裝之前，只需移除 `{Module version}` 資料夾，以便讓路徑變成 `{Module Folder}\DscResources\{DSC Resource Folder}\`。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 SMB 共用資料夾中。
 
 ## <a name="creating-the-mof-checksum"></a>建立 MOF 總和檢查碼
 

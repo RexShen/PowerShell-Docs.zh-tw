@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: f2500bfb41302cbeaf3cb9d23b843f26f01c1d5b
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a8f08323f2cced8a17de4224bea94a54ba5ef0cd
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189460"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226078"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
-> 適用於：Windows PowerShell Windows 5.0
+> 適用於：Windows PowerShell 5.0
 
 您可以利用 Windows PowerShell 5.0 引入的 PowerShell 類別，藉由建立類別來定義 DSC 資源。 類別會定義結構描述和資源實作，所以不必建立個別的 MOF 檔案。 以類別為基礎的資源資料夾結構也比較簡單，因為不需要 **DSCResources** 資料夾。
 
