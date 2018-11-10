@@ -3,37 +3,37 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的已知問題
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892132"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225840"
 ---
-# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="3a318-103">WMF 5.1 的已知問題</span><span class="sxs-lookup"><span data-stu-id="3a318-103">Known Issues in WMF 5.1</span></span>
+# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="66038-103">WMF 5.1 的已知問題</span><span class="sxs-lookup"><span data-stu-id="66038-103">Known Issues in WMF 5.1</span></span>
 
 > [!Note]
-> <span data-ttu-id="3a318-104">此資訊可能隨時變更。</span><span class="sxs-lookup"><span data-stu-id="3a318-104">This information is subject to change.</span></span>
+> <span data-ttu-id="66038-104">此資訊可能隨時變更。</span><span class="sxs-lookup"><span data-stu-id="66038-104">This information is subject to change.</span></span>
 
-## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="3a318-105">以系統管理員身分啟動 PowerShell 捷徑</span><span class="sxs-lookup"><span data-stu-id="3a318-105">Starting PowerShell shortcut as Administrator</span></span>
+## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="66038-105">以系統管理員身分啟動 PowerShell 捷徑</span><span class="sxs-lookup"><span data-stu-id="66038-105">Starting PowerShell shortcut as Administrator</span></span>
 
-<span data-ttu-id="3a318-106">安裝 WMF 時，如果您嘗試以系統管理員身分從捷徑啟動 PowerShell，可能會收到「未指定的錯誤」訊息。</span><span class="sxs-lookup"><span data-stu-id="3a318-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
-<span data-ttu-id="3a318-107">您現在可以系統管理員以外的身分重新開啟捷徑，捷徑將會以系統管理員身分運作。</span><span class="sxs-lookup"><span data-stu-id="3a318-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
+<span data-ttu-id="66038-106">安裝 WMF 時，如果您嘗試以系統管理員身分從捷徑啟動 PowerShell，可能會收到「未指定的錯誤」訊息。</span><span class="sxs-lookup"><span data-stu-id="66038-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
+<span data-ttu-id="66038-107">您現在可以系統管理員以外的身分重新開啟捷徑，捷徑將會以系統管理員身分運作。</span><span class="sxs-lookup"><span data-stu-id="66038-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
 
-## <a name="pester"></a><span data-ttu-id="3a318-108">Pester</span><span class="sxs-lookup"><span data-stu-id="3a318-108">Pester</span></span>
+## <a name="pester"></a><span data-ttu-id="66038-108">Pester</span><span class="sxs-lookup"><span data-stu-id="66038-108">Pester</span></span>
 
-<span data-ttu-id="3a318-109">在此版本中，當您在 Nano 伺服器使用 Pester 時有兩個問題應該要注意︰</span><span class="sxs-lookup"><span data-stu-id="3a318-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
+<span data-ttu-id="66038-109">在此版本中，當您在 Nano 伺服器使用 Pester 時有兩個問題應該要注意︰</span><span class="sxs-lookup"><span data-stu-id="66038-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
 
-- <span data-ttu-id="3a318-110">因為完整 CLR 和核心 CLR 之間的差異，針對 Pester 本身執行測試時會導致某些失敗。</span><span class="sxs-lookup"><span data-stu-id="3a318-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="3a318-111">尤其 XmlDocument 不提供類型驗證方法。</span><span class="sxs-lookup"><span data-stu-id="3a318-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="3a318-112">已知有六個嘗試驗證 NUnit 輸出記錄檔結構描述的測試會失敗。</span><span class="sxs-lookup"><span data-stu-id="3a318-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
-- <span data-ttu-id="3a318-113">有一個程式碼涵蓋範圍測試失敗起因於 Nano 伺服器沒有 *WindowsFeature* DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="3a318-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="3a318-114">不過，這些失敗通常是無害的，可以放心地忽略。</span><span class="sxs-lookup"><span data-stu-id="3a318-114">However, these failures are generally benign and can safely be ignored.</span></span>
+- <span data-ttu-id="66038-110">因為完整 CLR 和核心 CLR 之間的差異，針對 Pester 本身執行測試時會導致某些失敗。</span><span class="sxs-lookup"><span data-stu-id="66038-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="66038-111">尤其 XmlDocument 不提供類型驗證方法。</span><span class="sxs-lookup"><span data-stu-id="66038-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="66038-112">已知有六個嘗試驗證 NUnit 輸出記錄檔結構描述的測試會失敗。</span><span class="sxs-lookup"><span data-stu-id="66038-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
+- <span data-ttu-id="66038-113">有一個程式碼涵蓋範圍測試失敗起因於 Nano 伺服器沒有 *WindowsFeature* DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="66038-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="66038-114">不過，這些失敗通常是無害的，可以放心地忽略。</span><span class="sxs-lookup"><span data-stu-id="66038-114">However, these failures are generally benign and can safely be ignored.</span></span>
 
-## <a name="operation-validation"></a><span data-ttu-id="3a318-115">作業驗證</span><span class="sxs-lookup"><span data-stu-id="3a318-115">Operation Validation</span></span>
+## <a name="operation-validation"></a><span data-ttu-id="66038-115">作業驗證</span><span class="sxs-lookup"><span data-stu-id="66038-115">Operation Validation</span></span>
 
-- <span data-ttu-id="3a318-116">因為不具有效的說明 URI，導致 Microsoft.PowerShell.Operation.Validation 模組的 `Update-Help` 失敗</span><span class="sxs-lookup"><span data-stu-id="3a318-116">`Update-Help` fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
+- <span data-ttu-id="66038-116">因為不具有效的說明 URI，導致 Microsoft.PowerShell.Operation.Validation 模組的 `Update-Help` 失敗</span><span class="sxs-lookup"><span data-stu-id="66038-116">`Update-Help` fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
 
-## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="3a318-117">解除安裝 WMF 之後的 DSC</span><span class="sxs-lookup"><span data-stu-id="3a318-117">DSC after uninstall WMF</span></span>
+## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="66038-117">解除安裝 WMF 之後的 DSC</span><span class="sxs-lookup"><span data-stu-id="66038-117">DSC after uninstall WMF</span></span>
 
-- <span data-ttu-id="3a318-118">解除安裝 WMF 不會從組態資料夾中刪除 DSC MOF 文件。</span><span class="sxs-lookup"><span data-stu-id="3a318-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="3a318-119">若 MOF 文件包含更新且無法在舊版系統上使用的內容，DSC 便無法正常運作。</span><span class="sxs-lookup"><span data-stu-id="3a318-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="3a318-120">在此情況下，請從提高權限的 PowerShell 主控台中執行下列指令碼，以清除 DSC 狀態。</span><span class="sxs-lookup"><span data-stu-id="3a318-120">In this case, run the following script from elevated PowerShell console to to clean up the DSC states.</span></span>
+- <span data-ttu-id="66038-118">解除安裝 WMF 不會從組態資料夾中刪除 DSC MOF 文件。</span><span class="sxs-lookup"><span data-stu-id="66038-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="66038-119">若 MOF 文件包含更新且無法在舊版系統上使用的內容，DSC 便無法正常運作。</span><span class="sxs-lookup"><span data-stu-id="66038-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="66038-120">在此情況下，請從提高權限的 PowerShell 主控台中執行下列指令碼，以清除 DSC 狀態。</span><span class="sxs-lookup"><span data-stu-id="66038-120">In this case, run the following script from elevated PowerShell console to clean up the DSC states.</span></span>
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -44,11 +44,11 @@ ms.locfileid: "37892132"
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
   ```
 
-## <a name="jea-virtual-accounts"></a><span data-ttu-id="3a318-121">JEA 虛擬帳戶</span><span class="sxs-lookup"><span data-stu-id="3a318-121">JEA Virtual Accounts</span></span>
+## <a name="jea-virtual-accounts"></a><span data-ttu-id="66038-121">JEA 虛擬帳戶</span><span class="sxs-lookup"><span data-stu-id="66038-121">JEA Virtual Accounts</span></span>
 
-<span data-ttu-id="3a318-122">WMF 5.0 中設定為使用虛擬帳戶的 JEA 端點與工作階段設定，在升級為 WMF 5.1 之後將不會設定為使用虛擬帳戶。</span><span class="sxs-lookup"><span data-stu-id="3a318-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
-<span data-ttu-id="3a318-123">這表示在 JEA 工作階段中執行的命令將會以連線使用者的身分執行，而不是使用暫時的系統管理員帳戶，這將能避免使用者執行需要提高權限的命令。</span><span class="sxs-lookup"><span data-stu-id="3a318-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
-<span data-ttu-id="3a318-124">若要還原虛擬帳戶，您需要取消註冊，然後重新註冊使用虛擬帳戶的所有工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="3a318-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
+<span data-ttu-id="66038-122">WMF 5.0 中設定為使用虛擬帳戶的 JEA 端點與工作階段設定，在升級為 WMF 5.1 之後將不會設定為使用虛擬帳戶。</span><span class="sxs-lookup"><span data-stu-id="66038-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
+<span data-ttu-id="66038-123">這表示在 JEA 工作階段中執行的命令將會以連線使用者的身分執行，而不是使用暫時的系統管理員帳戶，這將能避免使用者執行需要提高權限的命令。</span><span class="sxs-lookup"><span data-stu-id="66038-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
+<span data-ttu-id="66038-124">若要還原虛擬帳戶，您需要取消註冊，然後重新註冊使用虛擬帳戶的所有工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="66038-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
 
 ```powershell
 # Find the JEA endpoint by its name
