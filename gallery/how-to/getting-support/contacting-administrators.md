@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 連絡資源庫系統管理員
-ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268648"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002167"
 ---
 # <a name="contact-gallery-administrators"></a>連絡資源庫系統管理員
 
@@ -16,14 +16,14 @@ ms.locfileid: "39268648"
 
 您應在下列情況連絡系統管理員︰
 
-1. 您需要刪除已發行的項目。
+1. 您需要刪除已發行的套件。
 2. 您的帳戶需要協助。
-3. 您想要回報資源庫中項目的問題。
-4. 您與其他使用者發生項目名稱爭議，而您無法透過連絡使用者解決此問題。
-5. 資源庫管理員與您連絡，內容有關您在資源庫中的項目，而您想要回覆。
+3. 您想要回報資源庫中套件的問題。
+4. 您與其他使用者發生套件名稱爭議，而您無法透過連絡使用者解決此問題。
+5. 資源庫管理員與您連絡，內容有關您在資源庫中的套件，而您想要回覆。
 
 ## <a name="how-to-contact-gallery-administrators"></a>連絡資源庫管理員的方式
 
 1. 傳送電子郵件給我們：cgadmin@microsoft.com。
-2. 若您要檢舉不當使用的項目，可於左方面板項目資訊下方找到 [檢舉不當使用] 連結。
+2. 若您要檢舉不當使用的套件，可於左方面板套件資訊下方找到 [檢舉不當使用] 連結。
 3. 若為任何其他資源庫相關的一般問題，請將您的問題提交至 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)

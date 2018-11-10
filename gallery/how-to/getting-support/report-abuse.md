@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 檢舉不當使用
-ms.openlocfilehash: 49f68ba634644c5d22d38a254b4c8c93ea9374d0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 70e599a26c6f04312ed7fc188047721bf96fefe2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218326"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002013"
 ---
 # <a name="report-abuse"></a>檢舉不當使用
 
-如果您發現有項目違反其中任一項目，請按一下項目詳細資料頁面上的 [檢舉不當使用] 連結並提交報告。
+如果您發現有套件違反其中任一項目，請按一下套件詳細資料頁面上的 [檢舉不當使用] 連結並提交報告。

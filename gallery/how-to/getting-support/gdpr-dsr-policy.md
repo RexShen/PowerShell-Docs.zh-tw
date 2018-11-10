@@ -3,12 +3,12 @@ ms.date: 03/27/2018
 contributor: JKeithB
 keywords: 資源庫,powershell,psgallery,GDPR
 title: PowerShell 資源庫 GDPR 合規性
-ms.openlocfilehash: 14b82fa07df52f02f0d7577cb0eef70faa4285a2
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893241"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002645"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell 資源庫 GDPR 合規性
 
@@ -26,16 +26,16 @@ GDPR 對公司、政府機關、非營利組織以及其他為歐盟 (EU) 居民
 PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可能包含個人資訊：
 
 - PowerShell 資源庫帳戶
-- 發行至 PowerShell 資源庫的項目
+- 發行至 PowerShell 資源庫的套件
 - 與 PowerShell 資源庫小組來往的電子郵件
 
 大部分的使用者不會建立 PowerShell 資源庫帳戶。
-除非您將會發行項目或是使用 PowerShell 資源庫中的「連絡擁有者」功能，否則不需要帳戶。
+除非您將會發行套件或是使用 PowerShell 資源庫中的「連絡擁有者」功能，否則不需要帳戶。
 除了由使用者所開始的往來電子郵件之外，PowerShell 資源庫對於尚未建立帳戶的使用者，不會儲存其可識別個人之資料。
 
-建立 PowerShell 資源庫帳戶的使用者，可以對 PowerShell 資源庫發行項目。
-這些項目應為 PowerShell 程式碼，但可能包含內含個人資訊的其他資訊。
-下列資訊會顯示您可如何取得已發行至 PowerShell 資源庫的所有項目。
+建立 PowerShell 資源庫帳戶的使用者，可以對 PowerShell 資源庫發行套件。
+這些套件應為 PowerShell 程式碼，但可能包含內含個人資訊的其他資訊。
+下列資訊會顯示您可如何取得已發行至 PowerShell 資源庫的所有套件。
 
 ## <a name="dsr-export-of-powershell-gallery-data"></a>PowerShell 資源庫資料的 DSR 匯出
 
@@ -45,9 +45,9 @@ PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可
 
 往來電子郵件可包含下列任一項：
 
-- 若程式碼分析掃描偵測到已發行至 PowerShell 資源庫的任何項目發生問題，會傳送電子郵件給 PowerShell 資源庫項目的擁有者
+- 若程式碼分析掃描偵測到已發行至 PowerShell 資源庫的任何套件發生問題，會傳送電子郵件給 PowerShell 資源庫套件的擁有者
 - 任何人皆可使用 [與我們連絡] 頁面 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) 中的電子郵件地址，傳送電子郵件給 PowerShell 資源庫小組
-- 使用 PowerShell 資源庫中「連絡擁有者」功能的註冊使用者，可傳送電子郵件給 PowerShell 資源庫中項目的擁有者
+- 使用 PowerShell 資源庫中「連絡擁有者」功能的註冊使用者，可傳送電子郵件給 PowerShell 資源庫中套件的擁有者
 
 與 PowerShell 資源庫往來的電子郵件，保留原則為 90 天，以進行可能的安全性調查，探索在 PowerShell 資源庫上是否有惡意程式碼。
 電子郵件依原則將會在 90 天後刪除。
@@ -65,13 +65,13 @@ PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可
 
 若您在 PowerShell 資源庫中建立了多個帳戶，則必須為每個帳戶重複這些步驟。
 
-### <a name="items-in-the-powershell-gallery"></a>PowerShell 資源庫中的項目
+### <a name="packages-in-the-powershell-gallery"></a>PowerShell 資源庫中的套件
 
-為便於匯出已發行至 PowerShell 資源庫的項目，我們已將指令碼 "GetPSGalleryItemsForAuthor" 發行至 PowerShell 資源庫。
-此指令碼會將每個項目的每一個版本之副本，依據項目中所儲存的作者資訊，匯出置入 PowerShell 資源庫中。
+為便於匯出已發行至 PowerShell 資源庫的套件，我們已將指令碼 "GetPSGalleryItemsForAuthor" 發行至 PowerShell 資源庫。
+此指令碼會將每個套件的每一個版本之複本，依據套件中所儲存的建立者資訊，匯出置入 PowerShell 資源庫中。
 
 > [!NOTE]
-> 當您發行您的項目時，會在項目的資訊清單中儲存作者。
+> 當您發行您的套件時，會在套件資訊清單中儲存建立者。
 > 不保證作者會與您用於 PowerShell 資源庫中之帳戶，是相同的身分識別。
 > 若您在 [作者] 欄位中使用了一些其他的值，則在使用此指令碼時，必須提供該值。
 
@@ -88,16 +88,16 @@ Save-Script Get-repository psgallery
 .\GetPSGalleryItemsForAuthor.ps1
 ```
 
-系統會提示您提供作者以及您希望儲存項目之系統上的資料夾。
+系統會提示您提供建立者以及您希望儲存套件之系統上的資料夾。
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>從 PowerShell 資源庫刪除個人資料
 
-若要刪除您的 PowerShell 資源庫帳戶或任何您在 PowerShell 資源庫中所擁有的項目，請傳送電子郵件至 cgadmin@microsoft.com，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
+若要刪除您的 PowerShell 資源庫帳戶或任何您在 PowerShell 資源庫中所擁有的套件，請傳送電子郵件至 cgadmin@microsoft.com，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
 在訊息內文中，請陳述您希望刪除的資訊。 例如：
 
-- 請刪除我的項目「項目名稱」之版本 x.y.z
-- 請刪除我的項目「項目名稱」之所有版本
+- 請刪除我的套件「套件名稱」之版本 x.y.z
+- 請刪除我的套件「套件名稱」之所有版本
 - 請刪除我的 PowerShell 資源庫帳戶
 
 PowerShell 資源庫系統管理員將會於 7 個工作天內回覆您。
-指定的項目將於提出申請之後的 30 天內刪除。
+指定的套件將於提出申請之後的 30 天內刪除。

@@ -3,22 +3,44 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 系統需求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483044"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002713"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
-本主題列出 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
+本主題列出適用於 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及 Windows PowerShell 5.1，以及適用於一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
 
 Windows® 8.1 和 Windows Server® 2012 R2 包含所有必要的程式。 本主題是針對舊版 Windows 使用者所設計。
 
 ## <a name="operating-system-requirements"></a>作業系統需求
-Windows PowerShell 5.0 在下列版本的 Windows 上執行。
+Windows PowerShell 5.1 可在下列版本的 Windows 上執行。
+
+- Windows Server 2019；預設會加以安裝
 
 - Windows Server 2016；預設會加以安裝
+
+- Windows Server 2012 R2；必須安裝 [Windows Management Framework 5.1](https://aka.ms/wmf5download) \(英文\) 才能執行 Windows PowerShell 5.1
+
+- Windows Server 2012；必須安裝 [Windows Management Framework 5.1](https://aka.ms/wmf5download) \(英文\) 才能執行 Windows PowerShell 5.0
+
+- Windows Server 2008 R2 Service Pack 1；必須安裝 [Windows Management Framework 5.1](https://aka.ms/wmf5download) \(英文\) 才能執行 Windows PowerShell 5.1
+
+- Windows 10 1607 版及更新版本；預設會加以安裝
+
+- Windows 10 1507 版、1511 版；必須安裝 [Windows Management Framework 5.1](https://aka.ms/wmf5download) \(英文\) 才能執行 Windows PowerShell 5.1
+
+- Windows 8.1；必須安裝 [Windows Management Framework 5.1](https://aka.ms/wmf5download) \(英文\) 才能執行 Windows PowerShell 5.1
+
+- Windows 7 Service Pack 1；必須安裝 [Windows Management Framework 5.1](https://aka.ms/wmf5download) \(英文\) 才能執行 Windows PowerShell 5.1
+
+Windows PowerShell 5.0 (由 Windows PowerShell 5.1 取代) 可在下列版本的 Windows 上執行。
+
+- Windows Server 2019；預設會安裝較新版本
+
+- Windows Server 2016；預設會安裝較新版本
 
 - Windows Server 2012 R2；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
@@ -26,7 +48,11 @@ Windows PowerShell 5.0 在下列版本的 Windows 上執行。
 
 - Windows Server® 2008 R2 Service Pack 1)；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
-- Windows 8.1
+- Windows 10 1607 版及更新版本；預設會安裝較新版本
+
+- Windows 10 1507 版、1511 版；預設會加以安裝
+
+- Windows 8.1；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) \(英文\) 才能執行 Windows PowerShell 5.0
 
 - Windows 7 Service Pack 1；必須安裝 [Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 才能執行 Windows PowerShell 5.0
 
@@ -53,6 +79,8 @@ Windows PowerShell 3.0 是在下列版本的 Windows 上執行。
 - Windows Server 2008 (含 Service Pack 2)，請安裝 [Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) 來執行 Windows PowerShell 3.0
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework 需求
+Windows PowerShell 5.1 需要完整安裝 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 預設包含 Microsoft .NET Framework 4.5。
+
 Windows PowerShell 5.0 需要安裝完整的 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 預設包含 Microsoft .NET Framework 4.5。
 
 Windows PowerShell 4.0 需要完整安裝 Microsoft .NET Framework 4.5。 Windows 8.1 和 Windows Server 2012 R2 預設包含 Microsoft .NET Framework 4.5。
@@ -103,7 +131,7 @@ Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Wi
 
 不過，因為 Microsoft .NET Framework 4 中執行階段啟用原則的變更，所以針對 Windows PowerShell 2.0 所撰寫並使用通用語言執行平台 (CLR) 2.0 編譯的 Windows PowerShell 主機程式必須經過修改，才能在 Windows PowerShell 3.0 (使用 CLR 4.0 編譯) 中執行。
 
-Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足這項需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足這項需求。
+Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足此需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足此需求。
 
 如需新增或安裝 Windows PowerShell 2.0 引擎以及新增或安裝所需 Microsoft .NET Framework 版本的資訊，請參閱[安裝 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)。 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 

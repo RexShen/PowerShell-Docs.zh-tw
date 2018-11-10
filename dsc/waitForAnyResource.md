@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC WaitForAny 資源
-ms.openlocfilehash: c9700c908f8601db85f9c922445969a34b59d453
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39100f0fc52092c54bbecab55e3ef3dfabb4c70e
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186706"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226044"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny 資源
 

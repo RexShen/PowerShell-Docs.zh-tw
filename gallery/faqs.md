@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190429"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002867"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -29,34 +29,34 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>如何發行至 PowerShell 資源庫？
 
-您必須在 PowerShell 資源庫中註冊帳戶，才能將項目發行至資源庫。 原因是發行項目需要註冊時所提供的 NuGetApiKey。 若要註冊，請使用您的個人、工作或學校帳戶登入 PowerShell 資源庫。 第一次登入時，需要單次註冊程序。 之後，就可以在設定檔頁面上使用 NuGetApiKey。
+您必須在 PowerShell 資源庫中註冊帳戶，才能將套件發行至資源庫。 原因是發行套件需要 NuGetApiKey，而這會於註冊完畢時提供。 若要註冊，請使用您的個人、工作或學校帳戶登入 PowerShell 資源庫。 第一次登入時，需要單次註冊程序。 之後，就可以在設定檔頁面上使用 NuGetApiKey。
 
-您在資源庫中進行註冊之後，請使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 將您的項目發行至資源庫。 如需如何執行這些 Cmdlet 的詳細資訊，請瀏覽 [發行] 索引標籤，或閱讀 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文件。
+您在資源庫中進行註冊之後，請使用 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) \(英文\) 或 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) \(英文\) Cmdlet 將您的套件發行至資源庫。 如需如何執行這些 Cmdlet 的詳細資訊，請瀏覽 [發行] 索引標籤，或閱讀 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 文件。
 
-**您不需要註冊或登入資源庫，就可以安裝或儲存項目。**
+**您不需要註冊或登入資源庫，就可以安裝或儲存套件。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>我收到『無法處理要求。 「指定的 API 金鑰無效，或沒有存取所指定套件的權限。」。 遠端伺服器傳回錯誤：(403) 已禁止。』 錯誤 (當我嘗試將項目發行至 PowerShell 資源庫時)。 這是什麼意思？
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>當我嘗試將套件發行至 PowerShell 資源庫時，收到『無法處理要求。 「指定的 API 金鑰無效，或沒有存取所指定套件的權限。」。 遠端伺服器傳回錯誤：(403) 已禁止。』 錯誤。 這是什麼意思？
 
 下列原因會發生此錯誤：
 
 - **指定的 API 金鑰無效。**
      請確定您已透過帳戶指定有效的 API 金鑰。 若要取得您的 API 金鑰，請檢視設定檔頁面。
-- **指定的項目名稱不屬於您。**
-     如果您已確認 API 金鑰正確，則可能已有與您嘗試使用之項目同名的項目。 擁有者可能未列出項目，在此情況下，它不會出現在任何搜尋結果中。 若要判斷是否已有同名的項目，請開啟瀏覽器，並瀏覽至項目的詳細資料頁面：`https://www.powershellgallery.com/packages/<itemName>`。 例如，直接瀏覽至 `https://www.powershellgallery.com/packages/pester` 會將您帶往 Pester 模組的詳細資料頁面 (不論是否列出)。 如果已有具有衝突名稱的項目，而且未列出，則可以︰
-    - 為您的項目選取另一個名稱。
-    - 連絡現有項目的擁有者。
+- **指定的套件名稱不屬於您。**
+     如果您已確認 API 金鑰正確，則可能已存在名稱與您嘗試使用之套件名稱相同的套件。 該套件可能已被其擁有者取消列出，在此情況下，它將不會出現在任何搜尋結果中。 若要判斷是否已存在具有相同名稱的套件，請開啟瀏覽器，並瀏覽至該套件的詳細資料頁面：`https://www.powershellgallery.com/packages/<packageName>`。 例如，直接瀏覽至 `https://www.powershellgallery.com/packages/pester` 會將您帶往 Pester 模組的詳細資料頁面 (不論是否列出)。 如果已存在具有衝突名稱的套件，且該套件已被取消列出，您可以︰
+    - 為您的套件選取另一個名稱。
+    - 連絡現有套件的擁有者。
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>為什麼無法使用我的個人帳戶登入，但我昨天還可以登入？
 
 請注意，組件庫帳戶無法容納主要電子郵件別名的變更。 如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](https://windows.microsoft.com/windows/outlook/add-alias-account)。
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>選取 [項目] 索引標籤上的所有 [類別] 核取方塊時，為什麼看不到所有組件庫項目？
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>選取 [Packages] \(套件\) 索引標籤上所有的 [Category] \(類別\) 核取方塊時，為什麼看不到所有資源庫套件？
 
-選取一個 [類別] 核取方塊，即表示「我想要查看這個類別的所有項目」。 只會顯示所選取類別中的項目。 同樣地，選取所有 [類別] 核取方塊，即表示「我想要查看任何類別的所有項目」。 但是，組件庫中的某些項目不屬於任何列出的類型，因此不會出現在結果中。 若要查看組件庫中的所有項目，請取消核取所有 [類別]，或再次選取 [項目] 索引標籤。
+選取一個 [Category] \(類別\) 核取方塊，即表示您「想要看見這個類別中的所有套件」。 系統只會顯示所選取類別中的套件。 同樣地，當您選取所有 [Category] \(類別\) 核取方塊時，即表示您「想要查看所有類別中的所有套件」。 但由於資源庫中有某些項目並不屬於任何已列出的類別，因此它們不會出現在結果中。 若要查看資源庫中所有的套件，請取消選取所有 [Category] \(類別\)，或再次選取 [Packages] \(套件\) 索引標籤。
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>將模組發行至 PowerShell 資源庫的需求為何？
 
-任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」(.psd1) 檔案或從 [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發行程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
+任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」(.psd1) 檔案或從 [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取此資訊，作為發行程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
 
 - 版本
 - 描述
@@ -73,7 +73,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>將指令碼發行至資源庫的需求為何？
 
-任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。 若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從指令檔的 *PSScriptInfo* 或從 [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發行程序的一部分。 所有發行至資源庫的指令碼都必須具有中繼資料資訊。 任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
+任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。 若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從指令檔的 *PSScriptInfo* 或從 [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) Cmdlet 的 **LicenseUri** 參數值中讀取此資訊，作為發行程序的一部分。 所有發行至資源庫的指令碼都必須具有中繼資料資訊。 任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
 
 - 版本
 - 描述
@@ -82,7 +82,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-do-i-search"></a>如何進行搜尋？
 
-在文字方塊中，輸入您要尋找的內容。 例如，如果您想要尋找與 Azure SQL 相關的模組，只需要輸入 "azure sql"。 搜尋引擎會在所有已發行的項目 (包含標題、描述和中繼資料) 中尋找這些關鍵字。 然後，根據加權的品質分數，就會顯示最接近的相符項目。 您也可以在下列欄位的搜尋查詢中使用 field:"value" 語法，以依特定欄位進行搜尋：
+在文字方塊中，輸入您要尋找的內容。 例如，如果您想要尋找與 Azure SQL 相關的模組，只需要輸入 "azure sql"。 搜尋引擎會在所有已發行的套件中 (包括在標題、描述和中繼資料中) 尋找那些關鍵字。 然後，根據加權的品質分數，就會顯示最接近的相符項目。 您也可以在下列欄位的搜尋查詢中使用 field:"value" 語法，以依特定欄位進行搜尋：
 
 - 標記
 - 函式
@@ -112,7 +112,7 @@ PowerShell 模組這個詞也是指實作實際功能的檔案。 指令碼模�
 
 PackageManagement 是處理任何套件管理員的通用介面。 最後，不論處理 PowerShell 模組、MSI、Ruby 寶石、NuGet 套件還是 Perl 模組，您應該可以使用 PackageManagement 的命令 (Find-Package 和 Install-Package) 來進行尋找並安裝。 PackageManagement 的做法是具有插入 PackageManagement 之每個套件管理員的套件提供者。 提供者會執行所有實際工作；他們會從存放庫提取內容，並將內容安裝在本機。 套件提供者通常只需要包裝所指定套件類型的現有套件管理員工具。
 
-PowerShellGet 是 PowerShell 項目的套件管理員。 具有可透過 PackageManagement 公開 PowerShellGet 功能的 PSModule 套件提供者。 因此，您可以執行 [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 以從 PowerShell Gallery 安裝模組。 無法透過 PackageManagement 命令存取特定 PowerShellGet 功能 (包含 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409))。
+PowerShellGet 是適用於 PowerShell 套件的套件管理員。 具有可透過 PackageManagement 公開 PowerShellGet 功能的 PSModule 套件提供者。 因此，您可以執行 [Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 或 Install-Package -Provider PSModule 以從 PowerShell Gallery 安裝模組。 無法透過 PackageManagement 命令存取特定 PowerShellGet 功能 (包含 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) 和 [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409))。
 
 總而言之，PowerShellGet 只著重於具有 PowerShell 內容的高階套件管理體驗。 PackageManagement 著重於透過一組通用工作來公開所有套件管理體驗。 如果您不滿意這個回答，則在本文件底端的 **PackageManagement 實際上與 PowerShellGet 的關聯為何？** 一節中會有較長的回答。
 
@@ -158,14 +158,14 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 **PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>是否可以保留未來發行之項目的名稱？
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>是否可以為預計在未來發行的套件保留名稱？
 
-無法擅自使用項目名稱。 如果您認為現有項目已採用更符合您項目的名稱，請嘗試[連絡項目的擁有者](./how-to/working-with-items/contacting-item-owners.md)。 如果您在幾週內未收到回應，則可以連絡支援人員，PowerShell Gallery 小組會查看該問題。
+您無法佔用套件名稱。 如果您認為某個現有套件所採用的名稱更適合您自己的套件使用，請嘗試[連絡該套件的擁有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果您在幾週內未收到回應，則可以連絡支援人員，PowerShell Gallery 小組會查看該問題。
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>如何宣告項目的擁有權？
+## <a name="how-do-i-claim-ownership-for-packages"></a>如何主張套件的擁有權？
 
-如需詳細資訊，請參閱 [PowerShellGallery.com 上的管理項目擁有者](./how-to/publishing-items/managing-item-owners.md)。
+如需詳細資料，請參閱 [PowerShellGallery.com 上的＜管理套件擁有者＞](./how-to/publishing-packages/managing-package-owners.md)。
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>如何對待違反我的項目授權的項目擁有者？
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>我應如何處理違反我的套件授權的套件擁有者？
 
-建議 PowerShell 社群一起合作，來解決任何可能在項目擁有者與其他項目之擁有者間發生的爭議。  在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](./how-to/getting-support/dispute-resolution.md)。
+我們建議 PowerShell 社群一起合作，來解決任何可能在套件擁有者與其他套件擁有者之間發生的爭議。  在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](./how-to/getting-support/dispute-resolution.md)。

@@ -3,21 +3,21 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 發行前模組版本
-ms.openlocfilehash: 9c3ddb623fbcb7f4b3453dd70cdc56a8dc2e9f6a
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: f58b5adfeba7ed06d231c76accbd52508c7d67d6
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268614"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002764"
 ---
 # <a name="prerelease-module-versions"></a>發行前模組版本
 
-從 1.6.0 版開始，PowerShellGet 和 PowerShell 資源庫支援將大於 1.0.0 的版本標記為發行前版本。 在此功能之前，發行前版本項目僅限於以 0 開始的版本。 這些功能的目標是為 [SemVer 1.0.0 版](http://semver.org/spec/v1.0.0.html)版本設定慣例提供更好的支援，而不會中斷與 PowerShell 第 3 版及更新版本或 PowerShellGet 現有版本的回溯相容性。 本主題著重在模組特有的功能。 指令碼的對應功能位於[指令碼的發行前版本](script-prerelease-support.md)主題中。 使用這些功能，發行者可以將模組或指令碼識別為 2.5.0-Alpha 版，並於稍後發行已準備好投入生產環境的 2.5.0 版以取代發行前版本。
+從 1.6.0 版開始，PowerShellGet 和 PowerShell 資源庫支援將大於 1.0.0 的版本標記為發行前版本。 在此功能之前，發行前版本套件僅限於以 0 開始的版本。 這些功能的目標是為 [SemVer 1.0.0 版](http://semver.org/spec/v1.0.0.html)版本設定慣例提供更好的支援，而不會中斷與 PowerShell 第 3 版及更新版本或 PowerShellGet 現有版本的回溯相容性。 本主題著重在模組特有的功能。 指令碼的對應功能位於[指令碼的發行前版本](script-prerelease-support.md)主題中。 使用這些功能，發行者可以將模組或指令碼識別為 2.5.0-Alpha 版，並於稍後發行已準備好投入生產環境的 2.5.0 版以取代發行前版本。
 
 概括而言，發行前版本的模組功能包括：
 
-- 將發行前版本字串新增至模組資訊清單的 PSData 區段，可將模組識別為發行前版本。 當模組發行至 PowerShell 資源庫時，即會從資訊清單中擷取這項資料，並將其用來識別發行前版本項目。
-- 取得發行前版本項目需要將 `-AllowPrerelease` 旗標加入到 PowerShellGet 命令 `Find-Module`、`Install-Module`、`Update-Module` 與 `Save-Module`。 如果未指定此旗標，則不會顯示發行前版本項目。
+- 將發行前版本字串新增至模組資訊清單的 PSData 區段，可將模組識別為發行前版本。 當模組發行至 PowerShell 資源庫時，即會從資訊清單中擷取此資料，並將其用來識別發行前版本套件。
+- 取得發行前版本套件需要將 `-AllowPrerelease` 旗標加入到 PowerShellGet 命令 `Find-Module`、`Install-Module`、`Update-Module` 與 `Save-Module`。 如果未指定此旗標，則不會顯示發行前版本套件。
 - `Find-Module`、`Get-InstalledModule` 所顯示的模組版本以及 PowerShell 資源庫中顯示的模組版本，將顯示為附加了發行前版本字串的單一字串，如同 2.5.0-alpha。
 
 以下包含這些功能的詳細資料。
@@ -51,7 +51,7 @@ PowerShellGet 對發行前版本的支援需要使用模組資訊清單內的兩
 
 - 只有當 Major.Minor.Build 的 ModuleVersion 為 3 個區段時，才能指定發行前版本字串。 這與 SemVer 1.0.0 版相符。
 - 連字號是組建編號和發行前版本字串之間的分隔符號。 連字號只能作為第一個字元，包含在發行前版本字串中。
-- 發行前版本字串只能包含 ASCII 英數字元 [0-9A-Za-z-]。 發行前版本字串最好是以英數字元開始，因為在掃描項目的清單時，可以更容易分辨這是發行前版本字串。
+- 發行前版本字串只能包含 ASCII 英數字元 [0-9A-Za-z-]。 發行前版本字串最好是以英數字元開始，因為在掃描套件的清單時，可以更容易分辨這是發行前版本字串。
 - 目前只支援 SemVer 1.0.0 版的發行前版本字串。 發行前版本字串**不得**包含 SemVer 2.0 中允許使用的句號或 + [.+]。
 - 支援的發行前版本字串範例包括：-alpha、-alpha1、-BETA、-update20171020
 
@@ -61,9 +61,9 @@ PowerShellGet 對發行前版本的支援需要使用模組資訊清單內的兩
 
 發行至 PowerShell 資源庫時，根據預設，所發行的模組版本必須比 PowerShell 資源庫中任何先前已發行的版本更高。
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>使用 PowerShellGet 命令尋找並取得發行前版本項目
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>使用 PowerShellGet 命令尋找並取得發行前版本套件
 
-使用 PowerShellGet 的 Find-Module、Install-Module、Update-Module 和 Save-Module 命令處理發行前版本項目時，需要新增 -AllowPrerelease 旗標。 如果已指定 -AllowPrerelease，則會包含現存的發行前版本項目。 如果未指定 -AllowPrerelease 旗標，則不會顯示發行前版本項目。
+使用 PowerShellGet 的 Find-Module、Install-Module、Update-Module 和 Save-Module 命令處理發行前版本套件時，需要新增 -AllowPrerelease 旗標。 如果已指定 -AllowPrerelease，則會包含現存的發行前版本套件。 如果未指定 -AllowPrerelease 旗標，則不會顯示發行前版本套件。
 
 PowerShellGet 模組命令中此狀況的唯一例外是 Get-InstalledModule，以及在某些情況下的 Uninstall-Module。
 

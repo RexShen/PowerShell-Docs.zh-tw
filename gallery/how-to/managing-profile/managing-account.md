@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫帳戶設定
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523128"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002781"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 資源庫帳戶設定
 
@@ -34,7 +34,7 @@ PowerShell 資源庫提供下列帳戶設定：
 PowerShell 資源庫提供下列通知選項：
 
 - 使用者可以透過 PowerShell 資源庫與我連絡
-- 當使用我的帳戶將項目推送至 PowerShell 資源庫時通知我
+- 當使用我的帳戶將套件推送至 PowerShell 資源庫時通知我
 
 ![變更電子郵件地址](../../Images/PSGallery_AccountEmailOptions.png)
 

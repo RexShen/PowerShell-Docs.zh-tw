@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 7a2ef581f2cd867b35533597d4942fd5bfc94570
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483180"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225806"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
@@ -243,7 +243,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
     -   Update-DscConfiguration
 
-- 使用集中式 DSC 錯誤報告時，不只會將豐富的錯誤資訊記錄到事件記錄檔中，還可將其傳送到中央位置以便稍後進行分析。 您可以使用這個中央位置，來儲存任何伺服器在其環境中所發生的 DSC 設定錯誤。 於中繼設定中定義報表伺服器之後，會將所有錯誤傳送到報表伺服器，然後儲存在資料庫中。 不論是否有設定要從提取伺服器提取設定的目標節點，您都可以設定這項功能。
+- 使用集中式 DSC 錯誤報告時，不只會將豐富的錯誤資訊記錄到事件記錄檔中，還可將其傳送到中央位置以便稍後進行分析。 您可以使用這個中央位置，來儲存任何伺服器在其環境中所發生的 DSC 設定錯誤。 於中繼設定中定義報表伺服器之後，會將所有錯誤傳送到報表伺服器，然後儲存在資料庫中。 不論是否有設定要從提取伺服器提取設定的目標節點，您都可以設定此功能。
 
 - 針對 Windows PowerShell ISE 的改善能簡化 DSC 資源的撰寫。 您現在可以執行下列操作：
 
@@ -255,7 +255,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
     -   增強的資源屬性值 TAB 鍵自動完成。
 
-- 使用者現在可以將 **PSDscRunAsCredential** 屬性新增至節點區塊，以執行指定之認證集合下的資源。 例如，PSDscRunAsCredential = Get-Credential Contoso\\DscUser。 這項功能非常適合用來建立設定，以執行 Windows Installer 和可執行安裝程式、存取每位使用者的登錄區，或執行目前使用者內容以外的其他工作。
+- 使用者現在可以將 **PSDscRunAsCredential** 屬性新增至節點區塊，以執行指定之認證集合下的資源。 例如，PSDscRunAsCredential = Get-Credential Contoso\\DscUser。 此功能非常適合用來建立設定，以執行 Windows Installer 和可執行安裝程式、存取每位使用者的登錄區，或執行目前使用者內容以外的其他工作。
 
 - 針對 **Configuration** 關鍵字，已可支援 32 位元 (x86 為基礎)。
 
@@ -283,7 +283,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 
-- 現在，您可透過執行 Enter-PSSession 來在存有您要編輯之檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit <path and file name on the remote computer>**，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
+- 現在，您可透過執行 Enter-PSSession 來在存有您要編輯之檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit <path and file name on the remote computer>**，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 此功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
 
 - Windows PowerShell ISE 現可支援 Start-Transcript Cmdlet。
 
@@ -582,7 +582,7 @@ Windows PowerShell 3.0 支援通用訊息模型 (CIM)，它可為系統、網路
 
 若要建立工作階段設定檔案，請使用 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) Cmdlet。 若要將工作階段設定檔案套用到工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) 或 [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) Cmdlet。
 
-如需詳細資訊，請參閱 [about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8) 與 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
+如需詳細資訊，請參閱 [about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0) 與 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)。
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>排程工作與工作排程器整合
 您現在可以排程 Windows PowerShell 背景工作，並在 Windows PowerShell 和工作排程器中管理它們。
@@ -656,7 +656,7 @@ Windows PowerShell 主控台中的 Tab 鍵自動完成現在可以完成 Cmdlet�
 
 您可以使用 **$PSModuleAutoLoadingPreference** 喜好設定變數來啟用、停用及設定自動匯入模組。
 
-如需詳細資訊，請參閱 [about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9)、[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) 及 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 與 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
+如需詳細資訊，請參閱 [about_Modules](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0)、[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b) 及 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) 與 [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) Cmdlet 的說明主題。
 
 ### <a name="module-experience-improvements"></a>模組體驗改善
 Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新功能。

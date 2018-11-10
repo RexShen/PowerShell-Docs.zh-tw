@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 必須接受授權的模組
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893105"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002662"
 ---
 # <a name="modules-requiring-license-acceptance"></a>必須接受授權的模組
 
 ## <a name="synopsis"></a>概要
 
-某些模組發行者的法務部門會要求客戶明確接受授權，以從 PowerShell 資源庫安裝他們的模組。 若使用者使用 PowerShellGet 安裝、更新或儲存模組 (無論是直接或以另一個項目之相依性的形式)，且該模組要求使用者同意授權，則該使用者必須表示他們接受該授權，否則作業將會失敗。
+某些模組發行者的法務部門會要求客戶明確接受授權，以從 PowerShell 資源庫安裝他們的模組。 若使用者使用 PowerShellGet 安裝、更新或儲存模組 (無論是直接或以另一個套件之相依性的形式)，且該模組要求使用者同意授權，則該使用者必須表示他們接受該授權，否則作業將會失敗。
 
 ## <a name="publish-requirements-for-modules"></a>針對模組的發行要求
 
@@ -43,7 +43,7 @@ ms.locfileid: "37893105"
 
 - 在 Install/Save/Update 作業期間，若相依模組 (相依於模組的其他項目) 必須接受授權，則會要求 (上述的) 授權接受行為。
 - 如果模組版本已於本機目錄中列為已安裝在系統上，將會略過授權檢查。
-- 在 Install/Save/Update 作業期間，若相依模組要求授權，且接受授權並沒有發生，則該作業將會失敗，並依循項目安裝/儲存/更新失敗的一般程序執行。
+- 在安裝/儲存/更新作業期間，若相依模組要求授權，且接受授權並沒有發生，則該作業將會失敗，並依循套件安裝/儲存/更新失敗的一般程序執行。
 
 ## <a name="impact-on--force"></a>對 -Force 的影響
 
@@ -219,6 +219,6 @@ Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 [適用於指令碼的必須接受授權](./script-license-acceptance.md)
 
-[PowerShellGallery 上的必須接受授權支援](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[PowerShellGallery 上的必須接受授權支援](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[部署至 Azure 自動化上的必須接受授權](../how-to/working-with-items/deploy-to-azure-automation.md)
+[部署至 Azure 自動化上的必須接受授權](../how-to/working-with-packages/deploy-to-azure-automation.md)

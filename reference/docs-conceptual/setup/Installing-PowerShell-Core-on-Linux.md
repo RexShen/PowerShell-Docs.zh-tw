@@ -2,16 +2,16 @@
 title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: d60e1d5a89b6907b67c19b8cfcde969be156bd60
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: a20384c768113ed2313591cfa8c29eeadd94f80f
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851284"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225993"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.10][u18]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 若是未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]。
 您也可以直接使用 Linux [`tar.gz` 封存][tar]嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中的作業系統，設定必要的相依性。
@@ -21,8 +21,8 @@ GitHub [版本][]頁面上提供所有套件。
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u18]: #ubuntu-1810
-[u18]: #ubuntu-1804
+[u1804]: #ubuntu-1804
+[u1810]: #ubuntu-1810
 [deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
@@ -45,7 +45,6 @@ GitHub [版本][]頁面上提供所有套件。
 |---------------|---------------|-----------------|
 | Ubuntu、Debian |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
 | CentOS、RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| OpenSUSE |`sudo zypper install powershell` | `sudo zypper install powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
 ## <a name="ubuntu-1404"></a>Ubuntu 14.04
@@ -393,65 +392,62 @@ sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.1
 sudo yum remove powershell
 ```
 
-## <a name="opensuse-423"></a>OpenSUSE 42.3
+## <a name="opensuse"></a>openSUSE
 
-安裝 PowerShell Core 時，`zypper` 可能會回報以下錯誤：
-
-```Output
-Problem: nothing provides libcurl needed by powershell-6.1.0-1.rhel.7.x86_64
- Solution 1: do not install powershell-6.1.0-1.rhel.7.x86_64
- Solution 2: break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies
-```
-
-在此情況下，請確認下列命令會顯示 `libcurl` 套件為已安裝，來驗證存在符合規範的 `libcurl4` 程式庫：
+### <a name="installation---opensuse-423"></a>安裝 - openSUSE 42.3
 
 ```sh
-zypper search --file-list --match-exact '/usr/lib64/libcurl.so.4'
-```
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar libicu52_1
 
-然後在安裝 PowerShell 套件時，選擇 `break powershell-6.1.0-1.rhel.7.x86_64 by ignoring some of its dependencies` 解決方案。
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
 
-### <a name="installation-via-package-repository-preferred---opensuse-423"></a>透過套件存放庫安裝 (慣用) - OpenSUSE 42.3
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/6.1.0
 
-PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫進行簡易安裝 (及更新)。
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
 
-```sh
-# Register the Microsoft signature key
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/6.1.0/pwsh
 
-# Add the Microsoft Repository
-zypper ar https://packages.microsoft.com/rhel/7/prod/
-
-# Update the list of products
-sudo zypper update
-
-# Install PowerShell
-sudo zypper install powershell
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
 
 # Start PowerShell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---opensuse-423"></a>透過直接下載安裝 - OpenSUSE 42.3
-
-將[版本][]頁面上的 RPM 套件 `powershell-6.1.0-1.rhel.7.x86_64.rpm` 下載到 OpenSUSE 電腦。
+### <a name="installation---opensuse-leap-15"></a>安裝 - openSUSE Leap 15
 
 ```sh
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install powershell-6.1.0-1.rhel.7.x86_64.rpm
+# Install dependencies
+zypper update && zypper --non-interactive install curl tar gzip libopenssl1_0_0 libicu60_2
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+mkdir -p /opt/microsoft/powershell/6.1.0
+
+# Expand powershell to the target folder
+tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/6.1.0
+
+# Set execute permissions
+chmod +x /opt/microsoft/powershell/6.1.0/pwsh
+
+# Create the symbolic link that points to pwsh
+ln -s /opt/microsoft/powershell/6.1.0/pwsh /usr/bin/pwsh
+
+# Start PowerShell
+pwsh
 ```
 
-您也可以不使用下載的中繼步驟來安裝 RPM：
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a>解除安裝 - openSUSE 42.3、openSUSE Leap 15
 
 ```sh
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo zypper install https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-1.rhel.7.x86_64.rpm
-```
-
-### <a name="uninstallation---opensuse-423"></a>解除安裝 - OpenSUSE 42.3
-
-```sh
-sudo zypper remove powershell
+rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
 ## <a name="fedora"></a>Fedora
@@ -542,15 +538,31 @@ AUR 中的套件由社群維護 - 沒有官方支援。
 
 ```sh
 # Install PowerShell
+sudo snap install powershell --classic
+
+# Start PowerShell
+pwsh
+```
+
+若要安裝預覽版，請使用下列方法。
+
+```sh
+# Install PowerShell
 sudo snap install powershell-preview --classic
 
 # Start PowerShell
 pwsh-preview
 ```
 
-在安裝之後，Snap 會自動升級，不過您也可使用 `sudo snap refresh powershell-preview` 觸發升級。
+在安裝之後，Snap 會自動升級，不過您也可以使用 `sudo snap refresh powershell` 或 `sudo snap refresh powershell-preview` 觸發升級。
 
 ### <a name="uninstallation"></a>解除安裝
+
+```sh
+sudo snap remove powershell
+```
+
+或
 
 ```sh
 sudo snap remove powershell-preview
@@ -558,7 +570,7 @@ sudo snap remove powershell-preview
 
 ## <a name="kali"></a>Kali
 
-### <a name="installation"></a>安裝
+### <a name="installation---kali"></a>安裝 - Kali
 
 ```sh
 # Download & Install prerequisites
@@ -597,7 +609,7 @@ apt-get remove -y powershell
 
 下載 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)並 遵循[安裝指示](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)來把它安裝到您的 Pi。
 
-### <a name="installation"></a>安裝
+### <a name="installation---raspbian"></a>安裝 - Raspbian
 
 ```sh
 # Install prerequisites
@@ -653,7 +665,9 @@ PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。
 | Ubuntu 18.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60 |
 | Debian 8 (Jessie)  | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Debian 9 (Stretch) | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57 |
-| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 <br> OpenSUSE OpenSUSE 42.3 | libunwind、libcurl、openssl-libs、libicu |
+| CentOS 7 <br> Oracle Linux 7 <br> RHEL 7 | libunwind、libcurl、openssl-libs、libicu |
+| openSUSE 42.3 | libcurl4、libopenssl1_0_0、libicu52_1 |
+| openSUSE Leap 15 | libcurl4、libopenssl1_0_0、libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
 若要在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。

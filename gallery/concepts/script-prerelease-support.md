@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 指令碼的發行前版本
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268461"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002730"
 ---
 # <a name="prerelease-versions-of-scripts"></a>指令碼的發行前版本
 
-從 1.6.0 版開始，PowerShellGet 和 PowerShell 資源庫支援將大於 1.0.0 的版本標記為發行前版本。 在此功能之前，發行前版本項目僅限於以 0 開始的版本。 這些功能的目標是為 [SemVer 1.0.0 版](http://semver.org/spec/v1.0.0.html)版本設定慣例提供更好的支援，而不會中斷與 PowerShell 第 3 版及更新版本或 PowerShellGet 現有版本的回溯相容性。 本主題著重在指令碼特有的功能。 模組的對應功能位於[發行前模組版本](module-prerelease-support.md)主題中。 使用這些功能，發行者可以將指令碼識別為 2.5.0-alpha 版，並於稍後發行已準備好投入生產環境的 2.5.0 版以取代發行前版本。
+從 1.6.0 版開始，PowerShellGet 和 PowerShell 資源庫支援將大於 1.0.0 的版本標記為發行前版本。 在此功能之前，發行前版本套件僅限於以 0 開始的版本。 這些功能的目標是為 [SemVer 1.0.0 版](http://semver.org/spec/v1.0.0.html)版本設定慣例提供更好的支援，而不會中斷與 PowerShell 第 3 版及更新版本或 PowerShellGet 現有版本的回溯相容性。 本主題著重在指令碼特有的功能。 模組的對應功能位於[發行前模組版本](module-prerelease-support.md)主題中。 使用這些功能，發行者可以將指令碼識別為 2.5.0-alpha 版，並於稍後發行已準備好投入生產環境的 2.5.0 版以取代發行前版本。
 
 概括而言，發行前版本的指令碼功能包括：
 
-- 將 PrereleaseString 尾碼新增至指令碼資訊清單中的版本字串。 當指令碼發行至 PowerShell 資源庫時，即會從資訊清單中擷取這項資料，並將其用來識別發行前版本項目。
-- 取得發行前版本項目需要將 -AllowPrerelease 旗標新增至 Find-Script、Install-Script、Update-Script 和 Save-Script 等 PowerShellGet 命令。 如果未指定此旗標，則不會顯示發行前版本項目。
+- 將 PrereleaseString 尾碼新增至指令碼資訊清單中的版本字串。 當指令碼發行至 PowerShell 資源庫時，即會從資訊清單中擷取此資料，並將其用來識別發行前版本套件。
+- 取得發行前版本套件需要將 -AllowPrerelease 旗標新增至 Find-Script、Install-Script、Update-Script 與 Save-Script 等 PowerShellGet 命令。 如果未指定此旗標，則不會顯示發行前版本套件。
 - Find-Script、Get-InstalledScript 所顯示的指令碼以及在 PowerShell 資源庫中顯示的指令碼都將使用 PrereleaseString 顯示，如同 2.5.0-alpha。
 
 以下包含這些功能的詳細資料。
@@ -54,9 +54,9 @@ ms.locfileid: "39268461"
 
 發行至 PowerShell 資源庫時，根據預設，所發行的指令碼版本必須比 PowerShell 資源庫中任何先前已發行的版本更高。 發行者可能會使用 2.5.0-beta 或 2.5.0 (不含發行前版本尾碼) 更新版本 2.5.0-alpha。
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>使用 PowerShellGet 命令尋找並取得發行前版本項目
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>使用 PowerShellGet 命令尋找並取得發行前版本套件
 
-使用 PowerShellGet 的 Find-Script、Install-Script、Update-Script 和 Save-Script 命令處理發行前版本項目時，需要新增 -AllowPrerelease 旗標。 如果已指定 -AllowPrerelease，則會包含現存的發行前版本項目。 如果未指定 -AllowPrerelease 旗標，則不會顯示發行前版本項目。
+使用 PowerShellGet 的 Find-Script、Install-Script、Update-Script 與 Save-Script 命令處理發行前版本套件時，需要新增 -AllowPrerelease 旗標。 如果已指定 -AllowPrerelease，則會包含現存的發行前版本套件。 如果未指定 -AllowPrerelease 旗標，則不會顯示發行前版本套件。
 
 PowerShellGet 指令碼命令中此狀況的唯一例外是 Get-InstalledScript，以及在某些情況下的 Uninstall-Scrip。
 

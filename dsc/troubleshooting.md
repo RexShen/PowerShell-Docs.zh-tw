@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: 93a2f3728968882f78d4c050238d226b71c11ca5
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
+ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268189"
+ms.lasthandoff: 10/31/2018
+ms.locfileid: "50410009"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
@@ -196,7 +196,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="1-operations-failures"></a>1：作業失敗
 
-所有的事件都有[嚴重性層級](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 這項資訊可以用來識別錯誤事件：
+所有的事件都有[嚴重性層級](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 此資訊可以用來識別錯誤事件：
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -416,7 +416,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="getting-events-for-a-remote-computer"></a>取得遠端電腦的事件
 
-使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
+使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行此作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
@@ -503,7 +503,7 @@ ConfigurationID                :
 ConfigurationMode              : ApplyAndMonitor
 ConfigurationModeFrequencyMins : 30
 Credential                     :
-DebugMode                      : False
+DebugMode                      : {None}
 DownloadManagerCustomData      :
 DownloadManagerName            :
 LocalConfigurationManagerState : Ready
@@ -513,7 +513,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-您可以看到 `DebugMode` 設為 **FALSE**。
+您可以看到 `DebugMode` 設為 **"None"**。
 
 若要安裝 `DebugMode` 示範，請使用下列 PowerShell 資源：
 
@@ -603,12 +603,12 @@ function Test-TargetResource
 
 這個指令碼會產生一個隨機數字，以此更新提供者程式碼。 若 `DebugMode` 設定為 false，檔案內容 "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" 就一律不會變更。
 
-現在，在設定指令碼中將 `DebugMode` 設為 **TRUE**：
+現在，在設定指令碼中將 `DebugMode` 設為 **"ForceModuleImport"**：
 
 ```powershell
 LocalConfigurationManager
 {
-    DebugMode = $true
+    DebugMode = "ForceModuleImport"
 }
 ```
 

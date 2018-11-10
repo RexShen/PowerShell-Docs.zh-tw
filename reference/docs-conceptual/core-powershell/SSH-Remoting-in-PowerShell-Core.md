@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851232"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451060"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851232"
 
 PowerShell 遠端通常會使用 WinRM 進行連線交涉和資料傳輸。 SSH 目前適用於 Linux 與 Windows 平台，而且能夠執行真正的多平台 PowerShell 遠端功能。
 
-WinRM 提供一個健全裝載模型以供 PowerShell 遠端工作階段使用。 使用這個實作時，SSH 型遠端功能目前不支援遠端端點設定和 JEA (Just Enough Administration)。
+WinRM 提供一個健全裝載模型以供 PowerShell 遠端工作階段使用。 SSH 型遠端功能目前不支援遠端端點設定和 JEA (Just Enough Administration)。
 
 SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端功能。 SSH 遠端功能會在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。
 最後，我們將實作一般裝載模型 (類似 WinRM) 以支援端點設定與 JEA。
@@ -48,7 +48,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
    ```
 
 2. 使用[安裝](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)指示，安裝 GitHub 中的最新 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) 組建
-3. 編輯 Win32 OpenSSH 所安裝位置中的 sshd_config 檔案
+3. 編輯位於 `%ProgramData%\ssh` 的 sshd_config 檔案。
 
    - 確定已啟用密碼驗證
 
@@ -57,7 +57,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
      解決方案之一是建立未包含空格之 PowerShell 安裝目錄的符號連結：
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      然後在子系統中輸入它：
