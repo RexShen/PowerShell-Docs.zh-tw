@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: powershell,cmdlet
 title: PowerShell.exe 命令列說明
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
-ms.translationtype: HT
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133080"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691825"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe 命令列說明
 
@@ -51,7 +51,10 @@ PowerShell[.exe] -Help | -? | /?
 
 在本機領域 (「點來源」) 執行指定指令碼，讓指令碼建立的函式和變數在目前的工作階段可用。 輸入指令碼檔案路徑和任何參數。 **File** 必須是命令中的最後一個參數。 在 **-File** 參數之後輸入的所有值都會解譯為指令碼檔案路徑以及要傳遞給該指令碼的參數。
 
-參數會以常值字串形式 (經過目前的殼層解譯後) 傳遞至指令碼。 例如，如果您想要在 cmd.exe 中傳遞環境變數值，應使用 cmd.exe 語法：`powershell -File .\test.ps1 -Sample %windir%`。在此範例中，指令碼會接收到常值字串 `$env:windir`，而非該環境變數的值：`powershell -File .\test.ps1 -Sample $env:windir`
+參數會以常值字串形式 (經過目前的殼層解譯後) 傳遞至指令碼。 例如，如果您在 cmd.exe 中，並想要傳遞環境變數值，您會使用 cmd.exe 語法： `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+相較之下，執行`powershell.exe -File .\test.ps1 -TestParam $env:windir`接收的常值字串的指令碼中的 cmd.exe 結果中`$env:windir`因為它沒有任何特殊的意義，到目前的 cmd.exe 殼層。
+`$env:windir`環境變數參考的樣式_可以_能在內部使用`-Command`參數，因為那里將被解譯為 PowerShell 程式碼。
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -103,26 +106,35 @@ PowerShell[.exe] -Help | -? | /?
 
 ### <a name="-command"></a>-Command
 
-執行指定的命令 (搭配任何參數)，就如同在 PowerShell 命令提示字元中輸入它們一樣。 執行之後，除非指定了 `-NoExit` 參數，否則 PowerShell 就會結束。
-`-Command` 之後的任何文字都會以單一命令列形式傳送至 PowerShell。 這與 `-File` 處理要傳送至指令碼之參數的方法不同。
+執行指定的命令 (搭配任何參數)，就如同在 PowerShell 命令提示字元中輸入它們一樣。
+執行之後，PowerShell 會結束除非**NoExit**指定參數。
+`-Command` 之後的任何文字都會以單一命令列形式傳送至 PowerShell。
+這與 `-File` 處理要傳送至指令碼之參數的方法不同。
 
-Command 的值可以是 "-"、字串。 或指令碼區塊。 如果 Command 的值是 "-"，則會從標準輸入讀取命令文字。
+值`-Command`可以是"-"、 字串或指令碼區塊。
+命令的結果會回到父殼層為已還原序列化的 XML 物件，不是即時物件。
 
-指令碼區塊必須以大括弧 ({}) 括住。 只有在 PowerShell 中執行 PowerShell.exe 時，才可以指定指令碼區塊。 指令碼的結果會當做已還原序列化的 XML 物件 (而不是即時物件) 傳回到父殼層。
+如果值`-Command`是"-"，從標準輸入讀取命令文字。
 
-如果 Command 的值是字串，因為在命令後輸入的任何字元皆會解譯為命令引數，所以 **Command** 必須是命令中的最後一個參數。
+當 windows 7`-Command`是一個字串，**命令**_必須_是最後一個命令會被解譯為命令引數之後輸入的任何字元，因此指定的參數。
 
-若要編寫執行 Windows PowerShell 命令的字串，請使用下列格式：
+**命令**參數只接受執行指令碼區塊，就可以識別傳遞給的值時`-Command`做為指令碼區塊類型。
+這是_只_可能從另一個 PowerShell 主機中執行 PowerShell.exe 時。
+裝載為常值的指令碼區塊，大括號括住的類型可能包含在現有的變數，傳回運算式，或剖析的 powershell 指令碼區塊`{}`，才能傳遞至 PowerShell.exe。
 
-```powershell
+在 cmd.exe，沒有這類的指令碼區塊中 （或指令碼區塊型別），因此值傳遞給**命令**會_一律_是字串。
+您可以撰寫指令碼區塊內的字串，但是而不是正在執行它的行為與完全如同您在一般的 PowerShell 提示字元下輸入，指令碼的內容列印封鎖回給您。
+
+字串傳遞至`-Command`仍然會執行 powershell，因此指令碼區塊大括號通常不需要在一開始從 cmd.exe 執行時。
+若要執行內的字串，定義為內嵌指令碼區塊[呼叫運算子](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-)`&`可用：
+
+```console
 "& {<command>}"
 ```
 
-引號代表字串，而叫用運算子 (&) 會導致命令執行。
-
 ### <a name="-help---"></a>-Help, -?, /?
 
-顯示 powershell.exe 的語法。 若要在 PowerShell 中輸入 PowerShell.exe 命令，命令參數之前要加上連字號 (-)，而不是正斜線 (/)。 在 Cmd.exe 中，您可以使用連字號或正斜線。
+顯示 powershell.exe 的語法。 若要在 PowerShell 中鍵入 PowerShell.exe 命令，命令參數之前要加上連字號 (-)，而不是正斜線 (/)。 在 Cmd.exe 中，您可以使用連字號或正斜線。
 
 > [!NOTE]
 > 疑難排解注意事項︰在 PowerShell 2.0 中，啟動 Windows PowerShell 主控台中的某些程式會失敗，LastExitCode 為 0xc0000142。
