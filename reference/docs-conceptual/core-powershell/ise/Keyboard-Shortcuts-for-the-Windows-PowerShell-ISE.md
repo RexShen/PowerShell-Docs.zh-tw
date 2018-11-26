@@ -5,7 +5,7 @@ title: Windows PowerShell ISE 的鍵盤快速鍵
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
 ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
 ms.lasthandoff: 04/09/2018
 ms.locfileid: "30953815"
