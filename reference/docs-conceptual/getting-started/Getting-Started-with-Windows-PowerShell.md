@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 開始使用 Windows PowerShell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: d8f1a416c1618040311ec0ea3b98b28aa432bcf1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949480"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320834"
 ---
 # <a name="getting-started-with-windows-powershell"></a>開始使用 Windows PowerShell
 Windows PowerShell 是專為系統管理員所設計的 Windows 命令列殼層。 Windows PowerShell 包含互動式提示和指令碼環境，可獨立使用或搭配使用。
@@ -28,5 +28,3 @@ Windows PowerShell 引進 Cmdlet (唸成 "command-let") 概念，這是內建於
 - [安裝 Windows PowerShell](../setup/Installing-Windows-PowerShell.md)
 
 - [啟動 Windows PowerShell](../setup/Starting-Windows-PowerShell.md)
-
-- [準備好使用 Windows PowerShell](Getting-Ready-to-Use-Windows-PowerShell.md)

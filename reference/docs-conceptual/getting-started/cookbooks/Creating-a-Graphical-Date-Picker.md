@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 建立圖形化日期選擇器
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 3727c90c314a6fc1b3a338ec60e44259f153d954
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 6dd43a3b1f4c67633ad1755de3db88eb8c6772c8
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954835"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320324"
 ---
 # <a name="creating-a-graphical-date-picker"></a>建立圖形化日期選擇器
 
@@ -137,6 +137,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另請參閱
 
-- [Hey Scripting Guy：Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy：PowerShell GUI 範例為什麼動不起來？)
+- [Hey Scripting Guy：Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy：PowerShell GUI 範例為什麼動不起來？)
 - [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
-- [本週 Windows PowerShell 秘訣︰建立圖形化日期選擇器](http://technet.microsoft.com/library/ff730942.aspx)
+- [本週 Windows PowerShell 秘訣︰建立圖形化日期選擇器](https://technet.microsoft.com/library/ff730942.aspx)

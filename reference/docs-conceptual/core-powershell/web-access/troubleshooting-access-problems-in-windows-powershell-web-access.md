@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 為 Windows PowerShell Web 存取中的存取問題進行疑難排解
-ms.openlocfilehash: ef476d8e386e5380cb2c9dda69180dfce8748bf4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953441"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320987"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
@@ -49,7 +49,7 @@ ms.locfileid: "30953441"
 
 #### <a name="workaround"></a>解決方法
 
-1. [安裝和執行 Internet Explorer 10](http://ie.microsoft.com/testdrive/info/downloads/Default.html)
+1. [安裝和執行 Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. 將 Internet Explorer [文件模式] 設定變更為 [IE10] 標準。
    1. 按 **F12** 開啟開發人員工具主控台
    1. 在 Internet Explorer 10 中，按一下 **[瀏覽器模式]**，然後選取 *[Internet Explorer 10]*。

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 從清單方塊選取項目
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-ms.openlocfilehash: 6ff6bff8f6ce4e9236d7877c4cca24a10932cbe0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951676"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320817"
 ---
 # <a name="selecting-items-from-a-list-box"></a>從清單方塊選取項目
 
@@ -130,7 +130,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-新增控制項 (在此案例中為清單方塊)，讓使用者提供您在標籤文字中描述的資訊。 除了清單方塊外，還有許多其他您可以套用的控制項；如需更多控制項，請參閱 MSDN 上的 [System.Windows.Forms Namespace (System.Windows.Forms 命名空間)](http://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)。
+新增控制項 (在此案例中為清單方塊)，讓使用者提供您在標籤文字中描述的資訊。 除了清單方塊外，還有許多其他您可以套用的控制項；如需更多控制項，請參閱 MSDN 上的 [System.Windows.Forms Namespace (System.Windows.Forms 命名空間)](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)。
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -172,13 +172,13 @@ $result = $form.ShowDialog()
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 
 ## <a name="see-also"></a>另請參閱
 
-- [Hey Scripting Guy：Why don’t these PowerShell GUI examples work?](http://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy：PowerShell GUI 範例為什麼動不起來？)
+- [Hey Scripting Guy：Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy：PowerShell GUI 範例為什麼動不起來？)
 - [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
-- [本週 Windows PowerShell 秘訣︰從清單方塊選取項目](http://technet.microsoft.com/library/ff730949.aspx)
+- [本週 Windows PowerShell 秘訣︰從清單方塊選取項目](https://technet.microsoft.com/library/ff730949.aspx)

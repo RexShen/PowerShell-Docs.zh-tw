@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: 6433a875c233283f94d70c7acd7d394c73029b6d
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225789"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320443"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "50225789"
 
   > [!IMPORTANT]
   > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
-  > 完成此作業最簡單的方式是安裝 [Homebrew](http://brew.sh/) ，然後執行 `brew install openssl`。
+  > 完成這項作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。
   > VS Code 現在可以成功載入 PowerShell 延伸模組。
 
 - **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作

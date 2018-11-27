@@ -2,12 +2,12 @@
 title: 在 Windows 上安裝 PowerShell Core
 description: 在 Windows 上安裝 PowerShell Core 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850974"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320886"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安裝 PowerShell Core
 
@@ -99,7 +99,7 @@ Nano Server 是一種「無周邊」作業系統。 目前有兩種方法可以�
 1. 使用您最愛的 ZIP 公用程式將套件解壓縮至已掛接 Nano Server 映像的目錄。
 2. 取消掛接映像和開機映像。
 3. 連線到 Windows PowerShell 的收件匣執行個體。
-4. 請遵循下列指示來建立使用[另一個執行個體技術](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
+4. 請遵循下列指示來建立使用[另一個執行個體技術](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
 
 ### <a name="online-deployment-of-powershell-core"></a>PowerShell Core 的線上部署
 

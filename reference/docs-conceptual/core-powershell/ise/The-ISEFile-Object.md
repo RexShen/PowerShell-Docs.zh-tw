@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEFile 物件
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 276e8f04a827e18999b5b3ecb08f47de4f4b23b1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951387"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320868"
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
 
@@ -22,7 +22,7 @@ ms.locfileid: "30951387"
 
 將檔案儲存至磁碟。
 
-**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
+**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
 
 ### <a name="exceptions"></a>例外狀況
 
@@ -48,7 +48,7 @@ $myfile.Encoding
 
 **filename** - 字串：要用來儲存檔案的名稱。
 
-**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
+**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
 
 ### <a name="exceptions"></a>例外狀況
 

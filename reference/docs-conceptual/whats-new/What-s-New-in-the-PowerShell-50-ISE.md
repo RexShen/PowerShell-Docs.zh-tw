@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 50 ISE 的新功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953577"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320579"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
@@ -63,7 +63,7 @@ IntelliSense 是屬於 Windows PowerShell ISE 的自動完成協助功能。 在
 ### <a name="add-on-tools"></a>附加元件工具
 **PowerShell 3.0 的新功能**
 
-Windows PowerShell ISE 現在支援附加元件工具，這些工具是使用物件模型所新增的 Windows Presentation Foundation (WPF) 控制項。 附加元件工具可以顯示為主控台中的垂直或水平窗格。 窗格中的多個附加元件工具會顯示成一個索引標籤式控制項。 您也可以新增或移除非 Microsoft 合作廠商製作的附加元件工具。 如需如何匯入或移除附加元件工具的詳細資訊，請參閱 [Windows PowerShell ISE 作業](http://technet.microsoft.com/library/cc732148.aspx)。
+Windows PowerShell ISE 現在支援附加元件工具，這些工具是使用物件模型所新增的 Windows Presentation Foundation (WPF) 控制項。 附加元件工具可以顯示為主控台中的垂直或水平窗格。 窗格中的多個附加元件工具會顯示成一個索引標籤式控制項。 您也可以新增或移除非 Microsoft 合作廠商製作的附加元件工具。 如需如何匯入或移除附加元件工具的詳細資訊，請參閱 [Windows PowerShell ISE 作業](https://technet.microsoft.com/library/cc732148.aspx)。
 
 **這項變更增加了什麼價值？**
 
@@ -224,5 +224,5 @@ Show-Command 為 Windows PowerShell ISE 3.0 的新功能
 如需在 Windows PowerShell 中使用 Windows PowerShell ISE 的詳細資訊，請參閱下列連結。
 
 - [探索 Windows PowerShell 整合式指令碼環境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [TechNet Wiki 上的 ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [Script Center](http://technet.microsoft.com/scriptcenter/default)
+- [TechNet Wiki 上的 ISE](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [Script Center](https://technet.microsoft.com/scriptcenter/default)

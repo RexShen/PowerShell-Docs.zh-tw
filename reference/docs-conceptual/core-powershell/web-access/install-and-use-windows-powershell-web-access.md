@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安裝和使用 Windows PowerShell Web 存取
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851319"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320681"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -25,7 +25,7 @@ Windows PowerShell Web 存取於 Windows Server 2012 中首度引進，作為 Wi
 
 安裝和設定 Windows PowerShell Web 存取時需要執行三個步驟：
 
-1. [安裝 Windows PowerShell Web 存取](#install-windows-powershell-web-access)
+1. [安裝 Windows PowerShell Web 存取](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [設定閘道](#configure-the-gateway)
 1. [設定限制性授權規則](#configure-a-restrictive-authorization-rule)
 
@@ -58,8 +58,8 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>通過基本測試的行動裝置或瀏覽器
 
-- Windows Phone 7 和 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 及 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - 適用於 iPhone 作業系統 5.0.1 的 Apple Safari
 - 適用於 iPad 2 作業系統 5.0.1 的 Apple Safari
 
@@ -75,7 +75,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 您可以使用 Windows PowerShell 部署 Cmdlet 或從伺服器管理員中開啟的 [新增角色及功能精靈]，在執行 Windows Server 2012 R2 或 Windows Server 2012 的伺服器上安裝 Windows PowerShell Web 存取閘道。 若要快速安裝和設定，請使用 Windows PowerShell Cmdlet，如本節所述。
 
-1. [安裝 Windows PowerShell Web 存取](#install-Windows-powershell-web-access)
+1. [安裝 Windows PowerShell Web 存取](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [設定閘道](#configure-the-gateway)
 1. [設定限制性授權規則](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>設定限制性授權規則
 
-安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題：[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md) (Windows PowerShell Web 存取 Cmdlet)。
+安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題：[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) (Windows PowerShell Web 存取 Cmdlet)。
 
 如需 Windows PowerShell Web 存取授權規則和安全性的詳細資訊，請參閱 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
@@ -360,7 +360,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>設定限制性授權規則
 
-安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題：[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md) (Windows PowerShell Web 存取 Cmdlet)。
+安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理 Windows PowerShell Web 存取存取控制。 沒有適用於新增或管理授權規則的 GUI。 如需 Windows PowerShell Web 存取 Cmdlet 的詳細資訊，請參閱 Cmdlet 參考主題：[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) (Windows PowerShell Web 存取 Cmdlet)。
 
 如需 Windows PowerShell Web 存取授權規則和安全性的詳細資訊，請參閱 [Windows PowerShell Web 存取的授權規則與安全性功能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)。
 
@@ -404,7 +404,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 1. 在 [動作] 窗格中，執行下列其中一項。 如需在 IIS 中設定伺服器憑證的詳細資訊，請參閱[在 IIS 7 中設定伺服器憑證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
 
    - 按一下 [匯入]，從網路上的位置匯入現有的有效憑證。
-   - 按一下 [建立憑證要求]，向 CA (例如 [VeriSign](http://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)) 要求憑證。 憑證的一般名稱必須符合要求中的主機標頭。
+   - 按一下 [建立憑證要求]，向 CA (例如 [VeriSign](https://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)) 要求憑證。 憑證的一般名稱必須符合要求中的主機標頭。
 
      例如，如果用戶端瀏覽器要求 `http://www.contoso.com/`，則一般名稱也必須為 `http://www.contoso.com/`。 這是提供憑證給 Windows PowerShell Web 存取閘道最安全且最建議的選項。
 

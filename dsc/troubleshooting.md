@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: 04fb1e9016c508d0e514b51b3cfd6e6f6d5c4974
-ms.sourcegitcommit: 9cabc119f4d59598e12d4a36238a311349082ff0
-ms.translationtype: HT
+ms.openlocfilehash: 844512e390200ed14df2b811dd5997b102a18dd1
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/31/2018
-ms.locfileid: "50410009"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321081"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
@@ -196,7 +196,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="1-operations-failures"></a>1：作業失敗
 
-所有的事件都有[嚴重性層級](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 此資訊可以用來識別錯誤事件：
+所有的事件都有[嚴重性層級](https://msdn.microsoft.com/library/dd996917(v=vs.85))。 這項資訊可以用來識別錯誤事件：
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -327,7 +327,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-將指派的 **GUID** 傳遞給特定的 DSC 作業 (`Get-xDscOperation` Cmdlet 所傳回)，以取得該 DSC 作業的事件詳細資訊︰
+傳遞**GUID**指派給特定的 DSC 作業 (如所傳回`Get-xDscOperation`cmdlet) 來取得該 DSC 作業的事件詳細資料：
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
@@ -416,7 +416,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="getting-events-for-a-remote-computer"></a>取得遠端電腦的事件
 
-使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行此作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
+使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow

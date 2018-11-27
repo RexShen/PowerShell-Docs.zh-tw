@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 更多了解 PowerShell 的方式
-ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289203"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320409"
 ---
 # <a name="more-powershell-learning"></a>更多了解 PowerShell 的方式
 
@@ -33,23 +33,23 @@ ms.locfileid: "46289203"
 
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>適用於忙碌系統管理員的 Windows PowerShell 入門系列
 
-- [PowerShell 'SmowerShell' - 為什麼您應該了解 Windows PowerShell (第 1 部分)](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [透過管線了解它 - 如何混用 Windows PowerShell 命令，從中獲取樂趣和收益 (第 2 部分)](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [獨立的提供者？一點都不難 - 探討 Windows PowerShell 提供者 (第 3 部分)](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [主要事件 - Windows PowerShell 提供事件記錄檔 (第 4 部分)](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [遠超過可能性 - 使用 Windows PowerShell 來管理遠端桌面 (第 5 部分)](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell' - 為什麼您應該了解 Windows PowerShell (第 1 部分)](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [透過管線了解它 - 如何混用 Windows PowerShell 命令，從中獲取樂趣和收益 (第 2 部分)](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [獨立的提供者？一點都不難 - 探討 Windows PowerShell 提供者 (第 3 部分)](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [主要事件 - Windows PowerShell 提供事件記錄檔 (第 4 部分)](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [遠超過可能性 - 使用 Windows PowerShell 來管理遠端桌面 (第 5 部分)](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>在發生緊急狀況之前立即進行了解
 
-- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 1 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 2 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 3 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 4 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 5 部分](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 1 部分](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 2 部分](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 3 部分](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 4 部分](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Windows PowerShell︰在發生緊急狀況之前立即進行了解 - 第 5 部分](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## <a name="resources-for-windows-powershell-developers"></a>適用於 Windows PowerShell 開發人員的資源
 
 下列資源提供可協助開發人員建立其 Windows PowerShell 模組、函數、Cmdlet、提供者與主控應用程式的資源。
 
-- [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595)。 提供參考內容。
-- [Windows PowerShell 程式設計人員手冊](http://go.microsoft.com/fwlink/p/?LinkID=89596)。 提供教學課程。 也包含基礎 Windows PowerShell 概念的資訊。
+- [Windows PowerShell SDK](https://go.microsoft.com/fwlink/p/?LinkID=89595)。 提供參考內容。
+- [Windows PowerShell 程式設計人員手冊](https://go.microsoft.com/fwlink/p/?LinkID=89596)。 提供教學課程。 也包含基礎 Windows PowerShell 概念的資訊。

@@ -3,17 +3,17 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 啟動 Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
-ms.openlocfilehash: b56ddc2f577225646729b99f3a2abcb8cc60d307
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953118"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320528"
 ---
 # <a name="starting-windows-powershell"></a>啟動 Windows PowerShell
 PowerShell 是指令碼引擎 dll，且會內嵌到多部主機中。  互動式命令列 PowerShell.exe 和互動式指令碼環境 PowerShell_ISE.exe 是您將啟動的最常見主機。
 
-若要在 Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012 及 Windows 8 上啟動 Windows PowerShell®，請參閱[常見管理工作及瀏覽方式](http://technet.microsoft.com/library/hh831491.aspx)。
+若要在 Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012 及 Windows 8 上啟動 Windows PowerShell®，請參閱[常見管理工作及瀏覽方式](https://technet.microsoft.com/library/hh831491.aspx)。
 
 ## <a name="how-to-start-windows-powershell-on-earlier-versions-of-windows"></a>如何在舊版 Windows 上啟動 Windows PowerShell
 
@@ -106,7 +106,7 @@ ISE
 #### <a name="in-windows-81"></a>在 Windows® 8.1 中
 
 - 在 **[開始]** 畫面上，輸入 **Windows PowerShell (x86)**。 按一下 **[Windows PowerShell x86]** 並排顯示。
-- 如果您正在執行 Windows 8.1 的[遠端伺服器管理工具](http://go.microsoft.com/fwlink/?LinkID=304145)，則也可以從 [伺服器管理員工具] 功能表中開啟 Windows PowerShell x86。
+- 如果您正在執行 Windows 8.1 的[遠端伺服器管理工具](https://go.microsoft.com/fwlink/?LinkID=304145)，則也可以從 [伺服器管理員工具] 功能表中開啟 Windows PowerShell x86。
   選取 **[Windows PowerShell (x86)]**。
 - 在桌面上，將游標移到右上角、按一下 **[搜尋]**、輸入 **PowerShell x86**，然後按一下 **[Windows PowerShell (x86)]**。
 - 透過命令列，輸入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
@@ -114,6 +114,6 @@ ISE
 #### <a name="in-windows-8"></a>在 Windows® 8 中
 
 - 在 **[開始]** 畫面上，將游標移到右上角，並依序按一下 **[設定]** 和 **[並排顯示]**，然後將 **[顯示系統管理工具]** 移到 [是]。 然後輸入 **PowerShell**，並按一下 **[Windows PowerShell (x86)]**。
-- 如果您正在執行 Windows 8 的 [遠端伺服器管理工具](http://www.microsoft.com/download/details.aspx?id=28972)，則也可以從 [伺服器管理員工具] 功能表中開啟 Windows PowerShell x86。 選取 **[Windows PowerShell (x86)]**。
+- 如果您正在執行 Windows 8 的 [遠端伺服器管理工具](https://www.microsoft.com/download/details.aspx?id=28972)，則也可以從 [伺服器管理員工具] 功能表中開啟 Windows PowerShell x86。 選取 **[Windows PowerShell (x86)]**。
 - 在 **[開始]** 畫面或桌面上，輸入 **PowerShell (x86)**，然後按一下 **[Windows PowerShell (x86)]**。
 - 透過命令列，輸入：`%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`

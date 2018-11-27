@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482942"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320545"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 遠端安全性考量
 
@@ -15,7 +15,7 @@ ms.locfileid: "34482942"
 
 ## <a name="what-is-powershell-remoting"></a>什麼是 PowerShell 遠端？
 
-PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx)，這是[管理的 Web 服務 (WS 管理)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 通訊協定的 Microsoft 實作，可讓使用者在遠端電腦上執行 PowerShell 命令。 您可以在[執行遠端命令](https://technet.microsoft.com/library/dd819505.aspx)處找到有關使用 PowerShell 遠端的詳細資訊。
+PowerShell 遠端使用 [Windows 遠端管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx)，這是[管理的 Web 服務 (WS 管理)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) 通訊協定的 Microsoft 實作，可讓使用者在遠端電腦上執行 PowerShell 命令。 您可以在[執行遠端命令](https://technet.microsoft.com/library/dd819505.aspx)處找到有關使用 PowerShell 遠端的詳細資訊。
 
 PowerShell 遠端和使用 Cmdlet 的 **ComputerName** 參數在遠端電腦上執行不同，其使用遠端程序呼叫 (RPC) 作為其基礎通訊協定。
 

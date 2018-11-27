@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 名稱
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851250"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320477"
 ---
 # <a name="learning-powershell-names"></a>了解 PowerShell 名稱
 
-您需要針對大部分命令列介面投入大量時間來學習命令與參數的名稱。 問題在於模式很少。 記憶是學習您需定期使用之參數與命令的唯一方式。
+您需要針對大部分命令列介面投入大量時間來學習命令與參數的名稱。 問題在於模式很少。 記住的需求是了解您需要定期使用的參數與命令的唯一方式。
 
 當您使用新的命令或參數時，不能總是使用您已經知道的項目。 您必須尋找並學習新名稱。 傳統上，命令列介面會從一小組工具開始，並隨著累加的新增項目而成長。 很容易就能理解為什麼沒有標準結構。
 這似乎就是命令名稱的邏輯，因為每個命令都是一個單獨的工具。 PowerShell 提供更好的方式來處理命令名稱。

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用網頁型 Windows PowerShell 主控台
-ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483146"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320647"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -169,7 +169,7 @@ Alt+F7 | 清除命令歷程記錄清單
 
     如果您嘗試使用 Windows PowerShell Web 存取建立新工作階段或在新工作階段工作，可能會遭遇雙躍點 (或從第一個連線再連線到第二部電腦) 限制。 Windows PowerShell Web 存取使用遠端 runspace，且目前 **PowerShell.exe** 不支援從遠端 runspace 建立另一台電腦的遠端連線。 如果您嘗試使用 **Enter-PSSession** Cmdlet 從現有的連線連線到第二部遠端電腦，您可能會收到各種錯誤，例如「無法取得網路資源」。
 
-    若要避免雙躍點錯誤，系統管理員應該在組織的網路環境中設定 CredSSP 驗證。 如需設定 CredSSP 驗證的詳細資訊，請參閱 Microsoft 網站上的 [適用於第二躍點遠端的 CredSSP](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)。 當您想要管理第二部遠端電腦時也可以提供明確的認證；隱含的認證通常不允許第二躍點。
+    若要避免雙躍點錯誤，系統管理員應該在組織的網路環境中設定 CredSSP 驗證。 如需設定 CredSSP 驗證的詳細資訊，請參閱 Microsoft 網站上的 [適用於第二躍點遠端的 CredSSP](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)。 當您想要管理第二部遠端電腦時也可以提供明確的認證；隱含的認證通常不允許第二躍點。
 
 - 遠端
 
@@ -224,12 +224,12 @@ Alt+F7 | 清除命令歷程記錄清單
 
         您可以類似的方式變更主控台的高度。
 
-        您可以在 [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)中找到自訂主控台檢視的其他範例。
+        您可以在 [Windows PowerShell 小組部落格](https://blogs.msdn.com/b/powershell/)中找到自訂主控台檢視的其他範例。
 
 ## <a name="see-also"></a>另請參閱
 
 - [Windows PowerShell Cmdlet 參考資料](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
 - [Microsoft TechNet 上的 Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet 指令碼中心存放庫](http://gallery.technet.microsoft.com/scriptcenter)
+- [TechNet 指令碼中心存放庫](https://gallery.technet.microsoft.com/scriptcenter)
 - [指令碼中心 - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell 小組部落格](http://blogs.msdn.com/b/powershell/)
+- [Windows PowerShell 小組部落格](https://blogs.msdn.com/b/powershell/)

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 系統需求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 8850cf26b0313dfb8898ccb66b4767d695860d4c
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002713"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320732"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
 本主題列出適用於 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及 Windows PowerShell 5.1，以及適用於一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
@@ -87,9 +87,9 @@ Windows PowerShell 4.0 需要完整安裝 Microsoft .NET Framework 4.5。 Window
 
 Windows PowerShell 3.0 需要完整安裝 Microsoft .NET Framework 4。 Windows 8 和 Windows Server 2012 預設會包括 Microsoft .NET Framework 4.5 (這滿足此需求)。
 
-若要安裝 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4.5](http://go.microsoft.com/fwlink/?LinkID=242919)。
+若要安裝 Microsoft .NET Framework 4.5 (dotNetFx45_Full_setup.exe)，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919)。
 
-若要安裝 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完整安裝，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4 (Web 安裝程式)](http://go.microsoft.com/fwlink/?LinkID=212931)。
+若要安裝 Microsoft .NET Framework 4 (dotNetFx40_Full_setup.exe) 的完整安裝，請參閱 Microsoft 下載中心上的 [Microsoft .NET Framework 4 (Web 安裝程式)](https://go.microsoft.com/fwlink/?LinkID=212931)。
 
 ## <a name="windows-management-framework-40"></a>Windows Management Framework 4.0
 Windows PowerShell 5.0 需要先在 Windows Server 2008 R2 SP1 及 Windows 7 SP1 上預先安裝 Windows Management Framework 4.0。
@@ -131,14 +131,14 @@ Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Wi
 
 不過，因為 Microsoft .NET Framework 4 中執行階段啟用原則的變更，所以針對 Windows PowerShell 2.0 所撰寫並使用通用語言執行平台 (CLR) 2.0 編譯的 Windows PowerShell 主機程式必須經過修改，才能在 Windows PowerShell 3.0 (使用 CLR 4.0 編譯) 中執行。
 
-Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足此需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足此需求。
+Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足這項需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足這項需求。
 
 如需新增或安裝 Windows PowerShell 2.0 引擎以及新增或安裝所需 Microsoft .NET Framework 版本的資訊，請參閱[安裝 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)。 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
 ## <a name="windows-preinstallation-environment"></a>Windows 預先安裝環境
 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能在 Windows 預先安裝環境 (Windows PE) 中執行。 不過，不支援下列 Cmdlet。
 
-- [背景智慧型傳送服務 (BITS) Cmdlet](http://go.microsoft.com/fwlink/?LinkId=257514)
+- [背景智慧型傳送服務 (BITS) Cmdlet](https://go.microsoft.com/fwlink/?LinkId=257514)
 
 - [Get-EventLog](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
