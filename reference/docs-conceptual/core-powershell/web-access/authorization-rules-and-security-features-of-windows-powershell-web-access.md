@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
-ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
-ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
-ms.translationtype: HT
+ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "43133100"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52321072"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -20,19 +20,19 @@ Windows Server 2012 R2 和 Windows Server 2012 中的 Windows PowerShell Web 存
 ## <a name="configuring-authorization-rules-and-site-security"></a>設定授權規則及站台安全性
 
 安裝 Windows PowerShell Web 存取並設定閘道之後，使用者就可以在瀏覽器中開啟登入頁面，但是必須等到 Windows PowerShell Web 存取系統管理員明確授與使用者存取權之後，才能登入。 您可以使用下表所述的 Windows PowerShell Cmdlet，來管理「Windows PowerShell Web 存取」存取控制。 沒有適用於新增或管理授權規則的 GUI。
-請參閱 [Windows PowerShell Web 存取 Cmdlet](cmdlets/web-access-cmdlets.md)。
+請參閱 [Windows PowerShell Web 存取 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)。
 
 系統管理員可以為 Windows PowerShell Web 存取定義 `{0-n}` 個驗證規則。 預設的安全性是用來限制動作而不是允許動作；零驗證規則表示沒有任何使用者有權存取任何內容。
 
-Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](cmdlets/add-pswaauthorizationrule.md) 和 [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) 包含可讓您從遠端電腦或從作用中的 Windows PowerShell Web 存取工作階段，新增和測試 Windows PowerShell Web 存取授權規則的 Credential 參數。 如同其他具有 Credential 參數的 Windows PowerShell Cmdlet，您可以將 PSCredential 物件指定為此參數的值。 若要建立 PSCredential 物件且包含您要傳遞至遠端電腦的認證，請執行 [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) Cmdlet。
+Windows Server 2012 R2 中的 [Add-PswaAuthorizationRule](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) 和 [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) 包含可讓您從遠端電腦或從作用中的 Windows PowerShell Web 存取工作階段，新增和測試 Windows PowerShell Web 存取授權規則的 Credential 參數。 如同其他具有 Credential 參數的 Windows PowerShell Cmdlet，您可以將 PSCredential 物件指定為此參數的值。 若要建立 PSCredential 物件且包含您要傳遞至遠端電腦的認證，請執行 [Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) Cmdlet。
 
-Windows PowerShell Web 存取驗證規則是允許清單規則。 每個規則都是使用者、目標電腦及指定目標電腦上特定 Windows PowerShellÂ [工作階段設定](/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (也稱為端點或 _Runspace_) 間允許連線的定義。
-如需 **Runspace** 的說明，請參閱 [Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/) (開始使用 PowerShell Runspace)
+Windows PowerShell Web 存取驗證規則是允許清單規則。 每個規則都是使用者、目標電腦及指定目標電腦上特定 Windows PowerShell [工作階段設定](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (也稱為端點或 _Runspace_) 間允許連線的定義。
+如需 **Runspace** 的說明，請參閱 [開始使用 PowerShell Runspace](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)
 
 > [!IMPORTANT]
 > 只要一個規則為真，使用者就可以進行存取。 如果已為使用者授與某部電腦的存取權 (無論是完整語言存取或只能存取 Windows PowerShell 遠端管理 Cmdlet)，使用者都可以從網頁型主控台登入 (或跳躍) 至已與第一部目標電腦連線的其他電腦。 設定 Windows PowerShell Web 存取最安全的方法就是只允許使用者存取受限制的工作階段設定，讓他們能夠完成通常需要遠端執行的特定工作。
 
-[Windows PowerShell Web 存取 Cmdlet](cmdlets/web-access-cmdlets.md) 中參考的 Cmdlet 可讓您建立一組存取規則，用來為 Windows PowerShell Web 存取閘道上的使用者授與權限。 這些規則與目的地電腦上的存取控制清單 (ACL) 不同，且可以為 Web 存取提供額外的安全性。 下節將有更詳細的安全性說明。
+[Windows PowerShell Web 存取 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps) 中參考的 Cmdlet 可讓您建立一組存取規則，用來為 Windows PowerShell Web 存取閘道上的使用者授與權限。 這些規則與目的地電腦上的存取控制清單 (ACL) 不同，且可以為 Web 存取提供額外的安全性。 下節將有更詳細的安全性說明。
 
 如果使用者無法通過上述任何安全性階層，他們會在瀏覽器視窗收到一般「拒絕存取」訊息。 雖然閘道伺服器會記錄安全性細節，但是不會對一般使用者顯示他們通過多少安全性階層，或在哪一個階層發生登入或驗證失敗。
 
@@ -229,4 +229,4 @@ Windows PowerShell Web 存取工作階段逾時。在 Windows Server 2012 上執
 
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 
-[Windows PowerShell Web 存取 Cmdlet](cmdlets/web-access-cmdlets.md)
+[Windows PowerShell Web 存取 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

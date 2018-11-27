@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的鍵盤快速鍵
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953815"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320800"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
-使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](http://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。
+使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](https://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>編輯文字的鍵盤快速鍵
 
@@ -61,8 +61,8 @@ ms.locfileid: "30953815"
 |**前往指令碼窗格**|CTRL+I|
 |**顯示指令碼窗格**|CTRL+R|
 |**隱藏指令碼窗格**|CTRL+R|
-|**將指令碼窗格移至上方**|CTRL+1|
-|**將指令碼窗格移至右方**|CTRL+2|
+|**將指令碼窗格向上移**|CTRL+1|
+|**將指令碼窗格向右移**|CTRL+2|
 |**最大化指令碼窗格**|CTRL+3|
 |**放大**|CTRL+加號|
 |**縮小**|CTRL+減號|
@@ -120,4 +120,4 @@ ms.locfileid: "30953815"
 
 ## <a name="see-also"></a>另請參閱
 
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (PowerShell 雜誌：Windows PowerShell ISE 鍵盤快速鍵的完整清單)
+- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) (PowerShell 雜誌：Windows PowerShell ISE 鍵盤快速鍵的完整清單)
