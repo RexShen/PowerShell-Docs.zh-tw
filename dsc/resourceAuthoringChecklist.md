@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 資源撰寫檢查清單
-ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
-ms.translationtype: HT
+ms.openlocfilehash: 2b6e972776dba4ecc6fd1ab5c21361d653e1a469
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893550"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742834"
 ---
 # <a name="resource-authoring-checklist"></a>資源撰寫檢查清單
 
@@ -52,11 +52,11 @@ xPSDesiredStateConfiguration
 
 - 指定易記的名稱並確認 DSC 命名慣例
 
-  範例：`[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
+  範例： `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
 - 每個欄位都有具意義的描述。 PowerShell GitHub 存放庫有很好的範例，例如[用於 xRemoteFile 的 .schema.mof](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof)。
 
-另外，您應該使用 [DSC 資源設計工具](https://www.powershellgallery.com/packages/xDSCResourceDesigner)的 **Test-xDscResource** 和 **Test-xDscSchema** Cmdlet 自動驗證資源和結構描述：
+另外，您應使用 [DSC 資源設計工具](https://www.powershellgallery.com/packages/xDSCResourceDesigner)的 **Test-xDscResource** 和 **Test-xDscSchema** Cmdlet 自動驗證資源和結構描述：
 
 ```
 Test-xDscResource <Resource_folder>
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>資源在正案例中為等冪
 
-DSC 資源的其中一個基本特性為等冪。 這表示多次套用包含該資源的 DSC 設定，都會得到相同的結果。 例如，如果我們建立包含下列檔案資源的設定：
+DSC 資源的基本特性之一是等冪。 這表示多次套用包含該資源的 DSC 設定，都會得到相同的結果。 例如，如果我們建立包含下列檔案資源的設定：
 
 ```powershell
 File file {

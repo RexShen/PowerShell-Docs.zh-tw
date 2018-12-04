@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery,資源庫
 title: 手動下載套件
-ms.openlocfilehash: 0952aa4ec474850af5219fb2e0e9ee3e954b0f9a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003700"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742817"
 ---
 # <a name="manual-package-download"></a>手動下載套件
 
-Powershell 資源庫支援直接從網站下載套件，而不需要使用 PowerShellGet Cmdlet。 套件會下載為 NuGet 套件 (.nupkg) 檔案，之後可輕鬆複製到內部存放庫。
+Powershell 資源庫支援直接從網站下載套件，而不需要使用 PowerShellGet Cmdlet。 您可以下載任何封裝為 NuGet 套件 (.nupkg) 檔案，您可以在內部儲存機制複製。
 
 > [!NOTE]
 > 手動下載套件**不會**取代 Install-Module Cmdlet。
@@ -45,7 +45,7 @@ NuGet 套件檔案包含不屬於原始封裝程式碼的下列 NuGet 特定項�
 1. 將 NuGet 套件內容解壓縮至本機資料夾。
 2. 從資料夾中刪除 NuGet 特定項目。
 3. 重新命名資料夾。 預設資料夾名稱通常是 `<name>.<version>`。 如果模組標記為發行前版本，則版本可以包含 "-prerelease"。 請將資料夾重新命名為只有模組名稱。 例如，"azurerm.storage.5.0.4-preview" 會變成 "azurerm.storage"。
-4. 將資料夾複製到您的 PSModulePath。
+4. 將資料夾複製到其中一個資料夾中`$env:PSModulePath value`。 `$env:PSModulePath` 是以分號分隔一份以 PowerShell 應尋找模組的路徑。
 
 > [!IMPORTANT]
 > 手動下載不會包含模組所需的任何相依性。 如果套件具有相依性，則必須在系統上加以安裝，此模組才能正常運作。 PowerShell 資源庫會顯示套件所需的所有相依性。

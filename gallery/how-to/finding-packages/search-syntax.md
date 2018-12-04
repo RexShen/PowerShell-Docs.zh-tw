@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 組件庫搜尋語法
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003703"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742851"
 ---
 # <a name="gallery-search-syntax"></a>組件庫搜尋語法
 
-PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵字運算式來縮小搜尋結果範圍。
+您可以使用 PowerShell 資源庫搜尋[PowerShell 資源庫的網站](https://www.powershellgallery.com/)。
+PowerShell 資源庫的網站提供文字搜尋方塊，您可以使用單字、 片語和關鍵字運算式來縮小搜尋結果。
 
 ## <a name="search-by-keywords"></a>依關鍵字搜尋
 
     dsc azure sql
 
-搜尋會盡全力尋找包含所有 3 個關鍵字的相關文件，並傳回相符文件。
+搜尋會嘗試尋找相關的文件包含所有 3 個關鍵字，並傳回相符文件。
 
 ## <a name="search-using-phrases-and-keywords"></a>使用片語和關鍵字搜尋
 
@@ -37,10 +38,9 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
 
 ## <a name="examples"></a>範例
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-尋找 [識別碼] 欄位中分別有 "PSReadline" 或 "AzureRM.Profile" 的套件。
+    ID:PSReadline
+    
+尋找包含"PSReadline"識別碼的封裝。
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ PowerShell Gallery 提供文字搜尋方塊，以使用單字、片語和關鍵�
 
     Id:"azure"
 
-您會收到與 'AzureRM.Profile' 和 'Azure.Storage' 類似的結果。
+這提供結果，其中包含 AzureRM.Profile' 和 'Azure.Storage'。
 
-您也可以在單一欄位中搜尋多個關鍵字。 或者，混合使用和比對欄位。
+您也可以在單一欄位中搜尋多個關鍵字。 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-而且，您可以執行片語搜尋︰
+此外，您可以執行使用雙引號括住片語搜尋：
 
     id:"azure.storage"
 
-
 使用 DSC 標記搜尋所有套件。
 
-    Tags:"DSC"
+    Tags:DSC
 
 使用指定的函數搜尋所有套件。
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 使用指定的 Cmdlet 搜尋所有套件。
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 使用指定的「DSC 資源」名稱搜尋所有套件。
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 使用指定的 PowerShellVersion 搜尋所有套件
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 最後，如果您使用不支援的欄位 (例如 'commands')，則只會略過它，並搜尋所有欄位。 因此，下列查詢
 

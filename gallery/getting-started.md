@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 開始使用 PowerShell Gallery
-ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
+ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225670"
+ms.lasthandoff: 11/28/2018
+ms.locfileid: "52576884"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>開始使用 PowerShell 資源庫
 
-從 PowerShell 資源庫安裝套件的正確方式，是使用 [PowerShellGet](/powershell/module/powershellget) 模組中的 Cmdlet。 您不需要登入，就可以從 PowerShell Gallery 下載項目。
+「 PowerShell 資源庫是包含指令碼、 模組和 DSC 資源，您可以下載並利用封裝儲存機制。 使用中的 cmdlet [PowerShellGet](/powershell/module/powershellget)模組，以從 「 PowerShell 資源庫安裝套件。 您不需要登入，就可以從 PowerShell Gallery 下載項目。
 
 > [!NOTE]
 > 您可以從 PowerShell 資源庫直接下載套件，但這不是建議的方法。
@@ -20,9 +20,9 @@ ms.locfileid: "50225670"
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>從 PowerShell 資源庫探索套件
 
-您可以在 PowerShell 資源庫上使用 **Search** 控制項，或瀏覽 [Modules] \(模組\) 和 [Scripts] \(指令碼\) 頁面，來尋找這個網站中的套件。 您也可以執行 [Find-Module][] 與 [Find-Script][] Cmdlet (視項目類型而定) 並搭配 `-Repository PSGallery`，以尋找 PowerShell 資源庫中的套件。
+您也可以使用 PowerShell 資源庫中找到套件**搜尋**至 PowerShell 資源庫控制項[首頁](https://www.powershellgallery.com)，或瀏覽模組和指令碼從[封裝 頁面](https://www.powershellgallery.com/packages). 您也可以尋找 PowerShell Gallery 中的封裝執行[Find-module][]， [Find-dscresource]，並[Find-script][] cmdlet，根據封裝類型，使用`-Repository PSGallery`。
 
-若要從資源庫篩選結果，可以使用下列參數：
+您可以使用下列參數來篩選從資源庫的結果：
 
 - 名稱
 - AllVersions
@@ -75,15 +75,15 @@ Microsoft 建議您先檢閱此資源庫上的套件內容和程式碼，然後�
 
 ### <a name="deploy"></a>在客體叢集部署
 
-若要將套件從 PowerShell 資源庫部署至 Azure 自動化，請按一下套件詳細資料頁面上的 [Deploy to Azure Automation] \(部署至 Azure 自動化)。 系統會將您重新導向至 Azure 管理入口網站，而您必須使用 Azure 帳戶認證來登入。 請注意，部署包含相依性的套件會將所有相依性部署至 Azure 自動化。 若要停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕，請將 **AzureAutomationNotSupported** 標記新增至套件中繼資料。
+若要部署至 Azure 自動化從 PowerShell 資源庫封裝時，按一下**Azure 自動化**，然後按一下**部署至 Azure 自動化**套件詳細資料頁面上。 將您重新導向至 Azure 管理入口網站，供您登入，使用您的 Azure 帳戶認證。 請注意，部署具有相依性套件部署至 Azure 自動化所有相依性。 若要停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕，請將 **AzureAutomationNotSupported** 標記新增至套件中繼資料。
 
 若要深入了解 Azure 自動化，請參閱 [Azure 自動化](/azure/automation)文件。
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>從 PowerShell 資源庫更新套件
 
-若要更新從 PowerShell 資源庫安裝的套件，請執行 [Update-Module][] 或 [Update-Script][] Cmdlet。 如果執行時未指定任何其他參數，[Update-Module][] 就會嘗試更新透過執行 [Install-Module][] 所安裝的每個模組。 若要選擇性地更新模組，請新增 `-Name` 參數。
+若要更新從 PowerShell 資源庫安裝的套件，請執行 [Update-Module][] 或 [Update-Script][] Cmdlet。 當執行不含任何額外的參數時，[Update-module] [] 會嘗試更新透過執行安裝的所有模組[Install-module][]。 若要選擇性地更新模組，請新增 `-Name` 參數。 
 
-同樣地，如果執行時未指定任何其他參數，[Update-Script][] 也會嘗試更新透過執行 [Install-Script][] 所安裝的每個指令碼。 若要選擇性地更新指令碼，請新增 `-Name` 參數。
+同樣地，當執行不含任何額外的參數時，[更新指令碼] [] 也會嘗試更新透過執行安裝的所有指令碼[Install-script][]。 若要選擇性地更新指令碼，請新增 `-Name` 參數。
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>列出已從 PowerShell 資源庫安裝的套件
 
