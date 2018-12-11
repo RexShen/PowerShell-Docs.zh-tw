@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320715"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978890"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
@@ -38,9 +38,9 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
   - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) 現可支援 UNC 路徑。
 
 - [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) 模組中有新的 Cmdlet。
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)：可依需求執行提取伺服器檢查。
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)：可停止已在執行中的設定。
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)：可讓您移除各種階段 (擱置、上一個或目前) 的設定文件。
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)執行隨提取伺服器檢查。
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)停止已在執行中的組態。
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)可讓您移除各種階段 （擱置、 上一個或目前） 的設定文件。
 
 - 語言增強功能
   - DependsOn 現可支援複合的資源。
@@ -64,10 +64,10 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 - 彈性改善
   - LocalConfigurationManager 資源有提供新的屬性 **ActionAfterReboot**。
-    - ContinueConfiguration (預設值)︰目標節點重新啟動之後，就會自動繼續設定。
-    - StopConfiguration︰目標節點重新啟動之後，不會自動繼續設定。
+    - ContinueConfiguration （預設值）：在目標節點重新啟動之後，自動繼續設定。
+    - StopConfiguration不會自動繼續設定節點重新啟動之後。
   - 一致性執行現在可能比提取作業更常發生 (或提取作業比前者更常發生)。
-  - 版本管理支援：DSC 現可辨識在較新版用戶端上所產生的文件 (隨附於 [WMF 5.0](https://aka.ms/wmf5download))。
+  - 版本控制支援：DSC 現可辨識在較新的用戶端上的已產生的文件 (隨附於[WMF 5.0](https://aka.ms/wmf5download))。
 
 - 錯誤防範改善
   - 現在，會先強制執行模組版本再套用設定。
@@ -132,9 +132,9 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 - Windows PowerShell 工作已新增 AtBreakpoint 狀態。 當工作正在執行的指令碼包含所設的中斷點，且該指令碼已達中斷點時，即會套用 AtBreakpoint 狀態。 當工作在偵錯中斷點停止時，您必須執行 Debug-Job Cmdlet 以進行工作偵錯。
 - Windows PowerShell 5.0 實作針對 $PSModulePath 中相同資料夾之單一 Windows PowerShell 模組的多個版本支援。 ModuleSpecification 類別已新增 RequiredVersion 屬性，其有助您取得所需版本的模組；這個屬性和 ModuleVersion 屬性不可以同時存在。 現在，您可將 RequiredVersion 與 Get-Module、Import-Module 和 Remove-Module Cmdlett 的 FullyQualifiedName 參數值一起使用。
 - 您現在可以執行 Test-ModuleManifest Cmdlet 來驗證模組版本。
-- Get-Command Cmdlet 的結果現在會顯示 Version 欄；CommandInfo 類別已新增 Version 屬性。 Get-Command 會顯示來自多個版本之相同模組的命令。 Version 屬性也屬於 CmdletInfo 和 ApplicationInfo 的一部分，這兩者為 CmdletInfo 的衍生類別。
+- Get-Command Cmdlet 的結果現在會顯示 Version 欄；CommandInfo 類別已新增 Version 屬性。 Get-Command 會顯示來自多個版本之相同模組的命令。 Version 屬性也是這兩者為 cmdletinfo 的衍生類別的一部分：CmdletInfo 和 ApplicationInfo。
 - Get-Command 的新參數 -ShowCommandInfo 會以 PSObjects 形式傳回 ShowCommand 資訊。 當使用 Windows PowerShell 遠端在 Windows PowerShell ISE 中執行 Show-Command 時，此功能特別實用。 -ShowCommandInfo 參數已取代 Microsoft.PowerShell.Utility 模組中現有的 Get-SerializedCommand 函式，但 Get-SerializedCommand 指令碼仍可支援舊版指令碼。
-- 新的 Get-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 例如，在舊版的 Windows PowerShell 中，您可以執行下列命令，以取得 PowerShellEngine 登錄機碼之 Application Base 屬性的值：**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
+- 新的 Get-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 比方說，如果您在舊版的 Windows PowerShell 中，您可以執行下列命令，以取得 PowerShellEngine 登錄機碼 Application Base 屬性的值：**(Get-itemproperty-路徑 HKLM:\\軟體\\Microsoft\\PowerShell\\3\\PowerShellEngine-Name ApplicationBase)。ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
 - Windows PowerShell 主控台現在和 Windows PowerShell ISE 相同，都是使用語法著色。
 - 新的 NetworkSwitch 模組所包含的 Cmdlet 可讓您將交換器、虛擬 LAN (VLAN) 和基本層級 2 網路交換器連接埠設定套用至 Windows Server 2012 R2 標誌認證的網路交換器。
 - Import-Module 和 Remove-Module Cmdlet 已新增 FullyQualifiedName 參數，以支援儲存單一模組的多個版本。
@@ -221,7 +221,7 @@ Windows PowerShell 4.0 包括下列新功能。
 - **Enable-JobTrigger** 和 **Disable-JobTrigger** Cmdlet 已新增 **Passthru** 參數。 Passthru 參數會顯示您的命令所建立或修改的任何物件。
 - **Add-Computer** 與 **Remove-Computer** Cmdlet 中用於指定工作群組的參數名稱現在是一致的。 這兩個 Cmdlet 現在都是使用 **WorkgroupName** 參數。
 - 已經新增一般參數 **PipelineVariable**。 PipelineVariable 可讓您將管線命令 (或管線命令的一部分) 的結果儲存為可在管線的其餘部分傳遞的變數。
-- 現在支援使用方法語法篩選集合。 這表示您現在可以使用簡化的語法 (類似於 Where() 或 Where-Object 的語法，且格式為方法呼叫) 來篩選物件的集合。 下列為範例：(Get-Process).where({$_.Name -match 'powershell'})
+- 現在支援使用方法語法篩選集合。 這表示您現在可以使用簡化的語法 (類似於 Where() 或 Where-Object 的語法，且格式為方法呼叫) 來篩選物件的集合。 以下是一個範例：(Get-Process).where({$_.Name -match 'powershell'})
 - **Get-Process** Cmdlet 有一個新的切換參數：**IncludeUserName**。
 - 已新增 **Get-FileHash** Cmdlet，此 Cmdlet 會根據所指定檔案，以其中一種檔案格式傳回檔案雜湊。
 - 在 Windows PowerShell 4.0 中，如果模組在其資訊清單中使用 **DefaultCommandPrefix** 機碼，或如果使用者使用 **Prefix** 參數匯入模組，模組的 **ExportedCommands** 屬性就會顯示模組中具有該前置詞的命令。 當您使用模組完整語法 ModuleName\\CommandName 執行命令時，命令名稱必須包含前置詞。
@@ -410,7 +410,7 @@ http://go.microsoft.com/fwlink/?LinkID=223923
 
 您也可以在以 XML 為基礎之 Cmdlet 說明檔案的第一個相關連結中包含 **HelpUri** 值，或在函式中包含以註解為基礎之說明的 .Link 指示詞。
 
-如需支援「可更新的說明」的詳細資訊，請參閱 MSDN 中的[支援線上說明](https://go.microsoft.com/fwlink/?LinkId=242132)。
+如需有關支援線上說明的詳細資訊，請參閱[支援線上說明](/powershell/developer/module/supporting-online-help)Microsoft 文件中。
 
 ### <a name="cim-integration"></a>CIM 整合
 
@@ -481,7 +481,7 @@ Windows PowerShell 3.0 包括許多為了使其語言更簡單、更容易使用
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>改善現有核心 Cmdlet 與 ProvidersWindows PowerShell 3.0 包含新的功能，現有的 cmdlet，包括簡化的語法，以及下列 cmdlet 的新參數： Computer cmdlet、 CSV cmdlet、 Get-childitem、 Get-command、Get-content、 Get-history、 Measure-object、 Security cmdlet、 Select-object、 Select-string、 Split-path、 Start-process、 Tee-object、 Test-connection、 Add-member 與 WMI cmdlet。
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>現有核心 Cmdlet 及 ProvidersWindows PowerShell 3.0 的改良功能包含現有 cmdlet 包括簡化的語法，以及下列 cmdlet 的新參數的新功能：Computer Cmdlet、CSV Cmdlet、Get-ChildItem、Get-Command、Get-Content、Get-History、Measure-Object、Security Cmdlet、Select-Object、Select-String、Split-Path、Start-Process、Tee-Object、Test-Connection、Add-Member 與 WMI Cmdlet。
 
 Windows PowerShell 提供者也已經大幅改善，包括用於管理虛擬主機之安全通訊端層 (SSL) 憑證的憑證提供者支援，認證支援、持續性網路磁碟機，以及檔案系統磁碟機中的替代資料流。
 
