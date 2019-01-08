@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
-ms.openlocfilehash: 60ce7a1676403bb08b57bf852ba725acde86a30c
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
-ms.translationtype: HT
+ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309606"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655441"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的中斷性變更
 
@@ -256,7 +256,7 @@ ms.locfileid: "34309606"
 
 ### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>從 `$PSVersionTable` 中移除 `BuildVersion` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
-從 `$PSVersionTable` 中移除 `BuildVersion` 屬性。 此屬性已繫結至 Windows 組建版本。 建議您改用 `GitCommitId` 來擷取 PowerShell Core 的確切組建版本。
+從 `$PSVersionTable` 中移除 `BuildVersion` 屬性。 此屬性已繫結至 Windows 組建版本。 相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。
 
 ### <a name="changes-to-web-cmdlets"></a>Web Cmdlet 的變更
 
@@ -271,3 +271,4 @@ Web Cmdlet 的基礎 .NET API 已變更為 `System.Net.Http.HttpClient`。 這�
 - 已不再接受 `System.Net.ServicePointManager` 設定。
 - macOS 上目前未提供任何憑證型驗證。
 - 透過 `http://` URI 使用 `-Credential` 將會造成錯誤。 請使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 參數來抑制此錯誤。
+- `-MaximumRedirection` 重新導向次數超過提供的限制，而不是傳回的最後一個重新導向結果時，現在會產生終止錯誤。
