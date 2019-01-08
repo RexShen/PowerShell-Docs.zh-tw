@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 工作階段設定
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522949"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655458"
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
 
-> 適用對象：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 JEA 端點透過以特定方式建立和登錄 PowerShell 工作階段設定檔以在系統上登錄。
 工作階段設定決定「誰」可以使用 JEA 端點，以及他們可以存取哪些角色。
@@ -80,6 +80,8 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> 虛擬帳戶是暫時被授與登入為本機伺服器的安全性原則中的服務權限。  如果其中一個指定 VirtualAccountGroups 已經授予此權限的原則中，個別的虛擬帳戶將不會再新增並從原則中移除。  這可以是有用的案例，例如網域控制站緊密稽核網域控制站安全性原則的修訂。  這僅供以 Windows Server 2016 年 11 月 2018年或更新版本的彙總套件和 Windows Server 2019 年 1 月 2019年與更新彙總套件。
 
 #### <a name="group-managed-service-account"></a>群組受管理的服務帳戶
 

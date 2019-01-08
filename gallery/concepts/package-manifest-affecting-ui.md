@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
-ms.openlocfilehash: 63f5055dff6de404343f80be81a1c786147c0e33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225823"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655340"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -51,7 +51,7 @@ ms.locfileid: "50225823"
 
 PowerShell 資源庫 [編輯套件] 頁面可讓發行者變更針對套件顯示的數個欄位，特別是：
 
-- 標題
+- Title
 - 描述
 - 摘要
 - Icon URL (圖示 URL)
@@ -101,12 +101,12 @@ PowerShell 資源庫 [編輯套件] 頁面可讓發行者變更針對套件顯�
 | VersionControl | Version 較不精確，但使用的頻率較高  |
 | 記錄 | 建議用於將「記錄」當成一個動作 |
 | 記錄檔 | 建議用於將「記錄」當成一個東西 |
-| 備用 |  |
+| 備份 |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
-| 存放 |  |
+| 存放裝置 |  |
 | GitHub |  |
 | Json |  |
 | Exchange |  |
@@ -137,5 +137,5 @@ PowerShell 資源庫 [編輯套件] 頁面可讓發行者變更針對套件顯�
 | AzureRm | 主要用於 AzureRM 模組 |
 | Zip |  |
 | MSI |  |
-| Mac |  |
+| MacOS |  |
 | PoshBot |  |

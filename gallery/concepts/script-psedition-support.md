@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具備相容 PowerShell 版本的指令碼
-ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002406"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655271"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>具備相容 PowerShell 版本的指令碼
 
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
 
-- **Desktop Edition︰** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
+- Desktop Edition在.NET Framework 上建置，並提供與指令碼和模組在完整使用量的 Server Core 等的 Windows 和 Windows 桌面版本上執行的 PowerShell 版本的相容性。
 
-- **Core Edition︰** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Core Edition:** 建置在.NET Core，並提供與指令碼和模組的縮減版 Nano Server 等的 Windows 和 Windows IoT 上執行的 PowerShell 版本相容性。
 
 $PSVersionTable PSEdition 屬性會顯示正在執行的 PowerShell 版本。
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>更多詳細資料
 
 - [PSEditions 的模組](module-psedition-support.md)
-- [PowerShellGallery 的 PSEditions 支援](../how-to/finding-packages/searching-by-psedition.md)
+- [PowerShellGallery 的 PSEditions 支援](../how-to/finding-packages/searching-by-compatibility.md)

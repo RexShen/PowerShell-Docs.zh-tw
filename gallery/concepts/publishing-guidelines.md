@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
-ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
-ms.translationtype: HT
+ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50235400"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655390"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -17,11 +17,11 @@ ms.locfileid: "50235400"
 凡是依循這些指導方針發行的套件，將較可能獲得安裝、信任及吸引更多使用者。
 
 以下是一些指導方針，說明哪些是良好「PowerShell 資源庫」套件的構成要素、哪些選擇性「資訊清單」設定最重要、如何利用初始檢閱者和 [Powershell 指令碼分析程式](https://aka.ms/psscriptanalyzer)的意見反應來改善您的程式碼，以及如何為模組、文件、測試和範例設定版本來指定如何使用您已共用的項目。
-此文件大部分皆依循發行[高品質 DSC 資源模組](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md) \(英文\) 的指導方針。
+本文件大部分皆依循發行[高品質 DSC 資源模組](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md) \(英文\) 的指導方針。
 
 如需了解將套件發行至「PowerShell 資源」的技巧，請參閱[建立和發行套件](/powershell/gallery/how-to/publishing-packages/publishing-a-package)。
 
-歡迎您提供有關這些指導方針的意見反應。 如果您確實有意見反應，請在我們的 [Github 文件存放庫](https://github.com/powershell/powershell-docs/issues) \(英文\) 中提出問題。
+歡迎您提供有關這些指導方針的意見反應。 如果您確實有意見反應，請在我們的 [Github 文件儲存機制](https://github.com/powershell/powershell-docs/issues) \(英文\) 中提出問題。
 
 ## <a name="best-practices-for-publishing-packages"></a>發行套件的最佳做法
 
@@ -33,6 +33,7 @@ ms.locfileid: "50235400"
 - 針對意見反應做出回應
 - 提供模組而不是指令碼
 - 提供專案網站的連結
+- 標記使用相容的 PSEdition(s) 及平台套件 
 - 在模組中隨附測試
 - 包含和/或連結至授權條款
 - 簽署您的程式碼
@@ -92,8 +93,8 @@ MSDN 中提供數篇有關如何隨 PowerShell 套件提供文件的文章，包
 
 「PowerShell 資源庫」中提供兩種意見反應方法：
 
-- 連絡擁有者：這可讓使用者傳送電子郵件給套件擁有者。 如果您是套件擁有者，請務必隨時注意與「PowerShell 資源庫」套件搭配使用的電子郵件地址，並針對提出的問題進行回應。 此方法有一個缺點，就是只有使用者和擁有者可以看到溝通內容，因此擁有者可能必須回答相同的問題許多次。
-- 評論：套件頁面底部有一個 [評論] 欄位。
+- 請連絡擁有者：這可讓使用者將電子郵件傳送至套件擁有者。 如果您是套件擁有者，請務必隨時注意與「PowerShell 資源庫」套件搭配使用的電子郵件地址，並針對提出的問題進行回應。 此方法有一個缺點，就是只有使用者和擁有者可以看到溝通內容，因此擁有者可能必須回答相同的問題許多次。
+- 評價底部的 [封裝] 頁面會是註解欄位。
   此系統的優點是其他使用者可以看到評論和回應，減少了必須回答任何單一問題的次數。
   如果您是套件擁有者，強烈建議您「關注」針對每個套件提出的評論。
 如需相關做法的詳細資料，請參閱[透過社群媒體或評論來提供意見反應](../how-to/working-with-packages/social-media-feedback.md) \(英文\)。
@@ -134,6 +135,16 @@ DSC 設定的最佳做法是以指令碼的形式發行設定，此指令碼會�
         ProjectUri = 'https://github.com/powershell/powershell'
 
 當已提供 ProjectURI 時，「PowerShell 資源庫」就會在套件頁面的左邊包含「專案網站」的連結。
+
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>標記使用相容的 PSEdition(s) 及平台套件 
+
+若要將套件也會使用其環境的使用者示範使用下列標籤：
+
+- PSEdition_Desktop:使用 Windows PowerShell 相容的套件 
+- PSEdition_Core:與 Powershell Core 相容的套件 
+- Windows使用 Windows 作業系統相容的套件
+- Linux使用 Linux 作業系統相容的套件 
+- macOS 10.12+與 Mac 作業系統相容的套件
 
 ## <a name="include-tests"></a>包含測試
 
