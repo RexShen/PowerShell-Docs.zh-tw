@@ -4,7 +4,7 @@ keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
 ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
 ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.translationtype: HT
 ms.contentlocale: zh-TW
 ms.lasthandoff: 12/14/2018
 ms.locfileid: "53400768"
@@ -156,7 +156,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 - 系統管理員會建立一個含有受限制 Runspace 的端點，稱為 **PswaEndpoint**。 然後，系統管理員會建立 `*,*,PswaEndpoint` 規則，並將該端點散佈到其他電腦。 這個規則允許所有使用者存取具有端點 **PswaEndpoint** 的所有電腦。
   如果這是規則集中定義的唯一授權規則，就無法存取不具該端點的電腦。
 
-- 系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員建立一個名為 Level1Support** 的使用者群組，並定義下列規則：**Level1support,*,pswaendpoint\*，PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
+- 系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員建立了一個名為 **Level1Support** 的使用者群組，並定義下列規則：**Level1Support,\*,PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
 
 - 有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
 
