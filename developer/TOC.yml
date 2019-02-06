@@ -1006,8 +1006,6 @@ items:
       href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
     - name: 透過 Windows PowerShell 活動建立工作流程
       href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
-    - name: 擴充 Windows PowerShell 工作流程活動控制器
-      href: ./workflow/extending-the-windows-powershell-workflow-activity-controller.md
     - name: 匯入並叫用 Windows PowerShell 工作流程
       href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
     - name: 透過 Windows PowerShell API 對作業進行排程
@@ -1143,9 +1141,9 @@ items:
     items:
     - name: 新功能
       href: windows-powershell-reference-whats-new.md
-ms.openlocfilehash: d95ae41e37ade171609500f0dd2627712aa6dae9
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.openlocfilehash: 68cc3b04791da9ef1d468b124d964daa5edeb88f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451095"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55683451"
