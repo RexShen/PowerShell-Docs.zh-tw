@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 安全性考量
-ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190174"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887594"
 ---
 # <a name="jea-security-considerations"></a>JEA 安全性考量
 
-> 適用對象：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 JEA 可協助您減少電腦上的永久系統管理員數目來改善安全性的態勢。
 它是藉由建立新的進入點，供使用者管理系統 (PowerShell 工作階段設定)，這個進入點預設會嚴密鎖定，以避免誤用。
@@ -127,7 +127,7 @@ CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
 此角色功能可讓使用者執行任何 PowerShell Cmdlet，並使用來自 Microsoft.PowerShell.Management 模組的名詞 "Process"。
-使用者可能需要存取像是 `Get-Process` 的 Cmdlet，以了解什麼應用程式在系統上執行，並存取 `Stop-Process` 以終止任何停止回應的應用程式。
+使用者可能需要存取像是 cmdlet`Get-Process`若要了解應用程式在系統上的執行和`Stop-Process`終止任何沒有回應的應用程式。
 不過，此項目也允許 `Start-Process`，這可以用來以完整的系統管理員權限啟動任意程式。
 程式不需要在本機系統上安裝，因此敵人可以在提供連線使用者本機系統管理員權限的檔案共用上啟動程式、執行惡意程式碼等等。
 

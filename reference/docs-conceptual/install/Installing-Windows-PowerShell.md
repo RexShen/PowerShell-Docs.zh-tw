@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7
 title: 安裝 Windows PowerShell
-ms.openlocfilehash: 1630ba445c88953b2729232ae7d80afa326f25e6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 37f28c2af5a11af26d9110cc6c5f7612124be557
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400714"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887611"
 ---
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
 
