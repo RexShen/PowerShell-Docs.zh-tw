@@ -3,15 +3,15 @@ ms.date: 10/31/2017
 keywords: dsc,powershell,設定,安裝
 title: 保護 MOF 檔案
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400791"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679254"
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的設定，而 MOF 檔案是本機系統管理員 (LCM) 實作所需結束狀態的位置。
 因為這個檔案包含設定的詳細資料，所以安全防護很重要。

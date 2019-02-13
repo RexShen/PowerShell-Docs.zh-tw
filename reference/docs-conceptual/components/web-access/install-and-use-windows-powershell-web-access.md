@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安裝和使用 Windows PowerShell Web 存取
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5517347560b25f032baa77ecc2d769fb1e74ba4f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400795"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676543"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
 更新日期：2013 年 11 月 5 日 (編輯：2017 年 8 月
 
-適用於：Windows Server 2012 R2，Windows Server 2012
+適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="introduction"></a>簡介
 
@@ -136,7 +136,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - Path：/pswa
    - ApplicationPool：pswa_pool
    - EnabledProtocols：http
-   - PhysicalPath：`%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **範例**：`Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -161,7 +161,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - Path：/pswa
    - ApplicationPool：pswa_pool
    - EnabledProtocols：http
-   - PhysicalPath：`%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. 執行下列其中一項動作以開啟 IIS 管理員主控台。
 
@@ -200,7 +200,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
    - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
 
-2. 使用工作階段設定限制使用者存取的選擇性步驟：確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
+2. 使用工作階段設定來限制使用者存取的選擇性步驟：確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
 
 3. 輸入下列程式碼，然後按 **Enter**。
 
@@ -271,7 +271,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 7. 在 [應用程式集區] 欄位中，選取您在步驟 3 建立的應用程式集區。
 
-8. 在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設的位置，`%windir%/Web/PowerShellWebAccess/wwwroot`。 按一下 **[確定]**。
+8. 在 [實體路徑] 欄位中，瀏覽應用程式的位置。 您可以使用預設的位置，`$env:windir/Web/PowerShellWebAccess/wwwroot`。 按一下 **[確定]**。
 
 9. 請依照本主題之[在 IIS 管理員中設定 SSL 憑證](#to-configure-an-ssl-certificate-in-iis-Manager)程序中的步驟執行。
 
@@ -318,7 +318,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 1. 此時會自動為新網站建立應用程式集區。 若要使用不同的應用程式集區，按一下 [選取]，以選取要與新網站相關聯的應用程式集區。 在 **[選取應用程式集區]** 對話方塊中選取替代的應用程式集區，然後按一下 **[確定]**。
 
-1. 在 [實體路徑] 文字方塊中，瀏覽到 %*windir*%/Web/PowerShellWebAccess/wwwroot。
+1. 在 **實體路徑**文字方塊中，瀏覽至 %windir%/web/powershellwebaccess/wwwroot。
 
 1. 在 **[繫結]** 區域的 **[類型]** 欄位中，選取 **[https]**。
 

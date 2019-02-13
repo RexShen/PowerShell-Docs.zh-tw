@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC ServiceSet 資源
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047126"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676825"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet 資源
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **ServiceSet** 資源提供了管理目標節點服務的機制。 此資源是為 `Name` 屬性中指定的每項服務呼叫 [Service 資源](serviceResource.md)的[複合資源](../../../resources/authoringResourceComposite.md)。
 

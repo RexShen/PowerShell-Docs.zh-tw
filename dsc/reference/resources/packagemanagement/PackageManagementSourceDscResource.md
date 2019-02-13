@@ -3,15 +3,15 @@ ms.date: 06/20/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC PackageManagementSource 資源
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047119"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677013"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource 資源
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0 中，Windows PowerShell 5.1
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
 
 Windows PowerShell 預期狀態設定 (DSC) 中的 **PackageManagementSource** 資源提供在目標節點上註冊或取消註冊「套件管理」來源的機制。 **以此方式註冊的「套件管理」來源會登錄在系統內容下，可供系統帳戶或 DSC 引擎使用。** 此資源需要 **PackageManagement** 模組，可從 http://PowerShellGallery.com 取得。
 

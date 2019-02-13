@@ -3,11 +3,11 @@ ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: 撰寫可移植的模組
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747716"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679211"
 ---
 # <a name="portable-modules"></a>可移植的模組
 
@@ -178,7 +178,7 @@ FavoriteNumber FavoritePet
 
 [PowerShell 標準][]程式庫是所有的 PowerShell 版本大於或等於該標準的版本中提供的 PowerShell Api 正式規格。
 
-例如， [PowerShell 標準 5.1][]相容於 Windows PowerShell 5.1 和 PowerShell Core 6.0 或更新版本。
+例如， [PowerShell Standard 5.1][]相容於 Windows PowerShell 5.1 和 PowerShell Core 6.0 或更新版本。
 
 我們建議您編譯您使用 PowerShell 的標準程式庫的模組。 程式庫可確保 Api 可供使用且在 Windows PowerShell 和 PowerShell Core 6 實作。
 PowerShell 標準被要總是轉送相容。 使用標準程式庫 5.1 PowerShell 所建置的模組一律會與未來的 PowerShell 版本相容。
@@ -262,7 +262,7 @@ PowerShell 標準被要總是轉送相容。 使用標準程式庫 5.1 PowerShel
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell 標準]: https://github.com/PowerShell/PowerShellStandard
-[PowerShell 標準 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell 資源庫]: https://www.powershellgallery.com
 [.NET portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

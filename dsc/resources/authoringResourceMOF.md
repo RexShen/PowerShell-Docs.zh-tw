@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400636"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678929"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題中，我們會在 MOF 檔案中定義 Windows PowerShell 預期狀態設定 (DSC) 自訂資源的結構描述，並在 Windows PowerShell 指令碼檔案中實作資源。 這個自訂的資源是用於建立和維護網站。
 
@@ -69,7 +69,7 @@ class Demo_IISWebsite : OMI_BaseResource
 
 資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在 <ResourceName>.psm1 檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
 
-> **注意**：當您在資源上多次執行相同的設定指令碼時，您應該不會收到任何錯誤，而且資源的狀態也應該和只執行一次指令碼的狀態相同。 若要達成這個目標，請確認 **Get-TargetResource** 和 **Test-TargetResource** 函式不變更資源，而且以相同參數順序值多次叫用 **Set-TargetResource** 函式永遠等於只叫用一次。
+> **注意**：當您在資源上多次執行相同的設定指令碼時，您不應該收到任何錯誤，資源的狀態也應該和指令碼只執行一次的狀態相同。 若要達成這個目標，請確認 **Get-TargetResource** 和 **Test-TargetResource** 函式不變更資源，而且以相同參數順序值多次叫用 **Set-TargetResource** 函式永遠等於只叫用一次。
 
 在 **Get-TargetResource** 函式的實作中，使用提供為參數的重要資源屬性值，檢查指定的資源執行個體狀態。 這個函式必須傳回雜湊表，將所有的資源屬性列為索引鍵，這些屬性的實際值列為對應值。 範例請見下列程式碼。
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>重新啟動節點
+
+如果所採取的動作程式`Set-TargetResource`函式需要重新開機，您可以使用全域旗標來告訴 LCM 重新啟動節點。 此重新開機後立即發生`Set-TargetResource`函式完成。
+
+在您`Set-TargetResource`函式中，新增下列程式碼行。
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+為了讓重新啟動節點，LCM **RebootNodeIfNeeded**旗標必須設為`$true`。 **ActionAfterReboot**設定也應該設為**ContinueConfiguration**，這是預設值。 如需有關如何設定 LCM 的詳細資訊，請參閱 <<c0> [ 設定本機設定管理員](../managing-nodes/metaConfig.md)，或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。

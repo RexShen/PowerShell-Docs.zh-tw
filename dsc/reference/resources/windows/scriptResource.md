@@ -3,15 +3,15 @@ ms.date: 08/24/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC Script 資源
 ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047396"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676688"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 資源
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.x
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **Script** 資源提供了在目標節點執行 Windows PowerShell 指令碼區塊的機制。 **Script** 資源會使用 `GetScript`、`SetScript` 和 `TestScript` 屬性，其中包含您定義來執行對應 DSC 狀態作業的指令碼區塊。
 

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC 套件資源
 ms.openlocfilehash: 9285df71a303c9a53dd50d450272575a64e962e7
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047143"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676940"
 ---
 # <a name="dsc-package-resource"></a>DSC 套件資源
 
-適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0_
+_適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
 
 Windows PowerShell 預期狀態設定 (DSC) 中的 **Package** 資源，提供一個機制在目標節點上安裝或解除安裝套件，例如 Windows Installer 和 setup.exe 套件。
 

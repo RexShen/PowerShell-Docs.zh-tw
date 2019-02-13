@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsProcess 資源
 ms.openlocfilehash: cee93ab283ded407d6e032161125aa6d6ac98827
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047345"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676684"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
 
-適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0_
+_適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsProcess** 資源提供了在目標節點設定程序的機制。
 

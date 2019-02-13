@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978890"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679386"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 Windows PowerShell 5.0 包括一些重要的新功能，能夠擴充用途、改善可用性，並讓您更輕鬆且全面地控制及管理 Windows 環境。
@@ -140,10 +140,11 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 - Import-Module 和 Remove-Module Cmdlet 已新增 FullyQualifiedName 參數，以支援儲存單一模組的多個版本。
 - Save-Help、Update-Help、Import-PSSession、Export-PSSession 和 Get-Command 皆有 ModuleSpecification 類型的新參數 FullyQualifiedModule。 您可新增這個參數來指定模組的完整名稱。
 - **$PSVersionTable.PSVersion** 的值已經更新至 5.0。
-
+- WMF 5.0 (PowerShell 5.0) 包含**Pester**模組。  Pester 是單元測試架構，適用於 PowerShell。 它提供了幾個簡單易用關鍵字可讓您建立您的指令碼的測試。 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell 預期狀態設定的新功能
 
-- Windows PowerShell 語言增強功能可讓您使用類別來定義 Windows PowerShell 預期狀態設定 (DSC) 資源。 Import-DscResource 現為真實動態關鍵字；Windows PowerShell 會剖析指定模組的根模組，搜尋包含 DscResource 屬性的類別。 現在，您可以使用類別來定義 DSC 資源；在這種情況下，模組資料夾中不需具備 MOF 檔案，也不需要 DSCResource 子資料夾。 Windows PowerShell 模組檔案可以包含多個 DSC 資源類別。
+- Windows PowerShell 語言增強功能可讓您使用類別來定義 Windows PowerShell 預期狀態設定 (DSC) 資源。 Import\-DscResource 現為真實動態關鍵字；Windows PowerShell 會剖析指定模組的根模組，搜尋包含 DscResource 屬性的類別。 現在，您可以使用類別來定義 DSC 資源；在這種情況下，模組資料夾中不需具備 MOF 檔案，也不需要 DSCResource 子資料夾。 Windows PowerShell 模組檔案可以包含多個 DSC 資源類別。
 - PSDesiredStateConfiguration 模組中的下列 Cmdlet 已新增 ThrottleLimit 參數： 您可新增 ThrottleLimit 參數來指定要在目標電腦或裝置上同時運作的命令數。
   - Get-DscConfiguration
   - Get-DscConfigurationStatus
@@ -165,7 +166,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 - 針對 **Configuration** 關鍵字，已可支援 32 位元 (x86 為基礎)。
 - Windows PowerShell 現已支援 DSC 設定的自訂說明，您可透過將 \[CmdletBinding()] 加入產生的設定函式中來進行定義。
 - 新的 **DscLocalConfigurationManager** 屬性可將設定區塊指定為中繼設定，用於設定 DSC 本機設定管理員。 此屬性會限制住設定，讓它只包含設定 DSC 本機設定管理員的項目。 在處理期間，此設定會產生 \*.meta.mof 檔案，然後會執行 Set-DscLocalConfigurationManager Cmdlet 將此檔案傳送至適當的目標節點。
-- Windows PowerShell 5.0 現已允許部分設定。 您可將設定文件以片段形式傳遞到節點。 若要讓節點接收設定文件的多個片段，您必須先設好該節點的本機設定管理員，以指定預期的片段
+- Windows PowerShell 5.0 現已允許部分設定。 您可將設定文件以片段形式傳遞到節點。 若要讓節點接收設定文件的多個片段，您必須先設好該節點的本機設定管理員，以指定預期的片段。
 - Windows PowerShell 5.0 的 DSC 中提供跨電腦同步處理的新功能。 使用內建 WaitFor\* 資源 (**WaitForAll**、**WaitForAny** 和 **WaitForSome**)，您現在可以於設定執行期間在電腦之間指定相依性，而不需要外部協調流程。 這些資源會透過使用 WS-Man 通訊協定的 CIM 連線提供節點對節點同步處理。 設定可以等候另一部電腦的特定資源狀態變更。
 - Just Enough Administration (JEA) 是一種新的委派安全性功能，它可利用 DSC 和 Windows PowerShell 受限 Runspace 來協助保障企業安全，避免資料遺失或遭到員工洩漏，無論是有意還是無意。 如需 JEA 的詳細資訊，包括可以下載 xJEA DSC 資源的位置，請參閱 [Just Enough Administration, Step by Step (Just Enough Administration 逐步解說)](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx)。
 - PSDesiredStateConfiguration 模組已新增下列新的 Cmdlet。
@@ -177,7 +178,7 @@ Windows PowerShell 5.0 與舊版相容。 針對 Windows PowerShell 4.0、Window
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 
-- 現在，您可透過執行 Enter-PSSession 來在存有您要編輯之檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit <path and file name on the remote computer>**，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
+- 您現在可以編輯遠端 Windows PowerShell 指令碼和 Windows PowerShell ISE 中，本機複本中的檔案，透過執行 Enter-pssession 來在您想要編輯之檔案的電腦上啟動遠端工作階段，並執行**PSEdit \<在遠端電腦上的路徑和檔名\>**。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
 - Windows PowerShell ISE 現可支援 Start-Transcript Cmdlet。
 - 現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 - 新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
@@ -221,7 +222,7 @@ Windows PowerShell 4.0 包括下列新功能。
 - **Enable-JobTrigger** 和 **Disable-JobTrigger** Cmdlet 已新增 **Passthru** 參數。 Passthru 參數會顯示您的命令所建立或修改的任何物件。
 - **Add-Computer** 與 **Remove-Computer** Cmdlet 中用於指定工作群組的參數名稱現在是一致的。 這兩個 Cmdlet 現在都是使用 **WorkgroupName** 參數。
 - 已經新增一般參數 **PipelineVariable**。 PipelineVariable 可讓您將管線命令 (或管線命令的一部分) 的結果儲存為可在管線的其餘部分傳遞的變數。
-- 現在支援使用方法語法篩選集合。 這表示您現在可以使用簡化的語法 (類似於 Where() 或 Where-Object 的語法，且格式為方法呼叫) 來篩選物件的集合。 以下是一個範例：(Get-Process).where({$_.Name -match 'powershell'})
+- 現在支援使用方法語法篩選集合。 這表示您現在可以使用簡化的語法 (類似於 Where() 或 Where-Object 的語法，且格式為方法呼叫) 來篩選物件的集合。 下列為範例：(Get-Process).where({$_.Name -match 'powershell'})
 - **Get-Process** Cmdlet 有一個新的切換參數：**IncludeUserName**。
 - 已新增 **Get-FileHash** Cmdlet，此 Cmdlet 會根據所指定檔案，以其中一種檔案格式傳回檔案雜湊。
 - 在 Windows PowerShell 4.0 中，如果模組在其資訊清單中使用 **DefaultCommandPrefix** 機碼，或如果使用者使用 **Prefix** 參數匯入模組，模組的 **ExportedCommands** 屬性就會顯示模組中具有該前置詞的命令。 當您使用模組完整語法 ModuleName\\CommandName 執行命令時，命令名稱必須包含前置詞。
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 包括下列新功能。
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
 
-Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Foundation 的功能。 您現在可以使用 XAML 或使用 Windows PowerShell 語言來撰寫工作流程，以及透過與 Cmdlet 相同的執行方式來執行工作流程。 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) Cmdlet 可取得工作流程命令，而 [Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) Cmdlet 可取得工作流程的說明。
+Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Foundation 的功能。 您現在可以使用 XAML 或使用 Windows PowerShell 語言來撰寫工作流程，以及透過與 Cmdlet 相同的執行方式來執行工作流程。 [Get-command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) cmdlet 會取得工作流程命令並[Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) cmdlet 會取得工作流程的說明。
 
 工作流程是一系列長時間執行、可重複、經常性、平行式、可中斷、可暫停，以及可重新啟動的多部電腦管理活動。 工作流程可以從蓄意或意外中斷 (例如網路中斷、Windows 重新啟動，或電源中斷) 中恢復繼續運作。
 

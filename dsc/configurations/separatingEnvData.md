@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 分離設定和環境資料
 ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400669"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678906"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
->適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 使用設定資料來分離 DSC 設定中所用資料與設定本身，是非常實用的。
 藉由執行此動作，您就能針對多個環境使用單一設定。

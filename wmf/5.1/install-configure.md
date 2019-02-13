@@ -5,11 +5,11 @@ keywords: wmf,powershell,設定
 contributor: keithb
 title: 安裝與設定 WMF 5.1
 ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189341"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676719"
 ---
 # <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1 #
 
@@ -50,8 +50,8 @@ ms.locfileid: "34189341"
 
 Install-WMF5.1.ps1 會採用下列參數以簡化針對 Windows Server 2008 R2 和 Windows 7 上安裝的自動化：
 
-- AcceptEula：當包含此參數時，會自動接受 EULA 且不會顯示。
-- AllowRestart：此參數只能在指定 AcceptEula 時使用。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
+- AcceptEula包含此參數時，自動接受使用者授權合約，並不會顯示。
+- AllowRestart:這個參數可以只用在指定 AcceptEula 時。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
 
 **Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 必要條件**
 

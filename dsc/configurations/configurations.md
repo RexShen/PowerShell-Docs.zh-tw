@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC 設定
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400721"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676609"
 ---
 # <a name="dsc-configurations"></a>DSC 設定
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 DSC 設定是一種定義特殊類型函式的 PowerShell 指令碼。
 若要定義設定，請使用 PowerShell 關鍵字 **Configuration**。

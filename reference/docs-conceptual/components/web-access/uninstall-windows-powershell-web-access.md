@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 解除安裝 Windows PowerShell Web 存取
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400995"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679182"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
-更新日期：2013 年 6 月 24 日
+更新日期︰2013 年 6 月 24 日
 
-適用於：Windows Server 2012 R2，Windows Server 2012
+適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 本主題中的步驟會將 Windows PowerShell Web 存取網站及對應的應用程式，從安裝所在的閘道伺服器移除。
 

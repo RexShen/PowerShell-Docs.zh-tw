@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655288"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677245"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -47,7 +47,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
    ```
 
 2. 安裝最新的 Win32 OpenSSH。 如需安裝指示，請參閱[安裝的 OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)。
-3. 編輯`sshd_config`位於檔案`%ProgramData%\ssh`。
+3. 編輯`sshd_config`位於檔案`$env:ProgramData\ssh`。
 
    - 確定已啟用密碼驗證
 
@@ -314,6 +314,6 @@ sudo 命令不適用於連至 Linux 電腦的遠端工作階段。
 
 [PowerShell Core for MacOS](../../install/installing-powershell-core-on-macos.md)
 
-[Windows 的 OpenSSH](/windows-server/administration/openssh/openssh_overview)
+[OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 DSC 改善
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523017"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676539"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -206,12 +206,12 @@ InstallWindowsFeature -ConfigurationData $configData
 ### <a name="how-to-sign-configuration-and-module"></a>如何簽署設定和模組
 
 ***
-* 設定檔 (.MOF)：現有的 PowerShell Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 已擴充，可支援簽署 MOF 檔案。
-* 模組：已透過簽署對應的模組類別目錄完成模組簽署，使用步驟如下：
-    1. 建立類別目錄檔案︰類別目錄檔案包含密碼編譯雜湊或指紋的集合。
+* 組態檔 (。Mof):現有的 PowerShell cmdlet [Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)會延伸以支援簽署 MOF 檔案。
+* 模組簽署的模組是由簽署對應的模組類別目錄使用下列步驟：
+    1. 建立類別目錄檔案：類別目錄檔案包含密碼編譯雜湊或指紋的集合。
        每個指紋都會對應至模組所包含的檔案。
        已新增新的 [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) Cmdlet，讓使用者為其模組建立類別目錄檔案。
-    2. 簽署類別目錄檔案︰使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 簽署類別目錄檔案。
+    2. 簽署類別目錄檔案：使用[Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)簽署類別目錄檔案。
     3. 將類別目錄檔案放在模組資料夾內。
 依照慣例，模組類別目錄檔案應該位於與模組同名的模組資料夾內。
 

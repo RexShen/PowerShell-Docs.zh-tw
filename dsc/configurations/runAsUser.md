@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 搭配使用認證與 DSC 資源
 ms.openlocfilehash: af54c286ce744cd7db0b0e2d05087f60cdf1a33c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400831"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677165"
 ---
 # <a name="use-credentials-with-dsc-resources"></a>搭配使用認證與 DSC 資源
 
-> 適用於：Windows PowerShell 5.0 中，Windows PowerShell 5.1
+> 適用於：Windows PowerShell 5.0、Windows PowerShell 5.1
 
 您可以在設定中使用自動 **PsDscRunAsCredential** 屬性，以一組指定的認證來執行 DSC 資源。
 DSC 預設會使用系統帳戶執行每項資源，

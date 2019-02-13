@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC 資源
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54046686"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676941"
 ---
 # <a name="dsc-resources"></a>DSC 資源
 
->適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 預期狀態設定 (DSC) 資源提供 DSC 設定的建置組塊。 資源會公開可以設定的屬性 (結構描述)，而且這些屬性包含本機設定管理員 (LCM) 稱之為「make it so (讓它變成這樣)」的 PowerShell 指令碼函式。
 
@@ -128,7 +128,7 @@ Windows 內建資源
 * [WindowsFeatureSet 資源](../reference/resources/windows/windowsFeatureSetResource.md)
 * [WindowsOptionalFeature 資源](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [WindowsOptionalFeatureSet 資源](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource 資源](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess 資源](../reference/resources/windows/windowsProcessResource.md)
 
 [跨節點相依性](../configurations/crossNodeDependencies.md)資源
@@ -140,7 +140,7 @@ Windows 內建資源
 封裝管理資源
 
 * [PackageManagement 資源](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource 資源](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
 Linux 上的資源
 

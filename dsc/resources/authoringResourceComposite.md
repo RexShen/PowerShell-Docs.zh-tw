@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 複合資源：把 DSC 設定當做資源使用
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400643"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676574"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合資源使用 DSC 組態作為資源
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 在真實世界的情況裡，設定可能冗長且複雜，要呼叫許多不同的資源，並設定大量的屬性。 為解決這種複雜性，您可以使用 Windows PowerShell 預期狀態設定 (DSC) 設定作為其他設定的資源。 我們稱之為複合資源。 複合資源是使用參數的 DSC 設定。 設定參數的表現如同資源屬性。 設定會儲存為副檔名為 **.schema.psm1** 的檔案，並取代一般 DSC 資源的 MOF 結構描述和資源指令碼 (如需 DSC 資源的詳細資訊，請參閱 [Windows PowerShell 預期狀態設定資源](resources.md)。
 
@@ -190,7 +190,7 @@ configuration RenameVM
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：** **PsDscRunAsCredential**在 PowerShell 5.0 和更新版本支援。
+>**注意：****PsDscRunAsCredential**在 PowerShell 5.0 和更新版本支援。
 
 您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。

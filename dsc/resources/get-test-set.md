@@ -1,17 +1,17 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
-title: 取得測試設定
-ms.openlocfilehash: e46710954679bf20f4536c6efbcbd4dafd9e629e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+title: Get-Test-Set
+ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400720"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679001"
 ---
-# <a name="get-test-set"></a>取得測試設定
+# <a name="get-test-set"></a>Get-Test-Set
 
->適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 ![取得、測試及設定](/media/get-test-set.png)
 
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>另請參閱
 
-- [Azure 自動化 DSC 概觀](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure 自動化 DSC 概觀](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [設定 SMB 提取伺服器](../pull-server/pullServerSMB.md)
 - [設定提取用戶端](../pull-server/pullClientConfigID.md)

@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49450991"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677140"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -107,7 +107,7 @@ Linux/macOS 上的 PowerShell 目前不支援可建立有限系統管理 (JEA) �
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
 |`Get-Acl`、`Set-Acl`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
 |`Get-AuthenticodeSignature`、`Set-AuthenticodeSignature`|無法使用。|系統將無法辨識這些命令。 在未來的版本中應該會修正此問題。|
-|`Wait-Process`|可以使用，但無法正確運作。 |例如，`Start-Process gvim -PassThru | Wait-Process` 沒有作用；無法等候處理序。|
+|`Wait-Process`|可以使用，但無法正確運作。 |例如 `Start-Process gvim -PassThru | Wait-Process` 沒有作用；無法等候處理序。|
 |`Register-PSSessionConfiguration`, `Unregister-PSSessionConfiguration`, `Get-PSSessionConfiguration`|可以使用，但沒有作用。|會撰寫一則錯誤訊息，指出命令無法運作。 在未來的版本中應該會修正這些問題。|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Register-WmiEvent`, `Remove-Event`, `Unregister-Event`|可以使用，但沒有任何可用的事件來源。|PowerShell 事件處理命令存在，但與這些命令搭配使用的大多數事件來源 (例如 System.Timers.Timer) 在 Linux 上都未提供，使得這些命令在 Alpha 版中毫無用處。|
 |`Set-ExecutionPolicy`|可以使用，但沒有作用。|會傳回一則訊息，指出在此平台上並不支援。 執行原則是一個以使用者為焦點的「安全帶」，可協助防止使用者犯下重大錯誤。 它不是一個安全性界限。|

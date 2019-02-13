@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: 使用本機 PSRepositories
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619197"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679283"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>使用本機 PowerShellGet 存放庫
 
@@ -23,7 +23,7 @@ PowerShellGet 模組支援的存放庫以外的 「 PowerShell 資源庫。
 
 ## <a name="local-repository-types"></a>本機存放庫類型
 
-有兩種方式可建立本機的 PSRepository: NuGet 伺服器或檔案共用。 每個類型都有其優缺點：
+有兩種方式可建立本機的 PSRepository:NuGet 伺服器或檔案共用。 每個類型都有其優缺點：
 
 NuGet 伺服器
 

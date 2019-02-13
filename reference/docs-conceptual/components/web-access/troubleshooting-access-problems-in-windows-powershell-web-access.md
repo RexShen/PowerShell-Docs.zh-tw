@@ -2,18 +2,18 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 為 Windows PowerShell Web 存取中的存取問題進行疑難排解
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400709"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679164"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
 更新日期：2013 年 6 月 24日日 （修訂 2017 年 8 月 23日日）
 
-適用於：Windows Server 2012 R2，Windows Server 2012
+適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 下列各節識別在嘗試使用 Windows PowerShell Web 存取連線到遠端電腦時的一些常見問題，以及解決這些問題的建議。
 
@@ -139,4 +139,4 @@ ComputerName | 伺服器名稱
 
 - [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

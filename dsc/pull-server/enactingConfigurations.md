@@ -2,16 +2,16 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,設定,安裝
 title: 施行設定
-ms.openlocfilehash: 4a6e7e511446ab27307683ad3d5676391e7c791c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400975"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676593"
 ---
 # <a name="enacting-configurations"></a>施行設定
 
->適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 PowerShell 預期狀態設定 (DSC) 設定有兩種施行方式：Push 模式和 Pull 模式。
 
@@ -48,6 +48,6 @@ LCM 會依照 LCM 的 **RefreshModeFrequency** 屬性所指定的固定間隔，
 
 下列主題會說明提取服務和用戶端：
 
-- [Azure 自動化 DSC 概觀](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure 自動化 DSC 概觀](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [設定 SMB 提取伺服器](pullServerSMB.md)
 - [設定提取用戶端](pullClientConfigID.md)

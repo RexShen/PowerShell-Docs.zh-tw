@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定提取用戶端在 PowerShell 4.0 中使用設定識別碼
 ms.openlocfilehash: 9adc767e91ff19d373c122a0d493e7b8703d5476
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400876"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676779"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>設定提取用戶端在 PowerShell 4.0 中使用設定識別碼
 
->適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+>適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
