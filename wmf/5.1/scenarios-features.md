@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的新案例和功能
 ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
-ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37090358"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677208"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 的新案例和功能
 
@@ -126,4 +126,4 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 在 WMF 5.1 中，PowerShell 隨附的 Pester 版本已從 3.3.5 更新至 3.4.0 並附帶認可 https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e，讓 Pester 在 Nano 伺服器上有更好的表現。
 
-您可以調查 ChangeLog.md 檔案來檢視 3.3.5 版到 3.4.0 版之間的變更，位置在：https://github.com/pester/Pester/blob/master/CHANGELOG.md
+您可以調查 ChangeLog.md 檔案來檢視 3.3.5 版到 3.4.0 版之間的變更，位置在： https://github.com/pester/Pester/blob/master/CHANGELOG.md

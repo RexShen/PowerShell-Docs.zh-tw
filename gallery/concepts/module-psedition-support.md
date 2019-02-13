@@ -4,18 +4,18 @@ contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具有相容 PowerShell 版本的模組
 ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655322"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676710"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有相容 PowerShell 版本的模組
 
 從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
 
-- Desktop Edition在.NET Framework 上建置，並提供與指令碼和模組在完整使用量的 Server Core 等的 Windows 和 Windows 桌面版本上執行的 PowerShell 版本的相容性。
-- **Core Edition:** 建置在.NET Core，並提供與指令碼和模組的縮減版 Nano Server 等的 Windows 和 Windows IoT 上執行的 PowerShell 版本相容性。
+- **Desktop Edition︰** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Core Edition︰** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
 
 正在執行的 PowerShell 版本會顯示在 PSEdition 屬性 `$PSVersionTable` 中。
 
@@ -96,7 +96,7 @@ Core
 
 單一模組可在桌面和核心版本上使用，作者需在該模組的 RootModule 中或使用 $PSEdition 變數的模組資訊清單中，新增必要的邏輯。 模組可以有兩組以 CoreCLR 和 FullCLR 為目標的編譯 DLL。 以下幾個選項可用來將邏輯封裝至您的模組，以載入適當的 dll。
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>選項 1：封裝針對多個版本和多個版本的 PowerShell 模組
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>選項 1︰封裝將多個版本的 PowerShell 作為目標的模組
 
 模組資料夾內容
 
@@ -174,7 +174,7 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>選項 2：在 PSD1 檔案中使用 $PSEdition 變數，來載入適當的 Dll 和巢狀/必要模組
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>選項 2︰在 PSD1 檔案中使用 $PSEdition 變數，以載入適當的 Dll 和巢狀/必要的模組
 
 PS 5.1 或更新版本的模組資訊清單檔案中允許 $PSEdition 全域變數。 模組作者可透過使用此變數，指定模組資訊清單檔案中的條件值。 在限制的語言模式或 [資料] 區段中，可以參考 $PSEdition 變數。
 

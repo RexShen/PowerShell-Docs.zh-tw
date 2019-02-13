@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
 ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400725"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676675"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -24,7 +24,7 @@ ms.locfileid: "53400725"
 
 您可以使用[認證安全性支援提供者 (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) 進行驗證。 CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
 
-如需有關使用 CredSSP 進行 PowerShell 遠端時的安全性考量的詳細資訊，請參閱[意外破壞︰請注意 CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)。
+如需使用 PowerShell 遠端的 CredSSP 時，安全性考量的詳細資訊，請參閱 [Accidental Sabotage: Beware of CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp) (意外妨害：注意 CredSSP)。
 
 如需認證遭竊攻擊的詳細資訊，請參閱[降低傳遞雜湊 (PtH) 攻擊與竊取其他認證](https://www.microsoft.com/en-us/download/details.aspx?id=36036)。
 
@@ -43,7 +43,7 @@ ms.locfileid: "53400725"
 
 您也可以使用 Kerberos 未受限制的委派進行第二次跳躍。 不過，這個方法無法控制委派認證的使用位置。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：特殊權限帳戶分析 '是機密帳戶，無法委派'](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和[Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注意**︰已設定**這是機密帳戶，無法委派**屬性的 Active Directory 帳戶無法委派。 如需詳細資訊，請參閱 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」) 和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Kerberos 驗證工具和設定)
 
 ### <a name="pros"></a>優點
 
@@ -58,7 +58,7 @@ ms.locfileid: "53400725"
 
 您可以使用舊版的限制委派 (不以資源為基礎) 來進行第二次跳躍。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：特殊權限帳戶分析 '是機密帳戶，無法委派'](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和[Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注意**︰已設定**這是機密帳戶，無法委派**屬性的 Active Directory 帳戶無法委派。 如需詳細資訊，請參閱 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」) 和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Kerberos 驗證工具和設定)
 
 ### <a name="pros"></a>優點
 
@@ -76,7 +76,7 @@ ms.locfileid: "53400725"
 使用以資源為基礎的 Kerberos 限制委派 (在 Windows Server 2012 中引入) 時，您會設定資源所在伺服器物件上的認證委派。
 在上述的第二個躍點案例中，您會設定 _ServerC_ 以指定它接受委派認證的來源。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：特殊權限帳戶分析 '是機密帳戶，無法委派'](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)和[Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注意**︰已設定**這是機密帳戶，無法委派**屬性的 Active Directory 帳戶無法委派。 如需詳細資訊，請參閱 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」) 和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Kerberos 驗證工具和設定)
 
 ### <a name="pros"></a>優點
 
@@ -213,7 +213,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 1 部分)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 2 部分)
 - [了解使用整合式 Windows 驗證之 Azure Active Directory 應用程式 Proxy 部署的 Kerberos 限制委派](https://aka.ms/kcdpaper)
-- [[MS-ADA2]:Active Directory 架構屬性 M2.210 Attribute msDS AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-ADA2]: Active Directory Schema Attributes M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx) ([MS-ADA2]: Active Directory 架構屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity)
 - [[MS-SFU]: Kerberos Protocol Extensions: Service for User and Constrained Delegation Protocol 1.3.2 S4U2Proxy](https://msdn.microsoft.com/library/cc246079.aspx) ([MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy)
 - [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/) (以資源為基礎的 Kerberos 限制委派)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/) (使用 PrincipalsAllowedToDelegateToAccount 進行遠端系統管理，而不需要限制委派)

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 用於撰寫和共同作業的進階 DSC 撰寫
 ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400904"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677257"
 ---
 # <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>用於撰寫和共同作業的進階 DSC 撰寫
 
