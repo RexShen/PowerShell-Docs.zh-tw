@@ -3,26 +3,26 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 C# 撰寫 DSC 資源
 ms.openlocfilehash: dcda36d27f2191f140eaaf209e1c85263d2cd8e1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400679"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679554"
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="6474d-103">使用 C# 撰寫 DSC 資源</span><span class="sxs-lookup"><span data-stu-id="6474d-103">Authoring a DSC resource in C#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="2b202-103">使用 C# 撰寫 DSC 資源</span><span class="sxs-lookup"><span data-stu-id="2b202-103">Authoring a DSC resource in C#</span></span>
 
-> <span data-ttu-id="6474d-104">適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6474d-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="2b202-104">適用於：Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="2b202-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="6474d-105">一般而言，Windows PowerShell 預期狀態設定 (DSC) 自訂資源是在 PowerShell 指令碼中實作。</span><span class="sxs-lookup"><span data-stu-id="6474d-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="6474d-106">但您也可以用 C# 撰寫 Cmdlet 來實作 DSC 自訂資源的功能。</span><span class="sxs-lookup"><span data-stu-id="6474d-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="6474d-107">如需以 C# 撰寫 Cmdlet 的簡介，請參閱[撰寫 Windows PowerShell Cmdlet](/powershell/developer/windows-powershell)。</span><span class="sxs-lookup"><span data-stu-id="6474d-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/developer/windows-powershell).</span></span>
+<span data-ttu-id="2b202-105">一般而言，Windows PowerShell 預期狀態設定 (DSC) 自訂資源是在 PowerShell 指令碼中實作。</span><span class="sxs-lookup"><span data-stu-id="2b202-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="2b202-106">但您也可以用 C# 撰寫 Cmdlet 來實作 DSC 自訂資源的功能。</span><span class="sxs-lookup"><span data-stu-id="2b202-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="2b202-107">如需以 C# 撰寫 Cmdlet 的簡介，請參閱[撰寫 Windows PowerShell Cmdlet](/powershell/developer/windows-powershell)。</span><span class="sxs-lookup"><span data-stu-id="2b202-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](/powershell/developer/windows-powershell).</span></span>
 
-<span data-ttu-id="6474d-108">除了用 C# 將資源當做 Cmdlet 實作，建立 MOF 結構描述、建立資料夾結構、匯入和使用自訂之 DSC 資源的程序，一如[撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 中所述。</span><span class="sxs-lookup"><span data-stu-id="6474d-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="2b202-108">除了用 C# 將資源當做 Cmdlet 實作，建立 MOF 結構描述、建立資料夾結構、匯入和使用自訂之 DSC 資源的程序，一如[撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 中所述。</span><span class="sxs-lookup"><span data-stu-id="2b202-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="6474d-109">撰寫 Cmdlet 式的資源</span><span class="sxs-lookup"><span data-stu-id="6474d-109">Writing a cmdlet-based resource</span></span>
-<span data-ttu-id="6474d-110">本例中，我們會實作簡單的資源，管理文字檔案及其內容。</span><span class="sxs-lookup"><span data-stu-id="6474d-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="2b202-109">撰寫 Cmdlet 式的資源</span><span class="sxs-lookup"><span data-stu-id="2b202-109">Writing a cmdlet-based resource</span></span>
+<span data-ttu-id="2b202-110">本例中，我們會實作簡單的資源，管理文字檔案及其內容。</span><span class="sxs-lookup"><span data-stu-id="2b202-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="6474d-111">撰寫 MOF 結構描述</span><span class="sxs-lookup"><span data-stu-id="6474d-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="2b202-111">撰寫 MOF 結構描述</span><span class="sxs-lookup"><span data-stu-id="2b202-111">Writing the MOF schema</span></span>
 
-<span data-ttu-id="6474d-112">以下是 MOF 資源定義。</span><span class="sxs-lookup"><span data-stu-id="6474d-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="2b202-112">以下是 MOF 資源定義。</span><span class="sxs-lookup"><span data-stu-id="2b202-112">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -34,19 +34,19 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="6474d-113">設定 Visual Studio 專案</span><span class="sxs-lookup"><span data-stu-id="6474d-113">Setting up the Visual Studio project</span></span>
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="6474d-114">設定 Cmdlet 專案</span><span class="sxs-lookup"><span data-stu-id="6474d-114">Setting up a cmdlet project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="2b202-113">設定 Visual Studio 專案</span><span class="sxs-lookup"><span data-stu-id="2b202-113">Setting up the Visual Studio project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="2b202-114">設定 Cmdlet 專案</span><span class="sxs-lookup"><span data-stu-id="2b202-114">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="6474d-115">開啟 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="6474d-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="6474d-116">建立 C# 專案並提供名稱。</span><span class="sxs-lookup"><span data-stu-id="6474d-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="6474d-117">從可用的專案範本中選取 **[類別庫]**。</span><span class="sxs-lookup"><span data-stu-id="6474d-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="6474d-118">按一下 **[確定]**。</span><span class="sxs-lookup"><span data-stu-id="6474d-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="6474d-119">在專案中加入 System.Automation.Management.dll 的組件參考。</span><span class="sxs-lookup"><span data-stu-id="6474d-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="6474d-120">變更組件名稱使符合資源名稱。</span><span class="sxs-lookup"><span data-stu-id="6474d-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="6474d-121">如此，組件應命名為 **MSFT_XDemoFile**。</span><span class="sxs-lookup"><span data-stu-id="6474d-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="2b202-115">開啟 Visual Studio。</span><span class="sxs-lookup"><span data-stu-id="2b202-115">Open Visual Studio.</span></span>
+1. <span data-ttu-id="2b202-116">建立 C# 專案並提供名稱。</span><span class="sxs-lookup"><span data-stu-id="2b202-116">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="2b202-117">從可用的專案範本中選取 **[類別庫]**。</span><span class="sxs-lookup"><span data-stu-id="2b202-117">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="2b202-118">按一下 **[確定]**。</span><span class="sxs-lookup"><span data-stu-id="2b202-118">Click **Ok**.</span></span>
+1. <span data-ttu-id="2b202-119">在專案中加入 System.Automation.Management.dll 的組件參考。</span><span class="sxs-lookup"><span data-stu-id="2b202-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="2b202-120">變更組件名稱使符合資源名稱。</span><span class="sxs-lookup"><span data-stu-id="2b202-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="2b202-121">如此，組件應命名為 **MSFT_XDemoFile**。</span><span class="sxs-lookup"><span data-stu-id="2b202-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="6474d-122">撰寫 Cmdlet 程式碼</span><span class="sxs-lookup"><span data-stu-id="6474d-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="2b202-122">撰寫 Cmdlet 程式碼</span><span class="sxs-lookup"><span data-stu-id="2b202-122">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="6474d-123">下列 C# 程式碼會實作 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="6474d-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
+<span data-ttu-id="2b202-123">下列 C# 程式碼會實作 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2b202-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
 
 ```C#
 
@@ -262,9 +262,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="6474d-124">部署資源</span><span class="sxs-lookup"><span data-stu-id="6474d-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="2b202-124">部署資源</span><span class="sxs-lookup"><span data-stu-id="2b202-124">Deploying the resource</span></span>
 
-<span data-ttu-id="6474d-125">已編譯的 DLL 檔案應該儲存在類似於指令碼式資源的檔案結構中。</span><span class="sxs-lookup"><span data-stu-id="6474d-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="6474d-126">以下是這項資源的資料夾結構。</span><span class="sxs-lookup"><span data-stu-id="6474d-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="2b202-125">已編譯的 DLL 檔案應該儲存在類似於指令碼式資源的檔案結構中。</span><span class="sxs-lookup"><span data-stu-id="2b202-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="2b202-126">以下是這項資源的資料夾結構。</span><span class="sxs-lookup"><span data-stu-id="2b202-126">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
@@ -277,8 +277,8 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="6474d-127">另請參閱</span><span class="sxs-lookup"><span data-stu-id="6474d-127">See Also</span></span>
-#### <a name="concepts"></a><span data-ttu-id="6474d-128">概念</span><span class="sxs-lookup"><span data-stu-id="6474d-128">Concepts</span></span>
-[<span data-ttu-id="6474d-129">撰寫自訂的 DSC 資源與 MOF</span><span class="sxs-lookup"><span data-stu-id="6474d-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-#### <a name="other-resources"></a><span data-ttu-id="6474d-130">其他資源</span><span class="sxs-lookup"><span data-stu-id="6474d-130">Other Resources</span></span>
-[<span data-ttu-id="6474d-131">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="6474d-131">Writing a Windows PowerShell Cmdlet</span></span>](/powershell/developer/windows-powershell)
+### <a name="see-also"></a><span data-ttu-id="2b202-127">另請參閱</span><span class="sxs-lookup"><span data-stu-id="2b202-127">See Also</span></span>
+#### <a name="concepts"></a><span data-ttu-id="2b202-128">概念</span><span class="sxs-lookup"><span data-stu-id="2b202-128">Concepts</span></span>
+[<span data-ttu-id="2b202-129">撰寫自訂的 DSC 資源與 MOF</span><span class="sxs-lookup"><span data-stu-id="2b202-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+#### <a name="other-resources"></a><span data-ttu-id="2b202-130">其他資源</span><span class="sxs-lookup"><span data-stu-id="2b202-130">Other Resources</span></span>
+[<span data-ttu-id="2b202-131">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="2b202-131">Writing a Windows PowerShell Cmdlet</span></span>](/powershell/developer/windows-powershell)
