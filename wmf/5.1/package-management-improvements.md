@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 contributor: jianyunt, quoctruong
 title: WMF 5.1 中套件管理的改善
-ms.openlocfilehash: 1ebd574bd98a056de634ac688244813c1947618e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187454"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679217"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1 中套件管理的改善#
 
@@ -30,7 +30,7 @@ ms.locfileid: "34187454"
 
 但在某些情況下，您的電腦如有安裝舊版的 NuGet 提供者，有時候會先將舊版的 NuGet 載入 PowerShell 工作階段 (亦即 PackageManagement 會出現競爭狀況)。 但因為 PowerShellGet 需要新版的 NuGet 提供者才能運作，所以 PowerShellGet 會要求 PackageManagement 重新啟動 NuGet 提供者。 以致多次提示啟動載入 NuGet 提供者。
 
-**解決方法**︰在 WMF 5.1 中，PackageManagement 會載入最新版的 NuGet 提供者，以避免多次提示啟動 NuGet 提供者。
+**解決方案**：在 wmf 5.1 中，PackageManagement 會載入最新版的 NuGet 提供者，以避免多次提示啟動載入 NuGet 提供者。
 
 如果 $env: ProgramFiles\PackageManagement\ProviderAssemblies $env: LOCALAPPDATA\PackageManagement\ProviderAssemblies 有舊版的 NuGet 提供者，您也可以手動刪除舊版 (NuGet Anycpu.exe) 解決這個問題。
 
@@ -41,7 +41,7 @@ ms.locfileid: "34187454"
 
 **案例**︰在 WMF 5.0 中，PackageManagement 不支援只能存取內部網路 (無法存取網際網路) 的電腦。
 
-**解決方案**︰在 WMF 5.1，您可以執行下列步驟，將電腦設定成可以使用 PackageManagement：
+**解決方案**：在 WMF 5.1 中，您可以遵循這些步驟，才能允許內部網路電腦使用 PackageManagement:
 
 1. 利用其他可以連線到網際網路的電腦執行 `Install-PackageProvider -Name NuGet`，以下載 NuGet 提供者。
 
