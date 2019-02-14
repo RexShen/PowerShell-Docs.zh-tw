@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 title: 具有相容 PowerShell 版本或作業系統套件
 ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747699"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55676909"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>具有相容 PowerShell 版本或作業系統套件
 
@@ -16,7 +16,7 @@ ms.locfileid: "53747699"
 
 ## <a name="searching-by-powershell-edition"></a>搜尋依據 PowerShell 版本 
 Powershell 的兩個版本是：
-- Desktop Edition在.NET Framework 上建置，並提供與指令碼和模組在完整使用量的 Server Core 等的 Windows 和 Windows 桌面版本上執行的 PowerShell 版本的相容性。
+- **Desktop Edition:** 建置在.NET Framework，並提供與指令碼和模組在完整使用量的 Server Core 等的 Windows 和 Windows 桌面版本上執行的 PowerShell 版本的相容性。
 - **Core Edition:** 建置在.NET Core，並提供與指令碼和模組的縮減版 Nano Server 等的 Windows 和 Windows IoT 上執行的 PowerShell 版本相容性。
 
 ### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>PowerShell 資源庫可讓您篩選特定 PowerShell 版本相容的套件
@@ -54,8 +54,8 @@ Find-Module -Tag PSEdition_Core, Linux
 
 由於 PowerShell Core 是適用於 Windows、 Linux 和 MacOS，資源庫中的封裝其設計可能會針對這些作業系統的任何組合。 在資源庫 UI 中使用下列 searchs 標籤尋找標記作業系統的套件：
 
-- 標籤："Windows"
-- 標籤："Linux"
+- 標記:"Windows"
+- 標籤: [Linux]
 - 標籤："MacOS" 
 
 您可以指定這些標記上`Find-Module`（和其他的 PowerShellGet 模組中的 cmdlet），如下所示：
@@ -69,11 +69,11 @@ Find-Module -Tag Linux
 
 您可以尋找使用的語法具有多個的相容性的封裝： 
 
-Tags (標籤)「 Compatibility1""Compatibility2 」 
+標籤：「 Compatibility1""Compatibility2 」 
 
 例如，如果您要尋找我 Windows 和 Linux 電腦上執行的 PowerShell Core 相容性套件，使用搜尋標籤：
 
-Tags (標籤)"PSEdition_Core""Windows"[Linux] 
+標籤："PSEdition_Core" "Windows" "Linux" 
 
 若要使用 PowerShell 進行搜尋，您可以使用`Find-Module`（和 PowerShellGet 模組中的其他 cmdlet），如下所示：
 

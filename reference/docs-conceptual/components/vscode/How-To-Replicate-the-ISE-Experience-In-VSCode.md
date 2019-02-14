@@ -3,11 +3,11 @@ title: 如何在 Visual Studio Code 中複寫 ISE 體驗
 description: 如何在 Visual Studio Code 中複寫 ISE 體驗
 ms.date: 08/06/2018
 ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012478"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55678846"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>如何在 Visual Studio Code 中複寫 ISE 體驗
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 50 ISE 的新功能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320579"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679085"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 具有個別的命令和輸出窗格。
 
 如果透過命令列啟動 Windows PowerShell ISE (輸入 **Powershell_ise.exe**)，您可以新增下列新的命令列參數。
 
-- *-NoProfile*：在沒有執行 **$profile** 的情況下啟動 Windows PowerShell ISE。
+- *-NoProfile*： 不需要執行啟動 Windows PowerShell ISE **$profile**
 
 - *-Help*：顯示 [說明] 視窗
 
-- *-mta*：以多執行緒 Apartment 模式啟動 Windows PowerShell ISE。 Windows PowerShell ISE 的預設作業模式是單一執行緒 Apartment 模式，或 *-sta*。
+- *-mta*： 多執行緒的 apartment 模式啟動 Windows PowerShell ISE。 Windows PowerShell ISE 的預設作業模式是單一執行緒 Apartment 模式，或 *-sta*。
 
 **這項變更增加了什麼價值？**
 

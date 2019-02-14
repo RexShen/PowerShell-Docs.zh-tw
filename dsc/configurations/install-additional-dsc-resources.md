@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc，powershell、 資源、 資源庫、 安裝程式
 title: 安裝額外的 DSC 資源
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400835"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55677032"
 ---
 # <a name="install-additional-dsc-resources"></a>安裝額外的 DSC 資源
 
@@ -39,7 +39,7 @@ OOB 資源可讓一般作業的不錯的起點。 如果 OOB 資源不符合您�
 
 ## <a name="installing-powershellget"></a>安裝 PowerShellGet
 
-若要判斷您是否已有**PowerShell**取得，或若要取得安裝協助，請參閱下列指南：[安裝 PowerShellGet](/powershell/gallery/installing-psget)
+若要判斷您是否已有**PowerShell**取得，或若要取得安裝協助，請參閱下列指南：[安裝 PowerShellGet](/powershell/gallery/installing-psget)。
 
 ## <a name="finding-dsc-resources-using-powershellget"></a>尋找使用 PowerShellGet 的 DSC 資源
 
