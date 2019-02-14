@@ -2,23 +2,21 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC 檔案資源
-ms.openlocfilehash: e5f7a91e5f19c8c7bbada090804d8f29a7cfedd5
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
+ms.openlocfilehash: b5bc2c305b8cfccbd044274811df631264a24279
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047403"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679296"
 ---
 # <a name="dsc-file-resource"></a>DSC 檔案資源
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-Windows PowerShell 預期狀態設定 (DSC) 的檔案資源會提供一個機制，在目標節點管理檔案和資料夾。
-
->**注意：** 如果 **MatchSource** 屬性設定為 **$false** (此為預設值)，則會在第一次套用設定時快取要複製的內容。
->後續套用的設定不會檢查由 **SourcePath** 指定的路徑中是否有更新的檔案及/或資料夾。 如果想要在每次套用設定時都檢查 **SourcePath** 中是否有檔案及/或資料夾更新，請將 **MatchSource** 設為 **$true**。
+Windows PowerShell 預期狀態設定 (DSC) 的檔案資源會提供一個機制，在目標節點管理檔案和資料夾。 **DestinationPath**並**SourcePath**兩者都必須是供目標節點。
 
 ## <a name="syntax"></a>語法
+
 ```
 File [string] #ResourceName
 {
@@ -39,24 +37,48 @@ File [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|  屬性  |  描述   |
-|---|---|
-| DestinationPath| 表示您要確認檔案或目錄狀態的位置。|
-| 屬性| 指定目標檔案或目錄的屬性所需狀態。|
-| 總和檢查碼| 指出判斷兩個檔案是否相同時所使用的密碼總和類型。 如不指定 __Checksum__，只會使用檔案或目錄名稱進行比較。 有效值包括：Sha-1、 SHA-256、 SHA-512、-512、createddate、modifieddate、 modifiedDate。|
-| 內容| 指定檔案的內容，例如特定字串。|
-| 認證| 指出存取資源的必要認證，例如來源檔案 (如果需要這類存取)。|
-| Ensure| 表示檔案或目錄是否存在。 設定此屬性為 "Absent" 以確保檔案或目錄不存在。 將此屬性設定為 "Present"，以確保檔案或目錄存在。 預設值是 "Present"。|
-| Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 Force 屬性會覆寫此類錯誤。 預設值為 __$false__。|
-| Recurse| 表示是否包含子目錄。 將此屬性設定為 __$true__，表示您想要包含子目錄。 預設值為 __$false__。 **注意**：當 Type 屬性設定為目錄，此屬性才有效。|
-| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
-| SourcePath| 表示要從中複製檔案或資料夾資源的路徑。|
-| 類型| 表示正在設定的資源是否為目錄或檔案。 將此屬性設定為 "Directory"，表示該資源為目錄。 將此屬性設定為 "File"，表示該資源為檔案。 預設值為 "File"。|
-| MatchSource| 如果設定為 __$false__ 的預設值，則當第一次套用此設定時，會將來源 (例如檔案 A、B 和 C) 上的任何檔案加入目的地。 如果將新的檔案 (D) 加入來源，就不會將這個檔案加入目的地，即使稍後重新套用此設定亦同。 如果值為 __$true__，則每次套用此設定時，會將此來源 (例如，在此範例中的檔案 D) 上後續找到的新檔案加入目的地。 預設值為 **$false**。|
+|屬性       |描述                                                                   |必要|Default|
+|---------------|------------------------------------------------------------------------------|--------|-------|
+|DestinationPath|您想要確保目標節點上的位置是`Present`或`Absent`。|是|否|
+|屬性     |目標的檔案或目錄的屬性所需的狀態。 有效值**封存**， **Hidden**， **ReadOnly**，以及**系統**。|否|無|
+|總和檢查碼      |要判斷是否有兩個檔案都是相同時所使用的總和檢查碼類型。 有效值包括：Sha-1、 SHA-256、 SHA-512、-512、createddate、modifieddate、 modifiedDate。|否|只有檔案或目錄名稱進行比較。|
+|內容       |搭配使用時，唯一有效`File`型別。 表示內容，請確定`Present`或`Absent`從目標檔案。 |否|無|
+|認證     |輸入的認證才能存取資源，例如來源檔案。|否|目標節點的電腦帳戶。 (*請參閱備註*)|
+|Ensure         |目標檔案或目錄所需的狀態。 |否|**目前**|
+|Force          |覆寫會導致錯誤 （例如覆寫檔案，或刪除不是空的目錄） 的存取作業。|否|`$false`|
+|Recurse        |搭配使用時，唯一有效`Directory`型別。 執行狀態的作業以遞迴方式，所有子目錄中。|否|`$false`|
+|DependsOn      |設定指定的資源相依性。 在成功執行的任何相依的資源後，才能執行這項資源。 您可以指定使用語法的相依資源`"[ResourceType]ResourceName"`。 請參閱 [about_DependsOn](../../../configurations/resource-depends-on.md)|否|無|
+|SourcePath     |要從中複製檔案或資料夾資源的路徑。|否|無|
+|類型           |正在設定的資源類型。 有效值`Directory`和`File`。|否|`File`|
+|MatchSource    |決定是否資源應該監視有新檔案新增至來源目錄的初始複本之後。 值為`$true`表示，初始複製之後，任何新的原始程式檔應該要複製到目的地。 如果設定為`$False`，資源會快取來源目錄的內容，並忽略任何初始複本之後新增的檔案。|否|`$false`|
+
+> [!WARNING]
+> 如果您未指定的值`Credential`或是`PSRunAsCredential`(PS V.5)，資源會使用目標節點的電腦帳戶來存取`SourcePath`。  當`SourcePath`是 UNC 共用，這可能會導致 「 拒絕存取 」 錯誤。 請確定您的權限會相應地設定，或使用`Credential`或`PSRunAsCredential`屬性，以指定應該使用的帳戶。
+
+## <a name="present-vs-absent"></a>提供 vs。不存在
+
+每個 DSC 資源執行指定的值為基礎的不同作業`Ensure`屬性。 執行您指定的上述屬性決定狀態作業的值。
+
+### <a name="existence"></a>存在
+
+當您只指定`DestinationPath`，資源可確保此路徑是否存在 (`Present`) 或不存在 (`Absent`)。
+
+### <a name="copy-operations"></a>複製作業
+
+當您指定`SourcePath`和`DestinationPath`具有`Type`的值**Directory**，為目的路徑的資源複製來源目錄。 屬性`Recurse`， `Force`，並`MatchSource`變更複製作業的型別執行，而`Credential`判斷哪一個帳戶用來存取來源目錄。
+
+### <a name="limitations"></a>限制
+
+如果您指定的值`ReadOnly`for`Attributes`屬性一起`DestinationPath`，`Ensure = "Present"`會建立指定的路徑時`Contents`會設定檔案的內容。  `Absent`狀態的作業會忽略`Attributes`屬性，請完全移除位於指定路徑的任何檔案。
 
 ## <a name="example"></a>範例
 
-下列範例示範如何使用檔案資源，以確保來源電腦上路徑為 `C:\Users\Public\Documents\DSCDemo\DemoSource` (例如「提取」伺服器) 的目錄 (以及所有子目錄) 也會出現在目標節點上。 此外，也會在完成時將確認訊息寫入記錄檔，並包含陳述式，以確保記錄作業之前先執行檔案檢查作業。
+下列範例會複製目錄和子目錄從提取伺服器到目標節點使用檔案資源。 如果作業成功，則記錄檔資源會將確認訊息寫入事件記錄檔。
+
+來源目錄是 UNC 路徑 (`\\PullServer\DemoSource`) 從提取伺服器共用。 `Recurse`屬性，可確保一併複製所有的子目錄。
+
+> [!IMPORTANT]
+> 根據預設，本機系統帳戶內容中執行目標節點上的 LCM。 若要授與存取權**SourcePath**，授與目標節點的電腦帳戶適當的權限。 **認證**並**PSDSCRunAsCredential** (v5) 兩者都變更用來存取的內容 LCM **SourcePath**。 您仍然需要授與存取權的帳戶將用來存取**SourcePath**。
 
 ```powershell
 Configuration FileResourceDemo
@@ -65,10 +87,10 @@ Configuration FileResourceDemo
     {
         File DirectoryCopy
         {
-            Ensure = "Present"  # You can also set Ensure to "Absent"
-            Type = "Directory" # Default is "File".
-            Recurse = $true # Ensure presence of subdirectories, too
-            SourcePath = "C:\Users\Public\Documents\DSCDemo\DemoSource"
+            Ensure = "Present" # Ensure the directory is Present on the target node.
+            Type = "Directory" # The default is File.
+            Recurse = $true # Recursively copy all subdirectories.
+            SourcePath = "\\PullServer\DemoSource"
             DestinationPath = "C:\Users\Public\Documents\DSCDemo\DemoDestination"
         }
 
@@ -76,8 +98,10 @@ Configuration FileResourceDemo
         {
             # The message below gets written to the Microsoft-Windows-Desired State Configuration/Analytic log
             Message = "Finished running the file resource with ID DirectoryCopy"
-            DependsOn = "[File]DirectoryCopy" # This means run "DirectoryCopy" first.
+            DependsOn = "[File]DirectoryCopy" # Depends on successful execution of the File resource.
         }
     }
 }
 ```
+
+如需在使用**認證**在 DSC，請參閱[使用者的身分執行](../../../configurations/runAsUser.md)或[組態資料認證](../../../configurations/configDataCredentials.md)。
