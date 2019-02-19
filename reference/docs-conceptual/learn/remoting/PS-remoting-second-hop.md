@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
-ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676675"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265581"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -56,9 +56,10 @@ ms.locfileid: "55676675"
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos 限制委派
 
-您可以使用舊版的限制委派 (不以資源為基礎) 來進行第二次跳躍。
+您可以使用舊版的限制委派 (不以資源為基礎) 來進行第二次跳躍。 [使用任何驗證通訊協定] 選項設定 Kerberos 限制委派允許通訊協定轉換。
 
->**注意**︰已設定**這是機密帳戶，無法委派**屬性的 Active Directory 帳戶無法委派。 如需詳細資訊，請參閱 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」) 和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Kerberos 驗證工具和設定)
+> [!NOTE]
+> 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱 [Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) (安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」) 和 [Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) (Kerberos 驗證工具和設定)
 
 ### <a name="pros"></a>優點
 

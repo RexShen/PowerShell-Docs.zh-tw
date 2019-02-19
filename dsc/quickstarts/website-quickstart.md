@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 快速入門-使用 DSC 建立網站
-ms.openlocfilehash: c62e2d8af46bf74c4dd13069ddff6cc39763a209
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676604"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265479"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 # <a name="quickstart---create-a-website-with-dsc"></a>快速入門-使用 DSC 建立網站
 
 這個練習會從頭開始完整地逐步建立並套用預期狀態設定 (DSC)。
-我們將使用的範例會確保伺服器已啟用 `Web-Server` (IIS) 功能，且在該伺服器的 `intepub\wwwroot` 目錄中有簡單 "Hello World" 網站的內容。
+我們將使用的範例會確保伺服器已啟用 `Web-Server` (IIS) 功能，且在該伺服器的 `inetpub\wwwroot` 目錄中有簡單 "Hello World" 網站的內容。
 
 如需 DSC 及其運作方式的概觀，請參閱[適合決策者的預期狀態設定概觀](../overview/decisionMaker.md)。
 
