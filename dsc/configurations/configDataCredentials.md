@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 設定資料的認證選項
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
+ms.lasthandoff: 02/18/2019
 ms.locfileid: "55677029"
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
@@ -25,7 +25,7 @@ DSC 也會在使用網域認證時產生警告。
 > [!NOTE]
 > 儲存/傳輸未加密的純文字密碼通常是不安全的。 建議您使用本主題稍後所涵蓋的技術來保護認證。
 > Azure Automation DSC 服務能讓您集中管理及安全儲存要在設定中編譯的認證。
-> 如需詳細資訊，請參閱：[編譯 DSC 組態 / 認證資產](/azure/automation/automation-dsc-compile#credential-assets)
+> 如需資訊，請參閱：[編譯 DSC 設定/認證資產](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>處理 DSC 的認證
 
