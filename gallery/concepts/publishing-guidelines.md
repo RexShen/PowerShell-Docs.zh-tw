@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655390"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265564"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -93,8 +93,8 @@ MSDN 中提供數篇有關如何隨 PowerShell 套件提供文件的文章，包
 
 「PowerShell 資源庫」中提供兩種意見反應方法：
 
-- 請連絡擁有者：這可讓使用者將電子郵件傳送至套件擁有者。 如果您是套件擁有者，請務必隨時注意與「PowerShell 資源庫」套件搭配使用的電子郵件地址，並針對提出的問題進行回應。 此方法有一個缺點，就是只有使用者和擁有者可以看到溝通內容，因此擁有者可能必須回答相同的問題許多次。
-- 評價底部的 [封裝] 頁面會是註解欄位。
+- 連絡擁有者：這可讓使用者傳送電子郵件給套件擁有者。 如果您是套件擁有者，請務必隨時注意與「PowerShell 資源庫」套件搭配使用的電子郵件地址，並針對提出的問題進行回應。 此方法有一個缺點，就是只有使用者和擁有者可以看到溝通內容，因此擁有者可能必須回答相同的問題許多次。
+- 評論：套件頁面底部有一個 [評論] 欄位。
   此系統的優點是其他使用者可以看到評論和回應，減少了必須回答任何單一問題的次數。
   如果您是套件擁有者，強烈建議您「關注」針對每個套件提出的評論。
 如需相關做法的詳細資料，請參閱[透過社群媒體或評論來提供意見反應](../how-to/working-with-packages/social-media-feedback.md) \(英文\)。
@@ -140,11 +140,11 @@ DSC 設定的最佳做法是以指令碼的形式發行設定，此指令碼會�
 
 若要將套件也會使用其環境的使用者示範使用下列標籤：
 
-- PSEdition_Desktop:使用 Windows PowerShell 相容的套件 
-- PSEdition_Core:與 Powershell Core 相容的套件 
-- Windows使用 Windows 作業系統相容的套件
-- Linux使用 Linux 作業系統相容的套件 
-- macOS 10.12+與 Mac 作業系統相容的套件
+- 使用 Windows PowerShell 相容的 PSEdition_Desktop： 套件 
+- 與 Powershell Core 相容的 PSEdition_Core： 套件 
+- Windows： 套件與 Windows 作業系統相容
+- 使用 Linux 作業系統相容的 Linux： 套件 
+- MacOS： 套件與 Mac 作業系統相容
 
 ## <a name="include-tests"></a>包含測試
 
@@ -203,7 +203,7 @@ PowerShellGet publish-module、install-module、save-module 與 update-module Cm
 - 該版本的結構應該是 3 個以句號分隔的數值區塊，例如 0.1.1 或 4.11.192
 - 開頭為 "0" 的版本表示該套件還不適用於生產環境，並且如果 "0" 是唯一使用的數字，則第一個數字應該只能以 "0" 為開頭
 - 第一個數字的變更 (從 1.9.9999 變更為 2.0.0) 代表版本之間的主要且重大變更
-- 第二個數字的變更 (從 1.01 變更為 1.02) 代表功能層級變更，例如將新的 Cmdlet 新增至模組
+- 第二個數字 (1.1 to 1.2) 的變更代表功能層級變更，例如加入新的 Cmdlet 到某個模組中
 - 第三個數字的變更代表非重大變更，例如新參數、更新的範例或新測試
 - 列出版本時，PowerShell 會將版本當作字串來排序，因此會將 1.01.0 視為比 1.001.0 還要新
 
