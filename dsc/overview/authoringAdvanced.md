@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
-title: 用於撰寫和共同作業的進階 DSC 撰寫
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: 了解 DSC 在 CI/CD 管線中的角色
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677257"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803373"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>用於撰寫和共同作業的進階 DSC 撰寫
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>了解 DSC 在 CI/CD 管線中的角色
 
 本文描述可用於結合設定和資源的方法類型。
 每個案例的目標都相同，那就是在想要使用多項設定來達到伺服器部署結束狀態時降低其複雜度。
