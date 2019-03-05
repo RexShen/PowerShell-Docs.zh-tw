@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MTE95
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400639"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251382"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -64,6 +64,24 @@ ms.locfileid: "53400639"
 若要關閉檔案，請按一下檔案名稱旁邊的 "x"。
 若要結束 Visual Studio Code，[檔案]->[結束]。
 
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>受限制的系統上安裝 PowerShell 延伸模組
+
+某些系統是設定需要檢查的所有程式碼簽章，並因此需要手動核准的系統上執行的 PowerShell Editor Services 的方式。
+變更執行原則的群組原則更新是可能的原因，如果您已安裝 PowerShell 延伸模組，但會達到類似的錯誤：
+
+```
+Language server startup failed.
+```
+
+若要手動核准 PowerShell Editor Services，因此 VSCode 的 PowerShell 延伸模組會開啟 PowerShell 提示字元並執行：
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+系統會提示您使用 「 要從這個不受信任的發行者上執行軟體嗎？ 」
+型別`R`來執行此檔案。 然後，開啟 Visual Studio Code，並檢查 PowerShell 延伸模組正常運作。 如果您仍有問題的快速入門，讓我們知道[GitHub](https://github.com/PowerShell/vscode-powershell/issues)。
+
 #### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 的特定安裝版本
 
 如果您想要搭配使用特定安裝的 PowerShell 與 Visual Studio Code，則必須在使用者設定檔中新增變數。
@@ -98,17 +116,28 @@ ms.locfileid: "53400639"
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+如果您不想讓這些設定會影響所有的檔案類型，VSCode 也可讓每個語言設定。 建立語言特定的設定將設定放入`[<language-name>]`欄位。 例如：
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+如需有關檔案編碼方式在 VS Code 中，請參閱[了解檔案編碼](understanding-file-encoding.md)。
 
 ## <a name="debugging-with-visual-studio-code"></a>使用 Visual Studio Code 偵錯
 
 ### <a name="no-workspace-debugging"></a>無工作區偵錯
 
-使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。
-只要以 [檔案]->[開啟檔案...] 開啟 PowerShell 指令碼檔案，在行中設定中斷點 (按 F9)，然後按 F5 啟動偵錯。
-您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
+使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。 開啟 PowerShell 指令碼檔案，與**檔案-> 開啟檔案...**，一條線 （按 F9） 上設定中斷點，然後按 F5 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
@@ -165,7 +194,7 @@ ms.locfileid: "53400639"
 
   這表示常見的偵錯案例。
   不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定] 按鈕。
-  您可以按此按鈕新增多個 PowerShell 偵錯設定。 一個好用的設定，以新增**PowerShell:啟動指令碼**。
+  您可以按此按鈕新增多個 PowerShell 偵錯設定。 **PowerShell：啟動指令碼**是可以新增的方便設定。
   使用此設定時，您可以指定有選擇性引數的特定檔案，只要按下 F5 就應該啟動，無論編輯器中當時作用的是哪個檔案。
 
   建立偵錯設定之後，您就可以從 [偵錯] 檢視工具列的偵錯設定下拉式清單中擇一，選取在偵錯工作階段期間想要使用的設定。
