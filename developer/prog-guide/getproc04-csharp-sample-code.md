@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 439ba3f3-91b1-46a4-8d07-9af6edb71bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 02b692047294879f885ca86d4598b0b0ab81808a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1fc1ab58ae651239937e36c8bb08fda3d3272b2a
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863284"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429681"
 ---
 # <a name="getproc04-c-sample-code"></a>GetProc04 (C#) 範例程式碼
 
 下列程式碼顯示實作`Get-Process`cmdlet 會報告非終止錯誤。 這個實作會呼叫[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)報告非終止錯誤的方法。
 
 > [!NOTE]
-> 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件這個 Get-proc cmdlet 的原始程式檔 (getprov04.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件這個 Get-proc cmdlet 的原始程式檔 (getprov04.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。

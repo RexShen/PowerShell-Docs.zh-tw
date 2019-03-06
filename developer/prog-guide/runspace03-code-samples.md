@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
-ms.openlocfilehash: 720d0f3adb697a80536dbb13cb2920c7206246e8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6060c535f07814e4977b72068927205cefe6d012
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857804"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429919"
 ---
 # <a name="runspace03-code-samples"></a>RunSpace03 程式碼範例
 
 如下的程式碼範例中所述的 runspace[建立主控台應用程式，執行指定指令碼](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。
 
 > [!NOTE]
-> 您可以下載C#來源檔案 (runspace03.cs) 與此範例使用的 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的 VB.NET 原始程式檔 (runspace03.vb)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#來源檔案 (runspace03.cs) 與此範例使用的 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的 VB.NET 原始程式檔 (runspace03.vb)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。

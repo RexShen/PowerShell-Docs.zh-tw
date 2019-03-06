@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 066aa188d5d7dfde5af424a3bb8f15ff51c1e936
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856954"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430023"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>建立 Windows PowerShell 瀏覽提供者
 
 本主題描述如何建立 Windows PowerShell 巡覽提供者，可以瀏覽資料存放區。 這種類型的提供者支援遞迴命令，巢狀的容器和相對路徑。
 
 > [!NOTE]
-> 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件此提供者的原始程式檔 (AccessDBSampleProvider05.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件此提供者的原始程式檔 (AccessDBSampleProvider05.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。
@@ -186,11 +185,9 @@ Windows PowerShell 巡覽提供者可實作[System.Management.Automation.Provide
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式設定
 
 它可讓提供者將成員加入至現有的物件，或定義新的物件。 如需詳細資訊，請參閱 <<c0> [ 延伸的物件類型與格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
-它可讓提供者將成員加入至現有的物件，或定義新的物件。 如需詳細資訊，請參閱 <<c0> [ 延伸的物件類型與格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
 
 ## <a name="building-the-windows-powershell-provider"></a>建置的 Windows PowerShell 提供者
 
-如需詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 如需詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="testing-the-windows-powershell-provider"></a>測試 Windows PowerShell 提供者
@@ -323,11 +320,7 @@ Windows PowerShell 巡覽提供者可實作[System.Management.Automation.Provide
 
 [擴充物件類型和格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[擴充物件類型和格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [實作容器的 Windows PowerShell 提供者](./creating-a-windows-powershell-container-provider.md)
-
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

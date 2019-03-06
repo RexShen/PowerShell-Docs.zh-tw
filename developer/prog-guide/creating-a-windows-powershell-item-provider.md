@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862064"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429987"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
 
 本主題描述如何建立 Windows PowerShell 提供者，可以操作資料存放區中的資料。 本主題中，資料存放區中的項目統稱為 「 項目 」 的資料存放區。 如此一來，可以操作的資料存放區中的提供者被指 Windows PowerShell 項目提供者。
 
 > [!NOTE]
-> 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件此提供者的原始程式檔 (AccessDBSampleProvider03.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件此提供者的原始程式檔 (AccessDBSampleProvider03.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。
@@ -88,7 +87,6 @@ Windows PowerShell 項目提供者可以管理存放區中的項目之前，它�
 
 ## <a name="checking-for-path-validity"></a>路徑有效性檢查
 
-Windows PowerShell 執行階段時尋找資料的項目，提供提供者的 Windows PowerShell 路徑中的 < PSPath 概念 > 一節所定義[Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。 Windows PowerShell 項目提供者必須確認傳遞給它，藉由實作任何路徑的語法和語意有效性[System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法。 這個方法會傳回`true`路徑是否有效，以及`false`否則。 要注意，此方法的實作應驗證是否存在的項目路徑，但僅限於路徑語法和語意不正確。
 Windows PowerShell 執行階段時尋找資料的項目，提供提供者的 Windows PowerShell 路徑中的 < PSPath 概念 > 一節所定義[Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。 Windows PowerShell 項目提供者必須確認傳遞給它，藉由實作任何路徑的語法和語意有效性[System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法。 這個方法會傳回`true`路徑是否有效，以及`false`否則。 要注意，此方法的實作應驗證是否存在的項目路徑，但僅限於路徑語法和語意不正確。
 
 以下是實作[System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)此提供者的方法。 請注意，此實作會呼叫 NormalizePath helper 方法來將路徑中的所有分隔符號都轉換成一個統一的帳戶。
@@ -266,11 +264,9 @@ Windows PowerShell 項目提供者可實作[System.Management.Automation.Provide
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式設定
 
 當撰寫提供者，它可能需要將成員加入至現有的物件，或定義新的物件。 完成時，建立 Windows PowerShell 可以用來識別物件的成員類型檔案與格式檔案，定義物件的顯示方式。 如需詳細資訊，請參閱 <<c0> [ 延伸的物件類型與格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
-當撰寫提供者，它可能需要將成員加入至現有的物件，或定義新的物件。 完成時，建立 Windows PowerShell 可以用來識別物件的成員類型檔案與格式檔案，定義物件的顯示方式。 如需詳細資訊，請參閱 <<c0> [ 延伸的物件類型與格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
 
 ## <a name="building-the-windows-powershell-provider"></a>建置的 Windows PowerShell 提供者
 
-請參閱[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 請參閱[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="testing-the-windows-powershell-provider"></a>測試 Windows PowerShell 提供者
@@ -289,16 +285,10 @@ Windows PowerShell 項目提供者可實作[System.Management.Automation.Provide
 
 [擴充物件類型和格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[擴充物件類型和格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [建立容器的 Windows PowerShell 提供者](./creating-a-windows-powershell-container-provider.md)
 
 [建立磁碟機的 Windows PowerShell 提供者](./creating-a-windows-powershell-drive-provider.md)
-
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 8c111f8f2943043e4ad2a6a8677db4afe1b3cdab
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863164"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430025"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>建立 Windows PowerShell 容器提供者
 
@@ -25,7 +25,6 @@ ms.locfileid: "56863164"
 可以作用於多層級的資料存放區的提供者被指 Windows PowerShell 容器提供者。 不過，請注意一個容器 （沒有巢狀容器），在它的項目時，可以使用 Windows PowerShell 容器提供者。 如果沒有巢狀的容器，您必須實作的 Windows PowerShell 巡覽提供者。 如需有關如何實作 Windows PowerShell 巡覽提供者的詳細資訊，請參閱[建立 Windows PowerShell 巡覽提供者](./creating-a-windows-powershell-navigation-provider.md)。
 
 > [!NOTE]
-> 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件此提供者的原始程式檔 (AccessDBSampleProvider04.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件此提供者的原始程式檔 (AccessDBSampleProvider04.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。
@@ -418,7 +417,6 @@ protected override bool HasChildItems( string path )
 ## <a name="building-the-windows-powershell-provider"></a>建置 Windows PowerShell 提供者
 
 請參閱[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
-請參閱[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="testing-the-windows-powershell-provider"></a>測試 Windows PowerShell 提供者
 
@@ -537,8 +535,6 @@ protected override bool HasChildItems( string path )
 [實作項目 Windows PowerShell 提供者](./creating-a-windows-powershell-item-provider.md)
 
 [實作瀏覽 Windows PowerShell 提供者](./creating-a-windows-powershell-navigation-provider.md)
-
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

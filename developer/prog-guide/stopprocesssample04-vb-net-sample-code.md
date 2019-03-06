@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
-ms.openlocfilehash: 616fb571caa4b6830a7cfe9794d0334ee8108653
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c3d8b4670d32a70ddac121e64488e7756d95449a
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854094"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430055"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>StopProcessSample04 (VB.NET) 範例程式碼
 
 以下是 StopProc04 範例 cmdlet 的完整 VB.NET 範例程式碼。 這是程式碼`Stop-Process`中所述的 cmdlet[新增至 Cmdlet 的參數集](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)。 `Stop-Process`指令程式設計來停止處理程序會擷取使用 Get-proc cmdlet (中所述[建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md))。
 
 > [!NOTE]
-> 您可以下載的 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件使用此停止程序 cmdlet VB.NET (stopprocesssample04.vb) 的原始程式檔。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載的 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件使用此停止程序 cmdlet VB.NET (stopprocesssample04.vb) 的原始程式檔。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。

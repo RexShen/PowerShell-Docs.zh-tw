@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
 caps.latest.revision: 5
-ms.openlocfilehash: bdbfa6da322f3d26554b8d49d5d5c7fe2f39c271
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 00b015f1c16623d8ca4cf6f609aa2547c0385402
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853114"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429596"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02 程式碼範例
 
 以下是 GetProc02 cmdlet 範例的程式碼範例。 這是`Get-Process`cmdlet 的範例中所述[加入參數，該程序的命令列輸入](../cmdlet/adding-parameters-that-process-command-line-input.md)。 這`Get-Process`cmdlet 擷取其名稱為基礎的處理序，並接著會顯示在命令列的處理序的相關資訊。
 
 > [!NOTE]
-> 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件這個 Get-proc cmdlet 的原始程式檔 (getproc02.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件這個 Get-proc cmdlet 的原始程式檔 (getproc02.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。

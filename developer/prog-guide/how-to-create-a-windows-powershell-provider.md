@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862404"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429664"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>如何建立 Windows PowerShell 提供者
 
@@ -33,7 +33,6 @@ Windows PowerShell 提供數個提供者 （例如，FileSystem 提供者、 登
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>存取儲存的資料，使用 Windows PowerShell 路徑
 
-Windows PowerShell 提供者會存取 Windows PowerShell 執行階段，並以程式設計方式透過 Windows PowerShell 路徑使用的命令。 大部分的情況下，這些路徑可直接透過提供者存取資料。 不過，某些路徑是可解析成提供者內部的路徑，讓可使用非 Windows PowerShell 應用程式開發介面 (Api) 來存取資料的 cmdlet。 如需有關 Windows PowerShell 提供者在 Windows PowerShell 的運作方式的詳細資訊，請參閱 < [Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
 Windows PowerShell 提供者會存取 Windows PowerShell 執行階段，並以程式設計方式透過 Windows PowerShell 路徑使用的命令。 大部分的情況下，這些路徑可直接透過提供者存取資料。 不過，某些路徑是可解析成提供者內部的路徑，讓可使用非 Windows PowerShell 應用程式開發介面 (Api) 來存取資料的 cmdlet。 如需有關 Windows PowerShell 提供者在 Windows PowerShell 的運作方式的詳細資訊，請參閱 < [Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>公開提供者 Cmdlet 使用 Windows PowerShell 磁碟機
@@ -64,8 +63,6 @@ Windows PowerShell 提供者會公開其支援使用虛擬 Windows PowerShell �
 |[建立 Windows PowerShell 屬性提供者](./creating-a-windows-powershell-property-provider.md)|本主題說明如何建立 Windows PowerShell 提供者，可讓使用者管理的資料存放區中的項目屬性。|
 
 ## <a name="see-also"></a>另請參閱
-
-[Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

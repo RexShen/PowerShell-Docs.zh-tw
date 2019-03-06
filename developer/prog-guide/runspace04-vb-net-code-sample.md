@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: 348d34dc0132705fa4a50fb6fe1fd43f510ae210
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853614"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429885"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>RunSpace04 (VB.NET) 程式碼範例
 
 以下是 Runspace04 範例的 VB.NET 原始程式碼。 這個範例會使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行指令碼會產生終止錯誤。 主應用程式負責攔截錯誤和解譯記錄時發生錯誤。
 
 > [!NOTE]
-> 您可以下載此範例的 VB.NET 原始程式檔 (runspace02.vb) 使用的 Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載此範例的 VB.NET 原始程式檔 (runspace02.vb) 使用的 Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。

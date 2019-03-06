@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858894"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430004"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>建立 Windows PowerShell 屬性提供者
 
 本主題描述如何建立提供者，可讓使用者管理的資料存放區中的項目屬性。 如此一來，這種類型的提供者被指 Windows PowerShell 屬性提供者。 例如，登錄提供者的登錄機碼項屬性提供 Windows PowerShell 會處理登錄機碼值。 這種類型的提供者必須加入[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) .NET 類別的實作的介面。
 
 > [!NOTE]
-> Windows PowerShell 提供可用來開發 Windows PowerShell 提供者的範本檔案。 適用於 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件 TemplateProvider.cs 檔案。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > Windows PowerShell 提供可用來開發 Windows PowerShell 提供者的範本檔案。 適用於 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件 TemplateProvider.cs 檔案。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 下載的範本位於 **\<PowerShell 範例 >** 目錄。 您應該建立一份此檔案，並使用複本，用於建立新的 Windows PowerShell 提供者，移除任何您不需要的功能。
@@ -150,7 +149,6 @@ ms.locfileid: "56858894"
 ## <a name="building-the-windows-powershell-provider"></a>建置的 Windows PowerShell 提供者
 
 請參閱[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
-請參閱[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -159,9 +157,5 @@ ms.locfileid: "56858894"
 [設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)
 
 [擴充物件類型和格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[擴充物件類型和格式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [如何註冊 Cmdlet、 提供者，以及裝載應用程式](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
