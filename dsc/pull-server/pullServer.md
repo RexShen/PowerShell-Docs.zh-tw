@@ -1,17 +1,15 @@
 ---
-ms.date: 04/11/2018
+ms.date: 03/04/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: bcde871f0f7f107daca47c29419c36451e779f94
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887628"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429953"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
-
-> 適用於：Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
@@ -35,6 +33,7 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 針對伺服器無法直接連線至網際網路的私人環境，請考慮將輸出流量限制在發佈的 Azure IP 範圍內 (請參閱 [Azure 資料中心 IP 範圍](https://www.microsoft.com/en-us/download/details.aspx?id=41653) \(英文\))。
 
 目前無法在 Windows Server 上的提取服務中使用的線上服務功能包括：
+
 - 系統會在傳輸和靜止期間加密所有資料
 - 系統會自動建立和管理用戶端憑證
 - 用於集中管理[密碼/認證](/azure/automation/automation-credentials)，或是如伺服器名稱或連接字串等[變數](/azure/automation/automation-variables)的祕密存放區
@@ -57,7 +56,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 使用提取伺服器的需求：
 
 - 伺服器需執行：
-  - WMF/PowerShell 5.0 或更新版本
+  - WMF/PowerShell 4.0 或更新版本
   - IIS 伺服器角色
   - DSC 服務
 - 在理想情況下，某些用來保護憑證的憑證產生方式，可傳遞到在目標節點的本機設定管理員 (LCM)。
@@ -71,11 +70,11 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 |---------|---------|---------|---------|
 |MDB     |ESENT (預設值)、MDB |ESENT (預設值)、MDB|ESENT (預設值)、SQL Server、MDB
 
-從 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 *DSC 服務*) 的支援選項。  這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
+從 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 *DSC 服務*) 的支援選項。 這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
 
 > **注意**：SQL Server 支援將不會新增至舊版的 WMF 5.1 (或更早版本)，且只能在高於或等於 17090 的 Windows Server 版本上使用。
 
-若要設定提取伺服器以使用 SQL Server，請將 **SqlProvider** 設定至 `$true` 並將 **SqlConnectionString** 設定至有效的 SQL Server 連接字串。  如需詳細資訊，請參閱 [SqlClient 連接字串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
+若要設定提取伺服器以使用 SQL Server，請將 **SqlProvider** 設定至 `$true` 並將 **SqlConnectionString** 設定至有效的 SQL Server 連接字串。 如需詳細資訊，請參閱 [SqlClient 連接字串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
 如需具有 **xDscWebService** 的 SQL Server 設定範例，請先閱讀[使用 xDscWebService 資源](#using-the-xdscwebservice-resource)，然後檢閱 [Sample_xDscWebServiceRegistration_GitHub 上的 UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)。
 
 ### <a name="using-the-xdscwebservice-resource"></a>使用 xDscWebService 資源
@@ -83,10 +82,14 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 設定 Web 提取伺服器的最簡單方式，是使用包含在 **xPSDesiredStateConfiguration** 模組的 **xDscWebService** 資源。
 下列步驟說明如何使用設定 Web 服務之設定中的資源。
 
-1. 呼叫 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。 **注意**：**Install-module**納入**PowerShellGet**模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
-1. 在組織或公開授權單位中，從信任的憑證授權單位取得 DSC 提取伺服器的 SSL 憑證。 從授權單位收到的憑證通常為 PFX 格式。 在將成為預設位置 (應為 CERT:\LocalMachine\My) 中 DSC 提取伺服器的節點上安裝憑證。 記下憑證指紋。
-1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：'``` [guid]::newGuid()```' 或 '```New-Guid```'。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
-1. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含於 **xPSDesiredStateConfiguration** 模組的 Example 資料夾的 Sample_xDscWebServiceRegistration.ps1)。 此指令碼會設定提取伺服器。
+1. 呼叫 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。
+   > [!NOTE]
+   > **Install-module**納入**PowerShellGet**模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
+2. 在組織或公開授權單位中，從信任的憑證授權單位取得 DSC 提取伺服器的 SSL 憑證。 從授權單位收到的憑證通常為 PFX 格式。
+3. 在將成為預設位置，這應該是 DSC 提取伺服器的節點上安裝憑證`CERT:\LocalMachine\My`。
+   - 記下憑證指紋。
+4. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：` [guid]::newGuid()` 或 `New-Guid`。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
+5. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含的範例資料夾**xPSDesiredStateConfiguration**做為模組`Sample_xDscWebServiceRegistration.ps1`)。 此指令碼會設定提取伺服器。
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -142,7 +145,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
     }
     ```
 
-1. 執行設定，傳遞 SSL 憑證的指紋作為 **certificateThumbPrint** 參數，以及 GUID 註冊金鑰作為 **RegistrationKey** 參數：
+6. 執行設定，傳遞 SSL 憑證的指紋作為 **certificateThumbPrint** 參數，以及 GUID 註冊金鑰作為 **RegistrationKey** 參數：
 
     ```powershell
     # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
@@ -159,9 +162,11 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 #### <a name="registration-key"></a>註冊金鑰
 
 若要讓用戶端節點向伺服器註冊，使其可以使用設定名稱，而非設定識別碼，上述設定所建立的註冊金鑰會儲存在 `C:\Program Files\WindowsPowerShell\DscService` 中名為 `RegistrationKeys.txt` 的檔案中。 註冊金鑰會當作共用密碼，在用戶端向提取伺服器初始註冊期間使用。 用戶端會產生自我簽署的憑證，以在成功完成註冊之後，用來向提取伺服器進行唯一驗證。 此憑證的指紋會儲存在本機，並與提取伺服器的 URL 相關聯。
-> **注意**：在 PowerShell 4.0 中不支援註冊金鑰。
 
-若要設定節點向提取伺服器進行驗證，對於要向此提取伺服器註冊的任何目標節點，其中繼設定內都必須要有註冊金鑰。 請注意，成功註冊目標電腦之後，會移除下面中繼設定內的 **RegistrationKey**，而且值 '140a952b-b9d6-406b-b416-e0f759c9c0e4' 必須符合儲存在提取伺服器之 RegistrationKeys.txt 檔案中的值。 請務必保護註冊金鑰值，因為知道此值可向提取伺服器註冊任何目標電腦。
+> [!NOTE]
+> 在 PowerShell 4.0 中不支援註冊金鑰。
+
+若要設定節點向提取伺服器進行驗證，對於要向此提取伺服器註冊的任何目標節點，其中繼設定內都必須要有註冊金鑰。 請注意， **RegistrationKey**在下面的中繼設定之後，會移除已成功註冊目標電腦，而且值必須符合中儲存的值`RegistrationKeys.txt`提取伺服器上的檔案 ('140a952b-b9d6-406b-b416-e0f759c9c0e4' 此範例中)。 請務必保護註冊金鑰值，因為知道此值可向提取伺服器註冊任何目標電腦。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -204,12 +209,14 @@ configuration Sample_MetaConfigurationToRegisterWithLessSecurePullServer
 Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $RegistrationKey -OutputPath c:\Configs\TargetNodes
 ```
 
-> **注意**：**ReportServerWeb**區段允許將報告傳送到提取伺服器的資料。
+> [!NOTE]
+> **ReportServerWeb**區段允許將報告傳送到提取伺服器的資料。
 
 中繼設定檔內缺乏 **ConfigurationID** 屬性即隱含表示提取伺服器支援提取伺服器通訊協定 V2 版，因此需要初始註冊。
 相反地，出現 **ConfigurationID** 則表示會使用提取伺服器通訊協定 V1 版，而且不會處理註冊。
 
->**注意**：在 PUSH 案例中，目前的版本有 Bug，使得您必須為了未曾向提取伺服器註冊過的節點，在中繼設定檔內定義 ConfigurationID 屬性。 這會強制執行 V1 提取伺服器通訊協定，並避免出現註冊失敗訊息。
+> [!NOTE]
+> 在 PUSH 案例中，目前的版本有 Bug，使得您必須為了未曾向提取伺服器註冊過的節點，在中繼設定檔內定義 ConfigurationID 屬性。 這會強制執行 V1 提取伺服器通訊協定，並避免出現註冊失敗訊息。
 
 ## <a name="placing-configurations-and-resources"></a>放置設定和資源
 
@@ -219,12 +226,13 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ### <a name="dsc-resource-module-package-format"></a>DSC 資源模組封裝格式
 
 每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。
-例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。
+
+例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組就會命名為`xWebAdministration_3.2.1.0.zip`。
 一個壓縮檔必須包含一個模組版本。
 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。
 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。
-在 WMF 5.0 中包含 DSC 資源的模組預設格式為 '{模組資料夾}\{模組版本}\DscResources\{DSC 資源資料夾}\'。
-在為提取伺服器進行封裝前，請移除 **{模組版本}** 資料夾，使路徑變成 '{模組資料夾}\DscResources\{DSC 資源資料夾}\'。
+WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
+針對提取伺服器封裝之前，移除 **{模組版本}** 資料夾，讓路徑成為`{Module Folder}\DscResources\{DSC Resource Folder}\`。
 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
 
 使用 `New-DscChecksum {module zip file}` 為新增的模組建立總和檢查碼檔案。
@@ -238,13 +246,16 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。
 將 MOF 檔案及其相關總和檢查碼檔案置於 **ConfigurationPath** 資料夾。
 
->**注意**：如果您以任何方式變更設定 MOF 檔案，也必須重新建立總和檢查碼檔案。
+> [!NOTE]
+> 如果您以任何方式變更設定 MOF 檔案，也必須重新建立總和檢查碼檔案。
 
 ### <a name="tooling"></a>工具
 
 為了讓您更輕鬆地設定、驗證和管理提取伺服器，下列工具將納入作為最新版 xPSDesiredStateConfiguration 模組中的範例︰
 
-1. 有助於封裝 DSC 資源模組和設定檔以供提取伺服器使用的模組。 [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1)。 範例如下：
+1. 有助於封裝 DSC 資源模組和設定檔以供提取伺服器使用的模組。
+   [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1)。
+   範例如下：
 
     ```powershell
         # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
@@ -278,5 +289,5 @@ DSC 社群撰寫了多個解決方案來實作提取服務通訊協定。
 - [Windows PowerShell 預期狀態設定概觀](../overview/overview.md)
 - [制定組態](enactingConfigurations.md)
 - [使用 DSC 報表伺服器](reportServer.md)
-- [[MS-DSCPM]:Desired State Configuration 提取模型通訊協定](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]:Desired State Configuration 提取模型通訊協定 Errata](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]：預期狀態設定提取模型通訊協定](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]：預期狀態設定提取模型通訊協定 Errata](https://msdn.microsoft.com/library/mt612824.aspx)

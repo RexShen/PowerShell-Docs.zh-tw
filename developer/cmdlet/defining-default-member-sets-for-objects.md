@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859794"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794904"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>定義物件的預設成員集合
 
@@ -21,7 +21,6 @@ PSStandardMembers 成員集使用 Windows PowerShell 來定義物件的預設屬
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>System.Diagnostics.Process 的成員集
 
-在下列範例中，設定的 PSStandardMembers 成員定義 DefaultDisplayPropertySet 屬性集，以便[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)物件。 設定這個屬性由[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。
 在下列範例中，設定的 PSStandardMembers 成員定義 DefaultDisplayPropertySet 屬性集，以便[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)物件。 設定這個屬性由[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。
 
 ```xml
@@ -44,7 +43,6 @@ PSStandardMembers 成員集使用 Windows PowerShell 來定義物件的預設屬
   </MemberSet>
 ```
 
-下列的輸出會顯示所傳回的預設屬性[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。 只有`Id`， `Handles`， `CPU`，和`Name`屬性所傳回的每個處理程序物件。
 下列的輸出會顯示所傳回的預設屬性[Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List) cmdlet。 只有`Id`， `Handles`， `CPU`，和`Name`屬性所傳回的每個處理程序物件。
 
 ```powershell

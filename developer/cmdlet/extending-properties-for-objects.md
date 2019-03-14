@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: dcab755f565cd176c85ef6b9c719bceae10301b4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854524"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795431"
 ---
 # <a name="extending-properties-for-objects"></a>延伸物件的屬性
 
@@ -101,7 +101,6 @@ ms.locfileid: "56854524"
 
 ## <a name="property-sets"></a>屬性集
 
-屬性集定義一組可參考的集合名稱的擴充屬性。 例如，`Property`的參數[Format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)指令程式可以指定將特定的屬性設定為顯示。 當指定屬性集時，會顯示只有屬於集合的屬性。
 屬性集定義一組可參考的集合名稱的擴充屬性。 例如，`Property`的參數[Format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)指令程式可以指定將特定的屬性設定為顯示。 當指定屬性集時，會顯示只有屬於集合的屬性。
 
 可以針對物件定義的屬性集的數目沒有限制。 不過，必須指定用來定義物件的預設顯示屬性的屬性集 PSStandardMembers 成員集內。 在 Types.ps1xml 類型檔案中，預設屬性集名稱會包含 DefaultDisplayProperty、 DefaultDisplayPropertySet 和 DefaultKeyPropertySet。 您將新增至 PSStandardMembers 成員集的任何額外的屬性集都會被忽略。

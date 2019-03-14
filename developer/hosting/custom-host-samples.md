@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 55aee25b-bbcb-4d41-a4c0-fb8e30c4cdc1
 caps.latest.revision: 11
-ms.openlocfilehash: 2d88847e17371c4c04b783569fbd983218b6791b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1e58b74cf1c37c70ebfb0f4970cfbf8a8263ec5c
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858614"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794139"
 ---
 # <a name="custom-host-samples"></a>自訂主機範例
 
@@ -24,13 +24,12 @@ ms.locfileid: "56858614"
  [Host01 範例](./host01-sample.md)這個範例示範如何實作使用基本的自訂主機的主機應用程式。
 
  [Host02 範例](./host02-sample.md)這個範例示範如何撰寫使用 Windows PowerShell 執行階段，以及自訂主機實作的主應用程式。 主應用程式設定為德文、 執行的主控件的文化特性[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet，並顯示結果，您會看到它們以德文使用 pwrsh.exe，然後列印目前的日期和時間。
-此範例示範如何撰寫使用 Windows PowerShell 執行階段，以及自訂主機實作的主應用程式。 主應用程式設定為德文、 執行的主控件的文化特性[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet，並顯示結果，您會看到它們以德文使用 pwrsh.exe，然後列印目前的日期和時間。
 
  [Host03 範例](./host03-sample.md)這個範例示範如何建置互動式主控台主機應用程式，從命令列讀取命令、 執行命令，然後在主控台中顯示結果。
 
  [Host04 範例](./host04-sample.md)這個範例示範如何建置互動式主控台主機應用程式，從命令列讀取命令、 執行命令，然後在主控台中顯示結果。 這個主應用程式也支援顯示允許使用者指定多個選項的提示。
 
- [Host05 範例](./host05-sample.md)這個範例示範如何建置互動式主控台主機應用程式，從命令列讀取命令、 執行命令，然後在主控台中顯示結果。 這個主應用程式也支援呼叫遠端電腦使用[Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)並[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet，此範例示範如何建置互動式主控台主機應用程式從命令列讀取命令、 執行命令，，然後在主控台中顯示結果。 這個主應用程式也支援呼叫遠端電腦使用[Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)並[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet
+ [Host05 範例](./host05-sample.md)這個範例示範如何建置互動式主控台主機應用程式，從命令列讀取命令、 執行命令，然後在主控台中顯示結果。 這個主應用程式也支援呼叫遠端電腦使用[Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)並[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlet
 
  [Host06 範例](./host06-sample.md)這個範例示範如何建置互動式主控台主機應用程式，從命令列讀取命令、 執行命令，然後在主控台中顯示結果。 此外，這個範例會使用權杖化工具 API 指定使用者所輸入的文字色彩。
 

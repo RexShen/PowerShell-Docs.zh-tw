@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: 2bf2447eba07b74f8cc14c9820fc1c1774370b2f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854004"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794963"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>強烈建議使用的開發指導方針
 
@@ -107,7 +107,6 @@ Cmdlet 命名中使用的名詞，需要有非常明確，讓使用者可以探�
 
 #### <a name="support-arrays-for-parameters"></a>支援的參數陣列
 
-通常，使用者必須執行相同的作業，針對多個引數。 針對這些使用者，cmdlet 應接受陣列做為輸入，讓使用者可以將引數傳遞至 Windows PowerShell 變數作為參數的參數。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet 用於識別要擷取的處理序名稱的字串陣列。
 通常，使用者必須執行相同的作業，針對多個引數。 針對這些使用者，cmdlet 應接受陣列做為輸入，讓使用者可以將引數傳遞至 Windows PowerShell 變數作為參數的參數。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet 用於識別要擷取的處理序名稱的字串陣列。
 
 #### <a name="support-the-passthru-parameter"></a>支援的 PassThru 參數

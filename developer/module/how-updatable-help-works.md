@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860874"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794377"
 ---
 # <a name="how-updatable-help-works"></a>可更新的說明如何運作
 
@@ -21,7 +21,6 @@ ms.locfileid: "56860874"
 
 ## <a name="the-update-help-process"></a>Update-help 程序
 
-下列清單描述的動作[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，當使用者執行更新特定的 UI 文化特性中的模組的說明檔案的命令。
 下列清單描述的動作[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，當使用者執行更新特定的 UI 文化特性中的模組的說明檔案的命令。
 
 1. `Update-Help` 取得遠端 HelpInfo XML 檔案中的值所指定的位置**HelpInfoURI**模組資訊清單中索引鍵，並驗證針對結構描述檔案。 (若要檢視結構描述，請參閱[HelpInfo XML 結構描述](./helpinfo-xml-schema.md)。)然後`Update-Help`會尋找在模組目錄中模組的本機 HelpInfo XML 檔案在使用者電腦上。
@@ -36,7 +35,6 @@ ms.locfileid: "56860874"
 
 ## <a name="the-save-help-process"></a>Save-help 程序
 
-下列清單描述的動作[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)並[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，當使用者執行命令來更新說明檔中的檔案共用，然後使用這些檔案上更新說明檔使用者的電腦。
 下列清單描述的動作[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)並[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，當使用者執行命令來更新說明檔中的檔案共用，然後使用這些檔案上更新說明檔使用者的電腦。
 
 `Save-Help` Cmdlet 會執行下列動作以回應至命令，以將模組的說明檔案儲存在所指定的檔案共用**DestinationPath**參數。

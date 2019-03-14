@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: e0d83a742eae2bcde2e691860a5f2b3e5862d2de
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: de75e19abc0ee440e724fba7bf578ce240fbf2df
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430025"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795448"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>建立 Windows PowerShell 容器提供者
 
@@ -40,7 +40,7 @@ ms.locfileid: "57430025"
 
 - [定義 Windows PowerShell 容器提供者類別](#Defining-a-Windows-PowerShell-Container-Provider-Class)
 
-- [定義基底的功能]()
+- [定義基底的功能](#defining-base-functionality)
 
 - [正在擷取子系項目](#Retrieving-Child-Items)
 
@@ -69,8 +69,6 @@ ms.locfileid: "57430025"
 - [附加到的動態參數`Copy-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
 
 - [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定]()
 
 - [建置 Windows PowerShell 提供者](#Building-the-Windows-PowerShell-Provider)
 

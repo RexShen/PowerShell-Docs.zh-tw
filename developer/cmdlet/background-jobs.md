@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857164"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794700"
 ---
 # <a name="background-jobs"></a>背景作業
 
@@ -21,7 +21,6 @@ ms.locfileid: "56857164"
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>背景工作、 子工作與工作存放庫
 
-支援背景工作的 cmdlet 所傳回工作物件會定義工作。 ( [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet 也會傳回工作物件。)在此定義包含作業，用來指定工作、 狀態資訊和子工作的識別項的名稱。 作業不會執行任何工作。 每個背景工作有至少一個子工作，因為子工作會執行實際工作。 指令程式時，讓背景工作執行的工作，您可以執行 cmdlet，必須將工作與子工作，加入通用儲存機制，稱為*工作存放庫*。
 支援背景工作的 cmdlet 所傳回工作物件會定義工作。 ( [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job) cmdlet 也會傳回工作物件。)在此定義包含作業，用來指定工作、 狀態資訊和子工作的識別項的名稱。 作業不會執行任何工作。 每個背景工作有至少一個子工作，因為子工作會執行實際工作。 指令程式時，讓背景工作執行的工作，您可以執行 cmdlet，必須將工作與子工作，加入通用儲存機制，稱為*工作存放庫*。
 
 如需有關如何在命令列處理背景工作的詳細資訊，請參閱下列各項：

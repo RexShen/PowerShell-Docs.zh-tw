@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
-ms.openlocfilehash: 06281a1260dbdc120867fce89e6d5c8dd0754b87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856664"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795346"
 ---
 # <a name="naming-help-files"></a>為說明檔案命名
 
-本主題說明如何以 XML 為基礎的說明檔命名以便[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)指令程式可以找到它。 針對每個命令類型，不同的名稱需求。
 本主題說明如何以 XML 為基礎的說明檔命名以便[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)指令程式可以找到它。 針對每個命令類型，不同的名稱需求。
 
 ## <a name="cmdlet-help-files"></a>指令程式說明檔
@@ -30,7 +29,6 @@ ms.locfileid: "56856664"
 
 即使在組件為巢狀的模組時，才需要的組件名稱格式。
 
-比方說， [Get-winevent;PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) Microsoft.PowerShell.Diagnostics.dll 組件中所定義的 cmdlet。 `Get-Help` Cmdlet 會尋找說明主題`Get-WinEvent`只存在於 Microsoft.PowerShell.Diagnostics.dll help.xml 檔案，在模組目錄中的 cmdlet。
 比方說， [Get-winevent;PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) Microsoft.PowerShell.Diagnostics.dll 組件中所定義的 cmdlet。 `Get-Help` Cmdlet 會尋找說明主題`Get-WinEvent`只存在於 Microsoft.PowerShell.Diagnostics.dll help.xml 檔案，在模組目錄中的 cmdlet。
 
 ## <a name="provider-help-files"></a>提供者的說明檔
@@ -47,7 +45,6 @@ ms.locfileid: "56856664"
 
 ## <a name="function-help-files"></a>函式的說明檔
 
-可以使用記錄函式[註解型說明](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)或 XML 說明檔案中所述。 當函式會記載在 XML 檔案時，此函式必須`.ExternalHelp`註解關聯的 XML 檔案中的函式的關鍵字。 否則， `Get-Help` cmdlet 找不到說明檔。
 可以使用記錄函式[註解型說明](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)或 XML 說明檔案中所述。 當函式會記載在 XML 檔案時，此函式必須`.ExternalHelp`註解關聯的 XML 檔案中的函式的關鍵字。 否則， `Get-Help` cmdlet 找不到說明檔。
 
 沒有名稱的函式的說明檔的技術需求。 不過，最佳的作法是在其中定義函式的指令碼模組的說明檔的名稱。 例如，下列函式定義 MyModule.psm1 檔案中。

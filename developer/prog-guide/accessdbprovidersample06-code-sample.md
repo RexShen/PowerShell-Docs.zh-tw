@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: baab6a56-c199-48d7-a03e-a904b1bb1baa
 caps.latest.revision: 7
-ms.openlocfilehash: 2798e8b542b2f06247955409118e75c5652b644c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6e86318573df92b9ec84056631843e0efa096a3b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860784"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795601"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>AccessDbProviderSample06 程式碼範例
 
 下列程式碼顯示的內容提供者中所述的 Windows PowerShell 實作[建立 Windows PowerShell 內容提供者](./creating-a-windows-powershell-content-provider.md)。 此提供者可讓使用者管理的資料存放區中的項目內容。
 
 > [!NOTE]
-> 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的這個提供者的原始程式檔 (AccessDBSampleProvider06.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的這個提供者的原始程式檔 (AccessDBSampleProvider06.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
 >
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。

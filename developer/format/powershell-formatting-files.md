@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5d4c8f84-ebd2-4405-bb10-cfc5400d4ad6
 caps.latest.revision: 6
-ms.openlocfilehash: 35efd36fd70c209e3cbeb9eff0ddf978615fffd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 49344d32dfcef36a904772b4a7237646a63cb12a
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854264"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794632"
 ---
 # <a name="windows-powershell-formatting-files"></a>Windows PowerShell 格式設定檔案
 
@@ -26,13 +26,10 @@ DotNetTypes.Format.ps1xml 定義其他的.NET 物件，例如 CultureInfo、 Fil
 FileSystem.Format.ps1xml 定義檔案系統物件，例如檔案和目錄物件的顯示。
 
 所使用的不同檢視的 Help.Format.ps1xml 定義[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet，例如全文、 參數和範例的詳細的檢視。
-定義所使用的不同檢視[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet，例如全文、 參數和範例的詳細的檢視。
 
 PowerShellCore.Format.ps1xml 定義的 Windows PowerShell 核心 cmdlet，例如所傳回的物件所產生的物件顯示[Get-member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)並[Get-history](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlet。
-定義的 Windows PowerShell 核心 cmdlet，例如所傳回的物件所產生的物件顯示[Get-member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)並[Get-history](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlet。
 
 PowerShellTrace.Format.ps1xml 定義的追蹤物件，例如所產生的物件顯示[Trace-command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet。
-定義的追蹤物件，例如所產生的物件顯示[Trace-command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet。
 
 Registry.Format.ps1xml 定義登錄物件，例如索引鍵和項目物件的顯示。
 

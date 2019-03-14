@@ -2,12 +2,12 @@
 title: 了解 VSCode 與 PowerShell 中的檔案編碼
 description: 設定檔案的編碼方式在 VSCode 和 PowerShell
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251468"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429800"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 與 PowerShell 中的檔案編碼
 
@@ -68,7 +68,7 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 PowerShell 延伸模組互動數種方式中的指令碼：
 
 1. 當在 VSCode 中編輯指令碼時，就會 vscode 將內容傳送至延伸模組。 [語言伺服器通訊協定][]規定，在 utf-8 中傳送此內容。 因此，不可能進行擴充，以取得錯誤的編碼。
-2. 當指令碼會直接在整合式主控台中執行時，它們是從檔案讀取 powershell 直接。 從 VSCode 的 Tf PowerShell 的編碼不同，可以發生錯誤了這裡。
+2. 當指令碼會直接在整合式主控台中執行時，它們是從檔案讀取 powershell 直接。 如果 PowerShell 的編碼方式和 VSCode 的不同，可以發生錯誤了這裡。
 3. 當在 VSCode 中開啟的指令碼參考另一個不是在 VSCode 中開啟的指令碼時，延伸模組會回復成從檔案系統載入該指令碼的內容。 PowerShell 延伸模組會預設為 utf-8 編碼，但會使用[位元組順序標記][]，或 BOM，偵測，以選取正確的編碼方式。
 
 假設無 BOM 格式的編碼方式時，就會發生問題 (例如[utf-8][]不含 bom 並[Windows-1252][])。
@@ -112,7 +112,7 @@ VSCode 的預設編碼是不具有 BOM 的 utf-8。
 - `utf8bom`: [Utf-8] bom
 - `utf16le`: Little endian [utf-16]
 - `utf16be`: Big endian [utf-16]
-- `windows1252`: [Windows-1252]
+- `windows1252`：[Windows-1252]
 
 應該在下拉式清單中取得，這在 GUI 檢視中，或自動完成，在 JSON 中的檢視。
 
