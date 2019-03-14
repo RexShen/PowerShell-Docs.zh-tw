@@ -276,7 +276,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：****PsDscRunAsCredential**在 PowerShell 5.0 和更新版本支援。
+>**注意：** **PsDscRunAsCredential**在 PowerShell 5.0 和更新版本支援。
 
 您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
