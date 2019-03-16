@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854544"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056561"
 ---
 # <a name="advisory-development-guidelines"></a>建議性開發指導方針
 
@@ -61,7 +61,7 @@ Windows PowerShell 會直接使用 Microsoft.NET Framework 物件，因為.NET F
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>處理透過 Windows PowerShell (AD03) 的認證
 
-Cmdlet 應該定義`Credential`參數表示的認證。 這個參數必須是型別[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential) ，且必須使用的認證屬性宣告中定義。 這項支援未直接提供完整的認證時，會自動提示使用者的使用者名稱、 密碼，或兩者。 如需有關認證屬性的詳細資訊，請參閱[認證屬性宣告](./credential-attribute-declaration.md)。
+Cmdlet 應該定義`Credential`參數表示的認證。 這個參數必須是型別[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential) ，且必須使用的認證屬性宣告中定義。 這項支援未直接提供完整的認證時，會自動提示使用者的使用者名稱、 密碼，或兩者。 如需有關認證屬性的詳細資訊，請參閱[認證屬性宣告](./credential-attribute-declaration.md)。
 
 ### <a name="support-encoding-parameters-ad04"></a>支援編碼的參數 (AD04)
 
@@ -89,17 +89,17 @@ Cmdlet 應該定義`Credential`參數表示的認證。 這個參數必須是型
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>如果沒有管線輸入覆寫 BeginProcessing 方法 (AC02)
 
-如果您的 cmdlet 不接受來自管線的輸入，應該在實作處理[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法。 使用這個方法可讓 Windows PowerShell 來維護 cmdlet 之間的順序。 在管線中的其餘 cmdlet 有機會開始其處理之前，管線中的第一個 cmdlet 一律會傳回其物件。
+如果您的 cmdlet 不接受來自管線的輸入，應該在實作處理[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法。 使用這個方法可讓 Windows PowerShell 來維護 cmdlet 之間的順序。 在管線中的其餘 cmdlet 有機會開始其處理之前，管線中的第一個 cmdlet 一律會傳回其物件。
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>若要處理停止要求覆寫 StopProcessing 方法 (AC03)
 
-覆寫[System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法，使您的 cmdlet 能夠處理停止訊號。 某些 cmdlet 需要一些時間才能完成其作業，並可讓 Windows PowerShell 執行階段，例如當此 cmdlet 會封鎖長時間執行的 RPC 呼叫的執行緒的呼叫之間傳遞很長的時間。 這包括對進行呼叫的 cmdlet [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法，以[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，以及其他意見反應可能需要很長的時間才能完成的機制。 在這些情況下可能需要使用者將停止訊號傳送至這些 cmdlet。
+覆寫[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法，使您的 cmdlet 能夠處理停止訊號。 某些 cmdlet 需要一些時間才能完成其作業，並可讓 Windows PowerShell 執行階段，例如當此 cmdlet 會封鎖長時間執行的 RPC 呼叫的執行緒的呼叫之間傳遞很長的時間。 這包括對進行呼叫的 cmdlet [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法，以[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，以及其他意見反應可能需要很長的時間才能完成的機制。 在這些情況下可能需要使用者將停止訊號傳送至這些 cmdlet。
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>實作 IDisposable 介面 (AC04)
 
-如果您的 cmdlet 未處置的物件 （寫入管線） 所[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法中，您的 cmdlet 可能會需要額外的物件可供使用。 例如，如果您的指令程式會開啟檔案控制代碼，以其[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，並維持控制代碼開啟以供[System.Management.Automation.Cmdlet.Processrecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，這個控制代碼已關閉結尾的處理。
+如果您的 cmdlet 未處置的物件 （寫入管線） 所[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法中，您的 cmdlet 可能會需要額外的物件可供使用。 例如，如果您的指令程式會開啟檔案控制代碼，以其[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，並維持控制代碼開啟以供[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，這個控制代碼已關閉結尾的處理。
 
-Windows PowerShell 執行階段不會一律呼叫[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 例如， [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)如果 cmdlet 可透過其作業中途取消或終止錯誤發生在 cmdlet 的任何部分，可能不會呼叫方法。 因此，需要物件清除指令程式的.NET Framework 類別應實作完整[System.Idisposable](/dotnet/api/System.IDisposable)介面模式，包括完成項，可讓 Windows PowerShell 執行階段呼叫兩者[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)並[System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)結尾的處理方法。
+Windows PowerShell 執行階段不會一律呼叫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 例如， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)如果 cmdlet 可透過其作業中途取消或終止錯誤發生在 cmdlet 的任何部分，可能不會呼叫方法。 因此，需要物件清除指令程式的.NET Framework 類別應實作完整[System.IDisposable](/dotnet/api/System.IDisposable)介面模式，包括完成項，可讓 Windows PowerShell 執行階段呼叫兩者[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)並[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)結尾的處理方法。
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>使用序列化參數型別 (AC05)
 
@@ -117,7 +117,7 @@ Windows PowerShell 執行階段不會一律呼叫[System.Management.Automation.C
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- SwitchParameter
 
 - PSListModifier
 

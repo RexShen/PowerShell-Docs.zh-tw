@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
-ms.openlocfilehash: d77e4daf25bfcd5e76c184f6dbdb619368627bfa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857224"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058771"
 ---
 # <a name="interpreting-errorrecord-objects"></a>解譯 ErrorRecord 物件
 
-在大部分情況下， [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件都代表所用的命令或指令碼產生非終止錯誤。 終止錯誤也可以指定的其他資訊中透過 ErrorRecord [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)介面。
+在大部分情況下， [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件都代表所用的命令或指令碼產生非終止錯誤。 終止錯誤也可以指定的其他資訊中透過 ErrorRecord [System.Management.Automation.Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)介面。
 
-如果您想要撰寫的指令碼或主應用程式能夠處理特定的錯誤，您必須解譯命令或指令碼執行期間所發生的錯誤處理常式[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件來判定是否它表示您想要處理的錯誤類別。
+如果您想要撰寫的指令碼或主應用程式能夠處理特定的錯誤，您必須解譯命令或指令碼執行期間所發生的錯誤處理常式[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件來判定是否它表示您想要處理的錯誤類別。
 
 當 cmdlet 發生終止或非終止錯誤，它應該建立描述錯誤狀況的錯誤記錄。 主應用程式必須調查這些錯誤記錄，並執行任何動作將會減少錯誤。 主應用程式也必須調查錯誤記錄的非終止錯誤，無法處理記錄，但能夠繼續，以及它必須調查錯誤造成管線，以停止的終止錯誤的記錄。
 
 > [!NOTE]
-> 終止錯誤，此 cmdlet 會呼叫[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法。 對於非終止錯誤，此 cmdlet 會呼叫[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。
+> 終止錯誤，此 cmdlet 會呼叫[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)方法。 對於非終止錯誤，此 cmdlet 會呼叫[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。
 
 ## <a name="error-record-design"></a>錯誤記錄設計
 
@@ -44,13 +44,13 @@ ms.locfileid: "56857224"
 
 ### <a name="the-error-category"></a>錯誤類別目錄
 
-Error 記錄的錯誤類別是其中一個所提供的預先定義常數[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉型別。 這項資訊是透過[System.Management.Automation.Errorrecord.Categoryinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)屬性[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。
+Error 記錄的錯誤類別是其中一個所提供的預先定義常數[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉型別。 這項資訊是透過[System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)屬性[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。
 
 CloseError、 OpenError、 InvalidType、 ReadError 和 WriteError 類別目錄，以及其他錯誤類別目錄，可以指定此 cmdlet。 主應用程式可以使用的錯誤類別，來擷取錯誤群組。
 
 ### <a name="the-exception"></a>例外狀況
 
-包含錯誤記錄中的例外狀況由指令程式提供，並可以透過存取[System.Management.Automation.Errorrecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)屬性[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。
+包含錯誤記錄中的例外狀況由指令程式提供，並可以透過存取[System.Management.Automation.ErrorRecord.Exception*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)屬性[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。
 
 主機應用程式可以使用`is`關鍵字來辨識例外狀況是特定類別或衍生的類別。 最好是到分支上的例外狀況類型，如下列範例所示。
 
@@ -70,23 +70,23 @@ FQID 被設計來進行檢查以單一字串。 不過，情況下存在所在�
 
 ### <a name="other-information"></a>其他資訊
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件可能也會提供描述發生錯誤的環境的資訊。 這項資訊包括錯誤詳細資料，引動過程的詳細資訊，並發生錯誤時正在處理的目標物件等項目。 雖然這項資訊可能很有用，主應用程式，它是不通常用來識別錯誤。 這項資訊是可透過下列屬性：
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件可能也會提供描述發生錯誤的環境的資訊。 這項資訊包括錯誤詳細資料，引動過程的詳細資訊，並發生錯誤時正在處理的目標物件等項目。 雖然這項資訊可能很有用，主應用程式，它是不通常用來識別錯誤。 這項資訊是可透過下列屬性：
 
-[System.Management.Automation.Errorrecord.Errordetails*](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
+[System.Management.Automation.ErrorRecord.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorRecord.ErrorDetails)
 
-[System.Management.Automation.Errorrecord.Invocationinfo*](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
+[System.Management.Automation.ErrorRecord.InvocationInfo](/dotnet/api/System.Management.Automation.ErrorRecord.InvocationInfo)
 
-[System.Management.Automation.Errorrecord.Targetobject*](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
+[System.Management.Automation.ErrorRecord.TargetObject](/dotnet/api/System.Management.Automation.ErrorRecord.TargetObject)
 
 ## <a name="see-also"></a>另請參閱
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)
 
 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 

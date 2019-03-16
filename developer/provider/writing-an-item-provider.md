@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856704"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058179"
 ---
 # <a name="writing-an-item-provider"></a>撰寫項目提供者
 
@@ -46,7 +46,7 @@ ms.locfileid: "56856704"
 
 ### <a name="implementing-getitem"></a>實作 GetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)當使用者呼叫 PowerShell 引擎會呼叫[Microsoft.Powershell.Commands.Get 項目](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)cmdlet 您提供者。 方法會傳回位於指定路徑的項目。 在存取資料庫範例中，方法會檢查項目是否在磁碟機本身，在資料庫或資料庫中的資料列的資料表。 方法會將傳送之項目的 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)當使用者呼叫 PowerShell 引擎會呼叫[Microsoft.PowerShell.Commands.Get 項目](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)cmdlet 您提供者。 方法會傳回位於指定路徑的項目。 在存取資料庫範例中，方法會檢查項目是否在磁碟機本身，在資料庫或資料庫中的資料列的資料表。 方法會將傳送之項目的 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>實作 SetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)當使用者呼叫，方法由 PowerShell 引擎會呼叫呼叫[Microsoft.Powershell.Commands.Set 項目](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)cmdlet. 在指定的路徑，它就會設定項目的值。
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)當使用者呼叫，方法由 PowerShell 引擎會呼叫呼叫[Microsoft.PowerShell.Commands.Set 項目](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)cmdlet. 在指定的路徑，它就會設定項目的值。
 
 在存取資料庫範例中，合理的設定項目的值，只有當該項目是資料列，因此這個方法會擲回[NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx)當項目不是一個資料列。
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>實作 ItemExists
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)當使用者呼叫 PowerShell 引擎便會呼叫方法[Microsoft.Powershell.Commands.Test 路徑](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)cmdlet。 方法會判斷是否有項目在指定的路徑。 如果項目不存在，此方法將它傳遞給 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)當使用者呼叫 PowerShell 引擎便會呼叫方法[Microsoft.PowerShell.Commands.Test 路徑](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)cmdlet。 方法會判斷是否有項目在指定的路徑。 如果項目不存在，此方法將它傳遞給 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
 
 ```csharp
 protected override bool ItemExists(string path)

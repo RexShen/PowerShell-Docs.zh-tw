@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
-ms.openlocfilehash: 8cfbcacf93733667ffba63a252c86518c0919b57
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863404"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058813"
 ---
 # <a name="how-to-request-confirmations"></a>如何要求確認
 
-此範例示範如何呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)要求確認的方法之前採取動作的使用者。
+此範例示範如何呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)要求確認的方法之前採取動作的使用者。
 
 > [!IMPORTANT]
 > 如需有關 Windows PowerShell 如何處理這些要求的詳細資訊，請參閱 <<c0> [ 要求確認](./requesting-confirmation-from-cmdlets.md)。
@@ -43,13 +43,13 @@ ms.locfileid: "56863404"
     private bool force;
     ```
 
-3. 新增`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，可判斷[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法呼叫。
+3. 新增`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，可判斷[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法呼叫。
 
-4. 新增第二`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，而`Force`參數，來判斷作業是否應該是執行。
+4. 新增第二`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，而`Force`參數，來判斷作業是否應該是執行。
 
 ## <a name="example"></a>範例
 
-在下列程式碼範例中， [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)內呼叫方法覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 不過，您也可以從其他輸入處理方法呼叫這些方法。
+在下列程式碼範例中， [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)從呼叫方法的覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 不過，您也可以從其他輸入處理方法呼叫這些方法。
 
 ```csharp
 protected override void ProcessRecord()

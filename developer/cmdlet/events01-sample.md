@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 3edbcabeff0c8d84831823df11749d152b347566
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c9963819f1842d1245735dabc487babaa566c160
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863334"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057156"
 ---
 # <a name="events01-sample"></a>Events01 範例
 
-此範例示範如何建立所引發的事件可讓使用者註冊 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 使用此 cmdlet，使用者可以註冊的特定目錄下建立檔案時要執行的動作。 此範例衍生自[Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基底類別。
+此範例示範如何建立所引發的事件可讓使用者註冊 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 使用此 cmdlet，使用者可以註冊的特定目錄下建立檔案時要執行的動作。 此範例衍生自[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基底類別。
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建置範例。
 
@@ -78,7 +78,7 @@ A file was created in the TEMP directory
 
 此範例示範下列項目。
 
-- 如何撰寫事件註冊 cmdlet。 此 cmdlet 會衍生自[Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)類別，可提供通用參數的支援新增到暫存器-* 事件 cmdlet。 從衍生的 Cmdlet [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)只需要定義其特定的參數，並覆寫`GetSourceObject`和`GetSourceObjectEventName`抽象方法。
+- 如何撰寫事件註冊 cmdlet。 此 cmdlet 會衍生自[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)類別，可提供通用參數的支援新增到暫存器-* 事件 cmdlet。 從衍生的 Cmdlet [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)只需要定義其特定的參數，並覆寫`GetSourceObject`和`GetSourceObjectEventName`抽象方法。
 
 ## <a name="example"></a>範例
 

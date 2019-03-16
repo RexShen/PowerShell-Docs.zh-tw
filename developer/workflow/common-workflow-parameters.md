@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d5891467-8e13-484d-b7af-32e6bffab35d
 caps.latest.revision: 4
-ms.openlocfilehash: 2aca4483e500432ef9f52804e85678d2268aa4cd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2e8f272a82ee03de306fd8eac45e109142f6284
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856134"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054793"
 ---
 # <a name="common-workflow-parameters"></a>常見工作流程參數
 
@@ -26,7 +26,7 @@ ms.locfileid: "56856134"
 |名稱|類型|描述|您可指定在執行階段的使用者嗎？|您可指定在撰寫期間的工作流程作者嗎？|您可指定在具現化的工作流程作者嗎？|
 |----------|----------|-----------------|-----------------------------------------------------|------------------------------------------------------------|-----------------------------------------------------------|
 |PSComputerName|String[]|要啟動作業的電腦名稱的清單。|是|是|是|
-|PSCredential|[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|要使用的驗證認證來登入 PSComputerName 參數所指定的電腦。 此參數會指定 PSComputerName 時才有效。|是|是|是|
+|PSCredential|[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|要使用的驗證認證來登入 PSComputerName 參數所指定的電腦。 此參數會指定 PSComputerName 時才有效。|是|是|是|
 |PSPort|UInt32|要用來執行工作流程的連接埠。|是|是|是|
 |PSUseSSL|布林值|若要建立安全連線到遠端電腦執行工作流程中使用安全通訊端層 (SSL) 通訊協定。|是|是|是|
 |PSConfigurationName|String|用來執行工作流程工作階段設定。|是|是|是|

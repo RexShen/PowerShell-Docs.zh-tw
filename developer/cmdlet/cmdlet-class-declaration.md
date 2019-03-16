@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854444"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055082"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet 類別宣告
 
 Microsoft.NET Framework 類別，會藉由指定宣告為 cmdlet **Cmdlet**做為中繼資料類別的屬性。 ( **Cmdlet**屬性是唯一的必要的屬性，針對所有的 cmdlet)。 當您指定**Cmdlet**屬性，您必須指定可識別使用者 cmdlet 動詞和名詞 」 組。 而且，您必須描述 cmdlet 支援 Windows PowerShell 功能。 如需有關用來指定的宣告語法**Cmdlet**屬性，請參閱[Cmdlet 屬性宣告](./cmdlet-attribute-declaration.md)。
 
 > [!NOTE]
-> **Cmdlet**屬性由定義[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)類別。 此類別的屬性對應到宣告屬性時所使用的宣告參數。
+> **Cmdlet**屬性由定義[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)類別。 此類別的屬性對應到宣告屬性時所使用的宣告參數。
 
 ## <a name="nouns"></a>名詞
 
@@ -57,7 +57,7 @@ Cmdlet 名稱中的名詞必須是特有的而且在一般的名詞，例如*ser
 
 ## <a name="see-also"></a>另請參閱
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute Declaration](./cmdlet-attribute-declaration.md)
 

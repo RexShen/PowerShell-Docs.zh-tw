@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
-ms.openlocfilehash: e18564c10898c73128e0a4bc7d077e7c7ffb1c22
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862324"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058754"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>TableControl 之 TableRowEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -51,7 +51,7 @@ ms.locfileid: "56862324"
 
 |元素|描述|
 |-------------|-----------------|
-|[TableRowEntry TableControl （格式） 的項目](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|定義會顯示在資料表資料列的資料。|
+|[TableRowEntry TableControl （格式） 的項目](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定義會顯示在資料表資料列的資料。|
 
 ## <a name="remarks"></a>備註
 
@@ -89,7 +89,7 @@ ms.locfileid: "56862324"
 
 [TableControl （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[TableRowEntry TableControl （格式） 的項目](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry TableControl （格式） 的項目](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [TableControl （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 

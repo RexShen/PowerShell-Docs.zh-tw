@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: a53b1ada46ad614af3522e6cc11e187afb76e7b1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855314"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056663"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet 概觀
 
@@ -46,9 +46,9 @@ Cmdlet 會執行動作，以及通常在管線中下一個命令會傳回 Micros
 
 - **動態參數**:新增至 cmdlet，在執行階段參數。 一般而言，動態參數會加入至 cmdlet 的另一個參數設定為特定值時。 如需有關動態參數的詳細資訊，請參閱[Cmdlet 的動態參數](./cmdlet-dynamic-parameters.md)。
 
-- **輸入處理方法**:Cmdlet 可用來處理接收為輸入之記錄的方法。 輸入的處理方法包括[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法]、 [ [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，而[System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 當您實作的 cmdlet 時，您必須覆寫至少其中一個[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，和[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 通常[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您覆寫，因為它會呼叫指令程式會處理每一筆記錄的方法。 相反地， [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法並[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法會呼叫一次執行前置處理或後置處理的記錄。 如需這些方法的詳細資訊，請參閱[輸入處理方法](./cmdlet-input-processing-methods.md)。
+- **輸入處理方法**:Cmdlet 可用來處理接收為輸入之記錄的方法。 輸入的處理方法包括[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，而[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 當您實作的 cmdlet 時，您必須覆寫至少其中一個[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 通常[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您覆寫，因為它會呼叫指令程式會處理每一筆記錄的方法。 相反地， [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法會呼叫一次執行前置處理或後置處理的記錄。 如需這些方法的詳細資訊，請參閱[輸入處理方法](./cmdlet-input-processing-methods.md)。
 
-- **ShouldProcess 功能**:Windows PowerShell 可讓您建立 cmdlet，此 cmdlet 會在系統中進行變更之前，提示使用者提供意見反應。 若要使用這項功能，此 cmdlet 必須宣告它支援 ShouldProcess 功能，當您宣告 Cmdlet 屬性，而且 cmdlet 必須呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)內輸入處理方法的方法。 如需如何支援 ShouldProcess 功能的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
+- **ShouldProcess 功能**:Windows PowerShell 可讓您建立 cmdlet，此 cmdlet 會在系統中進行變更之前，提示使用者提供意見反應。 若要使用這項功能，此 cmdlet 必須宣告它支援 ShouldProcess 功能，當您宣告 Cmdlet 屬性，而且 cmdlet 必須呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)內輸入處理方法的方法。 如需如何支援 ShouldProcess 功能的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
 
 - **交易**:會被視為單一工作的命令邏輯群組。 如果群組中的任何命令失敗，而且使用者可以選擇接受或拒絕在交易內執行的動作，自動就會失敗的工作。 若要參與交易，此 cmdlet 必須宣告 Cmdlet 屬性宣告時支援交易。 在 Windows PowerShell 2.0 中引進了交易的支援。 如需有關交易的詳細資訊，請參閱[Windows PowerShell 交易](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710)。
 
@@ -72,21 +72,21 @@ Windows PowerShell 支援從下列兩個基底類別衍生的 cmdlet。
 
 - 大多數的 cmdlet 根據.NET Framework 類別衍生自[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)基底類別。 衍生自這個類別可讓 cmdlet 在 Windows PowerShell 執行階段上使用相依性的最小集合。 這有兩個優點。 第一個好處是，cmdlet 物件比較小，而且您較不容易受到變更，Windows PowerShell 執行階段。 第二個優點是，如果您需要可以直接建立 cmdlet 物件的執行個體，並叫用將它直接而不是透過 Windows PowerShell 執行階段叫用。
 
-- 更複雜的指令程式根據.NET Framework 類別衍生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。 衍生自這個類別可讓您更多存取 Windows PowerShell 執行階段。 此存取權可讓您呼叫指令碼，來存取提供者，並存取目前工作階段狀態的 cmdlet。 （若要存取目前工作階段狀態，您取得和設定工作階段變數與喜好設定。）不過，衍生自這個類別會增加 cmdlet 物件的大小，這表示您的 cmdlet 會更緊密地結合至目前版本的 Windows PowerShell 執行階段。
+- 更複雜的指令程式根據.NET Framework 類別衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。 衍生自這個類別可讓您更多存取 Windows PowerShell 執行階段。 此存取權可讓您呼叫指令碼，來存取提供者，並存取目前工作階段狀態的 cmdlet。 （若要存取目前工作階段狀態，您取得和設定工作階段變數與喜好設定。）不過，衍生自這個類別會增加 cmdlet 物件的大小，這表示您的 cmdlet 會更緊密地結合至目前版本的 Windows PowerShell 執行階段。
 
-一般情況下，除非您需要擴充的存取的 Windows PowerShell 執行階段時，您應該衍生自[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)類別。 不過，Windows PowerShell 執行階段有廣泛的記錄功能的 cmdlet 執行。 如果您稽核的模型取決於這項記錄，您還可以防止您從另一個 cmdlet 中的 cmdlet 執行，藉由衍生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。
+一般情況下，除非您需要擴充的存取的 Windows PowerShell 執行階段時，您應該衍生自[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)類別。 不過，Windows PowerShell 執行階段有廣泛的記錄功能的 cmdlet 執行。 如果您稽核的模型取決於這項記錄，您還可以防止您從另一個 cmdlet 中的 cmdlet 執行，藉由衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。
 
 ## <a name="input-processing-methods"></a>輸入處理方法
 
 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)類別提供用來處理記錄的下列虛擬方法。 所有衍生的 cmdlet 類別必須覆寫一個或多個第三個方法：
 
-- [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing):用來為 cmdlet 提供選用的一次性、 前置處理功能。
+- [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing):用來為 cmdlet 提供選用的一次性、 前置處理功能。
 
-- [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord):用來提供 cmdlet 的-記錄處理功能。 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)任意數目的次數，或完全沒有，根據指令程式的輸入可能會呼叫方法。
+- [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord):用來提供 cmdlet 的-記錄處理功能。 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)任意數目的次數，或完全沒有，根據指令程式的輸入可能會呼叫方法。
 
-- [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing):用來為 cmdlet 提供選用的一次性、 後置處理功能。
+- [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing):用來為 cmdlet 提供選用的一次性、 後置處理功能。
 
-- [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing):用來停止處理當使用者停止 cmdlet 以非同步方式 （例如，藉由按下 CTRL + C）。
+- [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing):用來停止處理當使用者停止 cmdlet 以非同步方式 （例如，藉由按下 CTRL + C）。
 
 如需這些方法的詳細資訊，請參閱[Cmdlet 的輸入處理方法](./cmdlet-input-processing-methods.md)。
 

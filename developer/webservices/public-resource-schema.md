@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859544"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057241"
 ---
 # <a name="public-resource-schema"></a>公用資源結構描述
 
@@ -21,7 +21,7 @@ ms.locfileid: "56859544"
 
 ## <a name="defining-a-resource"></a>定義資源
 
-每個資源會對應至 Windows PowerShell cmdlet 所傳回的物件。 在 publc 資源 MOF 檔案中，您可以定義資源所宣告的類別。 類別包含的屬性會對應至物件的屬性。 例如，在下列範例中， [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)類別由下列的 MOF。
+每個資源會對應至 Windows PowerShell cmdlet 所傳回的物件。 在公用資源的 MOF 檔案中，您可以定義資源所宣告的類別。 類別包含的屬性會對應至物件的屬性。 例如，在下列範例中， [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)類別由下列的 MOF。
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-若要宣告成複雜類型的實體屬性，您將它宣告為`string`型別與`EmbeddedInstance`辨識符號，包括複雜型別的名稱。 下列範例 hshows 屬性之宣告的`PswsTest_ProcessModule`在上述範例中宣告的型別。
+若要宣告成複雜類型的實體屬性，您將它宣告為`string`型別與`EmbeddedInstance`辨識符號，包括複雜型別的名稱。 下列範例顯示的屬性宣告`PswsTest_ProcessModule`在上述範例中宣告的型別。
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ class PswsTest_ProcessModule
 
 ### <a name="associating-entities"></a>相關聯的實體
 
-您可以使用關聯與 AssocationClass 限定詞，將兩個實體產生關聯。 如需詳細資訊，請參閱 <<c0> [ 產生關聯的管理 OData 實體](./associating-management-odata-entities.md)。
+您可以使用關聯與 AssociationClass 限定詞，將兩個實體產生關聯。 如需詳細資訊，請參閱 <<c0> [ 產生關聯的管理 OData 實體](./associating-management-odata-entities.md)。
 
 ### <a name="derived-types"></a>衍生型別
 
@@ -72,17 +72,16 @@ class PswsTest_ProcessModule
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

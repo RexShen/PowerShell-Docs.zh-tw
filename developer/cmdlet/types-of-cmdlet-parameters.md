@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859864"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059570"
 ---
 # <a name="types-of-cmdlet-parameters"></a>Cmdlet 參數類型
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>切換參數
 
-Windows PowerShell 提供[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)可讓您定義的參數值的型別會自動設為`false`如果 cmdlet 時未指定參數呼叫。 可能的話，使用切換參數來取代布林參數。
+Windows PowerShell 提供[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)可讓您定義的參數值的型別會自動設為`false`如果 cmdlet 時未指定參數呼叫。 可能的話，使用切換參數來取代布林參數。
 
 請考慮下列的範例。 根據預設，數個 Windows PowerShell cmdlet 不要傳遞到管線的輸出物件。 不過，這些 cmdlet 有`PassThru`切換參數會覆寫預設行為。 如果`PassThru`呼叫這些 cmdlet 時指定參數，此 cmdlet 會輸出物件傳回至管線。
 
-如果您需要的參數具有預設值是`true`時呼叫中未指定參數，請考慮將反轉參數的意義。 如需範例，而不是設定參數屬性的布林值`true`，宣告為屬性[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)輸入，並將參數的預設值`false`.
+如果您需要的參數具有預設值是`true`時呼叫中未指定參數，請考慮將反轉參數的意義。 如需範例，而不是設定參數屬性的布林值`true`，宣告為屬性[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)輸入，並將參數的預設值`false`.
 
-若要定義的切換參數，宣告將屬性視為[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，如下列範例所示。
+若要定義的切換參數，宣告將屬性視為[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，如下列範例所示。
 
 ```csharp
 [Parameter(Position = 1)]

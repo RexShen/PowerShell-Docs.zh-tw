@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 9e8123e9b1068e0fd6efec8508eacf594ff22301
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854744"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054895"
 ---
 # <a name="runspace04-sample"></a>Runspace04 範例
 
@@ -35,7 +35,7 @@ ms.locfileid: "56854744"
 
 - 以同步方式叫用命令。
 
-- 使用[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)擷取並顯示命令所傳回的物件屬性的物件。
+- 使用[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)擷取並顯示命令所傳回的物件屬性的物件。
 
 - 擷取並顯示命令執行期間所產生的錯誤記錄。
 

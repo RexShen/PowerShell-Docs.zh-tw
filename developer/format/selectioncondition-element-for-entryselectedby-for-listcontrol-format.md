@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: ec75945c5517c02fa001f0a38573c045ffcdbfd3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857484"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058958"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
@@ -44,7 +44,7 @@ ms.locfileid: "56857484"
 
 |元素|描述|
 |-------------|-----------------|
-|[PropertyName ListEntry （格式） 的 EmtrySelectedBy 的 SelectionCondition 的項目](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 屬性。|
+|[PropertyName ListEntry （格式） 的 EntrySelectedBy 的 SelectionCondition 的項目](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 屬性。|
 |[針對 ListEntry （格式） 的 EntrySelectedBy SelectionCondition 的指令碼區塊項目](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定的指令碼，就會觸發條件。|
 |[針對 ListEntry （格式） 的 EntrySelectedBy SelectionCondition SelectionSetName 項目](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|選擇性的項目。<br /><br /> 指定的觸發條件的.NET 型別集。|
 |[針對 ListEntry （格式） 的 EntrySelectedBy SelectionCondition TypeName 項目](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 型別。|
@@ -75,7 +75,7 @@ ms.locfileid: "56857484"
 
 [ListEntry 項目 （格式）](./listentry-element-for-listcontrol-format.md)
 
-[ListEntry （格式） 的 EnrtySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[ListEntry （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [ListEntry （格式） 的 EntrySelectedBy TypeName 項目](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
 

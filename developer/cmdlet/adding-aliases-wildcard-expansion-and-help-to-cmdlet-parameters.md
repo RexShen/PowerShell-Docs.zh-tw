@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 0f025213087e6f308adf8e597fc01c1320251f76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859324"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054864"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>新增別名、萬用字元擴充與說明到 Cmdlet 參數
 
@@ -110,7 +110,7 @@ Windows PowerShell 可讓您建立的 cmdlet 參數的說明。 用於系統修�
 
 ## <a name="overriding-an-input-processing-method"></a>覆寫輸入處理方法
 
-您的 cmdlet 必須覆寫輸入處理方法，這是最常[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 此 cmdlet 時修改系統，應該呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，以允許若要提供意見反應，才能進行變更的使用者。 如需這些方法的詳細資訊，請參閱[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md)。
+您的 cmdlet 必須覆寫輸入處理方法，這是最常[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 此 cmdlet 時修改系統，應該呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，可讓使用者若要進行變更之前，請提供意見反應。 如需這些方法的詳細資訊，請參閱[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 ## <a name="supporting-wildcard-expansion"></a>支援的萬用字元展開
 

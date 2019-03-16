@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858914"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054572"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl 元素 (格式)
 
@@ -48,7 +48,7 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 |[TableControl （格式） 的自動調整項目](./autosize-element-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定是否資料行大小和資料行數目根據調整大小的資料大小。|
 |[HideTableHeaders TableControl （格式） 的項目](./hidetableheaders-element-format.md)|選擇性的項目。<br /><br /> 表示是否不會顯示資料表標頭。|
 |[TableHeaders TableControl （格式） 的項目](./tableheaders-element-format.md)|必要項目。<br /><br /> 定義標籤、 寬度和資料行的資料表檢視資料的對齊方式。|
-|[TableRowEntries TableCotrol （格式） 的項目](./tablerowentries-element-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 提供 [資料表] 檢視的定義。|
+|[TableRowEntries TableControl （格式） 的項目](./tablerowentries-element-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 提供 [資料表] 檢視的定義。|
 
 ### <a name="parent-elements"></a>父元素
 

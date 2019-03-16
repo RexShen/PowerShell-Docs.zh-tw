@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856964"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057598"
 ---
 # <a name="updatable-help-overview"></a>可更新的說明系統
 
@@ -31,7 +31,9 @@ Windows® 8 和 Windows Server® 2012年中的所有 Windows PowerShell 模組�
 
 可更新的說明包括下列功能。
 
-- [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)指令程式，以判斷使用者是否具有的最新說明檔案的模組，如果沒有，請從網際網路下載最新說明檔案，解壓縮，並在正確的模組子目錄中安裝在使用者的電腦。 使用者可以使用[Get-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) cmdlet，以立即檢視新安裝的 [說明] 主題。 它們不需要重新啟動 Windows PowerShell。
+- [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)指令程式，以判斷使用者是否具有的最新說明檔案的模組，如果沒有，請從網際網路下載最新說明檔案，解壓縮，並在正確的模組子目錄中安裝在使用者的電腦。
+  使用者可以使用[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet，以立即檢視新安裝的 [說明] 主題。
+  它們不需要重新啟動 PowerShell。
 
 - [Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)指令程式，以下載最新的說明檔從網際網路，並將它們儲存在檔案系統目錄。 使用者可以使用`Update-Help`cmdlet 來取得說明檔從檔案系統目錄中，並解壓縮並安裝在使用者的電腦上的模組子目錄。 `Save-Help` Cmdlet 的設計目的，使用者有限或沒有網際網路存取權，並對於想要限制網際網路存取的企業。
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863124"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056252"
 ---
 # <a name="examples-of-cmdlet-code"></a>Cmdlet 程式碼範例
 
@@ -38,7 +38,7 @@ ms.locfileid: "56863124"
 
 [如何覆寫輸入處理方法](./how-to-override-input-processing-methods.md)這些範例示範用來覆寫 BeginProcessing、 ProcessRecord 和 EndProcessing 方法的基本結構。
 
-[如何支援 ShouldProcess 呼叫](./how-to-request-confirmations.md)這個範例示範如何[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法應從呼叫內的 cmdlet。
+[如何支援 ShouldProcess 呼叫](./how-to-request-confirmations.md)這個範例示範如何[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法應從呼叫中的 cmdlet。
 
 [如何支援交易](./how-to-support-transactions.md)這個範例示範如何指出此 cmdlet 支援交易，以及如何實作指令程式用在交易內時所要採取的動作。
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: 2d2d6a32ac910ecc0fc3b6f1e78cdde54c21b427
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858304"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056459"
 ---
 # <a name="writing-a-container-provider"></a>撰寫容器提供者
 
@@ -44,7 +44,7 @@ ms.locfileid: "56858304"
 
 ### <a name="implementing-getchilditems"></a>實作 GetChildItems
 
-PowerShell 引擎會呼叫[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，當使用者呼叫[Microsoft.Powershell.Commands.Get Get-childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem)cmdlet。 這個方法會取得位於指定路徑的項目子系的項目。
+PowerShell 引擎會呼叫[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，當使用者呼叫[Microsoft.PowerShell.Commands.Get Get-childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem)cmdlet。 這個方法會取得位於指定路徑的項目子系的項目。
 
 在存取資料庫範例中，行為[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法取決於所指定項目的類型。 如果項目是磁碟機，然後子系資料表，方法會傳回一組資料表從資料庫。 如果指定的項目是資料表，子系就會是該資料表的資料列。 如果項目資料列，然後它沒有子系，而且方法會傳回只在該資料列。 所有子項目會都傳送給 PowerShell 引擎所[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>實作 NewItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法會在指定的路徑建立指定型別的新項目。 PowerShell 引擎會呼叫這個方法，當使用者呼叫[Microsoft.Powershell.Commands.New 項目](/dotnet/api/Microsoft.PowerShell.Commands.New-Item)cmdlet。
+[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法會在指定的路徑建立指定型別的新項目。 PowerShell 引擎會呼叫這個方法，當使用者呼叫[Microsoft.PowerShell.Commands.New 項目](/dotnet/api/Microsoft.PowerShell.Commands.New-Item)cmdlet。
 
 在此範例中，該方法會實作邏輯來判斷型別與路徑比對。 也就是說，只有資料表可以直接在 磁碟機 （資料庫），建立，而且可以在資料表底下建立只有一個資料列。 如果指定的路徑和項目類型不符合這種方式，此方法會擲回例外狀況。
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>CopyItem 實作
 
-[System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)將指定的項目複製到指定的路徑。 PowerShell 引擎會呼叫這個方法，當使用者呼叫[Microsoft.Powershell.Commands.Copy 項目](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item)cmdlet。 這個方法也可以是遞迴的複製所有項目子系，除了項目本身。
+[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)將指定的項目複製到指定的路徑。 PowerShell 引擎會呼叫這個方法，當使用者呼叫[Microsoft.PowerShell.Commands.Copy 項目](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item)cmdlet。 這個方法也可以是遞迴的複製所有項目子系，除了項目本身。
 
 類似於[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，這個方法會執行邏輯，以確定指定的項目是否屬於正確的型別，要複製的路徑。 比方說，如果目的地路徑是資料表時，要複製的項目必須是一個資料列。
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>實作 RemoveItem
 
-[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法會移除位於指定路徑的項目。 PowerShell 引擎會呼叫這個方法，當使用者呼叫[Microsoft.Powershell.Commands.Remove 項目](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item)cmdlet。
+[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法會移除位於指定路徑的項目。 PowerShell 引擎會呼叫這個方法，當使用者呼叫[Microsoft.PowerShell.Commands.Remove 項目](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item)cmdlet。
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)

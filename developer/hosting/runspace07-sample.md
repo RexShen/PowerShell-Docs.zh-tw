@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
 caps.latest.revision: 7
-ms.openlocfilehash: c156b2d6a7e7d3fcbd1679d2d61c94f31be0f76a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3205286fbbc823d21e29a328b3ba9c4c1459d9ff
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854724"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056952"
 ---
 # <a name="runspace07-sample"></a>Runspace07 範例
 
@@ -35,11 +35,11 @@ ms.locfileid: "56854724"
 
 - 以同步方式執行 cmdlet。
 
-- 擷取屬性從[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)命令所傳回的物件。
+- 擷取屬性從[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)命令所傳回的物件。
 
 ## <a name="example"></a>範例
 
-此範例會建立 runspace，供[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)物件執行[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)並[Measure-object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlet。
+此範例會建立 runspace，供[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)物件執行[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)並[Measure-object](/powershell/module/microsoft.powershell.utility/measure-object) cmdlet。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

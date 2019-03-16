@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: f7899713dd273b793017adfa0a20b3ff3352b62a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862164"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059774"
 ---
 # <a name="installing-a-powershell-module"></a>安裝 PowerShell 模組
 
@@ -160,7 +160,7 @@ C:\Program Files
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technolgies\Fabrikam Manager\Modules\"
+$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -228,7 +228,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-完成這些步驟時**ListAvailable**的參數[Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 會取得這兩個 Fabrikam 模組。 若要匯入特定模組，請使用`MiminumVersion`或是`RequiredVersion`的參數[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet。
+完成這些步驟時**ListAvailable**的參數[Get-module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet 會取得這兩個 Fabrikam 模組。 若要匯入特定模組，請使用`MinimumVersion`或是`RequiredVersion`的參數[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet。
 
 如果這兩個模組匯入相同的工作階段中，模組會包含具有相同名稱的 cmdlet，最後匯入的 cmdlet 會在工作階段中有效。
 

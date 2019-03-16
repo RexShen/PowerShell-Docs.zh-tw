@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ebc0d538-69ac-43d5-837d-b6f47344fc6a
 caps.latest.revision: 5
-ms.openlocfilehash: 328f4eeea27243102679ab5d139181a878165ad6
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 4d921dd62999bc68b80838bafa2a3da8d4df3ebb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429749"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057513"
 ---
 # <a name="getproc03-c-sample-code"></a>GetProc03 (C#) 範例程式碼
 
-下列程式碼顯示實作`Get-Process`cmdlet 可接受管線輸入。 此實作會定義`Name`接受管線輸入參數會從本機電腦，根據提供的名稱，擷取程序資訊，然後使用[System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29)方法，將物件傳送至管線的輸出機制。
+下列程式碼顯示實作`Get-Process`cmdlet 可接受管線輸入。 此實作會定義`Name`接受管線輸入參數會從本機電腦，根據提供的名稱，擷取程序資訊，然後使用[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29)方法，將物件傳送至管線的輸出機制。
 
 > [!NOTE]
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件這個 Get-proc cmdlet 的原始程式檔 (getprov03.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。

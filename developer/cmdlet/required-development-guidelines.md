@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860714"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056510"
 ---
 # <a name="required-development-guidelines"></a>必要的開發指導方針
 
@@ -107,7 +107,7 @@ Cmdlet 屬性中指定的動詞命令必須來自可辨識的 Windows PowerShell
 |%|百分比符號|
 |+|加號|
 |=|等號|
-|~|tilda|
+|~|波狀符號|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>無法使用的參數名稱 (RD03)
 
@@ -122,9 +122,9 @@ Cmdlet 屬性中指定的動詞命令必須來自可辨識的 Windows PowerShell
 > [!NOTE]
 > 如果在 cmdlet 類別的 Cmdlet 屬性指出此 cmdlet 支援呼叫[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，而此 cmdlet 也無法進行的呼叫[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，使用者可能意外地修改系統。
 
-使用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)修改任何系統的方法。 使用者喜好設定並`Whatif`參數控制[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 相反地， [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼叫有潛在危險的修改執行額外的檢查。 這個方法不受任何使用者喜好設定或`Whatif`參數。 如果您的指令程式會呼叫[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它應該有`Force`參數略過這兩種方法的呼叫，並可繼續進行作業。 這很重要，因為它可讓您使用非互動式指令碼和主機中的 cmdlet。
+使用[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)修改任何系統的方法。 使用者喜好設定並`WhatIf`參數控制[System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 相反地， [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼叫有潛在危險的修改執行額外的檢查。 這個方法不受任何使用者喜好設定或`WhatIf`參數。 如果您的指令程式會呼叫[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它應該有`Force`參數略過這兩種方法的呼叫，並可繼續進行作業。 這很重要，因為它可讓您使用非互動式指令碼和主機中的 cmdlet。
 
-如果您的 cmdlet 會支援這些呼叫，使用者可以判斷是否應實際執行動作。 例如， [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet 會呼叫[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法之前停止的重要處理序，包括系統，而 Winlogon，一組和Spoolsrv 程序。
+如果您的 cmdlet 會支援這些呼叫，使用者可以判斷是否應實際執行動作。 例如， [Stop-process](/powershell/module/microsoft.powershell.management/stop-process) cmdlet 會呼叫[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法之前停止的重要處理序，包括系統，而 Winlogon，一組和Spoolsv 程序。
 
 如需有關如何支援這些方法的詳細資訊，請參閱 <<c0> [ 要求確認](./requesting-confirmation-from-cmdlets.md)。
 

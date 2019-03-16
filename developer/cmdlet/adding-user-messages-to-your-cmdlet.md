@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855984"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055031"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>新增使用者訊息到您的 Cmdlet
 
@@ -82,7 +82,7 @@ Cmdlet 可以撰寫數種可在 Windows PowerShell 執行階段向使用者顯�
 
 Cmdlet 建立的第一個步驟一律命名 cmdlet，並實作指令程式的.NET 類別的宣告。 任何類型的指令程式可以從其輸入處理方法，寫入使用者通知因此，在一般情況下，您可以命名使用任何指令動詞，指出此 cmdlet 會執行哪些系統修改此指令程式。 如需已核准的 cmdlet 動詞命令的詳細資訊，請參閱[動詞的 Cmdlet 名稱](./approved-verbs-for-windows-powershell-commands.md)。
 
-停止處理序 cmdlet 被設計來修改系統;因此， [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET 類別的宣告必須包含`SupportsShouldProcess`屬性關鍵字，並設定為`true`。
+停止處理序 cmdlet 被設計來修改系統;因此， [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET 類別的宣告必須包含`SupportsShouldProcess`屬性關鍵字，並設定為`true`。
 
 下列程式碼是此停止程序 cmdlet 類別定義。 如需有關此定義的詳細資訊，請參閱[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md)。
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>覆寫輸入處理方法
 
-您的 cmdlet 必須覆寫輸入處理方法，通常就會[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 此處理序停止外 cmdlet 會覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)輸入處理方法。 在此停止程序 cmdlet 實作中，會呼叫寫入詳細資訊訊息、 偵錯訊息和警告訊息。
+您的 cmdlet 必須覆寫輸入處理方法，通常就會[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 此處理序停止外 cmdlet 會覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)輸入處理方法。 在此停止程序 cmdlet 實作中，會呼叫寫入詳細資訊訊息、 偵錯訊息和警告訊息。
 
 > [!NOTE]
-> 如需有關如何呼叫這個方法[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，請參閱[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md)。
+> 如需有關如何呼叫這個方法[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，請參閱[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 ## <a name="writing-a-verbose-message"></a>寫入詳細資訊訊息
 
-[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法用來撰寫與特定的錯誤情況不相關的一般使用者層級資訊。 系統管理員接著可以使用該資訊以繼續處理其他命令。 此外，視需要應該當地語系化使用這個方法所撰寫的任何資訊。
+[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法用來撰寫與特定的錯誤情況不相關的一般使用者層級資訊。 系統管理員接著可以使用該資訊以繼續處理其他命令。 此外，視需要應該當地語系化使用這個方法所撰寫的任何資訊。
 
-下列程式碼從這個停止程序的指令程式會顯示兩個呼叫[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的覆寫從[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
+下列程式碼從這個停止程序的指令程式會顯示兩個呼叫[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的覆寫從[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>撰寫偵錯訊息
 
-[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法用來撰寫可以用來疑難排解 cmdlet 作業的偵錯訊息。 從輸入處理方法進行呼叫。
+[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法用來撰寫可以用來疑難排解 cmdlet 作業的偵錯訊息。 從輸入處理方法進行呼叫。
 
 > [!NOTE]
-> Windows PowerShell 也會定義`Debug`參數顯示兩者的詳細資訊，及偵錯資訊。 如果您的 cmdlet 會支援這個參數，它不需要呼叫[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)在相同的程式碼呼叫[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell 也會定義`Debug`參數顯示兩者的詳細資訊，及偵錯資訊。 如果您的 cmdlet 會支援這個參數，它不需要呼叫[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)在相同的程式碼會呼叫[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
 
-下列兩個範例停止程序 cmdlet 中的程式碼區段會顯示呼叫[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法的覆寫從[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
+下列兩個範例停止程序 cmdlet 中的程式碼區段會顯示呼叫[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法的覆寫從[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
 
-此偵錯訊息寫入之前，立即[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫。
+此偵錯訊息寫入之前，立即[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫。
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-此偵錯訊息寫入之前，立即[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)呼叫。
+此偵錯訊息寫入之前，立即[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)呼叫。
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell 會自動路由傳送任何[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)呼叫追蹤基礎結構和 cmdlet。 這可讓方法呼叫來追蹤主控應用程式、 檔案，或偵錯工具，而不需要執行此指令程式中任何額外的開發工作。 下列命令列的項目會實作追蹤作業。
+Windows PowerShell 會自動路由傳送任何[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)呼叫追蹤基礎結構和 cmdlet。 這可讓方法呼叫來追蹤主控應用程式、 檔案，或偵錯工具，而不需要執行此指令程式中任何額外的開發工作。 下列命令列的項目會實作追蹤作業。
 
 **PS > 追蹤運算式停止程序-檔案 proc.log-命令停止程序 [記事本]**
 
 ## <a name="writing-a-warning-message"></a>寫入一則警告訊息
 
-[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法用來執行的作業可能會有非預期的結果，例如覆寫唯讀檔案，此 cmdlet 時，寫入一個警告。
+[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法用來執行的作業可能會有非預期的結果，例如覆寫唯讀檔案，此 cmdlet 時，寫入一個警告。
 
-Cmdlet 範例停止程序的下列程式碼會示範呼叫[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法的覆寫從[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
+Cmdlet 範例停止程序的下列程式碼會示範呼叫[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法的覆寫從[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ Cmdlet 範例停止程序的下列程式碼會示範呼叫[System.Management.Aut
 
 ## <a name="writing-a-progress-message"></a>寫入進度訊息
 
-[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)用來寫入進度訊息，當 cmdlet 作業會需要更的長的時間才能完成。 呼叫[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)通過[System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)傳送至裝載的應用程式呈現給使用者的物件。
+[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)用來寫入進度訊息，當 cmdlet 作業會需要更的長的時間才能完成。 呼叫[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)通過[System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)傳送至裝載的應用程式呈現給使用者的物件。
 
 > [!NOTE]
-> 此處理序停止外 cmdlet 不包含呼叫[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法。
+> 此處理序停止外 cmdlet 不包含呼叫[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法。
 
 下列程式碼是由指令程式來嘗試複製項目寫入進度訊息的範例。
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429987"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055116"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
 
@@ -53,7 +53,7 @@ ms.locfileid: "57429987"
 
 - [清除項目](#Clearing-an-Item)
 
-- [附加至 Cler Get-item Cmdlet 的動態參數](#Retrieve-Dynamic-Parameters-for-ClearItem)
+- [將動態參數附加至 Clear-item Cmdlet](#Retrieve-Dynamic-Parameters-for-ClearItem)
 
 - [執行預設動作的項目](#Performing-a-Default-Action-for-an-Item)
 
@@ -155,11 +155,11 @@ Windows PowerShell 執行階段時尋找資料的項目，提供提供者的 Win
 
 - Windows PowerShell 項目提供者時定義的提供者類別，可能會從宣告提供者的功能 ExpandWildcards、 篩選、 Include 或排除， [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別。 在這些情況下，實作[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)必須確定傳遞給方法的路徑符合這些需求。 若要這樣做，方法應該存取適當的屬性，例如， [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性。
 
-- 根據預設，覆寫這個方法不應該設定或寫入物件，而您的使用者隱藏，除非[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 錯誤應該傳送至[System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，若路徑代表隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設為`false`。
+- 根據預設，覆寫這個方法不應該設定或寫入物件，而您的使用者隱藏，除非[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 錯誤應該傳送至[System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，若路徑代表隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設為`false`。
 
-- 您實作[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)，並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來變更資料存放區，例如，刪除檔案時，請確認執行作業。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會傳送給使用者，變更納入考量的任何命令列設定的 Windows PowerShell 執行階段資源的名稱或在決定應該顯示的喜好設定變數。
+- 您實作[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)，並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來變更資料存放區，例如，刪除檔案時，請確認執行作業。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會傳送給使用者，變更納入考量的任何命令列設定的 Windows PowerShell 執行階段資源的名稱或在決定應該顯示的喜好設定變數。
 
-  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，則[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將訊息傳送給使用者，以允許確認是否應該繼續執行作業的意見反應。 若要在呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外的檢查，如有潛在危險的系統修改。
+  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，則[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將訊息傳送給使用者，以允許確認是否應該繼續執行作業的意見反應。 若要在呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外的檢查，如有潛在危險的系統修改。
 
 ## <a name="retrieving-dynamic-parameters-for-setitem"></a>擷取 SetItem 動態參數
 
@@ -183,11 +183,11 @@ Windows PowerShell 執行階段時尋找資料的項目，提供提供者的 Win
 
 - Windows PowerShell 項目提供者時定義的提供者類別，可能會從宣告提供者的功能 ExpandWildcards、 篩選、 Include 或排除， [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別。 在這些情況下，實作[System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)必須確定傳遞給方法的路徑符合這些需求。 若要這樣做，方法應該存取適當的屬性，例如， [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性。
 
-- 根據預設，覆寫這個方法不應該設定或寫入物件，而您的使用者隱藏，除非[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 錯誤應該傳送至[System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，若路徑代表會對使用者隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設為`false`。
+- 根據預設，覆寫這個方法不應該設定或寫入物件，而您的使用者隱藏，除非[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 錯誤應該傳送至[System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，若路徑代表會對使用者隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設為`false`。
 
-- 您實作[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)，並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來變更資料存放區，例如，刪除檔案時，請確認執行作業。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會傳送給使用者，使用 Windows PowerShell 執行階段變更，並處理任何命令列設定或喜好設定資源的名稱在決定應該要顯示的內容變數。
+- 您實作[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)，並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來變更資料存放區，例如，刪除檔案時，請確認執行作業。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會傳送給使用者，使用 Windows PowerShell 執行階段變更，並處理任何命令列設定或喜好設定資源的名稱在決定應該要顯示的內容變數。
 
-  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，則[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將訊息傳送給使用者，以允許確認是否應該繼續執行作業的意見反應。 若要在呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外的檢查，如有潛在危險的系統修改。
+  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，則[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將訊息傳送給使用者，以允許確認是否應該繼續執行作業的意見反應。 若要在呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外的檢查，如有潛在危險的系統修改。
 
 ## <a name="retrieve-dynamic-parameters-for-clearitem"></a>擷取 ClearItem 動態參數
 
@@ -211,7 +211,7 @@ Windows PowerShell 項目提供者可實作[System.Management.Automation.Provide
 
 - Windows PowerShell 項目提供者時定義的提供者類別，可能會從宣告提供者的功能 ExpandWildcards、 篩選、 Include 或排除， [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別。 在這些情況下，實作[System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)必須確定傳遞給方法的路徑符合這些需求。 若要這樣做，方法應該存取適當的屬性，例如， [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性。
 
-- 根據預設，會覆寫這個方法不應該設定或寫入物件對使用者隱藏的除非[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 錯誤應該傳送至[System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，若路徑代表會對使用者隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設為`false`。
+- 根據預設，會覆寫這個方法不應該設定或寫入物件對使用者隱藏的除非[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 錯誤應該傳送至[System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，若路徑代表會對使用者隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設為`false`。
 
 ## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>擷取 InvokeDefaultAction 動態參數
 
@@ -253,7 +253,7 @@ Windows PowerShell 項目提供者可實作[System.Management.Automation.Provide
 
 ### <a name="databaserowinfo-class"></a>DatabaseRowInfo 類別
 
-此項目提供者會定義 DatabaseRowInfo 協助程式類別，表示在資料庫中資料表之資料列。 這個類別是類似[System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo)類別。
+此項目提供者會定義 DatabaseRowInfo 協助程式類別，表示在資料庫中資料表之資料列。 這個類別是類似[System.IO.FileInfo](/dotnet/api/System.IO.FileInfo)類別。
 
 範例提供者會定義 DatabaseRowInfo.GetRows 方法，以傳回指定之資料表的資料列資訊物件的集合。 這個方法包含 try/catch 區塊來攔截例外狀況。 任何錯誤都會造成沒有資料列的資訊。
 

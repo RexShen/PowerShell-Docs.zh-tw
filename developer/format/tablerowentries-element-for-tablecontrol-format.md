@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
-ms.openlocfilehash: d93750f919c1075f173dc9ac70324cc003e36879
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862184"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055728"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableControl 的 TableRowEntries 元素 (格式)
 
@@ -41,7 +41,7 @@ ms.locfileid: "56862184"
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl （格式） 的 TableRowEntries TableRowEntry 項目](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|必要項目。<br /><br /> 定義會顯示在資料表資料列的資料。|
+|[TableControl （格式） 的 TableRowEntries TableRowEntry 項目](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必要項目。<br /><br /> 定義會顯示在資料表資料列的資料。|
 
 ### <a name="parent-elements"></a>父元素
 
@@ -84,6 +84,6 @@ ms.locfileid: "56862184"
 
 [TableControl 項目 （格式）](./tablecontrol-element-format.md)
 
-[TableRowEntry 項目 （格式）](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry 項目 （格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)

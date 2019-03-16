@@ -11,12 +11,12 @@ helpviewer_keywords:
 - attributes [PowerShell SDK], described
 ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
-ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853914"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055167"
 ---
 # <a name="cmdlet-attributes"></a>Cmdlet 屬性
 
@@ -32,7 +32,7 @@ Windows PowerShell 會定義數個屬性，可用來將通用功能加入您的 
 
 [Cmdlet 屬性宣告](./cmdlet-attribute-declaration.md)描述如何為 cmdlet 定義.NET Framework 類別。
 
-[認證屬性宣告](./credential-attribute-declaration.md)描述如何將轉換成的字串輸入的支援加入[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)物件。
+[認證屬性宣告](./credential-attribute-declaration.md)描述如何將轉換成的字串輸入的支援加入[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)物件。
 
 [OutputType 屬性宣告](./outputtype-attribute-declaration.md)描述如何指定 cmdlet 所傳回的.NET Framework 型別。
 

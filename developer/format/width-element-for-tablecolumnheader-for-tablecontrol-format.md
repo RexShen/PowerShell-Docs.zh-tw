@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
 caps.latest.revision: 18
-ms.openlocfilehash: a38fcbef457e69e3ea08d25ba3a9843621036f1e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853104"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055184"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl 之 TableColumnHeader 的寬度元素 (格式)
 
@@ -43,7 +43,7 @@ ms.locfileid: "56853104"
 
 |元素|描述|
 |-------------|-----------------|
-|[TbleControl （格式） 的 TableHeaders TableColumnHeader 項目](./tablecolumnheader-element-format.md)|定義標籤、 寬度和對齊之資料行的資料表的資料。|
+|[TableControl （格式） 的 TableHeaders TableColumnHeader 項目](./tablecolumnheader-element-format.md)|定義標籤、 寬度和對齊之資料行的資料表的資料。|
 
 ## <a name="text-value"></a>文字值
 

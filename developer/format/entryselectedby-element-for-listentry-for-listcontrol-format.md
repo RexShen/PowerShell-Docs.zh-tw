@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854944"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054929"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>ListControl 之 ListEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -44,7 +44,7 @@ ms.locfileid: "56854944"
 |元素|描述|
 |-------------|-----------------|
 |[ListControl （格式） 的 EntrySelectedBy SelectionCondition 項目](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 定義要使用此清單檢視定義必須存在的條件。|
-|[ListControl （格式） 的 EnrtySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定一組使用此清單檢視定義的.NET 型別。|
+|[ListControl （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定一組使用此清單檢視定義的.NET 型別。|
 |[ListControl （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定使用此清單的檢視定義的.NET 型別。|
 
 ### <a name="parent-elements"></a>父元素
@@ -79,7 +79,7 @@ ms.locfileid: "56854944"
 
 [ListControl （格式） 的 EntrySelectedBy SelectionCondition 項目](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListControl （格式） 的 EnrtySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[ListControl （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [ListControl （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430004"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055150"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>建立 Windows PowerShell 屬性提供者
 
@@ -66,7 +66,7 @@ ms.locfileid: "57430004"
 
 若要擷取屬性，提供者必須實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法，以支援來自呼叫`Get-ItemProperty`cmdlet。 這個方法會擷取位於指定的提供者內部路徑 （完整） 項目的屬性。
 
-`providerSpecificPickList`參數指出要擷取的屬性。 如果這個參數是`null`或空的方法應該擷取所有屬性。 颾魤 ㄛ [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)寫入的執行個體[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)物件，表示擷取屬性的屬性包。 此方法應傳回任何項目。
+`providerSpecificPickList`參數指出要擷取的屬性。 如果這個參數是`null`或空的方法應該擷取所有屬性。 颾魤 ㄛ [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)寫入的執行個體[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)物件，表示擷取屬性的屬性包。 此方法應傳回任何項目。
 
 建議的實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)挑選清單中支援的每個元素的屬性名稱的萬用字元展開。 若要這樣做，請使用[System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)類別來執行萬用字元模式比對。
 
@@ -92,7 +92,7 @@ ms.locfileid: "57430004"
 
 ## <a name="setting-properties"></a>設定屬性
 
-若要設定的屬性，Windows PowerShell 屬性提供者必須實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支援來自呼叫`Set-ItemProperty`cmdlet。 這個方法會在指定的路徑，設定一或多個項目的屬性，並視需要提供的屬性會覆寫。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)也會寫入的執行個體[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)物件，表示更新後的屬性包屬性。
+若要設定的屬性，Windows PowerShell 屬性提供者必須實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支援來自呼叫`Set-ItemProperty`cmdlet。 這個方法會在指定的路徑，設定一或多個項目的屬性，並視需要提供的屬性會覆寫。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)也會寫入的執行個體[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)物件，表示更新後的屬性包屬性。
 
 以下是預設實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)從 Windows PowerShell 所提供的 TemplateProvider.cs 檔案。
 
@@ -106,9 +106,9 @@ ms.locfileid: "57430004"
 
 - 根據預設，會覆寫這個方法不應該擷取除非隱藏使用者物件的讀取器[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 應該寫入錯誤，若路徑代表會對使用者隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為`false`。
 
-- 您實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來變更系統狀態，例如，重新命名檔案時，請確認執行作業。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會變更為對使用者而言，Windows PowerShell 執行階段和處理的任何命令列設定或喜好設定變數中的之資源的名稱決定應該要顯示的內容。
+- 您實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來變更系統狀態，例如，重新命名檔案時，請確認執行作業。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)傳送變更，以對使用者而言，Windows PowerShell 執行階段和處理的任何命令列設定或喜好設定變數，決定資源的名稱項目應該會顯示。
 
-  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，如果有潛在危險的系統會遭到修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將確認訊息傳送給使用者，以允許其他意見反應，來表示作業應該繼續執行。
+  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，如果有潛在危險的系統會遭到修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將確認訊息傳送給使用者，以允許其他意見反應，來表示作業應該繼續執行。
 
 ## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>附加 Set-itemproperty cmdlet 的動態參數
 
@@ -134,9 +134,9 @@ ms.locfileid: "57430004"
 
 - 根據預設，會覆寫這個方法不應該擷取除非隱藏使用者物件的讀取器[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為`true`。 應該寫入錯誤，若路徑代表會對使用者隱藏的項目和[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為`false`。
 
-- 您實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來確認執行作業，才能變更系統狀態，例如清除內容。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)傳送給使用者，變更納入考量，任何命令列設定或喜好設定變數中的 Windows PowerShell 執行階段資源的名稱決定應該要顯示的內容。
+- 您實作[System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)並確認它的傳回值之前對資料存放區中的任何變更。 這個方法用來確認執行作業，才能變更系統狀態，例如清除內容。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)傳送給使用者，變更納入考量，任何命令列設定或喜好設定變數中的 Windows PowerShell 執行階段資源的名稱決定應該要顯示的內容。
 
-  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，如果有潛在危險的系統會遭到修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將確認訊息傳送給使用者，以允許其他意見反應，以指出有潛在危險的作業應該繼續執行。
+  若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回`true`，如果有潛在危險的系統會遭到修改， [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法。 這個方法會將確認訊息傳送給使用者，以允許其他意見反應，以指出有潛在危險的作業應該繼續執行。
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>將動態參數附加至 Clear-itemproperty Cmdlet
 

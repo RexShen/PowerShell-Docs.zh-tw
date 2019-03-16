@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: dbb6f7c4cbefeaaaec0747511f50192bcf08c20c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862654"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058074"
 ---
 # <a name="comment-based-help-keywords"></a>註解型說明關鍵字
 
@@ -23,7 +23,7 @@ ms.locfileid: "56862654"
 
 以下是有效的註解型說明關鍵字。 它們會列在通常出現以及其預定的使用說明主題中的順序。 這些關鍵字可以出現在註解型說明中，依任何順序並不會區分大小寫。
 
-請注意，`.ExternalHelp`關鍵字的優先順序高於所有其他註解型說明關鍵字。 當`.ExternalHelp`存在， [Microsoft.Powershell.Commands.Get 說明](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 不會顯示註解型說明，即使找不到說明檔符合關鍵字的值。
+請注意，`.ExternalHelp`關鍵字的優先順序高於所有其他註解型說明關鍵字。 當`.ExternalHelp`存在， [Microsoft.PowerShell.Commands.Get 說明](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 不會顯示註解型說明，即使找不到說明檔符合關鍵字的值。
 
 `.Synopsis` 函式或指令碼的簡短描述。 這個關鍵字可以使用每個主題中的僅一次。
 
@@ -61,9 +61,9 @@ ms.locfileid: "56862654"
 
 `.ExternalHelp` `<XML Help File>` 指定的路徑及/或指令碼或函式以 XML 為基礎的說明檔的名稱。
 
-`.ExternalHelp`關鍵字會指示[Microsoft.Powershell.Commands.Get 說明](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 來取得的指令碼或函式的說明，以 XML 為基礎的檔案中。 **。ExternalHelp**關鍵字時，必須使用以 XML 為基礎的說明檔案的指令碼或函式。 否則，`Get-Help`會不到函式或指令碼的說明檔。
+`.ExternalHelp`關鍵字會指示[Microsoft.PowerShell.Commands.Get 說明](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 來取得的指令碼或函式的說明，以 XML 為基礎的檔案中。 **。ExternalHelp**關鍵字時，必須使用以 XML 為基礎的說明檔案的指令碼或函式。 否則，`Get-Help`會不到函式或指令碼的說明檔。
 
-`.ExternalHelp`關鍵字的優先順序高於所有其他註解型說明關鍵字。 當`.ExternalHelp`存在， [Microsoft.Powershell.Commands.Get 說明](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 不會顯示註解型說明，即使找不到說明檔符合關鍵字的值。
+`.ExternalHelp`關鍵字的優先順序高於所有其他註解型說明關鍵字。 當`.ExternalHelp`存在， [Microsoft.PowerShell.Commands.Get 說明](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)cmdlet 不會顯示註解型說明，即使找不到說明檔符合關鍵字的值。
 
 當匯出指令碼模組，值的函式`.ExternalHelp`應該是不具路徑的檔案名稱。 `Get-Help` 會尋找在模組目錄的地區設定特定子目錄中的檔案。 沒有任何需求，檔案名稱，但最佳做法是使用下列的檔案名稱格式： `<ScriptModule>.psm1-help.xml`。
 

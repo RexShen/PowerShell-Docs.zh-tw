@@ -15,12 +15,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: e010e28ec705932063bb418b260a1087fc3eef9e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856004"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055915"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>新增處理命令列輸入的參數
 
@@ -147,7 +147,7 @@ public string[] Name
 
 如果您的指令程式來處理命令列輸入，它必須覆寫適當的輸入處理方法。 在中引進的基本輸入的處理方法[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
-**Get-proc** cmdlet 會覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理`Name`使用者或指令碼所提供的參數輸入。 如果未提供名稱，這個方法會取得每個要求的處理序名稱，或所有處理序的處理程序。 請注意，在[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，來呼叫[System.Management.Automation.Cmdlet.Writeobject%28System.Object%2Csystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是輸出機制，將輸出傳送到管線的物件。 此呼叫中，第二個參數`enumerateCollection`，設定為`true`告知 Windows PowerShell 執行階段列舉的處理程序物件的輸出陣列和一個處理序一次寫入命令列。
+**Get-proc** cmdlet 會覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理`Name`使用者或指令碼所提供的參數輸入。 如果未提供名稱，這個方法會取得每個要求的處理序名稱，或所有處理序的處理程序。 請注意，在[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，來呼叫[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是輸出機制，將輸出傳送到管線的物件。 此呼叫中，第二個參數`enumerateCollection`，設定為`true`告知 Windows PowerShell 執行階段列舉的處理程序物件的輸出陣列和一個處理序一次寫入命令列。
 
 ```csharp
 protected override void ProcessRecord()

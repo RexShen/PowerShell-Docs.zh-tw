@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855794"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055643"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>建立 Windows PowerShell 磁碟機提供者
 
@@ -61,7 +61,7 @@ ms.locfileid: "56855794"
 
 所有 Windows PowerShell 提供者會被都視為無狀態，這表示您的磁碟機提供者，必須建立呼叫您的提供者時，會將 Windows PowerShell 執行階段所需的任何狀態資訊。
 
-此磁碟機提供者、 狀態資訊會包含做為一部分的磁碟機資訊會保留資料庫的連接。 以下是示範如何將這項資訊儲存在程式碼[System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)描述磁碟機的物件：
+此磁碟機提供者、 狀態資訊會包含做為一部分的磁碟機資訊會保留資料庫的連接。 以下是示範如何將這項資訊儲存在程式碼[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)描述磁碟機的物件：
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ ms.locfileid: "56855794"
 
 這個方法的覆寫應該執行下列作業：
 
-- 確認[System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)成員存在，而且可以建立連接到資料存放區。
+- 確認[System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)成員存在，而且可以建立連接到資料存放區。
 
 - 建立磁碟機，並填入連接成員支援`New-PSDrive`cmdlet。
 
-- 驗證[System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)建議的磁碟機的物件。
+- 驗證[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)建議的磁碟機的物件。
 
-- 修改[System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件，描述與任何必要的效能或可靠性的詳細資訊，磁碟機，或呼叫端使用的磁碟機提供額外的資料。
+- 修改[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件，描述與任何必要的效能或可靠性的詳細資訊，磁碟機，或呼叫端使用的磁碟機提供額外的資料。
 
-- 處理使用的失敗[System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，然後傳回`null`。
+- 處理使用的失敗[System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法，然後傳回`null`。
 
   這個方法傳回的磁碟機資訊傳遞至方法或它的提供者特定版本。
 

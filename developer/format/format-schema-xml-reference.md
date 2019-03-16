@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857784"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056646"
 ---
 # <a name="format-schema-xml-reference"></a>格式結構描述 XML 參考
 
@@ -81,7 +81,7 @@ ms.locfileid: "56857784"
 
 [DefaultSettings 項目 （格式）](./defaultsettings-element-format.md)定義套用至的格式化檔案的所有檢視的一般設定。 一般設定包括顯示錯誤，定義集合展開的資料表中的文字換行。
 
-[DisplayError 項目 (Frmat)](./displayerror-element-format.md)指定字串 #ERR 顯示一段資料時，發生錯誤時顯示。
+[DisplayError 項目 （格式）](./displayerror-element-format.md)指定字串 #ERR 顯示一段資料時，發生錯誤時顯示。
 
 [EntrySelectedBy CustomEntry 組態 （格式） 的控制項的項目](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)定義使用的通用控制項或條件必須存在於要使用這個控制項定義的.NET 類型。 定義可供的格式化檔案中的所有檢視通用控制項時，會都使用這個項目。
 
@@ -235,7 +235,7 @@ ms.locfileid: "56857784"
 
 [GroupBy （格式） 的 SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-groupby-format.md)指定觸發條件的.NET 屬性。 當這個屬性是存在，或當其評估結果為`true`、 符合條件，和在使用定義。 定義新的群組物件的顯示方式時，會使用這個項目。
 
-[ListEntry （格式） 的 EmtrySelectedBy 的 SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定觸發條件的.NET 屬性。 當這個屬性是存在，或當其評估結果為`true`、 符合條件，和使用清單項目。
+[ListEntry （格式） 的 EntrySelectedBy 的 SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定觸發條件的.NET 屬性。 當這個屬性是存在，或當其評估結果為`true`、 符合條件，和使用清單項目。
 
 [TableRowEntry （格式） 的 EntrySelectedBy 的 SelectionCondition PropertyName 元素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)指定觸發條件的.NET 屬性。 當這個屬性是存在，或當其評估結果為`true`、 符合條件，並使用資料表項目。
 
@@ -363,7 +363,7 @@ ms.locfileid: "56857784"
 
 [TableRowEntries 項目 （格式）](./tablerowentries-element-for-tablecontrol-format.md)定義之資料表的資料列。
 
-[TableRowEntry 項目 （格式）](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)定義會顯示在資料表資料列的資料。
+[TableRowEntry 項目 （格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)定義會顯示在資料表資料列的資料。
 
 [CustomItem 組態 （格式） 的控制項的文字項目](./text-element-for-customitem-for-controls-for-configuration-format.md)會加入至控制項，例如標籤，即可顯示資料的指定文字方括號來括住的資料和空格來縮排的資料。 定義可供的格式化檔案中的所有檢視通用控制項時，會都使用這個項目。
 
@@ -427,7 +427,7 @@ ms.locfileid: "56857784"
 
 [Width 元素 （格式）](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)定義資料行的寬度 （以字元為單位）。
 
-[包裝項目 （格式）](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)指定超過欄寬度的文字會顯示在下一行。
+[包裝項目 （格式）](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)指定超過欄寬度的文字會顯示在下一行。
 
 [WrapTables 項目 （格式）](./wraptables-element-format.md)指定表格儲存格的資料會移至下一行，是否資料的長度超過資料行的寬度。
 

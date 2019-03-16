@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857684"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057938"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet 錯誤報告
 
@@ -43,7 +43,7 @@ ms.locfileid: "56857684"
 
 ## <a name="reporting-nonterminating-errors"></a>報告非終止錯誤
 
-報告非終止錯誤應該永遠是 cmdlet 的實作內[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，或有[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 藉由呼叫報告這些錯誤類型[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)再傳送至錯誤資料流的錯誤記錄的方法。
+報告非終止錯誤應該永遠是 cmdlet 的實作內[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，或有[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 藉由呼叫報告這些錯誤類型[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)再傳送至錯誤資料流的錯誤記錄的方法。
 
 ## <a name="reporting-terminating-errors"></a>報告的終止錯誤
 
@@ -53,7 +53,7 @@ ms.locfileid: "56857684"
 
 ## <a name="error-records"></a>錯誤記錄
 
-Windows PowerShell 說明使用非終止錯誤條件[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。 每個[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件會提供錯誤類別目錄資訊、 選擇性目標物件和錯誤狀況的相關詳細資料。
+Windows PowerShell 說明使用非終止錯誤條件[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。 每個[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件會提供錯誤類別目錄資訊、 選擇性目標物件和錯誤狀況的相關詳細資料。
 
 ### <a name="error-identifiers"></a>錯誤識別碼
 
@@ -61,7 +61,7 @@ Windows PowerShell 說明使用非終止錯誤條件[System.Management.Automatio
 
 指定錯誤的識別碼時，應該遵循下列指導方針。
 
-- 不同、 非常特定，錯誤識別碼指派給不同的程式碼路徑。 每個呼叫的程式碼路徑[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或是[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)應該有自己的錯誤識別碼。
+- 不同、 非常特定，錯誤識別碼指派給不同的程式碼路徑。 每個呼叫的程式碼路徑[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或是[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)應該有自己的錯誤識別碼。
 
 - 錯誤識別碼應該是唯一的終止和非終止錯誤的 CLR 例外狀況類型。
 

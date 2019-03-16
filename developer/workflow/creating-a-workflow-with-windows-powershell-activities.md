@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853464"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055422"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>透過 Windows PowerShell 活動建立工作流程
 
@@ -33,9 +33,9 @@ ms.locfileid: "56853464"
 
 2. 建立名為引數`ComputerName`的引數類型`String[]`。 這個引數表示要檢查和加入的電腦名稱。
 
-3. 建立名為引數`DomainCred`型別的[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)。 這個引數代表有權將電腦加入網域的網域帳戶的網域認證。
+3. 建立名為引數`DomainCred`型別的[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)。 這個引數代表有權將電腦加入網域的網域帳戶的網域認證。
 
-4. 建立名為引數`MachineCred`型別的[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)。 這個引數代表檢查，並將 在電腦上的系統管理員的認證。
+4. 建立名為引數`MachineCred`型別的[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)。 這個引數代表檢查，並將 在電腦上的系統管理員的認證。
 
 5. 新增**ParallelForEach**活動內**順序**活動。 請輸入`comp`並`ComputerName`中的文字方塊，讓迴圈逐一查看的項目`ComputerName`陣列。
 

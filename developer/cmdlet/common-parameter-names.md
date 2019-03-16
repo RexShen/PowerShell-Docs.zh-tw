@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863644"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059655"
 ---
 # <a name="common-parameter-names"></a>一般參數名稱
 
@@ -30,7 +30,7 @@ ms.locfileid: "56863644"
 
 資料類型：SwitchParameter
 
-此參數會指定是否程式設計人員層級偵錯訊息，可以在命令列中顯示。 這些訊息是針對疑難排解 cmdlet，作業，藉由呼叫會產生[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 偵錯訊息不需要當地語系化。
+此參數會指定是否程式設計人員層級偵錯訊息，可以在命令列中顯示。 這些訊息是針對疑難排解 cmdlet，作業，藉由呼叫會產生[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 偵錯訊息不需要當地語系化。
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (別名： ea)
 
@@ -60,7 +60,7 @@ ms.locfileid: "56863644"
 
 資料類型：SwitchParameter
 
-此參數會指定此 cmdlet 是否會寫入說明可以在命令列中顯示的訊息。 這些訊息要提供給使用者時，其他說明，而且會產生藉由呼叫[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。
+此參數會指定此 cmdlet 是否會寫入說明可以在命令列中顯示的訊息。 這些訊息要提供給使用者時，其他說明，而且會產生藉由呼叫[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (別名： wa)
 

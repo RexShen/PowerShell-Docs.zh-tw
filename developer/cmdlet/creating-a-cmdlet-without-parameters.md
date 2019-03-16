@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 75a45e539b45b50714951f2b992d9ecf69de4664
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860644"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054691"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>建立不含參數的 Cmdlet
 
@@ -70,7 +70,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-請注意，類別定義之前[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性，且語法`[Cmdlet(verb, noun, ...)]`，用來識別此指令程式的類別。 這是唯一的必要的屬性，所有的 cmdlet，並可讓 Windows PowerShell 執行階段正確地呼叫它們。 您可以設定屬性的關鍵字，以進一步在必要時在類別宣告。 請注意，我們的範例 GetProcCommand 類別的屬性宣告會宣告只有名詞與動詞名稱 Get-proc cmdlet。
+請注意，類別定義之前[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性，且語法`[Cmdlet(verb, noun, ...)]`，用來識別此指令程式的類別。 這是唯一的必要的屬性，所有的 cmdlet，並可讓 Windows PowerShell 執行階段正確地呼叫它們。 您可以設定屬性的關鍵字，以進一步在必要時在類別宣告。 請注意，我們的範例 GetProcCommand 類別的屬性宣告會宣告只有名詞與動詞名稱 Get-proc cmdlet。
 
 > [!NOTE]
 > 針對所有的 Windows PowerShell 屬性類別，您可以設定的關鍵字會對應至屬性類別的屬性中。
@@ -78,27 +78,27 @@ Public Class GetProcCommand
 在命名類別指令程式時，最好以反映 cmdlet 名稱中的類別名稱。 若要這樣做，請使用格式"VerbNounCommand"並取代 「 動詞 」 和 「 名詞 」 cmdlet 名稱中使用的名詞與動詞命令。 範例 Get-proc cmdlet 在先前的類別定義中所示定義一個叫做 GetProcCommand，衍生自類別[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)基底類別。
 
 > [!IMPORTANT]
-> 如果您想要定義直接存取 Windows PowerShell 執行階段的 cmdlet，您的.NET 類別應該衍生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。 如需有關這個類別的詳細資訊，請參閱 <<c0> [ 該定義的參數集建立 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
+> 如果您想要定義直接存取 Windows PowerShell 執行階段的 cmdlet，您的.NET 類別應該衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。 如需有關這個類別的詳細資訊，請參閱 <<c0> [ 該定義的參數集建立 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
 
 > [!NOTE]
 > Cmdlet 類別必須明確標示為公用。 未標示為公用的類別會預設為內部，並且將找不到 Windows PowerShell 執行階段。
 
-Windows PowerShell 會使用[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)其 cmdlet 類別的命名空間。 建議將您的 API 命名空間，例如 xxx.PS.Commands 命令命名空間中的 cmdlet 類別。
+Windows PowerShell 會使用[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)其 cmdlet 類別的命名空間。 建議將您的 API 命名空間，例如 xxx.PS.Commands 命令命名空間中的 cmdlet 類別。
 
 ## <a name="overriding-an-input-processing-method"></a>覆寫輸入處理方法
 
 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)類別提供三種主要的輸入的處理方法，至少一個 cmdlet 必須覆寫。 如需有關 Windows PowerShell 如何處理記錄的詳細資訊，請參閱 < [Windows PowerShell 的運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
 
-針對所有類型的輸入，Windows PowerShell 執行階段會呼叫[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)以便處理。 如果您的 cmdlet 都必須執行某些前置處理或安裝程式，它可以執行這項操作藉由覆寫這個方法。
+針對所有類型的輸入，Windows PowerShell 執行階段會呼叫[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)以便處理。 如果您的 cmdlet 都必須執行某些前置處理或安裝程式，它可以執行這項操作藉由覆寫這個方法。
 
 > [!NOTE]
 > Windows PowerShell 會使用 「 記錄 」 這個詞彙來描述的一組 cmdlet 呼叫時提供的參數值。
 
-如果您的 cmdlet 會接受管線輸入，則必須覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，並選擇性地[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 比方說，cmdlet 可能會覆寫這兩種方法會收集所有的輸入使用如果[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)再作輸入為整體，而不是一個項目一次為`Sort-Object`cmdlet 會執行。
+如果您的 cmdlet 會接受管線輸入，則必須覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，並選擇性地[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 比方說，cmdlet 可能會覆寫這兩種方法會收集所有的輸入使用如果[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)再作輸入為整體，而不是一個項目一次為`Sort-Object`cmdlet 會執行。
 
-如果您的 cmdlet 不接受管線輸入，它應該覆寫[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 請注意，這個方法經常用來取代[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)當 cmdlet 能用在上一個項目一次在此情況下，排序的 cmdlet。
+如果您的 cmdlet 不接受管線輸入，它應該覆寫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 請注意，這個方法經常用來取代[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)當 cmdlet 能用在上一個項目一次在此情況下，排序的 cmdlet。
 
-此範例的 Get-proc cmdlet 必須接收管線輸入，因為它會覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，並使用的預設實作[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)並[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)覆寫擷取處理序，並將它們寫入命令列中使用[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。
+此範例的 Get-proc cmdlet 必須接收管線輸入，因為它會覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，並使用的預設實作[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)覆寫擷取處理序，並將它們寫入命令列中使用[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法。
 
 ```csharp
 protected override void ProcessRecord()
@@ -136,14 +136,14 @@ End Sub 'ProcessRecord
 
 - 處理方法的輸入也可以接收來自管線上游 cmdlet 的輸出物件的輸入。 如需詳細資訊，請參閱 <<c0> [ 建立可處理程序管線輸入的 Cmdlet](./adding-parameters-that-process-pipeline-input.md)。 請注意您的指令程式可以接收來自命令列組合的輸入和管線的來源。
 
-- 長的時間，或根本不可能不會傳回下游的 cmdlet。 基於這個理由的輸入處理方法，在您的 cmdlet 不應保留的鎖定期間呼叫[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)，特別是，範圍會延伸超出指令程式執行個體的鎖定。
+- 長的時間，或根本不可能不會傳回下游的 cmdlet。 基於這個理由的輸入處理方法，在您的 cmdlet 不應保留的鎖定期間呼叫[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)，特別是，範圍會延伸超出指令程式執行個體的鎖定。
 
 > [!IMPORTANT]
 > 指令程式應該永遠不會呼叫[System.Console.Writeline*](/dotnet/api/System.Console.WriteLine)或其對等項目。
 
-- 您的 cmdlet 可能會有物件變數，以完成後清除處理 (例如，如果開啟檔案控制代碼，以[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，並維持控制代碼，已開啟供[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord))。 請務必記住，Windows PowerShell 執行階段不會一律呼叫[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，它應該執行物件的清除。
+- 您的 cmdlet 可能會有物件變數，以完成後清除處理 (例如，如果開啟檔案控制代碼，以[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法，並維持控制代碼，已開啟供[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord))。 請務必記住，Windows PowerShell 執行階段不會一律呼叫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，它應該執行物件的清除。
 
-例如， [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)可能不會呼叫如果 cmdlet 會中途取消或終止錯誤發生在此指令程式的任何部分。 因此，需要物件清除 cmdlet 應該實作完整[System.Idisposable](/dotnet/api/System.IDisposable)模式，包括完成項，可讓執行階段呼叫兩者[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)並[System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)結尾的處理。
+例如， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)可能不會呼叫如果 cmdlet 會中途取消或終止錯誤發生在此指令程式的任何部分。 因此，需要物件清除 cmdlet 應該實作完整[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，可讓執行階段呼叫兩者[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)並[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)結尾的處理。
 
 ## <a name="code-sample"></a>程式碼範例
 

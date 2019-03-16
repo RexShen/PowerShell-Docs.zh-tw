@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
-ms.openlocfilehash: 2c6a4bca03ee7f62371cbc296f854464167e5a62
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cc014487a680747ad59437052f79d4576154a1cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857394"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059672"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Windows PowerShell 主機快速入門
 
@@ -112,7 +112,7 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 
 ### <a name="creating-an-initialsessionstate-object"></a>建立 InitialSessionState 物件
 
-若要建立自訂的 runspace，您必須先建立[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。 在下列範例中，我們會使用[System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)後建立的預設值建立 ruspace [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+若要建立自訂的 runspace，您必須先建立[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。 在下列範例中，我們會使用[System.Management.Automation.Runspaces.RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)後建立的預設值建立 runspace [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
 ```csharp
 InitialSessionState iss = InitialSessionState.CreateDefault();
@@ -126,7 +126,7 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>限制的 runspace
 
-在上述範例中，我們已建立預設值[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)載入所有內建的核心 Windows PowerShell 的物件。 我們可能也會有稱為[System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)方法來建立會載入在 Mirosoft.PowerShell.Core 命令 InitialSessionState 物件嵌入式管理單元。 若要建立更受限的 runspace，您必須建立空[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)藉由呼叫物件[System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)方法，然後將命令新增至 InitialSessionState。
+在上述範例中，我們已建立預設值[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)載入所有內建的核心 Windows PowerShell 的物件。 我們可能也會有稱為[System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)方法用來建立 InitialSessionState 物件，會載入只有 Microsoft.PowerShell.Core 中的命令嵌入式管理單元。 若要建立更受限的 runspace，您必須建立空[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)藉由呼叫物件[System.Management.Automation.Runspaces.InitialSessionState.Create*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)方法，然後將命令新增至 InitialSessionState。
 
 使用您指定的命令會載入 runspace 提供大幅改善的效能。
 

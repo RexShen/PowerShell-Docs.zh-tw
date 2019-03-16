@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 71c3f1f6-6fe2-42f1-8260-6974d3871748
 caps.latest.revision: 11
-ms.openlocfilehash: f857f5944b9e971215a06d6f5c39f7c22c6cf99f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 7d526372cf80327b3fb9b79b6e83429c57780183
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853294"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059009"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
 
 指定觸發條件的.NET 屬性。 當這個屬性是存在，或當其評估結果為`true`、 符合條件，和使用清單項目。
 
-組態項目 （格式） ViewDefinitions 項目 （格式） 檢視項目 （格式） ListControl 項目 （格式） ListEntries 項目 （格式） ListEntry 項目 （格式） EntrySelectedBy 項目用於 ListEntry （格式） SelectionCondition 元素EntrySelectedBy ListEntry （格式） 的 EmtrySelectedBy 的 SelectionCondition ListEntry （格式） PropertyName 元素
+組態項目 （格式） ViewDefinitions 項目 （格式） 檢視項目 （格式） ListControl 項目 （格式） ListEntries 項目 （格式） ListEntry 項目 （格式） EntrySelectedBy 項目用於 ListEntry （格式） SelectionCondition 元素EntrySelectedBy ListEntry （格式） 的 EntrySelectedBy 的 SelectionCondition ListEntry （格式） PropertyName 元素
 
 ## <a name="syntax"></a>語法
 

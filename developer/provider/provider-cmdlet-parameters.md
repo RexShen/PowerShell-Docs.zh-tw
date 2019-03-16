@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: d0fb81ee1ca1f80e216c021e1bd64771b8de4dc3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860114"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057037"
 ---
 # <a name="provider-cmdlet-parameters"></a>提供者 Cmdlet 參數
 
@@ -29,9 +29,9 @@ ms.locfileid: "56860114"
 
 `Clear-ItemProperty` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet`Path`和`Name`的參數`Clear-ItemProperty`藉由實作的 cmdlet [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法。
 
-`Copy-Item` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet `Path`， `Destination`，和`Recurse`的參數`Copy-Item`藉由實作的 cmdlet [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法。
+`Copy-Item` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet `Path`， `Destination`，和`Recurse`的參數`Copy-Item`藉由實作的 cmdlet [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法。
 
-您可定義您的提供者會使用傳遞至的值的方式取得 ChildItems cmdlet`Path`和`Recures`的參數`Get-ChildItem`藉由實作的 cmdlet [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)並[System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法。
+您可定義您的提供者會使用傳遞至的值的方式取得 ChildItems cmdlet`Path`和`Recurse`的參數`Get-ChildItem`藉由實作的 cmdlet [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)並[System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法。
 
 `Get-Content` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet`Path`參數`Get-Content`cmdlet，藉由實作[System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法。
 
@@ -45,7 +45,7 @@ ms.locfileid: "56860114"
 
 `New-Item` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet `Path`， `ItemType`，和`Value`的參數`New-Item`藉由實作的 cmdlet [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法。
 
-`New-ItemProperty` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet `Path`， `Name`， `PropertyType`，和`Value`參數`New-ItemProperty`藉由實作的 cmdlet [Microsoft.Powershell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)方法。
+`New-ItemProperty` 您可以定義如何您的提供者會使用的值傳遞給 cmdlet `Path`， `Name`， `PropertyType`，和`Value`參數`New-ItemProperty`藉由實作的 cmdlet [Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)方法。
 
 `Remove-Item` 您可以定義如何您的提供者會使用的值傳遞給`Path`並`Recurse`的參數`Remove-Item`藉由實作的 cmdlet [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法。
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
-ms.openlocfilehash: d4564b51b74422cdaec3878b227ffc6be7c97949
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855884"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055898"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>如何從 Cmdlet 內叫用 Cmdlet
 
@@ -24,7 +24,7 @@ Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> 您可以叫用直接衍生自這些指令程式[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)類別。 您無法叫用的 cmdlet，衍生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。
+> 您可以叫用直接衍生自這些指令程式[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)類別。 您無法叫用的 cmdlet，衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>若要叫用 cmdlet 中的 cmdlet
 
@@ -36,7 +36,7 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. 在輸入處理方法的 cmdlet 中，建立要叫用 cmdlet 的新執行個體。 在此範例中，類型的物件[Microsoft.Powershell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand)建立以及包含此指令程式會叫用時所使用的引數的字串。
+2. 在輸入處理方法的 cmdlet 中，建立要叫用 cmdlet 的新執行個體。 在此範例中，類型的物件[Microsoft.PowerShell.Commands.Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand)建立以及包含此指令程式會叫用時所使用的引數的字串。
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
@@ -55,7 +55,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>範例
 
-在此範例中， `Get-Process` cmdlet 會從叫用[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)指令程式的方法。
+在此範例中， `Get-Process` cmdlet 會從叫用[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)指令程式的方法。
 
 ```csharp
 using System;

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
-ms.openlocfilehash: faa9ba78397e713400f6072df9915f20d966bb37
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859444"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056901"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)
 
@@ -47,7 +47,7 @@ TableColumnItems>
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl （格式） 的 TableRowEntries TableRowEntry 項目](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|定義會顯示在資料表資料列的資料。|
+|[TableControl （格式） 的 TableRowEntries TableRowEntry 項目](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定義會顯示在資料表資料列的資料。|
 
 ## <a name="remarks"></a>備註
 
@@ -80,6 +80,6 @@ A `TableColumnItem` ，則需要每個資料行的資料列元素。 第一個�
 
 [TableColumnItem 項目 （格式）](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
 
-[TableRowEntry 項目 （格式）](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry 項目 （格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)

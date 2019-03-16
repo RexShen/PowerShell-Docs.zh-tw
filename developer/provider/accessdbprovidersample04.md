@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
-ms.openlocfilehash: fd013384a4b588bcdb397d7771425fe5c031c48f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856694"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057615"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856694"
 
 - 定義提供者類別衍生自[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別。
 
-- 覆寫[System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，以變更的行為`Copy-Item`cmdlet 可讓使用者從一個位置的項目複製到另一個。 (此範例不會顯示如何加入動態參數，以便`Copy-Item`指令程式。)
+- 覆寫[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，以變更的行為`Copy-Item`cmdlet 可讓使用者從一個位置的項目複製到另一個。 (此範例不會顯示如何加入動態參數，以便`Copy-Item`指令程式。)
 
 - 覆寫[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法來取得 ChildItems cmdlet，可讓使用者擷取父項目的子項目的行為變更. （此範例不會顯示如何將動態參數新增至 Get ChildItems cmdlet）。
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2039e181becd1b39fc3d6cf0cdbcf0c20e9fc206
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863174"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056425"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>撰寫 Windows PowerShell 主機應用程式
 
@@ -29,7 +29,7 @@ ms.locfileid: "56863174"
 
 [新增和叫用命令](./adding-and-invoking-commands.md)說明如何建立和執行命令管線中主應用程式...
 
-[建立遠端 runspace](./creating-remote-runspaces.md) Expains 如何連接到遠端電腦的 runspace。
+[建立遠端 runspace](./creating-remote-runspaces.md)說明如何連線到遠端電腦的 runspace。
 
 [建立自訂使用者介面](./creating-a-custom-user-interface.md)介紹自訂使用者介面，並提供範例連結。
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 6171f96d66d0b2aa0fd9cb2a939768287c4bcb87
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859384"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059519"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>建立 Cmdlet 以存取資料存放區
 
-本節說明如何建立指令程式來存取儲存的資料，透過 Windows PowerShell 提供者。 這種類型的指令程式會使用 Windows PowerShell 執行階段的 Windows PowerShell 提供者基礎結構，因此，在 cmdlet 類別必須衍生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。
+本節說明如何建立指令程式來存取儲存的資料，透過 Windows PowerShell 提供者。 這種類型的指令程式會使用 Windows PowerShell 執行階段的 Windows PowerShell 提供者基礎結構，因此，在 cmdlet 類別必須衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。
 
 此處所述選取 Str cmdlet 可以找出並選取檔案或物件中的字串。 用來識別字串的模式可以透過明確指定`Path`參數的 cmdlet 或隱含地透過`Script`參數。
 
@@ -45,7 +45,7 @@ ms.locfileid: "56859384"
 
 Cmdlet 建立的第一個步驟一律命名 cmdlet，並實作指令程式的.NET 類別的宣告。 這個指令程式會偵測到特定的字串，所以在這裡選擇的指令動詞名稱是 「 Select 」，所定義[System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)類別。 名詞 」 名稱"Str"，因為此 cmdlet 會作用在字串。 在下列宣告中，請注意 cmdlet 動詞和名詞名稱會反映在 cmdlet 類別的名稱。 如需已核准的 cmdlet 動詞命令的詳細資訊，請參閱[動詞的 Cmdlet 名稱](./approved-verbs-for-windows-powershell-commands.md)。
 
-這個指令程式的.NET 類別必須衍生自[System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別，因為它會提供 Windows PowerShell 執行階段公開 （expose） 的 Windows PowerShell 提供者所需的支援基礎結構。 請注意，此 cmdlet 也會利用.NET Framework 規則運算式類別，例如[System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex)。
+這個指令程式的.NET 類別必須衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別，因為它會提供 Windows PowerShell 執行階段公開 （expose） 的 Windows PowerShell 提供者所需的支援基礎結構。 請注意，此 cmdlet 也會利用.NET Framework 規則運算式類別，例如[System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex)。
 
 下列程式碼會為此選取 Str cmdlet 類別定義。
 
@@ -117,7 +117,7 @@ private WildcardPattern[] wildcardPattern;
 
 此 cmdlet 會定義下列可用來修改此指令程式的搜尋功能的支援參數。
 
-`Script`參數指定可用來提供此 cmdlet 的替代的搜尋機制的指令碼區塊。 指令碼必須包含用來比對的模式，並傳回[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)物件。 請注意，此參數也會識別的 unique 參數`ScriptParameterSet`參數集。 當 Windows PowerShell 執行階段便會看到此參數時，它會使用屬於的參數`ScriptParameterSet`參數集。
+`Script`參數指定可用來提供此 cmdlet 的替代的搜尋機制的指令碼區塊。 指令碼必須包含用來比對的模式，並傳回[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)物件。 請注意，此參數也會識別的 unique 參數`ScriptParameterSet`參數集。 當 Windows PowerShell 執行階段便會看到此參數時，它會使用屬於的參數`ScriptParameterSet`參數集。
 
 ```csharp
 [Parameter(
@@ -195,13 +195,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>宣告參數集
 
-此 cmdlet 會使用兩個參數集 (`ScriptParameterSet`和`PatternParameterSet`，這是預設) 當做用於資料存取的兩個參數集的名稱。 `PatternParameterSet` 是預設參數集，當使用`Pattern`指定參數。 `ScriptParameterSet` 使用者指定替代的搜尋機制時，會使用`Script`參數。 如需參數集的詳細資訊，請參閱[將參數集加入至指令程式](./adding-parameter-sets-to-a-cmdlet.md)。
+此 cmdlet 會使用兩個參數集 (`ScriptParameterSet`和`PatternParameterSet`，這是預設值) 當做用於資料存取的兩個參數集的名稱。 `PatternParameterSet` 是預設參數集，當使用`Pattern`指定參數。 `ScriptParameterSet` 使用者指定替代的搜尋機制時，會使用`Script`參數。 如需參數集的詳細資訊，請參閱[將參數集加入至指令程式](./adding-parameter-sets-to-a-cmdlet.md)。
 
 ## <a name="overriding-input-processing-methods"></a>覆寫輸入處理方法
 
-一或多個的輸入處理方法，必須覆寫 Cmdlet [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。 如需有關輸入的處理方法的詳細資訊，請參閱 <<c0> [ 建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
+一或多個的輸入處理方法，必須覆寫 Cmdlet [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。 如需有關輸入的處理方法的詳細資訊，請參閱 <<c0> [ 建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
-此 cmdlet 會覆寫[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法來建立陣列的編譯的規則運算式，在啟動時。 這會增加在不使用簡單比對的搜尋時的效能。
+此 cmdlet 會覆寫[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法來建立陣列的編譯的規則運算式，在啟動時。 這會增加在不使用簡單比對的搜尋時的效能。
 
 ```csharp
 protected override void BeginProcessing()
@@ -280,7 +280,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-此 cmdlet 也會覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法來處理使用者進行命令列的字串選取項目。 它將結果字串選取範圍的自訂物件的形式寫入藉由呼叫私用**MatchString**方法。
+此 cmdlet 也會覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法來處理使用者進行命令列的字串選取項目。 它將結果字串選取範圍的自訂物件的形式寫入藉由呼叫私用**MatchString**方法。
 
 ```csharp
 protected override void ProcessRecord()
@@ -301,7 +301,7 @@ protected override void ProcessRecord()
     {
       WriteVerbose("Processing path " + path.Path);
 
-      // Check if the path represens one of the items to be
+      // Check if the path represents one of the items to be
       // excluded. If so, continue to next path.
       if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
          continue;
@@ -357,7 +357,7 @@ protected override void ProcessRecord()
           }
           else
           {
-            // Add the block(line) that did notmatch to the
+            // Add the block(line) that did not match to the
             // collection of non matches , which will be stored
             // in the SessionState variable $NonMatches
             nonMatches.Add(items[0]);
@@ -391,7 +391,7 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>存取內容
 
-您的 cmdlet 必須開啟，使其可以存取資料，Windows PowerShell 路徑所指定的提供者。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)物件的存取提供者使用的 runspace，而[System.Management.Automation.Pscmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)屬性cmdlet 用來開啟提供者。 擷取提供內容的存取權[System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics)開啟提供者的物件。
+您的 cmdlet 必須開啟，使其可以存取資料，Windows PowerShell 路徑所指定的提供者。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)物件的存取提供者使用的 runspace，而[System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)屬性cmdlet 用來開啟提供者。 擷取提供內容的存取權[System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics)開啟提供者的物件。
 
 此範例選取 Str cmdlet 會使用[System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)屬性公開要掃描的內容。 它可以呼叫[System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader)方法，並傳遞必要的 Windows PowerShell 路徑。
 
@@ -436,7 +436,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// This parameter must specify a PowerShell that indicates the
     /// PowerShell provider that is used to access the objects to be
     /// searched for matching patterns. This parameter should also have
-    /// a PSPath alias to provide consistancy with other cmdlets that use
+    /// a PSPath alias to provide consistency with other cmdlets that use
     /// PowerShell providers.
     /// </summary>
     /// <value>Path of the object(s) to search.</value>
@@ -517,7 +517,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Declare a switch parameter that specifies if a case-sensitive
     /// search is performed.  If not (default), a case-insensitive search
-    /// is perfored.
+    /// is performed.
     /// </summary>
     /// <value>If True, a case-sensitive search is made.</value>
     [Parameter]
@@ -689,7 +689,7 @@ namespace Microsoft.Samples.PowerShell.Commands
         {
           WriteVerbose("Processing path " + path.Path);
 
-          // Check if the path represens one of the items to be
+          // Check if the path represents one of the items to be
           // excluded. If so, continue to next path.
           if (!MeetsIncludeExcludeCriteria(path.ProviderPath))
              continue;
@@ -745,7 +745,7 @@ namespace Microsoft.Samples.PowerShell.Commands
               }
               else
               {
-                // Add the block(line) that did notmatch to the
+                // Add the block(line) that did not match to the
                 // collection of non matches , which will be stored
                 // in the SessionState variable $NonMatches
                 nonMatches.Add(items[0]);
@@ -874,7 +874,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     /// <summary>
     /// Check whether the supplied name meets the include/exclude criteria.
     /// That is - it's on the include list if the include list was
-    /// specified, and not on the exclude list if the explude list was specified.
+    /// specified, and not on the exclude list if the exclude list was specified.
     /// </summary>
     /// <param name="path">path to validate</param>
     /// <returns>True if the path is acceptable.</returns>
@@ -1078,7 +1078,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     }
 
     /// <summary>
-    /// Specifiy the description of the PowerShell snap-in.
+    /// Specify the description of the PowerShell snap-in.
     /// </summary>
     public override string Description
     {

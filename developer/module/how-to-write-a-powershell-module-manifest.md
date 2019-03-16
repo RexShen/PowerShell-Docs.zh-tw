@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859204"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059485"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何撰寫 PowerShell 模組資訊清單
 
@@ -77,7 +77,7 @@ A*模組資訊清單*是 Windows PowerShell 資料檔 (.psd1) 描述模組的內
 |PowerShellVersion<br /><br /> 型別： 字串|' '|此模組所需的 Windows PowerShell 引擎的最小版本。 目前有效的值為 1.0、 2.0、 3.0、 4.0 和 5.0。<br /><br /> 範例： `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> 型別： 字串|' '|指定 Windows PowerShell 主應用程式所需的模組名稱。 這個名稱是由 Windows PowerShell 提供。 若要尋找主機程式名稱，在程式中，輸入： `$host.name` 。<br /><br /> 範例： `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> 型別： 字串|' '|此模組所需的 Windows PowerShell 主機的最小版本。<br /><br /> 範例： `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> 型別： 字串|' '|此模組所需的 Microsoft.NET Framework 的最低版本。<br /><br /> 範例： `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> 型別： 字串|' '|此模組所需的 Microsoft.NET Framework 的最低版本。<br /><br /> 範例： `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> 型別： 字串|' '|Common language runtime (CLR) 此模組所需的最小版本。<br /><br /> 範例： `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> 型別： 字串|' '|處理器架構 （無、 X86，Amd64） 此模組所需。 有效值為 x86、AMD64、IA64 和 None (未知或未指定)。<br /><br /> 範例： `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> 類型: [字串 []]|@()|必須匯入全域環境，再匯入此模組的模組。 這會載入列，除非它們已經載入任何模組。 （例如，某些模組可能已經載入不同的模組。）。 您也可指定要載入使用的特定版本`RequiredVersion`而非`ModuleVersion`。 當使用`ModuleVersion`會載入指定的版本至少提供的最新版本。<br /><br /> 範例： `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 範例： `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - session state [PowerShell]
 ms.assetid: 74912940-2b10-4a76-b174-6d035d71c02b
 caps.latest.revision: 8
-ms.openlocfilehash: 5d4effb508c9f2544832dad557671520cb0a7ac7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fa207130bbb120750780bb0aa9b32150a32daaa2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862984"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059536"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell 工作階段狀態
 
@@ -46,11 +46,11 @@ ms.locfileid: "56862984"
 
 ## <a name="accessing-session-state-data-within-cmdlets"></a>工作階段狀態中存取資料的 Cmdlet
 
-指令程式可以存取工作階段狀態資料，可能是間接透過[System.Management.Automation.Pscmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)屬性，在 cmdlet 類別或直接透過[System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)類別。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)類別提供可用來調查工作階段狀態資料的不同類型的屬性。
+指令程式可以存取工作階段狀態資料，可能是間接透過[System.Management.Automation.PSCmdlet.Sessionstate*](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)屬性，在 cmdlet 類別或直接透過[System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)類別。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)類別提供可用來調查工作階段狀態資料的不同類型的屬性。
 
 ## <a name="see-also"></a>另請參閱
 
-[System.Management.Automation.Pscmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
+[System.Management.Automation.PSCmdlet.Sessionstate](/dotnet/api/System.Management.Automation.PSCmdlet.SessionState)
 
 [System.Management.Automation.Sessionstate?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.SessionState)
 

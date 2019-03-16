@@ -14,18 +14,18 @@ helpviewer_keywords:
 - ConfirmPreference [PowerShell Programmer's Guide], described
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
-ms.openlocfilehash: ec441831f5e3231a44c9875d1b6d2bf6280a6965
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853394"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057396"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>從 Cmdlet 要求確認
 
 他們即將進行之系統的 Windows PowerShell 環境以外變更時，Cmdlet 就應該要求確認。 比方說，cmdlet 是否新增使用者帳戶，或停止的處理序，此 cmdlet 應該要求使用者確認之前它會繼續。 相較之下，如果 cmdlet 是將要變更的 Windows PowerShell 變數，此 cmdlet 不需要要求確認。
 
-若要確認要求，它支援確認要求，且必須呼叫，必須指出此 cmdlet [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) （選擇性） 的方法，以顯示一則確認要求訊息。
+若要確認要求，它支援確認要求，且必須呼叫，必須指出此 cmdlet [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) （選擇性） 的方法，以顯示一則確認要求訊息。
 
 ## <a name="supporting-confirmation-requests"></a>確認要求的支援
 
@@ -40,17 +40,17 @@ ms.locfileid: "56853394"
 
 ## <a name="calling-the-confirmation-request-methods"></a>呼叫確認要求方法
 
-Cmdlet 程式碼中呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前執行變更系統的作業。 因此，如果在呼叫傳回的值，設計 cmdlet `false`、 未執行此作業，和 cmdlet 所處理的下一個作業。
+Cmdlet 程式碼中呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前執行變更系統的作業。 因此，如果在呼叫傳回的值，設計 cmdlet `false`、 未執行此作業，和 cmdlet 所處理的下一個作業。
 
 ## <a name="calling-the-shouldcontinue-method"></a>呼叫 ShouldContinue 方法
 
-大多數的 cmdlet 會要求確認只會使用[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 不過，某些情況下可能需要再次確認。 在這些情況下，補充[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫透過呼叫[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。 這可讓 cmdlet 或提供者，以更細微控制的領域**全部皆是**回應的確認提示。
+大多數的 cmdlet 會要求確認只會使用[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 不過，某些情況下可能需要再次確認。 在這些情況下，補充[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫透過呼叫[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法。 這可讓 cmdlet 或提供者，以更細微控制的領域**全部皆是**回應的確認提示。
 
-如果指令程式會呼叫[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，此 cmdlet 也必須提供`Force`切換參數。 如果使用者指定`Force`當使用者叫用此指令程式，仍應該呼叫此 cmdlet [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)，但它應該略過呼叫[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)。
+如果指令程式會呼叫[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，此 cmdlet 也必須提供`Force`切換參數。 如果使用者指定`Force`當使用者叫用此指令程式，仍應該呼叫此 cmdlet [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)，但它應該略過呼叫[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)。
 
-[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼叫不會提示使用者從非互動式環境時將會擲回例外狀況。 新增`Force`參數可確保在非互動式環境中叫用時，仍然可以執行命令。
+[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼叫不會提示使用者從非互動式環境時將會擲回例外狀況。 新增`Force`參數可確保在非互動式環境中叫用時，仍然可以執行命令。
 
-下列範例示範如何呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)。
+下列範例示範如何呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)。
 
 ```csharp
 if (ShouldProcess (...) )
@@ -62,9 +62,9 @@ if (ShouldProcess (...) )
 }
 ```
 
-行為[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫而異的指令程式會叫用的環境。 使用先前的指導方針，可協助確保 cmdlet 與其他 cmdlet，不論主機環境以一致的方式運作。
+行為[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫而異的指令程式會叫用的環境。 使用先前的指導方針，可協助確保 cmdlet 與其他 cmdlet，不論主機環境以一致的方式運作。
 
-如需呼叫的範例[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，請參閱[如何要求確認](./how-to-request-confirmations.md)。
+如需呼叫的範例[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，請參閱[如何要求確認](./how-to-request-confirmations.md)。
 
 ## <a name="specify-the-impact-level"></a>指定影響層級
 
@@ -74,13 +74,13 @@ if (ShouldProcess (...) )
 
 ## <a name="calling-non-confirmation-methods"></a>呼叫非確認方法
 
-如果 cmdlet 或提供者必須將訊息傳送，但不是要求確認，它可以呼叫下列三種方法。 請避免使用[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法來傳送這些類型的訊息，因為[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)輸出會互相混合您的 cmdlet 或提供者的一般輸出，這會使得指令碼撰寫困難。
+如果 cmdlet 或提供者必須將訊息傳送，但不是要求確認，它可以呼叫下列三種方法。 請避免使用[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法來傳送這些類型的訊息，因為[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)輸出會互相混合您的 cmdlet 或提供者的一般輸出，這會使得指令碼撰寫困難。
 
-- 若要想要提醒使用者，並繼續進行此作業，cmdlet 或提供者可以呼叫[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法。
+- 若要想要提醒使用者，並繼續進行此作業，cmdlet 或提供者可以呼叫[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法。
 
-- 若要提供使用者可以使用擷取的其他資訊`Verbose`參數，cmdlet 或提供者可以呼叫[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。
+- 若要提供使用者可以使用擷取的其他資訊`Verbose`參數，cmdlet 或提供者可以呼叫[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。
 
-- 若要讓其他開發人員，或取得產品支援，請提供偵錯層級詳細資料，該 cmdlet 或提供者可以呼叫[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 使用者可以使用此資訊來擷取`Debug`參數。
+- 若要讓其他開發人員，或取得產品支援，請提供偵錯層級詳細資料，該 cmdlet 或提供者可以呼叫[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 使用者可以使用此資訊來擷取`Debug`參數。
 
 Cmdlet 與提供者先呼叫下列方法來要求確認，以免他們發動執行作業，以變更在 Windows PowerShell 之外的系統：
 

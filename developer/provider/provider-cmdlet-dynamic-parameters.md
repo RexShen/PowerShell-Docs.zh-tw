@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858354"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058227"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>提供者 Cmdlet 動態參數
 
@@ -73,7 +73,7 @@ internal sealed class CertificateProviderDynamicParameters
 
 `Copy-Item` cmdlet，您可以定義所觸發的動態參數`Path`， `Destination`，並`Recurse`的參數`Copy-Item`cmdlet，藉由實作[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)方法。
 
-取得 ChildItems cmdlet，您可以定義所觸發的動態參數`Path`並`Recures`的參數`Get-ChildItem`cmdlet，藉由實作[System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)和[System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)方法。
+取得 ChildItems cmdlet，您可以定義所觸發的動態參數`Path`並`Recurse`的參數`Get-ChildItem`cmdlet，藉由實作[System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)和[System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)方法。
 
 `Get-Content` cmdlet，您可以定義所觸發的動態參數`Path`的參數`Get-Content`cmdlet，藉由實作[System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)方法。
 
@@ -89,7 +89,7 @@ internal sealed class CertificateProviderDynamicParameters
 
 `New-ItemProperty` cmdlet，您可以定義所觸發的動態參數`Path`， `Name`， `PropertyType`，以及`Value`參數`New-ItemProperty`cmdlet，藉由實作[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)方法。
 
-`New-PSDrive` cmdlet，您可以定義所觸發的動態參數[System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)所傳回的物件`New-PSDrive`cmdlet，藉由實作[System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法。
+`New-PSDrive` cmdlet，您可以定義所觸發的動態參數[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)所傳回的物件`New-PSDrive`cmdlet，藉由實作[System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法。
 
 `Remove-Item` 您可以定義所觸發的動態參數`Path`並`Recurse`的參數`Remove-Item`cmdlet，藉由實作[System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)方法。
 

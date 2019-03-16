@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862004"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056051"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>新增非終止錯誤報告到您的 Cmdlet
 
-指令程式可以藉由呼叫報告非終止錯誤[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法還是繼續執行進一步的連入或目前的輸入物件上的作業和管線的物件。 本節說明如何建立 cmdlet 會報告非終止錯誤，從其輸入的處理方法。
+指令程式可以藉由呼叫報告非終止錯誤[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法還是繼續執行進一步的連入或目前的輸入物件上的作業和管線的物件。 本節說明如何建立 cmdlet 會報告非終止錯誤，從其輸入的處理方法。
 
-非終止錯誤 （以及終止錯誤），此指令程式必須通過[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)識別錯誤的物件。 識別每個錯誤記錄的唯一字串，稱為 「 錯誤識別碼 」。 除了識別項，每個錯誤類別目錄由所定義的常數[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉型別。 使用者可以檢視根據其類別，藉由設定錯誤`$ErrorView`變數設為"CategoryView 」。
+非終止錯誤 （以及終止錯誤），此指令程式必須通過[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)識別錯誤的物件。 識別每個錯誤記錄的唯一字串，稱為 「 錯誤識別碼 」。 除了識別項，每個錯誤類別目錄由所定義的常數[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉型別。 使用者可以檢視根據其類別，藉由設定錯誤`$ErrorView`變數設為"CategoryView 」。
 
 如需詳細的錯誤記錄的詳細資訊，請參閱[Windows PowerShell 的錯誤記錄](./windows-powershell-error-records.md)。
 
@@ -101,11 +101,11 @@ End Property
 > [!NOTE]
 > 您的 cmdlet 應該盡可能獨立處理每一筆記錄。
 
-此 Get-proc cmdlet 會覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法來處理`Name`參數提供的使用者或指令碼輸入。 如果未提供名稱，這個方法會取得每個要求的處理序名稱或所有處理程序的程序。 此覆寫的詳細資料指定於[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
+此 Get-proc cmdlet 會覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法來處理`Name`參數提供的使用者或指令碼輸入。 如果未提供名稱，這個方法會取得每個要求的處理序名稱或所有處理程序的程序。 此覆寫的詳細資料指定於[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
 #### <a name="things-to-remember-when-reporting-errors"></a>報告錯誤時的注意事項
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件寫入錯誤需要在本質上發生例外狀況時，將傳遞此 cmdlet。 決定要使用的例外狀況時，請遵循的.NET 指導方針。 基本上，如果發生錯誤語意上與現有的例外狀況相同，則指令程式應該使用，或衍生自該例外狀況。 否則，它應該衍生新的例外狀況或例外狀況階層架構，直接從[System.Exception](/dotnet/api/System.Exception)類別。
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件寫入錯誤需要在本質上發生例外狀況時，將傳遞此 cmdlet。 決定要使用的例外狀況時，請遵循的.NET 指導方針。 基本上，如果發生錯誤語意上與現有的例外狀況相同，則指令程式應該使用，或衍生自該例外狀況。 否則，它應該衍生新的例外狀況或例外狀況階層架構，直接從[System.Exception](/dotnet/api/System.Exception)類別。
 
 建立錯誤 （透過 ErrorRecord 類別 FullyQualifiedErrorId 屬性存取） 的識別項時請下列記住。
 
@@ -135,7 +135,7 @@ End Property
 
 ## <a name="reporting-nonterminating-errors"></a>報告非終止錯誤
 
-輸入處理方法的任何一個可以回報給輸出資料流使用的非終止錯誤[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。 以下是程式碼範例說明如何呼叫這個 Get-proc cmdlet [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)從內的覆寫[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 在此情況下，如果此 cmdlet 找不到處理程序指定的處理序識別碼可以進行呼叫。
+輸入處理方法的任何一個可以回報給輸出資料流使用的非終止錯誤[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。 以下是程式碼範例說明如何呼叫這個 Get-proc cmdlet [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)從內的覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 在此情況下，如果此 cmdlet 找不到處理程序指定的處理序識別碼可以進行呼叫。
 
 ```csharp
 protected override void ProcessRecord()

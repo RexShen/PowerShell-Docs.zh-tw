@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859264"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054980"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>新增參數集到 Cmdlet
 
@@ -179,7 +179,7 @@ Private myInputObject() As Process
 
 ## <a name="overriding-an-input-processing-method"></a>覆寫輸入處理方法
 
-每個 cmdlet 必須覆寫輸入處理方法，這是最常[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 此 cmdlet，在[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ，讓此指令程式可以處理任意數目的處理程序，會覆寫方法。 它包含哪些參數集的使用者不同的方法以呼叫已指定 Select 陳述式。
+每個 cmdlet 必須覆寫輸入處理方法，這是最常[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。 此 cmdlet，在[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ，讓此指令程式可以處理任意數目的處理程序，會覆寫方法。 它包含哪些參數集的使用者不同的方法以呼叫已指定 Select 陳述式。
 
 ```csharp
 protected override void ProcessRecord()

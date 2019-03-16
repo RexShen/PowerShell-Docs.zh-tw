@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863424"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058023"
 ---
 # <a name="cmdlet-attribute-declaration"></a>Cmdlet 屬性宣告
 
@@ -36,9 +36,9 @@ Cmdlet 屬性識別為 cmdlet 的 Microsoft.NET Framework 類別，並指定用�
 
 `NounName` ([System.String](/dotnet/api/System.String)) 所需。 指定 cmdlet 名詞。 這個名詞會指定此 cmdlet 作用的資源。 如需有關 cmdlet 名詞的詳細資訊，請參閱[Cmdlet 宣告](./cmdlet-class-declaration.md)並[強烈鼓勵開發指導方針](./strongly-encouraged-development-guidelines.md)。
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出此 cmdlet 支援對[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，可提供此 cmdlet 以變更系統的動作執行之前，提示使用者的方式。 `False`預設值，指出此 cmdlet 不支援呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 如需確認要求的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出此 cmdlet 支援對[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，可提供此 cmdlet 以變更系統的動作執行之前，提示使用者的方式。 `False`預設值，指出此 cmdlet 不支援呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 如需確認要求的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) 選擇性具名參數。 指定 cmdlet 的動作時應該呼叫確認[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)將只在等於或大於的值 （根據預設，媒體） cmdlet 的 ConfirmImpact 值時才呼叫`$ConfirmPreference`變數。 應該指定這個參數時，才`SupportsShouldProcess`指定參數。
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) 選擇性具名參數。 指定 cmdlet 的動作時應該呼叫確認[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)將只在等於或大於的值 （根據預設，媒體） cmdlet 的 ConfirmImpact 值時才呼叫`$ConfirmPreference`變數。 應該指定這個參數時，才`SupportsShouldProcess`指定參數。
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) 選擇性具名參數。 指定預設參數可讓您設定 Windows PowerShell 執行階段嘗試時無法判斷哪一個參數設定為使用所要使用的。 請注意，這種情況下要消除，可以藉由每個參數的唯一參數，設定必要的參數。
 
@@ -54,9 +54,9 @@ Cmdlet 屬性識別為 cmdlet 的 Microsoft.NET Framework 類別，並指定用�
 
 **VerbName-NounName**
 
-- 變更 Windows PowerShell 以外之資源的所有 cmdlet 應該都包含`SupportsShouldProcess`關鍵字宣告 Cmdlet 屬性時，它可讓 cmdlet 呼叫[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前，此 cmdlet 會執行其動作。 如果[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫傳回`false`，不應採取的動作。 如需詳細資訊，所產生之確認要求的相關[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
+- 變更 Windows PowerShell 以外之資源的所有 cmdlet 應該都包含`SupportsShouldProcess`關鍵字宣告 Cmdlet 屬性時，它可讓 cmdlet 呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之前，此 cmdlet 會執行其動作。 如果[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫傳回`false`，不應採取的動作。 如需詳細資訊，所產生之確認要求的相關[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
 
-`Confirm`並`WhatIf`只會針對支援的 cmdlet 的 cmdlet 參數可[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫。
+`Confirm`並`WhatIf`只會針對支援的 cmdlet 的 cmdlet 參數可[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫。
 
 ## <a name="example"></a>範例
 

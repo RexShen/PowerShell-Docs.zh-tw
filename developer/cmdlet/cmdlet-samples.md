@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863364"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058040"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet 範例
 
@@ -39,7 +39,7 @@ ms.locfileid: "56863364"
 
 [StopProcessSample04 範例](./stopprocesssample04-sample.md)這個範例示範如何撰寫 cmdlet 會宣告參數集，請指定預設參數設定，以及可接受輸入的物件。
 
-[Events01 範例](./events01-sample.md)這個範例示範如何建立所引發的事件可讓使用者註冊的 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 搭配這個指令程式使用者可以比方說，註冊特定的目錄下建立檔案時要執行的動作。 此範例衍生自[Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基底類別。
+[Events01 範例](./events01-sample.md)這個範例示範如何建立所引發的事件可讓使用者註冊的 cmdlet [System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)。 搭配這個指令程式使用者可以比方說，註冊特定的目錄下建立檔案時要執行的動作。 此範例衍生自[Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基底類別。
 
 ## <a name="see-also"></a>另請參閱
 

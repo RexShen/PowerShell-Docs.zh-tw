@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861494"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057360"
 ---
 # <a name="creating-a-table-view"></a>建立表格檢視
 
@@ -95,7 +95,7 @@ Running  Appinfo            Application Information
 
 2. [TableColumnHeader](./tablecolumnheader-element-format.md)項目會定義在資料表資料行的頂端顯示的內容。 您想要顯示的標頭的順序指定這些項目。
 
-   您可以使用，這些項目數目，但數目沒有限制[TableColumnHeader](./tablecolumnheader-element-format.md)在資料表檢視中的項目必須等於數目[TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)您所使用的項目。
+   您可以使用，這些項目數目，但數目沒有限制[TableColumnHeader](./tablecolumnheader-element-format.md)在資料表檢視中的項目必須等於數目[TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)您所使用的項目。
 
 3. [標籤](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)項目會指定所顯示的文字。 這是選擇性元素。
 
@@ -136,7 +136,7 @@ Running  Appinfo            Application Information
 
 - [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)項目會指定特定的定義所顯示的物件。 這個項目是選擇性的只有在您定義多個時，才需要[TableRowEntry](./listentry-element-for-listcontrol-format.md)顯示不同的物件項目。
 
-- [包裝](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)項目會指定超過欄寬度的文字會顯示在下一行。 根據預設，系統會截斷超過欄寬度的文字。
+- [包裝](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)項目會指定超過欄寬度的文字會顯示在下一行。 根據預設，系統會截斷超過欄寬度的文字。
 
 - [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)項目定義的屬性或其值會顯示資料列中的指令碼。
 

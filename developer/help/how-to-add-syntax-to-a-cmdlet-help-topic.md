@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 947d0c0188df5bba3a9fb617fe5abf0b3b28eb51
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857994"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054606"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>如何新增語法至 Cmdlet 說明主題
 
@@ -112,7 +112,7 @@ ms.locfileid: "56857994"
 
    只要它們的意義明確，例如"string"的 System.String 和 System.Int32 的 「 int 」，將類型縮寫。
 
-   列出所有值的列舉型別，例如-type 參數在上述範例中，根據可設定為 「 基本 」 或 「 進階 」。
+   列出所有值的列舉型別，例如在先前的範例中，可以設定為 「 基本 」 或 「 進階 」-型別參數。
 
    切換參數，例如-在上述範例中的清單，並沒有值。
 

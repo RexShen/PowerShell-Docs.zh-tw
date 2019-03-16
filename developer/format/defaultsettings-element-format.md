@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855664"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059060"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings 元素 (格式)
 
@@ -45,7 +45,7 @@ ms.locfileid: "56855664"
 
 |元素|描述|
 |-------------|-----------------|
-|[DisplayError 項目 (Frmat)](./displayerror-element-format.md)|選擇性的項目。<br /><br /> 指定顯示一段資料時，發生錯誤時，會顯示 #ERR 的字串。|
+|[DisplayError 項目 （格式）](./displayerror-element-format.md)|選擇性的項目。<br /><br /> 指定顯示一段資料時，發生錯誤時，會顯示 #ERR 的字串。|
 |[EnumerableExpansions 項目 （格式）](./enumerableexpansions-element-format.md)|選擇性的項目。<br /><br /> 定義.NET 物件會展開檢視中顯示時的不同方式。|
 |[PropertyCountForTable （格式）](./propertycountfortable-element-format.md)|選擇性的項目。<br /><br /> 指定物件必須具有在資料表檢視中顯示物件的屬性的數目下限。|
 |[ShowError 項目 （格式）](./showerror-element-format.md)|選擇性的項目。<br /><br /> 指定顯示一段資料時，發生錯誤時，會顯示完整的錯誤記錄。|
@@ -63,7 +63,7 @@ ms.locfileid: "56855664"
 
 [組態項目](./configuration-element-format.md)
 
-[DisplayError 項目 (Frmat)](./displayerror-element-format.md)
+[DisplayError 項目 （格式）](./displayerror-element-format.md)
 
 [EnumerableExpansions 項目 （格式）](./enumerableexpansions-element-format.md)
 

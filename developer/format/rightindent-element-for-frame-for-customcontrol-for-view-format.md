@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
-ms.openlocfilehash: 85c165475bd67c378557c12820e450fbf8cb186e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860394"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058788"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的框架的 RightIndent 元素 (格式)
 
 指定的資料會移離右邊界的字元數。 定義自訂控制項的檢視時，會使用這個項目。
 
-組態項目 （格式） ViewDefinitions 項目 （格式） 檢視項目 （格式） CustomControl 項目 （格式） CustomEntries 項目 CustomControl CustomEntries 用於檢視 （格式） CustomItem 元素的檢視 （格式） CustomEntry 元素CustomEntry CutomControlView （格式） 的檢視 （格式） RightIndent 項目的 CustomControl CustomItem 框架元素
+組態項目 （格式） ViewDefinitions 項目 （格式） 檢視項目 （格式） CustomControl 項目 （格式） CustomEntries 項目 CustomControl CustomEntries 用於檢視 （格式） CustomItem 元素的檢視 （格式） CustomEntry 元素CustomEntry CustomControlView （格式） 的檢視 （格式） RightIndent 項目的 CustomControl CustomItem 框架元素
 
 ## <a name="syntax"></a>語法
 

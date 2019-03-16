@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
 caps.latest.revision: 10
-ms.openlocfilehash: 57751e74c9b8ab897dd35ca1fef4704d92a3f218
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863074"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057216"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 範例
 
@@ -61,11 +61,11 @@ ms.locfileid: "56863074"
 
 - 宣告參數的 cmdlet，藉由使用參數屬性。
 
-- 寫入詳細資訊訊息。 如需有關用來寫入詳細資訊訊息的方法的詳細資訊，請參閱[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。
+- 寫入詳細資訊訊息。 如需有關用來寫入詳細資訊訊息的方法的詳細資訊，請參閱[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。
 
-- 寫入錯誤訊息。 如需有關用來寫入錯誤訊息的方法的詳細資訊，請參閱[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。
+- 寫入錯誤訊息。 如需有關用來寫入錯誤訊息的方法的詳細資訊，請參閱[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。
 
-- 寫入警告訊息。 如需有關用來寫入警告訊息的方法的詳細資訊，請參閱[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。
+- 寫入警告訊息。 如需有關用來寫入警告訊息的方法的詳細資訊，請參閱[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。
 
 ## <a name="example"></a>範例
 
@@ -224,9 +224,9 @@ namespace Microsoft.Samples.PowerShell.Commands
                                         processName);
 
                        // It is possible that the ProcessRecord method is called
-                       // multiple times when objects are recieved as inputs from
+                       // multiple times when objects are received as inputs from
                        // the pipeline. So to retain YesToAll and NoToAll input that
-                       // the user may enter across mutilple calls to this function,
+                       // the user may enter across multiple calls to this function,
                        // they are stored as private members of the cmdlet.
                        if (!ShouldContinue(message, "Warning!",
                                     ref yesToAll, ref noToAll))
