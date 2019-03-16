@@ -8,21 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
 caps.latest.revision: 5
-ms.openlocfilehash: c3d8b4670d32a70ddac121e64488e7756d95449a
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 8d8ff5f225609fc1ae9a1df6f2e990d632224102
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430055"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057819"
 ---
-# <a name="stopprocesssample04-vbnet-sample-code"></a><span data-ttu-id="0f851-102">StopProcessSample04 (VB.NET) 範例程式碼</span><span class="sxs-lookup"><span data-stu-id="0f851-102">StopProcessSample04 (VB.NET) Sample Code</span></span>
+# <a name="stopprocesssample04-vbnet-sample-code"></a><span data-ttu-id="f6559-102">StopProcessSample04 (VB.NET) 範例程式碼</span><span class="sxs-lookup"><span data-stu-id="f6559-102">StopProcessSample04 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="0f851-103">以下是 StopProc04 範例 cmdlet 的完整 VB.NET 範例程式碼。</span><span class="sxs-lookup"><span data-stu-id="0f851-103">Here is the complete VB.NET sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="0f851-104">這是程式碼`Stop-Process`中所述的 cmdlet[新增至 Cmdlet 的參數集](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)。</span><span class="sxs-lookup"><span data-stu-id="0f851-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="0f851-105">`Stop-Process`指令程式設計來停止處理程序會擷取使用 Get-proc cmdlet (中所述[建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md))。</span><span class="sxs-lookup"><span data-stu-id="0f851-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
+<span data-ttu-id="f6559-103">以下是 StopProc04 範例 cmdlet 的完整 VB.NET 範例程式碼。</span><span class="sxs-lookup"><span data-stu-id="f6559-103">Here is the complete VB.NET sample code for the StopProc04 sample cmdlet.</span></span> <span data-ttu-id="f6559-104">這是程式碼`Stop-Process`中所述的 cmdlet[新增至 Cmdlet 的參數集](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)。</span><span class="sxs-lookup"><span data-stu-id="f6559-104">This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md).</span></span> <span data-ttu-id="f6559-105">`Stop-Process`指令程式設計來停止處理程序會擷取使用 Get-proc cmdlet (中所述[建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md))。</span><span class="sxs-lookup"><span data-stu-id="f6559-105">The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="0f851-106">您可以下載的 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件使用此停止程序 cmdlet VB.NET (stopprocesssample04.vb) 的原始程式檔。</span><span class="sxs-lookup"><span data-stu-id="0f851-106">You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="0f851-107">如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="0f851-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="f6559-106">您可以下載的 Microsoft Windows 軟體開發套件的 Windows Vista 和.NET Framework 3.0 執行階段元件使用此停止程序 cmdlet VB.NET (stopprocesssample04.vb) 的原始程式檔。</span><span class="sxs-lookup"><span data-stu-id="f6559-106">You can download the VB.NET (stopprocesssample04.vb) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="f6559-107">如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="f6559-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="0f851-108">已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。</span><span class="sxs-lookup"><span data-stu-id="0f851-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="f6559-108">已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。</span><span class="sxs-lookup"><span data-stu-id="f6559-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
 ```vb
 Imports System
@@ -258,9 +258,9 @@ ContinueForEach1:
                     "Are you sure you wish to stop the process?", processName)
 
                 ' It is possible that ProcessRecord is called multiple
-                ' when objects are recieved as inputs from a pipeline.
+                ' when objects are received as inputs from a pipeline.
                 ' So, to retain YesToAll and NoToAll input that the
-                ' user may enter across mutilple calls to this
+                ' user may enter across multiple calls to this
                 ' function, they are stored as private members of the
                 ' Cmdlet.
                 If Not ShouldContinue(message, "Warning!", yesToAll, noToAll) Then
@@ -477,8 +477,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[StopProcessSample04.vb](../../powershell-sdk-samples/SDK-2.0/vb/StopProcessSample04/StopProcessSample04.vb#L09-L456 "StopProcessSample04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="0f851-109">另請參閱</span><span class="sxs-lookup"><span data-stu-id="0f851-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f6559-109">另請參閱</span><span class="sxs-lookup"><span data-stu-id="f6559-109">See Also</span></span>
 
-[<span data-ttu-id="0f851-110">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="0f851-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="f6559-110">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="f6559-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="0f851-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="0f851-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="f6559-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="f6559-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

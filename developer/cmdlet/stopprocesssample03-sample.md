@@ -8,66 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
-ms.openlocfilehash: 7ba1f11b9aa1e602d5f09d6ee0978095aec41837
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854424"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058890"
 ---
-# <a name="stopprocesssample03-sample"></a><span data-ttu-id="07072-102">StopProcessSample03 範例</span><span class="sxs-lookup"><span data-stu-id="07072-102">StopProcessSample03 Sample</span></span>
+# <a name="stopprocesssample03-sample"></a><span data-ttu-id="d9bb8-102">StopProcessSample03 範例</span><span class="sxs-lookup"><span data-stu-id="d9bb8-102">StopProcessSample03 Sample</span></span>
 
-<span data-ttu-id="07072-103">此範例示範如何撰寫的 cmdlet 的參數具有別名和其參數支援萬用字元。</span><span class="sxs-lookup"><span data-stu-id="07072-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="07072-104">此 cmdlet 會類似於`Stop-Process`Windows PowerShell 2.0 所提供的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="07072-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="d9bb8-103">此範例示範如何撰寫的 cmdlet 的參數具有別名和其參數支援萬用字元。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="d9bb8-104">此 cmdlet 會類似於`Stop-Process`Windows PowerShell 2.0 所提供的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="07072-105">如何使用 Visual Studio 建置範例。</span><span class="sxs-lookup"><span data-stu-id="07072-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="d9bb8-105">如何使用 Visual Studio 建置範例。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="07072-106">安裝 Windows PowerShell 2.0 sdk，瀏覽至 StopProcessSample03 資料夾。</span><span class="sxs-lookup"><span data-stu-id="07072-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="07072-107">預設位置是 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03。</span><span class="sxs-lookup"><span data-stu-id="07072-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
+1. <span data-ttu-id="d9bb8-106">安裝 Windows PowerShell 2.0 sdk，瀏覽至 StopProcessSample03 資料夾。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="d9bb8-107">預設位置是 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
 
-2. <span data-ttu-id="07072-108">按兩下方案 (.sln) 檔案的圖示。</span><span class="sxs-lookup"><span data-stu-id="07072-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="07072-109">這是 Microsoft Visual Studio 中開啟範例專案。</span><span class="sxs-lookup"><span data-stu-id="07072-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="d9bb8-108">按兩下方案 (.sln) 檔案的圖示。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="d9bb8-109">這是 Microsoft Visual Studio 中開啟範例專案。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="07072-110">在 **建置**功能表上，選取**建置方案**。</span><span class="sxs-lookup"><span data-stu-id="07072-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="d9bb8-110">在 **建置**功能表上，選取**建置方案**。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="07072-111">如需範例程式庫將建置的預設 \bin 或 \bin\debug 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="07072-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="d9bb8-111">如需範例程式庫將建置的預設 \bin 或 \bin\debug 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="07072-112">如何執行範例</span><span class="sxs-lookup"><span data-stu-id="07072-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="d9bb8-112">如何執行範例</span><span class="sxs-lookup"><span data-stu-id="d9bb8-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="07072-113">建立下列的模組資料夾：</span><span class="sxs-lookup"><span data-stu-id="07072-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="d9bb8-113">建立下列的模組資料夾：</span><span class="sxs-lookup"><span data-stu-id="d9bb8-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample03`
 
-2. <span data-ttu-id="07072-114">將範例組件複製到模組資料夾中。</span><span class="sxs-lookup"><span data-stu-id="07072-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="d9bb8-114">將範例組件複製到模組資料夾中。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="07072-115">啟動 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="07072-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="d9bb8-115">啟動 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="07072-116">執行下列命令，以將組件載入 Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="07072-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="d9bb8-116">執行下列命令，以將組件載入 Windows PowerShell:</span><span class="sxs-lookup"><span data-stu-id="d9bb8-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample03`
 
-5. <span data-ttu-id="07072-117">執行下列命令來執行 cmdlet:</span><span class="sxs-lookup"><span data-stu-id="07072-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="d9bb8-117">執行下列命令來執行 cmdlet:</span><span class="sxs-lookup"><span data-stu-id="d9bb8-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="07072-118">需求</span><span class="sxs-lookup"><span data-stu-id="07072-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="d9bb8-118">需求</span><span class="sxs-lookup"><span data-stu-id="d9bb8-118">Requirements</span></span>
 
-<span data-ttu-id="07072-119">這個範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="07072-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="d9bb8-119">這個範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="07072-120">示範</span><span class="sxs-lookup"><span data-stu-id="07072-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="d9bb8-120">示範</span><span class="sxs-lookup"><span data-stu-id="d9bb8-120">Demonstrates</span></span>
 
-<span data-ttu-id="07072-121">此範例示範下列項目。</span><span class="sxs-lookup"><span data-stu-id="07072-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="d9bb8-121">此範例示範下列項目。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="07072-122">使用 Cmdlet 屬性宣告 cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="07072-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="d9bb8-122">使用 Cmdlet 屬性宣告 cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="07072-123">宣告參數的 cmdlet，藉由使用參數屬性。</span><span class="sxs-lookup"><span data-stu-id="07072-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="d9bb8-123">宣告參數的 cmdlet，藉由使用參數屬性。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="07072-124">您可以將別名加入參數宣告...</span><span class="sxs-lookup"><span data-stu-id="07072-124">Adding aliases to parameter declarations..</span></span>
+- <span data-ttu-id="d9bb8-124">您可以將別名加入參數宣告...</span><span class="sxs-lookup"><span data-stu-id="d9bb8-124">Adding aliases to parameter declarations..</span></span>
 
-- <span data-ttu-id="07072-125">新增萬用字元支援的參數。</span><span class="sxs-lookup"><span data-stu-id="07072-125">Adding wildcard support to parameters.</span></span>
+- <span data-ttu-id="d9bb8-125">新增萬用字元支援的參數。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-125">Adding wildcard support to parameters.</span></span>
 
-## <a name="example"></a><span data-ttu-id="07072-126">範例</span><span class="sxs-lookup"><span data-stu-id="07072-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="d9bb8-126">範例</span><span class="sxs-lookup"><span data-stu-id="d9bb8-126">Example</span></span>
 
-<span data-ttu-id="07072-127">此範例示範如何宣告參數的別名，並支援萬用字元。</span><span class="sxs-lookup"><span data-stu-id="07072-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
+<span data-ttu-id="d9bb8-127">此範例示範如何宣告參數的別名，並支援萬用字元。</span><span class="sxs-lookup"><span data-stu-id="d9bb8-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
 
-```
+```csharp
 using System;
 using System.Diagnostics;
 using System.Collections;
@@ -158,7 +158,7 @@ namespace Microsoft.Samples.PowerShell.Commands
            catch (InvalidOperationException ioe)
            {
                base.ThrowTerminatingError(new ErrorRecord(ioe,
-                         "UnableToAcessProcessList",
+                         "UnableToAccessProcessList",
                              ErrorCategory.InvalidOperation,
                                  null));
            }
@@ -249,7 +249,7 @@ namespace Microsoft.Samples.PowerShell.Commands
            string message = null;
 
            // Confirm the operation first.
-           // This is always false if the WhatIf parametr is specified.
+           // This is always false if the WhatIf parameter is specified.
            if (!ShouldProcess(string.Format(CultureInfo.CurrentCulture,
                     "{0} ({1})", processName, process.Id)))
            {
@@ -267,9 +267,9 @@ namespace Microsoft.Samples.PowerShell.Commands
                                 processName);
 
                // It is possible that ProcessRecord is called multiple
-               // when objects are recieved as inputs from a pipeline.
+               // when objects are received as inputs from a pipeline.
                // So, to retain YesToAll and NoToAll input that the
-               // user may enter across mutilple calls to this
+               // user may enter across multiple calls to this
                // function, they are stored as private members of the
                // Cmdlet.
                if (!ShouldContinue(message, "Warning!",
@@ -350,6 +350,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 } // namespace Microsoft.Samples.PowerShell.Commands
 ```
 
-## <a name="see-also"></a><span data-ttu-id="07072-128">另請參閱</span><span class="sxs-lookup"><span data-stu-id="07072-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d9bb8-128">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d9bb8-128">See Also</span></span>
 
-[<span data-ttu-id="07072-129">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="07072-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="d9bb8-129">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d9bb8-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
