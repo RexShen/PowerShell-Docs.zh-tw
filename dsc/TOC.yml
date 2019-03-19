@@ -65,7 +65,7 @@ items:
       items:
       - name: 使用 DependsOn 的資源相依性
         href: configurations/resource-depends-on.md
-      - name: 跨節點相依性
+      - name: 節點之間的相依性
         href: configurations/crossNodeDependencies.md
       - name: 重新啟動節點
         href: configurations/reboot-a-node.md
@@ -285,9 +285,9 @@ items:
   items:
   - name: 白皮書
     href: further-reading/whitepapers.md
-ms.openlocfilehash: 568da6e9b41390775006a125e16a1095f2d58b2b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 177dc88e4a2a92104f6f2c2d4db118531274fcc4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683281"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057190"
