@@ -814,8 +814,8 @@ items:
         href: ./format/tableheaders-element-format.md
       - name: TableControl 的 TableRowEntries 元素 (格式)
         href: ./format/tablerowentries-element-for-tablecontrol-format.md
-      - name: TableControl 之 TableRowEntroes 的 TableRowEntry 元素 (格式)
-        href: ./format/tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md
+      - name: TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)
+        href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
       - name: 設定之控制項的 CustomItem 的文字元素 (格式)
         href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
       - name: 檢視之控制項的 CustomItem 的文字元素 (格式)
@@ -878,8 +878,8 @@ items:
         href: ./format/wideitem-element-for-widecontrol-format.md
       - name: TableControl 之 TableColumnHeader 的寬度元素 (格式)
         href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
-      - name: TableControl 之 TableRowEntry 的包裝元素 (格式)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrl-format.md
+      - name: TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
+        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
       - name: WrapTables 元素 (格式)
         href: ./format/wraptables-element-format.md
   - name: 撰寫註解型說明主題
@@ -1141,9 +1141,9 @@ items:
     items:
     - name: 新功能
       href: windows-powershell-reference-whats-new.md
-ms.openlocfilehash: 68cc3b04791da9ef1d468b124d964daa5edeb88f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 1ccdff0cabb81cbd68ecbfbdae69672463f9c4e8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55683451"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056612"
