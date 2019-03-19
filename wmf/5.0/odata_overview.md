@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219543"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794481"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>根據 OData 端點產生 PowerShell Cmdlet
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>根據 OData 端點產生 Windows PowerShell Cmdlet
---------------------------------------------------------------
+
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>根據 OData 端點產生 Windows PowerShell Cmdlet
 
 **Export-ODataEndpointProxy** 是 Cmdlet，它會根據指定的 OData 端點所公開的功能產生一組 Windows PowerShell Cmdlet。
 
 下例示範如何使用這個新的 Cmdlet：
-
-\# Export-ODataEndpointProxy 基本使用案例
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -50,8 +48,8 @@ ipmo 'C:\Users\user\Generated.psd1'
 -   關聯
 -   傳遞資料流
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>根據具有 ODataUtils 的 OData 端點產生 Windows PowerShell Cmdlet
-------------------------------------------------------------------------------
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>根據具有 ODataUtils 的 OData 端點產生 Windows PowerShell Cmdlet
+
 ODataUtils 模組可以從支援 OData 的 REST 端點產生 Windows PowerShell Cmdlet。 下列的累加增強功能位在 Microsoft.PowerShell.ODataUtils Windows PowerShell 模組中。
 -   從伺服器端端點到用戶端的通道其他資訊。
 -   用戶端的分頁支援
@@ -59,6 +57,7 @@ ODataUtils 模組可以從支援 OData 的 REST 端點產生 Windows PowerShell 
 -   Web 要求標頭的支援
 
 Export-ODataEndPointProxy Cmdlet 產生的 Proxy Cmdlet 提供伺服器端 OData 端點資訊資料流 (新的 Windows PowerShell 5.0 功能) 的其他資訊 (用戶端 Proxy 產生期間所使用的 $metadata 中未提及)。 下例為取得這項資訊的方法。
+
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -81,6 +80,7 @@ $additionalInfo['odata.count']
 ```
 
 您可以使用用戶端的分頁支援，從批次的伺服器端取得記錄。 當您必須透過網路從伺服器取得大量資料時，這非常有用。
+
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -94,6 +94,7 @@ $skipCount += $batchSize
 ```
 
 產生的 Proxy Cmdlet 支援 –Select 參數，這可用為篩選條件，只接收用戶端需要的記錄屬性。 因為篩選發生在伺服器端，所以這會減少透過網路傳送的資料量。
+
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
@@ -101,6 +102,7 @@ Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
 Export-ODataEndpointProxy Cmdlet 和它產生的 Proxy Cmdlet，現在支援標頭參數 (提供值當做雜湊表)，可用來傳輸伺服器端 OData 端點所預期的任何其他資訊。 在下列範例中，您可以透過期待驗證訂閱金鑰的服務標頭傳輸訂閱金鑰。
+
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side

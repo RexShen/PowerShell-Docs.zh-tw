@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: e15712c9c5f4a2fa2648674fd4d6f167d4342b6f
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "58142201"
+---
 # <a name="contributor-guide"></a>參預者指南
 
 感謝您對參與品質文件有興趣。

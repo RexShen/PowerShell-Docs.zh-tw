@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: 社群資源
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219363"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794870"
 ---
-# <a name="community-resources"></a>社群資源 #
-> 注意：本資訊尚屬初始版本，後續有可能變更。
+# <a name="community-resources"></a>社群資源
+> 注意：這項資訊為初步資訊而且可能有所變更。
 
 PowerShell 小組歡迎並鼓勵客戶提供產品的意見反應，並且支援多種方法，讓使用者與我們連絡。
 下列任何方法都可讓您提供意見反應給我們，但我們建議您從 PowerShell 首頁上的連結著手。

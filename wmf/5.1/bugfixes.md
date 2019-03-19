@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 Bug 修正
-ms.openlocfilehash: 1e46d6d0419b3497450e6eaddbaa47456b004691
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f53fc40b79a3906ac2025b0eff342c0705b82655
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222185"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795363"
 ---
-# <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正#
+# <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正
 
-## <a name="bug-fixes"></a>Bug 修正 ##
+## <a name="bug-fixes"></a>Bug 修正
 
 WMF 5.1 已修正下列重大 Bug︰
 
-### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>完全接受模組自動探索 `$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>完全接受模組自動探索 `$env:PSModulePath`
 
 WMF 3 中引進了模組自動探索 (呼叫命令時自動載入模組，不需要明確的 Import-Module)。
 當初引入後，PowerShell 會先檢查 `$PSHome\Modules` 中有沒有命令，再使用 `$env:PSModulePath`。
@@ -24,43 +24,43 @@ WMF 3 中引進了模組自動探索 (呼叫命令時自動載入模組，不需
 WMF 5.1 將此行為變更為完全接受 `$env:PSModulePath`。
 這讓使用者撰寫之定義 PowerShell 所提供命令的模組 (例如 `Get-ChildItem`) 自動載入並正確覆寫內建的命令。
 
-### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>檔案重新導向不再需要硬式編碼 `-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>檔案重新導向不再需要硬式編碼 `-Encoding Unicode`
 
 所有舊版的 PowerShell 都不可能控制檔案重新導向運算子所使用的檔案編碼，例如 `Get-ChildItem > out.txt`，因為 PowerShell 新增了 `-Encoding Unicode`。
 
 但從 WMF 5.1 開始，您可以設定 `$PSDefaultParameterValues` 來變更重新導向的檔案編碼方式︰
 
-```
+```powershell
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>修正存取 `System.Reflection.TypeInfo` 成員時的迴歸問題 ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>修正存取 `System.Reflection.TypeInfo` 成員時的迴歸問題
 
 WMF 5.0 引入的迴歸會中斷存取 `System.Reflection.RuntimeType` 成員的程序，例如 `[int].ImplementedInterfaces`。
 WMF 5.1 已修正這個 Bug。
 
 
-### <a name="fixed-some-issues-with-com-objects"></a>修正 COM 物件的一些問題 ###
+### <a name="fixed-some-issues-with-com-objects"></a>修正 COM 物件的一些問題
 
 WMF 5.0 引入新的 COM 繫結器，可對 COM 物件叫用方法以及存取 COM 物件的屬性。
 此新的繫結器大幅改善了效能，卻也造成了一些 Bug，WMF5.1 已加以修正。
 
-#### <a name="argument-conversions-were-not-always-performed-correctly"></a>不一定會正確執行引數轉換 ####
+#### <a name="argument-conversions-were-not-always-performed-correctly"></a>不一定會正確執行引數轉換
 
 在下例中︰
 
-```
+```powershell
 $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
 SendKeys 方法預期的是字串，但 PowerShell 並未將字元轉換成字串，將轉換延後至 IDispatch::Invoke，使用 VariantChangeType 進行轉換，以致本例傳送了 '1'、'7' 和 '3' 機碼，而不是預期的 Volume.Mute 機碼。
 
-#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>不一定會正確處理可列舉的 COM 物件 ####
+#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>不一定會正確處理可列舉的 COM 物件
 
 PowerShell 通常會列舉大部分可列舉的物件，但 WMF 5.0 引入的迴歸卻阻擋了列舉實作 IEnumerable 的 COM 物件。  例如：
 
-```
+```powershell
 function Get-COMDictionary
 {
     $d = New-Object -ComObject Scripting.Dictionary
@@ -76,13 +76,13 @@ $x = Get-COMDictionary
 
 這項變更也會處理 [Connect 上的問題 1752224](https://connect.microsoft.com/PowerShell/feedback/details/1752224)
 
-### <a name="ordered-was-not-allowed-inside-classes"></a>在類別中不允許 `[ordered]` ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>在類別中不允許 `[ordered]`
 
 WMF 5.0 引入了類別，其具有類別所用的類型常值驗證。
 `[ordered]` 看起來像類型常值，卻不是真正的 .NET 類型。
 WMF 5.0 誤報類別內發生 `[ordered]` 錯誤︰
 
-```
+```powershell
 class CThing
 {
     [object] foo($i)
@@ -93,7 +93,7 @@ class CThing
 ```
 
 
-### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>多版本的說明主題無法運作 ###
+### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>多版本的說明主題無法運作
 
 在 WMF 5.1 以前，如果安裝了多個版本的模組，而它們都共用一個說明主題，例如，about_PSReadline，則 `help about_PSReadline` 會傳回多個主題，但沒有明確的方法可以檢視實際的說明。
 
