@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655340"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58058210"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -40,7 +40,7 @@ ms.locfileid: "53655340"
 | **Role capabilities** (角色功能) | 當模組發佈到 PowerShell 資源庫且包含一或多個角色功能 (.psrc) 檔案 (由 JEA 使用) 時，系統會列出此清單。 如需[角色功能](/powershell/jea/role-capabilities)的詳細資訊，請參閱 JEA 文件。 | 是 | 否 |
 | **PowerShell Editions** (PowerShell 版本) | 此項目是在指令碼或模組資訊清單中指定。 針對專門為 PowerShell 5.0 和以下版本設計的模組，此項目使用 Tags 控制。 針對 Desktop，請使用 PSEdition_Desktop 標籤；針對 Core，請使用 PSEdition_Core。 針對只會在 PowerShell 5.1 和以上版本使用的模組，在主要資訊清單中有 CompatiblePSEditions 金鑰。 如需其他詳細資料，請檢閱 [PowerShell Get 文件](module-psedition-support.md)中的 PS Edition 功能。 | 是 | 是 |
 | **Dependencies** (相依性) | 相依性是 PowerShell 資源庫中的模組以 RequiredModules 宣告的模組，或是指令碼資訊清單中以 #Requires –Module (名稱) 宣告的模組。 | 是 | 是 |
-| **Minimum Powershell version** (最小 PowerShell 版本) | 此項目可在模組資訊清單中以 PowerShellVersion 指定 | 是 | 否 |
+| **最低 PowerShell 版本** | 此項目可在模組資訊清單中以 PowerShellVersion 指定 | 是 | 否 |
 | **Version History** (版本歷程記錄) | 版本歷程記錄反映對 PowerShell 資源庫中的模組進行的更新。 如果使用 Delete 功能隱藏套件的版本，則除了對套件擁有者之外，系統將不會在版本歷程記錄中顯示版本。 | 否 | 否 |
 | **Project Site** (專案網站) | 模組的專案網站是在模組資訊清單中的 Privatedata\PSData 區段以 ProjectURI 提供。 在指令碼資訊清單中，是透過指定 .PROJECTURI 來控制。 | 是 | 是 |
 | **License** (授權) | 模組的授權連結是在模組資訊清單中的 Privatedata\PSData 區段以 LicenseURI 提供。 在指令碼資訊清單中，是透過指定 .LICENSEURI 來控制。 請務必注意，如果授權不是透過 LicenseURI 提供，或在模組中提供，則該套件的使用規定是由 PowerShell 資源庫使用規定來指定。 如需詳細資訊，請參閱使用規定。 | 是 | 是 |

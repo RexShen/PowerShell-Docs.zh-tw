@@ -1,33 +1,34 @@
 ---
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
-title: 設定提取用戶端使用設定識別碼，在 PowerShell 5.0 和更新版本
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+title: 在 PowerShell 5.0 及更新版本中使用設定識別碼來設定提取用戶端
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400772"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055711"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>設定提取用戶端使用設定識別碼，在 PowerShell 5.0 和更新版本
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更新版本中使用設定識別碼來設定提取用戶端
 
 > 適用於：Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
-設定提取用戶端之前, 您應該設定提取伺服器。 雖然此順序並不需要，它會協助進行疑難排解，並幫助您確認註冊成功。 若要設定提取伺服器，您可以使用下列指南：
+在設定提取用戶端前，您應先設定提取伺服器。 雖然此順序非必要，但它有助於疑難排解，且可協助您確認註冊成功。 若要設定提取伺服器，您可以使用下列指南：
 
 - [設定 DSC SMB 提取伺服器](pullServerSmb.md)
 - [設定 DSC HTTP 提取伺服器](pullServer.md)
 
-若要下載組態中，資源，並甚至報告其狀態，可以設定每個目標節點。 下列各節會示範如何設定提取用戶端與 SMB 共用或 HTTP DSC 提取伺服器。 當節點 LCM 重新整理時，它會連至下載任何指派的組態設定的位置。 如果任何必要的資源不存在的節點上，它會從設定的位置自動下載它們。 如果節點已設有[報表伺服器](reportServer.md)，它接著會報告作業的狀態。
+每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 下列各節會示範如何使用 SMB 共用或 HTTP DSC 提取伺服器來設定提取用戶端。 當節點的 LCM 重新整理時，它會連到設定的位置來下載任何所指派設定。 若有任何必要資源在節點上不存在，它會自動從設定的位置下載它們。 若節點已使用[報表伺服器](reportServer.md)進行設定，它接著便會報告作業的狀態。
 
-> **注意**：本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)。
+> [!NOTE]
+> 本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)。
 
 ## <a name="configure-the-pull-client-lcm"></a>設定提取用戶端 LCM
 
-執行任何下列範例會建立新的輸出資料夾，名為**PullClientConfigID**和該處放入中繼設定 MOF 檔案。 在此情況下，中繼設定 MOF 檔案將名為 `localhost.meta.mof`。
+執行以下任何一個範例，便會建立名為 **PullClientConfigID** 的新輸出資料夾，並在該處放入中繼設定 MOF 檔案。 在此情況下，中繼設定 MOF 檔案將名為 `localhost.meta.mof`。
 
 若要套用設定，請呼叫 **Set-DscLocalConfigurationManager** Cmdlet，其中 **Path** 設為中繼設定 MOF 檔案的位置。 例如：
 
@@ -37,19 +38,19 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>設定識別碼
 
-下列設定範例**ConfigurationID**屬性將 lcm **Guid** ，先前針對此目的。 **ConfigurationID** 供 LCM 用來在提取伺服器上尋找適當設定。 提取伺服器上的設定 MOF 檔案必須命名為 `ConfigurationID.mof`，其中 *ConfigurationID* 是目標節點 LCM 的 **ConfigurationID** 屬性值。 如需詳細資訊，請參閱[發佈到提取伺服器 (v4/v5) 的組態](publishConfigs.md)。
+下列範例會將 LCM 的 **ConfigurationID** 屬性設為先前針對這個用途建立的 **Guid**。 **ConfigurationID** 供 LCM 用來在提取伺服器上尋找適當設定。 提取伺服器上的設定 MOF 檔案必須命名為 `ConfigurationID.mof`，其中 *ConfigurationID* 是目標節點 LCM 的 **ConfigurationID** 屬性值。 如需詳細資訊，請參閱[將設定發佈到提取伺服器 (v4/v5)](publishConfigs.md)。
 
-您可以建立的隨機**Guid**下方，或使用範例[New-guid](/powershell/module/microsoft.powershell.utility/new-guid) cmdlet。
+您可以使用以下範例建立隨機 **Guid**，或是使用 [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) Cmdlet。
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-如需使用詳細資訊**Guid**在您環境中，請參閱[Guid 的計劃](/powershell/dsc/secureserver#guids)。
+如需在您環境中使用 **Guid** 的詳細資訊，請參閱[為 GUID 規劃](/powershell/dsc/secureserver#guids)。
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>若要下載組態設定提取用戶端
+## <a name="set-up-a-pull-client-to-download-configurations"></a>設定提取用戶端來下載設定
 
-必須設定每個用戶端**提取**模式和指定的提取伺服器的 url 儲存其組態。 若要這樣做，您必須使用必要的資訊來設定本機設定管理員 (LCM)。 若要設定 LCM，必須先建立一種特殊設定，再加上 **DSCLocalConfigurationManager** 屬性裝飾。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)。
+每個用戶端都必須在**提取**模式中設定，並提供儲存其設定的提取伺服器 URL。 若要這樣做，您必須使用必要的資訊來設定本機設定管理員 (LCM)。 若要設定 LCM，必須先建立一種特殊設定，再加上 **DSCLocalConfigurationManager** 屬性裝飾。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)。
 
 ### <a name="http-dsc-pull-server"></a>HTTP DSC 提取伺服器
 
@@ -79,11 +80,11 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-在此指令碼中，**ConfigurationRepositoryWeb** 區塊會定義提取伺服器。 **ServerUrl**指定 DSC 提取的 url
+在此指令碼中，**ConfigurationRepositoryWeb** 區塊會定義提取伺服器。 **ServerUrl** 會指定 DSC 提取的 URL
 
 ### <a name="smb-share"></a>SMB 共用
 
-下列指令碼會設定 LCM 提取設定從 SMB 共用`\\SMBPullServer\Pull`。
+下列指令碼會設定 LCM，從 SMB 共用 `\\SMBPullServer\Pull` 提取設定。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -108,18 +109,18 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-在 指令碼**ConfigurationRepositoryShare**區塊定義提取伺服器，即在此情況下，只是 SMB 共用。
+在指令碼中，**ConfigurationRepositoryShare** 區塊會定義提取伺服器 (在此案例中只是一個 SMB 共用)。
 
-## <a name="set-up-a-pull-client-to-download-resources"></a>設定提取用戶端下載資源
+## <a name="set-up-a-pull-client-to-download-resources"></a>設定提取用戶端以下載資源
 
-如果您只有指定**ConfigurationRepositoryWeb**或是**ConfigurationRepositoryShare**封鎖在 LCM 設定 （如同上述範例中），提取用戶端會從相同的資源它會擷取其組態的位置。 您也可以指定不同資源的位置。 若要指定資源位置做為個別的伺服器，請使用**ResourceRepositoryWeb**區塊。 若要指定為 SMB 共用的資源位置，請使用**ResourceRepositoryShare**區塊。
+若您在 LCM 設定中只指定 **ConfigurationRepositoryWeb** 或 **ConfigurationRepositoryShare** 區塊 (如同先前範例)，提取用戶端會從擷取其設定的相同位置提取資源。 您也可以為資源指定不同的位置。 若要將資源位置指定為不同的伺服器，請使用 **ResourceRepositoryWeb** 區塊。 若要將資源位置指定為 SMB 共用，請使用 **ResourceRepositoryShare** 區塊。
 
 > [!NOTE]
-> 您可以結合**ConfigurationRepositoryWeb**具有**ResourceRepositoryShare**或是**ConfigurationRepositoryShare**具有**ResourceRepositoryWeb**. 這個範例不會顯示如下。
+> 您可以將 **ConfigurationRepositoryWeb** 與 **ResourceRepositoryShare** 合併，或是將 **ConfigurationRepositoryShare** 與 **ResourceRepositoryWeb** 合併。 此範例不會在以下顯示。
 
 ### <a name="http-dsc-pull-server"></a>HTTP DSC 提取伺服器
 
-下列中繼設定會設定提取用戶端取得其組態，從**Contoso-pullsrv**和其資源**Contoso-resourcesrv**。
+下列中繼設定會設定提取用戶端，以從 **CONTOSO-PullSrv** 取得其設定，並從 **CONTOSO-ResourceSrv** 取得其資源。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -152,7 +153,7 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB 共用
 
-下列範例示範中繼設定會設定用戶端以提取設定從 SMB 共用的中繼`\\SMBPullServer\Configurations`，並從 SMB 共用的資源`\\SMBPullServer\Resources`。
+下列範例會顯示中繼設定，其設定用戶端從 SMB 共用 `\\SMBPullServer\Configurations` 提取設定，並從 SMB 共用 `\\SMBPullServer\Resources` 提取資源。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -182,9 +183,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-#### <a name="automatically-download-resources-in-push-mode"></a>自動下載在推送模式中的資源
+#### <a name="automatically-download-resources-in-push-mode"></a>在推送模式中自動下載資源
 
-從 PowerShell 5.0 開始，您的提取用戶端可以下載模組從 SMB 共用，即使它們已針對**推播**模式。 這是在情況下您不想設定提取伺服器中特別有用。 **ResourceRepositoryShare**區塊可以用未指定**ConfigurationRepositoryShare**。 下列範例示範中繼設定會設定用戶端以提取資源從 SMB 共用， `\\SMBPullServer\Resources`。 當節點已**PUSHED**設定時，它會自動下載任何必要的資源，從指定的共用。
+從 PowerShell 5.0 開始，您的提取用戶端可從 SMB 共用下載模組，即使它們已針對 [推送] 模式設定也一樣。 這在您不想要設定提取伺服器的案例中特別有用。 **ResourceRepositoryShare** 區塊可在不指定 **ConfigurationRepositoryShare** 的情況下使用。 下列範例會顯示中繼設定，其設定用戶端從 SMB 共用 `\\SMBPullServer\Resources` 提取資源。 當節點獲得**推送**設定時，它便會從指定的共用自動下載任何必要資源。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -207,9 +208,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## <a name="set-up-a-pull-client-to-report-status"></a>設定提取用戶端報告狀態
+## <a name="set-up-a-pull-client-to-report-status"></a>設定提取用戶端以報告狀態
 
-根據預設，節點不會傳送報表至已設定的提取伺服器。 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 **ReportRepositoryWeb** 區塊才可設定報告功能。
+根據預設，節點不會將報告傳送到設定的提取伺服器。 您可以針對設定、資源和報告使用單一提取伺服器，但必須建立 **ReportRepositoryWeb** 區塊才可設定報告功能。
 
 ### <a name="http-dsc-pull-server"></a>HTTP DSC 提取伺服器
 
@@ -282,11 +283,11 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB 共用
 
-報表伺服器不是 SMB 共用。
+報表伺服器不可以是 SMB 共用。
 
 ## <a name="next-steps"></a>後續步驟
 
-設定提取用戶端之後, 您可以使用下列指南來執行後續步驟：
+設定提取用戶端之後，您可以使用下列指南來執行後續步驟：
 
 - [將設定發佈至提取伺服器 (v4/v5)](publishConfigs.md)
 - [封裝資源並上傳到提取伺服器 (v4)](package-upload-resources.md)

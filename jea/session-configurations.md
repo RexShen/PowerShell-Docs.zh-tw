@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 工作階段設定
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655458"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056580"
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
 
@@ -80,8 +80,9 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
-> 虛擬帳戶是暫時被授與登入為本機伺服器的安全性原則中的服務權限。  如果其中一個指定 VirtualAccountGroups 已經授予此權限的原則中，個別的虛擬帳戶將不會再新增並從原則中移除。  這可以是有用的案例，例如網域控制站緊密稽核網域控制站安全性原則的修訂。  這僅供以 Windows Server 2016 年 11 月 2018年或更新版本的彙總套件和 Windows Server 2019 年 1 月 2019年與更新彙總套件。
+> 虛擬帳戶會暫時獲得授與在本機伺服器安全性原則中以服務方式登入的權限。  若其中一個指定的 VirtualAccountGroups 已在原則中獲得授與此權限，則將無法再新增個別的虛擬帳戶並會從原則中移除。  這在例如對網域控制站所進行的修訂會經過仔細稽核的網域控制站案例中很有用。  此項目僅適用於包含 2018 年 11 月或更新彙總的 Windows Server 2016，以及包含 2019 年 1 月或更新彙總的 Windows Server 2019。
 
 #### <a name="group-managed-service-account"></a>群組受管理的服務帳戶
 
@@ -104,7 +105,6 @@ gMSA 帳戶應該只用於因為一些原因而需要存取網路資源時︰
 
 > [!NOTE]
 > 群組受管理的服務帳戶僅適用於 Windows PowerShell 5.1 或更新版本，以及在已加入網域的電腦上。
-
 
 #### <a name="more-information-about-run-as-users"></a>執行身分使用者的詳細資訊
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>角色功能搜尋順序
+
 如上述範例所示，會以角色功能檔案的一般名稱 (不含副檔名的檔名) 來參考角色功能。
 如果系統上有多個相同一般名稱的角色功能，PowerShell 將使用其隱含搜尋順序，來選取有效的角色功能檔案。
 它將**不會**提供存取權給同名的所有角色功能檔案。
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > 條件式存取原則僅適用於 Windows PowerShell 5.1 或更新版本。
 
 ### <a name="other-properties"></a>其他屬性
+
 工作階段設定檔也可以執行工作角色功能檔案的一切操作，但無法提供連線使用者對不同命令的存取權。
 如果您想要允許所有使用者存取特定 Cmdlet、函式或提供者，則您可以直接在工作階段設定檔中完成。
 如需工作階段設定檔中支援屬性的完整清單，請執行 `Get-Help New-PSSessionConfigurationFile -Full`。

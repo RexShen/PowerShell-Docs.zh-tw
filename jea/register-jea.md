@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 登錄 JEA 設定
-ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002901"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059434"
 ---
 # <a name="registering-jea-configurations"></a>登錄 JEA 設定
 
-> 適用對象：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 在您建立[角色功能](role-capabilities.md)和[工作階段設定檔](session-configurations.md)之後，使用 JEA 前所需進行的最後步驟，便是註冊 JEA 端點。
 向系統註冊 JEA 端點，將能使該端點可供使用者和自動化引擎使用。
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 這個設定便可以藉由[直接叫用本機設定管理員](https://msdn.microsoft.com/powershell/dsc/metaconfig)或更新[提取伺服器設定](https://msdn.microsoft.com/powershell/dsc/pullserver)，以套用在系統上。
 
 DSC 資源也可讓您取代預設的 Microsoft.PowerShell 遠端端點。
-如果您這麼做，資源會自動登錄名為 "Microsoft.PowerShell.Restricted" 的備份無限制端點，它具有預設 WinRM ACL (允許遠端管理使用者與本機系統管理員群組成員存取它)。
+若您這麼做，資源會自動註冊名為 "Microsoft.PowerShell.Restricted" 的備份無限制端點，它具有預設 WinRM ACL (允許遠端管理使用者與本機系統管理員群組成員存取它)。
 
 ## <a name="unregistering-jea-configurations"></a>取消登錄 JEA 設定
 

@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 透過社交媒體或留言提供意見反應
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003695"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054997"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>透過社交媒體或留言提供意見反應
 
-PowerShell 資源庫支援兩種方法，可供使用者針對套件提供公開意見反應：
+PowerShell 資源庫支援兩種方法，讓使用者在套件中提供公開意見反應：
 
 - 使用左邊緣上的連結，以在 Facebook、LinkedIn 或 Twitter 等社交媒體網站中 [Share] \(分享\) 該套件；
 - 使用 [Comment] \(評論\) 功能來針對套件張貼評論，並允許作者監看自己所發行之套件的相關評論。
@@ -26,8 +26,7 @@ PowerShell 資源庫支援兩種方法，可供使用者針對套件提供公開
 
 如果使用者覺得某個套件很值得推薦給其他人，我們很鼓勵他們這麼做。
 PowerShell 資源庫將會檢查該套件在每個社交媒體網站上的「分享」次數，然後顯示該套件在每個社交媒體網站上已被分享多少次。
-由於此功能只會顯示某個東西的分享次數，因此我們會把它解讀為使用者對該套件「說讚」的次數。
-
+由於此功能只會顯示某個東西的分享計數，因此我們會把它解讀為使用者對該套件「說讚」的次數。
 
 ## <a name="comments"></a>評價
 

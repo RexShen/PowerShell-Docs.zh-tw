@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC 群組資源
-ms.openlocfilehash: 9894150f6f749fc23efd4ce2b155b18788557d1d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 123e09b54a923af942a15f80fa7291c555b4235f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678905"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054963"
 ---
 # <a name="dsc-group-resource"></a>DSC 群組資源
 
@@ -36,7 +36,7 @@ Group [string] #ResourceName
 |  屬性  |  描述   |
 |---|---|
 | GroupName| 您要確保其特定狀態的群組名稱。|
-| 認證| 存取遠端資源時所需的認證。 **注意**：此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶加入群組；否則，在目標節點上執行設定時會發生錯誤。
+| 認證| 存取遠端資源時所需的認證。 **注意**：此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶新增至群組；否則，在目標節點上執行設定時會發生錯誤。
 | 描述| 群組的描述。|
 | Ensure| 指出群組是否存在。 設定此屬性為 "Absent" 以確保群組不存在。 設定此群組為 "Present" (預設值)，可確保此群組存在。|
 | 成員| 您可以使用這個屬性，以指定的成員來取代目前的群組成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **MembersToExclude** 或 **MembersToInclude** 屬性。 這麼做會產生錯誤。|
@@ -60,7 +60,7 @@ Group GroupExample
 
 ## <a name="example-2"></a>範例 2
 
-下列範例顯示如何將 Active Directory 使用者以多電腦實驗室組建 (已經在其內使用本機系統管理員帳戶的 PSCredential) 的一部分，加入本機系統管理員群組。
+下列範例顯示如何將 Active Directory 使用者新增至本機系統管理員群組，成為已使用本機系統管理員帳戶 PSCredential 之多電腦實驗室組建的一部分。
 因為這也會用於網域系統管理員帳戶 (在網域升級之後)，所以我們需要將此現有的 PSCredential 轉換為適用於網域的認證。
 之後，我們便可將網域使用者新增到成員伺服器上的本機系統管理員群組。
 
@@ -95,7 +95,7 @@ Group AddADUserToLocalAdminGroup {
 下列範例示範如何確定伺服器 TigerTeamSource.Contoso.Com 上的本機群組 TigerTeamAdmins 不包含特定的網域帳戶 Contoso\JerryG。
 
 ```powershell
-Configuration SecureTigerTeamSrouce {
+Configuration SecureTigerTeamSource {
   Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
   Node TigerTeamSource.Contoso.Com {

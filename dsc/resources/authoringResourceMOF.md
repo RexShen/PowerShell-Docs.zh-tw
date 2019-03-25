@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678929"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059723"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
@@ -69,7 +69,8 @@ class Demo_IISWebsite : OMI_BaseResource
 
 資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在 <ResourceName>.psm1 檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
 
-> **注意**：當您在資源上多次執行相同的設定指令碼時，您不應該收到任何錯誤，資源的狀態也應該和指令碼只執行一次的狀態相同。 若要達成這個目標，請確認 **Get-TargetResource** 和 **Test-TargetResource** 函式不變更資源，而且以相同參數順序值多次叫用 **Set-TargetResource** 函式永遠等於只叫用一次。
+> [!NOTE]
+> 當您在資源上多次執行相同的設定指令碼時，您應該不會收到任何錯誤，而且資源的狀態也應該和只執行一次指令碼的狀態相同。 若要達成這個目標，請確認 **Get-TargetResource** 和 **Test-TargetResource** 函式不變更資源，而且以相同參數順序值多次叫用 **Set-TargetResource** 函式永遠等於只叫用一次。
 
 在 **Get-TargetResource** 函式的實作中，使用提供為參數的重要資源屬性值，檢查指定的資源執行個體狀態。 這個函式必須傳回雜湊表，將所有的資源屬性列為索引鍵，這些屬性的實際值列為對應值。 範例請見下列程式碼。
 
@@ -276,7 +277,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：** **PsDscRunAsCredential**在 PowerShell 5.0 和更新版本支援。
+>**注意：** PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。
 
 您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
@@ -293,13 +294,13 @@ if (PsDscContext.RunAsUser) {
 
 ## <a name="rebooting-the-node"></a>重新啟動節點
 
-如果所採取的動作程式`Set-TargetResource`函式需要重新開機，您可以使用全域旗標來告訴 LCM 重新啟動節點。 此重新開機後立即發生`Set-TargetResource`函式完成。
+若在您 `Set-TargetResource` 函式中採取的動作需要重新啟動，您可以使用全域旗標來告知 LCM 重新啟動節點。 此重新啟動會在 `Set-TargetResource` 函式完成後直接發生。
 
-在您`Set-TargetResource`函式中，新增下列程式碼行。
+在您 `Set-TargetResource` 函式的內部，請新增下列這行程式碼。
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-為了讓重新啟動節點，LCM **RebootNodeIfNeeded**旗標必須設為`$true`。 **ActionAfterReboot**設定也應該設為**ContinueConfiguration**，這是預設值。 如需有關如何設定 LCM 的詳細資訊，請參閱 <<c0> [ 設定本機設定管理員](../managing-nodes/metaConfig.md)，或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。
+為了讓 LCM 重新啟動節點，**RebootNodeIfNeeded** 旗標必須設為 `$true`。 **ActionAfterReboot** 設定也應設為 **ContinueConfiguration** (預設值)。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。

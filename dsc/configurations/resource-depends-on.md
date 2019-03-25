@@ -2,24 +2,24 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用 DependsOn 的資源相依性
-ms.openlocfilehash: 0d060f7d99bd261b0766028b245d4d32a5e1c349
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400699"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055694"
 ---
 # <a name="resource-dependencies-using-dependson"></a>使用 DependsOn 的資源相依性
 
-當您撰寫[組態](configurations.md)，您將新增[資源區塊](../resources/resources.md)設定目標節點的層面。 當您繼續新增資源區塊中，您的設定可以成長相當大型且難以管理。 這類的其中一項挑戰是資源區塊的套用的順序。 通常會是組態內所定義的順序套用資源。 隨著您設定更大且更複雜，您可以使用`DependsOn`變更您的資源相依於另一個資源的資源指定的套用的順序的索引鍵。
+當您撰寫[設定](configurations.md)時，您可以新增[資源區塊](../resources/resources.md)來設定目標節點的各個層面。 隨著您繼續新增資源區塊，您的設定便會越來越大且難以管理。 這類挑戰中的其中一項，便是您資源區塊的套用順序。 通常資源會根據其在設定內定義的順序來套用。 但隨著您的設定越來越大、越來越複雜，您可以使用 `DependsOn` 索引鍵，透過指定該資源相依於另一個資源，來管理您資源的套用順序。
 
-`DependsOn`金鑰可以用任何資源區塊中。 它定義為具有相同的索引鍵/值機制，做為其他資源的索引鍵。 `DependsOn`金鑰必須使用下列語法的字串陣列。
+`DependsOn` 索引鍵可在任何資源區塊中使用。 它會使用與其他資源索引鍵相同的索引鍵/值機制來定義。 `DependsOn` 索引鍵預期接收到使用下列語法的字串陣列。
 
 ```
-DependsOn = '[<Resource Type>]<Resoure Name>', '[<Resource Type>]<Resource Name'
+DependsOn = '[<Resource Type>]<Resource Name>', '[<Resource Type>]<Resource Name'
 ```
 
-下列範例會設定防火牆規則後啟用及設定公用設定檔。
+下列範例會在啟用和設定公用設定檔後，設定防火牆規則。
 
 ```powershell
 # Install the NetworkingDSC module to configure firewall rules and profiles.
@@ -60,7 +60,7 @@ Configuration ConfigureFirewall
 ConfigureFirewall -OutputPath C:\Temp\
 ```
 
-套用設定時，將一律先不論何種順序資源區塊會定義會設定防火牆設定檔。 如果您套用的設定，請務必記下您現有的組態，因此如有需要，您可以還原的目標節點。
+當您套用設定時，防火牆設定檔一律會先進行設定，無論資源區塊的定義順序為何。 若您套用設定，請務必記下您目標節點的現有設定，以便在需要的時候還原。
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -Path C:\Temp\ -ComputerName localhost
@@ -118,13 +118,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-這也可確保，如果**FirewallProfile**資源失敗，因為任何原因**防火牆**區塊不會執行，即使它第一次定義。 `DependsOn`金鑰可讓更多的彈性，群組資源區塊，以及確保資源執行之前，會解析相依性。
+這也可以確保若 **FirewallProfile** 資源因任何原因失敗，**Firewall** 區塊便不會執行，即使其已先經過定義也一樣。 `DependsOn` 索引鍵可讓您在群組資源區塊時擁有更多彈性，並確保在資源執行前解析相依項目。
 
-在更進階的組態，您也可以使用[跨節點相依性](crossNodeDependencies.md)以允許進行更細微的控制 （例如，確保網域控制站之前先加入網域的用戶端設定）。
+在更進階的設定中，您也可以使用[跨節點相依性](crossNodeDependencies.md)來進行更細微的控制 (例如，確保網域控制站已在將用戶端加入網域前進行設定)。
 
 ## <a name="cleaning-up"></a>清理
 
-如果您套用上述的組態，您可以反轉金鑰，以復原的任何變更。 在上述範例中，設定**已啟用**的防火牆規則和設定檔，將會停用索引鍵為 false。 視需要以符合您的目標節點上設定的狀態，您應該修改範例。
+若您套用了上述設定，您可以反轉索引鍵來復原任何變更。 在上述範例中，將 **Enabled** 索引鍵設為 False，會停用防火牆規則及設定檔。 建議您視需要修改範例，使其符合您目標節點先前的設定狀態。
 
 ```powershell
         Firewall Firewall

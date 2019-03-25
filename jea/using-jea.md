@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: 使用 JEA
-ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522985"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054674"
 ---
 # <a name="using-jea"></a>使用 JEA
 
-> 適用對象：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 本主題說明您可以連線到並使用 JEA 端點的各種方式。
 
@@ -108,7 +108,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 您也可以使用 [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) 從隱含遠端保存代理 Cmdlet。
 如需隱含遠端的詳細資訊，請參閱 [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) 和 [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module) 的說明文件。
 
-## <a name="using-jea-programatically"></a>以程式設計方式使用 JEA
+## <a name="using-jea-programmatically"></a>以程式設計方式使用 JEA
 
 JEA 也可用在自動化系統和使用者應用程式，例如公司內部的技術支援應用程式和網站。
 方式與建置和未受限制之 PowerShell 端點通訊的應用程式相同，但有一點要注意，程式應該要注意 JEA 會限制可以在遠端工作階段中執行的命令。
@@ -129,7 +129,6 @@ $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Fo
 如果您正在建置 C# 應用程式，可以在 [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) 物件中指定設定名稱，建立連線至 JEA 工作階段的 PowerShell 執行空間。
 
 ```csharp
-
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";

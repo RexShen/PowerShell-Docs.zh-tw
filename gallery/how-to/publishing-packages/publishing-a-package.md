@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 建立及發行項目
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012529"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055473"
 ---
 # <a name="creating-and-publishing-an-item"></a>建立及發行項目
 
@@ -22,7 +22,7 @@ ms.locfileid: "54012529"
 - 確定您的項目中有「必要的中繼資料」
 - 使用預先驗證工具來確保您的項目已可發行
 - 使用 Publish-Module 和 Publish-Script 命令將項目發行至「PowerShell 資源庫」
-- 回應問題或疑慮，您的項目相關
+- 對您項目的相關問題與疑慮進行回應
 
 「PowerShell 資源庫」接受 PowerShell 模組和 PowerShell 指令碼。 當我們提到指令碼時，是指本身是單一檔案而不屬於較大模組之一部分的 PowerShell 指令碼。
 
@@ -32,7 +32,7 @@ ms.locfileid: "54012529"
 
 建立帳戶之後，您可以取得發行項目所需的 API 金鑰。 使用帳戶進行登入之後，您的使用者名稱將會顯示在「PowerShell 資源庫」頁面的頂端，而不會顯示 [註冊]。 按一下您的帳戶名稱就會前往 [我的帳戶] 頁面，您將可以在該頁面找到 API 金鑰。
 
-注意：API 金鑰必須為您的登入和密碼安全地處理。
+注意：必須小心保管 API 金鑰，就像對待您的登入和密碼一樣。
 您或任何其他使用者只要有了這個金鑰，便可更新「PowerShell 資源庫」中您擁有的所有項目。
 建議您定期更新此金鑰，只要使用 [我的帳戶] 頁面上的 [重設金鑰]，即可完成此操作。
 
@@ -43,18 +43,18 @@ ms.locfileid: "54012529"
 
 [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) 和 [New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo) Cmdlet 將會為您建立資訊清單範本，其中會包含所有資訊清單元素的預留位置。
 
-這兩個資訊清單都有重要的發行，PrivateData 的主索引鍵資料和 PSData 區域的兩個區段。 PowerShell 模組資訊清單中主索引鍵的資料是指 PrivateData 區段外的所有項目。 主索引鍵組會繫結至使用中的 PowerShell 版本，且不支援設為未定義。 PrivateData 支援新增金鑰，因此「PowerShell 資源庫」特定的元素會在 PSData 中。
+這兩個資訊清單都有對發佈而言相當重要的兩個區段：主索引鍵資料 (Primary Key Data) 及 PrivateData 的 PSData 區域。 PowerShell 模組資訊清單中主索引鍵資料是 PrivateData 區段之外所有的內容。 主索引鍵組會繫結至使用中的 PowerShell 版本，且不支援設為未定義。 PrivateData 支援新增金鑰，因此「PowerShell 資源庫」特定的元素會在 PSData 中。
 
 
 對您要發行至「PowerShell 資源庫」的項目來說，要填入的最重要資訊清單元素包括：
 
 - 指令碼或模組名稱 - 這些名稱會取自 .PS1 (適用於指令碼) 或 .PSD1 (適用於模組)。
-- 版本-這是必要的主索引鍵，格式應該依循 SemVer 指導方針。 如需詳細資訊，請參閱最佳作法。
-- 作者-這是必要的主索引鍵，並包含與項目相關聯的名稱。
-請參閱作者和下方的擁有者。
+- 版本 - 這是必要的主索引鍵，其格式應遵循 SemVer 指導方針。 請參閱「最佳做法」以取得詳細資料。
+- 作者 - 這是必要的主索引鍵，包含要與項目建立關聯的名稱。
+請參閱下方的＜作者及擁有者＞。
 - 描述 - 這是必要的主索引鍵，用來簡要說明此項目的功能及使用它時的任何需求
 - ProjectURI - 這是強烈建議使用的 PSData 中 URI 欄位，可提供 Github 儲存機制或可供您進行項目相關開發之類似位置的連結
-- 標記-它是強式的建議，來標記您根據其具有 PSEditions 與平台的相容性的套件。 如需詳細資訊，請參閱 <<c0> [ 發行指導方針](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms)。
+- 標籤 - 強烈建議您根據其和 PSEditions 及平台的相容性為您的套件加上標籤。 如需詳細資料，請參閱[發佈指導方針](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms)。
 
 「PowerShell 資源庫」項目的「作者」和「擁有者」是相關的概念，但未必一定相符。 項目「擁有者」是「PowerShell 資源庫」帳戶具有項目維護權限的使用者。 可能會有許多個能夠更新任何項目的「擁有者」。 「擁有者」只有從「PowerShell 資源庫」中才有提供，且如果將項目從一個系統複製到另一個系統，就會遺失擁有者。 「作者」是建置在資訊清單資料中的字串，因此它一律是項目的一部分。 針對來自 Microsoft 產品的項目，建議事項包括：
 
@@ -75,7 +75,7 @@ ms.locfileid: "54012529"
 如果「PowerShell 資源庫」基礎結構無法讀取您項目中的資訊清單資訊，您將無法發行該項目。
 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) 會捕捉將造成模組在安裝後無法使用的常見問題。 您必須先針對每個模組執行此 Cmdlet，才能將模組發行至「PowerShell 資源庫」。
 
-同樣地，[Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo) 會驗證指令碼中的資訊清單，且必須先在每個指令碼 (與模組個別發行) 上執行，才能將指令碼發行至「PowerShell 資源庫」。
+同樣地，[Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo)會驗證指令碼中的中繼資料，且必須在發佈到 PowerShell 資源庫前，先在每個指令碼上執行 (與模組分開發佈)。
 
 
 ## <a name="publishing-items"></a>發行項目
@@ -87,14 +87,14 @@ ms.locfileid: "54012529"
 
 命令列中大多數其他選項應該都在您要發行之項目的資訊清單資料中，因此您應該不需要在命令中指定它們。
 
-為了避免錯誤，強烈建議您在發行之前，先使用 -Whatif -Verbose 來嘗試執行命令。 這將可大幅節省時間，因為每次您發行至「PowerShell 資源庫」時，都必須更新項目資訊清單區段中的版本號碼。
+為了避免錯誤，強烈建議您在發佈之前，先使用 -WhatIf -Verbose 來嘗試執行命令。 這將可大幅節省時間，因為每次您發行至「PowerShell 資源庫」時，都必須更新項目資訊清單區段中的版本號碼。
 
-範例可能是：
+範例為：
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
-請小心檢閱輸出，如果沒看見任何錯誤或警告，請在不使用 -Whatif 的情況下重複執行該命令。
+請小心檢閱輸出，如果沒看見任何錯誤或警告，請在不使用 -WhatIf 的情況下重複執行該命令。
 
 系統會對所有發行至「PowerShell 資源庫」的項目進行病毒掃描，並使用「PowerShell 指令碼分析工具」進行分析。 在該時間出現的所有問題都會傳回給發行者來進行解析。
 

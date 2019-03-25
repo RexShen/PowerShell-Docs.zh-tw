@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定 DSC SMB 提取伺服器
-ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676697"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057751"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
@@ -59,7 +59,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-此設定會建立目錄`C:\DscSmbShare`，如果它尚未存在，並接著該目錄做為 SMB 檔案共用。 **FullAccess**應該授予需要寫入或刪除檔案共用中的任何帳戶。 **ReadAccess**必須有從共用取得設定及 （或） DSC 資源的任何用戶端節點。
+此設定會建立目錄 `C:\DscSmbShare` (如果尚未存在)，然後使用該目錄作為 SMB 檔案共用。 **FullAccess** 應授與給需要寫入或刪除檔案共用中項目的任何帳戶。 **ReadAccess** 必須授與給從共用取得設定和/或 DSC 資源的任何用戶端節點。
 
 > [!NOTE]
-> DSC 預設會以執行 「 系統 」 帳戶，因此電腦本身必須具有共用的存取權。
+> 根據預設，DSC 會以系統帳戶執行，因此電腦本身必須具有共用的存取權限。
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>將檔案系統存取權授與提取用戶端
 
-將 **ReadAccess** 授與用戶端節點可讓該節點存取 SMB 共用，但無法存取該共用內的檔案或資料夾。 您必須明確授與用戶端節點存取 SMB 共用資料夾和子資料夾。 我們可以透過 DSC 來達成，方法是使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模組中所包含的 **cNtfsPermissionEntry** 資源來新增。 下列設定會新增 **cNtfsPermissionEntry** 區塊，將 ReadAndExecute 存取權授與提取用戶端︰
+將 **ReadAccess** 授與用戶端節點可讓該節點存取 SMB 共用，但無法存取該共用內的檔案或資料夾。 您必須明確授與 SMB 共用資料夾和子資料夾的用戶端節點存取權。 我們可以透過 DSC 來達成，方法是使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模組中所包含的 **cNtfsPermissionEntry** 資源來新增。 下列設定會新增 **cNtfsPermissionEntry** 區塊，將 ReadAndExecute 存取權授與提取用戶端︰
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +135,7 @@ Configuration DSCSMB
 > [!NOTE]
 > 如果您使用 SMB 提取伺服器，就必須使用設定識別碼。 SMB 不支援設定名稱。
 
-每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 不支援不同版本的模組 zip 檔案中。 在封裝 DSC 資源模組，以搭配提取伺服器使用之前，您需要的目錄結構進行小幅變更。
+每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 不支援在 ZIP 檔案中包含不同的模組版本。 在封裝搭配提取伺服器使用的 DSC 資源模組前，您需要對目錄結構進行小幅變更。
 
 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
 
@@ -207,7 +207,7 @@ $ConfigurationData = @{
 
 ## <a name="acknowledgements"></a>致謝
 
-感謝以下特殊：
+特別感謝下列人員：
 
 - Mike F. Robbins，本主題中的內容參考了他所撰寫有關針對 DSC 使用 SMB 的文章。 他的部落格位於 [Mike F Robbins](http://mikefrobbins.com/)。
 - Serge Nikalaichyk，負責撰寫 **cNtfsAccessControl** 模組。 此模組的來源位置為 [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl)。

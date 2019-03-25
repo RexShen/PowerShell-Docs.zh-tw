@@ -1,32 +1,32 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc，powershell，設定、 服務、 安裝程式
+keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676627"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795414"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 # <a name="write-compile-and-apply-a-configuration"></a>撰寫、編譯及套用設定
 
 這個練習會從頭開始完整地逐步建立並套用預期狀態設定 (DSC)。
-在下列範例中，您將學習如何撰寫及套用非常簡單的組態。 組態可確保 「 HelloWorld.txt"檔案存在本機電腦上。 如果您刪除檔案時，DSC 會重新建立它便會更新下一次。
+在下列範例中，您會了解如何撰寫及套用非常簡單的設定。 此設定會確保本機電腦上有 "HelloWorld.txt" 檔案。 如果您刪除此檔案，DSC 會在下次更新時重新建立它。
 
-如需 DSC 的功能及其運作方式的概觀，請參閱 <<c0> [ 適用於開發人員 Desired State Configuration 概觀](../overview/overview.md)。
+如需了解 DSC 及其運作方式的概觀，請參閱[開發人員適用的預期狀態設定概觀](../overview/overview.md)。
 
 ## <a name="requirements"></a>需求
 
-若要執行此範例中，您必須執行 PowerShell 4.0 或更新版本的電腦。
+若要執行此範例，您需要執行 PowerShell 4.0 或更新版本的電腦。
 
 ## <a name="write-the-configuration"></a>撰寫設定
 
 DSC [設定](configurations.md)是特殊的 PowerShell 函式，可定義您想設定一或多個目標電腦 (節點) 的方式。
 
-在 PowerShell ISE 中或其他 PowerShell 編輯器中，輸入下列命令：
+在 PowerShell ISE 或其他 PowerShell 編輯器中，鍵入下列命令：
 
 ```powershell
 Configuration HelloWorld {
@@ -47,20 +47,22 @@ Configuration HelloWorld {
 }
 ```
 
-將檔案儲存為"HelloWorld.ps1 」 中。
+將檔案另存為 "HelloWorld.ps1"。
 
-定義組態，就像定義的函式。 **Node** 區塊會指定要設定的目標節點，在本範例中為 `localhost`。
+定義設定如同定義函式。 **Node** 區塊會指定要設定的目標節點，在本範例中為 `localhost`。
 
-此設定會呼叫其中一個[資源](../resources/resources.md)，則`File`資源。 資源會確保目標節點處於設定所定義的狀態。
+此設定會呼叫一項[資源](../resources/resources.md)，即 `File` 資源。 資源會確保目標節點處於設定所定義的狀態。
 
 ## <a name="compile-the-configuration"></a>編譯設定
 
 DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。
-執行設定，例如函式，將會編譯一個 「.mof"檔案所定義的每個節點的`Node`區塊。
-若要執行設定時，您必須*點溯源*"HelloWorld.ps1 」 指令碼到目前的範圍。
-如需詳細資訊，請參閱 < [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
+執行設定 (例如函式)，會針對 `Node` 區塊定義的每個節點編譯一個 ".mof" 檔案。
+為執行此設定，您需要「點溯源」"HelloWorld.ps1" 指令碼到目前的範圍。
+如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
 
-*點溯源*"HelloWorld.ps1 」 指令碼中您儲存的路徑之後, 輸入`. `（點、 空格）。 然後，您可能會藉由呼叫例如函式中執行您的設定。
+<!-- markdownlint-disable MD038 -->
+在 `. ` (點、空格) 後鍵入儲存路徑，即可「點溯源」"HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1
@@ -82,13 +84,13 @@ Mode                LastWriteTime         Length Name
 
 現在您已經有已編譯的 MOF，您接著可呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 來將設定套用至目標節點 (在本範例中為本機電腦)。
 
-`Start-DscConfiguration` Cmdlet 會告知[本機設定管理員 (LCM)](../managing-nodes/metaConfig.md)，DSC，以套用組態的引擎。
+`Start-DscConfiguration` Cmdlet 會要求[本機設定管理員 (LCM)](../managing-nodes/metaConfig.md) (即 DSC 的引擎) 套用設定。
 LCM 會呼叫 DSC 資源以套用設定。
 
-使用下列程式碼來執行`Start-DSCConfiguration`cmdlet。 指定的目錄路徑來儲存您 「 localhost.mof"`-Path`參數。 `Start-DSCConfiguration`指令程式會透過任何指定的目錄"\<computername\>.mof 」 檔案。 `Start-DSCConfiguration`指令程式會嘗試將每個找到的".mof"檔案套用到檔案名稱 （"localhost"、"server01"、"dc-02"等等） 所指定電腦名稱。
+使用下列程式碼執行 `Start-DSCConfiguration` Cmdlet。 將您儲存 "localhost.mof" 的目錄路徑指定給 `-Path` 參數。 `Start-DSCConfiguration` Cmdlet 會查看是否有針對任何 "\<電腦名稱\>.mof" 檔案指定的路徑。 `Start-DSCConfiguration` Cmdlet 會嘗試將它所找到每個 ".mof" 檔案套用到檔案名稱 ("localhost"、"server01"、"dc-02" 等等) 指定的電腦名稱。
 
 > [!NOTE]
-> 如果`-Wait`未指定參數，`Start-DSCConfiguration`建立背景工作來執行作業。 指定`-Verbose`參數可讓您監看**Verbose**作業的輸出。 `-Wait`與`-Verbose`是這兩個選擇性參數。
+> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的**詳細資訊**輸出。 `-Wait` 和 `-Verbose` 都是選用參數。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -96,11 +98,11 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>測試組態
 
-一次`Start-DSCConfiguration`cmdlet 完成時，您應該會看到您所指定的位置中的 「 HelloWorld.txt"檔案。 您可以確認與內容[Get-content](/powershell/module/microsoft.powershell.management/get-content) cmdlet。
+`Start-DSCConfiguration` Cmdlet 完成後，您應該會在指定的位置看到 "HelloWorld.txt" 檔案。 您可以使用 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) Cmdlet 驗證內容。
 
-您也可以*測試*目前的狀態使用[Test-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)。
+您也可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)「測試」目前的狀態。
 
-如果節點是目前符合套用的設定，輸出應該是"True"。
+如果節點目前與套用的設定相容，則輸出應為 "True"。
 
 ```powershell
 Test-DSCConfiguration
@@ -118,9 +120,9 @@ Get-Content -Path C:\Temp\HelloWorld.txt
 Hello World from DSC!
 ```
 
-## <a name="re-applying-the-configuration"></a>重新套用組態
+## <a name="re-applying-the-configuration"></a>重新套用設定
 
-若要查看您一次套用的設定，您可以移除您組態所建立的文字檔。 使用`Start-DSCConfiguration`cmdlet 搭配`-UseExisting`參數。 `-UseExisting`參數會指示`Start-DSCConfiguration`來重新套用 「 current.mof"檔案，表示最近成功套用設定。
+若要查看再次套用設定，您可以移除由設定建立的文字檔。 使用 `Start-DSCConfiguration` Cmdlet 搭配 `-UseExisting` 參數。 `-UseExisting` 參數會指示 `Start-DSCConfiguration` 重新套用 "current.mof" 檔案，它代表最近成功套用的設定。
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt

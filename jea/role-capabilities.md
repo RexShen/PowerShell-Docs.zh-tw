@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522934"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055048"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
-> 適用對象：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 建立 JEA 端點時，您必須定義一或多個「角色功能」，描述某人可以在 JEA 工作階段中做「什麼」。
 角色功能是具有 .psrc 副檔名的 PowerShell 資料檔案，列出應該供連線使用者使用的所有 Cmdlet、函式、提供者，以及外部程式。
@@ -58,7 +58,7 @@ PowerShell 說明文件包含數個檔案設定方式的範例。
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>允許 PowerShell Cmdlet 和函式
 
-若要授權使用者執行 PowerShell Cmdlet 或函式、新增 Cmdlet 或函式名稱至 VisbibleCmdlets 或 VisibleFunctions 欄位。
+若要授權使用者執行 PowerShell Cmdlet 或函式，請將 Cmdlet 或函式名稱新增至 VisibleCmdlets 或 VisibleFunctions 欄位。
 如果您不確定命令是 Cmdlet 或函式，可以執行 `Get-Command <name>` 並檢查輸出中的 "CommandType" 屬性。
 
 ```powershell
@@ -101,7 +101,6 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | 允許使用者執行 `My-Func` 搭配 `Param1` 參數。 只能提供 "Value1" 和 "Value2" 給參數。
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | 允許使用者執行 `My-Func` 搭配 `Param1` 參數。 可以提供開頭為 "contoso" 的任何值給參數。
 
-
 > [!WARNING]
 > 關於最佳安全性做法，不建議在定義可見 Cmdlet 或函式時使用萬用字元。
 > 相反地，您應該明確列出每個受信任的命令，以確保沒有其他共用相同命名配置的命令意外地獲得授權。
@@ -126,10 +125,10 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 例如，請考慮檔案伺服器系統管理員的角色，系統管理員想要檢查本機電腦裝載哪些網路共用。
 其中一個檢查方式是使用 `net share`。
-不過，允許 net.exe 非常危險，因為系統管理員可以輕鬆地以 `net group Administrators unprivilegedjeauser /add` 使用命令取得系統管理員權限。
+不過，允許 net.exe 是非常危險的，因為管理員可以輕鬆地以 `net group Administrators unprivilegedjeauser /add` 使用命令取得管理員權限。
 更好的方法是允許 [Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx)，這可達到相同的結果，但範圍的限制多了許多。
 
-當提供外部命令給使用者在 JEA 工作階段中使用時，請一律指定可執行檔的完整路徑，以確保不會改為執行放置在系統上別處、名稱類似 (且可能惡意) 的程式。
+在 JEA 工作階段中提供外部命令給使用者使用時，請一律指定可執行檔的完整路徑，以確保不會改為執行放置在系統上別處、名稱類似 (且可能惡意) 的程式。
 
 ### <a name="allowing-access-to-powershell-providers"></a>允許存取 PowerShell 提供者
 
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > 別忘了將您的自訂函式名稱新增至 **VisibleFunctions** 欄位，以便 JEA 使用者可以執行它們。
 
-
 自訂函式主體 (指令碼區塊) 會以系統的預設語言模式執行，而且不受限於 JEA 的語言條件約束。
 這表示函式可以存取檔案系統和登錄，並執行角色功能檔案中未設為可見的命令。
 請小心避免允許在使用參數時執行任意程式碼，並避免直接將使用者輸入以管線送到 Cmdlet，例如 `Invoke-Expression`。
@@ -211,14 +209,12 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 
-
 您只要儲存對角色功能檔案的變更，即可隨時更新角色功能檔案。
 更新角色功能之後啟動的任何新 JEA 工作階段都會反映出修改過的功能。
 
 這就是為什麼控制角色功能資料夾的存取權如此重要。
 應該只有受高度信任的系統管理員才能夠變更角色功能檔案。
 如果不受信任的使用者可以變更角色功能檔案，他們便可以輕鬆地讓自己能存取 Cmdlet，使其可提高權限。
-
 
 針對想要鎖定角色功能存取權的系統管理員，請確定本機系統對於角色功能檔案和包含的模組具有讀取存取權。
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands, VisibleAliases, VisibleProviders, ScriptsToProcess**
 

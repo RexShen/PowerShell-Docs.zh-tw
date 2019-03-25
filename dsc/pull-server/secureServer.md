@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677116"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057700"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -16,7 +16,7 @@ ms.locfileid: "55677116"
 > [!IMPORTANT]
 > 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
-摘要：本文件旨在包含程序和擴充性以協助準備解決方案的工程師。 詳細資訊應該提供客戶找到的最佳做法，經產品小組驗證後確認所提供的建議可穩定應對未來問題。
+摘要：本文件旨在包含程序和擴充性來協助準備解決方案的工程師。 詳細資訊應該提供客戶找到的最佳做法，經產品小組驗證後確認所提供的建議可穩定應對未來問題。
 
 | |文件資訊|
 |:---|:---|
@@ -64,7 +64,7 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 
 ### <a name="software-downloads"></a>軟體下載
 
-除了從 Windows Update 安裝最新的內容，有兩個下載視為部署 DSC 提取伺服器的最佳做法：最新版的 Windows Management Framework 和 DSC 模組，以自動佈建提取伺服器。
+除了從 Windows Update 安裝最新的內容，部署 DSC 提取伺服器的最佳做法中也包含了兩個下載項目：最新版本的 Windows Management Framework，以及自動化提取伺服器佈建的 DSC 模組。
 
 ### <a name="wmf"></a>WMF
 
@@ -104,7 +104,7 @@ Install-Module xPSDesiredStateConfiguration
 
 實體和虛擬伺服器都支援提取伺服器部署。 提取伺服器的大小需求與 Windows Server 2012 R2 的需求一致。
 
-CPU：1.4 GHz 64 位元處理器記憶體：50 MB 的磁碟空間32 GB 網路：Gigabit Ethernet 介面卡
+CPU：1.4 GHz 64 位元處理器記憶體：512 MB 的磁碟空間：32 GB 網路：Gigabit 乙太網路介面卡
 
 規劃工作|
 ---|
@@ -260,7 +260,7 @@ Install-Module xPSDesiredStateConfiguration
 
 部署 DSC 提取伺服器的最佳方法是使用 DSC 設定指令碼。 本文件顯示的指令碼，包括只設定 DSC Web 服務的基本設定，以及設定 Windows Server 端對端 (包括 DSC Web 服務) 的進階設定。
 
-注意：目前`xPSDesiredStateConfiguation`DSC 模組需要讓伺服器成為 EN-US 地區設定。
+注意：目前 `xPSDesiredStateConfiguration` DSC 模組需要伺服器使用 EN-US 地區設定。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 基本設定
 

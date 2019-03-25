@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用熟悉的命令名稱
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402081"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795669"
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名稱
 
@@ -45,7 +45,7 @@ Alias           cls -> Clear-Host
 
 ## <a name="interpreting-standard-aliases"></a>解譯標準別名
 
-先前提到的別名是針對與其他命令殼層的名稱相容性而設計的。
+先前提到的別名是專為與其他命令殼層名稱相容所設計。
 PowerShell 內建的大部分別名都是基於簡潔性而設計的。 較短的名稱比較容易輸入，但如果您不知道它們指的是什麼，就會變得不容易閱讀。
 
 PowerShell 別名試圖在清晰度與簡潔性之間做出妥協。 PowerShell 會針對常見名詞與指令動詞使用一組標準別名。
@@ -65,7 +65,7 @@ PowerShell 別名試圖在清晰度與簡潔性之間做出妥協。 PowerShell 
 
 | Cmdlet 名稱    | 別名 |
 |----------------|-------|
-| `Get-Item `    | gi    |
+| `Get-Item`     | gi    |
 | `Set-Item`     | si    |
 | `Get-Location` | gl    |
 | `Set-Location` | sl    |

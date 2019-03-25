@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 08/14/2018
-ms.openlocfilehash: 87ab967a30782a6ac4d86737cd1702a0ebd6ebc5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677245"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056527"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -30,7 +30,7 @@ SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShe
 
 ## <a name="general-setup-information"></a>一般安裝資訊
 
-SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 適用於 Windows 10 組建 1809年和 Windows Server 2019 的現在 OpenSSH for Windows。 如需詳細資訊，請參閱 < [OpenSSH 的 Windows](/windows-server/administration/openssh/openssh_overview)。 針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell Core 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 您也必須設定啟用密碼或以金鑰為基礎的驗證。
+SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 及 Windows Server 2019 中使用。 如需詳細資訊，請參閱[適用於 Windows 的 OpenSSH](/windows-server/administration/openssh/openssh_overview)。 針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell Core 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 您也必須設定啟用密碼或以金鑰為基礎的驗證。
 
 ## <a name="set-up-on-windows-machine"></a>在 Windows 電腦上進行安裝
 
@@ -46,8 +46,8 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 安裝最新的 Win32 OpenSSH。 如需安裝指示，請參閱[安裝的 OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)。
-3. 編輯`sshd_config`位於檔案`$env:ProgramData\ssh`。
+2. 安裝最新的 Win32 OpenSSH。 如需安裝指示，請參閱[安裝 OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)。
+3. 編輯位於 `$env:ProgramData\ssh` 的 `sshd_config` 檔案。
 
    - 確定已啟用密碼驗證
 
@@ -62,7 +62,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
      > [!NOTE]
      > OpenSSH for Windows 中有一個錯 Bug，會讓空格無法在子系統可執行檔路徑中運作。 如需詳細資訊，請參閱[這個 GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784) \(英文\)。
 
-     解決方案之一是建立未包含空格之 PowerShell 安裝目錄的符號連結：
+     其中一個解決方案是建立連到 PowerShell 安裝目錄的 Symlink (不含空格)：
 
      ```powershell
      mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
@@ -314,6 +314,6 @@ sudo 命令不適用於連至 Linux 電腦的遠端工作階段。
 
 [PowerShell Core for MacOS](../../install/installing-powershell-core-on-macos.md)
 
-[OpenSSH for Windows](/windows-server/administration/openssh/openssh_overview)
+[適用於 Windows 的 OpenSSH](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

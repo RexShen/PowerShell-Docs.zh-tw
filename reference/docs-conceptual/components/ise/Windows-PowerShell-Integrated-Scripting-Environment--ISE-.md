@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 整合式指令碼環境 ISE
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400623"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054708"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell 整合式指令碼環境 (ISE)
 
@@ -34,7 +34,7 @@ ISE 可讓您在主控台窗格中執行命令，但也支援數個窗格，可�
 
 **[最近使用的清單]** 現在是 [開啟舊檔] 功能表的一部分，讓您更輕鬆地取得您最常使用的檔案。
 
-**合併的主控台窗格**。 在舊版的 ISE 中，具有個別的 [命令] 和 [輸出] 窗格。 它們現在合併成單一窗格，更直接與您在 Windows Powershell 主控台中看到的內容相似。
+**合併的主控台窗格**。 在舊版的 ISE 中，具有個別的 [命令] 和 [輸出] 窗格。 它們現在合併成單一窗格，更直接與您在 Windows PowerShell 主控台中看到的內容相似。
 
 **命令列參數**。 數個新的命令列參數可讓您更充分掌控 ISE 的運作方式。 -NoProfile 會啟動 ISE，但不執行設定檔指令碼。 -Help 會開啟含 ISE 的說明視窗。 -mta 會使用「多執行緒 Apartment 模式」啟動 ISE。 預設值是單一執行緒。
 

@@ -2,32 +2,32 @@
 ms.date: 1/17/2019
 keywords: dsc,powershell,設定,安裝
 title: 重新啟動節點
-ms.openlocfilehash: 33ecd98aa62c3dc94a8ff2213fd3e68bf0c05cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676833"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054725"
 ---
 # <a name="reboot-a-node"></a>重新啟動節點
 
 > [!NOTE]
-> 本主題討論如何重新啟動節點。 為了讓重新開機，才能成功**ActionAfterReboot**並**RebootNodeIfNeeded**必須正確設定的 LCM 設定。
-> 若要深入了解本機設定管理員設定，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)，或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。
+> 本主題討論如何重新啟動節點。 必須正確設定 **ActionAfterReboot** 和 **RebootNodeIfNeeded** LCM 設定，才能成功重新開機。
+> 若要查看本機設定管理員設定，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。
 
-節點可重新啟動從資源中，使用`$global:DSCMachineStatus`旗標。 若要設定這個旗標`1`中`Set-TargetResource`函式會強制重新啟動之後直接的節點 LCM**設定**方法目前的資源。 使用此旗標， **xPendingReboot**重新開機是否擱置中偵測到的資源之外 DSC。
+使用 `$global:DSCMachineStatus` 旗標即可從資源內重新啟動節點。 在 `Set-TargetResource` 函式中將此旗標設為 `1`，會強制 LCM 在目前資源的 **Set** 方法之後，直接重新啟動節點。 使用此旗標，**xPendingReboot** 資源會偵測是否在 DSC 外暫止重新啟動。
 
-您[組態](configurations.md)可能會執行需要重新啟動節點的步驟。 例如，這可能包括項目：
+您的[設定](configurations.md)會執行需要重新啟動節點的步驟。 這可能包括下列項目：
 
-- Windows: 更新
+- Windows 更新
 - 軟體安裝
 - 檔案重新命名
 - 電腦重新命名
 
-**XPendingReboot**資源檢查特定電腦的位置，以判斷是否暫止重新開機。 如果節點要求 DSC，之外重新開機**xPendingReboot**的資源集`$global:DSCMachineStatus`旗標設為`1`強制重新開機，並解決問題的暫止。
+**xPendingReboot** 資源會檢查特定的電腦位置，判斷重新啟動是否暫止。 如果節點要求在 DSC 外重新啟動，則 **xPendingReboot** 資源會將 `$global:DSCMachineStatus` 旗標設為 `1`，強制重新啟動並解決暫止狀況。
 
 > [!NOTE]
-> 任何 DSC 資源可以指示來設定這個旗標，重新啟動節點 LCM`Set-TargetResource`函式。 如需詳細資訊，請參閱 <<c0> [ 撰寫自訂 DSC 資源與 MOF](../resources/authoringResourceMOF.md)。
+> 任何 DSC 資源皆可在 `Set-TargetResource` 函式中設定此旗標，指示 LCM 重新啟動節點。 如需詳細資訊，請參閱[使用 MOF 撰寫自訂的 DSC 資源](../resources/authoringResourceMOF.md)。
 
 ## <a name="syntax"></a>語法
 
@@ -49,22 +49,22 @@ xPendingReboot [String] #ResourceName
 
 | 屬性 | 描述 |
 | --- | --- |
-| 名稱| 必須是唯一的每個執行個體設定中之資源的必要的參數。|
-| SkipComponentBasedServicing | 元件為基礎的服務元件所觸發的略過重新開機。 |
-| SkipWindowsUpdate | 由 Windows Update 所觸發的略過重新開機。|
-| SkipPendingFileRename | 略過暫止檔案重新命名重新開機。 |
-| SkipCcmClientSDK | 由 ConfigMgr 用戶端所觸發的略過重新開機。 |
-| SkipComputerRename | 略過重新觸發開機的電腦重新命名。 |
-| PSDSCRunAsCredential | 支援 v5。 指定的使用者身分執行的資源。 |
+| 名稱| 在設定內，資源每個執行個體的必要參數都必須為唯一。|
+| SkipComponentBasedServicing | 以元件為基礎服務元件所觸發的略過重新啟動。 |
+| SkipWindowsUpdate | Windows Update 所觸發的略過重新啟動。|
+| SkipPendingFileRename | 略過暫止檔案重新命名重新啟動。 |
+| SkipCcmClientSDK | ConfigMgr 用戶端所觸發的略過重新啟動。 |
+| SkipComputerRename | 電腦重新命名所觸發的略過重新啟動。 |
+| PSDSCRunAsCredential | v5 支援。 以指定的使用者身分執行資源。 |
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 如需詳細資訊，請參閱[使用 DependsOn](resource-depends-on.md)|
 
 ## <a name="example"></a>範例
 
-下列範例會安裝使用 Microsoft Exchange [xExchange](https://github.com/PowerShell/xExchange)資源。
-在安裝中，整個**xPendingReboot**資源用來重新啟動節點。
+下列範例會使用 [xExchange](https://github.com/PowerShell/xExchange) 資源來安裝 Microsoft Exchange。
+在整個安裝過程中，都使用 **xPendingReboot** 資源來重新啟動節點。
 
 > [!NOTE]
-> 這個範例需要可將 Exchange server 新增至樹系的權限的帳戶的認證。 如需有關如何在 DSC 中使用認證的詳細資訊，請參閱[處理 DSC 的認證](../configurations/configDataCredentials.md)
+> 這個範例需要有權將 Exchange 伺服器新增至樹系的帳戶認證。 如需在 DSC 中使用認證的詳細資訊，請參閱[處理 DSC 的認證](../configurations/configDataCredentials.md)
 
 ```powershell
 $ConfigurationData = @{
@@ -130,11 +130,11 @@ Configuration Example
 ```
 
 > [!NOTE]
-> 這個範例假設您已設定您的本機設定管理員，來允許重新開機，並繼續在重新開機後的設定。
+> 這個範例假設您已設定本機設定管理員允許重新啟動，並在重新啟動後繼續設定。
 
-## <a name="where-to-download"></a>若要下載的位置
+## <a name="where-to-download"></a>下載位置
 
-您可以下載本主題的下列位置，或使用 「 PowerShell 資源庫中使用的資源。
+您可在下列位置下載本主題中使用的資源，或使用 PowerShell 資源庫。
 
 - [xPendingReboot](https://github.com/PowerShell/xPendingReboot)
 - [xExchange](https://github.com/PowerShell/xExchange)

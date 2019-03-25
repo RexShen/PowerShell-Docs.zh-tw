@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655441"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795686"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的中斷性變更
 
@@ -65,6 +65,10 @@ ms.locfileid: "53655441"
 ### <a name="-counter-cmdlets"></a>`*-Counter` Cmdlet
 
 由於使用不支援的 API，因此已從 PowerShell Core 中移除 `*-Counter`，直到找到更好的解決方案為止。
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` Cmdlet
+
+由於使用不支援的 API，因此已從 PowerShell Core 中移除 `*-EventLog`。 直到找到更好的解決方案。 `Get-WinEvent` 和 `Create-WinEvent` 可在 Windows 上取得並建立事件。
 
 ## <a name="enginelanguage-changes"></a>引擎/語言變更
 
@@ -179,9 +183,9 @@ ms.locfileid: "53655441"
 
 由於 API 不是支援的 API，因此已將 `Diagnostics` 中的 `LocalAccounts` 模組和 `Counter` Cmdlet 移除，直到找到更好的解決方案為止。
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>以布林值參數執行 PowerShell 指令碼無法運作 [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>Executing PowerShell script with bool parameter does not work[#4036](https://github.com/PowerShell/PowerShell/issues/4036) (以布林值參數執行 PowerShell 指令碼無法運作 #4036)
 
-先前，使用 powershell.exe (現在為 `pwsh.exe`) 以 `-File` 執行 PowerShell 指令碼時，無法傳遞 $true/$false 作為參數值。 已新增將 $true/$false 作為參數剖析值的支援。 此外，也支援參數值，因為目前記載的語法無法運作。
+先前，使用 **powershell.exe** (現在為 **pwsh.exe**) 以 `-File` 執行 PowerShell 指令碼時，無法傳遞 `$true`/`$false` 作為參數值。 已新增將 `$true`/`$false` 作為參數剖析值的支援。 此外，也支援參數值，因為目前記載的語法無法運作。
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>從 `$PSVersionTable` 中移除 `ClrVersion` 屬性 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ ms.locfileid: "53655441"
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>實作 Unicode 逸出剖析 [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` 或 `` `u{####} `` 會轉換成對應的 Unicode 字元。 若要輸出常值 `` `u ``，請將反單引號逸出：``` ``u ```。
+`` `u####`` 或 `` `u{####}`` 會轉換成對應的 Unicode 字元。 若要輸出常值 `` `u``，請將反單引號逸出：``` ``u```。
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>在非 Windows 平台上將 `New-ModuleManifest` 編碼變更為 `UTF8NoBOM` [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
@@ -271,4 +275,4 @@ Web Cmdlet 的基礎 .NET API 已變更為 `System.Net.Http.HttpClient`。 這�
 - 已不再接受 `System.Net.ServicePointManager` 設定。
 - macOS 上目前未提供任何憑證型驗證。
 - 透過 `http://` URI 使用 `-Credential` 將會造成錯誤。 請使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 參數來抑制此錯誤。
-- `-MaximumRedirection` 重新導向次數超過提供的限制，而不是傳回的最後一個重新導向結果時，現在會產生終止錯誤。
+- 當重新導向次數超過提供的限制時，`-MaximumRedirection` 現在會產生終止錯誤，而不是傳回最後一個重新導向的結果。

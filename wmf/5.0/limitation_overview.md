@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892979"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054369"
 ---
 # <a name="known-issues-and-limitations"></a>已知的問題和限制
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>第一次使用時，會無法使用 PowerShell 快速鍵
 
-**解決方法︰** 執行下列其中一項動作︰
+**解決方法：** 執行下列動作之一：
 
 1. 以滑鼠右鍵按一下 [PowerShell] 捷徑。 選取 [Windows PowerShell]，在非提高權限模式下啟動。
 2. 以滑鼠右鍵按一下 [PowerShell] 捷徑。 在 [Windows PowerShell] 上按一下滑鼠右鍵，然後選取 [以系統管理員身分執行]，在提升權限的模式中啟動。
@@ -23,7 +23,7 @@ ms.locfileid: "37892979"
 
 在 Windows 7 上，使用 PowerShell 模組和 DSC 資源可能會報告 ExecutionPolicy 的相關錯誤。
 
-**解決方法︰** 在提升權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，將 ExecutionPolicy 設定為 RemoteSigned：
+**解決方法：** 在提升權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，將 ExecutionPolicy 設定為 RemoteSigned：
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -33,19 +33,19 @@ Set-ExecutionPolicy RemoteSigned
 
 舊的 Exchange 端點會重新導向至新的端點。 重新導向邏輯中的 Bug 會導致當機。
 
-**解決方法︰** 直接連線到新的端點。
+**解決方法：** 直接連線到新的端點。
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>在 Windows Server 2012 R2 上安裝 WMF 5.0 之後，錯誤地停止軟體清查記錄功能
 
 在已執行 SIL 的 Windows Server 2012 R2 上安裝 WMF 5.0 時，軟體清查記錄功能在安裝後錯誤地停止。
 
-**解決方法︰** 一安裝 WMF 之後，執行 Start-SilLogging Cmdlet，因為安裝程序將會錯誤地停止軟體清查記錄功能。
+**解決方法：** 安裝好 WMF 之後，立刻執行 Start-SilLogging Cmdlet，因為安裝程序會錯誤地停止軟體清查記錄功能。
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>如果同時使用 -LiteralPath 和 -Recurse，`Get-ChildItem` 就無法運作
 
 如果目錄名稱包含無效的萬用字元，則在同時使用 -LiteralPath 和 -Recurse 時，`Get-ChildItem` 將不會產生預期的結果。
 
-**解決方法︰** 不理想，但目前的因應措施是在指令碼中實作遞迴，而不要依賴此 Cmdlet。
+**解決方法：** 不理想，但目前的因應措施是在指令碼中實作遞迴，不是依賴此 Cmdlet。
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep 在安裝 WMF 5.0 之後失敗
 

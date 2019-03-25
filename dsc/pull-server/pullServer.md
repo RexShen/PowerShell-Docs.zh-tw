@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429953"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056765"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -72,7 +72,8 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 
 從 [Windows Server Insider Preview](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver) 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 *DSC 服務*) 的支援選項。 這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
 
-> **注意**：SQL Server 支援將不會新增至舊版的 WMF 5.1 (或更早版本)，且只能在高於或等於 17090 的 Windows Server 版本上使用。
+> [!NOTE]
+> SQL Server 支援將不會新增至舊版的 WMF 5.1 (或更早版本)，且只能在高於或等於 17090 的 Windows Server 版本上使用。
 
 若要設定提取伺服器以使用 SQL Server，請將 **SqlProvider** 設定至 `$true` 並將 **SqlConnectionString** 設定至有效的 SQL Server 連接字串。 如需詳細資訊，請參閱 [SqlClient 連接字串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
 如需具有 **xDscWebService** 的 SQL Server 設定範例，請先閱讀[使用 xDscWebService 資源](#using-the-xdscwebservice-resource)，然後檢閱 [Sample_xDscWebServiceRegistration_GitHub 上的 UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)。
@@ -84,12 +85,12 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 
 1. 呼叫 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。
    > [!NOTE]
-   > **Install-module**納入**PowerShellGet**模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
+   > **Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
 2. 在組織或公開授權單位中，從信任的憑證授權單位取得 DSC 提取伺服器的 SSL 憑證。 從授權單位收到的憑證通常為 PFX 格式。
-3. 在將成為預設位置，這應該是 DSC 提取伺服器的節點上安裝憑證`CERT:\LocalMachine\My`。
+3. 在將成為 DSC 提取伺服器的節點上，於預設位置安裝憑證 (應為 `CERT:\LocalMachine\My`)。
    - 記下憑證指紋。
-4. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：` [guid]::newGuid()` 或 `New-Guid`。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
-5. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含的範例資料夾**xPSDesiredStateConfiguration**做為模組`Sample_xDscWebServiceRegistration.ps1`)。 此指令碼會設定提取伺服器。
+4. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：`[guid]::newGuid()` 或 `New-Guid`。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
+5. 在 PowerShell ISE 中，啟動 (F5) 下列設定指令碼 (包含於 **xPSDesiredStateConfiguration** 模組之 Example 資料夾中的 `Sample_xDscWebServiceRegistration.ps1`)。 此指令碼會設定提取伺服器。
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -164,9 +165,9 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 若要讓用戶端節點向伺服器註冊，使其可以使用設定名稱，而非設定識別碼，上述設定所建立的註冊金鑰會儲存在 `C:\Program Files\WindowsPowerShell\DscService` 中名為 `RegistrationKeys.txt` 的檔案中。 註冊金鑰會當作共用密碼，在用戶端向提取伺服器初始註冊期間使用。 用戶端會產生自我簽署的憑證，以在成功完成註冊之後，用來向提取伺服器進行唯一驗證。 此憑證的指紋會儲存在本機，並與提取伺服器的 URL 相關聯。
 
 > [!NOTE]
-> 在 PowerShell 4.0 中不支援註冊金鑰。
+> PowerShell 4.0 中不支援註冊金鑰。
 
-若要設定節點向提取伺服器進行驗證，對於要向此提取伺服器註冊的任何目標節點，其中繼設定內都必須要有註冊金鑰。 請注意， **RegistrationKey**在下面的中繼設定之後，會移除已成功註冊目標電腦，而且值必須符合中儲存的值`RegistrationKeys.txt`提取伺服器上的檔案 ('140a952b-b9d6-406b-b416-e0f759c9c0e4' 此範例中)。 請務必保護註冊金鑰值，因為知道此值可向提取伺服器註冊任何目標電腦。
+若要設定節點向提取伺服器進行驗證，對於要向此提取伺服器註冊的任何目標節點，其中繼設定內都必須要有註冊金鑰。 請注意，以下中繼設定中的 **RegistrationKey** 會在目標電腦成功註冊後移除，且該值必須與儲存在提取伺服器上 `RegistrationKeys.txt` 檔案中的值相符 (此範例中為 '140a952b-b9d6-406b-b416-e0f759c9c0e4')。 請務必保護註冊金鑰值，因為知道此值可向提取伺服器註冊任何目標電腦。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -210,7 +211,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ```
 
 > [!NOTE]
-> **ReportServerWeb**區段允許將報告傳送到提取伺服器的資料。
+> **ReportServerWeb** 區段允許將報告資料傳送至提取伺服器。
 
 中繼設定檔內缺乏 **ConfigurationID** 屬性即隱含表示提取伺服器支援提取伺服器通訊協定 V2 版，因此需要初始註冊。
 相反地，出現 **ConfigurationID** 則表示會使用提取伺服器通訊協定 V1 版，而且不會處理註冊。
@@ -227,12 +228,12 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。
 
-例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組就會命名為`xWebAdministration_3.2.1.0.zip`。
+例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 `xWebAdministration_3.2.1.0.zip`。
 一個壓縮檔必須包含一個模組版本。
 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。
 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。
 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
-針對提取伺服器封裝之前，移除 **{模組版本}** 資料夾，讓路徑成為`{Module Folder}\DscResources\{DSC Resource Folder}\`。
+在針對提取伺服器進行封裝之前，請移除 **{模組版本}** 資料夾，以便讓路徑變成 `{Module Folder}\DscResources\{DSC Resource Folder}\`。
 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
 
 使用 `New-DscChecksum {module zip file}` 為新增的模組建立總和檢查碼檔案。
@@ -280,8 +281,8 @@ DSC 社群撰寫了多個解決方案來實作提取服務通訊協定。
 
 下列主題將詳細描述如何設定提取用戶端：
 
-- [設定 DSC 提取用戶端使用設定識別碼](pullClientConfigID.md)
-- [設定 DSC 提取用戶端使用設定名稱](pullClientConfigNames.md)
+- [使用設定識別碼設定 DSC 提取用戶端](pullClientConfigID.md)
+- [使用設定名稱設定 DSC 提取用戶端](pullClientConfigNames.md)
 - [部分設定](partialConfigs.md)
 
 ## <a name="see-also"></a>另請參閱
@@ -289,5 +290,5 @@ DSC 社群撰寫了多個解決方案來實作提取服務通訊協定。
 - [Windows PowerShell 預期狀態設定概觀](../overview/overview.md)
 - [制定組態](enactingConfigurations.md)
 - [使用 DSC 報表伺服器](reportServer.md)
-- [[MS-DSCPM]：預期狀態設定提取模型通訊協定](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]：預期狀態設定提取模型通訊協定 Errata](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]：Desired State Configuration 提取模型通訊協定](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]：Desired State Configuration 提取模型通訊協定錯誤](https://msdn.microsoft.com/library/mt612824.aspx)

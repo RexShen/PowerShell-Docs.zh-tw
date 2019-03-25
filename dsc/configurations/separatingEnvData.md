@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 分離設定和環境資料
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55678906"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794921"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 讓我們看看一個完整的範例，該範例使用單一設定來設定網站的開發和生產環境。 在開發環境中，IIS 和 SQL Server 會安裝在單一節點上。 在生產環境中，IIS 和 SQL Server 會安裝在不同的節點上。 我們將使用設定資料檔案 .psd1，來指定這兩個不同環境的資料。
 
- ### <a name="configuration-data-file"></a>設定資料檔案
+### <a name="configuration-data-file"></a>設定資料檔案
 
 我們將在名為 `DevProdEnvData.psd1` 的檔案中定義開發與生產環境資料，如下所示：
 
@@ -135,7 +135,7 @@ Mode                LastWriteTime         Length Name
 
 在設定指令碼結尾處，我們會呼叫設定 (將其編譯為 MOF 文件)，並傳遞 `DevProdEnvData.psd1` 作為 `$ConfigurationData` 參數。
 
->**注意：** 此設定需要的模組`xSqlPs`和`xWebAdministration`安裝在目標節點上。
+>**注意：** 這項設定要求在目標節點上安裝模組 `xSqlPs` 和 `xWebAdministration`。
 
 讓我們在名為 `MyWebApp.ps1` 的檔案中定義設定：
 

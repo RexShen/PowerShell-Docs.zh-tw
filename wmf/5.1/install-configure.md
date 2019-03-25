@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 contributor: keithb
 title: 安裝與設定 WMF 5.1
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676719"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055981"
 ---
-# <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1 #
-
+# <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1
 
 ## <a name="download-and-install-the-wmf-51-package"></a>下載並安裝 WMF 5.1 套件
 
@@ -23,8 +22,8 @@ ms.locfileid: "55676719"
 | Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
 | Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8.1            |                         | **x64：**[Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86：**[Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64：**[Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86：**[Win7-KB3191566-x86.ZIP][] |
+| Windows 8.1            |                         | **x64:**[Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:**[Win8.1-KB3191564-x86.msu][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:**[Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:**[Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513
@@ -35,7 +34,8 @@ ms.locfileid: "55676719"
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>安裝適用於 Windows Server 2008 R2 和 Windows 7 的 WMF 5.1
 
-> **注意︰** Windows Server 2008 R2 和 Windows 7 的安裝指示已變更，且與其他套件的指示不同。 適用於 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安裝指示如下。
+> [!NOTE]
+> Windows Server 2008 R2 和 Windows 7 的安裝指示已變更，且與其他套件的指示不同。 適用於 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安裝指示如下。
 
 **在 Windows Server 2008 R2 和 Windows 7 上安裝 WMF 5.1**
 
@@ -50,8 +50,8 @@ ms.locfileid: "55676719"
 
 Install-WMF5.1.ps1 會採用下列參數以簡化針對 Windows Server 2008 R2 和 Windows 7 上安裝的自動化：
 
-- AcceptEula包含此參數時，自動接受使用者授權合約，並不會顯示。
-- AllowRestart:這個參數可以只用在指定 AcceptEula 時。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
+- AcceptEula：當包含此參數時，會自動接受 EULA 且不會顯示。
+- AllowRestart：此參數只能在指定 AcceptEula 時使用。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
 
 **Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 必要條件**
 
@@ -67,8 +67,8 @@ Windows PowerShell 預期狀態設定 (DSC) 取決於 WinRM。
 在 Windows Server 2008 R2 和 Windows 7 上預設不啟用 WinRM。
 若要啟用 WinRM，請在 Windows PowerShell 提高權限的工作階段中，執行 `Set-WSManQuickConfig`。
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>安裝適用於 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的 WMF 5.1
+
 **從 Windows 檔案總管 (或 Windows Server 2012 R2 或 Windows 8.1 中的檔案總管) 安裝**
 
 1. 瀏覽至您用來下載 MSU 檔案的資料夾。

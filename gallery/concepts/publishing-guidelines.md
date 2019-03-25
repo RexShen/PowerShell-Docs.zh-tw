@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265564"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056493"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -33,7 +33,7 @@ ms.locfileid: "56265564"
 - 針對意見反應做出回應
 - 提供模組而不是指令碼
 - 提供專案網站的連結
-- 標記使用相容的 PSEdition(s) 及平台套件 
+- 使用相容的 PSEdition 和平台標記您的套件
 - 在模組中隨附測試
 - 包含和/或連結至授權條款
 - 簽署您的程式碼
@@ -94,7 +94,7 @@ MSDN 中提供數篇有關如何隨 PowerShell 套件提供文件的文章，包
 「PowerShell 資源庫」中提供兩種意見反應方法：
 
 - 連絡擁有者：這可讓使用者傳送電子郵件給套件擁有者。 如果您是套件擁有者，請務必隨時注意與「PowerShell 資源庫」套件搭配使用的電子郵件地址，並針對提出的問題進行回應。 此方法有一個缺點，就是只有使用者和擁有者可以看到溝通內容，因此擁有者可能必須回答相同的問題許多次。
-- 評論：套件頁面底部有一個 [評論] 欄位。
+- 註解：套件頁面底部有一個 [註解] 欄位。
   此系統的優點是其他使用者可以看到評論和回應，減少了必須回答任何單一問題的次數。
   如果您是套件擁有者，強烈建議您「關注」針對每個套件提出的評論。
 如需相關做法的詳細資料，請參閱[透過社群媒體或評論來提供意見反應](../how-to/working-with-packages/social-media-feedback.md) \(英文\)。
@@ -136,15 +136,15 @@ DSC 設定的最佳做法是以指令碼的形式發行設定，此指令碼會�
 
 當已提供 ProjectURI 時，「PowerShell 資源庫」就會在套件頁面的左邊包含「專案網站」的連結。
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>標記使用相容的 PSEdition(s) 及平台套件 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>使用相容的 PSEdition 和平台標記您的套件
 
-若要將套件也會使用其環境的使用者示範使用下列標籤：
+使用下列標籤向使用者示範能與其環境搭配並運作良好的套件：
 
-- 使用 Windows PowerShell 相容的 PSEdition_Desktop： 套件 
-- 與 Powershell Core 相容的 PSEdition_Core： 套件 
-- Windows： 套件與 Windows 作業系統相容
-- 使用 Linux 作業系統相容的 Linux： 套件 
-- MacOS： 套件與 Mac 作業系統相容
+- PSEdition_Desktop：與 Windows PowerShell 相容的套件
+- PSEdition_Core：與 PowerShell Core 相容的套件
+- Windows：與 Windows 作業系統相容的套件
+- Linux：與 Linux 作業系統相容的套件
+- MacOS：與 Mac 作業系統相容的套件
 
 ## <a name="include-tests"></a>包含測試
 
@@ -197,7 +197,7 @@ PowerShellGet publish-module、install-module、save-module 與 update-module Cm
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>遵循 SemVer 方針來進行版本設定
 
-[SemVer](http://semver.org/) 是一個公開慣例，說明如何形成版本結構及變更版本以便輕鬆解譯變更。
+[SemVer](http://semver.org/) 是一種公用慣例，其描述如何架構及變更版本，以輕鬆解譯變更。
 您套件的版本必須包含在資訊清單資料中。
 
 - 該版本的結構應該是 3 個以句號分隔的數值區塊，例如 0.1.1 或 4.11.192
@@ -251,4 +251,3 @@ PowerShell 資源庫並不適合作為測試發行程序的目標。
 - 決定是否要以程式碼簽署您的套件
 - 當您覺得專案已經準備好在生產環境中使用時，將 1.0.0 版本發行至「PowerShell 資源庫」
 - 繼續收集意見反應並根據使用者提供的意見逐一查看您的程式碼
-
