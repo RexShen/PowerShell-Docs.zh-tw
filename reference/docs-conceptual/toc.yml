@@ -184,6 +184,8 @@ items:
     href: samples/changing-computer-state.md
   - name: 收集電腦的相關資訊
     href: samples/collecting-information-about-computers.md
+  - name: 使用 FilterHashtable 建立 Get-WinEvent 查詢
+    href: samples/creating-get-winEvent-queries-with-filterhashtable.md
   - name: 建立 UI 元素
     href: ''
     items:
@@ -250,9 +252,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: 附錄 2 建立自訂 PowerShell 捷徑
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: ee25bc078f3c6bea91cb0cdaf89e27f20cee2842
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: dd9cac7e7570d6ff4c58b0255a3909f3f0612605
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251331"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320382"
