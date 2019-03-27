@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用格式命令變更輸出檢視
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400943"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320416"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令變更輸出檢視
 
@@ -49,10 +49,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### <a name="controlling-format-wide-display-with-column"></a>使用資料行控制 Format-Wide 顯示
 
-使用 **Format-Wide** Cmdlet，一次只能顯示單一屬性。 這樣適用於顯示一行只顯示一個元素的簡單清單。 若要取得簡單清單，請將 **Column** 屬性的值設為 1，方法是輸入：
+使用 `Format-Wide` Cmdlet，一次只能顯示單一屬性。
+這樣適用於顯示一行只顯示一個元素的簡單清單。
+若要取得簡單清單，請將 **Column** 屬性的值設為 1，方法是輸入：
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>針對清單檢視使用 Format-List

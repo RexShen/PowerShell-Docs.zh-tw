@@ -2,12 +2,12 @@
 title: 了解 VSCode 與 PowerShell 中的檔案編碼
 description: 設定 VSCode 與 PowerShell 中的檔案編碼
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795108"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320399"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 與 PowerShell 中的檔案編碼
 
@@ -60,7 +60,7 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 - `â€”`，而非`—`
 - `Ã„2`，而非`Ä`
 - `Â`，而非 ` ` (不分行空格)
-- `Ã©`，而非 `é`
+- `Ã©`，而非`é`
 <!-- markdownlint-enable MD038 -->
 
 這份方便的[參考](https://www.i18nqa.com/debug/utf8-debug.html)列出指出 UTF-8/Windows-1252 編碼問題的常見模式。
@@ -215,7 +215,7 @@ ISE 應該會接受 BOM，但它也可能使用反映來[設定編碼](https://b
 ### <a name="source-control-software"></a>原始檔控制軟體
 
 有些原始檔控制工具，例如 GIT，會忽略編碼；GIT 只追蹤位元組。
-其他工具，例如 TFS 或 Mercurial，則不然。 有些以 GIT 為基礎的工具甚至依賴解碼文字。
+其他工具，例如 Azure DevOps 或 Mercurial，則不然。 有些以 GIT 為基礎的工具甚至依賴解碼文字。
 
 發生這種情況時，請務必：
 
