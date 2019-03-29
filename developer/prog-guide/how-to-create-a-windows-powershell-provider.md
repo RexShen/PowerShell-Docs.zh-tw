@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 06910f32752668f13400f9be0767a2179133df04
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429664"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623818"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>如何建立 Windows PowerShell 提供者
 
@@ -29,7 +29,7 @@ ms.locfileid: "57429664"
 
 Windows PowerShell 提供數個提供者 （例如，FileSystem 提供者、 登錄提供者，以及別名提供者），用來存取已知的資料存放區。 如需有關 Windows PowerShell 所提供的提供者的詳細資訊，請使用下列命令來存取線上說明：
 
-**PS>get-help about_provider**
+**PS > 取得說明 about_providers**
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>存取儲存的資料，使用 Windows PowerShell 路徑
 
