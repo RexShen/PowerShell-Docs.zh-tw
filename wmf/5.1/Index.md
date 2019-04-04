@@ -1,10 +1,15 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: 'wmf,powershell,設定'
+keywords: wmf,powershell,設定
 title: WMF 5.1 版本資訊
+ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795329"
 ---
-
 # <a name="windows-management-framework-wmf-51"></a>Windows Management Framework (WMF) 5.1
 
 WMF 讓使用者能夠將現有的 Windows 系統更新為搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM 及軟體清查記錄 (SIL) 元件版本。
