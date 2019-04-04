@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 1f7b5b60b202f4de0cf3d44b65057f5edd41f2b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860044"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920385"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell 程式設計&#39;指南
 
@@ -102,7 +102,7 @@ Windows PowerShell 會定義它的程式碼的命令、 提供者，以及其他
 |[如何建立 Windows PowerShell 提供者](./how-to-create-a-windows-powershell-provider.md)|本節說明如何建置適用於 Windows PowerShell 的 Windows PowerShell 提供者。|
 |[如何建立 Windows PowerShell 主應用程式](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|本章節描述如何撰寫操作 runspace 的主應用程式，以及撰寫實作自己的自訂主機的主機應用程式。|
 |[如何建立 Windows PowerShell 嵌入式管理單元](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|本章節描述如何建立一個嵌入式管理單元，可用來註冊組件中的所有 cmdlet 和提供者，以及如何建立自訂的嵌入式管理單元。|
-|[如何建立主控台命令介面](./how-to-create-a-console-shell.md)|本節說明如何建立不是可延伸的主控台介面。|
+|[如何建立主控台殼層](./how-to-create-a-console-shell.md)|本節說明如何建立不是可延伸的主控台介面。|
 |[Windows PowerShell 概念](./windows-powershell-concepts.md)|本節包含可協助您了解 Windows PowerShell，從開發人員的觀點來看的概念性資訊。|
 
 ## <a name="see-also"></a>另請參閱

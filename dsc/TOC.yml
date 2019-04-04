@@ -122,8 +122,9 @@ items:
       - name: 設定 DSC HTTP 提取伺服器
         href: pull-server/pullServer.md
     - name: 向提取伺服器註冊節點
-      href: pull-server/pullClient.md
       items:
+      - name: 設定 DSC 提取用戶端
+        href: pull-server/pullClient.md
       - name: 使用設定名稱設定提取用戶端 (v5)
         href: pull-server/pullClientConfigNames.md
       - name: 使用設定識別碼設定提取用戶端 (v5)
@@ -165,7 +166,6 @@ items:
 - name: 參考資料
   items:
   - name: Windows 內建資源
-    href: reference/resources/windows/builtInResource.md
     items:
     - name: 封存資源
       href: reference/resources/windows/archiveResource.md
@@ -212,7 +212,6 @@ items:
     - name: WindowsProcess 資源
       href: reference/resources/windows/windowsProcessResource.md
   - name: Linux 內建資源
-    href: reference/resources/linux/lnxBuiltInResources.md
     items:
     - name: nxArchive 資源
       href: reference/resources/linux/lnxArchiveResource.md
@@ -241,8 +240,9 @@ items:
     - name: PackageManagementSourceDsc 資源
       href: reference/resources/packagemanagement/PackageManagementSourceDscResource.md
   - name: MSFT_DSCLocalConfigurationManager 類別
-    href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     items:
+    - name: 概觀
+      href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
     - name: MSFT_DSCLocalConfigurationManager 類別的 ApplyConfiguration 方法
       href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
     - name: MSFT_DSCLocalConfigurationManager 類別的 DisableDebugConfiguration 方法
@@ -285,9 +285,9 @@ items:
   items:
   - name: 白皮書
     href: further-reading/whitepapers.md
-ms.openlocfilehash: 177dc88e4a2a92104f6f2c2d4db118531274fcc4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 68096f26178d4c33fd78e6051a3cc071bd749210
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057190"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920334"
