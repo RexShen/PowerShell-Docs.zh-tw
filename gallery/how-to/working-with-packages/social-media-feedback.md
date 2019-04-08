@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 透過社交媒體或留言提供意見反應
-ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054997"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623886"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>透過社交媒體或留言提供意見反應
 
@@ -29,6 +29,10 @@ PowerShell 資源庫將會檢查該套件在每個社交媒體網站上的「分
 由於此功能只會顯示某個東西的分享計數，因此我們會把它解讀為使用者對該套件「說讚」的次數。
 
 ## <a name="comments"></a>評價
+
+> [!IMPORTANT]
+> Livefyre 註解是由第三方廠商所提供的，並且已不再支援。
+> 自 2019 年 5 月 1 日開始，PowerShell 資源庫中將不再提供 Livefyre 註解。 
 
 PowerShell 資源庫會使用 LiveFyre 服務來允許使用者對套件提出評論。
 使用者如果有建議或意見反應，便可使用此功能來提供意見反應；該意見反應將會對瀏覽該套件頁面的所有人公開。

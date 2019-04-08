@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056493"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623903"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -145,6 +145,9 @@ DSC 設定的最佳做法是以指令碼的形式發行設定，此指令碼會�
 - Windows：與 Windows 作業系統相容的套件
 - Linux：與 Linux 作業系統相容的套件
 - MacOS：與 Mac 作業系統相容的套件
+
+透過在相容平台標記您的套件，該套件就會包含在搜尋結果左側窗格的資源庫搜尋篩選中。 如果將套件裝載在 GitHub 上，標記套件時也可以利用我們的 [PowerShell 資源庫相容性防護](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+![相容性防護](https://img.shields.io/powershellgallery/p/CosmosDB.svg)。  
 
 ## <a name="include-tests"></a>包含測試
 

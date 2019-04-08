@@ -1,18 +1,18 @@
 ---
 ms.date: 08/24/2018
 keywords: powershell,cmdlet
-title: 了解 PowerShell 的命令名稱
+title: 了解 PowerShell 命令名稱
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 3f8ef2648709c4bb5d2eacf30fe9d8fb4f032c13
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012461"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623716"
 ---
-# <a name="learning-powershell-command-names"></a>了解 PowerShell 的命令名稱
+# <a name="learning-powershell-command-names"></a>了解 PowerShell 命令名稱
 
-您需要針對大部分命令列介面投入大量時間來學習命令與參數的名稱。 問題在於模式很少。 記住的需求是了解您需要定期使用的參數與命令的唯一方式。
+您需要針對大部分命令列介面投入大量時間來學習命令與參數的名稱。 問題在於模式很少。 記憶是學習您需定期使用之參數與命令的唯一方式。
 
 當您使用新的命令或參數時，不能總是使用您已經知道的項目。 您必須尋找並學習新名稱。 傳統上，命令列介面會從一小組工具開始，並隨著累加的新增項目而成長。 很容易就能理解為什麼沒有標準結構。
 這似乎就是命令名稱的邏輯，因為每個命令都是一個單獨的工具。 PowerShell 提供更好的方式來處理命令名稱。
@@ -25,7 +25,7 @@ ms.locfileid: "54012461"
 若要列出在 DC01 上執行的工作，請使用 **/S** 參數與不含反斜線的電腦名稱。 例如，`tasklist /S DC01`。
 
 > [!NOTE]
-> 在 PowerShell v6 之前，`sc` 是 `Set-Content` Cmdlet 的別名。 若要執行 **sc.exe** 命令，您必須包含副檔名。
+> 在 PowerShell v6 之前，`sc` 是 `Set-Content` Cmdlet 的別名。 因此，若要在 v6 之前的 PowerShell 版本中執行 **sc.exe** 命令，必須包括完整檔案名稱 **sc.exe** (包含副檔名 **exe**)。
 
 服務與處理序是電腦上具有明確定義之生命週期且可管理的元素範例。 您可能會啟動或停止服務與處理序，或是取得所有目前執行中的服務或處理序清單。 雖然它們之間有重要的技術區別，但您在服務和處理序上執行的動作在概念上是一樣的。 此外，透過指定參數來自訂動作的選項在概念上也可能很類似。
 

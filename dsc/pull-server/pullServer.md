@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056765"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623937"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -47,7 +47,7 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Windows Server 中的 DSC 提取服務
 
-您可以設定提取服務，使其在 Windows Server 上執行。
+您可以設定提取服務，以在 Windows Server 上執行。
 請注意，Windows Server 中包括的提取服務解決方案僅含有儲存設定/模組以供下載，以及將報告資料擷取到資料庫的功能。
 有許多 Azure 服務提供的功能並未包含在內，因此不是適合評估服務使用方式的工具。
 
@@ -234,7 +234,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。
 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
 在針對提取伺服器進行封裝之前，請移除 **{模組版本}** 資料夾，以便讓路徑變成 `{Module Folder}\DscResources\{DSC Resource Folder}\`。
-完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
+完成此變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
 
 使用 `New-DscChecksum {module zip file}` 為新增的模組建立總和檢查碼檔案。
 

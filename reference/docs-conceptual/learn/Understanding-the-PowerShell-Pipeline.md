@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 管線
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400644"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623954"
 ---
 # <a name="understanding-pipelines"></a>了解管線
 
@@ -63,6 +63,18 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 您可以看到不同的 Windows 工作管理員監視 PowerShell 所使用的 CPU 和記憶體。 執行下列命令：`Get-ChildItem C:\Windows -Recurse`。 將 CPU 和記憶體使用量與這個命令進行比較：`Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`。
 
+> [!NOTE]
+> 並非所有 PowerShell 主機都支援 **Paging** 參數。 例如，當您嘗試在 PowerShell ISE 中使用 **Paging** 參數，會看到以下錯誤：
+>
+> ```Output
+> out-lineoutput : The method or operation is not implemented.
+> At line:1 char:1
+> + Get-ChildItem C:\Windows -Recurse | Out-Host -Paging
+> + ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+>     + CategoryInfo          : NotSpecified: (:) [out-lineoutput], NotImplementedException
+>     + FullyQualifiedErrorId : System.NotImplementedException,Microsoft.PowerShell.Commands.OutLineOutputCommand
+> ```
+
 ## <a name="objects-in-the-pipeline"></a>管線中的物件
 
 當您在 PowerShell 中執行 Cmdlet 時，您會看到文字輸出，這是因為在主控台視窗中必須將物件呈現為文字。 文字輸出可能不會顯示要輸出之物件的所有屬性。
@@ -82,7 +94,7 @@ C:\
 當您使用管線將輸出傳送到 `Get-Member` Cmdlet 時，會取得由 `Get-Location` 所傳回的物件相關資訊。
 
 ```powershell
-PS> Get-Location | Get-Member
+Get-Location | Get-Member
 ```
 
 ```Output

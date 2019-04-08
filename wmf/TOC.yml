@@ -1,209 +1,218 @@
+items:
 - name: Windows Management Framework (WMF) 概觀
   href: overview.md
 - name: WMF 5.1
-  href: 5.1/release-notes.md
   items:
+  - name: WMF 5.1 版本資訊
+    href: 5.1/release-notes.md
+  - name: 新的案例和功能
+    items:
     - name: 新的案例和功能
       href: 5.1/scenarios-features.md
-      items:
-        - name: 預期狀態設定 (DSC) 中的增強功能
-          href: 5.1/DSC-improvements.md
-        - name: PowerShell 主控台改善
-          href: 5.1/console-improvements.md
-        - name: PowerShell 引擎改善
-          href: 5.1/engine-improvements.md
-        - name: 封裝管理的改善功能
-          href: 5.1/package-management-improvements.md
-        - name: JEA 中的改善功能
-          href: 5.1/jea-improvements.md
-        - name: 類別目錄 Cmdlet
-          href: 5.1/catalog-cmdlets.md
-        - name: WMF 5.1 中已修正的 Bug
-          href: 5.1/bugfixes.md
-    - name: 安裝以及設定
-      href: 5.1/install-configure.md
-    - name: 已知問題
-      href: 5.1/known-issues.md
-    - name: 相容性
-      href: 5.1/Compatibility.md
-    - name: 產品相容性
-      href: 5.1/productincompat.md
+    - name: 預期狀態設定 (DSC) 中的增強功能
+      href: 5.1/DSC-improvements.md
+    - name: PowerShell 主控台改善
+      href: 5.1/console-improvements.md
+    - name: PowerShell 引擎改善
+      href: 5.1/engine-improvements.md
+    - name: 封裝管理的改善功能
+      href: 5.1/package-management-improvements.md
+    - name: JEA 中的改善功能
+      href: 5.1/jea-improvements.md
+    - name: 類別目錄 Cmdlet
+      href: 5.1/catalog-cmdlets.md
+    - name: WMF 5.1 中已修正的 Bug
+      href: 5.1/bugfixes.md
+  - name: 安裝以及設定
+    href: 5.1/install-configure.md
+  - name: 已知問題
+    href: 5.1/known-issues.md
+  - name: 相容性
+    href: 5.1/Compatibility.md
+  - name: 產品相容性
+    href: 5.1/productincompat.md
 - name: WMF 5.0
-  href: 5.0/releasenotes.md
   items:
-    - name: 安裝詳細資料
-      href: 5.0/requirements.md
-    - name: 已知的問題和限制
-      href: 5.0/limitation_overview.md
+  - name: WMF 5.0 版本資訊
+    href: 5.0/releasenotes.md
+  - name: 安裝詳細資料
+    href: 5.0/requirements.md
+  - name: 已知的問題和限制
+    href: 5.0/limitation_overview.md
+  - name: 預期狀態設定 (DSC) 的已知問題
+    href: 5.0/limitation_dsc.md
+  - name: 產品的相容性狀態
+    href: 5.0/productincompat.md
+  - name: WMF 5.0 啟用的案例
+    items:
+    - name: Just Enough Administration (JEA)
       items:
-        - name: 預期狀態設定 (DSC) 的已知問題
-          href: 5.0/limitation_dsc.md
-    - name: 產品的相容性狀態
-      href: 5.0/productincompat.md
-    - name: WMF 5.0 啟用的案例
-      href: ''
+      - name: JEA 概觀
+        href: 5.0/jea_overview.md
+      - name: 建立及連接到 JEA 端點
+        href: 5.0/jea_endpoint.md
+      - name: JEA 上的報告
+        href: 5.0/jea_report.md
+    - name: 使用 PowerShell 類別建立自訂類型
       items:
-        - name: Just Enough Administration (JEA)
-          href: 5.0/jea_overview.md
-          items:
-            - name: 建立及連接到 JEA 端點
-              href: 5.0/jea_endpoint.md
-            - name: JEA 上的報告
-              href: 5.0/jea_report.md
-        - name: 使用 PowerShell 類別建立自訂類型
-          href: 5.0/class_overview.md
-          items:
-            - name: 定義自訂類型
-              href: 5.0/class_newtype.md
-            - name: 宣告基底類別
-              href: 5.0/class_base.md
-            - name: 宣告實作的介面
-              href: 5.0/class_interface.md
-            - name: 呼叫基底類別建構函式
-              href: 5.0/class_baseconstructor.md
-            - name: 呼叫基底類別方法
-              href: 5.0/class_basemethod.md
-        - name: PowerShell 指令碼偵錯的增強功能
-          href: 5.0/debug_overview.md
-        - name: 預期狀態設定 (DSC) 中的增強功能
-          href: 5.0/dsc_improvements.md
-          items:
-            - name: 設定
-              href: ''
-              items:
-                - name: 指定跨節點相依性
-                  href: 5.0/dsc_waitfor.md
-                - name: 加密的 MOF
-                  href: 5.0/dsc_encryptedmof.md
-                - name: DSC 設定的說明支援
-                  href: 5.0/dsc_confighelp.md
-                - name: 使用 PowerShell ISE 撰寫增強功能
-                  href: 5.0/dsc_authoring.md
-                - name: 允許設定中有相同的重複資源
-                  href: 5.0/dsc_identicalduplicate.md
-                - name: Import-DscResource 關鍵字支援 -ModuleVersion 參數
-                  href: 5.0/dsc_importdscresource.md
-                - name: 設定關鍵字的 WOW64 支援
-                  href: 5.0/dsc_wow64.md
-            - name: 資源
-              href: ''
-              items:
-                - name: 以類別為基礎的 DSC 資源
-                  href: 5.0/dsc_classbasedresource.md
-                - name: DSC 資源指令碼偵錯
-                  href: 5.0/dsc_resourcedebugging.md
-                - name: DSC 資源的自動執行身分支援
-                  href: 5.0/dsc_runas.md
-                - name: DSC 資源的並存版本控制支援
-                  href: 5.0/dsc_sxsresource.md
-                - name: 新的附隨資源
-                  href: 5.0/dsc_newresources.md
-            - name: 本機設定管理員
-              href: ''
-              items:
-                - name: 以多個設定片段設定節點
-                  href: 5.0/dsc_partialconfig.md
-                  items:
-                    - name: 支援混合的 RefreshMode
-                      href: 5.0/dsc_partialconfig_mixedmode.md
-                - name: 以新屬性設定 DSC 引擎
-                  href: 5.0/dsc_metaconfiguration.md
-                - name: LCM 狀態的詳細資訊
-                  href: 5.0/dsc_lcmstate.md
-                - name: RefreshMode 和 ConfigurationMode 的頻率不需要是彼此的倍數
-                  href: 5.0/dsc_freqnomultiple.md
-                - name: RefreshMode 屬性的額外值
-                  href: 5.0/dsc_refreshmode.md
-            - name: Cmdlet
-              href: ''
-              items:
-                - name: 設定狀態的詳細資料
-                  href: 5.0/dsc_getconfigurationstatus.md
-                - name: Test-DscConfiguration Cmdlet 支援參考設定
-                  href: 5.0/dsc_testconfiguration.md
-                - name: 直接存取 DSC 資源方法
-                  href: 5.0/dsc_directaccess.md
-                - name: 傳遞設定文件，但不套用它
-                  href: 5.0/dsc_publishconfig.md
-                - name: 移除 DSC 文件
-                  href: 5.0/dsc_removeconfigdoc.md
-                - name: 統一且一致的狀態和狀態表示法
-                  href: 5.0/dsc_statestatus.md
-                - name: Set-DscLocalConfigurationManager Cmdlet 支援 -Force 參數
-                  href: 5.0/dsc_setdsclcm.md
-            - name: Pull 模式
-              href: ''
-              items:
-                - name: DSC 設定的依需求 PULL
-                  href: 5.0/dsc_updateconfig.md
-                - name: 隔離節點和設定識別碼
-                  href: 5.0/dsc_nodeid.md
-                - name: 隔離設定、資源及報表的存放庫
-                  href: 5.0/dsc_repository.md
-                - name: 將設定狀態回報到中央位置
-                  href: 5.0/dsc_reporting.md
-        - name: 使用轉譯和記錄稽核 PowerShell 使用狀況
-          href: 5.0/audit_overview.md
-          items:
-            - name: 增強的轉譯選項
-              href: 5.0/audit_transcript.md
-            - name: 指令碼追蹤和記錄
-              href: 5.0/audit_script.md
-            - name: 密碼編譯訊息語法 (CMS) Cmdlet
-              href: 5.0/audit_cms.md
-        - name: 使用 PackageManagement 探索、安裝及清查軟體
-          href: 5.0/oneget_overview.md
-          items:
-            - name: PackageManagement Cmdlet
-              href: 5.0/oneget_cmdlets.md
-        - name: 使用 PowerShellGet 探索、安裝及清查 PowerShell 模組
-          href: 5.0/psget_module_overview.md
-          items:
-            - name: 註冊 PowerShell 存放庫
-              href: 5.0/psget_psrepository.md
-            - name: PowerShell 5.0 或更新版本的並存版本支援
-              href: 5.0/psget_modulesxsinstall.md
-            - name: 安裝模組相依性
-              href: 5.0/psget_moduledependency.md
-            - name: 適用於模組管理的 PowerShellGet Cmdlet
-              href: 5.0/psget_modulecmdlets.md
-        - name: 使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼
-          href: 5.0/psget_script_overview.md
-          items:
-            - name: 適用於指令碼管理的 PowerShellGet Cmdlet
-              href: 5.0/psget_scriptcmdlets.md
-        - name: 根據社群意見反應新增並更新了 Cmdlet
-          href: 5.0/feedback_cmdlets.md
-          items:
-            - name: 使用 Item Cmdlet 的符號連結
-              href: 5.0/feedback_symbolic.md
-            - name: 封存 Cmdlet
-              href: 5.0/feedback_archive.md
-            - name: 剪貼簿 Cmdlet
-              href: 5.0/feedback_clipboard.md
-            - name: Convert-String
-              href: 5.0/feedback_convertstring.md
-            - name: 從字串擷取和剖析結構化物件
-              href: 5.0/feedback_convertfromString.md
-            - name: Format-Hex
-              href: 5.0/feedback_formathex.md
-            - name: NoNewLine 參數
-              href: 5.0/feedback_nonewline.md
-            - name: New-TemporaryFile
-              href: 5.0/feedback_tempfile.md
-            - name: New-Guid
-              href: 5.0/feedback_newguid.md
-            - name: Get-ChildItem 具有 -Depth 參數
-              href: 5.0/feedback_getchilditem.md
-            - name: FileInfo 物件的更新
-              href: 5.0/feedback_fileinfo.md
-            - name: 宣告版本範圍 (1.* 等等) 的模組支援
-              href: 5.0/feedback_moduleversionranges.md
-        - name: 資訊串流
-          href: 5.0/informationstream_overview.md
-        - name: 根據 OData 端點產生 PowerShell Cmdlet
-          href: 5.0/odata_overview.md
-        - name: 使用 PowerShell 管理網路交換器
-          href: 5.0/networkswitch_overview.md
-        - name: 軟體清查記錄 (SIL)
-          href: 5.0/sil_overview.md
+      - name: 概觀
+        href: 5.0/class_overview.md
+      - name: 定義自訂類型
+        href: 5.0/class_newtype.md
+      - name: 宣告基底類別
+        href: 5.0/class_base.md
+      - name: 宣告實作的介面
+        href: 5.0/class_interface.md
+      - name: 呼叫基底類別建構函式
+        href: 5.0/class_baseconstructor.md
+      - name: 呼叫基底類別方法
+        href: 5.0/class_basemethod.md
+    - name: PowerShell 指令碼偵錯的增強功能
+      href: 5.0/debug_overview.md
+    - name: 預期狀態設定 (DSC) 中的增強功能
+      items:
+      - name: DSC 增強功能概觀
+        href: 5.0/dsc_improvements.md
+      - name: 設定
+        items:
+        - name: 指定跨節點相依性
+          href: 5.0/dsc_waitfor.md
+        - name: 加密的 MOF
+          href: 5.0/dsc_encryptedmof.md
+        - name: DSC 設定的說明支援
+          href: 5.0/dsc_confighelp.md
+        - name: 使用 PowerShell ISE 撰寫增強功能
+          href: 5.0/dsc_authoring.md
+        - name: 允許設定中有相同的重複資源
+          href: 5.0/dsc_identicalduplicate.md
+        - name: Import-DscResource 關鍵字支援 -ModuleVersion 參數
+          href: 5.0/dsc_importdscresource.md
+        - name: 設定關鍵字的 WOW64 支援
+          href: 5.0/dsc_wow64.md
+      - name: 資源
+        items:
+        - name: 以類別為基礎的 DSC 資源
+          href: 5.0/dsc_classbasedresource.md
+        - name: DSC 資源指令碼偵錯
+          href: 5.0/dsc_resourcedebugging.md
+        - name: DSC 資源的自動執行身分支援
+          href: 5.0/dsc_runas.md
+        - name: DSC 資源的並存版本控制支援
+          href: 5.0/dsc_sxsresource.md
+        - name: 新的附隨資源
+          href: 5.0/dsc_newresources.md
+      - name: 本機設定管理員
+        items:
+        - name: 以多個設定片段設定節點
+          href: 5.0/dsc_partialconfig.md
+        - name: 支援混合的 RefreshMode
+          href: 5.0/dsc_partialconfig_mixedmode.md
+        - name: 以新屬性設定 DSC 引擎
+          href: 5.0/dsc_metaconfiguration.md
+        - name: LCM 狀態的詳細資訊
+          href: 5.0/dsc_lcmstate.md
+        - name: RefreshMode 和 ConfigurationMode 的頻率不需要是彼此的倍數
+          href: 5.0/dsc_freqnomultiple.md
+        - name: RefreshMode 屬性的額外值
+          href: 5.0/dsc_refreshmode.md
+      - name: Cmdlet
+        items:
+        - name: 設定狀態的詳細資料
+          href: 5.0/dsc_getconfigurationstatus.md
+        - name: Test-DscConfiguration Cmdlet 支援參考設定
+          href: 5.0/dsc_testconfiguration.md
+        - name: 直接存取 DSC 資源方法
+          href: 5.0/dsc_directaccess.md
+        - name: 傳遞設定文件，但不套用它
+          href: 5.0/dsc_publishconfig.md
+        - name: 移除 DSC 文件
+          href: 5.0/dsc_removeconfigdoc.md
+        - name: 統一且一致的狀態和狀態表示法
+          href: 5.0/dsc_statestatus.md
+        - name: Set-DscLocalConfigurationManager Cmdlet 支援 -Force 參數
+          href: 5.0/dsc_setdsclcm.md
+      - name: Pull 模式
+        items:
+        - name: DSC 設定的依需求 PULL
+          href: 5.0/dsc_updateconfig.md
+        - name: 隔離節點和設定識別碼
+          href: 5.0/dsc_nodeid.md
+        - name: 隔離設定、資源及報表的存放庫
+          href: 5.0/dsc_repository.md
+        - name: 將設定狀態回報到中央位置
+          href: 5.0/dsc_reporting.md
+    - name: 使用轉譯和記錄稽核 PowerShell 使用狀況
+      items:
+      - name: 稽核概觀
+        href: 5.0/audit_overview.md
+      - name: 增強的轉譯選項
+        href: 5.0/audit_transcript.md
+      - name: 指令碼追蹤和記錄
+        href: 5.0/audit_script.md
+      - name: 密碼編譯訊息語法 (CMS) Cmdlet
+        href: 5.0/audit_cms.md
+    - name: 使用 PackageManagement 探索、安裝及清查軟體
+      items:
+      - name: PackageManagement 概觀
+        href: 5.0/oneget_overview.md
+      - name: PackageManagement Cmdlet
+        href: 5.0/oneget_cmdlets.md
+    - name: 使用 PowerShellGet 探索、安裝及清查 PowerShell 模組
+      items:
+      - name: PowerShellGet 模組概觀
+        href: 5.0/psget_module_overview.md
+      - name: 註冊 PowerShell 存放庫
+        href: 5.0/psget_psrepository.md
+      - name: PowerShell 5.0 或更新版本的並存版本支援
+        href: 5.0/psget_modulesxsinstall.md
+      - name: 安裝模組相依性
+        href: 5.0/psget_moduledependency.md
+      - name: 適用於模組管理的 PowerShellGet Cmdlet
+        href: 5.0/psget_modulecmdlets.md
+    - name: 使用 PowerShellGet 探索、安裝和管理 PowerShell 指令碼
+      items:
+      - name: PowerShellGet 指令碼概觀
+        href: 5.0/psget_script_overview.md
+      - name: 適用於指令碼管理的 PowerShellGet Cmdlet
+        href: 5.0/psget_scriptcmdlets.md
+    - name: 根據社群意見反應新增並更新了 Cmdlet
+      items:
+      - name: 根據社群意見反應新增並更新了 Cmdlet
+      - name: 使用 Item Cmdlet 的符號連結
+        href: 5.0/feedback_symbolic.md
+      - name: 封存 Cmdlet
+        href: 5.0/feedback_archive.md
+      - name: 剪貼簿 Cmdlet
+        href: 5.0/feedback_clipboard.md
+      - name: Convert-String
+        href: 5.0/feedback_convertstring.md
+      - name: 從字串擷取和剖析結構化物件
+        href: 5.0/feedback_convertfromString.md
+      - name: Format-Hex
+        href: 5.0/feedback_formathex.md
+      - name: NoNewLine 參數
+        href: 5.0/feedback_nonewline.md
+      - name: New-TemporaryFile
+        href: 5.0/feedback_tempfile.md
+      - name: New-Guid
+        href: 5.0/feedback_newguid.md
+      - name: Get-ChildItem 具有 -Depth 參數
+        href: 5.0/feedback_getchilditem.md
+      - name: FileInfo 物件的更新
+        href: 5.0/feedback_fileinfo.md
+      - name: 宣告版本範圍 (1.* 等等) 的模組支援
+        href: 5.0/feedback_moduleversionranges.md
+    - name: 資訊串流
+      href: 5.0/informationstream_overview.md
+    - name: 根據 OData 端點產生 PowerShell Cmdlet
+      href: 5.0/odata_overview.md
+    - name: 使用 PowerShell 管理網路交換器
+      href: 5.0/networkswitch_overview.md
+    - name: 軟體清查記錄 (SIL)
+      href: 5.0/sil_overview.md
+ms.openlocfilehash: dba0eb2986dc4e14c59c78e3273d08dd6b7f1779
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920419"
