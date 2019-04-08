@@ -2,10 +2,10 @@ items:
 - name: 概觀
   href: overview.md
 - name: 安裝
-  href: install/installing-powershell.md
   items:
+  - name: 安裝各種版本的 PowerShell
+    href: install/installing-powershell.md
   - name: PowerShell Core
-    href: ''
     items:
     - name: 在 Windows 上安裝 PowerShell Core
       href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,6 @@ items:
     - name: 在 ARM 上安裝 PowerShell Core
       href: install/powershell-core-on-arm.md
   - name: Windows PowerShell
-    href: ''
     items:
     - name: 安裝 Windows PowerShell
       href: install/installing-windows-powershell.md
@@ -25,15 +24,17 @@ items:
     - name: Windows PowerShell 系統需求
       href: install/windows-powershell-system-requirements.md
 - name: 開始使用
-  href: getting-started/getting-started-with-windows-powershell.md
   items:
+  - name: 開始使用 PowerShell
+    href: getting-started/getting-started-with-windows-powershell.md
   - name: 啟動 Windows PowerShell
     href: getting-started/starting-windows-powershell.md
   - name: 啟動 Windows PowerShell 2.0 引擎
     href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: 了解 PowerShell
-  href: learn/understanding-important-powershell-concepts.md
   items:
+  - name: 了解 PowerShell 重要概念
+    href: learn/understanding-important-powershell-concepts.md
   - name: 了解 PowerShell 名稱
     href: learn/learning-powershell-names.md
   - name: 使用熟悉的命令名稱
@@ -50,9 +51,10 @@ items:
     href: learn/more-powershell-learning.md
   - name: 撰寫可攜式模組
     href: learn/writing-portable-modules.md
-  - name: 執行遠端命令
-    href: learn/remoting/running-remote-commands.md
+  - name: PowerShell 遠端
     items:
+    - name: 執行遠端命令
+      href: learn/remoting/running-remote-commands.md
     - name: 透過 SSH 的 PowerShell 遠端處理
       href: learn/remoting/ssh-remoting-in-powershell-core.md
     - name: PowerShell Core 中的 WS-Management (WSMan) 遠端處理
@@ -64,22 +66,20 @@ items:
   - name: 詞彙
     href: learn/windows-powershell-glossary.md
 - name: 元件
-  href: ''
   items:
   - name: 主控台
-    href: ''
     items:
     - name: PowerShell.exe 命令列說明
       href: components/console/powershell.exe-command-line-help.md
     - name: 使用 Tab 鍵擴充
       href: components/console/using-tab-expansion.md
   - name: ISE
-    href: components/ise/introducing-the-windows-powershell-ise.md
     items:
+    - name: Windows PowerShell ISE 簡介
+      href: components/ise/introducing-the-windows-powershell-ise.md
     - name: Windows PowerShell 整合式指令碼環境 (ISE)
       href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
     - name: 使用 Windows PowerShell ISE
-      href: ''
       items:
       - name: 探索 Windows PowerShell ISE
         href: components/ise/exploring-the-windows-powershell-ise.md
@@ -100,7 +100,6 @@ items:
       - name: Windows PowerShell ISE 的協助工具
         href: components/ise/accessibility-in-windows-powershell-ise.md
     - name: ISE 指令碼物件模型
-      href: ''
       items:
       - name: Windows PowerShell ISE 指令碼物件模型的用途
         href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
@@ -133,8 +132,9 @@ items:
       - name: PowerShellTab 物件
         href: components/ise/object-model/the-powershelltab-object.md
   - name: Visual Studio Code
-    href: components/vscode/using-vscode.md
     items:
+    - name: 使用 Visual Studio Code
+      href: components/vscode/using-vscode.md
     - name: 如何在 Visual Studio Code 中複寫 ISE 體驗
       href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
     - name: 使用 Visual Studio Code 來進行遠端編輯與偵錯
@@ -142,7 +142,6 @@ items:
     - name: 了解 VSCode 與 PowerShell 中的檔案編碼
       href: components/vscode/understanding-file-encoding.md
   - name: Web 存取
-    href: ''
     items:
     - name: 授權規則與安全性功能
       href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
@@ -157,20 +156,21 @@ items:
   - name: 工作流程指南
     href: components/workflows-guide.md
 - name: 新功能
-  href: ''
   items:
-  - name: PowerShell Core 6.1 的新功能
-    href: whats-new/what-s-new-in-powershell-core-61.md
-  - name: PowerShell Core 6.0 的新功能
-    href: whats-new/what-s-new-in-powershell-core-60.md
+  - name: PowerShell Core 6.x 的新功能
     items:
+    - name: PowerShell Core 6.1 的新功能
+      href: whats-new/what-s-new-in-powershell-core-61.md
+    - name: PowerShell Core 6.0 的新功能
+      href: whats-new/what-s-new-in-powershell-core-60.md
     - name: PowerShell Core 6.0 中的中斷性變更
       href: whats-new/breaking-changes-ps6.md
     - name: PowerShell Core 6.0 中的已知的問題
       href: whats-new/known-issues-ps6.md
-  - name: PowerShell 5.0 的新功能
-    href: whats-new/what-s-new-with-powershell.md
+  - name: PowerShell 5.x 的新功能
     items:
+    - name: PowerShell 5.0 的新功能
+      href: whats-new/what-s-new-with-powershell.md
     - name: Windows PowerShell 5.0 的新功能
       href: whats-new/what-s-new-in-windows-powershell-50.md
     - name: PowerShell 5.0 ISE 的新功能
@@ -178,8 +178,9 @@ items:
 - name: PowerShell Core 支援週期
   href: powershell-support-lifecycle.md
 - name: 範例指令碼
-  href: samples/sample-scripts-for-administration.md
   items:
+  - name: 適用於系統管理的範例指令碼
+    href: samples/sample-scripts-for-administration.md
   - name: 變更電腦狀態
     href: samples/changing-computer-state.md
   - name: 收集電腦的相關資訊
@@ -187,7 +188,6 @@ items:
   - name: 使用 FilterHashtable 建立 Get-WinEvent 查詢
     href: samples/creating-get-winEvent-queries-with-filterhashtable.md
   - name: 建立 UI 元素
-    href: ''
     items:
     - name: 建立自訂輸入方塊
       href: samples/creating-a-custom-input-box.md
@@ -220,7 +220,6 @@ items:
   - name: 使用檔案、資料夾與登錄機碼
     href: samples/working-with-files-folders-and-registry-keys.md
   - name: 使用物件
-    href: samples/working-with-objects.md
     items:
     - name: 取得 WMI 物件 -Get-WmiObject
       href: samples/getting-wmi-objects--get-wmiobject-.md
@@ -252,9 +251,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: 附錄 2 建立自訂 PowerShell 捷徑
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: dd9cac7e7570d6ff4c58b0255a3909f3f0612605
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320382"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920453"
