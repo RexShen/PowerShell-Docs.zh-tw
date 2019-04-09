@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863664"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293345"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell 命令的已核准的動詞
 
@@ -94,7 +94,7 @@ PowerShell 會使用[System.Management.Automation.VerbsCommon](/dotnet/api/Syste
 |[結束](/dotnet/api/System.Management.Automation.VerbsCommon.Exit)（例如）|將目前的環境或內容設定最近使用過的內容。 比方說， `Exit-PSSession` cmdlet 會置於用來啟動互動式工作階段的工作階段中的使用者。 此動詞命令搭配`Enter`。|這項動作，請勿使用動詞命令，例如 Pop 或相應放大。|
 |[尋找](/dotnet/api/System.Management.Automation.VerbsCommon.Find)(fd)|會尋找不明、 隱含、 選擇性的或指定的容器中的物件。||
 |[格式](/dotnet/api/System.Management.Automation.VerbsCommon.Format)(f)|以指定的表單或版面配置排列物件。||
-|[取得](/dotnet/api/System.Management.Automation.VerbsCommon.Get)(g)|指定擷取資源的動作。 此動詞命令搭配`Set`。|這項動作，請勿使用動詞命令，例如讀取、 開啟、 Cat、 類型、 Dir、 取得、 傾印、 取得、 檢查、 尋找或搜尋此動作。|
+|[取得](/dotnet/api/System.Management.Automation.VerbsCommon.Get)(g)|指定擷取資源的動作。 此動詞命令搭配`Set`。|這項動作，請勿使用動詞命令，例如讀取、 開啟、 Cat、 類型、 Dir、 取得、 傾印、 取得、 檢查、 尋找或搜尋。|
 |[隱藏](/dotnet/api/System.Management.Automation.VerbsCommon.Hide)(h)|讓資源無法偵測到。 比方說，其名稱包含隱藏動詞的 cmdlet 可能會隱藏來自使用者的服務。 此動詞命令搭配`Show`。|這項動作，請勿使用動詞命令，例如區塊。|
 |[加入](/dotnet/api/System.Management.Automation.VerbsCommon.Join)(j)|將資源結合成一個資源。 比方說， `Join-Path` cmdlet 結合使用其中一個來建立單一路徑及其子路徑的路徑。 此動詞命令搭配`Split`。|這項動作，請勿使用例如結合、 Unite、 連接或關聯的動詞命令。|
 |[鎖定](/dotnet/api/System.Management.Automation.VerbsCommon.Lock)(lk)|保護資源。 此動詞命令搭配`Unlock`。|這項動作，請勿使用動詞命令，例如限制或安全。|
@@ -149,7 +149,7 @@ PowerShell 會使用[System.Management.Automation.VerbsData](/dotnet/api/System.
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|將一或多個支援的輸出類型的輸入 （cmdlet 名詞表示輸入） 的一種主要類型。|這項動作，請勿使用動詞命令，例如匯出、 輸出或外。|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|從一或多個類型的輸入 （cmdlet 名詞則表示輸出型別） 的主要輸出型別轉換。|此動作，請勿使用動詞命令，例如匯入，輸入，或在。|
 |[卸載](/dotnet/api/System.Management.Automation.VerbsData.Dismount)(dm)|中斷連結從某個位置的具名的實體。 此動詞命令搭配`Mount`。|這項動作，請勿使用動詞命令，例如取消掛接或取消連結。|
-|[編輯](/dotnet/api/System.Management.Automation.VerbsData.Edit)(ed)|藉由新增或移除的內容修改現有的資料。|此動作，請勿使用動詞命令，例如變更、 更新或修改這項動作。|
+|[編輯](/dotnet/api/System.Management.Automation.VerbsData.Edit)(ed)|藉由新增或移除的內容修改現有的資料。|這項動作，請勿使用動詞命令，例如變更、 更新或修改。|
 |[展開](/dotnet/api/System.Management.Automation.VerbsData.Expand)(en)|將資源已經壓縮的資料還原至其原始狀態。 此動詞命令搭配`Compress`。|這項動作，請勿使用動詞命令，例如 Explode 或解壓縮。|
 |[匯出](/dotnet/api/System.Management.Automation.VerbsData.Export)(ep)|封裝的主要輸入至永續性資料存放區，例如檔案或交換格式。 此動詞命令搭配`Import`。|這項動作，請勿使用動詞命令，例如擷取或備份。|
 |[群組](/dotnet/api/System.Management.Automation.VerbsData.Group)(gp)|排列，或將一或多個資源。|這項動作，請勿使用動詞命令，例如彙總、 排列、 關聯或相互關聯。|
@@ -251,6 +251,6 @@ PowerShell 會使用[System.Management.Automation.VerbsOther](/dotnet/api/System
 
 [指令程式宣告](./cmdlet-class-declaration.md)
 
-[Windows PowerShell 程式設計人員指南](../prog-guide/windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員手冊](../prog-guide/windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)
