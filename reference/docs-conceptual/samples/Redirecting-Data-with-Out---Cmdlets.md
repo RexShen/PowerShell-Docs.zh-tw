@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Out Cmdlet 重新導向資料
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-ms.openlocfilehash: f08879f436ce751b176af020aba21e90f09aa61f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7c601b09cc53524eb55014b8ea19a5d79cb98b0e
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400673"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293294"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重新導向資料
 
@@ -68,7 +68,7 @@ Name    : explorer
 > [!NOTE]
 > 所有 **Out** Cmdlet 都會使用對主控台視窗有效的格式 (包括行的長度限制)，將輸出轉譯成文字。
 
-#### <a name="paging-console-output-out-host"></a>分頁主控台輸出 (Out-Host)
+## <a name="paging-console-output-out-host"></a>分頁主控台輸出 (Out-Host)
 
 根據預設，Windows PowerShell 會將資料傳送至主機視窗，這與 Out-Host Cmdlet 的功能完全相同。 如前所述，Out-Host Cmdlet 主要用於將資料分頁。 例如，下列命令會使用 Out-Host 將 Get-Command Cmdlet 的輸出分頁︰
 
@@ -93,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### <a name="discarding-output-out-null"></a>捨棄輸出 (Out-Null)
+## <a name="discarding-output-out-null"></a>捨棄輸出 (Out-Null)
 
 **Out-Null** Cmdlet 設計成可立即捨棄任何收到的輸入。 這在捨棄因執行命令的副作用所得到的不必要資料時會很有用。 輸入下列命令時，命令不會傳回任何項目︰
 
@@ -111,7 +111,7 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### <a name="printing-data-out-printer"></a>列印資料 (Out-Printer)
+## <a name="printing-data-out-printer"></a>列印資料 (Out-Printer)
 
 您可以使用 **Out-Printer** Cmdlet 列印資料。 如果您未提供印表機名稱，**Out-Printer** Cmdlet 會使用預設印表機。 您可以使用任何 Windows 印表機，方法是指定其顯示名稱。 您不需要任何印表機連接埠對應，或甚至是真正的實體印表機。 例如，如果您已安裝 Microsoft Office Document Imaging 工具，您可以輸入下列命令將資料傳送至影像檔︰
 
@@ -119,7 +119,7 @@ At line:1 char:12
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
 ```
 
-#### <a name="saving-data-out-file"></a>儲存資料 (Out-File)
+## <a name="saving-data-out-file"></a>儲存資料 (Out-File)
 
 您可以使用 **Out-File** Cmdlet 將輸出傳送至檔案，而不是主控台視窗。 下列命令列會將處理程序清單傳送至檔案 **C:\\temp\\processlist.txt**：
 

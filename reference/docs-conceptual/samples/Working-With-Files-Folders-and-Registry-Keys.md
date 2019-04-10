@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用檔案、資料夾與登錄機碼
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: a09b127d4ba37d33cb4c0f0ce0819e645fd4b137
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401023"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293090"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用檔案、資料夾與登錄機碼
 
 Windows PowerShell 使用名詞 **Item** 參照在 Windows PowerShell 磁碟機上找到的項目。 使用 Windows PowerShell FileSystem 提供者時，**Item** 可能是檔案、資料夾或 Windows PowerShell 磁碟機。 在大部分的系統管理設定中，列出及使用這些項目是很重要的基本工作，因此，我們要詳細討論這些工作。
 
-### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>列舉檔案、資料夾與登錄機碼 (Get-ChildItem)
+## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>列舉檔案、資料夾與登錄機碼 (Get-ChildItem)
 
 從特定位置取得項目集合是很常見的工作，因此，**Get-ChildItem** Cmdlet 專門設計為傳回容器 (例如資料夾) 內的所有項目。
 
@@ -42,7 +42,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 這些參數可混合使用以得到高度自訂的輸出。
 
-#### <a name="listing-all-contained-items--recurse"></a>列出所有包含的項目 (-Recurse)
+### <a name="listing-all-contained-items--recurse"></a>列出所有包含的項目 (-Recurse)
 
 若要查看 Windows 資料夾內的項目和子資料夾中包含的任何項目，請使用 **Get-ChildItem** 的 **Recurse** 參數。 清單會顯示 Windows 資料夾中的所有項目和子資料夾中的項目。 例如：
 
@@ -57,7 +57,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### <a name="filtering-items-by-name--name"></a>依名稱篩選項目 (-Name)
+### <a name="filtering-items-by-name--name"></a>依名稱篩選項目 (-Name)
 
 若只要顯示項目的名稱，請使用 **Get-Childitem** 的 **Name** 參數：
 
@@ -69,7 +69,7 @@ assembly
 ...
 ```
 
-#### <a name="forcibly-listing-hidden-items--force"></a>強制列出隱藏的項目 (-Force)
+### <a name="forcibly-listing-hidden-items--force"></a>強制列出隱藏的項目 (-Force)
 
 通常在 [檔案總管] 或 Cmd.exe 中不可見的項目，則不會顯示在 **Get-ChildItem** 命令的輸出中。 若要顯示隱藏的項目，請使用 **Get-ChildItem** 的 **Force** 參數。 例如：
 
@@ -79,7 +79,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 此參數之所以名為 Force，是因為您可以強制覆寫 **Get-ChildItem** 命令的正常行為。 Force 是廣泛使用的參數，會強制執行 Cmdlet 一般不會執行的動作，但並不會執行危害系統安全性的任何動作。
 
-#### <a name="matching-item-names-with-wildcards"></a>使用萬用字元比對項目名稱
+### <a name="matching-item-names-with-wildcards"></a>使用萬用字元比對項目名稱
 
 **Get-ChildItem** 命令可接受在要列出的項目路徑中使用萬用字元。
 
@@ -122,7 +122,7 @@ Get-ChildItem -Path C:\Windows\x*
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### <a name="excluding-items--exclude"></a>排除項目 (-Exclude)
+### <a name="excluding-items--exclude"></a>排除項目 (-Exclude)
 
 您可以使用 Get-ChildItem 的 **Exclude** 參數排除特定項目。 這可讓您在單一陳述式中執行複雜的篩選。
 
@@ -147,7 +147,7 @@ Mode                LastWriteTime     Length Name
 -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll
 ```
 
-#### <a name="mixing-get-childitem-parameters"></a>混合使用 Get-ChildItem 參數
+### <a name="mixing-get-childitem-parameters"></a>混合使用 Get-ChildItem 參數
 
 您可以在同一個命令中使用 **Get-ChildItem** Cmdlet 的數個參數。 在混合使用參數之前，請確定您了解萬用字元比對的原則。 例如，下列命令不會傳回任何結果：
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 收集電腦的相關資訊
 ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: 99125ef701705c20d4e955c79eaa3469ce4d58fb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400666"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293158"
 ---
 # <a name="collecting-information-about-computers"></a>收集電腦的相關資訊
 
@@ -22,7 +22,7 @@ ms.locfileid: "53400666"
 您可以指定與可透過 WMI 連線之任何電腦來建立關聯的名稱或 IP 位址。
 若要擷取本機電腦的相關資訊，您可以省略 **ComputerName** 參數。
 
-### <a name="listing-desktop-settings"></a>列出桌面設定
+## <a name="listing-desktop-settings"></a>列出桌面設定
 
 我們一開始會使用命令，收集本機電腦上的桌面資訊。
 
@@ -44,7 +44,7 @@ Get-CimInstance -ClassName Win32_Desktop -ComputerName . | Select-Object -Exclud
 
 若要篩選出中繼資料，請使用管線運算子 (|) 將 `Get-CimInstance` 命令的結果傳送至 `Select-Object -ExcludeProperty "CIM*"`。
 
-### <a name="listing-bios-information"></a>列出 BIOS 資訊
+## <a name="listing-bios-information"></a>列出 BIOS 資訊
 
 WMI **Win32_BIOS** 類別會傳回本機電腦系統 BIOS 的精簡與完整相關資訊︰
 
@@ -52,7 +52,7 @@ WMI **Win32_BIOS** 類別會傳回本機電腦系統 BIOS 的精簡與完整相�
 Get-CimInstance -ClassName Win32_BIOS -ComputerName .
 ```
 
-### <a name="listing-processor-information"></a>列出處理器資訊
+## <a name="listing-processor-information"></a>列出處理器資訊
 
 您可以使用 WMI 的 **Win32_Processor** 類別擷取一般處理器資訊，不過您可能會想要篩選此資訊︰
 
@@ -70,7 +70,7 @@ SystemType
 X86-based PC
 ```
 
-### <a name="listing-computer-manufacturer-and-model"></a>列出電腦製造商和型號
+## <a name="listing-computer-manufacturer-and-model"></a>列出電腦製造商和型號
 
 **Win32_ComputerSystem** 也會提供電腦型號資訊。
 顯示的標準輸出不需要任何篩選，就能提供 OEM 資料︰
@@ -88,7 +88,7 @@ MyPC Jane Doe         WORKGROUP 804765696           DA243A-ABA 6415cl NA910 Comp
 類似此命令的輸出會直接傳回一些硬體的資訊，只會顯示您擁有的資料。
 有些資訊未經過硬體製造商的正確設定，因此可能無法使用。
 
-### <a name="listing-installed-hotfixes"></a>列出安裝的 Hotfix
+## <a name="listing-installed-hotfixes"></a>列出安裝的 Hotfix
 
 您可以使用 **Win32_QuickFixEngineering** ，列出所有安裝的 Hotfix：
 
@@ -143,7 +143,7 @@ HotFixId
 KB4048951
 ```
 
-### <a name="listing-operating-system-version-information"></a>列出作業系統版本資訊
+## <a name="listing-operating-system-version-information"></a>列出作業系統版本資訊
 
 **Win32_OperatingSystem** 類別屬性包含版本和 Service Pack 資訊。
 您可以明確地只選取這些屬性，以從 **Win32_OperatingSystem** 取得版本資訊摘要：
@@ -167,7 +167,7 @@ ServicePackMajorVersion : 0
 ServicePackMinorVersion : 0
 ```
 
-### <a name="listing-local-users-and-owner"></a>列出本機使用者和擁有者
+## <a name="listing-local-users-and-owner"></a>列出本機使用者和擁有者
 
 選取 **Win32_OperatingSystem** 類別的屬性可找到本機使用者的一般資訊 (授權使用者數目、目前的使用者數目和擁有者名稱)。
 您可以明確地選取要顯示的屬性，如下所示︰
@@ -182,7 +182,7 @@ Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object
 Get-CimInstance -ClassName Win32_OperatingSystem -ComputerName . | Select-Object -Property *user*
 ```
 
-### <a name="getting-available-disk-space"></a>取得可用的磁碟空間
+## <a name="getting-available-disk-space"></a>取得可用的磁碟空間
 
 若要查看本機磁碟機的磁碟空間和可用空間，您可以使用 Win32_LogicalDisk WMI 類別。
 您只需要查看 DriveType 為 3 的執行個體，因為 WMI 會針對固定式硬碟使用這個值。
@@ -203,7 +203,7 @@ FreeSpace 109839607808
 Size      326846914560
 ```
 
-### <a name="getting-logon-session-information"></a>取得登入工作階段資訊
+## <a name="getting-logon-session-information"></a>取得登入工作階段資訊
 
 您可以透過 **Win32_LogonSession** WMI 類別，取得與使用者相關聯的登入工作階段一般資訊︰
 
@@ -211,7 +211,7 @@ Size      326846914560
 Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 ```
 
-### <a name="getting-the-user-logged-on-to-a-computer"></a>取得登入電腦的使用者
+## <a name="getting-the-user-logged-on-to-a-computer"></a>取得登入電腦的使用者
 
 您可以使用 Win32_ComputerSystem，顯示登入特定電腦系統的使用者。
 此命令只會傳回登入系統桌面的使用者︰
@@ -220,7 +220,7 @@ Get-CimInstance -ClassName Win32_LogonSession -ComputerName .
 Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
-### <a name="getting-local-time-from-a-computer"></a>取得電腦的當地時間
+## <a name="getting-local-time-from-a-computer"></a>取得電腦的當地時間
 
 您可以使用 **Win32_LocalTime** WMI 類別，擷取特定電腦上的目前當地時間。
 
@@ -240,7 +240,7 @@ Year         : 2017
 PSComputerName : .
 ```
 
-### <a name="displaying-service-status"></a>顯示服務狀態
+## <a name="displaying-service-status"></a>顯示服務狀態
 
 若要檢視特定電腦的所有服務狀態，您可以在本機上使用 `Get-Service` Cmdlet。
 若為遠端系統，您可以使用 **Win32_Service** WMI 類別。

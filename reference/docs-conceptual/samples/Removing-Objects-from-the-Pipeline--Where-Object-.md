@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 從管線中移除物件 Where Object
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401011"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293141"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
 
@@ -16,7 +16,7 @@ ms.locfileid: "53401011"
 
 Windows PowerShell 包含了 `Where-Object` Cmdlet，可讓您測試管線中的每個物件，並只在符合特定測試條件時才沿著管線傳遞。 未通過測試的物件會從管線中移除。 您會將測試條件提供為 `Where-Object` **FilterScript** 參數的值。
 
-### <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 執行簡單的測試
+## <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 執行簡單的測試
 
 **FilterScript** 的值是評估為 true 或 false 的指令碼區塊 (以大括弧 {} 括住的一或多個 Windows PowerShell 命令)。 這些指令碼區塊可以很簡單，但建立時需要了解另一個 Windows PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以 '-' 字元開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>根據物件屬性篩選
+## <a name="filtering-based-on-object-properties"></a>根據物件屬性篩選
 
 因為 `$_` 參照了目前的管線物件，所以我們可以針對測試來存取其屬性。
 

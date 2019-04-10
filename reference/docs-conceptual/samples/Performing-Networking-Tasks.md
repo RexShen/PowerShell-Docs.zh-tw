@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 執行網路工作
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401064"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293124"
 ---
 # <a name="performing-networking-tasks"></a>執行網路工作
 
 由於 TCP/IP 是最常使用的網路通訊協定，因此大多數低階網路通訊協定管理工作都涉及 TCP/IP。 在本節中，我們使用 Windows PowerShell 和 WMI 來執行這些工作。
 
-### <a name="listing-ip-addresses-for-a-computer"></a>列出電腦的 IP 位址
+## <a name="listing-ip-addresses-for-a-computer"></a>列出電腦的 IP 位址
 
 若要取得本機電腦上所有使用中的 IP 位址，請使用下列命令︰
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 每個網路介面卡的 IPAddress 屬性其實是一個陣列。 定義中的大括弧表示 **IPAddress** 不是 **System.String** 值，而是 **System.String** 值的陣列。
 
-### <a name="listing-ip-configuration-data"></a>列出 IP 設定資料
+## <a name="listing-ip-configuration-data"></a>列出 IP 設定資料
 
 若要顯示每個網路介面卡的詳細 IP 設定資料，請使用下列命令︰
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 此命令會傳回有關 DHCP、DNS、路由和其他次要 IP 設定屬性的詳細資訊。
 
-### <a name="pinging-computers"></a>對電腦執行 Ping
+## <a name="pinging-computers"></a>對電腦執行 Ping
 
 您可以使用 **Win32_PingStatus**，對電腦執行簡單的 Ping。 下列命令會執行 Ping，但傳回冗長的輸出：
 
@@ -106,7 +106,7 @@ StatusCode 為 0 表示成功執行 Ping。
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>擷取網路介面卡內容
+## <a name="retrieving-network-adapter-properties"></a>擷取網路介面卡內容
 
 稍早在本使用者指南中，我們曾提及您可以使用 **Win32_NetworkAdapterConfiguration** 擷取一般設定屬性。 雖然這並不完全是 TCP/IP 資訊，但 MAC 位址和介面卡類型等網路介面卡資訊對於了解電腦上所發生的情況還是很有用。 若要取得這項資訊的摘要，請使用下列命令︰
 
@@ -114,7 +114,7 @@ $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>將 DNS 網域指派給網路介面卡
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>將 DNS 網域指派給網路介面卡
 
 若要將 DNS 網域指派給自動名稱解析，請使用 **Win32_NetworkAdapterConfiguration SetDNSDomain** 方法。 因為您會針對每個網路介面卡設定獨立指派 DNS 網域，所以需要使用 **ForEach-Object** 陳述式將網域指派給每個介面卡：
 
@@ -130,11 +130,11 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>執行 DHCP 設定工作
+## <a name="performing-dhcp-configuration-tasks"></a>執行 DHCP 設定工作
 
 修改 DHCP 詳細資料與 DNS 設定一樣，都需要使用一組網路介面卡。 您可以使用 WMI 執行幾個不同的動作，我們將逐步介紹其中一些常見的動作。
 
-#### <a name="determining-dhcp-enabled-adapters"></a>判斷已啟用 DHCP 的介面卡
+### <a name="determining-dhcp-enabled-adapters"></a>判斷已啟用 DHCP 的介面卡
 
 若要在電腦上尋找已啟用 DHCP 的介面卡，請使用下列命令︰
 
@@ -148,7 +148,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$tru
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>擷取 DHCP 內容
+### <a name="retrieving-dhcp-properties"></a>擷取 DHCP 內容
 
 因為介面卡的 DHCP 相關內容通常會以 "DHCP" 為開頭，所以您可以使用 Format-Table 的 Property 參數只僅顯示這些內容︰
 
@@ -156,7 +156,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>在每個介面卡上啟用 DHCP
+### <a name="enabling-dhcp-on-each-adapter"></a>在每個介面卡上啟用 DHCP
 
 若要在所有介面卡上啟用 DHCP，請使用下列命令︰
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 您可以使用 **Filter** 陳述式 "IPEnabled=true and DHCPEnabled=false" 避免在已啟用 DHCP 的情況下再次啟用，但省略此步驟並不會造成錯誤。
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>釋出和更新特定介面卡上的 DHCP 租用
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>釋出和更新特定介面卡上的 DHCP 租用
 
 **Win32_NetworkAdapterConfiguration** 類別具有 **ReleaseDHCPLease** 和 **RenewDHCPLease** 方法。 兩者使用方式皆相同。 在一般情況下，只有在需要釋出或更新特定子網路上介面卡的位址時，才會使用這些方法。 在子網路上篩選介面卡的最簡單方式，是只選擇使用該子網路閘道的介面卡設定。 例如，下列命令會釋出本機電腦上從 192.168.1.254 取得 DHCP 租用之介面卡上的所有 DHCP 租用︰
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > 在遠端電腦上使用這些方法時，請注意，如果透過已釋出或更新租用的介面卡連線到遠端系統，可能無法存取遠端系統。
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>釋出和更新所有介面卡上的 DHCP 租用
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>釋出和更新所有介面卡上的 DHCP 租用
 
 您可以使用 **Win32_NetworkAdapterConfiguration** 方法 (**ReleaseDHCPLeaseAll** 和 **RenewDHCPLeaseAll**)，在所有介面卡上執行全域 DHCP 位址釋出或更新。 不過，此命令必須套用至 WMI 類別，而不是特定介面卡，因為全域釋出和更新租用會在類別上執行，而不是在特定介面卡上執行。
 
@@ -205,7 +205,7 @@ Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdap
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>建立網路共用
+## <a name="creating-a-network-share"></a>建立網路共用
 
 若要建立網路共用，請使用 **Win32_Share Create** 方法︰
 
@@ -219,7 +219,7 @@ Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdap
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>移除網路共用
+## <a name="removing-a-network-share"></a>移除網路共用
 
 您可以使用 **Win32_Share** 移除網路共用，但此處理程序與建立共用稍微不同，因為您必須擷取要移除的特定共用，而不是 **Win32_Share** 類別。 下列陳述式會刪除共用 "TempShare"：
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>連線到可存取的 Windows 網路磁碟機
+## <a name="connecting-a-windows-accessible-network-drive"></a>連線到可存取的 Windows 網路磁碟機
 
 **New-PSDrive** Cmdlet 會建立 Windows PowerShell 磁碟機，但以此方式建立的磁碟機僅適用於 Windows PowerShell。 若要建立新的網路磁碟機，您可以使用 **WScript.Network** COM 物件。 下列命令會將共用的 \\\\FPS01\\users 對應至本機磁碟機 B：
 
