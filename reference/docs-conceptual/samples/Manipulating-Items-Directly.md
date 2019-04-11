@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 直接操作項目
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676738"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293260"
 ---
 # <a name="manipulating-items-directly"></a>直接操作項目
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>建立新項目 (New-Item)
+## <a name="creating-new-items-new-item"></a>建立新項目 (New-Item)
 
 若要在檔案系統中建立新項目，請使用 **New-Item** Cmdlet。 包含 **Path** 參數並指定項目路徑作為參數值，以及包含 **ItemType** 參數並指定 "file" 或 "directory" 的值。
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 輸入登錄路徑時，請務必在 Windows PowerShell 磁碟機名稱中包含冒號 (**:**)，亦即 HKLM: 與 HKCU:。 若未使用冒號，Windows PowerShell 將無法識別該路徑中的磁碟機名稱。
 
-### <a name="why-registry-values-are-not-items"></a>為什麼登錄值不是項目
+## <a name="why-registry-values-are-not-items"></a>為什麼登錄值不是項目
 
 當您使用 **Get-ChildItem** Cmdlet 來尋找登錄機碼中的項目時，您將永遠不會看到實際的登錄項目或其值。
 
@@ -95,7 +95,7 @@ SKC  VC Name                           Property
 
 雖然將登錄項目視為項目很方便，但您無法在指定登錄項目路徑時確保其唯一性。 路徑標記法無法區分名為 **Run** 的登錄子機碼與 **Run** 子機碼中的 **(Default)** 登錄項目。 此外，因為登錄項目名稱可以包含反斜線字元 (**\\**)，若登錄項目是項目，您無法使用路徑標記法來區分名為 **Windows\\CurrentVersion\\Run** 的登錄項目與該路徑中的子機碼。
 
-### <a name="renaming-existing-items-rename-item"></a>重新命名現有的項目 (Rename-Item)
+## <a name="renaming-existing-items-rename-item"></a>重新命名現有的項目 (Rename-Item)
 
 若要變更檔案或資料夾的名稱，請使用 **Rename-Item** Cmdlet。 下列命令會將 **file1.txt** 檔案的名稱變更為 **fileOne.txt**。
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>移動項目 (Move-Item)
+## <a name="moving-items-move-item"></a>移動項目 (Move-Item)
 
 若要移動檔案或資料夾，請使用 **Move-Item** Cmdlet。
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>複製項目 (Copy-Item)
+## <a name="copying-items-copy-item"></a>複製項目 (Copy-Item)
 
 若您熟悉其他殼層中的複製操作，您可能會發現 Windows PowerShell 中 **Copy-Item** Cmdlet 的行為不尋常。 當您將某個項目從一個位置複製到另一個位置時，Copy-Item 預設不會複製其內容。
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>刪除項目 (Remove-Item)
+## <a name="deleting-items-remove-item"></a>刪除項目 (Remove-Item)
 
 若要刪除檔案與資料夾，請使用 **Remove-Item** Cmdlet。 會造成大幅且無法復原之變更的 Windows PowerShell Cmdlet (例如 **Remove-Item**) 通常會在您輸入其命令時提示您確認。 例如，若嘗試移除 **New.Directory** 資料夾，系統會提示您確認要執行該命令，因為資料夾包含檔案：
 
@@ -188,7 +188,7 @@ specified. If you continue, all children will be removed with the item. Are you
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>執行項目 (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>執行項目 (Invoke-Item)
 
 Windows PowerShell 使用 **Invoke-Item** Cmdlet 來針對檔案或資料夾執行預設動作。 此預設動作是由登錄中的預設應用程式處理常式決定；效果等同於在 [檔案總管] 中按兩下該項目。
 

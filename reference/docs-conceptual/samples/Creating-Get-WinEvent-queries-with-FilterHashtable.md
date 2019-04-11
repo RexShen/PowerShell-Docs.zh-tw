@@ -1,12 +1,12 @@
 ---
 ms.date: 3/18/2019
 title: 使用 FilterHashtable 建立 Get-WinEvent 查詢
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320453"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293277"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 建立 Get-WinEvent 查詢
 
@@ -29,26 +29,26 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>關於列舉的部落格文章
+## <a name="blog-posts-about-enumeration"></a>關於列舉的部落格文章
 
 本文介紹有關如何在雜湊表中使用列舉值的資訊。 如需有關列舉的詳細資訊，請參閱這些 **Scripting Guy** 部落格文章。 若要建立傳回列舉值的函式，請參閱[列舉和值](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)。
 如需詳細資訊，請參閱[有關列舉的 Scripting Guy 部落格系列文章](https://devblogs.microsoft.com/scripting/?s=about+enumeration)。
 
-### <a name="hash-table-keyvalue-pairs"></a>雜湊資料表索引鍵/值組
+## <a name="hash-table-keyvalue-pairs"></a>雜湊資料表機碼/值組
 
 若要建立有效率的查詢，請將 `Get-WinEvent` Cmdlet 與 **FilterHashtable** 參數一起使用。
-**FilterHashtable** 接受雜湊表作為篩選條件，以從 Windows 事件記錄檔中取得特定資訊。 雜湊資料表使用**索引鍵/值**組。 如需雜湊表的相關詳細資訊，請參閱 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。
+**FilterHashtable** 接受雜湊表作為篩選條件，以從 Windows 事件記錄檔中取得特定資訊。 雜湊資料表使用**機碼/值**組。 如需雜湊表的相關詳細資訊，請參閱 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。
 
-如果**索引鍵/值**組位於同一行上，則必須以分號分隔。 如果每個**索引鍵/值**組位於不同行上，則不需要分號。 例如，本文將**索引鍵/值**組放在不同的行上，且不使用分號。
+如果**機碼/值**組位於同一行上，則必須以分號分隔。 如果每個**機碼/值**組位於不同行上，則不需要分號。 例如，本文將**機碼/值**組放在不同的行上，且不使用分號。
 
-此範例會使用數個 **FilterHashtable** 參數的**索引鍵/值**組。 已完成的查詢中包括 **LogName**、**ProviderName**、**Keywords**、**ID** 與 **Level**。
+此範例會使用數個 **FilterHashtable** 參數的**機碼/值**組。 已完成的查詢中包括 **LogName**、**ProviderName**、**Keywords**、**ID** 與 **Level**。
 
-接受的**索引鍵/值**組如下表所示，並包含在 [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
+接受的**機碼/值**組如下表所示，並包含在 [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
 **FilterHashtable** 參數的文件中。
 
-下表顯示索引鍵名稱、資料類型，以及資料值是否接受萬用字元。
+下表顯示機碼名稱、資料類型，以及資料值是否接受萬用字元。
 
-| 索引鍵名稱     | 數值資料類型    | 接受萬用字元？ |
+| 機碼名稱     | 值資料類型    | 接受萬用字元？ |
 |------------- | ------------------ | ---------------------------- |
 | LogName      | `<String[]>`       | 是 |
 | ProviderName | `<String[]>`       | 是 |
@@ -62,11 +62,11 @@ Get-WinEvent -FilterHashtable @{
 | 資料         | `<String[]>`       | 否  |
 | *            | `<String[]>`       | 否  |
 
-### <a name="building-a-query-with-a-hash-table"></a>使用雜湊表建立查詢
+## <a name="building-a-query-with-a-hash-table"></a>使用雜湊表建立查詢
 
-若要驗證結果並針對問題進行疑難排解，最好一次一個**索引鍵/值**組來建置雜湊表。 該查詢會從**應用程式**記錄檔中取得資料。 雜湊表就相當於 `Get-WinEvent –LogName Application`。
+若要驗證結果並針對問題進行疑難排解，最好一次一個**機碼/值**組來建置雜湊表。 該查詢會從**應用程式**記錄檔中取得資料。 雜湊表就相當於 `Get-WinEvent –LogName Application`。
 
-首先，建立 `Get-WinEvent` 查詢。 使用 **FilterHashtable** 參數的**索引鍵/值**組，其中索引鍵為 **LogName** 而值為 **Application**。
+首先，建立 `Get-WinEvent` 查詢。 使用 **FilterHashtable** 參數的**機碼/值**組，其中機碼為 **LogName** 而值為 **Application**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -74,11 +74,11 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-繼續使用 **ProviderName** 索引鍵建置雜湊表。 **ProviderName** 是 **Windows 事件檢視器**中 [來源] 欄位中顯示的名稱。 例如，下列螢幕擷取畫面中的 **.NET Runtime**：
+繼續使用 **ProviderName** 機碼建置雜湊表。 **ProviderName** 是 **Windows 事件檢視器**中 [來源] 欄位中顯示的名稱。 例如，下列螢幕擷取畫面中的 **.NET Runtime**：
 
 ![Windows 事件檢視器來源的影像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-更新雜湊表，並包含**索引鍵/值**組，其中索引鍵為 **ProviderName，而值為 **.NET Runtime**。
+更新雜湊表，並包含**機碼/值**組，其中機碼為 **ProviderName，而值為 **.NET Runtime**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -87,11 +87,11 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-如果您的查詢需要從封存事件記錄檔中取得資料，請使用 **Path** 索引鍵。 **Path** 值會指定記錄檔的完整路徑。 如需詳細資訊，請參閱 **Scripting Guy** 部落格文章[使用 PowerShell 剖析儲存的事件記錄檔以尋找錯誤](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors)。
+如果您的查詢需要從封存事件記錄檔中取得資料，請使用 **Path** 機碼。 **Path** 值會指定記錄檔的完整路徑。 如需詳細資訊，請參閱 **Scripting Guy** 部落格文章[使用 PowerShell 剖析儲存的事件記錄檔以尋找錯誤](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors)。
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>使用雜湊表中的列舉值
+## <a name="using-enumerated-values-in-a-hash-table"></a>使用雜湊表中的列舉值
 
-**Keywords** 是雜湊表中的下一個索引鍵。 **Keywords** 資料類型是包含大量數字之 `[long]` 實值型別的陣列。 使用下列命令來尋找 `[long]` 的最大值：
+**Keywords** 是雜湊表中的下一個機碼。 **Keywords** 資料類型是包含大量數字之 `[long]` 實值型別的陣列。 使用下列命令來尋找 `[long]` 的最大值：
 
 ```powershell
 [long]::MaxValue
@@ -101,7 +101,7 @@ Get-WinEvent -FilterHashtable @{
 9223372036854775807
 ```
 
-針對 **Keywords** 索引鍵，PowerShell 會使用數字，而不是**安全性**等字串。 **Windows 事件檢視器**將 **Keywords** 顯示為字串，但它們是列舉值。 在雜湊表中，如果您使用帶有字串值的 **Keywords** 索引鍵，則會顯示錯誤訊息。
+針對 **Keywords** 機碼，PowerShell 會使用數字，而不是**安全性**等字串。 **Windows 事件檢視器**將 **Keywords** 顯示為字串，但它們是列舉值。 在雜湊表中，如果您使用帶有字串值的 **Keywords** 機碼，則會顯示錯誤訊息。
 
 開啟 **Windows 事件檢視器**，然後從 [動作] 窗格中，按一下 [篩選目前的記錄]。
 **Keywords** 下拉式功能表會顯示可用的關鍵字，如下列螢幕擷取畫面所示：
@@ -146,7 +146,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 | ResponseTime     | 281474976710656   |
 | 無             | 0                 |
 
-更新雜湊表並包含**索引鍵/值**組，其中索引鍵為 **Keywords**，而 **EventLogClassic** 列舉值為 **36028797018963968**。
+更新雜湊表並包含**機碼/值**組，其中機碼為 **Keywords**，而 **EventLogClassic** 列舉值為 **36028797018963968**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -156,9 +156,9 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>關鍵字靜態屬性值 (選擇性)
+### <a name="keywords-static-property-value-optional"></a>關鍵字靜態屬性值 (選擇性)
 
-列舉 **Keywords** 索引鍵，但您可以在雜湊表查詢中使用靜態屬性名稱。
+列舉 **Keywords** 機碼，但您可以在雜湊表查詢中使用靜態屬性名稱。
 必須將屬性名稱轉換為具有 **Value__** 屬性的值，而不是使用傳回的字串。
 
 例如，下列指令碼會使用 **Value__** 屬性。
@@ -172,11 +172,11 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>依事件識別碼篩選
+## <a name="filtering-by-event-id"></a>依事件識別碼篩選
 
-若要取得更特定的資料，查詢的結果將依**事件識別碼**進行篩選。雜湊表中將**事件識別碼**作為索引鍵 **ID** 參考，且值為特定**事件識別碼**。**Windows 事件檢視器**會顯示**事件識別碼**。這個範例會使用**事件識別碼 1023**。
+若要取得更特定的資料，查詢的結果將依**事件識別碼**進行篩選。雜湊表中將**事件識別碼**作為機碼 **ID** 參考，且值為特定**事件識別碼**。**Windows 事件檢視器**會顯示**事件識別碼**。這個範例會使用**事件識別碼 1023**。
 
-更新雜湊表，並包含**索引鍵/值**組，其中索引鍵為 **ID**，而值為 **1023**。
+更新雜湊表，並包含**機碼/值**組，其中機碼為 **ID**，而值為 **1023**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -187,10 +187,10 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>依層級篩選
+## <a name="filtering-by-level"></a>依層級篩選
 
-若要進一步精簡結果並僅包含錯誤的事件，請使用 **Level** 索引鍵。
-**Windows 事件檢視器**將 **Level** 顯示為字串值，但它們是列舉值。 在雜湊表中，如果您使用帶有字串值的 **Level** 索引鍵，則會顯示錯誤訊息。
+若要進一步精簡結果並僅包含錯誤的事件，請使用 **Level** 機碼。
+**Windows 事件檢視器**將 **Level** 顯示為字串值，但它們是列舉值。 在雜湊表中，如果您使用帶有字串值的 **Level** 機碼，則會顯示錯誤訊息。
 
 **Level** 的值包括 **Error**、**Warning** 或 **Informational**。 使用下列命令來顯示 `StandardEventLevel` 屬性名稱。
 
@@ -213,7 +213,7 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 
 列舉值記錄在 **.NET Framework** 中。 如需詳細資訊，請參閱 [StandardEventLevel 列舉](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。
 
-**Level** 索引鍵的名稱和列舉值如下所示：
+**Level** 機碼的名稱和列舉值如下所示：
 
 | 名稱           | 值 |
 | -------------- | ----- |
@@ -224,7 +224,7 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 | 重大       |   1   |
 | LogAlways      |   0   |
 
-已完成查詢的雜湊表包含索引鍵 **Level** 和值 **2**。
+已完成查詢的雜湊表包含機碼 **Level** 和值 **2**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -236,9 +236,9 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>列舉中的層級靜態屬性 (選用)
+### <a name="level-static-property-in-enumeration-optional"></a>列舉中的層級靜態屬性 (選用)
 
-列舉 **Level** 索引鍵，但您可以在雜湊表查詢中使用靜態屬性名稱。
+列舉 **Level** 機碼，但您可以在雜湊表查詢中使用靜態屬性名稱。
 必須將屬性名稱轉換為具有 **Value__** 屬性的值，而不是使用傳回的字串。
 
 例如，下列指令碼會使用 **Value__** 屬性。

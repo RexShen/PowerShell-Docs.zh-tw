@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 處理軟體安裝
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402056"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293215"
 ---
 # <a name="working-with-software-installations"></a>處理軟體安裝
 
@@ -17,7 +17,7 @@ ms.locfileid: "53402056"
 > [!NOTE]
 > 透過將應用程式檔案複製到電腦來安裝的應用程式通常無法使用這裡討論的技術來管理。 您可以使用＜處理檔案與資料夾＞一節中所討論的技術，將這些應用程式當成檔案與資料夾來管理。
 
-### <a name="listing-windows-installer-applications"></a>列出 Windows Installer 應用程式
+## <a name="listing-windows-installer-applications"></a>列出 Windows Installer 應用程式
 
 若要列出在本機或遠端系統上使用 Windows Installer 安裝的應用程式，請使用下列簡單的 WMI 查詢：
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 雖然我們現在有數種方式可查看使用 Windows Installer 安裝的應用程式，但我們還沒有考慮其他應用程式。 因為大部分的標準應用程式會向 Windows 登錄其解除安裝程式，所以我們可以透過在 Windows 登錄中尋找這些應用程式，以在本機處理它們。
 
-### <a name="listing-all-uninstallable-applications"></a>列出所有可解除安裝應用程式
+## <a name="listing-all-uninstallable-applications"></a>列出所有可解除安裝應用程式
 
 雖然沒有方法可以保證找出系統上所有應用程式，但可以尋找 [新增或移除程式] 對話方塊顯示之清單中的所有程式。 [新增或移除程式] 會在下列登錄機碼中尋找這些應用程式：
 
@@ -104,7 +104,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 > [!NOTE]
 > **HKLM:** 磁碟機已對應到 **HKEY_LOCAL_MACHINE** 的根目錄，因此我們在指向 Uninstall 機碼的路徑中使用該磁碟機。 除了 **HKLM:** 之外，我們可以使用 **HKLM** 或 **HKEY_LOCAL_MACHINE** 其中之一指定登錄路徑。 使用現有登錄磁碟機的好處是可以使用 Tab 鍵自動完成來填入機碼名稱，因此我們不需要手動輸入。
 
-我們現在有了名為 "Uninstall" 的磁碟機，它可以用來快速又方便地尋找應用程式安裝。 我們可以透過計算 Uninstall:Windows PowerShell 磁碟機: 中登錄機碼的數目來尋找已安裝應用程式的數目：
+我們現在有了名為 "Uninstall" 的磁碟機，它可以用來快速又方便地尋找應用程式安裝。 我們可以透過計算 Uninstall:Windows PowerShell 磁碟機: 中登錄機碼的數目，來尋找已安裝應用程式的數目：
 
 ```
 PS> (Get-ChildItem -Path Uninstall:).Count
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>安裝應用程式
+## <a name="installing-applications"></a>安裝應用程式
 
 您可以在遠端或本機使用 **Win32_Product** 類別來安裝 Windows Installer 封裝。
 
@@ -157,7 +157,7 @@ SKC  VC Name                           Property
 
 不使用 Windows Installer 技術的應用程式可能會有應用程式專屬，且適用於自動化部署的方法。 若要判斷是否有自動化部署的方法，請檢查應用程式的文件或洽詢應用程式廠商的支援系統。 在某些情況下，即使應用程式廠商沒有特別將應用程式設計成自動化安裝，但安裝程式軟體製造商可能會有一些自動化技術。
 
-### <a name="removing-applications"></a>移除應用程式
+## <a name="removing-applications"></a>移除應用程式
 
 使用 Windows PowerShell 移除 Windows Installer 套件的方法，與安裝套件的方法大致相同。 以下是範例，其中根據封裝的名稱選取要解除安裝的封裝；在某些情況下，使用 **IdentifyingNumber** 來篩選可能會比較容易：
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 不過，這些字串在未經修改之前，可能無法直接用於 Windows PowerShell 提示字元。
 
-### <a name="upgrading-windows-installer-applications"></a>升級 Windows Installer 應用程式
+## <a name="upgrading-windows-installer-applications"></a>升級 Windows Installer 應用程式
 
 若要升級應用程式，您需要知道應用程式的名稱，以及應用程式升級套件的路徑。 有了該資訊之後，您就可以使用單一的 Windows PowerShell 命令升級應用程式：
 

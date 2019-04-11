@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 的新功能
 description: PowerShell Core 6.1 中發行的新功能與變更
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679068"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293311"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 的新功能
 
@@ -192,7 +192,7 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - `application-json` 回應的預設編碼設為 UTF-8
 - [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` 參數可允許不符合標準的 `Content-Type` 標頭
 - [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` 參數可支援簡化的 `multipart/form-data` 支援
-- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - 以符合規範且不區分大小寫的方式來處理關聯索引鍵
+- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - 以符合規範且不區分大小寫的方式來處理關聯機碼
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - 在 Web Cmdlet 中新增 `-Resume` 參數
 
 ## <a name="remoting-improvements"></a>遠端功能改善
@@ -210,7 +210,7 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 `Enable-PSRemoting` 現在會建立兩個遠端工作階段設定：
 
 - 一個用於 PowerShell 的主要版本。 例如，`PowerShell.6`。 在次要版本更新之間，可依賴此端點作為「全系統」的 PowerShell 6 工作階段設定
-- 一個版本特定的工作階段設定，例如：`PowerShell.6.1.0`
+- 一個版本特定的工作階段設定，例如： `PowerShell.6.1.0`
 
 如果您想要在相同電腦上安裝多個 PowerShell 6 版本以供存取，此行為會很有用。
 
@@ -434,11 +434,11 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 在 Windows PowerShell 中，我們會包含下列類型快速鍵，以更輕鬆地搭配其各自類型來運作：
 
-- `[adsi]`：`System.DirectoryServices.DirectoryEntry`
-- `[adsisearcher]`：`System.DirectoryServices.DirectorySearcher`
-- `[wmi]`：`System.Management.ManagementObject`
-- `[wmiclass]`：`System.Management.ManagementClass`
-- `[wmisearcher]`：`System.Management.ManagementObjectSearcher`
+- `[adsi]`： `System.DirectoryServices.DirectoryEntry`
+- `[adsisearcher]`： `System.DirectoryServices.DirectorySearcher`
+- `[wmi]`： `System.Management.ManagementObject`
+- `[wmiclass]`： `System.Management.ManagementClass`
+- `[wmisearcher]`： `System.Management.ManagementObjectSearcher`
 
 這些類型快速鍵並未包含在 PowerShell 6 中，但已新增至 Windows 上執行的 PowerShell 6.1。
 
@@ -489,8 +489,8 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 在 Windows 上，MSI 套件現在會安裝到下列路徑：
 
-- 若是 6.x 的穩定安裝，則為 `$env:ProgramFiles\PowerShell\6\`
-- 若是 6.x 的預覽安裝，則為 `$env:ProgramFiles\PowerShell\6-preview\`
+- `$env:ProgramFiles\PowerShell\6\` (適用於 6.x 的穩定安裝)
+- `$env:ProgramFiles\PowerShell\6-preview\` (適用於 6.x 的預覽安裝)
 
 這項變更會確保 PowerShell Core 可透過 Microsoft Update 來更新或接受服務。
 
@@ -516,3 +516,10 @@ Visual Basic 很少用於 `Add-Type`。 我們已移除這項功能來縮減 Pow
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>已清除 `CommandTypes.Workflow` 和 `WorkflowInfoCleaned` 的使用
 
 如需這些變更的詳細資訊，請參閱 [PR #6708](https://github.com/PowerShell/PowerShell/pull/6708)。
+
+### <a name="group-object-now-sorts-the-groups"></a>Group-Object 現在會對群組進行排序
+
+作為效能改進的一部分，`Group-Object` 現在會傳回已排序的群組清單。
+雖然您不應該依賴順序，但如果您想要第一個群組，則可能會被此變更中斷。 我們認為這種效能改進值得改變，因為依賴於先前行為的影響很小。
+
+如需此變更的詳細資訊，請參閱 [問題 #7409](https://github.com/PowerShell/PowerShell/issues/7409) \(英文\)。
