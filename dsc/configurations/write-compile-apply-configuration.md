@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795414"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506813"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -61,12 +61,12 @@ DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。
 如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
 
 <!-- markdownlint-disable MD038 -->
-在 `. ` (點、空格) 後鍵入儲存路徑，即可「點溯源」"HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
+在 `. ` (點、空格) 後輸入儲存路徑，即可「點溯源」您的 "HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 這會產生下列輸出：
@@ -90,7 +90,7 @@ LCM 會呼叫 DSC 資源以套用設定。
 使用下列程式碼執行 `Start-DSCConfiguration` Cmdlet。 將您儲存 "localhost.mof" 的目錄路徑指定給 `-Path` 參數。 `Start-DSCConfiguration` Cmdlet 會查看是否有針對任何 "\<電腦名稱\>.mof" 檔案指定的路徑。 `Start-DSCConfiguration` Cmdlet 會嘗試將它所找到每個 ".mof" 檔案套用到檔案名稱 ("localhost"、"server01"、"dc-02" 等等) 指定的電腦名稱。
 
 > [!NOTE]
-> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的**詳細資訊**輸出。 `-Wait` 和 `-Verbose` 都是選用參數。
+> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的**詳細資訊**輸出。 `-Wait`與 `-Verbose` 都是選用參數。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
