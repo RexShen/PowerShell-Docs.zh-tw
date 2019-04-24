@@ -17,7 +17,7 @@ ms.locfileid: "58320399"
 
 VSCode 管理緩衝區中人工輸入的字元字串和檔案系統位元組之讀取/寫入區塊間的介面。 當 VSCode 儲存檔案時，它會使用文字編碼來執行這項操作。
 
-同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VSCode 寫入檔案，而 PowerShell 讀取檔案，所以它們需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為：位元組<bpt id="p1">*</bpt> -> 字元 -> 權杖 -> 抽象語法樹 -> 執行。
+同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VSCode 寫入檔案，而 PowerShell 讀取檔案，所以它們需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為：*位元組*  ->  *字元*  ->  *權杖*  ->  *抽象語法樹*  ->  *執行*。
 
 VSCode 和 PowerShell 都使用合理的預設編碼設定來安裝。 不過，PowerShell 使用的預設編碼已隨著 PowerShell Core (v6.x) 發行而變更。 為確保在 VSCode 中使用 PowerShell 或 PowerShell 延伸模組時沒有任何問題，您需要正確設定 VSCode 和 PowerShell 設定。
 
