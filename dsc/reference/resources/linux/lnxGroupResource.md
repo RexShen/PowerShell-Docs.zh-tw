@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxGroup 資源
 ms.openlocfilehash: c61b6ab4a8c56d085b5297dcfc7582187d54f946
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077852"
 ---
-# <a name="dsc-for-linux-nxgroup-resource"></a><span data-ttu-id="47a85-103">DSC for Linux nxGroup 資源</span><span class="sxs-lookup"><span data-stu-id="47a85-103">DSC for Linux nxGroup Resource</span></span>
+# <a name="dsc-for-linux-nxgroup-resource"></a><span data-ttu-id="a45d6-103">DSC for Linux nxGroup 資源</span><span class="sxs-lookup"><span data-stu-id="a45d6-103">DSC for Linux nxGroup Resource</span></span>
 
-<span data-ttu-id="47a85-104">PowerShell 預期狀態設定 (DSC) 的 **nxGroup** 資源會提供一個機制，在 Linux 節點管理本機群組。</span><span class="sxs-lookup"><span data-stu-id="47a85-104">The **nxGroup** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.</span></span>
+<span data-ttu-id="a45d6-104">PowerShell 預期狀態設定 (DSC) 的 **nxGroup** 資源會提供一個機制，在 Linux 節點管理本機群組。</span><span class="sxs-lookup"><span data-stu-id="a45d6-104">The **nxGroup** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage local groups on a Linux node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="47a85-105">語法</span><span class="sxs-lookup"><span data-stu-id="47a85-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a45d6-105">語法</span><span class="sxs-lookup"><span data-stu-id="a45d6-105">Syntax</span></span>
 
 ```
 nxGroup <string> #ResourceName
@@ -27,21 +27,21 @@ nxGroup <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="47a85-106">Properties</span><span class="sxs-lookup"><span data-stu-id="47a85-106">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="a45d6-106">Properties</span><span class="sxs-lookup"><span data-stu-id="a45d6-106">Properties</span></span>
 
-|  <span data-ttu-id="47a85-107">屬性</span><span class="sxs-lookup"><span data-stu-id="47a85-107">Property</span></span> |  <span data-ttu-id="47a85-108">描述</span><span class="sxs-lookup"><span data-stu-id="47a85-108">Description</span></span> |
+|  <span data-ttu-id="a45d6-107">屬性</span><span class="sxs-lookup"><span data-stu-id="a45d6-107">Property</span></span> |  <span data-ttu-id="a45d6-108">描述</span><span class="sxs-lookup"><span data-stu-id="a45d6-108">Description</span></span> |
 |---|---|
-| <span data-ttu-id="47a85-109">GroupName</span><span class="sxs-lookup"><span data-stu-id="47a85-109">GroupName</span></span>| <span data-ttu-id="47a85-110">指出您要確保其特定狀態的群組名稱。</span><span class="sxs-lookup"><span data-stu-id="47a85-110">Specifies the name of the group for which you want to ensure a specific state.</span></span>|
-| <span data-ttu-id="47a85-111">Ensure</span><span class="sxs-lookup"><span data-stu-id="47a85-111">Ensure</span></span>| <span data-ttu-id="47a85-112">決定是否要檢查群組存在。</span><span class="sxs-lookup"><span data-stu-id="47a85-112">Determines whether to check if the group exists.</span></span> <span data-ttu-id="47a85-113">將此屬性設定為 "Present" 以確保群組存在。</span><span class="sxs-lookup"><span data-stu-id="47a85-113">Set this property to "Present" to ensure the group exists.</span></span> <span data-ttu-id="47a85-114">設為 "Absent" 以確保此群組不存在。</span><span class="sxs-lookup"><span data-stu-id="47a85-114">Set it to "Absent" to ensure the group does not exist.</span></span> <span data-ttu-id="47a85-115">預設值為 "Present"。</span><span class="sxs-lookup"><span data-stu-id="47a85-115">The default value is "Present".</span></span>|
-| <span data-ttu-id="47a85-116">成員</span><span class="sxs-lookup"><span data-stu-id="47a85-116">Members</span></span>| <span data-ttu-id="47a85-117">指定組成群組的成員。</span><span class="sxs-lookup"><span data-stu-id="47a85-117">Specifies the members that form the group.</span></span>|
-| <span data-ttu-id="47a85-118">MembersToInclude</span><span class="sxs-lookup"><span data-stu-id="47a85-118">MembersToInclude</span></span>| <span data-ttu-id="47a85-119">指定您想要確認的使用者是此群組的成員。</span><span class="sxs-lookup"><span data-stu-id="47a85-119">Specifies the users who you want to ensure are members of the group.</span></span>|
-| <span data-ttu-id="47a85-120">MembersToExclude</span><span class="sxs-lookup"><span data-stu-id="47a85-120">MembersToExclude</span></span>| <span data-ttu-id="47a85-121">指定您想要確認的使用者不是此群組的成員。</span><span class="sxs-lookup"><span data-stu-id="47a85-121">Specifies the users who you want to ensure are not members of the group.</span></span>|
-| <span data-ttu-id="47a85-122">PreferredGroupID</span><span class="sxs-lookup"><span data-stu-id="47a85-122">PreferredGroupID</span></span>| <span data-ttu-id="47a85-123">如果可能的話，將群組識別碼設定為提供的值。</span><span class="sxs-lookup"><span data-stu-id="47a85-123">Sets the group id to the provided value if possible.</span></span> <span data-ttu-id="47a85-124">如果群組識別碼目前正在使用中，就會使用下一個可用的群組識別碼。</span><span class="sxs-lookup"><span data-stu-id="47a85-124">If the group id is currently in use, the next available group id is used.</span></span>|
-| <span data-ttu-id="47a85-125">DependsOn</span><span class="sxs-lookup"><span data-stu-id="47a85-125">DependsOn</span></span> | <span data-ttu-id="47a85-126">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="47a85-126">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="47a85-127">例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = '[ResourceType]ResourceName'`。</span><span class="sxs-lookup"><span data-stu-id="47a85-127">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.</span></span>|
+| <span data-ttu-id="a45d6-109">GroupName</span><span class="sxs-lookup"><span data-stu-id="a45d6-109">GroupName</span></span>| <span data-ttu-id="a45d6-110">指出您要確保其特定狀態的群組名稱。</span><span class="sxs-lookup"><span data-stu-id="a45d6-110">Specifies the name of the group for which you want to ensure a specific state.</span></span>|
+| <span data-ttu-id="a45d6-111">Ensure</span><span class="sxs-lookup"><span data-stu-id="a45d6-111">Ensure</span></span>| <span data-ttu-id="a45d6-112">決定是否要檢查群組存在。</span><span class="sxs-lookup"><span data-stu-id="a45d6-112">Determines whether to check if the group exists.</span></span> <span data-ttu-id="a45d6-113">將此屬性設定為 "Present" 以確保群組存在。</span><span class="sxs-lookup"><span data-stu-id="a45d6-113">Set this property to "Present" to ensure the group exists.</span></span> <span data-ttu-id="a45d6-114">設為 "Absent" 以確保此群組不存在。</span><span class="sxs-lookup"><span data-stu-id="a45d6-114">Set it to "Absent" to ensure the group does not exist.</span></span> <span data-ttu-id="a45d6-115">預設值為 "Present"。</span><span class="sxs-lookup"><span data-stu-id="a45d6-115">The default value is "Present".</span></span>|
+| <span data-ttu-id="a45d6-116">成員</span><span class="sxs-lookup"><span data-stu-id="a45d6-116">Members</span></span>| <span data-ttu-id="a45d6-117">指定組成群組的成員。</span><span class="sxs-lookup"><span data-stu-id="a45d6-117">Specifies the members that form the group.</span></span>|
+| <span data-ttu-id="a45d6-118">MembersToInclude</span><span class="sxs-lookup"><span data-stu-id="a45d6-118">MembersToInclude</span></span>| <span data-ttu-id="a45d6-119">指定您想要確認的使用者是此群組的成員。</span><span class="sxs-lookup"><span data-stu-id="a45d6-119">Specifies the users who you want to ensure are members of the group.</span></span>|
+| <span data-ttu-id="a45d6-120">MembersToExclude</span><span class="sxs-lookup"><span data-stu-id="a45d6-120">MembersToExclude</span></span>| <span data-ttu-id="a45d6-121">指定您想要確認的使用者不是此群組的成員。</span><span class="sxs-lookup"><span data-stu-id="a45d6-121">Specifies the users who you want to ensure are not members of the group.</span></span>|
+| <span data-ttu-id="a45d6-122">PreferredGroupID</span><span class="sxs-lookup"><span data-stu-id="a45d6-122">PreferredGroupID</span></span>| <span data-ttu-id="a45d6-123">如果可能的話，將群組識別碼設定為提供的值。</span><span class="sxs-lookup"><span data-stu-id="a45d6-123">Sets the group id to the provided value if possible.</span></span> <span data-ttu-id="a45d6-124">如果群組識別碼目前正在使用中，就會使用下一個可用的群組識別碼。</span><span class="sxs-lookup"><span data-stu-id="a45d6-124">If the group id is currently in use, the next available group id is used.</span></span>|
+| <span data-ttu-id="a45d6-125">DependsOn</span><span class="sxs-lookup"><span data-stu-id="a45d6-125">DependsOn</span></span> | <span data-ttu-id="a45d6-126">表示必須先執行另一個資源的設定，再設定這個資源。</span><span class="sxs-lookup"><span data-stu-id="a45d6-126">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="a45d6-127">例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = '[ResourceType]ResourceName'`。</span><span class="sxs-lookup"><span data-stu-id="a45d6-127">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="47a85-128">範例</span><span class="sxs-lookup"><span data-stu-id="47a85-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a45d6-128">範例</span><span class="sxs-lookup"><span data-stu-id="a45d6-128">Example</span></span>
 
-<span data-ttu-id="47a85-129">下列範例會確保使用者 'monuser' 存在，而且是 'DBusers' 群組的成員。</span><span class="sxs-lookup"><span data-stu-id="47a85-129">The following example ensures that the user 'monuser' exists and is a member of the group 'DBusers'.</span></span>
+<span data-ttu-id="a45d6-129">下列範例會確保使用者 'monuser' 存在，而且是 'DBusers' 群組的成員。</span><span class="sxs-lookup"><span data-stu-id="a45d6-129">The following example ensures that the user 'monuser' exists and is a member of the group 'DBusers'.</span></span>
 
 ```powershell
 Import-DSCResource -Module nx
