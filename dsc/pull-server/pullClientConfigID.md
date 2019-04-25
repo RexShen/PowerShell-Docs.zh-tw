@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 在 PowerShell 5.0 及更新版本中使用設定識別碼來設定提取用戶端
 ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055711"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079484"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更新版本中使用設定識別碼來設定提取用戶端
 
@@ -21,7 +21,7 @@ ms.locfileid: "58055711"
 - [設定 DSC SMB 提取伺服器](pullServerSmb.md)
 - [設定 DSC HTTP 提取伺服器](pullServer.md)
 
-每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 下列各節會示範如何使用 SMB 共用或 HTTP DSC 提取伺服器來設定提取用戶端。 當節點的 LCM 重新整理時，它會連到設定的位置來下載任何所指派設定。 若有任何必要資源在節點上不存在，它會自動從設定的位置下載它們。 若節點已使用[報表伺服器](reportServer.md)進行設定，它接著便會報告作業的狀態。
+每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 下列各節會示範如何使用 SMB 共用或 HTTP DSC 提取伺服器來設定提取用戶端。 當節點的 LCM 重新整理時，它會連到設定的位置來下載任何所指派設定。 若有任何必要資源不存在於節點上，則其會自動從設定的位置下載它們。 若節點已使用[報表伺服器](reportServer.md)進行設定，它接著便會報告作業的狀態。
 
 > [!NOTE]
 > 本主題適用於 PowerShell 5.0。 如需設定 PowerShell 4.0 中提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)。

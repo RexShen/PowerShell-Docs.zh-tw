@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: 社群資源
 ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085026"
 ---
 # <a name="community-resources"></a>社群資源
 > 注意：這項資訊為初步資訊而且可能有所變更。

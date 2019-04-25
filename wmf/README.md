@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 962d61aac474a04387151de150af75b3f8d62e40
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055406"
+---
 # <a name="readme"></a>讀我檔案
 
 此資料夾包含 Windows Management Framework (WMF) 的文件。

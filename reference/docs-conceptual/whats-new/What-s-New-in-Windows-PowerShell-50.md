@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
 ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59363525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085944"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 
@@ -23,7 +23,7 @@ Windows PowerShell 5.0 根據預設會安裝在 Windows Server 2016 技術預覽
 
 ## <a name="in-this-topic"></a>本主題內容
 
-- [KB 3000850 中的 Windows PowerShell 4.0 DSC 更新](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
+- [KB 3000850 的 Windows PowerShell 4.0 DSC 更新](#windows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850)
 - [Windows PowerShell 5.0 的新功能](#new-features-in-windows-powershell-50)
 - [Windows PowerShell 4.0 的新功能](#new-features-in-windows-powershell-40)
 - [Windows PowerShell 3.0 的新功能](#new-features-in-windows-powershell-30)
@@ -127,7 +127,7 @@ Windows PowerShell 5.0 根據預設會安裝在 Windows Server 2016 技術預覽
 - 新的 New-TemporaryFile Cmdlet 可讓您在進行指令碼處理時建立暫存檔案。 新的暫存檔案預設建立在 ```C:\Users\<user name>\AppData\Local\Temp```。
 - Out-File、Add-Content 和 Set-Content Cmdlet 現在有新的 -NoNewline 參數，其只會省略輸出之後的新行。
 - New-Guid Cmdlet 會利用 .NET Framework Guid 類別來產生 GUID；在您撰寫指令碼或 DSC 資源時非常實用。
-- 由於檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下，因此針對 FileInfo 物件提供新的 FileVersionRaw 和 ProductVersionRaw 指令碼屬性。 例如，您可以執行下列命令，以顯示 powershell.exe 的上述屬性值，其中 $pid 包含 Windows PowerShell 執行工作階段的處理程序識別碼：  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- 由於檔案版本資訊可能會產生誤導，尤其是在已修補檔案的情況下，因此針對 FileInfo 物件提供新的 FileVersionRaw 和 ProductVersionRaw 指令碼屬性。 例如，您可以執行下列命令，以顯示 powershell.exe 的上述屬性值，其中 $pid 包含 Windows PowerShell 執行中工作階段的處理序識別碼：  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - 新的 Enter-PSHostProcess 與 Exit-PSHostProcess Cmdlet 可讓您將處理程序中的 Windows PowerShell 指令碼與目前正在 Windows PowerShell 主控台中執行的處理程序分開，以進行個別偵錯。 您可執行 Enter-PSHostProcess 輸入或附加特定處理程序識別碼，然後執行 Get-Runspace 傳回處理程序內的使用中 Runspace。 完成處理程序內的指令碼偵錯時，可執行 Exit-PSHostProcess 以中斷處理程序的連結。
 - [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) 模組已新增 Wait-Debugger。 您可以先執行 Wait-Debugger 停止偵錯工具中的指令碼，然後再執行指令碼中的下一個陳述式。
 - Windows PowerShell 工作流程偵錯工具現已支援命令或 TAB 鍵自動完成，您也可以偵錯巢狀工作流程函式。 現在，您只要按 **Ctrl+Break**，即可進入執行指令碼、本機和遠端工作階段，以及工作流程指令碼中的偵錯工具。
@@ -295,27 +295,27 @@ Windows PowerShell 3.0 包括下列新功能。
 - [支援 Microsoft .NET Framework 4.0](#support-for-microsoft-net-framework-4)
 - [支援 Windows 預先安裝環境](#support-for-windows-preinstallation-environment)
 - [已中斷連線的工作階段](#disconnected-sessions)
-- [健全的工作階段連線](#robust-session-connectivity)
+- [強固的工作階段連線](#robust-session-connectivity)
 - [可更新的說明系統](#updatable-help-system)
 - [增強的線上說明](#enhanced-online-help)
 - [CIM 整合](#cim-integration)
-- [工作階段設定檔案](#session-configuration-files)
-- [排程工作與工作排程器整合](#scheduled-jobs-and-task-scheduler-integration)
+- [工作階段設定檔](#session-configuration-files)
+- [排程的工作與工作排程器整合](#scheduled-jobs-and-task-scheduler-integration)
 - [Windows PowerShell 語言增強功能](#windows-powershell-language-enhancements)
 - [新的核心 Cmdlet](#new-core-cmdlets)
-- [對現有核心 Cmdlet 與提供者的改善](#improvements-to-existing-core-cmdlets-and-providers)
+- [現有核心 Cmdlet 與提供者的改進](#improvements-to-existing-core-cmdlets-and-providers)
 - [遠端模組匯入及探索](#remote-module-import-and-discovery)
 - [增強的 Tab 鍵自動完成](#enhanced-tab-completion)
 - [模組自動載入](#module-auto-loading)
-- [模組體驗改善](#module-experience-improvements)
+- [模組體驗改進](#module-experience-improvements)
 - [簡化的命令探索](#simplified-command-discovery)
-- [改善的記錄、診斷與群組原則支援](#improved-logging-diagnostics-and-group-policy-support)
-- [格式設定與輸出改善](#formatting-and-output-improvements)
+- [改進的記錄、診斷與群組原則支援](#improved-logging-diagnostics-and-group-policy-support)
+- [格式設定與輸出的改進](#formatting-and-output-improvements)
 - [增強的主控台主機體驗](#enhanced-console-host-experience)
 - [新的 Cmdlet 與裝載 API](#new-cmdlet-and-hosting-apis)
-- [效能改善](#performance-improvements)
+- [效能改進](#performance-improvements)
 - [RunAs 與共用主機支援](#runas-and-shared-host-support)
-- [特殊字元處理改善](#special-character-handling-improvements)
+- [特殊字元處理的改進](#special-character-handling-improvements)
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell 工作流程
 
@@ -330,12 +330,12 @@ Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Fo
 - 自動化連續性、長時間執行的工作。
 - **遠端監視長時間執行的工作**。 隨時可觀看活動的狀態與進度。
 - **多部電腦管理。** 在數百個受管理節點上以工作流程形式同時執行工作。 Windows PowerShell 工作流程包括一個一般管理參數的內建程式庫，例如 **PSComputerName**，它可以支援多部電腦管理案例。
-- **以單一工作執行方式執行複雜的處理程序。** 您可以將實作整個端對端案例的相關指令碼結合成單一工作流程。
+- **以單一工作執行複雜的處理程序。** 您可以將實作整個端對端案例的相關指令碼結合成單一工作流程。
 - **持續性**：工作流程會在其作者定義的特定時間點儲存 (或建立檢查點)，因此您可以從上一個持續工作 (或檢查點) 繼續工作流程，而不需要從頭開始重新啟動工作流程。
-- **健全性。** 自動化失敗修復。 工作流程可在計劃性與非計劃性重新啟動之後繼續執行。 您可以暫停工作流程執行，然後從上一個持續時間點繼續工作流程。 工作流程作者可以指定在一或多個受管理節點失敗時，要重新執行的特定活動。
-- **可以在已中斷連線的工作階段中中斷連線、重新連線，以及執行的能力。** 使用者可以與工作流程伺服器連線及中斷連線，但是工作流程會繼續執行。 您可以登出用戶端電腦或重新啟動用戶端電腦，以及在不中斷工作流程的情況下從另一部電腦監視工作流程執行。
+- **強固性。** 自動化失敗修復。 工作流程可在計劃性與非計劃性重新啟動之後繼續執行。 您可以暫停工作流程執行，然後從上一個持續時間點繼續工作流程。 工作流程作者可以指定在一或多個受管理節點失敗時，要重新執行的特定活動。
+- **具備在中斷連線的工作階段中中斷連線、重新連線，以及執行的能力。** 使用者可以與工作流程伺服器連線及中斷連線，但是工作流程會繼續執行。 您可以登出用戶端電腦或重新啟動用戶端電腦，以及在不中斷工作流程的情況下從另一部電腦監視工作流程執行。
 - **排程。** 工作流程工作的排定方式和任何 Windows PowerShell Cmdlet 或指令碼一樣。
-- **工作流程與連線節流處理。** 可以針對工作流程執行與節點的連線進行節流處理，這可以提供延展性與高可用性。
+- **工作流程與連線節流。** 可以針對工作流程執行與節點的連線進行節流處理，這可以提供延展性與高可用性。
 
 ### <a name="windows-powershell-web-access"></a>Windows PowerShell Web 存取
 
@@ -521,7 +521,7 @@ Windows PowerShell 3.0 帶來了對模組的進階功能支援，包括下列新
 2. 可公開模組資訊清單中的值的延伸模組物件
 3. 模組 (包括巢狀模組) 的新 **ExportedCommands** 屬性，結合了所有類型的命令
 4. 改善的可用 (未匯入) 模組探索功能，包括在同一命令中允許使用 **Path** 與 **ListAvailable** 參數
-5. 模組資訊清單中新的 **DefaultCommandPrefix** 機碼，可在不變更模組程式碼的情況下避免名稱衝突
+5. 模組資訊清單中新的 **DefaultCommandPrefix** 索引鍵，可在不變更模組程式碼的情況下避免名稱衝突
 6. 改善的模組需求，包括完整的必要模組 (包含版本與 GUID)，以及自動匯入必要模組
 7. 更安靜、更簡化的 [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) Cmdlet 運作。
 8. &#35;Requires 的新 **Module** 參數

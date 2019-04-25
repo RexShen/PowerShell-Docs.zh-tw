@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 必要條件
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893030"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084839"
 ---
 # <a name="prerequisites"></a>必要條件
 
-> 適用對象：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
 Just Enough Administration 是 Windows PowerShell 5.0 和更新版本隨附的功能。
 本主題說明必須滿足才能開始使用 JEA 的必要條件。

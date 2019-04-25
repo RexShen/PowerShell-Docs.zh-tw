@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
 ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059723"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076730"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 

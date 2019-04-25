@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 管理 Windows PowerShell 磁碟機
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
 ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293243"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057820"
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 磁碟機
 

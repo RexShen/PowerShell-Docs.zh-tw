@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 4338364c64eff2a7a59c5ae9fe80f75760cade42
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: dc72debe0dc7e56c9e59e6903c7d6cf3025e622c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218071"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058228"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc"></a>預期狀態設定 (DSC) 中的增強功能
 

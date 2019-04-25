@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 附錄 2 建立自訂 PowerShell 捷徑
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057839"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>附錄 2 - 建立自訂 PowerShell 捷徑
 

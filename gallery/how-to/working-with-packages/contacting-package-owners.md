@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 連絡套件擁有者
 ms.openlocfilehash: 1adb0cfefc9e9c3f447e7345eaf0b088a04a452b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084057"
 ---
 # <a name="contacting-package-owners"></a>連絡套件擁有者
 

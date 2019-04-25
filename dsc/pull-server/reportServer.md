@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 報表伺服器
 ms.openlocfilehash: 73208477a74ff3c615d7d515fcad555beabe8f32
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079229"
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 報表伺服器
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: d4168640f67cb1dd44e91d1867e87fd7a6b7f549
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 0a481fb9d4f2aab89bc448c71b01f1d541cf24bc
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085066"
 ---
 # <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 或更新版本的並存版本支援
 

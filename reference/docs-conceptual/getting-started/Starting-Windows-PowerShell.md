@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 啟動 Windows PowerShell
 ms.assetid: 59b649a2-c90c-4cf4-bf95-a740c59148e7
 ms.openlocfilehash: 9184e8b0e508610e7f4775f1032f3a69c93bb8c1
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058347"
 ---
 # <a name="starting-windows-powershell"></a>啟動 Windows PowerShell
 PowerShell 是指令碼引擎 dll，且會內嵌到多部主機中。  互動式命令列 PowerShell.exe 和互動式指令碼環境 PowerShell_ISE.exe 是您將啟動的最常見主機。

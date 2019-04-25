@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: a96a4a58dafa01fb43f5bdffb52ef833816148e7
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587290"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058364"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能
 
@@ -132,7 +132,7 @@ hashtable new(int capacity)
 hashtable new(int capacity, float loadFactor)
 ```
 
-## <a name="methods"></a>方法
+## <a name="methods"></a>Methods
 
 Windows PowerShell 類別方法會實作為只有 End 區塊的 ScriptBlock。 所有方法都是公用的。 下例說明定義名為 **DoSomething** 的方法。
 

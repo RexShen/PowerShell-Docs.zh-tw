@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 透過社交媒體或留言提供意見反應
 ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623886"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076067"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>透過社交媒體或留言提供意見反應
 

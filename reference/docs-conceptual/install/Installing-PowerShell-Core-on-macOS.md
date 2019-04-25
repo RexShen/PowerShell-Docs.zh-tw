@@ -3,11 +3,11 @@ title: 在 macOS 上安裝 PowerShell Core
 description: 在 macOS 上安裝 PowerShell Core 的相關資訊
 ms.date: 12/12/2018
 ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086454"
 ---
 # <a name="installing-powershell-core-on-macos"></a>在 macOS 上安裝 PowerShell Core
 
@@ -84,8 +84,7 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>透過直接下載來安裝
 
-下載 PKG 套件
-`powershell-6.2.0-osx-x64.pkg`
+將 PKG 套件 `powershell-6.2.0-osx-x64.pkg`
 從[版本][]頁面下載到您的 macOS 電腦。
 
 您可以按兩下檔案並依照提示執行作業，或從終端機安裝：
@@ -176,11 +175,11 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ## <a name="paths"></a>路徑
 
 * `$PSHOME` 是 `/usr/local/microsoft/powershell/6.2.0/`
-* 使用者設定檔會讀取自 `~/.config/powershell/profile.ps1`
-* 預設設定檔會讀取自 `$PSHOME/profile.ps1`
-* 使用者模組會讀取自 `~/.local/share/powershell/Modules`
-* 共用模組會讀取自 `/usr/local/share/powershell/Modules`
-* 預設模組會讀取自 `$PSHOME/Modules`
+* 會從 `~/.config/powershell/profile.ps1` 讀取使用者設定檔
+* 會從 `$PSHOME/profile.ps1` 讀取預設設定檔
+* 會從 `~/.local/share/powershell/Modules` 讀取使用者模組
+* 會從 `/usr/local/share/powershell/Modules` 讀取共用的模組
+* 會從 `$PSHOME/Modules` 讀取預設模組
 * PSReadline 記錄會記錄在 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 設定檔會採用 PowerShell 的每個主機設定。

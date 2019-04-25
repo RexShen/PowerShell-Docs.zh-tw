@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 在 PowerShell 5.0 及更新版本中使用設定名稱來設定提取用戶端
 ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58058178"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079382"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更新版本中使用設定名稱來設定提取用戶端
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxEnvironment 資源
 ms.openlocfilehash: 763ec560faa6adaf42aef3c21c9045be95f780bc
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047472"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078005"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC for Linux nxEnvironment 資源
 

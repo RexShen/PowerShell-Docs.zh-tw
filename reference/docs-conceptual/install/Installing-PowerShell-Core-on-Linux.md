@@ -3,17 +3,17 @@ title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086556"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
 支援 [Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
-針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]。
+若是未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]。
 您也可以直接使用 Linux [`tar.gz` 封存][tar]嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中的作業系統，設定必要的相依性。
 
 GitHub [版本][]頁面上提供所有套件。
@@ -75,8 +75,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>透過直接下載安裝 - Ubuntu 14.04
 
-下載 Debian 套件
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+將 Debian 套件 `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
 從[版本][]頁面下載到 Ubuntu 電腦。
 
 然後在終端機上執行下列作業：
@@ -124,8 +123,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>透過直接下載安裝 - Ubuntu 16.04
 
-下載 Debian 套件
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+將 Debian 套件 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
 從[版本][]頁面下載到 Ubuntu 電腦。
 
 然後在終端機上執行下列作業：
@@ -176,8 +174,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>透過直接下載安裝 - Ubuntu 18.04
 
-下載 Debian 套件
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+將 Debian 套件 `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
 從[版本][]頁面下載到 Ubuntu 電腦。
 
 然後在終端機上執行下列作業：
@@ -266,8 +263,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>透過直接下載安裝 - Debian 9
 
-下載 Debian 套件
-`powershell_6.2.0-1.debian.9_amd64.deb`
+將 Debian 套件 `powershell_6.2.0-1.debian.9_amd64.deb`
 從[版本][]頁面下載到 Debian 電腦。
 
 然後在終端機上執行下列作業：
@@ -307,8 +303,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>透過直接下載安裝 - CentOS 7
 
-使用 [CentOS 7][] 下載 RPM 套件
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+使用 [CentOS 7][]，將 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 從[版本][]頁面下載到 CentOS 電腦。
 
 然後在終端機上執行下列作業：
@@ -352,8 +347,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7
 
-下載 RPM 套件
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+將 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 從[版本][]頁面下載到 Red Hat Enterprise Linux 電腦。
 
 然後在終端機上執行下列作業：
@@ -463,8 +457,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>透過直接下載安裝 - Fedora 27、Fedora 28
 
-下載 RPM 套件
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+將 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm`
 從[版本][]頁面下載到 Fedora 電腦。
 
 然後在終端機上執行下列作業：
@@ -511,7 +504,7 @@ AUR 中的套件由社群維護 - 沒有官方支援。
 
 ### <a name="getting-snapd"></a>取得 snapd
 
-`snapd` 必須有下列項目才能執行 Snap：
+必須有 `snapd` 才能執行 Snap。
 請使用[這些指示](https://docs.snapcraft.io/core/install)確認您已安裝 `snapd`。
 
 ### <a name="installation-via-snap"></a>透過 Snap 安裝
@@ -688,11 +681,11 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ## <a name="paths"></a>路徑
 
 * `$PSHOME` 是 `/opt/microsoft/powershell/6.2.0/`
-* 使用者設定檔會讀取自 `~/.config/powershell/profile.ps1`
-* 預設設定檔會讀取自 `$PSHOME/profile.ps1`
-* 使用者模組會讀取自 `~/.local/share/powershell/Modules`
-* 共用模組會讀取自 `/usr/local/share/powershell/Modules`
-* 預設模組會讀取自 `$PSHOME/Modules`
+* 會從 `~/.config/powershell/profile.ps1` 讀取使用者設定檔
+* 會從 `$PSHOME/profile.ps1` 讀取預設設定檔
+* 會從 `~/.local/share/powershell/Modules` 讀取使用者模組
+* 會從 `/usr/local/share/powershell/Modules` 讀取共用的模組
+* 會從 `$PSHOME/Modules` 讀取預設模組
 * PSReadline 記錄會記錄在 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 設定檔會遵循 PowerShell 的每個主控件設定，讓預設主控件特定設定檔存在於相同位置的 `Microsoft.PowerShell_profile.ps1`。

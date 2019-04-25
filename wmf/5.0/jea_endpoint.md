@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: 3acd266a75bc61ffe4bce467cfb804ac7865c629
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267917"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057242"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>建立及連接到 JEA 端點
 

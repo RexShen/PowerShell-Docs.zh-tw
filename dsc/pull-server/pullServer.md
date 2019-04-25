@@ -3,11 +3,11 @@ ms.date: 03/04/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
 ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623937"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079399"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -234,7 +234,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。
 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
 在針對提取伺服器進行封裝之前，請移除 **{模組版本}** 資料夾，以便讓路徑變成 `{Module Folder}\DscResources\{DSC Resource Folder}\`。
-完成此變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
+完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
 
 使用 `New-DscChecksum {module zip file}` 為新增的模組建立總和檢查碼檔案。
 

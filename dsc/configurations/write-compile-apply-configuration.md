@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
 ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080008"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -90,7 +90,7 @@ LCM 會呼叫 DSC 資源以套用設定。
 使用下列程式碼執行 `Start-DSCConfiguration` Cmdlet。 將您儲存 "localhost.mof" 的目錄路徑指定給 `-Path` 參數。 `Start-DSCConfiguration` Cmdlet 會查看是否有針對任何 "\<電腦名稱\>.mof" 檔案指定的路徑。 `Start-DSCConfiguration` Cmdlet 會嘗試將它所找到每個 ".mof" 檔案套用到檔案名稱 ("localhost"、"server01"、"dc-02" 等等) 指定的電腦名稱。
 
 > [!NOTE]
-> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的**詳細資訊**輸出。 `-Wait`與 `-Verbose` 都是選用參數。
+> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的**詳細資訊**輸出。 `-Wait` 和 `-Verbose` 都是選用參數。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait

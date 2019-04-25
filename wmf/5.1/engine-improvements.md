@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 PowerShell 引擎改善
 ms.openlocfilehash: 738f72b910de7d44f48309013237d523d0dd40a4
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055559"
 ---
 # <a name="powershell-engine-improvements"></a>PowerShell 引擎改善
 

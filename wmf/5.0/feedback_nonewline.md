@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 2d6a25908de746e296bef91e05c3d4e250aa77c9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e01f6ceea361f5a9b3de645346d0652986b6267d
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189800"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057225"
 ---
 # <a name="nonewline-parameter"></a>NoNewLine 參數
 **Out-File****Add-Content** 和 **Set-Content** 現在有新的 **–NoNewline** 參數，只會省略輸出之後的新行。
