@@ -2,12 +2,12 @@
 title: 了解 VSCode 與 PowerShell 中的檔案編碼
 description: 設定 VSCode 與 PowerShell 中的檔案編碼
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320399"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058432"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 與 PowerShell 中的檔案編碼
 
@@ -102,7 +102,7 @@ BOM 為選擇性，且使用情況不像在 Linux 環境中那麼熱門，因為
 
 VSCode 的預設編碼為不使用 BOM 的 UTF-8。
 
-若要設定 [VSCode 的編碼][]，請移至 VSCode 設定 (<kbd>Ctrl<kbd>+</kbd>、</kbd>)，並設定 `"files.encoding"` 設定：
+若要設定 [VSCode 的編碼][]，請移至 VSCode 設定 (<kbd>Ctrl</kbd>+<kbd>、</kbd>)，並設定 `"files.encoding"` 設定：
 
 ```json
 "files.encoding": "utf8bom"
