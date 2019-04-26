@@ -9,45 +9,45 @@ ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
 ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057649"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083020"
 ---
-# <a name="adding-and-invoking-commands"></a><span data-ttu-id="31ec2-102">新增及叫用命令</span><span class="sxs-lookup"><span data-stu-id="31ec2-102">Adding and invoking commands</span></span>
+# <a name="adding-and-invoking-commands"></a><span data-ttu-id="11cbd-102">新增及叫用命令</span><span class="sxs-lookup"><span data-stu-id="11cbd-102">Adding and invoking commands</span></span>
 
-<span data-ttu-id="31ec2-103">建立 runspace 之後, 您可以將 Windows PowerShellcommands 和指令碼新增至管線中，並接著在同步或非同步方式叫用管線。</span><span class="sxs-lookup"><span data-stu-id="31ec2-103">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
+<span data-ttu-id="11cbd-103">建立 runspace 之後, 您可以將 Windows PowerShellcommands 和指令碼新增至管線中，並接著在同步或非同步方式叫用管線。</span><span class="sxs-lookup"><span data-stu-id="11cbd-103">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
 
-## <a name="creating-a-pipeline"></a><span data-ttu-id="31ec2-104">建立管線</span><span class="sxs-lookup"><span data-stu-id="31ec2-104">Creating a pipeline</span></span>
+## <a name="creating-a-pipeline"></a><span data-ttu-id="11cbd-104">建立管線</span><span class="sxs-lookup"><span data-stu-id="11cbd-104">Creating a pipeline</span></span>
 
- <span data-ttu-id="31ec2-105">[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)類別提供數種方法來將命令、 參數和指令碼新增至管線。</span><span class="sxs-lookup"><span data-stu-id="31ec2-105">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="31ec2-106">您可以叫用管線以同步方式呼叫的多載[System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法，或以非同步方式呼叫的多載[System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) ，然後[System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。</span><span class="sxs-lookup"><span data-stu-id="31ec2-106">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+ <span data-ttu-id="11cbd-105">[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)類別提供數種方法來將命令、 參數和指令碼新增至管線。</span><span class="sxs-lookup"><span data-stu-id="11cbd-105">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="11cbd-106">您可以叫用管線以同步方式呼叫的多載[System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法，或以非同步方式呼叫的多載[System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) ，然後[System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。</span><span class="sxs-lookup"><span data-stu-id="11cbd-106">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
-### <a name="addcommand"></a><span data-ttu-id="31ec2-107">AddCommand</span><span class="sxs-lookup"><span data-stu-id="31ec2-107">AddCommand</span></span>
+### <a name="addcommand"></a><span data-ttu-id="11cbd-107">AddCommand</span><span class="sxs-lookup"><span data-stu-id="11cbd-107">AddCommand</span></span>
 
-1. <span data-ttu-id="31ec2-108">建立[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件。</span><span class="sxs-lookup"><span data-stu-id="31ec2-108">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+1. <span data-ttu-id="11cbd-108">建立[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件。</span><span class="sxs-lookup"><span data-stu-id="11cbd-108">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
    ```csharp
    PowerShell ps = PowerShell.Create();
    ```
 
-2. <span data-ttu-id="31ec2-109">新增您想要執行的命令。</span><span class="sxs-lookup"><span data-stu-id="31ec2-109">Add the command that you want to execute.</span></span>
+2. <span data-ttu-id="11cbd-109">新增您想要執行的命令。</span><span class="sxs-lookup"><span data-stu-id="11cbd-109">Add the command that you want to execute.</span></span>
 
    ```csharp
    ps.AddCommand("Get-Process");
    ```
 
-3. <span data-ttu-id="31ec2-110">叫用命令。</span><span class="sxs-lookup"><span data-stu-id="31ec2-110">Invoke the command.</span></span>
+3. <span data-ttu-id="11cbd-110">叫用命令。</span><span class="sxs-lookup"><span data-stu-id="11cbd-110">Invoke the command.</span></span>
 
    ```csharp
    ps.Invoke();
    ```
 
- <span data-ttu-id="31ec2-111">如果您呼叫[System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand)方法超過一次，然後再呼叫[System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法、 結果第一個命令會輸送到第二個，依此類推。</span><span class="sxs-lookup"><span data-stu-id="31ec2-111">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="31ec2-112">如果您不想透過管道傳送命令前一個命令的結果，會將它加入藉由呼叫[System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)改。</span><span class="sxs-lookup"><span data-stu-id="31ec2-112">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
+ <span data-ttu-id="11cbd-111">如果您呼叫[System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand)方法超過一次，然後再呼叫[System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法、 結果第一個命令會輸送到第二個，依此類推。</span><span class="sxs-lookup"><span data-stu-id="11cbd-111">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="11cbd-112">如果您不想透過管道傳送命令前一個命令的結果，會將它加入藉由呼叫[System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)改。</span><span class="sxs-lookup"><span data-stu-id="11cbd-112">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
 
-### <a name="addparameter"></a><span data-ttu-id="31ec2-113">AddParameter</span><span class="sxs-lookup"><span data-stu-id="31ec2-113">AddParameter</span></span>
+### <a name="addparameter"></a><span data-ttu-id="11cbd-113">AddParameter</span><span class="sxs-lookup"><span data-stu-id="11cbd-113">AddParameter</span></span>
 
- <span data-ttu-id="31ec2-114">前一個範例會執行不含任何參數的單一命令。</span><span class="sxs-lookup"><span data-stu-id="31ec2-114">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="31ec2-115">可以透過將參數新增至命令[System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法，例如下列程式碼會取得一份所有程序會在名為`PowerShell`上執行機器。</span><span class="sxs-lookup"><span data-stu-id="31ec2-115">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
+ <span data-ttu-id="11cbd-114">前一個範例會執行不含任何參數的單一命令。</span><span class="sxs-lookup"><span data-stu-id="11cbd-114">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="11cbd-115">可以透過將參數新增至命令[System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法，例如下列程式碼會取得一份所有程序會在名為`PowerShell`上執行機器。</span><span class="sxs-lookup"><span data-stu-id="11cbd-115">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -55,7 +55,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="31ec2-116">您可以新增額外的參數，藉由呼叫[System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)重複。</span><span class="sxs-lookup"><span data-stu-id="31ec2-116">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
+ <span data-ttu-id="11cbd-116">您可以新增額外的參數，藉由呼叫[System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)重複。</span><span class="sxs-lookup"><span data-stu-id="11cbd-116">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -64,7 +64,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="31ec2-117">您也可以藉由呼叫來新增參數名稱和值的字典[System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters)方法。</span><span class="sxs-lookup"><span data-stu-id="31ec2-117">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
+ <span data-ttu-id="11cbd-117">您也可以藉由呼叫來新增參數名稱和值的字典[System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters)方法。</span><span class="sxs-lookup"><span data-stu-id="11cbd-117">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -77,9 +77,9 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ```
 
-### <a name="addstatement"></a><span data-ttu-id="31ec2-118">AddStatement</span><span class="sxs-lookup"><span data-stu-id="31ec2-118">AddStatement</span></span>
+### <a name="addstatement"></a><span data-ttu-id="11cbd-118">AddStatement</span><span class="sxs-lookup"><span data-stu-id="11cbd-118">AddStatement</span></span>
 
- <span data-ttu-id="31ec2-119">您可以使用批次處理來模擬[System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法，將其他的陳述式加入至管線，下列程式碼會取得執行程序名稱的清單結尾`PowerShell`，然後取得執行中服務的清單。</span><span class="sxs-lookup"><span data-stu-id="31ec2-119">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
+ <span data-ttu-id="11cbd-119">您可以使用批次處理來模擬[System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法，將其他的陳述式加入至管線，下列程式碼會取得執行程序名稱的清單結尾`PowerShell`，然後取得執行中服務的清單。</span><span class="sxs-lookup"><span data-stu-id="11cbd-119">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -88,25 +88,25 @@ ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```
 
-### <a name="addscript"></a><span data-ttu-id="31ec2-120">AddScript</span><span class="sxs-lookup"><span data-stu-id="31ec2-120">AddScript</span></span>
+### <a name="addscript"></a><span data-ttu-id="11cbd-120">AddScript</span><span class="sxs-lookup"><span data-stu-id="11cbd-120">AddScript</span></span>
 
- <span data-ttu-id="31ec2-121">您可以執行現有的指令碼，藉由呼叫[System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法。</span><span class="sxs-lookup"><span data-stu-id="31ec2-121">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="31ec2-122">下列範例會將指令碼新增至管線，並執行它。</span><span class="sxs-lookup"><span data-stu-id="31ec2-122">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="31ec2-123">這個範例假設已經有名稱為指令碼`MyScript.ps1`在名為的資料夾中`D:\PSScripts`。</span><span class="sxs-lookup"><span data-stu-id="31ec2-123">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
+ <span data-ttu-id="11cbd-121">您可以執行現有的指令碼，藉由呼叫[System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法。</span><span class="sxs-lookup"><span data-stu-id="11cbd-121">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="11cbd-122">下列範例會將指令碼新增至管線，並執行它。</span><span class="sxs-lookup"><span data-stu-id="11cbd-122">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="11cbd-123">這個範例假設已經有名稱為指令碼`MyScript.ps1`在名為的資料夾中`D:\PSScripts`。</span><span class="sxs-lookup"><span data-stu-id="11cbd-123">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- <span data-ttu-id="31ec2-124">另外還有一份[System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法接受名為的布林參數`useLocalScope`。</span><span class="sxs-lookup"><span data-stu-id="31ec2-124">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="31ec2-125">如果此參數設為`true`，則指令碼會執行本機範圍內。</span><span class="sxs-lookup"><span data-stu-id="31ec2-125">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="31ec2-126">下列程式碼會在本機的範圍內執行指令碼。</span><span class="sxs-lookup"><span data-stu-id="31ec2-126">The following code will run the script in the local scope.</span></span>
+ <span data-ttu-id="11cbd-124">另外還有一份[System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法接受名為的布林參數`useLocalScope`。</span><span class="sxs-lookup"><span data-stu-id="11cbd-124">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="11cbd-125">如果此參數設為`true`，則指令碼會執行本機範圍內。</span><span class="sxs-lookup"><span data-stu-id="11cbd-125">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="11cbd-126">下列程式碼會在本機的範圍內執行指令碼。</span><span class="sxs-lookup"><span data-stu-id="11cbd-126">The following code will run the script in the local scope.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="31ec2-127">以同步方式叫用管線</span><span class="sxs-lookup"><span data-stu-id="31ec2-127">Invoking a pipeline synchronously</span></span>
+### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="11cbd-127">以同步方式叫用管線</span><span class="sxs-lookup"><span data-stu-id="11cbd-127">Invoking a pipeline synchronously</span></span>
 
- <span data-ttu-id="31ec2-128">您將項目新增至管線之後，您叫用它。</span><span class="sxs-lookup"><span data-stu-id="31ec2-128">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="31ec2-129">若要以同步方式叫用管線時，您會呼叫的多載[System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法。</span><span class="sxs-lookup"><span data-stu-id="31ec2-129">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="31ec2-130">下列範例示範如何以同步方式叫用管線。</span><span class="sxs-lookup"><span data-stu-id="31ec2-130">The following example shows how to synchronously invoke a pipeline.</span></span>
+ <span data-ttu-id="11cbd-128">您將項目新增至管線之後，您叫用它。</span><span class="sxs-lookup"><span data-stu-id="11cbd-128">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="11cbd-129">若要以同步方式叫用管線時，您會呼叫的多載[System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法。</span><span class="sxs-lookup"><span data-stu-id="11cbd-129">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="11cbd-130">下列範例示範如何以同步方式叫用管線。</span><span class="sxs-lookup"><span data-stu-id="11cbd-130">The following example shows how to synchronously invoke a pipeline.</span></span>
 
 ```csharp
 using System;
@@ -136,11 +136,11 @@ namespace HostPS1e
 }
 ```
 
-### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="31ec2-131">以非同步方式叫用管線</span><span class="sxs-lookup"><span data-stu-id="31ec2-131">Invoking a pipeline asynchronously</span></span>
+### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="11cbd-131">以非同步方式叫用管線</span><span class="sxs-lookup"><span data-stu-id="11cbd-131">Invoking a pipeline asynchronously</span></span>
 
- <span data-ttu-id="31ec2-132">您叫用管線以非同步方式呼叫的多載[System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)來建立[IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)物件，並接著呼叫[System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。</span><span class="sxs-lookup"><span data-stu-id="31ec2-132">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+ <span data-ttu-id="11cbd-132">您叫用管線以非同步方式呼叫的多載[System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)來建立[IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)物件，並接著呼叫[System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。</span><span class="sxs-lookup"><span data-stu-id="11cbd-132">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
- <span data-ttu-id="31ec2-133">下列範例會示範如何以非同步方式叫用管線。</span><span class="sxs-lookup"><span data-stu-id="31ec2-133">The following example shows how to invoke a pipeline asynchronously.</span></span>
+ <span data-ttu-id="11cbd-133">下列範例會示範如何以非同步方式叫用管線。</span><span class="sxs-lookup"><span data-stu-id="11cbd-133">The following example shows how to invoke a pipeline asynchronously.</span></span>
 
 ```csharp
 using System;
@@ -182,8 +182,8 @@ namespace HostPS3
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="31ec2-134">另請參閱</span><span class="sxs-lookup"><span data-stu-id="31ec2-134">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="11cbd-134">另請參閱</span><span class="sxs-lookup"><span data-stu-id="11cbd-134">See Also</span></span>
 
- [<span data-ttu-id="31ec2-135">建立 InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="31ec2-135">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="11cbd-135">建立 InitialSessionState</span><span class="sxs-lookup"><span data-stu-id="11cbd-135">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
 
- [<span data-ttu-id="31ec2-136">建立受限的 runspace</span><span class="sxs-lookup"><span data-stu-id="31ec2-136">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
+ [<span data-ttu-id="11cbd-136">建立受限的 runspace</span><span class="sxs-lookup"><span data-stu-id="11cbd-136">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)

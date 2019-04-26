@@ -9,29 +9,29 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058813"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067836"
 ---
-# <a name="how-to-request-confirmations"></a><span data-ttu-id="2878f-102">如何要求確認</span><span class="sxs-lookup"><span data-stu-id="2878f-102">How to Request Confirmations</span></span>
+# <a name="how-to-request-confirmations"></a><span data-ttu-id="c9917-102">如何要求確認</span><span class="sxs-lookup"><span data-stu-id="c9917-102">How to Request Confirmations</span></span>
 
-<span data-ttu-id="2878f-103">此範例示範如何呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)要求確認的方法之前採取動作的使用者。</span><span class="sxs-lookup"><span data-stu-id="2878f-103">This example shows how to call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to request confirmations from the user before an action is taken.</span></span>
+<span data-ttu-id="c9917-103">此範例示範如何呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)要求確認的方法之前採取動作的使用者。</span><span class="sxs-lookup"><span data-stu-id="c9917-103">This example shows how to call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to request confirmations from the user before an action is taken.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="2878f-104">如需有關 Windows PowerShell 如何處理這些要求的詳細資訊，請參閱 <<c0> [ 要求確認](./requesting-confirmation-from-cmdlets.md)。</span><span class="sxs-lookup"><span data-stu-id="2878f-104">For more information about how Windows PowerShell handles these requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span>
+> <span data-ttu-id="c9917-104">如需有關 Windows PowerShell 如何處理這些要求的詳細資訊，請參閱 <<c0> [ 要求確認](./requesting-confirmation-from-cmdlets.md)。</span><span class="sxs-lookup"><span data-stu-id="c9917-104">For more information about how Windows PowerShell handles these requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span>
 
-## <a name="to-request-confirmation"></a><span data-ttu-id="2878f-105">要求確認</span><span class="sxs-lookup"><span data-stu-id="2878f-105">To request confirmation</span></span>
+## <a name="to-request-confirmation"></a><span data-ttu-id="c9917-105">要求確認</span><span class="sxs-lookup"><span data-stu-id="c9917-105">To request confirmation</span></span>
 
-1. <span data-ttu-id="2878f-106">請確認`SupportsShouldProcess`參數的 Cmdlet 屬性設定為`true`。</span><span class="sxs-lookup"><span data-stu-id="2878f-106">Ensure that the `SupportsShouldProcess` parameter of the Cmdlet attribute is set to `true`.</span></span> <span data-ttu-id="2878f-107">（函式就 CmdletBinding 屬性的參數。）</span><span class="sxs-lookup"><span data-stu-id="2878f-107">(For functions this is a parameter of the CmdletBinding attribute.)</span></span>
+1. <span data-ttu-id="c9917-106">請確認`SupportsShouldProcess`參數的 Cmdlet 屬性設定為`true`。</span><span class="sxs-lookup"><span data-stu-id="c9917-106">Ensure that the `SupportsShouldProcess` parameter of the Cmdlet attribute is set to `true`.</span></span> <span data-ttu-id="c9917-107">（函式就 CmdletBinding 屬性的參數。）</span><span class="sxs-lookup"><span data-stu-id="c9917-107">(For functions this is a parameter of the CmdletBinding attribute.)</span></span>
 
     ```csharp
     [Cmdlet(VerbsDiagnostic.Test, "RequestConfirmationTemplate1",
             SupportsShouldProcess = true)]
     ```
 
-2. <span data-ttu-id="2878f-108">新增`Force`到您的 cmdlet 參數，讓使用者可以覆寫確認要求。</span><span class="sxs-lookup"><span data-stu-id="2878f-108">Add a `Force` parameter to your cmdlet so that the user can override a confirmation request.</span></span>
+2. <span data-ttu-id="c9917-108">新增`Force`到您的 cmdlet 參數，讓使用者可以覆寫確認要求。</span><span class="sxs-lookup"><span data-stu-id="c9917-108">Add a `Force` parameter to your cmdlet so that the user can override a confirmation request.</span></span>
 
     ```csharp
     [Parameter()]
@@ -43,13 +43,13 @@ ms.locfileid: "58058813"
     private bool force;
     ```
 
-3. <span data-ttu-id="2878f-109">新增`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，可判斷[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法呼叫。</span><span class="sxs-lookup"><span data-stu-id="2878f-109">Add an `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method to determine if the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method is called.</span></span>
+3. <span data-ttu-id="c9917-109">新增`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，可判斷[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法呼叫。</span><span class="sxs-lookup"><span data-stu-id="c9917-109">Add an `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) method to determine if the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method is called.</span></span>
 
-4. <span data-ttu-id="2878f-110">新增第二`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，而`Force`參數，來判斷作業是否應該是執行。</span><span class="sxs-lookup"><span data-stu-id="2878f-110">Add a second `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method and the value of the `Force` parameter to determine whether the operation should be performed.</span></span>
+4. <span data-ttu-id="c9917-110">新增第二`if`使用的傳回值的陳述式[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，而`Force`參數，來判斷作業是否應該是執行。</span><span class="sxs-lookup"><span data-stu-id="c9917-110">Add a second `if` statement that uses the return value of the [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) method and the value of the `Force` parameter to determine whether the operation should be performed.</span></span>
 
-## <a name="example"></a><span data-ttu-id="2878f-111">範例</span><span class="sxs-lookup"><span data-stu-id="2878f-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c9917-111">範例</span><span class="sxs-lookup"><span data-stu-id="c9917-111">Example</span></span>
 
-<span data-ttu-id="2878f-112">在下列程式碼範例中， [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)從呼叫方法的覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。</span><span class="sxs-lookup"><span data-stu-id="2878f-112">In the following code example, the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods are called from within the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span> <span data-ttu-id="2878f-113">不過，您也可以從其他輸入處理方法呼叫這些方法。</span><span class="sxs-lookup"><span data-stu-id="2878f-113">However, you can also call these methods from the other input processing methods.</span></span>
+<span data-ttu-id="c9917-112">在下列程式碼範例中， [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)並[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)從呼叫方法的覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法。</span><span class="sxs-lookup"><span data-stu-id="c9917-112">In the following code example, the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods are called from within the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.</span></span> <span data-ttu-id="c9917-113">不過，您也可以從其他輸入處理方法呼叫這些方法。</span><span class="sxs-lookup"><span data-stu-id="c9917-113">However, you can also call these methods from the other input processing methods.</span></span>
 
 ```csharp
 protected override void ProcessRecord()
@@ -64,6 +64,6 @@ protected override void ProcessRecord()
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="2878f-114">另請參閱</span><span class="sxs-lookup"><span data-stu-id="2878f-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c9917-114">另請參閱</span><span class="sxs-lookup"><span data-stu-id="c9917-114">See Also</span></span>
 
-[<span data-ttu-id="2878f-115">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="2878f-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="c9917-115">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c9917-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

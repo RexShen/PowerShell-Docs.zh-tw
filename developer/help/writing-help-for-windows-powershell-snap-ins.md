@@ -9,18 +9,18 @@ ms.topic: article
 ms.assetid: 16d18f81-c93d-4ddb-9613-03c24faed631
 caps.latest.revision: 4
 ms.openlocfilehash: 627454d029bdc97031e612a988ef27d6980c7723
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861244"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083139"
 ---
-# <a name="writing-help-for-windows-powershell-snap-ins"></a><span data-ttu-id="744d4-102">撰寫 Windows PowerShell 嵌入式管理單元的說明</span><span class="sxs-lookup"><span data-stu-id="744d4-102">Writing Help for Windows PowerShell Snap-ins</span></span>
+# <a name="writing-help-for-windows-powershell-snap-ins"></a><span data-ttu-id="2eba4-102">撰寫 Windows PowerShell 嵌入式管理單元的說明</span><span class="sxs-lookup"><span data-stu-id="2eba4-102">Writing Help for Windows PowerShell Snap-ins</span></span>
 
-<span data-ttu-id="744d4-103">在此插入簡介。</span><span class="sxs-lookup"><span data-stu-id="744d4-103">Insert introduction here.</span></span>
+<span data-ttu-id="2eba4-103">在此插入簡介。</span><span class="sxs-lookup"><span data-stu-id="2eba4-103">Insert introduction here.</span></span>
 
-## <a name="section-heading"></a><span data-ttu-id="744d4-104">區段標題</span><span class="sxs-lookup"><span data-stu-id="744d4-104">Section Heading</span></span>
+## <a name="section-heading"></a><span data-ttu-id="2eba4-104">區段標題</span><span class="sxs-lookup"><span data-stu-id="2eba4-104">Section Heading</span></span>
 
- <span data-ttu-id="744d4-105">在此插入區段主體。</span><span class="sxs-lookup"><span data-stu-id="744d4-105">Insert section body here.</span></span>
+ <span data-ttu-id="2eba4-105">此插入章節主體。</span><span class="sxs-lookup"><span data-stu-id="2eba4-105">Insert section body here.</span></span>
 
-### <a name="subsection-heading"></a><span data-ttu-id="744d4-106">子區段標題</span><span class="sxs-lookup"><span data-stu-id="744d4-106">Subsection Heading</span></span>
+### <a name="subsection-heading"></a><span data-ttu-id="2eba4-106">小節標題</span><span class="sxs-lookup"><span data-stu-id="2eba4-106">Subsection Heading</span></span>

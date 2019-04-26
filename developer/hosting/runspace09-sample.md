@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: f19f12c0-82e9-42f6-a7df-76c45b733855
 caps.latest.revision: 8
 ms.openlocfilehash: d78c865b869f802c7ebe2743942b6f21681de4b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082595"
 ---
-# <a name="runspace09-sample"></a><span data-ttu-id="aaeda-102">Runspace09 範例</span><span class="sxs-lookup"><span data-stu-id="aaeda-102">Runspace09 Sample</span></span>
+# <a name="runspace09-sample"></a><span data-ttu-id="63fc8-102">Runspace09 範例</span><span class="sxs-lookup"><span data-stu-id="63fc8-102">Runspace09 Sample</span></span>
 
-<span data-ttu-id="aaeda-103">這個範例示範如何將指令碼新增至的管線[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件，以及如何以非同步方式執行指令碼。</span><span class="sxs-lookup"><span data-stu-id="aaeda-103">This sample shows how to add a script to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the script asynchronously.</span></span> <span data-ttu-id="aaeda-104">事件為用來處理指令碼的輸出。</span><span class="sxs-lookup"><span data-stu-id="aaeda-104">Events are used to handle the output of the script.</span></span>
+<span data-ttu-id="63fc8-103">這個範例示範如何將指令碼新增至的管線[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件，以及如何以非同步方式執行指令碼。</span><span class="sxs-lookup"><span data-stu-id="63fc8-103">This sample shows how to add a script to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the script asynchronously.</span></span> <span data-ttu-id="63fc8-104">事件為用來處理指令碼的輸出。</span><span class="sxs-lookup"><span data-stu-id="63fc8-104">Events are used to handle the output of the script.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="aaeda-105">需求</span><span class="sxs-lookup"><span data-stu-id="aaeda-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="63fc8-105">需求</span><span class="sxs-lookup"><span data-stu-id="63fc8-105">Requirements</span></span>
 
-<span data-ttu-id="aaeda-106">這個範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="aaeda-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="63fc8-106">這個範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="63fc8-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="aaeda-107">示範</span><span class="sxs-lookup"><span data-stu-id="aaeda-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="63fc8-107">示範</span><span class="sxs-lookup"><span data-stu-id="63fc8-107">Demonstrates</span></span>
 
-<span data-ttu-id="aaeda-108">此範例示範下列項目。</span><span class="sxs-lookup"><span data-stu-id="aaeda-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="63fc8-108">此範例示範下列項目。</span><span class="sxs-lookup"><span data-stu-id="63fc8-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="aaeda-109">建立[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)使用 runspace 的物件。</span><span class="sxs-lookup"><span data-stu-id="aaeda-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="63fc8-109">建立[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)使用 runspace 的物件。</span><span class="sxs-lookup"><span data-stu-id="63fc8-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="aaeda-110">新增指令碼的管線[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件。</span><span class="sxs-lookup"><span data-stu-id="aaeda-110">Adding a script the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="63fc8-110">新增指令碼的管線[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件。</span><span class="sxs-lookup"><span data-stu-id="63fc8-110">Adding a script the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="aaeda-111">使用[System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)方法以非同步方式執行管線。</span><span class="sxs-lookup"><span data-stu-id="aaeda-111">Using the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) method to run the pipeline asynchronously.</span></span>
+- <span data-ttu-id="63fc8-111">使用[System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)方法以非同步方式執行管線。</span><span class="sxs-lookup"><span data-stu-id="63fc8-111">Using the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) method to run the pipeline asynchronously.</span></span>
 
-- <span data-ttu-id="aaeda-112">使用的事件[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件來處理指令碼的輸出。</span><span class="sxs-lookup"><span data-stu-id="aaeda-112">Using the events of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to process the output of the script.</span></span>
+- <span data-ttu-id="63fc8-112">使用的事件[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件來處理指令碼的輸出。</span><span class="sxs-lookup"><span data-stu-id="63fc8-112">Using the events of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to process the output of the script.</span></span>
 
-- <span data-ttu-id="aaeda-113">使用[System.Management.Automation.Powershell.Stop\*](/dotnet/api/System.Management.Automation.PowerShell.Stop)中斷管線叫用的方法。</span><span class="sxs-lookup"><span data-stu-id="aaeda-113">Using the [System.Management.Automation.Powershell.Stop\*](/dotnet/api/System.Management.Automation.PowerShell.Stop) method to interrupt the invocation of the pipeline.</span></span>
+- <span data-ttu-id="63fc8-113">使用[System.Management.Automation.Powershell.Stop\*](/dotnet/api/System.Management.Automation.PowerShell.Stop)中斷管線叫用的方法。</span><span class="sxs-lookup"><span data-stu-id="63fc8-113">Using the [System.Management.Automation.Powershell.Stop\*](/dotnet/api/System.Management.Automation.PowerShell.Stop) method to interrupt the invocation of the pipeline.</span></span>
 
-## <a name="example"></a><span data-ttu-id="aaeda-114">範例</span><span class="sxs-lookup"><span data-stu-id="aaeda-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="63fc8-114">範例</span><span class="sxs-lookup"><span data-stu-id="63fc8-114">Example</span></span>
 
-<span data-ttu-id="aaeda-115">此範例會執行執行指令碼會產生 1 的數字，到 10 的每個數字之間的延遲。</span><span class="sxs-lookup"><span data-stu-id="aaeda-115">This sample runs to run a script that generates the numbers from 1 to 10 with delays between each number.</span></span> <span data-ttu-id="aaeda-116">以非同步方式執行指令碼，並用來處理輸出事件。</span><span class="sxs-lookup"><span data-stu-id="aaeda-116">The script is run asynchronously and events are used to handle the output.</span></span>
+<span data-ttu-id="63fc8-115">此範例會執行執行指令碼會產生 1 的數字，到 10 的每個數字之間的延遲。</span><span class="sxs-lookup"><span data-stu-id="63fc8-115">This sample runs to run a script that generates the numbers from 1 to 10 with delays between each number.</span></span> <span data-ttu-id="63fc8-116">以非同步方式執行指令碼，並用來處理輸出事件。</span><span class="sxs-lookup"><span data-stu-id="63fc8-116">The script is run asynchronously and events are used to handle the output.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -148,6 +148,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aaeda-117">另請參閱</span><span class="sxs-lookup"><span data-stu-id="aaeda-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="63fc8-117">另請參閱</span><span class="sxs-lookup"><span data-stu-id="63fc8-117">See Also</span></span>
 
-[<span data-ttu-id="aaeda-118">撰寫 Windows PowerShell 主機應用程式</span><span class="sxs-lookup"><span data-stu-id="aaeda-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="63fc8-118">撰寫 Windows PowerShell 主機應用程式</span><span class="sxs-lookup"><span data-stu-id="63fc8-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

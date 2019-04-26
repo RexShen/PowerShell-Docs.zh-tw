@@ -11,49 +11,49 @@ helpviewer_keywords:
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
 ms.openlocfilehash: 0c99f4bcfe5e2d34d31714dc85a53b5e8abe0925
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057785"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066952"
 ---
-# <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="9ccf3-102">撰寫 Windows PowerShell 嵌入式管理單元</span><span class="sxs-lookup"><span data-stu-id="9ccf3-102">Writing a Windows PowerShell Snap-in</span></span>
+# <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="844cc-102">撰寫 Windows PowerShell 嵌入式管理單元</span><span class="sxs-lookup"><span data-stu-id="844cc-102">Writing a Windows PowerShell Snap-in</span></span>
 
-<span data-ttu-id="9ccf3-103">此範例示範如何撰寫 Windows PowerShell 嵌入式管理單元，可用來註冊組件中的所有 cmdlet 和 Windows PowerShell 提供者。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-103">This example shows how to write a Windows PowerShell snap-in that can be used to register all the cmdlets and Windows PowerShell providers in an assembly.</span></span>
+<span data-ttu-id="844cc-103">此範例示範如何撰寫 Windows PowerShell 嵌入式管理單元，可用來註冊組件中的所有 cmdlet 和 Windows PowerShell 提供者。</span><span class="sxs-lookup"><span data-stu-id="844cc-103">This example shows how to write a Windows PowerShell snap-in that can be used to register all the cmdlets and Windows PowerShell providers in an assembly.</span></span>
 
-<span data-ttu-id="9ccf3-104">使用此類型的嵌入式管理單元，您沒有選取的 cmdlet 與您想要註冊的提供者。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-104">With this type of snap-in, you do not select which cmdlets and providers you want to register.</span></span> <span data-ttu-id="9ccf3-105">若要撰寫一個嵌入式管理單元，可讓您選取 註冊的項目，請參閱[撰寫自訂 Windows PowerShell 嵌入式管理單元](./writing-a-custom-windows-powershell-snap-in.md)。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-105">To write a snap-in that allows you to select what is registered, see [Writing a Custom Windows PowerShell Snap-in](./writing-a-custom-windows-powershell-snap-in.md).</span></span>
+<span data-ttu-id="844cc-104">使用此類型的嵌入式管理單元，您沒有選取的 cmdlet 與您想要註冊的提供者。</span><span class="sxs-lookup"><span data-stu-id="844cc-104">With this type of snap-in, you do not select which cmdlets and providers you want to register.</span></span> <span data-ttu-id="844cc-105">若要撰寫一個嵌入式管理單元，可讓您選取 註冊的項目，請參閱[撰寫自訂 Windows PowerShell 嵌入式管理單元](./writing-a-custom-windows-powershell-snap-in.md)。</span><span class="sxs-lookup"><span data-stu-id="844cc-105">To write a snap-in that allows you to select what is registered, see [Writing a Custom Windows PowerShell Snap-in](./writing-a-custom-windows-powershell-snap-in.md).</span></span>
 
-### <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="9ccf3-106">撰寫 Windows PowerShell 嵌入式管理單元</span><span class="sxs-lookup"><span data-stu-id="9ccf3-106">Writing a Windows PowerShell Snap-in</span></span>
+### <a name="writing-a-windows-powershell-snap-in"></a><span data-ttu-id="844cc-106">撰寫 Windows PowerShell 嵌入式管理單元</span><span class="sxs-lookup"><span data-stu-id="844cc-106">Writing a Windows PowerShell Snap-in</span></span>
 
-1. <span data-ttu-id="9ccf3-107">新增 RunInstallerAttribute 屬性。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-107">Add the RunInstallerAttribute attribute.</span></span>
+1. <span data-ttu-id="844cc-107">新增 RunInstallerAttribute 屬性。</span><span class="sxs-lookup"><span data-stu-id="844cc-107">Add the RunInstallerAttribute attribute.</span></span>
 
-2. <span data-ttu-id="9ccf3-108">建立公用類別衍生自[System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)類別。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-108">Create a public class that derives from the [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) class.</span></span>
+2. <span data-ttu-id="844cc-108">建立公用類別衍生自[System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)類別。</span><span class="sxs-lookup"><span data-stu-id="844cc-108">Create a public class that derives from the [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) class.</span></span>
 
-    <span data-ttu-id="9ccf3-109">在此範例中，類別名稱會是"GetProcPSSnapIn01 」。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-109">In this example, the class name is "GetProcPSSnapIn01".</span></span>
+    <span data-ttu-id="844cc-109">在此範例中，類別名稱會是"GetProcPSSnapIn01 」。</span><span class="sxs-lookup"><span data-stu-id="844cc-109">In this example, the class name is "GetProcPSSnapIn01".</span></span>
 
-3. <span data-ttu-id="9ccf3-110">新增公用屬性 （必要） 嵌入式管理單元的名稱。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="9ccf3-111">在命名嵌入式管理單元時，請勿使用任何下列字元: #。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-111">When naming snap-ins, do not use any of the following characters: # .</span></span> <span data-ttu-id="9ccf3-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span><span class="sxs-lookup"><span data-stu-id="9ccf3-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span></span> <span data-ttu-id="9ccf3-113">@ \` \*</span><span class="sxs-lookup"><span data-stu-id="9ccf3-113">@ \` \*</span></span>
+3. <span data-ttu-id="844cc-110">新增公用屬性 （必要） 嵌入式管理單元的名稱。</span><span class="sxs-lookup"><span data-stu-id="844cc-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="844cc-111">在命名嵌入式管理單元時，請勿使用任何下列字元: #。</span><span class="sxs-lookup"><span data-stu-id="844cc-111">When naming snap-ins, do not use any of the following characters: # .</span></span> <span data-ttu-id="844cc-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span><span class="sxs-lookup"><span data-stu-id="844cc-112">, ( ) { } [ ] & - /\ $ ; : " ' \< > ; ?</span></span> <span data-ttu-id="844cc-113">@ \` \*</span><span class="sxs-lookup"><span data-stu-id="844cc-113">@ \` \*</span></span>
 
-    <span data-ttu-id="9ccf3-114">在此範例中，嵌入式管理單元的名稱會是"GetProcPSSnapIn01 」。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-114">In this example, the name of the snap-in is "GetProcPSSnapIn01".</span></span>
+    <span data-ttu-id="844cc-114">在此範例中，嵌入式管理單元的名稱會是"GetProcPSSnapIn01 」。</span><span class="sxs-lookup"><span data-stu-id="844cc-114">In this example, the name of the snap-in is "GetProcPSSnapIn01".</span></span>
 
-4. <span data-ttu-id="9ccf3-115">新增嵌入式管理單元 （必要） 廠商的公用屬性。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-115">Add a public property for the vendor of the snap-in (required).</span></span>
+4. <span data-ttu-id="844cc-115">新增嵌入式管理單元 （必要） 廠商的公用屬性。</span><span class="sxs-lookup"><span data-stu-id="844cc-115">Add a public property for the vendor of the snap-in (required).</span></span>
 
-    <span data-ttu-id="9ccf3-116">在此範例中，廠商會是 「 Microsoft 」。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-116">In this example, the vendor is "Microsoft".</span></span>
+    <span data-ttu-id="844cc-116">在此範例中，廠商會是 「 Microsoft 」。</span><span class="sxs-lookup"><span data-stu-id="844cc-116">In this example, the vendor is "Microsoft".</span></span>
 
-5. <span data-ttu-id="9ccf3-117">新增嵌入式管理單元 （選擇性） 廠商資源的公用屬性。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-117">Add a public property for the vendor resource of the snap-in (optional).</span></span>
+5. <span data-ttu-id="844cc-117">新增嵌入式管理單元 （選擇性） 廠商資源的公用屬性。</span><span class="sxs-lookup"><span data-stu-id="844cc-117">Add a public property for the vendor resource of the snap-in (optional).</span></span>
 
-    <span data-ttu-id="9ccf3-118">在此範例中，廠商資源為 「 GetProcPSSnapIn01，Microsoft"。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-118">In this example, the vendor resource is "GetProcPSSnapIn01,Microsoft".</span></span>
+    <span data-ttu-id="844cc-118">在此範例中，廠商資源為 「 GetProcPSSnapIn01，Microsoft"。</span><span class="sxs-lookup"><span data-stu-id="844cc-118">In this example, the vendor resource is "GetProcPSSnapIn01,Microsoft".</span></span>
 
-6. <span data-ttu-id="9ccf3-119">新增公用屬性 （必要） 嵌入式管理單元的描述。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-119">Add a public property for the description of the snap-in (required).</span></span>
+6. <span data-ttu-id="844cc-119">新增公用屬性 （必要） 嵌入式管理單元的描述。</span><span class="sxs-lookup"><span data-stu-id="844cc-119">Add a public property for the description of the snap-in (required).</span></span>
 
-    <span data-ttu-id="9ccf3-120">在此範例中，描述會是 「 這是一個 Windows PowerShell 嵌入式管理單元，註冊 get-proc cmdlet 」。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-120">In this example, the description is "This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
+    <span data-ttu-id="844cc-120">在此範例中，描述會是 「 這是一個 Windows PowerShell 嵌入式管理單元，註冊 get-proc cmdlet 」。</span><span class="sxs-lookup"><span data-stu-id="844cc-120">In this example, the description is "This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
 
-7. <span data-ttu-id="9ccf3-121">新增嵌入式管理單元 （選擇性） 說明資源的公用屬性。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-121">Add a public property for the description resource of the snap-in (optional).</span></span>
+7. <span data-ttu-id="844cc-121">新增嵌入式管理單元 （選擇性） 說明資源的公用屬性。</span><span class="sxs-lookup"><span data-stu-id="844cc-121">Add a public property for the description resource of the snap-in (optional).</span></span>
 
-    <span data-ttu-id="9ccf3-122">在此範例中，廠商資源是 「 GetProcPSSnapIn01，這是一個 Windows PowerShell 嵌入式管理單元，註冊 get-proc cmdlet 」。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-122">In this example, the vendor resource is "GetProcPSSnapIn01,This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
+    <span data-ttu-id="844cc-122">在此範例中，廠商資源是 「 GetProcPSSnapIn01，這是一個 Windows PowerShell 嵌入式管理單元，註冊 get-proc cmdlet 」。</span><span class="sxs-lookup"><span data-stu-id="844cc-122">In this example, the vendor resource is "GetProcPSSnapIn01,This is a Windows PowerShell snap-in that registers the get-proc cmdlet".</span></span>
 
-## <a name="example"></a><span data-ttu-id="9ccf3-123">範例</span><span class="sxs-lookup"><span data-stu-id="9ccf3-123">Example</span></span>
+## <a name="example"></a><span data-ttu-id="844cc-123">範例</span><span class="sxs-lookup"><span data-stu-id="844cc-123">Example</span></span>
 
-<span data-ttu-id="9ccf3-124">此範例示範如何撰寫 Windows PowerShell 嵌入式管理單元，可用來註冊 Get-proc cmdlet 在 Windows PowerShell 介面中。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-124">This example shows how to write a Windows PowerShell snap-in that can be used to register the Get-Proc cmdlet in the Windows PowerShell shell.</span></span> <span data-ttu-id="9ccf3-125">請注意，在此範例中，完整的組件會包含只有 GetProcPSSnapIn01 嵌入式管理單元類別和 Get-proc cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="9ccf3-125">Be aware that in this example, the complete assembly would contain only the GetProcPSSnapIn01 snap-in class and the Get-Proc cmdlet class.</span></span>
+<span data-ttu-id="844cc-124">此範例示範如何撰寫 Windows PowerShell 嵌入式管理單元，可用來註冊 Get-proc cmdlet 在 Windows PowerShell 介面中。</span><span class="sxs-lookup"><span data-stu-id="844cc-124">This example shows how to write a Windows PowerShell snap-in that can be used to register the Get-Proc cmdlet in the Windows PowerShell shell.</span></span> <span data-ttu-id="844cc-125">請注意，在此範例中，完整的組件會包含只有 GetProcPSSnapIn01 嵌入式管理單元類別和 Get-proc cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="844cc-125">Be aware that in this example, the complete assembly would contain only the GetProcPSSnapIn01 snap-in class and the Get-Proc cmdlet class.</span></span>
 
 ```csharp
 [RunInstaller(true)]
@@ -126,8 +126,8 @@ public class GetProcPSSnapIn01 : PSSnapIn
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="9ccf3-126">另請參閱</span><span class="sxs-lookup"><span data-stu-id="9ccf3-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="844cc-126">另請參閱</span><span class="sxs-lookup"><span data-stu-id="844cc-126">See Also</span></span>
 
-[<span data-ttu-id="9ccf3-127">如何註冊 Cmdlet、 提供者，以及裝載應用程式</span><span class="sxs-lookup"><span data-stu-id="9ccf3-127">How to Register Cmdlets, Providers, and Host Applications</span></span>](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[<span data-ttu-id="844cc-127">如何註冊 Cmdlet、 提供者，以及裝載應用程式</span><span class="sxs-lookup"><span data-stu-id="844cc-127">How to Register Cmdlets, Providers, and Host Applications</span></span>](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[<span data-ttu-id="9ccf3-128">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="9ccf3-128">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="844cc-128">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="844cc-128">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
