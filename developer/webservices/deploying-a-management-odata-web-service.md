@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054811"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080642"
 ---
-# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="da795-102">部署 Management OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="da795-102">Deploying a Management OData web service</span></span>
+# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="407dd-102">部署 Management OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="407dd-102">Deploying a Management OData web service</span></span>
 
-<span data-ttu-id="da795-103">您已完成所有建立管理 OData web 服務的必要步驟之後，您必須將它部署為 web 應用程式在 IIS 中。</span><span class="sxs-lookup"><span data-stu-id="da795-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
+<span data-ttu-id="407dd-103">您已完成所有建立管理 OData web 服務的必要步驟之後，您必須將它部署為 web 應用程式在 IIS 中。</span><span class="sxs-lookup"><span data-stu-id="407dd-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
 
-## <a name="deploying-the-web-service"></a><span data-ttu-id="da795-104">部署 web 服務</span><span class="sxs-lookup"><span data-stu-id="da795-104">Deploying the web service</span></span>
+## <a name="deploying-the-web-service"></a><span data-ttu-id="407dd-104">部署 web 服務</span><span class="sxs-lookup"><span data-stu-id="407dd-104">Deploying the web service</span></span>
 
-<span data-ttu-id="da795-105">完成下列步驟來部署管理 OData web 服務。</span><span class="sxs-lookup"><span data-stu-id="da795-105">Complete the following steps to deploy the Management OData web service.</span></span>
+<span data-ttu-id="407dd-105">完成下列步驟來部署管理 OData web 服務。</span><span class="sxs-lookup"><span data-stu-id="407dd-105">Complete the following steps to deploy the Management OData web service.</span></span>
 
-1. <span data-ttu-id="da795-106">您 web 應用程式在您的 IIS 底下建立目錄`WWWRoot`目錄。</span><span class="sxs-lookup"><span data-stu-id="da795-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
+1. <span data-ttu-id="407dd-106">您 web 應用程式在您的 IIS 底下建立目錄`WWWRoot`目錄。</span><span class="sxs-lookup"><span data-stu-id="407dd-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
 
-2. <span data-ttu-id="da795-107">複製 MOF 結構描述檔案，XML 結構描述檔，匯出的 Dll [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)並[System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)介面和應用程式目錄將 web.config 檔案。</span><span class="sxs-lookup"><span data-stu-id="da795-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
+2. <span data-ttu-id="407dd-107">複製 MOF 結構描述檔案，XML 結構描述檔，匯出的 Dll [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)並[System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)介面和應用程式目錄將 web.config 檔案。</span><span class="sxs-lookup"><span data-stu-id="407dd-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
 
-3. <span data-ttu-id="da795-108">建立站台識別碼。</span><span class="sxs-lookup"><span data-stu-id="da795-108">Create a site ID.</span></span>
+3. <span data-ttu-id="407dd-108">建立站台識別碼。</span><span class="sxs-lookup"><span data-stu-id="407dd-108">Create a site ID.</span></span>
 
-4. <span data-ttu-id="da795-109">建立及設定應用程式集區。</span><span class="sxs-lookup"><span data-stu-id="da795-109">Create and configure an app pool.</span></span>
+4. <span data-ttu-id="407dd-109">建立及設定應用程式集區。</span><span class="sxs-lookup"><span data-stu-id="407dd-109">Create and configure an app pool.</span></span>
 
-5. <span data-ttu-id="da795-110">設定站台的驗證。</span><span class="sxs-lookup"><span data-stu-id="da795-110">Configure authentication for the site.</span></span>
+5. <span data-ttu-id="407dd-110">設定站台的驗證。</span><span class="sxs-lookup"><span data-stu-id="407dd-110">Configure authentication for the site.</span></span>
 
-6. <span data-ttu-id="da795-111">設定防火牆。</span><span class="sxs-lookup"><span data-stu-id="da795-111">Configure the firewall.</span></span>
+6. <span data-ttu-id="407dd-111">設定防火牆。</span><span class="sxs-lookup"><span data-stu-id="407dd-111">Configure the firewall.</span></span>
 
-7. <span data-ttu-id="da795-112">啟動網站。</span><span class="sxs-lookup"><span data-stu-id="da795-112">Start the site.</span></span>
+7. <span data-ttu-id="407dd-112">啟動網站。</span><span class="sxs-lookup"><span data-stu-id="407dd-112">Start the site.</span></span>
 
-<span data-ttu-id="da795-113">下列 Windows PowerShell 指令碼會示範如何部署管理 OData web 服務。</span><span class="sxs-lookup"><span data-stu-id="da795-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
+<span data-ttu-id="407dd-113">下列 Windows PowerShell 指令碼會示範如何部署管理 OData web 服務。</span><span class="sxs-lookup"><span data-stu-id="407dd-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
 
 ```powershell
 # Test for presence of Microsoft.Samples.Management.OData.RoleBasedPlugins.dll
@@ -425,16 +425,16 @@ ActionAllSites start
 Start-Sleep 10
 ```
 
-## <a name="see-also"></a><span data-ttu-id="da795-114">另請參閱</span><span class="sxs-lookup"><span data-stu-id="da795-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="407dd-114">另請參閱</span><span class="sxs-lookup"><span data-stu-id="407dd-114">See Also</span></span>
 
-[<span data-ttu-id="da795-115">Management OData web 服務中實作自訂授權</span><span class="sxs-lookup"><span data-stu-id="da795-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="407dd-115">Management OData web 服務中實作自訂授權</span><span class="sxs-lookup"><span data-stu-id="407dd-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="da795-116">Management OData web 服務實作 SessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="da795-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[<span data-ttu-id="407dd-116">Management OData web 服務實作 SessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="407dd-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="da795-117">撰寫 MOF 結構描述檔案管理 OData web 服務</span><span class="sxs-lookup"><span data-stu-id="da795-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="407dd-117">撰寫 MOF 結構描述檔案管理 OData web 服務</span><span class="sxs-lookup"><span data-stu-id="407dd-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="da795-118">撰寫管理 OData web 服務的 XML 結構描述檔案</span><span class="sxs-lookup"><span data-stu-id="da795-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="407dd-118">撰寫管理 OData web 服務的 XML 結構描述檔案</span><span class="sxs-lookup"><span data-stu-id="407dd-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="da795-119">撰寫管理 OData web 服務的 Web.config 檔案</span><span class="sxs-lookup"><span data-stu-id="da795-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="407dd-119">撰寫管理 OData web 服務的 Web.config 檔案</span><span class="sxs-lookup"><span data-stu-id="407dd-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="da795-120">建立管理 OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="da795-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="407dd-120">建立管理 OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="407dd-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
