@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
 caps.latest.revision: 11
 ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066884"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>TableControl 的 AutoSize 元素 (格式)
 
@@ -27,7 +27,7 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 <AutoSize/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`AutoSize`項目。
 
@@ -39,9 +39,9 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[TableControl 項目 （格式）](./tablecontrol-element-format.md)|定義檢視的資料表格式。|
 

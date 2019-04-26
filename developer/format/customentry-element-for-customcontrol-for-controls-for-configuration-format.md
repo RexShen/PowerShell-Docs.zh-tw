@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9dfba86f-29b2-473c-9e98-9d679176acce
 caps.latest.revision: 11
 ms.openlocfilehash: 497485a388d1cdc834ecc1d1079b0714a7d7f9db
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859804"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066460"
 ---
 # <a name="customentry-element-for-customcontrol-for-controls-for-configuration-format"></a>設定之控制項的控制項 CustomControl 的 CustomEntry 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56859804"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomEntry`項目。 您必須指定定義所顯示的項目。
 
@@ -46,9 +46,9 @@ ms.locfileid: "56859804"
 |[EntrySelectedBy CustomEntry 組態 （格式） 的控制項的項目](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 定義使用的通用控制項或條件必須存在於要使用這個控制項定義的.NET 類型。|
 |[組態控制項 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 定義控制項所顯示的資料和顯示方式。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomEntries CustomControl 組態 （格式） 的項目](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)|提供通用控制項的定義。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
 caps.latest.revision: 12
 ms.openlocfilehash: 3c110bd5fe3ef2f790ef136556afa7c29d0b5b29
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066406"
 ---
 # <a name="customitem-element-for-customentry-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntry 的 CustomItem 元素 (格式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56856184"
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomItem`項目。
 
@@ -49,9 +49,9 @@ ms.locfileid: "56856184"
 |[CustomItem 檢視 （格式） 的自訂控制項的新行項目](./newline-element-for-customitem-for-customcontrol-for-view-format.md)|選擇性的項目。<br /><br /> 將控制項的顯示中的空白行。|
 |[CustomItem CustomControl 檢視 （格式） 的文字項目](./text-element-for-customitem-for-customview-for-view-format.md)|選擇性的項目。<br /><br /> 指定要由控制項所顯示的資料的其他文字。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomControl 檢視 （格式） 的 CustomEntries CustomEntry 項目](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|提供自訂的控制項檢視的定義。|
 

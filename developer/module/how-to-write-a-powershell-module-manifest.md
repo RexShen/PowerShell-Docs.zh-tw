@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059485"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082289"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何撰寫 PowerShell 模組資訊清單
 
@@ -80,7 +80,7 @@ A*模組資訊清單*是 Windows PowerShell 資料檔 (.psd1) 描述模組的內
 |DotNetFrameworkVersion<br /><br /> 型別： 字串|' '|此模組所需的 Microsoft.NET Framework 的最低版本。<br /><br /> 範例： `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> 型別： 字串|' '|Common language runtime (CLR) 此模組所需的最小版本。<br /><br /> 範例： `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> 型別： 字串|' '|處理器架構 （無、 X86，Amd64） 此模組所需。 有效值為 x86、AMD64、IA64 和 None (未知或未指定)。<br /><br /> 範例： `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> 類型: [字串 []]|@()|必須匯入全域環境，再匯入此模組的模組。 這會載入列，除非它們已經載入任何模組。 （例如，某些模組可能已經載入不同的模組。）。 您也可指定要載入使用的特定版本`RequiredVersion`而非`ModuleVersion`。 當使用`ModuleVersion`會載入指定的版本至少提供的最新版本。<br /><br /> 範例： `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 範例： `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> 類型: [字串 []]|@()|必須匯入全域環境，再匯入此模組的模組。 這會載入列，除非它們已經載入任何模組。 （例如，某些模組可能已經載入不同的模組。）。 您也可指定要載入使用的特定版本`RequiredVersion`而非`ModuleVersion`。 當使用`ModuleVersion`會載入指定的版本至少提供的最新版本。<br /><br /> 範例： `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 範例： `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> 類型: [字串 []]|@()|必須先載入才能匯入此模組的組件。<br /><br /> 請注意，不同於 RequiredModules，PowerShell 會載入 RequiredAssemblies 是否尚未載入。|
 |ScriptsToProcess<br /><br /> 類型: [字串 []]|@()|匯入模組時，呼叫端的工作階段狀態中執行的指令碼 (.ps1) 檔案。 這可能是全域的工作階段狀態，或在巢狀模組，另一個模組的工作階段狀態。 您可以使用這些指令碼來準備環境，您可能會使用登入指令碼一樣。<br /><br /> 載入任何模組資訊清單中列出之前，會執行這些指令碼。|
 |TypesToProcess<br /><br /> 類型: [物件 []]|@()|輸入匯入此模組時要載入的檔案 (.ps1xml)。|

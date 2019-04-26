@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: dbccaf5b8e48a1c4d924bc0ec4ea09b25e10adf0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857964"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083496"
 ---
 # <a name="examples-of-comment-based-help"></a>註解型說明的範例
 
@@ -255,7 +255,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
             RELATED LINKS
 ```
 
-## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>範例 3：Param 陳述式中的參數說明
+## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>範例 3︰Param 陳述式中的參數說明
 
 此範例示範如何插入在 parameterdescriptions`Param`函式或指令碼的陳述式。 簡短參數描述時，這種格式是最有用。
 

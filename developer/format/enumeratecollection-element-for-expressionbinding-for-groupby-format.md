@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a4544c0b-2347-4f3f-9bdb-ed2714bee048
 caps.latest.revision: 6
 ms.openlocfilehash: 8541aeae9f2dd19d65ab3950929474572b4629e0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066034"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-groupby-format"></a>GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56854304"
 <EnumerateCollection/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EnumerateCollection`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56854304"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem 的 GroupBy （格式） 的項目](./expressionbinding-element-for-customitem-for-groupby-format.md)|定義控制項所顯示的資料。|
 

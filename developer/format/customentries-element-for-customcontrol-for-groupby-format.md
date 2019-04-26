@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ms.openlocfilehash: f073142bf836ae892f161cf8c36ed16c35e311f5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853674"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066529"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>GroupBy 之 CustomControl 的 CustomEntries 元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56853674"
 </CustomEntries>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomEntries`項目。 沒有任何最大的限制，您可以指定的子項目數目。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56853674"
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomControl CustomEntry 項目](./customentry-element-for-customcontrol-for-groupby-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomControl GroupBy （格式） 的項目](./customcontrol-element-for-groupby-format.md)|定義自訂控制項，則會顯示新的群組。|
 

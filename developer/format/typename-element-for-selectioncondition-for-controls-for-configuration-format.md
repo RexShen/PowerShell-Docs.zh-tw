@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 477c8711-fffc-4f92-af45-6d4f80990474
 caps.latest.revision: 7
 ms.openlocfilehash: 60f02f3240c5574e1b1f9027b060bd9af89a11d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083938"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-configuration-format"></a>設定之控制項的 SelectionCondition 的 TypeName 元素 (格式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56853594"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TypeName`項目。
 
@@ -40,9 +40,9 @@ ms.locfileid: "56853594"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomEntry 組態 （格式） 的 EntrySelectedBy SelectionCondition 項目](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在，要使用的控制項定義的條件。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3182c0c5-ba43-4d00-b3e0-27f24d272b2f
 caps.latest.revision: 9
 ms.openlocfilehash: b0ed329600811206b8569b864032825818841479
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066119"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856124"
 <EnumerateCollection/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EnumerateCollection`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856124"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem （格式） 的項目](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|定義控制項所顯示的資料。|
 

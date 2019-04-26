@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8ad39c7d-2f64-49d1-9be0-d2295e4302b3
 caps.latest.revision: 5
 ms.openlocfilehash: 833ff1c37ee025e9cd9d2760bc63695534dd69ff
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081609"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03 程式碼範例
 
@@ -26,7 +26,7 @@ ms.locfileid: "57429443"
 
 完整的範例程式碼，請參閱下列主題。
 
-|語言|主題|
+|Language|主題|
 |--------------|-----------|
 |C#|[GetProc03 (C#) 程式碼範例](./getproc03-csharp-sample-code.md)|
 |VB.NET|[GetProc03 (VB.NET) 範例程式碼](./getproc03-vb-net-sample-code.md)|

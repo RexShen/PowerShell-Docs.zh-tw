@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862084"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083700"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56862084"
 </ViewDefinitions>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ViewDefinitions`項目。 可以在格式檔案中，定義的檢視數目沒有限制，並將它們加入以任何順序。
 
@@ -44,9 +44,9 @@ ms.locfileid: "56862084"
 |-------------|-----------------|
 |[檢視項目 （格式）](./view-element-format.md)|定義用來顯示一或多個.NET 物件的檢視。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[組態項目 （格式）](./configuration-element-format.md)|表示格式化檔案的最上層項目。|
 

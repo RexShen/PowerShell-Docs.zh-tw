@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ba3955bc-f3a1-4ef6-86ac-80ffc133ad1b
 caps.latest.revision: 6
 ms.openlocfilehash: 28ad31be4be7be20f1f43ea1b69ad5d294de86f6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075846"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-controls-for-view-format"></a>檢視之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56857624"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`PropertyName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56857624"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[用於檢視 （格式） 的控制項 ExpressionBinding ItemSelectionCondition 項目](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)|定義要使用這個控制項必須存在的條件。|
 

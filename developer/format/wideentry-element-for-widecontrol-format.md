@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856524"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083666"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideControl 的 WideEntry 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856524"
 </WideEntry>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`WideEntry`項目。 您必須指定單一`WideItem`子項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56856524"
 |[EntrySelectedBy WideEntry （格式） 的項目](./entryselectedby-element-for-wideentry-format.md)|選擇性的項目。<br /><br /> 定義使用此寬的項目定義或必須存在於要使用此定義條件的.NET 類型。|
 |[WideItem 項目 （格式）](./wideitem-element-for-widecontrol-format.md)|必要項目。<br /><br /> 定義屬性或其值會顯示指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[WideEntries 項目 （格式）](./wideentries-element-for-widecontrol-format.md)|提供的寬型檢視的定義。|
 

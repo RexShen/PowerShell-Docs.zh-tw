@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
 caps.latest.revision: 11
 ms.openlocfilehash: abef6c91500f665c2366f221496d4cfd6444f5c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856304"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066595"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>設定之控制項的 CustomControl 的 CustomEntries 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856304"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomEntries`項目。 您必須指定一個以上的子項目。
 
@@ -44,9 +44,9 @@ ms.locfileid: "56856304"
 |-------------|-----------------|
 |[CustomEntry CustomControl 組態 （格式） 的控制項的項目](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|提供通用控制項的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomControl 組態 （格式） 的控制項的項目](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|定義通用的控制項。|
 

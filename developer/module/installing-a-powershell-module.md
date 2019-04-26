@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082177"
 ---
 # <a name="installing-a-powershell-module"></a>安裝 PowerShell 模組
 
 您已建立您的 PowerShell 模組之後，您可能會想，在系統上，安裝模組，讓您或其他人可能會使用它。 一般而言，這只是包含複製的模組檔案 （亦即，.psm1，或二進位組件、 模組資訊清單和任何相關聯的檔案） 至目錄在該電腦上。 對於非常小的專案中，這可能是簡單，只要複製並貼上與 Windows 檔案總管檔案到單一遠端電腦;不過，較大的解決方案，您可能想要使用更複雜的安裝程序。 不論如何，您會取得您系統上的模組，PowerShell 可以使用一些技巧，讓使用者尋找並使用您的模組。 (如需詳細資訊，請參閱 <<c0> [ 匯入 PowerShell 模組](./importing-a-powershell-module.md)。)因此，安裝的主要問題確保 PowerShell 能夠找到您的模組。
 
-本主題涵蓋下列各節：
+本主題包含下列幾節：
 
 - 安裝模組的規則
 

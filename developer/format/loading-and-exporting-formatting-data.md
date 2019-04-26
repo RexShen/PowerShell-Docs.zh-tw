@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
 ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054181"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065201"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>載入及匯出格式設定資料
 
@@ -59,4 +59,4 @@ ms.locfileid: "58054181"
 
 ## <a name="exporting-format-data"></a>匯出格式資料
 
-在此插入區段主體。
+此插入章節主體。

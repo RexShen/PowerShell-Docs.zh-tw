@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8e37477e-cf2c-4ebd-85d1-eb923e2f4eea
 caps.latest.revision: 6
 ms.openlocfilehash: 790abbccad2c9e57d64e444b7b04d805decd4ed6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860064"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065167"
 ---
 # <a name="newline-element-for-customitem-for-groupby-format"></a>GroupBy 之 CustomItem 的 NewLine 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56860064"
 <NewLine/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`NewLine`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56860064"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-groupby-format.md)|定義自訂的控制項檢視的控制項。|
 

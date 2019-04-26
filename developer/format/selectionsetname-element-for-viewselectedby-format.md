@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
 caps.latest.revision: 13
 ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858334"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076220"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>ViewSelectedBy 的 SelectionSetName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858334"
 <SelectionSetName>Name of selection set<SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionSetName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56858334"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ViewSelectedBy 項目 （格式）](./viewselectedby-element-format.md)|定義檢視所顯示的.NET 物件。|
 

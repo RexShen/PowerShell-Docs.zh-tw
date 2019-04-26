@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fe9eb5f9-a193-41a4-ad47-a96ba3f8d7e3
 caps.latest.revision: 8
 ms.openlocfilehash: 49f501538b8f72777984a5e575b999866abcdebf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856224"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066901"
 ---
 # <a name="columnnumber-element-for-widecontrol-format"></a>WideControl 的 ColumnNumber 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856224"
 <ColumnNumber>PositiveInteger</ColumnNumber>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ColumnNumber`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856224"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[WideControl 項目 （格式）](./widecontrol-element-format.md)|寬 （單一值） 會定義檢視的清單格式。|
 

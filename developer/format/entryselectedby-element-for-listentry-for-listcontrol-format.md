@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
 ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066187"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>ListControl 之 ListEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58054929"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。
 
@@ -47,9 +47,9 @@ ms.locfileid: "58054929"
 |[ListControl （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定一組使用此清單檢視定義的.NET 型別。|
 |[ListControl （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定使用此清單的檢視定義的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ListEntry ListControl （格式） 的項目](./listentry-element-for-listcontrol-format.md)|定義清單的資料列的顯示方式。|
 

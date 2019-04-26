@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
 caps.latest.revision: 12
 ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083751"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>ViewSelectedBy 的 TypeName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56857894"
 <TypeName>FullyQualifiedTypeName</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目，以及的父項目`TypeName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56857894"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ViewSelectedBy 項目 （格式）](./viewselectedby-element-format.md)|定義檢視所顯示的.NET 物件。|
 

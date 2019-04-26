@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
 caps.latest.revision: 9
 ms.openlocfilehash: 54c7c261a23075721cd7bce75e530150dc0e0212
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854974"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066170"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>WideEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56854974"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。
 
@@ -47,9 +47,9 @@ ms.locfileid: "56854974"
 |[WideEntry （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)|選擇性的項目。<br /><br /> 指定一組使用此寬型檢視定義的.NET 型別。|
 |[WideEntry （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-wideentry-format.md)|選擇性的項目。<br /><br /> 指定使用此寬型檢視定義的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[WideEntry 項目 （格式）](./wideentry-element-for-widecontrol-format.md)|提供寬型檢視的定義。|
 

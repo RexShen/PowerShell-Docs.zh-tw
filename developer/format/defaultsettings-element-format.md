@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
 ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059060"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066340"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings 元素 (格式)
 
@@ -33,7 +33,7 @@ ms.locfileid: "58059060"
 </DefaultSettings>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`DefaultSettings`項目。
 
@@ -51,9 +51,9 @@ ms.locfileid: "58059060"
 |[ShowError 項目 （格式）](./showerror-element-format.md)|選擇性的項目。<br /><br /> 指定顯示一段資料時，發生錯誤時，會顯示完整的錯誤記錄。|
 |[WrapTables 項目 （格式）](./wraptables-element-format.md)|選擇性的項目。<br /><br /> 指定資料表中的資料會移至下一行，是否無法納入資料行的寬度。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[組態項目](./configuration-element-format.md)|表示格式化檔案的最上層項目。|
 

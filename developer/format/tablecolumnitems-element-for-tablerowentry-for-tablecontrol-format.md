@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
 ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056901"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075387"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)
 
@@ -29,7 +29,7 @@ TableColumnItems>
 </TableColumnItems>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TableColumnItems`項目。
 
@@ -43,9 +43,9 @@ TableColumnItems>
 |-------------|-----------------|
 |[TableControl （格式） 的 TableColumnItems TableColumnItem 項目](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|必要項目。<br /><br /> 定義屬性或其值會顯示資料列的資料行中的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[TableControl （格式） 的 TableRowEntries TableRowEntry 項目](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定義會顯示在資料表資料列的資料。|
 

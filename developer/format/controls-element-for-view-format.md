@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
 caps.latest.revision: 14
 ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853664"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066788"
 ---
 # <a name="controls-element-for-view-format"></a>檢視的控制項元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56853664"
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Controls`項目。 這個項目必須至少一個子項目。 那里沒有最大數目的子項目，也值得它們的順序。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56853664"
 |-------------|-----------------|
 |[用於檢視 （格式） 的控制項的控制項項目](./control-element-for-controls-for-view-format.md)|定義可供檢視的控制項。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[檢視項目 （格式）](./view-element-format.md)|定義用來顯示的一或多個.NET 物件成員的檢視。|
 

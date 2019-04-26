@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
 ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082119"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>可更新的說明撰寫：逐步
 
@@ -48,14 +48,14 @@ HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
 
 HelpInfo XML 資訊檔案包含說明檔案，以及您在每個支援的 UI 文化特性中的模組最新說明檔案的版本號碼的網際網路位置的 URI。 每個 Windows PowerShell 模組具有一個 HelpInfo XML 檔案。 當您更新說明檔案時，編輯或取代 HelpInfo XML 檔案;您沒有加入另一個。 如需詳細資訊，請參閱 <<c0> [ 如何建立 HelpInfo XML 檔案](./how-to-create-a-helpinfo-xml-file.md)。
 
-### <a name="step-4-sign-your-help-files"></a>步驟 4：登入您的說明檔
+### <a name="step-4-sign-your-help-files"></a>步驟 4:登入您的說明檔
 
 數位簽章是不必要的但它們是最佳做法建議，每當您共用檔案。
 
-### <a name="step-5-create-cab-files"></a>步驟 5：建立 CAB 檔案
+### <a name="step-5-create-cab-files"></a>步驟 5:建立 CAB 檔案
 
 使用會建立封包 (.cab) 檔案，例如 MakeCab.exe，若要建立的工具。包含您的模組的說明檔案的封包檔。 在每個支援的 UI 文化特性說明檔案的個別封包檔。 如需詳細資訊，請參閱 <<c0> [ 如何準備可更新的說明封包檔](./how-to-prepare-updatable-help-cab-files.md)。
 
-### <a name="step-6-upload-your-files"></a>步驟 6：將檔案上傳
+### <a name="step-6-upload-your-files"></a>步驟 6:將檔案上傳
 
 若要發佈新的或更新的說明檔，將檔案上傳封包到所指定的網際網路位置**HelpContentUri** HelpInfo XML 檔案中的項目。 然後，將 HelpInfo XML 檔案上傳至的值所指定的網際網路位置**HelpInfoUri**模組資訊清單中的索引鍵。

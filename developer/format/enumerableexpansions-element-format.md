@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
 caps.latest.revision: 9
 ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066085"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions 元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56860254"
 </EnumerableExpansions>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EnumerableExpansions`項目。 沒有任何限制，您可以使用的子元素的數目。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56860254"
 |-------------|-----------------|
 |[EnumerableExpansion 項目 （格式）](./enumerableexpansion-element-format.md)|選擇性的項目。<br /><br /> 定義在檢視中顯示時，會展開的特定.NET 集合物件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[DefaultSettings 項目 （格式）](./defaultsettings-element-format.md)|定義套用至的格式化檔案的所有檢視的常見設定。|
 

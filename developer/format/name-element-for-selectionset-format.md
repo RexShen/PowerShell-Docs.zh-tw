@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065147"
 ---
 # <a name="name-element-for-selectionset-format"></a>SelectionSet 的名稱元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858164"
 <Name>Name of selection set</Name>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Name`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56858164"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[SelectionSet 項目 （格式）](./selectionset-element-format.md)|定義一組.NET 物件，可以參考集的名稱。|
 

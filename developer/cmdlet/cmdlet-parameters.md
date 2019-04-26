@@ -17,11 +17,11 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068397"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 參數
 
@@ -49,7 +49,7 @@ Cmdlet 參數提供的機制，可讓 cmdlet 接受輸入。 參數可以接受�
 
 [輸入篩選參數](./input-filter-parameters.md)討論`Filter`， `Include`，和`Exclude`篩選一組指令程式會影響的輸入物件的參數。
 
-## <a name="related-sections"></a>相關章節
+## <a name="related-sections"></a>相關的章節
 
 [如何驗證參數的輸入](./how-to-validate-parameter-input.md)
 

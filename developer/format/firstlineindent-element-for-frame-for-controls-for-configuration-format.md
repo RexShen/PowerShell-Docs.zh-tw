@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2f489720-11f6-4019-940e-07f423d4278d
 caps.latest.revision: 6
 ms.openlocfilehash: c5b2d971fe1590116f96b024ae8769334768acf2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856344"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065983"
 ---
 # <a name="firstlineindent-element-for-frame-for-controls-for-configuration-format"></a>設定之控制項的框架的 FirstLineIndent 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856344"
 <FirstLineIndent>NumberOfCharactersToShift</FirstLineIndent>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`FirstLineIndent`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856344"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomItem 組態 （格式） 的控制項的框架項目](./frame-element-for-customitem-for-controls-for-configuration-format.md)|定義資料的顯示方式，例如將資料轉移至左邊或右邊。|
 

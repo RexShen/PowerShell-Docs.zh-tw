@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 938d3c8f-ed74-47c2-b9d4-b56799203e1a
 caps.latest.revision: 4
 ms.openlocfilehash: 6af8a57948b3d62fe3f26aecc431c9b1c6e6b4f3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083445"
 ---
 # <a name="how-to-add-capabilities"></a>如何新增功能
 
@@ -21,8 +21,8 @@ ms.locfileid: "56856724"
 
 ## <a name="section-heading"></a>區段標題
 
-在此插入區段主體。
+此插入章節主體。
 
-### <a name="subsection-heading"></a>子區段標題
+### <a name="subsection-heading"></a>小節標題
 
-在此插入子區段主體。
+此插入小節主體。

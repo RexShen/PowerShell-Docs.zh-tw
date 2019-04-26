@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 33c7345c-b808-4c1e-bd54-cb870b407432
 caps.latest.revision: 14
 ms.openlocfilehash: 0f7216d4dcc0380bceb47ea7c15b3d4a7e5ceeb2
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059689"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084023"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58059689"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TypeName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "58059689"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EntrySelectedBy ListEntry （格式） 的項目](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|定義.NET 型別，使用此清單項目或要使用此項目必須存在的條件。|
 
