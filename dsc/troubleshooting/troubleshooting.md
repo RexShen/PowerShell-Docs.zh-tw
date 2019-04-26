@@ -3,15 +3,15 @@ ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
 ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059740"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076543"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
-適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
 
 本主題會說明問題發生時針對 DSC 進行疑難排解的方法。
 

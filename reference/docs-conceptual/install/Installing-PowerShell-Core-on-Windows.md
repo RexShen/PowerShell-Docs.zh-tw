@@ -3,11 +3,11 @@ title: 在 Windows 上安裝 PowerShell Core
 description: 在 Windows 上安裝 PowerShell Core 的相關資訊
 ms.date: 08/06/2018
 ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058024"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安裝 PowerShell Core
 
@@ -32,7 +32,7 @@ MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
 安裝程式會在 Windows [開始] 功能表中建立捷徑。
 
 - 套件預設安裝在 `$env:ProgramFiles\PowerShell\<version>`
-- 您可以透過 [開始] 功能表或下列命令啟動 PowerShell： `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- 您可以透過 [開始] 功能表或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 啟動 PowerShell
 
 ### <a name="administrative-install-from-the-command-line"></a>從命令列進行系統管理安裝
 
@@ -52,7 +52,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
 
-我們提供 PowerShell 二進位 ZIP 封存以啟用進階部署案例。 請注意，當使用 ZIP 封存時，不會像 MSI 套件一樣檢查必要條件。 要使遠端執行功能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
+有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 請注意，當使用 ZIP 封存時，不會像 MSI 套件一樣檢查必要條件。 要使遠端執行功能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
 
 ## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
 
