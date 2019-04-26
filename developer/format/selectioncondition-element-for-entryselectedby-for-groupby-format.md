@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6dc2093a-dc54-42c4-ada3-c8d089ba1e8e
 caps.latest.revision: 6
 ms.openlocfilehash: a6738a7c4c934b2d6a16695a711f7c6c80afdd2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075710"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56855164"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionCondition`項目。
 
@@ -49,9 +49,9 @@ ms.locfileid: "56855164"
 |[GroupBy （格式） 的 SelectionCondition SelectionSetName 項目](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 型別集。|
 |[GroupBy （格式） 的 SelectionCondition TypeName 項目](./typename-element-for-selectioncondition-for-groupby-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomEntry EntrySelectedBy 項目](./entryselectedby-element-for-customentry-for-groupby-format.md)|定義使用此控制項定義或必須存在於要使用此定義條件的.NET 類型。|
 

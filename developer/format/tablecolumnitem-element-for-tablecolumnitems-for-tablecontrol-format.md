@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063933"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableControl 之 TableColumnItems 的 TableColumnItem 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58056986"
 </TableColumnItem>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TableColumnItem`項目。
 
@@ -48,9 +48,9 @@ ms.locfileid: "58056986"
 |[TableControl （格式） 的 TableColumnItem PropertyName 項目](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定其值會顯示屬性的名稱。|
 |[TableControl （格式） 的 TableColumnItem 的指令碼區塊項目](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定其值會顯示一個資料列的資料行中的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[TableControl （格式） 的 TableControlEntry TableColumnItems 項目](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|定義屬性或其值會顯示資料列中的指令碼。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d5e707ae-3c84-4ceb-ba31-56b3ffde6d6c
 caps.latest.revision: 7
 ms.openlocfilehash: b15e26e18126f69eee7c3a857f9a461d4bdf5848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064742"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-listcontrol-format"></a>ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56855534"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目，以及的父項目`PropertyName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56855534"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ItemSelectionCondition ListControl （格式） 的 ListItem 元素](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)||
 

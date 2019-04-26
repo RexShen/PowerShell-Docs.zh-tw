@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c0506928-db92-4ec4-855f-6f3592a383ae
 caps.latest.revision: 6
 ms.openlocfilehash: 5ead806d956ebbef95eeffc42bb39ef784208017
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855434"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083989"
 ---
 # <a name="typename-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 TypeName 元素 (格式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56855434"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TypeName`項目。
 
@@ -40,9 +40,9 @@ ms.locfileid: "56855434"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EntrySelectedBy EnumerableExpansion （格式） 的項目](./entryselectedby-element-for-enumerableexpansion-format.md)|定義.NET 類型使用這個定義或必須存在於要使用此定義的條件。|
 

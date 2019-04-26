@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
 caps.latest.revision: 9
 ms.openlocfilehash: bc1e58c00ca8419f9204076f0a46050281e704db
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066136"
 ---
 # <a name="enumerableexpansion-element-format"></a>EnumerableExpansion 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856834"
 </EnumerableExpansion>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EnumerableExpansion`項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56856834"
 |[EntrySelectedBy EnumerableExpansion （格式） 的項目](./entryselectedby-element-for-enumerableexpansion-format.md)|選擇性的項目。<br /><br /> 定義此定義會展開.NET 集合物件。|
 |[展開項目 （格式）](./expand-element-format.md)|指定如何展開此定義的集合物件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EnumerableExpansions 項目 （格式）](./enumerableexpansions-element-format.md)|該檢視中顯示時，會展開物件的.NET 集合定義不同的方式。|
 

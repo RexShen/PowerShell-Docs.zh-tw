@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
 caps.latest.revision: 8
 ms.openlocfilehash: e7176f9f6ef67116ea7c07a46797fb0ba84f915d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066272"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56859584"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。
 
@@ -47,9 +47,9 @@ ms.locfileid: "56859584"
 |[CustomEntry （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)|選擇性的項目。<br /><br /> 指定一組使用的控制項檢視此定義的.NET 型別。|
 |[CustomEntry （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性的項目。<br /><br /> 指定使用的控制項檢視此定義的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomEntry CustomEntries 檢視 （格式） 的項目](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|定義特定的.NET 物件所使用的控制項。|
 

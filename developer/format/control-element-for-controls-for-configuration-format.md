@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
 caps.latest.revision: 13
 ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066784"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>設定之控制項的控制項元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56858884"
 </Control>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目，如`Control`項目。 您必須指定其中一個每個子項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56858884"
 |[CustomControl 組態 （格式） 的控制項的控制項的項目](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 定義控制項。|
 |[組態 （格式） 的控制項的 name 元素](./name-element-for-control-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 指定用來參考該控制項的名稱。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[組態 （格式） 的 controls 項目](./controls-element-for-configuration-format.md)|定義可用的格式化檔案的所有檢視，或其他控制項的通用控制項。|
 

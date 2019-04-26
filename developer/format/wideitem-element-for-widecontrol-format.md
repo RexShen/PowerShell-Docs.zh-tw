@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862624"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083632"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideControl 的 WideItem 元素 (格式)
 
@@ -31,9 +31,9 @@ ms.locfileid: "56862624"
 </WideItem>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、 子項目和父項目`WideItem`項目。 `FormatString` 元素為選擇性。 不過，您必須指定`PropertyName`或`ScriptBlock`項目，但是您無法同時指定兩者。
+下列各節說明屬性、 子項目和父項目`WideItem`項目。 `FormatString`是選擇性元素。 不過，您必須指定`PropertyName`或`ScriptBlock`項目，但是您無法同時指定兩者。
 
 ### <a name="attributes"></a>屬性
 
@@ -47,9 +47,9 @@ ms.locfileid: "56862624"
 |[PropertyName WideItem （格式） 的項目](./propertyname-element-for-wideitem-for-widecontrol-format.md)|指定其值會顯示在寬型檢視物件的屬性。|
 |[ScriptBlock WideItem （格式） 的項目](./scriptblock-element-for-wideitem-for-widecontrol-format.md)|指定其值會顯示在寬型檢視的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[WideEntry 項目 （格式）](./wideentry-element-for-widecontrol-format.md)|提供寬型檢視的定義。|
 

@@ -3,11 +3,11 @@ title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
 ms.date: 08/06/2018
 ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086949"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支援週期
 

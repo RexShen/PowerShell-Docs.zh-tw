@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 30bb1382-8c6b-4371-82e6-baf427fa0781
 caps.latest.revision: 6
 ms.openlocfilehash: cec8c5d76bded321ec1d6a1cd0409d7c88863c03
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075880"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-configuration-format"></a>設定之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56860294"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TypeName`項目。
 
@@ -40,9 +40,9 @@ ms.locfileid: "56860294"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EntrySelectedBy CustomEntry 組態 （格式） 的控制項的項目](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|定義使用此控制項定義或必須存在於要使用此定義條件的.NET 類型。|
 

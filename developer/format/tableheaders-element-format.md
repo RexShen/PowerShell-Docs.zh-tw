@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856874"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075404"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders 元素 (格式)
 
@@ -30,7 +30,7 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TableHeaders`項目。 必須為每個屬性之物件的顯示，則為子項目。 資料行標頭資訊會顯示子項目所指定的順序。
 
@@ -44,9 +44,9 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 |-------------|-----------------|
 |[TableColumnHeader 項目 （格式）](./tablecolumnheader-element-format.md)|選擇性的項目。<br /><br /> 定義標籤、 寬度和資料行的資料表檢視資料的對齊方式。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[TableControl 項目 （格式）](./tablecontrol-element-format.md)|定義檢視的資料表格式。|
 

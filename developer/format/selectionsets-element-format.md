@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
 caps.latest.revision: 18
 ms.openlocfilehash: a9356635d60d5f8c5d4dec4ec8b7d0aea2b037dd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853564"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063761"
 ---
 # <a name="selectionsets-element-format"></a>SelectionSets 元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56853564"
 </SelectionSets>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionSets`項目。 每個子項目會定義一組可以集的名稱所參考的物件。 子元素的順序並不重要。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56853564"
 |-------------|-----------------|
 |[SelectionSet 項目 （格式）](./selectionset-element-format.md)|必要項目。<br /><br /> 定義一組.NET 物件，可以參考集的名稱。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[組態項目](./configuration-element-format.md)|表示格式化檔案的最上層項目。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
 ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066289"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58059213"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。
 
@@ -47,9 +47,9 @@ ms.locfileid: "58059213"
 |[SelectionSetName EntrySelectedBy 組態 （格式） 的控制項的項目](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 指定一組使用通用控制項的這個定義的.NET 型別。|
 |[TypeName EntrySelectedBy 組態 （格式） 的控制項的項目](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 指定會使用通用控制項的這個定義的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomEntry CustomControl 組態 （格式） 的控制項的項目](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|提供通用控制項的定義。|
 

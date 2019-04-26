@@ -10,83 +10,81 @@ helpviewer_keywords:
 - virtual methods (PowerShell SDK]
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
-ms.openlocfilehash: 065214647dfa6d376b727930fe75140911095faf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059366"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068482"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Cmdlet 輸入處理方法
 
-一或多個的輸入處理方法來執行其工作本主題中所述，必須覆寫 Cmdlet。 這些方法可讓 cmdlet 來執行前置處理作業、 輸入處理作業和後置處理作業。 這些方法也可讓您停止指令程式處理。
+一或多個的輸入處理方法來執行其工作本主題中所述，必須覆寫 Cmdlet。
+這些方法可讓 cmdlet 來執行前置處理、 輸入的處理和後處理作業。
+這些方法也可讓您停止指令程式處理。
+如何使用這些方法的詳細範例，請參閱[SelectStr 教學課程](selectstr-tutorial.md)。
 
-## <a name="pre-processing-tasks"></a>前置處理工作
+## <a name="pre-processing-operations"></a>前置處理的作業
 
-指令程式應該覆寫[System.Management.Automation.Cmdlet.Beginprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法來加入有效的指令程式會稍後處理的所有記錄的任何前置處理作業。 當 Windows PowerShell 處理命令管線時，Windows PowerShell 呼叫這個方法一次的管線中的指令程式的每個執行個體。 如需有關 Windows PowerShell 如何叫用命令管道的詳細資訊，請參閱 < [Cmdlet 處理生命週期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。
+指令程式應該覆寫[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法來加入有效的指令程式會稍後處理的所有記錄的任何前置處理作業。
+當 PowerShell 處理命令管線時，PowerShell 呼叫這個方法一次的管線中的指令程式的每個執行個體。
+如需有關如何 PowerShell 叫用命令管道的詳細資訊，請參閱[Cmdlet 處理生命週期](/previous-versions/ms714429(v=vs.85))。
 
-下列程式碼示範如何實作[System.Management.Automation.Cmdlet.Beginprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法。
+下列程式碼顯示 BeginProcessing 方法的實作。
 
 ```csharp
 protected override void BeginProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the BeginProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the BeginProcessing template.");
 }
 ```
 
-如需更詳細的如何使用範例[System.Management.Automation.Cmdlet.Beginprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法，請參閱 < [SelectStr 教學課程](./selectstr-tutorial.md)。 在本教學課程中，**選取 Str** cmdlet 會使用[System.Management.Automation.Cmdlet.Beginprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)方法產生的規則運算式，用來搜尋的輸入處理的記錄。
+## <a name="input-processing-operations"></a>處理作業的輸入
 
-## <a name="input-processing-tasks"></a>輸入處理工作
+Cmdlet 可以覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法來處理傳送至 cmdlet 的輸入。
+當 PowerShell 處理命令管線時，PowerShell 會呼叫這個方法的 cmdlet 所處理的每個輸入記錄。
+如需有關如何 PowerShell 叫用命令管道的詳細資訊，請參閱[Cmdlet 處理生命週期](/previous-versions/ms714429(v=vs.85))。
 
-Cmdlet 可以覆寫[System.Management.Automation.Cmdlet.Processrecord%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法來處理傳送至 cmdlet 的輸入。 當 Windows PowerShell 處理命令管線時，Windows PowerShell 就會呼叫這個方法的 cmdlet 所處理的每個輸入記錄。 如需有關 Windows PowerShell 如何叫用命令管道的詳細資訊，請參閱 < [Cmdlet 處理生命週期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。
-
-下列程式碼示範如何實作[System.Management.Automation.Cmdlet.Processrecord%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法。
+下列程式碼顯示 ProcessRecord 方法的實作。
 
 ```csharp
 protected override void ProcessRecord()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the ProcessRecord template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the ProcessRecord template.");
 }
 ```
 
-如需更詳細的如何使用範例[System.Management.Automation.Cmdlet.Processrecord%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法，請參閱 < [SelectStr 教學課程](./selectstr-tutorial.md)。
+## <a name="post-processing-operations"></a>後置處理作業
 
-## <a name="post-processing-tasks"></a>後置處理工作
+指令程式應該覆寫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法來加入有效的 cmdlet 所處理的所有記錄的任何後置處理作業。
+例如，您的 cmdlet 可能要清除物件變數，在它完成之後處理。
 
-指令程式應該覆寫[System.Management.Automation.Cmdlet.Endprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)方法來加入有效的 cmdlet 所處理的所有記錄的任何後置處理作業。 例如，您的 cmdlet 可能要清除物件變數，在它完成之後處理。
+當 PowerShell 處理命令管線時，PowerShell 呼叫這個方法一次的管線中的指令程式的每個執行個體。
+不過，務必記得 PowerShell 執行階段將無法呼叫 EndProcessing 方法如果 cmdlet 可透過其輸入的處理程序中途取消或終止錯誤，就會發生此指令程式的任何部分。
+基於這個理由，需要物件清除 cmdlet 應該實作完整[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，可讓執行階段呼叫這兩個 EndProcessing 和[System.IDisposable.Dispose](/dotnet/api/System.IDisposable.Dispose)結尾的處理方法。
+如需有關如何 PowerShell 叫用命令管道的詳細資訊，請參閱[Cmdlet 處理生命週期](/previous-versions/ms714429(v=vs.85))。
 
-當 Windows PowerShell 處理命令管線時，Windows PowerShell 呼叫這個方法一次的管線中的指令程式的每個執行個體。 不過，請務必記住，Windows PowerShell 執行階段不會呼叫[System.Management.Automation.Cmdlet.Endprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)如果 cmdlet 可透過其輸入的處理程序中途取消或終止錯誤發生在 cmdlet 的任何部分的方法。 基於這個理由，需要物件清除 cmdlet 應該實作完整[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，可讓執行階段呼叫兩者[System.Management.Automation.Cmdlet.Endprocessing%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)並[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)結尾的處理方法。 如需有關 Windows PowerShell 如何叫用命令管道的詳細資訊，請參閱 < [Cmdlet 處理生命週期](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)。
-
-下列程式碼示範如何實作[System.Management.Automation.Cmdlet.Processrecord%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法。
+下列程式碼顯示 EndProcessing 方法的實作。
 
 ```csharp
 protected override void EndProcessing()
 {
-  // Replace the WriteObject method with the logic required
-  // by your cmdlet. It is used here to generate the following
-  // output:
-  // "This is a test of the EndProcessing template."
+  // Replace the WriteObject method with the logic required by your cmdlet.
   WriteObject("This is a test of the EndProcessing template.");
 }
 ```
 
-如需更詳細的如何使用範例[System.Management.Automation.Cmdlet.Processrecord%2A 嗎？Displayproperty = Fullname>](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)方法，請參閱 < [SelectStr 教學課程](./selectstr-tutorial.md)。
-
 ## <a name="see-also"></a>另請參閱
 
-[System.Management.Automation.Cmdlet.Beginprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
-[System.Management.Automation.Cmdlet.Endprocessing%2A?Displayproperty=Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+
+[SelectStr 教學課程](selectstr-tutorial.md)
 
 [System.IDisposable](/dotnet/api/System.IDisposable)
 

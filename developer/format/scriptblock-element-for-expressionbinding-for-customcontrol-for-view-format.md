@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d52d020c-3271-40d5-b4bb-7a5ef0caec8f
 caps.latest.revision: 6
 ms.openlocfilehash: 9f5f188b006c5dfac1d04ef4d5aa5606935db9be
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859484"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064521"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 ExpressionBinding 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56859484"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ScriptBlock`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56859484"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem 如 CustomControl 檢視 （格式） 的項目](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料。|
 

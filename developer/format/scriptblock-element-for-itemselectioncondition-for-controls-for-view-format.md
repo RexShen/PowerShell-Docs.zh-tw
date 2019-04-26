@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b4191157-bf01-4831-b221-6f8cc581cd53
 caps.latest.revision: 6
 ms.openlocfilehash: 0cbefbb48427b56d4ae2a5ae27c7726dcfad7b84
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856734"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064708"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-controls-for-view-format"></a>檢視之控制項的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856734"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ScriptBlock`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856734"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[用於檢視 （格式） 的控制項 ExpressionBinding ItemSelectionCondition 項目](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)|定義要使用這個控制項必須存在的條件。|
 

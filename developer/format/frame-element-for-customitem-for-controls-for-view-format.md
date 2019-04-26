@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
 caps.latest.revision: 7
 ms.openlocfilehash: f93dc20a9c5f87c14605578062b1e60f5a3d25cf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065711"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>檢視之控制項的 CustomItem 的框架元素 (格式)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56859814"
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Frame`項目。
 
@@ -51,9 +51,9 @@ ms.locfileid: "56859814"
 |[控制項的檢視 （格式） 的框架 LeftIndent 項目](./leftindent-element-for-frame-for-controls-for-view-format.md)|選擇性的項目。<br /><br /> 指定的資料會移離左邊界的字元數。|
 |[控制項的檢視 （格式） 的框架 RightIndent 項目](./rightindent-element-for-frame-for-controls-for-view-format.md)|選擇性的項目。<br /><br /> 指定的資料會移離右邊界的字元數。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[用於檢視 （格式） 的控制項 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-controls-for-view-format.md)|定義控制項所顯示的資料和顯示方式。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863184"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083819"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy 元素 (格式)
 
@@ -30,7 +30,7 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） ViewSelectedBy 項
 </ViewSelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ViewSelectedBy`項目。 這個項目必須包含至少一個`TypeName`或`SelectionSetName`子項目。 您可以指定的子元素的數目沒有限制也不是重要的順序。
 
@@ -45,9 +45,9 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） ViewSelectedBy 項
 |[TypeName ViewSelectedBy （格式） 的項目](./typename-element-for-viewselectedby-format.md)|選擇性的項目。<br /><br /> 指定檢視所顯示的.NET 物件。|
 |[SelectionSetName ViewSelectedBy （格式） 的項目](./selectionsetname-element-for-viewselectedby-format.md)|選擇性的項目。<br /><br /> 指定一份檢視所顯示的.NET 物件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[檢視項目 （格式）](./view-element-format.md)|定義顯示一或多個.NET 物件的檢視。|
 

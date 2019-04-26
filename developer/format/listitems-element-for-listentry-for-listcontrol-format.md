@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
 caps.latest.revision: 9
 ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065235"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListControl 之 ListEntry 的 ListItems 元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56858584"
 </ListItems>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ListItems`項目。 沒有任何限制，您可以指定的子項目數目。 子元素的順序定義的值會顯示在清單檢視中的順序。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56858584"
 |-------------|-----------------|
 |[ListControl （格式） 的 ListItem 項目](./listitem-element-for-listitems-for-listcontrol-format.md)|必要項目。<br /><br /> 定義屬性或其值會顯示 [清單] 檢視的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ListEntry ListControl （格式） 的項目](./listentry-element-for-listcontrol-format.md)|提供清單檢視的定義。|
 

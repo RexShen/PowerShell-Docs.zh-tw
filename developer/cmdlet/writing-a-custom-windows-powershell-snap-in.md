@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
 ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067020"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>撰寫自訂 Windows PowerShell 嵌入式管理單元
 

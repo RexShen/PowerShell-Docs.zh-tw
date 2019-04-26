@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c0e1c40b-d2fd-41c3-a5f9-7584ea6bf50b
 caps.latest.revision: 4
 ms.openlocfilehash: fec90170571ae66cf75241c48a45b560d4ead2de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855384"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083283"
 ---
 # <a name="how-to-add-the-provider-name"></a>如何新增提供者名稱
 
@@ -25,7 +25,7 @@ ms.locfileid: "56855384"
 
 ## <a name="section-heading"></a>區段標題
 
- 在此插入區段主體。
+ 此插入章節主體。
 
 #### <a name="procedure-title"></a>程序標題
 
@@ -39,6 +39,6 @@ ms.locfileid: "56855384"
 
 ## <a name="compiling-the-code"></a>編譯程式碼
 
-## <a name="robust-programming"></a>穩定的程式設計
+## <a name="robust-programming"></a>穩固程式設計
 
-## <a name="net-framework-security"></a>.NET Framework 安全性
+## <a name="net-framework-security"></a>.NET framework 安全性

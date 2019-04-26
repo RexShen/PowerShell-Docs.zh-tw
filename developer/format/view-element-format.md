@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
 caps.latest.revision: 24
 ms.openlocfilehash: 2361c1117757569bef0815018c75764430a9e7a8
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856144"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083717"
 ---
 # <a name="view-element-format"></a>檢視元素 (格式)
 
@@ -36,7 +36,7 @@ ms.locfileid: "56856144"
 </View>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`View`項目。 您必須指定其中一個控制項子項目，而且您必須指定名稱的檢視和使用檢視的物件。 定義自訂控制項，如何分組的物件，並指定檢視是否超出訊號範圍是選擇性的。
 
@@ -57,9 +57,9 @@ ms.locfileid: "56856144"
 |[ViewSelectedBy 檢視 （格式） 的項目](./viewselectedby-element-format.md)|必要項目。<br /><br /> 定義此檢視會顯示的.NET 物件。|
 |[WideControl 項目 （格式）](./widecontrol-element-format.md)|選擇性的項目。<br /><br /> 寬 （單一值） 會定義檢視的清單格式。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ViewDefinitions 項目 （格式）](./viewdefinitions-element-format.md)|定義用來顯示物件的檢視。|
 

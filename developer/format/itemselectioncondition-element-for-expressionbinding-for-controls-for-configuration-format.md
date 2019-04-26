@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fd3ddc33-b21c-4464-b3f2-a78dbe0062a8
 caps.latest.revision: 8
 ms.openlocfilehash: 4865d716ebe0460b662253a3019e93e82428b882
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065496"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format"></a>設定之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56861684"
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ItemSelectionCondition`項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56861684"
 |[PropertyName ItemSelectionCondition 組態 （格式） 的控制項的項目](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 屬性。|
 |[ScriptBlock ItemSelectionCondition 組態 （格式） 的控制項的項目](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 指定的指令碼，就會觸發條件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem 組態 （格式） 的控制項的項目](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|定義控制項所顯示的資料。|
 

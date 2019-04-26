@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a13a429c-a31b-4e29-828c-c0c0917b5415
 caps.latest.revision: 11
 ms.openlocfilehash: baea89e4b259611dfa45b6bcf94fa0bf2df6b9de
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075472"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>WideEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56854124"
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionSetName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56854124"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[WideEntry （格式） 的 EntrySelectedBy SelectionCondition 項目](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|定義要使用此定義必須存在的條件。|
 

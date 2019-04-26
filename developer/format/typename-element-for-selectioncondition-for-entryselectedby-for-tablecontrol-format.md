@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e97d56fb-4e35-447a-9282-26f10d0a4609
 caps.latest.revision: 11
 ms.openlocfilehash: fe65ac95cead7df0069ffdae666fb34b7309fbb6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856494"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083836"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>TableControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856494"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TypeName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856494"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[TableRowEntry （格式） 的 EntrySelectedBy SelectionCondition 項目](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|定義必須存在於要使用這個資料表資料列的條件。|
 

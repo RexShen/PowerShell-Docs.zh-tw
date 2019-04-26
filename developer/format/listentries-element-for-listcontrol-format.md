@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
 caps.latest.revision: 12
 ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065385"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListControl 的 ListEntries 元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56856784"
 </ListEntries>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ListEntries`項目。 必須指定至少一個子系項目。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56856784"
 |-------------|-----------------|
 |[ListEntry 項目 （格式）](./listentry-element-for-listcontrol-format.md)|提供清單檢視的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ListControl 項目 （格式）](./listcontrol-element-format.md)|定義檢視的清單格式。|
 

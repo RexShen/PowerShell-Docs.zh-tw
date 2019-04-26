@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 74e30938-00ef-46fd-84e5-f0a83706a50e
 caps.latest.revision: 11
 ms.openlocfilehash: 76b600256af3f957f7fe0578f9fef810262aa5d5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064572"
 ---
 # <a name="scriptblock-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56855554"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ScriptBlock`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56855554"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ListItem 項目 （格式）](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或其值會顯示 [清單] 檢視的資料列中的指令碼。|
 

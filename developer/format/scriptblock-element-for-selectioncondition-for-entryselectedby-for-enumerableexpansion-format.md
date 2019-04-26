@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4126b799-c43d-4175-8513-6d761c65437e
 caps.latest.revision: 9
 ms.openlocfilehash: a51d8d22fa8b0c7f303a5e8f37edcc5e57724063
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064368"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56854794"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ScriptBlock`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56854794"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EnumerableExpansion （格式） 的 EntrySelectedBy SelectionCondition 項目](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在以展開此定義的集合物件的條件。|
 

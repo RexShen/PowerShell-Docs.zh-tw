@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7f5ebea5-ee9c-4b90-a116-12a1daa28fc7
 caps.latest.revision: 7
 ms.openlocfilehash: 226bbea1d7613ad3099e05e8caa9817ff16c1f42
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860684"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065915"
 ---
 # <a name="expressionbinding-element-for-customitem-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)
 
@@ -34,7 +34,7 @@ ms.locfileid: "56860684"
 </ExpressionBinding>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ExpressionBinding`項目。
 
@@ -53,9 +53,9 @@ ms.locfileid: "56860684"
 |[PropertyName CustomControl 檢視 （格式） 的 ExpressionBinding 的項目](./propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md)|選擇性的項目。<br /><br /> 指定其值控制項所顯示的.NET 屬性。|
 |[ExpressionBinding CustomCustomControl 檢視 （格式） 的指令碼區塊項目](./scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md)|選擇性的項目。<br /><br /> 指定其值控制項所顯示的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomControl 檢視 （格式） 的 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂的控制項檢視所顯示的資料和顯示方式。|
 

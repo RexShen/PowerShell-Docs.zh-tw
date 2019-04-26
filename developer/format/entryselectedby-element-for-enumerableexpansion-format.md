@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3af6aff8-4c2d-4f08-9bb1-e1f3ed3e583e
 caps.latest.revision: 11
 ms.openlocfilehash: 6a371bdbb85d07730c32931a4a79ee40856ce298
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066204"
 ---
 # <a name="entryselectedby-element-for-enumerableexpansion-format"></a>EnumerableExpansion 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56855584"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。
 
@@ -47,9 +47,9 @@ ms.locfileid: "56855584"
 |[EnumerableExpansion （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性的項目。<br /><br /> 指定一組.NET 型別，使用此定義的集合物件擴充的方式。|
 |[EnumerableExpansion （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性的項目。<br /><br /> 指定的.NET 型別會使用這個定義的集合物件擴充的方式。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EnumerableExpansion 項目 （格式）](./enumerableexpansion-element-format.md)|定義在檢視中顯示時，會展開物件的特定.NET 集合。|
 

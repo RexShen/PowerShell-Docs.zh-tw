@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
 caps.latest.revision: 8
 ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056476"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066255"
 ---
 # <a name="displayerror-element-format"></a>DisplayError 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58056476"
 <DisplayError/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`DisplayError`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "58056476"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[DefaultSettings 項目 （格式）](./defaultsettings-element-format.md)|定義套用至的格式化檔案的所有檢視的常見設定。|
 

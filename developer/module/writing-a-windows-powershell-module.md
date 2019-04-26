@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
 caps.latest.revision: 17
 ms.openlocfilehash: 3c6d8e410427d6cfaa1c15db421b3fe935f7d322
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857934"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082051"
 ---
 # <a name="writing-a-windows-powershell-module"></a>撰寫 Windows PowerShell 模組
 
@@ -23,7 +23,7 @@ Windows PowerShell 模組可讓您將資料分割、 組織和擷取成獨立、
 
 在其最基本功能，Windows PowerShell 會將儲存為模組為.psm1 檔案中任何有效 Windows PowerShell 指令碼。 PowerShell 也會自動將視為二進位 cmdlet 中的任何組件的模組。 不過，您也可以使用模組 （或更具體來說，模組資訊清單） 組合在一起的整個解決方案。 下列案例描述 Windows PowerShell 模組的一般用法。
 
-### <a name="libraries"></a>媒體櫃
+### <a name="libraries"></a>程式庫
 
 模組可以用來封裝及散發一致的程式庫執行常見工作的函式。 一般而言，這些函式的名稱會共用反映使用中的常見工作的一或多個名詞。 這些函式也可以與.NET Framework 類別類似，因為它們可以有公用和私用成員。 比方說，程式庫可以包含一組函式檔案傳輸。 在此情況下，名詞反映常見的工作可能是"file"。
 

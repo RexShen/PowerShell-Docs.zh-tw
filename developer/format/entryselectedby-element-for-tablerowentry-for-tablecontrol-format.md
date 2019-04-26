@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
 ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066153"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>TableControl 之 TableRowEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58058754"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。
 
@@ -47,9 +47,9 @@ ms.locfileid: "58058754"
 |[TableControl （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定一組使用這個資料表的檢視定義的.NET 型別。|
 |[TableControl （格式） 的 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定使用此資料表的檢視定義的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[TableRowEntry TableControl （格式） 的項目](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定義會顯示在資料表資料列的資料。|
 

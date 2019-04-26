@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 221cbdc2-f794-4f3a-9d40-bfdd8cba1013
 caps.latest.revision: 6
 ms.openlocfilehash: aae65789cf5572cbcc9251eca802a2d43065e49f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858264"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064759"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-groupby-format"></a>GroupBy 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858264"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`PropertyName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56858264"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ItemSelectionCondition ExpressionBinding 的 GroupBy （格式） 的項目](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|定義要使用這個控制項必須存在的條件。|
 

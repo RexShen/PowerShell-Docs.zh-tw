@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ce442990-b5f1-4334-b6d8-080e527ccea1
 caps.latest.revision: 7
 ms.openlocfilehash: 1b5977bbc9c08182f73456fae2595cbaa16a9c86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081541"
 ---
 # <a name="runspace02-code-samples"></a>Runspace02 程式碼範例
 
@@ -21,7 +21,7 @@ ms.locfileid: "56856574"
 
 完整的範例程式碼，請參閱下列主題。
 
-|語言|主題|
+|Language|主題|
 |--------------|-----------|
 |C#|[Runspace02 (C#) 程式碼範例](./runspace02-csharp-code-sample.md)|
 |VB.NET|[Runspace02 (VB.NET) 程式碼範例](./runspace02-vb-net-code-sample.md)|

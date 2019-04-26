@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
 caps.latest.revision: 10
 ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858284"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064130"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56858284"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionCondition`項目。 您必須指定單一`PropertyName`或`ScriptBlock`項目。 `SelectionSetName`和`TypeName`元素是選擇性的。 您可以指定其中一個可能是項目。
 
@@ -49,9 +49,9 @@ ms.locfileid: "56858284"
 |[針對 EnumerableExpansion （格式） 的 EntrySelectedBy SelectionCondition SelectionSetName 項目](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 型別集。|
 |[針對 EnumerableExpansion （格式） 的 EntrySelectedBy SelectionCondition TypeName 項目](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EntrySelectedBy EnumerableExpansion （格式） 的項目](./entryselectedby-element-for-enumerableexpansion-format.md)|定義此定義會展開.NET 集合物件。|
 

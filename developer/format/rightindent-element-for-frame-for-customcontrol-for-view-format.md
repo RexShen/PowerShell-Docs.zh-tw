@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 501ccacc-5b3a-45b5-ae41-2f1e0675d416
 caps.latest.revision: 6
 ms.openlocfilehash: 0e93e2aca04f6a93016fe6b24137aee34dcf7e91
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064844"
 ---
 # <a name="rightindent-element-for-frame-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的框架的 RightIndent 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58058788"
 <RightIndent>CharactersToShift</RightIndent>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`RightIndent`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "58058788"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomControl 檢視 （格式） 的 CustomItem 的框架項目](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|定義資料的顯示方式，例如將資料轉移至左邊或右邊。|
 

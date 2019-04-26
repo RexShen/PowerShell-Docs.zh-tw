@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1ca84152-c2b7-492c-8a2e-d0587ab9d7b9
 caps.latest.revision: 9
 ms.openlocfilehash: 48ef14b2a70eecb6ae885739dd3c58ef6e9adb1f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861754"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065048"
 ---
 # <a name="newline-element-for-customitem-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomItem 的 NewLine 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56861754"
 <NewLine/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`NewLine`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56861754"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomItem CustomEntry 檢視 （格式） 的項目](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂的控制項檢視的控制項。|
 

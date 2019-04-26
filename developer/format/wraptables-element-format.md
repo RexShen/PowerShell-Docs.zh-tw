@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 47358eca-7719-4d77-9e49-676b78e25aec
 caps.latest.revision: 7
 ms.openlocfilehash: 66d32f1a5c4994ae578aea0a2a52c2510f97a3b9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856214"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083570"
 ---
 # <a name="wraptables-element-format"></a>WrapTables 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856214"
 <WrapTables/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`WrapTables`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856214"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[DefaultSettings 項目 （格式）](./defaultsettings-element-format.md)|定義套用至的格式化檔案的所有檢視的常見設定。|
 

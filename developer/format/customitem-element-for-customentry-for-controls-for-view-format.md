@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 33cb5350-73ef-4b79-a879-0edf051869e4
 caps.latest.revision: 7
 ms.openlocfilehash: 174ba6a14819f823ec39f72e49a626e781221d8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855604"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066374"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-view-format"></a>檢視之控制項的 CustomEntry 的 CustomItem 元素 (格式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56855604"
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomItem`項目。 如需詳細資訊，請參閱 < 備註 >。
 
@@ -49,9 +49,9 @@ ms.locfileid: "56855604"
 |[CustomItem 控制項的檢視 （格式） 的新行項目](./newline-element-for-customitem-for-controls-for-view-format.md)|選擇性的項目。<br /><br /> 將控制項的顯示中的空白行。|
 |[CustomItem 用於檢視 （格式） 的控制項的文字項目](./text-element-for-customitem-for-controls-for-view-format.md)|選擇性的項目。<br /><br /> 將控制項的顯示文字，例如括號或括號。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[用於檢視 （格式） 的控制項 CustomEntries CustomEntry 項目](./customentry-element-for-customentries-for-controls-for-view-format.md)|提供控制項的定義。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c5242935-2782-4d23-84f5-2446b2b7ba83
 caps.latest.revision: 8
 ms.openlocfilehash: c9abd9f22907b87323c16d603a9f75bb3d375a03
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856314"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066629"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format"></a>設定之控制項的 ExpressionBinding 的 CustomControlName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856314"
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomControlName`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856314"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem 組態 （格式） 的控制項的項目](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|定義控制項所顯示的資料。|
 

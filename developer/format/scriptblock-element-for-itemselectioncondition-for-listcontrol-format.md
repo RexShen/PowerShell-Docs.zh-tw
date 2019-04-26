@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c929a6df-d050-416a-9de0-e913dd5a035c
 caps.latest.revision: 8
 ms.openlocfilehash: a0768a9c1ac66cd9dcf1848c4b031ccbc722b4c2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064402"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-listcontrol-format"></a>ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56855414"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目，以及的父項目`ScriptBlock`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56855414"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ItemSelectionCondition ListControl （格式） 的 ListItem 元素](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)|定義要使用此清單項目必須存在的條件。|
 

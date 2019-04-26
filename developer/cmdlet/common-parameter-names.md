@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059655"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068417"
 ---
 # <a name="common-parameter-names"></a>一般參數名稱
 
@@ -34,7 +34,7 @@ ms.locfileid: "58059655"
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (別名： ea)
 
-資料類型：列舉
+資料類型：列舉型別
 
 此參數會指定何種動作發生錯誤時，應該會發生。 可能的值，這個參數會定義所[System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列舉型別。
 
@@ -64,7 +64,7 @@ ms.locfileid: "58059655"
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (別名： wa)
 
-資料類型：列舉
+資料類型：列舉型別
 
 此參數會指定此 cmdlet 會寫入一則警告訊息時，動作應該會發生。 可能的值，這個參數會定義所[System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列舉型別。
 

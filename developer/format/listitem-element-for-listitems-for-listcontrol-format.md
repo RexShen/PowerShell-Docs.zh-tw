@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0f96f4f5-8bd5-43ed-95e7-a7358115999a
 caps.latest.revision: 11
 ms.openlocfilehash: 1e0a1b2d20853650328b8cfd1513a08f7e167cd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065762"
 ---
 # <a name="listitem-element-for-listitems-for-listcontrol-format"></a>ListControl 之 ListItems 的 ListItem 元素 (格式)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56855154"
 </ListItem>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ListItem`項目。 可以指定只有一個屬性或指令碼。
 
@@ -51,9 +51,9 @@ ms.locfileid: "56855154"
 |[PropertyName ListControl （格式） 的 ListItem 元素](./propertyname-element-for-listitem-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定其值會顯示資料列中的.NET 屬性。|
 |[ScriptBlock ListControl （格式） 的 ListItem 元素](./scriptblock-element-for-listitem-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定資料列中顯示其值的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[清單控制項 （格式） 的 ListItems 項目](./listitems-element-for-listentry-for-listcontrol-format.md)|定義屬性和其值會顯示在清單檢視中的指令碼。|
 

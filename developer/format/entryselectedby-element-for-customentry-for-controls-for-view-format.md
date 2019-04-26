@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b3d80a7d-3797-4c46-ae74-ae5cda79b24f
 caps.latest.revision: 8
 ms.openlocfilehash: efb20c3f2077547e6eb3cb28240512b444f9c481
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859534"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066238"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>檢視之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56859534"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`EntrySelectedBy`項目。 您必須指定至少一個型別、 選取項目集或選擇條件的定義。 沒有任何子項目的，您可以使用數字的最大限制。
 
@@ -47,9 +47,9 @@ ms.locfileid: "56859534"
 |[用於檢視 （格式） 的控制項 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)|選擇性的項目。<br /><br /> 指定一組使用這個控制項定義的.NET 型別。|
 |[用於檢視 （格式） 的控制項 EntrySelectedBy TypeName 項目](./typename-element-for-entryselectedby-for-controls-for-view-format.md)|選擇性的項目。<br /><br /> 指定使用這個控制項定義的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[用於檢視 （格式） 的控制項 CustomEntries CustomEntry 項目](./customentry-element-for-customentries-for-controls-for-view-format.md)|提供控制項的定義。|
 

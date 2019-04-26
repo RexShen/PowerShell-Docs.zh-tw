@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
 caps.latest.revision: 10
 ms.openlocfilehash: 6bc0ccbcc5bd62429f63ed220da66dc66f44f7ca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065439"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56861864"
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ItemSelectionCondition`項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56861864"
 |[PropertyName ItemSelectionCondition 如 ListControl （格式） 的項目](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 屬性。|
 |[ItemSelectionCondition ListControl （格式） 的指令碼區塊項目](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定的指令碼，就會觸發條件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ListItems ListControl （格式） 的 ListItem 項目](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或其值會顯示 [清單] 檢視的資料列中的指令碼。|
 

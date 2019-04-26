@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 912f3e63-e4d5-41ce-8710-6dfd8c885dc2
 caps.latest.revision: 12
 ms.openlocfilehash: 2faca6021dc26878869bdd2d35bc4ffc64d0fe7b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075659"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56861234"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和 SelectionCondition 元素的父項目。
 
@@ -49,9 +49,9 @@ ms.locfileid: "56861234"
 |[針對 TableRowEntry （格式） 的 EntrySelectedBy SelectionCondition SelectionSetName 項目](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定的觸發條件的.NET 型別集。|
 |[針對 TableRowEntry （格式） 的 EntrySelectedBy SelectionCondition TypeName 項目](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 型別。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EntrySelectedBy TableRowEntry （格式） 的項目](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義.NET 型別，使用此資料表項目或要使用此項目必須存在的條件。|
 

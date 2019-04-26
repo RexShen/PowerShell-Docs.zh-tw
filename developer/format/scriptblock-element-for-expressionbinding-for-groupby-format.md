@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3e022ec4-8531-468e-96ff-77607755ec92
 caps.latest.revision: 6
 ms.openlocfilehash: 9afa53e1c7d1edabdbff56c4e59fcef0cf1647e3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856844"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064453"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-groupby-format"></a>GroupBy 之 ExpressionBinding 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856844"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ScriptBlock`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56856844"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ExpressionBinding CustomItem 的 GroupBy （格式） 的項目](./expressionbinding-element-for-customitem-for-groupby-format.md)|定義控制項所顯示的資料。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 66d8c63c-6ce4-480d-ad65-e777052c3818
 caps.latest.revision: 6
 ms.openlocfilehash: dc8f1058448a0cf9720014972b736694de759404
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063899"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>GroupBy 之 CustomItem 的文字元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56857424"
 <Text>TextToDisplay</Text>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Text`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56857424"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-groupby-format.md)|定義自訂的控制項檢視的控制項。|
 

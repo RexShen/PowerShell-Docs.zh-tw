@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
 caps.latest.revision: 11
 ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861814"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066442"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntries 的 CustomEntry 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56861814"
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomEntry`項目。 您必須指定定義所顯示的項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56861814"
 |[EntrySelectedBy CustomEntry 檢視 （格式） 的項目](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|選擇性的項目。<br /><br /> 定義使用自訂的控制項檢視或必須存在於要使用此定義條件的定義的.NET 類型。|
 |[CustomItem CustomEntry 檢視 （格式） 的項目](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂控制項定義的控制項。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomEntries CustomControl 檢視 （格式） 的項目](./customentries-element-for-customcontrol-for-view-format.md)|提供自訂的控制項檢視的定義。 自訂控制項的檢視必須指定一個或多個定義。|
 

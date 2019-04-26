@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
 caps.latest.revision: 8
 ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054215"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065966"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的框架的 FirstLineHanging 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58054215"
 <FirstLineHanging>NumberOfCharactersToShift</FirstLineHanging>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`FirstLineHanging`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "58054215"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[CustomControl 檢視 （格式） 的 CustomItem 的框架項目](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|定義資料的顯示方式，例如將資料轉移至左邊或右邊。|
 

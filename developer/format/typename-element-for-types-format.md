@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
 caps.latest.revision: 15
 ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057921"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083785"
 ---
 # <a name="typename-element-for-types-format"></a>類型的 TypeName 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58057921"
 <TypeName>Nameof.NetType</Name>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TypeName`項目。 至少一個`TypeName`元素必須包含在選取項目集。
 
@@ -39,9 +39,9 @@ ms.locfileid: "58057921"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[類型項目 （格式）](./types-element-for-selectionset-format.md)|定義選取範圍中設定的.NET 物件。|
 

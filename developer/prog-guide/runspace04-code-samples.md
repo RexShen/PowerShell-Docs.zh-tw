@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: cb6fcc47-cf89-43e7-b686-3d60934ce3e7
 caps.latest.revision: 6
 ms.openlocfilehash: 2a3e7598c433027fdd96343829c0606fc7b1c37c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429460"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081354"
 ---
 # <a name="runspace04-code-samples"></a>RunSpace04 程式碼範例
 
@@ -26,7 +26,7 @@ ms.locfileid: "57429460"
 
 完整的範例程式碼，請參閱下列主題。
 
-|語言|主題|
+|Language|主題|
 |--------------|-----------|
 |VB.NET|[Runspace01 (VB.NET) 程式碼範例](./runspace01-vb-net-code-sample.md)|
 

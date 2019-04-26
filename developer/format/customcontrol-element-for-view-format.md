@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2edac16c-0b30-4985-ac84-0821aa9a9f6d
 caps.latest.revision: 12
 ms.openlocfilehash: bd0f7ca4de8dede97d1553cd62884ea45876e0c7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066663"
 ---
 # <a name="customcontrol-element-for-view-format"></a>檢視的 CustomControl 元素 (格式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56861254"
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomControl`項目。 您必須指定一個子項目。
 
@@ -43,9 +43,9 @@ ms.locfileid: "56861254"
 |-------------|-----------------|
 |[CustomEntries CustomControl 檢視 （格式） 的項目](./customentries-element-for-customcontrol-for-view-format.md)|必要項目。<br /><br /> 提供自訂的控制項檢視的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[檢視項目 （格式）](./view-element-format.md)|定義用來顯示一或多個.NET 物件的檢視。|
 

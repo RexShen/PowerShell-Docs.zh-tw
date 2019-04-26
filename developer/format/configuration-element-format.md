@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
 caps.latest.revision: 28
 ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856324"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066816"
 ---
 # <a name="configuration-element-format"></a>設定元素 (格式)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56856324"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Configuration`項目。 此元素必須是每個格式檔案的根項目及這個項目必須包含至少一個子項目。
 
@@ -50,7 +50,7 @@ ms.locfileid: "56856324"
 |[SelectionSets 項目格式](./selectionsets-element-format.md)|選擇性的項目。<br /><br /> 定義通用的集合，可供所有檢視的格式化檔案的.NET 物件。|
 |[ViewDefinitions 項目 （格式）](./viewdefinitions-element-format.md)|選擇性的項目。<br /><br /> 定義用來顯示物件的檢視。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 無。
 

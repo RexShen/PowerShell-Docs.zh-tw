@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 2987cb45-f646-45d4-b81b-7871e77af36f
 caps.latest.revision: 5
 ms.openlocfilehash: dcf4f8b2bbd422067ffdf9b3b4972e279e91edf9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860364"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066467"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>GroupBy 之 CustomControl 的 CustomEntry 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56860364"
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目，以及的父項目`CustomEntry`項目。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56860364"
 |[GroupBy （格式） 的 CustomEntry EntrySelectedBy 項目](./entryselectedby-element-for-customentry-for-groupby-format.md)|選擇性的項目。<br /><br /> 定義使用此控制項定義或必須存在於要使用此定義條件的.NET 類型。|
 |[GroupBy （格式） 的 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-groupby-format.md)|必要項目。<br /><br /> 定義控制項顯示資料的方式。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomControl CustomEntries 項目](./customentries-element-for-customcontrol-for-groupby-format.md)|提供控制項的定義。|
 

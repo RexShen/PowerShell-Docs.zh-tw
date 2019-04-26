@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
 caps.latest.revision: 11
 ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065405"
 ---
 # <a name="label-element-for-groupby-format"></a>GroupBy 的標籤元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56862394"
 <Label>DisplayedLabel</Label>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Label`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56862394"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[檢視 （格式） 的 GroupBy 元素](./groupby-element-for-view-format.md)|定義新的一整組物件的顯示方式。|
 

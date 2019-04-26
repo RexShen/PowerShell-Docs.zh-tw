@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c6649d07-4762-4602-9b4b-d9e2e9e63312
 caps.latest.revision: 13
 ms.openlocfilehash: 531ff447f8407a737131a38351d7e4c6e7da90fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855134"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065934"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-configuration-format"></a>設定之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)
 
@@ -34,7 +34,7 @@ ms.locfileid: "56855134"
 </ExpressionBinding>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`ExpressionBinding`項目。
 
@@ -53,9 +53,9 @@ ms.locfileid: "56855134"
 |[PropertyName ExpressionBinding 組態 （格式） 的控制項的項目](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 指定其值會顯示通用控制項的.NET 屬性。|
 |[ExpressionBinding 組態 （格式） 的控制項的指令碼區塊項目](./scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md)|選擇性的項目。<br /><br /> 指定其值常見的控制項所顯示的指令碼。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[組態控制項 CustomEntry CustomItem 項目](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|定義自訂的控制項檢視所顯示的資料和顯示方式。|
 

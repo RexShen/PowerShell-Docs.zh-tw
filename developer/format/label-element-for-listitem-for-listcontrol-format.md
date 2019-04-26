@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c693ff46-d1ad-4dc7-93ac-41ff2fc6c103
 caps.latest.revision: 9
 ms.openlocfilehash: c1293d5a1f942704ac01388c66bd9009fd340e82
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854774"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065422"
 ---
 # <a name="label-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的標籤元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56854774"
 <Label>Label for displayed value</Label>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Label`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56854774"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[ListItems ListControl （格式） 的 ListItem 項目](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或其值會顯示 [清單] 檢視的資料列中的指令碼。|
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
 caps.latest.revision: 9
 ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066000"
 ---
 # <a name="expand-element-format"></a>展開元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858574"
 <Expand>EnumOnly, CoreOnly, Both</Expand>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`Expand`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56858574"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EnumerableExpansion 項目 （格式）](./enumerableexpansion-element-format.md)|定義在檢視中顯示時，會展開物件的特定.NET 集合。|
 

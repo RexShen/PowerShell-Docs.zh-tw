@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c9c6e18f-6cca-465c-bd20-3969e7897a96
 caps.latest.revision: 10
 ms.openlocfilehash: 6b6a4a4647412d11d947f1dc4ea12d1e05ff536e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856794"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064013"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>WideControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56856794"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionSetName`項目。
 
@@ -40,9 +40,9 @@ ms.locfileid: "56856794"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[EntrySelectedBy WideEntry （格式） 的項目](./entryselectedby-element-for-wideentry-format.md)|定義.NET 型別，使用此寬的項目或要使用此項目必須存在的條件。|
 

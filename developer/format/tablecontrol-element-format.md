@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
 ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063821"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl 元素 (格式)
 
@@ -33,7 +33,7 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`TableControl`項目。 您必須指定資料表的資料列。 所有其他子項目是選擇性的。
 
@@ -50,9 +50,9 @@ ViewDefinitions 項目 （格式） 檢視項目 （格式） TableControl 項�
 |[TableHeaders TableControl （格式） 的項目](./tableheaders-element-format.md)|必要項目。<br /><br /> 定義標籤、 寬度和資料行的資料表檢視資料的對齊方式。|
 |[TableRowEntries TableControl （格式） 的項目](./tablerowentries-element-for-tablecontrol-format.md)|選擇性的項目。<br /><br /> 提供 [資料表] 檢視的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[檢視項目 （格式）](./view-element-format.md)|定義的檢視，用來顯示一或多個物件的成員。|
 

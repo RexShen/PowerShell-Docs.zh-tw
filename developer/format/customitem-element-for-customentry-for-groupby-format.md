@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f7c517aa-24f5-41ae-b82d-cb0fac81a245
 caps.latest.revision: 7
 ms.openlocfilehash: 2d821f5e3bc8d0f81ef8a8a040c6f9bcb1658bee
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856924"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066390"
 ---
 # <a name="customitem-element-for-customentry-for-groupby-format"></a>GroupBy 之 CustomEntry 的 CustomItem 元素 (格式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56856924"
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`CustomItem`項目。
 
@@ -49,9 +49,9 @@ ms.locfileid: "56856924"
 |[CustomItem 的 GroupBy （格式） 的新行項目](./newline-element-for-customitem-for-groupby-format.md)|選擇性的項目。<br /><br /> 將控制項的顯示中的空白行。|
 |[GroupBy （格式） 的 CustomItem 的文字項目](./text-element-for-customitem-for-groupby-format.md)|選擇性的項目。<br /><br /> 指定要由控制項所顯示的資料的其他文字。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomControl CustomEntry 項目](./customentry-element-for-customcontrol-for-groupby-format.md)|提供自訂的控制項檢視的定義。|
 

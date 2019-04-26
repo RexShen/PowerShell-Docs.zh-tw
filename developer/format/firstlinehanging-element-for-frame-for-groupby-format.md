@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1cdcf66e-96a5-47b5-9269-b4330bde29f2
 caps.latest.revision: 6
 ms.openlocfilehash: 08db1f2d89c3fe6c1e9a5a522de3071425042c3f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065819"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>GroupBy 之框架的 FirstLineHanging 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56855614"
 <FirstLineHanging>NumberOfCharactersToShift</FirstLineHanging>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`FirstLineHanging`項目。
 
@@ -39,9 +39,9 @@ ms.locfileid: "56855614"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[GroupBy （格式） 的 CustomItem 的框架項目](./frame-element-for-customitem-for-groupby-format.md)|定義資料的顯示方式，例如將資料轉移至左邊或右邊。|
 

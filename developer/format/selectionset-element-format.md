@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
 caps.latest.revision: 17
 ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861154"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076305"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet 元素 (格式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56861154"
 </SelectionSet>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
 下列各節說明屬性、 子項目和父項目`SelectionSet`項目。 每個選取項目集必須具有名稱，而且必須指定.NET 物件的集合。
 
@@ -45,9 +45,9 @@ ms.locfileid: "56861154"
 |[SelectionSet （格式） 的 name 元素](./name-element-for-selectionset-format.md)|必要項目。<br /><br /> 指定用來參考選取項目集的名稱。|
 |[類型項目 （格式）](./types-element-for-selectionset-format.md)|必要項目。<br /><br /> 定義選取範圍中設定的.NET 物件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[SelectionSets 項目格式](./selectionsets-element-format.md)|定義通用的集合，可供所有檢視的格式化檔案的.NET 物件。|
 
