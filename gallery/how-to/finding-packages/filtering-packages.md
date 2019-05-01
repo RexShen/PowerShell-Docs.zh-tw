@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 篩選搜尋結果
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003747"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084397"
 ---
 # <a name="filtering-search-results"></a>篩選搜尋結果
 
@@ -41,7 +41,7 @@ ms.locfileid: "50003747"
 
 > [!NOTE]
 > 篩選條件是內含的。
-> 範例︰如果選取了 [Cmdlet] 或 [函式] 之一或兩者皆選取，將會出現同時包含 Cmdlet 和函數的套件。
+> 範例：若已核取 [Cmdlet] 或 [函式] (或兩者)，將會顯示同時包含 Cmdlet 和函式的套件。
 > 如果未選取兩者，則不會顯示套件。
 > 同樣地，如果選取所有類別，則只會顯示包含其中一種類別的套件。
 > **不屬於所有這些類別的套件都不會出現。**

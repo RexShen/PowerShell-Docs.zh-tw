@@ -3,19 +3,19 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 在節點上套用、取得並測試設定
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400855"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079705"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>在節點上套用、取得並測試設定
 
-本指南將示範如何使用組態在目標節點上。 本指南會分成下列步驟：
+本指南將示範如何在目標節點上使用設定。 本指南會分成下列步驟：
 
-## <a name="apply-a-configuration"></a>套用組態
+## <a name="apply-a-configuration"></a>套用設定
 
-若要套用管理設定，我們要產生 「.mof 」 檔案。 下列程式碼將代表簡單的設定將用於本指南。
+為了套用和管理設定，我們需要產生一個 ".mof" 檔案。 下列程式碼表示將在這整份指南中使用的簡單設定。
 
 ```powershell
 Configuration Sample
@@ -36,7 +36,7 @@ Configuration Sample
 Sample -OutputPath "C:\Temp\"
 ```
 
-編譯此組態會產生兩個 「.mof 」 檔案。
+編譯此設定將產生兩個 ".mof" 檔案。
 
 ```output
 Mode                LastWriteTime     Length Name
@@ -45,13 +45,13 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-若要套用設定，請使用[Start-dscconfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet。 `-Path`參數指定".mof 」 檔案所在的目錄。 如果沒有`-Computername`指定，則`Start-DSCConfiguration`會嘗試將每個組態套用至 '.mof' 檔案的名稱所指定電腦名稱 (\<computername\>.mof)。 指定`-Verbose`至`Start-DSCConfiguration`以查看更詳細的輸出。
+若要套用設定，請使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet。 `-Path` 參數會指定 ".mof" 檔案所在的目錄。 若未指定 `-Computername`，`Start-DSCConfiguration` 會嘗試將每個設定套用至 '.mof' 檔案名稱 (\<computername\>.mof) 所指定的電腦名稱。 為 `Start-DSCConfiguration` 指定 `-Verbose` 以查看更詳盡的輸出。
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
 ```
 
-如果`-Wait`未指定，您會看到建立的一項作業。 建立的作業會有一個**ChildJob**每個 「.mof"檔案處理`Start-DSCConfiguration`。
+若未指定 `-Wait`，您就會看到建立了一個作業。 針對 `Start-DSCConfiguration` 所處理的每個 ".mof" 檔案，所建立的作業將會有一個 **ChildJob**。
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -59,13 +59,13 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 45     Job45           Configuratio... Running       True            localhost,server02   Start-DSCConfiguration...
 ```
 
-如果設定花費很長的時間，而且您想要將它停止，您可以使用[Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)本機節點上停止應用程式。
+如果設定花費了很長的時間，而您想要停止它，您可以使用 [Stop-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration) 來停止本機節點上的應用程式。
 
 ```powershell
 Stop-DSCConfiguration -Force
 ```
 
-完成後，您可以檢視所傳回的工作物件透過作業的狀態[Get-job](/powershell/module/microsoft.powershell.core/get-job)。
+完成之後，您就能透過 [Get-Job](/powershell/module/microsoft.powershell.core/get-job) 所傳回的作業物件來檢視作業的狀態。
 
 ```powershell
 $job = Get-Job
@@ -79,7 +79,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 50     Job50           Configuratio... Completed     True            server02             Start-DSCConfiguration...
 ```
 
-若要查看**Verbose**輸出，使用下列命令來檢視**Verbose**每個資料流**ChildJob**。 如需有關 PowerShell 工作的詳細資訊，請參閱[about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)。
+若要查看 **Verbose** 輸出，使用下列命令來檢視每個 **ChildJob** 的 **Verbose** 資料流。 如需 PowerShell 作業的詳細資訊，請參閱 [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)。
 
 ```powershell
 # View the verbose output of the localhost job using array indexing.
@@ -101,37 +101,37 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-從 PowerShell 5.0`-UseExisting`參數已加入至`Start-DSCConfiguration`。 藉由指定`-UseExisting`，您可以指示 cmdlet 來使用現有套用的設定，而不是一個由`-Path`參數。
+從 PowerShell 5.0 開始，已在 `Start-DSCConfiguration` 中新增 `-UseExisting` 參數。 藉由指定 `-UseExisting`，您可以指示 Cmdlet 使用目前套用的設定，而不是 `-Path` 參數所指定的設定。
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait
 ```
 
-## <a name="test-a-configuration"></a>測試組態
+## <a name="test-a-configuration"></a>測試設定
 
-您可以測試目前套用的設定使用[Test-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)。 `Test-DSCConfiguration` 會傳回`True`如果節點是符合規範，與`False`如果不是。
+您可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) 來測試目前套用的設定。 如果節點符合規範，`Test-DSCConfiguration` 將傳回 `True`，如果不符合，則會傳回 `False`。
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-從 PowerShell 5.0`-Detailed`已新增參數，它會傳回集合的物件**ResourcesInDesiredState**和**ResourcesNotInDesiredState**
+從 PowerShell 5.0 開始，已新增 `-Detailed` 參數，它會傳回一個物件，其中含有適用於 **ResourcesInDesiredState** 和 **ResourcesNotInDesiredState** 的集合
 
 ```powershell
 Test-DSCConfiguration -Detailed
 ```
 
-在 PowerShell 5.0 開始，可以測試組態而不套用它。 `-ReferenceConfiguration`參數可接受的 「.mof"檔案來測試依據的節點路徑。 否**設定**動作都會針對該節點。 在 PowerShell 4.0 中，有因應措施若要測試組態，而不套用它，但不是會在此討論。
+從 PowerShell 5.0 開始，您可以在不套用設定的情況下測試設定。 `-ReferenceConfiguration` 參數會接受 ".mof" 檔案的路徑，據以測試節點。 不需針對節點採取任何**設定**動作。 PowerShell 4.0 中提供可在不套用設定的情況下測試設定的因應措施，但不會在此討論它們。
 
-## <a name="get-configuration-values"></a>取得組態值
+## <a name="get-configuration-values"></a>取得設定值
 
-[Get-dscconfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet 會傳回在目前套用的設定中設定的任何資源的目前值。
+[Get-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) Cmdlet 會傳回目前套用的設定中任何已設定資源的目前值。
 
 ```powershell
 Get-DSCConfiguration
 ```
 
-如果已成功套用，從我們的範例組態的輸出會看起來像這樣。
+如果成功套用，則我們範例設定的輸出看起來像這樣。
 
 ```output
 ConfigurationName    : Sample
@@ -162,7 +162,7 @@ CimClassName         : MSFT_FileDirectoryConfiguration
 
 ## <a name="get-configuration-status"></a>取得設定狀態
 
-從 PowerShell 5.0 [Get-dscconfigurationstatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet 可讓您查看的節點套用組態的歷程記錄。 PowerShell DSC 記錄的最後的 {{N}} 設定中套用**推播**或是**提取**模式。 這包括任何*一致性*LCM 所執行的檢查。 根據預設，`Get-DSCConfigurationStatus`之最後一個記錄項目只會顯示您。
+從 PowerShell 5.0 開始，[Get-DSCConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) Cmdlet 可讓您查看將設定套用至節點的記錄。 PowerShell DSC 會持續追蹤在**推送**或**提取**模式中最後套用的 {{N}} 個設定。 這包括 LCM 所執行的任何「一致性」檢查。 根據預設，`Get-DSCConfigurationStatus` 只會顯示最後一個記錄項目。
 
 ```powershell
 Get-DSCConfigurationStatus
@@ -174,10 +174,10 @@ Status     StartDate                 Type            Mode  RebootRequested      
 Success    11/27/2018 7:18:40 AM     Consistency     PUSH  False                1
 ```
 
-使用`-All`參數，以查看所有的組態狀態歷程記錄。
+使用 `-All` 參數來查看所有設定狀態記錄。
 
 > [!NOTE]
-> 為求簡單明瞭，便會截斷輸出。
+> 為求簡單明瞭，會截斷輸出。
 
 ```powershell
 Get-DSCConfigurationStatus -All
@@ -200,20 +200,20 @@ Success    11/27/2018 6:03:44 AM     Consistency     PUSH  False                
 
 ## <a name="manage-configuration-documents"></a>管理設定文件
 
-LCM 使用來管理節點的組態**設定文件**。 這些 「.mof"檔案位於 「 C:\Windows\System32\Configuration"的目錄中。
+LCM 會使用**設定文件**來管理節點的設定。 這些 ".mof" 檔案均位於 "C:\Windows\System32\Configuration" 目錄。
 
-從 PowerShell 5.0 [Remove-dscconfigurationdocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)可讓您移除 「.mof"檔案來停止未來的一致性檢查，或移除發生錯誤時套用的設定。 `-Stage`參數可讓您指定您想要移除哪一個 「.mof 」 檔案。
+從 PowerShell 5.0 開始，[Remove-DSCConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument) 可讓您移除 ".mof" 檔案，以停止未來的一致性檢查，或移除套用時發生錯誤的設定。 `-Stage` 參數可讓您指定要移除哪一個 ".mof" 檔案。
 
 ```powershell
 Remove-DSCConfigurationDocument -Stage Current
 ```
 
 > [!NOTE]
-> 在 PowerShell 4.0 中，您仍然可以移除直接使用這些 「.mof"檔案[Remove-item](/powershell/module/microsoft.powershell.management/remove-item)。
+> 在 PowerShell 4.0 中，您仍然可以直接使用 [Remove-Item](/powershell/module/microsoft.powershell.management/remove-item) 來移除這些 ".mof" 檔案。
 
-## <a name="publish-configurations"></a>發行設定
+## <a name="publish-configurations"></a>發佈設定
 
-從 PowerShell 5.0 [Publish-dscconfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) cmdlet 已新增。 此 cmdlet 可讓您發佈至遠端電腦的".mof 」 檔案，而不套用它。
+從 PowerShell 5.0 開始，已新增 [Publish-DSCConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) Cmdlet。 此 Cmdlet 可讓您將 ".mof" 檔案發佈至遠端電腦，而不需套用它。
 
 ```powershell
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)

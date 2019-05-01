@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 管理套件擁有者
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084142"
 ---
 # <a name="managing-package-owners"></a>管理套件擁有者
 
@@ -34,7 +34,7 @@ PowerShell 資源庫中套件的擁有權，是由將該套件發行到資源庫
 5. 新的共同擁有者接著便會收到電子郵件，邀請他成為套件擁有者。
 6. 使用者按一下連結後便能成為完整的共同擁有者，並對套件有完整控制權，包括能夠移除其他身為擁有者的使用者。
 
-**注意**：在新擁有者確認擁有權之前，其將「不會」被列為套件的擁有者。
+**注意**：在新的擁有者確認擁有權之前，「不會」將其列為套件的擁有者。
 檢視 [管理擁有者] 頁面時，您會在目前的使用者看到「等待核准」項目。
 該邀請可被移除；就像其他擁有者也可被移除。
 此邀請程序可防止使用者將其他使用者誤加為套件擁有者。
@@ -56,7 +56,7 @@ PowerShell 資源庫中套件的擁有權，是由將該套件發行到資源庫
 ## <a name="transferring-package-ownership"></a>移轉套件擁有權
 
 我們有時候會收到想要將套件擁有權從一個使用者移轉到另一個使用者的支援要求，但使用者在大多數的情況下都可以自行完成此工作。
-只要結合上述兩項功能，就能將擁有權從一位使用者移轉給另一位。
+只要結合上述兩個功能，就能將擁有權從一位使用者移轉給另一位。
 
 1. 目前擁有者邀請新使用者成為共同擁有者，然後心使用者接受邀請；
 2. 新使用者從擁有者清單移除舊使用者。

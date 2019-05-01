@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623920"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085927"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的中斷性變更
 
@@ -210,7 +210,7 @@ ms.locfileid: "58623920"
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>在非 Windows 平台上將 `New-ModuleManifest` 編碼變更為 `UTF8NoBOM` [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
-先前，`New-ModuleManifest` 會以 UTF-16 建立含有 BOM 的 psd1 資訊清單，而導致對 Linux 工具造成問題。 此中斷性變更會在非 Windows 平台中，將 `New-ModuleManifest` 的編碼變更為 UTF (無 BOM)。
+先前，`New-ModuleManifest` 會以 UTF-16 建立含有 BOM 的 psd1 資訊清單，而導致對 Linux 工具造成問題。 這個中斷性變更會在非 Windows 平台中，將 `New-ModuleManifest` 的編碼變更為 UTF (無 BOM)。
 
 ### <a name="prevent-get-childitem-from-recursing-into-symlinks-1875-3780httpsgithubcompowershellpowershellissues3780"></a>防止 `Get-ChildItem` 遞迴到符號連結中 (#1875)。 [#3780](https://github.com/PowerShell/PowerShell/issues/3780)
 
@@ -226,7 +226,7 @@ ms.locfileid: "58623920"
 
 ### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319httpsgithubcompowershellpowershellissues3319"></a>作為預設殼層的 PowerShell 並不與指令碼命令搭配運作 [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
 
-在 Unix 上，殼層接受互動式殼層的 `-i` 是一項慣例，許多工具都預期此行為 (例如 `script`，以及將 PowerShell 設定為預設殼層時) 而會使用 `-i` 參數來呼叫殼層。 此變更之所以為中斷性變更，在於 `-i` 先前可用來作為用以比對 `-inputformat` 的簡寫，但現在則必須使用 `-in`。
+在 Unix 上，殼層接受互動式殼層的 `-i` 是一個慣例，許多工具都預期此行為 (例如 `script`，以及將 PowerShell 設定為預設殼層時) 而會使用 `-i` 參數來呼叫殼層。 此變更之所以為中斷性變更，在於 `-i` 先前可用來作為用以比對 `-inputformat` 的簡寫，但現在則必須使用 `-in`。
 
 ### <a name="typo-fix-in-get-computerinfo-property-name-3167httpsgithubcompowershellpowershellissues3167"></a>Get-ComputerInfo 屬性名稱中的錯字修正 [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
@@ -241,7 +241,7 @@ ms.locfileid: "58623920"
 
 ### <a name="add-validation-on-get--cmdlets-where-passing-null-returns-all-objects-instead-of-error-2672httpsgithubcompowershellpowershellissues2672"></a>在傳遞 $null 會傳回所有物件而非錯誤的 `Get-*` Cmdlet 上新增驗證 [#2672](https://github.com/PowerShell/PowerShell/issues/2672)
 
-將 `$null` 傳遞給下列任何一項現在都會擲回錯誤：
+將 `$null` 傳遞給下列任何一個現在都會擲回錯誤：
 
 - `Get-Credential -UserName`
 - `Get-Event -SourceIdentifier`

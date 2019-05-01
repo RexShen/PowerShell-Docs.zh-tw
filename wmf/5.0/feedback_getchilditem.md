@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: d9f1ca10c948b06b234e17f688b8f899ed41c5d6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cc5d2d799c1292f68de5fb2360fcba220c2c010b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221896"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085272"
 ---
 # <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem 具有 -Depth 參數
 **Get-ChildItem** 現在有 **–Depth** 參數，搭配 **–Recurse** 用來限制遞迴︰

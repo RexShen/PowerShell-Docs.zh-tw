@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 建立圖形化日期選擇器
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506796"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058602"
 ---
 # <a name="creating-a-graphical-date-picker"></a>建立圖形化日期選擇器
 
@@ -114,8 +114,8 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-同樣地，您也會建立 **[取消]** 按鈕。
-**[取消]** 按鈕距離上邊緣 165 像素，但距離視窗左邊緣 113 像素。
+同樣地，您也會建立 [取消] 按鈕。
+[取消] 按鈕距離上邊緣 165 像素，但距離視窗左邊緣 113 像素。
 
 ```powershell
 $CancelButton = New-Object Windows.Forms.Button -Property @{
@@ -146,6 +146,6 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>另請參閱
 
-- [Hey Scripting Guy:Why don’t these PowerShell GUI examples work? (指令碼高手您好：PowerShell GUI 範例為什麼動不起來？)](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub：Dave Wyatt's WinFormsExampleUpdates (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows 每週 PowerShell 祕訣：建立圖形化日期選擇器](https://technet.microsoft.com/library/ff730942.aspx)
+- [指令碼高手您好：PowerShell GUI 範例為什麼動不起來？](https://go.microsoft.com/fwlink/?LinkId=506644) \(英文\)
+- [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) \(英文\)
+- [本週 Windows PowerShell 祕訣︰建立圖形化日期選擇器](https://technet.microsoft.com/library/ff730942.aspx) \(英文\)

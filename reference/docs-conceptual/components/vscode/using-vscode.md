@@ -3,11 +3,11 @@ title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
 ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251382"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086711"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "57251382"
 
   > [!IMPORTANT]
   > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
-  > 完成這項作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。
+  > 完成此作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。
   > VS Code 現在可以成功載入 PowerShell 延伸模組。
 
 - **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
@@ -64,23 +64,23 @@ ms.locfileid: "57251382"
 若要關閉檔案，請按一下檔案名稱旁邊的 "x"。
 若要結束 Visual Studio Code，[檔案]->[結束]。
 
-### <a name="installing-the-powershell-extension-on-restricted-systems"></a>受限制的系統上安裝 PowerShell 延伸模組
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>在受限制的系統上安裝 PowerShell 延伸模組
 
-某些系統是設定需要檢查的所有程式碼簽章，並因此需要手動核准的系統上執行的 PowerShell Editor Services 的方式。
-變更執行原則的群組原則更新是可能的原因，如果您已安裝 PowerShell 延伸模組，但會達到類似的錯誤：
+某些系統已設定為需要檢查所有程式碼簽章，因此必須以手動方式核准 PowerShell Editor Services，才能在系統上執行。
+如果您已經安裝 PowerShell 延伸模組，但發生如下錯誤，變更執行原則的群組原則更新是可能的原因：
 
 ```
 Language server startup failed.
 ```
 
-若要手動核准 PowerShell Editor Services，因此 VSCode 的 PowerShell 延伸模組會開啟 PowerShell 提示字元並執行：
+若要手動核准 PowerShell Editor Services，讓適用於 VSCode 的 PowerShell 延伸模組開啟 PowerShell 提示字元並執行：
 
 ```powershell
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-系統會提示您使用 「 要從這個不受信任的發行者上執行軟體嗎？ 」
-型別`R`來執行此檔案。 然後，開啟 Visual Studio Code，並檢查 PowerShell 延伸模組正常運作。 如果您仍有問題的快速入門，讓我們知道[GitHub](https://github.com/PowerShell/vscode-powershell/issues)。
+系統會提示您「要執行來自這個不受信任的發行者的軟體嗎?」
+輸入 `R` 以執行檔案。 然後，開啟 Visual Studio Code 並檢查 PowerShell 延伸模組是否正常運作。 如果您仍有關於開始使用的問題，請透過 [GitHub](https://github.com/PowerShell/vscode-powershell/issues) \(英文\) 讓我們知道。
 
 #### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 的特定安裝版本
 
@@ -122,7 +122,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 }
 ```
 
-如果您不想讓這些設定會影響所有的檔案類型，VSCode 也可讓每個語言設定。 建立語言特定的設定將設定放入`[<language-name>]`欄位。 例如：
+如果您不希望這些設定影響所有的檔案類型，VSCode 也允許依照語言的設定。 透過將設定放入 `[<language-name>]` 欄位，以建立語言特定設定。 例如：
 
 ```json
 "[powershell]": {
@@ -131,17 +131,17 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 }
 ```
 
-如需有關檔案編碼方式在 VS Code 中，請參閱[了解檔案編碼](understanding-file-encoding.md)。
+如需有關 VS Code 中檔案編碼的詳細資訊，請參閱[了解檔案編碼](understanding-file-encoding.md)。
 
 ## <a name="debugging-with-visual-studio-code"></a>使用 Visual Studio Code 偵錯
 
 ### <a name="no-workspace-debugging"></a>無工作區偵錯
 
-使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。 開啟 PowerShell 指令碼檔案，與**檔案-> 開啟檔案...**，一條線 （按 F9） 上設定中斷點，然後按 F5 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
+使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。 以 [檔案] -> [開啟檔案] 開啟 PowerShell 指令碼檔案，在行上設定中斷點 (按 F9)，然後按 F5 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
-工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾...]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
+工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
 您開啟的資料夾通常是 PowerShell 專案資料夾及/或 Git 存放庫的根目錄。
 
 即使在此模式中，只要按下 F5 就可以開始偵錯目前選取的 PowerShell 指令碼。

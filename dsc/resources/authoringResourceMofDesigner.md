@@ -3,30 +3,30 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 [資源設計工具] 工具
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400712"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076662"
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
+資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 此資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 在本主題中，我們會建立管理 Active Directory 使用者的 DSC 資源。
 請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xDscResourceDesigner** 模組。
 
->**注意**：**Install-module**納入**PowerShellGet**模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
+>**注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
 
 ## <a name="creating-resource-properties"></a>建立資源屬性
 首先決定資源要公開的屬性。 本例中，我們會定義具有下列屬性的 Active Directory 使用者。
 
 參數名稱描述
-* .**user**name索引鍵的屬性是用來唯一識別使用者。
-* Ensure指定的使用者帳戶應為 Present 或不存在。 這個參數只會有兩個可能的值。
-* -DomainCredential使用者的網域密碼。
-* 密碼要變更使用者密碼，如有必要的組態，以便使用者想要的密碼。
+* **UserName**：唯一識別使用者的索引鍵屬性。
+* **Ensure**：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
+* **DomainCredential**：使用者的網域密碼。
+* **Password**：使用者視需要允許設定變更使用者密碼所需的密碼。
 
 我們使用 **New-xDscResourceProperty** Cmdlet 建立屬性。 下列 PowerShell 命令會建立上述的屬性。
 

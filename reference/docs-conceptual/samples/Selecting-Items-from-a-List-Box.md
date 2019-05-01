@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 從清單方塊選取項目
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679326"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086063"
 ---
 # <a name="selecting-items-from-a-list-box"></a>從清單方塊選取項目
 
@@ -179,6 +179,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另請參閱
 
-- [Hey Scripting Guy：Why don’t these PowerShell GUI examples work?](https://go.microsoft.com/fwlink/?LinkId=506644) (Hey Scripting Guy：PowerShell GUI 範例為什麼動不起來？)
-- [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
-- [本週 Windows PowerShell 秘訣︰從清單方塊選取項目](https://technet.microsoft.com/library/ff730949.aspx)
+- [指令碼高手您好：PowerShell GUI 範例為什麼動不起來？](https://go.microsoft.com/fwlink/?LinkId=506644) \(英文\)
+- [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) \(英文\)
+- [本週 Windows PowerShell 祕訣︰從清單方塊選取項目](https://technet.microsoft.com/library/ff730949.aspx) \(英文\)

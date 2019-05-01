@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 設定資料的認證選項
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55677029"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080147"
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 
@@ -25,7 +25,7 @@ DSC 也會在使用網域認證時產生警告。
 > [!NOTE]
 > 儲存/傳輸未加密的純文字密碼通常是不安全的。 建議您使用本主題稍後所涵蓋的技術來保護認證。
 > Azure Automation DSC 服務能讓您集中管理及安全儲存要在設定中編譯的認證。
-> 如需資訊，請參閱：[編譯 DSC 設定/認證資產](/azure/automation/automation-dsc-compile#credential-assets)
+> 如需詳細資訊，請參閱：[編譯 DSC 設定 / 認證資產](/azure/automation/automation-dsc-compile#credential-assets)
 
 ## <a name="handling-credentials-in-dsc"></a>處理 DSC 的認證
 
@@ -65,7 +65,7 @@ Group [String] #ResourceName
 
 如需 `PsDscRunAsCredential` 屬性的詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
 
-## <a name="example-the-group-resource-credential-property"></a>範例：Group 資源 Credential 屬性
+## <a name="example-the-group-resource-credential-property"></a>範例：群組資源認證屬性
 
 DSC 在 `Local System` 下執行，所以它已有可變更本機使用者和群組的權限。
 如果新增成員是本機帳戶，就不需要認證。
@@ -137,7 +137,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 1. 錯誤說明不建議純文字密碼
 2. 警告建議不要使用網域認證
 
-旗標**PSDSCAllowPlainTextPassword**並**PSDSCAllowDomainUser**隱藏錯誤和警告通知所涉及的風險的使用者。
+旗標 **PSDSCAllowPlainTextPassword** 和 **PSDSCAllowDomainUser** 會隱藏錯誤和警告，通知使用者所涉及的風險。
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-**PSDSCAllowPlainTextPassword**旗標會要求使用者確認在 MOF 檔案中儲存純文字密碼的風險。 在產生的 MOF 檔案中，即使**PSCredential**物件，包含**SecureString**使用，密碼仍然會顯示為純文字。 這是唯一的認證已公開的時間。 使其無法存取此 MOF 檔案可讓任何人存取的系統管理員帳戶。
+**PSDSCAllowPlainTextPassword** 旗標會要求使用者確認將純文字密碼儲存在 MOF 檔案中的風險。 在產生的 MOF 檔案中，即使使用包含 **SecureString** 的 **PSCredential** 物件，密碼仍然會顯示為純文字。 這是公開認證的唯一時間。 取得對此 MOF 檔案的存取權限，可讓任何人存取系統管理員帳戶。
 
 ```
 /*
@@ -218,14 +218,14 @@ ModuleVersion = "1.0";
 
 ### <a name="credentials-in-transit-and-at-rest"></a>傳輸中和待用的認證
 
-- **PSDscAllowPlainTextPassword**旗標可讓編譯的 MOF 檔案，其中包含以純文字密碼。
-  將包含純文字密碼的 MOF 檔案儲存時，請採取預防措施。
-- 傳遞的 MOF 檔案中的節點的時機**推播**模式中，WinRM 加密來保護的純文字密碼，除非您覆寫預設的通訊**AllowUnencrypted**參數。
-  - 加密的 MOF 使用憑證保護待用的 MOF 檔案，套用到節點之前。
-- 在 **提取**模式中，您可以設定 Windows 提取伺服器，以使用 HTTPS 來加密使用 Internet Information Server 中所指定的通訊協定的流量。 如需詳細資訊，請參閱文章[設定 DSC 提取用戶端](../pull-server/pullclient.md)並[使用憑證保護 MOF 檔案](../pull-server/secureMOF.md)。
-  - 在  [Azure 自動化狀態設定](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)服務，則提取一律會加密流量。
-- 在節點上待用加密 MOF 檔案從 PowerShell 5.0。
-  - 在 PowerShell 4.0 的 MOF 檔案是待用加密，除非推送或提取至節點時，使用憑證加密它們。
+- **PSDscAllowPlainTextPassword** 旗標允許編譯包含純文字密碼的 MOF 檔案。
+  儲存包含純文字密碼的 MOF 檔案時，請採取預防措施。
+- 當 MOF 檔案以**推送**模式傳送到節點時，WinRM 會加密通訊以保護純文字密碼，除非您使用 **AllowUnencrypted** 參數覆寫預設值。
+  - 使用憑證加密 MOF，可以在 MOF 檔案套用到節點之前保護待用檔案。
+- 在**提取**模式中，您可以將 Windows 提取伺服器設定為使用 HTTPS，以使用 Internet Information Server 中所指定的通訊協定來加密流量。 如需詳細資訊，請參閱[設定 DSC 提取用戶端](../pull-server/pullclient.md)和[使用憑證保護 MOF 檔案](../pull-server/secureMOF.md)文章。
+  - 在 [Azure 自動化狀態設定](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) \(機器翻譯\) 服務中，提取流量一律會加密。
+- 在節點上，MOF 檔案在待用時加密 (從 PowerShell 5.0 開始)。
+  - 在 PowerShell 4.0 中，MOF 檔案在待用時是未加密的，除非它們在推送或提取至節點時使用憑證加密。
 
 **Microsoft 不建議您使用純文字密碼，以免造成嚴重的安全性風險。**
 

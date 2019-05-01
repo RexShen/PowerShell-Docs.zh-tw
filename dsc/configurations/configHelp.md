@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 撰寫 DSC 設定的說明
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400827"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080170"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>撰寫 DSC 設定的說明
 
 >適用於：Windows PowerShell 5.0
 
-您可以在 DSC 設定中，以註解方式呈現說明。 使用者可以存取說明，藉由呼叫**組態**具有`-?`，或使用[Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet。 放置您上方的註解型說明`Configuration`關鍵字。
-您可以將參數說明內建與您的註解區塊，正上方參數宣告，或兩者如下列範例所示。
+您可以在 DSC 設定中，以註解方式呈現說明。 使用者可以呼叫**設定**加上 `-?`，或使用 [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet 存取說明。 將註解型說明直接放在 `Configuration` 關鍵字上方。
+您可以將參數說明與註解區塊一起放在參數宣告的正上方，或者兩者都放置，如以下範例所示。
 
 如需如何在 PowerShell 中，以註解方式呈現說明的詳細資訊，請參閱 [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)。
 
 > [!NOTE]
-> PowerShell 開發環境，例如 VSCode 與 ISE 中，也會有程式碼片段可讓您自動插入註解區塊的範本。
+> PowerShell 開發環境 (例如 VSCode 和 ISE) 也具有可讓您自動插入註解區塊範本的程式碼片段。
 
-下列範例顯示了包含設定及其註解式說明的指令碼。 這個範例示範具有參數的組態。 若要深入了解在您的組態中使用參數，請參閱[將參數加入至您的組態](add-parameters-to-a-configuration.md)。
+下列範例顯示了包含設定及其註解式說明的指令碼。 此範例顯示具有參數的設定。 若要深入了解在設定中使用參數的詳細資訊，請參閱[將參數加入至您的設定](add-parameters-to-a-configuration.md)。
 
 ```powershell
 <#
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>檢視設定說明
 
-若要檢視組態的說明，請使用`Get-Help`cmdlet 與函式或類型名稱的函式名稱後面加上`-?`。 以下是先前的設定傳遞至輸出`Get-Help`。
+若要檢視設定的說明，請使用 `Get-Help` Cmdlet 加上函式名稱，或輸入函式名稱加上 `-?`。 下列是將前一個設定傳遞給 `Get-Help` 後的輸出。
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,7 +157,7 @@ REMARKS
 ```
 
 > [!NOTE]
-> 語法欄位和參數屬性會自動為您產生 powershell。
+> PowerShell 會自動為您產生語法欄位和參數屬性。
 
 ## <a name="see-also"></a>另請參閱
 

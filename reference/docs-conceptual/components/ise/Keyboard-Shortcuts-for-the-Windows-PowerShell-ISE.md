@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的鍵盤快速鍵
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
 ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400642"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086828"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
@@ -20,7 +20,7 @@ ms.locfileid: "53400642"
 
 |動作|鍵盤快速鍵|使用位置|
 |----------|----------------------|----------|
-|**說明**|F1|指令碼窗格**重要：** 您可以指定 F1 說明來自 TechNet Library 網站上，或下載的說明 （請參閱 Update-help）。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
+|**說明**|F1|指令碼窗格 **重要︰** 您可以指定 F1 說明來自 Web 上的 TechNet Library 或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
 |**複製**|CTRL+C|指令碼窗格, 命令窗格, 輸出窗格|
 |**剪下**|CTRL+X|指令碼窗格, 命令窗格|
 |**展開或摺疊大綱**|CTRL+M|指令碼窗格|
@@ -47,8 +47,8 @@ ms.locfileid: "53400642"
 |**執行**|F5|
 |**執行選取項目**|F8|
 |**停止執行**|CTRL+BREAK 在內容明確 (未選取文字) 的情況下，可以使用 CTRL+C。|
-|**Tab** (至下一個指令碼)|CTRL + TAB**附註：** Tab 至下一個指令碼適用於只有單一的 Windows PowerShell 索引標籤，開啟，或當您有多個 Windows PowerShell 索引標籤上開啟，但焦點是在指令碼窗格中。|
-|**Tab** (至上一個指令碼)|CTRL + SHIFT + TAB**附註：** 當您有只有一個 Windows PowerShell 索引標籤上開啟，或如果您有多個 Windows PowerShell 索引標籤上開啟，但焦點是在指令碼窗格中，適用於至上一個指令碼 索引標籤。|
+|**Tab** (至下一個指令碼)|CTRL+TAB **注意：** Tab 至下一個指令碼僅適用於開啟單一 Windows PowerShell 索引標籤的情況，或開啟多個 Windows PowerShell 索引標籤，但焦點是在指令碼窗格的情況。|
+|**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意：** Tab 至上一個指令碼適用於只開啟一個 Windows PowerShell 索引標籤的情況，或開啟多個 Windows PowerShell 索引標籤，且焦點是在指令碼窗格的情況。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自訂檢視的鍵盤快速鍵
 
@@ -120,4 +120,4 @@ ms.locfileid: "53400642"
 
 ## <a name="see-also"></a>另請參閱
 
-- [PowerShell Magazine:Windows PowerShell ISE 的鍵盤快速鍵的完整清單](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell 雜誌：Windows PowerShell ISE 鍵盤快速鍵的完整清單](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/) \(英文\)

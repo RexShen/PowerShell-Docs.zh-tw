@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC 封存資源
 ms.openlocfilehash: d5ccd242d000a0907c6768f30923764be6bf20a3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077546"
 ---
 # <a name="dsc-archive-resource"></a>DSC 封存資源
 
@@ -35,7 +35,7 @@ Archive [string] #ResourceName
 |---|---|
 | Destination| 指定您想要確保的封存內容解壓縮位置。|
 | 路徑| 指定封存檔案的來源路徑。|
-| __Checksum__| 定義判斷兩個檔案是否相同時所使用的類型。 如不指定 __Checksum__，只會使用檔案或目錄名稱進行比較。 有效值包括：Sha-1、 SHA-256、 SHA-512、-512、createddate、modifieddate、 modifiedDate none （預設值）。 如果指定 __Checksum__ 但無 __Validate__，設定會失敗。|
+| __Checksum__| 定義判斷兩個檔案是否相同時所使用的類型。 如不指定 __Checksum__，只會使用檔案或目錄名稱進行比較。 有效值包括：SHA-1、SHA-256、SHA-512、createdDate、modifiedDate、none (預設值)。 如果指定 __Checksum__ 但無 __Validate__，設定會失敗。|
 | Ensure| 當__目的地__有封存內容時，決定是否要檢查。 請將這個屬性設為 __Present__ 以確保有內容。 設為 __Absent__ 以確保它們不存在。 預設值為 __Present__。|
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 ResourceName，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 | 驗證| 使用 Checksum 屬性判斷封存是否符合簽章。 如果指定 Checksum 但無 Validate，設定會失敗。 如果指定 Validate 但無 Checksum，預設使用 SHA-256 總和檢查碼。|

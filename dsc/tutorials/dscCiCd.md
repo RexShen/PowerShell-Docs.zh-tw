@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 來建置持續整合和持續部署管線
-ms.openlocfilehash: c305d9bc7e0f8c659129b5a20d0b7e8b34d09ba8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400856"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076460"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 
@@ -388,7 +388,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 若要這樣做，請新增一個與您先前建立之 `InfraDNS` 組建定義關聯的新發行定義。
 請務必選取 [持續部署]，以便在每次完成新組建時便觸發新的發行。
-[如何：使用發行定義](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions))，並設定它，如下所示：
+([什麼是發行管線？](/azure/devops/pipelines/release/what-is-release-management))，並設定它，如下所示：
 
 將下列步驟新增到發行定義中：
 

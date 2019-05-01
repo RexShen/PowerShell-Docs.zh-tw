@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
 ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58058210"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084703"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -95,7 +95,7 @@ PowerShell 資源庫 [編輯套件] 頁面可讓發行者變更針對套件顯�
 | Windows |  |
 | Build |  |
 | 部署 | 相較之下較少使用 Deploy |
-| 雲端 |  |
+| Cloud |  |
 | GIT |  |
 | Test | 不建議使用 Testing |
 | VersionControl | Version 較不精確，但使用的頻率較高  |
@@ -113,7 +113,7 @@ PowerShell 資源庫 [編輯套件] 頁面可讓發行者變更針對套件顯�
 | 網路 | Networking 為相似的字，但較少使用 |
 | SharePoint |  |
 | 報告 | Reporting 是一個動作，Report 是一個東西 |
-| 報告 | Report 是一個東西 |
+| Report | Report 是一個東西 |
 | WinRM |  |
 | 監視 |  |
 | VSTS |  |

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3cfc2f042234f682599bb67eac592ea3f77b31b6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221998"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085179"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>使用改進的 Item Cmdlet 與符號連結互動
 
@@ -14,9 +14,9 @@ ms.locfileid: "34221998"
 
 下圖示範某些新功能的使用案例︰
 
-## <a name="new-item"></a>NEW-ITEM
+## <a name="new-item"></a>New-Item
 
-### <a name="symbolic-link-files"></a>SYMBOLIC LINK FILES
+### <a name="symbolic-link-files"></a>符號連結檔案
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -30,7 +30,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a>SYMBOLIC LINK DIRECTORIES
+### <a name="symbolic-link-directories"></a>符號連結目錄
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -45,21 +45,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a>HARD LINKS
+### <a name="hard-links"></a>永久連結
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a>DIRECTORY JUNCTIONS
+### <a name="directory-junctions"></a>目錄接合
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a>GET-CHILDITEM
+## <a name="get-childitem"></a>Get-ChildItem
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -110,7 +110,7 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a>REMOVE-ITEM
+## <a name="remove-item"></a>Remove-Item
 
 ```powershell
 # Works like any other item type

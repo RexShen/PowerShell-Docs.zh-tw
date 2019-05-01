@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: ec4ae8e4b2ef0ec226cb75607f7aaf34b48f6b76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085638"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a>使用 PowerShell ISE 撰寫增強功能
 
@@ -17,4 +17,4 @@ ms.locfileid: "55679440"
 - DSC 資源 **DependsOn** 屬性的自動完成功能，以設定的其他資源執行個體為基礎。
 - 更好的資源屬性值 TAB 鍵自動完成。
 
-**注意︰** 資源屬性值必須先為空字串，您才能使用 Ctrl+空格鍵列出選項。 按 **Tab** 鍵可循環選擇選項。
+**注意：** 資源屬性值必須先為空字串，您才能使用 Ctrl+空格鍵列出選項。 按 **Tab** 鍵可循環選擇選項。

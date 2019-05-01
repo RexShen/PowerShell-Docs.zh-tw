@@ -5,17 +5,17 @@ keywords: wmf,powershell,設定
 contributor: ryanpu
 title: Just Enough Administration (JEA) 的改善功能
 ms.openlocfilehash: 66cbacb78f8a365e9c8556c7c56b3c3525de7395
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267860"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055627"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) 的改善功能
 
 ## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>限制 JEA 端點間的檔案複製
 
-您現在可遠端將檔案複製到 JEA 端點及從中複製檔案，並可確保連接的使用者無法隨意複製*任何*一項系統上的檔案。 方法是將 PSSC 檔案設定為掛接連接使用者的使用者磁碟機。 使用者磁碟機是新的 PSDrive，對每個連接的使用者而言皆為唯一，並在工作階段之間保存。 使用 `Copy-Item` 將檔案複製到 JEA 工作階段或從中複製檔案時，其會受限為僅允許存取使用者磁碟機。 嘗試將檔案複製到任何其他 PSDrive 將會失敗。
+您現在可遠端將檔案複製到 JEA 端點及從中複製檔案，並可確保連接的使用者無法隨意複製*任何*一個系統上的檔案。 方法是將 PSSC 檔案設定為掛接連接使用者的使用者磁碟機。 使用者磁碟機是新的 PSDrive，對每個連接的使用者而言皆為唯一，並在工作階段之間保存。 使用 `Copy-Item` 將檔案複製到 JEA 工作階段或從中複製檔案時，其會受限為僅允許存取使用者磁碟機。 嘗試將檔案複製到任何其他 PSDrive 將會失敗。
 
 若要在您的 JEA 工作階段設定檔中設定使用者磁碟機，請使用下列新欄位︰
 
@@ -65,7 +65,7 @@ RunAsVirtualAccount = $false
 
 ## <a name="conditional-access-policies"></a>條件式存取原則
 
-JEA 對於限制連接至系統且要管理系統的人員可做事項而言很實用，但若您同時想限制人員*何時*可使用 JEA 呢？ 我們已在工作階段設定檔 (.pssc) 中加入設定選項，以讓您指定使用者必須屬於哪個安全性群組才能建立 JEA 工作階段。 若您的環境中有 Just In Time (JIT) 系統，且您要讓使用者提高其權限後才能存取高權限 JEA 端點，則這項相當實用。
+JEA 對於限制連接至系統且要管理系統的人員可做事項而言很實用，但若您同時想限制人員*何時*可使用 JEA 呢？ 我們已在工作階段設定檔 (.pssc) 中加入設定選項，以讓您指定使用者必須屬於哪個安全性群組才能建立 JEA 工作階段。 若您的環境中有 Just In Time (JIT) 系統，且您要讓使用者提高其權限後才能存取高權限 JEA 端點，則這相當實用。
 
 PSSC 檔案中新的 *RequiredGroups* 欄位可讓您指定邏輯，以判斷使用者是否可連接到 JEA。 其包含指定雜湊表 (選擇性地為巢狀)，該雜湊表會使用 'And' 及 'Or' 索引鍵來建構您的規則。 以下是如何運用此欄位的一些範例︰
 
@@ -81,6 +81,6 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定︰Windows Server 2008 R2 現在支援虛擬帳戶
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>已修正：Windows Server 2008 R2 現在支援虛擬帳戶
 
 在 WMF 5.1 中，您現在可於 Windows Server 2008 R2 使用虛擬帳戶，讓 Windows Server 2008 R2 - 2016 上的設定和功能同位一致。 在 Windows 7 上使用 JEA 時，仍不支援虛擬帳戶。

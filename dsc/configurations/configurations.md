@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC 設定
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080165"
 ---
 # <a name="dsc-configurations"></a>DSC 設定
 
@@ -32,7 +32,7 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-儲存指令碼做為`.ps1`檔案。
+將指令碼儲存為 `.ps1` 檔案。
 
 ## <a name="configuration-syntax"></a>設定語法
 
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-**節點**區塊也可以接受多個電腦名稱。 在上述範例中，您可以使用`-ComputerName`參數或傳遞的逗號分隔的電腦清單直接**節點**區塊。
+**節點**區塊也可以接受多個電腦名稱。 在上述範例中，您可以使用 `-ComputerName` 參數，也可以將逗號分隔的電腦清單直接傳遞給**節點**區塊。
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-指定的電腦清單時**節點**區塊中，從組態中，需要使用陣列標記法。
+在**節點**區塊中指定電腦清單時，從設定中，您需要使用陣列標記法。
 
 ```powershell
 Configuration MyDscConfiguration
@@ -119,7 +119,7 @@ MyDscConfiguration
 - 解析所有的變數
 - 在目前的目錄中建立和設定同名的資料夾。
 - 在新的目錄中建立名為 _NodeName_.mof 的檔案，其中 _NodeName_ 是設定的目標節點名稱。
-  如果有多個節點，則將每個節點建立的 MOF 檔案。
+  如果有多個節點，每個節點都會建立一個 MOF 檔案。
 
 > [!NOTE]
 > MOF 檔案包含目標節點的所有設定資訊。 因為這樣，這個檔案的安全防護很重要。
@@ -161,17 +161,17 @@ Mode                LastWriteTime         Length Name
 Cmdlet [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 可用於決定在系統上安裝並供 LCM 使用的資源。
 這些模組放置在 `$env:PSModulePath` 並由 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 正確辨識後，仍需要載入至設定中。
 
-**Import-dscresource**只有在內才能辨識為動態關鍵字**組態**區塊中，不是 cmdlet。
+**Import-DscResource** 是只能在**設定**區塊中辨識的動態關鍵字，它不是 Cmdlet。
 **Import-DscResource** 支援兩個參數：
 
 - **ModuleName**，使用 **Import-DscResource** 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。
 - **Name** 是要匯入的資源名稱。 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回 **ResourceType**)。
 
-如需有關使用`Import-DSCResource`，請參閱[使用 Import-dscresource](import-dscresource.md)
+如需使用 `Import-DSCResource` 的詳細資訊，請參閱[使用 Import-DSCResource](import-dscresource.md)
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 和 v5 的差異
 
-有差異，需要儲存在 PowerShell 4.0 DSC 資源。 如需詳細資訊，請參閱 <<c0> [ 資源位置](import-dscresource.md#resource-location)。
+在 PowerShell 4.0 中需要儲存 DSC 資源的位置存在差異。 如需詳細資訊，請參閱[資源位置](import-dscresource.md#resource-location)。
 
 ## <a name="see-also"></a>另請參閱
 

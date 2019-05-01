@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 多重選擇清單方塊
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057945"
 ---
 # <a name="multiple-selection-list-boxes"></a>多重選擇清單方塊
 
@@ -183,6 +183,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另請參閱
 
--   指令碼高手您好：[這些 PowerShell GUI 範例為何無法運作？](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHubDave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [本週 Windows PowerShell 秘訣：複選清單方塊-及其他事項 ！](https://technet.microsoft.com/library/ff730950.aspx)
+- [指令碼高手您好：PowerShell GUI 範例為什麼動不起來？](https://go.microsoft.com/fwlink/?LinkId=506644) \(英文\)
+- [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) \(英文\)
+- [本週 Windows PowerShell 祕訣︰本週 Windows PowerShell 秘訣︰複選清單方塊 - 及其他事項！](https://technet.microsoft.com/library/ff730950.aspx) \(英文\)

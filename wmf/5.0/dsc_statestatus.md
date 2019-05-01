@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
-ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058976"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一且一致的狀態和狀態表示法
 
@@ -36,9 +36,9 @@ LCM 狀態和 DSC 作業狀態的表示法根據下列規則進行重新瀏覽�
 | r, S                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 | r, F                            | PendingReboot        | Success    | $true         | $null                        | r                              |
 
-- S<sub>i</sub>︰一系列成功套用的資源
-- F<sub>i</sub>︰一系列套用失敗的資源
-- r︰需要重新開機的資源
+- S<sub>i</sub>：一系列成功套用的資源
+- F<sub>i</sub>：一系列套用失敗的資源
+- r：需要重新開機的資源
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState

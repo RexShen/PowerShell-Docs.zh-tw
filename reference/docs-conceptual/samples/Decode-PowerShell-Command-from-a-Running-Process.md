@@ -4,20 +4,20 @@ keywords: powershell,cmdlet
 title: 從正在執行的處理序解碼 PowerShell 命令
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086233"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>從正在執行的處理序解碼 PowerShell 命令
 
-有時候，您可能必須執行的處理序佔用大量資源的 PowerShell。
-無法在內容中執行此程序[工作排程器][]工作或有[SQL Server Agent][]作業。 有多個 PowerShell 處理程序執行，很難知道哪個處理程序表示問題。 這篇文章會示範如何解碼 PowerShell 處理程序目前正在執行的指令碼區塊。
+您有時候可能會執行耗用大量資源的 PowerShell 處理序。
+此處理序可在[工作排程器][]作業或 [SQL Server Agent][] 作業的內容中執行。 有多個 PowerShell 處理序執行時，很難知道哪一個處理序發生問題。 此文章會說明如何將正在執行 PowerShell 處理序的指令碼區塊解碼。
 
-## <a name="create-a-long-running-process"></a>建立長時間執行的處理程序
+## <a name="create-a-long-running-process"></a>建立長時間執行的處理序
 
-為了示範此案例中，開啟新的 PowerShell 視窗並執行下列程式碼。 它會執行的 PowerShell 命令會輸出每分鐘 10 分鐘的時間。
+為了示範此案例，請開啟一個新的 PowerShell 視窗並執行以下程式碼。 它會執行一個每分鐘輸出一個數字的 PowerShell 命令，並執行 10 分鐘。
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a>檢視處理程序
+## <a name="view-the-process"></a>檢視處理序
 
-執行 PowerShell 命令的主體會儲存在**CommandLine**屬性[Win32_Process][]類別。 如果命令[編碼命令][]，則**CommandLine**屬性包含字串"EncodedCommand 」。 使用這項資訊，編碼的命令可以釐清透過下列程序。
+正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。 如果命令是[編碼命令][]，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
 
-以系統管理員身分啟動 PowerShell。 很重要，以系統管理員身分執行 PowerShell，否則會不傳回任何結果時查詢執行的處理序。
+以系統管理員身分啟動 PowerShell。 這很重要，PowerShell 必須以系統管理員身分執行，否則在查詢執行的處理序時不會傳回任何結果。
 
-執行下列命令來取得所有已編碼的命令的 PowerShell 處理程序：
+執行以下命令來取得具有編碼命令的所有 PowerShell 處理序：
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-下列命令會建立自訂的 PowerShell 物件，其中包含的處理序識別碼和編碼的命令。
+以下命令會建立包含處理序識別碼和編碼命令的自訂 PowerShell 物件。
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-現在可以解碼已編碼的命令。 下列程式碼片段會逐一查看命令的詳細資料物件、 解碼已編碼的命令，和將解碼的命令新增回物件，以便進一步調查。
+現在可以將編碼命令解碼了。 以下程式碼片段會逐一查看命令的詳細資料物件、將編碼命令解碼，以及將解碼後的命令新增回物件，以便進一步調查。
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-選取已解碼的 command 屬性現在可以檢閱已解碼的命令。
+現在可以透過選取解碼命令屬性來檢閱解碼後的命令。
 
 ```output
 ProcessId      : 8752

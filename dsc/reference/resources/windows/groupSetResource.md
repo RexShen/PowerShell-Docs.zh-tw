@@ -4,11 +4,11 @@ keywords: dsc,powershell,設定,安裝
 description: 提供在目標節點管理本機群組的機制。
 title: DSC GroupSet 資源
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047363"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077172"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 資源
 
@@ -44,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| 使用這個屬性將成員新增至群組的現有成員資格。 這個屬性值為字串陣列，格式為 *Domain*\\*UserName*。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。|
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 __ResourceName__，而它的類型是 __ResourceType__，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
 
-## <a name="example-1-ensuring-groups-are-present"></a>範例 1：有確保群組
+## <a name="example-1-ensuring-groups-are-present"></a>範例 1：確保群組存在
 
 下例示範如何確保 "myGroup" 和 "myOtherGroup" 兩個群組會出現。
 

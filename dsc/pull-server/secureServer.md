@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
 ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057700"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079195"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -26,7 +26,7 @@ ms.locfileid: "58057700"
 
 ## <a name="abstract"></a>摘要
 
-本文件旨在為規劃 Windows PowerShell 期望狀態設定提取伺服器實作的任何人提供官方指引。 提取伺服器是一項簡單的服務，部署只需要幾分鐘。 雖然這份文件會提供可用於部署的技術指引，但本文件的價值如同最佳做法和部署前考慮事項的參考。
+本文件旨在為規劃 Windows PowerShell 期望狀態設定提取伺服器實作的任何人提供官方指引。 提取伺服器是一個簡單的服務，部署只需要幾分鐘。 雖然這份文件會提供可用於部署的技術指引，但本文件的價值如同最佳做法和部署前考慮事項的參考。
 讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](/powershell/dsc/overview)主題。
 因為 DSC 預期依雲端節奏發展，所以包含提取伺服器的基礎技術也預期會發展並推出新功能。 本文件附錄中的版本表提供有關舊版的參考，以及鼓勵展望未來設計的解決方案參考。
 
@@ -49,7 +49,7 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 
 提取伺服器提供集中式服務以儲存將來可存取的目標節點設定。
 
-提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。
+提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 此功能在有大量目標節點的環境中很有用。
 將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell Desired State Configuration 提取伺服器](/powershell/dsc/pullServer)及
 
 [推送和提取設定模式](/powershell/dsc/pullServer)。
@@ -60,7 +60,7 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 
 ### <a name="software-requirements"></a>軟體需求
 
-提取伺服器部署需要 Windows Server 的 DSC 服務功能。 這項功能在 Windows Server 2012 中推出，且已透過 Windows Management Framework (WMF) 陸續發行的版本進行更新。
+提取伺服器部署需要 Windows Server 的 DSC 服務功能。 此功能在 Windows Server 2012 中推出，且已透過 Windows Management Framework (WMF) 陸續發行的版本進行更新。
 
 ### <a name="software-downloads"></a>軟體下載
 
@@ -191,7 +191,7 @@ SMB 讓原則規定不該使用 Web 伺服器的環境，以及不要求 Web 伺
 
 #### <a name="dsc-modules"></a>DSC 模組
 
-要求設定的用戶端會需要必要的 DSC 模組。 提取伺服器有一項功能是將 DSC 模組自動隨選散佈給用戶端。 如果您是第一次部署提取伺服器，可能是基於實驗室或證明概念的需要，您可能會相依於從 PowerShell 組件庫等公用存放庫或 DSC 模組的 PowerShell.org GitHub 存放庫取得的 DSC 模組。
+要求設定的用戶端會需要必要的 DSC 模組。 提取伺服器有一個功能是將 DSC 模組自動隨選散佈給用戶端。 如果您是第一次部署提取伺服器，可能是基於實驗室或證明概念的需要，您可能會相依於從 PowerShell 組件庫等公用存放庫或 DSC 模組的 PowerShell.org GitHub 存放庫取得的 DSC 模組。
 
 請務必記住，即使是受信任的線上來源，例如 PowerShell 組件庫，從公開存放庫下載的任何模組，都應該由具有 PowerShell 經驗和環境知識的人員檢閱，而在該環境中模組的使用早於生產前。 完成此工作的同時，也是檢查模組中是否有可移除的任何其他裝載的好時機，例如文件和範例指令碼。 透過網路將模組從伺服器下載到用戶端時，這會降低每個用戶端之第一個要求的網路頻寬。
 

@@ -3,11 +3,11 @@ ms.date: 06/20/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC PackageManagementSource 資源
 ms.openlocfilehash: e51b5318288bef458567dd4b58d17caaea3ed69b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077580"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource 資源
 
@@ -42,7 +42,7 @@ PackageManagementSource [String] #ResourceName
 | ProviderName| 指定 OneGet 提供者的名稱，您可透過它與套件來源進行 interop。|
 | SourceLocation| 指定套件來源的 URI。|
 | Ensure| 判斷套件來源是否已註冊或已取消註冊。|
-| InstallationPolicy| 由內建 Nuget 提供者之類的提供者使用。 判斷您是否信任套件來源。 值為： 或  其中一個。「 不受信任 」，「 信任 」。|
+| InstallationPolicy| 由內建 Nuget 提供者之類的提供者使用。 判斷您是否信任套件來源。 值為下列其中之一："Untrusted"、"Trusted"。|
 | SourceCredential| 提供遠端來源套件的存取權。|
 
 ## <a name="example"></a>範例

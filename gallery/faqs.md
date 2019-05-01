@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057683"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084603"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -59,7 +59,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。
 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。
-會從「模組資訊清單」(.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。
+會從「模組資訊清單」(.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取此資訊，作為發佈程序的一部分。
 所有發行至資源庫的模組都必須具有模組資訊清單。
 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
 
@@ -80,7 +80,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。
 若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。
-會從指令檔的 *PSScriptInfo* 區段，或從 [Publish-Script][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。
+會從指令檔的 *PSScriptInfo* 區段，或從 [Publish-Script][] Cmdlet 的 **LicenseUri** 參數值中讀取此資訊，作為發佈程序的一部分。
 所有發行至資源庫的指令碼都必須具有中繼資料資訊。
 任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
 

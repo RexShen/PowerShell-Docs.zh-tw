@@ -2,17 +2,17 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: 9af931a1a2b545ba36826246c4155f42052a16bf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085691"
 ---
 # <a name="mof-documents-are-encrypted-by-default"></a>MOF 文件預設為加密
 
 設定文件包含機密資訊。 在舊版的 DSC 中，您必須先發佈和管理憑證，才能保護設定中的認證。 對許多人來說，即進行了所有所需的工作，這依然是重大的管理負擔，而且您還必須面對一些既沒有被保護，也無法被保護的設定資訊。
 
-這種情況將不再發生，因為**預設上所有設定 MOF 都受到保護**。 沒有憑證或需要設定中繼設定。 每當在目標節點上本機設定管理員 (LCM) 將設定 MOF 儲存到磁碟時，它會進行加密。 MOF 使用了 [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx) 進行加密。 **注意︰** 設定指令碼產生的 MOF 並未加密。
+這種情況將不再發生，因為**預設上所有設定 MOF 都受到保護**。 沒有憑證或需要設定中繼設定。 每當在目標節點上本機設定管理員 (LCM) 將設定 MOF 儲存到磁碟時，它會進行加密。 MOF 使用了 [DPAPI](https://msdn.microsoft.com/library/ms995355.aspx) 進行加密。 **注意：** 由設定指令碼產生的 MOF 並未加密。
 
 **範例︰** Push 模式中的加密 ![MOF 加密](../images/MOF_Encryption.jpg)
 

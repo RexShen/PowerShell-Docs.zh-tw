@@ -4,20 +4,20 @@ keywords: powershell,cmdlet
 title: 排序物件
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 ms.openlocfilehash: 06aa15d89888f1ecbe60b8e1dfb4efebb1d73673
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400634"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086046"
 ---
 # <a name="sorting-objects"></a>排序物件
 
-我們會組織顯示的資料，讓您更輕鬆地使用掃描`Sort-Object`cmdlet。 `Sort-Object` 會據以排序的一或多個屬性的名稱，並傳回這些屬性的值來排序的資料。
+我們會組織顯示的資料，讓您可以使用 `Sort-Object` Cmdlet 更輕鬆地進行掃描。 `Sort-Object` 會使用一或多個屬性的名稱作為排序依據，並傳回根據這些屬性值進行排序的資料。
 
-## <a name="basic-sorting"></a>基本的排序
+## <a name="basic-sorting"></a>基本排序
 
-請考慮列出目前的目錄中子目錄和檔案的問題。
-如果我們想要依排序**LastWriteTime**再依**名稱**，我們可以將則做法是輸入：
+考量在目前目錄中列出子目錄和檔案的問題。
+如果我們要依序根據 **LastWriteTime** 和 **Name** 進行排序，方式是輸入：
 
 ```powershell
 Get-ChildItem |
@@ -40,7 +40,7 @@ LastWriteTime          Name
 ...
 ```
 
-您也可以排序物件以反向順序藉由指定**遞減**切換參數。
+您也可以指定 **Descending** 切換參數，以相反順序來排序物件。
 
 ```powershell
 Get-ChildItem |
@@ -65,14 +65,14 @@ LastWriteTime          Name
 11/6/2017 10:10:11 AM  .localization-config
 ```
 
-## <a name="using-hash-tables"></a>使用雜湊資料表
+## <a name="using-hash-tables"></a>使用雜湊表
 
-您可以使用雜湊表陣列中排序以不同的順序不同的屬性。
-每個雜湊表會使用**運算式**指定為字串的屬性名稱的索引鍵和**Ascending**或**遞減**索引鍵來指定排序次序所`$true`或`$false`.
-**運算式**是必要的索引鍵。
-**遞增**或是**遞減**是選擇性的索引鍵。
+您可以在陣列中使用雜湊表來以不同的順序排序不同的屬性。
+每個雜湊表都會使用 **Expression** 索引鍵來指定屬性名稱與 **Ascending** 或 **Descending** 索引鍵，以依據 `$true` 或 `$false` 指定排序順序。
+**Expression** 索引鍵為強制項目。
+**Ascending** 或 **Descending** 索引鍵是選擇性的。
 
-下列範例會排序以遞減的物件**LastWriteTime**順序和遞增**名稱**順序。
+下列範例會以遞減的 **LastWriteTime** 順序和遞增的 **Name** 順序排序物件。
 
 ```powershell
 Get-ChildItem |
@@ -92,10 +92,10 @@ LastWriteTime          Name
 ...
 ```
 
-您也可以設定指令碼區塊**運算式**索引鍵。
-當執行`Sort-Object`cmdlet，執行指令碼區塊，以及結果用來排序。
+您也可以對 **Expression** 索引鍵設定 scriptblock。
+執行 `Sort-Object` Cmdlet 時，scriptblock 會執行，而且會將結果用於排序。
 
-下列範例會排序以遞減順序之間的時間範圍的物件**CreationTime**並**LastWriteTime**。
+以下範例會依據 **CreationTime** 和 **LastWriteTime** 之間的時間範圍，以遞減順序排序物件。
 
 ```powershell
 Get-ChildItem |
@@ -119,27 +119,27 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>提示
 
-您可以省略**屬性**參數名稱，如下所示：
+您可以如下所示省略 **Property** 參數名稱：
 
 ```powershell
 Sort-Object LastWriteTime, Name
 ```
 
-此外，您可以參考`Sort-Object`內建的別名， `sort`:
+此外，您也可以使用 `Sort-Object` 的內建別名 `sort` 來參考它：
 
 ```powershell
 sort LastWriteTime, Name
 ```
 
-雜湊資料表中的索引鍵，排序可以縮寫如下所示：
+雜湊表中的索引鍵可縮寫以用於排序，如下所示：
 
 ```powershell
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-在此範例中，**電子**代表**運算式**，則**d**代表**遞減**，而代表**遞增**。
+在這個範例中，**e** 代表 **Expression**、**d** 代表 **Descending**，而 **a** 代表 **Ascending**。
 
-若要改善可讀性，您可以將雜湊資料表放入個別的變數：
+為提升可讀性，您可以將雜湊表放入個別的變數中：
 
 ```powershell
 $order = @(

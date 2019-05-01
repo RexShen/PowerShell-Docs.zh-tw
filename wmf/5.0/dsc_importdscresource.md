@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: 46a278b83edb9d8e3d75b0874603710d416be3b5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676661"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085725"
 ---
 # <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>Import-DscResource 關鍵字支援 -ModuleVersion 參數
 
@@ -16,8 +16,8 @@ ms.locfileid: "55676661"
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName(s)>] [-ModuleVersion <ModuleVersion>]
 ```
 
-* **名稱**︰要匯入之一個或多個資源的名稱。
-* **ModuleName**︰要匯入之一個或多個模組的名稱或 ModuleSpecification 物件。
+* **Name**：要匯入之一或多個資源的名稱。
+* **ModuleName**︰要匯入之一或多個模組的名稱或 ModuleSpecification 物件。
 * **ModuleVersion**︰要匯入的模組版本。 如果使用了的話，ModuleName 必須只以名稱代表一個模組。
 
 在 Windows PowerShell ISE 中，它和 IntelliSense 一同顯示：

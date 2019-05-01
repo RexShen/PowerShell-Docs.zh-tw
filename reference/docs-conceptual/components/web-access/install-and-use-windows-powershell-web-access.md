@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安裝和使用 Windows PowerShell Web 存取
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056714"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058553"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
@@ -163,7 +163,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - EnabledProtocols：http
    - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
-3. 執行下列其中一項動作以開啟 IIS 管理員主控台。
+3. 執行下列其中一個動作以開啟 IIS 管理員主控台。
 
    - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
    - 在 Windows **[開始]** 畫面上，按一下 **[伺服器管理員]**。
@@ -225,7 +225,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 ### <a name="install-windows-powershell-web-access-using-the-add-roles-and-features-wizard"></a>使用新增角色及功能精靈安裝 Windows PowerShell Web 存取
 
-1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
+1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一個動作來將它開啟。
 
    - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。
    - 在 Windows **[開始]** 畫面上，按一下 **[伺服器管理員]**。
@@ -254,7 +254,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 #### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>使用 IIS 管理員在現有的網站中設定閘道
 
-1. 執行下列其中一項動作以開啟 IIS 管理員主控台。
+1. 執行下列其中一個動作以開啟 IIS 管理員主控台。
 
    - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
    - 在 Windows [開始] 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式] 結果時，按一下該捷徑。
@@ -305,7 +305,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 #### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>使用 IIS 管理員以測試憑證將閘道設定為根網站
 
-1. 執行下列其中一項動作以開啟 IIS 管理員主控台。
+1. 執行下列其中一個動作以開啟 IIS 管理員主控台。
 
    - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
    - 在 Windows [開始] 畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式] 結果時，按一下該捷徑。
@@ -401,7 +401,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 1. 在內容窗格中，按兩下 **[伺服器憑證]**。
 
-1. 在 [動作] 窗格中，執行下列其中一項。 如需在 IIS 中設定伺服器憑證的詳細資訊，請參閱[在 IIS 7 中設定伺服器憑證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
+1. 在 [動作] 窗格中，執行下列其中一個。 如需在 IIS 中設定伺服器憑證的詳細資訊，請參閱[在 IIS 7 中設定伺服器憑證](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
 
    - 按一下 [匯入]，從網路上的位置匯入現有的有效憑證。
    - 按一下 [建立憑證要求]，向 CA (例如 [VeriSign](https://www.verisign.com/)、[Thawte](https://www.thawte.com/) 或 [GeoTrust](https://www.geotrust.com/)) 要求憑證。 憑證的一般名稱必須符合要求中的主機標頭。

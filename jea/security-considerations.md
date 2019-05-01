@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 安全性考量
 ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887594"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084771"
 ---
 # <a name="jea-security-considerations"></a>JEA 安全性考量
 
@@ -73,7 +73,7 @@ JEA 端點設定為使用 gMSA 帳戶之後，所有 JEA 使用者的動作會�
 請參閱下節，了解 [JEA 無法防止系統管理員](#jea-does-not-protect-against-admins)的詳細資訊。
 
 **標準執行身分帳戶**可讓您指定整個 PowerShell 工作階段將執行的任何使用者帳戶。
-這是一項重要的差異，因為已設定為使用固定執行身分帳戶 (使用 `-RunAsCredential` 參數) 的工作階段設定不會察覺 JEA。
+這是一個重要的差異，因為已設定為使用固定執行身分帳戶 (使用 `-RunAsCredential` 參數) 的工作階段設定不會察覺 JEA。
 這表示角色定義不再如預期般運作，且獲得授權存取端點的每個使用者都會被指派相同的角色。
 
 您不應該在 JEA 端點上使用 RunAsCredential，因為難以從動作回溯到特定的使用者，並且也缺乏將使用者對應至角色的支援。
@@ -127,11 +127,11 @@ CONTOSO\JEA_Lev2 AccessAllowed
 ```
 
 此角色功能可讓使用者執行任何 PowerShell Cmdlet，並使用來自 Microsoft.PowerShell.Management 模組的名詞 "Process"。
-使用者可能需要存取像是 cmdlet`Get-Process`若要了解應用程式在系統上的執行和`Stop-Process`終止任何沒有回應的應用程式。
+使用者可能需要存取像是 `Get-Process` 的 Cmdlet 來了解哪些應用程式正在系統上執行，以及存取 `Stop-Process` 來終止任何未回應的應用程式。
 不過，此項目也允許 `Start-Process`，這可以用來以完整的系統管理員權限啟動任意程式。
 程式不需要在本機系統上安裝，因此敵人可以在提供連線使用者本機系統管理員權限的檔案共用上啟動程式、執行惡意程式碼等等。
 
-這項相同角色功能的更安全版本應該如下︰
+這個相同角色功能的更安全版本應該如下︰
 
 ```powershell
 @{

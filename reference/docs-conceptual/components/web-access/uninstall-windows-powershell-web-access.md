@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 解除安裝 Windows PowerShell Web 存取
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679182"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058128"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>解除安裝 Windows PowerShell Web 存取
 
-更新日期︰2013 年 6 月 24 日
+更新日期：2013 年 6 月 24 日
 
-適用目標︰Windows Server 2012 R2、Windows Server 2012
+適用於：Windows Server 2012 R2、Windows Server 2012
 
 本主題中的步驟會將 Windows PowerShell Web 存取網站及對應的應用程式，從安裝所在的閘道伺服器移除。
 
@@ -33,7 +33,7 @@ ms.locfileid: "55679182"
 
 其藉由使用 Windows PowerShell Cmdlet 來完成。
 
-### <a name="step-1-delete-the-web-application-using-cmdlets"></a>步驟 1：刪除 web 應用程式使用 cmdlet
+### <a name="step-1-delete-the-web-application-using-cmdlets"></a>步驟 1：使用 Cmdlet 刪除 Web 應用程式
 
 1. 執行下列其中一個動作來開啟 Windows PowerShell 工作階段。
 
@@ -52,7 +52,7 @@ ms.locfileid: "55679182"
 
         `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>步驟 2：使用解除安裝 Windows PowerShell Web 存取 cmdlet
+### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>步驟 2：使用 Cmdlet 解除安裝 Windows PowerShell Web 存取
 
 1. 執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。 如果已經開啟工作階段，請移至下一個步驟。
 
@@ -76,10 +76,10 @@ ms.locfileid: "55679182"
 
 本節中的程序可協助您使用伺服器管理員中的「移除角色及功能精靈」和 IIS 管理員主控台，解除安裝 Windows PowerShell Web 存取 Web 應用程式和 Windows PowerShell Web 存取功能。
 
-### <a name="step-1-delete-the-web-application-using-iis-manager"></a>步驟 1：刪除 web 應用程式使用 IIS 管理員
+### <a name="step-1-delete-the-web-application-using-iis-manager"></a>步驟 1：使用 IIS 管理員刪除 Web 應用程式
 
 
-1. 執行下列其中一項動作以開啟 IIS 管理員主控台。 如果已經開啟，請移至下一個步驟。
+1. 執行下列其中一個動作以開啟 IIS 管理員主控台。 如果已經開啟，請移至下一個步驟。
 
     -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]**。
 
@@ -101,9 +101,9 @@ ms.locfileid: "55679182"
 >
 > 如果您建立自我簽署憑證，或使用測試憑證並想要將它移除，請在 IIS 管理員中刪除憑證。
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>步驟 2：解除安裝 Windows PowerShell Web 存取使用移除角色及功能精靈
+### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>步驟 2：使用移除角色及功能精靈解除安裝 Windows PowerShell Web 存取
 
-1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一項動作來將它開啟。
+1. 如果已經開啟伺服器管理員，請移至下一個步驟。 如果尚未開啟伺服器管理員，請執行下列其中一個動作來將它開啟。
 
     -   在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員] 來啟動 [伺服器管理員]。
 

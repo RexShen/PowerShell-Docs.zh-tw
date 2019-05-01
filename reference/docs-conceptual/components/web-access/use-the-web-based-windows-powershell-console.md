@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用網頁型 Windows PowerShell 主控台
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086624"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
 更新日期：2013 年 6 月 24 日
 
-適用於：Windows Server 2012 R2，Windows Server 2012
+適用於：Windows Server 2012 R2、Windows Server 2012
 
 Windows PowerShell Web 存取可讓使用者登入受保護的網站，以使用 Windows PowerShell 工作階段、Cmdlet 和指令碼來管理遠端電腦。
 
@@ -90,7 +90,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 ## <a name="signing-out-and-timing-out"></a>登出及逾時
 
-下列其中一項會將您登出網頁型 Windows PowerShell 工作階段。
+下列其中一個會將您登出網頁型 Windows PowerShell 工作階段。
 
 - 按一下主控台右下角的 [登出]。 (僅限 Windows Server 2012)
 

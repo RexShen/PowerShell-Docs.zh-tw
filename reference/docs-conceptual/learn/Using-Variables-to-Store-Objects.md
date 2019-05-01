@@ -4,16 +4,16 @@ keywords: powershell,cmdlet
 title: 使用變數儲存物件
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
 ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400695"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086539"
 ---
 # <a name="using-variables-to-store-objects"></a>使用變數儲存物件
 
 PowerShell 可以搭配物件來使用。 PowerShell 可讓您建立稱為變數的具名物件。
-變數名稱可以包含底線字元和任何英數字元。 在 PowerShell 中使用時，變數一律使用 \$ 字元後面接著變數名稱來指定。
+變數名稱可以包括底線字元與任何英數字元。 在 PowerShell 中使用時，變數一律使用 \$ 字元後面接著變數名稱來指定。
 
 ## <a name="creating-a-variable"></a>建立變數
 

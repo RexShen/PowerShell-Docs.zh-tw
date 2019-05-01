@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC 資源
 ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676941"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076613"
 ---
 # <a name="dsc-resources"></a>DSC 資源
 
@@ -17,22 +17,22 @@ ms.locfileid: "55676941"
 
 資源可以建立某些物件的模型，像檔案一樣平常或如 IIS 伺服器設定一樣專用。  類似資源的群組會併入 DSC 模組，將所有必要的檔案組織到可攜式結構中，而且包含中繼資料以識別資源的原訂用法。
 
-每個資源都有 * 判斷使用中的資源所需的語法的結構描述[組態](../configurations/configurations.md)。 可以透過下列方式定義資源的結構描述：
+每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。 您可以透過下列方式定義資源的結構描述：
 
-- **'.Schema.mof'** 檔案：大部分的資源定義他們*結構描述*'.schema.mof' 在檔案中，使用[Managed 物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)。
-- **'\<資源名稱\>。 schema.psm1'** 檔案：[複合資源](../configurations/compositeConfigs.md)定義其*結構描述*在 '<ResourceName>。 schema.psm1' 檔案中，使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)。
-- **'\<資源名稱\>.psm1'** 檔案：類別型的 DSC 資源定義他們*結構描述*類別定義中。 語法項目會標示為類別的屬性。 如需詳細資訊，請參閱 < [< about_classes >](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
+- **'Schema.Mof'** 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 '.schema.mof' 檔案中定義其「結構描述」。
+- **'\<資源名稱\>.schema.psm1'** 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)，在 '<ResourceName>.schema.psm1' 檔案中定義其「結構描述」。
+- **'\<資源名稱\>.psm1'** 檔案：以類別為基礎的 DSC 資源會在類別定義中定義其「結構描述」。 語法項目會標示為 Class 屬性。 如需詳細資訊，請參閱 [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
 
-若要擷取的 DSC 資源的語法，請使用[Get-dscresource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) cmdlet 搭配`-Syntax`參數。 這種使用方式，類似於使用[Get-command](/powershell/module/microsoft.powershell.core/get-command)與`-Syntax`參數，以取得 cmdlet 的語法。 您看到的輸出會顯示您所指定之資源的資源區塊所用的範本。
+若要擷取 DSC 資源的語法，請搭配 `-Syntax` 參數使用 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet。 此使用方式類似於搭配 `-Syntax` 參數使用 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) 來取得 Cmdlet 語法。 您看到的輸出將顯示針對您指定之資源的資源區塊所使用的範本。
 
 ```powershell
 Get-DscResource -Syntax Service
 ```
 
-雖然此資源的語法可能在未來變更，您看到的輸出應該會類似如下的輸出。 喜歡 cmdlet 語法*金鑰*方括號所示，都是選擇性。 指定每個索引鍵所預期的資料的類型的類型。
+雖然此資源的語法未來可能變更，但您看到的輸出應該類似下列輸出。 如同 Cmdlet 語法，方括弧中的「索引鍵」均為選擇性。 類型會指定每個索引鍵所預期的資料類型。
 
 > [!NOTE]
-> **請確定**金鑰是選擇性的因為它會預設為"Present"。
+> **Ensure** 索引鍵是選擇性的，因為它會預設為 "Present"。
 
 ```output
 Service [String] #ResourceName
@@ -52,10 +52,10 @@ Service [String] #ResourceName
 }
 ```
 
-在組態中，內**服務**資源區塊可能會看起來像這樣來**請確定**多工緩衝處理器服務正在執行。
+在設定內部，**服務**資源區塊可能看起來像這樣，以**確保**多工緩衝處理器服務正在執行。
 
 > [!NOTE]
-> 之前在組態中使用的資源，您必須匯入使用[Import-dscresource](../configurations/import-dscresource.md)。
+> 在設定中使用資源之前，您必須先使用 [Import-DSCResource](../configurations/import-dscresource.md) 來匯入該資源。
 
 ```powershell
 Configuration TestConfig
@@ -74,7 +74,7 @@ Configuration TestConfig
 }
 ```
 
-設定可以包含多個相同的資源類型執行個體。 每個執行個體必須具有唯一名稱。 在下列範例中，第二個**服務**資源區塊會新增至"DHCP"服務設定。
+設定可以包含相同資源類型的多個執行個體。 每個執行個體都必須具有唯一名稱。 在下列範例中，會新增第二個**服務**資源區塊來設定 "DHCP" 服務。
 
 ```powershell
 Configuration TestConfig
@@ -101,13 +101,13 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> 從 PowerShell 5.0 開始，已新增 DSC intellisense。 這項新功能可讓您使用\< 索引標籤\>並\<Ctrl + 空格鍵\>到自動完成索引鍵的名稱。
+> 從 PowerShell 5.0 開始，已針對 DSC 新增 IntelliSense。 此新功能可讓您使用 \<TAB\> 和 \<Ctrl+空格鍵\> 自動完成索引鍵名稱。
 
 ![資源 Tab 鍵自動完成](../media/resource-tabcompletion.png)
 
 ## <a name="built-in-resources"></a>內建資源
 
-除了社群資源，還有 Windows、 Linux、 資源和資源跨節點相依性的內建資源。 您可以使用上述步驟，以判斷這些資源和使用方式的語法。 提供這些資源的頁面都已封存底下**參考**。
+除了社群資源，還提供適用於 Windows 的內建資源、適用於 Linux 的資源，以及適用於跨節點相依性的資源。 您可以使用上述步驟，來判斷這些資源的語法以及使用它們的方式。 提供這些資源的頁面都已封存於**參考**下方。
 
 Windows 內建資源
 
@@ -128,7 +128,7 @@ Windows 內建資源
 * [WindowsFeatureSet 資源](../reference/resources/windows/windowsFeatureSetResource.md)
 * [WindowsOptionalFeature 資源](../reference/resources/windows/windowsOptionalFeatureResource.md)
 * [WindowsOptionalFeatureSet 資源](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource Resource](../reference/resources/windows/windowsPackageCabResource.md)
+* [WindowsPackageCabResource 資源](../reference/resources/windows/windowsPackageCabResource.md)
 * [WindowsProcess 資源](../reference/resources/windows/windowsProcessResource.md)
 
 [跨節點相依性](../configurations/crossNodeDependencies.md)資源
@@ -137,12 +137,12 @@ Windows 內建資源
 * [WaitForSome 資源](../reference/resources/windows/waitForSomeResource.md)
 * [WaitForAny 資源](../reference/resources/windows/waitForAnyResource.md)
 
-封裝管理資源
+套件管理資源
 
 * [PackageManagement 資源](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource Resource](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+* [PackageManagementSource 資源](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
-Linux 上的資源
+Linux 資源
 
 * [Linux 封存資源](../reference/resources/linux/lnxArchiveResource.md)
 * [Linux 環境資源](../reference/resources/linux/lnxEnvironmentResource.md)

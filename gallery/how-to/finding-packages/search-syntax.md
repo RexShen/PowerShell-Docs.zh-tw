@@ -4,22 +4,22 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 組件庫搜尋語法
 ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742851"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084295"
 ---
 # <a name="gallery-search-syntax"></a>組件庫搜尋語法
 
-您可以使用 PowerShell 資源庫搜尋[PowerShell 資源庫的網站](https://www.powershellgallery.com/)。
-PowerShell 資源庫的網站提供文字搜尋方塊，您可以使用單字、 片語和關鍵字運算式來縮小搜尋結果。
+您可以使用 [PowerShell 資源庫的網站](https://www.powershellgallery.com/) \(英文\) 來搜尋 PowerShell 資源庫。
+PowerShell 資源庫網站提供文字搜尋方塊，讓您可以使用字組、片語和關鍵字運算式來縮小搜尋結果範圍。
 
 ## <a name="search-by-keywords"></a>依關鍵字搜尋
 
     dsc azure sql
 
-搜尋會嘗試尋找相關的文件包含所有 3 個關鍵字，並傳回相符文件。
+搜尋會嘗試尋找包含所有 3 個關鍵字的相關文件，並傳回相符文件。
 
 ## <a name="search-using-phrases-and-keywords"></a>使用片語和關鍵字搜尋
 
@@ -40,7 +40,7 @@ PowerShell 資源庫的網站提供文字搜尋方塊，您可以使用單字、
 
     ID:PSReadline
     
-尋找包含"PSReadline"識別碼的封裝。
+尋找識別碼包含 "PSReadline" 的套件。
 
     Id:"AzureRM.Profile"
 
@@ -50,13 +50,13 @@ PowerShell 資源庫的網站提供文字搜尋方塊，您可以使用單字、
 
     Id:"azure"
 
-這提供結果，其中包含 AzureRM.Profile' 和 'Azure.Storage'。
+這會提供包含 'AzureRM.Profile' 和 'Azure.Storage' 的結果。
 
 您也可以在單一欄位中搜尋多個關鍵字。 
 
     id:azure tags:intellisense
 
-此外，您可以執行使用雙引號括住片語搜尋：
+而且，您可以使用雙引號來執行片語搜尋：
 
     id:"azure.storage"
 

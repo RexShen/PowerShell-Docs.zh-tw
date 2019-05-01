@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 更多了解 PowerShell 的方式
 ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012546"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058381"
 ---
 # <a name="more-powershell-learning"></a>更多了解 PowerShell 的方式
 
@@ -31,7 +31,7 @@ ms.locfileid: "54012546"
 
 ### <a name="channel-9-videos"></a>Channel 9 影片
 
-Channel 9 是我們視訊發佈平台。 有數百部關於 PowerShell 的影片。 [搜尋"PowerShell"的](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)若要查看可用的影片。
+Channel 9 是我們的影片發佈平台。 裡面有數百部和 PowerShell 有關的影片。 [搜尋 PowerShell](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated) 就可以查看有哪些影片可看。
 
 ## <a name="resources-for-windows-powershell-developers"></a>適用於 Windows PowerShell 開發人員的資源
 

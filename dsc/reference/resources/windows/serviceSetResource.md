@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC ServiceSet 資源
 ms.openlocfilehash: 5694c2abc5c0caf0098670b629af464b35125583
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076821"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-Windows PowerShell 預期狀態設定 (DSC) 的 **ServiceSet** 資源提供了管理目標節點服務的機制。 此資源是為 `Name` 屬性中指定的每項服務呼叫 [Service 資源](serviceResource.md)的[複合資源](../../../resources/authoringResourceComposite.md)。
+Windows PowerShell 預期狀態設定 (DSC) 的 **ServiceSet** 資源提供了管理目標節點服務的機制。 此資源是為 `Name` 屬性中指定的每個服務呼叫 [Service 資源](serviceResource.md)的[複合資源](../../../resources/authoringResourceComposite.md)。
 
-當您想要將多項服務設定成相同的狀態，請使用此資源。
+當您想要將多個服務設定成相同的狀態，請使用此資源。
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +38,9 @@ Service [string] #ResourceName
 |  屬性  |  描述   |
 |---|---|
 | 名稱| 表示服務名稱。 請注意，有時候和顯示名稱不同。 您可以使用 [Get-Service](https://technet.microsoft.com/library/hh849804.aspx) Cmdlet 取得服務清單及其目前狀態。|
-| StartupType| 表示服務的啟動類型。 這個屬性所允許的值如下：**自動**，**已停用**，和**手動**|
-| BuiltInAccount| 表示用於服務的登入帳戶。 這個屬性所允許的值如下：**LocalService**， **LocalSystem**，以及**NetworkService**。|
-| State| 表示您要確保的服務狀態。**已停止**或是**執行**。|
+| StartupType| 表示服務的啟動類型。 這個屬性所允許的值為：**Automatic**、**Disabled** 和 **Manual**|
+| BuiltInAccount| 表示用於服務的登入帳戶。 這個屬性所允許的值為：**LocalService**、**LocalSystem** 和 **NetworkService**。|
+| State| 表示您要確保的服務狀態：**Stopped** 或 **Running**。|
 | Ensure| 表示系統上是否有服務。 請將此屬性設為 **Absent** 以確保服務不存在。 屬性設定為 **Present** (預設值)，可確保目標服務存在。|
 | 認證| 表示執行服務資源的帳戶認證。 這個屬性與 **BuiltinAccount** 屬性不能同時使用。|
 | DependsOn| 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的識別碼是 *ResourceName*，而它的類型是 *ResourceType*，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|

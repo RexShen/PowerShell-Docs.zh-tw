@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 適合決策者的預期狀態設定概觀
 ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400688"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079586"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適合決策者的預期狀態設定概觀
 
@@ -44,7 +44,7 @@ DSC 的設計過程納入了 [DevOps](http://blogs.technet.com/b/ashleymcglone/a
 
 設定也[以資料為動力](../configurations/configData.md)，讓維運小組更容易識別及變更環境，而不必開發人員介入。
 
-## <a name="desired-state-configuration-on-premises-and-off-premises"></a>Desired State Configuration 的內部和外部部署
+## <a name="desired-state-configuration-on-premises-and-off-premises"></a>內部部署及外部部署的預期狀態設定
 DSC 可以用來管理內部部署及外部部署的部署。
 在內部部署解決方案方面，DSC 有[提取伺服器](../pull-server/pullServer.md)可集中管理電腦，並報告其狀態。
 在雲端解決方案方面，只要能夠使用 Windows 的地方都可以使用 DSC。

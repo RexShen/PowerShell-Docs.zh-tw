@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085961"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -15,7 +15,7 @@ ms.locfileid: "55677140"
 
 Linux 和 macOS 上的 Alpha 版 PowerShell 大部分功能都可運作，但有一些重大的限制和可用性問題。 Linux 和 macOS 上的 Beta 版 PowerShell 比 Alpha 版功能完整且穩定，但仍可能缺少某個功能集，而且可能包含錯誤 (bug)。 在某些情況下，這些問題只是尚未修正的錯誤 (bug)。 而針對其他情況 (像是 ls、cp 等的預設別名情況)，我們則正在向社群尋求有關我們所做選擇的意見反應。
 
-注意：由於許多基礎子系統都很相似，因此 Linux 和 macOS 上的 PowerShell 在功能和錯誤 (bug) 方面都趨向於擁有相同的成熟度。 除了下列所述之外，本節中的問題都同時適用於這兩種作業系統。
+注意：由於許多基礎子系統都很相似，因此 Linux 和 macOS 上的 PowerShell 在功能和錯誤 (Bug) 方面都趨向於擁有相同的成熟度。 除了下列所述之外，本節中的問題都同時適用於這兩種作業系統。
 
 ### <a name="case-sensitivity-in-powershell"></a>PowerShell 中的大小寫之分
 

@@ -4,15 +4,15 @@ contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 疑難排解 Cmdlet
 ms.openlocfilehash: f5cd9c0cc23fef5891bf02c10b6541ab0f9d418a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002457"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084176"
 ---
 # <a name="troubleshooting-cmdlets"></a>疑難排解 Cmdlet
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>如何解決「警告：無法下載套件『您的封裝名稱』」問題
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>如何解決「警告：無法下載套件 '您的套件名稱'」問題
 
 當 `Install-Module` 或 `Update-Module` 有時在某些電腦上失敗時即會回報此問題。
 根據我們的調查，這和網路連線有關。

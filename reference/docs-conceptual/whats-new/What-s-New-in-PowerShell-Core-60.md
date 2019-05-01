@@ -3,11 +3,11 @@ title: PowerShell Core 6.0 的新功能
 description: PowerShell Core 6.0 中發行的新功能與變更
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676864"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059010"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 的新功能
 
@@ -107,15 +107,15 @@ PowerShell Core 具有「可攜式」ZIP 套件。
 ## <a name="renamed-powershellexe-to-pwshexe"></a>已將 `powershell(.exe)` 重新命名為 `pwsh(.exe)`
 
 已將 PowerShell Core 的二進位檔名稱從 `powershell(.exe)` 變更為 `pwsh(.exe)`。
-這項變更提供決定性方式，讓使用者在電腦上執行 PowerShell Core，以支援並存 Windows PowerShell 和 PowerShell Core 安裝。
+此變更提供決定性方式，讓使用者在電腦上執行 PowerShell Core，以支援並存 Windows PowerShell 和 PowerShell Core 安裝。
 `pwsh` 也會較短，而且更容易鍵入。
 
 其他從 `powershell.exe` 到 `pwsh(.exe)` 的變更：
 
 - 已將第一個位置參數從 `-Command` 變更為 `-File`。
-  這項變更會修正 PowerShell 指令碼中 `#!` 的使用方式 (也稱為狀況)，而 PowerShell 指令碼要在非 Windows 平台上從非 PowerShell 殼層執行。
+  此變更會修正 PowerShell 指令碼中 `#!` 的使用方式 (也稱為狀況)，而 PowerShell 指令碼要在非 Windows 平台上從非 PowerShell 殼層執行。
   這也表示您可以執行 `pwsh foo.ps1` 或 `pwsh fooScript` 這類命令，但未指定 `-File`。
-  不過，這項變更需要您在嘗試執行 `pwsh.exe -Command Get-Command` 這類命令時明確指定 `-c` 或 `-Command`。 (#4019)
+  不過，此變更需要您在嘗試執行 `pwsh.exe -Command Get-Command` 這類命令時明確指定 `-c` 或 `-Command`。 (#4019)
 - PowerShell Core 接受 `-i` (或 `-Interactive`) 參數，指出互動式殼層。 (#3558) 這可讓 PowerShell 用作 Unix 平台上的預設殼層。
 - 已從 `pwsh.exe` 移除 `-importsystemmodules` 和 `-psconsoleFile` 參數。 (#4995)
 - 已變更 `pwsh -version` 以及 `pwsh.exe` 的內建說明，以配合其他原生工具。 (#4958 與 #4931) (感謝 [@iSazonov](https://github.com/iSazonov))
@@ -181,7 +181,7 @@ PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版�
 PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 
 這表示，使用 `-Encoding` 參數的所有內建 Cmdlet 預設都會使用 `UTF8NoBOM` 值。
-這項變更會影響下列 Cmdlet：
+此變更會影響下列 Cmdlet：
 
 - Add-Content
 - Export-Clixml
@@ -233,11 +233,11 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 ## <a name="engine-updates"></a>引擎更新
 
 - `$PSVersionTable` 有四個新屬性：
-  - `PSEdition`：這在 PowerShell Core 上設為 `Core`，而在 Windows PowerShell 上設為 `Desktop`
-  - `GitCommitId`：這是在其中建置 PowerShell 之 Git 分支或標記的 Git 認可識別碼。
+  - `PSEdition`:這在 PowerShell Core 上設定為 `Core`，而在 Windows PowerShell 上設定為 `Desktop`
+  - `GitCommitId`:這是在其中建置 PowerShell 之 Git 分支或標記的 Git 認可識別碼。
     在發行的組建上，它可能會與 `PSVersion` 相同。
   - `OS`：這是 `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` 所傳回的作業系統版本字串
-  - `Platform`：這是 `[System.Environment]::OSVersion.Platform` 所傳回。它在 Windows 上設為 `Win32NT`、在 macOS 上設為 `Unix`，而在 Linux 上設為 `Unix`。
+  - `Platform`這是 `[System.Environment]::OSVersion.Platform` 所傳回。它在 Windows 上設定為 `Win32NT`、在 macOS 上設為 `Unix`，而在 Linux 上設定為 `Unix`。
 - 已從 `$PSVersionTable` 移除 `BuildVersion` 屬性。
   此屬性已緊密繫結至 Windows 組建版本。
   相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。 (#3877) (感謝 [@iSazonov](https://github.com/iSazonov)！)
@@ -274,8 +274,8 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 - 將 `-SkipHeaderValidation` 參數新增至 Web Cmdlet 以支援新增標頭，而不驗證標頭值。 (#4085)
 - 必要時，讓 Web Cmdlet 不驗證伺服器的 HTTPS 憑證。
 - 將驗證參數新增至 Web Cmdlet。 (#5052) (感謝 [@markekraus](https://github.com/markekraus))
-  - 新增`-Authentication`提供三個選項：基本、 OAuth 和持有人。
-  - 新增 `-Token`，以取得 [OAuth] 和 [持有人] 選項的持有人權杖。
+  - 新增提供三個選項的 `-Authentication`：Basic、OAuth 與 Bearer。
+  - 新增 `-Token`，以取得 OAuth 和 Bearer 選項的持有人權杖。
   - 新增 `-AllowUnencryptedAuthentication`，以略過任何非 HTTPS 的傳輸配置所提供的驗證。
 - 將 `-ResponseHeadersVariable` 新增至 `Invoke-RestMethod`，以啟用擷取回應標頭。 (#4888) (感謝 [@markekraus](https://github.com/markekraus))
 - 修正 Web Cmdlet，以在回應狀態碼為不成功時於例外狀況中包含 HTTP 回應。 (#3201)
@@ -376,7 +376,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 如果您想要退出這個遙測，只需使用下列其中一個值來建立 `POWERSHELL_TELEMETRY_OPTOUT` 環境變數：`true`、`1` 或 `yes`。
 建立變數會略過第一次執行 PowerShell 之前的所有遙測。
 我們也想要公開此遙測資料，以及我們在[社群儀表板][community-dashboard]中從遙測搜集到的深入資訊。
-您可以深入了解我們如何在這個[部落格文章][telemetry-blog]中使用這項資料。
+您可以深入了解我們如何在這個[部落格文章][telemetry-blog]中使用此資料。
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/

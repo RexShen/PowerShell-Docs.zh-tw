@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: dsc,powershell,設定,安裝
 title: 保護 MOF 檔案
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079316"
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -34,7 +34,7 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 - **發行與散發憑證的一些方法**。 本主題和範例假設您使用的是 Active Directory 憑證授權單位。 如需有關 Active Directory 憑證服務的詳細資訊，請參閱 [Active Directory 憑證服務概觀](https://technet.microsoft.com/library/hh831740.aspx)和 [Windows Server 2008 的 Active Directory 憑證服務](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
 - **目標節點或節點的系統管理存取權**。
 - **每個目標節點在其個人存放區都儲存了支援加密的憑證**。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用 [工作站驗證] 範本，您可在[預設憑證範本](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它和其他憑證範本。
-- 如果在目標節點以外的電腦上執行這項設定，請**匯出憑證的公開金鑰**，將它匯入要執行設定的電腦。 確定只匯出**公用**金鑰，妥善保管私密金鑰。
+- 如果在目標節點以外的電腦上執行此設定，請**匯出憑證的公開金鑰**，將它匯入要執行設定的電腦。 確定只匯出**公用**金鑰，妥善保管私密金鑰。
 
 ## <a name="overall-process"></a>完整程序
 
@@ -52,10 +52,10 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 1. **金鑰使用方法**：
    - 必須包含：'KeyEncipherment' 和 'DataEncipherment'。
-   - 應該_不_包含：數位簽章
+   - 「不得」包含：「數位簽章」。
 2. **增強金鑰使用方法**：
    - 必須包含：文件加密 (1.3.6.1.4.1.311.80.1)。
-   - 應該_不_包含：用戶端驗證 (1.3.6.1.5.5.7.3.2) 和伺服器驗證 (1.3.6.1.5.5.7.3.1)。
+   - 「不得」包含：用戶端驗證 (1.3.6.1.5.5.7.3.2) 與伺服器驗證 (1.3.6.1.5.5.7.3.1)。
 3. *Target Node_ 上有憑證的私密金鑰可用。
 4. 憑證的**提供者**必須是「Microsoft RSA SChannel 密碼編譯提供者」。
 
@@ -84,7 +84,7 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目標節點上︰ 建立及匯出憑證
 
-> 目標節點Windows Server 2016 和 Windows 10
+> 目標節點：Windows Server 2016 與 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -95,7 +95,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 匯出之後，必須將 `DscPublicKey.cer` 複製到**撰寫節點**。
 
-> 目標節點Windows Server 2012 R2/Windows 8.1 及更早版本
+> 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
 > 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
 >
@@ -151,7 +151,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在撰寫節點上：建立及匯出憑證
 
-> 目標節點Windows Server 2016 和 Windows 10
+> 目標節點：Windows Server 2016 與 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -167,7 +167,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 匯出之後，必須將 `DscPrivateKey.pfx` 複製到**目標節點**。
 
-> 目標節點Windows Server 2012 R2/Windows 8.1 及更早版本
+> 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
 > 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
 >

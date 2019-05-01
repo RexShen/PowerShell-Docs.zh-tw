@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 取得命令的相關資訊
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401035"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057701"
 ---
 # <a name="getting-information-about-commands"></a>取得命令的相關資訊
 
@@ -74,7 +74,7 @@ Get-Command *
 > 星號 (\*) 會用於 PowerShell 命令引數中的萬用字元比對。 \* 表示「符合一或多個任意字元」。 您可以鍵入 `Get-Command a*` 來尋找開頭為字母 "a" 的所有命令。 不同於 **cmd.exe** 中的萬用字元比對，PowerShell 的萬用字元也會比對句點。
 
 使用 `Get-Command` 的 **CommandType** 參數來取得其他類型的原生命令。
-Cmdlet 後傳回之仲裁資源的相關資訊。
+Cmdlet。
 
 若要取得命令別名 (指派給命令的暱稱)，請輸入：
 

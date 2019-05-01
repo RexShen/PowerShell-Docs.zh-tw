@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: ISEOptions 物件
 ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400972"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057769"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 物件
 
@@ -138,7 +138,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
-在 Windows PowerShell ISE 主控台窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於主控台窗格的語彙基元類型及色彩的名稱/值組。 若要變更指令碼窗格中 IntelliSense 語彙基元的色彩，請參閱 [TokenColors](#tokencolors)。 若要將色彩重設為預設值，請參閱 [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)。 語彙基元色彩可以針對下列設定：屬性，命令、 CommandArgument、 CommandParameter、 註解、 GroupEnd、 GroupStart、 關鍵字、 LineContinuation、 LoopLabel、 成員、 新行字元、 數字、 運算子、 位置、 StatementSeparator、 字串、 類型、 不明、 變數。
+在 Windows PowerShell ISE 主控台窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於主控台窗格的語彙基元類型及色彩的名稱/值組。 若要變更指令碼窗格中 IntelliSense 語彙基元的色彩，請參閱 [TokenColors](#tokencolors)。 若要將色彩重設為預設值，請參閱 [RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors)。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```powershell
 # Sets the color of commands to green.
@@ -435,7 +435,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-指定在不同的 PowerShell 索引標籤中開啟同一個檔案時，是否會出現警告訊息。 如果設定為 **$true**，以開啟相同的檔案，在多個索引標籤會顯示此訊息：「 這個檔案的複本是在另一個 Windows PowerShell 索引標籤中開啟。變更這個檔案將會影響所有已開啟的副本。」 預設值為 **$true**。
+指定在不同的 PowerShell 索引標籤中開啟同一個檔案時，是否會出現警告訊息。 如果設定為 **$true**，在多個索引標籤中開啟相同檔案會顯示下列訊息：「已在另一個 PowerShell 索引標籤中開啟這個檔案的副本。變更這個檔案將會影響所有已開啟的副本。」 預設值為 **$true**。
 
 ```powershell
 # Enable the warning message when a file is
@@ -447,7 +447,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-在 Windows PowerShell ISE 指令碼窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於指令碼窗格的語彙基元類型及色彩的名稱/值組。 若要變更主控台窗格中 IntelliSense 語彙基元的色彩，請參閱 [ConsoleTokenColors](#consoletokencolors)。 若要將色彩重設為預設值，請參閱 [RestoreDefaultTokenColors](#restoredefaulttokencolors)。 語彙基元色彩可以針對下列設定：屬性，命令、 CommandArgument、 CommandParameter、 註解、 GroupEnd、 GroupStart、 關鍵字、 LineContinuation、 LoopLabel、 成員、 新行字元、 數字、 運算子、 位置、 StatementSeparator、 字串、 類型、 不明、 變數。
+在 Windows PowerShell ISE 指令碼窗格中，指定 IntelliSense 語彙基元的色彩。 這個屬性是一個字典物件，其中包含適用於指令碼窗格的語彙基元類型及色彩的名稱/值組。 若要變更主控台窗格中 IntelliSense 語彙基元的色彩，請參閱 [ConsoleTokenColors](#consoletokencolors)。 若要將色彩重設為預設值，請參閱 [RestoreDefaultTokenColors](#restoredefaulttokencolors)。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```powershell
 # Sets the color of commands to green.
@@ -539,7 +539,7 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
-指定一個字典物件，其中包含適用於 Windows PowerShell ISE 中所顯示之 XML 內容的語彙基元類型和色彩的名稱/值組。 語彙基元色彩可以針對下列設定：屬性，命令、 CommandArgument、 CommandParameter、 註解、 GroupEnd、 GroupStart、 關鍵字、 LineContinuation、 LoopLabel、 成員、 新行字元、 數字、 運算子、 位置、 StatementSeparator、 字串、 類型、 不明、 變數。 另請參閱 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors)。
+指定一個字典物件，其中包含適用於 Windows PowerShell ISE 中所顯示之 XML 內容的語彙基元類型和色彩的名稱/值組。 您可以為下列各項設定語彙基元色彩：Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 另請參閱 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors)。
 
 ```powershell
 # Sets the color of XML element names to green.

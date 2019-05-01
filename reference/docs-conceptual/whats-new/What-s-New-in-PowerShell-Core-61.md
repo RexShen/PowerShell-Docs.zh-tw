@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 的新功能
 description: PowerShell Core 6.1 中發行的新功能與變更
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086091"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 的新功能
 
@@ -162,7 +162,7 @@ Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertB
 
 ## <a name="markdown-cmdlets-and-rendering"></a>Markdown Cmdlet 和轉譯
 
-Markdown 是用於建立可讀取純文字文件的一項標準，這些文件具有基本格式，可轉譯為 HTML。
+Markdown 是用於建立可讀取純文字文件的一個標準，這些文件具有基本格式，可轉譯為 HTML。
 
 我們在 6.1 版中新增了一些 Cmdlet，可讓您轉換和轉譯主控台中的 Markdown 文件，包括：
 
@@ -179,10 +179,11 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 
 ## <a name="experimental-feature-flags"></a>實驗性功能旗標
 
-實驗性功能旗標可讓使用者開啟尚未完成的功能。
-這些實驗性功能不受支援，而且可能含有 Bug。
+我們已啟用對[實驗性功能][]的支援。 這可讓 PowerShell 開發人員在設計完成之前，先提供新功能並取得意見反應。 我們也能藉此避免在設計演變的過程中進行重大變更。
 
-您可以在 [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md) 中深入了解這項功能。
+請使用 `Get-ExperimentalFeature` 取得一份可用實驗性功能的清單。 您可以使用 `Enable-ExperimentalFeature` 和 `Disable-ExperimentalFeature` 啟用或停用這些功能。
+
+您可以在 [PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md) 中深入了解此功能。
 
 ## <a name="web-cmdlet-improvements"></a>Web Cmdlet 改善
 
@@ -192,7 +193,7 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - `application-json` 回應的預設編碼設為 UTF-8
 - [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - `-SkipHeaderValidation` 參數可允許不符合標準的 `Content-Type` 標頭
 - [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - `Form` 參數可支援簡化的 `multipart/form-data` 支援
-- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - 以符合規範且不區分大小寫的方式來處理關聯機碼
+- [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - 以符合規範且不區分大小寫的方式來處理關聯索引鍵
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - 在 Web Cmdlet 中新增 `-Resume` 參數
 
 ## <a name="remoting-improvements"></a>遠端功能改善
@@ -210,7 +211,7 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 `Enable-PSRemoting` 現在會建立兩個遠端工作階段設定：
 
 - 一個用於 PowerShell 的主要版本。 例如，`PowerShell.6`。 在次要版本更新之間，可依賴此端點作為「全系統」的 PowerShell 6 工作階段設定
-- 一個版本特定的工作階段設定，例如： `PowerShell.6.1.0`
+- 一個版本特定的工作階段設定，例如：`PowerShell.6.1.0`
 
 如果您想要在相同電腦上安裝多個 PowerShell 6 版本以供存取，此行為會很有用。
 
@@ -330,7 +331,7 @@ $PSCustomObject.Count
 1
 ```
 
-這項工作也包含 `ForEach` 和 `Where` 方法，可讓您操作並篩選 `PSCustomObject` 項目：
+此工作也包含 `ForEach` 和 `Where` 方法，可讓您操作並篩選 `PSCustomObject` 項目：
 
 ```powershell
 $PSCustomObject.ForEach({$_.foo + 1})
@@ -386,7 +387,7 @@ class M {
 [M]::AggregateString((gci).Name, [M]::DoubleStrLen)
 ```
 
-如需這項變更的詳細資訊，請參閱 [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287)。
+如需此變更的詳細資訊，請參閱 [PR #5287](https://github.com/PowerShell/PowerShell/pull/5287)。
 
 ### <a name="standard-deviation-in-measure-object"></a>`Measure-Object` 中的標準差
 
@@ -434,11 +435,11 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 在 Windows PowerShell 中，我們會包含下列類型快速鍵，以更輕鬆地搭配其各自類型來運作：
 
-- `[adsi]`： `System.DirectoryServices.DirectoryEntry`
-- `[adsisearcher]`： `System.DirectoryServices.DirectorySearcher`
-- `[wmi]`： `System.Management.ManagementObject`
-- `[wmiclass]`： `System.Management.ManagementClass`
-- `[wmisearcher]`： `System.Management.ManagementObjectSearcher`
+- `[adsi]`：`System.DirectoryServices.DirectoryEntry`
+- `[adsisearcher]`：`System.DirectoryServices.DirectorySearcher`
+- `[wmi]`：`System.Management.ManagementObject`
+- `[wmiclass]`：`System.Management.ManagementClass`
+- `[wmisearcher]`：`System.Management.ManagementObjectSearcher`
 
 這些類型快速鍵並未包含在 PowerShell 6 中，但已新增至 Windows 上執行的 PowerShell 6.1。
 
@@ -489,16 +490,16 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 在 Windows 上，MSI 套件現在會安裝到下列路徑：
 
-- `$env:ProgramFiles\PowerShell\6\` (適用於 6.x 的穩定安裝)
-- `$env:ProgramFiles\PowerShell\6-preview\` (適用於 6.x 的預覽安裝)
+- 若是 6.x 的穩定安裝，則為 `$env:ProgramFiles\PowerShell\6\`
+- 若是 6.x 的預覽安裝，則為 `$env:ProgramFiles\PowerShell\6-preview\`
 
-這項變更會確保 PowerShell Core 可透過 Microsoft Update 來更新或接受服務。
+此變更會確保 PowerShell Core 可透過 Microsoft Update 來更新或接受服務。
 
 如需詳細資訊，請參閱 [PowerShell RFC0026](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0026-MSI-Installation-Path.md)。
 
 ### <a name="telemetry-can-only-be-disabled-with-an-environment-variable"></a>遙測只能透過環境變數停用
 
-PowerShell Core 會在啟動時將基本遙測資料傳送給 Microsoft。 該資料包括作業系統名稱、作業系統版本和 PowerShell 版本。 這項資料可讓我們更加了解使用 PowerShell 的環境，並讓我們排列新功能和修正的優先順序。
+PowerShell Core 會在啟動時將基本遙測資料傳送給 Microsoft。 該資料包括作業系統名稱、作業系統版本和 PowerShell 版本。 此資料可讓我們更加了解使用 PowerShell 的環境，並讓我們排列新功能和修正的優先順序。
 
 若要退出此遙測，請將環境變數 `POWERSHELL_TELEMETRY_OPTOUT` 設定為 `true`、`yes` 或 `1`。 我們不再支援透過刪除 `DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` 檔案來停用遙測。
 
@@ -511,7 +512,7 @@ PowerShell Core 會在啟動時將基本遙測資料傳送給 Microsoft。 該�
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>已將 `VisualBasic` 從 Add-Type 支援的語言中移除
 
 在過去，您可以使用 `Add-Type` Cmdlet 編譯 Visual Basic 程式碼。
-Visual Basic 很少用於 `Add-Type`。 我們已移除這項功能來縮減 PowerShell 的大小。
+Visual Basic 很少用於 `Add-Type`。 我們已移除此功能來縮減 PowerShell 的大小。
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>已清除 `CommandTypes.Workflow` 和 `WorkflowInfoCleaned` 的使用
 
@@ -523,3 +524,6 @@ Visual Basic 很少用於 `Add-Type`。 我們已移除這項功能來縮減 Pow
 雖然您不應該依賴順序，但如果您想要第一個群組，則可能會被此變更中斷。 我們認為這種效能改進值得改變，因為依賴於先前行為的影響很小。
 
 如需此變更的詳細資訊，請參閱 [問題 #7409](https://github.com/PowerShell/PowerShell/issues/7409) \(英文\)。
+
+<!-- URL references -->
+[實驗性功能]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: 9a9bdac652512640209c20e3deb20d7abc0142c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5ac9566979e1b761249f5cc7c62ed44047a2b9f6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058007"
 ---
 # <a name="register-a-powershell-repository"></a>註冊 PowerShell 存放庫
 您可以設定 PowerShellGet 操作內部存放庫。 做法是使用新增下列項目︰
-- Register-PSRepository：為目前的使用者註冊存放庫。
+- Register-PSRepository：為目前使用者註冊存放庫。
 - Unregister-PSRepository：移除目前使用者已註冊的存放庫。
 - Set-PSRepository：為已註冊的存放庫設定值。
-- Get-PSRepository：為目前的使用者取得所有已註冊的存放庫。
+- Get-PSRepository：取得目前的用者所有已註冊的存放庫。
 
 註冊存放庫後，您可以使用 Find-Module 和 Install-Module 搭配存放庫。
 

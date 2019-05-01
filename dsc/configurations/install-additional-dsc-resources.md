@@ -1,51 +1,51 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc，powershell、 資源、 資源庫、 安裝程式
+keywords: dsc, powershell, 資源, 資源庫, 安裝, 設定
 title: 安裝額外的 DSC 資源
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55677032"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080068"
 ---
 # <a name="install-additional-dsc-resources"></a>安裝額外的 DSC 資源
 
-PowerShell 包含幾個的立即可用資源的 Desired State Configuration (DSC)。 **PSDesiredStateConfiguration**模組包含的所有 OOB DSC 資源可在您的 PowerShell 的特定執行個體上取得。
+PowerShell 包含幾個適用於 Desired State Configuration (DSC) 的立即可用資源。 **PSDesiredStateConfiguration** 模組包含所有 OOB DSC 資源，可供您的特定 PowerShell 執行個體使用。
 
-這是包含在 PowerShell 4.0 和資源的功能描述的 OOB 資源的清單。
+這是 PowerShell 4.0 中包含的 OOB 資源清單和資源功能描述。
 
 > [!NOTE]
-> 這是不完整的清單中，OOB 資源數目變得與每個版本的 PowerShell。
+> 此清單並不完整，因為 OOB 資源的數量會隨著 PowerShell 的每個版本而增加。
 
 |資源  |描述  |
 |---------|---------|
-|**File**|控制檔案和目錄的狀態。 將從檔案複製**來源**要**目的地**，加以更新時**來源**藉由比較日期、 總和檢查碼，以及雜湊的變更。|
-|**Archive**|解壓縮封存和指定的位置。 驗證具有指定的封存**總和檢查碼**。|
-|**Environment**|管理的環境變數。|
-|**群組**|管理本機群組，並控制群組成員資格。|
-|**Log**|寫入訊息至`Microsoft-Windows-Desired State Configuration/Analytic`事件記錄檔。|
-|**套件**|安裝或解除安裝使用的套件**引數**， **LogPath**， **ReturnCode**，其他設定。|
+|**檔案**|控制檔案和目錄的狀態。 在**來源**變更時將檔案從**來源**複製到**目的地**，並藉由比較日期、總和檢查碼和雜湊更新檔案。|
+|**封存**|將封存和指定位置解除封裝。 驗證封存具有指定的**總和檢查碼**。|
+|**環境**|管理環境變數。|
+|**群組**|管理本機群組並控制群組成員資格。|
+|**Log**|將訊息寫入至 `Microsoft-Windows-Desired State Configuration/Analytic` 事件記錄檔。|
+|**套件**|使用**引數**、**LogPath**、**ReturnCode** 和其他設定安裝套件或解除安裝套件。|
 |**Registry**|管理登錄機碼和值。|
-|**Script**|可讓您設計您自己[取得測試設定](../resources/get-test-set.md)指令碼區塊。|
+|**Script**|可讓您設計自己的[取得-測試-設定](../resources/get-test-set.md)指令碼區塊。|
 |**Service**|設定 Windows 服務。|
 |**User** |管理本機使用者和屬性。|
 |**WindowsFeature**|管理角色和功能。|
-|**WindowsProcess**|設定 Windows 處理程序。|
+|**WindowsProcess**|設定 Windows 處理序。|
 
-OOB 資源可讓一般作業的不錯的起點。 如果 OOB 資源不符合您的需求，您可以撰寫您自己[自訂資源](../resources/authoringResource.md)。 撰寫自訂的資源，為您解決問題之前，您應該瀏覽大量已由 Microsoft 和 PowerShell 社群的 DSC 資源。
+OOB 資源是適合一般作業的良好起點。 如果 OOB 資源不能滿足您的需求，您可以撰寫自己的[自訂資源](../resources/authoringResource.md)。 在撰寫自訂資源來解決問題之前，您應該先瀏覽由 Microsoft 和 PowerShell 社群建立的大量 DSC 資源。
 
-您可以在同時尋找 DSC 資源[PowerShell 資源庫](https://www.powershellgallery.com/)並[GitHub](https://github.com/)。 您也可以直接從 PowerShell 主控台中使用安裝 DSC 資源[PowerShellGet](/powershell/module/powershellget/)。
+您可以在 [PowerShell 資源庫](https://www.powershellgallery.com/)和 [GitHub](https://github.com/) 中找到 DSC 資源。 您也可以直接從 PowerShell 主控台中使用 [PowerShellGet](/powershell/module/powershellget/) 來安裝 DSC 資源。
 
 ## <a name="installing-powershellget"></a>安裝 PowerShellGet
 
-若要判斷您是否已有**PowerShell**取得，或若要取得安裝協助，請參閱下列指南：[安裝 PowerShellGet](/powershell/gallery/installing-psget)。
+若要判斷您是否已有 **PowerShellGet**，或是要取得安裝協助，請參閱下列指南：[安裝 PowerShellGet](/powershell/gallery/installing-psget)。
 
-## <a name="finding-dsc-resources-using-powershellget"></a>尋找使用 PowerShellGet 的 DSC 資源
+## <a name="finding-dsc-resources-using-powershellget"></a>使用 PowerShellGet 尋找 DSC 資源
 
-一次**PowerShellGet**安裝在您系統上，您可以尋找並安裝在裝載的 DSC 資源[PowerShell 資源庫](https://www.powershellgallery.com/)。
+一旦在系統上安裝 **PowerShellGet** 之後，您就可以尋找並安裝於 [PowerShell 資源庫](https://www.powershellgallery.com/)中裝載的 DSC 資源。
 
-首先，使用[Find-dscresource](/powershell/module/powershellget/find-dscresource) cmdlet 來尋找 DSC 資源。 當您執行`Find-DSCResource`第一次，您會看到下列提示來安裝 「 NuGet 提供者 」。
+首先，使用 [Find-DSCResource](/powershell/module/powershellget/find-dscresource) Cmdlet 尋找 DSC 資源。 當您第一次執行 `Find-DSCResource` 時，您會看到以下安裝「NuGet 提供者」的提示。
 
 ```
 PS> Find-DSCResource
@@ -59,15 +59,15 @@ install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
-之後按 'y' 安裝"NuGet"提供者，您會看到一份您可以從 「 PowerShell 資源庫安裝的 DSC 資源。
+按下 'y' 後隨即會安裝 "NuGet" 提供者，您會看到可從 PowerShell 資源庫安裝的 DSC 資源清單。
 
 > [!NOTE]
-> 因為它是非常大，不會顯示清單。
+> 因為清單非常大，故在此不顯示。
 
-您也可以指定`-Name`參數中使用萬用字元，或`-Filter`不含萬用字元來縮小搜尋範圍的參數。 此範例會嘗試尋找 「 時區 」 DSC 資源使用萬用字元。
+您也可以使用萬用字元指定 `-Name` 參數，或不含萬用字元的 `-Filter` 參數來縮小搜尋範圍。 此範例會使用萬用字元嘗試尋找 "TimeZone" (時區) 的 DSC 資源。
 
 > [!IMPORTANT]
-> 目前沒有中的 bug `Find-DSCResource` cmdlet，以防止在兩者中使用萬用字元`-Name`和`-Filter`參數。 下列第二個範例顯示如何因應措施，使用`Where-Object`。
+> `Find-DSCResource` Cmdlet 目前有錯誤 (Bug)，無法在 `-Name` 和 `-Filter` 參數中使用萬用字元。 下列第二個範例示範使用 `Where-Object` 的因應措施。
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -90,7 +90,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-您也可以使用`Where-Object`來尋找具有更細微的篩選的 DSC 資源。 這個方法會比使用內建的篩選參數慢。
+您也可以使用 `Where-Object` 以更細微的篩選來尋找 DSC 資源。 這個方法會比使用內建的篩選參數慢。
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -100,16 +100,16 @@ Name                                Version    ModuleName                       
 TimeZone                            6.0.0.0    ComputerManagementDsc               PSGallery
 ```
 
-如需有關篩選的詳細資訊，請參閱 < [Where-object](/powershell/module/microsoft.powershell.core/where-object)。
+如需有關篩選的詳細資訊，請參閱 [Where-Object](/powershell/module/microsoft.powershell.core/where-object)。
 
-## <a name="installing-dsc-resources-using-powershellget"></a>安裝使用 PowerShellGet 的 DSC 資源
+## <a name="installing-dsc-resources-using-powershellget"></a>使用 PowerShellGet 安裝 DSC 資源
 
-若要安裝 DSC 資源，請使用[Install-module](/powershell/module/PowershellGet/Install-Module) cmdlet，並指定下方顯示的模組名稱**模組**名稱在您的搜尋結果中。
+若要安裝 DSC 資源，請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet，指定搜尋結果中顯示在**模組**名稱底下的模組名稱。
 
-「 時區 」 資源存在於"ComputerManagementDSC 」 模組，因此也就是模組此範例會安裝。
+"TimeZone" 資源存在於 "ComputerManagementDSC" 模組中，也就是此範例會安裝的模組。
 
 > [!NOTE]
-> 如果您有不受信任 「 PowerShell 資源庫，您會看到以下要求確認，警告，並指示您要如何避免後續提示上安裝。
+> 如果您有不受信任的 PowerShell 資源庫，則會看到要求確認的警告，以及指示您如何避免後續的安裝提示。
 
 ```
 PS> Install-Module -Name ComputerManagementDSC
@@ -121,7 +121,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-按 'y' 以繼續安裝模組。 安裝之後，您可以確認已安裝使用新的資源[Get-dscresource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)。
+按 'y' 以繼續安裝模組。 安裝之後，您可以使用 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 確認已安裝新的資源。
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-您也可以檢視您新安裝的模組中的其他資源，藉由指定`-ModuleName`參數。
+您也可以透過指定 `-ModuleName` 參數來檢視新安裝的其他資源。
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC

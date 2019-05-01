@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400816"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076713"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -21,7 +21,7 @@ ms.locfileid: "53400816"
 
 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 
->**注意：** 類別型資源不支援泛型集合。
+>**注意：** 以類別為基礎的資源不支援泛型集合。
 
 ## <a name="folder-structure-for-a-class-resource"></a>類別資源的資料夾結構
 
@@ -30,8 +30,8 @@ ms.locfileid: "53400816"
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>建立類別
@@ -64,10 +64,10 @@ DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性
 
 請注意，屬性 (attribute) 會修改屬性 (property)。 屬性的意義如下：
 
-- **Dscproperty （key)**:屬性是必要的。 此屬性為索引鍵。 所有標示為索引鍵的屬性值都必須結合，以在設定內唯一識別資源執行個體。
-- **Dscproperty （mandatory)**:屬性是必要的。
-- **Dscproperty （notconfigurable)**:屬性是唯讀的。 標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 **Get()** 方法填入。
-- **Dscproperty （)**:屬性是可設定的但並非必要。
+- **DscProperty(Key)**：此為必要屬性。 此屬性為索引鍵。 所有標示為索引鍵的屬性值都必須結合，以在設定內唯一識別資源執行個體。
+- **DscProperty(Mandatory)**：此為必要屬性。
+- **DscProperty(NotConfigurable)**：此為唯讀屬性。 標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 **Get()** 方法填入。
+- **DscProperty()**：此為可設定但非必要的屬性。
 
 **$Path** 和 **$SourcePath** 屬性都是字串。 **$CreationTime** 是 [DateTime](/dotnet/api/system.datetime) 屬性。 **$Ensure** 屬性是列舉類型，定義如下。
 
@@ -86,7 +86,6 @@ enum Ensure
 這個程式碼也包含 CopyFile() 函式，這是會將檔案從 **$SourcePath** 複製到 **$Path** 的 Helper 函式。
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ enum Ensure
 ```
 
 ### <a name="the-complete-file"></a>完整的檔案
+
 完整的類別檔案如下。
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>建立資訊清單
 
 若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 我們的資訊清單看起來像這樣︰
@@ -474,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：****PsDscRunAsCredential**在 PowerShell 5.0 和更新版本支援。
+>**注意：** PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。
 
 您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>在模組中宣告多個類別資源
+
+一個模組可定義以多個類別為基礎的 DSC 資源。 您可以透過下列方式建立資料夾結構：
+
+1. 在 "<ModuleName>.psm1" 檔案中定義第一個資源，然後在 **DSCResources** 資料夾下方定義後續資源。
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. 在 **DSCResources** 資料夾下方定義所有資源。
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> 在上述範例中，將 **DSCResources** 下方的所有 PSM1 檔案新增至您 PSD1 檔案中的 **NestedModules** 索引碼。
+
 ### <a name="access-the-user-context"></a>存取使用者內容
 
 若要從自訂資源內存取使用者內容，您可以使用自動變數 `$global:PsDscContext`。
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>另請參閱
-### <a name="concepts"></a>概念
+
 [建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)

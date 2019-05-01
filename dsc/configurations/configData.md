@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用設定資料
 ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080215"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
 
@@ -185,11 +185,11 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>在設定中使用 ConfigurationData 變數
 
-DSC 提供下列特殊變數，可用於設定指令碼：
+DSC 提供下列特殊變數，可用於設定指令碼中︰
 
 - **$AllNodes** 代表 **ConfigurationData** 中所定義的整個節點集合。 您可以使用 **.Where()** 和 **.ForEach()** 篩選 **AllNodes** 集合。
 - **ConfigurationData** 代表編譯設定時，當做參數傳遞的整個雜湊表。
-- **MyTypeName**包含[組態](configurations.md)中使用變數的名稱。 例如，在組態`MyDscConfiguration`，則`$MyTypeName`的值`MyDscConfiguration`。
+- **MyTypeName** 包含變數所用的[設定](configurations.md)名稱。 例如，在設定 `MyDscConfiguration` 中，`$MyTypeName` 的值為 `MyDscConfiguration`。
 - **Node** 代表 **AllNodes** 集合使用 **.Where()** 或 **.ForEach()** 篩選後所包含的特定項目。
   - 您可以在 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 中深入閱讀這些方法
 

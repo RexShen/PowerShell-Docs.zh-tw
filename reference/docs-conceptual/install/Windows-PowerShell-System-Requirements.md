@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 系統需求
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 164ccefa050373064977108aaa13a3ecbeb28713
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: a9a7dc434d26876d6747526ad3ef6fa598376ac1
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400710"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058296"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
 本主題列出適用於 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 及 Windows PowerShell 5.1，以及適用於一些特殊功能 (例如 Windows PowerShell 整合式指令碼環境 (ISE)、CIM 命令與工作流程) 的系統需求。
@@ -131,7 +131,7 @@ Windows PowerShell 4.0 設計成可回溯相容至 Windows PowerShell 3.0 和 Wi
 
 不過，因為 Microsoft .NET Framework 4 中執行階段啟用原則的變更，所以針對 Windows PowerShell 2.0 所撰寫並使用通用語言執行平台 (CLR) 2.0 編譯的 Windows PowerShell 主機程式必須經過修改，才能在 Windows PowerShell 3.0 (使用 CLR 4.0 編譯) 中執行。
 
-Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足這項需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足這項需求。
+Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 Service Pack 1 可滿足此需求。 Microsoft .NET Framework 4 和更新版本的 Microsoft .NET Framework 不滿足此需求。
 
 如需新增或安裝 Windows PowerShell 2.0 引擎以及新增或安裝所需 Microsoft .NET Framework 版本的資訊，請參閱[安裝 Windows PowerShell 2.0 引擎](Installing-the-Windows-PowerShell-2.0-Engine.md)。 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)。
 

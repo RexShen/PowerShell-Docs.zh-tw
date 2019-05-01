@@ -2,66 +2,66 @@
 ms.date: 11/06/2018
 contributor: JKeithB
 keywords: 資源庫,powershell,cmdlet,psgallery,psget
-title: 使用本機 PSRepositories
+title: 使用本機 PSRepository
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679283"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084091"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>使用本機 PowerShellGet 存放庫
 
-PowerShellGet 模組支援的存放庫以外的 「 PowerShell 資源庫。
-這些 cmdlet 會啟用下列案例：
+PowerShellGet 模組支援 PowerShell 資源庫以外的存放庫。
+這些 Cmdlet 會啟用下列案例：
 
-- 支援在您的環境中使用的一組受信任且預先驗證的 PowerShell 模組
+- 支援一組受信任且預先驗證的 PowerShell 模組，以便在您的環境中使用
 - 測試建置 PowerShell 模組或指令碼的 CI/CD 管線
 - 將 PowerShell 指令碼和模組傳遞給無法存取網際網路的系統
 
-本文說明如何設定本機的 PowerShell 存放庫。 本文亦涵蓋[OfflinePowerShellGetDeploy][]模組可從 PowerShell 資源庫。 此模組包含 cmdlet 來安裝最新版的 PowerShellGet 到您的本機儲存機制。
+本文說明如何設定本機 PowerShell 存放庫。 本文亦涵蓋可從 PowerShell 資源庫取得的 [OfflinePowerShellGetDeploy][] 模組。 此模組所包含的 Cmdlet 可將最新版的 PowerShellGet 安裝到您的本機存放庫。
 
 ## <a name="local-repository-types"></a>本機存放庫類型
 
-有兩種方式可建立本機的 PSRepository:NuGet 伺服器或檔案共用。 每個類型都有其優缺點：
+有兩種方式可用來建立本機 PSRepository：NuGet 伺服器或檔案共用。 每個類型都有優點和缺點：
 
 NuGet 伺服器
 
 | 優點| 缺點 |
 | --- | --- |
-| 精確地模擬 powershell 資源庫功能 | 多層式應用程式所需作業計劃與支援 |
-| NuGet 整合了 Visual Studio 中，其他工具 | 驗證模型和所需的 NuGet 帳戶管理 |
-| NuGet 支援中的中繼資料`.Nupkg`套件 | 發行需要 API 金鑰管理與維護 |
-| 提供搜尋、 套件管理等。 | |
+| 精確地模擬 PowerShellGallery 功能 | 多層式應用程式需要作業規劃與支援 |
+| NuGet 整合了 Visual Studio，其他工具 | 需要驗證模型和 NuGet 帳戶管理 |
+| NuGet 支援 `.Nupkg` 套件的中繼資料 | 發佈需要 API 金鑰管理與維護 |
+| 提供搜尋、套件管理等。 | |
 
 檔案共用
 
 | 優點| 缺點 |
 | --- | --- |
-| 易於設定、 備份和維護 | PowerShellGet 所使用的中繼資料無法使用 |
-| 簡單的安全性模式-使用者共用的權限 | 沒有 UI，超過基本的檔案共用 |
-| 沒有條件約束，例如取代現有的項目 | 有限的安全性並沒有記錄，誰負責更新項目 |
+| 易於設定、備份和維護 | 無法使用 PowerShellGet 所使用的中繼資料 |
+| 簡單的安全性模式：共用上的使用者權限 | 除基本的檔案共用之外沒有任何 UI |
+| 沒有取代現有項目之類的條件約束 | 安全性有限，而且不會記錄誰負責更新哪些項目 |
 
-PowerShellGet 適用於型別和尋找版本和相依性安裝支援。
-不過，適用於 「 PowerShell 資源庫的某些功能不適用於基底的 NuGet 伺服器或檔案共用。
+PowerShellGet 適用於任一個類型，並支援尋找版本和相依性安裝。
+不過，部分適用於 PowerShell 資源庫的功能不適用基底 NuGet 伺服器或檔案共用。
 
-- 一切都已封裝-指令碼、 模組、 DSC 資源，或角色功能沒有任何差異。
-- 檔案共用伺服器看不見套件中繼資料，包括標記。
+- 所有項目均為套件：指令碼、模組、DSC 資源或角色功能間並無任何差異。
+- 檔案共用伺服器看不到包括標記在內的套件中繼資料。
 
-## <a name="creating-a-local-repository"></a>建立本機儲存機制
+## <a name="creating-a-local-repository"></a>建立本機存放庫
 
-下列文章列出的步驟設定您自己的 NuGet 伺服器。
+下列文章列出設定您自己 NuGet 伺服器的步驟。
 
 - [NuGet.Server][]
 
-請遵循新增套件的點為止的步驟。 步驟[發行套件](#publishing-to-a-local-repository)本文稍後所述。
+遵循步驟來新增套件。 [發佈套件](#publishing-to-a-local-repository)的步驟將於本文稍後討論。
 
-檔案共用為基礎儲存機制中，請確定您的使用者具有存取檔案共用的權限。
+針對以檔案共用為基礎的存放庫，確定您的使用者具有存取檔案共用的權限。
 
 ## <a name="registering-a-local-repository"></a>註冊本機存放庫
 
-可用的存放庫之前，必須註冊使用`Register-PSRepository`命令。
-在以下範例中， **InstallationPolicy**設為*信任*，假設您信任您自己的存放庫。
+您必須先使用 `Register-PSRepository` 命令來註冊存放庫，才能加以使用。
+在下列範例中，會將 **InstallationPolicy** 設定為 *Trusted* (假設您信任自己的存放庫)。
 
 ```powershell
 # Register a NuGet-based server
@@ -71,38 +71,38 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-請記下的兩個命令的處理方式之間的差異**ScriptSourceLocation**。 檔案共用為基礎的存放庫，如**SourceLocation**並**ScriptSourceLocation**必須相符。 針對 web 為基礎的存放庫，它們必須不同，因此在此範例中的尾端"/"新增至**SourceLocation**。
+請記下這兩個命令如何處理 **ScriptSourceLocation** 之間的差異。 針對以檔案共用為基礎的存放庫，**SourceLocation** 和 **ScriptSourceLocation** 必須相符。 針對以 Web 為基礎的存放庫，它們必須不同，因此在此範例中，會在 **SourceLocation** 尾端新增 "/"。
 
-如果您想要預設存放庫新建的 PSRepository 時，您必須取消註冊所有其他 PSRepositories。 例如：
+如果您想要使新建的 PSRepository 成為預設存放庫，就必須取消註冊所有其他 PSRepository。 例如：
 
 ```powershell
 Unregister-PSRepository -Name PSGallery
 ```
 
 > [!NOTE]
-> 存放庫名稱 'PSGallery' 被保留給使用 「 PowerShell 資源庫。 您可以取消註冊 PSGallery，但您無法重複使用任何其他存放庫名稱 PSGallery。
+> 存放庫名稱 'PSGallery' 會保留，以供 PowerShell 資源庫使用。 您可以取消註冊 PSGallery，但無法針對任何其他存放庫重複使用 PSGallery 這個名稱。
 
-如果您需要還原 PSGallery，執行下列命令：
+如果您需要還原 PSGallery，請執行下列命令：
 
 ```powershell
 Register-PSRepository -Default
 ```
 
-## <a name="publishing-to-a-local-repository"></a>發行至本機存放庫
+## <a name="publishing-to-a-local-repository"></a>發佈至本機存放庫
 
-一旦您已註冊本機 PSRepository，您可以發行至您的本機 PSRepository。 有兩個主要的發行案例： 發佈您自己的模組和發行 PSGallery 的模組。
+一旦註冊本機 PSRepository 之後，就能發佈到您的本機 PSRepository。 有兩個主要發佈案例：發佈您自己的模組和從 PSGallery 發佈模組。
 
-### <a name="publishing-a-module-you-authored"></a>發行您所撰寫的模組
+### <a name="publishing-a-module-you-authored"></a>發佈您所撰寫的模組
 
-使用`Publish-Module`和`Publish-Script`發佈您的模組到您本機的 PSRepository 由 PowerShell 資源庫的相同方式。
+使用 `Publish-Module` 和 `Publish-Script`，以您針對 PowerShell 資源庫所做的相同方式來將模組發佈到本機 PSRepository。
 
-- 指定您的程式碼的位置
+- 指定程式碼的位置
 - 提供 API 金鑰
 - 指定存放庫名稱。 例如，`-PSRepository LocalPSRepo`
 
 > [!NOTE]
-> 您必須在 NuGet 伺服器中，建立帳戶，然後登入，以產生並儲存的 API 金鑰。
-> 檔案共用，使用任何非空白字串做為 NuGetApiKey 值。
+> 您必須在 NuGet 伺服器中建立帳戶，然後登入以產生並儲存 API 金鑰。
+> 針對檔案共用，為 NuGetApiKey 值使用任何非空白的字串。
 
 範例：
 
@@ -115,16 +115,16 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 ```
 
 > [!IMPORTANT]
-> 若要確保安全性，API 金鑰不應該硬式編碼在指令碼中。 使用安全金鑰管理系統。
+> 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。
 
-### <a name="publishing-a-module-from-the-psgallery"></a>發行來自 PSGallery 的模組
+### <a name="publishing-a-module-from-the-psgallery"></a>從 PSGallery 發佈模組
 
-若要發行到您本機的 PSRepository PSGallery 的模組，您可以使用 '儲存封裝' cmdlet。
+若要從 PSGallery 將模組發佈到您的本機 PSRepository，您可以使用 'Save-Package' Cmdlet。
 
-- 指定封裝的名稱
+- 指定套件名稱
 - 指定 'NuGet' 作為提供者
-- PSGallery 位置指定的來源 （ https://www.powershellgallery.com/api/v2)
-- 指定本機儲存機制的路徑
+- 指定 PSGallery 位置作為來源 (https://www.powershellgallery.com/api/v2)
+- 指定本機存放庫的路徑
 
 範例：
 
@@ -133,22 +133,22 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
-如果您本機的 PSRepository 是以 web 為基礎，它會需要額外的步驟來發佈使用 nuget.exe。
+如果本機 PSRepository 會以 Web 為基礎，它需要額外的步驟，才能使用 nuget.exe 來發佈。
 
-請參閱使用文件[nuget.exe][]。
+請參閱使用 [nuget.exe][] 的文件。
 
 ## <a name="installing-powershellget-on-a-disconnected-system"></a>在中斷連線的系統上安裝 PowerShellGet
 
-部署 PowerShellGet 會要求系統，以從網際網路中斷連線的環境中難以就行了。 PowerShellGet 已安裝最新版本的第一次使用它的啟動程序。 PowerShell 資源庫中的 OfflinePowerShellGetDeploy 模組提供支援此啟動程序的處理序的 cmdlet。
+在要求系統中斷與網路網路連線的環境內，很難部署 PowerShellGet。 PowerShellGet 有一個啟動程序流程，可在第一次使用時安裝最新版本。 PowerShell 資源庫中的 OfflinePowerShellGetDeploy 模組提供支援此啟動程序流程的 Cmdlet。
 
 若要啟動離線部署，您需要：
 
-- 下載並安裝 OfflinePowerShellGetDeploy 您連線到網際網路的系統和中斷連線的系統
-- 下載 PowerShellGet 和其相依性連線網際網路的系統使用`Save-PowerShellGetForOffline`cmdlet
-- 從連線網際網路的系統的 PowerShellGet 和其相依性複製到已中斷連線的系統
-- 使用`Install-PowerShellGetOffline`PowerShellGet 和其相依性放置於適當的資料夾已中斷連線的系統上
+- 下載 OfflinePowerShellGetDeploy 並安裝至您連線到網際網路的系統和中斷連線的系統
+- 在連線到網際網路的系統上，使用 `Save-PowerShellGetForOffline` Cmdlet 來下載 PowerShellGet 及其相依性
+- 將 PowerShellGet 及其相依性從連線到網際網路的系統複製到中斷連線的系統
+- 在中斷連線的系統上使用 `Install-PowerShellGetOffline`，以將 PowerShellGet 及其相依性放置於適當的資料夾
 
-下列命令使用`Save-PowerShellGetForOffline`放資料夾中的所有元件 `f:\OfflinePowerShellGet`
+下列命令會使用 `Save-PowerShellGetForOffline`，將所有元件放入 `f:\OfflinePowerShellGet` 資料夾
 
 ```powershell
 # Requires -RunAsAdministrator
@@ -161,10 +161,10 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Save-PowerShellGetForOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-此時，您必須進行的內容`F:\OfflinePowerShellGet`能夠中斷連線的系統。 執行`Install-PowerShellGetOffline`中斷連線的系統上安裝 PowerShellGet cmdlet。
+此時，您必須讓 `F:\OfflinePowerShellGet` 的內容可供中斷連線的系統使用。 執行 `Install-PowerShellGetOffline` Cmdlet，以在中斷連線的系統上安裝 PowerShellGet。
 
 > [!NOTE]
-> 很重要，您無法執行 PowerShellGet 中的 PowerShell 工作階段，再執行這些命令。 PowerShellGet 載入工作階段之後, 就無法更新的元件。 如果您不小心啟動 PowerShellGet，結束並重新啟動 PowerShell。
+> 執行這些命令之前，不要在 PowerShell 工作階段上執行 PowerShellGet，這點很重要。 將 PowerShellGet 載入至工作階段之後，就無法更新元件。 如果您不小心啟動了 PowerShellGet，請結束並重新啟動 PowerShell。
 
 ```powershell
 Import-Module F:\OfflinePowerShellGetDeploy
@@ -172,7 +172,7 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Install-PowerShellGetOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-執行這些命令之後，您已準備好發佈至本機存放庫的 PowerShellGet 項目。
+執行這些命令之後，您就已經準備好將 PowerShellGet 發佈至本機存放庫。
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
@@ -183,7 +183,7 @@ Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApi
 ```
 
 > [!IMPORTANT]
-> 若要確保安全性，API 金鑰不應該硬式編碼在指令碼中。 使用安全金鑰管理系統。
+> 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1

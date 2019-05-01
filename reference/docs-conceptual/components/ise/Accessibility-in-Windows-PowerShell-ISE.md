@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的協助工具
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058449"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 
@@ -28,7 +28,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 
 - 鍵盤快速鍵
 
-- 語法著色表，以及可使用 [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 指令碼物件修改其他多項色彩設定的功能。
+- 語法著色表，以及可使用 [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 指令碼物件修改其他多個色彩設定的功能。
 
 - 文字大小變更
 
@@ -85,8 +85,8 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 |**執行**|F5|
 |**執行選取項目**|F8|
 |**停止執行**|CTRL+BREAK 在內容明確 (未選取文字) 的情況下，可以使用 CTRL+C。|
-|**Tab** (至下一個指令碼)|CTRL + TAB**附註：** Tab 至下一個指令碼適用於只有單一 PowerShell 索引標籤開啟，或當您有多個 PowerShell 索引標籤開啟，但焦點是在指令碼窗格中。|
-|**Tab** (至上一個指令碼)|CTRL + SHIFT + TAB**附註：** 當您有只有一個 PowerShell 索引標籤開啟，或如果您有多個 PowerShell 索引標籤開啟，但焦點是在指令碼窗格中，適用於至上一個指令碼 索引標籤。|
+|**Tab** (至下一個指令碼)|CTRL+TAB **注意：** Tab 至下一個指令碼僅適用於開啟單一 PowerShell 索引標籤的情況，或開啟多個 PowerShell 索引標籤但焦點是在指令碼窗格中的情況。|
+|**Tab** (至上一個指令碼)|CTRL+SHIFT+TAB **注意：** Tab 至上一個指令碼僅適用於開啟單一 PowerShell 索引標籤的情況，或開啟多個 PowerShell 索引標籤但焦點是在指令碼窗格中的情況。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>自訂檢視的鍵盤快速鍵
 

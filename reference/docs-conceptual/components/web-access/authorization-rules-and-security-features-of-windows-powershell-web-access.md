@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058415"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
 更新日期：2013 年 6 月 24 日
 
-適用於：Windows Server 2012 R2，Windows Server 2012
+適用於：Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 R2 和 Windows Server 2012 中的 Windows PowerShell Web 存取具有受限制的安全性模型。 您必須明確授與使用者存取權，他們才能登入 Windows PowerShell Web 存取閘道並使用網頁型 Windows PowerShell 主控台。
 
@@ -139,7 +139,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
    Remove-PswaAuthorizationRule -ID <rule ID>
    ```
 
-   或者，如果您不知道識別碼，但是知道您想要移除之規則的好記名稱，您可以取得規則的名稱，將它傳送到 `Remove-PswaAuthorizationRule` Cmdlet 來移除規則，如下列範例所示：
+   或者，如果您不知道識別碼，但是知道您想要移除之規則的易記名稱，您可以取得規則的名稱，並以管線方式將它傳送到 `Remove-PswaAuthorizationRule` Cmdlet 來移除規則，如下列範例所示：
 
    ```
    Get-PswaAuthorizationRule `
@@ -156,7 +156,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 - 系統管理員會建立一個含有受限制 Runspace 的端點，稱為 **PswaEndpoint**。 然後，系統管理員會建立 `*,*,PswaEndpoint` 規則，並將該端點散佈到其他電腦。 這個規則允許所有使用者存取具有端點 **PswaEndpoint** 的所有電腦。
   如果這是規則集中定義的唯一授權規則，就無法存取不具該端點的電腦。
 
-- 系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員建立了一個名為 **Level1Support** 的使用者群組，並定義下列規則：**Level1Support,\*,PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
+- 系統管理員建立了含有受限制 Runspace 的端點 **PswaEndpoint**，並想要限制特定使用者的存取權。 系統管理員會建立一個名為 **Level1Support** 的使用者群組，並定義下列規則：**Level1Support,\*,PswaEndpoint**。 這個規則可讓 **Level1Support** 群組中的所有使用者有權存取具有 **PswaEndpoint** 設定的所有電腦。 同樣也可以限制特定電腦組的存取權。
 
 - 有些系統管理員會提供比其他使用者更多的存取權給特定使用者。 例如，系統管理員建立兩個使用者群組 **Admins** 和 **BasicSupport**。 系統管理員還建立含有受限制 Runspace 的端點 **PswaEndpoint**，並定義下列兩個規則：**Admins,\*,\*** 和 **BasicSupport,\*,PswaEndpoint**。 第一個規則可讓 **Admin** 群組中的所有使用者存取所有電腦，而第二個規則只能讓 **BasicSupport** 群組中的所有使用者存取具有 **PswaEndpoint** 的電腦。
 
@@ -186,13 +186,13 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>對多個站台使用一組授權規則
 
-授權規則儲存在 XML 檔案中。 根據預設，XML 檔案的路徑名稱是 `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml`。
+授權規則儲存在 XML 檔案中。 根據預設，XML 檔案的路徑名稱是 `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml`。
 
-授權規則 XML 檔案的路徑儲存在 **powwa.config** 檔案中，您可以在 `%windir%\Web\PowershellWebAccess\data` 中找到此檔案。 系統管理員可彈性變更 **powwa.config** 中預設路徑的參照，以符合喜好設定或需求。 如有需要，系統管理員可以變更這個檔案的位置，讓多個 Windows PowerShell Web 存取閘道使用相同的授權規則。
+授權規則 XML 檔案的路徑儲存在 **powwa.config** 檔案中，您可以在 `$env:windir\Web\PowershellWebAccess\data` 中找到此檔案。 系統管理員可彈性變更 **powwa.config** 中預設路徑的參照，以符合喜好設定或需求。 如有需要，系統管理員可以變更這個檔案的位置，讓多個 Windows PowerShell Web 存取閘道使用相同的授權規則。
 
 ## <a name="session-management"></a>工作階段管理
 
-根據預設，Windows PowerShell Web 存取會將使用者限制為一次三個工作階段。 您可以在 IIS Manager 中編輯 Web 應用程式的 **web.config** 檔案，以支援每位使用者不同的工作階段數目。 **web.config** 檔案的路徑為 `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config`。
+根據預設，Windows PowerShell Web 存取會將使用者限制為一次三個工作階段。 您可以在 IIS Manager 中編輯 Web 應用程式的 **web.config** 檔案，以支援每位使用者不同的工作階段數目。 **web.config** 檔案的路徑為 `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config`。
 
 根據預設，只要編輯任何設定，IIS 網頁伺服器就會重新啟動應用程式集區。 例如，如果變更 **web.config** 檔案，就會重新啟動應用程式集區。 因為 **Windows PowerShell Web 存取**會使用記憶體內部工作階段狀態，所以登入 **Windows PowerShell Web 存取**工作階段的使用者會在應用程式集區重新啟動後遺失他們的工作階段。
 

@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: PowerShell 指令碼
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058483"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>一致性
 
-管理系統是一個複雜的工作。 擁有一致介面的工具有助於控制其中的複雜性。 可惜的是，命令列工具與可編寫指令碼的 COM 物件都不具有一致性。
+管理系統是一個複雜的工作。 擁有一致介面的工具有助於控制其中的複雜性。 可惜的是，命令列工具與可編寫指令碼的元件物件模型 (COM) 物件都不具有一致性。
 
 因此，PowerShell 的一致性是非常寶貴的資產。 例如，如果您知道如何使用 `Sort-Object` Cmdlet，即可利用該知識來排序任何 Cmdlet 的輸出。 您不必了解每個 Cmdlet 的不同排序常式。
 

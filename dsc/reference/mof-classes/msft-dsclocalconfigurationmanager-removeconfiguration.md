@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
 ms.openlocfilehash: 03555cc73da1272bdebebc3d93b26aaf8fabc18e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676554"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078685"
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 RemoveConfiguration 方法
 
@@ -44,9 +44,9 @@ uint32 RemoveConfiguration(
 
 ## <a name="requirements"></a>需求
 
-**MOF：** DscCore.mof
+**MOF**：DscCore.mof
 
-**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

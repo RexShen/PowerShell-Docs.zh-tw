@@ -2,12 +2,12 @@
 title: PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 description: 使用 WSMan 在 PowerShell Core 中遠端
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53401091"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058874"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 
@@ -28,7 +28,7 @@ PowerShell 安裝可以使用 `New-PSSession` 和 `Enter-PSSession` 建立遠端
 
 指令碼
 
-1. 在 %windir%\System32\PowerShell 內建立外掛程式的目錄
+1. 在 `$env:windir\System32\PowerShell` 內建立外掛程式的目錄
 1. 將 pwrshplugin.dll 複製至該位置
 1. 產生設定檔
 1. 使用 WinRM 註冊該外掛程式

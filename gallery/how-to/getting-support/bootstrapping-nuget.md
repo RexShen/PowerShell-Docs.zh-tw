@@ -4,11 +4,11 @@ contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 啟動載入 NuGet
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676563"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084380"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet 提供者與 NuGet.exe 的啟動程序
 
@@ -155,7 +155,7 @@ $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-第二個選項是從 NuGet.Org 網站下載 NuGet.exe：[https://dist.nuget.org/index.html](https://www.nuget.org/downloads)。為生產環境電腦選取 NugGet 版本時，請確定版本會比 2.8.5.208 還新，並認明該版本已標示為「建議使用」。 如果該檔案是透過瀏覽器下載的，請記得將檔案解除鎖定。 您可以使用 `Unblock-File` Cmdlet 來執行此操作。
+第二個選項是從 NuGet.Org 網站下載 NuGet.exe：[https://dist.nuget.org/index.html](https://www.nuget.org/downloads) 為生產環境電腦選取 NugGet 版本時，請確定該版本比 2.8.5.208 還新，並確認已將該版本標示為「建議使用」。 如果該檔案是透過瀏覽器下載的，請記得將檔案解除鎖定。 您可以使用 `Unblock-File` Cmdlet 來執行此操作。
 
 不論使用哪一個選項，都可將 NuGet.exe 檔案複製到 `$env:path` 中的任何位置，但標準位置是：
 

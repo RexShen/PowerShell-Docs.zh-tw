@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 ms.openlocfilehash: 7a1725e3858c59a6d31699add22b042359c48463
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676853"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058194"
 ---
 # <a name="separation-of-node-and-configuration-ids"></a>隔離節點和設定識別碼
 
@@ -19,6 +19,6 @@ ms.locfileid: "55676853"
 * 可唯一識別單一節點的代理程式識別碼
 * 只在目標節點第一次連線到提取伺服器時發生的註冊步驟
 
-**注意︰** 這些功能已經加入，而且不會取代現有的提取功能和概念。 您可以使用這些新功能或具有此版本中發送之新提取伺服器的舊功能。
+**注意：** 這些功能已經加入，而且不會取代現有的提取功能和概念。 您可以使用這些新功能或具有此版本中發送之新提取伺服器的舊功能。
 
 如需詳細資訊，請參閱[使用設定名稱設定提取用戶端](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)。

@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: 使用登錄項目
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293073"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086029"
 ---
 # <a name="working-with-registry-entries"></a>使用登錄項目
 
@@ -90,7 +90,7 @@ ProgramFilesDir     : C:\Program Files
 
 ## <a name="getting-a-single-registry-entry"></a>取得單一登錄項目
 
-若要擷取登錄機碼中的特定項目，您可以使用數種可行方法之一。 此範例會在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` 中尋找 **DevicePath** 的值。
+若要抓取登錄機碼中的特定項目，您可以使用數種可行方法之一。 此範例會在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` 中尋找 **DevicePath** 的值。
 
 使用 `Get-ItemProperty` 時，請使用 **Path** 參數來指定機碼的名稱，並使用 **Name** 參數來指定 **DevicePath** 項目的名稱。
 

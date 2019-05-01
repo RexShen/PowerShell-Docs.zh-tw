@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 DSC 改善
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55676539"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085495"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -93,7 +93,7 @@ PartialOne
 Azure 自動化服務名稱以前產生的 MOF 檔案為 `<ConfigurationName>.<NodeName>.mof`。
 因此下面的設定會編譯為 PartialOne.localhost.mof。
 
-如此即不可能從 Azure 自動化服務提取您其中一項部分設定。
+如此即不可能從 Azure 自動化服務提取您其中一個部分設定。
 
 ```powershell
 Configuration PartialOne
@@ -158,7 +158,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 在設定內使用複合資源時，您現在可以指定一個 PsDscRunAsCredential 值。
 指定後，複合資源內的所有資源都會以 RunAs 使用者身分執行。
-如果複合資源呼叫另一項複合資源，也會以 RunAs 使用者身分執行其所有資源。
+如果複合資源呼叫另一個複合資源，也會以 RunAs 使用者身分執行其所有資源。
 RunAs 認證會傳播至複合資源階層的所有層級。
 如果複合資源內的任何資源指定自己的 PsDscRunAsCredential 值，則設定編譯期間就會發生合併錯誤。
 
@@ -201,17 +201,17 @@ InstallWindowsFeature -ConfigurationData $configData
 如果提取伺服器遭到入侵，攻擊者可以修改提取伺服器上的設定和模組，將其散發到所有受管理的節點以危害所有節點。
 
 在 WMF 5.1 中，DSC 支援驗證類別目錄和設定 (.MOF) 檔案的數位簽章。
-這項功能會防止節點執行未經受信任簽署者簽署的設定或模組檔案，或經受信任簽署者簽署後遭竄改的檔案。
+此功能會防止節點執行未經受信任簽署者簽署的設定或模組檔案，或經受信任簽署者簽署後遭竄改的檔案。
 
 ### <a name="how-to-sign-configuration-and-module"></a>如何簽署設定和模組
 
 ***
-* 組態檔 (。Mof):現有的 PowerShell cmdlet [Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)會延伸以支援簽署 MOF 檔案。
-* 模組簽署的模組是由簽署對應的模組類別目錄使用下列步驟：
+* 設定檔 (.MOF)：現有的 PowerShell Cmdlet [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 已擴充，可支援簽署 MOF 檔案。
+* 模組：已透過使用下列步驟簽署對應的模組類別目錄來完成模組簽署：
     1. 建立類別目錄檔案：類別目錄檔案包含密碼編譯雜湊或指紋的集合。
        每個指紋都會對應至模組所包含的檔案。
        已新增新的 [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) Cmdlet，讓使用者為其模組建立類別目錄檔案。
-    2. 簽署類別目錄檔案：使用[Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)簽署類別目錄檔案。
+    2. 簽署類別目錄檔案︰使用 [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) 簽署類別目錄檔案。
     3. 將類別目錄檔案放在模組資料夾內。
 依照慣例，模組類別目錄檔案應該位於與模組同名的模組資料夾內。
 
@@ -263,7 +263,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 5. 將模組安裝到 $env:ProgramFiles\WindowsPowerShell\Modules\
 6. 處理設定
 
-> 注意︰只有第一次在系統上套用設定時，或下載並安裝模組時，才會執行模組類別目錄和設定上的簽章驗證。
+> 注意：只有第一次在系統上套用設定時，或下載並安裝模組時，才會執行模組類別目錄和設定上的簽章驗證。
 一致性執行不會驗證 Current.mof 或其模組相依性的簽章。
 如果驗證在任何階段失敗，例如從提取伺服器提取的設定未經簽署，則會終止處理設定並顯示下列錯誤，以及刪除所有暫存檔案。
 

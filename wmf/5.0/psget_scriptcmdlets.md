@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271172"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057325"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>適用於指令碼管理的 PowerShellGet Cmdlet
 
@@ -165,7 +165,7 @@ Version Name Author Description
 ## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script 和 Get-InstalledScript Cmdlet
 Install-Script Cmdlet 可讓您將特定的指令碼檔案及其相依性安裝到指定的範圍。 根據預設，指令碼會安裝在 AllUsers 範圍。 Get-InstalledScript Cmdlet 可讓您取得使用 Install-Script Cmdlet 安裝的指令碼檔案清單。
 
-使用注意事項︰允許在安裝指令碼之後管理和尋找指令碼，Install-script 會建立儲存指令碼的預設資料夾：$home\Documents\WindowsPowerShell\Scripts ，並將此資料夾加入 PATH 環境中。 如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。 Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。
+使用注意事項：為允許在安裝指令碼之後管理和尋找指令碼，Install-script 將會在 $home\Documents\WindowsPowerShell\Scripts 建立用於儲存指令碼的預設資料夾，並將此資料夾加入到您的 PATH 環境。 如果修改路徑是個問題，請使用 Save-Script 不要使用 Install-Script。 Get-InstalledScripts 和 Uninstall-Script 只能搭配使用 Install-Script 放在系統上的指令碼。
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.

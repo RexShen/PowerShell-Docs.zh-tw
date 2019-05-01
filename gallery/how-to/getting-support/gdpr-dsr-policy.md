@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: 資源庫,powershell,psgallery,GDPR
 title: PowerShell 資源庫 GDPR 合規性
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084227"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell 資源庫 GDPR 合規性
 
@@ -43,7 +43,7 @@ PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可
 
 ### <a name="email"></a>電子郵件
 
-往來電子郵件可包含下列任一項：
+往來電子郵件可包含下列任一個：
 
 - 若程式碼分析掃描偵測到已發行至 PowerShell 資源庫的任何套件發生問題，會傳送電子郵件給 PowerShell 資源庫套件的擁有者
 - 任何人皆可使用 [與我們連絡] 頁面 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) 中的電子郵件地址，傳送電子郵件給 PowerShell 資源庫小組
@@ -53,8 +53,8 @@ PowerShell 資源庫會儲存下列由使用者所提供的資訊，而其中可
 電子郵件依原則將會在 90 天後刪除。
 
 您可申請前 90 天對您電子郵件地址以及 PowerShell 資源庫所傳送或接收之所有電子郵件的副本。
-若要申請這些往來郵件，請傳送電子郵件至 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
-在訊息內文中，請陳述您要申請的資訊 (例如：請傳送給我所有此電子郵件地址所傳送或接收之電子郵件。)您可在 7 個工作天內，收到發出申請 90 天內您電子郵件地址相關的所有電子郵件。
+若要申請這類往來電子郵件，請傳送電子郵件給 [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com)，並將標題設為：「與此帳戶相關之電子郵件的 DSR 申請」。
+在郵件內文中，陳述您所需的資訊 (例如：請傳送已傳送給或接收自此電子郵件地址的所有電子郵件)。您可在 7 個工作天內，收到發出申請 90 天內您電子郵件地址相關的所有電子郵件。
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell 資源庫帳戶資訊
 
@@ -92,7 +92,7 @@ Save-Script Get-repository psgallery
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>從 PowerShell 資源庫刪除個人資料
 
-若要刪除您的 PowerShell 資源庫帳戶或任何您在 PowerShell 資源庫中所擁有的套件，請傳送電子郵件至 cgadmin@microsoft.com，標題請寫：「與此帳戶相關之電子郵件的 DSR 申請」。
+若要刪除您的 PowerShell 資源庫帳戶或任何您在 PowerShell 資源庫中所擁有的套件，請傳送電子郵件給 cgadmin@microsoft.com，並將標題設為：「與此帳戶相關之項目的 GDPR 申請」。
 在訊息內文中，請陳述您希望刪除的資訊。 例如：
 
 - 請刪除我的套件「套件名稱」之版本 x.y.z

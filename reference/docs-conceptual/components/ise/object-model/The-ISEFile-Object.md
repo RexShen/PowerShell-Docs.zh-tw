@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: ISEFile 物件
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057548"
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
 
@@ -26,7 +26,7 @@ ms.locfileid: "53400887"
 
 ### <a name="exceptions"></a>例外狀況
 
-- **System.IO.IOException**:無法儲存檔案。
+- **System.IO.IOException**：無法儲存檔案。
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -52,9 +52,9 @@ $myfile.Encoding
 
 ### <a name="exceptions"></a>例外狀況
 
-- **System.ArgumentNullException**:**Filename**參數為 null。
-- **System.ArgumentException**:**Filename**參數是空的。
-- **System.IO.IOException**:無法儲存檔案。
+- **System.ArgumentNullException**：**filename** 參數為 Null。
+- **System.ArgumentException**：**filename** 參數是空的。
+- **System.IO.IOException**：無法儲存檔案。
 
 ```powershell
 # Save the file with a full path and name.

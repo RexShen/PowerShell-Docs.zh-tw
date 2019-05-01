@@ -4,11 +4,11 @@ keywords: powershell,cmdlet
 title: PowerShellTab 物件
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400687"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057667"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 物件
 
@@ -40,7 +40,7 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 在 PowerShell 索引標籤中執行指定的指令碼。
 
 > [!NOTE]
-> 此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 此指令碼區塊會執行，且從指令碼傳回的任何值會傳回到您從中叫用命令的環境。 如果此命令需要較長的時間比**millesecondsTimeout**值指定，則命令會失敗並發生例外狀況：作業逾時。
+> 此方法僅會在其他的 PowerShell 索引標籤上運作，而不會在此方法從中執行的 PowerShell 索引標籤上運作。 此指令碼區塊會執行，且從指令碼傳回的任何值會傳回到您從中叫用命令的環境。 如果命令執行的時間比 **millesecondsTimeout** 值指定的時間更長，則該命令會失敗並發生例外狀況：「作業逾時」。
 
 **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 

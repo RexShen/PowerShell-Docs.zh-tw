@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 為 Windows PowerShell Web 存取中的存取問題進行疑難排解
 ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679164"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086590"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
-更新日期：2013 年 6 月 24日日 （修訂 2017 年 8 月 23日日）
+更新日期：2013 年 6 月 24 日 (修訂日期：2017 年 8 月 23 日)
 
-適用目標︰Windows Server 2012 R2、Windows Server 2012
+適用於：Windows Server 2012 R2、Windows Server 2012
 
 下列各節識別在嘗試使用 Windows PowerShell Web 存取連線到遠端電腦時的一些常見問題，以及解決這些問題的建議。
 
@@ -47,7 +47,7 @@ ms.locfileid: "55679164"
 
 當使用者使用含有中文字元的網域名稱登入，或閘道伺服器名稱含有一或多個中文字元時，會發生這個問題。
 
-#### <a name="workaround"></a>解決方法
+#### <a name="workaround"></a>因應措施
 
 1. [安裝和執行 Internet Explorer 10](https://ie.microsoft.com/testdrive/info/downloads/Default.html)
 1. 將 Internet Explorer [文件模式] 設定變更為 [IE10] 標準。

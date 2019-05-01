@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 建置自訂的 Windows PowerShell 預期狀態設定資源
 ms.openlocfilehash: 882b6efed4564d2354183d7472b301e1e1758335
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400645"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076866"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>建置自訂的 Windows PowerShell 預期狀態設定資源
 
-> 適用於：Windows PowerShell 4.0 中，Windows PowerShell 5.0
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell 預期狀態設定 (DSC) 有內建資源，可用以設定您的環境。 本主題提供開發資源概述以及特定資訊和範例的主題連結。
 
@@ -22,5 +22,5 @@ DSC 資源是 Windows PowerShell 模組。 模組包含資源的結構描述 (�
 * [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md)
 * [在 C# 中實作 DSC 資源](authoringResourceMofCS.md)
 * [使用 PowerShell 類別撰寫自訂的 DSC 資源](authoringResourceClass.md)
-* [複合資源：把 DSC 設定當做資源使用](authoringResourceComposite.md)
+* [複合資源：將 DSC 設定當成資源使用](authoringResourceComposite.md)
 * [使用 [資源設計工具] 工具](../authoringResourceMofDesigner.md)

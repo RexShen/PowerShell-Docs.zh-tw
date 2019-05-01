@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 資源撰寫檢查清單
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53400759"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076577"
 ---
 # <a name="resource-authoring-checklist"></a>資源撰寫檢查清單
 
@@ -41,7 +41,7 @@ xPSDesiredStateConfiguration
 - 屬性類型正確 (例如，接受數值的屬性不使用字串，應改用 UInt32 或其他數值類型)
 - 已正確指定屬性 (property) 屬性 (attribute)：([key]、[required]、[write]、[read])
 - 結構描述中至少要有一個參數標示為 [key]
-- [read] 屬性和後列任一項不並存：[required]、[key]、[write]
+- [read] 屬性和後列任一個不並存：[required]、[key]、[write]
 - 如果除 [read] 以外指定了多個限定詞，則 [key] 優先
 - 如果指定 [write] 和 [required]，則 [required] 優先
 - 視需要指定 ValueMap。範例：
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>資源在正案例中為等冪
 
-DSC 資源的基本特性之一是等冪。 這表示多次套用包含該資源的 DSC 設定，都會得到相同的結果。 例如，如果我們建立包含下列檔案資源的設定：
+DSC 資源的基本特性之一為等冪。 這表示多次套用包含該資源的 DSC 設定，都會得到相同的結果。 例如，如果我們建立包含下列檔案資源的設定：
 
 ```powershell
 File file {
@@ -210,11 +210,11 @@ File file {
 
 好的錯誤訊息應該是：
 
-- 那里：錯誤訊息的最大問題是它們通常不存在，因此請確定它們在那裡。
-- 輕鬆地了解：人類可讀取，沒有晦澀難懂的錯誤代碼
-- 精確描述為何的問題
-- 建設性︰建議如何修正此問題
-- 正常：不責怪使用者或讓他們覺得不正確
+- 有訊息：錯誤訊息的最大問題是它們通常不存在，所以請確定錯誤訊息存在。
+- 容易了解：一般人看得懂，沒有晦澀難懂的錯誤代碼
+- 精確：確切地描述問題
+- 建設性：建議如何修正問題
+- 有禮貌：不責怪使用者或讓他們覺得笨
 
 請務必驗證端對端案例中的錯誤 (使用 `Start-DscConfiguration`)，因為它們可能與直接執行資源函式時所傳回的錯誤不同。
 
@@ -222,7 +222,7 @@ File file {
 
 請確保資源輸出的記錄檔容易了解並向使用者提供值。 資源應該要輸出所有對使用者可能有幫助的資訊，但記錄愈多不一定愈好。 您應該避免備援以及輸出不提供附加價值的資料 – 不要讓使用者翻找數百筆記錄後才找到自己要找的。 當然，全無記錄檔也不是這個問題可以接受的解決方案。
 
-測試時，您也應該分析詳細資訊和偵錯記錄 (方法是適當地執行 `Start-DscConfiguration` 並搭配 `–Verbose` 和 `–Debug` 參數) 以及 ETW 記錄。 若要查看 DSC ETW 記錄檔，請移至 [事件檢視器，並開啟下列資料夾：應用程式和服務]-Microsoft-Windows-Desired State Configuration。  預設會有操作通道，但請確定先啟用分析與偵錯通道，再執行設定。
+測試時，您也應該分析詳細資訊和偵錯記錄 (方法是適當地執行 `Start-DscConfiguration` 並搭配 `–Verbose` 和 `–Debug` 參數) 以及 ETW 記錄。 若要查看 DSC ETW 記錄，請移至事件檢視器，並開啟下列資料夾：Applications and Services- Microsoft - Windows - Desired State Configuration。  預設會有操作通道，但請確定先啟用分析與偵錯通道，再執行設定。
 若要啟用分析/偵錯通道，您可以執行下列指令碼︰
 
 ```powershell
@@ -283,7 +283,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 這份檢查清單包含要測試和/或經常遺漏的重要項目。 還有一些測試，主要是資源特定的功能測試，而這裡未提及。 別忘了反向測試案例。
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>最佳做法資源模組包含附有 ResourceDesignerTests.ps1 指令碼的 [測試] 資料夾
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>最佳做法：資源模組包含具有 ResourceDesignerTests.ps1 指令碼的測試資料夾
 
 這是個不錯的做法：在資源模組內建立 “Tests” 資料夾、建立 `ResourceDesignerTests.ps1` 檔案，並使用 **Test-xDscResource** 和 **Test-xDscSchema** 為指定模組中的所有資源加入測試。
 如此，就可以快速驗證指定模組中所有資源的結構描述，並在發行前執行例行性檢查。
@@ -294,7 +294,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>最佳做法資源資料夾包含產生結構描述的資源設計工具的指令碼
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>最佳做法：資源資料夾包含用於產生結構描述的資源設計工具指令碼
 
 每個資源都應該包含資源設計工具指令碼，它會產生資源的 MOF 結構描述。 這個檔案應該放在 `<ResourceName>\ResourceDesignerScripts` 中並命名為 Generate `<ResourceName>Schema.ps1`。針對 xRemoteFile 資源，這個檔案會稱為 `GenerateXRemoteFileSchema.ps1`，並包含：
 
@@ -310,7 +310,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>最佳做法資源支援-WhatIf
+## <a name="best-practice-resource-supports--whatif"></a>最佳做法：資源支援 -WhatIf
 
 如果資源執行的是「危險」作業，實作 `-WhatIf` 功能是個不錯的做法。 完成後，請確定 `-WhatIf` 輸出會正確描述不使用 `-WhatIf` 參數執行命令時，作業會發生的狀況。
 另請確認，使用 `–WhatIf` 參數時作業不會執行 (不會變更節點狀態)。

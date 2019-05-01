@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxFile 資源
 ms.openlocfilehash: 80969ba2ea6247fcd616a301d951403a840c851d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62078022"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile 資源
 
@@ -45,7 +45,7 @@ nxFile <string> #ResourceName
 | 類型| 指定要設定的資源是目錄或檔案。 將此屬性設定為 "directory"，表示該資源為目錄。 將此屬性設定為 "file"，表示該資源為檔案。 預設值為 "file"。|
 | 內容| 指定檔案的內容，例如特定字串。|
 | 總和檢查碼| 定義判斷兩個檔案是否相同時所使用的類型。 如不指定 **Checksum**，只會使用檔案或目錄名稱進行比較。 值為："ctime"、"mtime" 或 "md5"。|
-| Recurse| 表示是否包含子目錄。 將此屬性設定為 **$true**，表示您想要包含子目錄。 預設值為 **$false**。 **注意：** 這個屬性時才有效**型別**屬性設定為目錄。|
+| Recurse| 表示是否包含子目錄。 將此屬性設定為 **$true**，表示您想要包含子目錄。 預設值為 **$false**。 **注意：** 只有當 **Type** 屬性設定為 directory 時，這個屬性才有效。|
 | Force| 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **$false**。|
 | 連結| 指定符號連結的預期行為。 設定此屬性為 "follow"，以遵循符號連結，並在連結目標上執行 (例如， 複製檔案而非連結)。 設定此屬性為 "manage" 以在連結上執行 (例如， 複製連結本身)。 設定此屬性為 "ignore" 以忽略符號連結。|
 | 群組| 要擁有檔案或目錄的 **Group** 名稱。|
@@ -98,7 +98,7 @@ nxFile resolvConf
 ```
 
 
-步驟 3：您可以使用 PowerShell 函式來取代的 Windows 分行符號以 Linux 換行字元。
+步驟 3：使用 PowerShell 函式，以 Linux 分行符號字元取代 Windows 分行符號。
 
 ```
 Function LinuxString($inputStr){
