@@ -3,40 +3,40 @@ ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: 撰寫可移植的模組
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679211"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086403"
 ---
-# <a name="portable-modules"></a><span data-ttu-id="598ea-103">可移植的模組</span><span class="sxs-lookup"><span data-stu-id="598ea-103">Portable Modules</span></span>
+# <a name="portable-modules"></a><span data-ttu-id="88309-103">可移植的模組</span><span class="sxs-lookup"><span data-stu-id="88309-103">Portable Modules</span></span>
 
-<span data-ttu-id="598ea-104">Windows PowerShell 針對撰寫[.NET Framework][]雖然 PowerShell Core 針對撰寫[.NET Core][]。</span><span class="sxs-lookup"><span data-stu-id="598ea-104">Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][].</span></span> <span data-ttu-id="598ea-105">可移植的模組是在 Windows PowerShell 和 PowerShell Core 中運作的模組。</span><span class="sxs-lookup"><span data-stu-id="598ea-105">Portable modules are modules that work in both Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="598ea-106">雖然.NET Framework 及.NET Core 為高度相容，有可用的 api 兩者之間的差異。</span><span class="sxs-lookup"><span data-stu-id="598ea-106">While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two.</span></span> <span data-ttu-id="598ea-107">另外還有 Api 中的差異可在 Windows PowerShell 和 PowerShell Core 中。</span><span class="sxs-lookup"><span data-stu-id="598ea-107">There are also differences in the APIs available in Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="598ea-108">適用於兩個環境中的模組必須要注意這些差異。</span><span class="sxs-lookup"><span data-stu-id="598ea-108">Modules intended to be used in both environments need to be aware of these differences.</span></span>
+<span data-ttu-id="88309-104">Windows PowerShell 是針對 [.NET Framework][] 撰寫的，而 PowerShell Core 則是針對 [.NET Core][] 撰寫的。</span><span class="sxs-lookup"><span data-stu-id="88309-104">Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][].</span></span> <span data-ttu-id="88309-105">可移植的模組是在 Windows PowerShell 和 PowerShell Core 中運作的模組。</span><span class="sxs-lookup"><span data-stu-id="88309-105">Portable modules are modules that work in both Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="88309-106">雖然 .NET Framework 和 .NET Core 高度相容，但兩者之間提供的 API 還是有所不同。</span><span class="sxs-lookup"><span data-stu-id="88309-106">While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two.</span></span> <span data-ttu-id="88309-107">Windows PowerShell 和 PowerShell Core 中提供的 API 也有一些差異。</span><span class="sxs-lookup"><span data-stu-id="88309-107">There are also differences in the APIs available in Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="88309-108">同時適用於兩個環境的模組必須注意這些差異。</span><span class="sxs-lookup"><span data-stu-id="88309-108">Modules intended to be used in both environments need to be aware of these differences.</span></span>
 
-## <a name="porting-an-existing-module"></a><span data-ttu-id="598ea-109">移植現有的模組</span><span class="sxs-lookup"><span data-stu-id="598ea-109">Porting an Existing Module</span></span>
+## <a name="porting-an-existing-module"></a><span data-ttu-id="88309-109">移植現有的模組</span><span class="sxs-lookup"><span data-stu-id="88309-109">Porting an Existing Module</span></span>
 
-### <a name="porting-a-pssnapin"></a><span data-ttu-id="598ea-110">移植 PSSnapIn</span><span class="sxs-lookup"><span data-stu-id="598ea-110">Porting a PSSnapIn</span></span>
+### <a name="porting-a-pssnapin"></a><span data-ttu-id="88309-110">移植 PSSnapIn</span><span class="sxs-lookup"><span data-stu-id="88309-110">Porting a PSSnapIn</span></span>
 
-<span data-ttu-id="598ea-111">PowerShell Core 並不支援 PowerShell 嵌入式管理單元 (PSSnapIn)。</span><span class="sxs-lookup"><span data-stu-id="598ea-111">PowerShell SnapIns (PSSnapIn) aren't supported in PowerShell Core.</span></span> <span data-ttu-id="598ea-112">不過，它是 trivial 將 PSSnapIn 轉換成 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="598ea-112">However, it's trivial to convert a PSSnapIn to a PowerShell module.</span></span> <span data-ttu-id="598ea-113">一般而言，PSSnapIn 註冊程式碼是單一原始程式檔中的類別衍生自[PSSnapIn][]。</span><span class="sxs-lookup"><span data-stu-id="598ea-113">Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].</span></span> <span data-ttu-id="598ea-114">從組建; 移除這個原始程式檔不再需要。</span><span class="sxs-lookup"><span data-stu-id="598ea-114">Remove this source file from the build; it's no longer needed.</span></span>
+<span data-ttu-id="88309-111">PowerShell Core 並不支援 PowerShell 嵌入式管理單元 (PSSnapIn)。</span><span class="sxs-lookup"><span data-stu-id="88309-111">PowerShell SnapIns (PSSnapIn) aren't supported in PowerShell Core.</span></span> <span data-ttu-id="88309-112">但是也沒有必要將 PSSnapIn 轉換成 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="88309-112">However, it's trivial to convert a PSSnapIn to a PowerShell module.</span></span> <span data-ttu-id="88309-113">一般而言，PSSnapIn 註冊程式碼是衍生自 [PSSnapIn][] 之類別的單一來源檔案。</span><span class="sxs-lookup"><span data-stu-id="88309-113">Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].</span></span> <span data-ttu-id="88309-114">請將此來源檔案從組建中移除，因為已經不再需要。</span><span class="sxs-lookup"><span data-stu-id="88309-114">Remove this source file from the build; it's no longer needed.</span></span>
 
-<span data-ttu-id="598ea-115">使用[New-modulemanifest][]來建立新的模組資訊清單，以取代需要 PSSnapIn 註冊程式碼。</span><span class="sxs-lookup"><span data-stu-id="598ea-115">Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code.</span></span> <span data-ttu-id="598ea-116">可重複使用的某些值 （例如描述） PSSnapIn 從模組資訊清單內。</span><span class="sxs-lookup"><span data-stu-id="598ea-116">Some of the values from the PSSnapIn (such as Description) can be reused within the module manifest.</span></span>
+<span data-ttu-id="88309-115">使用 [New-ModuleManifest][] 建立新的模組資訊清單，以取代需要 PSSnapIn 註冊程式碼的需求。</span><span class="sxs-lookup"><span data-stu-id="88309-115">Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code.</span></span> <span data-ttu-id="88309-116">PSSnapIn 的某些值 (例如「描述」) 可在模組資訊清單內重複使用。</span><span class="sxs-lookup"><span data-stu-id="88309-116">Some of the values from the PSSnapIn (such as Description) can be reused within the module manifest.</span></span>
 
-<span data-ttu-id="598ea-117">`RootModule`模組資訊清單中的屬性應設為 實作指令程式的組件 (dll) 的名稱。</span><span class="sxs-lookup"><span data-stu-id="598ea-117">The `RootModule` property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.</span></span>
+<span data-ttu-id="88309-117">模組資訊清單中的 `RootModule` 屬性應設定為實作 Cmdlet 之組件 (dll) 的名稱。</span><span class="sxs-lookup"><span data-stu-id="88309-117">The `RootModule` property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.</span></span>
 
-### <a name="the-net-portability-analyzer-aka-apiport"></a><span data-ttu-id="598ea-118">.NET Portability Analyzer (也稱為 APIPort)</span><span class="sxs-lookup"><span data-stu-id="598ea-118">The .NET Portability Analyzer (aka APIPort)</span></span>
+### <a name="the-net-portability-analyzer-aka-apiport"></a><span data-ttu-id="88309-118">.NET Portability Analyzer (也稱為 APIPort)</span><span class="sxs-lookup"><span data-stu-id="88309-118">The .NET Portability Analyzer (aka APIPort)</span></span>
 
-<span data-ttu-id="598ea-119">若要撰寫適用於 Windows PowerShell 使用 PowerShell Core 時，開始使用的連接埠模組[.NET Portability Analyzer][]。</span><span class="sxs-lookup"><span data-stu-id="598ea-119">To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][].</span></span> <span data-ttu-id="598ea-120">針對您編譯的組件，以判斷是否相容於.NET Framework、.NET Core 及其他.NET 執行階段模組中使用的.NET Api 中執行這項工具。</span><span class="sxs-lookup"><span data-stu-id="598ea-120">Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes.</span></span> <span data-ttu-id="598ea-121">如果有的話，則工具會提供建議替代的 Api。</span><span class="sxs-lookup"><span data-stu-id="598ea-121">The tool suggests alternate APIs if they exist.</span></span> <span data-ttu-id="598ea-122">否則，您可能必須加入[執行階段檢查][]並限制不適用於特定的執行階段的功能。</span><span class="sxs-lookup"><span data-stu-id="598ea-122">Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.</span></span>
+<span data-ttu-id="88309-119">若要移植為 Windows PowerShell 撰寫的模組以和 PowerShell Core 搭配運作，請從 [.NET Portability Analyzer][] 開始。</span><span class="sxs-lookup"><span data-stu-id="88309-119">To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][].</span></span> <span data-ttu-id="88309-120">針對您編譯的組件執行此工具，以判斷模組中使用的 .NET API 是否與 .NET Framework、.NET Core 和其他 .NET 執行階段相容。</span><span class="sxs-lookup"><span data-stu-id="88309-120">Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes.</span></span> <span data-ttu-id="88309-121">如果它們存在，工具會建議替代的 API。</span><span class="sxs-lookup"><span data-stu-id="88309-121">The tool suggests alternate APIs if they exist.</span></span> <span data-ttu-id="88309-122">否則，您可能需要新增[執行階段檢查][]，並限制特定執行階段中不適用的功能。</span><span class="sxs-lookup"><span data-stu-id="88309-122">Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.</span></span>
 
-## <a name="creating-a-new-module"></a><span data-ttu-id="598ea-123">建立新的模組</span><span class="sxs-lookup"><span data-stu-id="598ea-123">Creating a New Module</span></span>
+## <a name="creating-a-new-module"></a><span data-ttu-id="88309-123">建立新模組</span><span class="sxs-lookup"><span data-stu-id="88309-123">Creating a New Module</span></span>
 
-<span data-ttu-id="598ea-124">如果建立新的模組，是使用建議[.NET CLI][]。</span><span class="sxs-lookup"><span data-stu-id="598ea-124">If creating a new module, the recommendation is to use the [.NET CLI][].</span></span>
+<span data-ttu-id="88309-124">如果建立新的模組，建議使用 [.NET CLI][]。</span><span class="sxs-lookup"><span data-stu-id="88309-124">If creating a new module, the recommendation is to use the [.NET CLI][].</span></span>
 
-### <a name="installing-the-powershell-standard-module-template"></a><span data-ttu-id="598ea-125">安裝 PowerShell 標準模組範本</span><span class="sxs-lookup"><span data-stu-id="598ea-125">Installing the PowerShell Standard Module Template</span></span>
+### <a name="installing-the-powershell-standard-module-template"></a><span data-ttu-id="88309-125">安裝 PowerShell 標準模組範本</span><span class="sxs-lookup"><span data-stu-id="88309-125">Installing the PowerShell Standard Module Template</span></span>
 
-<span data-ttu-id="598ea-126">.NET CLI 安裝之後，安裝的範本程式庫，以產生簡單的 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="598ea-126">Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.</span></span>
-<span data-ttu-id="598ea-127">此模組會與 Windows PowerShell、 PowerShell Core、 Windows、 Linux 和 macOS 相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-127">The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.</span></span>
+<span data-ttu-id="88309-126">安裝 .NET CLI 之後，請安裝範本程式庫以產生簡單的 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="88309-126">Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.</span></span>
+<span data-ttu-id="88309-127">模組將會與 Windows PowerShell、PowerShell Core、Windows、Linux 和 macOS 相容。</span><span class="sxs-lookup"><span data-stu-id="88309-127">The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.</span></span>
 
-<span data-ttu-id="598ea-128">下列範例示範如何安裝的範本：</span><span class="sxs-lookup"><span data-stu-id="598ea-128">The following example shows how to install the template:</span></span>
+<span data-ttu-id="88309-128">下列範例顯示如何安裝範本：</span><span class="sxs-lookup"><span data-stu-id="88309-128">The following example shows how to install the template:</span></span>
 
 ```powershell
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
@@ -72,9 +72,9 @@ PowerShell Standard Module                        psmodule           [C#]       
 ...
 ```
 
-### <a name="creating-a-new-module-project"></a><span data-ttu-id="598ea-129">建立新的模組專案</span><span class="sxs-lookup"><span data-stu-id="598ea-129">Creating a New Module Project</span></span>
+### <a name="creating-a-new-module-project"></a><span data-ttu-id="88309-129">建立新模組專案</span><span class="sxs-lookup"><span data-stu-id="88309-129">Creating a New Module Project</span></span>
 
-<span data-ttu-id="598ea-130">安裝範本之後，您可以建立新的 PowerShell 模組專案，使用該範本。</span><span class="sxs-lookup"><span data-stu-id="598ea-130">After the template is installed, you can create a new PowerShell module project using that template.</span></span> <span data-ttu-id="598ea-131">在此範例中，範例模組稱為 'myModule'。</span><span class="sxs-lookup"><span data-stu-id="598ea-131">In this example, the sample module is called 'myModule'.</span></span>
+<span data-ttu-id="88309-130">安裝範本之後，就可以使用該範本建立新的 PowerShell 模組專案。</span><span class="sxs-lookup"><span data-stu-id="88309-130">After the template is installed, you can create a new PowerShell module project using that template.</span></span> <span data-ttu-id="88309-131">在此範例中，範例模組稱為 'myModule'。</span><span class="sxs-lookup"><span data-stu-id="88309-131">In this example, the sample module is called 'myModule'.</span></span>
 
 ```
 PS> mkdir myModule
@@ -101,9 +101,9 @@ Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
 Restore succeeded.
 ```
 
-### <a name="building-the-module"></a><span data-ttu-id="598ea-132">建置模組</span><span class="sxs-lookup"><span data-stu-id="598ea-132">Building the Module</span></span>
+### <a name="building-the-module"></a><span data-ttu-id="88309-132">建置模組</span><span class="sxs-lookup"><span data-stu-id="88309-132">Building the Module</span></span>
 
-<span data-ttu-id="598ea-133">使用標準的.NET CLI 命令來建置專案。</span><span class="sxs-lookup"><span data-stu-id="598ea-133">Use standard .NET CLI commands to build the project.</span></span>
+<span data-ttu-id="88309-133">使用標準 .NET CLI 命令建置專案。</span><span class="sxs-lookup"><span data-stu-id="88309-133">Use standard .NET CLI commands to build the project.</span></span>
 
 ```powershell
 dotnet build
@@ -124,9 +124,9 @@ Build succeeded.
 Time Elapsed 00:00:05.40
 ```
 
-### <a name="testing-the-module"></a><span data-ttu-id="598ea-134">測試模組</span><span class="sxs-lookup"><span data-stu-id="598ea-134">Testing the Module</span></span>
+### <a name="testing-the-module"></a><span data-ttu-id="88309-134">測試模組</span><span class="sxs-lookup"><span data-stu-id="88309-134">Testing the Module</span></span>
 
-<span data-ttu-id="598ea-135">在建置模組之後, 您可以將它匯入，並執行範例 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="598ea-135">After building the module, you can import it and execute the sample cmdlet.</span></span>
+<span data-ttu-id="88309-135">建置模組之後，可以將它匯入並執行範例 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="88309-135">After building the module, you can import it and execute the sample cmdlet.</span></span>
 
 ```powershell
 ipmo .\bin\Debug\netstandard2.0\myModule.dll
@@ -160,54 +160,54 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
-<span data-ttu-id="598ea-136">下列各節詳細說明一些使用此範本的技術。</span><span class="sxs-lookup"><span data-stu-id="598ea-136">The following sections describe in detail some of the technologies used by this template.</span></span>
+<span data-ttu-id="88309-136">以下各節詳細說明此範本的一些使用技巧。</span><span class="sxs-lookup"><span data-stu-id="88309-136">The following sections describe in detail some of the technologies used by this template.</span></span>
 
-## <a name="net-standard-library"></a><span data-ttu-id="598ea-137">.NET 標準程式庫</span><span class="sxs-lookup"><span data-stu-id="598ea-137">.NET Standard Library</span></span>
+## <a name="net-standard-library"></a><span data-ttu-id="88309-137">.NET Standard 程式庫</span><span class="sxs-lookup"><span data-stu-id="88309-137">.NET Standard Library</span></span>
 
-<span data-ttu-id="598ea-138">[.NET standard][]是可用於所有.NET 實作的.NET api 正式規格。</span><span class="sxs-lookup"><span data-stu-id="598ea-138">[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations.</span></span> <span data-ttu-id="598ea-139">Managed 程式碼以.NET Standard 搭配與該版.NET Standard 相容的.NET Framework 和.NET Core 版本為目標。</span><span class="sxs-lookup"><span data-stu-id="598ea-139">Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="598ea-140">雖然 API 可能存在於.NET Standard，.NET Core 中的 API 實作可能會擲回`PlatformNotSupportedException`在執行階段，因此若要確認使用 Windows PowerShell 和 PowerShell Core 的相容性最佳做法是對您的模組，這兩種環境中執行測試。</span><span class="sxs-lookup"><span data-stu-id="598ea-140">Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.</span></span>
-> <span data-ttu-id="598ea-141">如果您的模組是跨平台，也執行 Linux 和 macOS 上測試。</span><span class="sxs-lookup"><span data-stu-id="598ea-141">Also run tests on Linux and macOS if your module is intended to be cross-platform.</span></span>
-
-<span data-ttu-id="598ea-142">目標.NET Standard，可協助確保，隨著模組的發展，不相容的 Api 不意外取得導入的模組。</span><span class="sxs-lookup"><span data-stu-id="598ea-142">Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module.</span></span> <span data-ttu-id="598ea-143">在編譯時期，而不是執行階段探索到不相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-143">Incompatibilities are discovered at compile time instead of runtime.</span></span>
-
-<span data-ttu-id="598ea-144">不過，它不需要.NET 標準為目標的模組來使用 Windows PowerShell 和 PowerShell Core，只要您使用相容的 Api。</span><span class="sxs-lookup"><span data-stu-id="598ea-144">However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs.</span></span> <span data-ttu-id="598ea-145">Intermediate Language (IL) 是兩個執行階段之間相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-145">The Intermediate Language (IL) is compatible between the two runtimes.</span></span> <span data-ttu-id="598ea-146">您可以針對.NET Framework 4.6.1 中，這是與.NET Standard 2.0 相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-146">You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0.</span></span> <span data-ttu-id="598ea-147">如果您不使用外部.NET Standard 2.0 的 Api，然後您的模組搭配 PowerShell Core 6 而不必重新編譯。</span><span class="sxs-lookup"><span data-stu-id="598ea-147">If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.</span></span>
-
-## <a name="powershell-standard-library"></a><span data-ttu-id="598ea-148">PowerShell 的標準程式庫</span><span class="sxs-lookup"><span data-stu-id="598ea-148">PowerShell Standard Library</span></span>
-
-<span data-ttu-id="598ea-149">[PowerShell 標準][]程式庫是所有的 PowerShell 版本大於或等於該標準的版本中提供的 PowerShell Api 正式規格。</span><span class="sxs-lookup"><span data-stu-id="598ea-149">The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.</span></span>
-
-<span data-ttu-id="598ea-150">例如， [PowerShell Standard 5.1][]相容於 Windows PowerShell 5.1 和 PowerShell Core 6.0 或更新版本。</span><span class="sxs-lookup"><span data-stu-id="598ea-150">For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.</span></span>
-
-<span data-ttu-id="598ea-151">我們建議您編譯您使用 PowerShell 的標準程式庫的模組。</span><span class="sxs-lookup"><span data-stu-id="598ea-151">We recommend you compile your module using PowerShell Standard Library.</span></span> <span data-ttu-id="598ea-152">程式庫可確保 Api 可供使用且在 Windows PowerShell 和 PowerShell Core 6 實作。</span><span class="sxs-lookup"><span data-stu-id="598ea-152">The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.</span></span>
-<span data-ttu-id="598ea-153">PowerShell 標準被要總是轉送相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-153">PowerShell Standard is intended to always be forwards-compatible.</span></span> <span data-ttu-id="598ea-154">使用標準程式庫 5.1 PowerShell 所建置的模組一律會與未來的 PowerShell 版本相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-154">A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.</span></span>
-
-## <a name="module-manifest"></a><span data-ttu-id="598ea-155">模組資訊清單</span><span class="sxs-lookup"><span data-stu-id="598ea-155">Module Manifest</span></span>
-
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a><span data-ttu-id="598ea-156">表示使用 Windows PowerShell 和 PowerShell Core 的相容性</span><span class="sxs-lookup"><span data-stu-id="598ea-156">Indicating Compatibility With Windows PowerShell and PowerShell Core</span></span>
-
-<span data-ttu-id="598ea-157">驗證之後，與 Windows PowerShell 和 PowerShell Core 搭配使用您的模組，模組資訊清單應該明確表示相容性使用[CompatiblePSEditions][]屬性。</span><span class="sxs-lookup"><span data-stu-id="598ea-157">After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property.</span></span> <span data-ttu-id="598ea-158">值為`Desktop`表示模組會使用 Windows PowerShell 時的值相容`Core`表示模組與 PowerShell Core 相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-158">A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core.</span></span> <span data-ttu-id="598ea-159">包括`Desktop`和`Core`表示模組是與 Windows PowerShell 和 PowerShell Core 相容。</span><span class="sxs-lookup"><span data-stu-id="598ea-159">Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.</span></span>
+<span data-ttu-id="88309-138">[.NET Standard][] 是所有 .NET 實作中所提供之 .NET API 的正式規格。</span><span class="sxs-lookup"><span data-stu-id="88309-138">[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations.</span></span> <span data-ttu-id="88309-139">以 .NET Standard 為目標的受控程式碼可和與該版 .NET Standard 相容的 .NET Framework 和 .NET Core 版本搭配使用。</span><span class="sxs-lookup"><span data-stu-id="88309-139">Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="598ea-160">`Core` 不自動表示模組適用於 Windows、 Linux 和 macOS。</span><span class="sxs-lookup"><span data-stu-id="598ea-160">`Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.</span></span>
-> <span data-ttu-id="598ea-161">**CompatiblePSEditions** PowerShell v5 中引進了屬性。</span><span class="sxs-lookup"><span data-stu-id="598ea-161">The **CompatiblePSEditions** property was introduced in PowerShell v5.</span></span> <span data-ttu-id="598ea-162">模組資訊清單使用**CompatiblePSEditions**屬性無法載入 PowerShell v5 之前的版本中。</span><span class="sxs-lookup"><span data-stu-id="598ea-162">Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.</span></span>
+> <span data-ttu-id="88309-140">雖然 .NET Standard 可能已經有 API 存在，但 .NET Core 中的 API 實作可能會在執行階段擲回 `PlatformNotSupportedException`，因此為了確認與 Windows PowerShell 和 PowerShell Core 的相容性，最好的方法是在兩個環境內針對模組執行測試。</span><span class="sxs-lookup"><span data-stu-id="88309-140">Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.</span></span>
+> <span data-ttu-id="88309-141">如果模組要跨平台使用，也請在 Linux 和 macOS 中執行測試。</span><span class="sxs-lookup"><span data-stu-id="88309-141">Also run tests on Linux and macOS if your module is intended to be cross-platform.</span></span>
 
-### <a name="indicating-os-compatibility"></a><span data-ttu-id="598ea-163">指出作業系統相容性</span><span class="sxs-lookup"><span data-stu-id="598ea-163">Indicating OS Compatibility</span></span>
+<span data-ttu-id="88309-142">以 .NET Standard 為目標有助於確保在模組發展過程中，不會突然出現不相容的 API。</span><span class="sxs-lookup"><span data-stu-id="88309-142">Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module.</span></span> <span data-ttu-id="88309-143">因為在編譯時期就能發現不相容項目，而不是等到執行階段才發現。</span><span class="sxs-lookup"><span data-stu-id="88309-143">Incompatibilities are discovered at compile time instead of runtime.</span></span>
 
-<span data-ttu-id="598ea-164">首先，請驗證您的模組，適用於 Linux 和 macOS 上。</span><span class="sxs-lookup"><span data-stu-id="598ea-164">First, validate that your module works on Linux and macOS.</span></span> <span data-ttu-id="598ea-165">接下來，指出與這些模組資訊清單中的作業系統相容性。</span><span class="sxs-lookup"><span data-stu-id="598ea-165">Next, indicate compatibility with those operating systems in the module manifest.</span></span> <span data-ttu-id="598ea-166">這可讓使用者更輕鬆地找到您的模組時發行至其作業系統[PowerShell 資源庫][]。</span><span class="sxs-lookup"><span data-stu-id="598ea-166">This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].</span></span>
+<span data-ttu-id="88309-144">但是只要使用相容的 API，就不需要將要與 Windows PowerShell 和 PowerShell Core 搭配使用的模組以 .NET Standard 為目標。</span><span class="sxs-lookup"><span data-stu-id="88309-144">However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs.</span></span> <span data-ttu-id="88309-145">中繼語言 (IL) 在兩個執行階段之間是相容的。</span><span class="sxs-lookup"><span data-stu-id="88309-145">The Intermediate Language (IL) is compatible between the two runtimes.</span></span> <span data-ttu-id="88309-146">您能以 .NET Framework 4.6.1 為目標，它與 .NET Standard 2.0 相容。</span><span class="sxs-lookup"><span data-stu-id="88309-146">You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0.</span></span> <span data-ttu-id="88309-147">如果沒有使用 .NET Standard 2.0 之外的 API，您的模組不需要重新編譯，就能與 PowerShell Core 6 搭配使用。</span><span class="sxs-lookup"><span data-stu-id="88309-147">If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.</span></span>
 
-<span data-ttu-id="598ea-167">在模組資訊清單中，`PrivateData`屬性具有`PSData`子屬性。</span><span class="sxs-lookup"><span data-stu-id="598ea-167">Within the module manifest, the `PrivateData` property has a `PSData` sub-property.</span></span> <span data-ttu-id="598ea-168">選擇性`Tags`屬性`PSData`接受 PowerShell 資源庫中顯示的值陣列。</span><span class="sxs-lookup"><span data-stu-id="598ea-168">The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery.</span></span> <span data-ttu-id="598ea-169">「 PowerShell 資源庫支援下列相容性值：</span><span class="sxs-lookup"><span data-stu-id="598ea-169">The PowerShell Gallery supports the following compatibility values:</span></span>
+## <a name="powershell-standard-library"></a><span data-ttu-id="88309-148">PowerShell Standard 程式庫</span><span class="sxs-lookup"><span data-stu-id="88309-148">PowerShell Standard Library</span></span>
 
-| <span data-ttu-id="598ea-170">標籤</span><span class="sxs-lookup"><span data-stu-id="598ea-170">Tag</span></span>               | <span data-ttu-id="598ea-171">描述</span><span class="sxs-lookup"><span data-stu-id="598ea-171">Description</span></span>                                |
+<span data-ttu-id="88309-149">[PowerShell Standard][] 程式庫是版本大於或等於該標準版本的所有 PowerShell 版本中所提供 PowerShell API 的正式規格。</span><span class="sxs-lookup"><span data-stu-id="88309-149">The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.</span></span>
+
+<span data-ttu-id="88309-150">例如，[PowerShell Standard 5.1][] 與 Windows PowerShell 5.1 和 PowerShell Core 6.0 或更新版本相容。</span><span class="sxs-lookup"><span data-stu-id="88309-150">For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.</span></span>
+
+<span data-ttu-id="88309-151">我們建議您使用 PowerShell Standard 程式庫來編譯您的模組。</span><span class="sxs-lookup"><span data-stu-id="88309-151">We recommend you compile your module using PowerShell Standard Library.</span></span> <span data-ttu-id="88309-152">此程式庫可確保在 Windows PowerShell 和 PowerShell Core 6 中都已提供並實作 API。</span><span class="sxs-lookup"><span data-stu-id="88309-152">The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.</span></span>
+<span data-ttu-id="88309-153">PowerShell Standard 的設計旨在始終向下相容。</span><span class="sxs-lookup"><span data-stu-id="88309-153">PowerShell Standard is intended to always be forwards-compatible.</span></span> <span data-ttu-id="88309-154">使用 PowerShell Standard 程式庫 5.1 建置的模組一律會與未來的 PowerShell 版本相容。</span><span class="sxs-lookup"><span data-stu-id="88309-154">A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.</span></span>
+
+## <a name="module-manifest"></a><span data-ttu-id="88309-155">模組資訊清單</span><span class="sxs-lookup"><span data-stu-id="88309-155">Module Manifest</span></span>
+
+### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a><span data-ttu-id="88309-156">指示與 Windows PowerShell 和 PowerShell Core 的相容性</span><span class="sxs-lookup"><span data-stu-id="88309-156">Indicating Compatibility With Windows PowerShell and PowerShell Core</span></span>
+
+<span data-ttu-id="88309-157">驗證模組可與 Windows PowerShell 和 PowerShell Core 搭配使用之後，模組資訊清單應該使用 [CompatiblePSEditions][] 屬性明確指示相容性。</span><span class="sxs-lookup"><span data-stu-id="88309-157">After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property.</span></span> <span data-ttu-id="88309-158">值為 `Desktop` 表示模組與 Windows PowerShell 相容，值為 `Core` 表示模組與 PowerShell Core 相容。</span><span class="sxs-lookup"><span data-stu-id="88309-158">A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core.</span></span> <span data-ttu-id="88309-159">同時包含 `Desktop` 與 `Core` 表示模組與 Windows PowerShell 和 PowerShell Core 相容。</span><span class="sxs-lookup"><span data-stu-id="88309-159">Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="88309-160">`Core` 不會自動表示模組與 Windows、Linux 和 macOS 相容。</span><span class="sxs-lookup"><span data-stu-id="88309-160">`Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.</span></span>
+> <span data-ttu-id="88309-161">PowerShell v5 中已經引進 **CompatiblePSEditions** 屬性。</span><span class="sxs-lookup"><span data-stu-id="88309-161">The **CompatiblePSEditions** property was introduced in PowerShell v5.</span></span> <span data-ttu-id="88309-162">使用 **CompatiblePSEditions** 屬性的模組資訊清單無法載入至 PowerShell v5 之前的版本中。</span><span class="sxs-lookup"><span data-stu-id="88309-162">Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.</span></span>
+
+### <a name="indicating-os-compatibility"></a><span data-ttu-id="88309-163">指示作業系統相容性</span><span class="sxs-lookup"><span data-stu-id="88309-163">Indicating OS Compatibility</span></span>
+
+<span data-ttu-id="88309-164">首先，請驗證您的模組可在 Linux 和 macOS 上運作。</span><span class="sxs-lookup"><span data-stu-id="88309-164">First, validate that your module works on Linux and macOS.</span></span> <span data-ttu-id="88309-165">接下來，在模組資訊清單中指示與那些作業系統相容。</span><span class="sxs-lookup"><span data-stu-id="88309-165">Next, indicate compatibility with those operating systems in the module manifest.</span></span> <span data-ttu-id="88309-166">這可在將模組發佈至 [PowerShell 資源庫][]時，讓使用者更容易地為他們的作業系統找到您的模組。</span><span class="sxs-lookup"><span data-stu-id="88309-166">This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].</span></span>
+
+<span data-ttu-id="88309-167">在模組資訊清單內，`PrivateData` 屬性具有 `PSData` 子屬性。</span><span class="sxs-lookup"><span data-stu-id="88309-167">Within the module manifest, the `PrivateData` property has a `PSData` sub-property.</span></span> <span data-ttu-id="88309-168">`PSData` 的選擇性 `Tags` 屬性接受 PowerShell 資源庫中顯示的值陣列。</span><span class="sxs-lookup"><span data-stu-id="88309-168">The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery.</span></span> <span data-ttu-id="88309-169">PowerShell 資源庫支援下列相容性值：</span><span class="sxs-lookup"><span data-stu-id="88309-169">The PowerShell Gallery supports the following compatibility values:</span></span>
+
+| <span data-ttu-id="88309-170">標籤</span><span class="sxs-lookup"><span data-stu-id="88309-170">Tag</span></span>               | <span data-ttu-id="88309-171">描述</span><span class="sxs-lookup"><span data-stu-id="88309-171">Description</span></span>                                |
 |-------------------|--------------------------------------------|
-| <span data-ttu-id="598ea-172">PSEdition_Core</span><span class="sxs-lookup"><span data-stu-id="598ea-172">PSEdition_Core</span></span>    | <span data-ttu-id="598ea-173">與 PowerShell Core 6 相容</span><span class="sxs-lookup"><span data-stu-id="598ea-173">Compatible with PowerShell Core 6</span></span>          |
-| <span data-ttu-id="598ea-174">PSEdition_Desktop</span><span class="sxs-lookup"><span data-stu-id="598ea-174">PSEdition_Desktop</span></span> | <span data-ttu-id="598ea-175">使用 Windows PowerShell 相容</span><span class="sxs-lookup"><span data-stu-id="598ea-175">Compatible with Windows PowerShell</span></span>         |
-| <span data-ttu-id="598ea-176">Windows</span><span class="sxs-lookup"><span data-stu-id="598ea-176">Windows</span></span>           | <span data-ttu-id="598ea-177">與 Windows 相容性</span><span class="sxs-lookup"><span data-stu-id="598ea-177">Compatible with Windows</span></span>                    |
-| <span data-ttu-id="598ea-178">Linux</span><span class="sxs-lookup"><span data-stu-id="598ea-178">Linux</span></span>             | <span data-ttu-id="598ea-179">與 Linux （沒有特定的散發版本） 相容</span><span class="sxs-lookup"><span data-stu-id="598ea-179">Compatible with Linux (no specific distro)</span></span> |
-| <span data-ttu-id="598ea-180">macOS</span><span class="sxs-lookup"><span data-stu-id="598ea-180">macOS</span></span>             | <span data-ttu-id="598ea-181">MacOS 與相容性</span><span class="sxs-lookup"><span data-stu-id="598ea-181">Compatible with macOS</span></span>                      |
+| <span data-ttu-id="88309-172">PSEdition_Core</span><span class="sxs-lookup"><span data-stu-id="88309-172">PSEdition_Core</span></span>    | <span data-ttu-id="88309-173">與 PowerShell Core 6 相容</span><span class="sxs-lookup"><span data-stu-id="88309-173">Compatible with PowerShell Core 6</span></span>          |
+| <span data-ttu-id="88309-174">PSEdition_Desktop</span><span class="sxs-lookup"><span data-stu-id="88309-174">PSEdition_Desktop</span></span> | <span data-ttu-id="88309-175">與 Windows PowerShell 相容</span><span class="sxs-lookup"><span data-stu-id="88309-175">Compatible with Windows PowerShell</span></span>         |
+| <span data-ttu-id="88309-176">Windows</span><span class="sxs-lookup"><span data-stu-id="88309-176">Windows</span></span>           | <span data-ttu-id="88309-177">與 Windows 相容</span><span class="sxs-lookup"><span data-stu-id="88309-177">Compatible with Windows</span></span>                    |
+| <span data-ttu-id="88309-178">Linux</span><span class="sxs-lookup"><span data-stu-id="88309-178">Linux</span></span>             | <span data-ttu-id="88309-179">與 Linux (不限特定散發版本) 相容</span><span class="sxs-lookup"><span data-stu-id="88309-179">Compatible with Linux (no specific distro)</span></span> |
+| <span data-ttu-id="88309-180">macOS</span><span class="sxs-lookup"><span data-stu-id="88309-180">macOS</span></span>             | <span data-ttu-id="88309-181">與 macOS 相容</span><span class="sxs-lookup"><span data-stu-id="88309-181">Compatible with macOS</span></span>                      |
 
-<span data-ttu-id="598ea-182">範例：</span><span class="sxs-lookup"><span data-stu-id="598ea-182">Example:</span></span>
+<span data-ttu-id="88309-182">範例：</span><span class="sxs-lookup"><span data-stu-id="88309-182">Example:</span></span>
 
 ```powershell
 @{
@@ -262,11 +262,9 @@ FavoriteNumber FavoritePet
 [runtime checks]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
-[PowerShell 標準]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell 資源庫]: https://www.powershellgallery.com
 [PowerShell Gallery]: https://www.powershellgallery.com
-[.NET portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support
