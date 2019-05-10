@@ -71,7 +71,7 @@ ms.locfileid: "62058500"
 
 有幾個 ISE 佈景主題可供 VSCode 使用，會讓編輯器看起來非常像 ISE。
 
-在 [[命令選擇區]] 中輸入 `theme` 以取得 `Preferences: Color Theme`，然後按 <kbd>Enter</kbd>。
+在 [命令選擇區] 中輸入 `theme` 以取得 `Preferences: Color Theme`，然後按 <kbd>Enter</kbd>。
 在下拉式清單中選取 `PowerShell ISE`。
 
 您可以在設定中透過下項目設定此佈景主題：
@@ -84,7 +84,7 @@ ms.locfileid: "62058500"
 
 感謝 [@corbob](https://github.com/corbob) 所做的一切，PowerShell 延伸模組開始有自己的命令檔案總管了。
 
-在[[命令選擇區]]中，輸入 `PowerShell Command Explorer` 並按 <kbd>Enter</kbd>。
+在[命令選擇區]中，輸入 `PowerShell Command Explorer` 並按 <kbd>Enter</kbd>。
 
 ## <a name="open-in-the-ise"></a>在 ISE 中開啟
 
@@ -109,6 +109,6 @@ ms.locfileid: "62058500"
 <kbd>F1</kbd> 或是 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (在 macOS 上為 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>)
 
 在 VSCode 中執行命令的便利方式。
-如需詳細資訊，請參閱 [VSCode 文件](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) \(英文\)。
+如需詳細資訊，請參閱 [VSCode 文件](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (英文)。
 
-[[命令選擇區]]: #command-palette
+[命令選擇區]: #command-palette
