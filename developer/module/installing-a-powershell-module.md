@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082177"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229445"
 ---
 # <a name="installing-a-powershell-module"></a>安裝 PowerShell 模組
 
-您已建立您的 PowerShell 模組之後，您可能會想，在系統上，安裝模組，讓您或其他人可能會使用它。 一般而言，這只是包含複製的模組檔案 （亦即，.psm1，或二進位組件、 模組資訊清單和任何相關聯的檔案） 至目錄在該電腦上。 對於非常小的專案中，這可能是簡單，只要複製並貼上與 Windows 檔案總管檔案到單一遠端電腦;不過，較大的解決方案，您可能想要使用更複雜的安裝程序。 不論如何，您會取得您系統上的模組，PowerShell 可以使用一些技巧，讓使用者尋找並使用您的模組。 (如需詳細資訊，請參閱 <<c0> [ 匯入 PowerShell 模組](./importing-a-powershell-module.md)。)因此，安裝的主要問題確保 PowerShell 能夠找到您的模組。
-
-本主題包含下列幾節：
-
-- 安裝模組的規則
-
-- 如何安裝模組
-
-- 安裝模組的多個版本
-
-- 處理命令名稱衝突
+您已建立您的 PowerShell 模組之後，您可能會想，在系統上，安裝模組，讓您或其他人可能會使用它。 一般而言，這包含複製的模組檔案 （亦即，.psm1，或二進位組件、 模組資訊清單和任何相關聯的檔案） 至目錄在該電腦上。 對於非常小的專案中，這可能是簡單，只要複製並貼上與 Windows 檔案總管檔案到單一遠端電腦;不過，較大的解決方案，您可能想要使用更複雜的安裝程序。 不論如何，您會取得您系統上的模組，PowerShell 可以使用一些技巧，讓使用者尋找並使用您的模組。 因此，安裝的主要問題確保 PowerShell 能夠找到您的模組。 如需詳細資訊，請參閱 <<c0> [ 匯入 PowerShell 模組](./importing-a-powershell-module.md)。
 
 ## <a name="rules-for-installing-modules"></a>安裝模組的規則
 
@@ -41,14 +31,14 @@ ms.locfileid: "62082177"
 
 根據預設， **PSModulePath**環境變數的值包含下列的系統和使用者的模組目錄，但您可以加入和編輯值。
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > 此位置會保留給 Windows 隨附的模組。 請勿將模組安裝到這個位置。
 
-- $ Home\Documents\WindowsPowerShell\Modules (%userprofile%\documents\windowspowershell\modules)
+- `$Home\Documents\WindowsPowerShell\Modules` （%userprofile%\documents\windowspowershell\modules)
 
-- $Env: ProgramFiles\WindowsPowerShell\Modules (%programfiles%\windowspowershell\modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
   若要取得的值**PSModulePath**環境變數，使用下列命令。
 
@@ -60,7 +50,6 @@ ms.locfileid: "62082177"
   若要加入的值中的模組路徑**PSModulePath**環境變數值，請使用下列命令格式。 此格式會使用**SetEnvironmentVariable**方法**System.Environment**類別，以獨立於工作階段的變更**PSModulePath**環境變數。
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ ms.locfileid: "62082177"
 
 ### <a name="use-the-correct-module-directory-name"></a>使用正確的模組目錄名稱
 
-「 語式正確的 「 模組是儲存在模組目錄中的至少一個檔案的基底名稱與同名的目錄中的模組。 如果模組不是語式正確的 Windows PowerShell 無法辨識其為模組。
+語式正確的模組是儲存在具有至少一個檔案，在模組目錄中的基底名稱與同名的目錄中的模組。 如果模組不是語式正確的 Windows PowerShell 無法辨識其為模組。
 
 檔案的 「 基底名稱 」 是不含副檔名的名稱。 語式正確的模組中包含的模組檔案的目錄名稱必須符合模組中至少一個檔案的基底名稱。
 
@@ -122,9 +111,7 @@ C:\Program Files
 
 如果您建立您自己的模組，或從另一個合作對象，例如 Windows PowerShell 社群網站，取得模組，您想要的模組，可供您的使用者帳戶只能安裝模組，在使用者專屬的 Modules 目錄中。
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 使用者專屬 Modules 目錄加入至值**PSModulePath**預設的環境變數。
 
@@ -132,9 +119,7 @@ $home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
 
 如果您想要可供電腦上的所有使用者帳戶的模組，請在程式檔案的位置安裝模組。
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > 程式檔案的位置加入 PSModulePath 環境變數的值，根據預設，在 Windows PowerShell 4.0 和更新版本。 對於舊版的 Windows PowerShell 中，可以手動建立的程式檔案位置 ((%ProgramFiles%\WindowsPowerShell\Modules) 並將此路徑新增至 PSModulePath 環境變數，如上面所述。
@@ -160,7 +145,7 @@ C:\Program Files
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 如果模組使用由多個元件的產品或產品的多個版本，請 %ProgramFiles%\Common Files\Modules 子目錄的特定模組的子目錄中安裝模組。
 
-在下列範例中，Fabrikam 模組會安裝在 Fabrikam %ProgramFiles%\Common Files\Modules 子目錄的子目錄。 請注意每個模組都位於自己的模組子目錄中的子目錄。
+在下列範例中，「 Fabrikam 」 安裝模組的 Fabrikam 子目錄中`%ProgramFiles%\Common Files\Modules`子目錄。 請注意每個模組都位於自己的模組子目錄中的子目錄。
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 然後，安裝程式可確保 windows 7 **PSModulePath**環境變數包含一般的檔案模組子目錄的路徑。
@@ -198,9 +182,7 @@ $p = $q -join ';'
 若要安裝之相同模組的多個版本，請使用下列程序。
 
 1. 建立每個版本的模組目錄。 目錄名稱中包含的版本號碼。
-
 2. 建立模組的每個版本的模組資訊清單。 中的值**ModuleVersion**金鑰資訊清單中，請輸入模組的版本號碼。 模組的版本特定目錄中儲存資訊清單檔案 (.psd1)。
-
 3. 將模組的根資料夾路徑新增至 windows 7 **PSModulePath**環境變數，如下列範例所示。
 
 若要匯入特定版本的模組，使用者可以使用`MinimumVersion`或是`RequiredVersion`的參數[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet。

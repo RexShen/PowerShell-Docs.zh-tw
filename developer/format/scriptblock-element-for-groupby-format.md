@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064504"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229312"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>GroupBy 的 ScriptBlock 元素 (格式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "62064504"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性和項目
+## <a name="attributes-and-elements"></a>屬性與元素
 
 下列各節說明屬性、 子項目和父項目`ScriptBlock`項目。
 
@@ -51,14 +51,14 @@ ms.locfileid: "62064504"
 
 ## <a name="remarks"></a>備註
 
-此指令碼的值變更時，Windows PowerShell 就會啟動新的群組。
+此指令碼的值變更時，PowerShell 會啟動新的群組。
 
-當指定這個項目時，您無法指定[PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676)啟動新的群組項目。
+當指定這個項目時，您無法指定[PropertyName](propertyname-element-for-groupby-format.md)啟動新的群組項目。
 
 ## <a name="see-also"></a>另請參閱
 
-[GroupBy （格式） 的屬性名稱項目](./propertyname-element-for-groupby-format.md)
+[GroupBy （格式） 的屬性名稱項目](propertyname-element-for-groupby-format.md)
 
-[檢視 （格式） 的 GroupBy 元素](./groupby-element-for-view-format.md)
+[檢視 （格式） 的 GroupBy 元素](groupby-element-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式化檔案](writing-a-powershell-formatting-file.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082221"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229325"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>如何撰寫 PowerShell 二進位模組
 
@@ -29,7 +29,10 @@ ms.locfileid: "62082221"
 
 2. 如有必要，建立您的解決方案的其餘部分: （其他 cmdlet、 XML 檔案等等），並描述其使用模組資訊清單。
 
-   除了描述在您的方案中的指令程式組件時，模組資訊清單可以描述，請決定要如何匯出和匯入模組、 指令程式將會公開，和其他檔案將會移到模組。 如先前所述不過，PowerShell 可以處理像透過任何額外的模組二進位 cmdlet。 因此，模組資訊清單是主要用於將多個檔案結合成單一封裝中，或是明確控制針對指定的組件的發行集時才有用。 如需詳細資訊，請參閱 <<c0> [ 如何撰寫 PowerShell 模組資訊清單](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)。
+   除了描述在您的方案中的指令程式組件時，模組資訊清單可以描述，請決定要如何匯出和匯入模組、 指令程式將會公開，和其他檔案將會移到模組。
+   如先前所述不過，PowerShell 可以處理像透過任何額外的模組二進位 cmdlet。
+   因此，模組資訊清單是主要用於將多個檔案結合成單一封裝中，或是明確控制針對指定的組件的發行集時才有用。
+   如需詳細資訊，請參閱 <<c0> [ 如何撰寫 PowerShell 模組資訊清單](how-to-write-a-powershell-module-manifest.md)。
 
    下列程式碼應用程式非常簡單C#包含三個 cmdlet，在相同的檔案，可用做為模組的程式碼區塊。
 
@@ -82,7 +85,9 @@ ms.locfileid: "62082221"
 
 可以做為二進位模組載入 Cmdlet 和嵌入式管理單元的組件中存在的提供者。 二進位模組以載入嵌入式管理單元的組件時，cmdlet 和嵌入式管理單元的提供者會提供給使用者，嵌入式管理單元中的類別組件會被忽略，但不登錄嵌入式管理單元。 如此一來，Windows PowerShell 所提供的嵌入式管理單元 cmdlet 無法偵測嵌入式管理單元中，即使 cmdlet 與提供者可用於工作階段。
 
-此外，任何格式或類型檔案所參考的嵌入式管理單元無法匯入二進位模組的一部分。 若要匯入的格式和類型的檔案中，您必須建立模組資訊清單。 查看，請[如何撰寫 PowerShell 模組資訊清單](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)。
+此外，任何格式或類型檔案所參考的嵌入式管理單元無法匯入二進位模組的一部分。
+若要匯入的格式和類型的檔案中，您必須建立模組資訊清單。
+查看，請[如何撰寫 PowerShell 模組資訊清單](how-to-write-a-powershell-module-manifest.md)。
 
 ## <a name="see-also"></a>另請參閱
 

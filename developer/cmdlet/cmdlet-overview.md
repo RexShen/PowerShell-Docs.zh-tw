@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], described
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
-ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068465"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229356"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet 概觀
 
@@ -38,19 +38,53 @@ Cmdlet 會執行動作，以及通常在管線中下一個命令會傳回 Micros
 
 下列詞彙常用於 Windows PowerShell cmdlet 文件：
 
-- **Cmdlet 屬性**:用來宣告為 cmdlet 的 cmdlet 類別將.NET Framework 屬性。 雖然 Windows PowerShell 會使用數個其他屬性，都是選擇性，但 Cmdlet 屬性是必要的。 如需有關這個屬性的詳細資訊，請參閱 < [Cmdlet 屬性宣告](./cmdlet-attribute-declaration.md)。
+### <a name="cmdlet-attribute"></a>Cmdlet 屬性
 
-- **Cmdlet 參數**:定義提供給使用者或應用程式執行此 cmdlet 的參數的公用屬性。 Cmdlet 可以具有必要的具名、 位置，並*切換*參數。 切換參數可讓您定義的參數指定在呼叫時，才會進行評估的參數。 如需不同類型的參數的詳細資訊，請參閱[Cmdlet 參數](./cmdlet-parameters.md)。
+用來宣告為 cmdlet 的 cmdlet 類別將.NET Framework 屬性。
+雖然 PowerShell 使用是選擇性的數個其他屬性，Cmdlet 屬性是必要的。
+如需有關這個屬性的詳細資訊，請參閱 < [Cmdlet 屬性宣告](cmdlet-attribute-declaration.md)。
 
-- **參數集**:可在相同命令中用來執行特定動作的一組參數。 Cmdlet 可以有多個參數集，但每個參數集必須是唯一的至少一個參數。 良好的 cmdlet 設計強烈建議唯一的參數也是必要的參數。 如需參數集的詳細資訊，請參閱[指令程式參數設定](./cmdlet-parameter-sets.md)。
+### <a name="cmdlet-parameter"></a>指令程式參數
 
-- **動態參數**:新增至 cmdlet，在執行階段參數。 一般而言，動態參數會加入至 cmdlet 的另一個參數設定為特定值時。 如需有關動態參數的詳細資訊，請參閱[Cmdlet 的動態參數](./cmdlet-dynamic-parameters.md)。
+定義提供給使用者或應用程式執行此 cmdlet 的參數的公用屬性。
+Cmdlet 可以具有必要的具名、 位置，並*切換*參數。
+切換參數可讓您定義的參數指定在呼叫時，才會進行評估的參數。
+如需不同類型的參數的詳細資訊，請參閱[Cmdlet 參數](cmdlet-parameters.md)。
 
-- **輸入處理方法**:Cmdlet 可用來處理接收為輸入之記錄的方法。 輸入的處理方法包括[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，而[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 當您實作的 cmdlet 時，您必須覆寫至少其中一個[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 通常[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您覆寫，因為它會呼叫指令程式會處理每一筆記錄的方法。 相反地， [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法會呼叫一次執行前置處理或後置處理的記錄。 如需這些方法的詳細資訊，請參閱[輸入處理方法](./cmdlet-input-processing-methods.md)。
+### <a name="parameter-set"></a>參數集
 
-- **ShouldProcess 功能**:Windows PowerShell 可讓您建立 cmdlet，此 cmdlet 會在系統中進行變更之前，提示使用者提供意見反應。 若要使用這項功能，此 cmdlet 必須宣告它支援 ShouldProcess 功能，當您宣告 Cmdlet 屬性，而且 cmdlet 必須呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)內輸入處理方法的方法。 如需如何支援 ShouldProcess 功能的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。
+可在相同命令中用來執行特定動作的一組參數。
+Cmdlet 可以有多個參數集，但每個參數集必須是唯一的至少一個參數。
+良好的 cmdlet 設計強烈建議唯一的參數也是必要的參數。
+如需參數集的詳細資訊，請參閱[指令程式參數設定](cmdlet-parameter-sets.md)。
 
-- **交易**:會被視為單一工作的命令邏輯群組。 如果群組中的任何命令失敗，而且使用者可以選擇接受或拒絕在交易內執行的動作，自動就會失敗的工作。 若要參與交易，此 cmdlet 必須宣告 Cmdlet 屬性宣告時支援交易。 在 Windows PowerShell 2.0 中引進了交易的支援。 如需有關交易的詳細資訊，請參閱[Windows PowerShell 交易](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710)。
+### <a name="dynamic-parameter"></a>動態參數
+
+新增至 cmdlet，在執行階段參數。
+一般而言，動態參數會加入至 cmdlet 的另一個參數設定為特定值時。
+如需有關動態參數的詳細資訊，請參閱[Cmdlet 的動態參數](cmdlet-dynamic-parameters.md)。
+
+### <a name="input-processing-method"></a>輸入處理方法
+
+Cmdlet 可用來處理接收為輸入之記錄的方法。
+輸入的處理方法包括[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法， [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，而[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法。 當您實作的 cmdlet 時，您必須覆寫至少其中一個[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)，並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。
+通常[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法是您覆寫，因為它會呼叫指令程式會處理每一筆記錄的方法。
+相反地， [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法並[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法會呼叫一次執行前置處理或後置處理的記錄。
+如需這些方法的詳細資訊，請參閱[輸入處理方法](cmdlet-input-processing-methods.md)。
+
+### <a name="shouldprocess-feature"></a>ShouldProcess 功能
+
+PowerShell 可讓您建立 cmdlet，此 cmdlet 會在系統中進行變更之前，提示使用者提供意見反應。
+若要使用這項功能，此 cmdlet 必須宣告它支援 ShouldProcess 功能，當您宣告 Cmdlet 屬性，而且 cmdlet 必須呼叫[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)內輸入處理方法的方法。
+如需如何支援 ShouldProcess 功能的詳細資訊，請參閱[要求確認](requesting-confirmation-from-cmdlets.md)。
+
+### <a name="transaction"></a>Transaction
+
+會被視為單一工作的命令邏輯群組。
+如果群組中的任何命令失敗，而且使用者可以選擇接受或拒絕在交易內執行的動作，自動就會失敗的工作。
+若要參與交易，此 cmdlet 必須宣告 Cmdlet 屬性宣告時支援交易。
+在 Windows PowerShell 2.0 中引進了交易的支援。
+如需有關交易的詳細資訊，請參閱[如何支援交易](how-to-support-transactions.md)。
 
 ## <a name="how-cmdlets-differ-from-commands"></a>與命令的指令程式有何不同
 
