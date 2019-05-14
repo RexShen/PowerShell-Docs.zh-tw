@@ -68,7 +68,7 @@
   items:
     - name: 主控台
       items:
-        - name: PowerShell.exe 命令列說明
+        - name: PowerShell 命令列選項
           href: components/console/powershell.exe-command-line-help.md
         - name: 使用 Tab 鍵擴充
           href: components/console/using-tab-expansion.md
