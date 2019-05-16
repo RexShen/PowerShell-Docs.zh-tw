@@ -2,12 +2,12 @@
 title: 在 macOS 上安裝 PowerShell Core
 description: 在 macOS 上安裝 PowerShell Core 的相關資訊
 ms.date: 12/12/2018
-ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086454"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229731"
 ---
 # <a name="installing-powershell-core-on-macos"></a>在 macOS 上安裝 PowerShell Core
 
@@ -19,6 +19,7 @@ GitHub [版本][]頁面上提供所有套件。
 
 [Homebrew][ brew] 是 macOS 首選的套件管理員。
 如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
+或者，您也可透過[直接下載](#installation-via-direct-download)或[二進位封存](#binary-archives)來安裝 PowerShell。
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>在 macOS 10.12 或更高版本上透過 Homebrew 安裝最新的穩定版本
 

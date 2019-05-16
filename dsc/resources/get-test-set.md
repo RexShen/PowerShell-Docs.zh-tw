@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: Get-Test-Set
-ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076594"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229510"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-套用時，[本機設定管理員](../managing-nodes/metaConfig.md)將從 ".mof" 檔案讀取值 "Spooler"，並針對**服務**資源的 "MyService" 執行個體，將它傳遞給**取得**、**測試**及**設定**方法的 `-Name` 參數。
+套用時，[本機設定管理員](../managing-nodes/metaConfig.md) (LCM) 會從 ".mof" 檔案讀取值 "Spooler"，並針對 **Service** 資源的 "MyService" 執行個體，將它傳遞給 **Get**、**Test** 及 **Set** 方法的 `-Name` 參數。
 
 ## <a name="get"></a>取得
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定本機設定管理員
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079671"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229508"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>設定本機設定管理員
 
@@ -121,6 +121,10 @@ LCM 設定支援定義下列提取服務端點類型：
 |ConfigurationNames|String[]|要由目標節點提取之設定名稱的陣列。 僅有在使用 **RegistrationKey** 向提取服務註冊節點時，才會使用這些設定。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](../pull-server/pullClientConfigNames.md)。|
 |RegistrationKey|字串|向提取服務註冊節點的 GUID。 如需詳細資訊，請參閱[以設定名稱設定提取用戶端](../pull-server/pullClientConfigNames.md)。|
 |ServerURL|字串|設定服務的 URL。|
+|ProxyURL*|字串|與設定服務通訊時要使用的 HTTP Proxy URL。|
+|ProxyCredential*|pscredential|要用於 HTTP Proxy 的認證。|
+
+>!請注意 \* Windows 1809 及更新版本支援的屬性。
 
 如需能簡化針對內部部署節點設定 ConfigurationRepositoryWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -143,6 +147,10 @@ LCM 設定支援定義下列提取服務端點類型：
 |CertificateID|字串|用來向伺服器驗證的憑證指紋。|
 |RegistrationKey|字串|向提取服務識別節點的 GUID。|
 |ServerURL|字串|設定伺服器的 URL。|
+|ProxyURL*|字串|與設定服務通訊時要使用的 HTTP Proxy URL。|
+|ProxyCredential*|pscredential|要用於 HTTP Proxy 的認證。|
+
+>!請注意 \* Windows 1809 及更新版本支援的屬性。
 
 如需能簡化針對內部部署節點設定 ResourceRepositoryWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 
@@ -166,6 +174,10 @@ LCM 設定支援定義下列提取服務端點類型：
 |CertificateID|字串|用來向伺服器驗證的憑證指紋。|
 |RegistrationKey|字串|向提取服務識別節點的 GUID。|
 |ServerURL|字串|設定伺服器的 URL。|
+|ProxyURL*|字串|與設定服務通訊時要使用的 HTTP Proxy URL。|
+|ProxyCredential*|pscredential|要用於 HTTP Proxy 的認證。|
+
+>!請注意 \* Windows 1809 及更新版本支援的屬性。
 
 如需能簡化針對內部部署節點設定 ReportServerWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
 

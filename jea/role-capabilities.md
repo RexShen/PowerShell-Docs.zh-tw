@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084788"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229545"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -183,6 +183,8 @@ JEA 工作階段中的任何受限制 Cmdlet 從函式叫用時會展現相同�
 
 如果您要撰寫大量自訂函式，將它們放在 [PowerShell 指令碼模組](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx)可能會比較輕鬆。
 接著您可以使用 VisibleFunctions 欄位將那些函式設為在 JEA 工作階段中可見，就像是使用內建和協力廠商模組一樣。
+
+您必須將內建函式 `tabexpansion2` 納入 **VisibleFunctions** 清單，Tab 鍵完成才能在 JEA 工作階段中正常運作。
 
 ## <a name="place-role-capabilities-in-a-module"></a>將角色功能放置在模組中
 

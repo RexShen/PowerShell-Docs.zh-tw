@@ -2,16 +2,16 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076543"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229529"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
-適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
+適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 本主題會說明問題發生時針對 DSC 進行疑難排解的方法。
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>DSC 向 Windows 提取伺服器註冊時，傳回了「未預期的回應碼 InternalServerError」
+
+將中繼設定套用至伺服器，以向 Windows 提取伺服器的執行個體註冊時，您可能會發生下列錯誤。
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+當伺服器上用來加密流量的憑證通用名稱 (CN) 與節點用來解析 URL 的 DNS 名稱不同時，就可能發生此問題。
+更新 Windows 提取伺服器執行個體，以使用名稱經更正的憑證。
 
 ## <a name="see-also"></a>另請參閱
 
