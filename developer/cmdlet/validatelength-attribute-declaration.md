@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 3a4c5f279ce8587eeb5d583376ea3d2286210b83
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067156"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855150"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 屬性宣告
 
@@ -37,7 +37,7 @@ ValidateLength 屬性會指定最小和最大的字元數的 cmdlet 參數引數
 
 ## <a name="remarks"></a>備註
 
-- 如需如何宣告這個屬性的詳細資訊，請參閱[宣告輸入驗證規則如何](http://msdn.microsoft.com/en-us/544c2100-62ba-4be4-b2a2-cc0d4e4fc45b)。
+- 如需如何宣告這個屬性的詳細資訊，請參閱[宣告輸入驗證規則如何](./how-to-validate-parameter-input.md)。
 
 - 不使用這個屬性時，對應參數的引數可以是任何長度。
 

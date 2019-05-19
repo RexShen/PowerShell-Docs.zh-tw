@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055643"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855212"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>建立 Windows PowerShell 磁碟機提供者
 
 本主題描述如何建立可用來存取資料存放區，透過 Windows PowerShell 磁碟機的 Windows PowerShell 磁碟機提供者。 這種類型的提供者也稱為 Windows PowerShell 磁碟機提供者。 提供者所使用的 Windows PowerShell 磁碟機提供方法來連線到資料存放區。
 
 此處所述的 Windows PowerShell 磁碟機提供者會提供 Microsoft Access 資料庫的存取權。 此提供者，Windows PowerShell 磁碟機代表資料庫 （您可將任意數目的磁碟機新增至磁碟機提供者），磁碟機的最上層容器代表在資料庫中，資料表和容器的項目代表的資料列資料表中。
-
-以下是本主題中的區段清單。 如果您不熟悉如何撰寫 Windows PowerShell 磁碟機提供者，閱讀這些章節中出現的順序。 不過，如果您已熟悉撰寫磁碟機提供者，請直接前往您所需要的資訊。
-
-- [定義 Windows PowerShell 提供者類別](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [定義基底的功能](#Defining-Base-Functionality)
-
-- [建立磁碟機狀態資訊](#Creating-Drive-State-Information)
-
-- [建立磁碟機](#Creating-a-Drive)
-
-- [將動態參數附加至 NewDrive](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [移除磁碟機](#Removing-a-Drive)
-
-- [初始化的預設磁碟機](#Initializing-Default-Drives)
-
-- [程式碼範例](#Code-Sample)
-
-- [測試 Windows PowerShell 磁碟機提供者](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定義 Windows PowerShell 提供者類別
 

@@ -11,35 +11,19 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068329"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854975"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>建立不含參數的 Cmdlet
 
 本節說明如何建立 cmdlet 會從本機電腦，而不使用參數，擷取資訊，然後將資訊寫入管線。 此處所述的 cmdlet 是 Get-proc cmdlet 會擷取本機電腦的處理序的相關資訊，然後在命令列中顯示這些資訊。
 
-在本節中的主題包括下列各項：
-
-- [命名 Cmdlet](#Naming-the-Cmdlet)
-
-- [定義在 Cmdlet 類別](#Defining-the-Cmdlet-Class)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
-
 > [!NOTE]
-> 請注意，在撰寫 cmdlet，Windows PowerShell® 參考組件預設會下載到磁碟上 （位於 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0）。它們不會安裝在全域組件快取 (GAC) 中。
+> 請注意，在撰寫 cmdlet，Windows PowerShell® 參考組件預設會下載到磁碟上 （位於 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0）。 它們不會安裝在全域組件快取 (GAC) 中。
 
 ## <a name="naming-the-cmdlet"></a>命名 Cmdlet
 

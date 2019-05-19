@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083377"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855141"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>如何新增語法至 Cmdlet 說明主題
-
-- [參數屬性](#Parameter-Attributes)
-
-- [參數值屬性](#Parameter-Value-Attributes)
-
-- [正在蒐集的語法資訊](#Gathering-Syntax-Information)
-
-- [撰寫程式碼的語法圖 XML](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>若要了解指令程式說明中的語法圖的項目
 
 您開始撰寫程式碼的 XML 語法圖表中的 cmdlet 說明檔之前，請閱讀本節以取得清楚類型，您必須提供的資料，例如參數屬性和語法圖表中顯示該資料的方式了解...
 
@@ -166,7 +156,7 @@ ms.locfileid: "62083377"
 
 ## <a name="coding-the-syntax-diagram-xml"></a>撰寫程式碼的語法圖 XML
 
-XML 的語法節點開始，[描述] 節點，以結束後立即\</maml:description > 標記。 如需收集的語法圖表中使用的資料，請參閱[蒐集的語法資訊](#Gathering-Syntax-Information)。
+XML 的語法節點開始，[描述] 節點，以結束後立即\</maml:description > 標記。 如需收集的語法圖表中使用的資料，請參閱[蒐集的語法資訊](#gathering-syntax-information)。
 
 ### <a name="adding-a-syntax-node"></a>新增的語法節點
 
@@ -210,7 +200,7 @@ XML 的語法節點開始，[描述] 節點，以結束後立即\</maml:descript
 
 加入的語法項目節點的每個參數指定一組\<命令： 參數 > 標記。 您需要一對\<命令： 參數 > 針對每個集合中包含參數，除了一般參數所提供的 Windows PowerShell 的參數標記？。
 
-屬性的開頭\<命令： 參數 > 標記可讓您決定參數語法圖表中顯示的方式。 在 參數屬性的資訊，請參閱[參數屬性](#Parameter-Attributes)。
+屬性的開頭\<命令： 參數 > 標記可讓您決定參數語法圖表中顯示的方式。 在 參數屬性的資訊，請參閱[參數屬性](#parameter-attributes)。
 
 > [!NOTE]
 > \<命令： 參數 > 標記支援子項目\<maml:description > 永遠不會顯示其內容。 參數描述指定之 xml 的 [參數] 節點中。 若要避免不一致的語法項目中的資訊 bodes 和 [參數] 節點中，省略 (\<maml:description >，或保持空白。

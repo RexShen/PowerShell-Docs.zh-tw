@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068422"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854924"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>建立可修改系統的 Cmdlet
 
@@ -42,28 +42,6 @@ ms.locfileid: "62068422"
 ## <a name="the-stopproc-cmdlet"></a>StopProc Cmdlet
 
 本主題描述嘗試停止處理程序，可使用 Get-proc cmdlet 來擷取停止程序 cmdlet (中所述[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md))。
-
-在本節中的主題包括下列各項：
-
-- [定義此指令程式](#Defining-the-Cmdlet)
-
-- [修改系統定義的參數](#Defining-Parameters-for-System-Modification)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [呼叫 ShouldProcess 方法](#Calling-the-ShouldProcess-Method)
-
-- [呼叫 ShouldContinue 方法](#Calling-the-ShouldContinue-Method)
-
-- [正在停止的輸入的處理](#Stopping-Input-Processing)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>定義此指令程式
 

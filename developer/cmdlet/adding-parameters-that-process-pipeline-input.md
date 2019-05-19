@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068754"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854988"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>新增處理管道輸入的參數
 
 其中一個的 cmdlet 來源是輸入的來自上游的 cmdlet 從管線上的物件。 本節說明如何將參數新增至 Get-proc cmdlet (中所述[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md))，讓此指令程式可以處理管線的物件。
 
 此 Get-proc cmdlet 會使用`Name`接受來自管線的物件中，輸入的參數會從本機電腦，根據提供的名稱，擷取程序資訊，並接著會處理序的相關資訊顯示在命令列。
-
-在本節中的主題包括下列各項：
-
-- [定義在 Cmdlet 類別](#Defining-the-Cmdlet-Class)
-
-- [定義從管線輸入](#Defining-Input-from-the-Pipeline)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>定義在 Cmdlet 類別
 

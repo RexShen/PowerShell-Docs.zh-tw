@@ -8,28 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
-ms.openlocfilehash: 5e8d1df6b423bfd2cd6b0a64a8875dea9c3fb4ef
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083462"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855120"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>如何新增範例至 Cmdlet 說明主題
-
-- [關於指令程式說明中的範例應該知道的事項](#Things-to-Know-about-Examples-in-Cmdlet-Help)
-
-- [顯示範例的說明檢視](#Help-Views-that-Display-Examples)
-
-- [新增範例節點](#Adding-an-Examples-Node)
-
-- [新增前置字元](#Adding-Preceding-Characters)
-
-- [加入命令](#Adding-the-Command)
-
-- [加入描述](#Adding-a-Description)
-
-- [新增範例輸出](#Adding-Example-Output)
 
 ## <a name="things-to-know-about-examples-in-cmdlet-help"></a>關於指令程式說明中的範例應該知道的事項
 

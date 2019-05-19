@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082068"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855074"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>建立基本的 Windows PowerShell 提供者
 
@@ -26,22 +26,6 @@ ms.locfileid: "62082068"
 
 > [!NOTE]
 > 您可以在 Windows PowerShell 所提供的 AccessDBSampleProvider01.cs 檔案中找到此提供者的範例。
-
-下面是本主題的章節：
-
-- [定義 Windows PowerShell 提供者類別](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [定義提供者專屬的狀態資訊](#Defining-Provider-Specific-State-Information)
-
-- [初始化提供者](#Initializing-the-Provider)
-
-- [啟動 動態參數](#Start-Dynamic-Parameters)
-
-- [未初始化的提供者](#Uninitializing-the-Provider)
-
-- [程式碼範例](#Code-Sample)
-
-- [測試 Windows PowerShell 提供者](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定義 Windows PowerShell 提供者類別
 
@@ -77,7 +61,7 @@ Windows PowerShell 提供者也可以維護連接為基礎的狀態。 如需有
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-提供者可以維護提供者專屬資訊的狀態，如中所述[定義提供者特有資料狀態](#Defining-Provider-Specific-State-Information)。 在此情況下，您的實作必須覆寫[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法，以傳回衍生的類別的執行個體。
+提供者可以維護提供者專屬資訊的狀態，如中所述[定義提供者特有資料狀態](#defining-provider-specific-state-information)。 在此情況下，您的實作必須覆寫[System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法，以傳回衍生的類別的執行個體。
 
 ## <a name="start-dynamic-parameters"></a>啟動 動態參數
 

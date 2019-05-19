@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068788"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854870"
 ---
 # <a name="advisory-development-guidelines"></a>建議性開發指導方針
 
 本章節描述您應該考慮以確保良好的開發和使用者體驗的指導方針。 有時它們可能適用，而有時不可能。
-
-## <a name="design-guidelines"></a>設計指導方針
-
-- [支援的 InputObject 參數 (AD01)](./advisory-development-guidelines.md#AD01)
-
-- [Force 參數 （ad02 移） 的支援](./advisory-development-guidelines.md#AD02)
-
-- [處理透過 Windows PowerShell (AD03) 的認證](./advisory-development-guidelines.md#AD03)
-
-- [支援編碼的參數 (AD04)](./advisory-development-guidelines.md#AD04)
-
-- [測試 Cmdlet 應該會傳回布林值 (AD05)](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>程式碼的指導方針
-
-- [請依照下列 Cmdlet 類別命名慣例 (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [如果沒有管線輸入覆寫 BeginProcessing 方法 (AC02)](./advisory-development-guidelines.md#AC02)
-
-- [若要處理停止要求覆寫 StopProcessing 方法 (AC03)](./advisory-development-guidelines.md#AC03)
-
-- [實作 IDisposable 介面 (AC04)](./advisory-development-guidelines.md#AC04)
-
-- [使用序列化參數型別 (AC05)](./advisory-development-guidelines.md#AC05)
-
-- [使用 SecureString，機密資料 (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>設計指導方針
 

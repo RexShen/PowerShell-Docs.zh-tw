@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068771"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854928"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>新增使用者訊息到您的 Cmdlet
 
@@ -51,32 +51,6 @@ Cmdlet 可以撰寫數種可在 Windows PowerShell 執行階段向使用者顯�
 - 執行時間較長的作業時，已完成進度報表訊息包含多少相關資訊的運作方式的 cmdlet。
 
 沒有任何限制，您的 cmdlet 可寫入的訊息數目，或您 cmdlet 會寫入的訊息類型。 每個訊息會寫入藉由從特定呼叫內的輸入處理方法的 cmdlet。
-
-## <a name="the-stopproc-cmdlet"></a>StopProc Cmdlet
-
-在本節中的主題包括下列各項：
-
-- [定義此指令程式](#Defining-the-Cmdlet)
-
-- [修改系統定義的參數](#Defining-Parameters-for-System-Modification)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [寫入詳細資訊訊息](#Writing-a-Verbose-Message)
-
-- [撰寫偵錯訊息](#Writing-a-Debug-Message)
-
-- [寫入一則警告訊息](#Writing-a-Warning-Message)
-
-- [寫入進度訊息](#Writing-a-Progress-Message)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Define-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>定義此指令程式
 

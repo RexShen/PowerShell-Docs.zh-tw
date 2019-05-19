@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6a3b592c5f85c1f065ad4b5b0290cf44dcef484e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068832"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854884"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>新增參數集到 Cmdlet
-
-本節說明如何新增參數集合停止處理序的指令程式 (中所述[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md))。 類似於其他程式設計人員的指南中所述的停止程序 cmdlet，此 cmdlet 會嘗試停止處理程序會擷取使用 Get-proc cmdlet (中所述[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md))。
-
-在本節中的主題包括下列各項：
-
-- [若要了解參數集的項目](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [宣告 Cmdlet 類別](#Declaring-the-Cmdlet-Class)
-
-- [宣告 Cmdlet 的參數](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [程式碼範例](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>若要了解參數集的項目
 

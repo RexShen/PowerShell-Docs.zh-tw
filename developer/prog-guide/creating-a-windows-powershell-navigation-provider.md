@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081847"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855163"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>建立 Windows PowerShell 瀏覽提供者
 
@@ -33,34 +33,6 @@ ms.locfileid: "62081847"
 
 > [!CAUTION]
 > 請注意，這項設計會假設的欄位有名稱識別碼的資料庫和欄位的型別是 LongInteger。
-
-下列清單包含本主題中的區段。 如果您不熟悉如何撰寫 Windows PowerShell 巡覽提供者，請閱讀這項資訊，它會出現的順序。 不過，如果您已熟悉撰寫 Windows PowerShell 巡覽提供者，請直接前往您所需要的資訊。
-
-- [定義的 PS 導覽提供者類別](#Define-the-Windows-PowerShell-provider)
-
-- [定義基底的功能](#Defining-Base-Functionality)
-
-- [建立 PS 路徑](#Creating-a-Windows-PowerShell-Path)
-
-- [正在擷取父路徑](#Retrieving-the-Parent-Path)
-
-- [擷取的子路徑名稱](#Retrieve-the-Child-Path-Name)
-
-- [判斷項目是否為容器](#Determining-if-an-Item-is-a-Container)
-
-- [移動項目](#Moving-an-Item)
-
-- [附加到的動態參數`Move-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [相對路徑正規化](#Normalizing-a-Relative-Path)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置 Windows PowerShell 提供者](#Building-the-Windows-PowerShell-provider)
-
-- [測試 Windows PowerShell 提供者](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>定義 Windows PowerShell 提供者
 

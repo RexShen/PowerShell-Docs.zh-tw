@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081898"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855187"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>建立 Windows PowerShell 容器提供者
 
@@ -35,44 +35,6 @@ ms.locfileid: "62081898"
 
 > [!CAUTION]
 > 請注意，這項設計會假設的欄位有名稱識別碼的資料庫和欄位的型別是 LongInteger。
-
-以下是本主題中的區段清單。 如果您不熟悉如何撰寫 Windows PowerShell 容器提供者，請閱讀這項資訊，它會出現的順序。 不過，如果您已熟悉撰寫 Windows PowerShell 容器提供者，請直接前往您所需要的資訊。
-
-- [定義 Windows PowerShell 容器提供者類別](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [定義基底的功能](#defining-base-functionality)
-
-- [正在擷取子系項目](#Retrieving-Child-Items)
-
-- [附加到的動態參數`Get-ChildItem`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [擷取子系項目名稱](#Retrieving-Child-Item-Names)
-
-- [附加到的動態參數`Get-ChildItem`Cmdlet （名稱）](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [重新命名項目](#Renaming-Items)
-
-- [附加到的動態參數`Rename-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [建立新的項目](#Creating-New-Items)
-
-- [附加到的動態參數`New-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [移除項目](#Removing-Items)
-
-- [附加到的動態參數`Remove-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [查詢的子項目](#Querying-for-Child-Items)
-
-- [複製項目](#Copying-Items)
-
-- [附加到的動態參數`Copy-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [程式碼範例](#Code-Sample)
-
-- [建置 Windows PowerShell 提供者](#Building-the-Windows-PowerShell-Provider)
-
-- [測試 Windows PowerShell 提供者](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>定義 Windows PowerShell 容器提供者類別
 
@@ -398,7 +360,7 @@ protected override bool HasChildItems( string path )
 
 - 您實作[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)負責防止無限遞迴時有循環的連結，諸如此類的。 應該擲回適當終止的例外狀況，以反映這種情況。
 
-- 您實作[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)和資料存放區進行任何變更之前，先檢查它的傳回值。 若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回 true， [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法有潛在危險的系統修改為額外的檢查。 如需有關呼叫這些方法的詳細資訊，請參閱 <<c0> [ 重新命名的項目](#Renaming-Items)。
+- 您實作[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)和資料存放區進行任何變更之前，先檢查它的傳回值。 若要在呼叫之後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回 true， [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法應該呼叫[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法有潛在危險的系統修改為額外的檢查。 如需有關呼叫這些方法的詳細資訊，請參閱 <<c0> [ 重新命名的項目](#renaming-items)。
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>將動態參數附加至 Copy-item Cmdlet
 

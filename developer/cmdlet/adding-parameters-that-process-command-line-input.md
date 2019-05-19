@@ -15,34 +15,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068805"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854957"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>新增處理命令列輸入的參數
 
 其中一個的 cmdlet 來源是輸入的命令列。 本主題描述如何將參數加入**Get-proc** cmdlet (見[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md))，讓此指令程式可以處理從明確為基礎的本機電腦的輸入物件會傳遞至 cmdlet。 **Get-proc**這裡擷取其名稱為基礎的處理序所述的 cmdlet，並接著會處理序的相關資訊顯示在命令提示字元。
-
-本主題中，為下列各節：
-
-- [定義在 Cmdlet 類別](#Defining-the-Cmdlet-Class)
-
-- [宣告參數](#Declaring-Parameters)
-
-- [支援的參數驗證](#Supporting-Parameter-Validation)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>定義在 Cmdlet 類別
 

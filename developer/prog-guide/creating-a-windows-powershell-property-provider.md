@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081830"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854994"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>建立 Windows PowerShell 屬性提供者
 
@@ -31,26 +31,6 @@ ms.locfileid: "62081830"
 
 > [!CAUTION]
 > 屬性提供者的方法應該寫入任何物件，使用[System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)方法。
-
-下列清單包含本主題的章節。 如果您不熟悉如何撰寫 Windows PowerShell 屬性提供者，請閱讀這項資訊，它會出現的順序。 不過，如果您已熟悉撰寫 Windows PowerShell 屬性提供者，請直接前往您所需要的資訊。
-
-- [定義 Windows PowerShell 提供者](#Defining-the-Windows-PowerShell-provider)
-
-- [定義基底的功能](#Defining-Base-Functionality)
-
-- [擷取屬性](#Retrieving-Properties)
-
-- [附加到的動態參數`Get-ItemProperty`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [設定屬性](#Setting-Properties)
-
-- [附加到的動態參數`Set-ItemProperty`Cmdlet](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [清除屬性](#Clearing-Properties)
-
-- [附加到的動態參數`Clear-ItemProperty`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [建置 Windows PowerShell 提供者](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>定義 Windows PowerShell 提供者
 

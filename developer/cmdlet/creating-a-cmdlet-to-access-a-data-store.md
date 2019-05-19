@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068346"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854842"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>建立 Cmdlet 以存取資料存放區
 
@@ -22,24 +22,6 @@ ms.locfileid: "62068346"
 此處所述選取 Str cmdlet 可以找出並選取檔案或物件中的字串。 用來識別字串的模式可以透過明確指定`Path`參數的 cmdlet 或隱含地透過`Script`參數。
 
 此指令程式可使用衍生自任何 Windows PowerShell 提供者[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)。 例如，FileSystem 提供者或變數提供者所提供的 Windows PowerShell，可以指定此 cmdlet。 如需詳細資訊 aboutWindows PowerShell 提供者，請參閱 <<c0> [ 設計您的 Windows PowerShell 提供者](../prog-guide/designing-your-windows-powershell-provider.md)。
-
-在本節中的主題包括下列各項：
-
-- [定義在 Cmdlet 類別](#Defining-the-Cmdlet-Class)
-
-- [定義參數的資料存取](#Declaring-the-Path-Parameter)
-
-- [覆寫輸入處理方法](#Overriding-Input-Processing-Methods)
-
-- [存取內容](#Accessing-Content)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Declaring-Search-Support-Parameters)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>定義在 Cmdlet 類別
 
@@ -397,7 +379,7 @@ protected override void ProcessRecord()
 
 ## <a name="code-sample"></a>程式碼範例
 
-下列程式碼顯示這個版本的此選取 Str cmdlet 的實作。 請注意，此程式碼包含在 cmdlet 類別，由 cmdlet 所使用的私用方法的 Windows PowerShell 嵌入式管理單元程式碼用來註冊此 cmdlet。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 建置 Cmdlet](#Building-the-Cmdlet)。
+下列程式碼顯示這個版本的此選取 Str cmdlet 的實作。 請注意，此程式碼包含在 cmdlet 類別，由 cmdlet 所使用的私用方法的 Windows PowerShell 嵌入式管理單元程式碼用來註冊此 cmdlet。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 建置 Cmdlet](#building-the-cmdlet)。
 
 ```csharp
 //

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081864"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855060"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
 
@@ -30,44 +30,6 @@ ms.locfileid: "62081864"
 > 如需有關其他 Windows PowerShell 提供者實作的詳細資訊，請參閱 <<c0> [ 設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)。
 
 本主題中所述的 Windows PowerShell 項目提供者取得資料的項目從 Access 資料庫。 在此情況下，「 項目 」 是存取資料庫中的資料表，或是在資料表中的資料列。
-
-下列清單包含本主題的章節。 如果您不熟悉如何撰寫 Windows PowerShell 項目提供者，閱讀這些章節中出現的順序。 不過，如果您已熟悉撰寫 Windows PowerShell 項目提供者，直接移至您所需要的資訊：
-
-- [定義 Windows PowerShell 項目提供者類別](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [定義基底的功能](#Defining-Base-Functionality)
-
-- [路徑有效性檢查](#Checking-for-Path-Validity)
-
-- [判斷項目是否存在](#Determining-if-an-Item-Exists)
-
-- [附加到的動態參數`Test-Path`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [擷取項目](#Retrieving-an-Item)
-
-- [附加到的動態參數`Get-Item`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [設定項目](#Setting-an-Item)
-
-- [附加到的動態參數`Set-Item`Cmdlet](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [清除項目](#Clearing-an-Item)
-
-- [將動態參數附加至 Clear-item Cmdlet](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [執行預設動作的項目](#Performing-a-Default-Action-for-an-Item)
-
-- [擷取 InvokeDefaultAction 動態參數](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [實作 Helper 方法和類別](#Implementing-Helper-Methods-and-Classes)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#Defining-Object-Types-and-Formatting)
-
-- [建置 Windows PowerShell 提供者](#Building-the-Windows-PowerShell-provider)
-
-- [測試 Windows PowerShell 提供者](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>定義 Windows PowerShell 項目提供者類別
 
@@ -223,7 +185,7 @@ Windows PowerShell 項目提供者可實作[System.Management.Automation.Provide
 
 ## <a name="implementing-helper-methods-and-classes"></a>實作 Helper 方法和類別
 
-此項目提供者會實作數個協助程式方法，而類別所使用的公用覆寫 Windows PowerShell 所定義的方法。 這些 helper 方法和類別的程式碼所示[程式碼範例](#Code-Sample)一節。
+此項目提供者會實作數個協助程式方法，而類別所使用的公用覆寫 Windows PowerShell 所定義的方法。 這些 helper 方法和類別的程式碼所示[程式碼範例](#code-sample)一節。
 
 ### <a name="normalizepath-method"></a>NormalizePath 方法
 

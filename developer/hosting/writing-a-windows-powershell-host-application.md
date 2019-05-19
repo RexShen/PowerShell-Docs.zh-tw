@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082493"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855094"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>撰寫 Windows PowerShell 主機應用程式
 
 您可以在您的應用程式中裝載 Windows PowerShell。 主應用程式可以定義命令執行、 開啟工作階段的本機或遠端電腦上，並叫用的命令是同步或非同步地根據需求的應用程式所在的 runspace。
 
-下列主題說明如何建立應用程式裝載
+下列主題說明如何裝載 Windows PowerShell 建立應用程式。
 
 ## <a name="in-this-section"></a>在本節中
 

@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075251"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854901"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>新增別名、萬用字元擴充與說明到 Cmdlet 參數
 
 本節說明如何新增萬用字元展開的別名，並說明郵件停止程序 cmdlet 的參數 (中所述[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md))。
 
 此停止程序 cmdlet 會嘗試停止處理程序會擷取使用 Get-proc cmdlet (中所述[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md))。
-
-在本節中的主題包括下列各項：
-
-- [定義此指令程式](#Defining-the-Cmdlet)
-
-- [修改系統定義的參數](#Defining-Parameters-for-System-Modification)
-
-- [定義參數別名](#Defining-a-Parameter-Alias)
-
-- [建立參數的說明](#Creating-Help-for-Parameters)
-
-- [覆寫輸入處理方法](#Overriding-an-Input-Processing-Method)
-
-- [支援的萬用字元展開](#Supporting-Wildcard-Expansion)
-
-- [程式碼範例](#Defining-a-Parameter-Alias)
-
-- [定義物件類型和格式設定](#Define-Object-Types-and-Formatting)
-
-- [建置此指令程式](#Building-the-Cmdlet)
-
-- [測試 Cmdlet](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>定義此指令程式
 

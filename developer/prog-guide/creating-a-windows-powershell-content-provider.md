@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081915"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855010"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>建立 Windows PowerShell 內容提供者
 
@@ -28,36 +28,6 @@ ms.locfileid: "62081915"
 > 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。
 >
 > 如需有關其他 Windows PowerShell 提供者實作的詳細資訊，請參閱 <<c0> [ 設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)。
-
-下列清單包含本主題的章節。 如果您不熟悉如何撰寫 Windows PowerShell 內容提供者，閱讀這些章節中出現的順序。 不過，如果您已熟悉撰寫 Windows PowerShell 內容提供者，直接移至您所需要的資訊。
-
-- [定義 Windows PowerShell 內容提供者類別](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [定義基底的功能](#Define-Functionality-of-Base-Class)
-
-- [實作內容的讀取器](#Implementing-a-Content-Reader)
-
-- [實作內容的寫入器](#Implementing-a-Content-Writer)
-
-- [擷取內容的讀取器](#Retrieving-the-Content-Reader)
-
-- [附加到的動態參數`Get-Content`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [擷取內容的寫入器](#Retrieving-the-Content-Writer)
-
-- [將動態參數附加至 Add_Content 和`Set-Content`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [清除內容](#Clearing-Content)
-
-- [附加到的動態參數`Clear-Content`Cmdlet](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [程式碼範例](#Code-Sample)
-
-- [定義物件類型和格式設定](#defining-object-types-and-formatting)
-
-- [建置的 Windows PowerShell 提供者](#Building-the-Windows-PowerShell-Provider)
-
-- [測試 Windows PowerShell 提供者](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>定義 Windows PowerShell 內容提供者類別
 
