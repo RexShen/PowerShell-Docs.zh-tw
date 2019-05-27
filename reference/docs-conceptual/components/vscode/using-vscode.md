@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086711"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882562"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -35,7 +35,7 @@ ms.locfileid: "62086711"
 
   > [!IMPORTANT]
   > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
-  > 完成此作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。
+  > 完成這項作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。
   > VS Code 現在可以成功載入 PowerShell 延伸模組。
 
 - **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 系統會提示您「要執行來自這個不受信任的發行者的軟體嗎?」
 輸入 `R` 以執行檔案。 然後，開啟 Visual Studio Code 並檢查 PowerShell 延伸模組是否正常運作。 如果您仍有關於開始使用的問題，請透過 [GitHub](https://github.com/PowerShell/vscode-powershell/issues) \(英文\) 讓我們知道。
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>使用 PowerShell 的特定安裝版本
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>選擇要與擴充功能搭配使用的 PowerShell 版本
 
-如果您想要搭配使用特定安裝的 PowerShell 與 Visual Studio Code，則必須在使用者設定檔中新增變數。
+透過與 Windows PowerShell 並存安裝的 PowerShell Core，它現在能夠將特定版本的 PowerShell 與 PowerShell 擴充模組搭配使用。 使用下列這些步驟來選擇版本：
 
-1. 按一下 [檔案]-> [喜好設定]-> [設定]
-1. 隨即出現兩個編輯器窗格。
-   在最右邊的窗格中 (`settings.json`)，在兩個大括弧中間 (`{`和`}`) 插入下列適用於您作業系統的設定，並使用所安裝 PowerShell 的版本來取代 **\<version\>**：
+1. 開啟命令平板 (在 Windows & Linux 上為 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>，在 macOS 上為 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>)。
+1. 搜尋「工作階段」。
+1. 按一下 [PowerShell:顯示工作階段功能表]。
+1. 從清單中選擇要使用的 PowerShell 版本，例如 "PowerShell Core"。
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> 此功能會查看不同作業系統上的一些已知路徑，以探索 PowerShell 的安裝位置。 如果您已將 PowerShell 安裝到非典型位置，則它一開始可能不會顯示於工作階段功能表中。 您可以藉由[新增自己的自訂路徑](#adding-your-own-powershell-paths-to-the-session-menu)來擴充工作階段功能表，如下所述。
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> 還有另一種方式可前往工作階段功能表。 在您的編輯器中開啟 PowerShell 檔案時，您會在右下角看到綠色的版本號碼。 按一下此版本號碼，即會帶您前往工作階段功能表。
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>將您自己的 PowerShell 路徑新增至工作階段功能表
 
-1. 以所需 PowerShell 可執行檔的路徑取代設定
-1. 儲存設定檔並重新啟動 Visual Studio Code
+您可以透過 VS Code 設定，將其他 PowerShell 可執行檔路徑新增至工作階段功能表。
+
+將項目新增至清單`powershell.powerShellAdditionalExePaths` 或建立清單 (如果它不存在您的 `settings.json` 中)：
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+每個項目都必須具備：
+
+* `exePath`:`pwsh` 或 `powershell` 可執行檔的路徑。
+* `versionName`:將顯示於工作階段功能表中的文字。
+
+您可以將此文字設定為要顯示於工作階段功能表 (也稱為最後一個設定中的 `versionName`) 中的文字，藉以使用 `powershell.powerShellDefaultVersion` 設定來設定要使用的預設 PowerShell 版本：
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+設定此設定之後，重新啟動 Visual Studio Code，或使用 [開發人員:重新載入視窗] 命令平板動作，重新載入目前的 vscode 視窗。
+
+如果您開啟工作階段功能表，現在將會看到您其他的 PowerShell 版本！
+
+> [!NOTE]
+> 如果您從來源建置 PowerShell，則這是最適合用來測試 PowerShell 本機組建的方式。
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code 的組態設定
 
@@ -141,7 +186,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
-工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
+工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾...]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
 您開啟的資料夾通常是 PowerShell 專案資料夾及/或 Git 存放庫的根目錄。
 
 即使在此模式中，只要按下 F5 就可以開始偵錯目前選取的 PowerShell 指令碼。

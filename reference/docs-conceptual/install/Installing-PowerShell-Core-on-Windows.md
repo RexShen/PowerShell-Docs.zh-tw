@@ -2,12 +2,12 @@
 title: 在 Windows 上安裝 PowerShell Core
 description: 在 Windows 上安裝 PowerShell Core 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058024"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854353"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安裝 PowerShell Core
 
@@ -18,7 +18,7 @@ ms.locfileid: "62058024"
 若要透過 WSMan 啟用 PowerShell 遠端執行功能，必須符合下列必要條件：
 
 - 在 Windows 10 以下的 Windows 版本中安裝[通用 C 執行階段](https://www.microsoft.com/download/details.aspx?id=50410)。 透過直接下載或 Windows Update 即可取得。 完整修補 (包括選擇性的套件) 的受支援系統已安裝此項目。
-- 在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows Management Framework (WMF) 4.0 或更新版本。
+- 在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows Management Framework (WMF) 4.0 或更新版本。 如需 WMF 的詳細資訊，請參閱 [WMF 概觀](/powershell/wmf/overview)。
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安裝 MSI 套件
 

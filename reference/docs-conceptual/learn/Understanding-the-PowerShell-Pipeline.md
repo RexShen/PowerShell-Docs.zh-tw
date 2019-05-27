@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 管線
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086437"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854335"
 ---
 # <a name="understanding-pipelines"></a>了解管線
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 分頁還會降低 CPU 使用率，因為處理控制權會在其已準備好要顯示的完成頁面時移轉給 `Out-Host` Cmdlet。 管線中在它前面的 Cmdlet 會暫停執行，直到輸出的下一個分頁可供使用為止。
 
-您可以看到不同的 Windows 工作管理員監視 PowerShell 所使用的 CPU 和記憶體。 執行下列命令：`Get-ChildItem C:\Windows -Recurse`。 將 CPU 和記憶體使用量與這個命令進行比較：`Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`。
+您可以藉由比較下列命令，來查看在 Windows 工作管理員中進行管線輸送會對 CPU 和記憶體使用量產生哪些影響：
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > 並非所有 PowerShell 主機都支援 **Paging** 參數。 例如，當您嘗試在 PowerShell ISE 中使用 **Paging** 參數，會看到以下錯誤：
