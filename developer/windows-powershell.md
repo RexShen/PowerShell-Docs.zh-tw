@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080453"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470819"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
@@ -22,7 +22,7 @@ Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言�
 
 ## <a name="windows-powershell-documents-on-msdn"></a>MSDN 上的 Windows PowerShell 文件
 
-- [安裝 Windows PowerShell SDK](https://msdn.microsoft.com/en-us/library/ff458115.aspx)提供如何安裝 Windows PowerShell SDK 的相關資訊。
+- [安裝 Windows PowerShell SDK](./installing-the-windows-powershell-sdk.md)提供如何安裝 Windows PowerShell SDK 的相關資訊。
 
 - [撰寫 Windows PowerShell 模組](./module/writing-a-windows-powershell-module.md)提供給系統管理員、 指令碼的開發人員，cmdlet 開發人員必須封裝並散發其 Windows PowerShell 解決方案的資訊。
 

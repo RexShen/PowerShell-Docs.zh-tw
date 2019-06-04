@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: e8b7151538235cdf7183b78aa8df7e596d6bcfd9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859004"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470794"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>如何撰寫 PowerShell 指令碼模組
 
@@ -27,9 +27,9 @@ ms.locfileid: "56859004"
 
 1. 採用現有的 PowerShell 指令碼，並儲存指令碼，副檔名為.psm1。
 
-   儲存具有.psm1 的指令碼擴充功能表示您可以使用模組的 cmdlet，例如[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)，在其上。 這些 cmdlet 級主要，如此您就可以輕鬆地匯入和匯出您的程式碼，其他使用者的系統上。 （替代方案是其他系統，然後再點溯源的程式碼將其載入至使用中記憶體，這並不是特別可調整的解決方案。）如需詳細資訊，請參閱**Module Cmdlet 和變數**一節[Windows PowerShell 模組](./understanding-a-windows-powershell-module.md)請注意，根據預設，在您的指令碼中的所有函式將使用者匯入您的.psm1 都可以存取檔案，但屬性則不會。
+   儲存具有.psm1 的指令碼擴充功能表示您可以使用模組的 cmdlet，例如[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)，在其上。 這些 cmdlet 級主要，如此您就可以輕鬆地匯入和匯出您的程式碼，其他使用者的系統上。 （替代方案是其他系統，然後再點溯源的程式碼將其載入至使用中記憶體，這並不是特別可調整的解決方案。）如需詳細資訊，請參閱**Module Cmdlet 和變數**一節[Windows PowerShell 模組](./understanding-a-windows-powershell-module.md)請注意，根據預設，在您的指令碼中的所有函式會供您.psm1 檔案中，匯入的使用者存取但不是屬性。
 
-   使用本主題結尾處範例 PowerShell 指令碼中，名為顯示行事曆。
+   標題的範例 PowerShell 指令碼， `Show-Calendar`，位於這個主題的結尾。
 
    ```powershell
    function Show-Calendar {
@@ -45,7 +45,7 @@ ms.locfileid: "56859004"
    }
    ```
 
-2. 如果您想要控制使用者存取特定的函式或屬性，呼叫[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)在您的指令碼結尾。
+2. 若要控制使用者存取特定的函式或屬性，呼叫[Export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)在您的指令碼結尾。
 
    在頁面底部的範例程式碼有只有一個函式，會公開其預設值。 不過，我們建議您明確地呼叫出您想要公開，如下列程式碼中所述的函式：
 
@@ -65,9 +65,9 @@ ms.locfileid: "56859004"
    Import-Module GenericModule
    ```
 
-4. 如果您想要描述您的模組以 PowerShell 說明系統，則可以使用標準說明註解內的檔案，或使用其他的說明檔。
+4. 若要描述您的模組以 PowerShell 說明系統，您可以在檔案中，使用標準說明註解，或建立額外的說明檔。
 
-   在本主題底端的程式碼範例包含註解中的 [說明] 資訊。 如果您選擇如此，您也可以撰寫擴充的 XML 檔案，其中包含其他說明內容。 如需詳細資訊，請參閱 <<c0> [ 撰寫 Windows PowerShell 模組的說明](./writing-help-for-windows-powershell-modules.md)。
+   在本主題底端的程式碼範例包含註解中的 [說明] 資訊。 您也可以撰寫擴充的 XML 檔案，其中包含其他說明內容。 如需詳細資訊，請參閱 <<c0> [ 撰寫 Windows PowerShell 模組的說明](./writing-help-for-windows-powershell-modules.md)。
 
 5. 如果您有其他模組、 XML 檔案或您想要封裝您的模組與其他內容，則可以使用模組資訊清單。
 
@@ -75,15 +75,17 @@ ms.locfileid: "56859004"
 
 6. 若要安裝及執行您的模組，將模組儲存至其中一個適當的 PowerShell 路徑中，並呼叫`Import-Module`。
 
-   您可以在其中安裝您的模組路徑位於`$env:PSModulePath`全域變數。 比方說，是常見的路徑，以在系統上儲存模組`%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`。 請務必建立您的模組中，存在的資料夾，即使它是單一.psm1 檔案。 如果沒有這些路徑來儲存您的模組，您必須在模組的呼叫中的位置傳遞`Import-Module`。 （否則 PowerShell 會無法找到它。）如果您已在其中一個 PowerShell 模組路徑上放置您的模組與 PowerShell 3.0 中，從開始，您不需要明確地將它匯入： 單純地呼叫您的函式的使用者將會自動將其載入。 如需有關模組路徑的詳細資訊，請參閱[匯入 PowerShell 模組](./importing-a-powershell-module.md)並[PSModulePath 環境變數](./modifying-the-psmodulepath-installation-path.md)。
+   您可以在其中安裝您的模組路徑位於`$env:PSModulePath`全域變數。 比方說，是常見的路徑，以在系統上儲存模組`%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`。 請務必建立您的模組中，存在的資料夾，即使它是單一.psm1 檔案。 如果沒有這些路徑來儲存您的模組，您必須在模組的呼叫中的位置傳遞`Import-Module`。 （否則 PowerShell 會無法找到它。）如果您已在其中一個 PowerShell 模組路徑中放置您的模組與 PowerShell 3.0 中，從開始，您不需要明確地將它匯入。 當使用者呼叫您的函式，會自動載入您的模組。
+   如需有關模組路徑的詳細資訊，請參閱[匯入 PowerShell 模組](./importing-a-powershell-module.md)並[PSModulePath 環境變數](./modifying-the-psmodulepath-installation-path.md)。
 
 7. 若要移除作用中的服務中的模組，請呼叫[Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)。
 
-請注意， [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)移除您的模組從作用中的記憶體-它不會實際刪除它從儲存的模組檔案的位置。
+   請注意， [Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)移除您的模組從作用中的記憶體-它不會實際刪除它從儲存的模組檔案的位置。
 
 ### <a name="show-calendar-code-example"></a>顯示行事曆程式碼範例
 
-下列範例是簡單的指令碼模組，其中包含名為 「 顯示日曆的單一函式。 此函式會顯示行事曆的視覺表示法。 此外，此範例包含概要、 描述、 參數值，與範例的 PowerShell 說明字串。 請注意程式碼的最後一行表示，顯示行事曆函式會匯出為模組成員匯入模組時。
+下列範例是簡單的指令碼模組，其中包含名為單一函式`Show-Calendar`。
+此函式會顯示行事曆的視覺表示法。 此外，此範例包含概要、 描述、 參數值，與範例的 PowerShell 說明字串。 請注意，程式碼的最後一行可確保`Show-Calendar`匯入模組時，將會匯出模組成員身分的函式。
 
 ```powershell
 <#
@@ -217,10 +219,10 @@ while($start -le $end)
     $calendar = $weeks | Format-Table $dayNames -AutoSize | Out-String
 
     ## Add a centered header.
-    $width = ($calendar.Split("'n") | Measure-Object -Maximum Length).Maximum
+    $width = ($calendar.Split("`n") | Measure-Object -Maximum Length).Maximum
     $header = "{0:MMMM yyyy}" -f $start
     $padding = " " * (($width - $header.Length) / 2)
-    $displayCalendar = " 'n" + $padding + $header + "'n " + $calendar
+    $displayCalendar = " `n" + $padding + $header + "`n " + $calendar
     $displayCalendar.TrimEnd()
 
     ## Move to the next month.
