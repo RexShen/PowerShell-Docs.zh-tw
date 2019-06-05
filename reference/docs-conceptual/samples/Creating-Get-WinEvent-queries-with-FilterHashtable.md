@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: 使用 FilterHashtable 建立 Get-WinEvent 查詢
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058799"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471027"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 建立 Get-WinEvent 查詢
 
@@ -74,7 +74,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-繼續使用 **ProviderName** 索引鍵建置雜湊表。 **ProviderName** 是 **Windows 事件檢視器**中 [來源] 欄位中顯示的名稱。 例如，下列螢幕擷取畫面中的 **.NET Runtime**：
+繼續使用 **ProviderName** 索引鍵建置雜湊表。 **ProviderName** 是 **Windows 事件檢視器**中 [來源]  欄位中顯示的名稱。 例如，下列螢幕擷取畫面中的 **.NET Runtime**：
 
 ![Windows 事件檢視器來源的影像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
@@ -103,7 +103,7 @@ Get-WinEvent -FilterHashtable @{
 
 針對 **Keywords** 索引鍵，PowerShell 會使用數字，而不是**安全性**等字串。 **Windows 事件檢視器**將 **Keywords** 顯示為字串，但它們是列舉值。 在雜湊表中，如果您使用帶有字串值的 **Keywords** 索引鍵，則會顯示錯誤訊息。
 
-開啟 **Windows 事件檢視器**，然後從 [動作] 窗格中，按一下 [篩選目前的記錄]。
+開啟 **Windows 事件檢視器**，然後從 [動作]  窗格中，按一下 [篩選目前的記錄]  。
 **Keywords** 下拉式功能表會顯示可用的關鍵字，如下列螢幕擷取畫面所示：
 
 ![Windows 事件檢視器關鍵字的影像。](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
