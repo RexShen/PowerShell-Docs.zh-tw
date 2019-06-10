@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: powershell,cmdlet
 title: 撰寫可移植的模組
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086403"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470988"
 ---
 # <a name="portable-modules"></a>可移植的模組
 
@@ -17,11 +17,12 @@ Windows PowerShell 是針對 [.NET Framework][] 撰寫的，而 PowerShell Core 
 
 ### <a name="porting-a-pssnapin"></a>移植 PSSnapIn
 
-PowerShell Core 並不支援 PowerShell 嵌入式管理單元 (PSSnapIn)。 但是也沒有必要將 PSSnapIn 轉換成 PowerShell 模組。 一般而言，PSSnapIn 註冊程式碼是衍生自 [PSSnapIn][] 之類別的單一來源檔案。 請將此來源檔案從組建中移除，因為已經不再需要。
+PowerShell Core 並不支援 PowerShell [嵌入式管理單元](/powershell/developer/cmdlet/modules-and-snap-ins)。 但是也沒有必要將 PSSnapIn 轉換成 PowerShell 模組。 一般而言，PSSnapIn 註冊程式碼是衍生自 [PSSnapIn][] 之類別的單一來源檔案。
+請將此來源檔案從組建中移除，因為已經不再需要。
 
-使用 [New-ModuleManifest][] 建立新的模組資訊清單，以取代需要 PSSnapIn 註冊程式碼的需求。 PSSnapIn 的某些值 (例如「描述」) 可在模組資訊清單內重複使用。
+使用 [New-ModuleManifest][] 建立新的模組資訊清單，以取代需要 PSSnapIn 註冊程式碼的需求。 **PSSnapIn** 的某些值 (例如 [描述]  ) 可在模組資訊清單內重複使用。
 
-模組資訊清單中的 `RootModule` 屬性應設定為實作 Cmdlet 之組件 (dll) 的名稱。
+模組資訊清單中的 **RootModule** 屬性應設定為實作 Cmdlet 之組件 (dll) 的名稱。
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET Portability Analyzer (也稱為 APIPort)
 

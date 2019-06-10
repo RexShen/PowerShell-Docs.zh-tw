@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: 使用 PowerShell 類別建立自訂類型
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855533"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470926"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>使用 PowerShell 類別建立自訂類型
 
@@ -21,7 +21,7 @@ PowerShell 5.0 新增了功能，可使用類似其他物件導向程式設計�
 - 使用 PowerShell 語言偵錯類型
 - 使用正式的機制在正確的層級產生和處理例外狀況
 
-# <a name="declare-base-class"></a>宣告基底類別
+## <a name="declare-base-class"></a>宣告基底類別
 
 您可以將 PowerShell 類別宣告為另一個 PowerShell 類別的基底類型。
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>呼叫基底類別建構函式
+### <a name="call-base-class-constructor"></a>呼叫基底類別建構函式
 
 若要從子類別中呼叫基底類別建構函式，請使用關鍵字 **base**：
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>呼叫基底類別方法
+### <a name="call-base-class-method"></a>呼叫基底類別方法
 
 您可以覆寫子類別中現有的方法。 若要這樣做，請使用相同的名稱和簽章宣告方法︰
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>宣告實作的介面
+### <a name="declare-implemented-interface"></a>宣告實作的介面
 
 如未指定基底類型，您可以在基底類型之後或緊跟在冒號 (:) 之後宣告實作的介面。 使用逗號分隔所有類型名稱。 其類似 C# 語法。
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能
+## <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能
 
 PowerShell 5.0 會在 PowerShell 中引進下列新的語言元素︰
 
-## <a name="class-keyword"></a>Class 關鍵字
+### <a name="class-keyword"></a>Class 關鍵字
 
 `class` 關鍵字會定義新類別。 這是真的 .NET Framework 類型。 類別成員是公用的，但只在模組範圍內公用。 您不能將類型名稱當作字串來參考 (例如，`New-Object` 不會運作)，而且在這個版本中，您無法在類別定義所在的指令碼或模組檔案外部使用類型常值 (例如 `[MyClass]`)。
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>Enum 關鍵字和列舉
+### <a name="enum-keyword-and-enumerations"></a>Enum 關鍵字和列舉
 
 已新增對 `enum` 關鍵字的支援，其會使用新行字元作為分隔符號。 您目前無法根據列舉本身來定義它。 不過，您可以根據另一個列舉來將某個列舉初始化，如下列範例所示。 此外，無法指定基底類型，它一律是 `[int]`。
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` 現在是真正的動態關鍵字。 PowerShell 會剖析所指定模組的根模組，其會搜尋包含 **DscResource** 屬性的類別。
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 已將新欄位 **ImplementingAssembly** 新增至 **ModuleInfo**。 如果指令碼定義類別，它會設定成為指令碼模組所建立的動態組件，或二進位模組的載入組件。 若 **ModuleType** 為 **Manifest**，則不會設定它。
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 所有成員都是公用的。
 
-## <a name="constructors-and-instantiation"></a>建構函式和實例
+### <a name="constructors-and-instantiation"></a>建構函式和實例
 
 PowerShell 類別可以有建構函式。 它們的名稱與其類別相同。 可以多載建構函式。 支援靜態的建構函式。 使用初始化運算式的屬性會先初始化，然後建構函式中的所有程式碼才執行。 靜態屬性會在靜態建構函式主體之前初始化，執行個體屬性則在非靜態建構函式主體之前初始化。 目前沒有任何語法可從另一個建構函式呼叫建構函式 (例如 C\# 語法："this()")。 因應措施是定義通用的 `Init()` 方法。
 
-### <a name="creating-instances"></a>建立執行個體
+#### <a name="creating-instances"></a>建立執行個體
 
 > [!NOTE]
 > 在 PowerShell 5.0 中，`New-Object` 無法與 PowerShell 中定義的類別一起運作。 此外，類型名稱只能以語彙方式顯示，這表示不會在類別定義所在的模組或指令碼外部顯示類型名稱。 函式可以傳回 PowerShell 中定義之類別的執行個體。 那些執行個體可以在模組或指令碼外部運作。
@@ -265,7 +265,7 @@ Pseudo-static 方法 `new()` 可搭配 .NET 類型來運作，如下列範例所
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>探索建構函式
+#### <a name="discovering-constructors"></a>探索建構函式
 
 您現在可以使用 `Get-Member` 來查看建構函式多載，或如下列範例所示：
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` 會列出建構函式，您可以像檢視任何其他方法一樣檢視多載。 這個語法的效能也比 `New-Object` 快得多。
 
-## <a name="methods"></a>Methods
+### <a name="methods"></a>Methods
 
 PowerShell 類別方法會實作為只有 End 區塊的 **ScriptBlock**。 所有方法都是公用的。 下例說明定義名為 **DoSomething** 的方法。
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 也支援多載的方法。
 
-## <a name="properties"></a>Properties
+### <a name="properties"></a>Properties
 
 所有屬性都是公用的。 屬性需要新行字元或分號。 如不指定任何物件類型，屬性類型就是物件。
 
 使用驗證或引數轉換屬性 (Attribute) (例如 `[ValidateSet("aaa")]`) 的屬性 (Property) 會如預期般運作。
 
-## <a name="hidden"></a>Hidden
+### <a name="hidden"></a>Hidden
 
 已新增關鍵字 `Hidden`。 `Hidden` 可以套用至屬性和方法 (包括建構函式)。
 
-Hidden 成員是公用的，但除非新增 -Force 參數，否則不會出現在 `Get-Member` 的輸出中。 當索引標籤完成或使用 Intellisense 時不會包含 Hidden 成員，除非完成是發生在定義隱藏成員的類別中。
+Hidden 成員是公用的，但除非新增 `-Force` 參數，否則不會出現在 `Get-Member` 的輸出中。 當索引標籤完成或使用 Intellisense 時不會包含 Hidden 成員，除非完成是發生在定義隱藏成員的類別中。
 
 已新增屬性 **System.Management.Automation.HiddenAttribute**，所以 C\# 程式碼會在 PowerShell 內具有相同的語意。
 
-## <a name="return-types"></a>傳回類型
+### <a name="return-types"></a>傳回類型
 
-傳回類型是一個合約。 傳回值會轉換成預期的類型。 如果未指定任何傳回類型，則傳回類型為 **void**。 沒有任何物件的串流。 物件無法故意或意外寫入至管線。
+傳回類型是一個合約。 傳回值會轉換成預期的類型。 如果未指定任何傳回類型，則傳回類型為 **void**。 沒有任何物件的串流。 無法故意或意外將物件寫入至管線。
 
-## <a name="attributes"></a>屬性
+### <a name="attributes"></a>屬性
 
 加入了兩個新屬性：**DscResource** 及 **DscProperty**。
 
-## <a name="lexical-scoping-of-variables"></a>變數的語彙範圍
+### <a name="lexical-scoping-of-variables"></a>變數的語彙範圍
 
 下例說明語彙範圍在這個版本中的運作方式。
 

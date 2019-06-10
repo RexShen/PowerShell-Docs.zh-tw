@@ -1,17 +1,24 @@
 ---
-ms.openlocfilehash: 6e36e6599e36218ce2a925dceda7aa0ee6811057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 84b29953f09eb62eb30f52d84b087eb4f1f90eed
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068822"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470653"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 開放原始碼管理辦法
 
 本專案已採用 [Microsoft 開放原始碼管理辦法 (英文)](https://opensource.microsoft.com/codeofconduct/)。
 如需詳細資訊，請參閱[管理辦法常見問題集 (英文)](https://opensource.microsoft.com/codeofconduct/faq/)。如果有任何其他疑問或意見，請連絡 [opencode@microsoft.com](mailto:opencode@microsoft.com)。
 
-[![組建狀態](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+[即時徽章]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=live
+[預備徽章]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=staging
+
+## <a name="build-status"></a>組建狀態
+
+| 即時分支 | 預備分支 |
+|:------------|:---------------|
+| [![即時徽章][]][即時徽章] | [![預備徽章][]][預備徽章]
 
 ## <a name="powershell-documentation"></a>PowerShell 文件
 
@@ -32,7 +39,7 @@ ms.locfileid: "62068822"
 
 ## <a name="contributing"></a>貢獻
 
-我們透過[提取要求](https://help.github.com/articles/using-pull-requests/)到「預備」分支，主動將貢獻合併到此存放庫。
+我們透過[提取要求](https://help.github.com/articles/using-pull-requests/)到「預備」  分支，主動將貢獻合併到此存放庫。
 請注意，您提交提取要求之前，必須先[簽署貢獻授權合約](https://cla.microsoft.com/)，以確保社群可以自由使用您提出的內容。
 
 如需如何參與的詳細資訊，請閱讀我們的[參與者指南](CONTRIBUTING.md)。

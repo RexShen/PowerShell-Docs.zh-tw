@@ -2,12 +2,12 @@
 title: 在 Windows 上安裝 PowerShell Core
 description: 在 Windows 上安裝 PowerShell Core 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: e716e24ba47c0c109ab302b4b1a9254d7110ddef
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854353"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470997"
 ---
 # <a name="installing-powershell-core-on-windows"></a>在 Windows 上安裝 PowerShell Core
 
@@ -22,7 +22,7 @@ ms.locfileid: "65854353"
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安裝 MSI 套件
 
-若要在 Windows 用戶端或 Windows Server 上安裝 PowerShell (適用於 Windows 7 SP1、Server 2008 R2 和更新版本)，請從我們的 GitHub [版本][]頁面下載 MSI 套件。 向下捲動至想安裝版本的 [資產] 區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
+若要在 Windows 用戶端或 Windows Server 上安裝 PowerShell (適用於 Windows 7 SP1、Server 2008 R2 和更新版本)，請從我們的 GitHub [版本][]頁面下載 MSI 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
 MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -38,7 +38,7 @@ MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
 
 可以從命令列安裝 MSI 套件。 這允許系統管理員無需使用者互動即可部署套件。 適用於 PowerShell 的 MSI 套件包含下列屬性以控制安裝選項：
 
-- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此屬性控制將 [開啟 PowerShell] 項目新增至 Windows 檔案總管中的內容功能表的選項。
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此屬性控制將 [開啟 PowerShell]  項目新增至 Windows 檔案總管中的內容功能表的選項。
 - **ENABLE_PSREMOTING** - 此屬性控制在安裝期間啟用 PowerShell 遠端執行功能的選項。
 - **REGISTER_MANIFEST** - 此屬性控制用於註冊 Windows 事件記錄資訊清單的選項。
 
@@ -52,7 +52,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
 
-有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 請注意，當使用 ZIP 封存時，不會像 MSI 套件一樣檢查必要條件。 要使遠端執行功能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
+有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 請注意，當使用 ZIP 封存時，不會像 MSI 套件一樣檢查必要條件。 若要使遠端功能能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
 
 ## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
 

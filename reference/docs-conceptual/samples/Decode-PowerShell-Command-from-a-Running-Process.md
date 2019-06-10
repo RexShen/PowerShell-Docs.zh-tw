@@ -3,12 +3,12 @@ ms.date: 11/13/2018
 keywords: powershell,cmdlet
 title: 從正在執行的處理序解碼 PowerShell 命令
 author: randomnote1
-ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086233"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470976"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>從正在執行的處理序解碼 PowerShell 命令
 
@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>檢視處理序
 
-正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。 如果命令是[編碼命令][]，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
+正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。 如果命令是編碼命令，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
 
 以系統管理員身分啟動 PowerShell。 這很重要，PowerShell 必須以系統管理員身分執行，否則在查詢執行的處理序時不會傳回任何結果。
 
@@ -107,4 +107,3 @@ DecodedCommand :
 [工作排程器]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server Agent]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[編碼命令]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
