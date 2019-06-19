@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 建立圖形化日期選擇器
-ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058602"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030246"
 ---
 # <a name="creating-a-graphical-date-picker"></a>建立圖形化日期選擇器
 
@@ -114,8 +113,8 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-同樣地，您也會建立 [取消] 按鈕。
-[取消] 按鈕距離上邊緣 165 像素，但距離視窗左邊緣 113 像素。
+同樣地，您也會建立 **[取消]** 按鈕。
+**[取消]** 按鈕距離上邊緣 165 像素，但距離視窗左邊緣 113 像素。
 
 ```powershell
 $CancelButton = New-Object Windows.Forms.Button -Property @{
@@ -134,7 +133,7 @@ $form.Controls.Add($CancelButton)
 $result = $form.ShowDialog()
 ```
 
-最後， `if` 區塊內的程式碼會指示 Windows 當使用者選取日曆上的日期並按一下 [確定] 按鈕或按下 **Enter** 鍵時要執行的表單動作。
+最後， `if` 區塊內的程式碼會指示 Windows 當使用者選取日曆上的日期並按一下 [確定]  按鈕或按下 **Enter** 鍵時要執行的表單動作。
 Windows PowerShell 會將選取的日期顯示給使用者。
 
 ```powershell

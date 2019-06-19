@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的協助工具
-ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 416b18dd492ca04d98b5adf9f7f0f88ea495740a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058449"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030643"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 
@@ -28,7 +27,7 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 
 - 鍵盤快速鍵
 
-- 語法著色表，以及可使用 [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 指令碼物件修改其他多個色彩設定的功能。
+- 語法著色表，以及可使用 [$psISE.Options](https://technet.microsoft.com/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) 指令碼物件修改其他多項色彩設定的功能。
 
 - 文字大小變更
 
@@ -46,11 +45,11 @@ Windows PowerShell ISE 支援高對比模式。 對視覺障礙者來說，可�
 
 執行下列其中一個動作：
 
-- 若要將指令碼窗格移動到主控台窗格上方，請按 **CTRL+1**，或者按一下工具列的**靠上顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠上顯示指令碼窗格]。
+- 若要將指令碼窗格移動到主控台窗格上方，請按 **CTRL+1**，或者按一下工具列的**靠上顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠上顯示指令碼窗格]  。
 
-- 若要將指令碼窗格移動到主控台窗格右方，請按 **CTRL+2**；或者，按一下工具列的 [靠右顯示指令碼窗格] 圖示，或在 [檢視] 功能表中，按一下 [靠右顯示指令碼窗格]。
+- 若要將指令碼窗格移動到主控台窗格右方，請按 **CTRL+2**；或者，按一下工具列的 [靠右顯示指令碼窗格]  圖示，或在 [檢視]  功能表中，按一下 [靠右顯示指令碼窗格]  。
 
-- 若要將指令碼窗格最大化，請按 **CTRL+3**；或者，按一下工具列的 [顯示最大化的指令碼窗格] 圖示，或在 [檢視] 功能表中，按一下 [顯示最大化的指令碼窗格]。
+- 若要將指令碼窗格最大化，請按 **CTRL+3**；或者，按一下工具列的 [顯示最大化的指令碼窗格]  圖示，或在 [檢視]  功能表中，按一下 [顯示最大化的指令碼窗格]  。
 
 - 若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下**隱藏指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
 

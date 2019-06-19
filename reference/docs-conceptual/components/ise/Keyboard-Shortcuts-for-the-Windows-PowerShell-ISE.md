@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的鍵盤快速鍵
-ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f71aea16f7a98ff7b6427237dc90104e4ea0db71
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086828"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030937"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
@@ -20,7 +19,7 @@ ms.locfileid: "62086828"
 
 |動作|鍵盤快速鍵|使用位置|
 |----------|----------------------|----------|
-|**說明**|F1|指令碼窗格 **重要︰** 您可以指定 F1 說明來自 Web 上的 TechNet Library 或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]**、**[選項]**，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]**。|
+|**說明**|F1|指令碼窗格 **重要︰** 您可以指定 F1 說明來自 Web 上的 TechNet Library 或下載的說明 (請參閱 Update-Help)。 若要選取，請按一下 **[工具]** 、 **[選項]** ，然後在 **[一般設定]** 索引標籤上，設定或清除 **[使用本機說明內容而非線上內容]** 。|
 |**複製**|CTRL+C|指令碼窗格, 命令窗格, 輸出窗格|
 |**剪下**|CTRL+X|指令碼窗格, 命令窗格|
 |**展開或摺疊大綱**|CTRL+M|指令碼窗格|

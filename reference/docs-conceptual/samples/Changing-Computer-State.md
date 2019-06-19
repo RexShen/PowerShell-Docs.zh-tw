@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 變更電腦狀態
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086318"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030291"
 ---
 # <a name="changing-computer-state"></a>變更電腦狀態
 
@@ -30,7 +29,7 @@ rundll32.exe user32.dll,LockWorkStation
 
 ## <a name="logging-off-the-current-session"></a>登出目前的工作階段
 
-您可以使用幾項不同的技術，來登出本機系統上的工作階段。 最簡單的方式是使用遠端桌面/終端機服務命令列工具 **logoff.exe** (如需詳細資訊，請在 Windows PowerShell 命令提示字元中，輸入 **logoff /?**)。 若要登出目前使用中的工作階段，請輸入 **logoff** 且不加引數。
+您可以使用幾項不同的技術，來登出本機系統上的工作階段。 最簡單的方式是使用遠端桌面/終端機服務命令列工具 **logoff.exe** (如需詳細資訊，請在 Windows PowerShell 命令提示字元中，輸入 **logoff /?** )。 若要登出目前使用中的工作階段，請輸入 **logoff** 且不加引數。
 
 您也可以使用 **shutdown.exe** 工具搭配其登出選項︰
 

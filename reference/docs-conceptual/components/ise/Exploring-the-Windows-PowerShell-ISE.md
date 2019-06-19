@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 探索 Windows PowerShell ISE
-ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086896"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67031038"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探索 Windows PowerShell ISE
 
@@ -19,10 +18,10 @@ ms.locfileid: "62086896"
 
 ## <a name="menu-bar"></a>功能表列
 
-功能表列包含 [檔案]、[編輯]、[檢視]、[工具]、[偵錯]、[附加元件] 和 [說明] 功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)的指令碼，將[附加元件工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)放在功能表列上。
+功能表列包含 [檔案]  、[編輯]  、[檢視]  、[工具]  、[偵錯]  、[附加元件]  和 [說明]  功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)的指令碼，將[附加元件工具](../../core-powershell/ise/The-ISEAddOnTool-Object.md)放在功能表列上。
 
 > [!NOTE]
-> 在 Windows PowerShell ISE 2.0 中，不提供 [工具] 和 [附加元件] 功能表。
+> 在 Windows PowerShell ISE 2.0 中，不提供 [工具]  和 [附加元件]  功能表。
 
 ## <a name="windows-powershell-tabs"></a>Windows PowerShell 索引標籤
 
@@ -80,7 +79,7 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 ## <a name="help"></a>[說明]
 
-您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 **[說明]** 功能表上按一下 **[Windows PowerShell ISE 說明]**，或在在指令碼窗格或主控台窗格的任何位置按下 F1 鍵 (但游標不可以在 Cmdlet 名稱上方)。 您也可以從 [說明] 功能表執行 Update-Help Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
+您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 **[說明]** 功能表上按一下 **[Windows PowerShell ISE 說明]** ，或在在指令碼窗格或主控台窗格的任何位置按下 F1 鍵 (但游標不可以在 Cmdlet 名稱上方)。 您也可以從 [說明]  功能表執行 Update-Help Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
 
 ## <a name="see-also"></a>另請參閱
 

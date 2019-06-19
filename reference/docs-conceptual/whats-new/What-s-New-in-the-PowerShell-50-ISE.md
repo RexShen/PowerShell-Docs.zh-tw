@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShell 50 ISE 的新功能
-ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 52e8926a7320f86f2ab8970a7778faba6a14a714
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058177"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030027"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
@@ -39,7 +38,7 @@ Windows PowerShell ISE 是一個主應用程式，可以讓您在圖形化與直
 
 IntelliSense 是屬於 Windows PowerShell ISE 的自動完成協助功能。 在您輸入文字時，IntelliSense 會顯示與輸入文字可能相符的 Cmdlet、參數、參數值、檔案或資料夾的可點選功能表。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 透過 IntelliSense，您可以在使用 Windows PowerShell ISE 建立指令碼時更輕鬆地探索 Cmdlet 和語法。 您也可以在建立新指令碼時透過 Windows PowerShell ISE 學習 Windows PowerShell。
 
@@ -52,37 +51,37 @@ IntelliSense 是屬於 Windows PowerShell ISE 的自動完成協助功能。 在
 
 *程式碼片段*是可以插入您在 Windows PowerShell ISE 中所建立之指令碼的簡短 Windows PowerShell 程式碼區段。 Windows PowerShell ISE 隨附一組預設程式碼片段。 在 Windows PowerShell ISE 中工作時，您可以使用 **New-Snippet** Cmdlet 來新增程式碼片段。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 使用程式碼片段，您可以快速地組合並建立指令碼，以自動化您的環境。
 
 **有哪些不同？**
 
-若要在 Windows PowerShell 3.0 或更新版本中使用程式碼片段，請按一下 [編輯] 功能表上的 [啟動片段]，或按 **Ctrl-J**。
+若要在 Windows PowerShell 3.0 或更新版本中使用程式碼片段，請按一下 [編輯]  功能表上的 [啟動片段]  ，或按 **Ctrl-J**。
 
 ### <a name="add-on-tools"></a>附加元件工具
 **PowerShell 3.0 的新功能**
 
 Windows PowerShell ISE 現在支援附加元件工具，這些工具是使用物件模型所新增的 Windows Presentation Foundation (WPF) 控制項。 附加元件工具可以顯示為主控台中的垂直或水平窗格。 窗格中的多個附加元件工具會顯示成一個索引標籤式控制項。 您也可以新增或移除非 Microsoft 合作廠商製作的附加元件工具。 如需如何匯入或移除附加元件工具的詳細資訊，請參閱 [Windows PowerShell ISE 作業](https://technet.microsoft.com/library/cc732148.aspx)。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 附加元件可讓您使用可加強指令碼體驗或為 Windows PowerShell ISE 新增功能的工具來擴充和自訂 Windows PowerShell ISE。
 
 **有哪些不同？**
 
-Windows PowerShell ISE 3.0 和更新版本隨附 **Commands** 附加元件。 **Commands** 附加元件可讓您瀏覽 Cmdlet，以及使用 指令碼 和 主控台 窗格並列存取 Cmdlet 的說明。
+Windows PowerShell ISE 3.0 和更新版本隨附 **Commands** 附加元件。 **Commands** 附加元件可讓您瀏覽 Cmdlet，以及使用 指令碼  和 主控台  窗格並列存取 Cmdlet 的說明。
 
-使用 [附加元件] 功能表上的 [開啟附加元件工具網站] 命令，可以找到額外的附加元件。
+使用 [附加元件]  功能表上的 [開啟附加元件工具網站]  命令，可以找到額外的附加元件。
 
 ### <a name="restart-manager-and-auto-save"></a>重新啟動管理員和自動儲存
 **PowerShell 3.0 的新功能**
 
 Windows PowerShell ISE 現在每兩分鐘會自動在不同的位置儲存您未完成的指令碼。  如果 Windows PowerShell ISE 停止運作，或是作業系統重新啟動，則 Windows PowerShell ISE 在重新啟動之後，將會復原上一個工作階段中未完成的指令碼，即使該指令碼之前並未儲存也一樣。
 
-若要變更自動儲存間隔，請在主控台窗格中執行下列命令：**$psise.Options.AutoSaveMinuteInterval**。
+若要變更自動儲存間隔，請在主控台窗格中執行下列命令： **$psise.Options.AutoSaveMinuteInterval**。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 由於已開啟的指令碼會在意外重新啟動的情況下自動儲存，您將能安心地在 Windows PowerShell ISE 內工作。
 
@@ -93,11 +92,11 @@ Windows PowerShell ISE 2.0 不會在重新啟動的情況下自動儲存指令�
 ### <a name="most-recently-used-list"></a>最近使用的清單
 **PowerShell 3.0 的新功能**
 
-Windows PowerShell ISE 現在具有最近使用之檔案的清單。 當您在 Windows PowerShell ISE 中開啟檔案時，該檔案會被新增至 [檔案] 功能表上的 [最近使用的清單]。
+Windows PowerShell ISE 現在具有最近使用之檔案的清單。 當您在 Windows PowerShell ISE 中開啟檔案時，該檔案會被新增至 [檔案]  功能表上的 [最近使用的清單]。
 
-若要變更 [最近使用的清單] 中預設數目的檔案，請在主控台窗格中執行下列命令：**$psise.Options.MruCount**。
+若要變更 [最近使用的清單] 中預設數目的檔案，請在主控台窗格中執行下列命令： **$psise.Options.MruCount**。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 您現在可以使用 [最近使用的清單] 來輕鬆地存取常用檔案。
 
@@ -134,7 +133,7 @@ Windows PowerShell ISE 2.0 並不具有 [最近使用的清單]。
 
 - 按**向上**鍵以在主控台中檢視歷程記錄時，保留命令列中輸入的內容
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 新增這些主控台窗格變更可提供主控台介面更一致的指令碼體驗。
 
@@ -153,7 +152,7 @@ Windows PowerShell ISE 2.0 具有個別的命令和輸出窗格。
 
 - *-mta*：以多執行緒 Apartment 模式啟動 Windows PowerShell ISE。 Windows PowerShell ISE 的預設作業模式是單一執行緒 Apartment 模式，或 *-sta*。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 新增這些命令列參數可讓您控制 Windows PowerShell ISE 的執行環境。
 
@@ -168,7 +167,7 @@ Windows PowerShell ISE 其他的編輯功能包括：
 
 - **XML 語法著色**Windows PowerShell ISE 現在會以對 Windows PowerShell 語法進行著色的相同方法，對 XML 語法進行著色。
 
-- **括號對稱** Windows PowerShell ISE 包括括號對稱和反白顯示，而且可以透過下列方式使用：(例如，如果已選取左大括號，則使用 [移至相符項目] 命令或 **[Ctrl + ]** 便能找到右大括號)。
+- **括號對稱** Windows PowerShell ISE 包括括號對稱和反白顯示，而且可以透過下列方式使用：(例如，如果已選取左大括號，則使用 [移至相符項目]  命令或 **[Ctrl + ]** 便能找到右大括號)。
 
 - **大綱檢視** 指令碼窗格支援大綱功能，按一下左邊界的加號或減號，即允許摺疊或展開程式碼區段。 您可以使用大括號或 **#region** 和 **#endregion** 標籤，標示可摺疊區段的開頭或結尾。 若要展開或摺疊所有區域，請按 **Ctrl + M**。
 
@@ -182,7 +181,7 @@ Windows PowerShell ISE 其他的編輯功能包括：
 
 - **區塊選擇** 在使用滑鼠選取指令碼窗格中的文字時按住 ALT 鍵或按 **Alt+Shift+方向鍵**，即可選取一個區塊的文字。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 其他編輯功能提供更一致且功能強大的編輯環境。
 
@@ -195,11 +194,11 @@ Windows PowerShell ISE 2.0 沒有這些編輯增強功能。
 
 當您的游標在 Cmdlet 中或當您反白顯示 Cmdlet 的一部分時，如果按 **F1**，新的說明檢視器就會開啟有關反白顯示 Cmdlet 的即時線上說明。 如果要顯示「關於 Windows PowerShell 」說明，請在主控台窗格中輸入 **operators**，然後按 **F1**。
 
-使用此功能之前，請先從 Microsoft 網站下載最新版本的 Windows PowerShell 說明主題。 下載說明主題的最簡單方法是以系統管理員身分執行 Windows PowerShell ISE，並於主控台窗格中執行 **Update-Help** Cmdlet。
+使用這項功能之前，請先從 Microsoft 網站下載最新版本的 Windows PowerShell 說明主題。 下載說明主題的最簡單方法是以系統管理員身分執行 Windows PowerShell ISE，並於主控台窗格中執行 **Update-Help** Cmdlet。
 
-您可以變更 **F1** 鍵尋找說明的位置。 您在 [工具]/[選項] 功能表中，於 [一般設定] 索引標籤的 [其他設定] 下，可以設定或清除 [使用本機說明內容而非線上內容] 核取方塊。 核取時，用戶端會在模組資料夾中發現的已下載說明中尋找 Cmdlet 說明。  如果清除此核取方塊，則用戶端會在 TechNet 文件庫中尋找 Cmdlet 說明。
+您可以變更 **F1** 鍵尋找說明的位置。 您在 [工具]  /[選項]  功能表中，於 [一般設定]  索引標籤的 [其他設定]  下，可以設定或清除 [使用本機說明內容而非線上內容]  核取方塊。 核取時，用戶端會在模組資料夾中發現的已下載說明中尋找 Cmdlet 說明。  如果清除此核取方塊，則用戶端會在 TechNet 文件庫中尋找 Cmdlet 說明。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 不需要離開目前 Cmdlet 或指令碼的即時線上說明，即可提供順暢的學習經驗。
 
@@ -212,7 +211,7 @@ Windows PowerShell ISE 2.0 沒有這些編輯增強功能。
 
 **Show-Command** Cmdlet 可讓您填入圖形表單，來撰寫或執行 Cmdlet 或函式。 此表單可讓使用者在圖形化環境中使用 Windows PowerShell。 **Show-Command** 也可以啟用進階 Scripter 來建立快速的 Windows PowerShell 式 GUI。
 
-**此變更增加了什麼價值？**
+**這項變更增加了什麼價值？**
 
 透過在 Windows PowerShell 指令碼中使用 **Show-Command**，您可以將使用者所熟悉的圖形化環境提供給他們。 **Show-Command** 也可以協助入門使用者了解 Windows PowerShell。
 

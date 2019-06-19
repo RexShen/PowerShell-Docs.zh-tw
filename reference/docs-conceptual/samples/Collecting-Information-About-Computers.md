@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 收集電腦的相關資訊
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058330"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030845"
 ---
 # <a name="collecting-information-about-computers"></a>收集電腦的相關資訊
 
@@ -18,7 +17,7 @@ ms.locfileid: "62058330"
 由於 Windows PowerShell 也適用於物件，並具有管線可讓您以相同的方式來處理單一物件或多個物件，因此一般 WMI 存取可讓您不費吹灰之力就能執行一些進階工作。
 
 下列範例示範如何對任意電腦使用 `Get-CimInstance` 來收集特定資訊。
-我們以點值 (**.**) 指定 **ComputerName** 參數，以代表本機電腦。
+我們以點值 ( **.** ) 指定 **ComputerName** 參數，以代表本機電腦。
 您可以指定與可透過 WMI 連線之任何電腦來建立關聯的名稱或 IP 位址。
 若要擷取本機電腦的相關資訊，您可以省略 **ComputerName** 參數。
 

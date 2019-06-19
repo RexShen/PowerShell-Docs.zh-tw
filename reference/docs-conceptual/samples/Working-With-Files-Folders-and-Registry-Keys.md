@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用檔案、資料夾與登錄機碼
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: cd20cc50b573435ba80b52b51e164e60625dc1b6
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085997"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030752"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>使用檔案、資料夾與登錄機碼
 
@@ -128,7 +127,7 @@ Get-ChildItem -Path C:\Windows\[xz]*
 
 例如，假設您嘗試在 [System32] 資料夾中尋找 Windows 時間服務 DLL，而您只記得 DLL 名稱的開頭是 "W" 且其中含有 "32"。
 
-類似 **w\&#42;32\&#42;.dll** 的運算式會尋找滿足上述條件的所有 DLL，但也會傳回名稱中包含 "95" 或 "16" 的 Windows 95 及 16 位元的 Windows 相容 DLL。 您可以使用 **Exclude** 參數搭配模式 **\&#42;\[9516]\&#42;**，以省略名稱中含有這些數字中之任一數字的檔案：
+類似 **w\&#42;32\&#42;.dll** 的運算式會尋找滿足上述條件的所有 DLL，但也會傳回名稱中包含 "95" 或 "16" 的 Windows 95 及 16 位元的 Windows 相容 DLL。 您可以使用 **Exclude** 參數搭配模式 **\&#42;\[9516]\&#42;** ，以省略名稱中含有這些數字中之任一數字的檔案：
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*

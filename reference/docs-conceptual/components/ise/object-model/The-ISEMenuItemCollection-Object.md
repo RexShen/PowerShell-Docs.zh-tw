@@ -2,17 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEMenuItemCollection 物件
-ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
-ms.openlocfilehash: 7e5030416df394aaa9e9d3f63978e204a7faabf1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086692"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030533"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection 物件
 
-**ISEMenuItemCollection** 物件是 **ISEMenuItem** 物件的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection 類別的執行個體。 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 物件即為一例，此物件可用來自訂 Windows PowerShell® 整合式指令碼環境 (ISE) 中的 [附加元件] 功能表。
+**ISEMenuItemCollection** 物件是 **ISEMenuItem** 物件的集合。 它是 Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection 類別的執行個體。 **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** 物件即為一例，此物件可用來自訂 Windows PowerShell® 整合式指令碼環境 (ISE) 中的 [附加元件]  功能表。
 
 ## <a name="method"></a>Method
 

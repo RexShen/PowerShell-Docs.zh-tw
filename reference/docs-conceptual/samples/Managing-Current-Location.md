@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理目前的位置
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086250"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030194"
 ---
 # <a name="managing-current-location"></a>管理目前的位置
 
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 **-PassThru** 參數可以搭配 Windows PowerShell 中的許多 Set 命令使用以傳回結果的相關資訊，這在沒有預設輸出的情況下可能會有用。
 
-您可以指定目前位置的相對路徑，就像您在大部分的 UNIX 與 Windows 命令殼層中所指定一樣。 在相對路徑的標準標記法中，句點 (**.**) 代表目前的資料夾，而雙句點 (**..**) 代表目前位置的上層目錄。
+您可以指定目前位置的相對路徑，就像您在大部分的 UNIX 與 Windows 命令殼層中所指定一樣。 在相對路徑的標準標記法中，句點 ( **.** ) 代表目前的資料夾，而雙句點 ( **..** ) 代表目前位置的上層目錄。
 
-例如，若目前資料夾為 **C:\\Windows**，則句點 (**.**) 代表 **C:\\Windows**，而雙句點 (**..**) 代表 **C:**。 輸入下列命令，即可從目前的位置變更到 C: 磁碟機的根目錄：
+例如，若目前資料夾為 **C:\\Windows**，則句點 ( **.** ) 代表 **C:\\Windows**，而雙句點 ( **..** ) 代表 **C:** 。 輸入下列命令，即可從目前的位置變更到 C: 磁碟機的根目錄：
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -62,7 +61,7 @@ Path
 C:\
 ```
 
-相同的方法在並非檔案系統磁碟機的 Windows PowerShell 磁碟機 (例如 **HKLM:**) 上也適用。 輸入下列命令，即可將您的位置設定為登錄中的 HKLM\\Software 機碼：
+相同的方法在並非檔案系統磁碟機的 Windows PowerShell 磁碟機 (例如 **HKLM:** ) 上也適用。 輸入下列命令，即可將您的位置設定為登錄中的 HKLM\\Software 機碼：
 
 ```
 PS> Set-Location -Path HKLM:\SOFTWARE -PassThru

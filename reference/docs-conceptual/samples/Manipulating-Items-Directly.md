@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 直接操作項目
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086216"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030137"
 ---
 # <a name="manipulating-items-directly"></a>直接操作項目
 
@@ -73,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-輸入登錄路徑時，請務必在 Windows PowerShell 磁碟機名稱中包含冒號 (**:**)，亦即 HKLM: 與 HKCU:。 若未使用冒號，Windows PowerShell 將無法識別該路徑中的磁碟機名稱。
+輸入登錄路徑時，請務必在 Windows PowerShell 磁碟機名稱中包含冒號 ( **:** )，亦即 HKLM: 與 HKCU:。 若未使用冒號，Windows PowerShell 將無法識別該路徑中的磁碟機名稱。
 
 ## <a name="why-registry-values-are-not-items"></a>為什麼登錄值不是項目
 
@@ -93,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-雖然將登錄項目視為項目很方便，但您無法在指定登錄項目路徑時確保其唯一性。 路徑標記法無法區分名為 **Run** 的登錄子機碼與 **Run** 子機碼中的 **(Default)** 登錄項目。 此外，因為登錄項目名稱可以包含反斜線字元 (**\\**)，若登錄項目是項目，您無法使用路徑標記法來區分名為 **Windows\\CurrentVersion\\Run** 的登錄項目與該路徑中的子機碼。
+雖然將登錄項目視為項目很方便，但您無法在指定登錄項目路徑時確保其唯一性。 路徑標記法無法區分名為 **Run** 的登錄子機碼與 **Run** 子機碼中的 **(Default)** 登錄項目。 此外，因為登錄項目名稱可以包含反斜線字元 ( **\\** )，若登錄項目是項目，您無法使用路徑標記法來區分名為 **Windows\\CurrentVersion\\Run** 的登錄項目與該路徑中的子機碼。
 
 ## <a name="renaming-existing-items-rename-item"></a>重新命名現有的項目 (Rename-Item)
 

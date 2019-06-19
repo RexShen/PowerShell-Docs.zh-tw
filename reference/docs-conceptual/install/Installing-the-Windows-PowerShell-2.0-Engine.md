@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 安裝 Windows PowerShell 2.0 引擎
-ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: b625b61b4e191402074f57ea2e942f800dbbcd53
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058309"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030955"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安裝 Windows PowerShell 2.0 引擎
 本主題說明如何安裝 Windows PowerShell 2.0 引擎。
@@ -28,7 +27,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 1. 在 **[開始]** 畫面上，輸入 **Windows 功能**。
 
-2. 在 **[應用程式]** 列中按一下 **[設定]**，然後按一下 **[開啟或關閉 Windows 功能]**。
+2. 在 **[應用程式]** 列中按一下 **[設定]** ，然後按一下 **[開啟或關閉 Windows 功能]** 。
 
 3. 在 **[Windows 功能]** 方塊中，按一下 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]** 加以選取。
 
@@ -38,34 +37,34 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 1. 在 **[開始]** 畫面上，輸入 **Windows 功能**。
 
-2. 在 **[應用程式]** 列中按一下 **[設定]**，然後按一下 **[開啟或關閉 Windows 功能]**。
+2. 在 **[應用程式]** 列中按一下 **[設定]** ，然後按一下 **[開啟或關閉 Windows 功能]** 。
 
-3. 在 [Windows 功能] 方塊中，展開 [Windows PowerShell 2.0] 節點，然後按一下 [Windows PowerShell 2.0 引擎] 方塊加以選取或清除。
+3. 在 [Windows 功能]  方塊中，展開 [Windows PowerShell 2.0]  節點，然後按一下 [Windows PowerShell 2.0 引擎]  方塊加以選取或清除。
 
 ## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>在 Windows Server 2012 R2 和 Windows Server 2012 上
 使用下列程序來新增 Windows PowerShell 2.0 引擎和 Microsoft .NET Framework 3.5 功能。 Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 可完成這項需求。
 
 #### <a name="to-add-the-net-framework-35-feature"></a>新增 .NET Framework 3.5 功能
 
-1. 在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]**。
+1. 在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]** 。
 
-    或者，在 [伺服器管理員] 中，按一下 [所有伺服器]，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]。
+    或者，在 [伺服器管理員]  中，按一下 [所有伺服器]  ，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]  。
 
-2. 在 [安裝類型] 頁面上，選取 [角色型或功能型安裝]。
+2. 在 [安裝類型]  頁面上，選取 [角色型或功能型安裝]  。
 
-3. 在 **[功能]** 頁面上，展開 **[.NET 3.5 Framework 功能]** 節點，然後選取 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]**。
+3. 在 **[功能]** 頁面上，展開 **[.NET 3.5 Framework 功能]** 節點，然後選取 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]** 。
 
     Windows PowerShell 2.0 引擎不需要該節點下方的其他選項。
 
 #### <a name="to-add-the-windows-powershell-20-engine-feature"></a>新增 Windows PowerShell 2.0 引擎功能
 
-- 在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]**。
+- 在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]** 。
 
-    或者，在 [伺服器管理員] 中，按一下 [所有伺服器]，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]。
+    或者，在 [伺服器管理員]  中，按一下 [所有伺服器]  ，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]  。
 
-- 在 [安裝類型] 頁面上，選取 [角色型或功能型安裝]。
+- 在 [安裝類型]  頁面上，選取 [角色型或功能型安裝]  。
 
-- 在 **[功能]** 頁面上，展開 **[Windows PowerShell (Installed) (Windows PowerShell (已安裝))]** 節點，然後選取 **[Windows PowerShell 2.0 引擎]**。
+- 在 **[功能]** 頁面上，展開 **[Windows PowerShell (Installed) (Windows PowerShell (已安裝))]** 節點，然後選取 **[Windows PowerShell 2.0 引擎]** 。
 
 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)。
 

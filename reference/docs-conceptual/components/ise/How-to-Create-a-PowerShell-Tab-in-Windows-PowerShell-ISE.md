@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
-ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 080fe89bf1443f51460589b445431913fa20b4b8
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7baf9a4051a196045d53eebf8ce5260bdc1bc55a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057735"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030597"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
 
@@ -23,7 +22,7 @@ Windows PowerShell 整合式指令碼環境 (ISE) 中的索引標籤讓您可以
 
 ## <a name="to-create-and-use-a-new-powershell-tab"></a>建立及使用新的 PowerShell 索引標籤
 
-在 **[檔案]** 功能表上，按一下 **[新增 PowerShell 索引標籤]**。新的 PowerShell 索引標籤一律會以使用中視窗開啟。
+在 **[檔案]** 功能表上，按一下 **[新增 PowerShell 索引標籤]** 。新的 PowerShell 索引標籤一律會以使用中視窗開啟。
 PowerShell 索引標籤是依其開啟順序以累加方式編號。
 每個索引標籤會與自己的 Windows PowerShell 主控台視窗建立關聯。
 您一次最多可以開啟 32 個 PowerShell 索引標籤 (在 Windows PowerShell ISE 2.0 中僅限 8 個)，每個索引標籤會有自己的工作階段。
@@ -47,7 +46,7 @@ PowerShell 索引標籤是依其開啟順序以累加方式編號。
 
 - 按一下您要關閉的索引標籤。
 
-- 在 **[檔案]** 功能表上，按一下 **[關閉 PowerShell 索引標籤]**，或在使用中的索引標籤上，按一下 [關閉] 按鈕 (**X**) 以關閉索引標籤。
+- 在 **[檔案]** 功能表上，按一下 **[關閉 PowerShell 索引標籤]** ，或在使用中的索引標籤上，按一下 [關閉] 按鈕 (**X**) 以關閉索引標籤。
 
 如果您在要關閉的 PowerShell 索引標籤中，有已開啟且未儲存的檔案，系統會提示您儲存或捨棄檔案。
 如需如何儲存指令碼的詳細資訊，請參閱[如何儲存指令碼](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script)。

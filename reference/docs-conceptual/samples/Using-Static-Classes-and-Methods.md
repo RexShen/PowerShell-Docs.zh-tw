@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用靜態類別和方法
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086001"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030743"
 ---
 # <a name="using-static-classes-and-methods"></a>使用靜態類別和方法
 
@@ -47,7 +46,7 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 如前所述，Windows PowerShell 會自動將 '**System.**' 加到類型名稱的前面 (使用 **New-Object** 時)。 使用以方括弧括住的類型名稱時會發生相同的作業，因此您可以將 **\[System.Environment]** 指定為 **\[Environment]**。
+> 如前所述，Windows PowerShell 會自動將 '**System.** ' 加到類型名稱的前面 (使用 **New-Object** 時)。 使用以方括弧括住的類型名稱時會發生相同的作業，因此您可以將 **\[System.Environment]** 指定為 **\[Environment]** 。
 
 **System.Environment** 類別包含目前處理處序之運作環境的一般資訊 (在 Windows PowerShell 內運作時為 powershell.exe)。
 

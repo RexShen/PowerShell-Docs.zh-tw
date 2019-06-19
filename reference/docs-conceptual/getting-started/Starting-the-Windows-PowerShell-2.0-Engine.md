@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 啟動 Windows PowerShell 2.0 引擎
-ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: f5dd01cd93095fe15cc7e57f97f4b2920e580c22
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 824077008d2dcfd707e977d2112f0882d07a8aca
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086505"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030437"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>啟動 Windows PowerShell 2.0 引擎
 
@@ -46,7 +45,7 @@ PowerShell.exe -Version 2
 
 1. 若要建立需要 Windows PowerShell 2.0 引擎的工作階段設定，請使用 [Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) Cmdlet 的 **PSVersion** 參數 (值為 "2.0")。 在「伺服器端」或連線接收端的電腦上，執行此命令。
 
-   下列範例命令會在 Server01 電腦上建立 PS2 工作階段設定。 若要執行此命令，使用 [以系統管理員身分執行] 選項來啟動 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
+   下列範例命令會在 Server01 電腦上建立 PS2 工作階段設定。 若要執行此命令，使用 [以系統管理員身分執行]  選項來啟動 Windows PowerShell 4.0 或 Windows PowerShell 3.0。
 
    ```powershell
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
