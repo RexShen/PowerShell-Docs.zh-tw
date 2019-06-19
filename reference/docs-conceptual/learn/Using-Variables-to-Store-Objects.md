@@ -2,36 +2,35 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用變數儲存物件
-ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 16e82b83df967674da11193c8ac60d637687a01b
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 2d20d84e48d3f68cab5c1ffa05d689b46415ebc8
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854324"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030365"
 ---
-# <a name="using-variables-to-store-objects"></a><span data-ttu-id="80a62-103">使用變數儲存物件</span><span class="sxs-lookup"><span data-stu-id="80a62-103">Using variables to store objects</span></span>
+# <a name="using-variables-to-store-objects"></a><span data-ttu-id="6eeca-103">使用變數儲存物件</span><span class="sxs-lookup"><span data-stu-id="6eeca-103">Using variables to store objects</span></span>
 
-<span data-ttu-id="80a62-104">PowerShell 可以搭配物件來使用。</span><span class="sxs-lookup"><span data-stu-id="80a62-104">PowerShell works with objects.</span></span> <span data-ttu-id="80a62-105">PowerShell 可讓您建立稱為變數的具名物件。</span><span class="sxs-lookup"><span data-stu-id="80a62-105">PowerShell lets you create named objects known as variables.</span></span>
-<span data-ttu-id="80a62-106">變數名稱可以包括底線字元與任何英數字元。</span><span class="sxs-lookup"><span data-stu-id="80a62-106">Variable names can include the underscore character and any alphanumeric characters.</span></span> <span data-ttu-id="80a62-107">在 PowerShell 中使用時，變數一律使用 \$ 字元後面接著變數名稱來指定。</span><span class="sxs-lookup"><span data-stu-id="80a62-107">When used in PowerShell, a variable is always specified using the \$ character followed by variable name.</span></span>
+<span data-ttu-id="6eeca-104">PowerShell 可以搭配物件來使用。</span><span class="sxs-lookup"><span data-stu-id="6eeca-104">PowerShell works with objects.</span></span> <span data-ttu-id="6eeca-105">PowerShell 可讓您建立稱為變數的具名物件。</span><span class="sxs-lookup"><span data-stu-id="6eeca-105">PowerShell lets you create named objects known as variables.</span></span>
+<span data-ttu-id="6eeca-106">變數名稱可以包括底線字元與任何英數字元。</span><span class="sxs-lookup"><span data-stu-id="6eeca-106">Variable names can include the underscore character and any alphanumeric characters.</span></span> <span data-ttu-id="6eeca-107">在 PowerShell 中使用時，變數一律使用 \$ 字元後面接著變數名稱來指定。</span><span class="sxs-lookup"><span data-stu-id="6eeca-107">When used in PowerShell, a variable is always specified using the \$ character followed by variable name.</span></span>
 
-## <a name="creating-a-variable"></a><span data-ttu-id="80a62-108">建立變數</span><span class="sxs-lookup"><span data-stu-id="80a62-108">Creating a variable</span></span>
+## <a name="creating-a-variable"></a><span data-ttu-id="6eeca-108">建立變數</span><span class="sxs-lookup"><span data-stu-id="6eeca-108">Creating a variable</span></span>
 
-<span data-ttu-id="80a62-109">您可以輸入有效的變數名稱來建立變數︰</span><span class="sxs-lookup"><span data-stu-id="80a62-109">You can create a variable by typing a valid variable name:</span></span>
+<span data-ttu-id="6eeca-109">您可以輸入有效的變數名稱來建立變數︰</span><span class="sxs-lookup"><span data-stu-id="6eeca-109">You can create a variable by typing a valid variable name:</span></span>
 
 ```
 PS> $loc
 PS>
 ```
 
-<span data-ttu-id="80a62-110">此範例不會傳回任何結果，因為 `$loc` 沒有值。</span><span class="sxs-lookup"><span data-stu-id="80a62-110">This example returns no result because `$loc` doesn't have a value.</span></span> <span data-ttu-id="80a62-111">您可以在相同的步驟中建立變數並指派其值。</span><span class="sxs-lookup"><span data-stu-id="80a62-111">You can create a variable and assign it a value in the same step.</span></span> <span data-ttu-id="80a62-112">PowerShell 只有在變數不存在時才會加以建立。</span><span class="sxs-lookup"><span data-stu-id="80a62-112">PowerShell only creates the variable if it doesn't exist.</span></span>
-<span data-ttu-id="80a62-113">否則，它會將指定的值指派給現有變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-113">Otherwise, it assigns the specified value to the existing variable.</span></span> <span data-ttu-id="80a62-114">下列範例會將目前的位置儲存在變數 `$loc` 中：</span><span class="sxs-lookup"><span data-stu-id="80a62-114">The following example stores the current location in the variable `$loc`:</span></span>
+<span data-ttu-id="6eeca-110">此範例不會傳回任何結果，因為 `$loc` 沒有值。</span><span class="sxs-lookup"><span data-stu-id="6eeca-110">This example returns no result because `$loc` doesn't have a value.</span></span> <span data-ttu-id="6eeca-111">您可以在相同的步驟中建立變數並指派其值。</span><span class="sxs-lookup"><span data-stu-id="6eeca-111">You can create a variable and assign it a value in the same step.</span></span> <span data-ttu-id="6eeca-112">PowerShell 只有在變數不存在時才會加以建立。</span><span class="sxs-lookup"><span data-stu-id="6eeca-112">PowerShell only creates the variable if it doesn't exist.</span></span>
+<span data-ttu-id="6eeca-113">否則，它會將指定的值指派給現有變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-113">Otherwise, it assigns the specified value to the existing variable.</span></span> <span data-ttu-id="6eeca-114">下列範例會將目前的位置儲存在變數 `$loc` 中：</span><span class="sxs-lookup"><span data-stu-id="6eeca-114">The following example stores the current location in the variable `$loc`:</span></span>
 
 ```powershell
 $loc = Get-Location
 ```
 
-<span data-ttu-id="80a62-115">當您輸入此命令時，PowerShell 不會顯示任何輸出。</span><span class="sxs-lookup"><span data-stu-id="80a62-115">PowerShell displays no output when you type this command.</span></span> <span data-ttu-id="80a62-116">PowerShell 會將 'Get-location' 的輸出傳送到 `$loc`。</span><span class="sxs-lookup"><span data-stu-id="80a62-116">PowerShell sends the output of 'Get-Location' to `$loc`.</span></span> <span data-ttu-id="80a62-117">在 PowerShell 中，會將未指派或重新導向的資料傳送到畫面。</span><span class="sxs-lookup"><span data-stu-id="80a62-117">In PowerShell, data that isn't assigned or redirected is sent to the screen.</span></span> <span data-ttu-id="80a62-118">輸入 `$loc` 會顯示您的目前位置：</span><span class="sxs-lookup"><span data-stu-id="80a62-118">Typing `$loc` shows your current location:</span></span>
+<span data-ttu-id="6eeca-115">當您輸入此命令時，PowerShell 不會顯示任何輸出。</span><span class="sxs-lookup"><span data-stu-id="6eeca-115">PowerShell displays no output when you type this command.</span></span> <span data-ttu-id="6eeca-116">PowerShell 會將 'Get-location' 的輸出傳送到 `$loc`。</span><span class="sxs-lookup"><span data-stu-id="6eeca-116">PowerShell sends the output of 'Get-Location' to `$loc`.</span></span> <span data-ttu-id="6eeca-117">在 PowerShell 中，會將未指派或重新導向的資料傳送到畫面。</span><span class="sxs-lookup"><span data-stu-id="6eeca-117">In PowerShell, data that isn't assigned or redirected is sent to the screen.</span></span> <span data-ttu-id="6eeca-118">輸入 `$loc` 會顯示您的目前位置：</span><span class="sxs-lookup"><span data-stu-id="6eeca-118">Typing `$loc` shows your current location:</span></span>
 
 ```
 PS> $loc
@@ -41,7 +40,7 @@ Path
 C:\temp
 ```
 
-<span data-ttu-id="80a62-119">您可以使用 `Get-Member` 來顯示變數內容的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="80a62-119">You can use `Get-Member` to display information about the contents of variables.</span></span> <span data-ttu-id="80a62-120">`Get-Member` 會顯示 `$loc` 為 **PathInfo** 物件，就像來自 `Get-Location` 的輸出：</span><span class="sxs-lookup"><span data-stu-id="80a62-120">`Get-Member` shows you that `$loc` is a **PathInfo** object, just like the output from `Get-Location`:</span></span>
+<span data-ttu-id="6eeca-119">您可以使用 `Get-Member` 來顯示變數內容的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="6eeca-119">You can use `Get-Member` to display information about the contents of variables.</span></span> <span data-ttu-id="6eeca-120">`Get-Member` 會顯示 `$loc` 為 **PathInfo** 物件，就像來自 `Get-Location` 的輸出：</span><span class="sxs-lookup"><span data-stu-id="6eeca-120">`Get-Member` shows you that `$loc` is a **PathInfo** object, just like the output from `Get-Location`:</span></span>
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property
@@ -56,47 +55,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-## <a name="manipulating-variables"></a><span data-ttu-id="80a62-121">操作變數</span><span class="sxs-lookup"><span data-stu-id="80a62-121">Manipulating variables</span></span>
+## <a name="manipulating-variables"></a><span data-ttu-id="6eeca-121">操作變數</span><span class="sxs-lookup"><span data-stu-id="6eeca-121">Manipulating variables</span></span>
 
-<span data-ttu-id="80a62-122">PowerShell 提供數個命令來操作變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-122">PowerShell provides several commands to manipulate variables.</span></span> <span data-ttu-id="80a62-123">您可以查看可讀取形式的完整清單，方法是輸入︰</span><span class="sxs-lookup"><span data-stu-id="80a62-123">You can see a complete listing in a readable form by typing:</span></span>
+<span data-ttu-id="6eeca-122">PowerShell 提供數個命令來操作變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-122">PowerShell provides several commands to manipulate variables.</span></span> <span data-ttu-id="6eeca-123">您可以查看可讀取形式的完整清單，方法是輸入︰</span><span class="sxs-lookup"><span data-stu-id="6eeca-123">You can see a complete listing in a readable form by typing:</span></span>
 
 ```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-<span data-ttu-id="80a62-124">PowerShell 也會建立數個系統定義的變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-124">PowerShell also creates several system-defined variables.</span></span> <span data-ttu-id="80a62-125">您可以使用 `Remove-Variable` Cmdlet，從目前的工作階段移除所有不受 PowerShell 控制的變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-125">You can use the `Remove-Variable` cmdlet to remove variables, which are not controlled by PowerShell, from the current session.</span></span> <span data-ttu-id="80a62-126">輸入下列命令以清除所有變數：</span><span class="sxs-lookup"><span data-stu-id="80a62-126">Type the following command to clear all variables:</span></span>
+<span data-ttu-id="6eeca-124">PowerShell 也會建立數個系統定義的變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-124">PowerShell also creates several system-defined variables.</span></span> <span data-ttu-id="6eeca-125">您可以使用 `Remove-Variable` Cmdlet，從目前的工作階段移除所有不受 PowerShell 控制的變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-125">You can use the `Remove-Variable` cmdlet to remove variables, which are not controlled by PowerShell, from the current session.</span></span> <span data-ttu-id="6eeca-126">輸入下列命令以清除所有變數：</span><span class="sxs-lookup"><span data-stu-id="6eeca-126">Type the following command to clear all variables:</span></span>
 
 ```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-<span data-ttu-id="80a62-127">執行上一個命令之後，`Get-Variable` Cmdlet 會顯示 PowerShell 系統變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-127">After running the previous command, the `Get-Variable` cmdlet shows the PowerShell system variables.</span></span>
+<span data-ttu-id="6eeca-127">執行上一個命令之後，`Get-Variable` Cmdlet 會顯示 PowerShell 系統變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-127">After running the previous command, the `Get-Variable` cmdlet shows the PowerShell system variables.</span></span>
 
-<span data-ttu-id="80a62-128">PowerShell 也會建立變數磁碟機。</span><span class="sxs-lookup"><span data-stu-id="80a62-128">PowerShell also creates a variable drive.</span></span> <span data-ttu-id="80a62-129">使用下列範例，利用變數磁碟機來顯示所有 PowerShell 變數：</span><span class="sxs-lookup"><span data-stu-id="80a62-129">Use the following example to display all PowerShell variables using the variable drive:</span></span>
+<span data-ttu-id="6eeca-128">PowerShell 也會建立變數磁碟機。</span><span class="sxs-lookup"><span data-stu-id="6eeca-128">PowerShell also creates a variable drive.</span></span> <span data-ttu-id="6eeca-129">使用下列範例，利用變數磁碟機來顯示所有 PowerShell 變數：</span><span class="sxs-lookup"><span data-stu-id="6eeca-129">Use the following example to display all PowerShell variables using the variable drive:</span></span>
 
 ```powershell
 Get-ChildItem variable:
 ```
 
-## <a name="using-cmdexe-variables"></a><span data-ttu-id="80a62-130">使用 Cmd.exe 變數</span><span class="sxs-lookup"><span data-stu-id="80a62-130">Using cmd.exe variables</span></span>
+## <a name="using-cmdexe-variables"></a><span data-ttu-id="6eeca-130">使用 Cmd.exe 變數</span><span class="sxs-lookup"><span data-stu-id="6eeca-130">Using cmd.exe variables</span></span>
 
-<span data-ttu-id="80a62-131">PowerShell 可以使用可供任何 Windows 處理序 (包括 **cmd.exe**) 使用的相同環境變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-131">PowerShell can use the same environment variables available to any Windows process, including **cmd.exe**.</span></span> <span data-ttu-id="80a62-132">這些變數會透過名為 `env:` 的磁碟機來公開。</span><span class="sxs-lookup"><span data-stu-id="80a62-132">These variables are exposed through a drive named `env:`.</span></span> <span data-ttu-id="80a62-133">您可以輸入下列命令來檢視這些變數：</span><span class="sxs-lookup"><span data-stu-id="80a62-133">You can view these variables by typing the following command:</span></span>
+<span data-ttu-id="6eeca-131">PowerShell 可以使用可供任何 Windows 處理序 (包括 **cmd.exe**) 使用的相同環境變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-131">PowerShell can use the same environment variables available to any Windows process, including **cmd.exe**.</span></span> <span data-ttu-id="6eeca-132">這些變數會透過名為 `env:` 的磁碟機來公開。</span><span class="sxs-lookup"><span data-stu-id="6eeca-132">These variables are exposed through a drive named `env:`.</span></span> <span data-ttu-id="6eeca-133">您可以輸入下列命令來檢視這些變數：</span><span class="sxs-lookup"><span data-stu-id="6eeca-133">You can view these variables by typing the following command:</span></span>
 
 ```powershell
 Get-ChildItem env:
 ```
 
-<span data-ttu-id="80a62-134">標準的 `*-Variable` Cmdlet 不是設計來使用環境變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-134">The standard `*-Variable` cmdlets aren't designed to work with environment variables.</span></span> <span data-ttu-id="80a62-135">環境變數可以使用 `env:` 磁碟機前置詞來存取。</span><span class="sxs-lookup"><span data-stu-id="80a62-135">Environment variables are accessed using the `env:` drive prefix.</span></span> <span data-ttu-id="80a62-136">例如，**cmd.exe** 中的 **%SystemRoot%** 變數包含作業系統的根目錄名稱。</span><span class="sxs-lookup"><span data-stu-id="80a62-136">For example, the **%SystemRoot%** variable in **cmd.exe** contains the operating system's root directory name.</span></span> <span data-ttu-id="80a62-137">在 PowerShell 中，您會使用 `$env:SystemRoot` 來存取相同的值。</span><span class="sxs-lookup"><span data-stu-id="80a62-137">In PowerShell, you use `$env:SystemRoot` to access the same value.</span></span>
+<span data-ttu-id="6eeca-134">標準的 `*-Variable` Cmdlet 不是設計來使用環境變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-134">The standard `*-Variable` cmdlets aren't designed to work with environment variables.</span></span> <span data-ttu-id="6eeca-135">環境變數可以使用 `env:` 磁碟機前置詞來存取。</span><span class="sxs-lookup"><span data-stu-id="6eeca-135">Environment variables are accessed using the `env:` drive prefix.</span></span> <span data-ttu-id="6eeca-136">例如，**cmd.exe** 中的 **%SystemRoot%** 變數包含作業系統的根目錄名稱。</span><span class="sxs-lookup"><span data-stu-id="6eeca-136">For example, the **%SystemRoot%** variable in **cmd.exe** contains the operating system's root directory name.</span></span> <span data-ttu-id="6eeca-137">在 PowerShell 中，您會使用 `$env:SystemRoot` 來存取相同的值。</span><span class="sxs-lookup"><span data-stu-id="6eeca-137">In PowerShell, you use `$env:SystemRoot` to access the same value.</span></span>
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-<span data-ttu-id="80a62-138">您也可以從 PowerShell 建立和修改環境變數。</span><span class="sxs-lookup"><span data-stu-id="80a62-138">You can also create and modify environment variables from within PowerShell.</span></span> <span data-ttu-id="80a62-139">PowerShell 中的環境變數會遵循在作業系統中其他地方所使用之環境變數的相同規則。</span><span class="sxs-lookup"><span data-stu-id="80a62-139">Environment variables in PowerShell follow the same rules for environment variables used elsewhere in the operating system.</span></span> <span data-ttu-id="80a62-140">下列範例會建立新的環境變數：</span><span class="sxs-lookup"><span data-stu-id="80a62-140">The following example creates a new environment variable:</span></span>
+<span data-ttu-id="6eeca-138">您也可以從 PowerShell 建立和修改環境變數。</span><span class="sxs-lookup"><span data-stu-id="6eeca-138">You can also create and modify environment variables from within PowerShell.</span></span> <span data-ttu-id="6eeca-139">PowerShell 中的環境變數會遵循在作業系統中其他地方所使用之環境變數的相同規則。</span><span class="sxs-lookup"><span data-stu-id="6eeca-139">Environment variables in PowerShell follow the same rules for environment variables used elsewhere in the operating system.</span></span> <span data-ttu-id="6eeca-140">下列範例會建立新的環境變數：</span><span class="sxs-lookup"><span data-stu-id="6eeca-140">The following example creates a new environment variable:</span></span>
 
 ```powershell
 $env:LIB_PATH='/usr/local/lib'
 ```
 
-<span data-ttu-id="80a62-141">雖然並非必要，但通常會針對環境變數名稱全部使用大寫字母。</span><span class="sxs-lookup"><span data-stu-id="80a62-141">Though not required, it's common for environment variable names to use all uppercase letters.</span></span>
+<span data-ttu-id="6eeca-141">雖然並非必要，但通常會針對環境變數名稱全部使用大寫字母。</span><span class="sxs-lookup"><span data-stu-id="6eeca-141">Though not required, it's common for environment variable names to use all uppercase letters.</span></span>
