@@ -1,36 +1,48 @@
 ---
 title: Windows PowerShell 概念 |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 6/12/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
 caps.latest.revision: 7
-ms.openlocfilehash: c4b13518ad6452a39ca49e897e1d3e353818d332
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4410b1f9c80afefd5479fa68154f9947b805edcf
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081028"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263854"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell 概念
 
-本節包含可協助您了解 Windows PowerShell，從開發人員的觀點來看的概念性資訊。
+本節包含可協助您了解 PowerShell，從開發人員的觀點來看的概念性資訊。
 
 |主題名稱|描述|
 |----------------|-----------------|
-|[Windows PowerShell 提供者](http://msdn.microsoft.com/en-us/a65c5c75-1131-4ade-90d3-a613dbe620e9)|討論用來存取資料的 Windows PowerShell 提供者會儲存。|
-|[Windows PowerShell 嵌入式管理單元](http://msdn.microsoft.com/en-us/20e081a9-522c-48bf-9f21-faaf8cca2e82)|註冊 cmdlet 與提供者的一種機制。 (另請參閱[撰寫 Windows PowerShell 模組](../module/writing-a-windows-powershell-module.md)。)|
-|[Windows PowerShell 執行階段](http://msdn.microsoft.com/en-us/949f06e8-0224-4cd3-bbad-a0cebbb5dec8)|目前的執行個體的 Windows PowerShell runspace。|
-|[Windows PowerShell Runspace](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)|作業的環境，其中可以處理命令。|
-|[Windows PowerShell 的命名空間](http://msdn.microsoft.com/en-us/04bd2841-e90c-47d2-8a1f-3aeb3df35176)|Windows PowerShell API 命名空間的概觀。|
-|[Windows PowerShell 說明](http://msdn.microsoft.com/en-us/097b7c1c-a056-4b36-9c86-65b2ee702fc7)|撰寫 cmdlet 說明的相關討論。|
-|[要求確認](../cmdlet/requesting-confirmation-from-cmdlets.md)|討論如何 cmdlet 與提供者的意見反應向使用者要求的動作之前，不會執行。|
-|[Windows PowerShell 物件概念](http://msdn.microsoft.com/en-us/a1449178-b6fd-4ca8-a5e1-d747c2c54181)|Windows PowerShell 如何處理物件。|
-|[Windows PowerShell 擴充類型系統 (ETS)](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353)|以程式設計方式擴充物件。|
+|[about_Objects](/powershell/module/microsoft.powershell.core/about/about_objects)|PowerShell 物件的描述。 如需詳細資訊，請參閱[關於建立物件](/powershell/module/microsoft.powershell.core/about/about_object_creation)|
+|[建立 Runspace](../hosting/creating-runspaces.md)|作業的環境，其中可以處理命令。 如需詳細資訊，請參閱 < [Runspace 類別](/dotnet/api/system.management.automation.runspaces.runspace)。|
+|[擴充的輸出物件](../cmdlet/extending-output-objects.md)|如何擴充 PowerShell 物件。 如需詳細資訊，請參閱[需 Types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)|
+|[註冊 Cmdlet](../cmdlet/registering-cmdlets.md)|如何將模組和嵌入式管理單元的 PowerShell 中提供。 如需詳細資訊，請參閱 <<c0> [ 模組和嵌入式管理單元](../cmdlet/modules-and-snap-ins.md)。|
+|[Cmdlet 從要求確認](../cmdlet/requesting-confirmation-from-cmdlets.md)|如何 cmdlet 與提供者的意見反應向使用者要求之前採取動作。|
+|[RuntimeDefinedParameter 類別](/dotnet/api/system.management.automation.runtimedefinedparameter)|執行階段參數宣告。|
+|[System.Management.Automation 命名空間](/dotnet/api/System.Management.Automation)|PowerShell API 命名空間的概觀。|
+|[Windows PowerShell 提供者概觀](../provider/windows-powershell-provider-overview.md)|會儲存有關用來存取資料的 PowerShell 提供者的概觀。|
+|[適用於 PowerShell Cmdlet 撰寫說明](../help/writing-help-for-windows-powershell-cmdlets.md)|如何撰寫 PowerShell 指令程式說明。|
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[PowerShell 類別](/dotnet/api/system.management.automation.powershell)
+
+[PowerShell Core API 參考](/dotnet/api/?view=pscore-6.2.0)
+
+[Windows PowerShell 程式設計人員指南](windows-powershell-programmer-s-guide.md)
+
+[撰寫 Windows PowerShell 模組的說明](../module/writing-help-for-windows-powershell-modules.md)
+
+[撰寫 Windows Powershell 提供者](../provider/writing-a-windows-powershell-provider.md)
+
+[Windows PowerShell API 參考](/dotnet/api/?view=powershellsdk-1.1.0)
+
+[Windows PowerShell 參考](../windows-powershell-reference.md)
