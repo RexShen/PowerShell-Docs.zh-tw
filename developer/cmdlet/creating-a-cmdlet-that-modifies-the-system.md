@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854924"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301393"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>建立可修改系統的 Cmdlet
 
@@ -59,7 +59,7 @@ public class StopProcCommand : Cmdlet
 
 ### <a name="extremely-destructive-actions"></a>極度破壞性動作
 
-有些作業是極度破壞性，例如重新格式化的作用中的硬碟磁碟分割。 在這些情況下，此 cmdlet 應該設定`ConfirmImpact`  =  `ConfirmImpact.High`宣告時[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性。 此設定會強制此 cmdlet 來要求使用者確認使用者尚未指定，即使`Confirm`參數。 不過，cmdlet 開發人員應避免過度使用`ConfirmImpact`為只可能破壞性，例如刪除使用者帳戶的作業。 請注意，如果`ConfirmImpact`設定為[System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High)。
+有些作業是極度破壞性，例如重新格式化的作用中的硬碟磁碟分割。 在這些情況下，此 cmdlet 應該設定`ConfirmImpact`  =  `ConfirmImpact.High`宣告時[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性。 此設定會強制此 cmdlet 來要求使用者確認使用者尚未指定，即使`Confirm`參數。 不過，cmdlet 開發人員應避免過度使用`ConfirmImpact`為只可能破壞性，例如刪除使用者帳戶的作業。 請注意，如果`ConfirmImpact`設定為[System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **高**。
 
 同樣地，某些作業不太可能會破壞性的雖然他們不要理論上修改 Windows PowerShell 外部系統的執行狀態。 此類指令程式可以設定`ConfirmImpact`要[System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0)。 這將會略過確認要求已要求使用者確認只有中度影響和具有強烈影響的作業。
 
@@ -278,11 +278,11 @@ if (criticalProcess &&!force)
 
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式設定
 
-Windows PowerShell cmdlet 使用.Net 物件之間傳遞資訊。 因此，cmdlet 可能需要定義自己的類型，或可能需要擴充現有的類型提供的另一個 cmdlet 的 cmdlet。 如需定義新的型別或擴充現有類型的詳細資訊，請參閱[延伸的物件類型與格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+Windows PowerShell cmdlet 使用.Net 物件之間傳遞資訊。 因此，cmdlet 可能需要定義自己的類型，或可能需要擴充現有的類型提供的另一個 cmdlet 的 cmdlet。 如需定義新的型別或擴充現有類型的詳細資訊，請參閱[延伸的物件類型與格式](/previous-versions//ms714665(v=vs.85))。
 
 ## <a name="building-the-cmdlet"></a>建置此指令程式
 
-在實作之後的 cmdlet，它必須向 Windows PowerShell 透過 Windows PowerShell 嵌入式管理單元。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+在實作之後的 cmdlet，它必須向 Windows PowerShell 透過 Windows PowerShell 嵌入式管理單元。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>測試 Cmdlet
 
@@ -354,9 +354,9 @@ Windows PowerShell cmdlet 使用.Net 物件之間傳遞資訊。 因此，cmdlet
 
 [加入處理命令列輸入的參數](./adding-parameters-that-process-command-line-input.md)
 
-[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[擴充物件類型和格式](/previous-versions//ms714665(v=vs.85))
 
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何註冊 Cmdlet、 提供者，以及裝載應用程式](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

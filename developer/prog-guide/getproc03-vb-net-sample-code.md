@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ff94c452-d4ec-4492-ac20-61ad52f8ae8c
 caps.latest.revision: 7
-ms.openlocfilehash: 0cfb5c203c97a4d20e7fadf8183e608e9e31b881
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a0a88ca517347a94fc81534caace6efa0f13fdd7
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081643"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301562"
 ---
 # <a name="getproc03-vbnet-sample-code"></a>GetProc03 (VB.NET) 範例程式碼
 
-下列程式碼顯示實作`Get-Process`cmdlet 可接受管線輸入。 此實作會定義`Name`接受管線輸入參數會從本機電腦，根據提供的名稱，擷取程序資訊，然後使用[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29)方法，將物件傳送至管線的輸出機制。
+下列程式碼顯示實作`Get-Process`cmdlet 可接受管線輸入。 此實作會定義`Name`接受管線輸入參數會從本機電腦，根據提供的名稱，擷取程序資訊，然後使用[WriteObject(System.Object,System.Boolean)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法，將物件傳送至管線的輸出機制。
 
 ## <a name="code-sample"></a>程式碼範例
 

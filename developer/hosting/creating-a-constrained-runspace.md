@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
-ms.openlocfilehash: 29f1be6a1215219ddd16367a31f528a4f0dbc2e3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083003"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301386"
 ---
 # <a name="creating-a-constrained-runspace"></a>建立受限 Runspace
 
@@ -109,7 +109,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="making-commands-private"></a>提供命令的私用
 
- 您也可以將命令私用，藉由設定它的[System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)屬性設[System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). 主應用程式和其他命令可以呼叫該命令，但應用程式的使用者不能。 在下列範例中， [Get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)是私用的命令。
+ 您也可以將命令私用，藉由設定它的[System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)屬性設[System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **私用**。 主應用程式和其他命令可以呼叫該命令，但應用程式的使用者不能。 在下列範例中， [Get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)是私用的命令。
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();
