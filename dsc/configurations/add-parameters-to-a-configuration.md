@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 資源, 資源庫, 設定
 title: 將參數新增至設定
-ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080249"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301520"
 ---
 # <a name="add-parameters-to-a-configuration"></a>將參數新增至設定
 
@@ -187,7 +187,7 @@ $State="Running"
 > [!NOTE]
 > 當使用 `validation` 屬性時，您不需要指定 `parameter` 屬性。
 
-您可以在 [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md) 中深入了解 `parameter` 和 validation 屬性。
+您可以在 [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters) 中深入了解 `parameter` 和 validation 屬性。
 
 ## <a name="fully-parameterized-configuration"></a>完全參數化的 Configuration
 

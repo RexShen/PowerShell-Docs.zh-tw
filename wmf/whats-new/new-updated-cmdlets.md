@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: 新增與更新的 Cmdlet
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855543"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298660"
 ---
 # <a name="new-and-updated-cmdlets"></a>新增與更新的 Cmdlet
 
@@ -39,17 +39,17 @@ Microsoft.PowerShell.Security 模組中新增了兩個新的 Cmdlet。
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>密碼編譯訊息語法 (CMS) Cmdlet
 
-密碼編譯訊息語法 Cmdlet 支援使用 IETF 標準格式加密和解密內容，進行密碼編譯保護訊息，如 [RFC5652](https://tools.ietf.org/html/rfc5652) 所述。
+密碼編譯訊息語法 Cmdlet 支援使用 IETF 標準格式加密和解密內容，進行密碼編譯保護訊息，如 [RFC5652](https://tools.ietf.org/html/rfc5652.html) 所述。
 
-CMS 加密標準會實作公開金錀密碼編譯，其中用於加密內容的金錀 (公開金錀) 與用於解密內容的金錀 (私密金鑰) 不同。
+CMS 加密標準會實作公開金錀密碼編譯，其中用於加密內容的金錀 (公開金錀  ) 與用於解密內容的金錀 (私密金鑰  ) 不同。
 
 公開金鑰可以廣泛共用，並非機密資料。 任何使用公開金鑰加密的內容只能使用私密金鑰來解密。 如需詳細資訊，請參閱[公開金鑰加密](https://en.wikipedia.org/wiki/Public-key_cryptography)。
 
 如需詳細資訊，請參閱：
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 憑證需要唯一的金鑰使用方法識別碼 (EKU) (例如「程式碼簽署」、「加密郵件」)，在 PowerShell 中將它們識別為資料加密憑證。 若要檢視憑證提供者中的文件加密憑證，您可以使用 `Get-ChildItem` 的 **DocumentEncryptionCert** 動態參數︰
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.

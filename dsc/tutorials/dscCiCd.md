@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 來建置持續整合和持續部署管線
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076460"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301501"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
 
@@ -22,10 +22,10 @@ ms.locfileid: "62076460"
 
 若要使用此範例，您應該熟悉下列各項知識：
 
-- CI-CD 概念。 如需詳細的參考資料，請參閱[發行管線模型](http://aka.ms/thereleasepipelinemodelpdf) \(英文\)。
+- CI-CD 概念。 如需詳細的參考資料，請參閱[發行管線模型](https://aka.ms/thereleasepipelinemodelpdf) \(英文\)。
 - [Git](https://git-scm.com/) 原始檔控制
 - [Pester](https://github.com/pester/Pester) 測試架構
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>您將需要
 
@@ -44,7 +44,7 @@ ms.locfileid: "62076460"
 ### <a name="tfssrv1"></a>TFSSrv1
 
 裝載 TFS 伺服器且您將定義組建和版本的電腦。
-此電腦上必須安裝 [Team Foundation Server 2017](https://www.visualstudio.com/tfs/)。
+此電腦上必須安裝 [Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/)。
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -74,7 +74,7 @@ ms.locfileid: "62076460"
 1. 在您的用戶端電腦上，於網頁瀏覽器中瀏覽至您的 TFS 伺服器。
 1. 在 TFS 中，[建立一個新的小組專案](/azure/devops/organizations/projects/create-project)並命名為 Demo_CI。
 
-   請確定將 [版本控制] 設定為 [Git]。
+   請確定將 [版本控制]  設定為 [Git]  。
 1. 在您的用戶端電腦上，使用下列命令為您剛在 TFS 中建立的儲存機制新增遠端：
 
    `git remote add tfs <YourTFSRepoURL>`
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 這會尋找[設定資料](../configurations/configData.md) (由 `DevEnv.ps1` 指令碼所建立) 中所有已定義為具備 `DNSServer` 角色的節點。
 
-您可以在 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 中深入閱讀 `Where` 方法
+您可以在 [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays) 中深入閱讀 `Where` 方法
 
 進行 CI 時，使用設定資料來定義節點相當重要，因為節點資訊在環境之間可能會有所變更，而使用設定資料則可讓您不須變更設定程式碼，即可輕鬆對節點資訊進行變更。
 
@@ -319,9 +319,9 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 既然我們已將程式碼上傳到 TFS 並查看其功能，現在即可開始定義組建。
 
-在這裡，我們將只涵蓋您將新增到組建中的建置步驟。 如需有關如何在 TFS 中建立組建定義的指示，請參閱[建立組建定義並將其排入佇列](/azure/devops/pipelines/get-started-designer) \(英文\)。
+在這裡，我們將只涵蓋您將新增到組建中的建置步驟。 如需有關如何在 TFS 中建立組建定義的指示，請參閱[建立組建定義並將其排入佇列](/azure/devops/pipelines/create-first-pipeline) \(英文\)。
 
-請建立一個名為 "InfraDNS" 的新組建定義 (選取 [空白] 範本)。
+請建立一個名為 "InfraDNS" 的新組建定義 (選取 [空白]  範本)。
 將下列步驟新增到您的組建定義中：
 
 - PowerShell 指令碼
@@ -333,24 +333,24 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 ### <a name="powershell-script"></a>PowerShell 指令碼
 
-1. 將 [類型] 屬性設定為 `File Path`。
-1. 將 [指令碼路徑] 屬性設定為 `initiate.ps1`。
-1. 將 `-fileName build` 新增到 [引數] 屬性。
+1. 將 [類型]  屬性設定為 `File Path`。
+1. 將 [指令碼路徑]  屬性設定為 `initiate.ps1`。
+1. 將 `-fileName build` 新增到 [引數]  屬性。
 
 此建置步驟會執行 `initiate.ps1` 檔案以呼叫 psake 建置指令碼。
 
 ### <a name="publish-test-results"></a>發行測試結果
 
-1. 將 [測試結果格式] 設定為 `NUnit`
-1. 將 [測試結果檔案] 設定為 `InfraDNS/Tests/Results/*.xml`
-1. 將 [測試回合標題] 設定為 `Unit`。
-1. 確定已選取 [啟用] 和 [永遠執行] 這兩個 [控制選項]。
+1. 將 [測試結果格式]  設定為 `NUnit`
+1. 將 [測試結果檔案]  設定為 `InfraDNS/Tests/Results/*.xml`
+1. 將 [測試回合標題]  設定為 `Unit`。
+1. 確定已選取 [啟用]  和 [永遠執行]  這兩個 [控制選項]  。
 
 此建置步驟會執行我們先前查看之 Pester 指令碼中的單元測試，然後將結果儲存在 `InfraDNS/Tests/Results/*.xml` 資料夾中。
 
 ### <a name="copy-files"></a>複製檔案
 
-1. 將下列每一行新增到 [內容] 中：
+1. 將下列每一行新增到 [內容]  中：
 
    ```
    initiate.ps1
@@ -359,26 +359,26 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
    **\Integration\**
    ```
 
-1. 將 [目標資料夾] 設定為 `$(Build.ArtifactStagingDirectory)\`
+1. 將 [目標資料夾]  設定為 `$(Build.ArtifactStagingDirectory)\`
 
 此步驟會將建置和測試指令碼複製到暫存目錄中，以便供下一個步驟發行成組建成品。
 
 ### <a name="publish-artifact"></a>發行成品
 
-1. 將 [要發行的路徑] 設定為 `$(Build.ArtifactStagingDirectory)\`
-1. 將 [成品名稱] 設定為 `Deploy`
-1. 將 [成品類型] 設定為 `Server`
-1. 在 [控制選項] 中選取 [`Enabled`]
+1. 將 [要發行的路徑]  設定為 `$(Build.ArtifactStagingDirectory)\`
+1. 將 [成品名稱]  設定為 `Deploy`
+1. 將 [成品類型]  設定為 `Server`
+1. 在 [控制選項]  中選取 [`Enabled`]
 
 ## <a name="enable-continuous-integration"></a>啟用持續整合
 
 現在我們將設定一個觸發程序，此觸發程序會在每當有任何變更簽入 Git 儲存機制的 `ci-cd-example` 分支中時，便促使專案進行建置。
 
-1. 在 TFS 中，按一下 [建置及發行] 索引標籤
-1. 選取 `DNS Infra` 組建定義，然後按一下 [編輯]
-1. 按一下 [觸發程序] 索引標籤
-1. 選取 [持續整合 (CI)]，然後從分支下拉式清單中選取 `refs/heads/ci-cd-example`
-1. 按一下 [儲存]，然後按一下 [確定]
+1. 在 TFS 中，按一下 [建置及發行]  索引標籤
+1. 選取 `DNS Infra` 組建定義，然後按一下 [編輯] 
+1. 按一下 [觸發程序]  索引標籤
+1. 選取 [持續整合 (CI)]  ，然後從分支下拉式清單中選取 `refs/heads/ci-cd-example`
+1. 按一下 [儲存]  ，然後按一下 [確定] 
 
 現在 TFS Git 儲存機制中的任何變更都會觸發自動化建置。
 
@@ -387,8 +387,8 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 讓我們來建立一個發行定義，以便在每次簽入程式碼時，都將專案部署到開發環境。
 
 若要這樣做，請新增一個與您先前建立之 `InfraDNS` 組建定義關聯的新發行定義。
-請務必選取 [持續部署]，以便在每次完成新組建時便觸發新的發行。
-([什麼是發行管線？](/azure/devops/pipelines/release/what-is-release-management))，並設定它，如下所示：
+請務必選取 [持續部署]  ，以便在每次完成新組建時便觸發新的發行。
+([什麼是發行管線？](/azure/devops/pipelines/release/))，並設定它，如下所示：
 
 將下列步驟新增到發行定義中：
 
@@ -400,22 +400,22 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 ### <a name="powershell-script"></a>PowerShell 指令碼
 
-1. 將 [指令碼路徑] 欄位設定為 `$(Build.DefinitionName)\Deploy\initiate.ps1"`
-1. 將 [引數] 欄位設定為 `-fileName Deploy`
+1. 將 [指令碼路徑]  欄位設定為 `$(Build.DefinitionName)\Deploy\initiate.ps1"`
+1. 將 [引數]  欄位設定為 `-fileName Deploy`
 
 ### <a name="first-publish-test-results"></a>第一個發行測試結果
 
-1. 為 [測試結果格式] 欄位選取 [`NUnit`]
-1. 將 [測試結果檔案] 欄位設定為 `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
-1. 將 [測試回合標題] 設定為 `Integration`
-1. 在 [控制選項] 底下，選取 [永遠執行]
+1. 為 [測試結果格式]  欄位選取 [`NUnit`]
+1. 將 [測試結果檔案]  欄位設定為 `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml`
+1. 將 [測試回合標題]  設定為 `Integration`
+1. 在 [控制選項]  底下，選取 [永遠執行] 
 
 ### <a name="second-publish-test-results"></a>第二個發行測試結果
 
-1. 為 [測試結果格式] 欄位選取 [`NUnit`]
-1. 將 [測試結果檔案] 欄位設定為 `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
-1. 將 [測試回合標題] 設定為 `Acceptance`
-1. 在 [控制選項] 底下，選取 [永遠執行]
+1. 為 [測試結果格式]  欄位選取 [`NUnit`]
+1. 將 [測試結果檔案]  欄位設定為 `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml`
+1. 將 [測試回合標題]  設定為 `Acceptance`
+1. 在 [控制選項]  底下，選取 [永遠執行] 
 
 ## <a name="verify-your-results"></a>驗證您的結果
 
