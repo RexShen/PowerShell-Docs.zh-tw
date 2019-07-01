@@ -1,25 +1,25 @@
 ---
 title: 使用 Visual Studio Code 來進行遠端編輯與偵錯
 description: 使用 Visual Studio Code 來進行遠端編輯與偵錯
-ms.date: 08/06/2018
-ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.date: 06/13/2019
+ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086660"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263985"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>使用 Visual Studio Code 來進行遠端編輯與偵錯
 
-對於已經熟悉使用 ISE 的人，可能還記得可以從整合式主控台執行 `psedit file.ps1` 以直接在 ISE 中開啟檔案 (本機或遠端)。
+對於熟悉使用 ISE 的人，可能還記得可以從整合式主控台執行 `psedit file.ps1`，以直接在 ISE 中開啟檔案 (本機或遠端)。
 
-其實適用於 VSCode 的 PowerShell 延伸模組中也提供此功能。 此指南將示範如何執行此動作。
+適用於 VSCode 的 PowerShell 延伸模組中也提供此功能。 此指南將示範如何執行此動作。
 
 ## <a name="prerequisites"></a>必要條件
 
 此指南假設您有：
 
-- 您擁有存取權的遠端資源 (例如：VM、容器)
+- 您有權存取的遠端資源 (例如：VM、容器)
 - 在遠端資源和主機電腦中執行的 PowerShell
 - VSCode 和適用於 VSCode 的 PowerShell 延伸模組
 
@@ -27,25 +27,31 @@ ms.locfileid: "62086660"
 
 透過 WinRM、PowerShell Direct 或 SSH 連線至遠端電腦時，也可以使用此功能。 如果想要使用 SSH，但現在使用 Windows，請參閱 [SSH 的 Win32 版本](https://github.com/PowerShell/Win32-OpenSSH) \(英文\)！
 
-## <a name="lets-go"></a>開始
+> [!IMPORTANT]
+> `Open-EditorFile` 和 `psedit` 命令只能在適用於 VSCode 的 PowerShell 延伸模組所建立的 **PowerShell 整合式主控台**中運作。
 
-在此節中，我將透過 MacBook Pro 逐步示範並說明對 Azure 中執行的 Ubuntu VM 進行遠端編輯和偵錯。 我可能不會再使用 Windows 示範一次，不過**程序完全相同**。
+## <a name="usage-examples"></a>使用範例
+
+這些範例將示範如何從 MacBook Pro，對在 Azure 中執行的 Ubuntu VM 進行遠端編輯和偵錯。 此程序在 Windows 上完全相同。
 
 ### <a name="local-file-editing-with-open-editorfile"></a>使用 Open-EditorFile 編輯本機檔案
 
 當適用於 VSCode 的 PowerShell 延伸模組已啟動且 PowerShell 整合式主控台已開啟之後，我們可以輸入 `Open-EditorFile foo.ps1` 或 `psedit foo.ps1`，以直接在編輯器中開啟本機 foo.ps1 檔案。
 
-![Open-EditorFile foo.ps1 可在本機運作](https://user-images.githubusercontent.com/2644648/34895897-7c2c46ac-f79c-11e7-9410-a252aff52f13.png)
+![Open-EditorFile foo.ps1 可在本機運作](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
-> foo.ps1 必須已經存在。
+> `foo.ps1` 檔案必須已經存在。
 
 我們可以從那裡：
 
-將中斷點新增至巡覽邊![將中斷點新增至巡覽邊](https://user-images.githubusercontent.com/2644648/34895893-7bdc38e2-f79c-11e7-8026-8ad53f9a1bad.png) \(英文\)，
+- 在巡覽邊新增中斷點
 
-然後按 F5 以針對 PowerShell 指令碼進行偵錯。
-![針對 PowerShell 本機指令碼進行偵錯](https://user-images.githubusercontent.com/2644648/34895894-7bedb874-f79c-11e7-9180-7e0dc2d02af8.png) \(英文\)
+  ![在巡覽邊新增中斷點](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+
+- 按 F5 以針對 PowerShell 指令碼進行偵錯。
+
+  ![針對 PowerShell 本機指令碼進行偵錯](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 偵錯時，可以與偵錯主控台互動，查看左側範圍中和所有其他標準偵錯工具中的變數。
 
@@ -61,22 +67,26 @@ ms.locfileid: "62086660"
 - `Enter-PSSession -ContainerId foo` 和 `Enter-PSSession -VmId foo` 會透過 PowerShell Direct 啟動一個工作階段
 - `Enter-PSSession -HostName foo` 會透過 SSH 啟動一個工作階段
 
-如需 `Enter-PSSession` 的詳細資訊，請參閱[這裡](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6) \(英文\) 的文件。
+如需詳細資訊，請參閱適用於 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) 的文件。
 
-我將使用 SSH 進行遠端處理，因為我要從 macOS 前往 Azure 中的 Ubuntu VM。
+由於我們要從 macOS 前往 Azure 中的 Ubuntu VM，因此會使用 SSH 進行遠端處理。
 
-首先，在整合式主控台中執行我們的 Enter-PSSession。 您將會知道您正在工作階段中，因為 `[something]` 會顯示在您系統提示的左邊。
+首先，在整合式主控台中，執行 `Enter-PSSession`。 當 `[<hostname>]` 顯示於您提示字元的最左邊時，表示您已連線到遠端工作階段。
 
-![呼叫 Enter-PSSession](https://user-images.githubusercontent.com/2644648/34895896-7c18e0bc-f79c-11e7-9b36-6f4bd0e9b0db.png)
+![呼叫 Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
-我們可以從這裡依據之前編輯好的本機指令碼，確切地執行每個步驟。
+現在，我們可以執行與編輯本機指令碼相同的步驟。
 
-1. 執行 `Open-EditorFile test.ps1` 或 `psedit test.ps1` 以開啟遠端 `test.ps1` 檔案 ![Open-EditorFile the test.ps1 檔案](https://user-images.githubusercontent.com/2644648/34895898-7c3e6a12-f79c-11e7-8bdf-549b591ecbcb.png)
-2. 編輯檔案/設定中斷點 ![編輯並設定中斷點](https://user-images.githubusercontent.com/2644648/34895892-7bb68246-f79c-11e7-8c0a-c2121773afbb.png)
-3. 開始針對遠端檔案進行偵錯 (F5)
+1. 執行 `Open-EditorFile test.ps1` 或 `psedit test.ps1` 以開啟遠端 `test.ps1` 檔案
 
-![針對遠端檔案進行偵錯](https://user-images.githubusercontent.com/2644648/34895895-7c040782-f79c-11e7-93ea-47724fa5c10d.png)
+  ![Open-EditorFile test.ps1 檔案](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
-這樣就完成了！ 我們希望此指南能協助您解決和在 VSCode 中進行遠端偵錯和編輯 PowerShell 有關的問題。
+1. 編輯檔案/設定中斷點
 
-如果您有任何問題，歡迎前往 [GitHub 存放庫](http://github.com/powershell/vscode-powershell) \(英文\) 提出問題。
+   ![編輯並設定中斷點](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+
+1. 開始針對遠端檔案進行偵錯 (F5)
+
+   ![針對遠端檔案進行偵錯](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+
+如果您有任何問題，您可以在 [GitHub 存放庫](https://github.com/powershell/vscode-powershell) \(英文\) 中提出問題。
