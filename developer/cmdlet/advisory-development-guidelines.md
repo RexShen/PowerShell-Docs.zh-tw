@@ -59,7 +59,7 @@ Cmdlet 應該定義`Credential`參數表示的認證。 這個參數必須是型
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>名稱比對 Cmdlet 名稱在 Cmdlet 類別
 
-當您命名實作指令程式的.NET Framework 類別時，將類別命名為"*\<動詞 >**\<名詞 >**\<命令 >*」，您用來取代*\<動詞 >* 並*\<名詞 >* 預留位置取代為用於的 cmdlet 名稱的名詞與動詞命令。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式藉由呼叫類別`GetProcessCommand`。
+當您命名實作指令程式的.NET Framework 類別時，將類別命名為" *\<動詞 > **\<名詞 >** \<命令 >* ，您用來取代 *\<動詞 >* 並 *\<名詞 >* 預留位置取代為用於的 cmdlet 名稱的名詞與動詞命令。 例如， [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式藉由呼叫類別`GetProcessCommand`。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>如果沒有管線輸入覆寫 BeginProcessing 方法 (AC02)
 
