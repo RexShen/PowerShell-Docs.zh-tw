@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080897"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734858"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell 提供者概觀
 
@@ -27,7 +27,7 @@ Windows PowerShell 提供者可讓任何資料存放區，如同它已掛接的�
 
 ## <a name="type-of-providers"></a>提供者的型別
 
-有數種類型的提供者，其中每個提供不同的層級的功能。 提供者會實作為類別衍生自其中一個子系[System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider)類別。 如需不同類型的提供者資訊，請參閱[提供者類型](./provider-types.md)。
+有數種類型的提供者，其中每個提供不同的層級的功能。 提供者會實作為類別衍生自其中一個子系[System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider**類別。 如需不同類型的提供者資訊，請參閱[提供者類型](./provider-types.md)。
 
 ## <a name="provider-cmdlets"></a>提供者 Cmdlet
 
@@ -63,7 +63,7 @@ Windows PowerShell 提供者可讓任何資料存放區，如同它已掛接的�
 
 ## <a name="provider-capabilities"></a>提供者功能
 
-[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別定義數個提供者可支援的功能。 其中包括能夠使用萬用字元，篩選項目，並支援交易。 若要指定提供者功能，新增的值清單[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別，與邏輯結合`OR`作業，做為[System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)屬性 （屬性的第二個參數） [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性提供者類別。 例如，下列屬性會指定提供者支援[System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess)和[System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions)功能。
+[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別定義數個提供者可支援的功能。 其中包括能夠使用萬用字元，篩選項目，並支援交易。 若要指定提供者功能，新增的值清單[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉型別，與邏輯結合`OR`作業，做為[System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)屬性 （屬性的第二個參數） [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性提供者類別。 例如，下列屬性會指定提供者支援[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**和[System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **交易**功能。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]

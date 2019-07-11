@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
 caps.latest.revision: 6
-ms.openlocfilehash: 0e80f4d850a7c6dc044526a56b92f16eea4040b5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1fc91174a959d6acc306330afb8d5c2e7a9a860
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081371"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734997"
 ---
 # <a name="runspace03-c-code-sample"></a>RunSpace03 (C#) 程式碼範例
 
-以下是C#中所述的主控台應用程式的原始程式碼[建立主控台應用程式，執行指定指令碼](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。 這個範例會使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行的指令碼，擷取處理資訊，請使用傳遞至指令碼的程序名稱的清單。 它會顯示如何將輸入的物件傳遞至指令碼以及如何擷取錯誤物件，以及輸出物件。
+以下是C#中所述的主控台應用程式的原始程式碼[建立主控台應用程式，執行指定指令碼](fd)。 這個範例會使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行的指令碼，擷取處理資訊，請使用傳遞至指令碼的程序名稱的清單。 它會顯示如何將輸入的物件傳遞至指令碼以及如何擷取錯誤物件，以及輸出物件。
 
 > [!NOTE]
 > 您可以下載C#此範例使用的 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的原始程式檔 (runspace03.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。

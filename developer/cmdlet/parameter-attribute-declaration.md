@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067547"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735144"
 ---
 # <a name="parameter-attribute-declaration"></a>參數屬性宣告
 
@@ -32,17 +32,17 @@ ms.locfileid: "62067547"
 
 #### <a name="parameters"></a>參數
 
-`Mandatory` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 表示需要 cmdlet 參數。 如果未提供必要的參數，叫用 cmdlet 時，Windows PowerShell 會提示使用者輸入的參數值。 預設值為 `false`。
+`Mandatory` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 表示需要 cmdlet 參數。 如果未提供必要的參數，叫用 cmdlet 時，Windows PowerShell 會提示使用者輸入的參數值。 預設為 `false`。
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) 選擇性具名參數。 指定此 cmdlet 的參數所屬的參數集合。 如果未不指定任何參數集，則參數所屬的所有參數集。
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) 選擇性具名參數。 指定在 Windows PowerShell 命令中參數的位置。
+`Position` ([System.Int32](/dotnet/api/System.Int32)) 選擇性具名參數。 指定在 Windows PowerShell 命令中參數的位置。
 
-`ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出 cmdlet 參數接受從管線物件，其值。 指定此關鍵字，如果 cmdlet 會在存取完整的物件，不只是物件的屬性。 預設值為 `false`。
+`ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出 cmdlet 參數接受從管線物件，其值。 指定此關鍵字，如果 cmdlet 會在存取完整的物件，不只是物件的屬性。 預設為 `false`。
 
-`ValueFromPipelineByPropertyName` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出 cmdlet 參數接受從管線物件具有相同名稱或相同的別名作為此參數的屬性及其值。 例如，如果 cmdlet 不會有`Name`參數和管線的物件也有`Name`屬性、 值`Name`屬性會指派給`Name`指令程式參數。 預設值為 `false`。
+`ValueFromPipelineByPropertyName` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出 cmdlet 參數接受從管線物件具有相同名稱或相同的別名作為此參數的屬性及其值。 例如，如果 cmdlet 不會有`Name`參數和管線的物件也有`Name`屬性、 值`Name`屬性會指派給`Name`指令程式參數。 預設為 `false`。
 
-`ValueFromRemainingArguments` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出 cmdlet 參數接受所有剩餘的引數傳遞至 cmdlet。 預設值為 `false`。
+`ValueFromRemainingArguments` ([System.Boolean](/dotnet/api/System.Boolean)) 選擇性具名參數。 `True` 指出 cmdlet 參數接受所有剩餘的引數傳遞至 cmdlet。 預設為 `false`。
 
 `HelpMessage` 選擇性具名參數。 指定參數的簡短描述。 指令程式會執行，且未指定必要的參數時，Windows PowerShell 就會顯示此訊息。
 

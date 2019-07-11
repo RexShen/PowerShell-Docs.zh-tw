@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080878"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734853"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell 提供者快速入門
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>實作 NewDrive
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)由 Windows PowerShell 引擎會呼叫方法，當使用者呼叫[Microsoft.PowerShell.Commands.New Persist](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)cmdlet 並指定您的提供者的名稱。 PSDriveInfo 傳遞的參數是由 Windows PowerShell 引擎，且此方法傳回新的磁碟機至 Windows PowerShell 引擎。 這個方法必須宣告上面所建立的類別內。
+[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)由 Windows PowerShell 引擎會呼叫方法，當使用者呼叫[Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand) cmdlet 並指定您的提供者的名稱。 PSDriveInfo 傳遞的參數是由 Windows PowerShell 引擎，且此方法傳回新的磁碟機至 Windows PowerShell 引擎。 這個方法必須宣告上面所建立的類別內。
 
 方法會先檢查以確定磁碟機物件和傳遞的磁碟機根目錄都存在，傳回`null`如果其中任一不這樣做。 它會使用 AccessDBPSDriveInfo 的內部類別的建構函式來建立新的磁碟機和代表存取資料庫的磁碟機的連線。
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>實作 RemoveDrive
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)由 Windows PowerShell 引擎會呼叫方法，當使用者呼叫[Microsoft.PowerShell.Commands.Remove New-psdrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive) cmdlet。 此提供者中的方法關閉存取資料庫的連接。
+[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)由 Windows PowerShell 引擎會呼叫方法，當使用者呼叫[Microsoft.PowerShell.Commands.RemovePSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand) cmdlet。 此提供者中的方法關閉存取資料庫的連接。
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

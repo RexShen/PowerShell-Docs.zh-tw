@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067037"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735071"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell 錯誤記錄
 
@@ -60,9 +60,9 @@ ms.locfileid: "62067037"
 
 ## <a name="error-category"></a>錯誤類別目錄
 
-當您建立錯誤記錄時，指定使用其中一個常數所定義的錯誤類別目錄[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉型別。 Windows PowerShell 使用的錯誤類別來顯示資訊時發生錯誤，當使用者設定`$ErrorView`變數設為`"CategoryView"`。
+當您建立錯誤記錄時，指定使用其中一個常數所定義的錯誤類別目錄[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列舉型別。 Windows PowerShell 使用的錯誤類別來顯示資訊時發生錯誤，當使用者設定`$ErrorView`變數設為`"CategoryView"`。
 
-請避免使用[System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified)常數。 如果您有任何資訊或造成錯誤的作業相關的錯誤，選擇最能描述錯誤或作業類別目錄，即使此分類不是個完美組合。
+請避免使用[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified**常數。 如果您有任何資訊或造成錯誤的作業相關的錯誤，選擇最能描述錯誤或作業類別目錄，即使此分類不是個完美組合。
 
 Windows PowerShell 所顯示的資訊稱為 「 類別目錄檢視的字串，並建置屬性的[System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)類別。 (這個類別經由錯誤[System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)屬性。)
 
@@ -72,7 +72,7 @@ Windows PowerShell 所顯示的資訊稱為 「 類別目錄檢視的字串，�
 
 下列清單描述所顯示的資訊：
 
-- 類別：Windows PowerShell 定義[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)常數。
+- 類別：Windows PowerShell 定義[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)常數。
 
 - TargetName:依預設，物件的名稱 cmdlet 已處理時，發生錯誤。 或者，另一個 cmdlet 定義的字串。
 
@@ -88,9 +88,9 @@ Windows PowerShell 所顯示的資訊稱為 「 類別目錄檢視的字串，�
 
 取代訊息由提供[System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)物件。 因為它們提供可供 Windows PowerShell 的其他當地語系化資訊，請使用此物件的下列建構函式的其中一個選項。
 
-- [ErrorDetails.ErrorDetails (Cmdlet、 字串、 字串、 物件\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29 嗎？Displayproperty = Fullname>](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29):使用這個建構函式，如果您範本字串的 cmdlet 採用相同的組件中的資源字串，或如果您想要載入的覆寫透過範本字串[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法。
+- [ErrorDetails(Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___):使用這個建構函式，如果您範本字串的 cmdlet 採用相同的組件中的資源字串，或如果您想要載入的覆寫透過範本字串[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法。
 
-- [ErrorDetails.ErrorDetails (組件、 字串、 字串、 物件\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29 嗎？Displayproperty = Fullname>](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29):如果範本字串在另一個組件中，且您不會載入它的覆寫透過使用這個建構函式[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)。
+- [ErrorDetails (組件、 字串、 字串、 Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___):如果範本字串在另一個組件中，且您不會載入它的覆寫透過使用這個建構函式[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)。
 
 取代訊息應該符合.NET Framework 設計方針，以寫入有些許不同的例外狀況訊息。 應該將例外狀況訊息寫入為開發人員指導方針狀態。 這些取代應該將訊息寫入指令程式使用者。
 
@@ -110,7 +110,7 @@ Windows PowerShell 所顯示的資訊稱為 「 類別目錄檢視的字串，�
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081082"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734882"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell 程式設計&#39;指南
 
@@ -37,7 +37,7 @@ ms.locfileid: "62081082"
 
 Windows PowerShell 在開發過程中定義命令，您可以使用數種的類型。 這些命令包括： 函式、 篩選、 指令碼、 別名和可執行檔 （應用程式）。 本指南中討論的主要命令類型是簡單、 小型命令，稱為 「 cmdlet 」。 Windows PowerShell 提供一組指令程式，並完全支援 cmdlet 自訂以符合您的環境。 Windows PowerShell 執行階段會處理所有命令類型，就如同 cmdlet，使用管線。
 
-除了命令之外，Windows PowerShell 支援各種可自訂 Windows PowerShell 提供者，可以使用特定的 cmdlet 集。 在 Windows PowerShell 提供的主機應用程式 (Windows PowerShell.exe) 內設置殼層的作業，但同樣可以存取從自訂主應用程式，您可以開發以符合特定需求。 如需詳細資訊，請參閱 < [Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
+除了命令之外，Windows PowerShell 支援各種可自訂 Windows PowerShell 提供者，可以使用特定的 cmdlet 集。 在 Windows PowerShell 提供的主機應用程式 (Windows PowerShell.exe) 內設置殼層的作業，但同樣可以存取從自訂主應用程式，您可以開發以符合特定需求。 如需詳細資訊，請參閱 < [Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))。
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell Cmdlets
 
@@ -51,17 +51,17 @@ Cmdlet 是 Windows PowerShell 環境中使用的輕量型命令。 Windows Power
 
 Windows PowerShell 提供數個預設的 Windows PowerShell 提供者。 例如，登錄提供者所支援的瀏覽和操作的 Windows 登錄。 登錄機碼以項目，並登錄值會被視為屬性。
 
-如果您公開使用者需要存取的資料存放區，您可能需要撰寫自己的 Windows PowerShell 提供者中所述[建立的 Windows PowerShell 提供者](./how-to-create-a-windows-powershell-provider.md)。 如需詳細資訊 aboutWindows PowerShell 提供者，請參閱 < [Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
+如果您公開使用者需要存取的資料存放區，您可能需要撰寫自己的 Windows PowerShell 提供者中所述[建立的 Windows PowerShell 提供者](./how-to-create-a-windows-powershell-provider.md)。 如需詳細資訊 aboutWindows PowerShell 提供者，請參閱 < [Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))。
 
 ### <a name="host-application"></a>主應用程式
 
 Windows PowerShell 包含預設主控件應用程式 powershell.exe，這是主控台應用程式與使用者互動和裝載 Windows PowerShell 執行階段使用的主控台視窗。
 
-很少會您要撰寫您自己的主應用程式，適用於 Windows PowerShell，雖然支援自訂。 您可能需要自己的應用程式的其中一種情況時，您有預設主控件應用程式所提供的介面比更豐富的 GUI 介面的需求。 當您要根據命令列中的 GUI，您可能也想自訂的應用程式。 如需詳細資訊，請參閱 <<c0> [ 如何建立 Windows PowerShell 主應用程式](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)。
+很少會您要撰寫您自己的主應用程式，適用於 Windows PowerShell，雖然支援自訂。 您可能需要自己的應用程式的其中一種情況時，您有預設主控件應用程式所提供的介面比更豐富的 GUI 介面的需求。 當您要根據命令列中的 GUI，您可能也想自訂的應用程式。 如需詳細資訊，請參閱 <<c0> [ 如何建立 Windows PowerShell 主應用程式](/powershell/developer/hosting/writing-a-windows-powershell-host-application)。
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell 執行階段
 
-Windows PowerShell 執行階段是實作命令處理的執行引擎。 它包含的類別提供的主應用程式和 Windows PowerShell 命令和提供者之間的介面。 Windows PowerShell 執行階段會實作為 runspace 物件，目前的 Windows PowerShell 工作階段，也就是殼層和命令執行的操作環境。 作業的詳細資訊，請參閱[Windows PowerShell 的運作方式](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
+Windows PowerShell 執行階段是實作命令處理的執行引擎。 它包含的類別提供的主應用程式和 Windows PowerShell 命令和提供者之間的介面。 Windows PowerShell 執行階段會實作為 runspace 物件，目前的 Windows PowerShell 工作階段，也就是殼層和命令執行的操作環境。 作業的詳細資訊，請參閱[Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))。
 
 ### <a name="windows-powershell-language"></a>Windows PowerShell 語言
 
@@ -81,7 +81,7 @@ Windows PowerShell 提供各種不同的物件，例如.NET 和 XML 物件的存
 
   ETS，您可以使用建立有彈性的新 「 類型 」，與 Windows PowerShell 語言相容。 如果您是.NET 開發人員，也可以搭配物件使用相同的語意，在 Windows PowerShell 語言套用至指令碼，例如，若要判斷物件是否評估為`true`。
 
-  如需有關 ETS 和 Windows PowerShell 如何使用物件的詳細資訊，請參閱[Windows PowerShell 物件概念](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353)。
+  如需有關 ETS 和 Windows PowerShell 如何使用物件的詳細資訊，請參閱[Windows PowerShell 物件概念](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)。
 
 ## <a name="programming-for-windows-powershell"></a>適用於 Windows PowerShell 的程式設計
 
@@ -100,7 +100,7 @@ Windows PowerShell 會定義它的程式碼的命令、 提供者，以及其他
 |主題|定義|
 |-----------|----------------|
 |[如何建立 Windows PowerShell 提供者](./how-to-create-a-windows-powershell-provider.md)|本節說明如何建置適用於 Windows PowerShell 的 Windows PowerShell 提供者。|
-|[如何建立 Windows PowerShell 主應用程式](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|本章節描述如何撰寫操作 runspace 的主應用程式，以及撰寫實作自己的自訂主機的主機應用程式。|
+|[如何建立 Windows PowerShell 主應用程式](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|本章節描述如何撰寫操作 runspace 的主應用程式，以及撰寫實作自己的自訂主機的主機應用程式。|
 |[如何建立 Windows PowerShell 嵌入式管理單元](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|本章節描述如何建立一個嵌入式管理單元，可用來註冊組件中的所有 cmdlet 和提供者，以及如何建立自訂的嵌入式管理單元。|
 |[如何建立主控台命令介面](./how-to-create-a-console-shell.md)|本節說明如何建立不是可延伸的主控台介面。|
 |[Windows PowerShell 概念](./windows-powershell-concepts.md)|本節包含可協助您了解 Windows PowerShell，從開發人員的觀點來看的概念性資訊。|

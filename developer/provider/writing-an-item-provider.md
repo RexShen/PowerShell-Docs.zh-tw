@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080810"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734709"
 ---
 # <a name="writing-an-item-provider"></a>撰寫項目提供者
 
@@ -25,7 +25,7 @@ ms.locfileid: "62080810"
 
 ## <a name="implementing-item-methods"></a>實作的項目方法
 
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別會公開數種方法，可用來存取和操作資料存放區中的項目。 如需這些方法的完整清單，請參閱 < [ItemCmdletProvider 方法](http://msdn.microsoft.com/library/system.management.automation.provider.itemcmdletprovider_methods\(v=vs.85\).aspx)。 在此範例中，我們會實作四種方法。 [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)取得位於指定路徑的項目。 [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)設定所指定項目的值。 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)會檢查在指定的路徑是否存在的項目。 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)會檢查以查看它對應到資料存放區中的位置路徑。
+[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別會公開數種方法，可用來存取和操作資料存放區中的項目。 如需這些方法的完整清單，請參閱 < [ItemCmdletProvider 方法](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods)。 在此範例中，我們會實作四種方法。 [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)取得位於指定路徑的項目。 [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)設定所指定項目的值。 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)會檢查在指定的路徑是否存在的項目。 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)會檢查以查看它對應到資料存放區中的位置路徑。
 
 > [!NOTE]
 > 本主題中的資訊是根據[Windows PowerShell 提供者的快速入門](./windows-powershell-provider-quickstart.md)。 本主題並未涵蓋如何設定提供者專案的基本概念，或如何實作方法繼承自[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別，建立和移除磁碟機。
@@ -46,7 +46,7 @@ ms.locfileid: "62080810"
 
 ### <a name="implementing-getitem"></a>實作 GetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)當使用者呼叫 PowerShell 引擎會呼叫[Microsoft.PowerShell.Commands.Get 項目](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)cmdlet 您提供者。 方法會傳回位於指定路徑的項目。 在存取資料庫範例中，方法會檢查項目是否在磁碟機本身，在資料庫或資料庫中的資料列的資料表。 方法會將傳送之項目的 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)當使用者呼叫 PowerShell 引擎會呼叫[Microsoft.PowerShell.Commands.GetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.getitemcommand) cmdlet您的提供者。 方法會傳回位於指定路徑的項目。 在存取資料庫範例中，方法會檢查項目是否在磁碟機本身，在資料庫或資料庫中的資料列的資料表。 方法會將傳送之項目的 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法。
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,9 +85,9 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>實作 SetItem
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)當使用者呼叫，方法由 PowerShell 引擎會呼叫呼叫[Microsoft.PowerShell.Commands.Set 項目](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)cmdlet. 在指定的路徑，它就會設定項目的值。
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)當使用者呼叫，方法由 PowerShell 引擎會呼叫呼叫[Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand)cmdlet。 在指定的路徑，它就會設定項目的值。
 
-在存取資料庫範例中，合理的設定項目的值，只有當該項目是資料列，因此這個方法會擲回[NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx)當項目不是一個資料列。
+在存取資料庫範例中，合理的設定項目的值，只有當該項目是資料列，因此這個方法會擲回[NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8)當項目不是一個資料列。
 
 ```csharp
 protected override void SetItem(string path, object values)
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>實作 ItemExists
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)當使用者呼叫 PowerShell 引擎便會呼叫方法[Microsoft.PowerShell.Commands.Test 路徑](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)cmdlet。 方法會判斷是否有項目在指定的路徑。 如果項目不存在，此方法將它傳遞給 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)當使用者呼叫 PowerShell 引擎便會呼叫方法[Microsoft.PowerShell.Commands.TestPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.Testpathcommand)cmdlet。 方法會判斷是否有項目在指定的路徑。 如果項目不存在，此方法將它傳遞給 PowerShell 引擎藉由呼叫[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)。
 
 ```csharp
 protected override bool ItemExists(string path)

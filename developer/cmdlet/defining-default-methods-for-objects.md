@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: fa0f0371856d8723af7ec17a4306de209a481a18
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068210"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733989"
 ---
 # <a name="defining-default-methods-for-objects"></a>定義物件的預設方法
 
@@ -26,7 +26,7 @@ ms.locfileid: "62068210"
 
 程式碼方法參考.NET Framework 物件的靜態方法。
 
-在下列範例中， **ConvertLargeIntegerToInt64**方法會加入至[System.Xml.Xmlnode 嗎？Displayproperty = Fullname>](/dotnet/api/System.Xml.XmlNode)型別。 [CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05)項目做為程式碼方法定義的擴充的方法。 [名稱](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)項目會指定擴充方法的名稱。 此外， [CodeReference](http://msdn.microsoft.com/en-us/70017b85-18d2-4f55-8357-92f309d5618b)項目會指定靜態方法。 (您也可以加入[CodeMethod](http://msdn.microsoft.com/en-us/1ea9b031-bbcf-4e35-b497-bf30fa0b1b05)的成員的項目[成員組](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)項目。)
+在下列範例中， **ConvertLargeIntegerToInt64**方法會加入至[System.Xml.Xmlnode 嗎？Displayproperty = Fullname>](/dotnet/api/System.Xml.XmlNode)型別。 [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)項目做為程式碼方法定義的擴充的方法。 [名稱](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)項目會指定擴充方法的名稱。 此外， [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)項目會指定靜態方法。 (您也可以加入[PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)的成員的項目[PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)項目。)
 
 ```xml
 <Type>
@@ -45,7 +45,7 @@ ms.locfileid: "62068210"
 
 ## <a name="script-methods"></a>指令碼方法
 
-指令碼方法定義的方法，其值是指令碼的輸出。 在下列範例中， **ConvertToDateTime**方法會加入至[System.Management.Managementobject 嗎？Displayproperty = Fullname>](/dotnet/api/System.Management.ManagementObject)型別。 [ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c)項目做為指令碼方法定義的擴充的方法。 [名稱](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)項目會指定擴充方法的名稱。 此外，[指令碼](http://msdn.microsoft.com/en-us/1937ad1b-bb2b-4512-9864-01fc0767d46f)項目會指定產生的方法值的指令碼。 (您也可以加入[ScriptMethod](http://msdn.microsoft.com/en-us/59f8160f-bc95-42f0-92e2-b16a616bc65c)的成員的項目[成員組](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)項目。)
+指令碼方法定義的方法，其值是指令碼的輸出。 在下列範例中， **ConvertToDateTime**方法會加入至[System.Management.Managementobject 嗎？Displayproperty = Fullname>](/dotnet/api/System.Management.ManagementObject)型別。 [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)項目做為指令碼方法定義的擴充的方法。 [名稱](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)項目會指定擴充方法的名稱。 此外，[指令碼](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script)項目會指定產生的方法值的指令碼。 (您也可以加入[PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)的成員的項目[PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)項目。)
 
 ```xml
 <Type>

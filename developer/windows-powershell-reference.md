@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080489"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733745"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell 參考
 
@@ -53,4 +53,4 @@ Windows PowerShell SDK 中，除了下列資源會提供詳細資訊。
 
 [System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)這個命名空間包含命名空間中的其他類別所使用的基底類別。 例如， [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)類別是基底類別[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)類別。
 
-[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)這個命名空間包含類別、 列舉和介面，可用來建立 Windows PowerShell runspace。 在此情況下，Windows PowerShell runspace 會是一或多個 Windows PowerShell 管線叫用 cmdlet 的內容。 亦即，cmdlet 運作的 Windows PowerShell runspace 的內容中。 如需詳細資訊 aboutWindows PowerShell runspace，請參閱 < [Windows PowerShell Runspace](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。
+[System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)這個命名空間包含類別、 列舉和介面，可用來建立 Windows PowerShell runspace。 在此情況下，Windows PowerShell runspace 會是一或多個 Windows PowerShell 管線叫用 cmdlet 的內容。 亦即，cmdlet 運作的 Windows PowerShell runspace 的內容中。 如需詳細資訊 aboutWindows PowerShell runspace，請參閱 < [Windows PowerShell Runspace](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。

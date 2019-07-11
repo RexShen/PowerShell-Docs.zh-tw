@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: 4d3cdccc0fe3e24b1221e41beef4821b613aab93
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855150"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735101"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 屬性宣告
 
@@ -31,9 +31,9 @@ ValidateLength 屬性會指定最小和最大的字元數的 cmdlet 參數引數
 
 #### <a name="parameters"></a>參數
 
-`MinLength` ([System.Integer](/dotnet/api/System.Integer)) 所需。 指定允許的字元數目下限。
+`MinLength` ([System.Int32](/dotnet/api/System.Int32)) 所需。 指定允許的字元數目下限。
 
-`MaxLength` ([System.Integer](/dotnet/api/System.Integer)) 所需。 指定允許的字元數目上限。
+`MaxLength` ([System.Int32](/dotnet/api/System.Int32)) 所需。 指定允許的字元數目上限。
 
 ## <a name="remarks"></a>備註
 

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 432105db021bd19f467f6a275b3ea9038fa82d5b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081388"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734992"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) 程式碼範例
 
-以下是 VB.NET 原始程式碼的主控台應用程式中所述[建立主控台應用程式，執行指定指令碼](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)。 這個範例會使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)来執行的指令碼，擷取處理序的資訊清單傳遞至指令碼的處理序名稱的類別。 它會顯示如何將輸入的物件傳遞至指令碼以及如何擷取錯誤物件，以及輸出物件。
+以下是 VB.NET 原始程式碼的主控台應用程式中所述[建立主控台應用程式，執行指定指令碼](fd)。 這個範例會使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)来執行的指令碼，擷取處理序的資訊清單傳遞至指令碼的處理序名稱的類別。 它會顯示如何將輸入的物件傳遞至指令碼以及如何擷取錯誤物件，以及輸出物件。
 
 > [!NOTE]
 > 您可以下載此範例的 VB.NET 原始程式檔 (runspace03.vb) 使用的 Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。

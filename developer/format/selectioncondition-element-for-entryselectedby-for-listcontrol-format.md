@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064096"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735079"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
@@ -42,7 +42,7 @@ ms.locfileid: "62064096"
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|描述|
 |-------------|-----------------|
 |[PropertyName ListEntry （格式） 的 EntrySelectedBy 的 SelectionCondition 的項目](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定觸發條件的.NET 屬性。|
 |[針對 ListEntry （格式） 的 EntrySelectedBy SelectionCondition 的指令碼區塊項目](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性的項目。<br /><br /> 指定的指令碼，就會觸發條件。|
@@ -77,6 +77,6 @@ ms.locfileid: "62064096"
 
 [ListEntry （格式） 的 EntrySelectedBy SelectionSetName 項目](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListEntry （格式） 的 EntrySelectedBy TypeName 項目](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[ListEntry （格式） 的 EntrySelectedBy TypeName 項目](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
 [撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)

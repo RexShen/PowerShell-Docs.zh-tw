@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081428"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735025"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) 程式碼範例
 
-如下的程式碼範例中所述的 runspace[建立主控台應用程式，執行指定命令](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e)。 若要這樣做，應用程式會叫用的 runspace，然後再叫用命令。 （請注意，此應用程式未指定 runspace 組態資訊，也不會它明確地建立管線）。叫用的命令是`Get-Process`cmdlet。
+如下的程式碼範例中所述的 runspace[建立主控台應用程式，執行指定命令](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)。 若要這樣做，應用程式會叫用的 runspace，然後再叫用命令。 （請注意，此應用程式未指定 runspace 組態資訊，也不會它明確地建立管線）。叫用的命令是`Get-Process`cmdlet。
 
 ## <a name="code-sample"></a>程式碼範例
 

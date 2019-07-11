@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854842"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733940"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>建立 Cmdlet 以存取資料存放區
 
@@ -72,7 +72,7 @@ private string[] paths;
 
 兩個[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性宣告`Path`參數屬於`ScriptParameterSet`而`PatternParameterSet`。 如需參數集的詳細資訊，請參閱[將參數集加入至指令程式](./adding-parameter-sets-to-a-cmdlet.md)。
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性會宣告`PSPath`別名，以供`Path`參數。 與其他指令程式，存取 Windows PowerShell 提供者的一致性，強烈建議宣告此別名。 如需詳細資訊 aboutWindows PowerShell 路徑，請參閱 「 PowerShell 路徑概念 」 中[Windows PowerShell 的運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)。
+[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性會宣告`PSPath`別名，以供`Path`參數。 與其他指令程式，存取 Windows PowerShell 提供者的一致性，強烈建議宣告此別名。 如需詳細資訊 aboutWindows PowerShell 路徑，請參閱 「 PowerShell 路徑概念 」 中[Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))。
 
 ### <a name="declaring-the-pattern-parameter"></a>宣告的模式參數
 
@@ -379,7 +379,7 @@ protected override void ProcessRecord()
 
 ## <a name="code-sample"></a>程式碼範例
 
-下列程式碼顯示這個版本的此選取 Str cmdlet 的實作。 請注意，此程式碼包含在 cmdlet 類別，由 cmdlet 所使用的私用方法的 Windows PowerShell 嵌入式管理單元程式碼用來註冊此 cmdlet。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 建置 Cmdlet](#building-the-cmdlet)。
+下列程式碼顯示這個版本的此選取 Str cmdlet 的實作。 請注意，此程式碼包含在 cmdlet 類別，由 cmdlet 所使用的私用方法的 Windows PowerShell 嵌入式管理單元程式碼用來註冊此 cmdlet。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 建置 Cmdlet](#Defining-the-Cmdlet-Class)。
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>建置此指令程式
 
-在實作之後的 cmdlet，您必須向 Windows PowerShell 透過 Windows PowerShell 嵌入式管理單元。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+在實作之後的 cmdlet，您必須向 Windows PowerShell 透過 Windows PowerShell 嵌入式管理單元。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>測試 Cmdlet
 
@@ -1214,7 +1214,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>另請參閱
 
-[如何建立 Windows PowerShell Cmdlet](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[如何建立 Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 [設計您的 Windows PowerShell 提供者](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Windows PowerShell 的運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))
 
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何註冊 Cmdlet、 提供者，以及裝載應用程式](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

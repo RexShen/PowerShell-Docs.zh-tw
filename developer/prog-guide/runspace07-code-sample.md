@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ad306d9-45c2-4d55-8e64-fdcba43402c5
 caps.latest.revision: 6
-ms.openlocfilehash: 064e7d7ea2ee173bbcdd75a9f3a6c12582afe17b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 232b282e366c9fad167686337696ef2ccd8b30d8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081286"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734953"
 ---
 # <a name="runspace07-code-sample"></a>RunSpace07 程式碼範例
 
-以下是原始程式碼，Runspace07 範例中所述[建立主控台應用程式，新增命令至管線](http://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e)。 此範例應用程式會建立 runspace，會建立管線，到管線中，新增兩個命令，然後執行管線的資料。 新增至管線的命令都`Get-Process`和`Measure-Object`cmdlet。
+以下是原始程式碼，Runspace07 範例中所述[建立主控台應用程式，新增命令至管線](https://msdn.microsoft.com/en-us/01eb7808-e97b-4905-80be-9e2fa38c262e)。 此範例應用程式會建立 runspace，會建立管線，到管線中，新增兩個命令，然後執行管線的資料。 新增至管線的命令都`Get-Process`和`Measure-Object`cmdlet。
 
 > [!NOTE]
 > 您可以下載C#使用 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的原始程式檔 (runspace07.cs)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
