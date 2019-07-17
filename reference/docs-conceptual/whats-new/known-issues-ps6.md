@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
-ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085961"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733836"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -55,7 +55,7 @@ PowerShell 指令碼的結尾必須是 `.ps1`，解譯器才能瞭解如何在�
 
 Linux/macOS 上的 PowerShell 使用 .NET Core，這是 Microsoft Windows 上完整 .NET Framework 的子集。 這相當重要，因為 PowerShell 可讓您直接存取基礎架構類型、方法等。因此，在 Windows 上執行的指令碼可能無法在非 Windows 平台上執行，因為架構差異的緣故。 如需有關 .NET Core Framework 的詳細資訊，請參閱 <https://dotnetfoundation.org/net-core> \(英文\)
 
-隨著 [.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/) 的推出，.NET Core 2.0 將會帶回許多出現在完整 .NET Framework 中的傳統類型和方法。 這意謂著 PowerShell Core 將能夠原封不動地載入許多傳統 Windows PowerShell 模組。 您可以從[這裡](https://github.com/PowerShell/PowerShell/projects/4)追蹤我們的 .NET Standard 2.0 相關工作。
+隨著 [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/) 的推出，.NET Core 2.0 將會帶回許多出現在完整 .NET Framework 中的傳統類型和方法。 這意謂著 PowerShell Core 將能夠原封不動地載入許多傳統 Windows PowerShell 模組。 您可以從[這裡](https://github.com/PowerShell/PowerShell/projects/4)追蹤我們的 .NET Standard 2.0 相關工作。
 
 ### <a name="redirection-issues"></a>重新導向問題
 
@@ -82,7 +82,7 @@ Linux/macOS 上的 PowerShell 不支援工作控制。
 
 WSMan 型遠端處理的工作是在 [psl-omi-provider](https://github.com/PowerShell/psl-omi-provider) 存放庫中進行的。
 
-PowerShell Core 也支援在所有平台上 (Windows、macOS 及 Linux) 透過 SSH 進行 PowerShell 遠端處理 (PSRP)。 雖然目前在生產環境中不支援此功能，但您可以從[這裡](../core-powershell/ssh-remoting-in-powershell-core.md)深入瞭解如何設定此功能。
+PowerShell Core 也支援在所有平台上 (Windows、macOS 及 Linux) 透過 SSH 進行 PowerShell 遠端處理 (PSRP)。 雖然目前在生產環境中不支援此功能，但您可以從[這裡](../learn/remoting/SSH-Remoting-in-PowerShell-Core.md)深入瞭解如何設定此功能。
 
 ### <a name="just-enough-administration-jea-support"></a>Just-Enough-Administration (JEA) 支援
 

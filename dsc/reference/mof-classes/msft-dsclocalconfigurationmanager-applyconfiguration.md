@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
-title: MSFT_DSCLocalConfigurationManager 類別的 ApplyConfiguration 方法
-ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ApplyConfiguration 方法
+ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079161"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727172"
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 ApplyConfiguration 方法
+# <a name="applyconfiguration-method"></a>ApplyConfiguration 方法
 
 使用設定代理程式套用擱置中的設定。
 

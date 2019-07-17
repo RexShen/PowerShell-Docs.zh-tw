@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 在 Nano Server 上使用 DSC
-ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079722"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734606"
 ---
 # <a name="using-dsc-on-nano-server"></a>在 Nano Server 上使用 DSC
 
@@ -44,7 +44,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Find-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -56,7 +56,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 執行使用者內容下的資源 (請參閱[以使用者認證執行 DSC (RunAs)](../configurations/runAsUser.md))
 
-- 類別型資源 (請參閱[使用 PowerShell 類別撰寫自訂 DSC 資源](../resources/authoringResourceClass.md))
+- 類別型資源 (請參閱[使用 PowerShell 類別撰寫自訂 DSC 資源](/previous-versions//dn948461(v=technet.10)))
 
 - 為 DSC 資源偵錯 (請參閱[為 DSC 資源偵錯](../troubleshooting/debugResource.md))
 
@@ -104,7 +104,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
   **問題：** 只適用於開始/停止 (狀態) 服務。 如果嘗試變更啟動類型、認證、描述等其他服務屬性，則會失敗。 擲回的錯誤類似如下︰
 
-  找不到類型 [management.managementobject]：請確認已載入包含此類型的組件。
+  找不到類型 [management.managementobject]：請確認已載入包含此類型的組件。 
 
 - 無法正常運作的資源
 - **User**

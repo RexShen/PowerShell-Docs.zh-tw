@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
-title: MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
-ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: PerformRequiredConfigurationChecks 方法
+ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078431"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734399"
 ---
-# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 PerformRequiredConfigurationChecks 方法
+# <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks 方法
 
 使用工作排程器開始一致性檢查。
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
-title: MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法
-ms.openlocfilehash: c66ccc4eefaef2d0c3a68fa8a96c5abb9bda6e4c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfigurationStatus 方法
+ms.openlocfilehash: 83b30ba2612d962fcf2fa658d07d18fb2d91ccc7
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078759"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734505"
 ---
-# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別的 GetConfigurationStatus 方法
+# <a name="getconfigurationstatus-method"></a>GetConfigurationStatus 方法
 
 取得設定狀態歷程記錄。
 

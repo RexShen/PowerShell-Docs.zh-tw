@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsFeatureSet 資源
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076781"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726784"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet 資源
 
@@ -38,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  屬性  |  描述   |
 |---|---|
-| 名稱| 您想要確保新增或移除的角色或功能名稱。 這與 [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) Cmdlet 的 **Name** 屬性相同，且不是角色或功能的顯示名稱。|
+| 名稱| 您想要確保新增或移除的角色或功能名稱。 這與 [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) Cmdlet 的 **Name** 屬性相同，且不是角色或功能的顯示名稱。|
 | 認證| 用以新增或移除角色或功能的認證。|
 | Ensure| 表示是否已新增角色或功能。 若要確保新增角色或功能，這個屬性請設為 "Present"。若要確保移除角色或功能，請將屬性設定為 "Absent"。|
 | IncludeAllSubFeature| 這個屬性設為 **$true** 可讓您使用以 **Name** 屬性指定的功能包含所有必要的子功能。|

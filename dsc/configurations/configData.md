@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用設定資料
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080215"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727214"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
 
@@ -191,7 +191,7 @@ DSC 提供下列特殊變數，可用於設定指令碼中︰
 - **ConfigurationData** 代表編譯設定時，當做參數傳遞的整個雜湊表。
 - **MyTypeName** 包含變數所用的[設定](configurations.md)名稱。 例如，在設定 `MyDscConfiguration` 中，`$MyTypeName` 的值為 `MyDscConfiguration`。
 - **Node** 代表 **AllNodes** 集合使用 **.Where()** 或 **.ForEach()** 篩選後所包含的特定項目。
-  - 您可以在 [about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md) 中深入閱讀這些方法
+  - 您可以在 [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays) 中深入閱讀這些方法
 
 ## <a name="using-non-node-data"></a>使用非節點資料
 
