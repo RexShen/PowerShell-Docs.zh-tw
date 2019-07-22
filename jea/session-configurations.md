@@ -1,79 +1,71 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 工作階段設定
-ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059061"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726558"
 ---
-# <a name="jea-session-configurations"></a><span data-ttu-id="14e28-103">JEA 工作階段設定</span><span class="sxs-lookup"><span data-stu-id="14e28-103">JEA Session Configurations</span></span>
+# <a name="jea-session-configurations"></a><span data-ttu-id="a6630-103">JEA 工作階段設定</span><span class="sxs-lookup"><span data-stu-id="a6630-103">JEA Session Configurations</span></span>
 
-> <span data-ttu-id="14e28-104">適用於：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="14e28-104">Applies to: Windows PowerShell 5.0</span></span>
+<span data-ttu-id="a6630-104">JEA 端點透過建立和登錄 PowerShell 工作階段設定檔在系統上登錄。</span><span class="sxs-lookup"><span data-stu-id="a6630-104">A JEA endpoint is registered on a system by creating and registering a PowerShell session configuration file.</span></span> <span data-ttu-id="a6630-105">工作階段設定定義誰可以使用 JEA 端點，以及他們可以存取哪些角色。</span><span class="sxs-lookup"><span data-stu-id="a6630-105">Session configurations define who can use the JEA endpoint and which roles they have access to.</span></span> <span data-ttu-id="a6630-106">它們也會定義適用於 JEA 工作階段所有使用者的全域設定。</span><span class="sxs-lookup"><span data-stu-id="a6630-106">They also define global settings that apply to all users of the JEA session.</span></span>
 
-<span data-ttu-id="14e28-105">JEA 端點透過以特定方式建立和登錄 PowerShell 工作階段設定檔以在系統上登錄。</span><span class="sxs-lookup"><span data-stu-id="14e28-105">A JEA endpoint is registered on a system by creating and registering a PowerShell session configuration file in a specific way.</span></span>
-<span data-ttu-id="14e28-106">工作階段設定決定「誰」可以使用 JEA 端點，以及他們可以存取哪些角色。</span><span class="sxs-lookup"><span data-stu-id="14e28-106">Session configurations determine *who* can use the JEA endpoint, and which role(s) they will have access to.</span></span>
-<span data-ttu-id="14e28-107">工作階段設定也會定義適用於 JEA 工作階段中任何角色之使用者的全域設定。</span><span class="sxs-lookup"><span data-stu-id="14e28-107">They also define global settings that apply to users of any role in the JEA session.</span></span>
+## <a name="create-a-session-configuration-file"></a><span data-ttu-id="a6630-107">建立工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="a6630-107">Create a session configuration file</span></span>
 
-<span data-ttu-id="14e28-108">本主題描述如何建立 PowerShell 工作階段設定檔，並登錄 JEA 端點。</span><span class="sxs-lookup"><span data-stu-id="14e28-108">This topic describes how to create a PowerShell session configuration file and register a JEA endpoint.</span></span>
+<span data-ttu-id="a6630-108">若要登錄 JEA 端點，您必須指定該端點的設定方式。</span><span class="sxs-lookup"><span data-stu-id="a6630-108">To register a JEA endpoint, you must specify how that endpoint is configured.</span></span> <span data-ttu-id="a6630-109">有許多選項要考慮。</span><span class="sxs-lookup"><span data-stu-id="a6630-109">There are many options to consider.</span></span> <span data-ttu-id="a6630-110">最重要的選項如下：</span><span class="sxs-lookup"><span data-stu-id="a6630-110">The most important options are:</span></span>
 
-## <a name="create-a-session-configuration-file"></a><span data-ttu-id="14e28-109">建立工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="14e28-109">Create a session configuration file</span></span>
+- <span data-ttu-id="a6630-111">誰可以存取 JEA 端點</span><span class="sxs-lookup"><span data-stu-id="a6630-111">Who has access to the JEA endpoint</span></span>
+- <span data-ttu-id="a6630-112">他們獲指派哪些角色</span><span class="sxs-lookup"><span data-stu-id="a6630-112">Which roles they be assigned</span></span>
+- <span data-ttu-id="a6630-113">JEA 實際使用哪些身分識別</span><span class="sxs-lookup"><span data-stu-id="a6630-113">Which identity JEA uses under the covers</span></span>
+- <span data-ttu-id="a6630-114">JEA 端點的名稱</span><span class="sxs-lookup"><span data-stu-id="a6630-114">The name of the JEA endpoint</span></span>
 
-<span data-ttu-id="14e28-110">為了登錄 JEA 端點，您必須指定該端點應該如何設定。</span><span class="sxs-lookup"><span data-stu-id="14e28-110">In order to register a JEA endpoint, you need to specify how that endpoint should be configured.</span></span>
-<span data-ttu-id="14e28-111">在這裡有許多選項要考慮，最重要的一項是誰應該可以存取 JEA 端點、將指派什麼角色給他們、JEA 將在幕後使用哪一個身分識別，以及 JEA 端點的名稱為何。</span><span class="sxs-lookup"><span data-stu-id="14e28-111">There are many options to consider here, the most important of which being who should have access to the JEA endpoint, which roles will they be assigned, which identity will JEA use under the covers, and what will be the name of the JEA endpoint.</span></span>
-<span data-ttu-id="14e28-112">這些全都定義在 PowerShell 工作階段設定檔中，這個檔案是結尾副檔名為 .pssc 的 PowerShell 資料檔。</span><span class="sxs-lookup"><span data-stu-id="14e28-112">These are all defined in a PowerShell session configuration file, which is a PowerShell data file ending with a .pssc extension.</span></span>
+<span data-ttu-id="a6630-115">這些選項全都定義在副檔名為 `.pssc` 的 PowerShell 資料檔中，稱為 PowerShell 工作階段設定檔。</span><span class="sxs-lookup"><span data-stu-id="a6630-115">These options are defined in a PowerShell data file with a `.pssc` extension known as a PowerShell session configuration file.</span></span> <span data-ttu-id="a6630-116">工作階段設定檔可使用任何文字編輯器編輯。</span><span class="sxs-lookup"><span data-stu-id="a6630-116">The session configuration file can be edited using any text editor.</span></span>
 
-<span data-ttu-id="14e28-113">若要建立 JEA 端點的基本架構工作階段設定檔，請執行下列命令。</span><span class="sxs-lookup"><span data-stu-id="14e28-113">To create a skeleton session configuration file for JEA endpoints, run the following command.</span></span>
+<span data-ttu-id="a6630-117">執行下列命令以建立空白的範本設定檔。</span><span class="sxs-lookup"><span data-stu-id="a6630-117">Run the following command to create a blank template configuration file.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEAEndpoint.pssc
 ```
 
 > [!TIP]
-> <span data-ttu-id="14e28-114">此基本架構檔案預設只會包含最常見的設定選項。</span><span class="sxs-lookup"><span data-stu-id="14e28-114">Only the most common configuration options are included in the skeleton file by default.</span></span>
-> <span data-ttu-id="14e28-115">使用 `-Full` 參數可將所有適用的設定加入產生的 PSSC。</span><span class="sxs-lookup"><span data-stu-id="14e28-115">Use the `-Full` switch to include all applicable settings in the generated PSSC.</span></span>
+> <span data-ttu-id="a6630-118">根據預設，範本檔只包含最常見的設定選項。</span><span class="sxs-lookup"><span data-stu-id="a6630-118">Only the most common configuration options are included in the template file by default.</span></span> <span data-ttu-id="a6630-119">使用 `-Full` 參數可將所有適用的設定加入產生的 PSSC。</span><span class="sxs-lookup"><span data-stu-id="a6630-119">Use the `-Full` switch to include all applicable settings in the generated PSSC.</span></span>
 
-<span data-ttu-id="14e28-116">您可以在任何文字編輯器中開啟工作階段設定檔。</span><span class="sxs-lookup"><span data-stu-id="14e28-116">You can open the session configuration file in any text editor.</span></span>
-<span data-ttu-id="14e28-117">`-SessionType RestrictedRemoteServer` 欄位指出 JEA 將使用工作階段設定以進行安全管理。</span><span class="sxs-lookup"><span data-stu-id="14e28-117">The `-SessionType RestrictedRemoteServer` field indicates that the session configuration will be used by JEA for secure management.</span></span>
-<span data-ttu-id="14e28-118">以這種方式設定的工作階段會以 [NoLanguage 模式 (英文)](https://technet.microsoft.com/library/dn433292.aspx) 運作，且只能使用下列 8 種預設命令 (和別名)︰</span><span class="sxs-lookup"><span data-stu-id="14e28-118">Sessions configured this way will operate in [NoLanguage mode](https://technet.microsoft.com/library/dn433292.aspx) and only have the following 8 default commands (and aliases) available:</span></span>
+<span data-ttu-id="a6630-120">`-SessionType RestrictedRemoteServer` 欄位指出 JEA 使用工作階段設定進行安全管理。</span><span class="sxs-lookup"><span data-stu-id="a6630-120">The `-SessionType RestrictedRemoteServer` field indicates that the session configuration is used by JEA for secure management.</span></span> <span data-ttu-id="a6630-121">這種類型的工作階段會以 **NoLanguage** 模式運作，且只能存取下列預設命令 (和別名)︰</span><span class="sxs-lookup"><span data-stu-id="a6630-121">Sessions of this type operate in **NoLanguage** mode and only have access to the following default commands (and aliases):</span></span>
 
-- <span data-ttu-id="14e28-119">Clear-Host (cls, clear)</span><span class="sxs-lookup"><span data-stu-id="14e28-119">Clear-Host (cls, clear)</span></span>
-- <span data-ttu-id="14e28-120">Exit-PSSession (exsn, exit)</span><span class="sxs-lookup"><span data-stu-id="14e28-120">Exit-PSSession (exsn, exit)</span></span>
-- <span data-ttu-id="14e28-121">Get-Command (gcm)</span><span class="sxs-lookup"><span data-stu-id="14e28-121">Get-Command (gcm)</span></span>
-- <span data-ttu-id="14e28-122">Get-FormatData</span><span class="sxs-lookup"><span data-stu-id="14e28-122">Get-FormatData</span></span>
-- <span data-ttu-id="14e28-123">Get-Help</span><span class="sxs-lookup"><span data-stu-id="14e28-123">Get-Help</span></span>
-- <span data-ttu-id="14e28-124">Measure-Object (measure)</span><span class="sxs-lookup"><span data-stu-id="14e28-124">Measure-Object (measure)</span></span>
-- <span data-ttu-id="14e28-125">Out-Default</span><span class="sxs-lookup"><span data-stu-id="14e28-125">Out-Default</span></span>
-- <span data-ttu-id="14e28-126">Select-Object (select)</span><span class="sxs-lookup"><span data-stu-id="14e28-126">Select-Object (select)</span></span>
+- <span data-ttu-id="a6630-122">Clear-Host (cls, clear)</span><span class="sxs-lookup"><span data-stu-id="a6630-122">Clear-Host (cls, clear)</span></span>
+- <span data-ttu-id="a6630-123">Exit-PSSession (exsn, exit)</span><span class="sxs-lookup"><span data-stu-id="a6630-123">Exit-PSSession (exsn, exit)</span></span>
+- <span data-ttu-id="a6630-124">Get-Command (gcm)</span><span class="sxs-lookup"><span data-stu-id="a6630-124">Get-Command (gcm)</span></span>
+- <span data-ttu-id="a6630-125">Get-FormatData</span><span class="sxs-lookup"><span data-stu-id="a6630-125">Get-FormatData</span></span>
+- <span data-ttu-id="a6630-126">Get-Help</span><span class="sxs-lookup"><span data-stu-id="a6630-126">Get-Help</span></span>
+- <span data-ttu-id="a6630-127">Measure-Object (measure)</span><span class="sxs-lookup"><span data-stu-id="a6630-127">Measure-Object (measure)</span></span>
+- <span data-ttu-id="a6630-128">Out-Default</span><span class="sxs-lookup"><span data-stu-id="a6630-128">Out-Default</span></span>
+- <span data-ttu-id="a6630-129">Select-Object (select)</span><span class="sxs-lookup"><span data-stu-id="a6630-129">Select-Object (select)</span></span>
 
-<span data-ttu-id="14e28-127">沒有 PowerShell 提供者或任何外部程式 (可執行檔、指令碼等等) 可用。</span><span class="sxs-lookup"><span data-stu-id="14e28-127">No PowerShell providers are available, nor are any external programs (executables, scripts, etc.).</span></span>
+<span data-ttu-id="a6630-130">沒有可用的 PowerShell 提供者或任何外部程式 (可執行檔或指令碼) 。</span><span class="sxs-lookup"><span data-stu-id="a6630-130">No PowerShell providers are available, nor are any external programs (executables or scripts).</span></span>
 
-<span data-ttu-id="14e28-128">您有想要為 JEA 工作階段設定的數個其他欄位。</span><span class="sxs-lookup"><span data-stu-id="14e28-128">There are several other fields you will want to configure for the JEA session.</span></span>
-<span data-ttu-id="14e28-129">下列各節會介紹它們。</span><span class="sxs-lookup"><span data-stu-id="14e28-129">They are covered in the following sections.</span></span>
+<span data-ttu-id="a6630-131">如需語言模式的詳細資訊，請參閱[about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes)。</span><span class="sxs-lookup"><span data-stu-id="a6630-131">For more information about language modes, see [about_Language_modes](/powershell/module/microsoft.powershell.core/about/about_language_modes).</span></span>
 
-### <a name="choose-the-jea-identity"></a><span data-ttu-id="14e28-130">選擇 JEA 身分識別</span><span class="sxs-lookup"><span data-stu-id="14e28-130">Choose the JEA identity</span></span>
+### <a name="choose-the-jea-identity"></a><span data-ttu-id="a6630-132">選擇 JEA 身分識別</span><span class="sxs-lookup"><span data-stu-id="a6630-132">Choose the JEA identity</span></span>
 
-<span data-ttu-id="14e28-131">在幕後，JEA 執行連線使用者的命令時，需要一個可使用的身分識別 (帳戶) 。</span><span class="sxs-lookup"><span data-stu-id="14e28-131">Behind the scenes, JEA needs an identity (account) to use when running a connected user's commands.</span></span>
-<span data-ttu-id="14e28-132">您決定 JEA 將在工作階段設定檔中使用哪一個身分識別。</span><span class="sxs-lookup"><span data-stu-id="14e28-132">You decide which identity JEA will use in the session configuration file.</span></span>
+<span data-ttu-id="a6630-133">在幕後，JEA 執行連線使用者的命令時，需要一個可使用的身分識別 (帳戶) 。</span><span class="sxs-lookup"><span data-stu-id="a6630-133">Behind the scenes, JEA needs an identity (account) to use when running a connected user's commands.</span></span>
+<span data-ttu-id="a6630-134">您定義 JEA 在工作階段設定檔中使用的身分識別。</span><span class="sxs-lookup"><span data-stu-id="a6630-134">You define which identity JEA uses in the session configuration file.</span></span>
 
-#### <a name="local-virtual-account"></a><span data-ttu-id="14e28-133">本機虛擬帳戶</span><span class="sxs-lookup"><span data-stu-id="14e28-133">Local Virtual Account</span></span>
+#### <a name="local-virtual-account"></a><span data-ttu-id="a6630-135">本機虛擬帳戶</span><span class="sxs-lookup"><span data-stu-id="a6630-135">Local Virtual Account</span></span>
 
-<span data-ttu-id="14e28-134">如果此 JEA 端點支援的角色全都用來管理本機電腦，且本機系統管理員帳戶就足以順利執行命令，則您應該將 JEA 設定為使用本機虛擬帳戶。</span><span class="sxs-lookup"><span data-stu-id="14e28-134">If the roles supported by this JEA endpoint are all used to manage the local machine, and a local administrator account is sufficient to run the commands successfully, you should configure JEA to use a local virtual account.</span></span>
-<span data-ttu-id="14e28-135">虛擬帳戶是特定使用者獨有的暫時帳戶，並且持續時間僅限於他們的 PowerShell 工作階段期間。</span><span class="sxs-lookup"><span data-stu-id="14e28-135">Virtual accounts are temporary accounts that are unique to a specific user and only last for the duration of their PowerShell session.</span></span>
-<span data-ttu-id="14e28-136">在成員伺服器或工作站上，虛擬帳戶屬於本機電腦的 **Administrators** 群組，並且可以存取大部分的系統資源。</span><span class="sxs-lookup"><span data-stu-id="14e28-136">On a member server or workstation, virtual accounts belong to the local computer's **Administrators** group, and have access to most system resources.</span></span>
-<span data-ttu-id="14e28-137">在 Active Directory 網域控制站上，虛擬帳戶預設屬於網域的 **Domain Admins** 群組。</span><span class="sxs-lookup"><span data-stu-id="14e28-137">On an Active Directory Domain Controller, virtual accounts belong to the domain's **Domain Admins** group.</span></span>
+<span data-ttu-id="a6630-136">本機虛擬帳戶適用於當針對 JEA 端點定義的角色全都用來管理本機電腦，且本機系統管理員帳戶就足以順利執行命令的情況。</span><span class="sxs-lookup"><span data-stu-id="a6630-136">Local virtual accounts are useful when all roles defined for the JEA endpoint are used to manage the local machine and a local administrator account is sufficient to run the commands successfully.</span></span>
+<span data-ttu-id="a6630-137">虛擬帳戶是特定使用者獨有的暫時帳戶，並且持續時間僅限於他們的 PowerShell 工作階段期間。</span><span class="sxs-lookup"><span data-stu-id="a6630-137">Virtual accounts are temporary accounts that are unique to a specific user and only last for the duration of their PowerShell session.</span></span> <span data-ttu-id="a6630-138">在成員伺服器或工作站上，虛擬帳戶屬於本機電腦的 **Administrators** 群組。</span><span class="sxs-lookup"><span data-stu-id="a6630-138">On a member server or workstation, virtual accounts belong to the local computer's **Administrators** group.</span></span> <span data-ttu-id="a6630-139">在 Active Directory 網域控制站上，虛擬帳戶預設屬於網域的 **Domain Admins** 群組。</span><span class="sxs-lookup"><span data-stu-id="a6630-139">On an Active Directory Domain Controller, virtual accounts belong to the domain's **Domain Admins** group.</span></span>
 
 ```powershell
 # Setting the session to use a virtual account
 RunAsVirtualAccount = $true
 ```
 
-<span data-ttu-id="14e28-138">如果工作階段設定所支援的角色不需要這類廣泛的權限，則您可以選擇是否指定虛擬帳戶所屬的安全性群組。</span><span class="sxs-lookup"><span data-stu-id="14e28-138">If the roles supported by the session configuration do not require such broad privileges, you can optionally specify the security groups to which the virtual account will belong.</span></span>
-<span data-ttu-id="14e28-139">在成員伺服器或工作站上，指定的安全性群組必須是本機群組，而非來自網域的群組。</span><span class="sxs-lookup"><span data-stu-id="14e28-139">On a member server or workstation, the specified security groups must be local groups, not groups from a domain.</span></span>
+<span data-ttu-id="a6630-140">如果工作階段設定定義的角色不需要完整系統管理權限，您就可以指定虛擬帳戶所屬的安全性群組。</span><span class="sxs-lookup"><span data-stu-id="a6630-140">If the roles defined by the session configuration don't require full administrative privilege, you can specify the security groups to which the virtual account will belong.</span></span> <span data-ttu-id="a6630-141">在成員伺服器或工作站上，指定的安全性群組必須是本機群組，而非來自網域的群組。</span><span class="sxs-lookup"><span data-stu-id="a6630-141">On a member server or workstation, the specified security groups must be local groups, not groups from a domain.</span></span>
 
-<span data-ttu-id="14e28-140">指定一或多個安全性群組時，虛擬帳戶將不再屬於本機或網域系統管理員群組。</span><span class="sxs-lookup"><span data-stu-id="14e28-140">When one or more security groups is specified, the virtual account will no longer belong to the local or domain administrators group.</span></span>
+<span data-ttu-id="a6630-142">指定一或多個安全性群組時，虛擬帳戶不會指派給本機或網域的 Administrators 群組。</span><span class="sxs-lookup"><span data-stu-id="a6630-142">When one or more security groups are specified, the virtual account isn't assigned to the local or domain administrators group.</span></span>
 
 ```powershell
 # Setting the session to use a virtual account that only belongs to the NetworkOperator and NetworkAuditor local groups
@@ -82,63 +74,50 @@ RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
 
 > [!NOTE]
-> <span data-ttu-id="14e28-141">虛擬帳戶會暫時獲得授與在本機伺服器安全性原則中以服務方式登入的權限。</span><span class="sxs-lookup"><span data-stu-id="14e28-141">Virtual accounts are temporarily granted the Logon as a service right in the local server security policy.</span></span>  <span data-ttu-id="14e28-142">若其中一個指定的 VirtualAccountGroups 已在原則中獲得授與此權限，則將無法再新增個別的虛擬帳戶並會從原則中移除。</span><span class="sxs-lookup"><span data-stu-id="14e28-142">If one of the VirtualAccountGroups specified has already been granted this right in the policy, the individual virtual account will no longer be added and removed from the policy.</span></span>  <span data-ttu-id="14e28-143">這在例如對網域控制站所進行的修訂會經過仔細稽核的網域控制站案例中很有用。</span><span class="sxs-lookup"><span data-stu-id="14e28-143">This can be useful in scenarios such as domain controllers where revisions to the domain controller security policy are closely audited.</span></span>  <span data-ttu-id="14e28-144">此項目僅適用於包含 2018 年 11 月或更新彙總的 Windows Server 2016，以及包含 2019 年 1 月或更新彙總的 Windows Server 2019。</span><span class="sxs-lookup"><span data-stu-id="14e28-144">This is only available in Windows Server 2016 with the November 2018 or later rollup and Windows Server 2019 with the January 2019 or later rollup.</span></span>
+> <span data-ttu-id="a6630-143">虛擬帳戶會暫時獲得授與在本機伺服器安全性原則中以服務方式登入的權限。</span><span class="sxs-lookup"><span data-stu-id="a6630-143">Virtual accounts are temporarily granted the Logon as a service right in the local server security policy.</span></span> <span data-ttu-id="a6630-144">若其中一個指定的 VirtualAccountGroups 已在原則中獲得授與此權限，則將無法再新增個別的虛擬帳戶並會從原則中移除。</span><span class="sxs-lookup"><span data-stu-id="a6630-144">If one of the VirtualAccountGroups specified has already been granted this right in the policy, the individual virtual account will no longer be added and removed from the policy.</span></span> <span data-ttu-id="a6630-145">這在例如對網域控制站所進行的修訂會經過仔細稽核的網域控制站案例中很有用。</span><span class="sxs-lookup"><span data-stu-id="a6630-145">This can be useful in scenarios such as domain controllers where revisions to the domain controller security policy are closely audited.</span></span> <span data-ttu-id="a6630-146">此項目僅適用於包含 2018 年 11 月或更新彙總的 Windows Server 2016，以及包含 2019 年 1 月或更新彙總的 Windows Server 2019。</span><span class="sxs-lookup"><span data-stu-id="a6630-146">This is only available in Windows Server 2016 with the November 2018 or later rollup and Windows Server 2019 with the January 2019 or later rollup.</span></span>
 
-#### <a name="group-managed-service-account"></a><span data-ttu-id="14e28-145">群組受管理的服務帳戶</span><span class="sxs-lookup"><span data-stu-id="14e28-145">Group Managed Service Account</span></span>
+#### <a name="group-managed-service-account"></a><span data-ttu-id="a6630-147">群組受控服務帳戶</span><span class="sxs-lookup"><span data-stu-id="a6630-147">Group-managed service account</span></span>
 
-
-<span data-ttu-id="14e28-146">針對需要 JEA 使用者以存取網路資源，例如其他電腦或 Web 服務的情況，群組受管理的服務帳戶 (gMSA) 是更適合使用的身分識別。</span><span class="sxs-lookup"><span data-stu-id="14e28-146">For scenarios requiring the JEA user to access network resources such as other machines or web services, a group managed service account (gMSA) is a more appropriate identity to use.</span></span>
-<span data-ttu-id="14e28-147">gMSA 帳戶為您提供可以用來對網域中任何電腦上的資源進行驗證的網域身分識別。</span><span class="sxs-lookup"><span data-stu-id="14e28-147">gMSA accounts give you a domain identity which can be used to authenticate against resources on any machine within the domain.</span></span>
-<span data-ttu-id="14e28-148">gMSA 帳戶提供給您的權限由您正在存取的資源決定。</span><span class="sxs-lookup"><span data-stu-id="14e28-148">The rights the gMSA account gives you is determined by the resources you are accessing.</span></span>
-<span data-ttu-id="14e28-149">您不會在任何電腦或服務上自動擁有系統管理權限，除非電腦/服務系統管理員已明確授與 gMSA 帳戶系統管理員權限。</span><span class="sxs-lookup"><span data-stu-id="14e28-149">You will not automatically have admin rights on any machines or services unless the machine/service administrator has explicitly granted the gMSA account admin privileges.</span></span>
+<span data-ttu-id="a6630-148">當 JEA 使用者需要存取網路資源，例如檔案共用和 Web 服務時，群組受控服務帳戶 (gMSA) 是適用的身分識別。</span><span class="sxs-lookup"><span data-stu-id="a6630-148">A group-managed service account (GMSA) is the appropriate identity to use when JEA users need to access network resources such as file shares and web services.</span></span> <span data-ttu-id="a6630-149">GMSA 提供的網域身分識別，可用來驗證網域中任何電腦上的資源。</span><span class="sxs-lookup"><span data-stu-id="a6630-149">GMSAs give you a domain identity that is used to authenticate with resources on any machine within the domain.</span></span> <span data-ttu-id="a6630-150">您指派的資源決定 GMSA 提供的權限。</span><span class="sxs-lookup"><span data-stu-id="a6630-150">The rights that a GMSA provides are determined by the resources you're accessing.</span></span> <span data-ttu-id="a6630-151">除非電腦或服務系統管理員已明確授與這些 GMSA 權限，否則您不會有任何電腦或服務的管理權限。</span><span class="sxs-lookup"><span data-stu-id="a6630-151">You don't have admin rights on any machines or services unless the machine or service administrator has explicitly granted those rights to the GMSA.</span></span>
 
 ```powershell
-# Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
-GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
+# Configure JEA sessions to use the GMSA in the local computer's domain
+# with the sAMAccountName of 'MyJEAGMSA'
+GroupManagedServiceAccount = 'Domain\MyJEAGMSA'
 ```
 
-<span data-ttu-id="14e28-150">gMSA 帳戶應該只用於因為一些原因而需要存取網路資源時︰</span><span class="sxs-lookup"><span data-stu-id="14e28-150">gMSA accounts should only be used when access to network resources are required for a few reasons:</span></span>
+<span data-ttu-id="a6630-152">應在有必要時才使用 GMSA：</span><span class="sxs-lookup"><span data-stu-id="a6630-152">GMSAs should only be used when necessary:</span></span>
 
-- <span data-ttu-id="14e28-151">使用 gMSA 帳戶時從動作回溯到使用者比較困難，因為每個使用者都共用相同的執行身分識別。</span><span class="sxs-lookup"><span data-stu-id="14e28-151">It is harder to trace back actions to a user when using a gMSA account since every user shares the same run-as identity.</span></span> <span data-ttu-id="14e28-152">您必須參閱 PowerShell 工作階段文字記錄以及記錄檔，以讓使用者與他們的動作相互關聯。</span><span class="sxs-lookup"><span data-stu-id="14e28-152">You will need to consult PowerShell session transcripts and logs to correlate users with their actions.</span></span>
+- <span data-ttu-id="a6630-153">使用 GMSA 時很難從動作回溯到使用者。</span><span class="sxs-lookup"><span data-stu-id="a6630-153">It's difficult to trace back actions to a user when using a GMSA.</span></span> <span data-ttu-id="a6630-154">每個使用者都會共用相同的執行身分識別。</span><span class="sxs-lookup"><span data-stu-id="a6630-154">Every user shares the same run-as identity.</span></span> <span data-ttu-id="a6630-155">您必須檢閱 PowerShell 工作階段文字記錄和記錄檔，讓個別的使用者與其動作相互關聯。</span><span class="sxs-lookup"><span data-stu-id="a6630-155">You must review PowerShell session transcripts and logs to correlate individual users with their actions.</span></span>
 
-- <span data-ttu-id="14e28-153">gMSA 帳戶可能可以存取許多連線使用者不需要存取的網路資源。</span><span class="sxs-lookup"><span data-stu-id="14e28-153">The gMSA account may have access to many network resources which the connecting user does not need access to.</span></span> <span data-ttu-id="14e28-154">請務必嘗試限制在 JEA 工作階段中有效的權限，以遵循最低權限的原則。</span><span class="sxs-lookup"><span data-stu-id="14e28-154">Always try to limit effective permissions in a JEA session to follow the principle of least privilege.</span></span>
+- <span data-ttu-id="a6630-156">GMSA 可以存取許多連線使用者不需要存取的網路資源。</span><span class="sxs-lookup"><span data-stu-id="a6630-156">The GMSA may have access to many network resources that the connecting user doesn't need access to.</span></span> <span data-ttu-id="a6630-157">請務必嘗試限制在 JEA 工作階段中有效的權限，以遵循最低權限的原則。</span><span class="sxs-lookup"><span data-stu-id="a6630-157">Always try to limit effective permissions in a JEA session to follow the principle of least privilege.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="14e28-155">群組受管理的服務帳戶僅適用於 Windows PowerShell 5.1 或更新版本，以及在已加入網域的電腦上。</span><span class="sxs-lookup"><span data-stu-id="14e28-155">Group managed service accounts are only available in Windows PowerShell 5.1 or newer and on domain-joined machines.</span></span>
+> <span data-ttu-id="a6630-158">群組受控服務帳戶僅適用於已加入網域，使用 PowerShell 5.1 或更新版本的電腦。</span><span class="sxs-lookup"><span data-stu-id="a6630-158">Group managed service accounts are only available on domain-joined machines using PowerShell 5.1 or newer.</span></span>
 
-#### <a name="more-information-about-run-as-users"></a><span data-ttu-id="14e28-156">執行身分使用者的詳細資訊</span><span class="sxs-lookup"><span data-stu-id="14e28-156">More information about run as users</span></span>
+<span data-ttu-id="a6630-159">如需保護 JEA 工作階段的詳細資訊，請參閱[安全性考量](security-considerations.md)一文。</span><span class="sxs-lookup"><span data-stu-id="a6630-159">For more information about securing a JEA session, see the [security considerations](security-considerations.md) article.</span></span>
 
-<span data-ttu-id="14e28-157">如需執行身分識別的詳細資訊，以及它們如何納入 JEA 工作階段的安全性，請參閱[安全性考量](security-considerations.md)文章。</span><span class="sxs-lookup"><span data-stu-id="14e28-157">Additional information about run as identities and how they factor into the security of a JEA session can be found in the [security considerations](security-considerations.md) article.</span></span>
+### <a name="session-transcripts"></a><span data-ttu-id="a6630-160">工作階段文字記錄</span><span class="sxs-lookup"><span data-stu-id="a6630-160">Session transcripts</span></span>
 
-### <a name="session-transcripts"></a><span data-ttu-id="14e28-158">工作階段文字記錄</span><span class="sxs-lookup"><span data-stu-id="14e28-158">Session transcripts</span></span>
+<span data-ttu-id="a6630-161">建議您將 JEA端點設定為自動記錄使用者工作階段的文字記錄。</span><span class="sxs-lookup"><span data-stu-id="a6630-161">It's recommended that you configure a JEA endpoint to automatically record transcripts of users' sessions.</span></span> <span data-ttu-id="a6630-162">PowerShell 工作階段文字記錄包含連線使用者、指派給他們的執行身分識別，以及使用者所執行的命令等相關資訊。</span><span class="sxs-lookup"><span data-stu-id="a6630-162">PowerShell session transcripts contain information about the connecting user, the run as identity assigned to them, and the commands run by the user.</span></span> <span data-ttu-id="a6630-163">對於必須了解誰對系統執行特定變更的稽核小組而言，它們可能很實用。</span><span class="sxs-lookup"><span data-stu-id="a6630-163">They can be useful to an auditing team who needs to understand who made a specific change to a system.</span></span>
 
-<span data-ttu-id="14e28-159">建議您將 JEA 工作階段設定檔設定為自動記錄使用者工作階段的文字記錄。</span><span class="sxs-lookup"><span data-stu-id="14e28-159">It is recommended that you configure a JEA session configuration file to automatically record transcripts of users' sessions.</span></span>
-<span data-ttu-id="14e28-160">PowerShell 工作階段文字記錄包含連線使用者、指派給他們的執行身分識別，以及使用者所執行的命令等相關資訊。</span><span class="sxs-lookup"><span data-stu-id="14e28-160">PowerShell session transcripts contain information about the connecting user, the run as identity assigned to them, and the commands run by the user.</span></span>
-<span data-ttu-id="14e28-161">對於必須了解誰對系統執行了特定變更的稽核小組而言，它們可能很實用。</span><span class="sxs-lookup"><span data-stu-id="14e28-161">They can be useful to an auditing team who needs to understand who performed a specific change to a system.</span></span>
-
-<span data-ttu-id="14e28-162">若要在工作階段設定檔中設定自動文字記錄，請提供要儲存文字記錄的資料夾路徑。</span><span class="sxs-lookup"><span data-stu-id="14e28-162">To configure automatic transcription in the session configuration file, provide a path to a folder where the transcripts should be stored.</span></span>
+<span data-ttu-id="a6630-164">若要在工作階段設定檔中設定自動文字記錄，請提供要儲存文字記錄的資料夾路徑。</span><span class="sxs-lookup"><span data-stu-id="a6630-164">To configure automatic transcription in the session configuration file, provide a path to a folder where the transcripts should be stored.</span></span>
 
 ```powershell
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-<span data-ttu-id="14e28-163">指定的資料夾應該設定為防止使用者修改或刪除其中的任何資料。</span><span class="sxs-lookup"><span data-stu-id="14e28-163">The specified folder should be configured to prevent users from modifying or deleting any data in it.</span></span>
-<span data-ttu-id="14e28-164">本機系統帳戶會將文字記錄寫入資料夾，這需要該目錄的讀取和寫入權限。</span><span class="sxs-lookup"><span data-stu-id="14e28-164">Transcripts are written to the folder by the Local System account, which requires read and write access to the directory.</span></span>
-<span data-ttu-id="14e28-165">標準使用者應該無法存取該資料夾，並且只有有限的一組安全性系統管理員有權可稽核文字記錄。</span><span class="sxs-lookup"><span data-stu-id="14e28-165">Standard users should have no access to the folder, and a limited set of security administrators should have access to audit the transcripts.</span></span>
+<span data-ttu-id="a6630-165">**本機系統**帳戶會將文字記錄寫入資料夾，這需要該目錄的讀取和寫入權限。</span><span class="sxs-lookup"><span data-stu-id="a6630-165">Transcripts are written to the folder by the **Local System** account, which requires read and write access to the directory.</span></span> <span data-ttu-id="a6630-166">標準使用者應該無法存取此資料夾。</span><span class="sxs-lookup"><span data-stu-id="a6630-166">Standard users should have no access to the folder.</span></span> <span data-ttu-id="a6630-167">限制有權稽核文字記錄的安全性系統管理員數目。</span><span class="sxs-lookup"><span data-stu-id="a6630-167">Limit the number of security administrators that have access to audit the transcripts.</span></span>
 
-### <a name="user-drive"></a><span data-ttu-id="14e28-166">使用者磁碟機</span><span class="sxs-lookup"><span data-stu-id="14e28-166">User drive</span></span>
+### <a name="user-drive"></a><span data-ttu-id="a6630-168">使用者磁碟機</span><span class="sxs-lookup"><span data-stu-id="a6630-168">User drive</span></span>
 
-<span data-ttu-id="14e28-167">如果您的連線使用者將需要從 JEA 端點複製檔案或將檔案複製到 JEA 端點才能執行命令，則您可以啟用工作階段設定檔中的使用者磁碟機。</span><span class="sxs-lookup"><span data-stu-id="14e28-167">If your connecting users will need to copy files to/from the JEA endpoint in order to run a command, you can enable the user drive in the session configuration file.</span></span>
-<span data-ttu-id="14e28-168">使用者磁碟機是 [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives)，且對應至每個連線使用者的唯一資料夾。</span><span class="sxs-lookup"><span data-stu-id="14e28-168">The user drive is a [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) that is mapped to a unique folder for each connecting user.</span></span>
-<span data-ttu-id="14e28-169">這個資料夾可作為他們在系統中複製檔案的空間，而不讓他們存取完整的檔案系統或公開檔案系統提供者。</span><span class="sxs-lookup"><span data-stu-id="14e28-169">This folder serves as a space for them to copy files to/from the system, without giving them access to the full file system or exposing the FileSystem provider.</span></span>
-<span data-ttu-id="14e28-170">使用者磁碟機內容會在工作階段之間持續存在，以應付網路連線可能中斷的情況。</span><span class="sxs-lookup"><span data-stu-id="14e28-170">The user drive contents are persistent across sessions to accommodate situations where network connectivity may be interrupted.</span></span>
+<span data-ttu-id="a6630-169">如果您的連線使用者需要在 JEA 端點來回複製檔案，您可在工作階段設定檔中啟用使用者磁碟機。</span><span class="sxs-lookup"><span data-stu-id="a6630-169">If your connecting users need to copy files to or from the JEA endpoint, you can enable the user drive in the session configuration file.</span></span> <span data-ttu-id="a6630-170">使用者磁碟機是 **PSDrive**，且對應至每個連線使用者的唯一資料夾。</span><span class="sxs-lookup"><span data-stu-id="a6630-170">The user drive is a **PSDrive** that is mapped to a unique folder for each connecting user.</span></span> <span data-ttu-id="a6630-171">這個資料夾允許使用者在系統中來回複製檔案，但不讓他們存取完整的檔案系統，也不公開 FileSystem 提供者。</span><span class="sxs-lookup"><span data-stu-id="a6630-171">This folder allows users to copy files to or from the system without giving them access to the full file system or exposing the FileSystem provider.</span></span> <span data-ttu-id="a6630-172">使用者磁碟機內容會在工作階段之間持續存在，以應付網路連線可能中斷的情況。</span><span class="sxs-lookup"><span data-stu-id="a6630-172">The user drive contents are persistent across sessions to accommodate situations where network connectivity may be interrupted.</span></span>
 
 ```powershell
 MountUserDrive = $true
 ```
 
-<span data-ttu-id="14e28-171">根據預設，使用者磁碟機可讓您儲存每個使用者最多 50 MB 的資料。</span><span class="sxs-lookup"><span data-stu-id="14e28-171">By default, the user drive allows you to store a maximum of 50MB of data per user.</span></span>
-<span data-ttu-id="14e28-172">您可以使用 *UserDriveMaximumSize* 欄位限制使用者可以取用的資料量。</span><span class="sxs-lookup"><span data-stu-id="14e28-172">You can limit the amount of data a user can consume with the *UserDriveMaximumSize* field.</span></span>
+<span data-ttu-id="a6630-173">根據預設，使用者磁碟機可讓您儲存每個使用者最多 50 MB 的資料。</span><span class="sxs-lookup"><span data-stu-id="a6630-173">By default, the user drive allows you to store a maximum of 50MB of data per user.</span></span> <span data-ttu-id="a6630-174">您可以使用 *UserDriveMaximumSize* 欄位限制使用者可以取用的資料量。</span><span class="sxs-lookup"><span data-stu-id="a6630-174">You can limit the amount of data a user can consume with the *UserDriveMaximumSize* field.</span></span>
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -146,17 +125,17 @@ MountUserDrive = $true
 UserDriveMaximumSize = 524288000
 ```
 
-<span data-ttu-id="14e28-173">若不想讓使用者磁碟機中的資料持續存在，您可以在系統上設定排定的工作，每晚自動清理資料夾。</span><span class="sxs-lookup"><span data-stu-id="14e28-173">If you do not want data in the user drive to be persistent, you can configure a scheduled task on the system to automatically clean up the folder every night.</span></span>
+<span data-ttu-id="a6630-175">若不想讓使用者磁碟機中的資料持續存在，您可以設定系統的排程工作，每晚自動清理資料夾。</span><span class="sxs-lookup"><span data-stu-id="a6630-175">If you don't want data in the user drive to be persistent, you can configure a scheduled task on the system to automatically clean up the folder every night.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="14e28-174">使用者磁碟機僅適用於 Windows PowerShell 5.1 或更新版本。</span><span class="sxs-lookup"><span data-stu-id="14e28-174">The user drive is only available in Windows PowerShell 5.1 or newer.</span></span>
+> <span data-ttu-id="a6630-176">使用者磁碟機僅適用於 PowerShell 5.1 或更新版本。</span><span class="sxs-lookup"><span data-stu-id="a6630-176">The user drive is only available in PowerShell 5.1 or newer.</span></span>
 
-### <a name="role-definitions"></a><span data-ttu-id="14e28-175">角色定義</span><span class="sxs-lookup"><span data-stu-id="14e28-175">Role definitions</span></span>
+<span data-ttu-id="a6630-177">如需 PSDrive 的詳細資訊，請參閱[管理 PowerShell 磁碟機](/powershell/scripting/samples/managing-windows-powershell-drives)。</span><span class="sxs-lookup"><span data-stu-id="a6630-177">For more information about PSDrives, see [Managing PowerShell drives](/powershell/scripting/samples/managing-windows-powershell-drives).</span></span>
 
-<span data-ttu-id="14e28-176">工作階段設定檔中的角色定義會定義「使用者」對「角色」的對應。</span><span class="sxs-lookup"><span data-stu-id="14e28-176">Role definitions in a session configuration file define the mapping of *users* to *roles*.</span></span>
-<span data-ttu-id="14e28-177">此欄位包含的每個使用者或群組會在登錄 JEA 端點時自動獲得 JEA 端點的權限。</span><span class="sxs-lookup"><span data-stu-id="14e28-177">Every user or group included in this field will automatically be granted permission to the JEA endpoint when it is registered.</span></span>
-<span data-ttu-id="14e28-178">每個使用者或群組只能作為索引鍵包含在雜湊表中一次，但可以指派多個角色給它。</span><span class="sxs-lookup"><span data-stu-id="14e28-178">Each user or group can be included as a key in the hashtable only once, but can be assigned multiple roles.</span></span>
-<span data-ttu-id="14e28-179">角色功能的名稱應該是角色功能檔案的名稱，不含 .psrc 副檔名。</span><span class="sxs-lookup"><span data-stu-id="14e28-179">The name of the role capability should be the name of the role capability file, without the .psrc extension.</span></span>
+### <a name="role-definitions"></a><span data-ttu-id="a6630-178">角色定義</span><span class="sxs-lookup"><span data-stu-id="a6630-178">Role definitions</span></span>
+
+<span data-ttu-id="a6630-179">工作階段設定檔中的角色定義會定義「使用者」  對「角色」  的對應。</span><span class="sxs-lookup"><span data-stu-id="a6630-179">Role definitions in a session configuration file define the mapping of **users** to **roles**.</span></span> <span data-ttu-id="a6630-180">此欄位包含的每個使用者或群組會在登錄 JEA 端點後，自動獲得 JEA 端點的權限。</span><span class="sxs-lookup"><span data-stu-id="a6630-180">Every user or group included in this field is granted permission to the JEA endpoint when it's registered.</span></span>
+<span data-ttu-id="a6630-181">每個使用者或群組只能作為索引鍵包含在雜湊表中一次，但可以指派多個角色給它。</span><span class="sxs-lookup"><span data-stu-id="a6630-181">Each user or group can be included as a key in the hashtable only once, but can be assigned multiple roles.</span></span> <span data-ttu-id="a6630-182">角色功能的名稱應該是角色功能檔案的名稱，不含 `.psrc` 副檔名。</span><span class="sxs-lookup"><span data-stu-id="a6630-182">The name of the role capability should be the name of the role capability file, without the `.psrc` extension.</span></span>
 
 ```powershell
 RoleDefinitions = @{
@@ -166,11 +145,9 @@ RoleDefinitions = @{
 }
 ```
 
-<span data-ttu-id="14e28-180">如果使用者屬於角色定義中的多個群組，他們將可以存取每個群組的角色。</span><span class="sxs-lookup"><span data-stu-id="14e28-180">If a user belongs to more than one group in the role definition, they will get access to the roles of each.</span></span>
-<span data-ttu-id="14e28-181">如果兩個角色授與對相同 Cmdlet 的存取權，使用者將獲得最寬鬆的參數集。</span><span class="sxs-lookup"><span data-stu-id="14e28-181">If two roles grant access to the same cmdlets, the most permissive parameter set will be granted to the user.</span></span>
+<span data-ttu-id="a6630-183">如果使用者屬於角色定義中的多個群組，他們可以存取每個群組的角色。</span><span class="sxs-lookup"><span data-stu-id="a6630-183">If a user belongs to more than one group in the role definition, they get access to the roles of each.</span></span> <span data-ttu-id="a6630-184">當兩個角色授與同一 Cmdlet 存取權時，使用者將獲得最寬鬆的參數集。</span><span class="sxs-lookup"><span data-stu-id="a6630-184">When two roles grant access to the same cmdlets, the most permissive parameter set is granted to the user.</span></span>
 
-<span data-ttu-id="14e28-182">在角色定義欄位中指定本機使用者或群組時，務必在反斜線前使用電腦名稱 (而非 *localhost* 或 *.*)。</span><span class="sxs-lookup"><span data-stu-id="14e28-182">When specifying local users or groups in the role definitions field, be sure to use the computer name (not *localhost* or *.*) before the backslash.</span></span>
-<span data-ttu-id="14e28-183">您可以藉由檢查 `$env:computername` 變數來檢查電腦名稱。</span><span class="sxs-lookup"><span data-stu-id="14e28-183">You can check the computer name by inspecting the `$env:computername` variable.</span></span>
+<span data-ttu-id="a6630-185">在角色定義欄位中指定本機使用者或群組時，請務必使用電腦名稱，不要使用 **localhost** 或萬用字元。</span><span class="sxs-lookup"><span data-stu-id="a6630-185">When specifying local users or groups in the role definitions field, be sure to use the computer name, not **localhost** or wildcards.</span></span> <span data-ttu-id="a6630-186">您可以藉由檢查 `$env:COMPUTERNAME` 變數來檢查電腦名稱。</span><span class="sxs-lookup"><span data-stu-id="a6630-186">You can check the computer name by inspecting the `$env:COMPUTERNAME` variable.</span></span>
 
 ```powershell
 RoleDefinitions = @{
@@ -178,29 +155,20 @@ RoleDefinitions = @{
 }
 ```
 
-### <a name="role-capability-search-order"></a><span data-ttu-id="14e28-184">角色功能搜尋順序</span><span class="sxs-lookup"><span data-stu-id="14e28-184">Role capability search order</span></span>
+### <a name="role-capability-search-order"></a><span data-ttu-id="a6630-187">角色功能搜尋順序</span><span class="sxs-lookup"><span data-stu-id="a6630-187">Role capability search order</span></span>
 
-<span data-ttu-id="14e28-185">如上述範例所示，會以角色功能檔案的一般名稱 (不含副檔名的檔名) 來參考角色功能。</span><span class="sxs-lookup"><span data-stu-id="14e28-185">As shown in the example above, role capabilities are referenced by the flat name (filename without the extension) of the role capability file.</span></span>
-<span data-ttu-id="14e28-186">如果系統上有多個相同一般名稱的角色功能，PowerShell 將使用其隱含搜尋順序，來選取有效的角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="14e28-186">If multiple role capabilities are available on the system with the same flat name, PowerShell will use its implicit search order to select the effective role capability file.</span></span>
-<span data-ttu-id="14e28-187">它將**不會**提供存取權給同名的所有角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="14e28-187">It will **not** give access to all role capability files with the same name.</span></span>
+<span data-ttu-id="a6630-188">如上述範例所示，會以角色功能檔案的基底名稱來參考角色功能。</span><span class="sxs-lookup"><span data-stu-id="a6630-188">As shown in the example above, role capabilities are referenced by the base name of the role capability file.</span></span> <span data-ttu-id="a6630-189">檔案的基底名稱是不含副檔名的檔名。</span><span class="sxs-lookup"><span data-stu-id="a6630-189">The base name of a file is the filename without the extension.</span></span> <span data-ttu-id="a6630-190">如果系統上有多個同名的角色功能，PowerShell 會使用其隱含搜尋順序，來選取有效的角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="a6630-190">If multiple role capabilities are available on the system with the same name, PowerShell uses its implicit search order to select the effective role capability file.</span></span> <span data-ttu-id="a6630-191">JEA **不會**提供存取權給同名的所有角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="a6630-191">JEA does **not** give access to all role capability files with the same name.</span></span>
 
-<span data-ttu-id="14e28-188">JEA 使用 `$env:PSModulePath` 環境變數來判斷要掃描哪些路徑以取得角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="14e28-188">JEA uses the `$env:PSModulePath` environment variable to determine which paths to scan for role capability files.</span></span>
-<span data-ttu-id="14e28-189">在每個路徑中，JEA 會尋找包含 "RoleCapabilities" 子資料夾的有效 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="14e28-189">Within each of those paths, JEA will look for valid PowerShell modules that contain a "RoleCapabilities" subfolder.</span></span>
-<span data-ttu-id="14e28-190">如同匯入模組一般，相較於具有相同名稱的自訂角色功能，JEA 較偏好 Windows 隨附的角色功能。</span><span class="sxs-lookup"><span data-stu-id="14e28-190">As with importing modules, JEA prefers role capabilities that are shipped with Windows to custom role capabilities with the same name.</span></span>
-<span data-ttu-id="14e28-191">針對所有其他的命名衝突，會由 Windows 列舉目錄中檔案的順序來決定順序 (不保證依字母順序)。</span><span class="sxs-lookup"><span data-stu-id="14e28-191">For all other naming conflicts, precedence is determined by the order in which Windows enumerates the files in the directory (not guaranteed to be alphabetically).</span></span>
-<span data-ttu-id="14e28-192">第一個符合需求名稱的角色功能檔案將會用於連線使用者。</span><span class="sxs-lookup"><span data-stu-id="14e28-192">The first role capability file found that matches the desired name will be used for the connecting user.</span></span>
+<span data-ttu-id="a6630-192">JEA 使用 `$env:PSModulePath` 環境變數來判斷要掃描哪些路徑以取得角色功能檔案。</span><span class="sxs-lookup"><span data-stu-id="a6630-192">JEA uses the `$env:PSModulePath` environment variable to determine which paths to scan for role capability files.</span></span> <span data-ttu-id="a6630-193">在每個路徑中，JEA 會尋找包含 "RoleCapabilities" 子資料夾的有效 PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="a6630-193">Within each of those paths, JEA looks for valid PowerShell modules that contain a "RoleCapabilities" subfolder.</span></span> <span data-ttu-id="a6630-194">如同匯入模組一般，相較於具有相同名稱的自訂角色功能，JEA 較偏好 Windows 隨附的角色功能。</span><span class="sxs-lookup"><span data-stu-id="a6630-194">As with importing modules, JEA prefers role capabilities that are shipped with Windows to custom role capabilities with the same name.</span></span>
 
-<span data-ttu-id="14e28-193">由於在兩個 (或更多) 角色功能共用相同名稱時，角色功能搜尋順序具有不確定性，「強烈建議」您確保電腦上的角色功能都使用唯一的名稱。</span><span class="sxs-lookup"><span data-stu-id="14e28-193">Since the role capability search order is not deterministic when two or more role capabilities share the same name, it is **strongly recommended** that you ensure role capabilities have unique names on your machine.</span></span>
+<span data-ttu-id="a6630-195">針對所有其他的命名衝突，則由 Windows 在目錄中列舉檔案的順序來決定先後順序。</span><span class="sxs-lookup"><span data-stu-id="a6630-195">For all other naming conflicts, precedence is determined by the order in which Windows enumerates the files in the directory.</span></span> <span data-ttu-id="a6630-196">順序不一定依字母順序排列。</span><span class="sxs-lookup"><span data-stu-id="a6630-196">The order isn't guaranteed to be alphabetical.</span></span> <span data-ttu-id="a6630-197">第一個符合指定名稱的角色功能檔案會用於連線使用者。</span><span class="sxs-lookup"><span data-stu-id="a6630-197">The first role capability file found that matches the specified name is used for the connecting user.</span></span> <span data-ttu-id="a6630-198">因為角色功能搜尋順序不具決定性，所以**強烈建議**角色功能使用唯一的檔名。</span><span class="sxs-lookup"><span data-stu-id="a6630-198">Since the role capability search order isn't deterministic, it's **strongly recommended** that role capabilities have unique filenames.</span></span>
 
-### <a name="conditional-access-rules"></a><span data-ttu-id="14e28-194">條件式存取原則</span><span class="sxs-lookup"><span data-stu-id="14e28-194">Conditional access rules</span></span>
+### <a name="conditional-access-rules"></a><span data-ttu-id="a6630-199">條件式存取原則</span><span class="sxs-lookup"><span data-stu-id="a6630-199">Conditional access rules</span></span>
 
-<span data-ttu-id="14e28-195">包含在 RoleDefinitions 欄位的所有使用者和群組會自動獲得 JEA 端點的存取權。</span><span class="sxs-lookup"><span data-stu-id="14e28-195">All users and groups included in the RoleDefinitions field are automatically granted access to JEA endpoints.</span></span>
-<span data-ttu-id="14e28-196">條件式存取規則可讓您精簡此存取權，並要求使用者屬於不會影響指派給他們之角色的其他安全性群組。</span><span class="sxs-lookup"><span data-stu-id="14e28-196">Conditional access rules allow you to refine this access and require users to belong to additional security groups which do not impact the roles which they are assigned.</span></span>
-<span data-ttu-id="14e28-197">這適用於您想要整合「即時」(Just-in-Time) 特殊權限存取管理解決方案、智慧卡驗證或其他多因素驗證解決方案與 JEA。</span><span class="sxs-lookup"><span data-stu-id="14e28-197">This can be useful if you want to integrate a "just in time" privileged access management solution, smartcard authentication, or other multifactor authentication solution with JEA.</span></span>
+<span data-ttu-id="a6630-200">包含在 **RoleDefinitions** 欄位的所有使用者和群組會自動獲得 JEA 端點的存取權。</span><span class="sxs-lookup"><span data-stu-id="a6630-200">All users and groups included in the **RoleDefinitions** field are automatically granted access to JEA endpoints.</span></span> <span data-ttu-id="a6630-201">條件式存取規則可讓您精簡此存取權，並要求使用者屬於不會影響他們獲派角色的其他安全性群組。</span><span class="sxs-lookup"><span data-stu-id="a6630-201">Conditional access rules allow you to refine this access and require users to belong to additional security groups that don't impact the roles to which they're assigned.</span></span> <span data-ttu-id="a6630-202">這適用於您想要使用 JEA 整合 Just-in-Time 特殊權限存取管理解決方案、智慧卡驗證或其他多因素驗證解決方案的情況。</span><span class="sxs-lookup"><span data-stu-id="a6630-202">This is useful when you want to integrate a just-in-time privileged access management solution, smartcard authentication, or other multifactor authentication solution with JEA.</span></span>
 
-<span data-ttu-id="14e28-198">工作階段設定檔中的 RequiredGroups 欄位定義了條件式存取規則。</span><span class="sxs-lookup"><span data-stu-id="14e28-198">Conditional access rules are defined in the RequiredGroups field in a session configuration file.</span></span>
-<span data-ttu-id="14e28-199">在那裡，您可以包含雜湊表 (選擇性地為巢狀)，該雜湊表會使用 'And' 及 'Or' 索引鍵來建構您的規則。</span><span class="sxs-lookup"><span data-stu-id="14e28-199">There, you can provide a hashtable (optionally nested) that uses 'And' and 'Or' keys to construct your rules.</span></span>
-<span data-ttu-id="14e28-200">以下是如何運用此欄位的一些範例︰</span><span class="sxs-lookup"><span data-stu-id="14e28-200">Here are some examples of how to leverage this field:</span></span>
+<span data-ttu-id="a6630-203">工作階段設定檔中的 RequiredGroups 欄位定義了條件式存取規則。</span><span class="sxs-lookup"><span data-stu-id="a6630-203">Conditional access rules are defined in the RequiredGroups field in a session configuration file.</span></span>
+<span data-ttu-id="a6630-204">在那裡，您可以包含雜湊表 (選擇性地為巢狀)，該雜湊表會使用 'And' 及 'Or' 索引鍵來建構您的規則。</span><span class="sxs-lookup"><span data-stu-id="a6630-204">There, you can provide a hashtable (optionally nested) that uses 'And' and 'Or' keys to construct your rules.</span></span> <span data-ttu-id="a6630-205">以下是如何使用此欄位的一些範例：</span><span class="sxs-lookup"><span data-stu-id="a6630-205">Here are some examples of how to use this field:</span></span>
 
 ```powershell
 # Example 1: Connecting users must belong to a security group called "elevated-jea"
@@ -215,25 +183,20 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 > [!NOTE]
-> <span data-ttu-id="14e28-201">條件式存取原則僅適用於 Windows PowerShell 5.1 或更新版本。</span><span class="sxs-lookup"><span data-stu-id="14e28-201">Conditional access rules are only available in Windows PowerShell 5.1 or newer.</span></span>
+> <span data-ttu-id="a6630-206">條件式存取規則僅適用於 PowerShell 5.1 或更新版本。</span><span class="sxs-lookup"><span data-stu-id="a6630-206">Conditional access rules are only available in PowerShell 5.1 or newer.</span></span>
 
-### <a name="other-properties"></a><span data-ttu-id="14e28-202">其他屬性</span><span class="sxs-lookup"><span data-stu-id="14e28-202">Other properties</span></span>
+### <a name="other-properties"></a><span data-ttu-id="a6630-207">其他屬性</span><span class="sxs-lookup"><span data-stu-id="a6630-207">Other properties</span></span>
 
-<span data-ttu-id="14e28-203">工作階段設定檔也可以執行工作角色功能檔案的一切操作，但無法提供連線使用者對不同命令的存取權。</span><span class="sxs-lookup"><span data-stu-id="14e28-203">Session configuration files can also do everything a role capability file can do, just without the ability to give connecting users access to different commands.</span></span>
-<span data-ttu-id="14e28-204">如果您想要允許所有使用者存取特定 Cmdlet、函式或提供者，則您可以直接在工作階段設定檔中完成。</span><span class="sxs-lookup"><span data-stu-id="14e28-204">If you want to allow all users access to specific cmdlets, functions, or providers, you can do so right in the session configuration file.</span></span>
-<span data-ttu-id="14e28-205">如需工作階段設定檔中支援屬性的完整清單，請執行 `Get-Help New-PSSessionConfigurationFile -Full`。</span><span class="sxs-lookup"><span data-stu-id="14e28-205">For a full list of supported properties in the session configuration file, run `Get-Help New-PSSessionConfigurationFile -Full`.</span></span>
+<span data-ttu-id="a6630-208">工作階段設定檔也可以執行工作角色功能檔案的一切操作，但無法提供連線使用者對不同命令的存取權。</span><span class="sxs-lookup"><span data-stu-id="a6630-208">Session configuration files can also do everything a role capability file can do, just without the ability to give connecting users access to different commands.</span></span> <span data-ttu-id="a6630-209">如果您想要允許所有使用者存取特定 Cmdlet、函式或提供者，則您可以直接在工作階段設定檔中完成。</span><span class="sxs-lookup"><span data-stu-id="a6630-209">If you want to allow all users access to specific cmdlets, functions, or providers, you can do so right in the session configuration file.</span></span>
+<span data-ttu-id="a6630-210">如需工作階段設定檔中支援屬性的完整清單，請執行 `Get-Help New-PSSessionConfigurationFile -Full`。</span><span class="sxs-lookup"><span data-stu-id="a6630-210">For a full list of supported properties in the session configuration file, run `Get-Help New-PSSessionConfigurationFile -Full`.</span></span>
 
-## <a name="testing-a-session-configuration-file"></a><span data-ttu-id="14e28-206">測試工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="14e28-206">Testing a session configuration file</span></span>
+## <a name="testing-a-session-configuration-file"></a><span data-ttu-id="a6630-211">測試工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="a6630-211">Testing a session configuration file</span></span>
 
-<span data-ttu-id="14e28-207">您可以使用 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) Cmdlet 測試工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="14e28-207">You can test a session configuration using the [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.</span></span>
-<span data-ttu-id="14e28-208">如果您已使用文字編輯器手動編輯 pssc 檔案，強烈建議您測試您的工作階段設定檔，以確定語法正確。</span><span class="sxs-lookup"><span data-stu-id="14e28-208">It is strongly recommended that you test your session configuration file if you have edited the pssc file manually using a text editor to ensure the syntax is correct.</span></span>
-<span data-ttu-id="14e28-209">如果工作階段設定檔未通過此測試，它將無法順利在系統上登錄。</span><span class="sxs-lookup"><span data-stu-id="14e28-209">If a session configuration file does not pass this test, it will not be able to be successfully registered on the system.</span></span>
+<span data-ttu-id="a6630-212">您可以使用 [Test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) Cmdlet 測試工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="a6630-212">You can test a session configuration using the [Test-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/test-pssessionconfigurationfile) cmdlet.</span></span> <span data-ttu-id="a6630-213">如已使用手動方式編輯 `.pssc` 檔案，建議您測試工作階段設定檔。</span><span class="sxs-lookup"><span data-stu-id="a6630-213">It's recommended that you test your session configuration file if you've manually edited the `.pssc` file.</span></span> <span data-ttu-id="a6630-214">測試可確保語法正確。</span><span class="sxs-lookup"><span data-stu-id="a6630-214">Testing ensures the syntax is correct.</span></span> <span data-ttu-id="a6630-215">如果工作階段設定檔未通過此測試，即無法在系統上登錄。</span><span class="sxs-lookup"><span data-stu-id="a6630-215">If a session configuration file fails this test, it can't be registered on the system.</span></span>
 
-## <a name="sample-session-configuration-file"></a><span data-ttu-id="14e28-210">範例工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="14e28-210">Sample session configuration file</span></span>
+## <a name="sample-session-configuration-file"></a><span data-ttu-id="a6630-216">範例工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="a6630-216">Sample session configuration file</span></span>
 
-<span data-ttu-id="14e28-211">以下是完整的範例，示範如何建立及驗證 JEA 的工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="14e28-211">Below is a complete example showing how to create and validate a session configuration for JEA.</span></span>
-<span data-ttu-id="14e28-212">請注意，為了便利性和可讀性起見，角色定義會建立並儲存在 `$roles` 變數。</span><span class="sxs-lookup"><span data-stu-id="14e28-212">Note that the role definitions are created and stored in the `$roles` variable for convenience and readability.</span></span>
-<span data-ttu-id="14e28-213">並不要求須執行這項操作。</span><span class="sxs-lookup"><span data-stu-id="14e28-213">It is not a requirement to do so.</span></span>
+<span data-ttu-id="a6630-217">下例示範如何建立及驗證 JEA 的工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="a6630-217">The following example shows how to create and validate a session configuration for JEA.</span></span> <span data-ttu-id="a6630-218">為了便利性和可讀性起見，角色定義會建立並儲存在 `$roles` 變數中。</span><span class="sxs-lookup"><span data-stu-id="a6630-218">The role definitions are created and stored in the `$roles` variable for convenience and readability.</span></span> <span data-ttu-id="a6630-219">這不是必要操作。</span><span class="sxs-lookup"><span data-stu-id="a6630-219">It isn't a requirement to do so.</span></span>
 
 ```powershell
 $roles = @{
@@ -246,12 +209,11 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a><span data-ttu-id="14e28-214">更新工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="14e28-214">Updating session configuration files</span></span>
+## <a name="updating-session-configuration-files"></a><span data-ttu-id="a6630-220">更新工作階段設定檔</span><span class="sxs-lookup"><span data-stu-id="a6630-220">Updating session configuration files</span></span>
 
-<span data-ttu-id="14e28-215">如果您需要變更 JEA 工作階段設定的屬性，包括將使用者對應至角色，您必須[取消登錄](register-jea.md#unregistering-jea-configurations)並[重新登錄](register-jea.md) JEA 工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="14e28-215">If you need to change properties of a JEA session configuration, including the mapping of users to roles, you must [unregister](register-jea.md#unregistering-jea-configurations) and [re-register](register-jea.md) the JEA session configuration.</span></span>
-<span data-ttu-id="14e28-216">當您重新登錄 JEA 工作階段設定時，請使用包含您想要之變更的已更新 PowerShell 工作階段設定檔。</span><span class="sxs-lookup"><span data-stu-id="14e28-216">When you re-register the JEA session configuration, use an updated PowerShell session configuration file that includes your desired changes.</span></span>
+<span data-ttu-id="a6630-221">若要變更 JEA 工作階段設定的屬性，包括將使用者對應至角色，您必須[取消登錄](register-jea.md#unregistering-jea-configurations)。</span><span class="sxs-lookup"><span data-stu-id="a6630-221">To change the properties of a JEA session configuration, including the mapping of users to roles, you must [unregister](register-jea.md#unregistering-jea-configurations).</span></span> <span data-ttu-id="a6630-222">然後，使用更新的工作階段設定檔，[重新登錄](register-jea.md) JEA 工作階段設定。</span><span class="sxs-lookup"><span data-stu-id="a6630-222">Then, [re-register](register-jea.md) the JEA session configuration using an updated session configuration file.</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="14e28-217">接下來的步驟</span><span class="sxs-lookup"><span data-stu-id="14e28-217">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="a6630-223">接下來的步驟</span><span class="sxs-lookup"><span data-stu-id="a6630-223">Next steps</span></span>
 
-- [<span data-ttu-id="14e28-218">登錄 JEA 設定</span><span class="sxs-lookup"><span data-stu-id="14e28-218">Register a JEA configuration</span></span>](register-jea.md)
-- [<span data-ttu-id="14e28-219">編寫 JEA 角色</span><span class="sxs-lookup"><span data-stu-id="14e28-219">Author JEA roles</span></span>](role-capabilities.md)
+- [<span data-ttu-id="a6630-224">登錄 JEA 設定</span><span class="sxs-lookup"><span data-stu-id="a6630-224">Register a JEA configuration</span></span>](register-jea.md)
+- [<span data-ttu-id="a6630-225">編寫 JEA 角色</span><span class="sxs-lookup"><span data-stu-id="a6630-225">Author JEA roles</span></span>](role-capabilities.md)
