@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC WaitForSome 資源
-ms.openlocfilehash: 888da1810f0a9233579bad5eef8d5dd556947c61
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2260f37002171154a6f2c3996b2af1bd9120039d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076849"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726779"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome 資源
 
@@ -17,6 +17,9 @@ ms.locfileid: "62076849"
 
 如果 **ResourceName** 屬性所指定的資源處於預期狀態的節點達到 **NodeName** 屬性所定義的節點數目下限 (由 **NodeCount** 指定)，此資源即可視為成功。
 
+> [!NOTE]
+> **WaitForSome** 資源使用 Windows 遠端管理來檢查其他節點的狀態。
+> 如需 WinRM 連接埠和安全性需求的詳細資訊，請參閱 [PowerShell 遠端安全性考量](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)。
 
 ## <a name="syntax"></a>語法
 

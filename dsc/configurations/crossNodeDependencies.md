@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 指定跨節點相依性
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080198"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734680"
 ---
 # <a name="specifying-cross-node-dependencies"></a>指定跨節點相依性
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 所有的 **WaitForXXXX** 都共用下列語法索引鍵。
 
-|  屬性  |  描述   | | RetryIntervalSec| 重試之前的秒數。 最小值為 1。| | RetryCount| 重試的次數上限。| | ThrottleLimit| 可同時連線的電腦數目。 預設值為 `New-CimSession`。| | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 如需詳細資訊，請參閱 [DependsOn](resource-depends-on.md)| | PsDscRunAsCredential | 請參閱[使用 DSC 搭配使用者認證](./runAsUser.md) |
-
+|屬性|  描述   |
+|---------|---------------------|
+| RetryIntervalSec| 進行重試之前的秒數。 最小值為 1。|
+| RetryCount| 重試次數上限。|
+| ThrottleLimit| 可同時連線的電腦數目。 預設值為 `New-CimSession` 預設值。|
+| DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 如需詳細資訊，請參閱 [DependsOn](resource-depends-on.md)|
+| PsDscRunAsCredential | 請參閱[以使用者認證執行 DSC](./runAsUser.md) |
 
 ## <a name="using-waitforxxxx-resources"></a>使用 WaitForXXXX 資源
 
-每個 **WaitForXXXX** 資源都會等候指定的資源在指定的 Node 上完成。 在相同 Configuration 上的其他資源，接著可以使用 **DependsOn** 索引鍵，「相依於」**WaitForXXXX** 資源。
+每個 **WaitForXXXX** 資源都會等候指定的資源在指定的 Node 上完成。
+在相同 Configuration 上的其他資源，接著可以使用 **DependsOn** 索引鍵，「相依於」  **WaitForXXXX** 資源。
 
 例如，在下列設定中，目標節點正在等候 **xADDomain** 資源在 **MyDC** 節點上在 15 秒的間隔內最多重試 30 次完成，之後目標節點才能加入網域。
+
+根據預設，**WaitForXXX** 資源會嘗試一次，然後才失敗。 雖然並非必要，但通常要指定 **RetryCount** 與 **RetryIntervalSec**。
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 當您編譯 Configuration 時，會產生兩個 ".mof" 檔案。 使用 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet，將這兩個 ".mof" 檔案套用至目標 Node
 
->**注意：** 根據預設，WaitForXXX 資源會嘗試一次，然後才失敗。 雖然並非必要，但通常要指定 **RetryCount** 與 **RetryIntervalSec**。
+> [!NOTE]
+> **WaitForXXX** 資源使用 Windows 遠端管理來檢查其他節點的狀態。
+> 如需 WinRM 連接埠和安全性需求的詳細資訊，請參閱 [PowerShell 遠端安全性考量](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)。
 
 ## <a name="see-also"></a>另請參閱
 

@@ -2,19 +2,19 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882562"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733887"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
 除了 [PowerShell ISE][ise] 之外，PowerShell 在 Visual Studio Code 中也受到良好支援。
 而且，雖然所有平台 (Windows、macOS 和 Linux) 上的 PowerShell Core 都支援 Visual Studio Code，但 PowerShell Core 不支援 ISE
 
-使用 Windows 10 或安裝適用於低階 Windows 作業系統 (例如 Windows 8.1 等) 的 [Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395)，即可以在 Windows 上使用 Visual Studio Code 與 PowerShell 第 5 版。
+使用 Windows 10 或安裝適用於低階 Windows 作業系統 (例如 Windows 8.1 等) 的 [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/)，即可以在 Windows 上使用 Visual Studio Code 與 PowerShell 第 5 版。
 
 啟動它之前，請先確定系統上有 PowerShell。
 若為 Windows、macOS 和 Linux 上的新型工作負載，請參閱：
@@ -47,22 +47,22 @@ ms.locfileid: "65882562"
   - **Linux**：在您的終端機上鍵入 `code`
   - **macOS**：在您的終端機上鍵入 `code`
 
-- 按 **Ctrl+P** (Mac 是 **Cmd+P**) 啟動 [快速開啟]。
+- 按 **Ctrl+P** (Mac 是 **Cmd+P**) 啟動 [快速開啟]  。
 - 在 [快速開啟] 中鍵入 `ext install powershell` 並點擊 **Enter**。
-- 提要欄位上隨即開啟 [延伸模組] 檢視。 從 Microsoft 選取 PowerShell 延伸模組。
+- 提要欄位上隨即開啟 [延伸模組]  檢視。 從 Microsoft 選取 PowerShell 延伸模組。
   您應該會看到類似如下的畫面︰
 
   ![VSCode](../../images/vscode.png)
 
-- 從 Microsoft 按一下 PowerShell 延伸模組的 [安裝] 按鈕。
-- 安裝之後，您會看到 [安裝] 按鈕變成 [重新載入]。
-  按一下 [重新載入]。
+- 從 Microsoft 按一下 PowerShell 延伸模組的 [安裝]  按鈕。
+- 安裝之後，您會看到 [安裝]  按鈕變成 [重新載入]  。
+  按一下 [重新載入]  。
 - 重新載入 Visual Studio Code 之後，就可以進行編輯。
 
-例如，若要建立新的檔案，按一下 [檔案]->[新增]。
-若要儲存它，按一下 [檔案]->[儲存]，然後提供檔案名稱，例如 `HelloWorld.ps1`。
+例如，若要建立新的檔案，按一下 [檔案]->[新增]  。
+若要儲存它，按一下 [檔案]->[儲存]  ，然後提供檔案名稱，例如 `HelloWorld.ps1`。
 若要關閉檔案，請按一下檔案名稱旁邊的 "x"。
-若要結束 Visual Studio Code，[檔案]->[結束]。
+若要結束 Visual Studio Code，[檔案]->[結束]  。
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>在受限制的系統上安裝 PowerShell 延伸模組
 
@@ -182,11 +182,11 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 ### <a name="no-workspace-debugging"></a>無工作區偵錯
 
-使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。 以 [檔案] -> [開啟檔案] 開啟 PowerShell 指令碼檔案，在行上設定中斷點 (按 F9)，然後按 F5 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
+使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。 以 [檔案] -> [開啟檔案]  開啟 PowerShell 指令碼檔案，在行上設定中斷點 (按 F9)，然後按 F5 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
-工作區偵錯是指使用 [檔案] 功能表的 [開啟資料夾...]，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
+工作區偵錯是指使用 [檔案]  功能表的 [開啟資料夾...]  ，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
 您開啟的資料夾通常是 PowerShell 專案資料夾及/或 Git 存放庫的根目錄。
 
 即使在此模式中，只要按下 F5 就可以開始偵錯目前選取的 PowerShell 指令碼。
@@ -200,9 +200,9 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 請遵循下列步驟建立您的偵錯設定檔：
 
-  1. 按 **Ctrl+Shift+D** (Mac 是 **Cmd+Shift+D**) 開啟 [偵錯] 檢視。
+  1. 按 **Ctrl+Shift+D** (Mac 是 **Cmd+Shift+D**) 開啟 [偵錯]  檢視。
   2. 按工具列中的**設定**齒輪圖示。
-  3. Visual Studio Code 會提示您 [選取環境]。 選擇 [PowerShell]。
+  3. Visual Studio Code 會提示您 [選取環境]  。 選擇 [PowerShell]  。
 
   當您這樣做時，Visual Studio Code 會在工作區資料夾的根目錄中建立目錄和檔案：".vscode\launch.json"。
   這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要修訂 launch.json 檔案。
@@ -238,11 +238,11 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
   ```
 
   這表示常見的偵錯案例。
-  不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定] 按鈕。
+  不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定]  按鈕。
   您可以按此按鈕新增多個 PowerShell 偵錯設定。 **PowerShell：啟動指令碼**是可以新增的方便設定。
   使用此設定時，您可以指定有選擇性引數的特定檔案，只要按下 F5 就應該啟動，無論編輯器中當時作用的是哪個檔案。
 
-  建立偵錯設定之後，您就可以從 [偵錯] 檢視工具列的偵錯設定下拉式清單中擇一，選取在偵錯工作階段期間想要使用的設定。
+  建立偵錯設定之後，您就可以從 [偵錯]  檢視工具列的偵錯設定下拉式清單中擇一，選取在偵錯工作階段期間想要使用的設定。
 
 有幾個部落格可以協助您開始使用適用於 Visual Studio Code 的 PowerShell 擴充功能：
 

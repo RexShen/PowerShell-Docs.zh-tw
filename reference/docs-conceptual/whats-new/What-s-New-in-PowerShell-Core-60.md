@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 的新功能
 description: PowerShell Core 6.0 中發行的新功能與變更
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059010"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843924"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 的新功能
 
@@ -107,15 +107,15 @@ PowerShell Core 具有「可攜式」ZIP 套件。
 ## <a name="renamed-powershellexe-to-pwshexe"></a>已將 `powershell(.exe)` 重新命名為 `pwsh(.exe)`
 
 已將 PowerShell Core 的二進位檔名稱從 `powershell(.exe)` 變更為 `pwsh(.exe)`。
-此變更提供決定性方式，讓使用者在電腦上執行 PowerShell Core，以支援並存 Windows PowerShell 和 PowerShell Core 安裝。
+這項變更提供決定性方式，讓使用者在電腦上執行 PowerShell Core，以支援並存 Windows PowerShell 和 PowerShell Core 安裝。
 `pwsh` 也會較短，而且更容易鍵入。
 
 其他從 `powershell.exe` 到 `pwsh(.exe)` 的變更：
 
 - 已將第一個位置參數從 `-Command` 變更為 `-File`。
-  此變更會修正 PowerShell 指令碼中 `#!` 的使用方式 (也稱為狀況)，而 PowerShell 指令碼要在非 Windows 平台上從非 PowerShell 殼層執行。
+  這項變更會修正 PowerShell 指令碼中 `#!` 的使用方式 (也稱為狀況)，而 PowerShell 指令碼要在非 Windows 平台上從非 PowerShell 殼層執行。
   這也表示您可以執行 `pwsh foo.ps1` 或 `pwsh fooScript` 這類命令，但未指定 `-File`。
-  不過，此變更需要您在嘗試執行 `pwsh.exe -Command Get-Command` 這類命令時明確指定 `-c` 或 `-Command`。 (#4019)
+  不過，這項變更需要您在嘗試執行 `pwsh.exe -Command Get-Command` 這類命令時明確指定 `-c` 或 `-Command`。 (#4019)
 - PowerShell Core 接受 `-i` (或 `-Interactive`) 參數，指出互動式殼層。 (#3558) 這可讓 PowerShell 用作 Unix 平台上的預設殼層。
 - 已從 `pwsh.exe` 移除 `-importsystemmodules` 和 `-psconsoleFile` 參數。 (#4995)
 - 已變更 `pwsh -version` 以及 `pwsh.exe` 的內建說明，以配合其他原生工具。 (#4958 與 #4931) (感謝 [@iSazonov](https://github.com/iSazonov))
@@ -135,7 +135,7 @@ PowerShell Core 也包含查看已知資料夾 (例如，全域組件快取通�
 在許多情況下，於社群的協助下，我們已將新功能和 Bug 修正新增至這些 Cmdlet。
 在某些情況下，因為基礎.NET 層中遺失相依性，所以功能已移除或無法使用。
 
-隨附為 Windows 一部分的大部分模組 (例如，`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` 等) 以及包含 Azure 和 Office 的其他 Microsoft 產品都尚未「明確地」移植到 .NET Core。
+隨附為 Windows 一部分的大部分模組 (例如，`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` 等) 以及包含 Azure 和 Office 的其他 Microsoft 產品都尚未「明確地」  移植到 .NET Core。
 PowerShell 小組正在與這些產品小組和團隊合作，驗證其現有模組並將其移植到 PowerShell Core。
 使用 .NET Standard 和 [CDXML][]，其中許多傳統 Windows PowerShell 模組似乎作用於 PowerShell Core，但尚未正式驗證而且未正式支援。
 
@@ -159,7 +159,7 @@ Add-WindowsPSModulePath
 
 PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版本、Windows Server Core 和 Nano Server) 的 Docker 容器。
 
-如需完整清單，請參閱 [`microsoft/powershell`Docker Hub][docker-hub] 之上的標記。
+如需完整清單，請參閱 [`microsoft/powershell`Docker Hub][docker-hub] 上的標記。
 如需 Docker 和 PowerShell Core 的詳細資訊，請參閱 GitHub 上的 [Docker][]。
 
 ## <a name="ssh-based-powershell-remoting"></a>以 SSH 為基礎的 PowerShell 遠端
@@ -169,7 +169,7 @@ PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版�
 這表示您可以使用 `Enter-PSSession` 和 `New-PSSession` 這類 Cmdlet，並使用 SSH 進行驗證。
 您只需要向以 OpenSSH 為基礎的 SSH 伺服器註冊 PowerShell 作為子系統，而且您可以使用具有傳統 `PSSession` 語意且以現有 SSH 為基礎的驗證機制 (例如密碼或私密金鑰)。
 
-如需設定和使用以 SSH 為基礎的遠端的詳細資訊，請參閱[透過 SSH 的 PowerShell 遠端][ssh-remoting]。
+如需設定和使用以 SSH 為基礎遠端的詳細資訊，請參閱[透過 SSH 的 PowerShell 遠端][ssh-remoting]。
 
 ## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>預設編碼是沒有 BOM 的 UTF-8 (New-ModuleManifest 除外)
 
@@ -181,7 +181,7 @@ PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版�
 PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 
 這表示，使用 `-Encoding` 參數的所有內建 Cmdlet 預設都會使用 `UTF8NoBOM` 值。
-此變更會影響下列 Cmdlet：
+這項變更會影響下列 Cmdlet：
 
 - Add-Content
 - Export-Clixml
@@ -236,8 +236,8 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
   - `PSEdition`:這在 PowerShell Core 上設定為 `Core`，而在 Windows PowerShell 上設定為 `Desktop`
   - `GitCommitId`:這是在其中建置 PowerShell 之 Git 分支或標記的 Git 認可識別碼。
     在發行的組建上，它可能會與 `PSVersion` 相同。
-  - `OS`：這是 `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` 所傳回的作業系統版本字串
-  - `Platform`這是 `[System.Environment]::OSVersion.Platform` 所傳回。它在 Windows 上設定為 `Win32NT`、在 macOS 上設為 `Unix`，而在 Linux 上設定為 `Unix`。
+  - `OS`:這是 `[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` 所傳回的作業系統版本字串
+  - `Platform`:這是 `[System.Environment]::OSVersion.Platform` 所傳回。它在 Windows 上設定為 `Win32NT`、在 macOS 上設為 `Unix`，而在 Linux 上設定為 `Unix`。
 - 已從 `$PSVersionTable` 移除 `BuildVersion` 屬性。
   此屬性已緊密繫結至 Windows 組建版本。
   相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。 (#3877) (感謝 [@iSazonov](https://github.com/iSazonov)！)
@@ -275,7 +275,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 - 必要時，讓 Web Cmdlet 不驗證伺服器的 HTTPS 憑證。
 - 將驗證參數新增至 Web Cmdlet。 (#5052) (感謝 [@markekraus](https://github.com/markekraus))
   - 新增提供三個選項的 `-Authentication`：Basic、OAuth 與 Bearer。
-  - 新增 `-Token`，以取得 OAuth 和 Bearer 選項的持有人權杖。
+  - 新增 `-Token`，以取得 [OAuth] 和 [持有人] 選項的持有人權杖。
   - 新增 `-AllowUnencryptedAuthentication`，以略過任何非 HTTPS 的傳輸配置所提供的驗證。
 - 將 `-ResponseHeadersVariable` 新增至 `Invoke-RestMethod`，以啟用擷取回應標頭。 (#4888) (感謝 [@markekraus](https://github.com/markekraus))
 - 修正 Web Cmdlet，以在回應狀態碼為不成功時於例外狀況中包含 HTTP 回應。 (#3201)
@@ -295,9 +295,10 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 
 ### <a name="csv-cmdlets"></a>CSV Cmdlet
 
+- `Import-Csv` 現在支援 W3C 擴充記錄檔格式 (#2482) (感謝 [@iSazonov](https://github.com/iSazonov)！)
 - 新增對 `Import-Csv` 和 `ConvertFrom-Csv` 的 `PSTypeName` 支援。 (#5389) (感謝 [@markekraus](https://github.com/markekraus)！)
 - 讓 `Import-Csv` 支援 `CR`、`LF` 和 `CRLF` 作為行分隔符號。 (#5363) (感謝 [@iSazonov](https://github.com/iSazonov)！)
-- 將 `-NoTypeInformation` 設為 `Export-Csv` 和 `ConvertTo-Csv` 的預設值。 (#5164) (感謝 [@markekraus](https://github.com/markekraus))
+- 將 `-NoTypeInformation` 設為 `Export-Csv` 和 `ConvertTo-Csv` 的預設值。 (#5164) (感謝 [@markekraus](https://github.com/markekraus)！)
 
 ### <a name="service-cmdlets"></a>服務 Cmdlet
 
@@ -362,7 +363,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 
 ## <a name="bug-fixes-and-performance-improvements"></a>Bug 修正和效能改善
 
-我們已跨 PowerShell 進行「許多」效能改善，包含在啟動時間、各種內建 Cmdlet 以及與原生二進位檔的互動中。
+我們已跨 PowerShell 進行「許多」  效能改善，包含在啟動時間、各種內建 Cmdlet 以及與原生二進位檔的互動中。
 
 我們也已修正 PowerShell Core 內的一些 Bug。
 如需修正和變更的完整清單，請參閱 GitHub 上的[變更記錄][]。
@@ -375,8 +376,8 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 
 如果您想要退出這個遙測，只需使用下列其中一個值來建立 `POWERSHELL_TELEMETRY_OPTOUT` 環境變數：`true`、`1` 或 `yes`。
 建立變數會略過第一次執行 PowerShell 之前的所有遙測。
-我們也想要公開此遙測資料，以及我們在[社群儀表板][community-dashboard]中從遙測搜集到的深入資訊。
-您可以深入了解我們如何在這個[部落格文章][telemetry-blog]中使用此資料。
+我們也打算公開此遙測資料，以及我們在[社群儀表板][community-dashboard]中從遙測搜集到的見解。
+您可以深入了解我們如何在這個[部落格文章][telemetry-blog]中使用這項資料。
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
