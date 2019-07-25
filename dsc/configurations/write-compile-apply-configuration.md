@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
-ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080008"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372171"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -47,6 +47,18 @@ Configuration HelloWorld {
 }
 ```
 
+> !重要 在更進階案例中，若需要匯入多個模組，以便您可以在相同設定中使用許多 DSC 資源，請務必使用 `Import-DscResource`，將每個模組放在個別的一行。
+> 在原始程式碼控制中，此作法較容易維護，且當您在 Azure 狀態設定中使用 DSC 時，它是必要的。
+>
+> ```powershell
+>  Configuration HelloWorld {
+>
+>   # Import the module that contains the File resource.
+>   Import-DscResource -ModuleName PsDesiredStateConfiguration
+>   Import-DscResource -ModuleName xWebAdministration
+>
+> ```
+
 將檔案另存為 "HelloWorld.ps1"。
 
 定義設定如同定義函式。 **Node** 區塊會指定要設定的目標節點，在本範例中為 `localhost`。
@@ -57,11 +69,11 @@ Configuration HelloWorld {
 
 DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。
 執行設定 (例如函式)，會針對 `Node` 區塊定義的每個節點編譯一個 ".mof" 檔案。
-為執行此設定，您需要「點溯源」"HelloWorld.ps1" 指令碼到目前的範圍。
+為執行此設定，您需要「點溯源」  "HelloWorld.ps1" 指令碼到目前的範圍。
 如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
 
 <!-- markdownlint-disable MD038 -->
-在 `. ` (點、空格) 後輸入儲存路徑，即可「點溯源」您的 "HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
+在 `. ` (點、空格) 後輸入儲存路徑，即可「點溯源」  您的 "HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -100,7 +112,7 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 `Start-DSCConfiguration` Cmdlet 完成後，您應該會在指定的位置看到 "HelloWorld.txt" 檔案。 您可以使用 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) Cmdlet 驗證內容。
 
-您也可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)「測試」目前的狀態。
+您也可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)「測試」  目前的狀態。
 
 如果節點目前與套用的設定相容，則輸出應為 "True"。
 

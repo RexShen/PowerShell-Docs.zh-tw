@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 08/14/2018
-ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086386"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372145"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -17,8 +17,7 @@ PowerShell 遠端通常會使用 WinRM 進行連線交涉和資料傳輸。 SSH 
 
 WinRM 提供一個健全裝載模型以供 PowerShell 遠端工作階段使用。 SSH 型遠端功能目前不支援遠端端點設定和 JEA (Just Enough Administration)。
 
-SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端功能。 SSH 遠端功能會在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。
-最後，我們將實作一般裝載模型 (類似 WinRM) 以支援端點設定與 JEA。
+SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端功能。 SSH 遠端功能會在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。 最後，我們將實作一般裝載模型 (類似 WinRM) 以支援端點設定與 JEA。
 
 `New-PSSession`、`Enter-PSSession` 與 `Invoke-Command` Cmdlet 現在有新的參數集，可支援這個新的遠端連線。
 
@@ -30,7 +29,7 @@ SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShe
 
 ## <a name="general-setup-information"></a>一般安裝資訊
 
-SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 及 Windows Server 2019 中使用。 如需詳細資訊，請參閱[適用於 Windows 的 OpenSSH](/windows-server/administration/openssh/openssh_overview)。 針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell Core 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 您也必須設定啟用密碼或以金鑰為基礎的驗證。
+SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 與 Windows Server 2019 中使用。 如需詳細資訊，請參閱[適用於 Windows 的 OpenSSH](/windows-server/administration/openssh/openssh_overview)。 針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell Core 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 您也必須設定啟用密碼或以金鑰為基礎的驗證。
 
 ## <a name="set-up-on-windows-machine"></a>在 Windows 電腦上進行安裝
 
@@ -88,9 +87,9 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
 
 5. 將 OpenSSH 安裝所在的路徑新增至 Path 環境變數。 例如，`C:\Program Files\OpenSSH\`。 這個項目能夠允許程式找到 ssh.exe。
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a>在 Linux (Ubuntu 14.04) 電腦上進行安裝
+## <a name="set-up-on-linux-ubuntu-1604-machine"></a>在 Linux (Ubuntu 16.04) 電腦上安裝
 
-1. 安裝 GitHub 中的最新 [PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) 組建
+1. 安裝 GitHub 中的最新 [PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) 組建
 2. 視需要安裝 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
 
    ```bash
@@ -169,11 +168,7 @@ SSH 必須安裝在所有電腦上。 請同時安裝 SSH 用戶端 (`ssh.exe`) 
 
 ## <a name="authentication"></a>驗證
 
-透過 SSH 的 PowerShell 遠端功能需要在 SSH 用戶端與 SSH 服務之間交換驗證，本身並不會實作任何驗證配置。
-這表示任何已設定的驗證配置 (包括多重要素驗證) 都是由 SSH 處理，與 PowerShell 無關。
-例如，您可以設定 SSH 服務要求公開金鑰驗證及單次密碼來增強安全性。
-設定多重要素驗證不在本文件的討論範圍內。
-請參閱 SSH 文件，以了解如何正確地設定多重要素驗證，並驗證它在 PowerShell 之外是否運作正常，再嘗試與 PowerShell 遠端功能搭配使用。
+透過 SSH 的 PowerShell 遠端功能需要在 SSH 用戶端與 SSH 服務之間交換驗證，本身並不會實作任何驗證配置。 這表示任何已設定的驗證配置 (包括多重要素驗證) 都是由 SSH 處理，與 PowerShell 無關。 例如，您可以設定 SSH 服務要求公開金鑰驗證及單次密碼來增強安全性。 設定多重要素驗證不在本文件的討論範圍內。 請參閱 SSH 文件，以了解如何正確地設定多重要素驗證，並驗證它在 PowerShell 之外是否運作正常，再嘗試與 PowerShell 遠端功能搭配使用。
 
 ## <a name="powershell-remoting-example"></a>PowerShell 遠端範例
 
@@ -209,7 +204,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -310,7 +305,7 @@ sudo 命令不適用於連至 Linux 電腦的遠端工作階段。
 
 [PowerShell Core for Windows](../../install/installing-powershell-core-on-windows.md#msi)
 
-[PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[PowerShell Core for Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [PowerShell Core for MacOS](../../install/installing-powershell-core-on-macos.md)
 

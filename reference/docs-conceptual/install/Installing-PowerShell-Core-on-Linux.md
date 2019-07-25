@@ -1,27 +1,23 @@
 ---
 title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
-ms.date: 08/06/2018
-ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
-ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
+ms.date: 07/19/2019
+ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/11/2019
-ms.locfileid: "67829430"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372192"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 14.04][u14], [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810],  [Debian 9][deb9],
-[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse],
-[Fedora 27][fedora]、[Fedora 28][fedora] 和 [Arch Linux][arch]。
+支援 [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9],
+ [CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse], [Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
-針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]。
-您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
+針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
 
-GitHub [版本][]頁面上提供所有套件。
-安裝套件之後，請從終端機執行 `pwsh`。
+GitHub [版本][]頁面上提供所有套件。 安裝套件之後，請從終端機執行 `pwsh`。
 
-[u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
@@ -40,7 +36,7 @@ GitHub [版本][]頁面上提供所有套件。
 
 透過直接下載的安裝不會變更，但檔案名稱除外。
 
-下表是使用各種套件管理員安裝穩定和預覽套件的命令：
+下表包含使用各種套件管理員安裝穩定和預覽套件的命令：
 
 |發行版本|穩定命令 | 預覽命令 |
 |---------------|---------------|-----------------|
@@ -48,61 +44,13 @@ GitHub [版本][]頁面上提供所有套件。
 | CentOS、RedHat |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
 | Fedora   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a>Ubuntu 14.04
-
-### <a name="installation-via-package-repository---ubuntu-1404"></a>透過套件存放庫安裝 - Ubuntu 14.04
-
-PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
-這是慣用方法。
-
-```sh
-# Download the Microsoft repository GPG keys
-wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-
-# Register the Microsoft repository GPG keys
-sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-以超級使用者的身分，註冊 Microsoft 存放庫。
-從那時起，您只需要使用`sudo apt-get upgrade powershell`來更新安裝。
-
-### <a name="installation-via-direct-download---ubuntu-1404"></a>透過直接下載安裝 - Ubuntu 14.04
-
-將 Debian 套件 `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
-從[版本][]頁面下載到 Ubuntu 電腦。
-
-然後在終端機上執行下列作業：
-
-```sh
-sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> `dpkg -i` 命令因相依性不相符而失敗。
-> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
-
-### <a name="uninstallation---ubuntu-1404"></a>解除安裝 - Ubuntu 14.04
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ### <a name="installation-via-package-repository---ubuntu-1604"></a>透過套件存放庫安裝 - Ubuntu 16.04
 
-PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
-這是慣用方法。
+PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。
+
+慣用的方法如下所示：
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -121,14 +69,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>透過直接下載安裝 - Ubuntu 16.04
 
-將 Debian 套件 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
-從[版本][]頁面下載到 Ubuntu 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。
 
-然後在終端機上執行下列作業：
+然後，在終端機中執行下列命令：
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -136,8 +83,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> `dpkg -i` 命令因相依性不相符而失敗。
-> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
+> `dpkg -i` 命令因相依性不相符而失敗。 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
 ### <a name="uninstallation---ubuntu-1604"></a>解除安裝 - Ubuntu 16.04
 
@@ -149,8 +95,9 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---ubuntu-1804"></a>透過套件存放庫安裝 - Ubuntu 18.04
 
-PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
-這是慣用方法。
+PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。
+
+慣用的方法如下所示：
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -172,14 +119,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>透過直接下載安裝 - Ubuntu 18.04
 
-將 Debian 套件 `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
-從[版本][]頁面下載到 Ubuntu 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。
 
-然後在終端機上執行下列作業：
+然後，在終端機中執行下列命令：
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -187,8 +133,7 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> `dpkg -i` 命令因相依性不相符而失敗。
-> 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
+> `dpkg -i` 命令因相依性不相符而失敗。 下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。
 
 ### <a name="uninstallation---ubuntu-1804"></a>解除安裝 - Ubuntu 18.04
 
@@ -207,8 +152,9 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository---debian-8"></a>透過套件存放庫安裝 - Debian 8
 
-PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
-這是慣用方法。
+PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。
+
+慣用的方法如下所示：
 
 ```sh
 # Install system components
@@ -231,14 +177,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
 
 ## <a name="debian-9"></a>Debian 9
 
 ### <a name="installation-via-package-repository---debian-9"></a>透過套件存放庫安裝 - Debian 9
 
-PowerShell Core for Linux 會發佈到套件存放庫進行簡易安裝 (及更新)。
-這是慣用方法。
+PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。
+
+慣用的方法如下所示：
 
 ```sh
 # Install system components
@@ -261,14 +208,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者身分註冊過 Microsoft 存放庫一次之後，以後只需要使用 `sudo apt-get upgrade powershell` 更新它。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---debian-9"></a>透過直接下載安裝 - Debian 9
 
-將 Debian 套件 `powershell_6.2.0-1.debian.9_amd64.deb`
-從[版本][]頁面下載到 Debian 電腦。
+將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.debian.9_amd64.deb` 下載至 Debian 電腦。
 
-然後在終端機上執行下列作業：
+然後，在終端機中執行下列命令：
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
@@ -288,7 +234,7 @@ sudo apt-get remove powershell
 
 ### <a name="installation-via-package-repository-preferred---centos-7"></a>透過套件存放庫安裝 (慣用) - CentOS 7
 
-PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫進行簡易安裝 (及更新)。
+PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -301,20 +247,19 @@ sudo yum install -y powershell
 pwsh
 ```
 
-以超級使用者身分註冊過 Microsoft 存放庫一次之後，只需要使用 `sudo yum update powershell` 就可以更新 PowerShell。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo yum update powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---centos-7"></a>透過直接下載安裝 - CentOS 7
 
-使用 [CentOS 7][]，將 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-從[版本][]頁面下載到 CentOS 電腦。
+使用 [CentOS 7][]，將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。
 
-然後在終端機上執行下列作業：
+然後，在終端機中執行下列命令：
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-您也可以不使用下載的中繼步驟來安裝 RPM：
+您可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
@@ -332,7 +277,7 @@ sudo yum remove powershell
 
 ### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a>透過套件存放庫安裝 (慣用) - Red Hat Enterprise Linux (RHEL) 7
 
-PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫進行簡易安裝 (及更新)。
+PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -345,20 +290,19 @@ sudo yum install -y powershell
 pwsh
 ```
 
-以超級使用者身分註冊過 Microsoft 存放庫一次之後，只需要使用 `sudo yum update powershell` 就可以更新 PowerShell。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo yum update powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7
 
-將 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-從[版本][]頁面下載到 Red Hat Enterprise Linux 電腦。
+將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。
 
-然後在終端機上執行下列作業：
+然後，在終端機中執行下列命令：
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-您也可以不使用下載的中繼步驟來安裝 RPM：
+您可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
@@ -435,7 +379,7 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>透過套件存放庫安裝 (慣用) - Fedora 27、Fedora 28
 
-PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫進行簡易安裝 (及更新)。
+PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。
 
 ```sh
 # Register the Microsoft signature key
@@ -459,17 +403,16 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>透過直接下載安裝 - Fedora 27、Fedora 28
 
-將 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm`
-從[版本][]頁面下載到 Fedora 電腦。
+將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。
 
-然後在終端機上執行下列作業：
+然後，在終端機中執行下列命令：
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-您也可以不使用下載的中繼步驟來安裝 RPM：
+您可以不使用下載的中繼步驟來安裝 RPM：
 
 ```sh
 sudo dnf install compat-openssl10
@@ -493,7 +436,7 @@ PowerShell 可從 [Arch Linux][] 使用者存放庫 (AUR) 取得。
 * 可以從[主機的最新認可][arch-git]編譯
 * 可以使用[最新版本的二進位檔][arch-bin]安裝
 
-AUR 中的套件由社群維護 - 沒有官方支援。
+AUR 中的套件由社群維護，沒有官方支援。
 
 如需從 AUR 安裝套件的詳細資訊，請參閱 [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) 或社群 [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile)。
 
@@ -506,13 +449,13 @@ AUR 中的套件由社群維護 - 沒有官方支援。
 
 ### <a name="getting-snapd"></a>取得 snapd
 
-必須有 `snapd` 才能執行 Snap。
-請使用[這些指示](https://docs.snapcraft.io/core/install)確認您已安裝 `snapd`。
+必須有 `snapd` 才能執行 Snap。 請使用[這些指示](https://docs.snapcraft.io/core/install)確認您已安裝 `snapd`。
 
 ### <a name="installation-via-snap"></a>透過 Snap 安裝
 
-適用於 Linux 的 PowerShell Core 會發佈到 [Snap 市集](https://snapcraft.io/store)以供輕鬆安裝 (及更新)。
-這是慣用方法。
+適用於 Linux 的 PowerShell Core 會發佈到 [Snap Store](https://snapcraft.io/store)，以供輕鬆安裝及更新。
+
+慣用的方法如下所示：
 
 ```sh
 # Install PowerShell
@@ -522,7 +465,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-若要安裝預覽版，請使用下列方法。
+若要安裝預覽版，請使用下列方法：
 
 ```sh
 # Install PowerShell
@@ -532,7 +475,7 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-在安裝之後，Snap 會自動升級，不過您也可以使用 `sudo snap refresh powershell` 或 `sudo snap refresh powershell-preview` 觸發升級。
+安裝之後，Snap 將會自動升級。 您可以使用 `sudo snap refresh powershell` 或 `sudo snap refresh powershell-preview` 觸發升級。
 
 ### <a name="uninstallation"></a>解除安裝
 
@@ -583,7 +526,7 @@ apt-get remove -y powershell
 
 目前只有 Raspbian Stretch 支援 PowerShell。
 
-另外，CoreCLR (和 PowerShell Core) 僅適用於 Pi 2 和 Pi 3 裝置，因為像 [Pi Zero](https://github.com/dotnet/coreclr/issues/10605) 此類的其他裝置，它們的處理器不被支援。
+CoreCLR 與 PowerShell Core 僅適用於 Pi 2 與 Pi 3 裝置，因為像 [Pi Zero](https://github.com/dotnet/coreclr/issues/10605) \(英文\) 這類的其他裝置，其處理器不受支援。
 
 下載 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)並 遵循[安裝指示](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)來把它安裝到您的 Pi。
 
@@ -616,7 +559,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-或者，您可以建立一個符號連結，無需指定 "pwsh" 二進位路徑，便能啟動 PowerShell。
+或者，您可以建立一個符號連結來啟動 PowerShell，而無需指定 `pwsh` 二進位檔案路徑。
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -640,14 +583,12 @@ Linux 平台有 PowerShell 二進位 `tar.gz` 封存，以啟用進階的部署�
 
 ### <a name="dependencies"></a>相依性
 
-PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。
-但 .NET Core 執行階段在不同的發行版本需要不同的相依性，所以 PowerShell 也一樣。
+PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。 但 .NET Core 執行階段在不同的發行版本需要不同的相依性，PowerShell 也一樣。
 
 下圖顯示不同 Linux 發行版本上，正式支援的 .NET Core 2.0 相依性。
 
 | 作業系統                 | 相依性 |
 | ------------------ | ------------ |
-| Ubuntu 14.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52 |
 | Ubuntu 16.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55 |
 | Ubuntu 17.10       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57 |
 | Ubuntu 18.04       | libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、 <br> libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60 |
@@ -658,8 +599,7 @@ PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。
 | openSUSE Leap 15 | libcurl4、libopenssl1_0_0、libicu60_2 |
 | Fedora 27 <br> Fedora 28 | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
-若要在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。
-例如，[Amazon Linux dockerfile][amazon-dockerfile] 會先安裝相依性，再解壓縮 Linux `tar.gz` 封存。
+若要在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。 例如，[Amazon Linux dockerfile][amazon-dockerfile] 會先安裝相依性，再解壓縮 Linux `tar.gz` 封存。
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxScript 資源
-ms.openlocfilehash: 339968512ab1c16c4c3785a3a19b00c3fbbf9ea1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0ad0530f1de7b86ff48c4eb1f79870f6682894a1
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62077818"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372157"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC for Linux nxScript 資源
 
@@ -32,9 +32,9 @@ nxScript <string> #ResourceName
 
 |  屬性 |  描述 |
 |---|---|
-| GetScript| 提供當您叫用 [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521625.aspx) Cmdlet 時所執行的指令碼。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 #!/bin/bash。|
-| SetScript| 提供指令碼。 當您叫用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 時，**TestScript** 會先執行。 如果 **TestScript** 區塊傳回的結束代碼不是 0，則 **SetScript** 區塊將會執行。 如果 **TestScript** 傳回的結束代碼是 0，則 **SetScript** 區塊將不會執行。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。|
-| TestScript| 提供指令碼。 當您叫用 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) Cmdlet 時，這個指令碼會先執行。 如果傳回的結束代碼不是 0，則 SetScript 將會執行。 如果傳回的結束代碼是 0，則 **SetScript** 將不會執行。 **TestScript** 也會在叫用 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) Cmdlet 時執行。 不過，在此情況下，無論從 **TestScript** 傳回何種結束碼，**SetScript** 都不會執行。 如果實際的設定符合目前的預期狀態設定，則 **TestScript** 傳回的結束代碼必須為 0，如果不符合，則結束碼不是 0。 (目前的預期狀態設定是上次使用 DSC 的節點上制定的設定)。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 1#!/bin/bash.1。|
+| GetScript| 提供指令碼以傳回機器目前狀態。  當您叫用 [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，此指令碼會執行。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 #!/bin/bash。|
+| SetScript| 提供讓機器處於正確狀態的指令碼。 當您叫用 [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，**TestScript** 會先執行。 如果 **TestScript** 區塊傳回的結束代碼不是 0，則 **SetScript** 區塊將會執行。 如果 **TestScript** 傳回的結束代碼是 0，則 **SetScript** 區塊將不會執行。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。|
+| TestScript| 提供評估節點目前是否處於正確狀態的指令碼。 當您叫用 [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，此指令碼會執行。 如果傳回的結束代碼不是 0，則 SetScript 將會執行。 如果傳回的結束代碼是 0，則 **SetScript** 將不會執行。 當您叫用 [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，**TestScript** 也會執行。 不過，在此情況下，無論從 **TestScript** 傳回何種結束碼，**SetScript** 都不會執行。 如果實際設定符合目前的預期狀態設定，則 **TestScript** 必須包含內容且傳回的結束代碼必須為 0，如果不符合，則結束碼不是 0。 (目前的預期狀態設定是上次使用 DSC 的節點上制定的設定)。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 1#!/bin/bash.1。|
 | 使用者| 要執行指令碼的使用者。|
 | 群組| 要執行指令碼的群組。|
 | DependsOn | 表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊的**識別碼**是 **ResourceName**，而它的類型是 **ResourceType**，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。|
