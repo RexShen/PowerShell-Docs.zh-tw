@@ -6,13 +6,12 @@ ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
 ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "68372192"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9],
- [CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse], [Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
 
