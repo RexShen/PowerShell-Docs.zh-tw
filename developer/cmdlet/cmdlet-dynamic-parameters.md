@@ -1,5 +1,5 @@
 ---
-title: Cmdlet 的動態參數 |Microsoft Docs
+title: Cmdlet 動態參數 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,44 +8,44 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
-ms.openlocfilehash: 2fc73b6ef5a862fafb7a3c8fe3da19ac71bafc05
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068533"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986255"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>Cmdlet 動態參數
 
-Cmdlet 可以定義參數，例如，當另一個參數的引數為特定值的特殊情況下，使用者可以使用。 這些參數會加入在執行階段，並稱為*動態參數*因為只在需要時才新增。 比方說，您可以設計一個特定的切換參數指定時，才會將數個參數加入 cmdlet。
+Cmdlet 可以定義使用者在特殊條件下可用的參數, 例如當另一個參數的引數為特定值時。 這些參數會在執行時間加入, 並稱為動態參數, 因為只有在需要時才會新增這些參數。 例如, 您可以設計一個 Cmdlet, 只在指定了特定的切換參數時, 才會新增數個參數。
 
 > [!NOTE]
-> 提供者和 Windows PowerShell 函式也可以定義的動態參數。
+> 提供者和 PowerShell 函數也可以定義動態參數。
 
-## <a name="dynamic-parameters-in-windows-powershell-cmdlets"></a>Windows PowerShell Cmdlet 中的動態參數
+## <a name="dynamic-parameters-in-powershell-cmdlets"></a>PowerShell Cmdlet 中的動態參數
 
-Windows PowerShell 會使用動態參數，在數個提供者 cmdlet。 例如，`Get-Item`並`Get-ChildItem`cmdlet 新增`CodeSigningCert`參數在執行階段時`Path`指令程式參數指定的憑證提供者路徑。 如果`Path`指令程式參數指定的路徑為不同的提供者，`CodeSigningCert`參數不是可用。
+PowerShell 會在其多個提供者 Cmdlet 中使用動態參數。 例如, 當**Path**參數`Get-ChildItem`指定**憑證**提供者路徑時, `Get-Item`和 Cmdlet 會在執行時間新增**CodeSigningCert**參數。 如果**path**參數指定不同提供者的路徑, 則無法使用**CodeSigningCert**參數。
 
-下列範例會顯示如何`CodeSigningCert`參數會加入在執行階段時`Get-Item`執行 cmdlet。
+下列範例顯示當執行時 `Get-Item` , 如何在執行時間新增 CodeSigningCert 參數。
 
-在第一個範例中，Windows PowerShell 執行階段已新增參數，且此 cmdlet 成功。
+在此範例中, PowerShell 執行時間已新增參數, 且 Cmdlet 成功。
 
 ```powershell
-Get-Item -Path cert:\CurrentUser -codesigningcert
+Get-Item -Path cert:\CurrentUser -CodeSigningCert
 ```
 
-```output
+```Output
 Location   : CurrentUser
 StoreNames : {SmartCardRoot, UserDS, AuthRoot, CA...}
 ```
 
-在第二個範例中，指定檔案系統磁碟機，而且會傳回錯誤。 錯誤訊息表示`CodeSigningCert`找不到參數。
+在此範例中, 指定了**FileSystem**磁片磁碟機, 並傳回錯誤。 錯誤訊息指出找不到**CodeSigningCert**參數。
 
 ```powershell
-Get-Item -Path C:\ -codesigningcert
+Get-Item -Path C:\ -CodeSigningCert
 ```
 
-```output
+```Output
 Get-Item : A parameter cannot be found that matches parameter name 'codesigningcert'.
 At line:1 char:37
 +  get-item -path C:\ -codesigningcert <<<<
@@ -54,19 +54,25 @@ At line:1 char:37
     FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.Commands.GetItemCommand
 ```
 
-## <a name="support-for-dynamic-parameters"></a>動態參數的支援
+## <a name="support-for-dynamic-parameters"></a>支援動態參數
 
-若要支援的動態參數，cmdlet 程式碼必須包含下列項目。
+若要支援動態參數, Cmdlet 程式碼中必須包含下列元素。
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)這個介面會提供擷取動態參數的方法。
+### <a name="interface"></a>介面
 
-範例：
+[IDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters)。
+這個介面提供可抓取動態參數的方法。
+
+例如：
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)這個方法會擷取包含的動態參數定義的物件。
+### <a name="method"></a>方法
 
-範例：
+[IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)。
+這個方法會抓取包含動態參數定義的物件。
+
+例如：
 
 ```csharp
  public object GetDynamicParameters()
@@ -81,9 +87,11 @@ At line:1 char:37
 private SendGreetingCommandDynamicParameters context;
 ```
 
-動態參數類別此類別會定義要加入的參數。 這個類別必須包含每個參數以及此指令程式所需的任何選擇性別名和驗證屬性的參數屬性。
+### <a name="class"></a>類別
 
-範例：
+定義要加入之動態參數的類別。 此類別必須包含每個參數的**參數**屬性, 以及 Cmdlet 所需的任何選擇性**別名**和**驗證**屬性。
+
+例如：
 
 ```csharp
 public class SendGreetingCommandDynamicParameters
@@ -99,13 +107,13 @@ public class SendGreetingCommandDynamicParameters
 }
 ```
 
-支援動態參數的 cmdlet 的完整範例，請參閱 <<c0> [ 宣告的動態參數如何](./how-to-declare-dynamic-parameters.md)。
+如需支援動態參數之 Cmdlet 的完整範例, 請參閱[如何宣告動態參數](./how-to-declare-dynamic-parameters.md)。
 
 ## <a name="see-also"></a>另請參閱
 
-[System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)
+[IDynamicParameters。](/dotnet/api/System.Management.Automation.IDynamicParameters)
 
-[System.Management.Automation.Idynamicparameters.Getdynamicparameters*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[System.web. IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
 [如何宣告動態參數](./how-to-declare-dynamic-parameters.md)
 
