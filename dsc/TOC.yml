@@ -12,6 +12,8 @@
   items:
     - name: 開始使用適用於 Linux 的 DSC
       href: getting-started/lnxGettingStarted.md
+    - name: 開始使用適用於 Windows 的 DSC
+      href: getting-started/winGettingStarted.md
     - name: 開始使用 Nano 上的 DSC
       href: getting-started/nanoDSC.md
     - name: 開始使用 Azure 自動化中的 DSC
