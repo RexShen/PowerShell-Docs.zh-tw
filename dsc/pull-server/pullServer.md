@@ -2,17 +2,17 @@
 ms.date: 03/04/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079399"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986543"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
 > [!IMPORTANT]
-> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
+> 提取伺服器 (Windows 功能「DSC 服務」  ) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
 提取服務解決方案可集中管理本機設定管理員。
 使用這個方法時，受控節點會向服務註冊，然後得到 LCM 設定中的組態指派。
@@ -228,7 +228,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。
 
-例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 `xWebAdministration_3.2.1.0.zip`。
+例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 `xWebAdministration_3.1.2.0.zip`。
 一個壓縮檔必須包含一個模組版本。
 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。
 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。
