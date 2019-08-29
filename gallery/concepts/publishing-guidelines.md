@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
+contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084652"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986503"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -85,6 +85,22 @@ MSDN 中提供數篇有關如何隨 PowerShell 套件提供文件的文章，包
 
 您可以在 Examples\RegistryResource 資料夾底下的 [PSDscResource 模組](https://www.powershellgallery.com/packages/PSDscResources)中找到理想的範例模式。
 一共有四個範例使用案例，其中每個檔案最上方都有一段簡短的描述，記載了所要示範的內容。
+
+## <a name="manage-dependencies"></a>管理相依性
+
+請務必在模組資訊清單中指定您模組相依的模組。
+如此一來，使用者就不需要擔心安裝您相依之模組的適當版本。
+若要指定相依模組，您應該使用模組資訊清單中的必要模組欄位。
+這會在匯入您的模組之前，先將任何列出的模組都載入至全域環境，除非它們已經載入。 (例如，有些模組可能已經由其他模組載入)。
+您也可以使用 RequiredVersion 欄位 (而非 ModuleVersion 欄位) 來指定要載入的特定版本。 使用 ModuleVersion 時，系統會載入所指定最小版本的最新可用版本。
+當不使用 RequiredVersion 欄位指定特定版本時，請務必監視所需模組的版本更新。
+特別重要的是，請留意可能影響您模組使用者體驗的任何中斷性變更。
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>針對意見反應做出回應
 

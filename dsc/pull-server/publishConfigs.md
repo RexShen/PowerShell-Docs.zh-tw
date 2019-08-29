@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用設定識別碼發佈至提取伺服器 (v4/v5)
-ms.openlocfilehash: 0144fec43d7a8d65b79891567cc0dc3952175343
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c258814f480b91eba75c7ce9abf70c558f1f469e
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079501"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986568"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>使用設定識別碼發佈至提取伺服器 (v4/v5)
 
@@ -16,11 +16,11 @@ ms.locfileid: "62079501"
 - [設定 DSC SMB 提取伺服器](pullServerSmb.md)
 - [設定 DSC HTTP 提取伺服器](pullServer.md)
 
-每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 本文將示範如何上傳資源，讓它們可供下載，並設定用戶端以自動下載資源。 當節點收到指派的設定時，透過**提取**或**推送** (v5)，它就會自動從 LCM 中指定的位置下載設定所需的任何資源。
+每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 此文章顯示如何上傳資源，讓它們可供下載，並設定用戶端以自動下載資源。 當節點透過**提取**或**推送** (v5) 收到指派的設定時，它會自動從本機 Configuration Manager (LCM) 中指定的位置下載設定所需的任何資源。
 
 ## <a name="compile-configurations"></a>編譯設定
 
-在提取伺服器上儲存[設定](../configurations/configurations.md)的第一個步驟是將它們編譯成 ".mof" 檔案。 若要使設定通用且適用於更多用戶端，請在節點區塊中使用 `localhost`。 下列範例示範使用 `localhost` 而非特定用戶端名稱的設定殼層。
+在提取伺服器上儲存[設定](../configurations/configurations.md)的第一個步驟是將它們編譯成 `.mof` 檔案。 若要使設定通用且適用於更多用戶端，請在節點區塊中使用 `localhost`。 下列範例示範使用 `localhost` 而非特定用戶端名稱的設定殼層。
 
 ```powershell
 Configuration GenericConfig
@@ -33,15 +33,15 @@ Configuration GenericConfig
 GenericConfig
 ```
 
-當您編譯了一般設定之後，應該會有一個 "localhost.mof" 檔案。
+當您編譯一般設定之後，應該會有一個 `localhost.mof` 檔案。
 
 ## <a name="renaming-the-mof-file"></a>將 MOF 檔案重新命名
 
-您可以依 **ConfigurationName** 或 **ConfigurationID**，在提取伺服器上儲存設定 ".mof" 檔案。 根據您計劃如何設定提取用戶端的方式，您可以選擇下列任一節，適當地將已編譯的 ".mof" 檔案重新命名。
+您可以依 **ConfigurationName** 或 **ConfigurationID**，在提取伺服器上儲存設定`.mof` 檔案。 視您計劃設定提取用戶端的方式，您可以選擇下列任一節，適當地將已編譯的 `.mof` 檔案重新命名。
 
 ### <a name="configuration-ids-guid"></a>設定識別碼 (GUID)
 
-您必須將 "localhost.mof" 檔案重新命名為 "<GUID>.mof" 檔案。 您可以使用以下範例建立隨機 **Guid**，或是使用 [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) Cmdlet。
+您必須將您的 `localhost.mof` 檔案重新命名為 `<GUID>.mof` 檔案。 您可以使用以下範例建立隨機 **Guid**，或是使用 [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) Cmdlet。
 
 ```powershell
 [System.Guid]::NewGuid()
@@ -49,13 +49,13 @@ GenericConfig
 
 取樣輸出
 
-```output
+```Output
 Guid
 ----
 64856475-939e-41fb-aba5-4469f4006059
 ```
 
-您接著可以使用任何可接受的方法來將 ".mof" 檔案重新命名。 下列範例會使用 [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) Cmdlet。
+您接著可以使用任何可接受的方法來將 `.mof` 檔案重新命名。 下列範例會使用 [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) Cmdlet。
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
@@ -65,7 +65,7 @@ Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059
 
 ### <a name="configuration-names"></a>設定名稱
 
-您必須將 "localhost.mof" 檔案重新命名為 "<Configuration Name>.mof" 檔案。 在下列範例中，會使用上一節的設定名稱。 您接著可以使用任何可接受的方法來將 ".mof" 檔案重新命名。 下列範例會使用 [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) Cmdlet。
+您必須將您的 `localhost.mof` 檔案重新命名為 `<Configuration Name>.mof` 檔案。 在下列範例中，會使用上一節的設定名稱。 您接著可以使用任何可接受的方法來將 `.mof` 檔案重新命名。 下列範例會使用 [Rename-Item](/powershell/module/microsoft.powershell.management/rename-item) Cmdlet。
 
 ```powershell
 Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
@@ -73,21 +73,23 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 
 ## <a name="create-the-checksum"></a>建立總和檢查碼
 
-每個儲存於提取伺服器或 SMB 共用上的 ".mof" 檔案都需要有相關聯的 ".checksum" 檔案。 此檔案可讓用戶端知道相關聯的 ".mof" 檔案何時已變更且應再次下載。
+儲存於提取伺服器或 SMB 共用上的每個 `.mof` 檔案都需要有相關聯的 `.checksum` 檔案。
+此檔案可讓用戶端知道相關聯的 `.mof` 檔案何時已變更且應再次下載。
 
-您可以使用 [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) Cmdlet 來建立**總和檢查碼**。 您也可以使用 `-Path` 參數，針對檔案的目錄執行 `New-DSCCheckSum`。 如果總和檢查碼已經存在，您可以使用 `-Force` 參數強制重新建立它。 下列範例會指定包含上一節 ".mof" 檔案的目錄，並使用 `-Force` 參數。
+您可以使用 [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) Cmdlet 來建立**總和檢查碼**。 您也可以使用 `-Path` 參數，針對檔案的目錄執行 `New-DSCCheckSum`。
+如果總和檢查碼已經存在，您可以使用 `-Force` 參數強制重新建立它。 下列範例會指定包含上一節 `.mof` 檔案的目錄，並使用 `-Force` 參數。
 
 ```powershell
 New-DscChecksum -Path '.\' -Force
 ```
 
-系統將不會顯示任何輸出，但您現在應該會看到 "<GUID or Configuration Name>.mof.checksum" 檔案。
+系統將不會顯示任何輸出，但您現在應該會看到 `<GUID or Configuration Name>.mof.checksum` 檔案。
 
 ## <a name="where-to-store-mof-files-and-checksums"></a>儲存 MOF 檔案與總和檢查碼的位置
 
 ### <a name="on-a-dsc-http-pull-server"></a>在 DSC HTTP 提取伺服器上
 
-當您設定 HTTP 提取伺服器時，如[設定 DSC HTTP 提取伺服器](pullServer.md)中所述，您會針對 **ModulePath** 和 **ConfigurationPath** 索引碼指定目錄。 **ConfigurationPath** 索引碼指出應儲存所有 ".mof" 檔案的位置。 **ConfigurationPath** 指出應儲存所有 ".mof" 檔案和 ".checksum" 檔案的位置。
+當您設定 HTTP 提取伺服器時，如[設定 DSC HTTP 提取伺服器](pullServer.md)中所述，您會針對 **ModulePath** 和 **ConfigurationPath** 索引碼指定目錄。 **ModulePath** 機碼指出應儲存模組的封裝 `.zip` 檔案的位置。 **ConfigurationPath** 指出應儲存所有 `.mof` 檔案與 `.checksum` 檔案的位置。
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -102,7 +104,8 @@ New-DscChecksum -Path '.\' -Force
 
 ### <a name="on-an-smb-share"></a>在 SMB 共用上
 
-當您設定提取用戶端來使用 SMB 共用時，您會指定 **ConfigurationRepositoryShare**。 所有 ".mof" 檔案和 ".checksum" 檔案接著都應儲存於 **ConfigurationRepositoryShare** 區塊的 **SourcePath** 目錄中。
+當您設定提取用戶端來使用 SMB 共用時，您會指定 **ConfigurationRepositoryShare**。
+所有 `.mof` 檔案和 `.checksum` 檔案接著都應儲存於 **ConfigurationRepositoryShare** 區塊的 **SourcePath** 目錄中。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -113,7 +116,7 @@ ConfigurationRepositoryShare SMBPullServer
 
 ## <a name="next-steps"></a>後續步驟
 
-接下來，您會想要設定提取用戶端來提取指定的設定。 如需詳細資訊，請參閱下列任一份指南：
+接下來，您可以設定提取用戶端來提取指定的設定。 如需詳細資訊，請參閱下列任一份指南：
 
 - [使用設定識別碼設定提取用戶端 (v4)](pullClientConfigId4.md)
 - [使用設定識別碼設定提取用戶端 (v5)](pullClientConfigId.md)

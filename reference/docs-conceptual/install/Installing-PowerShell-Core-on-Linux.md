@@ -2,16 +2,16 @@
 title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372192"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986718"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
 
@@ -20,6 +20,7 @@ GitHub [版本][]頁面上提供所有套件。 安裝套件之後，請從終�
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -142,10 +143,17 @@ sudo apt-get remove powershell
 
 ## <a name="ubuntu-1810"></a>Ubuntu 18.10
 
-> [!NOTE]
-> 因為 18.10 是[過渡版本](https://www.ubuntu.com/about/release-cycle)，所以只[支援社群](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)。
+安裝是由 `snapd` 支援的。 如需指示，請參閱 [Snap 套件][snap]。
 
-18.10 的安裝透過 `snapd`提供支援。 如需完整指示，請參閱 [Snap 套件][snap]；
+> [!NOTE]
+> 因為 Ubuntu 18.10 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) \(英文\)。
+
+## <a name="ubuntu-1904"></a>Ubuntu 19.04
+
+安裝是由 `snapd` 支援的。 如需指示，請參閱 [Snap 套件][snap]。
+
+> [!NOTE]
+> 因為 Ubuntu 19.04 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) \(英文\)。
 
 ## <a name="debian-8"></a>Debian 8
 
