@@ -1,53 +1,51 @@
 ---
-title: 建立可存取資料存放區的 Cmdlet |Microsoft Docs
+title: 建立 Cmdlet 以存取資料存放區
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
-ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
-caps.latest.revision: 8
-ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 7acccbd48dcfb654b11e448a1f24835ad3668fae
+ms.sourcegitcommit: a02ccbeaa17c0e513d6c4a21b877c88ac7725458
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733940"
+ms.lasthandoff: 08/28/2019
+ms.locfileid: "70104474"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>建立 Cmdlet 以存取資料存放區
 
-本節說明如何建立指令程式來存取儲存的資料，透過 Windows PowerShell 提供者。 這種類型的指令程式會使用 Windows PowerShell 執行階段的 Windows PowerShell 提供者基礎結構，因此，在 cmdlet 類別必須衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別。
+本節說明如何建立可透過 Windows PowerShell 提供者存取預存資料的 Cmdlet。 這種類型的 Cmdlet 會使用 Windows PowerShell 執行時間的 Windows PowerShell 提供者基礎結構, 因此, Cmdlet 類別必須衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基類。
 
-此處所述選取 Str cmdlet 可以找出並選取檔案或物件中的字串。 用來識別字串的模式可以透過明確指定`Path`參數的 cmdlet 或隱含地透過`Script`參數。
+這裡所述的 Select-Str Cmdlet 可以在檔案或物件中找到並選取字串。 用來識別字串的模式可以透過 Cmdlet 的`Path`參數或`Script`透過參數隱含地指定。
 
-此指令程式可使用衍生自任何 Windows PowerShell 提供者[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)。 例如，FileSystem 提供者或變數提供者所提供的 Windows PowerShell，可以指定此 cmdlet。 如需詳細資訊 aboutWindows PowerShell 提供者，請參閱 <<c0> [ 設計您的 Windows PowerShell 提供者](../prog-guide/designing-your-windows-powershell-provider.md)。
+此 Cmdlet 是設計用來使用任何衍生自[IcontentCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)的 Windows PowerShell 提供者。 例如, 此 Cmdlet 可以指定 FileSystem 提供者或 Windows PowerShell 所提供的變數提供者。 如需 aboutWindows PowerShell 提供者的詳細資訊, 請參閱[設計您的 Windows PowerShell 提供者](../prog-guide/designing-your-windows-powershell-provider.md)。
 
-## <a name="defining-the-cmdlet-class"></a>定義在 Cmdlet 類別
+## <a name="defining-the-cmdlet-class"></a>定義 Cmdlet 類別
 
-Cmdlet 建立的第一個步驟一律命名 cmdlet，並實作指令程式的.NET 類別的宣告。 這個指令程式會偵測到特定的字串，所以在這裡選擇的指令動詞名稱是 「 Select 」，所定義[System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)類別。 名詞 」 名稱"Str"，因為此 cmdlet 會作用在字串。 在下列宣告中，請注意 cmdlet 動詞和名詞名稱會反映在 cmdlet 類別的名稱。 如需已核准的 cmdlet 動詞命令的詳細資訊，請參閱[動詞的 Cmdlet 名稱](./approved-verbs-for-windows-powershell-commands.md)。
+Cmdlet 建立的第一個步驟一律為 Cmdlet 命名, 並宣告可執行 Cmdlet 的 .NET 類別。 此 Cmdlet 會偵測特定字串, 因此此處選擇的動詞名稱是 "Select", 由[Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)類別所定義。 使用名詞名稱 "Str", 因為 Cmdlet 會在字串上作用。 在下面的宣告中, 請注意 Cmdlet 動詞和名詞名稱會反映在 Cmdlet 類別的名稱中。 如需已核准 Cmdlet 動詞命令的詳細資訊, 請參閱[Cmdlet 動詞名稱](./approved-verbs-for-windows-powershell-commands.md)。
 
-這個指令程式的.NET 類別必須衍生自[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底類別，因為它會提供 Windows PowerShell 執行階段公開 （expose） 的 Windows PowerShell 提供者所需的支援基礎結構。 請注意，此 cmdlet 也會利用.NET Framework 規則運算式類別，例如[System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex)。
+此 Cmdlet 的 .NET 類別必須衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基類, 因為它會提供 windows powershell 執行時間所需的支援, 以公開 windows powershell 提供者基礎結構。 請注意, 這個 Cmdlet 也會使用 .NET Framework 的正則運算式類別, 例如[system.text.regularexpressions.RegEx>。](/dotnet/api/System.Text.RegularExpressions.Regex)
 
-下列程式碼會為此選取 Str cmdlet 類別定義。
+下列程式碼是這個 Select-Str Cmdlet 的類別定義。
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-此 cmdlet 定義加入設定的預設參數`DefaultParameterSetName`屬性至類別宣告的關鍵字。 預設參數集`PatternParameterSet`時會使用`Script`未指定參數。 如需有關此參數集的詳細資訊，請參閱 <<c0> `Pattern` 和`Script`參數討論下, 一節。
+此 Cmdlet 會定義預設參數集, 方法是`DefaultParameterSetName`將 attribute 關鍵字加入至類別宣告。 未指定`Script`參數時`PatternParameterSet` , 會使用預設參數集。 如需此參數集的詳細資訊, 請`Pattern`參閱`Script`下一節中的和參數討論。
 
-## <a name="defining-parameters-for-data-access"></a>定義參數的資料存取
+## <a name="defining-parameters-for-data-access"></a>定義資料存取的參數
 
-此 cmdlet 會定義數個參數可讓使用者存取，並檢查儲存的資料。 這些參數包含`Path`參數，指出資料存放區位置`Pattern`參數，在搜尋中，指定要使用的模式和支援搜尋的執行方式的其他幾個參數。
+此 Cmdlet 會定義數個參數, 以允許使用者存取和檢查儲存的資料。 這些參數包含`Path`的參數會指出資料存放區的位置`Pattern` 、指定要在搜尋中使用之模式的參數, 以及支援搜尋執行方式的其他數個參數。
 
 > [!NOTE]
-> 定義參數的基本概念的相關資訊，請參閱[加入參數，該程序的命令列輸入](./adding-parameters-that-process-command-line-input.md)。
+> 如需定義參數之基本概念的詳細資訊, 請參閱[加入處理命令列輸入的參數](./adding-parameters-that-process-command-line-input.md)。
 
-### <a name="declaring-the-path-parameter"></a>宣告的路徑參數
+### <a name="declaring-the-path-parameter"></a>宣告 Path 參數
 
-若要尋找的資料存放區，這個指令程式必須使用 Windows PowerShell 路徑，來識別 Windows PowerShell 提供者是設計用來存取資料存放區。 因此，它會定義`Path`參數的型別字串陣列，表示提供者的位置。
+若要找出資料存放區, 此 Cmdlet 必須使用 Windows PowerShell 路徑來識別設計用來存取資料存放區的 Windows PowerShell 提供者。 因此, 它會定義`Path`類型字串陣列的參數, 以指出提供者的位置。
 
 ```csharp
 [Parameter(
@@ -68,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-請注意，這個參數所屬的兩個不同的參數集，而且它具有別名。
+請注意, 這個參數屬於兩個不同的參數集, 而且它有一個別名。
 
-兩個[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性宣告`Path`參數屬於`ScriptParameterSet`而`PatternParameterSet`。 如需參數集的詳細資訊，請參閱[將參數集加入至指令程式](./adding-parameter-sets-to-a-cmdlet.md)。
+兩個[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性會`Path`宣告`ScriptParameterSet`參數屬於和`PatternParameterSet`的。 如需參數集的詳細資訊, 請參閱[將參數集新增至 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性會宣告`PSPath`別名，以供`Path`參數。 與其他指令程式，存取 Windows PowerShell 提供者的一致性，強烈建議宣告此別名。 如需詳細資訊 aboutWindows PowerShell 路徑，請參閱 「 PowerShell 路徑概念 」 中[Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))。
+[Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性`PSPath`會宣告此`Path`參數的別名。 強烈建議您宣告此別名, 以與存取 Windows PowerShell 提供者的其他 Cmdlet 保持一致。 如需 aboutWindows PowerShell 路徑的詳細資訊, 請參閱[Windows Powershell 運作方式](/previous-versions//ms714658(v=vs.85))中的「PowerShell 路徑概念」。
 
-### <a name="declaring-the-pattern-parameter"></a>宣告的模式參數
+### <a name="declaring-the-pattern-parameter"></a>宣告模式參數
 
-若要指定要搜尋的模式，此 cmdlet 會宣告`Pattern`是字串陣列的參數。 資料存放區中發現任何模式時，會傳回正數的結果。 請注意，這些模式可以編譯成已編譯規則運算式陣列或陣列常值搜尋所使用的萬用字元模式。
+為了指定要搜尋的模式, 這個 Cmdlet 會宣告一個`Pattern`參數, 它是字串陣列。 在資料存放區中找到任何模式時, 會傳回正的結果。 請注意, 這些模式可以編譯成編譯的正則運算式陣列, 或用於常值搜尋的萬用字元模式陣列。
 
 ```csharp
 [Parameter(
@@ -93,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-當指定這個參數時，此 cmdlet 會使用預設參數集`PatternParameterSet`。 在此情況下，此 cmdlet 會使用選取字串此處指定的模式。 相反地，`Script`參數也可用來提供的指令碼，包含的模式。 `Script`和`Pattern`參數會定義兩個不同的參數集合，因此兩者互斥。
+當指定這個參數時, 此 Cmdlet 會使用預設參數集`PatternParameterSet`。 在此情況下, 此 Cmdlet 會使用此處指定的模式來選取字串。 相反地, `Script`參數也可以用來提供包含模式的腳本。 `Script` 和`Pattern`參數會定義兩個不同的參數集, 因此它們是互斥的。
 
 ### <a name="declaring-search-support-parameters"></a>宣告搜尋支援參數
 
-此 cmdlet 會定義下列可用來修改此指令程式的搜尋功能的支援參數。
+此 Cmdlet 會定義可用於修改 Cmdlet 搜尋功能的下列支援參數。
 
-`Script`參數指定可用來提供此 cmdlet 的替代的搜尋機制的指令碼區塊。 指令碼必須包含用來比對的模式，並傳回[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)物件。 請注意，此參數也會識別的 unique 參數`ScriptParameterSet`參數集。 當 Windows PowerShell 執行階段便會看到此參數時，它會使用屬於的參數`ScriptParameterSet`參數集。
+`Script`參數會指定腳本區塊, 可用來提供 Cmdlet 的替代搜尋機制。 腳本必須包含用來比對和傳回[system.web](/dotnet/api/System.Management.Automation.PSObject)物件的模式。 請注意, 此參數也是識別`ScriptParameterSet`參數集的唯一參數。 當 Windows PowerShell 執行時間看到此參數時, 它只會使用屬於`ScriptParameterSet`參數集的參數。
 
 ```csharp
 [Parameter(
@@ -114,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-`SimpleMatch`參數是切換參數，指出此 cmdlet 是否要明確地符合的模式，所提供。 當使用者指定在命令列參數 (`true`)，此 cmdlet 使用的模式，所提供。 如果未指定參數 (`false`)，此 cmdlet 會使用規則運算式。 此參數的預設值是`false`。
+`SimpleMatch`參數是一個切換參數, 可指出 Cmdlet 是否要在提供時明確符合模式。 當使用者在命令列 (`true`) 指定參數時, Cmdlet 會使用所提供的模式。 如果未指定參數 (`false`), 此 Cmdlet 會使用正則運算式。 這個參數的預設值是`false`。
 
 ```csharp
 [Parameter]
@@ -126,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-`CaseSensitive`參數是切換參數，指出是否要執行區分大小寫的搜尋。 當使用者指定在命令列參數 (`true`)、 指令程式會檢查是否有大寫和小寫字元比較時的模式。 如果未指定參數 (`false`)，此 cmdlet 不區分大寫和小寫。 比方說 「 MyFile"和"myfile"會同時傳回為正數的點擊。 此參數的預設值是`false`。
+`CaseSensitive`參數是一個切換參數, 它會指出是否執行區分大小寫的搜尋。 當使用者在命令列 (`true`) 指定參數時, 此 Cmdlet 會在比較模式時, 檢查大寫和小寫字元。 如果未指定參數 (`false`), 此 Cmdlet 就不會區分大寫和小寫。 例如, "Myfile.txt" 和 "myfile.txt" 都會傳回為正命中。 這個參數的預設值是`false`。
 
 ```csharp
 [Parameter]
@@ -138,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-`Exclude`和`Include`參數會識別明確排除或包含在搜尋中的項目。 根據預設，cmdlet 會搜尋資料存放區中的所有項目。 不過，cmdlet 所執行的搜尋範圍限制，這些參數可以是用來明確指出要包含在搜尋中的項目或省略。
+`Exclude` 和`Include`參數會識別在搜尋中明確排除或包含的專案。 根據預設, 此 Cmdlet 會搜尋資料存放區中的所有專案。 不過, 若要限制 Cmdlet 所執行的搜尋, 這些參數可以用來明確指出要包含在搜尋中的專案或省略。
 
 ```csharp
 [Parameter]
@@ -177,13 +175,13 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>宣告參數集
 
-此 cmdlet 會使用兩個參數集 (`ScriptParameterSet`和`PatternParameterSet`，這是預設值) 當做用於資料存取的兩個參數集的名稱。 `PatternParameterSet` 是預設參數集，當使用`Pattern`指定參數。 `ScriptParameterSet` 使用者指定替代的搜尋機制時，會使用`Script`參數。 如需參數集的詳細資訊，請參閱[將參數集加入至指令程式](./adding-parameter-sets-to-a-cmdlet.md)。
+此 Cmdlet 會使用兩個參數`ScriptParameterSet`集`PatternParameterSet`(和, 這是預設值) 做為資料存取中使用的兩個參數集的名稱。 `PatternParameterSet`是預設參數集, 而且是在指定`Pattern`參數時使用。 `ScriptParameterSet`當使用者透過`Script`參數指定替代搜尋機制時, 會使用。 如需參數集的詳細資訊, 請參閱[將參數集新增至 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
 
 ## <a name="overriding-input-processing-methods"></a>覆寫輸入處理方法
 
-一或多個的輸入處理方法，必須覆寫 Cmdlet [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別。 如需有關輸入的處理方法的詳細資訊，請參閱 <<c0> [ 建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
+Cmdlet 必須覆寫[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別的一或多個輸入處理方法。 如需輸入處理方法的詳細資訊, 請參閱[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)。
 
-此 cmdlet 會覆寫[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法來建立陣列的編譯的規則運算式，在啟動時。 這會增加在不使用簡單比對的搜尋時的效能。
+此 Cmdlet 會覆寫[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法, 以在啟動時建立已編譯之正則運算式的陣列。 這會在不使用簡單比對的搜尋期間增加效能。
 
 ```csharp
 protected override void BeginProcessing()
@@ -262,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-此 cmdlet 也會覆寫[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法來處理使用者進行命令列的字串選取項目。 它將結果字串選取範圍的自訂物件的形式寫入藉由呼叫私用**MatchString**方法。
+此 Cmdlet 也會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法, 以處理使用者在命令列上建立的字串選擇。 它會藉由呼叫私用**MatchString**方法, 以自訂物件的形式寫入字串選取專案的結果。
 
 ```csharp
 protected override void ProcessRecord()
@@ -373,13 +371,13 @@ protected override void ProcessRecord()
 
 ## <a name="accessing-content"></a>存取內容
 
-您的 cmdlet 必須開啟，使其可以存取資料，Windows PowerShell 路徑所指定的提供者。 [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState)物件的存取提供者使用的 runspace，而[System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)屬性cmdlet 用來開啟提供者。 擷取提供內容的存取權[System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics)開啟提供者的物件。
+您的 Cmdlet 必須開啟 Windows PowerShell 路徑所指定的提供者, 才能存取資料。 系統會使用此執行時間的[Sessionstate](/dotnet/api/System.Management.Automation.SessionState)物件來存取提供者, 而 Cmdlet 的[PSCmdlet. Invokeprovider *](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)屬性則是用來開啟該提供者。 藉由抓取開啟的提供者的[Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics)物件來存取內容。
 
-此範例選取 Str cmdlet 會使用[System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)屬性公開要掃描的內容。 它可以呼叫[System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader)方法，並傳遞必要的 Windows PowerShell 路徑。
+這個範例 Select-Str Cmdlet 會使用[Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)屬性來公開要掃描的內容。 然後, 它可以呼叫[ContentCmdletproviderintrinsics. system.diagnostics.symbolstore.isymbolbinder1.getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader)方法, 傳遞所需的 Windows PowerShell 路徑。
 
 ## <a name="code-sample"></a>程式碼範例
 
-下列程式碼顯示這個版本的此選取 Str cmdlet 的實作。 請注意，此程式碼包含在 cmdlet 類別，由 cmdlet 所使用的私用方法的 Windows PowerShell 嵌入式管理單元程式碼用來註冊此 cmdlet。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 建置 Cmdlet](#Defining-the-Cmdlet-Class)。
+下列程式碼示範這個版本的 Select-Str Cmdlet 的執行。 請注意, 此程式碼包含 Cmdlet 類別、Cmdlet 所使用的私用方法, 以及用來註冊 Cmdlet 的 Windows PowerShell 嵌入式管理單元程式碼。 如需註冊 Cmdlet 的詳細資訊, 請參閱[建立 Cmdlet](#defining-the-cmdlet-class)。
 
 ```csharp
 //
@@ -1088,15 +1086,15 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>建置此指令程式
+## <a name="building-the-cmdlet"></a>建立 Cmdlet
 
-在實作之後的 cmdlet，您必須向 Windows PowerShell 透過 Windows PowerShell 嵌入式管理單元。 如需有關如何註冊 cmdlet 的詳細資訊，請參閱 <<c0> [ 如何註冊 Cmdlet、 提供者，以及裝載應用程式](/previous-versions//ms714644(v=vs.85))。
+在執行 Cmdlet 之後, 您必須透過 Windows powershell 嵌入式管理單元向 Windows PowerShell 註冊它。 如需註冊 Cmdlet 的詳細資訊, 請參閱[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))。
 
 ## <a name="testing-the-cmdlet"></a>測試 Cmdlet
 
-當您的 cmdlet 已向 Windows PowerShell 時，您可以藉由在命令列上執行它來進行測試。 下列程序可用來測試此範例選取 Str 指令程式。
+當您的 Cmdlet 已向 Windows PowerShell 註冊時, 您可以在命令列上執行它來進行測試。 您可以使用下列程式來測試範例 Select-Str Cmdlet。
 
-1. 啟動 Windows PowerShell，並搜尋資訊檔中的運算式".NET"的行項目。 請注意，引號括住路徑的名稱，才會組成多個字組的路徑。
+1. 啟動 Windows PowerShell, 並使用 ".NET" 運算式來搜尋 Notes 檔案中是否有行出現。 請注意, 只有在路徑包含一個以上的單字時, 才需要以引號括住路徑的名稱。
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
@@ -1117,7 +1115,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : .NET
     ```
 
-2. 搜尋 「 結束 」，資訊檔的字行的項目，後面接著任何其他文字。 `SimpleMatch`參數使用的預設值`false`。 搜尋不區分大小寫因為`CaseSensitive`參數設為`false`。
+2. 搜尋 Notes 檔案中是否出現 "over" 一字, 後面接著任何其他文字。 參數使用的預設`false`值。 `SimpleMatch` 搜尋不區分大小寫, 因為`CaseSensitive`參數設定為。 `false`
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
@@ -1138,7 +1136,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : over*
     ```
 
-3. 搜尋作為模式使用規則運算式的資訊檔案。 此 cmdlet 會搜尋依字母順序排列的字元和空格，括號括住。
+3. 使用正則運算式作為模式來搜尋便箋檔案。 Cmdlet 會搜尋以括弧括住的字母字元和空格。
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
@@ -1159,7 +1157,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. 執行區分大小寫搜尋便箋檔案中的 「 參數 」 這個字相符項目。
+4. 執行 Notes 檔案的區分大小寫搜尋, 以尋找 "Parameter" 這個字。
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
@@ -1180,7 +1178,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : Parameter
     ```
 
-5. 搜尋變數提供者會隨附 Windows PowerShell 有從 0 到 9 的數字值的變數。
+5. 在 Windows PowerShell 隨附的變數提供者中, 搜尋數值從0到9的變數。
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
@@ -1196,7 +1194,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : [0-9]
     ```
 
-6. 您可以使用指令碼區塊來搜尋字串"Pos"SelectStrCommandSample.cs 檔案。 **Cmatch**函式的指令碼執行不區分大小寫的模式比對。
+6. 使用腳本區塊, 在檔案 SelectStrCommandSample.cs 中搜尋字串 "Pos"。 腳本的**cmatch**函數會執行不區分大小寫的模式比對。
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
@@ -1218,12 +1216,12 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 [建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)
 
-[建立 Cmdlet 會修改系統](./creating-a-cmdlet-that-modifies-the-system.md)
+[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)
 
 [設計您的 Windows PowerShell 提供者](../prog-guide/designing-your-windows-powershell-provider.md)
 
 [Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))
 
-[如何註冊 Cmdlet、 提供者，以及裝載應用程式](/previous-versions//ms714644(v=vs.85))
+[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
