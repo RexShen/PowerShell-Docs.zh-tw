@@ -2,24 +2,25 @@
 title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
 ms.date: 07/19/2019
-ms.openlocfilehash: 929b153ef784f3203cd31a0e2fc52e744a07532f
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68372192"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986718"
 ---
-# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="7c966-103">在 Linux 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="7c966-103">Installing PowerShell Core on Linux</span></span>
+# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="98540-103">在 Linux 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="98540-103">Installing PowerShell Core on Linux</span></span>
 
-<span data-ttu-id="7c966-104">支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。</span><span class="sxs-lookup"><span data-stu-id="7c966-104">Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
+<span data-ttu-id="98540-104">支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。</span><span class="sxs-lookup"><span data-stu-id="98540-104">Supports [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810], [Ubuntu 19.04][u1904], [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
 
-<span data-ttu-id="7c966-105">針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-105">For Linux distributions that aren't officially supported, you can try to install PowerShell using the [PowerShell Snap Package][snap].</span></span> <span data-ttu-id="7c966-106">您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。</span><span class="sxs-lookup"><span data-stu-id="7c966-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
+<span data-ttu-id="98540-105">針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-105">For Linux distributions that aren't officially supported, you can try to install PowerShell using the [PowerShell Snap Package][snap].</span></span> <span data-ttu-id="98540-106">您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。</span><span class="sxs-lookup"><span data-stu-id="98540-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
 
-<span data-ttu-id="7c966-107">GitHub [版本][]頁面上提供所有套件。</span><span class="sxs-lookup"><span data-stu-id="7c966-107">All packages are available on our GitHub [releases][] page.</span></span> <span data-ttu-id="7c966-108">安裝套件之後，請從終端機執行 `pwsh`。</span><span class="sxs-lookup"><span data-stu-id="7c966-108">After the package is installed, run `pwsh` from a terminal.</span></span>
+<span data-ttu-id="98540-107">GitHub [版本][]頁面上提供所有套件。</span><span class="sxs-lookup"><span data-stu-id="98540-107">All packages are available on our GitHub [releases][] page.</span></span> <span data-ttu-id="98540-108">安裝套件之後，請從終端機執行 `pwsh`。</span><span class="sxs-lookup"><span data-stu-id="98540-108">After the package is installed, run `pwsh` from a terminal.</span></span>
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
+[u1904]: #ubuntu-1904
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -29,27 +30,27 @@ ms.locfileid: "68372192"
 [snap]: #snap-package
 [tar]: #binary-archives
 
-## <a name="installing-preview-releases"></a><span data-ttu-id="7c966-109">安裝預覽版本</span><span class="sxs-lookup"><span data-stu-id="7c966-109">Installing Preview Releases</span></span>
+## <a name="installing-preview-releases"></a><span data-ttu-id="98540-109">安裝預覽版本</span><span class="sxs-lookup"><span data-stu-id="98540-109">Installing Preview Releases</span></span>
 
-<span data-ttu-id="7c966-110">透過套件存放庫安裝 Linux 的 PowerShell Core Preview 版本時，套件名稱會從 `powershell` 變更為 `powershell-preview`。</span><span class="sxs-lookup"><span data-stu-id="7c966-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
+<span data-ttu-id="98540-110">透過套件存放庫安裝 Linux 的 PowerShell Core Preview 版本時，套件名稱會從 `powershell` 變更為 `powershell-preview`。</span><span class="sxs-lookup"><span data-stu-id="98540-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
 
-<span data-ttu-id="7c966-111">透過直接下載的安裝不會變更，但檔案名稱除外。</span><span class="sxs-lookup"><span data-stu-id="7c966-111">Installing via direct download doesn't change, other than the file name.</span></span>
+<span data-ttu-id="98540-111">透過直接下載的安裝不會變更，但檔案名稱除外。</span><span class="sxs-lookup"><span data-stu-id="98540-111">Installing via direct download doesn't change, other than the file name.</span></span>
 
-<span data-ttu-id="7c966-112">下表包含使用各種套件管理員安裝穩定和預覽套件的命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-112">The following table contains the commands to install the stable and preview packages using the various package managers:</span></span>
+<span data-ttu-id="98540-112">下表包含使用各種套件管理員安裝穩定和預覽套件的命令：</span><span class="sxs-lookup"><span data-stu-id="98540-112">The following table contains the commands to install the stable and preview packages using the various package managers:</span></span>
 
-|<span data-ttu-id="7c966-113">發行版本</span><span class="sxs-lookup"><span data-stu-id="7c966-113">Distribution(s)</span></span>|<span data-ttu-id="7c966-114">穩定命令</span><span class="sxs-lookup"><span data-stu-id="7c966-114">Stable Command</span></span> | <span data-ttu-id="7c966-115">預覽命令</span><span class="sxs-lookup"><span data-stu-id="7c966-115">Preview Command</span></span> |
+|<span data-ttu-id="98540-113">發行版本</span><span class="sxs-lookup"><span data-stu-id="98540-113">Distribution(s)</span></span>|<span data-ttu-id="98540-114">穩定命令</span><span class="sxs-lookup"><span data-stu-id="98540-114">Stable Command</span></span> | <span data-ttu-id="98540-115">預覽命令</span><span class="sxs-lookup"><span data-stu-id="98540-115">Preview Command</span></span> |
 |---------------|---------------|-----------------|
-| <span data-ttu-id="7c966-116">Ubuntu、Debian</span><span class="sxs-lookup"><span data-stu-id="7c966-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| <span data-ttu-id="7c966-117">CentOS、RedHat</span><span class="sxs-lookup"><span data-stu-id="7c966-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| <span data-ttu-id="7c966-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="7c966-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| <span data-ttu-id="98540-116">Ubuntu、Debian</span><span class="sxs-lookup"><span data-stu-id="98540-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| <span data-ttu-id="98540-117">CentOS、RedHat</span><span class="sxs-lookup"><span data-stu-id="98540-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| <span data-ttu-id="98540-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="98540-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1604"></a><span data-ttu-id="7c966-119">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="7c966-119">Ubuntu 16.04</span></span>
+## <a name="ubuntu-1604"></a><span data-ttu-id="98540-119">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="98540-119">Ubuntu 16.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="7c966-120">透過套件存放庫安裝 - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="7c966-120">Installation via Package Repository - Ubuntu 16.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="98540-120">透過套件存放庫安裝 - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="98540-120">Installation via Package Repository - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="7c966-121">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-121">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
+<span data-ttu-id="98540-121">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-121">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
 
-<span data-ttu-id="7c966-122">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="7c966-122">The preferred method is as follows:</span></span>
+<span data-ttu-id="98540-122">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="98540-122">The preferred method is as follows:</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -68,13 +69,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="7c966-123">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="7c966-123">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="7c966-124">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-124">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
+<span data-ttu-id="98540-123">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="98540-123">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="98540-124">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-124">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="7c966-125">透過直接下載安裝 - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="7c966-125">Installation via Direct Download - Ubuntu 16.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="98540-125">透過直接下載安裝 - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="98540-125">Installation via Direct Download - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="7c966-126">將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。</span><span class="sxs-lookup"><span data-stu-id="7c966-126">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="98540-126">將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。</span><span class="sxs-lookup"><span data-stu-id="98540-126">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="7c966-127">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-127">Then, in the terminal, execute the following commands:</span></span>
+<span data-ttu-id="98540-127">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="98540-127">Then, in the terminal, execute the following commands:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -82,21 +83,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="7c966-128">`dpkg -i` 命令因相依性不相符而失敗。</span><span class="sxs-lookup"><span data-stu-id="7c966-128">The `dpkg -i` command fails with unmet dependencies.</span></span> <span data-ttu-id="7c966-129">下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。</span><span class="sxs-lookup"><span data-stu-id="7c966-129">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="98540-128">`dpkg -i` 命令因相依性不相符而失敗。</span><span class="sxs-lookup"><span data-stu-id="98540-128">The `dpkg -i` command fails with unmet dependencies.</span></span> <span data-ttu-id="98540-129">下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。</span><span class="sxs-lookup"><span data-stu-id="98540-129">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="7c966-130">解除安裝 - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="7c966-130">Uninstallation - Ubuntu 16.04</span></span>
+### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="98540-130">解除安裝 - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="98540-130">Uninstallation - Ubuntu 16.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1804"></a><span data-ttu-id="7c966-131">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="7c966-131">Ubuntu 18.04</span></span>
+## <a name="ubuntu-1804"></a><span data-ttu-id="98540-131">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="98540-131">Ubuntu 18.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="7c966-132">透過套件存放庫安裝 - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="7c966-132">Installation via Package Repository - Ubuntu 18.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="98540-132">透過套件存放庫安裝 - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="98540-132">Installation via Package Repository - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="7c966-133">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-133">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
+<span data-ttu-id="98540-133">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-133">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
 
-<span data-ttu-id="7c966-134">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="7c966-134">The preferred method is as follows:</span></span>
+<span data-ttu-id="98540-134">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="98540-134">The preferred method is as follows:</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -118,13 +119,13 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="7c966-135">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="7c966-135">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="7c966-136">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-136">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
+<span data-ttu-id="98540-135">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="98540-135">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="98540-136">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-136">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="7c966-137">透過直接下載安裝 - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="7c966-137">Installation via Direct Download - Ubuntu 18.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="98540-137">透過直接下載安裝 - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="98540-137">Installation via Direct Download - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="7c966-138">將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。</span><span class="sxs-lookup"><span data-stu-id="7c966-138">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="98540-138">將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。</span><span class="sxs-lookup"><span data-stu-id="98540-138">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="7c966-139">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-139">Then, in the terminal, execute the following commands:</span></span>
+<span data-ttu-id="98540-139">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="98540-139">Then, in the terminal, execute the following commands:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -132,28 +133,35 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="7c966-140">`dpkg -i` 命令因相依性不相符而失敗。</span><span class="sxs-lookup"><span data-stu-id="7c966-140">The `dpkg -i` command fails with unmet dependencies.</span></span> <span data-ttu-id="7c966-141">下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。</span><span class="sxs-lookup"><span data-stu-id="7c966-141">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="98540-140">`dpkg -i` 命令因相依性不相符而失敗。</span><span class="sxs-lookup"><span data-stu-id="98540-140">The `dpkg -i` command fails with unmet dependencies.</span></span> <span data-ttu-id="98540-141">下一個命令 `apt-get install -f` 會解決這些問題，然後完成 PowerShell 套件的設定。</span><span class="sxs-lookup"><span data-stu-id="98540-141">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="7c966-142">解除安裝 - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="7c966-142">Uninstallation - Ubuntu 18.04</span></span>
+### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="98540-142">解除安裝 - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="98540-142">Uninstallation - Ubuntu 18.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1810"></a><span data-ttu-id="7c966-143">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="7c966-143">Ubuntu 18.10</span></span>
+## <a name="ubuntu-1810"></a><span data-ttu-id="98540-143">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="98540-143">Ubuntu 18.10</span></span>
+
+<span data-ttu-id="98540-144">安裝是由 `snapd` 支援的。</span><span class="sxs-lookup"><span data-stu-id="98540-144">Installation is supported via `snapd`.</span></span> <span data-ttu-id="98540-145">如需指示，請參閱 [Snap 套件][snap]。</span><span class="sxs-lookup"><span data-stu-id="98540-145">For instructions, see [Snap Package][snap].</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c966-144">因為 18.10 是[過渡版本](https://www.ubuntu.com/about/release-cycle)，所以只[支援社群](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)。</span><span class="sxs-lookup"><span data-stu-id="7c966-144">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
+> <span data-ttu-id="98540-146">因為 Ubuntu 18.10 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) \(英文\)。</span><span class="sxs-lookup"><span data-stu-id="98540-146">Ubuntu 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).</span></span>
 
-<span data-ttu-id="7c966-145">18.10 的安裝透過 `snapd`提供支援。</span><span class="sxs-lookup"><span data-stu-id="7c966-145">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="7c966-146">如需完整指示，請參閱 [Snap 套件][snap]；</span><span class="sxs-lookup"><span data-stu-id="7c966-146">See [Snap Package][snap] for full instructions;</span></span>
+## <a name="ubuntu-1904"></a><span data-ttu-id="98540-147">Ubuntu 19.04</span><span class="sxs-lookup"><span data-stu-id="98540-147">Ubuntu 19.04</span></span>
 
-## <a name="debian-8"></a><span data-ttu-id="7c966-147">Debian 8</span><span class="sxs-lookup"><span data-stu-id="7c966-147">Debian 8</span></span>
+<span data-ttu-id="98540-148">安裝是由 `snapd` 支援的。</span><span class="sxs-lookup"><span data-stu-id="98540-148">Installation is supported via `snapd`.</span></span> <span data-ttu-id="98540-149">如需指示，請參閱 [Snap 套件][snap]。</span><span class="sxs-lookup"><span data-stu-id="98540-149">For instructions, see [Snap Package][snap].</span></span>
 
-### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="7c966-148">透過套件存放庫安裝 - Debian 8</span><span class="sxs-lookup"><span data-stu-id="7c966-148">Installation via Package Repository - Debian 8</span></span>
+> [!NOTE]
+> <span data-ttu-id="98540-150">因為 Ubuntu 19.04 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) \(英文\)。</span><span class="sxs-lookup"><span data-stu-id="98540-150">Ubuntu 19.04 is an [interim release](https://www.ubuntu.com/about/release-cycle) that's [community supported](../powershell-support-lifecycle.md).</span></span>
 
-<span data-ttu-id="7c966-149">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-149">PowerShell Core, for Linux, is published to package repositories for easy installation and updates.</span></span>
+## <a name="debian-8"></a><span data-ttu-id="98540-151">Debian 8</span><span class="sxs-lookup"><span data-stu-id="98540-151">Debian 8</span></span>
 
-<span data-ttu-id="7c966-150">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="7c966-150">The preferred method is as follows:</span></span>
+### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="98540-152">透過套件存放庫安裝 - Debian 8</span><span class="sxs-lookup"><span data-stu-id="98540-152">Installation via Package Repository - Debian 8</span></span>
+
+<span data-ttu-id="98540-153">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-153">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
+
+<span data-ttu-id="98540-154">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="98540-154">The preferred method is as follows:</span></span>
 
 ```sh
 # Install system components
@@ -176,15 +184,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="7c966-151">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="7c966-151">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="7c966-152">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-152">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
+<span data-ttu-id="98540-155">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="98540-155">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="98540-156">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-156">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
 
-## <a name="debian-9"></a><span data-ttu-id="7c966-153">Debian 9</span><span class="sxs-lookup"><span data-stu-id="7c966-153">Debian 9</span></span>
+## <a name="debian-9"></a><span data-ttu-id="98540-157">Debian 9</span><span class="sxs-lookup"><span data-stu-id="98540-157">Debian 9</span></span>
 
-### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="7c966-154">透過套件存放庫安裝 - Debian 9</span><span class="sxs-lookup"><span data-stu-id="7c966-154">Installation via Package Repository - Debian 9</span></span>
+### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="98540-158">透過套件存放庫安裝 - Debian 9</span><span class="sxs-lookup"><span data-stu-id="98540-158">Installation via Package Repository - Debian 9</span></span>
 
-<span data-ttu-id="7c966-155">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-155">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
+<span data-ttu-id="98540-159">PowerShell Core for Linux 會發佈到套件存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-159">PowerShell Core for Linux is published to package repositories for easy installation and updates.</span></span>
 
-<span data-ttu-id="7c966-156">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="7c966-156">The preferred method is as follows:</span></span>
+<span data-ttu-id="98540-160">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="98540-160">The preferred method is as follows:</span></span>
 
 ```sh
 # Install system components
@@ -207,33 +215,33 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="7c966-157">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="7c966-157">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="7c966-158">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-158">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
+<span data-ttu-id="98540-161">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="98540-161">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="98540-162">註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-162">After registration, you can update PowerShell with `sudo apt-get upgrade powershell`.</span></span>
 
-### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="7c966-159">透過直接下載安裝 - Debian 9</span><span class="sxs-lookup"><span data-stu-id="7c966-159">Installation via Direct Download - Debian 9</span></span>
+### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="98540-163">透過直接下載安裝 - Debian 9</span><span class="sxs-lookup"><span data-stu-id="98540-163">Installation via Direct Download - Debian 9</span></span>
 
-<span data-ttu-id="7c966-160">將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.debian.9_amd64.deb` 下載至 Debian 電腦。</span><span class="sxs-lookup"><span data-stu-id="7c966-160">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb` from the [releases][] page onto the Debian machine.</span></span>
+<span data-ttu-id="98540-164">將[版本][]頁面上的 Debian 套件 `powershell_6.2.0-1.debian.9_amd64.deb` 下載至 Debian 電腦。</span><span class="sxs-lookup"><span data-stu-id="98540-164">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb` from the [releases][] page onto the Debian machine.</span></span>
 
-<span data-ttu-id="7c966-161">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-161">Then, in the terminal, execute the following commands:</span></span>
+<span data-ttu-id="98540-165">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="98540-165">Then, in the terminal, execute the following commands:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-### <a name="uninstallation---debian-9"></a><span data-ttu-id="7c966-162">解除安裝 - Debian 9</span><span class="sxs-lookup"><span data-stu-id="7c966-162">Uninstallation - Debian 9</span></span>
+### <a name="uninstallation---debian-9"></a><span data-ttu-id="98540-166">解除安裝 - Debian 9</span><span class="sxs-lookup"><span data-stu-id="98540-166">Uninstallation - Debian 9</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="centos-7"></a><span data-ttu-id="7c966-163">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="7c966-163">CentOS 7</span></span>
+## <a name="centos-7"></a><span data-ttu-id="98540-167">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="98540-167">CentOS 7</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c966-164">此套件也適用於 Oracle Linux 7。</span><span class="sxs-lookup"><span data-stu-id="7c966-164">This package works on Oracle Linux 7.</span></span>
+> <span data-ttu-id="98540-168">此套件也適用於 Oracle Linux 7。</span><span class="sxs-lookup"><span data-stu-id="98540-168">This package works on Oracle Linux 7.</span></span>
 
-### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="7c966-165">透過套件存放庫安裝 (慣用) - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="7c966-165">Installation via Package Repository (preferred) - CentOS 7</span></span>
+### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="98540-169">透過套件存放庫安裝 (慣用) - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="98540-169">Installation via Package Repository (preferred) - CentOS 7</span></span>
 
-<span data-ttu-id="7c966-166">PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-166">PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.</span></span>
+<span data-ttu-id="98540-170">PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-170">PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -246,25 +254,25 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="7c966-167">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="7c966-167">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="7c966-168">註冊之後，您可以使用 `sudo yum update powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-168">After registration, you can update PowerShell with `sudo yum update powershell`.</span></span>
+<span data-ttu-id="98540-171">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="98540-171">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="98540-172">註冊之後，您可以使用 `sudo yum update powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-172">After registration, you can update PowerShell with `sudo yum update powershell`.</span></span>
 
-### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="7c966-169">透過直接下載安裝 - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="7c966-169">Installation via Direct Download - CentOS 7</span></span>
+### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="98540-173">透過直接下載安裝 - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="98540-173">Installation via Direct Download - CentOS 7</span></span>
 
-<span data-ttu-id="7c966-170">使用 [CentOS 7][]，將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。</span><span class="sxs-lookup"><span data-stu-id="7c966-170">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm` from the [releases][] page onto the CentOS machine.</span></span>
+<span data-ttu-id="98540-174">使用 [CentOS 7][]，將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。</span><span class="sxs-lookup"><span data-stu-id="98540-174">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm` from the [releases][] page onto the CentOS machine.</span></span>
 
-<span data-ttu-id="7c966-171">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-171">Then, in the terminal, execute the following commands:</span></span>
+<span data-ttu-id="98540-175">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="98540-175">Then, in the terminal, execute the following commands:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="7c966-172">您可以不使用下載的中繼步驟來安裝 RPM：</span><span class="sxs-lookup"><span data-stu-id="7c966-172">You can install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="98540-176">您可以不使用下載的中繼步驟來安裝 RPM：</span><span class="sxs-lookup"><span data-stu-id="98540-176">You can install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---centos-7"></a><span data-ttu-id="7c966-173">解除安裝 - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="7c966-173">Uninstallation - CentOS 7</span></span>
+### <a name="uninstallation---centos-7"></a><span data-ttu-id="98540-177">解除安裝 - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="98540-177">Uninstallation - CentOS 7</span></span>
 
 ```sh
 sudo yum remove powershell
@@ -272,11 +280,11 @@ sudo yum remove powershell
 
 [CentOS 7]: https://www.centos.org/download/
 
-## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="7c966-175">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="7c966-175">Red Hat Enterprise Linux (RHEL) 7</span></span>
+## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="98540-179">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="98540-179">Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="7c966-176">透過套件存放庫安裝 (慣用) - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="7c966-176">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="98540-180">透過套件存放庫安裝 (慣用) - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="98540-180">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="7c966-177">PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-177">PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.</span></span>
+<span data-ttu-id="98540-181">PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-181">PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -289,33 +297,33 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="7c966-178">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="7c966-178">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="7c966-179">註冊之後，您可以使用 `sudo yum update powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-179">After registration, you can update PowerShell with `sudo yum update powershell`.</span></span>
+<span data-ttu-id="98540-182">以超級使用者的身分，註冊 Microsoft 存放庫一次。</span><span class="sxs-lookup"><span data-stu-id="98540-182">As superuser, register the Microsoft repository once.</span></span> <span data-ttu-id="98540-183">註冊之後，您可以使用 `sudo yum update powershell` 來更新 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-183">After registration, you can update PowerShell with `sudo yum update powershell`.</span></span>
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="7c966-180">透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="7c966-180">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="98540-184">透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="98540-184">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="7c966-181">將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。</span><span class="sxs-lookup"><span data-stu-id="7c966-181">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm` from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
+<span data-ttu-id="98540-185">將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。</span><span class="sxs-lookup"><span data-stu-id="98540-185">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm` from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
 
-<span data-ttu-id="7c966-182">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-182">Then, in the terminal, execute the following commands:</span></span>
+<span data-ttu-id="98540-186">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="98540-186">Then, in the terminal, execute the following commands:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="7c966-183">您可以不使用下載的中繼步驟來安裝 RPM：</span><span class="sxs-lookup"><span data-stu-id="7c966-183">You can install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="98540-187">您可以不使用下載的中繼步驟來安裝 RPM：</span><span class="sxs-lookup"><span data-stu-id="98540-187">You can install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="7c966-184">解除安裝 - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="7c966-184">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="98540-188">解除安裝 - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="98540-188">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
 ```sh
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a><span data-ttu-id="7c966-185">openSUSE</span><span class="sxs-lookup"><span data-stu-id="7c966-185">openSUSE</span></span>
+## <a name="opensuse"></a><span data-ttu-id="98540-189">openSUSE</span><span class="sxs-lookup"><span data-stu-id="98540-189">openSUSE</span></span>
 
-### <a name="installation---opensuse-423"></a><span data-ttu-id="7c966-186">安裝 - openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="7c966-186">Installation - openSUSE 42.3</span></span>
+### <a name="installation---opensuse-423"></a><span data-ttu-id="98540-190">安裝 - openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="98540-190">Installation - openSUSE 42.3</span></span>
 
 ```sh
 # Install dependencies
@@ -340,7 +348,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="7c966-187">安裝 - openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="7c966-187">Installation - openSUSE Leap 15</span></span>
+### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="98540-191">安裝 - openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="98540-191">Installation - openSUSE Leap 15</span></span>
 
 ```sh
 # Install dependencies
@@ -365,20 +373,20 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="7c966-188">解除安裝 - openSUSE 42.3、openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="7c966-188">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="98540-192">解除安裝 - openSUSE 42.3、openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="98540-192">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="fedora"></a><span data-ttu-id="7c966-189">Fedora</span><span class="sxs-lookup"><span data-stu-id="7c966-189">Fedora</span></span>
+## <a name="fedora"></a><span data-ttu-id="98540-193">Fedora</span><span class="sxs-lookup"><span data-stu-id="98540-193">Fedora</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c966-190">只有 PowerShell Core 6.1 和更新版本才支援 Fedora 28。</span><span class="sxs-lookup"><span data-stu-id="7c966-190">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
+> <span data-ttu-id="98540-194">只有 PowerShell Core 6.1 和更新版本才支援 Fedora 28。</span><span class="sxs-lookup"><span data-stu-id="98540-194">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="7c966-191">透過套件存放庫安裝 (慣用) - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="7c966-191">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="98540-195">透過套件存放庫安裝 (慣用) - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="98540-195">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="7c966-192">PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-192">PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.</span></span>
+<span data-ttu-id="98540-196">PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-196">PowerShell Core for Linux is published to official Microsoft repositories for easy installation and updates.</span></span>
 
 ```sh
 # Register the Microsoft signature key
@@ -400,61 +408,61 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="7c966-193">透過直接下載安裝 - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="7c966-193">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="98540-197">透過直接下載安裝 - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="98540-197">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="7c966-194">將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。</span><span class="sxs-lookup"><span data-stu-id="7c966-194">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm` from the [releases][] page onto the Fedora machine.</span></span>
+<span data-ttu-id="98540-198">將[版本][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。</span><span class="sxs-lookup"><span data-stu-id="98540-198">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm` from the [releases][] page onto the Fedora machine.</span></span>
 
-<span data-ttu-id="7c966-195">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="7c966-195">Then, in the terminal, execute the following commands:</span></span>
+<span data-ttu-id="98540-199">然後，在終端機中執行下列命令：</span><span class="sxs-lookup"><span data-stu-id="98540-199">Then, in the terminal, execute the following commands:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="7c966-196">您可以不使用下載的中繼步驟來安裝 RPM：</span><span class="sxs-lookup"><span data-stu-id="7c966-196">You can install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="98540-200">您可以不使用下載的中繼步驟來安裝 RPM：</span><span class="sxs-lookup"><span data-stu-id="98540-200">You can install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="7c966-197">解除安裝 - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="7c966-197">Uninstallation - Fedora 27, Fedora 28</span></span>
+### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="98540-201">解除安裝 - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="98540-201">Uninstallation - Fedora 27, Fedora 28</span></span>
 
 ```sh
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a><span data-ttu-id="7c966-198">Arch Linux</span><span class="sxs-lookup"><span data-stu-id="7c966-198">Arch Linux</span></span>
+## <a name="arch-linux"></a><span data-ttu-id="98540-202">Arch Linux</span><span class="sxs-lookup"><span data-stu-id="98540-202">Arch Linux</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c966-199">Arch 支援為實驗性。</span><span class="sxs-lookup"><span data-stu-id="7c966-199">Arch support is experimental.</span></span>
+> <span data-ttu-id="98540-203">Arch 支援為實驗性。</span><span class="sxs-lookup"><span data-stu-id="98540-203">Arch support is experimental.</span></span>
 
-<span data-ttu-id="7c966-200">PowerShell 可從 [Arch Linux][] 使用者存放庫 (AUR) 取得。</span><span class="sxs-lookup"><span data-stu-id="7c966-200">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
+<span data-ttu-id="98540-204">PowerShell 可從 [Arch Linux][] 使用者存放庫 (AUR) 取得。</span><span class="sxs-lookup"><span data-stu-id="98540-204">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
 
-* <span data-ttu-id="7c966-201">可以使用[最新的標記版本][arch-release]編譯</span><span class="sxs-lookup"><span data-stu-id="7c966-201">It can be compiled with the [latest tagged release][arch-release]</span></span>
-* <span data-ttu-id="7c966-202">可以從[主機的最新認可][arch-git]編譯</span><span class="sxs-lookup"><span data-stu-id="7c966-202">It can be compiled from the [latest commit to master][arch-git]</span></span>
-* <span data-ttu-id="7c966-203">可以使用[最新版本的二進位檔][arch-bin]安裝</span><span class="sxs-lookup"><span data-stu-id="7c966-203">It can be installed using the [latest release binary][arch-bin]</span></span>
+* <span data-ttu-id="98540-205">可以使用[最新的標記版本][arch-release]編譯</span><span class="sxs-lookup"><span data-stu-id="98540-205">It can be compiled with the [latest tagged release][arch-release]</span></span>
+* <span data-ttu-id="98540-206">可以從[主機的最新認可][arch-git]編譯</span><span class="sxs-lookup"><span data-stu-id="98540-206">It can be compiled from the [latest commit to master][arch-git]</span></span>
+* <span data-ttu-id="98540-207">可以使用[最新版本的二進位檔][arch-bin]安裝</span><span class="sxs-lookup"><span data-stu-id="98540-207">It can be installed using the [latest release binary][arch-bin]</span></span>
 
-<span data-ttu-id="7c966-204">AUR 中的套件由社群維護，沒有官方支援。</span><span class="sxs-lookup"><span data-stu-id="7c966-204">Packages in the AUR are community maintained; there's no official support.</span></span>
+<span data-ttu-id="98540-208">AUR 中的套件由社群維護，沒有官方支援。</span><span class="sxs-lookup"><span data-stu-id="98540-208">Packages in the AUR are community maintained; there's no official support.</span></span>
 
-<span data-ttu-id="7c966-205">如需從 AUR 安裝套件的詳細資訊，請參閱 [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) 或社群 [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile)。</span><span class="sxs-lookup"><span data-stu-id="7c966-205">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
+<span data-ttu-id="98540-209">如需從 AUR 安裝套件的詳細資訊，請參閱 [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) 或社群 [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile)。</span><span class="sxs-lookup"><span data-stu-id="98540-209">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
-## <a name="snap-package"></a><span data-ttu-id="7c966-207">Snap 套件</span><span class="sxs-lookup"><span data-stu-id="7c966-207">Snap Package</span></span>
+## <a name="snap-package"></a><span data-ttu-id="98540-211">Snap 套件</span><span class="sxs-lookup"><span data-stu-id="98540-211">Snap Package</span></span>
 
-### <a name="getting-snapd"></a><span data-ttu-id="7c966-208">取得 snapd</span><span class="sxs-lookup"><span data-stu-id="7c966-208">Getting snapd</span></span>
+### <a name="getting-snapd"></a><span data-ttu-id="98540-212">取得 snapd</span><span class="sxs-lookup"><span data-stu-id="98540-212">Getting snapd</span></span>
 
-<span data-ttu-id="7c966-209">必須有 `snapd` 才能執行 Snap。</span><span class="sxs-lookup"><span data-stu-id="7c966-209">`snapd` is required to run snaps.</span></span> <span data-ttu-id="7c966-210">請使用[這些指示](https://docs.snapcraft.io/core/install)確認您已安裝 `snapd`。</span><span class="sxs-lookup"><span data-stu-id="7c966-210">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
+<span data-ttu-id="98540-213">必須有 `snapd` 才能執行 Snap。</span><span class="sxs-lookup"><span data-stu-id="98540-213">`snapd` is required to run snaps.</span></span> <span data-ttu-id="98540-214">請使用[這些指示](https://docs.snapcraft.io/core/install)確認您已安裝 `snapd`。</span><span class="sxs-lookup"><span data-stu-id="98540-214">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
 
-### <a name="installation-via-snap"></a><span data-ttu-id="7c966-211">透過 Snap 安裝</span><span class="sxs-lookup"><span data-stu-id="7c966-211">Installation via Snap</span></span>
+### <a name="installation-via-snap"></a><span data-ttu-id="98540-215">透過 Snap 安裝</span><span class="sxs-lookup"><span data-stu-id="98540-215">Installation via Snap</span></span>
 
-<span data-ttu-id="7c966-212">適用於 Linux 的 PowerShell Core 會發佈到 [Snap Store](https://snapcraft.io/store)，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="7c966-212">PowerShell Core for Linux is published to the [Snap store](https://snapcraft.io/store) for easy installation and updates.</span></span>
+<span data-ttu-id="98540-216">適用於 Linux 的 PowerShell Core 會發佈到 [Snap Store](https://snapcraft.io/store)，以供輕鬆安裝及更新。</span><span class="sxs-lookup"><span data-stu-id="98540-216">PowerShell Core for Linux is published to the [Snap store](https://snapcraft.io/store) for easy installation and updates.</span></span>
 
-<span data-ttu-id="7c966-213">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="7c966-213">The preferred method is as follows:</span></span>
+<span data-ttu-id="98540-217">慣用的方法如下所示：</span><span class="sxs-lookup"><span data-stu-id="98540-217">The preferred method is as follows:</span></span>
 
 ```sh
 # Install PowerShell
@@ -464,7 +472,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-<span data-ttu-id="7c966-214">若要安裝預覽版，請使用下列方法：</span><span class="sxs-lookup"><span data-stu-id="7c966-214">To install a preview version, use the following method:</span></span>
+<span data-ttu-id="98540-218">若要安裝預覽版，請使用下列方法：</span><span class="sxs-lookup"><span data-stu-id="98540-218">To install a preview version, use the following method:</span></span>
 
 ```sh
 # Install PowerShell
@@ -474,23 +482,23 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-<span data-ttu-id="7c966-215">安裝之後，Snap 將會自動升級。</span><span class="sxs-lookup"><span data-stu-id="7c966-215">After installation, Snap will automatically upgrade.</span></span> <span data-ttu-id="7c966-216">您可以使用 `sudo snap refresh powershell` 或 `sudo snap refresh powershell-preview` 觸發升級。</span><span class="sxs-lookup"><span data-stu-id="7c966-216">You can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
+<span data-ttu-id="98540-219">安裝之後，Snap 將會自動升級。</span><span class="sxs-lookup"><span data-stu-id="98540-219">After installation, Snap will automatically upgrade.</span></span> <span data-ttu-id="98540-220">您可以使用 `sudo snap refresh powershell` 或 `sudo snap refresh powershell-preview` 觸發升級。</span><span class="sxs-lookup"><span data-stu-id="98540-220">You can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
 
-### <a name="uninstallation"></a><span data-ttu-id="7c966-217">解除安裝</span><span class="sxs-lookup"><span data-stu-id="7c966-217">Uninstallation</span></span>
+### <a name="uninstallation"></a><span data-ttu-id="98540-221">解除安裝</span><span class="sxs-lookup"><span data-stu-id="98540-221">Uninstallation</span></span>
 
 ```sh
 sudo snap remove powershell
 ```
 
-<span data-ttu-id="7c966-218">或</span><span class="sxs-lookup"><span data-stu-id="7c966-218">or</span></span>
+<span data-ttu-id="98540-222">或</span><span class="sxs-lookup"><span data-stu-id="98540-222">or</span></span>
 
 ```sh
 sudo snap remove powershell-preview
 ```
 
-## <a name="kali"></a><span data-ttu-id="7c966-219">Kali</span><span class="sxs-lookup"><span data-stu-id="7c966-219">Kali</span></span>
+## <a name="kali"></a><span data-ttu-id="98540-223">Kali</span><span class="sxs-lookup"><span data-stu-id="98540-223">Kali</span></span>
 
-### <a name="installation---kali"></a><span data-ttu-id="7c966-220">安裝 - Kali</span><span class="sxs-lookup"><span data-stu-id="7c966-220">Installation - Kali</span></span>
+### <a name="installation---kali"></a><span data-ttu-id="98540-224">安裝 - Kali</span><span class="sxs-lookup"><span data-stu-id="98540-224">Installation - Kali</span></span>
 
 ```sh
 # Download & Install prerequisites
@@ -511,25 +519,25 @@ apt-get update && apt-get install -y powershell
 pwsh
 ```
 
-### <a name="uninstallation---kali"></a><span data-ttu-id="7c966-221">解除安裝 - Kali</span><span class="sxs-lookup"><span data-stu-id="7c966-221">Uninstallation - Kali</span></span>
+### <a name="uninstallation---kali"></a><span data-ttu-id="98540-225">解除安裝 - Kali</span><span class="sxs-lookup"><span data-stu-id="98540-225">Uninstallation - Kali</span></span>
 
 ```sh
 # Uninstall PowerShell package
 apt-get remove -y powershell
 ```
 
-## <a name="raspbian"></a><span data-ttu-id="7c966-222">Raspbian</span><span class="sxs-lookup"><span data-stu-id="7c966-222">Raspbian</span></span>
+## <a name="raspbian"></a><span data-ttu-id="98540-226">Raspbian</span><span class="sxs-lookup"><span data-stu-id="98540-226">Raspbian</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="7c966-223">Raspbian 支援為實驗性。</span><span class="sxs-lookup"><span data-stu-id="7c966-223">Raspbian support is experimental.</span></span>
+> <span data-ttu-id="98540-227">Raspbian 支援為實驗性。</span><span class="sxs-lookup"><span data-stu-id="98540-227">Raspbian support is experimental.</span></span>
 
-<span data-ttu-id="7c966-224">目前只有 Raspbian Stretch 支援 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7c966-224">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
+<span data-ttu-id="98540-228">目前只有 Raspbian Stretch 支援 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="98540-228">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
 
-<span data-ttu-id="7c966-225">CoreCLR 與 PowerShell Core 僅適用於 Pi 2 與 Pi 3 裝置，因為像 [Pi Zero](https://github.com/dotnet/coreclr/issues/10605) \(英文\) 這類的其他裝置，其處理器不受支援。</span><span class="sxs-lookup"><span data-stu-id="7c966-225">CoreCLR and PowerShell Core will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
+<span data-ttu-id="98540-229">CoreCLR 與 PowerShell Core 僅適用於 Pi 2 與 Pi 3 裝置，因為像 [Pi Zero](https://github.com/dotnet/coreclr/issues/10605) \(英文\) 這類的其他裝置，其處理器不受支援。</span><span class="sxs-lookup"><span data-stu-id="98540-229">CoreCLR and PowerShell Core will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
 
-<span data-ttu-id="7c966-226">下載 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)並 遵循[安裝指示](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)來把它安裝到您的 Pi。</span><span class="sxs-lookup"><span data-stu-id="7c966-226">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
+<span data-ttu-id="98540-230">下載 [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/)並 遵循[安裝指示](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)來把它安裝到您的 Pi。</span><span class="sxs-lookup"><span data-stu-id="98540-230">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
 
-### <a name="installation---raspbian"></a><span data-ttu-id="7c966-227">安裝 - Raspbian</span><span class="sxs-lookup"><span data-stu-id="7c966-227">Installation - Raspbian</span></span>
+### <a name="installation---raspbian"></a><span data-ttu-id="98540-231">安裝 - Raspbian</span><span class="sxs-lookup"><span data-stu-id="98540-231">Installation - Raspbian</span></span>
 
 ```sh
 ###################################
@@ -558,7 +566,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-<span data-ttu-id="7c966-228">或者，您可以建立一個符號連結來啟動 PowerShell，而無需指定 `pwsh` 二進位檔案路徑。</span><span class="sxs-lookup"><span data-stu-id="7c966-228">Optionally, you can create a symbolic link to start PowerShell without specifying the path to the `pwsh` binary.</span></span>
+<span data-ttu-id="98540-232">或者，您可以建立一個符號連結來啟動 PowerShell，而無需指定 `pwsh` 二進位檔案路徑。</span><span class="sxs-lookup"><span data-stu-id="98540-232">Optionally, you can create a symbolic link to start PowerShell without specifying the path to the `pwsh` binary.</span></span>
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -570,41 +578,41 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### <a name="uninstallation---raspbian"></a><span data-ttu-id="7c966-229">解除安裝 - Raspbian</span><span class="sxs-lookup"><span data-stu-id="7c966-229">Uninstallation - Raspbian</span></span>
+### <a name="uninstallation---raspbian"></a><span data-ttu-id="98540-233">解除安裝 - Raspbian</span><span class="sxs-lookup"><span data-stu-id="98540-233">Uninstallation - Raspbian</span></span>
 
 ```sh
 rm -rf ~/powershell
 ```
 
-## <a name="binary-archives"></a><span data-ttu-id="7c966-230">二進位封存</span><span class="sxs-lookup"><span data-stu-id="7c966-230">Binary Archives</span></span>
+## <a name="binary-archives"></a><span data-ttu-id="98540-234">二進位封存</span><span class="sxs-lookup"><span data-stu-id="98540-234">Binary Archives</span></span>
 
-<span data-ttu-id="7c966-231">Linux 平台有 PowerShell 二進位 `tar.gz` 封存，以啟用進階的部署案例。</span><span class="sxs-lookup"><span data-stu-id="7c966-231">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
+<span data-ttu-id="98540-235">Linux 平台有 PowerShell 二進位 `tar.gz` 封存，以啟用進階的部署案例。</span><span class="sxs-lookup"><span data-stu-id="98540-235">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
 
-### <a name="dependencies"></a><span data-ttu-id="7c966-232">相依性</span><span class="sxs-lookup"><span data-stu-id="7c966-232">Dependencies</span></span>
+### <a name="dependencies"></a><span data-ttu-id="98540-236">相依性</span><span class="sxs-lookup"><span data-stu-id="98540-236">Dependencies</span></span>
 
-<span data-ttu-id="7c966-233">PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。</span><span class="sxs-lookup"><span data-stu-id="7c966-233">PowerShell builds portable binaries for all Linux distributions.</span></span> <span data-ttu-id="7c966-234">但 .NET Core 執行階段在不同的發行版本需要不同的相依性，PowerShell 也一樣。</span><span class="sxs-lookup"><span data-stu-id="7c966-234">But, .NET Core runtime requires different dependencies on different distributions, and PowerShell does too.</span></span>
+<span data-ttu-id="98540-237">PowerShell 會為所有 Linux 發行版本建置可攜式二進位檔。</span><span class="sxs-lookup"><span data-stu-id="98540-237">PowerShell builds portable binaries for all Linux distributions.</span></span> <span data-ttu-id="98540-238">但 .NET Core 執行階段在不同的發行版本需要不同的相依性，PowerShell 也一樣。</span><span class="sxs-lookup"><span data-stu-id="98540-238">But, .NET Core runtime requires different dependencies on different distributions, and PowerShell does too.</span></span>
 
-<span data-ttu-id="7c966-235">下圖顯示不同 Linux 發行版本上，正式支援的 .NET Core 2.0 相依性。</span><span class="sxs-lookup"><span data-stu-id="7c966-235">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
+<span data-ttu-id="98540-239">下圖顯示不同 Linux 發行版本上，正式支援的 .NET Core 2.0 相依性。</span><span class="sxs-lookup"><span data-stu-id="98540-239">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
 
-| <span data-ttu-id="7c966-236">作業系統</span><span class="sxs-lookup"><span data-stu-id="7c966-236">OS</span></span>                 | <span data-ttu-id="7c966-237">相依性</span><span class="sxs-lookup"><span data-stu-id="7c966-237">Dependencies</span></span> |
+| <span data-ttu-id="98540-240">作業系統</span><span class="sxs-lookup"><span data-stu-id="98540-240">OS</span></span>                 | <span data-ttu-id="98540-241">相依性</span><span class="sxs-lookup"><span data-stu-id="98540-241">Dependencies</span></span> |
 | ------------------ | ------------ |
-| <span data-ttu-id="7c966-238">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="7c966-238">Ubuntu 16.04</span></span>       | <span data-ttu-id="7c966-239">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="7c966-239">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="7c966-240">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55</span><span class="sxs-lookup"><span data-stu-id="7c966-240">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
-| <span data-ttu-id="7c966-241">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="7c966-241">Ubuntu 17.10</span></span>       | <span data-ttu-id="7c966-242">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="7c966-242">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="7c966-243">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57</span><span class="sxs-lookup"><span data-stu-id="7c966-243">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
-| <span data-ttu-id="7c966-244">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="7c966-244">Ubuntu 18.04</span></span>       | <span data-ttu-id="7c966-245">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="7c966-245">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="7c966-246">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60</span><span class="sxs-lookup"><span data-stu-id="7c966-246">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
-| <span data-ttu-id="7c966-247">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="7c966-247">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="7c966-248">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="7c966-248">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="7c966-249">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52</span><span class="sxs-lookup"><span data-stu-id="7c966-249">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="7c966-250">Debian 9 (Stretch)</span><span class="sxs-lookup"><span data-stu-id="7c966-250">Debian 9 (Stretch)</span></span> | <span data-ttu-id="7c966-251">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="7c966-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="7c966-252">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57</span><span class="sxs-lookup"><span data-stu-id="7c966-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
-| <span data-ttu-id="7c966-253">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="7c966-253">CentOS 7</span></span> <br> <span data-ttu-id="7c966-254">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="7c966-254">Oracle Linux 7</span></span> <br> <span data-ttu-id="7c966-255">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="7c966-255">RHEL 7</span></span> | <span data-ttu-id="7c966-256">libunwind、libcurl、openssl-libs、libicu</span><span class="sxs-lookup"><span data-stu-id="7c966-256">libunwind, libcurl, openssl-libs, libicu</span></span> |
-| <span data-ttu-id="7c966-257">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="7c966-257">openSUSE 42.3</span></span> | <span data-ttu-id="7c966-258">libcurl4、libopenssl1_0_0、libicu52_1</span><span class="sxs-lookup"><span data-stu-id="7c966-258">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
-| <span data-ttu-id="7c966-259">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="7c966-259">openSUSE Leap 15</span></span> | <span data-ttu-id="7c966-260">libcurl4、libopenssl1_0_0、libicu60_2</span><span class="sxs-lookup"><span data-stu-id="7c966-260">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
-| <span data-ttu-id="7c966-261">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="7c966-261">Fedora 27</span></span> <br> <span data-ttu-id="7c966-262">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="7c966-262">Fedora 28</span></span> | <span data-ttu-id="7c966-263">libunwind、libcurl、openssl-libs、libicu、compat-openssl10</span><span class="sxs-lookup"><span data-stu-id="7c966-263">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
+| <span data-ttu-id="98540-242">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="98540-242">Ubuntu 16.04</span></span>       | <span data-ttu-id="98540-243">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="98540-243">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="98540-244">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55</span><span class="sxs-lookup"><span data-stu-id="98540-244">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
+| <span data-ttu-id="98540-245">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="98540-245">Ubuntu 17.10</span></span>       | <span data-ttu-id="98540-246">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="98540-246">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="98540-247">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57</span><span class="sxs-lookup"><span data-stu-id="98540-247">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
+| <span data-ttu-id="98540-248">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="98540-248">Ubuntu 18.04</span></span>       | <span data-ttu-id="98540-249">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="98540-249">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="98540-250">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60</span><span class="sxs-lookup"><span data-stu-id="98540-250">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
+| <span data-ttu-id="98540-251">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="98540-251">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="98540-252">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="98540-252">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="98540-253">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52</span><span class="sxs-lookup"><span data-stu-id="98540-253">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="98540-254">Debian 9 (Stretch)</span><span class="sxs-lookup"><span data-stu-id="98540-254">Debian 9 (Stretch)</span></span> | <span data-ttu-id="98540-255">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="98540-255">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="98540-256">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57</span><span class="sxs-lookup"><span data-stu-id="98540-256">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
+| <span data-ttu-id="98540-257">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="98540-257">CentOS 7</span></span> <br> <span data-ttu-id="98540-258">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="98540-258">Oracle Linux 7</span></span> <br> <span data-ttu-id="98540-259">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="98540-259">RHEL 7</span></span> | <span data-ttu-id="98540-260">libunwind、libcurl、openssl-libs、libicu</span><span class="sxs-lookup"><span data-stu-id="98540-260">libunwind, libcurl, openssl-libs, libicu</span></span> |
+| <span data-ttu-id="98540-261">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="98540-261">openSUSE 42.3</span></span> | <span data-ttu-id="98540-262">libcurl4、libopenssl1_0_0、libicu52_1</span><span class="sxs-lookup"><span data-stu-id="98540-262">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
+| <span data-ttu-id="98540-263">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="98540-263">openSUSE Leap 15</span></span> | <span data-ttu-id="98540-264">libcurl4、libopenssl1_0_0、libicu60_2</span><span class="sxs-lookup"><span data-stu-id="98540-264">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
+| <span data-ttu-id="98540-265">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="98540-265">Fedora 27</span></span> <br> <span data-ttu-id="98540-266">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="98540-266">Fedora 28</span></span> | <span data-ttu-id="98540-267">libunwind、libcurl、openssl-libs、libicu、compat-openssl10</span><span class="sxs-lookup"><span data-stu-id="98540-267">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
 
-<span data-ttu-id="7c966-264">若要在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。</span><span class="sxs-lookup"><span data-stu-id="7c966-264">To deploy PowerShell binaries on Linux distributions that aren't officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span> <span data-ttu-id="7c966-265">例如，[Amazon Linux dockerfile][amazon-dockerfile] 會先安裝相依性，再解壓縮 Linux `tar.gz` 封存。</span><span class="sxs-lookup"><span data-stu-id="7c966-265">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
+<span data-ttu-id="98540-268">若要在未正式支援的 Linux 發行版本上部署 PowerShell 二進位檔，您需要在個別步驟中為目標作業系統安裝必要的相依性。</span><span class="sxs-lookup"><span data-stu-id="98540-268">To deploy PowerShell binaries on Linux distributions that aren't officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span> <span data-ttu-id="98540-269">例如，[Amazon Linux dockerfile][amazon-dockerfile] 會先安裝相依性，再解壓縮 Linux `tar.gz` 封存。</span><span class="sxs-lookup"><span data-stu-id="98540-269">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
-### <a name="installation---binary-archives"></a><span data-ttu-id="7c966-266">安裝 - 二進位封存</span><span class="sxs-lookup"><span data-stu-id="7c966-266">Installation - Binary Archives</span></span>
+### <a name="installation---binary-archives"></a><span data-ttu-id="98540-270">安裝 - 二進位封存</span><span class="sxs-lookup"><span data-stu-id="98540-270">Installation - Binary Archives</span></span>
 
-#### <a name="linux"></a><span data-ttu-id="7c966-267">Linux</span><span class="sxs-lookup"><span data-stu-id="7c966-267">Linux</span></span>
+#### <a name="linux"></a><span data-ttu-id="98540-271">Linux</span><span class="sxs-lookup"><span data-stu-id="98540-271">Linux</span></span>
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -623,25 +631,25 @@ sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
-### <a name="uninstalling-binary-archives"></a><span data-ttu-id="7c966-268">解除安裝二進位封存</span><span class="sxs-lookup"><span data-stu-id="7c966-268">Uninstalling binary archives</span></span>
+### <a name="uninstalling-binary-archives"></a><span data-ttu-id="98540-272">解除安裝二進位封存</span><span class="sxs-lookup"><span data-stu-id="98540-272">Uninstalling binary archives</span></span>
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="paths"></a><span data-ttu-id="7c966-269">路徑</span><span class="sxs-lookup"><span data-stu-id="7c966-269">Paths</span></span>
+## <a name="paths"></a><span data-ttu-id="98540-273">路徑</span><span class="sxs-lookup"><span data-stu-id="98540-273">Paths</span></span>
 
-* <span data-ttu-id="7c966-270">`$PSHOME` 是 `/opt/microsoft/powershell/6.2.0/`</span><span class="sxs-lookup"><span data-stu-id="7c966-270">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
-* <span data-ttu-id="7c966-271">會從 `~/.config/powershell/profile.ps1` 讀取使用者設定檔</span><span class="sxs-lookup"><span data-stu-id="7c966-271">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
-* <span data-ttu-id="7c966-272">會從 `$PSHOME/profile.ps1` 讀取預設設定檔</span><span class="sxs-lookup"><span data-stu-id="7c966-272">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
-* <span data-ttu-id="7c966-273">會從 `~/.local/share/powershell/Modules` 讀取使用者模組</span><span class="sxs-lookup"><span data-stu-id="7c966-273">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="7c966-274">會從 `/usr/local/share/powershell/Modules` 讀取共用的模組</span><span class="sxs-lookup"><span data-stu-id="7c966-274">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="7c966-275">會從 `$PSHOME/Modules` 讀取預設模組</span><span class="sxs-lookup"><span data-stu-id="7c966-275">Default modules will be read from `$PSHOME/Modules`</span></span>
-* <span data-ttu-id="7c966-276">PSReadline 記錄會記錄在 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="7c966-276">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
+* <span data-ttu-id="98540-274">`$PSHOME` 是 `/opt/microsoft/powershell/6.2.0/`</span><span class="sxs-lookup"><span data-stu-id="98540-274">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
+* <span data-ttu-id="98540-275">會從 `~/.config/powershell/profile.ps1` 讀取使用者設定檔</span><span class="sxs-lookup"><span data-stu-id="98540-275">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
+* <span data-ttu-id="98540-276">會從 `$PSHOME/profile.ps1` 讀取預設設定檔</span><span class="sxs-lookup"><span data-stu-id="98540-276">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
+* <span data-ttu-id="98540-277">會從 `~/.local/share/powershell/Modules` 讀取使用者模組</span><span class="sxs-lookup"><span data-stu-id="98540-277">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="98540-278">會從 `/usr/local/share/powershell/Modules` 讀取共用的模組</span><span class="sxs-lookup"><span data-stu-id="98540-278">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="98540-279">會從 `$PSHOME/Modules` 讀取預設模組</span><span class="sxs-lookup"><span data-stu-id="98540-279">Default modules will be read from `$PSHOME/Modules`</span></span>
+* <span data-ttu-id="98540-280">PSReadline 記錄會記錄在 `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span><span class="sxs-lookup"><span data-stu-id="98540-280">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
 
-<span data-ttu-id="7c966-277">設定檔會遵循 PowerShell 的每個主控件設定，讓預設主控件特定設定檔存在於相同位置的 `Microsoft.PowerShell_profile.ps1`。</span><span class="sxs-lookup"><span data-stu-id="7c966-277">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
+<span data-ttu-id="98540-281">設定檔會遵循 PowerShell 的每個主控件設定，讓預設主控件特定設定檔存在於相同位置的 `Microsoft.PowerShell_profile.ps1`。</span><span class="sxs-lookup"><span data-stu-id="98540-281">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
 
-<span data-ttu-id="7c966-278">PowerShell 遵循 Linux 上的 [XDG 基底目錄規格][xdg-bds]。</span><span class="sxs-lookup"><span data-stu-id="7c966-278">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
+<span data-ttu-id="98540-282">PowerShell 遵循 Linux 上的 [XDG 基底目錄規格][xdg-bds]。</span><span class="sxs-lookup"><span data-stu-id="98540-282">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
 
 [版本]: https://github.com/PowerShell/PowerShell/releases/latest
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest
