@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: Get-Test-Set
-ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229510"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215419"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-![取得、測試及設定](/media/get-test-set.png)
+![取得、測試及設定](../media/get-test-set.png)
 
 PowerShell 預期狀態設定是圍繞著**取得**、**測試**及**設定**流程所建構的。 每個 DSC [資源](resources.md)均包含可用以完成上述各項作業的方法。 在[設定](../configurations/configurations.md)中，您會定義資源區塊來填滿索引鍵，以成為適用於資源之**取得**、**測試**及**設定**方法的參數。
 
@@ -177,7 +177,7 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Test
 
-資源的**測試**方法會判斷目標節點目前是否符合資源「期望狀態」的規範。 **測試**方法只會傳回 `$True` 或 `$False`，以指出節點是否符合規範。
+資源的**測試**方法會判斷目標節點目前是否符合資源「期望狀態」  的規範。 **測試**方法只會傳回 `$True` 或 `$False`，以指出節點是否符合規範。
 當您呼叫 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) 時，LCM 會在目前套用的設定中呼叫每個資源的**取得**方法。 LCM 會使用儲存於 ".mof" 檔案的索引鍵值作為每個對應資源執行個體的參數。
 
 如果任何個別資源的**測試**結果是 `$False`，`Test-DSCConfiguration` 會傳回 `$False`，指出節點不符合規範。 如果所有資源的**測試**方法會傳回 `$True`，`Test-DSCConfiguration` 會傳回 `$True`，以指出節點符合規範。
@@ -206,7 +206,7 @@ localhost       {[Service]Spooler}                                            Tr
 
 ## <a name="set"></a>設定
 
-資源的**設定**方法會嘗試強制節點符合資源「期望狀態」的規範。 **設定**方法意味著**等冪**，這表示**設定**會多次執行，且一律取得相同結果且不會有任何錯誤。  當您執行 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) 時，LCM 會在目前套用的設定中循環執行每個資源。 LCM 會在 ".mof" 檔案中擷取目前資源執行個體的索引鍵值，並使用它們作為**測試**方法的參數。 如果**測試**方法傳回 `$True`，則該節點符合目前資源的規範，且會跳過**設定**方法。 如果**測試**傳回 `$False`，則節點不符合規範。  LCM 會將資源執行個體的索引鍵值當作參數傳遞給資源的**設定**方法，還原節點以符合規範。
+資源的**設定**方法會嘗試強制節點符合資源「期望狀態」  的規範。 **設定**方法意味著**等冪**，這表示**設定**會多次執行，且一律取得相同結果且不會有任何錯誤。  當您執行 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) 時，LCM 會在目前套用的設定中循環執行每個資源。 LCM 會在 ".mof" 檔案中擷取目前資源執行個體的索引鍵值，並使用它們作為**測試**方法的參數。 如果**測試**方法傳回 `$True`，則該節點符合目前資源的規範，且會跳過**設定**方法。 如果**測試**傳回 `$False`，則節點不符合規範。  LCM 會將資源執行個體的索引鍵值當作參數傳遞給資源的**設定**方法，還原節點以符合規範。
 
 藉由指定 `-Verbose` 和 `-Wait` 參數，您可以監看 `Start-DSCConfiguration` Cmdlet 的進度。 在此範例中，節點已經符合規範。 `Verbose` 輸出指出已跳過**設定**方法。
 

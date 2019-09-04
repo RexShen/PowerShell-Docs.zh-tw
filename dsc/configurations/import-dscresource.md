@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用 Import-DSCResource
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080096"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215414"
 ---
 # <a name="using-import-dscresource"></a>使用 Import-DSCResource
 
@@ -78,7 +78,7 @@ Configuration MSDSCConfiguration
 
 在 ISE 中撰寫 DSC 設定時，PowerShell 會為資源和資源內容提供 IntelliSense。 `$pshome` 模組路徑下的資源定義會自動載入。 使用 `Import-DSCResource` 關鍵字匯入資源時，將加入指定的資源定義，並擴展 Intellisense 以包含匯入的資源結構描述。
 
-![資源 Intellisense](/media/resource-intellisense.png)
+![資源 Intellisense](../media/resource-intellisense.png)
 
 > [!NOTE]
 > 從 PowerShell 5.0 開始，Tab 鍵自動完成已新增至 ISE 以取得 DSC 資源和其屬性。 如需詳細資訊，請參閱[資源](../resources/resources.md)。
@@ -137,11 +137,11 @@ PowerShell 4.0 不支援並排安裝和使用多個版本的資源。 如果您�
 
 在下圖中，安裝了 **xPSDesiredStateConfiguration** 模組的兩個版本。
 
-![已修正多個資源版本](/media/multiple-resource-versions-broken.md)
+![已修正多個資源版本](../media/multiple-resource-versions-broken.png)
 
 將所需模組版本的內容複製到模組目錄的上層。
 
-![已修正多個資源版本](/media/multiple-resource-versions-fixed.md)
+![已修正多個資源版本](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>資源位置
 
