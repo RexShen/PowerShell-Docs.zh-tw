@@ -1,45 +1,55 @@
 ---
-title: 如何匯入使用模組的 Cmdlet |Microsoft Docs
+title: 如何使用模組匯入 Cmdlet |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/28/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
-ms.openlocfilehash: c007bb11324e10ffd100797dccd9e6ab0d09a73e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067972"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215270"
 ---
-# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="34b21-102">如何使用模組來匯入 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="34b21-102">How to Import Cmdlets Using Modules</span></span>
+# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="65252-102">如何使用模組來匯入 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="65252-102">How to Import Cmdlets Using Modules</span></span>
 
-<span data-ttu-id="34b21-103">本主題描述如何使用二進位模組匯入 cmdlet 的 Windows PowerShell 工作階段。</span><span class="sxs-lookup"><span data-stu-id="34b21-103">This topic describes how to import cmdlets to a Windows PowerShell session by using a binary module.</span></span>
+<span data-ttu-id="65252-103">本文說明如何使用二進位模組, 將 Cmdlet 匯入 PowerShell 會話。</span><span class="sxs-lookup"><span data-stu-id="65252-103">This article describes how to import cmdlets to a PowerShell session by using a binary module.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34b21-104">模組的成員可以包括 cmdlet、 提供者、 函式、 變數、 別名及更多。</span><span class="sxs-lookup"><span data-stu-id="34b21-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="34b21-105">嵌入式管理單元可以包含 cmdlet 和提供者。</span><span class="sxs-lookup"><span data-stu-id="34b21-105">Snap-ins can contain only cmdlets and providers.</span></span>
+> <span data-ttu-id="65252-104">模組的成員可以包含 Cmdlet、提供者、函式、變數、別名等等。</span><span class="sxs-lookup"><span data-stu-id="65252-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="65252-105">嵌入式管理單元只能包含 Cmdlet 和提供者。</span><span class="sxs-lookup"><span data-stu-id="65252-105">Snap-ins can contain only cmdlets and providers.</span></span>
 
-## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="34b21-106">如何將使用模組的 cmdlet</span><span class="sxs-lookup"><span data-stu-id="34b21-106">How to load cmdlets using a module</span></span>
+## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="65252-106">如何使用模組載入 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="65252-106">How to load cmdlets using a module</span></span>
 
-1. <span data-ttu-id="34b21-107">建立組件檔案中的 cmdlet 會實作為具有相同名稱的模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="34b21-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="34b21-108">在此程序，在中建立的模組資料夾`system32`資料夾。</span><span class="sxs-lookup"><span data-stu-id="34b21-108">In this procedure, the module folder is created in the `system32` folder.</span></span>
+1. <span data-ttu-id="65252-107">建立模組資料夾, 其名稱與用來執行 Cmdlet 的元件檔案相同。</span><span class="sxs-lookup"><span data-stu-id="65252-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="65252-108">在此程式中, 會在 Windows `system32`資料夾中建立模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="65252-108">In this procedure, the module folder is created in the Windows `system32` folder.</span></span>
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-2. <span data-ttu-id="34b21-109">請確定`PSModulePath`環境變數包含在新的模組資料夾的路徑。</span><span class="sxs-lookup"><span data-stu-id="34b21-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="34b21-110">根據預設，[系統] 資料夾已新增至`PSModulePath`環境變數。</span><span class="sxs-lookup"><span data-stu-id="34b21-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span>
+1. <span data-ttu-id="65252-109">請確定`PSModulePath`環境變數包含新模組資料夾的路徑。</span><span class="sxs-lookup"><span data-stu-id="65252-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="65252-110">根據預設, 系統資料夾已新增至`PSModulePath`環境變數。</span><span class="sxs-lookup"><span data-stu-id="65252-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span> <span data-ttu-id="65252-111">若要查看`PSModulePath`, 請輸入`$env:PSModulePath`:。</span><span class="sxs-lookup"><span data-stu-id="65252-111">To view the `PSModulePath`, type: `$env:PSModulePath`.</span></span>
 
-3. <span data-ttu-id="34b21-111">將指令程式組件複製到模組資料夾中。</span><span class="sxs-lookup"><span data-stu-id="34b21-111">Copy the cmdlet assembly into the module folder.</span></span>
+1. <span data-ttu-id="65252-112">將 Cmdlet 元件複製到模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="65252-112">Copy the cmdlet assembly into the module folder.</span></span>
 
-4. <span data-ttu-id="34b21-112">執行下列命令以將 cmdlet 新增至工作階段：</span><span class="sxs-lookup"><span data-stu-id="34b21-112">Run the following command to add the cmdlets to the session:</span></span>
+1. <span data-ttu-id="65252-113">在模組的根資料夾中`.psd1`新增模組資訊清單檔案 ()。</span><span class="sxs-lookup"><span data-stu-id="65252-113">Add a module manifest file (`.psd1`) in the module's root folder.</span></span> <span data-ttu-id="65252-114">PowerShell 會使用模組資訊清單來匯入您的模組。</span><span class="sxs-lookup"><span data-stu-id="65252-114">PowerShell uses the module manifest to import your module.</span></span> <span data-ttu-id="65252-115">如需詳細資訊, 請參閱[如何撰寫 PowerShell 模組資訊清單](../module/how-to-write-a-powershell-module-manifest.md)。</span><span class="sxs-lookup"><span data-stu-id="65252-115">For more information, see [How to Write a PowerShell Module Manifest](../module/how-to-write-a-powershell-module-manifest.md).</span></span>
 
-   `import-module [Module_Name]`
+1. <span data-ttu-id="65252-116">執行下列命令, 將 Cmdlet 新增至會話:</span><span class="sxs-lookup"><span data-stu-id="65252-116">Run the following command to add the cmdlets to the session:</span></span>
 
-   <span data-ttu-id="34b21-113">此程序可用來測試您的 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="34b21-113">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="34b21-114">它會在工作階段的組件新增的所有 cmdlet。</span><span class="sxs-lookup"><span data-stu-id="34b21-114">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="34b21-115">如需有關模組的詳細資訊，請查看不同類型的模組，不同的方式載入模組，以及如何限制會匯出模組的項目[撰寫 Windows PowerShell 模組](../module/writing-a-windows-powershell-module.md)。</span><span class="sxs-lookup"><span data-stu-id="34b21-115">For more information about modules, the different types of modules, the different ways to load modules, and how to restrict the elements of a module that are exported, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
+   `Import-Module [Module_Name]`
 
-## <a name="see-also"></a><span data-ttu-id="34b21-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="34b21-116">See Also</span></span>
+   <span data-ttu-id="65252-117">此程式可以用來測試您的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="65252-117">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="65252-118">它會將元件中的所有 Cmdlet 新增至會話。</span><span class="sxs-lookup"><span data-stu-id="65252-118">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="65252-119">如需模組的詳細資訊, 請參閱[撰寫 Windows PowerShell 模組](../module/writing-a-windows-powershell-module.md)。</span><span class="sxs-lookup"><span data-stu-id="65252-119">For more information about modules, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
 
-[<span data-ttu-id="34b21-117">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="34b21-117">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+## <a name="see-also"></a><span data-ttu-id="65252-120">另請參閱</span><span class="sxs-lookup"><span data-stu-id="65252-120">See also</span></span>
 
-[<span data-ttu-id="34b21-118">安裝模組</span><span class="sxs-lookup"><span data-stu-id="34b21-118">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+[<span data-ttu-id="65252-121">如何撰寫 PowerShell 模組資訊清單</span><span class="sxs-lookup"><span data-stu-id="65252-121">How to Write a PowerShell Module Manifest</span></span>](../module/how-to-write-a-powershell-module-manifest.md)
+
+[<span data-ttu-id="65252-122">匯入 PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="65252-122">Importing a PowerShell Module</span></span>](../module/importing-a-powershell-module.md)
+
+[<span data-ttu-id="65252-123">Import-Module</span><span class="sxs-lookup"><span data-stu-id="65252-123">Import-Module</span></span>](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+
+[<span data-ttu-id="65252-124">安裝模組</span><span class="sxs-lookup"><span data-stu-id="65252-124">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+
+[<span data-ttu-id="65252-125">修改 PSModulePath 安裝路徑</span><span class="sxs-lookup"><span data-stu-id="65252-125">Modifying the PSModulePath Installation Path</span></span>](../module/modifying-the-psmodulepath-installation-path.md)
+
+[<span data-ttu-id="65252-126">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="65252-126">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
