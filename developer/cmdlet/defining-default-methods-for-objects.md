@@ -8,25 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733989"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215283"
 ---
 # <a name="defining-default-methods-for-objects"></a>定義物件的預設方法
 
-當您擴充.NET Framework 物件時，您可以將程式碼方法和指令碼方法新增至物件。 用來定義這些方法的 XML 是由下列各節所述。
+當您擴充 .NET Framework 物件時, 您可以將程式碼方法和腳本方法加入至物件。
+下列各節將說明用來定義這些方法的 XML。
 
 > [!NOTE]
-> 下列各節中的範例是由 Types.ps1xml 類型檔案，在 Windows PowerShell 安裝目錄 (`$pshome`)。
+> 下列各節中的範例來自 Windows PowerShell `Types.ps1xml`安裝目錄 (`$PSHOME`) 中的類型檔案。 如需詳細資訊, 請參閱[關於類型. types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)。
 
 ## <a name="code-methods"></a>程式碼方法
 
-程式碼方法參考.NET Framework 物件的靜態方法。
+程式碼方法會參考 .NET Framework 物件的靜態方法。
 
-在下列範例中， **ConvertLargeIntegerToInt64**方法會加入至[System.Xml.Xmlnode 嗎？Displayproperty = Fullname>](/dotnet/api/System.Xml.XmlNode)型別。 [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)項目做為程式碼方法定義的擴充的方法。 [名稱](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)項目會指定擴充方法的名稱。 此外， [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)項目會指定靜態方法。 (您也可以加入[PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)的成員的項目[PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)項目。)
+在下列範例中, **ToString**方法會加入至[system.object](/dotnet/api/System.Xml.XmlNode)類型。 [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)元素會將擴充的方法定義為程式碼方法。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)元素會指定擴充方法的名稱。 而且, [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)元素會指定靜態方法。 您也可以將[PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)元素新增至[PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)元素的成員。
 
 ```xml
 <Type>
@@ -35,7 +36,7 @@ ms.locfileid: "67733989"
     <CodeMethod>
       <Name>ToString</Name>
       <CodeReference>
-        <TypeName>Microsoft.PowerShell.ToStringCodemethods</TypeName>
+        <TypeName>Microsoft.PowerShell.ToStringCodeMethods</TypeName>
         <MethodName>XmlNode</MethodName>
       </CodeReference>
     </CodeMethod>
@@ -43,9 +44,9 @@ ms.locfileid: "67733989"
 </Type>
 ```
 
-## <a name="script-methods"></a>指令碼方法
+## <a name="script-methods"></a>腳本方法
 
-指令碼方法定義的方法，其值是指令碼的輸出。 在下列範例中， **ConvertToDateTime**方法會加入至[System.Management.Managementobject 嗎？Displayproperty = Fullname>](/dotnet/api/System.Management.ManagementObject)型別。 [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)項目做為指令碼方法定義的擴充的方法。 [名稱](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)項目會指定擴充方法的名稱。 此外，[指令碼](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script)項目會指定產生的方法值的指令碼。 (您也可以加入[PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)的成員的項目[PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)項目。)
+腳本方法會定義一個方法, 其值為腳本的輸出。 在下列範例中, **ConvertToDateTime**方法會新增至[system.management.managementobject](/dotnet/api/System.Management.ManagementObject)類型。 [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)元素會將擴充的方法定義為腳本方法。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)元素會指定擴充方法的名稱。 而且, [script](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script)元素會指定產生方法值的腳本。 您也可以將[PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)元素新增至[PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)元素的成員。
 
 ```xml
 <Type>
