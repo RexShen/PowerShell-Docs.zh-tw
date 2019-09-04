@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用檔案及資料夾
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030698"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215531"
 ---
 # <a name="working-with-files-and-folders"></a>使用檔案及資料夾
 
@@ -106,15 +106,17 @@ sure you want to continue?
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>將本機資料夾對應為 Windows 可存取磁碟機
+## <a name="mapping-a-local-folder-as-a-drive"></a>將本機資料夾對應為磁碟機
 
-您也可以使用 **subst** 命令對應本機資料夾。 下列命令會在本機的 Program Files 目錄下建立本機磁碟機 P:︰
+您也可以使用 **New-PSDrive** 命令對應本機資料夾。 下列命令會在本機的 Program Files 目錄下建立本機磁碟機 P: (只能從 PowerShell 工作階段看到)︰
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-就像使用網路磁碟機，Windows PowerShell 殼層可以立即看到使用 **subst** 在 Windows PowerShell 內對應的磁碟機。
+就像使用網路磁碟機，Windows PowerShell 殼層可以立即看到在 Windows PowerShell 內對應的磁碟機。
+若要建立可從 [檔案總管] 看到的對應磁碟機，則需要參數 **-Persist**。 不過，只有遠端路徑可以搭配 -Persist 使用。
+
 
 ## <a name="reading-a-text-file-into-an-array"></a>將文字檔讀入陣列
 
