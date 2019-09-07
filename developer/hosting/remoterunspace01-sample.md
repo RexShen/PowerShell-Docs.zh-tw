@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059638"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737585"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 範例
 
-此範例示範如何建立用來建立遠端連線的遠端 runspace。
+這個範例會示範如何建立用來建立遠端連線的遠端執行時間。
 
 ## <a name="requirements"></a>需求
 
- 這個範例需要 Windows PowerShell 2.0。
+ 此範例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>示範
+## <a name="demonstrates"></a>演示
 
-- 建立[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。
+- 建立 Wsmanconnectioninfo 物件的的[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。
 
-- 設定[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)並[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)屬性[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。
+- 設定[Runspaceconnectioninfo. Operationtimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)的屬性（property），其[內容為。Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的.。
 
-- 建立遠端 runspace，使用[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)建立遠端連線的物件。
+- 建立使用[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的遠端運行時，以建立遠端連線。
 
-- 關閉發行遠端連線的遠端 runspace。
+- 關閉遠端運行空間以釋放遠端連線。
 
 ## <a name="example"></a>範例
 
-此範例會定義遠端連線，並接著使用該連接資訊來建立遠端連線。
+這個範例會定義遠端連線，然後使用該連接資訊來建立遠端連線。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
