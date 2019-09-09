@@ -94,8 +94,6 @@
       items:
         - name: Windows PowerShell ISE 簡介
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell 整合式指令碼環境 (ISE)
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: 使用 Windows PowerShell ISE
           items:
             - name: 探索 Windows PowerShell ISE
@@ -200,12 +198,66 @@
   items:
     - name: 適用於系統管理的範例指令碼
       href: samples/sample-scripts-for-administration.yml
-    - name: 變更電腦狀態
-      href: samples/changing-computer-state.md
-    - name: 收集電腦的相關資訊
-      href: samples/collecting-information-about-computers.md
-    - name: 使用 FilterHashtable 建立 Get-WinEvent 查詢
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: 使用物件
+      items:
+        - name: 檢視物件結構 - Get-Member
+          href: samples/viewing-object-structure--get-member-.md
+        - name: 選取物件的組件 - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: 從管線中移除物件 - Where-Object
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: 為物件排序
+          href: samples/sorting-objects.md
+        - name: 對多個物件重複工作 - ForEach-Object
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: 建立 .NET 和 COM 物件 - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: 使用靜態類別和方法
+          href: samples/using-static-classes-and-methods.md
+        - name: 取得 WMI 物件 -Get-WmiObject
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: 管理電腦
+      items:
+        - name: 變更電腦狀態
+          href: samples/changing-computer-state.md
+        - name: 收集電腦的相關資訊
+          href: samples/collecting-information-about-computers.md
+        - name: 使用 FilterHashtable 建立 Get-WinEvent 查詢
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: 管理處理序與服務
+      items:
+        - name: 使用處理序 Cmdlet 管理處理序
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: 管理服務
+          href: samples/managing-services.md
+        - name: 管理 Windows PowerShell 磁碟機
+          href: samples/managing-windows-powershell-drives.md
+        - name: 使用印表機
+          href: samples/working-with-printers.md
+        - name: 執行網路工作
+          href: samples/performing-networking-tasks.md
+        - name: 處理軟體安裝
+          href: samples/working-with-software-installations.md
+        - name: 從正在執行的處理序解碼 PowerShell 命令
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: 使用輸出
+      items:
+        - name: 使用 Out-* Cmdlet 將資料重新導向
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: 使用格式命令變更輸出檢視
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: 管理裝置與檔案
+      items:
+        - name: 管理目前的位置
+          href: samples/managing-current-location.md
+        - name: 使用檔案及資料夾
+          href: samples/working-with-files-and-folders.md
+        - name: 使用檔案、資料夾與登錄機碼
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: 使用登錄項目
+          href: samples/working-with-registry-entries.md
+        - name: 使用登錄機碼
+          href: samples/working-with-registry-keys.md
     - name: 建立 UI 元素
       items:
         - name: 建立自訂輸入方塊
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: 從清單方塊選取項目
           href: samples/selecting-items-from-a-list-box.md
-    - name: 從正在執行的處理序解碼 PowerShell 命令
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: 管理目前的位置
-      href: samples/managing-current-location.md
-    - name: 使用處理序 Cmdlet 管理處理序
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: 管理服務
-      href: samples/managing-services.md
-    - name: 管理 Windows PowerShell 磁碟機
-      href: samples/managing-windows-powershell-drives.md
-    - name: 直接操作項目
-      href: samples/manipulating-items-directly.md
-    - name: 執行網路工作
-      href: samples/performing-networking-tasks.md
-    - name: 使用 Out-* Cmdlet 將資料重新導向
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: 使用格式命令變更輸出檢視
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: 使用檔案及資料夾
-      href: samples/working-with-files-and-folders.md
-    - name: 使用檔案、資料夾與登錄機碼
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: 使用物件
+    - name: 其他範例
       items:
-        - name: 取得 WMI 物件 -Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: 建立 .NET 和 COM 物件 - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: 從管線中移除物件 - Where-Object
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: 選取物件的組件 - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: 為物件排序
-          href: samples/sorting-objects.md
-        - name: 對多個物件重複工作 - ForEach-Object
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: 使用靜態類別和方法
-          href: samples/using-static-classes-and-methods.md
-        - name: 檢視物件結構 - Get-Member
-          href: samples/viewing-object-structure--get-member-.md
-    - name: 使用印表機
-      href: samples/working-with-printers.md
-    - name: 使用登錄項目
-      href: samples/working-with-registry-entries.md
-    - name: 使用登錄機碼
-      href: samples/working-with-registry-keys.md
-    - name: 處理軟體安裝
-      href: samples/working-with-software-installations.md
-    - name: 其他實用的指令碼物件
-      href: samples/other-useful-scripting-objects.md
-    - name: 附錄 1 相容性別名
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: 附錄 2 建立自訂 PowerShell 捷徑
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: 直接操作項目
+          href: samples/manipulating-items-directly.md
+        - name: 其他實用的指令碼物件
+          href: samples/other-useful-scripting-objects.md
+        - name: 附錄 1 相容性別名
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: 附錄 2 建立自訂 PowerShell 捷徑
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
