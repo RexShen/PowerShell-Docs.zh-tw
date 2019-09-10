@@ -887,39 +887,13 @@
         - name: 撰寫 Windows PowerShell Cmdlet 的說明
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: 撰寫 Windows PowerShell 提供者的說明
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: 如何建立提供者說明主題
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: 如何新增提供者名稱
-              href: ./help/how-to-add-the-provider-name.md
-            - name: 如何新增提供者磁碟機
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: 如何新增提供者概要
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: 如何新增提供者描述
-              href: ./help/how-to-add-a-provider-description.md
-            - name: 如何新增功能
-              href: ./help/how-to-add-capabilities.md
-            - name: 如何新增工作至提供者說明主題
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: 如何新增動態參數至提供者說明主題
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: 如何新增附註至提供者說明主題
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: 如何新增＜另請參閱＞小節至提供者說明主題
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: 撰寫 Windows PowerShell 指令碼和函式的說明
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: 撰寫指令碼和函式的 XML 型說明主題
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: 撰寫 Windows PowerShell 嵌入式管理單元的說明
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: 撰寫 Windows PowerShell 提供者的自訂 Cmdlet 說明
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: 撰寫 Windows PowerShell 關於說明
-          href: ./help/writing-windows-powershell-about-help.md
         - name: 撰寫註解型說明主題
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: 註解型說明的範例
               href: ./help/examples-of-comment-based-help.md
         - name: 撰寫命令的 XML 型說明主題
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: 如何建立 Cmdlet 說明檔案
               href: ./help/how-to-create-the-cmdlet-help-file.md
