@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (VB.NET) 程式碼範例 |Microsoft Docs
+title: RunSpace03 （VB.NET）程式碼範例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734992"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848010"
 ---
-# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="2382b-102">RunSpace03 (VB.NET) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="2382b-102">RunSpace03 (VB.NET) Code Sample</span></span>
+# <a name="runspace03-vbnet-code-sample"></a><span data-ttu-id="0a3ed-102">RunSpace03 (VB.NET) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="0a3ed-102">RunSpace03 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="2382b-103">以下是 VB.NET 原始程式碼的主控台應用程式中所述[建立主控台應用程式，執行指定指令碼](fd)。</span><span class="sxs-lookup"><span data-stu-id="2382b-103">Here is the VB.NET source code for the console application described in [Creating a Console Application That Runs a Specified Script](fd).</span></span> <span data-ttu-id="2382b-104">這個範例會使用[System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)来執行的指令碼，擷取處理序的資訊清單傳遞至指令碼的處理序名稱的類別。</span><span class="sxs-lookup"><span data-stu-id="2382b-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="2382b-105">它會顯示如何將輸入的物件傳遞至指令碼以及如何擷取錯誤物件，以及輸出物件。</span><span class="sxs-lookup"><span data-stu-id="2382b-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
+<span data-ttu-id="0a3ed-103">以下是主控台應用程式的 VB.NET 原始程式碼，如「建立執行指定腳本的主控台應用程式」中所述。</span><span class="sxs-lookup"><span data-stu-id="0a3ed-103">Here is the VB.NET source code for the console application described in "Creating a Console Application That Runs a Specified Script".</span></span> <span data-ttu-id="0a3ed-104">這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行腳本，以抓取傳入腳本的進程名稱清單的處理常式資訊。</span><span class="sxs-lookup"><span data-stu-id="0a3ed-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script.</span></span> <span data-ttu-id="0a3ed-105">它會示範如何將輸入物件傳遞至腳本，以及如何抓取錯誤物件以及輸出物件。</span><span class="sxs-lookup"><span data-stu-id="0a3ed-105">It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="2382b-106">您可以下載此範例的 VB.NET 原始程式檔 (runspace03.vb) 使用的 Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件。</span><span class="sxs-lookup"><span data-stu-id="2382b-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="2382b-107">如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="2382b-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
->
-> <span data-ttu-id="2382b-108">已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。</span><span class="sxs-lookup"><span data-stu-id="2382b-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="0a3ed-106">您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此範例的 VB.NET 原始程式檔（runspace03）。</span><span class="sxs-lookup"><span data-stu-id="0a3ed-106">You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="0a3ed-107">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="0a3ed-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="0a3ed-108">下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。</span><span class="sxs-lookup"><span data-stu-id="0a3ed-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="2382b-109">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="2382b-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="0a3ed-109">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="0a3ed-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -106,8 +105,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="2382b-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="2382b-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0a3ed-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="0a3ed-110">See Also</span></span>
 
-[<span data-ttu-id="2382b-111">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="2382b-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="0a3ed-111">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="0a3ed-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="2382b-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2382b-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="0a3ed-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="0a3ed-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
