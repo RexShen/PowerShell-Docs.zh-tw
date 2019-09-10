@@ -8,28 +8,27 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6b8303d-e868-4dd0-bbbb-ed2e6d8f2f76
 caps.latest.revision: 6
-ms.openlocfilehash: 985fbc6f53ca204e700da821fcd08187edc3b60f
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: bfb8d036a787ecf2f3afc394fca83ff0bf027af9
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67735038"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848049"
 ---
 # <a name="runspace03-code-samples"></a>RunSpace03 程式碼範例
 
-如下的程式碼範例中所述的 runspace[建立主控台應用程式，執行指定指令碼](fd)。
+以下是「建立執行指定腳本的主控台應用程式」中所述之運行空間的程式碼範例。
 
 > [!NOTE]
-> 您可以下載C#來源檔案 (runspace03.cs) 與此範例使用的 Microsoft Windows 軟體開發套件的 Windows Vista 和 Microsoft.NET Framework 3.0 執行階段元件的 VB.NET 原始程式檔 (runspace03.vb)。 如需下載指示，請參閱[如何安裝 Windows PowerShell 並下載 Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
->
-> 已下載的原始程式檔位於 **\<PowerShell 範例 >** 目錄。
+> 您可以使用適用C#于 Windows Vista 和 microsoft .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此範例的原始程式檔（runspace03.cs）和 VB.NET 來源檔案（runspace03）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
 
-完整的範例程式碼，請參閱下列主題。
+如需完整的範例程式碼，請參閱下列主題。
 
-|語言|主題|
-|--------------|-----------|
-|C#|[RunSpace03 (C#) 程式碼範例](./runspace03-csharp-code-sample.md)|
-|VB.NET|[RunSpace03 (VB.NET) 程式碼範例](./runspace03-vb-net-code-sample.md)|
+| 語言 |                                 主題                                 |
+| -------- | --------------------------------------------------------------------- |
+| C#       | [RunSpace03 （C#）程式碼範例](./runspace03-csharp-code-sample.md)     |
+| VB.NET   | [RunSpace03 （VB.NET）程式碼範例](./runspace03-vb-net-code-sample.md) |
 
 ## <a name="see-also"></a>另請參閱
 

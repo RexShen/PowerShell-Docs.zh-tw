@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737591"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848109"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>如何新增動態參數至提供者說明主題
 
@@ -23,7 +23,7 @@ ms.locfileid: "70737591"
 
 提供者說明主題中記載的動態參數是在提供者磁片磁碟機中使用 Cmdlet 或函式時，提供者新增至 Cmdlet 或函式的動態參數。
 
-動態參數也可以在提供者的自訂 Cmdlet 說明中記載。 為提供者撰寫提供者說明和自訂 Cmdlet 說明時，請在這兩份檔中包含動態參數檔。 如需自訂 Cmdlet 說明的詳細資訊，請參閱[撰寫提供者的 Windows PowerShell 自訂 Cmdlet](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)說明。
+動態參數也可以在提供者的自訂 Cmdlet 說明中記載。 為提供者撰寫提供者說明和自訂 Cmdlet 說明時，請在這兩份檔中包含動態參數檔。
 
 如果提供者未執行任何動態參數，提供者說明主題會包含空`DynamicParameters`的元素。
 
@@ -59,7 +59,7 @@ ms.locfileid: "70737591"
 
 3. 在每`DynamicParameter`個專案中， `Name`加入`CmdletSupported` and 元素。
 
-   |元素名稱|說明|
+   |元素名稱|描述|
    |------------------|-----------------|
    |名稱|指定參數名稱。|
    |CmdletSupported|指定參數有效的 Cmdlet。 輸入以逗號分隔的 Cmdlet 名稱清單。|

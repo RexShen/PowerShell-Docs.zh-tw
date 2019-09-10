@@ -1,5 +1,5 @@
 ---
-title: 撰寫 PowerShell 指令碼和函式的說明 |Microsoft Docs
+title: 撰寫 PowerShell 腳本和函式的說明 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,70 +8,66 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
-ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083105"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848097"
 ---
-# <a name="writing-help-for-powershell-scripts-and-functions"></a>撰寫 PowerShell 指令碼和函式的說明
+# <a name="writing-help-for-powershell-scripts-and-functions"></a>撰寫 PowerShell 腳本和功能的說明
 
-PowerShell 指令碼和函式都應該詳細記錄時它們會與其他人共用。
-`Get-Help` Cmdlet 會顯示指令碼和函式的 [說明] 主題相同的格式與顯示的 cmdlet 和所有說明`Get-Help`參數作用於指令碼和函式的 [說明] 主題。
+當 PowerShell 腳本和函式與其他人共用時，應該完整記載。
+此`Get-Help` Cmdlet 會顯示腳本和函式說明主題，其格式與顯示 Cmdlet 的說明相同，而且所有`Get-Help`參數都適用于腳本和函式說明主題。
 
-PowerShell 指令碼可以包括有關指令碼的說明主題以及有關每個函式的說明主題，指令碼中。
-共用獨立指令碼的函式可以包含它們自己的 [說明] 主題。
+PowerShell 腳本可以包含有關腳本中每個函式之腳本和說明主題的說明主題。
+獨立于腳本共用的函式可以包含自己的說明主題。
 
-本文件說明的格式和的 [說明] 主題的正確位置，並建議讓內容的指導方針。
+本檔說明說明主題的格式和正確位置，並建議內容的指導方針。
 
-## <a name="types-of-script-and-function-help"></a>類型的指令碼和函式的說明
+## <a name="types-of-script-and-function-help"></a>腳本和函數說明的類型
 
-### <a name="comment-based-help"></a>註解型說明
-「 說明 」 主題所描述的指令碼或函式可以實作為一組內的指令碼或函式的註解。
-在指令碼中撰寫註解型說明的指令碼和函式，請特別注意規則放置註解型說明。
-位置會決定是否`Get-Help`cmdlet 說明主題將與相關聯的指令碼或函式。
-如需有關如何撰寫註解式說明主題的詳細資訊，請參閱[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)。
+### <a name="comment-based-help"></a>以批註為基礎的說明
+描述腳本或函式的說明主題，可以實作為腳本或函式中的一組批註。
+針對腳本撰寫以批註為基礎的說明，並針對腳本中的函式，請特別注意放置以批註為基礎之說明的規則。
+此位置會決定`Get-Help` Cmdlet 是否要將說明主題與腳本或函式產生關聯。
+如需撰寫以批註為基礎之說明主題的詳細資訊，請參閱[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)。
 
 ### <a name="xml-based-command-help"></a>以 XML 為基礎的命令說明
-描述指令碼或函式的 [說明] 主題可以實作中使用的命令說明結構描述的 XML 檔案。
-若要關聯的 XML 檔案中的指令碼或函式，使用`ExternalHelp`註解關鍵字後面的路徑和名稱的 XML 檔案。
+描述腳本或函數的說明主題，可以在使用命令說明架構的 XML 檔案中執行。
+若要將腳本或函數與 xml 檔案產生關聯，請`ExternalHelp`使用 comment 關鍵字，後面接著 xml 檔案的路徑和名稱。
 
-當`ExternalHelp`關鍵字，則其優先順序高於註解型說明註解，即使`Get-Help`找不到符合的值的說明檔`ExternalHelp`關鍵字。
+當 comment `ExternalHelp`關鍵字出現時，它的優先順序高於以批註為基礎的說明， `Get-Help`即使找不到`ExternalHelp`符合關鍵字值的說明檔也一樣。
 
 ### <a name="online-help"></a>線上說明
-您可以在網際網路上張貼您的說明主題，並再直接`Get-Help`開啟主題。
-如需有關如何撰寫註解式說明主題的詳細資訊，請參閱[支援線上說明](../module/supporting-online-help.md)。
+您可以在網際網路上張貼說明主題，然後直接`Get-Help`開啟主題。
+如需撰寫以批註為基礎之說明主題的詳細資訊，請參閱[支援線上說明](../module/supporting-online-help.md)。
 
-沒有概念性 （「 關於 」） 主題中的指令碼和函式的建立的方法進行寫入。
-不過，您可以張貼網際網路清單上的概念性主題的主題，以及其 Url 命令的說明主題的相關連結 區段中。
+沒有已建立的方法可撰寫腳本和函式的概念性（「關於」）主題。
+不過，您可以在網際網路清單上張貼概念性主題的主題，以及命令說明主題的 [相關連結] 區段中的 Url。
 
-## <a name="content-considerations-for-script-and-function-help"></a>說明內容的指令碼和函式的考量
+## <a name="content-considerations-for-script-and-function-help"></a>腳本和函數說明的內容考慮
 
-- 如果您正在撰寫非常簡短的 [說明] 主題，使用只有幾個可用的命令說明部分，請務必包含指令碼或函式參數的清楚描述。 也包含一或兩個範例命令範例 > 一節中，即使您決定省略範例的描述。
+- 如果您要撰寫一個非常簡短的說明主題，其中只有幾個可用的命令說明區段，請務必包含腳本或函數參數的清楚描述。 也請在 [範例] 區段中包含一或兩個範例命令，即使您決定省略範例描述也一樣。
 
-- 在所有的描述，請參閱命令的指令碼或函式。 這項資訊可協助使用者了解並管理命令。
+- 在所有描述中，請將命令稱為腳本或函式。 此資訊可協助使用者瞭解和管理命令。
 
-  比方說，下列的詳細的描述狀態的新主題的命令是指令碼。 這會提醒使用者他們需要執行它時指定的路徑和完整名稱。
+  例如，下列詳細描述說明新主題的命令是腳本。 這會提醒使用者他們在執行時必須指定路徑和完整名稱。
 
-  > 「 新增主題指令碼會建立在輸入檔...空白的觀念性主題，每個主題名稱 」
+  > 「新主題腳本會針對輸入檔中的每個主題名稱建立空白的概念主題 ...」
 
-  下列的詳細的描述指出`Disable-PSRemoting`是函式。 當工作階段包含多個具有相同的名稱，其中有些可能會被隱藏命令具有較高優先順序的命令，這項資訊是使用者特別有用。
+  下列詳細描述說明`Disable-PSRemoting`為函式。 當會話包含多個具有相同名稱的命令時，這項資訊特別有用，其中某些命令可能會被較高優先順序的命令隱藏。
 
-  > `Disable-PSRemoting`函式會停用本機電腦上的所有工作階段設定...
+  > 此`Disable-PSRemoting`函式會停用本機電腦上的所有會話設定 。
 
-- 在指令碼說明主題，說明如何使用指令碼整體。 如果您也在指令碼中撰寫函式的說明主題，提及您的指令碼說明主題中的函式，並包含在指令碼的 說明 主題的相關連結 區段中的函式的 說明 主題的參考。 相反地，在指令碼函式時，說明函式的 [說明] 主題中的函式中的指令碼，並可能會用它獨立所扮演的角色。 然後列出指令碼說明主題中的函式的 說明 主題的相關連結 區段。
+- 在腳本說明主題中，說明如何使用整個腳本。 如果您也在腳本中撰寫函式的說明主題，請在腳本說明主題中提及函數，並在腳本說明主題的 [相關連結] 區段中包含函數說明主題的參考。 相反地，當函式是腳本的一部分時，請在函式說明主題中說明函式在腳本中所扮演的角色，以及如何獨立使用該功能。 然後在函式說明主題的 [相關連結] 區段中列出腳本說明主題。
 
-- 在撰寫指令碼說明主題的範例，請務必範例命令中包含的指令碼檔案的路徑。 這會提醒使用者，他們必須指定路徑明確，即使指令碼是在目前的目錄。
+- 撰寫腳本說明主題的範例時，請務必在範例命令中包含腳本檔案的路徑。 這會提醒使用者必須明確指定路徑，即使腳本位於目前目錄中也一樣。
 
-- 在函式說明主題中，提醒函式只存在於目前工作階段的使用者，而若要使用它在其他工作階段，它們需要加入它，或將它加入 PowerShell 設定檔。
+- 在函式說明主題中，提醒使用者該函式只存在於目前的會話中，若要在其他會話中使用，他們必須加以新增，或將它新增至 PowerShell 設定檔。
 
-- `Get-Help` 顯示說明主題的指令碼或函式的指令碼檔案和說明主題檔會儲存在正確的位置時，才。 因此，最好不包含安裝 PowerShell，或儲存安裝指令碼或函式的說明主題中的指令碼或函式的相關指示。 相反地，您使用發佈的指令碼或函式的文件中包含的任何安裝指示。
+- `Get-Help`只有在腳本檔案和說明主題檔案儲存在正確的位置時，才會顯示腳本或函數的說明主題。 因此，包含安裝 PowerShell 的指示，或儲存或安裝腳本或函式說明主題中的腳本或函式，並不會很有用。 相反地，請在您用來散發腳本或函式的檔中包含任何安裝指示。
 
 ## <a name="see-also"></a>另請參閱
 
- [指令碼和函式撰寫 XML 為基礎的說明主題](./writing-xml-based-help-topics-for-scripts-and-functions.md)
-
- [撰寫 XML 為基礎的說明主題的命令](./writing-xml-based-help-topics-for-commands.md)
-
- [撰寫註解式說明主題](./writing-comment-based-help-topics.md)
+[撰寫以批註為基礎的說明主題](./writing-comment-based-help-topics.md)
