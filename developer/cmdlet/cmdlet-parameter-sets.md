@@ -8,52 +8,56 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: a5822ef1ed3c9efb5957c20255783d515de8957a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d8c00c7ffd369a32af151836785a2c5f47b05a68
+ms.sourcegitcommit: 889b93d170aeb3d444288e7ccf67e62ce822cb7c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068501"
+ms.lasthandoff: 09/12/2019
+ms.locfileid: "70936194"
 ---
 # <a name="cmdlet-parameter-sets"></a>Cmdlet 參數集
 
-Windows PowerShell 會使用參數集，讓您撰寫單一的 cmdlet，可以針對不同的案例中執行不同的動作。 參數集可讓您公開給使用者的不同參數，並傳回不同的資訊，根據使用者所指定的參數。
+PowerShell 會使用參數集，讓您撰寫可針對不同案例執行不同動作的單一 Cmdlet。 參數集可讓您向使用者公開不同的參數。 和，根據使用者指定的參數傳回不同的資訊。
 
-## <a name="examples-of-parameter-sets"></a>參數集範例
+## <a name="examples-of-parameter-sets"></a>參數集的範例
 
-例如， `Get-EventLog` （Windows PowerShell 所提供） 的 cmdlet 會傳回不同的資訊，根據使用者指定了是否`List`或`LogName`參數。 如果`List`參數指定，則此 cmdlet 會傳回資訊的記錄檔本身，但不是包含事件的資訊。 如果`LogName`參數指定，則指令程式可傳回特定的事件記錄檔事件的相關資訊。 `List`和`LogName`參數會識別兩個不同的參數集。
+例如，PowerShell `Get-EventLog` Cmdlet 會根據使用者是否指定**List**或**LogName**參數，傳回不同的資訊。 如果指定了**List**參數，Cmdlet 會傳回記錄檔本身的相關資訊，但不會傳回其包含的事件資訊。 如果指定**LogName**參數，此 Cmdlet 會傳回特定事件記錄檔中事件的相關資訊。 **List**和**LogName**參數會識別兩個不同的參數集。
 
-## <a name="unique-parameter"></a>唯一的參數
+## <a name="unique-parameter"></a>唯一參數
 
-每個參數集必須具有唯一的參數，Windows PowerShell 執行階段可供公開適當的參數組。 可能的話，唯一的參數應該是必要的參數。 時為必要參數，來指定參數，會強制使用者和 Windows PowerShell 執行階段可以使用該參數，來識別設定為使用的參數。 唯一的參數不得為必要項目，如果您的指令程式可執行，而不指定任何參數。
+每個參數集都必須有一個唯一的參數，讓 PowerShell 執行時間用來公開適當的參數集。 可能的話，unique 參數應該是必要參數。 當參數為強制性時，使用者必須指定參數，而且 PowerShell 執行時間會使用該參數來識別參數集。 如果您的 Cmdlet 設計成在不指定任何參數的情況下執行，則唯一的參數不能是強制的。
 
 ## <a name="multiple-parameter-sets"></a>多個參數集
 
-下圖中，在左方的欄會顯示三個有效的參數集。 參數的而言是唯一的第一個參數集、 參數 B 是唯一的第二個參數集，而且參數 C 是專用的第三個參數集。 不過，在右欄中，參數集不需要唯一的參數。
+在下圖中，左邊的資料行顯示三個有效的參數集。 **參數 A**對第一個參數集而言是唯一的，**參數 B**對第二個參數集而言是唯一的，而**參數 C**則是第三個參數集獨有的。 在右邊的資料行中，參數集沒有唯一的參數。
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
 ## <a name="parameter-set-requirements"></a>參數集需求
 
-下列需求適用於所有參數集。
+下列需求適用于所有參數集。
 
-- 每個參數集必須至少一個唯一的參數。 如果可能，請此參數為必要參數。
+- 每個參數集必須至少有一個唯一的參數。 可能的話，請將此參數設為必要參數。
 
-- 參數集，其中包含多個位置的參數必須定義每個參數的唯一位置。 沒有兩個位置參數可以指定相同的位置。
+- 包含多個位置參數的參數集必須為每個參數定義唯一的位置。 沒有兩個位置參數可以指定相同的位置。
 
-- 集合中的只有一個參數可以宣告`ValueFromPipeline`關鍵字的值與`true`。 可以定義多個參數`ValueFromPipelineByPropertyName`關鍵字的值與`true`。
+- 在集合中，只有一個參數可以`ValueFromPipeline`宣告`true`值為的關鍵字。
+  多個參數可以定義`ValueFromPipelineByPropertyName`具有值的`true`關鍵字。
 
-- 如果未設定任何參數不指定為參數，參數是屬於所有參數集。
+- 如果沒有為參數指定參數集，參數就會屬於所有參數集。
+
+> [!NOTE]
+> Cmdlet 或函式的限制為32個參數集。
 
 ## <a name="default-parameter-sets"></a>預設參數集
 
-定義了多個參數集，您可以使用`DefaultParameterSetName`Cmdlet 屬性，以指定預設參數集的關鍵字。 Windows PowerShell 會使用的預設參數集，如果它無法判斷將參數設定為使用根據命令所提供的資訊。 如需有關 Cmdlet 屬性的詳細資訊，請參閱[Cmdlet 屬性宣告](./cmdlet-attribute-declaration.md)。
+定義多個參數集時，您可以使用`DefaultParameterSetName` **Cmdlet**屬性的關鍵字來指定預設參數集。 如果 PowerShell 無法根據命令所提供的資訊來判斷要使用的參數，則會使用預設參數集。 如需**Cmdlet**屬性的詳細資訊，請參閱[Cmdlet 屬性](./cmdlet-attribute-declaration.md)宣告。
 
 ## <a name="declaring-parameter-sets"></a>宣告參數集
 
-若要建立參數集，您必須指定`ParameterSetName`關鍵字宣告的參數集的每個參數的參數屬性。 對於屬於多個參數集的參數，新增每個參數集的參數屬性。 這可讓您定義每個參數集不同的參數。 比方說，您可以將參數定義為在一組必要和選用在另一個。 不過，每個參數集必須包含一個唯一的參數。
+若要建立參數集，您必須在宣告`ParameterSetName`參數集內每個參數的**參數**屬性時，指定關鍵字。 針對屬於多個參數集的參數，請為每個參數集新增**參數**屬性。 這個屬性可讓您針對每個參數集定義不同的參數。 例如，您可以將參數定義為一個集合中的必要項，並在另一個集合中將其設為選擇性。 不過，每個參數集都必須包含一個唯一的參數。 如需詳細資訊，請參閱[參數屬性](parameter-attribute-declaration.md)宣告。
 
-在下列範例中，`UserName`參數是 Test01 參數集的唯一的參數和`ComputerName`參數是 Test02 參數集的唯一參數。 `SharedParam`參數屬於這兩個集合，且為 Test01 參數，但 Test02 參數集的選擇性設定的必要項目。
+在下列範例中， **UserName**參數是`Test01`參數集的唯一參數，而**ComputerName**參數`Test02`是參數集的唯一參數。 **SharedParam**參數同時屬於這兩個集合，而且對`Test01`參數集而言是必要的， `Test02`但參數集則是選擇性的。
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true,
@@ -81,12 +85,5 @@ public string SharedParam
     get { return sharedParam; }
     set { sharedParam = value; }
 }
-private string sharedParam;    [Parameter(Position = 0, Mandatory = true,
-           ParameterSetName = "Test01")]
-public string UserName
-{
-  get { return userName; }
-  set { userName = value; }
-}
-private string userName;
+private string sharedParam;
 ```
