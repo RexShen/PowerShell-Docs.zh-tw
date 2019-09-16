@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 變更電腦狀態
-ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030291"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386291"
 ---
 # <a name="changing-computer-state"></a>變更電腦狀態
 
-若要在 Windows PowerShell 中重設電腦，請使用標準命令列工具或 WMI 類別。 雖然您使用 Windows PowerShell 只是為了執行工具，但是了解如何在 Windows PowerShell 中變更電腦的電源狀態，描述了有關在 Windows PowerShell 中使用外部工具的一些重要詳細資訊。
+若要在 Windows PowerShell 中重設電腦，請使用標準命令列工具 (WMI 或 CIM 類別)。 雖然您使用 Windows PowerShell 只是為了執行工具，但是了解如何在 Windows PowerShell 中變更電腦的電源狀態，描述了有關在 Windows PowerShell 中使用外部工具的一些重要詳細資訊。
 
 ## <a name="locking-a-computer"></a>鎖定電腦
 
@@ -37,13 +37,19 @@ rundll32.exe user32.dll,LockWorkStation
 shutdown.exe -l
 ```
 
-第三個選項是使用 WMI。 Win32_OperatingSystem 類別具有 Win32Shutdown 方法。 叫用方法加上 0 旗標會起始登出︰
+另一個選項是使用 WMI。 Win32_OperatingSystem 類別具有 Win32Shutdown 方法。 叫用方法加上 0 旗標會起始登出︰
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
 如需詳細資訊，以及尋找 Win32Shutdown 方法的其他函式，請參閱 MSDN 中的＜Win32Shutdown Method of the Win32_OperatingSystem Class＞(Win32_OperatingSystem 類別的 Win32Shutdown 方法)。
+
+最後，您可以使用 CIM 搭配與上述 WMI 方法中相同的 Win32_OperatingSystem 類別。
+
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>關閉或重新啟動電腦
 

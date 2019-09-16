@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 contributor: keithb
 title: 安裝與設定 WMF 5.1
-ms.openlocfilehash: cb223844c2a214846e7206bcb476fac9154fda4b
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855403"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848125"
 ---
 # <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1
 
@@ -26,8 +26,8 @@ ms.locfileid: "65855403"
 | Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
 | Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8.1            |                         | **x64:**[Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:**[Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:**[Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:**[Win7-KB3191566-x86.ZIP][] |
+| Windows 8.1            |                         | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:** [Win8.1-KB3191564-x86.msu][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513
@@ -45,29 +45,29 @@ ms.locfileid: "65855403"
 > [!NOTE]
 > Windows Server 2008 R2 和 Windows 7 的安裝指示已變更，且與其他套件的指示不同。 適用於 Windows Server 2012 R2、Windows Server 2012 和 Windows 8.1 的安裝指示如下。
 
-### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>在 Windows Server 2008 R2 和 Windows 7 上安裝 WMF 5.1
-
-1. 瀏覽至您用來下載 ZIP 檔案的資料夾。
-
-2. 以滑鼠右鍵按一下 ZIP 檔案，並選取 [解壓縮全部...]。 ZIP 包含 2 個檔案︰MSU 和 Install-WMF5.1.PS1 指令碼檔案。 一旦您解壓縮 ZIP 檔案，您可以將內容複製到執行 Windows 7 或 Windows Server 2008 R2 的任何電腦。
-
-3. 將 ZIP 檔案內容解壓縮之後，以系統管理員身分開啟 PowerShell，然後瀏覽至包含 ZIP 檔案的資料夾。
-
-4. 在該資料夾中執行 Install-Wmf5.1.ps1 指令碼，並遵循指示。 此指令碼會檢查本機電腦上的必要條件，並安裝 WMF 5.1 (如果符合必要條件)。 以下列出必要條件。
-
-   Install-WMF5.1.ps1 會採用下列參數以簡化針對 Windows Server 2008 R2 和 Windows 7 上安裝的自動化：
-
-   - AcceptEula：當包含此參數時，會自動接受 EULA 且不會顯示。
-   - AllowRestart：此參數只能在指定 AcceptEula 時使用。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
-
 ### <a name="wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 必要條件
 
 在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安裝 WMF 5.1 需要下列各項：
 
 - 必須安裝最新的 Service Pack。
-- 「不可以」安裝 WMF 3.0。 在具有 WMF 3.0 的情況下安裝 WMF 5.1 會導致 PSModulePath 遺失，這可能造成其他應用程式失敗。 在安裝 WMF 5.1 之前，您必須將 WMF 3.0 解除安裝，或是儲存 PSModulePath，並在完成 WMF 5.1 安裝之後，將它手動還原。
+- 「不可以」  安裝 WMF 3.0。 在具有 WMF 3.0 的情況下安裝 WMF 5.1 會導致 **PSModulePath** (`$env:PSModulePath`) 遺失，這可能造成其他應用程式失敗。 在安裝 WMF 5.1 之前，您必須解除安裝 WMF 3.0，或是儲存 **PSModulePath**，並在完成 WMF 5.1 安裝之後手動將其還原。
 - WMF 5.1 需要至少[.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642)。
   您可以遵循下載位置的指示來安裝 Microsoft.NET Framework 4.5.2。
+
+### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>在 Windows Server 2008 R2 和 Windows 7 上安裝 WMF 5.1
+
+1. 瀏覽至您用來下載 ZIP 檔案的資料夾。
+
+2. 以滑鼠右鍵按一下 ZIP 檔案，並選取 [解壓縮全部...]  。ZIP 檔案包含兩個檔案：MSU 和 `Install-WMF5.1.ps1` 指令碼檔案。 一旦您解壓縮 ZIP 檔案，您可以將內容複製到執行 Windows 7 或 Windows Server 2008 R2 的任何電腦。
+
+3. 將 ZIP 檔案內容解壓縮之後，以系統管理員身分開啟 PowerShell，然後瀏覽至包含 ZIP 檔案的資料夾。
+
+4. 在該資料夾中執行 `Install-WMF5.1.ps1` 指令碼，並遵循指示。 此指令碼會檢查本機電腦上的必要條件，並安裝 WMF 5.1 (如果符合必要條件)。 以下列出必要條件。
+
+   `Install-WMF5.1.ps1` 會採用下列參數以簡化針對 Windows Server 2008 R2 和 Windows 7 上安裝的自動化：
+
+   - **AcceptEula**：當包含此參數時，會自動接受 EULA 且不會顯示。
+   - **AllowRestart**：此參數只能在指定 AcceptEula 時使用。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
 
 ## <a name="winrm-dependency"></a>WinRM 相依性
 

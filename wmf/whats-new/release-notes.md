@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.x 版本資訊
-ms.openlocfilehash: 8bdc423234cf0b104b72b1bee1de35e50783d8a4
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855763"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848152"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 版本資訊
 
@@ -41,6 +41,9 @@ WMF 5.1 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM�
 - DSC 和 PowerShell 類別的偵錯改善
 - 安全性增強功能包括強制執行來自提取伺服器的目錄簽署模組，以及在使用 PowerShellGet Cmdlet 時加以強制執行
 - 回應數個使用者要求和問題
+
+> [!IMPORTANT]
+> 在 Windows Server 2008 或 Windows 7 上安裝 WMF 5.1 之前，請先確認未安裝 WMF 3.0。 如需詳細資訊，請參閱 [Windows Server 2008 R2 SP1 和 Windows 7 SP1 的 WMF 5.1 必要條件](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1)。
 
 ## <a name="powershell-editions"></a>PowerShell 版本
 
@@ -90,9 +93,10 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 在 WMF 5.1 中：
 
 - 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)。
+
   此雜湊表與 `Get-Module -FullyQualifiedName` 的格式相同。
 
-  **範例：**`using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+  **範例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 - 如果模組有多個版本，PowerShell 會使用與 `Import-Module` **相同的解析邏輯**，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
 
