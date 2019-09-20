@@ -1,5 +1,5 @@
 ---
-title: 建立遠端 runspace |Microsoft Docs
+title: 建立遠端空間 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,30 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: f6cc69df8afe64cea867f5d7f9a7d45753a54d6f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082969"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143542"
 ---
 # <a name="creating-remote-runspaces"></a>建立遠端 Runspace
 
-Windows PowerShell 命令會採用`ComputerName`參數可以在任何執行 Windows PowerShell 的電腦上執行。 若要執行命令不接受`ComputerName`參數，您可以使用 Ws-management 設定 runspace 連接到指定的電腦，並在該電腦上執行命令。
+採用**ComputerName**參數的 PowerShell 命令可以在任何執行 powershell 的電腦上執行。 若要執行不採用**ComputerName**參數的命令，您可以使用 ws-management 來設定連線到指定電腦的執行時間，並在該電腦上執行命令。
 
-## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>若要建立遠端 runspace 中使用 WSManConnection
+## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>使用 WSManConnection 建立遠端運行空間
 
- 若要建立會連線到遠端電腦的 runspace，建立[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。 您可以設定指定連接的目標端點[System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)物件的屬性。 您藉由呼叫，然後建立 runspace [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法，指定[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件做為`connectionInfo`參數。
+ 若要建立連接到遠端電腦的運行時，請建立[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。 您可以藉由設定物件的[WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)屬性來指定連接的目標端點。 接著，您可以藉由呼叫[RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法來建立運行空間，並將[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) `connectionInfo`物件指定為，做為實參.
 
- 下列範例示範如何建立會連線到遠端電腦的 runspace。 在範例中，`RemoteComputerUri`遠端電腦的實際 uri 做為預留位置。
+ 下列範例示範如何建立連接到遠端電腦的執行時間。 在此範例中`RemoteComputerUri` ，會用來做為遠端電腦實際 URI 的預留位置。
 
 ```csharp
 namespace Samples
 {
   using System;
   using System.Collections.ObjectModel;
-  using System.Management.Automation;            // Windows PowerShell namespace.
-  using System.Management.Automation.Runspaces;  // Windows PowerShell namespace.
+  using System.Management.Automation;            // PowerShell namespace.
+  using System.Management.Automation.Runspaces;  // PowerShell namespace.
 
   /// <summary>
   /// This class contains the Main entry point for this host application.
@@ -48,10 +48,11 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
+      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
-      // The OperationTimeout property is used to tell Windows PowerShell
+      // The OperationTimeout property is used to tell PowerShell
       // how long to wait (in milliseconds) before timing out for an
       // operation. The OpenTimeout property is used to tell Windows
       // PowerShell how long to wait (in milliseconds) before timing out
