@@ -1,12 +1,12 @@
 ---
-ms.date: 03/18/2019
+ms.date: 09/13/2019
 title: 使用 FilterHashtable 建立 Get-WinEvent 查詢
-ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471027"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143664"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 建立 Get-WinEvent 查詢
 
@@ -16,9 +16,11 @@ ms.locfileid: "66471027"
 
 當您使用大型事件記錄檔時，將管線中的物件傳送到 `Where-Object` 命令不是有效率的方式。 在 PowerShell 6 之前，`Get-EventLog` Cmdlet 是取得記錄資料的另一個選項。 例如，下列命令篩選 **Microsoft-Windows-Defrag** 記錄檔的效率不佳：
 
-`Get-EventLog -LogName Application | Where-Object Source -Match defrag`
+```powershell
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-`Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }`
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+```
 
 下列命令會使用雜湊表，可改善效能：
 
@@ -48,19 +50,35 @@ Get-WinEvent -FilterHashtable @{
 
 下表顯示索引鍵名稱、資料類型，以及資料值是否接受萬用字元。
 
-| 機碼名稱     | 數值資料類型    | 接受萬用字元？ |
-|------------- | ------------------ | ---------------------------- |
-| LogName      | `<String[]>`       | 是 |
-| ProviderName | `<String[]>`       | 是 |
-| 路徑         | `<String[]>`       | 否  |
-| 關鍵字     | `<Long[]>`         | 否  |
-| ID           | `<Int32[]>`        | 否  |
-| 層級        | `<Int32[]>`        | 否  |
-| StartTime    | `<DateTime>`       | 否  |
-| EndTime      | `<DateTime>`       | 否  |
-| UserID       | `<SID>`            | 否  |
-| 資料         | `<String[]>`       | 否  |
-| *            | `<String[]>`       | 否  |
+|    機碼名稱    | 數值資料類型 | 接受萬用字元？ |
+| -------------- | --------------- | ---------------------------- |
+| LogName        | `<String[]>`    | 是                          |
+| ProviderName   | `<String[]>`    | 是                          |
+| 路徑           | `<String[]>`    | 否                           |
+| 關鍵字       | `<Long[]>`      | 否                           |
+| ID             | `<Int32[]>`     | 否                           |
+| 層級          | `<Int32[]>`     | 否                           |
+| StartTime      | `<DateTime>`    | 否                           |
+| EndTime        | `<DateTime>`    | 否                           |
+| UserID         | `<SID>`         | 否                           |
+| 資料           | `<String[]>`    | 否                           |
+| \<named-data\> | `<String[]>`    | 否                           |
+
+\<named-data\> 機碼代表具名的事件資料欄位。 例如，Perflib 事件 1008 可以包含下列事件資料：
+
+```xml
+<EventData>
+  <Data Name="Service">BITS</Data>
+  <Data Name="Library">C:\Windows\System32\bitsperf.dll</Data>
+  <Data Name="Win32Error">2</Data>
+</EventData>
+```
+
+您可以使用下列命令查詢這些事件：
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
+```
 
 ## <a name="building-a-query-with-a-hash-table"></a>使用雜湊表建立查詢
 
