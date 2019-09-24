@@ -115,14 +115,14 @@ Windows PowerShell 提供一組通用的參數給所有 Cmdlet，再加上在特
 
 ### <a name="support-confirmation-requests-rd04"></a>支援確認要求（RD04）
 
-對於執行修改系統之作業的 Cmdlet，它們應該呼叫[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法來要求確認，而在特殊情況下呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的方法.。 （只有在呼叫[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之後，才應呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法）。）。（& i）
+對於執行修改系統之作業的 Cmdlet，它們應該呼叫[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法來要求確認，而在特殊情況下呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的方法。 （只有在呼叫[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法之後，才應呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法）。）。（& i）
 
 若要進行這些呼叫，Cmdlet 必須藉由設定`SupportsShouldProcess` Cmdlet 屬性的關鍵字來指定它支援確認要求。 如需設定此屬性的詳細資訊，請參閱[Cmdlet 屬性](./cmdlet-attribute-declaration.md)宣告。
 
 > [!NOTE]
 > 如果 Cmdlet 類別的 Cmdlet 屬性指出此 Cmdlet 支援[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法的呼叫，且此 Cmdlet 無法對進行呼叫[，就無法對ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，使用者可以不預期地修改系統。
 
-針對任何系統修改，請使用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 使用者喜好設定和`WhatIf`參數會控制[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法.。 相反地， [ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼叫會執行額外的檢查，以進行潛在的危險修改。 這個方法不是由任何使用者喜好設定或參數`WhatIf`所控制。 如果您的 Cmdlet 呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它應該會有一個`Force`參數，可略過這兩個方法的呼叫，並繼續進行作業。 這很重要，因為它可讓您的 Cmdlet 用於非互動式腳本和主機。
+針對任何系統修改，請使用[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 使用者喜好設定和`WhatIf`參數會控制[ShouldProcess *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 相反地， [ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼叫會執行額外的檢查，以進行潛在的危險修改。 這個方法不是由任何使用者喜好設定或參數`WhatIf`所控制。 如果您的 Cmdlet 呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，它應該會有一個`Force`參數，可略過這兩個方法的呼叫，並繼續進行作業。 這很重要，因為它可讓您的 Cmdlet 用於非互動式腳本和主機。
 
 如果您的 Cmdlet 支援這些呼叫，使用者可以決定是否要實際執行動作。 例如，[停止進程](/powershell/module/microsoft.powershell.management/stop-process)Cmdlet 會先呼叫[ShouldContinue *](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法，再停止一組重要的進程，包括系統、Winlogon 和 spoolsv.exe 進程。
 
@@ -140,7 +140,7 @@ Windows PowerShell 提供一組通用的參數給所有 Cmdlet，再加上在特
 
 - [System.web. Pshostuserinterface. PromptForCredential *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.PromptForCredential)
 
-- [Pshostuserinterface. ReadLine * 的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
+- [Pshostuserinterface. ReadLine 的 *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLine)
 
 - [System.web. Pshostuserinterface. ReadLineAsSecureString *](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface.ReadLineAsSecureString)
 
@@ -198,7 +198,7 @@ OutputType 屬性（在 Windows PowerShell 2.0 中引進）會指定您的 Cmdle
 
 - 針對不會在來自管線的下一筆記錄（例如，由不同進程所產生的記錄）上停止作業的非終止錯誤，此 Cmdlet 必須呼叫[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，會參考[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件。 非終止錯誤的範例就是當特定進程無法停止時，所發生的錯誤。 呼叫[WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法可讓使用者一致地執行所要求的動作，並保留特定動作失敗的資訊。 您的 Cmdlet 應該盡可能獨立處理每一筆記錄。
 
-- [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和 WriteError * 方法所參考的[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件，需要有一或一項，才能使用. [*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法。其核心的例外狀況。 當您判斷要使用的例外狀況時，請遵循 .NET Framework 的設計方針。 如果錯誤在語義上與現有的例外狀況相同，請使用該例外狀況或衍生自該例外狀況。 否則，請直接從[system.exception 類型衍生](/dotnet/api/System.Exception)新的例外狀況或例外狀況階層。
+- [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)和 [WriteError *](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) 方法所參考的[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件，需要有一或一項，才能使用. 方法。其核心的例外狀況。 當您判斷要使用的例外狀況時，請遵循 .NET Framework 的設計方針。 如果錯誤在語義上與現有的例外狀況相同，請使用該例外狀況或衍生自該例外狀況。 否則，請直接從[system.exception 類型衍生](/dotnet/api/System.Exception)新的例外狀況或例外狀況階層。
 
 [ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件也需要將使用者的錯誤分組的錯誤分類。 使用者可以將`$ErrorView` shell 變數的值設定為 CategoryView，以根據類別來查看錯誤。 可能的類別是由[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉所定義。
 
