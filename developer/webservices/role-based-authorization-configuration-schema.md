@@ -1,5 +1,5 @@
 ---
-title: 以角色為基礎的授權組態結構描述 |Microsoft Docs
+title: 以角色為基礎的授權設定架構 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4ba6d1d2-7055-4fef-b752-a5ae8b4eeb65
 caps.latest.revision: 7
-ms.openlocfilehash: 50a02e9a7522fc04b407329f513670215ad051cf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a4d4b0cd2c9672ea9b11698258916ae1d0520c0
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080538"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323045"
 ---
-# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="33749-102">角色型授權設定結構描述</span><span class="sxs-lookup"><span data-stu-id="33749-102">Role-Based Authorization Configuration Schema</span></span>
+# <a name="role-based-authorization-configuration-schema"></a><span data-ttu-id="b2042-102">角色型授權設定結構描述</span><span class="sxs-lookup"><span data-stu-id="b2042-102">Role-Based Authorization Configuration Schema</span></span>
 
-<span data-ttu-id="33749-103">[PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041)範例會使用 XML 檔來設定授權原則。</span><span class="sxs-lookup"><span data-stu-id="33749-103">The [PswsRoleBasedPlugins](http://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="33749-104">下列 XSD 會定義用於這些檔案的結構描述。</span><span class="sxs-lookup"><span data-stu-id="33749-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="b2042-103">[PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041)範例會使用 XML 檔案來設定授權原則。</span><span class="sxs-lookup"><span data-stu-id="b2042-103">The [PswsRoleBasedPlugins](https://go.microsoft.com/fwlink/?LinkId=243041) sample uses XML files to configure the authorization policy.</span></span> <span data-ttu-id="b2042-104">下列 XSD 會定義用於這些檔案的架構。</span><span class="sxs-lookup"><span data-stu-id="b2042-104">The following XSD defines the schema used for these files.</span></span>
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
