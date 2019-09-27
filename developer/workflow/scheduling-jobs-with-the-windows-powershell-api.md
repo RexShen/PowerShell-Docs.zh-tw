@@ -1,5 +1,5 @@
 ---
-title: 使用 Windows PowerShell API 作業的排程 |Microsoft Docs
+title: 使用 Windows PowerShell API 排程工作 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/12/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080351"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322948"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a>使用 PowerShell API 的排程工作
+# <a name="scheduling-jobs-with-the-powershell-api"></a>使用 PowerShell API 來排程工作
 
-您可以使用所公開的物件**Microsoft.PowerShell.ScheduledJob**命名空間，以執行下列動作：
+您可以使用**ScheduledJob**命名空間所公開的物件來執行下列動作：
 
-- 建立排程的工作。
-- 定義作業執行時。
-- 取得有關已完成工作的結果。
+- 建立排程工作。
+- 定義作業執行的時間。
+- 取得已完成之工作的相關結果。
 
 ## <a name="triggering-the-job"></a>觸發作業
 
-建立排程的工作的第一個步驟指定應該執行的工作。 建立並設定執行這項操作**Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger**物件。 下列程式碼會建立排程工作來執行一次在未來的 20 秒的觸發程序。
+建立排程工作的第一個步驟是指定作業應該執行的時間。 若要這麼做，請建立並設定**ScheduledJob. ScheduledJobTrigger**物件。 下列程式碼會建立一個觸發程式，將作業排程為在未來20秒執行一次。
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -40,18 +40,18 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>定義作業
 
-您可以建立參數字典，以定義以 PowerShell 工作。 支援下列參數：
+您可以藉由建立參數字典來定義 PowerShell 作業。 支援下列參數：
 
 |參數名稱|描述|
 |--------------------|-----------------|
-|**名稱**|作業名稱。|
-|**ScriptBock**|指定作業的 PowerShell 指令碼區塊。|
-|**FilePath**|包含 PowerShell 指令碼區塊來指定作業的檔案路徑。|
-|**InitializationScript**|PowerShell 指令碼區塊，以初始化工作。|
-|**ArgumentList**|指定此作業需要的引數的物件的陣列。|
-|**RunAs32**|布林值，指定是否要以 32 位元處理序執行作業。|
+|**名稱**|作業的名稱。|
+|**ScriptBock**|指定作業作用的 PowerShell 腳本區塊。|
+|**FilePath**|檔案的路徑，其中包含 PowerShell 腳本區塊來指定作業的功能。|
+|**InitializationScript**|初始化工作的 PowerShell 腳本區塊。|
+|**ArgumentList**|物件的陣列，指定作業所需的引數。|
+|**RunAs32**|布林值，指定是否要在32位進程中執行作業。|
 
-下列程式碼會建立一個參數字典物件，並設定**名稱**並**ScriptBlock**參數。
+下列程式碼會建立參數字典物件，並設定**Name**和**ScriptBlock**參數。
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a>建立定義物件的引動過程和工作
+## <a name="creating-the-invocation-and-job-definition-objects"></a>建立調用和作業定義物件
 
-接著，您建立`ScheduledJobInvocationInfo`和`ScheduledJobDefinition`物件以執行作業，如下列範例所示：
+接著，您`ScheduledJobInvocationInfo`可以`ScheduledJobDefinition`建立和物件來執行作業，如下列範例所示：
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>向工作排程器作業
+## <a name="registering-the-job-with-the-task-scheduler"></a>使用工作排程器註冊作業
 
-下列程式碼註冊的工作[Windows 工作排程器](http://go.microsoft.com/fwlink/?LinkId=251817)。
+下列程式碼會向[Windows 工作排程器](https://go.microsoft.com/fwlink/?LinkId=251817)註冊作業。
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a>完整的程式碼範例
+## <a name="complete-code-example"></a>完整程式碼範例
 
-以下是先前的程式碼片段所採取的完整程式碼範例。
+以下是取自先前程式碼片段的完整程式碼範例。
 
 ```csharp
 using System;

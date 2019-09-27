@@ -1,5 +1,5 @@
 ---
-title: 新增和叫用命令 |Microsoft Docs
+title: 加入和叫用命令 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
-ms.openlocfilehash: 9a01f948c5b474b4f9068030907601543e13cc7e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083020"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323491"
 ---
 # <a name="adding-and-invoking-commands"></a>新增及叫用命令
 
-建立 runspace 之後, 您可以將 Windows PowerShellcommands 和指令碼新增至管線中，並接著在同步或非同步方式叫用管線。
+建立執行時間之後，您可以將 Windows PowerShellcommands 和腳本新增至管線，然後以同步或非同步方式叫用管線。
 
 ## <a name="creating-a-pipeline"></a>建立管線
 
- [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)類別提供數種方法來將命令、 參數和指令碼新增至管線。 您可以叫用管線以同步方式呼叫的多載[System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法，或以非同步方式呼叫的多載[System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) ，然後[System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。
+ [System.web](/dotnet/api/system.management.automation.powershell)類別提供數種方法，可將命令、參數和腳本新增至管線。 您可以藉由呼叫[Begininvoke](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)的多載，以同步方式叫用管線[，方法是](/dotnet/api/System.Management.Automation.PowerShell.Invoke)呼叫多載的，或以非同步方式叫用。然後， [Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法，再進行一層。
 
 ### <a name="addcommand"></a>AddCommand
 
-1. 建立[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)物件。
+1. 建立一個[system.web](/dotnet/api/system.management.automation.powershell)物件。
 
    ```csharp
    PowerShell ps = PowerShell.Create();
@@ -43,11 +43,11 @@ ms.locfileid: "62083020"
    ps.Invoke();
    ```
 
- 如果您呼叫[System.Management.Automation.Powershell.Addcommand*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand)方法超過一次，然後再呼叫[System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法、 結果第一個命令會輸送到第二個，依此類推。 如果您不想透過管道傳送命令前一個命令的結果，會將它加入藉由呼叫[System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)改。
+ 如果您在呼叫 system.servicemodel [*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法之前多次呼叫[Addcommand *](/dotnet/api/System.Management.Automation.PowerShell.AddCommand)方法，第一個命令的結果會以管道傳送至第二個，依此類推，而是以管線傳送的。 如果您不想要使用管線將上一個命令的結果傳送至命令，請改為呼叫[Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)來新增它。
 
 ### <a name="addparameter"></a>AddParameter
 
- 前一個範例會執行不含任何參數的單一命令。 可以透過將參數新增至命令[System.Management.Automation.Pscommand.Addparameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法，例如下列程式碼會取得一份所有程序會在名為`PowerShell`上執行機器。
+ 上一個範例會執行不含任何參數的單一命令。 例如，您可以使用[Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法將參數新增至命令，下列程式碼會取得在電腦上執行之所有進程的`PowerShell`清單。
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -55,7 +55,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- 您可以新增額外的參數，藉由呼叫[System.Management.Automation.Pscommand.Addparameter*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)重複。
+ 您可以藉由重複呼叫[Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)來新增其他參數。
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -64,7 +64,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- 您也可以藉由呼叫來新增參數名稱和值的字典[System.Management.Automation.Powershell.Addparameters*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters)方法。
+ 您也可以藉由呼叫[Addparameters *](/dotnet/api/System.Management.Automation.PowerShell.AddParameters)方法，加入參數名稱和值的字典。
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- 您可以使用批次處理來模擬[System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法，將其他的陳述式加入至管線，下列程式碼會取得執行程序名稱的清單結尾`PowerShell`，然後取得執行中服務的清單。
+ 您可以使用[Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法來模擬批次處理，這會將額外的語句新增至管線的結尾，下列程式碼會取得名稱`PowerShell`為的執行中進程清單，以及然後取得執行中服務的清單。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,23 +90,23 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- 您可以執行現有的指令碼，藉由呼叫[System.Management.Automation.Powershell.Addscript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法。 下列範例會將指令碼新增至管線，並執行它。 這個範例假設已經有名稱為指令碼`MyScript.ps1`在名為的資料夾中`D:\PSScripts`。
+ 您可以藉由呼叫[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法，來執行現有的腳本。 下列範例會將腳本新增至管線並加以執行。 這個範例假設在名`MyScript.ps1` `D:\PSScripts`為的資料夾中已經有名為的腳本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- 另外還有一份[System.Management.Automation.Powershell.Addscript*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法接受名為的布林參數`useLocalScope`。 如果此參數設為`true`，則指令碼會執行本機範圍內。 下列程式碼會在本機的範圍內執行指令碼。
+ 另外還有一個[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法版本，它會採用名為`useLocalScope`的布林參數。 如果此參數設定為`true`，則腳本會在本機範圍中執行。 下列程式碼會在本機範圍中執行腳本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-### <a name="invoking-a-pipeline-synchronously"></a>以同步方式叫用管線
+### <a name="invoking-a-pipeline-synchronously"></a>同步叫用管線
 
- 您將項目新增至管線之後，您叫用它。 若要以同步方式叫用管線時，您會呼叫的多載[System.Management.Automation.Powershell.Invoke*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)方法。 下列範例示範如何以同步方式叫用管線。
+ 將元素新增至管線之後，您就可以叫用它。 若要同步叫用管線，您可以呼叫[system.object](/dotnet/api/System.Management.Automation.PowerShell.Invoke)的多載。 下列範例顯示如何同步叫用管線。
 
 ```csharp
 using System;
@@ -136,11 +136,11 @@ namespace HostPS1e
 }
 ```
 
-### <a name="invoking-a-pipeline-asynchronously"></a>以非同步方式叫用管線
+### <a name="invoking-a-pipeline-asynchronously"></a>非同步叫用管線
 
- 您叫用管線以非同步方式呼叫的多載[System.Management.Automation.Powershell.Begininvoke*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)來建立[IAsyncResult](http://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)物件，並接著呼叫[System.Management.Automation.Powershell.Endinvoke*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。
+ 您可以藉由呼叫[Begininvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)的多載來非同步叫用管線，以建立[IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)物件，然後再呼叫 Endinvoke （）。 [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法。
 
- 下列範例會示範如何以非同步方式叫用管線。
+ 下列範例顯示如何以非同步方式叫用管線。
 
 ```csharp
 using System;
@@ -186,4 +186,4 @@ namespace HostPS3
 
  [建立 InitialSessionState](./creating-an-initialsessionstate.md)
 
- [建立受限的 runspace](./creating-a-constrained-runspace.md)
+ [建立受條件約束的運行空間](./creating-a-constrained-runspace.md)

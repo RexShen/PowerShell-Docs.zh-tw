@@ -1,5 +1,5 @@
 ---
-title: 撰寫 Windows PowerShell 主機應用程式 |Microsoft Docs
+title: 撰寫 Windows PowerShell 主應用程式 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: b44708b3bbcb974a6178323dff2302b7da121af6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855094"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323504"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>撰寫 Windows PowerShell 主機應用程式
 
-您可以在您的應用程式中裝載 Windows PowerShell。 主應用程式可以定義命令執行、 開啟工作階段的本機或遠端電腦上，並叫用的命令是同步或非同步地根據需求的應用程式所在的 runspace。
+您可以在應用程式中裝載 Windows PowerShell。 主應用程式可以定義命令執行所在的執行時間、在本機或遠端電腦上開啟會話，並根據應用程式的需求以同步或非同步方式叫用命令。
 
-下列主題說明如何裝載 Windows PowerShell 建立應用程式。
+下列主題說明如何建立裝載 Windows PowerShell 的應用程式。
 
-## <a name="in-this-section"></a>在本節中
+## <a name="in-this-section"></a>本節內容
 
-[Windows PowerShell 主應用程式快速入門](./windows-powershell-host-quickstart.md)提供指示和程式碼範例，可讓您啟動 建立主機應用程式。
+[Windows PowerShell 主機快速入門](./windows-powershell-host-quickstart.md)提供指示和程式碼範例，讓您開始建立主應用程式。
 
-[建立 Runspace](./creating-runspaces.md)一組主題會說明如何建立 runspace，主應用程式中執行 Windows PowerShell 命令。
+[建立空間](./creating-runspaces.md)一組主題，說明如何建立執行空間以在主應用程式中執行 Windows PowerShell 命令。
 
-[新增和叫用命令](./adding-and-invoking-commands.md)說明如何建立和執行命令管線中主應用程式...
+[新增和](./adding-and-invoking-commands.md)叫用命令說明如何在您的主應用程式中建立及執行命令管線。
 
-[建立遠端 runspace](./creating-remote-runspaces.md)說明如何連線到遠端電腦的 runspace。
+[建立遠端的空間](./creating-remote-runspaces.md)說明如何將執行時間連接至遠端電腦。
 
-[建立自訂使用者介面](./creating-a-custom-user-interface.md)介紹自訂使用者介面，並提供範例連結。
+[建立自訂使用者介面](./creating-a-custom-user-interface.md)介紹自訂的使用者介面，並提供範例的連結。
 
-[裝載應用程式範例](./host-application-samples.md)本章節包含的完整主機應用程式範例。
+[主應用程式範例](./host-application-samples.md)本節包含完整主機應用程式的範例。
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell](http://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
+[Windows PowerShell](https://msdn.microsoft.com/en-us/b41a2af3-aec1-402d-8e18-c2c26be461ff)
