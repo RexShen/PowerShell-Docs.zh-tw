@@ -1,3 +1,5 @@
+- name: 如何使用此文件
+  href: how-to-use-docs.md
 - name: 概觀
   href: overview.md
 - name: 安裝
@@ -170,6 +172,100 @@
           href: components/web-access/use-the-web-based-windows-powershell-console.md
     - name: 工作流程指南
       href: components/workflows-guide.md
+- name: PowerShell 資源庫
+  items:
+    - name: 概觀
+      href: gallery/overview.md
+    - name: 安裝 PowerShellGet
+      href: gallery/installing-psget.md
+    - name: 開始使用
+      href: gallery/getting-started.md
+    - name: 操作說明
+      items:
+        - name: 在資源庫中尋找套件
+          items:
+            - name: 搜尋套件
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: 依相容性搜尋
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: 篩選搜尋結果
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: 發佈至資源庫
+          items:
+            - name: 建立及發行套件
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: 建立 PowerShell 資源庫帳戶
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: 將套件移出清單
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: 刪除套件
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: 管理套件擁有者
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: 使用套件
+          items:
+            - name: FileList 檢視
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: 部署至 Azure 自動化
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: 手動下載套件
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: 必須接受授權的套件
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: 連絡套件擁有者
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: 透過社交媒體或評論提供意見反應
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: 管理帳戶設定檔
+          items:
+            - name: PowerShell 資源庫帳戶設定
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: 管理 API 金鑰
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: 使用本機 PowerShellGet 存放庫
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: 概念
+      items:
+        - name: 發佈指導方針與最佳做法
+          href: gallery/concepts/publishing-guidelines.md
+        - name: 套件資訊清單與資源庫 UI
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: 需要特定的 PSEdition
+          items:
+            - name: 撰寫支援 PSEdition 的指令碼
+              href: gallery/concepts/script-psedition-support.md
+            - name: 撰寫支援 PSEdition 的模組
+              href: gallery/concepts/module-psedition-support.md
+        - name: 必須接受授權
+          items:
+            - name: 適用於指令碼的必須接受授權
+              href: gallery/concepts/script-license-acceptance.md
+            - name: 模組必須接受授權
+              href: gallery/concepts/module-license-acceptance.md
+        - name: 將套件定義為發行前版本
+          items:
+            - name: 將模組定義為發行前版本
+              href: gallery/concepts/module-prerelease-support.md
+            - name: 將指令碼定義為發行前版本
+              href: gallery/concepts/script-prerelease-support.md
+        - name: PSScriptAnalyzer 規則設定檔
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: 取得支援
+      items:
+        - name: 檢舉不當使用
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: 爭端解決
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: 連絡系統管理員
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: 疑難排解
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: 啟動 NuGet 提供者與 NuGet.exe
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: GDPR 合規性
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: 資源庫常見問題集
+      href: gallery/faqs.md
 - name: 新功能
   items:
     - name: PowerShell Core 6.x 的新功能
