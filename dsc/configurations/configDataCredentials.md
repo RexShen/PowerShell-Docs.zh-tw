@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 設定資料的認證選項
-ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 660c3643f7eb2e9ccb91bd992747fb9d5da0ccdb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080147"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323293"
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 
@@ -143,7 +143,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 
 第一個錯誤訊息有文件的 URL。
 這個連結說明如何使用 [ConfigurationData](./configData.md) 結構和憑證加密密碼。
-如需憑證和 DSC 的詳細資訊，請[閱讀這篇文章](http://aka.ms/certs4dsc)。
+如需憑證和 DSC 的詳細資訊，請[閱讀這篇文章](https://aka.ms/certs4dsc)。
 
 若要強制施作純文字密碼，資源在設定資料區段中需要有 `PsDscAllowPlainTextPassword` 關鍵字，如下所示：
 

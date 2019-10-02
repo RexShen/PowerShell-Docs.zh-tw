@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085944"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325127"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 
@@ -137,7 +137,7 @@ Windows PowerShell 5.0 根據預設會安裝在 Windows Server 2016 技術預覽
 - 您現在可以執行 Test-ModuleManifest Cmdlet 來驗證模組版本。
 - Get-Command Cmdlet 的結果現在會顯示 Version 欄；CommandInfo 類別已新增 Version 屬性。 Get-Command 會顯示來自多個版本之相同模組的命令。 Version 屬性也屬於 CmdletInfo 衍生類別的一部分：CmdletInfo 和 ApplicationInfo。
 - Get-Command 的新參數 -ShowCommandInfo 會以 PSObjects 形式傳回 ShowCommand 資訊。 當使用 Windows PowerShell 遠端在 Windows PowerShell ISE 中執行 Show-Command 時，此功能特別實用。 -ShowCommandInfo 參數已取代 Microsoft.PowerShell.Utility 模組中現有的 Get-SerializedCommand 函式，但 Get-SerializedCommand 指令碼仍可支援舊版指令碼。
-- 新的 Get-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 例如，在舊版 Windows PowerShell 中，您可以執行下列命令來取得 PowerShellEnginer 登錄機碼 Application Base 屬性的值：**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
+- 新的 Get-ItemPropertyValue Cmdlet 讓您不需使用點標記法，即可取得屬性值。 例如，在舊版 Windows PowerShell 中，您可以執行下列命令來取得 PowerShellEnginer 登錄機碼 Application Base 屬性的值： **(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase**。 從 Windows PowerShell 5.0 開始，您可以執行 **Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase**。
 - Windows PowerShell 主控台現在和 Windows PowerShell ISE 相同，都是使用語法著色。
 - 新的 NetworkSwitch 模組所包含的 Cmdlet 可讓您將交換器、虛擬 LAN (VLAN) 和基本層級 2 網路交換器連接埠設定套用至 Windows Server 2012 R2 標誌認證的網路交換器。
 - Import-Module 和 Remove-Module Cmdlet 已新增 FullyQualifiedName 參數，以支援儲存單一模組的多個版本。
@@ -181,10 +181,10 @@ Windows PowerShell 5.0 根據預設會安裝在 Windows Server 2016 技術預覽
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 
-- 現在，您可以透過執行 Enter-PSSession 來在存有您欲編輯檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit \<遠端電腦上的路徑及檔案名稱\>**，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
+- 現在，您可以透過執行 Enter-PSSession 來在存有您欲編輯檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit \<遠端電腦上的路徑及檔案名稱\>** ，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
 - Windows PowerShell ISE 現可支援 Start-Transcript Cmdlet。
 - 現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
-- 新的功能表命令 [全部中斷] (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
+- 新的功能表命令 [全部中斷]  (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Windows PowerShell Web 服務的新功能 (Management OData IIS 擴充功能)
 
@@ -217,7 +217,7 @@ Windows PowerShell 4.0 包括下列新功能。
 - Windows PowerShell 偵錯工具已經增強，以針對 Windows PowerShell 工作流程及在遠端電腦上執行的指令碼進行偵錯。 Windows PowerShell 工作流程現已可以透過 Windows PowerShell 命令列或 Windows PowerShell ISE 於指令碼層級進行偵錯。 您現可透過遠端工作階段對 Windows PowerShell 指令碼 (包括指令碼工作流程) 進行偵錯。 對於中斷連線並於稍後重新連線的 Windows PowerShell 遠端工作階段，系統會保留遠端偵錯工作階段。
 - **Register-ScheduledJob** 和 **Set-ScheduledJob** 的 **RunNow** 參數讓您不需要再使用 **Trigger** 參數為工作設定立即開始日期和時間。
 - **Invoke-RestMethod** 與 **Invoke-WebRequest** 現在可讓您使用 Headers 參數設定所有標頭。 雖然此參數一直都存在，但是它是會導致產生例外狀況或錯誤之 Web Cmdlet 的幾個參數之一。
-- **Get-Module** 有新的參數 **FullyQualifiedName**，其類型為 **ModuleSpecification\[]**。 Get-Module 的 **FullyQualifiedName** 參數現可讓您使用模組的名稱、版本與其 GUID (選擇性) 來指定模組。
+- **Get-Module** 有新的參數 **FullyQualifiedName**，其類型為 **ModuleSpecification\[]** 。 Get-Module 的 **FullyQualifiedName** 參數現可讓您使用模組的名稱、版本與其 GUID (選擇性) 來指定模組。
 - Windows Server 2012 R2 上的預設執行原則設定是 **RemoteSigned**。 在 Windows 8.1 上，預設設定沒有任何變更。
 - Windows PowerShell 4.0 開始支援使用動態方法名稱來叫用方法。 您可以使用變數來儲存方法名稱，然後透過呼叫變數來動態叫用方法。
 - 當 **PSElapsedTimeoutSec** 工作流程一般參數所指定的逾時期間過去之後，便不會再刪除非同步工作流程工作。
@@ -260,8 +260,8 @@ Windows PowerShell 4.0 包括下列新功能。
 
 ### <a name="new-features-in-windows-powershell-web-access"></a>Windows PowerShell Web 存取的新功能
 
-- 您可以在網頁式 Windows PowerShell Web 存取主控台中與現有工作階段中斷連線，然後重新連線。 網頁式主控台中會有一個 [儲存] 按鈕，供您在不刪除工作階段的情況下與工作階段中斷連線，然後在其他時間重新連線。
-- 登入頁面上可以顯示預設參數。 若要顯示預設參數，請在名為 **web.config** 的檔案中，設定登入頁面的 [選用連線設定] 區域中顯示之所有設定的值。您可以使用 **web.config** 檔案來設定除了第二或備用的認證集以外的所有選用連線設定。
+- 您可以在網頁式 Windows PowerShell Web 存取主控台中與現有工作階段中斷連線，然後重新連線。 網頁式主控台中會有一個 [儲存]  按鈕，供您在不刪除工作階段的情況下與工作階段中斷連線，然後在其他時間重新連線。
+- 登入頁面上可以顯示預設參數。 若要顯示預設參數，請在名為 **web.config** 的檔案中，設定登入頁面的 [選用連線設定]  區域中顯示之所有設定的值。您可以使用 **web.config** 檔案來設定除了第二或備用的認證集以外的所有選用連線設定。
 - 在 Windows Server 2012 R2 中，您可以針對 Windows PowerShell Web 存取的授權規則進行遠端管理。 **Add-PswaAuthorizationRule** 與 **Test-PswaAuthorizationRule** Cmdlet 現在包含一個 Credential 參數，此參數可以讓系統管理員從遠端電腦或在 Windows PowerShell Web 存取工作階段中管理授權規則。
 - 您現在可以透過針對每個工作階段使用一個新的瀏覽器索引標籤，來於單一瀏覽器工作階段中處理多個 Windows PowerShell Web 存取工作階段。 您不需要再開啟新的瀏覽器工作階段以連線至網頁式 Windows PowerShell 主控台中的新工作階段。
 
@@ -407,7 +407,7 @@ Windows PowerShell 3.0 中的 **Get-Help -Online** 功能現在更強大了，�
 
 ```
 PS C:\>(Get-Command Get-ScheduledJob).HelpUri
-http://go.microsoft.com/fwlink/?LinkID=223923
+https://go.microsoft.com/fwlink/?LinkID=223923
 ```
 
 從 Windows PowerShell 3.0 開始，C# Cmdlet 的作者可以透過在 Cmdlet 類別上建立 **HelpUri** 屬性來填入 **HelpUri** 內容。 進階函式的作者可以在 **CmdletBinding** 屬性上定義 **HelpUri** 屬性。 **HelpUri** 屬性的值必須以 "http" 或 "https" 作為開頭。

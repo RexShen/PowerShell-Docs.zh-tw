@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 中套件管理的改善
-ms.openlocfilehash: 24ff05d6bf5993826106f1a1d2cee6dad363d1e2
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: cb19c2d71391b5729ce9d73fc6b033270f8db307
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147788"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325125"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1 中套件管理的改善
 
@@ -66,5 +66,5 @@ Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 現在在 WMF 5.1 l 中，PackageManagement 也接受新的 Proxy 參數 `-ProxyCredential` 及 `-Proxy`。 您可以使用這些參數，在 PackageManagement Cmdlet 中指定 Proxy URL 及認證。 預設使用系統 Proxy 設定。 例如：
 
 ```powershell
-Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
+Find-Package -Source https://www.nuget.org/api/v2/ -Proxy http://www.myproxyserver.com -ProxyCredential (Get-Credential)
 ```

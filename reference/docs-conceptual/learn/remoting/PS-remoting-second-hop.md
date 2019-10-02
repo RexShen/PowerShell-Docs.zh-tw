@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
-ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f4cfde39de8494050c31cfc3181271b968819695
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086335"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692153"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -43,7 +43,7 @@ ms.locfileid: "62086335"
 
 您也可以使用 Kerberos 未受限制的委派進行第二次跳躍。 不過，這個方法無法控制委派認證的使用位置。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
+>**注意：** 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
 
 ### <a name="pros"></a>優點
 
@@ -59,7 +59,7 @@ ms.locfileid: "62086335"
 您可以使用舊版的限制委派 (不以資源為基礎) 來進行第二次跳躍。 請以 [使用任何驗證通訊協定] 選項設定 Kerberos 限制委派，以允許進行通訊協定轉換。
 
 > [!NOTE]
-> 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
+> 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
 
 ### <a name="pros"></a>優點
 
@@ -77,7 +77,7 @@ ms.locfileid: "62086335"
 使用以資源為基礎的 Kerberos 限制委派 (在 Windows Server 2012 中引入) 時，您會設定資源所在伺服器物件上的認證委派。
 在上述的第二個躍點案例中，您會設定 _ServerC_ 以指定它接受委派認證的來源。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
+>**注意：** 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
 
 ### <a name="pros"></a>優點
 
@@ -211,8 +211,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>以資源為基礎的 Kerberos 限制委派相關資訊
 
 - [Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)
-- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 1 部分)
-- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 2 部分)
+- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 1 部分)
+- [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 2 部分)
 - [了解使用整合式 Windows 驗證之 Azure Active Directory 應用程式 Proxy 部署的 Kerberos 限制委派](https://aka.ms/kcdpaper)
 - [[MS-ADA2]：Active Directory 結構描述屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx) \(英文\)
 - [[MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy](https://msdn.microsoft.com/library/cc246079.aspx) \(英文\)
