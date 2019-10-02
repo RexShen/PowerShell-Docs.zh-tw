@@ -2,22 +2,22 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 [資源設計工具] 工具
-ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076662"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323747"
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 此資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
+資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 在本主題中，我們會建立管理 Active Directory 使用者的 DSC 資源。
 請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xDscResourceDesigner** 模組。
 
->**注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
+>**注意**：Install-Module 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
 
 ## <a name="creating-resource-properties"></a>建立資源屬性
 首先決定資源要公開的屬性。 本例中，我們會定義具有下列屬性的 Active Directory 使用者。
@@ -32,7 +32,7 @@ ms.locfileid: "62076662"
 
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
-$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet “Present”, “Absent”
+$Ensure = New-xDscResourceProperty –Name Ensure -Type String -Attribute Write –ValidateSet "Present", "Absent"
 $DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCredential -Attribute Write
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
@@ -42,7 +42,7 @@ $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attrib
 資源屬性既已建立，我們就可以呼叫 **New-xDscResource** Cmdlet 來建立資源。 **New-xDscResource** Cmdlet 會使用屬性清單作為參數。 它也會使用應建立模組位置的路徑、新資源的名稱和包含它的模組名稱。 下列 PowerShell 命令會建立資源。
 
 ```powershell
-New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
+New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path 'C:\Program Files\WindowsPowerShell\Modules' –ModuleName Demo_DSCModule
 ```
 
 **New-xDscResource** Cmdlet 會建立 MOF 結構描述、基本架構資源指令碼、新資源的必要目錄結構和公開新資源的模組資訊清單。
@@ -167,8 +167,8 @@ Export-ModuleMember -Function *-TargetResource
 例如，假設您想要在資源中包含使用者最後一次的登入時間。 不用再重新撰寫一次資源，您可以呼叫 **New-xDscResourceProperty** 建立新的屬性，然後呼叫 **Update-xDscResource** 將新屬性加入屬性清單中。
 
 ```powershell
-$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
-Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
+$lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description "For mapping users to their last log on time"
+Update-xDscResource –Name 'Demo_ADUser' –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
 ## <a name="testing-a-resource-schema"></a>測試資源的結構描述
