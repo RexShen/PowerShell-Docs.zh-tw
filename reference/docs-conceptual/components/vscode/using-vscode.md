@@ -2,22 +2,20 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 08/06/2018
-ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0e082b74f99d214749f10224fb5aaf41e2ef8951
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733887"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325235"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
-除了 [PowerShell ISE][ise] 之外，PowerShell 在 Visual Studio Code 中也受到良好支援。
-而且，雖然所有平台 (Windows、macOS 和 Linux) 上的 PowerShell Core 都支援 Visual Studio Code，但 PowerShell Core 不支援 ISE
+除了 [PowerShell ISE][ise] 之外，PowerShell 在 Visual Studio Code (VSCode) 中也受到良好支援。 而且，雖然所有平台 (Windows、macOS 和 Linux) 上的 PowerShell Core 都支援 VSCode，但 PowerShell Core 不支援 ISE
 
-使用 Windows 10 或安裝適用於低階 Windows 作業系統 (例如 Windows 8.1 等) 的 [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/)，即可以在 Windows 上使用 Visual Studio Code 與 PowerShell 第 5 版。
+使用 Windows 10 或安裝適用於低階 Windows 作業系統 (例如 Windows 8.1 等) 的 [Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/)，即可以在 Windows 上使用 VSCode 與 PowerShell 第 5 版。
 
-啟動它之前，請先確定系統上有 PowerShell。
-若為 Windows、macOS 和 Linux 上的新型工作負載，請參閱：
+啟動它之前，請先確定系統上有 PowerShell。 若為 Windows、macOS 和 Linux 上的新型工作負載，請參閱：
 
 - [在 Linux 上安裝 PowerShell Core][install-pscore-linux]
 - [在 macOS 上安裝 PowerShell Core][install-pscore-macos]
@@ -25,49 +23,40 @@ ms.locfileid: "67733887"
 
 若為傳統的 Windows PowerShell 工作負載，請參閱[安裝 Windows PowerShell][install-winps]。
 
-## <a name="editing-with-visual-studio-code"></a>使用 Visual Studio Code 編輯
+## <a name="editing-with-vscode"></a>使用 VSCode 編輯
 
-### <a name="1-installing-visual-studio-codehttpscodevisualstudiocomdocssetupsetup-overview"></a>[1.安裝 Visual Studio Code](https://code.visualstudio.com/Docs/setup/setup-overview)
+1. [安裝 VSCode](https://code.visualstudio.com/Docs/setup/setup-overview)
 
-- **Linux**：遵循 [Running VS Code on Linux](https://code.visualstudio.com/docs/setup/linux) (在 Linux 上執行 VS Code) 頁面的安裝指示操作
+   - **Linux**：遵循 [Running VSCode on Linux](https://code.visualstudio.com/docs/setup/linux) (在 Linux 上執行 VS Code) 頁面的安裝指示操作
+   - **macOS**：遵循 [Running VSCode on macOS](https://code.visualstudio.com/docs/setup/mac) (在 macOS 上執行 VS Code) 頁面的安裝指示操作
 
-- **macOS**：遵循 [Running VS Code on macOS](https://code.visualstudio.com/docs/setup/mac) (在 macOS 上執行 VS Code) 頁面的安裝指示操作
+     > [!IMPORTANT]
+     > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。 完成這項作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。 VSCode 現在可以成功載入 PowerShell 延伸模組。
 
-  > [!IMPORTANT]
-  > 在 macOS 上，您必須安裝 OpenSSL，PowerShell 延伸模組才能正常運作。
-  > 完成這項作業最簡單的方式是安裝 [Homebrew](https://brew.sh/) ，然後執行 `brew install openssl`。
-  > VS Code 現在可以成功載入 PowerShell 延伸模組。
+   - **Windows**：遵循 [Running VSCode on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
 
-- **Windows**：遵循 [Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows) (在 Windows 上執行 VS Code) 頁面的安裝指示操作
+2. 安裝 PowerShell 延伸模組
 
-### <a name="2-installing-powershell-extension"></a>2.安裝 PowerShell 延伸模組
+   - 啟動 VSCode 應用程式，方法是：
+     - **Windows**：在您的 PowerShell 工作階段鍵入 `code`
+     - **Linux**：在您的終端機上鍵入 `code`
+     - **macOS**：在您的終端機上鍵入 `code`
+   - 按 <kbd>Ctrl</kbd>+<kbd>P</kbd> (Mac 是 <kbd>Cmd</kbd>+<kbd>P</kbd>) 啟動 [快速開啟]  。
+   - 在 [快速開啟] 中鍵入 `ext install powershell` 並點擊 **Enter**。
+   - 提要欄位上隨即開啟 [延伸模組]  檢視。 從 Microsoft 選取 PowerShell 延伸模組。
+     您應該會看到類似如下的畫面︰
 
-- 啟動 Visual Studio Code 應用程式：
-  - **Windows**：在您的 PowerShell 工作階段鍵入 `code`
-  - **Linux**：在您的終端機上鍵入 `code`
-  - **macOS**：在您的終端機上鍵入 `code`
+     ![VSCode](../../images/using-vscode/vscode.png)
 
-- 按 **Ctrl+P** (Mac 是 **Cmd+P**) 啟動 [快速開啟]  。
-- 在 [快速開啟] 中鍵入 `ext install powershell` 並點擊 **Enter**。
-- 提要欄位上隨即開啟 [延伸模組]  檢視。 從 Microsoft 選取 PowerShell 延伸模組。
-  您應該會看到類似如下的畫面︰
+   - 從 Microsoft 按一下 PowerShell 延伸模組的 [安裝]  按鈕。
+   - 安裝之後，您會看到 [安裝]  按鈕變成 [重新載入]  。 按一下 [重新載入]  。
+   - 重新載入 VSCode 之後，就可以進行編輯。
 
-  ![VSCode](../../images/vscode.png)
-
-- 從 Microsoft 按一下 PowerShell 延伸模組的 [安裝]  按鈕。
-- 安裝之後，您會看到 [安裝]  按鈕變成 [重新載入]  。
-  按一下 [重新載入]  。
-- 重新載入 Visual Studio Code 之後，就可以進行編輯。
-
-例如，若要建立新的檔案，按一下 [檔案]->[新增]  。
-若要儲存它，按一下 [檔案]->[儲存]  ，然後提供檔案名稱，例如 `HelloWorld.ps1`。
-若要關閉檔案，請按一下檔案名稱旁邊的 "x"。
-若要結束 Visual Studio Code，[檔案]->[結束]  。
+例如，若要建立新的檔案，按一下 [檔案]->[新增]  。 若要儲存它，按一下 [檔案]->[儲存]  ，然後提供檔案名稱，例如 `HelloWorld.ps1`。 若要關閉檔案，請按一下檔案名稱旁邊的 "x"。 若要結束 VSCode，請按一下 [檔案] -> [結束]  。
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>在受限制的系統上安裝 PowerShell 延伸模組
 
-某些系統已設定為需要檢查所有程式碼簽章，因此必須以手動方式核准 PowerShell Editor Services，才能在系統上執行。
-如果您已經安裝 PowerShell 延伸模組，但發生如下錯誤，變更執行原則的群組原則更新是可能的原因：
+某些系統已設定為需要檢查所有程式碼簽章，因此必須以手動方式核准 PowerShell Editor Services，才能在系統上執行。 如果您已經安裝 PowerShell 延伸模組，但發生如下錯誤，變更執行原則的群組原則更新是可能的原因：
 
 ```
 Language server startup failed.
@@ -79,8 +68,7 @@ Language server startup failed.
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-系統會提示您「要執行來自這個不受信任的發行者的軟體嗎?」
-輸入 `R` 以執行檔案。 然後，開啟 Visual Studio Code 並檢查 PowerShell 延伸模組是否正常運作。 如果您仍有關於開始使用的問題，請透過 [GitHub](https://github.com/PowerShell/vscode-powershell/issues) \(英文\) 讓我們知道。
+系統會提示您「要執行來自這個不受信任的發行者的軟體嗎?」 輸入 `R` 以執行檔案。 然後，開啟 VSCode 並檢查 PowerShell 延伸模組是否正常運作。 如果您仍有關於開始使用的問題，請透過 [GitHub](https://github.com/PowerShell/vscode-powershell/issues) \(英文\) 讓我們知道。
 
 #### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>選擇要與擴充功能搭配使用的 PowerShell 版本
 
@@ -91,7 +79,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 1. 按一下 [PowerShell:顯示工作階段功能表]。
 1. 從清單中選擇要使用的 PowerShell 版本，例如 "PowerShell Core"。
 
->[!IMPORTANT]
+> [!IMPORTANT]
 > 此功能會查看不同作業系統上的一些已知路徑，以探索 PowerShell 的安裝位置。 如果您已將 PowerShell 安裝到非典型位置，則它一開始可能不會顯示於工作階段功能表中。 您可以藉由[新增自己的自訂路徑](#adding-your-own-powershell-paths-to-the-session-menu)來擴充工作階段功能表，如下所述。
 
 >[!NOTE]
@@ -99,9 +87,9 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 ##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>將您自己的 PowerShell 路徑新增至工作階段功能表
 
-您可以透過 VS Code 設定，將其他 PowerShell 可執行檔路徑新增至工作階段功能表。
+您可以透過 VSCode 設定，將其他 PowerShell 可執行檔路徑新增至工作階段功能表。
 
-將項目新增至清單`powershell.powerShellAdditionalExePaths` 或建立清單 (如果它不存在您的 `settings.json` 中)：
+將項目新增至清單 `powershell.powerShellAdditionalExePaths` 或建立清單 (如果它不存在您的 `settings.json` 中)：
 
 ```json
 {
@@ -113,7 +101,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
             "versionName": "Downloaded PowerShell"
         }
     ],
-    
+
     // other settings...
 }
 ```
@@ -135,25 +123,25 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
             "versionName": "Downloaded PowerShell"
         }
     ],
-    
+
     "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
-    
+
     // other settings...
 }
 ```
 
-設定此設定之後，重新啟動 Visual Studio Code，或使用 [開發人員:重新載入視窗] 命令平板動作，重新載入目前的 vscode 視窗。
+設定此設定之後，請重新啟動 VSCode 或使用 [開發人員：重新載入視窗] 命令平板動作，重新載入目前的 VSCode 視窗。
 
 如果您開啟工作階段功能表，現在將會看到您其他的 PowerShell 版本！
 
 > [!NOTE]
 > 如果您從來源建置 PowerShell，則這是最適合用來測試 PowerShell 本機組建的方式。
 
-#### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code 的組態設定
+#### <a name="configuration-settings-for-vscode"></a>編輯 VSCode 組態設定
 
 使用先前段落中的步驟，您可以在 `settings.json` 中新增組態設定。
 
-我們建議下列 Visual Studio Code 組態設定：
+我們建議下列 VSCode 組態設定：
 
 ```json
 {
@@ -176,22 +164,19 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 }
 ```
 
-如需有關 VS Code 中檔案編碼的詳細資訊，請參閱[了解檔案編碼](understanding-file-encoding.md)。
+如需 VSCode 中檔案編碼的詳細資訊，請參閱[了解檔案編碼](understanding-file-encoding.md)。
 
-## <a name="debugging-with-visual-studio-code"></a>使用 Visual Studio Code 偵錯
+## <a name="debugging-with-vscode"></a>使用 VSCode 進行偵錯
 
 ### <a name="no-workspace-debugging"></a>無工作區偵錯
 
-使用 Visual Studio Code 1.9 版可以偵錯 PowerShell 指令碼，不必開啟包含 PowerShell 指令碼的資料夾。 以 [檔案] -> [開啟檔案]  開啟 PowerShell 指令碼檔案，在行上設定中斷點 (按 F9)，然後按 F5 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
+使用 VSCode 1.9 版可以對 PowerShell 指令碼進行偵錯，不必開啟包含 PowerShell 指令碼的資料夾。 以 [檔案] -> [開啟檔案]  開啟 PowerShell 指令碼檔案，在行上設定中斷點 (按 <kbd>F9</kbd>)，然後按 <kbd>F5</kbd> 開始偵錯。 您會看到 [偵錯動作] 窗格出現，其可讓您中斷偵錯工具、中斷步驟、繼續和停止偵錯。
 
 ### <a name="workspace-debugging"></a>工作區偵錯
 
-工作區偵錯是指使用 [檔案]  功能表的 [開啟資料夾...]  ，在 Visual Studio Code 已開啟的資料夾內容中偵錯。
-您開啟的資料夾通常是 PowerShell 專案資料夾及/或 Git 存放庫的根目錄。
+工作區偵錯是指使用 [檔案]  功能表的 [開啟資料夾...]  ，在 Visual Studio Code 已開啟的資料夾內容中偵錯。 您開啟的資料夾通常是 PowerShell 專案資料夾及/或 Git 存放庫的根目錄。
 
-即使在此模式中，只要按下 F5 就可以開始偵錯目前選取的 PowerShell 指令碼。
-不過，工作區偵錯可讓您定義多個偵錯設定，不只是偵錯目前開啟的檔案。
-例如，您可以新增設定以：
+即使在此模式中，只要按 <kbd>F5</kbd> 就可以開始偵錯目前選取的 PowerShell 指令碼。 不過，工作區偵錯可讓您定義多個偵錯設定，不只是偵錯目前開啟的檔案。 例如，您可以新增設定以：
 
 - 啟動偵錯工具中的 Pester 測試
 - 以偵錯工具中的引數啟動特定檔案
@@ -200,13 +185,11 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 請遵循下列步驟建立您的偵錯設定檔：
 
-  1. 按 **Ctrl+Shift+D** (Mac 是 **Cmd+Shift+D**) 開啟 [偵錯]  檢視。
-  2. 按工具列中的**設定**齒輪圖示。
-  3. Visual Studio Code 會提示您 [選取環境]  。 選擇 [PowerShell]  。
+  1. 按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> (Mac 是 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>) 開啟 [偵錯]  檢視。
+  2. 按一下工具列中的**設定**齒輪圖示。
+  3. VSCode 會提示您 [選取環境]  。 選擇 [PowerShell]  。
 
-  當您這樣做時，Visual Studio Code 會在工作區資料夾的根目錄中建立目錄和檔案：".vscode\launch.json"。
-  這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要修訂 launch.json 檔案。
-  Launch.json 檔案的內容如下：
+  當您這樣做時，VSCode 會在工作區資料夾的根目錄中建立目錄和檔案：".vscode\launch.json"。 這是儲存偵錯設定的位置。 如果檔案是在 Git 存放庫中，您通常要修訂 launch.json 檔案。 Launch.json 檔案的內容如下：
 
   ```json
   {
@@ -237,10 +220,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
   }
   ```
 
-  這表示常見的偵錯案例。
-  不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定]  按鈕。
-  您可以按此按鈕新增多個 PowerShell 偵錯設定。 **PowerShell：啟動指令碼**是可以新增的方便設定。
-  使用此設定時，您可以指定有選擇性引數的特定檔案，只要按下 F5 就應該啟動，無論編輯器中當時作用的是哪個檔案。
+  這表示常見的偵錯案例。 不過，當您在編輯器中開啟這個檔案時，您會看到 [新增設定]  按鈕。 您可以按一下此按鈕來新增多個 PowerShell 偵錯設定。 **PowerShell：啟動指令碼**是可以新增的方便設定。 使用此設定時，您可以指定有選擇性引數的特定檔案，只要按下 <kbd>F5</kbd> 應該就會啟動，無論編輯器中當時作用中的是哪個檔案。
 
   建立偵錯設定之後，您就可以從 [偵錯]  檢視工具列的偵錯設定下拉式清單中擇一，選取在偵錯工作階段期間想要使用的設定。
 
@@ -271,6 +251,6 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 [debugging-part1]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/06/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://blogs.technet.microsoft.com/heyscriptingguy/2017/02/13/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-visual-studio-code"></a>適用於 Visual Studio Code 的 PowerShell 延伸模組
+## <a name="powershell-extension-for-vscode"></a>適用於 VSCode 的 PowerShell 延伸模組
 
 [GitHub](https://github.com/PowerShell/vscode-powershell) 上可以找到 PowerShell 延伸模組的原始程式碼。

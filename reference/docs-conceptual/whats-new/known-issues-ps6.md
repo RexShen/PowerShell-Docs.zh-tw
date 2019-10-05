@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
-ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733836"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692212"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -53,7 +53,7 @@ PowerShell 指令碼的結尾必須是 `.ps1`，解譯器才能瞭解如何在�
 
 ### <a name="net-framework-vs-net-core-framework"></a>.NET Framework 與 .NET Core Framework 的比較
 
-Linux/macOS 上的 PowerShell 使用 .NET Core，這是 Microsoft Windows 上完整 .NET Framework 的子集。 這相當重要，因為 PowerShell 可讓您直接存取基礎架構類型、方法等。因此，在 Windows 上執行的指令碼可能無法在非 Windows 平台上執行，因為架構差異的緣故。 如需有關 .NET Core Framework 的詳細資訊，請參閱 <https://dotnetfoundation.org/net-core> \(英文\)
+Linux/macOS 上的 PowerShell 使用 .NET Core，這是 Microsoft Windows 上完整 .NET Framework 的子集。 這相當重要，因為 PowerShell 可讓您直接存取基礎架構類型、方法等。因此，在 Windows 上執行的指令碼可能無法在非 Windows 平台上執行，因為架構差異的緣故。 如需 .NET Core Framework 的詳細資訊，請參閱 [dotnetfoundation.org](https://dotnetfoundation.org/)。
 
 隨著 [.NET Standard 2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/) 的推出，.NET Core 2.0 將會帶回許多出現在完整 .NET Framework 中的傳統類型和方法。 這意謂著 PowerShell Core 將能夠原封不動地載入許多傳統 Windows PowerShell 模組。 您可以從[這裡](https://github.com/PowerShell/PowerShell/projects/4)追蹤我們的 .NET Standard 2.0 相關工作。
 

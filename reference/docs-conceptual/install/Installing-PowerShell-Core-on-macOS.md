@@ -2,12 +2,12 @@
 title: 在 macOS 上安裝 PowerShell Core
 description: 在 macOS 上安裝 PowerShell Core 的相關資訊
 ms.date: 12/12/2018
-ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229731"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325268"
 ---
 # <a name="installing-powershell-core-on-macos"></a>在 macOS 上安裝 PowerShell Core
 
@@ -17,7 +17,7 @@ GitHub [版本][]頁面上提供所有套件。
 
 ## <a name="about-brew"></a>關於 Brew
 
-[Homebrew][ brew] 是 macOS 首選的套件管理員。
+[Homebrew][brew] 是 macOS 首選的套件管理員。
 如果找不到 `brew` 命令，您需要遵循[指示][brew]安裝 Homebrew。
 或者，您也可透過[直接下載](#installation-via-direct-download)或[二進位封存](#binary-archives)來安裝 PowerShell。
 
@@ -47,7 +47,7 @@ brew cask upgrade powershell
 > [!NOTE]
 > 您可以從 PowerShell (pwsh) 主機內呼叫上述命令，但必須結束並重新啟動 PowerShell 殼層，才能完成升級並重新整理 `$PSVersionTable` 中顯示的值。
 
-[brew]: http://brew.sh/
+[brew]: https://brew.sh/
 
 ## <a name="installation-of-latest-preview-release-via-homebrew-on-macos-1012-or-higher"></a>在 macOS 10.12 或更高版本上透過 Homebrew 安裝最新的預覽版本
 
