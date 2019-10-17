@@ -2,25 +2,26 @@
 title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
 ms.date: 07/19/2019
-ms.openlocfilehash: 7d7c9a9f915f0a6e735a7baec1ec56e9c205a155
-ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
+ms.openlocfilehash: fc5a278f0fc10733a0d60fb856d0400332ba2719
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70848176"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72350202"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
 
-GitHub [發行][]頁面上提供所有套件。 安裝套件之後，請從終端機執行 `pwsh`。
+GitHub [發行][]頁面上提供所有套件。 安裝套件之後，請從終端機執行 `pwsh`。 若您已安裝[預覽版](#installing-preview-releases)，請執行 `pwsh-preview`。
 
 [u16]: #ubuntu-1604
 [u1804]: #ubuntu-1804
 [u1810]: #ubuntu-1810
 [u1904]: #ubuntu-1904
+[deb8]: #debian-8
 [deb9]: #debian-9
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
@@ -234,6 +235,103 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
+## <a name="debian-10"></a>Debian 10
+
+> [!NOTE]
+> 只有 PowerShell Core 7.0 才支援 Debian 10。
+
+### <a name="installation-via-direct-download---debian-10"></a>透過直接下載安裝 - Debian 10
+
+將[發行][]頁面上的 tar.gz 套件 `powershell_7.0.0-preview-7-linux-x64.tar.gz` 下載到 Debian 電腦：
+
+然後，在終端機中執行下列命令：
+
+```sh
+sudo apt-get update
+# install the requirements
+sudo apt-get install -y \
+        less \
+        locales \
+        ca-certificates \
+        libicu63 \
+        libssl1.1 \
+        libc6 \
+        libgcc1 \
+        libgssapi-krb5-2 \
+        liblttng-ust0 \
+        libstdc++6 \
+        zlib1g \
+        curl
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+sudo mkdir -p /opt/microsoft/powershell/7-preview
+
+# Expand powershell to the target folder
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+
+# Set execute permissions
+sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+
+# Create the symbolic link that points to pwsh
+sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+
+# Start PowerShell
+pwsh-preview
+```
+
+## <a name="alpine-39-and-310"></a>Alpine 3.9 與 3.10
+
+> [!NOTE]
+> 只有 PowerShell 7.0 與更新版本才支援 Alpine 3.9 與 3.10。
+
+### <a name="installation-via-direct-download---alpine-39-and-310"></a>透過直接下載安裝 - Alpine 3.9 與 3.10
+
+將[發行][]頁面上的 tar.gz 套件 `powershell_7.0.0-preview-7-linux-x64.tar.gz` 下載到 Alpine 電腦：
+
+然後，在終端機中執行下列命令：
+
+```sh
+# install the requirements
+sudo apk add --no-cache \
+    ca-certificates \
+    less \
+    ncurses-terminfo-base \
+    krb5-libs \
+    libgcc \
+    libintl \
+    libssl1.1 \
+    libstdc++ \
+    tzdata \
+    userspace-rcu \
+    zlib \
+    icu-libs \
+    curl
+
+sudo apk -X https://dl-cdn.alpinelinux.org/alpine/edge/main add --no-cache \
+    lttng-ust
+
+# Download the powershell '.tar.gz' archive
+curl -L https://github.com/PowerShell/PowerShell/releases/download/v7.0.0-preview.4/powershell-7.0.0-preview.4-linux-alpine-x64.tar.gz -o /tmp/powershell.tar.gz
+
+# Create the target folder where powershell will be placed
+sudo mkdir -p /opt/microsoft/powershell/7-preview
+
+# Expand powershell to the target folder
+sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7-preview
+
+# Set execute permissions
+sudo chmod +x /opt/microsoft/powershell/7-preview/pwsh
+
+# Create the symbolic link that points to pwsh
+sudo ln -s /opt/microsoft/powershell/7-preview/pwsh /usr/bin/pwsh-preview
+
+# Start PowerShell
+pwsh-preview
+```
+
 ## <a name="centos-7"></a>CentOS 7
 
 > [!NOTE]
@@ -384,7 +482,10 @@ rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 > [!NOTE]
 > 只有 PowerShell Core 6.1 和更新版本才支援 Fedora 28。
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a>透過套件存放庫安裝 (慣用) - Fedora 27、Fedora 28
+> [!NOTE]
+> 只有 PowerShell 7.0 與更新版本才支援 Fedora 29 與 30。
+
+### <a name="installation-via-package-repository-preferred---fedora-28-29-and-30"></a>透過套件存放庫安裝 (慣用) - Fedora 28、29 與 30
 
 PowerShell Core for Linux 會發佈到官方 Microsoft 存放庫，以供輕鬆安裝及更新。
 
@@ -408,7 +509,7 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>透過直接下載安裝 - Fedora 27、Fedora 28
+### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>透過直接下載安裝 - Fedora 28、29 與 30
 
 將[發行][]頁面上的 RPM 套件 `powershell-6.2.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。
 
@@ -426,7 +527,7 @@ sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a>解除安裝 - Fedora 27、Fedora 28
+### <a name="uninstallation---fedora-28-29-and-30"></a>解除安裝 - Fedora 28、29 與 30
 
 ```sh
 sudo dnf remove powershell
