@@ -3,25 +3,31 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 疑難排解 Cmdlet
-ms.openlocfilehash: f5cd9c0cc23fef5891bf02c10b6541ab0f9d418a
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328299"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72352119"
 ---
-# <a name="troubleshooting-cmdlets"></a><span data-ttu-id="c7bc0-103">疑難排解 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="c7bc0-103">Troubleshooting cmdlets</span></span>
+# <a name="troubleshooting-cmdlets"></a><span data-ttu-id="500e1-103">疑難排解 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="500e1-103">Troubleshooting cmdlets</span></span>
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a><span data-ttu-id="c7bc0-104">如何解決「警告：無法下載套件 '您的套件名稱'」問題</span><span class="sxs-lookup"><span data-stu-id="c7bc0-104">How to resolve "WARNING: Package 'your package name' failed to download" issue</span></span>
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a><span data-ttu-id="500e1-104">如何解決「警告：無法下載套件 '您的套件名稱'」問題</span><span class="sxs-lookup"><span data-stu-id="500e1-104">How to resolve "WARNING: Package 'your package name' failed to download" issue</span></span>
 
-<span data-ttu-id="c7bc0-105">當 `Install-Module` 或 `Update-Module` 有時在某些電腦上失敗時即會回報此問題。</span><span class="sxs-lookup"><span data-stu-id="c7bc0-105">It is reported that `Install-Module` or `Update-Module` sometimes fails on some machines.</span></span>
-<span data-ttu-id="c7bc0-106">根據我們的調查，這和網路連線有關。</span><span class="sxs-lookup"><span data-stu-id="c7bc0-106">Based on our investigation, it is something to do with the networking connection.</span></span>
-<span data-ttu-id="c7bc0-107">我們近期更新了 NuGet 套件，使其能夠確實下載封裝。</span><span class="sxs-lookup"><span data-stu-id="c7bc0-107">Recently we updated NuGet provider so that it can reliably download packages.</span></span>
-<span data-ttu-id="c7bc0-108">您可以遵循下方指示安裝 NuGet 提供者的最新組建，然後安裝或更新您的模組。</span><span class="sxs-lookup"><span data-stu-id="c7bc0-108">You can follow the instructions below to install the latest build of NuGet provider and then install or update your module.</span></span>
-<span data-ttu-id="c7bc0-109">以下使用 'Azure' 模組為例。</span><span class="sxs-lookup"><span data-stu-id="c7bc0-109">Let's use 'Azure' module as an example below.</span></span>
+<span data-ttu-id="500e1-105">當 `Install-Module` 或 `Update-Module` 有時在某些電腦上失敗時即會回報此問題。</span><span class="sxs-lookup"><span data-stu-id="500e1-105">It is reported that `Install-Module` or `Update-Module` sometimes fails on some machines.</span></span> <span data-ttu-id="500e1-106">根據我們的調查，這和網路連線有關。</span><span class="sxs-lookup"><span data-stu-id="500e1-106">Based on our investigation, it is something to do with the networking connection.</span></span> <span data-ttu-id="500e1-107">我們近期更新了 NuGet 套件，使其能夠確實下載封裝。</span><span class="sxs-lookup"><span data-stu-id="500e1-107">Recently we updated NuGet provider so that it can reliably download packages.</span></span> <span data-ttu-id="500e1-108">您可以遵循下方指示安裝 NuGet 提供者的最新組建，然後安裝或更新您的模組。</span><span class="sxs-lookup"><span data-stu-id="500e1-108">You can follow the instructions below to install the latest build of NuGet provider and then install or update your module.</span></span> <span data-ttu-id="500e1-109">以下使用 'Azure' 模組為例。</span><span class="sxs-lookup"><span data-stu-id="500e1-109">Let's use 'Azure' module as an example below.</span></span>
 
 ```powershell
 Install-PackageProvider NuGet -MinimumVersion 2.8.5.206 -Force
 Launch new PowerShell Console
 Update-Module Azure -Verbose
 ```
+
+### <a name="required-network-endpoints"></a><span data-ttu-id="500e1-110">必要網路端點</span><span class="sxs-lookup"><span data-stu-id="500e1-110">Required network endpoints</span></span>
+
+<span data-ttu-id="500e1-111">Install 與 Update Cmdlet 需要網際網路存取權才能連線到由 PowerShell 資源庫使用的網路端點。</span><span class="sxs-lookup"><span data-stu-id="500e1-111">The Install and Update cmdlets require internet access to connect to the network endpoints used by by the PowerShell Gallery.</span></span> <span data-ttu-id="500e1-112">確定您的網路存取原則可讓您連線到下列端點。</span><span class="sxs-lookup"><span data-stu-id="500e1-112">Ensure that your network access policies allow you to connect to the following endpoints.</span></span>
+
+- <span data-ttu-id="500e1-113">oneget.org</span><span class="sxs-lookup"><span data-stu-id="500e1-113">oneget.org</span></span>
+- <span data-ttu-id="500e1-114">go.microsoft.com</span><span class="sxs-lookup"><span data-stu-id="500e1-114">go.microsoft.com</span></span>
+- <span data-ttu-id="500e1-115">az818661.vo.msecnd.net</span><span class="sxs-lookup"><span data-stu-id="500e1-115">az818661.vo.msecnd.net</span></span>
+- <span data-ttu-id="500e1-116">www.powershellgallery.com</span><span class="sxs-lookup"><span data-stu-id="500e1-116">www.powershellgallery.com</span></span>
+- <span data-ttu-id="500e1-117">devopsgallerystorage.blob.core.windows.net</span><span class="sxs-lookup"><span data-stu-id="500e1-117">devopsgallerystorage.blob.core.windows.net</span></span>
