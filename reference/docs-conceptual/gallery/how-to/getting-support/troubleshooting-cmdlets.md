@@ -29,5 +29,5 @@ Install 與 Update Cmdlet 需要網際網路存取權才能連線到由 PowerShe
 - oneget.org
 - go.microsoft.com
 - az818661.vo.msecnd.net
-- www.powershellgallery.com
+- [www.powershellgallery.com](www.powershellgallery.com)
 - devopsgallerystorage.blob.core.windows.net
