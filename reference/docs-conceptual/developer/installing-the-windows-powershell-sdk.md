@@ -2,12 +2,12 @@
 title: 安裝 Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72367267"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444509"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>安裝 Windows PowerShell SDK
 
@@ -17,24 +17,21 @@ ms.locfileid: "72367267"
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>安裝適用於 Windows 8 及 Windows Server 2012 的 Windows PowerShell 3.0 SDK
 
-Windows 8 及 Windows Server 2012 會自動安裝 Windows PowerShell 3.0。 您也可以下載並安裝 Windows PowerShell 3.0 的參考組件，當做 Windows 8 SDK 的一部分。 這些組件可讓您撰寫 Windows PowerShell 3.0 的 Cmdlet、提供者和主機程式。 當您安裝 Windows SDK for Windows 8 時，Windows PowerShell 組件會自動安裝在參考組件資料夾中：\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0。 如需詳細資訊，請參閱 Windows 8 SDK 下載網站。 開發中心也會提供 Windows PowerShell 程式碼範例。
-如需詳細資訊，請參閱開發人員中心網站上的桌面程式碼範例頁面。
-
-此外，包含多個程式碼範例的 Windows PowerShell 3.0 與 Windows PowerShell 2.0 SDK 相容。 如需如何下載 Windows PowerShell 2.0 SDK 的詳細資訊，請參閱以下內容。 (請注意，雖然 2.0 程式碼範例與 Windows 8 和 Windows PowerShell 3.0 相容，但 Windows 8 平台無法安裝 Windows PowerShell 2.0。)
+Windows 8 及 Windows Server 2012 會自動安裝 Windows PowerShell 3.0。 您也可以下載並安裝 Windows PowerShell 3.0 的參考組件，當做 Windows 8 SDK 的一部分。 這些組件可讓您撰寫 Windows PowerShell 3.0 的 Cmdlet、提供者和主機程式。 當您安裝適用於 Windows 8 的 Windows SDK 時，Windows PowerShell 組件會自動安裝在參考組件資料夾中 (位於 `\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` 中)。 如需詳細資訊，請參閱 Windows 8 SDK 下載網站。 Windows PowerShell 程式碼範例也可在開發中心的[Windows powershell 3.0 SDK 範例套件](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d)中取得。
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>安裝適用於 Windows 7 及 Windows Server 2008 R2 的 Windows PowerShell 3.0 SDK
 
-Windows 7 及 Windows Server 2008 R2 會自動安裝 PowerShell 2.0。 您也可以在這些系統上安裝 PowerShell 3.0。 （如需詳細資訊，請參閱安裝 Windows PowerShell）。 如上所述，您也可以在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows 8 SDK。
+Windows 7 及 Windows Server 2008 R2 會自動安裝 PowerShell 2.0。 您也可以在這些系統上安裝 PowerShell 3.0。 您也可以在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows 8 SDK，如上所述。
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>安裝適用於 Windows 7、Vista、XP、Server 2003 及 Server 2008 的 Windows PowerShell 2.0 SDK
 
-Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式所需的參考組件，並提供作為開始撰寫程式碼的起點 C# 範例程式碼。
-
-若要安裝此 SDK，請參閱 Windows PowerShell 2.0 SDK。
+Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式所需的參考組件，並提供作為開始撰寫程式碼的起點 C# 範例程式碼。 您可以從[https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560)下載程式代碼範例。
 
 ### <a name="reference-assemblies"></a>參考組件
 
-參考元件預設會安裝在下列位置： c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0。
+參考組件預設會安裝在下列位置︰`c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0`。
 
 > [!NOTE]
 >
@@ -43,7 +40,8 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 
 ### <a name="samples"></a>範例
 
-程式碼範例預設會安裝在下列位置： C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\。 以下各節提供每個範例之用途的簡要說明。
+程式碼範例預設會安裝在下列位置︰`C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每個範例之用途的簡要說明。
 
 #### <a name="cmdlet-samples"></a>Cmdlet 範例
 
@@ -75,8 +73,8 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 #### <a name="hosting-application-samples"></a>主控應用程式範例
 
 - Runspace01-說明如何使用 PowerShell 類別以同步方式執行 `Get-Process` Cmdlet。
-@No__t-0 Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件。
-- Runspace02-示範如何使用 PowerShell 類別，以同步方式執行 `Get-Process` 和 @no__t 1 Cmdlet。 @No__t-0 Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件，而 `Sort-Object` 則會根據物件的 Id 屬性來排序這些物件。 這些命令的結果會使用 DataGridView 控制項來顯示。
+`Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件。
+- Runspace02-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` 和 `Sort-Object` Cmdlet。 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件，而 `Sort-Object` 會根據物件的 Id 屬性來排序物件。 這些命令的結果會使用 DataGridView 控制項來顯示。
 - Runspace03-顯示如何使用 PowerShell 類別以同步方式執行腳本，以及如何處理非終止錯誤。 指令碼會接收處理序名稱的清單，然後擷取這些處理序。 指令碼的結果會顯示在主控台視窗中，包括執行指令碼時所產生的任何非終止錯誤在內。
 - Runspace04-示範如何使用 PowerShell 類別來執行命令，以及如何攔截執行命令時所擲回的終止錯誤。 執行了兩個命令，而最後一個命令傳遞了無效的參數引數。 如此便不會傳回任何物件，且會擲回終止錯誤。
 - Runspace05-說明如何將嵌入式管理單元新增至 InitialSessionState 物件，讓嵌入式管理單元的 Cmdlet 可在開啟執行時間時使用。 此嵌入式管理單元提供使用 PowerShell 物件，以同步方式執行的 GetProcessSample01 範例所定義的處理器指令程式。
@@ -95,19 +93,19 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 - Host02-示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行 `Get-Process` Cmdlet，並顯示結果，如同您使用 pwrsh 所看到的結果，然後以德文印出目前的資料和時間。
 - Host03-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
 - Host04-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 這個主應用程式也支援顯示允許使用者指定多個選項的提示。
-- Host05-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此主機應用程式也支援使用 `Enter-PsSession` 和 @no__t 1 Cmdlet 來呼叫遠端電腦。
+- Host05-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此主機應用程式也支援使用 `Enter-PsSession` 和 `Exit-PsSession` Cmdlet 來呼叫遠端電腦。
 - Host06-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此外，這個範例會使用權杖化工具 API 指定使用者所輸入的文字色彩。
 
 #### <a name="provider-samples"></a>提供者範例
 
 - AccessDBProviderSample01-顯示如何宣告直接衍生自 CmdletProvider 類別的提供者類別。 包含在此僅為完整性用途。
 
-- AccessDBProviderSample02-說明如何覆寫 NewDrive 和 RemoveDrive 方法，以支援對 `New-PSDrive` 和 @no__t 1 Cmdlet 的呼叫。 這個範例中的提供者類別衍生自 DriveCmdletProvider 類別。
+- AccessDBProviderSample02-說明如何覆寫 NewDrive 和 RemoveDrive 方法，以支援對 `New-PSDrive` 和 `Remove-PSDrive` Cmdlet 的呼叫。 這個範例中的提供者類別衍生自 DriveCmdletProvider 類別。
 
-- AccessDBProviderSample03-說明如何覆寫 GetItem 和 SetItem 方法，以支援對 `Get-Item` 和 @no__t 1 Cmdlet 的呼叫。 這個範例中的提供者類別衍生自 ItemCmdletProvider 類別。
+- AccessDBProviderSample03-說明如何覆寫 GetItem 和 SetItem 方法，以支援對 `Get-Item` 和 `Set-Item` Cmdlet 的呼叫。 這個範例中的提供者類別衍生自 ItemCmdletProvider 類別。
 
-- AccessDBProviderSample04-示範如何覆寫容器方法來支援對 `Copy-Item`、`Get-ChildItem`、`New-Item` 和 @no__t 3 Cmdlet 的呼叫。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 這個範例中的提供者類別衍生自 ItemCmdletProvider 類別。
+- AccessDBProviderSample04-示範如何覆寫容器方法，以支援對 `Copy-Item`、`Get-ChildItem`、`New-Item`和 `Remove-Item` Cmdlet 的呼叫。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 這個範例中的提供者類別衍生自 ItemCmdletProvider 類別。
 
-- AccessDBProviderSample05-示範如何覆寫容器方法來支援對 `Move-Item` 和 @no__t 1 Cmdlet 的呼叫。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 這個範例中的提供者類別衍生自 NavigationCmdletProvider 類別。
+- AccessDBProviderSample05-示範如何覆寫容器方法，以支援對 `Move-Item` 和 `Join-Path` Cmdlet 的呼叫。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 這個範例中的提供者類別衍生自 NavigationCmdletProvider 類別。
 
-- AccessDBProviderSample06-示範如何覆寫內容方法，以支援對 `Clear-Content`、`Get-Content` 和 @no__t 2 Cmdlet 的呼叫。 當使用者需要管理資料存放區的項目內容時，就應該實作這些方法。 這個範例中的提供者類別衍生自 NavigationCmdletProvider 類別，並會執行 IContentCmdletProvider 介面。
+- AccessDBProviderSample06-示範如何覆寫內容方法，以支援對 `Clear-Content`、`Get-Content`和 `Set-Content` Cmdlet 的呼叫。 當使用者需要管理資料存放區的項目內容時，就應該實作這些方法。 這個範例中的提供者類別衍生自 NavigationCmdletProvider 類別，並會執行 IContentCmdletProvider 介面。
