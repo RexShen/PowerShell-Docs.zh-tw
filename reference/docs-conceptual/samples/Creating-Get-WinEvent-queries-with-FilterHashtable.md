@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: 使用 FilterHashtable 建立 Get-WinEvent 查詢
-ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143664"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444380"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 建立 Get-WinEvent 查詢
 
@@ -36,16 +36,16 @@ Get-WinEvent -FilterHashtable @{
 本文介紹有關如何在雜湊表中使用列舉值的資訊。 如需有關列舉的詳細資訊，請參閱這些 **Scripting Guy** 部落格文章。 若要建立傳回列舉值的函式，請參閱[列舉和值](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)。
 如需詳細資訊，請參閱[有關列舉的 Scripting Guy 部落格系列文章](https://devblogs.microsoft.com/scripting/?s=about+enumeration)。
 
-## <a name="hash-table-keyvalue-pairs"></a>雜湊表機碼/值組
+## <a name="hash-table-key-value-pairs"></a>雜湊表機碼-值組
 
 若要建立有效率的查詢，請將 `Get-WinEvent` Cmdlet 與 **FilterHashtable** 參數一起使用。
-**FilterHashtable** 接受雜湊表作為篩選條件，以從 Windows 事件記錄檔中取得特定資訊。 雜湊表使用**機碼/值**組。 如需雜湊表的相關詳細資訊，請參閱 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。
+**FilterHashtable** 接受雜湊表作為篩選條件，以從 Windows 事件記錄檔中取得特定資訊。 雜湊表使用**機碼-值**組。 如需雜湊表的相關詳細資訊，請參閱 [about_Hash_Tables](/powershell/module/microsoft.powershell.core/about/about_hash_tables)。
 
-如果**機碼/值**組位於同一行上，則必須以分號分隔。 如果每個**機碼/值**組位於不同行上，則不需要分號。 例如，本文將**機碼/值**組放在不同的行上，且不使用分號。
+如果有多個**機碼-值**組位於同一行，則必須以分號分隔。 如果每個**機碼-值**組位於不同行上，則不需要分號。 例如，此文章將**機碼-值**組放在不同的行上，且不使用分號。
 
-此範例會使用數個 **FilterHashtable** 參數的**機碼/值**組。 已完成的查詢中包括 **LogName**、**ProviderName**、**Keywords**、**ID** 與 **Level**。
+此範例使用數個 **FilterHashtable** 參數的**機碼-值**組。 已完成的查詢中包括 **LogName**、**ProviderName**、**Keywords**、**ID** 與 **Level**。
 
-接受的**機碼/值**組如下表所示，並包含在 [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
+接受的**機碼-值**組如下表所示，並包含在 [Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
 **FilterHashtable** 參數的文件中。
 
 下表顯示機碼名稱、資料類型，以及資料值是否接受萬用字元。
@@ -62,9 +62,9 @@ Get-WinEvent -FilterHashtable @{
 | EndTime        | `<DateTime>`    | 否                           |
 | UserID         | `<SID>`         | 否                           |
 | 資料           | `<String[]>`    | 否                           |
-| \<named-data\> | `<String[]>`    | 否                           |
+| `<named-data>` | `<String[]>`    | 否                           |
 
-\<named-data\> 機碼代表具名的事件資料欄位。 例如，Perflib 事件 1008 可以包含下列事件資料：
+`<named-data>` 機碼代表具名事件資料欄位。 例如，Perflib 事件 1008 可以包含下列事件資料：
 
 ```xml
 <EventData>
@@ -80,11 +80,14 @@ Get-WinEvent -FilterHashtable @{
 Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
+> [!NOTE]
+> PowerShell 6 中已加入查詢 `<named-data>` 的功能。
+
 ## <a name="building-a-query-with-a-hash-table"></a>使用雜湊表建立查詢
 
-若要驗證結果並針對問題進行疑難排解，最好一次一個**機碼/值**組來建置雜湊表。 該查詢會從**應用程式**記錄檔中取得資料。 雜湊表就相當於 `Get-WinEvent –LogName Application`。
+若要驗證結果並針對問題進行疑難排解，最好一次一個**機碼-值**組來建置雜湊表。 該查詢會從**應用程式**記錄檔中取得資料。 雜湊表就相當於 `Get-WinEvent –LogName Application`。
 
-首先，建立 `Get-WinEvent` 查詢。 使用 **FilterHashtable** 參數的**機碼/值**組，其中機碼為 **LogName** 而值為 **Application**。
+首先，建立 `Get-WinEvent` 查詢。 使用 **FilterHashtable** 參數的**機碼-值**組，其中機碼為 **LogName** 而值為 **Application**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -96,7 +99,7 @@ Get-WinEvent -FilterHashtable @{
 
 ![Windows 事件檢視器來源的影像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-更新雜湊表，並包含**機碼/值**組，其中機碼為 **ProviderName，而值為 **.NET Runtime**。
+更新雜湊表，並包含**機碼-值**組，其中機碼為 **ProviderName，而值為 **.NET Runtime**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -148,7 +151,7 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-列舉值記錄在 **.NET Framework** 中。 如需詳細資訊，請參閱 [StandardEventKeywords 列舉](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)。
+列舉值記錄在 **.NET Framework** 中。 如需詳細資訊，請參閱 [StandardEventKeywords 列舉](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)。
 
 **Keywords** 名稱和列舉值如下所示：
 
@@ -164,7 +167,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 | ResponseTime     | 281474976710656   |
 | 無             | 0                 |
 
-更新雜湊表並包含**機碼/值**組，其中機碼為 **Keywords**，而 **EventLogClassic** 列舉值為 **36028797018963968**。
+更新雜湊表並包含**機碼-值**組，其中機碼為 **Keywords**，而 **EventLogClassic** 列舉值為 **36028797018963968**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -194,7 +197,7 @@ Get-WinEvent -FilterHashtable @{
 
 若要取得更特定的資料，查詢的結果將依**事件識別碼**進行篩選。雜湊表中將**事件識別碼**作為機碼 **ID** 參考，且值為特定**事件識別碼**。**Windows 事件檢視器**會顯示**事件識別碼**。這個範例會使用**事件識別碼 1023**。
 
-更新雜湊表，並包含**機碼/值**組，其中機碼為 **ID**，而值為 **1023**。
+更新雜湊表，並包含**機碼-值**組，其中機碼為 **ID**，而值為 **1023**。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -229,7 +232,7 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-列舉值記錄在 **.NET Framework** 中。 如需詳細資訊，請參閱 [StandardEventLevel 列舉](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。
+列舉值記錄在 **.NET Framework** 中。 如需詳細資訊，請參閱 [StandardEventLevel 列舉](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)。
 
 **Level** 機碼的名稱和列舉值如下所示：
 
