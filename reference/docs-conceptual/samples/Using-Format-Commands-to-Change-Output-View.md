@@ -1,241 +1,261 @@
 ---
-ms.date: 06/05/2017
+ms.date: 10/22/2019
 keywords: powershell,cmdlet
 title: 使用格式命令變更輸出檢視
-ms.openlocfilehash: a1712dade1e7508c0c4a004685bd1bb04a126f74
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030070"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444424"
 ---
-# <a name="using-format-commands-to-change-output-view"></a><span data-ttu-id="db5bb-103">使用格式命令變更輸出檢視</span><span class="sxs-lookup"><span data-stu-id="db5bb-103">Using Format Commands to Change Output View</span></span>
+# <a name="using-format-commands-to-change-output-view"></a><span data-ttu-id="02658-103">使用格式命令變更輸出檢視</span><span class="sxs-lookup"><span data-stu-id="02658-103">Using Format Commands to Change Output View</span></span>
 
-<span data-ttu-id="db5bb-104">Windows PowerShell 的一組 Cmdlet 可讓您控制針對特定物件所顯示的屬性。</span><span class="sxs-lookup"><span data-stu-id="db5bb-104">Windows PowerShell has a set of cmdlets that allow you to control which properties are displayed for particular objects.</span></span> <span data-ttu-id="db5bb-105">所有 Cmdlet 名稱的開頭都是動詞 **Format**。</span><span class="sxs-lookup"><span data-stu-id="db5bb-105">The names of all the cmdlets begin with the verb **Format**.</span></span> <span data-ttu-id="db5bb-106">它們可讓您選取要顯示的一或多個屬性。</span><span class="sxs-lookup"><span data-stu-id="db5bb-106">They let you select one or more properties to show.</span></span>
+<span data-ttu-id="02658-104">PowerShell 的一組 Cmdlet 可讓您控制如何針對特定物件顯示屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-104">PowerShell has a set of cmdlets that allow you to control how properties are displayed for particular objects.</span></span> <span data-ttu-id="02658-105">所有 Cmdlet 名稱的開頭都是動詞 `Format`。</span><span class="sxs-lookup"><span data-stu-id="02658-105">The names of all the cmdlets begin with the verb `Format`.</span></span> <span data-ttu-id="02658-106">它們可讓您選取要顯示哪些屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-106">They let you select which properties you want to show.</span></span>
 
-<span data-ttu-id="db5bb-107">**Format** Cmdlet 是 **Format-Wide**、**Format-List**、**Format-Table** 和 **Format-Custom**。</span><span class="sxs-lookup"><span data-stu-id="db5bb-107">The **Format** cmdlets are **Format-Wide**, **Format-List**, **Format-Table**, and **Format-Custom**.</span></span> <span data-ttu-id="db5bb-108">在本使用者手冊中，我們只會描述 **Format-Wide**、**Format-List** 和 **Format-Table** Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="db5bb-108">We will only describe the **Format-Wide**, **Format-List**, and **Format-Table** cmdlets in this user's guide.</span></span>
-
-<span data-ttu-id="db5bb-109">每個 Format Cmdlet 都有預設屬性，可在未指定要顯示的特定屬性時使用。</span><span class="sxs-lookup"><span data-stu-id="db5bb-109">Each format cmdlet has default properties that will be used if you do not specify specific properties to display.</span></span> <span data-ttu-id="db5bb-110">每個 Cmdlet 也都會使用相同的參數名稱 (**Property**) 來指定您想要顯示的屬性。</span><span class="sxs-lookup"><span data-stu-id="db5bb-110">Each cmdlet also uses the same parameter name, **Property**, to specify which properties you want to display.</span></span> <span data-ttu-id="db5bb-111">因為 **Format-Wide** 只會顯示單一屬性，所以其 **Property** 參數只使用單一值，但 **Format-List** 和 **Format-Table** 的屬性參數將接受屬性名稱清單。</span><span class="sxs-lookup"><span data-stu-id="db5bb-111">Because **Format-Wide** only shows a single property, its **Property** parameter only takes a single value, but the property parameters of **Format-List** and **Format-Table** will accept a list of property names.</span></span>
-
-<span data-ttu-id="db5bb-112">如果您搭配使用 **Get-Process -Name powershell** 命令與兩個執行中 Windows PowerShell 執行個體，則會收到與下面類似的輸出︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-112">If you use the command **Get-Process -Name powershell** with two instances of Windows PowerShell running, you get output that looks like this:</span></span>
-
-```output
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-    995       9    30308      27996   152     2.73   2760 powershell
-    331       9    23284      29084   143     1.06   3448 powershell
+```powershell
+Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
 ```
 
-<span data-ttu-id="db5bb-113">在本節的其餘部分，我們將探討如何使用 **Format** Cmdlet 來變更這個命令的輸出顯示方式。</span><span class="sxs-lookup"><span data-stu-id="db5bb-113">In the rest of this section, we will explore how to use **Format** cmdlets to change the way the output of this command is displayed.</span></span>
+```Output
+CommandType     Name               Version    Source
+-----------     ----               -------    ------
+Cmdlet          Format-Custom      6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Hex         6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-List        6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Table       6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Wide        6.1.0.0    Microsoft.PowerShell.Utility
+```
 
-## <a name="using-format-wide-for-single-item-output"></a><span data-ttu-id="db5bb-114">針對 Single-Item 輸出使用 Format-Wide</span><span class="sxs-lookup"><span data-stu-id="db5bb-114">Using Format-Wide for Single-Item Output</span></span>
+<span data-ttu-id="02658-107">此文章說明 `Format-Wide`、`Format-List` 與 `Format-Table` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="02658-107">This article describes the `Format-Wide`, `Format-List`, and `Format-Table` cmdlets.</span></span>
 
-<span data-ttu-id="db5bb-115">`Format-Wide` Cmdlet 預設只會顯示物件的預設屬性。</span><span class="sxs-lookup"><span data-stu-id="db5bb-115">The `Format-Wide` cmdlet, by default, displays only the default property of an object.</span></span>
-<span data-ttu-id="db5bb-116">與每個物件相關聯的資訊會顯示在單一資料行中︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-116">The information associated with each object is displayed in a single column:</span></span>
+<span data-ttu-id="02658-108">PowerShell 中的每個物件類型都有預設屬性，可在您未指定要顯示哪些屬性時使用。</span><span class="sxs-lookup"><span data-stu-id="02658-108">Each object type in PowerShell has default properties that are used when you don't specify which properties to display.</span></span> <span data-ttu-id="02658-109">每個 Cmdlet 也都會使用相同的 **Property** 參數來指定您要顯示的屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-109">Each cmdlet also uses the same **Property** parameter to specify which properties you want to display.</span></span> <span data-ttu-id="02658-110">因為 `Format-Wide` 只會顯示單一屬性，其 **Property** 參數只會使用單一值，但 `Format-List` 與 `Format-Table` 的 property 參數接受屬性名稱清單。</span><span class="sxs-lookup"><span data-stu-id="02658-110">Because `Format-Wide` only shows a single property, its **Property** parameter only takes a single value, but the property parameters of `Format-List` and `Format-Table` accept a list of property names.</span></span>
+
+<span data-ttu-id="02658-111">在此範例中，`Get-Process` Cmdlet 的預設輸出顯示我們有兩個 Internet Explorer 執行個體正在執行。</span><span class="sxs-lookup"><span data-stu-id="02658-111">In this example, the default output of `Get-Process` cmdlet shows that we have two instances of Internet Explorer running.</span></span>
+
+```powershell
+Get-Process -Name iexplore
+```
+
+<span data-ttu-id="02658-112">**程序**物件的預設格式會顯示如下所示的屬性：</span><span class="sxs-lookup"><span data-stu-id="02658-112">The default format for **Process** objects displays the properties shown here:</span></span>
+
+```Output
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     32    25.52      10.25      13.11   12808   1 iexplore
+     52    11.46      26.46       3.55   21748   1 iexplore
+```
+
+## <a name="using-format-wide-for-single-item-output"></a><span data-ttu-id="02658-113">針對 Single-Item 輸出使用 Format-Wide</span><span class="sxs-lookup"><span data-stu-id="02658-113">Using Format-Wide for Single-Item Output</span></span>
+
+<span data-ttu-id="02658-114">`Format-Wide` Cmdlet 預設只會顯示物件的預設屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-114">The `Format-Wide` cmdlet, by default, displays only the default property of an object.</span></span> <span data-ttu-id="02658-115">與每個物件相關聯的資訊會顯示在單一資料行中︰</span><span class="sxs-lookup"><span data-stu-id="02658-115">The information associated with each object is displayed in a single column:</span></span>
 
 ```powershell
 Get-Command -Verb Format | Format-Wide
 ```
 
-```output
-Format-Custom                          Format-Hex
-Format-List                            Format-Table
+```Output
+Format-Custom          Format-Hex
+Format-List            Format-Table
 Format-Wide
 ```
 
-<span data-ttu-id="db5bb-117">您也可以指定非預設屬性：</span><span class="sxs-lookup"><span data-stu-id="db5bb-117">You can also specify a non-default property:</span></span>
+<span data-ttu-id="02658-116">您也可以指定非預設屬性：</span><span class="sxs-lookup"><span data-stu-id="02658-116">You can also specify a non-default property:</span></span>
 
 ```powershell
 Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-```output
-Custom                                 Hex
-List                                   Table
+```Output
+Custom                 Hex
+List                   Table
 Wide
 ```
 
-### <a name="controlling-format-wide-display-with-column"></a><span data-ttu-id="db5bb-118">使用資料行控制 Format-Wide 顯示</span><span class="sxs-lookup"><span data-stu-id="db5bb-118">Controlling Format-Wide Display with Column</span></span>
+### <a name="controlling-format-wide-display-with-column"></a><span data-ttu-id="02658-117">使用資料行控制 Format-Wide 顯示</span><span class="sxs-lookup"><span data-stu-id="02658-117">Controlling Format-Wide Display with Column</span></span>
 
-<span data-ttu-id="db5bb-119">使用 `Format-Wide` Cmdlet，一次只能顯示單一屬性。</span><span class="sxs-lookup"><span data-stu-id="db5bb-119">With the `Format-Wide` cmdlet, you can only display a single property at a time.</span></span>
-<span data-ttu-id="db5bb-120">這樣適用於顯示一行只顯示一個元素的簡單清單。</span><span class="sxs-lookup"><span data-stu-id="db5bb-120">This makes it useful for displaying simple lists that show only one element per line.</span></span>
-<span data-ttu-id="db5bb-121">若要取得簡單清單，請將 **Column** 屬性的值設為 1，方法是輸入：</span><span class="sxs-lookup"><span data-stu-id="db5bb-121">To get a simple listing, set the value of the **Column** parameter to 1 by typing:</span></span>
+<span data-ttu-id="02658-118">使用 `Format-Wide` Cmdlet，一次只能顯示單一屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-118">With the `Format-Wide` cmdlet, you can only display a single property at a time.</span></span> <span data-ttu-id="02658-119">這有助於在多個資料行中顯示大型清單。</span><span class="sxs-lookup"><span data-stu-id="02658-119">This makes it useful for displaying large lists in multiple columns.</span></span>
 
 ```powershell
-Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 3
 ```
 
-```output
-Custom
-Hex
-List
-Table
-Wide
-```
-
-## <a name="using-format-list-for-a-list-view"></a><span data-ttu-id="db5bb-122">針對清單檢視使用 Format-List</span><span class="sxs-lookup"><span data-stu-id="db5bb-122">Using Format-List for a List View</span></span>
-
-<span data-ttu-id="db5bb-123">**Format-List** Cmdlet 以清單形式顯示物件，並在個別行上標上和顯示每個屬性：</span><span class="sxs-lookup"><span data-stu-id="db5bb-123">The **Format-List** cmdlet displays an object in the form of a listing, with each property labeled and displayed on a separate line:</span></span>
+```Output
+Custom                 Hex                  List
+Table                  Wide
 
 ```
-PS> Get-Process -Name powershell | Format-List
 
-Id      : 2760
-Handles : 1242
-CPU     : 3.03125
-Name    : powershell
+## <a name="using-format-list-for-a-list-view"></a><span data-ttu-id="02658-120">針對清單檢視使用 Format-List</span><span class="sxs-lookup"><span data-stu-id="02658-120">Using Format-List for a List View</span></span>
 
-Id      : 3448
-Handles : 328
-CPU     : 1.0625
-Name    : powershell
-```
-
-<span data-ttu-id="db5bb-124">您可以指定您想要的任意數目的屬性︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-124">You can specify as many properties as you want:</span></span>
-
-```
-PS> Get-Process -Name powershell | Format-List -Property ProcessName,FileVersion
-,StartTime,Id
-
-ProcessName : powershell
-FileVersion : 1.0.9567.1
-StartTime   : 2006-05-24 13:42:00
-Id          : 2760
-
-ProcessName : powershell
-FileVersion : 1.0.9567.1
-StartTime   : 2006-05-24 13:54:28
-Id          : 3448
-```
-
-### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a><span data-ttu-id="db5bb-125">搭配使用 Format-List 與萬用字元取得詳細資訊</span><span class="sxs-lookup"><span data-stu-id="db5bb-125">Getting Detailed Information by Using Format-List with Wildcards</span></span>
-
-<span data-ttu-id="db5bb-126">**Format-List** Cmdlet 可讓您使用萬用字元作為其 **Property** 參數的值。</span><span class="sxs-lookup"><span data-stu-id="db5bb-126">The **Format-List** cmdlet lets you use a wildcard as the value of its **Property** parameter.</span></span> <span data-ttu-id="db5bb-127">這可讓您顯示詳細資訊。</span><span class="sxs-lookup"><span data-stu-id="db5bb-127">This lets you display detailed information.</span></span> <span data-ttu-id="db5bb-128">通常，物件所含的資訊會比您需要的資訊還要多，這是 Windows PowerShell 預設未顯示所有屬性值的原因。</span><span class="sxs-lookup"><span data-stu-id="db5bb-128">Often, objects include more information than you need, which is why Windows PowerShell does not show all property values by default.</span></span> <span data-ttu-id="db5bb-129">若要顯示物件的所有屬性，請使用 **Format-List -Property \&#42;** 命令。</span><span class="sxs-lookup"><span data-stu-id="db5bb-129">To show all of properties of an object, use the **Format-List -Property \&#42;** command.</span></span> <span data-ttu-id="db5bb-130">下列命令會針對單一處理程序產生 60 行以上的輸出︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-130">The following command generates over 60 lines of output for a single process:</span></span>
+<span data-ttu-id="02658-121">`Format-List` Cmdlet 會以清單形式顯示物件，並在個別行上標記和顯示每個屬性：</span><span class="sxs-lookup"><span data-stu-id="02658-121">The `Format-List` cmdlet displays an object in the form of a listing, with each property labeled and displayed on a separate line:</span></span>
 
 ```powershell
-Get-Process -Name powershell | Format-List -Property *
+Get-Process -Name iexplore | Format-List
 ```
 
-<span data-ttu-id="db5bb-131">雖然 **Format-List** 命令適用於顯示詳細資料，但是，如果您想要輸出概觀包括許多項目，則較簡單的表格式檢視通常更為有用。</span><span class="sxs-lookup"><span data-stu-id="db5bb-131">Although the **Format-List** command is useful for showing detail, if you want an overview of output that includes many items, a simpler tabular view is often more useful.</span></span>
+```Output
+Id      : 12808
+Handles : 578
+CPU     : 13.140625
+SI      : 1
+Name    : iexplore
 
-## <a name="using-format-table-for-tabular-output"></a><span data-ttu-id="db5bb-132">針對表格式輸出使用 Format-Table</span><span class="sxs-lookup"><span data-stu-id="db5bb-132">Using Format-Table for Tabular Output</span></span>
-
-<span data-ttu-id="db5bb-133">如果您使用未指定屬性名稱的 **Format-Table** Cmdlet 來格式化 **Get-Process** 命令的輸出，則收到的輸出會與未執行任何格式化所收到的輸出完全相同。</span><span class="sxs-lookup"><span data-stu-id="db5bb-133">If you use the **Format-Table** cmdlet with no property names specified to format the output of the **Get-Process** command, you get exactly the same output as you do without performing any formatting.</span></span> <span data-ttu-id="db5bb-134">原因是處理程序通常會以表格式格式顯示，這與大部分的 Windows PowerShell 物件一樣。</span><span class="sxs-lookup"><span data-stu-id="db5bb-134">The reason is that processes are usually displayed in a tabular format, as are most Windows PowerShell objects.</span></span>
-
-```
-PS> Get-Process -Name powershell | Format-Table
-
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-   1488       9    31568      29460   152     3.53   2760 powershell
-    332       9    23140        632   141     1.06   3448 powershell
-```
-
-### <a name="improving-format-table-output-autosize"></a><span data-ttu-id="db5bb-135">改善 Format-Table 輸出 (AutoSize)</span><span class="sxs-lookup"><span data-stu-id="db5bb-135">Improving Format-Table Output (AutoSize)</span></span>
-
-<span data-ttu-id="db5bb-136">雖然表格式檢視適用於顯示許多類似資訊，但是可能難以解譯顯示是否太窄無法顯示資料。</span><span class="sxs-lookup"><span data-stu-id="db5bb-136">Although a tabular view is useful for displaying a lot of comparable information, it may be difficult to interpret if the display is too narrow for the data.</span></span> <span data-ttu-id="db5bb-137">例如，如果您嘗試顯示處理程序路徑、識別碼、名稱和公司，則會截斷處理程序路徑和公司資料行的輸出︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-137">For example, if you try to display process path, ID, name, and company, you get truncated output for the process path and the company column:</span></span>
-
-```
-PS> Get-Process -Name powershell | Format-Table -Property Path,Name,Id,Company
-
-Path                Name                                 Id Company
-----                ----                                 -- -------
-C:\Program Files... powershell                         2836 Microsoft Corpor...
+Id      : 21748
+Handles : 641
+CPU     : 3.59375
+SI      : 1
+Name    : iexplore
 ```
 
-<span data-ttu-id="db5bb-138">如果您在執行 **Format-Table** 命令時指定 **AutoSize** 參數，則 Windows PowerShell 會根據您要顯示的實際資料來計算資料行寬度。</span><span class="sxs-lookup"><span data-stu-id="db5bb-138">If you specify the **AutoSize** parameter when you run the **Format-Table** command, Windows PowerShell will calculate column widths based on the actual data you are going to display.</span></span> <span data-ttu-id="db5bb-139">這讓 **Path** 資料行更容易閱讀，但是仍然會截斷公司資料行︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-139">This makes the **Path** column readable, but the company column remains truncated:</span></span>
+<span data-ttu-id="02658-122">您可以指定您想要的任意數目的屬性︰</span><span class="sxs-lookup"><span data-stu-id="02658-122">You can specify as many properties as you want:</span></span>
 
-```
-PS> Get-Process -Name powershell | Format-Table -Property Path,Name,Id,Company -
-AutoSize
-
-Path                                                    Name         Id Company
-----                                                    ----         -- -------
-C:\Program Files\Windows PowerShell\v1.0\powershell.exe powershell 2836 Micr...
+```powershell
+Get-Process -Name iexplore | Format-List -Property ProcessName,FileVersion,StartTime,Id
 ```
 
-<span data-ttu-id="db5bb-140">**Format-Table** Cmdlet 可能仍然會截斷資料，但是只會在畫面結尾才這麼做。</span><span class="sxs-lookup"><span data-stu-id="db5bb-140">The **Format-Table** cmdlet might still truncate data, but it will only do so at the end of the screen.</span></span> <span data-ttu-id="db5bb-141">如果屬性不是最後一個顯示的屬性，則會提供其所需的大小來正確顯示其最長的資料元素。</span><span class="sxs-lookup"><span data-stu-id="db5bb-141">Properties, other than the last one displayed, are given as much size as they need for their longest data element to display correctly.</span></span> <span data-ttu-id="db5bb-142">如果您在 **Property** 值清單中交換 **Path** 和 **Company** 的位置，則可以看到顯示公司名稱，但截斷路徑：</span><span class="sxs-lookup"><span data-stu-id="db5bb-142">You can see that company name is visible but path is truncated if you swap the locations of **Path** and **Company** in the **Property** value list:</span></span>
+```Output
+ProcessName : iexplore
+FileVersion : 11.00.18362.1 (WinBuild.160101.0800)
+StartTime   : 10/22/2019 11:23:58 AM
+Id          : 12808
 
-```
-PS> Get-Process -Name powershell | Format-Table -Property Company,Name,Id,Path -
-AutoSize
-
-Company               Name         Id Path
--------               ----         -- ----
-Microsoft Corporation powershell 2836 C:\Program Files\Windows PowerShell\v1...
-```
-
-<span data-ttu-id="db5bb-143">**Format-Table** 命令假設屬性越接近屬性清單開頭，就越重要。</span><span class="sxs-lookup"><span data-stu-id="db5bb-143">The **Format-Table** command assumes that the nearer a property is to the beginning of the property list, the more important it is.</span></span> <span data-ttu-id="db5bb-144">因此，它會嘗試完整顯示最接近開頭的屬性。</span><span class="sxs-lookup"><span data-stu-id="db5bb-144">So it attempts to display the properties nearest the beginning completely.</span></span> <span data-ttu-id="db5bb-145">如果 **Format-Table** 命令無法顯示所有屬性，則會從顯示中移除一些資料行，並提供警告。</span><span class="sxs-lookup"><span data-stu-id="db5bb-145">If the **Format-Table** command cannot display all the properties, it will remove some columns from the display and provide a warning.</span></span> <span data-ttu-id="db5bb-146">如果您將 **Name** 設為清單中的最後一個屬性，則可以看到這項行為：</span><span class="sxs-lookup"><span data-stu-id="db5bb-146">You can see this behavior if you make **Name** the last property in the list:</span></span>
-
-```
-PS> Get-Process -Name powershell | Format-Table -Property Company,Path,Id,Name -
-AutoSize
-
-WARNING: column "Name" does not fit into the display and was removed.
-
-Company               Path                                                    I
-                                                                              d
--------               ----                                                    -
-Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
+ProcessName : iexplore
+FileVersion : 11.00.18362.1 (WinBuild.160101.0800)
+StartTime   : 10/22/2019 11:23:57 AM
+Id          : 21748
 ```
 
-<span data-ttu-id="db5bb-147">在上面的輸出中，會截斷識別碼資料行，以將其放入清單中，並堆疊資料行標題。</span><span class="sxs-lookup"><span data-stu-id="db5bb-147">In the output above, the ID column is truncated to make it fit into the listing, and the column headings are stacked up.</span></span> <span data-ttu-id="db5bb-148">自動重新調整資料行大小，不一定會執行您要的作業。</span><span class="sxs-lookup"><span data-stu-id="db5bb-148">Automatically resizing the columns does not always do what you want.</span></span>
+### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a><span data-ttu-id="02658-123">搭配使用 Format-List 與萬用字元取得詳細資訊</span><span class="sxs-lookup"><span data-stu-id="02658-123">Getting Detailed Information by Using Format-List with Wildcards</span></span>
 
-### <a name="wrapping-format-table-output-in-columns-wrap"></a><span data-ttu-id="db5bb-149">在資料行中讓 Format-Table 換行 (Wrap)</span><span class="sxs-lookup"><span data-stu-id="db5bb-149">Wrapping Format-Table Output in Columns (Wrap)</span></span>
+<span data-ttu-id="02658-124">`Format-List` Cmdlet 可讓您使用萬用字元作為其 **Property** 參數的值。</span><span class="sxs-lookup"><span data-stu-id="02658-124">The `Format-List` cmdlet lets you use a wildcard as the value of its **Property** parameter.</span></span> <span data-ttu-id="02658-125">這可讓您顯示詳細資訊。</span><span class="sxs-lookup"><span data-stu-id="02658-125">This lets you display detailed information.</span></span> <span data-ttu-id="02658-126">通常，物件所含的資訊會比您需要的資訊還要多，這是 PowerShell 預設未顯示所有屬性值的原因。</span><span class="sxs-lookup"><span data-stu-id="02658-126">Often, objects include more information than you need, which is why PowerShell doesn't show all property values by default.</span></span> <span data-ttu-id="02658-127">若要顯示物件的所有屬性，請使用 **Format-List -Property \&#42;** 命令。</span><span class="sxs-lookup"><span data-stu-id="02658-127">To show all of properties of an object, use the **Format-List -Property \&#42;** command.</span></span> <span data-ttu-id="02658-128">下列命令會針對單一處理程序產生 60 行以上的輸出︰</span><span class="sxs-lookup"><span data-stu-id="02658-128">The following command generates over 60 lines of output for a single process:</span></span>
 
-<span data-ttu-id="db5bb-150">您可以使用 **Wrap** 參數，強制冗長的 **Format-Table** 資料在其顯示資料行中換行。</span><span class="sxs-lookup"><span data-stu-id="db5bb-150">You can force lengthy **Format-Table** data to wrap within its display column by using the **Wrap** parameter.</span></span> <span data-ttu-id="db5bb-151">因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數不一定會執行您預期的作業：</span><span class="sxs-lookup"><span data-stu-id="db5bb-151">Using the **Wrap** parameter alone will not necessarily do what you expect, since it uses default settings if you do not also specify **AutoSize**:</span></span>
-
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -Property Name,Id,Company,
-Path
-
-Name                                 Id Company             Path
-----                                 -- -------             ----
-powershell                         2836 Microsoft Corporati C:\Program Files\Wi
-                                        on                  ndows PowerShell\v1
-                                                            .0\powershell.exe
+```powershell
+Get-Process -Name iexplore | Format-List -Property *
 ```
 
-<span data-ttu-id="db5bb-152">單獨使用 **Wrap** 參數的優點是不會讓處理變的太慢。</span><span class="sxs-lookup"><span data-stu-id="db5bb-152">An advantage of using the **Wrap** parameter by itself is that it does not slow down processing very much.</span></span> <span data-ttu-id="db5bb-153">如果您執行大型目錄系統的遞迴檔案清單，則使用 **AutoSize** 時，可能需要很長的時間，並會在顯示第一個輸出項目之前使用大量記憶體。</span><span class="sxs-lookup"><span data-stu-id="db5bb-153">If you perform a recursive file listing of a large directory system, it might take a very long time and use a lot of memory before displaying the first output items if you use **AutoSize**.</span></span>
+<span data-ttu-id="02658-129">雖然 `Format-List` 命令在顯示詳細資料方面非常實用，但若要取得包括許多項目之輸出的概觀，則較簡單的表格式檢視通常更為實用。</span><span class="sxs-lookup"><span data-stu-id="02658-129">Although the `Format-List` command is useful for showing detail, if you want an overview of output that includes many items, a simpler tabular view is often more useful.</span></span>
 
-<span data-ttu-id="db5bb-154">如果您不在意系統負載，則搭配使用 **AutoSize** 與 **Wrap** 參數的運作效果極佳。</span><span class="sxs-lookup"><span data-stu-id="db5bb-154">If you are not concerned about system load, then **AutoSize** works well with the **Wrap** parameter.</span></span> <span data-ttu-id="db5bb-155">初始資料行一律會獲分配在一行上顯示項目所需的寬度，就像指定沒有 **Wrap** 參數的 **AutoSize** 一樣。</span><span class="sxs-lookup"><span data-stu-id="db5bb-155">The initial columns are always allotted as much width as they need to display items on one line, just as when you specify **AutoSize** without the **Wrap** parameter.</span></span> <span data-ttu-id="db5bb-156">唯一的差異在於，必要時會讓最後一個資料行換行︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-156">The only difference is that the final column will be wrapped if necessary:</span></span>
+## <a name="using-format-table-for-tabular-output"></a><span data-ttu-id="02658-130">針對表格式輸出使用 Format-Table</span><span class="sxs-lookup"><span data-stu-id="02658-130">Using Format-Table for Tabular Output</span></span>
 
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Name,I
-d,Company,Path
+<span data-ttu-id="02658-131">如果您使用未指定屬性名稱的 `Format-Table` Cmdlet 來設定 `Get-Process` 命令輸出格式，則收到的輸出會與未使用 `Format` Cmdlet 的情況相同。</span><span class="sxs-lookup"><span data-stu-id="02658-131">If you use the `Format-Table` cmdlet with no property names specified to format the output of the `Get-Process` command, you get exactly the same output as you do without a `Format` cmdlet.</span></span> <span data-ttu-id="02658-132">根據預設，PowerShell 會以表格格式格式顯示**程序**物件。</span><span class="sxs-lookup"><span data-stu-id="02658-132">By default, PowerShell displays **Process** objects in a tabular format.</span></span>
 
-Name         Id Company               Path
-----         -- -------               ----
-powershell 2836 Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\
-                                      powershell.exe
+```powershell
+Get-Service -Name win* | Format-Table
 ```
 
-<span data-ttu-id="db5bb-157">如果您先指定最寬的資料行，則可能不會顯示部分資料行，因此最安全的方式是先指定最小的資料元素。</span><span class="sxs-lookup"><span data-stu-id="db5bb-157">Some columns might not be displayed if you specify the widest columns first, so it is safest to specify the smallest data elements first.</span></span> <span data-ttu-id="db5bb-158">在下列範例中，我們先指定極寬的路徑元素，甚至進行換行，但仍然遺失最後的 **Name** 資料行︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-158">In the following example, we specify the extremely wide path element first, and even with wrapping, we still lose the final **Name** column:</span></span>
-
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Path,I
-d,Company,Name
-
-WARNING: column "Name" does not fit into the display and was removed.
-
-Path                                                      Id Company
-----                                                      -- -------
-C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
-                                                             ion
+```Output
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinDefend          Windows Defender Antivirus Service
+Running  WinHttpAutoProx... WinHTTP Web Proxy Auto-Discovery Se...
+Running  Winmgmt            Windows Management Instrumentation
+Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
-### <a name="organizing-table-output--groupby"></a><span data-ttu-id="db5bb-159">組織資料表輸出 (-GroupBy)</span><span class="sxs-lookup"><span data-stu-id="db5bb-159">Organizing Table Output (-GroupBy)</span></span>
+### <a name="improving-format-table-output-autosize"></a><span data-ttu-id="02658-133">改善 Format-Table 輸出 (AutoSize)</span><span class="sxs-lookup"><span data-stu-id="02658-133">Improving Format-Table Output (AutoSize)</span></span>
 
-<span data-ttu-id="db5bb-160">表格式輸出控制項的另一個有用參數是 **GroupBy**。</span><span class="sxs-lookup"><span data-stu-id="db5bb-160">Another useful parameter for tabular output control is **GroupBy**.</span></span> <span data-ttu-id="db5bb-161">較長的表格式清單尤其很難進行比較。</span><span class="sxs-lookup"><span data-stu-id="db5bb-161">Longer tabular listings in particular may be hard to compare.</span></span> <span data-ttu-id="db5bb-162">**GroupBy** 參數會根據屬性值將輸出群組在一起。</span><span class="sxs-lookup"><span data-stu-id="db5bb-162">The **GroupBy** parameter groups output based on a property value.</span></span> <span data-ttu-id="db5bb-163">例如，我們可以依據公司將處理程序群組在一起，並省略屬性清單中的公司值，讓公司更容易進行檢查︰</span><span class="sxs-lookup"><span data-stu-id="db5bb-163">For example, we can group processes by company for easier inspection, omitting the company value from the property listing:</span></span>
+<span data-ttu-id="02658-134">雖然表格式檢視適用於顯示許多資訊，但是若顯示器太窄而無法容納資料，則可能難以解譯。</span><span class="sxs-lookup"><span data-stu-id="02658-134">Although a tabular view is useful for displaying lots of information, it may be difficult to interpret if the display is too narrow for the data.</span></span> <span data-ttu-id="02658-135">在上述範例中，輸出會被截斷。</span><span class="sxs-lookup"><span data-stu-id="02658-135">In the previous example, the output is truncated.</span></span> <span data-ttu-id="02658-136">如果您在執行 `Format-Table` 命令時指定 **AutoSize** 參數，PowerShell 會根據顯示的實際資料計算欄寬。</span><span class="sxs-lookup"><span data-stu-id="02658-136">If you specify the **AutoSize** parameter when you run the `Format-Table` command, PowerShell calculates column widths based on the actual data displayed.</span></span> <span data-ttu-id="02658-137">這可讓欄變成可讀取。</span><span class="sxs-lookup"><span data-stu-id="02658-137">This makes the columns readable.</span></span>
 
+```powershell
+Get-Service -Name win* | Format-Table -AutoSize
 ```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Name,I
-d,Path -GroupBy Company
 
-   Company: Microsoft Corporation
+```Output
+Status  Name                DisplayName
+------  ----                -----------
+Running WinDefend           Windows Defender Antivirus Service
+Running WinHttpAutoProxySvc WinHTTP Web Proxy Auto-Discovery Service
+Running Winmgmt             Windows Management Instrumentation
+Running WinRM               Windows Remote Management (WS-Management)
+```
 
-Name         Id Path
-----         -- ----
-powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
-powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
+<span data-ttu-id="02658-138">`Format-Table` Cmdlet 可能仍然會截斷資料，但是只會在畫面結尾截斷。</span><span class="sxs-lookup"><span data-stu-id="02658-138">The `Format-Table` cmdlet might still truncate data, but it only truncates at the end of the screen.</span></span> <span data-ttu-id="02658-139">如果屬性不是最後一個顯示的屬性，則會提供其所需的大小來正確顯示其最長的資料元素。</span><span class="sxs-lookup"><span data-stu-id="02658-139">Properties, other than the last one displayed, are given as much size as they need for their longest data element to display correctly.</span></span>
+
+```powershell
+Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -AutoSize
+```
+
+```Output
+Name                 Status StartType DisplayName                               DependentServi
+                                                                                ces
+----                 ------ --------- -----------                               --------------
+WinDefend           Running Automatic Windows Defender Antivirus Service        {}
+WinHttpAutoProxySvc Running    Manual WinHTTP Web Proxy Auto-Discovery Service  {NcaSvc, iphl…
+Winmgmt             Running Automatic Windows Management Instrumentation        {vmms, TPHKLO…
+WinRM               Running Automatic Windows Remote Management (WS-Management) {}
+```
+
+<span data-ttu-id="02658-140">`Format-Table` 命令會假設屬性是依重要性順序列出的。</span><span class="sxs-lookup"><span data-stu-id="02658-140">The `Format-Table` command assumes that properties are listed in order of importance.</span></span> <span data-ttu-id="02658-141">因此，它會嘗試完整顯示最接近開頭的屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-141">So it attempts to fully display the properties nearest the beginning.</span></span> <span data-ttu-id="02658-142">如果 `Format-Table` 命令無法顯示所有屬性，它會從顯示中移除一些欄。</span><span class="sxs-lookup"><span data-stu-id="02658-142">If the `Format-Table` command can't display all the properties, it removes some columns from the display.</span></span> <span data-ttu-id="02658-143">您可以在 **DependentServices** 屬性先前的範例中看到此行為。</span><span class="sxs-lookup"><span data-stu-id="02658-143">You can see this behavior in the **DependentServices** property previous example.</span></span>
+
+### <a name="wrapping-format-table-output-in-columns-wrap"></a><span data-ttu-id="02658-144">在資料行中讓 Format-Table 換行 (Wrap)</span><span class="sxs-lookup"><span data-stu-id="02658-144">Wrapping Format-Table Output in Columns (Wrap)</span></span>
+
+<span data-ttu-id="02658-145">您可以使用 **Wrap** 參數，強制冗長的 `Format-Table` 資料在其顯示欄中換行。</span><span class="sxs-lookup"><span data-stu-id="02658-145">You can force lengthy `Format-Table` data to wrap within its display column by using the **Wrap** parameter.</span></span> <span data-ttu-id="02658-146">因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數可能不會執行您預期的作業：</span><span class="sxs-lookup"><span data-stu-id="02658-146">Using the **Wrap** parameter may not do what you expect, since it uses default settings if you don't also specify **AutoSize**:</span></span>
+
+```powershell
+Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap
+```
+
+```Output
+Name                 Status StartType DisplayName                               DependentServi
+                                                                                ces
+----                 ------ --------- -----------                               --------------
+WinDefend           Running Automatic Windows Defender Antivirus Service        {}
+WinHttpAutoProxySvc Running    Manual WinHTTP Web Proxy Auto-Discovery Service  {NcaSvc,
+                                                                                iphlpsvc}
+Winmgmt             Running Automatic Windows Management Instrumentation        {vmms,
+                                                                                TPHKLOAD,
+                                                                                SUService,
+                                                                                smstsmgr…}
+WinRM               Running Automatic Windows Remote Management (WS-Management) {}
+```
+
+<span data-ttu-id="02658-147">單獨使用 **Wrap** 參數不會讓處理速度變得太慢。</span><span class="sxs-lookup"><span data-stu-id="02658-147">Using the **Wrap** parameter by itself doesn't slow down processing very much.</span></span> <span data-ttu-id="02658-148">但是，使用 **AutoSize** 設定大型目錄結構的遞迴檔案清單格式時，可能需要很長的時間，並在顯示第一個輸出項目之前使用大量記憶體。</span><span class="sxs-lookup"><span data-stu-id="02658-148">However, using **AutoSize** to format a recursive file listing of a large directory structure can take a long time and use lots of memory before displaying the first output items.</span></span>
+
+<span data-ttu-id="02658-149">如果您不在意系統負載，搭配 **Wrap** 參數使用 **AutoSize** 並沒有問題。</span><span class="sxs-lookup"><span data-stu-id="02658-149">If you aren't concerned about system load, then **AutoSize** works well with the **Wrap** parameter.</span></span>
+<span data-ttu-id="02658-150">初始欄仍會使用所需的寬度在一行上顯示項目，但如有必要，就會在最後一欄換行。</span><span class="sxs-lookup"><span data-stu-id="02658-150">The initial columns still use as much width as needed to display items on one line, but the final column is wrapped, if necessary.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="02658-151">當您先指定最寬的欄時，某些欄就可能不會顯示。</span><span class="sxs-lookup"><span data-stu-id="02658-151">Some columns may not be displayed when you specify the widest columns first.</span></span> <span data-ttu-id="02658-152">為求最佳結果，請先指定最小的資料元素。</span><span class="sxs-lookup"><span data-stu-id="02658-152">For best results, specify the smallest data elements first.</span></span>
+
+<span data-ttu-id="02658-153">在下列範例中，我們會先指定最寬的屬性。</span><span class="sxs-lookup"><span data-stu-id="02658-153">In the following example, we specify the widest properties first.</span></span>
+
+```powershell
+Get-Process -Name iexplore | Format-Table -Wrap -AutoSize -Property FileVersion,Path,Name,Id
+```
+
+<span data-ttu-id="02658-154">即使換行，也會省略最後的 **Id** 資料行：</span><span class="sxs-lookup"><span data-stu-id="02658-154">Even with wrapping, the final **Id** column is omitted:</span></span>
+
+```Output
+FileVersion                          Path                                                  Nam
+                                                                                           e
+-----------                          ----                                                  ---
+11.00.18362.1 (WinBuild.160101.0800) C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE iex
+                                                                                           plo
+                                                                                           re
+11.00.18362.1 (WinBuild.160101.0800) C:\Program Files\Internet Explorer\iexplore.exe       iex
+                                                                                           plo
+                                                                                           re
+```
+
+### <a name="organizing-table-output--groupby"></a><span data-ttu-id="02658-155">組織資料表輸出 (-GroupBy)</span><span class="sxs-lookup"><span data-stu-id="02658-155">Organizing Table Output (-GroupBy)</span></span>
+
+<span data-ttu-id="02658-156">表格式輸出控制項的另一個有用參數是 **GroupBy**。</span><span class="sxs-lookup"><span data-stu-id="02658-156">Another useful parameter for tabular output control is **GroupBy**.</span></span> <span data-ttu-id="02658-157">較長的表格式清單尤其很難進行比較。</span><span class="sxs-lookup"><span data-stu-id="02658-157">Longer tabular listings in particular may be hard to compare.</span></span> <span data-ttu-id="02658-158">**GroupBy** 參數會根據屬性值將輸出群組在一起。</span><span class="sxs-lookup"><span data-stu-id="02658-158">The **GroupBy** parameter groups output based on a property value.</span></span> <span data-ttu-id="02658-159">例如，我們可以依 **StartType** 將服務分組，並省略屬性清單中的 **StartType** 值，以方便檢查︰</span><span class="sxs-lookup"><span data-stu-id="02658-159">For example, we can group services by **StartType** for easier inspection, omitting the **StartType** value from the property listing:</span></span>
+
+```powershell
+Get-Service -Name win* | Sort-Object StartType | Format-Table -GroupBy StartType
+```
+
+```Output
+   StartType: Automatic
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinDefend          Windows Defender Antivirus Service
+Running  Winmgmt            Windows Management Instrumentation
+Running  WinRM              Windows Remote Management (WS-Managem…
+
+   StartType: Manual
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinHttpAutoProxyS… WinHTTP Web Proxy Auto-Discovery Serv…
 ```
