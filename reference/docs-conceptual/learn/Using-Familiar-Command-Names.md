@@ -21,12 +21,12 @@ PowerShell 支援別名，以使用替代名稱來參考命令。 別名讓具�
 
 |||||
 |-|-|-|-|
-|cat|dir|掛上 - mount|rm|
+|cat|dir|mount|rm|
 |cd|echo|move|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
 |cls|history|pushd|tee|
-|copy|kill|pwd|型別|
+|copy|kill|pwd|type|
 |del|lp|r|write|
 |diff|ls|ren||
 
@@ -53,12 +53,12 @@ PowerShell 別名試圖在清晰度與簡潔性之間做出妥協。 PowerShell 
 
 | 名詞或指令動詞 | 縮寫 |
 |--------------|--------------|
-| 取得          | g            |
-| 設定          | s            |
-| 項目         | i            |
-| 位置     | l            |
-| 命令      | cm           |
-| 別名        | al           |
+| Get          | g            |
+| Set          | s            |
+| Item         | i            |
+| Location     | l            |
+| Command      | cm           |
+| Alias        | al           |
 
 當您知道縮寫名稱，就能了解這些別名。
 
