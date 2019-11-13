@@ -1,45 +1,62 @@
 ---
-ms.date: 06/05/2017
+ms.date: 10/22/2019
 keywords: powershell,cmdlet
 title: 使用格式命令變更輸出檢視
-ms.openlocfilehash: a1712dade1e7508c0c4a004685bd1bb04a126f74
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030070"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444424"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令變更輸出檢視
 
-Windows PowerShell 的一組 Cmdlet 可讓您控制針對特定物件所顯示的屬性。 所有 Cmdlet 名稱的開頭都是動詞 **Format**。 它們可讓您選取要顯示的一或多個屬性。
+PowerShell 的一組 Cmdlet 可讓您控制如何針對特定物件顯示屬性。 所有 Cmdlet 名稱的開頭都是動詞 `Format`。 它們可讓您選取要顯示哪些屬性。
 
-**Format** Cmdlet 是 **Format-Wide**、**Format-List**、**Format-Table** 和 **Format-Custom**。 在本使用者手冊中，我們只會描述 **Format-Wide**、**Format-List** 和 **Format-Table** Cmdlet。
-
-每個 Format Cmdlet 都有預設屬性，可在未指定要顯示的特定屬性時使用。 每個 Cmdlet 也都會使用相同的參數名稱 (**Property**) 來指定您想要顯示的屬性。 因為 **Format-Wide** 只會顯示單一屬性，所以其 **Property** 參數只使用單一值，但 **Format-List** 和 **Format-Table** 的屬性參數將接受屬性名稱清單。
-
-如果您搭配使用 **Get-Process -Name powershell** 命令與兩個執行中 Windows PowerShell 執行個體，則會收到與下面類似的輸出︰
-
-```output
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-    995       9    30308      27996   152     2.73   2760 powershell
-    331       9    23284      29084   143     1.06   3448 powershell
+```powershell
+Get-Command -Verb Format -Module Microsoft.PowerShell.Utility
 ```
 
-在本節的其餘部分，我們將探討如何使用 **Format** Cmdlet 來變更這個命令的輸出顯示方式。
+```Output
+CommandType     Name               Version    Source
+-----------     ----               -------    ------
+Cmdlet          Format-Custom      6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Hex         6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-List        6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Table       6.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Format-Wide        6.1.0.0    Microsoft.PowerShell.Utility
+```
+
+此文章說明 `Format-Wide`、`Format-List` 與 `Format-Table` Cmdlet。
+
+PowerShell 中的每個物件類型都有預設屬性，可在您未指定要顯示哪些屬性時使用。 每個 Cmdlet 也都會使用相同的 **Property** 參數來指定您要顯示的屬性。 因為 `Format-Wide` 只會顯示單一屬性，其 **Property** 參數只會使用單一值，但 `Format-List` 與 `Format-Table` 的 property 參數接受屬性名稱清單。
+
+在此範例中，`Get-Process` Cmdlet 的預設輸出顯示我們有兩個 Internet Explorer 執行個體正在執行。
+
+```powershell
+Get-Process -Name iexplore
+```
+
+**程序**物件的預設格式會顯示如下所示的屬性：
+
+```Output
+ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+ ------    -----      -----     ------      --  -- -----------
+     32    25.52      10.25      13.11   12808   1 iexplore
+     52    11.46      26.46       3.55   21748   1 iexplore
+```
 
 ## <a name="using-format-wide-for-single-item-output"></a>針對 Single-Item 輸出使用 Format-Wide
 
-`Format-Wide` Cmdlet 預設只會顯示物件的預設屬性。
-與每個物件相關聯的資訊會顯示在單一資料行中︰
+`Format-Wide` Cmdlet 預設只會顯示物件的預設屬性。 與每個物件相關聯的資訊會顯示在單一資料行中︰
 
 ```powershell
 Get-Command -Verb Format | Format-Wide
 ```
 
-```output
-Format-Custom                          Format-Hex
-Format-List                            Format-Table
+```Output
+Format-Custom          Format-Hex
+Format-List            Format-Table
 Format-Wide
 ```
 
@@ -49,193 +66,196 @@ Format-Wide
 Get-Command -Verb Format | Format-Wide -Property Noun
 ```
 
-```output
-Custom                                 Hex
-List                                   Table
+```Output
+Custom                 Hex
+List                   Table
 Wide
 ```
 
 ### <a name="controlling-format-wide-display-with-column"></a>使用資料行控制 Format-Wide 顯示
 
-使用 `Format-Wide` Cmdlet，一次只能顯示單一屬性。
-這樣適用於顯示一行只顯示一個元素的簡單清單。
-若要取得簡單清單，請將 **Column** 屬性的值設為 1，方法是輸入：
+使用 `Format-Wide` Cmdlet，一次只能顯示單一屬性。 這有助於在多個資料行中顯示大型清單。
 
 ```powershell
-Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 3
 ```
 
-```output
-Custom
-Hex
-List
-Table
-Wide
+```Output
+Custom                 Hex                  List
+Table                  Wide
+
 ```
 
 ## <a name="using-format-list-for-a-list-view"></a>針對清單檢視使用 Format-List
 
-**Format-List** Cmdlet 以清單形式顯示物件，並在個別行上標上和顯示每個屬性：
+`Format-List` Cmdlet 會以清單形式顯示物件，並在個別行上標記和顯示每個屬性：
 
+```powershell
+Get-Process -Name iexplore | Format-List
 ```
-PS> Get-Process -Name powershell | Format-List
 
-Id      : 2760
-Handles : 1242
-CPU     : 3.03125
-Name    : powershell
+```Output
+Id      : 12808
+Handles : 578
+CPU     : 13.140625
+SI      : 1
+Name    : iexplore
 
-Id      : 3448
-Handles : 328
-CPU     : 1.0625
-Name    : powershell
+Id      : 21748
+Handles : 641
+CPU     : 3.59375
+SI      : 1
+Name    : iexplore
 ```
 
 您可以指定您想要的任意數目的屬性︰
 
+```powershell
+Get-Process -Name iexplore | Format-List -Property ProcessName,FileVersion,StartTime,Id
 ```
-PS> Get-Process -Name powershell | Format-List -Property ProcessName,FileVersion
-,StartTime,Id
 
-ProcessName : powershell
-FileVersion : 1.0.9567.1
-StartTime   : 2006-05-24 13:42:00
-Id          : 2760
+```Output
+ProcessName : iexplore
+FileVersion : 11.00.18362.1 (WinBuild.160101.0800)
+StartTime   : 10/22/2019 11:23:58 AM
+Id          : 12808
 
-ProcessName : powershell
-FileVersion : 1.0.9567.1
-StartTime   : 2006-05-24 13:54:28
-Id          : 3448
+ProcessName : iexplore
+FileVersion : 11.00.18362.1 (WinBuild.160101.0800)
+StartTime   : 10/22/2019 11:23:57 AM
+Id          : 21748
 ```
 
 ### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>搭配使用 Format-List 與萬用字元取得詳細資訊
 
-**Format-List** Cmdlet 可讓您使用萬用字元作為其 **Property** 參數的值。 這可讓您顯示詳細資訊。 通常，物件所含的資訊會比您需要的資訊還要多，這是 Windows PowerShell 預設未顯示所有屬性值的原因。 若要顯示物件的所有屬性，請使用 **Format-List -Property \&#42;** 命令。 下列命令會針對單一處理程序產生 60 行以上的輸出︰
+`Format-List` Cmdlet 可讓您使用萬用字元作為其 **Property** 參數的值。 這可讓您顯示詳細資訊。 通常，物件所含的資訊會比您需要的資訊還要多，這是 PowerShell 預設未顯示所有屬性值的原因。 若要顯示物件的所有屬性，請使用 **Format-List -Property \&#42;** 命令。 下列命令會針對單一處理程序產生 60 行以上的輸出︰
 
 ```powershell
-Get-Process -Name powershell | Format-List -Property *
+Get-Process -Name iexplore | Format-List -Property *
 ```
 
-雖然 **Format-List** 命令適用於顯示詳細資料，但是，如果您想要輸出概觀包括許多項目，則較簡單的表格式檢視通常更為有用。
+雖然 `Format-List` 命令在顯示詳細資料方面非常實用，但若要取得包括許多項目之輸出的概觀，則較簡單的表格式檢視通常更為實用。
 
 ## <a name="using-format-table-for-tabular-output"></a>針對表格式輸出使用 Format-Table
 
-如果您使用未指定屬性名稱的 **Format-Table** Cmdlet 來格式化 **Get-Process** 命令的輸出，則收到的輸出會與未執行任何格式化所收到的輸出完全相同。 原因是處理程序通常會以表格式格式顯示，這與大部分的 Windows PowerShell 物件一樣。
+如果您使用未指定屬性名稱的 `Format-Table` Cmdlet 來設定 `Get-Process` 命令輸出格式，則收到的輸出會與未使用 `Format` Cmdlet 的情況相同。 根據預設，PowerShell 會以表格格式格式顯示**程序**物件。
 
+```powershell
+Get-Service -Name win* | Format-Table
 ```
-PS> Get-Process -Name powershell | Format-Table
 
-Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
--------  ------    -----      ----- -----   ------     -- -----------
-   1488       9    31568      29460   152     3.53   2760 powershell
-    332       9    23140        632   141     1.06   3448 powershell
+```Output
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinDefend          Windows Defender Antivirus Service
+Running  WinHttpAutoProx... WinHTTP Web Proxy Auto-Discovery Se...
+Running  Winmgmt            Windows Management Instrumentation
+Running  WinRM              Windows Remote Management (WS-Manag...
 ```
 
 ### <a name="improving-format-table-output-autosize"></a>改善 Format-Table 輸出 (AutoSize)
 
-雖然表格式檢視適用於顯示許多類似資訊，但是可能難以解譯顯示是否太窄無法顯示資料。 例如，如果您嘗試顯示處理程序路徑、識別碼、名稱和公司，則會截斷處理程序路徑和公司資料行的輸出︰
+雖然表格式檢視適用於顯示許多資訊，但是若顯示器太窄而無法容納資料，則可能難以解譯。 在上述範例中，輸出會被截斷。 如果您在執行 `Format-Table` 命令時指定 **AutoSize** 參數，PowerShell 會根據顯示的實際資料計算欄寬。 這可讓欄變成可讀取。
 
-```
-PS> Get-Process -Name powershell | Format-Table -Property Path,Name,Id,Company
-
-Path                Name                                 Id Company
-----                ----                                 -- -------
-C:\Program Files... powershell                         2836 Microsoft Corpor...
+```powershell
+Get-Service -Name win* | Format-Table -AutoSize
 ```
 
-如果您在執行 **Format-Table** 命令時指定 **AutoSize** 參數，則 Windows PowerShell 會根據您要顯示的實際資料來計算資料行寬度。 這讓 **Path** 資料行更容易閱讀，但是仍然會截斷公司資料行︰
-
-```
-PS> Get-Process -Name powershell | Format-Table -Property Path,Name,Id,Company -
-AutoSize
-
-Path                                                    Name         Id Company
-----                                                    ----         -- -------
-C:\Program Files\Windows PowerShell\v1.0\powershell.exe powershell 2836 Micr...
+```Output
+Status  Name                DisplayName
+------  ----                -----------
+Running WinDefend           Windows Defender Antivirus Service
+Running WinHttpAutoProxySvc WinHTTP Web Proxy Auto-Discovery Service
+Running Winmgmt             Windows Management Instrumentation
+Running WinRM               Windows Remote Management (WS-Management)
 ```
 
-**Format-Table** Cmdlet 可能仍然會截斷資料，但是只會在畫面結尾才這麼做。 如果屬性不是最後一個顯示的屬性，則會提供其所需的大小來正確顯示其最長的資料元素。 如果您在 **Property** 值清單中交換 **Path** 和 **Company** 的位置，則可以看到顯示公司名稱，但截斷路徑：
+`Format-Table` Cmdlet 可能仍然會截斷資料，但是只會在畫面結尾截斷。 如果屬性不是最後一個顯示的屬性，則會提供其所需的大小來正確顯示其最長的資料元素。
 
-```
-PS> Get-Process -Name powershell | Format-Table -Property Company,Name,Id,Path -
-AutoSize
-
-Company               Name         Id Path
--------               ----         -- ----
-Microsoft Corporation powershell 2836 C:\Program Files\Windows PowerShell\v1...
+```powershell
+Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -AutoSize
 ```
 
-**Format-Table** 命令假設屬性越接近屬性清單開頭，就越重要。 因此，它會嘗試完整顯示最接近開頭的屬性。 如果 **Format-Table** 命令無法顯示所有屬性，則會從顯示中移除一些資料行，並提供警告。 如果您將 **Name** 設為清單中的最後一個屬性，則可以看到這項行為：
-
-```
-PS> Get-Process -Name powershell | Format-Table -Property Company,Path,Id,Name -
-AutoSize
-
-WARNING: column "Name" does not fit into the display and was removed.
-
-Company               Path                                                    I
-                                                                              d
--------               ----                                                    -
-Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
+```Output
+Name                 Status StartType DisplayName                               DependentServi
+                                                                                ces
+----                 ------ --------- -----------                               --------------
+WinDefend           Running Automatic Windows Defender Antivirus Service        {}
+WinHttpAutoProxySvc Running    Manual WinHTTP Web Proxy Auto-Discovery Service  {NcaSvc, iphl…
+Winmgmt             Running Automatic Windows Management Instrumentation        {vmms, TPHKLO…
+WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
 
-在上面的輸出中，會截斷識別碼資料行，以將其放入清單中，並堆疊資料行標題。 自動重新調整資料行大小，不一定會執行您要的作業。
+`Format-Table` 命令會假設屬性是依重要性順序列出的。 因此，它會嘗試完整顯示最接近開頭的屬性。 如果 `Format-Table` 命令無法顯示所有屬性，它會從顯示中移除一些欄。 您可以在 **DependentServices** 屬性先前的範例中看到此行為。
 
 ### <a name="wrapping-format-table-output-in-columns-wrap"></a>在資料行中讓 Format-Table 換行 (Wrap)
 
-您可以使用 **Wrap** 參數，強制冗長的 **Format-Table** 資料在其顯示資料行中換行。 因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數不一定會執行您預期的作業：
+您可以使用 **Wrap** 參數，強制冗長的 `Format-Table` 資料在其顯示欄中換行。 因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數可能不會執行您預期的作業：
 
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -Property Name,Id,Company,
-Path
-
-Name                                 Id Company             Path
-----                                 -- -------             ----
-powershell                         2836 Microsoft Corporati C:\Program Files\Wi
-                                        on                  ndows PowerShell\v1
-                                                            .0\powershell.exe
+```powershell
+Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap
 ```
 
-單獨使用 **Wrap** 參數的優點是不會讓處理變的太慢。 如果您執行大型目錄系統的遞迴檔案清單，則使用 **AutoSize** 時，可能需要很長的時間，並會在顯示第一個輸出項目之前使用大量記憶體。
-
-如果您不在意系統負載，則搭配使用 **AutoSize** 與 **Wrap** 參數的運作效果極佳。 初始資料行一律會獲分配在一行上顯示項目所需的寬度，就像指定沒有 **Wrap** 參數的 **AutoSize** 一樣。 唯一的差異在於，必要時會讓最後一個資料行換行︰
-
+```Output
+Name                 Status StartType DisplayName                               DependentServi
+                                                                                ces
+----                 ------ --------- -----------                               --------------
+WinDefend           Running Automatic Windows Defender Antivirus Service        {}
+WinHttpAutoProxySvc Running    Manual WinHTTP Web Proxy Auto-Discovery Service  {NcaSvc,
+                                                                                iphlpsvc}
+Winmgmt             Running Automatic Windows Management Instrumentation        {vmms,
+                                                                                TPHKLOAD,
+                                                                                SUService,
+                                                                                smstsmgr…}
+WinRM               Running Automatic Windows Remote Management (WS-Management) {}
 ```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Name,I
-d,Company,Path
 
-Name         Id Company               Path
-----         -- -------               ----
-powershell 2836 Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\
-                                      powershell.exe
+單獨使用 **Wrap** 參數不會讓處理速度變得太慢。 但是，使用 **AutoSize** 設定大型目錄結構的遞迴檔案清單格式時，可能需要很長的時間，並在顯示第一個輸出項目之前使用大量記憶體。
+
+如果您不在意系統負載，搭配 **Wrap** 參數使用 **AutoSize** 並沒有問題。
+初始欄仍會使用所需的寬度在一行上顯示項目，但如有必要，就會在最後一欄換行。
+
+> [!NOTE]
+> 當您先指定最寬的欄時，某些欄就可能不會顯示。 為求最佳結果，請先指定最小的資料元素。
+
+在下列範例中，我們會先指定最寬的屬性。
+
+```powershell
+Get-Process -Name iexplore | Format-Table -Wrap -AutoSize -Property FileVersion,Path,Name,Id
 ```
 
-如果您先指定最寬的資料行，則可能不會顯示部分資料行，因此最安全的方式是先指定最小的資料元素。 在下列範例中，我們先指定極寬的路徑元素，甚至進行換行，但仍然遺失最後的 **Name** 資料行︰
+即使換行，也會省略最後的 **Id** 資料行：
 
-```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Path,I
-d,Company,Name
-
-WARNING: column "Name" does not fit into the display and was removed.
-
-Path                                                      Id Company
-----                                                      -- -------
-C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
-                                                             ion
+```Output
+FileVersion                          Path                                                  Nam
+                                                                                           e
+-----------                          ----                                                  ---
+11.00.18362.1 (WinBuild.160101.0800) C:\Program Files (x86)\Internet Explorer\IEXPLORE.EXE iex
+                                                                                           plo
+                                                                                           re
+11.00.18362.1 (WinBuild.160101.0800) C:\Program Files\Internet Explorer\iexplore.exe       iex
+                                                                                           plo
+                                                                                           re
 ```
 
 ### <a name="organizing-table-output--groupby"></a>組織資料表輸出 (-GroupBy)
 
-表格式輸出控制項的另一個有用參數是 **GroupBy**。 較長的表格式清單尤其很難進行比較。 **GroupBy** 參數會根據屬性值將輸出群組在一起。 例如，我們可以依據公司將處理程序群組在一起，並省略屬性清單中的公司值，讓公司更容易進行檢查︰
+表格式輸出控制項的另一個有用參數是 **GroupBy**。 較長的表格式清單尤其很難進行比較。 **GroupBy** 參數會根據屬性值將輸出群組在一起。 例如，我們可以依 **StartType** 將服務分組，並省略屬性清單中的 **StartType** 值，以方便檢查︰
 
+```powershell
+Get-Service -Name win* | Sort-Object StartType | Format-Table -GroupBy StartType
 ```
-PS> Get-Process -Name powershell | Format-Table -Wrap -AutoSize -Property Name,I
-d,Path -GroupBy Company
 
-   Company: Microsoft Corporation
+```Output
+   StartType: Automatic
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinDefend          Windows Defender Antivirus Service
+Running  Winmgmt            Windows Management Instrumentation
+Running  WinRM              Windows Remote Management (WS-Managem…
 
-Name         Id Path
-----         -- ----
-powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
-powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
+   StartType: Manual
+Status   Name               DisplayName
+------   ----               -----------
+Running  WinHttpAutoProxyS… WinHTTP Web Proxy Auto-Discovery Serv…
 ```

@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 09/30/2019
-ms.openlocfilehash: 744fa95e42b0cf6eb28db0c7014d07f143174214
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692175"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444366"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -64,23 +64,24 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    在遠端電腦上建立裝載 PowerShell 處理程序的 SSH 子系統：
 
    ```
-   Subsystem powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
-   > OpenSSH for Windows 中有一個 Bug，會讓空格無法在子系統可執行檔路徑中運作。 如需詳細資訊，請參閱此 [GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
-
-   解決方案建立連到 PowerShell 安裝目錄的符號連結 (不含空格)：
-
-   ```powershell
-   New-Item -ItemType SymbolicLink -Path "C:\pwshdir" -Value "C:\Program Files\PowerShell\6"
-   ```
-
-   使用子系統中 PowerShell 可執行檔的符號連結路徑：
-
-   ```
-   Subsystem powershell C:\pwshdir\pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+   > 您必須針對任何包含空格的檔案路徑使用 8.3 簡短名稱。 OpenSSH for Windows 中有一個 Bug，會讓空格無法在子系統可執行檔路徑中運作。 如需詳細資訊，請參閱此 [GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
+   >
+   > Windows 中 `Program Files` 資料夾的 8.3 簡短名稱通常是 `Progra~1`。 但您可以使用下列命令來確保：
+   >
+   > ```powershell
+   > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
+   >   Select-Object EightDotThreeFileName
+   > ```
+   >
+   > ```Output
+   > EightDotThreeFileName
+   > ---------------------
+   > c:\progra~1
+   > ```
 
    選擇性啟用金鑰驗證：
 

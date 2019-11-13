@@ -2,18 +2,25 @@
 title: 在 macOS 上安裝 PowerShell Core
 description: 在 macOS 上安裝 PowerShell Core 的相關資訊
 ms.date: 12/12/2018
-ms.openlocfilehash: a53cb5b7e159635dac45fb9ca3df28e86dffc653
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: ad1306e99261e8e6e2fd49d3199d863929c31e92
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325268"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444437"
 ---
 # <a name="installing-powershell-core-on-macos"></a>在 macOS 上安裝 PowerShell Core
 
 PowerShell Core 支援 macOS 10.12 和更版本。
 GitHub [版本][]頁面上提供所有套件。
 安裝套件之後，請從終端機執行 `pwsh`。
+
+> [!TIP]
+> 如果您已安裝 [.NET Core SDK](/dotnet/core/sdk)，就可以輕鬆地將 PowerShell 安裝為 [.NET 通用工具](/dotnet/core/tools/global-tools)。
+>
+> ```
+> dotnet tool install --global PowerShell
+> ```
 
 ## <a name="about-brew"></a>關於 Brew
 
