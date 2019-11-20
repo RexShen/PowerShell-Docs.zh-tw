@@ -2,12 +2,12 @@
 ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: PowerShell 5.0 ISE 的新功能
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746217"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117508"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE 的新功能
 
@@ -201,4 +201,4 @@ Windows PowerShell ISE 2.0 沒有這些編輯增強功能。
 
 ## <a name="see-also"></a>另請參閱
 
-如需使用 Windows PowerShell ISE 的詳細資訊，請參閱[探索 Windows PowerShell 整合式指令碼環境](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)。
+如需使用 Windows PowerShell ISE 的詳細資訊，請參閱[探索 Windows PowerShell 整合式指令碼環境](../components/ise/exploring-the-windows-powershell-ise.md)。
