@@ -2,12 +2,12 @@
 title: 如何在 Visual Studio Code 中複寫 ISE 體驗
 description: 如何在 Visual Studio Code 中複寫 ISE 體驗
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058500"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117453"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>如何在 Visual Studio Code 中複寫 ISE 體驗
 
@@ -27,12 +27,29 @@ ms.locfileid: "62058500"
 
 您也可以在 VSCode 中[設定自己的按鍵繫結關係](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) \(英文\)。
 
+## <a name="simplified-ise-like-ui"></a>簡化的類 ISE UI
+
+如果您想要簡化 Visual Studio Code UI，讓它看起來更類似 ISE 的 UI，請套用下列兩項設定：
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+這會隱藏下方紅色方塊內的「活動列」和「偵錯側邊欄」區段：
+
+![醒目提示的區段包含活動列與偵錯側邊欄](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+最終結果如下所示：
+
+![簡化的 VS Code 檢視](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
 ## <a name="tab-completion"></a>Tab 鍵自動完成
 
 若要啟用更類似 ISE 的 Tab 鍵自動完成，請新增此設定：
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -64,7 +81,7 @@ ms.locfileid: "62058500"
 若要讓新/未命名的檔案預設註冊為 PowerShell：
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## <a name="color-scheme"></a>色彩配置
@@ -77,7 +94,7 @@ ms.locfileid: "62058500"
 您可以在設定中透過下項目設定此佈景主題：
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## <a name="powershell-command-explorer"></a>PowerShell 命令總管

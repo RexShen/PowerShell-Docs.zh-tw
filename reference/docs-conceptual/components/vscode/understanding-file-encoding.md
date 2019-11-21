@@ -2,12 +2,12 @@
 title: 了解 VSCode 與 PowerShell 中的檔案編碼
 description: 設定 VSCode 與 PowerShell 中的檔案編碼
 ms.date: 02/28/2019
-ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058432"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117418"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>了解 VSCode 與 PowerShell 中的檔案編碼
 
@@ -15,7 +15,7 @@ ms.locfileid: "62058432"
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>什麼是檔案編碼，以及它為何如此重要？
 
-VSCode 管理緩衝區中人工輸入的字元字串和檔案系統位元組之讀取/寫入區塊間的介面。 當 VSCode 儲存檔案時，它會使用文字編碼來執行這項操作。
+VSCode 管理緩衝區中人工輸入的字元字串和檔案系統位元組之讀取/寫入區塊間的介面。 當 VSCode 儲存檔案時，它會使用文字編碼來決定每個字元會變成多少位元組。
 
 同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VSCode 寫入檔案，而 PowerShell 讀取檔案，所以它們需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為：*位元組*  ->  *字元*  ->  *權杖*  ->  *抽象語法樹*  ->  *執行*。
 
@@ -27,9 +27,10 @@ VSCode 和 PowerShell 都使用合理的預設編碼設定來安裝。 不過，
 
 使用非 [7 位元 ASCII 字元集](https://ascii.cl/)字元時，最可能發生編碼問題。 例如：
 
+- 擴充的非字母字元，例如長破折號 (`—`)、不分行空格 (` `) 或左雙引號 (`“`)
 - 有重音符號的拉丁字元 (`É`、`ü`)
 - 斯拉夫文等非拉丁字元 (`Д`、`Ц`)
-- 中文漢字 (`脚`、`本`)
+- CJK 字元 (`本`、`화`、`が`)
 
 編碼問題的常見原因如下：
 
@@ -262,7 +263,7 @@ ISE 應該會接受 BOM，但它也可能使用反映來[設定編碼](https://b
   - [#1680](https://github.com/PowerShell/vscode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/vscode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/vscode-powershell/issues/1751)
-- [傳統「約耳談軟體」有關 Unicode 的文章](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [傳統「約耳談軟體」  有關 Unicode 的文章](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [.NET Standard 中的編碼](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 
