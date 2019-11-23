@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 （VB.NET）程式碼範例 |Microsoft Docs
+title: RunSpace03 (VB.NET) Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e744caf0201a6e2a7fbf86138d7b28e4f14d549f
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72366517"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417959"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) 程式碼範例
 
-以下是主控台應用程式的 VB.NET 原始程式碼，如「建立執行指定腳本的主控台應用程式」中所述。 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行腳本，以抓取傳入腳本的進程名稱清單的處理常式資訊。 它會示範如何將輸入物件傳遞至腳本，以及如何抓取錯誤物件以及輸出物件。
+Here is the VB.NET source code for the console application described in "Creating a Console Application That Runs a Specified Script". This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script. It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.
 
 > [!NOTE]
-> 您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此範例的 VB.NET 原始程式檔（runspace03）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
-> 下載的來源檔案可在 **@no__t 1PowerShell 範例 >** 目錄中取得。
+> You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>Code Sample
 
 ```vb
 Imports System
@@ -107,6 +107,6 @@ End Namespace
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

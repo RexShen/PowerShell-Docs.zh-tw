@@ -1,5 +1,5 @@
 ---
-title: 建立 Windows PowerShell 專案提供者 |Microsoft Docs
+title: Creating a Windows PowerShell Item Provider | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,246 +11,246 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: a2d0f2b435b4b56ac491804f3af695641449e17a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360497"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417497"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
 
-本主題說明如何建立可運算元據存放區中資料的 Windows PowerShell 提供者。 在本主題中，存放區中的資料元素稱為資料存放區的「專案」。 因此，可以操控存放區中資料的提供者稱為 Windows PowerShell 專案提供者。
+This topic describes how to create a Windows PowerShell provider that can manipulate the data in a data store. In this topic, the elements of data in the store are referred to as the "items" of the data store. As a consequence, a provider that can manipulate the data in the store is referred to as a Windows PowerShell item provider.
 
 > [!NOTE]
-> 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider03.cs）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> 下載的來源檔案可在 **@no__t 1PowerShell 範例 >** 目錄中取得。
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
-> 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-本主題所描述的 Windows PowerShell 專案提供者會從 Access 資料庫取得資料的專案。 在此情況下，「專案」是 Access 資料庫中的資料表或資料表中的資料列。
+The Windows PowerShell item provider described in this topic gets items of data from an Access database. In this case, an "item" is either a table in the Access database or a row in a table.
 
-## <a name="defining-the-windows-powershell-item-provider-class"></a>定義 Windows PowerShell 專案提供者類別
+## <a name="defining-the-windows-powershell-item-provider-class"></a>Defining the Windows PowerShell Item Provider Class
 
-Windows PowerShell 專案提供者必須定義一個衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基類的 .net 類別（class）。 以下是本節所述之專案提供者的類別定義。
+A Windows PowerShell item provider must define a .NET class that derives from the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. The following is the class definition for the item provider described in this section.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
 
-請注意，在此類別定義中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個參數會為 Windows PowerShell 所使用的提供者指定易記的名稱。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 特定功能。 對於此提供者，並未新增 Windows PowerShell 特有的功能。
+Note that in this class definition, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no added Windows PowerShell specific capabilities.
 
-## <a name="defining-base-functionality"></a>定義基本功能
+## <a name="defining-base-functionality"></a>Defining Base Functionality
 
-如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別衍生自數個其他提供不同提供者功能的類別。 因此，Windows PowerShell 專案提供者必須定義這些類別所提供的所有功能。
+As described in [Design Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md), the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class derives from several other classes that provided different provider functionality. A Windows PowerShell item provider, therefore, must define all of the functionality provided by those classes.
 
-如需如何執行功能來新增會話特定初始化資訊以及釋放提供者所使用之資源的詳細資訊，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。 不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
+For more information about how to implement functionality for adding session-specific initialization information and for releasing resources used by the provider, see [Creating a Basic Windows PowerShell Provider](./creating-a-basic-windows-powershell-provider.md). However, most providers, including the provider described here, can use the default implementation of this functionality that is provided by Windows PowerShell.
 
-在 Windows PowerShell 專案提供者可以操作存放區中的專案之前，必須先執行[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基類的方法，以存取資料存放區。 如需有關如何執行此類別的詳細資訊，請參閱[建立 Windows PowerShell 磁片磁碟機提供者](./creating-a-windows-powershell-drive-provider.md)。
+Before the Windows PowerShell item provider can manipulate the items in the store, it must implement the methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class to access to the data store. For more information about implementing this class, see [Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
 
-## <a name="checking-for-path-validity"></a>檢查路徑有效性
+## <a name="checking-for-path-validity"></a>Checking for Path Validity
 
-在尋找資料的專案時，Windows PowerShell 執行時間會 furnishes windows powershell 對提供者的路徑，如[Windows Powershell 運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)的「PSPath 概念」一節中所定義。 Windows PowerShell 專案提供者必須藉由執行[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法，驗證傳遞給它的任何路徑的語法和語義有效性。 如果路徑有效，這個方法會傳回 `true`，否則會傳回 `false`。 請注意，這個方法的執行不應該驗證專案是否存在於路徑，但只有路徑在語法上和語義正確。
+When looking for an item of data, the Windows PowerShell runtime furnishes a Windows PowerShell path to the provider, as defined in the "PSPath Concepts" section of [How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58). An Windows PowerShell item provider must verify the syntactic and semantic validity of any path passed to it by implementing the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method. This method returns `true` if the path is valid, and `false` otherwise. Be aware that the implementation of this method should not verify the existence of the item at the path, but only that the path is syntactically and semantically correct.
 
-以下是此提供者的[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法的執行。 請注意，此實作為呼叫 NormalizePath helper 方法，以將路徑中的所有分隔符號轉換成統一的。
+Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) method for this provider. Note that this implementation calls a NormalizePath helper method to convert all separators in the path to a uniform one.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
 
-## <a name="determining-if-an-item-exists"></a>判斷專案是否存在
+## <a name="determining-if-an-item-exists"></a>Determining if an Item Exists
 
-驗證路徑之後，Windows PowerShell 執行時間必須判斷該路徑上是否有資料的專案。 為了支援這種類型的查詢，Windows PowerShell 專案提供者會執行[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法。 這個方法會傳回 `true`：在指定的路徑找到專案，否則 `false` （預設值）。
+After verifying the path, the Windows PowerShell runtime must determine if an item of data exists at that path. To support this type of query, the Windows PowerShell item provider implements the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method. This method returns `true` an item is found at the specified path and `false` (default) otherwise.
 
-以下是此提供者的[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法的執行。 請注意，這個方法會呼叫 PathIsDrive、ChunkPath 和 GetTable helper 方法，並使用提供者定義的 DatabaseTableInfo 物件。
+Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method for this provider. Note that this method calls the PathIsDrive, ChunkPath, and GetTable helper methods, and uses a provider defined DatabaseTableInfo object.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
 
-#### <a name="things-to-remember-about-implementing-itemexists"></a>執行 ItemExists 的相關事項
+#### <a name="things-to-remember-about-implementing-itemexists"></a>Things to Remember About Implementing ItemExists
 
-下列條件可能適用于您的[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)的執行方式：
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
 
-- 定義 provider 類別時，Windows PowerShell 專案提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法的執行必須確保傳遞至方法的路徑符合指定之功能的需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) method must ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 這個方法的執行應該會處理對專案可能會讓使用者看見專案的任何形式的存取權。 例如，如果使用者透過 FileSystem 提供者（由 Windows PowerShell 提供）擁有檔案的寫入存取權，但不是讀取權限，則檔案仍然存在，而且[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)會傳回 `true`。 您的執行可能需要檢查父專案，以查看子專案是否可以列舉。
+- The implementation of this method should handle any form of access to the item that might make the item visible to the user. For example, if a user has write access to a file through the FileSystem provider (supplied by Windows PowerShell), but not read access, the file still exists and [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) returns `true`. Your implementation might require checking a parent item to see if the child item can be enumerated.
 
-## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>將動態參數附加至測試路徑 Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>Attaching Dynamic Parameters to the Test-Path Cmdlet
 
-有時會呼叫[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)的 `Test-Path` 指令程式需要在執行時間動態指定的其他參數。 若要提供這些動態參數，Windows PowerShell 專案提供者必須執行[ItemCmdletprovider. Itemexistsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)方法。 這個方法會在指定的路徑中抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或 Runtimedefinedparameterdictionary 類似的剖析屬性[。](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 `Test-Path` Cmdlet。
+Sometimes the `Test-Path` cmdlet that calls [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Itemexistsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Test-Path` cmdlet.
 
-這個 Windows PowerShell 專案提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This Windows PowerShell item provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovideritemexistdynamicparameters](Msh_samplestestcmdlets#testprovideritemexistdynamicparameters)]  -->
 
-## <a name="retrieving-an-item"></a>正在抓取專案
+## <a name="retrieving-an-item"></a>Retrieving an Item
 
-若要取出專案，Windows PowerShell 專案提供者必須覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法，以支援來自 `Get-Item` Cmdlet 的呼叫。 這個方法會使用[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法來寫入專案。
+To retrieve an item, the Windows PowerShell item provider must override [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method to support calls from the `Get-Item` cmdlet. This method writes the item using the [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) method.
 
-以下是此提供者的[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法的執行。 請注意，這個方法會使用 GetTable 和 GetRow helper 方法來抓取 Access 資料庫中的資料表或資料表中資料列的專案。
+Here is the implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for this provider. Note that this method uses the GetTable and GetRow helper methods to retrieve items that are either tables in the Access database or rows in a data table.
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
 
-#### <a name="things-to-remember-about-implementing-getitem"></a>執行 GetItem 的相關事項
+#### <a name="things-to-remember-about-implementing-getitem"></a>Things to Remember About Implementing GetItem
 
-下列條件可能適用于[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)的執行程式：
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem):
 
-- 定義 provider 類別時，Windows PowerShell 專案提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)的執行必須確定傳遞至方法的路徑符合這些需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應抓取使用者通常會隱藏的物件。 例如，FileSystem 提供者的[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法在嘗試呼叫之前，會先檢查[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性，然後才會執行此動作。[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)適用于隱藏或系統檔案。
+- By default, overrides of this method should not retrieve objects that are generally hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method for the FileSystem provider checks the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property before it attempts to call [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) for hidden or system files.
 
-## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>將動態參數附加至 Get Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>Attaching Dynamic Parameters to the Get-Item Cmdlet
 
-有時候 @no__t 0 Cmdlet 需要在執行時間動態指定的其他參數。 若要提供這些動態參數，Windows PowerShell 專案提供者必須執行[ItemCmdletprovider. Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)方法。 這個方法會在指定的路徑中抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或 Runtimedefinedparameterdictionary 類似的剖析屬性[。](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 `Get-Item` Cmdlet。
+Sometimes the `Get-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Get-Item` cmdlet.
 
-此提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetitemdynamicparameters](Msh_samplestestcmdlets#testprovidergetitemdynamicparameters)]  -->
 
-## <a name="setting-an-item"></a>設定專案
+## <a name="setting-an-item"></a>Setting an Item
 
-若要設定專案，Windows PowerShell 專案提供者必須覆寫[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支援來自 `Set-Item` Cmdlet 的呼叫。 這個方法會在指定的路徑設定專案的值。
+To set an item, the Windows PowerShell item provider must override the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method to support calls from the `Set-Item` cmdlet. This method sets the value of the item at the specified path.
 
-此提供者不會提供[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法的覆寫。 不過，以下是這個方法的預設執行。
+This provider does not provide an override for the  [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method. However, the following is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitem](Msh_samplestestcmdlets#testprovidersetitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-setitem"></a>執行 SetItem 的相關事項
+#### <a name="things-to-remember-about-implementing-setitem"></a>Things to Remember About Implementing SetItem
 
-下列條件可能適用于您的[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)的執行方式：
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem):
 
-- 定義 provider 類別時，Windows PowerShell 專案提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)的執行必須確定傳遞至方法的路徑符合這些需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應設定或寫入使用者隱藏的物件。 如果路徑代表隱藏的專案，而且[Cmdletprovider.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) Cmdletprovider * 設定為 `false`，則應該將錯誤傳送至 WriteError 方法. [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)會設為。
+- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents a hidden item and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- 您的 ItemCmdletprovider 必須先呼叫[Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，並先驗證其傳回值，再進行此項的[Cmdletprovider ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，然後再進行資料存放區的任何變更。 當資料存放區發生變更（例如刪除檔案）時，會使用這個方法來確認作業的執行。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會將要變更的資源名稱傳送給使用者，並將 Windows PowerShell 執行時間列入考慮中的任何命令列設定或喜好設定變數決定應該顯示的內容。
+- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command-line settings or preference variables in determining what should be displayed.
 
-  在呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)之後，會傳回 `true`，則[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該會呼叫（此[程式）Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法的。 這個方法會將訊息傳送給使用者，以允許意見反應來驗證作業是否應該繼續。 呼叫[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外檢查是否有潛在危險的系統修改。
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
-## <a name="retrieving-dynamic-parameters-for-setitem"></a>正在抓取 SetItem 的動態參數
+## <a name="retrieving-dynamic-parameters-for-setitem"></a>Retrieving Dynamic Parameters for SetItem
 
-有時候 @no__t 0 Cmdlet 需要在執行時間動態指定的其他參數。 若要提供這些動態參數，Windows PowerShell 專案提供者必須執行[ItemCmdletprovider. Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)方法。 這個方法會在指定的路徑中抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或 Runtimedefinedparameterdictionary 類似的剖析屬性[。](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 `Set-Item` Cmdlet。
+Sometimes the `Set-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Set-Item` cmdlet.
 
-此提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidersetitemdynamicparameters](Msh_samplestestcmdlets#testprovidersetitemdynamicparameters)]  -->
 
-## <a name="clearing-an-item"></a>清除專案
+## <a name="clearing-an-item"></a>Clearing an Item
 
-若要清除專案，Windows PowerShell 專案提供者會執行[ItemCmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)方法，以支援來自 `Clear-Item` Cmdlet 的呼叫。 這個方法會清除指定路徑中的資料項目。
+To clear an item, the Windows PowerShell item provider implements the [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) method to support calls from the `Clear-Item` cmdlet. This method erases the data item at the specified path.
 
-此提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitem](Msh_samplestestcmdlets#testproviderclearitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-clearitem"></a>執行 ClearItem 的相關事項
+#### <a name="things-to-remember-about-implementing-clearitem"></a>Things to Remember About Implementing ClearItem
 
-下列條件可能適用于[ItemCmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)的執行程式：
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
 
-- 定義 provider 類別時，Windows PowerShell 專案提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [ItemCmdletprovider. Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)的執行必須確定傳遞至方法的路徑符合這些需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應設定或寫入使用者隱藏的物件。 如果路徑代表使用者和 Cmdletprovider 中隱藏的專案，則應該將錯誤傳送至[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法。 [Cmdletprovider * 是。 Force * 是。強制 *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is。設定為 `false`。
+- By default, overrides of this method should not set or write objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- 您的 ItemCmdletprovider 必須先呼叫[Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，並先驗證其傳回值，再進行此項的[Cmdletprovider ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ，然後再進行資料存放區的任何變更。 當資料存放區發生變更（例如刪除檔案）時，會使用這個方法來確認作業的執行。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會使用 Windows PowerShell 執行時間將資源的名稱傳送給使用者，並在其中處理任何命令列設定或喜好設定變數決定應該顯示的內容。
+- Your implementation of the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to the data store, for example, deleting files. The [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) method sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handle any command-line settings or preference variables in determining what should be displayed.
 
-  在呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)之後，會傳回 `true`，則[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法應該會呼叫（此[程式）Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法的。 這個方法會將訊息傳送給使用者，以允許意見反應來驗證作業是否應該繼續。 呼叫[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外檢查是否有潛在危險的系統修改。
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to verify if the operation should be continued. The call to [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) allows an additional check for potentially dangerous system modifications.
 
-## <a name="retrieve-dynamic-parameters-for-clearitem"></a>取出 ClearItem 的動態參數
+## <a name="retrieve-dynamic-parameters-for-clearitem"></a>Retrieve Dynamic Parameters for ClearItem
 
-有時候 @no__t 0 Cmdlet 需要在執行時間動態指定的其他參數。 若要提供這些動態參數，Windows PowerShell 專案提供者必須執行[ItemCmdletprovider. Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)方法。 這個方法會在指定的路徑中抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或 Runtimedefinedparameterdictionary 類似的剖析屬性[。](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 `Clear-Item` Cmdlet。
+Sometimes the `Clear-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the `Clear-Item` cmdlet.
 
-這個專案提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This item provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderclearitemdynamicparameters](Msh_samplestestcmdlets#testproviderclearitemdynamicparameters)]  -->
 
-## <a name="performing-a-default-action-for-an-item"></a>執行專案的預設動作
+## <a name="performing-a-default-action-for-an-item"></a>Performing a Default Action for an Item
 
-Windows PowerShell 專案提供者可以執行[ItemCmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法，以支援來自 `Invoke-Item` Cmdlet 的呼叫，這可讓提供者執行的預設動作。位於指定路徑的專案。 例如，FileSystem 提供者可能會使用這個方法來呼叫特定專案的 ShellExecute。
+A Windows PowerShell item provider can implement the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) method to support calls from the `Invoke-Item` cmdlet, which allows the provider to perform a default action for the item at the specified path. For example, the FileSystem provider might use this method to call ShellExecute for a specific item.
 
-此提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultaction](Msh_samplestestcmdlets#testproviderinvokedefaultaction)]  -->
 
-#### <a name="things-to-remember-about-implementing-invokedefaultaction"></a>執行 InvokeDefaultAction 的相關事項
+#### <a name="things-to-remember-about-implementing-invokedefaultaction"></a>Things to Remember About Implementing InvokeDefaultAction
 
-下列條件可能適用于[ItemCmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)的執行程式：
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction):
 
-- 定義 provider 類別時，Windows PowerShell 專案提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [ItemCmdletprovider. Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)的執行必須確定傳遞至方法的路徑符合這些需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
+- When defining the provider class, a Windows PowerShell item provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction) must ensure that the path passed to the method meets those requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應設定或寫入使用者隱藏的物件。 如果路徑代表使用者和 Cmdletprovider 中隱藏的專案，則應該將錯誤傳送至[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法。 [Cmdletprovider * 是。 Force * 是。強制 *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is。設定為 `false`。
+- By default, overrides of this method should not set or write objects hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be sent to the [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) method if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>取出 InvokeDefaultAction 的動態參數
+## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>Retrieve Dynamic Parameters for InvokeDefaultAction
 
-有時候 @no__t 0 Cmdlet 需要在執行時間動態指定的其他參數。 若要提供這些動態參數，Windows PowerShell 專案提供者必須執行[ItemCmdletprovider. Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)方法。 這個方法會在指定的路徑中抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或 Runtimedefinedparameterdictionary 類似的剖析屬性[。](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件。 Windows PowerShell 執行時間會使用傳回的物件，將動態參數新增至 `Invoke-Item` Cmdlet。
+Sometimes the `Invoke-Item` cmdlet requires additional parameters that are specified dynamically at runtime. To provide these dynamic parameters the Windows PowerShell item provider must implement the [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultactiondynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters) method. This method retrieves the dynamic parameters for the item at the indicated path and returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the dynamic parameters to the `Invoke-Item` cmdlet.
 
-這個專案提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
+This item provider does not implement this method. However, the following code is the default implementation of this method.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters](Msh_samplestestcmdlets#testproviderinvokedefaultactiondynamicparameters)]  -->
 
-## <a name="implementing-helper-methods-and-classes"></a>執行 Helper 方法和類別
+## <a name="implementing-helper-methods-and-classes"></a>Implementing Helper Methods and Classes
 
-這個專案提供者會執行由 Windows PowerShell 定義的公用覆寫方法所使用的數個 helper 方法和類別。 這些 helper 方法和類別的程式碼會顯示在程式[代碼範例](#code-sample)區段中。
+This item provider implements several helper methods and classes that are used by the public override methods defined by Windows PowerShell. The code for these helper methods and classes are shown in the [Code Sample](#code-sample) section.
 
-### <a name="normalizepath-method"></a>NormalizePath 方法
+### <a name="normalizepath-method"></a>NormalizePath Method
 
-這個專案提供者會實行 NormalizePath helper 方法，以確保路徑具有一致的格式。 指定的格式會使用反斜線（\\）做為分隔符號。
+This item provider implements a NormalizePath helper method to ensure that the path has a consistent format. The format specified uses a backslash (\\) as a separator.
 
-### <a name="pathisdrive-method"></a>PathIsDrive 方法
+### <a name="pathisdrive-method"></a>PathIsDrive Method
 
-這個專案提供者會執行 PathIsDrive helper 方法，以判斷指定的路徑是否實際上是磁片磁碟機名稱。
+This item provider implements a PathIsDrive helper method to determine if the specified path is actually the drive name.
 
-### <a name="chunkpath-method"></a>ChunkPath 方法
+### <a name="chunkpath-method"></a>ChunkPath Method
 
-這個專案提供者會執行 ChunkPath helper 方法來分解指定的路徑，讓提供者能夠識別其個別元素。 它會傳回由 path 元素組成的陣列。
+This item provider implements a ChunkPath helper method that breaks up the specified path so that the provider can identify its individual elements. It returns an array composed of the path elements.
 
-### <a name="gettable-method"></a>GetTable 方法
+### <a name="gettable-method"></a>GetTable Method
 
-這個專案提供者會執行 GetTables helper 方法，它會傳回代表呼叫中所指定資料表之相關資訊的 DatabaseTableInfo 物件。
+This item provider implements the GetTables helper method that returns a DatabaseTableInfo object that represents information about the table specified in the call.
 
-### <a name="getrow-method"></a>GetRow 方法
+### <a name="getrow-method"></a>GetRow Method
 
-這個專案提供者的[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法會呼叫 GetRows helper 方法。 這個 helper 方法會抓取一個 DatabaseRowInfo 物件，它代表資料表中指定之資料列的相關資訊。
+The [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) method of this item provider calls the GetRows helper method. This helper method retrieves a DatabaseRowInfo object that represents information about the specified row in the table.
 
-### <a name="databasetableinfo-class"></a>DatabaseTableInfo 類別
+### <a name="databasetableinfo-class"></a>DatabaseTableInfo Class
 
-這個專案提供者會定義 DatabaseTableInfo 類別，代表資料庫中資料表的資訊集合。 這個類別類似于[Directoryinfo](/dotnet/api/System.IO.DirectoryInfo)類別。
+This item provider defines a DatabaseTableInfo class that represents a collection of information in a data table in the database. This class is similar to the [System.IO.Directoryinfo](/dotnet/api/System.IO.DirectoryInfo) class.
 
-範例專案提供者會定義 DatabaseTableInfo 的 GetTables 方法，它會傳回資料表資訊物件的集合，以定義資料庫中的資料表。 這個方法包含 try/catch 區塊，以確保任何資料庫錯誤都會顯示成包含零個專案的資料列。
+The sample item provider defines a DatabaseTableInfo.GetTables method that returns a collection of table information objects defining the tables in the database. This method includes a try/catch block to ensure that any database error shows up as a row with zero entries.
 
-### <a name="databaserowinfo-class"></a>DatabaseRowInfo 類別
+### <a name="databaserowinfo-class"></a>DatabaseRowInfo Class
 
-這個專案提供者會定義 DatabaseRowInfo helper 類別，以代表資料庫之資料表中的資料列。 這個類別類似于[FileInfo](/dotnet/api/System.IO.FileInfo)類別。
+This item provider defines the DatabaseRowInfo helper class that represents a row in a table of the database. This class is similar to the [System.IO.FileInfo](/dotnet/api/System.IO.FileInfo) class.
 
-範例提供者會定義 DatabaseRowInfo 方法，以傳回指定之資料表的資料列資訊物件集合。 這個方法包含用來攔截例外狀況的 try/catch 區塊。 任何錯誤都不會產生任何資料列資訊。
+The sample provider defines a DatabaseRowInfo.GetRows method to return a collection of row information objects for the specified table. This method includes a try/catch block to trap exceptions. Any errors will result in no row information.
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>Code Sample
 
-如需完整的範例程式碼，請參閱[AccessDbProviderSample03 程式碼範例](./accessdbprovidersample03-code-sample.md)。
+For complete sample code, see [AccessDbProviderSample03 Code Sample](./accessdbprovidersample03-code-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-撰寫提供者時，可能需要將成員加入至現有的物件或定義新的物件。 完成時，建立一個類型檔案，Windows PowerShell 可以使用此檔案來識別物件的成員，以及定義如何顯示物件的格式檔案。 如需的詳細資訊，請參閱[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+When writing a provider, it may be necessary to add members to existing objects or define new objects. When finished, create a Types file that Windows PowerShell can use to identify the members of the object and a Format file that defines how the object is displayed. For more information about , see [Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
 
-## <a name="building-the-windows-powershell-provider"></a>建立 Windows PowerShell 提供者
+## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
 
-請參閱[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="testing-the-windows-powershell-provider"></a>測試 Windows PowerShell 提供者
+## <a name="testing-the-windows-powershell-provider"></a>Testing the Windows PowerShell provider
 
-當此 Windows PowerShell 專案提供者向 Windows PowerShell 註冊時，您只能測試提供者的基本和驅動功能。 若要測試專案的操作，您也必須執行[執行容器 Windows PowerShell 提供者](./creating-a-windows-powershell-container-provider.md)中所述的容器功能。
+When this Windows PowerShell item provider is registered with Windows PowerShell, you can only test the basic and drive functionality of the provider. To test the manipulation of items, you must also implement container functionality described in [Implementing a Container Windows PowerShell Provider](./creating-a-windows-powershell-container-provider.md).
 
 ## <a name="see-also"></a>另請參閱
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
-[建立 Windows PowerShell 提供者](./how-to-create-a-windows-powershell-provider.md)
+[Creating Windows PowerShell Providers](./how-to-create-a-windows-powershell-provider.md)
 
-[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)
+[Designing Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Windows PowerShell 的運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[How Windows PowerShell Works](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
-[建立容器 Windows PowerShell 提供者](./creating-a-windows-powershell-container-provider.md)
+[Creating a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
 
-[建立磁片磁碟機 Windows PowerShell 提供者](./creating-a-windows-powershell-drive-provider.md)
+[Creating a Drive Windows PowerShell provider](./creating-a-windows-powershell-drive-provider.md)
 
-[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

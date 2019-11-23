@@ -1,35 +1,40 @@
 ---
-title: 如何撰寫 PowerShell 腳本模組 |Microsoft Docs
+title: How to Write a PowerShell Script Module | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 11/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 7742eedd67283535b9e5898adc74d0d48faf68fe
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360687"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416270"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>如何撰寫 PowerShell 指令碼模組
 
-腳本模組基本上是儲存在 .psm1 副檔名中的任何有效 PowerShell 腳本。 此延伸模組可讓 PowerShell 引擎在您的檔案上使用多個規則和 Cmdlet。 其中大部分的功能都可協助您在其他系統上安裝程式碼，以及管理範圍。 您也可以使用模組資訊清單檔案，它可以描述更複雜的安裝和解決方案。
+A script module is any valid PowerShell script saved in a `.psm1` extension. This extension allows the PowerShell engine to use rules and module cmdlets on your file. Most of these capabilities are there to help you install your code on other systems, as well as manage scoping. You can also use a module manifest file, which describes more complex installations and solutions.
 
-## <a name="writing-a-powershell-script-module"></a>撰寫 PowerShell 腳本模組
+## <a name="writing-a-powershell-script-module"></a>Writing a PowerShell script module
 
-若要建立腳本模組，請將有效的 PowerShell 腳本儲存至 .psm1 檔案，然後將該檔案儲存在 PowerShell 可以找到該檔案的目錄中。 在該資料夾中，您也可以放置執行腳本所需的任何資源，以及向 PowerShell 描述模組運作方式的資訊清單檔案。
+To create a script module, save a valid PowerShell script to a `.psm1` file. The script and the directory where it's stored must use the same name. For example, a script named `MyPsScript.psm1` is stored in a directory named `MyPsScript`.
 
-#### <a name="to-create-a-basic-powershell-module"></a>建立基本 PowerShell 模組
+The module's directory needs to be in a path specified in `$env:PSModulePath`. The module's directory can contain any resources that are needed to run the script, and a module manifest file that describes to PowerShell how your module works.
 
-1. 採用現有的 PowerShell 腳本，並以 .psm1 副檔名儲存腳本。
+## <a name="create-a-basic-powershell-module"></a>Create a basic PowerShell module
 
-   儲存副檔名為 .psm1 的腳本，表示您可以在其上使用模組 Cmdlet，[例如 import-module。](/powershell/module/Microsoft.PowerShell.Core/Import-Module) 這些 Cmdlet 主要是為了讓您可以輕鬆地將程式碼匯入和匯出至其他使用者的系統。 （替代方案是在其他系統上載入您的程式碼，然後將其指向使用中的記憶體，這不是特別可擴充的解決方案）。如需詳細資訊，請參閱[Windows PowerShell 模組](./understanding-a-windows-powershell-module.md)中的**模組 Cmdlet 和變數**一節，請注意，根據預設，匯入 .psm1 檔案的使用者可以存取腳本中的所有函式，但不會有屬性。
+The following steps describe how to create a PowerShell module.
 
-   本主題的結尾有提供 @no__t 為-0 的 PowerShell 腳本範例。
+1. Save a PowerShell script with a `.psm1` extension. Use the same name for the script and the directory where the script is saved.
+
+   Saving a script with the `.psm1` extension means that you can use the module cmdlets, such as [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module). The module cmdlets exist primarily so that you can import and export your code onto other user's systems. The alternate solution would be to load your code on other systems and then dot-source it into active memory, which isn't a scalable solution. For more information, see [Understanding a Windows PowerShell Module](./understanding-a-windows-powershell-module.md#module-cmdlets-and-variables).
+   By default, when users import your `.psm1` file, all functions in your script are accessible, but variables aren't.
+
+   An example PowerShell script, entitled `Show-Calendar`, is available at the end of this article.
 
    ```powershell
    function Show-Calendar {
@@ -45,9 +50,9 @@ ms.locfileid: "72360687"
    }
    ```
 
-2. 若要控制使用者對特定函數或屬性的存取權，請在腳本結尾呼叫[export-modulemember 的匯出](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)。
+2. To control user access to certain functions or variables, call [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) at the end of your script.
 
-   頁面底部的範例程式碼只有一個函式，預設會公開此函式。 不過，建議您明確地呼叫您想要公開的函式，如下列程式碼所述：
+   The example code at the bottom of the article has only one function, which by default would be exposed. However, it's recommended you explicitly call out which functions you wish to expose, as described in the following code:
 
    ```powershell
    function Show-Calendar {
@@ -55,37 +60,38 @@ ms.locfileid: "72360687"
    Export-ModuleMember -Function Show-Calendar
    ```
 
-   您也可以使用模組資訊清單來限制匯入的內容。 如需詳細資訊，請參閱匯[入 Powershell 模組](./importing-a-powershell-module.md)和[如何撰寫 Powershell 模組資訊清單](./how-to-write-a-powershell-module-manifest.md)。
+   You can restrict what's imported using a module manifest. For more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md) and [How to Write a PowerShell Module Manifest](./how-to-write-a-powershell-module-manifest.md).
 
-3. 如果您有自己模組需要載入的模組，您可以在自己模組的頂端呼叫 `Import-Module` 來使用它們。
+3. If you have modules that your own module needs to load, you can use `Import-Module`, at the top of your module.
 
-   `Import-Module` 是將目的模組匯入系統上的 Cmdlet。 因此，在稍後的程式中也會使用它來安裝您自己的模組。 此頁面底部的範例程式碼不會使用任何匯入模組。 不過，如果已這麼做，則會列在檔案的頂端，如下列程式碼所述：
+   The `Import-Module` cmdlet imports a targeted module onto a system, and can be used at a later point in the procedure to install your own module. The sample code at the bottom of this article doesn't use any import modules. But if it did, they would be listed at the top of the file, as shown in the following code:
 
    ```powershell
    Import-Module GenericModule
    ```
 
-4. 若要向 PowerShell 說明系統描述您的模組，您可以在檔案內使用標準說明批註，或建立額外的說明檔。
+4. To describe your module to the PowerShell Help system, you can either use standard help comments inside the file, or create an additional Help file.
 
-   本主題底部的程式碼範例包含批註中的說明資訊。 您也可以撰寫包含其他說明內容的擴充 XML 檔案。 如需詳細資訊，請參閱[撰寫 Windows PowerShell 模組的](./writing-help-for-windows-powershell-modules.md)說明。
+   The code sample at the bottom of this article includes the help information in the comments. You could also write expanded XML files that contain additional help content. For more information, see [Writing Help for Windows PowerShell Modules](./writing-help-for-windows-powershell-modules.md).
 
-5. 如果您有其他模組、XML 檔案或其他您想要使用模組封裝的內容，您可以使用模組資訊清單來執行此動作。
+5. If you have additional modules, XML files, or other content you want to package with your module, you can use a module manifest.
 
-   模組資訊清單是一個檔案，其中包含其他模組的名稱、目錄配置、版本控制編號、作者資料和其他資訊片段。 PowerShell 會使用模組資訊清單檔案來組織和部署您的解決方案。 不過，由於此範例的本質相當簡單，因此不需要資訊清單檔案。 如需詳細資訊，請參閱[模組資訊清單](./how-to-write-a-powershell-module-manifest.md)。
+   A module manifest is a file that contains the names of other modules, directory layouts, versioning numbers, author data, and other pieces of information. PowerShell uses the module manifest file to organize and deploy your solution. For more information, see [How to write a PowerShell module manifest](./how-to-write-a-powershell-module-manifest.md).
 
-6. 若要安裝並執行您的模組，請將模組儲存到其中一個適當的 PowerShell 路徑，並對 `Import-Module` 進行呼叫。
+6. To install and run your module, save the module to one of the appropriate PowerShell paths, and use `Import-Module`.
 
-   您可以安裝模組的路徑位於 `$env:PSModulePath` 全域變數中。 例如，在系統上儲存模組的一般路徑會 `%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`。 請務必建立一個資料夾，讓您的模組存在於中，即使它只是一個 .psm1 檔案也一樣。 如果您未將模組儲存到其中一個路徑，您就必須在 `Import-Module` 的呼叫中傳入模組的位置。 （否則，PowerShell 就找不到它）。從 PowerShell 3.0 開始，如果您將模組放在其中一個 PowerShell 模組路徑中，則不需要明確地將它匯入。 當使用者呼叫您的函式時，系統會自動載入您的模組。
-   如需模組路徑的詳細資訊，請參閱匯[入 PowerShell 模組](./importing-a-powershell-module.md)和[PSModulePath 環境變數](./modifying-the-psmodulepath-installation-path.md)。
+   The paths where you can install your module are located in the `$env:PSModulePath` global variable. For example, a common path to save a module on a system would be `%SystemRoot%/users/<user>/Documents/PowerShell/Modules/<moduleName>`. Be sure to create a directory for your module that uses the same name as the script module, even if it's only a single `.psm1` file. If you didn't save your module to one of these paths, you would have to specify the module's location in the `Import-Module` command. Otherwise, PowerShell wouldn't be able to find the module.
 
-7. 若要從作用中的服務移除模組，請呼叫[Remove 模組](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)。
+   Starting with PowerShell 3.0, if you've placed your module in one of the PowerShell module paths, you don't need to explicitly import it. Your module is automatically loaded when a user calls your function. For more information about the module path, see [Importing a PowerShell Module](./importing-a-powershell-module.md) and [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md).
 
-   請注意，[移除模組](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)會從使用中記憶體中移除您的模組，而不會實際將它從您儲存模組檔案的位置刪除。
+7. To remove a module from active service in the current PowerShell session, use [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
-### <a name="show-calendar-code-example"></a>顯示行事歷程序代碼範例
+   > [!NOTE]
+   > `Remove-Module` removes a module from the current PowerShell session, but doesn't uninstall the module or delete the module's files.
 
-下列範例是簡單的腳本模組，其中包含名為 `Show-Calendar` 的單一函數。
-此函式會顯示行事曆的視覺標記法。 此外，此範例包含適用于概要、描述、參數值和範例的 PowerShell 說明字串。 請注意，程式碼的最後一行可確保在匯入模組時，會將 `Show-Calendar` 函數匯出為模組成員。
+## <a name="show-calendar-code-example"></a>Show-Calendar code example
+
+The following example is a script module that contains a single function named `Show-Calendar`. This function displays a visual representation of a calendar. The sample contains the PowerShell Help strings for the synopsis, description, parameter values, and code. When the module is imported, the `Export-ModuleMember` command ensures that the `Show-Calendar` function is exported as a module member.
 
 ```powershell
 <#

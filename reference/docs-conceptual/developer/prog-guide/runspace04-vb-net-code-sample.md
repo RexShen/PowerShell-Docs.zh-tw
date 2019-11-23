@@ -1,5 +1,5 @@
 ---
-title: RunSpace04 （VB.NET）程式碼範例 |Microsoft Docs
+title: RunSpace04  (VB.NET) Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: a0c04adb64ab5f2a9fd42fa7dee3977638d3b535
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72366497"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417941"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>RunSpace04 (VB.NET) 程式碼範例
 
-以下是 Runspace04 範例的 VB.NET 原始程式碼。 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行腳本，以產生終止錯誤。 主應用程式負責攔截錯誤並解讀錯誤記錄。
+Here is the VB.NET source code for the Runspace04 sample. This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
 
 > [!NOTE]
-> 您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此範例的 VB.NET 原始程式檔（runspace02）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
+> You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> 下載的來源檔案可在 **@no__t 1PowerShell 範例 >** 目錄中取得。
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>Code Sample
 
 ```vb
 Imports System
@@ -117,6 +117,6 @@ End Namespace
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: AccessDbProviderSample03 程式碼範例 |Microsoft Docs
+title: AccessDbProviderSample03 Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,25 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
-ms.openlocfilehash: a0493fc73efc77d8a80eaf21f78737ff8db9ddd4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72366997"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417519"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 程式碼範例
 
-下列程式碼示範如何執行[建立 Windows Powershell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 windows powershell 提供者。 此提供者可運算元據存放區中的資料。
+The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md). This provider that can manipulate the data in a data store.
 
 > [!NOTE]
-> 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider03.cs）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
+> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> 下載的來源檔案可在 **@no__t 1PowerShell 範例 >** 目錄中取得。
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 >
-> 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>Code Sample
 
 ```csharp
 using System;
@@ -1001,6 +1001,6 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

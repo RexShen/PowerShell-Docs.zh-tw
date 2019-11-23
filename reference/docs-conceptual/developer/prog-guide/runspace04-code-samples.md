@@ -1,5 +1,5 @@
 ---
-title: RunSpace04 程式碼範例 |Microsoft Docs
+title: RunSpace04 Code Samples | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,30 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cb6fcc47-cf89-43e7-b686-3d60934ce3e7
 caps.latest.revision: 6
-ms.openlocfilehash: 2a3e7598c433027fdd96343829c0606fc7b1c37c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e9a79e90da7e0a8232280fa2275d357cb633f4d6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360157"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416087"
 ---
 # <a name="runspace04-code-samples"></a>RunSpace04 程式碼範例
 
-以下是使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行會產生終止錯誤之腳本的運行時程式碼範例。 主應用程式負責攔截錯誤並解讀錯誤記錄。
+Here is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
 
 > [!NOTE]
-> 您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此執行時間的 VB.NET 原始程式檔（Runspace04）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/developer/installing-the-windows-powershell-sdk)。
+> You can download the VB.NET source file (Runspace04.vb) for this runspace using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> 下載的來源檔案可在 **@no__t 1PowerShell 範例 >** 目錄中取得。
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-如需完整的範例程式碼，請參閱下列主題。
+For complete sample code, see the following topics.
 
 |Language|主題|
 |--------------|-----------|
-|VB.NET|[Runspace01 （VB.NET）程式碼範例](./runspace01-vb-net-code-sample.md)|
+|VB.NET|[Runspace01 (VB.NET) Code Sample](./runspace01-vb-net-code-sample.md)|
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

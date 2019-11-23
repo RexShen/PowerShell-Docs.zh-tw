@@ -1,5 +1,5 @@
 ---
-title: ListControl 之之 entryselectedby 的 SelectionCondition 元素（格式） |Microsoft Docs
+title: SelectionCondition Element for EntrySelectedBy for ListControl (Format) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 7150b29ad84dfb587215ee3e64c356adbd5a6305
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72364817"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417549"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
-定義必須存在才能使用此清單視圖定義的條件。 可以為清單定義指定的選取條件數目沒有限制。
+Defines the condition that must exist to use this definition of the list view. There is no limit to the number of selection conditions that can be specified for a list definition.
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） ListControl 元素（格式） ListEntries 元素（格式） ListEntry 元素（格式）之 entryselectedby 元素（代表的 ListEntry （格式） SelectionCondition 元素）ListEntry 的之 entryselectedby （格式）
+Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element (Format) ListEntry Element (Format) EntrySelectedBy Element for ListEntry (Format) SelectionCondition Element for EntrySelectedBy for ListEntry (Format)
 
 ## <a name="syntax"></a>語法
 
@@ -34,7 +34,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 元素的父元素。
+The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
 
 ### <a name="attributes"></a>屬性
 
@@ -44,39 +44,39 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[ListEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[ListEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本。|
-|[ListEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[ListEntry 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
+|[ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
+|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Optional element.<br /><br /> Specifies the set of .NET types that trigger the condition.|
+|[TypeName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that triggers the condition.|
 
 ### <a name="parent-elements"></a>父元素
 
 |元素|描述|
 |-------------|-----------------|
-|[TableRowEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義使用此資料表專案的 .NET 類型，或必須存在才能使用此專案的條件。|
+|[EntrySelectedBy Element for TableRowEntry (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET types that use this table entry or the condition that must exist for this entry to be used.|
 
 ## <a name="remarks"></a>備註
 
-lWhen 您定義選取條件時，適用下列需求：
+lWhen you are defining a selection condition, the following requirements apply:
 
-- 選取條件必須指定至少一個屬性名稱或腳本區塊，但不能同時指定兩者。
+- The selection condition must specify a least one property name or a script block, but cannot specify both.
 
-- 選取條件可以指定任意數目的 .NET 類型或選擇集，但無法同時指定兩者。
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
-如需如何使用選取條件的詳細資訊，請參閱[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)。
+For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
-如需清單視圖之其他元件的詳細資訊，請參閱[建立清單視圖](./creating-a-list-view.md)。
+For more information about other components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## <a name="see-also"></a>另請參閱
 
-[建立清單視圖](./creating-a-list-view.md)
+[Creating a List View](./creating-a-list-view.md)
 
-[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)
+[Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
 
-[ListEntry 元素（格式）](./listentry-element-for-listcontrol-format.md)
+[ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[ListEntry 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListEntry 之之 entryselectedby 的 TypeName 元素（格式）](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
+[TypeName Element for EntrySelectedBy for ListEntry (Format)](/powershell/scripting/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)

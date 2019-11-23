@@ -1,5 +1,5 @@
 ---
-title: 建立不含參數的 Cmdlet |Microsoft Docs
+title: Creating a Cmdlet without Parameters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,37 +11,37 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: 2685215f41c96955fc662d5eee27fc0e7a31da83
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72369857"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415664"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>建立不含參數的 Cmdlet
 
-本節說明如何建立在不使用參數的情況下，從本機電腦抓取資訊的 Cmdlet，然後將資訊寫入管線。 這裡所述的 Cmdlet 是一個可抓取本機電腦處理常式相關資訊的 Get-Proc Cmdlet，然後在命令列中顯示該資訊。
+This section describes how to create a cmdlet that retrieves information from the local computer without the use of parameters, and then writes the information to the pipeline. The cmdlet described here is a Get-Proc cmdlet that retrieves information about the processes of the local computer, and then displays that information at the command line.
 
 > [!NOTE]
-> 請注意，在撰寫 Cmdlet 時，Windows PowerShell®參考元件會下載到磁片上（預設為 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0）。 它們不會安裝在全域組件快取（GAC）中。
+> Be aware that when writing cmdlets, the Windows PowerShell® reference assemblies are downloaded onto disk (by default at C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0). They are not installed in the Global Assembly Cache (GAC).
 
-## <a name="naming-the-cmdlet"></a>命名 Cmdlet
+## <a name="naming-the-cmdlet"></a>Naming the Cmdlet
 
-Cmdlet 名稱是由指示 Cmdlet 所採取之動作的動詞，以及表示此 Cmdlet 作用之專案的名詞所組成。 因為此範例的 Get 程式 Cmdlet 會抓取進程物件，所以它會使用動詞命令 "Get" （由[Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)列舉所定義）和名詞 "Proc"，表示此 Cmdlet 適用于處理常式專案。
+A cmdlet name consists of a verb that indicates the action the cmdlet takes and a noun that indicates the items that the cmdlet acts upon. Because this sample Get-Proc cmdlet retrieves process objects, it uses the verb "Get", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) enumeration, and the noun "Proc" to indicate that the cmdlet works on process items.
 
-命名 Cmdlet 時，請勿使用下列任何字元： #、（） {} [] &-/\ $;： "' < > &#124;嗎？ @ ` .
+When naming cmdlets, do not use any of the following characters: # , () {} [] & - /\ $ ; : " '<> &#124; ? @ ` .
 
-### <a name="choosing-a-noun"></a>選擇名詞
+### <a name="choosing-a-noun"></a>Choosing a Noun
 
-您應該選擇特定的名詞。 最好是使用前面加上產品名稱之縮寫版本的單數名詞。 此類型的範例 Cmdlet 名稱是 "`Get-SQLServer`"。
+You should choose a noun that is specific. It is best to use a singular noun prefixed with a shortened version of the product name. An example cmdlet name of this type is "`Get-SQLServer`".
 
-### <a name="choosing-a-verb"></a>選擇動詞
+### <a name="choosing-a-verb"></a>Choosing a Verb
 
-您應該使用一組已核准的 Cmdlet 動詞名稱中的動詞。 如需已核准 Cmdlet 動詞命令的詳細資訊，請參閱[Cmdlet 動詞名稱](./approved-verbs-for-windows-powershell-commands.md)。
+You should use a verb from the set of approved cmdlet verb names. For more information about the approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-## <a name="defining-the-cmdlet-class"></a>定義 Cmdlet 類別
+## <a name="defining-the-cmdlet-class"></a>Defining the Cmdlet Class
 
-選擇 Cmdlet 名稱之後，請定義 .NET 類別來執行 Cmdlet。 以下是此範例 Get-Proc Cmdlet 的類別定義：
+Once you have chosen a cmdlet name, define a .NET class to implement the cmdlet. Here is the class definition for this sample Get-Proc cmdlet:
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -54,35 +54,35 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-請注意，在類別定義之前，使用語法 `[Cmdlet(verb, noun, ...)]` 的[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性，是用來將此類別識別為 Cmdlet。 這是所有 Cmdlet 唯一必要的屬性，它可讓 Windows PowerShell 執行時間正確地呼叫它們。 您可以設定屬性關鍵字，以便在必要時進一步宣告類別。 請注意，我們的範例 GetProcCommand 類別的屬性宣告只會宣告 Get-help Cmdlet 的名詞和動詞名稱。
+Notice that previous to the class definition, the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute, with the syntax `[Cmdlet(verb, noun, ...)]`, is used to identify this class as a cmdlet. This is the only required attribute for all cmdlets, and it allows the Windows PowerShell runtime to call them correctly. You can set attribute keywords to further declare the class if necessary. Be aware that the attribute declaration for our sample GetProcCommand class declares only the noun and verb names for the Get-Proc cmdlet.
 
 > [!NOTE]
-> 對於所有的 Windows PowerShell 屬性類別，您可以設定的關鍵字會對應到屬性類別的屬性。
+> For all Windows PowerShell attribute classes, the keywords that you can set correspond to properties of the attribute class.
 
-命名 Cmdlet 的類別時，最好是在類別名稱中反映 Cmdlet 名稱。 若要這麼做，請使用 "VerbNounCommand" 格式，並將 "Verb" 和 "名詞" 取代為 Cmdlet 名稱中使用的動詞和名詞。 如先前的類別定義中所示，範例 Get-Proc Cmdlet 會定義名為 GetProcCommand 的類別，其衍生自[system.object](/dotnet/api/System.Management.Automation.Cmdlet)基類。
+When naming the class of the cmdlet, it is a good practice to reflect the cmdlet name in the class name. To do this, use the form "VerbNounCommand" and replace "Verb" and "Noun" with the verb and noun used in the cmdlet name. As is shown in the previous class definition, the sample Get-Proc cmdlet defines a class called GetProcCommand, which derives from the [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) base class.
 
 > [!IMPORTANT]
-> 如果您想要定義直接存取 Windows PowerShell 執行時間的 Cmdlet，您的 .NET 類別應該衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基類。 如需此類別的詳細資訊，請參閱[建立定義參數集的 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)。
+> If you want to define a cmdlet that accesses the Windows PowerShell runtime directly, your .NET class should derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class. For more information about this class, see [Creating a Cmdlet that Defines Parameter Sets](./adding-parameter-sets-to-a-cmdlet.md).
 
 > [!NOTE]
-> Cmdlet 的類別必須明確標示為公用。 未標示為公用的類別會預設為內部，且不會由 Windows PowerShell 執行時間找到。
+> The class for a cmdlet must be explicitly marked as public. Classes that are not marked as public will default to internal and will not be found by the Windows PowerShell runtime.
 
-Windows PowerShell 會針對其 Cmdlet 類別使用[Microsoft. powershell. 命令](/dotnet/api/Microsoft.PowerShell.Commands)命名空間。 建議您將 Cmdlet 類別放在 API 命名空間的命令命名空間中，例如 xxx. PS. 命令。
+Windows PowerShell uses the [Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands) namespace for its cmdlet classes. It is recommended to place your cmdlet classes in a Commands namespace of your API namespace, for example, xxx.PS.Commands.
 
-## <a name="overriding-an-input-processing-method"></a>覆寫輸入處理方法
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-[System.web](/dotnet/api/System.Management.Automation.Cmdlet)類別提供三種主要的輸入處理方法，其中至少有一個 Cmdlet 必須覆寫。 如需 Windows PowerShell 如何處理記錄的詳細資訊，請參閱[Windows powershell 的運作方式](/previous-versions//ms714658(v=vs.85))。
+The [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet) class provides three main input processing methods, at least one of which your cmdlet must override. For more information about how Windows PowerShell processes records, see [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
 
-針對所有類型的輸入，Windows PowerShell 執行時間會呼叫[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)以啟用處理。 如果您的 Cmdlet 必須執行一些前置處理或設定，可以藉由覆寫此方法來執行此動作。
+For all types of input, the Windows PowerShell runtime calls [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) to enable processing. If your cmdlet must perform some preprocessing or setup, it can do this by overriding this method.
 
 > [!NOTE]
-> Windows PowerShell 使用「記錄」一詞來描述呼叫 Cmdlet 時所提供的參數值集。
+> Windows PowerShell uses the term "record" to describe the set of parameter values supplied when a cmdlet is called.
 
-如果您的 Cmdlet 接受管線輸入，它就必須覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，並選擇性地覆寫[system.servicemodel 方法和。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 例如，Cmdlet 可能會覆寫這兩個方法（如果它會使用[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)來收集所有輸入），然後一次在輸入上當做整體而不是一個元素來操作，如同 `Sort-Object` Cmdlet 一樣。
+If your cmdlet accepts pipeline input, it must override the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method, and optionally the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. For example, a cmdlet might override both methods if it gathers all input using [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) and then operates on the input as a whole rather than one element at a time, as the `Sort-Object` cmdlet does.
 
-如果您的 Cmdlet 不接受管線輸入，它應該覆寫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法。 請注意，當 Cmdlet 一次無法在一個專案上操作時，通常會使用這個方法來取代[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ，這就是排序 Cmdlet 的情況。
+If your cmdlet does not take pipeline input, it should override the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method. Be aware that this method is frequently used in place of [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) when the cmdlet cannot operate on one element at a time, as is the case for a sorting cmdlet.
 
-由於此範例的 Get 程式 Cmdlet 必須接收管線輸入，因此它會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，並使用 BeginProcessing 的預設實作為[功能。](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)和[System.web. Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)覆寫會抓取進程，並使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法將它們寫入至命令列中的程式碼。
+Because this sample Get-Proc cmdlet must receive pipeline input, it overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method and uses the default implementations for [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) and [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing). The [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) override retrieves processes and writes them to the command line using the [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) method.
 
 ```csharp
 protected override void ProcessRecord()
@@ -114,44 +114,44 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-#### <a name="things-to-remember-about-input-processing"></a>輸入處理需要注意的事項
+#### <a name="things-to-remember-about-input-processing"></a>Things to Remember About Input Processing
 
-- 輸入的預設來源是使用者在命令列上提供的明確物件（例如字串）。 如需詳細資訊，請參閱[建立 Cmdlet 來處理命令列輸入](./adding-parameters-that-process-command-line-input.md)。
+- The default source for input is an explicit object (for example, a string) provided by the user on the command line. For more information, see [Creating a Cmdlet to Process Command Line Input](./adding-parameters-that-process-command-line-input.md).
 
-- 輸入處理方法也可以從管線上上游 Cmdlet 的輸出物件接收輸入。 如需詳細資訊，請參閱[建立 Cmdlet 來處理管線輸入](./adding-parameters-that-process-pipeline-input.md)。 請注意，您的 Cmdlet 可以從命令列和管線來源的組合接收輸入。
+- An input processing method can also receive input from the output object of an upstream cmdlet on the pipeline. For more information, see [Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md). Be aware that your cmdlet can receive input from a combination of command-line and pipeline sources.
 
-- 下游 Cmdlet 可能不會傳回長時間，或根本不會傳回。 基於這個理由，您 Cmdlet 中的輸入處理方法不應在呼叫[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)時保留鎖定，尤其是範圍延伸超過 Cmdlet 實例的鎖定。
+- The downstream cmdlet might not return for a long time, or not at all. For that reason, the input processing method in your cmdlet should not hold locks during calls to [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject), especially locks for which the scope extends beyond the cmdlet instance.
 
 > [!IMPORTANT]
-> Cmdlet 絕對不應呼叫[system.object *](/dotnet/api/System.Console.WriteLine)或其對等的。
+> Cmdlets should never call [System.Console.Writeline*](/dotnet/api/System.Console.WriteLine) or its equivalent.
 
-- 當程式完成處理時，您的 Cmdlet 可能會有要清除的物件變數（例如，如果它在[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中開啟檔案控制代碼，並讓控制碼保持開啟以供使用[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)）：。 請務必記住，Windows PowerShell 執行時間不一定會呼叫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，這應該會執行物件清除。
+- Your cmdlet might have object variables to clean up when it is finished processing (for example, if it opens a file handle in the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method and keeps the handle open for use by [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)). It is important to remember that the Windows PowerShell runtime does not always call the [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) method, which should perform object cleanup.
 
-例如，如果指令程式中途取消，或 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.object](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 。 因此，需要物件清理的 Cmdlet 應該會執行完整的[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以同時呼叫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)和處理結束時的 [IDisposable](/dotnet/api/System.IDisposable.Dispose)。
+For example, [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) might not be called if the cmdlet is canceled midway or if a terminating error occurs in any part of the cmdlet. Therefore, a cmdlet that requires object cleanup should implement the complete [System.IDisposable](/dotnet/api/System.IDisposable) pattern, including the finalizer, so that the runtime can call both [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) and [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose) at the end of processing.
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>Code Sample
 
-如需完整C#的範例程式碼，請參閱[GetProcessSample01 範例](./getprocesssample01-sample.md)。
+For the complete C# sample code, see [GetProcessSample01 Sample](./getprocesssample01-sample.md).
 
-## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
+## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
 
-Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此，Cmdlet 可能需要定義自己的類型，或 Cmdlet 可能需要擴充另一個 Cmdlet 所提供的現有類型。 如需定義新類型或擴充現有類型的詳細資訊，請參閱[擴充物件類型和格式](/previous-versions//ms714665(v=vs.85))。
+Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>建立 Cmdlet
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-在執行 Cmdlet 之後，您必須透過 Windows powershell 嵌入式管理單元向 Windows PowerShell 註冊它。 如需註冊 Cmdlet 的詳細資訊，請參閱[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))。
+After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>測試 Cmdlet
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-當您的 Cmdlet 已向 Windows PowerShell 註冊時，您可以在命令列上執行它來進行測試。 範例 Proc Cmdlet 的程式碼很小，但它仍會使用 Windows PowerShell 執行時間和現有的 .NET 物件，這足以讓它發揮作用。 讓我們來測試它，以進一步瞭解有哪些程式可執行，以及如何使用其輸出。 如需從命令列使用 Cmdlet 的詳細資訊，請參閱[使用 Windows PowerShell 的消費者入門](/powershell/scripting/getting-started/getting-started-with-windows-powershell)。
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The code for our sample Get-Proc cmdlet is small, but it still uses the Windows PowerShell runtime and an existing .NET object, which is enough to make it useful. Let's test it to better understand what Get-Proc can do and how its output can be used. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-1. 啟動 Windows PowerShell，並取得電腦上正在執行的目前進程。
+1. Start Windows PowerShell, and get the current processes running on the computer.
 
     ```powershell
     get-proc
     ```
 
-    下列輸出隨即出現。
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -163,31 +163,31 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     ...
     ```
 
-2. 將變數指派給 Cmdlet 結果，以方便操作。
+2. Assign a variable to the cmdlet results for easier manipulation.
 
     ```powershell
     $p=get-proc
     ```
 
-3. 取得進程的數目。
+3. Get the number of processes.
 
     ```powershell
     $p.length
     ```
 
-    下列輸出隨即出現。
+    The following output appears.
 
     ```output
     63
     ```
 
-4. 取出特定的進程。
+4. Retrieve a specific process.
 
     ```powershell
     $p[6]
     ```
 
-    下列輸出隨即出現。
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -195,13 +195,13 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     1033     3       2400   3336   35     0.53    1588  rundll32
     ```
 
-5. 取得此程式的開始時間。
+5. Get the start time of this process.
 
     ```powershell
     $p[6].starttime
     ```
 
-    下列輸出隨即出現。
+    The following output appears.
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -215,13 +215,13 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     207
     ```
 
-6. 取得控制碼計數大於500的進程，並將結果排序。
+6. Get the processes for which the handle count is greater than 500, and sort the result.
 
     ```powershell
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    下列輸出隨即出現。
+    The following output appears.
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -233,7 +233,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     ...
     ```
 
-7. 使用 `Get-Member` Cmdlet 來列出每個進程可用的屬性。
+7. Use the `Get-Member` cmdlet to list the properties available for each process.
 
     ```powershell
     $p | Get-Member -MemberType property
@@ -243,7 +243,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
         TypeName: System.Diagnostics.Process
     ```
 
-    下列輸出隨即出現。
+    The following output appears.
 
     ```output
     Name                     MemberType Definition
@@ -256,18 +256,18 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
 
 ## <a name="see-also"></a>另請參閱
 
-[建立 Cmdlet 來處理命令列輸入](./adding-parameters-that-process-command-line-input.md)
+[Creating a Cmdlet to Process Command Line Input](./adding-parameters-that-process-command-line-input.md)
 
-[建立 Cmdlet 來處理管線輸入](./adding-parameters-that-process-pipeline-input.md)
+[Creating a Cmdlet to Process Pipeline Input](./adding-parameters-that-process-pipeline-input.md)
 
-[如何建立 Windows PowerShell Cmdlet](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[擴充物件類型和格式](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[Windows PowerShell 的運作方式](/previous-versions//ms714658(v=vs.85))
+[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
 
-[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell 參考](../windows-powershell-reference.md)
 
-[Cmdlet 範例](./cmdlet-samples.md)
+[Cmdlet Samples](./cmdlet-samples.md)
