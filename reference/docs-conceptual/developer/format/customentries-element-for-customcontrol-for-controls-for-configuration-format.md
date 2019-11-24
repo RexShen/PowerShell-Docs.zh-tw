@@ -15,13 +15,13 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72368817"
 ---
-# <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a><span data-ttu-id="d7d23-102">設定之控制項的 CustomControl 的 CustomEntries 元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="d7d23-102">CustomEntries Element for CustomControl for Controls for Configuration (Format)</span></span>
+# <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a><span data-ttu-id="da8c2-102">設定之控制項的 CustomControl 的 CustomEntries 元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="da8c2-102">CustomEntries Element for CustomControl for Controls for Configuration (Format)</span></span>
 
-<span data-ttu-id="d7d23-103">提供通用控制項的定義。</span><span class="sxs-lookup"><span data-stu-id="d7d23-103">Provides the definitions of a common control.</span></span> <span data-ttu-id="d7d23-104">此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。</span><span class="sxs-lookup"><span data-stu-id="d7d23-104">This element is used when defining a common control that can be used by all the views in the formatting file.</span></span>
+<span data-ttu-id="da8c2-103">提供通用控制項的定義。</span><span class="sxs-lookup"><span data-stu-id="da8c2-103">Provides the definitions of a common control.</span></span> <span data-ttu-id="da8c2-104">此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。</span><span class="sxs-lookup"><span data-stu-id="da8c2-104">This element is used when defining a common control that can be used by all the views in the formatting file.</span></span>
 
-<span data-ttu-id="d7d23-105">Configuration 元素（格式）控制設定（format） CustomControl 元素的設定（格式）控制項專案的設定專案（格式） CustomControl 設定的 CustomEntries 元素（格式）編排</span><span class="sxs-lookup"><span data-stu-id="d7d23-105">Configuration Element (Format) Controls Element of Configuration (Format) Control Element for Controls for Configuration (Format) CustomControl Element for Control for Configuration (Format) CustomEntries Element for CustomControl for Configuration (Format)</span></span>
+<span data-ttu-id="da8c2-105">Configuration 元素（格式）控制設定（format） CustomControl 元素的設定（格式）控制項專案的設定專案（格式） CustomControl 設定的 CustomEntries 元素（格式）編排</span><span class="sxs-lookup"><span data-stu-id="da8c2-105">Configuration Element (Format) Controls Element of Configuration (Format) Control Element for Controls for Configuration (Format) CustomControl Element for Control for Configuration (Format) CustomEntries Element for CustomControl for Configuration (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d7d23-106">語法</span><span class="sxs-lookup"><span data-stu-id="d7d23-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="da8c2-106">語法</span><span class="sxs-lookup"><span data-stu-id="da8c2-106">Syntax</span></span>
 
 ```xml
 <CustomEntries>
@@ -30,34 +30,34 @@ ms.locfileid: "72368817"
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="d7d23-107">屬性與元素</span><span class="sxs-lookup"><span data-stu-id="d7d23-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="da8c2-107">屬性與元素</span><span class="sxs-lookup"><span data-stu-id="da8c2-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="d7d23-108">下列各節說明屬性、子專案，以及 `CustomEntries` 元素的父元素。</span><span class="sxs-lookup"><span data-stu-id="d7d23-108">The following sections describe attributes, child elements, and the parent element of the `CustomEntries` element.</span></span> <span data-ttu-id="d7d23-109">您必須指定一或多個子項目。</span><span class="sxs-lookup"><span data-stu-id="d7d23-109">You must specify one or more child elements.</span></span>
+<span data-ttu-id="da8c2-108">下列各節說明屬性、子專案，以及 `CustomEntries` 專案的父元素。</span><span class="sxs-lookup"><span data-stu-id="da8c2-108">The following sections describe attributes, child elements, and the parent element of the `CustomEntries` element.</span></span> <span data-ttu-id="da8c2-109">您必須指定一或多個子項目。</span><span class="sxs-lookup"><span data-stu-id="da8c2-109">You must specify one or more child elements.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="d7d23-110">屬性</span><span class="sxs-lookup"><span data-stu-id="d7d23-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="da8c2-110">屬性</span><span class="sxs-lookup"><span data-stu-id="da8c2-110">Attributes</span></span>
 
-<span data-ttu-id="d7d23-111">無。</span><span class="sxs-lookup"><span data-stu-id="d7d23-111">None.</span></span>
+<span data-ttu-id="da8c2-111">無。</span><span class="sxs-lookup"><span data-stu-id="da8c2-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="d7d23-112">子元素</span><span class="sxs-lookup"><span data-stu-id="d7d23-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="da8c2-112">子元素</span><span class="sxs-lookup"><span data-stu-id="da8c2-112">Child Elements</span></span>
 
-|<span data-ttu-id="d7d23-113">元素</span><span class="sxs-lookup"><span data-stu-id="d7d23-113">Element</span></span>|<span data-ttu-id="d7d23-114">描述</span><span class="sxs-lookup"><span data-stu-id="d7d23-114">Description</span></span>|
+|<span data-ttu-id="da8c2-113">項目</span><span class="sxs-lookup"><span data-stu-id="da8c2-113">Element</span></span>|<span data-ttu-id="da8c2-114">說明</span><span class="sxs-lookup"><span data-stu-id="da8c2-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="d7d23-115">設定之控制項的 CustomControl 的 CustomEntry 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d7d23-115">CustomEntry Element for CustomControl for Controls for Configuration (Format)</span></span>](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|<span data-ttu-id="d7d23-116">提供通用控制項的定義。</span><span class="sxs-lookup"><span data-stu-id="d7d23-116">Provides a definition of the common control.</span></span>|
+|[<span data-ttu-id="da8c2-115">設定之控制項的 CustomControl 的 CustomEntry 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="da8c2-115">CustomEntry Element for CustomControl for Controls for Configuration (Format)</span></span>](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|<span data-ttu-id="da8c2-116">提供通用控制項的定義。</span><span class="sxs-lookup"><span data-stu-id="da8c2-116">Provides a definition of the common control.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="d7d23-117">父元素</span><span class="sxs-lookup"><span data-stu-id="d7d23-117">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="da8c2-117">父元素</span><span class="sxs-lookup"><span data-stu-id="da8c2-117">Parent Elements</span></span>
 
-|<span data-ttu-id="d7d23-118">元素</span><span class="sxs-lookup"><span data-stu-id="d7d23-118">Element</span></span>|<span data-ttu-id="d7d23-119">描述</span><span class="sxs-lookup"><span data-stu-id="d7d23-119">Description</span></span>|
+|<span data-ttu-id="da8c2-118">項目</span><span class="sxs-lookup"><span data-stu-id="da8c2-118">Element</span></span>|<span data-ttu-id="da8c2-119">說明</span><span class="sxs-lookup"><span data-stu-id="da8c2-119">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="d7d23-120">設定之控制項的 CustomControl 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d7d23-120">CustomControl Element for Control for Configuration (Format)</span></span>](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|<span data-ttu-id="d7d23-121">定義通用控制項。</span><span class="sxs-lookup"><span data-stu-id="d7d23-121">Defines a common control.</span></span>|
+|[<span data-ttu-id="da8c2-120">設定之控制項的 CustomControl 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="da8c2-120">CustomControl Element for Control for Configuration (Format)</span></span>](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|<span data-ttu-id="da8c2-121">定義通用控制項。</span><span class="sxs-lookup"><span data-stu-id="da8c2-121">Defines a common control.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="d7d23-122">備註</span><span class="sxs-lookup"><span data-stu-id="d7d23-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="da8c2-122">備註</span><span class="sxs-lookup"><span data-stu-id="da8c2-122">Remarks</span></span>
 
-<span data-ttu-id="d7d23-123">在大部分的情況下，控制項只有一個定義，定義在單一 @no__t 0 元素中。</span><span class="sxs-lookup"><span data-stu-id="d7d23-123">In most cases, a control has only one definition, which is defined in a single `CustomEntry` element.</span></span> <span data-ttu-id="d7d23-124">不過，如果您想要使用相同的控制項來顯示不同的 .NET 物件，則可能會有多個定義。</span><span class="sxs-lookup"><span data-stu-id="d7d23-124">However it is possible to have multiple definitions if you want to use the same control to display different .NET objects.</span></span> <span data-ttu-id="d7d23-125">在這些情況下，您可以為每個物件或一組物件定義一個 @no__t 0 元素。</span><span class="sxs-lookup"><span data-stu-id="d7d23-125">In those cases, you can define a `CustomEntry` element for each object or set of objects.</span></span>
+<span data-ttu-id="da8c2-123">在大部分的情況下，控制項只有一個定義，在單一 `CustomEntry` 專案中定義。</span><span class="sxs-lookup"><span data-stu-id="da8c2-123">In most cases, a control has only one definition, which is defined in a single `CustomEntry` element.</span></span> <span data-ttu-id="da8c2-124">不過，如果您想要使用相同的控制項來顯示不同的 .NET 物件，則可能會有多個定義。</span><span class="sxs-lookup"><span data-stu-id="da8c2-124">However it is possible to have multiple definitions if you want to use the same control to display different .NET objects.</span></span> <span data-ttu-id="da8c2-125">在這些情況下，您可以為每個物件或一組物件定義一個 `CustomEntry` 元素。</span><span class="sxs-lookup"><span data-stu-id="da8c2-125">In those cases, you can define a `CustomEntry` element for each object or set of objects.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d7d23-126">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d7d23-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da8c2-126">另請參閱</span><span class="sxs-lookup"><span data-stu-id="da8c2-126">See Also</span></span>
 
-[<span data-ttu-id="d7d23-127">設定之控制項的 CustomControl 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d7d23-127">CustomControl Element for Control for Configuration (Format)</span></span>](./customcontrol-element-for-control-for-controls-for-configuration-format.md)
+[<span data-ttu-id="da8c2-127">設定之控制項的 CustomControl 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="da8c2-127">CustomControl Element for Control for Configuration (Format)</span></span>](./customcontrol-element-for-control-for-controls-for-configuration-format.md)
 
-[<span data-ttu-id="d7d23-128">設定之控制項的 CustomControl 的 CustomEntry 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="d7d23-128">CustomEntry Element for CustomControl for Controls for Configuration (Format)</span></span>](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
+[<span data-ttu-id="da8c2-128">設定之控制項的 CustomControl 的 CustomEntry 元素（格式）</span><span class="sxs-lookup"><span data-stu-id="da8c2-128">CustomEntry Element for CustomControl for Controls for Configuration (Format)</span></span>](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[<span data-ttu-id="d7d23-129">撰寫 PowerShell 格式化檔案</span><span class="sxs-lookup"><span data-stu-id="d7d23-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="da8c2-129">撰寫 PowerShell 格式化檔案</span><span class="sxs-lookup"><span data-stu-id="da8c2-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

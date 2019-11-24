@@ -15,17 +15,17 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72366017"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a><span data-ttu-id="596ea-102">使用 PowerShell API 來排程工作</span><span class="sxs-lookup"><span data-stu-id="596ea-102">Scheduling jobs with the PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-powershell-api"></a><span data-ttu-id="a8861-102">使用 PowerShell API 來排程工作</span><span class="sxs-lookup"><span data-stu-id="a8861-102">Scheduling jobs with the PowerShell API</span></span>
 
-<span data-ttu-id="596ea-103">您可以使用**ScheduledJob**命名空間所公開的物件來執行下列動作：</span><span class="sxs-lookup"><span data-stu-id="596ea-103">You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the following:</span></span>
+<span data-ttu-id="a8861-103">您可以使用**ScheduledJob**命名空間所公開的物件來執行下列動作：</span><span class="sxs-lookup"><span data-stu-id="a8861-103">You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the following:</span></span>
 
-- <span data-ttu-id="596ea-104">建立排程工作。</span><span class="sxs-lookup"><span data-stu-id="596ea-104">Create a scheduled job.</span></span>
-- <span data-ttu-id="596ea-105">定義作業執行的時間。</span><span class="sxs-lookup"><span data-stu-id="596ea-105">Define when the job runs.</span></span>
-- <span data-ttu-id="596ea-106">取得已完成之工作的相關結果。</span><span class="sxs-lookup"><span data-stu-id="596ea-106">Get results about the completed job.</span></span>
+- <span data-ttu-id="a8861-104">建立排程工作。</span><span class="sxs-lookup"><span data-stu-id="a8861-104">Create a scheduled job.</span></span>
+- <span data-ttu-id="a8861-105">定義作業執行的時間。</span><span class="sxs-lookup"><span data-stu-id="a8861-105">Define when the job runs.</span></span>
+- <span data-ttu-id="a8861-106">取得已完成之工作的相關結果。</span><span class="sxs-lookup"><span data-stu-id="a8861-106">Get results about the completed job.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="596ea-107">觸發作業</span><span class="sxs-lookup"><span data-stu-id="596ea-107">Triggering the job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="a8861-107">觸發作業</span><span class="sxs-lookup"><span data-stu-id="a8861-107">Triggering the job</span></span>
 
-<span data-ttu-id="596ea-108">建立排程工作的第一個步驟是指定作業應該執行的時間。</span><span class="sxs-lookup"><span data-stu-id="596ea-108">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="596ea-109">若要這麼做，請建立並設定**ScheduledJob. ScheduledJobTrigger**物件。</span><span class="sxs-lookup"><span data-stu-id="596ea-109">Do this by creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object.</span></span> <span data-ttu-id="596ea-110">下列程式碼會建立一個觸發程式，將作業排程為在未來20秒執行一次。</span><span class="sxs-lookup"><span data-stu-id="596ea-110">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="a8861-108">建立排程工作的第一個步驟是指定作業應該執行的時間。</span><span class="sxs-lookup"><span data-stu-id="a8861-108">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="a8861-109">若要這麼做，請建立並設定**ScheduledJob. ScheduledJobTrigger**物件。</span><span class="sxs-lookup"><span data-stu-id="a8861-109">Do this by creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object.</span></span> <span data-ttu-id="a8861-110">下列程式碼會建立一個觸發程式，將作業排程為在未來20秒執行一次。</span><span class="sxs-lookup"><span data-stu-id="a8861-110">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -38,20 +38,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="596ea-111">定義作業</span><span class="sxs-lookup"><span data-stu-id="596ea-111">Defining the job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="a8861-111">定義作業</span><span class="sxs-lookup"><span data-stu-id="a8861-111">Defining the job</span></span>
 
-<span data-ttu-id="596ea-112">您可以藉由建立參數字典來定義 PowerShell 作業。</span><span class="sxs-lookup"><span data-stu-id="596ea-112">You define a PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="596ea-113">支援下列參數：</span><span class="sxs-lookup"><span data-stu-id="596ea-113">The following parameters are supported:</span></span>
+<span data-ttu-id="a8861-112">您可以藉由建立參數字典來定義 PowerShell 作業。</span><span class="sxs-lookup"><span data-stu-id="a8861-112">You define a PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="a8861-113">支援下列參數：</span><span class="sxs-lookup"><span data-stu-id="a8861-113">The following parameters are supported:</span></span>
 
-|<span data-ttu-id="596ea-114">參數名稱</span><span class="sxs-lookup"><span data-stu-id="596ea-114">Parameter Name</span></span>|<span data-ttu-id="596ea-115">描述</span><span class="sxs-lookup"><span data-stu-id="596ea-115">Description</span></span>|
+|<span data-ttu-id="a8861-114">參數名稱</span><span class="sxs-lookup"><span data-stu-id="a8861-114">Parameter Name</span></span>|<span data-ttu-id="a8861-115">說明</span><span class="sxs-lookup"><span data-stu-id="a8861-115">Description</span></span>|
 |--------------------|-----------------|
-|<span data-ttu-id="596ea-116">**檔案名**</span><span class="sxs-lookup"><span data-stu-id="596ea-116">**Name**</span></span>|<span data-ttu-id="596ea-117">作業的名稱。</span><span class="sxs-lookup"><span data-stu-id="596ea-117">The name of the job.</span></span>|
-|<span data-ttu-id="596ea-118">**ScriptBock**</span><span class="sxs-lookup"><span data-stu-id="596ea-118">**ScriptBock**</span></span>|<span data-ttu-id="596ea-119">指定作業作用的 PowerShell 腳本區塊。</span><span class="sxs-lookup"><span data-stu-id="596ea-119">A PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="596ea-120">**FilePath**</span><span class="sxs-lookup"><span data-stu-id="596ea-120">**FilePath**</span></span>|<span data-ttu-id="596ea-121">檔案的路徑，其中包含 PowerShell 腳本區塊來指定作業的功能。</span><span class="sxs-lookup"><span data-stu-id="596ea-121">Path to a file that contains a PowerShell script block to specify what the job does.</span></span>|
-|<span data-ttu-id="596ea-122">**InitializationScript**</span><span class="sxs-lookup"><span data-stu-id="596ea-122">**InitializationScript**</span></span>|<span data-ttu-id="596ea-123">初始化工作的 PowerShell 腳本區塊。</span><span class="sxs-lookup"><span data-stu-id="596ea-123">A PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="596ea-124">**ArgumentList**</span><span class="sxs-lookup"><span data-stu-id="596ea-124">**ArgumentList**</span></span>|<span data-ttu-id="596ea-125">物件的陣列，指定作業所需的引數。</span><span class="sxs-lookup"><span data-stu-id="596ea-125">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="596ea-126">**RunAs32**</span><span class="sxs-lookup"><span data-stu-id="596ea-126">**RunAs32**</span></span>|<span data-ttu-id="596ea-127">布林值，指定是否要在32位進程中執行作業。</span><span class="sxs-lookup"><span data-stu-id="596ea-127">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="a8861-116">**名稱**</span><span class="sxs-lookup"><span data-stu-id="a8861-116">**Name**</span></span>|<span data-ttu-id="a8861-117">作業的名稱。</span><span class="sxs-lookup"><span data-stu-id="a8861-117">The name of the job.</span></span>|
+|<span data-ttu-id="a8861-118">**ScriptBock**</span><span class="sxs-lookup"><span data-stu-id="a8861-118">**ScriptBock**</span></span>|<span data-ttu-id="a8861-119">指定作業作用的 PowerShell 腳本區塊。</span><span class="sxs-lookup"><span data-stu-id="a8861-119">A PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="a8861-120">**FilePath**</span><span class="sxs-lookup"><span data-stu-id="a8861-120">**FilePath**</span></span>|<span data-ttu-id="a8861-121">檔案的路徑，其中包含 PowerShell 腳本區塊來指定作業的功能。</span><span class="sxs-lookup"><span data-stu-id="a8861-121">Path to a file that contains a PowerShell script block to specify what the job does.</span></span>|
+|<span data-ttu-id="a8861-122">**InitializationScript**</span><span class="sxs-lookup"><span data-stu-id="a8861-122">**InitializationScript**</span></span>|<span data-ttu-id="a8861-123">初始化工作的 PowerShell 腳本區塊。</span><span class="sxs-lookup"><span data-stu-id="a8861-123">A PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="a8861-124">**ArgumentList**</span><span class="sxs-lookup"><span data-stu-id="a8861-124">**ArgumentList**</span></span>|<span data-ttu-id="a8861-125">物件的陣列，指定作業所需的引數。</span><span class="sxs-lookup"><span data-stu-id="a8861-125">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="a8861-126">**RunAs32**</span><span class="sxs-lookup"><span data-stu-id="a8861-126">**RunAs32**</span></span>|<span data-ttu-id="a8861-127">布林值，指定是否要在32位進程中執行作業。</span><span class="sxs-lookup"><span data-stu-id="a8861-127">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="596ea-128">下列程式碼會建立參數字典物件，並設定**Name**和**ScriptBlock**參數。</span><span class="sxs-lookup"><span data-stu-id="596ea-128">The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock** parameters.</span></span>
+<span data-ttu-id="a8861-128">下列程式碼會建立參數字典物件，並設定**Name**和**ScriptBlock**參數。</span><span class="sxs-lookup"><span data-stu-id="a8861-128">The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock** parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="596ea-129">建立調用和作業定義物件</span><span class="sxs-lookup"><span data-stu-id="596ea-129">Creating the invocation and job definition objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="a8861-129">建立調用和作業定義物件</span><span class="sxs-lookup"><span data-stu-id="a8861-129">Creating the invocation and job definition objects</span></span>
 
-<span data-ttu-id="596ea-130">接著，您可以建立 `ScheduledJobInvocationInfo` 和 @no__t 1 物件來執行作業，如下列範例所示：</span><span class="sxs-lookup"><span data-stu-id="596ea-130">You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as shown in the following example:</span></span>
+<span data-ttu-id="a8861-130">接著，您可以建立 `ScheduledJobInvocationInfo`，並 `ScheduledJobDefinition` 物件來執行作業，如下列範例所示：</span><span class="sxs-lookup"><span data-stu-id="a8861-130">You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as shown in the following example:</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="596ea-131">使用工作排程器註冊作業</span><span class="sxs-lookup"><span data-stu-id="596ea-131">Registering the job with the task scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="a8861-131">使用工作排程器註冊作業</span><span class="sxs-lookup"><span data-stu-id="a8861-131">Registering the job with the task scheduler</span></span>
 
-<span data-ttu-id="596ea-132">下列程式碼會向[Windows 工作排程器](https://go.microsoft.com/fwlink/?LinkId=251817)註冊作業。</span><span class="sxs-lookup"><span data-stu-id="596ea-132">The following code registers the job with the [Windows Task Scheduler](https://go.microsoft.com/fwlink/?LinkId=251817).</span></span>
+<span data-ttu-id="a8861-132">下列程式碼會向[Windows 工作排程器](https://go.microsoft.com/fwlink/?LinkId=251817)註冊作業。</span><span class="sxs-lookup"><span data-stu-id="a8861-132">The following code registers the job with the [Windows Task Scheduler](https://go.microsoft.com/fwlink/?LinkId=251817).</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="596ea-133">完整程式碼範例</span><span class="sxs-lookup"><span data-stu-id="596ea-133">Complete code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="a8861-133">完整程式碼範例</span><span class="sxs-lookup"><span data-stu-id="a8861-133">Complete code Example</span></span>
 
-<span data-ttu-id="596ea-134">以下是取自先前程式碼片段的完整程式碼範例。</span><span class="sxs-lookup"><span data-stu-id="596ea-134">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="a8861-134">以下是取自先前程式碼片段的完整程式碼範例。</span><span class="sxs-lookup"><span data-stu-id="a8861-134">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;

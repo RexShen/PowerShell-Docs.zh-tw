@@ -15,13 +15,13 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72359797"
 ---
-# <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="85ebe-102">撰寫 Management OData Web 服務的 XML 結構描述檔案</span><span class="sxs-lookup"><span data-stu-id="85ebe-102">Authoring the XML schema file for a Management OData web service</span></span>
+# <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="5a4ab-102">撰寫 Management OData Web 服務的 XML 結構描述檔案</span><span class="sxs-lookup"><span data-stu-id="5a4ab-102">Authoring the XML schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="85ebe-103">定義 web 服務將公開的資源之後（請參閱[撰寫 Management OData web 服務的 MOF 架構](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)檔案），您可以將這些資源對應到基礎 Windows PowerShell Cmdlet，以針對每個執行支援的作業資源，方法是建立符合[資源對應架構](./resource-mapping-schema.md)的 XML 檔案。</span><span class="sxs-lookup"><span data-stu-id="85ebe-103">After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md).</span></span> <span data-ttu-id="85ebe-104">XML 檔案也會指定用戶端用來存取資源的 Url。</span><span class="sxs-lookup"><span data-stu-id="85ebe-104">The XML file also specifies the URLs that are used by the client to access the resources.</span></span>
+<span data-ttu-id="5a4ab-103">定義 web 服務將公開的資源之後（請參閱[撰寫 Management OData web 服務的 MOF 架構](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)檔案），您可以將這些資源對應到基礎 Windows PowerShell Cmdlet，藉由建立符合[資源對應架構](./resource-mapping-schema.md)的 XML 檔案，為每個資源執行支援的作業。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-103">After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md).</span></span> <span data-ttu-id="5a4ab-104">XML 檔案也會指定用戶端用來存取資源的 Url。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-104">The XML file also specifies the URLs that are used by the client to access the resources.</span></span>
 
-## <a name="mappng-resources-to-urls"></a><span data-ttu-id="85ebe-105">Mappng 資源至 Url</span><span class="sxs-lookup"><span data-stu-id="85ebe-105">Mappng resources to URLs</span></span>
+## <a name="mappng-resources-to-urls"></a><span data-ttu-id="5a4ab-105">Mappng 資源至 Url</span><span class="sxs-lookup"><span data-stu-id="5a4ab-105">Mappng resources to URLs</span></span>
 
-<span data-ttu-id="85ebe-106">XML 檔案的第一個部分會將 MOF 架構檔案中定義的資源對應到用來存取它們的 Url。</span><span class="sxs-lookup"><span data-stu-id="85ebe-106">The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them.</span></span> <span data-ttu-id="85ebe-107">下列範例會顯示該對應。</span><span class="sxs-lookup"><span data-stu-id="85ebe-107">The following example shows that mapping.</span></span>
+<span data-ttu-id="5a4ab-106">XML 檔案的第一個部分會將 MOF 架構檔案中定義的資源對應到用來存取它們的 Url。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-106">The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them.</span></span> <span data-ttu-id="5a4ab-107">下列範例會顯示該對應。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-107">The following example shows that mapping.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,18 +40,18 @@ ms.locfileid: "72359797"
     </Resources>
 ```
 
-## <a name="mapping-cmdlets-to-crud-operations"></a><span data-ttu-id="85ebe-108">將 Cmdlet 對應至 CRUD 作業</span><span class="sxs-lookup"><span data-stu-id="85ebe-108">Mapping cmdlets to CRUD operations</span></span>
+## <a name="mapping-cmdlets-to-crud-operations"></a><span data-ttu-id="5a4ab-108">將 Cmdlet 對應至 CRUD 作業</span><span class="sxs-lookup"><span data-stu-id="5a4ab-108">Mapping cmdlets to CRUD operations</span></span>
 
-<span data-ttu-id="85ebe-109">接著，您可以指定對應至資源支援之 CRUD （建立、讀取、更新和刪除）作業的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="85ebe-109">You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support.</span></span> <span data-ttu-id="85ebe-110">在 Management OData[資源對應架構](./resource-mapping-schema.md)中，CRUD 作業的對應方式如下。</span><span class="sxs-lookup"><span data-stu-id="85ebe-110">In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.</span></span>
+<span data-ttu-id="5a4ab-109">接著，您可以指定對應至資源支援之 CRUD （建立、讀取、更新和刪除）作業的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-109">You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support.</span></span> <span data-ttu-id="5a4ab-110">在 Management OData[資源對應架構](./resource-mapping-schema.md)中，CRUD 作業的對應方式如下。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-110">In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.</span></span>
 
-|<span data-ttu-id="85ebe-111">CRUD 命令</span><span class="sxs-lookup"><span data-stu-id="85ebe-111">CRUD command</span></span>|<span data-ttu-id="85ebe-112">XML 元素</span><span class="sxs-lookup"><span data-stu-id="85ebe-112">XML element</span></span>|
+|<span data-ttu-id="5a4ab-111">CRUD 命令</span><span class="sxs-lookup"><span data-stu-id="5a4ab-111">CRUD command</span></span>|<span data-ttu-id="5a4ab-112">XML 元素</span><span class="sxs-lookup"><span data-stu-id="5a4ab-112">XML element</span></span>|
 |------------------|-----------------|
-|<span data-ttu-id="85ebe-113">建立</span><span class="sxs-lookup"><span data-stu-id="85ebe-113">Create</span></span>|<span data-ttu-id="85ebe-114">建立</span><span class="sxs-lookup"><span data-stu-id="85ebe-114">Create</span></span>|
-|<span data-ttu-id="85ebe-115">讀取</span><span class="sxs-lookup"><span data-stu-id="85ebe-115">Read</span></span>|<span data-ttu-id="85ebe-116">查詢</span><span class="sxs-lookup"><span data-stu-id="85ebe-116">Query</span></span>|
-|<span data-ttu-id="85ebe-117">更新</span><span class="sxs-lookup"><span data-stu-id="85ebe-117">Update</span></span>|<span data-ttu-id="85ebe-118">更新</span><span class="sxs-lookup"><span data-stu-id="85ebe-118">Update</span></span>|
-|<span data-ttu-id="85ebe-119">刪除</span><span class="sxs-lookup"><span data-stu-id="85ebe-119">Delete</span></span>|<span data-ttu-id="85ebe-120">刪除</span><span class="sxs-lookup"><span data-stu-id="85ebe-120">Delete</span></span>|
+|<span data-ttu-id="5a4ab-113">建立</span><span class="sxs-lookup"><span data-stu-id="5a4ab-113">Create</span></span>|<span data-ttu-id="5a4ab-114">建立</span><span class="sxs-lookup"><span data-stu-id="5a4ab-114">Create</span></span>|
+|<span data-ttu-id="5a4ab-115">讀取</span><span class="sxs-lookup"><span data-stu-id="5a4ab-115">Read</span></span>|<span data-ttu-id="5a4ab-116">查詢</span><span class="sxs-lookup"><span data-stu-id="5a4ab-116">Query</span></span>|
+|<span data-ttu-id="5a4ab-117">更新</span><span class="sxs-lookup"><span data-stu-id="5a4ab-117">Update</span></span>|<span data-ttu-id="5a4ab-118">更新</span><span class="sxs-lookup"><span data-stu-id="5a4ab-118">Update</span></span>|
+|<span data-ttu-id="5a4ab-119">刪除</span><span class="sxs-lookup"><span data-stu-id="5a4ab-119">Delete</span></span>|<span data-ttu-id="5a4ab-120">刪除</span><span class="sxs-lookup"><span data-stu-id="5a4ab-120">Delete</span></span>|
 
-<span data-ttu-id="85ebe-121">下列範例會顯示 @no__t 0 資源上建立、讀取和更新作業的對應。</span><span class="sxs-lookup"><span data-stu-id="85ebe-121">The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.</span></span>
+<span data-ttu-id="5a4ab-121">下列範例顯示 `Service` 資源上建立、讀取和更新作業的對應。</span><span class="sxs-lookup"><span data-stu-id="5a4ab-121">The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.</span></span>
 
 ```xml
 <ClassImplementations>
@@ -157,10 +157,10 @@ ms.locfileid: "72359797"
         </Class>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="85ebe-122">另請參閱</span><span class="sxs-lookup"><span data-stu-id="85ebe-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5a4ab-122">另請參閱</span><span class="sxs-lookup"><span data-stu-id="5a4ab-122">See Also</span></span>
 
-[<span data-ttu-id="85ebe-123">撰寫 Management OData web 服務的 MOF 架構檔案</span><span class="sxs-lookup"><span data-stu-id="85ebe-123">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="5a4ab-123">撰寫 Management OData web 服務的 MOF 架構檔案</span><span class="sxs-lookup"><span data-stu-id="5a4ab-123">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="85ebe-124">資源對應架構</span><span class="sxs-lookup"><span data-stu-id="85ebe-124">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
+[<span data-ttu-id="5a4ab-124">資源對應架構</span><span class="sxs-lookup"><span data-stu-id="5a4ab-124">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
 
-[<span data-ttu-id="85ebe-125">建立 Management OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="85ebe-125">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="5a4ab-125">建立 Management OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="5a4ab-125">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)

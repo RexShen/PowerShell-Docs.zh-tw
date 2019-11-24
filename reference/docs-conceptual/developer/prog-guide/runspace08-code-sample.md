@@ -15,14 +15,14 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72366477"
 ---
-# <a name="runspace08-code-sample"></a><span data-ttu-id="9e3f9-102">RunSpace08 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="9e3f9-102">RunSpace08 Code Sample</span></span>
+# <a name="runspace08-code-sample"></a><span data-ttu-id="2f6a2-102">RunSpace08 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="2f6a2-102">RunSpace08 Code Sample</span></span>
 
-<span data-ttu-id="9e3f9-103">以下是[建立可將參數新增至命令的主控台應用程式](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba)中所述之 Runspace08 範例的原始程式碼。</span><span class="sxs-lookup"><span data-stu-id="9e3f9-103">Here is the source code for the Runspace08 sample described in [Creating a Console Application That Adds Parameters to a Command](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).</span></span> <span data-ttu-id="9e3f9-104">這個範例應用程式會建立一個執行空間、建立管線、將兩個命令新增至管線、將兩個參數新增至第二個命令，然後執行管線。</span><span class="sxs-lookup"><span data-stu-id="9e3f9-104">This sample application creates a runspace, creates a pipeline, adds two commands to the pipeline, adds two parameters to the second command, and then executes the pipeline.</span></span> <span data-ttu-id="9e3f9-105">新增至管線的命令為 `Get-Process` 和 @no__t 1 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="9e3f9-105">The commands that are added to the pipeline are the `Get-Process` and `Sort-Object` cmdlets.</span></span>
+<span data-ttu-id="2f6a2-103">以下是[建立可將參數新增至命令的主控台應用程式](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba)中所述之 Runspace08 範例的原始程式碼。</span><span class="sxs-lookup"><span data-stu-id="2f6a2-103">Here is the source code for the Runspace08 sample described in [Creating a Console Application That Adds Parameters to a Command](https://msdn.microsoft.com/en-us/848b2b46-60f1-4a86-b448-cfc7c0cccfba).</span></span> <span data-ttu-id="2f6a2-104">這個範例應用程式會建立一個執行空間、建立管線、將兩個命令新增至管線、將兩個參數新增至第二個命令，然後執行管線。</span><span class="sxs-lookup"><span data-stu-id="2f6a2-104">This sample application creates a runspace, creates a pipeline, adds two commands to the pipeline, adds two parameters to the second command, and then executes the pipeline.</span></span> <span data-ttu-id="2f6a2-105">新增至管線的命令是 `Get-Process` 和 `Sort-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="2f6a2-105">The commands that are added to the pipeline are the `Get-Process` and `Sort-Object` cmdlets.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="9e3f9-106">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="9e3f9-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="2f6a2-106">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="2f6a2-106">Code Sample</span></span>
 
 [!code-csharp[Runspace08.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace08/Runspace08.cs#L11-L86 "Runspace08.cs")]
 
-## <a name="see-also"></a><span data-ttu-id="9e3f9-107">另請參閱</span><span class="sxs-lookup"><span data-stu-id="9e3f9-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2f6a2-107">另請參閱</span><span class="sxs-lookup"><span data-stu-id="2f6a2-107">See Also</span></span>
 
-[<span data-ttu-id="9e3f9-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="9e3f9-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="2f6a2-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2f6a2-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

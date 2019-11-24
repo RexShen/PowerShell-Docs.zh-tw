@@ -15,61 +15,61 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72369377"
 ---
-# <a name="stopprocesssample02-sample"></a><span data-ttu-id="d7afd-102">StopProcessSample02 範例</span><span class="sxs-lookup"><span data-stu-id="d7afd-102">StopProcessSample02 Sample</span></span>
+# <a name="stopprocesssample02-sample"></a><span data-ttu-id="21fce-102">StopProcessSample02 範例</span><span class="sxs-lookup"><span data-stu-id="21fce-102">StopProcessSample02 Sample</span></span>
 
-<span data-ttu-id="d7afd-103">這個範例示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時寫入 debug （WriteDebug）、verbose （WriteVerbose）和 warning （WriteWarning）訊息。</span><span class="sxs-lookup"><span data-stu-id="d7afd-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="d7afd-104">此 Cmdlet 類似于 Windows PowerShell 2.0 所提供的 `Stop-Process` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d7afd-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="21fce-103">這個範例示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時寫入 debug （WriteDebug）、verbose （WriteVerbose）和 warning （WriteWarning）訊息。</span><span class="sxs-lookup"><span data-stu-id="21fce-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="21fce-104">此 Cmdlet 類似于 Windows PowerShell 2.0 所提供的 `Stop-Process` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="21fce-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="d7afd-105">如何使用 Visual Studio 建立範例。</span><span class="sxs-lookup"><span data-stu-id="d7afd-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="21fce-105">如何使用 Visual Studio 建立範例。</span><span class="sxs-lookup"><span data-stu-id="21fce-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="d7afd-106">開啟 Windows Internet Explorer，然後流覽至範例目錄底下的 StopProcessSample02 目錄。</span><span class="sxs-lookup"><span data-stu-id="d7afd-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="21fce-106">開啟 Windows Internet Explorer，然後流覽至範例目錄底下的 StopProcessSample02 目錄。</span><span class="sxs-lookup"><span data-stu-id="21fce-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
 
-    <span data-ttu-id="d7afd-107">安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample02 資料夾。</span><span class="sxs-lookup"><span data-stu-id="d7afd-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="d7afd-108">預設位置為 C:\Program Files （x86） \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。</span><span class="sxs-lookup"><span data-stu-id="d7afd-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
+    <span data-ttu-id="21fce-107">安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample02 資料夾。</span><span class="sxs-lookup"><span data-stu-id="21fce-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="21fce-108">預設位置為 C:\Program Files （x86） \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。</span><span class="sxs-lookup"><span data-stu-id="21fce-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
 
-2. <span data-ttu-id="d7afd-109">按兩下方案（.sln）檔案的圖示。</span><span class="sxs-lookup"><span data-stu-id="d7afd-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="d7afd-110">這會在 Microsoft Visual Studio 中開啟範例專案。</span><span class="sxs-lookup"><span data-stu-id="d7afd-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="21fce-109">按兩下方案（.sln）檔案的圖示。</span><span class="sxs-lookup"><span data-stu-id="21fce-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="21fce-110">這會在 Microsoft Visual Studio 中開啟範例專案。</span><span class="sxs-lookup"><span data-stu-id="21fce-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="d7afd-111">在 [**建立**] 功能表中，選取 [**建立方案**]。</span><span class="sxs-lookup"><span data-stu-id="d7afd-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="21fce-111">在 [**建立**] 功能表中，選取 [**建立方案**]。</span><span class="sxs-lookup"><span data-stu-id="21fce-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="d7afd-112">範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="d7afd-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="21fce-112">範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="21fce-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="d7afd-113">如何執行範例</span><span class="sxs-lookup"><span data-stu-id="d7afd-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="21fce-113">如何執行範例</span><span class="sxs-lookup"><span data-stu-id="21fce-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="d7afd-114">建立下列模組資料夾：</span><span class="sxs-lookup"><span data-stu-id="d7afd-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="21fce-114">建立下列模組資料夾：</span><span class="sxs-lookup"><span data-stu-id="21fce-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample02`
 
-2. <span data-ttu-id="d7afd-115">將範例元件複製到模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="d7afd-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="21fce-115">將範例元件複製到模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="21fce-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="d7afd-116">啟動 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="d7afd-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="21fce-116">啟動 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="21fce-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="d7afd-117">執行下列命令，將元件載入 Windows PowerShell：</span><span class="sxs-lookup"><span data-stu-id="d7afd-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="21fce-117">執行下列命令，將元件載入 Windows PowerShell：</span><span class="sxs-lookup"><span data-stu-id="21fce-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample02`
 
-5. <span data-ttu-id="d7afd-118">執行下列命令來執行 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="d7afd-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="21fce-118">執行下列命令來執行 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="21fce-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="d7afd-119">需求</span><span class="sxs-lookup"><span data-stu-id="d7afd-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="21fce-119">需求</span><span class="sxs-lookup"><span data-stu-id="21fce-119">Requirements</span></span>
 
-<span data-ttu-id="d7afd-120">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="d7afd-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="21fce-120">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="21fce-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="d7afd-121">演示</span><span class="sxs-lookup"><span data-stu-id="d7afd-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="21fce-121">演示</span><span class="sxs-lookup"><span data-stu-id="21fce-121">Demonstrates</span></span>
 
-<span data-ttu-id="d7afd-122">這個範例會示範下列各項。</span><span class="sxs-lookup"><span data-stu-id="d7afd-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="21fce-122">這個範例會示範下列各項。</span><span class="sxs-lookup"><span data-stu-id="21fce-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="d7afd-123">使用 Cmdlet 屬性宣告 Cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="d7afd-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="21fce-123">使用 Cmdlet 屬性宣告 Cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="21fce-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="d7afd-124">使用參數屬性宣告 Cmdlet 參數。</span><span class="sxs-lookup"><span data-stu-id="d7afd-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="21fce-124">使用參數屬性宣告 Cmdlet 參數。</span><span class="sxs-lookup"><span data-stu-id="21fce-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="d7afd-125">撰寫詳細訊息。</span><span class="sxs-lookup"><span data-stu-id="d7afd-125">Writing verbose messages.</span></span> <span data-ttu-id="d7afd-126">如需用來撰寫詳細訊息之方法的詳細資訊，請參閱[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。</span><span class="sxs-lookup"><span data-stu-id="d7afd-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
+- <span data-ttu-id="21fce-125">撰寫詳細訊息。</span><span class="sxs-lookup"><span data-stu-id="21fce-125">Writing verbose messages.</span></span> <span data-ttu-id="21fce-126">如需用來撰寫詳細訊息之方法的詳細資訊，請參閱[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。</span><span class="sxs-lookup"><span data-stu-id="21fce-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
 
-- <span data-ttu-id="d7afd-127">寫入錯誤訊息。</span><span class="sxs-lookup"><span data-stu-id="d7afd-127">Writing error messages.</span></span> <span data-ttu-id="d7afd-128">如需用來撰寫錯誤訊息之方法的詳細資訊，請參閱[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。</span><span class="sxs-lookup"><span data-stu-id="d7afd-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
+- <span data-ttu-id="21fce-127">寫入錯誤訊息。</span><span class="sxs-lookup"><span data-stu-id="21fce-127">Writing error messages.</span></span> <span data-ttu-id="21fce-128">如需用來撰寫錯誤訊息之方法的詳細資訊，請參閱[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。</span><span class="sxs-lookup"><span data-stu-id="21fce-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
 
-- <span data-ttu-id="d7afd-129">寫入警告訊息。</span><span class="sxs-lookup"><span data-stu-id="d7afd-129">Writing warning messages.</span></span> <span data-ttu-id="d7afd-130">如需用來撰寫警告訊息之方法的詳細資訊，請參閱[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。</span><span class="sxs-lookup"><span data-stu-id="d7afd-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
+- <span data-ttu-id="21fce-129">寫入警告訊息。</span><span class="sxs-lookup"><span data-stu-id="21fce-129">Writing warning messages.</span></span> <span data-ttu-id="21fce-130">如需用來撰寫警告訊息之方法的詳細資訊，請參閱[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。</span><span class="sxs-lookup"><span data-stu-id="21fce-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
 
-## <a name="example"></a><span data-ttu-id="d7afd-131">範例</span><span class="sxs-lookup"><span data-stu-id="d7afd-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="21fce-131">範例</span><span class="sxs-lookup"><span data-stu-id="21fce-131">Example</span></span>
 
-<span data-ttu-id="d7afd-132">這個範例會示範如何使用 `WriteDebug`、`WriteVerbose` 和 @no__t 2 方法來撰寫 debug、verbose 和 warning 訊息。</span><span class="sxs-lookup"><span data-stu-id="d7afd-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
+<span data-ttu-id="21fce-132">這個範例會示範如何使用 `WriteDebug`、`WriteVerbose`和 `WriteWarning` 方法，撰寫 debug、verbose 和 warning 訊息。</span><span class="sxs-lookup"><span data-stu-id="21fce-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
 
 ```csharp
 using System;
@@ -310,6 +310,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d7afd-133">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d7afd-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="21fce-133">另請參閱</span><span class="sxs-lookup"><span data-stu-id="21fce-133">See Also</span></span>
 
-[<span data-ttu-id="d7afd-134">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d7afd-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="21fce-134">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="21fce-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

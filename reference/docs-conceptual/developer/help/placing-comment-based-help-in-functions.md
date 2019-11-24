@@ -15,25 +15,25 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72367777"
 ---
-# <a name="placing-comment-based-help-in-functions"></a><span data-ttu-id="5ea61-102">將註解型說明置於函式</span><span class="sxs-lookup"><span data-stu-id="5ea61-102">Placing Comment-Based Help in Functions</span></span>
+# <a name="placing-comment-based-help-in-functions"></a><span data-ttu-id="f5b85-102">將註解型說明置於函式</span><span class="sxs-lookup"><span data-stu-id="f5b85-102">Placing Comment-Based Help in Functions</span></span>
 
-<span data-ttu-id="5ea61-103">本主題說明如何為函式放置以批註為基礎的協助，讓 `Get-Help` Cmdlet 將批註型說明主題與正確的函式建立關聯。</span><span class="sxs-lookup"><span data-stu-id="5ea61-103">This topic explains where to place comment-based help for a function so that the `Get-Help` cmdlet associates the comment-based help topic with the correct function.</span></span>
+<span data-ttu-id="f5b85-103">本主題說明如何為函式放置以批註為基礎的協助，讓 `Get-Help` Cmdlet 將以批註為基礎的說明主題與正確的函式產生關聯。</span><span class="sxs-lookup"><span data-stu-id="f5b85-103">This topic explains where to place comment-based help for a function so that the `Get-Help` cmdlet associates the comment-based help topic with the correct function.</span></span>
 
-## <a name="where-to-place-comment-based-help-for-a-function"></a><span data-ttu-id="5ea61-104">要在何處放置函式以批註為基礎的說明</span><span class="sxs-lookup"><span data-stu-id="5ea61-104">Where to Place Comment-Based Help for a Function</span></span>
+## <a name="where-to-place-comment-based-help-for-a-function"></a><span data-ttu-id="f5b85-104">要在何處放置函式以批註為基礎的說明</span><span class="sxs-lookup"><span data-stu-id="f5b85-104">Where to Place Comment-Based Help for a Function</span></span>
 
-- <span data-ttu-id="5ea61-105">在函式主體的開頭。</span><span class="sxs-lookup"><span data-stu-id="5ea61-105">At the beginning of the function body.</span></span>
+- <span data-ttu-id="f5b85-105">在函式主體的開頭。</span><span class="sxs-lookup"><span data-stu-id="f5b85-105">At the beginning of the function body.</span></span>
 
-- <span data-ttu-id="5ea61-106">在函式主體的結尾。</span><span class="sxs-lookup"><span data-stu-id="5ea61-106">At the end of the function body.</span></span>
+- <span data-ttu-id="f5b85-106">在函式主體的結尾。</span><span class="sxs-lookup"><span data-stu-id="f5b85-106">At the end of the function body.</span></span>
 
-- <span data-ttu-id="5ea61-107">在 `Function` 關鍵字之前。</span><span class="sxs-lookup"><span data-stu-id="5ea61-107">Before the `Function` keyword.</span></span> <span data-ttu-id="5ea61-108">當函式在腳本或腳本模組中時，以批註為基礎的說明和 @no__t 0 關鍵字的最後一行之間不能有一個以上的空白行。</span><span class="sxs-lookup"><span data-stu-id="5ea61-108">When the function is in a script or script module, there cannot be more than one blank line between the last line of the comment-based help and the `Function` keyword.</span></span> <span data-ttu-id="5ea61-109">否則，`Get-Help` 會將說明與腳本建立關聯，而不會與函式產生關聯。</span><span class="sxs-lookup"><span data-stu-id="5ea61-109">Otherwise, `Get-Help` associates the help with the script, not with the function.</span></span>
+- <span data-ttu-id="f5b85-107">`Function` 關鍵字之前。</span><span class="sxs-lookup"><span data-stu-id="f5b85-107">Before the `Function` keyword.</span></span> <span data-ttu-id="f5b85-108">當函式在腳本或腳本模組中時，以批註為基礎的說明和 `Function` 關鍵字的最後一行之間不能有一個以上的空白行。</span><span class="sxs-lookup"><span data-stu-id="f5b85-108">When the function is in a script or script module, there cannot be more than one blank line between the last line of the comment-based help and the `Function` keyword.</span></span> <span data-ttu-id="f5b85-109">否則，`Get-Help` 會將說明與腳本建立關聯，而不是與函式相關聯。</span><span class="sxs-lookup"><span data-stu-id="f5b85-109">Otherwise, `Get-Help` associates the help with the script, not with the function.</span></span>
 
-## <a name="examples-of-help-placement-in-a-function"></a><span data-ttu-id="5ea61-110">說明放置在函式中的範例</span><span class="sxs-lookup"><span data-stu-id="5ea61-110">Examples of Help Placement in a Function</span></span>
+## <a name="examples-of-help-placement-in-a-function"></a><span data-ttu-id="f5b85-110">說明放置在函式中的範例</span><span class="sxs-lookup"><span data-stu-id="f5b85-110">Examples of Help Placement in a Function</span></span>
 
- <span data-ttu-id="5ea61-111">下列範例會顯示函式之以批註為基礎之說明的三個放置選項。</span><span class="sxs-lookup"><span data-stu-id="5ea61-111">The following examples show each of the three placement options for comment-based help for a function.</span></span>
+ <span data-ttu-id="f5b85-111">下列範例會顯示函式之以批註為基礎之說明的三個放置選項。</span><span class="sxs-lookup"><span data-stu-id="f5b85-111">The following examples show each of the three placement options for comment-based help for a function.</span></span>
 
-### <a name="help-at-the-beginning-of-a-function-body"></a><span data-ttu-id="5ea61-112">函式主體開頭的說明</span><span class="sxs-lookup"><span data-stu-id="5ea61-112">Help at the Beginning of a Function Body</span></span>
+### <a name="help-at-the-beginning-of-a-function-body"></a><span data-ttu-id="f5b85-112">函式主體開頭的說明</span><span class="sxs-lookup"><span data-stu-id="f5b85-112">Help at the Beginning of a Function Body</span></span>
 
- <span data-ttu-id="5ea61-113">下列範例會顯示在函式主體開頭的以批註為基礎。</span><span class="sxs-lookup"><span data-stu-id="5ea61-113">The following example shows comment-based at the beginning of a function body.</span></span>
+ <span data-ttu-id="f5b85-113">下列範例會顯示在函式主體開頭的以批註為基礎。</span><span class="sxs-lookup"><span data-stu-id="f5b85-113">The following example shows comment-based at the beginning of a function body.</span></span>
 
 ```powershell
 
@@ -49,9 +49,9 @@ function MyProcess
 
 ```
 
-### <a name="help-at-the-end-of-a-function-body"></a><span data-ttu-id="5ea61-114">函式主體結尾的說明</span><span class="sxs-lookup"><span data-stu-id="5ea61-114">Help at the End of a Function Body</span></span>
+### <a name="help-at-the-end-of-a-function-body"></a><span data-ttu-id="f5b85-114">函式主體結尾的說明</span><span class="sxs-lookup"><span data-stu-id="f5b85-114">Help at the End of a Function Body</span></span>
 
- <span data-ttu-id="5ea61-115">下列範例會顯示以批註為基礎的函式主體結尾。</span><span class="sxs-lookup"><span data-stu-id="5ea61-115">The following example shows comment-based at the end of a function body.</span></span>
+ <span data-ttu-id="f5b85-115">下列範例會顯示以批註為基礎的函式主體結尾。</span><span class="sxs-lookup"><span data-stu-id="f5b85-115">The following example shows comment-based at the end of a function body.</span></span>
 
 ```powershell
 
@@ -67,9 +67,9 @@ function MyFunction
 
 ```
 
-### <a name="help-before-the-function-keyword"></a><span data-ttu-id="5ea61-116">Function 關鍵字之前的說明</span><span class="sxs-lookup"><span data-stu-id="5ea61-116">Help Before the Function Keyword</span></span>
+### <a name="help-before-the-function-keyword"></a><span data-ttu-id="f5b85-116">Function 關鍵字之前的說明</span><span class="sxs-lookup"><span data-stu-id="f5b85-116">Help Before the Function Keyword</span></span>
 
- <span data-ttu-id="5ea61-117">下列範例會根據函式關鍵字前面的一行來顯示批註。</span><span class="sxs-lookup"><span data-stu-id="5ea61-117">The following examples shows comment-based on the line before the function keyword.</span></span>
+ <span data-ttu-id="f5b85-117">下列範例會根據函式關鍵字前面的一行來顯示批註。</span><span class="sxs-lookup"><span data-stu-id="f5b85-117">The following examples shows comment-based on the line before the function keyword.</span></span>
 
 ```powershell
 
