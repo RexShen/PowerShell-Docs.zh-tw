@@ -17,7 +17,7 @@ ms.locfileid: "72360457"
 ---
 # <a name="getproc01-code-samples"></a>GetProc01 程式碼範例
 
-以下是 GetProc01 範例 Cmdlet 的程式碼範例。 這是[建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 @no__t 0 Cmdlet 範例。 @No__t-0 Cmdlet 是設計用來抓取在本機電腦上執行之所有進程的相關資訊。
+以下是 GetProc01 範例 Cmdlet 的程式碼範例。 這是[建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 `Get-Process` Cmdlet 範例。 `Get-Process` Cmdlet 是設計用來抓取在本機電腦上執行之所有進程的相關資訊。
 
 如需完整的範例程式碼，請參閱下列主題。
 

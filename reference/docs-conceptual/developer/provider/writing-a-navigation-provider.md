@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>執行 MakePath
 
-[NavigationCmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法會聯結指定的父路徑和指定的子路徑，以建立提供者內部路徑（如需提供者可以支援之路徑類型的詳細資訊，請參閱[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)。 當使用者呼叫[JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
+[NavigationCmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法會聯結指定的父路徑和指定的子路徑，以建立提供者內部路徑（如需提供者可以支援之路徑類型的相關資訊，請參閱[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)。 當使用者呼叫[JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>執行 NormalizeRelativePath
 
-[NavigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法會採用 `path` 和 @no__t 2 參數，並傳回相當於 `path` 參數且相對於 `basepath` 的正規化路徑實參.
+[NavigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法會接受 `path` 和 `basepath` 參數，並傳回相當於 `path` 參數且相對於 `basepath` 參數的正規化路徑（）。
 
 ```csharp
 protected override string NormalizeRelativePath(string path,

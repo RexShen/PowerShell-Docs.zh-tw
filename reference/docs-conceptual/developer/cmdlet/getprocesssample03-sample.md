@@ -17,7 +17,7 @@ ms.locfileid: "72369707"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 範例
 
-這個範例示範如何執行可抓取本機電腦上處理常式的 Cmdlet。 它提供的 `Name` 參數可接受來自管線的物件，或從屬性名稱與參數名稱相同的物件屬性值。 此 Cmdlet 是 Windows PowerShell 2.0 所提供的 `Get-Process` Cmdlet 的簡化版本。
+這個範例示範如何執行可抓取本機電腦上處理常式的 Cmdlet。 它會提供 `Name` 參數，可以接受來自管線的物件，或從屬性名稱與參數名稱相同的物件屬性值。 此 Cmdlet 是 Windows PowerShell 2.0 所提供的 `Get-Process` Cmdlet 的簡化版本。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
@@ -67,7 +67,7 @@ ms.locfileid: "72369707"
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何執行包含可接受管線輸入之 @no__t 0 參數的 Get Proc Cmdlet。
+這個範例會示範如何執行包含可接受管線輸入之 `Name` 參數的 Get Proc Cmdlet。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

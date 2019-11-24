@@ -29,7 +29,7 @@ WideControl （格式）的設定元素（格式） ViewDefinitions 元素（格
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ColumnNumber` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ColumnNumber` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ WideControl （格式）的設定元素（格式） ViewDefinitions 元素（格
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[WideControl 元素（格式）](./widecontrol-element-format.md)|定義視圖的寬（單一值）清單格式。|
 
@@ -51,7 +51,7 @@ WideControl （格式）的設定元素（格式） ViewDefinitions 元素（格
 
 ## <a name="remarks"></a>備註
 
-定義寬視圖時，您可以加入 `AutoSize` 元素或 @no__t 1 專案，但無法同時新增這兩個元素。
+定義寬視圖時，您可以加入 `AutoSize` 元素或 `ColumnNumber` 專案，但無法同時新增兩者。
 
 如需有關寬視圖元件的詳細資訊，請參閱[建立寬視圖](./creating-a-wide-view.md)。
 

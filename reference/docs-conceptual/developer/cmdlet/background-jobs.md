@@ -35,11 +35,11 @@ Cmdlet 可以在內部或 Windows PowerShell*背景工作*執行其動作。 當
 
 若要撰寫可當做背景工作執行的 Cmdlet，您必須完成下列工作：
 
-- 定義 @no__t 0 切換參數，讓使用者可以決定是否要以背景工作的方式執行 Cmdlet。
+- 定義 `asJob` 切換參數，讓使用者可以決定是否要以背景工作的方式執行 Cmdlet。
 
 - 建立一個衍生自[system.web](/dotnet/api/System.Management.Automation.Job)類別的物件。 這個物件可以是自訂工作物件或 Windows PowerShell 所提供的工作物件，例如[Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)物件。
 
-- 在記錄處理方法中，加入 `if` 語句，以偵測 Cmdlet 是否應當做背景作業執行。
+- 在記錄處理方法中，加入 `if` 語句，以偵測是否應該以背景工作的方式執行 Cmdlet。
 
 - 若為自訂工作物件，請執行 job 類別。
 

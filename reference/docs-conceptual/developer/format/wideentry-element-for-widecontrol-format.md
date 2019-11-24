@@ -32,7 +32,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `WideEntry` 元素的父元素。 您必須指定單一的 `WideItem` 子項目。
+下列各節說明屬性、子專案，以及 `WideEntry` 專案的父元素。 您必須指定單一 `WideItem` 子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,14 +40,14 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[WideEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-wideentry-format.md)|選擇性元素。<br /><br /> 定義使用此寬專案定義的 .NET 類型，或必須存在才能使用此定義的條件。|
+|[WideEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-wideentry-format.md)|選擇性項目。<br /><br /> 定義使用此寬專案定義的 .NET 類型，或必須存在才能使用此定義的條件。|
 |[之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)|必要元素。<br /><br /> 定義顯示其值的屬性或腳本。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[WideEntries 元素（格式）](./wideentries-element-for-widecontrol-format.md)|提供寬視圖的定義。|
 
@@ -57,7 +57,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-下列範例顯示定義單一 `WideItem` 元素的 @no__t 0 元素。 @No__t-0 元素會定義屬性，其值會顯示在視圖中。
+下列範例顯示定義單一 `WideItem` 元素的 `WideEntry` 專案。 `WideItem` 元素會定義屬性，其值會顯示在視圖中。
 
 ```xml
 <WideEntries>

@@ -27,11 +27,11 @@ ms.locfileid: "72367457"
 
 ## <a name="demonstrates"></a>演示
 
-- 建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及，而該主機則[是Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的.。
+- 建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別（class）的實例（system. 管理層。）。
 
 - 建立主控台應用程式，以使用這些主機類別來建立互動式 Windows PowerShell shell。
 
-- 建立 @no__t 0 變數並載入下列設定檔。
+- 建立 `$profile` 變數並載入下列設定檔。
 
   - 目前的使用者，目前的主控制項
 

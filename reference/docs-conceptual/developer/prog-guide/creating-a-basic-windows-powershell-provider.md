@@ -31,7 +31,7 @@ ms.locfileid: "72360517"
 
 建立 Windows PowerShell 提供者的第一個步驟是定義它的 .NET 類別。 這個基本提供者會定義一個名為 `AccessDBProvider` 的類別，衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類。
 
-建議您將提供者類別放在 API 命名空間的 @no__t 0 命名空間中，例如 xxx。PowerShell. 提供者。 此提供者會使用 `Microsoft.Samples.PowerShell.Provider` 命名空間，其中所有的 Windows PowerShell 提供者範例都會在其中執行。
+建議您將提供者類別放在 API 命名空間的 `Providers` 命名空間中，例如 xxx。PowerShell. 提供者。 此提供者會使用 `Microsoft.Samples.PowerShell.Provider` 命名空間，其中所有的 Windows PowerShell 提供者範例都會在其中執行。
 
 > [!NOTE]
 > Windows PowerShell 提供者的類別必須明確標示為公用。 未標示為公用的類別會預設為內部，且不會由 Windows PowerShell 執行時間找到。
@@ -49,13 +49,13 @@ ms.locfileid: "72360517"
 
 ## <a name="defining-provider-specific-state-information"></a>定義提供者特定的狀態資訊
 
-[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類和所有衍生類別都會被視為無狀態，因為 Windows PowerShell 執行時間只會在必要時建立提供者實例。 因此，如果您的提供者需要提供者特定資料的完整控制和狀態維護，它必須從[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)類別衍生類別。 您的衍生類別應該定義維護狀態所需的成員，如此一來，當 Windows PowerShell 執行時間呼叫[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法時，就可以存取提供者特定的資料。初始化提供者。
+[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類和所有衍生類別都會被視為無狀態，因為 Windows PowerShell 執行時間只會在必要時建立提供者實例。 因此，如果您的提供者需要提供者特定資料的完整控制和狀態維護，它必須從[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)類別衍生類別。 您的衍生類別應該定義維護狀態所需的成員，如此一來，當 Windows PowerShell 執行時間呼叫[Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法來初始化提供者時，即可存取提供者特定的資料。
 
 Windows PowerShell 提供者也可以維護以連接為基礎的狀態。 如需維護線上狀態的詳細資訊，請參閱[建立 PowerShell 磁片磁碟機提供者](./creating-a-windows-powershell-drive-provider.md)。
 
 ## <a name="initializing-the-provider"></a>初始化提供者
 
-若要初始化提供者，當 Windows PowerShell 啟動時，Windows PowerShell 執行時間會呼叫[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法。 在大部分的情況下，您的提供者可以使用這個方法的預設實值，這只會傳回描述提供者的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件。 不過，如果您想要加入額外的初始化資訊，您應該執行自己的[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法，以傳回修改過的版本[。](/dotnet/api/System.Management.Automation.ProviderInfo)傳遞至提供者的 Providerinfo 物件。 一般來說，這個方法應該會傳回傳遞給它的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件，或已修改的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件，其中包含其他的初始化資訊。
+若要初始化提供者，當 Windows PowerShell 啟動時，Windows PowerShell 執行時間會呼叫[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法。 在大部分的情況下，您的提供者可以使用這個方法的預設實值，這只會傳回描述提供者的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件。 不過，如果您想要加入額外的初始化資訊，則應該執行自己的[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法，以傳回已修改的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件版本，並將其傳遞給您的提供者。 一般來說，這個方法應該會傳回傳遞給它的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件，或已修改的[Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)物件，其中包含其他的初始化資訊。
 
 這個基本提供者不會覆寫這個方法。 不過，下列程式碼會顯示此方法的預設執行：
 
@@ -65,7 +65,7 @@ Windows PowerShell 提供者也可以維護以連接為基礎的狀態。 如需
 
 ## <a name="start-dynamic-parameters"></a>啟動動態參數
 
-您的提供者[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)可能需要額外的參數，才能執行。 在此情況下，提供者應該覆寫[Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)方法，並傳回具有屬性和欄位的物件，而此物件具有類似 Cmdlet 類別或的[剖析屬性Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)的物件。
+您的提供者[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)可能需要額外的參數，才能執行。 在這種情況下，提供者應該覆寫[Cmdletprovider. Startdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)方法，並傳回具有屬性和欄位的物件，其具有類似 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件的剖析屬性。
 
 這個基本提供者不會覆寫這個方法。 不過，下列程式碼會顯示此方法的預設執行：
 

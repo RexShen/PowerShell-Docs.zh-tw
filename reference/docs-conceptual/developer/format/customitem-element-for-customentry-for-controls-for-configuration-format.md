@@ -34,7 +34,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `CustomItem` 元素的父元素。 如需詳細資訊，請參閱備註。
+下列各節說明屬性、子專案，以及 `CustomItem` 專案的父元素。 如需詳細資訊，請參閱備註。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,16 +42,16 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[設定之控制項的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 定義控制項所顯示的資料。|
-|[用於設定之控制項的 CustomItem 的框架元素（格式）](./frame-element-for-customitem-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 定義資料的顯示方式，例如將資料向左或向右移位。|
-|[設定之控制項的 CustomItem 的新行元素（格式）](./newline-element-for-customitem-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 將空白行加入控制項的顯示中。|
-|[設定之控制項的 CustomItem 的文字元素（格式）](./text-element-for-customitem-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 將文字（例如括弧或括弧）新增至控制項的顯示。|
+|[設定之控制項的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義控制項所顯示的資料。|
+|[用於設定之控制項的 CustomItem 的框架元素（格式）](./frame-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義資料的顯示方式，例如將資料向左或向右移位。|
+|[設定之控制項的 CustomItem 的新行元素（格式）](./newline-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 將空白行加入控制項的顯示中。|
+|[設定之控制項的 CustomItem 的文字元素（格式）](./text-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 將文字（例如括弧或括弧）新增至控制項的顯示。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[設定之控制項的 CustomControl 的 CustomEntry 元素（格式）](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|提供控制項的定義。|
 
@@ -59,11 +59,11 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 指定 `CustomItem` 元素的子項目時，請記住下列事項：
 
-- 子項目必須以下列順序加入： `ExpressionBinding`、`NewLine`、`Text` 和 `Frame`。
+- 子項目必須以下列順序加入： `ExpressionBinding`、`NewLine`、`Text`和 `Frame`。
 
 - 您可以指定的序列數目沒有上限。
 
-- 在每個序列中，您可以使用的 @no__t 0 元素數目沒有上限。
+- 在每個序列中，您可以使用的 `ExpressionBinding` 元素數目沒有上限。
 
 ## <a name="see-also"></a>另請參閱
 

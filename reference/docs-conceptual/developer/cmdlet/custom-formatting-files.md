@@ -40,7 +40,7 @@ Windows PowerShell 會使用這些格式檔案中的資料來判斷要顯示的�
 
 ## <a name="view-xml-elements"></a>View XML 元素
 
-下列範例顯示用來定義包含兩個數據行之資料表視圖的 XML 標記。 [ViewDefinitions](../format/viewdefinitions-element-format.md)元素是格式檔案中定義之所有視圖的容器元素。 [View](../format/view-element-format.md)元素會定義特定的資料表、清單、寬型或自訂視圖。 在每個視圖中， [name](../format/name-element-for-view-format.md)元素會指定視圖的名稱， [ViewSelectedBy](../format/viewselectedby-element-format.md)元素會定義使用此視圖的物件，而不同的控制項專案（例如 @no__t 2 元素）則會定義視圖的格式。
+下列範例顯示用來定義包含兩個數據行之資料表視圖的 XML 標記。 [ViewDefinitions](../format/viewdefinitions-element-format.md)元素是格式檔案中定義之所有視圖的容器元素。 [View](../format/view-element-format.md)元素會定義特定的資料表、清單、寬型或自訂視圖。 在每個視圖中， [name](../format/name-element-for-view-format.md)元素會指定視圖的名稱， [ViewSelectedBy](../format/viewselectedby-element-format.md)元素會定義使用此視圖的物件，而不同的控制項專案（例如 `TableControl` 專案）會定義視圖的格式。
 
 ```xml
 ViewDefinitions

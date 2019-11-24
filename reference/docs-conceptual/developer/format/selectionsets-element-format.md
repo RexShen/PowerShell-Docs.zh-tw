@@ -31,7 +31,7 @@ Configuration 元素 SelectionSets 元素格式
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `SelectionSets` 元素的屬性、子專案和父元素。 每個子專案都會定義一組可由集合名稱參考的物件。 子項目的順序並不重要。
+下列各節描述 `SelectionSets` 專案的屬性、子專案和父項目。 每個子專案都會定義一組可由集合名稱參考的物件。 子項目的順序並不重要。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,13 +39,13 @@ Configuration 元素 SelectionSets 元素格式
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[SelectionSet 元素（格式）](./selectionset-element-format.md)|必要元素。<br /><br /> 定義一組可由集合名稱參考的 .NET 物件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[Configuration 元素](./configuration-element-format.md)|代表格式化檔案的最上層元素。|
 
@@ -53,7 +53,7 @@ Configuration 元素 SelectionSets 元素格式
 
 當您有一組想要使用單一名稱來參考的相關物件（例如透過繼承相關的一組物件）時，您可以使用 [選擇集]。 定義您的視圖時，您可以使用選取範圍的名稱來指定物件集合，而不會列出每個視圖內的所有物件。
 
-定義格式檔案的觀點或 views 定義時，會以名稱指定一般選取範圍。 在這些情況下，`ViewSelectedBy` 和 @no__t 2 元素的 `SelectionSetName` 子項目會指定要使用的集合。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
+定義格式檔案的觀點或 views 定義時，會以名稱指定一般選取範圍。 在這些情況下，`ViewSelectedBy` 和 `EntrySelectedBy` 元素的 `SelectionSetName` 子項目會指定要使用的集合。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
 
 ## <a name="see-also"></a>另請參閱
 

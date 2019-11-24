@@ -21,7 +21,7 @@ ms.locfileid: "72359677"
 
 ## <a name="pass-through-authorization"></a>傳遞授權
 
-執行[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面最簡單的方式，是授權所有使用者的傳遞執行。 這個範例不提供安全性，而且只提供如何執行介面的說明。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面的執行必須覆寫兩個方法： [CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[（管理元件）CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)。 在此範例中， [AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)一律會傳回與目前使用者相關聯的**WindowsIdentity**物件。（CustomAuthorization）
+執行[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面最簡單的方式，是授權所有使用者的傳遞執行。 這個範例不提供安全性，而且只提供如何執行介面的說明。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面的執行必須覆寫兩個方法： [CustomAuthorization. AuthorizeUser 和](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)。 [CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId). 和的程式。 在此範例中， [AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)一律會傳回與目前使用者相關聯的**WindowsIdentity**物件。（CustomAuthorization）
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>以角色為基礎的授權
 
-下列範例會實行以角色為基礎的授權原則。 原則會定義于位於主要應用程式目錄中的 XML 檔案中，並具有 web.config 和 MOF 和 XML 對應架構檔案。 如需有關如何設定授權架構檔案的詳細資訊，請參閱設定以[角色為基礎的授權](./configuring-role-based-authorization.md)。 此範例的第一個部分會執行[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法。 在此情況下，介面方法會呼叫 @no__t 0 類別中的方法（定義如下），以執行檢查使用者許可權的實際工作。
+下列範例會實行以角色為基礎的授權原則。 原則會定義于位於主要應用程式目錄中的 XML 檔案中，並具有 web.config 和 MOF 和 XML 對應架構檔案。 如需有關如何設定授權架構檔案的詳細資訊，請參閱設定以[角色為基礎的授權](./configuring-role-based-authorization.md)。 此範例的第一個部分會執行[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法。 在此情況下，介面方法會呼叫 `RbacSystem` 類別中的方法（定義如下），以執行檢查使用者許可權的實際工作。
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-最後，RbacSystem 類別會實作用來檢查使用者許可權的方法，並將授權狀態傳回給 CustomAuthorization 的執行中所定義的方法[。](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面.
+最後，RbacSystem 類別會實作用來檢查使用者許可權的方法，並將授權狀態傳回給[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面的執行中所定義的方法。

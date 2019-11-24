@@ -29,7 +29,7 @@ ms.locfileid: "72364377"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `Alignment` 元素的屬性、子專案和父元素。
+下列各節描述 `Alignment` 專案的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ ms.locfileid: "72364377"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
 
@@ -61,7 +61,7 @@ ms.locfileid: "72364377"
 
 ## <a name="example"></a>範例
 
-這個範例會顯示其資料在左側對齊的 @no__t 0 元素。
+這個範例會顯示其資料在左側對齊的 `TableColumnHeader` 元素。
 
 ```xml
 <TableColumnHeader>

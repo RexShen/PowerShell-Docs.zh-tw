@@ -29,7 +29,7 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `TypeName` 元素的父元素。 選取範圍中至少必須包含一個 `TypeName` 元素。
+下列各節說明屬性、子專案，以及 `TypeName` 專案的父元素。 選取範圍中至少必須包含一個 `TypeName` 元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[Types 元素（格式）](./types-element-for-selectionset-format.md)|定義選取集中的 .NET 物件。|
 
@@ -53,11 +53,11 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 當您有一組想要使用單一名稱來參考的相關物件（例如透過繼承相關的一組物件）時，您可以使用 [選擇集]。 定義您的視圖時，您可以使用選取範圍的名稱來指定物件集合，而不會列出每個視圖內的所有物件。
 
-定義格式設定檔案的視圖時，會以名稱指定一般選取範圍。 在這些情況下，view 的 `ViewSelectedBy` 元素的 `SelectionSetName` 子項目會指定集合。 不過，不同的視圖專案也可以指定僅適用于該視圖專案的選擇集。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
+定義格式設定檔案的視圖時，會以名稱指定一般選取範圍。 在這些情況下，view 的 `ViewSelectedBy` 元素的 `SelectionSetName` 子專案會指定集合。 不過，不同的視圖專案也可以指定僅適用于該視圖專案的選擇集。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示定義四個 .NET 類型的 @no__t 0 元素。
+下列範例會顯示定義四個 .NET 類型的 `SelectionSet` 元素。
 
 ```
 <SelectionSets>

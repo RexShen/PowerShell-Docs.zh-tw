@@ -17,7 +17,7 @@ ms.locfileid: "72359807"
 ---
 # <a name="associating-management-odata-entities"></a>建立 Management OData 實體的關聯
 
-在兩個不同的管理 OData 實體之間建立關聯通常會很有用。 例如，管理 OData 服務可能會有管理以類別組織之產品目錄的實體，並定義 `Product` 和 `Category` 的實體。 藉由將這兩個實體產生關聯，用戶端就可以透過單一的 web 服務要求，取得類別中所有產品的相關資訊。
+在兩個不同的管理 OData 實體之間建立關聯通常會很有用。 例如，管理 OData 服務可能會有管理以類別組織之產品目錄的實體，並定義 `Product` 和 `Category`的實體。 藉由將這兩個實體產生關聯，用戶端就可以透過單一的 web 服務要求，取得類別中所有產品的相關資訊。
 
 範例會示範如何在[關聯範例](https://code.msdn.microsoft.com:443/windowsdesktop/Association-sample-0f0fa87e)中下載實體之間的關聯。
 
@@ -43,9 +43,9 @@ string Products[];
 }
 ```
 
-@No__t 0 類別定義的屬性是屬於該類別的產品名稱陣列。
+`Category` 類別定義的屬性是屬於該類別的產品名稱陣列。
 
-若要建立兩個實體的關聯，您必須在服務的資源架構 MOF 檔案中，定義具有 `Association` 屬性的類別。 類別必須定義要關聯的兩個實體，稱為關聯的 @no__t 0。 下列範例顯示類別的定義，其定義 Category 和 Products 實體之間的關聯。
+若要建立兩個實體的關聯，您必須在服務的資源架構 MOF 檔案中，定義具有 `Association` 屬性的類別。 類別必須定義要關聯的兩個實體，稱為關聯的 `ends`。 下列範例顯示類別的定義，其定義 Category 和 Products 實體之間的關聯。
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-您也必須變更 Category 類別中 Products 屬性的宣告。 您可以使用 `AssociationClass` 關鍵字來指定屬性為關聯的一端。 屬性也必須定義為個別實體的參考，而不是字串陣列。 您可以使用 `ref` 關鍵字來執行此動作。 下列範例顯示關聯的屬性定義。
+您也必須變更 Category 類別中 Products 屬性的宣告。 您可以使用 `AssociationClass` 關鍵字來指定屬性為關聯的一端。 屬性也必須定義為個別實體的參考，而不是字串陣列。 您可以使用 `ref` 關鍵字來執行這項操作。 下列範例顯示關聯的屬性定義。
 
 ```csharp
 class Sample_Category {
@@ -94,7 +94,7 @@ Sample_Category ref AssociatedCategory;
 
 - 如果基礎中有導覽屬性，則為。 .NET Framework 類型，而且該屬性包含外鍵，則不需要明確對應。
 
-- 如果流覽屬性不存在於基礎 .NET Framework 類型中，您必須指定可抓取相關聯實例索引鍵清單的 Cmdlet。 若要這麼做，您可以加入以 `CmdletImplementation` 元素為 @no__t 的元素，並遵循針對其他 CRUD 命令定義 `cmdlets` 的元素。
+- 如果流覽屬性不存在於基礎 .NET Framework 類型中，您必須指定可抓取相關聯實例索引鍵清單的 Cmdlet。 若要這麼做，您可以在 `CmdletImplementation` 元素底下加入一個 `Association` 專案，然後遵循定義其他 CRUD 命令 `cmdlets` 的元素。
 
   ```xml
   Class Name=" Category">
@@ -189,13 +189,13 @@ Sample_Category ref AssociatedCategory;
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/AssociatedProducts
   ```
 
-- 若只要取出產品的 Url，請在要求中使用 `$links` 辨識符號。
+- 若只要取出產品的 Url，請在要求中使用 `$links` 限定詞。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts
   ```
 
-- 用戶端可以使用 `$expand` 辨識符號來取得類別目錄詳細資料和其相關聯的產品。
+- 用戶端可以使用 `$expand` 辨識符號來取得類別目錄詳細資料及其相關聯的產品。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')?$expand=AssociatedProducts

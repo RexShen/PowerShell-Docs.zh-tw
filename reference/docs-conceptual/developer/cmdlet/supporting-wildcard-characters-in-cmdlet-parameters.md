@@ -22,7 +22,7 @@ ms.locfileid: "72365307"
 
 ## <a name="windows-powershell-cmdlets-that-use-wildcards"></a>使用萬用字元的 Windows PowerShell Cmdlet
 
- 許多 Windows PowerShell Cmdlet 都支援其參數值的萬用字元。 例如，幾乎每個具有 `Name` 或 @no__t 1 參數的 Cmdlet 都支援這些參數的萬用字元。 （雖然大部分具有 `Path` 參數的 Cmdlet 也具有不支援萬用字元的 @no__t 1 參數）。下列命令會顯示如何使用萬用字元來傳回目前會話中名稱包含 Get 動詞的所有 Cmdlet。
+ 許多 Windows PowerShell Cmdlet 都支援其參數值的萬用字元。 例如，幾乎每個具有 `Name` 或 `Path` 參數的 Cmdlet 都支援這些參數的萬用字元。 （雖然大部分具有 `Path` 參數的 Cmdlet 也具有不支援萬用字元的 `LiteralPath` 參數）。下列命令會顯示如何使用萬用字元來傳回目前會話中名稱包含 Get 動詞的所有 Cmdlet。
 
  `Get-Command get-*`
 
@@ -30,7 +30,7 @@ ms.locfileid: "72365307"
 
 Windows PowerShell 支援下列萬用字元。
 
-| 模糊 |                             描述                             |  範例   |     相符項目      | 不符合 |
+| 模糊 |                             說明                             |  範例   |     相符項目      | 不符合 |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | 符合零或多個字元，從指定的位置開始 | `a*`       | A、ag、Apple     |                |
 | ?        | 符合指定位置的任何字元                     | `?n`       | 中的、       | 延續            |
@@ -41,7 +41,7 @@ Windows PowerShell 支援下列萬用字元。
 
 `Get-ChildItem c:\techdocs\[a-l]\*.txt`
 
-先前的命令使用範圍萬用字元 `[a-l]` 來指定檔案名的開頭應為 "a" 到 "l" 字元，並使用 `*` 萬用字元做為檔案名和 .txt 的第一個字母之間的任何字元的預留位置延伸模組。
+先前的命令會使用範圍萬用字元 `[a-l]` 來指定檔案名的開頭應為 "a" 到 "l" 字元，並使用 `*` 萬用字元做為檔案名的第一個字母和 **.txt**副檔名之間任何字元的預留位置。
 
 下列範例使用的範圍萬用字元模式會排除字母 "d"，但會包含 "a" 到 "f" 的所有其他字母。
 
@@ -49,17 +49,17 @@ Windows PowerShell 支援下列萬用字元。
 
 ## <a name="handling-literal-characters-in-wildcard-patterns"></a>處理萬用字元模式中的常值字元
 
-如果您指定的萬用字元模式包含不應該解釋為萬用字元的常值字元，請使用倒引號字元（`` ` ``）做為 escape 字元。 當您指定常值字元 int PowerShell API 時，請使用單一倒引號。 當您在 PowerShell 命令提示字元中指定常值時，請使用兩個倒引號。
+如果您指定的萬用字元模式包含不應該解釋為萬用字元的常值字元，請使用倒引號字元（`` ` ``）做為逸出字元。 當您指定常值字元 int PowerShell API 時，請使用單一倒引號。 當您在 PowerShell 命令提示字元中指定常值時，請使用兩個倒引號。
 
 例如，下列模式包含兩個必須逐字採用的括弧。
 
 當用於 PowerShell API 時，請使用：
 
-- "John Smith \` [* ']"
+- "John Smith \`[* ']"
 
 從 PowerShell 命令提示字元使用時：
 
-- "John Smith \` @ no__t-1 [* \` ']"
+- "John Smith \`\`[*\`']"
 
 此模式符合 "John Smith [Marketing]" 或 "John Smith [開發]"。 例如：
 

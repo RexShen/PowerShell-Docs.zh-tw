@@ -33,7 +33,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `WideItem` 元素的父元素。 @No__t-0 元素是選擇性的。 不過，您必須指定 `PropertyName` 或 @no__t 1 元素，但不能同時指定兩者。
+下列各節說明屬性、子專案，以及 `WideItem` 專案的父元素。 `FormatString` 的元素是選擇性的。 不過，您必須指定 `PropertyName` 或 `ScriptBlock` 元素，但不能同時指定這兩個專案。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,15 +41,15 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[WideControl 之之 wideitem 的格式字串元素（格式）](./formatstring-element-for-wideitem-for-widecontrol-format.md)|選擇性元素。<br /><br /> 指定定義屬性或腳本值在視圖中顯示方式的格式模式。|
+|[WideControl 之之 wideitem 的格式字串元素（格式）](./formatstring-element-for-wideitem-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定定義屬性或腳本值在視圖中顯示方式的格式模式。|
 |[之 wideitem 的 PropertyName 元素（格式）](./propertyname-element-for-wideitem-for-widecontrol-format.md)|指定物件的屬性，其值會顯示在寬視圖中。|
 |[之 wideitem 的 ScriptBlock 元素（格式）](./scriptblock-element-for-wideitem-for-widecontrol-format.md)|指定在寬視圖中顯示其值的腳本。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[WideEntry 元素（格式）](./wideentry-element-for-widecontrol-format.md)|提供寬視圖的定義。|
 
@@ -59,7 +59,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-下列範例顯示定義單一 `WideItem` 元素的 @no__t 0 元素。 @No__t-0 元素會定義屬性或腳本，其值會顯示在視圖中。
+下列範例顯示定義單一 `WideItem` 元素的 `WideEntry` 專案。 `WideItem` 元素會定義屬性或腳本，其值會顯示在視圖中。
 
 ```xml
 <WideEntry>

@@ -58,7 +58,7 @@ ms.locfileid: "72360817"
 
 上一個範例會執行不含任何參數的單一命令。
 您可以使用[PSCommand. AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法，將參數新增至命令。
-例如，下列程式碼會取得在電腦上執行 `PowerShell` 的所有進程清單。
+例如，下列程式碼會取得電腦上執行之所有名為 `PowerShell` 的處理常式清單。
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +91,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 您可以使用[AddStatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法來模擬批次處理，這會將額外的語句新增至管線的結尾。
-下列程式碼會取得名稱為 `PowerShell` 的執行中進程清單，然後取得正在執行的服務清單。
+下列程式碼會取得名稱為 `PowerShell`的執行中進程清單，然後取得正在執行之服務的清單。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,14 +104,14 @@ ps.Invoke();
 
 您可以藉由呼叫[AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法來執行現有的腳本。
 下列範例會將腳本新增至管線並加以執行。
-這個範例假設名為 `D:\PSScripts` 的資料夾中已經有名為 `MyScript.ps1` 的腳本。
+這個範例假設名為 `D:\PSScripts`的資料夾中已經有名為 `MyScript.ps1` 的腳本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-另外還有一個版本的 AddScript 方法，它會採用名為 `useLocalScope` 的布林參數。
+另外還有一個版本的 AddScript 方法，它會採用名為 `useLocalScope`的布林參數。
 如果此參數設定為 `true`，則腳本會在本機範圍中執行。
 下列程式碼會在本機範圍中執行腳本。
 
@@ -151,7 +151,7 @@ ps.Invoke();
 使用只載入您指定之命令的運行空間，可以大幅提升效能。
 
 您可以使用[SessionStateCmdletEntry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)類別的方法，來定義初始會話狀態的 Cmdlet。
-下列範例會建立空的初始會話狀態，然後定義 `Get-Command` 和 @no__t 1 命令，並將其新增至初始會話狀態。
+下列範例會建立空的初始會話狀態，然後定義 `Get-Command`，並將 `Import-Module` 命令新增至初始會話狀態。
 接著，我們會建立該初始會話狀態所限制的運行時，並執行該運行空間中的命令。
 
 建立初始會話狀態。

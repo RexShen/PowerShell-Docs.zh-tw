@@ -175,7 +175,7 @@ ms.locfileid: "72361227"
 
 此參數的預設值不會顯示在 Cmdlet 說明主題的所有 views 中。 不過，當使用者要求完整（Get-help \<Cmdletname >-Full）或主題的參數（Get-help \<Cmdletname >-parameter）時，它會在參數描述之後，顯示在資料表中（連同參數屬性）。
 
-下列 XML 顯示已新增至 `<command:parameter>` 節點的一對 `<dev:defaultValue>` 標記。 請注意，預設值會緊接在結尾 `</command:parameterValue>` 標記之後（指定參數值時），或是參數描述的結尾 `</maml:description>` 標記後面。 檔案名.
+下列 XML 顯示新增至 `<command:parameter>` 節點的一對 `<dev:defaultValue>` 標記。 請注意，預設值會緊接在結尾 `</command:parameterValue>` 標記（當指定參數值時）或參數描述的結尾 `</maml:description>` 標記後面。 檔案名.
 
 ```xml
 <command:parameters>
@@ -195,11 +195,11 @@ ms.locfileid: "72361227"
 
 新增列舉類型的值
 
-如果參數有多個值或列舉類型的值，您可以使用選擇性的 @no__t 0dev： possibleValues > 節點。 此節點可讓您指定多個值的名稱和描述。
+如果參數有多個值或列舉類型的值，您可以使用選擇性的 \<dev： possibleValues > 節點。 此節點可讓您指定多個值的名稱和描述。
 
-請注意，列舉值的描述不會出現在 `Get-Help` Cmdlet 所顯示的任何預設說明視圖中，但其他說明檢視器可能會在其視圖中顯示此內容。
+請注意，列舉值的描述並不會出現在 `Get-Help` Cmdlet 所顯示的任何預設說明視圖中，但是其他說明檢視器可能會在其視圖中顯示此內容。
 
-下列 XML 顯示已指定兩個值的 @no__t 0 節點。
+下列 XML 顯示已指定兩個值的 `<dev:possibleValues>` 節點。
 
 ```xml
 <command:parameters>

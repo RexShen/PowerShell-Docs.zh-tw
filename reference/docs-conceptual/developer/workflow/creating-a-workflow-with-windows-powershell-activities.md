@@ -23,7 +23,7 @@ ms.locfileid: "72359627"
 
 ### <a name="setting-up-the-project"></a>設定專案
 
-1. 依照[將 Windows PowerShell 活動新增至 Visual Studio 工具箱](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)中的程式，建立工作流程專案，並從[microsoft. powershell](/dotnet/api/Microsoft.PowerShell.Activities) . 活動和[microsoft. powershell 中新增活動。](/dotnet/api/Microsoft.PowerShell.Management.Activities)元件加入 [工具箱]。
+1. 依照[將 Windows PowerShell 活動新增至 Visual Studio 工具箱](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)中的程式，建立工作流程專案，並將活動從[microsoft. powershell. 活動](/dotnet/api/Microsoft.PowerShell.Activities)和[microsoft. powershell 管理](/dotnet/api/Microsoft.PowerShell.Management.Activities)元件新增至 [工具箱]。
 
 2. 將 [管理]、[microsoft]、[系統管理]、[]、[microsoft]、[管理] 和 [] 專案新增為 [參考元件]。
 
@@ -31,13 +31,13 @@ ms.locfileid: "72359627"
 
 1. 將 [**序列**] 活動新增至工作流程。
 
-2. 建立名為 `ComputerName` 的引數，其引數類型為 `String[]`。 這個引數代表要檢查和聯結的電腦名稱稱。
+2. 建立名為 `ComputerName` 且引數類型為 `String[]`的引數。 這個引數代表要檢查和聯結的電腦名稱稱。
 
 3. 建立名為 `DomainCred` 的引數，其類型為[system.web](/dotnet/api/System.Management.Automation.PSCredential)。 此引數代表已獲授權將電腦加入網域之網域帳戶的網域認證。
 
 4. 建立名為 `MachineCred` 的引數，其類型為[system.web](/dotnet/api/System.Management.Automation.PSCredential)。 此引數代表要檢查和聯結之電腦上系統管理員的認證。
 
-5. 在 [**序列**] 活動內新增**ParallelForEach**活動。 在文字方塊中輸入 `comp` 並 `ComputerName`，讓迴圈逐一查看 `ComputerName` 陣列的元素。
+5. 在 [**序列**] 活動內新增**ParallelForEach**活動。 在文字方塊中輸入 `comp` 和 `ComputerName`，讓迴圈逐一查看 `ComputerName` 陣列的元素。
 
 6. 將 [**序列**] 活動新增至**ParallelForEach**活動的主體。 將序列的**DisplayName**屬性設定為 `JoinDomain`。
 
@@ -45,7 +45,7 @@ ms.locfileid: "72359627"
 
 8. 編輯**GetWmiObject**活動的屬性，如下所示。
 
-   |Property|值|
+   |屬性|值|
    |--------------|-----------|
    |**課堂**|"Win32_ComputerSystem"|
    |**PSComputerName**|背光|
@@ -55,7 +55,7 @@ ms.locfileid: "72359627"
 
 10. 編輯**AddComputer**活動的屬性，如下所示。
 
-    |Property|值|
+    |屬性|值|
     |--------------|-----------|
     |**名稱**|背光|
     |**DomainCredential**|DomainCred|
@@ -64,7 +64,7 @@ ms.locfileid: "72359627"
 
 12. 編輯**RestartComputer**活動的屬性，如下所示。
 
-    |Property|值|
+    |屬性|值|
     |--------------|-----------|
     |**名稱**|背光|
     |**證書**|MachineCred|
@@ -77,4 +77,5 @@ ms.locfileid: "72359627"
 
     當您完成程式時，工作流程設計視窗看起來應該像這樣。
 
-    在工作流程設計工具中 @no__t 0JoinDomain XAML @ no__t-1![JOINDOMAIN xaml （在工作流程設計]工具(../media/joindomainworkflow.png "JoinDomainWorkflow")中）
+    ![在工作流程設計工具中 JoinDomain XAML](../media/joindomainworkflow.png)
+    ![在工作流程設計工具中 JOINDOMAIN xaml](../media/joindomainworkflow.png "JoinDomainWorkflow")

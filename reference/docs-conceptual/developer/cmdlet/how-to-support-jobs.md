@@ -21,7 +21,7 @@ ms.locfileid: "72369657"
 
 ## <a name="to-support-jobs"></a>支援作業
 
-1. 定義 @no__t 0 切換參數，讓使用者可以決定是否要將 Cmdlet 當做作業執行。
+1. 定義 `AsJob` 切換參數，讓使用者可以決定是否要將 Cmdlet 當做作業執行。
 
     下列範例顯示 AsJob 參數宣告。
 

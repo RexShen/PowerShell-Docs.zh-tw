@@ -89,7 +89,7 @@ ms.locfileid: "72368107"
 
 ## <a name="adding-a-description"></a>新增描述
 
-下列 XML 顯示如何新增範例的描述。 Windows PowerShell®會針對描述使用一組 @no__t 0maml：段落 > 標記，即使可以使用多個 @no__t 1maml：段落 > 標記也一樣。
+下列 XML 顯示如何新增範例的描述。 Windows PowerShell®會使用一組 \<maml：段落 > 標記來進行描述，雖然可以使用多個 \<maml：段落 > 標記。
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ ms.locfileid: "72368107"
 
 ## <a name="adding-example-output"></a>新增範例輸出
 
-下列 XML 顯示如何新增命令的輸出。 命令結果資訊是選擇性的，但在某些情況下，示範使用特定參數的效果會很有説明。 Windows PowerShell®使用兩組空白的 \<maml：段落 > 標記來分隔命令輸出與命令。
+下列 XML 顯示如何新增命令的輸出。 命令結果資訊是選擇性的，但在某些情況下，示範使用特定參數的效果會很有説明。 Windows PowerShell®使用兩組空白 \<maml：段落 > 標記來分隔命令輸出與命令。
 
 ```xml
 <command:examples>

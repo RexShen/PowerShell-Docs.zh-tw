@@ -21,7 +21,7 @@ ms.locfileid: "72363407"
 
 ## <a name="a-table-view-display"></a>資料表視圖顯示
 
-下列範例示範 Windows PowerShell 如何顯示由[Get-服務](/powershell/module/microsoft.powershell.management/get-service)Cmdlet 傳回的[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件。 針對此物件，Windows PowerShell 定義了顯示 `Status` 屬性的資料表視圖，@no__t 1 屬性（此屬性是 `ServiceName` 屬性的 alias 屬性）和 `DisplayName` 屬性。 資料表中的每個資料列都代表 Cmdlet 所傳回的物件。
+下列範例示範 Windows PowerShell 如何顯示由[Get-服務](/powershell/module/microsoft.powershell.management/get-service)Cmdlet 傳回的[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件。 針對此物件，Windows PowerShell 定義了顯示 `Status` 屬性的資料表視圖，`Name` 屬性（此屬性是 `ServiceName` 屬性的 alias 屬性）和 `DisplayName` 屬性。 資料表中的每個資料列都代表 Cmdlet 所傳回的物件。
 
 ```output
 Status   Name               DisplayName
@@ -232,7 +232,7 @@ Running  Appinfo            Application Information
 
 - [[字串](./label-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定定義屬性或腳本值顯示方式的格式模式。
 
-在下列範例中，會呼叫 `ToString` 方法來格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），則腳本可以呼叫該方法來格式化腳本的輸出值。
+在下列範例中，會呼叫 `ToString` 方法，以格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），腳本就可以呼叫該方法來格式化腳本的輸出值。
 
 ```xml
 <ListItem>

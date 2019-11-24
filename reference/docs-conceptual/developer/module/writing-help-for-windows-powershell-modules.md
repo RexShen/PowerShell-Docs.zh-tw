@@ -17,7 +17,7 @@ ms.locfileid: "72360557"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>撰寫 Windows PowerShell 模組的說明
 
-Windows PowerShell 模組可以包含關於模組的說明主題以及模組成員，例如 Cmdlet、提供者、函式和腳本。 @No__t-0 Cmdlet 會以顯示其他 Windows PowerShell 專案說明的相同格式顯示模組說明主題，而使用者會使用標準的 `Get-Help` 命令來取得說明主題。
+Windows PowerShell 模組可以包含關於模組的說明主題以及模組成員，例如 Cmdlet、提供者、函式和腳本。 `Get-Help` Cmdlet 會以顯示其他 Windows PowerShell 專案說明的相同格式來顯示模組說明主題，而使用者會使用標準 `Get-Help` 命令來取得說明主題。
 
 本檔說明模組說明主題的格式和正確位置，並建議模組說明內容的指導方針。
 
@@ -58,7 +58,7 @@ Windows PowerShell 模組可以包含關於模組的說明主題以及模組成�
 
 ## <a name="placement-of-module-help"></a>模組說明的位置
 
-@No__t-0 Cmdlet 會在模組目錄的特定語言子目錄中尋找模組說明主題檔案。
+`Get-Help` Cmdlet 會在模組目錄的特定語言子目錄中尋找模組說明主題檔案。
 
 例如，下列目錄結構圖表會顯示 SampleModule 模組的說明主題位置。
 
@@ -77,23 +77,23 @@ Windows PowerShell 模組可以包含關於模組的說明主題以及模組成�
 ```
 
 > [!NOTE]
-> 在範例中， *@no__t 1ModulePath >* 預留位置代表 @no__t 2 環境變數中的其中一個路徑，例如 $home \documents\modules、$pshome \modules 或使用者指定的自訂路徑。
+> 在此範例中， *\<ModulePath >* 預留位置代表 `PSModulePath` 環境變數中的其中一個路徑，例如 $home \documents\modules、$pshome \modules 或使用者指定的自訂路徑。
 
 ## <a name="getting-module-help"></a>取得模組說明
 
 當使用者將模組匯入會話時，該模組的說明主題會連同模組一起匯入到會話中。 在模組資訊清單中，您可以在 FileList 索引鍵的值中列出說明主題檔案，但說明主題不會受到 `Export-ModuleMember` Cmdlet 的影響。
 
-您可以提供不同語言的模組說明主題。 @No__t-0 Cmdlet 會在 [控制台] 的 [地區及語言選項] 專案中，自動顯示針對目前使用者所指定語言的模組說明主題。 在 Windows Vista 和更新版本的 Windows 中，`Get-Help` 會根據針對 Windows 所建立的語言回溯標準，在模組目錄的特定語言子目錄中搜尋說明主題。
+您可以提供不同語言的模組說明主題。 `Get-Help` Cmdlet 會在 [控制台] 的 [地區及語言選項] 專案中，自動以目前使用者指定的語言顯示模組說明主題。 在 Windows Vista 和更新版本的 Windows 中，`Get-Help` 會根據針對 Windows 所建立的語言回溯標準，搜尋模組目錄的特定語言子目錄中的說明主題。
 
-從 Windows PowerShell 3.0 開始，針對 Cmdlet 或函式執行 @no__t 0 命令，會觸發自動匯入模組。 @No__t-0 Cmdlet 會立即顯示模組中說明主題的內容。
+從 Windows PowerShell 3.0 開始，執行 Cmdlet 或函式的 `Get-Help` 命令會觸發自動匯入模組。 `Get-Help` Cmdlet 會立即顯示模組中說明主題的內容。
 
-如果模組不包含說明主題，而且使用者電腦上的模組中沒有命令的說明主題，`Get-Help` 會顯示自動產生的說明。 自動產生的說明包括命令語法、參數，以及輸入和輸出類型，但不包含任何描述。 自動產生的說明包含文字，可引導使用者嘗試使用 `Update-Help` Cmdlet，從網際網路或檔案共用下載命令的說明。 此外，也建議使用 `Get-Help` Cmdlet 的**online**參數來取得說明主題的線上版本。
+如果模組不包含說明主題，而且使用者電腦上的模組中沒有命令的說明主題，`Get-Help` 會顯示自動產生的說明。 自動產生的說明包括命令語法、參數，以及輸入和輸出類型，但不包含任何描述。 自動產生的說明包含文字，可引導使用者嘗試使用 `Update-Help` Cmdlet，從網際網路或檔案共用下載命令的說明。 同時也建議使用 `Get-Help` Cmdlet 的**online**參數來取得說明主題的線上版本。
 
 ## <a name="supporting-updatable-help"></a>支援可更新的說明
 
-Windows PowerShell 3.0 和更新版本的 Windows PowerShell 的使用者可以從網際網路或本機檔案共用下載並安裝模組的已更新說明檔。 @No__t-0 和 @no__t 1 Cmdlet 會隱藏使用者的管理詳細資料。 使用者執行 `Update-Help` Cmdlet，然後使用 `Get-Help` Cmdlet，在 Windows PowerShell 命令提示字元中讀取模組的最新說明檔案。 使用者不需要重新開機 Windows 或 Windows PowerShell。
+Windows PowerShell 3.0 和更新版本的 Windows PowerShell 的使用者可以從網際網路或本機檔案共用下載並安裝模組的已更新說明檔。 `Update-Help` 和 `Save-Help` Cmdlet 會隱藏使用者的管理詳細資料。 使用者執行 `Update-Help` Cmdlet，然後使用 `Get-Help` Cmdlet，在 Windows PowerShell 命令提示字元中讀取模組的最新說明檔案。 使用者不需要重新開機 Windows 或 Windows PowerShell。
 
-防火牆後方的使用者和沒有網際網路存取的使用者，也可以使用「可更新的說明」。 具有網際網路存取權的系統管理員使用 `Save-Help` Cmdlet，將最新的說明檔下載並安裝到檔案共用。 然後，使用者會使用 `Update-Help` Cmdlet 的**Path**參數，從檔案共用取得最新的說明檔案。
+防火牆後方的使用者和沒有網際網路存取的使用者，也可以使用「可更新的說明」。 具有網際網路存取權的系統管理員使用 `Save-Help` Cmdlet，將最新的說明檔下載並安裝到檔案共用。 然後，使用者會使用 `Update-Help` Cmdlet 的**Path**參數，從檔案共用取得最新的說明檔。
 
 模組作者可以在模組中包含說明檔，並使用可更新的說明來更新說明檔，或省略模組的說明檔，並使用可更新的說明來安裝和更新這些檔案。
 
@@ -101,9 +101,9 @@ Windows PowerShell 3.0 和更新版本的 Windows PowerShell 的使用者可以�
 
 ## <a name="supporting-online-help"></a>支援線上說明
 
-無法或未在電腦上安裝已更新說明檔案的使用者，通常會依賴線上版本的模組說明主題。 @No__t-1 Cmdlet 的**online**參數會在使用者的預設網際網路瀏覽器中開啟 Cmdlet 或 advanced function 說明主題的線上版本。
+無法或未在電腦上安裝已更新說明檔案的使用者，通常會依賴線上版本的模組說明主題。 `Get-Help` Cmdlet 的**online**參數會在使用者的預設網際網路瀏覽器中開啟 Cmdlet 或 advanced function 說明主題的線上版本。
 
-@No__t-0 Cmdlet 會使用 Cmdlet 或函式的**HelpUri**屬性值來尋找說明主題的線上版本。
+`Get-Help` Cmdlet 會使用 Cmdlet 或函式的**HelpUri**屬性值來尋找說明主題的線上版本。
 
 從 Windows PowerShell 3.0 開始，您可以透過在 Cmdlet 類別上定義 HelpUri 屬性或**CmdletBinding**屬性的**HelpUri**屬性，協助使用者找出線上版本的 Cmdlet 和功能說明主題。 屬性的值是 Cmdlet 或函式的**HelpUri**屬性值。
 

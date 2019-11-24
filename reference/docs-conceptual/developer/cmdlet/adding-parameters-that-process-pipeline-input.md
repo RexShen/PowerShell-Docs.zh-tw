@@ -22,7 +22,7 @@ ms.locfileid: "72364597"
 
 Cmdlet 的其中一個輸入來源是管線上源自上游 Cmdlet 的物件。 本節說明如何將參數新增至 Get-help Cmdlet （如[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)所述），讓 Cmdlet 可以處理管線物件。
 
-這個程式碼指令程式會使用接受管線物件輸入的 `Name` 參數，根據提供的名稱從本機電腦抓取處理資訊，然後在命令列中顯示進程的相關資訊。
+這個 Proc 指令程式會使用接受管線物件輸入的 `Name` 參數，根據提供的名稱從本機電腦抓取處理資訊，然後在命令列中顯示進程的相關資訊。
 
 ## <a name="defining-the-cmdlet-class"></a>定義 Cmdlet 類別
 
@@ -68,7 +68,7 @@ End Property
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
-先前的宣告會將 `ValueFromPipeline` 關鍵字設定為 `true`，如此一來，如果物件的類型與參數相同，或者可以強制轉型為相同的類型，Windows PowerShell 執行時間就會將參數系結至傳入的物件。 @No__t-0 關鍵字也設定為 `true`，因此 Windows PowerShell 執行時間會檢查 @no__t 2 屬性的傳入物件。 如果傳入的物件具有這類屬性，則執行時間會將 `Name` 參數系結至傳入物件的 `Name` 屬性。
+先前的宣告會將 `ValueFromPipeline` 關鍵字設定為 `true`，因此，如果物件的類型與參數相同，或者可以強制轉型為相同的類型，則 Windows PowerShell 執行時間會將參數系結至傳入的物件。 `ValueFromPipelineByPropertyName` 關鍵字也會設定為 `true`，讓 Windows PowerShell 執行時間會檢查 `Name` 屬性的傳入物件。 如果傳入的物件具有這類屬性，則執行時間會將 `Name` 參數系結至傳入物件的 `Name` 屬性。
 
 > [!NOTE]
 > 參數的 `ValueFromPipeline` 屬性關鍵字設定會優先于 `ValueFromPipelineByPropertyName` 關鍵字的設定。
@@ -77,7 +77,7 @@ End Property
 
 如果您的 Cmdlet 是用來處理管線輸入，它必須覆寫適當的輸入處理方法。 基本輸入處理方法會在[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)中引進。
 
-此 Proc 指令程式會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理使用者或腳本所提供的 @no__t 1 參數輸入。 如果未提供任何名稱，這個方法會取得每個要求的進程名稱或所有進程的進程。 請注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，對[WriteObject （system.object，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)的呼叫是將輸出物件傳送至管線的輸出機制。 這個呼叫的第二個參數 `enumerateCollection`，會設定為 `true`，告訴 Windows PowerShell 執行時間列舉進程物件的陣列，並一次將一個進程寫入命令列。
+此 Proc Cmdlet 會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理使用者或腳本所提供的 `Name` 參數輸入。 如果未提供任何名稱，這個方法會取得每個要求的進程名稱或所有進程的進程。 請注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，對[WriteObject （system.object，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)的呼叫是將輸出物件傳送至管線的輸出機制。 此呼叫的第二個參數（`enumerateCollection`）會設定為 `true`，以指示 Windows PowerShell 執行時間列舉處理常式物件的陣列，並一次將一個進程寫入命令列。
 
 ```csharp
 protected override void ProcessRecord()
@@ -157,7 +157,7 @@ Windows PowerShell 會使用 .Net 物件在 Cmdlet 之間傳遞資訊。 因此�
        3927      62  71836   26984    467  195.19  1848  OUTLOOK
     ```
 
-- 輸入下列幾行，從名為 "IEXPLORE.EXE" 的進程取得具有 @no__t 0 屬性的處理常式物件。 這個範例使用 `Get-Process` 指令程式（由 Windows PowerShell 提供）作為上游命令來抓取 "IEXPLORE.EXE" 進程。
+- 輸入下列幾行，從名為 "IEXPLORE.EXE" 的進程取得具有 `Name` 屬性的處理常式物件。 這個範例會使用 `Get-Process` Cmdlet （由 Windows PowerShell 提供）作為上游命令，以取得 "IEXPLORE.EXE" 進程。
 
     ```powershell
     PS> get-process iexplore | get-proc

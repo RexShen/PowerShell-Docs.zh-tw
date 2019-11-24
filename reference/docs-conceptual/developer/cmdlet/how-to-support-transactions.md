@@ -25,15 +25,15 @@ ms.locfileid: "72365537"
 ## <a name="to-support-transactions"></a>支援交易
 
 1. 當您宣告 Cmdlet 屬性時，請指定此 Cmdlet 支援交易。
-   當 Cmdlet 支援交易時，Windows PowerShell 會在執行時，將 `UseTransaction` 參數新增至 Cmdlet。
+   當 Cmdlet 支援交易時，Windows PowerShell 會在執行時將 `UseTransaction` 參數新增至 Cmdlet。
 
     ```csharp
     [Cmdlet(VerbsCommunications.Send, "GreetingTx",
             SupportsTransactions=true )]
     ```
 
-2. 在其中一個輸入處理方法中，加入 @no__t 0 區塊，以判斷是否有可用的交易。
-   如果 @no__t 0 的語句解析成 `true`，就可以在目前交易的內容中執行此語句中的動作。
+2. 在其中一個輸入處理方法中，加入 `if` 區塊，以判斷是否有可用的交易。
+   如果 `if` 語句解析成 `true`，就可以在目前交易的內容中執行此語句中的動作。
 
     ```csharp
     if (TransactionAvailable())

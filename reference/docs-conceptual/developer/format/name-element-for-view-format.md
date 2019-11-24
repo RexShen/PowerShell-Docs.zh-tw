@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Name` 元素的父元素。 每個視圖只允許一個 @no__t 0 元素。
+下列各節說明屬性、子專案，以及 `Name` 專案的父元素。 每個視圖只允許一個 `Name` 元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[View 元素（格式）](./view-element-format.md)|定義用來顯示一或多個 .NET 物件成員的視圖。|
 
@@ -55,7 +55,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-下列範例會顯示定義[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件之資料表視圖的 @no__t 0 元素。 此視圖的名稱為 "service"。
+下列範例會顯示定義[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件之資料表視圖的 `View` 元素。 此視圖的名稱為 "service"。
 
 ```xml
 <View>

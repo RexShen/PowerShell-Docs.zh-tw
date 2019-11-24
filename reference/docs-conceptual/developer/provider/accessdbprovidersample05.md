@@ -17,7 +17,7 @@ ms.locfileid: "72359967"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
-這個範例示範如何覆寫容器方法，以支援對 `Move-Item` 和 @no__t 1 Cmdlet 的呼叫。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 這個範例中的提供者類別衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
+這個範例示範如何覆寫容器方法，以支援對 `Move-Item` 和 `Join-Path` Cmdlet 的呼叫。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 這個範例中的提供者類別衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
 
 ## <a name="demonstrates"></a>演示
 
@@ -36,7 +36,7 @@ ms.locfileid: "72359967"
 
 - 定義一個衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別的提供者類別。
 
-- 覆寫[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法來變更 @no__t 1 Cmdlet 的行為，讓使用者可以將專案從一個位置移到另一個位置。 （此範例不會示範如何將動態參數新增至 `Move-Item` Cmdlet）。
+- 覆寫[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法來變更 `Move-Item` Cmdlet 的行為，讓使用者可以將專案從一個位置移到另一個位置。 （此範例不會示範如何將動態參數新增至 `Move-Item` Cmdlet）。
 
 - 覆寫[NavigationCmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法，以變更 `Join-Path` Cmdlet 的行為。
 

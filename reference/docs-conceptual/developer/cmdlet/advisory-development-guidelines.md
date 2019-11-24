@@ -25,13 +25,13 @@ ms.locfileid: "72370037"
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>支援 InputObject 參數（AD01）
 
-由於 Windows PowerShell 會直接與 Microsoft .NET Framework 物件搭配運作，因此通常會提供 .NET Framework 物件，完全符合使用者執行特定作業所需的類型。 `InputObject` 是接受這類物件做為輸入之參數的標準名稱。 例如， [StopProc 教學](./stopproc-tutorial.md)課程中的範例**停止程式**Cmdlet 會定義支援管線輸入之 Process 類型的 @no__t 2 參數。 使用者可以取得一組處理常式物件，操控它們以選取要停止的確切物件，然後直接將它們傳遞給**停止程式**Cmdlet。
+由於 Windows PowerShell 會直接與 Microsoft .NET Framework 物件搭配運作，因此通常會提供 .NET Framework 物件，完全符合使用者執行特定作業所需的類型。 `InputObject` 是接受這類物件做為輸入之參數的標準名稱。 例如， [StopProc 教學](./stopproc-tutorial.md)課程中的範例**停止程式**Cmdlet 會定義支援管線輸入之 Process 類型的 `InputObject` 參數。 使用者可以取得一組處理常式物件，操控它們以選取要停止的確切物件，然後直接將它們傳遞給**停止程式**Cmdlet。
 
 ### <a name="support-the-force-parameter-ad02"></a>支援 Force 參數（AD02）
 
 有時候，Cmdlet 必須保護使用者，使其無法執行要求的操作。 這類 Cmdlet 應該支援 `Force` 參數，以允許使用者在有權執行作業時覆寫該保護。
 
-例如，[移除專案](/powershell/module/microsoft.powershell.management/remove-item)Cmdlet 通常不會移除唯讀檔案。 不過，此 Cmdlet 支援 `Force` 參數，讓使用者可以強制移除唯讀檔案。 如果使用者已經有修改唯讀屬性的許可權，而且使用者移除該檔案，使用 `Force` 參數可簡化作業。 不過，如果使用者沒有移除檔案的許可權，@no__t 0 參數就不會有任何作用。
+例如，[移除專案](/powershell/module/microsoft.powershell.management/remove-item)Cmdlet 通常不會移除唯讀檔案。 不過，此 Cmdlet 支援 `Force` 參數，讓使用者可以強制移除唯讀檔案。 如果使用者已經有修改唯讀屬性的許可權，而且使用者移除該檔案，使用 `Force` 參數可簡化作業。 不過，如果使用者沒有移除檔案的許可權，`Force` 參數就不會有任何作用。
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>透過 Windows PowerShell 處理認證（AD03）
 
@@ -59,7 +59,7 @@ Cmdlet 應定義 `Credential` 參數來代表認證。 這個參數的類型必�
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>將 Cmdlet 類別命名為符合 Cmdlet 名稱
 
-當您命名執行 Cmdlet 的 .NET Framework 類別時，請將類別命名為 " *\<Verb > **\<Noun >** \<Command >* "，您可以在其中將 *@no__t 6Verb >* 和 *@no__t 8Noun >* 預留位置取代為Cmdlet 名稱所使用的動詞和名詞。 例如，[取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)Cmdlet 是由名為 `GetProcessCommand` 的類別所實。
+當您命名執行 Cmdlet 的 .NET Framework 類別時，請將類別命名為「 *\<動詞 > **\<名詞 >** \<命令 >* 」，您可以在其中使用用於 Cmdlet 名稱的動詞和名詞來取代 *\<動詞*> 和 *\<名詞 >* 預留位置。 例如， [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) Cmdlet 是由稱為 `GetProcessCommand`的類別所實。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>如果沒有管線輸入覆寫 BeginProcessing 方法（AC02）
 
@@ -67,13 +67,13 @@ Cmdlet 應定義 `Credential` 參數來代表認證。 這個參數的類型必�
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>若要處理停止要求，請覆寫 StopProcessing 方法（AC03）
 
-覆寫[StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法，讓您的 Cmdlet 可以處理停止信號。 某些 Cmdlet 會花很長的時間來完成其作業，並可讓您在呼叫 Windows PowerShell 執行時間之間進行較長的時間傳遞，例如當 Cmdlet 在長時間執行的 RPC 呼叫中封鎖執行緒時。 這包括呼叫[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法的 Cmdlet、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，以及其他可能需要很長一段時間才能完成的意見反應機制的指令程式（）. 在這些情況下，使用者可能需要傳送停止信號給這些 Cmdlet。
+覆寫[StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)方法，讓您的 Cmdlet 可以處理停止信號。 某些 Cmdlet 會花很長的時間來完成其作業，並可讓您在呼叫 Windows PowerShell 執行時間之間進行較長的時間傳遞，例如當 Cmdlet 在長時間執行的 RPC 呼叫中封鎖執行緒時。 這包括對[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法進行呼叫的 Cmdlet、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法，以及其他可能需要很長時間才能完成的意見反應機制，都包含在這種情況下。 在這些情況下，使用者可能需要傳送停止信號給這些 Cmdlet。
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>執行 IDisposable 介面（AC04）
 
-如果您的 Cmdlet 具有不會由[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法處置（寫入管線）的物件，您的 Cmdlet 可能需要額外的物件處置。 例如，如果您的 Cmdlet 會在[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中開啟檔案控制代碼，並讓控制碼保持開啟以供[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法使用，則此控制碼必須是在處理結束時關閉。
+如果您的 Cmdlet 具有不會由[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法處置（寫入管線）的物件，您的 Cmdlet 可能需要額外的物件處置。 例如，如果您的 Cmdlet 會在[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中開啟檔案控制代碼，並讓控制碼保持開啟以供[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法使用，則必須在處理結束時關閉此控制碼（handle）。
 
-Windows PowerShell 執行時間並不一定會呼叫[system.servicemodel 方法。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 例如，如果 Cmdlet 在其作業中途取消，或在 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.servicemodel 方法。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 因此，需要物件清除之 Cmdlet 的 .NET Framework 類別應執行完整的[IDisposable](/dotnet/api/System.IDisposable)介面模式，包括完成項，讓 Windows PowerShell 執行時間可以同時[呼叫](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)IDisposable 處理結束時，會進行 system.servicemodel 和[system.web *](/dotnet/api/System.IDisposable.Dispose)方法的管理。
+Windows PowerShell 執行時間並不一定會呼叫[system.servicemodel 方法。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 例如，如果 Cmdlet 在其作業中途取消，或在 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.servicemodel 方法。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 因此，需要物件清除之 Cmdlet 的 .NET Framework 類別應該會執行完整的[IDisposable](/dotnet/api/System.IDisposable)介面模式，包括完成項，讓 Windows PowerShell 執行時間可以在處理結束時同時呼叫 System.web 和[IDisposable](/dotnet/api/System.IDisposable.Dispose)方法，以進行[管理](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>使用序列化易懂的參數類型（AC05）
 

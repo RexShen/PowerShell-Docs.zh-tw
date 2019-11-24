@@ -19,7 +19,7 @@ ms.locfileid: "72369977"
 
 您可以使用 Cmdlet 別名來改善 Cmdlet 的使用者體驗。 您可以將別名新增至常用的 Cmdlet 以減少輸入，並可讓您更輕鬆地快速完成工作。 您可以在 Cmdlet 中包含內建別名，或使用者可以定義自己的自訂別名。
 
-例如， [Get-Command](/powershell/module/microsoft.powershell.core/get-command) Cmdlet 具有內建的 @no__t 1 別名。 您也可以使用別名來新增其他語言的命令名稱，讓使用者不必學習新的命令。
+例如， [Get-Command](/powershell/module/microsoft.powershell.core/get-command) Cmdlet 具有內建的 `gcm` 別名。 您也可以使用別名來新增其他語言的命令名稱，讓使用者不必學習新的命令。
 
 ## <a name="alias-guidelines"></a>別名指導方針
 

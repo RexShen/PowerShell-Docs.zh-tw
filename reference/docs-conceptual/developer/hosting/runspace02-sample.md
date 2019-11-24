@@ -17,7 +17,7 @@ ms.locfileid: "72360977"
 ---
 # <a name="runspace02-sample"></a>Runspace02 範例
 
-這個範例示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別，以同步方式執行[Get 進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)和[排序物件](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)Cmdlet。 [取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)[指令程式會](/dotnet/api/System.Diagnostics.Process)針對在本機電腦上執行的每個進程傳回 System.Diagnostics.Process.Id，而 @no__t 2 則會根據其[*](/dotnet/api/System.Diagnostics.Process.Id)屬性來排序物件。 這些命令的結果會使用[system.web](/dotnet/api/System.Windows.Forms.DataGridView)控制項來顯示。
+這個範例示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別，以同步方式執行[Get 進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)和[排序物件](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)Cmdlet。 [取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式會針對在本機電腦上執行的每個進程傳回[system.object](/dotnet/api/System.Diagnostics.Process) ，而 `Sort-Object` 會根據其[System.Diagnostics.Process.Id *](/dotnet/api/System.Diagnostics.Process.Id)屬性來排序物件。 這些命令的結果會使用[system.web](/dotnet/api/System.Windows.Forms.DataGridView)控制項來顯示。
 
 ## <a name="requirements"></a>需求
 

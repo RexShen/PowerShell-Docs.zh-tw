@@ -65,7 +65,7 @@ ms.locfileid: "72365297"
 
 ## <a name="example"></a>範例
 
-這個範例示範如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件，以及如何藉由呼叫 `ShouldProcess` 和 @no__t 2 方法來要求使用者意見反應。
+這個範例會示範如何執行 `PassThru` 參數，以指出使用者希望 Cmdlet 傳回物件，以及如何藉由呼叫 `ShouldProcess` 和 `ShouldContinue` 方法來要求使用者意見反應。
 
 ```csharp
 using System;

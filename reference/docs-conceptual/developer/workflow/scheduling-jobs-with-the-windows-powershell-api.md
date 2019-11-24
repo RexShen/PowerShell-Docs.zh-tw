@@ -42,9 +42,9 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 您可以藉由建立參數字典來定義 PowerShell 作業。 支援下列參數：
 
-|參數名稱|描述|
+|參數名稱|說明|
 |--------------------|-----------------|
-|**檔案名**|作業的名稱。|
+|**名稱**|作業的名稱。|
 |**ScriptBock**|指定作業作用的 PowerShell 腳本區塊。|
 |**FilePath**|檔案的路徑，其中包含 PowerShell 腳本區塊來指定作業的功能。|
 |**InitializationScript**|初始化工作的 PowerShell 腳本區塊。|
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>建立調用和作業定義物件
 
-接著，您可以建立 `ScheduledJobInvocationInfo` 和 @no__t 1 物件來執行作業，如下列範例所示：
+接著，您可以建立 `ScheduledJobInvocationInfo`，並 `ScheduledJobDefinition` 物件來執行作業，如下列範例所示：
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

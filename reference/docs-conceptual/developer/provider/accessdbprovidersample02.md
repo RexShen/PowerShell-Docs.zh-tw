@@ -17,7 +17,7 @@ ms.locfileid: "72366367"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
-這個範例會示範如何覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[DriveCmdletprovider Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支援對 @no__t 的呼叫-2 的呼叫-2和 @no__t 3 個 Cmdlet。 這個範例中的提供者類別衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別。
+這個範例會示範如何覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支援 `New-PSDrive` 和 `Remove-PSDrive` Cmdlet 的呼叫，並將其提供給。 這個範例中的提供者類別衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別。
 
 ## <a name="demonstrates"></a>演示
 
@@ -42,7 +42,7 @@ ms.locfileid: "72366367"
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法中的程式。 針對此範例提供者，建立磁片磁碟機時，其連線資訊會儲存在 `AccessDBPsDriveInfo` 物件中。
+這個範例會示範如何覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法中的程式。 針對此範例提供者，當建立磁片磁碟機時，其連接資訊會儲存在 `AccessDBPsDriveInfo` 物件中。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers

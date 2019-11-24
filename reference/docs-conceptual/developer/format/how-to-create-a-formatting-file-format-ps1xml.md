@@ -36,9 +36,9 @@ ms.locfileid: "72363617"
    </Configuration>
    ```
 
-   - @No__t 0Configuration > \</Configuration > 標記會定義根 @no__t 2 節點。 所有其他的 XML 標記都會放在這個節點內。
+   - \<Configuration >\</組態 > 標記會定義根 `Configuration` 節點。 所有其他的 XML 標記都會放在這個節點內。
 
-   - <ViewDefinitions></ViewDefinitions>標記會定義 @no__t 1 節點。 所有的視圖都會在此節點中定義。
+   - 這些<ViewDefinitions></ViewDefinitions>標記會定義 `ViewDefinitions` 節點。 所有的視圖都會在此節點中定義。
 
 3. 將檔案儲存至 Windows PowerShell 安裝資料夾、模組資料夾或模組資料夾的子資料夾。 當您儲存檔案時，請使用下列名稱格式： `MyFile.format.ps1xml`。 格式化檔案必須使用 `.format.ps1xml` 延伸模組。
 

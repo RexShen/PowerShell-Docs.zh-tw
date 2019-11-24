@@ -35,7 +35,7 @@ public string UserName
 private string userName;
 ```
 
-若要定義位置參數，請在參數屬性宣告中加入 `Position` 關鍵字，然後指定位置。 在下列範例中，`UserName` 參數會宣告為位置參數，其位置為0。 這表示呼叫的第一個引數會自動系結至此參數。
+若要定義位置參數，請在參數屬性宣告中加入 `Position` 關鍵字，然後指定位置。 在下列範例中，會將 `UserName` 參數宣告為位置參數，其位置為0。 這表示呼叫的第一個引數會自動系結至此參數。
 
 ```csharp
 [Parameter(Position = 0)]
@@ -52,7 +52,7 @@ private string userName;
 
 位置和具名引數接受單一引數或以逗號分隔的多個引數。 只有當參數接受集合（例如字串陣列）時，才允許使用多個引數。 您可以在相同的 Cmdlet 中混合位置和具名引數。 在此情況下，系統會先抓取具名引數，然後再嘗試將其餘未命名的引數對應到位置參數。
 
-下列命令會顯示您可以為 `Get-Command` Cmdlet 的參數指定單一和多個引數的不同方式。 請注意，在最後兩個範例中，不需要指定 **-name** ，因為 `Name` 參數定義為位置參數。
+下列命令會顯示您可以為 `Get-Command` Cmdlet 的參數指定單一和多個引數的不同方式。 請注意，在最後兩個範例中，不需要指定 **-name** ，因為 `Name` 參數會定義為位置參數。
 
 ```powershell
 Get-Command -Name get-service
@@ -91,11 +91,11 @@ private string userName;
 
 ## <a name="switch-parameters"></a>切換參數
 
-Windows PowerShell 提供[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，可讓您定義參數，如果呼叫 Cmdlet 時未指定參數，其值會自動設定為 `false`。 盡可能使用切換參數來取代布林值參數。
+Windows PowerShell 提供[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，可讓您定義參數，其值會自動設定為 `false` 如果在呼叫 Cmdlet 時未指定參數。 盡可能使用切換參數來取代布林值參數。
 
-請考慮下列範例。 根據預設，數個 Windows PowerShell Cmdlet 不會將輸出物件沿著管線向下傳遞。 不過，這些 Cmdlet 具有 @no__t 0 切換參數，會覆寫預設行為。 如果在呼叫這些 Cmdlet 時指定了 `PassThru` 參數，Cmdlet 會將輸出物件傳回至管線。
+請考慮下列範例。 根據預設，數個 Windows PowerShell Cmdlet 不會將輸出物件沿著管線向下傳遞。 不過，這些 Cmdlet 有一個 `PassThru` 切換參數，會覆寫預設行為。 如果在呼叫這些 Cmdlet 時指定了 `PassThru` 參數，則 Cmdlet 會將輸出物件傳回至管線。
 
-當呼叫中未指定參數時，如果您需要參數的預設值為 `true`，請考慮反轉參數的意義。 如需範例，請將屬性宣告為[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，然後將參數的預設值設定為 `false`，而不是將參數屬性設定為的布林值 `true`。
+如果您需要參數在呼叫中未指定參數時具有預設值 `true`，請考慮反轉參數的意義。 如需範例，請將屬性宣告為[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，然後將參數的預設值設定為 `false`，而不是將參數屬性設定為 `true`的布林值。
 
 若要定義切換參數，請將屬性宣告為[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型，如下列範例所示。
 

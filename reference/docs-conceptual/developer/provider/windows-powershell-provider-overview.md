@@ -17,7 +17,7 @@ ms.locfileid: "72366287"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell 提供者概觀
 
-Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公開，就像它是裝載的磁片磁碟機一樣。 例如，內建的登錄提供者可讓您流覽登錄，就像流覽電腦的 @no__t 0 磁片磁碟機一樣。 提供者也可以覆寫 `Item` Cmdlet （例如，`Get-Item`、`Set-Item` 等等），讓您的資料存放區中的資料可以被處理，例如在流覽檔案系統時處理檔案和目錄。 如需提供者和磁片磁碟機的詳細資訊，以及 Windows PowerShell 中的內建提供者，請參閱[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)。
+Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公開，就像它是裝載的磁片磁碟機一樣。 例如，內建的登錄提供者可讓您流覽登錄，就像流覽電腦的 `c` 磁片磁碟機一樣。 提供者也可以覆寫 `Item` 的 Cmdlet （例如，`Get-Item`、`Set-Item`等等），讓您的資料存放區中的資料可以被處理，例如在流覽檔案系統時處理檔案和目錄。 如需提供者和磁片磁碟機的詳細資訊，以及 Windows PowerShell 中的內建提供者，請參閱[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)。
 
 ## <a name="providers-and-drives"></a>提供者和磁片磁碟機
 
@@ -51,7 +51,7 @@ Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公�
 
 ### <a name="provider-internal-paths"></a>提供者-內部路徑
 
-若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面（Api）來存取資料，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑為 `\\uncshare\abc\bar`。
+若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面（Api）來存取資料，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，檔案系統 Windows PowerShell 提供者的提供者內部路徑為 `\\uncshare\abc\bar`。
 
 ## <a name="overriding-cmdlet-parameters"></a>覆寫 Cmdlet 參數
 
@@ -63,7 +63,7 @@ Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公�
 
 ## <a name="provider-capabilities"></a>提供者功能
 
-[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉定義了提供者可以支援的許多功能。」 其中包括使用萬用字元、篩選項目和支援交易的能力。 若要指定提供者的功能，請新增[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉的值清單，並結合邏輯 @no__t 1 作業，做為[Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)屬性（屬性的第二個參數）的[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性（attribute），適用于您的提供者類別。 例如，下列屬性會指定提供者可支援[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**和 Providercapabilities 的系統管理元件，並將其[自動化。](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0)**交易**功能。
+[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉定義了提供者可以支援的許多功能。」 其中包括使用萬用字元、篩選項目和支援交易的能力。 若要指定提供者的功能，請加入[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉的值清單，並結合邏輯 `OR` 作業，做為您提供者類別的 Cmdletproviderattribute[屬性（](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute）的[Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)屬性（屬性（property）的第二個參數（property））的清單。 例如，下列屬性會指定提供者可支援[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**和[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **交易**功能的，而此元件則是。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -74,9 +74,9 @@ Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公�
 
 撰寫提供者時，您可以針對您支援的提供者 Cmdlet，執行自己的說明。 這包括每個提供者 Cmdlet 的單一說明主題，或適用于提供者 Cmdlet 根據動態參數使用方式不同之案例的多個說明主題版本。 若要支援提供者 Cmdlet 特定的說明，您的提供者必須執行[ICmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp)介面。
 
-Windows PowerShell 引擎會呼叫[ICmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml)方法，以顯示提供者 Cmdlet 的說明主題。 引擎會提供在執行 `Get-Help` Cmdlet 和使用者目前的路徑時，使用者所指定的 Cmdlet 名稱。 如果您的提供者針對不同的磁片磁碟機執行相同提供者 Cmdlet 的不同版本，則需要目前的路徑。 方法必須傳回包含 Cmdlet 說明之 XML 的字串。
+Windows PowerShell 引擎會呼叫[ICmdletprovidersupportshelp. Gethelpmaml *](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml)方法，以顯示提供者 Cmdlet 的說明主題。 引擎會提供使用者執行 `Get-Help` Cmdlet 時指定的 Cmdlet 名稱和使用者的目前路徑。 如果您的提供者針對不同的磁片磁碟機執行相同提供者 Cmdlet 的不同版本，則需要目前的路徑。 方法必須傳回包含 Cmdlet 說明之 XML 的字串。
 
-說明檔的內容是使用 PSMAML XML 來撰寫。 這是用來撰寫獨立 Cmdlet 之說明內容的相同 XML 架構。 將自訂 Cmdlet 說明的內容新增至 `CmdletHelpPaths` 元素底下提供者的說明檔。 下列範例顯示單一提供者 Cmdlet 的 `command` 元素，並說明如何指定提供者的提供者 Cmdlet 名稱。 支援
+說明檔的內容是使用 PSMAML XML 來撰寫。 這是用來撰寫獨立 Cmdlet 之說明內容的相同 XML 架構。 將自訂 Cmdlet 說明的內容新增至 `CmdletHelpPaths` 元素下提供者的說明檔。 下列範例顯示單一提供者 Cmdlet 的 `command` 元素，並顯示如何指定提供者的提供者 Cmdlet 名稱。 支援
 
 ```xml
 <CmdletHelpPaths>

@@ -33,7 +33,7 @@ ValidateCount 屬性會指定 Cmdlet 參數所允許的最小和最大引數數�
 
 需要 `MinLength` （[System. Int32][]）。 指定引數的最小數目。
 
-需要 `MaxLength` （[System. Int32][]）。 指定引數的最大數目。
+需要 `MaxLength`（[System. Int32][]）。 指定引數的最大數目。
 
 ## <a name="remarks"></a>備註
 
@@ -43,9 +43,9 @@ ValidateCount 屬性會指定 Cmdlet 參數所允許的最小和最大引數數�
 
 - 在下列情況下，Windows PowerShell 執行時間會擲回錯誤：
 
-    - @No__t-0 和 @no__t 1 屬性參數不是[System. Int32][]類型。
+    - `MinLength` 和 `MaxLength` 屬性參數不是[System. Int32][]類型。
 
-    - @No__t-0 屬性參數的值小於 `MinLength` 屬性參數的值。
+    - `MaxLength` 屬性參數的值小於 `MinLength` 屬性參數的值。
 
 - ValidateCount 屬性是由[ValidateCountAttribute。][]類別所定義。
 

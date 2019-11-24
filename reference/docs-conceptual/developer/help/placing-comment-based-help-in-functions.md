@@ -17,7 +17,7 @@ ms.locfileid: "72367777"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>將註解型說明置於函式
 
-本主題說明如何為函式放置以批註為基礎的協助，讓 `Get-Help` Cmdlet 將批註型說明主題與正確的函式建立關聯。
+本主題說明如何為函式放置以批註為基礎的協助，讓 `Get-Help` Cmdlet 將以批註為基礎的說明主題與正確的函式產生關聯。
 
 ## <a name="where-to-place-comment-based-help-for-a-function"></a>要在何處放置函式以批註為基礎的說明
 
@@ -25,7 +25,7 @@ ms.locfileid: "72367777"
 
 - 在函式主體的結尾。
 
-- 在 `Function` 關鍵字之前。 當函式在腳本或腳本模組中時，以批註為基礎的說明和 @no__t 0 關鍵字的最後一行之間不能有一個以上的空白行。 否則，`Get-Help` 會將說明與腳本建立關聯，而不會與函式產生關聯。
+- `Function` 關鍵字之前。 當函式在腳本或腳本模組中時，以批註為基礎的說明和 `Function` 關鍵字的最後一行之間不能有一個以上的空白行。 否則，`Get-Help` 會將說明與腳本建立關聯，而不是與函式相關聯。
 
 ## <a name="examples-of-help-placement-in-a-function"></a>說明放置在函式中的範例
 

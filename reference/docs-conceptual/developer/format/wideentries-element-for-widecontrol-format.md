@@ -32,7 +32,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `WideEntries` 元素的屬性、子專案和父元素。 至少必須指定一個子項目。
+下列各節描述 `WideEntries` 專案的屬性、子專案和父項目。 至少必須指定一個子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,13 +40,13 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[WideEntry 元素（格式）](./wideentry-element-for-widecontrol-format.md)|提供寬視圖的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[WideControl 元素（格式）](./widecontrol-element-format.md)|定義視圖的寬（單一值）清單格式。|
 
@@ -56,7 +56,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-下列範例顯示定義單一 `WideEntry` 元素的 @no__t 0 元素。 @No__t-0 元素包含單一的 @no__t 1 元素，可定義要在視圖中顯示的屬性或腳本值。
+下列範例顯示定義單一 `WideEntry` 元素的 `WideEntries` 專案。 `WideEntry` 元素包含單一 `WideItem` 元素，可定義要在視圖中顯示的屬性或腳本值。
 
 ```xml
 <WideControl>

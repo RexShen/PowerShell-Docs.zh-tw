@@ -37,7 +37,7 @@ ms.locfileid: "72361207"
 
   - 如果為 true （ByValue），您可以透過管道傳送輸入至參數。 即使屬性名稱和物件類型不符合預期的類型，輸入也會與（「系結至」）參數相關聯。 Windows PowerShell？參數系結元件會嘗試將輸入轉換成正確的型別，只有在無法轉換型別時，才會使命令失效。 參數集中只有一個參數可以透過 value 來關聯。
 
-  - 如果為 true （ByPropertyName），您可以透過管道傳送輸入至參數。 不過，只有當參數名稱符合輸入物件的屬性名稱時，輸入才會與參數相關聯。 例如，如果參數名稱是 `Path`，則只有當物件具有名為 path 的屬性時，才會將輸送至 Cmdlet 的物件與該參數相關聯。
+  - 如果為 true （ByPropertyName），您可以透過管道傳送輸入至參數。 不過，只有當參數名稱符合輸入物件的屬性名稱時，輸入才會與參數相關聯。 例如，如果參數名稱是 `Path`，則只有在物件具有名為 path 的屬性時，才會將輸送至 Cmdlet 的物件與該參數相關聯。
 
   - 如果為 true （ByValue，ByPropertyName），您可以透過屬性名稱或以傳值方式將輸入傳送至參數。 參數集中只有一個參數可以透過 value 來關聯。
 
@@ -90,7 +90,7 @@ ms.locfileid: "72361207"
 
    如果 Cmdlet 支援 ShouldProcess，請務必列出 WhatIf 和 Confirm 參數。
 
-   請勿在您的語法圖表中列出一般參數（例如 Verbose、Debug 和 ErrorAction）。 當您顯示說明主題時，`Get-Help` Cmdlet 會為您新增該資訊。
+   請勿在您的語法圖表中列出一般參數（例如 Verbose、Debug 和 ErrorAction）。 `Get-Help` Cmdlet 會在顯示說明主題時，為您新增該資訊。
 
 3. 新增參數值。 在 Windows PowerShell 中，參數值是以其 .NET 類型來表示。 不過，型別名稱可以是縮寫，例如 system.string 的 "string"。
 
@@ -156,11 +156,11 @@ ms.locfileid: "72361207"
 
 ## <a name="coding-the-syntax-diagram-xml"></a>編碼語法圖表 XML
 
-XML 的語法節點會緊接在 description 節點後面，結尾為 \</maml： description > 標記。 如需有關收集語法圖表中所用資料的詳細資訊，請參閱[收集語法資訊](#gathering-syntax-information)。
+XML 的語法節點會緊接在 description 節點後面，結尾是 \</maml： description > 標記。 如需有關收集語法圖表中所用資料的詳細資訊，請參閱[收集語法資訊](#gathering-syntax-information)。
 
 ### <a name="adding-a-syntax-node"></a>加入語法節點
 
-Cmdlet 說明主題中顯示的語法圖表是從 XML 的語法節點中的資料產生。 如果 @no__t 0command：語法 > 標記，語法節點會括在配對中。 將 Cmdlet 的每個參數集放在一對 \<command： syntaxitem > 標記中。 您可以新增的 @no__t 0command： syntaxitem > 標記數目沒有限制。
+Cmdlet 說明主題中顯示的語法圖表是從 XML 的語法節點中的資料產生。 如果 \<命令：語法 > 標記，則語法節點會括在配對中。 將 Cmdlet 的每個參數集括在一對 \<命令中： syntaxitem > 標記。 \<命令的數目沒有限制：您可以新增的 syntaxitem > 標記。
 
 下列範例顯示語法節點，其中包含兩個參數集的語法專案節點。
 
@@ -181,7 +181,7 @@ Cmdlet 說明主題中顯示的語法圖表是從 XML 的語法節點中的資�
 
 ### <a name="adding-the-cmdlet-name-to-the-parameter-set-data"></a>將 Cmdlet 名稱新增至參數集資料
 
-Cmdlet 的每個參數集都指定于語法專案節點中。 每個語法專案節點的開頭都是一對 \<maml： name > 標記，其中包含 Cmdlet 的名稱。
+Cmdlet 的每個參數集都指定于語法專案節點中。 每個語法專案節點的開頭都是一對 \<maml：名稱 > 標記，其中包含 Cmdlet 的名稱。
 
 下列範例包含語法節點，其中包含兩個參數集的語法專案節點。
 
@@ -198,12 +198,12 @@ Cmdlet 的每個參數集都指定于語法專案節點中。 每個語法專案
 
 ### <a name="adding-parameters"></a>加入參數
 
-加入至語法專案節點的每個參數都是在一對 \<command：參數 > 標記中指定。 針對參數集內所包含的每個參數，您都需要一對 @no__t 0command：參數 > 標記，但 Windows PowerShell 所提供的一般參數除外？。
+新增至語法專案節點的每個參數都指定于一對 \<命令中：參數 > 標記。 您需要一組 \<命令：參數 > 標記包含在參數集中的每個參數，但 Windows PowerShell 所提供的一般參數除外？。
 
-開啟的 @no__t 0command： parameter > 標記的屬性會決定參數如何出現在語法圖表中。 如需參數屬性的詳細資訊，請參閱[參數屬性](#parameter-attributes)。
+開啟 \<命令的屬性：參數 > 標記會決定參數如何出現在語法圖表中。 如需參數屬性的詳細資訊，請參閱[參數屬性](#parameter-attributes)。
 
 > [!NOTE]
-> @No__t-0command： parameter > 標記支援 \<maml： description > 內容永遠不會顯示的子項目。 參數描述是在 XML 的參數節點中指定。 若要避免語法專案指日可待和參數節點中的資訊不一致，請省略（\<maml： description > 或將其保留空白。
+> \<命令：參數 > 標記支援內容永遠不會顯示 \<maml： description > 的子項目。 參數描述是在 XML 的參數節點中指定。 若要避免語法專案指日可待和參數節點中的資訊不一致，請省略（\<maml： description > 或保留空白。
 
 下列範例包含具有兩個參數之參數集的語法專案節點。
 

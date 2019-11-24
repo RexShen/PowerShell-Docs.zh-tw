@@ -29,7 +29,7 @@ C# Cmdlet 的說明檔必須命名為定義 Cmdlet 所在的元件。 使用下�
 
 即使元件是一個嵌套模組，也需要元件名稱格式。
 
-例如， [new-winevent;PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)Cmdlet 定義于 Microsoft. PowerShell 元件中。 @No__t-0 Cmdlet 只會在模組目錄中的 dll-help 檔案中尋找 `Get-WinEvent` Cmdlet 的說明主題。
+例如， [new-winevent;PSITPro5_Diagnostic;](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)Cmdlet 定義于 Microsoft. PowerShell 元件中。 `Get-Help` Cmdlet 只會在模組目錄中的 dll-help 檔案中尋找 `Get-WinEvent` Cmdlet 的說明主題，。
 
 ## <a name="provider-help-files"></a>提供者說明檔
 
@@ -41,11 +41,11 @@ Windows PowerShell 提供者的說明檔必須針對定義提供者的元件命�
 
 即使元件是一個嵌套模組，也需要元件名稱格式。
 
-例如，憑證提供者是在 Microsoft. PowerShell. .dll 元件中定義。 @No__t-0 Cmdlet 只會在模組目錄中的 dll-help 檔案中尋找憑證提供者的說明主題。
+例如，憑證提供者是在 Microsoft. PowerShell. .dll 元件中定義。 `Get-Help` Cmdlet 只會在模組目錄中的 dll-help 檔案中尋找憑證提供者的說明主題。
 
 ## <a name="function-help-files"></a>函數說明檔
 
-您可以使用以[批註為基礎的說明](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)來記載函式，或在 XML 說明檔中記載函數。 當函式記載在 XML 檔案中時，函式必須有 `.ExternalHelp` 批註關鍵字，才能將函式與 XML 檔案產生關聯。 否則，`Get-Help` Cmdlet 就找不到說明檔。
+您可以使用以[批註為基礎的說明](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)來記載函式，或在 XML 說明檔中記載函數。 當函式記載于 XML 檔案時，函式必須有一個 `.ExternalHelp` comment 關鍵字，才能將此函數與 XML 檔案產生關聯。 否則，`Get-Help` Cmdlet 就找不到說明檔。
 
 函數說明檔的名稱沒有任何技術需求。 不過，最佳作法是為定義函數的腳本模組命名說明檔。 例如，下列函式定義于 MyModule. .psm1 檔案中。
 
@@ -62,7 +62,7 @@ CIM 命令的說明檔必須針對定義 CIM 命令的 CDXML 檔案命名。 使
 <FileName>.cdxml-help.xml
 ```
 
-CIM 命令定義于 CDXML 檔案中，這些檔案可以包含在模組中當做嵌套模組。 當 CIM 命令以函式的形式匯入會話時，Windows PowerShell 會將 `.ExternalHelp` comment 關鍵字新增至函式定義，以將函式與為定義 CIM 命令的 CDXML 檔案所命名的 XML 說明檔產生關聯。
+CIM 命令定義于 CDXML 檔案中，這些檔案可以包含在模組中當做嵌套模組。 當 CIM 命令以函式的形式匯入到會話時，Windows PowerShell 會將 `.ExternalHelp` comment 關鍵字新增至函式定義，將函式與為定義 CIM 命令的 CDXML 檔案所命名的 XML 說明檔產生關聯。
 
 ## <a name="script-workflow-help-files"></a>編寫工作流程說明檔的腳本
 
@@ -72,6 +72,6 @@ CIM 命令定義于 CDXML 檔案中，這些檔案可以包含在模組中當做
 <ScriptModule>.psm1-help.xml
 ```
 
-與其他已編寫腳本的命令不同，腳本工作流程不需要 `.ExternalHelp` comment 關鍵字來將它們與說明檔產生關聯。 相反地，Windows PowerShell 會搜尋模組目錄的 UI 文化特性特定子目錄，以取得以 XML 為基礎的說明檔，並在所有檔案中尋找腳本工作流程的說明。 `.ExternalHelp` comment 關鍵字會被忽略。
+與其他已編寫腳本的命令不同，腳本工作流程並不需要 `.ExternalHelp` comment 關鍵字，就能將它們與說明檔產生關聯。 相反地，Windows PowerShell 會搜尋模組目錄的 UI 文化特性特定子目錄，以取得以 XML 為基礎的說明檔，並在所有檔案中尋找腳本工作流程的說明。 已忽略 `.ExternalHelp` comment 關鍵字。
 
-因為 `.ExternalHelp` comment 關鍵字會被忽略，所以只有在模組中包含腳本工作流程時，@no__t 指令程式才可以找到其說明。
+由於會忽略 `.ExternalHelp` comment 關鍵字，因此 `Get-Help` Cmdlet 只有在模組中包含腳本工作流程時，才可以找到其說明。

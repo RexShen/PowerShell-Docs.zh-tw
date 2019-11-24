@@ -17,7 +17,7 @@ ms.locfileid: "72359987"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-這個範例會示範如何覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支援 `Get-Item` 和 @no__ 的呼叫，並將其提供給t-3 Cmdlet。 這個範例中的提供者類別衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別。
+這個範例會示範如何覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支援 `Get-Item` 和 `Set-Item` Cmdlet 的呼叫，並將其提供給。 這個範例中的提供者類別衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別。
 
 ## <a name="demonstrates"></a>演示
 
@@ -36,13 +36,13 @@ ms.locfileid: "72359987"
 
 - 定義一個衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別的提供者類別。
 
-- 覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法來變更 @no__t 1 Cmdlet 的行為，讓使用者能夠建立新的磁片磁碟機。 （此範例不會示範如何將動態參數新增至 `New-PSDrive` Cmdlet）。
+- 覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法來變更 `New-PSDrive` Cmdlet 的行為，讓使用者能夠建立新的磁片磁碟機。 （此範例不會示範如何將動態參數新增至 `New-PSDrive` Cmdlet）。
 
 - 覆寫[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支援移除現有的磁片磁碟機。
 
-- 覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法，以變更 @no__t 1 Cmdlet 的行為，讓使用者可以從資料存放區抓取專案。 （此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet）。
+- 覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法來變更 `Get-Item` Cmdlet 的行為，讓使用者可以從資料存放區抓取專案。 （此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet）。
 
-- 覆寫[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法來變更 @no__t 1 Cmdlet 的行為，讓使用者可以更新資料存放區中的專案。 （此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet）。
+- 覆寫[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法來變更 `Set-Item` Cmdlet 的行為，讓使用者可以更新資料存放區中的專案。 （此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet）。
 
 - 覆寫[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法，以變更 `Test-Path` Cmdlet 的行為。 （此範例不會示範如何將動態參數新增至 `Test-Path` Cmdlet）。
 

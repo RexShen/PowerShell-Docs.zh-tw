@@ -41,9 +41,9 @@ ValidateRange 屬性會指定 Cmdlet 參數引數的最小和最大值（範圍�
 
 - 在下列情況下，Windows PowerShell 執行時間會擲回驗證錯誤：
 
-    - 當引數的值小於 `MinRange` 限制或大於 `MaxRange` 的限制時。
+    - 當引數的值小於 `MinRange` 限制或大於 `MaxRange` 限制時。
 
-    - 當引數與 `MinRange` 和 @no__t 1 參數的類型不同時。
+    - 當引數與 `MinRange` 和 `MaxRange` 參數的類型不同時。
 
 - ValidateRange 屬性是由[Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)類別所定義。
 

@@ -69,7 +69,7 @@ ms.locfileid: "72369377"
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何使用 `WriteDebug`、`WriteVerbose` 和 @no__t 2 方法來撰寫 debug、verbose 和 warning 訊息。
+這個範例會示範如何使用 `WriteDebug`、`WriteVerbose`和 `WriteWarning` 方法，撰寫 debug、verbose 和 warning 訊息。
 
 ```csharp
 using System;

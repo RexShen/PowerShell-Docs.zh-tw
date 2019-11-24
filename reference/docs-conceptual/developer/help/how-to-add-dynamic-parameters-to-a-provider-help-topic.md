@@ -29,7 +29,7 @@ ms.locfileid: "72361257"
 
 ### <a name="to-add-dynamic-parameters"></a>新增動態參數
 
-1. 在 dll-help .xml 檔案*中的 @no__t*-1 元素內，加入 `DynamicParameters` 元素。 @No__t-0 元素應出現在 `Tasks` 元素之後，以及 `RelatedLinks` 元素之前。
+1. 在 dll-help .xml*檔案的 `providerHelp`* 專案中，加入 `DynamicParameters` 元素。 `DynamicParameters` 元素應出現在 `Tasks` 元素之後，以及 `RelatedLinks` 元素之前。
 
    例如：
 
@@ -44,9 +44,9 @@ ms.locfileid: "72361257"
     </providerHelp>
     ```
 
-   如果提供者未執行任何動態參數，則 @no__t 0 元素可以是空的。
+   如果提供者未執行任何動態參數，`DynamicParameters` 元素可以是空的。
 
-2. 在 `DynamicParameters` 元素中，針對每個動態參數新增一個 `DynamicParameter` 個元素。
+2. 在 `DynamicParameters` 專案中，針對每個動態參數加入 `DynamicParameter` 元素。
 
    例如：
 
@@ -57,14 +57,14 @@ ms.locfileid: "72361257"
     </DynamicParameters>
     ```
 
-3. 在每個 `DynamicParameter` 元素中，加入 `Name` 和 @no__t 2 元素。
+3. 在每個 `DynamicParameter` 元素中，新增 `Name` 和 `CmdletSupported` 專案。
 
-   |元素名稱|描述|
+   |元素名稱|說明|
    |------------------|-----------------|
    |Name|指定參數名稱。|
    |CmdletSupported|指定參數有效的 Cmdlet。 輸入以逗號分隔的 Cmdlet 名稱清單。|
 
-   例如，下列 XML 記載 Windows PowerShell FileSystem 提供者新增至 `Add-Content`、`Get-Content`、`Set-Content` Cmdlet 的 @no__t 0 動態參數。
+   例如，下列 XML 記載 Windows PowerShell FileSystem 提供者新增至 `Add-Content`、`Get-Content``Set-Content` Cmdlet 的 `Encoding` 動態參數。
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ ms.locfileid: "72361257"
 
     ```
 
-4. 在每個 `DynamicParameter` 元素中，新增一個 `Type` 元素。 @No__t-0 元素是 `Name` 元素的容器，其中包含動態參數值的 .NET 類型。
+4. 在每個 `DynamicParameter` 元素中，加入 `Type` 元素。 `Type` 元素是 `Name` 元素的容器，其中包含動態參數值的 .NET 類型。
 
-   例如，下列 XML 顯示 `Encoding` 動態參數的 .NET 型別為[filesystemCmdletproviderencoding parameter sets](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)列舉的。
+   例如，下列 XML 顯示 `Encoding` 動態參數的 .NET 型別，就是[filesystemCmdletproviderencoding parameter sets](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)列舉。
 
     ```xml
     <DynamicParameters/>
@@ -112,14 +112,14 @@ ms.locfileid: "72361257"
 
    下表列出並描述 `PossibleValues` 元素及其子項目。
 
-   |元素名稱|描述|
+   |元素名稱|說明|
    |------------------|-----------------|
    |PossibleValues|此元素是容器。 其子項目如下所述。 將一個 `PossibleValues` 元素新增至每個提供者說明主題。 元素可以是空的。|
    |PossibleValue|此元素是容器。 其子項目如下所述。 為動態參數的每個值新增一個 `PossibleValue` 元素。|
    |值|指定值名稱。|
-   |描述|此元素包含 @no__t 0 元素。 @No__t-0 元素中的文字描述在 `Value` 元素中命名的值。|
+   |說明|此元素包含 `Para` 元素。 `Para` 元素中的文字描述 `Value` 元素中所命名的值。|
 
-   例如，下列 XML 會顯示 `Encoding` 動態參數的一個 @no__t 0 元素。
+   例如，下列 XML 會顯示 `Encoding` 動態參數的一個 `PossibleValue` 元素。
 
     ```xml
     <DynamicParameters/>

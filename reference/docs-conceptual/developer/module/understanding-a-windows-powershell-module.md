@@ -51,11 +51,11 @@ ms.locfileid: "72360637"
 
 ### <a name="manifest-modules"></a>資訊清單模組
 
-*資訊清單模組*是使用資訊清單檔來描述其所有元件的模組，但不會有任何類型的核心元件或腳本。 （正式地說，資訊清單模組會將資訊清單的 `ModuleToProcess` 或 @no__t 1 元素保留空白。）不過，您仍然可以使用模組的其他功能，例如載入相依元件或自動執行特定前置處理腳本的能力。 您也可以使用資訊清單模組，將其他模組將使用的資源（例如，嵌套模組、元件、類型或格式）封裝成方便的方式。 如需詳細資訊，請參閱[如何撰寫 PowerShell 模組資訊清單](./how-to-write-a-powershell-module-manifest.md)。
+*資訊清單模組*是使用資訊清單檔來描述其所有元件的模組，但不會有任何類型的核心元件或腳本。 （正式地說，資訊清單模組會將資訊清單的 `ModuleToProcess` 或 `RootModule` 元素保留為空白）。不過，您仍然可以使用模組的其他功能，例如載入相依元件或自動執行特定前置處理腳本的能力。 您也可以使用資訊清單模組，將其他模組將使用的資源（例如，嵌套模組、元件、類型或格式）封裝成方便的方式。 如需詳細資訊，請參閱[如何撰寫 PowerShell 模組資訊清單](./how-to-write-a-powershell-module-manifest.md)。
 
 ### <a name="dynamic-modules"></a>動態模組
 
-*動態模組*是指未從檔案載入或儲存到檔案的模組。 相反地，它們是由腳本以[新的模組](/powershell/module/Microsoft.PowerShell.Core/New-Module)Cmdlet 來動態建立的。 這種類型的模組可讓腳本建立不需要載入或儲存至持續性儲存體的隨選模組。 就本質而言，動態模組的目的是短期，因此無法由 `Get-Module` Cmdlet 存取。 同樣地，它們通常不需要模組資訊清單，也可能需要永久資料夾來儲存其相關的元件。
+*動態模組*是指未從檔案載入或儲存到檔案的模組。 相反地，它們是由腳本以[新的模組](/powershell/module/Microsoft.PowerShell.Core/New-Module)Cmdlet 來動態建立的。 這種類型的模組可讓腳本建立不需要載入或儲存至持續性儲存體的隨選模組。 就本質而言，動態模組的目的是短期，因此 `Get-Module` Cmdlet 無法存取。 同樣地，它們通常不需要模組資訊清單，也可能需要永久資料夾來儲存其相關的元件。
 
 ## <a name="module-manifests"></a>模組資訊清單
 
@@ -85,13 +85,13 @@ ms.locfileid: "72360637"
 
 建立腳本、二進位或資訊清單模組之後，您可以將工作儲存在其他人可以存取的位置。 例如，您的模組可以儲存在安裝 Windows PowerShell 的系統資料夾中，也可以儲存在使用者資料夾中。
 
-一般來說，您可以使用 `$ENV:PSModulePath` 變數中所儲存的其中一個路徑來判斷您的模組安裝位置。 使用其中一個路徑，表示當使用者在其程式碼中呼叫它時，PowerShell 可以自動尋找並載入您的模組。 如果您將模組儲存在其他位置，您可以在呼叫 `Install-Module` 時，將模組的位置當做參數傳入，藉此明確地讓 PowerShell 知道。
+一般來說，您可以使用儲存在 `$ENV:PSModulePath` 變數中的其中一個路徑，判斷您應該在何處安裝模組。 使用其中一個路徑，表示當使用者在其程式碼中呼叫它時，PowerShell 可以自動尋找並載入您的模組。 如果您將模組儲存在其他位置，您可以在呼叫 `Install-Module`時，將模組的位置當做參數傳入，藉此明確地讓 PowerShell 知道。
 
 無論如何，資料夾的路徑是指模組的*基底*（ModuleBase），而腳本、二進位或資訊清單模組檔案的名稱應該與模組資料夾名稱相同，但有下列例外狀況：
 
-- @No__t-0 Cmdlet 所建立的動態模組可以使用 Cmdlet 的 `Name` 參數來命名。
+- `New-Module` Cmdlet 所建立的動態模組，可以使用 Cmdlet 的 `Name` 參數來命名。
 
-- **@No__t-1-assembly**命令從元件物件匯入的模組是根據下列語法命名： `"dynamic_code_module_" + assembly.GetName()`。
+- **`Import-Module` assembly**命令從元件物件匯入的模組會根據下列語法來命名： `"dynamic_code_module_" + assembly.GetName()`。
 
   如需詳細資訊，請參閱[安裝 PowerShell 模組](./installing-a-powershell-module.md)和[修改 PSModulePath 安裝路徑](./modifying-the-psmodulepath-installation-path.md)。
 
@@ -107,7 +107,7 @@ Windows PowerShell 會提供下列 Cmdlet 和變數，以建立和管理模組�
 
 [Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 此 Cmdlet 會抓取已或可匯入目前會話之模組的相關資訊。
 
-[Export-modulemember 指令程式：](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)此 Cmdlet 會指定從腳本模組（. .psm1）檔案或使用 `New-Module` Cmdlet 所建立的動態模組匯出的模組成員（例如 Cmdlet、函式、變數和別名）。
+[Export-modulemember 指令程式](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)此 Cmdlet 會指定從腳本模組（. .psm1）檔案或使用 `New-Module` Cmdlet 所建立的動態模組匯出的模組成員（例如 Cmdlet、函式、變數和別名）。
 
 [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module) Cmdlet 此 Cmdlet 會從目前的會話移除模組。
 

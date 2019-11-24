@@ -34,7 +34,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 元素的父元素。 您必須指定單一 `PropertyName` 或 @no__t 1 元素。 @No__t-0 和 @no__t 1 元素是選擇性的。 您可以指定其中一個元素。
+下列各節說明屬性、子專案，以及 `SelectionCondition` 專案的父元素。 您必須指定單一 `PropertyName` 或 `ScriptBlock` 元素。 `SelectionSetName` 和 `TypeName` 元素是選擇性的。 您可以指定其中一個元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,16 +42,16 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本區塊。|
-|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本區塊。|
+|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[WideEntry 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[WideEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-wideentry-format.md)|定義使用此寬專案的 .NET 類型，或必須存在才能使用此專案的條件。|
 

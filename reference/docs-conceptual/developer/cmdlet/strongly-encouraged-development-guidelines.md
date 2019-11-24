@@ -49,15 +49,15 @@ ms.locfileid: "72369337"
 
 Cmdlet 命名中使用的名詞必須非常明確，讓使用者能夠探索您的 Cmdlet。 以產品名稱的簡短版本為一般名詞（例如 "server"）加上前置詞。 例如，如果名詞指的是執行 Microsoft SQL Server 實例的伺服器，請使用名詞，例如 "SQLServer"。 結合特定名詞和核准動詞的簡短清單，可讓使用者快速探索並預測功能，同時避免 Cmdlet 名稱重複。
 
-為了加強使用者體驗，您為 Cmdlet 名稱選擇的名詞應為單數。 例如，使用 `Get-Process` 的名稱，而不是**取得進程**。 最好是針對所有 Cmdlet 名稱遵循此規則，即使 Cmdlet 可能會在一個以上的專案上運作。
+為了加強使用者體驗，您為 Cmdlet 名稱選擇的名詞應為單數。 例如，使用 `Get-Process` 的名稱，而不是**Get 進程**。 最好是針對所有 Cmdlet 名稱遵循此規則，即使 Cmdlet 可能會在一個以上的專案上運作。
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>針對 Cmdlet 名稱使用 Pascal 大小寫（SD02）
 
-針對參數名稱使用 Pascal 大小寫。 換句話說，會將動詞的第一個字母和名詞中使用的所有詞彙變成大寫。 例如，"`Clear-ItemProperty`"。
+針對參數名稱使用 Pascal 大小寫。 換句話說，會將動詞的第一個字母和名詞中使用的所有詞彙變成大寫。 例如，「`Clear-ItemProperty`」。
 
 ### <a name="parameter-design-guidelines-sd03"></a>參數設計指導方針（SD03）
 
-Cmdlet 所需的參數會接收其必須運作的資料，以及指示用來判斷作業特性之資訊的參數。 例如，Cmdlet 可能會有從管線接收資料的 `Name` 參數，而 Cmdlet 可能會有 @no__t 1 參數，表示 Cmdlet 可以強制執行其作業。 Cmdlet 可以定義的參數數目沒有任何限制。
+Cmdlet 所需的參數會接收其必須運作的資料，以及指示用來判斷作業特性之資訊的參數。 例如，Cmdlet 可能會有從管線接收資料的 `Name` 參數，而 Cmdlet 可能會有 `Force` 參數，以指出 Cmdlet 可以強制執行其作業。 Cmdlet 可以定義的參數數目沒有任何限制。
 
 #### <a name="use-standard-parameter-names"></a>使用標準參數名稱
 
@@ -101,9 +101,9 @@ Cmdlet 所需的參數會接收其必須運作的資料，以及指示用來判�
 
 #### <a name="parameters-that-take-true-and-false"></a>接受 True 和 False 的參數
 
-如果您的參數只會使用 `true` 並 `false`，請將參數定義為[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型。 在命令中指定切換參數時，會將它視為 `true`。 如果命令中未包含參數，Windows PowerShell 會將參數的值視為 `false`。 不要定義布林值參數。
+如果您的參數只會 `true` 和 `false`，請將參數定義為[SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)類型。 在命令中指定切換參數時，會將它視為 `true`。 如果命令中未包含參數，Windows PowerShell 會將參數的值視為 `false`。 不要定義布林值參數。
 
-如果您的參數需要區分3個值： $true、$false 和「未指定」，則請定義類型為 Nullable @ no__t-0bool > 的參數。  當 Cmdlet 可以修改物件的布林值屬性時，通常會發生第三個「未指定」的值。 在此情況下，「未指定」表示不會變更屬性的目前值。
+如果您的參數需要區分3個值： $true、$false 和「未指定」，則請將類型的參數定義為可為 Null\<bool >。  當 Cmdlet 可以修改物件的布林值屬性時，通常會發生第三個「未指定」的值。 在此情況下，「未指定」表示不會變更屬性的目前值。
 
 #### <a name="support-arrays-for-parameters"></a>支援參數陣列
 
@@ -111,7 +111,7 @@ Cmdlet 所需的參數會接收其必須運作的資料，以及指示用來判�
 
 #### <a name="support-the-passthru-parameter"></a>支援 PassThru 參數
 
-根據預設，許多修改系統的 Cmdlet （例如，[停止進程](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)Cmdlet）會作為物件的「接收」，而不會傳回結果。 這些 Cmdlet 應該會執行 `PassThru` 參數，以強制 Cmdlet 傳回物件。 當指定了 `PassThru` 參數時，Cmdlet 會使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法的呼叫來傳回一個物件。 例如，下列命令會停止 Calc 進程，並將產生的進程傳遞至管線。
+根據預設，許多修改系統的 Cmdlet （例如，[停止進程](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)Cmdlet）會作為物件的「接收」，而不會傳回結果。 這些 Cmdlet 應該會執行 `PassThru` 參數，以強制 Cmdlet 傳回物件。 指定 `PassThru` 參數時，指令程式會使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法的呼叫來傳回物件（object）。 例如，下列命令會停止 Calc 進程，並將產生的進程傳遞至管線。
 
 ```powershell
 Stop-Process calc -passthru
@@ -139,7 +139,7 @@ Windows PowerShell 執行時間可讓使用者藉由設定喜好設定變數，�
 
 當使用者需要有關 Cmdlet 所執行作業的一些詳細資料時，Cmdlet 應呼叫[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法。 例如，如果 Cmdlet 作者覺得有一些案例可能需要更多有關 Cmdlet 執行內容的資訊，則 Cmdlet 應呼叫此資訊。
 
-當開發人員或產品支援工程師必須瞭解哪些已損毀 Cmdlet 作業時，此 Cmdlet 應該會呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 Cmdlet 不需要在呼叫[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的相同程式碼中呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法，因為 `Debug` 參數會同時顯示這兩個類型的指令程式。資訊集。
+當開發人員或產品支援工程師必須瞭解哪些已損毀 Cmdlet 作業時，此 Cmdlet 應該會呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法。 Cmdlet 不需要在呼叫[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的相同程式碼中呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法，因為 `Debug` 參數會同時顯示這兩組資訊，而這是不必要的。
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>針對花費較長時間的作業支援 WriteProgress
 
@@ -170,9 +170,9 @@ Windows PowerShell 執行時間可讓使用者藉由設定喜好設定變數，�
 
 Windows PowerShell 路徑是標準化命名空間存取的機制。 當您將 Windows PowerShell 路徑指派給 Cmdlet 中的參數時，使用者可以定義自訂的「磁片磁碟機」作為特定路徑的快捷方式。 當使用者指定這種磁片磁碟機時，可以用一致的方式來使用儲存的資料（例如登錄中的資料）。
 
-如果您的 Cmdlet 允許使用者指定檔案或資料來源，則應該定義[system.string](/dotnet/api/System.String)類型的參數。 如果支援多個磁片磁碟機，則類型應為數組。 參數的名稱應該是 `Path`，別名為 `PSPath`。 此外，`Path` 參數應支援萬用字元。 如果不需要萬用字元的支援，請定義 `LiteralPath` 參數。
+如果您的 Cmdlet 允許使用者指定檔案或資料來源，則應該定義[system.string](/dotnet/api/System.String)類型的參數。 如果支援多個磁片磁碟機，則類型應為數組。 參數的名稱應該是 `Path`，並具有 `PSPath`的別名。 此外，`Path` 參數應該支援萬用字元。 如果不需要萬用字元的支援，請定義 `LiteralPath` 參數。
 
-如果指令程式讀取或寫入的資料必須是檔案，則 Cmdlet 應該接受 Windows PowerShell 路徑輸入，而此 Cmdlet 應該使用[Sessionstate](/dotnet/api/System.Management.Automation.SessionState.Path)屬性將 windows powershell 路徑轉譯成檔案系統可識別的路徑。 特定的機制包括下列方法：
+如果指令程式讀取或寫入的資料必須是檔案，則 Cmdlet 應該接受 Windows PowerShell 路徑輸入，而此 Cmdlet 應該使用[Sessionstate](/dotnet/api/System.Management.Automation.SessionState.Path)屬性將 windows powershell 路徑轉譯成檔案系統可辨識的路徑。 特定的機制包括下列方法：
 
 - [System.web. PSCmdlet. GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
@@ -186,7 +186,7 @@ Windows PowerShell 路徑是標準化命名空間存取的機制。 當您將 Wi
 
 #### <a name="support-wildcard-characters"></a>支援萬用字元
 
-Cmdlet 應盡可能支援萬用字元。 Cmdlet 中的許多地方都會出現萬用字元的支援（尤其是當參數接受字串從一組物件識別一個物件時）。 例如，來自[StopProc 教學](./stopproc-tutorial.md)課程的範例**Stop-Proc** Cmdlet 會定義一個 `Name` 參數來處理代表進程名稱的字串。 此參數支援萬用字元，讓使用者可以輕鬆地指定要停止的處理常式。
+Cmdlet 應盡可能支援萬用字元。 Cmdlet 中的許多地方都會出現萬用字元的支援（尤其是當參數接受字串從一組物件識別一個物件時）。 例如，來自[StopProc 教學](./stopproc-tutorial.md)課程的範例**Stop-Proc** Cmdlet 會定義 `Name` 參數，以處理代表進程名稱的字串。 此參數支援萬用字元，讓使用者可以輕鬆地指定要停止的處理常式。
 
 當提供萬用字元的支援時，Cmdlet 作業通常會產生陣列。 有時候，支援陣列並不合理，因為使用者可能一次只會使用單一專案。 例如，[設定位置](/powershell/module/Microsoft.PowerShell.Management/Set-Location)Cmdlet 不需要支援陣列，因為使用者只會設定一個位置。 在此情況下，Cmdlet 仍然支援萬用字元，但會強制解析成單一位置。
 
@@ -206,7 +206,7 @@ Cmdlet 應盡可能支援萬用字元。 Cmdlet 中的許多地方都會出現�
 
 Cmdlet 所傳回的預先存在 .NET Framework 物件經常遺漏腳本開發人員或使用者所需的一些重要或方便的成員。 這些遺漏的成員對於顯示和建立正確的成員名稱而言特別重要，因此可以將物件正確地傳遞至管線。 建立自訂的 types.ps1xml 檔案，以記錄這些必要的成員。 當您建立這個檔案時，我們建議採用下列命名慣例： *< Your_Product_Name >* 。類型. types.ps1xml。
 
-例如，您可以將 `Mode` 腳本屬性新增至[FileInfo](/dotnet/api/System.IO.FileInfo)類型，以更清楚地顯示檔案的屬性。 此外，您可以將 [`Count` 別名] 屬性加入至 [system.string [] 類型，](/dotnet/api/System.Array)以允許一致地使用該屬性名稱（而不是 `Length`）。
+例如，您可以將 `Mode` 腳本屬性新增至[FileInfo](/dotnet/api/System.IO.FileInfo)類型，以更清楚地顯示檔案的屬性。 此外，您可以將 `Count` alias 屬性加入至 system.string[類型，](/dotnet/api/System.Array)以允許一致地使用該屬性名稱（而不是 `Length`）。
 
 ##### <a name="implement-the-icomparable-interface"></a>執行 IComparable 介面
 
@@ -214,19 +214,19 @@ Cmdlet 所傳回的預先存在 .NET Framework 物件經常遺漏腳本開發人
 
 ##### <a name="update-display-information"></a>更新顯示資訊
 
-如果物件的顯示未提供預期的結果，請建立自訂的 *@no__t 1YourProductName >* 。該物件的 types.ps1xml 檔案格式。
+如果物件的顯示未提供預期的結果，請建立自訂的 *\<YourProductName >* 。該物件的 types.ps1xml 檔案格式。
 
 ### <a name="support-well-defined-pipeline-input-sc02"></a>支援妥善定義的管線輸入（SC02）
 
 #### <a name="implement-for-the-middle-of-a-pipeline"></a>在管線中間執行
 
-執行 Cmdlet，假設它會從管線中間呼叫（也就是，其他 Cmdlet 會產生其輸入或使用其輸出）。 例如，您可能會假設 `Get-Process` Cmdlet，因為它會產生資料，所以只會當做管線中的第一個 Cmdlet 使用。 不過，由於此 Cmdlet 是針對管線的中間所設計，因此此 Cmdlet 可讓管線中的先前 Cmdlet 或資料指定要抓取的處理常式。
+執行 Cmdlet，假設它會從管線中間呼叫（也就是，其他 Cmdlet 會產生其輸入或使用其輸出）。 例如，假設 `Get-Process` Cmdlet 會產生資料，則只會當做管線中的第一個 Cmdlet 使用。 不過，由於此 Cmdlet 是針對管線的中間所設計，因此此 Cmdlet 可讓管線中的先前 Cmdlet 或資料指定要抓取的處理常式。
 
 #### <a name="support-input-from-the-pipeline"></a>支援來自管線的輸入
 
 在 Cmdlet 的每個參數集中，至少包含一個支援管線輸入的參數。 管線輸入的支援可讓使用者抓取資料或物件、將其傳送至正確的參數集，以及直接將結果傳遞給 Cmdlet。
 
-如果**參數**屬性包含 `ValueFromPipeline` 關鍵字、`ValueFromPipelineByPropertyName` 關鍵字屬性或其宣告中的兩個關鍵字，則參數會接受管線中的輸入。 如果參數集中沒有參數支援 `ValueFromPipeline` 或 @no__t 1 關鍵字，Cmdlet 就無法有意義地放在另一個 Cmdlet 之後，因為它會忽略任何管線輸入。
+如果**參數**屬性包含 `ValueFromPipeline` 關鍵字、`ValueFromPipelineByPropertyName` 關鍵字屬性或其宣告中的兩個關鍵字，則參數會接受管線中的輸入。 如果參數集中沒有參數支援 `ValueFromPipeline` 或 `ValueFromPipelineByPropertyName` 關鍵字，Cmdlet 就無法有意義地放在另一個 Cmdlet 之後，因為它會忽略任何管線輸入。
 
 #### <a name="support-the-processrecord-method"></a>支援 ProcessRecord 方法
 

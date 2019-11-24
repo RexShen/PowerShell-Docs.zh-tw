@@ -31,7 +31,7 @@ ms.locfileid: "72368807"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `CustomEntries` 元素的屬性、子項目和父元素。 可以指定的子項目數目沒有上限。
+下列各節說明屬性、子專案，以及 `CustomEntries` 專案的父元素。 可以指定的子項目數目沒有上限。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,19 +39,19 @@ ms.locfileid: "72368807"
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[View 之控制項的 CustomEntries 的 CustomEntry 元素（格式）](./customentry-element-for-customentries-for-controls-for-view-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[View 控制項的 CustomControl 元素（格式）](./customcontrol-element-for-control-for-controls-for-view-format.md)|定義視圖所使用的控制項。|
 
 ## <a name="remarks"></a>備註
 
-在大部分情況下，控制項只有一個定義，在單一 @no__t 0 元素中指定。 不過，如果您想要使用相同的控制項來顯示不同的 .NET 物件，就可以提供多個定義。 在這些情況下，您可以為每個物件或一組物件定義一個 @no__t 0 元素。
+在大部分情況下，控制項只有一個定義，在單一 `CustomEntry` 元素中指定。 不過，如果您想要使用相同的控制項來顯示不同的 .NET 物件，就可以提供多個定義。 在這些情況下，您可以為每個物件或一組物件定義一個 `CustomEntry` 元素。
 
 ## <a name="see-also"></a>另請參閱
 

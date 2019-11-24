@@ -30,7 +30,7 @@ ms.locfileid: "72365167"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Label` 元素的父元素。 每個資料行只允許一個標籤。
+下列各節說明屬性、子專案，以及 `Label` 專案的父元素。 每個資料行只允許一個標籤。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,7 +42,7 @@ ms.locfileid: "72365167"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[TableControl 之 TableHeaders 的之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
 
@@ -58,7 +58,7 @@ ms.locfileid: "72365167"
 
 ## <a name="example"></a>範例
 
-這個範例會顯示其標籤為 "Column 1" 的 @no__t 0 元素。
+這個範例會顯示其標籤為 "Column 1" 的 `TableColumnHeader` 元素。
 
 ```xml
 <TableColumnHeader>

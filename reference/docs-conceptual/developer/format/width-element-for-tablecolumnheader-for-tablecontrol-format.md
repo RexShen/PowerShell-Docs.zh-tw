@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述在定義資料行標頭時，所使用之 @no__t 0 元素的屬性、子專案和父項目。
+下列各節描述定義資料行標頭時所使用之 `Width` 元素的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[TableControl 之 TableHeaders 的之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
 
@@ -55,7 +55,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-下列範例顯示其寬度為16個字元的 @no__t 0 元素。
+下列範例會顯示其寬度為16個字元的 `TableColumnHeader` 元素。
 
 ```xml
 <TableColumnHeader>

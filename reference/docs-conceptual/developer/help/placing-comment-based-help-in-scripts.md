@@ -17,7 +17,7 @@ ms.locfileid: "72361177"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>將註解型說明置於指令碼
 
-本主題說明如何為腳本放置以批註為基礎的說明，讓 @no__t 0 Cmdlet 將以批註為基礎的說明主題與腳本，而不是腳本中任何可能的函式相關聯。
+本主題說明如何為腳本放置以批註為基礎的說明，讓 `Get-Help` Cmdlet 將以批註為基礎的說明主題與腳本，而不是腳本中任何可能的函式相關聯。
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>在何處放置腳本的批註型說明
 

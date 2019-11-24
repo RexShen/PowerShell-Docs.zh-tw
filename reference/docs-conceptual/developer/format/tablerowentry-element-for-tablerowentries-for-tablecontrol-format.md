@@ -33,7 +33,7 @@ TableRowEntry for TableRowEntries 之 TableControl （Format） TableControl 元
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `TableRowEntry` 元素的屬性、子專案和父元素。
+下列各節描述 `TableRowEntry` 元素的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,27 +41,27 @@ TableRowEntry for TableRowEntries 之 TableControl （Format） TableControl 元
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[TableControl 之 TableRowEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義物件，其屬性值會顯示在資料列中。|
 |[TableControl 之 TableRowEntry 的 TableColumnItems 元素（格式）](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義要顯示其值的屬性或腳本。|
-|[TableControl 的 TableRowEntry 的 Wrap 元素（格式）](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定超過欄寬度的文字會顯示在下一行。|
+|[TableControl 的 TableRowEntry 的 Wrap 元素（格式）](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定超過欄寬度的文字會顯示在下一行。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[TableControl 的 TableRowEntries 元素（格式）](./tablerowentries-element-for-tablecontrol-format.md)|定義資料表的資料列。|
 
 ## <a name="remarks"></a>備註
 
-必須指定一個 `TableColumnItems` 元素和一個 @no__t 1 元素。
+必須指定一個 `TableColumnItems` 元素和一個 `EntrySelectedBy` 元素。
 
 如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示的 `TableRowEntry` 元素會定義一個資料列，其中會顯示[system.web](/dotnet/api/System.Diagnostics.Process)物件的兩個屬性值。
+下列範例顯示的 `TableRowEntry` 專案會定義一個資料列，以顯示 system.servicemodel 物件的兩個屬性[值。](/dotnet/api/System.Diagnostics.Process)
 
 ```xml
 <TableRowEntry>

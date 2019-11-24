@@ -17,7 +17,7 @@ ms.locfileid: "72366337"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
-這個範例示範如何覆寫容器方法，以支援對 `Copy-Item`、`Get-ChildItem`、`New-Item` 和 @no__t 3 Cmdlet 的呼叫。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 這個範例中的提供者類別衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別。
+這個範例示範如何覆寫容器方法，以支援對 `Copy-Item`、`Get-ChildItem`、`New-Item`和 `Remove-Item` Cmdlet 的呼叫。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 這個範例中的提供者類別衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別。
 
 ## <a name="demonstrates"></a>演示
 
@@ -30,13 +30,13 @@ ms.locfileid: "72366337"
 
 - 定義一個衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別的提供者類別。
 
-- 覆寫[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，以變更 @no__t 1 Cmdlet 的行為，可讓使用者將專案從一個位置複製到另一個位置。 （此範例不會示範如何將動態參數新增至 `Copy-Item` Cmdlet）。
+- 覆寫[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，以變更 `Copy-Item` Cmdlet 的行為，讓使用者可以將專案從一個位置複製到另一個位置。 （此範例不會示範如何將動態參數新增至 `Copy-Item` Cmdlet）。
 
 - 覆寫[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，以變更 ChildItems 指令程式的行為，讓使用者能夠抓取父項目的子專案（item）。 （此範例不會示範如何將動態參數新增至 ChildItems Cmdlet）。
 
-- 當指定 Cmdlet 的 `Name` 參數時，覆寫[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法來變更 ChildItems 指令程式的行為方式。
+- 當指定 Cmdlet 的 `Name` 參數時，覆寫[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法，以變更 ChildItems 指令程式的行為。
 
-- 覆寫[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法來變更 @no__t 1 Cmdlet 的行為，讓使用者可以將專案新增至資料存放區。 （此範例不會示範如何將動態參數新增至 `New-Item` Cmdlet）。
+- 覆寫[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法來變更 `New-Item` Cmdlet 的行為，讓使用者可以將專案新增至資料存放區。 （此範例不會示範如何將動態參數新增至 `New-Item` Cmdlet）。
 
 - 覆寫[ContainerCmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法，以變更 `Remove-Item` Cmdlet 的行為。 （此範例不會示範如何將動態參數新增至 `Remove-Item` Cmdlet）。
 

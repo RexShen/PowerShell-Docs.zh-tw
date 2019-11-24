@@ -32,7 +32,7 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Types` 元素的父元素。 必須至少有一個子專案，但可以加入的子專案數目沒有上限。
+下列各節說明屬性、子專案，以及 `Types` 專案的父元素。 必須至少有一個子專案，但可以加入的子專案數目沒有上限。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,13 +40,13 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[類型的 TypeName 元素（格式）](./typename-element-for-types-format.md)|必要元素。<br /><br /> 指定屬於選取集的 .NET 物件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[SelectionSet 元素（格式）](./selectionset-element-format.md)|定義一組可由集合名稱參考的 .NET 物件。|
 
@@ -56,7 +56,7 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ## <a name="example"></a>範例
 
-這個範例會顯示定義四個 .NET 類型的 @no__t 0 元素。
+這個範例會顯示定義四個 .NET 類型的 `SelectionSet` 元素。
 
 ```xml
 <SelectionSets>

@@ -17,7 +17,7 @@ ms.locfileid: "72359797"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>撰寫 Management OData Web 服務的 XML 結構描述檔案
 
-定義 web 服務將公開的資源之後（請參閱[撰寫 Management OData web 服務的 MOF 架構](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)檔案），您可以將這些資源對應到基礎 Windows PowerShell Cmdlet，以針對每個執行支援的作業資源，方法是建立符合[資源對應架構](./resource-mapping-schema.md)的 XML 檔案。 XML 檔案也會指定用戶端用來存取資源的 Url。
+定義 web 服務將公開的資源之後（請參閱[撰寫 Management OData web 服務的 MOF 架構](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)檔案），您可以將這些資源對應到基礎 Windows PowerShell Cmdlet，藉由建立符合[資源對應架構](./resource-mapping-schema.md)的 XML 檔案，為每個資源執行支援的作業。 XML 檔案也會指定用戶端用來存取資源的 Url。
 
 ## <a name="mappng-resources-to-urls"></a>Mappng 資源至 Url
 
@@ -51,7 +51,7 @@ XML 檔案的第一個部分會將 MOF 架構檔案中定義的資源對應到�
 |更新|更新|
 |刪除|刪除|
 
-下列範例會顯示 @no__t 0 資源上建立、讀取和更新作業的對應。
+下列範例顯示 `Service` 資源上建立、讀取和更新作業的對應。
 
 ```xml
 <ClassImplementations>

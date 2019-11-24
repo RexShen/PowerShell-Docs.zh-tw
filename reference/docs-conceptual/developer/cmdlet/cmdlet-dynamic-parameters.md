@@ -24,7 +24,7 @@ Cmdlet 可以定義使用者在特殊條件下可用的參數，例如當另一�
 
 ## <a name="dynamic-parameters-in-powershell-cmdlets"></a>PowerShell Cmdlet 中的動態參數
 
-PowerShell 會在其多個提供者 Cmdlet 中使用動態參數。 例如，當**Path**參數指定**憑證**提供者路徑時，`Get-Item` 和 @no__t 1 Cmdlet 會在執行時間新增**CodeSigningCert**參數。 如果**path**參數指定不同提供者的路徑，則無法使用**CodeSigningCert**參數。
+PowerShell 會在其多個提供者 Cmdlet 中使用動態參數。 例如，當**Path**參數指定**憑證**提供者路徑時，`Get-Item` 和 `Get-ChildItem` Cmdlet 會在執行時間新增**CodeSigningCert**參數。 如果**path**參數指定不同提供者的路徑，則無法使用**CodeSigningCert**參數。
 
 下列範例顯示在執行 `Get-Item` 時，如何在執行時間新增**CodeSigningCert**參數。
 
@@ -67,7 +67,7 @@ At line:1 char:37
 
 `public class SendGreetingCommand : Cmdlet, IDynamicParameters`
 
-### <a name="method"></a>Method
+### <a name="method"></a>方法
 
 [IDynamicParameters. GetDynamicParameters](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)。
 這個方法會抓取包含動態參數定義的物件。

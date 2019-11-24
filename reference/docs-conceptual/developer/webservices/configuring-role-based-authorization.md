@@ -17,15 +17,15 @@ ms.locfileid: "72359767"
 ---
 # <a name="configuring-role-based-authorization"></a>設定角色型授權
 
-本主題示範如何針對執行管理的自訂授權中所述的[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面，設定以角色為基礎的授權原則[OData IIS 延伸](./implementing-custom-authorization-for-a-management-odata-web-service.md)模組。
+本主題示範如何針對[執行 Management ODATA IIS 擴充功能的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)中所述的[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面的範例執行，設定以角色為基礎的授權原則。
 
 在此範例中，您將設定範例管理 OData 應用程式用來定義授權原則的 XML 檔案。 您將建立兩個角色，並將包含工作流程的不同 Windows PowerShell 模組與這些角色產生關聯。 定義 XML 檔案的架構會列在以[角色為基礎的授權設定架構](./role-based-authorization-configuration-schema.md)中。
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>修改 RBacConfiguration .xml 檔案
 
-此檔案會定義應用程式的授權原則。 角色是使用 `Group` 節點來定義。 @No__t-0 節點定義指派給該群組的使用者可以執行的 Windows PowerShell 命令。 使用者會使用 `User` 節點指派給群組。
+此檔案會定義應用程式的授權原則。 角色是使用 `Group` 節點所定義。 `Group` 節點會定義使用者指派給該群組的 Windows PowerShell 命令。 使用者會使用 `User` 節點指派給群組。
 
-在這些範例中，您會將模組新增至 系統管理員 `Group` 節點，並將使用者新增至每個群組。
+在這些範例中，您會將模組新增至 [系統管理員] `Group` 節點，並將使用者新增至每個群組。
 
 #### <a name="adding-a-module-to-a-group-node"></a>將模組新增至群組節點
 
@@ -85,9 +85,9 @@ ms.locfileid: "72359767"
    </RbacConfiguration>
    ```
 
-2. 檔案包含兩個 @no__t 0 節點。 這代表此範例中使用的兩個角色，`NonAdminGroup` 和 @no__t 1 角色。
+2. 檔案包含兩個 `Group` 節點。 這些代表在此範例中使用的兩個角色，`NonAdminGroup` 和 `AdminGroup` 角色。
 
-   在第一個 `Group` 節點的結尾 `Cmdlets` 標記正後方，新增下列 XML：
+   在第一個 `Group` 節點的結尾 `Cmdlets` 標記的正後方，新增下列 XML：
 
    ```xml
    <Modules>
@@ -97,7 +97,7 @@ ms.locfileid: "72359767"
 
 #### <a name="adding-a-user-to-a-group-node"></a>將使用者新增至群組節點
 
-1. 在文字編輯器中開啟**RBacConfiguration。** 如果您未在安裝前變更端點名稱，此檔案位於 C： \\ \ inetpub\wwwroot\Modata 資料夾中。
+1. 在文字編輯器中開啟**RBacConfiguration。** 如果您未在安裝前變更端點名稱，此檔案位於 C：\\\inetpub\wwwroot\Modata 資料夾中。
 
 2. 在 `Users` 節點的結束記號正後方，新增下列 XML：
 

@@ -29,7 +29,7 @@ Microsoft .NET Framework 類別會將**Cmdlet**屬性指定為類別的中繼資
 
 Cmdlet 的名詞會指定 Cmdlet 作用所在的資源。 名詞會區分您的 Cmdlet 與其他 Cmdlet。
 
-Cmdlet 名稱中的名詞必須是特定的，而且在一般名詞（例如*伺服器*）的情況下，最好是新增簡短的前置詞，以區分您的資源與其他類似的資源。 例如，包含前置詞之名詞的 Cmdlet 名稱會 `Get-SQLServer`。 具有較通用動詞的特定名片語合，可讓使用者快速地依其動作尋找 Cmdlet，然後依其資源識別 Cmdlet，同時避免不必要的 Cmdlet 名稱重複。
+Cmdlet 名稱中的名詞必須是特定的，而且在一般名詞（例如*伺服器*）的情況下，最好是新增簡短的前置詞，以區分您的資源與其他類似的資源。 例如，包含具有前置詞之名詞的 Cmdlet 名稱是 `Get-SQLServer`。 具有較通用動詞的特定名片語合，可讓使用者快速地依其動作尋找 Cmdlet，然後依其資源識別 Cmdlet，同時避免不必要的 Cmdlet 名稱重複。
 
 如需無法在 Cmdlet 名稱中使用的特殊字元清單，請參閱[必要的開發指導方針](./required-development-guidelines.md)。
 
@@ -53,7 +53,7 @@ Cmdlet 名稱中的名詞必須是特定的，而且在一般名詞（例如*伺
 
 ## <a name="pascal-casing"></a>Pascal 大小寫
 
-當您命名 Cmdlet 時，請使用 Pascal 大小寫。 例如，當您命名 Cmdlet 時，`Get-Item` 和 @no__t 1 Cmdlet 會顯示使用大小寫的正確方式。
+當您命名 Cmdlet 時，請使用 Pascal 大小寫。 例如，當您命名 Cmdlet 時，`Get-Item` 和 `Get-ItemProperty` Cmdlet 會顯示使用大小寫的正確方式。
 
 ## <a name="see-also"></a>另請參閱
 

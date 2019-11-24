@@ -32,7 +32,7 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（Format） Tabl
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `TableHeaders` 元素的屬性、子專案和父元素。 要顯示之物件的每個屬性都必須要有一個子項目。 資料行標頭資訊會以指定子項目的順序顯示。
+下列各節描述 `TableHeaders` 專案的屬性、子專案和父項目。 要顯示之物件的每個屬性都必須要有一個子項目。 資料行標頭資訊會以指定子項目的順序顯示。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,13 +40,13 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（Format） Tabl
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|選擇性元素。<br /><br /> 定義資料表視圖之資料行的標籤、寬度和對齊方式。|
+|[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|選擇性項目。<br /><br /> 定義資料表視圖之資料行的標籤、寬度和對齊方式。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[TableControl 元素（格式）](./tablecontrol-element-format.md)|定義視圖的資料表格式。|
 
@@ -56,7 +56,7 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（Format） Tabl
 
 ## <a name="example"></a>範例
 
-這個範例會顯示定義兩個數據行標頭的 @no__t 0 元素。
+這個範例會顯示定義兩個數據行標頭的 `TableHeaders` 元素。
 
 ```xml
 <TableHeaders>

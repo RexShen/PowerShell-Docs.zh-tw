@@ -34,7 +34,7 @@ EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 元素的父元素。 您必須指定單一 `PropertyName` 或 @no__t 1 元素。 @No__t-0 和 @no__t 1 元素是選擇性的。 您可以指定其中一個元素。
+下列各節說明屬性、子專案，以及 `SelectionCondition` 專案的父元素。 您必須指定單一 `PropertyName` 或 `ScriptBlock` 元素。 `SelectionSetName` 和 `TypeName` 元素是選擇性的。 您可以指定其中一個元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,16 +42,16 @@ EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本。|
-|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[EnumerableExpansion 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-enumerableexpansion-format.md)|定義由這個定義擴充的 .NET 集合物件。|
 

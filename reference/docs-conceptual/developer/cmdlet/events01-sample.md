@@ -30,7 +30,7 @@ ms.locfileid: "72369737"
    這會在 Microsoft Visual Studio 中開啟範例專案。
 
 3. 在 [**建立**] 功能表中，選取 [**建立方案**]。
-   範例的程式庫會建立在預設 `\bin` 或 @no__t 1 資料夾中。
+   範例的程式庫會建立在預設 `\bin` 或 `\bin\debug` 資料夾中。
 
 ### <a name="how-to-run-the-sample"></a>如何執行範例
 
@@ -84,7 +84,7 @@ A file was created in the TEMP directory
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>如何撰寫事件註冊的 Cmdlet
 
 此 Cmdlet 衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)類別，可提供 `Register-*Event` Cmdlet 通用的參數支援。
-衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)的 Cmdlet 只需要定義其特定參數，並覆寫 `GetSourceObject` 和 @no__t 2 抽象方法。
+衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)的 Cmdlet 只需要定義其特定參數，並覆寫 `GetSourceObject` 和 `GetSourceObjectEventName` 抽象方法。
 
 ## <a name="example"></a>範例
 

@@ -35,7 +35,7 @@ ViewDefinitions 元素（格式） View 元素（Format） TableControl 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `TableControl` 元素的屬性、子專案和父元素。 您必須指定資料表的資料列。 所有其他子專案都是選擇性的。
+下列各節描述 `TableControl` 元素的屬性、子專案和父項目。 您必須指定資料表的資料列。 所有其他子專案都是選擇性的。
 
 ### <a name="attributes"></a>屬性
 
@@ -43,16 +43,16 @@ ViewDefinitions 元素（格式） View 元素（Format） TableControl 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
-|[TableControl 的 AutoSize 元素（格式）](./autosize-element-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定是否根據資料大小來調整資料行大小和資料行數目。|
-|[TableControl 的 HideTableHeaders 元素（格式）](./hidetableheaders-element-format.md)|選擇性元素。<br /><br /> 指出是否不顯示資料表的標頭。|
+|[TableControl 的 AutoSize 元素（格式）](./autosize-element-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定是否根據資料大小來調整資料行大小和資料行數目。|
+|[TableControl 的 HideTableHeaders 元素（格式）](./hidetableheaders-element-format.md)|選擇性項目。<br /><br /> 指出是否不顯示資料表的標頭。|
 |[TableControl 的 TableHeaders 元素（格式）](./tableheaders-element-format.md)|必要元素。<br /><br /> 定義資料表視圖之資料行的標籤、寬度和對齊方式。|
-|[TableControl 的 TableRowEntries 元素（格式）](./tablerowentries-element-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 提供資料表視圖的定義。|
+|[TableControl 的 TableRowEntries 元素（格式）](./tablerowentries-element-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 提供資料表視圖的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|
+|項目|說明|
 |-------------|-----------------|
 |[View 元素（格式）](./view-element-format.md)|定義用來顯示一或多個物件成員的視圖。|
 
@@ -62,7 +62,7 @@ ViewDefinitions 元素（格式） View 元素（Format） TableControl 元素�
 
 ## <a name="example"></a>範例
 
-這個範例會顯示一個用來顯示[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件屬性的 @no__t 0 元素。
+這個範例會顯示用來顯示[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件屬性的 `TableControl` 專案。
 
 ```xml
 <View>

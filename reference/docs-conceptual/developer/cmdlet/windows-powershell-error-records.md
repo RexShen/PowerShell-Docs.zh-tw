@@ -38,7 +38,7 @@ Cmdlet 必須傳遞[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorR
 
 - 擲回錯誤之 Cmdlet 的選擇性調用資訊。 這項資訊是由 Windows PowerShell 所指定（請參閱調用訊息）。
 
-- 發生錯誤時正在處理的目標物件。 這可能是輸入物件，也可能是您的 Cmdlet 正在處理的另一個物件。 例如，對於命令 `remove-item -recurse c:\somedirectory`，此錯誤可能是 "c:\somedirectory\lockedfile" 的 FileInfo 物件實例。 目標物件資訊是選擇性的。
+- 發生錯誤時正在處理的目標物件。 這可能是輸入物件，也可能是您的 Cmdlet 正在處理的另一個物件。 例如，針對命令 `remove-item -recurse c:\somedirectory`，此錯誤可能是 "c:\somedirectory\lockedfile" 的 FileInfo 物件實例。 目標物件資訊是選擇性的。
 
 ## <a name="error-identifier"></a>錯誤識別碼
 
@@ -60,7 +60,7 @@ Cmdlet 必須傳遞[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorR
 
 ## <a name="error-category"></a>錯誤類別
 
-當您建立錯誤記錄時，請使用[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列舉所定義的其中一個常數來指定錯誤的類別。 當使用者將 @no__t 0 變數設為 `"CategoryView"` 時，Windows PowerShell 會使用錯誤類別來顯示錯誤資訊。
+當您建立錯誤記錄時，請使用[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列舉所定義的其中一個常數來指定錯誤的類別。 當使用者將 `$ErrorView` 變數設定為 `"CategoryView"`時，Windows PowerShell 會使用錯誤類別來顯示錯誤資訊。
 
 避免使用[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified**常數。 如果您有任何有關錯誤或造成錯誤之作業的資訊，請選擇最能描述錯誤或作業的類別，即使類別不是完全相符。
 
@@ -88,7 +88,7 @@ Windows PowerShell 所顯示的資訊稱為類別目錄檢視字串，並是從[
 
 取代訊息是由[ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)物件所提供。 請使用此物件的下列其中一個函式，因為它們會提供可供 Windows PowerShell 使用的其他當地語系化資訊。
 
-- [ErrorDetails （Cmdlet，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___)：如果您的範本字串是在執行 Cmdlet 的相同元件中的資源字串，或您想要透過的覆寫[載入範本字串，請使用此函式GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法的.。
+- [ErrorDetails （Cmdlet，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___)：如果您的範本字串是在執行 Cmdlet 的相同元件中的資源字串，或您想要透過[GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)方法的覆寫載入範本字串，請使用這個函式。
 
 - [ErrorDetails （Assembly，string，string，Object []）](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___)：如果範本字串位於另一個元件中，而您未透過[GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)的覆寫載入它，請使用這個函式。
 
@@ -102,7 +102,7 @@ Windows PowerShell 所顯示的資訊稱為類別目錄檢視字串，並是從[
 
 ## <a name="invocation-information"></a>調用資訊
 
-當指令程式使用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)來報告錯誤記錄時，Windows PowerShell 會自動新增資訊，以描述所述的發生錯誤時所叫用的命令。 這項資訊是由[Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)物件所提供，其中包含命令所叫用的 Cmdlet 名稱、命令本身，以及管線或腳本的相關資訊。 這個屬性是唯讀的。
+當 Cmdlet 使用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)來報告錯誤記錄時，Windows PowerShell 會自動新增資訊，以描述發生錯誤時所叫用的命令，而不會有問題。 這項資訊是由[Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)物件所提供，其中包含命令所叫用的 Cmdlet 名稱、命令本身，以及管線或腳本的相關資訊。 這個屬性是唯讀的。
 
 ## <a name="see-also"></a>另請參閱
 

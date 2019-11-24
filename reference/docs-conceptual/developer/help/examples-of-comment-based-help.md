@@ -145,7 +145,7 @@ C:\PS> get-help add-extension -full
 
 下列範例函數包含以批註為基礎的說明。
 
-請注意，結尾 **#>** 與 @no__t 2 語句之間的空白行。 在沒有 @no__t 0 語句的腳本中，說明主題中的最後一個批註和第一個函式宣告之間必須至少有兩個空白行。 如果沒有這些空白行，Get-help 會將說明主題與函式相關聯，而不是腳本。
+請注意，結尾 **#>** 和 `Param` 語句之間的空白行。 在沒有 `Param` 語句的腳本中，說明主題中的最後一個批註和第一個函式宣告之間必須至少有兩個空白行。 如果沒有這些空白行，Get-help 會將說明主題與函式相關聯，而不是腳本。
 
 ```powershell
 <#
@@ -257,7 +257,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>範例3： Param 語句中的參數描述
 
-這個範例示範如何在函式或腳本的 `Param` 語句中插入 parameterdescriptions。 當參數描述為 brief 時，此格式最有用。
+這個範例示範如何在函數或腳本的 `Param` 語句中插入 parameterdescriptions。 當參數描述為 brief 時，此格式最有用。
 
 ```powershell
 function Add-Extension
@@ -282,7 +282,7 @@ function Add-Extension
     #>
 ```
 
-結果與範例1的結果相同。 Get-help 會解讀參數描述，就如同它們隨附 `.Parameter` 關鍵字一樣。
+結果與範例1的結果相同。 Get-help 會解讀參數描述，就好像它們是伴隨 `.Parameter` 關鍵字一樣。
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>範例4：重新導向至 XML 檔案
 
@@ -311,7 +311,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>範例5：重新導向至不同的說明主題
 
-下列程式碼是從 Windows PowerShell 內建的 `Help` 函式的開頭摘錄，一次只會顯示一個解說文字畫面。 由於 Get-help Cmdlet 的說明主題會描述 Help 函式，因此 Help 函數會使用 `.ForwardHelpTargetName` 和 `.ForwardHelpCategory` 關鍵字，將使用者重新導向至 Get-help Cmdlet 說明主題。
+下列程式碼是從 Windows PowerShell 內建 `Help` 函式的開頭摘錄，一次只會顯示一個解說文字畫面。 由於 Get-help Cmdlet 的說明主題會描述 Help 函式，因此 Help 函式會使用 `.ForwardHelpTargetName` 和 `.ForwardHelpCategory` 關鍵字，將使用者重新導向至 Get-help Cmdlet 說明主題。
 
 ```powershell
 function help

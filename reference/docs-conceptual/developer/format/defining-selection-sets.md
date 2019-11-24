@@ -17,7 +17,7 @@ ms.locfileid: "72368847"
 ---
 # <a name="defining-selection-sets"></a>定義選取範圍集合
 
-建立多個視圖和控制項時，您可以定義稱為選取集的一組物件。 選取集可讓您一次定義物件，而不需要針對每個視圖或控制項重複定義它們。 一般而言，當您有一組相關的 .NET 物件時，會使用選取範圍。 例如，`FileSystem` 格式設定檔案（types.ps1xml）會定義數個 views 使用的檔案系統類型的選擇集。
+建立多個視圖和控制項時，您可以定義稱為選取集的一組物件。 選取集可讓您一次定義物件，而不需要針對每個視圖或控制項重複定義它們。 一般而言，當您有一組相關的 .NET 物件時，會使用選取範圍。 例如，`FileSystem` 格式設定檔案（types.ps1xml）會定義數個 views 使用的檔案系統類型的選取集合。
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>定義和參考選擇集的位置
 
@@ -35,11 +35,11 @@ ms.locfileid: "72368847"
 
 您可以透過下列方式參考選擇集：
 
-- 每個 view 都有一個 `ViewSelectedBy` 元素，用來定義要使用 view 來顯示的物件。 @No__t-0 元素具有 @no__t 1 子專案，可指定所有視圖定義所使用的選擇集。 您可以從視圖參考的選擇集數目沒有限制。
+- 每個 view 都有一個 `ViewSelectedBy` 專案，可定義要使用 view 來顯示的物件。 `ViewSelectedBy` 元素具有 `SelectionSetName` 子項目，可指定所有視圖定義所使用的選取範圍。 您可以從視圖參考的選擇集數目沒有限制。
 
-- 在視圖或控制項的每個定義中，`EntrySelectedBy` 元素會定義使用該定義顯示的物件。 通常，視圖或控制項只有一個定義，因此物件是由 `ViewSelectedBy` 元素所定義。 定義的 `EntrySelectedBy` 元素具有指定選取集的 @no__t 1 子項目。 如果您指定定義的選取範圍，就無法指定 `EntrySelectedBy` 元素的任何其他子項目。
+- 在視圖或控制項的每個定義中，`EntrySelectedBy` 元素會使用該定義來定義要顯示的物件。 通常，視圖或控制項只有一個定義，因此物件是由 `ViewSelectedBy` 元素所定義。 定義的 `EntrySelectedBy` 元素具有指定選取範圍的 `SelectionSetName` 子項目。 如果您指定定義的選取範圍，就不能指定 `EntrySelectedBy` 元素的任何其他子項目。
 
-- 在視圖或控制項的每個定義中，可以使用 `SelectionCondition` 元素來指定使用定義時的條件。 @No__t-0 元素具有 @no__t 1 子專案，可指定觸發條件的選擇集。 當選取範圍中定義的任何物件顯示時，就會觸發此條件。 如需如何設定這些條件的詳細資訊，請參閱[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)。
+- 在視圖或控制項的每個定義中，`SelectionCondition` 元素可以用來指定使用定義時的條件。 `SelectionCondition` 元素具有 `SelectionSetName` 子項目，可指定觸發條件的選取範圍。 當選取範圍中定義的任何物件顯示時，就會觸發此條件。 如需如何設定這些條件的詳細資訊，請參閱[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="selection-set-example"></a>選擇集範例
 
@@ -138,7 +138,7 @@ ms.locfileid: "72368847"
 
 [SelectionSet](./selectionset-element-format.md)
 
-[檔案名](./name-element-for-selectionset-format.md)
+[名稱](./name-element-for-selectionset-format.md)
 
 [各種](./types-element-for-selectionset-format.md)
 

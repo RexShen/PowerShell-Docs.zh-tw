@@ -17,7 +17,7 @@ ms.locfileid: "72360307"
 ---
 # <a name="getproc03-vbnet-sample-code"></a>GetProc03 (VB.NET) 範例程式碼
 
-下列程式碼顯示可接受管線輸入的 @no__t 0 Cmdlet 的執行。 此實作為定義 `Name` 參數，可接受管線輸入、根據提供的名稱從本機電腦上抓取進程資訊，然後使用[WriteObject （system.object，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法做為輸出將物件傳送至管線的機制。
+下列程式碼顯示可接受管線輸入的 `Get-Process` Cmdlet 的執行。 這個實作為定義一個接受管線輸入的 `Name` 參數，根據提供的名稱從本機電腦抓取進程資訊，然後使用[WriteObject （system.object，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法做為將物件傳送至管線的輸出機制。
 
 ## <a name="code-sample"></a>程式碼範例
 
