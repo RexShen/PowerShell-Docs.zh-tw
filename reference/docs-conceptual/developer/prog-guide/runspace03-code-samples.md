@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 Code Samples | Microsoft Docs
+title: RunSpace03 程式碼範例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,21 +17,21 @@ ms.locfileid: "74417985"
 ---
 # <a name="runspace03-code-samples"></a>RunSpace03 程式碼範例
 
-Here are the code samples for the runspace described in "Creating a Console Application That Runs a Specified Script".
+以下是「建立執行指定腳本的主控台應用程式」中所述之運行空間的程式碼範例。
 
 > [!NOTE]
-> You can download the C# source file (runspace03.cs) and the VB.NET source file (runspace03.vb) for this sample using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 您可以使用適用C#于 Windows Vista 和 microsoft .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此範例的原始程式檔（runspace03.cs）和 VB.NET 來源檔案（runspace03）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
 
-For complete sample code, see the following topics.
+如需完整的範例程式碼，請參閱下列主題。
 
 | Language |                                 主題                                 |
 | -------- | --------------------------------------------------------------------- |
-| C#       | [RunSpace03 (C#) Code Sample](./runspace03-csharp-code-sample.md)     |
-| VB.NET   | [RunSpace03 (VB.NET) Code Sample](./runspace03-vb-net-code-sample.md) |
+| C#       | [RunSpace03 （C#）程式碼範例](./runspace03-csharp-code-sample.md)     |
+| VB.NET   | [RunSpace03 （VB.NET）程式碼範例](./runspace03-vb-net-code-sample.md) |
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

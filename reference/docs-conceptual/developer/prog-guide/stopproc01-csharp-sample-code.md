@@ -1,5 +1,5 @@
 ---
-title: StopProc01 (C#) Sample Code | Microsoft Docs
+title: StopProc01 （C#）範例程式碼 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,17 +17,17 @@ ms.locfileid: "74417854"
 ---
 # <a name="stopproc01-c-sample-code"></a>StopProc01 (C#) 範例程式碼
 
-Here is the complete C# code for the StopProc01 sample cmdlet.
+以下是 StopProc01 範例C# Cmdlet 的完整程式碼。
 
 > [!NOTE]
-> You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載適用于停止程式 Cmdlet 的（stopproc01.cs）原始程式檔。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
 
 [!code-csharp[StopProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample01/StopProcessSample01.cs#L11-L212 "StopProcessSample01.cs")]
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

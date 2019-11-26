@@ -1,5 +1,5 @@
 ---
-title: GetProc02 Code Samples | Microsoft Docs
+title: GetProc02 程式碼範例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74416185"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02 程式碼範例
 
-Here are the code samples for the GetProc02 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md). This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.
+以下是 GetProc02 範例 Cmdlet 的程式碼範例。 這是[新增處理命令列輸入的參數](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 `Get-Process` Cmdlet 範例。 此 `Get-Process` Cmdlet 會根據程式的名稱來抓取進程，然後在命令列中顯示進程的相關資訊。
 
 > [!NOTE]
-> You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載這個 getproc02.cs 的原始程式檔（）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
 
-For complete sample code, see the following topics.
+如需完整的範例程式碼，請參閱下列主題。
 
 |Language|主題|
 |--------------|-----------|
-|C#|[GetProc02 (C#) Sample Code](./getproc02-csharp-sample-code.md)|
-|VB.NET|[GetProc02 (VB.NET) Sample Code](./getproc02-vb-net-sample-code.md)|
+|C#|[GetProc02 （C#）範例程式碼](./getproc02-csharp-sample-code.md)|
+|VB.NET|[GetProc02 （VB.NET）範例程式碼](./getproc02-vb-net-sample-code.md)|
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
