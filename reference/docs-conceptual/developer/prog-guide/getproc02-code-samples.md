@@ -1,5 +1,5 @@
 ---
-title: GetProc02 Code Samples | Microsoft Docs
+title: GetProc02 程式碼範例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,24 +15,24 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416185"
 ---
-# <a name="getproc02-code-samples"></a><span data-ttu-id="10f7f-102">GetProc02 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="10f7f-102">GetProc02 Code Samples</span></span>
+# <a name="getproc02-code-samples"></a><span data-ttu-id="fbaec-102">GetProc02 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="fbaec-102">GetProc02 Code Samples</span></span>
 
-<span data-ttu-id="10f7f-103">Here are the code samples for the GetProc02 sample cmdlet.</span><span class="sxs-lookup"><span data-stu-id="10f7f-103">Here are the code samples for the GetProc02 sample cmdlet.</span></span> <span data-ttu-id="10f7f-104">This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md).</span><span class="sxs-lookup"><span data-stu-id="10f7f-104">This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md).</span></span> <span data-ttu-id="10f7f-105">This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.</span><span class="sxs-lookup"><span data-stu-id="10f7f-105">This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.</span></span>
+<span data-ttu-id="fbaec-103">以下是 GetProc02 範例 Cmdlet 的程式碼範例。</span><span class="sxs-lookup"><span data-stu-id="fbaec-103">Here are the code samples for the GetProc02 sample cmdlet.</span></span> <span data-ttu-id="fbaec-104">這是[新增處理命令列輸入的參數](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 `Get-Process` Cmdlet 範例。</span><span class="sxs-lookup"><span data-stu-id="fbaec-104">This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Command-Line Input](../cmdlet/adding-parameters-that-process-command-line-input.md).</span></span> <span data-ttu-id="fbaec-105">此 `Get-Process` Cmdlet 會根據程式的名稱來抓取進程，然後在命令列中顯示進程的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="fbaec-105">This `Get-Process` cmdlet retrieves processes based on their name, and then displays information about the processes at the command line.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="10f7f-106">You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="10f7f-106">You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="10f7f-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="10f7f-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="fbaec-106">您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載這個 getproc02.cs 的原始程式檔（）。</span><span class="sxs-lookup"><span data-stu-id="fbaec-106">You can download the C# source file (getproc02.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="fbaec-107">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="fbaec-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="10f7f-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span><span class="sxs-lookup"><span data-stu-id="10f7f-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="fbaec-108">下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。</span><span class="sxs-lookup"><span data-stu-id="fbaec-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-<span data-ttu-id="10f7f-109">For complete sample code, see the following topics.</span><span class="sxs-lookup"><span data-stu-id="10f7f-109">For complete sample code, see the following topics.</span></span>
+<span data-ttu-id="fbaec-109">如需完整的範例程式碼，請參閱下列主題。</span><span class="sxs-lookup"><span data-stu-id="fbaec-109">For complete sample code, see the following topics.</span></span>
 
-|<span data-ttu-id="10f7f-110">Language</span><span class="sxs-lookup"><span data-stu-id="10f7f-110">Language</span></span>|<span data-ttu-id="10f7f-111">主題</span><span class="sxs-lookup"><span data-stu-id="10f7f-111">Topic</span></span>|
+|<span data-ttu-id="fbaec-110">Language</span><span class="sxs-lookup"><span data-stu-id="fbaec-110">Language</span></span>|<span data-ttu-id="fbaec-111">主題</span><span class="sxs-lookup"><span data-stu-id="fbaec-111">Topic</span></span>|
 |--------------|-----------|
-|<span data-ttu-id="10f7f-112">C#</span><span class="sxs-lookup"><span data-stu-id="10f7f-112">C#</span></span>|[<span data-ttu-id="10f7f-113">GetProc02 (C#) Sample Code</span><span class="sxs-lookup"><span data-stu-id="10f7f-113">GetProc02 (C#) Sample Code</span></span>](./getproc02-csharp-sample-code.md)|
-|<span data-ttu-id="10f7f-114">VB.NET</span><span class="sxs-lookup"><span data-stu-id="10f7f-114">VB.NET</span></span>|[<span data-ttu-id="10f7f-115">GetProc02 (VB.NET) Sample Code</span><span class="sxs-lookup"><span data-stu-id="10f7f-115">GetProc02 (VB.NET) Sample Code</span></span>](./getproc02-vb-net-sample-code.md)|
+|<span data-ttu-id="fbaec-112">C#</span><span class="sxs-lookup"><span data-stu-id="fbaec-112">C#</span></span>|[<span data-ttu-id="fbaec-113">GetProc02 （C#）範例程式碼</span><span class="sxs-lookup"><span data-stu-id="fbaec-113">GetProc02 (C#) Sample Code</span></span>](./getproc02-csharp-sample-code.md)|
+|<span data-ttu-id="fbaec-114">VB.NET</span><span class="sxs-lookup"><span data-stu-id="fbaec-114">VB.NET</span></span>|[<span data-ttu-id="fbaec-115">GetProc02 （VB.NET）範例程式碼</span><span class="sxs-lookup"><span data-stu-id="fbaec-115">GetProc02 (VB.NET) Sample Code</span></span>](./getproc02-vb-net-sample-code.md)|
 
-## <a name="see-also"></a><span data-ttu-id="10f7f-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="10f7f-116">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fbaec-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="fbaec-116">See Also</span></span>
 
-[<span data-ttu-id="10f7f-117">Windows PowerShell Programmer's Guide</span><span class="sxs-lookup"><span data-stu-id="10f7f-117">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="fbaec-117">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="fbaec-117">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="10f7f-118">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="10f7f-118">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="fbaec-118">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="fbaec-118">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

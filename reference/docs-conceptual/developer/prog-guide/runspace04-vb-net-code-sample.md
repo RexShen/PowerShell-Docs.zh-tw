@@ -1,5 +1,5 @@
 ---
-title: RunSpace04  (VB.NET) Code Sample | Microsoft Docs
+title: RunSpace04 （VB.NET）程式碼範例 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,16 +15,16 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74417941"
 ---
-# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="76658-102">RunSpace04 (VB.NET) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="76658-102">RunSpace04  (VB.NET) Code Sample</span></span>
+# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="df679-102">RunSpace04 (VB.NET) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="df679-102">RunSpace04  (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="76658-103">Here is the VB.NET source code for the Runspace04 sample.</span><span class="sxs-lookup"><span data-stu-id="76658-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="76658-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span><span class="sxs-lookup"><span data-stu-id="76658-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="76658-105">The host application is responsible for catching the error and interpreting the error record.</span><span class="sxs-lookup"><span data-stu-id="76658-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
+<span data-ttu-id="df679-103">以下是 Runspace04 範例的 VB.NET 原始程式碼。</span><span class="sxs-lookup"><span data-stu-id="df679-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="df679-104">這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行腳本，以產生終止錯誤。</span><span class="sxs-lookup"><span data-stu-id="df679-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="df679-105">主應用程式負責攔截錯誤並解讀錯誤記錄。</span><span class="sxs-lookup"><span data-stu-id="df679-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="76658-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="76658-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="76658-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="76658-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="df679-106">您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此範例的 VB.NET 原始程式檔（runspace02）。</span><span class="sxs-lookup"><span data-stu-id="df679-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="df679-107">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="df679-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="76658-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span><span class="sxs-lookup"><span data-stu-id="76658-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="df679-108">下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。</span><span class="sxs-lookup"><span data-stu-id="df679-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="76658-109">Code Sample</span><span class="sxs-lookup"><span data-stu-id="76658-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="df679-109">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="df679-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -115,8 +115,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace04.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace04.vb#L09-L92 "Runspace04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="76658-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="76658-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="df679-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="df679-110">See Also</span></span>
 
-[<span data-ttu-id="76658-111">Windows PowerShell Programmer's Guide</span><span class="sxs-lookup"><span data-stu-id="76658-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="df679-111">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="df679-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="76658-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="76658-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="df679-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="df679-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
