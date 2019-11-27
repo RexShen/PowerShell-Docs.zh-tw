@@ -1,5 +1,5 @@
 ---
-title: Cmdlet Parameter Sets | Microsoft Docs
+title: Cmdlet 參數集 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,49 +15,49 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74415681"
 ---
-# <a name="cmdlet-parameter-sets"></a>Cmdlet parameter sets
+# <a name="cmdlet-parameter-sets"></a>Cmdlet 參數集
 
-PowerShell uses parameter sets to enable you to write a single cmdlet that can do different actions for different scenarios. Parameter sets enable you to expose different parameters to the user. And, to return different information based on the parameters specified by the user.
+PowerShell 會使用參數集，讓您撰寫可針對不同案例執行不同動作的單一 Cmdlet。 參數集可讓您向使用者公開不同的參數。 和，根據使用者指定的參數傳回不同的資訊。
 
-## <a name="examples-of-parameter-sets"></a>Examples of parameter sets
+## <a name="examples-of-parameter-sets"></a>參數集的範例
 
-For example, the PowerShell `Get-EventLog` cmdlet returns different information depending on whether the user specifies the **List** or **LogName** parameter. If the **List** parameter is specified, the cmdlet returns information about the log files themselves but not the event information they contain. If the **LogName** parameter is specified, the cmdlet returns information about the events in a specific event log. The **List** and **LogName** parameters identify two separate parameter sets.
+例如，PowerShell `Get-EventLog` Cmdlet 會根據使用者是否指定**List**或**LogName**參數，傳回不同的資訊。 如果指定了**List**參數，Cmdlet 會傳回記錄檔本身的相關資訊，但不會傳回其包含的事件資訊。 如果指定**LogName**參數，此 Cmdlet 會傳回特定事件記錄檔中事件的相關資訊。 **List**和**LogName**參數會識別兩個不同的參數集。
 
-## <a name="unique-parameter"></a>Unique parameter
+## <a name="unique-parameter"></a>唯一參數
 
-Each parameter set must have a unique parameter that the PowerShell runtime uses to expose the appropriate parameter set. If possible, the unique parameter should be a mandatory parameter. When a parameter is mandatory, the user must specify the parameter, and the PowerShell runtime uses that parameter to identify the parameter set. The unique parameter can't be mandatory if your cmdlet is designed to run without specifying any parameters.
+每個參數集都必須有一個唯一的參數，讓 PowerShell 執行時間用來公開適當的參數集。 可能的話，unique 參數應該是必要參數。 當參數為強制性時，使用者必須指定參數，而且 PowerShell 執行時間會使用該參數來識別參數集。 如果您的 Cmdlet 設計成在不指定任何參數的情況下執行，則唯一的參數不能是強制的。
 
-## <a name="multiple-parameter-sets"></a>Multiple parameter sets
+## <a name="multiple-parameter-sets"></a>多個參數集
 
-In the following illustration, the left column shows three valid parameter sets. **Parameter A** is unique to the first parameter set, **parameter B** is unique to the second parameter set, and **parameter C** is unique to the third parameter set. In the right column, the parameter sets don't have a unique parameter.
+在下圖中，左邊的資料行顯示三個有效的參數集。 **參數 A**對第一個參數集而言是唯一的，**參數 B**對第二個參數集而言是唯一的，而**參數 C**則是第三個參數集獨有的。 在右邊的資料行中，參數集沒有唯一的參數。
 
 ![ps_parametersets](../media/ps-parametersets.gif)
 
-## <a name="parameter-set-requirements"></a>Parameter set requirements
+## <a name="parameter-set-requirements"></a>參數集需求
 
-The following requirements apply to all parameter sets.
+下列需求適用于所有參數集。
 
-- Each parameter set must have at least one unique parameter. If possible, make this parameter a mandatory parameter.
+- 每個參數集必須至少有一個唯一的參數。 可能的話，請將此參數設為必要參數。
 
-- A parameter set that contains multiple positional parameters must define unique positions for each parameter. No two positional parameters can specify the same position.
+- 包含多個位置參數的參數集必須為每個參數定義唯一的位置。 沒有兩個位置參數可以指定相同的位置。
 
-- Only one parameter in a set can declare the `ValueFromPipeline` keyword with a value of `true`.
-  Multiple parameters can define the `ValueFromPipelineByPropertyName` keyword with a value of `true`.
+- 在集合中，只有一個參數可以宣告具有 `true`值的 `ValueFromPipeline` 關鍵字。
+  多個參數可以定義具有 `true`值的 `ValueFromPipelineByPropertyName` 關鍵字。
 
-- If no parameter set is specified for a parameter, the parameter belongs to all parameter sets.
+- 如果沒有為參數指定參數集，參數就會屬於所有參數集。
 
 > [!NOTE]
-> For a cmdlet or function, there is a limit of 32 parameter sets.
+> Cmdlet 或函式的限制為32個參數集。
 
-## <a name="default-parameter-sets"></a>Default parameter sets
+## <a name="default-parameter-sets"></a>預設參數集
 
-When multiple parameter sets are defined, you can use the `DefaultParameterSetName` keyword of the **Cmdlet** attribute to specify the default parameter set. PowerShell uses the default parameter set if it can't determine the parameter set to use based on the information provided by the command. For more information about the **Cmdlet** attribute, see [Cmdlet Attribute Declaration](./cmdlet-attribute-declaration.md).
+定義多個參數集時，您可以使用**Cmdlet**屬性的 `DefaultParameterSetName` 關鍵字來指定預設參數集。 如果 PowerShell 無法根據命令所提供的資訊來判斷要使用的參數，則會使用預設參數集。 如需**Cmdlet**屬性的詳細資訊，請參閱[Cmdlet 屬性](./cmdlet-attribute-declaration.md)宣告。
 
-## <a name="declaring-parameter-sets"></a>Declaring parameter sets
+## <a name="declaring-parameter-sets"></a>宣告參數集
 
-To create a parameter set, you must specify the `ParameterSetName` keyword when you declare the **Parameter** attribute for every parameter in the parameter set. For parameters that belong to multiple parameter sets, add a **Parameter** attribute for each parameter set. This attribute enables you to define the parameter differently for each parameter set. For example, you can define a parameter as mandatory in one set and optional in another. However, each parameter set must contain one unique parameter. For more information, see [Parameter Attribute Declaration](parameter-attribute-declaration.md).
+若要建立參數集，您必須在宣告參數集內每個參數的**參數**屬性時，指定 `ParameterSetName` 關鍵字。 針對屬於多個參數集的參數，請為每個參數集新增**參數**屬性。 這個屬性可讓您針對每個參數集定義不同的參數。 例如，您可以將參數定義為一個集合中的必要項，並在另一個集合中將其設為選擇性。 不過，每個參數集都必須包含一個唯一的參數。 如需詳細資訊，請參閱[參數屬性](parameter-attribute-declaration.md)宣告。
 
-In the following example, the **UserName** parameter is the unique parameter of the `Test01` parameter set, and the **ComputerName** parameter is the unique parameter of the `Test02` parameter set. The **SharedParam** parameter belongs to both sets and is mandatory for the `Test01` parameter set but optional for the `Test02` parameter set.
+在下列範例中， **UserName**參數是 `Test01` 參數集的唯一參數，而**ComputerName**參數是 `Test02` 參數集的唯一參數。 **SharedParam**參數同時屬於這兩個集合，而且對 `Test01` 參數集而言是必要的，但 `Test02` 參數集則是選擇性的。
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true, ParameterSetName = "Test01")]
