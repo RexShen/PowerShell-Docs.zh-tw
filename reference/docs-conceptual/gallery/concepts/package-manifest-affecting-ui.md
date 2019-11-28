@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
-ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328129"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417054"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -37,7 +37,7 @@ ms.locfileid: "71328129"
 | **函式** | 此項目在模組資訊清單中使用 FunctionsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可以改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
 | **DSC 資源** | 針對將會用於 PowerShell 5.0 版和以上版本的模組，此項目在資訊清單中是使用 DscResourcesToExport 來提供。 如果模組是在 PowerShell 4 中使用，則不應使用 DSCResourcesToExport，因為它不是受支援的資訊清單金鑰 (PowerShell 4 之前的版本不支援 DSC)。 | 是 | 否 |
 | **工作流程** | 工作流程會以指令碼的形式發佈到 PowerShell 資源庫，並在程式碼中識別為工作流程 (如需範例，請參閱 [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1))。 此項目不是由資訊清單控制。 | 否 | 否 |
-| **Role capabilities** (角色功能) | 當模組發佈到 PowerShell 資源庫且包含一或多個角色功能 (.psrc) 檔案 (由 JEA 使用) 時，系統會列出此清單。 如需[角色功能](/powershell/jea/role-capabilities)的詳細資訊，請參閱 JEA 文件。 | 是 | 否 |
+| **Role capabilities** (角色功能) | 當模組發佈到 PowerShell 資源庫且包含一或多個角色功能 (.psrc) 檔案 (由 JEA 使用) 時，系統會列出此清單。 如需[角色功能](/powershell/scripting/learn/remoting/jea/role-capabilities)的詳細資訊，請參閱 JEA 文件。 | 是 | 否 |
 | **PowerShell Editions** (PowerShell 版本) | 此項目是在指令碼或模組資訊清單中指定。 針對專門為 PowerShell 5.0 和以下版本設計的模組，此項目使用 Tags 控制。 針對 Desktop，請使用 PSEdition_Desktop 標籤；針對 Core，請使用 PSEdition_Core。 針對只會在 PowerShell 5.1 和以上版本使用的模組，在主要資訊清單中有 CompatiblePSEditions 金鑰。 如需其他詳細資料，請檢閱 [PowerShell Get 文件](module-psedition-support.md)中的 PS Edition 功能。 | 是 | 是 |
 | **Dependencies** (相依性) | 相依性是 PowerShell 資源庫中的模組以 RequiredModules 宣告的模組，或是指令碼資訊清單中以 #Requires –Module (名稱) 宣告的模組。 | 是 | 是 |
 | **最低 PowerShell 版本** | 此項目可在模組資訊清單中以 PowerShellVersion 指定 | 是 | 否 |

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325127"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417578"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 
@@ -414,7 +414,7 @@ https://go.microsoft.com/fwlink/?LinkID=223923
 
 您也可以在以 XML 為基礎之 Cmdlet 說明檔案的第一個相關連結中包含 **HelpUri** 值，或在函式中包含以註解為基礎之說明的 .Link 指示詞。
 
-如需支援線上說明的詳細資訊，請參閱 Microsoft Docs 中的[支援線上說明](/powershell/developer/module/supporting-online-help)。
+如需支援線上說明的詳細資訊，請參閱 Microsoft Docs 中的[支援線上說明](/powershell/scripting/developer/module/supporting-online-help)。
 
 ### <a name="cim-integration"></a>CIM 整合
 

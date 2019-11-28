@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953525"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417720"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 提取伺服器 (Windows 功能「DSC 服務」  ) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service)列出的其中一個社群解決方案。
+> 提取伺服器 (Windows 功能「DSC 服務」  ) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](/powershell/scripting/dsc/pull-server/pullserver#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
 摘要：本文件旨在包含程序和擴充性來協助準備解決方案的工程師。 詳細資訊應該提供客戶找到的最佳做法，經產品小組驗證後確認所提供的建議可穩定應對未來問題。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71953525"
 ## <a name="abstract"></a>摘要
 
 本文件旨在為規劃 Windows PowerShell 期望狀態設定提取伺服器實作的任何人提供官方指引。 提取伺服器是一項簡單的服務，部署只需要幾分鐘。 雖然這份文件會提供可用於部署的技術指引，但本文件的價值如同最佳做法和部署前考慮事項的參考。
-讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](/powershell/dsc/overview)主題。
+讀者對 DSC 以及描述 DSC 部署內含元件的詞彙應有基本的了解。 如需詳細資訊，請參閱 [Windows PowerShell 預期狀態設定概觀](/powershell/scripting/dsc/overview)主題。
 因為 DSC 預期依雲端節奏發展，所以包含提取伺服器的基礎技術也預期會發展並推出新功能。 本文件附錄中的版本表提供有關舊版的參考，以及鼓勵展望未來設計的解決方案參考。
 
 本文件分為兩大部分︰
@@ -50,9 +50,9 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 提取伺服器提供集中式服務以儲存將來可存取的目標節點設定。
 
 提取伺服器角色可以部署為 Web 伺服器執行個體或 SMB 檔案共用。 Web 伺服器功能包括 OData 介面，並可選擇是否包含目標節點功能，回報套用設定後確認成功或失敗。 這項功能在有大量目標節點的環境中很有用。
-將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell Desired State Configuration 提取伺服器](/powershell/dsc/pullServer/pullserver)及
+將目標節點 (也稱為用戶端) 設定指向提取伺服器後，就會下載並套用最新的設定資料和任何必要的指令碼。 單次部署或重複的作業都會出現這種情況，這也會讓提取伺服器成為管理大規模變更的重要資產。 如需詳細資訊，請參閱 [Windows PowerShell Desired State Configuration 提取伺服器](/powershell/scripting/dsc/pullServer/pullserver)及
 
-[推送和提取設定模式](/powershell/dsc/pullServer/pullserver)。
+[推送和提取設定模式](/powershell/scripting/dsc/pullServer/pullserver)。
 
 ## <a name="configuration-planning"></a>設定規劃
 

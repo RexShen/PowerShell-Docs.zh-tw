@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.x 版本資訊
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147578"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416497"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 版本資訊
 
@@ -56,8 +56,8 @@ WMF 5.1 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM�
 
 - [使用 PSVersionTable 來判斷執行的 PowerShell 版本](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [使用 PSEdition 參數並依據 CompatiblePSEditions 篩選 Get-Module 結果](/powershell/module/microsoft.powershell.core/get-module)
-- [只有在相容的 PowerShell 版本上執行才會執行指令碼](/powershell/gallery/concepts/script-psedition-support)
-- [宣告特定 PowerShell 版本的模組相容性](/powershell/gallery/concepts/module-psedition-support)
+- [只有在相容的 PowerShell 版本上執行才會執行指令碼](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [宣告特定 PowerShell 版本的模組相容性](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## <a name="module-analysis-cache"></a>模組分析快取
 

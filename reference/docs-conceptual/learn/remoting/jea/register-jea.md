@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 登錄 JEA 設定
-ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017709"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417611"
 ---
 # <a name="registering-jea-configurations"></a>登錄 JEA 設定
 
@@ -51,7 +51,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC 的多電腦設定
 
-在多部電腦上部署 JEA 時，最簡單的部署模型是使用 JEA [Desired State Configuration (DSC)](/powershell/dsc/overview) 資源快速且一致地在每部機器上部署 JEA。
+在多部電腦上部署 JEA 時，最簡單的部署模型是使用 JEA [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) 資源快速且一致地在每部機器上部署 JEA。
 
 若要搭配 DSC 部署 JEA，請務必符合下列先決條件︰
 
@@ -59,7 +59,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 - 包含角色的 PowerShell 模組儲存在每一部機器可存取的 (唯讀) 檔案共用上。
 - 已確定工作階段設定的設定。 使用 JEA DSC 資源時，您不需要建立工作階段設定檔。
 - 您的認證可在每部電腦上執行系統管理動作，或存取用來管理電腦的 DSC 提取伺服器。
-- 您已下載 [JEA DSC 資源](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)。
+- 您已下載 [JEA DSC 資源](https://github.com/powershell/JEA/tree/master/DSC%20Resource)。
 
 在目標電腦或提取伺服器上建立 JEA 端點的 DSC 設定。 在此設定中，**JustEnoughAdministration** DSC 資源會定義工作階段設定檔，而 **File** 資源則會從檔案共用複製角色功能。
 
@@ -102,7 +102,7 @@ Configuration JEAMaintenance
 }
 ```
 
-接著，這個設定便可透過直接叫用[本機設定管理員](/powershell/dsc/managing-nodes/metaConfig)或更新[提取伺服器設定](/powershell/dsc/pull-server/pullServer)來套用在系統上。
+接著，這個設定便可透過直接叫用[本機設定管理員](/powershell/scripting/dsc/managing-nodes/metaConfig)或更新[提取伺服器設定](/powershell/scripting/dsc/pull-server/pullServer)來套用在系統上。
 
 DSC 資源也可讓您取代預設的 **Microsoft.PowerShell** 端點。 取代後，此資源會自動登錄名為 **Microsoft.PowerShell.Restricted** 的備份端點。 備份端點都具有預設的 WinRM ACL，允許 Remote Management Users 與本機 Administrators 群組成員存取它。
 

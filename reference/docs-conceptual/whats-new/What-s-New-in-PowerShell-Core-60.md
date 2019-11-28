@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 的新功能
 description: PowerShell Core 6.0 中發行的新功能與變更
 ms.date: 08/06/2018
-ms.openlocfilehash: c70fcffc2e6225d3fc6a18b5728e063e5ca22f1d
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117526"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416766"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 的新功能
 
@@ -210,7 +210,7 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 管線執行為作業之後，即可使用所有標準 `*-Job` Cmdlet 來管理作業。
 管線中所使用的變數 (忽略處理序特定變數) 會自動複製至作業，因此 `Copy-Item $foo $bar &` 就會運作。
 作業也會在目前目錄中執行，而不是使用者的主目錄。
-如需 PowerShell 作業的詳細資訊，請參閱 [about_Jobs](https://msdn.microsoft.com/powershell/reference/6/about/about_jobs)。
+如需 PowerShell 作業的詳細資訊，請參閱 [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)。
 
 ## <a name="semantic-versioning"></a>語意化版本控制系統
 
@@ -388,12 +388,12 @@ PowerShell Core 會變更預設編碼，以符合更廣泛的生態系統。
 [breaking-changes]: breaking-changes-ps6.md
 [變更記錄]: https://github.com/PowerShell/PowerShell/tree/master/CHANGELOG.md
 [community-dashboard]: https://aka.ms/PSGitHubBI
-[telemetry-blog]: https://blogs.msdn.microsoft.com/powershell/2017/01/31/powershell-open-source-community-dashboard/
+[telemetry-blog]: https://devblogs.microsoft.com/powershell/powershell-open-source-community-dashboard/
 [.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [.NET 部落格]: https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard
 [YouTube]: https://www.youtube.com/watch?v=YI4MurjfMn8&list=PLRAdsfhKI4OWx321A_pr-7HhRNk7wOLLY
 [常見問題集]: https://github.com/dotnet/standard/blob/master/docs/faq.md
-[CDXML]: https://msdn.microsoft.com/library/jj542525(v=vs.85).aspx
+[CDXML]: /previous-versions/windows/desktop/wmi_v2/getting-started-with-cdxml
 [docker-hub]: https://hub.docker.com/r/microsoft/powershell/
 [Docker]: https://github.com/PowerShell/PowerShell/tree/master/docker
 [windowspsmodulepath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/

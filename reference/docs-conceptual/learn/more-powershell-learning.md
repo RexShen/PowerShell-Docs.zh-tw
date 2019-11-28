@@ -2,12 +2,12 @@
 ms.date: 06/18/2019
 keywords: powershell,cmdlet
 title: 更多了解 PowerShell 的方式
-ms.openlocfilehash: 9b9c95f1348edf90221fb9e27b13218cbe310cfc
-ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
+ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/19/2019
-ms.locfileid: "67263864"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416737"
 ---
 # <a name="more-powershell-learning"></a>更多了解 PowerShell 的方式
 
@@ -40,5 +40,5 @@ Microsoft Virtual Academy 影片已移至 Channel 9。
 
 下列資源提供資源來協助開發人員建立自己的 PowerShell 模組、函式、Cmdlet、提供者及裝載應用程式。
 
-- [PowerShell SDK](/powershell/developer/windows-powershell)
+- [PowerShell SDK](/powershell/scripting/developer/windows-powershell)
 - [PowerShell SDK API 瀏覽器](/dotnet/api/system.management.automation)

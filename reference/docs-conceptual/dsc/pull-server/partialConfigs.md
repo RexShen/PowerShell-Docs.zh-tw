@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: PowerShell 預期狀態設定部分設定
-ms.openlocfilehash: f25bdec54e0a028e94b8c7d7b623e53ff3e3c666
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444526"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417752"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell 預期狀態設定部分設定
 
-適用於：Windows PowerShell 5.0 及更新版本。_
+_適用於：Windows PowerShell 5.0 及更新版本。_
 
 在 PowerShell 5.0 中，預期狀態設定 (DSC) 可讓設定以片段形式和從多個來源傳送。 目標節點上本機設定管理員 (LCM) 先將片段放在一起，再當成單一設定套用。 這項功能可讓團隊或個人之間共用設定控制權。 例如，如果兩個或多個開發人員小組在一項服務共同作業，便有可能每個人都想要建立設定來管理服務的一部分。 每一種設定可能提取自不同提取伺服器，因此無法將它們加入開發的不同階段。 部分設定也可讓不同的個人或小組控制設定節點的不同層面，而不需要協調單一設定文件的編輯。 例如，一個小組可能會負責部署 VM 和作業系統，而另一個小組負責在該 VM 上部署其他應用程式和服務。 藉由部分設定，每個小組都可以建立自己的設定，而不會讓任一組的設定不必要地複雜。
 
@@ -23,7 +23,7 @@ ms.locfileid: "73444526"
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>設定推送模式部分設定的 LCM
 
-若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](/powershell/dsc/metaConfig)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
+若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](/powershell/scripting/dsc/metaConfig)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
 
 ```powershell
 [DSCLocalConfigurationManager()]

@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,設定,安裝
 title: 開始使用適用於 Windows 的 Desired State Configuration (DSC)
-ms.openlocfilehash: a4f9db481afda65fc4ac5e553230dbba3037ac9a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954405"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417757"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>開始使用適用於 Windows 的 Desired State Configuration (DSC)
 
@@ -110,4 +110,4 @@ Windows PowerShell Desired State Configuration 包含內有 DSC 資源的內建�
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration 記錄檔
 
 DSC 的記錄會寫入在路徑 `Microsoft-Windows-Dsc/Operational` 中的 Windows 事件記錄檔。
-您可以遵循 [DSC 事件記錄檔在哪裡](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)中的步驟，啟用用於偵錯工具的其他記錄檔。
+您可以遵循 [DSC 事件記錄檔在哪裡](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)中的步驟，啟用用於偵錯工具的其他記錄檔。

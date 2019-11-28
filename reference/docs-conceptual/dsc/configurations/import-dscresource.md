@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用 Import-DSCResource
-ms.openlocfilehash: f6c1260bac7d4c545f5a6bc4c098ca90ebb186b5
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954055"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417418"
 ---
 # <a name="using-import-dscresource"></a>使用 Import-DSCResource
 
@@ -147,7 +147,7 @@ PowerShell 4.0 不支援並排安裝和使用多個版本的資源。 如果您�
 
 ### <a name="resource-location"></a>資源位置
 
-在撰寫和編譯設定時，您的資源可以儲存在 [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path) 指定的任何目錄中。 在 PowerShell 4.0 中，LCM 要求所有 DSC 資源模組都儲存在 "Program Files\WindowsPowerShell\Modules" 或 `$pshome\Modules` 下。 從 PowerShell 5.0 開始，已移除此需求，資源模組可以儲存在 `PSModulePath` 指定的任何目錄中。
+在撰寫和編譯設定時，您的資源可以儲存在 [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) 指定的任何目錄中。 在 PowerShell 4.0 中，LCM 要求所有 DSC 資源模組都儲存在 "Program Files\WindowsPowerShell\Modules" 或 `$pshome\Modules` 下。 從 PowerShell 5.0 開始，已移除此需求，資源模組可以儲存在 `PSModulePath` 指定的任何目錄中。
 
 ### <a name="moduleversion-added"></a>已新增 ModuleVersion
 

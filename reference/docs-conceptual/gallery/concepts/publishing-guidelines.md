@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 03c3a037b1d6c523914a2275249124940111fdcd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328509"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417677"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -98,7 +98,7 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 
 與其他使用者共用指令碼是相當好的做法，並可為其他使用者提供如何解決他們問題的範例。 問題在於「PowerShell 資源庫」中的指令碼是單一檔案，並無個別的文件、範例及測試。
 
-「PowerShell 模組」具有資料夾結構，可允許將多個資料夾和檔案包含在套件中。 模組結構可將我們列為最佳做法的下列其他套件都納入其中：Cmdlet 說明、文件、範例與測試。 最大的缺點在於模組內的指令碼必須公開並當作函式使用。 如需有關如何建立模組的資訊，請參閱[撰寫 Windows PowerShell 模組](/powershell/developer/module/writing-a-windows-powershell-module) \(英文\)。
+「PowerShell 模組」具有資料夾結構，可允許將多個資料夾和檔案包含在套件中。 模組結構可將我們列為最佳做法的下列其他套件都納入其中：Cmdlet 說明、文件、範例與測試。 最大的缺點在於模組內的指令碼必須公開並當作函式使用。 如需有關如何建立模組的資訊，請參閱[撰寫 Windows PowerShell 模組](/powershell/scripting/developer/module/writing-a-windows-powershell-module) \(英文\)。
 
 在一些情況下，指令碼可為使用者提供較佳的體驗，特別是搭配 DSC 設定時。 DSC 設定的最佳做法是以指令碼的形式發行設定，此指令碼會隨附一個包含文件、範例及測試的模組。 此指令碼會使用 `RequiredModules = @(Name of the Module)` 列出隨附的模組。 此方法可以與任何指令碼搭配使用。
 
@@ -165,7 +165,7 @@ PowerShell 透過兩種主要的方法來支援程式碼簽署驗證：
 
 簽署 PowerShell 檔案是一個廣為接受的方法，可確保所要執行的程式碼是由可靠的來源產生的，並且尚未經過修改。 如需有關如何簽署 PowerShell 指令碼檔的詳細資料，請參閱[關於簽署](/powershell/module/microsoft.powershell.core/about/about_signing) \(英文\) 文章。 大致而言，您可以將簽章新增至 PowerShell 在載入指令碼時驗證的任何 `.PS1` 檔案中。 您可以使用[執行原則](/powershell/module/microsoft.powershell.core/about/about_execution_policies) Cmdlet 來限制 PowerShell，以確保所使用的是已簽署的指令碼。
 
-類別目錄簽署模組是 PowerShell 5.1 版中新增的功能。 如需了解如何簽署模組，請參閱[類別目錄 Cmdlet](/powershell/wmf/5.1/catalog-cmdlets) 文章。 大致而言，簽署類別目錄的方式是建立類別目錄檔案 (包含模組中每個檔案的雜湊值)，然後簽署該檔案。
+類別目錄簽署模組是 PowerShell 5.1 版中新增的功能。 如需了解如何簽署模組，請參閱[類別目錄 Cmdlet](/powershell/scripting/wmf/5.1/catalog-cmdlets) 文章。 大致而言，簽署類別目錄的方式是建立類別目錄檔案 (包含模組中每個檔案的雜湊值)，然後簽署該檔案。
 
 **PowerShellGet** `Publish-Module`、`Install-Module` 與 `Update-Module` Cmdlet 將會檢查簽章以確保檔案有效，然後確認每個套件的雜湊值與類別目錄中的內容相符。 `Save-Module` 不會驗證簽章。 如果系統上已安裝舊版的模組，`Install-Module` 將會確認新版本的簽署授權單位與先前安裝的相符。 若套件未經類別目錄簽署，`Install-Module` 與 `Update-Module` 將會使用 `.PSD1` 檔案上的簽章。 類別目錄簽署可以與簽署指令碼檔案搭配運作，但不會取代其功能。 PowerShell 不會在載入模組時驗證類別目錄簽章。
 

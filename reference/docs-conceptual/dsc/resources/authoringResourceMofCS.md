@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 C# 撰寫 DSC 資源
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954315"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417689"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>用 C\# 撰寫 DSC 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-一般而言，Windows PowerShell 預期狀態設定 (DSC) 自訂資源是在 PowerShell 指令碼中實作。 但您也可以用 C# 撰寫 Cmdlet 來實作 DSC 自訂資源的功能。 如需以 C# 撰寫 Cmdlet 的簡介，請參閱[撰寫 Windows PowerShell Cmdlet](/powershell/developer/windows-powershell)。
+一般而言，Windows PowerShell 預期狀態設定 (DSC) 自訂資源是在 PowerShell 指令碼中實作。 但您也可以用 C# 撰寫 Cmdlet 來實作 DSC 自訂資源的功能。 如需以 C# 撰寫 Cmdlet 的簡介，請參閱[撰寫 Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)。
 
 除了用 C# 將資源當做 Cmdlet 實作，建立 MOF 結構描述、建立資料夾結構、匯入和使用自訂之 DSC 資源的程序，一如[撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 中所述。
 
@@ -281,4 +281,4 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>概念
 [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md)
 #### <a name="other-resources"></a>其他資源
-[撰寫 Windows PowerShell Cmdlet](/powershell/developer/windows-powershell)
+[撰寫 Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)

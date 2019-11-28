@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
-ms.openlocfilehash: f4cfde39de8494050c31cfc3181271b968819695
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692153"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417622"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -22,7 +22,7 @@ ms.locfileid: "71692153"
 
 ## <a name="credssp"></a>CredSSP
 
-您可以使用[認證安全性支援提供者 (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) 進行驗證。 CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
+您可以使用[認證安全性支援提供者 (CredSSP)](/windows/win32/secauthn/credential-security-support-provider) 進行驗證。 CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
 
 如需使用 PowerShell 遠端的 CredSSP 時，安全性考量的詳細資訊，請參閱[意外妨害：注意 CredSSP](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp) \(英文\)。
 
@@ -153,7 +153,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos [金鑰發行中心 (KDC)](https://msdn.microsoft.com/library/windows/desktop/aa378170(v=vs.85).aspx) 會快取遭拒的存取嘗試達 15 分鐘 (負快取)。 如果 _ServerB_ 先前曾嘗試存取 _ServerC_，您必須叫用下列命令清除 _ServerB_ 上的快取︰
+Kerberos [金鑰發行中心 (KDC)](/windows/win32/secauthn/key-distribution-center) 會快取遭拒的存取嘗試達 15 分鐘 (負快取)。 如果 _ServerB_ 先前曾嘗試存取 _ServerC_，您必須叫用下列命令清除 _ServerB_ 上的快取︰
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -214,8 +214,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 1 部分)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 2 部分)
 - [了解使用整合式 Windows 驗證之 Azure Active Directory 應用程式 Proxy 部署的 Kerberos 限制委派](https://aka.ms/kcdpaper)
-- [[MS-ADA2]：Active Directory 結構描述屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx) \(英文\)
-- [[MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy](https://msdn.microsoft.com/library/cc246079.aspx) \(英文\)
+- [[MS-ADA2]：Active Directory 結構描述屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405) \(英文\)
+- [[MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a) \(英文\)
 - [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/) (以資源為基礎的 Kerberos 限制委派)
 - [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/) (使用 PrincipalsAllowedToDelegateToAccount 進行遠端系統管理，而不需要限制委派)
 
@@ -238,7 +238,7 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行哪些命令。 它可以用來解決第二個躍點問題。
 
-如需 JEA 的資訊，請參閱 [Just Enough Administration](https://docs.microsoft.com/powershell/jea/overview)。
+如需 JEA 的資訊，請參閱 [Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview)。
 
 ### <a name="pros"></a>優點
 
@@ -251,7 +251,7 @@ JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行�
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>在 Invoke-Command 指令碼區塊內傳遞認證
 
-您可以在呼叫 [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) Cmdlet 的 **ScriptBlock** 參數內傳遞認證。
+您可以在呼叫 [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) Cmdlet 的 **ScriptBlock** 參數內傳遞認證。
 
 ### <a name="pros"></a>優點
 

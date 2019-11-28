@@ -3,12 +3,12 @@ description: 深入了解 Azure 中的 Desired State Configuration (DSC) 版本�
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 延伸模組
 title: Azure DSC 延伸模組版本歷程記錄
-ms.openlocfilehash: d97ba879679972752196e3f16d0dfb7c731776b9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7a89037d62cb2c8580141d2b177fdded5db654eb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953915"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417290"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 延伸模組版本歷程記錄
 
@@ -219,7 +219,7 @@ Azure Desired State Configuration (DSC) VM 延伸模組會視需求進行更新�
 - **環境：** Azure
 - **備註：** 這個版本使用 Windows Server 2016 Technical Preview 內附的 DSC；若為其他 Windows OS，則會安裝 [Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) (需要重新開機才能安裝 WMF)。
 - **新功能：**
-  - 2\.14 版的延伸模組包含了安裝 WMF RTM 的變更。 當您將延伸模組版本從 2.13.2.0 升級到 2.14.0.0 時，可能會注意到部分 DSC Cmdlet 失敗，或是您的設定失敗，並顯示錯誤：「找不到任何具有指定屬性值的執行個體」。 如需詳細資訊，請參閱 [DSC 版本資訊](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc)。 2\.15 版中新增了這些問題的因應措施。
+  - 2\.14 版的延伸模組包含了安裝 WMF RTM 的變更。 當您將延伸模組版本從 2.13.2.0 升級到 2.14.0.0 時，可能會注意到部分 DSC Cmdlet 失敗，或是您的設定失敗，並顯示錯誤：「找不到任何具有指定屬性值的執行個體」。 如需詳細資訊，請參閱 [DSC 版本資訊](/powershell/scripting/wmf/known-issues/known-issues-dsc)。 2\.15 版中新增了這些問題的因應措施。
   - 很抱歉，若您已經安裝了 2.14 版且遇到上述兩項問題之一，就必須手動執行這些步驟。  在提升權限的 PowerShell 工作階段：
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`

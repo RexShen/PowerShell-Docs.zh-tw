@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 取得詳細的說明資訊
-ms.openlocfilehash: 033a8962ca438b49c10fafa2852c87d19868b4d9
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: e722eb8a0ca13e3d2de864314775a0a9fa578390
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325198"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417653"
 ---
 # <a name="getting-detailed-help-information"></a>取得詳細的說明資訊
 
@@ -79,7 +79,7 @@ Get-Help Get-ChildItem -Parameter *
 Get-Help Get-ChildItem -Examples
 ```
 
-如需如何為您撰寫的 Cmdlet 撰寫說明文章的相關資訊，請參閱[如何撰寫 Cmdlet 說明](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)。
+如需如何為您撰寫的 Cmdlet 撰寫說明文章的相關資訊，請參閱[如何撰寫 Cmdlet 說明](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)。
 
 ## <a name="getting-conceptual-help"></a>取得概念性說明
 
