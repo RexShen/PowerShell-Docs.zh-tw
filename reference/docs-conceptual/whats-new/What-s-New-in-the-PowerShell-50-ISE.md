@@ -2,16 +2,22 @@
 ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: PowerShell 5.0 ISE 的新功能
-ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117508"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416641"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE 的新功能
 
-本主題說明已在 Windows PowerShell 整合式指令碼環境 (ISE) 版本中引進的新功能和更新功能。
+本主題說明先前在 Windows PowerShell 整合式指令碼環境 (ISE) 5.0 版中推出的新功能及更新功能。
+
+> [!NOTE]
+> 我們將不再為 PowerShell ISE 開發新功能。 因為此功能屬於 Windows 的出貨元件，所以官方仍會繼續支援其安全性與高優先順序的服務修正。
+> 目前尚無任何計劃要將 ISE 從 Windows 移除。
+>
+> PowerShell v6 及更新版本不支援 ISE。 使用者如有需要 ISE 的替代解決方案，可使用 [Visual Studio Code](https://code.visualstudio.com/) 搭配 [PowerShell 延伸模組](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)。
 
 ## <a name="feature-description"></a>功能說明
 

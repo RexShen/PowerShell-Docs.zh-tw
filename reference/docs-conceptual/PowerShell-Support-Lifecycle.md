@@ -2,12 +2,12 @@
 title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
 ms.date: 08/06/2018
-ms.openlocfilehash: fbbda0a5f8460e5625625adcc50c631729df53f1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72351804"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416296"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支援週期
 
@@ -19,7 +19,7 @@ PowerShell Core 是一組可以與 Windows PowerShell 分開出貨、安裝和�
 ## <a name="community-support"></a>社群支援
 
 我們也會在您可提出問題、Bug 或功能要求的 GitHub 上提供[社群支援][]。
-或者，您可以在一般 [Microsoft Community][] 或 Microsoft [PowerShell Tech Community][] 上尋求其他社群成員的協助。 我們不保證社群能夠及時處理或解決您的問題。 如果您有需要立即注意的問題，則應該使用傳統付費支援選項。
+此外，您也可以在 Microsoft [PowerShell Tech Community][]，或在 [PowerShell][pshub] 中樞頁面中，社群區段所列的任何論壇中，尋求其他社群成員的協助。 我們不保證社群能夠及時處理或解決您的問題。 如果您有需要立即注意的問題，則應該使用傳統付費支援選項。
 
 ## <a name="lifecycle-of-powershell-core"></a>PowerShell Core 生命週期
 
@@ -117,9 +117,9 @@ PowerShell Core 是透過 [MIT 授權][]所發行。 透過此授權，而且沒
 
 除非產品模組明確支援 PowerShell Core，否則 PowerShell Core 支援不包含那些模組。 例如，使用隨附為 Windows Server 一部分的 `ActiveDirectory` 模組，就是不支援的案例。
 
-不過，在某些情況下，未明確支援 PowerShell Core 的模組可能會相容。 安裝 [`WindowsPSModulePath`][] 模組，即可將 Windows PowerShell `PSModulePath` 新增至 PowerShell Core `PSModulePath`。
+不過，在某些情況下，未明確支援 PowerShell Core 的模組可能會相容。 安裝 [WindowsPSModulePath][] 模組，即可將 Windows PowerShell 新增至 `PSModulePath`PowerShell Core `PSModulePath`。
 
-首先，從 PowerShell 資源庫安裝 `WindowsPSModulePath` 模組：
+首先，請從 PowerShell 資源庫安裝 **WindowsPSModulePath** 模組：
 
 ```powershell
 # Add `-Scope CurrentUser` if you're installing as non-admin
@@ -141,12 +141,12 @@ Add-WindowsPSModulePath
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
 [社群支援]: https://github.com/powershell/powershell/issues
-[Microsoft Community]: https://answers.microsoft.com/
+[pshub]: https://docs.microsoft.com/powershell
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [輔助支援]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
 [lifecycle-chart]: ./images/modern-lifecycle.png
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT 授權]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
-[`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [實驗性功能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

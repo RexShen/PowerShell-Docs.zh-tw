@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2018
+ms.date: 11/15/2019
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
-ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72561267"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417552"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>PowerShell 6.0 的中斷性變更
+# <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x 的中斷性變更
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core 中已不再提供的功能
 
@@ -23,7 +23,7 @@ ms.locfileid: "72561267"
 
 如果需要在 OS 重新啟動之後使用檢查點來繼續指令碼，建議使用 [工作排程器] 在 OS 啟動時執行指令碼，但指令碼必須維持其本身的狀態 (例如將它保存到檔案)。
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>自訂嵌入式管理單元
@@ -291,3 +291,4 @@ Web Cmdlet 的基礎 .NET API 已變更為 `System.Net.Http.HttpClient`。 這�
 - macOS 上目前未提供任何憑證型驗證。
 - 透過 `http://` URI 使用 `-Credential` 將會造成錯誤。 請使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 參數來抑制此錯誤。
 - 當重新導向次數超過提供的限制時，`-MaximumRedirection` 現在會產生終止錯誤，而不是傳回最後一個重新導向的結果。
+- PowerShell 6.2 已將對 JSON 回應的預設值變更為 UTF-8 編碼。 在未提供 JSON 回應的字元集時，依據 RFC 8259 規定，預設編碼即為 UTF-8。
