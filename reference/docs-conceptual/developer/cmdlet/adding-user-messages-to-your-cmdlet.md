@@ -1,5 +1,5 @@
 ---
-title: Adding User Messages to Your Cmdlet | Microsoft Docs
+title: 將使用者訊息新增至您的 Cmdlet |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -40,25 +40,25 @@ ms.locfileid: "74416021"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>新增使用者訊息到您的 Cmdlet
 
-Cmdlets can write several kinds of messages that can be displayed to the user by the Windows PowerShell runtime. These messages include the following types:
+Cmdlet 可以撰寫數種可由 Windows PowerShell 執行時間向使用者顯示的訊息。 這些訊息包含下列類型：
 
-- Verbose messages that contain general user information.
+- 包含一般使用者資訊的詳細訊息。
 
-- Debug messages that contain troubleshooting information.
+- 包含疑難排解資訊的偵錯工具訊息。
 
-- Warning messages that contain a notification that the cmdlet is about to perform an operation that can have unexpected results.
+- 包含通知的警告訊息，指出 Cmdlet 即將執行可能會產生非預期結果的作業。
 
-- Progress report messages that contain information about how much work the cmdlet has completed when performing an operation that takes a long time.
+- 進度報表訊息，其中包含在執行需要很長時間的作業時，Cmdlet 已完成多少工作的相關資訊。
 
-There are no limits to the number of messages that your cmdlet can write or the type of messages that your cmdlet writes. Each message is written by making a specific call from within the input processing method of your cmdlet.
+您的 Cmdlet 可以寫入的訊息數目，或 Cmdlet 所寫入的訊息類型沒有任何限制。 每個訊息的撰寫方式是從 Cmdlet 的輸入處理方法中進行特定的呼叫。
 
-## <a name="defining-the-cmdlet"></a>Defining the Cmdlet
+## <a name="defining-the-cmdlet"></a>定義 Cmdlet
 
-The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Any sort of cmdlet can write user notifications from its input processing methods; so, in general, you can name this cmdlet using any verb that indicates what system modifications the cmdlet performs. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+Cmdlet 建立的第一個步驟一律為 Cmdlet 命名，並宣告可執行 Cmdlet 的 .NET 類別。 任何類型的 Cmdlet 都可以從其輸入處理方法寫入使用者通知;因此，一般而言，您可以使用指示 Cmdlet 執行之系統修改的任何動詞來命名此 Cmdlet。 如需已核准 Cmdlet 動詞命令的詳細資訊，請參閱[Cmdlet 動詞名稱](./approved-verbs-for-windows-powershell-commands.md)。
 
-The Stop-Proc cmdlet is designed to modify the system; therefore, the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) declaration for the .NET class must include the `SupportsShouldProcess` attribute keyword and be set to `true`.
+停止處理器 Cmdlet 是設計來修改系統;因此，.NET 類別的[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)宣告必須包含 `SupportsShouldProcess` 屬性關鍵字，並設定為 `true`。
 
-The following code is the definition for this Stop-Proc cmdlet class. For more information about this definition, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+下列程式碼是這個停止進程 Cmdlet 類別的定義。 如需有關此定義的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -66,11 +66,11 @@ The following code is the definition for this Stop-Proc cmdlet class. For more i
 public class StopProcCommand : Cmdlet
 ```
 
-## <a name="defining-parameters-for-system-modification"></a>Defining Parameters for System Modification
+## <a name="defining-parameters-for-system-modification"></a>定義系統修改的參數
 
-The Stop-Proc cmdlet defines three parameters: `Name`, `Force`, and `PassThru`. For more information about defining these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+Stop-Proc Cmdlet 會定義三個參數： `Name`、`Force`和 `PassThru`。 如需定義這些參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
 
-Here is the parameter declaration for the Stop-Proc cmdlet.
+以下是 Stop-Proc Cmdlet 的參數宣告。
 
 ```csharp
 [Parameter(
@@ -113,18 +113,18 @@ public SwitchParameter PassThru
 private bool passThru;
 ```
 
-## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
+## <a name="overriding-an-input-processing-method"></a>覆寫輸入處理方法
 
-Your cmdlet must override an input processing method, most often it will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). This Stop-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) input processing method. In this implementation of the Stop-Proc cmdlet, calls are made to write verbose messages, debug messages, and warning messages.
+您的 Cmdlet 必須覆寫輸入處理方法，但通常會是[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 這個 Stop-Proc Cmdlet 會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)輸入處理方法。 在這種停止進程 Cmdlet 的執行過程中，會呼叫來寫入詳細訊息、debug 訊息和警告訊息。
 
 > [!NOTE]
-> For more information about how this method calls the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+> 如需有關此方法如何呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)方法的詳細資訊，請參閱[建立可修改系統](./creating-a-cmdlet-that-modifies-the-system.md)的指令程式（Cmdlet）。
 
-## <a name="writing-a-verbose-message"></a>Writing a Verbose Message
+## <a name="writing-a-verbose-message"></a>撰寫詳細訊息
 
-The [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method is used to write general user-level information that is unrelated to specific error conditions. The system administrator can then use that information to continue processing other commands. In addition, any information written using this method should be localized as needed.
+[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法是用來撰寫與特定錯誤狀況無關的一般使用者層級資訊。 然後，系統管理員可以使用該資訊繼續處理其他命令。 此外，使用此方法所撰寫的任何資訊都應該視需要當地語系化。
 
-The following code from this Stop-Proc cmdlet shows two calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method from the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+下列來自這個 Stop-Proc Cmdlet 的程式碼會從[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法的覆寫中，顯示兩次[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法的呼叫，。
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -138,16 +138,16 @@ message = String.Format("Stopped process \"{0}\", pid {1}.",
 WriteVerbose(message);
 ```
 
-## <a name="writing-a-debug-message"></a>Writing a Debug Message
+## <a name="writing-a-debug-message"></a>撰寫 Debug 訊息
 
-The [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method is used to write debug messages that can be used to troubleshoot the operation of the cmdlet. The call is made from an input processing method.
+[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法是用來撰寫可用於疑難排解 Cmdlet 作業的「偵錯工具」（debug）訊息。 呼叫是從輸入處理方法進行。
 
 > [!NOTE]
-> Windows PowerShell also defines a `Debug` parameter that presents both verbose and debug information. If your cmdlet supports this parameter, it does not need to call [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) in the same code that calls [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell 也會定義同時提供詳細資訊和偵錯工具資訊的 `Debug` 參數。 如果您的 Cmdlet 支援此參數，則不需要在呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)的相同程式碼中呼叫 System.web. [WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)..。
 
-The following two sections of code from the sample Stop-Proc cmdlet show calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method from the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+下列兩個來自 sample WriteDebug 方法的程式碼區段會從 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法的覆寫中，顯示對 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) 方法的呼叫。」（來自）。
 
-This debug message is written immediately before [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) is called.
+此 debug 訊息會在呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)之前立即寫入。
 
 ```csharp
 message =
@@ -156,7 +156,7 @@ message =
 WriteDebug(message);
 ```
 
-This debug message is written immediately before [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) is called.
+此 debug 訊息會在呼叫[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)之前立即寫入。
 
 ```csharp
 message =
@@ -166,15 +166,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell automatically routes any [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) calls to the tracing infrastructure and cmdlets. This allows the method calls to be traced to the hosting application, a file, or a debugger without your having to do any extra development work within the cmdlet. The following command-line entry implements a tracing operation.
+Windows PowerShell 會自動將[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)呼叫路由至追蹤基礎結構和 Cmdlet。 這可讓方法呼叫追蹤至裝載應用程式、檔案或偵錯工具，而不需要在 Cmdlet 內執行任何額外的開發工作。 下列命令列專案會實行追蹤作業。
 
-**PS> trace-expression stop-proc -file proc.log -command stop-proc notepad**
+**PS > 追蹤-運算式停止進程-檔案進程 .log-命令停止-進程記事本**
 
-## <a name="writing-a-warning-message"></a>Writing a Warning Message
+## <a name="writing-a-warning-message"></a>撰寫警告訊息
 
-The [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method is used to write a warning when the cmdlet is about to perform an operation that might have an unexpected result, for example, overwriting a read-only file.
+當指令程式即將執行可能會產生非預期結果的作業時（例如，覆寫唯讀檔案），會使用[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法來撰寫警告。
 
-The following code from the sample Stop-Proc cmdlet shows the call to the [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method from the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+下列來自範例 Stop-Proc Cmdlet 的程式碼會從[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法的覆寫中，顯示對[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法所做的呼叫，。
 
 ```csharp
  if (criticalProcess)
@@ -186,14 +186,14 @@ The following code from the sample Stop-Proc cmdlet shows the call to the [Syste
 } // if (criticalProcess...
 ```
 
-## <a name="writing-a-progress-message"></a>Writing a Progress Message
+## <a name="writing-a-progress-message"></a>撰寫進度訊息
 
-The [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) is used to write progress messages when cmdlet operations take an extended amount of time to complete. A call to [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) passes a [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) object that is sent to the hosting application for rendering to the user.
+當 Cmdlet 作業需要很長的時間才能完成時，會使用[WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)來寫入進度訊息。 [WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)的呼叫會將傳送至裝載應用程式的[Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)物件傳遞給使用者，以供呈現給使用者使用。
 
 > [!NOTE]
-> This Stop-Proc cmdlet does not include a call to the [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) method.
+> 這個停止進程 Cmdlet 不會包含[WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)方法的呼叫（call）。
 
-The following code is an example of a progress message written by a cmdlet that is attempting to copy an item.
+下列程式碼範例是由嘗試複製專案的 Cmdlet 所撰寫的進度訊息。
 
 ```csharp
 int myId = 0;
@@ -206,29 +206,29 @@ pr.RecordType = ProgressRecordType.Completed;
 WriteProgress(pr);
 ```
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>程式碼範例
 
-For the complete C# sample code, see [StopProcessSample02 Sample](./stopprocesssample02-sample.md).
+如需完整C#的範例程式碼，請參閱[StopProcessSample02 範例](./stopprocesssample02-sample.md)。
 
-## <a name="define-object-types-and-formatting"></a>Define Object Types and Formatting
+## <a name="define-object-types-and-formatting"></a>定義物件類型和格式
 
-Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此，Cmdlet 可能需要定義自己的類型，或 Cmdlet 可能需要擴充另一個 Cmdlet 所提供的現有類型。 如需定義新類型或擴充現有類型的詳細資訊，請參閱[擴充物件類型和格式](/previous-versions//ms714665(v=vs.85))。
 
-## <a name="building-the-cmdlet"></a>Building the Cmdlet
+## <a name="building-the-cmdlet"></a>建立 Cmdlet
 
-After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+在執行 Cmdlet 之後，必須透過 Windows PowerShell 嵌入式管理單元向 Windows PowerShell 註冊它。 如需註冊 Cmdlet 的詳細資訊，請參閱[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))。
 
-## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
+## <a name="testing-the-cmdlet"></a>測試 Cmdlet
 
-When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+當您的 Cmdlet 已向 Windows PowerShell 註冊時，您可以在命令列上執行它來進行測試。 讓我們來測試範例的 Stop-Proc Cmdlet。 如需從命令列使用 Cmdlet 的詳細資訊，請參閱[使用 Windows PowerShell 的消費者入門](/powershell/scripting/getting-started/getting-started-with-windows-powershell)。
 
-- The following command-line entry uses Stop-Proc to stop the process named "NOTEPAD", provide verbose notifications, and print debug information.
+- 下列命令列專案使用停止程式來停止名為 "NOTEPAD" 的進程、提供詳細語音總機，以及列印偵錯工具資訊。
 
     ```powershell
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-The following output appears.
+下列輸出隨即出現。
 
     ```
     VERBOSE: Attempting to stop process " notepad ".
@@ -247,12 +247,12 @@ The following output appears.
 
 ## <a name="see-also"></a>另請參閱
 
-[Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
+[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[如何建立 Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
+[擴充物件類型和格式](/previous-versions//ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
+[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
