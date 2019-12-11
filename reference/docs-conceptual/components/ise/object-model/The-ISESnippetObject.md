@@ -3,45 +3,45 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISESnippetObject
 ms.openlocfilehash: 62d470569deb051fca80005235d4c492319cf5ec
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028897"
 ---
-# <a name="the-isesnippetobject"></a><span data-ttu-id="a6145-103">ISESnippetObject</span><span class="sxs-lookup"><span data-stu-id="a6145-103">The ISESnippetObject</span></span>
+# <a name="the-isesnippetobject"></a><span data-ttu-id="74ea1-103">ISESnippetObject</span><span class="sxs-lookup"><span data-stu-id="74ea1-103">The ISESnippetObject</span></span>
 
-<span data-ttu-id="a6145-104">**ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。</span><span class="sxs-lookup"><span data-stu-id="a6145-104">An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.</span></span> <span data-ttu-id="a6145-105">**$psISE.CurrentPowerShellTab.Snippets** 集合的成員都是 **ISESnippet** 物件的範例。</span><span class="sxs-lookup"><span data-stu-id="a6145-105">The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects.</span></span> <span data-ttu-id="a6145-106">建立程式碼片段的最簡單方式是使用 [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="a6145-106">The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.</span></span>
+<span data-ttu-id="74ea1-104">**ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。</span><span class="sxs-lookup"><span data-stu-id="74ea1-104">An **ISESnippet** object is an instance of the Microsoft.PowerShell.Host.ISE.ISESnippet class.</span></span> <span data-ttu-id="74ea1-105">**$psISE.CurrentPowerShellTab.Snippets** 集合的成員都是 **ISESnippet** 物件的範例。</span><span class="sxs-lookup"><span data-stu-id="74ea1-105">The members of the **$psISE.CurrentPowerShellTab.Snippets** collection are all examples of **ISESnippet** objects.</span></span> <span data-ttu-id="74ea1-106">建立程式碼片段的最簡單方式是使用 [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="74ea1-106">The easiest way to create a snippet is to use the [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) cmdlet.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="a6145-107">Properties</span><span class="sxs-lookup"><span data-stu-id="a6145-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="74ea1-107">Properties</span><span class="sxs-lookup"><span data-stu-id="74ea1-107">Properties</span></span>
 
-### <a name="author"></a><span data-ttu-id="a6145-108">作者</span><span class="sxs-lookup"><span data-stu-id="a6145-108">Author</span></span>
+### <a name="author"></a><span data-ttu-id="74ea1-108">作者</span><span class="sxs-lookup"><span data-stu-id="74ea1-108">Author</span></span>
 
-<span data-ttu-id="a6145-109">在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。</span><span class="sxs-lookup"><span data-stu-id="a6145-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="74ea1-109">在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。</span><span class="sxs-lookup"><span data-stu-id="74ea1-109">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="a6145-110">唯讀屬性，可取得程式碼片段的作者名稱。</span><span class="sxs-lookup"><span data-stu-id="a6145-110">The read-only property that gets the name of the author of the snippet.</span></span>
+<span data-ttu-id="74ea1-110">唯讀屬性，可取得程式碼片段的作者名稱。</span><span class="sxs-lookup"><span data-stu-id="74ea1-110">The read-only property that gets the name of the author of the snippet.</span></span>
 
 ```powershell
 # Get the author of the first snippet item
 $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 ```
 
-### <a name="codefragment"></a><span data-ttu-id="a6145-111">CodeFragment</span><span class="sxs-lookup"><span data-stu-id="a6145-111">CodeFragment</span></span>
+### <a name="codefragment"></a><span data-ttu-id="74ea1-111">CodeFragment</span><span class="sxs-lookup"><span data-stu-id="74ea1-111">CodeFragment</span></span>
 
-<span data-ttu-id="a6145-112">在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。</span><span class="sxs-lookup"><span data-stu-id="a6145-112">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="74ea1-112">在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。</span><span class="sxs-lookup"><span data-stu-id="74ea1-112">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="a6145-113">唯讀屬性，可取得要插入至編輯器的程式碼片段。</span><span class="sxs-lookup"><span data-stu-id="a6145-113">The read-only property that gets the code fragment to be inserted into the editor.</span></span>
+<span data-ttu-id="74ea1-113">唯讀屬性，可取得要插入至編輯器的程式碼片段。</span><span class="sxs-lookup"><span data-stu-id="74ea1-113">The read-only property that gets the code fragment to be inserted into the editor.</span></span>
 
 ```powershell
 # Get the code fragment associated with the first snippet item.
 $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
-### <a name="shortcut"></a><span data-ttu-id="a6145-114">捷徑</span><span class="sxs-lookup"><span data-stu-id="a6145-114">Shortcut</span></span>
+### <a name="shortcut"></a><span data-ttu-id="74ea1-114">捷徑</span><span class="sxs-lookup"><span data-stu-id="74ea1-114">Shortcut</span></span>
 
-<span data-ttu-id="a6145-115">在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。</span><span class="sxs-lookup"><span data-stu-id="a6145-115">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="74ea1-115">在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。</span><span class="sxs-lookup"><span data-stu-id="74ea1-115">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="a6145-116">唯讀屬性，可取得功能表項目的 Windows 鍵盤快速鍵。</span><span class="sxs-lookup"><span data-stu-id="a6145-116">The read-only property that gets the Windows keyboard shortcut for the menu item.</span></span>
+<span data-ttu-id="74ea1-116">唯讀屬性，可取得功能表項目的 Windows 鍵盤快速鍵。</span><span class="sxs-lookup"><span data-stu-id="74ea1-116">The read-only property that gets the Windows keyboard shortcut for the menu item.</span></span>
 
 ```powershell
 # Get the shortcut for the first submenu item.
@@ -50,8 +50,8 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, '
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a6145-117">另請參閱</span><span class="sxs-lookup"><span data-stu-id="a6145-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="74ea1-117">另請參閱</span><span class="sxs-lookup"><span data-stu-id="74ea1-117">See Also</span></span>
 
-- [<span data-ttu-id="a6145-118">ISESnippetCollection 物件</span><span class="sxs-lookup"><span data-stu-id="a6145-118">The ISESnippetCollection Object</span></span>](The-ISESnippetCollection-Object.md)
-- [<span data-ttu-id="a6145-119">Windows PowerShell ISE 指令碼物件模型的用途</span><span class="sxs-lookup"><span data-stu-id="a6145-119">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
-- [<span data-ttu-id="a6145-120">ISE 物件模型階層</span><span class="sxs-lookup"><span data-stu-id="a6145-120">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="74ea1-118">ISESnippetCollection 物件</span><span class="sxs-lookup"><span data-stu-id="74ea1-118">The ISESnippetCollection Object</span></span>](The-ISESnippetCollection-Object.md)
+- [<span data-ttu-id="74ea1-119">Windows PowerShell ISE 指令碼物件模型的用途</span><span class="sxs-lookup"><span data-stu-id="74ea1-119">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](purpose-of-the-windows-powershell-ise-scripting-object-model.md)
+- [<span data-ttu-id="74ea1-120">ISE 物件模型階層</span><span class="sxs-lookup"><span data-stu-id="74ea1-120">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)

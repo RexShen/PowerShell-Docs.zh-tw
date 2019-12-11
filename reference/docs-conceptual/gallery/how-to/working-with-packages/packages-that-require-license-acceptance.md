@@ -4,28 +4,28 @@ contributor: Farehar
 keywords: gallery,powershell,psgallery,資源庫
 title: 必須接受授權
 ms.openlocfilehash: eaed248895d14bd455d2d8d3c2222d8848eeccae
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328209"
 ---
-# <a name="require-license-acceptance"></a><span data-ttu-id="456a9-103">必須接受授權</span><span class="sxs-lookup"><span data-stu-id="456a9-103">Require license acceptance</span></span>
+# <a name="require-license-acceptance"></a><span data-ttu-id="2ee8a-103">必須接受授權</span><span class="sxs-lookup"><span data-stu-id="2ee8a-103">Require license acceptance</span></span>
 
-<span data-ttu-id="456a9-104">「必須接受授權」的文字會顯示在需要接受授權之模組的項目詳細資料頁面上。</span><span class="sxs-lookup"><span data-stu-id="456a9-104">Require License Acceptance text shows up on item details page for modules that require license acceptance.</span></span> <span data-ttu-id="456a9-105">模組的授權可以透過按一下 [檢視 License.txt] 連結來檢視。</span><span class="sxs-lookup"><span data-stu-id="456a9-105">License for module can be viewed by clicking on 'View License.txt' link.</span></span>
+<span data-ttu-id="2ee8a-104">「必須接受授權」的文字會顯示在需要接受授權之模組的項目詳細資料頁面上。</span><span class="sxs-lookup"><span data-stu-id="2ee8a-104">Require License Acceptance text shows up on item details page for modules that require license acceptance.</span></span> <span data-ttu-id="2ee8a-105">模組的授權可以透過按一下 [檢視 License.txt] 連結來檢視。</span><span class="sxs-lookup"><span data-stu-id="2ee8a-105">License for module can be viewed by clicking on 'View License.txt' link.</span></span>
 
 ![必須接受授權](../../Images/RequireLicenseAcceptance.png)
 
-<span data-ttu-id="456a9-107">系統會在透過 PowerShellGet 安裝、儲存或更新模組，或部署至 Azure 自動化時，提示使用者接受授權。</span><span class="sxs-lookup"><span data-stu-id="456a9-107">Users will be prompted to accept the license when installing, saving or updating the module through PowerShellGet or when deploying to Azure Automation.</span></span>
+<span data-ttu-id="2ee8a-107">系統會在透過 PowerShellGet 安裝、儲存或更新模組，或部署至 Azure 自動化時，提示使用者接受授權。</span><span class="sxs-lookup"><span data-stu-id="2ee8a-107">Users will be prompted to accept the license when installing, saving or updating the module through PowerShellGet or when deploying to Azure Automation.</span></span>
 
-## <a name="require-license-acceptance-on-deploy-to-azure-automation"></a><span data-ttu-id="456a9-108">部署至 Azure 自動化上的必須接受授權</span><span class="sxs-lookup"><span data-stu-id="456a9-108">Require License Acceptance on Deploy to Azure Automation</span></span>
+## <a name="require-license-acceptance-on-deploy-to-azure-automation"></a><span data-ttu-id="2ee8a-108">部署至 Azure 自動化上的必須接受授權</span><span class="sxs-lookup"><span data-stu-id="2ee8a-108">Require License Acceptance on Deploy to Azure Automation</span></span>
 
-<span data-ttu-id="456a9-109">若部署至 Azure 自動化的模組必須接受授權，入口網站 UI 將會顯示免責聲明：「此模組需要您接受授權。</span><span class="sxs-lookup"><span data-stu-id="456a9-109">If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying 'This module requires license acceptance.</span></span> <span data-ttu-id="456a9-110">按一下 [確定] 即表示您接受授權條款。」</span><span class="sxs-lookup"><span data-stu-id="456a9-110">By clicking OK, you are accepting license terms.'</span></span>
+<span data-ttu-id="2ee8a-109">若部署至 Azure 自動化的模組必須接受授權，入口網站 UI 將會顯示免責聲明：「此模組需要您接受授權。</span><span class="sxs-lookup"><span data-stu-id="2ee8a-109">If the module being deployed to Azure Automation requires license acceptance, portal UI will show a disclaimer saying 'This module requires license acceptance.</span></span> <span data-ttu-id="2ee8a-110">按一下 [確定] 即表示您接受授權條款。」</span><span class="sxs-lookup"><span data-stu-id="2ee8a-110">By clicking OK, you are accepting license terms.'</span></span>
 
 ![部署至 Azure 自動化必須接受授權](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a><span data-ttu-id="456a9-112">更多詳細資料</span><span class="sxs-lookup"><span data-stu-id="456a9-112">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="2ee8a-112">更多詳細資料</span><span class="sxs-lookup"><span data-stu-id="2ee8a-112">More details</span></span>
 
-<span data-ttu-id="456a9-113">[必須接受 PowerShellGet 中的授權](../../concepts/module-license-acceptance.md)
-[Azure 自動化網站](/azure/automation)</span><span class="sxs-lookup"><span data-stu-id="456a9-113">[Require License Acceptance in PowerShellGet](../../concepts/module-license-acceptance.md)
+<span data-ttu-id="2ee8a-113">[必須接受 PowerShellGet 中的授權](../../concepts/module-license-acceptance.md)
+[Azure 自動化網站](/azure/automation)</span><span class="sxs-lookup"><span data-stu-id="2ee8a-113">[Require License Acceptance in PowerShellGet](../../concepts/module-license-acceptance.md)
 [Azure Automation website](/azure/automation)</span></span>

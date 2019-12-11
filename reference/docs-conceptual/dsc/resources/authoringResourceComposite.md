@@ -3,21 +3,21 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 複合資源：把 DSC 設定當做資源使用
 ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
-ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73933833"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="1cd0d-103">複合資源：將 DSC 設定當成資源使用</span><span class="sxs-lookup"><span data-stu-id="1cd0d-103">Composite resources: Using a DSC configuration as a resource</span></span>
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="7a74d-103">複合資源：將 DSC 設定當成資源使用</span><span class="sxs-lookup"><span data-stu-id="7a74d-103">Composite resources: Using a DSC configuration as a resource</span></span>
 
-> <span data-ttu-id="1cd0d-104">適用於：Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1cd0d-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="7a74d-104">適用於：Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="7a74d-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="1cd0d-105">在真實世界的情況裡，設定可能冗長且複雜，要呼叫許多不同的資源，並設定大量的屬性。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="1cd0d-106">為解決這種複雜性，您可以使用 Windows PowerShell 預期狀態設定 (DSC) 設定作為其他設定的資源。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="1cd0d-107">我們稱之為複合資源。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-107">We call this a composite resource.</span></span> <span data-ttu-id="1cd0d-108">複合資源是使用參數的 DSC 設定。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="1cd0d-109">設定參數的表現如同資源屬性。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="1cd0d-110">設定會儲存為副檔名為 **.schema.psm1** 的檔案，並取代一般 DSC 資源的 MOF 結構描述和資源指令碼 (如需 DSC 資源的詳細資訊，請參閱 [Windows PowerShell 預期狀態設定資源](resources.md)。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
+<span data-ttu-id="7a74d-105">在真實世界的情況裡，設定可能冗長且複雜，要呼叫許多不同的資源，並設定大量的屬性。</span><span class="sxs-lookup"><span data-stu-id="7a74d-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="7a74d-106">為解決這種複雜性，您可以使用 Windows PowerShell 預期狀態設定 (DSC) 設定作為其他設定的資源。</span><span class="sxs-lookup"><span data-stu-id="7a74d-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="7a74d-107">我們稱之為複合資源。</span><span class="sxs-lookup"><span data-stu-id="7a74d-107">We call this a composite resource.</span></span> <span data-ttu-id="7a74d-108">複合資源是使用參數的 DSC 設定。</span><span class="sxs-lookup"><span data-stu-id="7a74d-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="7a74d-109">設定參數的表現如同資源屬性。</span><span class="sxs-lookup"><span data-stu-id="7a74d-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="7a74d-110">設定會儲存為副檔名為 **.schema.psm1** 的檔案，並取代一般 DSC 資源的 MOF 結構描述和資源指令碼 (如需 DSC 資源的詳細資訊，請參閱 [Windows PowerShell 預期狀態設定資源](resources.md)。</span><span class="sxs-lookup"><span data-stu-id="7a74d-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
 
-## <a name="creating-the-composite-resource"></a><span data-ttu-id="1cd0d-111">建立複合資源</span><span class="sxs-lookup"><span data-stu-id="1cd0d-111">Creating the composite resource</span></span>
+## <a name="creating-the-composite-resource"></a><span data-ttu-id="7a74d-111">建立複合資源</span><span class="sxs-lookup"><span data-stu-id="7a74d-111">Creating the composite resource</span></span>
 
-<span data-ttu-id="1cd0d-112">在範例中，我們會建立叫用許多現有資源的設定來設定虛擬機器。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="1cd0d-113">不指定要在設定區塊中設定的值，而是讓設定使用之後要用在設定區塊中的許多參數。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
+<span data-ttu-id="7a74d-112">在範例中，我們會建立叫用許多現有資源的設定來設定虛擬機器。</span><span class="sxs-lookup"><span data-stu-id="7a74d-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="7a74d-113">不指定要在設定區塊中設定的值，而是讓設定使用之後要用在設定區塊中的許多參數。</span><span class="sxs-lookup"><span data-stu-id="7a74d-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
 
 ```powershell
 Configuration xVirtualMachine
@@ -131,15 +131,15 @@ Configuration xVirtualMachine
 }
 ```
 
-### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="1cd0d-114">將設定儲存為複合資源</span><span class="sxs-lookup"><span data-stu-id="1cd0d-114">Saving the configuration as a composite resource</span></span>
+### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="7a74d-114">將設定儲存為複合資源</span><span class="sxs-lookup"><span data-stu-id="7a74d-114">Saving the configuration as a composite resource</span></span>
 
-<span data-ttu-id="1cd0d-115">若要將參數化設定用作 DSC 資源，請將它儲存在類似任何其他 MOF 型資源的目錄結構中，命名時使用 **.schema.psm1** 副檔名。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="1cd0d-116">本例會將檔案命名為 **xVirtualMachine.schema.psm1**。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-116">For this example, we'll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="1cd0d-117">您也必須建立名為 **xVirtualMachine.psd1** 的資訊清單，包含下列內容。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="1cd0d-118">請注意，這是除了 **MyDscResources.psd1** 之外，**MyDscResources** 資料夾下所有資源的模組資訊清單。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
+<span data-ttu-id="7a74d-115">若要將參數化設定用作 DSC 資源，請將它儲存在類似任何其他 MOF 型資源的目錄結構中，命名時使用 **.schema.psm1** 副檔名。</span><span class="sxs-lookup"><span data-stu-id="7a74d-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="7a74d-116">本例會將檔案命名為 **xVirtualMachine.schema.psm1**。</span><span class="sxs-lookup"><span data-stu-id="7a74d-116">For this example, we'll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="7a74d-117">您也必須建立名為 **xVirtualMachine.psd1** 的資訊清單，包含下列內容。</span><span class="sxs-lookup"><span data-stu-id="7a74d-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="7a74d-118">請注意，這是除了 **MyDscResources.psd1** 之外，**MyDscResources** 資料夾下所有資源的模組資訊清單。</span><span class="sxs-lookup"><span data-stu-id="7a74d-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
-<span data-ttu-id="1cd0d-119">完成之後，資料夾結構應如下。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-119">When you are done, the folder structure should be as follows.</span></span>
+<span data-ttu-id="7a74d-119">完成之後，資料夾結構應如下。</span><span class="sxs-lookup"><span data-stu-id="7a74d-119">When you are done, the folder structure should be as follows.</span></span>
 
 ```
 $env: psmodulepath
@@ -151,11 +151,11 @@ $env: psmodulepath
                 |- xVirtualMachine.schema.psm1
 ```
 
-<span data-ttu-id="1cd0d-120">資源現在可使用 Get-DscResource 探索，其屬性也可使用此 Cmdlet 探索，或在 Windows PowerShell ISE 中使用 **Ctrl + 空格鍵**自動完成。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
+<span data-ttu-id="7a74d-120">資源現在可使用 Get-DscResource 探索，其屬性也可使用此 Cmdlet 探索，或在 Windows PowerShell ISE 中使用 **Ctrl + 空格鍵**自動完成。</span><span class="sxs-lookup"><span data-stu-id="7a74d-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
 
-## <a name="using-the-composite-resource"></a><span data-ttu-id="1cd0d-121">使用複合資源</span><span class="sxs-lookup"><span data-stu-id="1cd0d-121">Using the composite resource</span></span>
+## <a name="using-the-composite-resource"></a><span data-ttu-id="7a74d-121">使用複合資源</span><span class="sxs-lookup"><span data-stu-id="7a74d-121">Using the composite resource</span></span>
 
-<span data-ttu-id="1cd0d-122">接下來我們要建立呼叫複合資源的設定。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="1cd0d-123">這個設定會呼叫 xVirtualMachine 複合資源，以建立虛擬機器，然後再呼叫 **xComputer** 資源重新命名它。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
+<span data-ttu-id="7a74d-122">接下來我們要建立呼叫複合資源的設定。</span><span class="sxs-lookup"><span data-stu-id="7a74d-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="7a74d-123">這個設定會呼叫 xVirtualMachine 複合資源，以建立虛擬機器，然後再呼叫 **xComputer** 資源重新命名它。</span><span class="sxs-lookup"><span data-stu-id="7a74d-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
 
 ```powershell
 configuration RenameVM
@@ -186,7 +186,7 @@ configuration RenameVM
 }
 ```
 
-<span data-ttu-id="1cd0d-124">您也可以使用此資源來建立多部 VM，只要將 VM 名稱的陣列傳遞給 xVirtualMachine 資源即可。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-124">You can also use this resource to create multiple VMs by passing in an array of VM names to the xVirtualMachine resource.</span></span>
+<span data-ttu-id="7a74d-124">您也可以使用此資源來建立多部 VM，只要將 VM 名稱的陣列傳遞給 xVirtualMachine 資源即可。</span><span class="sxs-lookup"><span data-stu-id="7a74d-124">You can also use this resource to create multiple VMs by passing in an array of VM names to the xVirtualMachine resource.</span></span>
 
 ```PowerShell
 Configuration MultipleVms
@@ -208,17 +208,17 @@ Configuration MultipleVms
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="1cd0d-125">支援 PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="1cd0d-125">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="7a74d-125">支援 PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="7a74d-125">Supporting PsDscRunAsCredential</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="1cd0d-126">PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-126">**PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+> <span data-ttu-id="7a74d-126">PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="7a74d-126">**PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="1cd0d-127">您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-127">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="1cd0d-128">如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-128">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
+<span data-ttu-id="7a74d-127">您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。</span><span class="sxs-lookup"><span data-stu-id="7a74d-127">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="7a74d-128">如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="7a74d-128">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
 
-<span data-ttu-id="1cd0d-129">若要從自訂資源內存取使用者內容，您可以使用自動變數 `$PsDscContext`。</span><span class="sxs-lookup"><span data-stu-id="1cd0d-129">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
+<span data-ttu-id="7a74d-129">若要從自訂資源內存取使用者內容，您可以使用自動變數 `$PsDscContext`。</span><span class="sxs-lookup"><span data-stu-id="7a74d-129">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
 
-<span data-ttu-id="1cd0d-130">例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：</span><span class="sxs-lookup"><span data-stu-id="1cd0d-130">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="7a74d-130">例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：</span><span class="sxs-lookup"><span data-stu-id="7a74d-130">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if ($PsDscContext.RunAsUser) {
@@ -226,7 +226,7 @@ if ($PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1cd0d-131">另請參閱</span><span class="sxs-lookup"><span data-stu-id="1cd0d-131">See Also</span></span>
-### <a name="concepts"></a><span data-ttu-id="1cd0d-132">概念</span><span class="sxs-lookup"><span data-stu-id="1cd0d-132">Concepts</span></span>
-* [<span data-ttu-id="1cd0d-133">撰寫自訂的 DSC 資源與 MOF</span><span class="sxs-lookup"><span data-stu-id="1cd0d-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-* [<span data-ttu-id="1cd0d-134">開始使用 Windows PowerShell 預期狀態設定</span><span class="sxs-lookup"><span data-stu-id="1cd0d-134">Get Started with Windows PowerShell Desired State Configuration</span></span>](../overview/overview.md)
+## <a name="see-also"></a><span data-ttu-id="7a74d-131">另請參閱</span><span class="sxs-lookup"><span data-stu-id="7a74d-131">See Also</span></span>
+### <a name="concepts"></a><span data-ttu-id="7a74d-132">概念</span><span class="sxs-lookup"><span data-stu-id="7a74d-132">Concepts</span></span>
+* [<span data-ttu-id="7a74d-133">撰寫自訂的 DSC 資源與 MOF</span><span class="sxs-lookup"><span data-stu-id="7a74d-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+* [<span data-ttu-id="7a74d-134">開始使用 Windows PowerShell 預期狀態設定</span><span class="sxs-lookup"><span data-stu-id="7a74d-134">Get Started with Windows PowerShell Desired State Configuration</span></span>](../overview/overview.md)
