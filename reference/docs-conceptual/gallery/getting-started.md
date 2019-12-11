@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 開始使用 PowerShell Gallery
 ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328459"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>開始使用 PowerShell 資源庫
@@ -31,7 +31,7 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 - Includes
 - DscResource
 - RoleCapability
-- 命令
+- Command
 - 篩選器
 
 如果您只想要探索資源庫中的特定 DSC 資源，則可以執行 [Find-DscResource][] Cmdlet。 Find-DscResource 會傳回資源庫中所含 DSC 資源的資料。 因為 DSC 資源一律傳遞為模組的一部分，所以您仍然需要執行 [Install-Module][] 來安裝這些 DSC 資源。

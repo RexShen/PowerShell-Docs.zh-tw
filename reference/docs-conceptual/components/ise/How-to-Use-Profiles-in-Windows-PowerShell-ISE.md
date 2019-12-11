@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中使用設定檔
 ms.openlocfilehash: 28354f39aaaa577cec69c1b3f62cfe16ef091218
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030613"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用設定檔
@@ -77,7 +77,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
    - 若要將字型大小變更為 20，請在設定檔中輸入︰`$psISE.Options.FontSize =20`
 
-3. 若要儲存設定檔，請在 **[檔案]** 功能表上，按一下 **[儲存]**。 下次當您開啟 Windows PowerShell ISE 時，便會套用您的自訂。
+3. 若要儲存設定檔，請在 **[檔案]** 功能表上，按一下 **[儲存]** 。 下次當您開啟 Windows PowerShell ISE 時，便會套用您的自訂。
 
 ## <a name="see-also"></a>另請參閱
 
