@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 撰寫單一執行個體 DSC 資源 (最佳做法)
 ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71952815"
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="f550b-103">撰寫單一執行個體 DSC 資源 (最佳做法)</span><span class="sxs-lookup"><span data-stu-id="f550b-103">Writing a single-instance DSC resource (best practice)</span></span>
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="885be-103">撰寫單一執行個體 DSC 資源 (最佳做法)</span><span class="sxs-lookup"><span data-stu-id="885be-103">Writing a single-instance DSC resource (best practice)</span></span>
 
-><span data-ttu-id="f550b-104">**注意：** 這個主題會說明要定義在設定中只允許單一執行個體的 DSC 資源時的最佳做法。</span><span class="sxs-lookup"><span data-stu-id="f550b-104">**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration.</span></span> <span data-ttu-id="f550b-105">目前，沒有任何內建 DSC 功能可以執行這項作業。</span><span class="sxs-lookup"><span data-stu-id="f550b-105">Currently, there is no built-in DSC feature to do this.</span></span> <span data-ttu-id="f550b-106">這在未來可能會變更。</span><span class="sxs-lookup"><span data-stu-id="f550b-106">That might change in the future.</span></span>
+><span data-ttu-id="885be-104">**注意：** 這個主題會說明要定義在設定中只允許單一執行個體的 DSC 資源時的最佳做法。</span><span class="sxs-lookup"><span data-stu-id="885be-104">**Note:** This topic describes a best practice for defining a DSC resource that allows only a single instance in a configuration.</span></span> <span data-ttu-id="885be-105">目前，沒有任何內建 DSC 功能可以執行這項作業。</span><span class="sxs-lookup"><span data-stu-id="885be-105">Currently, there is no built-in DSC feature to do this.</span></span> <span data-ttu-id="885be-106">這在未來可能會變更。</span><span class="sxs-lookup"><span data-stu-id="885be-106">That might change in the future.</span></span>
 
-<span data-ttu-id="f550b-107">有時，您不想允許在設定中多次使用資源。</span><span class="sxs-lookup"><span data-stu-id="f550b-107">There are situations where you don't want to allow a resource to be used multiple times in a configuration.</span></span> <span data-ttu-id="f550b-108">例如，在 [xTimeZone](https://github.com/PowerShell/xTimeZone) 資源的先前實作中，於每個資源區塊中將時區設為不同的設定，設定即可多次呼叫資源：</span><span class="sxs-lookup"><span data-stu-id="f550b-108">For example, in a previous implementation of the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:</span></span>
+<span data-ttu-id="885be-107">有時，您不想允許在設定中多次使用資源。</span><span class="sxs-lookup"><span data-stu-id="885be-107">There are situations where you don't want to allow a resource to be used multiple times in a configuration.</span></span> <span data-ttu-id="885be-108">例如，在 [xTimeZone](https://github.com/PowerShell/xTimeZone) 資源的先前實作中，於每個資源區塊中將時區設為不同的設定，設定即可多次呼叫資源：</span><span class="sxs-lookup"><span data-stu-id="885be-108">For example, in a previous implementation of the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource, a configuration could call the resource multiple times, setting the time zone to a different setting in each resource block:</span></span>
 
 ```powershell
 Configuration SetTimeZone
@@ -46,10 +46,10 @@ Configuration SetTimeZone
 }
 ```
 
-<span data-ttu-id="f550b-109">原因是 DSC 資源金鑰的運作方式。</span><span class="sxs-lookup"><span data-stu-id="f550b-109">This is because of the way DSC resource keys work.</span></span> <span data-ttu-id="f550b-110">資源必須至少有一個金鑰屬性。</span><span class="sxs-lookup"><span data-stu-id="f550b-110">A resource must have at least one key property.</span></span> <span data-ttu-id="f550b-111">如果資源的所有金鑰屬性值組合皆為唯一，則會將資源執行個體視為唯一。</span><span class="sxs-lookup"><span data-stu-id="f550b-111">A resource instance is considered unique if the combination of the values of all of its key properties is unique.</span></span> <span data-ttu-id="f550b-112">在其先前實作中，[xTimeZone](https://github.com/PowerShell/xTimeZone) 資源只有一個屬性 (**TimeZone**)，而這個屬性必須是金鑰。</span><span class="sxs-lookup"><span data-stu-id="f550b-112">In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required to be a key.</span></span> <span data-ttu-id="f550b-113">因此，上述這類設定會編譯並執行，而不發出警告。</span><span class="sxs-lookup"><span data-stu-id="f550b-113">Because of this, a configuration such as the one above would compile and run without warning.</span></span> <span data-ttu-id="f550b-114">每個 **xTimeZone** 資源區塊都視為唯一的。</span><span class="sxs-lookup"><span data-stu-id="f550b-114">Each of the **xTimeZone** resource blocks is considered unique.</span></span> <span data-ttu-id="f550b-115">這會導致將設定重複套用至節點，方法是反覆循環時區。</span><span class="sxs-lookup"><span data-stu-id="f550b-115">This would cause the configuration to be repeatedly applied to the node, cycling the timezone back and forth.</span></span>
+<span data-ttu-id="885be-109">原因是 DSC 資源金鑰的運作方式。</span><span class="sxs-lookup"><span data-stu-id="885be-109">This is because of the way DSC resource keys work.</span></span> <span data-ttu-id="885be-110">資源必須至少有一個金鑰屬性。</span><span class="sxs-lookup"><span data-stu-id="885be-110">A resource must have at least one key property.</span></span> <span data-ttu-id="885be-111">如果資源的所有金鑰屬性值組合皆為唯一，則會將資源執行個體視為唯一。</span><span class="sxs-lookup"><span data-stu-id="885be-111">A resource instance is considered unique if the combination of the values of all of its key properties is unique.</span></span> <span data-ttu-id="885be-112">在其先前實作中，[xTimeZone](https://github.com/PowerShell/xTimeZone) 資源只有一個屬性 (**TimeZone**)，而這個屬性必須是金鑰。</span><span class="sxs-lookup"><span data-stu-id="885be-112">In its previous implementation, the [xTimeZone](https://github.com/PowerShell/xTimeZone) resource had only one property--**TimeZone**, which was required to be a key.</span></span> <span data-ttu-id="885be-113">因此，上述這類設定會編譯並執行，而不發出警告。</span><span class="sxs-lookup"><span data-stu-id="885be-113">Because of this, a configuration such as the one above would compile and run without warning.</span></span> <span data-ttu-id="885be-114">每個 **xTimeZone** 資源區塊都視為唯一的。</span><span class="sxs-lookup"><span data-stu-id="885be-114">Each of the **xTimeZone** resource blocks is considered unique.</span></span> <span data-ttu-id="885be-115">這會導致將設定重複套用至節點，方法是反覆循環時區。</span><span class="sxs-lookup"><span data-stu-id="885be-115">This would cause the configuration to be repeatedly applied to the node, cycling the timezone back and forth.</span></span>
 
-<span data-ttu-id="f550b-116">若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。</span><span class="sxs-lookup"><span data-stu-id="f550b-116">To ensure that a configuration could set the time zone for a target node only once, the resource was updated to add a second property, **IsSingleInstance**, that became the key property.</span></span>
-<span data-ttu-id="f550b-117">已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。</span><span class="sxs-lookup"><span data-stu-id="f550b-117">The **IsSingleInstance** was limited to a single value, "Yes" by using a **ValueMap**.</span></span> <span data-ttu-id="f550b-118">資源的舊 MOF 結構描述為︰</span><span class="sxs-lookup"><span data-stu-id="f550b-118">The old MOF schema for the resource was:</span></span>
+<span data-ttu-id="885be-116">若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。</span><span class="sxs-lookup"><span data-stu-id="885be-116">To ensure that a configuration could set the time zone for a target node only once, the resource was updated to add a second property, **IsSingleInstance**, that became the key property.</span></span>
+<span data-ttu-id="885be-117">已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。</span><span class="sxs-lookup"><span data-stu-id="885be-117">The **IsSingleInstance** was limited to a single value, "Yes" by using a **ValueMap**.</span></span> <span data-ttu-id="885be-118">資源的舊 MOF 結構描述為︰</span><span class="sxs-lookup"><span data-stu-id="885be-118">The old MOF schema for the resource was:</span></span>
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -59,7 +59,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-<span data-ttu-id="f550b-119">資源的已更新 MOF 結構描述為︰</span><span class="sxs-lookup"><span data-stu-id="f550b-119">The updated MOF schema for the resource is:</span></span>
+<span data-ttu-id="885be-119">資源的已更新 MOF 結構描述為︰</span><span class="sxs-lookup"><span data-stu-id="885be-119">The updated MOF schema for the resource is:</span></span>
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -70,7 +70,7 @@ class xTimeZone : OMI_BaseResource
 };
 ```
 
-<span data-ttu-id="f550b-120">資源指令碼也已更新成使用新的參數。</span><span class="sxs-lookup"><span data-stu-id="f550b-120">The resource script was also updated to use the new parameter.</span></span> <span data-ttu-id="f550b-121">資源指令碼的變更方式如下：</span><span class="sxs-lookup"><span data-stu-id="f550b-121">Here how the resource script was changed:</span></span>
+<span data-ttu-id="885be-120">資源指令碼也已更新成使用新的參數。</span><span class="sxs-lookup"><span data-stu-id="885be-120">The resource script was also updated to use the new parameter.</span></span> <span data-ttu-id="885be-121">資源指令碼的變更方式如下：</span><span class="sxs-lookup"><span data-stu-id="885be-121">Here how the resource script was changed:</span></span>
 
 ```powershell
 function Get-TargetResource
@@ -202,7 +202,7 @@ Function Set-TimeZone {
 Export-ModuleMember -Function *-TargetResource
 ```
 
-<span data-ttu-id="f550b-122">請注意，**TimeZone** 屬性不再是索引鍵。</span><span class="sxs-lookup"><span data-stu-id="f550b-122">Notice that the **TimeZone** property is no longer a key.</span></span> <span data-ttu-id="f550b-123">現在，如果設定嘗試設定時區兩次 (使用兩個具有不同 **TimeZone** 值的不同 **xTimeZone** 區塊)，則嘗試編譯設定將會導致錯誤︰</span><span class="sxs-lookup"><span data-stu-id="f550b-123">Now, if a configuration attempts to set the time zone twice (by using two different **xTimeZone** blocks with different **TimeZone** values), attempting to compile the configuration will cause an error:</span></span>
+<span data-ttu-id="885be-122">請注意，**TimeZone** 屬性不再是索引鍵。</span><span class="sxs-lookup"><span data-stu-id="885be-122">Notice that the **TimeZone** property is no longer a key.</span></span> <span data-ttu-id="885be-123">現在，如果設定嘗試設定時區兩次 (使用兩個具有不同 **TimeZone** 值的不同 **xTimeZone** 區塊)，則嘗試編譯設定將會導致錯誤︰</span><span class="sxs-lookup"><span data-stu-id="885be-123">Now, if a configuration attempts to set the time zone twice (by using two different **xTimeZone** blocks with different **TimeZone** values), attempting to compile the configuration will cause an error:</span></span>
 
 ```powershell
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and
