@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理 Windows PowerShell 磁碟機
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70215519"
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 磁碟機
@@ -115,7 +115,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > 一般而言，路徑不區分大小寫。
 
-您可以使用參照所有 Windows PowerShell 磁碟機的方式來參照新的 Windows PowerShell 磁碟機，亦即輸入磁碟機名稱並加上冒號 ( **:** )。
+您可以使用參照所有 Windows PowerShell 磁碟機的方式來參照新的 Windows PowerShell 磁碟機 ，亦即輸入磁碟機名稱並加上冒號 ( **:** )。
 
 Windows PowerShell 磁碟機可以讓許多工作變得更簡單。 例如，Windows 登錄中的某些重要機碼具有極長的路徑，使得它們不容易存取且難以記住。 重要設定資訊位於 **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion**。 若要檢視及變更 CurrentVersion 登錄機碼中的項目，您可以建立根目錄為該機碼的 Windows PowerShell 磁碟機，方式是輸入下列命令：
 

@@ -3,10 +3,10 @@ ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058415"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
@@ -102,9 +102,9 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 1. 執行下列其中一個動作，使用提高的使用者權限開啟 Windows PowerShell 工作階段。
 
-   - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
+   - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]** ，然後按一下 **[以系統管理員身分執行]** 。
 
-   - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]**，然後按一下 **[以系統管理員身分執行]**。
+   - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]** ，然後按一下 **[以系統管理員身分執行]** 。
 
 2. **選擇性步驟**：若要使用工作階段設定限制使用者存取：
 
@@ -178,7 +178,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 1. 利用 *server_name*\\*user_name* 格式將使用者名稱新增到授權規則，以便在工作群組閘道伺服器上進行驗證
 
-2. 使用登入頁面上 [選用連線設定] 區域中提供的替代認證，在目標電腦上進行驗證
+2. 使用登入頁面上 [選用連線設定]  區域中提供的替代認證，在目標電腦上進行驗證
 
    > [!NOTE]
    > 如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱[建立網域及樹系信任](https://technet.microsoft.com/library/cc794775.aspx)。

@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 管線
 ms.openlocfilehash: 3033a4fe1a704fbbfa76e6d38662c8b22c3dbd9b
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030387"
 ---
 # <a name="understanding-pipelines"></a>了解管線

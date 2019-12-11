@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 複合資源：把 DSC 設定當做資源使用
 ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
-ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73933833"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合資源：將 DSC 設定當成資源使用

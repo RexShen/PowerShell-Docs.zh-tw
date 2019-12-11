@@ -3,10 +3,10 @@ title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444366"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理

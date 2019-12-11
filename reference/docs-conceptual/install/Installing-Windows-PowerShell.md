@@ -3,10 +3,10 @@ ms.date: 08/09/2017
 keywords: powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7
 title: 安裝 Windows PowerShell
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086471"
 ---
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
@@ -24,7 +24,7 @@ ms.locfileid: "62086471"
 
 ### <a name="for-console"></a>主控台
 
-版本 | 位置
+版本 | Location
 -- | --
 Windows 10 | 按一下左下角 Windows 圖示，開始鍵入 PowerShell
 Windows 8.1、8.0 | 在開始畫面中，開始鍵入 PowerShell。<br/>如果在桌面上，則按一下左下角 Windows 圖示，開始鍵入 PowerShell
@@ -32,7 +32,7 @@ Windows 7 SP1 | 按一下左下角 Windows 圖示，在搜尋方塊開始鍵入 
 
 ### <a name="for-ise"></a>ISE
 
-版本 | 位置
+版本 | Location
 -- | --
 Windows 10 | 按一下左下角 Windows 圖示，開始鍵入 ISE
 Windows 8.1、8.0 | 在開始畫面上，鍵入 **PowerShell ISE**。<br/>如果在桌面上，則按一下左下角 Windows 圖示，鍵入 **PowerShell ISE**

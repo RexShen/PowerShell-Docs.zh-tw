@@ -4,10 +4,10 @@ keywords: dsc,powershell,設定,安裝
 description: 提供在目標節點管理本機群組的機制。
 title: DSC GroupSet 資源
 ms.openlocfilehash: d36274741b2c96a0852f384ccf5d187ac8d27131
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953175"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 資源

@@ -3,10 +3,10 @@ title: PowerShell Core 6.2 的新功能
 description: PowerShell Core 6.2 中發行的新功能與變更
 ms.date: 03/28/2019
 ms.openlocfilehash: 6a0da8a410e602ae3963e0bc7bace745317d7d4b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058092"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>PowerShell Core 6.2 的新功能

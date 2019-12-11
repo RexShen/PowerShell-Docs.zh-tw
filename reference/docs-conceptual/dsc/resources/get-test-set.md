@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: Get-Test-Set
 ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71954285"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
@@ -123,7 +123,7 @@ ModuleVersion = "1.0";
 
 套用時，[本機設定管理員](../managing-nodes/metaConfig.md) (LCM) 會從 ".mof" 檔案讀取值 "Spooler"，並針對 **Service** 資源的 "MyService" 執行個體，將它傳遞給 **Get**、**Test** 及 **Set** 方法的 `-Name` 參數。
 
-## <a name="get"></a>取得
+## <a name="get"></a>Get
 
 資源的**取得**方法會在目標節點上設定資源時擷取其狀態。 此狀態會當成[雜湊表](/powershell/module/microsoft.powershell.core/about/about_hash_tables)傳回。 **雜湊表**的索引鍵將是資源接受的可設定值或參數。
 
@@ -204,7 +204,7 @@ localhost       {[Service]Spooler}                                            Tr
 
 如需詳細資訊，請參閱 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)。
 
-## <a name="set"></a>設定
+## <a name="set"></a>Set
 
 資源的**設定**方法會嘗試強制節點符合資源「期望狀態」  的規範。 **設定**方法意味著**等冪**，這表示**設定**會多次執行，且一律取得相同結果且不會有任何錯誤。  當您執行 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) 時，LCM 會在目前套用的設定中循環執行每個資源。 LCM 會在 ".mof" 檔案中擷取目前資源執行個體的索引鍵值，並使用它們作為**測試**方法的參數。 如果**測試**方法傳回 `$True`，則該節點符合目前資源的規範，且會跳過**設定**方法。 如果**測試**傳回 `$False`，則節點不符合規範。  LCM 會將資源執行個體的索引鍵值當作參數傳遞給資源的**設定**方法，還原節點以符合規範。
 

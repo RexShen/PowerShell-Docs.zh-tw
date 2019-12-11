@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC WaitForSome 資源
 ms.openlocfilehash: 91589c84518a2bd0f4816d11aa011dec1d5305e1
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71952975"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome 資源

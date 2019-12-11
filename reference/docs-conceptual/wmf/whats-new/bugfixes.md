@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 Bug 修正
 ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147848"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正

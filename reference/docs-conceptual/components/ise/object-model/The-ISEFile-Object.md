@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEFile 物件
 ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028954"
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
@@ -69,7 +69,7 @@ $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案] 索引標籤上。 名稱結尾的星號 \(\*\) 表示檔案有尚未儲存的變更。
+唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案]  索引標籤上。 名稱結尾的星號 \(\*\) 表示檔案有尚未儲存的變更。
 
 ```powershell
 # Shows the display name of the file.

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 安裝 Windows PowerShell 2.0 引擎
 ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030955"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安裝 Windows PowerShell 2.0 引擎

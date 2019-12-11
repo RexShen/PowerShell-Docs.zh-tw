@@ -4,10 +4,10 @@ contributor: keithb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 指令碼的發行前版本
 ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328479"
 ---
 # <a name="prerelease-versions-of-scripts"></a>指令碼的發行前版本

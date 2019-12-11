@@ -3,10 +3,10 @@ ms.date: 08/24/2018
 keywords: powershell,cmdlet
 title: 了解 PowerShell 命令名稱
 ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030423"
 ---
 # <a name="learning-powershell-command-names"></a>了解 PowerShell 命令名稱
@@ -96,7 +96,7 @@ Get-Command -Name Clear-Host
 
 ### <a name="common-parameters"></a>一般參數
 
-PowerShell 提供數個「一般參數」。 這些參數是由 PowerShell 引擎所控制。 一般參數一律會以相同方式運作。 一般參數包括 **WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable** 和 **OutBuffer**。
+PowerShell 提供數個「一般參數」  。 這些參數是由 PowerShell 引擎所控制。 一般參數一律會以相同方式運作。 一般參數包括 **WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable** 和 **OutBuffer**。
 
 ### <a name="recommended-parameter-names"></a>建議的參數名稱
 

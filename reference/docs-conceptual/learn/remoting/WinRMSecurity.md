@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086354"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 遠端安全性考量
@@ -81,4 +81,4 @@ PowerShell 遠端預設會使用 (如果提供) Kerberos 或 NTLM 驗證。 這�
 這是最安全的驗證方式，但因為遠端電腦並沒有使用者的認證，所以無法代替使用者存取其他電腦與服務。
 這稱為「第二個躍點問題」。
 
-避免這個問題的方法有數種。 如需這些方法的描述，以及每一個的優缺點，請參閱[Making the second hop in PowerShell Remoting](PS-remoting-second-hop.md) (在 PowerShell 遠端中進行第二次跳躍)。
+避免這個問題的方法有數種。 如需這些方法的描述，以及每一項的優缺點，請參閱[Making the second hop in PowerShell Remoting](PS-remoting-second-hop.md) (在 PowerShell 遠端中進行第二次跳躍)。

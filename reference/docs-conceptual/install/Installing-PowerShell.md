@@ -3,10 +3,10 @@ ms.date: 08/09/2018
 keywords: install, windows, linux, macOS, ARM, raspbian, 安裝
 title: 安裝 PowerShell
 ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62059027"
 ---
 # <a name="installing-various-versions-of-powershell"></a>安裝各種版本的 PowerShell
