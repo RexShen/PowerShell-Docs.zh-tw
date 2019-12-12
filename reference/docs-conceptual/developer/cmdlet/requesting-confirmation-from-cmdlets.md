@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
 ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369527"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>從 Cmdlet 要求確認
@@ -29,7 +29,7 @@ ms.locfileid: "72369527"
 
 ## <a name="supporting-confirmation-requests"></a>支援確認要求
 
-若要支援確認要求，Cmdlet 必須將 Cmdlet 屬性的 `SupportsShouldProcess` 參數設定為 `true`。 這會啟用 Windows PowerShell 所提供的 `Confirm` 和 `WhatIf` Cmdlet 參數。 @No__t_0 參數可讓使用者控制是否顯示確認要求。 @No__t_0 參數可讓使用者判斷 Cmdlet 是否應該顯示訊息或執行其動作。 請勿手動將 `Confirm` 和 `WhatIf` 參數新增至 Cmdlet。
+若要支援確認要求，Cmdlet 必須將 Cmdlet 屬性的 `SupportsShouldProcess` 參數設定為 `true`。 這會啟用 Windows PowerShell 所提供的 `Confirm` 和 `WhatIf` Cmdlet 參數。 `Confirm` 參數可讓使用者控制是否顯示確認要求。 `WhatIf` 參數可讓使用者判斷 Cmdlet 是否應該顯示訊息或執行其動作。 請勿手動將 `Confirm` 和 `WhatIf` 參數新增至 Cmdlet。
 
 下列範例顯示支援確認要求的 Cmdlet 屬性宣告。
 
@@ -40,7 +40,7 @@ ms.locfileid: "72369527"
 
 ## <a name="calling-the-confirmation-request-methods"></a>呼叫確認要求方法
 
-在 Cmdlet 程式碼中，在執行變更系統的作業之前，呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 設計 Cmdlet，以便在呼叫傳回 `false` 的值時，不會執行此作業，而 Cmdlet 會處理下一個作業。
+在 Cmdlet 程式碼中，在執行變更系統的作業之前，呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法。 設計 Cmdlet，以便在呼叫傳回 `false`的值時，不會執行此作業，而 Cmdlet 會處理下一個作業。
 
 ## <a name="calling-the-shouldcontinue-method"></a>呼叫 ShouldContinue 方法
 
@@ -74,7 +74,7 @@ if (ShouldProcess (...) )
 
 ## <a name="calling-non-confirmation-methods"></a>呼叫非確認方法
 
-如果 Cmdlet 或提供者必須傳送訊息但不要求確認，它可以呼叫下列三種方法。 請避免使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法來傳送這些類型的訊息，因為 WriteObject 輸出與 Cmdlet 或提供者的一般輸出混合在一起的情況[。](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)，這會使腳本撰寫難度。
+如果 Cmdlet 或提供者必須傳送訊息但不要求確認，它可以呼叫下列三種方法。 請避免使用[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)方法來傳送這些類型的訊息，因為[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)輸出與 Cmdlet 或提供者的一般輸出混合在一起，使得腳本撰寫變得很棘手。
 
 - 為謹慎起見，此 Cmdlet 或提供者可以呼叫[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)方法，並繼續操作。
 
