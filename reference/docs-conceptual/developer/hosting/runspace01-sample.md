@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
 ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367417"
 ---
 # <a name="runspace01-sample"></a>Runspace01 範例
@@ -23,7 +23,7 @@ ms.locfileid: "72367417"
 
  此範例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 - 建立要執行命令的[system.web](/dotnet/api/system.management.automation.powershell)物件。
 

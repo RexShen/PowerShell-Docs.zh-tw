@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359627"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>透過 Windows PowerShell 活動建立工作流程
@@ -45,9 +45,9 @@ ms.locfileid: "72359627"
 
 8. 編輯**GetWmiObject**活動的屬性，如下所示。
 
-   |屬性|值|
+   |Property|值|
    |--------------|-----------|
-   |**課堂**|"Win32_ComputerSystem"|
+   |**類別**|"Win32_ComputerSystem"|
    |**PSComputerName**|背光|
    |**PSCredential**|MachineCred|
 
@@ -55,20 +55,20 @@ ms.locfileid: "72359627"
 
 10. 編輯**AddComputer**活動的屬性，如下所示。
 
-    |屬性|值|
+    |Property|值|
     |--------------|-----------|
-    |**名稱**|背光|
+    |**ComputerName**|背光|
     |**DomainCredential**|DomainCred|
 
 11. 將**RestartComputer**活動新增至**AddComputer**活動後面的**JoinDomain**序列。
 
 12. 編輯**RestartComputer**活動的屬性，如下所示。
 
-    |屬性|值|
+    |Property|值|
     |--------------|-----------|
-    |**名稱**|背光|
-    |**證書**|MachineCred|
-    |**對於**|WaitForServiceTypes 的 PowerShell。|
+    |**ComputerName**|背光|
+    |**認證**|MachineCred|
+    |**針對**|WaitForServiceTypes 的 PowerShell。|
     |**使**|True|
     |Wait|True|
     |PSComputerName|{""}|

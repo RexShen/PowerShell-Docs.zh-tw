@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: daea8c6f-873a-4639-9eee-599642822958
 caps.latest.revision: 6
 ms.openlocfilehash: 697f2ea284393ebddd77a862c408f27f3d332900
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361967"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-view-format"></a>檢視之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)
@@ -29,7 +29,7 @@ ms.locfileid: "72361967"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

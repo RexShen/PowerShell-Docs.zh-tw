@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
 ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363717"
 ---
 # <a name="format-schema-xml-reference"></a>格式結構描述 XML 參考
@@ -213,33 +213,33 @@ ListControl 之專案的[標籤元素（格式）](./label-element-for-listitem-
 
 [GroupBy 的 PropertyName 元素（格式）](./propertyname-element-for-groupby-format.md)指定在每次其值變更時啟動新群組的 .NET 屬性。
 
-[設定之控制項的 itemselectioncondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用控制項。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+[設定之控制項的 itemselectioncondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用控制項。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-[View 之控制項的 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用控制項。 定義可供視圖使用的控制項時，會使用這個元素。
+[View 之控制項的 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用控制項。 定義可供視圖使用的控制項時，會使用這個元素。
 
-[ItemSelectionCondition For CustomControl For View 的 PropertyName 元素（Format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)會指定觸發條件的 .net 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用控制項。 定義自訂控制項視圖時，會使用這個元素。
+[ItemSelectionCondition For CustomControl For View 的 PropertyName 元素（Format](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)會指定觸發條件的 .net 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用控制項。 定義自訂控制項視圖時，會使用這個元素。
 
-[GroupBy 之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
+[GroupBy 之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
 
-專案[名稱之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用此視圖。 定義清單視圖時，會使用這個元素。
+專案[名稱之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用此視圖。 定義清單視圖時，會使用這個元素。
 
 [ListControl 之專案名稱的 PropertyName 元素（格式）](./propertyname-element-for-listitem-for-listcontrol-format.md)指定其值顯示在清單中的 .NET 屬性。
 
-[ListEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用專案。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+[ListEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用專案。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-[View 之控制項的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用專案。 定義可供視圖使用的控制項時，會使用這個元素。
+[View 之控制項的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用專案。 定義可供視圖使用的控制項時，會使用這個元素。
 
-[SelectionCondition For CustomControl For View 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
+[SelectionCondition For CustomControl For View 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
 
-[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用定義。
+[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用定義。
 
-[GroupBy 之 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-groupby-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用定義。 此元素是在定義新物件群組的顯示方式時使用。
+[GroupBy 之 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-groupby-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用定義。 此元素是在定義新物件群組的顯示方式時使用。
 
-[ListEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，而且會使用清單專案。
+[ListEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，而且會使用清單專案。
 
-[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用資料表專案。
+[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用資料表專案。
 
-[WideEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用定義。
+[WideEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用定義。
 
 [之 tablecolumnitem 的 PropertyName 元素（格式）](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)指定屬性，其值會顯示在資料列的資料行中。
 
@@ -263,33 +263,33 @@ ListControl 之專案的[標籤元素（格式）](./label-element-for-listitem-
 
 [GroupBy 的 ScriptBlock 元素（格式）](./scriptblock-element-for-groupby-format.md)指定每當新群組的值變更時，就會啟動的腳本。
 
-[設定之控制項的 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用控制項。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+[設定之控制項的 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用控制項。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-[View 之控制項的 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用控制項。 定義可供視圖使用的控制項時，會使用這個元素。
+[View 之控制項的 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用控制項。 定義可供視圖使用的控制項時，會使用這個元素。
 
-[ItemSelectionCondition For CustomControl For View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用控制項。 定義自訂控制項視圖時，會使用這個元素。
+[ItemSelectionCondition For CustomControl For View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用控制項。 定義自訂控制項視圖時，會使用這個元素。
 
-[GroupBy 的 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
+[GroupBy 的 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
 
-[ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，即符合條件，且會使用清單專案。 定義清單視圖時，會使用這個元素。
+[ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，會符合條件，而且會使用清單專案。 定義清單視圖時，會使用這個元素。
 
 專案[的 ScriptBlock 元素（格式）](./scriptblock-element-for-listitem-for-listcontrol-format.md)指定其值顯示在清單資料列中的腳本。
 
-[設定之控制項的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用定義。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+[設定之控制項的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用定義。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-[View 之控制項的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用定義。 定義可供視圖使用的控制項時，會使用這個元素。
+[View 之控制項的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用定義。 定義可供視圖使用的控制項時，會使用這個元素。
 
-[SelectionCondition For CustomControl For View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
+[SelectionCondition For CustomControl For View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
 
 [EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)指定觸發條件的腳本。
 
-[GroupBy 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用定義。 此元素是在定義新物件群組的顯示方式時使用。
+[GroupBy 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用定義。 此元素是在定義新物件群組的顯示方式時使用。
 
-[ListEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用清單專案。
+[ListEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用清單專案。
 
-[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)指定觸發條件的腳本區塊。 當此腳本評估為 `true` 時，就會符合條件，並使用資料表專案。
+[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)指定觸發條件的腳本區塊。 當此腳本評估為 `true`時，就會符合條件，並使用資料表專案。
 
-[WideEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用寬專案定義。
+[WideEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用寬專案定義。
 
 [之 tablecolumnitem 的 ScriptBlock 元素（格式）](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)指定其值顯示在資料列資料行中的腳本。
 

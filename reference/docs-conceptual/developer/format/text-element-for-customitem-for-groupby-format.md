@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 66d8c63c-6ce4-480d-ad65-e777052c3818
 caps.latest.revision: 6
 ms.openlocfilehash: dc8f1058448a0cf9720014972b736694de759404
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361757"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>GroupBy 之 CustomItem 的文字元素 (格式)
@@ -29,7 +29,7 @@ ms.locfileid: "72361757"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Text` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Text` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

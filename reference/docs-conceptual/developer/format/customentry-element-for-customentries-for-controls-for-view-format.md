@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c6739205-2bc9-4507-b2af-d19d548c2057
 caps.latest.revision: 6
 ms.openlocfilehash: b92b99d88992cf13dbf7bfbe88aad603615f3138
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364047"
 ---
 # <a name="customentry-element-for-customentries-for-controls-for-view-format"></a>檢視之控制項的 CustomEntries 的 CustomEntry 元素 (格式)
@@ -32,7 +32,7 @@ ms.locfileid: "72364047"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `CustomEntry` 元素的父元素。
+下列各節說明屬性、子專案，以及 `CustomEntry` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,8 +42,8 @@ ms.locfileid: "72364047"
 
 |元素|描述|
 |-------------|-----------------|
-|[View 之控制項的 CustomEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|選擇性元素。<br /><br /> 定義使用此控制項定義的 .NET 類型，或必須存在才能使用此定義的條件。|
-|[View 之控制項的 CustomEntry 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-controls-for-view-format.md)|必要元素。<br /><br /> 定義控制項顯示資料的方式。|
+|[View 之控制項的 CustomEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 定義使用此控制項定義的 .NET 類型，或必須存在才能使用此定義的條件。|
+|[View 之控制項的 CustomEntry 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-controls-for-view-format.md)|必要項目。<br /><br /> 定義控制項顯示資料的方式。|
 
 ### <a name="parent-elements"></a>父元素
 

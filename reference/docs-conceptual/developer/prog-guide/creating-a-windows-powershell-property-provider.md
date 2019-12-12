@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
 ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417475"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>建立 Windows PowerShell 屬性提供者
@@ -42,7 +42,7 @@ ms.locfileid: "74417475"
 
 [IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)介面可以附加至任何提供者的基類，但 DriveCmdletprovider 類別除外。（可能為可能為[系統管理元件](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)）。 新增您所使用之基類所需的基本功能。 如需基類的詳細資訊，請參閱[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)。
 
-## <a name="retrieving-properties"></a>正在抓取屬性
+## <a name="retrieving-properties"></a>擷取屬性
 
 若要取出屬性，提供者必須執行[IpropertyCmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法，以支援來自 `Get-ItemProperty` Cmdlet 的呼叫。 這個方法會抓取位於指定的提供者內部路徑（完整格式）之專案的屬性。
 

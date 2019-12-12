@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 47358eca-7719-4d77-9e49-676b78e25aec
 caps.latest.revision: 7
 ms.openlocfilehash: 66d32f1a5c4994ae578aea0a2a52c2510f97a3b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367917"
 ---
 # <a name="wraptables-element-format"></a>WrapTables 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） DefaultSettings 元素（格式） WrapTables �
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `WrapTables` 元素的父元素。
+下列各節說明屬性、子專案，以及 `WrapTables` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

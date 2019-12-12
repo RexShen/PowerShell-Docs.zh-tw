@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
 caps.latest.revision: 18
 ms.openlocfilehash: a9356635d60d5f8c5d4dec4ec8b7d0aea2b037dd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361867"
 ---
 # <a name="selectionsets-element-format"></a>SelectionSets 元素 (格式)
@@ -39,13 +39,13 @@ Configuration 元素 SelectionSets 元素格式
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[SelectionSet 元素（格式）](./selectionset-element-format.md)|必要元素。<br /><br /> 定義一組可由集合名稱參考的 .NET 物件。|
+|[SelectionSet 元素（格式）](./selectionset-element-format.md)|必要項目。<br /><br /> 定義一組可由集合名稱參考的 .NET 物件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[Configuration 元素](./configuration-element-format.md)|代表格式化檔案的最上層元素。|
 

@@ -3,10 +3,10 @@ title: 透過 Windows PowerShell API 對作業進行排程
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359827"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>透過 Windows PowerShell API 對作業進行排程
@@ -54,7 +54,7 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>建立調用和作業定義物件
 
-接著，您可以建立 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 物件來執行作業。 下列程式碼將示範這種情況。
+接著，您可以建立 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 物件來執行作業。 下列程式碼可示範這項處理。
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

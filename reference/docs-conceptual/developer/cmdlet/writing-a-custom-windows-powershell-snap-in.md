@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
 ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364247"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>撰寫自訂 Windows PowerShell 嵌入式管理單元
@@ -32,7 +32,7 @@ ms.locfileid: "72364247"
 
    在此範例中，類別名稱為 "CustomPSSnapinTest"。
 
-3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： #。 、（） {} [] &-/\ $;： "' \< > &#124; ？ @ ` *
+3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： #。 、（） {} [] &-/\ $;： "' \< > &#124;嗎？ @ ` *
 
    在此範例中，嵌入式管理單元的名稱是 "CustomPSSnapInTest"。
 

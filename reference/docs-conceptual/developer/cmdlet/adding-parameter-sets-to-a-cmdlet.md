@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
 ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416319"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>新增參數集到 Cmdlet
@@ -211,7 +211,7 @@ End Sub 'ProcessRecord ' ProcessRecord
 
 這裡不會說明 Select 語句所呼叫的 Helper 方法，但您可以在下一節的完整程式碼範例中看到其實作為。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整C#的範例程式碼，請參閱[StopProcessSample04 範例](./stopprocesssample04-sample.md)。
 

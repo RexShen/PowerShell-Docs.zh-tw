@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af83c0f6-7fdd-4aa0-af12-efc62f632974
 caps.latest.revision: 7
 ms.openlocfilehash: f073142bf836ae892f161cf8c36ed16c35e311f5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364087"
 ---
 # <a name="customentries-element-for-customcontrol-for-groupby-format"></a>GroupBy 之 CustomControl 的 CustomEntries 元素 (格式)
@@ -39,13 +39,13 @@ ms.locfileid: "72364087"
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[GroupBy 之 CustomControl 的 CustomEntry 元素（格式）](./customentry-element-for-customcontrol-for-groupby-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
+|[GroupBy 之 CustomControl 的 CustomEntry 元素（格式）](./customentry-element-for-customcontrol-for-groupby-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[GroupBy 的 CustomControl 元素（格式）](./customcontrol-element-for-groupby-format.md)|定義顯示新群組的自訂控制項。|
 

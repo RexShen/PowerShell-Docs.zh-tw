@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
 caps.latest.revision: 24
 ms.openlocfilehash: 2361c1117757569bef0815018c75764430a9e7a8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361457"
 ---
 # <a name="view-element-format"></a>檢視元素 (格式)
@@ -46,20 +46,20 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[View 的 Controls 元素（格式）](./controls-element-for-view-format.md)|選擇性項目。<br /><br /> 定義一組控制項，可由其在視圖內的名稱參考。|
 |[CustomControl 元素（格式）](./customcontrol-element-for-groupby-format.md)|選擇性項目。<br /><br /> 定義視圖的自訂控制項格式。|
 |[View 的 GroupBy 元素（格式）](./groupby-element-for-view-format.md)|選擇性項目。<br /><br /> 定義如何分組 .NET 物件的成員。|
 |[ListControl 元素（格式）](./listcontrol-element-format.md)|選擇性項目。<br /><br /> 定義視圖的清單格式。|
-|[View 的 Name 元素（格式）](./name-element-for-view-format.md)|必要元素。<br /><br /> 指定用來參考此視圖的名稱。|
+|[View 的 Name 元素（格式）](./name-element-for-view-format.md)|必要項目。<br /><br /> 指定用來參考此視圖的名稱。|
 |[TableControl 元素（格式）](./tablecontrol-element-format.md)|選擇性項目。<br /><br /> 定義視圖的資料表格式。|
-|[View 的 ViewSelectedBy 元素（格式）](./viewselectedby-element-format.md)|必要元素。<br /><br /> 定義此視圖顯示的 .NET 物件。|
+|[View 的 ViewSelectedBy 元素（格式）](./viewselectedby-element-format.md)|必要項目。<br /><br /> 定義此視圖顯示的 .NET 物件。|
 |[WideControl 元素（格式）](./widecontrol-element-format.md)|選擇性項目。<br /><br /> 定義視圖的寬（單一值）清單格式。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[ViewDefinitions 元素（格式）](./viewdefinitions-element-format.md)|定義用來顯示物件的視圖。|
 

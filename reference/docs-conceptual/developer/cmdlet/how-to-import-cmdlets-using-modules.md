@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364457"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>如何使用模組來匯入 Cmdlet
@@ -28,7 +28,7 @@ ms.locfileid: "72364457"
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. 請確定 `PSModulePath` 環境變數包含新模組資料夾的路徑。 根據預設，系統資料夾已新增至 `PSModulePath` 環境變數中。 若要查看 `PSModulePath`，請輸入： `$env:PSModulePath`。
+1. 請確定 `PSModulePath` 環境變數包含新模組資料夾的路徑。 根據預設，系統資料夾已經新增至 `PSModulePath` 環境變數中。 若要查看 `PSModulePath`，請輸入： `$env:PSModulePath`。
 
 1. 將 Cmdlet 元件複製到模組資料夾。
 

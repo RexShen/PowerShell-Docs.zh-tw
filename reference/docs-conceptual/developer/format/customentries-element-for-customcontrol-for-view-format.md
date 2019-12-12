@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
 caps.latest.revision: 11
 ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364077"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntries 元素 (格式)
@@ -39,15 +39,15 @@ CustomControl for View 的設定專案（格式） ViewDefinitions 元素（格�
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[CustomEntries for View 的 CustomEntry 元素（格式）](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|必要元素。<br /><br /> 提供自訂控制項視圖的定義。|
+|[CustomEntries for View 的 CustomEntry 元素（格式）](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|必要項目。<br /><br /> 提供自訂控制項視圖的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[View 的 CustomControl 元素（格式）](./customcontrol-element-for-view-format.md)|必要元素。<br /><br /> 定義視圖的自訂控制項格式。|
+|[View 的 CustomControl 元素（格式）](./customcontrol-element-for-view-format.md)|必要項目。<br /><br /> 定義視圖的自訂控制項格式。|
 
 ## <a name="remarks"></a>備註
 

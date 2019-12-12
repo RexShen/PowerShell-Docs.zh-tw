@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 33cb5350-73ef-4b79-a879-0edf051869e4
 caps.latest.revision: 7
 ms.openlocfilehash: 174ba6a14819f823ec39f72e49a626e781221d8c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363937"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-view-format"></a>檢視之控制項的 CustomEntry 的 CustomItem 元素 (格式)
@@ -42,7 +42,7 @@ ms.locfileid: "72363937"
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[View 之控制項的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 定義控制項所顯示的資料。|
 |[View 之控制項的 CustomItem 的框架元素（格式）](./frame-element-for-customitem-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 定義資料的顯示方式，例如將資料向左或向右移位。|
@@ -51,7 +51,7 @@ ms.locfileid: "72363937"
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[View 之控制項的 CustomEntries 的 CustomEntry 元素（格式）](./customentry-element-for-customentries-for-controls-for-view-format.md)|提供控制項的定義。|
 

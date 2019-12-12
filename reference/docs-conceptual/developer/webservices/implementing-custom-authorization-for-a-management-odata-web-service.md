@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359677"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>實作 Management OData Web 服務的自訂授權
@@ -132,7 +132,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ```
 
-### <a name="role-based-authorization"></a>以角色為基礎的授權
+### <a name="role-based-authorization"></a>角色型授權
 
 下列範例會實行以角色為基礎的授權原則。 原則會定義于位於主要應用程式目錄中的 XML 檔案中，並具有 web.config 和 MOF 和 XML 對應架構檔案。 如需有關如何設定授權架構檔案的詳細資訊，請參閱設定以[角色為基礎的授權](./configuring-role-based-authorization.md)。 此範例的第一個部分會執行[CustomAuthorization. AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)和[CustomAuthorization. GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)方法。 在此情況下，介面方法會呼叫 `RbacSystem` 類別中的方法（定義如下），以執行檢查使用者許可權的實際工作。
 

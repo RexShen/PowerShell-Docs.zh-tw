@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1cdcf66e-96a5-47b5-9269-b4330bde29f2
 caps.latest.revision: 6
 ms.openlocfilehash: 08db1f2d89c3fe6c1e9a5a522de3071425042c3f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363817"
 ---
 # <a name="firstlinehanging-element-for-frame-for-groupby-format"></a>GroupBy 之框架的 FirstLineHanging 元素 (格式)
@@ -29,7 +29,7 @@ ms.locfileid: "72363817"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `FirstLineHanging` 元素的屬性、子專案和父元素。
+下列各節描述 `FirstLineHanging` 元素的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 

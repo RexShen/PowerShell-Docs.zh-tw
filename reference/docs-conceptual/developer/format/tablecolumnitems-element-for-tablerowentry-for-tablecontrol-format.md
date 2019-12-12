@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
 ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361807"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)
@@ -31,7 +31,7 @@ TableColumnItems>
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `TableColumnItems` 元素的屬性、子專案和父元素。
+下列各節描述 `TableColumnItems` 專案的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ TableColumnItems>
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 之 TableColumnItems 的之 tablecolumnitem 元素（格式）](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義屬性或腳本，其值會顯示在資料列的資料行中。|
+|[TableControl 之 TableColumnItems 的之 tablecolumnitem 元素（格式）](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|必要項目。<br /><br /> 定義屬性或腳本，其值會顯示在資料列的資料行中。|
 
 ### <a name="parent-elements"></a>父元素
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
 caps.latest.revision: 4
 ms.openlocfilehash: 584e5923008e8369a83c699478844f0e0c295adc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367757"
 ---
 # <a name="syntax-of-comment-based-help"></a>註解型說明的語法
@@ -37,7 +37,7 @@ ms.locfileid: "72367757"
 
 ## <a name="syntax-description"></a>語法描述
 
- 以批註為基礎的說明會以一系列的批註來撰寫。 您可以在每一行批註之前輸入批註符號（#），也可以使用「\< #」和「# >」符號來建立批註區塊。 批註區塊中的所有行都會轉譯為批註。
+ 以批註為基礎的說明會以一系列的批註來撰寫。 您可以在每一行批註之前輸入批註符號（#），也可以使用 "\<#" 和 "# >" 符號來建立批註區塊。 批註區塊中的所有行都會轉譯為批註。
 
  以批註為基礎的說明的每個區段都是由關鍵字所定義，而且每個關鍵字前面會加上點（.）。 關鍵字可以依任何順序出現。 關鍵字名稱不區分大小寫。
 

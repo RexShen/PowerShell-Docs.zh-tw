@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
 caps.latest.revision: 7
 ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364567"
 ---
 # <a name="getprocesssample02-sample"></a>GetProcessSample02 範例
 
-這個範例會示範如何撰寫 Cmdlet 來抓取本機電腦上的處理常式。 它會提供 `Name` 參數，可用來指定要抓取的進程。 此 Cmdlet 是 Windows PowerShell 2.0 所提供的 `Get-Process` Cmdlet 的簡化版本。
+這個範例會示範如何撰寫 Cmdlet 來抓取本機電腦上的處理常式。 它會提供 `Name` 參數，可用於指定要抓取的進程。 此 Cmdlet 是 Windows PowerShell 2.0 所提供的 `Get-Process` Cmdlet 的簡化版本。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
@@ -25,7 +25,7 @@ ms.locfileid: "72364567"
 
 2. 按兩下方案（.sln）檔案的圖示。 這會在 Visual Studio 中開啟範例專案。
 
-3. 在 [**建立**] 功能表中，選取 [**建立方案**]。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72364567"
 
 此範例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 這個範例會示範下列各項。
 
@@ -65,7 +65,7 @@ ms.locfileid: "72364567"
 
 ## <a name="example"></a>範例
 
-這個範例會示範包含 `Name` 參數的 Get-help Cmdlet 的執行。
+這個範例會示範包含 `Name` 參數的 Get-Proc Cmdlet 的執行。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

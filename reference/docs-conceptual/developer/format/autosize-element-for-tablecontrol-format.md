@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1df5de23-9ffc-427e-bb34-f5efe073f3fe
 caps.latest.revision: 11
 ms.openlocfilehash: f50ba257ee57c36aedc6b37c680a0130842b69b0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364207"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>TableControl 的 AutoSize 元素 (格式)
@@ -29,7 +29,7 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（格式） Tabl
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `AutoSize` 元素的父元素。
+下列各節說明屬性、子專案，以及 `AutoSize` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

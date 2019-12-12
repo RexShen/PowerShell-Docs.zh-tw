@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
 caps.latest.revision: 15
 ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367957"
 ---
 # <a name="types-element-for-selectionset-format"></a>SelectionSet 的類型元素 (格式)
@@ -40,13 +40,13 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[類型的 TypeName 元素（格式）](./typename-element-for-types-format.md)|必要元素。<br /><br /> 指定屬於選取集的 .NET 物件。|
+|[類型的 TypeName 元素（格式）](./typename-element-for-types-format.md)|必要項目。<br /><br /> 指定屬於選取集的 .NET 物件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[SelectionSet 元素（格式）](./selectionset-element-format.md)|定義一組可由集合名稱參考的 .NET 物件。|
 

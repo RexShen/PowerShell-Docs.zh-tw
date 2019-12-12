@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359817"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>新增資源至 Management OData Web 服務
 
 這個範例示範如何使用 Management OData 架構設計工具，將資源新增至現有的管理 OData web 服務。 [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)範例會建立公開進程和伺服器資源的 web 服務。 在此範例中，您會將虛擬機器（VM）資源新增至 web 服務。
 
-## <a name="prerequisites"></a>先決條件
+## <a name="prerequisites"></a>必要條件
 
 本主題假設您已下載並安裝[PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)範例（如[建立 Windows PowerShell Web 服務](./creating-a-management-odata-web-service.md)中所述），而且您已下載並安裝[Management OData 架構設計](https://marketplace.visualstudio.com/items?itemName=jlisc0.ManagementODataSchemaDesigner)工具。 本主題也假設您已在設定 Management Odata 端點的電腦上安裝 Hyper-v Windows PowerShell 模組。
 
@@ -49,15 +49,15 @@ ms.locfileid: "72359817"
 
 2. 請確定已選取 [**本機電腦**]，然後按 **[下一步]** 。
 
-3. 請確定已選取 [已安裝的 Windows PowerShell 模組]，然後從下拉式清單中選取 [Hyper-v]。 按 **[下一步]** 。 按一下 [下一步]。
+3. 請確定已選取 [已安裝的 Windows PowerShell 模組]，然後從下拉式清單中選取 [Hyper-v]。 按 [下一步]。 按 **[下一步]** 。
 
 4. 在 [ **Cmdlet 名詞**] 清單中，選取 [ **VM**]。 按 [下一步]
 
 5. 在此範例中，我們只會使用 Cmdlet 來系結 Get 和 Delete 命令。 清除 [**建立**和**更新**] 核取方塊，並確定已核**取 [取得**] 和 [**刪除**] 核取方塊。 請確定已選取 [**取得**] `Get-VM` Cmdlet，並已選取 [`Remove-VM`] Cmdlet 進行**刪除**。
 
-6. 因為 VM Cmdlet 的中繼資料不會指定輸出類型，所以您必須執行 Cmdlet 來指定輸出類型。 選取 [**提供輸出類型**]，然後按一下 [**執行 Cmdlet**]。 [**執行 Cmdlet** ] 對話方塊隨即出現。 按一下 [**執行**]。 [ **CLR 類型**] 方塊會填入 `VirtualMachine` 類型。 按一下 **[確定]** ，然後按 **[下一步]** 。
+6. 因為 VM Cmdlet 的中繼資料不會指定輸出類型，所以您必須執行 Cmdlet 來指定輸出類型。 選取 [**提供輸出類型**]，然後按一下 [**執行 Cmdlet**]。 [**執行 Cmdlet** ] 對話方塊隨即出現。 按一下 [執行]。 [ **CLR 類型**] 方塊會填入 `VirtualMachine` 類型。 按一下 **[確定]** ，然後按 **[下一步]** 。
 
-7. 根據預設，會選取 VirtualMachine 物件的所有屬性。 當您從 web 服務要求此資源時，您可以清除不想要的任何屬性，做為所傳回資料的一部分。 按一下 [下一步]。
+7. 根據預設，會選取 VirtualMachine 物件的所有屬性。 當您從 web 服務要求此資源時，您可以清除不想要的任何屬性，做為所傳回資料的一部分。 按 **[下一步]** 。
 
 8. 您必須至少選取一個要當做金鑰使用的屬性。 選取清單中的 [**名稱**]，然後按 **[下一步]** 。
 

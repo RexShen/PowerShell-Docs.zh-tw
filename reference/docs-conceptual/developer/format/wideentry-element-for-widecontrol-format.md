@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367897"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideControl 的 WideEntry 元素 (格式)
@@ -40,14 +40,14 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[WideEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-wideentry-format.md)|選擇性項目。<br /><br /> 定義使用此寬專案定義的 .NET 類型，或必須存在才能使用此定義的條件。|
-|[之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)|必要元素。<br /><br /> 定義顯示其值的屬性或腳本。|
+|[之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)|必要項目。<br /><br /> 定義顯示其值的屬性或腳本。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[WideEntries 元素（格式）](./wideentries-element-for-widecontrol-format.md)|提供寬視圖的定義。|
 

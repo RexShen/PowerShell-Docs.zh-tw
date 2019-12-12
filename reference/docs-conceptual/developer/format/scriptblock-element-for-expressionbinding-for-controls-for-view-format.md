@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2b51c937-909e-42af-9085-e224f3919bdf
 caps.latest.revision: 6
 ms.openlocfilehash: 532b8efdd3997d2cecaa7a006254d4a8793bbe01
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362177"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-view-format"></a>檢視之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
@@ -29,7 +29,7 @@ ms.locfileid: "72362177"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361817"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders 元素 (格式)
@@ -40,13 +40,13 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（Format） Tabl
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|選擇性項目。<br /><br /> 定義資料表視圖之資料行的標籤、寬度和對齊方式。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[TableControl 元素（格式）](./tablecontrol-element-format.md)|定義視圖的資料表格式。|
 

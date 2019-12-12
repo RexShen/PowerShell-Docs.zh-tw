@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
 ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364417"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>如何宣告動態參數
@@ -60,7 +60,7 @@ ms.locfileid: "72364417"
 
 ## <a name="example"></a>範例
 
-在此範例中，每當使用者指定 `Employee` 參數時，就會新增 `Department` 參數。 @No__t-0 參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。
+在此範例中，每當使用者指定 `Employee` 參數時，就會加入 `Department` 參數。 `Department` 參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。
 
 ```csharp
 using System;

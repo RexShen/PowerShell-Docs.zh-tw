@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
 caps.latest.revision: 11
 ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364017"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntries 的 CustomEntry 元素 (格式)
@@ -32,7 +32,7 @@ CustomEntry for view 的 CustomControl for View （Format） CustomEntries 元�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `CustomEntry` 元素的父元素。 您必須指定定義所顯示的專案。
+下列各節說明屬性、子專案，以及 `CustomEntry` 專案的父元素。 您必須指定定義所顯示的專案。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,7 +42,7 @@ CustomEntry for view 的 CustomControl for View （Format） CustomEntries 元�
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomEntry for View 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 定義使用自訂控制項視圖定義的 .NET 類型，或必須存在才能使用此定義的條件。|
+|[CustomEntry for View 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 定義使用自訂控制項視圖定義的 .NET 類型，或必須存在才能使用此定義的條件。|
 |[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂控制項定義的控制項。|
 
 ### <a name="parent-elements"></a>父元素

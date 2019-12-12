@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2b9da6c5-548b-480f-86ae-6de6fecabaca
 caps.latest.revision: 8
 ms.openlocfilehash: 06089730008839f18c471711a4b4411722f99c38
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363777"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-view-format"></a>檢視之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)
@@ -36,7 +36,7 @@ ms.locfileid: "72363777"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ExpressionBinding` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ExpressionBinding` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -46,12 +46,12 @@ ms.locfileid: "72363777"
 
 |元素|描述|
 |-------------|-----------------|
-|`CustomControl Element`|選擇性元素。<br /><br /> 定義此控制項所使用的控制項。|
-|[View 之控制項的 ExpressionBinding 的 CustomControlName 元素（格式）](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性元素。<br /><br /> 指定通用控制項或 view 控制項的名稱。|
-|[View 之控制項的 ExpressionBinding 的 EnumerateCollection 元素（格式）](./enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性元素。<br /><br /> 指定顯示集合的元素。|
-|[View 之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素（格式）](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性元素。<br /><br /> 定義必須存在才能使用此控制項的條件。|
-|[View 之控制項的 ExpressionBinding 的 PropertyName 元素（格式）](./propertyname-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性元素。<br /><br /> 指定控制項顯示其值的 .NET 屬性。|
-|[View 之控制項的 ExpressionBinding 的 ScriptBlock 元素（格式）](./scriptblock-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性元素。<br /><br /> 指定控制項顯示其值的腳本。|
+|`CustomControl Element`|選擇性項目。<br /><br /> 定義此控制項所使用的控制項。|
+|[View 之控制項的 ExpressionBinding 的 CustomControlName 元素（格式）](./customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 指定通用控制項或 view 控制項的名稱。|
+|[View 之控制項的 ExpressionBinding 的 EnumerateCollection 元素（格式）](./enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 指定顯示集合的元素。|
+|[View 之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素（格式）](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 定義必須存在才能使用此控制項的條件。|
+|[View 之控制項的 ExpressionBinding 的 PropertyName 元素（格式）](./propertyname-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 指定控制項顯示其值的 .NET 屬性。|
+|[View 之控制項的 ExpressionBinding 的 ScriptBlock 元素（格式）](./scriptblock-element-for-expressionbinding-for-controls-for-view-format.md)|選擇性項目。<br /><br /> 指定控制項顯示其值的腳本。|
 
 ### <a name="parent-elements"></a>父元素
 

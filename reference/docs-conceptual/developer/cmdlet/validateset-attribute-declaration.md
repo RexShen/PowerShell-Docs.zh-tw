@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
 caps.latest.revision: 12
 ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364277"
 ---
 # <a name="validateset-attribute-declaration"></a>ValidateSet 屬性宣告
@@ -41,7 +41,7 @@ ValidateSetAttribute 屬性會指定 Cmdlet 參數引數的一組可能值。 Wi
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` （[布林值](/dotnet/api/System.Boolean)）選擇性的具名引數。 @No__t-0 的預設值表示會忽略大小寫。 值為 `false` 會使 Cmdlet 區分大小寫。
+`IgnoreCase` （[布林值](/dotnet/api/System.Boolean)）選擇性的具名引數。 `true` 的預設值表示會忽略大小寫。 值 `false` 會使 Cmdlet 區分大小寫。
 
 ## <a name="remarks"></a>備註
 

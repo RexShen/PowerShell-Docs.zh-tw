@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
 ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367617"
 ---
 # <a name="creating-an-initialsessionstate"></a>建立 InitialSessionState
@@ -25,7 +25,7 @@ InitialSessionState 指定運行空間的特性，例如可供該運行空間使
 ## <a name="create-a-default-initialsessionstate"></a>建立預設 InitialSessionState
 
 **InitialSessionState**類別的[CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)和[CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)方法可以用來建立**InitialSessionState**物件。
-**CreateDefault**方法會建立已載入所有內建命令的**InitialSessionState** ，而**CreateDefault2**方法只會載入裝載 PowerShell 所需的命令（來自的命令Microsoft. PowerShell 模組）。
+**CreateDefault**方法會建立已載入所有內建命令的**InitialSessionState** ，而**CreateDefault2**方法只會載入裝載 PowerShell 所需的命令（來自 Microsoft. PowerShell 模組的命令）。
 
 如果您想要進一步限制主機應用程式中可用的命令，您必須建立受限的運行空間。
 如需相關資訊，請參閱[建立受限的運行空間](creating-a-constrained-runspace.md)。

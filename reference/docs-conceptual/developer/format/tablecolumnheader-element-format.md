@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361847"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader 元素 (格式)
@@ -41,15 +41,15 @@ ms.locfileid: "72361847"
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[TableControl 之之 tablecolumnheader 的標籤元素（格式）](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 定義顯示在資料行頂端的標籤。 如果未指定任何標籤，則會使用其值顯示在資料列中的屬性名稱。|
-|[TableControl 之之 tablecolumnheader 的 Width 元素（格式）](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必要元素。<br /><br /> 指定資料行的寬度（以字元為單位）。|
+|[TableControl 之之 tablecolumnheader 的 Width 元素（格式）](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必要項目。<br /><br /> 指定資料行的寬度（以字元為單位）。|
 |[TableControl 之之 tablecolumnheader 的對齊元素（格式）](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定資料行標籤的顯示方式。 如果未指定對齊，標籤會在左邊對齊。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[TableHeaders 元素（格式）](./tableheaders-element-format.md)|定義資料表視圖的資料行。|
 

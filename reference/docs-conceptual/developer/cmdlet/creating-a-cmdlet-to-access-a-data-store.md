@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415705"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>建立 Cmdlet 以存取資料存放區
@@ -375,7 +375,7 @@ protected override void ProcessRecord()
 
 這個範例 Select-Str Cmdlet 會使用[Providerintrinsics. Content *](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)屬性來公開要掃描的內容。 然後，它可以呼叫[ContentCmdletproviderintrinsics. system.diagnostics.symbolstore.isymbolbinder1.getreader *](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader)方法，傳遞所需的 Windows PowerShell 路徑。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 下列程式碼示範這個版本的 Select-Str Cmdlet 的執行。 請注意，此程式碼包含 Cmdlet 類別、Cmdlet 所使用的私用方法，以及用來註冊 Cmdlet 的 Windows PowerShell 嵌入式管理單元程式碼。 如需註冊 Cmdlet 的詳細資訊，請參閱[建立 Cmdlet](#defining-the-cmdlet-class)。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ms.openlocfilehash: 9e6cffc7476ef01124d95ecbf287d9788b0324c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368227"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableControl 之 TableColumnItems 的 TableColumnItem 元素 (格式)
@@ -34,7 +34,7 @@ TableRowEntry for TableRowEntries 之 TableControl （Format） TableControl 元
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `TableColumnItem` 元素的屬性、子專案和父元素。
+下列各節描述 `TableColumnItem` 專案的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -44,10 +44,10 @@ TableRowEntry for TableRowEntries 之 TableControl （Format） TableControl 元
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 之之 tablecolumnitem 的對齊元素（格式）](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 定義如何顯示資料列資料行中的資料。|
+|[TableControl 之之 tablecolumnitem 的對齊元素（格式）](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 定義如何顯示資料列資料行中的資料。|
 |[TableControl 之之 tablecolumnitem 的格式字串元素（格式）](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|指定格式模式，用來格式化資料列之資料行中的資料。|
-|[TableControl 之之 tablecolumnitem 的 PropertyName 元素（格式）](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定顯示其值的屬性名稱。|
-|[TableControl 之之 tablecolumnitem 的 ScriptBlock 元素（格式）](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定其值顯示在資料列資料行中的腳本。|
+|[TableControl 之之 tablecolumnitem 的 PropertyName 元素（格式）](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定顯示其值的屬性名稱。|
+|[TableControl 之之 tablecolumnitem 的 ScriptBlock 元素（格式）](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定其值顯示在資料列資料行中的腳本。|
 
 ### <a name="parent-elements"></a>父元素
 
@@ -63,7 +63,7 @@ TableRowEntry for TableRowEntries 之 TableControl （Format） TableControl 元
 
 ## <a name="example"></a>範例
 
-這個範例會顯示 `TableColumnItem` 元素，此專案會顯示[system.webserver](/dotnet/api/System.Diagnostics.Process)物件的 `Status` 屬性值。
+這個範例會顯示 `TableColumnItem` 專案，此專案會顯示[system.webserver](/dotnet/api/System.Diagnostics.Process)物件的 `Status` 屬性值。
 
 ```xml
 <TableColumnItem>

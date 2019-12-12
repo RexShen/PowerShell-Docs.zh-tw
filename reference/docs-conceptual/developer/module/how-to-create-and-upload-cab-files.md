@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
 ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367327"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>如何建立及上傳 CAB 檔案
@@ -25,7 +25,7 @@ ms.locfileid: "72367327"
 
 1. 依 UI 文化特性來組織模組的說明檔。 每個可更新的說明封包檔都包含一個 UI 文化特性中某個模組的說明檔。 您可以為模組傳遞多個說明 CAB 檔案，每個檔案都適用于不同的 UI 文化特性。
 
-2. 確認說明檔只包含 [可更新的說明] 所允許的檔案類型，並根據說明檔案架構來進行驗證。 如果 `Update-Help` 指令程式遇到無效或不是允許類型的檔案，則不會安裝不正確檔案，而且會停止從 CAB 安裝檔案。 如需允許的檔案類型清單，請參閱[可更新的說明 CAB 檔案中允許的檔案類型](./file-types-permitted-in-an-updatable-help-cab-file.md)。
+2. 確認說明檔只包含 [可更新的說明] 所允許的檔案類型，並根據說明檔案架構來進行驗證。 如果 `Update-Help` Cmdlet 遇到無效或不是允許的類型的檔案，則不會安裝不正確檔案，而且會停止從 CAB 安裝檔案。 如需允許的檔案類型清單，請參閱[可更新的說明 CAB 檔案中允許的檔案類型](./file-types-permitted-in-an-updatable-help-cab-file.md)。
 
 3. 以數位方式簽署說明檔。 數位簽章不是必要的，但它們是最佳做法。
 

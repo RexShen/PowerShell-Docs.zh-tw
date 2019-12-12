@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
 caps.latest.revision: 4
 ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367667"
 ---
 # <a name="writing-windows-powershell-help"></a>撰寫 Windows PowerShell 說明
 
-本檔是針對撰寫 Windows PowerShell Cmdlet、提供者的說明內容，以及可以使用 `Get-Help` Cmdlet 在命令列中查看主題相關概念的任何人所撰寫。
+本檔是針對撰寫 Windows PowerShell Cmdlet、提供者的說明內容，以及可使用 `Get-Help` Cmdlet 在命令列中查看主題相關概念的任何人所撰寫。
 
 ## <a name="cmdlet-help"></a>Cmdlet 說明
 

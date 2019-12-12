@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 4174e84f-d516-4aca-b418-273047dcfb07
 caps.latest.revision: 7
 ms.openlocfilehash: 5761ed2168a46d6ed9a2e50554d459f5b93223ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359657"
 ---
 # <a name="creating-a-workflow-activity-from-a-windows-powershell-cmdlet"></a>從 Windows PowerShell Cmdlet 建立工作流程活動
 
-您可以使用[Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)類別的方法，將任何 Windows PowerShell 模組或 Cmdlet 封裝為工作流程活動。 請使用[Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo)、 [Activitygenerator Generatefromcommandinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)、和[中的（活動）Activitygenerator. Generatefromname *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) [Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)類別的方法，用來產生C#代表活動的程式碼（activity）。 接著，您可以將產生C#的程式碼編譯成可新增至專案做為活動的元件。
+您可以使用[Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)類別的方法，將任何 Windows PowerShell 模組或 Cmdlet 封裝為工作流程活動。 使用[Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo)、 [Activitygenerator Generatefromcommandinfo * 和](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)類別的 Activitygenerator [*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName)方法，來產生C#代表活動的程式碼（Generatefromname *），並[將其設](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)為的（活動）。 接著，您可以將產生C#的程式碼編譯成可新增至專案做為活動的元件。
 
 接著，您可以使用具有C#下列格式的命令列，將產生的程式碼編譯成可當做活動加入至專案的元件。
 

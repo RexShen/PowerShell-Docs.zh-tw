@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364607"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>新增非終止錯誤報告到您的 Cmdlet
@@ -188,10 +188,10 @@ Cmdlet 經常需要修改非終止錯誤所產生的 PowerShell 動作。
 它可以藉由定義 `ErrorAction` 和 `ErrorVariable` 參數來達到這個目的。
 如果定義 `ErrorAction` 參數，此 Cmdlet 會顯示[ActionPreference。][]的使用者選項，您也可以藉由設定 `$ErrorActionPreference` 變數直接影響動作。
 
-Cmdlet 可以使用 `ErrorVariable` 參數，將非終止錯誤儲存至變數，這不會受到 `ErrorAction` 設定的影響。
+Cmdlet 可以使用 `ErrorVariable` 參數，將非終止錯誤儲存至變數，這不會受到 `ErrorAction`設定的影響。
 您可以藉由在變數名稱前面加上加號（+），將失敗附加至現有的錯誤變數。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整C#的範例程式碼，請參閱[GetProcessSample04 範例](./getprocesssample04-sample.md)。
 

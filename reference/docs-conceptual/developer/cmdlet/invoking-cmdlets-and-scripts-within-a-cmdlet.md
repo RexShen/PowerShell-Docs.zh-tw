@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
 caps.latest.revision: 10
 ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364287"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>在 Cmdlet 內叫用 Cmdlet 與指令碼
@@ -21,7 +21,7 @@ Cmdlet 可以從 Cmdlet 的輸入處理方法中叫用其他 Cmdlet 和腳本。
 
 ## <a name="the-invoke-method"></a>Invoke 方法
 
-所有 Cmdlet 都可以從輸入處理方法（例如[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)）中呼叫，以叫用現有的 Cmdlet，其會由所覆寫[的方式進行](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)Cmdlet。 不過，您只能叫用直接衍生自[system.object](/dotnet/api/System.Management.Automation.Cmdlet)類別的 Cmdlet。 您不能叫用衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別的 Cmdlet。
+所有 Cmdlet 都可以叫用現有的 Cmdlet，方法是從輸入處理方法（例如[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)）中的指令程式所覆寫的方法中，呼叫[。](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) 不過，您只能叫用直接衍生自[system.object](/dotnet/api/System.Management.Automation.Cmdlet)類別的 Cmdlet。 您不能叫用衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別的 Cmdlet。
 
 [[調用] *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)方法具有下列變體。
 

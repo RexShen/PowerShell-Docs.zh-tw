@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363897"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>定義用於顯示資料的條件
 
-定義視圖或控制項所顯示的資料時，您可以指定必須存在的條件，才會顯示資料。 條件可以由特定屬性觸發，或在腳本或屬性值評估為 `true` 時觸發。 當符合選取條件時，會使用視圖或控制項的定義。
+定義視圖或控制項所顯示的資料時，您可以指定必須存在的條件，才會顯示資料。 條件可以由特定屬性觸發，或在腳本或屬性值評估為 `true`時觸發。 當符合選取條件時，會使用視圖或控制項的定義。
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>指定定義的選取條件
 
-建立視圖或控制項的定義時，會使用 `EntrySelectedBy` 元素來指定要使用定義的物件，或必須存在哪些條件，才能使用定義。 條件是由 `SelectionCondition` 元素所指定。
+建立視圖或控制項的定義時，`EntrySelectedBy` 元素會用來指定要使用定義的物件，或必須存在哪些條件，才能使用定義。 條件是由 `SelectionCondition` 元素所指定。
 
-在下列範例中，會針對資料表視圖的定義指定選取條件。 在此範例中，只有在指定的腳本評估為 `true` 時，才會使用此定義。
+在下列範例中，會針對資料表視圖的定義指定選取條件。 在此範例中，只有在指定的腳本評估為 `true`時，才會使用此定義。
 
 ```xml
 <TableRowEntry>
@@ -46,7 +46,7 @@ ms.locfileid: "72363897"
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>指定專案的選取條件
 
-您也可以在專案定義中包含 `ItemSelectionCondition` 元素，以指定何時使用清單視圖或控制項的專案。 在下列範例中，會為清單視圖的專案指定選取條件。 在此範例中，只有在將腳本評估為 `true` 時，才會使用此專案。
+您也可以在專案定義中包含 `ItemSelectionCondition` 元素，以指定何時使用清單視圖或控制項的專案。 在下列範例中，會為清單視圖的專案指定選取條件。 在此範例中，只有在將腳本評估為 `true`時，才會使用此專案。
 
 ```xml
 <ListItem>

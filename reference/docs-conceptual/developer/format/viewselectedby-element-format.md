@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367967"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy 元素 (格式)
@@ -40,14 +40,14 @@ ViewDefinitions 元素（格式） View 元素（Format） ViewSelectedBy 元素
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[ViewSelectedBy 的 TypeName 元素（格式）](./typename-element-for-viewselectedby-format.md)|選擇性項目。<br /><br /> 指定由視圖顯示的 .NET 物件。|
 |[ViewSelectedBy 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-viewselectedby-format.md)|選擇性項目。<br /><br /> 指定由視圖顯示的一組 .NET 物件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[View 元素（格式）](./view-element-format.md)|定義顯示一或多個 .NET 物件的視圖。|
 

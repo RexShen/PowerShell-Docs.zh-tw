@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
 caps.latest.revision: 13
 ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368257"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>ViewSelectedBy 的 SelectionSetName 元素 (格式)
@@ -29,7 +29,7 @@ ViewSelectedBy （格式）的設定元素（格式） ViewDefinitions 元素（
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -47,7 +47,7 @@ ViewSelectedBy （格式）的設定元素（格式） ViewDefinitions 元素（
 
 ## <a name="text-value"></a>文字值
 
-指定選取集的 `Name` 元素所定義的選取範圍名稱。
+指定選取集的 [`Name`] 元素所定義的選取範圍名稱。
 
 ## <a name="remarks"></a>備註
 

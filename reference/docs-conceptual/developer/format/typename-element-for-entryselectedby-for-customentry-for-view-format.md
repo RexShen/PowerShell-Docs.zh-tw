@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 76548af7-05bd-4d12-bf71-6fb69c434ef2
 caps.latest.revision: 10
 ms.openlocfilehash: c3dd761cd9b6c468d4833ea35b897ba5d425f598
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368067"
 ---
 # <a name="typename-element-for-entryselectedby-for-customentry-for-view-format"></a>檢視之 CustomEntry 的 EntrySelectedBy 的 TypeName 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `TypeName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `TypeName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
