@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369107"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell 錯誤記錄
@@ -102,7 +102,7 @@ Windows PowerShell 所顯示的資訊稱為類別目錄檢視字串，並是從[
 
 ## <a name="invocation-information"></a>調用資訊
 
-當 Cmdlet 使用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)來報告錯誤記錄時，Windows PowerShell 會自動新增資訊，以描述發生錯誤時所叫用的命令，而不會有問題。 這項資訊是由[Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)物件所提供，其中包含命令所叫用的 Cmdlet 名稱、命令本身，以及管線或腳本的相關資訊。 這個屬性是唯讀的。
+當 Cmdlet 使用[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)來報告錯誤記錄時，Windows PowerShell 會自動新增資訊，以描述發生錯誤時所叫用的命令，而不會有問題。 這項資訊是由[Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)物件所提供，其中包含命令所叫用的 Cmdlet 名稱、命令本身，以及管線或腳本的相關資訊。 這是唯讀屬性。
 
 ## <a name="see-also"></a>另請參閱
 

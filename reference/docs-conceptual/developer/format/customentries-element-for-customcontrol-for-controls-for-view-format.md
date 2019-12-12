@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3485958a-ba87-4932-907c-a8f140c4abdb
 caps.latest.revision: 8
 ms.openlocfilehash: 4856aee930285781a101868bd6cb67824585bce1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368807"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-view-format"></a>檢視之控制項的 CustomControl 的 CustomEntries 元素 (格式)
@@ -39,13 +39,13 @@ ms.locfileid: "72368807"
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[View 之控制項的 CustomEntries 的 CustomEntry 元素（格式）](./customentry-element-for-customentries-for-controls-for-view-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
+|[View 之控制項的 CustomEntries 的 CustomEntry 元素（格式）](./customentry-element-for-customentries-for-controls-for-view-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[View 控制項的 CustomControl 元素（格式）](./customcontrol-element-for-control-for-controls-for-view-format.md)|定義視圖所使用的控制項。|
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
 caps.latest.revision: 13
 ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369007"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>設定之控制項的控制項元素 (格式)
@@ -42,8 +42,8 @@ Configuration 元素（Format）控制設定之控制項的設定（格式）控
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項控制項的 CustomControl 元素（格式）](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|必要元素。<br /><br /> 定義控制項。|
-|[設定之控制項的名稱元素（格式）](./name-element-for-control-for-controls-for-configuration-format.md)|必要元素。<br /><br /> 指定用來參考控制項的名稱。|
+|[設定之控制項控制項的 CustomControl 元素（格式）](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 定義控制項。|
+|[設定之控制項的名稱元素（格式）](./name-element-for-control-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 指定用來參考控制項的名稱。|
 
 ### <a name="parent-elements"></a>父元素
 

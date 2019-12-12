@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367117"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>如何撰寫 PowerShell 二進位模組
@@ -73,9 +73,9 @@ ms.locfileid: "72367117"
 
 3. 封裝您的解決方案，並將套件儲存至 PowerShell 模組路徑中的某處。
 
-   @No__t-0 全域環境變數描述 PowerShell 將用來尋找模組的預設路徑。 例如，在系統上儲存模組的一般路徑會 `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`。 如果您未使用預設路徑，您必須在安裝期間明確陳述模組的位置。 請務必建立一個資料夾來儲存您的模組，因為您可能需要資料夾來儲存方案的多個元件和檔案。
+   `PSModulePath` 全域環境變數描述 PowerShell 將用來尋找模組的預設路徑。 例如，在系統上儲存模組的一般路徑會是 `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`。 如果您未使用預設路徑，您必須在安裝期間明確陳述模組的位置。 請務必建立一個資料夾來儲存您的模組，因為您可能需要資料夾來儲存方案的多個元件和檔案。
 
-   請注意，技術上來說，您不需要在 `PSModulePath` 的任何位置安裝模組，這些只是 PowerShell 會針對您的模組尋找的預設位置。 不過，除非您將模組儲存在其他位置，否則會被視為最佳做法。 如需詳細資訊，請參閱[安裝 Powershell 模組](./installing-a-powershell-module.md)和[修改 Powershell 模組安裝路徑](./modifying-the-psmodulepath-installation-path.md)。
+   請注意，技術上來說，您不需要將模組安裝在 `PSModulePath` 上的任何位置，這些只是 PowerShell 會針對您的模組尋找的預設位置。 不過，除非您將模組儲存在其他位置，否則會被視為最佳做法。 如需詳細資訊，請參閱[安裝 Powershell 模組](./installing-a-powershell-module.md)和[修改 Powershell 模組安裝路徑](./modifying-the-psmodulepath-installation-path.md)。
 
 4. 使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)的呼叫，將您的模組匯入 PowerShell。
 

@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
 ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415664"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>建立不含參數的 Cmdlet
@@ -127,9 +127,9 @@ End Sub 'ProcessRecord
 
 - 當程式完成處理時，您的 Cmdlet 可能會有要清除的物件變數（例如，如果它在[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中開啟檔案控制代碼，並讓控制碼保持開啟以供[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)使用）。 請務必記住，Windows PowerShell 執行時間不一定會呼叫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，這應該會執行物件清除。
 
-例如，如果指令程式中途取消，或 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.object](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 。 因此，需要物件清理的 Cmdlet 應該會執行完整的[IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以在處理結束時同時呼叫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)和[IDisposable. Dispose *](/dotnet/api/System.IDisposable.Dispose)程式。
+例如，如果指令程式中途取消，或 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.object](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 。 因此，需要物件清理的 Cmdlet 應該會執行完整的[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以同時呼叫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)和處理結束時的 [IDisposable](/dotnet/api/System.IDisposable.Dispose)。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整C#的範例程式碼，請參閱[GetProcessSample01 範例](./getprocesssample01-sample.md)。
 

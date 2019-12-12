@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369337"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>強烈建議使用的開發指導方針
@@ -53,7 +53,7 @@ Cmdlet 命名中使用的名詞必須非常明確，讓使用者能夠探索您�
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>針對 Cmdlet 名稱使用 Pascal 大小寫（SD02）
 
-針對參數名稱使用 Pascal 大小寫。 換句話說，會將動詞的第一個字母和名詞中使用的所有詞彙變成大寫。 例如，「`Clear-ItemProperty`」。
+針對參數名稱使用 Pascal 大小寫。 換句話說，會將動詞的第一個字母和名詞中使用的所有詞彙變成大寫。 例如，"`Clear-ItemProperty`"。
 
 ### <a name="parameter-design-guidelines-sd03"></a>參數設計指導方針（SD03）
 

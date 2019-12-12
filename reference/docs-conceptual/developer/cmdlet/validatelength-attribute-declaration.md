@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
 ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369177"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 屬性宣告
@@ -31,9 +31,9 @@ ValidateLength 屬性會指定 Cmdlet 參數引數的最小和最大字元數。
 
 #### <a name="parameters"></a>參數
 
-需要 `MinLength` （[Int32](/dotnet/api/System.Int32)）。 指定允許的最小字元數。
+需要 `MinLength` （[system.object](/dotnet/api/System.Int32)）。 指定允許的最小字元數。
 
-需要 `MaxLength` （[Int32](/dotnet/api/System.Int32)）。 指定允許的最大字元數。
+需要 `MaxLength` （[system.object](/dotnet/api/System.Int32)）。 指定允許的最大字元數。
 
 ## <a name="remarks"></a>備註
 

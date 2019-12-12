@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c693ff46-d1ad-4dc7-93ac-41ff2fc6c103
 caps.latest.revision: 9
 ms.openlocfilehash: c1293d5a1f942704ac01388c66bd9009fd340e82
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362887"
 ---
 # <a name="label-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的標籤元素 (格式)
@@ -29,7 +29,7 @@ ListEntry for ListControl 元素的 ListItems （Format） ListEntry 專案之 L
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Label` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Label` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
 caps.latest.revision: 10
 ms.openlocfilehash: 6c2e5891a8e3f24969c12a2e57dc5ae8caa68e41
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365607"
 ---
 # <a name="how-to-declare-parameter-sets"></a>如何宣告參數集合
@@ -24,7 +24,7 @@ ms.locfileid: "72365607"
 
 ## <a name="how-to-define-two-parameter-sets"></a>如何定義兩個參數集
 
-1. 針對第一個參數集的 unique 參數，將 `ParameterSet` 關鍵字新增至參數屬性。
+1. 針對第一個參數集的 unique 參數，將 `ParameterSet` 關鍵字新增至 Parameter 屬性。
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,
@@ -37,7 +37,7 @@ ms.locfileid: "72365607"
    private string userName;
    ```
 
-2. 針對第二個參數集的 unique 參數，將 `ParameterSet` 關鍵字新增至參數屬性。
+2. 針對第二個參數集的 unique 參數，將 `ParameterSet` 關鍵字新增至 Parameter 屬性。
 
    ```csharp
    [Parameter(Position = 0, Mandatory = true,
@@ -50,7 +50,7 @@ ms.locfileid: "72365607"
    private string computerName;
    ```
 
-3. 對於同時屬於這兩個參數集的參數，請為每個參數集新增一個參數屬性，然後將 `ParameterSet` 關鍵字加入每個集合中。 在每個參數屬性中，您可以指定定義該參數的方式。 一個集合中的參數可以是選擇性的，另一個則是必要的。
+3. 對於同時屬於這兩個參數集的參數，請為每個參數集新增一個參數屬性，然後將 `ParameterSet` 關鍵字加入至每個集合。 在每個參數屬性中，您可以指定定義該參數的方式。 一個集合中的參數可以是選擇性的，另一個則是必要的。
 
    ```csharp
    [Parameter(Mandatory= true, ParameterSetName = "Test01")]

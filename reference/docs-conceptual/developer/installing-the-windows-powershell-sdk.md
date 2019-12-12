@@ -3,10 +3,10 @@ title: 安裝 Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444509"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>安裝 Windows PowerShell SDK
@@ -72,7 +72,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 
 #### <a name="hosting-application-samples"></a>主控應用程式範例
 
-- Runspace01-說明如何使用 PowerShell 類別以同步方式執行 `Get-Process` Cmdlet。
+- Runspace01-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` Cmdlet。
 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件。
 - Runspace02-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` 和 `Sort-Object` Cmdlet。 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件，而 `Sort-Object` 會根據物件的 Id 屬性來排序物件。 這些命令的結果會使用 DataGridView 控制項來顯示。
 - Runspace03-顯示如何使用 PowerShell 類別以同步方式執行腳本，以及如何處理非終止錯誤。 指令碼會接收處理序名稱的清單，然後擷取這些處理序。 指令碼的結果會顯示在主控台視窗中，包括執行指令碼時所產生的任何非終止錯誤在內。
@@ -90,7 +90,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 #### <a name="host-samples"></a>主機範例
 
 - Host01-顯示如何執行使用自訂主機的主應用程式。 在此範例中，會建立使用自訂主機的運行時，然後使用 PowerShell API 來執行呼叫 "exit" 的腳本。 主應用程式會查看指令碼的輸出，並列印結果。
-- Host02-示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行 `Get-Process` Cmdlet，並顯示結果，如同您使用 pwrsh 所看到的結果，然後以德文印出目前的資料和時間。
+- Host02-示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行 `Get-Process` Cmdlet，並使用 pwrsh 顯示結果，然後以德文列印目前的資料和時間。
 - Host03-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
 - Host04-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 這個主應用程式也支援顯示允許使用者指定多個選項的提示。
 - Host05-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此主機應用程式也支援使用 `Enter-PsSession` 和 `Exit-PsSession` Cmdlet 來呼叫遠端電腦。

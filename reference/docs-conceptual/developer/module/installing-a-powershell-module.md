@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367067"
 ---
 # <a name="installing-a-powershell-module"></a>安裝 PowerShell 模組
@@ -62,7 +62,7 @@ ms.locfileid: "72367067"
   ```
 
   > [!IMPORTANT]
-  > 將路徑新增至**PSModulePath**之後，您應該廣播有關此變更的環境訊息。 廣播變更可讓其他應用程式（例如 shell）收取變更。 若要廣播變更，請讓您的產品安裝程式碼傳送**WM_SETTINGCHANGE**訊息，並將 `lParam` 設定為字串 "環境"。 在您的模組安裝程式碼更新**PSModulePath**之後，請務必傳送該訊息。
+  > 將路徑新增至**PSModulePath**之後，您應該廣播有關此變更的環境訊息。 廣播變更可讓其他應用程式（例如 shell）收取變更。 若要廣播變更，請讓您的產品安裝程式碼傳送**WM_SETTINGCHANGE**訊息，其中 `lParam` 設定為「環境」字串。 在您的模組安裝程式碼更新**PSModulePath**之後，請務必傳送該訊息。
 
 ### <a name="use-the-correct-module-directory-name"></a>使用正確的模組目錄名稱
 
@@ -228,7 +228,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 為避免名稱衝突，模組作者可以使用模組資訊清單中的**DefaultCommandPrefix**索引鍵，為從模組匯出的所有命令指定名詞前置詞。
 
-使用者可以使用 `Import-Module` Cmdlet 的**prefix**參數來使用替代的前置詞。 **Prefix**參數的值會優先于**DefaultCommandPrefix**索引鍵的值。
+使用者可以使用 `Import-Module` Cmdlet 的**prefix**參數，以使用替代的前置詞。 **Prefix**參數的值會優先于**DefaultCommandPrefix**索引鍵的值。
 
 ## <a name="see-also"></a>另請參閱
 

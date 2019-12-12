@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366827"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>建立 Windows PowerShell 磁碟機提供者
@@ -31,11 +31,11 @@ ms.locfileid: "72366827"
 
 [!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
 
-請注意，在此範例中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性會指定提供者的使用者易記名稱，以及提供者公開給 Windows 的 windows PowerShell 特定功能命令處理期間的 PowerShell 執行時間。 提供者功能的可能值是由[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉所定義。 此磁片磁碟機提供者不支援任何這些功能。
+請注意，在此範例中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性會指定提供者的使用者易記名稱，以及提供者在命令處理期間公開給 windows powershell 執行時間的 windows powershell 特定功能。 提供者功能的可能值是由[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉所定義。 此磁片磁碟機提供者不支援任何這些功能。
 
 ## <a name="defining-base-functionality"></a>定義基本功能
 
-如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別是衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類，此類別是由定義初始化和取消初始化提供者所需的方法。 若要執行功能來新增會話特定的初始化資訊，以及釋放提供者所使用的資源，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。 不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
+如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類，此類別定義了初始化和取消初始化提供者所需的方法。 若要執行功能來新增會話特定的初始化資訊，以及釋放提供者所使用的資源，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。 不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
 
 ## <a name="creating-drive-state-information"></a>建立磁片磁碟機狀態資訊
 
@@ -95,9 +95,9 @@ ms.locfileid: "72366827"
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>執行 InitializeDefaultDrives 的相關事項
 
-所有磁片磁碟機提供者都應該掛接根磁片磁碟機，以協助使用者進行發現。 根磁片磁碟機可能會列出作為其他已掛接磁片磁碟機之根目錄的位置。 例如，Active Directory 提供者可能會建立一個磁片磁碟機，其中列出在根分散式系統內容（DSE）上的 `namingContext` 屬性中找到的命名內容。 這可協助使用者探索其他磁片磁碟機的掛接點。
+所有磁片磁碟機提供者都應該掛接根磁片磁碟機，以協助使用者進行發現。 根磁片磁碟機可能會列出作為其他已掛接磁片磁碟機之根目錄的位置。 例如，Active Directory 提供者可能會建立一個磁片磁碟機，其中列出在根分散式系統內容（DSE）的 `namingContext` 屬性中找到的命名內容。 這可協助使用者探索其他磁片磁碟機的掛接點。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整的範例程式碼，請參閱[AccessDbProviderSample02 程式碼範例](./accessdbprovidersample02-code-sample.md)。
 
@@ -105,7 +105,7 @@ ms.locfileid: "72366827"
 
 當您的 Windows PowerShell 提供者已向 Windows PowerShell 註冊時，您可以在命令列上執行支援的 Cmdlet 來進行測試，包括衍生所提供的任何 Cmdlet。 讓我們來測試範例磁片磁碟機提供者。
 
-1. 執行 `Get-PSProvider` Cmdlet 來抓取提供者清單，以確定 AccessDB 磁片磁碟機提供者存在：
+1. 執行 `Get-PSProvider` Cmdlet 來抓取提供者清單，以確保 AccessDB 磁片磁碟機提供者存在：
 
    **PS > `Get-PSProvider`**
 

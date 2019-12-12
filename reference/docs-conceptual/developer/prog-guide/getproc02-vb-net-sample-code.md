@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: f3497546-5b3a-4e29-84ba-cd9747be64b3
 caps.latest.revision: 6
 ms.openlocfilehash: 4ec63ed32bd2906f5b027523aa0f253b51a5d873
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366767"
 ---
 # <a name="getproc02-vbnet-sample-code"></a>GetProc02 (VB.NET) 範例程式碼
 
-下列程式碼顯示可接受命令列輸入的 `Get-Process` Cmdlet 的執行。 請注意，此實值會定義 `Name` 參數，以允許命令列輸入，並使用[WriteObject （system.string，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法做為將輸出物件傳送至管線的輸出機制。
+下列程式碼顯示接受命令列輸入的 `Get-Process` Cmdlet 的執行。 請注意，這個執行會定義一個 `Name` 參數以允許命令列輸入，而且它會使用[WriteObject （system.string，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法做為輸出機制，以便將輸出物件傳送至管線。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc02#getproc02vball](Msh_samplesgetproc02#getproc02vball)]  -->
 

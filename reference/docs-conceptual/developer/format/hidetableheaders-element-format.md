@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a20eaa3d-2bca-4a1f-8d40-fe038631d778
 caps.latest.revision: 11
 ms.openlocfilehash: 532563a70c702c05771a37a06124212c9548bb23
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362957"
 ---
 # <a name="hidetableheaders-element-format"></a>HideTableHeaders 元素 (格式)
@@ -29,7 +29,7 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（Format） Tabl
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `HideTableHeaders` 元素的屬性、子專案和父元素。
+下列各節描述 `HideTableHeaders` 專案的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -47,7 +47,7 @@ TableControl 的 ViewDefinitions 元素（格式） View 元素（Format） Tabl
 
 ## <a name="text-value"></a>文字值
 
-指定 `true` 可隱藏資料表的標頭。
+指定 `true` 以隱藏資料表的標頭。
 
 ## <a name="remarks"></a>備註
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b97ee165-f1bd-4360-8ff0-7a1bb54adcd5
 caps.latest.revision: 7
 ms.openlocfilehash: e48fb31e96041bea6ab0c91061b9f48e6a4c76ab
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362857"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-configuration-format"></a>設定之控制項的框架的 LeftIndent 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `LeftIndent` 元素的屬性、子專案和父元素。
+下列各節描述 `LeftIndent` 元素的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 

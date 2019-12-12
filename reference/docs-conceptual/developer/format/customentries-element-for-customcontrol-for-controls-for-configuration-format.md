@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
 caps.latest.revision: 11
 ms.openlocfilehash: abef6c91500f665c2366f221496d4cfd6444f5c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368817"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>設定之控制項的 CustomControl 的 CustomEntries 元素 (格式)
@@ -40,13 +40,13 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[設定之控制項的 CustomControl 的 CustomEntry 元素（格式）](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|提供通用控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[設定之控制項的 CustomControl 元素（格式）](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|定義通用控制項。|
 
