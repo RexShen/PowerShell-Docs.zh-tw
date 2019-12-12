@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365417"
 ---
 # <a name="interpreting-errorrecord-objects"></a>解譯 ErrorRecord 物件
 
 在大多數情況下， [ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件代表命令或腳本所產生的非終止錯誤。 終止錯誤也可以透過[Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)介面，在 ErrorRecord 中指定其他資訊。
 
-如果您想要在腳本或主控制項中寫入錯誤處理常式，以處理命令或腳本執行期間所發生的特定錯誤，您必須解讀[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件，以判斷它是否代表的類別。您想要處理的錯誤。
+如果您想要在腳本或主控制項中寫入錯誤處理常式，以處理命令或腳本執行期間所發生的特定錯誤，您必須解讀[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件，以判斷它是否代表您要處理之錯誤的類別。
 
 當 Cmdlet 遇到終止或非終止錯誤時，應該會建立描述錯誤狀況的錯誤記錄。 主應用程式必須調查這些錯誤記錄，並執行任何動作來減輕錯誤。 主應用程式也必須調查錯誤記錄，找出無法處理記錄但可以繼續的非終止錯誤，而且必須調查錯誤記錄，以找出導致管線停止的終止錯誤。
 

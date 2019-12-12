@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
 ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369867"
 ---
 # <a name="cmdlet-input-processing-methods"></a>Cmdlet 輸入處理方法
@@ -63,7 +63,7 @@ Cmdlet 應該覆寫[system.servicemodel 方法，](/dotnet/api/System.Management
 
 當 PowerShell 處理命令管線時，PowerShell 會針對管線中的每個 Cmdlet 實例呼叫這個方法一次。
 不過，請務必記住，如果 Cmdlet 在其輸入處理過程中取消，或 Cmdlet 的任何部分發生終止錯誤，則 PowerShell 執行時間不會呼叫 EndProcessing 方法。
-基於這個理由，需要物件清理的 Cmdlet 應該會執行完整的[IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以在結尾處呼叫 EndProcessing 和 IDisposable 方法[。](/dotnet/api/System.IDisposable.Dispose)流程.
+基於這個理由，需要物件清理的 Cmdlet 應該會執行完整的[IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以在處理結束時同時呼叫 EndProcessing 和[IDisposable](/dotnet/api/System.IDisposable.Dispose)方法。
 如需 PowerShell 如何叫用命令管線的詳細資訊，請參閱[Cmdlet 處理生命週期](/previous-versions/ms714429(v=vs.85))。
 
 下列程式碼顯示 EndProcessing 方法的執行。
@@ -86,6 +86,6 @@ protected override void EndProcessing()
 
 [SelectStr 教學課程](selectstr-tutorial.md)
 
-[IDisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

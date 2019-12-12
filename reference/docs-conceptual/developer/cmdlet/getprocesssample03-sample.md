@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369707"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 範例
@@ -25,7 +25,7 @@ ms.locfileid: "72369707"
 
 2. 按兩下方案（.sln）檔案的圖示。 這會在 Visual Studio 中開啟範例專案。
 
-3. 在 [**建立**] 功能表中，選取 [**建立方案**]。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72369707"
 
 此範例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 這個範例會示範下列各項。
 

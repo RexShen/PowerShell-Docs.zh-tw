@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f4da7f70-acfb-4cae-9dc9-e15d8fe19d63
 caps.latest.revision: 6
 ms.openlocfilehash: 93389adbfa13e2404354f1081ac545d967589e4b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364967"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-configuration-format"></a>設定之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `PropertyName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `PropertyName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

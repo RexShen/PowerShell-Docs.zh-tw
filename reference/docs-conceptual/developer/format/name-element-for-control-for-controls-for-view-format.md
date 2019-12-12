@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 26437467-d578-4e8d-8cdd-17dfe644957a
 caps.latest.revision: 7
 ms.openlocfilehash: 7e24aa60f7abae5768707d2527826c452b709002
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365097"
 ---
 # <a name="name-element-for-control-for-controls-for-view-format"></a>檢視之控制項的控制項的名稱元素 (格式)
@@ -29,7 +29,7 @@ ms.locfileid: "72365097"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Name` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Name` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365307"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>在 Cmdlet 參數中支援萬用字元
@@ -30,7 +30,7 @@ ms.locfileid: "72365307"
 
 Windows PowerShell 支援下列萬用字元。
 
-| 模糊 |                             說明                             |  範例   |     相符項目      | 不符合 |
+| 萬用字元 |                             描述                             |  範例   |     相符項目      | 不符合 |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | 符合零或多個字元，從指定的位置開始 | `a*`       | A、ag、Apple     |                |
 | ?        | 符合指定位置的任何字元                     | `?n`       | 中的、       | 延續            |

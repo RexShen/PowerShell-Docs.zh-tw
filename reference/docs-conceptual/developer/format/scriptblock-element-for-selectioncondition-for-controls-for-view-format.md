@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 08512496-5682-4539-ab56-0c5394ce1f01
 caps.latest.revision: 6
 ms.openlocfilehash: 0137886437f01518f396613c564517e7910e657a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364797"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-view-format"></a>檢視之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用定義。 定義可供視圖使用的控制項時，會使用這個元素。
+指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用定義。 定義可供視圖使用的控制項時，會使用這個元素。
 
 設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） Controls 專案（格式）控制項的控制項專案（格式） CustomControl 元素，用於控制項的 View （Format） CustomEntries 元素CustomControl for view （format） CustomEntry 元素的 CustomEntries for view （format）之 entryselectedby 元素 for CustomEntry for view （format） SelectionCondition 元素 for controls 的控制項（格式）Format）控制項的 SelectionCondition 的 ScriptBlock 元素（格式）
 
@@ -29,7 +29,7 @@ ms.locfileid: "72364797"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

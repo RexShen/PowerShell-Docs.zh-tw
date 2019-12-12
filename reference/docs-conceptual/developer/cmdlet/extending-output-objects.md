@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
 ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369717"
 ---
 # <a name="extending-output-objects"></a>延伸輸出物件
 
-您可以使用類型檔案（. types.ps1xml）來擴充 Cmdlet、函式和腳本所傳回的 .NET Framework 物件。 類型檔案是以 XML 為基礎的檔案，可讓您將屬性和方法加入至現有的物件。 例如，Windows PowerShell 提供 types.ps1xml 檔案，它會將元素新增至數個現有的 .NET Framework 物件。 Types.ps1xml 檔案位於 Windows PowerShell 安裝目錄（`$pshome`）。 您可以建立自己的類型檔案，進一步擴充這些物件或擴充其他物件。 當您使用類型檔案來擴充物件時，物件的任何實例都會以新元素擴充。
+您可以使用類型檔案（. types.ps1xml）來擴充 Cmdlet、函式和腳本所傳回的 .NET Framework 物件。 類型檔案是以 XML 為基礎的檔案，可讓您將屬性和方法加入至現有的物件。 例如，Windows PowerShell 提供 types.ps1xml 檔案，它會將元素新增至數個現有的 .NET Framework 物件。 Types.ps1xml 檔案位於 Windows PowerShell 安裝目錄（`$pshome`）中。 您可以建立自己的類型檔案，進一步擴充這些物件或擴充其他物件。 當您使用類型檔案來擴充物件時，物件的任何實例都會以新元素擴充。
 
 ## <a name="extending-the-systemarray-object"></a>擴充 System.object 物件
 
@@ -55,7 +55,7 @@ Get            Method        System.Object Get(Int32 )
 ...
 Length         Property      System.Int32 Length {get;}
 ```
-您可以使用 `Count` 屬性或 `Length` 屬性來判斷陣列中有多少物件。 例如：
+您可以使用 `Count` 屬性或 `Length` 屬性，來判斷陣列中有多少物件。 例如：
 
 ```powershell
 PS> (1, 2, 3, 4).Count
@@ -75,7 +75,7 @@ PS> (1, 2, 3, 4).Length
 
 ## <a name="custom-types-files"></a>自訂類型檔案
 
-若要建立自訂類型檔案，請先複製現有的類型檔案。 新檔案可以有任何名稱，但它的副檔名必須是 types.ps1xml。 當您複製檔案時，可以將新檔案放在 Windows PowerShell 可存取的任何目錄中，但將檔案放在 Windows PowerShell 安裝目錄（`$pshome`）或安裝目錄的子目錄中是很有用的。
+若要建立自訂類型檔案，請先複製現有的類型檔案。 新檔案可以有任何名稱，但它的副檔名必須是 types.ps1xml。 當您複製檔案時，可以將新檔案放在 Windows PowerShell 可存取的任何目錄中，但是將檔案放在 Windows PowerShell 安裝目錄（`$pshome`）或安裝目錄的子目錄中，會很有用。
 
 若要將您自己的擴充類型新增至檔案，請為每個您要擴充的物件加入 types 元素。 下列主題提供範例。
 
@@ -87,7 +87,7 @@ PS> (1, 2, 3, 4).Length
 
 定義您自己的擴充類型之後，請使用下列其中一種方法，讓擴充物件可供使用：
 
-- 若要讓目前的會話能夠使用擴充類型檔案，請使用[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 來新增檔案。 如果您想要讓類型優先于其他類型檔案（包括 types.ps1xml 檔案）中所定義的類型，請使用[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 的 `PrependData` 參數。
+- 若要讓目前的會話能夠使用擴充類型檔案，請使用[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 來新增檔案。 如果您想要讓類型優先于其他類型檔案（包括 types.ps1xml 檔案）中定義的類型，請使用[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 的 `PrependData` 參數。
 - 若要讓擴充類型檔案可供所有未來的會話使用，請將類型檔案新增至模組、匯出目前的會話，或將[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)命令新增至您的 Windows PowerShell 設定檔。
 
 ## <a name="signing-types-files"></a>簽署類型檔案

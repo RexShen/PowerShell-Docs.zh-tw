@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
 caps.latest.revision: 15
 ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369827"
 ---
 # <a name="custom-formatting-files"></a>自訂格式設定檔案
@@ -81,7 +81,7 @@ ViewDefinitions
 
 [資料表視圖](../format/creating-a-table-view.md)
 
-[清單視圖](../format/creating-a-list-view.md)
+[清單檢視](../format/creating-a-list-view.md)
 
 [寬視圖](../format/creating-a-wide-view.md)
 

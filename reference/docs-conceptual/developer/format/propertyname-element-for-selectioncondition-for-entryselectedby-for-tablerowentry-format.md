@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: ba3b4d9b-2b8c-4a3a-8887-6c606eb9d490
 caps.latest.revision: 10
 ms.openlocfilehash: 48011950ed64e78a84292762f2c7779003dc59fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364997"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format"></a>TableRowEntry 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
 
-指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用資料表專案。
+指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用資料表專案。
 
 Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） TableControl 元素（格式） TableRowEntries 元素（格式） TableRowEntry 元素（格式）之 entryselectedby 元素（格式）SelectionCondition for 之 entryselectedby for TableRowEntry 的 TableRowEntry （Format） PropertyName 元素之之 entryselectedby 的 SelectionCondition 元素（格式）
 
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `PropertyName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `PropertyName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

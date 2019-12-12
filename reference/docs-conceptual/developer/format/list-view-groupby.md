@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a2e66c86-83a7-4148-8575-c28d6d429d4f
 caps.latest.revision: 6
 ms.openlocfilehash: c178c4a48f9595001bcc249d5f55886fa54bb9f2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365137"
 ---
 # <a name="list-view-groupby"></a>清單檢視 (GroupBy)
@@ -23,14 +23,14 @@ ms.locfileid: "72365137"
 
 1. 將本主題的範例一節中的 XML 複製到文字檔中。
 
-2. 儲存該文字檔。 請務必將 `format.ps1xml` 延伸模組新增到檔案中，以將其識別為格式化檔案。
+2. 儲存文字檔。 請務必將 `format.ps1xml` 擴充功能新增至檔案，以將其識別為格式化檔案。
 
 3. 開啟 Windows PowerShell，然後執行下列命令，將格式檔案載入目前的會話： `Update-formatdata -prependpath PathToFormattingFile`。
 
    > [!WARNING]
    > 此格式檔案會定義已由 Windows PowerShell 格式化檔案所定義的物件顯示。 當您執行 Cmdlet 時，必須使用 `prependPath` 參數，而且無法將此格式檔案載入為模組。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 此格式檔案會示範下列 XML 元素：
 
