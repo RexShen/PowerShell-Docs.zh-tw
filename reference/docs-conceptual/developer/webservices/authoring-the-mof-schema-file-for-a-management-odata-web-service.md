@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366167"
 ---
-# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="d18db-102">撰寫 Management OData Web 服務的 MOF 結構描述檔案</span><span class="sxs-lookup"><span data-stu-id="d18db-102">Authoring the MOF schema file for a Management OData web service</span></span>
+# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="cec43-102">撰寫 Management OData Web 服務的 MOF 結構描述檔案</span><span class="sxs-lookup"><span data-stu-id="cec43-102">Authoring the MOF schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="d18db-103">您可以藉由建立使用公用資源架構的 MOF 檔案，來定義 Management OData web 服務所公開的資源。</span><span class="sxs-lookup"><span data-stu-id="d18db-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="d18db-104">每個資源都會定義為檔案中的類別，而屬性會定義為類別成員。</span><span class="sxs-lookup"><span data-stu-id="d18db-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="d18db-105">如需 MOF 檔案中使用之架構的詳細資訊，請參閱[公用資源架構](./public-resource-schema.md)。</span><span class="sxs-lookup"><span data-stu-id="d18db-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
+<span data-ttu-id="cec43-103">您可以藉由建立使用公用資源架構的 MOF 檔案，來定義 Management OData web 服務所公開的資源。</span><span class="sxs-lookup"><span data-stu-id="cec43-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="cec43-104">每個資源都會定義為檔案中的類別，而屬性會定義為類別成員。</span><span class="sxs-lookup"><span data-stu-id="cec43-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="cec43-105">如需 MOF 檔案中使用之架構的詳細資訊，請參閱[公用資源架構](./public-resource-schema.md)。</span><span class="sxs-lookup"><span data-stu-id="cec43-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
 
-## <a name="example-mof-file"></a><span data-ttu-id="d18db-106">範例 MOF 檔案</span><span class="sxs-lookup"><span data-stu-id="d18db-106">Example MOF file</span></span>
+## <a name="example-mof-file"></a><span data-ttu-id="cec43-106">範例 MOF 檔案</span><span class="sxs-lookup"><span data-stu-id="cec43-106">Example MOF file</span></span>
 
-<span data-ttu-id="d18db-107">下列檔案會定義服務和處理常式資源。</span><span class="sxs-lookup"><span data-stu-id="d18db-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="d18db-108">這些資源都對應到可由一組 Windows PowerShell Cmdlet 管理的物件。</span><span class="sxs-lookup"><span data-stu-id="d18db-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="d18db-109">屬性會對應至這些 Cmdlet 所使用的參數。</span><span class="sxs-lookup"><span data-stu-id="d18db-109">The properties correspond to parameters used by those cmdlets.</span></span>
+<span data-ttu-id="cec43-107">下列檔案會定義服務和處理常式資源。</span><span class="sxs-lookup"><span data-stu-id="cec43-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="cec43-108">這些資源都對應到可由一組 Windows PowerShell Cmdlet 管理的物件。</span><span class="sxs-lookup"><span data-stu-id="cec43-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="cec43-109">屬性會對應至這些 Cmdlet 所使用的參數。</span><span class="sxs-lookup"><span data-stu-id="cec43-109">The properties correspond to parameters used by those cmdlets.</span></span>
 
-<span data-ttu-id="d18db-110">這兩個資源中的每一個都包含複雜類型的屬性。</span><span class="sxs-lookup"><span data-stu-id="d18db-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="d18db-111">複雜類型會定義為以 `ComplexType` 限定詞修改的類別。</span><span class="sxs-lookup"><span data-stu-id="d18db-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
+<span data-ttu-id="cec43-110">這兩個資源中的每一個都包含複雜類型的屬性。</span><span class="sxs-lookup"><span data-stu-id="cec43-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="cec43-111">複雜類型會定義為以 `ComplexType` 限定詞修改的類別。</span><span class="sxs-lookup"><span data-stu-id="cec43-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
 
 ```csharp
 
@@ -209,8 +209,8 @@ class PswsTest_Stream
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d18db-112">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d18db-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cec43-112">另請參閱</span><span class="sxs-lookup"><span data-stu-id="cec43-112">See Also</span></span>
 
-[<span data-ttu-id="d18db-113">建立 Management OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="d18db-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="cec43-113">建立 Management OData Web 服務</span><span class="sxs-lookup"><span data-stu-id="cec43-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
 
-[<span data-ttu-id="d18db-114">公用資源架構</span><span class="sxs-lookup"><span data-stu-id="d18db-114">Public Resource Schema</span></span>](./public-resource-schema.md)
+[<span data-ttu-id="cec43-114">公用資源架構</span><span class="sxs-lookup"><span data-stu-id="cec43-114">Public Resource Schema</span></span>](./public-resource-schema.md)

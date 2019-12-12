@@ -9,29 +9,29 @@ ms.topic: article
 ms.assetid: c9864f46-200d-422e-86ed-2fddcb5b7503
 caps.latest.revision: 12
 ms.openlocfilehash: 202f6ea0521c7c053d5a01314fb44bd1806abab3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361037"
 ---
-# <a name="host03-sample"></a><span data-ttu-id="76515-102">Host03 範例</span><span class="sxs-lookup"><span data-stu-id="76515-102">Host03 Sample</span></span>
+# <a name="host03-sample"></a><span data-ttu-id="58000-102">Host03 範例</span><span class="sxs-lookup"><span data-stu-id="58000-102">Host03 Sample</span></span>
 
-<span data-ttu-id="76515-103">這個範例示範如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。</span><span class="sxs-lookup"><span data-stu-id="76515-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span>
+<span data-ttu-id="58000-103">這個範例示範如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。</span><span class="sxs-lookup"><span data-stu-id="58000-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="76515-104">需求</span><span class="sxs-lookup"><span data-stu-id="76515-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="58000-104">需求</span><span class="sxs-lookup"><span data-stu-id="58000-104">Requirements</span></span>
 
- <span data-ttu-id="76515-105">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="76515-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="58000-105">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="58000-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="76515-106">演示</span><span class="sxs-lookup"><span data-stu-id="76515-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="58000-106">示範</span><span class="sxs-lookup"><span data-stu-id="58000-106">Demonstrates</span></span>
 
-- <span data-ttu-id="76515-107">建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及，而該主機則[是Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的.。</span><span class="sxs-lookup"><span data-stu-id="76515-107">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="58000-107">建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別（class）的實例（system. 管理層。）。</span><span class="sxs-lookup"><span data-stu-id="58000-107">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="76515-108">建立主控台應用程式，以使用這些主機類別來建立互動式 Windows PowerShell shell。</span><span class="sxs-lookup"><span data-stu-id="76515-108">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="58000-108">建立主控台應用程式，以使用這些主機類別來建立互動式 Windows PowerShell shell。</span><span class="sxs-lookup"><span data-stu-id="58000-108">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-## <a name="example"></a><span data-ttu-id="76515-109">範例</span><span class="sxs-lookup"><span data-stu-id="76515-109">Example</span></span>
+## <a name="example"></a><span data-ttu-id="58000-109">範例</span><span class="sxs-lookup"><span data-stu-id="58000-109">Example</span></span>
 
- <span data-ttu-id="76515-110">這個範例可讓使用者在命令列中輸入命令、處理這些命令，然後列印結果。</span><span class="sxs-lookup"><span data-stu-id="76515-110">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="58000-110">這個範例可讓使用者在命令列中輸入命令、處理這些命令，然後列印結果。</span><span class="sxs-lookup"><span data-stu-id="58000-110">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -317,9 +317,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="76515-111">範例</span><span class="sxs-lookup"><span data-stu-id="76515-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="58000-111">範例</span><span class="sxs-lookup"><span data-stu-id="58000-111">Example</span></span>
 
- <span data-ttu-id="76515-112">下列程式碼是這個主應用程式所使用的[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別的執行方式。</span><span class="sxs-lookup"><span data-stu-id="76515-112">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="76515-113">未執行的元素會擲回例外狀況或不傳回任何專案。</span><span class="sxs-lookup"><span data-stu-id="76515-113">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="58000-112">下列程式碼是這個主應用程式所使用的[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別的執行方式。</span><span class="sxs-lookup"><span data-stu-id="58000-112">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="58000-113">未執行的元素會擲回例外狀況或不傳回任何專案。</span><span class="sxs-lookup"><span data-stu-id="58000-113">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -558,9 +558,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="76515-114">範例</span><span class="sxs-lookup"><span data-stu-id="76515-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="58000-114">範例</span><span class="sxs-lookup"><span data-stu-id="58000-114">Example</span></span>
 
- <span data-ttu-id="76515-115">下列程式碼是這個主應用程式所使用的[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別的執行方式。</span><span class="sxs-lookup"><span data-stu-id="76515-115">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="58000-115">下列程式碼是這個主應用程式所使用的[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別的執行方式。</span><span class="sxs-lookup"><span data-stu-id="58000-115">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -963,9 +963,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="76515-116">範例</span><span class="sxs-lookup"><span data-stu-id="76515-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="58000-116">範例</span><span class="sxs-lookup"><span data-stu-id="58000-116">Example</span></span>
 
- <span data-ttu-id="76515-117">下列程式碼是這個主應用程式所使用的[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的執行方式。</span><span class="sxs-lookup"><span data-stu-id="76515-117">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="76515-118">未執行的元素會擲回例外狀況或不傳回任何專案。</span><span class="sxs-lookup"><span data-stu-id="76515-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="58000-117">下列程式碼是這個主應用程式所使用的[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的執行方式。</span><span class="sxs-lookup"><span data-stu-id="58000-117">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="58000-118">未執行的元素會擲回例外狀況或不傳回任何專案。</span><span class="sxs-lookup"><span data-stu-id="58000-118">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1175,10 +1175,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="76515-119">另請參閱</span><span class="sxs-lookup"><span data-stu-id="76515-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="58000-119">另請參閱</span><span class="sxs-lookup"><span data-stu-id="58000-119">See Also</span></span>
 
- [<span data-ttu-id="76515-120">System.web. PSHost。</span><span class="sxs-lookup"><span data-stu-id="76515-120">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="58000-120">System.web. PSHost。</span><span class="sxs-lookup"><span data-stu-id="58000-120">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="76515-121">System.web. Pshostuserinterface。</span><span class="sxs-lookup"><span data-stu-id="76515-121">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="58000-121">System.web. Pshostuserinterface。</span><span class="sxs-lookup"><span data-stu-id="58000-121">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="76515-122">System.web. Pshostrawuserinterface。</span><span class="sxs-lookup"><span data-stu-id="76515-122">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="58000-122">System.web. Pshostrawuserinterface。</span><span class="sxs-lookup"><span data-stu-id="58000-122">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
