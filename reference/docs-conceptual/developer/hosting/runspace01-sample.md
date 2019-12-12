@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
 ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367417"
 ---
-# <a name="runspace01-sample"></a><span data-ttu-id="a7a0f-102">Runspace01 範例</span><span class="sxs-lookup"><span data-stu-id="a7a0f-102">Runspace01 Sample</span></span>
+# <a name="runspace01-sample"></a><span data-ttu-id="3bc63-102">Runspace01 範例</span><span class="sxs-lookup"><span data-stu-id="3bc63-102">Runspace01 Sample</span></span>
 
-<span data-ttu-id="a7a0f-103">這個範例示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別，以同步方式執行「[處理常式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)」 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously.</span></span> <span data-ttu-id="a7a0f-104">[取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式會針對在本機電腦上執行的每個進程傳回[system.webserver。](/dotnet/api/System.Diagnostics.Process)</span><span class="sxs-lookup"><span data-stu-id="a7a0f-104">The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer.</span></span> <span data-ttu-id="a7a0f-105">然後，系統會從傳回的物件中將[Processname \*](/dotnet/api/System.Diagnostics.Process.ProcessName)和[Handlecount \*](/dotnet/api/System.Diagnostics.Process.Handlecount)屬性的值解壓縮，並顯示在主控台視窗中。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-105">The values of the [System.Diagnostics.Process.Processname\*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount\*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.</span></span>
+<span data-ttu-id="3bc63-103">這個範例示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別，以同步方式執行「[處理常式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)」 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3bc63-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously.</span></span> <span data-ttu-id="3bc63-104">[取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式會針對在本機電腦上執行的每個進程傳回[system.webserver。](/dotnet/api/System.Diagnostics.Process)</span><span class="sxs-lookup"><span data-stu-id="3bc63-104">The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer.</span></span> <span data-ttu-id="3bc63-105">然後，系統會從傳回的物件中將[Processname \*](/dotnet/api/System.Diagnostics.Process.ProcessName)和[Handlecount \*](/dotnet/api/System.Diagnostics.Process.Handlecount)屬性的值解壓縮，並顯示在主控台視窗中。</span><span class="sxs-lookup"><span data-stu-id="3bc63-105">The values of the [System.Diagnostics.Process.Processname\*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount\*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="a7a0f-106">需求</span><span class="sxs-lookup"><span data-stu-id="a7a0f-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="3bc63-106">需求</span><span class="sxs-lookup"><span data-stu-id="3bc63-106">Requirements</span></span>
 
- <span data-ttu-id="a7a0f-107">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-107">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="3bc63-107">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="3bc63-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="a7a0f-108">演示</span><span class="sxs-lookup"><span data-stu-id="a7a0f-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="3bc63-108">示範</span><span class="sxs-lookup"><span data-stu-id="3bc63-108">Demonstrates</span></span>
 
-- <span data-ttu-id="a7a0f-109">建立要執行命令的[system.web](/dotnet/api/system.management.automation.powershell)物件。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a command.</span></span>
+- <span data-ttu-id="3bc63-109">建立要執行命令的[system.web](/dotnet/api/system.management.automation.powershell)物件。</span><span class="sxs-lookup"><span data-stu-id="3bc63-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a command.</span></span>
 
-- <span data-ttu-id="a7a0f-110">將命令新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-110">Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="3bc63-110">將命令新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線。</span><span class="sxs-lookup"><span data-stu-id="3bc63-110">Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="a7a0f-111">同步執行命令。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-111">Running the command synchronously.</span></span>
+- <span data-ttu-id="3bc63-111">同步執行命令。</span><span class="sxs-lookup"><span data-stu-id="3bc63-111">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="a7a0f-112">使用[system.web](/dotnet/api/System.Management.Automation.PSObject)物件，從命令所傳回的物件中解壓縮屬性。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-112">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.</span></span>
+- <span data-ttu-id="3bc63-112">使用[system.web](/dotnet/api/System.Management.Automation.PSObject)物件，從命令所傳回的物件中解壓縮屬性。</span><span class="sxs-lookup"><span data-stu-id="3bc63-112">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="a7a0f-113">範例</span><span class="sxs-lookup"><span data-stu-id="a7a0f-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3bc63-113">範例</span><span class="sxs-lookup"><span data-stu-id="3bc63-113">Example</span></span>
 
- <span data-ttu-id="a7a0f-114">這個範例會在 Windows PowerShell 所提供的預設執行時間中，以同步方式執行「[取得進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)」 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="a7a0f-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.</span></span>
+ <span data-ttu-id="3bc63-114">這個範例會在 Windows PowerShell 所提供的預設執行時間中，以同步方式執行「[取得進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)」 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="3bc63-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -92,4 +92,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a7a0f-115">另請參閱</span><span class="sxs-lookup"><span data-stu-id="a7a0f-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3bc63-115">另請參閱</span><span class="sxs-lookup"><span data-stu-id="3bc63-115">See Also</span></span>
