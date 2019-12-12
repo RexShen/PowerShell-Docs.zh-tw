@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
 caps.latest.revision: 8
 ms.openlocfilehash: 2704a530e0ae269efb772ac10e531bcbb12f6eff
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362707"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>設定之控制項的控制項的名稱元素 (格式)
@@ -30,7 +30,7 @@ ms.locfileid: "72362707"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Name` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Name` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363407"
 ---
 # <a name="creating-a-table-view"></a>建立表格檢視
@@ -79,13 +79,13 @@ Running  Appinfo            Application Information
 
 - [Name](./name-element-for-view-format.md)元素會指定視圖的名稱。 所有的視圖都需要此元素。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此為必要元素。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此項目為必要項。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素（在此範例中未顯示）會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這個元素是選擇性的。
+- [GroupBy](./groupby-element-for-view-format.md)元素（在此範例中未顯示）會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這是選擇性的項目。
 
-- [Controls](./controls-element-for-view-format.md)元素（在此範例中未顯示）會定義資料表視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這個元素是選擇性的。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
+- [Controls](./controls-element-for-view-format.md)元素（在此範例中未顯示）會定義資料表視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這是選擇性的項目。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
 
-- [HideTableHeaders](./hidetableheaders-element-format.md)元素（在此範例中未顯示）指定資料表不會在資料表頂端顯示任何標籤。 這個元素是選擇性的。
+- [HideTableHeaders](./hidetableheaders-element-format.md)元素（在此範例中未顯示）指定資料表不會在資料表頂端顯示任何標籤。 這是選擇性的項目。
 
 - 定義資料表之標頭和資料列資訊的[TableControl](./tablecontrol-element-format.md)元素。 類似于所有其他的視圖，資料表視圖可以顯示物件屬性的值或腳本所產生的值。
 
@@ -97,11 +97,11 @@ Running  Appinfo            Application Information
 
    您可以使用的這些元素數目沒有限制，但資料表視圖中的[之 tablecolumnheader](./tablecolumnheader-element-format.md)元素數目必須等於您所使用的[TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)元素數目。
 
-3. [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定所顯示的文字。 這個元素是選擇性的。
+3. [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定所顯示的文字。 這是選擇性的項目。
 
-4. [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定資料行的寬度（以字元為單位）。 這個元素是選擇性的。
+4. [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定資料行的寬度（以字元為單位）。 這是選擇性的項目。
 
-5. [對齊](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定標籤的顯示方式。 標籤可以靠左、向右或置中對齊。 這個元素是選擇性的。
+5. [對齊](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定標籤的顯示方式。 標籤可以靠左、向右或置中對齊。 這是選擇性的項目。
 
 ## <a name="defining-the-table-rows"></a>定義資料表資料列
 
@@ -146,9 +146,9 @@ Running  Appinfo            Application Information
 
 - [ScriptBlock](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)元素會指定其值顯示在資料列中的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-- [[字串](./label-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定定義屬性或腳本值顯示方式的格式模式。 這個元素是選擇性的。
+- [[字串](./label-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定定義屬性或腳本值顯示方式的格式模式。 這是選擇性的項目。
 
-- [對齊](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)元素會指定如何顯示內容或腳本的值。 值可以靠左、靠右或置中對齊。 這個元素是選擇性的。
+- [對齊](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)元素會指定如何顯示內容或腳本的值。 值可以靠左、靠右或置中對齊。 這是選擇性的項目。
 
 ## <a name="defining-the-objects-that-use-the-table-view"></a>定義使用資料表視圖的物件
 

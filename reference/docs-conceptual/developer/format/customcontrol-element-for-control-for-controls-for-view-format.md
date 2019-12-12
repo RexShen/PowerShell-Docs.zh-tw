@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
 caps.latest.revision: 8
 ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363367"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>檢視之控制項的控制項 CustomControl 元素 (格式)
@@ -31,7 +31,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `CustomControl` 元素的父元素。 您必須只指定一個子項目。
+下列各節說明屬性、子專案，以及 `CustomControl` 專案的父元素。 您必須只指定一個子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[View 之控制項的 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
+|[View 之控制項的 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9688cd69-07ea-4ea0-8822-0a4850bcf86c
 caps.latest.revision: 7
 ms.openlocfilehash: 979403376c5e694b686aaf77a2cb787d765cb883
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417938"
 ---
 # <a name="runspace05-code-sample"></a>RunSpace05 程式碼範例
@@ -24,7 +24,7 @@ ms.locfileid: "74417938"
 >
 > 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 [!code-csharp[Runspace05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace05/Runspace05.cs#L11-L86 "Runspace05.cs")]
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
 ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359967"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
 這個範例示範如何覆寫容器方法，以支援對 `Move-Item` 和 `Join-Path` Cmdlet 的呼叫。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 這個範例中的提供者類別衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 > [!IMPORTANT]
 > 您的提供者類別很可能會衍生自下列其中一個類別，而且可能會執行其他提供者介面：
@@ -30,7 +30,7 @@ ms.locfileid: "72359967"
 >
 > 如需有關根據提供者功能來選擇衍生自哪個提供者類別的詳細資訊，請參閱[設計您的 Windows PowerShell 提供者](./provider-types.md)。
 
-這個範例會示範下列各項：
+這個範例示範下列作業：
 
 - 宣告 `CmdletProvider` 屬性。
 

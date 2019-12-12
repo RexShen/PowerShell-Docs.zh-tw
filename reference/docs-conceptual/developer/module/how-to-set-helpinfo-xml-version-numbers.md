@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
 ms.openlocfilehash: b98e6879bbfe0e3ec1a9ab37496dde44caf523a4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360677"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>如何設定 HelpInfo XML 版本號碼
@@ -22,7 +22,7 @@ ms.locfileid: "72360677"
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>如何設定 HelpInfo XML 版本號碼
 
 HelpInfo XML 檔案中的版本號碼對於「可更新的說明」作業而言是不可或缺的。
-只有當遠端 HelpInfo XML 檔案中 UI 文化特性的版本號碼大於本機 HelpInfo XML 中該 UI 文化特性的版本號碼，或沒有本機 HelpInfo 時， [update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)和[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) Cmdlet 才會下載新的說明檔案。XML 檔案。
+只有當遠端 HelpInfo XML 檔案中 UI 文化特性的版本號碼大於本機 HelpInfo XML 中該 UI 文化特性的版本號碼，或沒有本機 HelpInfo XML 檔案時， [update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)和[get-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) Cmdlet 才會下載新的說明檔。
 
 HelpInfo XML 檔案會使用 Microsoft .NET Framework 的**system.object**類別中定義的4部分版本號碼。 格式為 `N1.N2.N3.N4`。 模組作者可以使用**System. version**類別所允許的任何版本編號配置。 「可更新的說明」只需要在該 UI 文化特性的新版 CAB 檔案上傳到 HelpInfo XML 檔案中的**HelpContentURI**元素所指定的位置時，才會增加 ui 文化特性的版本號碼。
 

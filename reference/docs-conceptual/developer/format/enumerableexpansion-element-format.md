@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
 caps.latest.revision: 9
 ms.openlocfilehash: bc1e58c00ca8419f9204076f0a46050281e704db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368747"
 ---
 # <a name="enumerableexpansion-element-format"></a>EnumerableExpansion 元素 (格式)
@@ -32,7 +32,7 @@ Configuration 元素（格式） DefaultSettings 元素（格式） EnumerableEx
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `EnumerableExpansion` 元素的父元素。
+下列各節說明屬性、子專案，以及 `EnumerableExpansion` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,7 +42,7 @@ Configuration 元素（格式） DefaultSettings 元素（格式） EnumerableEx
 
 |元素|描述|
 |-------------|-----------------|
-|[EnumerableExpansion 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-enumerableexpansion-format.md)|選擇性元素。<br /><br /> 定義由這個定義擴充的 .NET 集合物件。|
+|[EnumerableExpansion 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-enumerableexpansion-format.md)|選擇性項目。<br /><br /> 定義由這個定義擴充的 .NET 集合物件。|
 |[展開元素（格式）](./expand-element-format.md)|指定如何展開這個定義的集合物件。|
 
 ### <a name="parent-elements"></a>父元素

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366017"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>使用 PowerShell API 來排程工作
@@ -42,7 +42,7 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 您可以藉由建立參數字典來定義 PowerShell 作業。 支援下列參數：
 
-|參數名稱|說明|
+|參數名稱|描述|
 |--------------------|-----------------|
 |**名稱**|作業的名稱。|
 |**ScriptBock**|指定作業作用的 PowerShell 腳本區塊。|

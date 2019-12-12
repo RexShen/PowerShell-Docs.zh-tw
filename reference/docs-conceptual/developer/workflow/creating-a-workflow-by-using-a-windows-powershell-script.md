@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
 ms.openlocfilehash: 5eb2186cbceee21f8b4a8c88b812e9c71f15e0af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366027"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>使用 Windows PowerShell 指令碼建立工作流程
@@ -28,7 +28,7 @@ workflow Invoke-HelloWorld {"Hello World from workflow"}
 
 ## <a name="implementing-parallel-and-sequence"></a>實作為平行和順序
 
-[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx)支援以平行方式執行活動。 若要在 Windows PowerShell 腳本中執行這項功能，請在腳本區塊前面使用 `parallel` 關鍵字。 您也可以使用 `foreach -parallel` 結構來平行逐一查看物件的集合。 若要在平行區塊內依序執行一組活動，請將活動群組括在腳本區塊中，然後在區塊前面加上 sequence 關鍵字。
+[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx)支援以平行方式執行活動。 若要在 Windows PowerShell 腳本中執行這項功能，請在腳本區塊前面使用 `parallel` 關鍵字。 您也可以使用 `foreach -parallel` 結構，以平行方式逐一查看物件的集合。 若要在平行區塊內依序執行一組活動，請將活動群組括在腳本區塊中，然後在區塊前面加上 sequence 關鍵字。
 
 ## <a name="joining-computers-to-a-domain"></a>將電腦加入網域
 

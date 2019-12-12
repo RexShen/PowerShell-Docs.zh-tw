@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361257"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>如何新增動態參數至提供者說明主題
@@ -59,7 +59,7 @@ ms.locfileid: "72361257"
 
 3. 在每個 `DynamicParameter` 元素中，新增 `Name` 和 `CmdletSupported` 專案。
 
-   |元素名稱|說明|
+   |元素名稱|描述|
    |------------------|-----------------|
    |Name|指定參數名稱。|
    |CmdletSupported|指定參數有效的 Cmdlet。 輸入以逗號分隔的 Cmdlet 名稱清單。|
@@ -112,12 +112,12 @@ ms.locfileid: "72361257"
 
    下表列出並描述 `PossibleValues` 元素及其子項目。
 
-   |元素名稱|說明|
+   |元素名稱|描述|
    |------------------|-----------------|
    |PossibleValues|此元素是容器。 其子項目如下所述。 將一個 `PossibleValues` 元素新增至每個提供者說明主題。 元素可以是空的。|
    |PossibleValue|此元素是容器。 其子項目如下所述。 為動態參數的每個值新增一個 `PossibleValue` 元素。|
    |值|指定值名稱。|
-   |說明|此元素包含 `Para` 元素。 `Para` 元素中的文字描述 `Value` 元素中所命名的值。|
+   |描述|此元素包含 `Para` 元素。 `Para` 元素中的文字描述 `Value` 元素中所命名的值。|
 
    例如，下列 XML 會顯示 `Encoding` 動態參數的一個 `PossibleValue` 元素。
 

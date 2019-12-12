@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361227"
 ---
 # <a name="how-to-add-parameter-information"></a>如何新增參數資訊
@@ -175,7 +175,7 @@ ms.locfileid: "72361227"
 
 此參數的預設值不會顯示在 Cmdlet 說明主題的所有 views 中。 不過，當使用者要求完整（Get-help \<Cmdletname >-Full）或主題的參數（Get-help \<Cmdletname >-parameter）時，它會在參數描述之後，顯示在資料表中（連同參數屬性）。
 
-下列 XML 顯示新增至 `<command:parameter>` 節點的一對 `<dev:defaultValue>` 標記。 請注意，預設值會緊接在結尾 `</command:parameterValue>` 標記（當指定參數值時）或參數描述的結尾 `</maml:description>` 標記後面。 檔案名.
+下列 XML 顯示新增至 `<command:parameter>` 節點的一對 `<dev:defaultValue>` 標記。 請注意，預設值會緊接在結尾 `</command:parameterValue>` 標記（當指定參數值時）或參數描述的結尾 `</maml:description>` 標記後面。 名稱：
 
 ```xml
 <command:parameters>

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417787"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell&#39;程式設計人員指南
@@ -53,7 +53,7 @@ Windows PowerShell 提供數個預設的 Windows PowerShell 提供者。 例如�
 
 如果您公開使用者將需要存取的資料存放區，您可能需要撰寫自己的 Windows PowerShell 提供者，如[建立 Windows Powershell 提供者](./how-to-create-a-windows-powershell-provider.md)中所述。 如需 aboutWindows PowerShell 提供者的詳細資訊，請參閱[Windows powershell 的運作方式](/previous-versions//ms714658(v=vs.85))。
 
-### <a name="host-application"></a>主應用程式
+### <a name="host-application"></a>主控件應用程式
 
 Windows PowerShell 包含預設的主應用程式 PowerShell .exe，這是一個主控台應用程式，可與使用者互動，並使用主控台視窗裝載 Windows PowerShell 執行時間。
 

@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
 ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366277"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell 參考
@@ -23,7 +23,7 @@ Windows PowerShell 是專為系統管理自動化而設計的 Microsoft .NET Fra
 
 Windows PowerShell 可讓系統管理員直接或透過腳本執行命令，自動管理系統資源。
 
-## <a name="developer-audience"></a>開發人員物件
+## <a name="developer-audience"></a>開發人員讀者
 
 Windows PowerShell 軟體發展工具組（SDK）是針對需要 Windows PowerShell 所提供之 Api 相關參考資訊的命令開發人員所撰寫。 命令開發人員可以使用 Windows PowerShell 來建立命令和提供者，以擴充 Windows PowerShell 可執行檔工作。
 
@@ -37,7 +37,7 @@ Windows PowerShell 軟體發展工具組（SDK）是針對需要 Windows PowerSh
 
 [撰寫 Windows PowerShell Cmdlet](./cmdlet/writing-a-windows-powershell-cmdlet.md)針對正在設計 Cmdlet 的程式管理員，以及正在執行 Cmdlet 程式碼的開發人員，提供相關資訊和程式碼範例。
 
-[Windows PowerShell 小組 Blog](https://blogs.msdn.microsoft.com/PowerShell/)與其他 Windows PowerShell 使用者一起學習及協同作業的最佳資源。 閱讀 Windows PowerShell 小組的 blog，然後加入 Windows PowerShell 使用者論壇（microsoft. windows powershell）。 使用 Windows Live Search 尋找其他 Windows PowerShell 的 blog 和資源。 然後，當您開發自己的專業知識時，可以自由地提供您的想法。
+[Windows PowerShell 小組 Blog](https://blogs.msdn.microsoft.com/PowerShell/)與其他 Windows PowerShell 使用者一起學習及協同作業的最佳資源。 閱讀 Windows PowerShell 團隊部落格，然後加入 Windows PowerShell 使用者論壇 (microsoft.public.windows.powershell)。 使用 Windows Live 搜尋來尋找其他 Windows PowerShell 部落格與資源。 然後，當您開發自己的專業知識時，可以自由地提供您的想法。
 
 [PowerShell 模組瀏覽器](/powershell/module/)提供命令列說明主題的最新版本。
 

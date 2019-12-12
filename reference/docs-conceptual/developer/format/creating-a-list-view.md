@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
 caps.latest.revision: 14
 ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368977"
 ---
 # <a name="creating-a-list-view"></a>建立清單檢視
@@ -99,11 +99,11 @@ ServiceType         : Win32OwnProcess
 
 - [Name](./name-element-for-view-format.md)元素會指定視圖的名稱。 所有的視圖都需要此元素。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此為必要元素。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此項目為必要項。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這個元素是選擇性的。
+- [GroupBy](./groupby-element-for-view-format.md)元素會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這是選擇性的項目。
 
-- [Controls](./controls-element-for-view-format.md)元素會定義清單視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這個元素是選擇性的。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
+- [Controls](./controls-element-for-view-format.md)元素會定義清單視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這是選擇性的項目。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
 
 - [ListControl](./listcontrol-element-format.md)元素會定義要在視圖中顯示的內容，以及其格式化方式。 清單視圖類似于所有其他的視圖，可以顯示物件屬性的值或腳本所產生的值。
 
@@ -141,7 +141,7 @@ ServiceType         : Win32OwnProcess
 
 - [ListControl](./listcontrol-element-format.md)元素及其子項目會定義要在視圖中顯示的內容。
 
-- [ListEntries](./listentries-element-for-listcontrol-format.md)元素會提供視圖的定義。 在大部分的情況下，視圖只會有一個定義。 此為必要元素。
+- [ListEntries](./listentries-element-for-listcontrol-format.md)元素會提供視圖的定義。 在大部分的情況下，視圖只會有一個定義。 此項目為必要項。
 
 - [ListEntry](./listentry-element-for-listcontrol-format.md)元素會提供 view 的定義。 至少需要一個[ListEntry](./listentry-element-for-listcontrol-format.md) ;不過，您可以新增的專案數沒有最大限制。 在大部分的情況下，視圖只會有一個定義。
 
@@ -155,11 +155,11 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素會指定其值顯示在資料列中的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-- [Label](./label-element-for-listitem-for-listcontrol-format.md)元素會指定顯示在資料列中屬性或腳本值左邊的標籤。 這個元素是選擇性的。 如果未指定標籤，則會顯示內容或腳本的名稱。 如需完整範例，請參閱[清單視圖（標籤）](./list-view-labels.md)。
+- [Label](./label-element-for-listitem-for-listcontrol-format.md)元素會指定顯示在資料列中屬性或腳本值左邊的標籤。 這是選擇性的項目。 如果未指定標籤，則會顯示內容或腳本的名稱。 如需完整範例，請參閱[清單視圖（標籤）](./list-view-labels.md)。
 
-- [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)元素會指定必須存在的條件，才能顯示資料列。 如需將條件新增至清單視圖的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。 這個元素是選擇性的。
+- [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)元素會指定必須存在的條件，才能顯示資料列。 如需將條件新增至清單視圖的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。 這是選擇性的項目。
 
-- [[字串](./formatstring-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定用來顯示內容或腳本值的模式。 這個元素是選擇性的。
+- [[字串](./formatstring-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定用來顯示內容或腳本值的模式。 這是選擇性的項目。
 
 如需定義簡單列表視圖的完整格式檔案範例，請參閱[清單視圖（基本）](./list-view-basic.md)。
 
@@ -245,11 +245,11 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-groupby-format.md)元素會指定在每次其值變更時啟動新群組的腳本。 您必須指定腳本或屬性來啟動群組，但不能同時指定這兩者。
 
-- [Label](./label-element-for-groupby-format.md)元素會定義在每個群組的開頭顯示的標籤。 除了此元素所指定的文字之外，Windows PowerShell 還會顯示觸發新群組的值，並在標籤前後加上空白行。 這個元素是選擇性的。
+- [Label](./label-element-for-groupby-format.md)元素會定義在每個群組的開頭顯示的標籤。 除了此元素所指定的文字之外，Windows PowerShell 還會顯示觸發新群組的值，並在標籤前後加上空白行。 這是選擇性的項目。
 
-- [CustomControl](./customcontrol-element-for-groupby-format.md)元素會定義用來顯示資料的控制項。 這個元素是選擇性的。
+- [CustomControl](./customcontrol-element-for-groupby-format.md)元素會定義用來顯示資料的控制項。 這是選擇性的項目。
 
-- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素會指定用來顯示資料的通用或 view 控制項。 這個元素是選擇性的。
+- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素會指定用來顯示資料的通用或 view 控制項。 這是選擇性的項目。
 
 如需定義群組之完整格式檔案的範例，請參閱[清單視圖（GroupBy）](./list-view-groupby.md)。
 
@@ -274,7 +274,7 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素（未顯示）會指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-在下列範例中，會呼叫 `ToString` 方法來格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），則腳本可以呼叫該方法來格式化腳本的輸出值。
+在下列範例中，會呼叫 `ToString` 方法，以格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），腳本就可以呼叫該方法來格式化腳本的輸出值。
 
 ```xml
 <ListItem>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2f489720-11f6-4019-940e-07f423d4278d
 caps.latest.revision: 6
 ms.openlocfilehash: c5b2d971fe1590116f96b024ae8769334768acf2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363117"
 ---
 # <a name="firstlineindent-element-for-frame-for-controls-for-configuration-format"></a>設定之控制項的框架的 FirstLineIndent 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `FirstLineIndent` 元素的屬性、子專案和父元素。
+下列各節描述 `FirstLineIndent` 元素的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 

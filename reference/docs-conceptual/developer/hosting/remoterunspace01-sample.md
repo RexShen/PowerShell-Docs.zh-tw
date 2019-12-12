@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361007"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 範例
@@ -23,11 +23,11 @@ ms.locfileid: "72361007"
 
  此範例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 - 建立 Wsmanconnectioninfo 物件的的[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。
 
-- 設定[Runspaceconnectioninfo. Operationtimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)的屬性（property），其[內容為。Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的.。
+- 設定 system.servicemodel. [Runspaceconnectioninfo. Operationtimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)物件的屬性（property），請將其設為. 管理[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。
 
 - 建立使用[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的遠端運行時，以建立遠端連線。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d5027c99-9f88-4c59-87ce-8793ef1d2fe3
 caps.latest.revision: 6
 ms.openlocfilehash: 09c893500d1a340c01c0c5254f5f4fbbed7264bf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363257"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format"></a>設定之控制項的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `EnumerateCollection` 元素的父元素。
+下列各節說明屬性、子專案，以及 `EnumerateCollection` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

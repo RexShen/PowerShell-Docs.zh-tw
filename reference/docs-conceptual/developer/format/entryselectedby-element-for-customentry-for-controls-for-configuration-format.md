@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
 ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368767"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
@@ -33,7 +33,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `EntrySelectedBy` 元素的父元素。
+下列各節說明屬性、子專案，以及 `EntrySelectedBy` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -43,9 +43,9 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 定義必須存在的條件，才能使用通用控制項定義。|
-|[設定之控制項的之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定一組使用此通用控制項定義的 .NET 類型。|
-|[設定之控制項的之 entryselectedby 的 TypeName 元素（格式）](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定使用此通用控制項定義的 .NET 類型。|
+|[設定之控制項的之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義必須存在的條件，才能使用通用控制項定義。|
+|[設定之控制項的之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定一組使用此通用控制項定義的 .NET 類型。|
+|[設定之控制項的之 entryselectedby 的 TypeName 元素（格式）](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定使用此通用控制項定義的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
 caps.latest.revision: 10
 ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368967"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>設定之控制項的控制項 CustomControl 元素 (格式)
@@ -31,7 +31,7 @@ ms.locfileid: "72368967"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `CustomControl` 元素的父元素。 此元素必須至少有一個子專案。 可以指定的子項目數目沒有上限。
+下列各節說明屬性、子專案，以及 `CustomControl` 專案的父元素。 此元素必須至少有一個子專案。 可以指定的子項目數目沒有上限。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ ms.locfileid: "72368967"
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
+|[設定之 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 

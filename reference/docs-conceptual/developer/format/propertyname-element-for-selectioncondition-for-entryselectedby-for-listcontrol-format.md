@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 71c3f1f6-6fe2-42f1-8260-6974d3871748
 caps.latest.revision: 11
 ms.openlocfilehash: 7d526372cf80327b3fb9b79b6e83429c57780183
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362287"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
 
-指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，而且會使用清單專案。
+指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，而且會使用清單專案。
 
 Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） ListControl 元素（格式） ListEntries 元素（格式） ListEntry 元素（格式）之 entryselectedby 元素（代表的 ListEntry （格式） SelectionCondition 元素）之 entryselectedby for ListEntry （Format） PropertyName 元素 for 之 entryselectedby for ListEntry 的 SelectionCondition （格式）
 
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `PropertyName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `PropertyName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

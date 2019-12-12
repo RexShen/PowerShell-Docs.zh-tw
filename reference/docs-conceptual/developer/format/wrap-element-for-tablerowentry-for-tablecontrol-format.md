@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
 caps.latest.revision: 11
 ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361387"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `Wrap` 元素的屬性、子項目和父元素。
+下列各節說明屬性、子專案，以及 `Wrap` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

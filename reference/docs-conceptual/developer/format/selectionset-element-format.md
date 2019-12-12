@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
 caps.latest.revision: 17
 ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368377"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet 元素 (格式)
@@ -40,14 +40,14 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
-|[SelectionSet 的名稱元素（格式）](./name-element-for-selectionset-format.md)|必要元素。<br /><br /> 指定用來參考選取集的名稱。|
-|[Types 元素（格式）](./types-element-for-selectionset-format.md)|必要元素。<br /><br /> 定義選取集中的 .NET 物件。|
+|[SelectionSet 的名稱元素（格式）](./name-element-for-selectionset-format.md)|必要項目。<br /><br /> 指定用來參考選取集的名稱。|
+|[Types 元素（格式）](./types-element-for-selectionset-format.md)|必要項目。<br /><br /> 定義選取集中的 .NET 物件。|
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[SelectionSets 元素格式](./selectionsets-element-format.md)|定義一組通用的 .NET 物件，可供格式化檔案的所有視圖使用。|
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
 caps.latest.revision: 14
 ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363387"
 ---
 # <a name="controls-element-for-view-format"></a>檢視的控制項元素 (格式)
@@ -31,7 +31,7 @@ ms.locfileid: "72363387"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `Controls` 元素的屬性、子專案和父元素。 此元素必須至少有一個子專案。 子項目沒有最大數目，也沒有順序重要性。
+下列各節描述 `Controls` 專案的屬性、子專案和父項目。 此元素必須至少有一個子專案。 子項目沒有最大數目，也沒有順序重要性。
 
 ### <a name="attributes"></a>屬性
 

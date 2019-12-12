@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: fc48a417-2083-46d4-ac38-16c12e65b6b9
 caps.latest.revision: 7
 ms.openlocfilehash: e08037d5d051d3be51e90193c7e87cc2e738f78a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362347"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 SelectionCondition 的 PropertyName 元素 (格式)
 
-指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
+指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
 
 Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素 for view （format） CustomEntries 元素 for CustomEntry for view （format） CustomEntries 元素Format） CustomItem 元素，用於 CustomControl for view （format） CustomEntry for CustomControl for view （format） SelectionCondition 元素之 entryselectedby for view （格式） PropertyNameCustomControl for View 的 SelectionCondition 元素（格式）
 
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `PropertyName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `PropertyName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

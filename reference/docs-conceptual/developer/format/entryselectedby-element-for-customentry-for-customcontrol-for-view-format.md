@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7828b45b-eabf-4432-b127-131b4ef0c800
 caps.latest.revision: 8
 ms.openlocfilehash: e7176f9f6ef67116ea7c07a46797fb0ba84f915d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368777"
 ---
 # <a name="entryselectedby-element-for-customentry-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntry 的 EntrySelectedBy 元素 (格式)
@@ -33,7 +33,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `EntrySelectedBy` 元素的父元素。
+下列各節說明屬性、子專案，以及 `EntrySelectedBy` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -43,9 +43,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomEntry 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|選擇性元素。<br /><br /> 定義必須存在才能使用此定義的條件。|
-|[CustomEntry 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定一組使用此控制項視圖定義的 .NET 類型。|
-|[CustomEntry 之之 entryselectedby 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定使用此控制項視圖定義的 .NET 類型。|
+|[CustomEntry 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|選擇性項目。<br /><br /> 定義必須存在才能使用此定義的條件。|
+|[CustomEntry 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定一組使用此控制項視圖定義的 .NET 類型。|
+|[CustomEntry 之之 entryselectedby 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定使用此控制項視圖定義的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 
@@ -57,7 +57,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 您必須為專案指定至少一種類型、選擇集或選取條件。 您可以使用的子項目數目沒有上限。
 
-選取條件是用來定義要使用的專案必須存在的條件，例如當物件具有特定屬性時，或特定屬性值或腳本評估為 `true` 時。 如需選取條件的詳細資訊，請參閱[定義使用視圖專案或專案時的條件](./defining-conditions-for-displaying-data.md)。
+選取條件是用來定義必須存在才能使用之專案的條件，例如當物件具有特定屬性時，或特定屬性值或腳本評估為 `true`時。 如需選取條件的詳細資訊，請參閱[定義使用視圖專案或專案時的條件](./defining-conditions-for-displaying-data.md)。
 
 如需自訂控制項視圖之元件的詳細資訊，請參閱[自訂控制項視圖](./creating-custom-controls.md)。
 

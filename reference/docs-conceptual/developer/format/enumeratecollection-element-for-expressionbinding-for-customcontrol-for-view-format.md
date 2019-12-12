@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3182c0c5-ba43-4d00-b3e0-27f24d272b2f
 caps.latest.revision: 9
 ms.openlocfilehash: b0ed329600811206b8569b864032825818841479
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363227"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `EnumerateCollection` 元素的父元素。
+下列各節說明屬性、子專案，以及 `EnumerateCollection` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

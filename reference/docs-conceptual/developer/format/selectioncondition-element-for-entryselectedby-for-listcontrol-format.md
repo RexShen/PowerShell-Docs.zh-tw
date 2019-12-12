@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
 ms.openlocfilehash: 7150b29ad84dfb587215ee3e64c356adbd5a6305
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417549"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
@@ -42,7 +42,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|元素|說明|
+|元素|描述|
 |-------------|-----------------|
 |[ListEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
 |[ListEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
@@ -51,7 +51,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|說明|
+|元素|描述|
 |-------------|-----------------|
 |[TableRowEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義使用此資料表專案的 .NET 類型，或必須存在才能使用此專案的條件。|
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
 caps.latest.revision: 9
 ms.openlocfilehash: db7ff3a2dbd92f562379d206db494ab92ef08736
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367297"
 ---
 # <a name="windows-powershell02-sample"></a>Windows PowerShell02 範例
@@ -23,9 +23,9 @@ ms.locfileid: "72367297"
 
 - 此範例需要 Windows PowerShell 2.0。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
-這個範例會示範下列各項：
+這個範例示範下列作業：
 
 - 建立 RunspacePool 物件，其中包含允許同時開啟的最小和最大執行空間數目。
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
 caps.latest.revision: 9
 ms.openlocfilehash: 6f6640afb15b3608669538f9b5f53d7a8a5c380d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365747"
 ---
 # <a name="declaring-properties-as-parameters"></a>將屬性宣告為參數
 
 本主題提供您在宣告 Cmdlet 的參數之前必須瞭解的基本資訊。
 
-若要在您的 Cmdlet 類別中宣告 Cmdlet 的參數，請定義代表每個參數的公用屬性，然後將一個或多個參數屬性加入至每個屬性。 Windows PowerShell 執行時間會使用參數屬性，將屬性識別為 Cmdlet 參數。 宣告參數屬性的基本語法為 `[Parameter()]`。
+若要在您的 Cmdlet 類別中宣告 Cmdlet 的參數，請定義代表每個參數的公用屬性，然後將一個或多個參數屬性加入至每個屬性。 Windows PowerShell 執行時間會使用參數屬性，將屬性識別為 Cmdlet 參數。 `[Parameter()]`宣告參數屬性的基本語法。
 
 以下是定義為必要參數之屬性的範例。
 

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
 ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368587"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為 `true` 時，就會符合條件，並使用清單專案。
+指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用清單專案。
 
 Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） ListControl 元素（格式） ListEntries 元素（格式） ListEntry 元素（格式）之 entryselectedby 元素（代表的 ListEntry （格式） SelectionCondition 元素）之 entryselectedby for ListEntry （Format） ScriptBlock 元素 for 之 entryselectedby for ListEntry 的 SelectionCondition （格式）
 
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -63,7 +63,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 [ListEntry 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[清單視圖](./creating-a-list-view.md)
+[清單檢視](./creating-a-list-view.md)
 
 [定義使用視圖專案或專案時的條件](./defining-conditions-for-displaying-data.md)
 

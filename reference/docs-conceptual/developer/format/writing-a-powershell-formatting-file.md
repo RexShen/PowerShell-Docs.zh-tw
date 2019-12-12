@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39acce45-5144-43ba-894d-a4ce782fa67d
 caps.latest.revision: 13
 ms.openlocfilehash: f89f0009972d5237d71cb8f0d1c53cd0ae614b67
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361407"
 ---
 # <a name="writing-a-powershell-formatting-file"></a>撰寫 PowerShell 格式設定檔案
@@ -21,7 +21,7 @@ ms.locfileid: "72361407"
 
 ## <a name="in-this-section"></a>在本節中
 
-[格式化檔案總覽](./formatting-file-overview.md)描述什麼是格式檔案，以及格式化檔案的一般元件，包括可以在檔案中定義的一般功能、可針對 .NET 物件定義的不同格式 views 類型，以及用來定義資料表 v 的簡單 XML 範例。檢視 i）.
+[格式化檔案總覽](./formatting-file-overview.md)描述什麼是格式檔案，以及格式化檔案的一般元件，包括可以在檔案中定義的一般功能、可針對 .NET 物件定義的不同格式 views 類型，以及用來定義資料表視圖之 XML 的簡單範例。
 
 [格式化檔案概念](./formatting-file-concepts.md)包含您在建立自己的格式化檔案時可能需要知道的資訊，例如您可以定義的不同檢視類型，以及這些視圖的特殊元件。
 

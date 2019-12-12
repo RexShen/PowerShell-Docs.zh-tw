@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
 caps.latest.revision: 16
 ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368947"
 ---
 # <a name="creating-a-wide-view"></a>建立寬型檢視
@@ -76,11 +76,11 @@ View>
 
 - [Name](./name-element-for-view-format.md)元素會指定視圖的名稱。 所有的視圖都需要此元素。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此為必要元素。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此項目為必要項。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這個元素是選擇性的。
+- [GroupBy](./groupby-element-for-view-format.md)元素會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這是選擇性的項目。
 
-- [Controls](./controls-element-for-view-format.md)元素會定義寬視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這個元素是選擇性的。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
+- [Controls](./controls-element-for-view-format.md)元素會定義寬視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這是選擇性的項目。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
 
 - [WideControl](./widecontrol-element-format.md)元素及其子項目會定義要在視圖中顯示的內容。 在上述範例中，此視圖設計為顯示[Processname](/dotnet/api/System.Diagnostics.Process.ProcessName)屬性。
 
@@ -108,11 +108,11 @@ View>
 
 - [WideControl](./widecontrol-element-format.md)元素及其子項目會定義要在視圖中顯示的內容。
 
-- [AutoSize](./autosize-element-for-widecontrol-format.md)元素會指定資料行大小和資料行數目是否根據資料的大小來調整。 這個元素是選擇性的。
+- [AutoSize](./autosize-element-for-widecontrol-format.md)元素會指定資料行大小和資料行數目是否根據資料的大小來調整。 這是選擇性的項目。
 
-- [ColumnNumber](./columnnumber-element-for-widecontrol-format.md)元素會指定在寬視圖中顯示的資料行數目。 這個元素是選擇性的。
+- [ColumnNumber](./columnnumber-element-for-widecontrol-format.md)元素會指定在寬視圖中顯示的資料行數目。 這是選擇性的項目。
 
-- [WideEntries](./wideentries-element-for-widecontrol-format.md)元素會提供視圖的定義。 在大部分的情況下，視圖只會有一個定義。 此為必要元素。
+- [WideEntries](./wideentries-element-for-widecontrol-format.md)元素會提供視圖的定義。 在大部分的情況下，視圖只會有一個定義。 此項目為必要項。
 
 - [WideEntry](./wideentry-element-for-widecontrol-format.md)元素會提供 view 的定義。 至少需要一個[WideEntry](./wideentry-element-for-widecontrol-format.md) ;不過，您可以新增的專案數沒有最大限制。 在大部分的情況下，視圖只會有一個定義。
 
@@ -124,7 +124,7 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md)元素會指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-- [[字串](./formatstring-element-for-wideitem-for-widecontrol-format.md)類型] 元素會指定用來顯示資料的模式。 這個元素是選擇性的。
+- [[字串](./formatstring-element-for-wideitem-for-widecontrol-format.md)類型] 元素會指定用來顯示資料的模式。 這是選擇性的項目。
 
 如需定義寬視圖定義的完整格式檔案範例，請參閱[寬視圖（基本）](./wide-view-basic.md)。
 
@@ -210,11 +210,11 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-groupby-format.md)元素會指定在每次其值變更時啟動新群組的腳本。 您必須指定腳本或屬性來啟動群組，但不能同時指定這兩者。
 
-- [Label](./label-element-for-groupby-format.md)元素會定義在每個群組的開頭顯示的標籤。 除了此元素所指定的文字之外，Windows PowerShell 還會顯示觸發新群組的值，並在標籤前後加上空白行。 這個元素是選擇性的。
+- [Label](./label-element-for-groupby-format.md)元素會定義在每個群組的開頭顯示的標籤。 除了此元素所指定的文字之外，Windows PowerShell 還會顯示觸發新群組的值，並在標籤前後加上空白行。 這是選擇性的項目。
 
-- [CustomControl](./customcontrol-element-for-groupby-format.md)元素會定義用來顯示資料的控制項。 這個元素是選擇性的。
+- [CustomControl](./customcontrol-element-for-groupby-format.md)元素會定義用來顯示資料的控制項。 這是選擇性的項目。
 
-- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素會指定用來顯示資料的通用或 view 控制項。 這個元素是選擇性的。
+- [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素會指定用來顯示資料的通用或 view 控制項。 這是選擇性的項目。
 
 如需定義群組之完整格式檔案的範例，請參閱[寬視圖（GroupBy）](./wide-view-groupby.md)。
 
@@ -239,7 +239,7 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md)元素（未顯示）會指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-在下列範例中，會呼叫 `ToString` 方法來格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），則腳本可以呼叫該方法來格式化腳本的輸出值。
+在下列範例中，會呼叫 `ToString` 方法，以格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），腳本就可以呼叫該方法來格式化腳本的輸出值。
 
 ```xml
 <WideItem>

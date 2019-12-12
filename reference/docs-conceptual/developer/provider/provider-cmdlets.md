@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d2465420-0970-4408-9ee5-260cf444cb67
 caps.latest.revision: 8
 ms.openlocfilehash: e6a0711cff6a550100f584fb64ae7f59f71a3cfb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359977"
 ---
 # <a name="provider-cmdlets"></a>提供者 Cmdlet
@@ -67,25 +67,25 @@ ms.locfileid: "72359977"
 
 - `Clear-Content`：此 Cmdlet 可讓使用者刪除專案中的內容，而不刪除專案。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Clearcontent](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)和[IcontentCmdletprovider... Clearcontentdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法。
 
-- `Get-Content`：此 Cmdlet 可讓使用者取得專案的內容。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Getcontentreader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)和[IcontentCmdletprovider. Getcontentreaderdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters) 。方法. [IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法會傳回[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)介面，其會定義用來讀取內容的方法（該介面會使用）。
+- `Get-Content`：此 Cmdlet 可讓使用者取得專案的內容。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Getcontentreader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)和[IcontentCmdletprovider... Getcontentreaderdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)方法。 [IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法會傳回[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)介面，其會定義用來讀取內容的方法（該介面會使用）。
 
-- `Set-Content`：此 Cmdlet 可讓使用者更新專案的內容。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Getcontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)和[IcontentCmdletprovider. Getcontentwriterdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters) 。方法. [IcontentCmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法會傳回[Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)介面，其會定義用來寫入內容的方法（method）。）。
+- `Set-Content`：此 Cmdlet 可讓使用者更新專案的內容。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Getcontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)和[IcontentCmdletprovider... Getcontentwriterdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)方法。 [IcontentCmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法會傳回[Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)介面，其會定義用來寫入內容的方法（method）。）。
 
 ### <a name="item-property-cmdlets"></a>Item 屬性 Cmdlet
 
-- `Clear-ItemProperty`：此 Cmdlet 可讓使用者刪除屬性的值。 若要支援這個指令程式，請覆寫[IpropertyCmdletprovider. Clearproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)和[IpropertyCmdletprovider. Clearpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) 。方法.
+- `Clear-ItemProperty`：此 Cmdlet 可讓使用者刪除屬性的值。 若要支援這個指令程式，請覆寫[IpropertyCmdletprovider. Clearproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)和[IpropertyCmdletprovider... Clearpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)方法。
 
-- `Copy-ItemProperty`：此 Cmdlet 可讓使用者將屬性和其值從一個位置複製到另一個位置。 若要支援此 Cmdlet，請覆寫[IdynamicpropertyCmdletprovider. Copyproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)和[IdynamicpropertyCmdletprovider. Copypropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)方法的。
+- `Copy-ItemProperty`：此 Cmdlet 可讓使用者將屬性和其值從一個位置複製到另一個位置。 若要支援這個指令程式，請覆寫[IdynamicpropertyCmdletprovider. Copyproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)和[IdynamicpropertyCmdletprovider... Copypropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)方法。
 
 - `Get-ItemProperty`：此 Cmdlet 會抓取專案的屬性。 若要支援這個指令程式，請覆寫[IpropertyCmdletprovider. Getproperty](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)和[IpropertyCmdletprovider... Getpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)方法。
 
-- `Move-ItemProperty`：此 Cmdlet 可讓使用者將屬性和其值從一個位置移到另一個位置。 若要支援此 Cmdlet，請覆寫[IdynamicpropertyCmdletprovider. Moveproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)和[IdynamicpropertyCmdletprovider. Movepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)方法的。
+- `Move-ItemProperty`：此 Cmdlet 可讓使用者將屬性和其值從一個位置移到另一個位置。 若要支援這個指令程式，請覆寫[IdynamicpropertyCmdletprovider. Moveproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)和[IdynamicpropertyCmdletprovider... Movepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)方法。
 
-- `New-ItemProperty`：此 Cmdlet 可讓使用者建立新的屬性，並設定其值。 若要支援這個指令程式，請覆寫[IdynamicpropertyCmdletprovider. Newproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)和[IdynamicpropertyCmdletprovider. Newpropertydynamicparameters。](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)方法。
+- `New-ItemProperty`：此 Cmdlet 可讓使用者建立新的屬性，並設定其值。 若要支援這個指令程式，請覆寫[IdynamicpropertyCmdletprovider. Newproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)和[IdynamicpropertyCmdletprovider... Newpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)方法。
 
-- `Remove-ItemProperty`：此 Cmdlet 可讓使用者刪除屬性及其值。 若要支援此 Cmdlet，請覆寫[IdynamicpropertyCmdletprovider. Removeproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)和[IdynamicpropertyCmdletprovider. Removepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)方法的。
+- `Remove-ItemProperty`：此 Cmdlet 可讓使用者刪除屬性及其值。 若要支援這個指令程式，請覆寫[IdynamicpropertyCmdletprovider. Removeproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)和[IdynamicpropertyCmdletprovider... Removepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)方法。
 
-- `Rename-ItemProperty`：此 Cmdlet 可讓使用者變更屬性的名稱。 若要支援此 Cmdlet，請覆寫[IdynamicpropertyCmdletprovider. Renameproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)和[IdynamicpropertyCmdletprovider. Renamepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)方法的。
+- `Rename-ItemProperty`：此 Cmdlet 可讓使用者變更屬性的名稱。 若要支援這個指令程式，請覆寫[IdynamicpropertyCmdletprovider. Renameproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)和[IdynamicpropertyCmdletprovider... Renamepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)方法。
 
 - `Set-ItemProperty`：此 Cmdlet 可讓使用者更新專案的屬性。 若要支援此指令程式，請覆寫[IpropertyCmdletprovider.](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) [IpropertyCmdletprovider. Setpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)方法.....。
 

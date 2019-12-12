@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
 caps.latest.revision: 9
 ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362737"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListControl 之 ListEntry 的 ListItems 元素 (格式)
@@ -31,7 +31,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `ListItems` 元素的屬性、子專案和父元素。 可以指定的子項目數目沒有限制。 子專案的順序會定義在清單視圖中顯示值的順序。
+下列各節描述 `ListItems` 專案的屬性、子專案和父項目。 可以指定的子項目數目沒有限制。 子專案的順序會定義在清單視圖中顯示值的順序。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[ListControl 的專案元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)|必要元素。<br /><br /> 定義清單視圖會顯示其值的屬性或腳本。|
+|[ListControl 的專案元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)|必要項目。<br /><br /> 定義清單視圖會顯示其值的屬性或腳本。|
 
 ### <a name="parent-elements"></a>父元素
 

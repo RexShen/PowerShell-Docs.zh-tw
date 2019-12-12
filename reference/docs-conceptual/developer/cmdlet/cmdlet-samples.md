@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
 ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365877"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet 範例
@@ -31,7 +31,7 @@ ms.locfileid: "72365877"
 
 [GetProcessSample05 範例](./getprocesssample05-sample.md)這個範例會顯示完整版的 Get Proc Cmdlet。
 
-[StopProcessSample01 範例](./stopprocesssample01-sample.md)這個範例示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件。
+[StopProcessSample01 範例](./stopprocesssample01-sample.md)這個範例會示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件。
 
 [StopProcessSample02 範例](./stopprocesssample02-sample.md)這個範例示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時寫入 debug、verbose 和警告訊息。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5f1f0f95-1e0a-4607-ab68-bdf85ef29448
 caps.latest.revision: 9
 ms.openlocfilehash: c52cb4c93512090024b43504d382f6dc7255f19a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368487"
 ---
 # <a name="scriptblock-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl 之 TableColumnItem 的 ScriptBlock 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

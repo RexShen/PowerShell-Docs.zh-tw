@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
 ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366607"
 ---
 # <a name="runspace02-vbnet-code-sample"></a>Runspace02 (VB.NET) 程式碼範例
 
 以下是 Runspace02 範例的 VB.NET 原始程式碼。 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別，以同步方式執行 `Get-Process` Cmdlet。 接著會使用 Windows Forms 和資料系結，在 DataGridView 控制項中顯示結果。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 ```vb
 Imports System

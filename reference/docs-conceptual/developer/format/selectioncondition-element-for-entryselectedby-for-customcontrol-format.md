@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
 caps.latest.revision: 7
 ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368437"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>CustomControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
@@ -34,7 +34,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 元素的父元素。
+下列各節說明屬性、子專案，以及 `SelectionCondition` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -44,10 +44,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[SelectionCondition for CustomControl for View 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[SelectionCondition for CustomControl for View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本。|
-|[View 的自訂控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[SelectionCondition for CustomControl for View 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[SelectionCondition for CustomControl for View 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[SelectionCondition for CustomControl for View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[View 的自訂控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[SelectionCondition for CustomControl for View 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 

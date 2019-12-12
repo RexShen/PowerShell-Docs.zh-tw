@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 9ae11924-0072-451e-bf70-c5ffb25dccc0
 caps.latest.revision: 13
 ms.openlocfilehash: 0c20512e660c8d2b61d063dbd7078b55b23efeb8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362317"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
 
-指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true` 時，就會符合條件，並使用定義。
+指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為 `true`時，就會符合條件，並使用定義。
 
 EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元素的 DefaultSettings 元素（格式） EnumerableExpansions 元素（格式） EnumerableExpansion 元素（格式）之 entryselectedby 元素EnumerableExpansion 的之 entryselectedby 之 SelectionCondition 的 EnumerableExpansion （格式） PropertyName 元素（格式）
 
@@ -29,7 +29,7 @@ EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `PropertyName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `PropertyName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

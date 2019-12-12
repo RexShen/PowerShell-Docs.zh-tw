@@ -16,10 +16,10 @@ helpviewer_keywords:
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
 ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364627"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>新增處理命令列輸入的參數
@@ -47,9 +47,9 @@ Public Class GetProcCommand
 
 Cmdlet 參數可讓使用者提供 Cmdlet 的輸入。 在下列範例中， **Proc**和 `Get-Member` 是管線 Cmdlet 的名稱，而 `MemberType` 是 `Get-Member` Cmdlet 的參數。 參數的引數為 "property"。
 
-**PS > get 進程; `get-member` membertype 屬性**
+**PS > get 進程;`get-member` membertype 屬性**
 
-若要宣告 Cmdlet 的參數，您必須先定義代表參數的屬性。 在**Get-Proc** Cmdlet 中，唯一的參數是 `Name`，在此案例中代表要抓取 .NET Framework 進程物件的名稱。 因此，Cmdlet 類別會定義字串類型的屬性，以接受名稱陣列。
+若要宣告 Cmdlet 的參數，必須先定義代表參數的屬性。 在**Get-Proc** Cmdlet 中，唯一的參數是 `Name`，在此案例中代表要抓取 .NET Framework 進程物件的名稱。 因此，Cmdlet 類別會定義字串類型的屬性，以接受名稱陣列。
 
 以下是**get-help** Cmdlet 之 `Name` 參數的參數宣告。
 
@@ -83,7 +83,7 @@ Public Property Name() As String()
 End Property
 ```
 
-為了通知 Windows PowerShell 執行時間此屬性為 `Name` 參數，會將[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性新增至屬性定義。 @No__t_0 宣告這個屬性的基本語法。
+為了通知 Windows PowerShell 執行時間此屬性為 `Name` 參數，會將[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性新增至屬性定義。 `[Parameter()]`宣告這個屬性的基本語法。
 
 > [!NOTE]
 > 參數必須明確標示為公用。 未標示為公用的參數預設為內部，Windows PowerShell 執行時間找不到。
@@ -94,7 +94,7 @@ End Property
 
 - 預先定義的 Windows PowerShell 參數名稱和資料類型應該盡可能重複使用，以確保您的 Cmdlet 與 Windows PowerShell Cmdlet 相容。 例如，如果所有 Cmdlet 都使用預先定義的 `Id` 參數名稱來識別資源，則無論參數的用途為何，使用者都能輕易地瞭解其意義。 基本上，參數名稱會遵循 common language runtime （CLR）中用於變數名稱的相同規則。 如需參數命名的詳細資訊，請參閱[Cmdlet 參數名稱](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)。
 
-- Windows PowerShell 會保留幾個參數名稱，以提供一致的使用者體驗。 請勿使用這些參數名稱： `WhatIf`、`Confirm`、`Verbose`、`Debug`、`Warn`、`ErrorAction`、`ErrorVariable`、`OutVariable` 和 `OutBuffer`。 此外，系統會保留這些參數名稱的下列別名： `vb`、`db`、`ea`、`ev`、`ov` 和 `ob`。
+- Windows PowerShell 會保留幾個參數名稱，以提供一致的使用者體驗。 請勿使用這些參數名稱： `WhatIf`、`Confirm`、`Verbose`、`Debug`、`Warn`、`ErrorAction`、`ErrorVariable`、`OutVariable`和 `OutBuffer`。 此外，系統會保留這些參數名稱的下列別名： `vb`、`db`、`ea`、`ev`、`ov`和 `ob`。
 
 - `Name` 是簡單且通用的參數名稱，建議您在 Cmdlet 中使用。 最好是選擇與特定指令程式特有的參數名稱，而不是特殊的名稱，因此很難記住。
 
@@ -129,7 +129,7 @@ public string[] Name
 
 如果您的 Cmdlet 是用來處理命令列輸入，它必須覆寫適當的輸入處理方法。 基本輸入處理方法會在[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)中引進。
 
-**Get-help** Cmdlet 會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理使用者或腳本所提供的 `Name` 的參數輸入。 這個方法會取得每個要求之進程名稱的進程，如果未提供任何名稱，則為所有進程。 請注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，對[WriteObject% 28system.string 29> 的呼叫。布林值% 29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是用來將輸出物件傳送至的輸出機制，可用於管線. 此呼叫的第二個參數（`enumerateCollection`）會設定為 `true`，以通知 Windows PowerShell 執行時間列舉處理常式物件的輸出陣列，並一次將一個進程寫入命令列。
+**Get-help** Cmdlet 會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理使用者或腳本所提供的 `Name` 的參數輸入。 這個方法會取得每個要求之進程名稱的進程，如果未提供任何名稱，則為所有進程。 請注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，對[WriteObject% 28system.string 29> 的呼叫。布林值 %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是將輸出物件傳送至管線所用的輸出機制（output）。 此呼叫的第二個參數（`enumerateCollection`）會設定為 `true`，以通知 Windows PowerShell 執行時間列舉處理常式物件的輸出陣列，並一次將一個進程寫入命令列。
 
 ```csharp
 protected override void ProcessRecord()
@@ -176,7 +176,7 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整C#的範例程式碼，請參閱[GetProcessSample02 範例](./getprocesssample02-sample.md)。
 

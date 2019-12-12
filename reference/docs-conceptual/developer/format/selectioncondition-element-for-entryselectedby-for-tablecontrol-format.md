@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 912f3e63-e4d5-41ce-8710-6dfd8c885dc2
 caps.latest.revision: 12
 ms.openlocfilehash: 2faca6021dc26878869bdd2d35bc4ffc64d0fe7b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368387"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
@@ -44,10 +44,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本。|
-|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[TableRowEntry 之之 entryselectedby 的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 

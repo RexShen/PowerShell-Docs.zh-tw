@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
 caps.latest.revision: 12
 ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362757"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListControl 的 ListEntries 元素 (格式)
@@ -31,7 +31,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ListEntries` 元素的父元素。 至少必須指定一個子項目。
+下列各節說明屬性、子專案，以及 `ListEntries` 專案的父元素。 至少必須指定一個子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -79,6 +79,6 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 [ListEntry 元素（格式）](./listentry-element-for-listcontrol-format.md)
 
-[清單視圖](./creating-a-list-view.md)
+[清單檢視](./creating-a-list-view.md)
 
 [撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)

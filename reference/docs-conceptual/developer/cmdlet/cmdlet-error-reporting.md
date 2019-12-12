@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
 ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365917"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet 錯誤報表
@@ -43,7 +43,7 @@ Cmdlet 應該根據錯誤是終止錯誤還是非終止錯誤，以不同的方�
 
 ## <a name="reporting-nonterminating-errors"></a>報告非終止錯誤
 
-非終止錯誤的報告應一律在 Cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法（ [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法）中執行，或的指令程式（或）的程式中，system.servicemodel[方法....](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 這些類型的錯誤會藉由呼叫[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法來回報，然後再將錯誤記錄傳送至錯誤資料流程。
+非終止錯誤的報告應一律在 Cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法、 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法或 system.servicemodel 方法的執行中完成。（可能為 system. 管理元件），或[系統管理](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)元件（EndProcessing）方法。 這些類型的錯誤會藉由呼叫[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)方法來回報，然後再將錯誤記錄傳送至錯誤資料流程。
 
 ## <a name="reporting-terminating-errors"></a>報告終止錯誤
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
 ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359917"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell 提供者快速入門
@@ -21,7 +21,7 @@ ms.locfileid: "72359917"
 
 ## <a name="writing-a-basic-provider"></a>撰寫基本提供者
 
-Windows PowerShell 提供者的最基本功能是建立和移除磁片磁碟機。 在此範例中，我們會將[DriveCmdletprovider * Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)和的[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法[提供給下列系統。DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別的功能。 您也會看到如何宣告提供者類別。
+Windows PowerShell 提供者的最基本功能是建立和移除磁片磁碟機。 在此範例中，我們會將 Newdrive * 和 DriveCmdletprovider 類別的 DriveCmdletprovider * 方法，實作為[*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) ，然後再執行. [Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive) . [. 管理介面](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)。 您也會看到如何宣告提供者類別。
 
 當您撰寫提供者時，可以指定在提供者可用時自動建立的預設磁片磁碟機（磁片磁碟機）。 您也會定義方法，以建立使用該提供者的新磁片磁碟機。
 
@@ -35,7 +35,7 @@ Windows PowerShell 提供者的最基本功能是建立和移除磁片磁碟機�
 
 1. 將 System.webserver 元件新增為您專案的參考。
 
-2. 按一下 **專案 > AccessDBProviderSample 屬性 > Debug**。 在 [**起始專案**] 中，按一下 [**啟動外部程式**]，然後流覽至 Windows PowerShell 可執行檔（通常是 c:\Windows\System32\WindowsPowerShell\v1.0 \\）。
+2. 按一下 **專案 > AccessDBProviderSample 屬性 > Debug**。 在 [**起始專案**] 中，按一下 [**啟動外部程式**]，然後流覽至 Windows PowerShell 可執行檔（通常是 c:\Windows\System32\WindowsPowerShell\v1.0\\）。
 
 3. 在 [**起始選項**] 底下的 [**命令列引數**] 方塊中輸入下列內容： `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
@@ -43,7 +43,7 @@ Windows PowerShell 提供者的最基本功能是建立和移除磁片磁碟機�
 
 我們的提供者衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別。 大部分提供實際功能（存取和操作專案、流覽資料存放區，以及取得和設定專案內容）的提供者，都是衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
 
-除了指定類別衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)，您也必須使用 [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) 來裝飾它，如範例中所示的，如下所示。
+除了指定類別衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)，您也必須使用[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) （如範例中所示）來裝飾它，然後再加以修飾。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>執行 NewDrive
 
-當使用者呼叫[NewPSDriveCommand 指令](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand)程式，並指定您的名稱時，Windows PowerShell 引擎會呼叫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法，並指定您的那裡. PSDriveInfo 參數是由 Windows PowerShell 引擎所傳遞，而方法會將新的磁片磁碟機傳回 Windows PowerShell 引擎。 這個方法必須在上面建立的類別中宣告。
+當使用者呼叫[NewPSDriveCommand 指令](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand)程式，並指定提供者的名稱時，Windows PowerShell 引擎就會呼叫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法（）。 PSDriveInfo 參數是由 Windows PowerShell 引擎所傳遞，而方法會將新的磁片磁碟機傳回 Windows PowerShell 引擎。 這個方法必須在上面建立的類別中宣告。
 
 方法會先檢查並確定已傳入的磁片磁碟機物件和磁片磁碟機根目錄，如果其中之一不存在，則傳回 `null`。 然後，它會使用內部類別 AccessDBPSDriveInfo 的函式來建立新的磁片磁碟機，以及連接到磁片磁碟機所代表的 Access 資料庫。
 

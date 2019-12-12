@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 9e576199-49c7-4355-9686-f9ed40c64a5f
 caps.latest.revision: 10
 ms.openlocfilehash: aa67bb605f90c1ea40323b4583766069ff1226fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359987"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
 這個範例會示範如何覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，以支援 `Get-Item` 和 `Set-Item` Cmdlet 的呼叫，並將其提供給。 這個範例中的提供者類別衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 > [!IMPORTANT]
 > 您的提供者類別很可能會衍生自下列其中一個類別，而且可能會執行其他提供者介面：
@@ -30,7 +30,7 @@ ms.locfileid: "72359987"
 >
 > 如需有關根據提供者功能來選擇衍生自哪個提供者類別的詳細資訊，請參閱[設計您的 Windows PowerShell 提供者](./provider-types.md)。
 
-這個範例會示範下列各項：
+這個範例示範下列作業：
 
 - 宣告 `CmdletProvider` 屬性。
 

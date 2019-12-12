@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
 ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417519"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 程式碼範例
@@ -26,7 +26,7 @@ ms.locfileid: "74417519"
 >
 > 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 ```csharp
 using System;

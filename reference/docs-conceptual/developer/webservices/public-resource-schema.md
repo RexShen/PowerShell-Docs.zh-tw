@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
 ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366267"
 ---
 # <a name="public-resource-schema"></a>公用資源結構描述
@@ -38,9 +38,9 @@ class PswsTest_Process
 
 每個屬性名稱的前面都有一個資料類型。 這個範例中的資料類型會對應至 .NET Framework 中的基本 CLR 資料類型，但屬性也可以參考其他資源或複雜類型，這兩種方式都會在稍後說明。
 
-@No__t-0 限定詞表示使用屬性來唯一識別資源實例。 一個資源可以有一個以上的索引鍵。
+`Key` 限定詞表示會使用屬性來唯一識別資源實例。 一個資源可以有一個以上的索引鍵。
 
-@No__t-0 限定詞表示需要屬性。 如果屬性標記為 `Key` 辨識符號，則會將它視為必要，而且不需要 `Required` 辨識符號。
+`Required` 限定詞表示此為必要屬性。 如果屬性是以 `Key` 限定詞標示，則會將它視為必要，而且不需要 `Required` 限定詞。
 
 ### <a name="complex-data-types"></a>複雜資料類型
 
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-若要將實體屬性宣告為複雜型別，請將它宣告為具有 `EmbeddedInstance` 限定詞的 `string` 型別，包括複雜型別的名稱。 下列範例顯示在上一個範例中宣告的 `PswsTest_ProcessModule` 型別之屬性的宣告。
+若要將實體屬性宣告為複雜型別，請將它宣告為具有 `EmbeddedInstance` 限定詞的 `string` 型別，包括複雜型別的名稱。 下列範例顯示在上一個範例中宣告之 `PswsTest_ProcessModule` 類型的屬性宣告。
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

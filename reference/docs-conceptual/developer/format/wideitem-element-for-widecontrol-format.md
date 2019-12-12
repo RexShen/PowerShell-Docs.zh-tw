@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 17352fc4-ba83-4f04-86bc-f591765d85a8
 caps.latest.revision: 18
 ms.openlocfilehash: fa9eda3ea1028c27dbfb3eb04747af3b817c1a81
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361397"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideControl 的 WideItem 元素 (格式)
@@ -33,7 +33,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `WideItem` 專案的父元素。 `FormatString` 的元素是選擇性的。 不過，您必須指定 `PropertyName` 或 `ScriptBlock` 元素，但不能同時指定這兩個專案。
+下列各節說明屬性、子專案，以及 `WideItem` 專案的父元素。 `FormatString` 元素為選擇性。 不過，您必須指定 `PropertyName` 或 `ScriptBlock` 元素，但不能同時指定這兩個專案。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="child-elements"></a>子元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[WideControl 之之 wideitem 的格式字串元素（格式）](./formatstring-element-for-wideitem-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定定義屬性或腳本值在視圖中顯示方式的格式模式。|
 |[之 wideitem 的 PropertyName 元素（格式）](./propertyname-element-for-wideitem-for-widecontrol-format.md)|指定物件的屬性，其值會顯示在寬視圖中。|
@@ -49,7 +49,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ### <a name="parent-elements"></a>父元素
 
-|項目|說明|
+|元素|描述|
 |-------------|-----------------|
 |[WideEntry 元素（格式）](./wideentry-element-for-widecontrol-format.md)|提供寬視圖的定義。|
 

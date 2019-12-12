@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
 caps.latest.revision: 6
 ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363637"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomItem 的框架元素 (格式)
@@ -35,7 +35,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Frame` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Frame` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -46,10 +46,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 |元素|描述|
 |-------------|-----------------|
 |`CustomItem Element`|必要元素|
-|[FirstLineHanging 元素](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定第一行資料向左移動的字元數。|
-|[FirstLineIndent 元素](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定第一行資料向右移動的字元數。|
-|[LeftIndent 元素](./leftindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定資料從左邊界下移的字元數。|
-|[RightIndent 元素](./rightindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性元素。<br /><br /> 指定資料從右邊界向外移動的字元數。|
+|[FirstLineHanging 元素](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定第一行資料向左移動的字元數。|
+|[FirstLineIndent 元素](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定第一行資料向右移動的字元數。|
+|[LeftIndent 元素](./leftindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定資料從左邊界下移的字元數。|
+|[RightIndent 元素](./rightindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定資料從右邊界向外移動的字元數。|
 
 ### <a name="parent-elements"></a>父元素
 

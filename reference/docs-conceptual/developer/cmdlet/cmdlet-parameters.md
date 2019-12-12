@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365927"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 參數
 
-Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從命令列或透過管線傳遞給 Cmdlet 的物件接受輸入，這些參數的引數（也稱為*值*）可以指定 Cmdlet 接受的輸入，Cmdlet 應如何執行其動作，以及 Cmdlet 傳回給管線的資料。
+Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從命令列或透過管線傳遞給 Cmdlet 的物件接受輸入，這些參數的引數（也稱為*值*）可以指定 Cmdlet 接受的輸入、Cmdlet 應如何執行其動作，以及 Cmdlet 傳回給管線的資料。
 
 ## <a name="in-this-section"></a>在本節中
 
@@ -47,7 +47,7 @@ Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從�
 
 [驗證參數輸入](./validating-parameter-input.md)說明 Windows PowerShell 如何驗證傳遞給 Cmdlet 參數的引數。
 
-[輸入篩選參數](./input-filter-parameters.md)討論 `Filter`、`Include` 和 `Exclude` 參數，以篩選 Cmdlet 所影響的輸入物件集合。
+[輸入篩選參數](./input-filter-parameters.md)討論 `Filter`、`Include`和 `Exclude` 參數，以篩選 Cmdlet 所影響的輸入物件集合。
 
 ## <a name="related-sections"></a>相關章節
 

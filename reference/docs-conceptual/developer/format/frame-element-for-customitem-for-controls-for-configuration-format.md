@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d879c8ce-679d-4622-bc43-c207f6413871
 caps.latest.revision: 9
 ms.openlocfilehash: b11b154a94daccead57bdfb5e579e1de2c190c09
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363657"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-configuration-format"></a>設定之控制項的 CustomItem 的框架元素 (格式)
@@ -35,7 +35,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Frame` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Frame` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -46,10 +46,10 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 |元素|描述|
 |-------------|-----------------|
 |`CustomItem Element`|必要元素|
-|[設定之控制項的框架的 FirstLineHanging 元素（格式）](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定第一行資料向左移動的字元數。|
-|[設定之控制項的框架的 FirstLineIndent 元素（格式）](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定第一行資料向右移動的字元數。|
-|[設定之控制項的框架的 LeftIndent 元素（格式）](./leftindent-element-for-frame-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定資料從左邊界下移的字元數。|
-|[設定之控制項的框架的 RightIndent 元素（格式）](./rightindent-element-for-frame-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定資料從右邊界向外移動的字元數。|
+|[設定之控制項的框架的 FirstLineHanging 元素（格式）](./firstlinehanging-element-for-frame-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定第一行資料向左移動的字元數。|
+|[設定之控制項的框架的 FirstLineIndent 元素（格式）](./firstlineindent-element-for-frame-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定第一行資料向右移動的字元數。|
+|[設定之控制項的框架的 LeftIndent 元素（格式）](./leftindent-element-for-frame-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定資料從左邊界下移的字元數。|
+|[設定之控制項的框架的 RightIndent 元素（格式）](./rightindent-element-for-frame-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定資料從右邊界向外移動的字元數。|
 
 ### <a name="parent-elements"></a>父元素
 

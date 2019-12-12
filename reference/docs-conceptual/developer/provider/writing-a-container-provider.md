@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
 ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366237"
 ---
 # <a name="writing-a-container-provider"></a>撰寫容器提供者
@@ -105,7 +105,7 @@ protected override void GetChildItems(string path, bool recurse)
 
 ### <a name="implementing-getchildnames"></a>執行 GetChildNames
 
-[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法與[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法類似，不同之處在于它只會傳回檔給它的。專案的 name 屬性，而不是專案本身。
+[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法與[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法類似，不同之處在于它只會傳回專案的 name 屬性，而不會傳回這些專案本身的名稱屬性。
 
 ```csharp
 protected override void GetChildNames(string path,

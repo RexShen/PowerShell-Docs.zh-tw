@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4d4ef63d-5866-4319-ba00-7ed96de26821
 caps.latest.revision: 18
 ms.openlocfilehash: ac9f7ff08f6e87ef83b5a2fe23fc58ee2651566d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368997"
 ---
 # <a name="controls-element-for-configuration-format"></a>設定的控制項元素 (格式)
@@ -31,7 +31,7 @@ Configuration 元素（格式）控制設定的元素（格式）
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `Controls` 元素的父元素。
+下列各節說明屬性、子專案，以及 `Controls` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ Configuration 元素（格式）控制設定的元素（格式）
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的控制項元素（格式）](./control-element-for-controls-for-configuration-format.md)|必要元素。<br /><br /> 定義可供格式檔案的所有視圖使用的通用控制項。|
+|[設定之控制項的控制項元素（格式）](./control-element-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 定義可供格式檔案的所有視圖使用的通用控制項。|
 
 ### <a name="parent-elements"></a>父元素
 

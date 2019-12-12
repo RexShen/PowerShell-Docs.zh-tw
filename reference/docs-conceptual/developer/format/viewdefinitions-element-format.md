@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361417"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions 元素 (格式)
@@ -32,7 +32,7 @@ Configuration 元素（格式） ViewDefinitions （格式 XML）元素
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `ViewDefinitions` 元素的屬性、子專案和父元素。 可以在格式化檔案中定義的視圖數目沒有限制，而且可以依任何順序加入。
+下列各節描述 `ViewDefinitions` 專案的屬性、子專案和父項目。 可以在格式化檔案中定義的視圖數目沒有限制，而且可以依任何順序加入。
 
 ### <a name="attributes"></a>屬性
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f23ef405-0f1e-4607-b3f4-4017b7ead106
 caps.latest.revision: 7
 ms.openlocfilehash: a5098da55d0a63272a121b973cb05e26dc47e3e1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368447"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format"></a>設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)
@@ -34,7 +34,7 @@ Configuration 元素（格式）控制項的設定（格式）控制項元素的
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 元素的父元素。
+下列各節說明屬性、子專案，以及 `SelectionCondition` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -44,10 +44,10 @@ Configuration 元素（格式）控制項的設定（格式）控制項元素的
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[設定之控制項的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本。|
-|[設定之控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[設定之控制項的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[設定之控制項的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[設定之控制項的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[設定之控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[設定之控制項的 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 

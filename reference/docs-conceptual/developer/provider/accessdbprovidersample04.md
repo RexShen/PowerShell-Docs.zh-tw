@@ -9,22 +9,22 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: 7096f8066568c214a5902f6943a2c093932d3b56
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366337"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
 這個範例示範如何覆寫容器方法，以支援對 `Copy-Item`、`Get-ChildItem`、`New-Item`和 `Remove-Item` Cmdlet 的呼叫。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 這個範例中的提供者類別衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別。
 
-## <a name="demonstrates"></a>演示
+## <a name="demonstrates"></a>示範
 
 > [!IMPORTANT]
 > 您的提供者類別很可能會衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 。
 
-這個範例會示範下列各項：
+這個範例示範下列作業：
 
 - 宣告 `CmdletProvider` 屬性。
 

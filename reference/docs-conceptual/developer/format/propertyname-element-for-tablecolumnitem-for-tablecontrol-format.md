@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb26d72c-2f77-4801-badf-0537ccc55e31
 caps.latest.revision: 10
 ms.openlocfilehash: 6e86b6a0874b385703121802bc8108a0410442cd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362247"
 ---
 # <a name="propertyname-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl 之 TableColumnItem 的 PropertyName 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節描述 `PropertyName` 元素的屬性、子專案和父元素。
+下列各節描述 `PropertyName` 元素的屬性、子專案和父項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -55,7 +55,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-這個範例會顯示 `TableColumnItem` 元素，這個專案會指定[system.webserver](/dotnet/api/System.Diagnostics.Process)物件的 `Status` 屬性。
+這個範例會顯示指定[system.webserver](/dotnet/api/System.Diagnostics.Process)物件之 `Status` 屬性的 `TableColumnItem` 元素。
 
 ```xml
 <TableColumnItem>

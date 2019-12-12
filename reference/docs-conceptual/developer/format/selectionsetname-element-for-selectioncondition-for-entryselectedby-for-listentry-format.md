@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eae67e47-6c60-4741-8430-78d2cb6067b1
 caps.latest.revision: 10
 ms.openlocfilehash: ccfc0b772ad3b2d1979c7c832a5153de870035d7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368397"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format"></a>ListEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 元素的父元素。
+下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

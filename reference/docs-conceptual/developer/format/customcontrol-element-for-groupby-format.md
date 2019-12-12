@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2472e256-8f4f-4288-8b67-a3300649dafa
 caps.latest.revision: 9
 ms.openlocfilehash: 2e84e770a345e272d4c5917b00afe7520840e1db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368957"
 ---
 # <a name="customcontrol-element-for-groupby-format"></a>GroupBy 的 CustomControl 元素 (格式)
@@ -31,7 +31,7 @@ ViewDefinitions 元素（格式）的專案（格式） View 元素（格式） 
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明 `CustomControl` 元素的屬性、子專案和父元素。 您可以指定任意數目的子項目，並依任何順序列出它們。
+下列各節描述 `CustomControl` 專案的屬性、子專案和父項目。 您可以指定任意數目的子項目，並依任何順序列出它們。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,7 +41,7 @@ ViewDefinitions 元素（格式）的專案（格式） View 元素（格式） 
 
 |元素|描述|
 |-------------|-----------------|
-|[GroupBy 之 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-groupby-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
+|[GroupBy 之 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-groupby-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
 
 ### <a name="parent-elements"></a>父元素
 

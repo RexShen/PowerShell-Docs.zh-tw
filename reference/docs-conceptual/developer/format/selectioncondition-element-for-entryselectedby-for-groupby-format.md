@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6dc2093a-dc54-42c4-ada3-c8d089ba1e8e
 caps.latest.revision: 6
 ms.openlocfilehash: a6738a7c4c934b2d6a16695a711f7c6c80afdd2d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368427"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-groupby-format"></a>GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
@@ -34,7 +34,7 @@ ms.locfileid: "72368427"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 元素的父元素。
+下列各節說明屬性、子專案，以及 `SelectionCondition` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -44,10 +44,10 @@ ms.locfileid: "72368427"
 
 |元素|描述|
 |-------------|-----------------|
-|[GroupBy 之 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-groupby-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[GroupBy 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)|選擇性元素。<br /><br /> 指定觸發條件的腳本。|
-|[GroupBy 之 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[GroupBy 之 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-groupby-format.md)|選擇性元素。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[GroupBy 之 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-groupby-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[GroupBy 的 SelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[GroupBy 之 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[GroupBy 之 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-groupby-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
 ### <a name="parent-elements"></a>父元素
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366177"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>部署 Management OData Web 服務
@@ -25,7 +25,7 @@ ms.locfileid: "72366177"
 
 1. 在您的 IIS `WWWRoot` 目錄底下，為您的 web 應用程式建立一個目錄。
 
-2. 複製 MOF 架構檔案、XML 架構檔案，以及將[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)和[enable-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)介面和 web.config 檔案匯出至其中的 dll，並將該檔案匯入到應用程式目錄。
+2. 複製 MOF 架構檔案、XML 架構檔案，以及將[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)和[enable-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)介面和 web.config 檔案匯出至應用程式目錄中的 dll，以將其匯入。
 
 3. 建立網站識別碼。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
 caps.latest.revision: 5
 ms.openlocfilehash: 9aef3eeb8bfeeccd234755b6c5a7c451da6628cc
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417823"
 ---
 # <a name="stopprocesssample04-code-samples"></a>StopProcessSample04 程式碼範例

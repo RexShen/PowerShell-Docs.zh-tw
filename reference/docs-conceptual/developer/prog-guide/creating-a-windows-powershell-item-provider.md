@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
 ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417497"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
@@ -219,7 +219,7 @@ Windows PowerShell 專案提供者可以執行[ItemCmdletprovider. Invokedefault
 
 範例提供者會定義 DatabaseRowInfo 方法，以傳回指定之資料表的資料列資訊物件集合。 這個方法包含用來攔截例外狀況的 try/catch 區塊。 任何錯誤都不會產生任何資料列資訊。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整的範例程式碼，請參閱[AccessDbProviderSample03 程式碼範例](./accessdbprovidersample03-code-sample.md)。
 

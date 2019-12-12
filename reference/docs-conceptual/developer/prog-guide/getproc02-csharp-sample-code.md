@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e4e1eee3-316b-43a4-8a60-313391619be6
 caps.latest.revision: 6
 ms.openlocfilehash: 5989b1e7030375b1bacdd9b82c25c1a8288fd637
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360367"
 ---
 # <a name="getproc02-c-sample-code"></a>GetProc02 (C#) 範例程式碼
 
-下列程式碼顯示可接受命令列輸入的 `Get-Process` Cmdlet 的執行。 請注意，此實值會定義 `Name` 參數，以允許命令列輸入，並使用[WriteObject （system.string，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法做為將輸出物件傳送至管線的輸出機制。
+下列程式碼顯示接受命令列輸入的 `Get-Process` Cmdlet 的執行。 請注意，這個執行會定義一個 `Name` 參數以允許命令列輸入，而且它會使用[WriteObject （system.string，system.string）](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)方法做為輸出機制，以便將輸出物件傳送至管線。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 [!code-csharp[GetProcessSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample02/GetProcessSample02.cs#L11-L76 "GetProcessSample02.cs")]
 

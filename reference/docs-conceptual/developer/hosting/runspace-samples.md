@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360997"
 ---
 # <a name="runspace-samples"></a>Runspace 範例
@@ -42,7 +42,7 @@ ms.locfileid: "72360997"
 
  [Runspace09 範例](./runspace09-sample.md)這個範例示範如何將腳本新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線，以及如何以非同步方式執行腳本。 事件為用來處理指令碼的輸出。
 
- [Runspace10 範例](./runspace10-sample.md)這個範例會示範如何建立預設初始會話狀態、如何將 Cmdlet 新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、如何建立使用初始會話狀態的執行時間，以及如何使用來執行此命令的方法[管理元件： Powershell](/dotnet/api/system.management.automation.powershell)物件。
+ [Runspace10 範例](./runspace10-sample.md)這個範例會示範如何建立預設初始會話狀態、如何將 Cmdlet 新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、如何建立使用初始會話狀態的執行時間，以及如何使用[system.web](/dotnet/api/system.management.automation.powershell)物件來執行此命令，以及如何執行該命令。
 
  [Runspace11 範例](./runspace11-sample.md)這會示範如何使用[Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)類別來建立 proxy 命令，以呼叫現有的 Cmdlet，但會限制可用的參數集合。 Proxy 命令接著會加入用來建立受限 Runspace 的初始工作階段狀態。 這表示使用者只能透過 Proxy 命令使用此 Cmdlet 的功能。
 

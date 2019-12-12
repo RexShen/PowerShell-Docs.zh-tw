@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5bc6ea26-3ca6-4bab-8a13-29189821ba15
 caps.latest.revision: 7
 ms.openlocfilehash: a1dc145864a6904fd4af6c3b9187819c49e224b0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363027"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>WideControl 之 WideItem 的 FormatString 元素 (格式)
@@ -29,7 +29,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `FormatString` 元素的父元素。
+下列各節說明屬性、子專案，以及 `FormatString` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 

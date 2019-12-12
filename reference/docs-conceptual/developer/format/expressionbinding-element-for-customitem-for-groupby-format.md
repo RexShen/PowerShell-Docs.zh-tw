@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eae5088-7605-4ef2-a703-faf3e5a5fc94
 caps.latest.revision: 8
 ms.openlocfilehash: 4714bfd1530585aa80aabc010b86d25bf0c7f9c4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368627"
 ---
 # <a name="expressionbinding-element-for-customitem-for-groupby-format"></a>GroupBy 之 CustomItem 的 ExpressionBinding 元素 (格式)
@@ -36,7 +36,7 @@ ms.locfileid: "72368627"
 
 ## <a name="attributes-and-elements"></a>屬性與元素
 
-下列各節說明屬性、子專案，以及 `ExpressionBinding` 元素的父元素。
+下列各節說明屬性、子專案，以及 `ExpressionBinding` 專案的父元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -46,12 +46,12 @@ ms.locfileid: "72368627"
 
 |元素|描述|
 |-------------|-----------------|
-|`CustomControl Element`|選擇性元素。<br /><br /> 定義此控制項所使用的控制項。|
-|[GroupBy 之 ExpressionBinding 的 CustomControlName 元素（格式）](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)|選擇性元素。<br /><br /> 指定通用控制項或 view 控制項的名稱。|
-|[GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素（格式）](./enumeratecollection-element-for-expressionbinding-for-groupby-format.md)GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素（格式）|選擇性元素。<br /><br /> 指定會顯示集合的元素。|
-|[GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素（格式）](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|選擇性元素。<br /><br /> 定義必須存在才能使用此控制項的條件。|
-|[GroupBy 之 ExpressionBinding 的 PropertyName 元素（格式）](./propertyname-element-for-expressionbinding-for-groupby-format.md)|選擇性元素。<br /><br /> 指定控制項顯示其值的 .NET 屬性。|
-|[GroupBy 的 ExpressionBinding 的 ScriptBlock 元素（格式）](./scriptblock-element-for-expressionbinding-for-groupby-format.md)|選擇性元素。<br /><br /> 指定控制項顯示其值的腳本。|
+|`CustomControl Element`|選擇性項目。<br /><br /> 定義此控制項所使用的控制項。|
+|[GroupBy 之 ExpressionBinding 的 CustomControlName 元素（格式）](./customcontrolname-element-for-expressionbinding-for-groupby-format.md)|選擇性項目。<br /><br /> 指定通用控制項或 view 控制項的名稱。|
+|[GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素（格式）](./enumeratecollection-element-for-expressionbinding-for-groupby-format.md)GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素（格式）|選擇性項目。<br /><br /> 指定會顯示集合的元素。|
+|[GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素（格式）](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|選擇性項目。<br /><br /> 定義必須存在才能使用此控制項的條件。|
+|[GroupBy 之 ExpressionBinding 的 PropertyName 元素（格式）](./propertyname-element-for-expressionbinding-for-groupby-format.md)|選擇性項目。<br /><br /> 指定控制項顯示其值的 .NET 屬性。|
+|[GroupBy 的 ExpressionBinding 的 ScriptBlock 元素（格式）](./scriptblock-element-for-expressionbinding-for-groupby-format.md)|選擇性項目。<br /><br /> 指定控制項顯示其值的腳本。|
 
 ### <a name="parent-elements"></a>父元素
 
