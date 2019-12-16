@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: dsc,powershell,設定,安裝
 title: 施行設定
 ms.openlocfilehash: 2a40f2055dda78cc0cb6cb05a5e14dce48be9d00
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/04/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71953645"
 ---
 # <a name="enacting-configurations"></a>施行設定

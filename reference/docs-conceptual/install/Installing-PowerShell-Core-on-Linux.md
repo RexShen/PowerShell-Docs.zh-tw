@@ -2,16 +2,16 @@
 title: 在 Linux 上安裝 PowerShell Core
 description: 在各種 Linux 發佈上安裝 PowerShell Core 的相關資訊
 ms.date: 07/19/2019
-ms.openlocfilehash: 3159de2d64d9c473e00b58c9f9c52b6d1c7779af
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: 9e92958eb6d9c7a6a76331103f42ecadeab978c1
+ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444406"
+ms.lasthandoff: 12/09/2019
+ms.locfileid: "74953801"
 ---
 # <a name="installing-powershell-core-on-linux"></a>在 Linux 上安裝 PowerShell Core
 
-支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
 
@@ -23,6 +23,7 @@ GitHub [發行][]頁面上提供所有套件。 安裝套件之後，請從終�
 [u1904]: #ubuntu-1904
 [deb8]: #debian-8
 [deb9]: #debian-9
+[deb10]: #debian-10
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
