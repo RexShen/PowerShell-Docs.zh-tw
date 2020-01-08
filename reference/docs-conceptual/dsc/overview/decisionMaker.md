@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,設定,安裝
 title: 適合決策者的預期狀態設定概觀
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352126"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737248"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適用於決策者的預期狀態設定概觀
 
@@ -31,7 +31,7 @@ DSC 內建監視和報告功能。 如果系統不再相容，DSC 會引發警�
 
 ## <a name="dsc-and-devops"></a>DSC 與 DevOps
 
-DSC 在設計時即已考慮到 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) \(英文\)。 它是人員、程序與工具的組合，可允許快速部署與反覆開發週期，為內部或外部的終端使用者創造價值。 定義環境的單一設定表示開發人員可以將其需求編碼到設定中，並將該設定簽入原始檔控制。 作業小組接著可以部署程式碼，而不需要執行容易出錯的人工處理。
+DSC 在設計時即已考慮到 [DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) \(英文\)。 它是人員、程序與工具的組合，可允許快速部署與反覆開發週期，為內部或外部的終端使用者創造價值。 定義環境的單一設定表示開發人員可以將其需求編碼到設定中，並將該設定簽入原始檔控制。 作業小組接著可以部署程式碼，而不需要執行容易出錯的人工處理。
 
 設定是[資料驅動](../configurations/configData.md)的。 已定義的資料可讓作業小組更容易識別及變更環境，而不必開發人員介入。
 
