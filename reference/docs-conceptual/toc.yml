@@ -58,7 +58,7 @@
           items:
             - name: 概觀
               href: learn/remoting/jea/overview.md
-            - name: 必要條件
+            - name: Prerequisites
               href: learn/remoting/jea/prerequisites.md
             - name: 角色功能
               href: learn/remoting/jea/role-capabilities.md
@@ -180,7 +180,7 @@
       href: gallery/installing-psget.md
     - name: 開始使用
       href: gallery/getting-started.md
-    - name: 操作說明
+    - name: 作法
       items:
         - name: 在資源庫中尋找套件
           items:
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: 管理 API 金鑰
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: 使用本機 PowerShellGet 存放庫
+        - name: 使用私人 PowerShellGet 存放庫
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: 概念
       items:
@@ -339,7 +339,7 @@
           href: wmf/known-issues/known-issues-51.md
         - name: DSC 中的已知問題與限制
           href: wmf/known-issues/known-issues-dsc.md
-- name: 預期狀態設定 (DSC)
+- name: 期望狀態設定 (DSC)
   items:
     - name: 概觀
       items:
@@ -370,7 +370,7 @@
           href: dsc/quickstarts/gpo-quickstart.md
         - name: 使用 DSC 建立網站
           href: dsc/quickstarts/website-quickStart.md
-    - name: 設定
+    - name: 組態
       items:
         - name: 概念
           items:
@@ -510,7 +510,7 @@
           href: dsc/troubleshooting/troubleshooting.md
         - name: 對 DSC 資源偵錯
           href: dsc/troubleshooting/debugResource.md
-    - name: 參考資料
+    - name: 參考
       items:
         - name: Windows 內建資源
           items:
