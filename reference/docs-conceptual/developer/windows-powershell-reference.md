@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366277"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870858"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell 參考
 
@@ -37,7 +37,8 @@ Windows PowerShell 軟體發展工具組（SDK）是針對需要 Windows PowerSh
 
 [撰寫 Windows PowerShell Cmdlet](./cmdlet/writing-a-windows-powershell-cmdlet.md)針對正在設計 Cmdlet 的程式管理員，以及正在執行 Cmdlet 程式碼的開發人員，提供相關資訊和程式碼範例。
 
-[Windows PowerShell 小組 Blog](https://blogs.msdn.microsoft.com/PowerShell/)與其他 Windows PowerShell 使用者一起學習及協同作業的最佳資源。 閱讀 Windows PowerShell 團隊部落格，然後加入 Windows PowerShell 使用者論壇 (microsoft.public.windows.powershell)。 使用 Windows Live 搜尋來尋找其他 Windows PowerShell 部落格與資源。 然後，當您開發自己的專業知識時，可以自由地提供您的想法。
+[Windows PowerShell 小組 Blog](https://blogs.msdn.microsoft.com/PowerShell/)與其他 Windows PowerShell 使用者一起學習及協同作業的最佳資源。 閱讀 Windows PowerShell 團隊部落格，然後加入 Windows PowerShell 使用者論壇 (microsoft.public.windows.powershell)。
+使用 Windows Live 搜尋來尋找其他 Windows PowerShell 部落格與資源。 然後，當您開發自己的專業知識時，可以自由地提供您的想法。
 
 [PowerShell 模組瀏覽器](/powershell/module/)提供命令列說明主題的最新版本。
 
@@ -53,4 +54,4 @@ Windows PowerShell 軟體發展工具組（SDK）是針對需要 Windows PowerSh
 
 [。內部](/dotnet/api/System.Management.Automation.Internal)這個命名空間包含其他命名空間類別所使用的基類。 例如， [Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)類別就是[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)類別的基類（base class），而不是。
 
-[[系統管理](/dotnet/api/System.Management.Automation.Runspaces)]。此命名空間包含用來建立 Windows PowerShell 執行時間的類別、列舉和介面。 在此內容中，Windows PowerShell 執行時間是一或多個 Windows PowerShell 管線叫用 Cmdlet 的內容。 也就是說，Cmdlet 會在 Windows PowerShell 執行時間的內容中工作。 如需 aboutWindows PowerShell 提供程式的詳細資訊，請參閱[Windows powershell 程式空間](https://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)。
+[[系統管理](/dotnet/api/System.Management.Automation.Runspaces)]。此命名空間包含用來建立 Windows PowerShell 執行時間的類別、列舉和介面。 在此內容中，Windows PowerShell 執行時間是一或多個 Windows PowerShell 管線叫用 Cmdlet 的內容。 也就是說，Cmdlet 會在 Windows PowerShell 執行時間的內容中工作。 如需 aboutWindows PowerShell 提供程式的詳細資訊，請參閱[Windows powershell 程式空間](hosting/creating-runspaces.md)。

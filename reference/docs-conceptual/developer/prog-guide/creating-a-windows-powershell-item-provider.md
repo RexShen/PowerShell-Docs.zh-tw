@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417497"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870705"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
 
@@ -24,10 +24,7 @@ ms.locfileid: "74417497"
 
 > [!NOTE]
 > 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider03.cs）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
->
-> 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
 
 本主題所描述的 Windows PowerShell 專案提供者會從 Access 資料庫取得資料的專案。 在此情況下，「專案」是 Access 資料庫中的資料表或資料表中的資料列。
 
@@ -43,13 +40,15 @@ Windows PowerShell 專案提供者必須定義一個衍生自[ItemCmdletprovider
 
 如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別衍生自數個其他提供不同提供者功能的類別。 因此，Windows PowerShell 專案提供者必須定義這些類別所提供的所有功能。
 
-如需如何執行功能來新增會話特定初始化資訊以及釋放提供者所使用之資源的詳細資訊，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。 不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
+如需如何執行功能來新增會話特定初始化資訊以及釋放提供者所使用之資源的詳細資訊，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。
+不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
 
 在 Windows PowerShell 專案提供者可以操作存放區中的專案之前，必須先執行[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基類的方法，以存取資料存放區。 如需有關如何執行此類別的詳細資訊，請參閱[建立 Windows PowerShell 磁片磁碟機提供者](./creating-a-windows-powershell-drive-provider.md)。
 
 ## <a name="checking-for-path-validity"></a>檢查路徑有效性
 
-在尋找資料的專案時，Windows PowerShell 執行時間會 furnishes windows powershell 對提供者的路徑，如[Windows Powershell 運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)的「PSPath 概念」一節中所定義。 Windows PowerShell 專案提供者必須藉由執行[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法，驗證傳遞給它的任何路徑的語法和語義有效性。 如果路徑有效，這個方法會傳回 `true`，否則會傳回 `false`。 請注意，這個方法的執行不應該驗證專案是否存在於路徑，但只有路徑在語法上和語義正確。
+在尋找資料的專案時，Windows PowerShell 執行時間會 furnishes windows powershell 對提供者的路徑，如[Windows Powershell 運作方式](/previous-versions/ms714658(v=vs.85))的「PSPath 概念」一節中所定義。
+Windows PowerShell 專案提供者必須藉由執行[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法，驗證傳遞給它的任何路徑的語法和語義有效性。 如果路徑有效，這個方法會傳回 `true`，否則會傳回 `false`。 請注意，這個方法的執行不應該驗證專案是否存在於路徑，但只有路徑在語法上和語義正確。
 
 以下是此提供者的[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法的執行。 請注意，此實作為呼叫 NormalizePath helper 方法，以將路徑中的所有分隔符號轉換成統一的。
 
@@ -219,17 +218,17 @@ Windows PowerShell 專案提供者可以執行[ItemCmdletprovider. Invokedefault
 
 範例提供者會定義 DatabaseRowInfo 方法，以傳回指定之資料表的資料列資訊物件集合。 這個方法包含用來攔截例外狀況的 try/catch 區塊。 任何錯誤都不會產生任何資料列資訊。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 如需完整的範例程式碼，請參閱[AccessDbProviderSample03 程式碼範例](./accessdbprovidersample03-code-sample.md)。
 
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
 
-撰寫提供者時，可能需要將成員加入至現有的物件或定義新的物件。 完成時，建立一個類型檔案，Windows PowerShell 可以使用此檔案來識別物件的成員，以及定義如何顯示物件的格式檔案。 如需的詳細資訊，請參閱[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+撰寫提供者時，可能需要將成員加入至現有的物件或定義新的物件。 完成時，建立一個類型檔案，Windows PowerShell 可以使用此檔案來識別物件的成員，以及定義如何顯示物件的格式檔案。 如需的詳細資訊，請參閱[擴充物件類型和格式](/previous-versions/ms714665(v=vs.85))。
 
 ## <a name="building-the-windows-powershell-provider"></a>建立 Windows PowerShell 提供者
 
-請參閱[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+請參閱[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))。
 
 ## <a name="testing-the-windows-powershell-provider"></a>測試 Windows PowerShell 提供者
 
@@ -245,12 +244,12 @@ Windows PowerShell 專案提供者可以執行[ItemCmdletprovider. Invokedefault
 
 [設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)
 
-[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[擴充物件類型和格式](/previous-versions/ms714665(v=vs.85))
 
-[Windows PowerShell 的運作方式](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell 的運作方式](/previous-versions/ms714658(v=vs.85))
 
 [建立容器 Windows PowerShell 提供者](./creating-a-windows-powershell-container-provider.md)
 
 [建立磁片磁碟機 Windows PowerShell 提供者](./creating-a-windows-powershell-drive-provider.md)
 
-[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))

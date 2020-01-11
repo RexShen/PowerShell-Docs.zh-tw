@@ -1,22 +1,14 @@
 ---
-title: 建立 Windows PowerShell 流覽提供者 |Microsoft Docs
-ms.custom: ''
+title: 建立 Windows PowerShell 瀏覽提供者
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- navigation providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-caps.latest.revision: 5
-ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 96a9167019c047bb9c6e56362b2c1110ece553dd
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416190"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870688"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>建立 Windows PowerShell 瀏覽提供者
 
@@ -24,10 +16,7 @@ ms.locfileid: "74416190"
 
 > [!NOTE]
 > 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider05.cs）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下載的來源檔案可在**\<PowerShell 範例 >** 目錄中取得。
->
-> 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
 
 這裡所述的提供者可讓使用者將 Access 資料庫當做磁片磁碟機來處理，讓使用者可以流覽至資料庫中的資料表。 在建立您自己的導覽提供者時，您可以執行方法，以建立導覽所需的磁片磁碟機路徑、將相對路徑標準化、移動資料存放區的專案，以及取得子名稱的方法、取得專案的父路徑，以及測試識別專案是否為容器。
 
@@ -38,7 +27,8 @@ ms.locfileid: "74416190"
 
 Windows PowerShell 流覽提供者必須建立一個衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)基類的 .net 類別，。 以下是本節所述之導覽提供者的類別定義。
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
+"AccessDBProviderSample05.cs")]
 
 請注意，在此提供者中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個參數會為 Windows PowerShell 所使用的提供者指定易記的名稱。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 特定功能。 對於此提供者，不會新增任何 Windows PowerShell 特有的功能。
 
@@ -77,7 +67,8 @@ Windows PowerShell 流覽提供者會使用提供者內部的 Windows PowerShell
 
 Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)方法，以取得指定完整或部分提供者特定路徑的父系部分。 方法會移除路徑的子部分，並傳回父路徑部分。 `root` 參數會指定磁片磁碟機根目錄的完整路徑。 如果載入的磁片磁碟機不是用於抓取作業，此參數可以是 null 或空白。 如果指定了根，此方法必須傳回與根相同之樹狀結構中容器的路徑。
 
-範例導覽提供者不會覆寫這個方法，而是使用預設的實作為。 它接受使用 "/" 和 "\\" 做為路徑分隔符號的路徑。 它會先將路徑正規化，使其只有「\\」分隔符號，然後在最後一個「\\」分割父路徑，並傳回父路徑。
+範例導覽提供者不會覆寫這個方法，而是使用預設的實作為。
+它接受使用 "/" 和 "\\" 做為路徑分隔符號的路徑。 它會先將路徑正規化，使其只有「\\」分隔符號，然後在最後一個「\\」分割父路徑，並傳回父路徑。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
@@ -126,7 +117,8 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
 
 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應在現有物件上移動物件。 例如，filesystem 提供者不會將 c:\temp\abc.txt 複製到現有的 c:\bar.txt 檔，除非已將[Cmdletprovider *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`。 如果 `destination` 參數中指定的路徑存在，而且是容器，則不需要[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性。 在此情況下， [NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)會將 `path` 參數所指示的專案，移至 `destination` 參數所指示的容器做為子系。
 
-您的 NavigationCmdletprovider 必須先呼叫[Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法，然後在對資料存放區進行任何變更之前，先檢查它的傳回值，然後再執行此[程式](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)。 這個方法是用來在對系統狀態進行變更（例如刪除檔案）時，確認作業的執行。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳送要變更的資源名稱給使用者，而 Windows PowerShell 執行時間會將任何命令列設定或喜好設定變數列入決定要向使用者顯示的內容。
+您的 NavigationCmdletprovider 必須先呼叫[Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法，然後在對資料存放區進行任何變更之前，先檢查它的傳回值，然後再執行此[程式](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)。 這個方法是用來在對系統狀態進行變更（例如刪除檔案）時，確認作業的執行。
+[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳送要變更的資源名稱給使用者，而 Windows PowerShell 執行時間會將任何命令列設定或喜好設定變數列入決定要向使用者顯示的內容。
 
 呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回 `true`，則[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法應會呼叫 system.servicemodel. Cmdletprovider [.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) ShouldContinue 方法（.........）。 這個方法會將訊息傳送給使用者，以便在應該繼續作業的情況下，提供意見反應。 您的提供者應該呼叫[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)作為額外檢查，以進行潛在危險的系統修改。
 
@@ -150,17 +142,17 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
 
 您的[NavigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)應剖析 `path` 參數，但不需要使用純粹的語法剖析。（） 建議您設計這個方法，以使用路徑來查閱資料存放區中的路徑資訊，並建立符合大小寫和標準化路徑語法的路徑。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 如需完整的範例程式碼，請參閱[AccessDbProviderSample05 程式碼範例](./accessdbprovidersample05-code-sample.md)。
 
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
 
-提供者可能會將成員新增至現有的物件，或定義新的物件。 如需詳細資訊，請參閱[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)。
+提供者可能會將成員新增至現有的物件，或定義新的物件。 如需詳細資訊，請參閱[擴充物件類型和格式](/previous-versions/ms714665(v=vs.85))。
 
 ## <a name="building-the-windows-powershell-provider"></a>建立 Windows PowerShell 提供者
 
-如需詳細資訊，請參閱[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+如需詳細資訊，請參閱[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))。
 
 ## <a name="testing-the-windows-powershell-provider"></a>測試 Windows PowerShell 提供者
 
@@ -178,7 +170,7 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
    Get-ChildItem | Format-Table rowcount,name -AutoSize
    ```
 
-   ```output
+   ```Output
    RowCount   Name
    --------   ----
         180   MSysAccessObjects
@@ -211,7 +203,7 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
    Get-Location
    ```
 
-   ```output
+   ```Output
    Path
    ----
    mydb:\Employees
@@ -223,7 +215,7 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
    ```
 
-   ```output
+   ```Output
    RowNumber   PSIsContainer   Data
    ---------   --------------   ----
    0           False            System.Data.DataRow
@@ -243,7 +235,7 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
    Get-Item 0
    ```
 
-   ```output
+   ```Output
    PSPath        : AccessDB::C:\PS\Northwind.mdb\Employees\0
    PSParentPath  : AccessDB::C:\PS\Northwind.mdb\Employees
    PSChildName   : 0
@@ -260,7 +252,7 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
    (Get-Item 0).data
    ```
 
-   ```output
+   ```Output
    EmployeeID      : 1
    LastName        : Davis
    FirstName       : Sara
@@ -290,11 +282,11 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
 
 [設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)
 
-[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[擴充物件類型和格式](/previous-versions/ms714665(v=vs.85))
 
 [執行容器 Windows PowerShell 提供者](./creating-a-windows-powershell-container-provider.md)
 
-[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d6c84c3b23439cd3fd6205a2c1d480e0c063d09c
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417475"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870671"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>建立 Windows PowerShell 屬性提供者
 
@@ -24,10 +24,7 @@ ms.locfileid: "74417475"
 
 > [!NOTE]
 > Windows PowerShell 提供範本檔案，可供您用來開發 Windows PowerShell 提供者。 TemplateProvider.cs 檔案位於適用于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下載的範本可在 **\<PowerShell 範例 >** 目錄中取得。 您應該建立此檔案的複本，並使用該複本建立新的 Windows PowerShell 提供者，移除您不需要的任何功能。
->
-> 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> 下載的範本可在 **\<PowerShell 範例 >** 目錄中取得。 您應該建立此檔案的複本，並使用該複本建立新的 Windows PowerShell 提供者，移除您不需要的任何功能。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
 
 > [!CAUTION]
 > 屬性提供者的方法應該使用[Cmdletprovider. Writepropertyobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)方法來寫入任何物件。
@@ -72,7 +69,8 @@ ms.locfileid: "74417475"
 
 ## <a name="setting-properties"></a>設定屬性
 
-若要設定屬性，Windows PowerShell 屬性提供者必須執行[IpropertyCmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支援來自 `Set-ItemProperty` Cmdlet 的呼叫。 這個方法會在指定的路徑上設定專案的一個或多個屬性，並視需要覆寫提供的屬性。 [IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) ，也會寫入代表已更新屬性之屬性包的 system.servicemodel 物件實例（instance），這是一種[系統管理](/dotnet/api/System.Management.Automation.PSObject)介面。
+若要設定屬性，Windows PowerShell 屬性提供者必須執行[IpropertyCmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法，以支援來自 `Set-ItemProperty` Cmdlet 的呼叫。 這個方法會在指定的路徑上設定專案的一個或多個屬性，並視需要覆寫提供的屬性。
+[IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) ，也會寫入代表已更新屬性之屬性包的 system.servicemodel 物件實例（instance），這是一種[系統管理](/dotnet/api/System.Management.Automation.PSObject)介面。
 
 以下是 Windows PowerShell 所提供的 TemplateProvider.cs 檔案中，IpropertyCmdletprovider 的預設實作為[系統管理](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)。
 
@@ -86,7 +84,8 @@ ms.locfileid: "74417475"
 
 - 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則，此方法的覆寫不應抓取使用者所隱藏之物件的讀取器。 如果路徑代表使用者所隱藏的專案，而[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為 `false`，則應該撰寫錯誤。
 
-- 您的[IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)應該會在對資料存放區進行任何變更之前，先呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)並驗證其傳回值，然後再執行此程式。 這個方法是用來在對系統狀態進行變更時（例如，重新命名檔案），確認作業的執行。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會將要變更的資源名稱傳送給使用者，並使用 Windows PowerShell 執行時間和處理任何命令列設定或喜好設定變數來決定要顯示的內容。
+- 您的[IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)應該會在對資料存放區進行任何變更之前，先呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)並驗證其傳回值，然後再執行此程式。 這個方法是用來在對系統狀態進行變更時（例如，重新命名檔案），確認作業的執行。
+  [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會將要變更的資源名稱傳送給使用者，並使用 Windows PowerShell 執行時間和處理任何命令列設定或喜好設定變數來決定要顯示的內容。
 
   呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回 `true`，如果可以進行可能危險的系統修改，則會呼叫[system.web](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) * 方法，而該方法應會呼叫 system.servicemodel [*。 IpropertyCmdletprovider. Setproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)方法應會呼叫方法。 這個方法會傳送確認訊息給使用者，以允許其他意見反應來表示應該繼續作業。
 
@@ -114,7 +113,8 @@ ms.locfileid: "74417475"
 
 - 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則，此方法的覆寫不應抓取使用者所隱藏之物件的讀取器。 如果路徑代表使用者所隱藏的專案，而[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為 `false`，則應該撰寫錯誤。
 
-- 您的 IpropertyCmdletprovider 必須先呼叫[Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法，然後在對資料存放區進行任何變更之前，先驗證它的傳回[值，然後再執行。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 這個方法是用來在對系統狀態進行變更（例如清除內容）之前，先確認執行作業。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳送要變更的資源名稱給使用者，而 Windows PowerShell 執行時間會將任何命令列設定或喜好設定變數納入決定應該顯示的內容。
+- 您的 IpropertyCmdletprovider 必須先呼叫[Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法，然後在對資料存放區進行任何變更之前，先驗證它的傳回[值，然後再執行。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 這個方法是用來在對系統狀態進行變更（例如清除內容）之前，先確認執行作業。
+  [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳送要變更的資源名稱給使用者，而 Windows PowerShell 執行時間會將任何命令列設定或喜好設定變數納入決定應該顯示的內容。
 
   呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回 `true`，如果可能會對系統進行修改，則[IpropertyCmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法應該呼叫[方法，](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)以進行潛在危險的系統修改。」（system. 管理介面）。 這個方法會傳送確認訊息給使用者，以允許額外的意見反應來表示應該繼續進行可能危險的作業。
 
@@ -128,7 +128,7 @@ ms.locfileid: "74417475"
 
 ## <a name="building-the-windows-powershell-provider"></a>建立 Windows PowerShell 提供者
 
-請參閱[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+請參閱[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -136,6 +136,6 @@ ms.locfileid: "74417475"
 
 [設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)
 
-[擴充物件類型和格式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[擴充物件類型和格式](https://msdn.microsoft.com/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364247"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870484"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>撰寫自訂 Windows PowerShell 嵌入式管理單元
 
@@ -27,12 +27,11 @@ ms.locfileid: "72364247"
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>撰寫可註冊特定 Cmdlet 的 Windows PowerShell 嵌入式管理單元。
 
 1. 加入 RunInstallerAttribute 屬性。
-
 2. 建立衍生自[Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)類別的公用類別。
 
    在此範例中，類別名稱為 "CustomPSSnapinTest"。
 
-3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： #。 、（） {} [] &-/\ $;： "' \< > &#124;嗎？ @ ` *
+3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： `#`、`.`、`,`、`(`、`)`、`{`、`}`、`[`、`]`、`&`、`-`、`/`、`\`、`$`、`;`、`:`、`"`、`'`、`<`、`>`、`|`、`?`、`@`、`` ` ``、`*`
 
    在此範例中，嵌入式管理單元的名稱是 "CustomPSSnapInTest"。
 
@@ -46,13 +45,15 @@ ms.locfileid: "72364247"
 
 6. 新增嵌入式管理單元描述的公用屬性（必要）。
 
-   在此範例中，描述為：「這是自訂的 Windows PowerShell 嵌入式管理單元，其中包含 HelloWorld 和 CustomSnapinTest Cmdlet」。
+   在此範例中，描述為：「這是包含 `Test-HelloWorld` 和 `Test-CustomSnapinTest` Cmdlet」的自訂 Windows PowerShell 嵌入式管理單元。
 
 7. 新增嵌入式管理單元的 [描述] 資源的公用屬性（選擇性）。
 
-   在此範例中，廠商資源是 "CustomPSSnapInTest，這是一個自訂的 Windows PowerShell 嵌入式管理單元，其中包含 HelloWorld 和 CustomSnapinTest Cmdlet。
+   在此範例中，廠商資源為：
 
-8. 使用[Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)類別，指定屬於自訂嵌入式管理單元（選擇性）的指令程式。 此處新增的資訊包括 Cmdlet 的名稱、其 .NET 類型和 Cmdlet 說明檔名稱（Cmdlet 說明文件名的格式應為 dll-help .xml）。
+   > CustomPSSnapInTest，這是自訂的 Windows PowerShell 嵌入式管理單元，其中包含 HelloWorld 和測試 CustomSnapinTest 的 Cmdlet。
+
+8. 使用[Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)類別，指定屬於自訂嵌入式管理單元（選擇性）的指令程式。 此處新增的資訊包括 Cmdlet 的名稱、其 .NET 類型和 Cmdlet 說明檔名稱（Cmdlet 說明文件名的格式應該是` name.dll-help.xml`）。
 
    這個範例會新增 HelloWorld 和 TestCustomSnapinTest Cmdlet。
 
@@ -70,7 +71,7 @@ ms.locfileid: "72364247"
 
 ## <a name="example"></a>範例
 
-這個範例示範如何撰寫自訂的 Windows PowerShell 嵌入式管理單元，可用來註冊 HelloWorld 和 CustomSnapinTest Cmdlet。 請注意，在此範例中，完整的元件可能包含不會由這個嵌入式管理單元註冊的其他 Cmdlet 和提供者。
+這個範例示範如何撰寫自訂的 Windows PowerShell 嵌入式管理單元，可用來註冊 `Test-HelloWorld` 和 `Test-CustomSnapinTest` Cmdlet。 請注意，在此範例中，完整的元件可能包含不會由這個嵌入式管理單元註冊的其他 Cmdlet 和提供者。
 
 ```csharp
 [RunInstaller(true)]
@@ -213,10 +214,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-如需註冊嵌入式管理單元的詳細資訊，請參閱《 [Windows PowerShell 程式設計人員指南》](../prog-guide/windows-powershell-programmer-s-guide.md)中的[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)。
+如需註冊嵌入式管理單元的詳細資訊，請參閱《 [Windows PowerShell 程式設計人員指南》](../prog-guide/windows-powershell-programmer-s-guide.md)中的[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))。
 
 ## <a name="see-also"></a>另請參閱
 
-[如何註冊 Cmdlet、提供者和主機應用程式](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)
