@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
 ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365757"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>建立可修改系統的 Cmdlet
@@ -26,15 +26,15 @@ ms.locfileid: "72365757"
 
 若要支援確認，Cmdlet 必須執行兩項動作。
 
-- 宣告此 Cmdlet 會在您指定[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性時，藉由將 SupportsShouldProcess 關鍵字設定為 `true`，來支援確認。
+- 宣告 Cmdlet 會在您指定[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性時，藉由將 SupportsShouldProcess 關鍵字設定為 `true`，來支援確認。
 
 - 執行 Cmdlet 時，請呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) （如下列範例所示）：。
 
-藉由支援確認，Cmdlet 會公開 Windows PowerShell 所提供的 @no__t 0 和 @no__t 1 參數，同時也符合 Cmdlet 的開發指導方針（如需 Cmdlet 開發指導方針的詳細資訊，請參閱[Cmdlet開發指導方針](./cmdlet-development-guidelines.md)）。
+藉由支援確認，Cmdlet 會公開 Windows PowerShell 所提供的 `Confirm` 和 `WhatIf` 參數，也符合 Cmdlet 的開發指導方針（如需 Cmdlet 開發指導方針的詳細資訊，請參閱[Cmdlet 開發指導方針](./cmdlet-development-guidelines.md)）。
 
 ## <a name="changing-the-system"></a>變更系統
 
-「變更系統」的動作是指任何可能變更 Windows PowerShell 外部系統狀態的 Cmdlet。 例如，停止處理常式、啟用或停用使用者帳戶，或將資料列加入至資料庫資料表，全都會變更應該確認的系統。 相反地，讀取資料或建立暫時性連線的作業並不會變更系統，而且通常不需要確認。 對於其效果限制在 Windows PowerShell 執行時間內部的動作（例如 `set-variable`），也不需要確認。 可能或可能不會進行持續性變更的 Cmdlet 應該宣告 `SupportsShouldProcess`，並且只在即將進行持續性變更時，才呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 。
+「變更系統」的動作是指任何可能變更 Windows PowerShell 外部系統狀態的 Cmdlet。 例如，停止處理常式、啟用或停用使用者帳戶，或將資料列加入至資料庫資料表，全都會變更應該確認的系統。 相反地，讀取資料或建立暫時性連線的作業並不會變更系統，而且通常不需要確認。 對於其效果限制在 Windows PowerShell 執行時間內部的動作（例如 `set-variable`），也不需要確認。 可能或可能不會進行持續性變更的 Cmdlet 應該宣告 `SupportsShouldProcess`，並[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)只在即將進行持續變更時才呼叫。
 
 > [!NOTE]
 > ShouldProcess 確認僅適用于 Cmdlet。 如果命令或腳本藉由直接呼叫 .NET 方法或屬性來修改系統的執行狀態，或在 Windows PowerShell 外部呼叫應用程式，則無法使用這種形式的確認。
@@ -55,11 +55,11 @@ Cmdlet 建立的第一個步驟一律為 Cmdlet 命名，並宣告可執行 Cmdl
 public class StopProcCommand : Cmdlet
 ```
 
-請注意，在[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)宣告中，`SupportsShouldProcess` attribute 關鍵字會設定為 `true`，讓 Cmdlet 能夠呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)和，[來執行指令程式。ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的.。 若未設定此關鍵字，使用者將無法使用 `Confirm` 和 @no__t 1 參數。
+請注意，在 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)宣告中，`SupportsShouldProcess` 屬性關鍵字會設定為 `true`，以啟用 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 和 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 的呼叫，以進行呼叫。 若未設定此關鍵字，使用者將無法使用 `Confirm` 和 `WhatIf` 參數。
 
 ### <a name="extremely-destructive-actions"></a>極具破壞性的動作
 
-某些作業是非常破壞性的，例如重新格式化使用中的硬碟磁碟分割。 在這些情況下，Cmdlet 應該在宣告[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性時，設定 `ConfirmImpact` @ no__t-1 @ no__t-2。 此設定會強制 Cmdlet 要求使用者確認，即使使用者尚未指定 `Confirm` 參數也一樣。 不過，Cmdlet 開發人員應該避免只有可能會破壞性的作業（例如，刪除使用者帳戶）超 `ConfirmImpact`。 請記住，如果 `ConfirmImpact` 設定為[ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**。
+某些作業是非常破壞性的，例如重新格式化使用中的硬碟磁碟分割。 在這些情況下，Cmdlet 應該在宣告[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性時，設定 `ConfirmImpact` = `ConfirmImpact.High`。 此設定會強制 Cmdlet 要求使用者確認，即使使用者尚未指定 `Confirm` 參數也一樣。 不過，Cmdlet 開發人員應該避免超 `ConfirmImpact` 只是可能破壞性的作業，例如刪除使用者帳戶。 請記住，如果 `ConfirmImpact` 設定為[ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **High**。
 
 同樣地，某些作業不太可能會成為破壞性，雖然它們在理論上會修改 Windows PowerShell 外部系統的執行狀態。 這類 Cmdlet 可以將 `ConfirmImpact` 設定為[Confirmimpact。](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0) 這會略過使用者要求確認僅限中度影響和高影響作業的確認要求。
 
@@ -67,13 +67,13 @@ public class StopProcCommand : Cmdlet
 
 本節說明如何定義 Cmdlet 參數，包括支援系統修改所需的參數。 如果您需要定義參數的一般資訊，請參閱[新增處理命令列輸入的參數](./adding-parameters-that-process-command-line-input.md)。
 
-Stop-Proc Cmdlet 會定義三個參數： `Name`、`Force` 和 `PassThru`。
+Stop-Proc Cmdlet 會定義三個參數： `Name`、`Force`和 `PassThru`。
 
-@No__t-0 參數會對應至處理常式輸入物件的 `Name` 屬性。 請注意，此範例中的 `Name` 參數是強制性的，因為如果 Cmdlet 沒有已命名的進程可停止，就會失敗。
+`Name` 參數會對應至處理常式輸入物件的 `Name` 屬性。 請注意，此範例中的 `Name` 參數是必要的，因為如果 Cmdlet 沒有已命名的進程可停止，就會失敗。
 
-@No__t-0 參數可讓使用者覆寫[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的呼叫。 事實上，任何呼叫[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的 Cmdlet 都應該有一個 `Force` 參數，因此當指定 `Force` 時，Cmdlet 會略過[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的呼叫，而將並繼續操作。 請注意，這不會影響[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的呼叫。
+`Force` 的參數可讓使用者覆寫[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的呼叫。 事實上，任何呼叫[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的 Cmdlet 都應該要有 `Force` 參數，如此一來，當指定 `Force` 時，Cmdlet 就會略過[ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)的呼叫，並繼續操作。 請注意，這不會影響[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的呼叫。
 
-@No__t-0 參數可讓使用者指出 Cmdlet 是否透過管線傳遞輸出物件，在此情況下，在處理常式停止後。 請注意，此參數會系結至 Cmdlet 本身，而不是系結至輸入物件的屬性。
+`PassThru` 參數可讓使用者指出 Cmdlet 是否透過管線傳遞輸出物件，在此情況下，在處理常式停止後。 請注意，此參數會系結至 Cmdlet 本身，而不是系結至輸入物件的屬性。
 
 以下是 Stop-Proc Cmdlet 的參數宣告。
 
@@ -229,7 +229,7 @@ protected override void ProcessRecord()
 > [!NOTE]
 > 如果 Cmdlet 所支援的指令程式應處理且無法進行[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫，使用者可能會意外地修改系統。
 
-[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的呼叫會將要變更的資源名稱傳送給使用者，而 Windows PowerShell 執行時間會將任何命令列設定或喜好設定變數列入決定應該會向使用者顯示。
+[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)的呼叫會將要變更的資源名稱傳送給使用者，而 Windows PowerShell 執行時間會將任何命令列設定或喜好設定變數納入考慮，以決定要向使用者顯示的內容。
 
 下列範例會示範如何呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ，從範例停止執行 Cmdlet 的[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法的覆寫中進行的覆寫，以進行。
 
@@ -270,9 +270,9 @@ if (criticalProcess &&!force)
 
 ## <a name="stopping-input-processing"></a>停止輸入處理
 
-進行系統修改之 Cmdlet 的輸入處理方法必須提供一種方法來停止處理輸入。 在此停止處理指示程式的情況下，會從[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法呼叫至 System.servicemodel. Process.......[進程. Kill *](/dotnet/api/System.Diagnostics.Process.Kill)方法。 因為 `PassThru` 參數設定為 `true`，所以[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)也會呼叫[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) ，將處理常式物件傳送至管線，以將進程物件。
+進行系統修改之 Cmdlet 的輸入處理方法必須提供一種方法來停止處理輸入。 在此停止處理指示程式的情況下，會從[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法呼叫至 System.servicemodel. Process.......[進程. Kill *](/dotnet/api/System.Diagnostics.Process.Kill)方法。 因為 `PassThru` 參數設定為 `true`，所以[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)也會呼叫[WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) ，以將處理常式物件傳送至管線（pipeline）。
 
-## <a name="code-sample"></a>程式碼範例
+## <a name="code-sample"></a>範例程式碼
 
 如需完整C#的範例程式碼，請參閱[StopProcessSample01 範例](./stopprocesssample01-sample.md)。
 
