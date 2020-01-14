@@ -1,19 +1,19 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEEditor 物件
-ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086760"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736184"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 物件
 
 **ISEEditor** 物件是 Microsoft.PowerShell.Host.ISE.ISEEditor 類別的執行個體。 主控台窗格是 **ISEEditor** 物件。 每個 [ISEFile](The-ISEFile-Object.md) 物件都有相關聯的 **ISEEditor** 物件。 下列各節將列出 **ISEEditor** 物件的方法和屬性。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 ### <a name="clear"></a>Clear\(\)
 
@@ -69,7 +69,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
-如果編輯器物件的 **CanGoToMatch** 屬性是 **$true**，就會將插入號移到相符的字元，當插入號位於左括號、括號或大括號 (\(、\[、{) 正前方，或者在右括號、括號或大括號 (\)、\]、}) 正後方時即會發生此情況。  插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 **$false**，則這個方法不會執行任何動作。
+如果編輯器物件的 **CanGoToMatch** 屬性是 `$true`，就會將插入點移到相符的字元，當插入點位於左括弧、中括弧或大括弧 - `(`、`[`、`{` - 正前方，或者在右括弧、中括弧或大括弧 - `)`、`]`、`}` - 正後方時即會發生此情況。 插入號會放置於開端字元之前或結尾字元之後。 如果 **CanGoToMatch** 屬性是 `$false`，則這個方法不會執行任何動作。
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -119,7 +119,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-在行號和欄號設定插入號位置。 如果插入號行號或插入號欄號不在其各自的有效範圍內，就會擲回例外狀況。
+在行號和欄號設定插入號位置。 如果插入點行號或插入點欄號不在其各自的有效範圍內，就會擲回例外狀況。
 
 **lineNumber** - 整數：插入號的行號。
 
@@ -141,13 +141,13 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
-## <a name="properties"></a>[內容]
+## <a name="properties"></a>屬性
 
 ### <a name="cangotomatch"></a>CanGoToMatch
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
-唯讀的布林值屬性，可指出插入點是否位於括弧 \(\)、中括弧 \[\] 或大括弧 {} 旁邊。 如果插入號是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 **$true**。 否則為 **$false**。
+唯讀的布林值屬性，可指出插入點是否位於括弧 `()`、中括弧 `[]` 或大括弧 `{}` 旁邊。 如果插入點是在一組開端字元正前方或結尾字元的正後方，則這個屬性值會是 `$true`。 否則，會是 `$false`。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -206,7 +206,7 @@ $psISE.CurrentFile.Editor.LineCount
 
 請參閱本主題稍後的[指令碼範例](#scripting-example)。
 
-### <a name="text"></a>文字
+### <a name="text"></a>Text
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 

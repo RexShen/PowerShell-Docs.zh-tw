@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: 使用本機 PSRepository
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327989"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415828"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>使用本機 PowerShellGet 存放庫
+# <a name="working-with-private-powershellget-repositories"></a>使用私人 PowerShellGet 存放庫
 
 PowerShellGet 模組支援 PowerShell 資源庫以外的存放庫。
 這些 Cmdlet 會啟用下列案例：
@@ -18,6 +18,7 @@ PowerShellGet 模組支援 PowerShell 資源庫以外的存放庫。
 - 支援一組受信任且預先驗證的 PowerShell 模組，以便在您的環境中使用
 - 測試建置 PowerShell 模組或指令碼的 CI/CD 管線
 - 將 PowerShell 指令碼和模組傳遞給無法存取網際網路的系統
+- 傳遞僅供您組織使用的 PowerShell 指令碼和模組
 
 本文說明如何設定本機 PowerShell 存放庫。 本文亦涵蓋可從 PowerShell 資源庫取得的 [OfflinePowerShellGetDeploy][] 模組。 此模組所包含的 Cmdlet 可將最新版的 PowerShellGet 安裝到您的本機存放庫。
 
@@ -25,7 +26,7 @@ PowerShellGet 模組支援 PowerShell 資源庫以外的存放庫。
 
 有兩種方式可用來建立本機 PSRepository：NuGet 伺服器或檔案共用。 每個類型都有優點和缺點：
 
-NuGet 伺服器
+### <a name="nuget-server"></a>NuGet 伺服器
 
 | 優點| 缺點 |
 | --- | --- |
@@ -34,7 +35,7 @@ NuGet 伺服器
 | NuGet 支援 `.Nupkg` 套件的中繼資料 | 發佈需要 API 金鑰管理與維護 |
 | 提供搜尋、套件管理等。 | |
 
-檔案共用
+### <a name="file-share"></a>檔案共用
 
 | 優點| 缺點 |
 | --- | --- |
@@ -98,7 +99,7 @@ Register-PSRepository -Default
 
 - 指定程式碼的位置
 - 提供 API 金鑰
-- 指定存放庫名稱。 例如，`-PSRepository LocalPSRepo`
+- 指定存放庫名稱。 例如， `-PSRepository LocalPSRepo`
 
 > [!NOTE]
 > 您必須在 NuGet 伺服器中建立帳戶，然後登入以產生並儲存 API 金鑰。
@@ -109,7 +110,9 @@ Register-PSRepository -Default
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 如果本機 PSRepository 會以 Web 為基礎，它需要額外的步驟，才能使用 nuget.exe 來發佈。
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>使用封裝解決方案來裝載 PowerShellGet 存放庫
+
+您也可以使用封裝解決方案 (例如 Azure Artifacts) 來裝載私人或公用 PowerShellGet 存放庫。 如需詳細資訊和指示，請參閱 [Azure Artifacts 文件](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library) \(英文\)。
 
 > [!IMPORTANT]
 > 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。

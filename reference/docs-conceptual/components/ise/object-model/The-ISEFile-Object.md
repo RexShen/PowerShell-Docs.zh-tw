@@ -1,19 +1,19 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEFile 物件
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028954"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736993"
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
 
-**ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 Microsoft.PowerShell.Host.ISE.ISEFile 類別的執行個體。 本主題列出其成員方法和成員屬性。 **$psISE.CurrentFile** 以及 PowerShell 索引標籤上檔案集合中的檔案就是 Microsoft.PowerShell.Host.ISE.ISEFile 類別的所有執行個體。
+**ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 **Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。 本主題列出其成員方法和成員屬性。 `$psISE.CurrentFile` 以及 PowerShell 索引標籤上檔案集合中的檔案，都是 ****Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 ### <a name="save-saveencoding-"></a>Save\( \[saveEncoding\] \)
 
@@ -63,20 +63,20 @@ $psISE.CurrentFile.SaveAs($fullPath)
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 ### <a name="displayname"></a>DisplayName
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案]  索引標籤上。 名稱結尾的星號 \(\*\) 表示檔案有尚未儲存的變更。
+唯讀屬性，可取得包含此檔案顯示名稱的字串。 名稱會顯示於編輯器頂端的 [檔案]  索引標籤上。 名稱結尾出現的星號 `(*)` 表示檔案有尚未儲存的變更。
 
 ```powershell
 # Shows the display name of the file.
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a>Editor
+### <a name="editor"></a>編輯器
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-唯讀的布林值屬性，如果檔案在上次修改後已儲存，即會傳回 **$true**。
+唯讀布林值屬性，如果檔案在上次修改後已儲存，即會傳回 `$true`。
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-唯讀屬性，如果檔案不具標題，即會傳回 **$true**。
+唯讀屬性，如果檔案不具標題，即會傳回 `$true`。
 
 ```powershell
 # Determines whether the file has never been given a title.

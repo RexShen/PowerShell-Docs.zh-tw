@@ -1,13 +1,13 @@
 ---
-ms.date: 06/03/2019
+ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 處理軟體安裝
-ms.openlocfilehash: 6d2111a332f0e8c1b545186d3d950e936aed1834
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d164064418ad7a0209166c81a7c3cc32a9db300a
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "66830292"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737146"
 ---
 # <a name="working-with-software-installations"></a>處理軟體安裝
 
@@ -24,44 +24,44 @@ ms.locfileid: "66830292"
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
-  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)"
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.5 (x64)"
 ```
 
 ```Output
-Name               Caption                     Vendor                 Version      IdentifyingNumber
-----               -------                     ------                 -------      -----------------
-Microsoft .NET ... Microsoft .NET Core Runt... Microsoft Corporation  16.72.26629  {ACC73072-9AD5-416C-94B...
+Name             Caption                   Vendor                    Version       IdentifyingNumber
+----             -------                   ------                    -------       -----------------
+Microsoft .NET … Microsoft .NET Core Runt… Microsoft Corporation     16.84.26919   {BEB59D04-C6DD-4926-AFE…
 ```
 
 若要在螢幕上顯示 **Win32_Product** 物件的所有屬性，請使用格式設定 Cmdlet (例如 `Format-List` Cmdlet) 的 **Properties** 參數，加上 `*` (全部) 值。
 
 ```powershell
 Get-CimInstance -Class Win32_Product |
-  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)" |
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.5 (x64)" |
     Format-List -Property *
 ```
 
 ```Output
-Name                  : Microsoft .NET Core Runtime - 2.1.2 (x64)
-Version               : 16.72.26629
+Name                  : Microsoft .NET Core Runtime - 2.1.5 (x64)
+Version               : 16.84.26919
 InstallState          : 5
-Caption               : Microsoft .NET Core Runtime - 2.1.2 (x64)
-Description           : Microsoft .NET Core Runtime - 2.1.2 (x64)
-IdentifyingNumber     : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+Caption               : Microsoft .NET Core Runtime - 2.1.5 (x64)
+Description           : Microsoft .NET Core Runtime - 2.1.5 (x64)
+IdentifyingNumber     : {BEB59D04-C6DD-4926-AFEB-410CBE2EBCE4}
 SKUNumber             :
 Vendor                : Microsoft Corporation
 AssignmentType        : 1
 HelpLink              :
 HelpTelephone         :
-InstallDate           : 20180816
+InstallDate           : 20181105
 InstallDate2          :
 InstallLocation       :
-InstallSource         : C:\ProgramData\Package Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
+InstallSource         : C:\ProgramData\Package Cache\{BEB59D04-C6DD-4926-AFEB-410CBE2EBCE4}v16.84.26919\
 Language              : 1033
-LocalPackage          : C:\WINDOWS\Installer\414c96e.msi
-PackageCache          : C:\WINDOWS\Installer\414c96e.msi
-PackageCode           : {D20AC783-1EC5-4A58-9277-F452F5EB9AD9}
-PackageName           : dotnet-runtime-2.1.2-win-x64.msi
+LocalPackage          : C:\WINDOWS\Installer\4f97a771.msi
+PackageCache          : C:\WINDOWS\Installer\4f97a771.msi
+PackageCode           : {9A271A10-039D-49EA-8D24-043D91B9F915}
+PackageName           : dotnet-runtime-2.1.5-win-x64.msi
 ProductID             :
 RegCompany            :
 RegOwner              :
@@ -75,25 +75,25 @@ CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-或者，您可以使用 `Get-CimInstance` **Filter** 參數，只選取 Microsoft .NET Framework 2.0。 **Filter** 參數的值使用 WMI 查詢語言 (WQL) 語法，而不是 Windows PowerShell 語法。 例如：
+或者，您可以使用 `Get-CimInstance`**Filter** 參數，以只選取 Microsoft .NET 2.0 執行階段。 **Filter** 參數的值使用 WMI 查詢語言 (WQL) 語法，而不是 Windows PowerShell 語法。 例如：
 
 ```powershell
-Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
   Format-List -Property *
 ```
 
 若只要列出您感興趣的屬性，請使用格式設定 Cmdlet 的 **Property** 參數來列出想要的屬性。
 
 ```powershell
-Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
   Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
 ```
 
 ```Output
-Name              : Microsoft .NET Core Runtime - 2.1.2 (x64)
+Name              : Microsoft .NET Core Runtime - 2.1.5 (x64)
 InstallDate       : 20180816
 InstallLocation   :
-PackageCache      : C:\WINDOWS\Installer\414c96e.msi
+PackageCache      : C:\WINDOWS\Installer\4f97a771.msi
 Vendor            : Microsoft Corporation
 Version           : 16.72.26629
 IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
@@ -101,9 +101,9 @@ IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 
 ## <a name="listing-all-uninstallable-applications"></a>列出所有可解除安裝應用程式
 
-因為大部分的標準應用程式會向 Windows 登錄解除安裝程式，所以我們可以透過在 Windows 登錄中尋找這些應用程式，以在本機處理它們。 沒有方式保證能找出系統上的每個應用程式。 不過，找出 [新增或移除程式]  清單中顯示的所有程式是可能的。 [新增或移除程式]  會在下列登錄機碼中尋找這些應用程式：
+因為大部分的標準應用程式會向 Windows 登錄解除安裝程式，所以我們可以透過在 Windows 登錄中尋找這些應用程式，以在本機處理它們。 沒有方式保證能找出系統上的每個應用程式。 不過，在下列登錄機碼中找出在 [新增或移除程式]  中顯示清單的所有程式是可能的：
 
-`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`。
+第 1 課：建立 Windows Azure 儲存體物件`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`。
 
 我們可以檢查此機碼來尋找應用程式。 為了讓您更輕鬆地檢視 Uninstall 機碼，我們可以將 PowerShell 磁碟機對應至此登錄位置：
 
@@ -116,14 +116,18 @@ Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
+
 我們現在有了名為 "Uninstall:" 的磁碟機，它可以用來快速又方便地尋找應用程式安裝。 我們可以透過計算 Uninstall:PowerShell 磁碟機：
 
-```
+```powershell
 (Get-ChildItem -Path Uninstall:).Count
+```
+
+```Output
 459
 ```
 
-我們可以使用各種不同的技術來進一步搜尋此應用程式清單，首先是 **Get-ChildItem**。 若要取得應用程式清單並將它們儲存在 **$UninstallableApplications** 變數中，請使用下列命令：
+我們可以使用各種技術來進一步搜尋此應用程式清單，首先是 `Get-ChildItem`。 若要取得應用程式清單並將它們儲存在 `$UninstallableApplications` 變數中，請使用下列命令：
 
 ```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
@@ -140,38 +144,42 @@ $UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName'
 這些值並不保證是唯一的。 在下列範例中，有兩個已安裝項目顯示為 "Windows Media Encoder 9 Series"：
 
 ```powershell
-$UninstallableApplications | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
+$UninstallableApplications | Where-Object -FilterScript {
+  $_.GetValue("DisplayName") -eq "Microsoft Silverlight"
+}
 ```
 
 ```Output
+    Hive: HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
+
 Name                           Property
 ----                           --------
-{ACC73072-9AD5-416C-94BF-D82DD AuthorizedCDFPrefix :
-CEA0F1B}                       Comments            :
+{89F4137D-6C26-4A84-BDB8-2E5A4 AuthorizedCDFPrefix :
+BB71E00}                       Comments            :
                                Contact             :
-                               DisplayVersion      : 16.72.26629
-                               HelpLink            :
+                               DisplayVersion      : 5.1.50918.0
+                               HelpLink            : http://go.microsoft.com/fwlink/?LinkID=91955
                                HelpTelephone       :
-                               InstallDate         : 20180816
-                               InstallLocation     :
-                               InstallSource       : C:\ProgramData\Package
-                               Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
-                               ModifyPath          : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               InstallDate         : 20190115
+                               InstallLocation     : C:\Program Files\Microsoft Silverlight\
+                               InstallSource       : c:\ef64c54526db9c34cd477c103e68a254\
+                               ModifyPath          : MsiExec.exe /X{89F4137D-6C26-4A84-BDB8-2E5A4BB71E00}
                                NoModify            : 1
+                               NoRepair            : 1
                                Publisher           : Microsoft Corporation
                                Readme              :
                                Size                :
-                               EstimatedSize       : 67156
-                               SystemComponent     : 1
-                               UninstallString     : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               EstimatedSize       : 236432
+                               UninstallString     : MsiExec.exe /X{89F4137D-6C26-4A84-BDB8-2E5A4BB71E00}
                                URLInfoAbout        :
                                URLUpdateInfo       :
-                               VersionMajor        : 16
-                               VersionMinor        : 72
+                               VersionMajor        : 5
+                               VersionMinor        : 1
                                WindowsInstaller    : 1
-                               Version             : 273180677
+                               Version             : 84002534
                                Language            : 1033
-                               DisplayName         : Microsoft .NET Core Runtime - 2.1.2 (x64)
+                               DisplayName         : Microsoft Silverlight
+                               sEstimatedSize2     : 79214
 ```
 
 ## <a name="installing-applications"></a>安裝應用程式

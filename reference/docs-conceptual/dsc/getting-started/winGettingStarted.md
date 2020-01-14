@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,設定,安裝
 title: 開始使用適用於 Windows 的 Desired State Configuration (DSC)
-ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417757"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416171"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>開始使用適用於 Windows 的 Desired State Configuration (DSC)
 
@@ -31,8 +31,7 @@ ms.locfileid: "74417757"
 
 ## <a name="installing-dsc"></a>安裝 DSC
 
-PowerShell Desired State Configuration 包含在 Windows 中，而且透過 Windows Management Framework 來更新。
-最新版本是 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) \(英文\)。
+PowerShell Desired State Configuration 包含在 Windows 中，而且透過 Windows Management Framework 來更新。 最新版本是 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) \(英文\)。
 
 > [!NOTE]
 > 您不需要啟用 Windows Server 功能 'DSC-Service'，即可使用 DSC 來管理電腦。
@@ -44,7 +43,7 @@ PowerShell Desired State Configuration 包含在 Windows 中，而且透過 Wind
 
 ### <a name="creating-a-configuration-mof-document"></a>建立設定 MOF 文件
 
-Windows PowerShell Configuration 關鍵字可用來建立設定。
+Windows PowerShell `Configuration` 關鍵字可用來建立設定。
 下列步驟說明如何使用 Windows PowerShell 建立設定文件。
 
 #### <a name="define-a-configuration-and-generate-the-configuration-document"></a>定義設定，然後產生設定文件：
@@ -71,41 +70,57 @@ Configuration EnvironmentVariable_Path
 
 EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
 ```
+
 #### <a name="install-a-module-containing-dsc-resources"></a>安裝包含 DSC 資源的模組
 
 Windows PowerShell Desired State Configuration 包含內有 DSC 資源的內建模組。
 您也可以使用 PowerShellGet Cmdlet，從外部來源 (例如，PowerShell 資源庫) 載入模組。
 
-`Install-Module 'PSDscResources' -Verbose`
+```PowerShell
+Install-Module 'PSDscResources' -Verbose
+```
 
 #### <a name="apply-the-configuration-to-the-machine"></a>將設定套用至機器
 
-您可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 將設定檔 (MOF 檔案) 套用至機器。
+> [!NOTE]
+> 若要允許 DSC 執行，就必須將 Windows 設定成即使在您執行 `localhost` 設定時，也接收 PowerShell 遠端命令。 若要輕鬆正確地設定您的環境，只要在已提高權限的 PowerShell 終端機中執行 `Set-WsManQuickConfig -Force` 即可。
 
-`Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose`
+您可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 將設定文件 (MOF 檔案) 套用至機器。
+
+```powershell
+Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose
+```
 
 #### <a name="get-the-current-state-of-the-configuration"></a>取得設定的目前狀態
 
 [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) Cmdlet 會查詢機器的目前狀態，並傳回設定的目前值。
 
-`Get-DscConfiguration`
+```powershell
+Get-DscConfiguration
+```
 
 [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) Cmdlet 會傳回套用至電腦的目前中繼設定。
 
-`Get-DscLocalConfigurationManager`
+```powershell
+Get-DscLocalConfigurationManager
+```
 
 #### <a name="remove-the-current-configuration-from-a-machine"></a>將目前設定從電腦移除
 
 [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
 
-`Remove-DscConfigurationDocument -Stage Current -Verbose`
+```powershell
+Remove-DscConfigurationDocument -Stage Current -Verbose
+```
 
 #### <a name="configure-settings-in-local-configuration-manager"></a>設定本機 Configuration Manager 中的設定
 
 使用 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) Cmdlet，將中繼設定 MOF 檔案套用至電腦。
 需要中繼設定 MOF 路徑。
 
-`Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose`
+```powershell
+Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose
+```
 
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration 記錄檔
 

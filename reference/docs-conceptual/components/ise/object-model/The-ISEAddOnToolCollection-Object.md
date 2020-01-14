@@ -1,19 +1,19 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEAddOnToolCollection 物件
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030616"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737010"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection 物件
 
-**ISEAddOnToolCollection** 物件是 **ISEAddOnTool** 物件的集合。 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** 物件即為一例。
+**ISEAddOnToolCollection** 物件是 **ISEAddOnTool** 物件的集合。 例如，`$psISE.CurrentPowerShellTab.VerticalAddOnTools` 物件。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 ### <a name="add-name-controltype-isvisible-"></a>Add\( Name, ControlType, \[IsVisible\] \)
 
@@ -25,7 +25,7 @@ ms.locfileid: "67030616"
 
 **ControlType** - 類型：指定新增的控制項。
 
-**\[IsVisible\]** - 選用的布林值：如果設定為 **$true**，附加元件工具會立即顯示在相關聯的工具窗格中。
+**\[IsVisible\]** - 選用的布林值：如果設定為 `$true`，附加元件工具會立即顯示在相關聯的工具窗格中。
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

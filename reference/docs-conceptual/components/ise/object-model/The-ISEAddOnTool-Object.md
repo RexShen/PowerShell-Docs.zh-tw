@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISEAddOnTool 物件
-ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028992"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736125"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool 物件
 
@@ -17,11 +17,11 @@ ms.locfileid: "67028992"
 
 Windows PowerShell ISE 中的每個 PowerShell 索引標籤都可以安裝一組自己的附加元件工具。 請參閱 [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) 和 [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md)，來存取可供目前所選取索引標籤使用的工具集合，或者 [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) 集合物件中任何 **PowerShellTab** 物件上的相同屬性。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 沒有任何 Windows PowerShell ISE 特定的方法適用於這個類別的物件。
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 ### <a name="control"></a>控制
 
@@ -33,6 +33,9 @@ Windows PowerShell ISE 中的每個 PowerShell 索引標籤都可以安裝一組
 # View the properties of the Commands add-on tool.
 # (assumes that it is visible in the vertical pane)
 $psISE.CurrentVisibleVerticalTool.Control
+```
+
+```Output
 HostObject                  : Microsoft.PowerShell.Host.ISE.ObjectModelRoot
 Content                     :
 HasContent                  :
@@ -143,7 +146,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
-布林值屬性，指出附加元件工具目前是否會顯示於它的指派窗格中。 如果顯示，您可以將 **IsVisible** 屬性設定為 **$false** 來隱藏工具，或者將 **IsVisible** 屬性設定為 **$true**，讓附加元件工具可顯示於 PowerShell 索引標籤上。請注意，隱藏附加元件工具之後，就無法再透過 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 物件來存取，因此無法透過在該物件上使用這個屬性來顯示。
+布林值屬性，指出附加元件工具目前是否會顯示於它的指派窗格中。 如果顯示，您可以將 **IsVisible** 屬性設定為 `$false` 來隱藏工具，或者將 **IsVisible** 屬性設定為 `$true`，讓附加元件工具可顯示於 PowerShell 索引標籤上。請注意，隱藏附加元件工具之後，就無法再透過 **CurrentVisibleHorizontalTool** 或 **CurrentVisibleVerticalTool** 物件來存取，因此無法透過在該物件上使用這個屬性來顯示。
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -161,6 +164,9 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
 $psISE.CurrentVisibleVerticalTool.Name
+```
+
+```Output
 Commands
 ```
 

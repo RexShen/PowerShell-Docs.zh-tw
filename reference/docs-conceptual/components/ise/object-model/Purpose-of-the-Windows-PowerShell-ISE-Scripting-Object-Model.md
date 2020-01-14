@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 指令碼物件模型的用途
-ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f48df112bd19297baa311116e79d3d7603d7c81
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030905"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736227"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE 指令碼物件模型的用途
 
@@ -17,12 +17,13 @@ ms.locfileid: "67030905"
 
 您可以使用物件模型來修改應用程式設定和選項。 例如，您可以使用如下方式來修改它們︰
 
-- 您可以變更錯誤、警告、詳細資訊輸出及偵錯輸出的色彩。
-- 您可以取得或設定命令窗格、輸出窗格及指令碼窗格的背景色彩。
-- 您可以設定輸出窗格的前景色彩。
-- 您可以設定 Windows PowerShell ISE 的字型名稱和大小。
-- 您可以設定警告。 此設定包含在多個 PowerShell 索引標籤中開啟檔案時，或者在儲存檔案之前執行該檔案中的指令碼時所發出的警告。
-- 您可以在指令碼窗格和輸出窗格並排顯示的檢視，以及指令碼窗格位於輸出窗格上方的檢視之間進行切換。 您可以將命令窗格停駐於輸出窗格的下方或上方。
+- 變更錯誤、警告、詳細資訊輸出及偵錯輸出的色彩。
+- 取得或設定命令窗格、輸出窗格及指令碼窗格的背景色彩。
+- 設定輸出窗格的前景色彩。
+- 設定 Windows PowerShell ISE 的字型名稱和大小。
+- 設定警告。 此設定包含在多個 PowerShell 索引標籤中開啟檔案時，或者在儲存檔案之前執行該檔案中的指令碼時所發出的警告。
+- 在指令碼窗格和輸出窗格並排顯示的檢視，以及指令碼窗格位於輸出窗格上方的檢視之間進行切換。
+- 將命令窗格停駐於輸出窗格的下方或上方。
 
 ## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>增強 Windows PowerShell ISE 功能
 

@@ -1,19 +1,20 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEMenuItem 物件
-ms.openlocfilehash: a513a3e9f2eb97f3955fa817faedbcbf4e0ed018
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028933"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736976"
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem 物件
 
-**ISEMenuItem** 物件是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 類別的執行個體。 [附加元件]  功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
+**ISEMenuItem** 物件是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
+[附加元件]  功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 ### <a name="displayname"></a>DisplayName
 
@@ -44,7 +45,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-### <a name="shortcut"></a>捷徑
+### <a name="shortcut"></a>快速鍵
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 

@@ -2,18 +2,18 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShellTabCollection 物件
-ms.openlocfilehash: 5a1318534ddce19c2f5faa0d2013e2b38d8b79e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0aad885afd3ba3ae3b00f5c11d2c62a9ff303798
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030479"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736108"
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection 物件
 
-**PowerShellTab** 集合物件是 **PowerShellTab** 物件的集合。 每個 **PowerShellTab** 物件功能都可做為個別的執行階段環境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 類別的執行個體。 範例是 **$psISE.PowerShellTabs** 物件。
+**PowerShellTab** 集合物件是 **PowerShellTab** 物件的集合。 每個 **PowerShellTab** 物件功能都可做為個別的執行階段環境。 它是 Microsoft.PowerShell.Host.ISE.PowerShellTabs 類別的執行個體。 例如，`$psISE.PowerShellTabs` 物件。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 ### <a name="add"></a>Add\(\)
 

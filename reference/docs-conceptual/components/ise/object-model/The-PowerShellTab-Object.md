@@ -2,18 +2,18 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: PowerShellTab 物件
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028898"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736925"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 物件
 
 **PowerShellTab** 物件代表 Windows PowerShell 執行階段環境。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
 ### <a name="invoke-script-"></a>Invoke\( Script \)
 
@@ -43,7 +43,7 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 
 **指令碼** - System.Management.Automation.ScriptBlock 或字串：要執行的指令碼區塊。
 
-**\[useNewScope\]** -  預設為 **$true** 的選擇性布林值，若設定為 **$true**，就會建立一個在其中執行命令的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
+**\[useNewScope\]** - 預設為 `$true` 的選擇性布林值，若設定為 `$true`，就會建立一個在其中執行命令的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
 
 **\[millisecondsTimeout\]** - 選用的整數，預設為 **500**。
 如果命令沒有在指定的時間內完成，則命令會產生 **TimeoutException** 並顯示「作業逾時」訊息。
@@ -67,7 +67,7 @@ $a
 Measure-Command {$psISE.PowerShellTabs[1].InvokeSynchronous('sleep 10', $false, 5000)}
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 ### <a name="addonsmenu"></a>AddOnsMenu
 
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-唯讀屬性，如果指令碼可透過 [Invoke( Script )](#invoke-script-) 方法叫用，則會傳回 **$true** 值。
+唯讀布林值屬性，如果指令碼可透過 [Invoke( Script )](#invoke-script-) 方法叫用，則會傳回 `$true` 值。
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。  在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane**。
+在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane**。
 
 唯讀屬性，可取得主控台窗格 [editor](The-ISEEditor-Object.md) 物件。
 
@@ -156,7 +156,7 @@ $newFile.Editor.LineCount
 
 ### <a name="output"></a>輸出
 
-此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。  在更新版本的 Windows PowerShell ISE 中，您可以使用 **ConsolePane** 物件達到相同的目的。
+此功能存在於 Windows PowerShell ISE 2.0，但在之後的 ISE 中已移除或重新命名。 在更新版本的 Windows PowerShell ISE 中，您可以使用 **ConsolePane** 物件達到相同的目的。
 
 唯讀屬性，可取得目前 [editor](The-ISEEditor-Object.md) 的 [輸出] 窗格。
 

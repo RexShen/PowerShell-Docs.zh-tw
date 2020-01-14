@@ -1,27 +1,27 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISEFileCollection 物件
-ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030529"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736210"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection 物件
 
-**ISEFileCollection** 物件是 **ISEFile** 物件的集合。 $psISE.CurrentPowerShellTab.Files 集合即為一例。
+**ISEFileCollection** 物件是 **ISEFile** 物件的集合。 例如，`$psISE.CurrentPowerShellTab.Files` 集合。
 
-## <a name="methods"></a>Methods
+## <a name="methods"></a>方法
 
-### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[FullPath\] \)
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-建立並傳回未命名的新檔案，並將它加入至集合。 新建立檔案的 **IsUntitled** 屬性是 **$true**。
+建立並傳回未命名的新檔案，並將它加入至集合。 新建立檔案的 **IsUntitled** 屬性是 `$true`。
 
-**\[fullPath\]** - 選擇性字串：完整指定的檔案路徑。 如果您包含 **fullPath** 參數和相對路徑，或者使用檔案名稱而非完整路徑，即會產生例外狀況。
+**\[FullPath\]** - 選擇性字串：完整指定的檔案路徑。 如果您包含 **FullPath** 參數和相對路徑，或者使用檔案名稱而非完整路徑，即會產生例外狀況。
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -39,7 +39,7 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
 **File** - 字串：您想要從集合中移除的 ISEFile 檔案。 如果檔案尚未儲存，這個方法就會擲回例外狀況。 使用 **Force** 切換參數，強制移除尚未儲存的檔案。
 
-**\[Force\]** - 選擇性布林值：如果設定為 **$true**，就會授與權限來移除檔案，即使檔案在最後一次使用之後尚未儲存也一樣。 預設值為 **$false**。
+**\[Force\]** - 選擇性布林值：如果設定為 `$true`，就會授與權限來移除檔案，即使檔案在最後一次使用之後尚未儲存也一樣。 預設值為 `$false`。
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -56,9 +56,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-選取 **selectedFile** 參數所指定的檔案。
+選取 **SelectedFile** 參數所指定的檔案。
 
-**selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile。您想要選取的 ISEFile 檔案。
+**SelectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile。您想要選取的 ISEFile 檔案。
 
 ```powershell
 # Selects the specified file.

@@ -2,18 +2,18 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISESnippetObject
-ms.openlocfilehash: 62d470569deb051fca80005235d4c492319cf5ec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 60456ec90f56753fa96f141b8b8299ef3f7e41c9
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028897"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736959"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 
-**ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。 **$psISE.CurrentPowerShellTab.Snippets** 集合的成員都是 **ISESnippet** 物件的範例。 建立程式碼片段的最簡單方式是使用 [New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) Cmdlet。
+**ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。 `$psISE.CurrentPowerShellTab.Snippets` 集合的成員都是 **ISESnippet** 物件的範例。 建立程式碼片段的最簡單方式是使用 [New-IseSnippet](/reference/5.1/ISE/New-IseSnippet.md) Cmdlet。
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 ### <a name="author"></a>作者
 
@@ -37,7 +37,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 ```
 
-### <a name="shortcut"></a>捷徑
+### <a name="shortcut"></a>快速鍵
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
