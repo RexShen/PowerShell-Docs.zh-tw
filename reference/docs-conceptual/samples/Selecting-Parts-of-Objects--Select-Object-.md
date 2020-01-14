@@ -1,48 +1,40 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 選取物件的組件 Select Object
-ms.openlocfilehash: 4d4c89f0b5103e4701a3af3cd07fcd7c8f1c697f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 06b92c7c4c5098c707a7d9f9d9a96e6b6a897f80
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030113"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737163"
 ---
-# <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="6ed0e-103">選取物件的組件 (Select-Object)</span><span class="sxs-lookup"><span data-stu-id="6ed0e-103">Selecting Parts of Objects (Select-Object)</span></span>
+# <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="154b7-103">選取物件的組件 (Select-Object)</span><span class="sxs-lookup"><span data-stu-id="154b7-103">Selecting Parts of Objects (Select-Object)</span></span>
 
-<span data-ttu-id="6ed0e-104">您可以使用 **Select-Object** Cmdlet 來建立新的自訂 Windows PowerShell 物件，這些物件包含從用來建立它們的物件中選取的屬性。</span><span class="sxs-lookup"><span data-stu-id="6ed0e-104">You can use the **Select-Object** cmdlet to create new, custom Windows PowerShell objects that contain properties selected from the objects you use to create them.</span></span> <span data-ttu-id="6ed0e-105">輸入下列命令，以建立只包括 Win32_LogicalDisk WMI 類別的 Name 和 FreeSpace 屬性的新物件：</span><span class="sxs-lookup"><span data-stu-id="6ed0e-105">Type the following command to create a new object that includes only the Name and FreeSpace properties of the Win32_LogicalDisk WMI class:</span></span>
+<span data-ttu-id="154b7-104">您可以使用 `Select-Object` Cmdlet 來建立新的自訂 PowerShell 物件，這些物件包含從用來建立它們的物件中選取的屬性。</span><span class="sxs-lookup"><span data-stu-id="154b7-104">You can use the `Select-Object` cmdlet to create new, custom PowerShell objects that contain properties selected from the objects you use to create them.</span></span> <span data-ttu-id="154b7-105">輸入下列命令，以建立只包括 **Win32_LogicalDisk** WMI 類別之 **Name** 和 **FreeSpace** 屬性的新物件：</span><span class="sxs-lookup"><span data-stu-id="154b7-105">Type the following command to create a new object that includes only the **Name** and **FreeSpace** properties of the **Win32_LogicalDisk** WMI class:</span></span>
 
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
-
-Name                                    FreeSpace
-----                                    ---------
-C:                                      50664845312
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
 ```
 
-<span data-ttu-id="6ed0e-106">發出該命令之後會看不到資料類型；但是，如果您在 Select-Object 之後將結果輸送到 Get-Member，則可以分辨您有新類型的物件 (PSCustomObject)：</span><span class="sxs-lookup"><span data-stu-id="6ed0e-106">You cannot see the type of data after issuing that command, but if you pipe the result to Get-Member after the Select-Object, you can tell that you have a new type of object, a PSCustomObject:</span></span>
-
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace| Get-Member
-
-   TypeName: System.Management.Automation.PSCustomObject
-
-Name        MemberType   Definition
-----        ----------   ----------
-Equals      Method       System.Boolean Equals(Object obj)
-GetHashCode Method       System.Int32 GetHashCode()
-GetType     Method       System.Type GetType()
-ToString    Method       System.String ToString()
-FreeSpace   NoteProperty  FreeSpace=...
-Name        NoteProperty System.String Name=C:
+```Output
+Name      FreeSpace
+----      ---------
+C:      50664845312
 ```
 
-<span data-ttu-id="6ed0e-107">Select-Object 有許多用法。</span><span class="sxs-lookup"><span data-stu-id="6ed0e-107">Select-Object has many uses.</span></span> <span data-ttu-id="6ed0e-108">其中一種是複寫之後可以進行修改的資料。</span><span class="sxs-lookup"><span data-stu-id="6ed0e-108">One of them is replicating data that you can then modify.</span></span> <span data-ttu-id="6ed0e-109">我們現在可以處理上一節所發生的問題。</span><span class="sxs-lookup"><span data-stu-id="6ed0e-109">We can now handle the problem we ran across in the previous section.</span></span> <span data-ttu-id="6ed0e-110">我們可以更新新建立物件中的 FreeSpace 值，而且輸出將包括描述性標籤︰</span><span class="sxs-lookup"><span data-stu-id="6ed0e-110">We can update the value of FreeSpace in our newly-created objects and the output will include the descriptive label:</span></span>
+<span data-ttu-id="154b7-106">您可以使用 `Select-Object` 來建立計算的屬性。</span><span class="sxs-lookup"><span data-stu-id="154b7-106">With `Select-Object` you can create calculated properties.</span></span> <span data-ttu-id="154b7-107">因此，您可以用 GB 而不是位元組來顯示 **FreeSpace**。</span><span class="sxs-lookup"><span data-stu-id="154b7-107">So you can display **FreeSpace** in gigabytes rather than bytes.</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk |
+  Select-Object -Property Name, @{
+    label='FreeSpace'
+    expression={($_.FreeSpace/1GB).ToString('F2')}
+  }
 ```
-Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0; $_}
-Name                                                                  FreeSpace
-----                                                                  ---------
-C:                                                                48317.7265625
+
+```Output
+Name    FreeSpace
+----    ---------
+C:      47.18
 ```

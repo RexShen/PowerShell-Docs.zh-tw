@@ -1,135 +1,137 @@
 ---
-ms.date: 06/05/2017
+ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 取得 WMI 物件 Get WmiObject
-ms.openlocfilehash: 93276ce12135342af2d6f238976e65e5d8bdde7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 23fd8cf596a8be7e36651ac3f9c79ca97240e647
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030223"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737214"
 ---
-# <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="d7b48-103">取得 WMI 物件 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="d7b48-103">Getting WMI Objects (Get-WmiObject)</span></span>
+# <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="82e7f-103">取得 WMI 物件 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="82e7f-103">Getting WMI Objects (Get-WmiObject)</span></span>
 
-## <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="d7b48-104">取得 WMI 物件 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="d7b48-104">Getting WMI Objects (Get-WmiObject)</span></span>
+## <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="82e7f-104">取得 WMI 物件 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="82e7f-104">Getting WMI Objects (Get-WmiObject)</span></span>
 
-<span data-ttu-id="d7b48-105">Windows Management Instrumentation (WMI) 可以一致地公開各種不同的資訊，因此成為 Windows 系統管理的核心技術。</span><span class="sxs-lookup"><span data-stu-id="d7b48-105">Windows Management Instrumentation (WMI) is a core technology for Windows system administration because it exposes a wide range of information in a uniform manner.</span></span> <span data-ttu-id="d7b48-106">由於 WMI 的強大功能，用於存取 WMI 物件的 Windows PowerShell Cmdlet **Get-WmiObject** 是執行實際工作的最實用工具之一。</span><span class="sxs-lookup"><span data-stu-id="d7b48-106">Because of how much WMI makes possible, the Windows PowerShell cmdlet for accessing WMI objects, **Get-WmiObject**, is one of the most useful for doing real work.</span></span> <span data-ttu-id="d7b48-107">我們將討論如何使用 Get-WmiObject 存取 WMI 物件，並接著討論如何使用 WMI 物件執行特定動作。</span><span class="sxs-lookup"><span data-stu-id="d7b48-107">We are going to discuss how to use Get-WmiObject to access WMI objects and then how to use WMI objects to do specific things.</span></span>
+<span data-ttu-id="82e7f-105">Windows Management Instrumentation (WMI) 可以一致地公開各種不同的資訊，因此成為 Windows 系統管理的核心技術。</span><span class="sxs-lookup"><span data-stu-id="82e7f-105">Windows Management Instrumentation (WMI) is a core technology for Windows system administration because it exposes a wide range of information in a uniform manner.</span></span> <span data-ttu-id="82e7f-106">由於 WMI 的強大功能，使得用於存取 WMI 物件的 PowerShell Cmdlet `Get-CimInstance` 成為執行實際工作的最實用工具之一。</span><span class="sxs-lookup"><span data-stu-id="82e7f-106">Because of how much WMI makes possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the most useful for doing real work.</span></span> <span data-ttu-id="82e7f-107">我們將討論如何使用 CimCmdlets 來存取 WMI 物件，並接著討論如何使用 WMI 物件來執行特定動作。</span><span class="sxs-lookup"><span data-stu-id="82e7f-107">We are going to discuss how to use the CimCmdlets to access WMI objects and then how to use WMI objects to do specific things.</span></span>
 
-### <a name="listing-wmi-classes"></a><span data-ttu-id="d7b48-108">列出 WMI 類別</span><span class="sxs-lookup"><span data-stu-id="d7b48-108">Listing WMI Classes</span></span>
+### <a name="listing-wmi-classes"></a><span data-ttu-id="82e7f-108">列出 WMI 類別</span><span class="sxs-lookup"><span data-stu-id="82e7f-108">Listing WMI Classes</span></span>
 
-<span data-ttu-id="d7b48-109">大多數 WMI 使用者遇到的第一個問題，就是嘗試了解使用 WMI 可執行的動作。</span><span class="sxs-lookup"><span data-stu-id="d7b48-109">The first problem most WMI users encounter is trying to find out what can be done with WMI.</span></span> <span data-ttu-id="d7b48-110">WMI 類別描述可管理的資源。</span><span class="sxs-lookup"><span data-stu-id="d7b48-110">WMI classes describe the resources that can be managed.</span></span> <span data-ttu-id="d7b48-111">有數百個 WMI 類別，其中一些類別包含數十個屬性。</span><span class="sxs-lookup"><span data-stu-id="d7b48-111">There are hundreds of WMI classes, some of which contain dozens of properties.</span></span>
+<span data-ttu-id="82e7f-109">大多數 WMI 使用者遇到的第一個問題，就是嘗試了解使用 WMI 可執行的動作。</span><span class="sxs-lookup"><span data-stu-id="82e7f-109">The first problem most WMI users encounter is trying to find out what can be done with WMI.</span></span> <span data-ttu-id="82e7f-110">WMI 類別描述可管理的資源。</span><span class="sxs-lookup"><span data-stu-id="82e7f-110">WMI classes describe the resources that can be managed.</span></span> <span data-ttu-id="82e7f-111">有數百個 WMI 類別，其中一些類別包含數十個屬性。</span><span class="sxs-lookup"><span data-stu-id="82e7f-111">There are hundreds of WMI classes, some of which contain dozens of properties.</span></span>
 
-<span data-ttu-id="d7b48-112">**Get-WmiObject** 讓 WMI 變成可搜尋，以解決此問題。</span><span class="sxs-lookup"><span data-stu-id="d7b48-112">**Get-WmiObject** addresses this problem by making WMI discoverable.</span></span> <span data-ttu-id="d7b48-113">您可以輸入下列命令，取得本機電腦上可用的 WMI 類別清單：</span><span class="sxs-lookup"><span data-stu-id="d7b48-113">You can get a list of the WMI classes available on the local computer by typing:</span></span>
-
-```
-PS> Get-WmiObject -List
-
-__SecurityRelatedClass                  __NTLMUser9X
-__PARAMETERS                            __SystemSecurity
-__NotifyStatus                          __ExtendedStatus
-Win32_PrivilegesStatus                  Win32_TSNetworkAdapterSettingError
-Win32_TSRemoteControlSettingError       Win32_TSEnvironmentSettingError
-...
-```
-
-<span data-ttu-id="d7b48-114">您可以使用 ComputerName 參數指定電腦名稱或 IP 位址，從遠端電腦擷取相同的資訊︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-114">You can retrieve the same information from a remote computer by using the ComputerName parameter, specifying a computer name or IP address:</span></span>
-
-```
-PS> Get-WmiObject -List -ComputerName 192.168.1.29
-
-__SystemClass                           __NAMESPACE
-__Provider                              __Win32Provider
-__ProviderRegistration                  __ObjectProviderRegistration
-...
-```
-
-<span data-ttu-id="d7b48-115">遠端電腦所傳回的類別清單可能會因電腦執行的特定作業系統，以及已安裝應用程式新增的特定 WMI 擴充功能 而異。</span><span class="sxs-lookup"><span data-stu-id="d7b48-115">The class listing returned by remote computers may vary due to the specific operating system the computer is running and the particular WMI extensions added by installed applications.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="d7b48-116">使用 Get-WmiObject 連線到遠端電腦時，遠端電腦必須執行 WMI，而且根據預設設定，您使用的帳戶必須在遠端電腦上的本機 Administrators 群組中。</span><span class="sxs-lookup"><span data-stu-id="d7b48-116">When using Get-WmiObject to connect to a remote computer, the remote computer must be running WMI and, under the default configuration, the account you are using must be in the local administrators group on the remote computer.</span></span> <span data-ttu-id="d7b48-117">遠端系統不需要安裝 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="d7b48-117">The remote system does not need to have Windows PowerShell installed.</span></span> <span data-ttu-id="d7b48-118">這可讓您管理未執行 Windows PowerShell 但有可用 WMI 的作業系統。</span><span class="sxs-lookup"><span data-stu-id="d7b48-118">This allows you to administer operating systems that are not running Windows PowerShell, but do have WMI available.</span></span>
-
-<span data-ttu-id="d7b48-119">您甚至可以在連線到本機系統時包含 ComputerName。</span><span class="sxs-lookup"><span data-stu-id="d7b48-119">You can even include the ComputerName when connecting to the local system.</span></span> <span data-ttu-id="d7b48-120">您可以使用本機電腦的名稱、其 IP 位址 (或迴路位址 127.0.0.1) 或 WMI 樣式 '.' 作為電腦名稱。</span><span class="sxs-lookup"><span data-stu-id="d7b48-120">You can use the local computer's name, its IP address (or the loopback address 127.0.0.1), or the WMI-style '.' as the computer name.</span></span> <span data-ttu-id="d7b48-121">如果您在名為 Admin01 且 IP 位址為 192.168.1.90 的電腦上執行 Windows PowerShell，下列命令全部會傳回該電腦的 WMI 類別清單︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-121">If you are running Windows PowerShell on a computer named Admin01 with IP address 192.168.1.90, the following commands will all return the WMI class listing for that computer:</span></span>
+<span data-ttu-id="82e7f-112">`Get-CimClass` 會藉由讓 WMI 變成可探索來解決此問題。</span><span class="sxs-lookup"><span data-stu-id="82e7f-112">`Get-CimClass` addresses this problem by making WMI discoverable.</span></span> <span data-ttu-id="82e7f-113">您可以輸入下列命令，取得本機電腦上可用的 WMI 類別清單：</span><span class="sxs-lookup"><span data-stu-id="82e7f-113">You can get a list of the WMI classes available on the local computer by typing:</span></span>
 
 ```powershell
-Get-WmiObject -List
-Get-WmiObject -List -ComputerName .
-Get-WmiObject -List -ComputerName Admin01
-Get-WmiObject -List -ComputerName 192.168.1.90
-Get-WmiObject -List -ComputerName 127.0.0.1
-Get-WmiObject -List -ComputerName localhost
+Get-CimClass -Namespace root/CIMV2 |
+  Where-Object CimClassName -like Win32* |
+    Select-Object CimClassName
 ```
 
-<span data-ttu-id="d7b48-122">Get-WmiObject 預設使用 root/cimv2 命名空間。</span><span class="sxs-lookup"><span data-stu-id="d7b48-122">Get-WmiObject uses the root/cimv2 namespace by default.</span></span> <span data-ttu-id="d7b48-123">如果您想要指定其他 WMI 命名空間，請使用 **Namespace** 參數並指定對應的命名空間路徑︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-123">If you want to specify another WMI namespace, use the **Namespace** parameter and specify the corresponding namespace path:</span></span>
-
-```
-PS> Get-WmiObject -List -ComputerName 192.168.1.29 -Namespace root
-
-__SystemClass                           __NAMESPACE
-__Provider                              __Win32Provider
+```Output
+CimClassName
+------------
+Win32_DeviceChangeEvent
+Win32_SystemConfigurationChangeEvent
+Win32_VolumeChangeEvent
+Win32_SystemTrace
+Win32_ProcessTrace
+Win32_ProcessStartTrace
+Win32_ProcessStopTrace
+Win32_ThreadTrace
+Win32_ThreadStartTrace
+Win32_ThreadStopTrace
 ...
 ```
 
-### <a name="displaying-wmi-class-details"></a><span data-ttu-id="d7b48-124">顯示 WMI 類別詳細資料</span><span class="sxs-lookup"><span data-stu-id="d7b48-124">Displaying WMI Class Details</span></span>
+<span data-ttu-id="82e7f-114">您可以藉由使用 **ComputerName** 並參數指定電腦名稱或 IP 位址，從遠端電腦擷取相同的資訊︰</span><span class="sxs-lookup"><span data-stu-id="82e7f-114">You can retrieve the same information from a remote computer by using the **ComputerName** parameter, specifying a computer name or IP address:</span></span>
 
-<span data-ttu-id="d7b48-125">如果您已經知道 WMI 類別的名稱，您可以使用它來立即取得資訊。</span><span class="sxs-lookup"><span data-stu-id="d7b48-125">If you already know the name of a WMI class, you can use it to get information immediately.</span></span> <span data-ttu-id="d7b48-126">例如，常用於擷取電腦相關資訊的其中一個 WMI 類別是 **Win32_OperatingSystem**。</span><span class="sxs-lookup"><span data-stu-id="d7b48-126">For example, one of the WMI classes commonly used for retrieving information about a computer is **Win32_OperatingSystem**.</span></span>
-
-```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName .
-
-SystemDirectory : C:\WINDOWS\system32
-Organization    : Global Network Solutions
-BuildNumber     : 2600
-RegisteredUser  : Oliver W. Jones
-SerialNumber    : 12345-678-9012345-67890
-Version         : 5.1.2600
+```powershell
+Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
 ```
 
-<span data-ttu-id="d7b48-127">雖然我們會顯示所有參數，但命令可以更簡潔的方式來表示。</span><span class="sxs-lookup"><span data-stu-id="d7b48-127">Although we are showing all of the parameters, the command can be expressed in a more succinct way.</span></span> <span data-ttu-id="d7b48-128">連線到本機系統時，不需要 **ComputerName** 參數。</span><span class="sxs-lookup"><span data-stu-id="d7b48-128">The **ComputerName** parameter is not necessary when connecting to the local system.</span></span> <span data-ttu-id="d7b48-129">顯示此參數是為了示範最常見的案例，並提醒您有此參數。</span><span class="sxs-lookup"><span data-stu-id="d7b48-129">We show it to demonstrate the most general case and remind you about the parameter.</span></span> <span data-ttu-id="d7b48-130">**Namespace** 預設為 root/cimv2，您也可以加以省略。</span><span class="sxs-lookup"><span data-stu-id="d7b48-130">The **Namespace** defaults to root/cimv2, and can be omitted as well.</span></span> <span data-ttu-id="d7b48-131">最後，大多數 Cmdlet 允許您省略一般參數的名稱。</span><span class="sxs-lookup"><span data-stu-id="d7b48-131">Finally, most cmdlets allow you to omit the name of common parameters.</span></span> <span data-ttu-id="d7b48-132">使用 Get-WmiObject，如果未指定第一個參數的名稱，Windows PowerShell 會將它視為 **Class** 參數。</span><span class="sxs-lookup"><span data-stu-id="d7b48-132">With Get-WmiObject, if no name is specified for the first parameter, Windows PowerShell treats it as the **Class** parameter.</span></span> <span data-ttu-id="d7b48-133">這表示最後一個命令可能已藉由輸入下列命令發出︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-133">This means the last command could have been issued by typing:</span></span>
+<span data-ttu-id="82e7f-115">遠端電腦所傳回的類別清單可能會因電腦執行的特定作業系統，以及已安裝應用程式新增的特定 WMI 擴充功能 而異。</span><span class="sxs-lookup"><span data-stu-id="82e7f-115">The class listing returned by remote computers may vary due to the specific operating system the computer is running and the particular WMI extensions added by installed applications.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="82e7f-116">使用 CIM Cmdlet 來連線到遠端電腦時，遠端電腦必須執行 WMI，而且您使用的帳戶必須在遠端電腦上的本機 Administrators 群組中。</span><span class="sxs-lookup"><span data-stu-id="82e7f-116">When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI and the account you are using must be in the local administrators group on the remote computer.</span></span>
+> <span data-ttu-id="82e7f-117">遠端系統不需要安裝 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="82e7f-117">The remote system does not need to have PowerShell installed.</span></span> <span data-ttu-id="82e7f-118">這可讓您管理未執行 PowerShell 但有 WMI 可用的作業系統。</span><span class="sxs-lookup"><span data-stu-id="82e7f-118">This allows you to administer operating systems that are not running PowerShell, but do have WMI available.</span></span>
+
+### <a name="displaying-wmi-class-details"></a><span data-ttu-id="82e7f-119">顯示 WMI 類別詳細資料</span><span class="sxs-lookup"><span data-stu-id="82e7f-119">Displaying WMI Class Details</span></span>
+
+<span data-ttu-id="82e7f-120">如果您已經知道 WMI 類別的名稱，您可以使用它來立即取得資訊。</span><span class="sxs-lookup"><span data-stu-id="82e7f-120">If you already know the name of a WMI class, you can use it to get information immediately.</span></span> <span data-ttu-id="82e7f-121">例如，常用於擷取電腦相關資訊的其中一個 WMI 類別是 **Win32_OperatingSystem**。</span><span class="sxs-lookup"><span data-stu-id="82e7f-121">For example, one of the WMI classes commonly used for retrieving information about a computer is **Win32_OperatingSystem**.</span></span>
+
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem
+```
+
+```Output
+SystemDirectory     Organization BuildNumber RegisteredUser SerialNumber            Version
+---------------     ------------ ----------- -------------- ------------            -------
+C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA175 10.0.18362
+```
+
+<span data-ttu-id="82e7f-122">雖然我們會顯示所有參數，但命令可以更簡潔的方式來表示。</span><span class="sxs-lookup"><span data-stu-id="82e7f-122">Although we are showing all of the parameters, the command can be expressed in a more succinct way.</span></span>
+<span data-ttu-id="82e7f-123">連線到本機系統時，不需要 **ComputerName** 參數。</span><span class="sxs-lookup"><span data-stu-id="82e7f-123">The **ComputerName** parameter is not necessary when connecting to the local system.</span></span> <span data-ttu-id="82e7f-124">顯示此參數是為了示範最常見的案例，並提醒您有此參數。</span><span class="sxs-lookup"><span data-stu-id="82e7f-124">We show it to demonstrate the most general case and remind you about the parameter.</span></span> <span data-ttu-id="82e7f-125">**Namespace** 預設為 `root/CIMV2`，您也可以予以省略。</span><span class="sxs-lookup"><span data-stu-id="82e7f-125">The **Namespace** defaults to `root/CIMV2`, and can be omitted as well.</span></span> <span data-ttu-id="82e7f-126">最後，大多數 Cmdlet 允許您省略一般參數的名稱。</span><span class="sxs-lookup"><span data-stu-id="82e7f-126">Finally, most cmdlets allow you to omit the name of common parameters.</span></span> <span data-ttu-id="82e7f-127">使用 `Get-CimInstance` 時，如果未指定第一個參數的名稱，PowerShell 會將它視為 **Class** 參數。</span><span class="sxs-lookup"><span data-stu-id="82e7f-127">With `Get-CimInstance`, if no name is specified for the first parameter, PowerShell treats it as the **Class** parameter.</span></span> <span data-ttu-id="82e7f-128">這表示最後一個命令可能已藉由輸入下列命令發出︰</span><span class="sxs-lookup"><span data-stu-id="82e7f-128">This means the last command could have been issued by typing:</span></span>
 
 ```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
-<span data-ttu-id="d7b48-134">**Win32_OperatingSystem** 類別具有比此處顯示更多的屬性。</span><span class="sxs-lookup"><span data-stu-id="d7b48-134">The **Win32_OperatingSystem** class has many more properties than those displayed here.</span></span> <span data-ttu-id="d7b48-135">您可以使用 Get-Member 查看所有屬性。</span><span class="sxs-lookup"><span data-stu-id="d7b48-135">You can use Get-Member to see all the properties.</span></span> <span data-ttu-id="d7b48-136">WMI 類別的屬性與其他物件屬性一樣會自動提供使用︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-136">The properties of a WMI class are automatically available like other object properties:</span></span>
+<span data-ttu-id="82e7f-129">**Win32_OperatingSystem** 類別具有比此處顯示更多的屬性。</span><span class="sxs-lookup"><span data-stu-id="82e7f-129">The **Win32_OperatingSystem** class has many more properties than those displayed here.</span></span> <span data-ttu-id="82e7f-130">您可以使用 Get-Member 查看所有屬性。</span><span class="sxs-lookup"><span data-stu-id="82e7f-130">You can use Get-Member to see all the properties.</span></span> <span data-ttu-id="82e7f-131">WMI 類別的屬性與其他物件屬性一樣會自動提供使用︰</span><span class="sxs-lookup"><span data-stu-id="82e7f-131">The properties of a WMI class are automatically available like other object properties:</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem | Get-Member -MemberType Property
 ```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Get-Member -MemberType Property
 
-   TypeName: System.Management.ManagementObject#root\cimv2\Win32_OperatingSyste
-m
-
+```Output
+   TypeName: Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_OperatingSystem
 Name                                      MemberType Definition
 ----                                      ---------- ----------
-__CLASS                                   Property   System.String __CLASS {...
-...
-BootDevice                                Property   System.String BootDevic...
-BuildNumber                               Property   System.String BuildNumb...
+BootDevice                                Property   string BootDevice {get;}
+BuildNumber                               Property   string BuildNumber {get;}
+BuildType                                 Property   string BuildType {get;}
+Caption                                   Property   string Caption {get;}
+CodeSet                                   Property   string CodeSet {get;}
+CountryCode                               Property   string CountryCode {get;}
+CreationClassName                         Property   string CreationClassName {get;}
+CSCreationClassName                       Property   string CSCreationClassName {get;}
+CSDVersion                                Property   string CSDVersion {get;}
+CSName                                    Property   string CSName {get;}
+CurrentTimeZone                           Property   short CurrentTimeZone {get;}
+DataExecutionPrevention_32BitApplications Property   bool DataExecutionPrevention_32BitApplications {get;}
+DataExecutionPrevention_Available         Property   bool DataExecutionPrevention_Available {get;}
 ...
 ```
 
-#### <a name="displaying-non-default-properties-with-format-cmdlets"></a><span data-ttu-id="d7b48-137">使用 Format Cmdlet 顯示非預設屬性</span><span class="sxs-lookup"><span data-stu-id="d7b48-137">Displaying Non-Default Properties with Format Cmdlets</span></span>
+#### <a name="displaying-non-default-properties-with-format-cmdlets"></a><span data-ttu-id="82e7f-132">使用 Format Cmdlet 顯示非預設屬性</span><span class="sxs-lookup"><span data-stu-id="82e7f-132">Displaying Non-Default Properties with Format Cmdlets</span></span>
 
-<span data-ttu-id="d7b48-138">如果您需要預設未顯示之 **Win32_OperatingSystem** 類別中所包含的資訊，您可以使用 **Format** Cmdlet 顯示此類別。</span><span class="sxs-lookup"><span data-stu-id="d7b48-138">If you want information contained in the **Win32_OperatingSystem** class that is not displayed by default, you can display it by using the **Format** cmdlets.</span></span> <span data-ttu-id="d7b48-139">例如，如果您想要顯示可用記憶體資料，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-139">For example, if you want to display available memory data, type:</span></span>
+<span data-ttu-id="82e7f-133">如果您需要預設未顯示之 **Win32_OperatingSystem** 類別中所包含的資訊，您可以使用 **Format** Cmdlet 顯示此類別。</span><span class="sxs-lookup"><span data-stu-id="82e7f-133">If you want information contained in the **Win32_OperatingSystem** class that is not displayed by default, you can display it by using the **Format** cmdlets.</span></span> <span data-ttu-id="82e7f-134">例如，如果您想要顯示可用記憶體資料，請輸入︰</span><span class="sxs-lookup"><span data-stu-id="82e7f-134">For example, if you want to display available memory data, type:</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem |
+  Format-Table -Property TotalVirtualMemorySize, TotalVisibleMemorySize,
+    FreePhysicalMemory, FreeVirtualMemory, FreeSpaceInPagingFiles
 ```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-Table -Property TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
 
-TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
----------------------- ---------------    ------------------ -==--------------------- ---------------
-               2097024          785904                305808           2056724                1558232
+```Output
+TotalVirtualMemorySize TotalVisibleMemorySize FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
+---------------------- ---------------------- ------------------ ----------------- ----------------------
+              33449088               16671872            6451868          18424496               16285032
 ```
 
 > [!NOTE]
-> <span data-ttu-id="d7b48-140">**Format-Table** 中的屬性名稱可以使用萬用字元，因此最後的管線元素可縮減為 `Format-Table -Property Total,Free`。</span><span class="sxs-lookup"><span data-stu-id="d7b48-140">Wildcards work with property names in **Format-Table**, so the final pipeline element can be reduced to `Format-Table -Property Total,Free`</span></span>
+> <span data-ttu-id="82e7f-135">萬用字元可在 `Format-Table` 中搭配屬性名稱使用，因此最後的管線元素可縮減成 `Format-Table -Property Total*Memory*, Free*`</span><span class="sxs-lookup"><span data-stu-id="82e7f-135">Wildcards work with property names in `Format-Table`, so the final pipeline element can be reduced to `Format-Table -Property Total*Memory*, Free*`</span></span>
 
-<span data-ttu-id="d7b48-141">如果您輸入下列命令，將記憶體資料格式化為清單，可能更容易閱讀︰</span><span class="sxs-lookup"><span data-stu-id="d7b48-141">The memory data might be more readable if you format it as a list by typing:</span></span>
+<span data-ttu-id="82e7f-136">如果您輸入下列命令，將記憶體資料格式化為清單，可能更容易閱讀︰</span><span class="sxs-lookup"><span data-stu-id="82e7f-136">The memory data might be more readable if you format it as a list by typing:</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem | Format-List Total*Memory*, Free*
 ```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-List TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
 
-TotalVirtualMemorySize : 2097024
-TotalVisibleMemorySize : 785904
-FreePhysicalMemory     : 301876
-FreeVirtualMemory      : 2056724
-FreeSpaceInPagingFiles : 1556644
+```Output
+TotalVirtualMemorySize : 33449088
+TotalVisibleMemorySize : 16671872
+FreePhysicalMemory     : 6524456
+FreeSpaceInPagingFiles : 16285808
+FreeVirtualMemory      : 18393668
+Name                   : Microsoft Windows 10 Pro|C:\WINDOWS|\Device\Harddisk0\Partition2
 ```
