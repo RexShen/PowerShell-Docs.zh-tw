@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,設定,安裝
 title: 適合決策者的預期狀態設定概觀
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737248"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870790"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適用於決策者的預期狀態設定概觀
 
@@ -38,7 +38,7 @@ DSC 在設計時即已考慮到 [DevOps](/archive/blogs/ashleymcglone/devops-for
 ## <a name="dsc-on-premises-and-off-premises"></a>DSC 內部部署與外部部署
 
 DSC 可管理內部部署及外部部署的部署。 針對內部部署解決方案，DSC 具有[提取伺服器](../pull-server/pullServer.md)，可用來集中管理電腦並回報其狀態。 針對外部部署雲端解決方案，DSC 可在 Windows 可用的地方使用。
-Azure 提供以 DSC 為基礎建置的特定供應項目，例如 [Azure 自動化](https://azure.microsoft.com/en-us/documentation/services/automation/)，這可讓您集中管理 DSC 回報功能。
+Azure 提供以 DSC 為基礎建置的特定供應項目，例如 [Azure 自動化](/azure/automation)，這可讓您集中管理 DSC 回報功能。
 
 ## <a name="dsc-and-compatibility"></a>DSC 和相容性
 
