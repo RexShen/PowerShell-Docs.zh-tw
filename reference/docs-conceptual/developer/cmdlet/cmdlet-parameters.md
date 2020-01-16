@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365927"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022218"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 參數
 
@@ -33,7 +33,7 @@ Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從�
 
 [Cmdlet 參數的類型](./types-of-cmdlet-parameters.md)說明您可以在 Cmdlet 中宣告的不同參數類型。
 
-[Cmdlet 參數名稱和功能方針](./standard-cmdlet-parameter-names-and-types.md)Discuses 標準參數的名稱、建議的資料類型和功能。
+[Cmdlet 參數名稱和功能方針](./standard-cmdlet-parameter-names-and-types.md)討論標準參數的名稱、建議的資料類型和功能。
 
 [參數別名](./parameter-aliases.md)討論您可以為參數定義的別名。
 
