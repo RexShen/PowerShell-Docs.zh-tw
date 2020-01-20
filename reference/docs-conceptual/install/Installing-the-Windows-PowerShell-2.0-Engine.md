@@ -2,14 +2,15 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 安裝 Windows PowerShell 2.0 引擎
-ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24bca7bd18fd33392f4f79b958189d3251ec35c1
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030955"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870535"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>安裝 Windows PowerShell 2.0 引擎
+
 本主題說明如何安裝 Windows PowerShell 2.0 引擎。
 
 Windows PowerShell 3.0 已設計為可回溯相容至 Windows PowerShell 2.0。 針對 Windows PowerShell 2.0 撰寫的 Cmdlet、提供者、嵌入式管理單元、模組及指令碼，在 Windows PowerShell 3.0 和 Windows PowerShell 4.0 中仍以同樣方式執行。 不過，因為 Microsoft .NET Framework 4 中執行階段啟用原則的變更，所以在較新版的 Windows PowerShell (使用 CLR 4.0 編譯) 中，必須修改才能執行針對 Windows PowerShell 2.0 所撰寫並使用通用語言執行平台 (CLR) 2.0 編譯的 Windows PowerShell 主機程式。
@@ -21,17 +22,17 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
 ## <a name="on-windows-81-and-windows-8"></a>在 Windows 8.1 和 Windows 8 上
-在 Windows 8.1 和 Windows 8 上，預設會開啟 Windows PowerShell 2.0 引擎功能。 不過若要使用，則必須開啟所需的 Microsoft .NET Framework 3.5 選項。 本節也會說明如何開啟及關閉 Windows PowerShell 2.0 引擎功能。
+
+在 Windows 8.1 和 Windows 8 上，預設會開啟 Windows PowerShell 2.0 引擎功能。
+不過若要使用，則必須開啟所需的 Microsoft .NET Framework 3.5 選項。 本節也會說明如何開啟及關閉 Windows PowerShell 2.0 引擎功能。
 
 #### <a name="to-turn-on-net-framework-35"></a>開啟 .NET Framework 3.5
 
 1. 在 **[開始]** 畫面上，輸入 **Windows 功能**。
-
 2. 在 **[應用程式]** 列中按一下 **[設定]** ，然後按一下 **[開啟或關閉 Windows 功能]** 。
-
 3. 在 **[Windows 功能]** 方塊中，按一下 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]** 加以選取。
 
-    當您選取 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]** 時，會填入方塊中以指出僅選取部分功能。 不過，這樣已足以應付 Windows PowerShell 2.0 引擎。
+   當您選取 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]** 時，會填入方塊中以指出僅選取部分功能。 不過，這樣已足以應付 Windows PowerShell 2.0 引擎。
 
 #### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>啟動和關閉 Windows PowerShell 2.0 引擎
 
@@ -42,6 +43,7 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 3. 在 [Windows 功能]  方塊中，展開 [Windows PowerShell 2.0]  節點，然後按一下 [Windows PowerShell 2.0 引擎]  方塊加以選取或清除。
 
 ## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>在 Windows Server 2012 R2 和 Windows Server 2012 上
+
 使用下列程序來新增 Windows PowerShell 2.0 引擎和 Microsoft .NET Framework 3.5 功能。 Windows PowerShell 2.0 引擎至少需要 Microsoft .NET Framework 2.0.50727。 Microsoft .NET Framework 3.5 可完成這項需求。
 
 #### <a name="to-add-the-net-framework-35-feature"></a>新增 .NET Framework 3.5 功能
@@ -54,13 +56,13 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 
 3. 在 **[功能]** 頁面上，展開 **[.NET 3.5 Framework 功能]** 節點，然後選取 **[.NET Framework 3.5 (包括 .NET 2.0 和 3.0)]** 。
 
-    Windows PowerShell 2.0 引擎不需要該節點下方的其他選項。
+   Windows PowerShell 2.0 引擎不需要該節點下方的其他選項。
 
 #### <a name="to-add-the-windows-powershell-20-engine-feature"></a>新增 Windows PowerShell 2.0 引擎功能
 
 - 在 **[伺服器管理員]** 中，從 **[管理]** 功能表選取 **[新增角色及功能]** 。
 
-    或者，在 [伺服器管理員]  中，按一下 [所有伺服器]  ，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]  。
+  或者，在 [伺服器管理員]  中，按一下 [所有伺服器]  ，以滑鼠右鍵按一下伺服器名稱，然後選取 [新增角色及功能]  。
 
 - 在 [安裝類型]  頁面上，選取 [角色型或功能型安裝]  。
 
@@ -69,12 +71,14 @@ Windows PowerShell 2.0 引擎是 Windows Server 2012 R2、Windows 8.1、Windows�
 如需啟動 Windows PowerShell 2.0 引擎的相關資訊，請參閱[啟動 Windows PowerShell 2.0 引擎](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)。
 
 ## <a name="on-earlier-systems"></a>在舊版系統上
+
 在 Windows 7、Windows Server 2008 R2 和 Windows Server 2012 上安裝 Windows PowerShell 4.0 的 [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) 套件會包含 Windows PowerShell 2.0 引擎。 Windows PowerShell 2.0 引擎可視需要啟用並開始使用，而不需要額外的安裝、設定或組態。
 
 在 Windows 7、Windows Server 2008 R2 和 Windows Server 2008 上安裝 Windows PowerShell 3.0 的 Windows Management Framework 3.0 套件會包含 Windows PowerShell 2.0 引擎。 Windows PowerShell 2.0 引擎可視需要啟用並開始使用，而不需要額外的安裝、設定或組態。
 
 ## <a name="see-also"></a>另請參閱
+
 - [Windows PowerShell 系統需求](Windows-PowerShell-System-Requirements.md)
 - [安裝 Windows PowerShell](Installing-Windows-PowerShell.md)
-- [啟動 Windows PowerShell](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [啟動 Windows PowerShell](/previous-versions/ms714415(v=vs.85))
 - [啟動 Windows PowerShell 2.0 引擎](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)

@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 為 Windows PowerShell Web 存取中的存取問題進行疑難排解
-ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692243"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870178"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
@@ -66,63 +66,59 @@ ms.locfileid: "71692243"
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>即使已安裝角色，仍找不到網頁伺服器 (IIS) 管理工具
 
-如果您使用 `Install-WindowsFeature` Cmdlet 安裝 Windows PowerShell Web 存取，除非將 `-IncludeManagementTools` 參數新增至 Cmdlet，否則不會安裝管理工具。
+如果您使用 `Install-WindowsFeature` Cmdlet 來安裝 Windows PowerShell Web 存取，除非將 **IncludeManagementTools** 參數新增到 Cmdlet，否則不會安裝管理工具。
 
 如需範例，請參閱[使用 Windows PowerShell Cmdlet 安裝 Windows PowerShell Web 存取](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)。
 
-在以閘道伺服器為目標的 [新增角色及功能精靈]  工作階段選取工具，可以新增 IIS 管理員主控台及您需要的其他 IIS 管理工具。
-您可以從 [伺服器管理員] 中開啟 [新增角色及功能精靈]。
+在以閘道伺服器為目標的 [新增角色及功能精靈]  工作階段選取工具，可以新增 IIS 管理員主控台及您需要的其他 IIS 管理工具。 您可以從 [伺服器管理員] 中開啟 [新增角色及功能精靈]。
 
 ## <a name="windows-powershell-web-access-website-is-not-accessible"></a>無法存取 Windows PowerShell Web 存取網站
 
 如果在 Internet Explorer 啟用增強式安全性設定 (IE ESC)，您可以將 Windows PowerShell Web 存取網站新增至信任的網站清單。
 
-較不建議的方法是停用 IE ESC，因為這會有安全性風險。
-您可以在 [伺服器管理員] 中 [本機伺服器] 頁面上的 [屬性] 磚中停用 IE ESC。
+較不建議的方法是停用 IE ESC，因為這會有安全性風險。 您可以在 [伺服器管理員] 中 [本機伺服器] 頁面上的 [屬性] 磚中停用 IE ESC。
 
 ## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>授權失敗。 請確認您已獲授權可連線至目的電腦。
 
 當閘道伺服器為目的地電腦且同時位於工作群組時嘗試連線，會顯示上述錯誤訊息。
 
-當閘道伺服器也是目的地伺服器且位於工作群組時，請指定使用者名稱、電腦名稱和使用者群組名稱。
-請勿單獨使用點 (.) 來代表電腦名稱。
+當閘道伺服器也是目的地伺服器且位於工作群組時，請指定使用者名稱、電腦名稱和使用者群組名稱。 請勿單獨使用點 (.) 來代表電腦名稱。
 
 ### <a name="scenarios-and-proper-values"></a>案例和適當的值
 
 #### <a name="all-cases"></a>所有情況
 
-參數 | 值
--- | --
-UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
-UserGroup | Server\_name\\user\_group<br/>Localhost\\user\_group<br/>.\\user\_group
-ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>.\\computer\_group
+  參數   |                                        值
+------------- | -----------------------------------------------------------------------------------
+UserName      | `Server_name\user_name`<br/>`Localhost\user_name`<br/>`.\user_name`
+UserGroup     | `Server_name\user_group`<br/>`Localhost\user_group`<br/>`.\user_group`
+ComputerGroup | `Server_name\computer_group`<br/>`Localhost\computer_group`<br/>`.\computer_group`
 
 #### <a name="gateway-server-is-in-a-domain"></a>閘道伺服器位於網域
 
-參數 | 值
--- | --
+ 參數   |                        值
+------------ | ----------------------------------------------------
 ComputerName | 閘道伺服器的完整名稱，或 Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>閘道伺服器位於工作群組
 
-參數 | 值
--- | --
+ 參數   |    值
+------------ | -----------
 ComputerName | 伺服器名稱
 
 ### <a name="gateway-credentials"></a>閘道認證
 
 使用下列其中一種格式的認證以目標電腦身分登入閘道伺服器。
 
-- Server\_name\\user\_name
-- Localhost\\user\_name
-- .\\user\_name
+- `Server_name\user_name`
+- `Localhost\user_name`
+- `.\user_name`
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>授權規則顯示安全性識別碼 (SID)
 
-授權規則顯示安全性識別碼 (SID)，而不是 user\_name/computer\_name 語法。
+授權規則中會顯示安全性識別碼 (SID)，而非語法 `user_name/computer_name`。
 
-可能是規則不再有效，或者 Active Directory 網域服務查詢失敗。
-如果閘道伺服器曾經位於工作群組，但之後加入網域，則授權規則通常無效
+可能是規則不再有效，或者 Active Directory 網域服務查詢失敗。 如果閘道伺服器曾經位於工作群組，但之後加入網域，則授權規則通常無效
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>因為 IPv6 位址包含一個網域，所以無法使用規則登入
 
@@ -130,13 +126,12 @@ ComputerName | 伺服器名稱
 
 授權規則不支援網域名稱格式的 IPv6 位址。
 
-若要使用 IPv6 位址指定目的電腦，請在授權規則使用原始 IPv6 位址 (包含冒號)。
-在 [Windows PowerShell Web 存取] 登入頁面中，支援以網域及數字 (含冒號) IPv6 位址做為目標電腦名稱，但在授權規則中則不行。
+若要使用 IPv6 位址指定目的電腦，請在授權規則使用原始 IPv6 位址 (包含冒號)。 在 [Windows PowerShell Web 存取] 登入頁面中，支援以網域及數字 (含冒號) IPv6 位址做為目標電腦名稱，但在授權規則中則不行。
 
-如需 IPv6 位址的詳細資訊，請參閱 [How IPv6 Works](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx) (IPv6 的運作方式)。
+如需 IPv6 位址的詳細資訊，請參閱 [How IPv6 Works](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10)) (IPv6 的運作方式)。
 
 ## <a name="see-also"></a>另請參閱
 
-- [Windows PowerShell Web 存取的授權規則與安全性功能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [使用網頁型 Windows PowerShell 主控台](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [Windows PowerShell Web 存取的授權規則與安全性功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282394(v=ws.11))
+- [使用網頁型 Windows PowerShell 主控台](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831417(v=ws.11))
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
