@@ -2,12 +2,12 @@
 title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416296"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022223"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支援週期
 
@@ -54,23 +54,25 @@ PowerShell Core 會採用 [Microsoft 現代化生命週期原則][modern]。 此
 | Windows 7、8.1 和 10                            |   支援   | 支援 |
 | Windows Server 2008 R2、2012 R2、2016             |   支援   | 支援 |
 | [Windows Server 半年通道][semi-annual] |   支援   | 支援 |
-| Ubuntu 16.04 與 18.04                            |   支援   | 支援 |
-| Ubuntu 18.10 (透過 Snap 套件)                   |   群體   | 群體 |
-| Ubuntu 19.04 (透過 Snap 套件)                   |   群體   | 群體 |
+| Ubuntu 16.04 和 18.04                            |   支援   | 支援 |
+| Ubuntu 18.10 (透過 Snap 套件)                   |   社群   | 社群 |
+| Ubuntu 19.04 (透過 Snap 套件)                   |   社群   | 社群 |
 | Debian 9                                          |   支援   | 支援 |
 | Debian 10                                         | 不支援 | 支援 |
 | CentOS 7                                          |   支援   | 支援 |
+| CentOS 8                                          | 不支援 | 支援 |
 | Red Hat Enterprise Linux 7                        |   支援   | 支援 |
+| Red Hat Enterprise Linux 8                        | 不支援 | 支援 |
 | openSUSE 42.3                                     |   支援   | 支援 |
 | Fedora 28                                         |   支援   | 支援 |
 | Fedora 29、30                                     | 不支援 | 支援 |
 | Alpine 3.8                                        |   查看注意事項    | 查看注意事項  |
 | Alpine 3.9 與 3.10                               | 不支援 | 查看注意事項  |
 | macOS 10.12+                                      |   支援   | 支援 |
-| Arch                                              |   群體   | 群體 |
-| Raspbian                                          |   群體   | 群體 |
-| Kali                                              |   群體   | 群體 |
-| AppImage (作用於多個 Linux 平台)      |   群體   | 群體 |
+| Arch                                              |   社群   | 社群 |
+| Raspbian                                          |   社群   | 社群 |
+| Kali                                              |   社群   | 社群 |
+| AppImage (作用於多個 Linux 平台)      |   社群   | 社群 |
 | [Snap 套件](https://snapcraft.io/powershell)   |   請參閱備註    | 請參閱備註  |
 
 > [!NOTE]
