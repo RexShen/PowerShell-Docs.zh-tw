@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
-ms.openlocfilehash: 0a71167926a39c821d25228825297e924e9682bd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3b00f0900325b4e95b2c129d93d03d6b5d60f77e
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359637"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995893"
 ---
-# <a name="resource-mapping-schema"></a><span data-ttu-id="3615c-102">資源對應結構描述</span><span class="sxs-lookup"><span data-stu-id="3615c-102">Resource Mapping Schema</span></span>
+# <a name="resource-mapping-schema"></a><span data-ttu-id="517a5-102">資源對應結構描述</span><span class="sxs-lookup"><span data-stu-id="517a5-102">Resource Mapping Schema</span></span>
 
-<span data-ttu-id="3615c-103">Management OData IIS 擴充功能會使用 XML 檔案來定義資源對應。</span><span class="sxs-lookup"><span data-stu-id="3615c-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="3615c-104">下列 XSD 會定義用於這些檔案的架構。</span><span class="sxs-lookup"><span data-stu-id="3615c-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="517a5-103">Management OData IIS 擴充功能會使用 XML 檔案來定義資源對應。</span><span class="sxs-lookup"><span data-stu-id="517a5-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="517a5-104">下列 XSD 會定義用於這些檔案的架構。</span><span class="sxs-lookup"><span data-stu-id="517a5-104">The following XSD defines the schema used for these files.</span></span>
 
-## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="3615c-105">資源對應檔案 XSD</span><span class="sxs-lookup"><span data-stu-id="3615c-105">Resource Mapping File XSD</span></span>
+## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="517a5-105">資源對應檔案 XSD</span><span class="sxs-lookup"><span data-stu-id="517a5-105">Resource Mapping File XSD</span></span>
 
-<span data-ttu-id="3615c-106">下列 XSD 會定義 Management OData IIS 擴充功能資源對應檔案的架構。</span><span class="sxs-lookup"><span data-stu-id="3615c-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
+<span data-ttu-id="517a5-106">下列 XSD 會定義 Management OData IIS 擴充功能資源對應檔案的架構。</span><span class="sxs-lookup"><span data-stu-id="517a5-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09" targetNamespace="http://schemas.microsoft.com/powershell-web-services/2010/09" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xs:schema xmlns="https://schemas.microsoft.com/powershell-web-services/2010/09" targetNamespace="https://schemas.microsoft.com/powershell-web-services/2010/09" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="ResourceMetadata">
     <xs:complexType>
       <xs:all>
