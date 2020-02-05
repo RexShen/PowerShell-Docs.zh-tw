@@ -1,23 +1,24 @@
 ---
 title: 匯入 PowerShell 模組 |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 02/03/2020
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
-ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d5ce61a1cba1d91c130394c5cf7249021e95f485
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360697"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996018"
 ---
 # <a name="importing-a-powershell-module"></a>匯入 PowerShell 模組
 
-在系統上安裝模組之後，您可能會想要匯入模組。 匯入是將模組載入使用中記憶體的程式，讓使用者可以在其 PowerShell 會話中存取該模組。 在 PowerShell 2.0 中，您可以使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的呼叫匯入新安裝的 PowerShell 模組。 在 PowerShell 3.0 中，當使用者呼叫模組中的其中一個函式或 Cmdlet 時，PowerShell 可以隱含地匯入模組。 請注意，這兩個版本都假設您將模組安裝在 PowerShell 能夠找到它的位置;如需詳細資訊，請參閱[安裝 PowerShell 模組](./installing-a-powershell-module.md)。 您可以使用模組資訊清單來限制要匯出模組的哪些部分，而且您可以使用 `Import-Module` 呼叫的參數來限制要匯入的元件。
+在系統上安裝模組之後，您可能會想要匯入模組。 匯入是將模組載入使用中記憶體的程式，讓使用者可以在其 PowerShell 會話中存取該模組。 在 PowerShell 2.0 中，您可以使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的呼叫匯入新安裝的 PowerShell 模組。 在 PowerShell 3.0 中，當使用者呼叫模組中的其中一個函式或 Cmdlet 時，PowerShell 可以隱含地匯入模組。 請注意，這兩個版本都假設您將模組安裝在 PowerShell 能夠找到它的位置;如需詳細資訊，請參閱[安裝 PowerShell 模組](./installing-a-powershell-module.md)。
+您可以使用模組資訊清單來限制要匯出模組的哪些部分，而且您可以使用 `Import-Module` 呼叫的參數來限制要匯入的元件。
 
 ## <a name="importing-a-snap-in-powershell-10"></a>匯入嵌入式管理單元（PowerShell 1.0）
 
@@ -25,7 +26,8 @@ ms.locfileid: "72360697"
 
 ## <a name="importing-a-module-with-import-module-powershell-20"></a>使用 Import-module 匯入模組（PowerShell 2.0）
 
-PowerShell 2.0 使用適當命名的[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 來匯入模組。 執行此 Cmdlet 時，Windows PowerShell 會在 `PSModulePath` 變數所指定的目錄中搜尋指定的模組。 找到指定的目錄時，Windows PowerShell 會依下列順序搜尋檔案：模組資訊清單檔案（. .psd1）、腳本模組檔案（. .psm1）、二進位模組檔案（.dll）。 如需將目錄新增至搜尋的詳細資訊，請參閱[修改 PSModulePath 安裝路徑](./modifying-the-psmodulepath-installation-path.md)。 下列程式碼說明如何匯入模組：
+PowerShell 2.0 使用適當命名的[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 來匯入模組。 執行此 Cmdlet 時，Windows PowerShell 會在 `PSModulePath` 變數所指定的目錄中搜尋指定的模組。 找到指定的目錄時，Windows PowerShell 會依下列順序搜尋檔案：模組資訊清單檔案（. .psd1）、腳本模組檔案（. .psm1）、二進位模組檔案（.dll）。 如需將目錄新增至搜尋的詳細資訊，請參閱[修改 PSModulePath 安裝路徑](./modifying-the-psmodulepath-installation-path.md)。
+下列程式碼說明如何匯入模組：
 
 ```powershell
 Import-Module myModule
@@ -37,7 +39,7 @@ Import-Module myModule
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 ```
 
-您也可以使用-verbose 參數來識別要從模組匯出的內容，以及匯入到使用中記憶體的內容。 匯出和匯入都會限制對使用者公開的內容：其差異在於控制可見度的物件。 基本上，匯出是由模組內的程式碼所控制。 相反地，匯入是由 `Import-Module` 呼叫所控制。 如需詳細資訊，請參閱下方的**限制匯入的成員**。
+您也可以使用 `-Verbose` 參數來識別要從模組匯出的內容，以及要匯入到使用中記憶體的內容。 匯出和匯入都會限制對使用者公開的內容：其差異在於控制可見度的物件。 基本上，匯出是由模組內的程式碼所控制。 相反地，匯入是由 `Import-Module` 呼叫所控制。 如需詳細資訊，請參閱下方的**限制匯入的成員**。
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>隱含匯入模組（PowerShell 3.0）
 
@@ -47,7 +49,7 @@ Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 
 - 在命令中使用 Cmdlet。 例如，輸入 `Get-ExecutionPolicy` 匯入包含 `Get-ExecutionPolicy` Cmdlet 的 Microsoft. PowerShell. Security 模組。
 
-- 使用[get-command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) Cmdlet 來取得命令。  例如，輸入 `Get-Command Get-JobTrigger` 匯入包含 `Get-JobTrigger` Cmdlet 的**PSScheduledJob**模組。 包含萬用字元的 `Get-Command` 命令會被視為探索，而不會觸發模組的匯入。
+- 使用[get-command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) Cmdlet 來取得命令。 例如，輸入 `Get-Command Get-JobTrigger` 匯入包含 `Get-JobTrigger` Cmdlet 的**PSScheduledJob**模組。 包含萬用字元的 `Get-Command` 命令會被視為探索，而不會觸發模組的匯入。
 
 - 使用[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) Cmdlet 取得 Cmdlet 的說明。 例如，輸入 `Get-Help Get-WinEvent` 匯入包含 `Get-WinEvent` Cmdlet 的 Microsoft. Diagnostics 模組。
 
@@ -62,19 +64,20 @@ Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 > [!WARNING]
 > 如果匯出成員的名稱使用未核准的動詞命令，或如果成員的名稱使用限制的字元，則會在執行[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 時顯示警告。
 
-根據預設， [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 不會將任何物件傳回至管線。 不過，此 Cmdlet 支援 `PassThru` 參數，可用於為每個匯入的模組傳回[PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo)物件。 若要將輸出傳送至主機，使用者應該執行「[寫入主機](/powershell/module/Microsoft.PowerShell.Utility/Write-Host)」 Cmdlet。
+根據預設， [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 不會將任何物件傳回至管線。 不過，此 Cmdlet 支援**PassThru**參數，可以用來針對每個匯入的模組傳回[PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo)物件。 若要將輸出傳送至主機，使用者應該執行「[寫入主機](/powershell/module/Microsoft.PowerShell.Utility/Write-Host)」 Cmdlet。
 
 ## <a name="restricting--the-members-that-are-imported"></a>限制已匯入的成員
 
-使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 匯入模組時，預設會將所有匯出的模組成員匯入到會話中，包括由嵌套模組匯出至模組的任何命令。 預設不會匯出變數和別名。 若要限制匯出的成員，請使用[模組資訊清單](./how-to-write-a-powershell-module-manifest.md)。 若要限制匯入的成員，請使用 `Import-Module` Cmdlet 的下列參數。
+使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 匯入模組時，預設會將所有匯出的模組成員匯入到會話中，包括由嵌套模組匯出至模組的任何命令。 預設不會匯出變數和別名。 若要限制匯出的成員，請使用[模組資訊清單](./how-to-write-a-powershell-module-manifest.md)。
+若要限制匯入的成員，請使用 `Import-Module` Cmdlet 的下列參數。
 
-- `Function`：此參數會限制匯出的函式。 （如果您使用模組資訊清單，請參閱 FunctionsToExport 鍵）。
+- **Function**：這個參數會限制匯出的函式。 （如果您使用模組資訊清單，請參閱 FunctionsToExport 鍵）。
 
-- `Cmdlet`：此參數會限制匯出的 Cmdlet （如果您使用模組資訊清單，請參閱 CmdletsToExport 鍵）。
+- `**Cmdlet**：此參數會限制匯出的 Cmdlet （如果您使用模組資訊清單，請參閱 CmdletsToExport 鍵）。
 
-- `Variable`：此參數會限制匯出的變數（如果您使用模組資訊清單，請參閱 VariablesToExport 鍵）。
+- **變數**：此參數會限制匯出的變數（如果您使用模組資訊清單，請參閱 VariablesToExport 鍵）。
 
-- `Alias`：此參數會限制匯出的別名（如果您使用模組資訊清單，請參閱 AliasesToExport 鍵）。
+- **Alias**：此參數會限制匯出的別名（如果您使用模組資訊清單，請參閱 AliasesToExport 鍵）。
 
 ## <a name="see-also"></a>另請參閱
 

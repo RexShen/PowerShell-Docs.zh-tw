@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
-ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366987"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995995"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>可更新的說明撰寫：逐步
 
@@ -40,7 +40,7 @@ ms.locfileid: "72366987"
 @{
 RootModule = TestModule.psm1
 ModuleVersion = '2.0'
-HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
+HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 }
 ```
 
