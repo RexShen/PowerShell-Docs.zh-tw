@@ -654,8 +654,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: 使用靜態類別和方法
           href: samples/using-static-classes-and-methods.md
-        - name: 取得 WMI 物件 -Get-WmiObject
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: 取得 WMI 物件 - Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: 管理電腦
       items:
         - name: 變更電腦狀態

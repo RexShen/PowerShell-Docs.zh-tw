@@ -2,19 +2,18 @@
 title: PowerShell Core 6.1 的新功能
 description: PowerShell Core 6.1 中發行的新功能與變更
 ms.date: 09/13/2018
-ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086091"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995509"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 的新功能
 
 以下是 PowerShell Core 6.1 中已引進的一些主要新功能與變更精選。
 
-還有**許多**「乏味的項目」讓 PowerShell 變得更快且更穩定 (外加許許多多的 Bug 修正)！
-如需變更的完整清單，請參閱 [GitHub 上的變更記錄](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)。
+還有**許多**「乏味的項目」讓 PowerShell 變得更快且更穩定 (外加許許多多的 Bug 修正)！ 如需變更的完整清單，請參閱 [GitHub 上的變更記錄](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)。
 
 此外，除了下文所提到的一些名字，我們也感謝[所有社群參與者](https://github.com/PowerShell/PowerShell/graphs/contributors)協助實現這次的發行。
 
@@ -37,13 +36,11 @@ Windows 相容性組件可讓 PowerShell Core 使用**隨附於 Windows 10 2018 
 
 ## <a name="support-for-application-whitelisting"></a>支援應用程式允許清單
 
-PowerShell Core 6.1 與 Windows PowerShell 5.1 同樣支援 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 應用程式允許清單。
-應用程式允許清單可讓您細微控制哪些二進位檔才能搭配使用 PowerShell [受限語言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)來執行。
+PowerShell Core 6.1 與 Windows PowerShell 5.1 同樣支援 [AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 應用程式允許清單。 應用程式允許清單可讓您細微控制哪些二進位檔才能搭配使用 PowerShell [受限語言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)來執行。
 
 ## <a name="performance-improvements"></a>效能改善
 
-PowerShell Core 6.0 已做出一些重大的效能改善。
-PowerShell Core 6.1 將持續改善特定作業的速度。
+PowerShell Core 6.0 已做出一些重大的效能改善。 PowerShell Core 6.1 將持續改善特定作業的速度。
 
 例如，`Group-Object` 已加速 66%：
 
@@ -54,7 +51,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | 時間 (秒)   | 25.178                 | 19.653              | 6.641               |
-| 加速 (%) | 不適用                    | 21.9%               | 66.2%               |
+| 加速 (%) | N/A                    | 21.9%               | 66.2%               |
 
 同樣地，類似如下的排序案例已改善超過 15%：
 
@@ -65,7 +62,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | 時間 (秒)   | 12.170                 | 8.493               | 7.08                |
-| 加速 (%) | 不適用                    | 30.2%               | 16.6%               |
+| 加速 (%) | N/A                    | 30.2%               | 16.6%               |
 
 `Import-Csv` 從 Windows PowerShell 迴歸之後也已大幅加速。
 下列範例針對 26,616 個資料列和 6 個資料行使用測試 CSV：
@@ -77,7 +74,7 @@ Measure-Command {$a = Import-Csv foo.csv}
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | 時間 (秒)   | 0.441                  | 1.069               | 0.268                  |
-| 加速 (%) | 不適用                    | -142.4%             | 74.9% (39.2% 來自 WPS) |
+| 加速 (%) | N/A                    | -142.4%             | 74.9% (39.2% 來自 WPS) |
 
 最後，從 JSON 到 `PSObject` 的轉換自 Windows PowerShell 之後已加速超過 50%。
 下列範例使用 ~2MB 測試 JSON 檔案：
@@ -89,14 +86,13 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | 時間 (秒)   | 0.259                  | 0.577               | 0.125                  |
-| 加速 (%) | 不適用                    | -122.8%             | 78.3% (51.7% 來自 WPS) |
+| 加速 (%) | N/A                    | -122.8%             | 78.3% (51.7% 來自 WPS) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>查看 `system32` 以了解 Windows 上相容的內建模組
 
 在 Windows 10 1809 更新和 Windows Server 2019 中，我們更新了一些內建 PowerShell 模組，使其與 PowerShell Core 相容。
 
-當 PowerShell Core 6.1 啟動時，它會自動包含 `$windir\System32` 作為 `PSModulePath` 環境變數的一部分。
-不過，如果其 `CompatiblePSEdition` 標示為與 `Core` 相容，則只會對 `Get-Module` 和 `Import-Module` 公開模組。
+當 PowerShell Core 6.1 啟動時，它會自動包含 `$windir\System32` 作為 `PSModulePath` 環境變數的一部分。 不過，如果其 `CompatiblePSEdition` 標示為與 `Core` 相容，則只會對 `Get-Module` 和 `Import-Module` 公開模組。
 
 
 ```powershell
@@ -202,15 +198,13 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的功能，可讓您連線到 Hyper-V VM 或容器，而不需要網路連線或其他遠端管理服務。
 
-在過去，PowerShell Direct 是使用容器上的內建 Windows PowerShell 執行個體進行連線。
-現在，PowerShell 會先嘗試使用 `PATH` 環境變數上的任何可用 `pwsh.exe` 進行連線。
-如果沒有 `pwsh.exe`，PowerShell Direct 會改為使用 `powershell.exe`。
+在過去，PowerShell Direct 是使用容器上的內建 Windows PowerShell 執行個體進行連線。 現在，PowerShell 會先嘗試使用 `PATH` 環境變數上的任何可用 `pwsh.exe` 進行連線。 如果沒有 `pwsh.exe`，PowerShell Direct 會改為使用 `powershell.exe`。
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` 現在會為預覽版本建立個別遠端端點
 
 `Enable-PSRemoting` 現在會建立兩個遠端工作階段設定：
 
-- 一個用於 PowerShell 的主要版本。 例如，`PowerShell.6`。 在次要版本更新之間，可依賴此端點作為「全系統」的 PowerShell 6 工作階段設定
+- 一個用於 PowerShell 的主要版本。 例如： `PowerShell.6` 。 在次要版本更新之間，可依賴此端點作為「全系統」的 PowerShell 6 工作階段設定
 - 一個版本特定的工作階段設定，例如：`PowerShell.6.1.0`
 
 如果您想要在相同電腦上安裝多個 PowerShell 6 版本以供存取，此行為會很有用。
@@ -262,8 +256,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### <a name="userhostport-syntax-supported-for-ssh"></a>SSH 支援 `user@host:port` 語法
 
-SSH 用戶端通常支援 `user@host:port` 格式的連接字串。
-透過新增 SSH 作為 PowerShell 遠端通訊協定，我們已新增對此連接字串格式的支援：
+SSH 用戶端通常支援 `user@host:port` 格式的連接字串。 透過新增 SSH 作為 PowerShell 遠端通訊協定，我們已新增對此連接字串格式的支援：
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
@@ -305,13 +298,11 @@ PS /etc>
 
 ### <a name="update-help-as-non-admin"></a>以非系統管理員身分執行 `Update-Help`
 
-經熱烈要求，`Update-Help` 不再需要以系統管理員身分執行。
-`Update-Help` 現在預設會將說明儲存至使用者範圍的資料夾。
+經熱烈要求，`Update-Help` 不再需要以系統管理員身分執行。 `Update-Help` 現在預設會將說明儲存至使用者範圍的資料夾。
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>`PSCustomObject` 上的新方法/屬性
 
-感謝 [@iSazonov](https://github.com/iSazonov)，我們已新增方法和屬性至 `PSCustomObject`。
-`PSCustomObject` 現在類似其他物件包含 `Count`/`Length` 屬性。
+感謝 [@iSazonov](https://github.com/iSazonov)，我們已新增方法和屬性至 `PSCustomObject`。 `PSCustomObject` 現在類似其他物件包含 `Count`/`Length` 屬性。
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -353,8 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-感謝 @SimonWahlin，我們已將 `-Not` 參數新增至 `Where-Object`。
-現在，您可以依不存在的屬性或 Null/空白屬性值來篩選管線上的物件。
+感謝 @SimonWahlin，我們已將 `-Not` 參數新增至 `Where-Object`。 現在，您可以依不存在的屬性或 Null/空白屬性值來篩選管線上的物件。
 
 例如，此命令會傳回未定義任何相依服務的所有服務：
 
@@ -368,8 +358,7 @@ Get-Service | Where-Object -Not DependentServices
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>從 PSMethod 轉換成委派
 
-感謝 [@powercode](https://github.com/powercode)，我們現在支援從 `PSMethod` 轉換成委派。
-這可讓您執行將 `PSMethod` `[M]::DoubleStrLen` 當作委派值傳入 `[M]::AggregateString` 之類的動作：
+感謝 [@powercode](https://github.com/powercode)，我們現在支援從 `PSMethod` 轉換成委派。 這可讓您執行將 `PSMethod` `[M]::DoubleStrLen` 當作委派值傳入 `[M]::AggregateString` 之類的動作：
 
 ```powershell
 class M {
@@ -420,8 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>移除 `more` 函式
 
-在過去，PowerShell 在 Windows 上提供用來包裝 `more.com` 的函式，稱為 `more`。
-該函式現在已移除。
+在過去，PowerShell 在 Windows 上提供用來包裝 `more.com` 的函式，稱為 `more`。 該函式現在已移除。
 
 此外，`help` 函式已變更為使用 `more.com` (在 Windows 上) 或 `$env:PAGER` 所指定系統的預設頁面巡覽區 (非 Windows 平台上)。
 
@@ -435,11 +423,11 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 在 Windows PowerShell 中，我們會包含下列類型快速鍵，以更輕鬆地搭配其各自類型來運作：
 
-- `[adsi]`：`System.DirectoryServices.DirectoryEntry`
-- `[adsisearcher]`：`System.DirectoryServices.DirectorySearcher`
-- `[wmi]`：`System.Management.ManagementObject`
-- `[wmiclass]`：`System.Management.ManagementClass`
-- `[wmisearcher]`：`System.Management.ManagementObjectSearcher`
+- `[adsi]`: `System.DirectoryServices.DirectoryEntry`
+- `[adsisearcher]`: `System.DirectoryServices.DirectorySearcher`
+- `[wmi]`: `System.Management.ManagementObject`
+- `[wmiclass]`: `System.Management.ManagementClass`
+- `[wmisearcher]`: `System.Management.ManagementObjectSearcher`
 
 這些類型快速鍵並未包含在 PowerShell 6 中，但已新增至 Windows 上執行的 PowerShell 6.1。
 
@@ -511,8 +499,7 @@ PowerShell Core 會在啟動時將基本遙測資料傳送給 Microsoft。 該�
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>已將 `VisualBasic` 從 Add-Type 支援的語言中移除
 
-在過去，您可以使用 `Add-Type` Cmdlet 編譯 Visual Basic 程式碼。
-Visual Basic 很少用於 `Add-Type`。 我們已移除這項功能來縮減 PowerShell 的大小。
+在過去，您可以使用 `Add-Type` Cmdlet 編譯 Visual Basic 程式碼。 Visual Basic 很少用於 `Add-Type`。 我們已移除這項功能來縮減 PowerShell 的大小。
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>已清除 `CommandTypes.Workflow` 和 `WorkflowInfoCleaned` 的使用
 

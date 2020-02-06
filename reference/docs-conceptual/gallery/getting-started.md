@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 開始使用 PowerShell Gallery
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328459"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995880"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>開始使用 PowerShell 資源庫
 
@@ -27,12 +27,12 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- 標籤
+- Tag
 - Includes
 - DscResource
 - RoleCapability
 - Command
-- 篩選器
+- Filter
 
 如果您只想要探索資源庫中的特定 DSC 資源，則可以執行 [Find-DscResource][] Cmdlet。 Find-DscResource 會傳回資源庫中所含 DSC 資源的資料。 因為 DSC 資源一律傳遞為模組的一部分，所以您仍然需要執行 [Install-Module][] 來安裝這些 DSC 資源。
 
@@ -68,7 +68,7 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 
 根據預設，[Install-Module][] 和 [Install-Script][] 會安裝套件的最新版本。 若要安裝較舊的套件版本，請新增 `-RequiredVersion` 參數。
 
-### <a name="deploy"></a>在客體叢集部署
+### <a name="deploy"></a>部署
 
 若要將套件從 PowerShell 資源庫部署至 Azure 自動化，按一下 [Azure 自動化]  ，然後按一下套件詳細資料頁面上的 [部署至 Azure 自動化]  。 系統會將您重新導向至 Azure 管理入口網站，而您必須使用 Azure 帳戶認證來登入。 請注意，部署含相依性的套件會將所有相依性部署至 Azure 自動化。 若要停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕，請將 **AzureAutomationNotSupported** 標記新增至套件中繼資料。
 
@@ -76,7 +76,7 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>從 PowerShell 資源庫更新套件
 
-若要更新從 PowerShell 資源庫安裝的套件，請執行 [Update-Module][] 或 [Update-Script][] Cmdlet。 如果執行時未指定任何其他參數，[Update-Module][] 就會嘗試更新透過執行 [Install-Module][] 安裝的所有模組。 若要選擇性地更新模組，請新增 `-Name` 參數。
+若要更新從 PowerShell 資源庫安裝的套件，請執行 [Update-Module][] 或 [Update-Script][] Cmdlet. 如果執行時未指定任何其他參數，[Update-Module][] 就會嘗試更新透過執行 [Install-Module][] 安裝的所有模組。 若要選擇性地更新模組，請新增 `-Name` 參數。
 
 同樣地，如果執行時未指定任何其他參數，[Update-Script][] 也會嘗試更新透過執行 [Install-Script][] 安裝的所有指令碼。 若要選擇性地更新指令碼，請新增 `-Name` 參數。
 
@@ -98,3 +98,5 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-Script]: /powershell/module/powershellget/Update-Script

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
-ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953995"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818153"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -140,7 +140,7 @@ Hello World from DSC!
 Remove-Item -Path C:\Temp\HelloWorld.txt
 ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 - 在 [DSC 設定](configurations.md)中深入了解 DSC 設定。
 - 在 [DSC 資源](../resources/resources.md)中查看可用的 DSC 資源，以及如何建立自訂 DSC 資源。

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 資源撰寫檢查清單
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952875"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818136"
 ---
 # <a name="resource-authoring-checklist"></a>資源撰寫檢查清單
 
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>資源和結構描述正確
 
 驗證資源結構描述 (*.schema.mof) 檔案。 您可以使用 [DSC 資源設計工具](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)協助開發及測試您的結構描述。
-請確認︰
+請確認：
 
 - 屬性類型正確 (例如，接受數值的屬性不使用字串，應改用 UInt32 或其他數值類型)
 - 已正確指定屬性 (property) 屬性 (attribute)：([key]、[required]、[write]、[read])
@@ -130,7 +130,7 @@ File file {
 - 因為 DSC 代理程式以服務方式執行，所以認證/工作階段的行為可能不同。  請務必在此端對端測試所有功能。
 - `Start-DscConfiguration` 所輸出的錯誤和直接呼叫 `Set-TargetResource` 函式所顯示的錯誤可能不同。
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>測試所有 DSC 支援平台的相容性
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>測試所有 DSC 支援平台的相容性
 
 資源應該能在所有 DSC 支援的平台上運作 (Windows Server 2008 R2 及更新版本)。 在您的作業系統上安裝最新的 WMF (Windows Management Framework)，以取得最新版的 DSC。 如果最初設計的資源在部分這些平台上無法運作，應該會傳回特定的錯誤訊息。 亦請確定資源檢查特定電腦上是否有呼叫中的 Cmdlet。 Windows Server 2012 加入的大量新 Cmdlet，是即使安裝 WMF，Windows Server 2008R2 也不提供的。
 
@@ -246,7 +246,7 @@ Invoke-Expression $commandToExecute
 
 範例：
 
-不要：
+不要這樣撰寫：
 
 ```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"

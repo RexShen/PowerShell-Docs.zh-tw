@@ -1,17 +1,29 @@
 ---
-ms.date: 12/18/2019
+ms.date: 02/03/2020
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
-ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75415701"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995456"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x 的中斷性變更
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core 中已不再提供的功能
+
+### <a name="modules-not-shipped-for-powershell-6x"></a>PowerShell 6.x 未隨附的模組
+
+基於各種相容性理由，PowerShell 6 中不包含下列模組。
+
+- ISE
+- Microsoft.PowerShell.LocalAccounts
+- Microsoft.PowerShell.ODataUtils
+- Microsoft.PowerShell.Operation.Validation
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### <a name="powershell-workflow"></a>PowerShell 工作流程
 
@@ -40,10 +52,11 @@ ms.locfileid: "75415701"
 
 由於支援兩組 WMI 型模組相當複雜，因此我們已從 PowerShell Core 中移除 WMI v1 Cmdlet：
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 建議您改用 CIM (也稱為 WMI v2) Cmdlet，這些 Cmdlet 以新的功能和重新設計的語法提供相同的功能：
 
@@ -68,14 +81,51 @@ ms.locfileid: "75415701"
 
 .NET Core 不支援提供使用 SOAP 通訊協定之服務的 Windows Communication Framework。 此 Cmdlet 已被移除，因為它需要 SOAP。
 
-### <a name="-computer-cmdlets"></a>`*-Computer` Cmdlet
+### <a name="-transaction-cmdlets-removed"></a>已移除 `*-Transaction` Cmdlet
+
+這些 Cmdlet 的使用狀況非常有限。 這是為了終止對其支援所做的決定。
+
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### <a name="security-cmdlets-not-available-on-non-windows-platforms"></a>非 Windows 平台上無法使用安全性 Cmdlet
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
+
+### <a name="-computerand-other-windows-specific-cmdlets"></a>`*-Computer`和其他 Windows 特定的 Cmdlet
 
 由於使用不支援的 API，因此已從 PowerShell Core 中移除下列 Cmdlet，直到找到更好的解決方案為止。
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Restore-Computer
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### <a name="-counter-cmdlets"></a>`*-Counter` Cmdlet
 
@@ -84,6 +134,31 @@ ms.locfileid: "75415701"
 ### <a name="-eventlog-cmdlets"></a>`*-EventLog` Cmdlet
 
 由於使用不支援的 API，因此已從 PowerShell Core 中移除 `*-EventLog`。 直到找到更好的解決方案。 `Get-WinEvent` 和 `Create-WinEvent` 可在 Windows 上取得並建立事件。
+
+### <a name="cmdlets-that-use-wpf-removed"></a>已移除使用 WPF 的 Cmdlet
+
+CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如下：
+
+- `Show-Command`
+- `Out-GridView`
+- `Get-Help` 的 **showwindow** 參數
+
+### <a name="some-dsc-cmdlets-removed"></a>已移除一些 DSC Cmdlet
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## <a name="enginelanguage-changes"></a>引擎/語言變更
 

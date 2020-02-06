@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416796"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818170"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -36,7 +36,7 @@ ms.locfileid: "74416796"
 
 |                                            風險                                            |                                範例                                |                                                                              相關的命令                                                                              |
 | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 授與連線使用者系統管理員權限以略過 JEA                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`、`dsadd.exe`                                                                                                        |
+| 授與連線使用者系統管理員權限以略過 JEA                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`, `Add-LocalGroupMember`, `net.exe`, `dsadd.exe`                                                                                                        |
 | 執行任意程式碼，例如惡意程式碼、入侵或自訂指令碼來略過防護 | `Start-Process -FilePath '\\san\share\malware.exe'`                   | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob` |
 
 ## <a name="create-a-role-capability-file"></a>建立角色功能檔案
@@ -157,9 +157,11 @@ FunctionDefinitions = @{
 
 您必須將內建函式 `tabexpansion2` 納入 **VisibleFunctions** 清單，Tab 鍵完成才能在 JEA 工作階段中正常運作。
 
-## <a name="place-role-capabilities-in-a-module"></a>將角色功能放置在模組中
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>將角色功能提供給設定
 
-為了讓 PowerShell 尋找角色功能檔案，PowerShell 必須儲存在 PowerShell 模組的 **RoleCapabilitie** 資料夾中。 模組可以儲存在 `$env:PSModulePath` 環境變數包含的任何資料夾中，但您不應該將其放在 System32 資料夾中 ，或是未受信任連線使用者可以修改其中檔案的資料夾。 以下範例會在 `$env:ProgramFiles` 路徑中建立基本 PowerShell 指令碼模組，稱為 **ContosoJEA**。
+在 PowerShell 6 之前，為了讓 PowerShell 尋找角色功能檔案，其必須儲存在 PowerShell 模組的 **RoleCapabilitie** 資料夾中。 模組可以儲存在 `$env:PSModulePath` 環境變數包含的任何資料夾中，但您不應該將其放在 `$env:SystemRoot\System32` 資料夾中 ，或是未受信任連線使用者可以修改其中檔案的資料夾。
+
+下列範例會在用來裝載角色功能檔案的 `$env:ProgramFiles` 路徑中，建立名為 **ContosoJEA** 的 PowerShell 指令碼模組。
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 如需 PowerShell 模組的詳細資訊，請參閱[了解 PowerShell 模組](/powershell/scripting/developer/windows-powershell)。
+
+從 PowerShell 6 開始，**RoleDefinitions** 屬性已新增至工作階段設定檔。 此屬性可讓您為角色定義指定角色設定檔的位置。 請查看 [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile) 中的範例。
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 
@@ -243,6 +247,6 @@ $mergedAandB = @{
 請小心確保來自一個角色功能之提供者組合集和來自另一個角色功能的 Cmdlet/函式/命令不會允許使用者意外存取系統資源。
 例如，如果一個角色允許 `Remove-Item` Cmdlet，另一個允許 `FileSystem` 提供者，便會有 JEA 使用者刪除您電腦上任意檔案的風險。 如需識別使用者有效權限的詳細資訊，請參閱[稽核 JEA](audit-and-report.md) 一文。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 [建立工作階段設定檔](session-configurations.md)

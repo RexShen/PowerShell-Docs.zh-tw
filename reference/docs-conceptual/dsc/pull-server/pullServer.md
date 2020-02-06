@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870807"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885382"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -22,6 +22,14 @@ ms.locfileid: "75870807"
 - 在 Windows Server 上執行的提取服務
 - 社群維護的開放原始碼解決方案
 - SMB 共用
+
+每個解決方案的建議規模如下所示：
+
+|                   解決方法                   |              用戶端節點              |
+| -------------------------------------------- | -------------------------------------- |
+| 使用 MDB/ESENT 資料庫的 Windows 提取伺服器 | 最多 500 個節點                        |
+| 使用 SQL 資料庫的 Windows 提取伺服器       | 最多 1000 個節點                       |
+| Azure 自動化 DSC                         | 具有大於 1000 個節點的案例 |
 
 **建議的解決方案** (也是具有最多可用功能的選項) 是 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started)。
 
@@ -219,7 +227,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。
 
-例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 `xWebAdministration_3.1.2.0.zip`。 一個壓縮檔必須包含一個模組版本。
+例如，名為 **xWebAdminstration** 且模組版本為 3.1.2.0 的模組會命名為 `xWebAdministration_3.1.2.0.zip`。 一個壓縮檔必須包含一個模組版本。
 因為每個壓縮檔中只會有一個資源版本，所以不支援在 WMF 5.0 中新增可支援單一目錄中有多個模組版本的模組格式。 這表示在封裝 DSC 資源模組以搭配提取伺服器使用之前，您必須對目錄結構進行小幅變更。 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。 在針對提取伺服器進行封裝之前，請移除 **{模組版本}** 資料夾，以便讓路徑變成 `{Module Folder}\DscResources\{DSC Resource Folder}\`。 完成這項變更之後，如上所述壓縮資料夾，並將這些壓縮檔放在 **ModulePath** 資料夾中。
 
 使用 `New-DscChecksum {module zip file}` 為新增的模組建立總和檢查碼檔案。

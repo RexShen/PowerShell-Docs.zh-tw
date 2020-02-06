@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328049"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818119"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -93,9 +93,9 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 在文字方塊中，輸入您要尋找的內容。 例如，如果您想要尋找與 Azure SQL 相關的模組，只需要輸入 "azure sql"。 搜尋引擎會在所有已發行的套件中 (包括在標題、描述和中繼資料中) 尋找那些關鍵字。 然後，根據加權的品質分數，就會顯示最接近的相符項目。 您也可以在下列欄位的搜尋查詢中使用 field:"value" 語法，以依特定欄位進行搜尋：
 
-- 標記
+- Tags
 - 函式
-- Cmdlet
+- 指令程式
 - DscResources
 - PowerShellVersion
 
@@ -138,7 +138,7 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>是否表示我可以使用 NuGet.exe 來處理 Gallery？
 
-可以。
+是。
 
 ## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>PackageManagement 實際上與 PowerShellGet 的關聯為何？ (技術詳細資料)
 
@@ -172,7 +172,7 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>是否可以為預計在未來發行的套件保留名稱？
 
-您無法佔用套件名稱。 如果您認為某個現有套件所採用的名稱更適合您自己的套件使用，請嘗試[連絡該套件的擁有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果您在幾週內未收到回應，則可以連絡支援人員，PowerShell Gallery 小組會查看該問題。
+您無法佔用套件名稱。 如果您認為某個現有套件所採用的名稱更適合您自己的套件使用，請嘗試[連絡該套件的擁有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果您在幾週內未收到回應，則可以連絡支援人員，PowerShell 資源庫小組會查看該問題。
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>如何主張套件的擁有權？
 
