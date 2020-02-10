@@ -11,7 +11,7 @@ ms.locfileid: "75736993"
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
 
-**ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 **Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。 本主題列出其成員方法和成員屬性。 `$psISE.CurrentFile` 以及 PowerShell 索引標籤上檔案集合中的檔案，都是 ****Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。
+**ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 **Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。 本主題列出其成員方法和成員屬性。 `$psISE.CurrentFile` 以及 PowerShell 索引標籤上檔案集合中的檔案，都是 \*\***Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。
 
 ## <a name="methods"></a>方法
 
