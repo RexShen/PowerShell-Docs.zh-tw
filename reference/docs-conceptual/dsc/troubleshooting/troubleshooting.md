@@ -2,16 +2,16 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954615"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478780"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
-適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
+_適用於：Windows PowerShell 4.0、Windows PowerShell 5.0 
 
 本主題會說明問題發生時針對 DSC 進行疑難排解的方法。
 
@@ -119,7 +119,7 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully.
 ```
 
-DSC 事件的特定記錄結構，能讓使用者彙總一個 DSC 工作的事件。 結構如下：
+DSC 事件的特定記錄結構，能讓使用者彙總一個 DSC 工作的事件。 其結構如下所示：
 
 ```
 Job ID : <Guid>
@@ -642,6 +642,16 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 
 當伺服器上用來加密流量的憑證通用名稱 (CN) 與節點用來解析 URL 的 DNS 名稱不同時，就可能發生此問題。
 更新 Windows 提取伺服器執行個體，以使用名稱經更正的憑證。
+
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>在套用 DSC 組態後，執行 Sysprep 時發生錯誤
+
+在套用 DSC 組態後，嘗試執行 Sysprep 將 Windows Server 一般化時，您可能會遇到下列錯誤。
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+不支援在使用 Windows PowerShell Desired State Configuration 設定伺服器後將伺服器一般化。  請改為在 Windows 安裝程式的特殊化階段完成之後，將組態套用至 Windows。
 
 ## <a name="see-also"></a>另請參閱
 
