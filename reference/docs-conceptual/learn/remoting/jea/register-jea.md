@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 登錄 JEA 設定
-ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417611"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706201"
 ---
 # <a name="registering-jea-configurations"></a>登錄 JEA 設定
 
@@ -51,7 +51,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC 的多電腦設定
 
-在多部電腦上部署 JEA 時，最簡單的部署模型是使用 JEA [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) 資源快速且一致地在每部機器上部署 JEA。
+在多部電腦上部署 JEA 時，最簡單的部署模型是使用 JEA [Desired State Configuration (DSC)](../../../dsc/overview/overview.md) 資源快速且一致地在每部機器上部署 JEA。
 
 若要搭配 DSC 部署 JEA，請務必符合下列先決條件︰
 
@@ -118,6 +118,6 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 > [!WARNING]
 > 取消登錄 JEA 端點會導致 WinRM 服務重新啟動。 這會中斷大部分正在進行中的遠端管理作業，包括其他的 PowerShell 工作階段、WMI 引動過程，以及某些管理工具。 只在計劃的維護期間取消登錄 PowerShell 端點。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 [測試 JEA 端點](using-jea.md)
