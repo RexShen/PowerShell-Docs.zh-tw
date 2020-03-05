@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
-ms.openlocfilehash: dfe747893b4aef6376ea3b12dd79b7c144455ed0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 41cb32735091f065a0835378428de190d08f3160
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415681"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278973"
 ---
 # <a name="cmdlet-parameter-sets"></a>Cmdlet 參數集
 
@@ -31,7 +31,7 @@ PowerShell 會使用參數集，讓您撰寫可針對不同案例執行不同動
 
 在下圖中，左邊的資料行顯示三個有效的參數集。 **參數 A**對第一個參數集而言是唯一的，**參數 B**對第二個參數集而言是唯一的，而**參數 C**則是第三個參數集獨有的。 在右邊的資料行中，參數集沒有唯一的參數。
 
-![ps_parametersets](../media/ps-parametersets.gif)
+![ps_parametersets](media/cmdlet-parameter-sets/ps-parametersets.gif)
 
 ## <a name="parameter-set-requirements"></a>參數集需求
 
