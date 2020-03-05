@@ -2,12 +2,12 @@
 title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
 ms.date: 08/06/2018
-ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
-ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
+ms.openlocfilehash: 8cf8a0ac6140d28e55b065bf711763ba1c681d63
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77478797"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706252"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支援週期
 
@@ -141,6 +141,22 @@ Add-WindowsPSModulePath
 
 [實驗性功能][]僅限於[社群支援](#community-support)。
 
+## <a name="release-history"></a>版本歷程記錄
+
+下表包含 PowerShell 主要版本的時間表。 此表格僅供作為歷程記錄參考。 不適合用來判斷支援週期。
+
+|       版本        | 發行日期 |                                                                     附註                                                                      |
+| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7.0 (LTS) |   2020 年 3 月   | 以 .NET Core 3.1 (LTS) 建置                                                                                                                  |
+| PowerShell 6.0       |   2018 年 1 月   | 第一版，以 .NET Core 2.1 建置。 可在 Windows、Linux 與 macOS 上安裝。                                                              |
+| PowerShell 5.1       |   2016 年 8 月   | 於 Windows 10 年度更新版與 Windows Server 2016 中發行                                                                             |
+| PowerShell 5.0       |   2016 年 2 月   | 於 Windows Management Framework (WMF) 5.0 中發行                                                                                            |
+| PowerShell 4.0       |   2013 年 10 月   | 與 Windows Server 2012 R2 整合於 Windows 8.1 中。 可在 Windows 7 SP1、Windows Server 2008 R2 SP1 與 Windows Server 2012 上安裝。 |
+| PowerShell 3.0       |   2012 年 10 月   | 與 Windows Server 2012 整合於 Windows 8 中。 可在 Windows 7 SP1、Windows Server 2008 SP1 與 Windows Server 2008 R2 SP1 上安裝。  |
+| PowerShell 2.0       |   2009 年 7 月   | 與 Windows Server 2008 R2 整合於 Windows 7 中。 可在 Windows XP SP3、Windows Server 2003 SP2 與 Windows Vista SP1 上安裝。            |
+| PowerShell 1.0       |   2006 年 11 月   | 可在 Windows XP SP2、Windows Server 2003 SP1 與 Windows Vista 上安裝。 為 Windows Server 2008 的選用元件。                          |
+
+<!-- hyperlink references -->
 [頂級]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
