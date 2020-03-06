@@ -8,18 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
-ms.openlocfilehash: 5957ea4c15cd3778bd09b67c4b97de0ef0cfdd2a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74953835"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405042"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>修改 PSModulePath 安裝路徑
 
 `PSModulePath` 環境變數會儲存安裝在磁片上之模組位置的路徑。 當使用者未指定模組的完整路徑時，PowerShell 會使用此變數來尋找模組。 此變數中的路徑會依照其出現的順序進行搜尋。
 
-當 PowerShell 啟動時，`PSModulePath` 會建立為具有下列預設值的系統內容變數： `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` 或 `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` 適用于 Windows PowerShell。
+當 PowerShell 啟動時，`PSModulePath` 會建立為具有下列預設值的系統內容變數： Windows 上的 `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` 和 Linux 或 Mac 上的 `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules`，以及 Windows PowerShell 的 `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules`。
+
+> [!NOTE]
+> 使用者特定的**CurrentUser**位置是位於使用者設定檔中 [**檔**] 位置的 [`WindowsPowerShell\Modules`] 資料夾。 該位置的特定路徑會因 Windows 版本，以及您是否使用資料夾重新導向而有所不同。 根據預設，在 Windows 10 上，該位置是 `$HOME\Documents\WindowsPowerShell\Modules`。
 
 ## <a name="to-view-the-psmodulepath-variable"></a>若要查看 PSModulePath 變數
 
@@ -56,3 +59,5 @@ ms.locfileid: "74953835"
 ## <a name="see-also"></a>另請參閱
 
 [撰寫 Windows PowerShell 模組](./writing-a-windows-powershell-module.md)
+
+[about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules)
