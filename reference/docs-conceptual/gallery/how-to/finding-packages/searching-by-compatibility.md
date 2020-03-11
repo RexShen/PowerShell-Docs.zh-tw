@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 title: 具有相容 PowerShell 版本或作業系統的套件
-ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328439"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278343"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>具有相容 PowerShell 版本或作業系統的套件
 
@@ -25,7 +25,7 @@ PowerShell 的兩個版本為：
 如果套件已指定相容的 PSEditions，則 PSEditions 會列為套件顯示頁面和套件結果中「PowerShell 版本」的一部分。
 您也可以使用 PowerShell 來搜尋相容的套件。
 
-![含有 PSEditions 的項目顯示網頁](../../Images/packagedisplaypagewithpseditions.PNG)
+![含有 PSEditions 的項目顯示網頁](media/searching-by-compatibility/packagedisplaypagewithpseditions.PNG)
 
 ### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>在資源庫 UI 中搜尋可在 PowerShell Core 上運作的套件
 
@@ -33,11 +33,11 @@ PowerShell 的兩個版本為：
 
 ### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>使用 Tags:"PSEdition_Core" 搜尋與 PowerShell Core 版本相容的項目。
 
-![與 Core PSEdition 相容之項目的搜尋結果](../../Images/searchresultswithpseditions.PNG)
+![與 Core PSEdition 相容之項目的搜尋結果](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
 ### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>使用 Tags:"PSEdition_Desktop" 搜尋與 PowerShell Desktop 版本相容的項目。
 
-![與 Desktop PSEdition 相容之項目的搜尋結果](../../Images/searchresultswithpseditionsdesktop.PNG)
+![與 Desktop PSEdition 相容之項目的搜尋結果](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>使用 PowerShell 來搜尋套件以尋找相容的版本
 您可以指定標籤來篩選 PowerShell 版本和 OS。

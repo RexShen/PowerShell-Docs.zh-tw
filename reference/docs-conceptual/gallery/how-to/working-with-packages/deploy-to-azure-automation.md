@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 部署至 Azure 自動化
-ms.openlocfilehash: 707691e24a77647064e60da0d9a31ad5eece1c59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d09a0777c59b642400d683c8cb6f881319fb881
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327909"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278688"
 ---
 # <a name="deploy-to-azure-automation"></a>部署至 Azure 自動化
 
 套件詳細資料頁面上的 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕，會將該套件從 PowerShell 資源庫部署至 Azure 自動化。
 
-![Deploy to Azure Automation (部署至 Azure 自動化) 按鈕](../../Images/DeployToAzureAutomationButton.png)
+![Deploy to Azure Automation (部署至 Azure 自動化) 按鈕](media/deploy-to-azure-automation/DeployToAzureAutomationButton.png)
 
 按一下時，會將您重新導向至使用 Azure 帳戶認證所登入的 Azure 管理入口網站。
 如果套件包含相依性，則也會將所有相依性部署至 Azure 自動化。
@@ -30,9 +30,9 @@ ms.locfileid: "71327909"
 
 若部署至 Azure 自動化的模組必須接受授權，入口網站 UI 將會顯示免責聲明：「此模組需要您接受授權。 按一下 [確定] 即表示您接受授權條款。」
 
-![部署至 Azure 自動化必須接受授權](../../Images/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
+![部署至 Azure 自動化必須接受授權](media/deploy-to-azure-automation/DeployToAzureAutomationRequireLicenseAcceptanceDisclaimer.png)
 
-## <a name="more-details"></a>更多詳細資料
+## <a name="more-details"></a>其他詳細資訊
 
 - [PowerShellGet 中的必須接受授權](../../concepts/module-license-acceptance.md)
 - [PowerShell 資源庫中的必須接受授權](packages-that-require-license-acceptance.md)

@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 建立 PowerShell 資源庫帳戶
-ms.openlocfilehash: e4cf73edb03267cff6bbcc0cf3b754225e45be9f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328279"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278770"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>建立 PowerShell 資源庫帳戶
 
@@ -17,7 +17,7 @@ PowerShell 資源庫帳戶必須連結至具備電子郵件功能的登入帳戶
 
 若要建立 PowerShell 資源庫帳戶，請前往 [https://PowerShellGallery.com](https://PowerShellGallery.com)，然後按一下 [登入]  ，如下圖所示。
 
-![註冊新帳戶](../../Images/CreateAccount-Register.png)
+![註冊新帳戶](media/creating-an-account/CreateAccount-Register.png)
 
 若要使用 Azure Active Directory 帳戶，請選取 [公司或學校帳戶]  ，然後使用您的帳戶登入。 若要使用 Microsoft ID，請選擇 [個人帳戶]  並登入。
 

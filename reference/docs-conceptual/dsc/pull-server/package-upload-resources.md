@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 封裝資源並上傳到提取伺服器
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954375"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278491"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>封裝資源並上傳到提取伺服器
 
@@ -27,7 +27,7 @@ ms.locfileid: "71954375"
 
 您可以使用任何慣用的公用程式、指令碼或方法來壓縮資源目錄。 在 Windows 中，您可「以滑鼠右鍵按一下」  "xPSDesiredStateConfiguration" 目錄，然後依序選取 [傳送到] 和 [壓縮資料夾]。
 
-![以滑鼠右鍵按一下](../media/right-click.gif)
+![以滑鼠右鍵按一下](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>為資源封存命名
 

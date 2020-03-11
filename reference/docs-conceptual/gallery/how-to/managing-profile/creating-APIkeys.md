@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 管理 API 金鑰
-ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328289"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278274"
 ---
 # <a name="managing-api-keys"></a>管理 API 金鑰
 
@@ -19,7 +19,7 @@ PowerShell 資源庫支援建立多個 API 金鑰，以支援各種不同的發�
 
 下圖顯示建立限域 API 金鑰時可以使用的選項。
 
-![建立 API 金鑰](../../Images/PSGallery_KeyScoped.png)
+![建立 API 金鑰](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 在此範例中，我們建立了名為 **AzureRMDataFactory** 的 API 金鑰。 此金鑰值可用來推送名稱開頭為 'AzureRM.DataFactory' 的套件，有效期限為 365 天。 這是同一個組織中不同小組處理不同套件時的典型案例。 小組成員所擁有的金鑰會授與他們權限來存取其所處理的特定套件。
 到期值可防止使用過時的金鑰或忘記金鑰。
@@ -32,7 +32,7 @@ PowerShell 資源庫支援建立多個 API 金鑰，以支援各種不同的發�
 
 基於安全考量，新建立的金鑰值永遠不會顯示在畫面上，而且只能透過 [複製] 按鈕使用，如下所示。
 
-![取得新的 API 金鑰值](../../Images/PSGallery_CopyCreatedKey.png)
+![取得新的 API 金鑰值](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > 您只能在建立或重新整理之後立即複製 API 金鑰值。 該值不會顯示，而且在重新整理頁面之後將無法再次存取。 如果您遺失金鑰值，您必須使用 [重新產生]，並在重新產生金鑰之後加以複製。
@@ -47,7 +47,7 @@ PowerShell 資源庫支援建立多個 API 金鑰，以支援各種不同的發�
 
 每個新金鑰都有到期日。 到期值是以天為測量單位。 可能的到期值包括：
 
-- 1 天
+- 1 日
 - 90 天
 - 180 天
 - 270 天
@@ -59,7 +59,7 @@ PowerShell 資源庫支援建立多個 API 金鑰，以支援各種不同的發�
 
 您可以變更現有金鑰的某些設定。 如前所述，您無法修改現有 API 金鑰的安全性範圍，或變更到期日。 下列螢幕擷取畫面顯示可變更的選項：
 
-![取得新的 API 金鑰值](../../Images/PSGallery_EditAPIKey.png)
+![取得新的 API 金鑰值](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 若要變更受金鑰控制的套件，您可以從清單中選擇個別套件，或變更 Glob 模式。
 

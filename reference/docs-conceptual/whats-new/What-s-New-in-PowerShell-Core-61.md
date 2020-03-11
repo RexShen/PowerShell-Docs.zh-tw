@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 的新功能
 description: PowerShell Core 6.1 中發行的新功能與變更
 ms.date: 09/13/2018
-ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995509"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277713"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 的新功能
 
@@ -169,7 +169,7 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 
 例如，`Show-Markdown` 會轉譯主控台中的 Markdown 檔案：
 
-![Show-Markdown 範例](./images/markdown_example.png)
+![Show-Markdown 範例](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 如需這些 Cmdlet 運作方式的詳細資訊，請參閱[此 RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md)。
 
@@ -264,7 +264,7 @@ SSH 用戶端通常支援 `user@host:port` 格式的連接字串。 透過新增
 
 感謝 [@bergmeister](https://github.com/bergmeister)，現在您可以在 Windows 上啟用操作功能表。 現在，您可以從 Windows 檔案總管中的任何資料夾開啟 PowerShell 6.1 的全系統安裝：
 
-![PowerShell 6 的殼層操作功能表](./images/shell_context_menu.png)
+![PowerShell 6 的殼層操作功能表](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## <a name="goodies"></a>很棒的功能
 
@@ -272,7 +272,7 @@ SSH 用戶端通常支援 `user@host:port` 格式的連接字串。 透過新增
 
 感謝 [@bergmeister](https://github.com/bergmeister)，PowerShell Core 捷徑清單現在包含 [以系統管理員身分執行]：
 
-![PowerShell 6 捷徑清單中的 [以系統管理員身分執行]](./images/jumplist.png)
+![PowerShell 6 捷徑清單中的 [以系統管理員身分執行]](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### <a name="cd---returns-to-previous-directory"></a>`cd -` 返回上一個目錄
 

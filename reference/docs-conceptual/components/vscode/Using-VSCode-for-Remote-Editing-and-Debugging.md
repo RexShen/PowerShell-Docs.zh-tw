@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 來進行遠端編輯與偵錯
 description: 使用 Visual Studio Code 來進行遠端編輯與偵錯
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67263985"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279104"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>使用 Visual Studio Code 來進行遠端編輯與偵錯
 
@@ -15,7 +15,7 @@ ms.locfileid: "67263985"
 
 適用於 VSCode 的 PowerShell 延伸模組中也提供此功能。 此指南將示範如何執行此動作。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 此指南假設您有：
 
@@ -38,7 +38,7 @@ ms.locfileid: "67263985"
 
 當適用於 VSCode 的 PowerShell 延伸模組已啟動且 PowerShell 整合式主控台已開啟之後，我們可以輸入 `Open-EditorFile foo.ps1` 或 `psedit foo.ps1`，以直接在編輯器中開啟本機 foo.ps1 檔案。
 
-![Open-EditorFile foo.ps1 可在本機運作](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![Open-EditorFile foo.ps1 可在本機運作](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > `foo.ps1` 檔案必須已經存在。
@@ -47,11 +47,11 @@ ms.locfileid: "67263985"
 
 - 在巡覽邊新增中斷點
 
-  ![在巡覽邊新增中斷點](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![在巡覽邊新增中斷點](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - 按 F5 以針對 PowerShell 指令碼進行偵錯。
 
-  ![針對 PowerShell 本機指令碼進行偵錯](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![針對 PowerShell 本機指令碼進行偵錯](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 偵錯時，可以與偵錯主控台互動，查看左側範圍中和所有其他標準偵錯工具中的變數。
 
@@ -73,20 +73,20 @@ ms.locfileid: "67263985"
 
 首先，在整合式主控台中，執行 `Enter-PSSession`。 當 `[<hostname>]` 顯示於您提示字元的最左邊時，表示您已連線到遠端工作階段。
 
-![呼叫 Enter-PSSession](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![呼叫 Enter-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 現在，我們可以執行與編輯本機指令碼相同的步驟。
 
 1. 執行 `Open-EditorFile test.ps1` 或 `psedit test.ps1` 以開啟遠端 `test.ps1` 檔案
 
-  ![Open-EditorFile test.ps1 檔案](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Open-EditorFile test.ps1 檔案](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. 編輯檔案/設定中斷點
 
-   ![編輯並設定中斷點](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![編輯並設定中斷點](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. 開始針對遠端檔案進行偵錯 (F5)
 
-   ![針對遠端檔案進行偵錯](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![針對遠端檔案進行偵錯](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 如果您有任何問題，您可以在 [GitHub 存放庫](https://github.com/powershell/vscode-powershell) \(英文\) 中提出問題。

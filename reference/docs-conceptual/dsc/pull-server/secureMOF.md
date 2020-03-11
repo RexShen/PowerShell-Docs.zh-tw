@@ -2,32 +2,25 @@
 ms.date: 10/31/2017
 keywords: dsc,powershell,設定,安裝
 title: 保護 MOF 檔案
-ms.openlocfilehash: 4ca540303cb740ac602bce181e0e446efcd16b6e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953555"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278457"
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的設定，而 MOF 檔案是本機系統管理員 (LCM) 實作所需結束狀態的位置。
-因為這個檔案包含設定的詳細資料，所以安全防護很重要。
-本主題說明如何確保目標節點加密檔案。
+DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的設定，而 MOF 檔案是本機系統管理員 (LCM) 實作所需結束狀態的位置。 因為這個檔案包含設定的詳細資料，所以安全防護很重要。 本主題說明如何確保目標節點加密檔案。
 
-從 PowerShell 5.0 版開始，使用 `Start-DSCConfiguration` Cmdlet 將 MOF 檔案套用到節點時，預設會加密整個 MOF 檔案。
-當憑證未受管理，使用提取服務通訊協定來實作解決方案時，才需要文中所述的程序來確保目標節點所下載的設定在套用前能夠讓系統解密和讀取 (例如，Windows Server 提供的提取服務)。
-向 [Azure 自動化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 註冊的節點會自動安裝憑證，並交由服務管理而不需任何管理費用。
+從 PowerShell 5.0 版開始，使用 `Start-DSCConfiguration` Cmdlet 將 MOF 檔案套用到節點時，預設會加密整個 MOF 檔案。 當憑證未受管理，使用提取服務通訊協定來實作解決方案時，才需要文中所述的程序來確保目標節點所下載的設定在套用前能夠讓系統解密和讀取 (例如，Windows Server 提供的提取服務)。 向 [Azure 自動化 DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) 註冊的節點會自動安裝憑證，並交由服務管理而不需任何管理費用。
 
 > [!NOTE]
-> 本主題討論用於加密的憑證。
-> 以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。
-> 自我簽署憑證*不能*用來進行驗證。
-> 您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
+> 本主題討論用於加密的憑證。 以自我簽署憑證進行加密便已足夠，因為私密金鑰一律會受到保護，且加密不代表信任文件。 自我簽署憑證*不能*用來進行驗證。 您應該使用來自信任憑證授權單位 (CA) 的憑證進行任何驗證。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 若要成功地加密用來保護 DSC 設定的認證，請確定您具備下列項目：
 
@@ -36,19 +29,18 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 - **每個目標節點在其個人存放區都儲存了支援加密的憑證**。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用「工作站驗證」範本，您可在[預設憑證範本](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它和其他憑證範本。
 - 如果在目標節點以外的電腦上執行這項設定，請**匯出憑證的公開金鑰**，將它匯入要執行設定的電腦。 確定只匯出**公用**金鑰，妥善保管私密金鑰。
 
-## <a name="overall-process"></a>完整程序
+## <a name="overall-process"></a>整體程序
 
  1. 設定憑證、金鑰和指紋，並確定每個目標節點都有憑證複本，而設定電腦則有公開金鑰和指紋。
  2. 建立包含公開金鑰路徑和指紋的設定資料區塊。
  3. 建立為目標節點定義所需設定的設定指令碼，以及指揮本機設定管理員使用憑證及其指紋解密設定資料，設定目標節點的解密。
  4. 執行設定，會設定本機設定管理員的設定並啟動 DSC 設定。
 
-![Diagram1](../images/CredentialEncryptionDiagram1.png)
+![Diagram1](media/secureMOF/CredentialEncryptionDiagram1.png)
 
 ## <a name="certificate-requirements"></a>憑證需求
 
-若要制定認證加密，用來撰寫 DSC 設定之電腦所**信任**的_目標節點_上必須有公開金鑰憑證可用。
-此公開金鑰憑證具有可讓其用於 DSC 認證加密的特定需求︰
+若要制定認證加密，用來撰寫 DSC 設定之電腦所**信任**的_目標節點_上必須有公開金鑰憑證可用。 此公開金鑰憑證具有可讓其用於 DSC 認證加密的特定需求︰
 
 1. **金鑰使用方法**：
    - 必須包含：'KeyEncipherment' 和 'DataEncipherment'。
@@ -75,8 +67,7 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 ### <a name="creating-the-certificate-on-the-target-node"></a>在目標節點上建立憑證
 
-由於會使用私密金鑰在**目標節點**上將 MOF 解密，因此請務必確保其安全。最簡單的方法是在**目標節點**上建立私密金鑰憑證，並將**公開金鑰憑證**複製到用於將 DSC 設定撰寫入 MOF 檔案的電腦。
-下列範例︰
+由於會使用私密金鑰在**目標節點**上將 MOF 解密，因此請務必確保其安全。最簡單的方法是在**目標節點**上建立私密金鑰憑證，並將**公開金鑰憑證**複製到用於將 DSC 設定撰寫入 MOF 檔案的電腦。 下列範例將：
 
 1. 在**目標節點**上建立憑證
 2. 在**目標節點**上匯出公開金鑰憑證。
@@ -97,11 +88,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 > 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
-> 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
->
-> 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。
->
->替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
+> 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。 替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -138,10 +125,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 ### <a name="creating-the-certificate-on-the-authoring-node"></a>在撰寫節點上建立憑證
 
-或者，在**撰寫節點**上建立加密憑證，搭配**私密金鑰**作為 PFX 檔案進行匯出，然後再匯入到**目標節點**上。
-這是目前在 _Nano Server_ 上實作 DSC 認證加密的方法。
-雖然有使用密碼保護 PFX，在傳輸期間也應該保持安全狀態。
-下列範例︰
+或者，在**撰寫節點**上建立加密憑證，搭配**私密金鑰**作為 PFX 檔案進行匯出，然後再匯入到**目標節點**上。 這是目前在 _Nano Server_ 上實作 DSC 認證加密的方法。 雖然有使用密碼保護 PFX，在傳輸期間也應該保持安全狀態。 下列範例將：
 
 1. 在**撰寫節點**上建立憑證。
 2. 在**撰寫節點**上匯出包含私密金鑰的憑證。
@@ -169,11 +153,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 > 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
-> 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。
->
-> 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。
->
-> 替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
+> 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。 替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -323,7 +303,8 @@ configuration CredentialEncryptionExample
 
 此時，您可以執行設定，這樣會輸出兩個檔案：
 
-- *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密憑證。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 會套用 *.meta.mof 檔案。
+- *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密憑證。
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 會套用 *.meta.mof 檔案。
 - 實際套用設定的 MOF 檔案。 Start-DscConfiguration 會套用設定。
 
 這些命令會完成這些步驟：
@@ -339,8 +320,7 @@ Write-Host "Starting Configuration..."
 Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 ```
 
-這個範例會將 DSC 設定推送至目標節點。
-如果有一部 DSC 提取伺服器，也可以使用此伺服器套用 DSC 設定。
+這個範例會將 DSC 設定推送至目標節點。 如果有一部 DSC 提取伺服器，也可以使用此伺服器套用 DSC 設定。
 
 如需使用 DSC 提取伺服器套用 DSC 設定的詳細資訊，請參閱[設定 DSC 提取用戶端](pullClient.md)。
 

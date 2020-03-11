@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117392"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279058"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -48,7 +48,7 @@ ms.locfileid: "74117392"
    1. 提要欄位上隨即開啟 [延伸模組]  檢視。 從 Microsoft 選取 PowerShell 延伸模組。
       您應該會看到類似下圖的 VSCode 畫面：
 
-      ![VSCode](../../images/using-vscode/vscode.png)
+      ![VSCode](media/using-vscode/vscode.png)
 
    1. 從 Microsoft 按一下 PowerShell 延伸模組的 [安裝]  按鈕。
    1. 安裝之後，您會看到 [安裝]  按鈕變成 [重新載入]  。 按一下 [重新載入]  。

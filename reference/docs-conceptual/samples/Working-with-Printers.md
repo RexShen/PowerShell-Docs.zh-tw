@@ -2,12 +2,12 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 使用印表機
-ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736857"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935202"
 ---
 # <a name="working-with-printers-in-windows"></a>在 Windows 中使用印表機
 
@@ -42,7 +42,8 @@ Get-CimInstance -Class Win32_Printer
 若要使用 WMI 設定預設印表機，請在 **Win32_Printer** 集合中找出印表機，然後叫用 **SetDefaultPrinter** 方法：
 
 ```powershell
-(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+$printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'"
+Invoke-CimMethod -InputObject $printer -MethodName SetDefaultPrinter
 ```
 
 **WScript.Network** 較容易使用，因為它有 **SetDefaultPrinter** 方法，只使用印表機名稱作為引數︰

@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫帳戶設定
-ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328029"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278059"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 資源庫帳戶設定
 
@@ -25,7 +25,7 @@ PowerShell 資源庫提供下列帳戶設定：
 
 電子郵件地址是 PowerShell 資源庫通知的目的地。 它不一定要與登入帳戶相符。 您可以使用有權存取的任何電子郵件帳戶。 PowerShell 資源庫絕不會將您的電子郵件地址提供給其他使用者。
 
-![變更電子郵件地址](../../Images/PSGallery_AcccountEmailAddress.png)
+![變更電子郵件地址](media/managing-account/PSGallery_AcccountEmailAddress.png)
 
 當您輸入新的電子郵件地址時，PowerShell 資源庫會將驗證郵件傳送至該位址。 驗證郵件含有連回 PowerShell 資源庫以完成變更程序的連結。 在您完成驗證程序之前，所有通知都會傳送至先前的地址。
 
@@ -36,10 +36,10 @@ PowerShell 資源庫提供下列通知選項：
 - 使用者可以透過 PowerShell 資源庫與我連絡
 - 當使用我的帳戶將套件推送至 PowerShell 資源庫時通知我
 
-![變更電子郵件地址](../../Images/PSGallery_AccountEmailOptions.png)
+![變更電子郵件地址](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 如頁面所示，無法停用來自 PowerShell 資源庫的重大通知。
-這些包括：
+其中包括：
 
 - 安全性通知
 - 來自 PowerShell 資源庫管理員的帳戶管理通知
@@ -49,20 +49,20 @@ PowerShell 資源庫提供下列通知選項：
 
 若要變更登入帳戶，您必須使用目前的帳戶登入。 請使用下列步驟以完成變更。
 
-![登入帳戶設定](../../Images/PSGallery_LoginAccountSettings.png)
+![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. 按一下 [變更帳戶]  。 快顯視窗說明變更登入帳戶會套用至在 PowerShell 資源庫中使用該帳戶的所有情況。 檢閱資訊，然後按一下 [確定]  繼續。
 
-   ![[登入帳戶] 設定](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. 接著系統會提示您使用「新帳戶」  登入。
 
-   ![[登入帳戶] 設定](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. 當您按一下 [下一步]  時，您會看到一則訊息，指出您使用目前的帳戶登入。
    按一下 [登出並以不同帳戶登入]  。
 
-   ![[登入帳戶] 設定](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. 輸入新帳戶的密碼。 輸入密碼之後，您會回到 [帳戶設定] 頁面，其中顯示登入帳戶已更新。
 

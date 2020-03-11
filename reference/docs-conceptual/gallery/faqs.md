@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
-ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818119"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278168"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -148,7 +148,7 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 在 PackageManagement 套件提供者層，PSModule 套件提供者實際上會呼叫其他 PackageManagement 套件提供者。 例如，當您處理 NuGet 型組件庫 (例如 PowerShell Gallery) 時，PSModule 套件提供者會使用 NuGet 套件提供者來處理存放庫。
 
-![PowerShellGet 架構](Images/powershellgetArchitecture.png)
+![PowerShellGet 架構](media/faqs/powershellgetArchitecture.png)
 
 圖 1：PowerShellGet 架構
 
