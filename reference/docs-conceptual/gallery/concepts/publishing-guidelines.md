@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 description: 發行者的指導方針
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417677"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278203"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -128,7 +128,7 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 - MacOS：與 Mac 作業系統相容的套件
 
 透過在相容平台標記您的套件，該套件就會包含在搜尋結果左側窗格的資源庫搜尋篩選中。 如果將套件裝載在 GitHub 上，標記套件時也可以利用我們的 [PowerShell 資源庫相容性防護](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![相容性防護](../Images/CosmosDB.svg)。
+![相容性防護](media/publishing-guidelines/CosmosDB.svg)。
 
 ## <a name="include-tests"></a>包含測試
 
@@ -167,7 +167,7 @@ PowerShell 透過兩種主要的方法來支援程式碼簽署驗證：
 
 類別目錄簽署模組是 PowerShell 5.1 版中新增的功能。 如需了解如何簽署模組，請參閱[類別目錄 Cmdlet](/powershell/scripting/wmf/5.1/catalog-cmdlets) 文章。 大致而言，簽署類別目錄的方式是建立類別目錄檔案 (包含模組中每個檔案的雜湊值)，然後簽署該檔案。
 
-**PowerShellGet** `Publish-Module`、`Install-Module` 與 `Update-Module` Cmdlet 將會檢查簽章以確保檔案有效，然後確認每個套件的雜湊值與類別目錄中的內容相符。 `Save-Module` 不會驗證簽章。 如果系統上已安裝舊版的模組，`Install-Module` 將會確認新版本的簽署授權單位與先前安裝的相符。 若套件未經類別目錄簽署，`Install-Module` 與 `Update-Module` 將會使用 `.PSD1` 檔案上的簽章。 類別目錄簽署可以與簽署指令碼檔案搭配運作，但不會取代其功能。 PowerShell 不會在載入模組時驗證類別目錄簽章。
+**PowerShellGet** `Publish-Module`、`Install-Module` 與 `Update-Module` Cmdlet 將會檢查簽章以確保其有效，然後確認每個套件的雜湊值是否與類別目錄中的內容相符。 `Save-Module` 不會驗證簽章。 如果系統上已安裝舊版的模組，`Install-Module` 將會確認新版本的簽署授權單位與先前安裝的相符。 若套件未經類別目錄簽署，`Install-Module` 與 `Update-Module` 將會使用 `.PSD1` 檔案上的簽章。 類別目錄簽署可以與簽署指令碼檔案搭配運作，但不會取代其功能。 PowerShell 不會在載入模組時驗證類別目錄簽章。
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>遵循 SemVer 方針來進行版本設定
 

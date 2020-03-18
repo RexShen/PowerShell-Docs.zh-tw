@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 DSC 改善
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818102"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277570"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -59,7 +59,7 @@ DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制�
 
 - 本機組態設定，當中定義了允許節點接收的部分設定。
 
-  ![中繼設定範例](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![中繼設定範例](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - 部分設定定義範例
 
@@ -80,11 +80,11 @@ DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制�
 
 - 內嵌在所產生 MOF 檔案中的 'ConfigurationName'。
 
-  ![產生的 MOF 檔案範例](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![產生的 MOF 檔案範例](media/DSC-improvements/PartialGeneratedMof.png)
 
 - 提取設定存放庫中的檔案名稱
 
-  ![設定存放庫中的檔案名稱](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![設定存放庫中的檔案名稱](media/DSC-improvements/PartialInConfigRepository.png)
 
   Azure 自動化服務名稱以前產生的 MOF 檔案為 `<ConfigurationName>.<NodeName>.mof`。 因此下面的設定會編譯為 PartialOne.localhost.mof。
 
@@ -293,11 +293,11 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 > 只有第一次在系統上套用設定時，或下載並安裝模組時，才會執行模組類別目錄和設定上的簽章驗證。
 > 一致性執行不會驗證 Current.mof 或其模組相依性的簽章。 如果驗證在任何階段失敗，例如從提取伺服器提取的設定未經簽署，則會終止處理設定並顯示下列錯誤，以及刪除所有暫存檔案。
 
-![錯誤輸出設定範例](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![錯誤輸出設定範例](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 同樣地，提取目錄未經簽署的模組也會產生下列錯誤：
 
-![錯誤輸出模組範例](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![錯誤輸出模組範例](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>發送
 
@@ -345,12 +345,12 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - 使用程式碼簽署憑證簽署設定檔。
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - 嘗試推入簽署的 MOF 檔案。
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)

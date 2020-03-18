@@ -2,18 +2,34 @@
 title: 如何在 Visual Studio Code 中複寫 ISE 體驗
 description: 如何在 Visual Studio Code 中複寫 ISE 體驗
 ms.date: 08/06/2018
-ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 193243dc2e3e921b22a6ee068370200ae84ce4ac
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117453"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279232"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>如何在 Visual Studio Code 中複寫 ISE 體驗
 
 雖然適用於 VSCode 的 PowerShell 延伸模組不會尋求與 PowerShell ISE 完全功能同位，但是已經有功能可以讓 ISE 的使用者獲得更自然的 VSCode 使用體驗。
 
 此文件列出您可以在 VSCode 中使用的設定，讓使用者獲得相較於 ISE 更熟悉 VSCode 的體驗。
+
+## <a name="ise-mode"></a>ISE 模式
+
+> [!NOTE]
+> 此功能從 2019.12.0 版開始於 PowerShell Preview 延伸模組中提供，以及從 2020.3.0 版開始於 PowerShell 延伸模組中提供。
+
+在 Visual Studio Code 中重現 ISE 體驗最簡單的方式，便是開啟「ISE 模式」。
+若要這麼做，請開啟命令選擇區 (<kbd>F1</kbd> 或 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 或 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (於 macOS 上))，然後輸入「ISE 模式」。
+從清單中選取 [PowerShell:Enable ISE Mode] \(PowerShell: 啟用 ISE 模式\)。
+
+此命令將會自動套用可在此文件中找到的許多設定。
+結果如下所示：
+
+![ISE 模式](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+
+此文章的其餘部分會包含 ISE 模式中的設定及一些其他設定的詳細資訊。
 
 ## <a name="key-bindings"></a>按鍵繫結關係
 
@@ -36,13 +52,16 @@ ms.locfileid: "74117453"
 "debug.openDebug": "neverOpen",
 ```
 
+> [!NOTE]
+> 這些設定已包含在 [ISE 模式](#ise-mode)中。
+
 這會隱藏下方紅色方塊內的「活動列」和「偵錯側邊欄」區段：
 
-![醒目提示的區段包含活動列與偵錯側邊欄](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+![醒目提示的區段包含活動列與偵錯側邊欄](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
 最終結果如下所示：
 
-![簡化的 VS Code 檢視](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+![簡化的 VS Code 檢視](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
 ## <a name="tab-completion"></a>Tab 鍵自動完成
 
@@ -55,7 +74,10 @@ ms.locfileid: "74117453"
 > [!NOTE]
 > 此設定已直接新增至 VSCode (而不是放在延伸模組中)。 其行為直接取決於 VSCode，而且無法透過延伸模組來變更。
 
-## <a name="no-focus-on-console-when-executing"></a>執行時不會將焦點放在主控台上
+> [!NOTE]
+> 此設定已包含在 [ISE 模式](#ise-mode)中。
+
+## <a name="no-focus-on-console-when-executing"></a>執行時的焦點不在主控台
 
 在使用 <kbd>F8</kbd> 執行時將焦點保持在編輯器中：
 
@@ -63,7 +85,10 @@ ms.locfileid: "74117453"
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
 
-預設值是 `true`，代表協助工具目的。
+> [!NOTE]
+> 此設定已包含在 [ISE 模式](#ise-mode)中。
+
+為了達到協助目的，預設值為 `true`。
 
 ## <a name="dont-start-integrated-console-on-startup"></a>不要在啟動時啟動整合式主控台
 
@@ -84,6 +109,9 @@ ms.locfileid: "74117453"
 "files.defaultLanguage": "powershell",
 ```
 
+> [!NOTE]
+> 此設定已包含在 [ISE 模式](#ise-mode)中。
+
 ## <a name="color-scheme"></a>色彩配置
 
 有幾個 ISE 佈景主題可供 VSCode 使用，會讓編輯器看起來非常像 ISE。
@@ -97,11 +125,17 @@ ms.locfileid: "74117453"
 "workbench.colorTheme": "PowerShell ISE",
 ```
 
+> [!NOTE]
+> 此設定已包含在 [ISE 模式](#ise-mode)中。
+
 ## <a name="powershell-command-explorer"></a>PowerShell 命令總管
 
 感謝 [@corbob](https://github.com/corbob) 所做的一切，PowerShell 延伸模組開始有自己的命令檔案總管了。
 
 在[命令選擇區]中，輸入 `PowerShell Command Explorer` 並按 <kbd>Enter</kbd>。
+
+> [!NOTE]
+> 這會在 [ISE 模式](#ise-mode)中自動顯示。
 
 ## <a name="open-in-the-ise"></a>在 ISE 中開啟
 

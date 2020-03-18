@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery,資源庫
 title: 手動下載套件
-ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327889"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278698"
 ---
 # <a name="manual-package-download"></a>手動下載套件
 
@@ -22,7 +22,7 @@ Powershell 資源庫支援直接從網站下載套件，而不需要使用 Power
 
 每個頁面會有 [手動下載] 連結，如下所示：
 
-![手動下載](../../Images/packagedisplaypagewithpseditions.png)
+![手動下載](media/manual-download/packagedisplaypagewithpseditions.png)
 
 若要手動下載，請按一下 [Download the raw nupkg file] \(下載原始 nupkg 檔案\)  。 這會將套件複本複製到您瀏覽器中的下載資料夾 (名為 `<name>.<version>.nupkg`)。
 
@@ -46,7 +46,8 @@ NuGet 套件檔案包含不屬於原始封裝程式碼的下列 **NuGet 特定�
 
 步驟如下：
 
-1. 將 NuGet 套件內容解壓縮至本機資料夾。
+1. 將從網際網路下載的 NuGet 套件 (`.nupkg`) 檔案解除封鎖，例如使用 `Unblock-File -Path C:\Downloads\module.nupkg` Cmdlet。
+2. 將 NuGet 套件內容解壓縮至本機資料夾。
 2. 從資料夾中刪除 NuGet 特定項目。
 3. 重新命名資料夾。 預設資料夾名稱通常是 `<name>.<version>`。 如果模組標記為發行前版本，則版本可以包含 `-prerelease`。 請將資料夾重新命名為只有模組名稱。 例如，`azurerm.storage.5.0.4-preview` 會成為 `azurerm.storage`。
 4. 將資料夾複製到 `$env:PSModulePath value` 的其中一個資料夾。 `$env:PSModulePath` 是以分號分隔的路徑集合，PowerShell 會在此集合中尋找模組。
@@ -63,7 +64,8 @@ NuGet 套件檔案包含不屬於原始封裝程式碼的下列 **NuGet 特定�
 
 步驟如下：
 
-1. 解壓縮 NuGet 套件內容。
+1. 將從網際網路下載的 NuGet 套件 (`.nupkg`) 檔案解除封鎖，例如使用 `Unblock-File -Path C:\Downloads\package.nupkg` Cmdlet。
+2. 解壓縮 NuGet 套件內容。
 2. 資料夾中的 `.PS1` 檔案可直接從此位置使用。
 3. 您可以刪除此資料夾中的 NuGet 特定項目。
 

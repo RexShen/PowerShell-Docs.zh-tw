@@ -1,23 +1,26 @@
 ---
-ms.date: 12/12/2018
+ms.date: 02/28/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 資源
-ms.openlocfilehash: 1f77b5e6630a2e3de6e1d1a05638f94d2df039ae
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954245"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278236"
 ---
 # <a name="dsc-resources"></a>DSC 資源
 
->適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用於 Windows PowerShell 4.0 與更新版本。
+
+## <a name="overview"></a>概觀
 
 預期狀態設定 (DSC) 資源提供 DSC 設定的建置組塊。 資源會公開可以設定的屬性 (結構描述)，而且這些屬性包含本機設定管理員 (LCM) 稱之為「make it so (讓它變成這樣)」的 PowerShell 指令碼函式。
 
-資源可以建立某些物件的模型，像檔案一樣平常或如 IIS 伺服器設定一樣專用。  類似資源的群組會併入 DSC 模組，將所有必要的檔案組織到可攜式結構中，而且包含中繼資料以識別資源的原訂用法。
+資源可以建立某些物件的模型，像檔案一樣平常或如 IIS 伺服器設定一樣專用。 類似資源的群組會併入 DSC 模組，將所有必要的檔案組織到可攜式結構中，而且包含中繼資料以識別資源的原訂用法。
 
-每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。 您可以透過下列方式定義資源的結構描述：
+每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。
+您可以透過下列方式定義資源的結構描述：
 
 - **'Schema.Mof'** 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 '.schema.mof' 檔案中定義其「結構描述」  。
 - **'\<資源名稱\>.schema.psm1'** 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)，在 '<ResourceName>.schema.psm1' 檔案中定義其「結構描述」  。
@@ -101,56 +104,56 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> 從 PowerShell 5.0 開始，已針對 DSC 新增 IntelliSense。 此新功能可讓您使用 \<TAB\> 和 \<Ctrl+空格鍵\> 自動完成索引鍵名稱。
+> 從 PowerShell 5.0 開始，已針對 DSC 新增 IntelliSense。 此新功能可讓您使用 <kbd>TAB</kbd> 與 <kbd>Ctr</kbd>+<kbd>空格鍵</kbd>來自動完成機碼名稱。
 
-![資源 Tab 鍵自動完成](../media/resource-tabcompletion.png)
+![資源 Tab 鍵自動完成](media/resources/resource-tabcompletion.png)
 
-## <a name="built-in-resources"></a>內建資源
+## <a name="types-of-resources"></a>資源類型
 
-除了社群資源，還提供適用於 Windows 的內建資源、適用於 Linux 的資源，以及適用於跨節點相依性的資源。 您可以使用上述步驟，來判斷這些資源的語法以及使用它們的方式。 提供這些資源的頁面都已封存於**參考**下方。
+Windows 具有內建資源，而 Linux 則具有 OS 特定資源。 有適用於[跨節點相依性](../configurations/crossNodeDependencies.md)的資源、套件管理資源，以及[由社群所有及維護的資源](https://github.com/dsccommunity) \(英文\)。 您可以使用上述步驟來判斷這些資源的語法以及其使用方式。 提供這些資源的頁面都已封存於**參考**下方。
 
-Windows 內建資源
+### <a name="windows-built-in-resources"></a>Windows 內建資源
 
-* [封存資源](../reference/resources/windows/archiveResource.md)
-* [環境資源](../reference/resources/windows/environmentResource.md)
-* [檔案資源](../reference/resources/windows/fileResource.md)
-* [群組資源](../reference/resources/windows/groupResource.md)
-* [GroupSet 資源](../reference/resources/windows/groupSetResource.md)
-* [記錄檔資源](../reference/resources/windows/logResource.md)
-* [封裝資源](../reference/resources/windows/packageResource.md)
-* [ProcessSet 資源](../reference/resources/windows/ProcessSetResource.md)
-* [登錄資源](../reference/resources/windows/registryResource.md)
-* [指令碼資源](../reference/resources/windows/scriptResource.md)
-* [服務資源](../reference/resources/windows/serviceResource.md)
-* [ServiceSet 資源](../reference/resources/windows/serviceSetResource.md)
-* [使用者資源](../reference/resources/windows/userResource.md)
-* [WindowsFeature 資源](../reference/resources/windows/windowsFeatureResource.md)
-* [WindowsFeatureSet 資源](../reference/resources/windows/windowsFeatureSetResource.md)
-* [WindowsOptionalFeature 資源](../reference/resources/windows/windowsOptionalFeatureResource.md)
-* [WindowsOptionalFeatureSet 資源](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
-* [WindowsPackageCabResource 資源](../reference/resources/windows/windowsPackageCabResource.md)
-* [WindowsProcess 資源](../reference/resources/windows/windowsProcessResource.md)
+- [封存資源](../reference/resources/windows/archiveResource.md)
+- [環境資源](../reference/resources/windows/environmentResource.md)
+- [檔案資源](../reference/resources/windows/fileResource.md)
+- [群組資源](../reference/resources/windows/groupResource.md)
+- [GroupSet 資源](../reference/resources/windows/groupSetResource.md)
+- [記錄檔資源](../reference/resources/windows/logResource.md)
+- [封裝資源](../reference/resources/windows/packageResource.md)
+- [ProcessSet 資源](../reference/resources/windows/ProcessSetResource.md)
+- [登錄資源](../reference/resources/windows/registryResource.md)
+- [指令碼資源](../reference/resources/windows/scriptResource.md)
+- [服務資源](../reference/resources/windows/serviceResource.md)
+- [ServiceSet 資源](../reference/resources/windows/serviceSetResource.md)
+- [使用者資源](../reference/resources/windows/userResource.md)
+- [WindowsFeature 資源](../reference/resources/windows/windowsFeatureResource.md)
+- [WindowsFeatureSet 資源](../reference/resources/windows/windowsFeatureSetResource.md)
+- [WindowsOptionalFeature 資源](../reference/resources/windows/windowsOptionalFeatureResource.md)
+- [WindowsOptionalFeatureSet 資源](../reference/resources/windows/windowsOptionalFeatureSetResource.md)
+- [WindowsPackageCabResource 資源](../reference/resources/windows/windowsPackageCabResource.md)
+- [WindowsProcess 資源](../reference/resources/windows/windowsProcessResource.md)
 
-[跨節點相依性](../configurations/crossNodeDependencies.md)資源
+### <a name="cross-node-dependency-resources"></a>跨節點相依性資源
 
-* [WaitForAll 資源](../reference/resources/windows/waitForAllResource.md)
-* [WaitForSome 資源](../reference/resources/windows/waitForSomeResource.md)
-* [WaitForAny 資源](../reference/resources/windows/waitForAnyResource.md)
+- [WaitForAll 資源](../reference/resources/windows/waitForAllResource.md)
+- [WaitForSome 資源](../reference/resources/windows/waitForSomeResource.md)
+- [WaitForAny 資源](../reference/resources/windows/waitForAnyResource.md)
 
-套件管理資源
+### <a name="package-management-resources"></a>套件管理資源
 
-* [PackageManagement 資源](../reference/resources/packagemanagement/PackageManagementDscResource.md)
-* [PackageManagementSource 資源](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
+- [PackageManagement 資源](../reference/resources/packagemanagement/PackageManagementDscResource.md)
+- [PackageManagementSource 資源](../reference/resources/packagemanagement/PackageManagementSourceDscResource.md)
 
-Linux 資源
+#### <a name="linux-resources"></a>Linux 資源
 
-* [Linux 封存資源](../reference/resources/linux/lnxArchiveResource.md)
-* [Linux 環境資源](../reference/resources/linux/lnxEnvironmentResource.md)
-* [Linux FileLine 資源](../reference/resources/linux/lnxFileLineResource.md)
-* [Linux 檔案資源](../reference/resources/linux/lnxFileResource.md)
-* [Linux 群組資源](../reference/resources/linux/lnxGroupResource.md)
-* [Linux 套件資源](../reference/resources/linux/lnxPackageResource.md)
-* [Linux 指令碼資源](../reference/resources/linux/lnxScriptResource.md)
-* [Linux 服務資源](../reference/resources/linux/lnxServiceResource.md)
-* [Linux SshAuthorizedKeys 資源](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
-* [Linux 使用者資源](../reference/resources/linux/lnxUserResource.md)
+- [Linux 封存資源](../reference/resources/linux/lnxArchiveResource.md)
+- [Linux 環境資源](../reference/resources/linux/lnxEnvironmentResource.md)
+- [Linux FileLine 資源](../reference/resources/linux/lnxFileLineResource.md)
+- [Linux 檔案資源](../reference/resources/linux/lnxFileResource.md)
+- [Linux 群組資源](../reference/resources/linux/lnxGroupResource.md)
+- [Linux 套件資源](../reference/resources/linux/lnxPackageResource.md)
+- [Linux 指令碼資源](../reference/resources/linux/lnxScriptResource.md)
+- [Linux 服務資源](../reference/resources/linux/lnxServiceResource.md)
+- [Linux SshAuthorizedKeys 資源](../reference/resources/linux/lnxSshAuthorizedKeysResource.md)
+- [Linux 使用者資源](../reference/resources/linux/lnxUserResource.md)
