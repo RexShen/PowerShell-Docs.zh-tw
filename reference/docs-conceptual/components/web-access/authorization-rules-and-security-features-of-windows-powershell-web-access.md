@@ -3,11 +3,11 @@ ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058415"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402605"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -127,7 +127,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
    ```
 
 4. 透過執行 **Get-PswaAuthorizationRule** Cmdlet 或 `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>` 來確認已建立規則。
-   例如，`Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214`。
+   例如： `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214` 。
 
 #### <a name="to-remove-an-authorization-rule"></a>移除授權規則
 
