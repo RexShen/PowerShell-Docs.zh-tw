@@ -1,26 +1,19 @@
 ---
-title: 在 Windows 上安裝 PowerShell Core
-description: 在 Windows 上安裝 PowerShell Core 的相關資訊
+title: 在 Windows 上安裝 PowerShell
+description: 在 Windows 上安裝 PowerShell 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: 00a1d8064a3c1ec6608a46415bbabb8d98d880f0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416772"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402415"
 ---
-# <a name="installing-powershell-core-on-windows"></a>在 Windows 上安裝 PowerShell Core
+# <a name="installing-powershell-on-windows"></a>在 Windows 上安裝 PowerShell
 
-有多種方法可以在 Windows 中安裝 PowerShell Core。
+有多種方法可以在 Windows 中安裝 PowerShell。
 
-> [!TIP]
-> 如果您已安裝 [.NET Core SDK](/dotnet/core/sdk)，就可以輕鬆地將 PowerShell 安裝為 [.NET 通用工具](/dotnet/core/tools/global-tools)。
->
-> ```
-> dotnet tool install --global PowerShell
-> ```
-
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 若要透過 WSMan 啟用 PowerShell 遠端執行功能，必須符合下列必要條件：
 
@@ -32,7 +25,6 @@ ms.locfileid: "74416772"
 若要在 Windows 用戶端或 Windows Server 上安裝 PowerShell (適用於 Windows 7 SP1、Server 2008 R2 和更新版本)，請從我們的 GitHub [版本][releases]頁面下載 MSI 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
 MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
-<!-- TODO: should be updated to point to the Download Center as well -->
 
 下載後，按兩下安裝程式，並依提示操作。
 
@@ -40,6 +32,15 @@ MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
 
 - 套件預設安裝在 `$env:ProgramFiles\PowerShell\<version>`
 - 您可以透過 [開始] 功能表或 `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` 啟動 PowerShell
+
+> [!NOTE]
+> PowerShell 7 會安裝到新目錄，並與 Windows PowerShell 5.1 並存執行。 針對 PowerShell Core 6.x，PowerShell 7 會就地升級並移除 PowerShell Core 6.x。
+>
+> - PowerShell 7 會安裝到 `%programfiles%\PowerShell\7`
+> - 系統會在 `$env:PATH` 中新增 `%programfiles%\PowerShell\7` 資料夾
+> - 系統會刪除 `%programfiles%\PowerShell\6` 資料夾
+>
+> 如果您需要與 PowerShell 7 並存執行 PowerShell 6，請使用 [ZIP 安裝](#zip)方法來重新安裝 PowerShell 6。
 
 ### <a name="administrative-install-from-the-command-line"></a>從命令列進行系統管理安裝
 
@@ -49,7 +50,7 @@ MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msi`
 - **ENABLE_PSREMOTING** - 此屬性控制在安裝期間啟用 PowerShell 遠端執行功能的選項。
 - **REGISTER_MANIFEST** - 此屬性控制用於註冊 Windows 事件記錄資訊清單的選項。
 
-下列範例示範如何在啟用所有安裝選項的情況下，以無訊息方式安裝 PowerShell Core。
+下列範例示範如何在啟用所有安裝選項的情況下，以無訊息方式安裝 PowerShell。
 
 ```powershell
 msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
@@ -61,7 +62,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 若要手動在 Windows 10 用戶端上安裝 MSIX 套件，請從我們的 GitHub [發行][releases] 頁面下載 MSIX 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
-MSI 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msix`
+MSIX 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msix`
 
 因為此套件必須使用非虛擬化資源，所以無法在下載之後，直接按兩下安裝程式進行安裝。  若要安裝，必須使用 `Add-AppxPackage` Cmdlet：
 
@@ -75,7 +76,7 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
 
-Windows IoT 附帶提供 Windows PowerShell， 我們就是用它來部署 PowerShell Core 6。
+Windows IoT 已經隨附 Windows PowerShell，我們可以將其用來部署 PowerShell 7。
 
 1. 針對目標裝置建立 `PSSession`
 
@@ -100,7 +101,7 @@ Windows IoT 附帶提供 Windows PowerShell， 我們就是用它來部署 Power
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. 設定 PowerShell Core 6 的遠端處理
+4. 設定 PowerShell 7 的遠端處理
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -110,7 +111,7 @@ Windows IoT 附帶提供 Windows PowerShell， 我們就是用它來部署 Power
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. 連接到裝置上的 PowerShell 核心 6 端點
+5. 連線到裝置上的 PowerShell 7 端點
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
@@ -120,23 +121,23 @@ Windows IoT 附帶提供 Windows PowerShell， 我們就是用它來部署 Power
 ## <a name="deploying-on-nano-server"></a>在 Nano Server 上部署
 
 這些指示假設某個 PowerShell 版本已在 Nano Server 映像中執行，而且此映像是由 [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server) 產生。
-Nano Server 是一種「無周邊」作業系統。 目前有兩種方法可以部署核心二進位檔。
+Nano Server 是一種「無周邊」作業系統。 目前可以使用兩種方法來部署 PowerShell 二進位檔。
 
 1. 離線 - 掛接 Nano Server VHD，並將 ZIP 檔案內容解壓縮至您在掛接映像中選擇的位置。
 2. 線上 - 透過 PowerShell 工作階段傳輸 ZIP 檔案，並將它解壓縮至您選擇的位置。
 
 這兩種情況都需要 Windows 10 x64 ZIP 版套件，還需要在「系統管理員」PowerShell 執行個體中執行命令。
 
-### <a name="offline-deployment-of-powershell-core"></a>PowerShell Core 的離線部署
+### <a name="offline-deployment-of-powershell"></a>PowerShell 的離線部署
 
 1. 使用您最愛的 ZIP 公用程式將套件解壓縮至已掛接 Nano Server 映像的目錄。
 2. 取消掛接映像和開機映像。
 3. 連線到 Windows PowerShell 的收件匣執行個體。
 4. 請遵循下列指示來建立使用[另一個執行個體技術](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
 
-### <a name="online-deployment-of-powershell-core"></a>PowerShell Core 的線上部署
+### <a name="online-deployment-of-powershell"></a>PowerShell 的線上部署
 
-下列步驟會引導您從部署 PowerShell Core 到執行 Nano Server 執行個體及其遠端端點的設定。
+下列步驟會引導您將 PowerShell 部署到正在執行的 Nano Server 執行個體，並完成其遠端端點的設定。
 
 - 連線到 Windows PowerShell 的收件匣執行個體
 
@@ -160,14 +161,22 @@ Nano Server 是一種「無周邊」作業系統。 目前有兩種方法可以�
 
   ```powershell
   # Insert the appropriate version.
-  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShellCore_<version>"
+  Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
 - 如需 WSMan 型的遠端功能，請遵循下列指示來建立使用[另一個執行個體技術](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
 
+## <a name="install-as-a-net-global-tool"></a>安裝為 .NET 全域工具
+
+如果您已安裝 [.NET Core SDK](/dotnet/core/sdk)，就可以輕鬆地將 PowerShell 安裝為 [.NET 全域工具](/dotnet/core/tools/global-tools)。
+
+```
+dotnet tool install --global PowerShell
+```
+
 ## <a name="how-to-create-a-remoting-endpoint"></a>如何建立遠端端點
 
-PowerShell Core 支援 WSMan 和 SSH 上的 PowerShell 遠端通訊協定 (PSRP)。 如需詳細資訊，請參閱：
+PowerShell 支援透過 WSMan 與 SSH 的 PowerShell 遠端通訊協定 (PSRP)。 如需詳細資訊，請參閱
 
 - [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
 - [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]

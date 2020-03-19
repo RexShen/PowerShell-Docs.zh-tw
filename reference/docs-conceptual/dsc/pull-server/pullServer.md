@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885382"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402435"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -28,10 +28,10 @@ ms.locfileid: "76885382"
 |                   解決方法                   |              用戶端節點              |
 | -------------------------------------------- | -------------------------------------- |
 | 使用 MDB/ESENT 資料庫的 Windows 提取伺服器 | 最多 500 個節點                        |
-| 使用 SQL 資料庫的 Windows 提取伺服器       | 最多 1000 個節點                       |
-| Azure 自動化 DSC                         | 具有大於 1000 個節點的案例 |
+| 使用 SQL 資料庫的 Windows 提取伺服器       | 最多 3500 個節點                       |
+| Azure 自動化 DSC                         | 小型與大型環境      |
 
-**建議的解決方案** (也是具有最多可用功能的選項) 是 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started)。
+**建議的解決方案** (也是具有最多可用功能的選項) 是 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started)。 尚未識別每個自動化帳戶的節點數目上限。
 
 Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azure 和 AWS 等公用雲端中的節點。 針對伺服器無法直接連線至網際網路的私人環境，請考慮將輸出流量限制在發佈的 Azure IP 範圍內 (請參閱 [Azure 資料中心 IP 範圍](https://www.microsoft.com/download/details.aspx?id=41653) \(英文\))。
 

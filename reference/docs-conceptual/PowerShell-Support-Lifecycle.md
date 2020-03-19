@@ -1,31 +1,40 @@
 ---
 title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
-ms.date: 08/06/2018
-ms.openlocfilehash: 8cf8a0ac6140d28e55b065bf711763ba1c681d63
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.date: 03/09/2020
+ms.openlocfilehash: a1cd316b1d5351acd04c547bc35b3cc62a561429
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706252"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79090256"
 ---
-# <a name="powershell-core-support-lifecycle"></a>PowerShell Core 支援週期
+# <a name="powershell-support-lifecycle"></a>PowerShell 支援生命週期
 
-PowerShell Core 是一組可以與 Windows PowerShell 分開出貨、安裝和設定的不同工具和元件。 因此，Windows 7/8.1/10 或 Windows Server 授權合約不包含 PowerShell Core。
+PowerShell 是一組與 Windows PowerShell 分開出貨、安裝及設定的不同工具與元件。 PowerShell 未包含在 Windows 授權合約中。
 
-不過，PowerShell Core 是由傳統 Microsoft 支援合約支援，包含[頂級][]、[Microsoft Enterprise 合約][enterprise-agreement]與[微軟軟體保證][assurance]。
-您也可以提出您問題的支援要求，付費獲得 PowerShell Core 的[輔助支援][]。
+PowerShell 是由傳統 Microsoft 支援合約支援，包含[頂級][]、[Microsoft Enterprise 合約][enterprise-agreement]與 [Microsoft 軟體保證][assurance]。
+您也可以透過提出您問題的支援要求，付費獲得 PowerShell 的[輔助支援][]。
 
 ## <a name="community-support"></a>社群支援
 
 我們也會在您可提出問題、Bug 或功能要求的 GitHub 上提供[社群支援][]。
 此外，您也可以在 Microsoft [PowerShell Tech Community][]，或在 [PowerShell][pshub] 中樞頁面中，社群區段所列的任何論壇中，尋求其他社群成員的協助。 我們不保證社群能夠及時處理或解決您的問題。 如果您有需要立即注意的問題，則應該使用傳統付費支援選項。
 
-## <a name="lifecycle-of-powershell-core"></a>PowerShell Core 生命週期
+## <a name="lifecycle-of-powershell-7"></a>PowerShell 7 的生命週期
 
-PowerShell Core 會採用 [Microsoft 現代化生命週期原則][modern]。 此支援生命週期是要保持客戶的最新版本最新資訊。
+隨著 PowerShell 7 的發行，PowerShell 會持續依 [Microsoft 現代化生命週期原則][modern]繼續獲得支援，但支援日期會與 [.NET Core 的支援生命週期][Long-Term]連結。 在此服務方法中，客戶可以選擇長期支援 (LTS) 版本或目前版本。 PowerShell 7.0 為 LTS 版本。 其支援會隨著 .NET Core 3.1 的支援結束。 下一個 LTS 版本會隨著下一個 .NET Core LTS 版本一起推出。 請參閱 [PowerShell 版本生命週期結束表格](#powershell-releases-end-of-life)以取得目前的結束支援日期。 LTS 版本更新只包含重要安全性與服務的更新和修正，其設計目的是要避免對現有工作負載造成影響，或是將其降到最低。
 
-大約每六個月更新 PowerShell Core 6.x 版分支一次 (例如 6.0、6.1、6.2 等等)
+目前版本是會在 LTS 版本之間發生的版本。 目前版本可能會包含重要修正、創新與新功能。 目前版本會在下一個目前或 LTS 版本發行後繼續獲得三個月的支援。
+
+> [!IMPORTANT]
+> 您必須安裝最新的修補程式更新以符合支援資格。 例如，如果您正在執行 PowerShell 7.0，且 7.0.1 已經發行，您便必須更新至 7.0.1 以符合支援資格。
+
+## <a name="lifecycle-of-powershell-core-6x"></a>PowerShell Core 6.x 的生命週期
+
+PowerShell Core 先前是使用 [Microsoft 現代化生命週期原則][modern]。 此支援生命週期是要保持客戶的最新版本最新資訊。
+
+先前大約每六個月會更新 PowerShell Core 的 6.x 版分支一次 (例如：6.0、6.1、6.2 等等)。 不過，在發行 PowerShell 7 之後，便不會再發行任何 6.x 的次要版本。 PowerShell 6.2.x 在支援期間將會持續接收到服務更新。
 
 > [!IMPORTANT]
 > 您必須在每個新次要版本發行之後的六個月內進行更新，才能持續接收支援。
@@ -38,8 +47,6 @@ PowerShell Core 會採用 [Microsoft 現代化生命週期原則][modern]。 此
 例如，如果您是執行 PowerShell Core 6.1，而且 6.1.3 在 2019 年 2 月19 日發行，您就必須在 2019 年 3 月 21 日 (也就是發行之後的第 30 天) 之前更新至 PowerShell Core 6.1.3 以繼續獲得支援。 如果需要修補程式，我們會在下一次累計更新中發行。
 
 現代化生命週期原則也需要 Microsoft 在中斷產品 (即 PowerShell Core) 支援之前的 12 個月通知客戶。
-
-最後，我們預期 PowerShell Core 會採用長期維護方法。 透過這個方法，我們僅需要提供服務和安全性更新，就能保持對特定 6.x 分支/版本的支援。
 
 ## <a name="supported-platforms"></a>支援的平台
 
@@ -81,13 +88,14 @@ PowerShell Core 會採用 [Microsoft 現代化生命週期原則][modern]。 此
 
 ## <a name="powershell-releases-end-of-life"></a>PowerShell 版本生命週期結束
 
-下表根據 [PowerShell Core 的生命週期](#lifecycle-of-powershell-core)，列出各種版本的停止支援日期。
+根據 [PowerShell 的生命週期](#lifecycle-of-powershell-7)，下表會列出各種版本的停止支援日期。
 
-| 版本 | 生命週期結束                   |
-|---------|-------------------------------|
-| 6.0     | 2019 年 2 月 13 日             |
-| 6.1     | 2019 年 9 月 28 日            |
-| 6.2     | 7 發行後的 6 個月     |
+| 版本 |    生命週期結束     |
+| :-----: | ------------------ |
+|   7.0   | 2022 年 12 月 3 日   |
+|   6.2   | 2020 年 9 月 4 日  |
+|   6.1   | 2019 年 9 月 28 日 |
+|   6.0   | 2019 年 2 月 13 日  |
 
 ## <a name="unsupported-platforms"></a>不支援的平台
 
@@ -95,47 +103,37 @@ PowerShell Core 會採用 [Microsoft 現代化生命週期原則][modern]。 此
 
 這表示發行版本擁有者已停止支援下列版本，因此不再支援。
 
-| 平台       | 版本 | 生命週期結束                                                                                                                        |
-| -------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Debian         | 8       | [2018 年 6 月](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                                  |
-| Fedora         | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                                                           |
-| Fedora         | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                                                                    |
-| Fedora         | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                                                         |
-| Fedora         | 27      | [2018 年 11 月](https://fedoramagazine.org/fedora-27-end-of-life/)                                                                 |
-| Fedora         | 28      | [2019 年 5 月](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                      |
-| openSUSE       | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                            |
-| openSUSE       | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                        |
-| openSUSE       | 42.3    | [2019 年 7 月](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                           |
-| Ubuntu         | 14.04   | [2019 年 4 月](https://wiki.ubuntu.com/Releases)                                                                                     |
-| Ubuntu         | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                               |
-| Ubuntu         | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                                 |
-| Ubuntu         | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                               |
-| Windows        | 7       | [2020 年 1 月](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
-| Windows Server | 2008 R2 | [2020 年 1 月](https://support.microsoft.com/en-us/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
+|    平台    | 版本 |                                                         生命週期結束                                                          |
+| -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
+| Debian         |    8    | [2018 年 6 月](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                            |
+| Fedora         |   24    | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                                                     |
+| Fedora         |   25    | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                                                              |
+| Fedora         |   26    | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                                                   |
+| Fedora         |   27    | [2018 年 11 月](https://fedoramagazine.org/fedora-27-end-of-life/)                                                           |
+| Fedora         |   28    | [2019 年 5 月](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                |
+| openSUSE       |  42.1   | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                      |
+| openSUSE       |  42.2   | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                  |
+| openSUSE       |  42.3   | [2019 年 7 月](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                     |
+| Ubuntu         |  14.04  | [2019 年 4 月](https://wiki.ubuntu.com/Releases)                                                                               |
+| Ubuntu         |  16.10  | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                         |
+| Ubuntu         |  17.04  | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                           |
+| Ubuntu         |  17.10  | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                         |
+| Windows        |    7    | [2020 年 1 月](https://support.microsoft.com/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
+| Windows Server | 2008 R2 | [2020 年 1 月](https://support.microsoft.com/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## <a name="notes-on-licensing"></a>授權附註
 
 PowerShell Core 是透過 [MIT 授權][]所發行。 透過此授權，而且沒有付費支援合約，則使用者就只有[社群支援][]。 運用社群支援，Microsoft 不保證會回應或修正。
 
-## <a name="windows-powershell-module"></a>Windows PowerShell 模組
+## <a name="windows-powershell-compatibility"></a>Windows PowerShell 相容性
 
-除非產品模組明確支援 PowerShell Core，否則 PowerShell Core 支援不包含那些模組。 例如，使用隨附為 Windows Server 一部分的 `ActiveDirectory` 模組，就是不支援的案例。
+PowerShell 的支援生命週期不會涵蓋在 PowerShell 7 發行套件以外提供的模組。 例如，使用隨附為 Windows Server 一部分的 `ActiveDirectory` 模組，是由 [Windows 支援生命週期][]提供支援。
 
-不過，在某些情況下，未明確支援 PowerShell Core 的模組可能會相容。 安裝 [WindowsPSModulePath][] 模組，即可將 Windows PowerShell 新增至 `PSModulePath`PowerShell Core `PSModulePath`。
+PowerShell 7 已改善與針對 Windows PowerShell 所撰寫之現有 PowerShell 模組之間的相容性。
+如需詳細資訊，請參閱 [about_Windows_Compatibility][] 一文，以及[模組相容性清單][]。
 
-首先，請從 PowerShell 資源庫安裝 **WindowsPSModulePath** 模組：
-
-```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin
-Install-Module WindowsPSModulePath -Force
-```
-
-安裝此模組之後，請執行 `Add-WindowsPSModulePath` Cmdlet，以將 Windows PowerShell `PSModulePath` 新增至 PowerShell Core：
-
-```powershell
-# Add this line to your profile if you always want Windows PowerShell PSModulePath
-Add-WindowsPSModulePath
-```
+> [!NOTE]
+> [**WindowsPSModulePath**](https://www.powershellgallery.com/packages/WindowsPSModulePath) \(英文\) 模組在 PowerShell 7 中已無必要性，且已不再支援。
 
 ## <a name="experimental-features"></a>實驗性功能
 
@@ -157,16 +155,20 @@ Add-WindowsPSModulePath
 | PowerShell 1.0       |   2006 年 11 月   | 可在 Windows XP SP2、Windows Server 2003 SP1 與 Windows Vista 上安裝。 為 Windows Server 2008 的選用元件。                          |
 
 <!-- hyperlink references -->
-[頂級]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
-[enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
-[assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
-[社群支援]: https://github.com/powershell/powershell/issues
-[pshub]: https://docs.microsoft.com/powershell
+[頂級]: https://www.microsoft.com/microsoftservices/support.aspx
+[enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
+[assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
+[社群支援]: /powershell/scripting/community/community-support
+[pshub]: /powershell
 [PowerShell Tech Community]: https://techcommunity.microsoft.com/t5/PowerShell/ct-p/WindowsPowerShell
 [輔助支援]: https://support.microsoft.com/assistedsupportproducts
 [modern]: https://support.microsoft.com/help/30881/modern-lifecycle-policy
+[Long-Term]: https://dotnet.microsoft.com/platform/support/policy/dotnet-core
 [lifecycle-chart]: ./images/modern-lifecycle.png
-[semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
+[semi-annual]: /windows-server/get-started/semi-annual-channel-overview
 [MIT 授權]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
+[about_Windows_Compatibility]: /powershell/module/microsoft.powershell.core/about/about_windows_powershell_compatibility
+[Windows 支援生命週期]: https://support.microsoft.com/help/13853/windows-lifecycle-fact-sheet
+[模組相容性清單]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
-[實驗性功能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures
+[實驗性功能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures

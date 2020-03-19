@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用網頁型 Windows PowerShell 主控台
-ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086624"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402585"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -23,14 +23,11 @@ Windows PowerShell Web 存取可讓使用者登入受保護的網站，以使用
 
 本主題說明如何登入並開始使用 Windows PowerShell Web 存取網頁型主控台。
 
-本主題不會說明如何使用 Windows PowerShell，或執行 Cmdlet 或指令碼。
-如需如何使用 Windows PowerShell 及指令碼資源的資訊，請參閱本主題結尾的[另請參閱](#see-also)一節。
+本主題不會說明如何使用 Windows PowerShell，或執行 Cmdlet 或指令碼。 如需如何使用 Windows PowerShell 及指令碼資源的資訊，請參閱本主題結尾的[另請參閱](#see-also)一節。
 
 ## <a name="supported-browsers-and-client-devices"></a>支援的瀏覽器及用戶端裝置
 
-Windows PowerShell Web 存取支援下列網際網路瀏覽器。
-雖然並未正式支援行動瀏覽器，但很多行動瀏覽器應該都可以執行網頁型 Windows PowerShell 主控台。
-其他接受 Cookie、執行 JavaScript 以及執行 HTTPS 網站的瀏覽器預期也可以運作，但尚未經過正式測試。
+Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未正式支援行動瀏覽器，但很多行動瀏覽器應該都可以執行網頁型 Windows PowerShell 主控台。 其他接受 Cookie、執行 JavaScript 以及執行 HTTPS 網站的瀏覽器預期也可以運作，但尚未經過正式測試。
 
 ### <a name="supported-desktop-computer-browsers"></a>支援的桌上型電腦瀏覽器
 
@@ -57,14 +54,11 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 ## <a name="signing-in-to-windows-powershell-web-access"></a>登入 Windows PowerShell Web 存取
 
-您的 Windows PowerShell Web 存取系統管理員應該提供您組織之 Windows PowerShell Web 存取閘道網站位址的 URL。
-根據預設，這個網址是 *https://\<伺服器名稱\>/pswa*。
+您的 Windows PowerShell Web 存取系統管理員應該提供您組織之 Windows PowerShell Web 存取閘道網站位址的 URL。 根據預設，此網址是 `https://<server_name>/pswa`。
 
-在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。
-您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。
-如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting)。
+在您登入 Windows PowerShell Web 存取之前，請確定您有想要管理之遠端電腦的名稱或 IP 位址。 您必須是遠端電腦上的已授權使用者，而且電腦必須設定為允許遠端管理。 如需如何設定電腦以允許遠端管理的詳細資訊，請參閱[在 Windows PowerShell 中啟用和使用遠端命令](/powershell/module/microsoft.powershell.core/enable-psremoting)。
 
-設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用提升的使用者權限 ( **[以系統管理員身分執行]** ) 開啟的 Windows PowerShell 工作階段中執行 **Enable-PSRemoting -force** Cmdlet。
+設定電腦以允許遠端管理最簡單的方法，就是在電腦上使用已提高的使用者權限 ([以系統管理員身分執行]  ) 開啟的 Windows PowerShell 工作階段中執行 `Enable-PSRemoting -force` Cmdlet。
 
 ### <a name="to-sign-in-to-windows-powershell-web-access"></a>登入 Windows PowerShell Web 存取
 
@@ -72,17 +66,16 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 1. 在 Windows PowerShell Web 存取登入頁面，提供您的網路使用者名稱、密碼以及您想要管理 (而且是已授權使用者) 的電腦名稱。 如果 Windows PowerShell Web 存取系統管理員指示您使用自訂網站或 Proxy 伺服器的 URI，而不是電腦名稱，請在 [連線類型]  欄位中選取 [連線 URI]  ，然後提供 URI。
 
-    > ![注意](images/Note.jpeg) **注意**：
-    >
-    > - 如果目的地電腦位於工作群組，請使用下列語法提供您的使用者名稱並登入電腦：`<workgroup_name>\<user_name>`
-    > - 如果目的地電腦是閘道伺服器，您可以在 [電腦名稱] 欄位中指定 `localhost`
-    > - 如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組，您必須在 [使用者名稱] 欄位中使用 `<workgroup name>\<user_name>`。 您可以在 [電腦名稱] 欄位中使用 `localhost`。
+   > [!NOTE]
+   > - 如果目的地電腦位於工作群組，請使用下列語法提供您的使用者名稱並登入電腦：`<workgroup_name>\<user_name>`
+   > - 如果目的地電腦是閘道伺服器，您可以在 [電腦名稱] 欄位中指定 `localhost`
+   > - 如果目的地電腦是閘道伺服器，而且閘道伺服器位於工作群組，您必須在 [使用者名稱] 欄位中使用 `<workgroup name>\<user_name>`。 您可以在 [電腦名稱] 欄位中使用 `localhost`。
 
-1. [選用連線設定]  區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet 說明。
+1. [選用連線設定]  區段與您想要管理的遠端電腦授權需求有關。 如需等同於選用連線設定之參數的詳細資訊，請參閱 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet 說明。
 
-    一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定]  區段，然後提供替代的認證。 否則，請前往步驟 6。
+   一般而言，您用來通過 Windows PowerShell Web 存取閘道的認證與您想要管理之電腦所識別的認證相同。 不過，如果您想要使用不同的認證來管理您在步驟 2 指定的遠端電腦，請展開 [選用連線設定]  區段，然後提供替代的認證。 否則，請前往步驟 6。
 
-1. 如果 Windows PowerShell Web 存取系統管理員已經針對 Windows PowerShell Web 存取使用者建立自訂工作階段設定，請在 [組態名稱]  欄位中輸入工作階段設定的名稱。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations)。
+1. 如果 Windows PowerShell Web 存取系統管理員已經針對 Windows PowerShell Web 存取使用者建立自訂工作階段設定，請在 [組態名稱]  欄位中輸入工作階段設定的名稱。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations)。
 
 1. 請保留 [驗證類型]  設為 [預設]  ，除非 Windows PowerShell Web 存取系統管理員指示您不要保留。
 
@@ -93,18 +86,17 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 下列其中一項會將您登出網頁型 Windows PowerShell 工作階段。
 
 - 按一下主控台右下角的 [登出]  。 (僅限 Windows Server 2012)
-
 - 按一下主控台右下角的 [儲存]  或 [結束]\(僅限 Windows Server 2012 R2)  。 按一下 [儲存]  儲存並關閉您的 Windows PowerShell Web 存取工作階段；您稍後可以重新連線至工作階段。 當您重新登入 Windows PowerShell Web 存取時，Windows PowerShell Web 存取會顯示一份已儲存工作階段的清單；您可以選取並重新連線至已儲存的工作階段，或者啟動新的工作階段。 允許使用者開啟的工作階段數目上限 (包括已儲存和使用中)，由閘道管理員所設定。
 
-    按一下 [結束]  會將您登出 Windows PowerShell Web 存取工作階段而不加以儲存。
+  按一下 [結束]  會將您登出 Windows PowerShell Web 存取工作階段而不加以儲存。
 
 - 在相同的瀏覽器工作階段或相同瀏覽器工作階段的新索引標籤中，嘗試登入以管理不同的遠端電腦。 (這在閘道伺服器執行 Windows Server 2012 R2 時並不適用；Windows Server 2012 R2 上執行的 Windows PowerShell Web 存取不允許在相同的瀏覽器工作階段中有多個使用者工作階段。)如需如何在相同電腦上使用多個使用中工作階段的詳細資訊，請參閱本主題[網頁型主控台的限制](#limitations-of-the-web-based-console)一節中的＜同時連線到多部目標電腦＞。
 
 - 工作階段 20 分鐘沒有活動。 閘道系統管理員可以自訂沒有活動的逾時期間；如需詳細資訊，請參閱[工作階段管理](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management)。
 
-    - 如果您因為網路錯誤或其他非計劃中的關機或失敗 (而不是因為您自己關閉了工作階段) 從 Web 型主控台中斷工作階段的連線，Windows PowerShell Web 存取工作階段將繼續執行且連線到目標電腦，直到用戶端的逾時期間結束為止。 根據預設，此逾時期限是 20 分鐘，由閘道管理員所設定。 工作階段會在預設的 20 分鐘或閘道系統管理員所指定的逾時期間之後中斷連線，視何者較短而定。
+  - 如果您因為網路錯誤或其他非計劃中的關機或失敗 (而不是因為您自己關閉了工作階段) 從 Web 型主控台中斷工作階段的連線，Windows PowerShell Web 存取工作階段將繼續執行且連線到目標電腦，直到用戶端的逾時期間結束為止。 根據預設，此逾時期限是 20 分鐘，由閘道管理員所設定。 工作階段會在預設的 20 分鐘或閘道系統管理員所指定的逾時期間之後中斷連線，視何者較短而定。
 
-        如果閘道伺服器執行 Windows Server 2012 R2，Windows PowerShell Web 存取可讓使用者在稍後重新連線到工作階段，但您將無法檢視或重新連線到已儲存的工作階段，直到閘道系統管理員所指定的逾時期間結束為止。
+    如果閘道伺服器執行 Windows Server 2012 R2，Windows PowerShell Web 存取可讓使用者在稍後重新連線到工作階段，但您將無法檢視或重新連線到已儲存的工作階段，直到閘道系統管理員所指定的逾時期間結束為止。
 
 - 關閉瀏覽器視窗或索引標籤。
 
@@ -140,91 +132,86 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。
 
 ### <a name="unsupported-shortcut-keys"></a>不支援的快速鍵
 
-功能鍵 | 動作
--- | --
-Ctrl+C | 在 Windows PowerShell Web 存取中，**Ctrl+C** 是由瀏覽器用來複製內容。 主控台提供 [取消]  按鈕，使用者也可以使用 **Ctrl+Q** 來取消命令。
+ 功能鍵   |                                                                                         動作
+--------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ctrl+C          | 在 Windows PowerShell Web 存取中，**Ctrl+C** 是由瀏覽器用來複製內容。 主控台提供 [取消]  按鈕，使用者也可以使用 **Ctrl+Q** 來取消命令。
 Alt-space, e, l | 捲動螢幕緩衝區
 Alt+空格鍵, e, f | 搜尋螢幕緩衝區中的文字
 Alt+空格鍵, e, k | 選取要從螢幕緩衝區複製的文字
 Alt+空格鍵, e, p | 將剪貼簿內容貼到 Windows PowerShell 主控台
-Alt+空格鍵, c | 關閉 Windows PowerShell 主控台
-Ctrl+Break | 強制關閉 Windows PowerShell 視窗
-Ctrl+Home | 從目前命令列前面開始刪除
-Ctrl+End | 刪除到命令列的結尾
-F1 | 在命令列上將游標向右移動一個字元
-F2 | 藉由複製上個命令所輸入的字元來建立新的命令
-F3 | 使用上個命令列的內容來完成命令列
-F4 | 從游標位置刪除字元
-F5 | 向前查看您的命令歷程記錄。 若要存取 Windows PowerShell Web 存取命令歷程記錄中的命令，按一下網頁型主控台中的[記錄]  捲動按鈕。
-F7 | 以互動方式從命令歷程記錄選取命令
-F8 | 查看歷程記錄，顯示符合目前文字的命令
-F9 | 執行歷程記錄中特定編號的命令
-Page Up | 執行歷程記錄中的第一個命令
-Page Down | 執行歷程記錄中的最後一個命令
-Alt+F7 | 清除命令歷程記錄清單
+Alt+空格鍵, c    | 關閉 Windows PowerShell 主控台
+Ctrl+Break      | 強制關閉 Windows PowerShell 視窗
+Ctrl+Home       | 從目前命令列前面開始刪除
+Ctrl+End        | 刪除到命令列的結尾
+F1              | 在命令列上將游標向右移動一個字元
+F2              | 藉由複製上個命令所輸入的字元來建立新的命令
+F3              | 使用上個命令列的內容來完成命令列
+F4              | 從游標位置刪除字元
+F5              | 向前查看您的命令歷程記錄。 若要存取 Windows PowerShell Web 存取命令歷程記錄中的命令，按一下網頁型主控台中的[記錄]  捲動按鈕。
+F7              | 以互動方式從命令歷程記錄選取命令
+F8              | 查看歷程記錄，顯示符合目前文字的命令
+F9              | 執行歷程記錄中特定編號的命令
+Page Up         | 執行歷程記錄中的第一個命令
+Page Down       | 執行歷程記錄中的最後一個命令
+Alt+F7          | 清除命令歷程記錄清單
 
 ### <a name="limitations-of-the-web-based-console"></a>網頁型主控台的限制
 
 - 雙躍點
 
-    如果您嘗試使用 Windows PowerShell Web 存取建立新工作階段或在新工作階段工作，可能會遭遇雙躍點 (或從第一個連線再連線到第二部電腦) 限制。 Windows PowerShell Web 存取使用遠端 runspace，且目前 **PowerShell.exe** 不支援從遠端 runspace 建立另一台電腦的遠端連線。 如果您嘗試使用 **Enter-PSSession** Cmdlet 從現有的連線連線到第二部遠端電腦，您可能會收到各種錯誤，例如「無法取得網路資源」。
+  如果您嘗試使用 Windows PowerShell Web 存取建立新工作階段或在新工作階段工作，可能會遭遇雙躍點 (或從第一個連線再連線到第二部電腦) 限制。
+  Windows PowerShell Web 存取使用遠端 runspace，且目前 **PowerShell.exe** 不支援從遠端 runspace 建立另一台電腦的遠端連線。 例如，如果您嘗試使用 **Enter-PSSession** Cmdlet 從現有的連線再連線到第二部遠端電腦，您可能會收到各種錯誤，例如&euro;「無法取得網路資源」。
 
-    若要避免雙躍點錯誤，系統管理員應該在組織的網路環境中設定 CredSSP 驗證。 如需設定 CredSSP 驗證的詳細資訊，請參閱 Microsoft 網站上的 [適用於第二躍點遠端的 CredSSP](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)。 當您想要管理第二部遠端電腦時也可以提供明確的認證；隱含的認證通常不允許第二躍點。
+  若要避免雙躍點錯誤，系統管理員應該在組織的網路環境中設定 CredSSP 驗證。 如需設定 CredSSP 驗證的詳細資訊，請參閱 PowerShell 部落格上的[適用於第二躍點遠端處理的 CredSSP](https://devblogs.microsoft.com/powershell/credssp-for-second-hop-remoting/) \(英文\)。 當您想要管理第二部遠端電腦時也可以提供明確的認證；隱含的認證通常不允許第二躍點。
 
 - 遠端
 
-    Windows PowerShell Web 存取會使用且具有與遠端 Windows PowerShell 工作階段相同的限制。 直接呼叫 Windows 主控台 API 的命令 (例如用於主控台型編輯器或文字型功能表程式的命令) 無法運作，因為這些命令無法讀寫標準輸入、輸出以及錯誤管道。 因此，啟動可執行檔 (例如 **notepad.exe**) 或顯示 GUI (例如 `OpenGridView` 或 `ogv`) 的命令都無法運作。 您的體驗會受到這個行為影響；對您而言，Windows PowerShell Web 存取似乎不會回應您的命令。
+  Windows PowerShell Web 存取會使用且具有與遠端 Windows PowerShell 工作階段相同的限制。 直接呼叫 Windows 主控台 API 的命令 (例如用於主控台型編輯器或文字型功能表程式的命令) 無法運作，因為這些命令無法讀寫標準輸入、輸出以及錯誤管道。 因此，啟動可執行檔 (例如 **notepad.exe**) 或顯示 GUI (例如 `OpenGridView` 或 `ogv`) 的命令都無法運作。 您的體驗會受到這個行為影響；對您而言，Windows PowerShell Web 存取似乎不會回應您的命令。
 
 - Tab 鍵自動完成
 
-    TAB 鍵自動完成無法在具有受限制 Runspace 或處於 **NoLanguage** 模式的工作階段運作。 雖然系統管理員可以設定工作階段來支援 TAB 鍵自動完成，但基於安全理由並不鼓勵這樣做，因為它會對未獲授權的使用者暴露下列資訊。
+  TAB 鍵自動完成無法在具有受限制 Runspace 或處於 **NoLanguage** 模式的工作階段運作。 雖然系統管理員可以設定工作階段來支援 TAB 鍵自動完成，但基於安全理由並不鼓勵這樣做，因為它會對未獲授權的使用者暴露下列資訊。
 
-    - 內部檔案系統路徑
-
-    - 內部電腦的共用資料夾
-
-    - Runspace 中的變數
-
-    - 載入的類型或 .NET Framework 命名空間
-
-    - 環境變數
+  - 內部檔案系統路徑
+  - 內部電腦的共用資料夾
+  - Runspace 中的變數
+  - 載入的類型或 .NET Framework 命名空間
+  - 環境變數
 
 - **NoLanguage** 工作階段或受限制的 Runspace
 
-    登入 **NoLanguage** 工作階段設定或 Windows PowerShell Web Access 中限制的 runspace 的使用者無法執行 [結束]  命令來結束工作階段。 若要登出，使用者應該按一下主控台頁面上的 [登出]  。
+  登入 **NoLanguage** 工作階段設定或 Windows PowerShell Web Access 中限制的 runspace 的使用者無法執行 [結束]  命令來結束工作階段。 若要登出，使用者應該按一下主控台頁面上的 [登出]  。
 
 - 同時連線到多部目標電腦。
 
-    如果閘道伺服器執行 Windows Server 2012，則 Windows PowerShell Web 存取只會允許每個瀏覽器工作階段連線到一部遠端電腦；它不允許使用者登入一次，然後使用個別的瀏覽器索引標籤連線到多部遠端電腦。 當您開啟新索引標籤或新瀏覽器視窗時，Windows PowerShell Web 存取會提示您中斷目前工作階段的連線，然後啟動新的工作階段，如此您就可以連線到新的 (或相同的) 遠端電腦。 不過，如果需要針對不同的遠端電腦使用兩或多個獨立的工作階段，Internet Explorer 中的功能可讓您建立新的工作階段。 若要在 Internet Explorer 中啟動新的瀏覽器工作階段，請按 **ALT**，開啟 [檔案]  功能表，然後選取 [新增工作階段]  。 然後，在新的工作階段中，開啟 Windows PowerShell Web 存取網站，並登入以存取另一部遠端電腦。
+  如果閘道伺服器執行 Windows Server 2012，則 Windows PowerShell Web 存取只會允許每個瀏覽器工作階段連線到一部遠端電腦；它不允許使用者登入一次，然後使用個別的瀏覽器索引標籤連線到多部遠端電腦。 當您開啟新索引標籤或新瀏覽器視窗時，Windows PowerShell Web 存取會提示您中斷目前工作階段的連線，然後啟動新的工作階段，如此您就可以連線到新的 (或相同的) 遠端電腦。 不過，如果需要針對不同的遠端電腦使用兩個或多個獨立的工作階段，Internet Explorer 中的功能可以讓您建立新工作階段。 若要在 Internet Explorer 中啟動新的瀏覽器工作階段，請按下 **ALT**，開啟 [檔案]  功能表，然後選取 [新增工作階段]  。 然後，在新的工作階段中，開啟 Windows PowerShell Web 存取網站，並登入以存取另一部遠端電腦。
 
-    當 Windows PowerShell Web 存取閘道在 Windows Server 2012 R2 上執行時，使用者可以在不同的瀏覽器索引標籤中開啟多個遠端電腦連線。 如果您想要使用網頁型 Windows PowerShell 主控台開啟多個遠端電腦連線，請檢查您的 Windows PowerShell Web 存取閘道管理員，以查看閘道伺服器是否支援此功能。
+  當 Windows PowerShell Web 存取閘道在 Windows Server 2012 R2 上執行時，使用者可以在不同的瀏覽器索引標籤中開啟多個遠端電腦連線。 如果您想要使用網頁型 Windows PowerShell 主控台開啟多個遠端電腦連線，請檢查您的 Windows PowerShell Web 存取閘道管理員，以查看閘道伺服器是否支援此功能。
 
 - 持續性 Windows PowerShell 工作階段 (重新連線)。
 
-    Windows PowerShell Web 存取閘道逾時之後，會關閉閘道和目標電腦之間的遠端連線。 這會停止目前正在處理的所有 Cmdlet 或指令碼。 當您執行長時間執行的工作時，建議您使用 Windows PowerShell **-Job** 基礎結構，如此您就可以啟動工作、中斷電腦連線、稍後重新連線，然後讓工作持續進行。 使用 **-Job** Cmdlet 的另一個優點是您可以透過使用 Windows PowerShell Web 存取啟動它們、登出，然後稍後再透過執行 Windows PowerShell Web 存取或另一部主機 (例如 Windows PowerShell 整合式指令碼環境 (ISE)) 重新連線。
+  Windows PowerShell Web 存取閘道逾時之後，會關閉閘道和目標電腦之間的遠端連線。 這會停止目前正在處理的所有 Cmdlet 或指令碼。 當您執行長時間執行的工作時，建議您使用 Windows PowerShell **-Job** 基礎結構，您就可以啟動工作、中斷電腦連線、稍後重新連線，然後讓工作持續進行。 使用 **-Job** Cmdlet 的另一個優點是您可以透過使用 Windows PowerShell Web 存取啟動它們、登出，然後稍後再透過執行 Windows PowerShell Web 存取或另一部主機 (例如 Windows PowerShell 整合式指令碼環境 (ISE)) 重新連線。
 
 - 調整主控台大小。
 
-    您可以使用下列三種方式調整 **PowerShell.exe** 主控台視窗大小。
+  您可以使用下列三種方式調整 **PowerShell.exe** 主控台視窗大小。
 
-    - 使用滑鼠拖曳並調整主控台視窗大小
+  - 使用滑鼠拖曳並調整主控台視窗大小
+  - 使用主控台內容 GUI 變更高度及寬度內容
+  - 使用 Cmdlet 變更主控台視窗的高度及寬度
 
-    - 使用主控台內容 GUI 變更高度及寬度內容
+    Windows PowerShell Web 存取的主控台視窗可以使用 Cmdlet 來設定，如下所示。 在下列範例中，使用者將 Windows PowerShell Web 存取主控台的寬度變更為 **20**。
 
-    - 使用 Cmdlet 變更主控台視窗的高度及寬度
+    ```powershell
+    $newSize = $Host.UI.RawUI.WindowSize
+    $newSize.Width = $newSize.Width - 20
+    $oldSize = $Host.UI.RawUI.WindowSize
+    $Host.UI.RawUI.WindowSize = $newSize
+    ```
 
-        Windows PowerShell Web 存取的主控台視窗可以使用 Cmdlet 來設定，如下所示。 在下列範例中，使用者將 Windows PowerShell Web 存取主控台的寬度變更為 **20**。
+    您可以類似的方式變更主控台的高度。
 
-            $newSize = $Host.UI.RawUI.WindowSize
-            $newSize.Width = $newSize.Width - 20
-
-            $oldSize = $Host.UI.RawUI.WindowSize
-
-            $Host.UI.RawUI.WindowSize = $newSize
-
-        您可以類似的方式變更主控台的高度。
-
-        您可以在 [Windows PowerShell 小組部落格](https://blogs.msdn.com/b/powershell/)中找到自訂主控台檢視的其他範例。
+    您可以在 [Windows PowerShell 小組部落格](hhttps://devblogs.microsoft.com/powershell)中找到自訂主控台檢視的其他範例。
 
 ## <a name="see-also"></a>另請參閱
 
