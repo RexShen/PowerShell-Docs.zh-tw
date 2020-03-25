@@ -424,8 +424,8 @@ GameConfigStore        GameDVR_Enabled                       : 1
 
 <!-- External URLs -->
 [platyPS]: https://github.com/PowerShell/platyPS
-[markdig]: https://github.com/lunet-io/markdig \(英文\)
-[CommonMark]: https://spec.commonmark.org/ \(英文\)
+[markdig]: https://github.com/lunet-io/markdig
+[CommonMark]: https://spec.commonmark.org/
 [atx]: https://github.github.com/gfm/#atx-headings
 [pascal-case]: https://en.wikipedia.org/wiki/PascalCase
 [reflow]: https://marketplace.visualstudio.com/items?itemName=marvhen.reflow-markdown

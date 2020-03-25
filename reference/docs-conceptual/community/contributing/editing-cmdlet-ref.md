@@ -83,8 +83,8 @@ Get-Command -ListImported
 [編輯檢查清單](editorial-checklist.md)
 
 <!-- link references -->
-[PlatyPS]: https://github.com/powershell/platyps \(英文\)
-[platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md \(英文\)
+[PlatyPS]: https://github.com/powershell/platyps
+[platyPS.schema.md]: https://github.com/PowerShell/platyPS/blob/master/platyPS.schema.md
 [issue1806]: https://github.com/MicrosoftDocs/PowerShell-Docs/issues/1806
 [about-example]: https://github.com/MicrosoftDocs/PowerShell-Docs/reference/5.1/Microsoft.PowerShell.Core/About/about_Comparison_Operators.md
-[Pandoc]: https://pandoc.org \(英文\)
+[Pandoc]: https://pandoc.org
