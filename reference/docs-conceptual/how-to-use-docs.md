@@ -2,18 +2,18 @@
 ms.date: 10/20/2019
 keywords: powershell,cmdlet
 title: 如何使用 PowerShell 文件
-ms.openlocfilehash: 7b73bc82f32e3ce1e6015822e0cc82078183931b
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279296"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082841"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>如何使用 PowerShell 文件
 
 歡迎使用 PowerShell 線上文件。 此網站包含適用於下列 PowerShell 版本的 Cmdlet 參考：
 
-- PowerShell 7 (預覽)
+- PowerShell 7
 - PowerShell 6
 - PowerShell 5.1
 

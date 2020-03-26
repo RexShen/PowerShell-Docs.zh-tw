@@ -2,12 +2,12 @@
 title: 在 Windows 上安裝 PowerShell
 description: 在 Windows 上安裝 PowerShell 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402415"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082785"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安裝 PowerShell
 
@@ -20,7 +20,7 @@ ms.locfileid: "79402415"
 - 在 Windows 10 以下的 Windows 版本中安裝[通用 C 執行階段](https://www.microsoft.com/download/details.aspx?id=50410)。 透過直接下載或 Windows Update 即可取得。 完整修補 (包括選擇性的套件) 的受支援系統已安裝此項目。
 - 在 Windows 7 和 Windows Server 2008 R2 上安裝 Windows Management Framework (WMF) 4.0 或更新版本。 如需 WMF 的詳細資訊，請參閱 [WMF 概觀](/powershell/scripting/wmf/overview)。
 
-## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />安裝 MSI 套件
+## <a name="installing-the-msi-package"></a><a id="msi" />安裝 MSI 套件
 
 若要在 Windows 用戶端或 Windows Server 上安裝 PowerShell (適用於 Windows 7 SP1、Server 2008 R2 和更新版本)，請從我們的 GitHub [版本][releases]頁面下載 MSI 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
@@ -58,7 +58,7 @@ msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_
 
 如需 Msiexec.exe 的命令列選項完整清單，請參閱[命令列選項](/windows/desktop/Msi/command-line-options)。
 
-## <a name="a-idmsix-installing-the-msix-package"></a><a id="msix" />安裝 MSIX 套件
+## <a name="installing-the-msix-package"></a><a id="msix" />安裝 MSIX 套件
 
 若要手動在 Windows 10 用戶端上安裝 MSIX 套件，請從我們的 GitHub [發行][releases] 頁面下載 MSIX 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
@@ -70,7 +70,7 @@ MSIX 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msix`
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
-## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
+## <a name="installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
 
 有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 請注意，當使用 ZIP 封存時，不會像 MSI 套件一樣檢查必要條件。 若要使遠端功能能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
 
@@ -81,7 +81,8 @@ Windows IoT 已經隨附 Windows PowerShell，我們可以將其用來部署 Pow
 1. 針對目標裝置建立 `PSSession`
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. 將 ZIP 套件複製到裝置
@@ -173,6 +174,8 @@ Nano Server 是一種「無周邊」作業系統。 目前可以使用兩種方�
 ```
 dotnet tool install --global PowerShell
 ```
+
+Dotnet 工具安裝程式會將 `$env:USERPROFILE\dotnet\tools` 新增至您的 `$env:PATH` 環境變數。 不過，目前執行的殼層沒有更新的 `$env:PATH`。 您應該能夠透過輸入 `pwsh`，以從新的殼層啟動 PowerShell。
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>如何建立遠端端點
 

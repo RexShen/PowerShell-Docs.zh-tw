@@ -2,12 +2,12 @@
 title: 在 Linux 上安裝 PowerShell
 description: 在各種 Linux 發行版本上安裝 PowerShell Core 的相關資訊
 ms.date: 03/09/2020
-ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402535"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082804"
 ---
 # <a name="installing-powershell-on-linux"></a>在 Linux 上安裝 PowerShell
 
@@ -298,7 +298,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>透過直接下載安裝 - Alpine 3.9 與 3.10
 
-將[發行][]頁面上的 tar.gz 套件 `powershell_7.0.0-linux-x64.tar.gz` 下載到 Alpine 電腦：
+將[發行][]頁面上的 tar.gz 套件 `powershell-7.0.0-linux-alpine-x64.tar.gz` 下載到 Alpine 電腦：
 
 然後，在終端機中執行下列命令：
 
@@ -693,6 +693,8 @@ rm -rf ~/powershell
 ```
 dotnet tool install --global PowerShell
 ```
+
+Dotnet 工具安裝程式會將 `~/.dotnet/tools` 新增至您的 `PATH` 環境變數。 不過，目前執行的殼層沒有更新的 `PATH`。 您應該能夠透過輸入 `pwsh`，以從新的殼層啟動 PowerShell。
 
 ## <a name="binary-archives"></a>二進位封存
 

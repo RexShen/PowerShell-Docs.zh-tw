@@ -2,12 +2,12 @@
 title: 在 macOS 上安裝 PowerShell
 description: 在 macOS 上安裝 PowerShell 的相關資訊
 ms.date: 12/12/2018
-ms.openlocfilehash: 7f0d6a1aa275deb39a7d670546ee7e833b8ef315
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 2233bc01ee8c53087f79d83ca936c5a3800cfdba
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404825"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082765"
 ---
 # <a name="installing-powershell-on-macos"></a>在 macOS 上安裝 PowerShell
 
@@ -108,6 +108,8 @@ sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 dotnet tool install --global PowerShell
 ```
+
+Dotnet 工具安裝程式會將 `~/.dotnet/tools` 新增至您的 `PATH` 環境變數。 不過，目前執行的殼層沒有更新的 `PATH`。 您應該能夠透過輸入 `pwsh`，以從新的殼層啟動 PowerShell。
 
 ## <a name="binary-archives"></a>二進位封存
 
