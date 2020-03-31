@@ -1,13 +1,13 @@
 ---
 title: 安裝 Windows PowerShell SDK
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: article
-ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444509"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394981"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>安裝 Windows PowerShell SDK
 
@@ -18,7 +18,7 @@ ms.locfileid: "73444509"
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>安裝適用於 Windows 8 及 Windows Server 2012 的 Windows PowerShell 3.0 SDK
 
 Windows 8 及 Windows Server 2012 會自動安裝 Windows PowerShell 3.0。 您也可以下載並安裝 Windows PowerShell 3.0 的參考組件，當做 Windows 8 SDK 的一部分。 這些組件可讓您撰寫 Windows PowerShell 3.0 的 Cmdlet、提供者和主機程式。 當您安裝適用於 Windows 8 的 Windows SDK 時，Windows PowerShell 組件會自動安裝在參考組件資料夾中 (位於 `\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` 中)。 如需詳細資訊，請參閱 Windows 8 SDK 下載網站。 Windows PowerShell 程式碼範例也可在開發中心的[Windows powershell 3.0 SDK 範例套件](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d)中取得。
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0` 中)。 如需詳細資訊，請參閱 Windows 8 SDK 下載網站。 [Powershell-sdk-範例](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0)存放庫中也提供 Windows powershell 程式碼範例。
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>安裝適用於 Windows 7 及 Windows Server 2008 R2 的 Windows PowerShell 3.0 SDK
 
@@ -34,11 +34,9 @@ Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式�
 Assemblies\Microsoft\WindowsPowerShell\V1.0`。
 
 > [!NOTE]
->
 > 針對 Windows PowerShell 2.0 組件編譯的程式碼無法載入到 Windows PowerShell 1.0 安裝中。 不過，針對 Windows PowerShell 1.0 組件編譯的程式碼可以載入至 Windows PowerShell 2.0 安裝。
 
-
-### <a name="samples"></a>範例
+### <a name="samples"></a>Samples
 
 程式碼範例預設會安裝在下列位置︰`C:\Program Files\Microsoft
 SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每個範例之用途的簡要說明。
@@ -73,13 +71,13 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 #### <a name="hosting-application-samples"></a>主控應用程式範例
 
 - Runspace01-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` Cmdlet。
-`Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件。
+  `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件。
 - Runspace02-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` 和 `Sort-Object` Cmdlet。 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件，而 `Sort-Object` 會根據物件的 Id 屬性來排序物件。 這些命令的結果會使用 DataGridView 控制項來顯示。
 - Runspace03-顯示如何使用 PowerShell 類別以同步方式執行腳本，以及如何處理非終止錯誤。 指令碼會接收處理序名稱的清單，然後擷取這些處理序。 指令碼的結果會顯示在主控台視窗中，包括執行指令碼時所產生的任何非終止錯誤在內。
 - Runspace04-示範如何使用 PowerShell 類別來執行命令，以及如何攔截執行命令時所擲回的終止錯誤。 執行了兩個命令，而最後一個命令傳遞了無效的參數引數。 如此便不會傳回任何物件，且會擲回終止錯誤。
 - Runspace05-說明如何將嵌入式管理單元新增至 InitialSessionState 物件，讓嵌入式管理單元的 Cmdlet 可在開啟執行時間時使用。 此嵌入式管理單元提供使用 PowerShell 物件，以同步方式執行的 GetProcessSample01 範例所定義的處理器指令程式。
-- Runspace06-顯示如何將模組新增至 InitialSessionState 物件，以便在開啟執行時間時載入模組。 此模組提供使用 PowerShell 物件以同步方式執行的 GetProcessSample02 範例所定義的處理器指令程式。
-- Runspace07-示範如何建立執行時間，然後使用該執行時間，透過 PowerShell 物件同步執行兩個 Cmdlet。
+- Runspace06-顯示如何將模組新增至 InitialSessionState 物件，以便在開啟執行時間時載入模組。 此模組會提供使用 PowerShell 物件同步執行的 GetProcessSample02 範例所定義的處理器指令程式。
+- Runspace07-說明如何建立執行時間，然後使用該執行時間，以使用 PowerShell 物件同步執行兩個 Cmdlet。
 - Runspace08-說明如何將命令和引數新增至 PowerShell 物件的管線，以及如何同步執行命令。
 - Runspace09-說明如何將腳本新增至 PowerShell 物件的管線，以及如何以非同步方式執行腳本。 事件為用來處理指令碼的輸出。
 - Runspace10-說明如何建立預設初始會話狀態、如何將 Cmdlet 新增至 InitialSessionState、如何建立使用初始會話狀態的執行時間，以及如何使用 PowerShell 物件來執行命令。
@@ -89,7 +87,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 
 #### <a name="host-samples"></a>主機範例
 
-- Host01-顯示如何執行使用自訂主機的主應用程式。 在此範例中，會建立使用自訂主機的運行時，然後使用 PowerShell API 來執行呼叫 "exit" 的腳本。 主應用程式會查看指令碼的輸出，並列印結果。
+- Host01-顯示如何執行使用自訂主機的主應用程式。 在此範例中，會建立使用自訂主機的運行時，然後使用 PowerShell API 來執行會呼叫 `exit`的腳本。 主應用程式會查看指令碼的輸出，並列印結果。
 - Host02-示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行 `Get-Process` Cmdlet，並使用 pwrsh 顯示結果，然後以德文列印目前的資料和時間。
 - Host03-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
 - Host04-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 這個主應用程式也支援顯示允許使用者指定多個選項的提示。
