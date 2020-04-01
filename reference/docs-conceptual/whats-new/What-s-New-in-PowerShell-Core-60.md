@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 的新功能
 description: PowerShell Core 6.0 中發行的新功能與變更
 ms.date: 08/06/2018
-ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995500"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500480"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 的新功能
 
@@ -231,7 +231,7 @@ PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版�
 - Web Cmdlet 中支援連結標頭分頁 (#3828)
   - 針對 `Invoke-WebRequest`，回應包含連結標頭時，我們會將 RelationLink 屬性 (property) 建立為呈現 URL 和 `rel` 屬性 (attribute) 的 Dictionary，並確定 URL 是絕對 URL，讓開發人員更方便使用。
   - 針對 `Invoke-RestMethod`，當回應包含連結標頭時，我們會公開 `-FollowRelLink` 參數以自動遵循 `next` `rel` 連結，直到它們不再存在或叫用選擇性 `-MaximumFollowRelLink` 參數值。
-- 將 `-CustomMethod` 參數新增至 Web Cmdlet，以允許非標準方法動詞。 (#3142) (感謝 [@Lee303](https://github.com/Lee303)！)
+- 將 `-CustomMethod` 參數新增至 Web Cmdlet，以允許非標準方法動詞。 (#3142) (感謝 @Lee303！)
 - 將 `SslProtocol` 支援新增至 Web Cmdlet。 (#5329) (感謝 [@markekraus](https://github.com/markekraus)！)
 - 將多部分支援新增至 Web Cmdlet。 (#4782) (感謝 [@markekraus](https://github.com/markekraus))
 - 將 `-NoProxy` 新增至 Web Cmdlet，讓它們忽略整個系統 Proxy 設定。 (#3447) (感謝 [@TheFlyingCorpse](https://github.com/TheFlyingCorpse)！)
@@ -248,7 +248,7 @@ PowerShell Core 支援所有支援之主要平台 (包含多個 Linux 發行版�
 - 將 Web Cmdlet `UserAgent` 從 `WindowsPowerShell` 變更為 `PowerShell`。 (#4914) (感謝 [@markekraus](https://github.com/markekraus))
 - 將明確 `ContentType` 偵測新增至 `Invoke-RestMethod` (#4692)
 - 修正 Web Cmdlet `-SkipHeaderValidation`，以使用非標準使用者代理程式標頭。 (#4479 與
-  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) (感謝 [@markekraus](https://github.com/markekraus))
+  #<a name="4512-thanks-markekraus"></a>4512) (感謝 [@markekraus](https://github.com/markekraus))
 
 ### <a name="json-cmdlets"></a>JSON Cmdlet
 

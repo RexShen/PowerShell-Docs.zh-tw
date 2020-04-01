@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: dsc,gpo,powershell,configuration,setup
 title: 快速入門 - 將群組原則轉換至 DSC
-ms.openlocfilehash: 8c89dbbce5b2b146194b799d7e36ecce3105bfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953465"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500648"
 ---
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -54,8 +54,8 @@ Mode                LastWriteTime     Length Name
 > [!NOTE]
 > **BaselineManagement** 是社群開發的解決方案，可讓搜尋 DSC 變得更容易；社群解決方案的支援由專案維護人員而不是 Microsoft 提供。 您可以在 [GitHub](https://github.com/microsoft/BaselineManagement) 上針對 **BaselineManagement** 提出新的問題。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
-- 若要將您的設定指令碼上傳至 Azure 自動化狀態設定，請參閱[開始使用](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)。
+- 若要將您的設定指令碼上傳至 Azure 自動化狀態設定，請參閱[開始使用](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)。
 - 將 **SecurityPolicyDSC** 和 **AuditPolicyDSC** 模組新增至您的[自動化帳戶](/azure/automation/shared-resources/modules)。
 - 在 [PowerShell 資源庫 (英文)](https://www.powershellgallery.com/) 中尋找 DSC 設定和資源。

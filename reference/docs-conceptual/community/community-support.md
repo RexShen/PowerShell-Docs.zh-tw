@@ -2,12 +2,12 @@
 title: PowerShell 社群資源
 description: 針對 PowerShell 使用者，以及由 PowerShell 使用者建立的資源清單
 ms.date: 03/04/2020
-ms.openlocfilehash: ce828926624ab0255bc0ede1ce1c2ff965dbf679
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060353"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80395012"
 ---
 # <a name="powershell-community-resources"></a>PowerShell 社群資源
 
@@ -32,4 +32,4 @@ PowerShell 社群可以在我們的 [GitHub](https://github.com/powershell/power
 
 我們有一組數位藝術作品可供您享用。
 
-[數位藝術](https://docs.microsoft.com/powershell/scripting/community/digital-art.md) \(英文\)
+[數位藝術](/powershell/scripting/community/digital-art) \(英文\)

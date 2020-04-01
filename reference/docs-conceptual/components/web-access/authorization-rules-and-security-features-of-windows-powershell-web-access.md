@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
-ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402605"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500891"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -85,7 +85,7 @@ Windows PowerShell Web 存取的最終安全性階層是目標電腦本身的安
 
 根據預設，Windows PowerShell Web 存取在閘道及目標電腦上都會使用主要的使用者名稱和密碼進行驗證。 網頁型登入頁面會在標題為**選用連線設定**的區段中提供選項，讓使用者可視需要為目標電腦提供不同的認證。 如果使用者沒有提供替代認證，就會使用連線閘道的主要使用者名稱及密碼來連線目標電腦。
 
-授權規則可用來允許使用者存取特定工作階段設定。 您可以為 Windows PowerShell Web 存取建立_受限制的 Runspace_ 或工作階段設定，並允許特定使用者在登入 Windows PowerShell Web 存取時只能連線到特定的工作階段設定。 您可以使用存取控制清單 (ACL) 來判斷哪些使用者有權存取特定端點，然後使用本節描述的授權規則進一步限制特定使用者組的端點存取權。 如需受限制之 Runspace 的詳細資訊，請參閱 [Creating a constrained runspace](https://msdn.microsoft.com/library/dn614668) (建立受限制的 Runspace)。
+授權規則可用來允許使用者存取特定工作階段設定。 您可以為 Windows PowerShell Web 存取建立_受限制的 Runspace_ 或工作階段設定，並允許特定使用者在登入 Windows PowerShell Web 存取時只能連線到特定的工作階段設定。 您可以使用存取控制清單 (ACL) 來判斷哪些使用者有權存取特定端點，然後使用本節描述的授權規則進一步限制特定使用者組的端點存取權。 如需受限制之 Runspace 的詳細資訊，請參閱 [Creating a constrained runspace](/powershell/scripting/developer/hosting/creating-a-constrained-runspace) (建立受限制的 Runspace)。
 
 ### <a name="configuring-authorization-rules"></a>設定授權規則
 
@@ -112,7 +112,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
    如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files) 中建立工作階段設定的指示。
 
-3. 這個授權規則允許特定使用者存取網路 (他們通常擁有其存取權) 上的一部電腦，並能夠存取範圍是使用者一般指令碼編寫及 cmdlet 需求的特定工作階段設定。 輸入下列程式碼，然後按 **Enter**。
+3. 此授權規則允許特定使用者存取他們通常有權存取之網路上的一部電腦，以及已針對該使用者&trade;的一般編寫指令碼及 Cmdlet 需求設定範圍之特定工作階段設定的存取權。 輸入下列程式碼，然後按 **Enter**。
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -151,7 +151,8 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
 #### <a name="other-authorization-rule-scenario-examples"></a>其他授權規則案例
 
-每一個 Windows PowerShell 工作階段都會使用一個工作階段設定；如果未針對工作階段指定這類設定，Windows PowerShell 就會使用預設的內建 Windows PowerShell 工作階段設定 (稱為 Microsoft.PowerShell)。 預設的工作階段設定包含電腦可用的所有 Cmdlet。 系統管理員可以使用受限制的 Runspace (一般使用者可以執行之有限範圍內的 Cmdlet 及工作) 來定義工作階段設定，以便限制所有電腦的存取權。 如果已為使用者授與某部電腦的存取權 (無論完整的語言存取權或只能存取 Windows PowerShell 遠端管理 Cmdlet)，該使用者就能連線到已與第一部電腦連線的其他電腦。 定義受限制的 Runspace 可防止使用者從他們允許的 Windows PowerShell Runspace 存取其他電腦，而且還可以提升 Windows PowerShell Web 存取環境的安全性。 工作階段設定可以散佈 (使用群組原則) 到系統管理員想要透過 Windows PowerShell Web 存取來存取的所有電腦。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)。 下面是這個案例的一些範例。
+每一個 Windows PowerShell 工作階段都會使用一個工作階段設定；如果未針對工作階段指定這類設定，Windows PowerShell 就會使用預設的內建 Windows PowerShell 工作階段設定 (稱為 Microsoft.PowerShell)。 預設的工作階段設定包含電腦可用的所有 Cmdlet。 系統管理員可以使用受限制的 Runspace (一般使用者可以執行之有限範圍內的 Cmdlet 及工作) 來定義工作階段設定，以便限制所有電腦的存取權。 如果已為使用者授與某部電腦的存取權 (無論完整的語言存取權或只能存取 Windows PowerShell 遠端管理 Cmdlet)，該使用者就能連線到已與第一部電腦連線的其他電腦。 定義受限制的 Runspace 可防止使用者從他們允許的 Windows PowerShell Runspace 存取其他電腦，而且還可以提升 Windows PowerShell Web 存取環境的安全性。 工作階段設定可以散佈 (使用群組原則) 到系統管理員想要透過 Windows PowerShell Web 存取來存取的所有電腦。 如需工作階段設定的詳細資訊，請參閱 [about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations)。
+下面是這個案例的一些範例。
 
 - 系統管理員會建立一個含有受限制 Runspace 的端點，稱為 **PswaEndpoint**。 然後，系統管理員會建立 `*,*,PswaEndpoint` 規則，並將該端點散佈到其他電腦。 這個規則允許所有使用者存取具有端點 **PswaEndpoint** 的所有電腦。
   如果這是規則集中定義的唯一授權規則，就無法存取不具該端點的電腦。
@@ -181,8 +182,8 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 2. 使用登入頁面上 [選用連線設定]  區域中提供的替代認證，在目標電腦上進行驗證
 
    > [!NOTE]
-   > 如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱[建立網域及樹系信任](https://technet.microsoft.com/library/cc794775.aspx)。
-   > 如需如何將工作群組電腦加入信任主機清單的詳細資訊，請參閱[使用伺服器管理員進行遠端管理](https://technet.microsoft.com/library/dd759202.aspx)。
+   > 如果閘道與目標電腦位於不同的工作群組或網域，則必須建立兩個工作群組電腦、兩個網域或工作群組及網域間的信任關係。 這個關係無法使用 Windows PowerShell Web 存取授權規則 Cmdlet 進行設定。 授權規則無法定義電腦間的信任關係，只能授權讓使用者連線到特定目標電腦和工作階段設定。 如需如何設定不同網域間信任關係的詳細資訊，請參閱[建立網域及樹系信任](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10))。
+   > 如需如何將工作群組電腦加入信任主機清單的詳細資訊，請參閱[使用伺服器管理員進行遠端管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11))。
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>對多個站台使用一組授權規則
 
@@ -198,7 +199,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>設定登入頁面的預設參數
 
-如果您的 Windows PowerShell Web 存取閘道正在 Windows Server 2012 R2 上執行，您就可以針對 Windows PowerShell Web 存取登入頁面上顯示的設定來設定預設值。 您可以在上一段中說明的 **web.config** 檔案中設定值。 登入頁面設定的預設值位於 web.config 檔案的 **appSettings** 區段中；以下是 **appSettings** 區段的範例。 其中許多設定的有效值，都與 Windows PowerShell 中的 [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) Cmdlet 的對應參數相同。
+如果您的 Windows PowerShell Web 存取閘道正在 Windows Server 2012 R2 上執行，您就可以針對 Windows PowerShell Web 存取登入頁面上顯示的設定來設定預設值。 您可以在上一段中說明的 **web.config** 檔案中設定值。 登入頁面設定的預設值位於 web.config 檔案的 **appSettings** 區段中；以下是 **appSettings** 區段的範例。 其中許多設定的有效值，都與 Windows PowerShell 中的 [New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) Cmdlet 的對應參數相同。
 
 例如，`defaultApplicationName` 索引鍵 (如下列程式碼區塊所示) 即為目標電腦上的 **$PSSessionApplicationName** 喜好設定變數值。
 
@@ -225,8 +226,8 @@ Windows PowerShell Web 存取工作階段逾時。在 Windows Server 2012 上執
 
 ## <a name="see-also"></a>另請參閱
 
-[安裝和使用 Windows PowerShell Web 存取](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[安裝和使用 Windows PowerShell Web 存取](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Windows PowerShell Web 存取 Cmdlet](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)

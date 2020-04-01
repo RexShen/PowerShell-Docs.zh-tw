@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: PowerShell 資源庫
-ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327859"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500571"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫
 
@@ -21,31 +21,20 @@ PowerShellGet 模組包含適用於探索、安裝、更新及發行 PowerShell 
 
 ## <a name="getting-started-with-the-gallery"></a>開始使用資源庫
 
-從資源庫安裝套件需要最新版本的 PowerShellGet 模組。
-請參閱[安裝 PowerShellGet](installing-psget.md) 以取得完整的指示。
+從資源庫安裝套件需要最新版本的 PowerShellGet 模組。 請參閱[安裝 PowerShellGet](installing-psget.md) 以取得完整的指示。
 
 如需如何在資源庫使用 PowerShellGet 命令的詳細資訊，請查看[開始使用](getting-started.md)頁面。 您也可以執行 *Update-Help -Module PowerShellGet* 以安裝這些命令的本機說明。
 
 ## <a name="supported-operating-systems"></a>支援的作業系統
 
-**PowerShellGet** 模組需要 **Windows PowerShell 3.0 或更新版本**，或是 **PowerShell Core 6.0 或更新版本**。
-
-下列作業系統都有適用的 **Windows PowerShell** 版本：
-
-- Windows 10
-- Windows 8.1 專業版
-- Windows 8.1 Enterprise
-- Windows 7 SP1
-- Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2008 R2 SP1
+**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本**。
 
 **PowerShellGet** 需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
 
-由於 **PowerShell Core** 的跨平台特性，使它能在 Windows、Linux 和 MacOS 上運作，這也代表 **PowerShellGet** 可在那些系統上使用。 如需 **PowerShell Core** 所支援之系統的完整清單，請參閱[安裝 PowerShell](/powershell/scripting/setup/installing-powershell)。
+由於 **PowerShell Core** 的跨平台特性，使它能在 Windows、Linux 和 MacOS 上運作，這也代表 **PowerShellGet** 可在那些系統上使用。 如需 **PowerShell Core** 所支援之系統的完整清單，請參閱[安裝 PowerShell](/powershell/scripting/install/installing-powershell)。
 
-資源庫中裝載的眾多模組將會支援不同的 OS 並具有額外的需求。 如需詳細資訊，請參考模組的文件。
+資源庫中裝載的眾多模組將會支援不同的 OS 並具有額外的需求。
+如需詳細資訊，請參考模組的文件。
 
 ## <a name="got-a-question-have-feedback"></a>有任何問題嗎？ 想提供任何意見？
 

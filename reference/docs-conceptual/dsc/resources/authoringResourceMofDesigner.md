@@ -2,22 +2,18 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 [資源設計工具] 工具
-ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952855"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500637"
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
-在本主題中，我們會建立管理 Active Directory 使用者的 DSC 資源。
-請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xDscResourceDesigner** 模組。
-
->**注意**：**Install-Module** 已納入 **PowerShellGet** 模組，其隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
+資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。 在本主題中，我們會建立管理 Active Directory 使用者的 DSC 資源。 請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xDscResourceDesigner** 模組。
 
 ## <a name="creating-resource-properties"></a>建立資源屬性
 首先決定資源要公開的屬性。 本例中，我們會定義具有下列屬性的 Active Directory 使用者。
@@ -26,7 +22,7 @@ ms.locfileid: "71952855"
 * **UserName**：唯一識別使用者的索引鍵屬性。
 * **Ensure**：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
 * **DomainCredential**：使用者的網域密碼。
-* **Password**：使用者視需要允許設定變更使用者密碼所需的密碼。
+* **密碼**：使用者視需要允許設定變更使用者密碼所需的密碼。
 
 我們使用 **New-xDscResourceProperty** Cmdlet 建立屬性。 下列 PowerShell 命令會建立上述的屬性。
 
@@ -60,7 +56,8 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-資源指令碼位於 **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**。 它不包含實作資源的實際邏輯，您必須自己加入。 基本架構指令碼的內容如下。
+資源指令碼位於 **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**。
+它不包含實作資源的實際邏輯，您必須自己加入。 基本架構指令碼的內容如下。
 
 ```powershell
 function Get-TargetResource

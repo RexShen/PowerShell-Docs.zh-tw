@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: ISESnippetObject
-ms.openlocfilehash: 60456ec90f56753fa96f141b8b8299ef3f7e41c9
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736959"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500930"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 
-**ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。 `$psISE.CurrentPowerShellTab.Snippets` 集合的成員都是 **ISESnippet** 物件的範例。 建立程式碼片段的最簡單方式是使用 [New-IseSnippet](/reference/5.1/ISE/New-IseSnippet.md) Cmdlet。
+**ISESnippet** 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。 `$psISE.CurrentPowerShellTab.Snippets` 集合的成員都是 **ISESnippet** 物件的範例。 建立程式碼片段的最簡單方式是使用 [New-IseSnippet](/powershell/module/ISE/New-IseSnippet) Cmdlet。
 
 ## <a name="properties"></a>屬性
 

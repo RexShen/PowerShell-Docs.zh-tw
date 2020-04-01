@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用設定識別碼發佈至提取伺服器 (v4/v5)
-ms.openlocfilehash: 3b094308338e62c783b19f4d3bb41634feee63f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417248"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500753"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>使用設定識別碼發佈至提取伺服器 (v4/v5)
 
@@ -47,7 +47,7 @@ GenericConfig
 [System.Guid]::NewGuid()
 ```
 
-取樣輸出
+範例輸出
 
 ```Output
 Guid
@@ -61,7 +61,7 @@ Guid
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-如需在您環境中使用 **Guid** 的詳細資訊，請參閱[為 GUID 規劃](/powershell/scripting/dsc/secureserver#guids)。
+如需在您環境中使用 **Guid** 的詳細資訊，請參閱[為 GUID 規劃](secureServer.md#guids)。
 
 ### <a name="configuration-names"></a>設定名稱
 
@@ -114,7 +114,7 @@ ConfigurationRepositoryShare SMBPullServer
 }
 ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 接下來，您可以設定提取用戶端來提取指定的設定。 如需詳細資訊，請參閱下列任一份指南：
 

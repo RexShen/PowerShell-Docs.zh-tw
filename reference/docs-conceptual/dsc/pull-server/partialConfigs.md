@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: PowerShell 預期狀態設定部分設定
-ms.openlocfilehash: 379ecf804329f318e9604c1af43a60a0e24551f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417752"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500763"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell 預期狀態設定部分設定
 
@@ -23,7 +23,7 @@ _適用於：Windows PowerShell 5.0 及更新版本。_
 
 ### <a name="configuring-the-lcm-for-push-mode-partial-configurations"></a>設定推送模式部分設定的 LCM
 
-若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](/powershell/scripting/dsc/metaConfig)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
+若要設定推送模式中部分設定的 LCM，請對每個部分設定建立 **DSCLocalConfigurationManager** 設定與一個 **PartialConfiguration** 區塊。 如需設定 LCM 的詳細資訊，請參閱 [Windows Configuring the Local Configuration Manager (Windows 設定本機設定管理員)](../managing-nodes/metaConfig.md)。 下列範例顯示預期會有兩個部分設定的 LCM 設定，其中一個部署作業系統，另一個部署及設定 SharePoint。
 
 ```powershell
 [DSCLocalConfigurationManager()]

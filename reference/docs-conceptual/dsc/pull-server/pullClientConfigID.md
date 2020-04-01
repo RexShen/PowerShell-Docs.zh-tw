@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 在 PowerShell 5.0 及更新版本中使用設定識別碼來設定提取用戶端
-ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417227"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500742"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更新版本中使用設定識別碼來設定提取用戶端
 
@@ -46,7 +46,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 [System.Guid]::NewGuid()
 ```
 
-如需在您環境中使用 **Guid** 的詳細資訊，請參閱[為 GUID 規劃](/powershell/scripting/dsc/secureserver#guids)。
+如需在您環境中使用 **Guid** 的詳細資訊，請參閱[為 GUID 規劃](secureserver.md#guids)。
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>設定提取用戶端來下載設定
 
@@ -244,8 +244,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-若要指定報表伺服器，您可使用 **ReportRepositoryWeb** 區塊。 報表伺服器不得為 SMB 伺服器。
-下列中繼設定會設定提取用戶端從 **CONTOSO-PullSrv** 取得其設定，並從 **CONTOSO-ResourceSrv** 取得其資源，然後傳送狀態報表給 **CONTOSO-ReportSrv**：
+若要指定報表伺服器，您可使用 **ReportRepositoryWeb** 區塊。 報表伺服器不得為 SMB 伺服器。 下列中繼設定會設定提取用戶端從 **CONTOSO-PullSrv** 取得其設定，並從 **CONTOSO-ResourceSrv** 取得其資源，然後傳送狀態報表給 **CONTOSO-ReportSrv**：
 
 ```powershell
 [DSCLocalConfigurationManager()]

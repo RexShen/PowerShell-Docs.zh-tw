@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定 DSC SMB 提取伺服器
-ms.openlocfilehash: 25705d9ae06b3ce8daa352142cc0b84793ab6359
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: be41f7a708f1a129919fae8300fc4307441097f7
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953585"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500695"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>設定 DSC SMB 提取伺服器
 
@@ -32,7 +32,7 @@ DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh83
 呼叫 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xSmbShare** 模組。
 
 > [!NOTE]
-> `Install-Module` 已納入 **PowerShellGet** 模組，此模組隨附於 PowerShell 5.0。 您可以在 [PackageManagement PowerShell 模組預覽](https://www.microsoft.com/en-us/download/details.aspx?id=49186)下載 PowerShell 3.0 和 4.0 的 **PowerShellGet** 模組。
+> `Install-Module` 已納入 **PowerShellGet** 模組，此模組隨附於 PowerShell 5.0。
 > **XSmbShare** 包含 DSC 資源 **xSmbShare**，可用來建立 SMB 檔案共用。
 
 ### <a name="create-the-directory-and-file-share"></a>建立目錄和檔案共用
@@ -76,7 +76,8 @@ Configuration SmbShare
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>將檔案系統存取權授與提取用戶端
 
-將 **ReadAccess** 授與用戶端節點可讓該節點存取 SMB 共用，但無法存取該共用內的檔案或資料夾。 您必須明確授與 SMB 共用資料夾和子資料夾的用戶端節點存取權。 我們可以透過 DSC 來達成，方法是使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模組中所包含的 **cNtfsPermissionEntry** 資源來新增。 下列設定會新增 **cNtfsPermissionEntry** 區塊，將 ReadAndExecute 存取權授與提取用戶端︰
+將 **ReadAccess** 授與用戶端節點可讓該節點存取 SMB 共用，但無法存取該共用內的檔案或資料夾。 您必須明確授與 SMB 共用資料夾和子資料夾的用戶端節點存取權。 我們可以透過 DSC 來達成，方法是使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模組中所包含的 **cNtfsPermissionEntry** 資源來新增。
+下列設定會新增 **cNtfsPermissionEntry** 區塊，將 ReadAndExecute 存取權授與提取用戶端︰
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +136,8 @@ Configuration DSCSMB
 > [!NOTE]
 > 如果您使用 SMB 提取伺服器，就必須使用設定識別碼。 SMB 不支援設定名稱。
 
-每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 不支援在 ZIP 檔案中包含不同的模組版本。 在封裝搭配提取伺服器使用的 DSC 資源模組前，您需要對目錄結構進行小幅變更。
+每個資源模組都必須根據下列模式進行壓縮及命名：`{Module Name}_{Module Version}.zip`。 例如，名為 xWebAdminstration 且模組版本為 3.1.2.0 的模組會命名為 'xWebAdministration_3.2.1.0.zip'。 一個壓縮檔必須包含一個模組版本。 不支援在 ZIP 檔案中包含不同的模組版本。
+在封裝搭配提取伺服器使用的 DSC 資源模組前，您需要對目錄結構進行小幅變更。
 
 WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\`。
 
@@ -143,9 +145,7 @@ WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Ve
 
 ## <a name="creating-the-mof-checksum"></a>建立 MOF 總和檢查碼
 
-設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。
-若要建立總和檢查碼，請呼叫 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet。 此 Cmdlet 會使用 `Path` 參數來指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。
-如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。
+設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。 若要建立總和檢查碼，請呼叫 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet。 此 Cmdlet 會使用 `Path` 參數來指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。
 
 總和檢查碼檔案必須存在於和設定 MOF 檔案相同的目錄中 (預設為 `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`)，而且具有相同名稱，附加副檔名為 `.checksum`。
 
@@ -159,9 +159,7 @@ WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Ve
 如需設定 LCM 的詳細資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigID.md)。
 
 > [!NOTE]
-> 為了簡單起見，這個範例使用 **PSDscAllowPlainTextPassword**，以允許將純文字密碼傳遞至 **Credential** 參數。 如需更安全地傳遞認證的詳細資訊，請參閱[設定資料的認證選項](../configurations/configDataCredentials.md)。
->
-> 即使您只要提取資源，也**必須**在 SMB 提取伺服器之中繼設定的 [設定]  區塊中指定 **ConfigurationID**。
+> 為了簡單起見，這個範例使用 **PSDscAllowPlainTextPassword**，以允許將純文字密碼傳遞至 **Credential** 參數。 如需更安全地傳遞認證的詳細資訊，請參閱[設定資料的認證選項](../configurations/configDataCredentials.md)。 即使您只要提取資源，也**必須**在 SMB 提取伺服器之中繼設定的 [設定]  區塊中指定 **ConfigurationID**。
 
 ```powershell
 $secpasswd = ConvertTo-SecureString "Pass1Word" -AsPlainText -Force
@@ -205,7 +203,7 @@ $ConfigurationData = @{
 }
 ```
 
-## <a name="acknowledgements"></a>致謝
+## <a name="acknowledgements"></a>通知
 
 特別感謝下列人員：
 
@@ -214,7 +212,7 @@ $ConfigurationData = @{
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 預期狀態設定概觀](../overview/overview.md)
+[Windows PowerShell Desired State Configuration 概觀](../overview/overview.md)
 
 [制定組態](enactingConfigurations.md)
 
