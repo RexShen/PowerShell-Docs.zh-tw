@@ -2,12 +2,12 @@
 ms.date: 12/19/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的協助工具
-ms.openlocfilehash: e618daca98d76f767a8b60a3425760bfc0bd0f64
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736278"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500955"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 
@@ -46,11 +46,11 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 
 執行下列其中一個動作：
 
-- 若要將指令碼窗格移動到主控台窗格上方，請按 <kbd>CTRL</kbd>+<kbd>1</kbd>，或者按一下工具列的靠上的**顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠上顯示指令碼窗格]  。
+- 若要將指令碼窗格移動到主控台窗格上方，請按 <kbd>CTRL</kbd>+<kbd>1</kbd>，或者按一下工具列的靠上的**顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠上顯示指令碼窗格]。
 
-- 若要將指令碼窗格移動到主控台窗格右方，請按 <kbd>CTRL</kbd>+<kbd>2</kbd>，或者按一下工具列的**靠右顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠右顯示指令碼窗格]  。
+- 若要將指令碼窗格移動到主控台窗格右方，請按 <kbd>CTRL</kbd>+<kbd>2</kbd>，或者按一下工具列的**靠右顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠右顯示指令碼窗格]。
 
-- 若要將指令碼窗格最大化，請按<kbd>CTRL</kbd>+<kbd>3</kbd>，或者按一下工具列的**顯示最大化的指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [顯示最大化的指令碼窗格]  。
+- 若要將指令碼窗格最大化，請按<kbd>CTRL</kbd>+<kbd>3</kbd>，或者按一下工具列的**顯示最大化的指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [顯示最大化的指令碼窗格]。
 
 - 若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下**隱藏指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
 
@@ -121,7 +121,7 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 | **停止偵錯工具**          | <kbd>SHIFT</kbd>+<kbd>F5</kbd>                 | 偵錯指令碼時的指令碼窗格 |
 
 > [!NOTE]
-> 當您在 Windows PowerShell ISE 中進行指令碼偵錯時，也可以使用專為 Windows PowerShell 主控台設計的鍵盤快速鍵。 若要使用這些快速鍵，您必須在主控台窗格中輸入捷徑，然後按 ENTER 鍵。
+> 當您在 Windows PowerShell ISE 中進行指令碼偵錯時，也可以使用專為 Windows PowerShell 主控台設計的鍵盤快速鍵。 若要使用這些快速鍵，您必須在主控台窗格中輸入捷徑，然後按 <kbd>ENTER</kbd> 鍵。
 
 |                 動作                  |      鍵盤快速鍵       |                使用位置                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
@@ -143,7 +143,7 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **關閉 PowerShell 索引標籤**        | <kbd>CTRL</kbd>+<kbd>W</kbd>                                                       |
 | **新增 PowerShell 索引標籤**          | <kbd>CTRL</kbd>+<kbd>T</kbd>                                                       |
-| **上一個 PowerShell 索引標籤**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> (任何 PowerShell 索引標籤上都沒有檔案開啟時才適用)                 |
+| **上一個 PowerShell 索引標籤**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>TAB</kbd> (任何 PowerShell 索引標籤上都沒有檔案開啟時才適用) |
 | **下一個 Windows PowerShell 索引標籤** | <kbd>CTRL</kbd>+<kbd>TAB</kbd> (任何 PowerShell 索引標籤上都沒有檔案開啟時才適用) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始和結束的鍵盤快速鍵
@@ -157,8 +157,7 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 
 ## <a name="breakpoint-management"></a>中斷點管理
 
-對視覺障礙者來說，可透過 Cmdlet 使用中斷點資訊來管理中斷點，例如 [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) 和 [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)。
-如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中偵錯指令碼](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)的＜如何管理中斷點＞。
+對視覺障礙者來說，可透過 Cmdlet 使用中斷點資訊來管理中斷點，例如 [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) 和 [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint)。 如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中偵錯指令碼](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)的＜如何管理中斷點＞。
 
 ## <a name="see-also"></a>另請參閱
 

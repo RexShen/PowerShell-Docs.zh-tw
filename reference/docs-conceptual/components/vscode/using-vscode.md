@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 8644aa7c648d649651ca679238e0b79ff35ac579
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082416"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500903"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -22,9 +22,9 @@ Visual Studio Code 搭配 PowerShell 延伸模組是撰寫 PowerShell 指令碼�
 
 在開始前，請先確定系統上有 PowerShell。 如需 Windows、macOS 和 Linux 上的新型工作負載，請參閱下列連結：
 
-- [在 Linux 上安裝 PowerShell Core][install-pscore-linux]
-- [在 macOS 上安裝 PowerShell Core][install-pscore-macos]
-- [在 Windows 上安裝 PowerShell Core][install-pscore-windows]
+- [在 Linux 上安裝 PowerShell][install-pscore-linux]
+- [在 macOS 上安裝 PowerShell][install-pscore-macos]
+- [在 Windows 上安裝 PowerShell][install-pscore-windows]
 
 若為傳統的 Windows PowerShell 工作負載，請參閱[安裝 Windows PowerShell][install-winps]。
 
@@ -268,7 +268,16 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 建立偵錯設定之後，您可以選取在偵錯工作階段期間想要使用的設定。 從 [偵錯]  檢視工具列的 [偵錯設定] 下拉式清單中選取設定。
 
-有幾個部落格可以協助您開始使用適用於 Visual Studio Code 的 PowerShell 擴充功能：
+## <a name="useful-resources"></a>有用的資源
+
+有幾個影片和部落格文章可以協助您開始使用適用於 Visual Studio Code 的 PowerShell 延伸模組：
+
+### <a name="videos"></a>影片
+
+- [使用 Visual Studio Code 作為您的預設 PowerShell 編輯器](https://youtu.be/bGn45vIeAMM)
+- [Visual Studio Code：深入探討針對您的 PowerShell 指令碼進行偵錯](https://youtu.be/cSbIXmlkr8o)
+
+### <a name="blog-posts"></a>部落格文章
 
 - [PowerShell 延伸模組][ps-extension]
 - [在 Visual Studio Code 中撰寫和偵錯 PowerShell 指令碼][debug]
@@ -279,6 +288,16 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 - [適用於 PowerShell 開發的 Visual Studio Code 編輯功能 – 第 2 部分][editing-part2]
 - [在 Visual Studio Code 中偵錯 PowerShell 指令碼 – 第 1 部分][debugging-part1]
 - [在 Visual Studio Code 中偵錯 PowerShell 指令碼 – 第 2 部分][debugging-part2]
+
+## <a name="powershell-extension-for-visual-studio-code"></a>適用於 Visual Studio Code 的 PowerShell 延伸模組
+
+[GitHub](https://github.com/PowerShell/vscode-powershell) 上可以找到 PowerShell 延伸模組的原始程式碼。
+
+如果您對參與感興趣，非常歡迎您建立提取要求。 請依照 [GitHub 上的開發人員文件](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) \(英文\) 開始使用。
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>針對適用於 Visual Studio Code 的 PowerShell 延伸模組進行疑難排解
+
+如果您使用 Visual Studio Code 進行 PowerShell 指令碼開發時遇到任何問題，請參閱 [GitHub 上的疑難排解指南](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md) \(英文\)
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
@@ -294,13 +313,3 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 [editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-
-## <a name="powershell-extension-for-visual-studio-code"></a>適用於 Visual Studio Code 的 PowerShell 延伸模組
-
-[GitHub](https://github.com/PowerShell/vscode-powershell) 上可以找到 PowerShell 延伸模組的原始程式碼。
-
-如果您對參與感興趣，非常歡迎您建立提取要求。 請依照 [GitHub 上的開發人員文件](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md) \(英文\) 開始使用。
-
-## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>針對適用於 Visual Studio Code 的 PowerShell 延伸模組進行疑難排解
-
-如果您使用 Visual Studio Code 進行 PowerShell 指令碼開發時遇到任何問題，請參閱 [GitHub 上的疑難排解指南](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md) \(英文\)

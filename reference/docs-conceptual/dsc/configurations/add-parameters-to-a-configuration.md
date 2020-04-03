@@ -1,13 +1,13 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc, powershell, 資源, 資源庫, 設定
+keywords: dsc, powershell, 資源, 資源庫, 安裝, 設定
 title: 將參數新增至設定
-ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954195"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263147"
 ---
 # <a name="add-parameters-to-a-configuration"></a>將參數新增至設定
 
@@ -36,17 +36,18 @@ Configuration TestConfig
 
 與函式不同，[CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) 屬性不會新增任何功能。 除了[一般參數](/powershell/module/microsoft.powershell.core/about/about_commonparameters)之外，Configuration 也能夠使用下列內建參數，您不需要定義它們。
 
-|參數  |描述  |
-|---------|---------|
-|`-InstanceName`|用於定義[複合設定](compositeconfigs.md)|
-|`-DependsOn`|用於定義[複合設定](compositeconfigs.md)|
-|`-PSDSCRunAsCredential`|用於定義[複合設定](compositeconfigs.md)|
-|`-ConfigurationData`|用於傳遞在 Configuration 中使用的結構化[設定資料](configData.md)。|
-|`-OutputPath`|用於指定將要編譯的 "\<computername\>.mof" 檔案位置|
+|        參數        |                                         描述                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `-InstanceName`         | 用於定義[複合設定](compositeconfigs.md)                             |
+| `-DependsOn`            | 用於定義[複合設定](compositeconfigs.md)                             |
+| `-PSDSCRunAsCredential` | 用於定義[複合設定](compositeconfigs.md)                             |
+| `-ConfigurationData`    | 用於傳遞在 Configuration 中使用的結構化[設定資料](configData.md)。 |
+| `-OutputPath`           | 用於指定將要編譯的 "\<computername\>.mof" 檔案位置                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>將自己的參數加入 Configuration
 
-除了內建參數之外，您還可以將自己的參數加入到 Configuration。 參數區塊直接位於 Configuration 宣告內，就和 Function 一樣。 Configuration 的參數區塊應該在任何的 **Node** 宣告之外，並且位於任何 *import* 陳述式上方。 您可藉由加入參數讓自己的 Configuration 更穩定且具動態性。
+除了內建參數之外，您還可以將自己的參數加入到 Configuration。
+參數區塊直接位於 Configuration 宣告內，就和 Function 一樣。 Configuration 的參數區塊應該在任何的 **Node** 宣告之外，並且位於任何 *import* 陳述式上方。 您可藉由加入參數讓自己的 Configuration 更穩定且具動態性。
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +118,8 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>Configuration 中的進階參數
 
-除了 `-ComputerName` 參數以外，我們還可以加入服務名稱和狀態的參數。 下列範例區塊會加入具有 `-ServiceName` 參數的參數區塊，並使用它以動態方式定義 **Service** 資源區塊。 還會加入 `-State` 參數以動態方式定義 **Service** 資源區塊中的 **State**。
+除了 `-ComputerName` 參數以外，我們還可以加入服務名稱和狀態的參數。
+下列範例區塊會加入具有 `-ServiceName` 參數的參數區塊，並使用它以動態方式定義 **Service** 資源區塊。 還會加入 `-State` 參數以動態方式定義 **Service** 資源區塊中的 **State**。
 
 ```powershell
 Configuration TestConfig
@@ -213,7 +215,7 @@ Configuration TestConfig
     # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {

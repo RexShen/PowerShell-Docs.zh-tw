@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402435"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500715"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -70,7 +70,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (預設值)、MDB | ESENT (預設值)、MDB | ESENT (預設值)、SQL Server、MDB               |
 
-從 [Windows Server Insider Preview](https://www.microsoft.com/software-download/windowsinsiderpreviewserver) 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 *DSC 服務*) 的支援選項。 這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
+從 Windows Server 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 DSC-Service  ) 的支援選項。 這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
 
 > [!NOTE]
 > SQL Server 支援將不會新增至舊版的 WMF 5.1 (或更早版本)，且只能在高於或等於 17090 的 Windows Server 版本上使用。
@@ -82,7 +82,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 
 設定 Web 提取伺服器的最簡單方式，是使用包含在 **xPSDesiredStateConfiguration** 模組的 **xDscWebService** 資源。 下列步驟說明如何在設定 Web 服務的 `Configuration` 中使用該資源。
 
-1. 呼叫 [Install-Module](/reference/6/PowerShellGet/Install-Module.md) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。
+1. 呼叫 [Install-Module](/powershell/module/PowerShellGet/Install-Module) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。
 
    > [!NOTE]
    > `Install-Module` 已納入 **PowerShellGet** 模組中，此模組隨附於 PowerShell 5.0 和更新版本。
@@ -234,7 +234,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 ### <a name="configuration-mof-format"></a>設定 MOF 格式
 
-設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。 若要建立總和檢查碼，請呼叫 [New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) Cmdlet。 此 Cmdlet 會使用 **Path** 參數，指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。 將 MOF 檔案及其相關總和檢查碼檔案置於 **ConfigurationPath** 資料夾。
+設定 MOF 檔案需要與總和檢查碼檔案配對，以便目標節點上的 LCM 可驗證設定。 若要建立總和檢查碼，請呼叫 [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet。 此 Cmdlet 會使用 **Path** 參數，指定設定 MOF 所在的資料夾。 此 Cmdlet 會建立名為 `ConfigurationMOFName.mof.checksum` 的總和檢查碼檔案，其中 `ConfigurationMOFName` 是設定 MOF 檔案的名稱。 如果在指定的資料夾中有多個設定 MOF 檔案，就會在每個設定資料夾中各建立一個總和檢查碼。 將 MOF 檔案及其相關總和檢查碼檔案置於 **ConfigurationPath** 資料夾。
 
 > [!NOTE]
 > 如果您以任何方式變更設定 MOF 檔案，也必須重新建立總和檢查碼檔案。

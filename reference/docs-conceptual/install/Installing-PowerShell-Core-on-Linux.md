@@ -2,16 +2,16 @@
 title: 在 Linux 上安裝 PowerShell
 description: 在各種 Linux 發行版本上安裝 PowerShell Core 的相關資訊
 ms.date: 03/09/2020
-ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082804"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500543"
 ---
 # <a name="installing-powershell-on-linux"></a>在 Linux 上安裝 PowerShell
 
-支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora] 與 [Arch Linux][arch]。
+支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[Alpine 3.9 和 3.10][alpine]、[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 28][fedora]、[Fedora 29][fedora]、[Fedora 30][fedora] 與 [Arch Linux][arch]。
 
 針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
 
@@ -31,6 +31,7 @@ GitHub [發行][]頁面上提供所有套件。 安裝套件之後，請從終�
 [deb8]: #debian-8
 [deb9]: #debian-9
 [deb10]: #debian-10
+[alpine]: #alpine-39-and-310
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
@@ -83,12 +84,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>透過直接下載安裝 - Ubuntu 16.04
 
-將[發行][]頁面上的 Debian 套件 `powershell_7.0.0-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。
+將[發行][]頁面上的 Debian 套件 `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。
 
 然後，在終端機中執行下列命令：
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -133,12 +134,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>透過直接下載安裝 - Ubuntu 18.04
 
-將[發行][]頁面上的 Debian 套件 `powershell_7.0.0-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。
+將[發行][]頁面上的 Debian 套件 `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。
 
 然後，在終端機中執行下列命令：
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -229,12 +230,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>透過直接下載安裝 - Debian 9
 
-將[發行][]頁面上的 Debian 套件 `powershell_7.0.0-1.debian.9_amd64.deb` 下載至 Debian 電腦。
+將[發行][]頁面上的 Debian 套件 `powershell-lts_7.0.0-1.debian.9_amd64.deb` 下載至 Debian 電腦。
 
 然後，在終端機中執行下列命令：
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -248,6 +249,29 @@ sudo apt-get remove powershell
 
 > [!NOTE]
 > 只有 PowerShell Core 7.0 才支援 Debian 10。
+
+### <a name="installation-via-package-repository---debian-10"></a>透過套件存放庫安裝 - Debian 10
+
+適用於 Linux 的 PowerShell 會發佈到套件存放庫，以供輕鬆安裝及更新。
+
+慣用的方法如下所示：
+
+```sh
+# Download the Microsoft repository GPG keys
+wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
+
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
 
 ### <a name="installation-via-direct-download---debian-10"></a>透過直接下載安裝 - Debian 10
 
@@ -365,18 +389,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>透過直接下載安裝 - CentOS 7
 
-使用 [CentOS 7][]，將[發行][]頁面上的 RPM 套件 `powershell-7.0.0-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。
+使用 [CentOS 7][]，將[發行][]頁面上的 RPM 套件 `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。
 
 然後，在終端機中執行下列命令：
 
 ```sh
-sudo yum install powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 無需下載的中繼步驟便可安裝 RPM：
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>解除安裝 - CentOS 7
@@ -408,18 +432,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7
 
-將[發行][]頁面上的 RPM 套件 `powershell-7.0.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。
+將[發行][]頁面上的 RPM 套件 `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。
 
 然後，在終端機中執行下列命令：
 
 ```sh
-sudo yum install powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 無需下載的中繼步驟便可安裝 RPM：
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>解除安裝 - Red Hat Enterprise Linux (RHEL) 7
@@ -555,7 +579,7 @@ PowerShell 可從 [Arch Linux][] 使用者存放庫 (AUR) 取得。
 
 AUR 中的套件由社群維護，沒有官方支援。
 
-如需從 AUR 安裝套件的詳細資訊，請參閱 [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) 或社群 [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile)。
+如需從 AUR 安裝套件的詳細資訊，請參閱 [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) 或[在 Docker 中使用 PowerShell](powershell-in-docker.md)。
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
@@ -672,7 +696,7 @@ tar -xvf ./powershell-7.0.0-linux-arm32.tar.gz -C ~/powershell
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
-sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "\$PSHOME/pwsh" -Force
+sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "$PSHOME/pwsh" -Force
 
 # alternatively you can run following to create a symbolic link
 # sudo ln -s ~/powershell/pwsh /usr/bin/pwsh

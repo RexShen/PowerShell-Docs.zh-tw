@@ -2,18 +2,18 @@
 title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
 ms.date: 03/09/2020
-ms.openlocfilehash: c1e91aa193dd4a6353098e16ae18301c0753ea85
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082398"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500998"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell 支援生命週期
 
 PowerShell 是一組與 Windows PowerShell 分開出貨、安裝及設定的不同工具與元件。 PowerShell 未包含在 Windows 授權合約中。
 
-PowerShell 是由傳統 Microsoft 支援合約支援，包含[頂級][]、[Microsoft Enterprise 合約][enterprise-agreement]與 [Microsoft 軟體保證][assurance]。
+PowerShell 是由傳統 Microsoft 支援合約支援，包含[付費支援][]、[Microsoft Enterprise 合約][enterprise-agreement]與 [Microsoft 軟體保證][assurance]。
 您也可以透過提出您問題的支援要求，付費獲得 PowerShell 的[輔助支援][]。
 
 ## <a name="community-support"></a>社群支援
@@ -155,7 +155,7 @@ PowerShell 7 已改善與針對 Windows PowerShell 所撰寫之現有 PowerShell
 | PowerShell 1.0       |   2006 年 11 月   | 可在 Windows XP SP2、Windows Server 2003 SP1 與 Windows Vista 上安裝。 為 Windows Server 2008 的選用元件。                          |
 
 <!-- hyperlink references -->
-[頂級]: https://www.microsoft.com/microsoftservices/support.aspx
+[付費支援]: https://support.microsoft.com/hub/4343728/support-for-business
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [社群支援]: /powershell/scripting/community/community-support

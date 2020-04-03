@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用網頁型 Windows PowerShell 主控台
-ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402585"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500877"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -102,7 +102,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 - 關閉正在執行瀏覽器的用戶端裝置，或者中斷網路連線。
 
-- 在 Web 主控台執行 [結束]  命令。 如果您連線的工作階段設定支援 [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) 模式，或在受限制的 Runspace 中，則這個命令無效。
+- 在 Web 主控台執行 [結束]  命令。 如果您連線的工作階段設定支援 [NoLanguage](/dotnet/api/system.management.automation.pslanguagemode) 模式，或在受限制的 Runspace 中，則這個命令無效。
 
 如果您想要重新登入，請再次開啟 Windows PowerShell Web 存取網頁，然後遵循本主題[登入 Windows PowerShell Web 存取](#signing-in-to-windows-powershell-web-access)中的步驟來登入。
 
@@ -211,12 +211,9 @@ Alt+F7          | 清除命令歷程記錄清單
 
     您可以類似的方式變更主控台的高度。
 
-    您可以在 [Windows PowerShell 小組部落格](hhttps://devblogs.microsoft.com/powershell)中找到自訂主控台檢視的其他範例。
+    您可以在 [Windows PowerShell 小組部落格](h https://devblogs.microsoft.com/powershell)中找到自訂主控台檢視的其他範例。
 
 ## <a name="see-also"></a>另請參閱
 
-- [Windows PowerShell Cmdlet 參考資料](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Microsoft TechNet 上的 Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet 指令碼中心存放庫](https://gallery.technet.microsoft.com/scriptcenter)
-- [指令碼中心 - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell 小組部落格](https://blogs.msdn.com/b/powershell/)
+- [嗨，指令碼高手！](https://devblogs.microsoft.com/scripting/)
+- [PowerShell 小組部落格](https://devblogs.microsoft.com/powershell/)

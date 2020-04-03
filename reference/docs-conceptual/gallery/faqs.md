@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
-ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278168"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500580"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
@@ -29,10 +29,10 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>如何發行至 PowerShell 資源庫？
 
-您必須在 PowerShell 資源庫中註冊帳戶，才能將套件發行至資源庫。 原因是發行套件需要 NuGetApiKey，而這會於註冊完畢時提供。 若要註冊，請使用您的個人、工作或學校帳戶登入 PowerShell 資源庫。 第一次登入時，需要單次註冊程序。 之後，就可以在設定檔頁面上使用 NuGetApiKey。
+您必須在 PowerShell 資源庫中註冊帳戶，才能將套件發行至資源庫。 原因是發行套件需要 NuGetApiKey，而這會於註冊完畢時提供。 若要註冊，請使用您的個人、工作或學校帳戶登入 PowerShell 資源庫。 第一次登入時，需要單次註冊程序。
+之後，就可以在設定檔頁面上使用 NuGetApiKey。
 
-您在資源庫中進行註冊之後，請使用 [Publish-Module][] \(英文\) 或 [Publish-Script][] \(英文\) Cmdlet 將您的套件發行至資源庫。
-如需如何執行這些 Cmdlet 的詳細資訊，請瀏覽 [發行] 索引標籤，或閱讀 [Publish-Module][] 和 [Publish-Script][] 文件。
+您在資源庫中進行註冊之後，請使用 [Publish-Module][] \(英文\) 或 [Publish-Script][] \(英文\) Cmdlet 將您的套件發行至資源庫。 如需如何執行這些 Cmdlet 的詳細資訊，請瀏覽 [發行] 索引標籤，或閱讀 [Publish-Module][] 和 [Publish-Script][] 文件。
 
 **您不需要註冊或登入資源庫，就可以安裝或儲存套件。**
 
@@ -40,16 +40,15 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 下列原因會發生此錯誤：
 
-- **指定的 API 金鑰無效。**
-     請確定您已透過帳戶指定有效的 API 金鑰。 若要取得您的 API 金鑰，請檢視設定檔頁面。
-- **指定的套件名稱不屬於您。**
-     如果您已確認 API 金鑰正確，則可能已存在名稱與您嘗試使用之套件名稱相同的套件。 該套件可能已被其擁有者取消列出，在此情況下，它將不會出現在任何搜尋結果中。 若要判斷是否已存在具有相同名稱的套件，請開啟瀏覽器，並瀏覽至該套件的詳細資料頁面：`https://www.powershellgallery.com/packages/<packageName>`。 例如，直接瀏覽至 `https://www.powershellgallery.com/packages/pester` 會將您帶往 Pester 模組的詳細資料頁面 (不論是否列出)。 如果已存在具有衝突名稱的套件，且該套件已被取消列出，您可以︰
-    - 為您的套件選取另一個名稱。
-    - 連絡現有套件的擁有者。
+- **指定的 API 金鑰無效。** 請確定您已透過帳戶指定有效的 API 金鑰。 若要取得您的 API 金鑰，請檢視設定檔頁面。
+- **指定的套件名稱不屬於您。** 如果您已確認 API 金鑰正確，則可能已存在名稱與您嘗試使用之套件名稱相同的套件。 該套件可能已被其擁有者取消列出，在此情況下，它將不會出現在任何搜尋結果中。 若要判斷是否已存在具有相同名稱的套件，請開啟瀏覽器，並瀏覽至該套件的詳細資料頁面：`https://www.powershellgallery.com/packages/<packageName>`。 例如，直接瀏覽至 `https://www.powershellgallery.com/packages/pester` 會將您帶往 Pester 模組的詳細資料頁面 (不論是否列出)。 如果已存在具有衝突名稱的套件，且該套件已被取消列出，您可以︰
+  - 為您的套件選取另一個名稱。
+  - 連絡現有套件的擁有者。
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>為什麼無法使用我的個人帳戶登入，但我昨天還可以登入？
 
-請注意，組件庫帳戶無法容納主要電子郵件別名的變更。 如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](https://windows.microsoft.com/windows/outlook/add-alias-account)。
+請注意，組件庫帳戶無法容納主要電子郵件別名的變更。
+如需詳細資訊，請參閱[管理您 Microsoft 帳戶上的別名](https://windows.microsoft.com/windows/outlook/add-alias-account)。
 
 ## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>選取 [Packages] \(套件\) 索引標籤上所有的 [Category] \(類別\) 核取方塊時，為什麼看不到所有資源庫套件？
 
@@ -57,11 +56,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>將模組發行至 PowerShell 資源庫的需求為何？
 
-任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。
-若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。
-會從「模組資訊清單」  (.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。
-所有發行至資源庫的模組都必須具有模組資訊清單。
-任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
+任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」  (.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
 
 - 版本
 - 描述
@@ -78,11 +73,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>將指令碼發行至資源庫的需求為何？
 
-任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。
-若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。
-會從指令檔的 *PSScriptInfo* 區段，或從 [Publish-Script][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。
-所有發行至資源庫的指令碼都必須具有中繼資料資訊。
-任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
+任何一種 PowerShell 指令碼 (指令碼或工作流程) 都可以發行至組件庫。 若要發行指令碼，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從指令檔的 *PSScriptInfo* 區段，或從 [Publish-Script][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。 所有發行至資源庫的指令碼都必須具有中繼資料資訊。 任何在 PSScriptInfo 區段中包含下列資訊的指令碼都可以發行至資源庫：
 
 - 版本
 - 描述
@@ -121,10 +112,7 @@ PowerShell 模組這個詞也是指實作實際功能的檔案。 指令碼模�
 
 PackageManagement 是處理任何套件管理員的通用介面。 最後，不論處理 PowerShell 模組、MSI、Ruby 寶石、NuGet 套件還是 Perl 模組，您應該可以使用 PackageManagement 的命令 (Find-Package 和 Install-Package) 來進行尋找並安裝。 PackageManagement 的做法是具有插入 PackageManagement 之每個套件管理員的套件提供者。 提供者會執行所有實際工作；他們會從存放庫提取內容，並將內容安裝在本機。 套件提供者通常只需要包裝所指定套件類型的現有套件管理員工具。
 
-PowerShellGet 是適用於 PowerShell 套件的套件管理員。
-具有可透過 PackageManagement 公開 PowerShellGet 功能的 PSModule 套件提供者。
-因此，您可以執行 [Install-Module][] 或 Install-Package -Provider PSModule 以從 PowerShell Gallery 安裝模組。
-無法透過 PackageManagement 命令存取特定 PowerShellGet 功能 (包含 [Update-Module][] 和 [Publish-Module][])。
+PowerShellGet 是適用於 PowerShell 套件的套件管理員。 具有可透過 PackageManagement 公開 PowerShellGet 功能的 PSModule 套件提供者。 因此，您可以執行 [Install-Module][] 或 Install-Package -Provider PSModule 以從 PowerShell Gallery 安裝模組。 無法透過 PackageManagement 命令存取特定 PowerShellGet 功能 (包含 [Update-Module][] 和 [Publish-Module][])。
 
 總而言之，PowerShellGet 只著重於具有 PowerShell 內容的高階套件管理體驗。 PackageManagement 著重於透過一組通用工作來公開所有套件管理體驗。 如果您不滿意這個回答，則在本文件底端的 **PackageManagement 實際上與 PowerShellGet 的關聯為何？** 一節中會有較長的回答。
 
@@ -132,7 +120,8 @@ PowerShellGet 是適用於 PowerShell 套件的套件管理員。
 
 ## <a name="how-does-nuget-relate-to-powershellget"></a>NuGet 與 PowerShellGet 的關聯為何？
 
-PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版本。 PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerShell 資源庫)。
+PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版本。
+PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerShell 資源庫)。
 
 您可以對任何有效的 NuGet 存放庫或檔案共用使用 PowerShellGet。 您只需要執行 [Register-PSRepository][] Cmdlet，即可新增存放庫。
 
@@ -144,7 +133,7 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 其實，PowerShellGet 大量採用 PackageManagement 基礎結構。
 
-在 PowerShell Cmdlet 層，[Install-Module][] 實際上是 Install-Package -Provider PSModule 的精簡型包裝函式。
+在 PowerShell Cmdlet 層，[Install-Module][] 實際上是 `Install-Package -Provider PSModule` 的精簡型包裝函式。
 
 在 PackageManagement 套件提供者層，PSModule 套件提供者實際上會呼叫其他 PackageManagement 套件提供者。 例如，當您處理 NuGet 型組件庫 (例如 PowerShell Gallery) 時，PSModule 套件提供者會使用 NuGet 套件提供者來處理存放庫。
 
@@ -172,7 +161,8 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>是否可以為預計在未來發行的套件保留名稱？
 
-您無法佔用套件名稱。 如果您認為某個現有套件所採用的名稱更適合您自己的套件使用，請嘗試[連絡該套件的擁有者](./how-to/working-with-packages/contacting-package-owners.md)。 如果您在幾週內未收到回應，則可以連絡支援人員，PowerShell 資源庫小組會查看該問題。
+您無法佔用套件名稱。 如果您認為某個現有套件所採用的名稱更適合您自己的套件使用，請嘗試[連絡該套件的擁有者](./how-to/working-with-packages/contacting-package-owners.md)。
+如果您在幾週內未收到回應，則可以連絡支援人員，PowerShell 資源庫小組會查看該問題。
 
 ## <a name="how-do-i-claim-ownership-for-packages"></a>如何主張套件的擁有權？
 
@@ -180,12 +170,12 @@ PowerShell 資源庫是修改過的 [NuGet Gallery](https://www.nuget.org/) 版�
 
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>我應如何處理違反我的套件授權的套件擁有者？
 
-我們建議 PowerShell 社群一起合作，來解決任何可能在套件擁有者與其他套件擁有者之間發生的爭議。  在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](./how-to/getting-support/dispute-resolution.md)。
+我們建議 PowerShell 社群一起合作，來解決任何可能在套件擁有者與其他套件擁有者之間發生的爭議。 在 PowerShellGallery.com 系統管理員調解之前，您需要遵循我們所建立的[爭端解決程序](./how-to/getting-support/dispute-resolution.md)。
 
+<!-- link references-->
 [New-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
 [Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
-[Update-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
-
+[Update-ModuleManifest]: /powershell/module/PowerShellGet/Update-ModuleManifest
 [Install-Module]: /powershell/module/PowershellGet/Install-Module
 [New-ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
 [Publish-Module]: /powershell/module/PowershellGet/Publish-Module
