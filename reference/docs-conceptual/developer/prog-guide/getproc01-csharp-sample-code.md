@@ -8,28 +8,27 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65094bb7-1972-44b3-b8b0-5f639860b58c
 caps.latest.revision: 5
-ms.openlocfilehash: 499a688ce5e8daa78baff58c454ad237836bbe48
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 71ba68521ed8d26d0c85169d2b0d547cc6d2d5e3
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416165"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978418"
 ---
-# <a name="getproc01-c-sample-code"></a><span data-ttu-id="73d66-102">GetProc01 (C#) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="73d66-102">GetProc01 (C#) Sample Code</span></span>
+# <a name="getproc01-c-sample-code"></a><span data-ttu-id="d187f-102">GetProc01 (C#) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="d187f-102">GetProc01 (C#) Sample Code</span></span>
 
-<span data-ttu-id="73d66-103">下列程式碼顯示 GetProc01 範例 Cmdlet 的執行。</span><span class="sxs-lookup"><span data-stu-id="73d66-103">The following code shows the implementation of the GetProc01 sample cmdlet.</span></span> <span data-ttu-id="73d66-104">請注意，藉由將處理常式抓取的實際工作保留到[system.diagnostics.process.getprocesses \*](/dotnet/api/System.Diagnostics.Process.GetProcesses)方法，即可簡化此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="73d66-104">Notice that the cmdlet is simplified by leaving the actual work of process retrieval to the [System.Diagnostics.Process.Getprocesses\*](/dotnet/api/System.Diagnostics.Process.GetProcesses) method.</span></span>
+<span data-ttu-id="d187f-103">下列程式碼顯示 GetProc01 範例 Cmdlet 的執行。</span><span class="sxs-lookup"><span data-stu-id="d187f-103">The following code shows the implementation of the GetProc01 sample cmdlet.</span></span> <span data-ttu-id="d187f-104">請注意，藉由將處理常式抓取的實際工作保留到[system.diagnostics.process.getprocesses \*](/dotnet/api/System.Diagnostics.Process.GetProcesses)方法，即可簡化此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d187f-104">Notice that the cmdlet is simplified by leaving the actual work of process retrieval to the [System.Diagnostics.Process.Getprocesses\*](/dotnet/api/System.Diagnostics.Process.GetProcesses) method.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="73d66-105">您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載這個 getproc01.cs 的原始程式檔（）。</span><span class="sxs-lookup"><span data-stu-id="73d66-105">You can download the C# source file (getproc01.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="73d66-106">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="73d66-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
->
-> <span data-ttu-id="73d66-107">下載的來源檔案可在**\<PowerShell 範例 >** 目錄中取得。</span><span class="sxs-lookup"><span data-stu-id="73d66-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="d187f-105">您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載這個 getproc01.cs 的原始程式檔（）。</span><span class="sxs-lookup"><span data-stu-id="d187f-105">You can download the C# source file (getproc01.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="d187f-106">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="d187f-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="d187f-107">下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。</span><span class="sxs-lookup"><span data-stu-id="d187f-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="73d66-108">範例程式碼</span><span class="sxs-lookup"><span data-stu-id="73d66-108">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="d187f-108">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="d187f-108">Code Sample</span></span>
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L11-L126 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="11-126":::
 
-## <a name="see-also"></a><span data-ttu-id="73d66-109">另請參閱</span><span class="sxs-lookup"><span data-stu-id="73d66-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d187f-109">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d187f-109">See Also</span></span>
 
-[<span data-ttu-id="73d66-110">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="73d66-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="d187f-110">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="d187f-110">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="73d66-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="73d66-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="d187f-111">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="d187f-111">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
