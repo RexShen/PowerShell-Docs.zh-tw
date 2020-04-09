@@ -3,12 +3,12 @@ title: 建立 Windows PowerShell 內容提供者
 ms.date: 09/13/2016
 ms.topic: article
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-ms.openlocfilehash: 149ddb5becf2e0237973e535323ddf8b03b86f24
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: e7a59d902633a6d4c73236b7f5a10fc4b405c9bf
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500844"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978469"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>建立 Windows PowerShell 內容提供者
 
@@ -22,7 +22,7 @@ ms.locfileid: "80500844"
 
 Windows PowerShell 內容提供者必須建立一個支援[IcontentCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)介面的 .net 類別。 以下是本節所述之專案提供者的類別定義。
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L32-L33 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="32-33":::
 
 請注意，在此類別定義中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個參數會為 Windows PowerShell 所使用的提供者指定易記的名稱。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 特定功能。 對於此提供者，並未新增 Windows PowerShell 特有的功能。
 
@@ -46,15 +46,14 @@ Windows PowerShell 內容提供者必須建立一個支援[IcontentCmdletprovide
 若要從專案讀取內容，提供者必須執行衍生自[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)的內容讀取器類別。
 此提供者的內容讀取器允許存取資料表中的資料列內容。 內容讀取器類別會定義**讀取**方法，以從指定的資料列抓取資料，並傳回代表該資料的清單、移動內容讀取器的**搜尋**方法、關閉內容讀取器的**關閉**方法，以及**Dispose**方法。
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2115-L2241
-"AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="2115-2241":::
 
 ## <a name="implementing-a-content-writer"></a>執行內容寫入器
 
 若要將內容寫入專案，提供者必須執行衍生自[Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)的內容寫入器類別。
 內容寫入器類別會定義**寫入**方法，以寫入指定的資料列內容、移動內容寫入器的**搜尋**方法、關閉內容寫入器的**Close**方法，以及**Dispose**方法。
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L2250-L2394 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="2250-2394":::
 
 ## <a name="retrieving-the-content-reader"></a>正在抓取內容讀取器
 
@@ -83,7 +82,7 @@ public IContentReader GetContentReader(string path)
 } // GetContentReader
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1829-L1846 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="1829-1846":::
 
 #### <a name="things-to-remember-about-implementing-getcontentreader"></a>執行 GetContentReader 的相關事項
 
@@ -106,7 +105,7 @@ public object GetContentReaderDynamicParameters(string path)
 }
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1853-L1856 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="1853-1856":::
 
 ## <a name="retrieving-the-content-writer"></a>正在抓取內容寫入器
 
@@ -135,7 +134,7 @@ public IContentWriter GetContentWriter(string path)
 }
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1863-L1880 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="1863-1880":::
 
 #### <a name="things-to-remember-about-implementing-getcontentwriter"></a>執行 GetContentWriter 的相關事項
 
@@ -151,7 +150,7 @@ public IContentWriter GetContentWriter(string path)
 
 這個 Windows PowerShell 容器提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1887-L1890 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="1887-1890":::
 
 ## <a name="clearing-content"></a>清除內容
 
@@ -159,7 +158,7 @@ public IContentWriter GetContentWriter(string path)
 
 以下是此提供者的[IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法的執行。
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1775-L1812 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="1775-1812":::
 
 #### <a name="things-to-remember-about-implementing-clearcontent"></a>執行 ClearContent 的相關事項
 
@@ -186,7 +185,7 @@ public object ClearContentDynamicParameters(string path)
 }
 ```
 
-[!code-csharp[AccessDBProviderSample06.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1819-L1822 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="1819-1822":::
 
 ## <a name="code-sample"></a>程式碼範例
 

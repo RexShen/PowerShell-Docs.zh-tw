@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
-ms.openlocfilehash: 9c00ec6de987729fec42dc57245a949d11e31f4b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2fe5c82bc4516574c48fe7effb8bcc60ea6d0bbf
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366327"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80977466"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
@@ -33,20 +33,16 @@ ms.locfileid: "72366327"
 這個範例示範下列作業：
 
 - 宣告 `CmdletProvider` 屬性。
-
 - 定義一個衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別的提供者類別，並宣告[IcontentCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)介面的，並將其宣告為。
-
 - 覆寫[IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，以變更 `Clear-Content` Cmdlet 的行為，讓使用者可以從專案中移除內容。 （此範例不會示範如何將動態參數新增至 `Clear-Content` Cmdlet）。
-
 - 覆寫[IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，以變更 `Get-Content` Cmdlet 的行為，讓使用者能夠抓取專案的內容（content）。 （此範例不會示範如何將動態參數新增至 `Get-Content` Cmdlet）。
-
 - 覆寫[Filesystemprovider. Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)方法來變更 `Set-Content` Cmdlet 的行為，讓使用者可以更新專案的內容。 （此範例不會示範如何將動態參數新增至 `Set-Content` Cmdlet）。
 
 ## <a name="example"></a>範例
 
 這個範例會示範如何覆寫在 Microsoft Access 資料基底中清除、取得及設定專案內容所需的方法。
 
-[!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs" range="11-2399":::
 
 ## <a name="see-also"></a>另請參閱
 

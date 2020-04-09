@@ -1,22 +1,13 @@
 ---
-title: 建立 Windows PowerShell 容器提供者 |Microsoft Docs
-ms.custom: ''
+title: 建立 Windows PowerShell 容器提供者
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- providers [PowerShell Programmer's Guide], container provider
-- container providers [PowerShell Programmer's Guide]
-ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
-caps.latest.revision: 5
-ms.openlocfilehash: 69e45de4220a234783d35a877116ad5a5e47d182
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: eec92d526ad78d2351eef6679eaa0df19900715b
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870773"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978486"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>建立 Windows PowerShell 容器提供者
 
@@ -42,7 +33,7 @@ Windows PowerShell 容器提供者必須定義一個衍生自[ContainerCmdletpro
 public class AccessDBProvider : ContainerCmdletProvider
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="34-35":::
 
 請注意，在此類別定義中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個參數會為 Windows PowerShell 所使用的提供者指定易記的名稱。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 特定功能。 對於此提供者，不會新增任何 Windows PowerShell 特有的功能。
 
@@ -118,7 +109,7 @@ protected override void GetChildItems(string path, bool recurse)
 } // GetChildItems
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L311-L362 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="311-362":::
 
 #### <a name="things-to-remember-about-implementing-getchilditems"></a>執行 GetChildItems 的相關事項
 
@@ -192,7 +183,7 @@ protected override void GetChildNames(string path,
 } // GetChildNames
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L369-L411 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="369-411":::
 
 #### <a name="things-to-remember-about-implementing-getchildnames"></a>執行 GetChildNames 的相關事項
 
@@ -272,7 +263,7 @@ protected override void NewItem( string path, string type, object newItemValue )
 } // NewItem
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L939-L955 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="939-955":::
 
 #### <a name="things-to-remember-about-implementing-newitem"></a>執行 NewItem 的相關事項
 
@@ -334,7 +325,7 @@ protected override bool HasChildItems( string path )
 } // HasChildItems
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L1094-L1097 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="1094-1097":::
 
 #### <a name="things-to-remember-about-implementing-haschilditems"></a>執行 HasChildItems 的相關事項
 

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416319"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978622"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>新增參數集到 Cmdlet
 
@@ -60,7 +60,7 @@ Public Class StopProcCommand
 
 此輸入參數可讓使用者指定要停止的處理常式名稱。 請注意， [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 `ParameterSetName` 屬性關鍵字會指定為此參數設定的 `ProcessName` 參數。
 
-[!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
 ```vb
 <Parameter(Position:=0, ParameterSetName:="ProcessName", _
@@ -211,7 +211,7 @@ End Sub 'ProcessRecord ' ProcessRecord
 
 這裡不會說明 Select 語句所呼叫的 Helper 方法，但您可以在下一節的完整程式碼範例中看到其實作為。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 如需完整C#的範例程式碼，請參閱[StopProcessSample04 範例](./stopprocesssample04-sample.md)。
 
@@ -229,23 +229,23 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
 
 - 啟動 Windows PowerShell 之後，請執行 `ProcessId` 參數集的 Stop-Proc Cmdlet，以根據其識別碼停止進程。 在此情況下，Cmdlet 會使用 `ProcessId` 參數集來停止進程。
 
-    ```
-    PS> stop-proc -Id 444
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
-    ```
+  ```
+  PS> stop-proc -Id 444
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+  ```
 
 - 當 Windows PowerShell 啟動時，請執行 `InputObject` 參數集的 Stop-Proc Cmdlet，以停止 `Get-Process` 命令所抓取之記事本物件上的進程。
 
-    ```
-    PS> get-process notepad | stop-proc
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
-    ```
+  ```
+  PS> get-process notepad | stop-proc
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
+  ```
 
 ## <a name="see-also"></a>另請參閱
 

@@ -8,25 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
-ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417519"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978554"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 程式碼範例
 
-下列程式碼示範如何執行[建立 Windows Powershell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 windows powershell 提供者。 此提供者可運算元據存放區中的資料。
+下列程式碼示範如何執行[建立 Windows Powershell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 windows powershell 提供者。
+此提供者可運算元據存放區中的資料。
 
 > [!NOTE]
 > 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider03.cs）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
->
-> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
->
-> 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 ```csharp
 using System;
@@ -997,7 +995,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="11-976":::
 
 ## <a name="see-also"></a>另請參閱
 

@@ -12,30 +12,33 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366827"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978452"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>建立 Windows PowerShell 磁碟機提供者
 
 本主題說明如何建立 Windows PowerShell 磁片磁碟機提供者，以提供透過 Windows PowerShell 磁片磁碟機存取資料存放區的方式。 這種類型的提供者也稱為 Windows PowerShell 磁片磁碟機提供者。 提供者所使用的 Windows PowerShell 磁片磁碟機提供連接到資料存放區的方法。
 
-這裡所述的 Windows PowerShell 磁片磁碟機提供者可讓您存取 Microsoft Access 資料庫。 對於此提供者，Windows PowerShell 磁片磁碟機代表資料庫（可以將任意數目的磁片磁碟機新增至磁片磁碟機提供者）、磁片磁碟機的最上層容器代表資料庫中的資料表，而容器的專案則代表中的資料列資料表。
+這裡所述的 Windows PowerShell 磁片磁碟機提供者可讓您存取 Microsoft Access 資料庫。
+對於此提供者，Windows PowerShell 磁片磁碟機代表資料庫（可以將任意數目的磁片磁碟機新增至磁片磁碟機提供者）、磁片磁碟機的最上層容器代表資料庫中的資料表，而容器的專案則代表資料表中的資料列。
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定義 Windows PowerShell 提供者類別
 
 您的磁片磁碟機提供者必須定義一個衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基類的 .net 類別。 以下是此磁片磁碟機提供者的類別定義：
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="29-30":::
 
-請注意，在此範例中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性會指定提供者的使用者易記名稱，以及提供者在命令處理期間公開給 windows powershell 執行時間的 windows powershell 特定功能。 提供者功能的可能值是由[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉所定義。 此磁片磁碟機提供者不支援任何這些功能。
+請注意，在此範例中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性會指定提供者的使用者易記名稱，以及提供者在命令處理期間公開給 windows powershell 執行時間的 windows powershell 特定功能。
+提供者功能的可能值是由[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉所定義。 此磁片磁碟機提供者不支援任何這些功能。
 
 ## <a name="defining-base-functionality"></a>定義基本功能
 
-如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類，此類別定義了初始化和取消初始化提供者所需的方法。 若要執行功能來新增會話特定的初始化資訊，以及釋放提供者所使用的資源，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。 不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
+如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類，此類別定義了初始化和取消初始化提供者所需的方法。 若要執行功能來新增會話特定的初始化資訊，以及釋放提供者所使用的資源，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。
+不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
 
 ## <a name="creating-drive-state-information"></a>建立磁片磁碟機狀態資訊
 
@@ -43,24 +46,20 @@ ms.locfileid: "72366827"
 
 對於此磁片磁碟機提供者，狀態資訊會包含與資料庫的連接，並保留為磁片磁碟機資訊的一部分。 以下程式碼顯示如何將這項資訊儲存在描述磁片磁碟機的[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件中：
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
 ## <a name="creating-a-drive"></a>建立磁片磁碟機
 
 若要允許 Windows PowerShell 執行時間建立磁片磁碟機，磁片磁碟機提供者必須執行[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法。 下列程式碼顯示此磁片磁碟機提供者的[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法的執行：
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L42-L84 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="42-84":::
 
 您的此方法的覆寫應執行下列動作：
 
 - 確認[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)的成員存在，而且可以建立與資料存放區之間的連接。」
-
 - 建立磁片磁碟機並填入連接成員，以支援 `New-PSDrive` Cmdlet。
-
 - 驗證所提議磁片磁碟機的[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件。
-
 - 修改[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件，以描述具有任何必要效能或可靠性資訊的磁片磁碟機，或為使用磁片磁碟機的呼叫端提供額外的資料。
-
 - 使用[Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法來處理失敗，然後傳回 `null`。
 
   這個方法會傳回傳遞給方法的磁片磁碟機資訊，或它的提供者特定版本。
@@ -79,7 +78,7 @@ ms.locfileid: "72366827"
 
 下列程式碼顯示此磁片磁碟機提供者的[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法的執行：
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
 如果可以移除磁片磁碟機，方法應該會透過 `drive` 參數傳回傳遞給方法的資訊。 如果無法移除磁片磁碟機，方法應該撰寫例外狀況，然後傳回 `null`。 如果您的提供者不會覆寫這個方法，這個方法的預設執行只會傳回傳遞做為輸入的磁片磁碟機資訊。
 
@@ -97,7 +96,7 @@ ms.locfileid: "72366827"
 
 所有磁片磁碟機提供者都應該掛接根磁片磁碟機，以協助使用者進行發現。 根磁片磁碟機可能會列出作為其他已掛接磁片磁碟機之根目錄的位置。 例如，Active Directory 提供者可能會建立一個磁片磁碟機，其中列出在根分散式系統內容（DSE）的 `namingContext` 屬性中找到的命名內容。 這可協助使用者探索其他磁片磁碟機的掛接點。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 如需完整的範例程式碼，請參閱[AccessDbProviderSample02 程式碼範例](./accessdbprovidersample02-code-sample.md)。
 
@@ -109,9 +108,9 @@ ms.locfileid: "72366827"
 
    **PS > `Get-PSProvider`**
 
-   會出現下列輸出：
+   下列輸出隨即出現：
 
-   ```output
+   ```Output
    Name                 Capabilities                  Drives
    ----                 ------------                  ------
    AccessDB             None                          {}
@@ -122,15 +121,17 @@ ms.locfileid: "72366827"
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. 藉由存取作業系統的系統**管理工具**的 [**資料來源**] 部分，確保資料庫有資料庫伺服器名稱（DSN）。 在 [**使用者 DSN** ] 資料表中，按兩下 [ **MS Access 資料庫**] 並新增磁片磁碟機路徑 C:\ps\northwind.mdb。
+2. 藉由存取作業系統的系統**管理工具**的 [**資料來源**] 部分，確保資料庫有資料庫伺服器名稱（DSN）。 在 [**使用者 DSN** ] 資料表中，按兩下 [ **MS Access 資料庫**] 並新增磁片磁碟機路徑 `C:\ps\northwind.mdb`。
 
 3. 使用範例磁片磁碟機提供者建立新的磁片磁碟機：
 
-   **PS > psdrive-name mydb-root c:\ps\northwind.mdb-psprovider AccessDb**
+   ```powershell
+   new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
+   ```
 
-   會出現下列輸出：
+   下列輸出隨即出現：
 
-   ```output
+   ```Output
    Name     Provider     Root                   CurrentLocation
    ----     --------     ----                   ---------------
    mydb     AccessDB     c:\ps\northwind.mdb
@@ -143,9 +144,9 @@ ms.locfileid: "72366827"
 
    **PS > （psdrive mydb）。連接**
 
-   會出現下列輸出：
+   下列輸出隨即出現：
 
-   ```output
+   ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb
    ConnectionTimeout : 15
    Database          : c:\ps\northwind
@@ -159,9 +160,10 @@ ms.locfileid: "72366827"
 
 5. 移除磁片磁碟機並結束命令介面：
 
-   **PS > 移除-psdrive mydb**
-
-   **PS > 結束**
+   ```powershell
+   PS> remove-psdrive mydb
+   PS> exit
+   ```
 
 ## <a name="see-also"></a>另請參閱
 

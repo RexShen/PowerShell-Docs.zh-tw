@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 32f58d70dc01130f37639960109bf9ef4a8aa7cc
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870705"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978435"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>建立 Windows PowerShell 項目提供者
 
@@ -32,7 +32,7 @@ ms.locfileid: "75870705"
 
 Windows PowerShell 專案提供者必須定義一個衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基類的 .net 類別（class）。 以下是本節所述之專案提供者的類別定義。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="34-36":::
 
 請注意，在此類別定義中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個參數會為 Windows PowerShell 所使用的提供者指定易記的名稱。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 特定功能。 對於此提供者，並未新增 Windows PowerShell 特有的功能。
 
@@ -52,7 +52,7 @@ Windows PowerShell 專案提供者必須藉由執行[ItemCmdletprovider. Isvalid
 
 以下是此提供者的[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法的執行。 請注意，此實作為呼叫 NormalizePath helper 方法，以將路徑中的所有分隔符號轉換成統一的。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="274-298":::
 
 ## <a name="determining-if-an-item-exists"></a>判斷專案是否存在
 
@@ -60,7 +60,7 @@ Windows PowerShell 專案提供者必須藉由執行[ItemCmdletprovider. Isvalid
 
 以下是此提供者的[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法的執行。 請注意，這個方法會呼叫 PathIsDrive、ChunkPath 和 GetTable helper 方法，並使用提供者定義的 DatabaseTableInfo 物件。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="229-267":::
 
 #### <a name="things-to-remember-about-implementing-itemexists"></a>執行 ItemExists 的相關事項
 
@@ -84,7 +84,7 @@ Windows PowerShell 專案提供者必須藉由執行[ItemCmdletprovider. Isvalid
 
 以下是此提供者的[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法的執行。 請注意，這個方法會使用 GetTable 和 GetRow helper 方法來抓取 Access 資料庫中的資料表或資料表中資料列的專案。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="132-163":::
 
 #### <a name="things-to-remember-about-implementing-getitem"></a>執行 GetItem 的相關事項
 

@@ -11,16 +11,17 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363517"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978707"
 ---
 # <a name="cmdlet-class-declaration"></a>Cmdlet 類別宣告
 
-Microsoft .NET Framework 類別會將**Cmdlet**屬性指定為類別的中繼資料，以宣告為 Cmdlet。 （ **Cmdlet**屬性是所有 Cmdlet 的唯一必要屬性）。 當您指定**Cmdlet**屬性時，您必須指定指示 Cmdlet 給使用者的動詞和名詞配對。 而且，您必須描述 Cmdlet 支援的 Windows PowerShell 功能。 如需用來指定**Cmdlet**屬性之宣告語法的詳細資訊，請參閱[Cmdlet 屬性](./cmdlet-attribute-declaration.md)宣告。
+Microsoft .NET Framework 類別會將**Cmdlet**屬性指定為類別的中繼資料，以宣告為 Cmdlet。 （ **Cmdlet**屬性是所有 Cmdlet 的唯一必要屬性）。
+當您指定**Cmdlet**屬性時，您必須指定指示 Cmdlet 給使用者的動詞和名詞配對。 而且，您必須描述 Cmdlet 支援的 Windows PowerShell 功能。 如需用來指定**Cmdlet**屬性之宣告語法的詳細資訊，請參閱[Cmdlet 屬性](./cmdlet-attribute-declaration.md)宣告。
 
 > [!NOTE]
 > **Cmdlet**屬性是由[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)類別所定義。 這個類別的屬性會對應至宣告屬性時所使用的宣告參數。
@@ -33,7 +34,7 @@ Cmdlet 名稱中的名詞必須是特定的，而且在一般名詞（例如*伺
 
 如需無法在 Cmdlet 名稱中使用的特殊字元清單，請參閱[必要的開發指導方針](./required-development-guidelines.md)。
 
-## <a name="verbs"></a>動詞
+## <a name="verbs"></a>動詞命令
 
 當您指定動詞時，開發指導方針會要求您使用 Windows PowerShell 所提供的其中一個預先定義動詞命令。 藉由使用其中一個預先定義的動詞，您將可確保您撰寫的 Cmdlet 與由 Microsoft 和其他人撰寫的 Cmdlet 之間的一致性。 例如，「Get」動詞用於抓取資料的 Cmdlet。
 
@@ -49,7 +50,7 @@ Cmdlet 名稱中的名詞必須是特定的，而且在一般名詞（例如*伺
 
 下列程式碼是 GetProc Cmdlet 類別的定義。 請注意，使用 Pascal 大小寫，且類別的名稱包含 Cmdlet 的動詞和名詞。
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="33-34":::
 
 ## <a name="pascal-casing"></a>Pascal 大小寫
 

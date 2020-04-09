@@ -3,12 +3,12 @@ title: 建立 Windows PowerShell 瀏覽提供者
 ms.date: 09/13/2016
 ms.topic: article
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-ms.openlocfilehash: 7ca7e3ca6feeba018ad793d074caf67cd9506a68
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 1280da0067f93873a42cb534fae75f758c310912
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500812"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978401"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>建立 Windows PowerShell 瀏覽提供者
 
@@ -27,7 +27,7 @@ ms.locfileid: "80500812"
 
 Windows PowerShell 流覽提供者必須建立一個衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)基類的 .net 類別，。 以下是本節所述之導覽提供者的類別定義。
 
-[!code-csharp[AccessDBProviderSample05.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="31-32":::
 
 請注意，在此提供者中， [Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個參數會為 Windows PowerShell 所使用的提供者指定易記的名稱。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 特定功能。 對於此提供者，不會新增任何 Windows PowerShell 特有的功能。
 
@@ -96,7 +96,7 @@ Windows PowerShell 導覽提供者會執行[NavigationCmdletprovider. Getparentp
 
 下列程式碼顯示範例導覽提供者中的[NavigationCmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)執行。 方法會驗證指定的路徑是否正確，以及資料表是否存在，如果路徑指出容器，則會傳回 true。
 
-[!code-csharp[AccessDBProviderSample05.cs](~/powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs" range="847-872":::
 
 #### <a name="things-to-remember-about-implementing-isitemcontainer"></a>執行 IsItemContainer 的相關事項
 

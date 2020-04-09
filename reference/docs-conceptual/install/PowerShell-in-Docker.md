@@ -4,12 +4,12 @@ description: 如何使用預先安裝在 Docker 映像中的 PowerShell。
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 771214c719ef01fe2c8bc56a4b26c629fcad3856
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: b16a31a04ca863ab55c7c9718b1a1a973e61ee46
+ms.sourcegitcommit: f55da6dea4b58a2cd13c7be7c24c07341f177b71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279655"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80646381"
 ---
 # <a name="using-powershell-in-docker"></a>在 Docker 中使用 PowerShell
 
@@ -35,7 +35,7 @@ docker run -it mcr.microsoft.com/powershell
 
 ### <a name="remove-the-image-when-no-longer-needed"></a>在不再需要映像時加以移除
 
-下列命令是用來在不再需要 Docker 容器時加以刪除。
+下列命令用於在不再需要 Docker 映像時將其刪除。
 
 ```console
 docker rmi mcr.microsoft.com/powershell
