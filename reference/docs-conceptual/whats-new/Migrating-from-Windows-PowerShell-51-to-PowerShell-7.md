@@ -176,7 +176,7 @@ PowerShell Core 6.x 中已新增以 SSH 為基礎的遠端功能，以支援無�
 Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
-或者，使用 **HostName** 參數時，請提供使用者名稱資訊，後面加上 @ 符號 ('@')，後面接著電腦名稱。
+或者，使用 **HostName** 參數時，請提供使用者名稱資訊，後面加上 \@ 符號 ('@')，後面接著電腦名稱。
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>
