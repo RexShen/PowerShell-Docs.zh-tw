@@ -158,7 +158,7 @@
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: 使用 Visual Studio Code 來進行遠端編輯與偵錯
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-        - name: 了解 VSCode 與 PowerShell 中的檔案編碼
+        - name: 了解 VS Code 及 PowerShell 中的檔案編碼
           href: components/vscode/understanding-file-encoding.md
     - name: Web 存取
       items:
