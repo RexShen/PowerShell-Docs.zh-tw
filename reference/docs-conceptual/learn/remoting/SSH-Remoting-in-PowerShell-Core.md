@@ -3,39 +3,39 @@ title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444366"
 ---
-# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="f19ff-103">透過 SSH 的 PowerShell 遠端處理</span><span class="sxs-lookup"><span data-stu-id="f19ff-103">PowerShell remoting over SSH</span></span>
+# <a name="powershell-remoting-over-ssh"></a><span data-ttu-id="f4bac-103">透過 SSH 的 PowerShell 遠端處理</span><span class="sxs-lookup"><span data-stu-id="f4bac-103">PowerShell remoting over SSH</span></span>
 
-## <a name="overview"></a><span data-ttu-id="f19ff-104">概觀</span><span class="sxs-lookup"><span data-stu-id="f19ff-104">Overview</span></span>
+## <a name="overview"></a><span data-ttu-id="f4bac-104">概觀</span><span class="sxs-lookup"><span data-stu-id="f4bac-104">Overview</span></span>
 
-<span data-ttu-id="f19ff-105">PowerShell 遠端通常會使用 WinRM 進行連線交涉和資料傳輸。</span><span class="sxs-lookup"><span data-stu-id="f19ff-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="f19ff-106">SSH 目前適用於 Linux 與 Windows 平台，而且能夠執行真正的多平台 PowerShell 遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f19ff-106">SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span>
+<span data-ttu-id="f4bac-105">PowerShell 遠端通常會使用 WinRM 進行連線交涉和資料傳輸。</span><span class="sxs-lookup"><span data-stu-id="f4bac-105">PowerShell remoting normally uses WinRM for connection negotiation and data transport.</span></span> <span data-ttu-id="f4bac-106">SSH 目前適用於 Linux 與 Windows 平台，而且能夠執行真正的多平台 PowerShell 遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f4bac-106">SSH is now available for Linux and Windows platforms and allows true multiplatform PowerShell remoting.</span></span>
 
-<span data-ttu-id="f19ff-107">WinRM 提供一個健全裝載模型以供 PowerShell 遠端工作階段使用。</span><span class="sxs-lookup"><span data-stu-id="f19ff-107">WinRM provides a robust hosting model for PowerShell remote sessions.</span></span> <span data-ttu-id="f19ff-108">SSH 遠端功能目前不支援遠端端點設定和 Just Enough Administration (JEA)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-108">SSH-based remoting doesn't currently support remote endpoint configuration and Just Enough Administration (JEA).</span></span>
+<span data-ttu-id="f4bac-107">WinRM 提供一個健全裝載模型以供 PowerShell 遠端工作階段使用。</span><span class="sxs-lookup"><span data-stu-id="f4bac-107">WinRM provides a robust hosting model for PowerShell remote sessions.</span></span> <span data-ttu-id="f4bac-108">SSH 遠端功能目前不支援遠端端點設定和 Just Enough Administration (JEA)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-108">SSH-based remoting doesn't currently support remote endpoint configuration and Just Enough Administration (JEA).</span></span>
 
-<span data-ttu-id="f19ff-109">SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f19ff-109">SSH remoting lets you do basic PowerShell session remoting between Windows and Linux computers.</span></span> <span data-ttu-id="f19ff-110">SSH 遠端功能會在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。</span><span class="sxs-lookup"><span data-stu-id="f19ff-110">SSH remoting creates a PowerShell host process on the target computer as an SSH subsystem.</span></span> <span data-ttu-id="f19ff-111">最後，我們將實作一般裝載模型 (類似 WinRM) 以支援端點設定與 JEA。</span><span class="sxs-lookup"><span data-stu-id="f19ff-111">Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and JEA.</span></span>
+<span data-ttu-id="f4bac-109">SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShell 工作階段遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f4bac-109">SSH remoting lets you do basic PowerShell session remoting between Windows and Linux computers.</span></span> <span data-ttu-id="f4bac-110">SSH 遠端功能會在目標電腦上建立 PowerShell 裝載處理序作為 SSH 子系統。</span><span class="sxs-lookup"><span data-stu-id="f4bac-110">SSH remoting creates a PowerShell host process on the target computer as an SSH subsystem.</span></span> <span data-ttu-id="f4bac-111">最後，我們將實作一般裝載模型 (類似 WinRM) 以支援端點設定與 JEA。</span><span class="sxs-lookup"><span data-stu-id="f4bac-111">Eventually we'll implement a general hosting model, similar to WinRM, to support endpoint configuration and JEA.</span></span>
 
-<span data-ttu-id="f19ff-112">`New-PSSession`、`Enter-PSSession` 與 `Invoke-Command` Cmdlet 現在有新的參數集，可支援這個新的遠端連線。</span><span class="sxs-lookup"><span data-stu-id="f19ff-112">The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to support this new remoting connection.</span></span>
+<span data-ttu-id="f4bac-112">`New-PSSession`、`Enter-PSSession` 與 `Invoke-Command` Cmdlet 現在有新的參數集，可支援這個新的遠端連線。</span><span class="sxs-lookup"><span data-stu-id="f4bac-112">The `New-PSSession`, `Enter-PSSession`, and `Invoke-Command` cmdlets now have a new parameter set to support this new remoting connection.</span></span>
 
 ```
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-<span data-ttu-id="f19ff-113">若要建立遠端工作階段，您可以使用 `HostName` 參數來指定目標電腦，並使用 `UserName` 來提供使用者名稱。</span><span class="sxs-lookup"><span data-stu-id="f19ff-113">To create a remote session, you specify the target computer with the `HostName` parameter and provide the user name with `UserName`.</span></span> <span data-ttu-id="f19ff-114">以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。</span><span class="sxs-lookup"><span data-stu-id="f19ff-114">When running the cmdlets interactively, you're prompted for a password.</span></span> <span data-ttu-id="f19ff-115">您也可以搭配 `KeyFilePath` 參數使用私密金鑰檔案，來使用 SSH 金鑰驗證。</span><span class="sxs-lookup"><span data-stu-id="f19ff-115">You can also, use SSH key authentication using a private key file with the `KeyFilePath` parameter.</span></span>
+<span data-ttu-id="f4bac-113">若要建立遠端工作階段，您可以使用 `HostName` 參數來指定目標電腦，並使用 `UserName` 來提供使用者名稱。</span><span class="sxs-lookup"><span data-stu-id="f4bac-113">To create a remote session, you specify the target computer with the `HostName` parameter and provide the user name with `UserName`.</span></span> <span data-ttu-id="f4bac-114">以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。</span><span class="sxs-lookup"><span data-stu-id="f4bac-114">When running the cmdlets interactively, you're prompted for a password.</span></span> <span data-ttu-id="f4bac-115">您也可以搭配 `KeyFilePath` 參數使用私密金鑰檔案，來使用 SSH 金鑰驗證。</span><span class="sxs-lookup"><span data-stu-id="f4bac-115">You can also, use SSH key authentication using a private key file with the `KeyFilePath` parameter.</span></span>
 
-## <a name="general-setup-information"></a><span data-ttu-id="f19ff-116">一般安裝資訊</span><span class="sxs-lookup"><span data-stu-id="f19ff-116">General setup information</span></span>
+## <a name="general-setup-information"></a><span data-ttu-id="f4bac-116">一般安裝資訊</span><span class="sxs-lookup"><span data-stu-id="f4bac-116">General setup information</span></span>
 
-<span data-ttu-id="f19ff-117">PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。</span><span class="sxs-lookup"><span data-stu-id="f19ff-117">PowerShell 6 or higher, and SSH must be installed on all computers.</span></span> <span data-ttu-id="f19ff-118">請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。</span><span class="sxs-lookup"><span data-stu-id="f19ff-118">Install both the SSH client (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the computers.</span></span> <span data-ttu-id="f19ff-119">適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 與 Windows Server 2019 中使用。</span><span class="sxs-lookup"><span data-stu-id="f19ff-119">OpenSSH for Windows is now available in Windows 10 build 1809 and Windows Server 2019.</span></span> <span data-ttu-id="f19ff-120">如需詳細資訊，請參閱[使用 OpenSSH 管理 Windows](/windows-server/administration/openssh/openssh_overview)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-120">For more information, see [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview).</span></span> <span data-ttu-id="f19ff-121">針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-121">For Linux, install SSH, including sshd server, that's appropriate for your platform.</span></span> <span data-ttu-id="f19ff-122">您也需要從 GitHub 安裝 PowerShell 來取得 SSH 遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f19ff-122">You also need to install PowerShell from GitHub to get the SSH remoting feature.</span></span> <span data-ttu-id="f19ff-123">SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。</span><span class="sxs-lookup"><span data-stu-id="f19ff-123">The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the remote computer.</span></span> <span data-ttu-id="f19ff-124">而且，您也必須設定啟用**密碼**或**金鑰型**的驗證。</span><span class="sxs-lookup"><span data-stu-id="f19ff-124">And, you must enable **password** or **key-based** authentication.</span></span>
+<span data-ttu-id="f4bac-117">PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。</span><span class="sxs-lookup"><span data-stu-id="f4bac-117">PowerShell 6 or higher, and SSH must be installed on all computers.</span></span> <span data-ttu-id="f4bac-118">請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。</span><span class="sxs-lookup"><span data-stu-id="f4bac-118">Install both the SSH client (`ssh.exe`) and server (`sshd.exe`) so that you can remote to and from the computers.</span></span> <span data-ttu-id="f4bac-119">適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 與 Windows Server 2019 中使用。</span><span class="sxs-lookup"><span data-stu-id="f4bac-119">OpenSSH for Windows is now available in Windows 10 build 1809 and Windows Server 2019.</span></span> <span data-ttu-id="f4bac-120">如需詳細資訊，請參閱[使用 OpenSSH 管理 Windows](/windows-server/administration/openssh/openssh_overview)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-120">For more information, see [Manage Windows with OpenSSH](/windows-server/administration/openssh/openssh_overview).</span></span> <span data-ttu-id="f4bac-121">針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-121">For Linux, install SSH, including sshd server, that's appropriate for your platform.</span></span> <span data-ttu-id="f4bac-122">您也需要從 GitHub 安裝 PowerShell 來取得 SSH 遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f4bac-122">You also need to install PowerShell from GitHub to get the SSH remoting feature.</span></span> <span data-ttu-id="f4bac-123">SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。</span><span class="sxs-lookup"><span data-stu-id="f4bac-123">The SSH server must be configured to create an SSH subsystem to host a PowerShell process on the remote computer.</span></span> <span data-ttu-id="f4bac-124">而且，您也必須設定啟用**密碼**或**金鑰型**的驗證。</span><span class="sxs-lookup"><span data-stu-id="f4bac-124">And, you must enable **password** or **key-based** authentication.</span></span>
 
-## <a name="set-up-on-a-windows-computer"></a><span data-ttu-id="f19ff-125">在 Windows 電腦上設定</span><span class="sxs-lookup"><span data-stu-id="f19ff-125">Set up on a Windows computer</span></span>
+## <a name="set-up-on-a-windows-computer"></a><span data-ttu-id="f4bac-125">在 Windows 電腦上設定</span><span class="sxs-lookup"><span data-stu-id="f4bac-125">Set up on a Windows computer</span></span>
 
-1. <span data-ttu-id="f19ff-126">安裝最新版的 PowerShell，請參閱[在 Windows 上安裝 PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-126">Install the latest version of PowerShell, see [Installing PowerShell Core on Windows](../../install/installing-powershell-core-on-windows.md#msi).</span></span>
+1. <span data-ttu-id="f4bac-126">安裝最新版的 PowerShell，請參閱[在 Windows 上安裝 PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-126">Install the latest version of PowerShell, see [Installing PowerShell Core on Windows](../../install/installing-powershell-core-on-windows.md#msi).</span></span>
 
-   <span data-ttu-id="f19ff-127">您可以列出 `New-PSSession` 參數集來確認 PowerShell 具有 SSH 遠端支援。</span><span class="sxs-lookup"><span data-stu-id="f19ff-127">You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter sets.</span></span> <span data-ttu-id="f19ff-128">您會注意到以 **SSH** 開頭的參數集名稱。</span><span class="sxs-lookup"><span data-stu-id="f19ff-128">You'll notice there are parameter set names that begin with **SSH**.</span></span> <span data-ttu-id="f19ff-129">這些參數集包括 **SSH** 參數。</span><span class="sxs-lookup"><span data-stu-id="f19ff-129">Those parameter sets include **SSH** parameters.</span></span>
+   <span data-ttu-id="f4bac-127">您可以列出 `New-PSSession` 參數集來確認 PowerShell 具有 SSH 遠端支援。</span><span class="sxs-lookup"><span data-stu-id="f4bac-127">You can confirm that PowerShell has SSH remoting support by listing the `New-PSSession` parameter sets.</span></span> <span data-ttu-id="f4bac-128">您會注意到以 **SSH** 開頭的參數集名稱。</span><span class="sxs-lookup"><span data-stu-id="f4bac-128">You'll notice there are parameter set names that begin with **SSH**.</span></span> <span data-ttu-id="f4bac-129">這些參數集包括 **SSH** 參數。</span><span class="sxs-lookup"><span data-stu-id="f4bac-129">Those parameter sets include **SSH** parameters.</span></span>
 
    ```powershell
    (Get-Command New-PSSession).ParameterSets.Name
@@ -48,29 +48,29 @@ ms.locfileid: "73444366"
    SSHHostHashParam
    ```
 
-1. <span data-ttu-id="f19ff-130">安裝最新的 Win32 OpenSSH。</span><span class="sxs-lookup"><span data-stu-id="f19ff-130">Install the latest Win32 OpenSSH.</span></span> <span data-ttu-id="f19ff-131">如需安裝指示，請參閱[開始使用 OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-131">For installation instructions, see [Getting started with OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).</span></span>
+1. <span data-ttu-id="f4bac-130">安裝最新的 Win32 OpenSSH。</span><span class="sxs-lookup"><span data-stu-id="f4bac-130">Install the latest Win32 OpenSSH.</span></span> <span data-ttu-id="f4bac-131">如需安裝指示，請參閱[開始使用 OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-131">For installation instructions, see [Getting started with OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse).</span></span>
 
    > [!NOTE]
-   > <span data-ttu-id="f19ff-132">如果您想要將 PowerShell 設定為 OpenSSH 的預設殼層，請參閱[為 OpenSSH 設定 Windows](/windows-server/administration/openssh/openssh_server_configuration)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-132">If you want to set PowerShell as the default shell for OpenSSH, see [Configuring Windows for OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).</span></span>
+   > <span data-ttu-id="f4bac-132">如果您想要將 PowerShell 設定為 OpenSSH 的預設殼層，請參閱[為 OpenSSH 設定 Windows](/windows-server/administration/openssh/openssh_server_configuration)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-132">If you want to set PowerShell as the default shell for OpenSSH, see [Configuring Windows for OpenSSH](/windows-server/administration/openssh/openssh_server_configuration).</span></span>
 
-1. <span data-ttu-id="f19ff-133">編輯位於 `$env:ProgramData\ssh` 的 `sshd_config` 檔案。</span><span class="sxs-lookup"><span data-stu-id="f19ff-133">Edit the `sshd_config` file located at `$env:ProgramData\ssh`.</span></span>
+1. <span data-ttu-id="f4bac-133">編輯位於 `sshd_config` 的 `$env:ProgramData\ssh` 檔案。</span><span class="sxs-lookup"><span data-stu-id="f4bac-133">Edit the `sshd_config` file located at `$env:ProgramData\ssh`.</span></span>
 
-   <span data-ttu-id="f19ff-134">確定已啟用密碼驗證：</span><span class="sxs-lookup"><span data-stu-id="f19ff-134">Make sure password authentication is enabled:</span></span>
+   <span data-ttu-id="f4bac-134">確定已啟用密碼驗證：</span><span class="sxs-lookup"><span data-stu-id="f4bac-134">Make sure password authentication is enabled:</span></span>
 
    ```
    PasswordAuthentication yes
    ```
 
-   <span data-ttu-id="f19ff-135">在遠端電腦上建立裝載 PowerShell 處理程序的 SSH 子系統：</span><span class="sxs-lookup"><span data-stu-id="f19ff-135">Create the SSH subsystem that hosts a PowerShell process on the remote computer:</span></span>
+   <span data-ttu-id="f4bac-135">在遠端電腦上建立裝載 PowerShell 處理程序的 SSH 子系統：</span><span class="sxs-lookup"><span data-stu-id="f4bac-135">Create the SSH subsystem that hosts a PowerShell process on the remote computer:</span></span>
 
    ```
    Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
-   > <span data-ttu-id="f19ff-136">您必須針對任何包含空格的檔案路徑使用 8.3 簡短名稱。</span><span class="sxs-lookup"><span data-stu-id="f19ff-136">You must use the 8.3 short name for any file paths that contain spaces.</span></span> <span data-ttu-id="f19ff-137">OpenSSH for Windows 中有一個 Bug，會讓空格無法在子系統可執行檔路徑中運作。</span><span class="sxs-lookup"><span data-stu-id="f19ff-137">There's a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span> <span data-ttu-id="f19ff-138">如需詳細資訊，請參閱此 [GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-138">For more information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
+   > <span data-ttu-id="f4bac-136">您必須針對任何包含空格的檔案路徑使用 8.3 簡短名稱。</span><span class="sxs-lookup"><span data-stu-id="f4bac-136">You must use the 8.3 short name for any file paths that contain spaces.</span></span> <span data-ttu-id="f4bac-137">OpenSSH for Windows 中有一個 Bug，會讓空格無法在子系統可執行檔路徑中運作。</span><span class="sxs-lookup"><span data-stu-id="f4bac-137">There's a bug in OpenSSH for Windows that prevents spaces from working in subsystem executable paths.</span></span> <span data-ttu-id="f4bac-138">如需詳細資訊，請參閱此 [GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-138">For more information, see this [GitHub issue](https://github.com/PowerShell/Win32-OpenSSH/issues/784).</span></span>
    >
-   > <span data-ttu-id="f19ff-139">Windows 中 `Program Files` 資料夾的 8.3 簡短名稱通常是 `Progra~1`。</span><span class="sxs-lookup"><span data-stu-id="f19ff-139">The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`.</span></span> <span data-ttu-id="f19ff-140">但您可以使用下列命令來確保：</span><span class="sxs-lookup"><span data-stu-id="f19ff-140">However, you can use the following command to make sure:</span></span>
+   > <span data-ttu-id="f4bac-139">Windows 中 `Program Files` 資料夾的 8.3 簡短名稱通常是 `Progra~1`。</span><span class="sxs-lookup"><span data-stu-id="f4bac-139">The 8.3 short name for the `Program Files` folder in Windows is usually `Progra~1`.</span></span> <span data-ttu-id="f4bac-140">但您可以使用下列命令來確保：</span><span class="sxs-lookup"><span data-stu-id="f4bac-140">However, you can use the following command to make sure:</span></span>
    >
    > ```powershell
    > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
@@ -83,109 +83,109 @@ ms.locfileid: "73444366"
    > c:\progra~1
    > ```
 
-   <span data-ttu-id="f19ff-141">選擇性啟用金鑰驗證：</span><span class="sxs-lookup"><span data-stu-id="f19ff-141">Optionally, enable key authentication:</span></span>
+   <span data-ttu-id="f4bac-141">選擇性啟用金鑰驗證：</span><span class="sxs-lookup"><span data-stu-id="f4bac-141">Optionally, enable key authentication:</span></span>
 
    ```
    PubkeyAuthentication yes
    ```
 
-   <span data-ttu-id="f19ff-142">如需詳細資訊，請參閱[管理 OpenSSH 金鑰](/windows-server/administration/openssh/openssh_keymanagement)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-142">For more information, see [Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement).</span></span>
+   <span data-ttu-id="f4bac-142">如需詳細資訊，請參閱[管理 OpenSSH 金鑰](/windows-server/administration/openssh/openssh_keymanagement)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-142">For more information, see [Managing OpenSSH Keys](/windows-server/administration/openssh/openssh_keymanagement).</span></span>
 
-1. <span data-ttu-id="f19ff-143">重新啟動 **sshd** 服務。</span><span class="sxs-lookup"><span data-stu-id="f19ff-143">Restart the **sshd** service.</span></span>
+1. <span data-ttu-id="f4bac-143">重新啟動 **sshd** 服務。</span><span class="sxs-lookup"><span data-stu-id="f4bac-143">Restart the **sshd** service.</span></span>
 
    ```powershell
    Restart-Service sshd
    ```
 
-1. <span data-ttu-id="f19ff-144">將 OpenSSH 安裝所在的路徑新增至 Path 環境變數。</span><span class="sxs-lookup"><span data-stu-id="f19ff-144">Add the path where OpenSSH is installed to your Path environment variable.</span></span> <span data-ttu-id="f19ff-145">例如，`C:\Program Files\OpenSSH\`。</span><span class="sxs-lookup"><span data-stu-id="f19ff-145">For example, `C:\Program Files\OpenSSH\`.</span></span> <span data-ttu-id="f19ff-146">此項目可允許程式找到 `ssh.exe`。</span><span class="sxs-lookup"><span data-stu-id="f19ff-146">This entry allows for the `ssh.exe` to be found.</span></span>
+1. <span data-ttu-id="f4bac-144">將 OpenSSH 安裝所在的路徑新增至 Path 環境變數。</span><span class="sxs-lookup"><span data-stu-id="f4bac-144">Add the path where OpenSSH is installed to your Path environment variable.</span></span> <span data-ttu-id="f4bac-145">例如： `C:\Program Files\OpenSSH\` 。</span><span class="sxs-lookup"><span data-stu-id="f4bac-145">For example, `C:\Program Files\OpenSSH\`.</span></span> <span data-ttu-id="f4bac-146">此項目可允許程式找到 `ssh.exe`。</span><span class="sxs-lookup"><span data-stu-id="f4bac-146">This entry allows for the `ssh.exe` to be found.</span></span>
 
-## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a><span data-ttu-id="f19ff-147">在 Ubuntu 16.04 Linux 電腦上設定</span><span class="sxs-lookup"><span data-stu-id="f19ff-147">Set up on an Ubuntu 16.04 Linux computer</span></span>
+## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a><span data-ttu-id="f4bac-147">在 Ubuntu 16.04 Linux 電腦上設定</span><span class="sxs-lookup"><span data-stu-id="f4bac-147">Set up on an Ubuntu 16.04 Linux computer</span></span>
 
-1. <span data-ttu-id="f19ff-148">安裝最新版的 PowerShell，請參閱[在 Linux 上安裝 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-148">Install the latest version of PowerShell, see [Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604).</span></span>
-1. <span data-ttu-id="f19ff-149">安裝 [Ubuntu OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-149">Install [Ubuntu OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html).</span></span>
+1. <span data-ttu-id="f4bac-148">安裝最新版的 PowerShell，請參閱[在 Linux 上安裝 PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-148">Install the latest version of PowerShell, see [Installing PowerShell Core on Linux](../../install/installing-powershell-core-on-linux.md#ubuntu-1604).</span></span>
+1. <span data-ttu-id="f4bac-149">安裝 [Ubuntu OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-149">Install [Ubuntu OpenSSH Server](https://help.ubuntu.com/lts/serverguide/openssh-server.html).</span></span>
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-1. <span data-ttu-id="f19ff-150">編輯 `/etc/ssh` 位置中的 `sshd_config` 檔案。</span><span class="sxs-lookup"><span data-stu-id="f19ff-150">Edit the `sshd_config` file at location `/etc/ssh`.</span></span>
+1. <span data-ttu-id="f4bac-150">編輯 `sshd_config` 位置中的 `/etc/ssh` 檔案。</span><span class="sxs-lookup"><span data-stu-id="f4bac-150">Edit the `sshd_config` file at location `/etc/ssh`.</span></span>
 
-   <span data-ttu-id="f19ff-151">確定已啟用密碼驗證：</span><span class="sxs-lookup"><span data-stu-id="f19ff-151">Make sure password authentication is enabled:</span></span>
+   <span data-ttu-id="f4bac-151">確定已啟用密碼驗證：</span><span class="sxs-lookup"><span data-stu-id="f4bac-151">Make sure password authentication is enabled:</span></span>
 
    ```
    PasswordAuthentication yes
    ```
 
-   <span data-ttu-id="f19ff-152">新增 PowerShell 子系統項目：</span><span class="sxs-lookup"><span data-stu-id="f19ff-152">Add a PowerShell subsystem entry:</span></span>
+   <span data-ttu-id="f4bac-152">新增 PowerShell 子系統項目：</span><span class="sxs-lookup"><span data-stu-id="f4bac-152">Add a PowerShell subsystem entry:</span></span>
 
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   <span data-ttu-id="f19ff-153">選擇性啟用金鑰驗證：</span><span class="sxs-lookup"><span data-stu-id="f19ff-153">Optionally, enable key authentication:</span></span>
+   <span data-ttu-id="f4bac-153">選擇性啟用金鑰驗證：</span><span class="sxs-lookup"><span data-stu-id="f4bac-153">Optionally, enable key authentication:</span></span>
 
    ```
    PubkeyAuthentication yes
    ```
 
-1. <span data-ttu-id="f19ff-154">重新啟動 **sshd** 服務。</span><span class="sxs-lookup"><span data-stu-id="f19ff-154">Restart the **sshd** service.</span></span>
+1. <span data-ttu-id="f4bac-154">重新啟動 **sshd** 服務。</span><span class="sxs-lookup"><span data-stu-id="f4bac-154">Restart the **sshd** service.</span></span>
 
    ```bash
    sudo service sshd restart
    ```
 
-## <a name="set-up-on-a-macos-computer"></a><span data-ttu-id="f19ff-155">在 macOS 電腦上設定</span><span class="sxs-lookup"><span data-stu-id="f19ff-155">Set up on a macOS computer</span></span>
+## <a name="set-up-on-a-macos-computer"></a><span data-ttu-id="f4bac-155">在 macOS 電腦上設定</span><span class="sxs-lookup"><span data-stu-id="f4bac-155">Set up on a macOS computer</span></span>
 
-1. <span data-ttu-id="f19ff-156">安裝最新版的 PowerShell，請參閱[在 macOS 上安裝 PowerShell Core](../../install/installing-powershell-core-on-macos.md)。</span><span class="sxs-lookup"><span data-stu-id="f19ff-156">Install the latest version of PowerShell, see [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md).</span></span>
+1. <span data-ttu-id="f4bac-156">安裝最新版的 PowerShell，請參閱[在 macOS 上安裝 PowerShell Core](../../install/installing-powershell-core-on-macos.md)。</span><span class="sxs-lookup"><span data-stu-id="f4bac-156">Install the latest version of PowerShell, see [Installing PowerShell Core on macOS](../../install/installing-powershell-core-on-macos.md).</span></span>
 
-   <span data-ttu-id="f19ff-157">確定已遵循下列步驟來啟用 SSH 遠端：</span><span class="sxs-lookup"><span data-stu-id="f19ff-157">Make sure SSH Remoting is enabled by following these steps:</span></span>
+   <span data-ttu-id="f4bac-157">確定已遵循下列步驟來啟用 SSH 遠端：</span><span class="sxs-lookup"><span data-stu-id="f4bac-157">Make sure SSH Remoting is enabled by following these steps:</span></span>
 
-   1. <span data-ttu-id="f19ff-158">開啟 `System Preferences`。</span><span class="sxs-lookup"><span data-stu-id="f19ff-158">Open `System Preferences`.</span></span>
-   1. <span data-ttu-id="f19ff-159">按一下 `Sharing`。</span><span class="sxs-lookup"><span data-stu-id="f19ff-159">Click on `Sharing`.</span></span>
-   1. <span data-ttu-id="f19ff-160">選取 `Remote Login` 以設定 `Remote Login: On`。</span><span class="sxs-lookup"><span data-stu-id="f19ff-160">Check `Remote Login` to set `Remote Login: On`.</span></span>
-   1. <span data-ttu-id="f19ff-161">允許適當的使用者存取。</span><span class="sxs-lookup"><span data-stu-id="f19ff-161">Allow access to the appropriate users.</span></span>
+   1. <span data-ttu-id="f4bac-158">開啟 `System Preferences`。</span><span class="sxs-lookup"><span data-stu-id="f4bac-158">Open `System Preferences`.</span></span>
+   1. <span data-ttu-id="f4bac-159">按一下 `Sharing`。</span><span class="sxs-lookup"><span data-stu-id="f4bac-159">Click on `Sharing`.</span></span>
+   1. <span data-ttu-id="f4bac-160">選取 `Remote Login` 以設定 `Remote Login: On`。</span><span class="sxs-lookup"><span data-stu-id="f4bac-160">Check `Remote Login` to set `Remote Login: On`.</span></span>
+   1. <span data-ttu-id="f4bac-161">允許適當的使用者存取。</span><span class="sxs-lookup"><span data-stu-id="f4bac-161">Allow access to the appropriate users.</span></span>
 
-1. <span data-ttu-id="f19ff-162">編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案。</span><span class="sxs-lookup"><span data-stu-id="f19ff-162">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`.</span></span>
+1. <span data-ttu-id="f4bac-162">編輯 `sshd_config` 位置中的 `/private/etc/ssh/sshd_config` 檔案。</span><span class="sxs-lookup"><span data-stu-id="f4bac-162">Edit the `sshd_config` file at location `/private/etc/ssh/sshd_config`.</span></span>
 
-   <span data-ttu-id="f19ff-163">開啟文字編輯器，例如 **nano**：</span><span class="sxs-lookup"><span data-stu-id="f19ff-163">Use a text editor such as **nano**:</span></span>
+   <span data-ttu-id="f4bac-163">開啟文字編輯器，例如 **nano**：</span><span class="sxs-lookup"><span data-stu-id="f4bac-163">Use a text editor such as **nano**:</span></span>
 
    ```bash
    sudo nano /private/etc/ssh/sshd_config
    ```
 
-   <span data-ttu-id="f19ff-164">確定已啟用密碼驗證：</span><span class="sxs-lookup"><span data-stu-id="f19ff-164">Make sure password authentication is enabled:</span></span>
+   <span data-ttu-id="f4bac-164">確定已啟用密碼驗證：</span><span class="sxs-lookup"><span data-stu-id="f4bac-164">Make sure password authentication is enabled:</span></span>
 
    ```
    PasswordAuthentication yes
    ```
 
-   <span data-ttu-id="f19ff-165">新增 PowerShell 子系統項目：</span><span class="sxs-lookup"><span data-stu-id="f19ff-165">Add a PowerShell subsystem entry:</span></span>
+   <span data-ttu-id="f4bac-165">新增 PowerShell 子系統項目：</span><span class="sxs-lookup"><span data-stu-id="f4bac-165">Add a PowerShell subsystem entry:</span></span>
 
    ```
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
 
-   <span data-ttu-id="f19ff-166">選擇性啟用金鑰驗證：</span><span class="sxs-lookup"><span data-stu-id="f19ff-166">Optionally, enable key authentication:</span></span>
+   <span data-ttu-id="f4bac-166">選擇性啟用金鑰驗證：</span><span class="sxs-lookup"><span data-stu-id="f4bac-166">Optionally, enable key authentication:</span></span>
 
    ```
    PubkeyAuthentication yes
    ```
 
-1. <span data-ttu-id="f19ff-167">重新啟動 **sshd** 服務。</span><span class="sxs-lookup"><span data-stu-id="f19ff-167">Restart the **sshd** service.</span></span>
+1. <span data-ttu-id="f4bac-167">重新啟動 **sshd** 服務。</span><span class="sxs-lookup"><span data-stu-id="f4bac-167">Restart the **sshd** service.</span></span>
 
    ```bash
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
 
-## <a name="authentication"></a><span data-ttu-id="f19ff-168">驗證</span><span class="sxs-lookup"><span data-stu-id="f19ff-168">Authentication</span></span>
+## <a name="authentication"></a><span data-ttu-id="f4bac-168">驗證</span><span class="sxs-lookup"><span data-stu-id="f4bac-168">Authentication</span></span>
 
-<span data-ttu-id="f19ff-169">透過 SSH 的 PowerShell 遠端功能需要在 SSH 用戶端與 SSH 服務之間交換驗證，且本身不會實作任何驗證配置。</span><span class="sxs-lookup"><span data-stu-id="f19ff-169">PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and doesn't implement any authentication schemes itself.</span></span> <span data-ttu-id="f19ff-170">結果是，任何已設定的驗證配置 (包括多重要素驗證) 都是由 SSH 處理，與 PowerShell 無關。</span><span class="sxs-lookup"><span data-stu-id="f19ff-170">The result is that any configured authentication schemes including multi-factor authentication are handled by SSH and independent of PowerShell.</span></span> <span data-ttu-id="f19ff-171">例如，您可以設定 SSH 服務要求公開金鑰驗證及單次密碼來增強安全性。</span><span class="sxs-lookup"><span data-stu-id="f19ff-171">For example, you can configure the SSH service to require public key authentication and a one-time password for added security.</span></span> <span data-ttu-id="f19ff-172">設定多重要素驗證不在本文件的討論範圍內。</span><span class="sxs-lookup"><span data-stu-id="f19ff-172">Configuration of multi-factor authentication is outside the scope of this documentation.</span></span> <span data-ttu-id="f19ff-173">請參閱 SSH 文件，以了解如何正確地設定多重要素驗證，並驗證它在 PowerShell 之外是否運作正常，再嘗試與 PowerShell 遠端功能搭配使用。</span><span class="sxs-lookup"><span data-stu-id="f19ff-173">Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell before attempting to use it with PowerShell remoting.</span></span>
+<span data-ttu-id="f4bac-169">透過 SSH 的 PowerShell 遠端功能需要在 SSH 用戶端與 SSH 服務之間交換驗證，且本身不會實作任何驗證配置。</span><span class="sxs-lookup"><span data-stu-id="f4bac-169">PowerShell remoting over SSH relies on the authentication exchange between the SSH client and SSH service and doesn't implement any authentication schemes itself.</span></span> <span data-ttu-id="f4bac-170">結果是，任何已設定的驗證配置 (包括多重要素驗證) 都是由 SSH 處理，與 PowerShell 無關。</span><span class="sxs-lookup"><span data-stu-id="f4bac-170">The result is that any configured authentication schemes including multi-factor authentication are handled by SSH and independent of PowerShell.</span></span> <span data-ttu-id="f4bac-171">例如，您可以設定 SSH 服務要求公開金鑰驗證及單次密碼來增強安全性。</span><span class="sxs-lookup"><span data-stu-id="f4bac-171">For example, you can configure the SSH service to require public key authentication and a one-time password for added security.</span></span> <span data-ttu-id="f4bac-172">設定多重要素驗證不在本文件的討論範圍內。</span><span class="sxs-lookup"><span data-stu-id="f4bac-172">Configuration of multi-factor authentication is outside the scope of this documentation.</span></span> <span data-ttu-id="f4bac-173">請參閱 SSH 文件，以了解如何正確地設定多重要素驗證，並驗證它在 PowerShell 之外是否運作正常，再嘗試與 PowerShell 遠端功能搭配使用。</span><span class="sxs-lookup"><span data-stu-id="f4bac-173">Refer to documentation for SSH on how to correctly configure multi-factor authentication and validate it works outside of PowerShell before attempting to use it with PowerShell remoting.</span></span>
 
-## <a name="powershell-remoting-example"></a><span data-ttu-id="f19ff-174">PowerShell 遠端範例</span><span class="sxs-lookup"><span data-stu-id="f19ff-174">PowerShell remoting example</span></span>
+## <a name="powershell-remoting-example"></a><span data-ttu-id="f4bac-174">PowerShell 遠端範例</span><span class="sxs-lookup"><span data-stu-id="f4bac-174">PowerShell remoting example</span></span>
 
-<span data-ttu-id="f19ff-175">測試遠端功能的最簡單方式是在單一電腦上進行試用。</span><span class="sxs-lookup"><span data-stu-id="f19ff-175">The easiest way to test remoting is to try it on a single computer.</span></span> <span data-ttu-id="f19ff-176">在此範例中，我們會建立回到相同 Linux 電腦的遠端工作階段。</span><span class="sxs-lookup"><span data-stu-id="f19ff-176">In this example, we create a remote session back to the same Linux computer.</span></span> <span data-ttu-id="f19ff-177">我們會以互動方式使用 PowerShell Cmdlet；因此，我們會看到要求驗證主機電腦的 SSH 提示以及密碼提示。</span><span class="sxs-lookup"><span data-stu-id="f19ff-177">We're using PowerShell cmdlets interactively so we see prompts from SSH asking to verify the host computer and prompting for a password.</span></span> <span data-ttu-id="f19ff-178">您可以在 Windows 電腦上執行相同的動作以確保遠端功能正在運作。</span><span class="sxs-lookup"><span data-stu-id="f19ff-178">You can do the same thing on a Windows computer to ensure remoting is working.</span></span> <span data-ttu-id="f19ff-179">接著，透過變更主機名稱，在電腦之間執行遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f19ff-179">Then, remote between computers by changing the host name.</span></span>
+<span data-ttu-id="f4bac-175">測試遠端功能的最簡單方式是在單一電腦上進行試用。</span><span class="sxs-lookup"><span data-stu-id="f4bac-175">The easiest way to test remoting is to try it on a single computer.</span></span> <span data-ttu-id="f4bac-176">在此範例中，我們會建立回到相同 Linux 電腦的遠端工作階段。</span><span class="sxs-lookup"><span data-stu-id="f4bac-176">In this example, we create a remote session back to the same Linux computer.</span></span> <span data-ttu-id="f4bac-177">我們會以互動方式使用 PowerShell Cmdlet；因此，我們會看到要求驗證主機電腦的 SSH 提示以及密碼提示。</span><span class="sxs-lookup"><span data-stu-id="f4bac-177">We're using PowerShell cmdlets interactively so we see prompts from SSH asking to verify the host computer and prompting for a password.</span></span> <span data-ttu-id="f4bac-178">您可以在 Windows 電腦上執行相同的動作以確保遠端功能正在運作。</span><span class="sxs-lookup"><span data-stu-id="f4bac-178">You can do the same thing on a Windows computer to ensure remoting is working.</span></span> <span data-ttu-id="f4bac-179">接著，透過變更主機名稱，在電腦之間執行遠端功能。</span><span class="sxs-lookup"><span data-stu-id="f4bac-179">Then, remote between computers by changing the host name.</span></span>
 
 ```powershell
 #
@@ -310,20 +310,20 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a><span data-ttu-id="f19ff-180">已知問題</span><span class="sxs-lookup"><span data-stu-id="f19ff-180">Known issues</span></span>
+### <a name="known-issues"></a><span data-ttu-id="f4bac-180">已知問題</span><span class="sxs-lookup"><span data-stu-id="f4bac-180">Known issues</span></span>
 
-<span data-ttu-id="f19ff-181">**sudo** 命令不適用於 Linux 電腦的遠端工作階段。</span><span class="sxs-lookup"><span data-stu-id="f19ff-181">The **sudo** command doesn't work in a remote session to a Linux computer.</span></span>
+<span data-ttu-id="f4bac-181">**sudo** 命令不適用於 Linux 電腦的遠端工作階段。</span><span class="sxs-lookup"><span data-stu-id="f4bac-181">The **sudo** command doesn't work in a remote session to a Linux computer.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f19ff-182">另請參閱</span><span class="sxs-lookup"><span data-stu-id="f19ff-182">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f4bac-182">另請參閱</span><span class="sxs-lookup"><span data-stu-id="f4bac-182">See also</span></span>
 
-[<span data-ttu-id="f19ff-183">在 Linux 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="f19ff-183">Installing PowerShell Core on Linux</span></span>](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
+[<span data-ttu-id="f4bac-183">在 Linux 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="f4bac-183">Installing PowerShell Core on Linux</span></span>](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
-[<span data-ttu-id="f19ff-184">在 macOS 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="f19ff-184">Installing PowerShell Core on macOS</span></span>](../../install/installing-powershell-core-on-macos.md)
+[<span data-ttu-id="f4bac-184">在 macOS 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="f4bac-184">Installing PowerShell Core on macOS</span></span>](../../install/installing-powershell-core-on-macos.md)
 
-[<span data-ttu-id="f19ff-185">在 Windows 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="f19ff-185">Installing PowerShell Core on Windows</span></span>](../../install/installing-powershell-core-on-windows.md#msi)
+[<span data-ttu-id="f4bac-185">在 Windows 上安裝 PowerShell Core</span><span class="sxs-lookup"><span data-stu-id="f4bac-185">Installing PowerShell Core on Windows</span></span>](../../install/installing-powershell-core-on-windows.md#msi)
 
-[<span data-ttu-id="f19ff-186">使用 OpenSSH 管理 Windows</span><span class="sxs-lookup"><span data-stu-id="f19ff-186">Manage Windows with OpenSSH</span></span>](/windows-server/administration/openssh/openssh_overview)
+[<span data-ttu-id="f4bac-186">使用 OpenSSH 管理 Windows</span><span class="sxs-lookup"><span data-stu-id="f4bac-186">Manage Windows with OpenSSH</span></span>](/windows-server/administration/openssh/openssh_overview)
 
-[<span data-ttu-id="f19ff-187">管理 OpenSSH 金鑰</span><span class="sxs-lookup"><span data-stu-id="f19ff-187">Managing OpenSSH Keys</span></span>](/windows-server/administration/openssh/openssh_keymanagement)
+[<span data-ttu-id="f4bac-187">管理 OpenSSH 金鑰</span><span class="sxs-lookup"><span data-stu-id="f4bac-187">Managing OpenSSH Keys</span></span>](/windows-server/administration/openssh/openssh_keymanagement)
 
-[<span data-ttu-id="f19ff-188">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="f19ff-188">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
+[<span data-ttu-id="f4bac-188">Ubuntu SSH</span><span class="sxs-lookup"><span data-stu-id="f4bac-188">Ubuntu SSH</span></span>](https://help.ubuntu.com/lts/serverguide/openssh-server.html)
