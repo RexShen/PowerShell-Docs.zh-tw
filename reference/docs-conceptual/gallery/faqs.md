@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
 ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500580"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
@@ -36,7 +36,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 **您不需要註冊或登入資源庫，就可以安裝或儲存套件。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>我收到『無法處理要求。 「指定的 API 金鑰無效，或沒有存取所指定套件的權限。」。 遠端伺服器傳回錯誤：(403) 禁止。」 錯誤。 這是什麼意思？
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>我收到『無法處理要求。 「指定的 API 金鑰無效，或沒有存取所指定套件的權限。」。 遠端伺服器傳回錯誤：(403) 已禁止。』 錯誤。 這是什麼意思？
 
 下列原因會發生此錯誤：
 
@@ -61,7 +61,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 - 版本
 - 描述
 - 作者
-- 模組授權條款 URI (為資訊清單 **PrivateData** 區段的一部分，或在 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數中)。
+- 模組授權條款 URI (為資訊清單 **PrivateData** 區段的一部分，或在 **Publish-Module** Cmdlet 的 [Publish-Module][] 參數中)。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>如何建立格式正確的模組資訊清單？
 
@@ -78,14 +78,14 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 - 版本
 - 描述
 - 作者
-- 指令碼授權條款 URI，為指令碼 **PSScriptInfo** 區段的一部分，或在 [Publish-Script][] Cmdlet 的 **LicenseUri** 參數中。
+- 指令碼授權條款 URI，為指令碼 **PSScriptInfo** 區段的一部分，或在 **Publish-Script** Cmdlet 的 [Publish-Script][] 參數中。
 
 ## <a name="how-do-i-search"></a>如何進行搜尋？
 
 在文字方塊中，輸入您要尋找的內容。 例如，如果您想要尋找與 Azure SQL 相關的模組，只需要輸入 "azure sql"。 搜尋引擎會在所有已發行的套件中 (包括在標題、描述和中繼資料中) 尋找那些關鍵字。 然後，根據加權的品質分數，就會顯示最接近的相符項目。 您也可以在下列欄位的搜尋查詢中使用 field:"value" 語法，以依特定欄位進行搜尋：
 
 - Tags
-- 函式
+- Functions
 - 指令程式
 - DscResources
 - PowerShellVersion

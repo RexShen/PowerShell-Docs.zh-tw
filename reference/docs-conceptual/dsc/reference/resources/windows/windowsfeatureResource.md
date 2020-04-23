@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsFeature 資源
 ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954625"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature 資源
@@ -31,11 +31,11 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
-|名稱 |表示您想要確保新增或移除的角色或功能名稱。 這與來自 [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) Cmdlet 的 **Name** 屬性相同，不是角色或功能的顯示名稱。 |
+|名稱 |表示您想要確保新增或移除的角色或功能名稱。 這與來自 **Get-WindowsFeature** Cmdlet 的 [Name](/powershell/module/servermanager/Get-WindowsFeature) 屬性相同，不是角色或功能的顯示名稱。 |
 |認證 |表示要用以新增或移除角色或功能的認證。 |
 |IncludeAllSubFeature |將此屬性設定為 `$true` 可讓您使用以 **Name** 屬性指定的功能狀態，來確保所有必要子功能的狀態。 |
 |LogPath |表示要讓資源提供者記錄作業的記錄檔路徑。 |

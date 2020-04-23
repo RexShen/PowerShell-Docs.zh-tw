@@ -3,10 +3,10 @@ ms.date: 11/22/2019
 keywords: powershell,cmdlet
 title: 使用格式命令變更輸出檢視
 ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417599"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令變更輸出檢視
@@ -155,7 +155,7 @@ Running  WinRM              Windows Remote Management (WS-Manag...
 
 ### <a name="improving-format-table-output-autosize"></a>改善 Format-Table 輸出 (AutoSize)
 
-雖然表格式檢視適用於顯示許多資訊，但是若顯示器太窄而無法容納資料，則可能難以解譯。 在上述範例中，輸出會被截斷。 如果您在執行 `Format-Table` 命令時指定 **AutoSize** 參數，PowerShell 會根據顯示的實際資料計算欄寬。 這可讓欄變成可讀取。
+雖然表格式檢視適用於顯示許多資訊，但是若顯示器太窄而無法容納資料，則可能難以解譯。 在上述範例中，輸出會被截斷。 如果您在執行 **命令時指定**AutoSize`Format-Table` 參數，PowerShell 會根據顯示的實際資料計算欄寬。 這可讓欄變成可讀取。
 
 ```powershell
 Get-Service -Name win* | Format-Table -AutoSize
@@ -190,7 +190,7 @@ WinRM               Running Automatic Windows Remote Management (WS-Management) 
 
 ### <a name="wrapping-format-table-output-in-columns-wrap"></a>在資料行中讓 Format-Table 換行 (Wrap)
 
-您可以使用 **Wrap** 參數，強制冗長的 `Format-Table` 資料在其顯示欄中換行。 因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數可能不會執行您預期的作業：
+您可以使用 `Format-Table`Wrap**參數，強制冗長的** 資料在其顯示欄中換行。 因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數可能不會執行您預期的作業：
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap

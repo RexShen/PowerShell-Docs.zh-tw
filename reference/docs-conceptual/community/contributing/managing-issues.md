@@ -4,10 +4,10 @@ description: 此文章說明 PowerShell-Docs 小組管理提取要求的方式�
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79060273"
 ---
 # <a name="how-we-manage-issues"></a>我們管理問題的方式

@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: WMF 5.0 中的已知問題
 ms.openlocfilehash: 91f556cb43ef971107f05c4041b725b1c7e4f1bd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147738"
 ---
 # <a name="known-issues-in-wmf-50"></a>WMF 5.0 中的已知問題
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>第一次使用時，會無法使用 PowerShell 快速鍵
 
-**解決方法：** 執行下列動作之一：
+**解決方案：** 執行下列動作之一：
 
 1. 以滑鼠右鍵按一下 [PowerShell] 捷徑。 選取 [Windows PowerShell] 以在未提高權限的模式中啟動。
 2. 以滑鼠右鍵按一下 [PowerShell] 捷徑。 以滑鼠右鍵按一下 [Windows PowerShell]，然後選取 [以系統管理員身分執行] 以在提高權限的模式中啟動。
@@ -24,7 +24,7 @@ ms.locfileid: "71147738"
 
 在 Windows 7 上，使用 PowerShell 模組和 DSC 資源可能導致報告有關 ExecutionPolicy 的錯誤。
 
-**解決方法：** 在提高權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，藉以將 ExecutionPolicy 設定為 **RemoteSigned**：
+**解決方案：** 在提高權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，藉以將 ExecutionPolicy 設定為 **RemoteSigned**：
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned
@@ -34,25 +34,25 @@ Set-ExecutionPolicy RemoteSigned
 
 舊的 Exchange 端點會重新導向至新的端點。 重新導向邏輯中的 Bug 會導致當機。
 
-**解決方法：** 直接連線到新的端點。
+**解決方案：** 直接連線到新的端點。
 
 ## <a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>在 Windows Server 2012 R2 上安裝 WMF 5.0 之後，錯誤地停止軟體清查記錄功能
 
 在已執行 SIL 的 Windows Server 2012 R2 上安裝 WMF 5.0 時，軟體清查記錄功能在安裝後錯誤地停止。
 
-**解決方法：** 安裝 WMF 之後立即執行 `Start-SilLogging` Cmdlet，因為安裝程序將會不當停止軟體清查記錄功能。
+**解決方案：** 安裝 WMF 之後立即執行 `Start-SilLogging` Cmdlet，因為安裝程序將會不當停止軟體清查記錄功能。
 
 ## <a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>如果同時使用 -LiteralPath 和 -Recurse，`Get-ChildItem` 就無法運作
 
 如果目錄名稱包含無效的萬用字元，則在同時使用 -LiteralPath 和 -Recurse 時，`Get-ChildItem` 將不會產生預期的結果。
 
-**解決方法：** 不理想，但目前的因應措施是在指令碼中實作遞迴，不是依賴此 Cmdlet。
+**解決方案：** 不理想，但目前的因應措施是在指令碼中實作遞迴，不是依賴此 Cmdlet。
 
 ## <a name="sysprep-fails-after-wmf-50-installation"></a>Sysprep 在安裝 WMF 5.0 之後失敗
 
 根據您目前執行的 Windows Server 版本而定，有兩種因應措施可解決此問題。
 
-**解決方法：**
+**解決方案：**
 
 - 針對執行 **Windows Server 2008 R2** 的系統
   1. 以系統管理員身分開啟 PowerShell

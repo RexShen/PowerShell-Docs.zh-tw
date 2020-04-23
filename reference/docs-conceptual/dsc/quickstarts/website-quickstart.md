@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 快速入門 - 使用 DSC 建立網站
 ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416123"
 ---
 # <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>快速入門 - 使用 Desired State Configuration (DSC) 來建立網站
@@ -37,7 +37,7 @@ ms.locfileid: "75416123"
 </body>
 ```
 
-將此內容在您稍早建立的 `test` 資料夾中另存為 `index.htm`。
+將此內容在您稍早建立的 `index.htm` 資料夾中另存為 `test`。
 
 ## <a name="write-the-configuration"></a>撰寫設定
 

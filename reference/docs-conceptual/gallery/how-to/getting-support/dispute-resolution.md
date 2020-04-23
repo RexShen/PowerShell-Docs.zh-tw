@@ -4,17 +4,17 @@ contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 爭端解決
 ms.openlocfilehash: 2376226c14ec1a8c2bf7c9328e29f79528d2aee9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328089"
 ---
 # <a name="dispute-resolution"></a>爭端解決
 
 本文件為建議社群成員使用的爭端解決程序，以協助解決與其他 PowerShell 資源庫發行者的爭端。
 
-## <a name="process"></a>處理程序
+## <a name="process"></a>Process
 
 1. 使用套件詳細資料頁面上的 [連絡擁有者]  連結，連絡有爭端的套件擁有者。
    以和善、適當的口吻說明您的問題。

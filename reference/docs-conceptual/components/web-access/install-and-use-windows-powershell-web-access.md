@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 安裝和使用 Windows PowerShell Web 存取
 ms.openlocfilehash: a3207c859c4b93b07d4c1b41d7df5269daa39a7d
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402615"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>安裝和使用 Windows PowerShell Web 存取
 
-更新日期：2013 年 11 月 5 日 (編輯：2017 年 8 月 23 日)
+更新日期︰2013 年 11 月 5 日 (編輯日期：2017 年 8 月 23 日)
 
-適用於：Windows Server 2012 R2、Windows Server 2012
+適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="introduction"></a>簡介
 
@@ -158,7 +158,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    `Install-PswaWebApplication`
 
-   執行 Cmdlet 可以設定下列閘道設定。 如有需要，可以在 IIS 管理員主控台手動變更這些設定。 您也可以指定 `Install-PswaWebApplication` Cmdlet 的 `WebsiteName` 與 `WebApplicationName` 參數值。
+   執行 Cmdlet 可以設定下列閘道設定。 如有需要，可以在 IIS 管理員主控台手動變更這些設定。 您也可以指定 `WebsiteName` Cmdlet 的 `WebApplicationName` 與 `Install-PswaWebApplication` 參數值。
 
    - Path：/pswa
    - ApplicationPool：pswa_pool
@@ -202,7 +202,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - 在 Windows 桌面上，以滑鼠右鍵按一下工作列上的 **[Windows PowerShell]** ，然後按一下 **[以系統管理員身分執行]** 。
    - 在 Windows **[開始]** 畫面上，以滑鼠右鍵按一下 **[Windows PowerShell]** ，然後按一下 **[以系統管理員身分執行]** 。
 
-2. 使用工作階段設定限制使用者存取的選擇性步驟：確定您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
+2. 使用工作階段設定來限制使用者存取的選擇性步驟：確認您要在規則中使用的工作階段設定已經存在。 如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations) 中建立工作階段設定的指示。
 
 3. 輸入下列程式碼，然後按 **Enter**。
 
@@ -210,7 +210,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。
 
-   在下列範例中，`Contoso` 網域中名為 `JSmith` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
+   在下列範例中，`JSmith` 網域中名為 `Contoso` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -383,7 +383,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    此授權規則允許特定使用者存取他們通常有權存取之網路上的一部電腦，以及已針對該使用者&trade;的一般編寫指令碼及 Cmdlet 需求設定範圍之特定工作階段設定的存取權。
 
-   在下列範例中，`Contoso` 網域中名為 `JSmith` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
+   在下列範例中，`JSmith` 網域中名為 `Contoso` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 

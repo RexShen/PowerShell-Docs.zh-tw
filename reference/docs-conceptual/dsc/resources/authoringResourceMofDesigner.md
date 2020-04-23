@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 [資源設計工具] 工具
 ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500637"
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
@@ -22,7 +22,7 @@ ms.locfileid: "80500637"
 * **UserName**：唯一識別使用者的索引鍵屬性。
 * **Ensure**：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
 * **DomainCredential**：使用者的網域密碼。
-* **密碼**：使用者視需要允許設定變更使用者密碼所需的密碼。
+* **Password**：使用者視需要允許設定變更使用者密碼所要使用的密碼。
 
 我們使用 **New-xDscResourceProperty** Cmdlet 建立屬性。 下列 PowerShell 命令會建立上述的屬性。
 

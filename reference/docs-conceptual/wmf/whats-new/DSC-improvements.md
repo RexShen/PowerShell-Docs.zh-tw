@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 DSC 改善
-ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277570"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978282"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -147,7 +147,7 @@ DSC 提取用戶端過去只支援 HTTPS 連線的 SSL3.0 和 TLS1.0。 強制�
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>使用 PsDscRunAsCredential 和 DSC 複合資源
 
-我們已新增搭配使用 [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) 和 DSC [複合](/powershell/scripting/dsc/authoringresourcecomposite)資源的支援。
+我們已新增搭配使用 [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) 和 DSC [複合](/powershell/scripting/dsc/resources/authoringresourcecomposite)資源的支援。
 
 在設定內使用複合資源時，您現在可以指定 **PsDscRunAsCredential** 的值。 指定後，複合資源內的所有資源都會以 RunAs 使用者身分執行。 如果複合資源會呼叫另一個複合資源，也會以 RunAs 使用者身分執行所有那些資源。 RunAs 認證會傳播至複合資源階層的所有層級。 如果複合資源內的任何資源會針對 **PsDscRunAsCredential** 指定自己的值，則會在設定編譯期間發生合併錯誤。
 
@@ -240,8 +240,8 @@ Configuration WebApplication
 ### <a name="how-to-sign-configuration-and-module"></a>如何簽署設定和模組
 
 - 設定檔 (.MOF)：現有的 PowerShell Cmdlet [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) 已擴充，可支援簽署 MOF 檔案。
-- 模組：已透過使用下列步驟簽署對應的模組類別目錄來完成模組簽署：
-  1. 建立類別目錄檔案：類別目錄檔案包含密碼編譯雜湊或指紋的集合。 每個指紋都會對應至模組所包含的檔案。 已新增新的 [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog) Cmdlet，讓使用者為其模組建立類別目錄檔案。
+- 模組：已透過簽署對應的模組類別目錄完成模組簽署，使用步驟如下：
+  1. 建立類別目錄檔案︰類別目錄檔案包含密碼編譯雜湊或指紋的集合。 每個指紋都會對應至模組所包含的檔案。 已新增新的 [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog) Cmdlet，讓使用者為其模組建立類別目錄檔案。
   2. 簽署類別目錄檔案︰使用 [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) 簽署類別目錄檔案。
   3. 將類別目錄檔案放在模組資料夾內。 依照慣例，模組類別目錄檔案應該位於與模組同名的模組資料夾內。
 

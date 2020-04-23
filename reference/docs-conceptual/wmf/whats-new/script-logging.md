@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: 指令碼追蹤和記錄
 ms.openlocfilehash: 6b7e5022cb4c974da5ddb3d670b5808dc9fb7bdc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147798"
 ---
 # <a name="script-tracing-and-logging"></a>指令碼追蹤和記錄
@@ -17,13 +17,13 @@ ms.locfileid: "71147798"
 
 這些事件為︰
 
-| 頻道 |                               操作                               |
+| 通路 |                               運作                               |
 | ------- | ----------------------------------------------------------------------- |
-| 層級   | Verbose                                                                 |
+| 層級   | 「詳細資訊」                                                                 |
 | OpCode  | 建立                                                                  |
-| 工作    | CommandStart                                                            |
+| Task    | CommandStart                                                            |
 | 關鍵字 | Runspace                                                                |
-| 事件識別碼 | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
 | 訊息 | 建立指令碼區塊文字 (%2 之 %1)： </br> %3 </br> ScriptBlock 識別碼：%4 |
 
 
@@ -31,13 +31,13 @@ ms.locfileid: "71147798"
 
 當您啟用詳細資訊記錄時，此功能會寫入開始和結束標記︰
 
-| 頻道 |                                 操作                                |
+| 通路 |                                 運作                                |
 | ------- | -------------------------------------------------------------------------- |
-| 層級   | Verbose                                                                    |
+| 層級   | 「詳細資訊」                                                                    |
 | OpCode  | Open / Close                                                               |
-| 工作    | CommandStart / CommandStop                                                 |
+| Task    | CommandStart / CommandStop                                                 |
 | 關鍵字 | Runspace                                                                   |
-| 事件識別碼 | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) |
+| EventId | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) |
 | 訊息 | 已啟動 / 已完成 ScriptBlock 識別碼的引動過程：%1 </br> Runspace 識別碼：%2 |
 
 識別碼是代表指令碼區塊的 GUID (可與事件識別碼 0x1008 相互關聯)，Runspace 識別碼則代表之前執行這個指令碼區塊的 Runspace。

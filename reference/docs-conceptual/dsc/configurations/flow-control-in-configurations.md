@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定中的條件陳述式及迴圈
 ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736891"
 ---
 # <a name="conditional-statements-and-loops-in-a-configuration"></a>設定中的條件陳述式及迴圈
@@ -38,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-此外，您可以使用 `foreach` 迴圈為目前電腦上的每個服務建立**服務**資源區塊。
+此外，您可以使用  **迴圈為目前電腦上的每個服務建立**服務`foreach`資源區塊。
 
 ```powershell
 Configuration ServiceState
@@ -60,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-您也可以使用 `if` 陳述式，僅為線上電腦建立 `Configuration`。
+您也可以使用 `Configuration` 陳述式，僅為線上電腦建立 `if`。
 
 ```powershell
 Configuration ServiceState

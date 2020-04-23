@@ -4,10 +4,10 @@ contributor: keithb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 發行前模組版本
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328139"
 ---
 # <a name="prerelease-module-versions"></a>發行前模組版本
@@ -123,7 +123,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-如果模組的版本僅僅因為指定的發行前版本而有所不同，則不支援並行安裝模組的各版本。 使用 PowerShellGet 安裝模組時，透過使用 ModuleVersion 建立資料夾名稱，可並行安裝相同模組的不同版本。 不含發行前版本字串的 ModuleVersion 可作為資料夾名稱使用。 如果使用者安裝 MyModule 2.5.0-alpha 版，它將安裝至 `MyModule\2.5.0` 資料夾。 如果使用者接著安裝 2.5.0-beta，則 2.5.0-beta 版將**覆寫** `MyModule\2.5.0` 資料夾的內容。 這種方法的其中一個優點是，安裝已準備好投入生產環境的版本之後，不需要解除安裝發行前版本。 下列範例示範預期的結果：
+如果模組的版本僅僅因為指定的發行前版本而有所不同，則不支援並行安裝模組的各版本。 使用 PowerShellGet 安裝模組時，透過使用 ModuleVersion 建立資料夾名稱，可並行安裝相同模組的不同版本。 不含發行前版本字串的 ModuleVersion 可作為資料夾名稱使用。 如果使用者安裝 MyModule 2.5.0-alpha 版，它將安裝至 `MyModule\2.5.0` 資料夾。 如果使用者接著安裝 2.5.0-beta，則 2.5.0-beta 版將**覆寫**`MyModule\2.5.0` 資料夾的內容。 這種方法的其中一個優點是，安裝已準備好投入生產環境的版本之後，不需要解除安裝發行前版本。 下列範例示範預期的結果：
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
@@ -192,7 +192,7 @@ Version         Name          Repository   Description
 1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 ```
 
-## <a name="more-details"></a>更多詳細資料
+## <a name="more-details"></a>其他詳細資訊
 
 - [發行前指令碼版本](script-prerelease-support.md)
 - [Find-Module](/powershell/module/powershellget/find-module)

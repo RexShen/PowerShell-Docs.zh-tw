@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC Script 資源
 ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953065"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 資源
@@ -32,7 +32,7 @@ Script [string] #ResourceName
 > [!NOTE]
 > **GetScript**、**TestScript** 和 **SetScript** 區塊會儲存為字串。
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
@@ -73,7 +73,7 @@ DSC 不會使用 **GetScript** 的輸出。 [Get-DscConfiguration](/powershell/m
 
 ## <a name="examples"></a>範例
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>範例 1：使用指令碼資源撰寫範例文字
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>範例 1：使用 Script 資源撰寫範例文字
 
 此範例會在每個節點上測試 `C:\TempFolder\TestFile.txt` 是否存在。 如果不存在，就會使用 `SetScript` 建立它。 `GetScript` 會傳回檔案的內容，而且不會使用它的傳回值。
 
@@ -98,9 +98,9 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>範例 2：使用指令碼資源比較版本資訊
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>範例 2︰使用 Script 資源比較版本資訊
 
-此範例會從撰寫電腦上的文字檔擷取「符合規範」  的版本資訊，並將它儲存在 `$version` 變數中。 產生節點的 MOF 檔案時，DSC 會使用 `$version` 變數的值，來取代每個指令碼區塊中的 `$using:version` 變數。
+此範例會從撰寫電腦上的文字檔擷取「符合規範」  的版本資訊，並將它儲存在 `$version` 變數中。 產生節點的 MOF 檔案時，DSC 會使用 `$using:version` 變數的值，來取代每個指令碼區塊中的 `$version` 變數。
 執行期間，「符合規範」  的版本會儲存在每個節點的文字檔中，並與後續執行進行比較及更新。
 
 ```powershell

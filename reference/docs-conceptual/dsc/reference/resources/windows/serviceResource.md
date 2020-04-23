@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC Service 資源
 ms.openlocfilehash: 0bef6aa6d3526c9d8d92187c1e738d5c46b5665a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953045"
 ---
 # <a name="dsc-service-resource"></a>DSC Service 資源
@@ -34,7 +34,7 @@ Service [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
@@ -42,10 +42,10 @@ Service [string] #ResourceName
 |BuiltInAccount |表示用於服務的登入帳戶。 這個屬性所允許的值為：**LocalService**、**LocalSystem** 和 **NetworkService**。 |
 |認證 |表示執行服務的帳戶認證。 這個屬性與 **BuiltinAccount** 屬性不能同時使用。 |
 |StartupType |表示服務的啟動類型。 這個屬性所允許的值為：**Automatic**、**Disabled** 和 **Manual**。 |
-|State |表示您要確保的服務狀態。 值是：**Running** 或 **Stopped**。 |
+|State |表示您要確保的服務狀態。 值如下：**Running** 或 **Stopped**。 |
 |描述 |表示目標服務的描述。 |
 |DisplayName |表示目標服務的顯示名稱。 |
-|路徑 |表示新服務的二進位檔路徑。 |
+|Path |表示新服務的二進位檔路徑。 |
 
 ## <a name="common-properties"></a>通用屬性
 

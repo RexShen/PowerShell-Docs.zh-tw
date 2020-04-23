@@ -3,17 +3,17 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 在 Nano Server 上使用 DSC
 ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953855"
 ---
 # <a name="using-dsc-on-nano-server"></a>在 Nano Server 上使用 DSC
 
 > 適用於：Windows PowerShell 5.0
 
-您可以選用 Windows Server 2016 媒體上 `NanoServer\Packages` 資料夾中的 **Nano Server 上的 DSC** 封裝。 當您建立 Nano Server 的 VHD 時，可以安裝此套件，方法是指定 **Microsoft-NanoServer-DSC-Package** 作為 **New-NanoServerImage** 函數中 **Packages** 參數的值。 例如，如果要建立虛擬機器的 VHD，命令會如下所示︰
+您可以選用 Windows Server 2016 媒體上 **資料夾中的**Nano Server 上的 DSC`NanoServer\Packages` 封裝。 當您建立 Nano Server 的 VHD 時，可以安裝此套件，方法是指定 **Microsoft-NanoServer-DSC-Package** 作為 **New-NanoServerImage** 函數中 **Packages** 參數的值。 例如，如果要建立虛擬機器的 VHD，命令會如下所示︰
 
 ```powershell
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package
@@ -50,7 +50,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 編譯設定 (請參閱 [DSC 設定](../configurations/configurations.md))。
 
-  **問題：** 密碼加密 (請參閱[保護 MOF 檔案](../pull-server/secureMOF.md)) 在設定編譯期間無法運作。
+  **問題︰** 密碼加密 (請參閱[保護 MOF 檔案](../pull-server/secureMOF.md)) 在設定編譯期間無法運作。
 
 - 編譯中繼設定 (請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md))
 
@@ -60,7 +60,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 為 DSC 資源偵錯 (請參閱[為 DSC 資源偵錯](../troubleshooting/debugResource.md))
 
-  **問題：** 如果資源使用 PsDscRunAsCredential 則無法運作 (請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md))
+  **問題︰** 如果資源使用 PsDscRunAsCredential 則無法運作 (請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md))
 
 - [指定節點之間的相依性](../configurations/crossNodeDependencies.md)
 
@@ -80,13 +80,13 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 可完全正常運作的資源
 
-- **Archive**
-- **Environment**
-- **File**
+- **封存**
+- **環境**
+- **檔案**
 - **Log**
 - **ProcessSet**
-- **Registry**
-- **Script**
+- **登錄**
+- **指令碼**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
@@ -97,17 +97,17 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - **群組**
 - **GroupSet**
 
-  **問題：** 若呼叫特定執行個體兩次 (執行兩次相同的設定)，則上述資源會失敗
+  **問題︰** 若呼叫特定執行個體兩次 (執行兩次相同的設定)，則上述資源會失敗
 
-- **Service**
+- **服務**
 - **ServiceSet**
 
-  **問題：** 只適用於開始/停止 (狀態) 服務。 如果嘗試變更啟動類型、認證、描述等其他服務屬性，則會失敗。 擲回的錯誤類似如下︰
+  **問題︰** 只適用於開始/停止 (狀態) 服務。 如果嘗試變更啟動類型、認證、描述等其他服務屬性，則會失敗。 擲回的錯誤類似如下︰
 
   找不到類型 [management.managementobject]：請確認已載入包含此類型的組件。 
 
 - 無法正常運作的資源
-- **User**
+- **使用者**
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server 上不提供的 DSC 功能
 

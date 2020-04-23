@@ -3,10 +3,10 @@ ms.date: 01/10/2020
 keywords: powershell,cmdlet
 title: 撰寫可移植的模組
 ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76022251"
 ---
 # <a name="portable-modules"></a>可移植的模組
@@ -198,7 +198,7 @@ PowerShell Standard 的設計旨在始終向下相容。 使用 PowerShell Stand
 
 首先，請驗證您的模組可在 Linux 和 macOS 上運作。 接下來，在模組資訊清單中指示與那些作業系統相容。 這可在將模組發佈至 [PowerShell 資源庫][]時，讓使用者更容易地為他們的作業系統找到您的模組。
 
-在模組資訊清單內，`PrivateData` 屬性具有 `PSData` 子屬性。 `PSData` 的選擇性 `Tags` 屬性接受 PowerShell 資源庫中顯示的值陣列。 PowerShell 資源庫支援下列相容性值：
+在模組資訊清單內，`PrivateData` 屬性具有 `PSData` 子屬性。 `Tags` 的選擇性 `PSData` 屬性接受 PowerShell 資源庫中顯示的值陣列。 PowerShell 資源庫支援下列相容性值：
 
 | Tag               | 描述                                |
 |-------------------|--------------------------------------------|

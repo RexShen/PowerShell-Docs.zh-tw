@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 安全性考量
 ms.openlocfilehash: befc24fec368c4f6d60477daf63bf17e9431133e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017769"
 ---
 # <a name="jea-security-considerations"></a>JEA 安全性考量
@@ -31,9 +31,9 @@ JEA 可協助您減少電腦上的永久系統管理員數目來改善安全性�
 
 |        電腦類型         | 虛擬帳戶群組設定 |                   本機使用者內容                    | 網路使用者內容 |
 | ---------------------------- | ----------------------------------- | ------------------------------------------------------- | -------------------- |
-| 網域控制站            | Default                             | 網域使用者，'*DOMAIN*\Domain Admins' 的成員         | 電腦帳戶     |
+| 網域控制站            | 預設                             | 網域使用者，'*DOMAIN*\Domain Admins' 的成員         | 電腦帳戶     |
 | 網域控制站            | 網域群組 A 和 B               | 網域使用者，'*DOMAIN*\A', '*DOMAIN*\B' 的成員       | 電腦帳戶     |
-| 成員伺服器或工作站 | Default                             | 本機使用者，'*BUILTIN*\Administrators' 的成員        | 電腦帳戶     |
+| 成員伺服器或工作站 | 預設                             | 本機使用者，'*BUILTIN*\Administrators' 的成員        | 電腦帳戶     |
 | 成員伺服器或工作站 | 本機群組 C 和 D                | 本機使用者，'*COMPUTER*\C' 和 '*COMPUTER*\D' 的成員 | 電腦帳戶     |
 
 當您查看安全性稽核事件與應用程式事件記錄檔時，您會看到每個 JEA 使用者工作階段都有唯一的虛擬帳戶。 這個唯一帳戶可協助您從 JEA 端點中使用者動作回溯到執行命令的原始使用者。 虛擬帳戶名稱遵循 `WinRM Virtual Users\WinRM_VA_<ACCOUNTNUMBER>_<DOMAIN>_<sAMAccountName>` 格式。例如，如果網域 **Contoso** 中使用者 **Alice** 重新啟動 JEA 端點中的服務，則與任何服務控制管理員事件建立關聯的使用者名稱會是 `WinRM Virtual Users\WinRM_VA_1_contoso_alice`。

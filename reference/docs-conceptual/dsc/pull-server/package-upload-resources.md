@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 封裝資源並上傳到提取伺服器
 ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278491"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>封裝資源並上傳到提取伺服器
@@ -41,13 +41,13 @@ ms.locfileid: "78278491"
 
 ### <a name="create-checksums"></a>建立總和檢查碼
 
-一旦將資源模組壓縮並重新命名之後，您必須建立**總和檢查碼**。  用戶端上的 LCM 會使用**總和檢查碼**來判斷資源是否已變更且需要再次下載。 您可以使用 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet 來建立**總和檢查碼**，如以下範例所示。
+一旦將資源模組壓縮並重新命名之後，您必須建立**總和檢查碼**。  用戶端上的 LCM 會使用**總和檢查碼**來判斷資源是否已變更且需要再次下載。 您可以使用 **New-DSCCheckSum** Cmdlet 來建立[總和檢查碼](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)，如以下範例所示。
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-系統將不會顯示任何輸出，但您現在應該會看到 "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum"。 您也可以使用 `-Path` 參數，針對檔案的目錄執行 `New-DSCCheckSum`。 如果總和檢查碼已經存在，您可以使用 `-Force` 參數強制重新建立它。
+系統將不會顯示任何輸出，但您現在應該會看到 "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum"。 您也可以使用 `New-DSCCheckSum` 參數，針對檔案的目錄執行 `-Path`。 如果總和檢查碼已經存在，您可以使用 `-Force` 參數強制重新建立它。
 
 ### <a name="where-to-store-resource-archives"></a>儲存資源封存的位置
 

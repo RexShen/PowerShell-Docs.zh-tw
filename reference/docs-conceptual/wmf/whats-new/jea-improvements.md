@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: Just Enough Administration (JEA) 的改善功能
 ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147598"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) 的改善功能
@@ -26,7 +26,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 支援使用者磁碟機的資料夾將會建立於 `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`
 
-若要利用使用者磁碟機，並將檔案複製到設為公開使用者磁碟機的 JEA 端點及從中複製檔案，請使用 `Copy-Item` 上的 `-ToSession` 和 `-FromSession` 參數。
+若要利用使用者磁碟機，並將檔案複製到設為公開使用者磁碟機的 JEA 端點及從中複製檔案，請使用 `-ToSession` 上的 `-FromSession` 和 `Copy-Item` 參數。
 
 ```powershell
 # Connect to the JEA endpoint
@@ -81,6 +81,6 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>已修正：Windows Server 2008 R2 現在支援虛擬帳戶
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定︰Windows Server 2008 R2 現在支援虛擬帳戶
 
 在 WMF 5.1 中，您現在可於 Windows Server 2008 R2 使用虛擬帳戶，讓 Windows Server 2008 R2 - 2016 上的設定和功能同位一致。 在 Windows 7 上使用 JEA 時，仍不支援虛擬帳戶。

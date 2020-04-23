@@ -3,10 +3,10 @@ ms.date: 12/31/2019
 keywords: powershell,cmdlet
 title: ISE 物件模型階層
 ms.openlocfilehash: 1ec5810fc5e7b765c2a08af83bce0415dd61a54b
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737027"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE 物件模型階層
@@ -17,11 +17,11 @@ ms.locfileid: "75737027"
 
 `$psISE` 物件是 Windows PowerShell ISE 物件階層的[根物件](The-ObjectModelRoot-Object.md)。 它位於最上層，可提供下列物件來編寫指令碼︰
 
-## <a name="psisecurrentfilethe-isefile-objectmd"></a>[$psISE.CurrentFile](The-ISEFile-Object.md)
+## <a name="psisecurrentfile"></a>[$psISE.CurrentFile](The-ISEFile-Object.md)
 
 `$psISE.CurrentFile` 物件是 [ISEFile](The-ISEFile-Object.md) 類別的執行個體。
 
-## <a name="psisecurrentpowershelltabthe-powershelltab-objectmd"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
+## <a name="psisecurrentpowershelltab"></a>[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)
 
 `$psISE.CurrentPowerShellTab` 物件是 [PowerShellTab](The-PowerShellTab-Object.md) 類別的執行個體。
 
@@ -33,11 +33,11 @@ ms.locfileid: "75737027"
 
 `$psISE.CurrentVisibleHorizontalTool` 物件是 [ISEAddOnTool](The-ISEAddOnTool-Object.md) 類別的執行個體。 它代表目前停駐於 Windows PowerShell ISE 視窗右邊的已安裝附加元件工具。
 
-## <a name="psiseoptionsthe-iseoptions-objectmd"></a>[$psISE.Options](The-ISEOptions-Object.md)
+## <a name="psiseoptions"></a>[$psISE.Options](The-ISEOptions-Object.md)
 
 `$psISE.Options` 物件是 [ISEOptions](The-ISEOptions-Object.md) 類別的執行個體。 ISEOptions 物件代表適用於 Windows PowerShell ISE 的各種設定。 其為 Microsoft.PowerShell.Host.ISE.ISEOptions 類別的執行個體。
 
-## <a name="psisepowershelltabsthe-powershelltabcollection-objectmd"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
+## <a name="psisepowershelltabs"></a>[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)
 
 `$psISE.PowerShellTabs` 物件是 [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) 類別的執行個體。 它是所有目前開啟的 PowerShell 索引標籤集合，代表本機電腦上或連線的遠端電腦上可用的 Windows PowerShell 執行環境。 集合中的每個成員都是 [PowerShellTab](The-PowerShellTab-Object.md) 類別的執行個體。
 

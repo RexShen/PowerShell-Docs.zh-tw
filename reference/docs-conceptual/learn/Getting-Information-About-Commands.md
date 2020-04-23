@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 取得命令的相關資訊
 ms.openlocfilehash: eb918c6f89d8369db775258263a8f7a7902a6cc7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030953"
 ---
 # <a name="getting-information-about-commands"></a>取得命令的相關資訊
@@ -28,7 +28,7 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-此輸出與 **cmd.exe** 的 Help 輸出十分相似：內部命令的表格式摘要。 如上面 `Get-Command` 命令輸出的摘要所示，每個顯示的命令都有一個屬於 Cmdlet 的 CommandType。 Cmdlet 是 PowerShell 的內建命令類型。 此類型大致上對應至 **cmd.exe** 中 `dir` 與 `cd` 之類的命令，或是 Unix 殼層 (例如 Bash) 的內建命令。
+此輸出與 **cmd.exe** 的 Help 輸出十分相似：內部命令的表格式摘要。 如上面 `Get-Command` 命令輸出的摘要所示，每個顯示的命令都有一個屬於 Cmdlet 的 CommandType。 Cmdlet 是 PowerShell 的內建命令類型。 此類型大致上對應至 `dir`cmd.exe`cd` 中 **與** 之類的命令，或是 Unix 殼層 (例如 Bash) 的內建命令。
 
 `Get-Command` Cmdlet 有一個 **Syntax** 參數，可傳回每個 Cmdlet 的語法。 下列範例示範如何取得 `Get-Help` Cmdlet 的語法：
 
@@ -55,7 +55,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 `Get-Command` 命令只會列出目前工作階段中的 Cmdlet。 PowerShell 實際上支援數個其他類型的命令：
 
 - 別名
-- 函式
+- Functions
 - 指令碼
 
 外部可執行檔案或具有已登錄之檔案類型處理常式的檔案，也會分類為命令。
@@ -72,7 +72,7 @@ Get-Command *
 > [!NOTE]
 > 星號 (\*) 會用於 PowerShell 命令引數中的萬用字元比對。 \* 表示「符合一或多個任意字元」。 您可以鍵入 `Get-Command a*` 來尋找開頭為字母 "a" 的所有命令。 不同於 **cmd.exe** 中的萬用字元比對，PowerShell 的萬用字元也會比對句點。
 
-使用 `Get-Command` 的 **CommandType** 參數來取得其他類型的原生命令。
+使用 **的**CommandType`Get-Command` 參數來取得其他類型的原生命令。
 Cmdlet。
 
 若要取得命令別名 (指派給命令的暱稱)，請輸入：

@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxUser 資源
 ms.openlocfilehash: 6d7b52809741813af7fa80b1c6372b267aff4777
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954795"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC for Linux nxUser 資源
@@ -31,7 +31,7 @@ nxUser <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |指出您要確保其特定狀態的帳戶名稱。 |
 |---|---|
@@ -39,8 +39,8 @@ nxUser <string> #ResourceName
 |FullName |字串，包含要用於使用者帳戶的完整名稱。 |
 |描述 |使用者帳戶的描述。 |
 |密碼 |Linux 電腦適當表單的使用者密碼雜湊。 一般而言，這是「加鹽」過 (在密碼任意固定位置插入特定的字串) 的 SHA-256 或 SHA-512 雜湊。 在 Debian 和 Ubuntu Linux 上，這個值可使用 `mkpasswd` 命令產生。 針對其他 Linux 散發版本，Python Crypt 程式庫的 crypt 方法可用來產生此雜湊。 |
-|停用 |指出此帳戶是否啟用。 將此屬性設定為 `$true` 以確保此帳戶已停用，而將它設定為 `$false` 可確定它已啟用。 |
-|PasswordChangeRequired |指出使用者是否可以變更密碼。 將此屬性設定為 `$true` 以確保使用者無法變更密碼，而將它設定為 `$false` 可允許使用者變更密碼。 預設值為 `$false`。 如果之前不存在此使用者帳戶，而且正在建立中，才會評估這個屬性。 |
+|已停用 |指出此帳戶是否啟用。 將此屬性設定為 `$true` 以確保此帳戶已停用，而將它設定為 `$false` 可確定它已啟用。 |
+|PasswordChangeRequired |指出使用者是否可以變更密碼。 將此屬性設定為 `$true` 以確保使用者無法變更密碼，而將它設定為 `$false` 可允許使用者變更密碼。 預設值是 `$false`。 如果之前不存在此使用者帳戶，而且正在建立中，才會評估這個屬性。 |
 |HomeDirectory |使用者主目錄。 |
 |GroupID |使用者主要群組識別碼。 |
 

@@ -3,17 +3,17 @@ title: PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 description: 使用 WSMan 在 PowerShell Core 中遠端
 ms.date: 08/06/2018
 ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058874"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>建立遠端端點的指示
 
-PowerShell Core for Windows 套件包含 `$PSHome` 中的 WinRM 外掛程式 (`pwrshplugin.dll`) 和安裝指令碼 (`Install-PowerShellRemoting.ps1`)。
+PowerShell Core for Windows 套件包含 `pwrshplugin.dll` 中的 WinRM 外掛程式 (`Install-PowerShellRemoting.ps1`) 和安裝指令碼 (`$PSHome`)。
 這些檔案讓 PowerShell 在指定其端點時接受連入的 PowerShell 遠端連線。
 
 ### <a name="motivation"></a>動機
@@ -56,7 +56,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**注意：** 遠端註冊指令碼將重新啟動 WinRM，因此所有現有 PSRP 工作階段都會在指令碼執行之後立即終止。 如果在遠端工作階段期間執行，這會終止連線。
+**注意：** 遠端註冊指令碼將重新啟動 WinRM，因此所有現有 PSRP 工作階段會在指令碼執行之後立即終止。 如果在遠端工作階段期間執行，這會終止連線。
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>如何連線至新端點
 
@@ -67,4 +67,4 @@ New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
-請注意，未指定 `-ConfigurationName` 的 `New-PSSession` 和 `Enter-PSSession` 引動過程將會以預設 PowerShell 端點 `microsoft.powershell` 為目標。
+請注意，未指定 `New-PSSession` 的 `Enter-PSSession` 和 `-ConfigurationName` 引動過程將會以預設 PowerShell 端點 `microsoft.powershell` 為目標。

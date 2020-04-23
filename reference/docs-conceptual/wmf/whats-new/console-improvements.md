@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: WMF 5.1 的主控台改善
 ms.openlocfilehash: d0dd8e3c31dc0ddebab1bb899468b77a9292954d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147628"
 ---
 # <a name="console-improvements-in-wmf-51"></a>WMF 5.1 的主控台改善
@@ -34,7 +34,7 @@ else
 }
 ```
 
-以下是可用來反白 `Select-String` 相符項目的完整[範例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)。 將範例儲存在名為 `MatchInfo.format.ps1xml` 的檔案中，然後在您的設定檔或其他位置執行 `Update-FormatData -Prepend MatchInfo.format.ps1xml` 以便加以使用。
+以下是可用來反白 [ 相符項目的完整](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)範例`Select-String`。 將範例儲存在名為 `MatchInfo.format.ps1xml` 的檔案中，然後在您的設定檔或其他位置執行 `Update-FormatData -Prepend MatchInfo.format.ps1xml` 以便加以使用。
 
 請注意，從 Windows 10 年度更新版開始才支援 VT100 逸出序列。
 舊版系統不支援它們。

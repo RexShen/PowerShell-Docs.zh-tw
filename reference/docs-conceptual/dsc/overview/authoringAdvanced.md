@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 了解 DSC 在 CI/CD 管線中的角色
 ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500813"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>了解 DSC 在 CI/CD 管線中的角色
@@ -97,4 +97,4 @@ Configuration Name
 > [!NOTE]
 > 關於使用複合資源的意見反應包括了對於進行變更需要編譯和發行新 MOF 的批評。 這是原廠設定。 每個新設定版本都應該包含每個資源特定版本的靜態參考，而且應該經過測試驗證，再到達生產伺服器節點。 測試和發行原始檔控制中變更的程序會建立安全的環境，以少量但頻繁的批次來發行變更。
 
-如需使用發行管線來管理核心基礎結構的詳細資訊，請參閱技術白皮書：[發行管線模型](../further-reading/whitepapers.md)。
+如需使用發行管線管理核心基礎結構的詳細資訊，請參閱技術白皮書：[發行管線模型](../further-reading/whitepapers.md)。

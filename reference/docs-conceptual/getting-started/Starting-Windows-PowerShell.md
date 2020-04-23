@@ -3,10 +3,10 @@ ms.date: 12/05/2019
 keywords: powershell,cmdlet
 title: 啟動 Windows PowerShell
 ms.openlocfilehash: 97b15a4cd79c77a391451ba917f985f9d99db3f5
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74953818"
 ---
 # <a name="starting-windows-powershell"></a>啟動 Windows PowerShell
@@ -23,7 +23,7 @@ PowerShell Core (稱為 PowerShell) 是開放原始碼的第 6 版和更高版�
 
 若要尋找 PowerShell 7 的 Cmdlet 參考和安裝文件，請使用下列連結：
 
-| 文件 | 連結 |
+| Document | 連結 |
 | ----- | ----- |
 | Cmdlet 參考 | [PowerShell 模組瀏覽器](/powershell/module/?view=powershell-7) |
 | Windows 安裝 | [在 Windows 上安裝 PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7) |
@@ -94,7 +94,7 @@ ISE
 
 #### <a name="to-enable-windows-powershell-integrated-scripting-environment-ise"></a>啟用 Windows PowerShell 整合式指令碼環境 (ISE)
 
-1. 啟動 [伺服器管理員]。
+1. 啟動伺服器管理員。
 2. 按一下 **[功能]** ，然後按一下 **[新增功能]** 。
 3. 在 [選取功能] 中，按一下 [Windows PowerShell 整合式指令碼環境 (ISE)]。
 

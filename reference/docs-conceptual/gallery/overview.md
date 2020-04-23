@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: PowerShell 資源庫
 ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500571"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫

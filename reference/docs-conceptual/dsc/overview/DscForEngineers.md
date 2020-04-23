@@ -3,10 +3,10 @@ ms.date: 10/13/2017
 keywords: dsc,powershell,設定,安裝
 title: 適合工程師的預期狀態設定概觀
 ms.openlocfilehash: 0e599c2218cd2df29dbd0529006be5e1ef17ce5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953795"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>適合工程師的預期狀態設定概觀
@@ -132,7 +132,7 @@ DSC 設定透過使用[設定資料](../configurations/configData.md)來容納�
 
 ## <a name="see-also"></a>另請參閱
 
-[設定](../configurations/configurations.md)
+[組態](../configurations/configurations.md)
 
 [設定資料](../configurations/configData.md)
 

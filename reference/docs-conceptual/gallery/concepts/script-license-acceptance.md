@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: 必須接受指令碼的授權
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328079"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>必須接受指令碼的授權
@@ -18,7 +18,7 @@ ms.locfileid: "71328079"
 
 ## <a name="examples"></a>範例
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>範例 1：Install Script 搭配必須接受授權的相依性
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>範例 1：Install 指令碼具有要求接受授權的相依性
 
 指令碼 'ScriptRequireLicenseAcceptance' 相依於模組 'ModuleRequireLicenseAcceptance'。 系統會提示使用者接受授權。
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>範例 2：Install Script 搭配必須接受授權的相依性和 -AcceptLicense
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>範例 2：Install 指令碼具有必須接受授權的相依性和 -AcceptLicense
 
 指令碼 'ScriptRequireLicenseAcceptance' 相依於模組 'ModuleRequireLicenseAcceptance'。 由於已指定 -AcceptLicense，系統將不會提示使用者接受授權。
 
@@ -46,7 +46,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
-## <a name="more-details"></a>更多詳細資料
+## <a name="more-details"></a>其他詳細資訊
 
 - [適用於模組的必須接受授權支援](module-license-acceptance.md)
 - [PowerShellGallery 上的必須接受授權支援](../how-to/working-with-packages/packages-that-require-license-acceptance.md)

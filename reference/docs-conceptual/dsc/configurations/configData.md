@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用設定資料
 ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954185"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
@@ -23,13 +23,13 @@ ms.locfileid: "71954185"
 ## <a name="the-configurationdata-common-parameter"></a>ConfigurationData 一般參數
 
 DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所指定的參數。
-如需編譯設定的資訊，請參閱 [DSC 設定](configurations.md)。
+如需編譯設定的詳細資訊，請參閱 [DSC 設定](configurations.md)。
 
 **ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。
 它也可以包含一或多個其他索引鍵。
 
 > [!NOTE]
-> 本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是具名 **AllNodes** 索引鍵)，但是您可以包含任意數目的額外索引鍵，並將它們任意命名。
+> 本主題中的範例使用名為 **的單一額外索引鍵 (而不是具名**AllNodes`NonNodeData` 索引鍵)，但是您可以包含任意數目的額外索引鍵，並將它們任意命名。
 
 ```powershell
 $MyData =
@@ -137,7 +137,7 @@ $MyData =
 ## <a name="defining-the-configurationdata-hashtable"></a>定義 ConfigurationData 雜湊表
 
 您可以將 **ConfigurationData** 定義為與設定位於相同指令碼檔內的變數 (如上述範例)，或個別 `.psd1` 檔案中的變數。
-若要在 `.psd1` 檔案中定義 **ConfigurationData**，請建立只包含代表設定資料之雜湊表的檔案。
+若要在 **檔案中定義**ConfigurationData`.psd1`，請建立只包含代表設定資料之雜湊表的檔案。
 
 例如，您可以建立具有下列內容的檔案，並命名為 `MyData.psd1`：
 

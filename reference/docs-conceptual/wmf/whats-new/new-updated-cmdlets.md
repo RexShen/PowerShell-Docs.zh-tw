@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: 新增與更新的 Cmdlet
 ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147588"
 ---
 # <a name="new-and-updated-cmdlets"></a>新增與更新的 Cmdlet
@@ -32,7 +32,7 @@ Microsoft.PowerShell.Security 模組中新增了兩個新的 Cmdlet。
 
 `Get-Clipboard`和 `Set-Clipboard` 讓您能夠更輕鬆地與 Windows PowerShell 工作階段來回傳送內容。 剪貼簿 Cmdlet 支援影像、音訊檔、檔案清單和文字。
 
-如需詳細資訊，請參閱：
+如需詳細資訊，請參閱
 
 - [Get-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Get-Clipboard)
 - [Set-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Set-Clipboard)
@@ -51,7 +51,7 @@ CMS 加密標準會實作公開金錀密碼編譯，其中用於加密內容的�
 - [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-憑證需要唯一的金鑰使用方法識別碼 (EKU) (例如「程式碼簽署」、「加密郵件」)，在 PowerShell 中將它們識別為資料加密憑證。 若要檢視憑證提供者中的文件加密憑證，您可以使用 `Get-ChildItem` 的 **DocumentEncryptionCert** 動態參數︰
+憑證需要唯一的金鑰使用方法識別碼 (EKU) (例如「程式碼簽署」、「加密郵件」)，在 PowerShell 中將它們識別為資料加密憑證。 若要檢視憑證提供者中的文件加密憑證，您可以使用 **的**DocumentEncryptionCert`Get-ChildItem` 動態參數︰
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse

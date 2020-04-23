@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 收集電腦的相關資訊
 ms.openlocfilehash: 9407ff15b3c3ca6b3adab60d4d01d957c599e79e
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737231"
 ---
 # <a name="collecting-information-about-computers"></a>收集電腦的相關資訊
@@ -117,7 +117,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-由於 `Get-CimInstance` 中的 **Property** 參數會限制從 WMI 類別執行個體傳回的屬性，而不是傳回給 PowerShell 的物件，因此會傳回額外的資料。 若要縮減輸出，請使用 `Select-Object`：
+由於 **中的**Property`Get-CimInstance` 參數會限制從 WMI 類別執行個體傳回的屬性，而不是傳回給 PowerShell 的物件，因此會傳回額外的資料。 若要縮減輸出，請使用 `Select-Object`：
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: PowerShell 指令碼偵錯的增強功能
 ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147808"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell 指令碼偵錯的增強功能
@@ -48,7 +48,7 @@ PowerShell ISE 現在可讓您藉由執行 PSEdit 命令，在遠端工作階段
 
 ### <a name="attach-to-process-hosting-powershell"></a>附加至裝載 PowerShell 的處理程序
 
-您現在可以附加至任何已載入 PowerShell 的電腦處理序。 您可以進入與主機處理序的互動式工作階段，來執行此動作。 如需詳細資訊，請參閱：
+您現在可以附加至任何已載入 PowerShell 的電腦處理序。 您可以進入與主機處理序的互動式工作階段，來執行此動作。 如需詳細資訊，請參閱
 
 - [Enter-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Enter-PSHostProcess)
 - [Exit-PSHostProcess](/powershell/module/Microsoft.PowerShell.Core/Exit-PSHostProcess)

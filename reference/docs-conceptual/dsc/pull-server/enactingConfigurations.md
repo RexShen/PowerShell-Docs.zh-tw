@@ -3,10 +3,10 @@ ms.date: 10/16/2017
 keywords: dsc,powershell,設定,安裝
 title: 施行設定
 ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78277881"
 ---
 # <a name="enacting-configurations"></a>施行設定
@@ -24,7 +24,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](/powershell/module/
 建立及編譯設定後，您可以呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet，設定 MOF 所在路徑之 Cmdlet 的 -Path 參數，以 Push 模式施行設定。 例如，如果設定 MOF 位於 `C:\DSC\Configurations\localhost.mof`，您可以使用下列命令將其套用到本機電腦：`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > [!NOTE]
-> DSC 預設會將設定當做背景作業執行。 若要以互動方式執行設定，請搭配 **Wait** 參數呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)。
+> DSC 預設會將設定當做背景作業執行。 若要以互動方式執行設定，請搭配 [Wait](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 參數呼叫 **Start-DscConfiguration**。
 
 ## <a name="pull-mode"></a>Pull 模式
 

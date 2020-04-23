@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用設定識別碼發佈至提取伺服器 (v4/v5)
 ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500753"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>使用設定識別碼發佈至提取伺服器 (v4/v5)
@@ -37,7 +37,7 @@ GenericConfig
 
 ## <a name="renaming-the-mof-file"></a>將 MOF 檔案重新命名
 
-您可以依 **ConfigurationName** 或 **ConfigurationID**，在提取伺服器上儲存設定`.mof` 檔案。 視您計劃設定提取用戶端的方式，您可以選擇下列任一節，適當地將已編譯的 `.mof` 檔案重新命名。
+您可以依 `.mof`ConfigurationName**或**ConfigurationID **，在提取伺服器上儲存設定** 檔案。 視您計劃設定提取用戶端的方式，您可以選擇下列任一節，適當地將已編譯的 `.mof` 檔案重新命名。
 
 ### <a name="configuration-ids-guid"></a>設定識別碼 (GUID)
 
@@ -76,7 +76,7 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 儲存於提取伺服器或 SMB 共用上的每個 `.mof` 檔案都需要有相關聯的 `.checksum` 檔案。
 此檔案可讓用戶端知道相關聯的 `.mof` 檔案何時已變更且應再次下載。
 
-您可以使用 [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) Cmdlet 來建立**總和檢查碼**。 您也可以使用 `-Path` 參數，針對檔案的目錄執行 `New-DSCCheckSum`。
+您可以使用 **New-DSCCheckSum** Cmdlet 來建立[總和檢查碼](/powershell/module/psdesiredstateconfiguration/new-dscchecksum)。 您也可以使用 `New-DSCCheckSum` 參數，針對檔案的目錄執行 `-Path`。
 如果總和檢查碼已經存在，您可以使用 `-Force` 參數強制重新建立它。 下列範例會指定包含上一節 `.mof` 檔案的目錄，並使用 `-Force` 參數。
 
 ```powershell

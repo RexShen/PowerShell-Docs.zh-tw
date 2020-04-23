@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 工作階段設定
 ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017729"
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
@@ -213,7 +213,7 @@ Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 
 若要變更 JEA 工作階段設定的屬性，包括將使用者對應至角色，您必須[取消登錄](register-jea.md#unregistering-jea-configurations)。 然後，使用更新的工作階段設定檔，[重新登錄](register-jea.md) JEA 工作階段設定。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 - [登錄 JEA 設定](register-jea.md)
 - [編寫 JEA 角色](role-capabilities.md)

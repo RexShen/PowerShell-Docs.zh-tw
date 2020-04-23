@@ -4,15 +4,15 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.1 的 Bug 修正
 ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147848"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正
 
-## <a name="bug-fixes"></a>Bug 修正
+## <a name="bug-fixes"></a>錯誤修正
 
 WMF 5.1 已修正下列重大 Bug︰
 

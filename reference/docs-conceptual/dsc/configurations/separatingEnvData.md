@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 分離設定和環境資料
 ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954435"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
@@ -82,7 +82,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` 指定兩個不同的節點，各有其專屬的 `NodeName` 和 `Role`。 此設定會從 `$MyData` 取得節點集合 (亦即 `$AllNodes`)，然後針對 `Role` 屬性篩選該集合，藉此以動態方式建立 **Node** 區塊。
+`$MyData` 指定兩個不同的節點，各有其專屬的 `NodeName` 和 `Role`。 此設定會從 **取得節點集合 (亦即**)，然後針對 `$MyData` 屬性篩選該集合，藉此以動態方式建立 `$AllNodes`Node`Role` 區塊。
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>使用設定資料定義開發和生產環境
 
@@ -129,13 +129,13 @@ Mode                LastWriteTime         Length Name
 
 ### <a name="configuration-script-file"></a>設定指令檔
 
-現在，在定義於 `.ps1` 檔案的設定中，我們會依其角色 (`MSSQL`、`Dev` 或兩者) 來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此加以設定。
+現在，在定義於 `.ps1` 檔案的設定中，我們會依其角色 (`DevProdEnvData.psd1`、`MSSQL` 或兩者) 來篩選 `Dev` 中所定義的節點，並據此加以設定。
 開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。
 網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
 
 在設定指令碼結尾處，我們會呼叫設定 (將其編譯為 MOF 文件)，並傳遞 `DevProdEnvData.psd1` 作為 `$ConfigurationData` 參數。
 
->**注意：** 這項設定要求在目標節點上安裝模組 `xSqlPs` 和 `xWebAdministration`。
+>**注意︰** 這項設定要求在目標節點上安裝模組 `xSqlPs` 和 `xWebAdministration`。
 
 讓我們在名為 `MyWebApp.ps1` 的檔案中定義設定：
 

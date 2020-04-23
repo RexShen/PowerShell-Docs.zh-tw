@@ -3,10 +3,10 @@ ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
 ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402405"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
@@ -79,14 +79,14 @@ StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```
 
-## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>我的指令碼將不會執行：請使用 DSC 記錄診斷指令碼錯誤
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>我的指令碼不執行：使用 DSC 記錄診斷指令碼錯誤
 
 像所有的 Windows 軟體一樣，DSC 會在[記錄檔](/windows/desktop/EventLog/about-event-logging)中記錄錯誤和事件，[[事件檢視器]](https://support.microsoft.com/hub/4338813/windows-help) 可檢視這些記錄。
 檢查這些記錄檔可以幫助您了解特定作業失敗的原因，以及如何避免失敗再度發生。 撰寫設定指令碼可能很困難，因此為方便您在撰寫時追蹤錯誤，請使用 DSC 記錄資源在 DSC 分析事件記錄檔中追蹤設定進度。
 
 ## <a name="where-are-dsc-event-logs"></a>DSC 事件記錄檔在哪裡？
 
-在事件檢視器中，DSC 事件位於：**Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
+在 [事件檢視器] 中，DSC 事件位於：**Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
 您也可以執行對應的 PowerShell Cmdlet，[Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)，來檢視事件記錄檔：
 
@@ -100,7 +100,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-如上所示，DSC 的主要記錄檔名稱是 **Microsoft->Windows->DSC** (為畫面簡潔起見，這裡不顯示 Windows 下的其他記錄檔名稱)。 主要名稱會附加在通道名稱後面，以建立完整的記錄檔名稱。 DSC 引擎主要會寫入三種類型的記錄：[Operational、Analytic 及 Debug 記錄](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))。 因為分析和偵錯記錄檔預設是關閉的，您應該在 [事件檢視器] 中啟用它們。 啟用方法是在 Windows PowerShell 中輸入 Show-EventLog；或依序按一下 **[開始]** 按鈕、 **[控制台]** 、 **[系統管理工具]** 和 **[事件檢視器]** 。
+如上所示，DSC 的主要記錄檔名稱是 **Microsoft->Windows->DSC** (為畫面簡潔起見，這裡不顯示 Windows 下的其他記錄檔名稱)。 主要名稱會附加在通道名稱後面，以建立完整的記錄檔名稱。 DSC 引擎主要會寫入三種記錄檔：[操作、分析和偵錯記錄檔](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))。 因為分析和偵錯記錄檔預設是關閉的，您應該在 [事件檢視器] 中啟用它們。 啟用方法是在 Windows PowerShell 中輸入 Show-EventLog；或依序按一下 **[開始]** 按鈕、 **[控制台]** 、 **[系統管理工具]** 和 **[事件檢視器]** 。
 在 [事件檢視器] 的 **[檢視]** 功能表中，按一下 **[顯示分析與偵錯記錄檔]** 。 分析通道的記錄檔名稱是 **Microsoft-Windows-Dsc/Analytic**，偵錯通道則是 **Microsoft-Windows-Dsc/Debug**。 您也可以使用 [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) 公用程式來啟用記錄檔，如下例所示。
 
 ```powershell
@@ -192,7 +192,7 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
 ```
 
-您可以使用 [Where-Object](/powershell/module/microsoft.powershell.core/where-object) 擷取變數 `$SeparateDscOperations` 中的資料。 下面有五個案例，您要擷取其資料以疑難排解 DSC：
+您可以使用 `$SeparateDscOperations`Where-Object[ 擷取變數 ](/powershell/module/microsoft.powershell.core/where-object) 中的資料。 下面有五個案例，您要擷取其資料以疑難排解 DSC：
 
 ### <a name="1-operations-failures"></a>1：作業失敗
 
@@ -206,7 +206,7 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2：過去半小時內所執行作業的詳細資料
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2：過去半小時內執行的作業詳細資料
 
 `TimeCreated` 是每個 Windows 事件都有的屬性，指出事件的建立時間。 比較這個屬性和特定的日期/時間物件，可用以篩選所有事件：
 
@@ -242,7 +242,7 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed.
 ```
 
-### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4：近期失敗作業的錯誤訊息記錄
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a>4：近期的作業失敗錯誤訊息記錄
 
 `$SeparateDscOperations[0].Group` 包含最新作業的事件集。 執行 `Where-Object` Cmdlet 會根據層級顯示名稱篩選事件。 結果儲存在 `$myFailedEvent` 變數中，可進一步解析以取得事件訊息：
 
@@ -258,7 +258,7 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1
 ```
 
-### <a name="5-all-events-generated-for-a-particular-job-id"></a>5：針對特定作業識別碼產生的所有事件。
+### <a name="5-all-events-generated-for-a-particular-job-id"></a>5：針對特定工作識別碼產生的所有事件。
 
 `$SeparateDscOperations` 是群組陣列，每一個都有和唯一工作識別碼相同的名稱。 執行 `Where-Object` Cmdlet 就可以擷取這些有特定工作識別碼的事件群組：
 
@@ -416,7 +416,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="getting-events-for-a-remote-computer"></a>取得遠端電腦的事件
 
-使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
+使用 `ComputerName` Cmdlet 的 `Trace-xDscOperation` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
@@ -461,7 +461,7 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>我的資源不會更新：如何重設快取
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a>我的資源不更新：如何重設快取
 
 基於效率考量，DSC 引擎會快取實作為 PowerShell 模組的資源。
 不過，這可能會在撰寫並同時測試資源時造成問題，因為在程序重新啟動前，DSC 會載入快取的版本。 讓 DSC 載入較新版本的唯一方法，是明確結束主控 DSC 引擎的程序。

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理 Windows PowerShell 磁碟機
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70215519"
 ---
 # <a name="managing-windows-powershell-drives"></a>管理 Windows PowerShell 磁碟機
@@ -149,7 +149,7 @@ New-PsDrive Cmdlet 會將新磁碟機只新增到目前的 Windows PowerShell �
 
 您可以使用 **Remove-PSDrive** Cmdlet 從 Windows PowerShell 刪除磁碟機。 **Remove-PSDrive** Cmdlet 使用方式很簡單；若要刪除特定 Windows PowerShell 磁碟機，您只需要提供 Windows PowerShell 磁碟機名稱即可。
 
-例如：如果您新增了 **Office:** Windows PowerShell 磁碟機 (如 **New-PSDrive** 主題所示)，您可以鍵入下列命令予以刪除：
+例如，若已新增 **Office:** Windows PowerShell 磁碟機 (如 **New-PSDrive** 主題所示)，您可以輸入下列命令將它刪除：
 
 ```powershell
 Remove-PSDrive -Name Office

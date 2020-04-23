@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 在 PowerShell 4.0 中設定 LCM
 ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953825"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>在 PowerShell 4.0 中設定 LCM
@@ -26,7 +26,7 @@ ms.locfileid: "71953825"
 - **AllowModuleOverwrite**：控制是否允許以從設定服務下載的新設定來覆寫目標節點上的舊設定。 可能的值為 True 和 False。
 - **CertificateID**：憑證指紋，用來保護在設定中傳遞的憑證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/)。
 - **ConfigurationID**：表示用來從提取服務取得特定設定檔的 GUID。 此 GUID 可確保存取正確的設定檔。
-- **ConfigurationMode**：指定本機設定管理員實際上如何將設定套用至目標節點。 它可以接受下列值：
+- **ConfigurationMode**：指定本機設定管理員實際上如何將設定套用至目標節點。 它可以採用下列值：
   - **ApplyOnly**：若設定此選項，DSC 會套用設定，並且不會執行任何進一步的動作，除非它透過下列兩種方式偵測到新的設定：您直接將新設定傳送至目標節點，或是您連線至提取服務且 DSC 於檢查提取服務時發現新設定。 如果目標節點的設定偏離，就不採取任何動作。
   - **ApplyAndMonitor**：若設定此選項 (此為預設值)，DSC 會套用任何新設定，無論新設定是由您直接傳送至目標節點，或是在提取服務上發現。 之後，如果目標節點的設定偏離設定檔，DSC 就會報告記錄檔中的差異。 如需 DSC 記錄的資訊，請參閱 [Using Event Logs to Diagnose Errors in Desired State Configuration (在預期狀態設定中使用事件記錄檔診斷錯誤)](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx)。
   - **ApplyAndAutoCorrect**：若設定此選項，DSC 會套用任何新設定，無論新設定是由您直接傳送至目標節點，或是在提取服務上發現。 之後，如果目標節點的設定偏離設定檔，DSC 就會報告記錄檔中的差異，然後嘗試調整目標節點設定，以符合設定檔。
@@ -34,8 +34,8 @@ ms.locfileid: "71953825"
 - **Credential**：表示存取遠端資源所需的認證 (如同 Get-Credential)，例如連絡設定服務。
 - **DownloadManagerCustomData**：代表陣列，其中包含下載管理員特定的自訂資料。
 - **DownloadManagerName**：指出設定和模組下載管理員的名稱。
-- **RebootNodeIfNeeded**：將此設為 `$true`，以允許資源使用 `$global:DSCMachineStatus` 旗標來重新啟動節點。 否則，您將必須手動重新啟動任何設定所需的節點。 預設值為 `$false`。 若要在重新啟動條件是由 DSC 以外的項目 (例如 Windows Installer) 所制定的情況下使用此設定，請將此設定與 [xPendingReboot](https://github.com/powershell/xpendingreboot) \(英文\) 模組結合。
-- **RefreshFrequencyMins**：於您設定提取服務時使用。 代表的本機設定管理員連絡提取服務來下載目前設定的頻率 (以分鐘為單位)。 這個值可以搭配 ConfigurationModeFrequencyMins 設定。 當 RefreshMode 設定為 PULL 時，目標節點會以由 RefreshFrequencyMins 所設定的間隔連絡提取服務，並下載目前的設定。 在 ConfigurationModeFrequencyMins 所設定的間隔中，一致性引擎接著會套用已下載至目標節點的最新設定。 如果 RefreshFrequencyMins 未設定為 ConfigurationModeFrequencyMins 的整數倍數，則系統會無條件進位。 預設值為 30。
+- **RebootNodeIfNeeded**：將此設為 `$true`，以允許資源使用 `$global:DSCMachineStatus` 旗標來重新啟動節點。 否則，您將必須手動重新啟動任何設定所需的節點。 預設值是 `$false`。 若要在重新啟動條件是由 DSC 以外的項目 (例如 Windows Installer) 所制定的情況下使用此設定，請將此設定與 [xPendingReboot](https://github.com/powershell/xpendingreboot) \(英文\) 模組結合。
+- **RefreshFrequencyMins**：於您設定提取服務時使用。 代表的本機設定管理員連絡提取服務來下載目前設定的頻率 (以分鐘為單位)。 這個值可以搭配 ConfigurationModeFrequencyMins 設定。 當 RefreshMode 設定為 PULL 時，目標節點會以由 RefreshFrequencyMins 所設定的間隔連絡提取服務，並下載目前的設定。 在 ConfigurationModeFrequencyMins 所設定的間隔中，一致性引擎接著會套用已下載至目標節點的最新設定。 如果 RefreshFrequencyMins 未設定為 ConfigurationModeFrequencyMins 的整數倍數，則系統會無條件進位。 預設值是 30。
 - **RefreshMode**：可能的值為 **Push** (預設值) 和 **Pull**。 在 [推送] 設定中，您必須使用任何用戶端電腦，在每個目標節點上放置設定檔。 在 [提取] 模式中，您必須設定提取服務，本機設定管理員才能連絡及存取設定檔。
 
 > [!NOTE]

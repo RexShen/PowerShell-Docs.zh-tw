@@ -3,10 +3,10 @@ ms.date: 08/27/2018
 keywords: powershell,cmdlet
 title: 使用熟悉的命令名稱
 ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030888"
 ---
 # <a name="using-familiar-command-names"></a>使用熟悉的命令名稱
@@ -22,12 +22,12 @@ PowerShell 支援別名，以使用替代名稱來參考命令。 別名讓具�
 |||||
 |-|-|-|-|
 |cat|dir|mount|rm|
-|cd|echo|move|rmdir|
+|CD|回應|移動|rmdir|
 |chdir|erase|popd|sleep|
 |clear|h|ps|sort|
 |cls|history|pushd|tee|
 |copy|kill|pwd|type|
-|del|lp|r|write|
+|del|lp|r|寫入|
 |diff|ls|ren||
 
 `Get-Alias` Cmdlet 會顯示與別名相關聯之原生 PowerShell 命令的實際名稱。

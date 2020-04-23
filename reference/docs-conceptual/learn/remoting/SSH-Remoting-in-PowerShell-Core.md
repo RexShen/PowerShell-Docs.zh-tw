@@ -3,10 +3,10 @@ title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 09/30/2019
 ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444366"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
@@ -53,7 +53,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    > [!NOTE]
    > 如果您想要將 PowerShell 設定為 OpenSSH 的預設殼層，請參閱[為 OpenSSH 設定 Windows](/windows-server/administration/openssh/openssh_server_configuration)。
 
-1. 編輯位於 `$env:ProgramData\ssh` 的 `sshd_config` 檔案。
+1. 編輯位於 `sshd_config` 的 `$env:ProgramData\ssh` 檔案。
 
    確定已啟用密碼驗證：
 
@@ -97,7 +97,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    Restart-Service sshd
    ```
 
-1. 將 OpenSSH 安裝所在的路徑新增至 Path 環境變數。 例如，`C:\Program Files\OpenSSH\`。 此項目可允許程式找到 `ssh.exe`。
+1. 將 OpenSSH 安裝所在的路徑新增至 Path 環境變數。 例如： `C:\Program Files\OpenSSH\` 。 此項目可允許程式找到 `ssh.exe`。
 
 ## <a name="set-up-on-an-ubuntu-1604-linux-computer"></a>在 Ubuntu 16.04 Linux 電腦上設定
 
@@ -109,7 +109,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    sudo apt install openssh-server
    ```
 
-1. 編輯 `/etc/ssh` 位置中的 `sshd_config` 檔案。
+1. 編輯 `sshd_config` 位置中的 `/etc/ssh` 檔案。
 
    確定已啟用密碼驗證：
 
@@ -146,7 +146,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    1. 選取 `Remote Login` 以設定 `Remote Login: On`。
    1. 允許適當的使用者存取。
 
-1. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案。
+1. 編輯 `sshd_config` 位置中的 `/private/etc/ssh/sshd_config` 檔案。
 
    開啟文字編輯器，例如 **nano**：
 

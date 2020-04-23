@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 從清單方塊選取項目
 ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706167"
 ---
 # <a name="selecting-items-from-a-list-box"></a>從清單方塊選取項目
@@ -179,5 +179,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另請參閱
 
-- [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) \(英文\)
-- [本週 Windows PowerShell 祕訣︰從清單方塊選取項目](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10)) \(英文\)
+- [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
+- [本週 Windows PowerShell 秘訣︰從清單方塊選取項目](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

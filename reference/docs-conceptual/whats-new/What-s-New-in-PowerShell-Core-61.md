@@ -3,10 +3,10 @@ title: PowerShell Core 6.1 的新功能
 description: PowerShell Core 6.1 中發行的新功能與變更
 ms.date: 09/13/2018
 ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78277713"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 的新功能
@@ -92,7 +92,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 在 Windows 10 1809 更新和 Windows Server 2019 中，我們更新了一些內建 PowerShell 模組，使其與 PowerShell Core 相容。
 
-當 PowerShell Core 6.1 啟動時，它會自動包含 `$windir\System32` 作為 `PSModulePath` 環境變數的一部分。 不過，如果其 `CompatiblePSEdition` 標示為與 `Core` 相容，則只會對 `Get-Module` 和 `Import-Module` 公開模組。
+當 PowerShell Core 6.1 啟動時，它會自動包含 `$windir\System32` 作為 `PSModulePath` 環境變數的一部分。 不過，如果其 `Get-Module` 標示為與 `Import-Module` 相容，則只會對 `CompatiblePSEdition` 和 `Core` 公開模組。
 
 
 ```powershell
@@ -198,7 +198,7 @@ Markdown 是用於建立可讀取純文字文件的一項標準，這些文件�
 
 [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 是 PowerShell 和 Hyper-V 的功能，可讓您連線到 Hyper-V VM 或容器，而不需要網路連線或其他遠端管理服務。
 
-在過去，PowerShell Direct 是使用容器上的內建 Windows PowerShell 執行個體進行連線。 現在，PowerShell 會先嘗試使用 `PATH` 環境變數上的任何可用 `pwsh.exe` 進行連線。 如果沒有 `pwsh.exe`，PowerShell Direct 會改為使用 `powershell.exe`。
+在過去，PowerShell Direct 是使用容器上的內建 Windows PowerShell 執行個體進行連線。 現在，PowerShell 會先嘗試使用 `pwsh.exe` 環境變數上的任何可用 `PATH` 進行連線。 如果沒有 `pwsh.exe`，PowerShell Direct 會改為使用 `powershell.exe`。
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` 現在會為預覽版本建立個別遠端端點
 
@@ -398,7 +398,7 @@ Property          : CPU
 
 ### `GetPfxCertificate -Password`
 
-感謝 [@maybe-hello-world](https://github.com/maybe-hello-world)，`Get-PfxCertificate` 現在包含接受 `SecureString` 的 `Password` 參數。 這可讓您以非互動方式使用它：
+感謝 [@maybe-hello-world](https://github.com/maybe-hello-world)，`Get-PfxCertificate` 現在包含接受 `Password` 的 `SecureString` 參數。 這可讓您以非互動方式使用它：
 
 ```powershell
 $certFile = '\\server\share\pwd-protected.pfx'
@@ -409,7 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>移除 `more` 函式
 
-在過去，PowerShell 在 Windows 上提供用來包裝 `more.com` 的函式，稱為 `more`。 該函式現在已移除。
+在過去，PowerShell 在 Windows 上提供用來包裝 `more` 的函式，稱為 `more.com`。 該函式現在已移除。
 
 此外，`help` 函式已變更為使用 `more.com` (在 Windows 上) 或 `$env:PAGER` 所指定系統的預設頁面巡覽區 (非 Windows 平台上)。
 
@@ -468,9 +468,9 @@ Name                                Methods              Properties
 Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
 ```
 
-### <a name="-lp-alias-for-all--literalpath-parameters"></a>用於所有 `-LiteralPath` 參數的 `-lp` 別名
+### <a name="-lp-alias-for-all--literalpath-parameters"></a>用於所有 `-lp` 參數的 `-LiteralPath` 別名
 
-感謝 [@kvprasoon](https://github.com/kvprasoon)，具有 `-LiteralPath` 參數的所有內建 PowerShell Cmdlet 現在有一個參數別名 `-lp`。
+感謝 [@kvprasoon](https://github.com/kvprasoon)，具有 `-lp` 參數的所有內建 PowerShell Cmdlet 現在有一個參數別名 `-LiteralPath`。
 
 ## <a name="breaking-changes"></a>重大變更
 

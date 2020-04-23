@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用登錄項目
 ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030726"
 ---
 # <a name="working-with-registry-entries"></a>使用登錄項目
@@ -85,11 +85,11 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-路徑擴充的作用與在檔案系統中一致，因此從這個位置，您可以使用 `Get-ItemProperty -Path ..\Help` 取得 `HKLM:\SOFTWARE\Microsoft\Windows\Help` 的 **ItemProperty** 清單。
+路徑擴充的作用與在檔案系統中一致，因此從這個位置，您可以使用 **取得** 的 `HKLM:\SOFTWARE\Microsoft\Windows\Help`ItemProperty`Get-ItemProperty -Path ..\Help` 清單。
 
 ## <a name="getting-a-single-registry-entry"></a>取得單一登錄項目
 
-若要抓取登錄機碼中的特定項目，您可以使用數種可行方法之一。 此範例會在 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` 中尋找 **DevicePath** 的值。
+若要抓取登錄機碼中的特定項目，您可以使用數種可行方法之一。 此範例會在 **中尋找**DevicePath`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` 的值。
 
 使用 `Get-ItemProperty` 時，請使用 **Path** 參數來指定機碼的名稱，並使用 **Name** 參數來指定 **DevicePath** 項目的名稱。
 
@@ -138,9 +138,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 
 ## <a name="setting-a-single-registry-entry"></a>設定單一登錄項目
 
-若要變更登錄機碼中的特定項目，您可以使用數種可行方法之一。 此範例會修改 `HKEY_CURRENT_USER\Environment` 下的 **Path** 項目。 **Path** 項目指定何處可找到可執行檔。
+若要變更登錄機碼中的特定項目，您可以使用數種可行方法之一。 此範例會修改 **下的**Path`HKEY_CURRENT_USER\Environment` 項目。 **Path** 項目指定何處可找到可執行檔。
 
-1. 使用 `Get-ItemProperty` 擷取 **Path** 項目目前的值。
+1. 使用 **擷取**Path`Get-ItemProperty` 項目目前的值。
 2. 加入新的值，並使用 `;` 來分隔。
 3. 使用 `Set-ItemProperty` 搭配指定的機碼、項目名稱與值來修改登錄項目。
 

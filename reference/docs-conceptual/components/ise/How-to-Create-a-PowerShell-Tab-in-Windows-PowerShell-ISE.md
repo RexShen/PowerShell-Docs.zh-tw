@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤
 ms.openlocfilehash: 39df0b76c337bb7c02d36d66b325c5396afbbe00
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736261"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤

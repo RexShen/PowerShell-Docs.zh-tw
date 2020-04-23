@@ -3,10 +3,10 @@ ms.date: 12/19/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的協助工具
 ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500955"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
@@ -46,11 +46,11 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 
 執行下列其中一個動作：
 
-- 若要將指令碼窗格移動到主控台窗格上方，請按 <kbd>CTRL</kbd>+<kbd>1</kbd>，或者按一下工具列的靠上的**顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠上顯示指令碼窗格]。
+- 若要將指令碼窗格移動到主控台窗格上方，請按 <kbd>CTRL</kbd>+<kbd>1</kbd>，或者按一下工具列的靠上的**顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠上顯示指令碼窗格]  。
 
-- 若要將指令碼窗格移動到主控台窗格右方，請按 <kbd>CTRL</kbd>+<kbd>2</kbd>，或者按一下工具列的**靠右顯示指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [靠右顯示指令碼窗格]。
+- 若要將指令碼窗格移動到主控台窗格右方，請按 <kbd>CTRL</kbd>+<kbd>2</kbd>，或者按一下工具列的**靠右顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠右顯示指令碼窗格]  。
 
-- 若要將指令碼窗格最大化，請按<kbd>CTRL</kbd>+<kbd>3</kbd>，或者按一下工具列的**顯示最大化的指令碼窗格**圖示，或在 [檢視] 功能表中，按一下 [顯示最大化的指令碼窗格]。
+- 若要將指令碼窗格最大化，請按<kbd>CTRL</kbd>+<kbd>3</kbd>，或者按一下工具列的**顯示最大化的指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [顯示最大化的指令碼窗格]  。
 
 - 若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下**隱藏指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
 

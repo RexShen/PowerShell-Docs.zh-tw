@@ -3,13 +3,13 @@ ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 必要條件
 ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416722"
 ---
-# <a name="prerequisites"></a>必要條件
+# <a name="prerequisites"></a>Prerequisites
 
 Just Enough Administration 是 PowerShell 5.0 和更高版本隨附的功能。 本文描述必須滿足才能開始使用 JEA 的必要條件。
 
@@ -83,7 +83,7 @@ Enable-PSRemoting
 您可以使用群組原則設定 PowerShell 模組記錄原則。
 
 1. 在工作站上開啟本機群組原則編輯器，或在 Active Directory 網域控制站上的群組原則管理主控台上開啟群組原則物件
-2. 瀏覽至 [電腦設定]\\[系統管理範本]\\[Windows 元件]\\[Windows PowerShell] 
+2. 瀏覽至 [電腦設定] **[系統管理範本]\\[Windows 元件]\\[Windows PowerShell]\\**
 3. 按兩下 [開啟模組記錄] 
 4. 按一下 [啟用] 
 5. 在 [選項] 區段中，按一下模組名稱旁邊的 [顯示] 
@@ -96,7 +96,7 @@ Enable-PSRemoting
 
 您也可以透過 [群組原則] 啟用全系統 PowerShell 文字記錄。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 [建立角色功能檔案](role-capabilities.md)
 

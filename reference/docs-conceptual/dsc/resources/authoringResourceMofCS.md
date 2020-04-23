@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 C# 撰寫 DSC 資源
 ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417689"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>用 C\# 撰寫 DSC 資源
@@ -40,7 +40,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. 開啟 Visual Studio。
 1. 建立 C# 專案並提供名稱。
 1. 從可用的專案範本中選取 **[類別庫]** 。
-1. 按一下 **[確定]** 。
+1. 按一下 [確定]  。
 1. 在專案中加入 System.Automation.Management.dll 的組件參考。
 1. 變更組件名稱使符合資源名稱。 如此，組件應命名為 **MSFT_XDemoFile**。
 

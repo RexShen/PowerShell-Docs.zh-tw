@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 登錄資源
 ms.openlocfilehash: be2f9134368784ad2d208362104ce046c49492e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953075"
 ---
 # <a name="dsc-registry-resource"></a>DSC 登錄資源
@@ -32,14 +32,14 @@ Registry [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
-|按鍵 |指出您要確保其特定狀態的登錄機碼路徑。 此路徑必須包含登錄區。 |
+|Key |指出您要確保其特定狀態的登錄機碼路徑。 此路徑必須包含登錄區。 |
 |ValueName |指出登錄值的名稱。 若要新增或移除登錄機碼，請將此屬性指定為空字串，且不指定 **ValueType** 或 **ValueData**。 若要修改或移除登錄機碼的預設值，請將此屬性指定為空字串，同時也指定 **ValueType** 或 **ValueData**。 |
 |Force |如果指定的登錄機碼存在，**Force** 會以新值覆寫登錄機碼。 如果要刪除含有子機碼的登錄機碼，這必須是 `$true`。 |
-|Hex |指出資料是否以十六進位格式表示。 如果指定為 Hex，則 DWORD/QWORD 值資料會以十六進位格式顯示。 不適用於其他類型。 預設值為 `$false`。 |
+|Hex |指出資料是否以十六進位格式表示。 如果指定為 Hex，則 DWORD/QWORD 值資料會以十六進位格式顯示。 不適用於其他類型。 預設值是 `$false`。 |
 |ValueData |登錄值的資料。 |
 |ValueType |指出值的類型。 支援的類型包括：**String** (REG_SZ)、**Binary** (REG-BINARY)、**Dword** (32 位元 REG_DWORD)、**Qword** (64 位元 REG_QWORD)、**MultiString** (REG_MULTI_SZ)、**ExpandString** (REG_EXPAND_SZ)。 |
 

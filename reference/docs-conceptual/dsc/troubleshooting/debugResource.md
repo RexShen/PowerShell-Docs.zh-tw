@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 偵錯 DSC 資源
 ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954255"
 ---
 # <a name="debugging-dsc-resources"></a>偵錯 DSC 資源
@@ -105,7 +105,7 @@ Debug-Runspace -Id 9
 
 呼叫 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) 後，所有對 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 的呼叫將會導致設定中斷並進入偵錯工具。 若要使設定正常執行，您必須透過呼叫 [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) Cmdlet 來停用偵錯。
 
->**注意：** 重新開機不會變更 LCM 的偵錯狀態。 若啟用偵錯，則重新開機後啟動設定時仍然會中斷並進入偵錯工具。
+>**注意︰** 重新開機不會變更 LCM 的偵錯狀態。 若啟用偵錯，則重新開機後啟動設定時仍然會中斷並進入偵錯工具。
 
 ## <a name="see-also"></a>另請參閱
 

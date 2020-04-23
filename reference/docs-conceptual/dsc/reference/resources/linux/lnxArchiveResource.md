@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxArchive 資源
 ms.openlocfilehash: 77b52ad68344ba791501baeb585a5001cc97a126
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953325"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>DSC for Linux nxArchive 資源
@@ -27,14 +27,14 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
 |SourcePath |指定封存檔案的來源路徑。 這應該是 .tar、.zip 或 .tar.gz 檔案。 |
 |DestinationPath |指定您想要確保的封存內容解壓縮位置。 |
 |總和檢查碼 |定義判斷是否已更新來源封存檔時所使用的類型。 值為：**ctime**、**mtime** 或 **md5**。 預設值為 **md5**。 |
-|Force |某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 `$false`。 |
+|Force |某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值是 `$false`。 |
 
 ## <a name="common-properties"></a>通用屬性
 

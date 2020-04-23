@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc, powershell, 資源, 資源庫, 安裝, 設定
 title: 安裝額外的 DSC 資源
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417788"
 ---
 # <a name="install-additional-dsc-resources"></a>安裝額外的 DSC 資源
@@ -20,16 +20,16 @@ PowerShell 包含幾個適用於 Desired State Configuration (DSC) 的立即可�
 
 |資源  |描述  |
 |---------|---------|
-|**File**|控制檔案和目錄的狀態。 在**來源**變更時將檔案從**來源**複製到**目的地**，並藉由比較日期、總和檢查碼和雜湊更新檔案。|
-|**Archive**|將封存和指定位置解除封裝。 驗證封存具有指定的**總和檢查碼**。|
-|**Environment**|管理環境變數。|
+|**檔案**|控制檔案和目錄的狀態。 在**來源**變更時將檔案從**來源**複製到**目的地**，並藉由比較日期、總和檢查碼和雜湊更新檔案。|
+|**封存**|將封存和指定位置解除封裝。 驗證封存具有指定的**總和檢查碼**。|
+|**環境**|管理環境變數。|
 |**群組**|管理本機群組並控制群組成員資格。|
 |**Log**|將訊息寫入至 `Microsoft-Windows-Desired State Configuration/Analytic` 事件記錄檔。|
 |**套件**|使用**引數**、**LogPath**、**ReturnCode** 和其他設定安裝套件或解除安裝套件。|
-|**Registry**|管理登錄機碼和值。|
-|**Script**|可讓您設計自己的[取得-測試-設定](../resources/get-test-set.md)指令碼區塊。|
-|**Service**|設定 Windows 服務。|
-|**User** |管理本機使用者和屬性。|
+|**登錄**|管理登錄機碼和值。|
+|**指令碼**|可讓您設計自己的[取得-測試-設定](../resources/get-test-set.md)指令碼區塊。|
+|**服務**|設定 Windows 服務。|
+|**使用者** |管理本機使用者和屬性。|
 |**WindowsFeature**|管理角色和功能。|
 |**WindowsProcess**|設定 Windows 處理序。|
 

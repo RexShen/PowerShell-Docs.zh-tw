@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxSshAuthorizedKeys 資源
 ms.openlocfilehash: 6e008efcbff2e679650d0bc3d5b8b573f6ef83e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953255"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC for Linux nxSshAuthorizedKeys 資源
@@ -26,13 +26,13 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
 |KeyComment |金鑰的唯一註解。 這用來唯一識別金鑰。 |
-|Username |要為其管理 SSH 授權金鑰的使用者名稱。 如果未定義，則預設使用者為 **root**。 |
-|按鍵 |金鑰的內容。 如果 **Ensure** 設定為 **Present**，則此項目為必要。|
+|使用者名稱 |要為其管理 SSH 授權金鑰的使用者名稱。 如果未定義，則預設使用者為 **root**。 |
+|Key |金鑰的內容。 如果 **Ensure** 設定為 **Present**，則此項目為必要。|
 
 ## <a name="common-properties"></a>通用屬性
 

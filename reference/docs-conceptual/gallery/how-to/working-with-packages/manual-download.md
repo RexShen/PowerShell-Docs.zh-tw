@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: gallery,powershell,psgallery,資源庫
 title: 手動下載套件
 ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278698"
 ---
 # <a name="manual-package-download"></a>手動下載套件
@@ -26,7 +26,7 @@ Powershell 資源庫支援直接從網站下載套件，而不需要使用 Power
 
 若要手動下載，請按一下 [Download the raw nupkg file] \(下載原始 nupkg 檔案\)  。 這會將套件複本複製到您瀏覽器中的下載資料夾 (名為 `<name>.<version>.nupkg`)。
 
-NuGet 套件是 ZIP 封存以及含有套件內容相關資訊的額外檔案。 某些瀏覽器 (例如 Internet Explorer) 會自動以 `.zip` 取代 `.nupkg` 副檔名。 若要展開套件，請視需要將 `.nupkg` 檔案重新命名為 `.zip`，然後將內容解壓縮至本機資料夾。
+NuGet 套件是 ZIP 封存以及含有套件內容相關資訊的額外檔案。 某些瀏覽器 (例如 Internet Explorer) 會自動以 `.nupkg` 取代 `.zip` 副檔名。 若要展開套件，請視需要將 `.nupkg` 檔案重新命名為 `.zip`，然後將內容解壓縮至本機資料夾。
 
 NuGet 套件檔案包含不屬於原始封裝程式碼的下列 **NuGet 特定元素**：
 

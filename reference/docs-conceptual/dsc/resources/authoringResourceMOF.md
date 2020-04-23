@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
 ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952895"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
@@ -129,7 +129,7 @@ function Get-TargetResource
 * 更新現有的網站
 * 刪除現有的網站
 
-說明如下例。
+下列範例將說明這點。
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine.

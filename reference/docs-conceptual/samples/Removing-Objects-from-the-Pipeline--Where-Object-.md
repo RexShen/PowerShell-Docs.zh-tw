@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 從管線中移除物件 Where Object
 ms.openlocfilehash: 370e7745341b70c0794352a690d5750d21f53ac2
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737180"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
@@ -107,7 +107,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-上述命令中有兩個 `Where-Object` 元素，但可使用 `-and` 邏輯運算子以單一 `Where-Object` 元素來表示它們，就像這樣︰
+上述命令中有兩個 `Where-Object` 元素，但可使用 `Where-Object` 邏輯運算子以單一 `-and` 元素來表示它們，就像這樣︰
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

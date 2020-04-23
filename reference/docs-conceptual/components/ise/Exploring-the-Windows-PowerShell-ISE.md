@@ -3,10 +3,10 @@ ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: 探索 Windows PowerShell ISE
 ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737095"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探索 Windows PowerShell ISE
@@ -18,7 +18,7 @@ ms.locfileid: "75737095"
 
 ## <a name="menu-bar"></a>功能表列
 
-功能表列包含 [檔案]  、[編輯]  、[檢視]  、[工具]  、[偵錯]  、[附加元件]  和 [說明]  功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](object-model/The-ISE-Object-Model-Hierarchy.md)的指令碼，將[附加元件工具](object-model/The-ISEAddOnTool-Object.md)放在功能表列上。
+功能表列包含 [檔案]  、[編輯]  、[檢視]  、[工具]  、[偵錯]  、[附加元件]  和 [說明]  功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](object-model/The-ISEAddOnTool-Object.md)的指令碼，將[附加元件工具](object-model/The-ISE-Object-Model-Hierarchy.md)放在功能表列上。
 
 > [!NOTE]
 > 在 Windows PowerShell ISE 2.0 中，不提供 [工具]  和 [附加元件]  功能表。

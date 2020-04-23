@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086354"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 遠端安全性考量
@@ -24,7 +24,7 @@ PowerShell 遠端和使用 Cmdlet 的 **ComputerName** 參數在遠端電腦上�
 PowerShell 遠端 (和 WinRM) 會接聽以下連接埠︰
 
 - HTTP：5985
-- HTTPS：5986
+- HTTPS： 5986
 
 PowerShell 遠端預設僅允許連線系統管理員群組的成員。 工作階段會在使用者的內容下啟動，因此透過 PowerShell 遠端連線時，所有套用至個別使用者和群組的作業系統存取控制，都會繼續套用。
 

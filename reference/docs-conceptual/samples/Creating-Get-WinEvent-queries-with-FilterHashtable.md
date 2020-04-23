@@ -2,10 +2,10 @@
 ms.date: 09/13/2019
 title: 使用 FilterHashtable 建立 Get-WinEvent 查詢
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444380"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 建立 Get-WinEvent 查詢
@@ -54,7 +54,7 @@ Get-WinEvent -FilterHashtable @{
 | -------------- | --------------- | ---------------------------- |
 | LogName        | `<String[]>`    | 是                          |
 | ProviderName   | `<String[]>`    | 是                          |
-| 路徑           | `<String[]>`    | 否                           |
+| Path           | `<String[]>`    | 否                           |
 | 關鍵字       | `<Long[]>`      | 否                           |
 | ID             | `<Int32[]>`     | 否                           |
 | 層級          | `<Int32[]>`     | 否                           |
@@ -165,7 +165,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 | WdiDiagnostic    | 1125899906842624  |
 | WdiContext       | 562949953421312   |
 | ResponseTime     | 281474976710656   |
-| 無             | 0                 |
+| None             | 0                 |
 
 更新雜湊表並包含**機碼-值**組，其中機碼為 **Keywords**，而 **EventLogClassic** 列舉值為 **36028797018963968**。
 
@@ -238,9 +238,9 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 
 | 名稱           | 值 |
 | -------------- | ----- |
-| Verbose        |   5   |
+| 「詳細資訊」        |   5   |
 | 資訊  |   4   |
-| Warning        |   3   |
+| 警告        |   3   |
 | 錯誤          |   2   |
 | 重大       |   1   |
 | LogAlways      |   0   |

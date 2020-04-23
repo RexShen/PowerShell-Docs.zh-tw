@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsProcess 資源
 ms.openlocfilehash: e168cdebb04f7ec83b73a537a5f188299f40d8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952835"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
@@ -33,12 +33,12 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
 |引數 |表示要保持原狀傳遞至處理程序的引數字串。 如果需要傳遞數個引數，請將它們都放在這個字串裡。 |
-|路徑 |處理程序可執行檔的路徑。 如果這是可執行檔的檔案名稱 (不是完整路徑)，則 DSC 資源會搜尋環境 `$env:Path` 變數來尋找可執行檔。 如果這個屬性的值是完整路徑，DSC 將不會使用 `$env:Path` 變數來尋找檔案，但若路徑不存在則會擲回錯誤。 不允許相對路徑。 |
+|Path |處理程序可執行檔的路徑。 如果這是可執行檔的檔案名稱 (不是完整路徑)，則 DSC 資源會搜尋環境 `$env:Path` 變數來尋找可執行檔。 如果這個屬性的值是完整路徑，DSC 將不會使用 `$env:Path` 變數來尋找檔案，但若路徑不存在則會擲回錯誤。 不允許相對路徑。 |
 |認證 |表示啟動處理程序的認證。 |
 |StandardErrorPath |表示寫入標準錯誤的目錄路徑。 此處的所有檔案都會被覆寫。 |
 |StandardInputPath |表示標準輸入的位置。 |

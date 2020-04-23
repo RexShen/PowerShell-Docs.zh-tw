@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: DSC 設定
 ms.openlocfilehash: d7749ec88f9cca3e29c6b38d61fb73776af7ceb4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954495"
 ---
 # <a name="dsc-configurations"></a>DSC 設定
@@ -165,7 +165,7 @@ Cmdlet [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscR
 **Import-DscResource** 支援兩個參數：
 
 - **ModuleName**，使用 **Import-DscResource** 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。
-- **Name** 是要匯入的資源名稱。 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回 **ResourceType**)。
+- **Name** 是要匯入的資源名稱。 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 (**Get-DscResource** 傳回 [ResourceType](/powershell/module/PSDesiredStateConfiguration/Get-DscResource))。
 
 如需使用 `Import-DSCResource` 的詳細資訊，請參閱[使用 Import-DSCResource](import-dscresource.md)
 
@@ -175,6 +175,6 @@ Cmdlet [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscR
 
 ## <a name="see-also"></a>另請參閱
 
-- [Windows PowerShell 預期狀態設定概觀](../overview/overview.md)
+- [Windows PowerShell Desired State Configuration 概觀](../overview/overview.md)
 - [DSC 資源](../resources/resources.md)
 - [設定本機設定管理員](../managing-nodes/metaConfig.md)

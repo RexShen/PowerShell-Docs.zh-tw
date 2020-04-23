@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 建立 .NET 和 COM 物件 New Object
 ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71325175"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>建立 .NET 和 COM 物件 (New-Object)
@@ -122,7 +122,7 @@ PS> $RemoteAppLog
 
 **New-Object** 使用 .NET Framework 執行階段可呼叫包裝函式來建立 COM 物件，因此與呼叫 COM 物件時具有相同的 .NET Framework 限制。 若要建立 COM 物件，您需要指定 **ComObject** 參數，並提供所要使用之 COM 類別的程式設計識別碼 (或 *ProgID*)。 COM 使用限制及判斷系統上可用 ProgID 的完整探討不在本使用者指南的討論範圍內，但 WSH 等環境中的大部分已知物件都可以在 Windows PowerShell 中使用。
 
-您可以透過指定這些 progid 來建立 WSH 物件：**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary** 與 **Scripting.FileSystemObject**。 下列命令會建立這些物件：
+您可以透過指定下列 ProgID 來建立 WSH 物件︰**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary** 和 **Scripting.FileSystemObject**。 下列命令會建立這些物件：
 
 ```powershell
 New-Object -ComObject WScript.Shell

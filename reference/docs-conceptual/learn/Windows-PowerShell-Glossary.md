@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 詞彙
 ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030351"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 詞彙
@@ -43,7 +43,7 @@ ms.locfileid: "67030351"
 |終止錯誤|停止 Windows PowerShell 處理命令的錯誤。|
 |交易|不可部分完成的工作單位。 交易中必須整體完成的工作；如果交易的任何部分失敗，整個交易都會失敗。|
 |類型檔案|一個 Windows PowerShell XML 檔案，副檔名為 .ps1xml 並擴充 Windows PowerShell 中 Microsoft .NET Framework 類型的內容。|
-|動詞|Windows PowerShell Cmdlet 名稱中連字號前面的文字。 動詞描述 Cmdlet 所執行的動作。|
+|動詞命令|Windows PowerShell Cmdlet 名稱中連字號前面的文字。 動詞描述 Cmdlet 所執行的動作。|
 |Windows PowerShell|一種命令列殼層和工作指令碼技術，將系統管理工作的完整控制權和自動化提供給 IT 系統管理員。|
 |Windows PowerShell 命令|管線中導致執行動作的元素。Windows PowerShell 命令是透過鍵盤輸入或透過程式設計方式叫用。|
 |Windows PowerShell 資料檔|副檔名為 .psd1 的文字檔。 Windows PowerShell 會基於各種用途使用資料檔；例如，儲存模組資訊清單資料，以及儲存進行指令碼國際化的已翻譯字串。|
@@ -54,4 +54,4 @@ ms.locfileid: "67030351"
 |Windows PowerShell 指令碼|使用 Windows PowerShell 語言所撰寫的指令碼。|
 |Windows PowerShell 指令碼檔案|一個檔案，副檔名為 .ps1 且包含使用 Windows PowerShell 語言所撰寫的指令碼。|
 |Windows PowerShell 嵌入式管理單元|定義可新增至 Windows PowerShell 環境之一組 Cmdlet、提供者和 Microsoft .NET Framework 類型的資源。|
-|Windows PowerShell 工作流程|工作流程是一系列經過程式設計、相互連結的步驟，能夠執行長期的工作，或是需要與多部裝置或受管理節點上的多個步驟協調進行。 Windows PowerShell 工作流程可讓 IT 專業人員和開發人員將連續的多重裝置管理活動或工作流程內的單一工作，編寫為工作流程。 Windows PowerShell 工作流程可讓您調整並執行 Windows PowerShell 指令碼和 XAML 檔案作為工作流程。|
+|Windows PowerShell 工作流程|工作流程是一連串的程式化、連接步驟，執行長時間執行的工作，或是需要跨多個裝置或受控節點協調多個步驟。 Windows PowerShell 工作流程可讓 IT 專業人員和開發人員將連續的多重裝置管理活動或工作流程內的單一工作，編寫為工作流程。 Windows PowerShell 工作流程可讓您調整並執行 Windows PowerShell 指令碼和 XAML 檔案作為工作流程。|

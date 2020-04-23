@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell Web 存取的授權規則與安全性功能
-ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: ee25df052994e47e559daa87b89af813471d896b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500891"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624749"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web 存取的授權規則與安全性功能
 
@@ -112,7 +112,7 @@ Windows PowerShell Web 存取 Cmdlet 支援一個萬用字元，也就是星號 
 
    如果尚未建立這些設定，請使用 [about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files) 中建立工作階段設定的指示。
 
-3. 此授權規則允許特定使用者存取他們通常有權存取之網路上的一部電腦，以及已針對該使用者&trade;的一般編寫指令碼及 Cmdlet 需求設定範圍之特定工作階段設定的存取權。 輸入下列程式碼，然後按 **Enter**。
+3. 這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。 輸入下列程式碼，然後按 **Enter**。
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `

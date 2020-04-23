@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: wmf,powershell,設定
 title: WMF 5.x 版本資訊
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402355"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 版本資訊
@@ -49,8 +49,8 @@ WMF 5.1 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM�
 
 從 5.1 版開始，PowerShell 適用於代表各種功能集及平台相容性的不同版本。
 
-- **Desktop Edition：** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行的 PowerShell 指令碼和模組目標版本相容相容。
-- **Core Edition：** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行的 PowerShell 指令碼和模組目標版本相容。
+- **Desktop Edition︰** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Core Edition︰** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
 
 ### <a name="learn-more-about-using-powershell-editions"></a>深入了解使用 PowerShell 版本
 
@@ -98,7 +98,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
   **範例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- 如果模組有多個版本，PowerShell 會使用與 `Import-Module`**相同的解析邏輯**，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
+- 如果模組有多個版本，PowerShell 會使用與  相同的解析邏輯`Import-Module`，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
 
 ## <a name="improvements-to-pester"></a>Pester 的改善
 

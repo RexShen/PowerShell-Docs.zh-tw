@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: Just Enough Administration 概觀
 ms.openlocfilehash: 4b74e5be9558810748a8844a325c8213e1b3ebc9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017699"
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
@@ -25,7 +25,7 @@ Just Enough Administration (JEA) 是安全性技術，允許委派管理 PowerSh
 
 JEA 透過**最低權限**原則解決此問題。 有了 JEA，您就可以設定 DNS 系統管理員的管理端點，並讓他們只存取完成其工作所需的 PowerShell 命令。 這表示您可以提供適當的存取權以修復受害的 DNS 快取或重新啟動 DNS 伺服器，卻不會無意中給予他們使用 Active Directory、瀏覽檔案或執行有潛在危險指令碼的權限。 更棒的是，當 JEA 工作階段設定為使用暫時性特殊權限虛擬帳戶時，您的 DNS 系統管理員仍可以在使用**非管理員**認證連線到伺服器的情況下，執行通常需要系統管理權限的命令。 這項功能可讓您從廣泛權限的本機/網域系統管理員角色移除使用者，且小心控制他們能夠在每部電腦上執行的事項。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 若要深入了解使用 JEA 的需求，請參閱[必要條件](prerequisites.md)一文。
 

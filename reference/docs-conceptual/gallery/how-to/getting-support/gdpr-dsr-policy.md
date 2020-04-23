@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: 資源庫,powershell,psgallery,GDPR
 title: PowerShell 資源庫 GDPR 合規性
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328319"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell 資源庫 GDPR 合規性

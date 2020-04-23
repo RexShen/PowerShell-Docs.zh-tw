@@ -3,10 +3,10 @@ ms.date: 09/06/2019
 keywords: powershell,cmdlet
 title: PowerShell 5.0 ISE 的新功能
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416641"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE 的新功能
@@ -119,7 +119,7 @@ Windows PowerShell ISE 2.0 並不具有最近使用的清單。
 - <kbd>Ctrl</kbd>+<kbd>F1</kbd> 即時線上顯示命令 (Show-Command)
 - 複雜指令碼與由右至左語言支援
 - 字型支援
-- 縮放
+- Zoom
 - 行選取與區塊選取模式
 - 按 <kbd>UpArrow</kbd> 以在主控台中檢視歷程記錄時，保留命令列中輸入的內容
 

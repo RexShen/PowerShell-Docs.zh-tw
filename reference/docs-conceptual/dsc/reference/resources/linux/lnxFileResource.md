@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxFile 資源
 ms.openlocfilehash: be5f098d2fe1c8b354c07e6a8f882b8fdf00e1db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954825"
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>DSC for Linux nxFile 資源
@@ -34,20 +34,20 @@ nxFile <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
 |DestinationPath |指定您要確認檔案或目錄狀態的位置。 |
-|SourcePath |指定要從中複製檔案或資料夾資源的路徑。 此路徑可以是本機路徑，或 `http/https/ftp` URL。 當 **Type** 屬性的值是 **file** 時，才支援遠端 `http/https/ftp` URL。 |
+|SourcePath |指定要從中複製檔案或資料夾資源的路徑。 此路徑可以是本機路徑，或 `http/https/ftp` URL。 當 `http/https/ftp`Type**屬性的值是**file**時，才支援遠端** URL。 |
 |類型 |指定要設定的資源是目錄或檔案。 將此屬性設定為 **directory**，表示該資源為目錄。 將其設定為 **file**，表示該資源為檔案。 預設值為 **file**。 |
 |內容 |指定檔案的內容，例如特定字串。 |
 |總和檢查碼 |定義判斷兩個檔案是否相同時所使用的類型。 如不指定 **Checksum**，只會使用檔案或目錄名稱進行比較。 值為：**ctime**、**mtime** 或 **md5**。 |
 |Recurse |表示是否包含子目錄。 將此屬性設定為 `$true`，表示您想要包含子目錄。 預設值為 `$false`。 只有當 **Type** 屬性設定為 **directory** 時，這個屬性才有效。 |
-|Force |某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 `$false`。 |
+|Force |某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值是 `$false`。 |
 |連結 |指定符號連結的預期行為。 將此屬性設定為 **follow** 以遵循符號連結，並在連結目標上執行。 例如，複製檔案而非連結。 將此屬性設定為 **manage** 以在連結上執行。 例如，複製連結本身。 將此屬性設定為 **ignore** 以忽略符號連結。 |
 |群組 |要擁有檔案或目錄權限的 **Group** 名稱。 |
-|模式 |以八進位或符號標記法指定資源的預期權限。 例如，**777** 或 **rwxrwxrwx**。 如果使用符號標記法，就不會提供表示目錄或檔案的第一個字元。 |
+|[模式] |以八進位或符號標記法指定資源的預期權限。 例如，**777** 或 **rwxrwxrwx**。 如果使用符號標記法，就不會提供表示目錄或檔案的第一個字元。 |
 |擁有者 |要擁有檔案或目錄的群組名稱。 |
 
 ## <a name="common-properties"></a>通用屬性
@@ -80,7 +80,7 @@ Linux 和 Windows 預設在文字檔案中使用不同分行符號字元，而�
    }
    ```
 
-1. 在設定 **$OFS** 屬性後，透過 [Get-Content](https://technet.microsoft.com/library/hh849787.aspx) 讀取 PowerShell 指令碼中的檔案內容以使用 Linux 分行字元。
+1. 在設定 [$OFS](https://technet.microsoft.com/library/hh849787.aspx) 屬性後，透過 **Get-Content** 讀取 PowerShell 指令碼中的檔案內容以使用 Linux 分行字元。
 
    ```powershell
    Import-DSCResource -Module nx

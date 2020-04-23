@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 使用者資源
 ms.openlocfilehash: dec432c2ff1b4e4408165fef391e77cbf1d85ac4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953005"
 ---
 # <a name="dsc-user-resource"></a>DSC 使用者資源
@@ -34,18 +34,18 @@ User [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
 |UserName |指出您要確保其特定狀態的帳戶名稱。 |
 |描述 |表示您要使用的使用者帳戶描述。 |
-|停用 |表示帳戶是否啟用。 將此屬性設定為 `$true` 以確保此帳戶已停用，而將它設定為 `$false` 可確定它已啟用。 |
+|已停用 |表示帳戶是否啟用。 將此屬性設定為 `$true` 以確保此帳戶已停用，而將它設定為 `$false` 可確定它已啟用。 |
 |FullName |代表有您要使用的完整使用者帳戶名稱的字串。 |
 |密碼 |表示您想要用於這個帳戶的密碼。 |
-|PasswordChangeNotAllowed |表示使用者是否可以變更密碼。 將此屬性設定為 `$true` 以確保使用者無法變更密碼，而將它設定為 `$false` 可允許使用者變更密碼。 預設值為 `$false`。 |
-|PasswordChangeRequired |表示使用者是否必須在下次登入時變更密碼。 如果使用者必須變更密碼，請將此屬性設定為 `$true`。 預設值為 `$true`。 |
-|PasswordNeverExpires |表示密碼是否會到期。 為確保這個帳戶的密碼永遠不會到期，請將這個屬性設定為 `$true`。 如果密碼會到期，則將其設定為 `$false`。 預設值為 `$false`。 |
+|PasswordChangeNotAllowed |表示使用者是否可以變更密碼。 將此屬性設定為 `$true` 以確保使用者無法變更密碼，而將它設定為 `$false` 可允許使用者變更密碼。 預設值是 `$false`。 |
+|PasswordChangeRequired |表示使用者是否必須在下次登入時變更密碼。 如果使用者必須變更密碼，請將此屬性設定為 `$true`。 預設值是 `$true`。 |
+|PasswordNeverExpires |表示密碼是否會到期。 為確保這個帳戶的密碼永遠不會到期，請將這個屬性設定為 `$true`。 如果密碼會到期，則將其設定為 `$false`。 預設值是 `$false`。 |
 
 ## <a name="common-properties"></a>通用屬性
 

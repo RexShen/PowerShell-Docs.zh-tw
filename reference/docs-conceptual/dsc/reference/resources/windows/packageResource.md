@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 套件資源
 ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953145"
 ---
 # <a name="dsc-package-resource"></a>DSC 套件資源
@@ -33,12 +33,12 @@ Package [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
 |名稱 |指出您要確保其特定狀態的套件名稱。 |
-|路徑 |指出套件所在的檔案路徑 |
+|Path |指出套件所在的檔案路徑 |
 |ProductId |指出唯一識別套件的產品識別碼。 |
 |引數 |列出將如同所提供來傳遞至套件的引數字串。 |
 |認證 |提供遠端來源套件的存取權。 這個屬性不會用於安裝套件。 在本機系統上一律安裝此套件。 |

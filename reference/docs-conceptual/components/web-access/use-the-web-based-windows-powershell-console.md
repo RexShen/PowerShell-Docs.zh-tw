@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 使用網頁型 Windows PowerShell 主控台
-ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 9a5d6d825dc82710466768bc612b012dd80937da
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500877"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978656"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>使用網頁型 Windows PowerShell 主控台
 
@@ -211,9 +211,8 @@ Alt+F7          | 清除命令歷程記錄清單
 
     您可以類似的方式變更主控台的高度。
 
-    您可以在 [Windows PowerShell 小組部落格](h https://devblogs.microsoft.com/powershell)中找到自訂主控台檢視的其他範例。
+    您可以在 [Windows PowerShell 小組部落格](https://devblogs.microsoft.com/powershell)中找到自訂主控台檢視的其他範例。
 
 ## <a name="see-also"></a>另請參閱
 
 - [嗨，指令碼高手！](https://devblogs.microsoft.com/scripting/)
-- [PowerShell 小組部落格](https://devblogs.microsoft.com/powershell/)

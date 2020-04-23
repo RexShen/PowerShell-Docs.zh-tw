@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 使用登錄機碼
 ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736840"
 ---
 # <a name="working-with-registry-keys"></a>使用登錄機碼
@@ -57,7 +57,7 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-這些命令只會列出直接包含的項目，很像在 **Cmd.exe** 中使用 `DIR` 或在 UNIX 殼層中使用 `ls`。 若要顯示包含的項目，您必須指定 **Recurse** 參數。 若要列出 `HKCU:` 中的所有登錄機碼，請使用下列命令。
+這些命令只會列出直接包含的項目，很像在 `DIR`Cmd.exe**中使用** 或在 UNIX 殼層中使用 `ls`。 若要顯示包含的項目，您必須指定 **Recurse** 參數。 若要列出 `HKCU:` 中的所有登錄機碼，請使用下列命令。
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
@@ -72,7 +72,7 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 
 ## <a name="copying-keys"></a>複製機碼
 
-使用 `Copy-Item` 即可進行複製。 下列範例會將 `HKLM:\SOFTWARE\Microsoft\Windows\` 的 `CurrentVersion` 子機碼及其所有屬性複製到 `HKCU:\`。
+使用 `Copy-Item` 即可進行複製。 下列範例會將 `CurrentVersion` 的 `HKLM:\SOFTWARE\Microsoft\Windows\` 子機碼及其所有屬性複製到 `HKCU:\`。
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:

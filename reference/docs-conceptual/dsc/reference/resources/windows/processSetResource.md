@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC ProcessSet 資源
 ms.openlocfilehash: 72925d3a9516f5c0040427773a3b1d66034667bb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953125"
 ---
 # <a name="dsc-processset-resource"></a>DSC ProcessSet 資源
@@ -32,11 +32,11 @@ ProcessSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>Properties
+## <a name="properties"></a>屬性
 
 |屬性 |描述 |
 |---|---|
-|路徑 |處理程序可執行檔的路徑。 如果這些是可執行檔的檔案名稱 (不是完整路徑)，則 DSC 資源會搜尋環境 `$env:Path` 變數來尋找檔案。 如果這個屬性的值是完整路徑，則 DSC 不會使用 `$env:Path` 環境變數來尋找檔案，但若任一路徑不存在則會擲回錯誤。 不允許相對路徑。 |
+|Path |處理程序可執行檔的路徑。 如果這些是可執行檔的檔案名稱 (不是完整路徑)，則 DSC 資源會搜尋環境 `$env:Path` 變數來尋找檔案。 如果這個屬性的值是完整路徑，則 DSC 不會使用 `$env:Path` 環境變數來尋找檔案，但若任一路徑不存在則會擲回錯誤。 不允許相對路徑。 |
 |認證 |表示啟動處理程序的認證。 |
 |StandardErrorPath |處理程序要寫入標準錯誤的路徑。 此處的所有檔案都會被覆寫。 |
 |StandardInputPath |處理程序從中接收標準輸入的資料流。 |

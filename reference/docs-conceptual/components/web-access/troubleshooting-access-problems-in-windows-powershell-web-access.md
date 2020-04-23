@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,cmdlet
 title: 為 Windows PowerShell Web 存取中的存取問題進行疑難排解
 ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870178"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>疑難排解 Windows PowerShell Web 存取中的存取問題
 
-更新日期：2013 年 6 月 24 日 (修訂日期：2017 年 8 月 23 日)
+更新日期︰2013 年 6 月 24 日 (修訂日期：2017 年 8 月 23 日)
 
-適用於：Windows Server 2012 R2、Windows Server 2012
+適用目標︰Windows Server 2012 R2、Windows Server 2012
 
 下列各節識別在嘗試使用 Windows PowerShell Web 存取連線到遠端電腦時的一些常見問題，以及解決這些問題的建議。
 

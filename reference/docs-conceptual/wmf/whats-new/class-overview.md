@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: 使用 PowerShell 類別建立自訂類型
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147838"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>使用 PowerShell 類別建立自訂類型
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` 會列出建構函式，您可以像檢視任何其他方法一樣檢視多載。 這個語法的效能也比 `New-Object` 快得多。
 
-### <a name="methods"></a>Methods
+### <a name="methods"></a>方法
 
 PowerShell 類別方法會實作為只有 End 區塊的 **ScriptBlock**。 所有方法都是公用的。 下例說明定義名為 **DoSomething** 的方法。
 
@@ -304,7 +304,7 @@ $b.DoSomething(42)
 
 也支援多載的方法。
 
-### <a name="properties"></a>Properties
+### <a name="properties"></a>屬性
 
 所有屬性都是公用的。 屬性需要新行字元或分號。 如不指定任何物件類型，屬性類型就是物件。
 
@@ -314,7 +314,7 @@ $b.DoSomething(42)
 
 已新增關鍵字 `Hidden`。 `Hidden` 可以套用至屬性和方法 (包括建構函式)。
 
-Hidden 成員是公用的，但除非新增 `-Force` 參數，否則不會出現在 `Get-Member` 的輸出中。 當索引標籤完成或使用 Intellisense 時不會包含 Hidden 成員，除非完成是發生在定義隱藏成員的類別中。
+Hidden 成員是公用的，但除非新增 `Get-Member` 參數，否則不會出現在 `-Force` 的輸出中。 當索引標籤完成或使用 Intellisense 時不會包含 Hidden 成員，除非完成是發生在定義隱藏成員的類別中。
 
 已新增屬性 **System.Management.Automation.HiddenAttribute**，所以 C\# 程式碼會在 PowerShell 內具有相同的語意。
 
