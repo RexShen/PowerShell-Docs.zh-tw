@@ -2,18 +2,18 @@
 title: 如何在 Visual Studio Code 中複寫 ISE 體驗
 description: 如何在 Visual Studio Code 中複寫 ISE 體驗
 ms.date: 08/06/2018
-ms.openlocfilehash: 193243dc2e3e921b22a6ee068370200ae84ce4ac
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 899e1c393fd49b0659631b88d610e80ec885e69e
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279232"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81005596"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>如何在 Visual Studio Code 中複寫 ISE 體驗
 
-雖然適用於 VSCode 的 PowerShell 延伸模組不會尋求與 PowerShell ISE 完全功能同位，但是已經有功能可以讓 ISE 的使用者獲得更自然的 VSCode 使用體驗。
+雖然適用於 VS Code 的 PowerShell 擴充功能不會尋求與 PowerShell ISE 的功能完全相同，但是已經有功能可以讓 ISE 的使用者獲得更自然的 VS Code 使用體驗。
 
-此文件列出您可以在 VSCode 中使用的設定，讓使用者獲得相較於 ISE 更熟悉 VSCode 的體驗。
+此文件列出您可以在 VS Code 中使用的設定，讓使用者體驗相較之下稍微類似 ISE。
 
 ## <a name="ise-mode"></a>ISE 模式
 
@@ -21,145 +21,132 @@ ms.locfileid: "78279232"
 > 此功能從 2019.12.0 版開始於 PowerShell Preview 延伸模組中提供，以及從 2020.3.0 版開始於 PowerShell 延伸模組中提供。
 
 在 Visual Studio Code 中重現 ISE 體驗最簡單的方式，便是開啟「ISE 模式」。
-若要這麼做，請開啟命令選擇區 (<kbd>F1</kbd> 或 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 或 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (於 macOS 上))，然後輸入「ISE 模式」。
-從清單中選取 [PowerShell:Enable ISE Mode] \(PowerShell: 啟用 ISE 模式\)。
+若要這樣做，請開啟命令選擇區 (<kbd>F1</kbd> 或 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>，或在 macOS 上則為 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>)，然後輸入「ISE 模式」。 從清單中選取 [PowerShell:Enable ISE Mode] \(PowerShell: 啟用 ISE 模式\)。
 
-此命令將會自動套用可在此文件中找到的許多設定。
-結果如下所示：
+此命令會自動套用下面所述設定。結果看起來像這樣：
 
 ![ISE 模式](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
-此文章的其餘部分會包含 ISE 模式中的設定及一些其他設定的詳細資訊。
+## <a name="ise-mode-configuration-settings"></a>ISE 模式組態設定
 
-## <a name="key-bindings"></a>按鍵繫結關係
+ISE 模式會對 VS Code 設定進行下列變更。
 
-| 函式                              | ISE 繫結                  | VSCode 繫結                              |
-| ----------------                      | -----------                  | --------------                              |
-| 插斷和中斷偵錯工具          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
-| 執行目前的行/反白顯示的文字 | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
-| 列出可用的程式碼片段               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
+- 按鍵繫結關係
 
-### <a name="custom-key-bindings"></a>自訂按鍵繫結關係
+  |               函式                |         ISE 繫結          |              VS Code 繫結                |
+  | ------------------------------------- | ---------------------------- | ------------------------------------------- |
+  | 插斷和中斷偵錯工具          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
+  | 執行目前的行/反白顯示的文字 | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
+  | 列出可用的程式碼片段               | <kbd>Ctrl</kbd>+<kbd>J</kbd> | <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>J</kbd> |
 
-您也可以在 VSCode 中[設定自己的按鍵繫結關係](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) \(英文\)。
+  > [!NOTE]
+  > 您也可以在 VS Code 中[設定自己的按鍵繫結關係](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings) \(英文\)。
 
-## <a name="simplified-ise-like-ui"></a>簡化的類 ISE UI
+- 簡化的類 ISE UI
 
-如果您想要簡化 Visual Studio Code UI，讓它看起來更類似 ISE 的 UI，請套用下列兩項設定：
+  如果您想要簡化 Visual Studio Code UI，讓它看起來更類似 ISE 的 UI，請套用下列兩項設定：
 
-```json
-"workbench.activityBar.visible": false,
-"debug.openDebug": "neverOpen",
-```
+  ```json
+  "workbench.activityBar.visible": false,
+  "debug.openDebug": "neverOpen",
+  ```
 
-> [!NOTE]
-> 這些設定已包含在 [ISE 模式](#ise-mode)中。
+  這些設定會隱藏下方紅色方塊內的「活動列」與「偵錯側邊欄」區段：
 
-這會隱藏下方紅色方塊內的「活動列」和「偵錯側邊欄」區段：
+  ![醒目提示的區段包含活動列與偵錯側邊欄](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
-![醒目提示的區段包含活動列與偵錯側邊欄](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+  最終結果如下所示：
 
-最終結果如下所示：
+  ![簡化的 VS Code 檢視](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
-![簡化的 VS Code 檢視](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+- Tab 鍵自動完成
 
-## <a name="tab-completion"></a>Tab 鍵自動完成
+  若要啟用更類似 ISE 的 Tab 鍵自動完成，請新增此設定：
 
-若要啟用更類似 ISE 的 Tab 鍵自動完成，請新增此設定：
+  ```json
+  "editor.tabCompletion": "on",
+  ```
 
-```json
-"editor.tabCompletion": "on",
-```
+- 執行時的焦點不在主控台
 
-> [!NOTE]
-> 此設定已直接新增至 VSCode (而不是放在延伸模組中)。 其行為直接取決於 VSCode，而且無法透過延伸模組來變更。
+  在使用 <kbd>F8</kbd> 執行時將焦點保持在編輯器中：
 
-> [!NOTE]
-> 此設定已包含在 [ISE 模式](#ise-mode)中。
+  ```json
+  "powershell.integratedConsole.focusConsoleOnExecute": false
+  ```
 
-## <a name="no-focus-on-console-when-executing"></a>執行時的焦點不在主控台
+  為了達到協助目的，預設值為 `true`。
 
-在使用 <kbd>F8</kbd> 執行時將焦點保持在編輯器中：
+- 不要在啟動時啟動整合式主控台
 
-```json
-"powershell.integratedConsole.focusConsoleOnExecute": false
-```
+  若要在啟動時停止整合式主控台，請設定：
 
-> [!NOTE]
-> 此設定已包含在 [ISE 模式](#ise-mode)中。
+  ```json
+  "powershell.integratedConsole.showOnStartup": false
+  ```
 
-為了達到協助目的，預設值為 `true`。
+  > [!NOTE]
+  > 背景 PowerShell 處理序還是會啟動，以提供 IntelliSense、指令碼分析、符號導覽等功能，但不會顯示主控台。
 
-## <a name="dont-start-integrated-console-on-startup"></a>不要在啟動時啟動整合式主控台
+- 假設檔案預設為 PowerShell
 
-若要在啟動時停止整合式主控台，請設定：
+  若要讓新/未命名的檔案預設註冊為 PowerShell：
 
-```json
-"powershell.integratedConsole.showOnStartup": false
-```
+  ```json
+  "files.defaultLanguage": "powershell",
+  ```
 
-> [!NOTE]
-> 但是還是會啟動背景 PowerShell 處理序，因為這可以提供 IntelliSense、指令碼分析、符號導覽等等功能。但主控台將不會顯示。
+- 色彩配置
 
-## <a name="assume-files-are-powershell-by-default"></a>假設檔案預設為 PowerShell
+  有幾個 ISE 佈景主題可供 VS Code 使用，會讓編輯器看起來非常像 ISE。
 
-若要讓新/未命名的檔案預設註冊為 PowerShell：
+  在 [[命令選擇區]][] 中輸入 `theme` 以取得 `Preferences: Color Theme`，然後按 <kbd>Enter</kbd>。 在下拉式清單中選取 `PowerShell ISE`。
 
-```json
-"files.defaultLanguage": "powershell",
-```
+  您可以在設定中透過下項目設定此佈景主題：
 
-> [!NOTE]
-> 此設定已包含在 [ISE 模式](#ise-mode)中。
+  ```json
+  "workbench.colorTheme": "PowerShell ISE",
+  ```
 
-## <a name="color-scheme"></a>色彩配置
+- PowerShell 命令總管
 
-有幾個 ISE 佈景主題可供 VSCode 使用，會讓編輯器看起來非常像 ISE。
+  感謝 [@corbob](https://github.com/corbob) 所做的一切，PowerShell 延伸模組開始有自己的命令檔案總管了。
 
-在 [命令選擇區] 中輸入 `theme` 以取得 `Preferences: Color Theme`，然後按 <kbd>Enter</kbd>。
-在下拉式清單中選取 `PowerShell ISE`。
+  在[[命令選擇區]][]中，輸入 `PowerShell Command Explorer` 並按 <kbd>Enter</kbd>。
 
-您可以在設定中透過下項目設定此佈景主題：
+- 在 ISE 中開啟
 
-```json
-"workbench.colorTheme": "PowerShell ISE",
-```
-
-> [!NOTE]
-> 此設定已包含在 [ISE 模式](#ise-mode)中。
-
-## <a name="powershell-command-explorer"></a>PowerShell 命令總管
-
-感謝 [@corbob](https://github.com/corbob) 所做的一切，PowerShell 延伸模組開始有自己的命令檔案總管了。
-
-在[命令選擇區]中，輸入 `PowerShell Command Explorer` 並按 <kbd>Enter</kbd>。
-
-> [!NOTE]
-> 這會在 [ISE 模式](#ise-mode)中自動顯示。
-
-## <a name="open-in-the-ise"></a>在 ISE 中開啟
-
-如果您最後還是想要在 ISE 中開啟檔案，可以使用 <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>P</kbd>。
+  如果您想要在 Windows PowerShell ISE 中開啟檔案，請開啟 [[命令選擇區]][]，搜尋「在 ISE 中開啟」，然後選取 [PowerShell:  在 PowerShell ISE 中開啟目前的檔案]。
 
 ## <a name="other-resources"></a>其他資源
 
-- 4sysops 有一篇[非常棒的文章](https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/) \(英文\)，內容說明如何設定 VSCode，讓它更像 ISE。
-- Mike F Robbins 貼了一篇[很棒的貼文](https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/) \(英文\)，內容說明如何設定 VSCode。
-- Learn PowerShell 有一篇[絕佳文章](https://www.learnpwsh.com/setup-vs-code-for-powershell/) \(英文\)，內容說明如何為 PowerShell 設定 VSCode。
+- 4sysops 有一篇[非常棒的文章][4sysops]，內容說明如何將 VS Code 設定成更像 ISE。
+- Mike F Robbins 貼了一篇[很棒的貼文][mikefrobbins]，內容說明如何設定 VS Code。
+- Learn PowerShell 有一篇[絕佳文章][learnpwsh]，內容說明如何針對 PowerShell 設定。
+
+## <a name="vs-code-tips"></a>VS Code 提示
+
+- 命令選擇區
+
+  命令選擇區是在 VS Code 中執行命令的便利方式。 若要開啟命令選擇區，請使用 <kbd>F1</kbd> 或 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>，或在 macOS 上則為 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>。
+
+  如需詳細資訊，請參閱 [VS Code 文件][vsc-docs]。
+
+- 停用偵錯主控台
+
+  如果您只打算使用 VS Code 來撰寫 PowerShell 指令碼，您可以隱藏 [偵錯主控台]  ，因為 PowerShell 擴充功能不會加以使用。 若要這樣做，請以滑鼠右鍵按一下 [偵錯主控台]  ，然後按一下核取記號來加以隱藏。
 
 ## <a name="more-settings"></a>更多設定
 
-如果您知道其他能夠讓 ISE 使用者更熟悉 VSCode 的方法，請將它們加到此文件中。如果您正在尋找相容性設定，但怎麼樣都找不到啟用它的方式，可以[在這裡提出問題](https://github.com/PowerShell/vscode-powershell/issues/new/choose)詢問！
+如果您知道其他能夠讓 VS Code 對 ISE 使用者來講更熟悉的方法，請將其加到此文件中。如果您正在尋找相容性設定，但怎麼樣都找不到啟用它的方式，可以[在這裡提出問題][]詢問！
 
 我們非常歡迎 PR 與您的貢獻！
 
-## <a name="vscode-tips"></a>VSCode 祕訣
+<!-- link references -->
+[vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
+[[命令選擇區]]: #vs-code-tips
+[在這裡提出問題]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
-### <a name="command-palette"></a>命令選擇區
-
-<kbd>F1</kbd> 或是 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (在 macOS 上為 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>)
-
-在 VSCode 中執行命令的便利方式。
-如需詳細資訊，請參閱 [VSCode 文件](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette) (英文)。
-
-[命令選擇區]: #command-palette
+[4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
+[mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/
+[learnpwsh]: https://www.learnpwsh.com/setup-vs-code-for-powershell/
