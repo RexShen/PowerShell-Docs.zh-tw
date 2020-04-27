@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: TestConfiguration 方法
 ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954865"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration 方法

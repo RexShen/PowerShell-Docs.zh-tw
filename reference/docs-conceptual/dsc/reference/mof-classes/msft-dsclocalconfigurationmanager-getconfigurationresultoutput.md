@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: GetConfigurationResultOutput 方法
 ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953415"
 ---
 # <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput 方法
@@ -25,7 +25,7 @@ uint32 GetConfigurationResultOutput(
 
 ## <a name="parameters"></a>參數
 
-*jobId* \[in\] 取得輸出資料之工作的識別碼。
+*jobId* \[in\] 要取得輸出資料之作業的識別碼。
 
 *resumeOutputBookmark* \[in\] 指定輸出應該接續前一個書籤。
 

@@ -3,12 +3,12 @@ title: 編輯檢查清單
 description: 這是編輯 PowerShell 文件之規則的摘要清單。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 511e0c323e1a3256039e819d06f32f6e1ac42767
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060333"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624732"
 ---
 # <a name="editors-checklist"></a>編輯的檢查清單
 
@@ -36,7 +36,8 @@ ms.locfileid: "79060333"
   - 語法範例 `Verb-Noun -Parameter`
   - 檔案路徑 `C:\Program Files\PowerShell`、`/usr/bin/pwsh`
   - 文件中不應該可點選的 URL
-- 針對屬性名稱、參數值、參數名稱、類別名稱、模組名稱、實體名稱、物件或類型名稱使用粗體
+  - 屬性或參數值
+- 針對屬性名稱、參數名稱、類別名稱、模組名稱、實體名稱、物件或類型名稱使用粗體
   - 粗體是用於語意標記，不是用來強調
   - 粗體：使用星號 `**`
 - 斜體：使用底線 `_`
@@ -60,7 +61,7 @@ ms.locfileid: "79060333"
 - 在前後都使用空白行
 - 使用已標記的程式碼柵欄：**powershell**、**Output** 或其他適當的語言識別碼
 - 未標記的柵欄：語法區塊或其他殼層
-- 除了您不想讓讀者使用 [Copy]  \(複製\) 按鈕的簡單範例以外，請將 [Output]  \(輸出\) 置於個別的程式碼區塊
+- 將輸出置於個別的程式碼區塊，但您不想讓讀者使用 [複製]  按鈕的簡單範例除外。
 - 請參閱[支援的語言](/contribute/code-in-docs#supported-languages)清單
 
 ### <a name="lists"></a>清單

@@ -3,12 +3,12 @@ title: 編輯參考文章
 description: 此文章說明編輯 PowerShell 文件中的 Cmdlet 參考與「關於」主題的特定需求。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3aed1c14429310c57681397d4877a3a6f48400fd
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: e135f6cc81ba7537a535a08421e1ca9b2b2af573
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500967"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624766"
 ---
 # <a name="editing-reference-articles"></a>編輯參考文章
 
@@ -26,18 +26,17 @@ PlatyPS 為會寫入程式碼中，適用於 Cmdlet 參考的硬式編碼結構�
 
 ## <a name="formatting-about_-files"></a>設定 About_ 檔案格式
 
-`About_*` 檔案現已由 [Pandoc][] 處理，而非 PlatyPS。 `About_*` 檔案的格式設定方式，會使其能在 PowerShell 的所有版本與發行工具上取得最佳相容性。
+`About_*` 檔案是以 Markdown 撰寫，但以純文字檔案格式送交。 我們使用 [Pandoc][] 將 Markdown 轉換為純文字。 `About_*` 檔案的格式設定方式，會使其能在 PowerShell 的所有版本與發行工具上取得最佳相容性。
 
 基本格式設定指導方針：
 
-- 將行限制為 80 個字元
-- 程式碼區塊與表格會限制為 76 個字元，因為 Pandoc 會在轉換為純文字時，對其進行四個空格的縮排
-- 表格必須能容納在 76 個字元之內
-  - 手動將資料格的內容跨多行進行換行
-  - 在每一行的開頭和結尾使用 `|` 字元
-  - 在 [about_Comparison_Operators][about-example] 中查看實用範例
-- 使用 Pandoc 特殊字元 `\`、`$` 與 `<`
-  - 在標頭內，這些字元必須透過使用前置 `\` 字元，或是以倒引號 (`` ` ``) 括住來逸出
+- 將行限制為 80 個字元。 Pandoc 會縮排某些 Markdown 區塊，因此必須調整那些區塊。
+  - 程式碼區塊限制為 76 個字元
+  - 表格限制為 76 個字元
+  - 區塊引述 (與警示) 限制為 78 個字元
+
+- 使用 Pandoc 的特殊中繼字元 `\`、`$` 與 `<`
+  - 在標題內，這些字元必須透過使用前置 `\` 字元，或是使用倒引號 (`` ` ``) 來以程式碼範圍括住
   - 在段落內，這些字元應該要置於程式碼範圍中。 例如：
 
     ~~~markdown
@@ -45,6 +44,29 @@ PlatyPS 為會寫入程式碼中，適用於 Cmdlet 參考的硬式編碼結構�
 
     The `$foo` variable is used to store ...
     ~~~
+
+- 表格必須能容納在 76 個字元之內
+  - 手動將資料格的內容跨多行進行換行
+  - 在每一行的開頭和結尾使用 `|` 字元
+  - 下列範例說明如何正確地建立一個表格，其中包含包裝在資料格內多行的資訊。
+
+    ~~~markdown
+    ```
+    |Operator|Description                |Example                          |
+    |--------|---------------------------|---------------------------------|
+    |`-is`   |Returns TRUE when the input|`(get-date) -is [DateTime]`      |
+    |        |is an instance of the      |`True`                           |
+    |        |specified .NET type.       |                                 |
+    |`-isNot`|Returns TRUE when the input|`(get-date) -isNot [DateTime]`   |
+    |        |not an instance of the     |`False`                          |
+    |        |specified.NET type.        |                                 |
+    |`-as`   |Converts the input to the  |`"5/7/07" -as [DateTime]`        |
+    |        |specified .NET type.       |`Monday, May 7, 2007 12:00:00 AM`|
+    ```
+    ~~~
+
+    > [!NOTE]
+    > 76 欄限制僅適用於 `About_*` 主題。 您可以在概念或 Cmdlet 參考文章中使用寬欄。
 
 ## <a name="structuring-examples"></a>結構範例
 

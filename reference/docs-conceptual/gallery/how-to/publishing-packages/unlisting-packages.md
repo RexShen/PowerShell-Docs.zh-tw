@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 將套件移出清單
-ms.openlocfilehash: fb66fd23dae1d4640056a764c31426f61f56d910
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328269"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978265"
 ---
 # <a name="unlisting-packages"></a>將套件移出清單
 
@@ -18,7 +18,7 @@ PowerShell 資源庫不支援使用者永久刪除套件。
 這可讓其他人對您的套件採取相依性，而不需要擔心日後可能中斷。
 例如，如果 Pester 模組相依於 Azure 模組，但 Azure 模組已從資源庫移除，使用者就無法再使用 Pester 模組。
 
-與其移除套件，您可以改為將其移出清單。
+您可以加以取消列出，而不是移除套件。
 
 **在 PowerShell 資源庫將套件移出清單會如何？**
 
@@ -26,7 +26,7 @@ PowerShell 資源庫不支援使用者永久刪除套件。
 只有指定套件的確切名稱與版本，才能下載移出清單的套件。
 因為如此，將套件移出清單不會中斷相依其上的其他模組或指令碼。
 
-若要將您的套件移出清單，請前往套件詳細資料頁面，然後選取 [刪除模組]。 取消選取 [列出] 核取方塊，然後按一下 [儲存]。
+若要將您的套件移出清單，請前往套件詳細資料頁面，然後選取 [刪除模組]。 取消選取 [列出] 核取方塊，然後選取 [儲存]。
 
 **如何移除套件？**
 

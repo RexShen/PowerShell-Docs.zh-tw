@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 04/15/2020
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
-ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7819058bd8118ba44e66ec658017f536076609b5
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417622"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81527617"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
@@ -28,7 +28,7 @@ ms.locfileid: "74417622"
 
 如需認證遭竊攻擊的詳細資訊，請參閱[降低傳遞雜湊 (PtH) 攻擊與竊取其他認證](https://www.microsoft.com/en-us/download/details.aspx?id=36036)。
 
-如需如何啟用及使用 CredSSP 進行 PowerShell 遠端功能的範例，請參閱 [Using CredSSP to solve the second-hop problem](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/) (使用 CredSSP 來解決第二個躍點問題)。
+如需有關如何啟用及使用 CredSSP 來進行 PowerShell 遠端處理的範例，請參閱 [使用 CredSSP 來啟用 PowerShell "Second-Hop" 功能](https://devblogs.microsoft.com/scripting/enable-powershell-second-hop-functionality-with-credssp/) \(英文\)。
 
 ### <a name="pros"></a>優點
 
@@ -43,7 +43,8 @@ ms.locfileid: "74417622"
 
 您也可以使用 Kerberos 未受限制的委派進行第二次跳躍。 不過，這個方法無法控制委派認證的使用位置。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
+> [!NOTE]
+> 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
 
 ### <a name="pros"></a>優點
 
@@ -59,7 +60,7 @@ ms.locfileid: "74417622"
 您可以使用舊版的限制委派 (不以資源為基礎) 來進行第二次跳躍。 請以 [使用任何驗證通訊協定] 選項設定 Kerberos 限制委派，以允許進行通訊協定轉換。
 
 > [!NOTE]
-> 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
+> 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
 
 ### <a name="pros"></a>優點
 
@@ -74,10 +75,10 @@ ms.locfileid: "74417622"
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>以資源為基礎的 Kerberos 限制委派
 
-使用以資源為基礎的 Kerberos 限制委派 (在 Windows Server 2012 中引入) 時，您會設定資源所在伺服器物件上的認證委派。
-在上述的第二個躍點案例中，您會設定 _ServerC_ 以指定它接受委派認證的來源。
+使用以資源為基礎的 Kerberos 限制委派 (在 Windows Server 2012 中引入) 時，您會設定資源所在伺服器物件上的認證委派。 在上述的第二個躍點案例中，您會設定 _ServerC_ 以指定它接受委派認證的來源。
 
->**注意：** 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
+> [!NOTE]
+> 無法委派已設定 [這是機密帳戶，無法委派]  屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts) \(英文\) 和 [Kerberos 驗證工具和設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx) \(英文\)
 
 ### <a name="pros"></a>優點
 
@@ -95,16 +96,15 @@ ms.locfileid: "74417622"
 
 ### <a name="example"></a>範例
 
-讓我們看看在 _ServerC_ 上設定以資源為基礎之限制委派的 PowerShell 範例，以允許來自 _ServerB_ 的委派認證。
-這個範例會假設所有伺服器都執行 Windows Server 2012 或更新版本，而且任何伺服器所屬的每個網域都有至少一個 Windows Server 2012 網域控制站。
+讓我們看看在 _ServerC_ 上設定以資源為基礎之限制委派的 PowerShell 範例，以允許來自 _ServerB_ 的委派認證。 這個範例會假設所有伺服器都執行 Windows Server 2012 或更新版本，而且任何伺服器所屬的每個網域都有至少一個 Windows Server 2012 網域控制站。
 
 您必須先新增 `RSAT-AD-PowerShell` 功能以安裝 Active Directory PowerShell 模組，然後將該模組匯入到您的工作階段，之後才能設定限制委派︰
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
-
 PS C:\> Import-Module ActiveDirectory
 ```
+
 數個可用的 Cmdlet 現在有 **PrincipalsAllowedToDelegateToAccount** 參數︰
 
 ```powershell
@@ -177,7 +177,8 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-在此範例中，`$using` 變數用來使 _ServerB_ 可看見 `$ServerC` 變數。 如需 `$using` 變數的詳細資訊，請參閱 [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx)。
+在此範例中，`$using` 變數用來使 _ServerB_ 可看見 `$ServerC` 變數。
+如需 `$using` 變數的詳細資訊，請參閱 [about_Remote_Variables](https://technet.microsoft.com/library/jj149005.aspx)。
 
 若要允許多部伺服器委派認證給 _ServerC_，請將 _ServerC_ 上 **PrincipalsAllowedToDelegateToAccount** 參數的值設為陣列︰
 
@@ -210,20 +211,19 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>以資源為基礎的 Kerberos 限制委派相關資訊
 
-- [Kerberos 驗證的新功能](https://technet.microsoft.com/library/hh831747.aspx)
+- [Kerberos 驗證的新功能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 1](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 1 部分)
 - [How Windows Server 2012 Eases the Pain of Kerberos Constrained Delegation, Part 2](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2) (Windows Server 2012 如何緩解 Kerberos 限制委派的痛苦，第 2 部分)
 - [了解使用整合式 Windows 驗證之 Azure Active Directory 應用程式 Proxy 部署的 Kerberos 限制委派](https://aka.ms/kcdpaper)
 - [[MS-ADA2]：Active Directory 結構描述屬性 M2.210 屬性 msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405) \(英文\)
 - [[MS-SFU]：Kerberos 通訊協定延伸模組：Service for User 與限制委派通訊協定 1.3.2 S4U2Proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a) \(英文\)
-- [Resource Based Kerberos Constrained Delegation](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/) (以資源為基礎的 Kerberos 限制委派)
-- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/) (使用 PrincipalsAllowedToDelegateToAccount 進行遠端系統管理，而不需要限制委派)
+- [Remote Administration Without Constrained Delegation Using PrincipalsAllowedToDelegateToAccount](/archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount) (使用 PrincipalsAllowedToDelegateToAccount 進行遠端系統管理，而不需要限制委派)
 
 ## <a name="pssessionconfiguration-using-runas"></a>使用 RunAs 的 PSSessionConfiguration
 
 您可以在 _ServerB_ 上建立工作階段設定，並設定其 **RunAsCredential** 參數。
 
-如需使用 PSSessionConfiguration 和 RunAs 來解決第二個躍點問題的資訊，請參閱 [Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/) (PowerShell 遠端進行多重躍點的另一個解決方案)。
+如需使用 PSSessionConfiguration 和 RunAs 來解決第二個躍點問題的資訊，請參閱 [Another solution to multi-hop PowerShell remoting](/archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting) (PowerShell 遠端進行多重躍點的另一個解決方案)。
 
 ### <a name="pros"></a>優點
 

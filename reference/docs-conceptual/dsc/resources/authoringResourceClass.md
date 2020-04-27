@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952825"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
@@ -483,8 +483,8 @@ Start-DscConfiguration -Wait -Force Test
 **DscResource()** 屬性可接受選擇性的參數 **RunAsCredential**。
 此參數可接受下列三個值其中之一：
 
-- `Optional`：對呼叫此資源的設定來說，可以選擇是否使用 **PsDscRunAsCredential**。 這是預設值。
-- `Mandatory`：對呼叫此資源的所有設定來說，必須使用 **PsDscRunAsCredential**。
+- 對呼叫此資源的設定來說，可以選擇是否使用 `Optional` **PsDscRunAsCredential**。 這是預設值。
+- 對呼叫此資源的所有設定來說，必須使用 `Mandatory` **PsDscRunAsCredential**。
 - `NotSupported`：呼叫此資源的設定無法使用 **PsDscRunAsCredential**。
 - `Default`：與 `Optional` 相同。
 

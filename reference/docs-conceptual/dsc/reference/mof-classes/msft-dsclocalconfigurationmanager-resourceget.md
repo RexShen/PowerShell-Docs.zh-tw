@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: ResourceGet 方法
 ms.openlocfilehash: dbe610dfcef5ef6c79783801ecb6fdb7408bdfa5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954995"
 ---
 # <a name="resourceget-method"></a>ResourceGet 方法
@@ -30,7 +30,7 @@ uint32 ResourceGet(
 
 *ModuleName* \[in\] 包含要呼叫之資源的模組名稱。
 
-*resourceProperty* \[in\] 在雜湊表中指定資源的屬性名稱與其值，分別作為索引鍵和值。 使用 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet，探索資源的屬性和其類型。
+*resourceProperty* \[in\] 在雜湊表中指定資源的屬性名稱與其值，分別作為機碼與值。 使用 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet，探索資源的屬性和其類型。
 
 *configurations* \[out\] 傳回時，包含設定的內嵌執行個體。
 

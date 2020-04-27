@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 來建置持續整合和持續部署管線
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954235"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>使用 DSC 來建置持續整合和持續部署管線
@@ -18,7 +18,7 @@ ms.locfileid: "71954235"
 
 自動化的 CI/CD 管線可協助您以更快且更可靠的方式更新軟體，確保所有程式碼都經過測試，並且您程式碼的最新組建隨時可供使用。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 若要使用此範例，您應該熟悉下列各項知識：
 
@@ -424,7 +424,7 @@ Invoke-PSake $PSScriptRoot\InfraDNS\$fileName.ps1
 
 您可以在用戶端電腦上開啟瀏覽器並瀏覽至 `www.contoso.com`，來檢查部署結果。
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 此範例會設定 DNS 伺服器 `TestAgent1`，讓 URL `www.contoso.com` 解析成 `TestAgent2`，但它並不會實際部署網站。
 儲存機制的 `WebApp` 資料夾底下有提供此做法的基本架構。

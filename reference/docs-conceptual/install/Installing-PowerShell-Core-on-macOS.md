@@ -2,12 +2,12 @@
 title: 在 macOS 上安裝 PowerShell
 description: 在 macOS 上安裝 PowerShell 的相關資訊
 ms.date: 12/12/2018
-ms.openlocfilehash: 3a5e71d0f69d0c39f9b7f3fa667863d7ec0a31dd
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395000"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80977517"
 ---
 # <a name="installing-powershell-on-macos"></a>在 macOS 上安裝 PowerShell
 
@@ -146,13 +146,7 @@ xcode-select --install
 
 ### <a name="install-openssl"></a>安裝 OpenSSL
 
-PowerShell 遠端執行功能與 CIM 作業需要 OpenSSL。 您可以透過 MacPorts 或 Brew 來安裝。
-
-#### <a name="install-openssl-via-brew"></a>透過 Brew 安裝 OpenSSL
-
-如需 Brew 的相關資訊，請參閱[關於 Brew](#about-brew)。
-
-若要安裝 OpenSSL，請執行 `brew install openssl`。
+PowerShell 遠端執行功能與 CIM 作業需要 OpenSSL。 您可以透過 MacPorts 來安裝。
 
 #### <a name="install-openssl-via-macports"></a>透過 MacPorts 安裝 OpenSSL
 
@@ -161,12 +155,12 @@ PowerShell 遠端執行功能與 CIM 作業需要 OpenSSL。 您可以透過 Mac
    若需要指示，請參閱[安裝指南](https://guide.macports.org/chunked/installing.macports.html) \(英文\)。
 1. 透過執行 `sudo port selfupdate` 來更新 MacPorts。
 1. 透過執行 `sudo port upgrade outdated` 來升級 MacPorts 套件。
-1. 透過執行 `sudo port install openssl` 以安裝 OpenSSL。
+1. 透過執行 `sudo port install openssl10` 以安裝 OpenSSL。
 1. 連結程式庫，以供 PowerShell 使用它們：
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
+sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell"></a>解除安裝 PowerShell

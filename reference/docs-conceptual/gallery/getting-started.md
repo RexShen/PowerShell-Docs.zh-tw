@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 開始使用 PowerShell Gallery
-ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995880"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81219688"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>開始使用 PowerShell 資源庫
 
@@ -85,6 +85,16 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 若要找出您已從 PowerShell 資源庫安裝的模組，請執行 [Get-InstalledModule][] Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有模組。
 
 同樣地，若要找出您已從 PowerShell 資源庫安裝的指令碼，請執行 [Get-InstalledScript][] Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。
+
+## <a name="network-access-to-the-powershell-gallery"></a>PowerShell 資源庫的網路存取權
+
+PowerShell 資源庫使用下列主機名稱。
+
+- `psg-prod-eastus.azureedge.net` - CDN 主機名稱
+- `devopsgallerystorage.blob.core.windows.net` - 儲存體帳戶主機名稱
+- `*.powershellgallery.com` - 網站
+
+這些主機名稱應新增至控制您的網路存取的允許清單。
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

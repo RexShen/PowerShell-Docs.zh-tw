@@ -2,12 +2,12 @@
 title: 從 Windows PowerShell 5.1 移轉至 PowerShell 7
 description: 針對您的 Windows 平台，從 PowerShell 5.1 更新為 PowerShell 7。
 ms.date: 03/25/2020
-ms.openlocfilehash: e3881b1758f50119444969ad39541aec694cebe5
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8f19297bdb4825f3bbd50544dc5737997e3c83e3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500493"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81440487"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>從 Windows PowerShell 5.1 移轉至 PowerShell 7
 
@@ -176,7 +176,7 @@ PowerShell Core 6.x 中已新增以 SSH 為基礎的遠端功能，以支援無�
 Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
-或者，使用 **HostName** 參數時，請提供使用者名稱資訊，後面加上 \@ 符號 ('@')，後面接著電腦名稱。
+或者，使用 **HostName** 參數時，請提供使用者名稱資訊，後面加上 at 符號 (`@`)，後面接著電腦名稱。
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>

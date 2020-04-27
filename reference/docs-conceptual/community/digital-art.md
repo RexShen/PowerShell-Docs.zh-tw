@@ -4,15 +4,15 @@ ms.author: sewhee
 ms.date: 02/14/2020
 title: PowerShell 數位藝術
 ms.openlocfilehash: e67cafa274ca1720661aa24953278c13444d7698
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79060313"
 ---
 # <a name="powershell-digital-art"></a>PowerShell 數位藝術
 
-傳說是真的！能夠確保人們能安全抵達雲端的強大殼層。不過是如何辦到的？ 
+*傳說是真的！能夠確保人們能安全抵達雲端的強大殼層。但如何辦到的？*
 
 請享用下面所連結的數位藝術作品。 向您的同儕展現出自己受交付掌握 Scrolls of Monad 的重任！ 
 
