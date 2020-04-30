@@ -2,12 +2,12 @@
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
 ms.date: 09/30/2019
-ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444366"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174123"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -53,7 +53,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    > [!NOTE]
    > 如果您想要將 PowerShell 設定為 OpenSSH 的預設殼層，請參閱[為 OpenSSH 設定 Windows](/windows-server/administration/openssh/openssh_server_configuration)。
 
-1. 編輯位於 `sshd_config` 的 `$env:ProgramData\ssh` 檔案。
+1. 編輯位於 `$env:ProgramData\ssh` 的 `sshd_config` 檔案。
 
    確定已啟用密碼驗證：
 
@@ -64,10 +64,12 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    在遠端電腦上建立裝載 PowerShell 處理程序的 SSH 子系統：
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > PowerShell 可執行檔的預設位置為 `c:/progra~1/powershell/7/pwsh.exe`。 該位置會根據您安裝 PowerShell 的方式而有所不同。
+   >
    > 您必須針對任何包含空格的檔案路徑使用 8.3 簡短名稱。 OpenSSH for Windows 中有一個 Bug，會讓空格無法在子系統可執行檔路徑中運作。 如需詳細資訊，請參閱此 [GitHub 問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784)。
    >
    > Windows 中 `Program Files` 資料夾的 8.3 簡短名稱通常是 `Progra~1`。 但您可以使用下列命令來確保：
@@ -109,7 +111,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    sudo apt install openssh-server
    ```
 
-1. 編輯 `sshd_config` 位置中的 `/etc/ssh` 檔案。
+1. 編輯 `/etc/ssh` 位置中的 `sshd_config` 檔案。
 
    確定已啟用密碼驗證：
 
@@ -122,6 +124,9 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > PowerShell 可執行檔的預設位置為 `/usr/bin/pwsh`。 該位置會根據您安裝 PowerShell 的方式而有所不同。
 
    選擇性啟用金鑰驗證：
 
@@ -146,7 +151,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    1. 選取 `Remote Login` 以設定 `Remote Login: On`。
    1. 允許適當的使用者存取。
 
-1. 編輯 `sshd_config` 位置中的 `/private/etc/ssh/sshd_config` 檔案。
+1. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案。
 
    開啟文字編輯器，例如 **nano**：
 
@@ -165,6 +170,9 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    ```
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > PowerShell 可執行檔的預設位置為 `/usr/local/bin/pwsh`。 該位置會根據您安裝 PowerShell 的方式而有所不同。
 
    選擇性啟用金鑰驗證：
 

@@ -2,20 +2,16 @@
 title: 在 Linux 上安裝 PowerShell
 description: 在各種 Linux 發行版本上安裝 PowerShell Core 的相關資訊
 ms.date: 03/09/2020
-ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 201bb693c3473f6b1f05d860562b1fc132912bb2
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500543"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174124"
 ---
 # <a name="installing-powershell-on-linux"></a>在 Linux 上安裝 PowerShell
 
-支援 [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[Alpine 3.9 和 3.10][alpine]、[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 28][fedora]、[Fedora 29][fedora]、[Fedora 30][fedora] 與 [Arch Linux][arch]。
-
-針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
-
-GitHub [頁面上的 Debian 套件 ][]頁面上提供所有套件。 安裝套件之後，請從終端機執行 `pwsh`。 若您已安裝`pwsh-preview`預覽版[，請執行 ](#installing-preview-releases)。
+GitHub [發行][]頁面上提供所有套件。 安裝套件之後，請從終端機執行 `pwsh`。 若您已安裝[預覽版](#installing-preview-releases)，請執行 `pwsh-preview`。
 
 > [!NOTE]
 > PowerShell 7 是會移除 PowerShell Core 6.x 的就地升級。
@@ -24,36 +20,40 @@ GitHub [頁面上的 Debian 套件 ][]頁面上提供所有套件。 安裝套�
 >
 > 如果您需要與 PowerShell 7 並存執行 PowerShell 6，請使用[二進位封存](#binary-archives)方法來重新安裝 PowerShell 6。
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
-[deb10]: #debian-10
-[alpine]: #alpine-39-and-310
-[cos]: #centos-7
-[rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse
-[fedora]: #fedora
-[arch]: #arch-linux
+針對未正式支援的 Linux 發佈，您可以嘗試使用 [PowerShell Snap 套件][snap]來安裝 PowerShell。 您也可以直接使用 Linux [`tar.gz` 封存][tar]來嘗試部署 PowerShell 二進位檔，但您需要根據個別步驟中作業系統設定必要的相依性。
+
 [snap]: #snap-package
 [tar]: #binary-archives
 
+正式支援的版本
 
-## <a name="installing-preview-releases"></a>安裝預覽版本
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Debian 8
+- Debian 9
+- Debian 10
+- Alpine 3.9 與 3.10
+- CentOS 7
+- Red Hat Enterprise Linux (RHEL) 7
+- Fedora 28
+- Fedora 29
+- Fedora 30
+- openSUSE 42.3
+- openSUSE Leap 15
 
-透過套件存放庫安裝 Linux 的 PowerShell Preview 版本時，套件名稱會從 `powershell` 變更為 `powershell-preview`。
+社群支援的版本
 
-透過直接下載的安裝不會變更，但檔案名稱除外。
+- Ubuntu 18.10
+- Ubuntu 19.04
+- Arch Linux
+- Kali
+- Raspbian (實驗性)
 
-下表包含使用各種套件管理員安裝穩定和預覽套件的命令：
+替代安裝方法
 
-| 發行版本 |            穩定命令            |               預覽命令                |
-| --------------- | ------------------------------------ | -------------------------------------------- |
-| Ubuntu、Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
-| CentOS、RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
-| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+- Snap 套件
+- 二進位封存
+- .NET 全域工具
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -84,7 +84,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>透過直接下載安裝 - Ubuntu 16.04
 
-將`powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb`發行[頁面上的 Debian 套件 ][] 下載至 Ubuntu 電腦。
+將[發行][]頁面上的 Debian 套件 `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` 下載至 Ubuntu 電腦。
 
 然後，在終端機中執行下列命令：
 
@@ -134,7 +134,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>透過直接下載安裝 - Ubuntu 18.04
 
-將`powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb`發行[頁面上的 Debian 套件 ][] 下載至 Ubuntu 電腦。
+將[發行][]頁面上的 Debian 套件 `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` 下載至 Ubuntu 電腦。
 
 然後，在終端機中執行下列命令：
 
@@ -157,14 +157,14 @@ sudo apt-get remove powershell
 安裝由 `snapd` 支援。 如需指示，請參閱 [Snap 套件][snap]。
 
 > [!NOTE]
-> Ubuntu 18.10 是[由社群支援](https://www.ubuntu.com/about/release-cycle)的[過渡版本](../powershell-support-lifecycle.md) (英文)。
+> Ubuntu 18.10 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) (英文)。
 
 ## <a name="ubuntu-1904"></a>Ubuntu 19.04
 
 安裝由 `snapd` 支援。 如需指示，請參閱 [Snap 套件][snap]。
 
 > [!NOTE]
-> 因為 Ubuntu 19.04 是[由社群支援](https://www.ubuntu.com/about/release-cycle)的[過渡版本](../powershell-support-lifecycle.md) \(英文\)。
+> 因為 Ubuntu 19.04 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) \(英文\)。
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -230,7 +230,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>透過直接下載安裝 - Debian 9
 
-將`powershell-lts_7.0.0-1.debian.9_amd64.deb`版本[頁面上的 Debian 套件 ][] 下載至 Debian 電腦。
+將[發行][]頁面上的 Debian 套件 `powershell-lts_7.0.0-1.debian.9_amd64.deb` 下載至 Debian 電腦。
 
 然後，在終端機中執行下列命令：
 
@@ -275,7 +275,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>透過直接下載安裝 - Debian 10
 
-將`powershell_7.0.0-linux-x64.tar.gz`版本[頁面上的 Debian 套件 ][] 下載到 Debian 電腦：
+將[發行][]頁面上的 tar.gz 套件 `powershell_7.0.0-linux-x64.tar.gz` 下載到 Debian 電腦：
 
 然後，在終端機中執行下列命令：
 
@@ -322,7 +322,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>透過直接下載安裝 - Alpine 3.9 與 3.10
 
-將`powershell-7.0.0-linux-alpine-x64.tar.gz`版本[頁面上的 Debian 套件 ][] 下載到 Alpine 電腦：
+將[發行][]頁面上的 tar.gz 套件 `powershell-7.0.0-linux-alpine-x64.tar.gz` 下載到 Alpine 電腦：
 
 然後，在終端機中執行下列命令：
 
@@ -389,7 +389,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>透過直接下載安裝 - CentOS 7
 
-使用 [CentOS 7][]，將`powershell-lts-7.0.0-1.rhel.7.x86_64.rpm`版本[頁面上的 Debian 套件 ][] 下載至 CentOS 電腦。
+使用 [CentOS 7][]，將[發行][]頁面上的 RPM 套件 `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` 下載至 CentOS 電腦。
 
 然後，在終端機中執行下列命令：
 
@@ -432,7 +432,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>透過直接下載安裝 - Red Hat Enterprise Linux (RHEL) 7
 
-將`powershell-lts-7.0.0-1.rhel.7.x86_64.rpm`版本[頁面上的 Debian 套件 ][] 下載到 Red Hat Enterprise Linux 電腦。
+將[發行][]頁面上的 RPM 套件 `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` 下載到 Red Hat Enterprise Linux 電腦。
 
 然後，在終端機中執行下列命令：
 
@@ -544,7 +544,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>透過直接下載安裝 - Fedora 28、29 與 30
 
-將`powershell-7.0.0-1.rhel.7.x86_64.rpm`版本[頁面上的 Debian 套件 ][] 下載到 Fedora 電腦。
+將[發行][]頁面上的 RPM 套件 `powershell-7.0.0-1.rhel.7.x86_64.rpm` 下載到 Fedora 電腦。
 
 然後，在終端機中執行下列命令：
 
@@ -573,9 +573,9 @@ sudo dnf remove powershell
 
 PowerShell 可從 [Arch Linux][] 使用者存放庫 (AUR) 取得。
 
-* 可以使用[最新的標記版本][arch-release]編譯
-* 可以從[主機的最新認可][arch-git]編譯
-* 可以使用[最新版本的二進位檔][arch-bin]安裝
+- 可以使用[最新的標記版本][arch-release]編譯
+- 可以從[主機的最新認可][arch-git]編譯
+- 可以使用[最新版本的二進位檔][arch-bin]安裝
 
 AUR 中的套件由社群維護，沒有官方支援。
 
@@ -710,6 +710,20 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## <a name="installing-preview-releases"></a>安裝預覽版本
+
+透過套件存放庫安裝 Linux 的 PowerShell Preview 版本時，套件名稱會從 `powershell` 變更為 `powershell-preview`。
+
+透過直接下載的安裝不會變更，但檔案名稱除外。
+
+下表包含使用各種套件管理員安裝穩定和預覽套件的命令：
+
+| 發行版本 |            穩定命令            |               預覽命令                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu、Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS、RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+
 ## <a name="install-as-a-net-global-tool"></a>安裝為 .NET 全域工具
 
 如果您已安裝 [.NET Core SDK](/dotnet/core/sdk)，就可以輕鬆地將 PowerShell 安裝為 [.NET 全域工具](/dotnet/core/tools/global-tools)。
@@ -787,5 +801,5 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 PowerShell 遵循 Linux 上的 [XDG 基底目錄規格][xdg-bds]。
 
-[頁面上的 Debian 套件 ]: https://github.com/PowerShell/PowerShell/releases/latest
+[發行]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
