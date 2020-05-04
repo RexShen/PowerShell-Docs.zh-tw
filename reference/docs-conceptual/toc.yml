@@ -731,13 +731,20 @@
         - name: 附錄 2 建立自訂 PowerShell 捷徑
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: 社群
+  expanded: true
   items:
-    - name: 社群資源
+    - name: 社群更新
+      href: community/community-update.yml
+    - name: 社群支援
       href: community/community-support.md
-    - name: 數位藝術
-      href: community/digital-art.md
-    - name: PowerShell Docs 新功能
-      href: community/whats-new-in-docs.md
+    - name: 參與者名人堂
+      href: community/hall-of-fame.md
+    - name: Docs 的新功能
+      items:
+        - name: 2020-Q2
+          href: community/2020-Q2.md
+        - name: 2020-Q1
+          href: community/2020-Q1.md
     - name: 參與者指南
       items:
         - name: 概觀
@@ -760,6 +767,8 @@
               href: community/contributing/managing-issues.md
             - name: 我們管理提取要求的方式
               href: community/contributing/managing-pull-requests.md
+    - name: 數位藝術
+      href: community/digital-art.md
 - name: PowerShell SDK
   items:
     - name: 概觀
