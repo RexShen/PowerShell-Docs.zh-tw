@@ -2,12 +2,12 @@
 title: 在 Windows 上安裝 PowerShell
 description: 在 Windows 上安裝 PowerShell 的相關資訊
 ms.date: 08/06/2018
-ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
-ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
+ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
+ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374885"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141387"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安裝 PowerShell
 
@@ -24,7 +24,7 @@ ms.locfileid: "80374885"
 
 ## <a name="download-the-installer-package"></a>下載安裝程式套件
 
-若要在 Windows 上安裝 PowerShell，請從我們的 GitHub [版本][releases] 頁面下載安裝套件。 向下捲動至 [版本] 頁面的 [資產] 區段。 [資產] 區段可能會摺疊，因此您可能需要按一下加以展開。
+若要在 Windows 上安裝 PowerShell，請從我們的 GitHub [版本][releases] 頁面下載安裝套件。 向下捲動至 [版本] 頁面的 [資產]  區段。 [資產]  區段可能會摺疊，因此您可能需要按一下加以展開。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />安裝 MSI 套件
 
@@ -53,7 +53,7 @@ MSI 檔案看起來像 `PowerShell-<version>-win-<os-arch>.msi`。 例如：
 
 您可以從命令列安裝 MSI 套件，讓系統管理員不需要使用者互動即可部署套件。 MSI 套件包含下列屬性以控制安裝選項：
 
-- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此屬性控制將 [開啟 PowerShell] 項目新增至 Windows 檔案總管中的內容功能表的選項。
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - 此屬性控制將 [開啟 PowerShell]  項目新增至 Windows 檔案總管中的內容功能表的選項。
 - **ENABLE_PSREMOTING** - 此屬性控制在安裝期間啟用 PowerShell 遠端執行功能的選項。
 - **REGISTER_MANIFEST** - 此屬性控制用於註冊 Windows 事件記錄資訊清單的選項。
 
@@ -67,7 +67,7 @@ msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_ME
 
 ## <a name="installing-the-msix-package"></a><a id="msix" />安裝 MSIX 套件
 
-若要手動在 Windows 10 用戶端上安裝 MSIX 套件，請從我們的 GitHub [發行][releases] 頁面下載 MSIX 套件。 向下捲動至想安裝版本的 [資產] 區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
+若要手動在 Windows 10 用戶端上安裝 MSIX 套件，請從我們的 GitHub [發行][releases] 頁面下載 MSIX 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
 MSIX 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msix`
 
@@ -82,11 +82,11 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
 
-有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 安裝 ZIP 封存並不會像 MSI 套件一樣檢查必要條件。 若要使遠端功能能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
+有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 安裝 ZIP 封存並不會像 MSI 套件一樣檢查必要條件。 從 [[版本]][releases] 頁面下載 ZIP 封存。 依據您下載檔案的方式，可能需要使用 `Unblock-File`Cmdlet 以將檔案解除封鎖。 將內容解壓縮至您選擇的位置，並從該處執行 `pwsh.exe`。 若要使遠端功能能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
 
-## <a name="deploying-on-windows-iot"></a>在 Windows IoT 上部署
+## <a name="deploying-on-windows-10-iot-enterprise"></a>在 Windows 10 IoT 企業版上部署
 
-Windows IoT 隨附 Windows PowerShell，我們可以將其用來部署 PowerShell 7。
+Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部署 PowerShell 7。
 
 1. 針對目標裝置建立 `PSSession`
 
@@ -128,6 +128,16 @@ Windows IoT 隨附 Windows PowerShell，我們可以將其用來部署 PowerShel
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## <a name="deploying-on-windows-10-iot-core"></a>在 Windows 10 IoT 核心版上部署
+
+當您包含 *IOT_POWERSHELL* 功能 (可供我們用來部署 PowerShell 7) 時，Windows 10 IoT 核心版會新增 Windows PowerShell。
+針對 Windows 10 IoT 企業版所定義的步驟也可以用於 IoT 核心版。
+
+若要在出貨映像中新增最新的 powershell，請使用 [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) 命令在工作區包括套件，並新增 *OPENSRC_POWERSHELL* 功能到您的映像。
+
+> [!NOTE]
+> 針對 ARM64 架構，當您包括 *IOT_POWERSHELL* 時，不會新增 Windows Powershell。 因此，以 zip 為基礎的安裝將無法使用。
+> 您將必須使用 Import-PSCoreRelease 命令，將其加入映像中。
 
 ## <a name="deploying-on-nano-server"></a>在 Nano Server 上部署
 
