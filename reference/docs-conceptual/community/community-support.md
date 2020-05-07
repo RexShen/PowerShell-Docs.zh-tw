@@ -1,19 +1,17 @@
 ---
-title: PowerShell 社群資源
+title: PowerShell 社群支援資源
 description: 針對 PowerShell 使用者，以及由 PowerShell 使用者建立的資源清單
-ms.date: 03/04/2020
-ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 04/29/2020
+ms.openlocfilehash: f35524c8a1a457ffd6cccf0d2165cc340f7519ca
+ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80395012"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82630830"
 ---
-# <a name="powershell-community-resources"></a>PowerShell 社群資源
+# <a name="getting-support-from-the-community"></a>從社群取得支援
 
 PowerShell 社群是個熱鬧且活躍的使用者群組。 此文章可協助您與社群的其他成員保持聯繫。
-
-## <a name="getting-support-from-the-community"></a>從社群取得支援
 
 PowerShell 社群可以在我們的 [GitHub](https://github.com/powershell/powershell/issues) \(英文\) 存放庫中提出問題、錯誤 (Bug) 或功能要求。 如果您有問題，可能可以在下列其中一個公開論壇中，從社群的其他成員取得協助：
 
@@ -27,9 +25,3 @@ PowerShell 社群可以在我們的 [GitHub](https://github.com/powershell/power
 - [PowerShell Discord](https://discord.gg/Ju25cw6) \(英文\)
 
 如需我們支援原則的相關資訊，請參閱 [PowerShell 支援生命週期](/powershell/scripting/powershell-support-lifecycle)。
-
-## <a name="looking-for-logos-and-other-digital-goodies"></a>尋找標誌和其他數位好料
-
-我們有一組數位藝術作品可供您享用。
-
-[數位藝術](/powershell/scripting/community/digital-art) \(英文\)
