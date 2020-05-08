@@ -52,8 +52,6 @@
       href: learn/understanding-the-powershell-pipeline.md
     - name: 更多了解 PowerShell 的方式
       href: learn/more-powershell-learning.md
-    - name: 撰寫可攜式模組
-      href: learn/writing-portable-modules.md
     - name: PowerShell 遠端
       items:
         - name: Just Enough Administration (JEA)
@@ -150,16 +148,6 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab 物件
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Visual Studio Code
-      items:
-        - name: 使用 Visual Studio Code
-          href: components/vscode/using-vscode.md
-        - name: 如何在 Visual Studio Code 中複寫 ISE 體驗
-          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-        - name: 使用 Visual Studio Code 來進行遠端編輯與偵錯
-          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-        - name: 了解 VS Code 及 PowerShell 中的檔案編碼
-          href: components/vscode/understanding-file-encoding.md
     - name: Web 存取
       items:
         - name: 授權規則與安全性功能
@@ -286,11 +274,9 @@
           href: whats-new/breaking-changes-ps6.md
         - name: PowerShell Core 6.0 中的已知的問題
           href: whats-new/known-issues-ps6.md
-    - name: PowerShell 5.x 的新功能
+    - name: PowerShell Core 5.x 的新功能
       items:
-        - name: PowerShell 5.0 的新功能
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Windows PowerShell 5.0 的新功能
+        - name: Windows PowerShell 5.x 的新功能
           href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: PowerShell 5.0 ISE 的新功能
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
@@ -769,1119 +755,1135 @@
               href: community/contributing/managing-pull-requests.md
     - name: 數位藝術
       href: community/digital-art.md
-- name: PowerShell SDK
+- name: PowerShell 開發人員
   items:
-    - name: 概觀
-      href: developer/windows-powershell.md
-    - name: 安裝 Windows PowerShell SDK
-      href: developer/installing-the-windows-powershell-sdk.md
-    - name: 撰寫 Windows PowerShell 模組
-      href: developer/module/writing-a-windows-powershell-module.md
+    - name: 跨平台開發
       items:
-        - name: 了解 Windows PowerShell 模組
-          href: developer/module/understanding-a-windows-powershell-module.md
-        - name: 如何撰寫 PowerShell 指令碼模組
-          href: developer/module/how-to-write-a-powershell-script-module.md
-        - name: 如何撰寫 PowerShell 二進位模組
-          href: developer/module/how-to-write-a-powershell-binary-module.md
-        - name: 如何撰寫 PowerShell 模組資訊清單
-          href: developer/module/how-to-write-a-powershell-module-manifest.md
-        - name: 安裝 PowerShell 模組
-          href: developer/module/installing-a-powershell-module.md
-        - name: 修改 PSModulePath 安裝路徑
-          href: developer/module/modifying-the-psmodulepath-installation-path.md
-        - name: 匯入 PowerShell 模組
-          href: developer/module/importing-a-powershell-module.md
-        - name: 撰寫 Windows PowerShell 模組的說明
-          href: developer/module/writing-help-for-windows-powershell-modules.md
+        - name: Visual Studio Code
           items:
-            - name: 為說明檔案命名
-              href: developer/module/naming-help-files.md
-            - name: 支援可更新的說明
-              href: developer/module/supporting-updatable-help.md
+            - name: 使用 Visual Studio Code
+              href: components/vscode/using-vscode.md
+            - name: 如何在 Visual Studio Code 中複寫 ISE 體驗
+              href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+            - name: 使用 Visual Studio Code 來進行遠端編輯與偵錯
+              href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+            - name: 了解 VS Code 及 PowerShell 中的檔案編碼
+              href: components/vscode/understanding-file-encoding.md
+        - name: 撰寫可攜式模組
+          href: learn/writing-portable-modules.md
+    - name: 舊版 PowerShell SDK
+      items:
+        - name: 概觀
+          href: developer/windows-powershell.md
+        - name: 安裝 Windows PowerShell SDK
+          href: developer/installing-the-windows-powershell-sdk.md
+        - name: 撰寫 Windows PowerShell 模組
+          href: developer/module/writing-a-windows-powershell-module.md
+          items:
+            - name: 了解 Windows PowerShell 模組
+              href: developer/module/understanding-a-windows-powershell-module.md
+            - name: 如何撰寫 PowerShell 指令碼模組
+              href: developer/module/how-to-write-a-powershell-script-module.md
+            - name: 如何撰寫 PowerShell 二進位模組
+              href: developer/module/how-to-write-a-powershell-binary-module.md
+            - name: 如何撰寫 PowerShell 模組資訊清單
+              href: developer/module/how-to-write-a-powershell-module-manifest.md
+            - name: 安裝 PowerShell 模組
+              href: developer/module/installing-a-powershell-module.md
+            - name: 修改 PSModulePath 安裝路徑
+              href: developer/module/modifying-the-psmodulepath-installation-path.md
+            - name: 匯入 PowerShell 模組
+              href: developer/module/importing-a-powershell-module.md
+            - name: 撰寫 Windows PowerShell 模組的說明
+              href: developer/module/writing-help-for-windows-powershell-modules.md
               items:
-                - name: 可更新的說明系統
-                  href: developer/module/updatable-help-overview.md
-                - name: 可更新的說明撰寫：逐步
-                  href: developer/module/updatable-help-authoring-step-by-step.md
-                - name: 可更新的說明如何運作
-                  href: developer/module/how-updatable-help-works.md
-                - name: 如何建立 HelpInfo XML 檔案
-                  href: developer/module/how-to-create-a-helpinfo-xml-file.md
+                - name: 為說明檔案命名
+                  href: developer/module/naming-help-files.md
+                - name: 支援可更新的說明
+                  href: developer/module/supporting-updatable-help.md
                   items:
-                    - name: HelpInfo XML 結構描述
-                      href: developer/module/helpinfo-xml-schema.md
-                    - name: HelpInfo XML 範例檔案
-                      href: developer/module/helpinfo-xml-sample-file.md
-                    - name: 如何為 HelpInfo XML 檔案命名
-                      href: developer/module/how-to-name-a-helpinfo-xml-file.md
-                    - name: 如何設定 HelpInfo XML 版本號碼
-                      href: developer/module/how-to-set-helpinfo-xml-version-numbers.md
-                - name: 如何準備可更新的說明 CAB 檔案
-                  href: developer/module/how-to-prepare-updatable-help-cab-files.md
+                    - name: 可更新的說明系統
+                      href: developer/module/updatable-help-overview.md
+                    - name: 可更新的說明撰寫：逐步
+                      href: developer/module/updatable-help-authoring-step-by-step.md
+                    - name: 可更新的說明如何運作
+                      href: developer/module/how-updatable-help-works.md
+                    - name: 如何建立 HelpInfo XML 檔案
+                      href: developer/module/how-to-create-a-helpinfo-xml-file.md
+                      items:
+                        - name: HelpInfo XML 結構描述
+                          href: developer/module/helpinfo-xml-schema.md
+                        - name: HelpInfo XML 範例檔案
+                          href: developer/module/helpinfo-xml-sample-file.md
+                        - name: 如何為 HelpInfo XML 檔案命名
+                          href: developer/module/how-to-name-a-helpinfo-xml-file.md
+                        - name: 如何設定 HelpInfo XML 版本號碼
+                          href: developer/module/how-to-set-helpinfo-xml-version-numbers.md
+                    - name: 如何準備可更新的說明 CAB 檔案
+                      href: developer/module/how-to-prepare-updatable-help-cab-files.md
+                      items:
+                        - name: 如何建立及上傳 CAB 檔案
+                          href: developer/module/how-to-create-and-upload-cab-files.md
+                        - name: 如何為可更新說明 CAB 檔案命名
+                          href: developer/module/how-to-name-an-updatable-help-cab-file.md
+                        - name: 可更新的說明 CAB 檔案中允許的檔案類型
+                          href: developer/module/file-types-permitted-in-an-updatable-help-cab-file.md
+                    - name: 如何更新說明檔
+                      href: developer/module/how-to-update-help-files.md
+                    - name: 如何測試可更新的說明
+                      href: developer/module/how-to-test-updatable-help.md
+                - name: 支援線上說明
+                  href: developer/module/supporting-online-help.md
+        - name: 撰寫 Windows PowerShell Cmdlet
+          href: developer/cmdlet/writing-a-windows-powershell-cmdlet.md
+          items:
+            - name: Cmdlet 概觀
+              href: developer/cmdlet/cmdlet-overview.md
+            - name: Windows PowerShell Cmdlet 概念
+              href: developer/cmdlet/windows-powershell-cmdlet-concepts.md
+              items:
+                - name: Cmdlet 開發指導方針
+                  href: developer/cmdlet/cmdlet-development-guidelines.md
                   items:
-                    - name: 如何建立及上傳 CAB 檔案
-                      href: developer/module/how-to-create-and-upload-cab-files.md
-                    - name: 如何為可更新說明 CAB 檔案命名
-                      href: developer/module/how-to-name-an-updatable-help-cab-file.md
-                    - name: 可更新的說明 CAB 檔案中允許的檔案類型
-                      href: developer/module/file-types-permitted-in-an-updatable-help-cab-file.md
-                - name: 如何更新說明檔
-                  href: developer/module/how-to-update-help-files.md
-                - name: 如何測試可更新的說明
-                  href: developer/module/how-to-test-updatable-help.md
-            - name: 支援線上說明
-              href: developer/module/supporting-online-help.md
-    - name: 撰寫 Windows PowerShell Cmdlet
-      href: developer/cmdlet/writing-a-windows-powershell-cmdlet.md
-      items:
-        - name: Cmdlet 概觀
-          href: developer/cmdlet/cmdlet-overview.md
-        - name: Windows PowerShell Cmdlet 概念
-          href: developer/cmdlet/windows-powershell-cmdlet-concepts.md
-          items:
-            - name: Cmdlet 開發指導方針
-              href: developer/cmdlet/cmdlet-development-guidelines.md
-              items:
-                - name: 必要的開發指導方針
-                  href: developer/cmdlet/required-development-guidelines.md
-                - name: 強烈建議使用的開發指導方針
-                  href: developer/cmdlet/strongly-encouraged-development-guidelines.md
-                - name: 建議性開發指導方針
-                  href: developer/cmdlet/advisory-development-guidelines.md
-            - name: Cmdlet 類別宣告
-              href: developer/cmdlet/cmdlet-class-declaration.md
-            - name: Windows PowerShell 已核准動詞命令
-              href: developer/cmdlet/approved-verbs-for-windows-powershell-commands.md
-            - name: Cmdlet 輸入處理方法
-              href: developer/cmdlet/cmdlet-input-processing-methods.md
-            - name: Cmdlet 參數
-              href: developer/cmdlet/cmdlet-parameters.md
-              items:
-                - name: 將屬性宣告為參數
-                  href: developer/cmdlet/declaring-properties-as-parameters.md
-                - name: Cmdlet 參數類型
-                  href: developer/cmdlet/types-of-cmdlet-parameters.md
-                - name: 標準 Cmdlet 參數名稱與類型
-                  href: developer/cmdlet/standard-cmdlet-parameter-names-and-types.md
+                    - name: 必要的開發指導方針
+                      href: developer/cmdlet/required-development-guidelines.md
+                    - name: 強烈建議使用的開發指導方針
+                      href: developer/cmdlet/strongly-encouraged-development-guidelines.md
+                    - name: 建議性開發指導方針
+                      href: developer/cmdlet/advisory-development-guidelines.md
+                - name: Cmdlet 類別宣告
+                  href: developer/cmdlet/cmdlet-class-declaration.md
+                - name: Windows PowerShell 已核准動詞命令
+                  href: developer/cmdlet/approved-verbs-for-windows-powershell-commands.md
+                - name: Cmdlet 輸入處理方法
+                  href: developer/cmdlet/cmdlet-input-processing-methods.md
+                - name: Cmdlet 參數
+                  href: developer/cmdlet/cmdlet-parameters.md
                   items:
-                    - name: 活動參數
-                      href: developer/cmdlet/activity-parameters.md
-                    - name: 日期和時間參數
-                      href: developer/cmdlet/date-and-time-parameters.md
-                    - name: 格式參數
-                      href: developer/cmdlet/format-parameters.md
-                    - name: 屬性參數
-                      href: developer/cmdlet/property-parameters.md
-                    - name: 數量參數
-                      href: developer/cmdlet/quantity-parameters.md
-                    - name: 資源參數
-                      href: developer/cmdlet/resource-parameters.md
-                    - name: 安全性參數
-                      href: developer/cmdlet/security-parameters.md
-                - name: 參數別名
-                  href: developer/cmdlet/parameter-aliases.md
-                - name: 一般參數名稱
-                  href: developer/cmdlet/common-parameter-names.md
-                - name: Cmdlet 參數集
-                  href: developer/cmdlet/cmdlet-parameter-sets.md
-                - name: Cmdlet 動態參數
-                  href: developer/cmdlet/cmdlet-dynamic-parameters.md
-                - name: 在 Cmdlet 參數中支援萬用字元
-                  href: developer/cmdlet/supporting-wildcard-characters-in-cmdlet-parameters.md
-                - name: 驗證參數輸入
-                  href: developer/cmdlet/validating-parameter-input.md
-                - name: 輸入篩選參數
-                  href: developer/cmdlet/input-filter-parameters.md
-            - name: Cmdlet 屬性
-              href: developer/cmdlet/cmdlet-attributes.md
-              items:
-                - name: Cmdlet 程式碼中的屬性
-                  href: developer/cmdlet/attributes-in-cmdlet-code.md
-                - name: 屬性類型
-                  href: developer/cmdlet/attribute-types.md
-                - name: 別名屬性宣告
-                  href: developer/cmdlet/alias-attribute-declaration.md
-                - name: Cmdlet 屬性宣告
-                  href: developer/cmdlet/cmdlet-attribute-declaration.md
-                - name: 認證屬性宣告
-                  href: developer/cmdlet/credential-attribute-declaration.md
-                - name: OutputType 屬性宣告
-                  href: developer/cmdlet/outputtype-attribute-declaration.md
-                - name: 參數屬性宣告
-                  href: developer/cmdlet/parameter-attribute-declaration.md
-                - name: ValidateCount 屬性宣告
-                  href: developer/cmdlet/validatecount-attribute-declaration.md
-                - name: ValidateLength 屬性宣告
-                  href: developer/cmdlet/validatelength-attribute-declaration.md
-                - name: ValidatePattern 屬性宣告
-                  href: developer/cmdlet/validatepattern-attribute-declaration.md
-                - name: ValidateRange 屬性宣告
-                  href: developer/cmdlet/validaterange-attribute-declaration.md
-                - name: ValidateSet 屬性宣告
-                  href: developer/cmdlet/validateset-attribute-declaration.md
-            - name: Cmdlet 別名
-              href: developer/cmdlet/cmdlet-aliases.md
-            - name: Cmdlet 輸出
-              href: developer/cmdlet/cmdlet-output.md
-              items:
-                - name: Cmdlet 輸出類型
-                  href: developer/cmdlet/types-of-cmdlet-output.md
-                - name: Cmdlet 錯誤報告
-                  href: developer/cmdlet/cmdlet-error-reporting.md
-                - name: 延伸輸出物件
-                  href: developer/cmdlet/extending-output-objects.md
+                    - name: 將屬性宣告為參數
+                      href: developer/cmdlet/declaring-properties-as-parameters.md
+                    - name: Cmdlet 參數類型
+                      href: developer/cmdlet/types-of-cmdlet-parameters.md
+                    - name: 標準 Cmdlet 參數名稱與類型
+                      href: developer/cmdlet/standard-cmdlet-parameter-names-and-types.md
+                      items:
+                        - name: 活動參數
+                          href: developer/cmdlet/activity-parameters.md
+                        - name: 日期和時間參數
+                          href: developer/cmdlet/date-and-time-parameters.md
+                        - name: 格式參數
+                          href: developer/cmdlet/format-parameters.md
+                        - name: 屬性參數
+                          href: developer/cmdlet/property-parameters.md
+                        - name: 數量參數
+                          href: developer/cmdlet/quantity-parameters.md
+                        - name: 資源參數
+                          href: developer/cmdlet/resource-parameters.md
+                        - name: 安全性參數
+                          href: developer/cmdlet/security-parameters.md
+                    - name: 參數別名
+                      href: developer/cmdlet/parameter-aliases.md
+                    - name: 一般參數名稱
+                      href: developer/cmdlet/common-parameter-names.md
+                    - name: Cmdlet 參數集
+                      href: developer/cmdlet/cmdlet-parameter-sets.md
+                    - name: Cmdlet 動態參數
+                      href: developer/cmdlet/cmdlet-dynamic-parameters.md
+                    - name: 在 Cmdlet 參數中支援萬用字元
+                      href: developer/cmdlet/supporting-wildcard-characters-in-cmdlet-parameters.md
+                    - name: 驗證參數輸入
+                      href: developer/cmdlet/validating-parameter-input.md
+                    - name: 輸入篩選參數
+                      href: developer/cmdlet/input-filter-parameters.md
+                - name: Cmdlet 屬性
+                  href: developer/cmdlet/cmdlet-attributes.md
                   items:
-                    - name: 延伸物件的屬性
-                      href: developer/cmdlet/extending-properties-for-objects.md
-                    - name: 定義物件的預設方法
-                      href: developer/cmdlet/defining-default-methods-for-objects.md
-                    - name: 定義物件的預設成員集合
-                      href: developer/cmdlet/defining-default-member-sets-for-objects.md
-                - name: 自訂格式設定檔案
-                  href: developer/cmdlet/custom-formatting-files.md
-            - name: 註冊 Cmdlet
-              href: developer/cmdlet/registering-cmdlets.md
-              items:
-                - name: 模組與嵌入式管理單元
-                  href: developer/cmdlet/modules-and-snap-ins.md
-                - name: 如何使用模組來匯入 Cmdlet
-                  href: developer/cmdlet/how-to-import-cmdlets-using-modules.md
-                - name: 如何建立 Windows PowerShell 嵌入式管理單元
-                  href: developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md
+                    - name: Cmdlet 程式碼中的屬性
+                      href: developer/cmdlet/attributes-in-cmdlet-code.md
+                    - name: 屬性類型
+                      href: developer/cmdlet/attribute-types.md
+                    - name: 別名屬性宣告
+                      href: developer/cmdlet/alias-attribute-declaration.md
+                    - name: Cmdlet 屬性宣告
+                      href: developer/cmdlet/cmdlet-attribute-declaration.md
+                    - name: 認證屬性宣告
+                      href: developer/cmdlet/credential-attribute-declaration.md
+                    - name: OutputType 屬性宣告
+                      href: developer/cmdlet/outputtype-attribute-declaration.md
+                    - name: 參數屬性宣告
+                      href: developer/cmdlet/parameter-attribute-declaration.md
+                    - name: ValidateCount 屬性宣告
+                      href: developer/cmdlet/validatecount-attribute-declaration.md
+                    - name: ValidateLength 屬性宣告
+                      href: developer/cmdlet/validatelength-attribute-declaration.md
+                    - name: ValidatePattern 屬性宣告
+                      href: developer/cmdlet/validatepattern-attribute-declaration.md
+                    - name: ValidateRange 屬性宣告
+                      href: developer/cmdlet/validaterange-attribute-declaration.md
+                    - name: ValidateSet 屬性宣告
+                      href: developer/cmdlet/validateset-attribute-declaration.md
+                - name: Cmdlet 別名
+                  href: developer/cmdlet/cmdlet-aliases.md
+                - name: Cmdlet 輸出
+                  href: developer/cmdlet/cmdlet-output.md
                   items:
-                    - name: 撰寫 Windows PowerShell 嵌入式管理單元
-                      href: developer/cmdlet/writing-a-windows-powershell-snap-in.md
-                    - name: 撰寫自訂 Windows PowerShell 嵌入式管理單元
-                      href: developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md
-            - name: 要求確認
-              href: developer/cmdlet/requesting-confirmation.md
+                    - name: Cmdlet 輸出類型
+                      href: developer/cmdlet/types-of-cmdlet-output.md
+                    - name: Cmdlet 錯誤報告
+                      href: developer/cmdlet/cmdlet-error-reporting.md
+                    - name: 延伸輸出物件
+                      href: developer/cmdlet/extending-output-objects.md
+                      items:
+                        - name: 延伸物件的屬性
+                          href: developer/cmdlet/extending-properties-for-objects.md
+                        - name: 定義物件的預設方法
+                          href: developer/cmdlet/defining-default-methods-for-objects.md
+                        - name: 定義物件的預設成員集合
+                          href: developer/cmdlet/defining-default-member-sets-for-objects.md
+                    - name: 自訂格式設定檔案
+                      href: developer/cmdlet/custom-formatting-files.md
+                - name: 註冊 Cmdlet
+                  href: developer/cmdlet/registering-cmdlets.md
+                  items:
+                    - name: 模組與嵌入式管理單元
+                      href: developer/cmdlet/modules-and-snap-ins.md
+                    - name: 如何使用模組來匯入 Cmdlet
+                      href: developer/cmdlet/how-to-import-cmdlets-using-modules.md
+                    - name: 如何建立 Windows PowerShell 嵌入式管理單元
+                      href: developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md
+                      items:
+                        - name: 撰寫 Windows PowerShell 嵌入式管理單元
+                          href: developer/cmdlet/writing-a-windows-powershell-snap-in.md
+                        - name: 撰寫自訂 Windows PowerShell 嵌入式管理單元
+                          href: developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md
+                - name: 要求確認
+                  href: developer/cmdlet/requesting-confirmation.md
+                  items:
+                    - name: 從 Cmdlet 要求確認
+                      href: developer/cmdlet/requesting-confirmation-from-cmdlets.md
+                    - name: 使用者要求確認
+                      href: developer/cmdlet/users-requesting-confirmation.md
+                    - name: 確認訊息
+                      href: developer/cmdlet/confirmation-messages.md
+                - name: Windows PowerShell 錯誤報告
+                  href: developer/cmdlet/windows-powershell-error-reporting.md
+                  items:
+                    - name: 錯誤報告概念
+                      href: developer/cmdlet/error-reporting-concepts.md
+                    - name: 終止錯誤
+                      href: developer/cmdlet/terminating-errors.md
+                    - name: 非終止錯誤
+                      href: developer/cmdlet/non-terminating-errors.md
+                    - name: 顯示錯誤資訊
+                      href: developer/cmdlet/displaying-error-information.md
+                    - name: Windows PowerShell 錯誤記錄
+                      href: developer/cmdlet/windows-powershell-error-records.md
+                    - name: 解譯 ErrorRecord 物件
+                      href: developer/cmdlet/interpreting-errorrecord-objects.md
+                - name: 背景作業
+                  href: developer/cmdlet/background-jobs.md
+                - name: 在 Cmdlet 內叫用 Cmdlet 與指令碼
+                  href: developer/cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
+                - name: Cmdlet 集合
+                  href: developer/cmdlet/cmdlet-sets.md
+                - name: Windows PowerShell 工作階段狀態
+                  href: developer/cmdlet/windows-powershell-session-state.md
+            - name: Cmdlet 程式碼範例
+              href: developer/cmdlet/examples-of-cmdlet-code.md
               items:
-                - name: 從 Cmdlet 要求確認
-                  href: developer/cmdlet/requesting-confirmation-from-cmdlets.md
-                - name: 使用者要求確認
-                  href: developer/cmdlet/users-requesting-confirmation.md
-                - name: 確認訊息
-                  href: developer/cmdlet/confirmation-messages.md
-            - name: Windows PowerShell 錯誤報告
-              href: developer/cmdlet/windows-powershell-error-reporting.md
+                - name: 如何撰寫簡單的 Cmdlet
+                  href: developer/cmdlet/how-to-write-a-simple-cmdlet.md
+                - name: 如何宣告 Cmdlet 參數
+                  href: developer/cmdlet/how-to-declare-cmdlet-parameters.md
+                - name: 如何宣告參數集合
+                  href: developer/cmdlet/how-to-declare-parameter-sets.md
+                - name: 如何驗證參數輸入
+                  href: developer/cmdlet/how-to-validate-parameter-input.md
+                  items:
+                    - name: 如何驗證引數集
+                      href: developer/cmdlet/how-to-validate-an-argument-set.md
+                    - name: 如何驗證引數範圍
+                      href: developer/cmdlet/how-to-validate-an-argument-range.md
+                    - name: 如何驗證引數模式
+                      href: developer/cmdlet/how-to-validate-an-argument-pattern.md
+                    - name: 如何驗證引數長度
+                      href: developer/cmdlet/how-to-validate-the-argument-length.md
+                    - name: 如何驗證引數計數
+                      href: developer/cmdlet/how-to-validate-an-argument-count.md
+                - name: 如何宣告動態參數
+                  href: developer/cmdlet/how-to-declare-dynamic-parameters.md
+                - name: 如何在 Cmdlet 內叫用指令碼
+                  href: developer/cmdlet/how-to-invoke-scripts-within-a-cmdlet.md
+                - name: 如何覆寫輸入處理方法
+                  href: developer/cmdlet/how-to-override-input-processing-methods.md
+                - name: 如何要求確認
+                  href: developer/cmdlet/how-to-request-confirmations.md
+                - name: 如何支援交易
+                  href: developer/cmdlet/how-to-support-transactions.md
+                - name: 如何支援作業
+                  href: developer/cmdlet/how-to-support-jobs.md
+                - name: 如何從 Cmdlet 內叫用 Cmdlet
+                  href: developer/cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
+            - name: Cmdlet 撰寫教學課程
+              href: developer/cmdlet/tutorials-for-writing-cmdlets.md
               items:
-                - name: 錯誤報告概念
-                  href: developer/cmdlet/error-reporting-concepts.md
-                - name: 終止錯誤
-                  href: developer/cmdlet/terminating-errors.md
-                - name: 非終止錯誤
-                  href: developer/cmdlet/non-terminating-errors.md
-                - name: 顯示錯誤資訊
-                  href: developer/cmdlet/displaying-error-information.md
-                - name: Windows PowerShell 錯誤記錄
-                  href: developer/cmdlet/windows-powershell-error-records.md
-                - name: 解譯 ErrorRecord 物件
-                  href: developer/cmdlet/interpreting-errorrecord-objects.md
-            - name: 背景作業
-              href: developer/cmdlet/background-jobs.md
-            - name: 在 Cmdlet 內叫用 Cmdlet 與指令碼
-              href: developer/cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
-            - name: Cmdlet 集合
-              href: developer/cmdlet/cmdlet-sets.md
-            - name: Windows PowerShell 工作階段狀態
-              href: developer/cmdlet/windows-powershell-session-state.md
-        - name: Cmdlet 程式碼範例
-          href: developer/cmdlet/examples-of-cmdlet-code.md
-          items:
-            - name: 如何撰寫簡單的 Cmdlet
-              href: developer/cmdlet/how-to-write-a-simple-cmdlet.md
-            - name: 如何宣告 Cmdlet 參數
-              href: developer/cmdlet/how-to-declare-cmdlet-parameters.md
-            - name: 如何宣告參數集合
-              href: developer/cmdlet/how-to-declare-parameter-sets.md
-            - name: 如何驗證參數輸入
-              href: developer/cmdlet/how-to-validate-parameter-input.md
+                - name: GetProc 教學課程
+                  href: developer/cmdlet/getproc-tutorial.md
+                  items:
+                    - name: 建立不含參數的 Cmdlet
+                      href: developer/cmdlet/creating-a-cmdlet-without-parameters.md
+                    - name: 新增處理命令列輸入的參數
+                      href: developer/cmdlet/adding-parameters-that-process-command-line-input.md
+                    - name: 新增處理管道輸入的參數
+                      href: developer/cmdlet/adding-parameters-that-process-pipeline-input.md
+                    - name: 新增非終止錯誤報告到您的 Cmdlet
+                      href: developer/cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md
+                - name: StopProc 教學課程
+                  href: developer/cmdlet/stopproc-tutorial.md
+                  items:
+                    - name: 建立可修改系統的 Cmdlet
+                      href: developer/cmdlet/creating-a-cmdlet-that-modifies-the-system.md
+                    - name: 新增使用者訊息到您的 Cmdlet
+                      href: developer/cmdlet/adding-user-messages-to-your-cmdlet.md
+                    - name: 新增別名、萬用字元擴充與說明到 Cmdlet 參數
+                      href: developer/cmdlet/adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md
+                    - name: 新增參數集到 Cmdlet
+                      href: developer/cmdlet/adding-parameter-sets-to-a-cmdlet.md
+                - name: SelectStr 教學課程
+                  href: developer/cmdlet/selectstr-tutorial.md
+                  items:
+                    - name: 建立 Cmdlet 以存取資料存放區
+                      href: developer/cmdlet/creating-a-cmdlet-to-access-a-data-store.md
+            - name: Cmdlet 範例
+              href: developer/cmdlet/cmdlet-samples.md
               items:
-                - name: 如何驗證引數集
-                  href: developer/cmdlet/how-to-validate-an-argument-set.md
-                - name: 如何驗證引數範圍
-                  href: developer/cmdlet/how-to-validate-an-argument-range.md
-                - name: 如何驗證引數模式
-                  href: developer/cmdlet/how-to-validate-an-argument-pattern.md
-                - name: 如何驗證引數長度
-                  href: developer/cmdlet/how-to-validate-the-argument-length.md
-                - name: 如何驗證引數計數
-                  href: developer/cmdlet/how-to-validate-an-argument-count.md
-            - name: 如何宣告動態參數
-              href: developer/cmdlet/how-to-declare-dynamic-parameters.md
-            - name: 如何在 Cmdlet 內叫用指令碼
-              href: developer/cmdlet/how-to-invoke-scripts-within-a-cmdlet.md
-            - name: 如何覆寫輸入處理方法
-              href: developer/cmdlet/how-to-override-input-processing-methods.md
-            - name: 如何要求確認
-              href: developer/cmdlet/how-to-request-confirmations.md
-            - name: 如何支援交易
-              href: developer/cmdlet/how-to-support-transactions.md
-            - name: 如何支援作業
-              href: developer/cmdlet/how-to-support-jobs.md
-            - name: 如何從 Cmdlet 內叫用 Cmdlet
-              href: developer/cmdlet/how-to-invoke-a-cmdlet-from-within-a-cmdlet.md
-        - name: Cmdlet 撰寫教學課程
-          href: developer/cmdlet/tutorials-for-writing-cmdlets.md
+                - name: GetProcessSample01 範例
+                  href: developer/cmdlet/getprocesssample01-sample.md
+                - name: GetProcessSample02 範例
+                  href: developer/cmdlet/getprocesssample02-sample.md
+                - name: GetProcessSample03 範例
+                  href: developer/cmdlet/getprocesssample03-sample.md
+                - name: GetProcessSample04 範例
+                  href: developer/cmdlet/getprocesssample04-sample.md
+                - name: GetProcessSample05 範例
+                  href: developer/cmdlet/getprocesssample05-sample.md
+                - name: StopProcessSample01 範例
+                  href: developer/cmdlet/stopprocesssample01-sample.md
+                - name: StopProcessSample02 範例
+                  href: developer/cmdlet/stopprocesssample02-sample.md
+                - name: StopProcessSample03 範例
+                  href: developer/cmdlet/stopprocesssample03-sample.md
+                - name: StopProcessSample04 範例
+                  href: developer/cmdlet/stopprocesssample04-sample.md
+                - name: Events01 範例
+                  href: developer/cmdlet/events01-sample.md
+        - name: 撰寫 Windows PowerShell 提供者
+          href: developer/provider/writing-a-windows-powershell-provider.md
           items:
-            - name: GetProc 教學課程
-              href: developer/cmdlet/getproc-tutorial.md
+            - name: Windows PowerShell 提供者快速入門
+              href: developer/provider/windows-powershell-provider-quickstart.md
+            - name: Windows PowerShell 提供者概觀
+              href: developer/provider/windows-powershell-provider-overview.md
               items:
-                - name: 建立不含參數的 Cmdlet
-                  href: developer/cmdlet/creating-a-cmdlet-without-parameters.md
-                - name: 新增處理命令列輸入的參數
-                  href: developer/cmdlet/adding-parameters-that-process-command-line-input.md
-                - name: 新增處理管道輸入的參數
-                  href: developer/cmdlet/adding-parameters-that-process-pipeline-input.md
-                - name: 新增非終止錯誤報告到您的 Cmdlet
-                  href: developer/cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md
-            - name: StopProc 教學課程
-              href: developer/cmdlet/stopproc-tutorial.md
+                - name: 提供者類型
+                  href: developer/provider/provider-types.md
+                - name: 提供者 Cmdlet
+                  href: developer/provider/provider-cmdlets.md
+                - name: 提供者 Cmdlet 參數
+                  href: developer/provider/provider-cmdlet-parameters.md
+                - name: 提供者 Cmdlet 動態參數
+                  href: developer/provider/provider-cmdlet-dynamic-parameters.md
+            - name: 撰寫項目提供者
+              href: developer/provider/writing-an-item-provider.md
+            - name: 撰寫容器提供者
+              href: developer/provider/writing-a-container-provider.md
+            - name: 撰寫瀏覽提供者
+              href: developer/provider/writing-a-navigation-provider.md
+            - name: 提供者範例
+              href: developer/provider/provider-samples.md
               items:
-                - name: 建立可修改系統的 Cmdlet
-                  href: developer/cmdlet/creating-a-cmdlet-that-modifies-the-system.md
-                - name: 新增使用者訊息到您的 Cmdlet
-                  href: developer/cmdlet/adding-user-messages-to-your-cmdlet.md
-                - name: 新增別名、萬用字元擴充與說明到 Cmdlet 參數
-                  href: developer/cmdlet/adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md
-                - name: 新增參數集到 Cmdlet
-                  href: developer/cmdlet/adding-parameter-sets-to-a-cmdlet.md
-            - name: SelectStr 教學課程
-              href: developer/cmdlet/selectstr-tutorial.md
+                - name: AccessDBProviderSample01
+                  href: developer/provider/accessdbprovidersample01.md
+                - name: AccessDBProviderSample02
+                  href: developer/provider/accessdbprovidersample02.md
+                - name: AccessDBProviderSample03
+                  href: developer/provider/accessdbprovidersample03.md
+                - name: AccessDBProviderSample04
+                  href: developer/provider/accessdbprovidersample04.md
+                - name: AccessDBProviderSample05
+                  href: developer/provider/accessdbprovidersample05.md
+                - name: AccessDBProviderSample06
+                  href: developer/provider/accessdbprovidersample06.md
+        - name: 撰寫 Windows PowerShell 主機應用程式
+          href: developer/hosting/writing-a-windows-powershell-host-application.md
+          items:
+            - name: Windows PowerShell 主機快速入門
+              href: developer/hosting/windows-powershell-host-quickstart.md
+            - name: 建立 Runspace
+              href: developer/hosting/creating-runspaces.md
               items:
-                - name: 建立 Cmdlet 以存取資料存放區
-                  href: developer/cmdlet/creating-a-cmdlet-to-access-a-data-store.md
-        - name: Cmdlet 範例
-          href: developer/cmdlet/cmdlet-samples.md
-          items:
-            - name: GetProcessSample01 範例
-              href: developer/cmdlet/getprocesssample01-sample.md
-            - name: GetProcessSample02 範例
-              href: developer/cmdlet/getprocesssample02-sample.md
-            - name: GetProcessSample03 範例
-              href: developer/cmdlet/getprocesssample03-sample.md
-            - name: GetProcessSample04 範例
-              href: developer/cmdlet/getprocesssample04-sample.md
-            - name: GetProcessSample05 範例
-              href: developer/cmdlet/getprocesssample05-sample.md
-            - name: StopProcessSample01 範例
-              href: developer/cmdlet/stopprocesssample01-sample.md
-            - name: StopProcessSample02 範例
-              href: developer/cmdlet/stopprocesssample02-sample.md
-            - name: StopProcessSample03 範例
-              href: developer/cmdlet/stopprocesssample03-sample.md
-            - name: StopProcessSample04 範例
-              href: developer/cmdlet/stopprocesssample04-sample.md
-            - name: Events01 範例
-              href: developer/cmdlet/events01-sample.md
-    - name: 撰寫 Windows PowerShell 提供者
-      href: developer/provider/writing-a-windows-powershell-provider.md
-      items:
-        - name: Windows PowerShell 提供者快速入門
-          href: developer/provider/windows-powershell-provider-quickstart.md
-        - name: Windows PowerShell 提供者概觀
-          href: developer/provider/windows-powershell-provider-overview.md
-          items:
-            - name: 提供者類型
-              href: developer/provider/provider-types.md
-            - name: 提供者 Cmdlet
-              href: developer/provider/provider-cmdlets.md
-            - name: 提供者 Cmdlet 參數
-              href: developer/provider/provider-cmdlet-parameters.md
-            - name: 提供者 Cmdlet 動態參數
-              href: developer/provider/provider-cmdlet-dynamic-parameters.md
-        - name: 撰寫項目提供者
-          href: developer/provider/writing-an-item-provider.md
-        - name: 撰寫容器提供者
-          href: developer/provider/writing-a-container-provider.md
-        - name: 撰寫瀏覽提供者
-          href: developer/provider/writing-a-navigation-provider.md
-        - name: 提供者範例
-          href: developer/provider/provider-samples.md
-          items:
-            - name: AccessDBProviderSample01
-              href: developer/provider/accessdbprovidersample01.md
-            - name: AccessDBProviderSample02
-              href: developer/provider/accessdbprovidersample02.md
-            - name: AccessDBProviderSample03
-              href: developer/provider/accessdbprovidersample03.md
-            - name: AccessDBProviderSample04
-              href: developer/provider/accessdbprovidersample04.md
-            - name: AccessDBProviderSample05
-              href: developer/provider/accessdbprovidersample05.md
-            - name: AccessDBProviderSample06
-              href: developer/provider/accessdbprovidersample06.md
-    - name: 撰寫 Windows PowerShell 主機應用程式
-      href: developer/hosting/writing-a-windows-powershell-host-application.md
-      items:
-        - name: Windows PowerShell 主機快速入門
-          href: developer/hosting/windows-powershell-host-quickstart.md
-        - name: 建立 Runspace
-          href: developer/hosting/creating-runspaces.md
-          items:
-            - name: 建立 InitialSessionState
-              href: developer/hosting/creating-an-initialsessionstate.md
-            - name: 建立受限 Runspace
-              href: developer/hosting/creating-a-constrained-runspace.md
-            - name: 建立多個 Runspace
-              href: developer/hosting/creating-multiple-runspaces.md
-        - name: 新增及叫用命令
-          href: developer/hosting/adding-and-invoking-commands.md
-        - name: 建立遠端 Runspace
-          href: developer/hosting/creating-remote-runspaces.md
-        - name: 建立自訂使用者介面
-          href: developer/hosting/creating-a-custom-user-interface.md
-        - name: 主機應用程式範例
-          href: developer/hosting/host-application-samples.md
-          items:
-            - name: Windows PowerShell API 範例
-              href: developer/hosting/windows-powershell-api-samples.md
+                - name: 建立 InitialSessionState
+                  href: developer/hosting/creating-an-initialsessionstate.md
+                - name: 建立受限 Runspace
+                  href: developer/hosting/creating-a-constrained-runspace.md
+                - name: 建立多個 Runspace
+                  href: developer/hosting/creating-multiple-runspaces.md
+            - name: 新增及叫用命令
+              href: developer/hosting/adding-and-invoking-commands.md
+            - name: 建立遠端 Runspace
+              href: developer/hosting/creating-remote-runspaces.md
+            - name: 建立自訂使用者介面
+              href: developer/hosting/creating-a-custom-user-interface.md
+            - name: 主機應用程式範例
+              href: developer/hosting/host-application-samples.md
               items:
-                - name: Windows PowerShell01 範例
-                  href: developer/hosting/windows-powershell01-sample.md
-                - name: Windows PowerShell02 範例
-                  href: developer/hosting/windows-powershell02-sample.md
-            - name: 自訂主機範例
-              href: developer/hosting/custom-host-samples.md
+                - name: Windows PowerShell API 範例
+                  href: developer/hosting/windows-powershell-api-samples.md
+                  items:
+                    - name: Windows PowerShell01 範例
+                      href: developer/hosting/windows-powershell01-sample.md
+                    - name: Windows PowerShell02 範例
+                      href: developer/hosting/windows-powershell02-sample.md
+                - name: 自訂主機範例
+                  href: developer/hosting/custom-host-samples.md
+                  items:
+                    - name: Host01 範例
+                      href: developer/hosting/host01-sample.md
+                    - name: Host02 範例
+                      href: developer/hosting/host02-sample.md
+                    - name: Host03 範例
+                      href: developer/hosting/host03-sample.md
+                    - name: Host04 範例
+                      href: developer/hosting/host04-sample.md
+                    - name: Host05 範例
+                      href: developer/hosting/host05-sample.md
+                    - name: Host06 範例
+                      href: developer/hosting/host06-sample.md
+                - name: Runspace 範例
+                  href: developer/hosting/runspace-samples.md
+                  items:
+                    - name: Runspace01 範例
+                      href: developer/hosting/runspace01-sample.md
+                    - name: Runspace02 範例
+                      href: developer/hosting/runspace02-sample.md
+                    - name: Runspace03 範例
+                      href: developer/hosting/runspace03-sample.md
+                    - name: Runspace04 範例
+                      href: developer/hosting/runspace04-sample.md
+                    - name: Runspace05 範例
+                      href: developer/hosting/runspace05-sample.md
+                    - name: Runspace06 範例
+                      href: developer/hosting/runspace06-sample.md
+                    - name: Runspace07 範例
+                      href: developer/hosting/runspace07-sample.md
+                    - name: Runspace08 範例
+                      href: developer/hosting/runspace08-sample.md
+                    - name: Runspace09 範例
+                      href: developer/hosting/runspace09-sample.md
+                    - name: Runspace10 範例
+                      href: developer/hosting/runspace10-sample.md
+                    - name: Runspace11 範例
+                      href: developer/hosting/runspace11-sample.md
+                - name: 遠端 Runspace 範例
+                  href: developer/hosting/remote-runspace-samples.md
+                  items:
+                    - name: RemoteRunspace01 範例
+                      href: developer/hosting/remoterunspace01-sample.md
+                    - name: RemoteRunspacePool01 範例
+                      href: developer/hosting/remoterunspacepool01-sample.md
+        - name: 撰寫 PowerShell 格式設定檔案
+          href: developer/format/writing-a-powershell-formatting-file.md
+          items:
+            - name: 格式設定檔案概觀
+              href: developer/format/formatting-file-overview.md
+            - name: 格式設定檔案概念
+              href: developer/format/formatting-file-concepts.md
               items:
-                - name: Host01 範例
-                  href: developer/hosting/host01-sample.md
-                - name: Host02 範例
-                  href: developer/hosting/host02-sample.md
-                - name: Host03 範例
-                  href: developer/hosting/host03-sample.md
-                - name: Host04 範例
-                  href: developer/hosting/host04-sample.md
-                - name: Host05 範例
-                  href: developer/hosting/host05-sample.md
-                - name: Host06 範例
-                  href: developer/hosting/host06-sample.md
-            - name: Runspace 範例
-              href: developer/hosting/runspace-samples.md
+                - name: 建立表格檢視
+                  href: developer/format/creating-a-table-view.md
+                - name: 建立清單檢視
+                  href: developer/format/creating-a-list-view.md
+                - name: 建立寬型檢視
+                  href: developer/format/creating-a-wide-view.md
+                - name: 建立自訂控制項
+                  href: developer/format/creating-custom-controls.md
+                - name: 載入及匯出格式設定資料
+                  href: developer/format/loading-and-exporting-formatting-data.md
+                - name: 定義通用設定功能
+                  href: developer/format/defining-common-configuration-features.md
+                - name: 定義選取範圍集合
+                  href: developer/format/defining-selection-sets.md
+                - name: 定義用於顯示資料的條件
+                  href: developer/format/defining-conditions-for-displaying-data.md
+                - name: 設定已顯示之資料的格式
+                  href: developer/format/formatting-displayed-data.md
+                - name: PowerShell 格式設定檔案
+                  href: developer/format/powershell-formatting-files.md
+            - name: 格式設定檔案的範例
+              href: developer/format/examples-of-formatting-files.md
               items:
-                - name: Runspace01 範例
-                  href: developer/hosting/runspace01-sample.md
-                - name: Runspace02 範例
-                  href: developer/hosting/runspace02-sample.md
-                - name: Runspace03 範例
-                  href: developer/hosting/runspace03-sample.md
-                - name: Runspace04 範例
-                  href: developer/hosting/runspace04-sample.md
-                - name: Runspace05 範例
-                  href: developer/hosting/runspace05-sample.md
-                - name: Runspace06 範例
-                  href: developer/hosting/runspace06-sample.md
-                - name: Runspace07 範例
-                  href: developer/hosting/runspace07-sample.md
-                - name: Runspace08 範例
-                  href: developer/hosting/runspace08-sample.md
-                - name: Runspace09 範例
-                  href: developer/hosting/runspace09-sample.md
-                - name: Runspace10 範例
-                  href: developer/hosting/runspace10-sample.md
-                - name: Runspace11 範例
-                  href: developer/hosting/runspace11-sample.md
-            - name: 遠端 Runspace 範例
-              href: developer/hosting/remote-runspace-samples.md
+                - name: 如何建立格式設定檔案 (.format.ps1xml)
+                  href: developer/format/how-to-create-a-formatting-file-format-ps1xml.md
+                - name: 寬型檢視 (基本)
+                  href: developer/format/wide-view-basic.md
+                - name: 寬型檢視 (GroupBy)
+                  href: developer/format/wide-view-groupby.md
+                - name: 清單檢視 (基本)
+                  href: developer/format/list-view-basic.md
+                - name: 清單檢視 (標籤)
+                  href: developer/format/list-view-labels.md
+                - name: 清單檢視 (GroupBy)
+                  href: developer/format/list-view-groupby.md
+            - name: 格式結構描述 XML 參考
+              href: developer/format/format-schema-xml-reference.md
               items:
-                - name: RemoteRunspace01 範例
-                  href: developer/hosting/remoterunspace01-sample.md
-                - name: RemoteRunspacePool01 範例
-                  href: developer/hosting/remoterunspacepool01-sample.md
-    - name: 撰寫 PowerShell 格式設定檔案
-      href: developer/format/writing-a-powershell-formatting-file.md
-      items:
-        - name: 格式設定檔案概觀
-          href: developer/format/formatting-file-overview.md
-        - name: 格式設定檔案概念
-          href: developer/format/formatting-file-concepts.md
-          items:
-            - name: 建立表格檢視
-              href: developer/format/creating-a-table-view.md
-            - name: 建立清單檢視
-              href: developer/format/creating-a-list-view.md
-            - name: 建立寬型檢視
-              href: developer/format/creating-a-wide-view.md
-            - name: 建立自訂控制項
-              href: developer/format/creating-custom-controls.md
-            - name: 載入及匯出格式設定資料
-              href: developer/format/loading-and-exporting-formatting-data.md
-            - name: 定義通用設定功能
-              href: developer/format/defining-common-configuration-features.md
-            - name: 定義選取範圍集合
-              href: developer/format/defining-selection-sets.md
-            - name: 定義用於顯示資料的條件
-              href: developer/format/defining-conditions-for-displaying-data.md
-            - name: 設定已顯示之資料的格式
-              href: developer/format/formatting-displayed-data.md
-            - name: PowerShell 格式設定檔案
-              href: developer/format/powershell-formatting-files.md
-        - name: 格式設定檔案的範例
-          href: developer/format/examples-of-formatting-files.md
-          items:
-            - name: 如何建立格式設定檔案 (.format.ps1xml)
-              href: developer/format/how-to-create-a-formatting-file-format-ps1xml.md
-            - name: 寬型檢視 (基本)
-              href: developer/format/wide-view-basic.md
-            - name: 寬型檢視 (GroupBy)
-              href: developer/format/wide-view-groupby.md
-            - name: 清單檢視 (基本)
-              href: developer/format/list-view-basic.md
-            - name: 清單檢視 (標籤)
-              href: developer/format/list-view-labels.md
-            - name: 清單檢視 (GroupBy)
-              href: developer/format/list-view-groupby.md
-        - name: 格式結構描述 XML 參考
-          href: developer/format/format-schema-xml-reference.md
-          items:
-            - name: TableControl 之 TableColumnHeader 的對齊元素 (格式)
-              href: developer/format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
-            - name: TableControl 之 TableColumnItem 的對齊元素 (格式)
-              href: developer/format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
-            - name: TableControl 的 AutoSize 元素 (格式)
-              href: developer/format/autosize-element-for-tablecontrol-format.md
-            - name: WideControl 的 AutoSize 元素 (格式)
-              href: developer/format/autosize-element-for-widecontrol-format.md
-            - name: WideControl 的 ColumnNumber 元素 (格式)
-              href: developer/format/columnnumber-element-for-widecontrol-format.md
-            - name: 設定元素 (格式)
-              href: developer/format/configuration-element-format.md
-            - name: 設定之控制項的控制項元素 (格式)
-              href: developer/format/control-element-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的控制項元素 (格式)
-              href: developer/format/control-element-for-controls-for-view-format.md
-            - name: 設定的控制項元素 (格式)
-              href: developer/format/controls-element-for-configuration-format.md
-            - name: 檢視的控制項元素 (格式)
-              href: developer/format/controls-element-for-view-format.md
-            - name: 設定之控制項的控制項 CustomControl 元素 (格式)
-              href: developer/format/customcontrol-element-for-control-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的控制項 CustomControl 元素 (格式)
-              href: developer/format/customcontrol-element-for-control-for-controls-for-view-format.md
-            - name: GroupBy 的 CustomControl 元素 (格式)
-              href: developer/format/customcontrol-element-for-groupby-format.md
-            - name: 檢視的 CustomControl 元素 (格式)
-              href: developer/format/customcontrol-element-for-view-format.md
-            - name: 設定之控制項的 ExpressionBinding 的 CustomControlName 元素 (格式)
-              href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 ExpressionBinding 的 CustomControlName 元素 (格式)
-              href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 ExpressionBinding 的 CustomControlName 元素 (格式)
-              href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 ExpressionBinding 的 CustomControlName 元素 (格式)
-              href: developer/format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
-            - name: GroupBy 的 CustomControlName 元素 (格式)
-              href: developer/format/customcontrolname-element-for-groupby-format.md
-            - name: 設定之控制項的控制項 CustomControl 的 CustomEntry 元素 (格式)
-              href: developer/format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomEntries 的 CustomEntry 元素 (格式)
-              href: developer/format/customentry-element-for-customentries-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 CustomEntries 的 CustomEntry 元素 (格式)
-              href: developer/format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 CustomControl 的 CustomEntry 元素 (格式)
-              href: developer/format/customentry-element-for-customcontrol-for-groupby-format.md
-            - name: 設定之控制項的 CustomControl 的 CustomEntries 元素 (格式)
-              href: developer/format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomControl 的 CustomEntries 元素 (格式)
-              href: developer/format/customentries-element-for-customcontrol-for-controls-for-view-format.md
-            - name: GroupBy 之 CustomControl 的 CustomEntries 元素 (格式)
-              href: developer/format/customentries-element-for-customcontrol-for-groupby-format.md
-            - name: 檢視之 CustomControl 的 CustomEntries 元素 (格式)
-              href: developer/format/customentries-element-for-customcontrol-for-view-format.md
-            - name: 設定之控制項的 CustomEntry 的 CustomItem 元素 (格式)
-              href: developer/format/customitem-element-for-customentry-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomEntry 的 CustomItem 元素 (格式)
-              href: developer/format/customitem-element-for-customentry-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 CustomEntry 的 CustomItem 元素 (格式)
-              href: developer/format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 CustomEntry 的 CustomItem 元素 (格式)
-              href: developer/format/customitem-element-for-customentry-for-groupby-format.md
-            - name: DefaultSettings 元素 (格式)
-              href: developer/format/defaultsettings-element-format.md
-            - name: DisplayError 元素 (格式)
-              href: developer/format/displayerror-element-format.md
-            - name: 設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 CustomEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
-            - name: EnumerableExpansion 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-enumerableexpansion-format.md
-            - name: GroupBy 之 CustomEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-customentry-for-groupby-format.md
-            - name: ListControl 之 ListEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-listentry-for-listcontrol-format.md
-            - name: TableControl 之 TableRowEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
-            - name: WideEntry 的 EntrySelectedBy 元素 (格式)
-              href: developer/format/entryselectedby-element-for-wideentry-format.md
-            - name: EnumerableExpansion 元素 (格式)
-              href: developer/format/enumerableexpansion-element-format.md
-            - name: EnumerableExpansions 元素 (格式)
-              href: developer/format/enumerableexpansions-element-format.md
-            - name: 設定之控制項的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
-              href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-            - name: 檢視之控制項的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
-              href: developer/format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
-              href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素 (格式)
-              href: developer/format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
-            - name: 展開元素 (格式)
-              href: developer/format/expand-element-format.md
-            - name: 設定之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)
-              href: developer/format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)
-              href: developer/format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)
-              href: developer/format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 CustomItem 的 ExpressionBinding 元素 (格式)
-              href: developer/format/expressionbinding-element-for-customitem-for-groupby-format.md
-            - name: 設定之控制項的框架的 FirstLineHanging 元素 (格式)
-              href: developer/format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的框架的 FirstLineHanging 元素 (格式)
-              href: developer/format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的框架的 FirstLineHanging 元素 (格式)
-              href: developer/format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
-            - name: GroupBy 之框架的 FirstLineHanging 元素 (格式)
-              href: developer/format/firstlinehanging-element-for-frame-for-groupby-format.md
-            - name: 設定之控制項的框架的 FirstLineIndent 元素 (格式)
-              href: developer/format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的框架的 FirstLineIndent 元素 (格式)
-              href: developer/format/firstlineindent-element-for-frame-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的框架的 FirstLineIndent 元素 (格式)
-              href: developer/format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
-            - name: GroupBy 之框架的 FirstLineIndent 元素 (格式)
-              href: developer/format/firstlineindent-element-for-frame-for-groupby-format.md
-            - name: ListControl 之 ListItem 的 FormatString 元素 (格式)
-              href: developer/format/formatstring-element-for-listitem-for-listcontrol-format.md
-            - name: TableControl 之 TableColumnItem 的 FormatString 元素 (格式)
-              href: developer/format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
-            - name: WideControl 之 WideItem 的 FormatString 元素 (格式)
-              href: developer/format/formatstring-element-for-wideitem-for-widecontrol-format.md
-            - name: 設定之控制項的 CustomItem 的框架元素 (格式)
-              href: developer/format/frame-element-for-customitem-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomItem 的框架元素 (格式)
-              href: developer/format/frame-element-for-customitem-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 CustomItem 的框架元素 (格式)
-              href: developer/format/frame-element-for-customitem-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 CustomItem 的框架元素 (格式)
-              href: developer/format/frame-element-for-customitem-for-groupby-format.md
-            - name: 檢視的 GroupBy 元素 (格式)
-              href: developer/format/groupby-element-for-view-format.md
-            - name: HideTableHeaders 元素 (格式)
-              href: developer/format/hidetableheaders-element-format.md
-            - name: 設定之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-            - name: CustomControl 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
-            - name: GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
-            - name: ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
-            - name: ListControl 之 ListItem 的標籤元素 (格式)
-              href: developer/format/label-element-for-listitem-for-listcontrol-format.md
-            - name: GroupBy 的標籤元素 (格式)
-              href: developer/format/label-element-for-groupby-format.md
-            - name: TableControl 之 TableColumnHeader 的標籤元素 (格式)
-              href: developer/format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
-            - name: 設定之控制項的框架的 LeftIndent 元素 (格式)
-              href: developer/format/leftindent-element-for-frame-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的框架的 LeftIndent 元素 (格式)
-              href: developer/format/leftindent-element-for-frame-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的框架的 LeftIndent 元素 (格式)
-              href: developer/format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
-            - name: GroupBy 之框架的 LeftIndent 元素 (格式)
-              href: developer/format/leftindent-element-for-frame-for-groupby-format.md
-            - name: ListControl 元素 (格式)
-              href: developer/format/listcontrol-element-format.md
-            - name: ListControl 的 ListEntry 元素 (格式)
-              href: developer/format/listentry-element-for-listcontrol-format.md
-            - name: ListControl 的 ListEntries 元素 (格式)
-              href: developer/format/listentries-element-for-listcontrol-format.md
-            - name: ListControl 之 ListItems 的 ListItem 元素 (格式)
-              href: developer/format/listitem-element-for-listitems-for-listcontrol-format.md
-            - name: ListControl 之 ListEntry 的 ListItems 元素 (格式)
-              href: developer/format/listitems-element-for-listentry-for-listcontrol-format.md
-            - name: 設定之控制項的控制項的名稱元素 (格式)
-              href: developer/format/name-element-for-control-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的控制項的名稱元素 (格式)
-              href: developer/format/name-element-for-control-for-controls-for-view-format.md
-            - name: SelectionSet 的名稱元素 (格式)
-              href: developer/format/name-element-for-selectionset-format.md
-            - name: 檢視的名稱元素 (格式)
-              href: developer/format/name-element-for-view-format.md
-            - name: 設定之控制項的 CustomItem 的 NewLine 元素 (格式)
-              href: developer/format/newline-element-for-customitem-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomItem 的 NewLine 元素 (格式)
-              href: developer/format/newline-element-for-customitem-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 CustomItem 的 NewLine 元素 (格式)
-              href: developer/format/newline-element-for-customitem-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 CustomItem 的 NewLine 元素 (格式)
-              href: developer/format/newline-element-for-customitem-for-groupby-format.md
-            - name: PropertyCountForTable 元素 (格式)
-              href: developer/format/propertycountfortable-element-format.md
-            - name: 設定之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 ExpressionBinding 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 ExpressionBinding 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-expressionbinding-for-groupby-format.md
-            - name: GroupBy 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-groupby-format.md
-            - name: 設定之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 ItemSelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
-            - name: ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
-            - name: ListControl 之 ListItem 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-listitem-for-listcontrol-format.md
-            - name: 設定之控制項的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-            - name: 檢視之控制項的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
-            - name: GroupBy 之 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-groupby-format.md
-            - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
-            - name: TableRowEntry 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
-            - name: WideEntry 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
-            - name: TableControl 之 TableColumnItem 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
-            - name: WideControl 之 WideItem 的 PropertyName 元素 (格式)
-              href: developer/format/propertyname-element-for-wideitem-for-widecontrol-format.md
-            - name: 設定之控制項的框架的 RightIndent 元素 (格式)
-              href: developer/format/rightindent-element-for-frame-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的框架的 RightIndent 元素 (格式)
-              href: developer/format/rightindent-element-for-frame-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的框架的 RightIndent 元素 (格式)
-              href: developer/format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
-            - name: GroupBy 之框架的 RightIndent 元素 (格式)
-              href: developer/format/rightindent-element-for-frame-for-groupby-format.md
-            - name: 設定之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 ExpressionBinding 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 ExpressionBinding 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-expressionbinding-for-groupby-format.md
-            - name: GroupBy 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-groupby-format.md
-            - name: 設定之控制項的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
-            - name: ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
-            - name: ListControl 之 ListItem 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-listitem-for-listcontrol-format.md
-            - name: 設定之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
-            - name: GroupBy 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-            - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-            - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-            - name: WideControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
-            - name: TableControl 之 TableColumnItem 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
-            - name: WideControl 之 WideItem 的 ScriptBlock 元素 (格式)
-              href: developer/format/scriptblock-element-for-wideitem-for-widecontrol-format.md
-            - name: 設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-            - name: 檢視之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
-            - name: CustomControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
-            - name: GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
-            - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
-            - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
-            - name: WideControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
-              href: developer/format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
-            - name: SelectionSet 元素 (格式)
-              href: developer/format/selectionset-element-format.md
-            - name: 設定之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-            - name: 檢視之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
-            - name: GroupBy 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
-            - name: ListControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
-            - name: TableControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
-            - name: WideControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
-            - name: 設定之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
-            - name: GroupBy 之 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
-            - name: ListEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-            - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-            - name: WideEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-            - name: ViewSelectedBy 的 SelectionSetName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-viewselectedby-format.md
-            - name: SelectionSets 元素 (格式)
-              href: developer/format/selectionsets-element-format.md
-            - name: ShowError 元素 (格式)
-              href: developer/format/showerror-element-format.md
-            - name: TableColumnHeader 元素 (格式)
-              href: developer/format/tablecolumnheader-element-format.md
-            - name: TableControl 之 TableColumnItems 的 TableColumnItem 元素 (格式)
-              href: developer/format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
-            - name: TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)
-              href: developer/format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
-            - name: TableControl 元素 (格式)
-              href: developer/format/tablecontrol-element-format.md
-            - name: TableHeaders 元素 (格式)
-              href: developer/format/tableheaders-element-format.md
-            - name: TableControl 的 TableRowEntries 元素 (格式)
-              href: developer/format/tablerowentries-element-for-tablecontrol-format.md
-            - name: TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)
-              href: developer/format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
-            - name: 設定之控制項的 CustomItem 的文字元素 (格式)
-              href: developer/format/text-element-for-customitem-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 CustomItem 的文字元素 (格式)
-              href: developer/format/text-element-for-customitem-for-controls-for-view-format.md
-            - name: 檢視之 CustomView 的 CustomItem 的文字元素 (格式)
-              href: developer/format/text-element-for-customitem-for-customview-for-view-format.md
-            - name: GroupBy 之 CustomItem 的文字元素 (格式)
-              href: developer/format/text-element-for-customitem-for-groupby-format.md
-            - name: 設定之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-controls-for-view-format.md
-            - name: 檢視之 CustomEntry 的 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
-            - name: GroupBy 之 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-groupby-format.md
-            - name: ListControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-listcontrol-format.md
-            - name: TableControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-tablecontrol-format.md
-            - name: WideEntry 之 EntrySelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-entryselectedby-for-wideentry-format.md
-            - name: 設定之控制項的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
-            - name: 檢視之控制項的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-selectioncondition-for-controls-for-view-format.md
-            - name: 檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
-            - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-            - name: GroupBy 之 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-selectioncondition-for-groupby-format.md
-            - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-            - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
-            - name: WideControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
-            - name: 類型的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-types-format.md
-            - name: ViewSelectedBy 的 TypeName 元素 (格式)
-              href: developer/format/typename-element-for-viewselectedby-format.md
-            - name: SelectionSet 的類型元素 (格式)
-              href: developer/format/types-element-for-selectionset-format.md
-            - name: 檢視元素 (格式)
-              href: developer/format/view-element-format.md
-            - name: ViewDefinitions 元素 (格式)
-              href: developer/format/viewdefinitions-element-format.md
-            - name: ViewSelectedBy 元素 (格式)
-              href: developer/format/viewselectedby-element-format.md
-            - name: WideControl 元素 (格式)
-              href: developer/format/widecontrol-element-format.md
-            - name: WideControl 的 WideEntries 元素 (格式)
-              href: developer/format/wideentries-element-for-widecontrol-format.md
-            - name: WideControl 的 WideEntry 元素 (格式)
-              href: developer/format/wideentry-element-for-widecontrol-format.md
-            - name: WideControl 的 WideItem 元素 (格式)
-              href: developer/format/wideitem-element-for-widecontrol-format.md
-            - name: TableControl 之 TableColumnHeader 的寬度元素 (格式)
-              href: developer/format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
-            - name: TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
-              href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
-            - name: WrapTables 元素 (格式)
-              href: developer/format/wraptables-element-format.md
-    - name: 撰寫註解型說明主題
-      href: developer/help/writing-comment-based-help-topics.md
-      items:
-        - name: 撰寫 Windows PowerShell Cmdlet 的說明
-          href: developer/help/writing-help-for-windows-powershell-cmdlets.md
-        - name: 撰寫 Windows PowerShell 提供者的說明
-          items:
-            - name: 如何新增動態參數至提供者說明主題
-              href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: 如何新增＜另請參閱＞小節至提供者說明主題
-              href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-        - name: 撰寫 Windows PowerShell 指令碼和函式的說明
-          href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
+                - name: TableControl 之 TableColumnHeader 的對齊元素 (格式)
+                  href: developer/format/alignment-element-for-tablecolumnheader-for-tablecontrol-format.md
+                - name: TableControl 之 TableColumnItem 的對齊元素 (格式)
+                  href: developer/format/alignment-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: TableControl 的 AutoSize 元素 (格式)
+                  href: developer/format/autosize-element-for-tablecontrol-format.md
+                - name: WideControl 的 AutoSize 元素 (格式)
+                  href: developer/format/autosize-element-for-widecontrol-format.md
+                - name: WideControl 的 ColumnNumber 元素 (格式)
+                  href: developer/format/columnnumber-element-for-widecontrol-format.md
+                - name: 設定元素 (格式)
+                  href: developer/format/configuration-element-format.md
+                - name: 設定之控制項的控制項元素 (格式)
+                  href: developer/format/control-element-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的控制項元素 (格式)
+                  href: developer/format/control-element-for-controls-for-view-format.md
+                - name: 設定的控制項元素 (格式)
+                  href: developer/format/controls-element-for-configuration-format.md
+                - name: 檢視的控制項元素 (格式)
+                  href: developer/format/controls-element-for-view-format.md
+                - name: 設定之控制項的控制項 CustomControl 元素 (格式)
+                  href: developer/format/customcontrol-element-for-control-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的控制項 CustomControl 元素 (格式)
+                  href: developer/format/customcontrol-element-for-control-for-controls-for-view-format.md
+                - name: GroupBy 的 CustomControl 元素 (格式)
+                  href: developer/format/customcontrol-element-for-groupby-format.md
+                - name: 檢視的 CustomControl 元素 (格式)
+                  href: developer/format/customcontrol-element-for-view-format.md
+                - name: 設定之控制項的 ExpressionBinding 的 CustomControlName 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 ExpressionBinding 的 CustomControlName 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-expressionbinding-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 ExpressionBinding 的 CustomControlName 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 ExpressionBinding 的 CustomControlName 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-expressionbinding-for-groupby-format.md
+                - name: GroupBy 的 CustomControlName 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-groupby-format.md
+                - name: 設定之控制項的控制項 CustomControl 的 CustomEntry 元素 (格式)
+                  href: developer/format/customentry-element-for-customcontrol-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomEntries 的 CustomEntry 元素 (格式)
+                  href: developer/format/customentry-element-for-customentries-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 CustomEntries 的 CustomEntry 元素 (格式)
+                  href: developer/format/customentry-element-for-customentries-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 CustomControl 的 CustomEntry 元素 (格式)
+                  href: developer/format/customentry-element-for-customcontrol-for-groupby-format.md
+                - name: 設定之控制項的 CustomControl 的 CustomEntries 元素 (格式)
+                  href: developer/format/customentries-element-for-customcontrol-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomControl 的 CustomEntries 元素 (格式)
+                  href: developer/format/customentries-element-for-customcontrol-for-controls-for-view-format.md
+                - name: GroupBy 之 CustomControl 的 CustomEntries 元素 (格式)
+                  href: developer/format/customentries-element-for-customcontrol-for-groupby-format.md
+                - name: 檢視之 CustomControl 的 CustomEntries 元素 (格式)
+                  href: developer/format/customentries-element-for-customcontrol-for-view-format.md
+                - name: 設定之控制項的 CustomEntry 的 CustomItem 元素 (格式)
+                  href: developer/format/customitem-element-for-customentry-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomEntry 的 CustomItem 元素 (格式)
+                  href: developer/format/customitem-element-for-customentry-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 CustomEntry 的 CustomItem 元素 (格式)
+                  href: developer/format/customitem-element-for-customentry-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 CustomEntry 的 CustomItem 元素 (格式)
+                  href: developer/format/customitem-element-for-customentry-for-groupby-format.md
+                - name: DefaultSettings 元素 (格式)
+                  href: developer/format/defaultsettings-element-format.md
+                - name: DisplayError 元素 (格式)
+                  href: developer/format/displayerror-element-format.md
+                - name: 設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-customentry-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-customentry-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 CustomEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md
+                - name: EnumerableExpansion 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-enumerableexpansion-format.md
+                - name: GroupBy 之 CustomEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-customentry-for-groupby-format.md
+                - name: ListControl 之 ListEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-listentry-for-listcontrol-format.md
+                - name: TableControl 之 TableRowEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md
+                - name: WideEntry 的 EntrySelectedBy 元素 (格式)
+                  href: developer/format/entryselectedby-element-for-wideentry-format.md
+                - name: EnumerableExpansion 元素 (格式)
+                  href: developer/format/enumerableexpansion-element-format.md
+                - name: EnumerableExpansions 元素 (格式)
+                  href: developer/format/enumerableexpansions-element-format.md
+                - name: 設定之控制項的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                - name: 檢視之控制項的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
+                  href: developer/format/enumeratecollection-element-for-expressionbinding-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 ExpressionBinding 的 EnumerateCollection 元素 (格式)
+                  href: developer/format/customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 ExpressionBinding 的 EnumerateCollection 元素 (格式)
+                  href: developer/format/enumeratecollection-element-for-expressionbinding-for-groupby-format.md
+                - name: 展開元素 (格式)
+                  href: developer/format/expand-element-format.md
+                - name: 設定之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)
+                  href: developer/format/expressionbinding-element-for-customitem-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)
+                  href: developer/format/expressionbinding-element-for-customitem-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)
+                  href: developer/format/expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 CustomItem 的 ExpressionBinding 元素 (格式)
+                  href: developer/format/expressionbinding-element-for-customitem-for-groupby-format.md
+                - name: 設定之控制項的框架的 FirstLineHanging 元素 (格式)
+                  href: developer/format/firstlinehanging-element-for-frame-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的框架的 FirstLineHanging 元素 (格式)
+                  href: developer/format/firstlinehanging-element-for-frame-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的框架的 FirstLineHanging 元素 (格式)
+                  href: developer/format/firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md
+                - name: GroupBy 之框架的 FirstLineHanging 元素 (格式)
+                  href: developer/format/firstlinehanging-element-for-frame-for-groupby-format.md
+                - name: 設定之控制項的框架的 FirstLineIndent 元素 (格式)
+                  href: developer/format/firstlineindent-element-for-frame-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的框架的 FirstLineIndent 元素 (格式)
+                  href: developer/format/firstlineindent-element-for-frame-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的框架的 FirstLineIndent 元素 (格式)
+                  href: developer/format/firstlineindent-element-for-frame-for-customcontrol-for-view-format.md
+                - name: GroupBy 之框架的 FirstLineIndent 元素 (格式)
+                  href: developer/format/firstlineindent-element-for-frame-for-groupby-format.md
+                - name: ListControl 之 ListItem 的 FormatString 元素 (格式)
+                  href: developer/format/formatstring-element-for-listitem-for-listcontrol-format.md
+                - name: TableControl 之 TableColumnItem 的 FormatString 元素 (格式)
+                  href: developer/format/formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: WideControl 之 WideItem 的 FormatString 元素 (格式)
+                  href: developer/format/formatstring-element-for-wideitem-for-widecontrol-format.md
+                - name: 設定之控制項的 CustomItem 的框架元素 (格式)
+                  href: developer/format/frame-element-for-customitem-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomItem 的框架元素 (格式)
+                  href: developer/format/frame-element-for-customitem-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 CustomItem 的框架元素 (格式)
+                  href: developer/format/frame-element-for-customitem-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 CustomItem 的框架元素 (格式)
+                  href: developer/format/frame-element-for-customitem-for-groupby-format.md
+                - name: 檢視的 GroupBy 元素 (格式)
+                  href: developer/format/groupby-element-for-view-format.md
+                - name: HideTableHeaders 元素 (格式)
+                  href: developer/format/hidetableheaders-element-format.md
+                - name: 設定之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: CustomControl 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md
+                - name: GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-expressionbinding-for-groupby-format.md
+                - name: ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-listitem-for-listcontrol-format.md
+                - name: ListControl 之 ListItem 的標籤元素 (格式)
+                  href: developer/format/label-element-for-listitem-for-listcontrol-format.md
+                - name: GroupBy 的標籤元素 (格式)
+                  href: developer/format/label-element-for-groupby-format.md
+                - name: TableControl 之 TableColumnHeader 的標籤元素 (格式)
+                  href: developer/format/label-element-for-tablecolumnheader-for-tablecontrol-format.md
+                - name: 設定之控制項的框架的 LeftIndent 元素 (格式)
+                  href: developer/format/leftindent-element-for-frame-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的框架的 LeftIndent 元素 (格式)
+                  href: developer/format/leftindent-element-for-frame-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的框架的 LeftIndent 元素 (格式)
+                  href: developer/format/leftindent-element-for-frame-for-customcontrol-for-view-format.md
+                - name: GroupBy 之框架的 LeftIndent 元素 (格式)
+                  href: developer/format/leftindent-element-for-frame-for-groupby-format.md
+                - name: ListControl 元素 (格式)
+                  href: developer/format/listcontrol-element-format.md
+                - name: ListControl 的 ListEntry 元素 (格式)
+                  href: developer/format/listentry-element-for-listcontrol-format.md
+                - name: ListControl 的 ListEntries 元素 (格式)
+                  href: developer/format/listentries-element-for-listcontrol-format.md
+                - name: ListControl 之 ListItems 的 ListItem 元素 (格式)
+                  href: developer/format/listitem-element-for-listitems-for-listcontrol-format.md
+                - name: ListControl 之 ListEntry 的 ListItems 元素 (格式)
+                  href: developer/format/listitems-element-for-listentry-for-listcontrol-format.md
+                - name: 設定之控制項的控制項的名稱元素 (格式)
+                  href: developer/format/name-element-for-control-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的控制項的名稱元素 (格式)
+                  href: developer/format/name-element-for-control-for-controls-for-view-format.md
+                - name: SelectionSet 的名稱元素 (格式)
+                  href: developer/format/name-element-for-selectionset-format.md
+                - name: 檢視的名稱元素 (格式)
+                  href: developer/format/name-element-for-view-format.md
+                - name: 設定之控制項的 CustomItem 的 NewLine 元素 (格式)
+                  href: developer/format/newline-element-for-customitem-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomItem 的 NewLine 元素 (格式)
+                  href: developer/format/newline-element-for-customitem-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 CustomItem 的 NewLine 元素 (格式)
+                  href: developer/format/newline-element-for-customitem-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 CustomItem 的 NewLine 元素 (格式)
+                  href: developer/format/newline-element-for-customitem-for-groupby-format.md
+                - name: PropertyCountForTable 元素 (格式)
+                  href: developer/format/propertycountfortable-element-format.md
+                - name: 設定之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-expressionbinding-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 ExpressionBinding 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 ExpressionBinding 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-expressionbinding-for-groupby-format.md
+                - name: GroupBy 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-groupby-format.md
+                - name: 設定之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 ItemSelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-itemselectioncondition-for-groupby-format.md
+                - name: ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-itemselectioncondition-for-listcontrol-format.md
+                - name: ListControl 之 ListItem 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-listitem-for-listcontrol-format.md
+                - name: 設定之控制項的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+                - name: 檢視之控制項的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
+                - name: GroupBy 之 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-groupby-format.md
+                - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md
+                - name: TableRowEntry 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md
+                - name: WideEntry 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md
+                - name: TableControl 之 TableColumnItem 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: WideControl 之 WideItem 的 PropertyName 元素 (格式)
+                  href: developer/format/propertyname-element-for-wideitem-for-widecontrol-format.md
+                - name: 設定之控制項的框架的 RightIndent 元素 (格式)
+                  href: developer/format/rightindent-element-for-frame-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的框架的 RightIndent 元素 (格式)
+                  href: developer/format/rightindent-element-for-frame-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的框架的 RightIndent 元素 (格式)
+                  href: developer/format/rightindent-element-for-frame-for-customcontrol-for-view-format.md
+                - name: GroupBy 之框架的 RightIndent 元素 (格式)
+                  href: developer/format/rightindent-element-for-frame-for-groupby-format.md
+                - name: 設定之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-expressionbinding-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 ExpressionBinding 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-expressionbinding-for-groupby-format.md
+                - name: GroupBy 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-groupby-format.md
+                - name: 設定之控制項的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-itemselectioncondition-for-groupby-format.md
+                - name: ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md
+                - name: ListControl 之 ListItem 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-listitem-for-listcontrol-format.md
+                - name: 設定之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md
+                - name: GroupBy 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                - name: WideControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md
+                - name: TableControl 之 TableColumnItem 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md
+                - name: WideControl 之 WideItem 的 ScriptBlock 元素 (格式)
+                  href: developer/format/scriptblock-element-for-wideitem-for-widecontrol-format.md
+                - name: 設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                - name: 檢視之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md
+                - name: CustomControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-customcontrol-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md
+                - name: GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-groupby-format.md
+                - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-listcontrol-format.md
+                - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md
+                - name: WideControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
+                  href: developer/format/selectioncondition-element-for-entryselectedby-for-widecontrol-format.md
+                - name: SelectionSet 元素 (格式)
+                  href: developer/format/selectionset-element-format.md
+                - name: 設定之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                - name: 檢視之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md
+                - name: GroupBy 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-groupby-format.md
+                - name: ListControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-listcontrol-format.md
+                - name: TableControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md
+                - name: WideControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-entryselectedby-for-widecontrol-format.md
+                - name: 設定之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: GroupBy 之 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-groupby-format.md
+                - name: ListEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: WideEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: ViewSelectedBy 的 SelectionSetName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-viewselectedby-format.md
+                - name: SelectionSets 元素 (格式)
+                  href: developer/format/selectionsets-element-format.md
+                - name: ShowError 元素 (格式)
+                  href: developer/format/showerror-element-format.md
+                - name: TableColumnHeader 元素 (格式)
+                  href: developer/format/tablecolumnheader-element-format.md
+                - name: TableControl 之 TableColumnItems 的 TableColumnItem 元素 (格式)
+                  href: developer/format/tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md
+                - name: TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)
+                  href: developer/format/tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md
+                - name: TableControl 元素 (格式)
+                  href: developer/format/tablecontrol-element-format.md
+                - name: TableHeaders 元素 (格式)
+                  href: developer/format/tableheaders-element-format.md
+                - name: TableControl 的 TableRowEntries 元素 (格式)
+                  href: developer/format/tablerowentries-element-for-tablecontrol-format.md
+                - name: TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)
+                  href: developer/format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
+                - name: 設定之控制項的 CustomItem 的文字元素 (格式)
+                  href: developer/format/text-element-for-customitem-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 CustomItem 的文字元素 (格式)
+                  href: developer/format/text-element-for-customitem-for-controls-for-view-format.md
+                - name: 檢視之 CustomView 的 CustomItem 的文字元素 (格式)
+                  href: developer/format/text-element-for-customitem-for-customview-for-view-format.md
+                - name: GroupBy 之 CustomItem 的文字元素 (格式)
+                  href: developer/format/text-element-for-customitem-for-groupby-format.md
+                - name: 設定之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-controls-for-view-format.md
+                - name: 檢視之 CustomEntry 的 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-customentry-for-view-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-enumerableexpansion-format.md
+                - name: GroupBy 之 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-groupby-format.md
+                - name: ListControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-listcontrol-format.md
+                - name: TableControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-tablecontrol-format.md
+                - name: WideEntry 之 EntrySelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-entryselectedby-for-wideentry-format.md
+                - name: 設定之控制項的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-selectioncondition-for-controls-for-configuration-format.md
+                - name: 檢視之控制項的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-selectioncondition-for-controls-for-view-format.md
+                - name: 檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-selectioncondition-for-customcontrol-for-view-format.md
+                - name: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: GroupBy 之 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-selectioncondition-for-groupby-format.md
+                - name: ListControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md
+                - name: WideControl 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md
+                - name: 類型的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-types-format.md
+                - name: ViewSelectedBy 的 TypeName 元素 (格式)
+                  href: developer/format/typename-element-for-viewselectedby-format.md
+                - name: SelectionSet 的類型元素 (格式)
+                  href: developer/format/types-element-for-selectionset-format.md
+                - name: 檢視元素 (格式)
+                  href: developer/format/view-element-format.md
+                - name: ViewDefinitions 元素 (格式)
+                  href: developer/format/viewdefinitions-element-format.md
+                - name: ViewSelectedBy 元素 (格式)
+                  href: developer/format/viewselectedby-element-format.md
+                - name: WideControl 元素 (格式)
+                  href: developer/format/widecontrol-element-format.md
+                - name: WideControl 的 WideEntries 元素 (格式)
+                  href: developer/format/wideentries-element-for-widecontrol-format.md
+                - name: WideControl 的 WideEntry 元素 (格式)
+                  href: developer/format/wideentry-element-for-widecontrol-format.md
+                - name: WideControl 的 WideItem 元素 (格式)
+                  href: developer/format/wideitem-element-for-widecontrol-format.md
+                - name: TableControl 之 TableColumnHeader 的寬度元素 (格式)
+                  href: developer/format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
+                - name: TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
+                  href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
+                - name: WrapTables 元素 (格式)
+                  href: developer/format/wraptables-element-format.md
         - name: 撰寫註解型說明主題
           href: developer/help/writing-comment-based-help-topics.md
           items:
-            - name: 註解型說明的語法
-              href: developer/help/syntax-of-comment-based-help.md
-            - name: 註解型說明關鍵字
-              href: developer/help/comment-based-help-keywords.md
-            - name: 將註解型說明置於函式
-              href: developer/help/placing-comment-based-help-in-functions.md
-            - name: 將註解型說明置於指令碼
-              href: developer/help/placing-comment-based-help-in-scripts.md
-            - name: 自動產生的註解型說明元素
-              href: developer/help/autogenerated-elements-of-comment-based-help.md
-            - name: 註解型說明的範例
-              href: developer/help/examples-of-comment-based-help.md
-        - name: 撰寫命令的 XML 型說明主題
+            - name: 撰寫 Windows PowerShell Cmdlet 的說明
+              href: developer/help/writing-help-for-windows-powershell-cmdlets.md
+            - name: 撰寫 Windows PowerShell 提供者的說明
+              items:
+                - name: 如何新增動態參數至提供者說明主題
+                  href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
+                - name: 如何新增＜另請參閱＞小節至提供者說明主題
+                  href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
+            - name: 撰寫 Windows PowerShell 指令碼和函式的說明
+              href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
+            - name: 撰寫註解型說明主題
+              href: developer/help/writing-comment-based-help-topics.md
+              items:
+                - name: 註解型說明的語法
+                  href: developer/help/syntax-of-comment-based-help.md
+                - name: 註解型說明關鍵字
+                  href: developer/help/comment-based-help-keywords.md
+                - name: 將註解型說明置於函式
+                  href: developer/help/placing-comment-based-help-in-functions.md
+                - name: 將註解型說明置於指令碼
+                  href: developer/help/placing-comment-based-help-in-scripts.md
+                - name: 自動產生的註解型說明元素
+                  href: developer/help/autogenerated-elements-of-comment-based-help.md
+                - name: 註解型說明的範例
+                  href: developer/help/examples-of-comment-based-help.md
+            - name: 撰寫命令的 XML 型說明主題
+              items:
+                - name: 如何建立 Cmdlet 說明檔案
+                  href: developer/help/how-to-create-the-cmdlet-help-file.md
+                - name: 如何新增 Cmdlet 名稱和概要至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+                - name: 如何新增 Cmdlet 描述
+                  href: developer/help/how-to-add-a-cmdlet-description.md
+                - name: 如何新增語法至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
+                - name: 如何新增參數資訊
+                  href: developer/help/how-to-add-parameter-information.md
+                - name: 如何新增輸入類型至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
+                - name: 如何新增傳回值至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
+                - name: 如何新增附註至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
+                - name: 如何新增範例至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
+                - name: 如何新增相關連結至 Cmdlet 說明主題
+                  href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+        - name: 建立 Management OData Web 服務
+          href: developer/webservices/creating-a-management-odata-web-service.md
           items:
-            - name: 如何建立 Cmdlet 說明檔案
-              href: developer/help/how-to-create-the-cmdlet-help-file.md
-            - name: 如何新增 Cmdlet 名稱和概要至 Cmdlet 說明主題
-              href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
-            - name: 如何新增 Cmdlet 描述
-              href: developer/help/how-to-add-a-cmdlet-description.md
-            - name: 如何新增語法至 Cmdlet 說明主題
-              href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
-            - name: 如何新增參數資訊
-              href: developer/help/how-to-add-parameter-information.md
-            - name: 如何新增輸入類型至 Cmdlet 說明主題
-              href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
-            - name: 如何新增傳回值至 Cmdlet 說明主題
-              href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
-            - name: 如何新增附註至 Cmdlet 說明主題
-              href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
-            - name: 如何新增範例至 Cmdlet 說明主題
-              href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
-            - name: 如何新增相關連結至 Cmdlet 說明主題
-              href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
-    - name: 建立 Management OData Web 服務
-      href: developer/webservices/creating-a-management-odata-web-service.md
-      items:
-        - name: 新增資源至 Management OData Web 服務
-          href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
-        - name: 實作 Management OData Web 服務的自訂授權
-          href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
+            - name: 新增資源至 Management OData Web 服務
+              href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
+            - name: 實作 Management OData Web 服務的自訂授權
+              href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
+              items:
+                - name: 設定角色型授權
+                  href: developer/webservices/configuring-role-based-authorization.md
+                  items:
+                    - name: 角色型授權設定結構描述
+                      href: developer/webservices/role-based-authorization-configuration-schema.md
+            - name: 實作 Management OData Web 服務的 SessionConfiguration
+              href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
+            - name: 撰寫 Management OData Web 服務的 MOF 結構描述檔案
+              href: developer/webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
+            - name: 撰寫 Management OData Web 服務的 XML 結構描述檔案
+              href: developer/webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
+            - name: 撰寫 Management OData Web 服務的 Web.config 檔案
+              href: developer/webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
+            - name: 部署 Management OData Web 服務
+              href: developer/webservices/deploying-a-management-odata-web-service.md
+            - name: 建立 Management OData 實體的關聯
+              href: developer/webservices/associating-management-odata-entities.md
+            - name: 透過 Management OData Web 服務叫用 Windows PowerShell Cmdlet
+              href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
+            - name: Management OData IIS 擴充功能結構描述檔案
+              href: developer/webservices/management-odata-iis-extension-schema-files.md
+              items:
+                - name: 資源對應結構描述
+                  href: developer/webservices/resource-mapping-schema.md
+                - name: 公用資源結構描述
+                  href: developer/webservices/public-resource-schema.md
+        - name: 撰寫 Windows PowerShell 工作流程
+          href: developer/workflow/writing-a-windows-powershell-workflow.md
           items:
-            - name: 設定角色型授權
-              href: developer/webservices/configuring-role-based-authorization.md
-              items:
-                - name: 角色型授權設定結構描述
-                  href: developer/webservices/role-based-authorization-configuration-schema.md
-        - name: 實作 Management OData Web 服務的 SessionConfiguration
-          href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
-        - name: 撰寫 Management OData Web 服務的 MOF 結構描述檔案
-          href: developer/webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
-        - name: 撰寫 Management OData Web 服務的 XML 結構描述檔案
-          href: developer/webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
-        - name: 撰寫 Management OData Web 服務的 Web.config 檔案
-          href: developer/webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
-        - name: 部署 Management OData Web 服務
-          href: developer/webservices/deploying-a-management-odata-web-service.md
-        - name: 建立 Management OData 實體的關聯
-          href: developer/webservices/associating-management-odata-entities.md
-        - name: 透過 Management OData Web 服務叫用 Windows PowerShell Cmdlet
-          href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
-        - name: Management OData IIS 擴充功能結構描述檔案
-          href: developer/webservices/management-odata-iis-extension-schema-files.md
+            - name: 新增 Windows PowerShell 活動至 Visual Studio 工具箱
+              href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
+            - name: 常見工作流程參數
+              href: developer/workflow/common-workflow-parameters.md
+            - name: 從 Windows PowerShell Cmdlet 建立工作流程活動
+              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
+            - name: 使用 Windows PowerShell 指令碼建立工作流程
+              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
+            - name: 透過 Windows PowerShell 活動建立工作流程
+              href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
+            - name: 匯入並叫用 Windows PowerShell 工作流程
+              href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
+            - name: 透過 Windows PowerShell API 對作業進行排程
+              href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
+        - name: Windows PowerShell 程式設計人員手冊
+          href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
-            - name: 資源對應結構描述
-              href: developer/webservices/resource-mapping-schema.md
-            - name: 公用資源結構描述
-              href: developer/webservices/public-resource-schema.md
-    - name: 撰寫 Windows PowerShell 工作流程
-      href: developer/workflow/writing-a-windows-powershell-workflow.md
-      items:
-        - name: 新增 Windows PowerShell 活動至 Visual Studio 工具箱
-          href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-        - name: 常見工作流程參數
-          href: developer/workflow/common-workflow-parameters.md
-        - name: 從 Windows PowerShell Cmdlet 建立工作流程活動
-          href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-        - name: 使用 Windows PowerShell 指令碼建立工作流程
-          href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
-        - name: 透過 Windows PowerShell 活動建立工作流程
-          href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
-        - name: 匯入並叫用 Windows PowerShell 工作流程
-          href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
-        - name: 透過 Windows PowerShell API 對作業進行排程
-          href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
-    - name: Windows PowerShell 程式設計人員手冊
-      href: developer/prog-guide/windows-powershell-programmer-s-guide.md
-      items:
-        - name: 如何建立 Windows PowerShell 提供者
-          href: developer/prog-guide/how-to-create-a-windows-powershell-provider.md
+            - name: 如何建立 Windows PowerShell 提供者
+              href: developer/prog-guide/how-to-create-a-windows-powershell-provider.md
+              items:
+                - name: 設計 Windows PowerShell 提供者
+                  href: developer/prog-guide/designing-your-windows-powershell-provider.md
+                - name: 建立基本的 Windows PowerShell 提供者
+                  href: developer/prog-guide/creating-a-basic-windows-powershell-provider.md
+                - name: 建立 Windows PowerShell 磁碟機提供者
+                  href: developer/prog-guide/creating-a-windows-powershell-drive-provider.md
+                - name: 建立 Windows PowerShell 項目提供者
+                  href: developer/prog-guide/creating-a-windows-powershell-item-provider.md
+                - name: 建立 Windows PowerShell 容器提供者
+                  href: developer/prog-guide/creating-a-windows-powershell-container-provider.md
+                - name: 建立 Windows PowerShell 瀏覽提供者
+                  href: developer/prog-guide/creating-a-windows-powershell-navigation-provider.md
+                - name: 建立 Windows PowerShell 內容提供者
+                  href: developer/prog-guide/creating-a-windows-powershell-content-provider.md
+                - name: 建立 Windows PowerShell 屬性提供者
+                  href: developer/prog-guide/creating-a-windows-powershell-property-provider.md
+            - name: 如何建立主控台殼層
+              href: developer/prog-guide/how-to-create-a-console-shell.md
+            - name: Windows PowerShell 概念
+              href: developer/prog-guide/windows-powershell-concepts.md
+            - name: Windows PowerShell 範例程式碼
+              href: developer/prog-guide/windows-powershell-sample-code.md
+              items:
+                - name: AccessDbProviderSample01 程式碼範例
+                  href: developer/prog-guide/accessdbprovidersample01-code-sample.md
+                - name: AccessDbProviderSample02 程式碼範例
+                  href: developer/prog-guide/accessdbprovidersample02-code-sample.md
+                - name: AccessDbProviderSample03 程式碼範例
+                  href: developer/prog-guide/accessdbprovidersample03-code-sample.md
+                - name: AccessDbProviderSample04 程式碼範例
+                  href: developer/prog-guide/accessdbprovidersample04-code-sample.md
+                - name: AccessDbProviderSample05 程式碼範例
+                  href: developer/prog-guide/accessdbprovidersample05-code-sample.md
+                - name: AccessDbProviderSample06 程式碼範例
+                  href: developer/prog-guide/accessdbprovidersample06-code-sample.md
+                - name: GetProc01 程式碼範例
+                  href: developer/prog-guide/getproc01-code-samples.md
+                  items:
+                    - name: 'GetProc01 (C#) 程式碼範例'
+                      href: developer/prog-guide/getproc01-csharp-sample-code.md
+                    - name: GetProc01 (VB.NET) 程式碼範例
+                      href: developer/prog-guide/getproc01-vb-net-sample-code.md
+                - name: GetProc02 程式碼範例
+                  href: developer/prog-guide/getproc02-code-samples.md
+                  items:
+                    - name: 'GetProc02 (C#) 範例程式碼'
+                      href: developer/prog-guide/getproc02-csharp-sample-code.md
+                    - name: GetProc02 (VB.NET) 範例程式碼
+                      href: developer/prog-guide/getproc02-vb-net-sample-code.md
+                - name: GetProc03 程式碼範例
+                  href: developer/prog-guide/getproc03-code-samples.md
+                  items:
+                    - name: 'GetProc03 (C#) 範例程式碼'
+                      href: developer/prog-guide/getproc03-csharp-sample-code.md
+                    - name: GetProc03 (VB.NET) 範例程式碼
+                      href: developer/prog-guide/getproc03-vb-net-sample-code.md
+                - name: GetProc04 程式碼範例
+                  href: developer/prog-guide/getproc04-code-samples.md
+                  items:
+                    - name: 'GetProc04 (C#) 範例程式碼'
+                      href: developer/prog-guide/getproc04-csharp-sample-code.md
+                    - name: GetProc04 (VB.NET) 範例程式碼
+                      href: developer/prog-guide/getproc04-vb-net-sample-code.md
+                - name: GetProc05 程式碼範例
+                  href: developer/prog-guide/getproc05-code-samples.md
+                  items:
+                    - name: 'GetProc05 (C#) 範例程式碼'
+                      href: developer/prog-guide/getproc05-csharp-sample-code.md
+                    - name: GetProc05 (VB.NET) 範例程式碼
+                      href: developer/prog-guide/getproc05-vb-net-sample-code.md
+                - name: StopProc01 程式碼範例
+                  href: developer/prog-guide/stopproc01-code-samples.md
+                  items:
+                    - name: 'StopProc01 (C#) 範例程式碼'
+                      href: developer/prog-guide/stopproc01-csharp-sample-code.md
+                - name: StopProcessSample04 程式碼範例
+                  href: developer/prog-guide/stopprocesssample04-code-samples.md
+                  items:
+                    - name: 'StopProcessSample04 (C#) 範例程式碼'
+                      href: developer/prog-guide/stopprocesssample04-csharp-sample-code.md
+                    - name: StopProcessSample04 (VB.NET) 範例程式碼
+                      href: developer/prog-guide/stopprocesssample04-vb-net-sample-code.md
+                - name: Runspace01 程式碼範例
+                  href: developer/prog-guide/runspace01-code-samples.md
+                  items:
+                    - name: 'Runspace01 (C#) 程式碼範例'
+                      href: developer/prog-guide/runspace01-csharp-code-sample.md
+                    - name: Runspace01 (VB.NET) 程式碼範例
+                      href: developer/prog-guide/runspace01-vb-net-code-sample.md
+                - name: Runspace02 程式碼範例
+                  href: developer/prog-guide/runspace02-code-samples.md
+                  items:
+                    - name: 'Runspace02 (C#) 程式碼範例'
+                      href: developer/prog-guide/runspace02-csharp-code-sample.md
+                    - name: Runspace02 (VB.NET) 程式碼範例
+                      href: developer/prog-guide/runspace02-vb-net-code-sample.md
+                - name: RunSpace03 程式碼範例
+                  href: developer/prog-guide/runspace03-code-samples.md
+                  items:
+                    - name: 'RunSpace03 (C#) 程式碼範例'
+                      href: developer/prog-guide/runspace03-csharp-code-sample.md
+                    - name: RunSpace03 (VB.NET) 程式碼範例
+                      href: developer/prog-guide/runspace03-vb-net-code-sample.md
+                - name: RunSpace04 程式碼範例
+                  href: developer/prog-guide/runspace04-code-samples.md
+                  items:
+                    - name: RunSpace04 (VB.NET) 程式碼範例
+                      href: developer/prog-guide/runspace04-vb-net-code-sample.md
+                - name: RunSpace05 程式碼範例
+                  href: developer/prog-guide/runspace05-code-sample.md
+                - name: RunSpace06 程式碼範例
+                  href: developer/prog-guide/runspace06-code-sample.md
+                - name: RunSpace07 程式碼範例
+                  href: developer/prog-guide/runspace07-code-sample.md
+                - name: RunSpace08 程式碼範例
+                  href: developer/prog-guide/runspace08-code-sample.md
+                - name: RunSpace09 程式碼範例
+                  href: developer/prog-guide/runspace09-code-sample.md
+                - name: RunSpace10 程式碼範例
+                  href: developer/prog-guide/runspace10-code-sample.md
+        - name: Windows PowerShell 參考
+          href: developer/windows-powershell-reference.md
           items:
-            - name: 設計 Windows PowerShell 提供者
-              href: developer/prog-guide/designing-your-windows-powershell-provider.md
-            - name: 建立基本的 Windows PowerShell 提供者
-              href: developer/prog-guide/creating-a-basic-windows-powershell-provider.md
-            - name: 建立 Windows PowerShell 磁碟機提供者
-              href: developer/prog-guide/creating-a-windows-powershell-drive-provider.md
-            - name: 建立 Windows PowerShell 項目提供者
-              href: developer/prog-guide/creating-a-windows-powershell-item-provider.md
-            - name: 建立 Windows PowerShell 容器提供者
-              href: developer/prog-guide/creating-a-windows-powershell-container-provider.md
-            - name: 建立 Windows PowerShell 瀏覽提供者
-              href: developer/prog-guide/creating-a-windows-powershell-navigation-provider.md
-            - name: 建立 Windows PowerShell 內容提供者
-              href: developer/prog-guide/creating-a-windows-powershell-content-provider.md
-            - name: 建立 Windows PowerShell 屬性提供者
-              href: developer/prog-guide/creating-a-windows-powershell-property-provider.md
-        - name: 如何建立主控台殼層
-          href: developer/prog-guide/how-to-create-a-console-shell.md
-        - name: Windows PowerShell 概念
-          href: developer/prog-guide/windows-powershell-concepts.md
-        - name: Windows PowerShell 範例程式碼
-          href: developer/prog-guide/windows-powershell-sample-code.md
-          items:
-            - name: AccessDbProviderSample01 程式碼範例
-              href: developer/prog-guide/accessdbprovidersample01-code-sample.md
-            - name: AccessDbProviderSample02 程式碼範例
-              href: developer/prog-guide/accessdbprovidersample02-code-sample.md
-            - name: AccessDbProviderSample03 程式碼範例
-              href: developer/prog-guide/accessdbprovidersample03-code-sample.md
-            - name: AccessDbProviderSample04 程式碼範例
-              href: developer/prog-guide/accessdbprovidersample04-code-sample.md
-            - name: AccessDbProviderSample05 程式碼範例
-              href: developer/prog-guide/accessdbprovidersample05-code-sample.md
-            - name: AccessDbProviderSample06 程式碼範例
-              href: developer/prog-guide/accessdbprovidersample06-code-sample.md
-            - name: GetProc01 程式碼範例
-              href: developer/prog-guide/getproc01-code-samples.md
-              items:
-                - name: 'GetProc01 (C#) 程式碼範例'
-                  href: developer/prog-guide/getproc01-csharp-sample-code.md
-                - name: GetProc01 (VB.NET) 程式碼範例
-                  href: developer/prog-guide/getproc01-vb-net-sample-code.md
-            - name: GetProc02 程式碼範例
-              href: developer/prog-guide/getproc02-code-samples.md
-              items:
-                - name: 'GetProc02 (C#) 範例程式碼'
-                  href: developer/prog-guide/getproc02-csharp-sample-code.md
-                - name: GetProc02 (VB.NET) 範例程式碼
-                  href: developer/prog-guide/getproc02-vb-net-sample-code.md
-            - name: GetProc03 程式碼範例
-              href: developer/prog-guide/getproc03-code-samples.md
-              items:
-                - name: 'GetProc03 (C#) 範例程式碼'
-                  href: developer/prog-guide/getproc03-csharp-sample-code.md
-                - name: GetProc03 (VB.NET) 範例程式碼
-                  href: developer/prog-guide/getproc03-vb-net-sample-code.md
-            - name: GetProc04 程式碼範例
-              href: developer/prog-guide/getproc04-code-samples.md
-              items:
-                - name: 'GetProc04 (C#) 範例程式碼'
-                  href: developer/prog-guide/getproc04-csharp-sample-code.md
-                - name: GetProc04 (VB.NET) 範例程式碼
-                  href: developer/prog-guide/getproc04-vb-net-sample-code.md
-            - name: GetProc05 程式碼範例
-              href: developer/prog-guide/getproc05-code-samples.md
-              items:
-                - name: 'GetProc05 (C#) 範例程式碼'
-                  href: developer/prog-guide/getproc05-csharp-sample-code.md
-                - name: GetProc05 (VB.NET) 範例程式碼
-                  href: developer/prog-guide/getproc05-vb-net-sample-code.md
-            - name: StopProc01 程式碼範例
-              href: developer/prog-guide/stopproc01-code-samples.md
-              items:
-                - name: 'StopProc01 (C#) 範例程式碼'
-                  href: developer/prog-guide/stopproc01-csharp-sample-code.md
-            - name: StopProcessSample04 程式碼範例
-              href: developer/prog-guide/stopprocesssample04-code-samples.md
-              items:
-                - name: 'StopProcessSample04 (C#) 範例程式碼'
-                  href: developer/prog-guide/stopprocesssample04-csharp-sample-code.md
-                - name: StopProcessSample04 (VB.NET) 範例程式碼
-                  href: developer/prog-guide/stopprocesssample04-vb-net-sample-code.md
-            - name: Runspace01 程式碼範例
-              href: developer/prog-guide/runspace01-code-samples.md
-              items:
-                - name: 'Runspace01 (C#) 程式碼範例'
-                  href: developer/prog-guide/runspace01-csharp-code-sample.md
-                - name: Runspace01 (VB.NET) 程式碼範例
-                  href: developer/prog-guide/runspace01-vb-net-code-sample.md
-            - name: Runspace02 程式碼範例
-              href: developer/prog-guide/runspace02-code-samples.md
-              items:
-                - name: 'Runspace02 (C#) 程式碼範例'
-                  href: developer/prog-guide/runspace02-csharp-code-sample.md
-                - name: Runspace02 (VB.NET) 程式碼範例
-                  href: developer/prog-guide/runspace02-vb-net-code-sample.md
-            - name: RunSpace03 程式碼範例
-              href: developer/prog-guide/runspace03-code-samples.md
-              items:
-                - name: 'RunSpace03 (C#) 程式碼範例'
-                  href: developer/prog-guide/runspace03-csharp-code-sample.md
-                - name: RunSpace03 (VB.NET) 程式碼範例
-                  href: developer/prog-guide/runspace03-vb-net-code-sample.md
-            - name: RunSpace04 程式碼範例
-              href: developer/prog-guide/runspace04-code-samples.md
-              items:
-                - name: RunSpace04 (VB.NET) 程式碼範例
-                  href: developer/prog-guide/runspace04-vb-net-code-sample.md
-            - name: RunSpace05 程式碼範例
-              href: developer/prog-guide/runspace05-code-sample.md
-            - name: RunSpace06 程式碼範例
-              href: developer/prog-guide/runspace06-code-sample.md
-            - name: RunSpace07 程式碼範例
-              href: developer/prog-guide/runspace07-code-sample.md
-            - name: RunSpace08 程式碼範例
-              href: developer/prog-guide/runspace08-code-sample.md
-            - name: RunSpace09 程式碼範例
-              href: developer/prog-guide/runspace09-code-sample.md
-            - name: RunSpace10 程式碼範例
-              href: developer/prog-guide/runspace10-code-sample.md
-    - name: Windows PowerShell 參考
-      href: developer/windows-powershell-reference.md
-      items:
-        - name: 新功能
-          href: developer/windows-powershell-reference-whats-new.md
+            - name: 新功能
+              href: developer/windows-powershell-reference-whats-new.md
