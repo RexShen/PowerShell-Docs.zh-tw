@@ -2,12 +2,12 @@
 title: 了解 VS Code 及 PowerShell 中的檔案編碼
 description: 設定 VS Code 及 PowerShell 中的檔案編碼
 ms.date: 02/28/2019
-ms.openlocfilehash: b09c13374c28e88c66d1d84fbe56ca5c66b34c8c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 991e3ccc95dd0dd2106cefe6c68371e59c031f35
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978673"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271860"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>了解 VS Code 及 PowerShell 中的檔案編碼
 
@@ -73,7 +73,7 @@ PowerShell 延伸模組與指令碼互動的幾種方式：
 2. 當指令碼直接在整合式主控台中執行時，PowerShell 會直接從檔案讀取它們。 如果 PowerShell 的編碼與 VS Code 的編碼不同，這裡就會出錯。
 3. 當使用 VS Code 開啟之指令碼參考另一個非以 VS Code 開啟的指令碼時，擴充功能會回復成從檔案系統載入該指令碼內容。 PowerShell 延伸模組預設為 UTF-8 編碼，但會使用[位元組順序標記][] (或稱 BOM) 偵測選取正確的編碼。
 
-假設編碼無 BOM 格式時，就會發生問題 (例如 [UTF-8][] 不使用 BOM 和 [Windows-1252][])。 PowerShell 延伸模組預設使用 UTF-8。 擴充功能不能變更 VS Code 的編碼設定。 如需詳細資訊，請參閱[問題 #824](https://github.com/Microsoft/VS Code/issues/824)。
+假設編碼無 BOM 格式時，就會發生問題 (例如 [UTF-8][] 不使用 BOM 和 [Windows-1252][])。 PowerShell 延伸模組預設使用 UTF-8。 擴充功能不能變更 VS Code 的編碼設定。 如需詳細資訊，請參閱[問題 #824](https://github.com/Microsoft/VSCode/issues/824)。
 
 ## <a name="choosing-the-right-encoding"></a>選擇正確的編碼
 
@@ -255,11 +255,11 @@ ISE 應該會接受 BOM，但它也可能使用反映來[設定編碼](https://b
 
 - [StackOverflow 上有關 PowerShell 編碼之 [@mklement0] 的摘要 ](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
 - 之前提出有關 VS Code-PowerShell 的編碼問題：
-  - [#1308](https://github.com/PowerShell/VS Code-powershell/issues/1308)
-  - [#1628](https://github.com/PowerShell/VS Code-powershell/issues/1628)
-  - [#1680](https://github.com/PowerShell/VS Code-powershell/issues/1680)
-  - [#1744](https://github.com/PowerShell/VS Code-powershell/issues/1744)
-  - [#1751](https://github.com/PowerShell/VS Code-powershell/issues/1751)
+  - [#1308](https://github.com/PowerShell/VSCode-powershell/issues/1308)
+  - [#1628](https://github.com/PowerShell/VSCode-powershell/issues/1628)
+  - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
+  - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
+  - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [傳統「約耳談軟體」  有關 Unicode 的文章](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [.NET Standard 中的編碼](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
