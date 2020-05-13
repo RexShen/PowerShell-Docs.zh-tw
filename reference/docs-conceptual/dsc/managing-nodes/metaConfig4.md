@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 在 PowerShell 4.0 中設定 LCM
-ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a9dedf67f9fb18fdd7f5adf70dbf1402fb3f918
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953825"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271826"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>在 PowerShell 4.0 中設定 LCM
 
@@ -24,11 +24,11 @@ ms.locfileid: "71953825"
 以下列出您可以設定或擷取的本機設定管理員屬性。
 
 - **AllowModuleOverwrite**：控制是否允許以從設定服務下載的新設定來覆寫目標節點上的舊設定。 可能的值為 True 和 False。
-- **CertificateID**：憑證指紋，用來保護在設定中傳遞的憑證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/)。
+- **CertificateID**：憑證指紋，用來保護在設定中傳遞的憑證。 如需詳細資訊，請參閱 [Want to secure credentials in Windows PowerShell Desired State Configuration (需要保護 Windows PowerShell 預期狀態設定的憑證嗎？)](https://devblogs.microsoft.com/powershell/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/)。
 - **ConfigurationID**：表示用來從提取服務取得特定設定檔的 GUID。 此 GUID 可確保存取正確的設定檔。
 - **ConfigurationMode**：指定本機設定管理員實際上如何將設定套用至目標節點。 它可以採用下列值：
   - **ApplyOnly**：若設定此選項，DSC 會套用設定，並且不會執行任何進一步的動作，除非它透過下列兩種方式偵測到新的設定：您直接將新設定傳送至目標節點，或是您連線至提取服務且 DSC 於檢查提取服務時發現新設定。 如果目標節點的設定偏離，就不採取任何動作。
-  - **ApplyAndMonitor**：若設定此選項 (此為預設值)，DSC 會套用任何新設定，無論新設定是由您直接傳送至目標節點，或是在提取服務上發現。 之後，如果目標節點的設定偏離設定檔，DSC 就會報告記錄檔中的差異。 如需 DSC 記錄的資訊，請參閱 [Using Event Logs to Diagnose Errors in Desired State Configuration (在預期狀態設定中使用事件記錄檔診斷錯誤)](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx)。
+  - **ApplyAndMonitor**：若設定此選項 (此為預設值)，DSC 會套用任何新設定，無論新設定是由您直接傳送至目標節點，或是在提取服務上發現。 之後，如果目標節點的設定偏離設定檔，DSC 就會報告記錄檔中的差異。 如需 DSC 記錄的資訊，請參閱 [Using Event Logs to Diagnose Errors in Desired State Configuration (在預期狀態設定中使用事件記錄檔診斷錯誤)](https://devblogs.microsoft.com/powershell/using-event-logs-to-diagnose-errors-in-desired-state-configuration/)。
   - **ApplyAndAutoCorrect**：若設定此選項，DSC 會套用任何新設定，無論新設定是由您直接傳送至目標節點，或是在提取服務上發現。 之後，如果目標節點的設定偏離設定檔，DSC 就會報告記錄檔中的差異，然後嘗試調整目標節點設定，以符合設定檔。
 - **ConfigurationModeFrequencyMins**：代表 DSC 背景應用程式嘗試在目標節點上實作目前設定的頻率 (以分鐘為單位)。 預設值為 15。 這個值可以搭配 RefreshMode 設定。 當 RefreshMode 設定為 PULL 時，目標節點會以由 RefreshFrequencyMins 所設定的間隔連絡設定服務，並下載目前的設定。 不論 RefreshMode 值為何，在 ConfigurationModeFrequencyMins 所設定的間隔中，一致性引擎會套用已下載至目標節點的最新設定。 RefreshFrequencyMins 應為 ConfigurationModeFrequencyMins 的整數倍數。
 - **Credential**：表示存取遠端資源所需的認證 (如同 Get-Credential)，例如連絡設定服務。
