@@ -2,12 +2,12 @@
 title: 在 Linux 上安裝 PowerShell
 description: 在各種 Linux 發行版本上安裝 PowerShell Core 的相關資訊
 ms.date: 03/09/2020
-ms.openlocfilehash: 6ad637bd30e5e40ccc9532bae6f1171ecf79734a
-ms.sourcegitcommit: e0a737961280026832cff9c658ed1468dc904e80
+ms.openlocfilehash: e04d8a91999cd6e9b2d669230c7a1b412f11eeb8
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605844"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271894"
 ---
 # <a name="installing-powershell-on-linux"></a>在 Linux 上安裝 PowerShell
 
@@ -54,6 +54,10 @@ GitHub [發行][]頁面上提供所有套件。 安裝套件之後，請從終�
 - Snap 套件
 - 二進位封存
 - .NET 全域工具
+
+目前不支援 
+
+- Ubuntu 20.04
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -165,6 +169,10 @@ sudo apt-get remove powershell
 
 > [!NOTE]
 > 因為 Ubuntu 19.04 是[由社群支援](../powershell-support-lifecycle.md)的[過渡版本](https://www.ubuntu.com/about/release-cycle) \(英文\)。
+
+## <a name="ubuntu-2004"></a>Ubuntu 20.04
+
+Ubuntu 20.04 為 LTS 版本。 PowerShell 目前不支援此版本。 PowerShell 7.1 版正考慮增加對此版本的支援。 如果您想支援 Ubuntu 20.04.，請附議此[要求](https://github.com/PowerShell/PowerShell/issues/12626)。
 
 ## <a name="debian-8"></a>Debian 8
 
