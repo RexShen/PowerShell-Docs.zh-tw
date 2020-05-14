@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 964320108d7aff24d59905028fb976e0f75642e7
+ms.sourcegitcommit: 08e9ed4bc9bffc7af82b3130e74ec7763db74e4f
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367677"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83382621"
 ---
 # <a name="creating-remote-runspaces"></a>建立遠端 Runspace
 
@@ -21,9 +21,9 @@ ms.locfileid: "72367677"
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>使用 WSManConnection 建立遠端運行空間
 
- 若要建立連接到遠端電腦的運行時，請建立[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。 您可以藉由設定物件的[WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)屬性來指定連接的目標端點。 接著，您可以藉由呼叫[RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法來建立運行空間，並指定[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件做為 `connectionInfo` 的參數。
+ 若要建立連接到遠端電腦的運行時，請建立[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。 您可以藉由設定物件的[WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)屬性來指定連接的目標端點。 接著，您可以藉由呼叫[RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法，將[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件指定為參數，以建立一個運行時的功能 `connectionInfo` 。
 
- 下列範例示範如何建立連接到遠端電腦的執行時間。 在此範例中，會使用 `RemoteComputerUri` 做為遠端電腦實際 URI 的預留位置。
+ 下列範例示範如何建立連接到遠端電腦的執行時間。 在此範例中， `RemoteComputerUri` 會用來做為遠端電腦實際 URI 的預留位置。
 
 ```csharp
 namespace Samples
@@ -48,7 +48,7 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      Uri RemoteComputerUri = new Uri("http://Server01:5985/WSMAN");
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
