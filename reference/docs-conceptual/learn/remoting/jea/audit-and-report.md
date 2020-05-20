@@ -31,7 +31,7 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
                 CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-端點的有效權限列於 **Permission** 屬性中。 這些使用者有權連線至 JEA 端點。 但是，他們能存取哪些角色和命令則由用來註冊端點之**工作階段設定檔**中的 [RoleDefinitions](session-configurations.md) 欄位決定。 展開 **RoleDefinitions** 屬性中的資料，以評估已註冊的 JEA 端點中角色對應。
+端點的有效權限列於 **Permission** 屬性中。 這些使用者有權連線至 JEA 端點。 但是，他們能存取哪些角色和命令則由用來註冊端點之[工作階段設定檔](session-configurations.md)中的 **RoleDefinitions** 欄位決定。 展開 **RoleDefinitions** 屬性中的資料，以評估已註冊的 JEA 端點中角色對應。
 
 ```powershell
 # Get the desired session configuration
@@ -46,7 +46,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>在電腦上尋找可用的角色功能
 
-JEA 會從儲存在 PowerShell 模組內 `.psrc`RoleCapabilities**資料夾的** 檔案中取得角色功能。 下列函式會尋找電腦上所有可用的角色功能。
+JEA 會從儲存在 PowerShell 模組內 **RoleCapabilities** 資料夾的 `.psrc` 檔案中取得角色功能。 下列函式會尋找電腦上所有可用的角色功能。
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -133,7 +133,7 @@ Running  Dns                DNS Server
 
 **CommandInvocation** 行是針對使用者執行的每個命令所撰寫。 **ParameterBindings** 會記錄命令所提供的每個參數和值。 在上述範例中，您可以看到參數 **Name** 以值 **Dns** 提供給 `Get-Service` Cmdlet。
 
-每個命令的輸出也會觸發 **CommandInvocation**，通常為 `Out-Default`。 **的**InputObject`Out-Default` 是由命令傳回的 PowerShell 物件。 物件的詳細資料會列印在下面幾行，密切模擬使用者會看到的情況。
+每個命令的輸出也會觸發 **CommandInvocation**，通常為 `Out-Default`。 `Out-Default` 的 **InputObject** 是由命令傳回的 PowerShell 物件。 物件的詳細資料會列印在下面幾行，密切模擬使用者會看到的情況。
 
 ## <a name="see-also"></a>另請參閱
 

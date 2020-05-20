@@ -314,7 +314,7 @@ $b.DoSomething(42)
 
 已新增關鍵字 `Hidden`。 `Hidden` 可以套用至屬性和方法 (包括建構函式)。
 
-Hidden 成員是公用的，但除非新增 `Get-Member` 參數，否則不會出現在 `-Force` 的輸出中。 當索引標籤完成或使用 Intellisense 時不會包含 Hidden 成員，除非完成是發生在定義隱藏成員的類別中。
+Hidden 成員是公用的，但除非新增 `-Force` 參數，否則不會出現在 `Get-Member` 的輸出中。 當索引標籤完成或使用 Intellisense 時不會包含 Hidden 成員，除非完成是發生在定義隱藏成員的類別中。
 
 已新增屬性 **System.Management.Automation.HiddenAttribute**，所以 C\# 程式碼會在 PowerShell 內具有相同的語意。
 

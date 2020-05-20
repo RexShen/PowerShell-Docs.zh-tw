@@ -45,13 +45,13 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-若要套用設定，請使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet。 `-Path` 參數會指定 ".mof" 檔案所在的目錄。 若未指定 `-Computername`，`Start-DSCConfiguration` 會嘗試將每個設定套用至 '.mof' 檔案名稱 (\<computername\>.mof) 所指定的電腦名稱。 為 `-Verbose` 指定 `Start-DSCConfiguration` 以查看更詳盡的輸出。
+若要套用設定，請使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet。 `-Path` 參數會指定 ".mof" 檔案所在的目錄。 若未指定 `-Computername`，`Start-DSCConfiguration` 會嘗試將每個設定套用至 '.mof' 檔案名稱 (\<computername\>.mof) 所指定的電腦名稱。 為 `Start-DSCConfiguration` 指定 `-Verbose` 以查看更詳盡的輸出。
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
 ```
 
-若未指定 `-Wait`，您就會看到建立了一個作業。 針對 **所處理的每個 ".mof" 檔案，所建立的作業將會有一個**ChildJob`Start-DSCConfiguration`。
+若未指定 `-Wait`，您就會看到建立了一個作業。 針對 `Start-DSCConfiguration` 所處理的每個 ".mof" 檔案，所建立的作業將會有一個 **ChildJob**。
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -101,7 +101,7 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-從 PowerShell 5.0 開始，已在 `-UseExisting` 中新增 `Start-DSCConfiguration` 參數。 藉由指定 `-UseExisting`，您可以指示 Cmdlet 使用目前套用的設定，而不是 `-Path` 參數所指定的設定。
+從 PowerShell 5.0 開始，已在 `Start-DSCConfiguration` 中新增 `-UseExisting` 參數。 藉由指定 `-UseExisting`，您可以指示 Cmdlet 使用目前套用的設定，而不是 `-Path` 參數所指定的設定。
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait

@@ -51,7 +51,7 @@ CMS 加密標準會實作公開金錀密碼編譯，其中用於加密內容的�
 - [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-憑證需要唯一的金鑰使用方法識別碼 (EKU) (例如「程式碼簽署」、「加密郵件」)，在 PowerShell 中將它們識別為資料加密憑證。 若要檢視憑證提供者中的文件加密憑證，您可以使用 **的**DocumentEncryptionCert`Get-ChildItem` 動態參數︰
+憑證需要唯一的金鑰使用方法識別碼 (EKU) (例如「程式碼簽署」、「加密郵件」)，在 PowerShell 中將它們識別為資料加密憑證。 若要檢視憑證提供者中的文件加密憑證，您可以使用 `Get-ChildItem` 的 **DocumentEncryptionCert** 動態參數︰
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse

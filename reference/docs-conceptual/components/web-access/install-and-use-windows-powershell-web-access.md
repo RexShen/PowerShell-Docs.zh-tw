@@ -112,7 +112,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 **Install-PswaWebApplication** Cmdlet 是快速設定 Windows PowerShell Web 存取的方法。 雖然您可以新增 `UseTestCertificate` 參數到 `Install-PswaWebApplication` Cmdlet 來安裝自我簽署的 SSL 憑證進行測試，但這並不安全；若要有安全的生產環境，請一律使用由憑證授權單位 (CA) 簽署的有效 SSL 憑證。 系統管理員可以使用 IIS 管理員主控台以選擇的簽署憑證來取代測試憑證。
 
 您可以執行 `Install-PswaWebApplication` Cmdlet 或在 IIS 管理員中執行 GUI 設定步驟，來完成 Windows PowerShell Web 存取 Web 應用程式設定。
-根據預設，Cmdlet 會在 [IIS 管理員] 上顯示的 [預設的網站]  容器中，安裝 Web 應用程式 **pswa** (以及應用程式集區 **pswa_pool**)；如有需要，可以指示 Cmdlet 變更 Web 應用程式的預設網站容器。 IIS 管理員提供 Web 應用程式可用的設定選項，例如變更連接埠號碼或安全通訊端層 (SSL) 憑證。
+根據預設，Cmdlet 會在 [IIS 管理員] 上顯示的 [預設的網站] 容器中，安裝 Web 應用程式 **pswa** (以及應用程式集區 **pswa_pool**)；如有需要，可以指示 Cmdlet 變更 Web 應用程式的預設網站容器。 IIS 管理員提供 Web 應用程式可用的設定選項，例如變更連接埠號碼或安全通訊端層 (SSL) 憑證。
 
 > [!IMPORTANT]
 > 強烈建議系統管理員將閘道設定為使用 CA 簽署的有效憑證。
@@ -158,7 +158,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    `Install-PswaWebApplication`
 
-   執行 Cmdlet 可以設定下列閘道設定。 如有需要，可以在 IIS 管理員主控台手動變更這些設定。 您也可以指定 `WebsiteName` Cmdlet 的 `WebApplicationName` 與 `Install-PswaWebApplication` 參數值。
+   執行 Cmdlet 可以設定下列閘道設定。 如有需要，可以在 IIS 管理員主控台手動變更這些設定。 您也可以指定 `Install-PswaWebApplication` Cmdlet 的 `WebsiteName` 與 `WebApplicationName` 參數值。
 
    - Path：/pswa
    - ApplicationPool：pswa_pool
@@ -210,7 +210,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    這個授權規則允許特定使用者存取網路上他們通常有權存取的一部電腦，以及該使用者在一般編寫指令碼及 Cmdlet 範圍內的特定工作階段設定存取權。
 
-   在下列範例中，`JSmith` 網域中名為 `Contoso` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
+   在下列範例中，`Contoso` 網域中名為 `JSmith` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -261,7 +261,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    - 在 Windows 桌面上，按一下 Windows 工作列中的 [伺服器管理員]  來啟動 [伺服器管理員]。 在 [伺服器管理員] 的 **[工具]** 功能表上，按一下 **[Internet Information Services (IIS) 管理員]** 。
    - 在 Windows [開始]  畫面中，輸入 **Internet Information Services (IIS) 管理員**名稱的任何部分。 當捷徑出現在 [應用程式]  結果時，按一下該捷徑。
 
-2. 為 Windows PowerShell Web 存取建立新的應用程式集區。 在 [IIS 管理員] 樹狀目錄窗格中展開閘道伺服器的節點，選取 [應用程式集區]  ，然後在 [動作]  窗格中按一下 [新增應用程式集區]  。
+2. 為 Windows PowerShell Web 存取建立新的應用程式集區。 在 [IIS 管理員] 樹狀目錄窗格中展開閘道伺服器的節點，選取 [應用程式集區]，然後在 [動作] 窗格中按一下 [新增應用程式集區]。
 
 3. 新增名為 **pswa_pool** (或提供另一個名稱) 的新應用程式集區。 按一下 [確定]  。
 
@@ -322,12 +322,12 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
 1. 在 [實體路徑]  文字方塊中，巡覽到 %windir%/Web/PowerShellWebAccess/wwwroot。
 
-1. 在 **[繫結]** 區域的 **[類型]** 欄位中，選取 **[https]** 。
+1. 在 **[繫結]** 區域的 **[類型]** 欄位中，選取 **[https]**。
 
 1. 為其他站台或應用程式尚未使用的網站指派連接埠號碼。
    若要尋找開放的連接埠，可以在命令提示字元視窗中執行 **netstat** 命令。 預設連接埠號碼為 443。
 
-   如果另一個網站已經使用 443，或者有其他需要變更連接埠號碼的安全性原因，請變更預設連接埠。 如果在閘道伺服器上執行的另一個網站正在使用您選取的連接埠，當您在 [新增網站]  對話方塊中按一下 [確定]  時，就會顯示警告。 您必須使用未使用的連接埠來執行 Windows PowerShell Web 存取。
+   如果另一個網站已經使用 443，或者有其他需要變更連接埠號碼的安全性原因，請變更預設連接埠。 如果在閘道伺服器上執行的另一個網站正在使用您選取的連接埠，當您在 [新增網站] 對話方塊中按一下 [確定] 時，就會顯示警告。 您必須使用未使用的連接埠來執行 Windows PowerShell Web 存取。
 
 1. 或者，如果組織有需要，可以指定對組織及使用者具有意義的主機名稱，例如 **`www.contoso.com`** 。 按一下 [確定]  。
 
@@ -349,7 +349,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
    c:\windows\system32\icacls.exe $authorizationFile
    ```
 
-1. 在 [IIS 管理員] 樹狀目錄窗格中選取新網站後，在 [動作]  窗格中按一下 [啟動]  以啟動網站。
+1. 在 [IIS 管理員] 樹狀目錄窗格中選取新網站後，在 [動作] 窗格中按一下 [啟動] 以啟動網站。
 
 1. 開啟用戶端裝置的瀏覽器工作階段。 如需支援的瀏覽器及裝置的詳細資訊，請參閱本文件的[瀏覽器及用戶端裝置支援](#browser-and-client-device-support)。
 
@@ -383,7 +383,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    此授權規則允許特定使用者存取他們通常有權存取之網路上的一部電腦，以及已針對該使用者&trade;的一般編寫指令碼及 Cmdlet 需求設定範圍之特定工作階段設定的存取權。
 
-   在下列範例中，`JSmith` 網域中名為 `Contoso` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
+   在下列範例中，`Contoso` 網域中名為 `JSmith` 的使用者已獲授與管理電腦 `Contoso_214` 的存取權，並使用名為 `NewAdminsOnly` 的工作階段設定。
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -412,7 +412,7 @@ Windows PowerShell Web 存取支援下列網際網路瀏覽器。 雖然並未�
 
    - 按一下 [建立自我簽署憑證]  ，建立您可以立即使用的憑證，稍後視需要交由 CA 簽署。 為自我簽署的憑證指定易記名稱，例如 **Windows PowerShell Web 存取**。 這個選項並不安全，建議只用於私人測試環境。
 
-1. 建立或取得憑證之後，在 [IIS 管理員] 樹狀目錄窗格中選取要套用此憑證的網站 (例如 [預設的網站]  )，然後在 [動作]  窗格中按一下 [繫結]  。
+1. 建立或取得憑證之後，在 [IIS 管理員] 樹狀目錄窗格中選取要套用此憑證的網站 (例如 [預設的網站])，然後在 [動作] 窗格中按一下 [繫結]。
 
 1. 如果尚未顯示繫結，請在 [新增站台繫結]  對話方塊中，新增站台的 [https]  繫結。 如果您不是使用自我簽署的憑證，請指定這個程序步驟 3 所指定的主機名稱。 如果您使用的是自我簽署的憑證，就不需要這個步驟。
 

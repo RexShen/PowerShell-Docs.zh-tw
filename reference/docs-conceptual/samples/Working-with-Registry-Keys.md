@@ -57,7 +57,7 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-這些命令只會列出直接包含的項目，很像在 `DIR`Cmd.exe**中使用** 或在 UNIX 殼層中使用 `ls`。 若要顯示包含的項目，您必須指定 **Recurse** 參數。 若要列出 `HKCU:` 中的所有登錄機碼，請使用下列命令。
+這些命令只會列出直接包含的項目，很像在 **Cmd.exe** 中使用 `DIR` 或在 UNIX 殼層中使用 `ls`。 若要顯示包含的項目，您必須指定 **Recurse** 參數。 若要列出 `HKCU:` 中的所有登錄機碼，請使用下列命令。
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
@@ -72,7 +72,7 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 
 ## <a name="copying-keys"></a>複製機碼
 
-使用 `Copy-Item` 即可進行複製。 下列範例會將 `CurrentVersion` 的 `HKLM:\SOFTWARE\Microsoft\Windows\` 子機碼及其所有屬性複製到 `HKCU:\`。
+使用 `Copy-Item` 即可進行複製。 下列範例會將 `HKLM:\SOFTWARE\Microsoft\Windows\` 的 `CurrentVersion` 子機碼及其所有屬性複製到 `HKCU:\`。
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:

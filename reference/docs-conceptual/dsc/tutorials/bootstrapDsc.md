@@ -28,7 +28,7 @@ ms.locfileid: "71954605"
 
   藉由使用 DSC，您可以在初始開機時自動安裝軟體及設定電腦。
   您可以將設定 MOF 文件或 metaconfiguration 插入可開機的媒體 (例如 VHD)，於初始開機程序期間加以執行。
-  此行為是由 [ 下方的 ](DSCAutomationHostEnabled.md)DSCAutomationHostEnabled 登錄機碼`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` 登錄機碼所設定的。
+  此行為是由 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` 下方的 [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md) 登錄機碼所設定的。
   此機碼的值預設為 2，表示允許 DSC 在開機時執行。
 
   若您不想在開機時執行 DSC，請將 [DSCAutomationHostEnabled 登錄機碼](DSCAutomationHostEnabled.md) 登錄機碼設為 0。
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
    SampleIISInstall
    ```
 
-5. 這會在名為 `localhost.mof` 的新資料夾中建立 `SampleIISInstall` 檔案。
+5. 這會在名為 `SampleIISInstall` 的新資料夾中建立 `localhost.mof` 檔案。
    使用 `Pending.mof`Move-Item[ Cmdlet 將該檔案重新命名為 ](/powershell/module/microsoft.powershell.management/move-item)，再將其移至 VHD 上正確的位置。 例如：
 
    ```powershell
@@ -103,7 +103,7 @@ Configuration SampleIISInstall
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>將 DSC metaconfiguration 插入 VHD
 
-您也可以將中繼設定作為 VHD 的 [ 檔案插入 VHD，將電腦設定成在初始開機時提取設定 (請參閱](../managing-nodes/metaConfig.md)設定本機設定管理員 (LCM)`MetaConfig.mof`)。
+您也可以將中繼設定作為 VHD 的 `MetaConfig.mof` 檔案插入 VHD，將電腦設定成在初始開機時提取設定 (請參閱[設定本機設定管理員 (LCM)](../managing-nodes/metaConfig.md))。
 若 **DSCAutomationHostEnabled** 登錄機碼設為 2 (預設值)，則電腦第一次開機時，DSC 將會套用 `MetaConfig.mof` 所定義的中繼設定。
 若中繼設定指定 LCM 應從提取伺服器提取設定，電腦就會嘗試在初始開機時從該提取伺服器提取設定。
 如需設定 DSC 提取伺服器的資訊，請參閱[設定 DSC Web 提取伺服器](../pull-server/pullServer.md)。
@@ -153,7 +153,7 @@ configuration PullClientBootstrap
    PullClientBootstrap
    ```
 
-6. 這會在名為 `localhost.meta.mof` 的新資料夾中建立 `PullClientBootstrap` 檔案。
+6. 這會在名為 `PullClientBootstrap` 的新資料夾中建立 `localhost.meta.mof` 檔案。
    使用 `MetaConfig.mof`Move-Item[ Cmdlet 將該檔案重新命名為 ](/powershell/module/microsoft.powershell.management/move-item)，再將其移至 VHD 上正確的位置。
 
    ```powershell
@@ -181,7 +181,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. 呼叫 `HKLM\Software`，以從 VHD 載入登錄 `reg load` 子機碼。
+2. 呼叫 `reg load`，以從 VHD 載入登錄 `HKLM\Software` 子機碼。
 
    ```powershell
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`

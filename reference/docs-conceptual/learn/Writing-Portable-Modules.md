@@ -198,7 +198,7 @@ PowerShell Standard 的設計旨在始終向下相容。 使用 PowerShell Stand
 
 首先，請驗證您的模組可在 Linux 和 macOS 上運作。 接下來，在模組資訊清單中指示與那些作業系統相容。 這可在將模組發佈至 [PowerShell 資源庫][]時，讓使用者更容易地為他們的作業系統找到您的模組。
 
-在模組資訊清單內，`PrivateData` 屬性具有 `PSData` 子屬性。 `Tags` 的選擇性 `PSData` 屬性接受 PowerShell 資源庫中顯示的值陣列。 PowerShell 資源庫支援下列相容性值：
+在模組資訊清單內，`PrivateData` 屬性具有 `PSData` 子屬性。 `PSData` 的選擇性 `Tags` 屬性接受 PowerShell 資源庫中顯示的值陣列。 PowerShell 資源庫支援下列相容性值：
 
 | Tag               | 描述                                |
 |-------------------|--------------------------------------------|

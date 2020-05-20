@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-套用時，[本機設定管理員](../managing-nodes/metaConfig.md) (LCM) 會從 ".mof" 檔案讀取值 "Spooler"，並針對 `-Name`Service**資源的 "MyService" 執行個體，將它傳遞給**Get **、** Test**及**Set**方法的** 參數。
+套用時，[本機設定管理員](../managing-nodes/metaConfig.md) (LCM) 會從 ".mof" 檔案讀取值 "Spooler"，並針對 **Service** 資源的 "MyService" 執行個體，將它傳遞給 **Get**、**Test** 及 **Set** 方法的 `-Name` 參數。
 
 ## <a name="get"></a>Get
 

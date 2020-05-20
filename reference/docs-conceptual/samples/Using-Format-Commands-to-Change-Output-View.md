@@ -155,7 +155,7 @@ Running  WinRM              Windows Remote Management (WS-Manag...
 
 ### <a name="improving-format-table-output-autosize"></a>改善 Format-Table 輸出 (AutoSize)
 
-雖然表格式檢視適用於顯示許多資訊，但是若顯示器太窄而無法容納資料，則可能難以解譯。 在上述範例中，輸出會被截斷。 如果您在執行 **命令時指定**AutoSize`Format-Table` 參數，PowerShell 會根據顯示的實際資料計算欄寬。 這可讓欄變成可讀取。
+雖然表格式檢視適用於顯示許多資訊，但是若顯示器太窄而無法容納資料，則可能難以解譯。 在上述範例中，輸出會被截斷。 如果您在執行 `Format-Table` 命令時指定 **AutoSize** 參數，PowerShell 會根據顯示的實際資料計算欄寬。 這可讓欄變成可讀取。
 
 ```powershell
 Get-Service -Name win* | Format-Table -AutoSize
@@ -190,7 +190,7 @@ WinRM               Running Automatic Windows Remote Management (WS-Management) 
 
 ### <a name="wrapping-format-table-output-in-columns-wrap"></a>在資料行中讓 Format-Table 換行 (Wrap)
 
-您可以使用 `Format-Table`Wrap**參數，強制冗長的** 資料在其顯示欄中換行。 因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數可能不會執行您預期的作業：
+您可以使用 **Wrap** 參數，強制冗長的 `Format-Table` 資料在其顯示欄中換行。 因為未一併指定 **AutoSize** 時會使用預設設定，所以單獨使用 **Wrap** 參數可能不會執行您預期的作業：
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap

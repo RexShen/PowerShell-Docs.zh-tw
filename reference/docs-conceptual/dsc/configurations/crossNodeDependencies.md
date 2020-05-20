@@ -21,7 +21,7 @@ DSC 提供特殊的資源 **WaitForAll**、**WaitForAny** 與 **WaitForSome**，
 
 ## <a name="syntax"></a>語法
 
-**WaitForAll** 和 **WaitForAny** 資源共用相同的語法。 在以下範例中使用 \<WaitForAny\> 或 **WaitForAll** 取代 **ResourceType**。
+**WaitForAll** 和 **WaitForAny** 資源共用相同的語法。 在以下範例中使用 **WaitForAny** 或 **WaitForAll** 取代 \<ResourceType\>。
 和 **DependsOn** 關鍵字一樣，您必須將名稱格式化為 "[ResourceType]ResourceName"。 如果資源屬於個別的 [Configuration](configurations.md)，請在格式化的字串中加入 **ConfigurationName**，例如 "[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]"。 **NodeName** 是目前資源應該等候的電腦或 Node。
 
 ```
@@ -66,7 +66,7 @@ WaitForSome [String] #ResourceName
 ## <a name="using-waitforxxxx-resources"></a>使用 WaitForXXXX 資源
 
 每個 **WaitForXXXX** 資源都會等候指定的資源在指定的 Node 上完成。
-在相同 Configuration 上的其他資源，接著可以使用 *DependsOn* 索引鍵，「相依於」  **WaitForXXXX** 資源。
+在相同 Configuration 上的其他資源，接著可以使用 **DependsOn** 索引鍵，「相依於」**WaitForXXXX** 資源。
 
 例如，在下列設定中，目標節點正在等候 **xADDomain** 資源在 **MyDC** 節點上在 15 秒的間隔內最多重試 30 次完成，之後目標節點才能加入網域。
 

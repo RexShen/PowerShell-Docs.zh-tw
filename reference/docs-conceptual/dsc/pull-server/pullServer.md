@@ -91,7 +91,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 1. 在將成為 DSC 提取伺服器的節點上，於預設位置安裝憑證 (應為 `CERT:\LocalMachine\My`)。
    - 記下憑證指紋。
 1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：`[guid]::newGuid()` 或 `New-Guid`。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
-1. 在 PowerShell ISE 中，啟動 (<kbd>F5</kbd>) 下列設定指令碼 (以 **的形式包含在**xPSDesiredStateConfiguration`Sample_xDscWebServiceRegistration.ps1` 模組的資料夾中)。 此指令碼會設定提取伺服器。
+1. 在 PowerShell ISE 中，啟動 (<kbd>F5</kbd>) 下列設定指令碼 (以 `Sample_xDscWebServiceRegistration.ps1` 的形式包含在 **xPSDesiredStateConfiguration** 模組的資料夾中)。 此指令碼會設定提取伺服器。
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -163,7 +163,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 
 #### <a name="registration-key"></a>註冊金鑰
 
-若要讓用戶端節點向伺服器註冊，使其可以使用設定名稱，而非設定識別碼，上述設定所建立的註冊金鑰會儲存在 `RegistrationKeys.txt` 中名為 `C:\Program Files\WindowsPowerShell\DscService` 的檔案中。 註冊金鑰會當作共用密碼，在用戶端向提取伺服器初始註冊期間使用。 用戶端會產生自我簽署的憑證，以在成功完成註冊之後，用來向提取伺服器進行唯一驗證。 此憑證的指紋會儲存在本機，並與提取伺服器的 URL 相關聯。
+若要讓用戶端節點向伺服器註冊，使其可以使用設定名稱，而非設定識別碼，上述設定所建立的註冊金鑰會儲存在 `C:\Program Files\WindowsPowerShell\DscService` 中名為 `RegistrationKeys.txt` 的檔案中。 註冊金鑰會當作共用密碼，在用戶端向提取伺服器初始註冊期間使用。 用戶端會產生自我簽署的憑證，以在成功完成註冊之後，用來向提取伺服器進行唯一驗證。 此憑證的指紋會儲存在本機，並與提取伺服器的 URL 相關聯。
 
 > [!NOTE]
 > PowerShell 4.0 中不支援註冊金鑰。

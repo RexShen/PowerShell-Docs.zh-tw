@@ -141,7 +141,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 - `Show-Command`
 - `Out-GridView`
-- **的**showwindow`Get-Help` 參數
+- `Get-Help` 的 **showwindow** 參數
 
 ### <a name="some-dsc-cmdlets-removed"></a>已移除一些 DSC Cmdlet
 
@@ -194,17 +194,17 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 當 API 只傳回 `null`時，Invoke-RestMethod 會將其序列化為字串 `"null"`，而不是 `$null`。 這項變更會修正 `Invoke-RestMethod` 中的邏輯，將有效的單一值 JSON `null` 常值序列化為 `$null`。
 
-### <a name="remove--protocol-from--computer-cmdlets-5277"></a>從 `-Protocol` Cmdlet 中移除 `*-Computer`[#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277"></a>從 `*-Computer` Cmdlet 中移除 `-Protocol`[#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-由於 CoreFX 中的 RPC 遠端處理問題 (特別是在非 Windows 平台上)，以及確保 PowerShell 中有一致的遠端處理體驗，因此已從 `-Protocol` Cmdlet 中移除 `\*-Computer` 參數。 DCOM 不再支援遠端。 下列 Cmdlet 僅支援 WSMAN 遠端：
+由於 CoreFX 中的 RPC 遠端處理問題 (特別是在非 Windows 平台上)，以及確保 PowerShell 中有一致的遠端處理體驗，因此已從 `\*-Computer` Cmdlet 中移除 `-Protocol` 參數。 DCOM 不再支援遠端。 下列 Cmdlet 僅支援 WSMAN 遠端：
 
 - Rename-Computer
 - Restart-Computer
 - Stop-Computer
 
-### <a name="remove--computername-from--service-cmdlets-5090"></a>從 `-ComputerName` Cmdlet 中移除 `*-Service`[#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090"></a>從 `*-Service` Cmdlet 中移除 `-ComputerName`[#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
-為了鼓勵一致地使用 PSRP，已從 `-ComputerName` Cmdlet 中移除 `*-Service` 參數。
+為了鼓勵一致地使用 PSRP，已從 `*-Service` Cmdlet 中移除 `-ComputerName` 參數。
 
 ### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197"></a>將 `Get-Item -LiteralPath a*b` 修正為如果 `a*b` 未實際存在便傳回錯誤 [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
 
@@ -212,7 +212,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 ### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134"></a>當 CSV 中有類型資訊時，`Import-Csv` 應該在匯入時套用 `PSTypeNames`[#5134](https://github.com/PowerShell/PowerShell/issues/5134)
 
-先前，使用 `Export-CSV` 匯出的物件如果具有以 `TypeInformation` 匯入的 `ConvertFrom-Csv`，並不會保留該類型資訊。 這項變更會在 CSV 檔案中有可用的類型資訊時，將該資訊新增至 `PSTypeNames` 成員。
+先前，使用 `Export-CSV` 匯出的物件如果具有以 `ConvertFrom-Csv` 匯入的 `TypeInformation`，並不會保留該類型資訊。 這項變更會在 CSV 檔案中有可用的類型資訊時，將該資訊新增至 `PSTypeNames` 成員。
 
 ### <a name="-notypeinformation-should-be-default-on-export-csv-5131"></a>`-NoTypeInformation` 應該是 `Export-Csv` 上的預設值 [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
@@ -228,7 +228,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 ### <a name="remove-addtypecommandbase-class-5407"></a>移除 `AddTypeCommandBase` 類別 [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
-已從 `AddTypeCommandBase` 中移除 `Add-Type` 類別來改善效能。 此類別僅供 Add-Type Cmdlet 使用，應該不會影響到使用者。
+已從 `Add-Type` 中移除 `AddTypeCommandBase` 類別來改善效能。 此類別僅供 Add-Type Cmdlet 使用，應該不會影響到使用者。
 
 ### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080"></a>將 Cmdlet 與參數 `-Encoding` 整合成屬於類型 `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
@@ -273,9 +273,9 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 將 `pwsh.exe` 的結束代碼變更為符合 Unix 慣例
 
-### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302-4303"></a>從 `LocalAccount` 模組中移除 `Diagnostics` 和 Cmdlet。 [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
+### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302-4303"></a>從 `Diagnostics` 模組中移除 `LocalAccount` 和 Cmdlet。 [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-由於 API 不是支援的 API，因此已將 `LocalAccounts` 中的 `Counter` 模組和 `Diagnostics` Cmdlet 移除，直到找到更好的解決方案為止。
+由於 API 不是支援的 API，因此已將 `Diagnostics` 中的 `LocalAccounts` 模組和 `Counter` Cmdlet 移除，直到找到更好的解決方案為止。
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036"></a>Executing PowerShell script with bool parameter does not work[#4036](https://github.com/PowerShell/PowerShell/issues/4036) (以布林值參數執行 PowerShell 指令碼無法運作 #4036)
 
@@ -283,11 +283,11 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027"></a>從 `ClrVersion` 中移除 `$PSVersionTable` 屬性 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
-`ClrVersion` 的 `$PSVersionTable` 屬性對 CoreCLR 來說沒有用，使用者不應該使用該值來判斷相容性。
+`$PSVersionTable` 的 `ClrVersion` 屬性對 CoreCLR 來說沒有用，使用者不應該使用該值來判斷相容性。
 
 ### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019"></a>將 `powershell.exe` 的位置參數從 `-Command` 變更為 `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
-允許在非 Windows 平台上透過 Shebang 使用 PowerShell。 這意謂著在 Unix 型系統上，您可以建立會自動叫用 PowerShell 的指令碼可執行檔，而無須明確叫用 `pwsh`。 這也意謂著您現在可以執行 `powershell foo.ps1` 或 `powershell fooScript` 這類命令，而無須指定 `-File`。 不過，這項變更現在會要求您在嘗試執行 `-c` 這類命令時，明確指定 `-Command` 或 `powershell.exe Get-Command`。
+允許在非 Windows 平台上透過 Shebang 使用 PowerShell。 這意謂著在 Unix 型系統上，您可以建立會自動叫用 PowerShell 的指令碼可執行檔，而無須明確叫用 `pwsh`。 這也意謂著您現在可以執行 `powershell foo.ps1` 或 `powershell fooScript` 這類命令，而無須指定 `-File`。 不過，這項變更現在會要求您在嘗試執行 `powershell.exe Get-Command` 這類命令時，明確指定 `-c` 或 `-Command`。
 
 ### <a name="implement-unicode-escape-parsing-3958"></a>實作 Unicode 逸出剖析 [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
@@ -354,7 +354,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 ### <a name="buildversion-is-removed-from-psversiontable-1415"></a>從 `BuildVersion` 中移除 `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
-從 `BuildVersion` 中移除 `$PSVersionTable` 屬性。 此屬性已繫結至 Windows 組建版本。 相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。
+從 `$PSVersionTable` 中移除 `BuildVersion` 屬性。 此屬性已繫結至 Windows 組建版本。 相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。
 
 ### <a name="changes-to-web-cmdlets"></a>Web Cmdlet 的變更
 
@@ -368,6 +368,6 @@ Web Cmdlet 的基礎 .NET API 已變更為 `System.Net.Http.HttpClient`。 這�
 - 已不再支援 `file://` 和 `ftp://` URI 配置。
 - 已不再接受 `System.Net.ServicePointManager` 設定。
 - macOS 上目前未提供任何憑證型驗證。
-- 透過 `-Credential` URI 使用 `http://` 將會造成錯誤。 請使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 參數來抑制此錯誤。
+- 透過 `http://` URI 使用 `-Credential` 將會造成錯誤。 請使用 `https://` URI 或提供 `-AllowUnencryptedAuthentication` 參數來抑制此錯誤。
 - 當重新導向次數超過提供的限制時，`-MaximumRedirection` 現在會產生終止錯誤，而不是傳回最後一個重新導向的結果。
 - PowerShell 6.2 已將對 JSON 回應的預設值變更為 UTF-8 編碼。 在未提供 JSON 回應的字元集時，依據 RFC 8259 規定，預設編碼即為 UTF-8。

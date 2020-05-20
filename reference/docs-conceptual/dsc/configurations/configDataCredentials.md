@@ -53,7 +53,7 @@ Group [String] #ResourceName
 }
 ```
 
-本例使用 [ 內建 DSC 資源模組的 ](../resources/resources.md)Group`PSDesiredStateConfiguration` 資源。 它會建立本機群組並新增或移除成員。 它接受 `Credential` 屬性和自動的 `PsDscRunAsCredential` 屬性。 不過，資源只會使用 `Credential` 屬性。
+本例使用 `PSDesiredStateConfiguration` 內建 DSC 資源模組的 [Group](../resources/resources.md) 資源。 它會建立本機群組並新增或移除成員。 它接受 `Credential` 屬性和自動的 `PsDscRunAsCredential` 屬性。 不過，資源只會使用 `Credential` 屬性。
 
 如需 `PsDscRunAsCredential` 屬性的詳細資訊，請參閱[以使用者認證執行 DSC](runAsUser.md)。
 
@@ -61,7 +61,7 @@ Group [String] #ResourceName
 
 DSC 在 `Local System` 下執行，所以它已有可變更本機使用者和群組的權限。 如果新增成員是本機帳戶，就不需要認證。 如果 `Group` 資源在本機群組中加入網域帳戶，就需要認證。
 
-Active Directory 不允許匿名查詢。 `Credential` 資源的 `Group` 屬性是用來查詢 Active Directory 的網域帳戶。 就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以*讀取* Active Directory 大部分的物件。
+Active Directory 不允許匿名查詢。 `Group` 資源的 `Credential` 屬性是用來查詢 Active Directory 的網域帳戶。 就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以*讀取* Active Directory 大部分的物件。
 
 ## <a name="example-configuration"></a>設定範例
 
@@ -220,7 +220,7 @@ ModuleVersion = "1.0";
 
 **認證搭配 DSC 資源使用時，請盡可能使用本機帳戶，而不用網域帳戶。**
 
-若認證的 \\ 屬性中有 '\@' 或 '`Username`'，則 DSC 會將它視為網域帳戶。 使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。
+若認證的 `Username` 屬性中有 '\\' 或 '\@'，則 DSC 會將它視為網域帳戶。 使用者名稱的網域部分為 "localhost"、"127.0.0.1" 和 "::1" 時例外。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 

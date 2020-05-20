@@ -15,7 +15,7 @@ ms.locfileid: "71954025"
 > 本主題討論如何重新啟動節點。 必須正確設定 **ActionAfterReboot** 和 **RebootNodeIfNeeded** LCM 設定，才能成功重新開機。
 > 若要查看本機設定管理員設定，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。
 
-使用 `$global:DSCMachineStatus` 旗標即可從資源內重新啟動節點。 在 `1` 函式中將此旗標設為 `Set-TargetResource`，會強制 LCM 在目前資源的 **Set** 方法之後，直接重新啟動節點。 使用此旗標，**ComputerManagementDsc** 資源模組中的 [PendingReboot](https://github.com/PowerShell/ComputerManagementDsc) 資源會偵測 DSC 外部是否有擱置的重新開機。
+使用 `$global:DSCMachineStatus` 旗標即可從資源內重新啟動節點。 在 `Set-TargetResource` 函式中將此旗標設為 `1`，會強制 LCM 在目前資源的 **Set** 方法之後，直接重新啟動節點。 使用此旗標，**ComputerManagementDsc** 資源模組中的 [PendingReboot](https://github.com/PowerShell/ComputerManagementDsc) 資源會偵測 DSC 外部是否有擱置的重新開機。
 
 您的[設定](configurations.md)會執行需要重新啟動節點的步驟。 這可能包括下列項目：
 

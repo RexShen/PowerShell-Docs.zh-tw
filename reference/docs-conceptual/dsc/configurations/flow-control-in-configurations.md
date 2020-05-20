@@ -38,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-此外，您可以使用  **迴圈為目前電腦上的每個服務建立**服務`foreach`資源區塊。
+此外，您可以使用 `foreach` 迴圈為目前電腦上的每個服務建立**服務**資源區塊。
 
 ```powershell
 Configuration ServiceState
@@ -60,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-您也可以使用 `Configuration` 陳述式，僅為線上電腦建立 `if`。
+您也可以使用 `if` 陳述式，僅為線上電腦建立 `Configuration`。
 
 ```powershell
 Configuration ServiceState

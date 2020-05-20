@@ -80,10 +80,10 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 |                                           範例                                           |                                                             使用案例                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `'My-Func'` 或 `@{ Name = 'My-Func' }`                                                      | 允許使用者執行 `My-Func` 而無任何參數限制。                                                      |
-| `'MyModule\My-Func'`                                                                        | 允許使用者從模組 `My-Func` 執行 `MyModule` 而無任何參數限制。                           |
+| `'MyModule\My-Func'`                                                                        | 允許使用者從模組 `MyModule` 執行 `My-Func` 而無任何參數限制。                           |
 | `'My-*'`                                                                                    | 允許使用者使用動詞 `My` 執行任何 Cmdlet 或函式。                                                                 |
 | `'*-Func'`                                                                                  | 允許使用者使用名詞 `Func` 執行任何 Cmdlet 或函式。                                                               |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | 允許使用者搭配 `My-Func` 和 `Param1` 參數來執行 `Param2`。 可以提供任何值給參數。          |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | 允許使用者搭配 `Param1` 和 `Param2` 參數來執行 `My-Func`。 可以提供任何值給參數。          |
 | `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | 允許使用者執行 `My-Func` 搭配 `Param1` 參數。 只能提供 "Value1" 和 "Value2" 給參數。        |
 | `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | 允許使用者執行 `My-Func` 搭配 `Param1` 參數。 可以提供開頭為 "contoso" 的任何值給參數。 |
 
@@ -161,7 +161,7 @@ FunctionDefinitions = @{
 
 在 PowerShell 6 之前，為了讓 PowerShell 尋找角色功能檔案，其必須儲存在 PowerShell 模組的 **RoleCapabilitie** 資料夾中。 模組可以儲存在 `$env:PSModulePath` 環境變數包含的任何資料夾中，但您不應該將其放在 `$env:SystemRoot\System32` 資料夾中 ，或是未受信任連線使用者可以修改其中檔案的資料夾。
 
-下列範例會在用來裝載角色功能檔案的 **路徑中，建立名為**ContosoJEA`$env:ProgramFiles` 的 PowerShell 指令碼模組。
+下列範例會在用來裝載角色功能檔案的 `$env:ProgramFiles` 路徑中，建立名為 **ContosoJEA** 的 PowerShell 指令碼模組。
 
 ```powershell
 # Create a folder for the module

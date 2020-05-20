@@ -37,7 +37,7 @@ ms.locfileid: "75416123"
 </body>
 ```
 
-將此內容在您稍早建立的 `index.htm` 資料夾中另存為 `test`。
+將此內容在您稍早建立的 `test` 資料夾中另存為 `index.htm`。
 
 ## <a name="write-the-configuration"></a>撰寫設定
 

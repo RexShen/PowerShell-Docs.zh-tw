@@ -107,7 +107,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-上述命令中有兩個 `Where-Object` 元素，但可使用 `Where-Object` 邏輯運算子以單一 `-and` 元素來表示它們，就像這樣︰
+上述命令中有兩個 `Where-Object` 元素，但可使用 `-and` 邏輯運算子以單一 `Where-Object` 元素來表示它們，就像這樣︰
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

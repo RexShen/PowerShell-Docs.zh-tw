@@ -213,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>在提取伺服器上放置設定文件並為其命名 (ConfigurationID)
 
-部分設定文件必須位於提取伺服器的 **檔案 (通常為**) 內指定為 `web.config`ConfigurationPath`C:\Program Files\WindowsPowerShell\DscService\Configuration` 的資料夾中。 設定文件必須命名如下：`<ConfigurationName>.<ConfigurationID>.mof`，其中 _ConfigurationName_ 是部分設定的名稱，而 _ConfigurationID_ 是目標節點上 LCM 中所定義的設定識別碼。 在此範例中，設定文件應該命名如下：
+部分設定文件必須位於提取伺服器的 `web.config` 檔案 (通常為 `C:\Program Files\WindowsPowerShell\DscService\Configuration`) 內指定為 **ConfigurationPath** 的資料夾中。 設定文件必須命名如下：`<ConfigurationName>.<ConfigurationID>.mof`，其中 _ConfigurationName_ 是部分設定的名稱，而 _ConfigurationID_ 是目標節點上 LCM 中所定義的設定識別碼。 在此範例中，設定文件應該命名如下：
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -307,7 +307,7 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-請注意，在 Settings 區塊中指定的 **RefreshMode** 為 "Pull"，但 **部分設定的**RefreshMode`SharePointConfig` 則是 "Push"。
+請注意，在 Settings 區塊中指定的 **RefreshMode** 為 "Pull"，但 `SharePointConfig` 部分設定的 **RefreshMode** 則是 "Push"。
 
 如上面所述，對其各自的重新整理模式命名和放置設定 MOF 檔案。
 呼叫 `Publish-DSCConfiguration` 來發佈 `SharePointConfig` 部分設定，然後等待 `ServiceAccountConfig` 設定從提取伺服器上提取，或藉由呼叫 [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) 強制重新整理。

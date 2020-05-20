@@ -54,25 +54,25 @@ man Get-ChildItem
 help Get-ChildItem
 ```
 
-若要顯示詳細資訊，請使用 **Cmdlet 的**Detailed`Get-Help` 參數。 例如，若要取得 `Get-ChildItem` Cmdlet 的詳細資訊，請輸入：
+若要顯示詳細資訊，請使用 `Get-Help` Cmdlet 的 **Detailed** 參數。 例如，若要取得 `Get-ChildItem` Cmdlet 的詳細資訊，請輸入：
 
 ```powershell
 Get-Help Get-ChildItem -Detailed
 ```
 
-若要顯示說明文章中的所有內容，請使用 **Cmdlet 的**Full`Get-Help` 參數。 例如，若要顯示 `Get-ChildItem` Cmdlet 之說明文章中的所有內容，請輸入：
+若要顯示說明文章中的所有內容，請使用 `Get-Help` Cmdlet 的 **Full** 參數。 例如，若要顯示 `Get-ChildItem` Cmdlet 之說明文章中的所有內容，請輸入：
 
 ```powershell
 Get-Help Get-ChildItem -Full
 ```
 
-若要取得 Cmdlet 之參數的詳細說明，請使用 **Cmdlet 的**Parameter`Get-Help` 參數。 例如，若要取得 `Get-ChildItem` Cmdlet 之所有參數的詳細說明，請輸入：
+若要取得 Cmdlet 之參數的詳細說明，請使用 `Get-Help` Cmdlet 的 **Parameter** 參數。 例如，若要取得 `Get-ChildItem` Cmdlet 之所有參數的詳細說明，請輸入：
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-若只要顯示說明文章中的範例，請使用 **的**Example`Get-Help` 參數。
+若只要顯示說明文章中的範例，請使用 `Get-Help` 的 **Example** 參數。
 例如，若只要顯示說明文章中的 `Get-ChildItem` Cmdlet 範例，請鍵入：
 
 ```powershell
@@ -145,10 +145,10 @@ Get-Help c:\ps-test\TestScript.ps1
 
 線上檢視說明文章是取得協助的最佳方式之一。 線上文章可以更輕鬆地更新，並提供最新的內容。
 
-若要線上取得說明，請使用 **Cmdlet 的**Online`Get-Help` 參數。 PowerShell 隨附的所有說明文章 (包括提供者說明與概念性 (關於) 說明文章) 都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文件中線上取得。
+若要線上取得說明，請使用 `Get-Help` Cmdlet 的 **Online** 參數。 PowerShell 隨附的所有說明文章 (包括提供者說明與概念性 (關於) 說明文章) 都可以在 [PowerShell](/powershell/scripting/powershell-scripting) 文件中線上取得。
 
 > [!NOTE]
-> 您無法對概念性 (about_ **) 或提供者說明文章使用** Online\* 參數。
+> 您無法對概念性 (about_\*) 或提供者說明文章使用 **Online** 參數。
 > 線上說明是選擇性的，因此並非每一個 Cmdlet、函式或指令碼都適用。
 
 例如，若要取得 `Get-ChildItem` Cmdlet 相關說明文章的線上版本，請輸入：

@@ -13,7 +13,7 @@ ms.locfileid: "71953855"
 
 > 適用於：Windows PowerShell 5.0
 
-您可以選用 Windows Server 2016 媒體上 **資料夾中的**Nano Server 上的 DSC`NanoServer\Packages` 封裝。 當您建立 Nano Server 的 VHD 時，可以安裝此套件，方法是指定 **Microsoft-NanoServer-DSC-Package** 作為 **New-NanoServerImage** 函數中 **Packages** 參數的值。 例如，如果要建立虛擬機器的 VHD，命令會如下所示︰
+您可以選用 Windows Server 2016 媒體上 `NanoServer\Packages` 資料夾中的 **Nano Server 上的 DSC** 封裝。 當您建立 Nano Server 的 VHD 時，可以安裝此套件，方法是指定 **Microsoft-NanoServer-DSC-Package** 作為 **New-NanoServerImage** 函數中 **Packages** 參數的值。 例如，如果要建立虛擬機器的 VHD，命令會如下所示︰
 
 ```powershell
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package

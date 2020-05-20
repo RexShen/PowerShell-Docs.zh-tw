@@ -73,7 +73,7 @@ DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。
 如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
 
 <!-- markdownlint-disable MD038 -->
-在 `. ` (點、空格) 後輸入儲存路徑，即可「點溯源」  您的 "HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
+在 `. ` (點、空格) 後輸入儲存路徑，即可「點溯源」您的 "HelloWorld.ps1" 指令碼。 然後，您就可以像呼叫函式一樣呼叫它來執行您的設定。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -112,7 +112,7 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 `Start-DSCConfiguration` Cmdlet 完成後，您應該會在指定的位置看到 "HelloWorld.txt" 檔案。 您可以使用 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) Cmdlet 驗證內容。
 
-您也可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)「測試」  目前的狀態。
+您也可以使用 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)「測試」目前的狀態。
 
 如果節點目前與套用的設定相容，則輸出應為 "True"。
 

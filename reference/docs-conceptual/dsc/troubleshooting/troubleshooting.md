@@ -192,7 +192,7 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
 ```
 
-您可以使用 `$SeparateDscOperations`Where-Object[ 擷取變數 ](/powershell/module/microsoft.powershell.core/where-object) 中的資料。 下面有五個案例，您要擷取其資料以疑難排解 DSC：
+您可以使用 [Where-Object](/powershell/module/microsoft.powershell.core/where-object) 擷取變數 `$SeparateDscOperations` 中的資料。 下面有五個案例，您要擷取其資料以疑難排解 DSC：
 
 ### <a name="1-operations-failures"></a>1：作業失敗
 
@@ -416,7 +416,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="getting-events-for-a-remote-computer"></a>取得遠端電腦的事件
 
-使用 `ComputerName` Cmdlet 的 `Trace-xDscOperation` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
+使用 `Trace-xDscOperation` Cmdlet 的 `ComputerName` 參數來取得遠端電腦上的事件詳細資訊。 執行這項作業之前，您必須先建立防火牆規則，允許在遠端電腦上進行遠端系統管理︰
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow

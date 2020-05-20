@@ -117,7 +117,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-由於 **中的**Property`Get-CimInstance` 參數會限制從 WMI 類別執行個體傳回的屬性，而不是傳回給 PowerShell 的物件，因此會傳回額外的資料。 若要縮減輸出，請使用 `Select-Object`：
+由於 `Get-CimInstance` 中的 **Property** 參數會限制從 WMI 類別執行個體傳回的屬性，而不是傳回給 PowerShell 的物件，因此會傳回額外的資料。 若要縮減輸出，請使用 `Select-Object`：
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId
