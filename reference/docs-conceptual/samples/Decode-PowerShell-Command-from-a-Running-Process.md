@@ -10,14 +10,14 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "66470976"
 ---
-# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="87cd9-103">從正在執行的處理序解碼 PowerShell 命令</span><span class="sxs-lookup"><span data-stu-id="87cd9-103">Decode a PowerShell command from a running process</span></span>
+# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="b8f53-103">從正在執行的處理序解碼 PowerShell 命令</span><span class="sxs-lookup"><span data-stu-id="b8f53-103">Decode a PowerShell command from a running process</span></span>
 
-<span data-ttu-id="87cd9-104">您有時候可能會執行耗用大量資源的 PowerShell 處理序。</span><span class="sxs-lookup"><span data-stu-id="87cd9-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
-<span data-ttu-id="87cd9-105">此處理序可在[工作排程器][]作業或 [SQL Server Agent][] 作業的內容中執行。</span><span class="sxs-lookup"><span data-stu-id="87cd9-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="87cd9-106">有多個 PowerShell 處理序執行時，很難知道哪一個處理序發生問題。</span><span class="sxs-lookup"><span data-stu-id="87cd9-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="87cd9-107">此文章會說明如何將正在執行 PowerShell 處理序的指令碼區塊解碼。</span><span class="sxs-lookup"><span data-stu-id="87cd9-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
+<span data-ttu-id="b8f53-104">您有時候可能會執行耗用大量資源的 PowerShell 處理序。</span><span class="sxs-lookup"><span data-stu-id="b8f53-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
+<span data-ttu-id="b8f53-105">此處理序可在[工作排程器][]作業或 [SQL Server Agent][] 作業的內容中執行。</span><span class="sxs-lookup"><span data-stu-id="b8f53-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="b8f53-106">有多個 PowerShell 處理序執行時，很難知道哪一個處理序發生問題。</span><span class="sxs-lookup"><span data-stu-id="b8f53-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="b8f53-107">此文章會說明如何將正在執行 PowerShell 處理序的指令碼區塊解碼。</span><span class="sxs-lookup"><span data-stu-id="b8f53-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
 
-## <a name="create-a-long-running-process"></a><span data-ttu-id="87cd9-108">建立長時間執行的處理序</span><span class="sxs-lookup"><span data-stu-id="87cd9-108">Create a long running process</span></span>
+## <a name="create-a-long-running-process"></a><span data-ttu-id="b8f53-108">建立長時間執行的處理序</span><span class="sxs-lookup"><span data-stu-id="b8f53-108">Create a long running process</span></span>
 
-<span data-ttu-id="87cd9-109">為了示範此案例，請開啟一個新的 PowerShell 視窗並執行以下程式碼。</span><span class="sxs-lookup"><span data-stu-id="87cd9-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="87cd9-110">它會執行一個每分鐘輸出一個數字的 PowerShell 命令，並執行 10 分鐘。</span><span class="sxs-lookup"><span data-stu-id="87cd9-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
+<span data-ttu-id="b8f53-109">為了示範此案例，請開啟一個新的 PowerShell 視窗並執行以下程式碼。</span><span class="sxs-lookup"><span data-stu-id="b8f53-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="b8f53-110">它會執行一個每分鐘輸出一個數字的 PowerShell 命令，並執行 10 分鐘。</span><span class="sxs-lookup"><span data-stu-id="b8f53-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a><span data-ttu-id="87cd9-111">檢視處理序</span><span class="sxs-lookup"><span data-stu-id="87cd9-111">View the process</span></span>
+## <a name="view-the-process"></a><span data-ttu-id="b8f53-111">檢視處理序</span><span class="sxs-lookup"><span data-stu-id="b8f53-111">View the process</span></span>
 
-<span data-ttu-id="87cd9-112">正在執行 PowerShell 的命令主體會儲存在 **Win32_Process** 類別的 [Win32_Process][] 屬性中。</span><span class="sxs-lookup"><span data-stu-id="87cd9-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="87cd9-113">如果命令是編碼命令，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。</span><span class="sxs-lookup"><span data-stu-id="87cd9-113">If the command is an encoded command, the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="87cd9-114">只要透過以下程序使用此資訊，就能識別編碼命令。</span><span class="sxs-lookup"><span data-stu-id="87cd9-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
+<span data-ttu-id="b8f53-112">正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。</span><span class="sxs-lookup"><span data-stu-id="b8f53-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="b8f53-113">如果命令是編碼命令，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。</span><span class="sxs-lookup"><span data-stu-id="b8f53-113">If the command is an encoded command, the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="b8f53-114">只要透過以下程序使用此資訊，就能識別編碼命令。</span><span class="sxs-lookup"><span data-stu-id="b8f53-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
 
-<span data-ttu-id="87cd9-115">以系統管理員身分啟動 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="87cd9-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="87cd9-116">這很重要，PowerShell 必須以系統管理員身分執行，否則在查詢執行的處理序時不會傳回任何結果。</span><span class="sxs-lookup"><span data-stu-id="87cd9-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
+<span data-ttu-id="b8f53-115">以系統管理員身分啟動 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="b8f53-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="b8f53-116">這很重要，PowerShell 必須以系統管理員身分執行，否則在查詢執行的處理序時不會傳回任何結果。</span><span class="sxs-lookup"><span data-stu-id="b8f53-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
 
-<span data-ttu-id="87cd9-117">執行以下命令來取得具有編碼命令的所有 PowerShell 處理序：</span><span class="sxs-lookup"><span data-stu-id="87cd9-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
+<span data-ttu-id="b8f53-117">執行以下命令來取得具有編碼命令的所有 PowerShell 處理序：</span><span class="sxs-lookup"><span data-stu-id="b8f53-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-<span data-ttu-id="87cd9-118">以下命令會建立包含處理序識別碼和編碼命令的自訂 PowerShell 物件。</span><span class="sxs-lookup"><span data-stu-id="87cd9-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
+<span data-ttu-id="b8f53-118">以下命令會建立包含處理序識別碼和編碼命令的自訂 PowerShell 物件。</span><span class="sxs-lookup"><span data-stu-id="b8f53-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-<span data-ttu-id="87cd9-119">現在可以將編碼命令解碼了。</span><span class="sxs-lookup"><span data-stu-id="87cd9-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="87cd9-120">以下程式碼片段會逐一查看命令的詳細資料物件、將編碼命令解碼，以及將解碼後的命令新增回物件，以便進一步調查。</span><span class="sxs-lookup"><span data-stu-id="87cd9-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
+<span data-ttu-id="b8f53-119">現在可以將編碼命令解碼了。</span><span class="sxs-lookup"><span data-stu-id="b8f53-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="b8f53-120">以下程式碼片段會逐一查看命令的詳細資料物件、將編碼命令解碼，以及將解碼後的命令新增回物件，以便進一步調查。</span><span class="sxs-lookup"><span data-stu-id="b8f53-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-<span data-ttu-id="87cd9-121">現在可以透過選取解碼命令屬性來檢閱解碼後的命令。</span><span class="sxs-lookup"><span data-stu-id="87cd9-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
+<span data-ttu-id="b8f53-121">現在可以透過選取解碼命令屬性來檢閱解碼後的命令。</span><span class="sxs-lookup"><span data-stu-id="b8f53-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
 
 ```output
 ProcessId      : 8752

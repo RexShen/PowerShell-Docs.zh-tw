@@ -9,19 +9,19 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954265"
 ---
-><span data-ttu-id="d7f5c-103">適用對象：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="d7f5c-103">Applies to: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="39356-103">適用對象：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="39356-103">Applies to: Windows PowerShell 5.0</span></span>
 
-# <a name="dscautomationhostenabled-registry-key"></a><span data-ttu-id="d7f5c-104">DSCAutomationHostEnabled 登錄機碼</span><span class="sxs-lookup"><span data-stu-id="d7f5c-104">DSCAutomationHostEnabled registry key</span></span>
+# <a name="dscautomationhostenabled-registry-key"></a><span data-ttu-id="39356-104">DSCAutomationHostEnabled 登錄機碼</span><span class="sxs-lookup"><span data-stu-id="39356-104">DSCAutomationHostEnabled registry key</span></span>
 
-<span data-ttu-id="d7f5c-105">DSC 使用 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** 下的 **DSCAutomationHostEnabled** 登錄機碼，在初始開機時啟用電腦的設定。</span><span class="sxs-lookup"><span data-stu-id="d7f5c-105">DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** to enable configuration of the machine at initial boot-up.</span></span>
-<span data-ttu-id="d7f5c-106">**DSCAutomationHostEnabled** 支援三個模式：</span><span class="sxs-lookup"><span data-stu-id="d7f5c-106">**DSCAutomationHostEnabled** supports three modes:</span></span>
+<span data-ttu-id="39356-105">DSC 使用 **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** 下的 **DSCAutomationHostEnabled** 登錄機碼，在初始開機時啟用電腦的設定。</span><span class="sxs-lookup"><span data-stu-id="39356-105">DSC uses the **DSCAutomationHostEnabled** registry key under **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System** to enable configuration of the machine at initial boot-up.</span></span>
+<span data-ttu-id="39356-106">**DSCAutomationHostEnabled** 支援三個模式：</span><span class="sxs-lookup"><span data-stu-id="39356-106">**DSCAutomationHostEnabled** supports three modes:</span></span>
 
-|  <span data-ttu-id="d7f5c-107">DSCAutomationHostEnabled 值</span><span class="sxs-lookup"><span data-stu-id="d7f5c-107">DSCAutomationHostEnabled Value</span></span>  |  <span data-ttu-id="d7f5c-108">描述</span><span class="sxs-lookup"><span data-stu-id="d7f5c-108">Description</span></span>   |
+|  <span data-ttu-id="39356-107">DSCAutomationHostEnabled 值</span><span class="sxs-lookup"><span data-stu-id="39356-107">DSCAutomationHostEnabled Value</span></span>  |  <span data-ttu-id="39356-108">描述</span><span class="sxs-lookup"><span data-stu-id="39356-108">Description</span></span>   |
 |---|---|
-<span data-ttu-id="d7f5c-109">0</span><span class="sxs-lookup"><span data-stu-id="d7f5c-109">0</span></span> | <span data-ttu-id="d7f5c-110">不允許在開機時設定電腦。</span><span class="sxs-lookup"><span data-stu-id="d7f5c-110">Disable configuring the machine at boot-up.</span></span> |
-<span data-ttu-id="d7f5c-111">1</span><span class="sxs-lookup"><span data-stu-id="d7f5c-111">1</span></span> | <span data-ttu-id="d7f5c-112">允許在開機時設定電腦。</span><span class="sxs-lookup"><span data-stu-id="d7f5c-112">Enable configuring the machine at boot-up.</span></span> |
-<span data-ttu-id="d7f5c-113">2</span><span class="sxs-lookup"><span data-stu-id="d7f5c-113">2</span></span> | <span data-ttu-id="d7f5c-114">僅當 DSC 處於暫止或目前的狀態時，才允許設定電腦。</span><span class="sxs-lookup"><span data-stu-id="d7f5c-114">Enable configuring the machine only if DSC is in pending or current state.</span></span> <span data-ttu-id="d7f5c-115">這是預設值。</span><span class="sxs-lookup"><span data-stu-id="d7f5c-115">This is the default value.</span></span> |
+<span data-ttu-id="39356-109">0</span><span class="sxs-lookup"><span data-stu-id="39356-109">0</span></span> | <span data-ttu-id="39356-110">不允許在開機時設定電腦。</span><span class="sxs-lookup"><span data-stu-id="39356-110">Disable configuring the machine at boot-up.</span></span> |
+<span data-ttu-id="39356-111">1</span><span class="sxs-lookup"><span data-stu-id="39356-111">1</span></span> | <span data-ttu-id="39356-112">允許在開機時設定電腦。</span><span class="sxs-lookup"><span data-stu-id="39356-112">Enable configuring the machine at boot-up.</span></span> |
+<span data-ttu-id="39356-113">2</span><span class="sxs-lookup"><span data-stu-id="39356-113">2</span></span> | <span data-ttu-id="39356-114">僅當 DSC 處於暫止或目前的狀態時，才允許設定電腦。</span><span class="sxs-lookup"><span data-stu-id="39356-114">Enable configuring the machine only if DSC is in pending or current state.</span></span> <span data-ttu-id="39356-115">這是預設值。</span><span class="sxs-lookup"><span data-stu-id="39356-115">This is the default value.</span></span> |
 
-## <a name="see-also"></a><span data-ttu-id="d7f5c-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d7f5c-116">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="39356-116">另請參閱</span><span class="sxs-lookup"><span data-stu-id="39356-116">See Also</span></span>
 
-<span data-ttu-id="d7f5c-117">如需如何使用此功能在初始機時執行設定的範例，請參閱[使用 DSC 在初始開機時設定虛擬機器](bootstrapDsc.md)。</span><span class="sxs-lookup"><span data-stu-id="d7f5c-117">For an example of how to use this feature to run configurations at initial boot-up, see [Configure a virtual machines at initial boot-up by using DSC](bootstrapDsc.md).</span></span>
+<span data-ttu-id="39356-117">如需如何使用此功能在初始機時執行設定的範例，請參閱[使用 DSC 在初始開機時設定虛擬機器](bootstrapDsc.md)。</span><span class="sxs-lookup"><span data-stu-id="39356-117">For an example of how to use this feature to run configurations at initial boot-up, see [Configure a virtual machines at initial boot-up by using DSC](bootstrapDsc.md).</span></span>
