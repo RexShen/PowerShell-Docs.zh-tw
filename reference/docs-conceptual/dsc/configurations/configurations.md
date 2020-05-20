@@ -165,7 +165,7 @@ Cmdlet [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscR
 **Import-DscResource** 支援兩個參數：
 
 - **ModuleName**，使用 **Import-DscResource** 時建議用它。 它接受包含了要匯入資源 (以及模組名稱字串陣列) 的模組名稱。
-- **Name** 是要匯入的資源名稱。 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 (**Get-DscResource** 傳回 [ResourceType](/powershell/module/PSDesiredStateConfiguration/Get-DscResource))。
+- **Name** 是要匯入的資源名稱。 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回的 "Name" 不是易記的名稱，而是定義資源結構描述時使用的類別名稱 ([Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) 傳回 **ResourceType**)。
 
 如需使用 `Import-DSCResource` 的詳細資訊，請參閱[使用 Import-DSCResource](import-dscresource.md)
 

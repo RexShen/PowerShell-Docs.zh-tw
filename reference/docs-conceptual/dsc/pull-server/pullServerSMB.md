@@ -76,7 +76,7 @@ Configuration SmbShare
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>將檔案系統存取權授與提取用戶端
 
-將 **ReadAccess** 授與用戶端節點可讓該節點存取 SMB 共用，但無法存取該共用內的檔案或資料夾。 您必須明確授與 SMB 共用資料夾和子資料夾的用戶端節點存取權。 我們可以透過 DSC 來達成，方法是使用 **CNtfsAccessControl** 模組中所包含的 [cNtfsPermissionEntry](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 資源來新增。
+將 **ReadAccess** 授與用戶端節點可讓該節點存取 SMB 共用，但無法存取該共用內的檔案或資料夾。 您必須明確授與 SMB 共用資料夾和子資料夾的用戶端節點存取權。 我們可以透過 DSC 來達成，方法是使用 [CNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) 模組中所包含的 **cNtfsPermissionEntry** 資源來新增。
 下列設定會新增 **cNtfsPermissionEntry** 區塊，將 ReadAndExecute 存取權授與提取用戶端︰
 
 ```powershell
@@ -159,7 +159,7 @@ WMF 5.0 中包含 DSC 資源的模組預設格式為 `{Module Folder}\{Module Ve
 如需設定 LCM 的詳細資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigID.md)。
 
 > [!NOTE]
-> 為了簡單起見，這個範例使用 **PSDscAllowPlainTextPassword**，以允許將純文字密碼傳遞至 **Credential** 參數。 如需更安全地傳遞認證的詳細資訊，請參閱[設定資料的認證選項](../configurations/configDataCredentials.md)。 即使您只要提取資源，也**必須**在 SMB 提取伺服器之中繼設定的 [設定]  區塊中指定 **ConfigurationID**。
+> 為了簡單起見，這個範例使用 **PSDscAllowPlainTextPassword**，以允許將純文字密碼傳遞至 **Credential** 參數。 如需更安全地傳遞認證的詳細資訊，請參閱[設定資料的認證選項](../configurations/configDataCredentials.md)。 即使您只要提取資源，也**必須**在 SMB 提取伺服器之中繼設定的 [設定] 區塊中指定 **ConfigurationID**。
 
 ```powershell
 $secpasswd = ConvertTo-SecureString "Pass1Word" -AsPlainText -Force

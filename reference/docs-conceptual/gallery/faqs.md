@@ -61,7 +61,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 - 版本
 - 描述
 - 作者
-- 模組授權條款 URI (為資訊清單 **PrivateData** 區段的一部分，或在 **Publish-Module** Cmdlet 的 [Publish-Module][] 參數中)。
+- 模組授權條款 URI (為資訊清單 **PrivateData** 區段的一部分，或在 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數中)。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>如何建立格式正確的模組資訊清單？
 
@@ -78,7 +78,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 - 版本
 - 描述
 - 作者
-- 指令碼授權條款 URI，為指令碼 **PSScriptInfo** 區段的一部分，或在 **Publish-Script** Cmdlet 的 [Publish-Script][] 參數中。
+- 指令碼授權條款 URI，為指令碼 **PSScriptInfo** 區段的一部分，或在 [Publish-Script][] Cmdlet 的 **LicenseUri** 參數中。
 
 ## <a name="how-do-i-search"></a>如何進行搜尋？
 

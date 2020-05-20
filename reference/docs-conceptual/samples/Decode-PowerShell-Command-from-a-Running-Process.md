@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>檢視處理序
 
-正在執行 PowerShell 的命令主體會儲存在 **Win32_Process** 類別的 [Win32_Process][] 屬性中。 如果命令是編碼命令，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
+正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。 如果命令是編碼命令，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
 
 以系統管理員身分啟動 PowerShell。 這很重要，PowerShell 必須以系統管理員身分執行，否則在查詢執行的處理序時不會傳回任何結果。
 

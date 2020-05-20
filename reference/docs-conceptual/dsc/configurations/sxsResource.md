@@ -17,7 +17,7 @@ ms.locfileid: "71953985"
 
 ## <a name="installing-separate-resource-versions-side-by-side"></a>並存安裝各個資源版本
 
-您可以使用 **Install-Module** Cmdlet 的 **MinimumVersion**、**MaximumVersion** 與 [RequiredVersion](/powershell/module/PowershellGet/Install-Module) 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
+您可以使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 的 **MinimumVersion**、**MaximumVersion** 與 **RequiredVersion** 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
 
 例如，**xFailOverCluster** 模組有多個版本，每個模組各包含一個 **xCluster** 資源。 呼叫 **Install-Module** 但未指定版本號碼，就會安裝最新版的模組。
 

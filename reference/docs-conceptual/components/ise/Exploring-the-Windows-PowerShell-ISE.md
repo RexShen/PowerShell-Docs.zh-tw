@@ -18,7 +18,7 @@ ms.locfileid: "75737095"
 
 ## <a name="menu-bar"></a>功能表列
 
-功能表列包含 [檔案]  、[編輯]  、[檢視]  、[工具]  、[偵錯]  、[附加元件]  和 [說明]  功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](object-model/The-ISEAddOnTool-Object.md)的指令碼，將[附加元件工具](object-model/The-ISE-Object-Model-Hierarchy.md)放在功能表列上。
+功能表列包含 [檔案]  、[編輯]  、[檢視]  、[工具]  、[偵錯]  、[附加元件]  和 [說明]  功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](object-model/The-ISE-Object-Model-Hierarchy.md)的指令碼，將[附加元件工具](object-model/The-ISEAddOnTool-Object.md)放在功能表列上。
 
 > [!NOTE]
 > 在 Windows PowerShell ISE 2.0 中，不提供 [工具]  和 [附加元件]  功能表。
@@ -79,7 +79,7 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 ## <a name="help"></a>説明
 
-您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 [說明]  功能表上按一下 [Windows PowerShell ISE 說明]  ，或在任何位置按下 <kbd>F1</kbd> 鍵，但游標不可以是在指令碼窗格或主控台窗格中的 Cmdlet 名稱上方。
+您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 [說明] 功能表上按一下 [Windows PowerShell ISE 說明]，或在任何位置按下 <kbd>F1</kbd> 鍵，但游標不可以是在指令碼窗格或主控台窗格中的 Cmdlet 名稱上方。
 您也可以從 [說明]  功能表執行 `Update-Help` Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
 
 ## <a name="see-also"></a>另請參閱

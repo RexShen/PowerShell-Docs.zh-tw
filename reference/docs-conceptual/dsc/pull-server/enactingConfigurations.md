@@ -24,7 +24,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](/powershell/module/
 建立及編譯設定後，您可以呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet，設定 MOF 所在路徑之 Cmdlet 的 -Path 參數，以 Push 模式施行設定。 例如，如果設定 MOF 位於 `C:\DSC\Configurations\localhost.mof`，您可以使用下列命令將其套用到本機電腦：`Start-DscConfiguration -Path 'C:\DSC\Configurations'`
 
 > [!NOTE]
-> DSC 預設會將設定當做背景作業執行。 若要以互動方式執行設定，請搭配 [Wait](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 參數呼叫 **Start-DscConfiguration**。
+> DSC 預設會將設定當做背景作業執行。 若要以互動方式執行設定，請搭配 **Wait** 參數呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)。
 
 ## <a name="pull-mode"></a>Pull 模式
 
