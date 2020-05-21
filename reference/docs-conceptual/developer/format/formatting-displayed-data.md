@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 38971643-2a3d-4f5b-a1fa-6334c162b8ed
 caps.latest.revision: 4
-ms.openlocfilehash: e915ac71feb50cb58cfa9195f0de94763affdb77
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9f3a3176ae16ac7c014cadce6b4e856f9bd3b5da
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363697"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560384"
 ---
-# <a name="formatting-displayed-data"></a><span data-ttu-id="48a3e-102">設定已顯示之資料的格式</span><span class="sxs-lookup"><span data-stu-id="48a3e-102">Formatting Displayed Data</span></span>
+# <a name="formatting-displayed-data"></a><span data-ttu-id="c3dfb-102">設定已顯示之資料的格式</span><span class="sxs-lookup"><span data-stu-id="c3dfb-102">Formatting Displayed Data</span></span>
 
-<span data-ttu-id="48a3e-103">您可以指定如何顯示清單、資料表或寬視圖中的個別資料點。</span><span class="sxs-lookup"><span data-stu-id="48a3e-103">You can specify how the individual data points in your List, Table, or Wide view are displayed.</span></span> <span data-ttu-id="48a3e-104">定義您的視圖專案時，您可以使用 `FormatString` 元素，也可以使用 `ScriptBlock` 專案來呼叫資料上的 `FormatString` 方法。</span><span class="sxs-lookup"><span data-stu-id="48a3e-104">You can use the `FormatString` element when defining the items of your view, or you can use the `ScriptBlock` element to call the `FormatString` method on the data.</span></span>
+<span data-ttu-id="c3dfb-103">您可以指定如何顯示清單、資料表或寬視圖中的個別資料點。</span><span class="sxs-lookup"><span data-stu-id="c3dfb-103">You can specify how the individual data points in your List, Table, or Wide view are displayed.</span></span> <span data-ttu-id="c3dfb-104">`FormatString`定義您的視圖專案時，您可以使用元素，也可以使用專案 `ScriptBlock` 來呼叫 `FormatString` 資料上的方法。</span><span class="sxs-lookup"><span data-stu-id="c3dfb-104">You can use the `FormatString` element when defining the items of your view, or you can use the `ScriptBlock` element to call the `FormatString` method on the data.</span></span>
 
-## <a name="using-the-formatstring-element"></a><span data-ttu-id="48a3e-105">使用格式字串元素</span><span class="sxs-lookup"><span data-stu-id="48a3e-105">Using the FormatString Element</span></span>
+## <a name="using-the-formatstring-element"></a><span data-ttu-id="c3dfb-105">使用格式字串元素</span><span class="sxs-lookup"><span data-stu-id="c3dfb-105">Using the FormatString Element</span></span>
 
-<span data-ttu-id="48a3e-106">在下列範例中，會使用格式字串元素來格式化[system.webserver](/dotnet/api/System.Diagnostics.Process)物件的 `TotalProcessorTime` 屬性值。</span><span class="sxs-lookup"><span data-stu-id="48a3e-106">In the following example the value of the `TotalProcessorTime` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object is formatted using the FormatString element.</span></span> <span data-ttu-id="48a3e-107">`TotalProcessorTime` 屬性</span><span class="sxs-lookup"><span data-stu-id="48a3e-107">the `TotalProcessorTime` property</span></span>
+<span data-ttu-id="c3dfb-106">在下列範例中， `TotalProcessorTime` 會使用格式字串元素來格式化[system.webserver](/dotnet/api/System.Diagnostics.Process)物件的屬性值。</span><span class="sxs-lookup"><span data-stu-id="c3dfb-106">In the following example the value of the `TotalProcessorTime` property of the [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) object is formatted using the FormatString element.</span></span> <span data-ttu-id="c3dfb-107">`TotalProcessorTime`屬性</span><span class="sxs-lookup"><span data-stu-id="c3dfb-107">the `TotalProcessorTime` property</span></span>
 
 ```
 <TableColumnItem>
@@ -29,6 +29,3 @@ ms.locfileid: "72363697"
   <FormatString>{0:MMM}{0:dd}{0:HH}:{0:mm}</FormatString>
 </TableColumnItem>
 ```
-
-
-

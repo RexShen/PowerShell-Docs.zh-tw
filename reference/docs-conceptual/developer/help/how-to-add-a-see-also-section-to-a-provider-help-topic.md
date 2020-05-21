@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: b6561120d1bbe848ab4ebcdec7de92c6cad96314
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995945"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564818"
 ---
-# <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a><span data-ttu-id="7326f-102">如何新增＜另請參閱＞小節至提供者說明主題</span><span class="sxs-lookup"><span data-stu-id="7326f-102">How to Add a See Also Section to a Provider Help Topic</span></span>
+# <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a><span data-ttu-id="988ea-102">如何新增＜另請參閱＞小節至提供者說明主題</span><span class="sxs-lookup"><span data-stu-id="988ea-102">How to Add a See Also Section to a Provider Help Topic</span></span>
 
-<span data-ttu-id="7326f-103">本節說明如何填入提供者說明主題的 [**另請參閱**] 區段。</span><span class="sxs-lookup"><span data-stu-id="7326f-103">This section explains how to populate the **SEE ALSO** section of a provider help topic.</span></span>
+<span data-ttu-id="988ea-103">本節說明如何填入提供者說明主題的 [**另請參閱**] 區段。</span><span class="sxs-lookup"><span data-stu-id="988ea-103">This section explains how to populate the **SEE ALSO** section of a provider help topic.</span></span>
 
-<span data-ttu-id="7326f-104">[**另請參閱**] 區段是由與提供者相關的主題清單所組成，或可能有助於使用者進一步瞭解並使用該提供者。</span><span class="sxs-lookup"><span data-stu-id="7326f-104">The **SEE ALSO** section consists of a list of topics that are related to the provider or might help the user better understand and use the provider.</span></span> <span data-ttu-id="7326f-105">主題清單可包含 Windows PowerShell 中的 Cmdlet 說明、提供者說明和概念性（「關於」）說明主題。</span><span class="sxs-lookup"><span data-stu-id="7326f-105">The topic list can include cmdlet help, provider help and conceptual ("about") help topics in Windows PowerShell.</span></span> <span data-ttu-id="7326f-106">它也可以包含書籍、論文和線上主題的參考，包括目前提供者說明主題的線上版本。</span><span class="sxs-lookup"><span data-stu-id="7326f-106">It can also include references to books, paper, and online topics, including an online version of the current provider help topic.</span></span>
+<span data-ttu-id="988ea-104">[**另請參閱**] 區段是由與提供者相關的主題清單所組成，或可能有助於使用者進一步瞭解並使用該提供者。</span><span class="sxs-lookup"><span data-stu-id="988ea-104">The **SEE ALSO** section consists of a list of topics that are related to the provider or might help the user better understand and use the provider.</span></span> <span data-ttu-id="988ea-105">主題清單可包含 Windows PowerShell 中的 Cmdlet 說明、提供者說明和概念性（「關於」）說明主題。</span><span class="sxs-lookup"><span data-stu-id="988ea-105">The topic list can include cmdlet help, provider help and conceptual ("about") help topics in Windows PowerShell.</span></span> <span data-ttu-id="988ea-106">它也可以包含書籍、論文和線上主題的參考，包括目前提供者說明主題的線上版本。</span><span class="sxs-lookup"><span data-stu-id="988ea-106">It can also include references to books, paper, and online topics, including an online version of the current provider help topic.</span></span>
 
-<span data-ttu-id="7326f-107">當您參考線上主題時，請以純文字提供 URI 或搜尋詞彙。</span><span class="sxs-lookup"><span data-stu-id="7326f-107">When you refer to online topics, provide the URI or a search term in plain text.</span></span> <span data-ttu-id="7326f-108">`Get-Help` Cmdlet 不會連結或重新導向至清單中的任何主題。</span><span class="sxs-lookup"><span data-stu-id="7326f-108">The `Get-Help` cmdlet does not link or redirect to any of the topics in the list.</span></span> <span data-ttu-id="7326f-109">此外，`Get-Help` Cmdlet 的 `Online` 參數無法與提供者說明搭配運作。</span><span class="sxs-lookup"><span data-stu-id="7326f-109">Also, the `Online` parameter of the `Get-Help` cmdlet does not work with provider help.</span></span>
+<span data-ttu-id="988ea-107">當您參考線上主題時，請以純文字提供 URI 或搜尋詞彙。</span><span class="sxs-lookup"><span data-stu-id="988ea-107">When you refer to online topics, provide the URI or a search term in plain text.</span></span> <span data-ttu-id="988ea-108">此 `Get-Help` Cmdlet 不會連結或重新導向至清單中的任何主題。</span><span class="sxs-lookup"><span data-stu-id="988ea-108">The `Get-Help` cmdlet does not link or redirect to any of the topics in the list.</span></span> <span data-ttu-id="988ea-109">此外， `Online` Cmdlet 的參數 `Get-Help` 無法與提供者說明搭配運作。</span><span class="sxs-lookup"><span data-stu-id="988ea-109">Also, the `Online` parameter of the `Get-Help` cmdlet does not work with provider help.</span></span>
 
-<span data-ttu-id="7326f-110">[另請參閱] 區段是從 `RelatedLinks` 專案及其包含的標記建立而來。</span><span class="sxs-lookup"><span data-stu-id="7326f-110">The See Also section is created from the `RelatedLinks` element and the tags that it contains.</span></span> <span data-ttu-id="7326f-111">下列 XML 顯示如何新增標記。</span><span class="sxs-lookup"><span data-stu-id="7326f-111">The following XML shows how to add the tags.</span></span>
+<span data-ttu-id="988ea-110">[另請參閱] 區段是從 `RelatedLinks` 元素及其包含的標記建立而來。</span><span class="sxs-lookup"><span data-stu-id="988ea-110">The See Also section is created from the `RelatedLinks` element and the tags that it contains.</span></span> <span data-ttu-id="988ea-111">下列 XML 顯示如何新增標記。</span><span class="sxs-lookup"><span data-stu-id="988ea-111">The following XML shows how to add the tags.</span></span>
 
-### <a name="to-add-see-also-topics"></a><span data-ttu-id="7326f-112">新增「另請參閱」主題</span><span class="sxs-lookup"><span data-stu-id="7326f-112">To Add "SEE ALSO" Topics</span></span>
+### <a name="to-add-see-also-topics"></a><span data-ttu-id="988ea-112">新增「另請參閱」主題</span><span class="sxs-lookup"><span data-stu-id="988ea-112">To Add "SEE ALSO" Topics</span></span>
 
-1. <span data-ttu-id="7326f-113">在 dll-help .xml*檔案的 `providerHelp`* 專案中，加入 `RelatedLinks` 元素。</span><span class="sxs-lookup"><span data-stu-id="7326f-113">In the *AssemblyName*.dll-help.xml file, within the `providerHelp` element, add a `RelatedLinks` element.</span></span> <span data-ttu-id="7326f-114">`RelatedLinks` 元素應該是 `providerHelp` 元素中的最後一個元素。</span><span class="sxs-lookup"><span data-stu-id="7326f-114">The `RelatedLinks` element should be the last element in the `providerHelp` element.</span></span> <span data-ttu-id="7326f-115">每個提供者說明主題中只允許一個 `RelatedLinks` 元素。</span><span class="sxs-lookup"><span data-stu-id="7326f-115">Only one `RelatedLinks` element is permitted in each provider help topic.</span></span>
+1. <span data-ttu-id="988ea-113">在 dll-help .xml*檔案的專案*中，新增專案 `providerHelp` `RelatedLinks` 。</span><span class="sxs-lookup"><span data-stu-id="988ea-113">In the *AssemblyName*.dll-help.xml file, within the `providerHelp` element, add a `RelatedLinks` element.</span></span> <span data-ttu-id="988ea-114">`RelatedLinks`元素應該是元素中的最後一個元素 `providerHelp` 。</span><span class="sxs-lookup"><span data-stu-id="988ea-114">The `RelatedLinks` element should be the last element in the `providerHelp` element.</span></span> <span data-ttu-id="988ea-115">`RelatedLinks`每個提供者說明主題中只允許一個元素。</span><span class="sxs-lookup"><span data-stu-id="988ea-115">Only one `RelatedLinks` element is permitted in each provider help topic.</span></span>
 
-   <span data-ttu-id="7326f-116">例如：</span><span class="sxs-lookup"><span data-stu-id="7326f-116">For example:</span></span>
+   <span data-ttu-id="988ea-116">例如：</span><span class="sxs-lookup"><span data-stu-id="988ea-116">For example:</span></span>
 
     ```xml
     <providerHelp>
@@ -38,9 +38,9 @@ ms.locfileid: "76995945"
     </providerHelp>
     ```
 
-2. <span data-ttu-id="7326f-117">針對 [**另請參閱**] 區段中 [`RelatedLinks`] 專案內的每個主題，加入 `navigationLink` 元素。</span><span class="sxs-lookup"><span data-stu-id="7326f-117">For each topic in the **SEE ALSO** section, within the `RelatedLinks` element, add a `navigationLink` element.</span></span> <span data-ttu-id="7326f-118">然後，在每個 `navigationLink` 專案中，加入一個 `linkText` 元素和一個 `uri` 專案。</span><span class="sxs-lookup"><span data-stu-id="7326f-118">Then, within each `navigationLink` element, add one `linkText` element and one `uri` element.</span></span> <span data-ttu-id="7326f-119">如果您不是使用 `uri` 專案，您可以將它新增為空的元素（\<uri/>）。</span><span class="sxs-lookup"><span data-stu-id="7326f-119">If you are not using the `uri` element, you can add it as an empty element (\<uri/>).</span></span>
+2. <span data-ttu-id="988ea-117">針對 [**另請參閱**] 區段中的每個主題，在 `RelatedLinks` 元素內加入 `navigationLink` 元素。</span><span class="sxs-lookup"><span data-stu-id="988ea-117">For each topic in the **SEE ALSO** section, within the `RelatedLinks` element, add a `navigationLink` element.</span></span> <span data-ttu-id="988ea-118">然後，在每個 `navigationLink` 元素內加入一個專案 `linkText` 和一個專案 `uri` 。</span><span class="sxs-lookup"><span data-stu-id="988ea-118">Then, within each `navigationLink` element, add one `linkText` element and one `uri` element.</span></span> <span data-ttu-id="988ea-119">如果您不是使用專案 `uri` ，您可以將它新增為空的元素（ \< uri/>）。</span><span class="sxs-lookup"><span data-stu-id="988ea-119">If you are not using the `uri` element, you can add it as an empty element (\<uri/>).</span></span>
 
-   <span data-ttu-id="7326f-120">例如：</span><span class="sxs-lookup"><span data-stu-id="7326f-120">For example:</span></span>
+   <span data-ttu-id="988ea-120">例如：</span><span class="sxs-lookup"><span data-stu-id="988ea-120">For example:</span></span>
 
     ```xml
     <providerHelp>
@@ -53,9 +53,9 @@ ms.locfileid: "76995945"
     </providerHelp>
     ```
 
-3. <span data-ttu-id="7326f-121">在 `linkText` 標記之間輸入主題名稱。</span><span class="sxs-lookup"><span data-stu-id="7326f-121">Type the topic name between the `linkText` tags.</span></span> <span data-ttu-id="7326f-122">如果您要提供 URI，請在 `uri` 標記之間輸入。</span><span class="sxs-lookup"><span data-stu-id="7326f-122">If you are providing a URI, type it between the `uri` tags.</span></span> <span data-ttu-id="7326f-123">若要指出目前提供者說明主題的線上版本，請在 `linkText` 標記之間輸入「線上版本：」，而不是主題名稱。</span><span class="sxs-lookup"><span data-stu-id="7326f-123">To indicate the online version of the current provider help topic, between the `linkText` tags, type "Online version:" instead of the topic name.</span></span> <span data-ttu-id="7326f-124">一般而言，「線上版本：」連結是 [另請參閱主題] 清單中的第一個主題。</span><span class="sxs-lookup"><span data-stu-id="7326f-124">Typically, the "Online version:" link is the first topic in the SEE ALSO topic list.</span></span>
+3. <span data-ttu-id="988ea-121">在標記之間輸入主題名稱 `linkText` 。</span><span class="sxs-lookup"><span data-stu-id="988ea-121">Type the topic name between the `linkText` tags.</span></span> <span data-ttu-id="988ea-122">如果您要提供 URI，請在標記之間輸入 `uri` 。</span><span class="sxs-lookup"><span data-stu-id="988ea-122">If you are providing a URI, type it between the `uri` tags.</span></span> <span data-ttu-id="988ea-123">若要指出目前提供者說明主題的線上版本，請在 `linkText` 標記之間輸入「線上版本：」，而不是主題名稱。</span><span class="sxs-lookup"><span data-stu-id="988ea-123">To indicate the online version of the current provider help topic, between the `linkText` tags, type "Online version:" instead of the topic name.</span></span> <span data-ttu-id="988ea-124">一般而言，「線上版本：」連結是 [另請參閱主題] 清單中的第一個主題。</span><span class="sxs-lookup"><span data-stu-id="988ea-124">Typically, the "Online version:" link is the first topic in the SEE ALSO topic list.</span></span>
 
-   <span data-ttu-id="7326f-125">下列範例包含三個 [另請參閱] 主題。</span><span class="sxs-lookup"><span data-stu-id="7326f-125">The following example include three SEE ALSO topics.</span></span> <span data-ttu-id="7326f-126">第一個參考目前主題的線上版本。</span><span class="sxs-lookup"><span data-stu-id="7326f-126">The first refer to the online version of the current topic.</span></span> <span data-ttu-id="7326f-127">第二個則是指 Windows PowerShell Cmdlet 說明主題。</span><span class="sxs-lookup"><span data-stu-id="7326f-127">The second refers to a Windows PowerShell cmdlet help topic.</span></span> <span data-ttu-id="7326f-128">第三個參考另一個線上主題。</span><span class="sxs-lookup"><span data-stu-id="7326f-128">The third refers to another online topic.</span></span>
+   <span data-ttu-id="988ea-125">下列範例包含三個 [另請參閱] 主題。</span><span class="sxs-lookup"><span data-stu-id="988ea-125">The following example include three SEE ALSO topics.</span></span> <span data-ttu-id="988ea-126">第一個參考目前主題的線上版本。</span><span class="sxs-lookup"><span data-stu-id="988ea-126">The first refer to the online version of the current topic.</span></span> <span data-ttu-id="988ea-127">第二個則是指 Windows PowerShell Cmdlet 說明主題。</span><span class="sxs-lookup"><span data-stu-id="988ea-127">The second refers to a Windows PowerShell cmdlet help topic.</span></span> <span data-ttu-id="988ea-128">第三個參考另一個線上主題。</span><span class="sxs-lookup"><span data-stu-id="988ea-128">The third refers to another online topic.</span></span>
 
     ```xml
     <providerHelp>

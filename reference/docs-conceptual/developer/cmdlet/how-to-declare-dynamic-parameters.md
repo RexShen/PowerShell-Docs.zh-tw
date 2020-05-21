@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364417"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561047"
 ---
-# <a name="how-to-declare-dynamic-parameters"></a><span data-ttu-id="dd0f2-102">如何宣告動態參數</span><span class="sxs-lookup"><span data-stu-id="dd0f2-102">How to Declare Dynamic Parameters</span></span>
+# <a name="how-to-declare-dynamic-parameters"></a><span data-ttu-id="748fa-102">如何宣告動態參數</span><span class="sxs-lookup"><span data-stu-id="748fa-102">How to Declare Dynamic Parameters</span></span>
 
-<span data-ttu-id="dd0f2-103">這個範例示範如何定義在執行時間新增至 Cmdlet 的動態參數。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-103">This example shows how to define dynamic parameters that are added to the cmdlet at runtime.</span></span> <span data-ttu-id="dd0f2-104">在此範例中，每當使用者指定 `Employee` 切換參數時，就會將 `Department` 參數新增至 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-104">In this example, the `Department` parameter is added to the cmdlet whenever the user specifies the `Employee` switch parameter.</span></span> <span data-ttu-id="dd0f2-105">如需動態參數的詳細資訊，請參閱[Cmdlet 動態參數](./cmdlet-dynamic-parameters.md)。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-105">For more information about dynamic parameters, see [Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).</span></span>
+<span data-ttu-id="748fa-103">這個範例示範如何定義在執行時間新增至 Cmdlet 的動態參數。</span><span class="sxs-lookup"><span data-stu-id="748fa-103">This example shows how to define dynamic parameters that are added to the cmdlet at runtime.</span></span> <span data-ttu-id="748fa-104">在此範例中， `Department` 每當使用者指定切換參數時，都會將參數新增至 Cmdlet `Employee` 。</span><span class="sxs-lookup"><span data-stu-id="748fa-104">In this example, the `Department` parameter is added to the cmdlet whenever the user specifies the `Employee` switch parameter.</span></span> <span data-ttu-id="748fa-105">如需動態參數的詳細資訊，請參閱[Cmdlet 動態參數](./cmdlet-dynamic-parameters.md)。</span><span class="sxs-lookup"><span data-stu-id="748fa-105">For more information about dynamic parameters, see [Cmdlet Dynamic Parameters](./cmdlet-dynamic-parameters.md).</span></span>
 
-## <a name="to-define-dynamic-parameters"></a><span data-ttu-id="dd0f2-106">若要定義動態參數</span><span class="sxs-lookup"><span data-stu-id="dd0f2-106">To define dynamic parameters</span></span>
+## <a name="to-define-dynamic-parameters"></a><span data-ttu-id="748fa-106">若要定義動態參數</span><span class="sxs-lookup"><span data-stu-id="748fa-106">To define dynamic parameters</span></span>
 
-1. <span data-ttu-id="dd0f2-107">在 Cmdlet 類別宣告中，新增[Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)介面，如下所示。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-107">In the cmdlet class declaration, add the [System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) interface as shown.</span></span>
+1. <span data-ttu-id="748fa-107">在 Cmdlet 類別宣告中，新增[Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)介面，如下所示。</span><span class="sxs-lookup"><span data-stu-id="748fa-107">In the cmdlet class declaration, add the [System.Management.Automation.Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) interface as shown.</span></span>
 
    ```csharp
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. <span data-ttu-id="dd0f2-108">呼叫[Idynamicparameters. Getdynamicparameters \*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，它會傳回已定義動態參數的物件。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-108">Call the [System.Management.Automation.Idynamicparameters.Getdynamicparameters\*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) method, which returns the object in which the dynamic parameters are defined.</span></span> <span data-ttu-id="dd0f2-109">在此範例中，當指定 `Employee` 參數時，會呼叫方法。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-109">In this example, the method is called when the `Employee` parameter is specified.</span></span>
+2. <span data-ttu-id="748fa-108">呼叫[Idynamicparameters. Getdynamicparameters \*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，它會傳回已定義動態參數的物件。</span><span class="sxs-lookup"><span data-stu-id="748fa-108">Call the [System.Management.Automation.Idynamicparameters.Getdynamicparameters\*](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) method, which returns the object in which the dynamic parameters are defined.</span></span> <span data-ttu-id="748fa-109">在此範例中，當指定參數時，會呼叫方法 `Employee` 。</span><span class="sxs-lookup"><span data-stu-id="748fa-109">In this example, the method is called when the `Employee` parameter is specified.</span></span>
 
    ```csharp
    public object GetDynamicParameters()
@@ -42,7 +42,7 @@ ms.locfileid: "72364417"
    private SendGreetingCommandDynamicParameters context;
    ```
 
-3. <span data-ttu-id="dd0f2-110">宣告定義要加入之動態參數的類別。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-110">Declare a class that defines the dynamic parameters to be added.</span></span> <span data-ttu-id="dd0f2-111">您可以使用您用來宣告靜態 Cmdlet 參數的屬性，以宣告動態參數。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-111">You can use the attributes that you used to declare the static cmdlet parameters to declare the dynamic parameters.</span></span>
+3. <span data-ttu-id="748fa-110">宣告定義要加入之動態參數的類別。</span><span class="sxs-lookup"><span data-stu-id="748fa-110">Declare a class that defines the dynamic parameters to be added.</span></span> <span data-ttu-id="748fa-111">您可以使用您用來宣告靜態 Cmdlet 參數的屬性，以宣告動態參數。</span><span class="sxs-lookup"><span data-stu-id="748fa-111">You can use the attributes that you used to declare the static cmdlet parameters to declare the dynamic parameters.</span></span>
 
    ```csharp
    public class SendGreetingCommandDynamicParameters
@@ -58,9 +58,9 @@ ms.locfileid: "72364417"
    }
    ```
 
-## <a name="example"></a><span data-ttu-id="dd0f2-112">範例</span><span class="sxs-lookup"><span data-stu-id="dd0f2-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="748fa-112">範例</span><span class="sxs-lookup"><span data-stu-id="748fa-112">Example</span></span>
 
-<span data-ttu-id="dd0f2-113">在此範例中，每當使用者指定 `Employee` 參數時，就會加入 `Department` 參數。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-113">In this example, the `Department` parameter is added whenever the user specifies the `Employee` parameter.</span></span> <span data-ttu-id="dd0f2-114">`Department` 參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-114">The `Department` parameter is an optional parameter, and the ValidateSet attribute is used to specify the allowed arguments.</span></span>
+<span data-ttu-id="748fa-113">在此範例中， `Department` 每當使用者指定參數時，就會新增參數 `Employee` 。</span><span class="sxs-lookup"><span data-stu-id="748fa-113">In this example, the `Department` parameter is added whenever the user specifies the `Employee` parameter.</span></span> <span data-ttu-id="748fa-114">`Department`參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。</span><span class="sxs-lookup"><span data-stu-id="748fa-114">The `Department` parameter is an optional parameter, and the ValidateSet attribute is used to specify the allowed arguments.</span></span>
 
 ```csharp
 using System;
@@ -135,12 +135,12 @@ namespace SendGreeting
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="dd0f2-115">另請參閱</span><span class="sxs-lookup"><span data-stu-id="dd0f2-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="748fa-115">另請參閱</span><span class="sxs-lookup"><span data-stu-id="748fa-115">See Also</span></span>
 
-[<span data-ttu-id="dd0f2-116">Runtimedefinedparameterdictionary。</span><span class="sxs-lookup"><span data-stu-id="dd0f2-116">System.Management.Automation.Runtimedefinedparameterdictionary</span></span>](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)
+[<span data-ttu-id="748fa-116">Runtimedefinedparameterdictionary。</span><span class="sxs-lookup"><span data-stu-id="748fa-116">System.Management.Automation.Runtimedefinedparameterdictionary</span></span>](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)
 
-[<span data-ttu-id="dd0f2-117">Idynamicparameters. Getdynamicparameters \*</span><span class="sxs-lookup"><span data-stu-id="dd0f2-117">System.Management.Automation.Idynamicparameters.Getdynamicparameters\*</span></span>](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
+[<span data-ttu-id="748fa-117">Idynamicparameters. Getdynamicparameters \*</span><span class="sxs-lookup"><span data-stu-id="748fa-117">System.Management.Automation.Idynamicparameters.Getdynamicparameters\*</span></span>](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[<span data-ttu-id="dd0f2-118">Cmdlet 動態參數</span><span class="sxs-lookup"><span data-stu-id="dd0f2-118">Cmdlet Dynamic Parameters</span></span>](./cmdlet-dynamic-parameters.md)
+[<span data-ttu-id="748fa-118">Cmdlet 動態參數</span><span class="sxs-lookup"><span data-stu-id="748fa-118">Cmdlet Dynamic Parameters</span></span>](./cmdlet-dynamic-parameters.md)
 
-[<span data-ttu-id="dd0f2-119">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="dd0f2-119">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="748fa-119">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="748fa-119">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

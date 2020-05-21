@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
-ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2c9d6040b7a9c17dc5204c8eb835fd69780f62c5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359767"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564252"
 ---
-# <a name="configuring-role-based-authorization"></a><span data-ttu-id="32b55-102">設定角色型授權</span><span class="sxs-lookup"><span data-stu-id="32b55-102">Configuring Role-based Authorization</span></span>
+# <a name="configuring-role-based-authorization"></a><span data-ttu-id="87272-102">設定角色型授權</span><span class="sxs-lookup"><span data-stu-id="87272-102">Configuring Role-based Authorization</span></span>
 
-<span data-ttu-id="32b55-103">本主題示範如何針對[執行 Management ODATA IIS 擴充功能的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)中所述的[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面的範例執行，設定以角色為基礎的授權原則。</span><span class="sxs-lookup"><span data-stu-id="32b55-103">This topic demonstrates how to configure the role-based authorization policy for the sample implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface described in [Implementing Custom Authorization for Management OData IIS Extension](./implementing-custom-authorization-for-a-management-odata-web-service.md).</span></span>
+<span data-ttu-id="87272-103">本主題示範如何針對[執行 Management ODATA IIS 擴充功能的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)中所述的[Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)介面的範例執行，設定以角色為基礎的授權原則。</span><span class="sxs-lookup"><span data-stu-id="87272-103">This topic demonstrates how to configure the role-based authorization policy for the sample implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface described in [Implementing Custom Authorization for Management OData IIS Extension](./implementing-custom-authorization-for-a-management-odata-web-service.md).</span></span>
 
-<span data-ttu-id="32b55-104">在此範例中，您將設定範例管理 OData 應用程式用來定義授權原則的 XML 檔案。</span><span class="sxs-lookup"><span data-stu-id="32b55-104">In this example, you will configure an XML file that is used by the sample Management OData application to define the authorization policy.</span></span> <span data-ttu-id="32b55-105">您將建立兩個角色，並將包含工作流程的不同 Windows PowerShell 模組與這些角色產生關聯。</span><span class="sxs-lookup"><span data-stu-id="32b55-105">You will create two roles and associate different Windows PowerShell modules that contain workflows with those roles.</span></span> <span data-ttu-id="32b55-106">定義 XML 檔案的架構會列在以[角色為基礎的授權設定架構](./role-based-authorization-configuration-schema.md)中。</span><span class="sxs-lookup"><span data-stu-id="32b55-106">The schema that defines the XML file is listed at [Role-Based Authorization Configuration Schema](./role-based-authorization-configuration-schema.md).</span></span>
+<span data-ttu-id="87272-104">在此範例中，您將設定範例管理 OData 應用程式用來定義授權原則的 XML 檔案。</span><span class="sxs-lookup"><span data-stu-id="87272-104">In this example, you will configure an XML file that is used by the sample Management OData application to define the authorization policy.</span></span> <span data-ttu-id="87272-105">您將建立兩個角色，並將包含工作流程的不同 Windows PowerShell 模組與這些角色產生關聯。</span><span class="sxs-lookup"><span data-stu-id="87272-105">You will create two roles and associate different Windows PowerShell modules that contain workflows with those roles.</span></span> <span data-ttu-id="87272-106">定義 XML 檔案的架構會列在以[角色為基礎的授權設定架構](./role-based-authorization-configuration-schema.md)中。</span><span class="sxs-lookup"><span data-stu-id="87272-106">The schema that defines the XML file is listed at [Role-Based Authorization Configuration Schema](./role-based-authorization-configuration-schema.md).</span></span>
 
-## <a name="modifying-the-rbacconfigurationxml-file"></a><span data-ttu-id="32b55-107">修改 RBacConfiguration .xml 檔案</span><span class="sxs-lookup"><span data-stu-id="32b55-107">Modifying the RBacConfiguration.xml File</span></span>
+## <a name="modifying-the-rbacconfigurationxml-file"></a><span data-ttu-id="87272-107">修改 RBacConfiguration .xml 檔案</span><span class="sxs-lookup"><span data-stu-id="87272-107">Modifying the RBacConfiguration.xml File</span></span>
 
-<span data-ttu-id="32b55-108">此檔案會定義應用程式的授權原則。</span><span class="sxs-lookup"><span data-stu-id="32b55-108">This file defines the authorization policy for the application.</span></span> <span data-ttu-id="32b55-109">角色是使用 `Group` 節點所定義。</span><span class="sxs-lookup"><span data-stu-id="32b55-109">Roles are defined by using `Group` nodes.</span></span> <span data-ttu-id="32b55-110">`Group` 節點會定義使用者指派給該群組的 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="32b55-110">A `Group` node defines the Windows PowerShell commands that users assigned to that group can run.</span></span> <span data-ttu-id="32b55-111">使用者會使用 `User` 節點指派給群組。</span><span class="sxs-lookup"><span data-stu-id="32b55-111">Users are assigned to groups by using `User` nodes.</span></span>
+<span data-ttu-id="87272-108">此檔案會定義應用程式的授權原則。</span><span class="sxs-lookup"><span data-stu-id="87272-108">This file defines the authorization policy for the application.</span></span> <span data-ttu-id="87272-109">角色是使用節點所定義 `Group` 。</span><span class="sxs-lookup"><span data-stu-id="87272-109">Roles are defined by using `Group` nodes.</span></span> <span data-ttu-id="87272-110">`Group`節點會定義使用者指派給該群組的 Windows PowerShell 命令。</span><span class="sxs-lookup"><span data-stu-id="87272-110">A `Group` node defines the Windows PowerShell commands that users assigned to that group can run.</span></span> <span data-ttu-id="87272-111">使用者會使用節點指派給群組 `User` 。</span><span class="sxs-lookup"><span data-stu-id="87272-111">Users are assigned to groups by using `User` nodes.</span></span>
 
-<span data-ttu-id="32b55-112">在這些範例中，您會將模組新增至 [系統管理員] `Group` 節點，並將使用者新增至每個群組。</span><span class="sxs-lookup"><span data-stu-id="32b55-112">In these examples, you will add a module to the Administrator `Group` node, and add a user to each group.</span></span>
+<span data-ttu-id="87272-112">在這些範例中，您會將模組新增至 [系統管理員] `Group` 節點，並將使用者新增至每個群組。</span><span class="sxs-lookup"><span data-stu-id="87272-112">In these examples, you will add a module to the Administrator `Group` node, and add a user to each group.</span></span>
 
-#### <a name="adding-a-module-to-a-group-node"></a><span data-ttu-id="32b55-113">將模組新增至群組節點</span><span class="sxs-lookup"><span data-stu-id="32b55-113">Adding a Module to a Group Node</span></span>
+#### <a name="adding-a-module-to-a-group-node"></a><span data-ttu-id="87272-113">將模組新增至群組節點</span><span class="sxs-lookup"><span data-stu-id="87272-113">Adding a Module to a Group Node</span></span>
 
-1. <span data-ttu-id="32b55-114">在文字編輯器中，建立名為**RBacConfiguration**的檔案。</span><span class="sxs-lookup"><span data-stu-id="32b55-114">Create a file named **RBacConfiguration.xml** in a text editor.</span></span> <span data-ttu-id="32b55-115">這個檔案應該儲存至 web 服務的主要應用程式目錄。</span><span class="sxs-lookup"><span data-stu-id="32b55-115">This file should be saved to the main application directory for your web service.</span></span> <span data-ttu-id="32b55-116">在檔案中插入下列文字。</span><span class="sxs-lookup"><span data-stu-id="32b55-116">Insert the following text in the file.</span></span>
+1. <span data-ttu-id="87272-114">在文字編輯器中，建立名為**RBacConfiguration**的檔案。</span><span class="sxs-lookup"><span data-stu-id="87272-114">Create a file named **RBacConfiguration.xml** in a text editor.</span></span> <span data-ttu-id="87272-115">這個檔案應該儲存至 web 服務的主要應用程式目錄。</span><span class="sxs-lookup"><span data-stu-id="87272-115">This file should be saved to the main application directory for your web service.</span></span> <span data-ttu-id="87272-116">在檔案中插入下列文字。</span><span class="sxs-lookup"><span data-stu-id="87272-116">Insert the following text in the file.</span></span>
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -85,9 +85,9 @@ ms.locfileid: "72359767"
    </RbacConfiguration>
    ```
 
-2. <span data-ttu-id="32b55-117">檔案包含兩個 `Group` 節點。</span><span class="sxs-lookup"><span data-stu-id="32b55-117">The file contains two `Group` nodes.</span></span> <span data-ttu-id="32b55-118">這些代表在此範例中使用的兩個角色，`NonAdminGroup` 和 `AdminGroup` 角色。</span><span class="sxs-lookup"><span data-stu-id="32b55-118">These represent the two roles used in this example, the `NonAdminGroup` and the `AdminGroup` roles.</span></span>
+2. <span data-ttu-id="87272-117">檔案包含兩個 `Group` 節點。</span><span class="sxs-lookup"><span data-stu-id="87272-117">The file contains two `Group` nodes.</span></span> <span data-ttu-id="87272-118">這些代表在此範例中使用的兩個角色， `NonAdminGroup` 和 `AdminGroup` 角色。</span><span class="sxs-lookup"><span data-stu-id="87272-118">These represent the two roles used in this example, the `NonAdminGroup` and the `AdminGroup` roles.</span></span>
 
-   <span data-ttu-id="32b55-119">在第一個 `Group` 節點的結尾 `Cmdlets` 標記的正後方，新增下列 XML：</span><span class="sxs-lookup"><span data-stu-id="32b55-119">Directly after the closing `Cmdlets` tag in the first `Group` node, add the following XML:</span></span>
+   <span data-ttu-id="87272-119">在 `Cmdlets` 第一個節點中的結束記號正後方 `Group` ，新增下列 XML：</span><span class="sxs-lookup"><span data-stu-id="87272-119">Directly after the closing `Cmdlets` tag in the first `Group` node, add the following XML:</span></span>
 
    ```xml
    <Modules>
@@ -95,17 +95,17 @@ ms.locfileid: "72359767"
          </Modules>
    ```
 
-#### <a name="adding-a-user-to-a-group-node"></a><span data-ttu-id="32b55-120">將使用者新增至群組節點</span><span class="sxs-lookup"><span data-stu-id="32b55-120">Adding a User to a Group Node</span></span>
+#### <a name="adding-a-user-to-a-group-node"></a><span data-ttu-id="87272-120">將使用者新增至群組節點</span><span class="sxs-lookup"><span data-stu-id="87272-120">Adding a User to a Group Node</span></span>
 
-1. <span data-ttu-id="32b55-121">在文字編輯器中開啟**RBacConfiguration。**</span><span class="sxs-lookup"><span data-stu-id="32b55-121">Open the **RBacConfiguration.xml** file in a text editor.</span></span> <span data-ttu-id="32b55-122">如果您未在安裝前變更端點名稱，此檔案位於 C：\\\inetpub\wwwroot\Modata 資料夾中。</span><span class="sxs-lookup"><span data-stu-id="32b55-122">This file is located in the folder C:\\\inetpub\wwwroot\Modata  if you did not change the endpoint name before installation.</span></span>
+1. <span data-ttu-id="87272-121">在文字編輯器中開啟**RBacConfiguration。**</span><span class="sxs-lookup"><span data-stu-id="87272-121">Open the **RBacConfiguration.xml** file in a text editor.</span></span> <span data-ttu-id="87272-122">\\如果您未在安裝前變更端點名稱，此檔案位於資料夾 C： \inetpub\wwwroot\Modata 中。</span><span class="sxs-lookup"><span data-stu-id="87272-122">This file is located in the folder C:\\\inetpub\wwwroot\Modata  if you did not change the endpoint name before installation.</span></span>
 
-2. <span data-ttu-id="32b55-123">在 `Users` 節點的結束記號正後方，新增下列 XML：</span><span class="sxs-lookup"><span data-stu-id="32b55-123">Directly after the closing tag in the `Users` node, add the following XML:</span></span>
+2. <span data-ttu-id="87272-123">在節點中的結束記號正後方 `Users` ，新增下列 XML：</span><span class="sxs-lookup"><span data-stu-id="87272-123">Directly after the closing tag in the `Users` node, add the following XML:</span></span>
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>
    ```
 
-3. <span data-ttu-id="32b55-124">直接在上一個步驟中新增的 XML 之後，新增下列 XML：</span><span class="sxs-lookup"><span data-stu-id="32b55-124">Directly after the XML added in the previous step, add the following XML:</span></span>
+3. <span data-ttu-id="87272-124">直接在上一個步驟中新增的 XML 之後，新增下列 XML：</span><span class="sxs-lookup"><span data-stu-id="87272-124">Directly after the XML added in the previous step, add the following XML:</span></span>
 
    ```xml
    <User Name="UserName" GroupName="NonAdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>
