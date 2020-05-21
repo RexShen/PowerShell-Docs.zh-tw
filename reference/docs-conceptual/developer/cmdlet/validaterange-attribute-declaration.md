@@ -12,43 +12,43 @@ helpviewer_keywords:
 - attributes, ValidateRange
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
-ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 560fa105ac3f93ae6334df0112f5290dfa20576c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369127"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692003"
 ---
-# <a name="validaterange-attribute-declaration"></a><span data-ttu-id="d1a2b-102">ValidateRange 屬性宣告</span><span class="sxs-lookup"><span data-stu-id="d1a2b-102">ValidateRange Attribute Declaration</span></span>
+# <a name="validaterange-attribute-declaration"></a><span data-ttu-id="98459-102">ValidateRange 屬性宣告</span><span class="sxs-lookup"><span data-stu-id="98459-102">ValidateRange Attribute Declaration</span></span>
 
-<span data-ttu-id="d1a2b-103">ValidateRange 屬性會指定 Cmdlet 參數引數的最小和最大值（範圍）。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-103">The ValidateRange attribute specifies the minimum and maximum values (the range) for the cmdlet parameter argument.</span></span> <span data-ttu-id="d1a2b-104">Windows PowerShell 函數也可以使用這個屬性。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-104">This attribute can also be used by Windows PowerShell functions.</span></span>
+<span data-ttu-id="98459-103">ValidateRange 屬性會指定 Cmdlet 參數引數的最小和最大值（範圍）。</span><span class="sxs-lookup"><span data-stu-id="98459-103">The ValidateRange attribute specifies the minimum and maximum values (the range) for the cmdlet parameter argument.</span></span> <span data-ttu-id="98459-104">Windows PowerShell 函數也可以使用這個屬性。</span><span class="sxs-lookup"><span data-stu-id="98459-104">This attribute can also be used by Windows PowerShell functions.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="d1a2b-105">語法</span><span class="sxs-lookup"><span data-stu-id="d1a2b-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="98459-105">語法</span><span class="sxs-lookup"><span data-stu-id="98459-105">Syntax</span></span>
 
 ```csharp
 [ValidateRange(object minRange, object maxRange)]
 ```
 
-#### <a name="parameters"></a><span data-ttu-id="d1a2b-106">參數</span><span class="sxs-lookup"><span data-stu-id="d1a2b-106">Parameters</span></span>
+#### <a name="parameters"></a><span data-ttu-id="98459-106">參數</span><span class="sxs-lookup"><span data-stu-id="98459-106">Parameters</span></span>
 
-<span data-ttu-id="d1a2b-107">需要 `MinRange` （[system.object](/dotnet/api/system.object)）。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-107">`MinRange` ([System.Object](/dotnet/api/system.object)) Required.</span></span> <span data-ttu-id="d1a2b-108">指定允許的最小值。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-108">Specifies the minimum value allowed.</span></span>
+<span data-ttu-id="98459-107">`MinRange`（[系統物件](/dotnet/api/system.object)）必要。</span><span class="sxs-lookup"><span data-stu-id="98459-107">`MinRange` ([System.Object](/dotnet/api/system.object)) Required.</span></span> <span data-ttu-id="98459-108">指定允許的最小值。</span><span class="sxs-lookup"><span data-stu-id="98459-108">Specifies the minimum value allowed.</span></span>
 
-<span data-ttu-id="d1a2b-109">需要 `MaxRange` （[system.object](/dotnet/api/system.object)）。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-109">`MaxRange` ([System.Object](/dotnet/api/system.object)) Required.</span></span> <span data-ttu-id="d1a2b-110">指定允許的最大值。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-110">Specifies the maximum value allowed.</span></span>
+<span data-ttu-id="98459-109">`MaxRange`（[系統物件](/dotnet/api/system.object)）必要。</span><span class="sxs-lookup"><span data-stu-id="98459-109">`MaxRange` ([System.Object](/dotnet/api/system.object)) Required.</span></span> <span data-ttu-id="98459-110">指定允許的最大值。</span><span class="sxs-lookup"><span data-stu-id="98459-110">Specifies the maximum value allowed.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="d1a2b-111">備註</span><span class="sxs-lookup"><span data-stu-id="d1a2b-111">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="98459-111">備註</span><span class="sxs-lookup"><span data-stu-id="98459-111">Remarks</span></span>
 
-- <span data-ttu-id="d1a2b-112">當 `MinRange` 參數的值大於 `MaxRange` 參數的值時，Windows PowerShell 執行時間會擲回結構錯誤。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-112">The Windows PowerShell runtime throws a construction error when the value of the `MinRange` parameter is greater than the value of the `MaxRange` parameter.</span></span>
+- <span data-ttu-id="98459-112">當參數的值大於參數的值時，Windows PowerShell 執行時間會擲回結構錯誤 `MinRange` `MaxRange` 。</span><span class="sxs-lookup"><span data-stu-id="98459-112">The Windows PowerShell runtime throws a construction error when the value of the `MinRange` parameter is greater than the value of the `MaxRange` parameter.</span></span>
 
-- <span data-ttu-id="d1a2b-113">在下列情況下，Windows PowerShell 執行時間會擲回驗證錯誤：</span><span class="sxs-lookup"><span data-stu-id="d1a2b-113">The Windows PowerShell runtime throws a validation error under the following conditions:</span></span>
+- <span data-ttu-id="98459-113">在下列情況下，Windows PowerShell 執行時間會擲回驗證錯誤：</span><span class="sxs-lookup"><span data-stu-id="98459-113">The Windows PowerShell runtime throws a validation error under the following conditions:</span></span>
 
-    - <span data-ttu-id="d1a2b-114">當引數的值小於 `MinRange` 限制或大於 `MaxRange` 限制時。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-114">When the value of the argument is less than the `MinRange` limit or greater than the `MaxRange` limit.</span></span>
+  - <span data-ttu-id="98459-114">當引數的值小於 `MinRange` 限制或大於 `MaxRange` 限制時。</span><span class="sxs-lookup"><span data-stu-id="98459-114">When the value of the argument is less than the `MinRange` limit or greater than the `MaxRange` limit.</span></span>
 
-    - <span data-ttu-id="d1a2b-115">當引數與 `MinRange` 和 `MaxRange` 參數的類型不同時。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-115">When the argument is not of the same type as the `MinRange` and the `MaxRange` parameters.</span></span>
+  - <span data-ttu-id="98459-115">當引數與和參數的類型不同時 `MinRange` `MaxRange` 。</span><span class="sxs-lookup"><span data-stu-id="98459-115">When the argument is not of the same type as the `MinRange` and the `MaxRange` parameters.</span></span>
 
-- <span data-ttu-id="d1a2b-116">ValidateRange 屬性是由[Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-116">The ValidateRange attribute is defined by the [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) class.</span></span>
+- <span data-ttu-id="98459-116">ValidateRange 屬性是由[Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="98459-116">The ValidateRange attribute is defined by the [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute) class.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d1a2b-117">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d1a2b-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="98459-117">另請參閱</span><span class="sxs-lookup"><span data-stu-id="98459-117">See Also</span></span>
 
-[<span data-ttu-id="d1a2b-118">Validaterangeattribute。</span><span class="sxs-lookup"><span data-stu-id="d1a2b-118">System.Management.Automation.Validaterangeattribute</span></span>](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)
+[<span data-ttu-id="98459-118">Validaterangeattribute。</span><span class="sxs-lookup"><span data-stu-id="98459-118">System.Management.Automation.Validaterangeattribute</span></span>](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)
 
-[<span data-ttu-id="d1a2b-119">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="d1a2b-119">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="98459-119">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="98459-119">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
