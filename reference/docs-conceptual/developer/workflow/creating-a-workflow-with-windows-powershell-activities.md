@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 12b0b246b78142f3811f9f566cd94e4dabd40cc9
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277454"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557460"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>透過 Windows PowerShell 活動建立工作流程
 
@@ -31,15 +31,15 @@ ms.locfileid: "78277454"
 
 1. 將 [**序列**] 活動新增至工作流程。
 
-2. 建立名為 `ComputerName` 且引數類型為 `String[]`的引數。 這個引數代表要檢查和聯結的電腦名稱稱。
+2. 建立名為 `ComputerName` 且引數類型為的引數 `String[]` 。 這個引數代表要檢查和聯結的電腦名稱稱。
 
-3. 建立名為 `DomainCred` 的引數，其類型為[system.web](/dotnet/api/System.Management.Automation.PSCredential)。 此引數代表已獲授權將電腦加入網域之網域帳戶的網域認證。
+3. 建立名為的引數，其 `DomainCred` 類型為[system.web](/dotnet/api/System.Management.Automation.PSCredential)。 此引數代表已獲授權將電腦加入網域之網域帳戶的網域認證。
 
-4. 建立名為 `MachineCred` 的引數，其類型為[system.web](/dotnet/api/System.Management.Automation.PSCredential)。 此引數代表要檢查和聯結之電腦上系統管理員的認證。
+4. 建立名為的引數，其 `MachineCred` 類型為[system.web](/dotnet/api/System.Management.Automation.PSCredential)。 此引數代表要檢查和聯結之電腦上系統管理員的認證。
 
-5. 在 [**序列**] 活動內新增**ParallelForEach**活動。 在文字方塊中輸入 `comp` 和 `ComputerName`，讓迴圈逐一查看 `ComputerName` 陣列的元素。
+5. 在 [**序列**] 活動內新增**ParallelForEach**活動。 `comp` `ComputerName` 在文字方塊中輸入和，讓迴圈逐一查看陣列的元素 `ComputerName` 。
 
-6. 將 [**序列**] 活動新增至**ParallelForEach**活動的主體。 將序列的**DisplayName**屬性設定為 `JoinDomain`。
+6. 將 [**序列**] 活動新增至**ParallelForEach**活動的主體。 將序列的**DisplayName**屬性設定為 `JoinDomain` 。
 
 7. 將**GetWmiObject**活動新增至**JoinDomain**序列。
 
@@ -57,7 +57,7 @@ ms.locfileid: "78277454"
 
     |屬性|值|
     |--------------|-----------|
-    |**ComputerName**|背光|
+    |**名稱**|背光|
     |**DomainCredential**|DomainCred|
 
 11. 將**RestartComputer**活動新增至**AddComputer**活動後面的**JoinDomain**序列。
@@ -66,16 +66,16 @@ ms.locfileid: "78277454"
 
     |屬性|值|
     |--------------|-----------|
-    |**ComputerName**|背光|
+    |**名稱**|背光|
     |**認證**|MachineCred|
     |**對於**|WaitForServiceTypes 的 PowerShell。|
     |**使**|True|
-    |Wait|True|
+    |等候|True|
     |PSComputerName|{""}|
 
 13. 將**GetWmiObject**活動新增至**RestartComputer**活動後面的**JoinDomain**序列。 編輯其屬性，以與先前的**GetWmiObject**活動相同。
 
     當您完成程式時，工作流程設計視窗看起來應該像這樣。
 
-    ![在工作流程設計工具中 JoinDomain XAML](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
-    ![在工作流程設計工具中 JOINDOMAIN xaml](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")
+    ![在工作流程設計工具中 JoinDomain XAML 在 ](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+     ![workflow designer 中 JoinDomain xaml](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

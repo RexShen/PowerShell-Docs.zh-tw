@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5ec7159e-e4e9-4b21-95df-94244432f679
 caps.latest.revision: 5
-ms.openlocfilehash: a663bd69be7825b1685f64ff8d3068bdd8ca3265
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 898225a582c7ed25f746dec7f84012db1ae60b98
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367777"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557054"
 ---
 # <a name="placing-comment-based-help-in-functions"></a>將註解型說明置於函式
 
@@ -25,7 +25,7 @@ ms.locfileid: "72367777"
 
 - 在函式主體的結尾。
 
-- `Function` 關鍵字之前。 當函式在腳本或腳本模組中時，以批註為基礎的說明和 `Function` 關鍵字的最後一行之間不能有一個以上的空白行。 否則，`Get-Help` 會將說明與腳本建立關聯，而不是與函式相關聯。
+- 關鍵字之前 `Function` 。 當函式位於腳本或腳本模組時，以批註為基礎的說明與關鍵字的最後一行之間不能有一個以上的空白行 `Function` 。 否則， `Get-Help` 會使說明與腳本產生關聯，而不是與函式相關聯。
 
 ## <a name="examples-of-help-placement-in-a-function"></a>說明放置在函式中的範例
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
-ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368107"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557085"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>如何新增範例至 Cmdlet 說明主題
 
@@ -58,7 +58,7 @@ ms.locfileid: "72368107"
 
 ## <a name="adding-preceding-characters"></a>新增前面的字元
 
-下列 XML 顯示如何新增緊接在範例命令之前顯示的字元（例如 Windows PowerShell 提示）（不含任何空格）。 Windows PowerShell®使用 Windows PowerShell 命令提示字元： C:\PS >。
+下列 XML 顯示如何新增緊接在範例命令之前顯示的字元（例如 Windows PowerShell 提示）（不含任何空格）。 Windows PowerShell®使用 Windows PowerShell 命令提示字元： C:\PS>。
 
 ```xml
 <command:examples>
@@ -89,7 +89,7 @@ ms.locfileid: "72368107"
 
 ## <a name="adding-a-description"></a>新增描述
 
-下列 XML 顯示如何新增範例的描述。 Windows PowerShell®會使用一組 \<maml：段落 > 標記來進行描述，雖然可以使用多個 \<maml：段落 > 標記。
+下列 XML 顯示如何新增範例的描述。 Windows PowerShell®會使用一組 \< maml：段落> 標記來進行描述，即使 \< 可以使用多個 maml：段落> 標記。
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ ms.locfileid: "72368107"
 
 ## <a name="adding-example-output"></a>新增範例輸出
 
-下列 XML 顯示如何新增命令的輸出。 命令結果資訊是選擇性的，但在某些情況下，示範使用特定參數的效果會很有説明。 Windows PowerShell®使用兩組空白 \<maml：段落 > 標記來分隔命令輸出與命令。
+下列 XML 顯示如何新增命令的輸出。 命令結果資訊是選擇性的，但在某些情況下，示範使用特定參數的效果會很有説明。 Windows PowerShell®使用兩組空白的 \< maml：段落> 標記來分隔命令輸出與命令。
 
 ```xml
 <command:examples>

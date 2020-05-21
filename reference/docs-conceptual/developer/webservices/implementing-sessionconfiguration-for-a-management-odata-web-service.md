@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0b2a7ce2-3c33-469c-a4a4-b8fe3bd05324
 caps.latest.revision: 5
-ms.openlocfilehash: 93780ee8af80d78a5b97a32098384a148070b54a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ac597359d81184157a71dc497cca07358f3a3492
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366137"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557272"
 ---
 # <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a>實作 Management OData Web 服務的 SessionConfiguration
 
@@ -116,4 +116,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
 ## <a name="see-also"></a>另請參閱
 
-[執行 Management OData web 服務的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[實作 Management OData Web 服務的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)

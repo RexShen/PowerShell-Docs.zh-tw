@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
-ms.openlocfilehash: 37af16d0279b6487c78f90eb19bcfe5c152ed9e7
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 58b908be3149376547b075320b021421351b881e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996047"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557053"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>如何新增輸入類型至 Cmdlet 說明主題
 
 本節說明如何將輸入區段新增至 Windows PowerShell® Cmdlet 說明主題。 [輸入] 區段會以傳值或屬性名稱的形式，列出 Cmdlet 接受做為輸入的物件的 .NET 類別。
 
-您可以新增至輸入區段的類別數目沒有限制。 輸入類型會括在 \<命令中： inputTypes > 節點，其中每個類別都包含在 \<命令中： inputType > 元素。
+您可以新增至輸入區段的類別數目沒有限制。 輸入類型包含在 \< 命令中： inputTypes> 節點，其中每個類別都包含在 \< 命令中： inputType> 元素。
 
-此架構包含兩個 \<maml：描述 > 每個 \<命令中的元素： inputType > 專案。 不過，`Get-Help` Cmdlet 只會顯示 \<命令的內容： inputType >/\<maml： description >）元素。
+此架構包含兩個 \< maml： description> 每個命令中的元素 \< ： inputType> 元素。 不過，此 `Get-Help` Cmdlet 只會顯示命令的內容 \< ： inputType>/ \< maml： description>）元素。
 
-從 Windows PowerShell 3.0 開始，`Get-Help` Cmdlet 會顯示 \<maml： uri > 元素的內容。 此元素可讓您將使用者引導至描述 .NET 類別的主題。
+從 Windows PowerShell 3.0 開始，此 `Get-Help` Cmdlet 會顯示 \< maml： uri> 元素的內容。 此元素可讓您將使用者引導至描述 .NET 類別的主題。
 
-下列 XML 顯示 \<maml： inputTypes > 節點。
+下列 XML 顯示 \< maml： inputTypes> 節點。
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ ms.locfileid: "76996047"
 </command:inputTypes>
 ```
 
-下列 XML 顯示使用 \<maml： inputTypes > 節點來記錄輸入類型的範例。
+下列 XML 顯示使用 \< maml： inputTypes> 節點來記錄輸入類型的範例。
 
 ```xml
 <command:inputTypes>

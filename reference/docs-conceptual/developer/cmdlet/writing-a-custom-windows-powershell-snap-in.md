@@ -11,12 +11,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], specified in snap-ins
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
-ms.openlocfilehash: aa6e4a4615f2681efa691008c86611f0df4e07d7
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 9cf4499ec2992c6cfea83fc5d0bf51d0bbfaa96a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870484"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556847"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>撰寫自訂 Windows PowerShell 嵌入式管理單元
 
@@ -31,7 +31,7 @@ ms.locfileid: "75870484"
 
    在此範例中，類別名稱為 "CustomPSSnapinTest"。
 
-3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： `#`、`.`、`,`、`(`、`)`、`{`、`}`、`[`、`]`、`&`、`-`、`/`、`\`、`$`、`;`、`:`、`"`、`'`、`<`、`>`、`|`、`?`、`@`、`` ` ``、`*`
+3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、、 `(` `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、`*`
 
    在此範例中，嵌入式管理單元的名稱是 "CustomPSSnapInTest"。
 
@@ -45,7 +45,7 @@ ms.locfileid: "75870484"
 
 6. 新增嵌入式管理單元描述的公用屬性（必要）。
 
-   在此範例中，描述為：「這是包含 `Test-HelloWorld` 和 `Test-CustomSnapinTest` Cmdlet」的自訂 Windows PowerShell 嵌入式管理單元。
+   在此範例中，描述為：「這是包含和 Cmdlet 的自訂 Windows PowerShell 嵌入式管理單元」 `Test-HelloWorld` `Test-CustomSnapinTest` 。
 
 7. 新增嵌入式管理單元的 [描述] 資源的公用屬性（選擇性）。
 
@@ -53,7 +53,7 @@ ms.locfileid: "75870484"
 
    > CustomPSSnapInTest，這是自訂的 Windows PowerShell 嵌入式管理單元，其中包含 HelloWorld 和測試 CustomSnapinTest 的 Cmdlet。
 
-8. 使用[Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)類別，指定屬於自訂嵌入式管理單元（選擇性）的指令程式。 此處新增的資訊包括 Cmdlet 的名稱、其 .NET 類型和 Cmdlet 說明檔名稱（Cmdlet 說明文件名的格式應該是` name.dll-help.xml`）。
+8. 使用[Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)類別，指定屬於自訂嵌入式管理單元（選擇性）的指令程式。 此處新增的資訊包括 Cmdlet 的名稱、其 .NET 類型和 Cmdlet 說明檔名稱（Cmdlet 說明文件名的格式應為 `name.dll-help.xml` ）。
 
    這個範例會新增 HelloWorld 和 TestCustomSnapinTest Cmdlet。
 

@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4174e84f-d516-4aca-b418-273047dcfb07
 caps.latest.revision: 7
-ms.openlocfilehash: 5761ed2168a46d6ed9a2e50554d459f5b93223ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f45b5e985fa38ca4ff41707f1842ddb8b930e2b1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359657"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557494"
 ---
 # <a name="creating-a-workflow-activity-from-a-windows-powershell-cmdlet"></a>從 Windows PowerShell Cmdlet 建立工作流程活動
 
-您可以使用[Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)類別的方法，將任何 Windows PowerShell 模組或 Cmdlet 封裝為工作流程活動。 使用[Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo)、 [Activitygenerator Generatefromcommandinfo * 和](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)類別的 Activitygenerator [*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName)方法，來產生C#代表活動的程式碼（Generatefromname *），並[將其設](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)為的（活動）。 接著，您可以將產生C#的程式碼編譯成可新增至專案做為活動的元件。
+您可以使用[Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)類別的方法，將任何 Windows PowerShell 模組或 Cmdlet 封裝為工作流程活動。 使用[Activitygenerator. Generatefrommoduleinfo *](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo)、 [Activitygenerator Generatefromcommandinfo * 和](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)類別的 Activitygenerator [*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName)方法，來產生代表活動的 c # 程式碼（Class）. Generatefromname * （）的（[活動）](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) 。 接著，您可以將產生的 c # 程式碼編譯成可新增至專案做為活動的元件。
 
-接著，您可以使用具有C#下列格式的命令列，將產生的程式碼編譯成可當做活動加入至專案的元件。
+接著，您可以使用具有下列格式的命令列，將產生的 c # 程式碼編譯成可當做活動加入至專案的元件。
 
 **csc/nologo/out： AssemblyName/target： library/reference： codefile.cs 中的活動/reference： Microsoft。活動**
 
 ## <a name="example"></a>範例
 
-下列範例示範如何從 Windows PowerShell C#模組產生活動的程式碼。
+下列範例示範如何從 Windows PowerShell 模組產生活動的 c # 程式碼。
 
 ```csharp
 using System;
@@ -73,7 +73,7 @@ namespace MakeActivity
 
 ## <a name="example"></a>範例
 
-下列範例示範如何從 Windows PowerShell C# Cmdlet 產生活動的程式碼。
+下列範例示範如何從 Windows PowerShell Cmdlet 產生活動的 c # 程式碼。
 
 ```csharp
 using System;
