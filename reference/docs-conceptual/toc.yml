@@ -148,20 +148,6 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab 物件
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Web 存取
-      items:
-        - name: 授權規則與安全性功能
-          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-        - name: 安裝
-          href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: 疑難排解存取問題
-          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-        - name: 將 Windows PowerShell Web 存取解除安裝
-          href: components/web-access/uninstall-windows-powershell-web-access.md
-        - name: 使用網頁型 PowerShell 主控台
-          href: components/web-access/use-the-web-based-windows-powershell-console.md
-    - name: 工作流程指南
-      href: components/workflows-guide.md
 - name: PowerShell 資源庫
   items:
     - name: 概觀
