@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a54ce657-e0e0-4b3e-b9dc-aed39876f933
 caps.latest.revision: 11
-ms.openlocfilehash: 58252956184703fdcdb3aa9b1db617c6e91294c1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 74e11e03e8a01568dad7c038de0b3ecebb2117e5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366187"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83562234"
 ---
 # <a name="writing-a-windows-powershell-provider"></a>撰寫 Windows PowerShell 提供者
 
 「撰寫 Windows PowerShell 提供者」適用于設計 Windows PowerShell 提供者的程式管理員，以及正在執行提供者程式碼的開發人員。 它將協助您瞭解 Windows PowerShell 提供者的工作方式，並提供可用來開始設計或撰寫您自己的提供者的範例程式碼。
 
-## <a name="in-this-section"></a>在本節中
+## <a name="in-this-section"></a>本節內容
 
 [Windows PowerShell 提供者快速入門](./windows-powershell-provider-quickstart.md)非常基本提供者的範例程式碼和逐步解說。
 

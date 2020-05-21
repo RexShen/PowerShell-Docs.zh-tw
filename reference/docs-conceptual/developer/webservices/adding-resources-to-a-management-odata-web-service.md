@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
-ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2f6ad8ee9f303d3dea92a633996e9248d2e87a21
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359817"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561895"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>新增資源至 Management OData Web 服務
 
 這個範例示範如何使用 Management OData 架構設計工具，將資源新增至現有的管理 OData web 服務。 [PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)範例會建立公開進程和伺服器資源的 web 服務。 在此範例中，您會將虛擬機器（VM）資源新增至 web 服務。
 
-## <a name="prerequisites"></a>必要條件
+## <a name="prerequisites"></a>Prerequisites
 
 本主題假設您已下載並安裝[PswsRoleBasedPlugins](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)範例（如[建立 Windows PowerShell Web 服務](./creating-a-management-odata-web-service.md)中所述），而且您已下載並安裝[Management OData 架構設計](https://marketplace.visualstudio.com/items?itemName=jlisc0.ManagementODataSchemaDesigner)工具。 本主題也假設您已在設定 Management Odata 端點的電腦上安裝 Hyper-v Windows PowerShell 模組。
 
@@ -31,7 +31,7 @@ ms.locfileid: "72359817"
 
 1. 開啟 [Management OData 架構設計工具]。
 
-2. 從 [**檔案**]**功能表選取 [** 檔案];**New** ;檔案。 [**新增**檔案] 對話方塊隨即出現。
+2. 從 [**檔案**]**功能表選取 [** 檔案];**New** ;**File**檔案。 [**新增**檔案] 對話方塊隨即出現。
 
 3. 按一下 [**管理 OData 模型**]，然後按一下 [**開啟**]。
 
@@ -47,23 +47,23 @@ ms.locfileid: "72359817"
 
 1. 以滑鼠右鍵按一下 [架構設計工具] 視窗的空白區域，然後按一下 [匯**入 Cmdlet**]。 [ **Cmdlet 匯入嚮導**] 對話方塊隨即出現。
 
-2. 請確定已選取 [**本機電腦**]，然後按 **[下一步]** 。
+2. 請確定已選取 [**本機電腦**]，然後按 **[下一步]**。
 
-3. 請確定已選取 [已安裝的 Windows PowerShell 模組]，然後從下拉式清單中選取 [Hyper-v]。 按 [下一步]。 按 **[下一步]** 。
+3. 請確定已選取 [已安裝的 Windows PowerShell 模組]，然後從下拉式清單中選取 [Hyper-v]。 按 [下一步]****。 按 [下一步]  。
 
-4. 在 [ **Cmdlet 名詞**] 清單中，選取 [ **VM**]。 按 [下一步]
+4. 在 [ **Cmdlet 名詞**] 清單中，選取 [ **VM**]。 按 **[下一步]**
 
-5. 在此範例中，我們只會使用 Cmdlet 來系結 Get 和 Delete 命令。 清除 [**建立**和**更新**] 核取方塊，並確定已核**取 [取得**] 和 [**刪除**] 核取方塊。 請確定已選取 [**取得**] `Get-VM` Cmdlet，並已選取 [`Remove-VM`] Cmdlet 進行**刪除**。
+5. 在此範例中，我們只會使用 Cmdlet 來系結 Get 和 Delete 命令。 清除 [**建立**和**更新**] 核取方塊，並確定已核**取 [取得**] 和 [**刪除**] 核取方塊。 請確定 `Get-VM` 已選取 [**取得**] Cmdlet，並 `Remove-VM` 已針對 [**刪除**] 選取此 Cmdlet。
 
-6. 因為 VM Cmdlet 的中繼資料不會指定輸出類型，所以您必須執行 Cmdlet 來指定輸出類型。 選取 [**提供輸出類型**]，然後按一下 [**執行 Cmdlet**]。 [**執行 Cmdlet** ] 對話方塊隨即出現。 按一下 [執行]。 [ **CLR 類型**] 方塊會填入 `VirtualMachine` 類型。 按一下 **[確定]** ，然後按 **[下一步]** 。
+6. 因為 VM Cmdlet 的中繼資料不會指定輸出類型，所以您必須執行 Cmdlet 來指定輸出類型。 選取 [**提供輸出類型**]，然後按一下 [**執行 Cmdlet**]。 [**執行 Cmdlet** ] 對話方塊隨即出現。 按一下 **[執行]** 。 [ **CLR 型**別] 方塊會填入 `VirtualMachine` 型別。 按一下 **[確定]**，然後按 **[下一步]**。
 
-7. 根據預設，會選取 VirtualMachine 物件的所有屬性。 當您從 web 服務要求此資源時，您可以清除不想要的任何屬性，做為所傳回資料的一部分。 按 **[下一步]** 。
+7. 根據預設，會選取 VirtualMachine 物件的所有屬性。 當您從 web 服務要求此資源時，您可以清除不想要的任何屬性，做為所傳回資料的一部分。 按 [下一步]  。
 
-8. 您必須至少選取一個要當做金鑰使用的屬性。 選取清單中的 [**名稱**]，然後按 **[下一步]** 。
+8. 您必須至少選取一個要當做金鑰使用的屬性。 選取清單中的 [**名稱**]，然後按 **[下一步]**。
 
-9. 下一個視窗可讓您將管理 OData 資源的屬性對應至基礎 Cmdlet 的屬性。 根據預設，嚮導會對應具有相同名稱的屬性。 例如，資源的 `ComputerName` 屬性會對應至 Cmdlet 的 `ComputerName` 屬性。  這可讓您在對 web 服務的要求中指定 `ComputerName` 屬性，並將您指定的值傳遞給 `Get-VM` Cmdlet。 `Id` 和 `Name` 預設也會對應。
+9. 下一個視窗可讓您將管理 OData 資源的屬性對應至基礎 Cmdlet 的屬性。 根據預設，嚮導會對應具有相同名稱的屬性。 例如，資源的 `ComputerName` 屬性會對應至 `ComputerName` Cmdlet 的屬性。  這可讓您在對 `ComputerName` web 服務的要求中指定屬性，並將您指定的值傳遞給 `Get-VM` Cmdlet。 `Id`和 `Name` 預設也會對應。
 
-   10. 按 **[下一步**]，然後按一下 **[完成]** 。
+   10. 按 **[下一步**]，然後按一下 **[完成]**。
 
        VM 資源現在會出現在 [架構設計工具] 視窗中。 您可以檢查與資源相關聯的屬性和作業。 接下來，您會將更新的架構檔案匯出至 web 服務的虛擬目錄。
 

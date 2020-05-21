@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359917"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560928"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell 提供者快速入門
 
@@ -35,9 +35,9 @@ Windows PowerShell 提供者的最基本功能是建立和移除磁片磁碟機�
 
 1. 將 System.webserver 元件新增為您專案的參考。
 
-2. 按一下 **專案 > AccessDBProviderSample 屬性 > Debug**。 在 [**起始專案**] 中，按一下 [**啟動外部程式**]，然後流覽至 Windows PowerShell 可執行檔（通常是 c:\Windows\System32\WindowsPowerShell\v1.0\\）。
+2. 按一下 [**專案] > AccessDBProviderSample 屬性 > Debug**]。 在 [**起始專案**] 中，按一下 [**啟動外部程式**]，然後流覽至 Windows PowerShell 可執行檔（通常是 c:\Windows\System32\WindowsPowerShell\v1.0 \\ ）。
 
-3. 在 [**起始選項**] 底下的 [**命令列引數**] 方塊中輸入下列內容： `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. 在 [**起始選項**] 底下的 [**命令列引數**] 方塊中輸入下列內容：`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>宣告提供者類別
 
@@ -69,7 +69,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 當使用者呼叫[NewPSDriveCommand 指令](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand)程式，並指定提供者的名稱時，Windows PowerShell 引擎就會呼叫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法（）。 PSDriveInfo 參數是由 Windows PowerShell 引擎所傳遞，而方法會將新的磁片磁碟機傳回 Windows PowerShell 引擎。 這個方法必須在上面建立的類別中宣告。
 
-方法會先檢查並確定已傳入的磁片磁碟機物件和磁片磁碟機根目錄，如果其中之一不存在，則傳回 `null`。 然後，它會使用內部類別 AccessDBPSDriveInfo 的函式來建立新的磁片磁碟機，以及連接到磁片磁碟機所代表的 Access 資料庫。
+方法會先檢查並確定已傳入的磁片磁碟機物件和磁片磁碟機根目錄，如果其中之一不存在，就 `null` 會傳回。 然後，它會使用內部類別 AccessDBPSDriveInfo 的函式來建立新的磁片磁碟機，以及連接到磁片磁碟機所代表的 Access 資料庫。
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

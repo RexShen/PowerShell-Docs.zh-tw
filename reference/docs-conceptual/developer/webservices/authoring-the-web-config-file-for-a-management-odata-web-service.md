@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
-ms.openlocfilehash: eee515252cf03c05d15368ee6e2a1cb62dc82647
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8e5897c3df38689e80d2135dfb82898bf9a05b86
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500795"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561476"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>撰寫 Management OData Web 服務的 Web.config 檔案
 
@@ -63,12 +63,12 @@ ms.locfileid: "80500795"
 
 ## <a name="see-also"></a>另請參閱
 
-[執行 Management OData web 服務的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[實作 Management OData Web 服務的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[執行 Management OData web 服務的 SessionConfiguration](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[實作 Management OData Web 服務的 SessionConfiguration](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[撰寫 Management OData web 服務的 MOF 架構檔案](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[撰寫 Management OData Web 服務的 MOF 結構描述檔案](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[撰寫 Management OData web 服務的 XML 架構檔案](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[撰寫 Management OData Web 服務的 XML 結構描述檔案](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
 [建立 Management OData Web 服務](./creating-a-management-odata-web-service.md)

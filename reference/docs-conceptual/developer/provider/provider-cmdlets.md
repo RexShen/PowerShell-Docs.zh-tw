@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d2465420-0970-4408-9ee5-260cf444cb67
 caps.latest.revision: 8
-ms.openlocfilehash: e6a0711cff6a550100f584fb64ae7f59f71a3cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b266a22e3ab16762b22e9d630b968ee510ff1c49
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359977"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564184"
 ---
 # <a name="provider-cmdlets"></a>提供者 Cmdlet
 
@@ -39,7 +39,7 @@ ms.locfileid: "72359977"
 
 - `Get-Item`：此 Cmdlet 可讓使用者從資料存放區取出資料。 若要支援這個指令程式，請覆寫[ItemCmdletprovider. Getitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)和[ItemCmdletprovider... Getitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)方法。
 
-- `Get-ChildItem`：此 Cmdlet 可讓使用者抓取父專案的子專案。 若要支援此 Cmdlet，請覆寫下列方法：
+- `Get-ChildItem`：這個 Cmdlet 可讓使用者抓取父專案的子專案。 若要支援此 Cmdlet，請覆寫下列方法：
 
   - [提供者： ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)
 
@@ -51,7 +51,7 @@ ms.locfileid: "72359977"
 
 - `Invoke-Item`：此 Cmdlet 可讓使用者執行專案所指定的預設動作。 若要支援這個指令程式，請覆寫[ItemCmdletprovider. Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)和[ItemCmdletprovider... Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法。
 
-- `Move-Item`：此 Cmdlet 可讓使用者將專案從一個位置移到另一個位置。 若要支援此 Cmdlet，請覆寫[NavigationCmdletprovider. Moveitem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)和[NavigationCmdletprovider. Moveitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)s 方法的程式。
+- `Move-Item`：此 Cmdlet 可讓使用者將專案從一個位置移到另一個位置。 若要支援此 Cmdlet，請覆寫[NavigationCmdletprovider. Moveitem](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)和[NavigationCmdletprovider.. Moveitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)s 方法的程式。
 
 - `New-ItemProperty`：此 Cmdlet 可讓使用者在資料存放區中建立新的專案。
 
@@ -65,7 +65,7 @@ ms.locfileid: "72359977"
 
 - `Add-Content`：此 Cmdlet 可讓使用者將內容新增至專案。
 
-- `Clear-Content`：此 Cmdlet 可讓使用者刪除專案中的內容，而不刪除專案。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Clearcontent](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)和[IcontentCmdletprovider... Clearcontentdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法。
+- `Clear-Content`：此 Cmdlet 可讓使用者刪除專案中的內容，而不需刪除專案。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Clearcontent](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)和[IcontentCmdletprovider... Clearcontentdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法。
 
 - `Get-Content`：此 Cmdlet 可讓使用者取得專案的內容。 若要支援這個指令程式，請覆寫[IcontentCmdletprovider. Getcontentreader](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)和[IcontentCmdletprovider... Getcontentreaderdynamicparameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)方法。 [IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法會傳回[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)介面，其會定義用來讀取內容的方法（該介面會使用）。
 
@@ -93,11 +93,11 @@ ms.locfileid: "72359977"
 
 - `Get-Location`：抓取目前工作位置的相關資訊。 您不需要覆寫任何方法來支援此 Cmdlet。
 
-- `Pop-Location`：此 Cmdlet 會將目前的位置變更為最近推送到堆疊上的位置。 您不需要覆寫任何方法來支援此 Cmdlet。
+- `Pop-Location`：這個 Cmdlet 會將目前的位置變更為最近推送到堆疊上的位置。 您不需要覆寫任何方法來支援此 Cmdlet。
 
-- `Push-Location`：此 Cmdlet 會將目前的位置新增至位置清單頂端（「堆疊」）。 您不需要覆寫任何方法來支援此 Cmdlet。
+- `Push-Location`：這個 Cmdlet 會將目前的位置新增至位置清單頂端（「堆疊」）。 您不需要覆寫任何方法來支援此 Cmdlet。
 
-- `Set-Location`：此 Cmdlet 會將目前的工作位置設定為指定的位置。 您不需要覆寫任何方法來支援此 Cmdlet。
+- `Set-Location`：這個 Cmdlet 會將目前的工作位置設定為指定的位置。 您不需要覆寫任何方法來支援此 Cmdlet。
 
 ### <a name="path-cmdlets"></a>Path Cmdlet
 

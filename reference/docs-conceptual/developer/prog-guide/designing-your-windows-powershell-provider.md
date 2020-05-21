@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6112e64a4a15d9dc8ac28ba51259b6647db4c064
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870654"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560044"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>設計 Windows PowerShell 提供者
 
@@ -33,15 +33,15 @@ Windows PowerShell 執行時間會使用 Windows PowerShell 路徑來存取適�
 
 ### <a name="defining-a-provider-qualified-path"></a>定義提供者限定路徑
 
-若要允許 Windows PowerShell 執行時間初始化和取消初始化提供者，您的 Windows PowerShell 提供者必須支援提供者限定的路徑。 例如，FileSystem：：\\\uncshare\abc\bar 是 Windows PowerShell 所提供之 filesystem 提供者的提供者完整路徑。
+若要允許 Windows PowerShell 執行時間初始化和取消初始化提供者，您的 Windows PowerShell 提供者必須支援提供者限定的路徑。 例如，FileSystem：： \\ \uncshare\abc\bar 是 Windows PowerShell 所提供之 filesystem 提供者的提供者完整路徑。
 
 ### <a name="defining-a-provider-direct-path"></a>定義提供者-直接路徑
 
-若要允許遠端存取您的 Windows PowerShell 提供者，它應該支援提供者直接路徑，以直接傳遞給目前位置的 Windows PowerShell 提供者。 例如，登錄 Windows PowerShell 提供者可以使用 \\\server\regkeypath 做為提供者直接路徑。
+若要允許遠端存取您的 Windows PowerShell 提供者，它應該支援提供者直接路徑，以直接傳遞給目前位置的 Windows PowerShell 提供者。 例如，登錄 Windows PowerShell 提供者可以使用 \\ \server\regkeypath 做為提供者直接路徑。
 
 ### <a name="defining-a-provider-internal-path"></a>定義提供者內部路徑
 
-若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面（Api）來存取資料，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑是 \\\uncshare\abc\bar。
+若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面（Api）來存取資料，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑為 \\ \uncshare\abc\bar。
 
 ## <a name="changing-stored-data"></a>變更儲存的資料
 
@@ -53,12 +53,12 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 
 每個 Windows PowerShell 提供者基類都會提供一組 Cmdlet。 本節說明 Cmdlet，但不會描述其參數。
 
-使用會話狀態時，Windows PowerShell 執行時間會針對特定的 Windows PowerShell 提供者（例如 `Get-Location`、`Set-Location`、`Pop-Location`和 `Push-Location` Cmdlet）提供數個位置 Cmdlet。 您可以使用 `Get-Help` Cmdlet 來取得這些 location Cmdlet 的相關資訊。
+使用會話狀態時，windows powershell 執行時間會針對特定的 Windows powershell 提供者（例如 `Get-Location` 、 `Set-Location` 、 `Pop-Location` 和 Cmdlet）提供數個位置 Cmdlet `Push-Location` 。 您可以使用 `Get-Help` Cmdlet 來取得這些 location Cmdlet 的相關資訊。
 
 ### <a name="cmdletprovider-base-class"></a>CmdletProvider 基類
 
 [Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)類別會定義基本的 Windows PowerShell 提供者。 這個類別支援提供者宣告，並提供一些可供所有 Windows PowerShell 提供者使用的屬性和方法。
-`Get-PSProvider` Cmdlet 會叫用類別，以列出會話的所有可用提供者。
+Cmdlet 會叫用類別， `Get-PSProvider` 以列出會話的所有可用提供者。
 此 Cmdlet 的執行是由會話狀態所提供。
 
 > [!NOTE]
@@ -68,7 +68,7 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 
 [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別會定義 Windows PowerShell 磁片磁碟機提供者，它支援新增新磁片磁碟機、移除現有磁片磁碟機，以及初始化預設磁片磁碟機的作業。 例如，Windows PowerShell 提供的 FileSystem 提供者會針對所有掛接的磁片區（例如硬碟機和 CD/DVD 裝置磁片磁碟機）初始化磁片磁碟機。
 
-這個類別是衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類的。 下表列出這個類別所公開的 Cmdlet。 除了列出的指令程式以外，`Get-PSDrive` Cmdlet （由會話狀態公開）是用來抓取可用磁片磁碟機的相關 Cmdlet。
+這個類別是衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類的。 下表列出這個類別所公開的 Cmdlet。 除了列出的 Cmdlet 之外，指令程式 `Get-PSDrive` （由會話狀態公開）是用來取出可用磁片磁碟機的相關 Cmdlet。
 
 |      Cmdlet      |                             定義                              |
 | ---------------- | ------------------------------------------------------------------- |
@@ -81,12 +81,12 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 
 |     Cmdlet     |                                                                                                                                                            定義                                                                                                                                                            |
 | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-Item`   | 清除指定位置上專案的目前內容，並以提供者所指定的「清除」值來取代它。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。                                                                                   |
+| `Clear-Item`   | 清除指定位置上專案的目前內容，並以提供者所指定的「清除」值來取代它。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。                                                                                   |
 | `Get-Item`     | 從指定的位置抓取專案，並串流結果物件。                                                                                                                                                                                                                                                  |
 | `Invoke-Item`  | 在指定路徑上叫用專案的預設動作。                                                                                                                                                                                                                                                                   |
-| `Set-Item`     | 在指定的位置設定具有指定值的專案。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。                                                                                                                                                   |
+| `Set-Item`     | 在指定的位置設定具有指定值的專案。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。                                                                                                                                                   |
 | `Resolve-Path` | 解析 Windows PowerShell 路徑的萬用字元，並串流路徑資訊。                                                                                                                                                                                                                                              |
-| `Test-Path`    | 測試指定的路徑，並傳回 `true` （如果存在），否則 `false`。 這個指令程式會實作為支援[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法的 `IsContainer` 參數。 |
+| `Test-Path`    | 測試指定的路徑，如果存在則傳回， `true` 否則傳回 `false` 。 這個指令程式會實作為支援 `IsContainer` [Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法的參數。 |
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider 基類
 
@@ -96,11 +96,11 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 
 |     Cmdlet      |                                                                        定義                                                                        |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Copy-Item`     | 將專案從一個位置複製到另一個位置。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。 |
+| `Copy-Item`     | 將專案從一個位置複製到另一個位置。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。 |
 | `Get-Childitem` | 抓取位於指定位置的子專案，並將它們串流為物件。                                                                        |
 | `New-Item`      | 在指定的位置建立新專案，並串流結果物件。                                                                           |
 | `Remove-Item`   | 從指定的位置移除專案。                                                                                                               |
-| `Rename-Item`   | 重新命名指定位置的專案。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。 |
+| `Rename-Item`   | 重新命名指定位置的專案。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。 |
 
 ### <a name="navigationcmdletprovider-base-class"></a>NavigationCmdletProvider 基類
 
@@ -109,9 +109,9 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 |    Cmdlet    |                                                                      定義                                                                      |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 合併-路徑 | 將兩個路徑結合成單一路徑，並在路徑之間使用提供者特定的分隔符號。 此 Cmdlet 會串流處理字串。                               |
-| `Move-Item`  | 將專案移到指定的位置。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。 |
+| `Move-Item`  | 將專案移到指定的位置。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。 |
 
-相關的 Cmdlet 是 Windows PowerShell 所提供的基本剖析路徑 Cmdlet。 此 Cmdlet 可以用來剖析 Windows PowerShell 路徑，以支援 `Parent` 參數。 它會串流處理父路徑字串。
+相關的 Cmdlet 是 Windows PowerShell 所提供的基本剖析路徑 Cmdlet。 此 Cmdlet 可用於剖析 Windows PowerShell 路徑以支援 `Parent` 參數。 它會串流處理父路徑字串。
 
 ## <a name="select-provider-interfaces-to-support"></a>選取要支援的提供者介面
 
@@ -123,23 +123,23 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 
 |     Cmdlet      |                                                                                        定義                                                                                        |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Add-Content`   | 將指示的值長度附加至指定專案的內容。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。 |
-| `Clear-Content` | 將指定專案的內容設定為 "clear" 值。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。               |
+| `Add-Content`   | 將指示的值長度附加至指定專案的內容。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。 |
+| `Clear-Content` | 將指定專案的內容設定為 "clear" 值。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。               |
 | `Get-Content`   | 抓取指定專案的內容，並串流結果物件。                                                                                                         |
-| `Set-Content`   | 取代所指定專案的現有內容。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。                     |
+| `Set-Content`   | 取代所指定專案的現有內容。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。                     |
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
 [IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)介面會定義屬性 Windows PowerShell 提供者，它會對資料存放區中專案的屬性執行作業。 下表列出此介面所公開的 Cmdlet。
 
 > [!NOTE]
-> 這些 Cmdlet 上的 `Path` 參數會指出專案的路徑，而不是識別屬性。
+> `Path`這些 Cmdlet 上的參數表示專案的路徑，而不是識別屬性。
 
 |        Cmdlet        |                                                                                   定義                                                                                    |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Clear-ItemProperty` | 將指定專案的屬性設定為 "clear" 值。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。      |
+| `Clear-ItemProperty` | 將指定專案的屬性設定為 "clear" 值。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。      |
 | `Get-ItemProperty`   | 從指定的專案抓取屬性，並串流結果物件。                                                                                                |
-| `Set-ItemProperty`   | 設定具有指定之值的指定專案屬性。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。 |
+| `Set-ItemProperty`   | 設定具有指定之值的指定專案屬性。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。 |
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
@@ -148,11 +148,11 @@ Windows PowerShell 提供數個基類，可讓您用來執行自己的 Windows P
 
 |        Cmdlet         |                                                                                定義                                                                                |
 | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `Copy-ItemProperty`   | 將屬性從指定的專案複製到另一個專案。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。 |
-| `Move-ItemProperty`   | 將屬性從指定的專案移至另一個專案。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。  |
+| `Copy-ItemProperty`   | 將屬性從指定的專案複製到另一個專案。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。 |
+| `Move-ItemProperty`   | 將屬性從指定的專案移至另一個專案。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。  |
 | `New-ItemProperty`    | 在指定的專案上建立屬性，並串流結果物件。                                                                                             |
 | `Remove-ItemProperty` | 移除指定專案的屬性。                                                                                                                              |
-| `Rename-ItemProperty` | 重新命名指定專案的屬性。 此 Cmdlet 不會透過管線傳遞輸出物件，除非已指定其 `PassThru` 參數。                 |
+| `Rename-ItemProperty` | 重新命名指定專案的屬性。 除非已指定其參數，否則這個 Cmdlet 不會透過管線傳遞輸出物件 `PassThru` 。                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>ISecurityDescriptorCmdletProvider
 

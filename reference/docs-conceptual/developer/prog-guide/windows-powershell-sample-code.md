@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
-ms.openlocfilehash: 89a1e6be94fe77e77b1b4be36e17314be37727e4
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 76b4195eb33a1058109df8f6174a89708ba039d1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870501"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563245"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell 範例程式碼
 
 Windows PowerShell®範例可透過 Windows SDK 取得。 本節包含 Windows SDK 範例中包含的範例程式碼。
 
 > [!NOTE]
-> 安裝 Windows SDK 時，會建立一個**範例**目錄，其中提供所有的 Windows PowerShell 範例。 典型的安裝目錄是**C:\Program Files\Microsoft SDKs\Windows\v6.0**。 啟動 Windows PowerShell 並輸入 **"cd Samples\SysMgmt\PowerShell"** ，找出 Windows powershell Samples 目錄。 在本檔中，Windows PowerShell Samples 目錄稱為 **\<PowerShell 範例 >** 。
+> 安裝 Windows SDK 時，會建立一個**範例**目錄，其中提供所有的 Windows PowerShell 範例。 典型的安裝目錄是**C:\Program Files\Microsoft SDKs\Windows\v6.0**。 啟動 Windows PowerShell 並輸入 **"cd Samples\SysMgmt\PowerShell"** ，找出 Windows powershell Samples 目錄。 在本檔中，Windows PowerShell 範例目錄稱為** \< PowerShell 範例>**。
 
 ## <a name="sample-code-listing"></a>範例程式代碼清單
 
-|                                    範例程式碼                                    |                                                                                                                                           說明                                                                                                                                           |
+|                                    範例程式碼                                    |                                                                                                                                           描述                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01 程式碼範例](./accessdbprovidersample01-code-sample.md) | 這是[建立基本 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)中所述的提供者。                                                                                                                                                            |
 | [AccessDbProviderSample02 程式碼範例](./accessdbprovidersample02-code-sample.md) | 這是[建立 Windows PowerShell 磁片磁碟機提供者](./creating-a-windows-powershell-drive-provider.md)中所述的提供者。                                                                                                                                                            |
@@ -32,13 +32,13 @@ Windows PowerShell®範例可透過 Windows SDK 取得。 本節包含 Windows S
 | [AccessDbProviderSample04 程式碼範例](./accessdbprovidersample04-code-sample.md) | 這是[建立 Windows PowerShell 容器提供者](./creating-a-windows-powershell-container-provider.md)中所述的提供者。                                                                                                                                                    |
 | [AccessDbProviderSample05 程式碼範例](./accessdbprovidersample05-code-sample.md) | 這是[建立 Windows PowerShell 流覽提供者](./creating-a-windows-powershell-navigation-provider.md)中所述的提供者。                                                                                                                                                  |
 | [AccessDbProviderSample06 程式碼範例](./accessdbprovidersample06-code-sample.md) | 這是[建立 Windows PowerShell 內容提供者](./creating-a-windows-powershell-content-provider.md)中所述的提供者。                                                                                                                                                        |
-| [GetProc01 程式碼範例](./getproc01-code-samples.md)                             | 這是[建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 `Get-Process` Cmdlet 範例。                                                                                                                                                     |
-| [GetProc02 程式碼範例](./getproc02-code-samples.md)                             | 這是[新增處理命令列輸入的參數](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 `Get-Process` Cmdlet 範例。                                                                                                                       |
-| [GetProc03 程式碼範例](./getproc03-code-samples.md)                             | 這是[新增處理管線輸入的參數](../cmdlet/adding-parameters-that-process-pipeline-input.md)中所述的 `Get-Process` Cmdlet 範例。                                                                                                                               |
-| [GetProc04 程式碼範例](./getproc04-code-samples.md)                             | 這是[將非終止錯誤報表新增至您的 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 `Get-Process` Cmdlet 範例。                                                                                                                |
+| [GetProc01 程式碼範例](./getproc01-code-samples.md)                             | 這是 `Get-Process` [建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 Cmdlet 範例。                                                                                                                                                     |
+| [GetProc02 程式碼範例](./getproc02-code-samples.md)                             | 這是 `Get-Process` [新增處理命令列輸入的參數](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 Cmdlet 範例。                                                                                                                       |
+| [GetProc03 程式碼範例](./getproc03-code-samples.md)                             | 這是 `Get-Process` [新增處理管線輸入的參數](../cmdlet/adding-parameters-that-process-pipeline-input.md)中所述的 Cmdlet 範例。                                                                                                                               |
+| [GetProc04 程式碼範例](./getproc04-code-samples.md)                             | 這是 `Get-Process` [將非終止錯誤報表新增至您的 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 Cmdlet 範例。                                                                                                                |
 | [GetProc05 程式碼範例](./getproc05-code-samples.md)                             | 此 `Get-Process` Cmdlet 類似于[將非終止錯誤報表新增至您的 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 Cmdlet。                                                                                                     |
-| [StopProc01 程式碼範例](./stopproc01-code-samples.md)                           | 這是[建立修改系統的 Cmdlet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)中所述的 `Stop-Process` Cmdlet 範例。                                                                                                                                    |
-| [StopProcessSample04 程式碼範例](./stopprocesssample04-code-samples.md)         | 這是[將參數集新增至 Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)中所述的 `Stop-Process` Cmdlet 範例。                                                                                                                                                      |
+| [StopProc01 程式碼範例](./stopproc01-code-samples.md)                           | 這是 `Stop-Process` [建立修改系統的 Cmdlet](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)中所述的 Cmdlet 範例。                                                                                                                                    |
+| [StopProcessSample04 程式碼範例](./stopprocesssample04-code-samples.md)         | 這是 `Stop-Process` [將參數集新增至 Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)中所述的 Cmdlet 範例。                                                                                                                                                      |
 | [Runspace01 程式碼範例](./runspace01-code-samples.md)                           | 這些是[建立主控台應用程式（可執行指定的命令](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)）中所述之運行空間的程式碼範例。                                                                                      |
 | [Runspace02 程式碼範例](./runspace02-code-samples.md)                           | 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別，以同步方式執行 `Get-Process` Cmdlet。                                                                                                            |
 | [RunSpace03 程式碼範例](./runspace03-code-samples.md)                           | 這些是「建立執行指定腳本的主控台應用程式」中所述之運行空間的程式碼範例。                                                                                                                                                                         |
@@ -52,6 +52,6 @@ Windows PowerShell®範例可透過 Windows SDK 取得。 本節包含 Windows S
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員手冊](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
-ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 27f1c346863458920b310c6c4ce1403b3aab69ba
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369727"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563794"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01 範例
 
-這個範例示範如何執行可抓取本機電腦上處理常式的 Cmdlet。 此 Cmdlet 是 Windows PowerShell 2.0 所提供的 `Get-Process` Cmdlet 的簡化版本。
+這個範例示範如何執行可抓取本機電腦上處理常式的 Cmdlet。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 所提供之 Cmdlet 的簡化版本。
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
@@ -25,7 +25,7 @@ ms.locfileid: "72369727"
 
 2. 按兩下方案（.sln）檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置] 功能表中，選取 [建置方案]。
+3. 在 [建置]**** 功能表中，選取 [建置方案]****。
 
   範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 

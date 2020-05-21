@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 137543d8-0012-4cba-bcd6-98b25aac83bb
 caps.latest.revision: 9
-ms.openlocfilehash: 8271512d06047f3ff5e45f81d971ffe2c1f6afd7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9bd72e8f97c194c98adb1049f5a966549113fd12
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365467"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563895"
 ---
 # <a name="how-to-write-a-cmdlet"></a>如何撰寫 Cmdlet
 
-本文說明如何撰寫 Cmdlet。 `Send-Greeting` Cmdlet 會使用單一使用者名稱做為輸入，然後將問候語寫入該使用者。 雖然此 Cmdlet 不會執行太多工作，但此範例會示範 Cmdlet 的主要區段。
+本文說明如何撰寫 Cmdlet。 此 `Send-Greeting` Cmdlet 會使用單一使用者名稱做為輸入，然後將問候語寫入該使用者。 雖然此 Cmdlet 不會執行太多工作，但此範例會示範 Cmdlet 的主要區段。
 
 ## <a name="steps-to-write-a-cmdlet"></a>撰寫 Cmdlet 的步驟
 

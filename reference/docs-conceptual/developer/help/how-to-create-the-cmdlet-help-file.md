@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996041"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560163"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>如何建立 Cmdlet 說明檔案
 
@@ -36,7 +36,7 @@ ms.locfileid: "76996041"
 
    下表列出每個節點的 XML 元素，後面接著每個節點的說明。
 
-   |節點|說明|
+   |節點|描述|
    |----------|-----------------|
    |`<details>`|新增 Cmdlet 說明主題之名稱和概要區段的內容。 如需詳細資訊，請參閱[如何新增 Cmdlet 名稱和摘要](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)。|
    |`<maml:description>`|新增 Cmdlet 說明主題之 [描述] 部分的內容。 如需詳細資訊，請參閱[如何將詳細描述新增至 Cmdlet 說明主題](./how-to-add-a-cmdlet-description.md)。|
@@ -93,18 +93,18 @@ ms.locfileid: "76996041"
 
  [如何將詳細描述新增至 Cmdlet 說明主題](./how-to-add-a-cmdlet-description.md)
 
- [如何將語法新增至 Cmdlet 說明主題](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [如何新增語法至 Cmdlet 說明主題](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [如何將參數新增至 Cmdlet 說明主題](./how-to-add-parameter-information.md)
 
- [如何將輸入類型新增至 Cmdlet 說明主題](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
+ [如何新增輸入類型至 Cmdlet 說明主題](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [如何將傳回值新增至 Cmdlet 說明主題](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [如何新增傳回值至 Cmdlet 說明主題](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
  [如何將附注新增至 Cmdlet 說明主題](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [如何將範例新增至 Cmdlet 說明主題](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [如何新增範例至 Cmdlet 說明主題](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [如何將相關連結新增至 Cmdlet 說明主題](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [如何新增相關連結至 Cmdlet 說明主題](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)

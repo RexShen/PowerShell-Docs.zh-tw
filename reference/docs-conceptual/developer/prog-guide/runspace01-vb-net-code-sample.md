@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ce6bdec379a7ba9bf9b088c79a08ad5cef5da80b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360217"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560299"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) 程式碼範例
 
 以下是[建立主控台應用程式（可執行指定的命令](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)）中所述之運行空間的程式碼範例。 若要這樣做，應用程式會叫用運行空間，然後叫用命令。 （請注意，此應用程式不會指定執行空間設定資訊，也不會明確建立管線）。所叫用的命令是 `Get-Process` Cmdlet。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 ```vb
 Imports System

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
-ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5c55ec1346e1f2a9a3fd59445ce267c80bdb5ae4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366167"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561700"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>撰寫 Management OData Web 服務的 MOF 結構描述檔案
 
@@ -23,7 +23,7 @@ ms.locfileid: "72366167"
 
 下列檔案會定義服務和處理常式資源。 這些資源都對應到可由一組 Windows PowerShell Cmdlet 管理的物件。 屬性會對應至這些 Cmdlet 所使用的參數。
 
-這兩個資源中的每一個都包含複雜類型的屬性。 複雜類型會定義為以 `ComplexType` 限定詞修改的類別。
+這兩個資源中的每一個都包含複雜類型的屬性。 複雜類型會定義為以限定詞修改的類別 `ComplexType` 。
 
 ```csharp
 
@@ -213,4 +213,4 @@ class PswsTest_Stream
 
 [建立 Management OData Web 服務](./creating-a-management-odata-web-service.md)
 
-[公用資源架構](./public-resource-schema.md)
+[公用資源結構描述](./public-resource-schema.md)

@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
 caps.latest.revision: 7
-ms.openlocfilehash: 363c40c3eacf406bb29662c89a6b30eeb715d513
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367037"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559959"
 ---
 # <a name="supporting-updatable-help"></a>支援可更新的說明
 
@@ -23,9 +23,9 @@ Windows®8和 Windows Server®2012中引進的*Windows PowerShell 可更新說�
 
 本節包含下列主題。
 
-- [可更新的說明總覽](./updatable-help-overview.md)
+- [可更新的說明系統](./updatable-help-overview.md)
 
-- [可更新的說明撰寫：逐步解說](./updatable-help-authoring-step-by-step.md)
+- [可更新的說明撰寫：逐步](./updatable-help-authoring-step-by-step.md)
 
 - [可更新的說明如何運作](./how-updatable-help-works.md)
 

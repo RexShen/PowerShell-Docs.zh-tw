@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
-ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367347"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560996"
 ---
 # <a name="windows-powershell01-sample"></a>Windows PowerShell01 範例
 
@@ -25,7 +25,7 @@ ms.locfileid: "72367347"
 
 ## <a name="demonstrates"></a>示範
 
-這個範例示範下列作業：
+本範例示範以下項目:
 
 - 藉由設定[Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)屬性來限制語言。
 
@@ -259,4 +259,4 @@ namespace Sample
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 Windows PowerShell 主應用程式](./writing-a-windows-powershell-host-application.md)
+[撰寫 Windows PowerShell 主機應用程式](./writing-a-windows-powershell-host-application.md)

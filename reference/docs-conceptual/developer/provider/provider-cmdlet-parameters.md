@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8ce13032a55d164121a073ef94086dc1de09b902
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366307"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564201"
 ---
 # <a name="provider-cmdlet-parameters"></a>提供者 Cmdlet 參數
 
@@ -21,53 +21,53 @@ ms.locfileid: "72366307"
 
 ## <a name="provider-cmdlet-static-parameters"></a>提供者 Cmdlet 靜態參數
 
-靜態參數是由 Windows PowerShell 所定義。 Windows PowerShell 會執行一組大型的這些參數，以提供所有提供者的一致性，並提供更簡單的開發體驗。 這些參數的範例包括 `Get-Item` Cmdlet 的 `literalPath`、`exclude`和 `include` 參數。 您可以覆寫一組較小的這些參數，以提供提供者專屬的動作。 這些參數的範例包括 `Set-Item` Cmdlet 的 `Path` 和 `Value` 參數。 以下是可覆寫提供者 Cmdlet 的參數清單。
+靜態參數是由 Windows PowerShell 所定義。 Windows PowerShell 會執行一組大型的這些參數，以提供所有提供者的一致性，並提供更簡單的開發體驗。 這些參數的範例包括 `literalPath` Cmdlet 的、 `exclude` 和 `include` 參數 `Get-Item` 。 您可以覆寫一組較小的這些參數，以提供提供者專屬的動作。 這些參數的範例包括 `Path` Cmdlet 的和 `Value` 參數 `Set-Item` 。 以下是可覆寫提供者 Cmdlet 的參數清單。
 
-`Clear-Content` Cmdlet，您可以藉由[Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，定義提供者將如何使用傳遞給 `Clear-Content` Cmdlet 之 `Path` 參數的值。
+`Clear-Content`Cmdlet 您可以藉 `Path` `Clear-Content` 由執行[Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-`Clear-Item` Cmdlet，您可以藉由[Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)方法，定義提供者將如何使用傳遞給 `Clear-Item` Cmdlet 之 `Path` 參數的值。
+`Clear-Item`Cmdlet 您可以藉 `Path` `Clear-Item` 由執行[Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-`Clear-ItemProperty` Cmdlet，您可以藉由[Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法，定義提供者將如何使用傳遞給 `Path` 的值和 `Clear-ItemProperty` Cmdlet 的 `Name` 參數。
+`Clear-ItemProperty`Cmdlet 您可以藉 `Path` `Name` `Clear-ItemProperty` 由執行[IpropertyCmdletprovider. Clearproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`Copy-Item` Cmdlet，您可以藉由[CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，定義提供者將如何使用傳遞至 `Copy-Item` Cmdlet 之 `Path`、`Destination`和 `Recurse` 參數的值。
+`Copy-Item`Cmdlet 您可以藉 `Path` `Destination` `Recurse` `Copy-Item` 由執行[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，來定義提供者將如何使用傳遞給 Cmdlet 的、和參數的值。
 
-ChildItems 指令程式：您可以藉由 ContainerCmdletprovider [Getchilditems * 和](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) [*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法，來定義提供者將如何使用傳遞給 `Path` 的值，以及 `Get-ChildItem` Cmdlet 的 `Recurse` 參數，藉此來執行此程式。
+ChildItems 指令程式：您可以藉 `Path` `Recurse` 由 ContainerCmdletprovider `Get-ChildItem` [Getchilditems * 和](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) [*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法，來定義提供者將如何使用傳遞給 Cmdlet 之和參數的值，以及如何執行此功能。
 
-`Get-Content` Cmdlet，您可以藉由[Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，定義提供者將如何使用傳遞給 `Get-Content` Cmdlet 之 `Path` 參數的值。
+`Get-Content`Cmdlet 您可以藉 `Path` `Get-Content` 由執行[Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-`Get-Item` Cmdlet，您可以藉由[Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法，定義提供者將如何使用傳遞給 `Get-Item` Cmdlet 之 `Path` 參數的值。
+`Get-Item`Cmdlet 您可以藉 `Path` `Get-Item` 由執行[Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-`Get-ItemProperty` Cmdlet，您可以藉由[Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法，定義提供者將如何使用傳遞給 `Path` 的值和 `Get-ItemProperty` Cmdlet 的 `Name` 參數。
+`Get-ItemProperty`Cmdlet 您可以藉 `Path` `Name` `Get-ItemProperty` 由執行[IpropertyCmdletprovider. Getproperty *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`Invoke-Item` Cmdlet，您可以藉由[Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法，定義提供者將如何使用傳遞給 `Invoke-Item` Cmdlet 之 `Path` 參數的值。
+`Invoke-Item`Cmdlet 您可以藉 `Path` `Invoke-Item` 由執行[Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-`Move-Item` Cmdlet，您可以藉由[Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法，定義提供者將如何使用傳遞給 `Path` 的值和 `Move-Item` Cmdlet 的 `Destination` 參數。
+`Move-Item`Cmdlet 您可以藉 `Path` `Destination` `Move-Item` 由執行[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`New-Item` Cmdlet 中，您可以藉由[Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，來定義提供者將如何使用傳遞至 `New-Item` Cmdlet 之 `Path`、`ItemType`和 `Value` 參數的值。
+`New-Item`Cmdlet 您可以藉 `Path` `ItemType` `Value` `New-Item` 由執行[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，定義提供者將如何使用傳遞給 Cmdlet 的、和參數的值。
 
-`New-ItemProperty` Cmdlet，您可以藉由[Registryprovider. Newproperty *](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)方法，定義提供者如何使用傳遞至 `Value` Cmdlet 之 `Path`、`Name`、`PropertyType`和 `New-ItemProperty` 參數的值。
+`New-ItemProperty`Cmdlet 您可以藉 `Path` `Name` `PropertyType` `Value` `New-ItemProperty` 由執行[Registryprovider. Newproperty *](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)方法，定義提供者將如何使用傳遞給 Cmdlet 的、、和參數的值。
 
-`Remove-Item` 您可以藉由[Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法，來定義提供者將如何使用傳遞給 `Path` 的值和 `Remove-Item` Cmdlet 的 `Recurse` 參數。
+`Remove-Item`您可以藉 `Path` `Recurse` `Remove-Item` 由執行[ContainerCmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`Remove-ItemProperty` 您可以藉由[Removeproperty *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)方法，來定義提供者將如何使用傳遞給 `Path` 的值和 `Remove-ItemProperty` Cmdlet 的 `Name` 參數。
+`Remove-ItemProperty`您可以藉 `Path` `Name` `Remove-ItemProperty` 由執行[IdynamicpropertyCmdletprovider. Removeproperty *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`Rename-Item` Cmdlet，您可以藉由[Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法，定義提供者將如何使用傳遞給 `Path` 的值和 `Rename-Item` Cmdlet 的 `NewName` 參數。
+`Rename-Item`Cmdlet 您可以藉 `Path` `NewName` `Rename-Item` 由執行[ContainerCmdletprovider. Renameitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`Rename-ItemProperty` 您可以藉由[Renameproperty *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)方法，來定義提供者將如何使用傳遞至 `Rename-ItemProperty` Cmdlet 之 `Path`、`NewName`和 `Name` 參數的值。
+`Rename-ItemProperty`您可以藉 `Path` `NewName` `Name` `Rename-ItemProperty` 由執行[IdynamicpropertyCmdletprovider. Renameproperty *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)方法，定義提供者將如何使用傳遞給 Cmdlet 的、和參數的值。
 
-`Set-Content` Cmdlet，您可以藉由[Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法，定義提供者將如何使用傳遞給 `Set-Content` Cmdlet 之 `Path` 參數的值。
+`Set-Content`Cmdlet 您可以藉 `Path` `Set-Content` 由執行[Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-`Set-Item` Cmdlet，您可以藉由[Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，定義提供者將如何使用傳遞給 `Path` 的值和 `Set-Item` Cmdlet 的 `Value` 參數。
+`Set-Item`Cmdlet 您可以藉 `Path` `Value` `Set-Item` 由執行[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法，定義提供者將如何使用傳遞給 Cmdlet 和參數的值。
 
-`Set-ItemProperty` Cmdlet，您可以藉由執行[IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) ，來定義提供者將如何使用傳遞給 `Path` 的值和 `Set-Item` Cmdlet 的 `Value` 參數。
+`Set-ItemProperty`Cmdlet 您可以藉 `Path` `Value` `Set-Item` 由執行[IpropertyCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) ，來定義提供者將如何使用傳遞給 Cmdlet 的和參數的值，方法是藉由實作為介面。
 
-`Test-Path` Cmdlet，您可以藉由[Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法，定義提供者將如何使用傳遞給 `Test-Path` Cmdlet 之 `Path` 參數的值。
+`Test-Path`Cmdlet 您可以藉 `Path` `Test-Path` 由執行[Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)方法，來定義提供者將如何使用傳遞給 Cmdlet 參數的值。
 
-此外，您不能指定這些參數的特性，例如它們是否為選擇性或必要，也不能為這些參數提供別名或指定任何驗證屬性。 相反地，您可以使用 `Parameters` 屬性之類的屬性，在獨立 Cmdlet 中指定參數特性。
+此外，您不能指定這些參數的特性，例如它們是否為選擇性或必要，也不能為這些參數提供別名或指定任何驗證屬性。 相反地，您可以使用屬性（例如屬性）來指定獨立 Cmdlet 中的參數特性 `Parameters` 。
 
 ## <a name="provider-cmdlet-dynamic-parameters"></a>提供者 Cmdlet 動態參數
 
-Cmdlet 提供者的動態參數類似于獨立 Cmdlet 的動態提供者。 在這兩種情況下，當使用者指定其中一個預設參數的特定值（例如 `path` 參數）時，會將參數新增至 Cmdlet。 不過，並非所有的靜態參數都可以用來觸發新增動態參數。 如需動態參數的詳細資訊，請參閱[Provider Cmdlet 動態參數](./provider-cmdlet-dynamic-parameters.md)。
+Cmdlet 提供者的動態參數類似于獨立 Cmdlet 的動態提供者。 在這兩種情況下，當使用者為其中一個預設參數（例如參數）指定特定值時，會將參數新增至 Cmdlet `path` 。 不過，並非所有的靜態參數都可以用來觸發新增動態參數。 如需動態參數的詳細資訊，請參閱[Provider Cmdlet 動態參數](./provider-cmdlet-dynamic-parameters.md)。
 
 ## <a name="see-also"></a>另請參閱
 

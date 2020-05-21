@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
 caps.latest.revision: 9
-ms.openlocfilehash: 7df9764fd573b75f285fec592448a550e481bea3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367317"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564784"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>如何建立 HelpInfo XML 檔案
 
@@ -31,11 +31,11 @@ HelpInfo XML 檔案是模組之可更新說明的主要資訊來源。 其中包
 
 本節包含下列主題。
 
-- [HelpInfo XML 架構](./helpinfo-xml-schema.md)
+- [HelpInfo XML 結構描述](./helpinfo-xml-schema.md)
 
 - [HelpInfo XML 範例檔案](./helpinfo-xml-sample-file.md)
 
-- [如何命名 HelpInfo XML 檔案](./how-to-name-a-helpinfo-xml-file.md)
+- [如何為 HelpInfo XML 檔案命名](./how-to-name-a-helpinfo-xml-file.md)
 
 - [如何設定 HelpInfo XML 版本號碼](./how-to-set-helpinfo-xml-version-numbers.md)
 

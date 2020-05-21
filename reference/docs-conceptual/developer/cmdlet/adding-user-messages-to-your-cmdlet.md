@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9b9a598b592d0ac60099020e564ec7fffa54e683
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416021"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561064"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>新增使用者訊息到您的 Cmdlet
 
@@ -56,7 +56,7 @@ Cmdlet 可以撰寫數種可由 Windows PowerShell 執行時間向使用者顯�
 
 Cmdlet 建立的第一個步驟一律為 Cmdlet 命名，並宣告可執行 Cmdlet 的 .NET 類別。 任何類型的 Cmdlet 都可以從其輸入處理方法寫入使用者通知;因此，一般而言，您可以使用指示 Cmdlet 執行之系統修改的任何動詞來命名此 Cmdlet。 如需已核准 Cmdlet 動詞命令的詳細資訊，請參閱[Cmdlet 動詞名稱](./approved-verbs-for-windows-powershell-commands.md)。
 
-停止處理器 Cmdlet 是設計來修改系統;因此，.NET 類別的[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)宣告必須包含 `SupportsShouldProcess` 屬性關鍵字，並設定為 `true`。
+停止處理器 Cmdlet 是設計來修改系統;因此，.NET 類別的[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)宣告必須包含 `SupportsShouldProcess` attribute 關鍵字，且必須設定為 `true` 。
 
 下列程式碼是這個停止進程 Cmdlet 類別的定義。 如需有關此定義的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
 
@@ -68,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>定義系統修改的參數
 
-Stop-Proc Cmdlet 會定義三個參數： `Name`、`Force`和 `PassThru`。 如需定義這些參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
+Stop-Proc Cmdlet 會定義三個參數： `Name` 、 `Force` 和 `PassThru` 。 如需定義這些參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 以下是 Stop-Proc Cmdlet 的參數宣告。
 
@@ -143,9 +143,9 @@ WriteVerbose(message);
 [WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法是用來撰寫可用於疑難排解 Cmdlet 作業的「偵錯工具」（debug）訊息。 呼叫是從輸入處理方法進行。
 
 > [!NOTE]
-> Windows PowerShell 也會定義同時提供詳細資訊和偵錯工具資訊的 `Debug` 參數。 如果您的 Cmdlet 支援此參數，則不需要在呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)的相同程式碼中呼叫 System.web. [WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)..。
+> Windows PowerShell 也會定義 `Debug` 同時提供詳細資訊和偵錯工具資訊的參數。 如果您的 Cmdlet 支援此參數，則不需要在呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)的相同程式碼中呼叫 System.web. [WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)..。
 
-下列兩個來自 sample WriteDebug 方法的程式碼區段會從 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 方法的覆寫中，顯示對 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) 方法的呼叫。」（來自）。
+下列兩個來自 sample WriteDebug 方法的程式碼區段會從[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法的覆寫中，顯示對[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法的呼叫。」（來自）。
 
 此 debug 訊息會在呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)之前立即寫入。
 
@@ -168,7 +168,7 @@ WriteObject(process);
 
 Windows PowerShell 會自動將[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)呼叫路由至追蹤基礎結構和 Cmdlet。 這可讓方法呼叫追蹤至裝載應用程式、檔案或偵錯工具，而不需要在 Cmdlet 內執行任何額外的開發工作。 下列命令列專案會實行追蹤作業。
 
-**PS > 追蹤-運算式停止進程-檔案進程 .log-命令停止-進程記事本**
+**PS> 追蹤-運算式停止進程-檔案進程 .log-命令停止-進程記事本**
 
 ## <a name="writing-a-warning-message"></a>撰寫警告訊息
 
@@ -206,9 +206,9 @@ pr.RecordType = ProgressRecordType.Completed;
 WriteProgress(pr);
 ```
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
-如需完整C#的範例程式碼，請參閱[StopProcessSample02 範例](./stopprocesssample02-sample.md)。
+如需完整的 c # 範例程式碼，請參閱[StopProcessSample02 範例](./stopprocesssample02-sample.md)。
 
 ## <a name="define-object-types-and-formatting"></a>定義物件類型和格式
 
@@ -228,7 +228,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```
     VERBOSE: Attempting to stop process " notepad ".

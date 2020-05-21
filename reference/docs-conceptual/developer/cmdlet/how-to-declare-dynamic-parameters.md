@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364417"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561047"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>如何宣告動態參數
 
-這個範例示範如何定義在執行時間新增至 Cmdlet 的動態參數。 在此範例中，每當使用者指定 `Employee` 切換參數時，就會將 `Department` 參數新增至 Cmdlet。 如需動態參數的詳細資訊，請參閱[Cmdlet 動態參數](./cmdlet-dynamic-parameters.md)。
+這個範例示範如何定義在執行時間新增至 Cmdlet 的動態參數。 在此範例中， `Department` 每當使用者指定切換參數時，都會將參數新增至 Cmdlet `Employee` 。 如需動態參數的詳細資訊，請參閱[Cmdlet 動態參數](./cmdlet-dynamic-parameters.md)。
 
 ## <a name="to-define-dynamic-parameters"></a>若要定義動態參數
 
@@ -27,7 +27,7 @@ ms.locfileid: "72364417"
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. 呼叫[Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，它會傳回已定義動態參數的物件。 在此範例中，當指定 `Employee` 參數時，會呼叫方法。
+2. 呼叫[Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，它會傳回已定義動態參數的物件。 在此範例中，當指定參數時，會呼叫方法 `Employee` 。
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ ms.locfileid: "72364417"
 
 ## <a name="example"></a>範例
 
-在此範例中，每當使用者指定 `Employee` 參數時，就會加入 `Department` 參數。 `Department` 參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。
+在此範例中， `Department` 每當使用者指定參數時，就會新增參數 `Employee` 。 `Department`參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。
 
 ```csharp
 using System;

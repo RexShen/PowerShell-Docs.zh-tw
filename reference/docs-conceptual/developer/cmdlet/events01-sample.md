@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369737"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561442"
 ---
 # <a name="events01-sample"></a>Events01 範例
 
@@ -29,7 +29,7 @@ ms.locfileid: "72369737"
 2. 按兩下方案（.sln）檔案的圖示。
    這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置] 功能表中，選取 [建置方案]。
+3. 在 [建置]**** 功能表中，選取 [建置方案]****。
    範例的程式庫會建立在預設 `\bin` 或 `\bin\debug` 資料夾中。
 
 ### <a name="how-to-run-the-sample"></a>如何執行範例
@@ -83,7 +83,7 @@ A file was created in the TEMP directory
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>如何撰寫事件註冊的 Cmdlet
 
-此 Cmdlet 衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)類別，可提供 `Register-*Event` Cmdlet 通用的參數支援。
+此 Cmdlet 衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)類別，可提供 Cmdlet 通用參數的支援 `Register-*Event` 。
 衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)的 Cmdlet 只需要定義其特定參數，並覆寫 `GetSourceObject` 和 `GetSourceObjectEventName` 抽象方法。
 
 ## <a name="example"></a>範例

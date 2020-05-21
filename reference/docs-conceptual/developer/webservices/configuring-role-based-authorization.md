@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
-ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2c9d6040b7a9c17dc5204c8eb835fd69780f62c5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359767"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564252"
 ---
 # <a name="configuring-role-based-authorization"></a>設定角色型授權
 
@@ -23,7 +23,7 @@ ms.locfileid: "72359767"
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>修改 RBacConfiguration .xml 檔案
 
-此檔案會定義應用程式的授權原則。 角色是使用 `Group` 節點所定義。 `Group` 節點會定義使用者指派給該群組的 Windows PowerShell 命令。 使用者會使用 `User` 節點指派給群組。
+此檔案會定義應用程式的授權原則。 角色是使用節點所定義 `Group` 。 `Group`節點會定義使用者指派給該群組的 Windows PowerShell 命令。 使用者會使用節點指派給群組 `User` 。
 
 在這些範例中，您會將模組新增至 [系統管理員] `Group` 節點，並將使用者新增至每個群組。
 
@@ -85,9 +85,9 @@ ms.locfileid: "72359767"
    </RbacConfiguration>
    ```
 
-2. 檔案包含兩個 `Group` 節點。 這些代表在此範例中使用的兩個角色，`NonAdminGroup` 和 `AdminGroup` 角色。
+2. 檔案包含兩個 `Group` 節點。 這些代表在此範例中使用的兩個角色， `NonAdminGroup` 和 `AdminGroup` 角色。
 
-   在第一個 `Group` 節點的結尾 `Cmdlets` 標記的正後方，新增下列 XML：
+   在 `Cmdlets` 第一個節點中的結束記號正後方 `Group` ，新增下列 XML：
 
    ```xml
    <Modules>
@@ -97,9 +97,9 @@ ms.locfileid: "72359767"
 
 #### <a name="adding-a-user-to-a-group-node"></a>將使用者新增至群組節點
 
-1. 在文字編輯器中開啟**RBacConfiguration。** 如果您未在安裝前變更端點名稱，此檔案位於 C：\\\inetpub\wwwroot\Modata 資料夾中。
+1. 在文字編輯器中開啟**RBacConfiguration。** \\如果您未在安裝前變更端點名稱，此檔案位於資料夾 C： \inetpub\wwwroot\Modata 中。
 
-2. 在 `Users` 節點的結束記號正後方，新增下列 XML：
+2. 在節點中的結束記號正後方 `Users` ，新增下列 XML：
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

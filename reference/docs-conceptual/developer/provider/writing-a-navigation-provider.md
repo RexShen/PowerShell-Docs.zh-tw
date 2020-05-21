@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c557a6ec51d52f529faaaa316c89da359cd97051
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359867"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83562504"
 ---
 # <a name="writing-a-navigation-provider"></a>撰寫瀏覽提供者
 
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>執行 NormalizeRelativePath
 
-[NavigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法會接受 `path` 和 `basepath` 參數，並傳回相當於 `path` 參數且相對於 `basepath` 參數的正規化路徑（）。
+[NavigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法會採用 `path` 和 `basepath` 參數，並傳回相當於參數的正規化路徑， `path` 以及與參數相對的 `basepath` 。
 
 ```csharp
 protected override string NormalizeRelativePath(string path,
@@ -302,4 +302,4 @@ protected override void MoveItem(string path, string destination)
 
 [撰寫容器提供者](./writing-a-container-provider.md)
 
-[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)
+[Windows PowerShell 提供者概觀](./windows-powershell-provider-overview.md)

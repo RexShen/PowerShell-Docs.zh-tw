@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 50e6f9b1-2678-4f53-9250-7c48843a9549
 caps.latest.revision: 5
-ms.openlocfilehash: 1113c0d1cd68bb97d2f96b529f755b62137d1f40
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9497d72a586d0cc64c1d4e090819230285767e8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366037"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564961"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>匯入並叫用 Windows PowerShell 工作流程
 
@@ -25,7 +25,7 @@ Windows PowerShell 3 可讓您匯入和叫用封裝為 Windows PowerShell 模組
 
 1. 建立[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件，以建立與遠端運行空間的連接。
 
-2. 將[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的[Wsmanconnectioninfo. Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri)屬性設定為，以 `Microsoft.PowerShell.Workflow` 指定 Windows PowerShell 端點的，以供您使用。
+2. 將[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的[Wsmanconnectioninfo. Shelluri *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri)屬性設定為 `Microsoft.PowerShell.Workflow` ，以指定 Windows PowerShell 端點。（目標為的）。
 
 3. 建立使用完成先前步驟所建立之連線的執行階段版本。
 

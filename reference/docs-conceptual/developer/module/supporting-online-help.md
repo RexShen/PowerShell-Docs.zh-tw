@@ -8,48 +8,48 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: cf181e8f26ebd4b9c57b5b0191809211f2471f13
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: de25b099e61f82891daff87c4c73bb8cad9111a4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995576"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559976"
 ---
 # <a name="supporting-online-help"></a>支援線上說明
 
-從 Windows PowerShell 3.0 開始，有兩種方式可支援 Windows PowerShell 命令的 `Get-Help` Online 功能。 本主題說明如何針對不同的命令類型來執行這項功能。
+從 Windows PowerShell 3.0 開始，有兩種方式可支援 `Get-Help` Windows powershell 命令的線上功能。 本主題說明如何針對不同的命令類型來執行這項功能。
 
 ## <a name="about-online-help"></a>關於線上說明
 
-線上說明一直是 Windows PowerShell 的重要部分。 雖然 `Get-Help` Cmdlet 會在命令提示字元中顯示說明主題，但許多使用者偏好使用線上閱讀的經驗，包括色彩編碼、超連結，以及在社區內容和 wiki 架構檔中分享想法。 最重要的是，在「可更新的說明」出現之前，線上說明已提供最新版本的說明檔。
+線上說明一直是 Windows PowerShell 的重要部分。 雖然指令程式會 `Get-Help` 在命令提示字元中顯示說明主題，但許多使用者偏好使用線上閱讀的經驗，包括色彩編碼、超連結，以及在社區內容和 wiki 架構檔中共用想法。 最重要的是，在「可更新的說明」出現之前，線上說明已提供最新版本的說明檔。
 
 隨著 Windows PowerShell 3.0 中的「可更新的說明」的出現，線上說明仍然扮演重要的角色。 除了彈性的使用者體驗之外，線上說明也能協助不使用「可更新的說明」下載說明主題的使用者。
 
 ## <a name="how-get-help--online-works"></a>Get-help-Online 的運作方式
 
-為了協助使用者尋找命令的線上說明主題，`Get-Help` 命令具有線上參數，可開啟使用者的預設網際網路瀏覽器中命令的線上版本說明主題。
+為了協助使用者尋找命令的線上說明主題，此 `Get-Help` 命令具有線上參數，可開啟使用者的預設網際網路瀏覽器中命令的線上版本說明主題。
 
-例如，下列命令會開啟 `Invoke-Command` Cmdlet 的線上說明主題。
+例如，下列命令會開啟 Cmdlet 的線上說明主題 `Invoke-Command` 。
 
 ```powershell
 Get-Help Invoke-Command -Online
 ```
 
-為了在線上執行 `Get-Help`，`Get-Help` Cmdlet 會在下列位置尋找線上版本說明主題的統一資源識別元（URI）。
+若要進行 `Get-Help` 線上執行，此 `Get-Help` Cmdlet 會在下列位置尋找線上版本說明主題的統一資源識別元（URI）。
 
 - 命令之說明主題的 [相關連結] 區段中的第一個連結。 您必須在使用者的電腦上安裝說明主題。 這項功能是在 Windows PowerShell 2.0 中引進。
 
 - 任何命令的 HelpUri 屬性。 即使未在使用者的電腦上安裝命令的說明主題，仍可存取 HelpUri 屬性。 這項功能是在 Windows PowerShell 3.0 中引進。
 
-  `Get-Help` 在取得 HelpUri 屬性值之前，會在 [相關連結] 區段的第一個專案中尋找 URI。 如果屬性值不正確或已變更，您可以在第一個相關連結中輸入不同的值來覆寫它。 不過，第一個相關的連結僅適用于在使用者的電腦上安裝說明主題時。
+  `Get-Help`取得 HelpUri 屬性值之前，在 [相關連結] 區段的第一個專案中尋找 URI。 如果屬性值不正確或已變更，您可以在第一個相關連結中輸入不同的值來覆寫它。 不過，第一個相關的連結僅適用于在使用者的電腦上安裝說明主題時。
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>將 URI 新增至命令說明主題的第一個相關連結
 
-您可以在命令的 XML 型說明主題的 [相關連結] 區段中，將有效的 URI 新增至第一個專案，以支援任何命令的 `Get-Help`-Online。 這個選項只有在以 XML 為基礎的說明主題中才有效，而且只有在說明主題安裝在使用者的電腦上時才適用。 安裝說明主題並填入 URI 後，此值會優先于命令的**HelpUri**屬性。
+您可以在 `Get-Help` 命令的 XML 型說明主題的 [相關連結] 區段中，將有效的 URI 新增至第一個專案，以針對任何命令支援-Online。 這個選項只有在以 XML 為基礎的說明主題中才有效，而且只有在說明主題安裝在使用者的電腦上時才適用。 安裝說明主題並填入 URI 後，此值會優先于命令的**HelpUri**屬性。
 
-若要支援這項功能，URI 必須出現在 `maml:relatedLinks` 元素中第一個 `maml:relatedLinks/maml:navigationLink` 元素下的 `maml:uri` 元素中。
+若要支援這項功能，URI 必須出現在元素中 `maml:uri` 第一個專案下的元素中 `maml:relatedLinks/maml:navigationLink` `maml:relatedLinks` 。
 
-下列 XML 會顯示正確的 URI 位置。 `maml:linkText` 元素中的「線上版本：」文字是最佳做法，但並非必要。
+下列 XML 會顯示正確的 URI 位置。 元素中的「線上版本：」文字 `maml:linkText` 是最佳做法，但並非必要。
 
 ```xml
 
@@ -71,9 +71,9 @@ Get-Help Invoke-Command -Online
 
 ### <a name="adding-a-helpuri-property-to-a-cmdlet"></a>將 HelpUri 屬性新增至 Cmdlet
 
-針對以C#撰寫的 Cmdlet，將**HelpUri**屬性新增至 Cmdlet 類別。 屬性的值必須是以 "HTTP" 或 "HTTPs" 開頭的 URI。
+針對以 c # 撰寫的 Cmdlet，將**HelpUri**屬性新增至 Cmdlet 類別。 屬性的值必須是以 "HTTP" 或 "HTTPs" 開頭的 URI。
 
-下列程式碼顯示 `Get-History` Cmdlet 類別的 HelpUri 屬性。
+下列程式碼顯示 Cmdlet 類別的 HelpUri 屬性 `Get-History` 。
 
 ```
 [Cmdlet(VerbsCommon.Get, "History", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=001122")]
@@ -104,7 +104,7 @@ function New-Calendar {
 
 ### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>將 HelpUri 屬性新增至工作流程
 
-針對以 Windows PowerShell 語言撰寫的工作流程，請新增 **.Externalhelp**批註指示詞至工作流程程式碼。 指示詞的值必須是以 "HTTP" 或 "HTTPs" 開頭的 URI。
+針對以 Windows PowerShell 語言撰寫的工作流程，請新增 **。.Externalhelp**批註指示詞至工作流程程式碼。 指示詞的值必須是以 "HTTP" 或 "HTTPs" 開頭的 URI。
 
 > [!NOTE]
 > Windows PowerShell 中以 XAML 為基礎的工作流程不支援 HelpUri 屬性。

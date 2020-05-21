@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 7ccdeeb2833b79cabc7c77d1a400e0c9132b2dcd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996079"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561459"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>撰寫 Management OData Web 服務的 XML 結構描述檔案
 
@@ -51,7 +51,7 @@ XML 檔案的第一個部分會將 MOF 架構檔案中定義的資源對應到�
 |更新|更新|
 |刪除|刪除|
 
-下列範例顯示 `Service` 資源上建立、讀取和更新作業的對應。
+下列範例顯示在資源上建立、讀取和更新作業的對應 `Service` 。
 
 ```xml
 <ClassImplementations>
@@ -159,8 +159,8 @@ XML 檔案的第一個部分會將 MOF 架構檔案中定義的資源對應到�
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 Management OData web 服務的 MOF 架構檔案](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[撰寫 Management OData Web 服務的 MOF 結構描述檔案](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[資源對應架構](./resource-mapping-schema.md)
+[資源對應結構描述](./resource-mapping-schema.md)
 
 [建立 Management OData Web 服務](./creating-a-management-odata-web-service.md)

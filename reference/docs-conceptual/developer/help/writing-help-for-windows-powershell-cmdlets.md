@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 55908d67-7cbe-482a-a105-5a6da93c5311
 caps.latest.revision: 4
-ms.openlocfilehash: 8d692cf88d1d356886ef973f0989294d6b51ee6d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd565e8bf8429d91d785664c8cc69d1843439219
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361067"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560588"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>撰寫 PowerShell Cmdlet 的說明
 
@@ -34,7 +34,7 @@ PowerShell Cmdlet 可能很實用，但除非您的說明主題清楚說明了 C
 
 ### <a name="write-simply"></a>簡單撰寫
 使用簡單的字組和片語。
-避免產生術語。
+避免術語。
 請考慮許多讀者僅配備外部語言字典和您的說明主題。
 
 ### <a name="write-consistently"></a>一致寫入
@@ -85,24 +85,24 @@ PowerShell 小組會開發此慣例，協助使用者瞭解 .NET Framework 的�
 
 ## <a name="see-also"></a>另請參閱
 
- [如何建立 Cmdlet 說明檔](./how-to-create-the-cmdlet-help-file.md)
+ [如何建立 Cmdlet 說明檔案](./how-to-create-the-cmdlet-help-file.md)
 
- [如何將 Cmdlet 名稱和概要新增至 Cmdlet 說明主題](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
+ [如何新增 Cmdlet 名稱和概要至 Cmdlet 說明主題](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 
  [如何將詳細描述新增至 Cmdlet 說明主題](./how-to-add-a-cmdlet-description.md)
 
- [如何將語法新增至 Cmdlet 說明主題](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [如何新增語法至 Cmdlet 說明主題](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [如何將參數新增至 Cmdlet 說明主題](./how-to-add-parameter-information.md)
 
  [如何將輸入類型新增至 Cmdlet 說明主題](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [如何將傳回值新增至 Cmdlet 說明主題](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [如何新增傳回值至 Cmdlet 說明主題](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
- [如何將附注新增至 Cmdlet 說明主題](./how-to-add-notes-to-a-cmdlet-help-topic.md)
+ [如何新增附註至 Cmdlet 說明主題](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [如何將範例新增至 Cmdlet 說明主題](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [如何新增範例至 Cmdlet 說明主題](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [如何將相關連結新增至 Cmdlet 說明主題](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [如何新增相關連結至 Cmdlet 說明主題](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)

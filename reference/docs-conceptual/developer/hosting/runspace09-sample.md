@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f19f12c0-82e9-42f6-a7df-76c45b733855
 caps.latest.revision: 8
-ms.openlocfilehash: d78c865b869f802c7ebe2743942b6f21681de4b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 49b03bcf1b049918b200d68cb2c6f7aff878db58
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360857"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563302"
 ---
 # <a name="runspace09-sample"></a>Runspace09 範例
 
@@ -150,4 +150,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 Windows PowerShell 主應用程式](./writing-a-windows-powershell-host-application.md)
+[撰寫 Windows PowerShell 主機應用程式](./writing-a-windows-powershell-host-application.md)

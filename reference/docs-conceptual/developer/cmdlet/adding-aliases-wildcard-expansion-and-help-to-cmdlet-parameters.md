@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7c4098c6c670f22253fe7d463b33e45208d00790
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415651"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559993"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>新增別名、萬用字元擴充與說明到 Cmdlet 參數
 
@@ -35,13 +35,13 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>定義系統修改的參數
 
-您的 Cmdlet 必須定義支援系統修改和使用者意見反應的參數。 Cmdlet 應定義 `Name` 參數或對等的，讓 Cmdlet 能夠以某種識別碼來修改系統。 此外，此 Cmdlet 應定義 `Force` 和 `PassThru` 參數。 如需這些參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
+您的 Cmdlet 必須定義支援系統修改和使用者意見反應的參數。 Cmdlet 應該定義一個 `Name` 或對等的參數，讓 Cmdlet 能夠以某種識別碼來修改系統。 此外，此 Cmdlet 應該會定義 `Force` 和 `PassThru` 參數。 如需這些參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 ## <a name="defining-a-parameter-alias"></a>定義參數別名
 
 參數別名可以是替代名稱或定義完善的1個字母或兩個字母的簡短名稱，以用於 Cmdlet 參數。 在這兩種情況下，使用別名的目標是要從命令列簡化使用者輸入。 Windows PowerShell 透過[Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性（使用宣告語法 [Alias （）]）支援參數別名。
 
-下列程式碼顯示如何將別名新增至 `Name` 參數。
+下列程式碼顯示如何將別名加入至 `Name` 參數。
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-除了使用[Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性以外，Windows PowerShell 執行時間也會執行部分名稱比對，即使未指定別名也一樣。 例如，如果您的 Cmdlet 具有 `FileName` 參數，而且是以 `F`開頭的唯一參數，則使用者可以輸入 `Filename`、`Filenam`、`File`、`Fi`或 `F`，而且仍然會將專案辨識為 `FileName` 參數。
+除了使用[Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)屬性以外，Windows PowerShell 執行時間也會執行部分名稱比對，即使未指定別名也一樣。 例如，如果您的 Cmdlet 具有 `FileName` 參數，而且是以開頭的唯一參數 `F` ，則使用者可以輸入、、 `Filename` 、 `Filenam` 或 `File` ， `Fi` 而且仍然會將 `F` 專案辨識為 `FileName` 參數。
 
 ## <a name="creating-help-for-parameters"></a>建立參數的說明
 
-Windows PowerShell 可讓您建立 Cmdlet 參數的說明。 請針對用於系統修改和使用者意見反應的任何參數執行此動作。 若要讓每個參數都支援說明，您可以在[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性宣告中設定 `HelpMessage` 屬性關鍵字。 此關鍵字會定義要向使用者顯示的文字，以取得使用參數的協助。 您也可以設定 `HelpMessageBaseName` 關鍵字，以識別要用於訊息之資源的基底名稱。 如果您設定此關鍵字，則也必須設定 `HelpMessageResourceId` 關鍵字來指定資源識別碼。
+Windows PowerShell 可讓您建立 Cmdlet 參數的說明。 請針對用於系統修改和使用者意見反應的任何參數執行此動作。 若要讓每個參數都支援說明，您可以 `HelpMessage` 在[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性宣告中設定 attribute 關鍵字。 此關鍵字會定義要向使用者顯示的文字，以取得使用參數的協助。 您也可以設定 `HelpMessageBaseName` 關鍵字來識別要用於訊息之資源的基底名稱。 如果您設定此關鍵字，則也必須設定 `HelpMessageResourceId` 關鍵字來指定資源識別碼。
 
-這個 Stop-Proc Cmdlet 的下列程式碼會定義 `Name` 參數的 `HelpMessage` 屬性關鍵字。
+這個 Stop-Proc Cmdlet 的下列程式碼會定義 `HelpMessage` 參數的 attribute 關鍵字 `Name` 。
 
 ```csharp
 /// <summary>
@@ -92,7 +92,7 @@ Windows PowerShell 可讓您建立 Cmdlet 參數的說明。 請針對用於系�
 
 ## <a name="supporting-wildcard-expansion"></a>支援萬用字元展開
 
-若要允許選取多個物件，您的 Cmdlet 可以使用[Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)和[Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions)類別，為參數輸入提供萬用字元擴充支援。 萬用字元模式的範例包括 lsa *、\*.txt 和 [a-c]\*。 當模式包含應逐字使用的字元時，請使用後引號字元（'）做為換用字元。
+若要允許選取多個物件，您的 Cmdlet 可以使用[Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)和[Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions)類別，為參數輸入提供萬用字元擴充支援。 萬用字元模式的範例包括 lsa *、 \* .txt 和 [a-c] \* 。 當模式包含應逐字使用的字元時，請使用後引號字元（'）做為換用字元。
 
 檔案和路徑名稱的萬用字元擴充是常見案例的範例，當需要選取多個物件時，此 Cmdlet 可能會想要允許路徑輸入的支援。 常見的情況是在檔案系統中，使用者想要查看位於目前資料夾中的所有檔案。
 
@@ -100,7 +100,7 @@ Windows PowerShell 可讓您建立 Cmdlet 參數的說明。 請針對用於系�
 
 - **問號（？）。** 符合指定位置的任何字元。
 
-- **星號（\*）。** 符合從指定位置開始的零個或多個字元。
+- **星號（ \* ）。** 符合從指定位置開始的零個或多個字元。
 
 - **左括弧（[）。** 引進的模式括號運算式可以包含字元或字元範圍。 如果需要範圍，則會使用連字號（-）來表示範圍。
 
@@ -111,7 +111,7 @@ Windows PowerShell 可讓您建立 Cmdlet 參數的說明。 請針對用於系�
 > [!NOTE]
 > 如需萬用字元模式的詳細資訊，請參閱[在 Cmdlet 參數中支援萬用字元](./supporting-wildcard-characters-in-cmdlet-parameters.md)。
 
-下列程式碼示範如何設定萬用字元選項，並定義用來解析此 Cmdlet 之 `Name` 參數的萬用字元模式。
+下列程式碼示範如何設定萬用字元選項，並定義用來解析此 Cmdlet 之參數的萬用字元模式 `Name` 。
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -128,9 +128,9 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
-如需完整C#的範例程式碼，請參閱[StopProcessSample03 範例](./stopprocesssample03-sample.md)。
+如需完整的 c # 範例程式碼，請參閱[StopProcessSample03 範例](./stopprocesssample03-sample.md)。
 
 ## <a name="define-object-types-and-formatting"></a>定義物件類型和格式
 
@@ -144,13 +144,13 @@ Windows PowerShell 會使用 .Net 物件在 Cmdlet 之間傳遞資訊。 因此�
 
 當您的 Cmdlet 已向 Windows PowerShell 註冊時，您可以在命令列上執行它來進行測試。 讓我們來測試範例的 Stop-Proc Cmdlet。 如需從命令列使用 Cmdlet 的詳細資訊，請參閱[使用 Windows PowerShell 的消費者入門](/powershell/scripting/getting-started/getting-started-with-windows-powershell)。
 
-- 啟動 Windows PowerShell，並使用 `Name` 參數的 ProcessName 別名來停止進程。
+- 啟動 Windows PowerShell，並使用停止程式來停止使用參數之 ProcessName 別名的進程 `Name` 。
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```
     Confirm
@@ -165,7 +165,7 @@ Windows PowerShell 會使用 .Net 物件在 Cmdlet 之間傳遞資訊。 因此�
     PS> stop-proc
     ```
 
-下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ Windows PowerShell 會使用 .Net 物件在 Cmdlet 之間傳遞資訊。 因此�
     Name[0]: notepad
     ```
 
-- 現在，請進行下列專案，以停止符合萬用字元模式 "* note\*" 的所有處理常式。 在您停止每個符合模式的處理常式之前，系統會先提示您。
+- 現在，請進行下列專案，以停止符合萬用字元模式 "* note" 的所有處理常式 \* 。 在您停止每個符合模式的處理常式之前，系統會先提示您。
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Windows PowerShell 會使用 .Net 物件在 Cmdlet 之間傳遞資訊。 因此�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Windows PowerShell 會使用 .Net 物件在 Cmdlet 之間傳遞資訊。 因此�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```
     Confirm
