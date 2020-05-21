@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
-ms.openlocfilehash: ad0fe5c63b145c681f14328d5ef5a8784a035e26
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: a5618b72827d8ef70201437c4a99ea8bf68cdfd3
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995937"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565538"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>如何新增傳回值至 Cmdlet 說明主題
 
 本節說明如何將 [輸出] 區段新增至 Windows PowerShell® Cmdlet 說明主題。 [輸出] 區段會列出 Cmdlet 傳回或沿著管線向下傳遞之物件的 .NET 類別。
 
-您可以新增至 [輸出] 區段的類別數目沒有限制。 Cmdlet 的傳回型別會括在 \<命令中： returnValues > node，其中每個類別都包含在 \<命令中： returnValue > 元素。
+您可以新增至 [輸出] 區段的類別數目沒有限制。 Cmdlet 的傳回型別會以命令括住 \< ： returnValues> node，其中每個類別都包含在 \< 命令中： returnValue> 元素。
 
 如果 Cmdlet 不會產生任何輸出，請使用此區段來表示沒有輸出。 例如，若要取代類別名稱，請寫入 "None" 並提供簡短說明。 如果 Cmdlet 有條件地產生輸出，請使用此節點來說明條件並描述條件式輸出。
 
-架構包含兩個 \<maml：描述 > 每個 \<命令中的元素： returnValue > 專案。 不過，`Get-Help` Cmdlet 只會顯示 \<命令的內容： returnValue >/\<maml： description > 元素。
+架構會 \< 在每個命令中包含兩個 maml： description> 元素 \< ： returnValue> 元素。 不過，此 `Get-Help` Cmdlet 只會顯示命令的內容 \< ： returnValue>/ \< maml： description> 元素。
 
-從 Windows PowerShell 3.0 開始，`Get-Help` Cmdlet 會顯示 \<maml： uri > 元素的內容。 此元素可讓您將使用者引導至描述 .NET 類別的主題。
+從 Windows PowerShell 3.0 開始，此 `Get-Help` Cmdlet 會顯示 \< maml： uri> 元素的內容。 此元素可讓您將使用者引導至描述 .NET 類別的主題。
 
-下列 XML 顯示 \<maml： returnValues > 節點。
+下列 XML 顯示 \< maml： returnValues> 節點。
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ ms.locfileid: "76995937"
 </command: returnValues>
 ```
 
-下列 XML 顯示使用 \<maml： returnValues > 節點來記錄輸出類型的範例。
+下列 XML 顯示使用 \< maml： returnValues> 節點來記錄輸出類型的範例。
 
 ```xml
 <command:returnValues>
@@ -61,6 +61,3 @@ ms.locfileid: "76995937"
   </command: returnValue>
 </command: returnValues>
 ```
-
-
-

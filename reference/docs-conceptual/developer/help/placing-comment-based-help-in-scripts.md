@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
-ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361177"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565521"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>將註解型說明置於指令碼
 
-本主題說明如何為腳本放置以批註為基礎的說明，讓 `Get-Help` Cmdlet 將以批註為基礎的說明主題與腳本，而不是腳本中任何可能的函式相關聯。
+本主題說明如何為腳本放置以批註為基礎的說明，讓 `Get-Help` Cmdlet 將批註式說明主題與腳本建立關聯，而不是腳本中任何可能的功能。
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>在何處放置腳本的批註型說明
 

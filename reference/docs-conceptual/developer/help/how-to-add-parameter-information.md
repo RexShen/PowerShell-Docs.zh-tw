@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
-ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b9ccca75c2d9126e84a7f486ffe803042a742b62
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361227"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565555"
 ---
 # <a name="how-to-add-parameter-information"></a>如何新增參數資訊
 
@@ -157,7 +157,7 @@ ms.locfileid: "72361227"
 
 以下是新增參數時要記住的一些事項。
 
-- 參數的屬性不會顯示在 Cmdlet 說明主題的所有視圖中。 不過，當使用者要求完整（Get-help \<Cmdletname >-Full）或主題的參數（Get-help \<Cmdletname >-參數）時，它們會顯示在參數描述後面的表格中。
+- 參數的屬性不會顯示在 Cmdlet 說明主題的所有視圖中。 不過，當使用者要求完整（Get-help \< Cmdletname>-Full）或主題的參數（get-help \< Cmdletname> 參數）時，會依照參數描述，將它們顯示在資料表中。
 
 - 參數描述是 Cmdlet 說明主題其中一個最重要的部分。 描述應該是簡短的，也應該是完整的。 此外，請記住，如果參數描述變得太長，例如兩個參數彼此互動時，您可以在 Cmdlet 說明主題的附注區段中新增更多內容。
 
@@ -171,11 +171,11 @@ ms.locfileid: "72361227"
 
 參數的預設值是在命令列上未指定參數時所使用的值。 請注意，預設值是選擇性的，而某些參數（例如必要的參數）則不需要。 不過，您應該為大部分的選擇性參數指定預設值。
 
-預設值可協助使用者瞭解不使用參數的效果。 明確描述預設值，例如「目前目錄」或選擇性路徑的「Windows PowerShell 安裝目錄（$pshome）」。 您也可以撰寫描述預設值的句子，例如用於 `PassThru` 參數的下列句子：「如果未指定 PassThru，Cmdlet 就不會將物件沿著管線向下傳遞」。  此外，因為此值會與功能變數名稱「**預設值**」相反地顯示，所以您不需要在專案中包含「預設值」一詞。
+預設值可協助使用者瞭解不使用參數的效果。 明確描述預設值，例如「目前目錄」或選擇性路徑的「Windows PowerShell 安裝目錄（$pshome）」。 您也可以撰寫描述預設值的句子，例如用於參數的下列句子 `PassThru` ：「如果未指定 PassThru，Cmdlet 就不會將物件沿著管線向下傳遞」。  此外，因為此值會與功能變數名稱「**預設值**」相反地顯示，所以您不需要在專案中包含「預設值」一詞。
 
-此參數的預設值不會顯示在 Cmdlet 說明主題的所有 views 中。 不過，當使用者要求完整（Get-help \<Cmdletname >-Full）或主題的參數（Get-help \<Cmdletname >-parameter）時，它會在參數描述之後，顯示在資料表中（連同參數屬性）。
+此參數的預設值不會顯示在 Cmdlet 說明主題的所有 views 中。 不過，當使用者要求主題的完整（Get-help \< Cmdletname>-Full）或 parameter （get-help \< Cmdletname>-parameter）時，它會在參數描述之後，顯示在資料表中（連同參數屬性）。
 
-下列 XML 顯示新增至 `<command:parameter>` 節點的一對 `<dev:defaultValue>` 標記。 請注意，預設值會緊接在結尾 `</command:parameterValue>` 標記（當指定參數值時）或參數描述的結尾 `</maml:description>` 標記後面。 名稱：
+下列 XML 會顯示一對 `<dev:defaultValue>` 加入至節點的標記 `<command:parameter>` 。 請注意，預設值緊接在結束記號之後 `</command:parameterValue>` （指定參數值時）或 `</maml:description>` 參數描述的結束記號後面。 名稱。
 
 ```xml
 <command:parameters>
@@ -195,11 +195,11 @@ ms.locfileid: "72361227"
 
 新增列舉類型的值
 
-如果參數有多個值或列舉類型的值，您可以使用選擇性的 \<dev： possibleValues > 節點。 此節點可讓您指定多個值的名稱和描述。
+如果參數有多個值或列舉類型的值，您可以使用選擇性的 \< dev： possibleValues> 節點。 此節點可讓您指定多個值的名稱和描述。
 
-請注意，列舉值的描述並不會出現在 `Get-Help` Cmdlet 所顯示的任何預設說明視圖中，但是其他說明檢視器可能會在其視圖中顯示此內容。
+請注意，列舉值的描述並不會出現在 Cmdlet 所顯示的任何預設說明視圖中 `Get-Help` ，但其他協助檢視器可能會在其視圖中顯示此內容。
 
-下列 XML 顯示已指定兩個值的 `<dev:possibleValues>` 節點。
+下列 XML 顯示已 `<dev:possibleValues>` 指定兩個值的節點。
 
 ```xml
 <command:parameters>

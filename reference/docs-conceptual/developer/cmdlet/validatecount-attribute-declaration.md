@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3cae95fab30a4abe4e544ed5cb7dadc9f4debf02
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369227"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692382"
 ---
 # <a name="validatecount-attribute-declaration"></a>ValidateCount 屬性宣告
 
@@ -31,9 +31,9 @@ ValidateCount 屬性會指定 Cmdlet 參數所允許的最小和最大引數數�
 
 #### <a name="parameters"></a>參數
 
-需要 `MinLength` （[System.Int32][]）。 指定引數的最小數目。
+`MinLength`（[必須][]是 system.string）。 指定引數的最小數目。
 
-需要 `MaxLength`（[System.Int32][]）。 指定引數的最大數目。
+`MaxLength`（[必須][]是 system.string）。 指定引數的最大數目。
 
 ## <a name="remarks"></a>備註
 
@@ -43,11 +43,11 @@ ValidateCount 屬性會指定 Cmdlet 參數所允許的最小和最大引數數�
 
 - 在下列情況下，Windows PowerShell 執行時間會擲回錯誤：
 
-    - `MinLength` 和 `MaxLength` 屬性參數不是[System.Int32][]類型。
+  - `MinLength`和 `MaxLength` 屬性參數的類型不是[system.object][]。
 
-    - `MaxLength` 屬性參數的值小於 `MinLength` 屬性參數的值。
+  - 屬性參數的值 `MaxLength` 小於 `MinLength` 屬性參數的值。
 
-- ValidateCount 屬性是由[ValidateCountAttribute。][]類別所定義。
+- ValidateCount 屬性是由[ValidateCountAttribute][]類別所定義。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -60,5 +60,5 @@ ValidateCount 屬性會指定 Cmdlet 參數所允許的最小和最大引數數�
 [如何驗證引數計數]: how-to-validate-an-argument-count.md
 [撰寫 Windows PowerShell Cmdlet]: writing-a-windows-powershell-cmdlet.md
 
-[System.Int32]: /dotnet/api/System.Int32
+[System. Int32]: /dotnet/api/System.Int32
 [ValidateCountAttribute。]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

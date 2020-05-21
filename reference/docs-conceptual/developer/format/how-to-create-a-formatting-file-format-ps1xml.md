@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
 caps.latest.revision: 8
-ms.openlocfilehash: e97e9ddb1bf81ba66e5f3cedddd22e3a861ce228
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7a578dd63a53562f992b2970573258b8676e2a52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363617"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692281"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>如何建立格式設定檔案 (.format.ps1xml)
 
@@ -36,11 +36,11 @@ ms.locfileid: "72363617"
    </Configuration>
    ```
 
-   - \<Configuration >\</組態 > 標記會定義根 `Configuration` 節點。 所有其他的 XML 標記都會放在這個節點內。
+   - `<Configuration></Configuration>`標記會定義根 `Configuration` 節點。 所有其他的 XML 標記都會放在這個節點內。
 
-   - 這些<ViewDefinitions></ViewDefinitions>標記會定義 `ViewDefinitions` 節點。 所有的視圖都會在此節點中定義。
+   - 這些 `<ViewDefinitions></ViewDefinitions>` 標記會定義 `ViewDefinitions` 節點。 所有的視圖都會在此節點中定義。
 
-3. 將檔案儲存至 Windows PowerShell 安裝資料夾、模組資料夾或模組資料夾的子資料夾。 當您儲存檔案時，請使用下列名稱格式： `MyFile.format.ps1xml`。 格式化檔案必須使用 `.format.ps1xml` 延伸模組。
+3. 將檔案儲存至 Windows PowerShell 安裝資料夾、模組資料夾或模組資料夾的子資料夾。 當您儲存檔案時，請使用下列名稱格式： `MyFile.format.ps1xml` 。 格式化檔案必須使用 `.format.ps1xml` 延伸模組。
 
    您現在已準備好將 views 新增至格式化檔案。 可以在格式化檔案中定義的視圖數目沒有限制。 您可以為每個物件、多個相同物件的視圖，或多個物件所使用的單一視圖加入單一視圖。
 

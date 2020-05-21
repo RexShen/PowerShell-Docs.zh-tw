@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 06b1b050-0bf7-48f5-ba05-43f489d597c0
 caps.latest.revision: 10
-ms.openlocfilehash: 476fce9fc087b870bad93a9204a820c5a84df99e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f903c99300a34c0dfbed598738e96142588d69d9
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359717"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691479"
 ---
 # <a name="creating-a-management-odata-web-service"></a>建立 Management OData Web 服務
 
@@ -24,30 +24,30 @@ Management ODATA IIS 擴充功能是建立 ASP.NET web 服務端點的基礎結�
 > [!IMPORTANT]
 > 在 Windows Server 2008 R2 SP1 上啟用 Management ODATA IIS 延伸模組之前，必須先啟用下列功能。
 >
-> 1.  IIS-Iis-webserverrole
-> 2.  IIS-WebServer
-> 3.  IIS-HttpTracing
-> 4.  IIS-ManagementOData
+> 1. IIS-Iis-webserverrole
+> 2. IIS-WebServer
+> 3. IIS-HttpTracing
+> 4. IIS-ManagementOData
 
 ## <a name="steps-for-creating-a-management-odata-web-service"></a>建立 Management OData web 服務的步驟
 
 下列主題說明如何建立及部署 Management OData web 服務。
 
-- [將資源新增至 Management OData Web 服務](./adding-resources-to-a-management-odata-web-service.md)
+- [新增資源至 Management OData Web 服務](./adding-resources-to-a-management-odata-web-service.md)
 
-- [執行 Management OData web 服務的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+- [實作 Management OData Web 服務的自訂授權](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-- [執行 Management OData web 服務的 SessionConfiguration](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+- [實作 Management OData Web 服務的 SessionConfiguration](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-- [撰寫 Management OData web 服務的 MOF 架構檔案](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+- [撰寫 Management OData Web 服務的 MOF 結構描述檔案](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-- [撰寫 Management OData web 服務的 XML 架構檔案](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+- [撰寫 Management OData Web 服務的 XML 結構描述檔案](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-- [撰寫 Management OData web 服務的 web.config 檔案](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+- [撰寫 Management OData Web 服務的 Web.config 檔案](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-- [部署 Management OData web 服務](./deploying-a-management-odata-web-service.md)
+- [部署 Management OData Web 服務](./deploying-a-management-odata-web-service.md)
 
-- [建立管理 OData 實體的關聯](./associating-management-odata-entities.md)
+- [建立 Management OData 實體的關聯](./associating-management-odata-entities.md)
 
 ## <a name="see-also"></a>另請參閱
 

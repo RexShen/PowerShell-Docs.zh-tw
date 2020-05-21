@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
-ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368847"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692291"
 ---
 # <a name="defining-selection-sets"></a>定義選取範圍集合
 
-建立多個視圖和控制項時，您可以定義稱為選取集的一組物件。 選取集可讓您一次定義物件，而不需要針對每個視圖或控制項重複定義它們。 一般而言，當您有一組相關的 .NET 物件時，會使用選取範圍。 例如，`FileSystem` 格式設定檔案（types.ps1xml）會定義數個 views 使用的檔案系統類型的選取集合。
+建立多個視圖和控制項時，您可以定義稱為選取集的一組物件。 選取集可讓您一次定義物件，而不需要針對每個視圖或控制項重複定義它們。 一般而言，當您有一組相關的 .NET 物件時，會使用選取範圍。 例如，格式配置 `FileSystem` 檔案（types.ps1xml）會定義數個 views 使用的檔案系統類型的選擇集。
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>定義和參考選擇集的位置
 
@@ -35,15 +35,15 @@ ms.locfileid: "72368847"
 
 您可以透過下列方式參考選擇集：
 
-- 每個 view 都有一個 `ViewSelectedBy` 專案，可定義要使用 view 來顯示的物件。 `ViewSelectedBy` 元素具有 `SelectionSetName` 子項目，可指定所有視圖定義所使用的選取範圍。 您可以從視圖參考的選擇集數目沒有限制。
+- 每個 view 都有一個專案 `ViewSelectedBy` ，用來定義要使用 view 來顯示的物件。 `ViewSelectedBy`元素具有 `SelectionSetName` 子專案，可指定所有視圖定義所使用的選擇集。 您可以從視圖參考的選擇集數目沒有限制。
 
-- 在視圖或控制項的每個定義中，`EntrySelectedBy` 元素會使用該定義來定義要顯示的物件。 通常，視圖或控制項只有一個定義，因此物件是由 `ViewSelectedBy` 元素所定義。 定義的 `EntrySelectedBy` 元素具有指定選取範圍的 `SelectionSetName` 子項目。 如果您指定定義的選取範圍，就不能指定 `EntrySelectedBy` 元素的任何其他子項目。
+- 在視圖或控制項的每個定義中， `EntrySelectedBy` 元素會使用該定義來定義要顯示的物件。 通常，視圖或控制項只有一個定義，因此物件是由元素所定義 `ViewSelectedBy` 。 `EntrySelectedBy`定義的元素具有 `SelectionSetName` 指定選取集的子項目。 如果您指定定義的選取範圍，就不能指定元素的任何其他子項目 `EntrySelectedBy` 。
 
-- 在視圖或控制項的每個定義中，`SelectionCondition` 元素可以用來指定使用定義時的條件。 `SelectionCondition` 元素具有 `SelectionSetName` 子項目，可指定觸發條件的選取範圍。 當選取範圍中定義的任何物件顯示時，就會觸發此條件。 如需如何設定這些條件的詳細資訊，請參閱[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)。
+- 在視圖或控制項的每個定義中，專案 `SelectionCondition` 可以用來指定使用定義時的條件。 `SelectionCondition`元素具有 `SelectionSetName` 子專案，可指定觸發條件的選擇集。 當選取範圍中定義的任何物件顯示時，就會觸發此條件。 如需如何設定這些條件的詳細資訊，請參閱[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="selection-set-example"></a>選擇集範例
 
-下列範例顯示的是直接從 Windows PowerShell 所提供的 `FileSystem` 格式檔案取得的選擇集。 如需其他 Windows PowerShell 格式化檔案的詳細資訊，請參閱[Windows Powershell 格式化](./powershell-formatting-files.md)檔案。
+下列範例顯示直接從 Windows PowerShell 所提供的格式化檔案中取得的選擇集 `FileSystem` 。 如需其他 Windows PowerShell 格式化檔案的詳細資訊，請參閱[Windows Powershell 格式化](./powershell-formatting-files.md)檔案。
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ ms.locfileid: "72368847"
 </SelectionSets>
 ```
 
-在資料表視圖的 `ViewSelectedBy` 元素中，會參考先前的選取專案集。
+在資料表視圖的元素中，會參考先前的選取專案集 `ViewSelectedBy` 。
 
 ```xml
 <ViewDefinitions>
@@ -90,47 +90,47 @@ ms.locfileid: "72368847"
 
 - 下列元素會指定要在視圖的所有定義中使用的選取範圍：
 
-    - [ViewSelectedBy 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-viewselectedby-format.md)
+  - [ViewSelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-viewselectedby-format.md)
 
-    - [GroupBy 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+  - [GroupBy 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
 
 - 下列元素會指定單一 view 定義所使用的選擇集：
 
-    - [ListControl 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+  - [ListControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-    - [TableControl 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+  - [TableControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [WideControl 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
+  - [WideControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-    - [CustomControl for View 的之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
+  - [檢視之 CustomControl 的 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
 
 - 下列專案指定通用和視圖控制項定義所使用的選擇集：
 
-    - [View 之控制項的之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
+  - [檢視之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
 
-    - [設定之控制項的之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
+  - [設定之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 - 下列專案會指定當您定義要展開的物件時，所使用的選擇集：
 
-    - [EnumerableExpansion 之之 entryselectedby 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [EnumerableExpansion 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
 - 下列專案會指定選取條件所使用的選擇集。
 
-    - [設定之控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+  - [設定之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-    - [View 之控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+  - [檢視之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-    - [CustomControl for View 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+  - [檢視之 CustomControl 的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-    - [EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
 
-    - [ListEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
+  - [ListEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
 
-    - [TableControl 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
+  - [TableControl 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [WideEntry 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+  - [WideEntry 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
-    - [GroupBy 之 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
+  - [GroupBy 之 SelectionCondition 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
 
 ## <a name="see-also"></a>另請參閱
 
@@ -140,9 +140,9 @@ ms.locfileid: "72368847"
 
 [名稱](./name-element-for-selectionset-format.md)
 
-[類型](./types-element-for-selectionset-format.md)
+[型別](./types-element-for-selectionset-format.md)
 
-[PowerShell 格式化檔案](./powershell-formatting-files.md)
+[PowerShell 格式設定檔案](./powershell-formatting-files.md)
 
 [定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)
 

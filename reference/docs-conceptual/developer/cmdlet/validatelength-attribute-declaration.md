@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a1a494534169b2da470286020dfacfa8e9084839
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369177"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692317"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 屬性宣告
 
@@ -31,9 +31,9 @@ ValidateLength 屬性會指定 Cmdlet 參數引數的最小和最大字元數。
 
 #### <a name="parameters"></a>參數
 
-需要 `MinLength` （[system.object](/dotnet/api/System.Int32)）。 指定允許的最小字元數。
+`MinLength`（[必須](/dotnet/api/System.Int32)是 system.string）。 指定允許的最小字元數。
 
-需要 `MaxLength` （[system.object](/dotnet/api/System.Int32)）。 指定允許的最大字元數。
+`MaxLength`（[必須](/dotnet/api/System.Int32)是 system.string）。 指定允許的最大字元數。
 
 ## <a name="remarks"></a>備註
 
@@ -43,11 +43,11 @@ ValidateLength 屬性會指定 Cmdlet 參數引數的最小和最大字元數。
 
 - 在下列情況下，Windows PowerShell 執行時間會擲回錯誤：
 
-    - 當 `MaxLength` 屬性參數的值小於 `MinLength` 屬性參數的值時。
+  - 當屬性參數的值 `MaxLength` 小於屬性參數的值時 `MinLength` 。
 
-    - 當 `MaxLength` 屬性參數設為0時。
+  - 當 `MaxLength` 屬性參數設為0時。
 
-    - 當引數不是字串時。
+  - 當引數不是字串時。
 
 - ValidateLength 屬性是由[Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)類別所定義。
 

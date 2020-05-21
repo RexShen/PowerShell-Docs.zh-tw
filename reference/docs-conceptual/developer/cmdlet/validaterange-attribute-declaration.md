@@ -12,12 +12,12 @@ helpviewer_keywords:
 - attributes, ValidateRange
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
-ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 560fa105ac3f93ae6334df0112f5290dfa20576c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369127"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692003"
 ---
 # <a name="validaterange-attribute-declaration"></a>ValidateRange 屬性宣告
 
@@ -31,19 +31,19 @@ ValidateRange 屬性會指定 Cmdlet 參數引數的最小和最大值（範圍�
 
 #### <a name="parameters"></a>參數
 
-需要 `MinRange` （[system.object](/dotnet/api/system.object)）。 指定允許的最小值。
+`MinRange`（[系統物件](/dotnet/api/system.object)）必要。 指定允許的最小值。
 
-需要 `MaxRange` （[system.object](/dotnet/api/system.object)）。 指定允許的最大值。
+`MaxRange`（[系統物件](/dotnet/api/system.object)）必要。 指定允許的最大值。
 
 ## <a name="remarks"></a>備註
 
-- 當 `MinRange` 參數的值大於 `MaxRange` 參數的值時，Windows PowerShell 執行時間會擲回結構錯誤。
+- 當參數的值大於參數的值時，Windows PowerShell 執行時間會擲回結構錯誤 `MinRange` `MaxRange` 。
 
 - 在下列情況下，Windows PowerShell 執行時間會擲回驗證錯誤：
 
-    - 當引數的值小於 `MinRange` 限制或大於 `MaxRange` 限制時。
+  - 當引數的值小於 `MinRange` 限制或大於 `MaxRange` 限制時。
 
-    - 當引數與 `MinRange` 和 `MaxRange` 參數的類型不同時。
+  - 當引數與和參數的類型不同時 `MinRange` `MaxRange` 。
 
 - ValidateRange 屬性是由[Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)類別所定義。
 
