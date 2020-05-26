@@ -28,7 +28,7 @@ ms.locfileid: "79060293"
 
 ## <a name="filing-issues-on-github"></a>在 GitHub 上提出問題
 
-若要直接提出 GitHub 問題，您可以在 [PowerShell-Docs][new-issue] 存放庫中按一下 [[New issue]][docs-issues] \(新增問題\) 按鈕。 針對您想要建立的問題類型，按一下 [Get started]  \(開始使用\) 按鈕。 新的 GitHub 問題會使用範本預先填入。 範本會協助您提供處理您所回報問題所需的資訊。
+若要直接提出 GitHub 問題，您可以在 [PowerShell-Docs][docs-issues] 存放庫中按一下 [[New issue]][new-issue] \(新增問題\) 按鈕。 針對您想要建立的問題類型，按一下 [Get started] \(開始使用\) 按鈕。 新的 GitHub 問題會使用範本預先填入。 範本會協助您提供處理您所回報問題所需的資訊。
 
 在您提出新問題之前，請先閱讀現有的問題，以確認是否已經有人回報您的問題。 這可協助避免重複，且您的問題可能已經獲得解答。 如果您找到現有問題，您可以加入留言、相關的問題，或是解答。
 
