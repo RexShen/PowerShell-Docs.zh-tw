@@ -3,12 +3,12 @@ title: 對 PowerShell 文件做出貢獻
 description: 此文章是如何以 PowerShell 文件參與者身分開始貢獻的概觀。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 5f9efbff500b1fd0c11e9b43ca0a7feb77684c6a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402625"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560656"
 ---
 # <a name="contributing-to-powershell-documentation"></a>對 PowerShell 文件做出貢獻
 

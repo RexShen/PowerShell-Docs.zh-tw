@@ -2,16 +2,16 @@
 ms.date: 07/09/2019
 keywords: dsc,gpo,powershell,configuration,setup
 title: 快速入門 - 將群組原則轉換至 DSC
-ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: a9ce9cecd71fe00d2908024a3ee474ec836af3ba
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500648"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808243"
 ---
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
-
 # <a name="quickstart-convert-group-policy-into-dsc"></a>快速入門：將群組原則轉換至 DSC
+
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 您可以從群組原則或 Azure 資訊安全中心基準產生 DSC 設定。 [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) 模組包含下列可完成這項工作的命令。
 

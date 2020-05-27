@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 管理套件擁有者
-ms.openlocfilehash: 72a3ff72818c5461c74d46de5689e2d6c59b19bf
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564664"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71328259"
 ---
 # <a name="managing-package-owners"></a>管理套件擁有者
 
@@ -28,7 +28,7 @@ PowerShell 資源庫中套件的擁有權，是由將該套件發行到資源庫
 一旦將套件發行到 PowerShell 資源庫，就能輕易邀請其他使用者成為套件擁有者。
 
 1. 使用套件目前擁有者的帳戶[登入](https://powershellgallery.com/users/account/LogOn) \(英文\) PowerShell 資源庫。
-2. 使用 [Items] \(項目\) 索引標籤瀏覽到套件頁面，然後搜尋或按一下您的使用者名稱，並按一下 [[Manage My Packages]  ](https://www.powershellgallery.com/account/Packages) \(管理我的項目\) \(英文\)。
+2. 使用 [Items] \(項目\) 索引標籤瀏覽到套件頁面，然後搜尋或按一下您的使用者名稱，並按一下 [[Manage My Packages]](https://www.powershellgallery.com/account/Packages) \(管理我的項目\) \(英文\)。
 3. 以套件擁有者身分登入時，左側會有可按一下的 [Manage Owners] \(管理擁有者\) 連結。
 4. 輸入要新增為擁有者的人員使用者名稱，然後按一下 [新增]。
 5. 新的共同擁有者接著便會收到電子郵件，邀請他成為套件擁有者。
@@ -41,14 +41,17 @@ PowerShell 資源庫中套件的擁有權，是由將該套件發行到資源庫
 
 請注意，"Authors" 中繼資料單純為自由格式的文字，只有 "Owners" 受到控制。
 
+
 ## <a name="removing-owners"></a>移除擁有者
 
 當套件有多個擁有者，而需要移除其中一個時，程序很簡單：
 
 1. 使用套件目前擁有者的帳戶[登入](https://powershellgallery.com/users/account/LogOn) \(英文\) PowerShell 資源庫；
-2. 使用 [Packages] \(套件\) 索引標籤瀏覽到套件頁面，然後搜尋或按一下您的使用者名稱，並按一下 [[Manage My Packages]  ](https://www.powershellgallery.com/account/Packages) \(管理我的項目\) \(英文\)。
+2. 使用 [Packages] \(套件\) 索引標籤瀏覽到套件頁面，然後搜尋或按一下您的使用者名稱，並按一下 [[Manage My Packages]](https://www.powershellgallery.com/account/Packages) \(管理我的項目\) \(英文\)。
 3. 以套件擁有者身分登入時，左側會有可按一下的 [Manage Owners] \(管理擁有者\) 連結。
 4. 在要移除的擁有者旁按一下 [移除] 連結。
+
+
 
 ## <a name="transferring-package-ownership"></a>移轉套件擁有權
 
@@ -62,6 +65,7 @@ PowerShell 資源庫中套件的擁有權，是由將該套件發行到資源庫
 
 - 套件擁有權正從一個開發人員變更至另一個開發人員
 - 意外使用錯誤帳戶發行套件
+
 
 ## <a name="orphaned-packages"></a>孤立的套件
 

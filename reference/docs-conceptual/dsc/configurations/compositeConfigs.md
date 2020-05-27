@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 巢狀設定
-ms.openlocfilehash: e74c0fe1d7f7b198c2d6f796c0bf120eb0ec21d9
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564027"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "75417861"
 ---
 # <a name="nesting-dsc-configurations"></a>巢狀 DSC 設定
 
@@ -49,7 +49,7 @@ Configuration NestedFileConfig
 }
 ```
 
-在此範例中，`FileConfig` 採用兩個必要參數 **CopyFrom** 和 **CopyTo**，這兩個參數會用來作為 **資源區塊中**SourcePath**和**DestinationPath`File` 屬性的值。 `NestedConfig` 設定會將 `FileConfig` 當成資源般來呼叫。 `NestedConfig` 資源區塊中的屬性 (**CopyFrom** 和 **CopyTo**) 是 `FileConfig` 設定的參數。
+在此範例中，`FileConfig` 採用兩個必要參數 **CopyFrom** 和 **CopyTo**，這兩個參數會用來作為 `File` 資源區塊中 **SourcePath** 和 **DestinationPath** 屬性的值。 `NestedConfig` 設定會將 `FileConfig` 當成資源般來呼叫。 `NestedConfig` 資源區塊中的屬性 (**CopyFrom** 和 **CopyTo**) 是 `FileConfig` 設定的參數。
 
 DSC 目前不支援將設定內嵌在巢狀設定內。 您只能將設定內嵌一層的深度。
 

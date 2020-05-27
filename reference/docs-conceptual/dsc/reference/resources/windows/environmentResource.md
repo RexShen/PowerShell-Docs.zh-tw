@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 環境資源
-ms.openlocfilehash: 5670646b6e94019f436d85296deff4de8da920f6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560350"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71954715"
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境資源
 
@@ -34,7 +34,7 @@ Environment [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |名稱 |指出您要確保其特定狀態的環境變數名稱。 |
-|Path |定義設定中的環境變數。 如果變數是 `$true`Path**變數，請將這個屬性設定為**；否則請設定為 `$false`。 預設值為 `$false`。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。 |
+|Path |定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設定為 `$true`；否則請設定為 `$false`。 預設值為 `$false`。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。 |
 |值 |要指派給環境變數的值。 |
 
 ## <a name="common-properties"></a>通用屬性

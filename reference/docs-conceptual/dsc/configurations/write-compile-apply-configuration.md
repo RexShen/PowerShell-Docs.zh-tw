@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
-ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 11de1d4552bc9c438adf9e3dea2059834e11e10c
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76818153"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808294"
 ---
-> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
-
 # <a name="write-compile-and-apply-a-configuration"></a>撰寫、編譯及套用設定
+
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 這個練習會從頭開始完整地逐步建立並套用預期狀態設定 (DSC)。
 在下列範例中，您會了解如何撰寫及套用非常簡單的設定。 此設定會確保本機電腦上有 "HelloWorld.txt" 檔案。 如果您刪除此檔案，DSC 會在下次更新時重新建立它。
@@ -69,7 +69,7 @@ Configuration HelloWorld {
 
 DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。
 執行設定 (例如函式)，會針對 `Node` 區塊定義的每個節點編譯一個 ".mof" 檔案。
-為執行此設定，您需要「點溯源」  "HelloWorld.ps1" 指令碼到目前的範圍。
+為執行此設定，您需要「點溯源」"HelloWorld.ps1" 指令碼到目前的範圍。
 如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
 
 <!-- markdownlint-disable MD038 -->

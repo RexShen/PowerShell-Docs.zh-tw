@@ -187,9 +187,9 @@ $State="Running"
 ```
 
 > [!NOTE]
-> 當使用 `parameter` 屬性時，您不需要指定 `validation` 屬性。
+> 當使用 `validation` 屬性時，您不需要指定 `parameter` 屬性。
 
-您可以在 `parameter`about_Functions_Advanced_Parameters[ 中深入了解 ](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters) 和 validation 屬性。
+您可以在 [about_Functions_Advanced_Parameters](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters) 中深入了解 `parameter` 和 validation 屬性。
 
 ## <a name="fully-parameterized-configuration"></a>完全參數化的 Configuration
 

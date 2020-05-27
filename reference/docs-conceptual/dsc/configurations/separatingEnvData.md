@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 分離設定和環境資料
-ms.openlocfilehash: 076e17054cfa20fad5ca925df126e239a77268db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692431"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71954435"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
@@ -32,14 +32,14 @@ ms.locfileid: "83692431"
 ```powershell
 Configuration MyDscConfiguration {
 
-  Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
-  WindowsFeature IISInstall {
-    Ensure = 'Present'
-    Name   = 'Web-Server'
-  }
+        WindowsFeature IISInstall {
+            Ensure = 'Present'
+            Name   = 'Web-Server'
+        }
 
- }
+    }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
@@ -82,7 +82,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` 指定兩個不同的節點，各有其專屬的 `NodeName` 和 `Role`。 此設定會從 **取得節點集合 (亦即**)，然後針對 `$MyData` 屬性篩選該集合，藉此以動態方式建立 `$AllNodes`Node`Role` 區塊。
+`$MyData` 指定兩個不同的節點，各有其專屬的 `NodeName` 和 `Role`。 此設定會從 `$MyData` 取得節點集合 (亦即 `$AllNodes`)，然後針對 `Role` 屬性篩選該集合，藉此以動態方式建立 **Node** 區塊。
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>使用設定資料定義開發和生產環境
 
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
-            WebSiteName     = "New website"
+        WebSiteName     = "New website"
         },
 
         @{
@@ -129,7 +129,7 @@ Mode                LastWriteTime         Length Name
 
 ### <a name="configuration-script-file"></a>設定指令檔
 
-現在，在定義於 `.ps1` 檔案的設定中，我們會依其角色 (`DevProdEnvData.psd1`、`MSSQL` 或兩者) 來篩選 `Dev` 中所定義的節點，並據此加以設定。
+現在，在定義於 `.ps1` 檔案的設定中，我們會依其角色 (`MSSQL`、`Dev` 或兩者) 來篩選 `DevProdEnvData.psd1` 中所定義的節點，並據此加以設定。
 開發環境會將 SQL Server 和 IIS 放在一個節點上，而生產環境則會將這兩者放在兩個不同的節點上。
 網站內容也會依照 `SiteContents` 屬性的指定而有所不同。
 
@@ -253,12 +253,11 @@ Mode                LastWriteTime         Length Name
 
 您可以使用特殊變數 **$ConfigurationData** 來存取額外的索引鍵。
 在此範例中，會使用下列程式碼行來存取 `ConfigFileContents`：
-
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
-
  在 `File` 資源區塊中。
+
 
 ```powershell
 $MyData =
@@ -312,8 +311,8 @@ configuration WebsiteConfig
 }
 ```
 
-## <a name="see-also"></a>另請參閱
 
+## <a name="see-also"></a>另請參閱
 - [使用設定資料](configData.md)
 - [設定資料的認證選項](configDataCredentials.md)
 - [DSC 設定](configurations.md)

@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxEnvironment 資源
-ms.openlocfilehash: 64de54fbde15f9d4d7fac425af27b6ef11347dce
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560890"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71953225"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC for Linux nxEnvironment 資源
 
@@ -32,7 +32,7 @@ nxEnvironment <string> #ResourceName
 |---|---|
 |名稱 |指出您要確保其特定狀態的環境變數名稱。 |
 |值 |要指派給環境變數的值。 |
-|Path |定義設定中的環境變數。 如果變數是 `$true`Path**變數，請將這個屬性設定為**；否則請設定為 `$false`。 預設值為 `$false`。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。 |
+|Path |定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設定為 `$true`；否則請設定為 `$false`。 預設值為 `$false`。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。 |
 
 ## <a name="common-properties"></a>通用屬性
 

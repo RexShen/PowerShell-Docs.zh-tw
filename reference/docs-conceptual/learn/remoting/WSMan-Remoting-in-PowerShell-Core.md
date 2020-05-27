@@ -2,18 +2,18 @@
 title: PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 description: 使用 WSMan 在 PowerShell Core 中遠端
 ms.date: 08/06/2018
-ms.openlocfilehash: 7b090e1463808ab10758bbd417d52fcc16c31366
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564508"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "62058874"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>建立遠端端點的指示
 
-PowerShell Core for Windows 套件包含 `pwrshplugin.dll` 中的 WinRM 外掛程式 (`Install-PowerShellRemoting.ps1`) 和安裝指令碼 (`$PSHome`)。
+PowerShell Core for Windows 套件包含 `$PSHome` 中的 WinRM 外掛程式 (`pwrshplugin.dll`) 和安裝指令碼 (`Install-PowerShellRemoting.ps1`)。
 這些檔案讓 PowerShell 在指定其端點時接受連入的 PowerShell 遠端連線。
 
 ### <a name="motivation"></a>動機
@@ -67,4 +67,4 @@ New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
-請注意，未指定 `New-PSSession` 的 `Enter-PSSession` 和 `-ConfigurationName` 引動過程將會以預設 PowerShell 端點 `microsoft.powershell` 為目標。
+請注意，未指定 `-ConfigurationName` 的 `New-PSSession` 和 `Enter-PSSession` 引動過程將會以預設 PowerShell 端點 `microsoft.powershell` 為目標。
