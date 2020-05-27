@@ -2,12 +2,12 @@
 ms.date: 08/09/2018
 keywords: install, windows, linux, macOS, ARM, raspbian, 安裝
 title: 安裝 PowerShell
-ms.openlocfilehash: 22c88bfbbe4cd6b163e69ab5e599a98528caf9c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fd62d33945e0253b43b80f294964d5e9b8ba03a0
+ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78405059"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840999"
 ---
 # <a name="installing-various-versions-of-powershell"></a>安裝各種版本的 PowerShell
 
@@ -24,4 +24,4 @@ PowerShell Core 是 [GitHub](https://github.com/powershell/powershell) 上的開
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 
-如需有關在 Windows 上安裝舊版 PowerShell 的詳細資訊，請參閱[安裝 Windows PowerShell](installing-windows-powershell.md)。
+如需有關在 Windows 上安裝舊版 PowerShell 的詳細資訊，請參閱[安裝 Windows PowerShell](../windows-powershell/install/installing-windows-powershell.md)。
