@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: WinRMSecurity
-ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ec194a4cc5abba5061e43152e0cb851c22611445
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62086354"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564424"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell 遠端安全性考量
 
@@ -69,11 +69,9 @@ Kerberos 可保證使用者識別與伺服器識別，而不會傳送任何種�
 如果將 SSL 憑證部署至伺服器進行 NTLM 連線並不可行，可以隱藏所產生的身分識別錯誤，方法是將該伺服器新增至 WinRM **TrustedHosts** 清單。 請注意，將伺服器名稱新增到 TrustedHosts 清單的動作，不應視為任何形式對主機本身信賴的保證，因為 NTLM 驗證通訊協定無法保證實際上連線到的主機是想要連線的主機。
 相反地，應考慮讓 TrustedHosts 設定成為想要隱藏錯誤 (因無法驗證伺服器身分識別而產生之錯誤) 的主機清單。
 
-
 ### <a name="ongoing-communication"></a>進行中的通訊
 
 完成初始驗證之後，[PowerShell 遠端通訊協定](https://msdn.microsoft.com/library/dd357801.aspx) 會使用每個工作階段的 AES-256 對稱金鑰，加密所有進行中的通訊。
-
 
 ## <a name="making-the-second-hop"></a>進行第二次跳躍
 

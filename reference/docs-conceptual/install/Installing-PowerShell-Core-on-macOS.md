@@ -1,13 +1,13 @@
 ---
 title: 在 macOS 上安裝 PowerShell
 description: 在 macOS 上安裝 PowerShell 的相關資訊
-ms.date: 12/12/2018
-ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 05/21/2020
+ms.openlocfilehash: 32b3ebf3eb4017af41fc1a062f2f0a2e08629a58
+ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80977517"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791465"
 ---
 # <a name="installing-powershell-on-macos"></a>在 macOS 上安裝 PowerShell
 
@@ -90,13 +90,13 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>透過直接下載來安裝
 
-將 PKG 套件 `powershell-lts-7.0.0-osx-x64.pkg`
+將 PKG 套件 `powershell-lts-7.0.1-osx-x64.pkg`
 從[版本][]頁面下載到您的 macOS 電腦。
 
 您可以按兩下檔案並依照提示執行作業，或從終端機安裝：
 
 ```sh
-sudo installer -pkg powershell-lts-7.0.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-lts-7.0.1-osx-x64.pkg -target /
 ```
 
 安裝 [OpenSSL](#install-openssl)。 PowerShell 遠端執行功能與 CIM 作業需要 OpenSSL。
@@ -119,19 +119,19 @@ macOS 平台有 PowerShell 二進位 `tar.gz` 封存，以啟用進階的部署�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.0.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.0.1
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.1
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.0.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.0.1/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.0.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.0.1/pwsh /usr/local/bin/pwsh
 ```
 
 安裝 [OpenSSL](#install-openssl)。 PowerShell 遠端執行功能與 CIM 作業需要 OpenSSL。
@@ -184,7 +184,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>路徑
 
-* `$PSHOME` 是 `/usr/local/microsoft/powershell/7.0.0/`
+* `$PSHOME` 是 `/usr/local/microsoft/powershell/7.0.1/`
 * 會從 `~/.config/powershell/profile.ps1` 讀取使用者設定檔
 * 會從 `$PSHOME/profile.ps1` 讀取預設設定檔
 * 會從 `~/.local/share/powershell/Modules` 讀取使用者模組
@@ -198,7 +198,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 PowerShell 遵循 macOS 上的 [XDG 基底目錄規格][xdg-bds]。
 
 因為 macOS 是 BSD 的衍生項，所以使用的前置詞是 `/usr/local` 而非 `/opt`。
-因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/7.0.0/`，而符號連結放置在 `/usr/local/bin/pwsh`。
+因此，`$PSHOME` 是 `/usr/local/microsoft/powershell/7.0.1/`，而符號連結放置在 `/usr/local/bin/pwsh`。
 
 ## <a name="additional-resources"></a>其他資源
 

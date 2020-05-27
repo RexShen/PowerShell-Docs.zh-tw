@@ -1,12 +1,12 @@
 ---
 title: PowerShell 7 模組相容性
 ms.date: 02/03/2020
-ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935198"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565058"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7 模組相容性
 
@@ -25,7 +25,6 @@ Install-WindowsFeature -Name ActiveDirectory
 ```
 
 在 Windows 10 上，Windows 管理模組是以 [Windows 選用功能]  或 [Windows 功能]  的形式提供。 下列命令必須使用 [以系統管理員身分執行]  從提高權限的工作階段執行。
-
 
 - 針對 Windows 選用功能
 

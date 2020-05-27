@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: gallery,powershell,cmdlet,psgallery
 title: 具有相容 PowerShell 版本或作業系統的套件
-ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278343"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691442"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>具有相容 PowerShell 版本或作業系統的套件
 
@@ -17,6 +17,7 @@ ms.locfileid: "78278343"
 ## <a name="searching-by-powershell-edition"></a>透過 PowerShell 版本搜尋
 
 PowerShell 的兩個版本為：
+
 - **Desktop Edition：** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行的 PowerShell 指令碼和模組目標版本相容相容。
 - **Core Edition：** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行的 PowerShell 指令碼和模組目標版本相容。
 

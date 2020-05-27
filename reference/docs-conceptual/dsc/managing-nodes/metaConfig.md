@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 設定本機設定管理員
-ms.openlocfilehash: 5847a29efd165724ffe9f1f0e89cfaf358ade31c
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271843"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692001"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>設定本機設定管理員
 
@@ -125,6 +125,7 @@ LCM 設定支援定義下列提取服務端點類型：
 |ProxyCredential*|pscredential|要用於 HTTP Proxy 的認證。|
 
 > [!NOTE]
+>
 > * Windows 1809 版與更新版本中支援。
 
 如需能簡化針對內部部署節點設定 ConfigurationRepositoryWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -152,6 +153,7 @@ LCM 設定支援定義下列提取服務端點類型：
 |ProxyCredential*|pscredential|要用於 HTTP Proxy 的認證。|
 
 > [!NOTE]
+>
 > * Windows 1809 版與更新版本中支援。
 
 如需能簡化針對內部部署節點設定 ResourceRepositoryWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)
@@ -180,6 +182,7 @@ LCM 設定支援定義下列提取服務端點類型：
 |ProxyCredential*|pscredential|要用於 HTTP Proxy 的認證。|
 
 > [!NOTE]
+>
 > * Windows 1809 版與更新版本中支援。
 
 如需能簡化針對內部部署節點設定 ReportServerWeb 值的範例指令碼，請參閱[產生 DSC 中繼設定](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)

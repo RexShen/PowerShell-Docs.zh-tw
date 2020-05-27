@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 分離設定和環境資料
-ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 076e17054cfa20fad5ca925df126e239a77268db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954435"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692431"
 ---
 # <a name="separating-configuration-and-environment-data"></a>分離設定和環境資料
 
@@ -32,14 +32,14 @@ ms.locfileid: "71954435"
 ```powershell
 Configuration MyDscConfiguration {
 
-    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+  Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
-        WindowsFeature IISInstall {
-            Ensure = 'Present'
-            Name   = 'Web-Server'
-        }
+  WindowsFeature IISInstall {
+    Ensure = 'Present'
+    Name   = 'Web-Server'
+  }
 
-    }
+ }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
-        WebSiteName     = "New website"
+            WebSiteName     = "New website"
         },
 
         @{
@@ -253,11 +253,12 @@ Mode                LastWriteTime         Length Name
 
 您可以使用特殊變數 **$ConfigurationData** 來存取額外的索引鍵。
 在此範例中，會使用下列程式碼行來存取 `ConfigFileContents`：
+
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- 在 `File` 資源區塊中。
 
+ 在 `File` 資源區塊中。
 
 ```powershell
 $MyData =
@@ -311,8 +312,8 @@ configuration WebsiteConfig
 }
 ```
 
-
 ## <a name="see-also"></a>另請參閱
+
 - [使用設定資料](configData.md)
 - [設定資料的認證選項](configDataCredentials.md)
 - [DSC 設定](configurations.md)

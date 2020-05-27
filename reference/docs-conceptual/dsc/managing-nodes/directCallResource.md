@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 直接呼叫 DSC 資源方法
-ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9955de4f284c182a724b004c17080a8b8e19808d
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954385"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692409"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>直接呼叫 DSC 資源方法
 
@@ -26,8 +26,8 @@ ms.locfileid: "71954385"
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
-                            DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
-                            Contents = 'This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath = "$env:SystemDrive\\DirectAccess.txt";
+              Contents = 'This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -35,8 +35,8 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
-                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-                            Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result | fl
 ```
 
@@ -44,14 +44,15 @@ $result | fl
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
-                            DestinationPath="$env:SystemDrive\\DirectAccess.txt";
-                            Contents='This file is create by Invoke-DscResource'} -Verbose
+              DestinationPath="$env:SystemDrive\\DirectAccess.txt";
+              Contents='This file is create by Invoke-DscResource'} -Verbose
 $result.ItemValue | fl
 ```
 
 >**注意︰** 不支援直接呼叫複合資源方法。 請改為呼叫組成複合資源之基礎資源的方法。
 
 ## <a name="see-also"></a>另請參閱
+
 - [撰寫自訂的 DSC 資源與 MOF](../resources/authoringResourceMOF.md)
 - [使用 PowerShell 類別撰寫自訂的 DSC 資源](../resources/authoringResourceClass.md)
 - [對 DSC 資源執行偵錯](../troubleshooting/debugResource.md)

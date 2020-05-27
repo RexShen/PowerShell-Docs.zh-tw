@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 [資源設計工具] 工具
-ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9e7488e922bdca70bb152e7e976077e43cfad7af
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500637"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692192"
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
@@ -19,6 +19,7 @@ ms.locfileid: "80500637"
 首先決定資源要公開的屬性。 本例中，我們會定義具有下列屬性的 Active Directory 使用者。
 
 參數名稱描述
+
 * **UserName**：唯一識別使用者的索引鍵屬性。
 * **Ensure**：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
 * **DomainCredential**：使用者的網域密碼。

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 偵錯 DSC 資源
-ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954255"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691965"
 ---
 # <a name="debugging-dsc-resources"></a>偵錯 DSC 資源
 
@@ -22,7 +22,6 @@ ms.locfileid: "71954255"
 您可以查看呼叫 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) 的結果，確認是否已啟用偵錯。
 
 下列 PowerShell 輸出會顯示啟用偵錯的結果：
-
 
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
@@ -40,7 +39,6 @@ ResourceScriptBreakAll
 
 PS C:\DebugTest>
 ```
-
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>啟動啟用偵錯的設定
 若要偵錯 DSC 資源，您要啟動設定呼叫該資源。
@@ -61,6 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
+
 編譯設定之後，再呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 加以啟動。
 設定停止的時機為本機設定管理員 (LCM) 叫入設定的第一個資源。
 如果使用 `-Verbose` 和 `-Wait` 參數，輸出會顯示您需要輸入的程式行以開始偵錯。
@@ -85,6 +84,7 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
+
 此時，LCM 已呼叫資源且來到第一個中斷點。
 輸出中的最後三行會示範如何附加至處理程序，並開始偵錯資源指令碼。
 

@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫帳戶設定
-ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278059"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560452"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 資源庫帳戶設定
 
@@ -65,7 +65,6 @@ PowerShell 資源庫提供下列通知選項：
    ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. 輸入新帳戶的密碼。 輸入密碼之後，您會回到 [帳戶設定] 頁面，其中顯示登入帳戶已更新。
-
 
 ## <a name="enable-two-factor-authentication-2fa"></a>啟用雙因素驗證 (2FA)
 

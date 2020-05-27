@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
-ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417054"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560418"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -45,7 +45,6 @@ ms.locfileid: "74417054"
 | **Project Site** (專案網站) | 模組的專案網站是在模組資訊清單中的 Privatedata\PSData 區段以 ProjectURI 提供。 在指令碼資訊清單中，是透過指定 .PROJECTURI 來控制。 | 是 | 是 |
 | **授權** | 模組的授權連結是在模組資訊清單中的 Privatedata\PSData 區段以 LicenseURI 提供。 在指令碼資訊清單中，是透過指定 .LICENSEURI 來控制。 請務必注意，如果授權不是透過 LicenseURI 提供，或在模組中提供，則該套件的使用規定是由 PowerShell 資源庫使用規定來指定。 如需詳細資訊，請參閱使用規定。 | 是 | 是 |
 | **圖示** | 您可以在指令碼資訊清單或模組資訊清單的 Privatedata-PSData 區段中提供 IconURI 旗標，為 PowerShell 資源庫中的任何套件指定圖示。 IconURI 應該指向具有透明背景的 32x32 影像。 URI **必須**是直接影像 URL，**不得**連至包含該影像的網頁，或 PowerShell 資源庫套件中的檔案。 | 是 | 是 |
-
 
 ## <a name="editing-package-details"></a>編輯套件詳細資料
 

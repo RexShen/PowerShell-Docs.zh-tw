@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 篩選搜尋結果
-ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328039"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691474"
 ---
 # <a name="filtering-search-results"></a>篩選搜尋結果
 
@@ -20,12 +20,14 @@ ms.locfileid: "71328039"
 ## <a name="filter-by"></a>篩選依據
 
 [Filter By] \(篩選依據\) 之下的下拉式清單可讓使用者依據下列條件來篩選結果：
+
 - Include Prerelease (包括發行前版本)
 - Stable Only (僅限穩定)
 
 如需「發行前版本」與「穩定版本」的相關資訊，請參閱 PowerShell 小組部落格中的 [PowerShellGet 與 PowerShell 資源庫新增了發行前版本的版本設定](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) \(英文\)。
 
 下拉式清單之下的核取方塊可讓使用者依據下列條件來篩選結果：
+
 - 套件類型
   - 模組
   - 指令碼
@@ -49,6 +51,7 @@ ms.locfileid: "71328039"
 ## <a name="sort-by"></a>排序依據
 
 [Sort By] \(排序依據\) 下拉式清單可讓使用者依據下列條件來排序結果︰
+
 - [Popularity] \(熱門程度\)：熱門程度取決於下載計數
 - A-Z：依字母順序排序套件名稱
 - 最近：依發行日期順序顯示套件

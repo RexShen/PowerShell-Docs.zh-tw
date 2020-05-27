@@ -2,12 +2,12 @@
 title: PowerShell Docs 的新功能
 description: 列出 PowerShell 文件的變更
 ms.date: 04/29/2020
-ms.openlocfilehash: a3b99c4d98362f2509ca9974d32c1a4d4780b664
-ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+ms.openlocfilehash: 6f1e6bbc04efa13287154be45eceaab204fbdd7c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630904"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692519"
 ---
 # <a name="community-contributor-hall-of-fame"></a>社群參與者名人堂
 
@@ -15,7 +15,7 @@ PowerShell 社群是個活躍且樂於共同作業的群組。 我們很感謝�
 
 截至 2020 年 4 月，下列 GitHub 使用者是頂尖社群參與者的記錄保持者。
 
-### <a name="pull-requests-opened"></a>建立的提取要求
+## <a name="pull-requests-opened"></a>建立的提取要求
 
 提取要求可協助我們修正問題，並使文件更適合所有人閱讀。
 
@@ -40,7 +40,7 @@ PowerShell 社群是個活躍且樂於共同作業的群組。 我們很感謝�
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 | KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 
-### <a name="github-issues-opened"></a>建立的 GitHub 問題
+## <a name="github-issues-opened"></a>建立的 GitHub 問題
 
 GitHub 問題可協助我們找出文件中的錯誤與缺口。
 

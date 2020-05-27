@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 設定 DSC 提取用戶端
-ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7c68f4c59170c672e7573de7e7e595a60a81c966
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71955165"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561098"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>設定 DSC 提取用戶端
 

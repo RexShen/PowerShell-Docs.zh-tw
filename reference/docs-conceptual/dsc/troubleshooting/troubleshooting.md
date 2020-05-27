@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402405"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692302"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
@@ -36,6 +36,7 @@ Get-DscConfigurationStatus [-CimSession <CimSession[]>]
                            [-AsJob]
                            [<CommonParameters>]
 ```
+
 下列的參數集傳回所有先前設定執行時的狀態資訊︰
 
 ```

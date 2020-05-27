@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 將套件移出清單
-ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4291b910dcea65b2ca241e55838ea00d4ec53ee4
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978265"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692358"
 ---
 # <a name="unlisting-packages"></a>將套件移出清單
 
@@ -32,6 +32,7 @@ PowerShell 資源庫不支援使用者永久刪除套件。
 
 如果您遇到必須刪除套件的情況，請連絡 PowerShell 資源庫系統管理員。
 合理的刪除案例為：
+
 - 侵害著作權的問題。
 - 套件包含可能有害的內容。
 - 套件包含敏感性資料。

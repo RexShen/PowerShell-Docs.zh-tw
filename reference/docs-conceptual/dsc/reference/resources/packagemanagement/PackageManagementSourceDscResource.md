@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC PackageManagementSource 資源
-ms.openlocfilehash: 20b7851e44751d4bd0add718d2f7294d5215ab70
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a4219f3c4ad7e547025a2b9cde442c7b69eeac4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954785"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557136"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC PackageManagementSource 資源
 

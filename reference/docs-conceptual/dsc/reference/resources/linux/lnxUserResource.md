@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC for Linux nxUser 資源
-ms.openlocfilehash: 6d7b52809741813af7fa80b1c6372b267aff4777
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cf8080fbfa58e082ed007d42d6aa2648d1cf58a
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954795"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557170"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>DSC for Linux nxUser 資源
 

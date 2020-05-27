@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 群組資源
-ms.openlocfilehash: 695a914683c6daff44dd2a6c94b6353acf881030
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b71e66e09b0af0faf252ce85f8f8746d8489b4ff
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954655"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559857"
 ---
 # <a name="dsc-group-resource"></a>DSC 群組資源
 

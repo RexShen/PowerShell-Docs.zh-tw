@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: b2469984086a827b6b2a0fe84d1f326fc214ec28
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500689"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692264"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -86,6 +86,7 @@ Install-Module xPSDesiredStateConfiguration
 `C:\Program Files\Windows PowerShell\Modules`
 
 規劃工作
+
 - 您可以存取 Windows Server 2012 R2 的安裝檔案嗎？
 - 部署環境可否存取網際網路，從線上組件庫下載 WMF 和模組？
 - 安裝作業系統之後，您要如何安裝最新的安全性更新？
@@ -102,6 +103,7 @@ Install-Module xPSDesiredStateConfiguration
 - 網路：Gigabit 乙太網路介面卡
 
 規劃工作
+
 - 您要部署在實體硬體或虛擬平台？
 - 目標環境要求新伺服器的程序為何？
 - 伺服器變成可用的平均迴轉時間為何？
@@ -121,14 +123,15 @@ DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。 其他名稱記錄�
 在選擇 DNS 記錄名稱時，請牢記解決方案架構。
 如果使用負載平衡，則用來保護 HTTPS 流量的憑證就需要與 DNS 記錄共用相同的名稱。
 
-       狀況        |                                                                                         最佳做法
-:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-測試環境       | 可能的話，請重新產生規劃的生產環境。 伺服器主機名稱適用於簡單的設定。 若無 DNS 可用，主機名稱可使用 IP 位址。
-單一節點部署 | 建立指向伺服器主機名稱的 DNS CNAME 記錄。
+|       狀況        |                                                                                         最佳做法
+|:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+|測試環境       | 可能的話，請重新產生規劃的生產環境。 伺服器主機名稱適用於簡單的設定。 若無 DNS 可用，主機名稱可使用 IP 位址。
+|單一節點部署 | 建立指向伺服器主機名稱的 DNS CNAME 記錄。
 
 如需詳細資訊，請參閱[在 Windows Server 中設定 DNS 循環配置資源](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10))。
 
 規劃工作
+
 - 您知道若要建立與變更 DNS 記錄要連絡誰嗎？
 - DNS 記錄要求的平均迴轉時間為何？
 - 您需要要求伺服器的靜態主機名稱 (A) 記錄嗎？
@@ -143,6 +146,7 @@ DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。 其他名稱記錄�
 保護提取伺服器 HTTPS 流量的憑證需求，和保護任何其他 HTTPS 網站的沒有不同。 Windows Server 憑證服務的 **Web 伺服器**範本符合所需功能。
 
 規劃工作
+
 - 如果憑證要求未自動化，您要連絡誰要求憑證？
 - 要求的平均迴轉時間為何？
 - 如何傳送憑證檔案給您？
@@ -159,6 +163,7 @@ DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。 其他名稱記錄�
 與 Web 服務互動的用戶端提出以單一回應傳回資訊的要求。 不需要任何循序要求，因此負載平衡平台沒必要確保隨時在單一伺服器上維護工作階段。
 
 規劃工作
+
 - 跨伺服器的負載平衡流量會使用哪些解決方案？
 - 如果使用硬體負載平衡器，誰會接受將新的設定新增至裝置的要求？
 - 設定新負載平衡 Web 服務要求的平均迴轉時間為何？
@@ -187,6 +192,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 規劃工作
+
 - 您是否要規劃案例是驗證關鍵的測試或實驗室環境呢？
 - 是否有可公開取得的模組，包含涵蓋所需一切的資源，還是您需要自行撰寫資源？
 - 您的環境能否存取網際網路以擷取公用模組？
@@ -210,6 +216,7 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
   GUID 應該視為機密資訊，因為它可用來進行惡意攻擊，取得您環境如何部署與設定伺服器的情報。 如需詳細資訊，請參閱 [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (在 PowerShell Desired State Configuration 提取模式中安全地配置 GUID)。
 
 規劃工作
+
 - 誰會負責將就緒的設定複製到提取伺服器資料夾？
 - 如果是應用程式小組撰寫設定，設定的交付程序為何？
 - 您會利用存放庫，跨小組儲存撰寫中的設定嗎？
