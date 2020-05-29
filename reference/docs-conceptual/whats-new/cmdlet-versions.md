@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell, core
 title: 模組與 Cmdlet 的發行歷程記錄
-ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
+ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082725"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83751334"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>模組與 Cmdlet 的發行歷程記錄
 
@@ -77,7 +77,6 @@ ms.locfileid: "80082725"
 | Get-IseSnippet    | &check; |      |       |       | 僅限 Windows |
 | Import-IseSnippet | &check; |      |       |       | 僅限 Windows |
 | New-IseSnippet    | &check; |      |       |       | 僅限 Windows |
-
 
 ### <a name="microsoftpowershellarchive"></a>Microsoft.PowerShell.Archive
 
@@ -260,7 +259,7 @@ ms.locfileid: "80082725"
 | Rename-ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | 僅限 Windows                     |
 | Resolve-Path                  | &check; | &check; | &check; | &check; |                                  |
-| Restart-Computer              | &check; | &check; | &check; | &check; |                                  |
+| Restart-Computer              | &check; | &check; | &check; | &check; | 在 7.1 中新增 Linux/macOS 支援 |
 | Restart-Service               | &check; | &check; | &check; | &check; | 僅限 Windows                     |
 | Restore-Computer              | &check; |         |         |         | 僅限 Windows                     |
 | Resume-Service                | &check; | &check; | &check; | &check; | 僅限 Windows                     |
@@ -278,7 +277,7 @@ ms.locfileid: "80082725"
 | Start-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | 僅限 Windows                     |
 | Start-Transaction             | &check; |         |         |         | 僅限 Windows                     |
-| Stop-Computer                 | &check; | &check; | &check; | &check; | 已在 7.0 中加入Linux/macOS 支援 |
+| Stop-Computer                 | &check; | &check; | &check; | &check; | 在 7.1 中新增 Linux/macOS 支援 |
 | Stop-Process                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | 僅限 Windows                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | 僅限 Windows                     |

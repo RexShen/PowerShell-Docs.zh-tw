@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC Script 資源
-ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 50d4667396c8c619079288ec51599152ed2d6cd5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953065"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557017"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 資源
 
@@ -73,7 +73,7 @@ DSC 不會使用 **GetScript** 的輸出。 [Get-DscConfiguration](/powershell/m
 
 ## <a name="examples"></a>範例
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>範例 1：使用 Script 資源撰寫範例文字
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>範例 1：使用指令碼資源撰寫範例文字
 
 此範例會在每個節點上測試 `C:\TempFolder\TestFile.txt` 是否存在。 如果不存在，就會使用 `SetScript` 建立它。 `GetScript` 會傳回檔案的內容，而且不會使用它的傳回值。
 
@@ -98,10 +98,10 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>範例 2︰使用 Script 資源比較版本資訊
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>範例 2：使用指令碼資源比較版本資訊
 
-此範例會從撰寫電腦上的文字檔擷取「符合規範」  的版本資訊，並將它儲存在 `$version` 變數中。 產生節點的 MOF 檔案時，DSC 會使用 `$using:version` 變數的值，來取代每個指令碼區塊中的 `$version` 變數。
-執行期間，「符合規範」  的版本會儲存在每個節點的文字檔中，並與後續執行進行比較及更新。
+此範例會從撰寫電腦上的文字檔擷取「符合規範」的版本資訊，並將它儲存在 `$version` 變數中。 產生節點的 MOF 檔案時，DSC 會使用 `$version` 變數的值，來取代每個指令碼區塊中的 `$using:version` 變數。
+執行期間，「符合規範」的版本會儲存在每個節點的文字檔中，並與後續執行進行比較及更新。
 
 ```powershell
 $version = Get-Content 'version.txt'
@@ -136,4 +136,63 @@ Configuration ScriptTest
         }
     }
 }
+```
+
+### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>範例 3：利用指令碼資源中的參數
+
+此範例使用 `using` 範圍，存取指令碼資源中的參數。 請注意，您可以使用類似方式存取 **ConfigurationData**。 一如範例 2，版本會儲存在目標節點的本機檔案中。 然而，因為本機檔案路徑與版本均可設定，所以會將程式碼與設定資料分離。
+
+```powershell
+Configuration ScriptTest
+{
+    param
+    (
+        [Version]
+        $Version,
+
+        [string]
+        $FilePath
+    )
+
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+
+    Node localhost
+    {
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content -Path $using:FilePath
+                return @{ 'Result' = "$currentVersion" }
+            }
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:Version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                Set-Content -Path $using:FilePath -Value $using:Version
+            }
+        }
+    }
+}
+```
+
+產生的 MOF 檔案包含透過 `using` 範圍存取的變數及其值。
+這些檔案會插入每個使用變數的 ScriptBlock。 因簡要考量，已移除 Test 與 Set 指令碼：
+
+```Output
+instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
+{
+ GetScript = "$FilePath ='C:\\Config.ini'\n\n $currentVersion = Get-Content -Path $FilePath\n return @{ 'Result' = \"$currentVersion\" }\n";
+ TestScript = ...;
+ SetScript = ...;
+};
 ```

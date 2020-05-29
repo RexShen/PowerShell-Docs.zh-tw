@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952825"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692224"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -500,7 +500,7 @@ class FileResource {
 
 一個模組可定義以多個類別為基礎的 DSC 資源。 您可以透過下列方式建立資料夾結構：
 
-1. 在 "<ModuleName>.psm1" 檔案中定義第一個資源，然後在 **DSCResources** 資料夾下方定義後續資源。
+1. 在 `<ModuleName>.psm1` 檔案中定義第一個資源，然後在 **DSCResources** 資料夾下方定義後續資源。
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)

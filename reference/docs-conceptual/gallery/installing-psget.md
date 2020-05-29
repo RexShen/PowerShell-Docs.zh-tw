@@ -3,12 +3,12 @@ ms.date: 09/19/2019
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 安裝 PowerShellGet
-ms.openlocfilehash: 69dc851c54089b47fb19e5b32990d579d26effb9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f42eb0df101eb63a5dc267196fa9f666747b8e35
+ms.sourcegitcommit: 23ea4a36ee85f923684657de5313a5adf0b6b094
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328199"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83727790"
 ---
 # <a name="installing-powershellget"></a>安裝 PowerShellGet
 
@@ -48,7 +48,12 @@ Exit
 
 這些指示適用於已安裝 **PackageManagement Preview** 的電腦，或未安裝任何版本 **PowerShellGet** 的電腦。
 
-`Save-Module` Cmdlet 用於這兩組指令。 `Save-Module` 從已註冊的存放庫下載並儲存模組和任何相依性。 最新版本模組會儲存至本機電腦上的指定路徑，但不會安裝。 如需詳細資訊，請參閱 [Save-Module](/powershell/module/PowershellGet/Save-Module)。
+`Save-Module` Cmdlet 用於這兩組指令。 `Save-Module` 從已註冊的存放庫下載並儲存模組和任何相依性。 最新版本模組會儲存至本機電腦上的指定路徑，但不會安裝。 若要將模組安裝在 PowerShell 3.0 或 4.0 中，請將該模組的預存資料夾複製到 `$env:ProgramFiles\WindowsPowerShell\Modules`。
+
+如需詳細資訊，請參閱 [Save-Module](/powershell/module/PowershellGet/Save-Module)。
+
+> [!NOTE]
+> PowerShell 3.0 與 PowerShell 4.0 僅支援一個模組版本。 自 PowerShell 5.0 起，模組會安裝在 `<modulename>\<version>` 中。 這可讓您並存安裝多個版本。 使用 `Save-Module` 下載模組之後，必須將 `<modulename>\<version>` 中的檔案，複製到目的地電腦的 `<modulename>` 資料夾。
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>已安裝 PackageManagement Preview 的電腦
 
@@ -63,8 +68,8 @@ Exit
 1. 使用已提升的權限重新開啟 PowerShell 主控台，然後執行下列命令。
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
+   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
    ```
 
 #### <a name="computers-without-powershellget"></a>不具有 PowerShellGet 的電腦

@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: 資源庫,powershell,cmdlet,psget
 title: 啟動載入 NuGet
-ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 139b2c5a9e742eca8f5ac36c9acd721216584335
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935171"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690876"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet 提供者與 NuGet.exe 的啟動程序
 
-NuGet.exe 不包含在最新的 NuGet 提供者中。 若要執行模組或指令碼的發行作業，PowerShellGet 需要二進位可執行檔 **NuGet.exe**。 所有其他作業 (包括「尋找」  、「安裝」  、「儲存」  及「解除安裝」  ) 則只需要 NuGet 提供者。
+NuGet.exe 不包含在最新的 NuGet 提供者中。 若要執行模組或指令碼的發行作業，PowerShellGet 需要二進位可執行檔 **NuGet.exe**。 所有其他作業 (包括「尋找」、「安裝」、「儲存」及「解除安裝」) 則只需要 NuGet 提供者。
 PowerShellGet 包含可處理 NuGet 提供者與 NuGet.exe 之組合啟動載入或僅 NuGet 提供者之啟動載入的邏輯。 在上述任一情況下，都應該只會顯示單一提示訊息。 如果電腦未連線至網際網路，使用者或管理員就必須將受信任之 NuGet 提供者和/或 NuGet.exe 檔案的執行個體複製到未連線的電腦。
 
 > [!NOTE]
@@ -146,7 +146,7 @@ Import-PackageProvider -Name NuGet
 
 其中一個選項是啟動載入已連線至網際網路的電腦，然後使用受信任的程序將檔案複製到離線電腦。 啟動載入已連線至網際網路的電腦之後，NuGet.exe 二進位檔將會位於下列兩個資料夾其中之一：
 
- - 如果使用已提升的權限 (以系統管理員身分) 來執行 `Publish-Module` 或 `Publish-Script` Cmdlet：
+- 若使用提升的權限 (以系統管理員身分) 執行 `Publish-Module` 或 `Publish-Script` Cmdlet：
 
    ```powershell
    $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
@@ -158,7 +158,7 @@ Import-PackageProvider -Name NuGet
   $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```
 
-第二個選項是從 NuGet.Org 網站下載 NuGet.exe：[https://dist.nuget.org/index.html](https://www.nuget.org/downloads)。為生產環境電腦選取 NugGet 版本時，請確定版本會比 2.8.5.208 還新，並認明該版本已標示為「建議使用」。 如果該檔案是透過瀏覽器下載的，請記得將檔案解除鎖定。 您可以使用 `Unblock-File` Cmdlet 來執行此操作。
+第二個選項是從 NuGet.Org 網站下載 NuGet.exe：[https://dist.nuget.org/index.html](https://www.nuget.org/downloads) 為生產環境電腦選取 NugGet 版本時，請確定該版本比 2.8.5.208 還新，並確認已將該版本標示為「建議使用」。 如果該檔案是透過瀏覽器下載的，請記得將檔案解除鎖定。 您可以使用 `Unblock-File` Cmdlet 來執行此操作。
 
 不論使用哪一個選項，都可將 NuGet.exe 檔案複製到 `$env:path` 中的任何位置，但標準位置是：
 

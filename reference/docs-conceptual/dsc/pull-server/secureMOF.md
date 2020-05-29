@@ -2,12 +2,12 @@
 ms.date: 10/31/2017
 keywords: dsc,powershell,設定,安裝
 title: 保護 MOF 檔案
-ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278457"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83556382"
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -40,14 +40,14 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 ## <a name="certificate-requirements"></a>憑證需求
 
-若要制定認證加密，用來撰寫 DSC 設定之電腦所_信任_的**目標節點**上必須有公開金鑰憑證可用。 此公開金鑰憑證具有可讓其用於 DSC 認證加密的特定需求︰
+若要制定認證加密，用來撰寫 DSC 設定之電腦所**信任**的_目標節點_上必須有公開金鑰憑證可用。 此公開金鑰憑證具有可讓其用於 DSC 認證加密的特定需求︰
 
 1. **金鑰使用方法**：
    - 必須包含：'KeyEncipherment' 和 'DataEncipherment'。
-   - _不能_包含：「數位簽章」。
+   - 「不得」包含：「數位簽章」。
 2. **增強金鑰使用方法**：
-   - 必須包含︰文件加密 (1.3.6.1.4.1.311.80.1)。
-   - _不能_包含：用戶端驗證 (1.3.6.1.5.5.7.3.2) 和伺服器驗證 (1.3.6.1.5.5.7.3.1)。
+   - 必須包含：文件加密 (1.3.6.1.4.1.311.80.1)。
+   - 「不得」包含：用戶端驗證 (1.3.6.1.5.5.7.3.2) 與伺服器驗證 (1.3.6.1.5.5.7.3.1)。
 3. *Target Node_ 上有憑證的私密金鑰可用。
 4. 憑證的**提供者**必須是「Microsoft RSA SChannel 密碼編譯提供者」。
 
@@ -75,7 +75,7 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>在目標節點上︰ 建立及匯出憑證
 
-> 目標節點︰Windows Server 2016 與 Windows 10
+> 目標節點：Windows Server 2016 與 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -86,7 +86,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 匯出之後，必須將 `DscPublicKey.cer` 複製到**撰寫節點**。
 
-> 目標節點︰Windows Server 2012 R2/Windows 8.1 及更早的版本
+> 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
 > 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。 替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
 
@@ -135,7 +135,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>在撰寫節點上：建立及匯出憑證
 
-> 目標節點︰Windows Server 2016 與 Windows 10
+> 目標節點：Windows Server 2016 與 Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -151,7 +151,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 匯出之後，必須將 `DscPrivateKey.pfx` 複製到**目標節點**。
 
-> 目標節點︰Windows Server 2012 R2/Windows 8.1 及更早的版本
+> 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 > [!WARNING]
 > 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。 替代方法是[從 Microsoft 指令碼中心下載 New-SelfSignedCertificateEx.ps1 指令碼](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)，並改用它來建立憑證︰
 
@@ -303,8 +303,8 @@ configuration CredentialEncryptionExample
 
 此時，您可以執行設定，這樣會輸出兩個檔案：
 
-- *.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密憑證。
-  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 會套用 *.meta.mof 檔案。
+- \*.meta.mof 檔案，使用儲存在本機電腦存放區以指紋識別的憑證，設定本機設定管理員來解密認證。
+  [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/library/dn521621.aspx) 會套用 \*.meta.mof 檔案。
 - 實際套用設定的 MOF 檔案。 Start-DscConfiguration 會套用設定。
 
 這些命令會完成這些步驟：

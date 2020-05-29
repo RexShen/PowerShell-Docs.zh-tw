@@ -1,73 +1,156 @@
 ---
-ms.date: 08/27/2018
+ms.date: 05/22/2020
 keywords: powershell,cmdlet
-title: PowerShell 指令碼
-ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: 什麼是 PowerShell？
+ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
+ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058483"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83868474"
 ---
-# <a name="powershell"></a>PowerShell
+# <a name="what-is-powershell"></a>什麼是 PowerShell？
 
-PowerShell 是工作型命令列殼層與指令碼語言，並建置在 .NET 之上。
-PowerShell 可協助系統管理員與進階使用者快速地將管理作業系統 (Linux、macOS 與 Windows) 與處理序的工作自動化。
+PowerShell 是跨平台的工作自動化及設定管理架構，由命令列殼層與指令碼語言組成。 不同於大部分的殼層可接受及傳回文字，PowerShell 以 .NET Common Language Runtime (CLR) 為建置基礎，並接受及傳回 .NET 物件。 這種從根本上的變更，打造了全新的自動化工具與方法。
 
-PowerShell 命令可讓您從命令列管理電腦。 PowerShell 提供者可讓您如同存取檔案系統般輕易地存取資料存放區 (例如登錄與憑證存放區)。 PowerShell 包含豐富的運算式剖析器與完整開發的指令碼語言。
+<!-- removing images until we can get replacements
+:::row:::
+   :::column span="":::
+      Windows
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
+   :::column-end:::
+   :::column span="":::
+      Linux
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
+   :::column-end:::
+   :::column span="":::
+      macOS
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
+   :::column-end:::
+:::row-end:::
+-->
 
-## <a name="powershell-is-open-source"></a>PowerShell 是開放原始碼
+## <a name="output-is-object-based"></a>輸出是以物件為基礎的
 
-PowerShell 基本原始程式碼現在可在 GitHub 中取得並開放進行社群參與。
-請參閱 [GitHub 上的 PowerShell 原始碼](https://github.com/powershell/powershell)。
+不同於傳統的命令列介面，PowerShell Cmdlet 是設計來處理物件。
+物件是結構化的資訊，而不僅僅是出現在畫面上的字元字串。 命令輸出一律會攜帶您在需要時可以使用的額外資訊。
 
-您可以在[取得 PowerShell](https://github.com/PowerShell/PowerShell#get-powershell) 中，找到入門所需的事項。
-或者，從[開始使用](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell) \(英文\) 的快速入門開始。
+如果您過去曾使用文字處理工具來處理資料，將會發現它們的行為與在 PowerShell 中使用時不同。 在大部分情況下，您不需要使用文字處理工具來擷取特定資訊。 您可以使用標準的 PowerShell 物件語法，直接存取部分資料。
 
-## <a name="powershell-design-goals"></a>PowerShell 設計目標
+## <a name="the-command-family-is-extensible"></a>命令系列可進行擴充
 
-PowerShell 消除了長久以來的問題並加入新功能，藉以改善命令列和指令碼環境。
+`cmd.exe` 之類的介面無法讓您直接擴充內建的命令集。 您可以建立外部命令列工具在 `cmd.exe` 中執行。 但這些外部工具不會提供任何服務，例如說明整合。 `cmd.exe` 自己不會知道這些外部工具是有效的命令。
 
-### <a name="discoverability"></a>可搜尋性
+PowerShell 中的命令稱為 _Cmdlet_。 您可以個別使用每個 Cmdlet，但合併使用來執行複雜的工作時，更見其功效。 如同許多殼層，PowerShell 可讓您存取電腦上的檔案系統。 PowerShell「提供者」可讓您像存取檔案系統般容易地存取其他資料存放區 (如登錄及憑證存放區)。
 
-PowerShell 可讓您輕鬆搜尋它的功能。 例如，若要尋找可檢視和變更 Windows 服務的 Cmdlet 清單，請輸入：
+您可以使用經過編譯的程式碼或指令碼，建立自己的 Cmdlet 與函式模組。 模組可將 Cmdlet 與提供者新增到殼層。 PowerShell 也支援類似於 UNIX 殼層指令碼及 `cmd.exe` 批次檔案的指令碼。
+
+## <a name="support-for-command-aliases"></a>支援命令別名
+
+PowerShell 支援別名，以使用替代名稱來參考命令。 別名讓具有其他殼層使用體驗的使用者能夠使用他們已經知道的常見命令名稱，在 PowerShell 中執行類似作業。
+
+別名會將新名稱與另一個命令產生關聯。 例如，PowerShell 具有會清除輸出視窗的內部函式 `Clear-Host`。 您可以在命令提示字元中輸入 `cls` 或 `clear` 別名。 PowerShell 會解譯這些別名並執行 `Clear-Host` 函式。
+
+此功能可協助使用者學習 PowerShell。 首先，大部分的 `cmd.exe` 與 Unix 使用者都具備一大套完整的命令，而且使用者也都知道其名稱。 PowerShell 對應項可能不會產生相同的結果。 不過，結果非常接近，足以讓使用者在不知道 PowerShell 命令名稱的情況下執行動作。 在學習新的命令殼層時，「肌肉記憶」是另一大挫折來源。 若您已使用 `cmd.exe` 多年，可能會反身鍵入 `cls` 命令來清除畫面。 如果沒有 `Clear-Host` 的別名，您就會收到錯誤訊息，而且不知道該怎麼清除輸出。
+
+## <a name="powershell-handles-console-input-and-display"></a>PowerShell 會處理主控台輸入和顯示
+
+當您輸入命令時，PowerShell 一律會直接處理命令列輸入。 PowerShell 也會將您在畫面上看到的輸出格式化。 此差異十分重要，因為它可以減少每個 Cmdlet 所需的工作。 它會確保您一律可以使用與任何 Cmdlet 相同的方式來執行動作。 Cmdlet 開發人員不需要撰寫程式碼來剖析命令列引數，或將輸出格式化。
+
+傳統命令列工具有其專屬方法來要求和顯示說明。 有一些命令列工具會使用 `/?` 觸發說明顯示，另有一些則會使用 `-?`、`/H`，甚至是 `//`。 有一部分會在 GUI 視窗中顯示說明，而不是在主控台顯示中。 如果您使用錯誤的參數，工具可能會忽略您輸入的內容，並開始自動執行工作。
+因為 PowerShell 會自動剖析及處理命令列，所以 `-?` 參數一律表示「顯示此命令的說明」。
+
+> [!NOTE]
+> 如果您在 PowerShell 中執行圖形應用程式，即會開啟應用程式的視窗。
+> 只有在處理您提供的命令列輸入或傳回給主控台視窗的應用程式輸出時，PowerShell 才會介入。 它不會影響應用程式的內部運作方式。
+
+## <a name="powershell-has-a-pipeline"></a>PowerShell 具有管線
+
+管線可說是用於命令列介面中最重要的概念。 若運用得當，管線將能減少使用複雜命令，讓您能夠更清楚地觀察工作的流程。 管線中的每個命令都會將其輸出逐項傳遞給下一個命令。 命令不需要每次處理一個以上的項目。 結果就是減少使用資源，而且立即得到輸出。
+
+用於管線的標記法類似於其他殼層中所使用的標記法。 乍看之下，PowerShell 中的管線差異可能並不明顯。 雖然您會在畫面上看到文字，但 PowerShell 會在命令之間使用管線來傳送物件 (而非文字)。
+
+例如，如果您使用 `Out-Host` Cmdlet 強制逐頁顯示另一個命令的輸出，則輸出看起來就像畫面上所顯示的一般文字 (分成數頁)：
 
 ```powershell
-Get-Command *-Service
+Get-ChildItem | Out-Host -Paging
 ```
 
-搜尋到可完成工作的 Cmdlet 之後，即可使用 `Get-Help` Cmdlet 來進一步了解此 Cmdlet。 例如，若要顯示 `Get-Service` Cmdlet 的說明，請輸入：
+```Output
+    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          05/22/2020    08:30                About
+-----          05/20/2020    14:36           9044 Add-History.md
+-----          05/20/2020    14:36          12227 Clear-History.md
+-----          05/20/2020    14:36           3566 Clear-Host.md
+-----          05/20/2020    14:36          29087 Connect-PSSession.md
+-----          05/20/2020    14:36           5705 Debug-Job.md
+-----          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
+-----          05/20/2020    14:36          25531 Disable-PSRemoting.md
+-----          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
+-----          05/20/2020    14:36          25355 Disconnect-PSSession.md
+-----          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
+-----          05/20/2020    14:36          13310 Enable-PSRemoting.md
+-----          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
+-----          05/20/2020    14:36           9531 Enter-PSHostProcess.md
+...
+<SPACE> next page; <CR> next line; Q quit
+```
+
+分頁還會降低 CPU 使用率，因為處理控制權會在其已準備好要顯示的完成頁面時移轉給 `Out-Host` Cmdlet。 管線中在它前面的 Cmdlet 會暫停執行，直到輸出的下一個分頁可供使用為止。
+
+### <a name="objects-in-the-pipeline"></a>管線中的物件
+
+當您在 PowerShell 中執行 Cmdlet 時，您會看到文字輸出，這是因為在主控台視窗中必須將物件呈現為文字。 文字輸出可能不會顯示要輸出之物件的所有屬性。
+
+例如，請考慮 `Get-Location` Cmdlet。 文字輸出是資訊的摘要，並不是由 `Get-Location` 所傳回之物件的完整呈現。 輸出中的標題是由處理序新增的，它會將資料格式化以便在畫面上顯示。
 
 ```powershell
-Get-Help Get-Service
+Get-Location
 ```
 
-大部分的 Cmdlet 都會傳回物件，這些物件可均操作然後轉譯為可供顯示的文字。 若要完全了解 Cmdlet 的輸出，請透過管道將輸出傳送到 `Get-Member` Cmdlet。 例如，下列命令會顯示 `Get-Service` Cmdlet 所輸出物件的成員相關資訊。
+```Output
+Path
+----
+C:\
+```
+
+使用管線將輸出傳送給 `Get-Member` Cmdlet 時，會顯示 `Get-Location` 所傳回之物件的相關資訊。
 
 ```powershell
-Get-Service | Get-Member
+Get-Location | Get-Member
 ```
 
-### <a name="consistency"></a>一致性
+```Output
+   TypeName: System.Management.Automation.PathInfo
 
-管理系統是一個複雜的工作。 擁有一致介面的工具有助於控制其中的複雜性。 可惜的是，命令列工具與可編寫指令碼的元件物件模型 (COM) 物件都不具有一致性。
+Name         MemberType Definition
+----         ---------- ----------
+Equals       Method     bool Equals(System.Object obj)
+GetHashCode  Method     int GetHashCode()
+GetType      Method     type GetType()
+ToString     Method     string ToString()
+Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
+Path         Property   string Path {get;}
+Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
+ProviderPath Property   string ProviderPath {get;}
+```
 
-因此，PowerShell 的一致性是非常寶貴的資產。 例如，如果您知道如何使用 `Sort-Object` Cmdlet，即可利用該知識來排序任何 Cmdlet 的輸出。 您不必了解每個 Cmdlet 的不同排序常式。
+`Get-Location` 會傳回 **PathInfo** 物件，其中包含目前的路徑與其他資訊。
 
-此外，Cmdlet 開發人員也不需要設計其 Cmdlet 的排序功能。 PowerShell 提供具有基本功能的架構，以強制執行一致性。 此架構會消除一些留給開發人員的選項。 但結果會讓 Cmdlet 的開發作業變得更簡單。
+## <a name="built-in-help-system"></a>內建說明系統
 
-### <a name="interactive-and-scripting-environments"></a>互動式與指令碼環境
+一如 Unix `man` 頁面，PowerShell 包含詳細的說明文章，解釋了 PowerShell 概念與命令語法。 您可以在命令提示字元中使用 [Get-Help][] Cmdlet 來顯示這些文章，或在線上的 PowerShell 文件中，檢視這些文章的最新更新版本。
 
-Windows 命令提示字元提供互動式殼層，其中具備命令列工具與基本指令碼的存取權。 Windows Script Host (WSH) 具有可編寫指令碼的命令列工具與 COM 自動化物件，但不提供互動式殼層。
+## <a name="next-steps"></a>後續步驟
 
-PowerShell 結合了互動式殼層與指令碼環境。 PowerShell 可以存取命令列工具、COM 物件與 .NET 類別庫。 這個功能組合會擴充互動式使用者、指令碼寫入器與系統管理員的能力。
+若要深入了解 PowerShell，請參閱此網站的＜**了解 PowerShell**＞一節。
 
-### <a name="object-orientation"></a>物件導向
+<!-- link references -->
 
-PowerShell 以物件而非文字為基礎。 命令的輸出即為物件。 您可以透過管線將輸出物件傳送到另一個命令以作為它的輸入。
-
-此管線為具有其他殼層使用體驗的人提供熟悉的介面。 PowerShell 透過傳送物件而非文字來延伸此概念。
-
-### <a name="easy-transition-to-scripting"></a>輕鬆轉換為指令碼
-
-PowerShell 的命令可探索性可將以互動方式輸入命令的作業，輕鬆轉換為建立及執行指令碼。 PowerShell 文字記錄與歷程記錄可讓您輕鬆地將命令複製到檔案，以用來作為指令碼。
+[Get-Help]: /powershell/module/microsoft.powershell.core/Get-Help

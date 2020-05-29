@@ -2,12 +2,12 @@
 title: PowerShell Core 支援週期
 description: 控管 PowerShell Core 支援的原則
 ms.date: 03/09/2020
-ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500998"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560724"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell 支援生命週期
 
@@ -23,7 +23,7 @@ PowerShell 是由傳統 Microsoft 支援合約支援，包含[付費支援][]、
 
 ## <a name="lifecycle-of-powershell-7"></a>PowerShell 7 的生命週期
 
-隨著 PowerShell 7 的發行，PowerShell 會持續依 [Microsoft 現代化生命週期原則][modern]繼續獲得支援，但支援日期會與 [.NET Core 的支援生命週期][Long-Term]連結。 在此服務方法中，客戶可以選擇長期支援 (LTS) 版本或目前版本。 PowerShell 7.0 為 LTS 版本。 其支援會隨著 .NET Core 3.1 的支援結束。 下一個 LTS 版本會隨著下一個 .NET Core LTS 版本一起推出。 請參閱 [PowerShell 版本生命週期結束表格](#powershell-releases-end-of-life)以取得目前的結束支援日期。 LTS 版本更新只包含重要安全性與服務的更新和修正，其設計目的是要避免對現有工作負載造成影響，或是將其降到最低。
+隨著 PowerShell 7 的發行，PowerShell 會持續依 [Microsoft 現代化生命週期原則][modern]繼續獲得支援，但支援日期會與 [.NET Core 的支援生命週期][Long-Term]連結。 在此服務方法中，客戶可以選擇長期支援 (LTS) 版本或目前版本。 PowerShell 7.0 為 LTS 版本。 其支援會隨著 .NET Core 3.1 的支援結束。 下一個 LTS 版本會隨著下一個 .NET Core LTS 版本一起推出。 若要查看最新的結束支援日期，請參閱 [PowerShell 發行生命週期結束表](#powershell-releases-end-of-life) (機器翻譯)。 LTS 版本更新只包含重要安全性與服務的更新和修正，其設計目的是要避免對現有工作負載造成影響，或是將其降到最低。
 
 目前版本是會在 LTS 版本之間發生的版本。 目前版本可能會包含重要修正、創新與新功能。 目前版本會在下一個目前或 LTS 版本發行後繼續獲得三個月的支援。
 
@@ -139,6 +139,17 @@ PowerShell 7 已改善與針對 Windows PowerShell 所撰寫之現有 PowerShell
 
 [實驗性功能][]僅限於[社群支援](#community-support)。
 
+## <a name="security-servicing-criteria"></a>安全性服務準則
+
+PowerShell 遵循[適用於 Windows 的 Microsoft 安全性服務準則][] (英文)。
+下表概述符合及不符合服務準則的功能。
+
+| 功能                          | 類型             |
+|----------------------------------|------------------|
+| 執行原則                 | 深層防禦 |
+| 系統鎖定 - 使用 AppLocker | 深層防禦 |
+| 系統鎖定 - 使用 WDAC      | 安全性功能 |
+
 ## <a name="release-history"></a>版本歷程記錄
 
 下表包含 PowerShell 主要版本的時間表。 此表格僅供作為歷程記錄參考。 不適合用來判斷支援週期。
@@ -172,3 +183,4 @@ PowerShell 7 已改善與針對 Windows PowerShell 所撰寫之現有 PowerShell
 [模組相容性清單]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [實驗性功能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[適用於 Windows 的 Microsoft 安全性服務準則]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria (英文)

@@ -2,12 +2,12 @@
 title: PowerShell 7.0 的新功能
 description: PowerShell 7.0 中發行的新功能與變更
 ms.date: 03/04/2020
-ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80263130"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808396"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 的新功能
 
@@ -53,7 +53,8 @@ PowerShell 7 在 x64 上目前支援下列作業系統，包括：
 
 ## <a name="running-powershell-7"></a>執行中的 PowerShell 7
 
-PowerShell 7 會安裝到新目錄，並與 Windows PowerShell 5.1 並存執行。 針對 PowerShell Core 6.x，PowerShell 7 會就地升級並移除 PowerShell Core 6.x。
+PowerShell 7 會分別從 Windows PowerShell 安裝到目錄。
+如此一來，您就能同時安裝 PowerShell 7 與 Windows PowerShell 5.1。 針對 PowerShell Core 6.x，PowerShell 7 會就地升級並移除 PowerShell Core 6.x。
 
 - PowerShell 7 會安裝到 `%programfiles%\PowerShell\7`
 - 系統會在 `$env:PATH` 中新增 `%programfiles%\PowerShell\7` 資料夾
@@ -65,7 +66,7 @@ PowerShell 7 安裝程式套件會升級舊版的 PowerShell Core 6.x：
 - macOS：`/usr/local/microsoft/powershell/6` 已由 `/usr/local/microsoft/powershell/7` 取代
 
 > [!NOTE]
-> 在 Windows PowerShell 中，啟動 PowerShell 的可執行檔名稱為 `powershell.exe`。 在版本 6 和更新版本中，已將這個可執行檔變更為支援並存執行。 啟動 PowerShell 7 的新可執行檔為 `pwsh.exe`。 預覽版將以 `pwsh-preview` (而不是 `pwsh`) 就地保留於 7-preview 目錄下。
+> 在 Windows PowerShell 中，啟動 PowerShell 的可執行檔名稱為 `powershell.exe`。 在第 6 版與更新版本中，此可執行檔名稱已變更，以支援並存執行。 用以啟動 PowerShell 7 的新可執行檔名稱為 `pwsh.exe`。 預覽版組建仍繼續保留在 `pwsh-preview` 原地，而不會在 7-preview 目錄卜的 `pwsh`。
 
 ## <a name="improved-backwards-compatibility-with-windows-powershell"></a>已改善與 Windows PowerShell 的回溯相容性
 
@@ -214,7 +215,7 @@ $x
 100
 ```
 
-在下列範例中，將不會評估右側運算元：
+下列範例不會評估右側的運算元：
 
 ```powershell
 [string] $todaysDate = '1/10/2020'
@@ -240,14 +241,14 @@ ${Service}?.status
 Stopped
 ```
 
-下列範例將傳回 Null，而不會嘗試存取成員名稱 **Status**：
+下列範例會傳回 Null，而不會嘗試存取成員名稱 **Status**：
 
 ```powershell
 $service = $Null
 ${Service}?.status
 ```
 
-同樣地，使用 `?[]`，將會傳回元素的值：
+同樣地，使用 `?[]` 將會傳回元素的值：
 
 ```powershell
 $a = 1..10
@@ -266,7 +267,7 @@ ${a}?[0]
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>新增 ConciseView 檢視和 Get-Error Cmdlet
 
-已改善錯誤訊息的顯示，以使用新的預設檢視 **ConciseView** 來增強互動式與指令碼錯誤的可讀性。 使用者可以透過喜好設定變數 `$ErrorView` 來選取這些檢視。
+PowerShell 7.0 增強了錯誤訊息的顯示方式，以新的預設檢視 **ConciseView**，改進互動式與指令碼錯誤的可讀性。 使用者可以透過喜好設定變數 `$ErrorView` 來選取這些檢視。
 
 使用 **ConciseView**，如果錯誤不是來自指令碼或剖析器錯誤，則會是單行錯誤訊息：
 
@@ -282,8 +283,8 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 
 ![指令碼的錯誤顯示](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-PowerShell 7 中的預設檢視為 **ConciseView**。 先前的預設檢視為 **NormalView**，而使用者可以藉由設定喜好設定變數 `$ErrorView` 來選取。
-
+PowerShell 7 中的預設檢視為 **ConciseView**。 先前的預設檢視為 **NormalView**。您可以設定喜好設定變數 `$ErrorView` 來選取此檢視。
+ 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -292,7 +293,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > [!NOTE]
 > 已將新的屬性 **ErrorAccentColor** 新增至 `$Host.PrivateData`，以支援變更錯誤訊息的輔色。
 
-新的 Cmdlet `Get-Error` 會在需要時，提供完整錯誤的全面詳細檢視。
+當需要時，新的 Cmdlet `Get-Error` 會提供完整錯誤的完整詳細檢視。
 根據預設，此 Cmdlet 會顯示最後發生之錯誤的完整詳細資料，包括內部例外狀況。
 
 ![顯示自 Get-Error](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
@@ -517,7 +518,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 - 清除認可中過去一個月發生的 CodeFactor 樣式問題 (#10591) (感謝 @iSazonov！)
 - 修正 PSTernaryOperator 實驗性功能描述中的打字錯誤 (#10586) (感謝 @bergmeister！)
 - 將 ActionPreference.Suspend 列舉值轉換為不支援的保留狀態，並在喜好設定變數中移除使用 ActionPreference.Ignore 的限制 (#10317) (感謝 @KirkMunro！)
-- 使用 List<T> 取代 ArrayList，以取得更容易閱讀且可靠的程式碼，而不需變更功能 (#10333) (感謝 @iSazonov！)
+- 使用 List \<T> 取代 ArrayList，可以不需要變更功能就能獲得可讀性與可靠性更高的程式碼 (#10333) (感謝 @iSazonov！)
 - 對 TestConnectionCommand 進行程式碼樣式修正 (#10439) (感謝 @vexx32！)
 - 清除 AutomationEngine，並移除額外的 SetSessionStateDrive 方法呼叫 (#10416) (感謝 @iSazonov！)
 - 針對 ConvertTo-Csv 和 ConvertFrom-Csv，將預設的 ParameterSetName 再次重新命名為 Delimiter (#10425)
