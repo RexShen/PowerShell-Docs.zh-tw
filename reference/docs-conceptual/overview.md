@@ -1,73 +1,156 @@
 ---
-ms.date: 08/27/2018
+ms.date: 05/22/2020
 keywords: powershell,cmdlet
-title: PowerShell 指令碼
-ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: 什麼是 PowerShell？
+ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
+ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058483"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83868474"
 ---
-# <a name="powershell"></a><span data-ttu-id="d1096-103">PowerShell</span><span class="sxs-lookup"><span data-stu-id="d1096-103">PowerShell</span></span>
+# <a name="what-is-powershell"></a><span data-ttu-id="e4849-103">什麼是 PowerShell？</span><span class="sxs-lookup"><span data-stu-id="e4849-103">What is PowerShell?</span></span>
 
-<span data-ttu-id="d1096-104">PowerShell 是工作型命令列殼層與指令碼語言，並建置在 .NET 之上。</span><span class="sxs-lookup"><span data-stu-id="d1096-104">PowerShell is a task-based command-line shell and scripting language built on .NET.</span></span>
-<span data-ttu-id="d1096-105">PowerShell 可協助系統管理員與進階使用者快速地將管理作業系統 (Linux、macOS 與 Windows) 與處理序的工作自動化。</span><span class="sxs-lookup"><span data-stu-id="d1096-105">PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems (Linux, macOS, and Windows) and processes.</span></span>
+<span data-ttu-id="e4849-104">PowerShell 是跨平台的工作自動化及設定管理架構，由命令列殼層與指令碼語言組成。</span><span class="sxs-lookup"><span data-stu-id="e4849-104">PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.</span></span> <span data-ttu-id="e4849-105">不同於大部分的殼層可接受及傳回文字，PowerShell 以 .NET Common Language Runtime (CLR) 為建置基礎，並接受及傳回 .NET 物件。</span><span class="sxs-lookup"><span data-stu-id="e4849-105">Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects.</span></span> <span data-ttu-id="e4849-106">這種從根本上的變更，打造了全新的自動化工具與方法。</span><span class="sxs-lookup"><span data-stu-id="e4849-106">This fundamental change brings entirely new tools and methods for automation.</span></span>
 
-<span data-ttu-id="d1096-106">PowerShell 命令可讓您從命令列管理電腦。</span><span class="sxs-lookup"><span data-stu-id="d1096-106">PowerShell commands let you manage computers from the command line.</span></span> <span data-ttu-id="d1096-107">PowerShell 提供者可讓您如同存取檔案系統般輕易地存取資料存放區 (例如登錄與憑證存放區)。</span><span class="sxs-lookup"><span data-stu-id="d1096-107">PowerShell providers let you access data stores, such as the registry and certificate store, as easily as you access the file system.</span></span> <span data-ttu-id="d1096-108">PowerShell 包含豐富的運算式剖析器與完整開發的指令碼語言。</span><span class="sxs-lookup"><span data-stu-id="d1096-108">PowerShell includes a rich expression parser and a fully developed scripting language.</span></span>
+<!-- removing images until we can get replacements
+:::row:::
+   :::column span="":::
+      Windows
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
+   :::column-end:::
+   :::column span="":::
+      Linux
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
+   :::column-end:::
+   :::column span="":::
+      macOS
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
+   :::column-end:::
+:::row-end:::
+-->
 
-## <a name="powershell-is-open-source"></a><span data-ttu-id="d1096-109">PowerShell 是開放原始碼</span><span class="sxs-lookup"><span data-stu-id="d1096-109">PowerShell is open-source</span></span>
+## <a name="output-is-object-based"></a><span data-ttu-id="e4849-107">輸出是以物件為基礎的</span><span class="sxs-lookup"><span data-stu-id="e4849-107">Output is object-based</span></span>
 
-<span data-ttu-id="d1096-110">PowerShell 基本原始程式碼現在可在 GitHub 中取得並開放進行社群參與。</span><span class="sxs-lookup"><span data-stu-id="d1096-110">PowerShell base source code is now available in GitHub and open to community contributions.</span></span>
-<span data-ttu-id="d1096-111">請參閱 [GitHub 上的 PowerShell 原始碼](https://github.com/powershell/powershell)。</span><span class="sxs-lookup"><span data-stu-id="d1096-111">See [PowerShell source on GitHub](https://github.com/powershell/powershell).</span></span>
+<span data-ttu-id="e4849-108">不同於傳統的命令列介面，PowerShell Cmdlet 是設計來處理物件。</span><span class="sxs-lookup"><span data-stu-id="e4849-108">Unlike traditional command-line interfaces, PowerShell cmdlets are designed to deal with objects.</span></span>
+<span data-ttu-id="e4849-109">物件是結構化的資訊，而不僅僅是出現在畫面上的字元字串。</span><span class="sxs-lookup"><span data-stu-id="e4849-109">An object is structured information that is more than just the string of characters appearing on the screen.</span></span> <span data-ttu-id="e4849-110">命令輸出一律會攜帶您在需要時可以使用的額外資訊。</span><span class="sxs-lookup"><span data-stu-id="e4849-110">Command output always carries extra information that you can use if you need it.</span></span>
 
-<span data-ttu-id="d1096-112">您可以在[取得 PowerShell](https://github.com/PowerShell/PowerShell#get-powershell) 中，找到入門所需的事項。</span><span class="sxs-lookup"><span data-stu-id="d1096-112">You can start with the bits you need at [Get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).</span></span>
-<span data-ttu-id="d1096-113">或者，從[開始使用](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell) \(英文\) 的快速入門開始。</span><span class="sxs-lookup"><span data-stu-id="d1096-113">Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).</span></span>
+<span data-ttu-id="e4849-111">如果您過去曾使用文字處理工具來處理資料，將會發現它們的行為與在 PowerShell 中使用時不同。</span><span class="sxs-lookup"><span data-stu-id="e4849-111">If you've used text-processing tools to process data in the past, you'll find that they behave differently when used in PowerShell.</span></span> <span data-ttu-id="e4849-112">在大部分情況下，您不需要使用文字處理工具來擷取特定資訊。</span><span class="sxs-lookup"><span data-stu-id="e4849-112">In most cases, you don't need text-processing tools to extract specific information.</span></span> <span data-ttu-id="e4849-113">您可以使用標準的 PowerShell 物件語法，直接存取部分資料。</span><span class="sxs-lookup"><span data-stu-id="e4849-113">You directly access portions of the data using standard PowerShell object syntax.</span></span>
 
-## <a name="powershell-design-goals"></a><span data-ttu-id="d1096-114">PowerShell 設計目標</span><span class="sxs-lookup"><span data-stu-id="d1096-114">PowerShell design goals</span></span>
+## <a name="the-command-family-is-extensible"></a><span data-ttu-id="e4849-114">命令系列可進行擴充</span><span class="sxs-lookup"><span data-stu-id="e4849-114">The command family is extensible</span></span>
 
-<span data-ttu-id="d1096-115">PowerShell 消除了長久以來的問題並加入新功能，藉以改善命令列和指令碼環境。</span><span class="sxs-lookup"><span data-stu-id="d1096-115">PowerShell is designed to improve the command-line and scripting environment by eliminating long-standing problems and adding new features.</span></span>
+<span data-ttu-id="e4849-115">`cmd.exe` 之類的介面無法讓您直接擴充內建的命令集。</span><span class="sxs-lookup"><span data-stu-id="e4849-115">Interfaces such as `cmd.exe` don't provide a way for you to directly extend the built-in command set.</span></span> <span data-ttu-id="e4849-116">您可以建立外部命令列工具在 `cmd.exe` 中執行。</span><span class="sxs-lookup"><span data-stu-id="e4849-116">You can create external command-line tools that run in `cmd.exe`.</span></span> <span data-ttu-id="e4849-117">但這些外部工具不會提供任何服務，例如說明整合。</span><span class="sxs-lookup"><span data-stu-id="e4849-117">But these external tools don't have services, such as Help integration.</span></span> <span data-ttu-id="e4849-118">`cmd.exe` 自己不會知道這些外部工具是有效的命令。</span><span class="sxs-lookup"><span data-stu-id="e4849-118">`cmd.exe` doesn't automatically know that these external tools are valid commands.</span></span>
 
-### <a name="discoverability"></a><span data-ttu-id="d1096-116">可搜尋性</span><span class="sxs-lookup"><span data-stu-id="d1096-116">Discoverability</span></span>
+<span data-ttu-id="e4849-119">PowerShell 中的命令稱為 _Cmdlet_。</span><span class="sxs-lookup"><span data-stu-id="e4849-119">The commands in PowerShell are known as _cmdlets_.</span></span> <span data-ttu-id="e4849-120">您可以個別使用每個 Cmdlet，但合併使用來執行複雜的工作時，更見其功效。</span><span class="sxs-lookup"><span data-stu-id="e4849-120">You can use each cmdlet separately, but their power is realized when you combine them to perform complex tasks.</span></span> <span data-ttu-id="e4849-121">如同許多殼層，PowerShell 可讓您存取電腦上的檔案系統。</span><span class="sxs-lookup"><span data-stu-id="e4849-121">Like many shells, PowerShell gives you access to the file system on the computer.</span></span> <span data-ttu-id="e4849-122">PowerShell「提供者」可讓您像存取檔案系統般容易地存取其他資料存放區 (如登錄及憑證存放區)。</span><span class="sxs-lookup"><span data-stu-id="e4849-122">PowerShell _providers_ enable you to access other data stores, such as the registry and the certificate stores, as easily as you access the file system.</span></span>
 
-<span data-ttu-id="d1096-117">PowerShell 可讓您輕鬆搜尋它的功能。</span><span class="sxs-lookup"><span data-stu-id="d1096-117">PowerShell makes it easy to discover its features.</span></span> <span data-ttu-id="d1096-118">例如，若要尋找可檢視和變更 Windows 服務的 Cmdlet 清單，請輸入：</span><span class="sxs-lookup"><span data-stu-id="d1096-118">For example, to find a list of cmdlets that view and change Windows services, type:</span></span>
+<span data-ttu-id="e4849-123">您可以使用經過編譯的程式碼或指令碼，建立自己的 Cmdlet 與函式模組。</span><span class="sxs-lookup"><span data-stu-id="e4849-123">You can create your own cmdlet and function modules using compiled code or scripts.</span></span> <span data-ttu-id="e4849-124">模組可將 Cmdlet 與提供者新增到殼層。</span><span class="sxs-lookup"><span data-stu-id="e4849-124">Modules can add cmdlets and providers to the shell.</span></span> <span data-ttu-id="e4849-125">PowerShell 也支援類似於 UNIX 殼層指令碼及 `cmd.exe` 批次檔案的指令碼。</span><span class="sxs-lookup"><span data-stu-id="e4849-125">PowerShell also supports scripts that are analogous to UNIX shell scripts and `cmd.exe` batch files.</span></span>
+
+## <a name="support-for-command-aliases"></a><span data-ttu-id="e4849-126">支援命令別名</span><span class="sxs-lookup"><span data-stu-id="e4849-126">Support for command aliases</span></span>
+
+<span data-ttu-id="e4849-127">PowerShell 支援別名，以使用替代名稱來參考命令。</span><span class="sxs-lookup"><span data-stu-id="e4849-127">PowerShell supports aliases to refer to commands by alternate names.</span></span> <span data-ttu-id="e4849-128">別名讓具有其他殼層使用體驗的使用者能夠使用他們已經知道的常見命令名稱，在 PowerShell 中執行類似作業。</span><span class="sxs-lookup"><span data-stu-id="e4849-128">Aliasing allows users with experience in other shells to use common command names that they already know for similar operations in PowerShell.</span></span>
+
+<span data-ttu-id="e4849-129">別名會將新名稱與另一個命令產生關聯。</span><span class="sxs-lookup"><span data-stu-id="e4849-129">Aliasing associates a new name with another command.</span></span> <span data-ttu-id="e4849-130">例如，PowerShell 具有會清除輸出視窗的內部函式 `Clear-Host`。</span><span class="sxs-lookup"><span data-stu-id="e4849-130">For example, PowerShell has an internal function named `Clear-Host` that clears the output window.</span></span> <span data-ttu-id="e4849-131">您可以在命令提示字元中輸入 `cls` 或 `clear` 別名。</span><span class="sxs-lookup"><span data-stu-id="e4849-131">You can type either the `cls` or `clear` alias at a command prompt.</span></span> <span data-ttu-id="e4849-132">PowerShell 會解譯這些別名並執行 `Clear-Host` 函式。</span><span class="sxs-lookup"><span data-stu-id="e4849-132">PowerShell interprets these aliases and runs the `Clear-Host` function.</span></span>
+
+<span data-ttu-id="e4849-133">此功能可協助使用者學習 PowerShell。</span><span class="sxs-lookup"><span data-stu-id="e4849-133">This feature helps users to learn PowerShell.</span></span> <span data-ttu-id="e4849-134">首先，大部分的 `cmd.exe` 與 Unix 使用者都具備一大套完整的命令，而且使用者也都知道其名稱。</span><span class="sxs-lookup"><span data-stu-id="e4849-134">First, most `cmd.exe` and Unix users have a large repertoire of commands that users already know by name.</span></span> <span data-ttu-id="e4849-135">PowerShell 對應項可能不會產生相同的結果。</span><span class="sxs-lookup"><span data-stu-id="e4849-135">The PowerShell equivalents may not produce identical results.</span></span> <span data-ttu-id="e4849-136">不過，結果非常接近，足以讓使用者在不知道 PowerShell 命令名稱的情況下執行動作。</span><span class="sxs-lookup"><span data-stu-id="e4849-136">However, the results are close enough that users can do work without knowing the PowerShell command name.</span></span> <span data-ttu-id="e4849-137">在學習新的命令殼層時，「肌肉記憶」是另一大挫折來源。</span><span class="sxs-lookup"><span data-stu-id="e4849-137">"Muscle memory" is another major source of frustration when learning a new command shell.</span></span> <span data-ttu-id="e4849-138">若您已使用 `cmd.exe` 多年，可能會反身鍵入 `cls` 命令來清除畫面。</span><span class="sxs-lookup"><span data-stu-id="e4849-138">If you have used `cmd.exe` for years, you might reflexively type the `cls` command to clear the screen.</span></span> <span data-ttu-id="e4849-139">如果沒有 `Clear-Host` 的別名，您就會收到錯誤訊息，而且不知道該怎麼清除輸出。</span><span class="sxs-lookup"><span data-stu-id="e4849-139">Without the alias for `Clear-Host`, you receive an error message and won't know what to do to clear the output.</span></span>
+
+## <a name="powershell-handles-console-input-and-display"></a><span data-ttu-id="e4849-140">PowerShell 會處理主控台輸入和顯示</span><span class="sxs-lookup"><span data-stu-id="e4849-140">PowerShell handles console input and display</span></span>
+
+<span data-ttu-id="e4849-141">當您輸入命令時，PowerShell 一律會直接處理命令列輸入。</span><span class="sxs-lookup"><span data-stu-id="e4849-141">When you type a command, PowerShell always processes the command-line input directly.</span></span> <span data-ttu-id="e4849-142">PowerShell 也會將您在畫面上看到的輸出格式化。</span><span class="sxs-lookup"><span data-stu-id="e4849-142">PowerShell also formats the output that you see on the screen.</span></span> <span data-ttu-id="e4849-143">此差異十分重要，因為它可以減少每個 Cmdlet 所需的工作。</span><span class="sxs-lookup"><span data-stu-id="e4849-143">This difference is significant because it reduces the work required of each cmdlet.</span></span> <span data-ttu-id="e4849-144">它會確保您一律可以使用與任何 Cmdlet 相同的方式來執行動作。</span><span class="sxs-lookup"><span data-stu-id="e4849-144">It ensures that you can always do things the same way with any cmdlet.</span></span> <span data-ttu-id="e4849-145">Cmdlet 開發人員不需要撰寫程式碼來剖析命令列引數，或將輸出格式化。</span><span class="sxs-lookup"><span data-stu-id="e4849-145">Cmdlet developers don't need to write code to parse the command-line arguments or format the output.</span></span>
+
+<span data-ttu-id="e4849-146">傳統命令列工具有其專屬方法來要求和顯示說明。</span><span class="sxs-lookup"><span data-stu-id="e4849-146">Traditional command-line tools have their own schemes for requesting and displaying Help.</span></span> <span data-ttu-id="e4849-147">有一些命令列工具會使用 `/?` 觸發說明顯示，另有一些則會使用 `-?`、`/H`，甚至是 `//`。</span><span class="sxs-lookup"><span data-stu-id="e4849-147">Some command-line tools use `/?` to trigger the Help display; others use `-?`, `/H`, or even `//`.</span></span> <span data-ttu-id="e4849-148">有一部分會在 GUI 視窗中顯示說明，而不是在主控台顯示中。</span><span class="sxs-lookup"><span data-stu-id="e4849-148">Some will display Help in a GUI window, rather than in the console display.</span></span> <span data-ttu-id="e4849-149">如果您使用錯誤的參數，工具可能會忽略您輸入的內容，並開始自動執行工作。</span><span class="sxs-lookup"><span data-stu-id="e4849-149">If you use the wrong parameter, the tool might ignore what you typed and begin executing a task automatically.</span></span>
+<span data-ttu-id="e4849-150">因為 PowerShell 會自動剖析及處理命令列，所以 `-?` 參數一律表示「顯示此命令的說明」。</span><span class="sxs-lookup"><span data-stu-id="e4849-150">Since PowerShell automatically parses and processes the command line, the `-?` parameter always means "show me Help for this command".</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="e4849-151">如果您在 PowerShell 中執行圖形應用程式，即會開啟應用程式的視窗。</span><span class="sxs-lookup"><span data-stu-id="e4849-151">If you run a graphic application in PowerShell, the window for the application opens.</span></span>
+> <span data-ttu-id="e4849-152">只有在處理您提供的命令列輸入或傳回給主控台視窗的應用程式輸出時，PowerShell 才會介入。</span><span class="sxs-lookup"><span data-stu-id="e4849-152">PowerShell intervenes only when processing the command-line input you supply or the application output returned to the console window.</span></span> <span data-ttu-id="e4849-153">它不會影響應用程式的內部運作方式。</span><span class="sxs-lookup"><span data-stu-id="e4849-153">It does not affect how the application works internally.</span></span>
+
+## <a name="powershell-has-a-pipeline"></a><span data-ttu-id="e4849-154">PowerShell 具有管線</span><span class="sxs-lookup"><span data-stu-id="e4849-154">PowerShell has a pipeline</span></span>
+
+<span data-ttu-id="e4849-155">管線可說是用於命令列介面中最重要的概念。</span><span class="sxs-lookup"><span data-stu-id="e4849-155">Pipelines are arguably the most valuable concept used in command-line interfaces.</span></span> <span data-ttu-id="e4849-156">若運用得當，管線將能減少使用複雜命令，讓您能夠更清楚地觀察工作的流程。</span><span class="sxs-lookup"><span data-stu-id="e4849-156">When used properly, pipelines reduce the effort of using complex commands and make it easier to see the flow of work.</span></span> <span data-ttu-id="e4849-157">管線中的每個命令都會將其輸出逐項傳遞給下一個命令。</span><span class="sxs-lookup"><span data-stu-id="e4849-157">Each command in a pipeline passes its output, item by item, to the next command.</span></span> <span data-ttu-id="e4849-158">命令不需要每次處理一個以上的項目。</span><span class="sxs-lookup"><span data-stu-id="e4849-158">Commands don't have to handle more than one item at a time.</span></span> <span data-ttu-id="e4849-159">結果就是減少使用資源，而且立即得到輸出。</span><span class="sxs-lookup"><span data-stu-id="e4849-159">The result is reduced resource consumption and the ability to get output immediately.</span></span>
+
+<span data-ttu-id="e4849-160">用於管線的標記法類似於其他殼層中所使用的標記法。</span><span class="sxs-lookup"><span data-stu-id="e4849-160">The notation used for pipelines is similar to the notation used in other shells.</span></span> <span data-ttu-id="e4849-161">乍看之下，PowerShell 中的管線差異可能並不明顯。</span><span class="sxs-lookup"><span data-stu-id="e4849-161">At first glance, it may not be apparent how pipelines are different in PowerShell.</span></span> <span data-ttu-id="e4849-162">雖然您會在畫面上看到文字，但 PowerShell 會在命令之間使用管線來傳送物件 (而非文字)。</span><span class="sxs-lookup"><span data-stu-id="e4849-162">Although you see text on the screen, PowerShell pipes objects, not text, between commands.</span></span>
+
+<span data-ttu-id="e4849-163">例如，如果您使用 `Out-Host` Cmdlet 強制逐頁顯示另一個命令的輸出，則輸出看起來就像畫面上所顯示的一般文字 (分成數頁)：</span><span class="sxs-lookup"><span data-stu-id="e4849-163">For example, if you use the `Out-Host` cmdlet to force a page-by-page display of output from another command, the output looks just like the normal text displayed on the screen, broken up into pages:</span></span>
 
 ```powershell
-Get-Command *-Service
+Get-ChildItem | Out-Host -Paging
 ```
 
-<span data-ttu-id="d1096-119">搜尋到可完成工作的 Cmdlet 之後，即可使用 `Get-Help` Cmdlet 來進一步了解此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d1096-119">After discovering which cmdlet accomplishes a task, you can learn more about the cmdlet by using the `Get-Help` cmdlet.</span></span> <span data-ttu-id="d1096-120">例如，若要顯示 `Get-Service` Cmdlet 的說明，請輸入：</span><span class="sxs-lookup"><span data-stu-id="d1096-120">For example, to display help about the `Get-Service` cmdlet, type:</span></span>
+```Output
+    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          05/22/2020    08:30                About
+-----          05/20/2020    14:36           9044 Add-History.md
+-----          05/20/2020    14:36          12227 Clear-History.md
+-----          05/20/2020    14:36           3566 Clear-Host.md
+-----          05/20/2020    14:36          29087 Connect-PSSession.md
+-----          05/20/2020    14:36           5705 Debug-Job.md
+-----          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
+-----          05/20/2020    14:36          25531 Disable-PSRemoting.md
+-----          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
+-----          05/20/2020    14:36          25355 Disconnect-PSSession.md
+-----          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
+-----          05/20/2020    14:36          13310 Enable-PSRemoting.md
+-----          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
+-----          05/20/2020    14:36           9531 Enter-PSHostProcess.md
+...
+<SPACE> next page; <CR> next line; Q quit
+```
+
+<span data-ttu-id="e4849-164">分頁還會降低 CPU 使用率，因為處理控制權會在其已準備好要顯示的完成頁面時移轉給 `Out-Host` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e4849-164">Paging also reduces CPU utilization because processing transfers to the `Out-Host` cmdlet when it has a complete page ready to display.</span></span> <span data-ttu-id="e4849-165">管線中在它前面的 Cmdlet 會暫停執行，直到輸出的下一個分頁可供使用為止。</span><span class="sxs-lookup"><span data-stu-id="e4849-165">The cmdlets that precede it in the pipeline pause execution until the next page of output is available.</span></span>
+
+### <a name="objects-in-the-pipeline"></a><span data-ttu-id="e4849-166">管線中的物件</span><span class="sxs-lookup"><span data-stu-id="e4849-166">Objects in the pipeline</span></span>
+
+<span data-ttu-id="e4849-167">當您在 PowerShell 中執行 Cmdlet 時，您會看到文字輸出，這是因為在主控台視窗中必須將物件呈現為文字。</span><span class="sxs-lookup"><span data-stu-id="e4849-167">When you run a cmdlet in PowerShell, you see text output because it is necessary to represent objects as text in a console window.</span></span> <span data-ttu-id="e4849-168">文字輸出可能不會顯示要輸出之物件的所有屬性。</span><span class="sxs-lookup"><span data-stu-id="e4849-168">The text output may not display all of the properties of the object being output.</span></span>
+
+<span data-ttu-id="e4849-169">例如，請考慮 `Get-Location` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="e4849-169">For example, consider the `Get-Location` cmdlet.</span></span> <span data-ttu-id="e4849-170">文字輸出是資訊的摘要，並不是由 `Get-Location` 所傳回之物件的完整呈現。</span><span class="sxs-lookup"><span data-stu-id="e4849-170">The text output is a summary of information, not a complete representation of the object returned by `Get-Location`.</span></span> <span data-ttu-id="e4849-171">輸出中的標題是由處理序新增的，它會將資料格式化以便在畫面上顯示。</span><span class="sxs-lookup"><span data-stu-id="e4849-171">The heading in the output is added by the process that formats the data for onscreen display.</span></span>
 
 ```powershell
-Get-Help Get-Service
+Get-Location
 ```
 
-<span data-ttu-id="d1096-121">大部分的 Cmdlet 都會傳回物件，這些物件可均操作然後轉譯為可供顯示的文字。</span><span class="sxs-lookup"><span data-stu-id="d1096-121">Most cmdlets return objects that can be manipulated and then rendered as text for display.</span></span> <span data-ttu-id="d1096-122">若要完全了解 Cmdlet 的輸出，請透過管道將輸出傳送到 `Get-Member` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d1096-122">To fully understand the output of a cmdlet, pipe the output to the `Get-Member` cmdlet.</span></span> <span data-ttu-id="d1096-123">例如，下列命令會顯示 `Get-Service` Cmdlet 所輸出物件的成員相關資訊。</span><span class="sxs-lookup"><span data-stu-id="d1096-123">For example, the following command displays information about the members of the object output by the `Get-Service` cmdlet.</span></span>
+```Output
+Path
+----
+C:\
+```
+
+<span data-ttu-id="e4849-172">使用管線將輸出傳送給 `Get-Member` Cmdlet 時，會顯示 `Get-Location` 所傳回之物件的相關資訊。</span><span class="sxs-lookup"><span data-stu-id="e4849-172">Piping the output to the `Get-Member` cmdlet displays information about the object returned by `Get-Location`.</span></span>
 
 ```powershell
-Get-Service | Get-Member
+Get-Location | Get-Member
 ```
 
-### <a name="consistency"></a><span data-ttu-id="d1096-124">一致性</span><span class="sxs-lookup"><span data-stu-id="d1096-124">Consistency</span></span>
+```Output
+   TypeName: System.Management.Automation.PathInfo
 
-<span data-ttu-id="d1096-125">管理系統是一個複雜的工作。</span><span class="sxs-lookup"><span data-stu-id="d1096-125">Managing systems can be a complex task.</span></span> <span data-ttu-id="d1096-126">擁有一致介面的工具有助於控制其中的複雜性。</span><span class="sxs-lookup"><span data-stu-id="d1096-126">Tools that have a consistent interface help to control the inherent complexity.</span></span> <span data-ttu-id="d1096-127">可惜的是，命令列工具與可編寫指令碼的元件物件模型 (COM) 物件都不具有一致性。</span><span class="sxs-lookup"><span data-stu-id="d1096-127">Unfortunately, command-line tools and scriptable Component Object Model (COM) objects aren't known for their consistency.</span></span>
+Name         MemberType Definition
+----         ---------- ----------
+Equals       Method     bool Equals(System.Object obj)
+GetHashCode  Method     int GetHashCode()
+GetType      Method     type GetType()
+ToString     Method     string ToString()
+Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
+Path         Property   string Path {get;}
+Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
+ProviderPath Property   string ProviderPath {get;}
+```
 
-<span data-ttu-id="d1096-128">因此，PowerShell 的一致性是非常寶貴的資產。</span><span class="sxs-lookup"><span data-stu-id="d1096-128">The consistency of PowerShell is one of its primary assets.</span></span> <span data-ttu-id="d1096-129">例如，如果您知道如何使用 `Sort-Object` Cmdlet，即可利用該知識來排序任何 Cmdlet 的輸出。</span><span class="sxs-lookup"><span data-stu-id="d1096-129">For example, if you learn how to use the `Sort-Object` cmdlet, you can use that knowledge to sort the output of any cmdlet.</span></span> <span data-ttu-id="d1096-130">您不必了解每個 Cmdlet 的不同排序常式。</span><span class="sxs-lookup"><span data-stu-id="d1096-130">You don't have to learn the different sorting routines of each cmdlet.</span></span>
+<span data-ttu-id="e4849-173">`Get-Location` 會傳回 **PathInfo** 物件，其中包含目前的路徑與其他資訊。</span><span class="sxs-lookup"><span data-stu-id="e4849-173">`Get-Location` returns a **PathInfo** object that contains the current path and other information.</span></span>
 
-<span data-ttu-id="d1096-131">此外，Cmdlet 開發人員也不需要設計其 Cmdlet 的排序功能。</span><span class="sxs-lookup"><span data-stu-id="d1096-131">Additionally, cmdlet developers don't have to design sorting features for their cmdlets.</span></span> <span data-ttu-id="d1096-132">PowerShell 提供具有基本功能的架構，以強制執行一致性。</span><span class="sxs-lookup"><span data-stu-id="d1096-132">PowerShell provides a framework with the basic features that forces consistency.</span></span> <span data-ttu-id="d1096-133">此架構會消除一些留給開發人員的選項。</span><span class="sxs-lookup"><span data-stu-id="d1096-133">The framework eliminates some choices that are left to the developer.</span></span> <span data-ttu-id="d1096-134">但結果會讓 Cmdlet 的開發作業變得更簡單。</span><span class="sxs-lookup"><span data-stu-id="d1096-134">But, in return, it makes the development of cmdlets much simpler.</span></span>
+## <a name="built-in-help-system"></a><span data-ttu-id="e4849-174">內建說明系統</span><span class="sxs-lookup"><span data-stu-id="e4849-174">Built-in help system</span></span>
 
-### <a name="interactive-and-scripting-environments"></a><span data-ttu-id="d1096-135">互動式與指令碼環境</span><span class="sxs-lookup"><span data-stu-id="d1096-135">Interactive and scripting environments</span></span>
+<span data-ttu-id="e4849-175">一如 Unix `man` 頁面，PowerShell 包含詳細的說明文章，解釋了 PowerShell 概念與命令語法。</span><span class="sxs-lookup"><span data-stu-id="e4849-175">Similar to Unix `man` pages, PowerShell includes detailed help articles that explain PowerShell concepts and command syntax.</span></span> <span data-ttu-id="e4849-176">您可以在命令提示字元中使用 [Get-Help][] Cmdlet 來顯示這些文章，或在線上的 PowerShell 文件中，檢視這些文章的最新更新版本。</span><span class="sxs-lookup"><span data-stu-id="e4849-176">Use the [Get-Help][] cmdlet to display these articles at the command prompt or view the most recently updated versions of these articles in the PowerShell documentation online.</span></span>
 
-<span data-ttu-id="d1096-136">Windows 命令提示字元提供互動式殼層，其中具備命令列工具與基本指令碼的存取權。</span><span class="sxs-lookup"><span data-stu-id="d1096-136">The Windows Command Prompt provides an interactive shell with access to command-line tools and basic scripting.</span></span> <span data-ttu-id="d1096-137">Windows Script Host (WSH) 具有可編寫指令碼的命令列工具與 COM 自動化物件，但不提供互動式殼層。</span><span class="sxs-lookup"><span data-stu-id="d1096-137">Windows Script Host (WSH) has scriptable command-line tools and COM automation objects, but doesn't provide an interactive shell.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="e4849-177">後續步驟</span><span class="sxs-lookup"><span data-stu-id="e4849-177">Next steps</span></span>
 
-<span data-ttu-id="d1096-138">PowerShell 結合了互動式殼層與指令碼環境。</span><span class="sxs-lookup"><span data-stu-id="d1096-138">PowerShell combines an interactive shell and a scripting environment.</span></span> <span data-ttu-id="d1096-139">PowerShell 可以存取命令列工具、COM 物件與 .NET 類別庫。</span><span class="sxs-lookup"><span data-stu-id="d1096-139">PowerShell can access command-line tools, COM objects, and .NET class libraries.</span></span> <span data-ttu-id="d1096-140">這個功能組合會擴充互動式使用者、指令碼寫入器與系統管理員的能力。</span><span class="sxs-lookup"><span data-stu-id="d1096-140">This combination of features extends the capabilities of the interactive user, the script writer, and the system administrator.</span></span>
+<span data-ttu-id="e4849-178">若要深入了解 PowerShell，請參閱此網站的＜**了解 PowerShell**＞一節。</span><span class="sxs-lookup"><span data-stu-id="e4849-178">To learn more about PowerShell, see the **Learning PowerShell** section of this site.</span></span>
 
-### <a name="object-orientation"></a><span data-ttu-id="d1096-141">物件導向</span><span class="sxs-lookup"><span data-stu-id="d1096-141">Object orientation</span></span>
+<!-- link references -->
 
-<span data-ttu-id="d1096-142">PowerShell 以物件而非文字為基礎。</span><span class="sxs-lookup"><span data-stu-id="d1096-142">PowerShell is based on object not text.</span></span> <span data-ttu-id="d1096-143">命令的輸出即為物件。</span><span class="sxs-lookup"><span data-stu-id="d1096-143">The output of a command is an object.</span></span> <span data-ttu-id="d1096-144">您可以透過管線將輸出物件傳送到另一個命令以作為它的輸入。</span><span class="sxs-lookup"><span data-stu-id="d1096-144">You can send the output object, through the pipeline, to another command as its input.</span></span>
-
-<span data-ttu-id="d1096-145">此管線為具有其他殼層使用體驗的人提供熟悉的介面。</span><span class="sxs-lookup"><span data-stu-id="d1096-145">This pipeline provides a familiar interface for people experienced with other shells.</span></span> <span data-ttu-id="d1096-146">PowerShell 透過傳送物件而非文字來延伸此概念。</span><span class="sxs-lookup"><span data-stu-id="d1096-146">PowerShell extends this concept by sending objects rather than text.</span></span>
-
-### <a name="easy-transition-to-scripting"></a><span data-ttu-id="d1096-147">輕鬆轉換為指令碼</span><span class="sxs-lookup"><span data-stu-id="d1096-147">Easy transition to scripting</span></span>
-
-<span data-ttu-id="d1096-148">PowerShell 的命令可探索性可將以互動方式輸入命令的作業，輕鬆轉換為建立及執行指令碼。</span><span class="sxs-lookup"><span data-stu-id="d1096-148">PowerShell's command discoverability makes it easy to transition from typing commands interactively to creating and running scripts.</span></span> <span data-ttu-id="d1096-149">PowerShell 文字記錄與歷程記錄可讓您輕鬆地將命令複製到檔案，以用來作為指令碼。</span><span class="sxs-lookup"><span data-stu-id="d1096-149">PowerShell transcripts and history make it easy to copy commands to a file for use as a script.</span></span>
+[Get-Help]: /powershell/module/microsoft.powershell.core/Get-Help
