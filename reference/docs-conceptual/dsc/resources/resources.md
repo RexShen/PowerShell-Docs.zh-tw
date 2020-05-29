@@ -2,12 +2,12 @@
 ms.date: 02/28/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 資源
-ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278236"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692211"
 ---
 # <a name="dsc-resources"></a>DSC 資源
 
@@ -22,9 +22,9 @@ ms.locfileid: "78278236"
 每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。
 您可以透過下列方式定義資源的結構描述：
 
-- **'Schema.Mof'** 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 '.schema.mof' 檔案中定義其「結構描述」  。
-- **'\<資源名稱\>.schema.psm1'** 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)，在 '<ResourceName>.schema.psm1' 檔案中定義其「結構描述」  。
-- **'\<資源名稱\>.psm1'** 檔案：以類別為基礎的 DSC 資源會在類別定義中定義其「結構描述」  。 語法項目會標示為 Class 屬性。 如需詳細資訊，請參閱 [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
+- `Schema.Mof` 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 '.schema.mof' 檔案中定義其「結構描述」。
+- `<Resource Name>.schema.psm1` 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)，在 `<ResourceName>.schema.psm1` 檔案中定義其「結構描述」。
+- `<Resource Name>.psm1` 檔案：以類別為基礎的 DSC 資源會在類別定義中定義其「結構描述」。 語法項目會標示為 Class 屬性。 如需詳細資訊，請參閱 [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
 
 若要擷取 DSC 資源的語法，請搭配 `-Syntax` 參數使用 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet。 此使用方式類似於搭配 `-Syntax` 參數使用 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) 來取得 Cmdlet 語法。 您看到的輸出將顯示針對您指定之資源的資源區塊所使用的範本。
 
@@ -32,7 +32,7 @@ ms.locfileid: "78278236"
 Get-DscResource -Syntax Service
 ```
 
-雖然此資源的語法未來可能變更，但您看到的輸出應該類似下列輸出。 如同 Cmdlet 語法，方括弧中的「索引鍵」  均為選擇性。 類型會指定每個索引鍵所預期的資料類型。
+雖然此資源的語法未來可能變更，但您看到的輸出應該類似下列輸出。 如同 Cmdlet 語法，方括弧中的「索引鍵」均為選擇性。 類型會指定每個索引鍵所預期的資料類型。
 
 > [!NOTE]
 > **Ensure** 索引鍵是選擇性的，因為它會預設為 "Present"。
