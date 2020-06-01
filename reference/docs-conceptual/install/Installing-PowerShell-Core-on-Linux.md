@@ -2,12 +2,12 @@
 title: 在 Linux 上安裝 PowerShell
 description: 在各種 Linux 發行版本上安裝 PowerShell Core 的相關資訊
 ms.date: 05/21/2020
-ms.openlocfilehash: b87827635cc66de3714100dfac6de56860495d79
-ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
+ms.openlocfilehash: 1f3526507f84c43fbe44235e9a44e43d7f3d3e37
+ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791510"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84148458"
 ---
 # <a name="installing-powershell-on-linux"></a>在 Linux 上安裝 PowerShell
 
@@ -84,7 +84,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get install powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>透過直接下載安裝 - Ubuntu 16.04
 
@@ -134,7 +134,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get install powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>透過直接下載安裝 - Ubuntu 18.04
 
@@ -203,7 +203,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get install powershell` 來更新 PowerShell。
 
 ## <a name="debian-9"></a>Debian 9
 
@@ -234,7 +234,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get upgrade powershell` 來更新 PowerShell。
+以超級使用者的身分，註冊 Microsoft 存放庫一次。 註冊之後，您可以使用 `sudo apt-get install powershell` 來更新 PowerShell。
 
 ### <a name="installation-via-direct-download---debian-9"></a>透過直接下載安裝 - Debian 9
 
