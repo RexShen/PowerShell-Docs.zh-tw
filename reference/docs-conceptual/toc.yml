@@ -41,8 +41,28 @@
           href: learn/ps101/powershell.exe-command-line-help.md
         - name: 使用 Tab 鍵擴充
           href: learn/ps101/using-tab-expansion.md
-    - name: 使用實驗性功能
-      href: learn/experimental-features.md
+    - name: 深入了解
+      items:
+        - name: 概觀
+          href: learn/deep-dives/overview.md
+        - name: 您想知道有關陣列的一切
+          href: learn/deep-dives/everything-about-arrays.md
+        - name: 您想知道有關雜湊表的一切
+          href: learn/deep-dives/everything-about-hashtable.md
+        - name: 您想知道有關 PSCustomObject 的一切
+          href: learn/deep-dives/everything-about-pscustomobject.md
+        - name: 您想知道有關替代字串的一切
+          href: learn/deep-dives/everything-about-string-substitutions.md
+        - name: 您想知道有關 if/then/else 的一切
+          href: learn/deep-dives/everything-about-if.md
+        - name: 您想知道有關切換的一切
+          href: learn/deep-dives/everything-about-switch.md
+        - name: 您想知道有關例外狀況的一切
+          href: learn/deep-dives/everything-about-exceptions.md
+        - name: 您想知道有關 $null 的一切
+          href: learn/deep-dives/everything-about-null.md
+        - name: 您想知道有關於 ShouldProcess 的一切
+          href: learn/deep-dives/everything-about-shouldprocess.md
     - name: PowerShell 遠端
       items:
         - name: Just Enough Administration (JEA)
@@ -73,6 +93,8 @@
           href: learn/remoting/winrmsecurity.md
         - name: 在 PowerShell 遠端中進行第二次跳躍
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: 使用實驗性功能
+      href: learn/experimental-features.md
     - name: 其他資源
       href: learn/more-powershell-learning.md
     - name: 詞彙
@@ -748,6 +770,8 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: 撰寫可攜式模組
       href: dev-cross-plat/writing-portable-modules.md
+    - name: 如何建立標準程式庫的二進位模組
+      href: dev-cross-plat/create-standard-library-binary-module.md
     - name: 舊版 PowerShell SDK
       items:
         - name: 概觀
