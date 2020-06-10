@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC 登錄資源
-ms.openlocfilehash: 9f65815cbe6a94831b88cb3425bf688e1a99a9c0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3acd79fa81bc731f344d810371b961dc3af3a11d
+ms.sourcegitcommit: 1ab59991c18e1b9692333d5e58ce649eaa75594f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559897"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203642"
 ---
 # <a name="dsc-registry-resource"></a>DSC 登錄資源
 
@@ -54,9 +54,11 @@ Registry [string] #ResourceName
 > [!NOTE]
 > 已在 WMF 5.0 中新增 **PsDscRunAsCredential** 通用屬性，以允許在其他認證的內容中執行任何 DSC 資源。 如需詳細資訊，請參閱[搭配 DSC 資源使用認證](../../../configurations/runasuser.md)。
 
-## <a name="example"></a>範例
+## <a name="examples"></a>範例
 
-此範例可確保 **HKEY\_LOCAL\_MACHINE** 登錄區包含名為"ExampleKey"的索引鍵。
+### <a name="example-1-ensure-specified-value-and-data-under-specified-registry-key"></a>範例 1：確定指定的值和資料位於指定的登錄機碼下
+
+這個範例可確認位於名為 "ExampleKey1" 機碼下的登錄值 "TestValue" 存在於 `HKEY\_LOCAL\_MACHINE` 登錄區中，且包含資料 "TestData"。
 
 ```powershell
 Configuration RegistryTest
@@ -64,9 +66,25 @@ Configuration RegistryTest
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
-        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey1"
         ValueName   = "TestValue"
         ValueData   = "TestData"
+    }
+}
+```
+
+### <a name="example-2-ensure-specified-registry-key-exists"></a>範例 2：確定指定的登錄機碼是否存在
+
+這個範例可確認名為 "ExampleKey2" 的機碼存在於 **HKEY\_LOCAL\_MACHINE** 登錄區中。
+
+```powershell
+Configuration RegistryTest
+{
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey2"
+        ValueName   = ""
     }
 }
 ```
