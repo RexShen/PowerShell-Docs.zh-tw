@@ -3,12 +3,12 @@ title: 您想知道有關雜湊表的一切
 description: 雜湊表在 PowerShell 中是極其重要的，因此務必加以充分了解。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 60a5172485b9caf6343f54194563cd048648206e
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
+ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149511"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307124"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>您想知道有關雜湊表的一切
 
@@ -541,10 +541,9 @@ $person = @{
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
-There are many ways to approach the structure of your objects. Here is a second way to look at a
-nested hashtable.
+有許多方式可以處理您物件的結構。 這裡是查看巢狀雜湊表的第二種方式。
 
 ```powershell
 $people = @{
@@ -671,6 +670,36 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
 這個方法有兩個重點。 第一個重點是 JSON 會寫出多行，因此我需要使用 `-Raw` 選項，將其讀回成單一字串。 第二個重點是匯入的物件不再是 `[hashtable]`。 現在是 `[pscustomobject]`，而且如果不是您所預期的，可能會造成問題。
 
+注意深層巢狀雜湊表。 當您將其轉換為 JSON 時，可能不會得到您預期的結果。
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+使用 **Depth** 參數以確保您已展開所有的巢狀雜湊表。
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 如果您需要其在匯入時成為 `[hashtable]`，則必須使用 `Export-CliXml` 和 `Import-CliXml` 命令。
 
 ### <a name="converting-json-to-hashtable"></a>將 JSON 轉換成雜湊表
@@ -682,6 +711,18 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+從 PowerShell v6 開始，JSON 支援會使用 NewtonSoft JSON.NET 並加入雜湊表支援。
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+PowerShell 6.2 已將 **Depth** 參數新增至 `ConvertFrom-Json`。 預設 **Depth** 為1024。
 
 ### <a name="reading-directly-from-a-file"></a>直接從檔案讀取
 
@@ -698,9 +739,9 @@ $hashtable = ( & $scriptBlock )
 
 關於這一點，您知道模組資訊清單 (.psd1 檔案) 只是雜湊表嗎？
 
-## <a name="keys-are-just-strings"></a>索引鍵只是字串
+## <a name="keys-can-be-any-object"></a>索引鍵可以是任何物件
 
-我不想要提早在此正切函數上開始，但索引鍵只是字串。 因此，我們可以在任何項目前後加上引號，使其成為索引鍵。
+在大部分的時候，索引鍵只是字串。 因此，我們可以在任何項目前後加上引號，使其成為索引鍵。
 
 ```powershell
 $person = @{
@@ -721,13 +762,34 @@ $person.$key
 
 這是因為您可以做到一些事情，這並不表示您應該這麼做。 最後一個看起來就像是等待發生的錯誤 (bug)，這讓讀取您程式碼的任何人很容易產生誤解。
 
-從技術上來說，您的索引鍵不一定是字串，但如果您只使用字串，就比較容易思考。
+從技術上來說，您的索引鍵不一定是字串，但如果您只使用字串，就比較容易思考。 不過，索引編製並不適用於複雜索引鍵。
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+依索引鍵存取雜湊表中的值不一定會有作用。 例如：
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+使用成員存取 (`.`) 標記法不會傳回任何內容。 但是使用陣列索引 (`[]`) 標記法則有用。
 
 ## <a name="use-in-automatic-variables"></a>用於自動變數
 
 ### <a name="psboundparameters"></a>$PSBoundParameters
 
-[$PSBoundParameters][] 是只存在於函式內容中的自動變數。 其包含呼叫函數時搭配的所有參數。 這不是真正的雜湊表，但是足以讓您將其等同視之。
+[$PSBoundParameters][] 是只存在於函式內容中的自動變數。
+其包含呼叫函數時搭配的所有參數。 這不是真正的雜湊表，但是足以讓您將其等同視之。
 
 其中包括移除索引鍵，並將其展開至其他函式。 如果您發現自己撰寫的是 Proxy 函式，請仔細查看一下。
 
@@ -893,8 +955,6 @@ function Get-DeepClone
 ## <a name="anything-else"></a>任何其他項目？
 
 我很快涵蓋了許多基礎的東西。 我希望您可以走出去學習新的事物，或在每次閱讀時有更深的領悟。 因為我涵蓋了這項功能的完整範疇，所以目前可能會有一些層面不適用於您。 這完全沒問題，而且是預期的情況，視您使用 PowerShell 的程度而定。
-
-以下是我們所涵蓋的一切清單，以防您想要跳入某個項目。 一般來說，都是從頭開始，但這是由上而下撰寫的，其範例是根據前面的一切內容所建置的。
 
 <!-- link references -->
 [原始版本]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
