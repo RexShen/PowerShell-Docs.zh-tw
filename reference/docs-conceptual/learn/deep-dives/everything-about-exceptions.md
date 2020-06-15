@@ -3,19 +3,19 @@ title: 您想知道有關於例外狀況的一切 (英文)
 description: 在撰寫程式碼時，錯誤處理只是生命必經的歷程。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fd3ddacbf14d1faeee98682697161f86c6ff0c72
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
+ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149541"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337177"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>您想知道有關於例外狀況的一切 (英文)
 
 在撰寫程式碼時，錯誤處理只是生命必經的歷程。 我們通常可以檢查並驗證預期行為的條件。 當發生未預期的情況時，我們會轉換成例外狀況處理。 您可以輕鬆地處理其他人的程式碼所產生的例外狀況，或者您可以產生自己的例外狀況供其他人處理。
 
 > [!NOTE]
-> 本文的[原始版本][]出自 [@KevinMarquette][] 所撰寫的部落格。 PowerShell 小組感謝 Kevin 分享的內容。 請前往 [PowerShellExplained.com][] 瀏覽他的部落格。
+> 本文的[原始版本][]出自 [@KevinMarquette][] 所撰寫的部落格。 PowerShell 小組感謝 Kevin 分享此內容。 請前往 [PowerShellExplained.com][] 瀏覽他的部落格。
 
 ## <a name="basic-terminology"></a>基本術語
 
@@ -55,7 +55,7 @@ ms.locfileid: "84149541"
 若要建立自己的例外狀況事件，我們會擲回具有 `throw` 關鍵字的例外狀況。
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -64,7 +64,7 @@ function Do-Something
 這會建立終止錯誤的執行階段例外狀況。 它是由呼叫函式中的 `catch` 來處理，或是結束具有如下訊息的指令碼。
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -89,7 +89,7 @@ Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 如果您在任何進階函式或 Cmdlet 上指定 `-ErrorAction Stop`，結果會將所有 `Write-Error` 陳述式轉換為停止執行或可由 `catch`處理的終止錯誤。
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### <a name="trycatch"></a>Try/Catch
@@ -99,7 +99,7 @@ Do-Something -ErrorAction Stop
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -108,7 +108,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -213,7 +213,7 @@ InvocationName        : Get-Resource
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -276,7 +276,7 @@ at CallSite.Target(Closure , CallSite , Type , String )
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -300,7 +300,7 @@ catch [System.IO.IOException]
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -449,7 +449,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 出現錯誤訊息指出我的指令碼已中斷，是因為我在第 31 行呼叫 `throw` 是您的指令碼使用者無法看見的錯誤訊息。 該錯誤訊息無法提供任何實用資訊。
 
 Dexter Dhami 指出，我可以使用 `ThrowTerminatingError()` 來加以更正。
@@ -495,13 +494,13 @@ catch
 Kirk Munro 指出，在 `try/catch` 區塊中，某些例外狀況僅僅是終止錯誤。 以下是他提供給我的範例，該範例會產生除以零的執行階段例外狀況。
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 然後叫用例外狀況，如下所示，便會產生錯誤並仍然輸出訊息。
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 但藉由將相同的程式碼放在 `try/catch` 中，我們會看到出現其他狀況。
@@ -509,14 +508,13 @@ function Do-Something { 1/(1-1) }
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 我們會看到錯誤變成終止錯誤，而且不會輸出第一個訊息。 我不喜歡這種方式，就是您可以在函式中使用此程式碼，若是有人使用 `try/catch`，則其運作方式便會有所不同。
 
@@ -528,12 +526,12 @@ catch
 
 ### <a name="public-function-templates"></a>公用函式範本
 
-我對 Kirk Munro 的對話的最後一項要點就是，他在所有的進階函式中都在每個 `begin`、`process` 和 `end` 區塊附近放置 `try{...}catch{...}`。 在這些一般 catch 區塊中，他會使用 `$PSCmdlet.ThrowTerminatingError($PSitem)` 來處理所有例外狀況，並留下他的函式。
+我對 Kirk Munro 的對話的最後一項要點就是，他在所有的進階函式中都在每個 `begin`、`process` 和 `end` 區塊附近放置 `try{...}catch{...}`。 在這些一般 catch 區塊中，他會使用一行 `$PSCmdlet.ThrowTerminatingError($PSItem)` 來處理所有離開函式的例外狀況。
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -544,7 +542,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }
