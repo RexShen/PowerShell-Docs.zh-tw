@@ -8,12 +8,11 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
-ms.translationtype: MT
+ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
+ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564835"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035428"
 ---
 # <a name="examples-of-comment-based-help"></a>註解型說明的範例
 
@@ -185,7 +184,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-下列命令會取得腳本說明。 由於此腳本不是 Path 環境變數中所列的目錄，因此取得腳本說明的 Get-help 命令必須指定腳本路徑。
+下列命令會取得腳本說明。 因為腳本不在 Path 環境變數中所列的目錄中，所以取得腳本說明的 Get-help 命令必須指定腳本路徑。
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -257,7 +256,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>範例3： Param 語句中的參數描述
 
-這個範例示範如何在 `Param` 函數或腳本的語句中插入 parameterdescriptions。 當參數描述為 brief 時，此格式最有用。
+這個範例示範如何在函數或腳本的語句中插入參數描述 `Param` 。 當參數描述為 brief 時，此格式最有用。
 
 ```powershell
 function Add-Extension
@@ -286,7 +285,7 @@ function Add-Extension
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>範例4：重新導向至 XML 檔案
 
-您可以撰寫函數和腳本的 XML 型說明主題。 雖然以批註為基礎的說明比較容易執行，但如果您想要更精確地控制說明內容，或要將說明主題翻譯成多種語言，則需要以 XML 為基礎的協助。下列範例顯示 Update-Month 腳本的前幾行。 腳本會使用 `.ExternalHelp` 關鍵字來指定腳本之 XML 型說明主題的路徑。
+您可以撰寫函數和腳本的 XML 型說明主題。 雖然以批註為基礎的說明比較容易執行，但如果您想要更精確地控制說明內容，或要將說明主題翻譯成多種語言，則需要以 XML 為基礎的協助。下列範例會顯示 Update-Month.ps1 腳本的前幾行。 腳本會使用 `.ExternalHelp` 關鍵字來指定腳本之 XML 型說明主題的路徑。
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
