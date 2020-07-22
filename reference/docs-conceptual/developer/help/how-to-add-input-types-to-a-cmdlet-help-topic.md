@@ -1,31 +1,26 @@
 ---
-title: 如何將輸入類型新增至 Cmdlet 說明主題 |Microsoft Docs
-ms.custom: ''
+title: 如何新增輸入類型至 Cmdlet 說明主題
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
-caps.latest.revision: 7
-ms.openlocfilehash: 58b908be3149376547b075320b021421351b881e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d41c49ff48cf361c2ba694d11576e84a9367eef5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557053"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893419"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>如何新增輸入類型至 Cmdlet 說明主題
 
-本節說明如何將輸入區段新增至 Windows PowerShell® Cmdlet 說明主題。 [輸入] 區段會以傳值或屬性名稱的形式，列出 Cmdlet 接受做為輸入的物件的 .NET 類別。
+本節說明如何將**輸入**區段新增至 PowerShell Cmdlet 說明主題。 [**輸入**] 區段會以傳值或屬性名稱的形式，列出 Cmdlet 接受做為輸入的物件的 .net 類別。
 
-您可以新增至輸入區段的類別數目沒有限制。 輸入類型包含在 \< 命令中： inputTypes> 節點，其中每個類別都包含在 \< 命令中： inputType> 元素。
+您可以新增至**輸入**區段的類別數目沒有限制。 輸入類型會括在節點中 `<command:inputTypes>` ，每個類別都包含在專案中 `<command:inputType>` 。
 
-此架構包含兩個 \< maml： description> 每個命令中的元素 \< ： inputType> 元素。 不過，此 `Get-Help` Cmdlet 只會顯示命令的內容 \< ： inputType>/ \< maml： description>）元素。
+架構 `<maml:description>` 在每個元素中都包含兩個元素 `<command:inputType>` 。
+不過，此 `Get-Help` Cmdlet 只會顯示元素的內容 `<command:inputType>/<maml:description>` 。
 
-從 Windows PowerShell 3.0 開始，此 `Get-Help` Cmdlet 會顯示 \< maml： uri> 元素的內容。 此元素可讓您將使用者引導至描述 .NET 類別的主題。
+從 PowerShell 3.0 開始，此 `Get-Help` Cmdlet 會顯示元素的內容 `<maml:uri>` 。
+此元素可讓您將使用者引導至描述 .NET 類別的主題。
 
-下列 XML 顯示 \< maml： inputTypes> 節點。
+下列 XML 會顯示 `<maml:inputTypes>` 節點。
 
 ```xml
 <command:inputTypes>
@@ -42,7 +37,7 @@ ms.locfileid: "83557053"
 </command:inputTypes>
 ```
 
-下列 XML 顯示使用 \< maml： inputTypes> 節點來記錄輸入類型的範例。
+下列 XML 顯示使用 `<maml:inputTypes>` 節點記錄輸入類型的範例。
 
 ```xml
 <command:inputTypes>

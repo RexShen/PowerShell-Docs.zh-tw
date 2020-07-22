@@ -1,19 +1,12 @@
 ---
-title: 如何將 [另請參閱] 區段新增至提供者說明主題 |Microsoft Docs
-ms.custom: ''
+title: 如何新增＜另請參閱＞小節至提供者說明主題
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
-caps.latest.revision: 4
-ms.openlocfilehash: b6561120d1bbe848ab4ebcdec7de92c6cad96314
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 54adf4bb941888583eb749b7b5322b27d84c7af7
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564818"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893470"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>如何新增＜另請參閱＞小節至提供者說明主題
 
@@ -23,11 +16,12 @@ ms.locfileid: "83564818"
 
 當您參考線上主題時，請以純文字提供 URI 或搜尋詞彙。 此 `Get-Help` Cmdlet 不會連結或重新導向至清單中的任何主題。 此外， `Online` Cmdlet 的參數 `Get-Help` 無法與提供者說明搭配運作。
 
-[另請參閱] 區段是從 `RelatedLinks` 元素及其包含的標記建立而來。 下列 XML 顯示如何新增標記。
+[**另請參閱**] 區段是從 `RelatedLinks` 元素及其包含的標記建立而來。
+下列 XML 顯示如何新增標記。
 
-### <a name="to-add-see-also-topics"></a>新增「另請參閱」主題
+### <a name="to-add-see-also-topics"></a>加入另請參閱主題
 
-1. 在 dll-help .xml*檔案的專案*中，新增專案 `providerHelp` `RelatedLinks` 。 `RelatedLinks`元素應該是元素中的最後一個元素 `providerHelp` 。 `RelatedLinks`每個提供者說明主題中只允許一個元素。
+1. 在檔案中 `<AssemblyName>.dll-help.xml` 的專案內 `providerHelp` ，加入 `RelatedLinks` 元素。 `RelatedLinks`元素應該是元素中的最後一個元素 `providerHelp` 。 `RelatedLinks`每個提供者說明主題中只允許一個元素。
 
    例如：
 
@@ -38,7 +32,7 @@ ms.locfileid: "83564818"
     </providerHelp>
     ```
 
-2. 針對 [**另請參閱**] 區段中的每個主題，在 `RelatedLinks` 元素內加入 `navigationLink` 元素。 然後，在每個 `navigationLink` 元素內加入一個專案 `linkText` 和一個專案 `uri` 。 如果您不是使用專案 `uri` ，您可以將它新增為空的元素（ \< uri/>）。
+1. 針對 [**另請參閱**] 區段中的每個主題，在 `RelatedLinks` 元素內加入 `navigationLink` 元素。 然後，在每個 `navigationLink` 元素內加入一個專案 `linkText` 和一個專案 `uri` 。 如果您不是使用專案 `uri` ，您可以將它新增為空的元素（ \<uri/> ）。
 
    例如：
 
@@ -53,7 +47,7 @@ ms.locfileid: "83564818"
     </providerHelp>
     ```
 
-3. 在標記之間輸入主題名稱 `linkText` 。 如果您要提供 URI，請在標記之間輸入 `uri` 。 若要指出目前提供者說明主題的線上版本，請在 `linkText` 標記之間輸入「線上版本：」，而不是主題名稱。 一般而言，「線上版本：」連結是 [另請參閱主題] 清單中的第一個主題。
+1. 在標記之間輸入主題名稱 `linkText` 。 如果您要提供 URI，請在標記之間輸入 `uri` 。 若要指出目前提供者說明主題的線上版本，請在 `linkText` 標記之間輸入「線上版本：」，而不是主題名稱。 一般而言，「線上版本：」連結是 [另請參閱主題] 清單中的第一個主題。
 
    下列範例包含三個 [另請參閱] 主題。 第一個參考目前主題的線上版本。 第二個則是指 Windows PowerShell Cmdlet 說明主題。 第三個參考另一個線上主題。
 

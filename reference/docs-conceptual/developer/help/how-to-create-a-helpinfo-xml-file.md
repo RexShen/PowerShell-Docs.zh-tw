@@ -1,23 +1,16 @@
 ---
-title: 如何建立 HelpInfo XML 檔案 |Microsoft Docs
-ms.custom: ''
+title: 如何建立 HelpInfo XML 檔案
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
-caps.latest.revision: 9
-ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: e395746e51309477bbcbff51b4591de3f73ce0db
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811767"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893300"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>如何建立 HelpInfo XML 檔案
 
-本節中的此主題說明如何建立和填入說明資訊檔案（通常稱為「HelpInfo XML 檔案」），以取得 Windows PowerShell 可更新的說明功能。
+本節中的主題說明如何建立和填入說明資訊檔案（通常稱為「HelpInfo XML 檔案」），以取得 PowerShell 可更新的說明功能。
 
 ## <a name="helpinfo-xml-file-overview"></a>HelpInfo XML 檔案總覽
 

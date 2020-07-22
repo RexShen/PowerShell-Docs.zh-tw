@@ -1,19 +1,12 @@
 ---
-title: 如何更新說明檔 |Microsoft Docs
-ms.custom: ''
+title: 如何更新說明檔
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 495869a6-080e-4401-9ddc-16edd2f86857
-caps.latest.revision: 6
-ms.openlocfilehash: 35b3fd696419d0135fd6f662223e6c8586df443a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 80f7c8865729515de98648765fa36ce540e00162
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811647"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892943"
 ---
 # <a name="how-to-update-help-files"></a>如何更新說明檔
 
@@ -26,17 +19,10 @@ ms.locfileid: "83811647"
 若要更新說明檔：
 
 1. 變更檔案。
-
-2. 將檔案轉譯為其他 UI 文化特性。
-
-3. 針對每個 UI 文化特性中的模組，收集所有說明檔（新的、已變更和不變）。
-
-4. 針對 XML 架構驗證檔案。
-
-5. 重建每個 UI 文化特性的 CAB 檔案。
-
-6. 在 HelpInfo XML 檔案中，將每個 UI 文化特性的 CAB 檔案版本號碼遞增。
-
-7. 將新的 CAB 檔案上傳到 HelpInfo XML 檔案中**HelpContentUri**元素的值所指定的位置。 以新的 CAB 檔案取代舊版的封包檔。
-
-8. 將更新的 HelpInfo XML 檔案上傳至模組資訊清單中的**HelpInfoUri**索引鍵所指定的位置。 以新的檔案取代舊版的 HelpInfo XML 檔案。
+1. 將檔案轉譯為其他 UI 文化特性。
+1. 針對每個 UI 文化特性中的模組，收集所有說明檔（新的、已變更和不變）。
+1. 針對 XML 架構驗證檔案。
+1. 重建每個 UI 文化特性的 CAB 檔案。
+1. 在 HelpInfo XML 檔案中，將每個 UI 文化特性的 CAB 檔案版本號碼遞增。
+1. 將新的 CAB 檔案上傳到 HelpInfo XML 檔案中**HelpContentUri**元素的值所指定的位置。 以新的 CAB 檔案取代舊版的封包檔。
+1. 將更新的 HelpInfo XML 檔案上傳至模組資訊清單中的**HelpInfoUri**索引鍵所指定的位置。 以新的檔案取代舊版的 HelpInfo XML 檔案。

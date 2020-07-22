@@ -1,18 +1,12 @@
 ---
-title: 以批註為基礎的說明範例 |Microsoft Docs
-ms.custom: ''
+title: 註解型說明的範例
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
-caps.latest.revision: 4
-ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3858fa7f15d71c505dacaf9679910d45ef4640e5
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86035428"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893487"
 ---
 # <a name="examples-of-comment-based-help"></a>註解型說明的範例
 
@@ -70,13 +64,13 @@ function Add-Extension
 }
 ```
 
-下列輸出顯示 Get-help 命令的結果，可顯示新增擴充功能函式的說明。
+下列輸出顯示的 `Get-Help` 命令結果會顯示函式的說明 `Add-Extension` 。
 
 ```powershell
 C:\PS> get-help add-extension -full
 ```
 
-```output
+```Output
         NAME
             Add-Extension
 
@@ -144,7 +138,7 @@ C:\PS> get-help add-extension -full
 
 下列範例函數包含以批註為基礎的說明。
 
-請注意，結尾 **#>** 與語句之間的空白行 `Param` 。 在沒有語句的腳本中 `Param` ，說明主題中的最後一個批註和第一個函式宣告之間必須至少有兩個空白行。 如果沒有這些空白行，Get-help 會將說明主題與函式相關聯，而不是腳本。
+請注意，結尾 **#>** 與語句之間的空白行 `Param` 。 在沒有語句的腳本中 `Param` ，說明主題中的最後一個批註和第一個函式宣告之間必須至少有兩個空白行。 如果沒有這些空白行，請 `Get-Help` 將說明主題與函式建立關聯，而不是使用腳本。
 
 ```powershell
 <#
@@ -184,13 +178,13 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-下列命令會取得腳本說明。 因為腳本不在 Path 環境變數中所列的目錄中，所以取得腳本說明的 Get-help 命令必須指定腳本路徑。
+下列命令會取得腳本說明。 因為腳本不在 Path 環境變數中所列的目錄中，所以 `Get-Help` 取得腳本說明的命令必須指定腳本路徑。
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
 ```
 
-```output
+```Output
             NAME
                 C:\ps-test\Update-Month.ps1
 
@@ -281,11 +275,11 @@ function Add-Extension
     #>
 ```
 
-結果與範例1的結果相同。 Get-help 會解讀參數描述，就如同它們隨附 `.Parameter` 關鍵字一樣。
+結果與範例1的結果相同。 `Get-Help`將參數描述視為附有關鍵詞來解讀 `.Parameter` 。
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>範例4：重新導向至 XML 檔案
 
-您可以撰寫函數和腳本的 XML 型說明主題。 雖然以批註為基礎的說明比較容易執行，但如果您想要更精確地控制說明內容，或要將說明主題翻譯成多種語言，則需要以 XML 為基礎的協助。下列範例會顯示 Update-Month.ps1 腳本的前幾行。 腳本會使用 `.ExternalHelp` 關鍵字來指定腳本之 XML 型說明主題的路徑。
+您可以撰寫函數和腳本的 XML 型說明主題。 雖然以批註為基礎的說明比較容易執行，但如果您想要更精確地控制說明內容，或要將說明主題翻譯成多種語言，則需要以 XML 為基礎的協助。下列範例會顯示腳本的前幾行 `Update-Month.ps1` 。 腳本會使用 `.ExternalHelp` 關鍵字來指定腳本之 XML 型說明主題的路徑。
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -310,7 +304,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>範例5：重新導向至不同的說明主題
 
-下列程式碼是從 Windows PowerShell 內建函式的開頭摘錄 `Help` ，這會一次顯示一個解說文字畫面。 由於 Get-help Cmdlet 的說明主題會描述 Help 函式，因此 Help 函式會使用 `.ForwardHelpTargetName` 和關鍵字，將 `.ForwardHelpCategory` 使用者重新導向至 Get-help Cmdlet 說明主題。
+下列程式碼是 PowerShell 中內建函式開頭的摘錄 `Help` ，一次只會顯示一個解說文字畫面。 由於 Get-help Cmdlet 的說明主題會描述 Help 函式，因此 Help 函式會使用 `.ForwardHelpTargetName` 和關鍵字，將 `.ForwardHelpCategory` 使用者重新導向至 Get-help Cmdlet 說明主題。
 
 ```powershell
 function help
@@ -328,13 +322,13 @@ function help
     ...
 ```
 
-下列命令會使用這項功能。 當使用者輸入 Help 函數的 Get-help 命令時，Get-help 會顯示 Get-help Cmdlet 的說明主題。
+下列命令會使用這項功能。 當使用者輸入函式的 `Get-Help` 命令時 `Help` ，會 `Get-Help` 顯示該 Cmdlet 的說明主題 `Get-Help` 。
 
 ```powershell
 C:\PS> get-help help
 ```
 
-```output
+```Output
             NAME
                 Get-Help
 

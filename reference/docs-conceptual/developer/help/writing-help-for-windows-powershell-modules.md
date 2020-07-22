@@ -1,12 +1,12 @@
 ---
 title: 撰寫 PowerShell 模組的說明
 ms.date: 04/10/2020
-ms.openlocfilehash: 2c6450c03fb9847de331605fb6b9bfb203af3d89
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 115ea3f3c5941e74ed6ddbc8480d4a21576bc5c6
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811457"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893062"
 ---
 # <a name="writing-help-for-powershell-modules"></a>撰寫 PowerShell 模組的說明
 
@@ -29,7 +29,7 @@ PowerShell 模組可以包含關於模組的說明主題以及模組成員，例
 - **概念性（"About"）** 說明。 您可以使用概念（「關於」）說明主題來描述模組及其成員，並說明如何將成員一起用來執行工作。
   概念性說明主題是具有 Unicode （UTF-8）編碼的文字檔。 檔案名必須使用 `about_<name>.help.txt` 格式，例如 `about_MyModule.help.txt` 。 根據預設，PowerShell 包含超過100的關於說明主題的概念，其格式如下列範例所示。
 
-  ```
+  ```Output
   TOPIC
       about_<subject or module name>
 

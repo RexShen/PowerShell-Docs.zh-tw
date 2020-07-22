@@ -1,19 +1,12 @@
 ---
-title: 可更新的說明撰寫：逐步執行 |Microsoft Docs
-ms.custom: ''
+title: 可更新的說明撰寫-逐步解說
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
-caps.latest.revision: 13
-ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: c9214be3c3363a4e6354595b50cf76a17d49aa67
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811377"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893113"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>可更新的說明撰寫：逐步
 
@@ -48,14 +41,10 @@ HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 
 HelpInfo XML 資訊檔案包含您的說明檔的網際網路位置 URI，以及模組中每個支援的 UI 文化特性的最新說明檔案版本號碼。 每個 Windows PowerShell 模組都有一個 HelpInfo XML 檔案。 當您更新說明檔時，可以編輯或取代 HelpInfo XML 檔案;您不會再新增另一個。 如需詳細資訊，請參閱 how [To Create a HELPINFO XML File](./how-to-create-a-helpinfo-xml-file.md)。
 
-### <a name="step-4-sign-your-help-files"></a>步驟4：簽署您的說明檔
+### <a name="step-4-create-cab-files"></a>步驟4：建立 CAB 檔案
 
-數位簽章不是必要的，但在您每次共用檔案時都是最佳作法建議。
+使用可建立封包（）檔案（例如）的工具， `.cab` `MakeCab.exe` 建立包含模組說明檔的 cab 檔。 針對每個支援的 UI 文化特性中的說明檔，建立個別的 CAB 檔案。 如需詳細資訊，請參閱[如何準備可更新的說明 CAB](./how-to-prepare-updatable-help-cab-files.md)檔案。
 
-### <a name="step-5-create-cab-files"></a>步驟5：建立 CAB 檔案
-
-使用可建立封包（.cab）檔案（例如 Makecab.exe）的工具來建立。CAB 檔案，其中包含模組的說明檔。 針對每個支援的 UI 文化特性中的說明檔，建立個別的 CAB 檔案。 如需詳細資訊，請參閱[如何準備可更新的說明 CAB](./how-to-prepare-updatable-help-cab-files.md)檔案。
-
-### <a name="step-6-upload-your-files"></a>步驟6：上傳您的檔案
+### <a name="step-5-upload-your-files"></a>步驟5：上傳您的檔案
 
 若要發佈新的或已更新的說明檔案，請將 CAB 檔案上傳到 HelpInfo XML 檔案中**HelpContentUri**元素所指定的網際網路位置。 然後，將 HelpInfo XML 檔案上傳至模組資訊清單中**HelpInfoUri**機碼的值所指定的網際網路位置。

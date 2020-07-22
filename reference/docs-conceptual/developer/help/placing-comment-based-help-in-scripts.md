@@ -1,19 +1,12 @@
 ---
-title: 在腳本中放置以批註為基礎的說明 |Microsoft Docs
-ms.custom: ''
+title: 將註解型說明置於指令碼
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
-caps.latest.revision: 4
-ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a3ade6c3138826b924939056b9d1ffb233006d44
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565521"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893181"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>將註解型說明置於指令碼
 
@@ -21,7 +14,9 @@ ms.locfileid: "83565521"
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>在何處放置腳本的批註型說明
 
-- 在指令檔的開頭。 腳本說明只能透過批註和空白行放在腳本的前面。
+- 在指令檔的開頭。
+
+  腳本說明只能透過批註和空白行放在腳本的前面。
 
 - 在指令檔的結尾。
 
@@ -29,13 +24,13 @@ ms.locfileid: "83565521"
 
 ## <a name="examples-of-help-placement-in-a-script"></a>腳本中的說明位置範例
 
- 下列範例會顯示腳本的批註式說明的每個放置選項。
+下列範例會顯示腳本的批註式說明的每個放置選項。
 
 ### <a name="help-at-the-beginning-of-a-script"></a>腳本開頭的說明
 
- 下列範例會顯示以批註為基礎的腳本開頭。
+下列範例會顯示以批註為基礎的腳本開頭。
 
-```
+```powershell
 <#
 .Description
 This script performs a series of network connection tests.
@@ -57,5 +52,4 @@ function Ping { Test-Connection -ComputerName $ComputerName }
 .Description
 This script performs a series of network connection tests.
 #>
-
 ```

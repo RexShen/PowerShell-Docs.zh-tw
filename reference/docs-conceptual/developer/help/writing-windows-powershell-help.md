@@ -1,23 +1,16 @@
 ---
-title: 撰寫 Windows PowerShell 說明 |Microsoft Docs
-ms.custom: ''
+title: 撰寫 Windows PowerShell 說明
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
-caps.latest.revision: 4
-ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8807fe48c6354022900738de0b912c55dec9febb
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367667"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892892"
 ---
 # <a name="writing-windows-powershell-help"></a>撰寫 Windows PowerShell 說明
 
-本檔是針對撰寫 Windows PowerShell Cmdlet、提供者的說明內容，以及可使用 `Get-Help` Cmdlet 在命令列中查看主題相關概念的任何人所撰寫。
+本檔是針對撰寫 PowerShell Cmdlet、提供者和相關概念的說明內容的任何人員所撰寫，這些主題可以使用 Cmdlet 在命令列中查看 `Get-Help` 。
 
 ## <a name="cmdlet-help"></a>Cmdlet 說明
 

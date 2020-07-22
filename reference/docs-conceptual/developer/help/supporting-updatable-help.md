@@ -1,25 +1,16 @@
 ---
-title: 支援可更新的說明 |Microsoft Docs
-ms.custom: ''
+title: 支援可更新的說明
 ms.date: 10/28/2012
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-applies_to:
-- Windows PowerShell 3.0
-ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
-caps.latest.revision: 7
-ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6fa1a9e1f7f3cd42b512a72d7b68ae4a4976978f
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811387"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893334"
 ---
 # <a name="supporting-updatable-help"></a>支援可更新的說明
 
-Windows®8和 Windows Server®2012中引進的*Windows PowerShell 可更新說明系統*，是設計來確保使用者在其本機電腦上的命令提示字元中一律會有最新的說明主題。 除了 Windows PowerShell 線上說明之外，可更新的說明也為使用者提供了完整的協助解決方案。 本節描述可更新的說明系統，並說明模組作者可以如何支援其模組的可更新說明。
+Windows 8 和 Windows Server 2012 中引進的*Windows PowerShell 可更新說明系統*，是設計來確保使用者在其本機電腦上的命令提示字元中一律會有最新的說明主題。 除了 Windows PowerShell 線上說明之外，可更新的說明也為使用者提供了完整的協助解決方案。 本節描述可更新的說明系統，並說明模組作者可以如何支援其模組的可更新說明。
 
 本節包含下列主題。
 

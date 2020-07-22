@@ -1,37 +1,28 @@
 ---
-title: 如何命名可更新的說明 CAB 檔案 |Microsoft Docs
-ms.custom: ''
+title: 如何為可更新說明 CAB 檔案命名
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: de302da0-c17a-4d31-a8ef-14a626738993
-caps.latest.revision: 7
-ms.openlocfilehash: a253f98d213f797a659affb1560907bb99a045d3
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 42486461d92f1f6fcff452a4539edf5be7a66f22
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811697"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892994"
 ---
 # <a name="how-to-name-an-updatable-help-cab-file"></a>如何為可更新說明 CAB 檔案命名
 
-本主題說明可更新的說明封包（的必要名稱格式。CAB）檔案。
+本主題說明可更新的說明封包（）檔案的必要名稱格式 `.CAB` 。
 
 ## <a name="how-to-name-an-updatable-help-cab-file"></a>如何為可更新說明 CAB 檔案命名
 
-可更新的封包（。CAB）檔案的名稱必須是下列格式。
+可更新的封包（ `.CAB` ）檔案必須具有下列格式的名稱。
 
 `<ModuleName>_<ModuleGUID>_<UICulture>_HelpContent.cab`
 
 名稱的元素如下所示。
 
-ModuleName **ModuleInfo**物件的**Name**屬性值，以[取得模組](/powershell/module/Microsoft.PowerShell.Core/Get-Module)Cmdlet 傳回。
-
-ModuleGUID 模組資訊清單中**GUID**金鑰的值。
-
-UICulture CAB 檔案中說明檔的 UI 文化特性。 這個值必須符合模組的 HelpInfo XML 檔案中其中一個**UICulture**元素的值。
+- `<ModuleName>`- [Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 所傳回之**ModuleInfo**物件的**Name**屬性值。
+- `<ModuleGUID>`-模組資訊清單中**GUID**索引鍵的值。
+- `<UICulture>`-CAB 檔案中說明檔的 UI 文化特性。 這個值必須符合模組的 HelpInfo XML 檔案中其中一個**UICulture**元素的值。
 
 例如，如果模組名稱是 "TestModule"，則模組 GUID 為 9cabb9ad-f2ac-4914-a46b-bfc1bebf07f9，而 UI 文化特性為 "en-us"，則 CAB 檔案的名稱會是：
 

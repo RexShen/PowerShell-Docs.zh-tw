@@ -1,32 +1,26 @@
 ---
-title: 如何將 Cmdlet 名稱和概要新增至 Cmdlet 說明主題 |Microsoft Docs
-ms.custom: ''
+title: 如何新增 Cmdlet 名稱和概要至 Cmdlet 說明主題
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1d0e1eb1-a962-4406-9625-175cfa3364ad
-caps.latest.revision: 10
-ms.openlocfilehash: 5b4c04a14c3d86c7a3b94b768e8fb59116d8c6f5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 399defcb596ff9e9a596f4cd25ebcb6bcb7c34d2
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560622"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892875"
 ---
 # <a name="how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic"></a>如何新增 Cmdlet 名稱和概要至 Cmdlet 說明主題
 
-本節說明如何新增 [Cmdlet 說明] 的 [名稱] 和 [概要] 區段中所顯示的內容。 在說明檔中，此內容會新增至每個 Cmdlet 的命令節點。
+本節說明如何新增 [Cmdlet 說明] 的 [**名稱**] 和 [**概要**] 區段中所顯示的內容。 在說明檔中，此內容會新增至每個 Cmdlet 的命令節點。
 
 > [!NOTE]
-> 如需說明檔的完整視圖，請開啟位於 Windows PowerShell 安裝目錄中的其中一個 dll-Help 檔案。 例如，dll-Help 檔案包含數個 Windows PowerShell 指令程式的內容（content）。
+> 如需說明檔的完整視圖，請開啟 `dll-Help.xml` 位於 PowerShell 安裝目錄中的其中一個檔案。 例如，檔案 `Microsoft.PowerShell.Commands.Management.dll-Help.xml` 包含數個 PowerShell Cmdlet 的內容。
 
-### <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>新增 Cmdlet 名稱和概要
+## <a name="to-add-the-cmdlet-name-and-a-synopsis"></a>新增 Cmdlet 名稱和概要
 
-- Cmdlet 說明可以顯示 Cmdlet 的兩個描述。 第一個描述是簡短的描述，稱為「摘要」。 第二個描述是更詳細的描述，會在[將詳細描述新增至 Cmdlet 說明主題](./how-to-add-a-cmdlet-description.md)中討論。 這兩個描述都應該寫成一個段落。
+- Cmdlet 說明可以顯示 Cmdlet 的兩個描述。 第一個描述是簡短的描述，稱為「摘要」。 第二個描述是更詳細的描述，會在[將詳細描述新增至 Cmdlet 說明主題](./how-to-add-a-cmdlet-description.md)中討論。
+  這兩個描述都應該寫成一個段落。
 
-- 在 [摘要] 中，請勿重複 Cmdlet 名稱。 通知使用者，Get-Server Cmdlet 取得伺服器是簡短的，但不提供資訊。 請改用同義字，並將詳細資料加入至描述。
+- 在 [摘要] 中，請勿重複 Cmdlet 名稱。 通知使用者 `Get-Server` Cmdlet 取得伺服器是簡短的，但沒有資訊。 請改用同義字，並將詳細資料加入至描述。
 
   範例：「取得代表本機或遠端電腦的物件」。
 
@@ -40,4 +34,4 @@ ms.locfileid: "83560622"
 
 ## <a name="see-also"></a>另請參閱
 
- [Windows PowerShell SDK](../windows-powershell-reference.md)
+[Windows PowerShell SDK](../windows-powershell-reference.md)

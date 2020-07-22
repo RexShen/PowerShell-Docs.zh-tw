@@ -1,32 +1,21 @@
 ---
-title: 如何準備可更新的說明 CAB 檔案 |Microsoft Docs
-ms.custom: ''
+title: 如何準備可更新的說明 CAB 檔案
 ms.date: 09/03/2012
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-applies_to:
-- Windows PowerShell 3.0
-ms.assetid: a8f48736-c9fa-4e07-bd18-dd813e11f774
-caps.latest.revision: 6
-ms.openlocfilehash: 9d87b086a8309560c039b000afc1c6535dbca38e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 7f3ed2fcf03585a41e571eb2a5ebb4d850d64e01
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811667"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893317"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>如何準備可更新的說明 CAB 檔案
 
-本主題說明封包的內容和使用（。CAB）檔案（位於 Windows PowerShell 可更新的說明中）。
+本主題說明在 Windows PowerShell 可更新說明中的封包（1）檔案的內容和使用方式。
 
 本節包含下列主題。
 
 - [如何建立及上傳 CAB 檔案](./how-to-create-and-upload-cab-files.md)
-
 - [如何為可更新說明 CAB 檔案命名](./how-to-name-an-updatable-help-cab-file.md)
-
 - [可更新的說明 CAB 檔案中允許的檔案類型](./file-types-permitted-in-an-updatable-help-cab-file.md)
 
 ## <a name="see-also"></a>另請參閱

@@ -1,19 +1,12 @@
 ---
-title: HelpInfo XML 架構 |Microsoft Docs
-ms.custom: ''
+title: HelpInfo XML 結構描述
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
-caps.latest.revision: 7
-ms.openlocfilehash: 3e2a113e120c61fab1ba76c4fd897ded67d13319
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: e894c1f2695ddbc5a386f8fec96054a7b31e7778
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811517"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893249"
 ---
 # <a name="helpinfo-xml-schema"></a>HelpInfo XML 結構描述
 
@@ -54,12 +47,12 @@ HelpInfo XML 檔案是以下列 XML 架構為基礎。
 
 HelpInfo XML 檔案包含下列元素。
 
-HelpContentURI 包含模組之說明 CAB 檔案位置的 URI。 URI 必須以 "HTTP" 或 "HTTPs" 開頭。 URI 應該指定網際網路位置，但不能包含 CAB 檔案名。 **HelpContentURI**值可以是相同或不同于**HelpInfoURI**值。
+- **HelpContentURI** -包含模組之說明 CAB 檔案位置的 URI。 URI 必須以 "HTTP" 或 "HTTPs" 開頭。 URI 應該指定網際網路位置，但不能包含 CAB 檔案名。 **HelpContentURI**值可以是相同或不同于**HelpInfoURI**值。
 
-SupportedUICultures 代表所有 UI 文化特性中的模組說明檔。 包含**UICulture**專案，每個元素都代表指定之 UI 文化特性中模組的一組說明檔。
+- **SupportedUICultures** -代表所有 UI 文化特性中的模組說明檔。 包含**UICulture**專案，每個元素都代表指定之 UI 文化特性中模組的一組說明檔。
 
-UICulture 代表指定 UI 文化特性中模組的一組說明檔。 為寫入說明檔的每個 UI 文化特性新增**UICulture**元素。
+- **UICulture** -代表指定之 UI 文化特性中模組的一組說明檔。 為寫入說明檔的每個 UI 文化特性新增**UICulture**元素。
 
-UICultureName 包含用來撰寫說明檔案之 UI 文化特性的語言代碼。
+- **UICultureName** -包含用來撰寫說明檔案之 UI 文化特性的語言代碼。
 
-UICultureVersion 在 "N1 中包含4部分版本號碼。N2.N3.N4 "格式，代表 UI 文化特性中的說明 CAB 檔案版本。 每當您在**UICultureName**所指定的 UI 文化特性中上傳新的說明 CAB 檔案時，就會遞增此版本號碼。 如需此值的詳細資訊，請參閱 MSDN 中的「版本類別（系統）」。
+- **UICultureVersion** -在 "N1" 中包含4部分版本號碼。N2.N3.N4 "格式，代表 UI 文化特性中的說明 CAB 檔案版本。 每當您在**UICultureName**所指定的 UI 文化特性中上傳新的說明 CAB 檔案時，就會遞增此版本號碼。 如需此值的詳細資訊，請參閱[版本類別](/dotnet/api/system.version)。

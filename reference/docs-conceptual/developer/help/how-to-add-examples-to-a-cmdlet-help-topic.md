@@ -1,19 +1,12 @@
 ---
-title: 如何將範例新增至 Cmdlet 說明主題 |Microsoft Docs
-ms.custom: ''
+title: 如何新增範例至 Cmdlet 說明主題
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
-caps.latest.revision: 5
-ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 33a1726f9d52b5a368d5df7962cc17ba9c45246a
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557085"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893436"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>如何新增範例至 Cmdlet 說明主題
 
@@ -21,7 +14,7 @@ ms.locfileid: "83557085"
 
 - 列出命令中的所有參數名稱，即使參數名稱是選擇性的。 這可協助使用者輕鬆地解讀命令。
 
-- 請避免使用別名和部分參數名稱，即使它們在 Windows PowerShell®中工作也是一樣。
+- 請避免別名和部分參數名稱，即使它們在 PowerShell 中工作也是一樣。
 
 - 在範例描述中，為命令的結構說明有理數。 說明為何選擇特定的參數和值，以及如何使用變數。
 
@@ -35,7 +28,7 @@ ms.locfileid: "83557085"
 
 ## <a name="adding-an-examples-node"></a>新增範例節點
 
-下列 XML 顯示如何新增包含單一範例節點的範例節點。 針對您想要包含在主題中的每個範例，新增其他範例節點。
+下列 XML 顯示如何新增包含單一**範例**節點的**範例**節點。 針對您想要包含在主題中的每個範例，新增其他範例節點。
 
 ```xml
 <command:examples>
@@ -46,7 +39,7 @@ ms.locfileid: "83557085"
 
 ## <a name="adding-an-example-title"></a>加入範例標題
 
-下列 XML 示範如何新增範例的標題。 標題是用來設定除了其他範例以外的範例。 Windows PowerShell®使用包含連續範例號碼的標準標頭。
+下列 XML 示範如何新增範例的**標題**。 **標題**是用來設定除了其他範例以外的範例。 PowerShell 會使用包含連續範例號碼的標準標頭。
 
 ```xml
 <command:examples>
@@ -58,7 +51,7 @@ ms.locfileid: "83557085"
 
 ## <a name="adding-preceding-characters"></a>新增前面的字元
 
-下列 XML 顯示如何新增緊接在範例命令之前顯示的字元（例如 Windows PowerShell 提示）（不含任何空格）。 Windows PowerShell®使用 Windows PowerShell 命令提示字元： C:\PS>。
+下列 XML 顯示如何新增緊接在範例命令之前顯示的字元（例如 Windows PowerShell 提示）（不含任何空格）。 PowerShell 會使用 Windows PowerShell 命令提示字元： `C:\PS>` 。
 
 ```xml
 <command:examples>
@@ -89,7 +82,7 @@ ms.locfileid: "83557085"
 
 ## <a name="adding-a-description"></a>新增描述
 
-下列 XML 顯示如何新增範例的描述。 Windows PowerShell®會使用一組 \< maml：段落> 標記來進行描述，即使 \< 可以使用多個 maml：段落> 標記。
+下列 XML 顯示如何新增範例的描述。 PowerShell `<maml:para>` 會針對描述使用一組標記，即使可以使用多個 `<maml:para>` 標記也一樣。
 
 ```xml
 <command:examples>
@@ -108,7 +101,8 @@ ms.locfileid: "83557085"
 
 ## <a name="adding-example-output"></a>新增範例輸出
 
-下列 XML 顯示如何新增命令的輸出。 命令結果資訊是選擇性的，但在某些情況下，示範使用特定參數的效果會很有説明。 Windows PowerShell®使用兩組空白的 \< maml：段落> 標記來分隔命令輸出與命令。
+下列 XML 顯示如何新增命令的輸出。 命令結果資訊是選擇性的，但在某些情況下，示範使用特定參數的效果會很有説明。
+PowerShell 會使用兩組空白 `<maml:para>` 標記來分隔命令輸出與命令。
 
 ```xml
 <command:examples>
