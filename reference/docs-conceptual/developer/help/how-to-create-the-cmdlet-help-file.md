@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: b5a5f3e187634b38ba3ce3da18a7ad64ccc09ce2
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.openlocfilehash: 652e095bcce606e47cb97658f79eaca34033b239
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893011"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "86953296"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>如何建立 Cmdlet 說明檔案
 
@@ -36,7 +36,7 @@ ms.locfileid: "86893011"
 
    下表列出每個節點的 XML 元素，後面接著每個節點的說明。
 
-   |           節點           |                                                                                                     說明                                                                                                     |
+   |           節點           |                                                                                                     描述                                                                                                     |
    | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
    | `<details>`              | 新增 Cmdlet 說明主題之名稱和概要區段的內容。 如需詳細資訊，請參閱[如何新增 Cmdlet 名稱和摘要](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)。 |
    | `<maml:description>`     | 新增 Cmdlet 說明主題之 [描述] 部分的內容。 如需詳細資訊，請參閱[如何將詳細描述新增至 Cmdlet 說明主題](./how-to-add-a-cmdlet-description.md)。                    |
@@ -54,9 +54,9 @@ ms.locfileid: "86893011"
 
 ```xml
 <command:command
-  xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
-  xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
-  xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
+  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
+  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
   <command:details>
     <!--Add name an synopsis here-->
   </command:details>
