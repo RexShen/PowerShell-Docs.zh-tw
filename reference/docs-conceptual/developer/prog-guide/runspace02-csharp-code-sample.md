@@ -1,23 +1,16 @@
 ---
-title: Runspace02 （C#）程式碼範例 |Microsoft Docs
-ms.custom: ''
+title: 'Runspace02 (c # ) 程式碼範例 |Microsoft Docs'
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 59a7b8b9-f72e-43fd-9a10-77404441a3f2
-caps.latest.revision: 6
-ms.openlocfilehash: 047d14d70853399bc262ac3f1541da38184c3ff8
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 1e58f035f20baa7443d9031499062a45beae01b9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80977874"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778457"
 ---
 # <a name="runspace02-c-code-sample"></a>Runspace02 (C#) 程式碼範例
 
-以下是 Runspace02 C#範例的原始程式碼。 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別，以同步方式執行 `Get-Process` Cmdlet。 接著會使用 Windows Forms 和資料系結，在 DataGridView 控制項中顯示結果。
+以下是 Runspace02 範例的 c # 原始程式碼。 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別，以同步方式執行 `Get-Process` Cmdlet。 接著會使用 Windows Forms 和資料系結，在 DataGridView 控制項中顯示結果。
 
 ## <a name="code-sample"></a>程式碼範例
 

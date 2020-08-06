@@ -1,19 +1,12 @@
 ---
 title: Runspace02 程式碼範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ce442990-b5f1-4334-b6d8-080e527ccea1
-caps.latest.revision: 7
-ms.openlocfilehash: 8dd57add55cf6b7583e7d8f218a8782b7210af60
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: ff05fcff16d2890c90f645886de4513f9f8dedbe
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560282"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778476"
 ---
 # <a name="runspace02-code-samples"></a>Runspace02 程式碼範例
 
@@ -21,7 +14,7 @@ ms.locfileid: "83560282"
 
 如需完整的範例程式碼，請參閱下列主題。
 
-|Language|主題|
+|語言|主題|
 |--------------|-----------|
 |C#|[Runspace02 (C#) 程式碼範例](./runspace02-csharp-code-sample.md)|
 |VB.NET|[Runspace02 (VB.NET) 程式碼範例](./runspace02-vb-net-code-sample.md)|

@@ -1,27 +1,20 @@
 ---
 title: Windows PowerShell 提供者總覽 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
-caps.latest.revision: 13
-ms.openlocfilehash: 9f1b94e722e59e707a26547949c661b5098d29e0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c248f1c337e96a1b83cbeb5fb486147504777eb1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560945"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778231"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell 提供者概觀
 
-Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公開，就像它是裝載的磁片磁碟機一樣。 例如，內建的登錄提供者可讓您流覽登錄，就像流覽 `c` 電腦的磁片磁碟機一樣。 提供者也可以覆寫 `Item` Cmdlet （例如、、 `Get-Item` `Set-Item` 等），讓您的資料存放區中的資料可以被處理，例如在流覽檔案系統時處理檔案和目錄。 如需提供者和磁片磁碟機的詳細資訊，以及 Windows PowerShell 中的內建提供者，請參閱[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)。
+Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公開，就像它是裝載的磁片磁碟機一樣。 例如，內建的登錄提供者可讓您流覽登錄，就像流覽 `c` 電腦的磁片磁碟機一樣。 提供者也可以覆寫 `Item` Cmdlet (例如、、 `Get-Item` `Set-Item` 等，) 讓您的資料存放區中的資料可以被處理，就像在流覽檔案系統時處理檔案和目錄一樣。 如需提供者和磁片磁碟機的詳細資訊，以及 Windows PowerShell 中的內建提供者，請參閱[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)。
 
 ## <a name="providers-and-drives"></a>提供者和磁片磁碟機
 
-提供者會定義用來存取、流覽和編輯資料存放區的邏輯，而磁片磁碟機會指定提供者所定義之類型的特定進入點給資料存放區（或資料存放區的一部分）。 例如，登錄提供者可讓您存取登錄中的 hive 和機碼，而 HKLM 和 HKCU 磁片磁碟機會在登錄中指定對應的 hive。 HKLM 和 HKCU 磁片磁碟機都使用登錄提供者。
+提供者會定義用來存取、流覽和編輯資料存放區的邏輯，而磁片磁碟機會指定資料存放區的特定進入點 (或是提供者所定義之類型的部分資料存放區) 。 例如，登錄提供者可讓您存取登錄中的 hive 和機碼，而 HKLM 和 HKCU 磁片磁碟機會在登錄中指定對應的 hive。 HKLM 和 HKCU 磁片磁碟機都使用登錄提供者。
 
 當您撰寫提供者時，可以指定在提供者可用時自動建立的預設磁片磁碟機（磁片磁碟機）。 您也會定義方法，以建立使用該提供者的新磁片磁碟機。
 
@@ -39,7 +32,7 @@ Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公�
 
 ### <a name="drive-qualified-paths"></a>磁片磁碟機限定路徑
 
-磁片磁碟機限定路徑是專案名稱、專案所在的容器和子容器的組合，以及用來存取專案的 Windows PowerShell 磁片磁碟機。 （磁片磁碟機是由用來存取資料存放區的提供者所定義。 這個路徑的開頭是磁片磁碟機名稱，後面接著冒號（:)。 例如： `get-childitem C:`
+磁片磁碟機限定路徑是專案名稱、專案所在的容器和子容器的組合，以及用來存取專案的 Windows PowerShell 磁片磁碟機。  (磁片磁碟機是由用來存取資料存放區的提供者所定義。 這個路徑的開頭是磁片磁碟機名稱，後面接著冒號 (： ) 。 例如： `get-childitem C:`
 
 ### <a name="provider-qualified-paths"></a>提供者限定路徑
 
@@ -51,7 +44,7 @@ Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公�
 
 ### <a name="provider-internal-paths"></a>提供者-內部路徑
 
-若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面（Api）來存取資料，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑為 `\\uncshare\abc\bar` 。
+若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面來存取資料 (Api) ，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑為 `\\uncshare\abc\bar` 。
 
 ## <a name="overriding-cmdlet-parameters"></a>覆寫 Cmdlet 參數
 
@@ -63,7 +56,7 @@ Windows PowerShell 提供者可讓任何資料存放區與檔案系統一樣公�
 
 ## <a name="provider-capabilities"></a>提供者功能
 
-[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉定義了提供者可以支援的許多功能。」 其中包括使用萬用字元、篩選項目和支援交易的能力。 若要指定提供者的功能，請新增[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉的值清單，並結合邏輯作業 `OR` 作為[Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)屬性（屬性的第二個參數），其為您提供者類別的[system.web](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性（attribute）的（property），以做為系統管理。 例如，下列屬性會指定提供者可支援[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**和[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **交易**功能的，而此元件則是。
+[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉定義了提供者可以支援的許多功能。」 其中包括使用萬用字元、篩選項目和支援交易的能力。 若要指定提供者的功能，請加入[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉的值清單（結合邏輯作業），以 `OR` 作為[Cmdletproviderattribute. Providercapabilities *](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)屬性， (提供者類別之[屬性的](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)第二個參數（) attribute）的第二個參數（property）的（）。 例如，下列屬性會指定提供者可支援[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**和[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **交易**功能的，而此元件則是。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
