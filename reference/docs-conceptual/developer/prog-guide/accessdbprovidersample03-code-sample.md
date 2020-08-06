@@ -1,30 +1,23 @@
 ---
 title: AccessDbProviderSample03 程式碼範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
-caps.latest.revision: 5
-ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 6eddbec6369fd861a3a67bbbebe3d6f98c4bc164
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978554"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787286"
 ---
-# <a name="accessdbprovidersample03-code-sample"></a><span data-ttu-id="6df39-102">AccessDbProviderSample03 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="6df39-102">AccessDbProviderSample03 Code Sample</span></span>
+# <a name="accessdbprovidersample03-code-sample"></a><span data-ttu-id="20c14-102">AccessDbProviderSample03 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="20c14-102">AccessDbProviderSample03 Code Sample</span></span>
 
-<span data-ttu-id="6df39-103">下列程式碼示範如何執行[建立 Windows Powershell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 windows powershell 提供者。</span><span class="sxs-lookup"><span data-stu-id="6df39-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span></span>
-<span data-ttu-id="6df39-104">此提供者可運算元據存放區中的資料。</span><span class="sxs-lookup"><span data-stu-id="6df39-104">This provider that can manipulate the data in a data store.</span></span>
+<span data-ttu-id="20c14-103">下列程式碼示範如何執行[建立 Windows Powershell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 windows powershell 提供者。</span><span class="sxs-lookup"><span data-stu-id="20c14-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span></span>
+<span data-ttu-id="20c14-104">此提供者可運算元據存放區中的資料。</span><span class="sxs-lookup"><span data-stu-id="20c14-104">This provider that can manipulate the data in a data store.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="6df39-105">您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider03.cs）。</span><span class="sxs-lookup"><span data-stu-id="6df39-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="6df39-106">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="6df39-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
-> <span data-ttu-id="6df39-107">下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。</span><span class="sxs-lookup"><span data-stu-id="6df39-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span> <span data-ttu-id="6df39-108">如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。</span><span class="sxs-lookup"><span data-stu-id="6df39-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span></span>
+> <span data-ttu-id="20c14-105">您可以使用適用于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的 c # 原始程式檔 (AccessDBSampleProvider03.cs) 。</span><span class="sxs-lookup"><span data-stu-id="20c14-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="20c14-106">如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。</span><span class="sxs-lookup"><span data-stu-id="20c14-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="20c14-107">下載的來源檔案可在目錄中取得 **\<PowerShell Samples>** 。</span><span class="sxs-lookup"><span data-stu-id="20c14-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span> <span data-ttu-id="20c14-108">如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。</span><span class="sxs-lookup"><span data-stu-id="20c14-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="6df39-109">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="6df39-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="20c14-109">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="20c14-109">Code Sample</span></span>
 
 ```csharp
 using System;
@@ -997,8 +990,8 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="11-976":::
 
-## <a name="see-also"></a><span data-ttu-id="6df39-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="6df39-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="20c14-110">另請參閱</span><span class="sxs-lookup"><span data-stu-id="20c14-110">See Also</span></span>
 
-[<span data-ttu-id="6df39-111">Windows PowerShell 程式設計人員指南</span><span class="sxs-lookup"><span data-stu-id="6df39-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="20c14-111">Windows PowerShell 程式設計人員手冊</span><span class="sxs-lookup"><span data-stu-id="20c14-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="6df39-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="6df39-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="20c14-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="20c14-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
