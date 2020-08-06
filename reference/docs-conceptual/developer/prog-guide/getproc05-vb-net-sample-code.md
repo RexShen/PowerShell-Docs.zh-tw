@@ -1,23 +1,16 @@
 ---
-title: GetProc05 （VB.NET）範例程式碼 |Microsoft Docs
-ms.custom: ''
+title: GetProc05 (VB.NET) 範例程式碼 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8dfc0f66-65ec-4141-9088-68e47dbe3908
-caps.latest.revision: 6
-ms.openlocfilehash: 8b94aafc0713e1784a28706b51a5a2e96b6dec69
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 1ef16e6f8090f049131792132e693b2019fa3e41
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557306"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771629"
 ---
-# <a name="getproc05-vbnet-sample-code"></a><span data-ttu-id="8ccc9-102">GetProc05 (VB.NET) 範例程式碼</span><span class="sxs-lookup"><span data-stu-id="8ccc9-102">GetProc05 (VB.NET) Sample Code</span></span>
+# <a name="getproc05-vbnet-sample-code"></a><span data-ttu-id="68cb7-102">GetProc05 (VB.NET) 範例程式碼</span><span class="sxs-lookup"><span data-stu-id="68cb7-102">GetProc05 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="8ccc9-103">以下是 GetProc05 範例 Cmdlet 的完整 VB.NET 程式碼。</span><span class="sxs-lookup"><span data-stu-id="8ccc9-103">Here is the complete VB.NET code for the GetProc05 sample cmdlet.</span></span>
+<span data-ttu-id="68cb7-103">以下是 GetProc05 範例 Cmdlet 的完整 VB.NET 程式碼。</span><span class="sxs-lookup"><span data-stu-id="68cb7-103">Here is the complete VB.NET code for the GetProc05 sample cmdlet.</span></span>
 
 ```vb
 Imports System
@@ -434,6 +427,6 @@ End Namespace
 
 <!-- TODO!!!:  [!code-csharp[GetProcessSample01.vb](../../powershell-sdk-samples/SDK-2.0/vb/GetProcessSample01/GetProcessSample01.vb#L10-L419 "GetProcessSample01.cs")] -->
 
-## <a name="see-also"></a><span data-ttu-id="8ccc9-104">另請參閱</span><span class="sxs-lookup"><span data-stu-id="8ccc9-104">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="68cb7-104">另請參閱</span><span class="sxs-lookup"><span data-stu-id="68cb7-104">See Also</span></span>
 
-[<span data-ttu-id="8ccc9-105">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="8ccc9-105">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="68cb7-105">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="68cb7-105">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
