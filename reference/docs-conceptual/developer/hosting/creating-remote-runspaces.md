@@ -1,29 +1,22 @@
 ---
 title: 建立遠端空間 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
-caps.latest.revision: 5
-ms.openlocfilehash: 964320108d7aff24d59905028fb976e0f75642e7
-ms.sourcegitcommit: 08e9ed4bc9bffc7af82b3130e74ec7763db74e4f
+ms.openlocfilehash: 2b3c76eeae70de9ef116851313953bba1a1d890f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83382621"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779585"
 ---
-# <a name="creating-remote-runspaces"></a><span data-ttu-id="1835d-102">建立遠端 Runspace</span><span class="sxs-lookup"><span data-stu-id="1835d-102">Creating remote runspaces</span></span>
+# <a name="creating-remote-runspaces"></a><span data-ttu-id="8e2cd-102">建立遠端 Runspace</span><span class="sxs-lookup"><span data-stu-id="8e2cd-102">Creating remote runspaces</span></span>
 
-<span data-ttu-id="1835d-103">採用**ComputerName**參數的 PowerShell 命令可以在任何執行 powershell 的電腦上執行。</span><span class="sxs-lookup"><span data-stu-id="1835d-103">PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs PowerShell.</span></span> <span data-ttu-id="1835d-104">若要執行不採用**ComputerName**參數的命令，您可以使用 ws-management 來設定連線到指定電腦的執行時間，並在該電腦上執行命令。</span><span class="sxs-lookup"><span data-stu-id="1835d-104">To run commands that don't take a **ComputerName** parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
+<span data-ttu-id="8e2cd-103">採用**ComputerName**參數的 PowerShell 命令可以在任何執行 powershell 的電腦上執行。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-103">PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs PowerShell.</span></span> <span data-ttu-id="8e2cd-104">若要執行不採用**ComputerName**參數的命令，您可以使用 ws-management 來設定連線到指定電腦的執行時間，並在該電腦上執行命令。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-104">To run commands that don't take a **ComputerName** parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
 
-## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="1835d-105">使用 WSManConnection 建立遠端運行空間</span><span class="sxs-lookup"><span data-stu-id="1835d-105">Using a WSManConnection to create a remote runspace</span></span>
+## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="8e2cd-105">使用 WSManConnection 建立遠端運行空間</span><span class="sxs-lookup"><span data-stu-id="8e2cd-105">Using a WSManConnection to create a remote runspace</span></span>
 
- <span data-ttu-id="1835d-106">若要建立連接到遠端電腦的運行時，請建立[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。</span><span class="sxs-lookup"><span data-stu-id="1835d-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="1835d-107">您可以藉由設定物件的[WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)屬性來指定連接的目標端點。</span><span class="sxs-lookup"><span data-stu-id="1835d-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="1835d-108">接著，您可以藉由呼叫[RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法，將[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件指定為參數，以建立一個運行時的功能 `connectionInfo` 。</span><span class="sxs-lookup"><span data-stu-id="1835d-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
+ <span data-ttu-id="8e2cd-106">若要建立連接到遠端電腦的運行時，請建立[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="8e2cd-107">您可以藉由設定物件的[WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)屬性來指定連接的目標端點。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="8e2cd-108">接著，您可以藉由呼叫[RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法，將[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件指定為參數，以建立一個運行時的功能 `connectionInfo` 。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
 
- <span data-ttu-id="1835d-109">下列範例示範如何建立連接到遠端電腦的執行時間。</span><span class="sxs-lookup"><span data-stu-id="1835d-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="1835d-110">在此範例中， `RemoteComputerUri` 會用來做為遠端電腦實際 URI 的預留位置。</span><span class="sxs-lookup"><span data-stu-id="1835d-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
+ <span data-ttu-id="8e2cd-109">下列範例示範如何建立連接到遠端電腦的執行時間。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="8e2cd-110">在此範例中， `RemoteComputerUri` 會用來做為遠端電腦實際 URI 的預留位置。</span><span class="sxs-lookup"><span data-stu-id="8e2cd-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
 
 ```csharp
 namespace Samples

@@ -1,113 +1,106 @@
 ---
 title: 一般參數名稱 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
-caps.latest.revision: 12
-ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365737"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782220"
 ---
-# <a name="common-parameter-names"></a><span data-ttu-id="81c0e-102">一般參數名稱</span><span class="sxs-lookup"><span data-stu-id="81c0e-102">Common Parameter Names</span></span>
+# <a name="common-parameter-names"></a><span data-ttu-id="b17ea-102">一般參數名稱</span><span class="sxs-lookup"><span data-stu-id="b17ea-102">Common Parameter Names</span></span>
 
-<span data-ttu-id="81c0e-103">本主題中所述的參數稱為*一般參數*。</span><span class="sxs-lookup"><span data-stu-id="81c0e-103">The parameters described in this topic are referred to as *common parameters*.</span></span> <span data-ttu-id="81c0e-104">Windows PowerShell 執行時間會將它們新增至 Cmdlet，而且不能由 Cmdlet 宣告。</span><span class="sxs-lookup"><span data-stu-id="81c0e-104">They are added to cmdlets by the Windows PowerShell runtime and cannot be declared by the cmdlet.</span></span>
+<span data-ttu-id="b17ea-103">本主題中所述的參數稱為*一般參數*。</span><span class="sxs-lookup"><span data-stu-id="b17ea-103">The parameters described in this topic are referred to as *common parameters*.</span></span> <span data-ttu-id="b17ea-104">Windows PowerShell 執行時間會將它們新增至 Cmdlet，而且不能由 Cmdlet 宣告。</span><span class="sxs-lookup"><span data-stu-id="b17ea-104">They are added to cmdlets by the Windows PowerShell runtime and cannot be declared by the cmdlet.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="81c0e-105">這些參數也會新增至提供者 Cmdlet 和以 `CmdletBinding` 屬性裝飾的函式。</span><span class="sxs-lookup"><span data-stu-id="81c0e-105">These parameters are also added to provider cmdlets and to functions that are decorated with the `CmdletBinding` attribute.</span></span>
+> <span data-ttu-id="b17ea-105">這些參數也會新增至提供者 Cmdlet 和以屬性裝飾的函式 `CmdletBinding` 。</span><span class="sxs-lookup"><span data-stu-id="b17ea-105">These parameters are also added to provider cmdlets and to functions that are decorated with the `CmdletBinding` attribute.</span></span>
 
-## <a name="general-common-parameters"></a><span data-ttu-id="81c0e-106">一般通用參數</span><span class="sxs-lookup"><span data-stu-id="81c0e-106">General Common Parameters</span></span>
+## <a name="general-common-parameters"></a><span data-ttu-id="b17ea-106">一般通用參數</span><span class="sxs-lookup"><span data-stu-id="b17ea-106">General Common Parameters</span></span>
 
-<span data-ttu-id="81c0e-107">下列參數會新增至所有 Cmdlet，並可在每次執行 Cmdlet 時存取。</span><span class="sxs-lookup"><span data-stu-id="81c0e-107">The following parameters are added to all cmdlets and can be accessed whenever the cmdlet is run.</span></span> <span data-ttu-id="81c0e-108">這些參數是由[Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="81c0e-108">These parameters are defined by the [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) class.</span></span>
+<span data-ttu-id="b17ea-107">下列參數會新增至所有 Cmdlet，並可在每次執行 Cmdlet 時存取。</span><span class="sxs-lookup"><span data-stu-id="b17ea-107">The following parameters are added to all cmdlets and can be accessed whenever the cmdlet is run.</span></span> <span data-ttu-id="b17ea-108">這些參數是由[Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="b17ea-108">These parameters are defined by the [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) class.</span></span>
 
-### <a name="debug-alias-db"></a><span data-ttu-id="81c0e-109">Debug （別名： db）</span><span class="sxs-lookup"><span data-stu-id="81c0e-109">Debug (alias: db)</span></span>
+### <a name="debug-alias-db"></a><span data-ttu-id="b17ea-109">Debug (alias： db) </span><span class="sxs-lookup"><span data-stu-id="b17ea-109">Debug (alias: db)</span></span>
 
-<span data-ttu-id="81c0e-110">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="81c0e-110">Data type: SwitchParameter</span></span>
+<span data-ttu-id="b17ea-110">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b17ea-110">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="81c0e-111">這個參數會指定程式設計人員層級的偵錯工具訊息是否可以在命令列中顯示。</span><span class="sxs-lookup"><span data-stu-id="81c0e-111">This parameter specifies whether programmer-level debugging messages that can be displayed at the command line.</span></span> <span data-ttu-id="81c0e-112">這些訊息的目的是要針對 Cmdlet 的作業進行疑難排解，並透過呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法來產生。</span><span class="sxs-lookup"><span data-stu-id="81c0e-112">These messages are intended for troubleshooting the operation of the cmdlet, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method.</span></span> <span data-ttu-id="81c0e-113">不需要當地語系化的 Debug 訊息。</span><span class="sxs-lookup"><span data-stu-id="81c0e-113">Debug messages do not need to be localized.</span></span>
+<span data-ttu-id="b17ea-111">這個參數會指定程式設計人員層級的偵錯工具訊息是否可以在命令列中顯示。</span><span class="sxs-lookup"><span data-stu-id="b17ea-111">This parameter specifies whether programmer-level debugging messages that can be displayed at the command line.</span></span> <span data-ttu-id="b17ea-112">這些訊息的目的是要針對 Cmdlet 的作業進行疑難排解，並透過呼叫[WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)方法來產生。</span><span class="sxs-lookup"><span data-stu-id="b17ea-112">These messages are intended for troubleshooting the operation of the cmdlet, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method.</span></span> <span data-ttu-id="b17ea-113">不需要當地語系化的 Debug 訊息。</span><span class="sxs-lookup"><span data-stu-id="b17ea-113">Debug messages do not need to be localized.</span></span>
 
-### <a name="erroraction-alias-ea"></a><span data-ttu-id="81c0e-114">ErrorAction （別名： ea）</span><span class="sxs-lookup"><span data-stu-id="81c0e-114">ErrorAction (alias: ea)</span></span>
+### <a name="erroraction-alias-ea"></a><span data-ttu-id="b17ea-114">ErrorAction (別名： ea) </span><span class="sxs-lookup"><span data-stu-id="b17ea-114">ErrorAction (alias: ea)</span></span>
 
-<span data-ttu-id="81c0e-115">資料類型：列舉</span><span class="sxs-lookup"><span data-stu-id="81c0e-115">Data type: Enumeration</span></span>
+<span data-ttu-id="b17ea-115">資料類型：列舉</span><span class="sxs-lookup"><span data-stu-id="b17ea-115">Data type: Enumeration</span></span>
 
-<span data-ttu-id="81c0e-116">這個參數會指定發生錯誤時應採取的動作。</span><span class="sxs-lookup"><span data-stu-id="81c0e-116">This parameter specifies what action should take place when an error occurs.</span></span> <span data-ttu-id="81c0e-117">這個參數的可能值是由[Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列舉所定義。</span><span class="sxs-lookup"><span data-stu-id="81c0e-117">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
+<span data-ttu-id="b17ea-116">這個參數會指定發生錯誤時應採取的動作。</span><span class="sxs-lookup"><span data-stu-id="b17ea-116">This parameter specifies what action should take place when an error occurs.</span></span> <span data-ttu-id="b17ea-117">這個參數的可能值是由[Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列舉所定義。</span><span class="sxs-lookup"><span data-stu-id="b17ea-117">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
 
-### <a name="errorvariable-alias-ev"></a><span data-ttu-id="81c0e-118">ErrorVariable （別名： ev）</span><span class="sxs-lookup"><span data-stu-id="81c0e-118">ErrorVariable (alias: ev)</span></span>
+### <a name="errorvariable-alias-ev"></a><span data-ttu-id="b17ea-118">ErrorVariable (alias： ev) </span><span class="sxs-lookup"><span data-stu-id="b17ea-118">ErrorVariable (alias: ev)</span></span>
 
-<span data-ttu-id="81c0e-119">資料類型：字串</span><span class="sxs-lookup"><span data-stu-id="81c0e-119">Data type: String</span></span>
+<span data-ttu-id="b17ea-119">資料類型：字串</span><span class="sxs-lookup"><span data-stu-id="b17ea-119">Data type: String</span></span>
 
-<span data-ttu-id="81c0e-120">這個參數會指定發生錯誤時，要在其中放置物件的變數。</span><span class="sxs-lookup"><span data-stu-id="81c0e-120">This parameter specifies the variable in which to place objects when an error occurs.</span></span> <span data-ttu-id="81c0e-121">若要附加至此變數，請使用 +*varname* ，而不是清除和設定變數。</span><span class="sxs-lookup"><span data-stu-id="81c0e-121">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="b17ea-120">這個參數會指定發生錯誤時，要在其中放置物件的變數。</span><span class="sxs-lookup"><span data-stu-id="b17ea-120">This parameter specifies the variable in which to place objects when an error occurs.</span></span> <span data-ttu-id="b17ea-121">若要附加至此變數，請使用 +*varname* ，而不是清除和設定變數。</span><span class="sxs-lookup"><span data-stu-id="b17ea-121">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
 
-### <a name="outvariable-alias-ov"></a><span data-ttu-id="81c0e-122">OutVariable （別名： ov）</span><span class="sxs-lookup"><span data-stu-id="81c0e-122">OutVariable (alias: ov)</span></span>
+### <a name="outvariable-alias-ov"></a><span data-ttu-id="b17ea-122">OutVariable (alias： ov) </span><span class="sxs-lookup"><span data-stu-id="b17ea-122">OutVariable (alias: ov)</span></span>
 
-<span data-ttu-id="81c0e-123">資料類型：字串</span><span class="sxs-lookup"><span data-stu-id="81c0e-123">Data type: String</span></span>
+<span data-ttu-id="b17ea-123">資料類型：字串</span><span class="sxs-lookup"><span data-stu-id="b17ea-123">Data type: String</span></span>
 
-<span data-ttu-id="81c0e-124">此參數會指定要在其中放置 Cmdlet 所產生之所有輸出物件的變數。</span><span class="sxs-lookup"><span data-stu-id="81c0e-124">This parameter specifies the variable in which to place all output objects generated by the cmdlet.</span></span> <span data-ttu-id="81c0e-125">若要附加至此變數，請使用 +*varname* ，而不是清除和設定變數。</span><span class="sxs-lookup"><span data-stu-id="81c0e-125">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="b17ea-124">此參數會指定要在其中放置 Cmdlet 所產生之所有輸出物件的變數。</span><span class="sxs-lookup"><span data-stu-id="b17ea-124">This parameter specifies the variable in which to place all output objects generated by the cmdlet.</span></span> <span data-ttu-id="b17ea-125">若要附加至此變數，請使用 +*varname* ，而不是清除和設定變數。</span><span class="sxs-lookup"><span data-stu-id="b17ea-125">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
 
-### <a name="outbuffer-alias-ob"></a><span data-ttu-id="81c0e-126">OutBuffer （別名： ob）</span><span class="sxs-lookup"><span data-stu-id="81c0e-126">OutBuffer (alias: ob)</span></span>
+### <a name="outbuffer-alias-ob"></a><span data-ttu-id="b17ea-126">OutBuffer (別名： ob) </span><span class="sxs-lookup"><span data-stu-id="b17ea-126">OutBuffer (alias: ob)</span></span>
 
-<span data-ttu-id="81c0e-127">資料類型： Int32</span><span class="sxs-lookup"><span data-stu-id="81c0e-127">Data type: Int32</span></span>
+<span data-ttu-id="b17ea-127">資料類型： Int32</span><span class="sxs-lookup"><span data-stu-id="b17ea-127">Data type: Int32</span></span>
 
-<span data-ttu-id="81c0e-128">這個參數會定義在將任何物件向下傳遞至管線之前，要在輸出緩衝區中儲存的物件數目。</span><span class="sxs-lookup"><span data-stu-id="81c0e-128">This parameter defines the number of objects to store in the output buffer before any objects are passed down the pipeline.</span></span> <span data-ttu-id="81c0e-129">根據預設，物件會立即傳遞給管線。</span><span class="sxs-lookup"><span data-stu-id="81c0e-129">By default, objects are passed immediately down the pipeline.</span></span>
+<span data-ttu-id="b17ea-128">這個參數會定義在將任何物件向下傳遞至管線之前，要在輸出緩衝區中儲存的物件數目。</span><span class="sxs-lookup"><span data-stu-id="b17ea-128">This parameter defines the number of objects to store in the output buffer before any objects are passed down the pipeline.</span></span> <span data-ttu-id="b17ea-129">根據預設，物件會立即傳遞給管線。</span><span class="sxs-lookup"><span data-stu-id="b17ea-129">By default, objects are passed immediately down the pipeline.</span></span>
 
-### <a name="verbose-alias-vb"></a><span data-ttu-id="81c0e-130">Verbose （別名： vb）</span><span class="sxs-lookup"><span data-stu-id="81c0e-130">Verbose (alias: vb)</span></span>
+### <a name="verbose-alias-vb"></a><span data-ttu-id="b17ea-130">詳細資訊 (別名： vb) </span><span class="sxs-lookup"><span data-stu-id="b17ea-130">Verbose (alias: vb)</span></span>
 
-<span data-ttu-id="81c0e-131">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="81c0e-131">Data type: SwitchParameter</span></span>
+<span data-ttu-id="b17ea-131">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b17ea-131">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="81c0e-132">此參數會指定此 Cmdlet 是否會寫入可在命令列中顯示的說明訊息。</span><span class="sxs-lookup"><span data-stu-id="81c0e-132">This parameter specifies whether the cmdlet writes explanatory messages that can be displayed at the command line.</span></span> <span data-ttu-id="81c0e-133">這些訊息的目的是要為使用者提供額外的協助，並藉由呼叫[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法來產生。</span><span class="sxs-lookup"><span data-stu-id="81c0e-133">These messages are intended to provide additional help to the user, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method.</span></span>
+<span data-ttu-id="b17ea-132">此參數會指定此 Cmdlet 是否會寫入可在命令列中顯示的說明訊息。</span><span class="sxs-lookup"><span data-stu-id="b17ea-132">This parameter specifies whether the cmdlet writes explanatory messages that can be displayed at the command line.</span></span> <span data-ttu-id="b17ea-133">這些訊息的目的是要為使用者提供額外的協助，並藉由呼叫[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)方法來產生。</span><span class="sxs-lookup"><span data-stu-id="b17ea-133">These messages are intended to provide additional help to the user, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method.</span></span>
 
-### <a name="warningaction-alias-wa"></a><span data-ttu-id="81c0e-134">WarningAction （別名： wa）</span><span class="sxs-lookup"><span data-stu-id="81c0e-134">WarningAction (alias: wa)</span></span>
+### <a name="warningaction-alias-wa"></a><span data-ttu-id="b17ea-134">WarningAction (別名： wa) </span><span class="sxs-lookup"><span data-stu-id="b17ea-134">WarningAction (alias: wa)</span></span>
 
-<span data-ttu-id="81c0e-135">資料類型：列舉</span><span class="sxs-lookup"><span data-stu-id="81c0e-135">Data type: Enumeration</span></span>
+<span data-ttu-id="b17ea-135">資料類型：列舉</span><span class="sxs-lookup"><span data-stu-id="b17ea-135">Data type: Enumeration</span></span>
 
-<span data-ttu-id="81c0e-136">此參數會指定當 Cmdlet 寫入警告訊息時，應採取什麼動作。</span><span class="sxs-lookup"><span data-stu-id="81c0e-136">This parameter specifies what action should take place when the cmdlet writes a warning message.</span></span> <span data-ttu-id="81c0e-137">這個參數的可能值是由[Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列舉所定義。</span><span class="sxs-lookup"><span data-stu-id="81c0e-137">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
+<span data-ttu-id="b17ea-136">此參數會指定當 Cmdlet 寫入警告訊息時，應採取什麼動作。</span><span class="sxs-lookup"><span data-stu-id="b17ea-136">This parameter specifies what action should take place when the cmdlet writes a warning message.</span></span> <span data-ttu-id="b17ea-137">這個參數的可能值是由[Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列舉所定義。</span><span class="sxs-lookup"><span data-stu-id="b17ea-137">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
 
-### <a name="warningvariable-alias-wv"></a><span data-ttu-id="81c0e-138">WarningVariable （別名： wv）</span><span class="sxs-lookup"><span data-stu-id="81c0e-138">WarningVariable (alias: wv)</span></span>
+### <a name="warningvariable-alias-wv"></a><span data-ttu-id="b17ea-138">WarningVariable (alias： wv) </span><span class="sxs-lookup"><span data-stu-id="b17ea-138">WarningVariable (alias: wv)</span></span>
 
-<span data-ttu-id="81c0e-139">資料類型：字串</span><span class="sxs-lookup"><span data-stu-id="81c0e-139">Data type: String</span></span>
+<span data-ttu-id="b17ea-139">資料類型：字串</span><span class="sxs-lookup"><span data-stu-id="b17ea-139">Data type: String</span></span>
 
-<span data-ttu-id="81c0e-140">這個參數會指定可儲存警告訊息的變數。</span><span class="sxs-lookup"><span data-stu-id="81c0e-140">This parameter specifies the variable in which warning messages can be saved.</span></span> <span data-ttu-id="81c0e-141">若要附加至此變數，請使用 +*varname* ，而不是清除和設定變數。</span><span class="sxs-lookup"><span data-stu-id="81c0e-141">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="b17ea-140">這個參數會指定可儲存警告訊息的變數。</span><span class="sxs-lookup"><span data-stu-id="b17ea-140">This parameter specifies the variable in which warning messages can be saved.</span></span> <span data-ttu-id="b17ea-141">若要附加至此變數，請使用 +*varname* ，而不是清除和設定變數。</span><span class="sxs-lookup"><span data-stu-id="b17ea-141">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
 
-## <a name="risk-mitigation-parameters"></a><span data-ttu-id="81c0e-142">風險-緩和參數</span><span class="sxs-lookup"><span data-stu-id="81c0e-142">Risk-Mitigation Parameters</span></span>
+## <a name="risk-mitigation-parameters"></a><span data-ttu-id="b17ea-142">風險-緩和參數</span><span class="sxs-lookup"><span data-stu-id="b17ea-142">Risk-Mitigation Parameters</span></span>
 
-<span data-ttu-id="81c0e-143">下列參數會新增至 Cmdlet，這些指令程式會在執行其動作之前要求確認。</span><span class="sxs-lookup"><span data-stu-id="81c0e-143">The following parameters are added to cmdlets that requests confirmation before they perform their action.</span></span> <span data-ttu-id="81c0e-144">如需有關確認要求的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。</span><span class="sxs-lookup"><span data-stu-id="81c0e-144">For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span> <span data-ttu-id="81c0e-145">這些參數是由[Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="81c0e-145">These parameters are defined by the [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) class.</span></span>
+<span data-ttu-id="b17ea-143">下列參數會新增至 Cmdlet，這些指令程式會在執行其動作之前要求確認。</span><span class="sxs-lookup"><span data-stu-id="b17ea-143">The following parameters are added to cmdlets that requests confirmation before they perform their action.</span></span> <span data-ttu-id="b17ea-144">如需有關確認要求的詳細資訊，請參閱[要求確認](./requesting-confirmation-from-cmdlets.md)。</span><span class="sxs-lookup"><span data-stu-id="b17ea-144">For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span> <span data-ttu-id="b17ea-145">這些參數是由[Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="b17ea-145">These parameters are defined by the [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) class.</span></span>
 
-### <a name="confirm-alias-cf"></a><span data-ttu-id="81c0e-146">確認（別名： cf）</span><span class="sxs-lookup"><span data-stu-id="81c0e-146">Confirm (alias: cf)</span></span>
+### <a name="confirm-alias-cf"></a><span data-ttu-id="b17ea-146">確認 (別名： cf) </span><span class="sxs-lookup"><span data-stu-id="b17ea-146">Confirm (alias: cf)</span></span>
 
-<span data-ttu-id="81c0e-147">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="81c0e-147">Data type: SwitchParameter</span></span>
+<span data-ttu-id="b17ea-147">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b17ea-147">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="81c0e-148">此參數會指定此 Cmdlet 是否會顯示提示，詢問使用者是否確定要繼續。</span><span class="sxs-lookup"><span data-stu-id="81c0e-148">This parameter specifies whether the cmdlet displays a prompt that asks if the user is sure that they want to continue.</span></span>
+<span data-ttu-id="b17ea-148">此參數會指定此 Cmdlet 是否會顯示提示，詢問使用者是否確定要繼續。</span><span class="sxs-lookup"><span data-stu-id="b17ea-148">This parameter specifies whether the cmdlet displays a prompt that asks if the user is sure that they want to continue.</span></span>
 
-### <a name="whatif-alias-wi"></a><span data-ttu-id="81c0e-149">WhatIf （別名： wi-fi）</span><span class="sxs-lookup"><span data-stu-id="81c0e-149">WhatIf (alias: wi)</span></span>
+### <a name="whatif-alias-wi"></a><span data-ttu-id="b17ea-149">WhatIf (別名： wi-fi) </span><span class="sxs-lookup"><span data-stu-id="b17ea-149">WhatIf (alias: wi)</span></span>
 
-<span data-ttu-id="81c0e-150">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="81c0e-150">Data type: SwitchParameter</span></span>
+<span data-ttu-id="b17ea-150">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b17ea-150">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="81c0e-151">此參數會指定 Cmdlet 是否會寫入訊息，以描述執行 Cmdlet 的效果，而不需實際執行任何動作。</span><span class="sxs-lookup"><span data-stu-id="81c0e-151">This parameter specifies whether the cmdlet writes a message that describes the effects of running the cmdlet without actually performing any action.</span></span>
+<span data-ttu-id="b17ea-151">此參數會指定 Cmdlet 是否會寫入訊息，以描述執行 Cmdlet 的效果，而不需實際執行任何動作。</span><span class="sxs-lookup"><span data-stu-id="b17ea-151">This parameter specifies whether the cmdlet writes a message that describes the effects of running the cmdlet without actually performing any action.</span></span>
 
-## <a name="transaction-parameters"></a><span data-ttu-id="81c0e-152">交易參數</span><span class="sxs-lookup"><span data-stu-id="81c0e-152">Transaction Parameters</span></span>
+## <a name="transaction-parameters"></a><span data-ttu-id="b17ea-152">交易參數</span><span class="sxs-lookup"><span data-stu-id="b17ea-152">Transaction Parameters</span></span>
 
-<span data-ttu-id="81c0e-153">下列參數會加入至支援交易的 Cmdlet 中。</span><span class="sxs-lookup"><span data-stu-id="81c0e-153">The following parameter is added to cmdlets that support transactions.</span></span> <span data-ttu-id="81c0e-154">這些參數是由[Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="81c0e-154">These parameters are defined by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) class.</span></span>
+<span data-ttu-id="b17ea-153">下列參數會加入至支援交易的 Cmdlet 中。</span><span class="sxs-lookup"><span data-stu-id="b17ea-153">The following parameter is added to cmdlets that support transactions.</span></span> <span data-ttu-id="b17ea-154">這些參數是由[Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)類別所定義。</span><span class="sxs-lookup"><span data-stu-id="b17ea-154">These parameters are defined by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) class.</span></span>
 
-### <a name="usetransaction-alias-usetx"></a><span data-ttu-id="81c0e-155">UseTransaction （別名： usetx）</span><span class="sxs-lookup"><span data-stu-id="81c0e-155">UseTransaction (alias: usetx)</span></span>
+### <a name="usetransaction-alias-usetx"></a><span data-ttu-id="b17ea-155">UseTransaction (alias： usetx) </span><span class="sxs-lookup"><span data-stu-id="b17ea-155">UseTransaction (alias: usetx)</span></span>
 
-<span data-ttu-id="81c0e-156">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="81c0e-156">Data type: SwitchParameter</span></span>
+<span data-ttu-id="b17ea-156">資料類型： SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="b17ea-156">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="81c0e-157">這個參數會指定此 Cmdlet 是否將使用目前的交易來執行其動作。</span><span class="sxs-lookup"><span data-stu-id="81c0e-157">This parameter specifies whether the cmdlet will use the current transaction to perform its action.</span></span>
+<span data-ttu-id="b17ea-157">這個參數會指定此 Cmdlet 是否將使用目前的交易來執行其動作。</span><span class="sxs-lookup"><span data-stu-id="b17ea-157">This parameter specifies whether the cmdlet will use the current transaction to perform its action.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="81c0e-158">另請參閱</span><span class="sxs-lookup"><span data-stu-id="81c0e-158">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b17ea-158">另請參閱</span><span class="sxs-lookup"><span data-stu-id="b17ea-158">See Also</span></span>
 
-[<span data-ttu-id="81c0e-159">Commonparameters （內部）</span><span class="sxs-lookup"><span data-stu-id="81c0e-159">System.Management.Automation.Internal.Commonparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.CommonParameters)
+[<span data-ttu-id="b17ea-159">Commonparameters （內部）</span><span class="sxs-lookup"><span data-stu-id="b17ea-159">System.Management.Automation.Internal.Commonparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.CommonParameters)
 
-[<span data-ttu-id="81c0e-160">Shouldprocessparameters （內部）</span><span class="sxs-lookup"><span data-stu-id="81c0e-160">System.Management.Automation.Internal.Shouldprocessparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)
+[<span data-ttu-id="b17ea-160">Shouldprocessparameters （內部）</span><span class="sxs-lookup"><span data-stu-id="b17ea-160">System.Management.Automation.Internal.Shouldprocessparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)
 
-[<span data-ttu-id="81c0e-161">Transactionparameters （內部）</span><span class="sxs-lookup"><span data-stu-id="81c0e-161">System.Management.Automation.Internal.Transactionparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
+[<span data-ttu-id="b17ea-161">Transactionparameters （內部）</span><span class="sxs-lookup"><span data-stu-id="b17ea-161">System.Management.Automation.Internal.Transactionparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
 
-[<span data-ttu-id="81c0e-162">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="81c0e-162">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="b17ea-162">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="b17ea-162">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
 
-[<span data-ttu-id="81c0e-163">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="81c0e-163">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="b17ea-163">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="b17ea-163">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
