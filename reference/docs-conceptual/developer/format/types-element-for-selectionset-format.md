@@ -1,25 +1,18 @@
 ---
-title: SelectionSet 的 Types 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: SelectionSet (格式) 的 Types 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
-caps.latest.revision: 15
-ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9978daefb3e97ab131774ca4dff633dde6b4dfbf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367957"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772513"
 ---
 # <a name="types-element-for-selectionset-format"></a>SelectionSet 的類型元素 (格式)
 
 定義選取集中的 .NET 物件。
 
-Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet 元素（格式）類型元素（格式）
+Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 (格式) 類型元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +23,9 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Types` 專案的父元素。 必須至少有一個子專案，但可以加入的子專案數目沒有上限。
+下列各節說明屬性、子專案和元素的父元素 `Types` 。 必須至少有一個子專案，但可以加入的子專案數目沒有上限。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,21 +35,21 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 |元素|描述|
 |-------------|-----------------|
-|[類型的 TypeName 元素（格式）](./typename-element-for-types-format.md)|必要項目。<br /><br /> 指定屬於選取集的 .NET 物件。|
+|[類型的 TypeName 元素 (格式) ](./typename-element-for-types-format.md)|必要元素。<br /><br /> 指定屬於選取集的 .NET 物件。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[SelectionSet 元素（格式）](./selectionset-element-format.md)|定義一組可由集合名稱參考的 .NET 物件。|
+|[SelectionSet 元素 (格式)](./selectionset-element-format.md)|定義一組可由集合名稱參考的 .NET 物件。|
 
 ## <a name="remarks"></a>備註
 
-這個專案所定義的物件組成一個可供視圖使用的選擇集，由視圖的定義（views 可以有多個定義）或指定選取條件。  如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
+這個專案所定義的物件組成一個可供視圖使用的選擇集，而 view 的定義 (views 可以) 多個定義，或指定選取條件。  如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
 
 ## <a name="example"></a>範例
 
-這個範例會顯示定義四個 .NET 類型的 `SelectionSet` 元素。
+這個範例會顯示 `SelectionSet` 定義四個 .net 類型的元素。
 
 ```xml
 <SelectionSets>
@@ -76,8 +69,8 @@ Configuration 元素（格式） SelectionSets 元素（格式） SelectionSet �
 
 [定義物件的集合](./defining-selection-sets.md)
 
-[SelectionSet 元素（格式）](./selectionset-element-format.md)
+[SelectionSet 元素 (格式)](./selectionset-element-format.md)
 
-[類型的 TypeName 元素（格式）](./typename-element-for-types-format.md)
+[類型的 TypeName 元素 (格式) ](./typename-element-for-types-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

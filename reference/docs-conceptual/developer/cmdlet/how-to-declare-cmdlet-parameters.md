@@ -1,19 +1,12 @@
 ---
 title: 如何宣告 Cmdlet 參數 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
-caps.latest.revision: 10
-ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365677"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774383"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>如何宣告 Cmdlet 參數
 
@@ -21,7 +14,7 @@ ms.locfileid: "72365677"
 
 ## <a name="how-to-declare-a-named-parameter"></a>如何宣告具名引數
 
-- 定義公用屬性，如下列程式碼所示。 當您新增參數屬性時，請省略屬性中的 `Position` 關鍵字。
+- 定義公用屬性，如下列程式碼所示。 當您新增參數屬性時，請省略 `Position` 屬性中的關鍵字。
 
     ```csharp
     [Parameter()]
@@ -53,7 +46,7 @@ ms.locfileid: "72365677"
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>如何宣告強制參數
 
-- 定義公用屬性，如下列程式碼所示。 當您新增參數屬性時，請將 `Mandatory` 關鍵字設定為 `true`。
+- 定義公用屬性，如下列程式碼所示。 當您新增參數屬性時，請將 `Mandatory` 關鍵字設定為 `true` 。
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -116,10 +109,10 @@ ms.locfileid: "72365677"
 
 ## <a name="see-also"></a>另請參閱
 
-[SwitchParameter。](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
 [參數屬性宣告](./parameter-attribute-declaration.md)
 
-[Alias 屬性宣告](./alias-attribute-declaration.md)
+[別名屬性宣告](./alias-attribute-declaration.md)
 
 [撰寫 Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

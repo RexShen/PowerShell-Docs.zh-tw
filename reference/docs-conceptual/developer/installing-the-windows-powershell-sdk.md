@@ -1,13 +1,12 @@
 ---
 title: 安裝 Windows PowerShell SDK
 ms.date: 03/30/2020
-ms.topic: article
-ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 91cf57510bb7f44799cfdaf7cadcc7bcd505c977
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80394981"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771969"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>安裝 Windows PowerShell SDK
 
@@ -26,7 +25,7 @@ Windows 7 及 Windows Server 2008 R2 會自動安裝 PowerShell 2.0。 您也可
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>安裝適用於 Windows 7、Vista、XP、Server 2003 及 Server 2008 的 Windows PowerShell 2.0 SDK
 
-Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式所需的參考組件，並提供作為開始撰寫程式碼的起點 C# 範例程式碼。 您可以從[https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560)下載程式代碼範例。
+Windows PowerShell 2.0 SDK 提供撰寫 Cmdlet、提供者和主控應用程式所需的參考組件，並提供作為開始撰寫程式碼的起點 C# 範例程式碼。 您可以從下載程式代碼範例 [https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560) 。
 
 ### <a name="reference-assemblies"></a>參考組件
 
@@ -36,7 +35,7 @@ Assemblies\Microsoft\WindowsPowerShell\V1.0`。
 > [!NOTE]
 > 針對 Windows PowerShell 2.0 組件編譯的程式碼無法載入到 Windows PowerShell 1.0 安裝中。 不過，針對 Windows PowerShell 1.0 組件編譯的程式碼可以載入至 Windows PowerShell 2.0 安裝。
 
-### <a name="samples"></a>Samples
+### <a name="samples"></a>範例
 
 程式碼範例預設會安裝在下列位置︰`C:\Program Files\Microsoft
 SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每個範例之用途的簡要說明。
@@ -50,7 +49,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 - GetProcessSample05-顯示如何顯示指定的進程清單。
 - SelectObject-示範如何撰寫篩選來僅選取特定物件。
 - SelectString-顯示如何搜尋指定模式的檔案。
-- StopProcessSample01-顯示如何執行 PassThru 參數，以及如何藉由呼叫 ShouldProcess 和 ShouldContinue 方法來要求使用者意見反應。 當使用者想要強制 Cmdlet 傳回物件時，請指定 PassThru 參數，
+- StopProcessSample01-顯示如何執行 PassThru 參數，以及如何藉由呼叫 ShouldProcess 和 ShouldContinue 方法來要求使用者意見反應。 使用者會在想要強制 Cmdlet 傳回物件時指定 PassThru 參數。
 - StopProcessSample02-顯示如何停止特定的進程。
 - StopProcessSample03-顯示如何宣告參數的別名，以及如何支援萬用字元。
 - StopProcessSample04-示範如何宣告參數集、Cmdlet 做為輸入的物件，以及如何指定要使用的預設參數集。
@@ -61,22 +60,22 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 - RemoteRunspacePool01-示範如何建立遠端執行時間集區，以及如何使用此集區同時執行多個命令。
 - Serialization01-示範如何查看現有的 .NET 類別，並確定已選取此類別之公用屬性的資訊會跨序列化/還原序列化進行保留。
 - Serialization02-示範如何查看現有的 .NET 類別，並確定當此類別的公用屬性中未提供資訊時，會跨序列化/還原序列化，將此類別的實例中的資訊保留下來。
-- Serialization03-顯示如何查看現有的 .NET 類別，並確定此類別和衍生類別的實例已還原序列化（解除凍結）為即時 .NET 物件。
+- Serialization03-示範如何查看現有的 .NET 類別，並確定已將此類別和衍生類別的實例還原序列化 (解除凍結) 到即時的 .NET 物件。
 
 #### <a name="event-samples"></a>事件範例
 
 - Event01-示範如何藉由衍生自自 objecteventregistrationbase Cmdlet 來建立事件註冊的 Cmdlet。
-- Event02-說明如何顯示在遠端電腦上產生的 Windows PowerShell 事件通知。 它會使用透過運行空間類別所公開的 PSEventReceived 事件。
+- Event02-說明如何顯示在遠端電腦上產生的 Windows PowerShell 事件通知。 其會使用透過 Runspace 類別公開的 PSEventReceived 事件。
 
 #### <a name="hosting-application-samples"></a>主控應用程式範例
 
 - Runspace01-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` Cmdlet。
-  `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件。
-- Runspace02-顯示如何使用 PowerShell 類別以同步方式執行 `Get-Process` 和 `Sort-Object` Cmdlet。 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理常式物件，而 `Sort-Object` 會根據物件的 Id 屬性來排序物件。 這些命令的結果會使用 DataGridView 控制項來顯示。
+  此 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理物件。
+- Runspace02-說明如何使用 PowerShell 類別，以同步方式執行 `Get-Process` 和 `Sort-Object` Cmdlet。 此 `Get-Process` Cmdlet 會針對在本機電腦上執行的每個進程傳回處理物件，並 `Sort-Object` 根據其 Id 屬性來排序物件。 這些命令的結果會透過使用 DataGridView 控制項來顯示。
 - Runspace03-顯示如何使用 PowerShell 類別以同步方式執行腳本，以及如何處理非終止錯誤。 指令碼會接收處理序名稱的清單，然後擷取這些處理序。 指令碼的結果會顯示在主控台視窗中，包括執行指令碼時所產生的任何非終止錯誤在內。
 - Runspace04-示範如何使用 PowerShell 類別來執行命令，以及如何攔截執行命令時所擲回的終止錯誤。 執行了兩個命令，而最後一個命令傳遞了無效的參數引數。 如此便不會傳回任何物件，且會擲回終止錯誤。
-- Runspace05-說明如何將嵌入式管理單元新增至 InitialSessionState 物件，讓嵌入式管理單元的 Cmdlet 可在開啟執行時間時使用。 此嵌入式管理單元提供使用 PowerShell 物件，以同步方式執行的 GetProcessSample01 範例所定義的處理器指令程式。
-- Runspace06-顯示如何將模組新增至 InitialSessionState 物件，以便在開啟執行時間時載入模組。 此模組會提供使用 PowerShell 物件同步執行的 GetProcessSample02 範例所定義的處理器指令程式。
+- Runspace05-說明如何將嵌入式管理單元新增至 InitialSessionState 物件，讓嵌入式管理單元的 Cmdlet 可在開啟執行時間時使用。 此嵌入式管理單元提供的 GetProcessSample01 範例) 所定義的 (，會使用 PowerShell 物件以同步方式執行。
+- Runspace06-顯示如何將模組新增至 InitialSessionState 物件，以便在開啟執行時間時載入模組。 此模組會提供 GetProcessSample02 範例) 所定義的 (，此 Cmdlet 是使用 PowerShell 物件以同步方式執行。
 - Runspace07-說明如何建立執行時間，然後使用該執行時間，以使用 PowerShell 物件同步執行兩個 Cmdlet。
 - Runspace08-說明如何將命令和引數新增至 PowerShell 物件的管線，以及如何同步執行命令。
 - Runspace09-說明如何將腳本新增至 PowerShell 物件的管線，以及如何以非同步方式執行腳本。 事件為用來處理指令碼的輸出。
@@ -87,23 +86,23 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`。 以下各節提供每�
 
 #### <a name="host-samples"></a>主機範例
 
-- Host01-顯示如何執行使用自訂主機的主應用程式。 在此範例中，會建立使用自訂主機的運行時，然後使用 PowerShell API 來執行會呼叫 `exit`的腳本。 主應用程式會查看指令碼的輸出，並列印結果。
-- Host02-示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行 `Get-Process` Cmdlet，並使用 pwrsh 顯示結果，然後以德文列印目前的資料和時間。
+- Host01-顯示如何執行使用自訂主機的主應用程式。 在此範例中，會建立使用自訂主機的運行時，然後使用 PowerShell API 來執行呼叫的腳本 `exit` 。 主應用程式會查看指令碼的輸出，並列印結果。
+- Host02-示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行 `Get-Process` Cmdlet 並顯示結果，如同您使用 pwrsh.exe 所看到的結果，然後以德文印出目前的資料和時間。
 - Host03-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
 - Host04-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 這個主應用程式也支援顯示允許使用者指定多個選項的提示。
-- Host05-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此主機應用程式也支援使用 `Enter-PsSession` 和 `Exit-PsSession` Cmdlet 來呼叫遠端電腦。
+- Host05-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此主機應用程式也支援使用和 Cmdlet 呼叫遠端電腦 `Enter-PsSession` `Exit-PsSession` 。
 - Host06-說明如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 此外，這個範例會使用權杖化工具 API 指定使用者所輸入的文字色彩。
 
 #### <a name="provider-samples"></a>提供者範例
 
 - AccessDBProviderSample01-顯示如何宣告直接衍生自 CmdletProvider 類別的提供者類別。 包含在此僅為完整性用途。
 
-- AccessDBProviderSample02-說明如何覆寫 NewDrive 和 RemoveDrive 方法，以支援對 `New-PSDrive` 和 `Remove-PSDrive` Cmdlet 的呼叫。 這個範例中的提供者類別衍生自 DriveCmdletProvider 類別。
+- AccessDBProviderSample02-示範如何覆寫 NewDrive 和 RemoveDrive 方法，以支援對 `New-PSDrive` 和 Cmdlet 的呼叫 `Remove-PSDrive` 。 此範例中的提供者類別衍生自 DriveCmdletProvider 類別。
 
-- AccessDBProviderSample03-說明如何覆寫 GetItem 和 SetItem 方法，以支援對 `Get-Item` 和 `Set-Item` Cmdlet 的呼叫。 這個範例中的提供者類別衍生自 ItemCmdletProvider 類別。
+- AccessDBProviderSample03-示範如何覆寫 GetItem 和 SetItem 方法，以支援對 `Get-Item` 和 Cmdlet 的呼叫 `Set-Item` 。 此範例中的提供者類別衍生自 ItemCmdletProvider 類別。
 
-- AccessDBProviderSample04-示範如何覆寫容器方法，以支援對 `Copy-Item`、`Get-ChildItem`、`New-Item`和 `Remove-Item` Cmdlet 的呼叫。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 這個範例中的提供者類別衍生自 ItemCmdletProvider 類別。
+- AccessDBProviderSample04-示範如何覆寫容器方法來支援對 `Copy-Item` 、 `Get-ChildItem` 、 `New-Item` 和 Cmdlet 的呼叫 `Remove-Item` 。 當資料存放區包含容器項目時，就應該實作這些方法。 容器是常見父項目底下的一組子項目。 此範例中的提供者類別衍生自 ItemCmdletProvider 類別。
 
-- AccessDBProviderSample05-示範如何覆寫容器方法，以支援對 `Move-Item` 和 `Join-Path` Cmdlet 的呼叫。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 這個範例中的提供者類別衍生自 NavigationCmdletProvider 類別。
+- AccessDBProviderSample05-示範如何覆寫容器方法來支援對 `Move-Item` 和 Cmdlet 的呼叫 `Join-Path` 。 當使用者需要移動容器內的項目，而且資料存放區包含巢狀容器時，就應該實作這些方法。 此範例中的提供者類別衍生自 NavigationCmdletProvider 類別。
 
-- AccessDBProviderSample06-示範如何覆寫內容方法，以支援對 `Clear-Content`、`Get-Content`和 `Set-Content` Cmdlet 的呼叫。 當使用者需要管理資料存放區的項目內容時，就應該實作這些方法。 這個範例中的提供者類別衍生自 NavigationCmdletProvider 類別，並會執行 IContentCmdletProvider 介面。
+- AccessDBProviderSample06-示範如何覆寫內容方法，以支援對 `Clear-Content` 、 `Get-Content` 和 Cmdlet 的呼叫 `Set-Content` 。 當使用者需要管理資料存放區的項目內容時，就應該實作這些方法。 此範例中的提供者類別衍生自 NavigationCmdletProvider 類別，且其會實作 IContentCmdletProvider 介面。

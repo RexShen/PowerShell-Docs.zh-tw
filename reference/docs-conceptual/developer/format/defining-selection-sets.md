@@ -1,23 +1,16 @@
 ---
 title: 定義選取範圍集合 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
-caps.latest.revision: 16
-ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692291"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774298"
 ---
 # <a name="defining-selection-sets"></a>定義選取範圍集合
 
-建立多個視圖和控制項時，您可以定義稱為選取集的一組物件。 選取集可讓您一次定義物件，而不需要針對每個視圖或控制項重複定義它們。 一般而言，當您有一組相關的 .NET 物件時，會使用選取範圍。 例如，格式配置 `FileSystem` 檔案（types.ps1xml）會定義數個 views 使用的檔案系統類型的選擇集。
+建立多個視圖和控制項時，您可以定義稱為選取集的一組物件。 選取集可讓您一次定義物件，而不需要針對每個視圖或控制項重複定義它們。 一般而言，當您有一組相關的 .NET 物件時，會使用選取範圍。 例如，格式配置 `FileSystem` 檔案 ( # B0 xml) 定義了數個 views 使用的檔案系統類型的選擇集。
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>定義和參考選擇集的位置
 
@@ -84,7 +77,7 @@ ms.locfileid: "83692291"
 
 - [Name](./name-element-for-selectionset-format.md)元素會指定用來參考選取集的名稱。
 
-- [Types](./types-element-for-selectionset-format.md)元素會指定選取集之物件的 .net 類型。 （在格式化檔案中，物件是由其 .NET 類型指定）。
+- [Types](./types-element-for-selectionset-format.md)元素會指定選取集之物件的 .net 類型。  (在格式化檔案中，物件是由其 .NET 類型所指定。 ) 
 
  下列 XML 元素可用來指定選擇集。
 
@@ -140,7 +133,7 @@ ms.locfileid: "83692291"
 
 [名稱](./name-element-for-selectionset-format.md)
 
-[型別](./types-element-for-selectionset-format.md)
+[類型](./types-element-for-selectionset-format.md)
 
 [PowerShell 格式設定檔案](./powershell-formatting-files.md)
 

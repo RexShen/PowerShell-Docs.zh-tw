@@ -1,11 +1,6 @@
 ---
 title: Cmdlet 參數 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - optional parameters [PowerShell SDK]
 - aliases [PowerShell SDK]
@@ -14,20 +9,18 @@ helpviewer_keywords:
 - mandatory parameters [PowerShell SDK]
 - positional parameters [PowerShell SDK]
 - cmdlets [PowerShell SDK], parameters
-ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
-caps.latest.revision: 23
-ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: 98b1d5fd0e7ffbf2d4d161f1bed73fb96a737bd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022218"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774757"
 ---
 # <a name="cmdlet-parameters"></a>Cmdlet 參數
 
-Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從命令列或透過管線傳遞給 Cmdlet 的物件接受輸入，這些參數的引數（也稱為*值*）可以指定 Cmdlet 接受的輸入、Cmdlet 應如何執行其動作，以及 Cmdlet 傳回給管線的資料。
+Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從命令列或透過管線傳遞給 Cmdlet 的物件接受輸入，引數 (也稱為這些參數的*值*) 可以指定 Cmdlet 接受的輸入、Cmdlet 應如何執行其動作，以及 Cmdlet 傳回給管線的資料。
 
-## <a name="in-this-section"></a>在本節中
+## <a name="in-this-section"></a>本節內容
 
 將[屬性宣告為參數](./declaring-properties-as-parameters.md)提供在宣告 Cmdlet 的參數之前，您必須瞭解的基本資訊。
 
@@ -47,7 +40,7 @@ Cmdlet 參數提供允許 Cmdlet 接受輸入的機制。 參數可以直接從�
 
 [驗證參數輸入](./validating-parameter-input.md)說明 Windows PowerShell 如何驗證傳遞給 Cmdlet 參數的引數。
 
-[輸入篩選參數](./input-filter-parameters.md)討論 `Filter`、`Include`和 `Exclude` 參數，以篩選 Cmdlet 所影響的輸入物件集合。
+[輸入篩選參數](./input-filter-parameters.md)討論 `Filter` 、 `Include` 和參數，其 `Exclude` 會篩選 Cmdlet 所影響的輸入物件集合。
 
 ## <a name="related-sections"></a>相關章節
 

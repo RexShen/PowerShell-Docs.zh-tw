@@ -1,19 +1,12 @@
 ---
-title: 清單視圖（標籤） |Microsoft Docs
-ms.custom: ''
+title: 清單視圖 (標籤) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
-caps.latest.revision: 6
-ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da45bd8dce7ac2149de6a34c11d5419d6cb4ddb0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362787"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773380"
 ---
 # <a name="list-view-labels"></a>清單檢視 (標籤)
 
@@ -23,12 +16,12 @@ ms.locfileid: "72362787"
 
 1. 將本主題的範例一節中的 XML 複製到文字檔中。
 
-2. 儲存文字檔。 請務必將 `format.ps1xml` 擴充功能新增至檔案，以將其識別為格式化檔案。
+2. 儲存文字檔案。 請務必將擴充功能新增 `format.ps1xml` 至檔案，以將其識別為格式化檔案。
 
-3. 開啟 Windows PowerShell，然後執行下列命令，將格式檔案載入目前的會話： `Update-formatdata -prependpath PathToFormattingFile`。
+3. 開啟 Windows PowerShell，然後執行下列命令，將格式檔案載入目前的會話： `Update-formatdata -prependpath PathToFormattingFile` 。
 
    > [!WARNING]
-   > 此格式檔案會定義已由 Windows PowerShell 格式化檔案所定義的物件顯示。 當您執行 Cmdlet 時，必須使用 `prependPath` 參數，而且無法將此格式檔案載入為模組。
+   > 此格式檔案會定義已由 Windows PowerShell 格式化檔案所定義的物件顯示。 `prependPath`當您執行 Cmdlet 時，必須使用參數，而且無法將此格式檔案載入為模組。
 
 ## <a name="demonstrates"></a>示範
 
@@ -138,6 +131,6 @@ SERVICETYPE property : Win32OwnProcess
 
 ## <a name="see-also"></a>另請參閱
 
-[格式檔案的範例](./examples-of-formatting-files.md)
+[格式設定檔案的範例](./examples-of-formatting-files.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

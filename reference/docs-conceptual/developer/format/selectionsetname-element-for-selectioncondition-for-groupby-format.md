@@ -1,25 +1,18 @@
 ---
-title: GroupBy 之 SelectionCondition 的 SelectionSetName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 適用于 SelectionCondition 之 GroupBy (格式的 SelectionSetName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7b9a4912-d755-42f3-8058-53c0797e28e4
-caps.latest.revision: 6
-ms.openlocfilehash: 371913eda2b09ff6788494b68738f2ad53ccb115
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6d0263aa335287f20be5b94a8eb65696d06d82a8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361857"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772615"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-groupby-format"></a>GroupBy 之 SelectionCondition 的 SelectionSetName 元素 (格式)
 
 指定觸發條件的 .NET 類型集合。 當此集合中的任何類型都存在時，就會符合條件，並使用此控制項來顯示該物件。 此元素是在定義新物件群組的顯示方式時使用。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） GroupBy 元素（format） CustomEntries 專案的 groupby （format） CustomControl 元素，適用于的 CustomControl for GroupBy （format） CustomEntry 元素適用于之 entryselectedby for groupby （format） SelectionSetName 元素的 groupby （format） SelectionCondition 元素的 GroupBy （格式）之 entryselectedby 元素的 CustomControl
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) GroupBy 元素以取得 (格式) CustomEntries 專案（適用于 groupby (format）) CustomEntry 元素（適用于 CustomControl 的 groupby (格式) 之 entryselectedby 元素，適用于 groupby (格式的 CustomEntry) SelectionCondition 專案 (]
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72361857"
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `SelectionSetName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72361857"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[GroupBy 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|定義必須存在的條件，才能使用控制項定義。|
+|[GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|定義必須存在的條件，才能使用控制項定義。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,12 +50,12 @@ ms.locfileid: "72361857"
 
 ## <a name="see-also"></a>另請參閱
 
-[GroupBy 之 SelectionCondition 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-groupby-format.md)
+[GroupBy 之 SelectionCondition 的 TypeName 元素 (格式)](./typename-element-for-selectioncondition-for-groupby-format.md)
 
-[GroupBy 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+[GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
 
 [定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)
 
 [定義選取範圍集合](./defining-selection-sets.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

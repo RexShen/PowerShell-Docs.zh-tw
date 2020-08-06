@@ -1,25 +1,18 @@
 ---
 title: Cmdlet 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
-caps.latest.revision: 13
-ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 633e4a5108673b09a92679c7992421b6b3405b72
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365877"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774740"
 ---
 # <a name="cmdlet-samples"></a>Cmdlet 範例
 
-本節說明 Windows PowerShell 2.0 SDK 中提供的範例程式碼。 您可以從本節的主題複製程式碼，或開啟隨 SDK 安裝的原始程式檔。 [Windows PowerShell 2.0 軟體發展工具組（SDK）](https://www.microsoft.com/en-us/download/details.aspx?id=2560)會提供每個範例的讀我檔案、原始程式檔和 Visual Studio 專案檔案。 安裝 SDK 之後，您可以在 [`<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`] 資料夾底下找到範例。
+本節說明 Windows PowerShell 2.0 SDK 中提供的範例程式碼。 您可以從本節的主題複製程式碼，或開啟隨 SDK 安裝的原始程式檔。 [Windows PowerShell 2.0 軟體發展工具組 (SDK) ](https://www.microsoft.com/en-us/download/details.aspx?id=2560)提供每個範例的讀我檔案、原始程式檔和 Visual Studio 專案檔案。 安裝 SDK 之後，您可以在資料夾底下找到範例 `<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` 。
 
-## <a name="in-this-section"></a>在本節中
+## <a name="in-this-section"></a>本節內容
 
 [GetProcessSample01 範例](./getprocesssample01-sample.md)這個範例會示範如何撰寫 Cmdlet 來抓取本機電腦上的處理常式。
 
@@ -31,7 +24,7 @@ ms.locfileid: "72365877"
 
 [GetProcessSample05 範例](./getprocesssample05-sample.md)這個範例會顯示完整版的 Get Proc Cmdlet。
 
-[StopProcessSample01 範例](./stopprocesssample01-sample.md)這個範例會示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件。
+[StopProcessSample01 範例](./stopprocesssample01-sample.md)這個範例會示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數來指出使用者想要 Cmdlet 傳回物件。
 
 [StopProcessSample02 範例](./stopprocesssample02-sample.md)這個範例示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時寫入 debug、verbose 和警告訊息。
 

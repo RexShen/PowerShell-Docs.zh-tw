@@ -1,21 +1,14 @@
 ---
 title: 將參數集新增至 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
-ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
-caps.latest.revision: 8
-ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978622"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774978"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>新增參數集到 Cmdlet
 
@@ -23,11 +16,11 @@ ms.locfileid: "80978622"
 
 Windows PowerShell 會將參數集定義為一起運作的一組參數。 藉由將 Cmdlet 的參數分組，您可以建立單一 Cmdlet，根據使用者指定的參數群組來變更其功能。
 
-Windows PowerShell 所提供的 `Get-EventLog` Cmdlet，是使用兩個參數集來定義不同功能的 Cmdlet 範例。 當使用者指定 `List` 或 `LogName` 參數時，此 Cmdlet 會傳回不同的資訊。 如果指定了 `LogName` 參數，此 Cmdlet 會傳回指定事件記錄檔中事件的相關資訊。 如果指定了 `List` 參數，Cmdlet 會傳回記錄檔本身的相關資訊（而不是其包含的事件資訊）。 在此情況下，`List` 和 `LogName` 參數會識別兩個不同的參數集。
+使用兩個參數集來定義不同功能的 Cmdlet 範例，是 `Get-EventLog` Windows PowerShell 所提供的 Cmdlet。 當使用者指定或參數時，此 Cmdlet 會傳回不同的資訊 `List` `LogName` 。 如果 `LogName` 指定了參數，此 Cmdlet 會傳回指定事件記錄檔中事件的相關資訊。 如果 `List` 指定參數，Cmdlet 會傳回記錄檔本身的相關資訊， (不是) 所包含的事件資訊。 在此情況下， `List` 和 `LogName` 參數會識別兩個不同的參數集。
 
 有關參數集的兩個重要事項，就是 Windows PowerShell 執行時間只會針對特定輸入使用一個參數集，而且每個參數集必須至少有一個參數是該參數集唯一的。
 
-為了說明最後一點，此停止程式 Cmdlet 會使用三個參數集： `ProcessName`、`ProcessId`和 `InputObject`。 每個參數集都有一個不在其他參數集內的參數。 參數集可以共用其他參數，但此 Cmdlet 會使用 `ProcessName`、`ProcessId`和 `InputObject` 的唯一參數，以識別 Windows PowerShell 執行時間應該使用的參數集。
+為了說明最後一點，此停止程式 Cmdlet 會使用三個參數集： `ProcessName` 、 `ProcessId` 和 `InputObject` 。 每個參數集都有一個不在其他參數集內的參數。 參數集可以共用其他參數，但此 Cmdlet 會使用唯一的參數 `ProcessName` 、 `ProcessId` 和， `InputObject` 來識別 Windows PowerShell 執行時間應該使用的參數集。
 
 ## <a name="declaring-the-cmdlet-class"></a>宣告 Cmdlet 類別
 
@@ -54,11 +47,11 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>宣告 Cmdlet 的參數
 
-此 Cmdlet 會定義三個參數，做為 Cmdlet 的輸入（這些參數也會定義參數集），以及管理 Cmdlet 所執行之工作的 `Force` 參數，以及可判斷 Cmdlet 是否透過管線傳送輸出物件的 `PassThru` 參數。 根據預設，此 Cmdlet 不會透過管線傳遞物件。 如需最後兩個參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
+此 Cmdlet 會定義三個參數，做為 Cmdlet 的輸入 (這些參數也會定義) 的參數集，以及 `Force` 管理 Cmdlet 所執行之工作的參數，以及 `PassThru` 可判斷 Cmdlet 是否透過管線傳送輸出物件的參數。 根據預設，此 Cmdlet 不會透過管線傳遞物件。 如需最後兩個參數的詳細資訊，請參閱[建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)。
 
 ### <a name="declaring-the-name-parameter"></a>宣告 Name 參數
 
-此輸入參數可讓使用者指定要停止的處理常式名稱。 請注意， [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 `ParameterSetName` 屬性關鍵字會指定為此參數設定的 `ProcessName` 參數。
+此輸入參數可讓使用者指定要停止的處理常式名稱。 請注意， `ParameterSetName` [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 attribute 關鍵字會指定 `ProcessName` 此參數所設定的參數。
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
@@ -84,7 +77,7 @@ Private processNames() As String
 
 ### <a name="declaring-the-id-parameter"></a>宣告 Id 參數
 
-此輸入參數可讓使用者指定要停止之處理常式的識別碼。 請注意， [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 `ParameterSetName` 屬性關鍵字會指定 `ProcessId` 參數集。
+此輸入參數可讓使用者指定要停止之處理常式的識別碼。 請注意， `ParameterSetName` [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 attribute 關鍵字會指定 `ProcessId` 參數集。
 
 ```csharp
 [Parameter(
@@ -122,7 +115,7 @@ Private processIds() As Integer
 
 ### <a name="declaring-the-inputobject-parameter"></a>宣告 InputObject 參數
 
-此輸入參數可讓使用者指定輸入物件，其中包含要停止之處理常式的相關資訊。 請注意， [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 `ParameterSetName` 屬性關鍵字會指定為此參數設定的 `InputObject` 參數。
+此輸入參數可讓使用者指定輸入物件，其中包含要停止之處理常式的相關資訊。 請注意， `ParameterSetName` [Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性的 attribute 關鍵字會指定 `InputObject` 此參數所設定的參數。
 
 ```csharp
 [Parameter(
@@ -213,7 +206,7 @@ End Sub 'ProcessRecord ' ProcessRecord
 
 ## <a name="code-sample"></a>程式碼範例
 
-如需完整C#的範例程式碼，請參閱[StopProcessSample04 範例](./stopprocesssample04-sample.md)。
+如需完整的 c # 範例程式碼，請參閱[StopProcessSample04 範例](./stopprocesssample04-sample.md)。
 
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
 
@@ -225,9 +218,9 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
 
 ## <a name="testing-the-cmdlet"></a>測試 Cmdlet
 
-當您的 Cmdlet 已向 Windows PowerShell 註冊時，請在命令列上執行它來進行測試。 以下是一些測試，說明如何使用 `ProcessId` 和 `InputObject` 參數來測試其參數集以停止進程。
+當您的 Cmdlet 已向 Windows PowerShell 註冊時，請在命令列上執行它來進行測試。 以下是一些測試，示範如何 `ProcessId` 使用和 `InputObject` 參數來測試其參數集以停止進程。
 
-- 啟動 Windows PowerShell 之後，請執行 `ProcessId` 參數集的 Stop-Proc Cmdlet，以根據其識別碼停止進程。 在此情況下，Cmdlet 會使用 `ProcessId` 參數集來停止進程。
+- 啟動 Windows PowerShell 後，請使用設定的參數來執行停止程式 Cmdlet， `ProcessId` 以根據其識別碼停止進程。 在此情況下，Cmdlet 會使用 `ProcessId` 參數集來停止進程。
 
   ```
   PS> stop-proc -Id 444
@@ -237,7 +230,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- 當 Windows PowerShell 啟動時，請執行 `InputObject` 參數集的 Stop-Proc Cmdlet，以停止 `Get-Process` 命令所抓取之記事本物件上的進程。
+- 當 Windows PowerShell 啟動時，請執行停止處理 Cmdlet，並將 `InputObject` 參數設定為在命令所抓取的記事本物件上停止進程 `Get-Process` 。
 
   ```
   PS> get-process notepad | stop-proc

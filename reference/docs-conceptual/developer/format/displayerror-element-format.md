@@ -1,25 +1,18 @@
 ---
-title: DisplayError 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: DisplayError 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
-caps.latest.revision: 8
-ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5d46c2fbd48f592db5ba1b33eb6cead8dc1c4698
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363987"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774281"
 ---
 # <a name="displayerror-element-format"></a>DisplayError 元素 (格式)
 
 指定在顯示一段資料時發生錯誤時，顯示 #ERR 的字串。
 
-Configuration 元素（格式） DefaultSettings 元素（格式） DisplayError 元素（格式）
+Configuration 元素 (格式) DefaultSettings 元素 (格式) DisplayError 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） DefaultSettings 元素（格式） DisplayError
 <DisplayError/>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `DisplayError` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `DisplayError` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） DefaultSettings 元素（格式） DisplayError
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[DefaultSettings 元素（格式）](./defaultsettings-element-format.md)|定義套用至格式化檔案所有視圖的一般設定。|
+|[DefaultSettings 元素 (格式)](./defaultsettings-element-format.md)|定義套用至格式化檔案所有視圖的一般設定。|
 
 ## <a name="remarks"></a>備註
 
@@ -51,6 +44,6 @@ Configuration 元素（格式） DefaultSettings 元素（格式） DisplayError
 
 ## <a name="see-also"></a>另請參閱
 
-[DefaultSettings 元素（格式）](./defaultsettings-element-format.md)
+[DefaultSettings 元素 (格式)](./defaultsettings-element-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

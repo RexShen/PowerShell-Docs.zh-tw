@@ -1,19 +1,12 @@
 ---
 title: 提供者 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2465420-0970-4408-9ee5-260cf444cb67
-caps.latest.revision: 8
-ms.openlocfilehash: b266a22e3ab16762b22e9d630b968ee510ff1c49
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 24838eeec8e2d59ff3cc549c8659d5afb1c8f92f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564184"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771680"
 ---
 # <a name="provider-cmdlets"></a>提供者 Cmdlet
 
@@ -95,7 +88,7 @@ ms.locfileid: "83564184"
 
 - `Pop-Location`：這個 Cmdlet 會將目前的位置變更為最近推送到堆疊上的位置。 您不需要覆寫任何方法來支援此 Cmdlet。
 
-- `Push-Location`：這個 Cmdlet 會將目前的位置新增至位置清單頂端（「堆疊」）。 您不需要覆寫任何方法來支援此 Cmdlet。
+- `Push-Location`：這個 Cmdlet 會將目前的位置加入至「堆疊」 )  (位置清單頂端。 您不需要覆寫任何方法來支援此 Cmdlet。
 
 - `Set-Location`：這個 Cmdlet 會將目前的工作位置設定為指定的位置。 您不需要覆寫任何方法來支援此 Cmdlet。
 

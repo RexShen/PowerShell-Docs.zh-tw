@@ -1,25 +1,18 @@
 ---
-title: ExpressionBinding for CustomControl for View 的 PropertyName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: ExpressionBinding for CustomControl for View (格式的 PropertyName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1fa3b699-d36e-47a2-b671-a313ba091aaa
-caps.latest.revision: 6
-ms.openlocfilehash: edd8c4b39f56be6b8658db46050bcce33db9cebd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a4e835f19d88048441076d7fd0bbb1982fbf5ee7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364977"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773176"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 ExpressionBinding 的 PropertyName 元素 (格式)
 
 指定控制項顯示其值的 .NET 屬性。 定義自訂控制項視圖時，會使用這個元素
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素 for view （format） CustomEntries 元素 for CustomEntry for view （format） CustomEntries 元素Format） CustomItem 元素，用於 CustomControl for view （format） ExpressionBinding 元素，CustomItem for CustomControl for view （format） PropertyName 元素 ExpressionBinding for view （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl for view (格式的 CustomEntries 專案) 格式 (CustomEntry for CustomEntries for view) CustomControl 元素的 CustomItem for CustomEntry for view (format) CustomControl 元素（ExpressionBinding for CustomItem for view (format) CustomControl 專案 (格式的 ExpressionBinding for CustomControl
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `PropertyName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `PropertyName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomControl for View 的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料。|
+|[檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料。|
 
 ## <a name="text-value"></a>文字值
 
@@ -53,6 +46,6 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[CustomControl for View 的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+[檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

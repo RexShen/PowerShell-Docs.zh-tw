@@ -1,19 +1,12 @@
 ---
 title: 背景作業 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
-caps.latest.revision: 13
-ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363557"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774842"
 ---
 # <a name="background-jobs"></a>背景作業
 
@@ -21,7 +14,7 @@ Cmdlet 可以在內部或 Windows PowerShell*背景工作*執行其動作。 當
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>背景工作、子作業和作業存放庫
 
-支援背景工作的 Cmdlet 所傳回的工作物件會定義作業。 （[啟動作業](/powershell/module/Microsoft.PowerShell.Core/Start-Job)Cmdlet 也會傳回工作物件）。作業的名稱、用來指定作業的識別碼、狀態資訊和子工作都會包含在此定義中。 作業不會執行任何工作。 每個背景工作都至少有一個子工作，因為子作業會執行實際的工作。 當您執行 Cmdlet，讓工作以背景工作的形式執行時，此 Cmdlet 必須將作業和子作業新增至通用存放庫，稱為「*作業存放庫*」。
+支援背景工作的 Cmdlet 所傳回的工作物件會定義作業。  ([啟動作業](/powershell/module/Microsoft.PowerShell.Core/Start-Job)Cmdlet 也會傳回工作物件。 ) 作業的名稱、用來指定作業的識別碼、狀態資訊和子工作都包含在此定義中。 作業不會執行任何工作。 每個背景工作都至少有一個子工作，因為子作業會執行實際的工作。 當您執行 Cmdlet，讓工作以背景工作的形式執行時，此 Cmdlet 必須將作業和子作業新增至通用存放庫，稱為「*作業存放庫*」。
 
 如需如何在命令列處理背景工作的詳細資訊，請參閱下列各項：
 
@@ -35,11 +28,11 @@ Cmdlet 可以在內部或 Windows PowerShell*背景工作*執行其動作。 當
 
 若要撰寫可當做背景工作執行的 Cmdlet，您必須完成下列工作：
 
-- 定義 `asJob` 切換參數，讓使用者可以決定是否要以背景工作的方式執行 Cmdlet。
+- 定義 `asJob` 切換參數，讓使用者可以決定是否要將 Cmdlet 當做背景工作執行。
 
 - 建立一個衍生自[system.web](/dotnet/api/System.Management.Automation.Job)類別的物件。 這個物件可以是自訂工作物件或 Windows PowerShell 所提供的工作物件，例如[Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)物件。
 
-- 在記錄處理方法中，加入 `if` 語句，以偵測是否應該以背景工作的方式執行 Cmdlet。
+- 在記錄處理方法中，新增可 `if` 偵測 Cmdlet 是否應當做背景工作執行的語句。
 
 - 若為自訂工作物件，請執行 job 類別。
 
@@ -51,7 +44,7 @@ Cmdlet 可以在內部或 Windows PowerShell*背景工作*執行其動作。 當
 
 Windows PowerShell 會提供下列 Api 來管理背景工作。
 
-[System.web](/dotnet/api/System.Management.Automation.Job)會衍生自訂工作物件。 這是抽象類別。
+[System.web](/dotnet/api/System.Management.Automation.Job)會衍生自訂工作物件。 這是 abstract 類別。
 
 [Jobrepository](/dotnet/api/System.Management.Automation.JobRepository)會管理並提供目前作用中背景工作的相關資訊。
 

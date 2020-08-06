@@ -1,19 +1,12 @@
 ---
 title: Events01 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
-caps.latest.revision: 10
-ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c7b0f759ca6f3c078649a462eac1713e8214a237
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561442"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774452"
 ---
 # <a name="events01-sample"></a>Events01 範例
 
@@ -26,7 +19,7 @@ ms.locfileid: "83561442"
 1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 Events01 資料夾。
    預設位置為 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
 
-2. 按兩下方案（.sln）檔案的圖示。
+2. 按兩下方案的圖示 ( .sln) 檔案。
    這會在 Microsoft Visual Studio 中開啟範例專案。
 
 3. 在 [建置]**** 功能表中，選取 [建置方案]****。
@@ -54,7 +47,7 @@ ms.locfileid: "83561442"
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. 在 TEMP 目錄下建立檔案，並請注意動作會執行（顯示訊息）。
+6. 在 TEMP 目錄下建立檔案，並請注意，會執行動作 (訊息會) 顯示。
 
 這是依照下列步驟所產生的範例輸出。
 

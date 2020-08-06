@@ -1,23 +1,16 @@
 ---
 title: 格式化檔案總覽 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
-caps.latest.revision: 13
-ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: efdd3eed15c5f3c88636fcbe7a39f6c6cfb20ced
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363687"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773499"
 ---
 # <a name="formatting-file-overview"></a>格式設定檔案概觀
 
-命令（Cmdlet、函式和腳本）所傳回之物件的顯示格式是使用格式檔案（types.ps1xml 檔案）所定義。 PowerShell 會提供這些檔案中的幾個，以定義 PowerShell 提供的命令所傳回之物件的顯示格式，例如 `Get-Process` [Cmdlet 所傳回的 system.servicemodel 物件。](/dotnet/api/System.Diagnostics.Process) 不過，您也可以建立自己的自訂格式檔案來覆寫預設的顯示格式，或者您也可以撰寫自訂格式檔案，以定義您自己的命令所傳回的物件顯示。
+命令所傳回之物件的顯示格式 (Cmdlet、函式和腳本) 是使用格式檔案 ( # B0 xml 檔案) 來定義。 PowerShell 會提供其中幾個檔案，以定義 PowerShell 提供的命令所傳回之物件的顯示格式，例如 Cmdlet 所傳回的[system.object](/dotnet/api/System.Diagnostics.Process)物件。 `Get-Process` 不過，您也可以建立自己的自訂格式檔案來覆寫預設的顯示格式，或者您也可以撰寫自訂格式檔案，以定義您自己的命令所傳回的物件顯示。
 
 > [!IMPORTANT]
 > 格式化檔案不會判斷傳回給管線之物件的元素。 當物件傳回至管線時，即使部分不會顯示，該物件的所有成員都可供使用。
@@ -30,7 +23,7 @@ PowerShell 會使用這些格式檔案中的資料來決定要顯示的內容，
 
 - 預設設定，例如，資料表資料列中所顯示的資料是否會顯示在下一行（如果資料長度超過資料行的寬度）。 如需這些設定的詳細資訊，請參閱[定義一般設定](./defining-common-configuration-features.md)。
 
-- 一組物件，可由格式化檔案的任何一種視圖顯示。 如需這些集合（稱為*選擇集*）的詳細資訊，請參閱[定義物件集合](./defining-selection-sets.md)。
+- 一組物件，可由格式化檔案的任何一種視圖顯示。 如需這些集合的詳細資訊 (稱為*選取集*) ，請參閱[定義物件的集合](./defining-selection-sets.md)。
 
 - 可供格式檔案的所有視圖使用的通用控制項。 控制項可讓您更精確地控制資料的顯示方式。 如需控制項的詳細資訊，請參閱[定義自訂控制項](./creating-custom-controls.md)。
 
@@ -38,19 +31,19 @@ PowerShell 會使用這些格式檔案中的資料來決定要顯示的內容，
 
 格式化視圖可以使用表格格式、清單格式、寬格式和自訂格式來顯示物件。 在大部分的情況下，每個格式定義都是由一組描述此視圖的 XML 標記所描述。 每個視圖都會包含視圖的名稱、使用此視圖的物件，以及視圖的元素，例如資料表視圖的資料行和資料列資訊。
 
-資料表視圖會列出一個或多個資料行中物件或腳本區塊值的屬性。 每個資料行都代表物件的單一屬性或腳本值。 您可以定義資料表視圖，以顯示物件的所有屬性、物件屬性的子集，或是屬性和腳本值的組合。 資料表的每個資料列都代表一個傳回的物件。 當您使用管線將物件傳送至 `Format-Table` Cmdlet 時，建立資料表視圖非常類似。 如需此視圖的詳細資訊，請參閱[資料表視圖](./creating-a-table-view.md)。
+資料表視圖會列出一個或多個資料行中物件或腳本區塊值的屬性。 每個資料行都代表物件的單一屬性或腳本值。 您可以定義資料表視圖，以顯示物件的所有屬性、物件屬性的子集，或是屬性和腳本值的組合。 資料表的每個資料列都代表一個傳回的物件。 當您使用管線將物件傳送至 Cmdlet 時，建立資料表視圖非常類似 `Format-Table` 。 如需此視圖的詳細資訊，請參閱[資料表視圖](./creating-a-table-view.md)。
 
 清單視圖會列出物件的屬性或單一資料行中的腳本值。 清單的每個資料列都會顯示選擇性標籤或屬性名稱，後面接著屬性或腳本的值。 建立清單視圖非常類似于使用管線將物件傳送至 `Format-List` Cmdlet。 如需此視圖的詳細資訊，請參閱[清單視圖](./creating-a-list-view.md)。
 
 寬型視圖會列出物件的單一屬性或一或多個資料行中的腳本值。 沒有此視圖的標籤或標頭。 建立寬視圖非常類似于使用管線將物件傳送至 `Format-Wide` Cmdlet。 如需此視圖的詳細資訊，請參閱[Wide view](./creating-a-wide-view.md)。
 
-[自訂視圖] 會顯示物件屬性或腳本值的可自訂視圖，而不會遵守資料表視圖、清單視圖或寬視圖的嚴格結構。 您可以定義獨立的自訂視圖，也可以定義另一個視圖所使用的自訂視圖，例如資料表視圖或清單視圖。 建立自訂視圖與使用管線將物件傳送至 `Format-Custom` Cmdlet 非常類似。 如需此視圖的詳細資訊，請參閱[自訂視圖](./creating-custom-controls.md)。
+[自訂視圖] 會顯示物件屬性或腳本值的可自訂視圖，而不會遵守資料表視圖、清單視圖或寬視圖的嚴格結構。 您可以定義獨立的自訂視圖，也可以定義另一個視圖所使用的自訂視圖，例如資料表視圖或清單視圖。 建立自訂視圖非常類似于使用管線將物件傳送至 `Format-Custom` Cmdlet。 如需此視圖的詳細資訊，請參閱[自訂視圖](./creating-custom-controls.md)。
 
 ## <a name="components-of-a-view"></a>視圖的元件
 
 下列 XML 範例顯示視圖的基本 XML 元件。 個別的 XML 元素會根據您要建立的視圖而有所不同，但 views 的基本元件全都相同。
 
-一開始，每個 view 都有一個 `Name` 專案，可指定用來參考此視圖的使用者易記名稱。 `ViewSelectedBy` 專案，定義要由視圖顯示的 .NET 物件，以及定義視圖的*控制項*元素。
+一開始，每個 view 都有一個 `Name` 元素，指定用來參考此視圖的使用者易記名稱。 `ViewSelectedBy`定義視圖所要顯示之 .net 物件的專案，以及定義視圖的*控制項*元素。
 
 ```xml
 <ViewDefinitions>
@@ -116,7 +109,7 @@ PowerShell 會使用這些格式檔案中的資料來決定要顯示的內容，
 
 ## <a name="example-of-a-table-view"></a>資料表視圖的範例
 
-下列範例顯示用來定義包含兩個數據行之資料表視圖的 XML 標記。 [ViewDefinitions](./viewdefinitions-element-format.md)元素是格式檔案中定義之所有視圖的容器元素。 [View](./view-element-format.md)元素會定義特定的資料表、清單、寬型或自訂視圖。 在每個[view](./view-element-format.md)專案中， [name](./name-element-for-view-format.md)元素會指定視圖的名稱， [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件，而不同的控制項專案（例如下列範例中所示的 `TableControl` 元素）會定義視圖的類型。
+下列範例顯示用來定義包含兩個數據行之資料表視圖的 XML 標記。 [ViewDefinitions](./viewdefinitions-element-format.md)元素是格式檔案中定義之所有視圖的容器元素。 [View](./view-element-format.md)元素會定義特定的資料表、清單、寬型或自訂視圖。 在每個[view](./view-element-format.md)專案中， [name](./name-element-for-view-format.md)元素會指定視圖的名稱， [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件，而不同的控制項元素 (例如 `TableControl` 下列範例中所示的專案) 定義視圖的類型。
 
 ```xml
 <ViewDefinitions>
@@ -155,11 +148,11 @@ PowerShell 會使用這些格式檔案中的資料來決定要顯示的內容，
 
 ## <a name="see-also"></a>另請參閱
 
-[建立清單視圖](./creating-a-list-view.md)
+[建立清單檢視](./creating-a-list-view.md)
 
-[建立資料表視圖](./creating-a-table-view.md)
+[建立表格檢視](./creating-a-table-view.md)
 
-[建立寬型視圖](./creating-a-wide-view.md)
+[建立寬型檢視](./creating-a-wide-view.md)
 
 [建立自訂控制項](./creating-custom-controls.md)
 

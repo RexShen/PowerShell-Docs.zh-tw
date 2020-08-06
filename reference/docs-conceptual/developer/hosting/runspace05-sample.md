@@ -1,23 +1,16 @@
 ---
 title: Runspace05 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
-caps.latest.revision: 9
-ms.openlocfilehash: b640493bca81a0157bf5abffe3ab43b3a2832b01
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 2d274028d2357a26cd75cf70a033abbf907f5c4d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565252"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772156"
 ---
 # <a name="runspace05-sample"></a>Runspace05 範例
 
-這個範例會示範如何將嵌入式管理單元新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件，以便在開啟執行時間時可以使用嵌入式管理單元的 Cmdlet。 此嵌入式管理單元提供一個使用[GetProcessSample01 範例](../cmdlet/getprocesssample01-sample.md)所定義的「取得程式」指令程式，此 Cmdlet 是以同步方式[執行。](/dotnet/api/system.management.automation.powershell)
+這個範例示範如何將嵌入式管理單元新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件，以便在開啟執行時間時使用嵌入式管理單元的 Cmdlet。 此嵌入式管理單元提供的[GetProcessSample01 範例](../cmdlet/getprocesssample01-sample.md)) 所定義的 (，會以同步方式使用[system.web](/dotnet/api/system.management.automation.powershell)物件來執行。
 
 ## <a name="requirements"></a>需求
 
@@ -27,11 +20,11 @@ ms.locfileid: "83565252"
 
 這個範例會示範下列各項。
 
-- 建立[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的程式。
+- 建立[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
-- 將嵌入式管理單元新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件中。
+- 將嵌入式管理單元新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
-- 建立一個使用[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的 system.servicemodel 物件，它[是由它](/dotnet/api/System.Management.Automation.Runspaces.Runspace)所產生的。
+- 建立一個使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的 system.servicemodel. 工作[空間](/dotnet/api/System.Management.Automation.Runspaces.Runspace)物件。
 
 - 建立使用此運行空間的[system.web](/dotnet/api/system.management.automation.powershell)物件。
 
@@ -43,7 +36,7 @@ ms.locfileid: "83565252"
 
 ## <a name="example"></a>範例
 
-這個範例會建立一個使用[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的執行時間，以定義當執行時間開啟時可用的元素。 在此範例中，會將定義 Proc Cmdlet 的嵌入式管理單元新增至初始會話狀態。
+這個範例會建立一個使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的執行時間，以定義當執行時間開啟時可用的元素。 在此範例中，會將定義 Proc Cmdlet 的嵌入式管理單元新增至初始會話狀態。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

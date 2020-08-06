@@ -1,23 +1,16 @@
 ---
 title: Windows PowerShell01 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
-caps.latest.revision: 9
-ms.openlocfilehash: c82f0a123c190c778166e3648b46e97e6257a2b6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560996"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771935"
 ---
 # <a name="windows-powershell01-sample"></a>Windows PowerShell01 範例
 
-這個範例會示範如何使用[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件來限制執行時間的功能，。 這個範例的輸出示範如何限制執行時間的語言模式、如何將 Cmdlet 標示為私用、如何新增和移除 Cmdlet 和提供者、如何新增 proxy 命令等。 這個範例著重于如何以程式設計方式限制執行時間。 限制執行空間的腳本替代方案包括 $ExecutionCoNtext. SessionState. LanguageMode 和 Enable-pssessionconfiguration 命令。
+這個範例示範如何使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件來限制執行時間的功能。 這個範例的輸出示範如何限制執行時間的語言模式、如何將 Cmdlet 標示為私用、如何新增和移除 Cmdlet 和提供者、如何新增 proxy 命令等。 這個範例著重于如何以程式設計方式限制執行時間。 限制執行空間的腳本替代方案包括 $ExecutionCoNtext. SessionState. LanguageMode 和 Enable-pssessionconfiguration 命令。
 
 ## <a name="requirements"></a>需求
 
@@ -27,17 +20,17 @@ ms.locfileid: "83560996"
 
 本範例示範以下項目:
 
-- 藉由設定[Initialsessionstate. Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)屬性來限制語言。
+- 藉由設定System.Management.Automation.Runspaces.Initialsessionstate 來限制語言[。Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)屬性。
 
 - 藉由使用 Sessionstatealiasentry，將別名新增至初始會話狀態。 [Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)物件。
 
 - 將命令標示為私用。
 
-- 藉由使用[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) ，從初始會話狀態中移除提供者。
+- 使用System.Management.Automation.Runspaces.Initialsessionstate，從初始會話狀態移除提供者[。提供者](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)屬性。
 
-- 藉由使用[Initialsessionstate 命令](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands)，從初始會話狀態中移除命令。
+- 使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) ] 屬性，從初始會話狀態移除命令。
 
-- 將命令和提供者加入[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+- 將命令和提供者加入至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
 ## <a name="example"></a>範例
 

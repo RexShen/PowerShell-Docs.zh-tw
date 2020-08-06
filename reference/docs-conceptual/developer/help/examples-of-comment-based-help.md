@@ -1,12 +1,12 @@
 ---
 title: 註解型說明的範例
 ms.date: 09/12/2016
-ms.openlocfilehash: 3858fa7f15d71c505dacaf9679910d45ef4640e5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893487"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772292"
 ---
 # <a name="examples-of-comment-based-help"></a>註解型說明的範例
 
