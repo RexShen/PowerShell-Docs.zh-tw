@@ -1,25 +1,18 @@
 ---
-title: CustomControl for View 的 CustomEntries 的 CustomEntry 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: CustomControl for View (格式) 的 CustomEntries 的 CustomEntry 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
-caps.latest.revision: 11
-ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a13e83ec941bed80eaab02e40131054432fcce00
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364017"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785875"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomEntries 的 CustomEntry 元素 (格式)
 
 提供自訂控制項視圖的定義。
 
-CustomEntry for view 的 CustomControl for View （Format） CustomEntries 元素的設定元素（格式） ViewDefinitions 元素（格式） CustomEntries 元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl 元素 (format) CustomEntries 元素 for CustomControl for view (format) CustomEntry 元素 for View (Format) 
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +23,9 @@ CustomEntry for view 的 CustomControl for View （Format） CustomEntries 元�
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `CustomEntry` 專案的父元素。 您必須指定定義所顯示的專案。
+下列各節說明屬性、子專案和元素的父元素 `CustomEntry` 。 您必須指定定義所顯示的專案。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,14 +35,14 @@ CustomEntry for view 的 CustomControl for View （Format） CustomEntries 元�
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomEntry for View 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 定義使用自訂控制項視圖定義的 .NET 類型，或必須存在才能使用此定義的條件。|
-|[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂控制項定義的控制項。|
+|[CustomEntry for View (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 定義使用自訂控制項視圖定義的 .NET 類型，或必須存在才能使用此定義的條件。|
+|[CustomEntry for View (格式的 CustomItem 元素) ](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂控制項定義的控制項。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomControl for View 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-view-format.md)|提供自訂控制項視圖的定義。 自訂控制項視圖必須指定一或多個定義。|
+|[檢視之 CustomControl 的 CustomEntries 元素 (格式)](./customentries-element-for-customcontrol-for-view-format.md)|提供自訂控制項視圖的定義。 自訂控制項視圖必須指定一或多個定義。|
 
 ## <a name="remarks"></a>備註
 
@@ -57,10 +50,10 @@ CustomEntry for view 的 CustomControl for View （Format） CustomEntries 元�
 
 ## <a name="see-also"></a>另請參閱
 
-[View 的 CustomControl 元素（格式）](./customcontrol-element-for-view-format.md)
+[檢視的 CustomControl 元素 (格式)](./customcontrol-element-for-view-format.md)
 
-[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+[CustomEntry for View (格式的 CustomItem 元素) ](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[CustomEntry for View 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[CustomEntry for View (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

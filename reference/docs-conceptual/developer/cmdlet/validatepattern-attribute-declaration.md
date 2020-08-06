@@ -1,23 +1,16 @@
 ---
 title: ValidatePattern 屬性聲明 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidatePattern
 - ValidatePattern attribute, described
 - ValidatePattern attribute
-ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
-caps.latest.revision: 13
-ms.openlocfilehash: 5edcb65a6fbe1cb2fe2d0efe3f763fb84628b049
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 713fa7a46a8eeefdbfd679a5e8436285fac085f8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369157"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787796"
 ---
 # <a name="validatepattern-attribute-declaration"></a>ValidatePattern 屬性宣告
 
@@ -34,15 +27,15 @@ ValidatePattern 屬性會指定正則運算式模式，以驗證 Cmdlet 參數�
 
 #### <a name="parameters"></a>參數
 
-需要 `RegexString` （[system.string](/dotnet/api/System.String)）。 指定驗證參數引數的正則運算式。
+`RegexString`需要 ([system.string](/dotnet/api/System.String)) 。 指定驗證參數引數的正則運算式。
 
-Options （[system.text.regularexpressions.RegEx>. system.text.regularexpressions.RegExoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)）選擇性的具名引數。 指定指定正則運算式選項的[System.text.regularexpressions.RegEx> system.text.regularexpressions.RegExoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)旗標的位元組合。
+Options ([system.text.regularexpressions.RegEx>. system.text.regularexpressions.RegExoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)) 選擇性的具名引數。 指定指定正則運算式選項的[System.text.regularexpressions.RegEx> system.text.regularexpressions.RegExoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)旗標的位元組合。
 
 ## <a name="remarks"></a>備註
 
 - 每個參數只能使用此屬性一次。
 
-- 您可以使用屬性的 `Option` 參數來進一步定義模式。 例如，您可以讓模式區分大小寫。
+- 您可以使用 `Option` 屬性的參數來進一步定義模式。 例如，您可以讓模式區分大小寫。
 
 - 如果將這個屬性套用至集合，則集合中的每個元素都必須符合模式。
 

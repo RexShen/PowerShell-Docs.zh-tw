@@ -1,25 +1,18 @@
 ---
-title: EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 SelectionSetName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: EnumerableExpansion (格式) 的之 entryselectedby 之 SelectionCondition 的 SelectionSetName 元素Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7b7af0b2-68e6-43c3-adcc-7c58007fced8
-caps.latest.revision: 13
-ms.openlocfilehash: 6f7c8d9af3c1c2fbda0208148b0088161701fdbe
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e18c74bb95c658f2c3e7b7454628f78d523f7609
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361987"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787490"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 SelectionSetName 元素 (格式)
 
 指定觸發條件的 .NET 類型集合。 當此集合中的任何類型都存在時，就會符合條件。
 
-Configuration 元素的 DefaultSettings 元素（格式） EnumerableExpansions 元素（格式） EnumerableExpansions 專案（格式）之 entryselectedby 元素（用於 EnumerableExpansion 的 SelectionCondition 專案）之 entryselectedby 元素EnumerableExpansion （Format） SelectionCondition for 之 entryselectedby for EnumerableExpansion 的 SelectionSetName 元素（格式）
+Configuration 元素 DefaultSettings 元素 (格式) EnumerableExpansions 元素 (格式) EnumerableExpansions 專案 (格式) EnumerableExpansion (格式) SelectionCondition 元素，之 entryselectedby 的 EnumerableExpansion (格式) SelectionSetName 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素的 DefaultSettings 元素（格式） EnumerableExpansions 
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `SelectionSetName` 元素的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `SelectionSetName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素的 DefaultSettings 元素（格式） EnumerableExpansions 
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在的條件，才能展開這個定義的集合物件。|
+|[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在的條件，才能展開這個定義的集合物件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -59,6 +52,6 @@ Configuration 元素的 DefaultSettings 元素（格式） EnumerableExpansions 
 
 [定義選取範圍集合](./defining-selection-sets.md)
 
-[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
+[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

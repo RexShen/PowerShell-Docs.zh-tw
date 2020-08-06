@@ -1,23 +1,16 @@
 ---
 title: ValidateSet 屬性聲明 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidateSet
 - ValidateSet attribute, described
 - ValidateSet attribute
-ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
-caps.latest.revision: 12
-ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364277"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787762"
 ---
 # <a name="validateset-attribute-declaration"></a>ValidateSet 屬性宣告
 
@@ -34,14 +27,14 @@ ValidateSetAttribute 屬性會指定 Cmdlet 參數引數的一組可能值。 Wi
 
 #### <a name="parameters"></a>參數
 
-需要 `ValidValues` （[system.string](/dotnet/api/System.String)）。 指定有效的參數元素值。 下列範例示範如何指定一個或多個元素。
+`ValidValues`需要 ([system.string](/dotnet/api/System.String)) 。 指定有效的參數元素值。 下列範例示範如何指定一個或多個元素。
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` （[布林值](/dotnet/api/System.Boolean)）選擇性的具名引數。 `true` 的預設值表示會忽略大小寫。 值 `false` 會使 Cmdlet 區分大小寫。
+`IgnoreCase` ([的布林值](/dotnet/api/System.Boolean)) 選擇性的具名引數。 的預設值 `true` 表示忽略大小寫。 的值 `false` 會讓 Cmdlet 區分大小寫。
 
 ## <a name="remarks"></a>備註
 

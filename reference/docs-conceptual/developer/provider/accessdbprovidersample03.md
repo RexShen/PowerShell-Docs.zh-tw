@@ -1,19 +1,12 @@
 ---
 title: AccessDBProviderSample03 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9e576199-49c7-4355-9686-f9ed40c64a5f
-caps.latest.revision: 10
-ms.openlocfilehash: 86daab97236ca4be94669f107d5a03abea6f6c91
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.openlocfilehash: f6de1397bc592cd1b59924a4425a5b17b290a8c8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633391"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786878"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
@@ -35,11 +28,11 @@ ms.locfileid: "84633391"
 - 宣告 `CmdletProvider` 屬性。
 - 定義一個衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別的提供者類別。
 - 覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法來變更 Cmdlet 的行為 `New-PSDrive` ，讓使用者能夠建立新的磁片磁碟機。
-  （此範例不會示範如何將動態參數新增至 `New-PSDrive` Cmdlet）。
+   (此範例不會示範如何將動態參數新增至 `New-PSDrive` Cmdlet。 ) 
 - 覆寫[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支援移除現有的磁片磁碟機。
-- 覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法來變更 Cmdlet 的行為 `Get-Item` ，讓使用者可以從資料存放區抓取專案。 （此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet）。
-- 覆寫[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法以變更 Cmdlet 的行為 `Set-Item` ，讓使用者可以更新資料存放區中的專案。 （此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet）。
-- 覆寫[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法，以變更 Cmdlet 的行為 `Test-Path` 。 （此範例不會示範如何將動態參數新增至 `Test-Path` Cmdlet）。
+- 覆寫[ItemCmdletprovider. Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)方法來變更 Cmdlet 的行為 `Get-Item` ，讓使用者可以從資料存放區抓取專案。  (此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet。 ) 
+- 覆寫[ItemCmdletprovider. Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)方法以變更 Cmdlet 的行為 `Set-Item` ，讓使用者可以更新資料存放區中的專案。  (此範例不會示範如何將動態參數新增至 `Get-Item` Cmdlet。 ) 
+- 覆寫[ItemCmdletprovider. Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)方法，以變更 Cmdlet 的行為 `Test-Path` 。  (此範例不會示範如何將動態參數新增至 `Test-Path` Cmdlet。 ) 
 - 覆寫[ItemCmdletprovider. Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)方法，以判斷提供的路徑是否有效。
 
 ## <a name="example"></a>範例

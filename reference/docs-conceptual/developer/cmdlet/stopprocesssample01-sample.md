@@ -1,31 +1,24 @@
 ---
 title: StopProcessSample01 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
-caps.latest.revision: 9
-ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6d4737d0526a7d142b4a986986974bcbdc12ec7e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365297"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786453"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 範例
 
-這個範例示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件。 此 Cmdlet 類似于 Windows PowerShell 2.0 所提供的 `Stop-Process` Cmdlet。
+這個範例示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample01 資料夾。 預設位置為 C:\Program Files （x86） \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample01 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01。
 
-2. 按兩下方案（.sln）檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置] 功能表中，選取 [建置方案]。
+3. 在 [建置]**** 功能表中，選取 [建置方案]****。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -65,7 +58,7 @@ ms.locfileid: "72365297"
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何執行 `PassThru` 參數，以指出使用者希望 Cmdlet 傳回物件，以及如何藉由呼叫 `ShouldProcess` 和 `ShouldContinue` 方法來要求使用者意見反應。
+這個範例會示範如何執行參數，以 `PassThru` 指出使用者希望 Cmdlet 傳回物件，以及如何透過呼叫和方法來要求使用者意見反應 `ShouldProcess` `ShouldContinue` 。
 
 ```csharp
 using System;

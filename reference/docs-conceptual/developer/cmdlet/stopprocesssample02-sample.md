@@ -1,33 +1,26 @@
 ---
 title: StopProcessSample02 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
-ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369377"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786436"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 範例
 
-這個範例示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時寫入 debug （WriteDebug）、verbose （WriteVerbose）和 warning （WriteWarning）訊息。 此 Cmdlet 類似于 Windows PowerShell 2.0 所提供的 `Stop-Process` Cmdlet。
+這個範例會示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時，寫入 debug (WriteDebug) 、verbose (WriteVerbose) 和 warning (WriteWarning) 訊息。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
 1. 開啟 Windows Internet Explorer，然後流覽至範例目錄底下的 StopProcessSample02 目錄。
 
-    安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample02 資料夾。 預設位置為 C:\Program Files （x86） \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。
+    安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample02 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。
 
-2. 按兩下方案（.sln）檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置] 功能表中，選取 [建置方案]。
+3. 在 [建置]**** 功能表中，選取 [建置方案]****。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -69,7 +62,7 @@ ms.locfileid: "72369377"
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何使用 `WriteDebug`、`WriteVerbose`和 `WriteWarning` 方法，撰寫 debug、verbose 和 warning 訊息。
+這個範例會示範如何使用 `WriteDebug` 、和方法來撰寫 debug、verbose 和 warning 訊息 `WriteVerbose` `WriteWarning` 。
 
 ```csharp
 using System;

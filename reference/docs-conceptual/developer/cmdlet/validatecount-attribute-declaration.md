@@ -1,23 +1,16 @@
 ---
 title: ValidateCount 屬性聲明 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidateCount
 - ValidateCount attribute, described
 - ValidateCount attribute
-ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
-caps.latest.revision: 11
-ms.openlocfilehash: 3cae95fab30a4abe4e544ed5cb7dadc9f4debf02
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: c013a354ee339bd14508fe30549673bc79d5c616
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692382"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786317"
 ---
 # <a name="validatecount-attribute-declaration"></a>ValidateCount 屬性宣告
 
@@ -31,9 +24,9 @@ ValidateCount 屬性會指定 Cmdlet 參數所允許的最小和最大引數數�
 
 #### <a name="parameters"></a>參數
 
-`MinLength`（[必須][]是 system.string）。 指定引數的最小數目。
+`MinLength`需要 ([system.object][]) 。 指定引數的最小數目。
 
-`MaxLength`（[必須][]是 system.string）。 指定引數的最大數目。
+`MaxLength`需要 ([system.object][]) 。 指定引數的最大數目。
 
 ## <a name="remarks"></a>備註
 

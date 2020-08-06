@@ -1,23 +1,16 @@
 ---
 title: ValidateLength 屬性聲明 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateLength attribute, described
 - attributes, ValidateLength
 - ValidateLength attribute
-ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
-caps.latest.revision: 13
-ms.openlocfilehash: a1a494534169b2da470286020dfacfa8e9084839
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 7145dde55e79eeea6e3ceb91dfc1c93043a8857c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692317"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786300"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 屬性宣告
 
@@ -31,9 +24,9 @@ ValidateLength 屬性會指定 Cmdlet 參數引數的最小和最大字元數。
 
 #### <a name="parameters"></a>參數
 
-`MinLength`（[必須](/dotnet/api/System.Int32)是 system.string）。 指定允許的最小字元數。
+`MinLength`需要 ([system.object](/dotnet/api/System.Int32)) 。 指定允許的最小字元數。
 
-`MaxLength`（[必須](/dotnet/api/System.Int32)是 system.string）。 指定允許的最大字元數。
+`MaxLength`需要 ([system.object](/dotnet/api/System.Int32)) 。 指定允許的最大字元數。
 
 ## <a name="remarks"></a>備註
 

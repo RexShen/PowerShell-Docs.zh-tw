@@ -1,19 +1,12 @@
 ---
 title: 如何支援作業 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
-caps.latest.revision: 9
-ms.openlocfilehash: 65f6b3d44910a0a3e848b4d2cd3e619186e5ed25
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706235"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786623"
 ---
 # <a name="how-to-support-jobs"></a>如何支援作業
 
@@ -21,7 +14,7 @@ ms.locfileid: "77706235"
 
 ## <a name="to-support-jobs"></a>支援作業
 
-1. 定義 `AsJob` 切換參數，讓使用者可以決定是否要將 Cmdlet 當做作業執行。
+1. 定義 `AsJob` 切換參數，讓使用者可以決定是否要將 Cmdlet 當做作業來執行。
 
     下列範例顯示 AsJob 參數宣告。
 
@@ -47,7 +40,7 @@ ms.locfileid: "77706235"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. 在記錄處理方法中，新增 `if` 語句，以偵測 Cmdlet 是否應當做作業執行。 下列程式碼會使用[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法：。
+3. 在記錄處理方法中，新增 `if` 語句來偵測 Cmdlet 是否應當做作業執行。 下列程式碼會使用[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法：。
 
     ```csharp
     protected override void ProcessRecord()

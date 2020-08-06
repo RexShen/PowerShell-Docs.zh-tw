@@ -1,19 +1,12 @@
 ---
 title: 撰寫容器提供者 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
-caps.latest.revision: 5
-ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da91f18226d6e6c236c6a6e469db0f692af48abf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366237"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786793"
 ---
 # <a name="writing-a-container-provider"></a>撰寫容器提供者
 
@@ -157,7 +150,7 @@ protected override void GetChildNames(string path,
 
 [ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法會在指定的路徑上建立指定之類型的新專案。 當使用者呼叫[NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
 
-在此範例中，方法會執行邏輯來判斷路徑和類型是否相符。 也就是說，只有一個資料表可以直接建立在磁片磁碟機（資料庫）底下，而且只有一個資料列可以在資料表下建立。 如果指定的路徑和專案類型不符合此方式，則方法會擲回例外狀況。
+在此範例中，方法會執行邏輯來判斷路徑和類型是否相符。 也就是說，只有一個資料表可以直接建立在 (資料庫) 的磁片磁碟機底下，而且只有一個資料列可以在資料表下建立。 如果指定的路徑和專案類型不符合此方式，則方法會擲回例外狀況。
 
 ```csharp
 protected override void NewItem(string path, string type,
@@ -536,12 +529,12 @@ protected override void RemoveItem(string path, bool recurse)
        }
 ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 一般的真實世界提供者可以將專案從某個路徑移到磁片磁碟機內的另一個路徑。 如需支援移動專案之提供者的範例，請參閱[撰寫導覽提供者](./writing-a-navigation-provider.md)。
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫導覽提供者](./writing-a-navigation-provider.md)
+[撰寫瀏覽提供者](./writing-a-navigation-provider.md)
 
-[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)
+[Windows PowerShell 提供者概觀](./windows-powershell-provider-overview.md)

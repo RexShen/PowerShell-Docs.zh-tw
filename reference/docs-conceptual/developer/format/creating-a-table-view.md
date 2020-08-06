@@ -1,19 +1,12 @@
 ---
 title: 建立資料表視圖 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
-caps.latest.revision: 23
-ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cbe81962a0f68d64506062898a8f21a1596cc29a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363407"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786147"
 ---
 # <a name="creating-a-table-view"></a>建立表格檢視
 
@@ -21,7 +14,7 @@ ms.locfileid: "72363407"
 
 ## <a name="a-table-view-display"></a>資料表視圖顯示
 
-下列範例示範 Windows PowerShell 如何顯示由[Get-服務](/powershell/module/microsoft.powershell.management/get-service)Cmdlet 傳回的[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件。 針對此物件，Windows PowerShell 定義了顯示 `Status` 屬性的資料表視圖，`Name` 屬性（此屬性是 `ServiceName` 屬性的 alias 屬性）和 `DisplayName` 屬性。 資料表中的每個資料列都代表 Cmdlet 所傳回的物件。
+下列範例示範 Windows PowerShell 如何顯示由[Get-服務](/powershell/module/microsoft.powershell.management/get-service)Cmdlet 傳回的[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件。 針對此物件，Windows PowerShell 定義了顯示內容的資料表視圖 `Status` ， `Name` (此屬性的屬性是 `ServiceName` 屬性) 和屬性的別名屬性 `DisplayName` 。 資料表中的每個資料列都代表 Cmdlet 所傳回的物件。
 
 ```output
 Status   Name               DisplayName
@@ -75,17 +68,17 @@ Running  Appinfo            Application Information
 
 下列 XML 元素可用來定義清單視圖：
 
-- [View](./view-element-format.md)元素是資料表視圖的父元素。 （這是 [清單]、[寬] 和 [自訂] 控制項視圖的相同父元素）。
+- [View](./view-element-format.md)元素是資料表視圖的父元素。  (這是 [清單]、[寬] 和 [自訂] 控制項視圖的相同父元素。 ) 
 
 - [Name](./name-element-for-view-format.md)元素會指定視圖的名稱。 所有的視圖都需要此元素。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此項目為必要項。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 這個元素是必要的。
 
-- [GroupBy](./groupby-element-for-view-format.md)元素（在此範例中未顯示）會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這是選擇性的項目。
+- 這個範例中未顯示[GroupBy](./groupby-element-for-view-format.md)元素 () 會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這是選擇性的項目。
 
-- [Controls](./controls-element-for-view-format.md)元素（在此範例中未顯示）會定義資料表視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這是選擇性的項目。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
+- 這個範例中不會顯示[Controls](./controls-element-for-view-format.md)元素 (，) 定義由資料表視圖所定義的自訂控制項。 控制項可讓您進一步指定資料的顯示方式。 這是選擇性的項目。 View 可以定義自己的自訂控制項，也可以使用格式檔案中任何視圖可以使用的通用控制項。 如需自訂控制項的詳細資訊，請參閱[建立自訂控制項](./creating-custom-controls.md)。
 
-- [HideTableHeaders](./hidetableheaders-element-format.md)元素（在此範例中未顯示）指定資料表不會在資料表頂端顯示任何標籤。 這是選擇性的項目。
+- 在此範例中不會顯示[HideTableHeaders](./hidetableheaders-element-format.md)元素 () 指定資料表不會在資料表頂端顯示任何標籤。 這是選擇性的項目。
 
 - 定義資料表之標頭和資料列資訊的[TableControl](./tablecontrol-element-format.md)元素。 類似于所有其他的視圖，資料表視圖可以顯示物件屬性的值或腳本所產生的值。
 
@@ -99,7 +92,7 @@ Running  Appinfo            Application Information
 
 3. [Label](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定所顯示的文字。 這是選擇性的項目。
 
-4. [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定資料行的寬度（以字元為單位）。 這是選擇性的項目。
+4. [Width](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定資料行的字元) 寬度 (。 這是選擇性的項目。
 
 5. [對齊](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)元素會指定標籤的顯示方式。 標籤可以靠左、向右或置中對齊。 這是選擇性的項目。
 
@@ -107,7 +100,7 @@ Running  Appinfo            Application Information
 
 資料表視圖可以提供一或多個定義，以指定在資料表的資料列中，使用[TableRowEntries](./tablerowentries-element-for-tablecontrol-format.md)元素的子項目來顯示哪些資料。 請注意，您可以針對資料表的資料列指定多個定義，但是不論使用哪一個資料列定義，資料列的標頭都會維持不變。 通常，資料表只會有一個定義。
 
-在下列範例中，此視圖會提供單一定義，顯示系統的數個屬性值。 [Displayproperty = Fullname](/dotnet/api/System.Diagnostics.Process)物件。 資料表視圖可以在其資料列中顯示內容的值或腳本的值（未顯示在範例中）。
+在下列範例中，此視圖會提供單一定義，顯示系統的數個屬性值。 [Displayproperty = Fullname](/dotnet/api/System.Diagnostics.Process)物件。 資料表視圖可以顯示內容的值或腳本的值 (不會顯示在其資料列的範例) 中。
 
 ```xml
 <TableRowEntries>
@@ -209,13 +202,13 @@ Running  Appinfo            Application Information
 
 - [TypeName](./typename-element-for-entryselectedby-for-listcontrol-format.md)元素會指定定義所顯示的 .net 物件。 使用此元素時，需要完整的 .NET 類型名稱。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。
 
-- [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)元素（未顯示）會指定一組可由這個定義顯示的物件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。
+- [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)元素 (不會顯示) 指定一組可由這個定義顯示的物件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。
 
-- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)元素（未顯示）會指定必須存在才能使用此定義的條件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。 如需定義選取條件的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
+- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)元素 (不會顯示) 指定必須存在才能使用此定義的條件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。 如需定義選取條件的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="using-format-strings"></a>使用格式字串
 
-將字串格式化可以加入至視圖，以進一步定義資料的顯示方式。 下列範例顯示如何為 `StartTime` 屬性的值定義格式字串。
+將字串格式化可以加入至視圖，以進一步定義資料的顯示方式。 下列範例顯示如何為屬性的值定義格式化字串 `StartTime` 。
 
 ```xml
 <TableColumnItem>
@@ -232,7 +225,7 @@ Running  Appinfo            Application Information
 
 - [[字串](./label-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定定義屬性或腳本值顯示方式的格式模式。
 
-在下列範例中，會呼叫 `ToString` 方法，以格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），腳本就可以呼叫該方法來格式化腳本的輸出值。
+在下列範例中， `ToString` 會呼叫方法來格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString` ），則腳本可以呼叫該方法來格式化腳本的輸出值。
 
 ```xml
 <ListItem>
@@ -251,4 +244,4 @@ Running  Appinfo            Application Information
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

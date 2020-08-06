@@ -1,22 +1,15 @@
 ---
 title: 建立基本的 Windows PowerShell 提供者 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - base provider [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], base provider
-ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
-caps.latest.revision: 7
-ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978503"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787218"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>建立基本的 Windows PowerShell 提供者
 
@@ -29,9 +22,9 @@ ms.locfileid: "80978503"
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定義 Windows PowerShell 提供者類別
 
-建立 Windows PowerShell 提供者的第一個步驟是定義它的 .NET 類別。 這個基本提供者會定義一個名為 `AccessDBProvider` 的類別，衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類。
+建立 Windows PowerShell 提供者的第一個步驟是定義它的 .NET 類別。 這個基本提供者會定義一個 `AccessDBProvider` 衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類的類別。
 
-建議您將提供者類別放在 API 命名空間的 `Providers` 命名空間中，例如 xxx。PowerShell. 提供者。 此提供者會使用 `Microsoft.Samples.PowerShell.Provider` 命名空間，其中所有的 Windows PowerShell 提供者範例都會在其中執行。
+建議您將提供者類別放在 `Providers` API 命名空間的命名空間中，例如 xxx。PowerShell. 提供者。 此提供者會使用 `Microsoft.Samples.PowerShell.Provider` 命名空間，其中所有的 Windows PowerShell 提供者範例都會在其中執行。
 
 > [!NOTE]
 > Windows PowerShell 提供者的類別必須明確標示為公用。 未標示為公用的類別會預設為內部，且不會由 Windows PowerShell 執行時間找到。
@@ -40,7 +33,7 @@ ms.locfileid: "80978503"
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
-在類別定義之前，您必須使用語法 [CmdletProvider （）] 來宣告[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性（attribute）。
+在類別定義之前，您必須使用語法 [CmdletProvider ( # A1]，來宣告[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性。
 
 您可以設定屬性關鍵字，以便在必要時進一步宣告類別。 請注意，此處所宣告的[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)屬性包含兩個參數。 第一個屬性參數會指定提供者的預設易記名稱，供使用者稍後修改。 第二個參數會指定在命令處理期間，提供者公開給 Windows PowerShell 執行時間的 Windows PowerShell 定義功能。 提供者功能的可能值是由[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉所定義。 因為這是基底提供者，所以不支援任何功能。
 
@@ -91,7 +84,7 @@ Windows PowerShell 提供者也可以維護以連接為基礎的狀態。 如需
 Get-PSProvider
 ```
 
-下列輸出隨即出現：
+下列輸出會出現：
 
 ```Output
 Name                 Capabilities                  Drives
@@ -108,4 +101,4 @@ Registry             ShouldProcess                 {HKLM, HKCU}
 
 [建立 Windows PowerShell 提供者](./how-to-create-a-windows-powershell-provider.md)
 
-[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)
+[設計 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)

@@ -1,19 +1,12 @@
 ---
 title: Windows PowerShell 概念 |Microsoft Docs
-ms.custom: ''
 ms.date: 6/12/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3dd5608e-50b6-4c6a-aee3-dde0e86032bc
-caps.latest.revision: 7
-ms.openlocfilehash: 56545599f1f5e593045294ed645c79df20738159
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: a31c1df784b7b5f872c4647aece8fafa535db66b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563262"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786946"
 ---
 # <a name="windows-powershell-concepts"></a>Windows PowerShell 概念
 
@@ -23,7 +16,7 @@ ms.locfileid: "83563262"
 |----------------|-----------------|
 |[about_Objects](/powershell/module/microsoft.powershell.core/about/about_objects)|PowerShell 物件的描述。 如需詳細資訊，請參閱[關於建立物件](/powershell/module/microsoft.powershell.core/about/about_object_creation)|
 |[建立 Runspace](../hosting/creating-runspaces.md)|處理命令的作業環境。 如需詳細資訊，請參閱[運行空間類別](/dotnet/api/system.management.automation.runspaces.runspace)。|
-|[延伸輸出物件](../cmdlet/extending-output-objects.md)|如何擴充 PowerShell 物件。 如需詳細資訊，請參閱[關於類型。 types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)|
+|[延伸輸出物件](../cmdlet/extending-output-objects.md)|如何擴充 PowerShell 物件。 如需詳細資訊，請參閱[關於 Types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)|
 |[註冊 Cmdlet](../cmdlet/registering-cmdlets.md)|如何讓模組和嵌入式管理單元在 PowerShell 中使用。 如需詳細資訊，請參閱[模組和嵌入式管理單元](../cmdlet/modules-and-snap-ins.md)。|
 |[從 Cmdlet 要求確認](../cmdlet/requesting-confirmation-from-cmdlets.md)|在採取動作之前，Cmdlet 和提供者如何向使用者要求意見反應。|
 |[RuntimeDefinedParameter 類別](/dotnet/api/system.management.automation.runtimedefinedparameter)|執行時間參數宣告。|

@@ -1,25 +1,18 @@
 ---
-title: View （格式）控制項控制項的 CustomControl 元素 |Microsoft Docs
-ms.custom: ''
+title: 控制項的 CustomControl 元素，用於 View (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
-caps.latest.revision: 8
-ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2020725bf6afb086901e14a976abbdc04366869c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363367"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786096"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>檢視之控制項的控制項 CustomControl 元素 (格式)
 
 定義視圖所使用的控制項。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） Controls 專案（格式）控制項的控制項專案（format） CustomControl 元素 for View 控制項（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) 視圖專案 (格式) 控制項專案 (格式控制項的) 控制項專案， (格式控制項的 Control) CustomControl 專案 (
 
 ## <a name="syntax"></a>語法
 
@@ -29,9 +22,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `CustomControl` 專案的父元素。 您必須只指定一個子項目。
+下列各節說明屬性、子專案和元素的父元素 `CustomControl` 。 您必須只指定一個子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,20 +34,20 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[View 之控制項的 CustomControl 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|必要項目。<br /><br /> 提供控制項的定義。|
+|[檢視之控制項的 CustomControl 的 CustomEntries 元素 (格式)](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|必要元素。<br /><br /> 提供控制項的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[View 控制項的控制項元素（格式）](./control-element-for-controls-for-view-format.md)|定義可供視圖使用的控制項，以及用來參考控制項的名稱。|
+|[View (格式之控制項的控制項元素) ](./control-element-for-controls-for-view-format.md)|定義可供視圖使用的控制項，以及用來參考控制項的名稱。|
 
 ## <a name="remarks"></a>備註
 
 ## <a name="see-also"></a>另請參閱
 
-[CustomControl for View 的 CustomEntries 元素（格式）](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
+[檢視之 CustomControl 的 CustomEntries 元素 (格式)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[View 控制項的控制項元素（格式）](./control-element-for-controls-for-view-format.md)
+[View (格式之控制項的控制項元素) ](./control-element-for-controls-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

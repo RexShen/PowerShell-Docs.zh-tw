@@ -1,19 +1,12 @@
 ---
 title: 撰寫專案提供者 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
-caps.latest.revision: 5
-ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1df30e7af1b534756f797b9b5d4e29b689cbc782
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359877"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786759"
 ---
 # <a name="writing-an-item-provider"></a>撰寫項目提供者
 
@@ -221,7 +214,7 @@ protected override bool IsValidPath(string path)
        }
 ```
 
-## <a name="next-steps"></a>接下來的步驟
+## <a name="next-steps"></a>後續步驟
 
 一般的真實世界提供者可以支援包含其他專案的專案，以及將專案從某個路徑移至磁片磁碟機中的另一個路徑。 如需支援容器的提供者範例，請參閱[撰寫容器提供者](./writing-a-container-provider.md)。 如需支援移動專案之提供者的範例，請參閱[撰寫導覽提供者](./writing-a-navigation-provider.md)。
 
@@ -229,6 +222,6 @@ protected override bool IsValidPath(string path)
 
 [撰寫容器提供者](./writing-a-container-provider.md)
 
-[撰寫導覽提供者](./writing-a-navigation-provider.md)
+[撰寫瀏覽提供者](./writing-a-navigation-provider.md)
 
-[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)
+[Windows PowerShell 提供者概觀](./windows-powershell-provider-overview.md)

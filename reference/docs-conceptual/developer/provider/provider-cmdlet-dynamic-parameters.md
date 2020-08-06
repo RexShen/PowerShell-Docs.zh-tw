@@ -1,19 +1,12 @@
 ---
 title: 提供者 Cmdlet 動態參數 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
-caps.latest.revision: 6
-ms.openlocfilehash: 9e70fbeaef61d04e66f16d06519742ff2f679df6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4aaa5ee39e98de9a9925fc65cac3cc6c32d9c2bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564235"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786810"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>提供者 Cmdlet 動態參數
 
@@ -89,7 +82,7 @@ ChildItems 指令程式：您可以藉由執行 ContainerCmdletprovider * 方法
 
 `New-ItemProperty`Cmdlet 您可以藉 `Path` `Name` `PropertyType` `Value` `New-ItemProperty` 由執行[IdynamicpropertyCmdletprovider. Newpropertydynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)方法，定義由 Cmdlet 的、、和參數所觸發的動態參數。
 
-`New-PSDrive`Cmdlet 您可以藉[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) `New-PSDrive` 由執行[DriveCmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法，定義由 Cmdlet 所傳回的 PSDriveinfo 物件所觸發的動態參數，藉此進行管理。
+`New-PSDrive`Cmdlet 您可以藉[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) `New-PSDrive` 由執行[DriveCmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法，定義由 Cmdlet 所傳回之System.Management.Automation.PSDriveinfo 物件所觸發的動態參數。
 
 `Remove-Item`您可以藉 `Path` `Recurse` `Remove-Item` 由執行[ContainerCmdletprovider. Removeitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)方法，定義由 Cmdlet 的和參數所觸發的動態參數。
 

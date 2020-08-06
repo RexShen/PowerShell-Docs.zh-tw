@@ -1,19 +1,12 @@
 ---
 title: AccessDBProviderSample02 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: aaf9351e-157f-4d48-8b8f-1fd64855b682
-caps.latest.revision: 10
-ms.openlocfilehash: 219f8c2367939d16da928ede789843669b4451c6
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.openlocfilehash: e9a0444d17bec230633e1dd1709455f6ba83dd5c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633408"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786895"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
@@ -36,7 +29,7 @@ ms.locfileid: "84633408"
 
 - 定義提供者類別，以從[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別驅動。
 
-- 覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法，以支援建立新的磁片磁碟機。 （此範例不會示範如何將動態參數新增至 `New-PSDrive` Cmdlet）。
+- 覆寫[DriveCmdletprovider. Newdrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)方法，以支援建立新的磁片磁碟機。  (此範例不會示範如何將動態參數新增至 `New-PSDrive` Cmdlet。 ) 
 
 - 覆寫[DriveCmdletprovider. Removedrive *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)方法，以支援移除現有的磁片磁碟機。
 

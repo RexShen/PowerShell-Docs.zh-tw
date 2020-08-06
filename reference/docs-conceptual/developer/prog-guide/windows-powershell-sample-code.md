@@ -1,26 +1,19 @@
 ---
 title: Windows PowerShell 範例程式碼 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
-caps.latest.revision: 7
-ms.openlocfilehash: 76b4195eb33a1058109df8f6174a89708ba039d1
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563245"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786929"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell 範例程式碼
 
 Windows PowerShell®範例可透過 Windows SDK 取得。 本節包含 Windows SDK 範例中包含的範例程式碼。
 
 > [!NOTE]
-> 安裝 Windows SDK 時，會建立一個**範例**目錄，其中提供所有的 Windows PowerShell 範例。 典型的安裝目錄是**C:\Program Files\Microsoft SDKs\Windows\v6.0**。 啟動 Windows PowerShell 並輸入 **"cd Samples\SysMgmt\PowerShell"** ，找出 Windows powershell Samples 目錄。 在本檔中，Windows PowerShell 範例目錄稱為** \< PowerShell 範例>**。
+> 安裝 Windows SDK 時，會建立一個**範例**目錄，其中提供所有的 Windows PowerShell 範例。 典型的安裝目錄是**C:\Program Files\Microsoft SDKs\Windows\v6.0**。 啟動 Windows PowerShell 並輸入 **"cd Samples\SysMgmt\PowerShell"** ，找出 Windows powershell Samples 目錄。 在本檔中，Windows PowerShell 範例目錄稱為 **\<PowerShell Samples>** 。
 
 ## <a name="sample-code-listing"></a>範例程式代碼清單
 

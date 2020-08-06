@@ -1,25 +1,18 @@
 ---
-title: 設定之控制項的 CustomItem 的文字元素（格式） |Microsoft Docs
-ms.custom: ''
+title: " (格式) 設定之控制項的 CustomItem 的文字元素 |Microsoft Docs"
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 87a4079e-602c-42de-9de5-9b59df986caa
-caps.latest.revision: 6
-ms.openlocfilehash: b45e96252672a872023a5eb698ffe22d677c5468
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9f9687f9fb47f2085b25899193dda85b8fa068b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368137"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787388"
 ---
 # <a name="text-element-for-customitem-for-controls-for-configuration-format"></a>設定之控制項的 CustomItem 的文字元素 (格式)
 
 指定要加入控制項所顯示之資料的文字，例如標籤、用來括住資料的括弧，以及用來縮排資料的空格。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-Configuration 元素（格式）控制設定（format） CustomControl 元素的設定（格式）控制項專案的設定專案（格式） CustomControl 設定的 CustomEntries 元素（格式）Format） CustomControl for 控制項的 CustomEntry 元素，用於 CustomEntry 的設定文字元素的 CustomItem 元素，適用于設定（格式）控制項的 CustomItem
+Configuration 專案 (格式) 控制設定的控制項元素 (格式設定 (格式的控制項) 控制元素) 設定 (格式的 CustomControl 的 CustomEntries 元素 CustomControl 的設定) 格式 (CustomItem 元素適用于設定) 格式的控制項之 CustomEntry 的設定文字元素的 CustomItem 專案 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 <Text>TextToDisplay</Text>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Text` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `Text` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,7 +32,7 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
@@ -55,4 +48,4 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 [設定之控制項的 CustomEntry 的 CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

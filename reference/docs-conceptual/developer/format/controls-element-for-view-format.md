@@ -1,25 +1,18 @@
 ---
-title: View 的 Controls 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: View (Format 的 Controls 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
-caps.latest.revision: 14
-ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 26b7e73afd465b1be9632cd71a75e4be6cc4aeca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363387"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786164"
 ---
 # <a name="controls-element-for-view-format"></a>檢視的控制項元素 (格式)
 
 定義可供特定視圖使用的 view 控制項。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（格式） Controls 元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 控制項 (格式的元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -29,9 +22,9 @@ ms.locfileid: "72363387"
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `Controls` 專案的屬性、子專案和父項目。 此元素必須至少有一個子專案。 子項目沒有最大數目，也沒有順序重要性。
+下列各節描述元素的屬性、子專案和父項目 `Controls` 。 此元素必須至少有一個子專案。 子項目沒有最大數目，也沒有順序重要性。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,20 +34,20 @@ ms.locfileid: "72363387"
 
 |元素|描述|
 |-------------|-----------------|
-|[View 控制項的控制項元素（格式）](./control-element-for-controls-for-view-format.md)|定義可供視圖使用的控制項。|
+|[View (格式之控制項的控制項元素) ](./control-element-for-controls-for-view-format.md)|定義可供視圖使用的控制項。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[View 元素（格式）](./view-element-format.md)|定義用來顯示一或多個 .NET 物件成員的視圖。|
+|[檢視元素 (格式)](./view-element-format.md)|定義用來顯示一或多個 .NET 物件成員的視圖。|
 
 ## <a name="remarks"></a>備註
 
 ## <a name="see-also"></a>另請參閱
 
-[Control 元素（格式）](./control-element-for-controls-for-view-format.md)
+[Control 元素 (格式) ](./control-element-for-controls-for-view-format.md)
 
-[View 元素（格式）](./view-element-format.md)
+[檢視元素 (格式)](./view-element-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

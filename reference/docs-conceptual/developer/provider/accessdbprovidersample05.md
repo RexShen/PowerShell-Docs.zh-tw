@@ -1,19 +1,12 @@
 ---
 title: AccessDBProviderSample05 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
-caps.latest.revision: 8
-ms.openlocfilehash: 43d18672ec4f52961b2a2460635468a2d6fb41e5
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.openlocfilehash: 67a10d9192350b339da1b82d9eb367ee4af6ef86
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633374"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786844"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
@@ -36,7 +29,7 @@ ms.locfileid: "84633374"
 
 - 定義一個衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別的提供者類別。
 
-- 覆寫[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法來變更 Cmdlet 的行為 `Move-Item` ，讓使用者可以將專案從一個位置移到另一個位置。 （此範例不會示範如何將動態參數新增至 `Move-Item` Cmdlet）。
+- 覆寫[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法來變更 Cmdlet 的行為 `Move-Item` ，讓使用者可以將專案從一個位置移到另一個位置。  (此範例不會示範如何將動態參數新增至 `Move-Item` Cmdlet。 ) 
 
 - 覆寫[NavigationCmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法，以變更 Cmdlet 的行為 `Join-Path` 。
 

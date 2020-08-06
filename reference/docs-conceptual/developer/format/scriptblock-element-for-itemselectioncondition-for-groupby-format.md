@@ -1,25 +1,18 @@
 ---
-title: GroupBy 的 ItemSelectionCondition 的 ScriptBlock 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: GroupBy (格式的 ItemSelectionCondition 的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 58d25835-4636-4c58-9f6c-0332b9318051
-caps.latest.revision: 6
-ms.openlocfilehash: 4045196e306e766cd805b3e7ae31bfcb3de184ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7738b180f328c7360275058cdb9dea01df6ea285
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364827"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787643"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-groupby-format"></a>GroupBy 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
+指定觸發條件的腳本。 當此腳本評估為時 `true` ，會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） GroupBy 元素（format） CustomEntries 專案的 groupby （format） CustomControl 元素，適用于的 CustomControl for GroupBy （format） CustomEntry 元素CustomControl 適用于 CustomEntry for groupby （format） CustomItem 元素的 groupby （format） CustomItem 元素，適用于 ItemSelectionCondition 的 groupby （格式） ScriptBlock 元素GroupBy 的 ItemSelectionCondition （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素的視圖 (格式) CustomEntries 專案的 groupby (格式) CustomEntry 元素用於 CustomControl 若為 GroupBy (格式) 適用于 GroupBy 的 CustomEntry 的 CustomItem 專案 (格式) CustomItem 的 ExpressionBinding 專案為 groupby (格式) ItemSelectionCondition 元素用於 groupby (格式的 ExpressionBinding) ScriptBlock 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72364827"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `ScriptBlock` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72364827"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素（格式）](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|定義必須存在才能使用此控制項的條件。|
+|[GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)|定義必須存在才能使用此控制項的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -55,8 +48,8 @@ ms.locfileid: "72364827"
 
 ## <a name="see-also"></a>另請參閱
 
-[GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素（格式）](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)
+[GroupBy 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)](./itemselectioncondition-element-for-expressionbinding-for-groupby-format.md)
 
-[GroupBy 之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)
+[GroupBy 之 ItemSelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

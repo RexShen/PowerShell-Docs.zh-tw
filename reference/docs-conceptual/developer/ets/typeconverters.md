@@ -1,13 +1,12 @@
 ---
 title: 擴充類型系統類型轉換器
 ms.date: 07/09/2020
-ms.topic: conceptual
-ms.openlocfilehash: f709a64febe68733b79ed8af804714d3f3ddeaac
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+ms.openlocfilehash: 0d04293fffde9901ed2e33a9bab21e6612ce9cd5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217938"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786181"
 ---
 # <a name="ets-type-converters"></a>ETS 類型轉換器
 
@@ -21,7 +20,7 @@ ms.locfileid: "86217938"
 | --------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Null                  | String            | ""                                                                                                                                                                  |
 | Null                  | Char              | '\0'                                                                                                                                                                |
-| Null                  | 數值           | `0`在**resultType**參數中指定之類型的。                                                                                                          |
+| Null                  | 數字           | `0`在**resultType**參數中指定之類型的。                                                                                                          |
 | Null                  | Boolean           | 呼叫方法的結果 `IsTrue(System.Object)(Null)` 。                                                                                                        |
 | Null                  | PSObject          | **PSObject**類型的新物件。                                                                                                                                    |
 | Null                  | 非實數值型別    | Null.                                                                                                                                                               |

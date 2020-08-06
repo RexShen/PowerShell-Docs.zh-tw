@@ -1,21 +1,14 @@
 ---
 title: Cmdlet 輸出的類型 |Microsoft Docs
-ms.custom: ''
 ms.date: 01/18/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
-ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
-caps.latest.revision: 12
-ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8f761fdddd264b7c580c4a860081fdc5d2776ee7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561403"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786351"
 ---
 # <a name="types-of-cmdlet-output"></a>Cmdlet 輸出的類型
 
@@ -62,7 +55,7 @@ Cmdlet 可以藉由呼叫[WriteWarning](/dotnet/api/System.Management.Automation
 
 ## <a name="accessing-the-output-functionality-of-a-host-application"></a>存取主應用程式的輸出功能
 
-您也可以設計 Cmdlet，透過 PowerShell 執行時間直接存取主應用程式的輸出功能。 使用 PowerShell 所提供的主機 Api，而不是[system. 主控台](/dotnet/api/System.Console)或[system.web](/dotnet/api/System.Windows.Forms) ，可確保您的 Cmdlet 可與各種主機搭配使用。 例如： **powershell .exe**主控台主機、 **powershell_ise .exe**圖形化主機、powershell 遠端主機和協力廠商主機。
+您也可以設計 Cmdlet，透過 PowerShell 執行時間直接存取主應用程式的輸出功能。 使用 PowerShell 所提供的主機 Api，而不是[system. 主控台](/dotnet/api/System.Console)或[system.web](/dotnet/api/System.Windows.Forms) ，可確保您的 Cmdlet 可與各種主機搭配使用。 例如： **powershell.exe**主控台主機、 **powershell_ise.exe**圖形化主機、PowerShell 遠端主機和協力廠商主機。
 
 ## <a name="see-also"></a>另請參閱
 

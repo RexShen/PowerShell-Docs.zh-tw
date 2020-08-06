@@ -1,25 +1,18 @@
 ---
-title: GroupBy 的 ScriptBlock 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: GroupBy (格式的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
-caps.latest.revision: 6
-ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e761e02a7910cd598449d564e827889162da9f25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364927"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787677"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>GroupBy 的 ScriptBlock 元素 (格式)
 
 指定每當新群組的值變更時，就會啟動的腳本。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） GroupBy 元素（格式）-GroupBy 的 ScriptBlock 元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素用於 GroupBy (格式) ScriptBlock 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72364927"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `ScriptBlock` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72364927"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[View 的 GroupBy 元素（格式）](./groupby-element-for-view-format.md)|定義一組 .NET 物件的顯示方式。|
+|[檢視的 GroupBy 元素 (格式)](./groupby-element-for-view-format.md)|定義一組 .NET 物件的顯示方式。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,8 +50,8 @@ ms.locfileid: "72364927"
 
 ## <a name="see-also"></a>另請參閱
 
-[GroupBy 的 PropertyName 元素（格式）](propertyname-element-for-groupby-format.md)
+[GroupBy 的 PropertyName 元素 (格式)](propertyname-element-for-groupby-format.md)
 
-[View 的 GroupBy 元素（格式）](groupby-element-for-view-format.md)
+[檢視的 GroupBy 元素 (格式)](groupby-element-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](writing-a-powershell-formatting-file.md)

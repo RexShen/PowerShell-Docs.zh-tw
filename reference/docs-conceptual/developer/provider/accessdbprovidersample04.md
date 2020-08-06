@@ -1,19 +1,12 @@
 ---
 title: AccessDBProviderSample04 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
-caps.latest.revision: 10
-ms.openlocfilehash: c0efd10680d3323b6c8d932604176c4425e7266a
-ms.sourcegitcommit: 109f132360e8adbbdaf5dbc42a270be73d9dfa9b
+ms.openlocfilehash: 097591528fd12cdf9f134a0fd8a0bd278f216fab
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84633357"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786861"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -28,11 +21,11 @@ ms.locfileid: "84633357"
 
 - 宣告 `CmdletProvider` 屬性。
 - 定義一個衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別的提供者類別。
-- 覆寫[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，以變更 Cmdlet 的行為， `Copy-Item` 讓使用者可以將專案從一個位置複製到另一個位置。 （此範例不會示範如何將動態參數新增至 `Copy-Item` Cmdlet）。
-- 覆寫[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，以變更 ChildItems 指令程式的行為，讓使用者能夠抓取父項目的子專案（item）。 （此範例不會示範如何將動態參數新增至 ChildItems Cmdlet）。
+- 覆寫[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)方法，以變更 Cmdlet 的行為， `Copy-Item` 讓使用者可以將專案從一個位置複製到另一個位置。  (此範例不會示範如何將動態參數新增至 `Copy-Item` Cmdlet。 ) 
+- 覆寫[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，以變更 ChildItems 指令程式的行為，讓使用者能夠抓取父項目的子專案（item）。  (此範例不會示範如何將動態參數新增至 ChildItems Cmdlet。 ) 
 - 當指定 Cmdlet 的參數時，覆寫[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法，以變更 ChildItems 指令程式的行為 `Name` 。
-- 覆寫[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，以變更 Cmdlet 的行為 `New-Item` ，讓使用者可以將專案新增至資料存放區。 （此範例不會示範如何將動態參數新增至 `New-Item` Cmdlet）。
-- 覆寫[ContainerCmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法，以變更 Cmdlet 的行為 `Remove-Item` 。 （此範例不會示範如何將動態參數新增至 `Remove-Item` Cmdlet）。
+- 覆寫[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，以變更 Cmdlet 的行為 `New-Item` ，讓使用者可以將專案新增至資料存放區。  (此範例不會示範如何將動態參數新增至 `New-Item` Cmdlet。 ) 
+- 覆寫[ContainerCmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法，以變更 Cmdlet 的行為 `Remove-Item` 。  (此範例不會示範如何將動態參數新增至 `Remove-Item` Cmdlet。 ) 
 
 ## <a name="example"></a>範例
 

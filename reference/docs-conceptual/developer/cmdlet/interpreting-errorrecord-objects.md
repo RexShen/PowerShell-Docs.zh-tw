@@ -1,19 +1,12 @@
 ---
 title: 解讀 ErrorRecord 物件 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
-caps.latest.revision: 9
-ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365417"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786589"
 ---
 # <a name="interpreting-errorrecord-objects"></a>解譯 ErrorRecord 物件
 
@@ -38,7 +31,7 @@ ms.locfileid: "72365417"
 
 - 錯誤例外狀況
 
-- 完整的錯誤識別碼（FQID）
+-  (FQID 的完整錯誤識別碼) 
 
 - 其他資訊
 
@@ -52,7 +45,7 @@ ms.locfileid: "72365417"
 
 錯誤記錄中包含的例外狀況是由指令程式所提供，而且可以透過[ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)物件的[ErrorRecord. exception *](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)屬性來存取。
 
-主應用程式可以使用 `is` 關鍵字來識別例外狀況屬於特定類別或衍生類別。 較好的方式是在例外狀況類型上分支，如下列範例所示。
+主應用程式可以使用 `is` 關鍵字來識別例外狀況是特定類別或衍生類別。 較好的方式是在例外狀況類型上分支，如下列範例所示。
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 
@@ -60,7 +53,7 @@ ms.locfileid: "72365417"
 
 ### <a name="the-fqid"></a>FQID
 
-FQID 是您可以用來識別錯誤的最特定資訊。 它是一個字串，其中包含 Cmdlet 定義的識別碼、Cmdlet 類別的名稱，以及報告錯誤的來源。 一般來說，錯誤記錄類似于 Windows 事件記錄檔的事件記錄。 FQID 類似于下列元組，可識別事件記錄的類別：（*記錄名稱*、*來源*、*事件識別碼*）。
+FQID 是您可以用來識別錯誤的最特定資訊。 它是一個字串，其中包含 Cmdlet 定義的識別碼、Cmdlet 類別的名稱，以及報告錯誤的來源。 一般來說，錯誤記錄類似于 Windows 事件記錄檔的事件記錄。 FQID 類似于下列元組，可識別事件記錄的類別： (*記錄檔名稱*、*來源*、*事件識別碼*) 。
 
 FQID 的設計是要檢查成單一字串。 不過，有一些案例是由主應用程式剖析的錯誤識別碼所設計。 下列範例是格式正確的完整錯誤識別碼。
 
@@ -90,8 +83,8 @@ FQID 的設計是要檢查成單一字串。 不過，有一些案例是由主�
 
 [Throwterminatingerror * 的 *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[將非終止的錯誤報表新增至您的 Cmdlet](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
+[新增非終止錯誤報告到您的 Cmdlet](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 
-[Windows PowerShell 錯誤報表](./error-reporting-concepts.md)
+[Windows PowerShell 錯誤報告](./error-reporting-concepts.md)
 
 [撰寫 Windows PowerShell Cmdlet](./writing-a-windows-powershell-cmdlet.md)

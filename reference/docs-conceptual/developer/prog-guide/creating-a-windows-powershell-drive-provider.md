@@ -1,30 +1,23 @@
 ---
 title: 建立 Windows PowerShell 磁片磁碟機提供者 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - drive providers [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], drive provider
 - drives [PowerShell Programmer's Guide]
-ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
-caps.latest.revision: 6
-ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 2a2178714ed548986fe1a1a4de8828e8e0a938cb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978452"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787184"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>建立 Windows PowerShell 磁碟機提供者
 
 本主題說明如何建立 Windows PowerShell 磁片磁碟機提供者，以提供透過 Windows PowerShell 磁片磁碟機存取資料存放區的方式。 這種類型的提供者也稱為 Windows PowerShell 磁片磁碟機提供者。 提供者所使用的 Windows PowerShell 磁片磁碟機提供連接到資料存放區的方法。
 
 這裡所述的 Windows PowerShell 磁片磁碟機提供者可讓您存取 Microsoft Access 資料庫。
-對於此提供者，Windows PowerShell 磁片磁碟機代表資料庫（可以將任意數目的磁片磁碟機新增至磁片磁碟機提供者）、磁片磁碟機的最上層容器代表資料庫中的資料表，而容器的專案則代表資料表中的資料列。
+對於此提供者，Windows PowerShell 磁片磁碟機代表資料庫 (可以將任意數目的磁片磁碟機新增至磁片磁碟機提供者) 、磁片磁碟機的最上層容器代表資料庫中的資料表，而容器的專案則代表資料表中的資料列。
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>定義 Windows PowerShell 提供者類別
 
@@ -38,13 +31,13 @@ ms.locfileid: "80978452"
 ## <a name="defining-base-functionality"></a>定義基本功能
 
 如[設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)中所述， [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類，此類別定義了初始化和取消初始化提供者所需的方法。 若要執行功能來新增會話特定的初始化資訊，以及釋放提供者所使用的資源，請參閱[建立基本的 Windows PowerShell 提供者](./creating-a-basic-windows-powershell-provider.md)。
-不過，大部分的提供者（包括這裡所述的提供者）都可以使用 Windows PowerShell 所提供的這項功能的預設執行。
+不過，大部分的提供者 (包括這裡所述的提供者) 可以使用 Windows PowerShell 所提供的這項功能的預設執行。
 
 ## <a name="creating-drive-state-information"></a>建立磁片磁碟機狀態資訊
 
 所有 Windows PowerShell 提供者都會被視為無狀態，這表示您的磁片磁碟機提供者需要在呼叫提供者時，建立 Windows PowerShell 執行時間所需的任何狀態資訊。
 
-對於此磁片磁碟機提供者，狀態資訊會包含與資料庫的連接，並保留為磁片磁碟機資訊的一部分。 以下程式碼顯示如何將這項資訊儲存在描述磁片磁碟機的[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件中：
+對於此磁片磁碟機提供者，狀態資訊會包含與資料庫的連接，並保留為磁片磁碟機資訊的一部分。 以下程式碼顯示如何將此資訊儲存在描述磁片磁碟機的[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件中：
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
@@ -56,17 +49,17 @@ ms.locfileid: "80978452"
 
 您的此方法的覆寫應執行下列動作：
 
-- 確認[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)的成員存在，而且可以建立與資料存放區之間的連接。」
+- 確認[System.Management.Automation.PSDriveinfo。根 *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)成員存在，而且可以建立與資料存放區的連接。
 - 建立磁片磁碟機並填入連接成員，以支援 `New-PSDrive` Cmdlet。
-- 驗證所提議磁片磁碟機的[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件。
-- 修改[PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件，以描述具有任何必要效能或可靠性資訊的磁片磁碟機，或為使用磁片磁碟機的呼叫端提供額外的資料。
-- 使用[Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法來處理失敗，然後傳回 `null`。
+- 驗證所提議磁片磁碟機的[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件。
+- 修改描述具有任何所需效能或可靠性資訊之磁片磁碟機的[System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)物件，或為使用磁片磁碟機的呼叫端提供額外的資料。
+- 使用[Cmdletprovider. WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)方法來處理失敗，然後傳回 `null` 。
 
   這個方法會傳回傳遞給方法的磁片磁碟機資訊，或它的提供者特定版本。
 
 ## <a name="attaching-dynamic-parameters-to-newdrive"></a>將動態參數附加至 NewDrive
 
-您的磁片磁碟機提供者所支援的 `New-PSDrive` Cmdlet 可能需要額外的參數。 若要將這些動態參數附加至 Cmdlet，提供者會執行[DriveCmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法。 這個方法會傳回物件，其中具有屬性和欄位，而且其具有類似于 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件的剖析屬性。
+`New-PSDrive`您的磁片磁碟機提供者所支援的 Cmdlet 可能需要額外的參數。 若要將這些動態參數附加至 Cmdlet，提供者會執行[DriveCmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)方法。 這個方法會傳回物件，其中具有屬性和欄位，而且其具有類似于 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件的剖析屬性。
 
 此磁片磁碟機提供者不會覆寫此方法。 不過，下列程式碼會顯示此方法的預設執行：
 
@@ -80,21 +73,21 @@ ms.locfileid: "80978452"
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
-如果可以移除磁片磁碟機，方法應該會透過 `drive` 參數傳回傳遞給方法的資訊。 如果無法移除磁片磁碟機，方法應該撰寫例外狀況，然後傳回 `null`。 如果您的提供者不會覆寫這個方法，這個方法的預設執行只會傳回傳遞做為輸入的磁片磁碟機資訊。
+如果可以移除磁片磁碟機，方法應該會透過參數傳回傳遞給方法的資訊 `drive` 。 如果無法移除磁片磁碟機，方法應該撰寫例外狀況，然後傳回 `null` 。 如果您的提供者不會覆寫這個方法，這個方法的預設執行只會傳回傳遞做為輸入的磁片磁碟機資訊。
 
 ## <a name="initializing-default-drives"></a>初始化預設磁片磁碟機
 
-您的磁片磁碟機提供者會執行[DriveCmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)方法來掛接磁片磁碟機。 例如，如果電腦已加入網域，Active Directory 提供者可能會掛接預設命名內容的磁片磁碟機。
+您的磁片磁碟機提供者會執行[System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)方法來掛接磁片磁碟機。 例如，如果電腦已加入網域，Active Directory 提供者可能會掛接預設命名內容的磁片磁碟機。
 
 這個方法會傳回有關已初始化磁片磁碟機或空集合的磁片磁碟機資訊集合。 此方法的呼叫是在 Windows PowerShell 運行[時間呼叫 Cmdletprovider. Start *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)方法來初始化提供者之後進行。
 
-此磁片磁碟機提供者不會覆寫[DriveCmdletprovider. Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)方法。 不過，下列程式碼會顯示預設的實值，其會傳回空的磁片磁碟機集合：
+此磁片磁碟機提供者不會覆寫[System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)方法。 不過，下列程式碼會顯示預設的實值，其會傳回空的磁片磁碟機集合：
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testproviderinitializedefaultdrives](Msh_samplestestcmdlets#testproviderinitializedefaultdrives)]  -->
 
 #### <a name="things-to-remember-about-implementing-initializedefaultdrives"></a>執行 InitializeDefaultDrives 的相關事項
 
-所有磁片磁碟機提供者都應該掛接根磁片磁碟機，以協助使用者進行發現。 根磁片磁碟機可能會列出作為其他已掛接磁片磁碟機之根目錄的位置。 例如，Active Directory 提供者可能會建立一個磁片磁碟機，其中列出在根分散式系統內容（DSE）的 `namingContext` 屬性中找到的命名內容。 這可協助使用者探索其他磁片磁碟機的掛接點。
+所有磁片磁碟機提供者都應該掛接根磁片磁碟機，以協助使用者進行發現。 根磁片磁碟機可能會列出作為其他已掛接磁片磁碟機之根目錄的位置。 例如，Active Directory 提供者可能會建立一個磁片磁碟機，其中列出在 `namingContext` 根分散式系統內容的屬性（ (DSE) ）中找到的命名內容。 這可協助使用者探索其他磁片磁碟機的掛接點。
 
 ## <a name="code-sample"></a>程式碼範例
 
@@ -106,9 +99,9 @@ ms.locfileid: "80978452"
 
 1. 執行 `Get-PSProvider` Cmdlet 來抓取提供者清單，以確保 AccessDB 磁片磁碟機提供者存在：
 
-   **PS > `Get-PSProvider`**
+   **PS>`Get-PSProvider`**
 
-   下列輸出隨即出現：
+   下列輸出會出現：
 
    ```Output
    Name                 Capabilities                  Drives
@@ -121,7 +114,7 @@ ms.locfileid: "80978452"
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. 藉由存取作業系統的系統**管理工具**的 [**資料來源**] 部分，確保資料庫有資料庫伺服器名稱（DSN）。 在 [**使用者 DSN** ] 資料表中，按兩下 [ **MS Access 資料庫**] 並新增磁片磁碟機路徑 `C:\ps\northwind.mdb`。
+2. 藉由存取作業系統的系統**管理工具**的 [**資料來源**] 部分，確保資料庫的資料庫伺服器名稱 (DSN) 存在。 在 [**使用者 DSN** ] 資料表中，按兩下 [ **MS Access 資料庫**] 並新增磁片磁碟機路徑 `C:\ps\northwind.mdb` 。
 
 3. 使用範例磁片磁碟機提供者建立新的磁片磁碟機：
 
@@ -129,7 +122,7 @@ ms.locfileid: "80978452"
    new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
    ```
 
-   下列輸出隨即出現：
+   下列輸出會出現：
 
    ```Output
    Name     Provider     Root                   CurrentLocation
@@ -142,9 +135,9 @@ ms.locfileid: "80978452"
    > [!NOTE]
    > 使用者還無法以磁片磁碟機的形式與提供者互動，因為提供者需要該互動的容器功能。 如需詳細資訊，請參閱[建立 Windows PowerShell 容器提供者](./creating-a-windows-powershell-container-provider.md)。
 
-   **PS > （psdrive mydb）。連接**
+   **PS> (psdrive mydb) 。連線**
 
-   下列輸出隨即出現：
+   下列輸出會出現：
 
    ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb

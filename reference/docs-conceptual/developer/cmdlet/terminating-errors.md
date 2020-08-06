@@ -1,19 +1,12 @@
 ---
 title: 終止錯誤 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b804e738-aefa-41bb-9649-f9ed897fd96c
-caps.latest.revision: 8
-ms.openlocfilehash: d1967fe7996f75ec5229920f7ec49aa5ff6bdbfd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 272e6cdd9a1da3cfd2e4f730f6aeb27577948278
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369327"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786385"
 ---
 # <a name="terminating-errors"></a>終止錯誤
 
@@ -27,9 +20,9 @@ ms.locfileid: "72369327"
 
 Cmdlet 可以在報告終止錯誤之前，撰寫任何數目的輸出物件或非終止錯誤。 不過，終止錯誤會永久停止管線，而不會報告進一步的輸出、終止錯誤或非終止錯誤。
 
-指令程式只能從呼叫[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)， [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)的執行緒，而不是，則為[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) 的自管理元件（可能為系統管理）。 （或[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ）輸入處理方法。 請不要嘗試從另一個執行緒呼叫[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)或[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) ，而是從其他執行緒。 相反地，錯誤必須傳回到主執行緒。
+Cmdlet 只能從呼叫 BeginProcessing、ProcessRecord 或[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)的執行緒[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ，而此輸入處理方法則是由它所呼叫的程式所組成，而這些都是由稱為[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [system.web](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)。 請不要嘗試從另一個執行緒呼叫[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)或[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError) ，而是從其他執行緒。 相反地，錯誤必須傳回到主執行緒。
 
-Cmdlet 可能會在它的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)或 system.servicemodel 方法的執行中擲回例外狀況（exception），或使用... [（系統管理](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing).）。 從這些方法擲回的任何例外狀況（除了一些停止 Windows PowerShell 主機的嚴重錯誤情況除外）都會被視為終止的錯誤，它會停止管線，而不是 Windows PowerShell 整體。 （這只適用于主要的 Cmdlet 執行緒。 Cmdlet 所產生的執行緒中未攔截到的例外狀況，通常會暫停 Windows PowerShell 主機。）我們建議使用[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ，而不是擲回例外狀況，因為錯誤記錄會提供錯誤條件的其他相關資訊，這對使用者很有用。 Cmdlet 應遵循 managed 程式碼指導方針來攔截和處理所有例外狀況（`catch (Exception e)`）。 只將已知和預期類型的例外狀況轉換成錯誤記錄。
+Cmdlet 可能會在它的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)或 system.servicemodel 方法的執行中擲回例外狀況（exception），或使用... [（系統管理](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing).）。 從這些方法擲回的任何例外狀況 (除了一些停止 Windows PowerShell 主機) 的嚴重錯誤情況，也會被視為終止的錯誤，這會停止管線，而不是 Windows PowerShell 整體。  (這僅適用于主要 Cmdlet 執行緒。 在 Cmdlet 衍生的執行緒中未攔截到的例外狀況，通常會暫停 Windows PowerShell 主機。 ) 建議您使用[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError) ，而不是擲回例外狀況，因為錯誤記錄會提供錯誤條件的其他相關資訊，這對使用者很有用。 Cmdlet 應遵循 managed 程式碼指導方針，以攔截和處理 (`catch (Exception e)`) 的所有例外狀況。 只將已知和預期類型的例外狀況轉換成錯誤記錄。
 
 ## <a name="see-also"></a>另請參閱
 

@@ -1,19 +1,12 @@
 ---
 title: 建立自訂控制項 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
-caps.latest.revision: 8
-ms.openlocfilehash: 3504ab1d974c55e9279172d0e851961474ccb926
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363377"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786113"
 ---
 # <a name="creating-custom-controls"></a>建立自訂控制項
 
@@ -21,7 +14,7 @@ ms.locfileid: "72363377"
 
 ## <a name="custom-control-example"></a>自訂控制項範例
 
-下列範例顯示在 types.ps1xml 檔案中定義的自訂控制項。 這個自訂控制項是用來分隔在資料表視圖中顯示的[system.web. Signature](/dotnet/api/System.Management.Automation.Signature)物件。
+下列範例顯示在 Certificates.Format.ps1xml 檔案中定義的自訂控制項。 這個自訂控制項是用來分隔在資料表視圖中顯示的[system.web. Signature](/dotnet/api/System.Management.Automation.Signature)物件。
 
 ```xml
 <Controls>
@@ -53,4 +46,4 @@ ms.locfileid: "72363377"
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

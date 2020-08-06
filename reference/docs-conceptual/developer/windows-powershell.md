@@ -1,15 +1,14 @@
 ---
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0501f511499bc5de35fad5d7798f0d16e2d3b36b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366057"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786657"
 ---
-# <a name="windows-powershell"></a>資料夾，然後按一下 [Windows PowerShell]
+# <a name="windows-powershell"></a>Windows PowerShell
 
 更新日期：2013年7月8日
 
@@ -32,6 +31,6 @@ Windows PowerShell® 是以工作為基礎的命令列殼層和指令碼語言�
 
 - [撰寫 Windows PowerShell 主應用程式](./hosting/writing-a-windows-powershell-host-application.md)提供的資訊，可供設計主應用程式的程式管理員和正在執行它們的開發人員使用。 主機應用程式可以定義命令執行所在的執行時間、在本機或遠端電腦上開啟會話，並根據應用程式的需求以同步或非同步方式叫用命令。
 
-- [撰寫 PowerShell 格式化](./format/writing-a-powershell-formatting-file.md)檔案提供撰寫格式檔案的資訊，其可控制命令（Cmdlet、函式和腳本）所傳回之物件的顯示格式。
+- [撰寫 PowerShell 格式化](./format/writing-a-powershell-formatting-file.md)檔案提供撰寫格式檔案的資訊，其可控制命令所傳回之物件的顯示格式， (Cmdlet、函式和腳本) 。
 
 - [Windows PowerShell 參考](./windows-powershell-reference.md)提供用於撰寫 Cmdlet、提供者和主機應用程式之 Api 的參考內容，以及其他支援的 Api。

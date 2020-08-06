@@ -1,19 +1,12 @@
 ---
 title: StopProc 教學課程 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a142aeb6-9c11-44a0-b34f-1f9470fa347b
-caps.latest.revision: 5
-ms.openlocfilehash: 27c8e2c7525aba38e69e50b2b7fd3b18b8e54989
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e298c729b7ac59141638052d19b95ab77aa25cd6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369407"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786470"
 ---
 # <a name="stopproc-tutorial"></a>StopProc 教學課程
 
@@ -35,9 +28,9 @@ ms.locfileid: "72369407"
 
 [建立可修改系統的 Cmdlet](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[將使用者訊息新增至您的 Cmdlet](./adding-user-messages-to-your-cmdlet.md)
+[新增使用者訊息到您的 Cmdlet](./adding-user-messages-to-your-cmdlet.md)
 
-[將別名、萬用字元擴充和說明新增至 Cmdlet 參數](./adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md)
+[新增別名、萬用字元擴充與說明到 Cmdlet 參數](./adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters.md)
 
 [將參數集新增至 Cmdlet](./adding-parameter-sets-to-a-cmdlet.md)
 

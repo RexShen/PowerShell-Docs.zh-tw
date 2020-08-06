@@ -1,19 +1,12 @@
 ---
 title: AccessDBProviderSample06 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
-caps.latest.revision: 8
-ms.openlocfilehash: 52c1fac134f7184462842a56f466f634aec1222c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 893eb80574c7f142f92906961588e22b1ced0052
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692444"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786827"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
@@ -34,9 +27,9 @@ ms.locfileid: "83692444"
 
 - 宣告 `CmdletProvider` 屬性。
 - 定義一個衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別的提供者類別，並宣告[IcontentCmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)介面的，並將其宣告為。
-- 覆寫[IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，以變更 Cmdlet 的行為 `Clear-Content` ，讓使用者可以從專案中移除內容。 （此範例不會示範如何將動態參數新增至 `Clear-Content` Cmdlet）。
-- 覆寫[IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，以變更 Cmdlet 的行為 `Get-Content` ，讓使用者能夠抓取專案的內容（content）。 （此範例不會示範如何將動態參數新增至 `Get-Content` Cmdlet）。
-- 覆寫[Filesystemprovider. Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)方法，以變更 Cmdlet 的行為 `Set-Content` ，讓使用者可以更新專案的內容。 （此範例不會示範如何將動態參數新增至 `Set-Content` Cmdlet）。
+- 覆寫[IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，以變更 Cmdlet 的行為 `Clear-Content` ，讓使用者可以從專案中移除內容。  (此範例不會示範如何將動態參數新增至 `Clear-Content` Cmdlet。 ) 
+- 覆寫[IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法，以變更 Cmdlet 的行為 `Get-Content` ，讓使用者能夠抓取專案的內容（content）。  (此範例不會示範如何將動態參數新增至 `Get-Content` Cmdlet。 ) 。
+- 覆寫[Filesystemprovider. Getcontentwriter *](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)方法，以變更 Cmdlet 的行為 `Set-Content` ，讓使用者可以更新專案的內容。  (此範例不會示範如何將動態參數新增至 `Set-Content` Cmdlet。 ) 
 
 ## <a name="example"></a>範例
 
