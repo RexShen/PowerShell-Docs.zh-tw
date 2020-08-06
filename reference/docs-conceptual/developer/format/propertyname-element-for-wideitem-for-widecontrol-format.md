@@ -1,25 +1,18 @@
 ---
-title: WideControl 之之 wideitem 的 PropertyName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 之 wideitem for WideControl (格式的 PropertyName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3d91d0e6-bf18-4587-b651-db66849e5df5
-caps.latest.revision: 6
-ms.openlocfilehash: 326880834cd82ab826aadc409cd7a8f21cd36824
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7728f960a67faa99eaafb4a4934674e119b8af27
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364937"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780469"
 ---
 # <a name="propertyname-element-for-wideitem-for-widecontrol-format"></a>WideControl 之 WideItem 的 PropertyName 元素 (格式)
 
 指定物件的屬性，其值會顯示在寬視圖中。
 
-之 wideitem 的設定元素（格式） ViewDefinitions 元素（格式） View 元素（格式） WideControl 元素（格式） WideEntries 元素（格式） WideEntry 元素（格式）之 wideitem 元素（格式） PropertyName 元素
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 專案 (格式) WideEntries 專案 (格式) WideEntry 專案 (格式) 之 wideitem 元素 (格式) 之 wideitem 的 PropertyName 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72364937"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `PropertyName` 專案的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `PropertyName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72364937"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)|定義屬性或腳本，其值會顯示在寬視圖中。|
+|[之 wideitem 元素 (格式) ](./wideitem-element-for-widecontrol-format.md)|定義屬性或腳本，其值會顯示在寬視圖中。|
 
 ## <a name="text-value"></a>文字值
 
@@ -78,8 +71,8 @@ View>
 
 ## <a name="see-also"></a>另請參閱
 
-[之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)
+[之 wideitem 元素 (格式) ](./wideitem-element-for-widecontrol-format.md)
 
-[建立寬型視圖](./creating-a-wide-view.md)
+[建立寬型檢視](./creating-a-wide-view.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

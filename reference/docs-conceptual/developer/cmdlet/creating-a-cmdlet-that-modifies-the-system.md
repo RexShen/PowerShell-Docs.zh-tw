@@ -1,24 +1,17 @@
 ---
 title: 建立可修改系統的 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - should process [PowerShell Programmer's Guide]
 - should continue [PowerShell Programmer's Guide]
 - user feedback [PowerShell Programmer's Guide]
 - confirm impact [PowerShell Programmer's Guide]
-ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
-caps.latest.revision: 8
-ms.openlocfilehash: f0ce30c3fa76141908680934bcac41a989622c42
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 03ffe0c9c02dcdeb2dd24f81014b2013ae169aa4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560061"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782169"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>建立可修改系統的 Cmdlet
 
@@ -28,9 +21,9 @@ ms.locfileid: "83560061"
 
 - 宣告當您透過將 SupportsShouldProcess 關鍵字設定為，以指定[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性時，Cmdlet 支援確認 `true` 。
 
-- 執行 Cmdlet 時，請呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) （如下列範例所示）：。
+- 在執行 Cmdlet (期間，呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ，如下列範例) 所示。
 
-藉由支援確認，Cmdlet 會公開 `Confirm` `WhatIf` Windows PowerShell 所提供的和參數，也符合 Cmdlet 的開發指導方針（如需 Cmdlet 開發指導方針的詳細資訊，請參閱[Cmdlet 開發指導方針](./cmdlet-development-guidelines.md)）。
+藉由支援確認，Cmdlet 會公開 `Confirm` `WhatIf` Windows PowerShell 所提供的和參數，而且也符合 Cmdlet 的開發指導方針 (如需 Cmdlet 開發指導方針的詳細資訊，請參閱[Cmdlet 開發指導方針](./cmdlet-development-guidelines.md)。 ) 。
 
 ## <a name="changing-the-system"></a>變更系統
 
@@ -41,7 +34,7 @@ ms.locfileid: "83560061"
 
 ## <a name="the-stopproc-cmdlet"></a>StopProc Cmdlet
 
-本主題描述的停止程式 Cmdlet 會嘗試停止使用 Get-Proc Cmdlet 抓取的進程（如[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)所述）。
+本主題描述使用 ([建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)) 中所述的程式，嘗試停止以 Get Proc Cmdlet 抓取的進程。
 
 ## <a name="defining-the-cmdlet"></a>定義 Cmdlet
 
@@ -224,7 +217,7 @@ protected override void ProcessRecord()
 
 ## <a name="calling-the-shouldprocess-method"></a>呼叫 ShouldProcess 方法
 
-您的 Cmdlet 的輸入處理方法應呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，以在變更（例如刪除檔案）之前確認作業執行，以進行系統的執行中狀態。 這可讓 Windows PowerShell 執行時間在 shell 中提供正確的「WhatIf」和「確認」行為。
+您的 Cmdlet 的輸入處理方法應呼叫[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法，以在變更 (（例如，刪除檔案) 會對系統執行中的狀態進行驗證）。 這可讓 Windows PowerShell 執行時間在 shell 中提供正確的「WhatIf」和「確認」行為。
 
 > [!NOTE]
 > 如果 Cmdlet 所支援的指令程式應處理且無法進行[ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼叫，使用者可能會意外地修改系統。

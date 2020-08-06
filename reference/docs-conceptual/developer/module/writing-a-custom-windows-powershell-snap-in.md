@@ -1,22 +1,15 @@
 ---
 title: 撰寫自訂的 Windows PowerShell 嵌入式管理單元 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - snap-ins [PowerShell SDK], custom PSSnapin example
 - cmdlets [PowerShell SDK], specified in snap-ins
-ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
-caps.latest.revision: 6
-ms.openlocfilehash: 9cf4499ec2992c6cfea83fc5d0bf51d0bbfaa96a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 3672dcc2e962b6795888ab5be3d461380e379315
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811627"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779211"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>撰寫自訂 Windows PowerShell 嵌入式管理單元
 
@@ -31,41 +24,41 @@ ms.locfileid: "83811627"
 
    在此範例中，類別名稱為 "CustomPSSnapinTest"。
 
-3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、、 `(` `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、`*`
+3. 新增 (所需的嵌入式管理單元名稱) 的公用屬性。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、、 `(` `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、`*`
 
    在此範例中，嵌入式管理單元的名稱是 "CustomPSSnapInTest"。
 
-4. 新增嵌入式管理單元之廠商的公用屬性（必要）。
+4. 新增嵌入式管理單元廠商的公用屬性， (所需的) 。
 
    在此範例中，廠商是 "Microsoft"。
 
-5. 新增嵌入式管理單元之廠商資源的公用屬性（選擇性）。
+5. 新增嵌入式管理單元之廠商資源的公用屬性 (選擇性) 。
 
    在此範例中，廠商資源為 "CustomPSSnapInTest，Microsoft"。
 
-6. 新增嵌入式管理單元描述的公用屬性（必要）。
+6. 針對所需的嵌入式管理單元 (，新增 [公用] 屬性) 。
 
    在此範例中，描述為：「這是包含和 Cmdlet 的自訂 Windows PowerShell 嵌入式管理單元」 `Test-HelloWorld` `Test-CustomSnapinTest` 。
 
-7. 新增嵌入式管理單元的 [描述] 資源的公用屬性（選擇性）。
+7. 新增嵌入式管理單元之 [描述] 資源的 [公用] 屬性 (選擇性) 。
 
    在此範例中，廠商資源為：
 
    > CustomPSSnapInTest，這是自訂的 Windows PowerShell 嵌入式管理單元，其中包含 HelloWorld 和測試 CustomSnapinTest 的 Cmdlet。
 
-8. 使用[Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)類別，指定屬於自訂嵌入式管理單元（選擇性）的指令程式。 此處新增的資訊包括 Cmdlet 的名稱、其 .NET 類型和 Cmdlet 說明檔名稱（Cmdlet 說明文件名的格式應為 `name.dll-help.xml` ）。
+8. 使用[Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)類別，指定屬於自訂嵌入式管理單元的 Cmdlet (選擇性的) 。 此處新增的資訊包括 Cmdlet 的名稱、其 .NET 類型，以及 Cmdlet 說明文件名 (應該) Cmdlet 說明文件名的格式 `name.dll-help.xml` 。
 
    這個範例會新增 HelloWorld 和 TestCustomSnapinTest Cmdlet。
 
-9. 指定屬於自訂嵌入式管理單元的提供者（選擇性）。
+9. 指定屬於自訂嵌入式管理單元的提供者 (選擇性) 。
 
    這個範例不會指定任何提供者。
 
-10. 指定屬於自訂嵌入式管理單元的類型（選擇性）。
+10. 指定屬於自訂嵌入式管理單元的類型 (選擇性) 。
 
     這個範例不會指定任何類型。
 
-11. 指定屬於自訂嵌入式管理單元的格式（選擇性）。
+11. 指定屬於自訂嵌入式管理單元的格式 (選擇性) 。
 
     這個範例不會指定任何格式。
 

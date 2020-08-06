@@ -1,25 +1,18 @@
 ---
-title: GroupBy 之框架的 LeftIndent 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: GroupBy (格式) 的框架的 LeftIndent 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 72f272db-455f-44db-9ab4-6475390a83c4
-caps.latest.revision: 6
-ms.openlocfilehash: 907ee7d070e5ac02464dc58eb32504cb0721f663
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4bf848047a01ff61183fb6b3ec5d540ab22b50c9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365147"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781149"
 ---
 # <a name="leftindent-element-for-frame-for-groupby-format"></a>GroupBy 之框架的 LeftIndent 元素 (格式)
 
 指定資料從左邊界下移的字元數。 此元素是在定義新物件群組的顯示方式時使用。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） GroupBy 元素（format） CustomEntries 專案的 groupby （format） CustomControl 元素，適用于的 CustomControl for GroupBy （format） CustomEntry 元素適用于 CustomEntry 之 groupby （格式） CustomItem 元素的 groupby （format） CustomControl 專案（適用于 GroupBy 的框架的 groupby （格式） LeftIndent 元素）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) GroupBy 元素以取得 (格式) CustomEntries 專案（適用于 groupby (格式）) CustomControl 的 CustomEntry 元素 CustomControl 的 groupby (格式)  (CustomItem 元素適用于 groupby) 格式的框架 (專案的) CustomEntry 元素。
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72365147"
 <LeftIndent>CharactersToShift</LeftIndent>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `LeftIndent` 元素的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `LeftIndent` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72365147"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[GroupBy 之 CustomItem 的框架元素（格式）](./frame-element-for-customitem-for-groupby-format.md)|定義資料的顯示方式，例如將資料向左或向右移位。|
+|[GroupBy 之 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-groupby-format.md)|定義資料的顯示方式，例如將資料向左或向右移位。|
 
 ## <a name="text-value"></a>文字值
 
@@ -53,6 +46,6 @@ ms.locfileid: "72365147"
 
 ## <a name="see-also"></a>另請參閱
 
-[GroupBy 之 CustomItem 的框架元素（格式）](./frame-element-for-customitem-for-groupby-format.md)
+[GroupBy 之 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-groupby-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

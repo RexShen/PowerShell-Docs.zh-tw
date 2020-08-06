@@ -1,25 +1,18 @@
 ---
-title: TableControl 之之 entryselectedby 的 TypeName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 之 entryselectedby for TableControl (格式的 TypeName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fd872ada-d476-4c4d-a788-ccac3f983070
-caps.latest.revision: 10
-ms.openlocfilehash: 7bbb47268a23fcb37a34e2287a6ce949313a13bb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c514d3e6155278ddd3a0565c87e9377dc8419356
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361627"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780197"
 ---
 # <a name="typename-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
 
 指定使用此資料表視圖專案的 .NET 類型。 可以針對資料表專案指定的類型數目沒有限制。
 
-之 entryselectedby 的設定元素（格式） ViewDefinitions 元素（格式） View 元素（format） TableControl 元素（格式） TableRowEntries 元素（格式） TableRowEntry 元素（格式）之 entryselectedby 元素（格式） TypeName 元素針對 TableRowEntry （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableRowEntries 專案 (格式) TableRowEntry 專案 (格式) 之 entryselectedby 元素 (格式) 之 entryselectedby 的 TypeName 元素 TableRowEntry (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72361627"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `TypeName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `TypeName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72361627"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[之 entryselectedby 元素（格式）](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義使用此專案的 .NET 類型，或必須存在才能使用此專案的條件。|
+|[之 entryselectedby 元素 (格式) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義使用此專案的 .NET 類型，或必須存在才能使用此專案的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,8 +50,8 @@ ms.locfileid: "72361627"
 
 ## <a name="see-also"></a>另請參閱
 
-[建立資料表視圖](./creating-a-table-view.md)
+[建立表格檢視](./creating-a-table-view.md)
 
-[之 entryselectedby 元素（格式）](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
+[之 entryselectedby 元素 (格式) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

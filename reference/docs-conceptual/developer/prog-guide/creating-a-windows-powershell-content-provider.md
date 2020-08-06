@@ -1,22 +1,20 @@
 ---
 title: 建立 Windows PowerShell 內容提供者
 ms.date: 09/13/2016
-ms.topic: article
-ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
-ms.openlocfilehash: e7a59d902633a6d4c73236b7f5a10fc4b405c9bf
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b4bc0c8d1f8ef9f85bd711fdc2770b54418bbf4a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978469"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779060"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>建立 Windows PowerShell 內容提供者
 
 本主題說明如何建立 Windows PowerShell 提供者，讓使用者可以運算元據存放區中的專案內容。 因此，可以操作專案內容的提供者稱為 Windows PowerShell 內容提供者。
 
 > [!NOTE]
-> 您可以使用適用C#于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的原始程式檔（AccessDBSampleProvider06.cs）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
-> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> 您可以使用適用于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的 c # 原始程式檔 (AccessDBSampleProvider06.cs) 。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
+> 下載的來源檔案可在目錄中取得 **\<PowerShell Samples>** 。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>定義 Windows PowerShell 內容提供者類別
 
@@ -57,7 +55,7 @@ Windows PowerShell 內容提供者必須建立一個支援[IcontentCmdletprovide
 
 ## <a name="retrieving-the-content-reader"></a>正在抓取內容讀取器
 
-若要從專案取得內容，提供者必須執行[IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)以支援 `Get-Content` Cmdlet。 這個方法會傳回位於指定路徑之專案的內容讀取器。 然後，可以開啟 reader 物件來讀取內容。
+若要從專案取得內容，提供者必須執行[IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)來支援此 `Get-Content` Cmdlet。 這個方法會傳回位於指定路徑之專案的內容讀取器。 然後，可以開啟 reader 物件來讀取內容。
 
 以下是此提供者的這個方法的[IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)的執行程式。
 
@@ -90,11 +88,11 @@ public IContentReader GetContentReader(string path)
 
 - 定義 provider 類別時，Windows PowerShell 內容提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [IcontentCmdletprovider. Getcontentreader *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)方法的執行必須確保傳遞至方法的路徑符合指定之功能的需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則，此方法的覆寫不應抓取使用者所隱藏之物件的讀取器。 如果路徑代表使用者所隱藏的專案，而[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為 `false`，則應該撰寫錯誤。
+- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為，否則此方法的覆寫不應抓取使用者所隱藏物件的讀取器 `true` 。 如果路徑代表使用者所隱藏的專案，而且[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)已設定為，則應該寫入錯誤 `false` 。
 
 ## <a name="attaching-dynamic-parameters-to-the-get-content-cmdlet"></a>將動態參數附加至 Get Content Cmdlet
 
-`Get-Content` Cmdlet 可能需要在執行時間動態指定的其他參數。 為了提供這些動態參數，Windows PowerShell 內容提供者必須執行[IcontentCmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)方法。 這個方法會在指定的路徑上抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件類似的剖析屬性。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 Cmdlet。
+`Get-Content`Cmdlet 可能需要在執行時間動態指定的其他參數。 為了提供這些動態參數，Windows PowerShell 內容提供者必須執行[IcontentCmdletprovider. Getcontentreaderdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)方法。 這個方法會在指定的路徑上抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件類似的剖析屬性。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 Cmdlet。
 
 這個 Windows PowerShell 容器提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
 
@@ -142,11 +140,11 @@ public IContentWriter GetContentWriter(string path)
 
 - 定義 provider 類別時，Windows PowerShell 內容提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [IcontentCmdletprovider. Getcontentwriter *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)方法的執行必須確保傳遞至方法的路徑符合指定之功能的需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應抓取使用者所隱藏之物件的寫入器。 如果路徑代表使用者所隱藏的專案，而[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為 `false`，則應該撰寫錯誤。
+- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為，否則此方法的覆寫不應抓取使用者所隱藏之物件的寫入器 `true` 。 如果路徑代表使用者所隱藏的專案，而且[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)已設定為，則應該寫入錯誤 `false` 。
 
 ## <a name="attaching-dynamic-parameters-to-the-add-content-and-set-content-cmdlets"></a>將動態參數附加至新增內容和設定內容 Cmdlet
 
-`Add-Content` 和 `Set-Content` Cmdlet 可能需要新增執行時間的其他動態參數。 為了提供這些動態參數，Windows PowerShell 內容提供者必須執行[IcontentCmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)方法來處理這些參數。 這個方法會在指定的路徑上抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件類似的剖析屬性。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 Cmdlet。
+`Add-Content`和 `Set-Content` Cmdlet 可能需要新增執行時間的其他動態參數。 為了提供這些動態參數，Windows PowerShell 內容提供者必須執行[IcontentCmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)方法來處理這些參數。 這個方法會在指定的路徑上抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件類似的剖析屬性。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 Cmdlet。
 
 這個 Windows PowerShell 容器提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
 
@@ -166,15 +164,15 @@ public IContentWriter GetContentWriter(string path)
 
 - 定義 provider 類別時，Windows PowerShell 內容提供者可能會從[Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列舉中宣告 ExpandWildcards、Filter、Include 或 Exclude 的提供者功能。 在這些情況下， [IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法的執行必須確保傳遞至方法的路徑符合指定之功能的需求。 若要這麼做，方法應該存取適當的屬性，例如[Cmdletprovider。 Exclude *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude)和[Cmdletprovider. Include *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include)屬性（property），請將它加入。
 
-- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為 `true`，否則此方法的覆寫不應清除使用者隱藏的物件內容。 如果路徑代表使用者所隱藏的專案，而[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)設定為 `false`，則應該撰寫錯誤。
+- 根據預設，除非[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)屬性設定為，否則，此方法的覆寫不應清除使用者隱藏的物件內容 `true` 。 如果路徑代表使用者所隱藏的專案，而且[Cmdletprovider. Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)已設定為，則應該寫入錯誤 `false` 。
 
 - 您的 IcontentCmdletprovider 必須先呼叫[Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法，然後在對資料存放區進行任何變更之前，先驗證它的傳回[值，然後再執行。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) 這個方法是用來在對資料存放區進行變更（例如清除內容）時，確認作業的執行。 [Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)方法會將要變更的資源名稱傳送給使用者，而 Windows PowerShell 執行時間會處理任何命令列設定或喜好設定變數來決定要顯示的內容。
 
-  呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)會傳回 `true`，則[IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法應會呼叫 system.servicemodel. Cmdletprovider [.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) ShouldContinue 方法（.........）。 這個方法會將訊息傳送給使用者，以允許意見反應來驗證作業是否應該繼續。 呼叫[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外檢查是否有潛在危險的系統修改。
+  在呼叫[Cmdletprovider. ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)後傳回後 `true` ， [IcontentCmdletprovider. Clearcontent *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)方法應會呼叫 system.servicemodel [. Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)方法，並將其命名為.... 管理介面。 這個方法會將訊息傳送給使用者，以允許意見反應來驗證作業是否應該繼續。 呼叫[Cmdletprovider. ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)允許額外檢查是否有潛在危險的系統修改。
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-content-cmdlet"></a>將動態參數附加至 Clear 內容 Cmdlet
 
-`Clear-Content` Cmdlet 可能需要在執行時間新增額外的動態參數。 為了提供這些動態參數，Windows PowerShell 內容提供者必須執行[IcontentCmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法來處理這些參數。 這個方法會在指定的路徑中抓取專案的參數。 這個方法會在指定的路徑上抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件類似的剖析屬性。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 Cmdlet。
+`Clear-Content`Cmdlet 可能需要在執行時間新增的其他動態參數。 為了提供這些動態參數，Windows PowerShell 內容提供者必須執行[IcontentCmdletprovider. Clearcontentdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)方法來處理這些參數。 這個方法會在指定的路徑中抓取專案的參數。 這個方法會在指定的路徑上抓取專案的動態參數，並傳回具有屬性和欄位的物件，而此物件具有與 Cmdlet 類別或[Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)物件類似的剖析屬性。 Windows PowerShell 執行時間會使用傳回的物件，將參數新增至 Cmdlet。
 
 這個 Windows PowerShell 容器提供者不會執行此方法。 不過，下列程式碼是這個方法的預設執行。
 
@@ -203,7 +201,7 @@ public object ClearContentDynamicParameters(string path)
 
 當您的 Windows PowerShell 提供者已向 Windows PowerShell 註冊時，您可以在命令列上執行支援的 Cmdlet 來進行測試。 例如，測試範例內容提供者。
 
-使用 `Get-Content` Cmdlet，以 `Path` 參數所指定的路徑，抓取資料庫資料表中指定專案的內容。 `ReadCount` 參數會指定要讀取之已定義內容讀取器的專案數（預設為1）。 使用下列命令專案，Cmdlet 會從資料表中抓取兩個數據列（專案），並顯示其內容。 請注意，下列範例輸出會使用虛構的 Access 資料庫。
+使用 `Get-Content` Cmdlet，在參數所指定的路徑上，抓取資料庫資料表中指定專案的內容 `Path` 。 `ReadCount`參數會指定要讀取之已定義內容讀取器的專案數 (預設值 1) 。 使用下列命令專案，Cmdlet 會從資料表中抓取兩個 (專案) 的資料列，並顯示其內容。 請注意，下列範例輸出會使用虛構的 Access 資料庫。
 
 ```powershell
 Get-Content -Path mydb:\Customers -ReadCount 2
@@ -250,4 +248,4 @@ Country   : USA
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員手冊](./windows-powershell-programmer-s-guide.md)

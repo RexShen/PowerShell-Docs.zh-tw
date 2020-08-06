@@ -1,19 +1,12 @@
 ---
 title: Windows PowerShell02 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
-caps.latest.revision: 9
-ms.openlocfilehash: 4d697e73ff4ab4cc4b88593f814d589f89005663
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a82366a88addb08e186eede79e621d90d915c50f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978639"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779381"
 ---
 # <a name="windows-powershell02-sample"></a>Windows PowerShell02 範例
 
@@ -25,7 +18,7 @@ ms.locfileid: "80978639"
 
 ## <a name="demonstrates"></a>示範
 
-這個範例示範下列作業：
+本範例示範以下項目:
 
 - 建立 RunspacePool 物件，其中包含允許同時開啟的最小和最大執行空間數目。
 - 建立命令清單。
@@ -41,4 +34,4 @@ ms.locfileid: "80978639"
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 Windows PowerShell 主應用程式](./writing-a-windows-powershell-host-application.md)
+[撰寫 Windows PowerShell 主機應用程式](./writing-a-windows-powershell-host-application.md)

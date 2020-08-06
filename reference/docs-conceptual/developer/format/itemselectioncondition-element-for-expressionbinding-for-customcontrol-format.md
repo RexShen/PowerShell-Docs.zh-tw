@@ -1,25 +1,18 @@
 ---
-title: CustomControl 之 ExpressionBinding 的 ItemSelectionCondition 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: CustomControl (格式) 的 ExpressionBinding 的 ItemSelectionCondition 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f4bea9d8-27ad-410e-ad48-287f807d3e4e
-caps.latest.revision: 7
-ms.openlocfilehash: 18b0113c9b7b0895a1093cb0b56cd2d02c74a6c1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a5c66a63c02980b16c2d2d9dd689410c8aec51c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362907"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781183"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-customcontrol-format"></a>CustomControl 之 ExpressionBinding 的 ItemSelectionCondition 元素 (格式)
 
 定義必須存在才能使用此控制項的條件。 可以針對控制項專案指定的選取條件數目沒有限制。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素（format） CustomEntries 元素，用於 CustomEntry for View （Format） CustomEntries 元素的 CustomControl for view （format） CustomItem 元素CustomEntry for view （Format） ExpressionBinding 元素 for CustomControl for view （Format） ItemSelectionCondition 元素用於 CustomControl for View 的運算式系結（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) CustomControl 專案 (格式) CustomControl for view (CustomEntry 元素，CustomEntries for view) format (CustomItem 專案（CustomEntry for view) format (ExpressionBinding 元素）) CustomItem 專案（ (CustomControl 的運算式系結
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +23,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ItemSelectionCondition` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `ItemSelectionCondition` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,14 +35,14 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[ItemSelectionCondition for CustomControl for View 的 PropertyName 元素（格式](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[ItemSelectionCondition for CustomControl for View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[ItemSelectionCondition for CustomControl for View (格式的 PropertyName 元素](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[檢視之 CustomControl 的 ItemSelectionCondition 的 ScriptBlock 元素 (格式)](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomControl for View 的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料。|
+|[檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料。|
 
 ## <a name="remarks"></a>備註
 
@@ -57,6 +50,6 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)
 
-[CustomControl for View 的 CustomItem 的 ExpressionBinding 元素（格式）](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)
+[檢視之 CustomControl 的 CustomItem 的 ExpressionBinding 元素 (格式)](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)

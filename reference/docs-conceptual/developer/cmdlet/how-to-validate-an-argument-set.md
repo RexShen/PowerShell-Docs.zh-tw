@@ -1,21 +1,14 @@
 ---
 title: 如何驗證引數集 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateSet attribute, example
-ms.assetid: 55f0f664-d2ad-4501-a3dc-9f7a27c8ab11
-caps.latest.revision: 8
-ms.openlocfilehash: 6d8b189ed6311efd5a7348ab1e58934e9bff12a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6173f1380583f5b27e2b188990a5ea041f447c57
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365507"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781999"
 ---
 # <a name="how-to-validate-an-argument-set"></a>如何驗證引數集
 
@@ -26,7 +19,7 @@ ms.locfileid: "72365507"
 
 ## <a name="to-validate-an-argument-set"></a>驗證引數集
 
-- 新增 ValidateSet 屬性，如下列程式碼所示。 這個範例會為 `UserName` 參數指定三個可能值的集合。
+- 新增 ValidateSet 屬性，如下列程式碼所示。 這個範例會為參數指定三個可能值的集合 `UserName` 。
 
     ```csharp
     [ValidateSet("Steve", "Mary", "Carl", IgnoreCase = true)]

@@ -1,19 +1,12 @@
 ---
 title: 加入和叫用命令 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
-caps.latest.revision: 5
-ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367637"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779789"
 ---
 # <a name="adding-and-invoking-commands"></a>新增及叫用命令
 
@@ -21,7 +14,7 @@ ms.locfileid: "72367637"
 
 ## <a name="creating-a-pipeline"></a>建立管線
 
- [System.web](/dotnet/api/system.management.automation.powershell)類別提供數種方法，可將命令、參數和腳本新增至管線。 您可以呼叫[Begininvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) [的多](/dotnet/api/System.Management.Automation.PowerShell.Invoke)載，或是以非同步方式叫用管線，方法是呼叫[Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法的多載，或以非同步方式叫用該管線。」（可能為系統管理）。
+ [System.web](/dotnet/api/system.management.automation.powershell)類別提供數種方法，可將命令、參數和腳本新增至管線。 您可以呼叫[Begininvoke *](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) [的多](/dotnet/api/System.Management.Automation.PowerShell.Invoke)載，或是以非同步方式叫用管線，方法是呼叫[Endinvoke *](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)方法的多載，或以非同步方式叫用該管線。。」（可能為系統管理）。
 
 ### <a name="addcommand"></a>AddCommand
 
@@ -47,7 +40,7 @@ ms.locfileid: "72367637"
 
 ### <a name="addparameter"></a>AddParameter
 
- 上一個範例會執行不含任何參數的單一命令。 例如，您可以使用[Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法將參數新增至命令，下列程式碼會取得在電腦上執行之所有名為 `PowerShell` 的處理常式清單。
+ 上一個範例會執行不含任何參數的單一命令。 例如，您可以使用[Pscommand. Addparameter *](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)方法將參數新增至命令，下列程式碼會取得在電腦上執行之所有進程的清單 `PowerShell` 。
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +72,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- 您可以使用[Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法來模擬批次處理，這會將額外的語句新增至管線的結尾，下列程式碼會取得名稱為 `PowerShell`的執行中進程清單，然後取得正在執行的服務清單。
+ 您可以使用[Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)方法來模擬批次處理，這會將額外的語句新增至管線的結尾，下列程式碼會取得名稱為的執行中進程清單 `PowerShell` ，然後取得正在執行的服務清單。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +83,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- 您可以藉由呼叫[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法，來執行現有的腳本。 下列範例會將腳本新增至管線並加以執行。 這個範例假設名為 `D:\PSScripts`的資料夾中已經有名為 `MyScript.ps1` 的腳本。
+ 您可以藉由呼叫[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法，來執行現有的腳本。 下列範例會將腳本新增至管線並加以執行。 這個範例假設在名為的資料夾中已經有名為的腳本 `MyScript.ps1` `D:\PSScripts` 。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- 另外還有一個[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法的版本，它會採用名為 `useLocalScope`的布林參數。 如果此參數設定為 `true`，則腳本會在本機範圍中執行。 下列程式碼會在本機範圍中執行腳本。
+ 另外還有一個[Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)方法版本，它會採用名為的布林參數 `useLocalScope` 。 如果此參數設定為 `true` ，則腳本會在本機範圍中執行。 下列程式碼會在本機範圍中執行腳本。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -186,4 +179,4 @@ namespace HostPS3
 
  [建立 InitialSessionState](./creating-an-initialsessionstate.md)
 
- [建立受條件約束的運行空間](./creating-a-constrained-runspace.md)
+ [建立受限 Runspace](./creating-a-constrained-runspace.md)

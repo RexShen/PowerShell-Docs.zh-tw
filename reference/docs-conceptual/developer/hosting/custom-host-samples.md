@@ -1,29 +1,22 @@
 ---
 title: 自訂主機範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 55aee25b-bbcb-4d41-a4c0-fb8e30c4cdc1
-caps.latest.revision: 11
-ms.openlocfilehash: 1e58b74cf1c37c70ebfb0f4970cfbf8a8263ec5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a10d3da6d8bf93986a3f5b029fdae3afb23a903
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367507"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779517"
 ---
 # <a name="custom-host-samples"></a>自訂主機範例
 
 本節包含用來撰寫自訂主機的範例程式碼。 您可以使用 Microsoft Visual Studio 建立主控台應用程式，然後將此區段中的主題中的程式碼複製到您的主應用程式。
 
-## <a name="in-this-section"></a>在本節中
+## <a name="in-this-section"></a>本節內容
 
  [Host01 範例](./host01-sample.md)這個範例示範如何執行使用基本自訂主機的主應用程式。
 
- [Host02 範例](./host02-sample.md)這個範例示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行[取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)Cmdlet 並顯示結果，就像您使用 pwrsh 所看到的一樣，然後以德文印出目前的資料和時間。
+ [Host02 範例](./host02-sample.md)這個範例示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機文化特性設定為德文、執行「[取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)」 Cmdlet，並顯示您使用 pwrsh.exe 看到的結果，然後以德文印出目前的資料和時間。
 
  [Host03 範例](./host03-sample.md)這個範例示範如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
 

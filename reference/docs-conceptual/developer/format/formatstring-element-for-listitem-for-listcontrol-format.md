@@ -1,25 +1,18 @@
 ---
-title: ListControl 之專案的格式字串元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 適用于 ListControl (格式) 的專案格式字串元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fd2cac66-88bb-449f-9d47-bd2cd4fe1801
-caps.latest.revision: 13
-ms.openlocfilehash: e6024ec4f7fc490c92408047c8c15c775e45bf9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9ec73aa1c2e8180258722627e30344de4e67bda5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363017"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781574"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>ListControl 之 ListItem 的 FormatString 元素 (格式)
 
 指定定義屬性或腳本值顯示方式的格式模式。
 
-ListEntry （格式） ListControl 元素的 ListControl （format） ListItems 元素的設定元素（格式） ViewDefinitions 元素（格式） ListEntries 元素（格式）適用于 ListControl 之專案的 ListControl （格式）格式（格式）元素的專案專案專案
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 專案 (格式) ListControl (格式) ListEntry 元素 ListControl (格式) ListItems 元素用於 ListControl (格式) ListControl 專案用於 ListControl (格式的顯示專案) 格式的元素
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ListEntry （格式） ListControl 元素的 ListControl （format） ListItems 
 <FormatString>PropertyPattern</FormatString>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `FormatString` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `FormatString` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ListEntry （格式） ListControl 元素的 ListControl （format） ListItems 
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[[專案] 元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
+|[ (格式的 [專案] 元素) ](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,7 +50,7 @@ ListEntry （格式） ListControl 元素的 ListControl （format） ListItems 
 
 ## <a name="example"></a>範例
 
-下列範例顯示如何為 `StartTime` 屬性的值定義格式字串。
+下列範例顯示如何為屬性的值定義格式化字串 `StartTime` 。
 
 ```xml
 <ListItem>
@@ -68,8 +61,8 @@ ListEntry （格式） ListControl 元素的 ListControl （format） ListItems 
 
 ## <a name="see-also"></a>另請參閱
 
-[建立清單視圖](./creating-a-list-view.md)
+[建立清單檢視](./creating-a-list-view.md)
 
-[[專案] 元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)
+[ (格式的 [專案] 元素) ](./listitem-element-for-listitems-for-listcontrol-format.md)
 
 [撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)

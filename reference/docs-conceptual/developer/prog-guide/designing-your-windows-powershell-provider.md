@@ -1,21 +1,14 @@
 ---
 title: 設計您的 Windows PowerShell 提供者 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
-ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
-caps.latest.revision: 10
-ms.openlocfilehash: 6112e64a4a15d9dc8ac28ba51259b6647db4c064
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: dec6c71a2d7bbe5636f96dc140e701213d6f6487
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560044"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778932"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>設計 Windows PowerShell 提供者
 
@@ -29,7 +22,7 @@ Windows PowerShell 執行時間會使用 Windows PowerShell 路徑來存取適�
 
 ### <a name="defining-a-drive-qualified-path"></a>定義磁片磁碟機限定路徑
 
-若要允許使用者存取位於實體磁片磁碟機上的資料，您的 Windows PowerShell 提供者必須支援磁片磁碟機限定路徑。 這個路徑的開頭是磁片磁碟機名稱，後面接著冒號（:)，例如 mydrive： \ abc\bar。
+若要允許使用者存取位於實體磁片磁碟機上的資料，您的 Windows PowerShell 提供者必須支援磁片磁碟機限定路徑。 這個路徑的開頭是磁片磁碟機名稱，後面接著冒號 (： ) ，例如 mydrive： \ abc\bar。
 
 ### <a name="defining-a-provider-qualified-path"></a>定義提供者限定路徑
 
@@ -41,11 +34,11 @@ Windows PowerShell 執行時間會使用 Windows PowerShell 路徑來存取適�
 
 ### <a name="defining-a-provider-internal-path"></a>定義提供者內部路徑
 
-若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面（Api）來存取資料，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑為 \\ \uncshare\abc\bar。
+若要允許 provider Cmdlet 使用非 Windows PowerShell 應用程式開發介面來存取資料 (Api) ，您的 Windows PowerShell 提供者應該支援提供者內部路徑。 此路徑會在提供者限定路徑中的 "：：" 之後指出。 例如，filesystem Windows PowerShell 提供者的提供者內部路徑為 \\ \uncshare\abc\bar。
 
 ## <a name="changing-stored-data"></a>變更儲存的資料
 
-覆寫修改基礎資料存放區的方法時，請一律呼叫[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法，其中包含該方法所變更之專案的最新版本。 提供者基礎結構會判斷是否需要將專案物件傳遞至管線，例如當使用者指定-PassThru 參數時。 如果抓取最新的專案是昂貴的作業（效能取向），您可以測試內容。 PassThru 屬性來判斷您是否真的需要寫入產生的專案。
+覆寫修改基礎資料存放區的方法時，請一律呼叫[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法，其中包含該方法所變更之專案的最新版本。 提供者基礎結構會判斷是否需要將專案物件傳遞至管線，例如當使用者指定-PassThru 參數時。 如果抓取最新的專案是高成本的作業 (效能，) 您可以測試內容。 PassThru 屬性來判斷您是否真的需要寫入產生的專案。
 
 ## <a name="choose-a-base-class-for-your-provider"></a>為您的提供者選擇基類
 
@@ -68,7 +61,7 @@ Cmdlet 會叫用類別， `Get-PSProvider` 以列出會話的所有可用提供�
 
 [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別會定義 Windows PowerShell 磁片磁碟機提供者，它支援新增新磁片磁碟機、移除現有磁片磁碟機，以及初始化預設磁片磁碟機的作業。 例如，Windows PowerShell 提供的 FileSystem 提供者會針對所有掛接的磁片區（例如硬碟機和 CD/DVD 裝置磁片磁碟機）初始化磁片磁碟機。
 
-這個類別是衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類的。 下表列出這個類別所公開的 Cmdlet。 除了列出的 Cmdlet 之外，指令程式 `Get-PSDrive` （由會話狀態公開）是用來取出可用磁片磁碟機的相關 Cmdlet。
+這個類別是衍生自[Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基類的。 下表列出這個類別所公開的 Cmdlet。 除了列出的指令程式以外， `Get-PSDrive` Cmdlet (由會話狀態公開) 是用來取出可用磁片磁碟機的相關 Cmdlet。
 
 |      Cmdlet      |                             定義                              |
 | ---------------- | ------------------------------------------------------------------- |
@@ -90,7 +83,7 @@ Cmdlet 會叫用類別， `Get-PSProvider` 以列出會話的所有可用提供�
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider 基類
 
-[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別會定義 Windows PowerShell 容器提供者，以向使用者公開資料存放區專案的容器。 請注意，只有在有一個容器（沒有嵌套的容器）包含專案時，才可以使用 Windows PowerShell 容器提供者。 如果有嵌套的容器，則您必須執行 Windows PowerShell 流覽提供者。
+[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別會定義 Windows PowerShell 容器提供者，以向使用者公開資料存放區專案的容器。 請注意，只有在有一個容器 (沒有任何包含專案的嵌套容器) 時，才可以使用 Windows PowerShell 容器提供者。 如果有嵌套的容器，則您必須執行 Windows PowerShell 流覽提供者。
 
 這個類別是衍生自[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基類的。 下表定義這個類別所執行的 Cmdlet。
 
@@ -160,8 +153,8 @@ Cmdlet 會叫用類別， `Get-PSProvider` 以列出會話的所有可用提供�
 
 |  Cmdlet   |                                                                                                                                                                                                          定義                                                                                                                                                                                                          |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `Get-Acl` | 抓取存取控制清單（ACL）中所包含的資訊，這是用來保護作業系統資源（例如檔案或物件）之安全描述項的一部分。                                                                                                                                                                                                                                      |
-| `Set-Acl` | 設定 ACL 的資訊。 它的形式是 Accesscontrol 的實例， [Objectsecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity)是針對指定之路徑所指定的專案。 如果 Windows PowerShell 提供者支援安全性資訊的設定，此 Cmdlet 可以設定登錄中的檔案、金鑰和子機碼，或任何其他提供者專案的相關資訊。 |
+| `Get-Acl` | 抓取存取控制清單中包含的資訊 (ACL) ，這是用來保護作業系統資源（例如檔案或物件）之安全描述項的一部分。                                                                                                                                                                                                                                      |
+| `Set-Acl` | 設定 ACL 的資訊。 它的形式是 Accesscontrol 的實例， [Objectsecurity](/dotnet/api/System.Security.AccessControl.ObjectSecurity)是針對指定的路徑所指定的專案 () s。 如果 Windows PowerShell 提供者支援安全性資訊的設定，此 Cmdlet 可以設定登錄中的檔案、金鑰和子機碼，或任何其他提供者專案的相關資訊。 |
 
 ## <a name="see-also"></a>另請參閱
 

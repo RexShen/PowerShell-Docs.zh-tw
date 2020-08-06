@@ -1,30 +1,23 @@
 ---
-title: 如何建立格式檔案（. 格式. types.ps1xml） |Microsoft Docs
-ms.custom: ''
+title: '如何建立格式檔案 ( # B0 xml) |Microsoft Docs'
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
-caps.latest.revision: 8
-ms.openlocfilehash: 7a578dd63a53562f992b2970573258b8676e2a52
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: abdbd4e15b0c4cb1dafcde087d24ed5792c86c3d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692281"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781251"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>如何建立格式設定檔案 (.format.ps1xml)
 
-本主題說明如何建立格式檔案（. 格式. types.ps1xml）。
+本主題說明如何建立格式檔案 ( # B0 xml) 。
 
 > [!NOTE]
 > 您也可以藉由複製 Windows PowerShell 所提供的其中一個檔案，建立格式檔案。 如果您複製現有的檔案，請刪除現有的數位簽章，並將您自己的簽章新增至新的檔案。
 
-### <a name="to-create-a-formatps1xml-file"></a>建立 types.ps1xml 檔案。
+### <a name="to-create-a-formatps1xml-file"></a>建立 .format.ps1的 xml 檔案。
 
-1. 使用文字編輯器（如 [記事本]）建立文字檔（.txt）。
+1. 使用 [記事本] 之類的文字編輯器，建立 ( .txt) 的文字檔。
 
 2. 將下列幾行複製到格式檔案中。
 

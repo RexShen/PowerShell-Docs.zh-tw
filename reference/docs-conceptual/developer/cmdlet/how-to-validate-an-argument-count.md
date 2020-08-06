@@ -1,25 +1,18 @@
 ---
 title: 如何驗證引數計數 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateCount attribute, example
-ms.assetid: 4e6b6ac4-1003-4e7e-9d4a-9f1cf74fc4af
-caps.latest.revision: 8
-ms.openlocfilehash: b6ddb8185f21a65b2e3142ebb640962047e11763
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7c0eb364a6975cec089b984c2100d476631a12d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365527"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782118"
 ---
 # <a name="how-to-validate-an-argument-count"></a>如何驗證引數計數
 
-這個範例示範如何指定驗證規則，讓 Windows PowerShell 執行時間用來檢查參數在執行 Cmdlet 之前可接受的引數數目（計數）。 您可以藉由宣告 ValidateCount 屬性來設定此驗證規則。
+這個範例示範如何指定 Windows PowerShell 執行時間可用來檢查引數數目的驗證規則， (在 Cmdlet 執行之前，參數所接受的計數) 。 您可以藉由宣告 ValidateCount 屬性來設定此驗證規則。
 
 > [!NOTE]
 > 如需定義此屬性之類別的詳細資訊，請參閱[Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute)。

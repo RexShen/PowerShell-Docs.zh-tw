@@ -1,19 +1,12 @@
 ---
 title: 如何使用模組匯入 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 08/28/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
-caps.latest.revision: 8
-ms.openlocfilehash: 840c5bc92d718ec4e54d864dc5e012cd33f83905
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa8d629c14b06e3f9e9d6151cf09aa6b4acce358
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811317"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779364"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>如何使用模組來匯入 Cmdlet
 
@@ -32,7 +25,7 @@ ms.locfileid: "83811317"
 
 1. 將 Cmdlet 元件複製到模組資料夾。
 
-1. `.psd1`在模組的根資料夾中新增模組資訊清單檔案（）。 PowerShell 會使用模組資訊清單來匯入您的模組。 如需詳細資訊，請參閱[如何撰寫 PowerShell 模組資訊清單](../module/how-to-write-a-powershell-module-manifest.md)。
+1. `.psd1`在模組的根資料夾中新增 () 的模組資訊清單檔案。 PowerShell 會使用模組資訊清單來匯入您的模組。 如需詳細資訊，請參閱[如何撰寫 PowerShell 模組資訊清單](../module/how-to-write-a-powershell-module-manifest.md)。
 
 1. 執行下列命令，將 Cmdlet 新增至會話：
 
@@ -46,7 +39,7 @@ ms.locfileid: "83811317"
 
 [匯入 PowerShell 模組](../module/importing-a-powershell-module.md)
 
-[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
 [安裝模組](../module/installing-a-powershell-module.md)
 

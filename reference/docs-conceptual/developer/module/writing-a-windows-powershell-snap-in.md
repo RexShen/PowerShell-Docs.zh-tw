@@ -1,21 +1,14 @@
 ---
 title: 撰寫 Windows PowerShell 嵌入式管理單元 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
-ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
-caps.latest.revision: 7
-ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811617"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779098"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>撰寫 Windows PowerShell 嵌入式管理單元
 
@@ -31,23 +24,23 @@ ms.locfileid: "83811617"
 
     在此範例中，類別名稱為 "GetProcPSSnapIn01"。
 
-3. 新增嵌入式管理單元名稱的公用屬性（必要）。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、、 `(` `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、`*`
+3. 新增 (所需的嵌入式管理單元名稱) 的公用屬性。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、、 `(` `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、`*`
 
     在此範例中，嵌入式管理單元的名稱是 "GetProcPSSnapIn01"。
 
-4. 新增嵌入式管理單元之廠商的公用屬性（必要）。
+4. 新增嵌入式管理單元廠商的公用屬性， (所需的) 。
 
     在此範例中，廠商是 "Microsoft"。
 
-5. 新增嵌入式管理單元之廠商資源的公用屬性（選擇性）。
+5. 新增嵌入式管理單元之廠商資源的公用屬性 (選擇性) 。
 
     在此範例中，廠商資源為 "GetProcPSSnapIn01，Microsoft"。
 
-6. 新增嵌入式管理單元描述的公用屬性（必要）。
+6. 針對所需的嵌入式管理單元 (，新增 [公用] 屬性) 。
 
     在此範例中，描述是「這是註冊了 get proc Cmdlet 的 Windows PowerShell 嵌入式管理單元」。
 
-7. 新增嵌入式管理單元的 [描述] 資源的公用屬性（選擇性）。
+7. 新增嵌入式管理單元之 [描述] 資源的 [公用] 屬性 (選擇性) 。
 
     在此範例中，廠商資源是 "GetProcPSSnapIn01，這是一個 Windows PowerShell 嵌入式管理單元，它會註冊「get-proc」 Cmdlet」。
 

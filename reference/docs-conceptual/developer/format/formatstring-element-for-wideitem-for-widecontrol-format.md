@@ -1,25 +1,18 @@
 ---
-title: WideControl 之之 wideitem 的格式字串元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 之 wideitem for WideControl (Format) 的格式字串元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5bc6ea26-3ca6-4bab-8a13-29189821ba15
-caps.latest.revision: 7
-ms.openlocfilehash: a1dc145864a6904fd4af6c3b9187819c49e224b0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4f1f0826a1cebb1526858875df640baac9d4ce48
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363027"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781523"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>WideControl 之 WideItem 的 FormatString 元素 (格式)
 
 指定定義屬性或腳本值在視圖中顯示方式的格式模式。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） WideControl 元素（格式） WideEntries 專案（格式） WideEntry 元素（適用于 WideControl 的之 wideitem 元素（格式）適用于 WideControl 的之 wideitem （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 專案 (格式) WideEntries 專案 (格式) WideControl (格式) 之 wideitem 元素用於 WideControl (format) 格式元素，之 wideitem (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <FormatString>PropertyPattern</FormatString>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `FormatString` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `FormatString` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[WideControl 的之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
+|[WideControl 的 WideItem 元素 (格式)](./wideitem-element-for-widecontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,7 +50,7 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="example"></a>範例
 
-下列範例顯示如何為 `StartTime` 屬性的值定義格式字串。
+下列範例顯示如何為屬性的值定義格式化字串 `StartTime` 。
 
 ```xml
 <WideItem>
@@ -68,8 +61,8 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[建立寬型視圖](./creating-a-wide-view.md)
+[建立寬型檢視](./creating-a-wide-view.md)
 
-[WideControl 的之 wideitem 元素（格式）](./wideitem-element-for-widecontrol-format.md)
+[WideControl 的 WideItem 元素 (格式)](./wideitem-element-for-widecontrol-format.md)
 
 [撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)

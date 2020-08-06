@@ -1,19 +1,12 @@
 ---
 title: 參數別名 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
-caps.latest.revision: 13
-ms.openlocfilehash: 6545e71ea18d10621ee9c203e70f64dece460ef5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e320eeb4d2ab91acf2116fdc817a50e93c82aead
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369587"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781982"
 ---
 # <a name="parameter-aliases"></a>參數別名
 
@@ -35,7 +28,7 @@ Cmdlet 參數也可以有別名。 當您在命令中輸入或指定參數時，
 
 ## <a name="defining-parameter-aliases"></a>定義參數別名
 
-若要定義參數的別名，請宣告 Alias 屬性，如下列參數宣告所示。 在此範例中，會為相同的參數定義多個別名。 （如需詳細資訊，請參閱 how[To Declare Cmdlet Parameters](./how-to-declare-cmdlet-parameters.md)）。
+若要定義參數的別名，請宣告 Alias 屬性，如下列參數宣告所示。 在此範例中，會為相同的參數定義多個別名。  (需詳細資訊，請參閱 how[To Declare Cmdlet Parameters](./how-to-declare-cmdlet-parameters.md)。 ) 
 
 ```csharp
 [Alias("UN","Writer","Editor")]

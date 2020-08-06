@@ -1,25 +1,18 @@
 ---
-title: CustomControl for View 的 CustomItem 的框架元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 適用于 CustomControl for View (格式) 的 CustomItem 的框架元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e1a13100-41a4-4847-9f07-458c85783505
-caps.latest.revision: 6
-ms.openlocfilehash: 925ef86e61801f5a66f89dd25e0756f00dd35155
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4864ea1a865f77c9de6e495d7e8296e81c19b366
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363637"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781438"
 ---
 # <a name="frame-element-for-customitem-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 CustomItem 的框架元素 (格式)
 
 定義資料的顯示方式，例如將資料向左或向右移位。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素（format） CustomEntries 元素，用於 CustomEntry for View （Format） CustomEntries 元素的 CustomControl for view （format） CustomItem 元素CustomItem for CustomControl for View 的 CustomEntry for CustomControlView （格式）框架元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) CustomControl 專案 (格式) CustomControl for view (CustomEntry 元素，CustomEntries for CustomItem 的 CustomEntry 專案) 格式 (CustomControlView 專案) 格式 (CustomItem for CustomControl for View)  (格式的 CustomEntries 元素
 
 ## <a name="syntax"></a>語法
 
@@ -33,9 +26,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Frame` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `Frame` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -51,15 +44,15 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 |[LeftIndent 元素](./leftindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定資料從左邊界下移的字元數。|
 |[RightIndent 元素](./rightindent-element-for-frame-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定資料從右邊界向外移動的字元數。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料及其顯示方式。|
+|[CustomEntry for View (格式的 CustomItem 元素) ](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義控制項所顯示的資料及其顯示方式。|
 
 ## <a name="remarks"></a>備註
 
-您不能在相同的 `Frame` 元素中指定[FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)和[FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)元素。
+您不能在相同的專案中指定[FirstLineHanging](./firstlinehanging-element-for-frame-for-customcontrol-for-view-format.md)和[FirstLineIndent](./firstlineindent-element-for-frame-for-customcontrol-for-view-format.md)元素 `Frame` 。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -71,6 +64,6 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 [RightIndent 元素](./rightindent-element-for-frame-for-customcontrol-for-view-format.md)
 
-[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+[CustomEntry for View (格式的 CustomItem 元素) ](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)
