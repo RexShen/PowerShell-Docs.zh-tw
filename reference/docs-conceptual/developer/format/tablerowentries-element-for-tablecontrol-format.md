@@ -1,25 +1,18 @@
 ---
-title: TableControl 的 TableRowEntries 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: TableControl (格式的 TableRowEntries 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
-caps.latest.revision: 15
-ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4cc5d354df3e552e181a95148caa020f0041db92
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368147"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785110"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableControl 的 TableRowEntries 元素 (格式)
 
 定義資料表的資料列。
 
-TableControl （格式）的設定元素（格式） ViewDefinitions 元素（格式） TableControl 元素（格式） TableRowEntries 元素
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableControl (格式的 TableRowEntries 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -29,9 +22,9 @@ TableControl （格式）的設定元素（格式） ViewDefinitions 元素（�
 </TableRowEntries>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `TableRowEntries` 專案的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `TableRowEntries` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,23 +34,23 @@ TableControl （格式）的設定元素（格式） ViewDefinitions 元素（�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 之 TableRowEntries 的 TableRowEntry 元素（格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必要項目。<br /><br /> 定義在資料表的資料列中顯示的資料。|
+|[TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義在資料表的資料列中顯示的資料。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 元素（格式）](./tablecontrol-element-format.md)|定義視圖的資料表格式。|
+|[TableControl 元素 (格式)](./tablecontrol-element-format.md)|定義視圖的資料表格式。|
 
 ## <a name="remarks"></a>備註
 
-您必須為數據表視圖指定一個或多個 `TableRowEntry` 元素。 可以新增的 `TableRowEntry` 專案數沒有最大限制，也沒有其順序重要性。
+您必須為數據表視圖指定一個或多個 `TableRowEntry` 元素。 可以新增的專案數沒有最大限制， `TableRowEntry` 也沒有順序重要性。
 
 如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示的 `TableRowEntries` 專案會定義一個資料列，以顯示 system.servicemodel 物件的兩個屬性[值。](/dotnet/api/System.Diagnostics.Process)
+下列範例顯示的專案 `TableRowEntries` 會定義一個資料列，以顯示 system.servicemodel 物件的兩個屬性[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)值。
 
 ```xml
 <TableRowEntries>
@@ -80,10 +73,10 @@ TableControl （格式）的設定元素（格式） ViewDefinitions 元素（�
 
 ## <a name="see-also"></a>另請參閱
 
-[建立資料表視圖](./creating-a-table-view.md)
+[建立表格檢視](./creating-a-table-view.md)
 
-[TableControl 元素（格式）](./tablecontrol-element-format.md)
+[TableControl 元素 (格式)](./tablecontrol-element-format.md)
 
-[TableRowEntry 元素（格式）](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
+[TableRowEntry 元素 (格式) ](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
-title: EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 ScriptBlock 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: SelectionCondition for 之 entryselectedby for EnumerableExpansion (Format 的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4126b799-c43d-4175-8513-6d761c65437e
-caps.latest.revision: 9
-ms.openlocfilehash: a51d8d22fa8b0c7f303a5e8f37edcc5e57724063
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 71fd969fd3e5c0a4e39762c9a026982a8ca2a9d1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368607"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785365"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
 指定觸發條件的腳本。
 
-EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元素的 DefaultSettings 元素（格式） EnumerableExpansions 元素（格式） EnumerableExpansion 元素（格式）之 entryselectedby 元素EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 EnumerableExpansion （格式） ScriptBlock 元素（格式）
+Configuration 元素 (格式) DefaultSettings 元素 (格式) EnumerableExpansions 專案 (格式) EnumerableExpansion 專案 (格式) EnumerableExpansion (格式) SelectionCondition 元素，之 entryselectedby 的 EnumerableExpansion (format) ScriptBlock 元素（SelectionCondition for 之 entryselectedby 的 EnumerableExpansion (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元�
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `ScriptBlock` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在的條件，才能展開這個定義的集合物件。|
+|[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在的條件，才能展開這個定義的集合物件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,8 +50,8 @@ EnumerableExpansion 的 SelectionCondition （Format）之 entryselectedby 元�
 
 [定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)
 
-[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
+[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[EnumerableExpansion 之之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
+[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

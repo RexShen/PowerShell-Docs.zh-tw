@@ -1,29 +1,22 @@
 ---
 title: 如何撰寫 PowerShell 模組資訊清單 |Microsoft Docs
-ms.custom: ''
 ms.date: 10/16/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
-caps.latest.revision: 23
-ms.openlocfilehash: 992148c9e39b6edbfa26907de03a5ae57691d831
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 734adab5ce26df6e26353de8e0bc9084e0fd3f3b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84148391"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784906"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>如何撰寫 PowerShell 模組資訊清單
 
-撰寫 PowerShell 模組之後，您可以新增包含模組相關資訊的選擇性模組資訊清單。 例如，您可以描述作者、指定模組中的檔案（例如，嵌套模組）、執行腳本以自訂使用者的環境、載入類型和格式檔案、定義系統需求，以及限制模組匯出的成員。
+撰寫 PowerShell 模組之後，您可以新增包含模組相關資訊的選擇性模組資訊清單。 例如，您可以描述作者、指定模組中的檔案 (例如，) 的嵌套模組、執行腳本以自訂使用者的環境、載入類型和格式檔案、定義系統需求，以及限制模組匯出的成員。
 
 ## <a name="creating-a-module-manifest"></a>建立模組資訊清單
 
-**模組資訊清單**是 PowerShell 資料檔案（ `.psd1` ），可描述模組的內容，並決定模組的處理方式。 資訊清單檔案是文字檔，其中包含索引鍵和值的雜湊表。 您可以將資訊清單檔連結至模組，方法是將資訊清單命名為與模組相同，並將資訊清單儲存在模組的根目錄中。
+**模組資訊清單**是 () 的 PowerShell 資料檔案 `.psd1` ，可描述模組的內容，並決定模組的處理方式。 資訊清單檔案是文字檔，其中包含索引鍵和值的雜湊表。 您可以將資訊清單檔連結至模組，方法是將資訊清單命名為與模組相同，並將資訊清單儲存在模組的根目錄中。
 
-針對只包含單一 `.psm1` 或二進位元件的簡單模組，模組資訊清單是選擇性的。 但建議您盡可能使用模組資訊清單，因為它們有助於您組織程式碼及維護版本設定資訊。 此外，需要模組資訊清單才能匯出安裝在[全域組件快取](/dotnet/framework/app-domains/gac)中的元件。 支援可更新的說明功能的模組也需要模組資訊清單。 「可更新的說明」使用模組資訊清單中的**HelpInfoUri**索引鍵來尋找說明資訊（HelpInfo XML）檔案，其中包含模組的已更新說明檔的位置。 如需「可更新的說明」的詳細資訊，請參閱[支援可更新的協助](./supporting-updatable-help.md)。
+針對只包含單一 `.psm1` 或二進位元件的簡單模組，模組資訊清單是選擇性的。 但建議您盡可能使用模組資訊清單，因為它們有助於您組織程式碼及維護版本設定資訊。 此外，需要模組資訊清單才能匯出安裝在[全域組件快取](/dotnet/framework/app-domains/gac)中的元件。 支援可更新的說明功能的模組也需要模組資訊清單。 「可更新的說明」使用模組資訊清單中的**HelpInfoUri**索引鍵來尋找說明資訊 (HelpInfo XML) 檔案，其中包含模組的已更新說明檔的位置。 如需「可更新的說明」的詳細資訊，請參閱[支援可更新的協助](./supporting-updatable-help.md)。
 
 ### <a name="to-create-and-use-a-module-manifest"></a>若要建立和使用模組資訊清單
 
@@ -59,9 +52,9 @@ ms.locfileid: "84148391"
 
 下表描述可在模組資訊清單中包含的元素。
 
-|元素|預設|描述|
+|項目|預設|描述|
 |-------------|-------------|-----------------|
-|**RootModule**<br /> 輸入： `String`|`<empty string>`|與這個資訊清單相關聯的腳本模組或二進位模組檔案。 先前的 PowerShell 版本稱為此元素**ModuleToProcess**。<br /> 根模組的可能類型可以是空的，它會建立**資訊清單**模組、腳本模組的名稱（ `.psm1` ），或二進位模組的名稱（ `.exe` 或 `.dll` ）。 將模組資訊清單的名稱（ `.psd1` ）或腳本檔案（）放 `.ps1` 在此元素中會造成錯誤。 <br /> 範例： `RootModule = 'ScriptModule.psm1'`|
+|**RootModule**<br /> 輸入： `String`|`<empty string>`|與這個資訊清單相關聯的腳本模組或二進位模組檔案。 先前的 PowerShell 版本稱為此元素**ModuleToProcess**。<br /> 根模組的可能類型可以是空的，它會建立**資訊清單**模組、腳本模組的名稱 (`.psm1`) 或二進位模組的名稱 (`.exe` 或 `.dll`) 。 將模組資訊清單的名稱放 (`.psd1`) 或 `.ps1` 此元素中 () 的腳本檔案會造成錯誤。 <br /> 範例： `RootModule = 'ScriptModule.psm1'`|
 |**ModuleVersion**<br /> 輸入： `Version`|`'0.0.1'`|此模組的版本號碼。 如果未指定值，則會 `New-ModuleManifest` 使用預設值。 此字串必須能夠轉換成類型，例如 `Version` `#.#.#.#.#` 。 `Import-Module`載入它在符合名稱的 **$PSModulePath**上找到的第一個模組，而且至少有**ModuleVersion**，做為**MinimumVersion**參數。 若要匯入特定版本，請使用 `Import-Module` Cmdlet 的**RequiredVersion**參數。<br /> 範例： `ModuleVersion = '1.0'`|
 |**GUID**<br /> 輸入： `GUID`|`'<GUID>'`|用來唯一識別此模組的識別碼。 如果未指定值，請 `New-ModuleManifest` 會自動產生值。 您目前無法依**GUID**匯入模組。 <br /> 範例： `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**作者**<br /> 輸入： `String`|`'<Current user>'`|此課程模組的作者。 如果未指定值，會 `New-ModuleManifest` 使用目前的使用者。 <br /> 範例： `Author = 'AuthorNameHere'`|
@@ -72,23 +65,23 @@ ms.locfileid: "84148391"
 |**PowerShellHostName**<br /> 輸入： `String`|`<empty string>`|此模組所需的 PowerShell 主機名稱。 這個名稱是由 PowerShell 提供。 若要尋找主機程式的名稱，請在程式中輸入： `$host.name` 。<br /> 範例： `PowerShellHostName = 'ConsoleHost'`|
 |**PowerShellHostVersion**<br /> 輸入： `Version`|`<empty string>`|此模組所需的 PowerShell 主機最低版本。<br /> 範例： `PowerShellHostVersion = '2.0'`|
 |**DotNetFrameworkVersion**<br /> 輸入： `Version`|`<empty string>`|本課程模組所需的 Microsoft .NET Framework 最低版本。 這項必要條件僅適用于 PowerShell Desktop 版本，例如 PowerShell 5.1。<br /> 範例： `DotNetFrameworkVersion = '3.5'`|
-|**CLRVersion**<br /> 輸入： `Version`|`<empty string>`|此模組所需的最小 common language runtime （CLR）版本。 這項必要條件僅適用于 PowerShell Desktop 版本，例如 PowerShell 5.1。<br /> 範例： `CLRVersion = '3.5'`|
-|**ProcessorArchitecture**<br /> 輸入： `ProcessorArchitecture`|`<empty string>`|此模組所需的處理器架構（None、X86、Amd64）。 有效值為 x86、AMD64、Arm、IA64、MSIL 和 None （未知或未指定）。<br /> 範例： `ProcessorArchitecture = 'x86'`|
+|**CLRVersion**<br /> 輸入： `Version`|`<empty string>`|此模組所需的 common language runtime (CLR) 的最低版本。 這項必要條件僅適用于 PowerShell Desktop 版本，例如 PowerShell 5.1。<br /> 範例： `CLRVersion = '3.5'`|
+|**ProcessorArchitecture**<br /> 輸入： `ProcessorArchitecture`|`<empty string>`|此模組所需的處理器架構 (無、X86、Amd64) 。 有效值為 x86、AMD64、Arm、IA64、MSIL 和 None (未知或未指定的) 。<br /> 範例： `ProcessorArchitecture = 'x86'`|
 |**RequiredModules**<br /> 輸入： `Object[]`|`@()`|在匯入此模組之前，必須先匯入至全域環境的模組。 這會載入任何列出的模組，除非它們已經載入。 例如，有些模組可能已經由其他模組載入。 您可以使用來指定要載入的特定版本， `RequiredVersion` 而不是 `ModuleVersion` 。 當 `ModuleVersion` 使用時，它會載入最少指定版本的可用最新版本。 您可以在參數值中結合字串和雜湊表。<br /> 範例： `RequiredModules = @("MyModule", @{ModuleName="MyDependentModule"; ModuleVersion="2.0"; GUID="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /> 範例： `RequiredModules = @("MyModule", @{ModuleName="MyDependentModule"; RequiredVersion="1.5"; GUID="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
-|**RequiredAssemblies**<br /> 輸入： `String[]`|`@()`|必須在匯入此模組之前載入的元件。 指定模組所需的元件（ `.dll` ）檔案名。<br /> PowerShell 會先載入指定的元件，再更新類型或格式、匯入嵌套模組，或匯入 RootModule 索引鍵值中所指定的模組檔案。 使用此參數來列出模組所需的所有元件。<br /> 範例： `RequiredAssemblies = @("assembly1.dll", "assembly2.dll", "assembly3.dll")`|
-|**Scriptstoprocess 索引**<br /> 輸入： `String[]`|`@()`|匯 `.ps1` 入模組時，在呼叫者會話狀態中執行的腳本（）檔案。 這可能是全域會話狀態，或是針對嵌套模組，也就是另一個模組的會話狀態。 您可以使用這些腳本來準備環境，就像您可以使用 [登入腳本] 一樣。<br /> 這些腳本會在載入資訊清單中列出的任何模組之前執行。 <br /> 範例： `ScriptsToProcess = @("script1.ps1", "script2.ps1", "script3.ps1")`|
-|**TypesToProcess**<br /> 輸入： `String[]`|`@()`|匯 `.ps1xml` 入此模組時要載入的類型檔案（）。 <br /> 範例： `TypesToProcess = @("type1.ps1xml", "type2.ps1xml", "type3.ps1xml")`|
-|**FormatsToProcess**<br /> 輸入： `String[]`|`@()`|匯 `.ps1xml` 入此模組時要載入的格式檔案（）。 <br /> 範例： `FormatsToProcess = @("format1.ps1xml", "format2.ps1xml", "format3.ps1xml")`|
-|**NestedModules**<br /> 輸入： `Object[]`|`@()`|要匯入為**RootModule** （別名：**ModuleToProcess**）中所指定模組之嵌套模組的模組。<br /> 將模組名稱加入這個專案，類似于 `Import-Module` 從您的腳本或元件程式碼中呼叫。 使用資訊清單檔案的主要差異在於，您可以更輕鬆地查看所要載入的內容。 而且，如果模組無法載入，您還不會載入實際的模組。<br /> 除了其他模組之外，您也可以在這裡載入腳本（ `.ps1` ）檔案。 這些檔案會在根模組的內容中執行。 這相當於根模組中的腳本點來源。 <br /> 範例： `NestedModules = @("script.ps1", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
+|**RequiredAssemblies**<br /> 輸入： `String[]`|`@()`|必須在匯入此模組之前載入的元件。 指定 `.dll` 模組所需 () 檔案名的元件。<br /> PowerShell 會先載入指定的元件，再更新類型或格式、匯入嵌套模組，或匯入 RootModule 索引鍵值中所指定的模組檔案。 使用此參數來列出模組所需的所有元件。<br /> 範例： `RequiredAssemblies = @("assembly1.dll", "assembly2.dll", "assembly3.dll")`|
+|**Scriptstoprocess 索引**<br /> 輸入： `String[]`|`@()`|腳本 (在匯 `.ps1` 入模組時，在呼叫者會話狀態中執行的) 檔案。 這可能是全域會話狀態，或是針對嵌套模組，也就是另一個模組的會話狀態。 您可以使用這些腳本來準備環境，就像您可以使用 [登入腳本] 一樣。<br /> 這些腳本會在載入資訊清單中列出的任何模組之前執行。 <br /> 範例： `ScriptsToProcess = @("script1.ps1", "script2.ps1", "script3.ps1")`|
+|**TypesToProcess**<br /> 輸入： `String[]`|`@()`|匯 `.ps1xml` 入此模組時，) 要載入的類型檔案 (。 <br /> 範例： `TypesToProcess = @("type1.ps1xml", "type2.ps1xml", "type3.ps1xml")`|
+|**FormatsToProcess**<br /> 輸入： `String[]`|`@()`|匯 `.ps1xml` 入此模組時，) 要載入的格式檔案 (。 <br /> 範例： `FormatsToProcess = @("format1.ps1xml", "format2.ps1xml", "format3.ps1xml")`|
+|**NestedModules**<br /> 輸入： `Object[]`|`@()`|要以**RootModule**中指定之模組的嵌套模組形式匯入的模組 (Alias：**ModuleToProcess**) 。<br /> 將模組名稱加入這個專案，類似于 `Import-Module` 從您的腳本或元件程式碼中呼叫。 使用資訊清單檔案的主要差異在於，您可以更輕鬆地查看所要載入的內容。 而且，如果模組無法載入，您還不會載入實際的模組。<br /> 除了其他模組之外，您也可以在這裡載入腳本 (`.ps1`) 檔案。 這些檔案會在根模組的內容中執行。 這相當於根模組中的腳本點來源。 <br /> 範例： `NestedModules = @("script.ps1", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**FunctionsToExport**<br /> 輸入： `String[]`|`@()`|指定要從這個模組匯出的函式，若要獲得最佳效能，請不要使用萬用字元，也不要刪除專案，如果沒有可匯出的函式，請使用空陣列。 根據預設，不會匯出任何函式。 您可以使用此索引鍵來列出模組匯出的函式。<br /> 模組會將函式匯出至呼叫者的會話狀態。 呼叫者的會話狀態可以是全域會話狀態，或是針對嵌套模組，另一個模組的會話狀態。 連結嵌套模組時，除非鏈中的模組使用**FunctionsToExport**索引鍵來限制函式，否則，所有由嵌套模組匯出的函式都會匯出到全域會話狀態。<br /> 如果資訊清單匯出函式的別名，此索引鍵可以移除其別名列在**AliasesToExport**索引鍵中的函式，但此索引鍵無法將函式別名加入清單中。 <br /> 範例： `FunctionsToExport = @("function1", "function2", "function3")`|
 |**CmdletsToExport**<br /> 輸入： `String[]`|`@()`|指定要從這個模組匯出的 Cmdlet，為了達到最佳效能，請不要使用萬用字元，也不要刪除專案，如果沒有可匯出的 Cmdlet，請使用空陣列。 根據預設，不會匯出任何 Cmdlet。 您可以使用此金鑰來列出模組匯出的 Cmdlet。<br /> 呼叫者的會話狀態可以是全域會話狀態，或是針對嵌套模組，另一個模組的會話狀態。 當您要連結嵌套模組時，所有由嵌套模組匯出的 Cmdlet 都會匯出到全域會話狀態，除非鏈中的模組使用**CmdletsToExport**金鑰來限制此 Cmdlet。<br /> 如果資訊清單匯出 Cmdlet 的別名，此金鑰可以移除**AliasesToExport**機碼中列出其別名的 Cmdlet，但此金鑰無法將 Cmdlet 別名新增至清單。 <br /> 範例： `CmdletsToExport = @("Get-MyCmdlet", "Set-MyCmdlet", "Test-MyCmdlet")`|
-|**VariablesToExport**<br /> 輸入： `String[]`|`'*'`|指定模組匯出至呼叫者會話狀態的變數。 允許使用萬用字元。 預設會匯出所有變數（ `'*'` ）。 您可以使用此金鑰來限制模組匯出的變數。<br /> 呼叫者的會話狀態可以是全域會話狀態，或是針對嵌套模組，另一個模組的會話狀態。 當您要連結嵌套模組時，所有由嵌套模組匯出的變數都會匯出到全域會話狀態，除非鏈中的模組使用**VariablesToExport**索引鍵來限制變數。<br /> 如果資訊清單也會匯出變數的別名，此索引鍵可以移除別名列在**AliasesToExport**索引鍵中的變數，但此索引鍵無法將變數別名加入清單中。 <br /> 範例： `VariablesToExport = @('$MyVariable1', '$MyVariable2', '$MyVariable3')`|
+|**VariablesToExport**<br /> 輸入： `String[]`|`'*'`|指定模組匯出至呼叫者會話狀態的變數。 允許使用萬用字元。 根據預設， `'*'` 會匯出 () 的所有變數。 您可以使用此金鑰來限制模組匯出的變數。<br /> 呼叫者的會話狀態可以是全域會話狀態，或是針對嵌套模組，另一個模組的會話狀態。 當您要連結嵌套模組時，所有由嵌套模組匯出的變數都會匯出到全域會話狀態，除非鏈中的模組使用**VariablesToExport**索引鍵來限制變數。<br /> 如果資訊清單也會匯出變數的別名，此索引鍵可以移除別名列在**AliasesToExport**索引鍵中的變數，但此索引鍵無法將變數別名加入清單中。 <br /> 範例： `VariablesToExport = @('$MyVariable1', '$MyVariable2', '$MyVariable3')`|
 |**AliasesToExport**<br /> 輸入： `String[]`|`@()`|指定要從這個模組匯出的別名，為了達到最佳效能，請不要使用萬用字元，也不要刪除專案，如果沒有可匯出的別名，請使用空陣列。 根據預設，不會匯出任何別名。 您可以使用此金鑰來列出模組匯出的別名。<br /> 此模組會將別名匯出至呼叫者的會話狀態。 呼叫者的會話狀態可以是全域會話狀態，或是針對嵌套模組，另一個模組的會話狀態。 當您要連結嵌套模組時，所有由嵌套模組匯出的別名最終都會匯出到全域會話狀態，除非鏈中的模組使用**AliasesToExport**索引鍵來限制別名。 <br /> 範例： `AliasesToExport = @("MyAlias1", "MyAlias2", "MyAlias3")`|
 |**DscResourcesToExport**<br /> 輸入： `String[]`|`@()`|指定要從這個模組匯出的 DSC 資源。 允許使用萬用字元。 <br /> 範例： `DscResourcesToExport = @("DscResource1", "DscResource2", "DscResource3")`|
 |**ModuleList**<br /> 輸入： `Object[]`|`@()`|指定與此模組一起封裝的所有模組。 這些模組可以依名稱輸入、使用逗點分隔字串，或當做具有**ModuleName**和**GUID**金鑰的雜湊表。 雜湊表也可以有選擇性的**ModuleVersion**索引鍵。 **ModuleList**索引鍵是設計來作為模組清查。 這些模組不會自動處理。 <br /> 範例： `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**檔案清單**<br /> 輸入： `String[]`|`@()`|此課程模組所封裝之所有檔案的清單。 如同**ModuleList**， **FileList**是一份清查清單，不會進行其他處理。 <br /> 範例： `FileList = @("File1", "File2", "File3")`|
-|**PrivateData**<br /> 輸入： `Object`|`@{...}`|指定需要傳遞至**RootModule** （Alias： **ModuleToProcess**）索引鍵所指定之根模組的任何私用資料。 **PrivateData**是包含數個元素的雜湊表 **： Tags**、 **LicenseUri**、 **ProjectURI**、 **IconUri**、 **ReleaseNotes**、**發行**前版本、 **RequireLicenseAcceptance**和**ExternalModuleDependencies**。 |
-|**標籤** <br /> 輸入： `String[]` |`@()`| 標籤有助於線上資源庫中的模組探索。 <br /> 範例： `Tags = "PackageManagement", "PowerShell", "Manifest"`|
+|**PrivateData**<br /> 輸入： `Object`|`@{...}`|指定需要傳遞至**RootModule**所指定之根模組的任何私用資料 (Alias： **ModuleToProcess**) 索引鍵。 **PrivateData**是包含數個元素的雜湊表 **： Tags**、 **LicenseUri**、 **ProjectURI**、 **IconUri**、 **ReleaseNotes**、**發行**前版本、 **RequireLicenseAcceptance**和**ExternalModuleDependencies**。 |
+|**Tags** (標籤) <br /> 輸入： `String[]` |`@()`| 標籤有助於線上資源庫中的模組探索。 <br /> 範例： `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> 輸入： `Uri` |`<empty string>`| 此模組的授權 URL。 <br /> 範例： `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> 輸入： `Uri` |`<empty string>`| 這個專案之主要網站的 URL。 <br /> 範例： `ProjectUri = 'https://www.contoso.com/project'`|
 |**IconUri**<br /> 輸入： `Uri` |`<empty string>`| 代表此模組的圖示 URL。 <br /> 範例： `IconUri = 'https://www.contoso.com/icons/icon.png'`|
@@ -245,7 +238,7 @@ PrivateData = @{
 
 [全域組件快取](/dotnet/framework/app-domains/gac)
 
-[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
 [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest)
 

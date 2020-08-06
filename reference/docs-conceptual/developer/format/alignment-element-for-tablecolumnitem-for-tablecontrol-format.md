@@ -1,25 +1,18 @@
 ---
-title: TableControl 之之 tablecolumnitem 的對齊元素（格式） |Microsoft Docs
-ms.custom: ''
+title: TableControl (格式的之 tablecolumnitem 的對齊元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
-caps.latest.revision: 10
-ms.openlocfilehash: 1bc936b94ee6fd6239e9e3c4afcdb8f14fbe36eb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: baa858b7c15b5afcc7f6087e8a9eace8d8fb67bb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369077"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783903"
 ---
 # <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl 之 TableColumnItem 的對齊元素 (格式)
 
 定義如何顯示資料列資料行中的資料。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（格式） TableControl 元素（格式） TableRowEntries 元素（格式） TableRowEntry 元素（格式） TableColumnItems 元素（格式）之 tablecolumnitem 元素（格式）之 tablecolumnitem 的對齊元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableRowEntries 專案 (格式) TableRowEntry 專案 (格式) TableColumnItems 元素 (格式) 之 tablecolumnitem 元素 (格式) 之 tablecolumnitem (格式的對齊元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `Alignment` 專案的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `Alignment` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,17 +32,17 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[之 tablecolumnitem 元素（格式）](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
+|[之 tablecolumnitem 元素 (格式) ](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
 
 ## <a name="text-value"></a>文字值
 
-指定下列其中一個值。 （這些值不區分大小寫）。
+指定下列其中一個值。  (這些值不區分大小寫。 ) 
 
-Left 會將資料行中顯示的資料移至左邊。 （如果未指定這個元素，這就是預設值）。
+Left 會將資料行中顯示的資料移至左邊。  (如果未指定此元素，則此為預設值。 ) 
 
 Right 將資料行中所顯示的資料向右移動。
 
@@ -63,4 +56,4 @@ Right 將資料行中所顯示的資料向右移動。
 
 [資料表視圖](./creating-a-table-view.md)
 
-[之 tablecolumnitem 元素（格式）](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)
+[之 tablecolumnitem 元素 (格式) ](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)

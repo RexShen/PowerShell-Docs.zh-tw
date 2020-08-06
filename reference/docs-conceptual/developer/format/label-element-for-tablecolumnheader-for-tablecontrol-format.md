@@ -1,25 +1,18 @@
 ---
-title: TableControl 之之 tablecolumnheader 的標籤元素（格式） |Microsoft Docs
-ms.custom: ''
+title: TableControl (格式的之 tablecolumnheader 的 Label 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
-caps.latest.revision: 11
-ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7b1d6825d3bca0e36b230415d19c2ac48377a46
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365167"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785739"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl 之 TableColumnHeader 的標籤元素 (格式)
 
 定義顯示在資料行頂端的標籤。 定義資料表視圖時，會使用這個元素。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） TableControl 元素（format） TableHeaders 元素（適用于之 tablecolumnheader for TableHeaders （Format） Label 元素的 TableControl （format） TableControl 元素）TableControl 的之 tablecolumnheader （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableControl (Format) 之 tablecolumnheader 元素用於 TableHeaders 的 TableControl (format) Label 元素 for 之 tablecolumnheader (Format) 
 
 ## <a name="syntax"></a>語法
 
@@ -28,9 +21,9 @@ ms.locfileid: "72365167"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Label` 專案的父元素。 每個資料行只允許一個標籤。
+下列各節說明屬性、子專案和元素的父元素 `Label` 。 每個資料行只允許一個標籤。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,11 +33,11 @@ ms.locfileid: "72365167"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 之 TableHeaders 的之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
+|[TableControl (格式的 TableHeaders 的之 tablecolumnheader 元素) ](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
 
 ## <a name="text-value"></a>文字值
 
@@ -58,7 +51,7 @@ ms.locfileid: "72365167"
 
 ## <a name="example"></a>範例
 
-這個範例會顯示其標籤為 "Column 1" 的 `TableColumnHeader` 元素。
+這個範例會顯示 `TableColumnHeader` 其標籤為 "Column 1" 的元素。
 
 ```xml
 <TableColumnHeader>
@@ -70,8 +63,8 @@ ms.locfileid: "72365167"
 
 ## <a name="see-also"></a>另請參閱
 
-[建立資料表視圖](./creating-a-table-view.md)
+[建立表格檢視](./creating-a-table-view.md)
 
-[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)
+[TableColumnHeader 元素 (格式)](./tablecolumnheader-element-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

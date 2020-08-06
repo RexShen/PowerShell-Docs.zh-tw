@@ -1,25 +1,18 @@
 ---
-title: CustomControl 之之 entryselectedby 的 SelectionCondition 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: CustomControl (格式) 的之 entryselectedby 的 SelectionCondition 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
-caps.latest.revision: 7
-ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52858dba5c7a5222b5410835f3374546ce8b88a2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368437"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785348"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>CustomControl 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)
 
 定義必須存在的條件，才能使用控制項定義。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素 for view （format） CustomEntries 元素 for CustomEntry for view （format） CustomEntries 元素Format） CustomItem 元素，用於 CustomControl for view （format）之 entryselectedby 元素 CustomEntry for CustomControl for view （format） SelectionCondition 元素之 entryselectedby for view （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl for view (格式的 CustomEntries 專案) 格式 (CustomEntry 專案的 CustomEntries for CustomControl for view) format (CustomItem 元素（CustomEntry for CustomControl for view) format） (之 entryselectedby 專案（適用于 CustomEntry for CustomControl for) format (
 
 ## <a name="syntax"></a>語法
 
@@ -32,9 +25,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `SelectionCondition` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `SelectionCondition` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -44,16 +37,16 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[SelectionCondition for CustomControl for View 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[SelectionCondition for CustomControl for View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
-|[View 的自訂控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
-|[SelectionCondition for CustomControl for View 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
+|[檢視之 CustomControl 的 SelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[檢視之 CustomControl 的 SelectionCondition 的 ScriptBlock 元素 (格式)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[SelectionCondition 的 SelectionSetName 元素，用於 View (格式的自訂控制項) ](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型集合。|
+|[檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 類型。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomControl for View 的 CustomEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|定義使用此控制項定義的 .NET 類型，或必須存在才能使用此定義的條件。|
+|[檢視之 CustomControl 的 CustomEntry 的 EntrySelectedBy 元素 (格式)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|定義使用此控制項定義的 .NET 類型，或必須存在才能使用此定義的條件。|
 
 ## <a name="remarks"></a>備註
 
@@ -67,14 +60,14 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[SelectionCondition for CustomControl for View 的 PropertyName 元素（格式）](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[檢視之 CustomControl 的 SelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[SelectionCondition for CustomControl for View 的 ScriptBlock 元素（格式）](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[檢視之 CustomControl 的 SelectionCondition 的 ScriptBlock 元素 (格式)](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[View 的自訂控制項的 SelectionCondition 的 SelectionSetName 元素（格式）](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[SelectionCondition 的 SelectionSetName 元素，用於 View (格式的自訂控制項) ](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[SelectionCondition for CustomControl for View 的 TypeName 元素（格式）](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+[檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-[CustomControl for View 的 CustomEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[檢視之 CustomControl 的 CustomEntry 的 EntrySelectedBy 元素 (格式)](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
-title: 設定之控制項的之 entryselectedby 的 TypeName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 設定 (格式) 之控制項的之 entryselectedby 的 TypeName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 30bb1382-8c6b-4371-82e6-baf427fa0781
-caps.latest.revision: 6
-ms.openlocfilehash: cec8c5d76bded321ec1d6a1cd0409d7c88863c03
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 994cd368872392abe47b4e9422c661cd8c03e05c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368077"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783342"
 ---
 # <a name="typename-element-for-entryselectedby-for-controls-for-configuration-format"></a>設定之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)
 
 指定使用此控制項定義的 .NET 類型。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-Configuration 元素（格式）控制設定（format） CustomControl 元素的設定（格式）控制項專案的設定專案（格式） CustomControl 設定的 CustomEntries 元素（格式）Format） CustomEntry 元素，用於 CustomControl 控制項的之 entryselectedby 元素，用於設定（格式）控制項的 CustomEntry for configuration （format） TypeName 元素
+Configuration 專案 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的 CustomControl 的 CustomControl 元素 CustomControl 的設定)  (格式) 之 entryselectedby 元素 ()  ()  (格式設定的控制項的 CustomEntry 專案的之 entryselectedby for configuration) 的 TypeName 元素
 
 ## <a name="syntax"></a>語法
 
@@ -28,9 +21,9 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `TypeName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `TypeName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,20 +33,20 @@ Configuration 元素（格式）控制設定（format） CustomControl 元素的
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的 CustomEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|定義使用此控制項定義的 .NET 類型，或必須存在才能使用此定義的條件。|
+|[設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|定義使用此控制項定義的 .NET 類型，或必須存在才能使用此定義的條件。|
 
 ## <a name="text-value"></a>文字值
 
-指定 .NET 類型的完整名稱，例如 `System.IO.DirectoryInfo`。
+指定 .NET 類型的完整名稱，例如 `System.IO.DirectoryInfo` 。
 
 ## <a name="remarks"></a>備註
 
 ## <a name="see-also"></a>另請參閱
 
-[設定之控制項的 CustomEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
+[設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
-title: CustomControl for View 的 SelectionCondition 的 ScriptBlock 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: SelectionCondition for CustomControl for View (Format) 的 ScriptBlock 元素Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7031fa8b-3e2b-4ea8-89cb-95171f467b5a
-caps.latest.revision: 6
-ms.openlocfilehash: e55d1c5aa533005b258ecbbbf3ed9d55f852eab6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3506188d32ce85ad6345dc0d0866dd789a1f293
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368637"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785399"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為 `true`時，就會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
+指定觸發條件的腳本。 當此腳本評估為時 `true` ，會符合條件，並使用定義。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素 for view （format） CustomEntries 元素 for CustomEntry for view （format） CustomEntries 元素Format） CustomItem 元素，用於 CustomControl for view （format） SelectionCondition 元素，之 entryselectedby for CustomControl for view （format） ScriptBlock 元素 for SelectionCondition for view （格式） CustomControl
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl for view (格式的 CustomEntries 專案) 格式 (CustomEntry for CustomEntries for view) CustomControl 元素的 CustomItem for CustomEntry for view (format) CustomControl 元素 for SelectionCondition for view (格式) 之 entryselectedby 元素（CustomControl for SelectionCondition for view (format) ScriptBlock 元素） (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ScriptBlock` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `ScriptBlock` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomControl for View 的之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|定義必須存在的條件，才能使用控制項定義。|
+|[CustomControl for View (格式) 的之 entryselectedby 的 SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|定義必須存在的條件，才能使用控制項定義。|
 
 ## <a name="text-value"></a>文字值
 
@@ -55,6 +48,6 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[CustomControl for View 的之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+[CustomControl for View (格式) 的之 entryselectedby 的 SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

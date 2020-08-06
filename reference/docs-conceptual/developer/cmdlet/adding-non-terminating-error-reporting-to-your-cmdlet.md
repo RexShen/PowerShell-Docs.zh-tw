@@ -1,33 +1,26 @@
 ---
 title: 將非終止錯誤報表新增至您的 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
-caps.latest.revision: 8
-ms.openlocfilehash: ec29d1cffa083e4cce667d3e1efbd4eeecbffb51
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6421d510f3701c12807568ad8786459123e80223
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870110"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784583"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>新增非終止錯誤報告到您的 Cmdlet
 
-Cmdlet 可以藉由呼叫[WriteError 的管理元件][]方法來報告非終止錯誤，並繼續在目前的輸入物件或進一步的傳入管線物件上操作。 本節說明如何建立 Cmdlet，以從其輸入處理方法報告非終止錯誤。
+Cmdlet 可以藉由呼叫[WriteError][]方法來報告非終止錯誤，並繼續在目前的輸入物件或進一步的傳入管線物件上操作。 本節說明如何建立 Cmdlet，以從其輸入處理方法報告非終止錯誤。
 
-對於非終止錯誤（以及終止錯誤），Cmdlet 必須傳遞識別錯誤的[ErrorRecord。][]物件。 每個錯誤記錄都是由稱為「錯誤識別碼」的唯一字串所識別。 除了識別碼以外，每個錯誤的類別都是由[ErrorCategory。][]列舉所定義的常數所指定。 使用者可以將 `$ErrorView` 變數設定為 "CategoryView"，以根據其類別來查看錯誤。
+針對非終止錯誤 (以及) 終止錯誤，此 Cmdlet 必須傳遞可識別錯誤的[ErrorRecord][]物件。 每個錯誤記錄都是由稱為「錯誤識別碼」的唯一字串所識別。 除了識別碼以外，每個錯誤的類別都是由[ErrorCategory][]列舉所定義的常數所指定。 使用者可以將 `$ErrorView` 變數設定為 "CategoryView"，以根據其類別來查看錯誤。
 
 如需錯誤記錄的詳細資訊，請參閱[Windows PowerShell 錯誤記錄](./windows-powershell-error-records.md)。
 
 ## <a name="defining-the-cmdlet"></a>定義 Cmdlet
 
-Cmdlet 建立的第一個步驟一律為 Cmdlet 命名，並宣告可執行 Cmdlet 的 .NET 類別。 此 Cmdlet 會抓取處理常式資訊，因此此處選擇的動詞名稱是 "Get"。 （幾乎任何能夠抓取資訊的 Cmdlet 都可以處理命令列輸入）。如需已核准 Cmdlet 動詞命令的詳細資訊，請參閱[Cmdlet 動詞名稱](approved-verbs-for-windows-powershell-commands.md)。
+Cmdlet 建立的第一個步驟一律為 Cmdlet 命名，並宣告可執行 Cmdlet 的 .NET 類別。 此 Cmdlet 會抓取處理常式資訊，因此此處選擇的動詞名稱是 "Get"。  (幾乎任何能夠抓取資訊的 Cmdlet 都可以處理命令列輸入。 ) 如需已核准 Cmdlet 動詞的詳細資訊，請參閱[Cmdlet 動詞名稱](approved-verbs-for-windows-powershell-commands.md)。
 
-以下是此 `Get-Proc` Cmdlet 的定義。 [建立您的第一個 Cmdlet](creating-a-cmdlet-without-parameters.md)會提供此定義的詳細資料。
+以下是此 Cmdlet 的定義 `Get-Proc` 。 [建立您的第一個 Cmdlet](creating-a-cmdlet-without-parameters.md)會提供此定義的詳細資料。
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -78,19 +71,19 @@ End Property
 
 ## <a name="overriding-input-processing-methods"></a>覆寫輸入處理方法
 
-所有 Cmdlet 都必須至少覆寫由[[系統管理]。 Cmdlet][]類別所提供的其中一個輸入處理方法。 [建立您的第一個 Cmdlet](creating-a-cmdlet-without-parameters.md)中會討論這些方法。
+所有 Cmdlet 都必須至少覆寫由[system.web][]類別所提供的其中一個輸入處理方法。 [建立您的第一個 Cmdlet](creating-a-cmdlet-without-parameters.md)中會討論這些方法。
 
 > [!NOTE]
 > 您的 Cmdlet 應該盡可能獨立處理每一筆記錄。
 
-此 Proc 指令程式會覆寫[ProcessRecord 的管理元件][]方法，以處理使用者或腳本所提供之輸入的**名稱**參數。 如果未提供任何名稱，這個方法會取得每個要求的進程名稱或所有進程的進程。 [建立您的第一個 Cmdlet](creating-a-cmdlet-without-parameters.md)會提供此覆寫的詳細資料。
+此 Proc 指令程式會覆寫[ProcessRecord][]方法，以處理使用者或腳本所提供之輸入的**名稱**參數。 如果未提供任何名稱，這個方法會取得每個要求的進程名稱或所有進程的進程。 [建立您的第一個 Cmdlet](creating-a-cmdlet-without-parameters.md)會提供此覆寫的詳細資料。
 
 ### <a name="things-to-remember-when-reporting-errors"></a>報告錯誤時要記住的事項
 
-Cmdlet 在寫入錯誤時所傳遞的[ErrorRecord。][]物件，在其核心上需要例外狀況。 判斷要使用的例外狀況時，請遵循 .NET 指導方針。
-基本上，如果錯誤在語義上與現有的例外狀況相同，則 Cmdlet 應使用或衍生自該例外狀況。 否則，它應該直接從 system.exception 類別衍生新的例外狀況或[Exception][]階層。
+Cmdlet 在寫入錯誤時所傳遞的[ErrorRecord][]物件，在其核心上需要例外狀況。 判斷要使用的例外狀況時，請遵循 .NET 指導方針。
+基本上，如果錯誤在語義上與現有的例外狀況相同，則 Cmdlet 應使用或衍生自該例外狀況。 否則，它應該直接從 system.exception 類別衍生新的例外狀況或[例外狀況][]階層。
 
-建立錯誤識別碼（透過 ErrorRecord 類別的 FullyQualifiedErrorId 屬性存取）時，請記住下列事項。
+建立錯誤識別碼時 (透過 ErrorRecord 類別的 FullyQualifiedErrorId 屬性來存取) 請記住下列事項。
 
 - 使用以診斷為目標的字串，以便在檢查完整識別碼時，您可以判斷錯誤是什麼，以及錯誤的來源。
 
@@ -98,7 +91,7 @@ Cmdlet 在寫入錯誤時所傳遞的[ErrorRecord。][]物件，在其核心上�
 
   `CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand`
 
-請注意，在上一個範例中，錯誤識別碼（第一個 token）會指定錯誤的內容，而其餘部分則會指出錯誤的來源。
+請注意，在上一個範例中，錯誤識別碼 (第一個權杖) 會指定錯誤所在，而其餘部分則會指出錯誤的來源。
 
 - 針對更複雜的案例，錯誤識別碼可以是以點分隔的標記，可以在檢查時進行剖析。 這可讓您在錯誤識別碼的部分，以及錯誤識別碼和錯誤分類中，進行分支。
 
@@ -115,9 +108,9 @@ Cmdlet 應該將特定的錯誤識別碼指派給不同的程式碼路徑。 請
 
 ## <a name="reporting-nonterminating-errors"></a>報告非終止錯誤
 
-任何一個輸入處理方法都可以使用[WriteError 的管理元件][]方法，將非終止錯誤報表到輸出資料流程。
+任何一個輸入處理方法都可以使用[WriteError][]方法，將非終止錯誤報表到輸出資料流程。
 
-以下是來自這個 WriteError 指令程式的程式碼範例，其中說明如何從[ProcessRecord 的管理元件][]方法的覆寫中呼叫[WriteError 的管理元件][]，以從該 Cmdlet 中取得。 在此情況下，如果 Cmdlet 找不到指定之處理序識別碼的進程，就會進行呼叫。
+以下是來自這個 WriteError 指令程式的程式碼範例，其中說明如何從[System.Management.Automation.Cmdlet.ProcessRecord][]方法的覆寫中呼叫[System.Management.Automation.Cmdlet.WriteError][]，以從該 Cmdlet 中取得。 在此情況下，如果 Cmdlet 找不到指定之處理序識別碼的進程，就會進行呼叫。
 
 ```csharp
 protected override void ProcessRecord()
@@ -161,13 +154,13 @@ protected override void ProcessRecord()
 
 針對非終止錯誤，此 Cmdlet 必須為每個特定的輸入物件產生特定的錯誤識別碼。
 
-Cmdlet 經常需要修改非終止錯誤所產生的 PowerShell 動作。 它可以藉由定義 `ErrorAction` 和 `ErrorVariable` 參數來達到這個目的。 如果定義 `ErrorAction` 參數，此 Cmdlet 會顯示[ActionPreference。][]的使用者選項，您也可以藉由設定 `$ErrorActionPreference` 變數直接影響動作。
+Cmdlet 經常需要修改非終止錯誤所產生的 PowerShell 動作。 它可以藉由定義和參數來執行這項操作 `ErrorAction` `ErrorVariable` 。 如果定義 `ErrorAction` 參數，此 Cmdlet 會顯示[ActionPreference][]的使用者選項，您也可以藉由設定變數直接影響動作 `$ErrorActionPreference` 。
 
-Cmdlet 可以使用 `ErrorVariable` 參數，將非終止錯誤儲存至變數，這不會受到 `ErrorAction`設定的影響。 您可以藉由在變數名稱前面加上加號（+），將失敗附加至現有的錯誤變數。
+Cmdlet 可以使用參數將非終止錯誤儲存至變數 `ErrorVariable` ，這不會受到的設定影響 `ErrorAction` 。 藉由在變數名稱前面加上加號 (+) ，可以將失敗附加至現有的錯誤變數。
 
 ## <a name="code-sample"></a>程式碼範例
 
-如需完整C#的範例程式碼，請參閱[GetProcessSample04 範例](./getprocesssample04-sample.md)。
+如需完整的 c # 範例程式碼，請參閱[GetProcessSample04 範例](./getprocesssample04-sample.md)。
 
 ## <a name="define-object-types-and-formatting"></a>定義物件類型和格式
 
@@ -187,7 +180,7 @@ PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此，Cmdlet
   get-proc -name test
   ```
 
-  下列輸出隨即出現。
+  即會出現下列輸出。
 
   ```
   get-proc : Operation is not valid due to the current state of the object.
@@ -197,7 +190,7 @@ PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此，Cmdlet
 
 ## <a name="see-also"></a>另請參閱
 
-[加入處理管線輸入的參數](./adding-parameters-that-process-pipeline-input.md)
+[新增處理管道輸入的參數](./adding-parameters-that-process-pipeline-input.md)
 
 [新增可處理命令列輸入的參數](./adding-parameters-that-process-command-line-input.md)
 

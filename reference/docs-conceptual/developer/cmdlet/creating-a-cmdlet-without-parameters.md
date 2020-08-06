@@ -1,39 +1,32 @@
 ---
 title: 建立不含參數的 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], creating
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
-caps.latest.revision: 8
-ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415664"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784379"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>建立不含參數的 Cmdlet
 
 本節說明如何建立在不使用參數的情況下，從本機電腦抓取資訊的 Cmdlet，然後將資訊寫入管線。 這裡所述的 Cmdlet 是一個可抓取本機電腦處理常式相關資訊的 Get-Proc Cmdlet，然後在命令列中顯示該資訊。
 
 > [!NOTE]
-> 請注意，在撰寫 Cmdlet 時，Windows PowerShell®參考元件會下載到磁片上（預設為 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0）。 它們不會安裝在全域組件快取（GAC）中。
+> 請注意，在撰寫 Cmdlet 時，Windows PowerShell®參考元件會下載至磁片 (，預設位於 C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0) 。 它們不會安裝在全域組件快取中 (GAC) 。
 
 ## <a name="naming-the-cmdlet"></a>命名 Cmdlet
 
 Cmdlet 名稱是由指示 Cmdlet 所採取之動作的動詞，以及表示此 Cmdlet 作用之專案的名詞所組成。 因為此範例的 Get 程式 Cmdlet 會抓取進程物件，所以它會使用動詞命令 "Get" （由[Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)列舉所定義）和名詞 "Proc"，表示此 Cmdlet 適用于處理常式專案。
 
-命名 Cmdlet 時，請勿使用下列任何字元： #、（） {} [] &-/\ $;： "' < > &#124;嗎？ @ ` .
+命名 Cmdlet 時，請勿使用下列任何字元： #、 ( # A2 {} [] &-/\ $;： "' <> &#124; ？ @ ` .
 
 ### <a name="choosing-a-noun"></a>選擇名詞
 
-您應該選擇特定的名詞。 最好是使用前面加上產品名稱之縮寫版本的單數名詞。 此類型的範例 Cmdlet 名稱是 "`Get-SQLServer`"。
+您應該選擇特定的名詞。 最好是使用前面加上產品名稱之縮寫版本的單數名詞。 此類型的範例 Cmdlet 名稱為 " `Get-SQLServer` "。
 
 ### <a name="choosing-a-verb"></a>選擇動詞
 
@@ -54,7 +47,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-請注意，在類別定義之前，使用語法 `[Cmdlet(verb, noun, ...)]`的[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性，是用來將此類別識別為 Cmdlet。 這是所有 Cmdlet 唯一必要的屬性，它可讓 Windows PowerShell 執行時間正確地呼叫它們。 您可以設定屬性關鍵字，以便在必要時進一步宣告類別。 請注意，我們的範例 GetProcCommand 類別的屬性宣告只會宣告 Get-help Cmdlet 的名詞和動詞名稱。
+請注意，在類別定義之前，使用語法的[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性 `[Cmdlet(verb, noun, ...)]` 會用來將此類別識別為 Cmdlet。 這是所有 Cmdlet 唯一必要的屬性，它可讓 Windows PowerShell 執行時間正確地呼叫它們。 您可以設定屬性關鍵字，以便在必要時進一步宣告類別。 請注意，我們的範例 GetProcCommand 類別的屬性宣告只會宣告 Get-help Cmdlet 的名詞和動詞名稱。
 
 > [!NOTE]
 > 對於所有的 Windows PowerShell 屬性類別，您可以設定的關鍵字會對應到屬性類別的屬性。
@@ -116,7 +109,7 @@ End Sub 'ProcessRecord
 
 #### <a name="things-to-remember-about-input-processing"></a>輸入處理需要注意的事項
 
-- 輸入的預設來源是使用者在命令列上提供的明確物件（例如字串）。 如需詳細資訊，請參閱[建立 Cmdlet 來處理命令列輸入](./adding-parameters-that-process-command-line-input.md)。
+- 輸入的預設來源是明確的物件 (例如，使用者在命令列上提供的字串) 。 如需詳細資訊，請參閱[建立 Cmdlet 來處理命令列輸入](./adding-parameters-that-process-command-line-input.md)。
 
 - 輸入處理方法也可以從管線上上游 Cmdlet 的輸出物件接收輸入。 如需詳細資訊，請參閱[建立 Cmdlet 來處理管線輸入](./adding-parameters-that-process-pipeline-input.md)。 請注意，您的 Cmdlet 可以從命令列和管線來源的組合接收輸入。
 
@@ -125,13 +118,13 @@ End Sub 'ProcessRecord
 > [!IMPORTANT]
 > Cmdlet 絕對不應呼叫[system.object *](/dotnet/api/System.Console.WriteLine)或其對等的。
 
-- 當程式完成處理時，您的 Cmdlet 可能會有要清除的物件變數（例如，如果它在[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中開啟檔案控制代碼，並讓控制碼保持開啟以供[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)使用）。 請務必記住，Windows PowerShell 執行時間不一定會呼叫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，這應該會執行物件清除。
+- 當您的 Cmdlet 完成處理時，可能會有物件變數要清除 (例如，如果它在[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中開啟檔案控制代碼，並讓控制碼保持開啟以供[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)) 使用。 請務必記住，Windows PowerShell 執行時間不一定會呼叫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)方法，這應該會執行物件清除。
 
-例如，如果指令程式中途取消，或 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.object](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 。 因此，需要物件清理的 Cmdlet 應該會執行完整的[System.IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以同時呼叫[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)和處理結束時的 [IDisposable](/dotnet/api/System.IDisposable.Dispose)。
+例如，如果指令程式中途取消，或 Cmdlet 的任何部分發生終止錯誤，則可能不會呼叫[system.object](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) 。 因此，需要物件清理的 Cmdlet 應該會執行完整的[IDisposable](/dotnet/api/System.IDisposable)模式，包括完成項，讓執行時間可以在處理結束時同時呼叫[system.web](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)和[IDisposable. Dispose *](/dotnet/api/System.IDisposable.Dispose)程式。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
-如需完整C#的範例程式碼，請參閱[GetProcessSample01 範例](./getprocesssample01-sample.md)。
+如需完整的 c # 範例程式碼，請參閱[GetProcessSample01 範例](./getprocesssample01-sample.md)。
 
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
 
@@ -151,7 +144,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     get-proc
     ```
 
-    下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -175,7 +168,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     $p.length
     ```
 
-    下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```output
     63
@@ -187,7 +180,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     $p[6]
     ```
 
-    下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -201,7 +194,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     $p[6].starttime
     ```
 
-    下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -221,7 +214,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -243,7 +236,7 @@ Windows PowerShell 會使用 .NET 物件在 Cmdlet 之間傳遞資訊。 因此�
         TypeName: System.Diagnostics.Process
     ```
 
-    下列輸出隨即出現。
+    即會出現下列輸出。
 
     ```output
     Name                     MemberType Definition

@@ -1,23 +1,16 @@
 ---
 title: Runspace10 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
-caps.latest.revision: 7
-ms.openlocfilehash: 1a73c0b6731073b1bac941e323416e8c45d2c252
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4d858c432c6221f2347f6de664d1e4ee299f5801
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565235"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784940"
 ---
 # <a name="runspace10-sample"></a>Runspace10 範例
 
-這個範例會示範如何建立預設初始會話狀態、如何將 Cmdlet 新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、如何建立使用初始會話狀態的執行時間，以及如何使用[system.web](/dotnet/api/system.management.automation.powershell)物件來執行此命令，以及如何執行該命令。
+這個範例會示範如何建立預設初始會話狀態、如何將 Cmdlet 新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、如何建立使用初始會話狀態的執行時間，以及如何使用[system.web](/dotnet/api/system.management.automation.powershell)物件來執行命令。
 
 ## <a name="requirements"></a>需求
 
@@ -27,9 +20,9 @@ ms.locfileid: "83565235"
 
 這個範例會示範下列各項。
 
-- 建立[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的程式。
+- 建立[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
-- 將 Cmdlet （由主應用程式定義）新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+- 將主機應用程式) 定義的 Cmdlet (新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
 - 建立使用物件的[system.web 工作空間](/dotnet/api/System.Management.Automation.Runspaces.Runspace)物件。
 
@@ -41,7 +34,7 @@ ms.locfileid: "83565235"
 
 ## <a name="example"></a>範例
 
-這個範例會建立一個使用[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的執行時間，以定義當執行時間開啟時可用的元素。 在此範例中，會在初始會話狀態中新增 Get-Proc Cmdlet （由主應用程式定義），而 Cmdlet 會使用[system.web](/dotnet/api/system.management.automation.powershell)物件同步執行。
+這個範例會建立一個使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的執行時間，以定義當執行時間開啟時可用的元素。 在此範例中，主機應用程式) 所定義的 (，會新增至初始會話狀態，而 Cmdlet 會使用[system.web](/dotnet/api/system.management.automation.powershell)物件同步執行。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

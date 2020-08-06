@@ -1,23 +1,16 @@
 ---
 title: 自訂格式檔案 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
-caps.latest.revision: 15
-ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369827"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784345"
 ---
 # <a name="custom-formatting-files"></a>自訂格式設定檔案
 
-Cmdlet、函式和腳本所傳回物件的顯示格式是使用格式檔案（types.ps1xml 檔案）所定義。 Windows PowerShell 會提供這些檔案中的幾個，以定義 Windows PowerShell Cmdlet 所傳回之物件的預設顯示格式。 不過，您也可以建立自己的自訂格式檔案，以覆寫預設的顯示格式，或定義您自己的命令所傳回的物件顯示。
+Cmdlet、函式和腳本所傳回物件的顯示格式是使用格式檔案定義 ( # B0 xml 檔案) 。 Windows PowerShell 會提供這些檔案中的幾個，以定義 Windows PowerShell Cmdlet 所傳回之物件的預設顯示格式。 不過，您也可以建立自己的自訂格式檔案，以覆寫預設的顯示格式，或定義您自己的命令所傳回的物件顯示。
 
 Windows PowerShell 會使用這些格式檔案中的資料來判斷要顯示的內容，以及資料的格式化方式。 顯示的資料可以包含物件的屬性或腳本區塊的值。  如果您想要顯示無法直接從物件的屬性取得的某個值，則會使用腳本區塊。 例如，您可能會想要新增物件的兩個屬性值，並將總和顯示為個別的資料片段。 當您撰寫自己的格式化檔案時，您必須定義要顯示之物件的*視圖*。 您可以為每個物件定義單一視圖，您可以為多個物件定義單一視圖，也可以為相同的物件定義多個視圖。 您可以定義的視圖數目沒有限制。
 
@@ -40,7 +33,7 @@ Windows PowerShell 會使用這些格式檔案中的資料來判斷要顯示的�
 
 ## <a name="view-xml-elements"></a>View XML 元素
 
-下列範例顯示用來定義包含兩個數據行之資料表視圖的 XML 標記。 [ViewDefinitions](../format/viewdefinitions-element-format.md)元素是格式檔案中定義之所有視圖的容器元素。 [View](../format/view-element-format.md)元素會定義特定的資料表、清單、寬型或自訂視圖。 在每個視圖中， [name](../format/name-element-for-view-format.md)元素會指定視圖的名稱， [ViewSelectedBy](../format/viewselectedby-element-format.md)元素會定義使用此視圖的物件，而不同的控制項專案（例如 `TableControl` 專案）會定義視圖的格式。
+下列範例顯示用來定義包含兩個數據行之資料表視圖的 XML 標記。 [ViewDefinitions](../format/viewdefinitions-element-format.md)元素是格式檔案中定義之所有視圖的容器元素。 [View](../format/view-element-format.md)元素會定義特定的資料表、清單、寬型或自訂視圖。 在每個視圖中， [name](../format/name-element-for-view-format.md)元素會指定視圖的名稱， [ViewSelectedBy](../format/viewselectedby-element-format.md)元素會定義使用此視圖的物件，而不同的控制項專案 (例如 `TableControl` 元素) 定義視圖的格式。
 
 ```xml
 ViewDefinitions
@@ -81,7 +74,7 @@ ViewDefinitions
 
 [資料表視圖](../format/creating-a-table-view.md)
 
-[清單檢視](../format/creating-a-list-view.md)
+[清單視圖](../format/creating-a-list-view.md)
 
 [寬視圖](../format/creating-a-wide-view.md)
 

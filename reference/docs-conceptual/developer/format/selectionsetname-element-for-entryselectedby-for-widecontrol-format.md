@@ -1,25 +1,18 @@
 ---
-title: WideControl 之之 entryselectedby 的 SelectionSetName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: WideControl (格式) 的之 entryselectedby 的 SelectionSetName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c9c6e18f-6cca-465c-bd20-3969e7897a96
-caps.latest.revision: 10
-ms.openlocfilehash: 6b6a4a4647412d11d947f1dc4ea12d1e05ff536e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 546225b0619ebec83d04a7e27bbc298ffef0a14d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361977"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785246"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-widecontrol-format"></a>WideControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
 
 為定義指定一組 .NET 物件。 每當顯示這些物件的其中一個時，就會使用定義。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） WideControl 元素（格式） WideEntries 元素（格式） WideEntry 元素（格式）之 entryselectedby 元素（代表的 WideEntry （格式） SelectionSetName 元素）WideEntry 的之 entryselectedby （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 專案 (格式) WideEntries 專案 (格式) WideEntry 專案 (格式) 之 entryselectedby 元素用於 WideEntry (格式) SelectionSetName 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -28,9 +21,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `SelectionSetName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,11 +33,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[WideEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-wideentry-format.md)|定義使用此寬專案的 .NET 類型，或必須存在才能使用此專案的條件。|
+|[WideEntry 的 EntrySelectedBy 元素 (格式)](./entryselectedby-element-for-wideentry-format.md)|定義使用此寬專案的 .NET 類型，或必須存在才能使用此專案的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -60,10 +53,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[建立寬型視圖](./creating-a-wide-view.md)
+[建立寬型檢視](./creating-a-wide-view.md)
 
 [定義選取範圍集合](./defining-selection-sets.md)
 
-[WideEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-wideentry-format.md)
+[WideEntry 的 EntrySelectedBy 元素 (格式)](./entryselectedby-element-for-wideentry-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

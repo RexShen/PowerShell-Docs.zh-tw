@@ -1,25 +1,18 @@
 ---
-title: ListControl 之之 entryselectedby 的 SelectionSetName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: ListControl (格式) 的之 entryselectedby 的 SelectionSetName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cff7763c-5ce0-49c1-a480-1249c9f57a13
-caps.latest.revision: 11
-ms.openlocfilehash: 7fd431b4b1ddecd3a7358c2bf97f299b97162b34
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4315d81da4ceeb7a5b171087434ae15fb09e6592
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361997"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785263"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-listcontrol-format"></a>ListControl 之 EntrySelectedBy 的 SelectionSetName 元素 (格式)
 
 為清單專案指定一組 .NET 物件。 可以為專案指定的選擇集數目沒有限制。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） ListControl 元素（格式） ListEntries 元素（格式） ListEntry 元素（格式）之 entryselectedby 元素（代表的 ListEntry （格式） SelectionSetName 元素）ListEntry 的之 entryselectedby （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 專案 (格式) ListEntries 專案 (格式) ListEntry 專案 (格式) 之 entryselectedby 元素用於 ListEntry (格式) SelectionSetName 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `SelectionSetName` 元素的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `SelectionSetName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[ListEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|定義使用此清單專案的 .NET 類型，或必須存在才能使用此專案的條件。|
+|[ListEntry (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|定義使用此清單專案的 .NET 類型，或必須存在才能使用此專案的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -72,8 +65,8 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[建立清單視圖](./creating-a-list-view.md)
+[建立清單檢視](./creating-a-list-view.md)
 
-[ListEntry 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
+[ListEntry (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

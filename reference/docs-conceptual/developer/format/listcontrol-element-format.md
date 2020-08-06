@@ -1,25 +1,18 @@
 ---
-title: ListControl 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: ListControl 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 37beeb0b-7a81-4747-becb-e309e17278fb
-caps.latest.revision: 12
-ms.openlocfilehash: 7a117c25b0d117dc846ba8e060e31e838b5edd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362777"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785722"
 ---
 # <a name="listcontrol-element-format"></a>ListControl 元素 (格式)
 
 定義視圖的清單格式。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） ListControl 元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +23,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） ListControl 
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ListControl` 專案的父元素。 此元素必須只包含單一子專案。
+下列各節說明屬性、子專案和元素的父元素 `ListControl` 。 此元素必須只包含單一子專案。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,13 +35,13 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） ListControl 
 
 |元素|描述|
 |-------------|-----------------|
-|[ListEntries 元素（格式）](./listentries-element-for-listcontrol-format.md)|必要項目。<br /><br /> 提供清單視圖的定義。|
+|[ListEntries 元素 (格式) ](./listentries-element-for-listcontrol-format.md)|必要元素。<br /><br /> 提供清單視圖的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[View 元素（格式）](./view-element-format.md)|定義用來顯示一或多個物件成員的視圖。|
+|[檢視元素 (格式)](./view-element-format.md)|定義用來顯示一或多個物件成員的視圖。|
 
 ## <a name="remarks"></a>備註
 
@@ -74,10 +67,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） ListControl 
 
 ## <a name="see-also"></a>另請參閱
 
-[View 元素（格式）](./view-element-format.md)
+[檢視元素 (格式)](./view-element-format.md)
 
-[ListEntries 元素（格式）](./listentries-element-for-listcontrol-format.md)
+[ListEntries 元素 (格式) ](./listentries-element-for-listcontrol-format.md)
 
-[建立清單視圖](./creating-a-list-view.md)
+[建立清單檢視](./creating-a-list-view.md)
 
 [撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)

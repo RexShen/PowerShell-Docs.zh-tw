@@ -1,19 +1,12 @@
 ---
 title: Credential 屬性宣告 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
-caps.latest.revision: 6
-ms.openlocfilehash: 49a62ccb09f06f77862d4737199e58293e7fbe0a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a6deca52fa6c9e46138ae92401f58ac5dbd15852
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369887"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784362"
 ---
 # <a name="credential-attribute-declaration"></a>認證屬性宣告
 

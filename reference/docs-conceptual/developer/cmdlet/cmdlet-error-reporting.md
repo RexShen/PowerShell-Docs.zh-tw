@@ -1,25 +1,18 @@
 ---
 title: Cmdlet 錯誤報表 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error records [PowerShell], terminating
 - non-terminating errors [PowerShell]
 - error records [PowerShell]
 - terminating errors [PowerShell]
 - error records [PowerShell], non-terminating
-ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
-caps.latest.revision: 8
-ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30b19914253db5f517f5ab76623b54aced0c0598
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365917"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784464"
 ---
 # <a name="cmdlet-error-reporting"></a>Cmdlet 錯誤報表
 
@@ -64,7 +57,7 @@ PowerShell 會將此識別碼與 Cmdlet 識別碼結合，以建立可在稍後�
 
 - 將不同、高度特定的錯誤識別碼指派給不同的程式碼路徑。 每個呼叫[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)或[ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)的程式碼路徑，都應該有自己的錯誤識別碼。（可能為）。
 
-- 對於終止和非終止錯誤而言，錯誤識別碼應該是 Common Language Runtime （CLR）例外狀況類型的唯一。
+- 錯誤識別碼對 Common Language Runtime 而言應該是唯一的， (CLR) 例外狀況類型用於終止和非終止錯誤。
 
 - 請勿變更 Cmdlet 或 PowerShell 提供者版本之間的錯誤識別碼的語法。 建立錯誤識別碼的語義之後，它應該會在 Cmdlet 的整個生命週期中保持不變。
 
@@ -82,12 +75,12 @@ PowerShell 會將此識別碼與 Cmdlet 識別碼結合，以建立可在稍後�
 
 如需可用錯誤類別的描述，請參閱[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列舉。 一般來說，您應該盡可能避免使用**aad-userreadusingalternativesecurityid-noerror**、 **UndefinedError**和**GenericError** 。
 
-當使用者將 `$ErrorView` 設定為**CategoryView**時，可以根據分類來查看錯誤。
+當使用者設定為 CategoryView 時，可以根據類別來查看錯誤 `$ErrorView` 。 **CategoryView**
 
 ## <a name="see-also"></a>另請參閱
 
-[Cmdlet 總覽](./cmdlet-overview.md)
+[Cmdlet 概觀](./cmdlet-overview.md)
 
-[Cmdlet 輸出的類型](./types-of-cmdlet-output.md)
+[Cmdlet 輸出類型](./types-of-cmdlet-output.md)
 
 [Windows PowerShell 參考](../windows-powershell-reference.md)

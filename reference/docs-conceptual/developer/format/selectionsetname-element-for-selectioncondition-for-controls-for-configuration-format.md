@@ -1,25 +1,18 @@
 ---
-title: 設定之控制項的 SelectionCondition 的 SelectionSetName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: SelectionCondition 之控制項的 SelectionSetName 元素，用於設定 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7dcaeadb-4e79-47a0-96e2-8952af26abbe
-caps.latest.revision: 7
-ms.openlocfilehash: 5db35a8094ea2bb966c8d6a96802c72f64c05c17
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 62f186be9e4b1dd5a297add0ce82011bc1ccdcd1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368277"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785229"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format"></a>設定之控制項的 SelectionCondition 的 SelectionSetName 元素 (格式)
 
 指定觸發條件的 .NET 類型集合。 當此集合中的任何類型都存在時，就會符合條件，並使用此控制項來顯示該物件。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
 
-Configuration 元素（格式）控制項的設定（格式）控制項元素的元素，用於控制項的設定（format） CustomControl 元素，用於控制項的 CustomControl 的設定（格式） CustomEntries 元素CustomControl for 控制項的設定（格式） CustomEntry 元素，用於 CustomEntry 的設定（格式） SelectionCondition 元素的之 entryselectedby 元素適用于設定之控制項的 SelectionCondition 設定（格式） SelectionSetName 元素（格式）
+Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的控制項的 CustomControl 的 CustomEntries 元素) CustomEntry 元素針對設定 (格式的控制項的 CustomControl) 之 entryselectedby 元素用於 CustomEntry 的控制項設定 (格式)  (之 entryselectedby 元素用於設定) 格式之控制項的 SelectionSetName 專案 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式）控制項的設定（格式）控制項元素的
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `SelectionSetName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式）控制項的設定（格式）控制項元素的
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在的條件，才能使用控制項定義。|
+|[設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在的條件，才能使用控制項定義。|
 
 ## <a name="text-value"></a>文字值
 
@@ -57,10 +50,10 @@ Configuration 元素（格式）控制項的設定（格式）控制項元素的
 
 ## <a name="see-also"></a>另請參閱
 
-[設定之控制項的之 entryselectedby 的 SelectionCondition 元素（格式）](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+[設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 [定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)
 
 [定義選取範圍集合](./defining-selection-sets.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

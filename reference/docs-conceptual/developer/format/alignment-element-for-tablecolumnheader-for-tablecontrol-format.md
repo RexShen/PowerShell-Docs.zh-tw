@@ -1,25 +1,18 @@
 ---
-title: TableControl 之之 tablecolumnheader 的對齊元素（格式） |Microsoft Docs
-ms.custom: ''
+title: TableControl (格式的之 tablecolumnheader 的對齊元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
-caps.latest.revision: 19
-ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bf395b84af90d725c14b2f0ef569f72b5fcc613
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364377"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783920"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl 之 TableColumnHeader 的對齊元素 (格式)
 
 定義資料行標頭中的資料顯示方式。
 
-之 tablecolumnheader 的設定元素（格式） ViewDefinitions 元素（格式） View 元素（format） TableControl 元素（格式） TableHeaders 元素（格式）之 tablecolumnheader 元素（格式）對齊元素
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableHeaders 專案 (格式) 之 tablecolumnheader 專案 (格式) 之 tablecolumnheader (格式的對齊元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72364377"
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `Alignment` 專案的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `Alignment` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72364377"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
+|[TableColumnHeader 元素 (格式)](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
 
 ## <a name="text-value"></a>文字值
 
@@ -61,7 +54,7 @@ ms.locfileid: "72364377"
 
 ## <a name="example"></a>範例
 
-這個範例會顯示其資料在左側對齊的 `TableColumnHeader` 元素。
+這個範例會顯示 `TableColumnHeader` 其資料在左側對齊的元素。
 
 ```xml
 <TableColumnHeader>
@@ -73,8 +66,8 @@ ms.locfileid: "72364377"
 
 ## <a name="see-also"></a>另請參閱
 
-[建立資料表視圖](./creating-a-table-view.md)
+[建立表格檢視](./creating-a-table-view.md)
 
-[之 tablecolumnheader 元素（格式）](./tablecolumnheader-element-format.md)
+[TableColumnHeader 元素 (格式)](./tablecolumnheader-element-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

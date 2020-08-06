@@ -1,29 +1,22 @@
 ---
 title: 驗證參數輸入 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parameters, validation rules
 - validation, examples
 - validation
-ms.assetid: 3f15bf20-a068-4a7d-a170-bc43f755d1fe
-caps.latest.revision: 14
-ms.openlocfilehash: 171e3e974619e197a0bcc9dfc759297005e34568
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e12c715cfa24edfff958b12be1f3517b2f545256
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363507"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783988"
 ---
 # <a name="validating-parameter-input"></a>驗證參數輸入
 
 PowerShell 可以用數種方式驗證傳遞給 Cmdlet 參數的引數。
 PowerShell 可以驗證長度、範圍，以及引數字元的模式。
-它可以驗證可用的引數數目（計數）。
+它可以驗證 (計數) 可用的引數數目。
 這些驗證規則是由使用 Cmdlet 類別的公用屬性上的參數屬性所宣告的驗證屬性所定義。
 
 若要驗證參數引數，PowerShell 執行時間會使用驗證屬性所提供的資訊，在執行 Cmdlet 之前確認參數的值。

@@ -1,25 +1,18 @@
 ---
-title: 設定的 Controls 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 設定 (格式) 的 Controls 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4d4ef63d-5866-4319-ba00-7ed96de26821
-caps.latest.revision: 18
-ms.openlocfilehash: ac9f7ff08f6e87ef83b5a2fe23fc58ee2651566d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 44b9db0d3523e5e9086da9911882b258a2a54ca6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368997"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783784"
 ---
 # <a name="controls-element-for-configuration-format"></a>設定的控制項元素 (格式)
 
 定義可供格式檔案的所有視圖使用的通用控制項。
 
-Configuration 元素（格式）控制設定的元素（格式）
+Configuration 元素 (格式) Controls 設定 (格式的元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -29,9 +22,9 @@ Configuration 元素（格式）控制設定的元素（格式）
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Controls` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `Controls` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,13 +34,13 @@ Configuration 元素（格式）控制設定的元素（格式）
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的控制項元素（格式）](./control-element-for-controls-for-configuration-format.md)|必要項目。<br /><br /> 定義可供格式檔案的所有視圖使用的通用控制項。|
+|[設定之控制項的控制項元素 (格式)](./control-element-for-controls-for-configuration-format.md)|必要元素。<br /><br /> 定義可供格式檔案的所有視圖使用的通用控制項。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[Configuration 元素（格式）](./configuration-element-format.md)|代表格式化檔案的最上層元素。|
+|[設定元素 (格式)](./configuration-element-format.md)|代表格式化檔案的最上層元素。|
 
 ## <a name="remarks"></a>備註
 
@@ -55,8 +48,8 @@ Configuration 元素（格式）控制設定的元素（格式）
 
 ## <a name="see-also"></a>另請參閱
 
-[Configuration 元素（格式）](./configuration-element-format.md)
+[設定元素 (格式)](./configuration-element-format.md)
 
-[設定之控制項的控制項元素（格式）](./control-element-for-controls-for-configuration-format.md)
+[設定之控制項的控制項元素 (格式)](./control-element-for-controls-for-configuration-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
-title: GroupBy 的標籤元素（格式） |Microsoft Docs
-ms.custom: ''
+title: GroupBy (格式的標籤元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
-caps.latest.revision: 11
-ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07b4d037472a9dd2329e94576ec10f5b82f46b34
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365197"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785773"
 ---
 # <a name="label-element-for-groupby-format"></a>GroupBy 的標籤元素 (格式)
 
 指定遇到新群組時所顯示的標籤。
 
-設定專案（格式） ViewDefinitions 元素（格式） View 元素（format） groupby 元素（格式） GroupBy 專案（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素，用於 GroupBy (格式) 標籤元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ms.locfileid: "72365197"
 <Label>DisplayedLabel</Label>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述 `Label` 專案的屬性、子專案和父項目。
+下列各節描述元素的屬性、子專案和父項目 `Label` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ms.locfileid: "72365197"
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[View 的 GroupBy 元素（格式）](./groupby-element-for-view-format.md)|定義新群組物件的顯示方式。|
+|[檢視的 GroupBy 元素 (格式)](./groupby-element-for-view-format.md)|定義新群組物件的顯示方式。|
 
 ## <a name="text-value"></a>文字值
 
@@ -55,7 +48,7 @@ ms.locfileid: "72365197"
 
 ## <a name="example"></a>範例
 
-下列範例會顯示新群組的標籤。 顯示的標籤看起來會像這樣： `Service Type: NewValueofProperty`
+下列範例會顯示新群組的標籤。 顯示的標籤看起來會像這樣：`Service Type: NewValueofProperty`
 
 ```xml
 <GroupBy>
@@ -65,10 +58,10 @@ ms.locfileid: "72365197"
 
 ```
 
-如需包含此元素之完整格式檔案的範例，請參閱[寬視圖（GroupBy）](./wide-view-groupby.md)。
+如需包含此元素的完整格式檔案範例，請參閱[Wide View (GroupBy) ](./wide-view-groupby.md)。
 
 ## <a name="see-also"></a>另請參閱
 
-[View 的 GroupBy 元素（格式）](./groupby-element-for-view-format.md)
+[檢視的 GroupBy 元素 (格式)](./groupby-element-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

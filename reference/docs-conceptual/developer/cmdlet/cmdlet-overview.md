@@ -1,13 +1,12 @@
 ---
 title: Cmdlet 概觀
 ms.date: 06/11/2020
-ms.topic: article
-ms.openlocfilehash: e179bf371c26781cf1c8db641c46c0329036c8ea
-ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
+ms.openlocfilehash: 576df03f35dff80479d1fce18cf4306c9219d42f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/12/2020
-ms.locfileid: "84722825"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784396"
 ---
 # <a name="cmdlet-overview"></a>Cmdlet 概觀
 
@@ -16,7 +15,7 @@ Cmdlet 是在 PowerShell 環境中使用的輕量命令。 PowerShell 執行時�
 ## <a name="cmdlets"></a>指令程式
 
 Cmdlet 會執行動作，而且通常會將 Microsoft .NET 物件傳回給管線中的下一個命令。 Cmdlet 是參與 PowerShell 管線語義的單一命令。
-這包括 binary （c #） Cmdlet、advanced script 函數、CDXML 和工作流程。
+這包括二進位 (c # ) Cmdlet、advanced script 函數、CDXML 和工作流程。
 
 此 SDK 檔描述如何建立以 c # 撰寫的二進位 Cmdlet。 如需以腳本為基礎的 Cmdlet 的詳細資訊，請參閱：
 
@@ -60,12 +59,12 @@ Cmdlet 會執行動作，而且通常會將 Microsoft .NET 物件傳回給管線
 - [BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)：用來為指令程式提供選擇性的一次性、前置處理的功能。
 - [ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)：用來提供 Cmdlet 的記錄依記錄的處理功能（）。 視 Cmdlet 的輸入而定，可能會呼叫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法任意次數，或根本不需要任何次數。
 - System.servicemodel：用來為 Cmdlet 提供選擇性的一次性、後置處理的[功能。](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
-- [StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)：當使用者以非同步方式停止 Cmdlet （例如，按下<kbd>CTRL</kbd> + <kbd>C</kbd>）時，用來停止處理。
+- [StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)：用來在使用者以非同步方式停止 Cmdlet 時停止處理 (例如，按下<kbd>CTRL</kbd> + <kbd>C</kbd>) 。
 
 如需這些方法的詳細資訊，請參閱[Cmdlet 輸入處理方法](./cmdlet-input-processing-methods.md)。
 
 當您執行 Cmdlet 時，您必須至少覆寫其中一個輸入處理方法。
-一般來說， **ProcessRecord （）** 是您覆寫的方法，因為它會針對 Cmdlet 所處理的每一筆記錄呼叫。 相反地， **BeginProcessing （）** 方法和**EndProcessing （）** 方法會呼叫一次來執行記錄的前置處理或後置處理。 如需這些方法的詳細資訊，請參閱[輸入處理方法](cmdlet-input-processing-methods.md)。
+一般而言， **ProcessRecord ( # B1**是您覆寫的方法，因為它會針對 Cmdlet 所處理的每一筆記錄進行呼叫。 相反地， **BeginProcessing ( # B1**方法和**EndProcessing ( # B3**方法會呼叫一次來執行記錄的前置處理或後置處理。 如需這些方法的詳細資訊，請參閱[輸入處理方法](cmdlet-input-processing-methods.md)。
 
 ### <a name="shouldprocess-feature"></a>ShouldProcess 功能
 
@@ -93,7 +92,7 @@ Windows PowerShell 支援衍生自下列兩個基類的 Cmdlet。
   衍生自這個類別可讓 Cmdlet 使用 Windows PowerShell 執行時間上的最小相依性集合。 這樣有兩個優點。 第一個優點是 Cmdlet 物件較小，而且您較不可能受到 PowerShell 執行時間變更的影響。 第二個優點是，如果您需要，可以直接建立 Cmdlet 物件的實例，然後直接叫用它，而不是透過 PowerShell 執行時間叫用它。
 
 - 較複雜的 Cmdlet 是以衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基類的 .net 類別為基礎。 衍生自這個類別可讓您更容易存取 PowerShell 執行時間。 此存取可讓您的 Cmdlet 呼叫腳本、存取提供者，以及存取目前的會話狀態。
-  （若要存取目前的會話狀態，您可以取得並設定會話變數和喜好設定）。不過，衍生自這個類別會增加 Cmdlet 物件的大小，這表示您的 Cmdlet 會與目前的 PowerShell 執行時間版本緊密結合。
+   (存取目前的會話狀態時，您會取得並設定會話變數與喜好設定。 ) 不過，衍生自這個類別會增加 Cmdlet 物件的大小，這表示您的 Cmdlet 會與目前的 PowerShell 執行時間版本緊密結合。
 
 一般而言，除非您需要 PowerShell 執行時間的延伸存取權，否則您應該衍生自[system.object](/dotnet/api/System.Management.Automation.Cmdlet)類別。
 不過，PowerShell 執行時間具有廣泛的記錄功能，可執行 Cmdlet。 如果您的審核模型相依于此記錄，您可以藉由衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別，防止從另一個 Cmdlet 中執行 Cmdlet。

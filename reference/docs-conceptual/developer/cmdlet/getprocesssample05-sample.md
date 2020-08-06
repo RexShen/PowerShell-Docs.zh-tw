@@ -1,19 +1,12 @@
 ---
 title: GetProcessSample05 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
-caps.latest.revision: 6
-ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365697"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784192"
 ---
 # <a name="getprocesssample05-sample"></a>GetProcessSample05 範例
 
@@ -23,11 +16,11 @@ ms.locfileid: "72365697"
 
 1. 開啟 Windows Explorer 並流覽至 Samples 目錄底下的 GetProcessSample05 目錄。
 
-   安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample05 資料夾。 預設位置為 C:\Program Files （x86） \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05。
+   安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample05 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05。
 
-2. 按兩下方案（.sln）檔案的圖示。 這會在 Visual Studio 中開啟範例專案。
+2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Visual Studio 中開啟範例專案。
 
-3. 在 [建置] 功能表中，選取 [建置方案]。
+3. 在 [建置]**** 功能表中，選取 [建置方案]****。
 
    範例的程式庫會建立在預設的 \bin 或 \bin\debug 目錄中。
 

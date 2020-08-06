@@ -1,23 +1,16 @@
 ---
 title: 建立清單視圖 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
-caps.latest.revision: 14
-ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24eb673e0db011a1439fa5ba1f2966fcc3bdc338
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368977"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783767"
 ---
 # <a name="creating-a-list-view"></a>建立清單檢視
 
-清單視圖會顯示單一資料行中的資料（依序排列）。 清單中顯示的資料可以是 .NET 屬性的值或腳本的值。
+清單視圖會依序)  (顯示單一資料行中的資料。 清單中顯示的資料可以是 .NET 屬性的值或腳本的值。
 
 ## <a name="a-list-view-display"></a>清單視圖顯示
 
@@ -95,11 +88,11 @@ ServiceType         : Win32OwnProcess
 
 下列 XML 元素可用來定義清單視圖：
 
-- [View](./view-element-format.md)元素是清單視圖的父元素。 （這是資料表、寬和自訂控制項視圖的相同父元素）。
+- [View](./view-element-format.md)元素是清單視圖的父元素。  (這是資料表、寬和自訂控制項視圖的相同父元素。 ) 
 
 - [Name](./name-element-for-view-format.md)元素會指定視圖的名稱。 所有的視圖都需要此元素。
 
-- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 此項目為必要項。
+- [ViewSelectedBy](./viewselectedby-element-format.md)元素會定義使用此視圖的物件。 這個元素是必要的。
 
 - [GroupBy](./groupby-element-for-view-format.md)元素會定義何時顯示新的物件群組。 每當特定屬性或腳本的值變更時，就會啟動新的群組。 這是選擇性的項目。
 
@@ -107,11 +100,11 @@ ServiceType         : Win32OwnProcess
 
 - [ListControl](./listcontrol-element-format.md)元素會定義要在視圖中顯示的內容，以及其格式化方式。 清單視圖類似于所有其他的視圖，可以顯示物件屬性的值或腳本所產生的值。
 
-如需定義簡單列表視圖的完整格式檔案範例，請參閱[清單視圖（基本）](./list-view-basic.md)。
+如需定義簡單列表視圖的完整格式檔案範例，請參閱[ (基本) 的清單視圖](./list-view-basic.md)。
 
 ## <a name="providing-definitions-for-your-list-view"></a>提供清單視圖的定義
 
-清單視圖可以藉由使用[ListControl](./listcontrol-element-format.md)專案的子項目，提供一或多個定義。 一般而言，視圖只會有一個定義。 在下列範例中，此視圖會提供單一定義來顯示系統的數個屬性。 [Displayproperty = Fullname](/dotnet/api/System.Diagnostics.Process)物件。 清單視圖可以顯示內容的值或腳本的值（在此範例中未顯示）。
+清單視圖可以藉由使用[ListControl](./listcontrol-element-format.md)專案的子項目，提供一或多個定義。 一般而言，視圖只會有一個定義。 在下列範例中，此視圖會提供單一定義來顯示系統的數個屬性。 [Displayproperty = Fullname](/dotnet/api/System.Diagnostics.Process)物件。 清單視圖可以顯示內容的值或腳本的值 (不會顯示在範例) 中。
 
 ```xml
 <ListControl>
@@ -141,7 +134,7 @@ ServiceType         : Win32OwnProcess
 
 - [ListControl](./listcontrol-element-format.md)元素及其子項目會定義要在視圖中顯示的內容。
 
-- [ListEntries](./listentries-element-for-listcontrol-format.md)元素會提供視圖的定義。 在大部分的情況下，視圖只會有一個定義。 此項目為必要項。
+- [ListEntries](./listentries-element-for-listcontrol-format.md)元素會提供視圖的定義。 在大部分的情況下，視圖只會有一個定義。 這個元素是必要的。
 
 - [ListEntry](./listentry-element-for-listcontrol-format.md)元素會提供 view 的定義。 至少需要一個[ListEntry](./listentry-element-for-listcontrol-format.md) ;不過，您可以新增的專案數沒有最大限制。 在大部分的情況下，視圖只會有一個定義。
 
@@ -155,13 +148,13 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素會指定其值顯示在資料列中的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-- [Label](./label-element-for-listitem-for-listcontrol-format.md)元素會指定顯示在資料列中屬性或腳本值左邊的標籤。 這是選擇性的項目。 如果未指定標籤，則會顯示內容或腳本的名稱。 如需完整範例，請參閱[清單視圖（標籤）](./list-view-labels.md)。
+- [Label](./label-element-for-listitem-for-listcontrol-format.md)元素會指定顯示在資料列中屬性或腳本值左邊的標籤。 這是選擇性的項目。 如果未指定標籤，則會顯示內容或腳本的名稱。 如需完整範例，請參閱[清單視圖 (標籤) ](./list-view-labels.md)。
 
 - [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)元素會指定必須存在的條件，才能顯示資料列。 如需將條件新增至清單視圖的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。 這是選擇性的項目。
 
 - [[字串](./formatstring-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定用來顯示內容或腳本值的模式。 這是選擇性的項目。
 
-如需定義簡單列表視圖的完整格式檔案範例，請參閱[清單視圖（基本）](./list-view-basic.md)。
+如需定義簡單列表視圖的完整格式檔案範例，請參閱[ (基本) 的清單視圖](./list-view-basic.md)。
 
 ## <a name="defining-the-objects-that-use-the-list-view"></a>定義使用清單視圖的物件
 
@@ -185,7 +178,7 @@ ServiceType         : Win32OwnProcess
 
 - [TypeName](./typename-element-for-viewselectedby-format.md)元素會指定視圖所顯示的 .net 物件。 需要完整的 .NET 類型名稱。 您必須為此視圖指定至少一個類型或選取範圍，但不能指定的元素數目上限。
 
-如需完整格式檔案的範例，請參閱[清單視圖（基本）](./list-view-basic.md)。
+如需完整格式檔案的範例，請參閱[ (基本) 的清單視圖](./list-view-basic.md)。
 
 下列範例會使用[ViewSelectedBy](./viewselectedby-element-format.md)和[SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)元素。 使用 [選取範圍]，您可以在其中擁有一組使用多個視圖顯示的相關物件，例如當您為相同的物件定義清單視圖和資料表視圖時。 如需有關如何建立選擇集的詳細資訊，請參閱[定義選取範圍集](./defining-selection-sets.md)。
 
@@ -221,9 +214,9 @@ ServiceType         : Win32OwnProcess
 
 - [TypeName](./typename-element-for-entryselectedby-for-listcontrol-format.md)元素會指定定義所顯示的 .net 物件。 使用此元素時，需要完整的 .NET 類型名稱。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。
 
-- [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)元素（未顯示）會指定一組可由這個定義顯示的物件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。
+- [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)元素 (不會顯示) 指定一組可由這個定義顯示的物件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。
 
-- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)元素（未顯示）會指定必須存在才能使用此定義的條件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。 如需定義選取條件的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
+- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)元素 (不會顯示) 指定必須存在才能使用此定義的條件。 您必須為定義至少指定一個類型、選擇集或選取條件，但不能指定的元素數目上限。 如需定義選取條件的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="displaying-groups-of-objects-in-a-list-view"></a>在清單視圖中顯示物件群組
 
@@ -251,11 +244,11 @@ ServiceType         : Win32OwnProcess
 
 - [CustomControlName](./customcontrolname-element-for-groupby-format.md)元素會指定用來顯示資料的通用或 view 控制項。 這是選擇性的項目。
 
-如需定義群組之完整格式檔案的範例，請參閱[清單視圖（GroupBy）](./list-view-groupby.md)。
+如需定義群組之完整格式檔案的範例，請參閱[清單視圖 (GroupBy) ](./list-view-groupby.md)。
 
 ## <a name="using-format-strings"></a>使用格式字串
 
-將字串格式化可以加入至視圖，以進一步定義資料的顯示方式。 下列範例顯示如何為 `StartTime` 屬性的值定義格式字串。
+將字串格式化可以加入至視圖，以進一步定義資料的顯示方式。 下列範例顯示如何為屬性的值定義格式化字串 `StartTime` 。
 
 ```xml
 <ListItem>
@@ -272,9 +265,9 @@ ServiceType         : Win32OwnProcess
 
 - [[字串](./formatstring-element-for-listitem-for-listcontrol-format.md)類型] 元素會指定格式模式，以定義屬性或腳本值在視圖中的顯示方式。
 
-- [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素（未顯示）會指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
+- [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素 (不會顯示) 指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
-在下列範例中，會呼叫 `ToString` 方法，以格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString`），腳本就可以呼叫該方法來格式化腳本的輸出值。
+在下列範例中， `ToString` 會呼叫方法來格式化腳本的值。 腳本可以呼叫物件的任何方法。 因此，如果物件具有具有格式化參數的方法（例如 `ToString` ），則腳本可以呼叫該方法來格式化腳本的輸出值。
 
 ```xml
 <ListItem>
@@ -289,7 +282,7 @@ ServiceType         : Win32OwnProcess
 
 - [專案類型[] 元素會](./listitem-element-for-listitems-for-listcontrol-format.md)指定視圖所顯示的資料。
 
-- [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素（未顯示）會指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
+- [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)元素 (不會顯示) 指定由視圖顯示其值的腳本。 您必須指定腳本或屬性，但不能同時指定這兩者。
 
 ## <a name="see-also"></a>另請參閱
 

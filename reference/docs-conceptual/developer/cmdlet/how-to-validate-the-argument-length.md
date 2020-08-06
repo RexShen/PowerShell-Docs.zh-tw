@@ -1,25 +1,18 @@
 ---
 title: 如何驗證引數長度 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateLength attribute, example
-ms.assetid: d5ddaa6e-4904-46da-beb0-0295a8f38332
-caps.latest.revision: 12
-ms.openlocfilehash: 8a21675acd087df93f93c25952c78931255d60b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aa0545def6d9628f6b41090a425f0c5af25f6ad7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365487"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784073"
 ---
 # <a name="how-to-validate-the-argument-length"></a>如何驗證引數長度
 
-這個範例示範如何指定驗證規則，讓 Windows PowerShell 執行時間可以在執行 Cmdlet 之前，用來檢查參數引數的字元數（長度）。 您可以藉由宣告 ValidateLength 屬性來設定此驗證規則。
+這個範例示範如何指定 Windows PowerShell 執行時間可用來檢查字元數的驗證規則， (在執行 Cmdlet 之前，參數引數的長度) 。 您可以藉由宣告 ValidateLength 屬性來設定此驗證規則。
 
 > [!NOTE]
 > 如需定義此屬性之類別的詳細資訊，請參閱[Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)。

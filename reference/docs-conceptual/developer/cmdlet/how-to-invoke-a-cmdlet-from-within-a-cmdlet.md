@@ -1,23 +1,16 @@
 ---
 title: 如何從 Cmdlet 內叫用 Cmdlet |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
-caps.latest.revision: 12
-ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365547"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784141"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>如何從 Cmdlet 內叫用 Cmdlet
 
-這個範例示範如何從另一個 Cmdlet 叫用 Cmdlet，這可讓您將叫用 Cmdlet 的功能新增至您正在開發的 Cmdlet 中。 在此範例中，會叫用 `Get-Process` Cmdlet 來取得在本機電腦上執行的處理常式。 呼叫 `Get-Process` Cmdlet 相當於下列命令。 此命令會抓取名稱開頭為 "a" 到 "t" 字元的所有進程。
+這個範例示範如何從另一個 Cmdlet 叫用 Cmdlet，這可讓您將叫用 Cmdlet 的功能新增至您正在開發的 Cmdlet 中。 在此範例中， `Get-Process` 會叫用 Cmdlet 來取得在本機電腦上執行的處理常式。 對 Cmdlet 的呼叫 `Get-Process` 相當於下列命令。 此命令會抓取名稱開頭為 "a" 到 "t" 字元的所有進程。
 
 ```powershell
 Get-Process -name [a-t]
@@ -55,7 +48,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>範例
 
-在此範例中，會從 Cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中叫用 `Get-Process` Cmdlet。
+在此範例中， `Get-Process` 會從 Cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中叫用 Cmdlet。
 
 ```csharp
 using System;

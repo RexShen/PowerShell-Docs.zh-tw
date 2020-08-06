@@ -1,29 +1,22 @@
 ---
-title: RunSpace03 （VB.NET）程式碼範例 |Microsoft Docs
-ms.custom: ''
+title: RunSpace03 (VB.NET) 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
-caps.latest.revision: 6
-ms.openlocfilehash: e744caf0201a6e2a7fbf86138d7b28e4f14d549f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3b4181889ed15e14c59e3f47a09e39a2696df28c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417959"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784770"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) 程式碼範例
 
 以下是主控台應用程式的 VB.NET 原始程式碼，如「建立執行指定腳本的主控台應用程式」中所述。 這個範例會使用[Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)類別來執行腳本，以抓取傳入腳本的進程名稱清單的處理常式資訊。 它會示範如何將輸入物件傳遞至腳本，以及如何抓取錯誤物件以及輸出物件。
 
 > [!NOTE]
-> 您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此範例的 VB.NET 原始程式檔（runspace03）。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
-> 下載的來源檔案可在 **\<PowerShell 範例 >** 目錄中取得。
+> 您可以使用適用于 Windows Vista 和 Microsoft .NET Framework 3.0 執行時間元件的 Windows 軟體發展工具組，下載此範例的 VB.NET 原始程式檔 (runspace03) 。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
+> 下載的來源檔案可在目錄中取得 **\<PowerShell Samples>** 。
 
-## <a name="code-sample"></a>範例程式碼
+## <a name="code-sample"></a>程式碼範例
 
 ```vb
 Imports System
@@ -107,6 +100,6 @@ End Namespace
 
 ## <a name="see-also"></a>另請參閱
 
-[Windows PowerShell 程式設計人員指南](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell 程式設計人員手冊](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

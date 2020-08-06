@@ -1,23 +1,16 @@
 ---
 title: 安裝 PowerShell 模組 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
-caps.latest.revision: 28
-ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367067"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784855"
 ---
 # <a name="installing-a-powershell-module"></a>安裝 PowerShell 模組
 
-建立 PowerShell 模組之後，您可能會想要在系統上安裝模組，讓您或其他人可以使用它。 一般來說，這是由將模組檔案（即 .psm1 或二進位元件、模組資訊清單，以及任何其他相關聯的檔案）複製到該電腦上的目錄。 對於非常小型的專案，這可能就像是將檔案以 Windows Explorer 複製並貼到單一遠端電腦一樣簡單;不過，對於較大型的解決方案，您可能會想要使用更複雜的安裝程式。 無論您如何將模組放入系統，PowerShell 都可以使用一些技術，讓使用者尋找和使用您的模組。 因此，安裝的主要問題是確保 PowerShell 能夠找到您的模組。 如需詳細資訊，請參閱匯[入 PowerShell 模組](./importing-a-powershell-module.md)。
+建立 PowerShell 模組之後，您可能會想要在系統上安裝模組，讓您或其他人可以使用它。 一般來說，這包括將模組檔案 (ie、.psm1 或二進位元件、模組資訊清單，以及任何其他相關聯的檔案) 複製到該電腦上的目錄。 對於非常小型的專案，這可能就像是將檔案以 Windows Explorer 複製並貼到單一遠端電腦一樣簡單;不過，對於較大型的解決方案，您可能會想要使用更複雜的安裝程式。 無論您如何將模組放入系統，PowerShell 都可以使用一些技術，讓使用者尋找和使用您的模組。 因此，安裝的主要問題是確保 PowerShell 能夠找到您的模組。 如需詳細資訊，請參閱匯[入 PowerShell 模組](./importing-a-powershell-module.md)。
 
 ## <a name="rules-for-installing-modules"></a>安裝模組的規則
 
@@ -27,18 +20,18 @@ ms.locfileid: "72367067"
 
 盡可能將所有模組安裝在**PSModulePath**環境變數中所列的路徑，或將模組路徑新增至**PSModulePath**環境變數值。
 
-**PSModulePath**環境變數（$Env:P smodulepath）包含 Windows PowerShell 模組的位置。 Cmdlet 會依賴此環境變數的值來尋找模組。
+**PSModulePath**環境變數 ($Env:P smodulepath) 包含 Windows PowerShell 模組的位置。 Cmdlet 會依賴此環境變數的值來尋找模組。
 
 根據預設， **PSModulePath**環境變數值包含下列系統和使用者模組目錄，但是您可以加入並編輯值。
 
-- `$PSHome\Modules` （%Windir%\System32\WindowsPowerShell\v1.0\Modules）
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules) 
 
   > [!WARNING]
   > 這個位置會保留給 Windows 隨附的模組。 請勿將模組安裝到這個位置。
 
-- `$Home\Documents\WindowsPowerShell\Modules` （%UserProfile%\Documents\WindowsPowerShell\Modules）
+- `$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules) 
 
-- `$Env:ProgramFiles\WindowsPowerShell\Modules` （%ProgramFiles%\WindowsPowerShell\Modules）
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules) 
 
   若要取得**PSModulePath**環境變數的值，請使用下列其中一個命令。
 
@@ -62,7 +55,7 @@ ms.locfileid: "72367067"
   ```
 
   > [!IMPORTANT]
-  > 將路徑新增至**PSModulePath**之後，您應該廣播有關此變更的環境訊息。 廣播變更可讓其他應用程式（例如 shell）收取變更。 若要廣播變更，請讓您的產品安裝程式碼傳送**WM_SETTINGCHANGE**訊息，其中 `lParam` 設定為「環境」字串。 在您的模組安裝程式碼更新**PSModulePath**之後，請務必傳送該訊息。
+  > 將路徑新增至**PSModulePath**之後，您應該廣播有關此變更的環境訊息。 廣播變更可讓其他應用程式（例如 shell）收取變更。 若要廣播變更，請讓您的產品安裝程式碼傳送**WM_SETTINGCHANGE**訊息，並 `lParam` 將設定為「環境」字串。 在您的模組安裝程式碼更新**PSModulePath**之後，請務必傳送該訊息。
 
 ### <a name="use-the-correct-module-directory-name"></a>使用正確的模組目錄名稱
 
@@ -70,7 +63,7 @@ ms.locfileid: "72367067"
 
 檔案的「基底名稱」是沒有副檔名的名稱。 在格式正確的模組中，包含模組檔案的目錄名稱必須符合模組中至少一個檔案的基底名稱。
 
-例如，在範例 Fabrikam 模組中，包含模組檔案的目錄會命名為 "Fabrikam"，而且至少有一個檔案包含 "Fabrikam" 基底名稱。 在此情況下，.psd1 和 Fabrikam 都會有 "Fabrikam" 基底名稱。
+例如，在範例 Fabrikam 模組中，包含模組檔案的目錄會命名為 "Fabrikam"，而且至少有一個檔案包含 "Fabrikam" 基底名稱。 在此情況下，Fabrikam.psd1 和 Fabrikam.dll 都有 "Fabrikam" 基底名稱。
 
 ```
 C:\Program Files
@@ -89,7 +82,7 @@ C:\Program Files
 
 - 模組自動載入功能無法自動匯入模組。
 
-- [取得模組](/powershell/module/Microsoft.PowerShell.Core/Get-Module)Cmdlet 的 `ListAvailable` 參數找不到模組。
+- `ListAvailable`[取得模組](/powershell/module/Microsoft.PowerShell.Core/Get-Module)Cmdlet 的參數找不到模組。
 
 - [Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 找不到模組。 若要匯入模組，您必須提供根模組檔案或模組資訊清單檔案的完整路徑。
 
@@ -101,7 +94,7 @@ C:\Program Files
 
 - [顯示命令](/powershell/module/Microsoft.PowerShell.Utility/Show-Command)Cmdlet 找不到並顯示模組中的命令。
 
-  Windows PowerShell 整合式腳本環境（ISE）中的 `Show-Command` 視窗遺失模組中的命令。
+  Windows PowerShell 整合式腳本環境中的視窗遺漏了模組中的命令 `Show-Command` (ISE) 。
 
 ## <a name="where-to-install-modules"></a>模組的安裝位置
 
@@ -122,7 +115,7 @@ C:\Program Files
 `$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
-> 在 Windows PowerShell 4.0 和更新版本中，預設會將 Program Files 位置新增至 PSModulePath 環境變數的值。 對於舊版的 Windows PowerShell，您可以手動建立程式檔案位置（（%ProgramFiles%\WindowsPowerShell\Modules），並將此路徑新增至您的 PSModulePath 環境變數，如上所述。
+> 在 Windows PowerShell 4.0 和更新版本中，預設會將 Program Files 位置新增至 PSModulePath 環境變數的值。 對於舊版的 Windows PowerShell，您可以手動建立程式檔案位置 ( # A1% ProgramFiles% \ WindowsPowerShell \ 模組) ，並將此路徑新增至您的 PSModulePath 環境變數，如上面所述。
 
 ### <a name="installing-modules-in-a-product-directory"></a>在產品目錄中安裝模組
 
@@ -153,7 +146,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 如果產品的多個元件或產品的多個版本使用模組，請在%ProgramFiles%\Common Files\Modules 子目錄的模組特定子目錄中安裝模組。
 
-在下列範例中，Fabrikam 模組會安裝在 `%ProgramFiles%\Common Files\Modules` 子目錄的 Fabrikam 子目錄中。 請注意，每個模組都位於模組子目錄中自己的子目錄中。
+在下列範例中，Fabrikam 模組會安裝在子目錄的 Fabrikam 子目錄中 `%ProgramFiles%\Common Files\Modules` 。 請注意，每個模組都位於模組子目錄中自己的子目錄中。
 
 ```
 C:\Program Files
@@ -182,10 +175,10 @@ $p = $q -join ';'
 若要安裝相同模組的多個版本，請使用下列程式。
 
 1. 為每個模組版本建立一個目錄。 在目錄名稱中包含版本號碼。
-2. 為模組的每個版本建立模組資訊清單。 在資訊清單中**ModuleVersion**索引鍵的值，輸入模組版本號碼。 將資訊清單檔案（. .psd1）儲存在模組的版本特定目錄中。
+2. 為模組的每個版本建立模組資訊清單。 在資訊清單中**ModuleVersion**索引鍵的值，輸入模組版本號碼。 將資訊清單檔案儲存 ( .psd1) 在模組的版本特定目錄中。
 3. 將模組根資料夾路徑新增至**PSModulePath**環境變數的值，如下列範例所示。
 
-若要匯入特定版本的模組，終端使用者可以使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 參數。
+若要匯入特定版本的模組，終端使用者可以使用 `MinimumVersion` `RequiredVersion` [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的或參數。
 
 例如，如果在8.0 和9.0 版中提供 Fabrikam 模組，Fabrikam 模組目錄結構可能如下所示。
 
@@ -210,7 +203,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-當這些步驟完成時， [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的**ListAvailable**參數會取得這兩個 Fabrikam 模組。 若要匯入特定模組，請使用[import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 參數。
+當這些步驟完成時， [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的**ListAvailable**參數會取得這兩個 Fabrikam 模組。 若要匯入特定模組，請 `MinimumVersion` 使用 `RequiredVersion` [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的或參數。
 
 如果這兩個模組都匯入相同的會話中，而且模組包含具有相同名稱的 Cmdlet，則最後匯入的 Cmdlet 就會在會話中生效。
 
@@ -220,7 +213,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 
 當會話包含兩個具有相同名稱的命令時，Windows PowerShell 會執行優先的命令類型。 當會話包含兩個具有相同名稱和相同類型的命令時，Windows PowerShell 會執行最近新增至會話的命令。 若要執行預設不會執行的命令，使用者可以使用模組名稱來限定命令名稱。
 
-例如，如果會話包含 `Get-Date` 函式和 `Get-Date` Cmdlet，Windows PowerShell 預設會執行此功能。 若要執行此 Cmdlet，請在命令前面加上模組名稱，例如：
+例如，如果會話包含函式 `Get-Date` 和 `Get-Date` Cmdlet，Windows PowerShell 預設會執行函數。 若要執行此 Cmdlet，請在命令前面加上模組名稱，例如：
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
@@ -228,7 +221,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 為避免名稱衝突，模組作者可以使用模組資訊清單中的**DefaultCommandPrefix**索引鍵，為從模組匯出的所有命令指定名詞前置詞。
 
-使用者可以使用 `Import-Module` Cmdlet 的**prefix**參數，以使用替代的前置詞。 **Prefix**參數的值會優先于**DefaultCommandPrefix**索引鍵的值。
+使用者可以使用 Cmdlet 的**prefix**參數 `Import-Module` 來使用替代的前置詞。 **Prefix**參數的值會優先于**DefaultCommandPrefix**索引鍵的值。
 
 ## <a name="see-also"></a>另請參閱
 

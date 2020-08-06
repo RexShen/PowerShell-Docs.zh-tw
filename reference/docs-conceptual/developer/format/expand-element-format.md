@@ -1,25 +1,18 @@
 ---
-title: 展開元素（格式） |Microsoft Docs
-ms.custom: ''
+title: 展開元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
-caps.latest.revision: 9
-ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: deee832254bb8a774ee2c1f5bd451d3ced1bd47a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368737"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783648"
 ---
 # <a name="expand-element-format"></a>展開元素 (格式)
 
 指定如何展開這個定義的集合物件。
 
-Configuration 元素（格式） DefaultSettings 元素（格式） EnumerableExpansions 元素（格式） EnumerableExpansion 元素（格式）展開元素（格式）
+Configuration 元素 (格式) DefaultSettings 元素 (格式) EnumerableExpansions 元素 (格式) EnumerableExpansion 專案 (格式) Expand 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） DefaultSettings 元素（格式） EnumerableEx
 <Expand>EnumOnly, CoreOnly, Both</Expand>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Expand` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `Expand` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） DefaultSettings 元素（格式） EnumerableEx
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[EnumerableExpansion 元素（格式）](./enumerableexpansion-element-format.md)|定義特定 .NET 集合物件在視圖中顯示時的擴充方式。|
+|[EnumerableExpansion 元素 (格式)](./enumerableexpansion-element-format.md)|定義特定 .NET 集合物件在視圖中顯示時的擴充方式。|
 
 ## <a name="text-value"></a>文字值
 
@@ -63,4 +56,4 @@ Configuration 元素（格式） DefaultSettings 元素（格式） EnumerableEx
 
 ## <a name="see-also"></a>另請參閱
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

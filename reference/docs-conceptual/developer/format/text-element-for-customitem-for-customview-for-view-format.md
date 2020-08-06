@@ -1,25 +1,18 @@
 ---
-title: CustomView for View 的 CustomItem 的 Text 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: CustomItem for CustomView for View (Format) 的 Text 元素Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fab6c0f4-ba55-48ae-9c16-f9a998169239
-caps.latest.revision: 9
-ms.openlocfilehash: 00ff3a357cfef0b250bb55dd3a206d69d5d42609
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 94294665b481edabdb8ed920d1a209a609b18fd8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368117"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783376"
 ---
 # <a name="text-element-for-customitem-for-customview-for-view-format"></a>檢視之 CustomView 的 CustomItem 的文字元素 (格式)
 
 指定要加入控制項所顯示之資料的文字，例如標籤、用來括住資料的括弧，以及用來縮排資料的空格。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素（format） CustomEntries 元素，用於 CustomEntry for View （Format） CustomEntries 元素的 CustomControl for view （format） CustomItem 元素CustomItem 的 CustomEntry for View （Format） Text 元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) CustomControl 專案 (格式) CustomControl for view (CustomEntry 元素，CustomEntries for view) format () CustomItem 元素（CustomEntry 的 CustomItem (格式) Text 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <Text>TextToDisplay</Text>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Text` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `Text` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂控制項視圖的控制項。|
+|[CustomEntry for View (格式的 CustomItem 元素) ](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|定義自訂控制項視圖的控制項。|
 
 ## <a name="text-value"></a>文字值
 
@@ -53,6 +46,6 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[CustomEntry for View 的 CustomItem 元素（格式）](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
+[CustomEntry for View (格式的 CustomItem 元素) ](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

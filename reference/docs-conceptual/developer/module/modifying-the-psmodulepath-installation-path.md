@@ -1,19 +1,12 @@
 ---
 title: 修改 PSModulePath 安裝路徑 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
-caps.latest.revision: 15
-ms.openlocfilehash: 02e9868fc5c536629f7abc319df06f9a4a394ac8
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+ms.openlocfilehash: 795f2bd52aeceddd3c0ca092d0c0cf2ef44bcf23
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837489"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784838"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>修改 PSModulePath 安裝路徑
 
@@ -38,7 +31,7 @@ ms.locfileid: "85837489"
 
   `$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$MyModulePath"`
 
-- 若要新增每次開啟會話時可用的持續性值，請將上述命令新增至 PowerShell 設定檔檔案（ `$PROFILE` ） >
+- 若要新增每當會話開啟時可用的持續性值，請將上述命令新增至 PowerShell 設定檔檔案 (`$PROFILE`) # A0
 
   如需設定檔的詳細資訊，請參閱 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)。
 

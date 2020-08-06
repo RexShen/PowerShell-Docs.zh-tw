@@ -1,19 +1,12 @@
 ---
-title: Configuration 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: Configuration 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
-caps.latest.revision: 28
-ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 90be02f8e27c0bd391e01da1a08ecd8eeb29b84c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363497"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783835"
 ---
 # <a name="configuration-element-format"></a>設定元素 (格式)
 
@@ -33,9 +26,9 @@ ms.locfileid: "72363497"
 
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Configuration` 專案的父元素。 此元素必須是每個格式化檔案的根項目，且此元素必須包含至少一個子專案。
+下列各節說明屬性、子專案和元素的父元素 `Configuration` 。 此元素必須是每個格式化檔案的根項目，且此元素必須包含至少一個子專案。
 
 ### <a name="attributes"></a>屬性
 
@@ -45,12 +38,12 @@ ms.locfileid: "72363497"
 
 |元素|描述|
 |-------------|-----------------|
-|[設定的 Controls 元素（格式）](./controls-element-for-configuration-format.md)|選擇性項目。<br /><br /> 定義可供格式檔案的所有視圖使用的通用控制項。|
-|[DefaultSettings 元素（格式）](./defaultsettings-element-format.md)|選擇性項目。<br /><br /> 定義套用至格式化檔案所有視圖的一般設定。|
+|[設定的控制項元素 (格式)](./controls-element-for-configuration-format.md)|選擇性項目。<br /><br /> 定義可供格式檔案的所有視圖使用的通用控制項。|
+|[DefaultSettings 元素 (格式)](./defaultsettings-element-format.md)|選擇性項目。<br /><br /> 定義套用至格式化檔案所有視圖的一般設定。|
 |[SelectionSets 元素格式](./selectionsets-element-format.md)|選擇性項目。<br /><br /> 定義一組通用的 .NET 物件，可供格式化檔案的所有視圖使用。|
-|[ViewDefinitions 元素（格式）](./viewdefinitions-element-format.md)|選擇性項目。<br /><br /> 定義用來顯示物件的視圖。|
+|[ViewDefinitions 元素 (格式)](./viewdefinitions-element-format.md)|選擇性項目。<br /><br /> 定義用來顯示物件的視圖。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 無。
 
@@ -60,12 +53,12 @@ ms.locfileid: "72363497"
 
 ## <a name="see-also"></a>另請參閱
 
-[設定的 Controls 元素（格式）](./controls-element-for-configuration-format.md)
+[設定的控制項元素 (格式)](./controls-element-for-configuration-format.md)
 
-[DefaultSettings 元素（格式）](./defaultsettings-element-format.md)
+[DefaultSettings 元素 (格式)](./defaultsettings-element-format.md)
 
-[SelectionSets 元素（格式）](./selectionsets-element-format.md)
+[SelectionSets 元素 (格式)](./selectionsets-element-format.md)
 
-[ViewDefinitions 元素（格式）](./viewdefinitions-element-format.md)
+[ViewDefinitions 元素 (格式)](./viewdefinitions-element-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

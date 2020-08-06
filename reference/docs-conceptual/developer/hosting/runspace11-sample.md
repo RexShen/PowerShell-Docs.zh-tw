@@ -1,19 +1,12 @@
 ---
 title: Runspace11 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
-caps.latest.revision: 8
-ms.openlocfilehash: 606f06339d0bbec3393c6b2602df3636c1f4e458
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 6e8a4080bb4fb33f7e0d428e24483b5cfac5c70e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565378"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784923"
 ---
 # <a name="runspace11-sample"></a>Runspace11 範例
 
@@ -29,11 +22,11 @@ ms.locfileid: "83565378"
 
 - 建立[Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata)物件，以描述現有 Cmdlet 的中繼資料。
 
-- 建立[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的程式。
+- 建立[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
 
 - 修改 Cmdlet 中繼資料以移除 Cmdlet 的參數。
 
-- 將 Cmdlet 新增至[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件，並將此 Cmdlet 設為私用。
+- 將 Cmdlet 新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件，並將此 Cmdlet 設為私用。
 
 - 建立可呼叫現有 Cmdlet 的 proxy 函式，但只會公開一組受限的參數。
 

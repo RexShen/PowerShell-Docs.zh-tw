@@ -1,19 +1,12 @@
 ---
 title: Cmdlet 別名 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d0d70864-33fb-49ce-8054-c41ba19fd554
-caps.latest.revision: 11
-ms.openlocfilehash: 32f45702cc0d28e6652ef61ebdbe085291013408
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fed4055f09e01c5f3fa87584d48551918606f4eb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369977"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784532"
 ---
 # <a name="cmdlet-aliases"></a>Cmdlet 別名
 
@@ -27,7 +20,7 @@ ms.locfileid: "72369977"
 
 - 指派別名之前，請先啟動 Windows PowerShell，然後執行[取得別名](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias)Cmdlet，以查看已經使用的別名。
 
-- 包含別名前置詞，此首碼會參考 Cmdlet 名稱的動詞，以及參考 Cmdlet 名稱名詞的別名尾碼。 例如，`Import-Module` Cmdlet 的別名是「ipmo」。 如需所有動詞和其別名的清單，請參閱[Cmdlet 動詞](./approved-verbs-for-windows-powershell-commands.md)。
+- 包含別名前置詞，此首碼會參考 Cmdlet 名稱的動詞，以及參考 Cmdlet 名稱名詞的別名尾碼。 例如，Cmdlet 的別名是「 `Import-Module` ipmo」。 如需所有動詞和其別名的清單，請參閱[Cmdlet 動詞](./approved-verbs-for-windows-powershell-commands.md)。
 
 - 對於具有相同動詞的 Cmdlet，請包含相同的別名前置詞。 例如，名稱中含有 "Get" 動詞的所有 Windows PowerShell Cmdlet 的別名都會使用 "g" 前置詞。
 

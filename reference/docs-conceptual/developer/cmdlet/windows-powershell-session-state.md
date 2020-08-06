@@ -1,22 +1,15 @@
 ---
 title: Windows PowerShell 會話狀態 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Cmdlets [PowerShell], session state
 - session state [PowerShell]
-ms.assetid: 74912940-2b10-4a76-b174-6d035d71c02b
-caps.latest.revision: 8
-ms.openlocfilehash: fa207130bbb120750780bb0aa9b32150a32daaa2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7436e3ebd0e099ead81f9fea01a0a2994b982213
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369097"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783937"
 ---
 # <a name="windows-powershell-session-state"></a>Windows PowerShell 工作階段狀態
 
@@ -40,7 +33,7 @@ ms.locfileid: "72369097"
 
 - Windows PowerShell 提供者資訊
 
-- 模組所匯出模組專案（例如 Cmdlet、函式和腳本）的已匯入模組和參考的相關資訊。 這項資訊和這些參考僅適用于全域會話狀態。
+- 匯入模組的相關資訊以及模組元素的參考 (例如模組所匯出的 Cmdlet、函式和腳本) 。 這項資訊和這些參考僅適用于全域會話狀態。
 
 - 會話狀態變數資訊
 

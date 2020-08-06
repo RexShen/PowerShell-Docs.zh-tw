@@ -1,25 +1,18 @@
 ---
-title: CustomControl for View 的之 entryselectedby 的 SelectionSetName 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: CustomControl for View (格式) 的之 entryselectedby 的 SelectionSetName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 859d2335-7fcd-4efd-b1cc-3d171e334c6b
-caps.latest.revision: 7
-ms.openlocfilehash: f4bf820be88919af43eeaf043b3ed8b9c06e1bf2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3728a1886d5406b8fa4888125d1c031d0f9b1b03
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364747"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785297"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 EntrySelectedBy 的 SelectionSetName 元素 (格式)
 
 為清單專案指定一組 .NET 物件。 可以為專案指定的選擇集數目沒有限制。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） CustomControl 元素（format） CustomEntries 元素，適用于 CustomEntry for View 的 CustomControl for View （format） CustomEntries 元素（格式）之 entryselectedbyCustomEntry for View （Format） SelectionSetName 元素的元素，適用于 CustomEntry 的之 entryselectedby （格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) CustomControl 專案 (格式) CustomControl for view (CustomEntry 元素的 CustomEntries 專案，CustomEntries for view) format (之 entryselectedby 元素 CustomEntry for SelectionSetName) Format (之 entryselectedby 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `SelectionSetName` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `SelectionSetName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomEntry for View 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|定義使用此自訂專案的 .NET 類型，或必須存在才能使用此專案的條件。|
+|[CustomEntry for View (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|定義使用此自訂專案的 .NET 類型，或必須存在才能使用此專案的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -59,8 +52,8 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[CustomEntry for View 的之 entryselectedby 元素（格式）](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[CustomEntry for View (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
 [自訂控制項視圖](./creating-custom-controls.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

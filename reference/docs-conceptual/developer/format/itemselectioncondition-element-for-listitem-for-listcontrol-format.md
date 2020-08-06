@@ -1,25 +1,18 @@
 ---
-title: ListControl 之專案的 ItemSelectionCondition 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: ListControl (格式之專案的 ItemSelectionCondition 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2668aea-37e9-4753-a4e9-7980ae5ec2eb
-caps.latest.revision: 10
-ms.openlocfilehash: 6bc0ccbcc5bd62429f63ed220da66dc66f44f7ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f5c388928668e03b96923130fb5849f637548f12
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365187"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783614"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
 
 定義必須存在才能使用此清單專案的條件。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） ListControl 元素（format） ListEntries 元素（適用于 ListEntry 的 ListEntries for ListControl （Format） ListItems 元素） ListControl （Format） ListEntry 元素適用于 ListItems 之 ListControl （Format） ItemSelectionCondition 元素的 ListControl （格式）專案專案，適用于 ListControl 的專案（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 專案 (格式) ListControl (格式) ListEntry 元素，ListEntries for ListControl (format) ListItems 元素用於 ListEntry 的 ListControl (format) ListItems 元素的 ListControl (format) 
 
 ## <a name="syntax"></a>語法
 
@@ -30,9 +23,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ItemSelectionCondition` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `ItemSelectionCondition` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -42,14 +35,14 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[ListControl 之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
-|[ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
+|[ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的 .NET 屬性。|
+|[ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)|選擇性項目。<br /><br /> 指定觸發條件的腳本。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[適用于 ListControl 之 ListItems 的專案專案元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
+|[ListControl 之 ListItems 的 ListItem 元素 (格式)](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
 
 ## <a name="remarks"></a>備註
 
@@ -57,10 +50,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[適用于 ListControl 之 ListItems 的專案專案元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)
+[ListControl 之 ListItems 的 ListItem 元素 (格式)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[ListControl 之 ItemSelectionCondition 的 PropertyName 元素（格式）](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
+[ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素（格式）](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+[ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

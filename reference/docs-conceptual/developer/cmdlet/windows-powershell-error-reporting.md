@@ -1,25 +1,18 @@
 ---
 title: Windows PowerShell 錯誤報表 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 61b7773a-c346-4835-a928-7212dc4c85bc
-caps.latest.revision: 7
-ms.openlocfilehash: 259de341fd2fcce2b0c4629f806b4348cba1ff2c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7f7afcf5186732734976304c8e58e4d940156e1e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364267"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783954"
 ---
 # <a name="windows-powershell-error-reporting"></a>Windows PowerShell 錯誤報告
 
 本節中的主題將討論 Cmdlet 如何報告錯誤。
 
-## <a name="in-this-section"></a>在本節中
+## <a name="in-this-section"></a>本節內容
 
 [錯誤報表概念](./error-reporting-concepts.md)說明 Cmdlet 可以用來報告錯誤的兩個機制。
 

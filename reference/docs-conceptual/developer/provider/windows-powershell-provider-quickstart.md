@@ -1,19 +1,12 @@
 ---
 title: Windows PowerShell 提供者快速入門 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
-caps.latest.revision: 5
-ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 048812d1a4765b2ff0069698615453f91ee95409
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560928"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783121"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell 提供者快速入門
 
@@ -35,13 +28,13 @@ Windows PowerShell 提供者的最基本功能是建立和移除磁片磁碟機�
 
 1. 將 System.webserver 元件新增為您專案的參考。
 
-2. 按一下 [**專案] > AccessDBProviderSample 屬性 > Debug**]。 在 [**起始專案**] 中，按一下 [**啟動外部程式**]，然後流覽至 Windows PowerShell 可執行檔（通常是 c:\Windows\System32\WindowsPowerShell\v1.0 \\ ）。
+2. 按一下 [**專案] > AccessDBProviderSample 屬性 > Debug**]。 在 [**起始專案**] 中，按一下 [**啟動外部程式**]，然後流覽至 Windows PowerShell 可執行檔 (通常會 c:\Windows\System32\WindowsPowerShell\v1.0 \\.powershell.exe) 。
 
 3. 在 [**起始選項**] 底下的 [**命令列引數**] 方塊中輸入下列內容：`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>宣告提供者類別
 
-我們的提供者衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別。 大部分提供實際功能（存取和操作專案、流覽資料存放區，以及取得和設定專案內容）的提供者，都是衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
+我們的提供者衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別。 大部分提供實際功能的提供者， (存取和操作專案、流覽資料存放區，以及取得和設定專案的內容) 衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
 
 除了指定類別衍生自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)，您也必須使用[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) （如範例中所示）來裝飾它，然後再加以修飾。
 

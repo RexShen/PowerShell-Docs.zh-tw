@@ -1,25 +1,18 @@
 ---
-title: ListControl 的 ListEntries 元素（格式） |Microsoft Docs
-ms.custom: ''
+title: ListControl (格式的 ListEntries 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
-caps.latest.revision: 12
-ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0fe07e739c2d2fec153599ec6c0c0b3ecc14df18
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362757"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785705"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListControl 的 ListEntries 元素 (格式)
 
 提供清單視圖的定義。 清單視圖必須指定一或多個定義。
 
-Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素（format） ListControl 元素（格式） ListEntries 元素（格式）
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 元素 (格式) ListEntries 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -29,9 +22,9 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 </ListEntries>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `ListEntries` 專案的父元素。 至少必須指定一個子項目。
+下列各節說明屬性、子專案和元素的父元素 `ListEntries` 。 至少必須指定一個子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -41,13 +34,13 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 |元素|描述|
 |-------------|-----------------|
-|[ListEntry 元素（格式）](./listentry-element-for-listcontrol-format.md)|提供清單視圖的定義。|
+|[ListEntry 元素 (格式) ](./listentry-element-for-listcontrol-format.md)|提供清單視圖的定義。|
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[ListControl 元素（格式）](./listcontrol-element-format.md)|定義視圖的清單格式。|
+|[ListControl 元素 (格式)](./listcontrol-element-format.md)|定義視圖的清單格式。|
 
 ## <a name="remarks"></a>備註
 
@@ -75,10 +68,10 @@ Configuration 元素（格式） ViewDefinitions 元素（格式） View 元素�
 
 ## <a name="see-also"></a>另請參閱
 
-[ListControl 元素（格式）](./listcontrol-element-format.md)
+[ListControl 元素 (格式)](./listcontrol-element-format.md)
 
-[ListEntry 元素（格式）](./listentry-element-for-listcontrol-format.md)
+[ListEntry 元素 (格式) ](./listentry-element-for-listcontrol-format.md)
 
-[清單檢視](./creating-a-list-view.md)
+[清單視圖](./creating-a-list-view.md)
 
 [撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)

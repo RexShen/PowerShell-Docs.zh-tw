@@ -1,19 +1,12 @@
 ---
 title: GetProcessSample01 範例 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
-caps.latest.revision: 10
-ms.openlocfilehash: 27f1c346863458920b310c6c4ce1403b3aab69ba
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 84956fbafdd58623ca4f332efc940fb93b421c6e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563794"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784243"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01 範例
 
@@ -21,9 +14,9 @@ ms.locfileid: "83563794"
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample01 資料夾。 預設位置為 C:\Program Files （x86） \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample01 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01。
 
-2. 按兩下方案（.sln）檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
 3. 在 [建置]**** 功能表中，選取 [建置方案]****。
 
@@ -35,7 +28,7 @@ ms.locfileid: "83563794"
 
 2. 流覽至包含範例 .dll 檔案的目錄。
 
-3. 執行 installutil.exe "GetProcessSample01"。
+3. 執行 installutil.exe "GetProcessSample01.dll"。
 
 4. 啟動 Windows PowerShell。
 

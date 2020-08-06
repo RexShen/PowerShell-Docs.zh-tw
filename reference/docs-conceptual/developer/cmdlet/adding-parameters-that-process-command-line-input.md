@@ -1,11 +1,6 @@
 ---
 title: 加入處理命令列輸入的參數 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], parameters
 - Get-Proc cmdlet [PowerShell Programmer's Guide]
@@ -13,24 +8,22 @@ helpviewer_keywords:
 - command line input [PowerShell Programmer's Guide]
 - parameters [PowerShell Programmer's Guide]
 - cmdlets [PowerShell Programmer's Guide], creating
-ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
-caps.latest.revision: 9
-ms.openlocfilehash: b8ade5607595fd4453b2a4d69a6345880e58192b
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 6ccc873d9c6b93546b3dae8c0d2e406763fdfb8a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870450"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784566"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>新增處理命令列輸入的參數
 
-Cmdlet 的輸入的其中一個來源是命令列。 本主題說明如何將參數新增至 `Get-Proc` Cmdlet （如[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)中所述），讓 Cmdlet 可以根據傳遞給 Cmdlet 的明確物件，處理本機電腦的輸入。 此處所述的 `Get-Proc` Cmdlet 會根據其名稱來抓取進程，然後在命令提示字元中顯示有關進程的資訊。
+Cmdlet 的輸入的其中一個來源是命令列。 本主題說明如何將參數新增至 `Get-Proc` Cmdlet (，這會在[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)) 中說明，讓 Cmdlet 可以根據傳遞至 Cmdlet 的明確物件，處理本機電腦的輸入。 `Get-Proc`此處所述的 Cmdlet 會根據其名稱來抓取進程，然後在命令提示字元中顯示有關進程的資訊。
 
 ## <a name="defining-the-cmdlet-class"></a>定義 Cmdlet 類別
 
-Cmdlet 建立的第一個步驟是 Cmdlet 命名，以及可執行 Cmdlet 之 .NET Framework 類別的宣告。 此 Cmdlet 會抓取處理常式資訊，因此此處選擇的動詞名稱是「Get」。 （幾乎任何能夠抓取資訊的 Cmdlet 都可以處理命令列輸入）。如需已核准 Cmdlet 動詞命令的詳細資訊，請參閱[Cmdlet 動詞名稱](./approved-verbs-for-windows-powershell-commands.md)。
+Cmdlet 建立的第一個步驟是 Cmdlet 命名，以及可執行 Cmdlet 之 .NET Framework 類別的宣告。 此 Cmdlet 會抓取處理常式資訊，因此此處選擇的動詞名稱是「Get」。  (幾乎任何能夠抓取資訊的 Cmdlet 都可以處理命令列輸入。 ) 如需已核准 Cmdlet 動詞的詳細資訊，請參閱[Cmdlet 動詞名稱](./approved-verbs-for-windows-powershell-commands.md)。
 
-以下是 `Get-Proc` Cmdlet 的類別宣告。 [建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)時，會提供有關此定義的詳細資料。
+以下是 Cmdlet 的類別宣告 `Get-Proc` 。 [建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)時，會提供有關此定義的詳細資料。
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -45,13 +38,13 @@ Public Class GetProcCommand
 
 ## <a name="declaring-parameters"></a>宣告參數
 
-Cmdlet 參數可讓使用者提供 Cmdlet 的輸入。 在下列範例中，`Get-Proc` 和 `Get-Member` 是管線 Cmdlet 的名稱，而 `MemberType` 是 `Get-Member` Cmdlet 的參數。 參數的引數為 "property"。
+Cmdlet 參數可讓使用者提供 Cmdlet 的輸入。 在下列範例中， `Get-Proc` 和 `Get-Member` 是管線 Cmdlet 的名稱，而 `MemberType` 是 Cmdlet 的參數 `Get-Member` 。 參數的引數為 "property"。
 
-**PS > get 進程;`get-member` membertype 屬性**
+**PS> get 進程;`get-member`-membertype 屬性**
 
-若要宣告 Cmdlet 的參數，必須先定義代表參數的屬性。 在 `Get-Proc` Cmdlet 中，唯一的參數是 `Name`，在此案例中代表要抓取 .NET Framework 進程物件的名稱。 因此，Cmdlet 類別會定義字串類型的屬性，以接受名稱陣列。
+若要宣告 Cmdlet 的參數，您必須先定義代表參數的屬性。 在 `Get-Proc` Cmdlet 中，唯一的參數是 `Name` ，在此案例中代表要抓取的 .NET Framework 進程物件的名稱。 因此，Cmdlet 類別會定義字串類型的屬性，以接受名稱陣列。
 
-以下是 `Get-Proc` Cmdlet 之 `Name` 參數的參數宣告。
+以下是 `Name` Cmdlet 之參數的參數宣告 `Get-Proc` 。
 
 ```csharp
 /// <summary>
@@ -83,20 +76,20 @@ Public Property Name() As String()
 End Property
 ```
 
-為了通知 Windows PowerShell 執行時間此屬性為 `Name` 參數，會將[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性新增至屬性定義。 `[Parameter()]`宣告這個屬性的基本語法。
+若要通知 Windows PowerShell 執行時間此屬性為 `Name` 參數，請將[Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)屬性新增至屬性定義。 宣告這個屬性的基本語法為 `[Parameter()]` 。
 
 > [!NOTE]
 > 參數必須明確標示為公用。 未標示為公用的參數預設為內部，Windows PowerShell 執行時間找不到。
 
-此 Cmdlet 會使用 `Name` 參數的字串陣列。 可能的話，您的 Cmdlet 也應該將參數定義為數組，因為這可讓 Cmdlet 接受一個以上的專案。
+此 Cmdlet 會使用參數的字串陣列 `Name` 。 可能的話，您的 Cmdlet 也應該將參數定義為數組，因為這可讓 Cmdlet 接受一個以上的專案。
 
 #### <a name="things-to-remember-about-parameter-definitions"></a>參數定義需要注意的事項
 
-- 預先定義的 Windows PowerShell 參數名稱和資料類型應該盡可能重複使用，以確保您的 Cmdlet 與 Windows PowerShell Cmdlet 相容。 例如，如果所有 Cmdlet 都使用預先定義的 `Id` 參數名稱來識別資源，則無論參數的用途為何，使用者都能輕易地瞭解其意義。 基本上，參數名稱會遵循 common language runtime （CLR）中用於變數名稱的相同規則。 如需參數命名的詳細資訊，請參閱[Cmdlet 參數名稱](/previous-versions/ms714468(v=vs.85))。
+- 預先定義的 Windows PowerShell 參數名稱和資料類型應該盡可能重複使用，以確保您的 Cmdlet 與 Windows PowerShell Cmdlet 相容。 例如，如果所有 Cmdlet 都使用預先定義的 `Id` 參數名稱來識別資源，無論參數的用途為何，使用者都能輕易地瞭解其意義。 基本上，參數名稱會遵循通用語言執行平臺中用於變數名稱的相同規則 (CLR) 。 如需參數命名的詳細資訊，請參閱[Cmdlet 參數名稱](/previous-versions/ms714468(v=vs.85))。
 
-- Windows PowerShell 會保留幾個參數名稱，以提供一致的使用者體驗。 請勿使用這些參數名稱： `WhatIf`、`Confirm`、`Verbose`、`Debug`、`Warn`、`ErrorAction`、`ErrorVariable`、`OutVariable`和 `OutBuffer`。 此外，系統會保留這些參數名稱的下列別名： `vb`、`db`、`ea`、`ev`、`ov`和 `ob`。
+- Windows PowerShell 會保留幾個參數名稱，以提供一致的使用者體驗。 請勿使用這些參數名稱： `WhatIf` 、 `Confirm` 、 `Verbose` 、、、、、 `Debug` `Warn` `ErrorAction` `ErrorVariable` `OutVariable` 和 `OutBuffer` 。 此外，這些參數名稱的下列別名會保留： `vb` 、 `db` 、、 `ea` 、 `ev` `ov` 和 `ob` 。
 
-- `Name` 是簡單且通用的參數名稱，建議您在 Cmdlet 中使用。 最好是選擇與特定指令程式特有的參數名稱，而不是特殊的名稱，因此很難記住。
+- `Name`是簡單且通用的參數名稱，建議您在 Cmdlet 中使用。 最好是選擇與特定指令程式特有的參數名稱，而不是特殊的名稱，因此很難記住。
 
 - 在 Windows PowerShell 中，參數不區分大小寫，但根據預設，shell 會保留大小寫。 引數的區分大小寫取決於 Cmdlet 的作業。 引數會傳遞至命令列所指定的參數。
 
@@ -104,21 +97,21 @@ End Property
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>將參數宣告為位置或名稱
 
-Cmdlet 必須將每個參數設定為位置或具名引數。 這兩種參數都接受單一引數、以逗號分隔的多個引數，以及布林值設定。 布林值參數（也稱為「*切換*」）只會處理布林值設定。 參數是用來判斷參數是否存在。 建議的預設值為 `false`。
+Cmdlet 必須將每個參數設定為位置或具名引數。 這兩種參數都接受單一引數、以逗號分隔的多個引數，以及布林值設定。 布林值參數（也稱為「*切換*」）只會處理布林值設定。 參數是用來判斷參數是否存在。 建議的預設值是 `false` 。
 
-範例 `Get-Proc` Cmdlet 會將 `Name` 參數定義為位置參數，並具有位置
-0. 這表示會自動為此參數插入使用者在命令列上輸入的第一個引數。 如果您想要定義名為的參數（使用者必須從命令列指定參數名稱），請將 `Position` 關鍵字保留在屬性宣告之外。
+範例 Cmdlet 會將 `Get-Proc` `Name` 參數定義為位置參數，並搭配 position
+0. 這表示會自動為此參數插入使用者在命令列上輸入的第一個引數。 如果您想要定義名為的參數（使用者必須從命令列指定參數名稱），請將關鍵字留在 `Position` 屬性宣告之外。
 
 > [!NOTE]
 > 除非參數必須命名，否則建議您將最常使用的參數設為位置，讓使用者不需要輸入參數名稱。
 
 ## <a name="declaring-parameters-as-mandatory-or-optional"></a>將參數宣告為強制或選擇性
 
-Cmdlet 必須將每個參數設定為選擇性或強制參數。 在範例 `Get-Proc` Cmdlet 中，`Name` 參數定義為選擇性，因為屬性宣告中未設定 `Mandatory` 關鍵字。
+Cmdlet 必須將每個參數設定為選擇性或強制參數。 在範例 `Get-Proc` Cmdlet 中， `Name` 參數定義為選擇性，因為在屬性宣告 `Mandatory` 中未設定關鍵字。
 
 ## <a name="supporting-parameter-validation"></a>支援參數驗證
 
-範例 `Get-Proc` Cmdlet 會將輸入驗證屬性[Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute)新增至 `Name` 參數，以啟用輸入不是 `null` 也不是空的驗證。 此屬性是 Windows PowerShell 所提供的數個驗證屬性之一。 如需其他驗證屬性的範例，請參閱[驗證參數輸入](./validating-parameter-input.md)。
+範例 `Get-Proc` Cmdlet 會將輸入驗證屬性（ [Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute)）新增至 `Name` 參數，以啟用輸入不是也不是空的驗證 `null` 。 此屬性是 Windows PowerShell 所提供的數個驗證屬性之一。 如需其他驗證屬性的範例，請參閱[驗證參數輸入](./validating-parameter-input.md)。
 
 ```
 [Parameter(Position = 0)]
@@ -130,7 +123,7 @@ public string[] Name
 
 如果您的 Cmdlet 是用來處理命令列輸入，它必須覆寫適當的輸入處理方法。 基本輸入處理方法會在[建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)中引進。
 
-`Get-Proc` Cmdlet 會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理使用者或腳本所提供的 `Name` 參數輸入。 這個方法會取得每個要求之進程名稱的進程，如果未提供任何名稱，則為所有進程。 請注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，對[WriteObject% 28system.string 29> 的呼叫。布林值 %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是將輸出物件傳送至管線所用的輸出機制（output）。 此呼叫的第二個參數（`enumerateCollection`）會設定為 `true`，以通知 Windows PowerShell 執行時間列舉處理常式物件的輸出陣列，並一次將一個進程寫入命令列。
+`Get-Proc`Cmdlet 會覆寫[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)方法，以處理 `Name` 使用者或腳本所提供的參數輸入。 這個方法會取得每個要求之進程名稱的進程，如果未提供任何名稱，則為所有進程。 請注意，在[ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)中，對[WriteObject% 28system.string 29> 的呼叫。布林值 %29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)是將輸出物件傳送至管線所用的輸出機制（output）。 這個呼叫的第二個參數 `enumerateCollection` 會設定為， `true` 以通知 Windows PowerShell 執行時間列舉處理常式物件的輸出陣列，並一次將一個進程寫入命令列。
 
 ```csharp
 protected override void ProcessRecord()
@@ -179,7 +172,7 @@ End Sub 'ProcessRecord
 
 ## <a name="code-sample"></a>程式碼範例
 
-如需完整C#的範例程式碼，請參閱[GetProcessSample02 範例](./getprocesssample02-sample.md)。
+如需完整的 c # 範例程式碼，請參閱[GetProcessSample02 範例](./getprocesssample02-sample.md)。
 
 ## <a name="defining-object-types-and-formatting"></a>定義物件類型和格式
 
@@ -199,7 +192,7 @@ Windows PowerShell 會使用 .NET Framework 物件，在 Cmdlet 之間傳遞資�
   get-proc -name iexplore
   ```
 
-  下列輸出隨即出現。
+  即會出現下列輸出。
 
   ```Output
   Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)   Id   ProcessName
@@ -213,7 +206,7 @@ Windows PowerShell 會使用 .NET Framework 物件，在 Cmdlet 之間傳遞資�
   get-proc -name iexplore, outlook, notepad
   ```
 
-  下列輸出隨即出現。
+  即會出現下列輸出。
 
   ```
   Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)   Id   ProcessName
@@ -227,7 +220,7 @@ Windows PowerShell 會使用 .NET Framework 物件，在 Cmdlet 之間傳遞資�
 
 ## <a name="see-also"></a>另請參閱
 
-[加入處理管線輸入的參數](./adding-parameters-that-process-pipeline-input.md)
+[新增處理管道輸入的參數](./adding-parameters-that-process-pipeline-input.md)
 
 [建立您的第一個 Cmdlet](./creating-a-cmdlet-without-parameters.md)
 

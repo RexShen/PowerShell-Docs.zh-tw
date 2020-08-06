@@ -1,25 +1,18 @@
 ---
-title: ListControl 之專案的標籤元素（格式） |Microsoft Docs
-ms.custom: ''
+title: ListControl (格式之專案的標籤元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c693ff46-d1ad-4dc7-93ac-41ff2fc6c103
-caps.latest.revision: 9
-ms.openlocfilehash: c1293d5a1f942704ac01388c66bd9009fd340e82
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ad80cc0478e7567b12d264ab661d843248ba48e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362887"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783631"
 ---
 # <a name="label-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的標籤元素 (格式)
 
 指定顯示在資料列中屬性或腳本值左邊的標籤。
 
-ListEntry for ListControl 元素的 ListItems （Format） ListEntry 專案之 ListControl （format） ListControl 元素的設定元素（格式） ViewDefinitions 元素（格式） ListEntries 元素（格式）專案（Format） ListControl 的 ListControl （format） Label 元素的 ListItems 的專案。
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 專案 (格式) ListControl (格式) ListEntry 元素 ListControl (格式) ListItems 專案（ListEntry 的 ListControl 專案 () Label 元素，ListItems (格式的 ListEntries 的標籤) 格式 (
 
 ## <a name="syntax"></a>語法
 
@@ -27,9 +20,9 @@ ListEntry for ListControl 元素的 ListItems （Format） ListEntry 專案之 L
 <Label>Label for displayed value</Label>
 ```
 
-## <a name="attributes-and-elements"></a>屬性與元素
+## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案，以及 `Label` 專案的父元素。
+下列各節說明屬性、子專案和元素的父元素 `Label` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -39,11 +32,11 @@ ListEntry for ListControl 元素的 ListItems （Format） ListEntry 專案之 L
 
 無。
 
-### <a name="parent-elements"></a>父元素
+### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[適用于 ListControl 之 ListItems 的專案專案元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
+|[ListControl 之 ListItems 的 ListItem 元素 (格式)](./listitem-element-for-listitems-for-listcontrol-format.md)|定義屬性或腳本，其值會顯示在清單視圖的資料列中。|
 
 ## <a name="text-value"></a>文字值
 
@@ -67,8 +60,8 @@ ListEntry for ListControl 元素的 ListItems （Format） ListEntry 專案之 L
 
 ## <a name="see-also"></a>另請參閱
 
-[建立清單視圖](./creating-a-list-view.md)
+[建立清單檢視](./creating-a-list-view.md)
 
-[[專案] 元素（格式）](./listitem-element-for-listitems-for-listcontrol-format.md)
+[ (格式的 [專案] 元素) ](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[撰寫 PowerShell 格式化檔案](./writing-a-powershell-formatting-file.md)
+[撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)
