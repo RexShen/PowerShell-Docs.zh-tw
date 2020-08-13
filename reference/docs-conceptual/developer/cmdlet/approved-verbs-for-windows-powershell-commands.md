@@ -5,12 +5,12 @@ helpviewer_keywords:
 - action names [PowerShell SDK]
 - verb names [PowerShell SDK]
 - cmdlets [PowerShell SDK], verb names
-ms.openlocfilehash: 1cdfed5727c0b93bd1d4008fd0d6c03c448c6aed
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: f065610b6e54c9a6a927948bc6b2ffe5a1671e0c
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782390"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162472"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell 命令的已核准動詞
 
@@ -18,6 +18,14 @@ PowerShell 會針對 Cmdlet 的名稱和其衍生的 Microsoft .NET Framework �
 
 > [!NOTE]
 > PowerShell 使用「_動詞_」一詞來描述一個表示動作的單字，即使該單字不是英文語言的標準動詞。 例如，「_新增_」一詞是有效的 PowerShell 動詞命令名稱，因為它會隱含動作，即使它不是英文語言中的動詞。
+
+<!--
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+每個核准的動詞命令都會定義對應的_別名首碼_。
+此別名前置詞通常用來命名使用該動詞命令的別名。
+例如，的別名前置詞 `Import` 是， `ip` 而的別名則 `Import-Module` 是 `ipmo` 。  這是建議事項，但不是規則;特別的是，不需要遵守命令別名，就能從其他環境模擬已知的命令。
 
 ## <a name="verb-naming-rules"></a>動詞命名規則
 
