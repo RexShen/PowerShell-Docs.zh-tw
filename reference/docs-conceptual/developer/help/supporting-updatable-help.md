@@ -1,16 +1,16 @@
 ---
 title: 支援可更新的說明
 ms.date: 10/28/2012
-ms.openlocfilehash: 6fa1a9e1f7f3cd42b512a72d7b68ae4a4976978f
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
-ms.translationtype: MT
+ms.openlocfilehash: bc5f08d2989b1031806c91acf43dd6a3b2646f04
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893334"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236334"
 ---
 # <a name="supporting-updatable-help"></a>支援可更新的說明
 
-Windows 8 和 Windows Server 2012 中引進的*Windows PowerShell 可更新說明系統*，是設計來確保使用者在其本機電腦上的命令提示字元中一律會有最新的說明主題。 除了 Windows PowerShell 線上說明之外，可更新的說明也為使用者提供了完整的協助解決方案。 本節描述可更新的說明系統，並說明模組作者可以如何支援其模組的可更新說明。
+*Windows PowerShell 可更新的說明系統* (在 Windows 8 與 Windows Server 2012 中引進) 的設計旨在確保使用者在其本機電腦上的命令提示字元中一律會有最新的說明主題。 除了 Windows PowerShell 線上說明之外，可更新的說明也為使用者提供完整的說明解決方案。 此節描述「可更新的說明系統」，並說明課程模組作者可以如何支援其課程模組的可更新說明。
 
 本節包含下列主題。
 
@@ -32,4 +32,4 @@ Windows 8 和 Windows Server 2012 中引進的*Windows PowerShell 可更新說�
 
 [支援線上說明](./supporting-online-help.md)
 
-[可更新的說明狀態資料表](https://www.microsoft.com/en-us/itpro/windows)
+[可更新的說明狀態表](/windows/deployment/deploy-whats-new)
