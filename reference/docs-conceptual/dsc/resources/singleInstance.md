@@ -1,17 +1,18 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 撰寫單一執行個體 DSC 資源 (最佳做法)
-ms.openlocfilehash: 4d9e07c6aaa064f808a03d4252e8d352b82183ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: cd6048c0f8aeef7fb5458a5f0bfefef25169297c
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952815"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217605"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a>撰寫單一執行個體 DSC 資源 (最佳做法)
 
->**注意︰** 本主題所描述的最佳做法用於定義設定中僅允許單一執行個體的 DSC 資源。 目前，沒有任何內建 DSC 功能可以執行這項作業。 這在未來可能會變更。
+> [!NOTE]
+> 這個主題會說明要定義在設定中只允許單一執行個體的 DSC 資源時的最佳做法。 目前，沒有任何內建 DSC 功能可以執行這項作業。 這在未來可能會變更。
 
 有時，您不想允許在設定中多次使用資源。 例如，在 [xTimeZone](https://github.com/PowerShell/xTimeZone) 資源的先前實作中，於每個資源區塊中將時區設為不同的設定，設定即可多次呼叫資源：
 
@@ -48,8 +49,7 @@ Configuration SetTimeZone
 
 原因是 DSC 資源金鑰的運作方式。 資源必須至少有一個金鑰屬性。 如果資源的所有金鑰屬性值組合皆為唯一，則會將資源執行個體視為唯一。 在其先前實作中，[xTimeZone](https://github.com/PowerShell/xTimeZone) 資源只有一個屬性 (**TimeZone**)，而這個屬性必須是金鑰。 因此，上述這類設定會編譯並執行，而不發出警告。 每個 **xTimeZone** 資源區塊都視為唯一的。 這會導致將設定重複套用至節點，方法是反覆循環時區。
 
-若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。
-已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。 資源的舊 MOF 結構描述為︰
+若要確保設定僅能設定目標節點的時區一次，則資源已更新成新增成為主要屬性的第二個屬性 (**IsSingleInstance**)。 已使用 **ValueMap**，將 **IsSingleInstance** 限制為單一值 "Yes"。 資源的舊 MOF 結構描述為︰
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -122,7 +122,7 @@ function Set-TargetResource
     $CurrentTimeZone = Get-TimeZone
 
     Write-Verbose -Message "Replace the System Time Zone to $TimeZone"
-    
+
     try
     {
         if($CurrentTimeZone -ne $TimeZone)
@@ -204,7 +204,7 @@ Export-ModuleMember -Function *-TargetResource
 
 請注意，**TimeZone** 屬性不再是索引鍵。 現在，如果設定嘗試設定時區兩次 (使用兩個具有不同 **TimeZone** 值的不同 **xTimeZone** 區塊)，則嘗試編譯設定將會導致錯誤︰
 
-```powershell
+```Output
 Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and
 '[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the
 following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property

@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 套件資源
-ms.openlocfilehash: ff2eae712b4117da9bca915f52e18caed7c4885d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: faeebc5bac7caad733600720f1c9f3d916d4c0a8
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559925"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464004"
 ---
 # <a name="dsc-package-resource"></a>DSC 套件資源
 

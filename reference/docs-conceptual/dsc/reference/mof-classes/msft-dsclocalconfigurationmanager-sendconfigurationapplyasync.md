@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,設定,安裝
 title: SendConfigurationApplyAsync 方法
-ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cfac5edb5fed94ee69deb98d7aa6be56b51c5b3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953375"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463732"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync 方法
 
@@ -25,11 +25,11 @@ uint32 SendConfigurationApplyAsync(
 
 ## <a name="parameters"></a>參數
 
-*ConfigurationData* \[in\] 設定的環境資料。
+**ConfigurationData** \[in\] 設定的環境資料。
 
-*force* \[in\] **true** 表示強制停止該設定。
+**force** \[in\] **true** 表示強制停止該設定。
 
-*jobId* \[in\] 傳送設定之工作的識別碼。
+**jobId** \[in\] 傳送設定之工作的識別碼。
 
 ## <a name="return-value"></a>傳回值
 

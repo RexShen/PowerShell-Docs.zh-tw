@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
-ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76995456"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158185"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x 的中斷性變更
 
@@ -35,8 +35,8 @@ ms.locfileid: "76995456"
 
 如果需要在 OS 重新啟動之後使用檢查點來繼續指令碼，建議使用 [工作排程器] 在 OS 啟動時執行指令碼，但指令碼必須維持其本身的狀態 (例如將它保存到檔案)。
 
-[workflow]: /powershell/scripting/components/workflows-guide
-[workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
+[workflow]: /previous-versions/powershell/scripting/components/workflows-guide
+[workflow-foundation]: /dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>自訂嵌入式管理單元
 
@@ -46,7 +46,7 @@ ms.locfileid: "76995456"
 
 目前，這會導致 Windows 和 Windows Server 中的 `ActiveDirectory` 與 `DnsClient` 模組中斷。
 
-[snapin]: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins
+[snapin]: /powershell/module/microsoft.powershell.core/about/about_pssnapins
 
 ### <a name="wmi-v1-cmdlets"></a>WMI v1 Cmdlet
 
@@ -246,8 +246,8 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 先前，使用 API 以程式設計方式建立 PowerShell Runspace 時，您可以使用舊版 [`RunspaceConfiguration`][runspaceconfig] 或較新的 [`InitialSessionState`][iss]。 這項變更移除了對 `RunspaceConfiguration` 的支援，而僅支援 `InitialSessionState`。
 
-[runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
-[iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
+[runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
+[iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
 
 ### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923"></a>`CommandInvocationIntrinsics.InvokeScript` 將引數繫結至 `$input` 而不是 `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
 

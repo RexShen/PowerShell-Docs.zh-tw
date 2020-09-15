@@ -3,12 +3,12 @@ title: PowerShell-Docs 樣式指南
 description: 此文章提供撰寫 PowerShell 文件的樣式規則。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b60ad9a4965e75cc5f68309604f1893e5757f351
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 32df641f7cafa2a5bfcf1bcbf94be594aa77c7d0
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690854"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837438"
 ---
 # <a name="powershell-docs-style-guide"></a>PowerShell-Docs 樣式指南
 
@@ -240,7 +240,7 @@ URL 和檔案連結上都允許深層連結。 將錨點新增至目標路徑的
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-如需詳細資訊，請參閱[在文件中使用連結](https://docs.microsoft.com/contribute/how-to-write-links)。
+如需詳細資訊，請參閱[在文件中使用連結](/contribute/how-to-write-links)。
 
 ## <a name="formatting-command-syntax-elements"></a>設定命令語法元素格式
 

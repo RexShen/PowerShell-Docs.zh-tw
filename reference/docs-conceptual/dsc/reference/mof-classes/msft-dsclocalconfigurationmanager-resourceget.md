@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,設定,安裝
 title: ResourceGet 方法
-ms.openlocfilehash: dbe610dfcef5ef6c79783801ecb6fdb7408bdfa5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: aa7671989db6f4a98d879fd449d09503eddbeda3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954995"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463953"
 ---
 # <a name="resourceget-method"></a>ResourceGet 方法
 
@@ -26,13 +26,13 @@ uint32 ResourceGet(
 
 ## <a name="parameters"></a>參數
 
-*ResourceType* \[in\] 要呼叫的資源名稱。
+**ResourceType** \[in\] 要呼叫的資源名稱。
 
-*ModuleName* \[in\] 包含要呼叫之資源的模組名稱。
+**ModuleName** \[in\] 包含要呼叫之資源的模組名稱。
 
-*resourceProperty* \[in\] 在雜湊表中指定資源的屬性名稱與其值，分別作為機碼與值。 使用 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet，探索資源的屬性和其類型。
+**resourceProperty** \[in\] 在雜湊表中指定資源的屬性名稱與其值，分別作為機碼與值。 使用 [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet，探索資源的屬性和其類型。
 
-*configurations* \[out\] 傳回時，包含設定的內嵌執行個體。
+**configurations** \[out\] 傳回時，包含設定的內嵌執行個體。
 
 ## <a name="return-value"></a>傳回值
 

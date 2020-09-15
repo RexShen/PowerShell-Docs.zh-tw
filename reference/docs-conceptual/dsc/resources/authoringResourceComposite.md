@@ -1,19 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 複合資源：把 DSC 設定當做資源使用
-ms.openlocfilehash: 79fe94bd5bab8fa460714e5994d2e2487f302410
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1baa5e4ca5dfa808edc4452db4874a83aa78107e
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415895"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217537"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合資源：把 DSC 設定當做資源使用
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-在真實世界的情況裡，設定可能冗長且複雜，要呼叫許多不同的資源，並設定大量的屬性。 為解決這種複雜性，您可以使用 Windows PowerShell 預期狀態設定 (DSC) 設定作為其他設定的資源。 這稱為複合資源。 複合資源是使用參數的 DSC 設定。 設定參數的表現如同資源屬性。 設定會儲存為副檔名為 `.schema.psm1` 的檔案。 它會取代 MOF 結構描述和一般 DSC 資源中的資源指令碼。 如需有關 DSC 資源的詳細資訊，請參閱 [Windows PowerShell 預期狀態設定資源](resources.md)。
+在真實世界的情況裡，設定可能冗長且複雜，要呼叫許多不同的資源，並設定大量的屬性。 為解決這種複雜性，您可以使用 Windows PowerShell 預期狀態設定 (DSC) 設定作為其他設定的資源。 這稱為複合資源。 複合資源是使用參數的 DSC 設定。 設定參數的表現如同資源屬性。
+設定會儲存為副檔名為 `.schema.psm1` 的檔案。 它會取代 MOF 結構描述和一般 DSC 資源中的資源指令碼。 如需有關 DSC 資源的詳細資訊，請參閱 [Windows PowerShell 預期狀態設定資源](resources.md)。
 
 ## <a name="creating-the-composite-resource"></a>建立複合資源
 

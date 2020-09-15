@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,設定,安裝
 title: StopConfiguration 方法
-ms.openlocfilehash: e1de175032a3bddf11af218bc4a15bdbe554a9d5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 76e50c98b09dca86983320918c6899082580672a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953355"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463698"
 ---
 # <a name="stopconfiguration-method"></a>StopConfiguration 方法
 
@@ -23,7 +23,7 @@ uint32 StopConfiguration(
 
 ## <a name="parameters"></a>參數
 
-*force* \[in\] **true** 表示強制停止該設定。
+**force** \[in\] **true** 表示強制停止該設定。
 
 ## <a name="return-value"></a>傳回值
 

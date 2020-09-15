@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c4e725569db776fe0dbd5395b2f0f8b8e70cbbeb
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500715"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837472"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
@@ -278,5 +278,5 @@ DSC 社群撰寫了多個解決方案來實作提取服務通訊協定。 對於
 - [Windows PowerShell Desired State Configuration 概觀](../overview/overview.md)
 - [制定組態](enactingConfigurations.md)
 - [使用 DSC 報表伺服器](reportServer.md)
-- [[MS-DSCPM]：預期狀態設定提取模型通訊協定](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
-- [[MS-DSCPM]：預期狀態設定提取模型通訊協定 Errata](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)
+- [[MS-DSCPM]：預期狀態設定提取模型通訊協定](/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]：預期狀態設定提取模型通訊協定 Errata](/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)

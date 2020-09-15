@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的鍵盤快速鍵
-ms.openlocfilehash: ee1b5961f8528d44330345bc49368e61970861ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809764"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092111"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
@@ -75,7 +75,7 @@ ms.locfileid: "83809764"
 | **執行/繼續**           | <kbd>F5</kbd>                                  | 偵錯指令碼時的指令碼窗格 |
 | **逐步執行**              | <kbd>F11</kbd>                                 | 偵錯指令碼時的指令碼窗格 |
 | **逐程序**              | <kbd>F10</kbd>                                 | 偵錯指令碼時的指令碼窗格 |
-| **跳出**               | <kbd>SHIFT</kbd>+<kbd><kbd>F11</kbd></kbd>     | 偵錯指令碼時的指令碼窗格 |
+| **跳出**               | <kbd>SHIFT</kbd>+<kbd>F11</kbd>                | 偵錯指令碼時的指令碼窗格 |
 | **顯示呼叫堆疊**     | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>D</kbd>  | 偵錯指令碼時的指令碼窗格 |
 | **列出中斷點**       | <kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>L</kbd>  | 偵錯指令碼時的指令碼窗格 |
 | **切換中斷點**      | <kbd>F9</kbd>                                  | 偵錯指令碼時的指令碼窗格 |
