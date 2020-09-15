@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsPackageCab 資源
-ms.openlocfilehash: 1b1b8b6d065882400608d26a991318fec9ad5747
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 7205a454d100bb369fd6cf0c5ac419585c8bbe86
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563958"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464140"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab 資源
 

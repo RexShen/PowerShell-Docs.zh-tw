@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsOptionalFeatureSet 資源
-ms.openlocfilehash: 0930bd0c6d1955005ea607b610e004818c0ad06f
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: e4f88f1cae6d7ddb3596ab4f27eb3766259f1a31
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560146"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464157"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet 資源
 
@@ -23,7 +23,6 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsOptionalFeatureSet** �
 WindowsOptionalFeatureSet [string] #ResourceName
 {
     Name = [string[]]
-    [ Source = [string] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogPath = [string] ]
     [ NoWindowsUpdateCheck = [bool] ]
@@ -39,7 +38,6 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |名稱 |表示您想要確保啟用或停用的功能名稱。 |
-|來源 |未實作。 |
 |NoWindowsUpdateCheck |指定在搜尋來源檔案以啟用功能時，DISM 是否連絡 Windows Update (WU)。 若為 `$true`，則 DISM 不連絡 WU。 |
 |RemoveFilesOnDisable |當 **Ensure** 設定為 **Absent** 時，設定為 `$true` 可移除與此功能建立關聯的所有檔案。 |
 |LogLevel |記錄中顯示的最大輸出等級。 接受的值為：**ErrorsOnly**、**ErrorsAndWarning** 和 **ErrorsAndWarningAndInformation**。 |

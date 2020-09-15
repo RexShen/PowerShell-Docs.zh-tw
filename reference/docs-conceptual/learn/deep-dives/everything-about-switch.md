@@ -3,12 +3,12 @@ title: 您想知道有關於 Switch 陳述式的一切
 description: PowerShell 中的 Switch 陳述式提供了在其他語言中無法找到的功能。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: ebf6191d56374273465ae6bee49ef82a02cc1580
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 685a5691599408a0d54ca99bf383bcd7702322a6
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149421"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469713"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>您想知道有關於 Switch 陳述式的一切
 
@@ -17,7 +17,7 @@ ms.locfileid: "84149421"
 > [!NOTE]
 > 此[原文][]出自 [@KevinMarquette][] 所撰寫的部落格。 PowerShell 小組感謝 Kevin 分享此內容。 請前往 [PowerShellExplained.com][] 瀏覽 Kevin 的部落格。
 
-## <a name="if-statement"></a>If 陳述式
+## <a name="the-if-statement"></a>`if` 陳述式
 
 您所學到的一個陳述式是 `if` 陳述式。 其可以讓您在陳述式為 `$true` 時執行指令碼區塊。
 

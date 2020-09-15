@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,設定,安裝
 title: RollBack 方法
-ms.openlocfilehash: 6452bdffd5160d9956576fb59c98e2f9ff7ddbbb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 301b8926d2ebf1ebe524f52a67928d34e26d860e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954935"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464327"
 ---
 # <a name="rollback-method"></a>RollBack 方法
 
@@ -23,7 +23,7 @@ uint32 RollBack(
 
 ## <a name="parameters"></a>參數
 
-*configurationNumber* \[in\] 指定要求的設定。
+**configurationNumber** \[in\] 指定要求的設定。
 
 ## <a name="return-value"></a>傳回值
 

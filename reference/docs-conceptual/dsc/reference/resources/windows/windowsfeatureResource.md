@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsFeature 資源
-ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954625"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464106"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature 資源
 
@@ -24,7 +24,6 @@ WindowsFeature [string] #ResourceName
     [ Credential = [PSCredential] ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ Source = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
     [ PsDscRunAsCredential = [PSCredential] ]
@@ -39,7 +38,6 @@ WindowsFeature [string] #ResourceName
 |認證 |表示要用以新增或移除角色或功能的認證。 |
 |IncludeAllSubFeature |將此屬性設定為 `$true` 可讓您使用以 **Name** 屬性指定的功能狀態，來確保所有必要子功能的狀態。 |
 |LogPath |表示要讓資源提供者記錄作業的記錄檔路徑。 |
-|來源 |如有必要，表示用於安裝的來源檔案位置。 |
 
 ## <a name="common-properties"></a>通用屬性
 

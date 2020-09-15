@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 記錄檔資源
-ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870756"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464021"
 ---
 # <a name="dsc-log-resource"></a>DSC 記錄檔資源
 

@@ -3,12 +3,12 @@ ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 description: 提供在目標節點管理本機群組的機制。
 title: DSC GroupSet 資源
-ms.openlocfilehash: 99b9cafdd4d799e18e1b9b1f08d7dd41ec435711
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560333"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464190"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 資源
 
@@ -24,8 +24,6 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **GroupSet** 資源會提供一�
 Group [string] #ResourceName
 {
     GroupName = [string[]]
-    [ Members = [string[]] ]
-    [ Description = [string[]] ]
     [ MembersToInclude = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ Credential = [PSCredential] ]
@@ -41,7 +39,6 @@ Group [string] #ResourceName
 |---|---|
 |GroupName |您要確保其特定狀態的群組名稱。 |
 |成員 |您可以使用這個屬性，以指定的成員來取代目前的群組成員資格。 這個屬性值為字串陣列，格式為 `Domain\UserName`。 如果您在設定中設定這個屬性，請勿使用 **MembersToExclude** 或 **MembersToInclude** 屬性。 這樣會產生錯誤。 |
-|描述 |群組的描述。 |
 |MembersToInclude |使用這個屬性將成員新增至群組的現有成員資格。 這個屬性值為字串陣列，格式為 `Domain\UserName`。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。 |
 |MembersToExclude |使用這個屬性從現有的群組成員資格移除成員。 這個屬性值為字串陣列，格式為 `Domain\UserName`。 如果您在設定中設定這個屬性，請勿使用 **Members** 屬性。 這樣會產生錯誤。 |
 |認證 |存取遠端資源時所需的認證。 此帳戶必須具有適當的 Active Directory 權限，藉此將所有非本機帳戶新增至群組；否則會發生錯誤。 |
@@ -57,7 +54,7 @@ Group [string] #ResourceName
 > [!NOTE]
 > 已在 WMF 5.0 中新增 **PsDscRunAsCredential** 通用屬性，以允許在其他認證的內容中執行任何 DSC 資源。 如需詳細資訊，請參閱[搭配 DSC 資源使用認證](../../../configurations/runasuser.md)。
 
-## <a name="example-1-ensuring-groups-are-present"></a>範例 1：確保群組存在
+## <a name="example-1-ensuring-groups-are-present"></a>範例 1：確定群組存在
 
 下例示範如何確保 "myGroup" 和 "myOtherGroup" 兩個群組會出現。
 
