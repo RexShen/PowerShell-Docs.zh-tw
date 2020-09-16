@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692264"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236249"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -64,7 +64,7 @@ Windows PowerShell 提供一組預期狀態設定的語言延伸模組，您可�
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 包含名為 DSC 服務的功能。 DSC 服務功能提供提取伺服器功能，包括支援 OData 端點的二進位檔。 WMF 包含在 Windows Server 中，並隨不定期發行的 Windows Server 更新。
-[新版 WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) 可包含 DSC 服務功能的更新。 基於這個理由，最好下載最新版的 WMF，並檢閱版本資訊來判斷版本是否包含 DSC 服務功能的更新。 您也應該檢閱指出更新或案例的設計狀態列為穩定或實驗性的版本資訊一節。 為保持彈性靈活的發行週期，個別功能可以宣告穩定，這表示 WMF 發行預覽版本時，功能已就緒可用於生產環境。 WMF 版本過去更新的其他功能 (詳細資訊請參閱 WMF 版本資訊)︰
+[新版 WMF 5.0](https://www.microsoft.com/download/details.aspx?id=54616) 可包含 DSC 服務功能的更新。 基於這個理由，最好下載最新版的 WMF，並檢閱版本資訊來判斷版本是否包含 DSC 服務功能的更新。 您也應該檢閱指出更新或案例的設計狀態列為穩定或實驗性的版本資訊一節。 為保持彈性靈活的發行週期，個別功能可以宣告穩定，這表示 WMF 發行預覽版本時，功能已就緒可用於生產環境。 WMF 版本過去更新的其他功能 (詳細資訊請參閱 WMF 版本資訊)︰
 
 - Windows PowerShell Windows PowerShell 整合式指令碼
 - 環境 (ISE) Windows PowerShell Web 服務 (Management OData

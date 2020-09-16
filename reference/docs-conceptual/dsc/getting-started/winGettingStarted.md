@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,設定,安裝
 title: 開始使用適用於 Windows 的 Desired State Configuration (DSC)
-ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 00e1cf545b19f054b4b1ff468c9f6ad94e5cef55
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75416171"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236317"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>開始使用適用於 Windows 的 Desired State Configuration (DSC)
 
@@ -31,7 +31,7 @@ ms.locfileid: "75416171"
 
 ## <a name="installing-dsc"></a>安裝 DSC
 
-PowerShell Desired State Configuration 包含在 Windows 中，而且透過 Windows Management Framework 來更新。 最新版本是 [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) \(英文\)。
+PowerShell Desired State Configuration 包含在 Windows 中，而且透過 Windows Management Framework 來更新。 最新版本是 [Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616) \(英文\)。
 
 > [!NOTE]
 > 您不需要啟用 Windows Server 功能 'DSC-Service'，即可使用 DSC 來管理電腦。

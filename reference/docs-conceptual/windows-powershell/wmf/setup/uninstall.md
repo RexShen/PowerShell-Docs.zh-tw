@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: 解除安裝 WMF 5.0
-ms.openlocfilehash: f562a4a4506bfdede6b23bd186b80f40cc9e45ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808674"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236300"
 ---
 # <a name="uninstallation-instructions"></a>解除安裝指示
 
 ## <a name="using-command-prompt"></a>使用 [命令提示字元]
 
 1. 開啟 **[命令提示字元]** 。
-2. 執行 [Windows Update 獨立啟動器](https://support.microsoft.com/en-us/kb/934307)，如下所示︰
+2. 執行 [Windows Update 獨立啟動器](https://support.microsoft.com/kb/934307)，如下所示︰
 
 在 Windows Server 2012 R2 和 Windows 8.1 上：
 

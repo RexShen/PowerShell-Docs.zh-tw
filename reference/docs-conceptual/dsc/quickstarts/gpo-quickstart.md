@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: dsc,gpo,powershell,configuration,setup
 title: 快速入門 - 將群組原則轉換至 DSC
-ms.openlocfilehash: a9ce9cecd71fe00d2908024a3ee474ec836af3ba
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808243"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236232"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>快速入門：將群組原則轉換至 DSC
 
@@ -23,7 +23,7 @@ ms.locfileid: "83808243"
 
 上述的 Cmdlet 會將基準轉換為 DSC `.mof` 檔案。 您也可以選擇輸出設定指令碼 (`.ps1`)，以便您編輯和重新編譯。 Cmdlet 會偵測缺少資源或重複資源區塊的編譯錯誤。 可能導致編譯錯誤的資源區塊會加上註解。
 
-下列範例會將 [Microsoft 安全性基準](https://www.microsoft.com/en-us/download/details.aspx?id=55319)轉換為 DSC 設定指令碼 (`.ps1`) 和 `.mof` 檔案。
+下列範例會將 [Microsoft 安全性基準](https://www.microsoft.com/download/details.aspx?id=55319)轉換為 DSC 設定指令碼 (`.ps1`) 和 `.mof` 檔案。
 
 ```powershell
 Install-Module BaselineManagement
