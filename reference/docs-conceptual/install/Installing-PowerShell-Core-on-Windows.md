@@ -1,13 +1,13 @@
 ---
 title: 在 Windows 上安裝 PowerShell
 description: 在 Windows 上安裝 PowerShell 的相關資訊
-ms.date: 05/21/2020
-ms.openlocfilehash: 864f297e4f569030439bd6b581ef593d36f8b910
-ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
+ms.date: 09/14/2020
+ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
+ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791493"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90574448"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安裝 PowerShell
 
@@ -30,8 +30,8 @@ ms.locfileid: "83791493"
 
 MSI 檔案看起來像 `PowerShell-<version>-win-<os-arch>.msi`。 例如：
 
-- `PowerShell-7.0.1-win-x64.msi`
-- `PowerShell-7.0.1-win-x86.msi`
+- `PowerShell-7.0.3-win-x64.msi`
+- `PowerShell-7.0.3-win-x86.msi`
 
 下載後，按兩下安裝程式，並依提示操作。
 
@@ -60,12 +60,28 @@ MSI 檔案看起來像 `PowerShell-<version>-win-<os-arch>.msi`。 例如：
 下列範例示範如何在啟用所有安裝選項的情況下，以無訊息方式安裝 PowerShell。
 
 ```powershell
-msiexec.exe /package PowerShell-7.0.1-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.3-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
 如需 `Msiexec.exe` 的命令列選項完整清單，請參閱[命令列選項](/windows/desktop/Msi/command-line-options)。
 
+### <a name="registry-keys-created-during-installation"></a>安裝期間建立的登錄機碼
+
+從 PowerShell 7.1 開始，MSI 套件會建立登錄機碼以儲存 PowerShell 的安裝位置與版本。 這些值位於 `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\<GUID>`。 針對每個組建類型 (發行版本或預覽版)、主要版本與架構，`<GUID>` 的值都不重複。
+
+|    版本    | 架構 |                                          登錄金鑰                                           |
+| ------------- | :----------: | ----------------------------------------------------------------------------------------------- |
+| 7.1.x 發行版本 |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\1d00683b-0f84-4db8-a64f-2f98ad42fe06` |
+| 7.1.x 發行版本 |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\31ab5147-9a97-4452-8443-d9709f0516e1` |
+| 7.1.x 預覽版 |     x86      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\86abcfbd-1ccc-4a88-b8b2-0facfde29094` |
+| 7.1.x 預覽版 |     x64      | `HKLM\Software\Microsoft\PowerShellCore\InstalledVersions\39243d76-adaf-42b1-94fb-16ecf83237c8` |
+
+系統管理員與開發人員可以加以使用來尋找 PowerShell 的路徑。 所有預覽版與次要發行版本的 `<GUID>` 值都相同。 每個主要發行版本的 `<GUID>` 值都會變更。
+
 ## <a name="installing-the-msix-package"></a><a id="msix" />安裝 MSIX 套件
+
+> [!NOTE]
+> 目前尚未正式支援 MSIX 套件。 我們會繼續建置僅供內部測試之用的套件。
 
 若要手動在 Windows 10 用戶端上安裝 MSIX 套件，請從我們的 GitHub [發行][releases] 頁面下載 MSIX 套件。 向下捲動至想安裝版本的 [資產]  區段。 [資產] 區段可能會摺疊，因此您可能需要按一下以展開它。
 
@@ -76,9 +92,6 @@ MSIX 檔案看起來像這樣 - `PowerShell-<version>-win-<os-arch>.msix`
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
-
-> [!NOTE]
-> MSIX 套件尚未發行。 發行後，套件可在 Microsoft Store 中取得，以及從 GitHub [版本][releases] 頁面中取得。
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
 
@@ -95,7 +108,7 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
    $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
-2. 將 ZIP 套件複製到裝置
+1. 將 ZIP 套件複製到裝置
 
    ```powershell
    # change the destination to however you had partitioned it with sufficient
@@ -104,7 +117,7 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
    Copy-Item .\PowerShell-<version>-win-<os-arch>.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
-3. 連接到裝置並展開封存
+1. 連接到裝置並展開封存
 
    ```powershell
    Enter-PSSession $s
@@ -112,7 +125,7 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
    Expand-Archive .\PowerShell-<version>-win-<os-arch>.zip
    ```
 
-4. 設定 PowerShell 7 的遠端功能
+1. 設定 PowerShell 7 的遠端功能
 
    ```powershell
    Set-Location .\PowerShell-<version>-win-<os-arch>
@@ -122,7 +135,7 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
    # You'll get an error message and will be disconnected from the device because it has to restart WinRM
    ```
 
-5. 連線到裝置上的 PowerShell 7 端點
+1. 連線到裝置上的 PowerShell 7 端點
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
@@ -147,22 +160,22 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
 目前可以使用兩種方法來部署 PowerShell 二進位檔。
 
 1. 離線 - 掛接 Nano Server VHD，並將 ZIP 檔案內容解壓縮至您在掛接映像中選擇的位置。
-2. 線上 - 透過 PowerShell 工作階段傳輸 ZIP 檔案，並將它解壓縮至您選擇的位置。
+1. 線上 - 透過 PowerShell 工作階段傳輸 ZIP 檔案，並將它解壓縮至您選擇的位置。
 
 在這兩種情況下，您都需要 Windows 10 x64 ZIP 版套件。 在 PowerShell 的「系統管理員」執行個體中執行命令。
 
 ### <a name="offline-deployment-of-powershell"></a>PowerShell 的離線部署
 
 1. 使用您最愛的 ZIP 公用程式將套件解壓縮至已掛接 Nano Server 映像的目錄。
-2. 取消掛接映像和開機映像。
-3. 連線到 Windows PowerShell 的收件匣執行個體。
-4. 請遵循下列指示來建立使用[另一個執行個體技術](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
+1. 取消掛接映像和開機映像。
+1. 連線到 Windows PowerShell 的內建執行個體。
+1. 請遵循下列指示來建立使用[另一個執行個體技術](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
 
 ### <a name="online-deployment-of-powershell"></a>PowerShell 的線上部署
 
 使用下列步驟，將 PowerShell 部署到 Nano Server。
 
-- 連線到 Windows PowerShell 的收件匣執行個體
+- 連線到 Windows PowerShell 的內建執行個體
 
   ```powershell
   $session = New-PSSession -ComputerName <Nano Server IP address> -Credential <An Administrator account on the system>
@@ -199,6 +212,36 @@ dotnet tool install --global PowerShell
 
 Dotnet 工具安裝程式會將 `$env:USERPROFILE\dotnet\tools` 新增至您的 `$env:PATH` 環境變數。 不過，目前執行的殼層沒有更新的 `$env:PATH`。 您可以透過輸入 `pwsh`，以從新的殼層啟動 PowerShell。
 
+## <a name="install-powershell-via-winget"></a>透過 Winget 安裝 PowerShell
+
+`winget` 命令列工具可讓開發人員探索、安裝、升級、移除及設定 Windows 10 電腦上的應用程式。 此工具是 Windows 封裝管理員服務的用戶端介面。
+
+> [!NOTE]
+> `winget` 工具目前處於預覽狀態。 目前並非所有已規劃的功能都可用。
+> 工具的選項與功能可能會變更。 您不應該在生產部署案例中使用此方法。 如需系統需求清單與安裝指示，請參閱 [winget] 文件。
+
+您可以透過下列命令使用已發佈的 `winget` 套件來安裝 PowerShell：
+
+1. 搜尋最新版的 PowerShell
+
+   ```powershell
+   winget search Microsoft.PowerShell
+   ```
+
+   ```Output
+   Name               Id                           Version
+   ---------------------------------------------------------------
+   PowerShell         Microsoft.PowerShell         7.0.3
+   PowerShell-Preview Microsoft.PowerShell-Preview 7.1.0-preview.5
+   ```
+
+1. 使用 `--exact` 參數安裝特定版本的 PowerShell
+
+   ```powershell
+   winget install --name PowerShell --exact
+   winget install --name PowerShell-Preview --exact
+   ```
+
 ## <a name="how-to-create-a-remoting-endpoint"></a>如何建立遠端端點
 
 PowerShell 支援透過 WSMan 與 SSH 的 PowerShell 遠端通訊協定 (PSRP)。 如需詳細資訊，請參閱
@@ -206,9 +249,14 @@ PowerShell 支援透過 WSMan 與 SSH 的 PowerShell 遠端通訊協定 (PSRP)�
 - [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
 - [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]
 
-<!-- [download-center]: TODO -->
+## <a name="installation-support"></a>安裝支援
+
+Microsoft 支援此文件中的安裝方法。 其他來源可能會提供其他安裝方法。 雖然那些工具與方法都有用，但 Microsoft 無法支援那些方法。
+
+<!-- link references -->
 
 [releases]: https://github.com/PowerShell/PowerShell/releases
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[winget]: /windows/package-manager/winget
