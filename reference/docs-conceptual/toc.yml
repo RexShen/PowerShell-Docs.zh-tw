@@ -73,13 +73,15 @@
           href: learn/deep-dives/everything-about-null.md
         - name: 您想知道有關於 ShouldProcess 的一切
           href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: 執行多執行緒時的寫入進度
+          href: learn/deep-dives/write-progress-across-multiple-threads.md
     - name: PowerShell 遠端
       items:
         - name: Just Enough Administration (JEA)
           items:
             - name: 概觀
               href: learn/remoting/jea/overview.md
-            - name: 必要條件
+            - name: Prerequisites
               href: learn/remoting/jea/prerequisites.md
             - name: 角色功能
               href: learn/remoting/jea/role-capabilities.md
@@ -225,7 +227,7 @@
               href: windows-powershell/wmf/whats-new/bugfixes.md
             - name: 新增與更新的 Cmdlet
               href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
-            - name: 使用 PowerShell 類別建立自訂類型
+            - name: PowerShell 5.0 的新語言功能
               href: windows-powershell/wmf/whats-new/class-overview.md
             - name: WMF 5.1 的主控台改善
               href: windows-powershell/wmf/whats-new/console-improvements.md
@@ -358,7 +360,7 @@
               href: dsc/resources/authoringResourceClass.md
             - name: 在 PowerShell 中撰寫複合資源
               href: dsc/resources/authoringResourceComposite.md
-            - name: '使用 C# 撰寫以 MOF 為基礎的資源'
+            - name: 使用 C# 撰寫以 MOF 為基礎的資源
               href: dsc/resources/authoringResourceMofCS.md
             - name: 使用 Resource Designer 工具
               href: dsc/resources/authoringResourceMofDesigner.md
@@ -562,6 +564,8 @@
       href: community/hall-of-fame.md
     - name: Docs 的新功能
       items:
+        - name: 2020-Q3
+          href: community/2020-Q3.md
         - name: 2020-Q2
           href: community/2020-Q2.md
         - name: 2020-Q1
@@ -626,7 +630,7 @@
           href: samples/managing-processes-with-process-cmdlets.md
         - name: 管理服務
           href: samples/managing-services.md
-        - name: 管理 Windows PowerShell 磁碟機
+        - name: 管理 PowerShell 磁碟機
           href: samples/managing-windows-powershell-drives.md
         - name: 使用印表機
           href: samples/working-with-printers.md
@@ -782,8 +786,14 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: 撰寫可攜式模組
       href: dev-cross-plat/writing-portable-modules.md
+    - name: 使用 PlatyPS 建立模組說明
+      href: dev-cross-plat/create-help-using-platyps.md
     - name: 如何建立標準程式庫的二進位模組
       href: dev-cross-plat/create-standard-library-binary-module.md
+    - name: 為 .NET 專案選擇正確的 NuGet 套件
+      href: dev-cross-plat/choosing-the-right-nuget-package.md
+    - name: 解決模組組件相依性衝突
+      href: dev-cross-plat/resolving-dependency-conflicts.md
     - name: 舊版 PowerShell SDK
       items:
         - name: 概觀
@@ -794,11 +804,11 @@
           href: developer/windows-powershell-reference.md
         - name: 新功能
           href: developer/windows-powershell-reference-whats-new.md
-        - name: 撰寫 Windows PowerShell Cmdlet
+        - name: 撰寫 PowerShell Cmdlet
           items:
             - name: Cmdlet 概觀
               href: developer/cmdlet/cmdlet-overview.md
-            - name: Windows PowerShell Cmdlet 概念
+            - name: PowerShell Cmdlet 概念
               href: developer/cmdlet/windows-powershell-cmdlet-concepts.md
               items:
                 - name: Cmdlet 開發指導方針
@@ -812,7 +822,7 @@
                       href: developer/cmdlet/advisory-development-guidelines.md
                 - name: Cmdlet 類別宣告
                   href: developer/cmdlet/cmdlet-class-declaration.md
-                - name: Windows PowerShell 已核准動詞命令
+                - name: 已核准的 PowerShell 命令動詞
                   href: developer/cmdlet/approved-verbs-for-windows-powershell-commands.md
                 - name: Cmdlet 輸入處理方法
                   href: developer/cmdlet/cmdlet-input-processing-methods.md
@@ -910,7 +920,7 @@
                       href: developer/cmdlet/users-requesting-confirmation.md
                     - name: 確認訊息
                       href: developer/cmdlet/confirmation-messages.md
-                - name: Windows PowerShell 錯誤報告
+                - name: PowerShell 錯誤報告
                   href: developer/cmdlet/windows-powershell-error-reporting.md
                   items:
                     - name: 錯誤報告概念
@@ -921,7 +931,7 @@
                       href: developer/cmdlet/non-terminating-errors.md
                     - name: 顯示錯誤資訊
                       href: developer/cmdlet/displaying-error-information.md
-                    - name: Windows PowerShell 錯誤記錄
+                    - name: PowerShell 錯誤記錄
                       href: developer/cmdlet/windows-powershell-error-records.md
                     - name: 解譯 ErrorRecord 物件
                       href: developer/cmdlet/interpreting-errorrecord-objects.md
@@ -931,7 +941,7 @@
                   href: developer/cmdlet/invoking-cmdlets-and-scripts-within-a-cmdlet.md
                 - name: Cmdlet 集合
                   href: developer/cmdlet/cmdlet-sets.md
-                - name: Windows PowerShell 工作階段狀態
+                - name: PowerShell 工作階段狀態
                   href: developer/cmdlet/windows-powershell-session-state.md
             - name: Cmdlet 程式碼範例
               href: developer/cmdlet/examples-of-cmdlet-code.md
@@ -1022,11 +1032,11 @@
                   href: developer/cmdlet/stopprocesssample04-sample.md
                 - name: Events01 範例
                   href: developer/cmdlet/events01-sample.md
-        - name: 撰寫 Windows PowerShell 模組
+        - name: 撰寫 PowerShell 模組
           items:
             - name: 概觀
               href: developer/module/writing-a-windows-powershell-module.md
-            - name: 了解 Windows PowerShell 模組
+            - name: 了解 PowerShell 模組
               href: developer/module/understanding-a-windows-powershell-module.md
             - name: 如何撰寫 PowerShell 指令碼模組
               href: developer/module/how-to-write-a-powershell-script-module.md
@@ -1050,17 +1060,17 @@
                   items:
                     - name: 概觀
                       href: developer/module/how-to-create-a-windows-powershell-snap-in.md
-                    - name: 撰寫 Windows PowerShell 嵌入式管理單元
+                    - name: 撰寫 PowerShell 嵌入式管理單元
                       href: developer/module/writing-a-windows-powershell-snap-in.md
-                    - name: 撰寫自訂 Windows PowerShell 嵌入式管理單元
+                    - name: 撰寫自訂的 PowerShell 嵌入式管理單元
                       href: developer/module/writing-a-custom-windows-powershell-snap-in.md
             - name: 匯入 PowerShell 模組
               href: developer/module/importing-a-powershell-module.md
-        - name: 撰寫 Windows PowerShell 提供者
+        - name: 撰寫 PowerShell 提供者
           items:
-            - name: Windows PowerShell 提供者快速入門
+            - name: PowerShell 提供者快速入門
               href: developer/provider/windows-powershell-provider-quickstart.md
-            - name: Windows PowerShell 提供者概觀
+            - name: PowerShell 提供者概觀
               href: developer/provider/windows-powershell-provider-overview.md
               items:
                 - name: 提供者類型
@@ -1092,9 +1102,9 @@
                   href: developer/provider/accessdbprovidersample05.md
                 - name: AccessDBProviderSample06
                   href: developer/provider/accessdbprovidersample06.md
-        - name: 撰寫 Windows PowerShell 主機應用程式
+        - name: 撰寫 PowerShell 主應用程式
           items:
-            - name: Windows PowerShell 主機快速入門
+            - name: PowerShell 主機快速入門
               href: developer/hosting/windows-powershell-host-quickstart.md
             - name: 建立 Runspace
               href: developer/hosting/creating-runspaces.md
@@ -1114,12 +1124,12 @@
             - name: 主機應用程式範例
               href: developer/hosting/host-application-samples.md
               items:
-                - name: Windows PowerShell API 範例
+                - name: PowerShell API 範例
                   href: developer/hosting/windows-powershell-api-samples.md
                   items:
-                    - name: Windows PowerShell01 範例
+                    - name: PowerShell01 範例
                       href: developer/hosting/windows-powershell01-sample.md
-                    - name: Windows PowerShell02 範例
+                    - name: PowerShell02 範例
                       href: developer/hosting/windows-powershell02-sample.md
                 - name: 自訂主機範例
                   href: developer/hosting/custom-host-samples.md
@@ -1633,7 +1643,7 @@
                   href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
                 - name: WrapTables 元素 (格式)
                   href: developer/format/wraptables-element-format.md
-        - name: 撰寫 Windows PowerShell 的說明
+        - name: 撰寫 PowerShell 的說明
           items:
             - name: 概觀
               href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
@@ -1655,7 +1665,7 @@
                   href: developer/help/examples-of-comment-based-help.md
             - name: 撰寫命令的 XML 型說明主題
               items:
-                - name: 撰寫 Windows PowerShell Cmdlet 的說明
+                - name: 撰寫 PowerShell Cmdlet 的說明
                   items:
                     - name: 概觀
                       href: developer/help/writing-help-for-windows-powershell-cmdlets.md
@@ -1679,9 +1689,10 @@
                       href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
                     - name: 如何新增相關連結至 Cmdlet 說明主題
                       href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
-                - name: 撰寫 Windows PowerShell 模組的說明
-                  href: developer/module/writing-help-for-windows-powershell-modules.md
+                - name: 撰寫 PowerShell 模組的說明
                   items:
+                    - name: 概觀
+                      href: developer/help/writing-help-for-windows-powershell-modules.md
                     - name: 為說明檔案命名
                       href: developer/help/naming-help-files.md
                     - name: 支援可更新的說明
@@ -1719,93 +1730,55 @@
                               href: developer/help/how-to-test-updatable-help.md
                         - name: 支援線上說明
                           href: developer/help/supporting-online-help.md
-                - name: 撰寫 Windows PowerShell 提供者的說明
+                - name: 撰寫 PowerShell 提供者的說明
                   items:
                     - name: 如何新增動態參數至提供者說明主題
                       href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
                     - name: 如何新增＜另請參閱＞小節至提供者說明主題
                       href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-        - name: 建立 Management OData Web 服務
+        - name: 擴充類型系統 (ETS)
           items:
-            - name: 概觀
-              href: developer/webservices/creating-a-management-odata-web-service.md
-            - name: 新增資源至 Management OData Web 服務
-              href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
-            - name: 實作 Management OData Web 服務的自訂授權
-              items:
-                - name: 概觀
-                  href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
-                - name: 設定角色型授權
-                  href: developer/webservices/configuring-role-based-authorization.md
-                - name: 角色型授權設定結構描述
-                  href: developer/webservices/role-based-authorization-configuration-schema.md
-                - name: 透過 Management OData Web 服務叫用 Windows PowerShell Cmdlet
-                  href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
-            - name: 實作 Management OData Web 服務的 SessionConfiguration
-              href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
-            - name: 撰寫 Management OData Web 服務的 MOF 結構描述檔案
-              href: developer/webservices/authoring-the-mof-schema-file-for-a-management-odata-web-service.md
-            - name: 撰寫 Management OData Web 服務的 XML 結構描述檔案
-              href: developer/webservices/authoring-the-xml-schema-file-for-a-management-odata-web-service.md
-            - name: 撰寫 Management OData Web 服務的 Web.config 檔案
-              href: developer/webservices/authoring-the-web-config-file-for-a-management-odata-web-service.md
-            - name: 部署 Management OData Web 服務
-              href: developer/webservices/deploying-a-management-odata-web-service.md
-            - name: 建立 Management OData 實體的關聯
-              href: developer/webservices/associating-management-odata-entities.md
-            - name: Management OData IIS 擴充功能結構描述檔案
-              items:
-                - name: 概觀
-                  href: developer/webservices/management-odata-iis-extension-schema-files.md
-                - name: 資源對應結構描述
-                  href: developer/webservices/resource-mapping-schema.md
-                - name: 公用資源結構描述
-                  href: developer/webservices/public-resource-schema.md
-        - name: 撰寫 Windows PowerShell 工作流程
-          items:
-            - name: 概觀
-              href: developer/workflow/writing-a-windows-powershell-workflow.md
-            - name: 新增 Windows PowerShell 活動至 Visual Studio 工具箱
-              href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-            - name: 透過 Windows PowerShell 活動建立工作流程
-              href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
-            - name: 使用 Windows PowerShell 指令碼建立工作流程
-              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
-            - name: 匯入並叫用 Windows PowerShell 工作流程
-              href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
-            - name: 從 Windows PowerShell Cmdlet 建立工作流程活動
-              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-            - name: 透過 Windows PowerShell API 對作業進行排程
-              href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
-            - name: 常見工作流程參數
-              href: developer/workflow/common-workflow-parameters.md
+            - name: ETS 概觀
+              href: developer/ets/overview.md
+            - name: ETS 成員
+              href: developer/ets/members.md
+            - name: ETS 成員集
+              href: developer/ets/membersets.md
+            - name: ETS 屬性
+              href: developer/ets/properties.md
+            - name: ETS 方法
+              href: developer/ets/methods.md
+            - name: ETS 類型轉換器
+              href: developer/ets/typeconverters.md
+            - name: ETS 的錯誤和例外狀況
+              href: developer/ets/errors-exceptions.md
         - name: Windows PowerShell 程式設計人員手冊
           href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
-            - name: 如何建立 Windows PowerShell 提供者
+            - name: 如何建立 PowerShell 提供者
               href: developer/prog-guide/how-to-create-a-windows-powershell-provider.md
               items:
-                - name: 設計 Windows PowerShell 提供者
+                - name: 設計 PowerShell 提供者
                   href: developer/prog-guide/designing-your-windows-powershell-provider.md
-                - name: 建立基本的 Windows PowerShell 提供者
+                - name: 建立基本的 PowerShell 提供者
                   href: developer/prog-guide/creating-a-basic-windows-powershell-provider.md
-                - name: 建立 Windows PowerShell 磁碟機提供者
+                - name: 建立 PowerShell 磁碟機提供者
                   href: developer/prog-guide/creating-a-windows-powershell-drive-provider.md
-                - name: 建立 Windows PowerShell 項目提供者
+                - name: 建立 PowerShell 項目提供者
                   href: developer/prog-guide/creating-a-windows-powershell-item-provider.md
-                - name: 建立 Windows PowerShell 容器提供者
+                - name: 建立 PowerShell 容器提供者
                   href: developer/prog-guide/creating-a-windows-powershell-container-provider.md
-                - name: 建立 Windows PowerShell 瀏覽提供者
+                - name: 建立 PowerShell 瀏覽提供者
                   href: developer/prog-guide/creating-a-windows-powershell-navigation-provider.md
-                - name: 建立 Windows PowerShell 內容提供者
+                - name: 建立 PowerShell 內容提供者
                   href: developer/prog-guide/creating-a-windows-powershell-content-provider.md
-                - name: 建立 Windows PowerShell 屬性提供者
+                - name: 建立 PowerShell 屬性提供者
                   href: developer/prog-guide/creating-a-windows-powershell-property-provider.md
             - name: 如何建立主控台殼層
               href: developer/prog-guide/how-to-create-a-console-shell.md
-            - name: Windows PowerShell 概念
+            - name: PowerShell 概念
               href: developer/prog-guide/windows-powershell-concepts.md
-            - name: Windows PowerShell 範例程式碼
+            - name: PowerShell 範例程式碼
               href: developer/prog-guide/windows-powershell-sample-code.md
               items:
                 - name: AccessDbProviderSample01 程式碼範例
@@ -1823,68 +1796,68 @@
                 - name: GetProc01 程式碼範例
                   href: developer/prog-guide/getproc01-code-samples.md
                   items:
-                    - name: 'GetProc01 (C#) 程式碼範例'
+                    - name: GetProc01 (C#) 程式碼範例
                       href: developer/prog-guide/getproc01-csharp-sample-code.md
                     - name: GetProc01 (VB.NET) 程式碼範例
                       href: developer/prog-guide/getproc01-vb-net-sample-code.md
                 - name: GetProc02 程式碼範例
                   href: developer/prog-guide/getproc02-code-samples.md
                   items:
-                    - name: 'GetProc02 (C#) 範例程式碼'
+                    - name: GetProc02 (C#) 範例程式碼
                       href: developer/prog-guide/getproc02-csharp-sample-code.md
                     - name: GetProc02 (VB.NET) 範例程式碼
                       href: developer/prog-guide/getproc02-vb-net-sample-code.md
                 - name: GetProc03 程式碼範例
                   href: developer/prog-guide/getproc03-code-samples.md
                   items:
-                    - name: 'GetProc03 (C#) 範例程式碼'
+                    - name: GetProc03 (C#) 範例程式碼
                       href: developer/prog-guide/getproc03-csharp-sample-code.md
                     - name: GetProc03 (VB.NET) 範例程式碼
                       href: developer/prog-guide/getproc03-vb-net-sample-code.md
                 - name: GetProc04 程式碼範例
                   href: developer/prog-guide/getproc04-code-samples.md
                   items:
-                    - name: 'GetProc04 (C#) 範例程式碼'
+                    - name: GetProc04 (C#) 範例程式碼
                       href: developer/prog-guide/getproc04-csharp-sample-code.md
                     - name: GetProc04 (VB.NET) 範例程式碼
                       href: developer/prog-guide/getproc04-vb-net-sample-code.md
                 - name: GetProc05 程式碼範例
                   href: developer/prog-guide/getproc05-code-samples.md
                   items:
-                    - name: 'GetProc05 (C#) 範例程式碼'
+                    - name: GetProc05 (C#) 範例程式碼
                       href: developer/prog-guide/getproc05-csharp-sample-code.md
                     - name: GetProc05 (VB.NET) 範例程式碼
                       href: developer/prog-guide/getproc05-vb-net-sample-code.md
                 - name: StopProc01 程式碼範例
                   href: developer/prog-guide/stopproc01-code-samples.md
                   items:
-                    - name: 'StopProc01 (C#) 範例程式碼'
+                    - name: StopProc01 (C#) 範例程式碼
                       href: developer/prog-guide/stopproc01-csharp-sample-code.md
                 - name: StopProcessSample04 程式碼範例
                   href: developer/prog-guide/stopprocesssample04-code-samples.md
                   items:
-                    - name: 'StopProcessSample04 (C#) 範例程式碼'
+                    - name: StopProcessSample04 (C#) 範例程式碼
                       href: developer/prog-guide/stopprocesssample04-csharp-sample-code.md
                     - name: StopProcessSample04 (VB.NET) 範例程式碼
                       href: developer/prog-guide/stopprocesssample04-vb-net-sample-code.md
                 - name: Runspace01 程式碼範例
                   href: developer/prog-guide/runspace01-code-samples.md
                   items:
-                    - name: 'Runspace01 (C#) 程式碼範例'
+                    - name: Runspace01 (C#) 程式碼範例
                       href: developer/prog-guide/runspace01-csharp-code-sample.md
                     - name: Runspace01 (VB.NET) 程式碼範例
                       href: developer/prog-guide/runspace01-vb-net-code-sample.md
                 - name: Runspace02 程式碼範例
                   href: developer/prog-guide/runspace02-code-samples.md
                   items:
-                    - name: 'Runspace02 (C#) 程式碼範例'
+                    - name: Runspace02 (C#) 程式碼範例
                       href: developer/prog-guide/runspace02-csharp-code-sample.md
                     - name: Runspace02 (VB.NET) 程式碼範例
                       href: developer/prog-guide/runspace02-vb-net-code-sample.md
                 - name: RunSpace03 程式碼範例
                   href: developer/prog-guide/runspace03-code-samples.md
                   items:
-                    - name: 'RunSpace03 (C#) 程式碼範例'
+                    - name: RunSpace03 (C#) 程式碼範例
                       href: developer/prog-guide/runspace03-csharp-code-sample.md
                     - name: RunSpace03 (VB.NET) 程式碼範例
                       href: developer/prog-guide/runspace03-vb-net-code-sample.md
