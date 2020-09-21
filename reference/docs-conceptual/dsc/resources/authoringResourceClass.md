@@ -1,31 +1,33 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692224"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217554"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="b7b37-103">使用 PowerShell 類別撰寫自訂的 DSC 資源</span><span class="sxs-lookup"><span data-stu-id="b7b37-103">Writing a custom DSC resource with PowerShell classes</span></span>
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="014b2-103">使用 PowerShell 類別撰寫自訂的 DSC 資源</span><span class="sxs-lookup"><span data-stu-id="014b2-103">Writing a custom DSC resource with PowerShell classes</span></span>
 
-> <span data-ttu-id="b7b37-104">適用於：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="b7b37-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="014b2-104">適用於：Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="014b2-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="b7b37-105">您可以利用 Windows PowerShell 5.0 引入的 PowerShell 類別，藉由建立類別來定義 DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="b7b37-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="b7b37-106">類別會定義結構描述和資源實作，所以不必建立個別的 MOF 檔案。</span><span class="sxs-lookup"><span data-stu-id="b7b37-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="b7b37-107">以類別為基礎的資源資料夾結構也比較簡單，因為不需要 **DSCResources** 資料夾。</span><span class="sxs-lookup"><span data-stu-id="b7b37-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
+<span data-ttu-id="014b2-105">您可以利用 Windows PowerShell 5.0 引入的 PowerShell 類別，藉由建立類別來定義 DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="014b2-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="014b2-106">類別會定義結構描述和資源實作，所以不必建立個別的 MOF 檔案。</span><span class="sxs-lookup"><span data-stu-id="014b2-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="014b2-107">以類別為基礎的資源資料夾結構也比較簡單，因為不需要 **DSCResources** 資料夾。</span><span class="sxs-lookup"><span data-stu-id="014b2-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
 
-<span data-ttu-id="b7b37-108">在以類別為基礎的 DSC 資源中，結構描述會定義為類別屬性，它可以使用屬性 (attribute) 修改以指定屬性 (property) 類型。</span><span class="sxs-lookup"><span data-stu-id="b7b37-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="b7b37-109">資源是由 **Get()** 、**Set()** 和 **Test()** 方法實作，它們相當於指令碼資源的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。</span><span class="sxs-lookup"><span data-stu-id="b7b37-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="014b2-108">在以類別為基礎的 DSC 資源中，結構描述會定義為類別屬性，它可以使用屬性 (attribute) 修改以指定屬性 (property) 類型。</span><span class="sxs-lookup"><span data-stu-id="014b2-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="014b2-109">資源是由 `Get()` 、`Set()` 和 `Test()` 方法實作，它們相當於指令碼資源的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式。</span><span class="sxs-lookup"><span data-stu-id="014b2-109">The resource is implemented by `Get()`, `Set()`, and `Test()` methods (equivalent to the `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetResource` functions in a script resource.</span></span>
 
-<span data-ttu-id="b7b37-110">本主題會建立名為 **FileResource** 的簡單資源，管理指定路徑的檔案。</span><span class="sxs-lookup"><span data-stu-id="b7b37-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
+<span data-ttu-id="014b2-110">本主題會建立名為 **FileResource** 的簡單資源，管理指定路徑的檔案。</span><span class="sxs-lookup"><span data-stu-id="014b2-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
 
-<span data-ttu-id="b7b37-111">如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。</span><span class="sxs-lookup"><span data-stu-id="b7b37-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
+<span data-ttu-id="014b2-111">如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。</span><span class="sxs-lookup"><span data-stu-id="014b2-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
 
-><span data-ttu-id="b7b37-112">**注意：** 以類別為基礎的資源不支援泛型集合。</span><span class="sxs-lookup"><span data-stu-id="b7b37-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
+> [!Note]
+> <span data-ttu-id="014b2-112">以類別為基礎的資源不支援泛型集合。</span><span class="sxs-lookup"><span data-stu-id="014b2-112">Generic collections are not supported in class-based resources.</span></span>
 
-## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="b7b37-113">類別資源的資料夾結構</span><span class="sxs-lookup"><span data-stu-id="b7b37-113">Folder structure for a class resource</span></span>
+## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="014b2-113">類別資源的資料夾結構</span><span class="sxs-lookup"><span data-stu-id="014b2-113">Folder structure for a class resource</span></span>
 
-<span data-ttu-id="b7b37-114">若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。</span><span class="sxs-lookup"><span data-stu-id="b7b37-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="b7b37-115">此類別在 **MyDscResource.psm1** 中定義，而模組資訊清單則在 **MyDscResource.psd1** 中定義。</span><span class="sxs-lookup"><span data-stu-id="b7b37-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
+<span data-ttu-id="014b2-114">若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。</span><span class="sxs-lookup"><span data-stu-id="014b2-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span>
+<span data-ttu-id="014b2-115">此類別在 `MyDscResource.psm1` 中定義，而模組資訊清單則在 `MyDscResource.psd1` 中定義。</span><span class="sxs-lookup"><span data-stu-id="014b2-115">The class is defined in `MyDscResource.psm1` and the module manifest is defined in `MyDscResource.psd1`.</span></span>
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -34,9 +36,9 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
         MyDscResource.psd1
 ```
 
-## <a name="create-the-class"></a><span data-ttu-id="b7b37-116">建立類別</span><span class="sxs-lookup"><span data-stu-id="b7b37-116">Create the class</span></span>
+## <a name="create-the-class"></a><span data-ttu-id="014b2-116">建立類別</span><span class="sxs-lookup"><span data-stu-id="014b2-116">Create the class</span></span>
 
-<span data-ttu-id="b7b37-117">您要使用類別關鍵字來建立 PowerShell 類別。</span><span class="sxs-lookup"><span data-stu-id="b7b37-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="b7b37-118">若要明確指出類別是 DSC 資源，請使用 **DscResource()** 屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="b7b37-119">類別名稱是 DSC 資源的名稱。</span><span class="sxs-lookup"><span data-stu-id="b7b37-119">The name of the class is the name of the DSC resource.</span></span>
+<span data-ttu-id="014b2-117">您要使用類別關鍵字來建立 PowerShell 類別。</span><span class="sxs-lookup"><span data-stu-id="014b2-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="014b2-118">若要明確指出類別是 DSC 資源，請使用 `DscResource()` 屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-118">To specify that a class is a DSC resource, use the `DscResource()` attribute.</span></span> <span data-ttu-id="014b2-119">類別名稱是 DSC 資源的名稱。</span><span class="sxs-lookup"><span data-stu-id="014b2-119">The name of the class is the name of the DSC resource.</span></span>
 
 ```powershell
 [DscResource()]
@@ -44,9 +46,9 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a><span data-ttu-id="b7b37-120">宣告屬性</span><span class="sxs-lookup"><span data-stu-id="b7b37-120">Declare properties</span></span>
+### <a name="declare-properties"></a><span data-ttu-id="014b2-120">宣告屬性</span><span class="sxs-lookup"><span data-stu-id="014b2-120">Declare properties</span></span>
 
-<span data-ttu-id="b7b37-121">DSC 資源結構描述會定義為類別的屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="b7b37-122">我們會宣告三個屬性，如下所示。</span><span class="sxs-lookup"><span data-stu-id="b7b37-122">We declare three properties as follows.</span></span>
+<span data-ttu-id="014b2-121">DSC 資源結構描述會定義為類別的屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="014b2-122">我們會宣告三個屬性，如下所示。</span><span class="sxs-lookup"><span data-stu-id="014b2-122">We declare three properties as follows.</span></span>
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +64,14 @@ class FileResource {
 [Nullable[datetime]] $CreationTime
 ```
 
-<span data-ttu-id="b7b37-123">請注意，屬性 (attribute) 會修改屬性 (property)。</span><span class="sxs-lookup"><span data-stu-id="b7b37-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="b7b37-124">屬性的意義如下：</span><span class="sxs-lookup"><span data-stu-id="b7b37-124">The meaning of the attributes is as follows:</span></span>
+<span data-ttu-id="014b2-123">請注意，屬性 (attribute) 會修改屬性 (property)。</span><span class="sxs-lookup"><span data-stu-id="014b2-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="014b2-124">屬性的意義如下：</span><span class="sxs-lookup"><span data-stu-id="014b2-124">The meaning of the attributes is as follows:</span></span>
 
-- <span data-ttu-id="b7b37-125">**DscProperty(Key)** ：此為必要屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="b7b37-126">此屬性為索引鍵。</span><span class="sxs-lookup"><span data-stu-id="b7b37-126">The property is a key.</span></span> <span data-ttu-id="b7b37-127">所有標示為索引鍵的屬性值都必須結合，以在設定內唯一識別資源執行個體。</span><span class="sxs-lookup"><span data-stu-id="b7b37-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
-- <span data-ttu-id="b7b37-128">**DscProperty(Mandatory)** ：此為必要屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-128">**DscProperty(Mandatory)**: The property is required.</span></span>
-- <span data-ttu-id="b7b37-129">**DscProperty(NotConfigurable)** ：此為唯讀屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="b7b37-130">標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 **Get()** 方法填入。</span><span class="sxs-lookup"><span data-stu-id="b7b37-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
-- <span data-ttu-id="b7b37-131">**DscProperty()** ：此為可設定但非必要的屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
+- <span data-ttu-id="014b2-125">**DscProperty(Key)** ：此為必要屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="014b2-126">此屬性為索引鍵。</span><span class="sxs-lookup"><span data-stu-id="014b2-126">The property is a key.</span></span> <span data-ttu-id="014b2-127">所有標示為索引鍵的屬性值都必須結合，以在設定內唯一識別資源執行個體。</span><span class="sxs-lookup"><span data-stu-id="014b2-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
+- <span data-ttu-id="014b2-128">**DscProperty(Mandatory)** ：此為必要屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-128">**DscProperty(Mandatory)**: The property is required.</span></span>
+- <span data-ttu-id="014b2-129">**DscProperty(NotConfigurable)** ：此為唯讀屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="014b2-130">標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 `Get()` 方法填入。</span><span class="sxs-lookup"><span data-stu-id="014b2-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the `Get()` method when present.</span></span>
+- <span data-ttu-id="014b2-131">**DscProperty()** ：此為可設定但非必要的屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
 
-<span data-ttu-id="b7b37-132">**$Path** 和 **$SourcePath** 屬性都是字串。</span><span class="sxs-lookup"><span data-stu-id="b7b37-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="b7b37-133">**$CreationTime** 是 [DateTime](/dotnet/api/system.datetime) 屬性。</span><span class="sxs-lookup"><span data-stu-id="b7b37-133">The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property.</span></span> <span data-ttu-id="b7b37-134">**$Ensure** 屬性是列舉類型，定義如下。</span><span class="sxs-lookup"><span data-stu-id="b7b37-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
+<span data-ttu-id="014b2-132">`$Path` 和 `$SourcePath` 屬性都是字串。</span><span class="sxs-lookup"><span data-stu-id="014b2-132">The `$Path` and `$SourcePath` properties are both strings.</span></span> <span data-ttu-id="014b2-133">`$CreationTime` 是 [DateTime](/dotnet/api/system.datetime) 屬性。</span><span class="sxs-lookup"><span data-stu-id="014b2-133">The `$CreationTime` is a [DateTime](/dotnet/api/system.datetime) property.</span></span> <span data-ttu-id="014b2-134">`$Ensure` 屬性是列舉類型，定義如下。</span><span class="sxs-lookup"><span data-stu-id="014b2-134">The `$Ensure` property is an enumeration type, defined as follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -79,11 +81,11 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a><span data-ttu-id="b7b37-135">實作方法</span><span class="sxs-lookup"><span data-stu-id="b7b37-135">Implementing the methods</span></span>
+### <a name="implementing-the-methods"></a><span data-ttu-id="014b2-135">實作方法</span><span class="sxs-lookup"><span data-stu-id="014b2-135">Implementing the methods</span></span>
 
-<span data-ttu-id="b7b37-136">**Get()** 、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。</span><span class="sxs-lookup"><span data-stu-id="b7b37-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="014b2-136">`Get()` 、`Set()` 和 `Test()` 方法類似於指令碼資源中的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式。</span><span class="sxs-lookup"><span data-stu-id="014b2-136">The `Get()`, `Set()`, and `Test()` methods are analogous to the `Get-TargetResource`, `Set-TargetResource`, and `Test-TargetResource` functions in a script resource.</span></span>
 
-<span data-ttu-id="b7b37-137">這個程式碼也包含 CopyFile() 函式，這是會將檔案從 **$SourcePath** 複製到 **$Path** 的 Helper 函式。</span><span class="sxs-lookup"><span data-stu-id="b7b37-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span>
+<span data-ttu-id="014b2-137">這段程式碼也包含 `CopyFile()` 函式，這是能將檔案從 `$SourcePath` 複製到 `$Path` 的 Helper 函式。</span><span class="sxs-lookup"><span data-stu-id="014b2-137">This code also includes the `CopyFile()` function, a helper function that copies the file from `$SourcePath` to `$Path`.</span></span>
 
 ```powershell
     <#
@@ -215,9 +217,9 @@ enum Ensure
     }
 ```
 
-### <a name="the-complete-file"></a><span data-ttu-id="b7b37-138">完整的檔案</span><span class="sxs-lookup"><span data-stu-id="b7b37-138">The complete file</span></span>
+### <a name="the-complete-file"></a><span data-ttu-id="014b2-138">完整的檔案</span><span class="sxs-lookup"><span data-stu-id="014b2-138">The complete file</span></span>
 
-<span data-ttu-id="b7b37-139">完整的類別檔案如下。</span><span class="sxs-lookup"><span data-stu-id="b7b37-139">The complete class file follows.</span></span>
+<span data-ttu-id="014b2-139">完整的類別檔案如下。</span><span class="sxs-lookup"><span data-stu-id="014b2-139">The complete class file follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -414,9 +416,9 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-## <a name="create-a-manifest"></a><span data-ttu-id="b7b37-140">建立資訊清單</span><span class="sxs-lookup"><span data-stu-id="b7b37-140">Create a manifest</span></span>
+## <a name="create-a-manifest"></a><span data-ttu-id="014b2-140">建立資訊清單</span><span class="sxs-lookup"><span data-stu-id="014b2-140">Create a manifest</span></span>
 
-<span data-ttu-id="b7b37-141">若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。</span><span class="sxs-lookup"><span data-stu-id="b7b37-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="b7b37-142">我們的資訊清單看起來像這樣︰</span><span class="sxs-lookup"><span data-stu-id="b7b37-142">Our manifest looks like this:</span></span>
+<span data-ttu-id="014b2-141">若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 `DscResourcesToExport` 陳述式。</span><span class="sxs-lookup"><span data-stu-id="014b2-141">To make a class-based resource available to the DSC engine, you must include a `DscResourcesToExport` statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="014b2-142">我們的資訊清單看起來像這樣︰</span><span class="sxs-lookup"><span data-stu-id="014b2-142">Our manifest looks like this:</span></span>
 
 ```powershell
 @{
@@ -452,9 +454,9 @@ PowerShellVersion = '5.0'
 }
 ```
 
-## <a name="test-the-resource"></a><span data-ttu-id="b7b37-143">測試資源</span><span class="sxs-lookup"><span data-stu-id="b7b37-143">Test the resource</span></span>
+## <a name="test-the-resource"></a><span data-ttu-id="014b2-143">測試資源</span><span class="sxs-lookup"><span data-stu-id="014b2-143">Test the resource</span></span>
 
-<span data-ttu-id="b7b37-144">如前文所述將類別和資訊清單檔儲存在資料夾結構中後，您就可以建立使用新資源的設定。</span><span class="sxs-lookup"><span data-stu-id="b7b37-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="b7b37-145">如需如何執行 DSC 設定的資訊，請參閱[施行設定](../pull-server/enactingConfigurations.md)。</span><span class="sxs-lookup"><span data-stu-id="b7b37-145">For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md).</span></span> <span data-ttu-id="b7b37-146">下列設定會檢查 `c:\test\test.txt` 的檔案是否存在，如果不存在，會從 `c:\test.txt` 複製檔案 (您應該先建立 `c:\test.txt` 再執行設定)。</span><span class="sxs-lookup"><span data-stu-id="b7b37-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
+<span data-ttu-id="014b2-144">如前文所述將類別和資訊清單檔儲存在資料夾結構中後，您就可以建立使用新資源的設定。</span><span class="sxs-lookup"><span data-stu-id="014b2-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="014b2-145">如需如何執行 DSC 設定的資訊，請參閱[施行設定](../pull-server/enactingConfigurations.md)。</span><span class="sxs-lookup"><span data-stu-id="014b2-145">For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md).</span></span> <span data-ttu-id="014b2-146">下列設定會檢查 `c:\test\test.txt` 的檔案是否存在，如果不存在，會從 `c:\test.txt` 複製檔案 (您應該先建立 `c:\test.txt` 再執行設定)。</span><span class="sxs-lookup"><span data-stu-id="014b2-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
 
 ```powershell
 Configuration Test
@@ -471,24 +473,22 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="b7b37-147">支援 PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="b7b37-147">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="014b2-147">支援 PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="014b2-147">Supporting PsDscRunAsCredential</span></span>
 
-><span data-ttu-id="b7b37-148">**注意：** PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="b7b37-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+> <span data-ttu-id="014b2-148">[注意] PowerShell 5.0 及更新版本支援 **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="014b2-148">[Note] **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="b7b37-149">您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。</span><span class="sxs-lookup"><span data-stu-id="b7b37-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="b7b37-150">如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="b7b37-150">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
+<span data-ttu-id="014b2-149">您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。</span><span class="sxs-lookup"><span data-stu-id="014b2-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span> <span data-ttu-id="014b2-150">如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。</span><span class="sxs-lookup"><span data-stu-id="014b2-150">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="b7b37-151">針對您的資源要求使用或不允許使用 PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="b7b37-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="014b2-151">針對您的資源要求使用或不允許使用 PsDscRunAsCredential</span><span class="sxs-lookup"><span data-stu-id="014b2-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
 
-<span data-ttu-id="b7b37-152">**DscResource()** 屬性可接受選擇性的參數 **RunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="b7b37-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
-<span data-ttu-id="b7b37-153">此參數可接受下列三個值其中之一：</span><span class="sxs-lookup"><span data-stu-id="b7b37-153">This parameter takes one of three values:</span></span>
+<span data-ttu-id="014b2-152">`DscResource()` 屬性可接受選擇性的參數 **RunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="014b2-152">The `DscResource()` attribute takes an optional parameter **RunAsCredential**.</span></span> <span data-ttu-id="014b2-153">此參數可接受下列三個值其中之一：</span><span class="sxs-lookup"><span data-stu-id="014b2-153">This parameter takes one of three values:</span></span>
 
-- <span data-ttu-id="b7b37-154">對呼叫此資源的設定來說，可以選擇是否使用 `Optional` **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="b7b37-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="b7b37-155">這是預設值。</span><span class="sxs-lookup"><span data-stu-id="b7b37-155">This is the default value.</span></span>
-- <span data-ttu-id="b7b37-156">對呼叫此資源的所有設定來說，必須使用 `Mandatory` **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="b7b37-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
-- <span data-ttu-id="b7b37-157">`NotSupported`：呼叫此資源的設定無法使用 **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="b7b37-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
-- <span data-ttu-id="b7b37-158">`Default`：與 `Optional` 相同。</span><span class="sxs-lookup"><span data-stu-id="b7b37-158">`Default` Same as `Optional`.</span></span>
+- <span data-ttu-id="014b2-154">對呼叫此資源的設定來說，可以選擇是否使用 `Optional` **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="014b2-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="014b2-155">這是預設值。</span><span class="sxs-lookup"><span data-stu-id="014b2-155">This is the default value.</span></span>
+- <span data-ttu-id="014b2-156">對呼叫此資源的所有設定來說，必須使用 `Mandatory` **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="014b2-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
+- <span data-ttu-id="014b2-157">`NotSupported`：呼叫此資源的設定無法使用 **PsDscRunAsCredential**。</span><span class="sxs-lookup"><span data-stu-id="014b2-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
+- <span data-ttu-id="014b2-158">`Default`：與 `Optional` 相同。</span><span class="sxs-lookup"><span data-stu-id="014b2-158">`Default` Same as `Optional`.</span></span>
 
-<span data-ttu-id="b7b37-159">例如，使用下列屬性可以指定您的自訂資源不支援使用 **PsDscRunAsCredential**：</span><span class="sxs-lookup"><span data-stu-id="b7b37-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
+<span data-ttu-id="014b2-159">例如，使用下列屬性可以指定您的自訂資源不支援使用 **PsDscRunAsCredential**：</span><span class="sxs-lookup"><span data-stu-id="014b2-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -496,11 +496,11 @@ class FileResource {
 }
 ```
 
-### <a name="declaring-multiple-class-resources-in-a-module"></a><span data-ttu-id="b7b37-160">在模組中宣告多個類別資源</span><span class="sxs-lookup"><span data-stu-id="b7b37-160">Declaring multiple class resources in a module</span></span>
+### <a name="declaring-multiple-class-resources-in-a-module"></a><span data-ttu-id="014b2-160">在模組中宣告多個類別資源</span><span class="sxs-lookup"><span data-stu-id="014b2-160">Declaring multiple class resources in a module</span></span>
 
-<span data-ttu-id="b7b37-161">一個模組可定義以多個類別為基礎的 DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="b7b37-161">A module can define multiple class based DSC resources.</span></span> <span data-ttu-id="b7b37-162">您可以透過下列方式建立資料夾結構：</span><span class="sxs-lookup"><span data-stu-id="b7b37-162">You can create the folder structure in the following ways:</span></span>
+<span data-ttu-id="014b2-161">一個模組可定義以多個類別為基礎的 DSC 資源。</span><span class="sxs-lookup"><span data-stu-id="014b2-161">A module can define multiple class based DSC resources.</span></span> <span data-ttu-id="014b2-162">您可以透過下列方式建立資料夾結構：</span><span class="sxs-lookup"><span data-stu-id="014b2-162">You can create the folder structure in the following ways:</span></span>
 
-1. <span data-ttu-id="b7b37-163">在 `<ModuleName>.psm1` 檔案中定義第一個資源，然後在 **DSCResources** 資料夾下方定義後續資源。</span><span class="sxs-lookup"><span data-stu-id="b7b37-163">Define the first resource in the `<ModuleName>.psm1` file and subsequent resources under the **DSCResources** folder.</span></span>
+1. <span data-ttu-id="014b2-163">在 `<ModuleName>.psm1` 檔案中定義第一個資源，然後在 **DSCResources** 資料夾下方定義後續資源。</span><span class="sxs-lookup"><span data-stu-id="014b2-163">Define the first resource in the `<ModuleName>.psm1` file and subsequent resources under the **DSCResources** folder.</span></span>
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -511,7 +511,7 @@ class FileResource {
            |- SecondResource.psm1
    ```
 
-2. <span data-ttu-id="b7b37-164">在 **DSCResources** 資料夾下方定義所有資源。</span><span class="sxs-lookup"><span data-stu-id="b7b37-164">Define all resources under the **DSCResources** folder.</span></span>
+1. <span data-ttu-id="014b2-164">在 **DSCResources** 資料夾下方定義所有資源。</span><span class="sxs-lookup"><span data-stu-id="014b2-164">Define all resources under the **DSCResources** folder.</span></span>
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -524,13 +524,13 @@ class FileResource {
    ```
 
 > [!NOTE]
-> <span data-ttu-id="b7b37-165">在上述範例中，將 **DSCResources** 下方的所有 PSM1 檔案新增至您 PSD1 檔案中的 **NestedModules** 索引碼。</span><span class="sxs-lookup"><span data-stu-id="b7b37-165">In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.</span></span>
+> <span data-ttu-id="014b2-165">在上述範例中，將 **DSCResources** 下方的所有 PSM1 檔案新增至您 PSD1 檔案中的 **NestedModules** 索引碼。</span><span class="sxs-lookup"><span data-stu-id="014b2-165">In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.</span></span>
 
-### <a name="access-the-user-context"></a><span data-ttu-id="b7b37-166">存取使用者內容</span><span class="sxs-lookup"><span data-stu-id="b7b37-166">Access the user context</span></span>
+### <a name="access-the-user-context"></a><span data-ttu-id="014b2-166">存取使用者內容</span><span class="sxs-lookup"><span data-stu-id="014b2-166">Access the user context</span></span>
 
-<span data-ttu-id="b7b37-167">若要從自訂資源內存取使用者內容，您可以使用自動變數 `$global:PsDscContext`。</span><span class="sxs-lookup"><span data-stu-id="b7b37-167">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
+<span data-ttu-id="014b2-167">若要從自訂資源內存取使用者內容，您可以使用自動變數 `$global:PsDscContext`。</span><span class="sxs-lookup"><span data-stu-id="014b2-167">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
 
-<span data-ttu-id="b7b37-168">例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：</span><span class="sxs-lookup"><span data-stu-id="b7b37-168">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="014b2-168">例如，下列程式碼會將資源執行位置的上層使用者內容寫入到詳細的輸出資料流：</span><span class="sxs-lookup"><span data-stu-id="014b2-168">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -538,6 +538,6 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="b7b37-169">另請參閱</span><span class="sxs-lookup"><span data-stu-id="b7b37-169">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="014b2-169">另請參閱</span><span class="sxs-lookup"><span data-stu-id="014b2-169">See Also</span></span>
 
-[<span data-ttu-id="b7b37-170">建置自訂的 Windows PowerShell 預期狀態設定資源</span><span class="sxs-lookup"><span data-stu-id="b7b37-170">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
+[<span data-ttu-id="014b2-170">建置自訂的 Windows PowerShell 預期狀態設定資源</span><span class="sxs-lookup"><span data-stu-id="014b2-170">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
