@@ -3,12 +3,12 @@ title: 您想知道有關於例外狀況的一切 (英文)
 description: 在撰寫程式碼時，錯誤處理只是生命必經的歷程。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
-ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
+ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
+ms.sourcegitcommit: 94c39b0d36b948d3a62707ae8a3be00efe606434
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84337177"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90012556"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>您想知道有關於例外狀況的一切 (英文)
 
@@ -82,7 +82,7 @@ At line:1 char:1
 Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 ```
 
-感謝 Lee Dailey 以這種方式使用 `-ErrorAction Stop` 發出提醒。
+感謝 Lee Dailey 以這種方式使用 `-ErrorAction Stop` 來發出提醒。
 
 #### <a name="cmdlet--erroraction-stop"></a>Cmdlet -ErrorAction Stop
 
@@ -583,5 +583,5 @@ throw [System.Exception]::new('third')
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [Reddit/r/PowerShell community]: https://www.reddit.com/r/PowerShell/comments/64866o/kevmar_all_net_46_exceptions_list_for_use_with/
 [.NET 例外狀況的大型清單]: https://powershellexplained.com/2017-04-07-all-dotnet-exception-list
-[FileNotFoundException]: https://docs.microsoft.com/dotnet/api/System.IO.FileNotFoundException
-[.NET 文件]: https://docs.microsoft.com/dotnet/api
+[FileNotFoundException]: /dotnet/api/System.IO.FileNotFoundException
+[.NET 文件]: /dotnet/api

@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: 管理 API 金鑰
-ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278274"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777587"
 ---
 # <a name="managing-api-keys"></a>管理 API 金鑰
 
@@ -59,7 +59,7 @@ PowerShell 資源庫支援建立多個 API 金鑰，以支援各種不同的發�
 
 您可以變更現有金鑰的某些設定。 如前所述，您無法修改現有 API 金鑰的安全性範圍，或變更到期日。 下列螢幕擷取畫面顯示可變更的選項：
 
-![取得新的 API 金鑰值](media/creating-APIkeys/PSGallery_EditAPIKey.png)
+![編輯 API 金鑰值](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 若要變更受金鑰控制的套件，您可以從清單中選擇個別套件，或變更 Glob 模式。
 

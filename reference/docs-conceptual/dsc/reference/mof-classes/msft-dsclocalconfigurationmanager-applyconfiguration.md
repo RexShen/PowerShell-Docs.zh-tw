@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: dsc,powershell,設定,安裝
 title: ApplyConfiguration 方法
-ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953455"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463834"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration 方法
 
@@ -25,7 +25,9 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>參數
 
-*force* \[in\] 如果這是 **true**，即使有擱置中的設定，也會重新套用目前的設定。
+### <a name="force"></a>force
+
+如果這是 **true**，就算有擱置中的設定，也會重新套用目前的設定。
 
 ## <a name="return-value"></a>傳回值
 
@@ -37,9 +39,9 @@ uint32 ApplyConfiguration(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF：** DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

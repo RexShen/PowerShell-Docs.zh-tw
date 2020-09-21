@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 使用 C# 撰寫 DSC 資源
-ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4652d5d99c32685e124f2cd1b718f973380ab16a
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417689"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217503"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>用 C\# 撰寫 DSC 資源
 
@@ -18,6 +18,7 @@ ms.locfileid: "74417689"
 除了用 C# 將資源當做 Cmdlet 實作，建立 MOF 結構描述、建立資料夾結構、匯入和使用自訂之 DSC 資源的程序，一如[撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md) 中所述。
 
 ## <a name="writing-a-cmdlet-based-resource"></a>撰寫 Cmdlet 式的資源
+
 本例中，我們會實作簡單的資源，管理文字檔案及其內容。
 
 ### <a name="writing-the-mof-schema"></a>撰寫 MOF 結構描述
@@ -35,6 +36,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 ```
 
 ### <a name="setting-up-the-visual-studio-project"></a>設定 Visual Studio 專案
+
 #### <a name="setting-up-a-cmdlet-project"></a>設定 Cmdlet 專案
 
 1. 開啟 Visual Studio。
@@ -46,11 +48,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 
 ### <a name="writing-the-cmdlet-code"></a>撰寫 Cmdlet 程式碼
 
-下列 C# 程式碼會實作 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** Cmdlet。
+下列 C# 程式碼實作 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` Cmdlet。
 
 ```C#
-
-
 namespace cSharpDSCResourceExample
 {
     using System;
@@ -278,7 +278,11 @@ $env: psmodulepath (folder)
 ```
 
 ### <a name="see-also"></a>另請參閱
+
 #### <a name="concepts"></a>概念
+
 [撰寫自訂的 DSC 資源與 MOF](authoringResourceMOF.md)
+
 #### <a name="other-resources"></a>其他資源
+
 [撰寫 Windows PowerShell Cmdlet](/powershell/scripting/developer/windows-powershell)

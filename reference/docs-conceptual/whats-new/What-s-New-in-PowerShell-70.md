@@ -2,12 +2,12 @@
 title: PowerShell 7.0 的新功能
 description: PowerShell 7.0 中發行的新功能與變更
 ms.date: 03/04/2020
-ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808396"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162455"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 的新功能
 
@@ -284,7 +284,7 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 ![指令碼的錯誤顯示](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 PowerShell 7 中的預設檢視為 **ConciseView**。 先前的預設檢視為 **NormalView**。您可以設定喜好設定變數 `$ErrorView` 來選取此檢視。
- 
+
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -357,11 +357,12 @@ $Env:POWERSHELL_UPDATECHECK = 'Default'
 
 此 Cmdlet 會直接叫用 DSC 資源，而不需建立設定文件。 使用此 Cmdlet，設定管理產品就能使用 DSC 資源來管理 Windows 或 Linux。 當 DSC 引擎在啟用了偵錯的情況下執行時，此 Cmdlet 也會啟用資源的偵錯。
 
-此命令會叫用名為 Log 的資源 **Set** 方法，並指定 **Message** 屬性。
+此命令會叫用名為 **WindowProcess** 資源的 **Set** 方法，並提供強制的 **Path** 和 **Arguments** 屬性來啟動所指定 Windows 處理序。
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 
@@ -518,7 +519,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 - 清除認可中過去一個月發生的 CodeFactor 樣式問題 (#10591) (感謝 @iSazonov！)
 - 修正 PSTernaryOperator 實驗性功能描述中的打字錯誤 (#10586) (感謝 @bergmeister！)
 - 將 ActionPreference.Suspend 列舉值轉換為不支援的保留狀態，並在喜好設定變數中移除使用 ActionPreference.Ignore 的限制 (#10317) (感謝 @KirkMunro！)
-- 使用 List \<T> 取代 ArrayList，可以不需要變更功能就能獲得可讀性與可靠性更高的程式碼 (#10333) (感謝 @iSazonov！)
+- 使用 List\<T> 取代 ArrayList，以取得更容易閱讀且可靠的程式碼，而不需變更功能 (#10333) (感謝 @iSazonov！)
 - 對 TestConnectionCommand 進行程式碼樣式修正 (#10439) (感謝 @vexx32！)
 - 清除 AutomationEngine，並移除額外的 SetSessionStateDrive 方法呼叫 (#10416) (感謝 @iSazonov！)
 - 針對 ConvertTo-Csv 和 ConvertFrom-Csv，將預設的 ParameterSetName 再次重新命名為 Delimiter (#10425)

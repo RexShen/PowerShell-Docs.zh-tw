@@ -1,18 +1,18 @@
 ---
-ms.date: 03/28/2019
+ms.date: 06/10/2020
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 具有相容 PowerShell 版本的模組
-ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 522493714916e9fd21f67a6e7bc2cfb165041807
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328499"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671405"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>具有相容 PowerShell 版本的模組
 
-從 5.1 版開始，PowerShell 提供代表各種功能集及平台相容性的不同版本。
+PowerShell 自 5.1 版開始，提供代表各種功能集及平台合規性的不同版本。
 
 - **Desktop Edition：** 在 .NET Framework 上建置，適用於 Windows PowerShell 4.0 和之前的版本，以及在 Windows Desktop、Windows Server、Windows Server Core 和其他大部分 Windows 版本上的 Windows PowerShell 5.1。
 - **Core Edition：** 在 .NET Core 上建置、適用於 PowerShell Core 6.0 和更新版本，以及在極精簡 Windows 版本 (例如 Windows IoT 和 Windows Nanoserver ) 上的 Windows PowerShell 5.1。
@@ -21,10 +21,10 @@ ms.locfileid: "71328499"
 
 ## <a name="declaring-compatible-editions"></a>宣告相容的版本
 
-模組作者可以使用 CompatiblePSEditions 模組資訊清單金鑰，宣告其模組與一或多個 PowerShell 版本相容。 僅限 PowerShell 5.1 或更新版本支援此金鑰。
+模組作者可使用 `CompatiblePSEditions` 模組資訊清單金鑰來宣告其模組符合一或多個 PowerShell 版本的規範。 僅限 PowerShell 5.1 或更新版本支援此金鑰。
 
 > [!NOTE]
-> 一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單之後，就無法在 PowerShell 版本 4 和更舊版本上匯入。
+> 模組資訊清單一經使用 `CompatiblePSEditions` 金鑰指定，或使用 `$PSEdition` 變數之後，即無法在 PowerShell 第 4 版或更低版本上匯入。
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -58,7 +58,6 @@ Get-Module -ListAvailable -PSEdition Desktop
 ```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
-
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
@@ -73,13 +72,30 @@ Desktop
 Core
 ```
 
+PowerShell 從第 6 版開始，當從 `$env:windir\System32\WindowsPowerShell\v1.0\Modules` 匯入模組時，即會使用 `CompatiblePSEditions` 值來判斷模組是否合規。
+此行為僅適用於 Windows。 除此案例外，此值只會作為中繼資料使用。
+
+## <a name="finding-compatible-modules"></a>尋找合規的模組
+
+PowerShell 資源庫使用者可使用 **PSEdition_Desktop** 和 **PSEdition_Core** 標籤來尋找特定 PowerShell 版本支援的模組清單。
+
+沒有 **PSEdition_Desktop** 和 **PSEdition_Core** 標籤的模組，在 PowerShell Desktop 上視為正常運作。
+
+```powershell
+# Find modules supported on PowerShell Desktop edition
+Find-Module -Tag PSEdition_Desktop
+
+# Find modules supported on PowerShell Core editions
+Find-Module -Tag PSEdition_Core
+```
+
 ## <a name="targeting-multiple-editions"></a>以多個版本為目標
 
 模組作者可以發行以其中一個 PowerShell 版本 (電腦版和 Core) 或兩者同時為目標的單一模組。
 
-單一模組可在桌面和核心版本上使用，作者需在該模組的 RootModule 中或使用 $PSEdition 變數的模組資訊清單中，新增必要的邏輯。 模組可以有兩組以 CoreCLR 和 FullCLR 為目標的編譯 DLL。 以下幾個選項可用來將邏輯封裝至您的模組，以載入適當的 dll。
+單一模組在 Desktop 和 Core 版本上都可運作，但模組作者必須在 RootModule 中新增必要的邏輯，或在模組資訊清單中使用 `$PSEdition` 變數。 模組可有兩組以 **CoreCLR** 和 **FullCLR** 為目標的編譯 DLL。 以下是載入適當 DLL 的邏輯封裝選項。
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>選項 1：封裝將多個版本的 PowerShell 作為目標的模組
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>選項 1︰封裝將多個版本的 PowerShell 作為目標的模組
 
 模組資料夾內容
 
@@ -101,7 +117,7 @@ Core
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-PSScriptAnalyzer.psd1 檔案的內容
+`PSScriptAnalyzer.psd1` 檔案的內容
 
 ```powershell
 @{
@@ -121,7 +137,7 @@ ModuleVersion = '1.6.1'
 
 以下邏輯會載入必要的組件，視目前版本而定。
 
-PSScriptAnalyzer.psm1 檔案的內容：
+`PSScriptAnalyzer.psm1` 檔案的內容：
 
 ```powershell
 #
@@ -157,14 +173,11 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>選項 2：在 PSD1 檔案中使用 $PSEdition 變數，以載入適當的 Dll 和巢狀/必要的模組
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls"></a>選項 2：在 PSD1 檔案中使用 $PSEdition 變數，以載入適當的 DLL
 
-PS 5.1 或更新版本的模組資訊清單檔案中允許 $PSEdition 全域變數。 模組作者可透過使用此變數，指定模組資訊清單檔案中的條件值。 在限制的語言模式或 [資料] 區段中，可以參考 $PSEdition 變數。
+在 PS 5.1 或更新版本的模組資訊清單檔案中允許 `$PSEdition` 全域變數。 模組作者可透過使用此變數，指定模組資訊清單檔案中的條件值。 在限制的語言模式或 [資料] 區段中，可參考 `$PSEdition` 變數。
 
-> [!NOTE]
-> 一旦使用 CompatiblePSEditions 金鑰指定模組資訊清單，或使用 `$PSEdition` 變數之後，就無法在較低版本的 PowerShell 上匯入它。
-
-使用 CompatiblePSEditions 金鑰的模組資訊清單檔案範例
+包含 `CompatiblePSEditions` 金鑰的範例模組資訊清單檔案。
 
 ```powershell
 @{
@@ -195,49 +208,15 @@ PS 5.1 或更新版本的模組資訊清單檔案中允許 $PSEdition 全域變�
 }
 ```
 
-### <a name="module-contents"></a>模組內容
+模組內容
 
-```powershell
-dir -Recurse
-```
-
-```Output
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
-d-----    7/5/2016   1:37 PM          clr
-d-----    7/5/2016   1:36 PM          coreclr
--a----    7/5/2016   1:34 PM     4906 ModuleWithEditions.psd1
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
-
-Mode           LastWriteTime    Length Name
-----           -------------    ------ ----
--a----    7/5/2016   1:35 PM         0 MyFullClrNM1.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrNM2.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrRM.dl
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM1.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM2.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
-```
-
-PowerShell 資源庫使用者可以使用 PSEdition_Desktop 和 PSEdition_Core 標記，尋找特定 PowerShell 版本支援的模組清單。
-
-模組若不具 PSEdition_Desktop 和 PSEdition_Core 標籤 ，則會視為在 PowerShell Desktop 上正常運作。
-
-```powershell
-# Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEdition_Desktop
-
-# Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEdition_Core
-```
+- ModuleWithEditions\ModuleWithEditions.psd1
+- ModuleWithEditions\clr\MyFullClrNM1.dll
+- ModuleWithEditions\clr\MyFullClrNM2.dll
+- ModuleWithEditions\clr\MyFullClrRM.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM1.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM2.dll
+- ModuleWithEditions\coreclr\MyCoreClrRM.dll
 
 ## <a name="more-details"></a>其他詳細資訊
 

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 封裝資源並上傳到提取伺服器
-ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278491"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782883"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>封裝資源並上傳到提取伺服器
 
@@ -20,14 +20,14 @@ ms.locfileid: "78278491"
 
 ## <a name="package-resource-modules"></a>封裝資源模組
 
-每個可供用戶端下載的資源都必須儲存為 ".zip" 檔案。 下列範例將示範使用 [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) \(英文\) 資源所需的步驟。
+可供用戶端下載的每項資源都必須儲存為 `.zip` 檔案。 下列範例將示範使用 [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) \(英文\) 資源所需的步驟。
 
 > [!NOTE]
-> 如果您有任何使用 PowerShell 4.0 的用戶端，您將需要使資源資料夾結構成為單層式，並移除任何版本資料夾。 如需詳細資訊，請參閱[多個資源版本](../configurations/import-dscresource.md#multiple-resource-versions)。
+> 如果有任何使用 PowerShell 4.0 的用戶端，您將必須壓平合併資源資料夾結構，並移除所有的版本資料夾。 如需詳細資訊，請參閱[多個資源版本](../configurations/import-dscresource.md#multiple-resource-versions)。
 
-您可以使用任何慣用的公用程式、指令碼或方法來壓縮資源目錄。 在 Windows 中，您可「以滑鼠右鍵按一下」  "xPSDesiredStateConfiguration" 目錄，然後依序選取 [傳送到] 和 [壓縮資料夾]。
+您可以使用任何慣用的公用程式、指令碼或方法來壓縮資源目錄。 在 Windows 中，您可「用滑鼠右鍵按一下」`xPSDesiredStateConfiguration`目錄，然後依序選取 [傳送到] 和 [壓縮的資料夾]。
 
-![以滑鼠右鍵按一下](media/package-upload-resources/right-click.gif)
+![以滑鼠右鍵按一下 - [傳送到] - [壓縮的資料夾]](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>為資源封存命名
 
@@ -37,11 +37,11 @@ ms.locfileid: "78278491"
 {ModuleName}_{Version}.zip
 ```
 
-在上述範例中，應該將 "xPSDesiredStateConfiguration.zip" 重新命名為 "xPSDesiredStateConfiguration_8.4.4.0.zip"。
+在上例中，`xPSDesiredStateConfiguration.zip` 應該重新命名為 `xPSDesiredStateConfiguration_8.4.4.0.zip`。
 
 ### <a name="create-checksums"></a>建立總和檢查碼
 
-一旦將資源模組壓縮並重新命名之後，您必須建立**總和檢查碼**。  用戶端上的 LCM 會使用**總和檢查碼**來判斷資源是否已變更且需要再次下載。 您可以使用 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet 來建立**總和檢查碼**，如以下範例所示。
+一旦將資源模組壓縮並重新命名之後，您必須建立**總和檢查碼**。 用戶端上的 LCM 會使用**總和檢查碼**來判斷資源是否已變更且需要再次下載。 您可以使用 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet 來建立**總和檢查碼**，如以下範例所示。
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip

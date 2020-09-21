@@ -3,12 +3,12 @@ title: 您想知道有關於 ShouldProcess 的一切 (英文)
 description: ShouldProcess 是一項經常遭到忽視的重要功能。 WhatIf 和 Confirm 參數可讓您輕鬆地將這項功能新增至您的函式。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1d9110302a191b90bd11bdf742f77704a8c9d6f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149481"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469730"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>您想知道有關於 ShouldProcess 的一切 (英文)
 
@@ -481,7 +481,7 @@ if ($PSCmdlet.ShouldProcess('TARGET')){
 
 如果有人同時指定 `-Force` 和 `-WhatIf`，則 `-WhatIf` 需要優先執行。 這個方法會保留 `-WhatIf` 流程，因為 `ShouldProcess` 一律會執行。
 
-請勿在 `ShouldProcess` 的 if 陳述式內加入 `$Force` 值的檢查。 這是此特定情況的反模式，僅管這是我在下一節中針對 `ShouldContinue` 所告訴您的內容。
+請勿在 `ShouldProcess` 的 `if` 陳述式內新增 `$Force` 值的檢查。 這是此特定情況的反模式，僅管這是我在下一節中針對 `ShouldContinue` 所告訴您的內容。
 
 ### <a name="shouldcontinue--force"></a>ShouldContinue -Force
 

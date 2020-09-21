@@ -2,28 +2,29 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用 Import-DSCResource
-ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 0fa11755558510b986ac24df120579ea15a43689
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692453"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786708"
 ---
 # <a name="using-import-dscresource"></a>使用 Import-DSCResource
 
-`Import-DScResource` 是動態關鍵字，只能在設定指令碼區塊中使用。 `Import-DSCResource` 關鍵字用於匯入設定中所需的任何資源。 `$pshome` 下的資源會自動匯入，但明確地匯入[設定](Configurations.md)中使用的所有資源仍被視為最佳做法。
+`Import-DScResource` 是動態關鍵字，只能在設定指令碼區塊中使用。 `Import-DSCResource` 關鍵字用於匯入設定中所需的任何資源。
+`$pshome` 下的資源會自動匯入，但明確地匯入[設定](Configurations.md)中使用的所有資源仍被視為最佳做法。
 
-`Import-DSCResource` 語法如下所示。  依名稱指定模組時，需要在新行上列出每個模組。
+`Import-DSCResource` 語法如下所示。 依名稱指定模組時，需要在新行上列出每個模組。
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-ModuleVersion <ModuleVersion>]
 ```
 
-|參數  |描述  |
-|---------|---------|
-|`-Name`|您必須匯入 DSC 資源名稱。 如果指定了模組名稱，則該命令將在此模組中搜尋這些 DSC 資源；否則該命令會在所有 DSC 資源路徑中搜尋 DSC 資源。 支援萬用字元。|
-|`-ModuleName`|模組名稱，或模組規格。  如果您指定了要從模組匯入的資源，該命令將嘗試僅匯入這些資源。 如果僅指定模組，則該命令將匯入模組中的所有 DSC 資源。|
-|`-ModuleVersion`|從 PowerShell 5.0 開始，您可以指定設定應使用的模組版本。 如需詳細資訊，請參閱[匯入所安裝資源的特定版本](sxsresource.md)。|
+|    參數     |                                                                                                                      描述                                                                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-Name`          | 您必須匯入 DSC 資源名稱。 如果指定了模組名稱，則該命令將在此模組中搜尋這些 DSC 資源；否則該命令會在所有 DSC 資源路徑中搜尋 DSC 資源。 支援萬用字元。 |
+| `-ModuleName`    | 模組名稱，或模組規格。  如果您指定了要從模組匯入的資源，該命令將嘗試僅匯入這些資源。 如果僅指定模組，則該命令將匯入模組中的所有 DSC 資源。            |
+| `-ModuleVersion` | 從 PowerShell 5.0 開始，您可以指定設定應使用的模組版本。 如需詳細資訊，請參閱[匯入所安裝資源的特定版本](sxsresource.md)。                                                    |
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory
@@ -54,7 +55,8 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> 不支援在相同命令中為資源名稱和模組名稱指定多個值。 在多個模組中存在相同資源的情況下，它可能具有關於從哪一個模組載入哪一個資源的非確定性行為。 以下命令將導致編譯期間發生錯誤。
+> 不支援在相同命令中為資源名稱和模組名稱指定多個值。
+> 在多個模組中存在相同資源的情況下，它可能具有關於從哪一個模組載入哪一個資源的非確定性行為。 以下命令將導致編譯期間發生錯誤。
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
@@ -73,20 +75,19 @@ Configuration MSDSCConfiguration
 - 它明確定義了定義資源的模組，確保載入正確的資源。
 
 > [!NOTE]
-> 在 PowerShell 5.0，DSC 資源可以有多個版本，且各版本可於一部電腦上並存安裝。 而其運作方式則是在相同的模組資料夾中，包含多個版本的資源模組。
-> 如需詳細資訊，請參閱[使用多個版本的資源](sxsresource.md)。
+> 在 PowerShell 5.0，DSC 資源可以有多個版本，且各版本可於一部電腦上並存安裝。 而其運作方式則是在相同的模組資料夾中，包含多個版本的資源模組。 如需詳細資訊，請參閱[使用多個版本的資源](sxsresource.md)。
 
 ## <a name="intellisense-with-import-dscresource"></a>使用 Import-DSCResource 的 Intellisense
 
-在 ISE 中撰寫 DSC 設定時，PowerShell 會為資源和資源內容提供 IntelliSense。 `$pshome` 模組路徑下的資源定義會自動載入。 使用 `Import-DSCResource` 關鍵字匯入資源時，將加入指定的資源定義，並擴展 Intellisense 以包含匯入的資源結構描述。
+在 ISE 中撰寫 DSC 設定時，PowerShell 會為資源和資源內容提供 IntelliSense。 `$pshome` 模組路徑下的資源定義會自動載入。
+使用 `Import-DSCResource` 關鍵字匯入資源時，將加入指定的資源定義，並擴展 Intellisense 以包含匯入的資源結構描述。
 
-![資源 Intellisense](media/import-dscresource/resource-intellisense.png)
+![DSC 資源 ISE 中的 Intellisense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > 從 PowerShell 5.0 開始，Tab 鍵自動完成已新增至 ISE 以取得 DSC 資源和其屬性。 如需詳細資訊，請參閱[資源](../resources/resources.md)。
 
-在編譯設定時，PowerShell 會使用匯入的資源定義來驗證設定中的所有資源區塊。
-使用資源的結構描述定義驗證每個資源區塊，以用於下列規則。
+在編譯設定時，PowerShell 會使用匯入的資源定義來驗證設定中的所有資源區塊。 使用資源的結構描述定義驗證每個資源區塊，以用於下列規則。
 
 - 僅使用結構描述中定義的屬性。
 - 每個屬性的資料類型都是正確的。
@@ -115,8 +116,10 @@ Configuration SchemaValidationInCorrectEnumValue
 
 編譯此設定會導致錯誤。
 
-```output
-PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values: Present, Absent.
+```Output
+PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or
+valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values:
+Present, Absent.
 ```
 
 Intellisense 和結構描述驗證允許您在剖析和編譯時間擷取更多的錯誤，從而避免在執行階段出現複雜情況。
@@ -141,15 +144,16 @@ PowerShell 4.0 不支援並排安裝和使用多個版本的資源。 如果您�
 
 在下圖中，安裝了 **xPSDesiredStateConfiguration** 模組的兩個版本。
 
-![已修正多個資源版本](media/import-dscresource/multiple-resource-versions-broken.png)
+![安裝在資料夾中的多個資源版本](media/import-dscresource/multiple-resource-versions-broken.png)
 
 將所需模組版本的內容複製到模組目錄的上層。
 
-![已修正多個資源版本](media/import-dscresource/multiple-resource-versions-fixed.png)
+![將所需版本複製到最上層的模組目錄](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>資源位置
 
-在撰寫和編譯設定時，您的資源可以儲存在 [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) 指定的任何目錄中。 在 PowerShell 4.0 中，LCM 要求所有 DSC 資源模組都儲存在 "Program Files\WindowsPowerShell\Modules" 或 `$pshome\Modules` 下。 從 PowerShell 5.0 開始，已移除此需求，資源模組可以儲存在 `PSModulePath` 指定的任何目錄中。
+在撰寫和編譯設定時，您的資源可以儲存在 [PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) 指定的任何目錄中。
+在 PowerShell 4.0 中，LCM 要求所有 DSC 資源模組都儲存在 "Program Files\WindowsPowerShell\Modules" 或 `$pshome\Modules` 下。 從 PowerShell 5.0 開始，已移除此需求，資源模組可以儲存在 `PSModulePath` 指定的任何目錄中。
 
 ### <a name="moduleversion-added"></a>已新增 ModuleVersion
 

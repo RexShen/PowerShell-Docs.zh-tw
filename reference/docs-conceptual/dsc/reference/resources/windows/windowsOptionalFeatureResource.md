@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 08/28/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC WindowsOptionalFeature 資源
-ms.openlocfilehash: bca6294db74c92a2c1940cfbe00305542a1c5d19
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f24173c1a9ed605bac43767a9da2d4dbded78883
+ms.sourcegitcommit: 06b6f4012e4eca71d414733cdba23ef75535223c
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565361"
+ms.lasthandoff: 08/29/2020
+ms.locfileid: "89093245"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature 資源
 
@@ -15,13 +15,15 @@ ms.locfileid: "83565361"
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsOptionalFeature** 資源提供一個機制，確保可在目標節點上啟用選用功能。
 
+> [!NOTE]
+> **WindowsOptionalFeature** 僅適用於 Windows 用戶端電腦，例如 Windows 10。
+
 ## <a name="syntax"></a>語法
 
 ```Syntax
 WindowsOptionalFeature [string] #ResourceName
 {
     Name = [string]
-    [ Source = [string[]] ]
     [ NoWindowsUpdateCheck = [bool] ]
     [ RemoveFilesOnDisable = [bool] ]
     [ LogLevel = [string] { ErrorsOnly | ErrorsAndWarning | ErrorsAndWarningAndInformation }  ]
@@ -37,7 +39,6 @@ WindowsOptionalFeature [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |名稱 |表示您想要確保啟用或停用的功能名稱。 |
-|來源 |未實作。 |
 |NoWindowsUpdateCheck |指定在搜尋來源檔案以啟用功能時，DISM 是否連絡 Windows Update (WU)。 若為 `$true`，則 DISM 不連絡 WU。 |
 |RemoveFilesOnDisable |當 **Ensure** 設定為 **Absent** 時，設定為 `$true` 可移除與此功能建立關聯的所有檔案。 |
 |LogLevel |記錄中顯示的最大輸出等級。 接受的值為：**ErrorsOnly**、**ErrorsAndWarning** 和 **ErrorsAndWarningAndInformation**。 |

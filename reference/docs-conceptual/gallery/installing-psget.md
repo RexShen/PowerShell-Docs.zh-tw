@@ -3,12 +3,12 @@ ms.date: 09/19/2019
 contributor: manikb
 keywords: 資源庫,powershell,cmdlet,psget
 title: 安裝 PowerShellGet
-ms.openlocfilehash: f42eb0df101eb63a5dc267196fa9f666747b8e35
-ms.sourcegitcommit: 23ea4a36ee85f923684657de5313a5adf0b6b094
+ms.openlocfilehash: 4a10699be9ff2b64e5848c6749bdd3dedf55e3c7
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83727790"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162506"
 ---
 # <a name="installing-powershellget"></a>安裝 PowerShellGet
 
@@ -25,7 +25,6 @@ ms.locfileid: "83727790"
 
 ```powershell
 Install-PackageProvider -Name NuGet -Force
-Exit
 ```
 
 ### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>針對具有 PowerShell 5.0 (或更新版本) 的系統，您可以安裝最新的 PowerShellGet
@@ -34,7 +33,6 @@ Exit
 
 ```powershell
 Install-Module -Name PowerShellGet -Force
-Exit
 ```
 
 使用 `Update-Module` 來取得較新版本。
@@ -53,28 +51,50 @@ Exit
 如需詳細資訊，請參閱 [Save-Module](/powershell/module/PowershellGet/Save-Module)。
 
 > [!NOTE]
-> PowerShell 3.0 與 PowerShell 4.0 僅支援一個模組版本。 自 PowerShell 5.0 起，模組會安裝在 `<modulename>\<version>` 中。 這可讓您並存安裝多個版本。 使用 `Save-Module` 下載模組之後，必須將 `<modulename>\<version>` 中的檔案，複製到目的地電腦的 `<modulename>` 資料夾。
+> PowerShell 3.0 與 PowerShell 4.0 僅支援一個模組版本。 自 PowerShell 5.0 起，模組會安裝在 `<modulename>\<version>` 中。 這會允許並存安裝多個版本。 在使用 `Save-Module` 下載模組後，您必須從 `<modulename>\<version>` 將檔案複製到目標電腦上的 `<modulename>` 資料夾，如下列說明所示。
+
+#### <a name="preparatory-step-on-computers-running-powershell-30"></a>執行 PowerShell 3.0 的電腦上準備步驟
+
+下列各節中的說明會在 `$env:ProgramFiles\WindowsPowerShell\Modules` 目錄中安裝模組。
+在 PowerShell 3.0 中，根據預設此目錄不會列在 `$env:PSModulePath` 中，因此需要新增此目錄，才能自動載入模組。 
+
+開啟提升權限的 PowerShell 工作階段，並執行下列命令 (這會在未來的工作階段中生效)：
+
+```powershell
+[Environment]::SetEnvironmentVariable(
+  'PSModulePath',
+  ((([Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';') + "$env:ProgramFiles\WindowsPowerShell\Modules") -join ';'),
+  'Machine'
+)
+```
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>已安裝 PackageManagement Preview 的電腦
 
-1. 從 PowerShell 工作階段使用 `Save-Module` 將模組儲存至本機目錄。
+> [!NOTE] 
+> PackageManagement Preview 是一個可下載的元件，其可供在 PowerShell 版本 3 和 4 中使用 PowerShellGet，但其已不再提供使用。
+> 若要測試是否已在指定電腦上安裝該項目，請執行 `Get-Module -ListAvailable PowerShellGet`。
+
+1. 在 PowerShell 工作階段中，使用 `Save-Module` 來下載 **PowerShellGet** 的目前版本。 會下載兩個資料夾：**PowerShellGet** 和 **PackageManagement**。 每個資料夾都包含具有版本號碼的子資料夾。
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
 1. 確定任何其他處理序都未載入 **PowerShellGet** 和 **PackageManagment** 模組。
-1. 刪除資料夾的內容：`$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` 與 `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\`。
-1. 使用已提升的權限重新開啟 PowerShell 主控台，然後執行下列命令。
+
+1. 使用已提升的權限重新開啟 PowerShell 主控台，並執行下列命令。
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   'PowerShellGet', 'PackageManagement' | % { 
+     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
+     Remove-Item $targetDir\* -Recurse -Force
+     Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
+   }
    ```
 
 #### <a name="computers-without-powershellget"></a>不具有 PowerShellGet 的電腦
 
-如果電腦沒有安裝任何版本的 **PowerShellGet**，則需要安裝具有 **PowerShellGet** 的電腦，才能下載模組。
+針對沒有安裝任何 **PowerShellGet** 版本的電腦 (使用 `Get-Module -ListAvailable PowerShellGet` 測試)，將需要已安裝 **PowerShellGet** 的電腦來下載模組。
 
 1. 從已安裝 **PowerShellGet** 的電腦上，使用 `Save-Module` 下載目前版本的 **PowerShellGet**。 會下載兩個資料夾：**PowerShellGet** 和 **PackageManagement**。 每個資料夾都包含具有版本號碼的子資料夾。
 
@@ -82,6 +102,16 @@ Exit
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
-1. 將 **PowerShellGet** 和 **PackageManagement** 資料夾複製到未安裝 **PowerShellGet** 的電腦。
+1. 將 **PowerShellGet** 和 **PackageManagement** 資料夾中的個別 `<version>` 子資料夾分別複製到沒有安裝 **PowerShellGet** 電腦中的 `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` 和 `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` 資料夾，這項操作需要提升權限的工作階段。
+   
+1. 例如，若可存取其他電腦 (例如 `ws1`) 上的下載資料夾，請透過 UNC 路徑 (例如 `\\ws1\C$\LocalFolder`) 在目標電腦上開啟提升權限的 PowerShell 主控台，並執行下列命令：
 
-   目的地目錄為：`$env:ProgramFiles\WindowsPowerShell\Modules`
+   ```powershell
+   'PowerShellGet', 'PackageManagement' | % {
+     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
+     $null = New-Item -Type Directory -Force $targetDir
+     $fromComputer = 'ws1'  # Specify the name of the other computer here.
+     Copy-Item \\$fromComputer\C$\LocalFolder\$_\*\* $targetDir -Recurse -Force
+     if (-not (Get-ChildItem $targetDir)) { Throw "Copying failed." }
+   }
+   ```

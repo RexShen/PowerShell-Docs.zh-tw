@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: dsc,powershell,設定,安裝
 title: DSC Service 資源
-ms.openlocfilehash: acd0710fb4b131876e3edece15b07cff8e9a8a9e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f936f58ffd00f84d8c6d5d41d93378eaa8db5879
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557000"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463579"
 ---
 # <a name="dsc-service-resource"></a>DSC Service 資源
 
@@ -23,14 +23,18 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
+    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Running | Stopped }  ]
+    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ Dependencies = [string[]] ]
     [ Description = [string] ]
+    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
+    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -41,11 +45,15 @@ Service [string] #ResourceName
 |名稱 |表示服務名稱。 請注意，有時候和顯示名稱不同。 您可以使用 `Get-Service` Cmdlet 取得服務清單及其目前狀態。 |
 |BuiltInAccount |表示用於服務的登入帳戶。 這個屬性所允許的值為：**LocalService**、**LocalSystem** 和 **NetworkService**。 |
 |認證 |表示執行服務的帳戶認證。 這個屬性與 **BuiltinAccount** 屬性不能同時使用。 |
+|StartupTimeout | 等待服務執行的毫秒數。|
 |StartupType |表示服務的啟動類型。 這個屬性所允許的值為：**Automatic**、**Disabled** 和 **Manual**。 |
 |State |表示您要確保的服務狀態。 值如下：**Running** 或 **Stopped**。 |
+|TerminateTimeout |等待服務停止的毫秒數。|
+|相依性 | 服務應具備的相依性名稱陣列。 |
 |描述 |表示目標服務的描述。 |
+|DesktopInteract | 指出服務是否應能夠和桌面上的視窗通訊。 針對不是以 LocalSystem 執行的服務，必須為 false。|
 |DisplayName |表示目標服務的顯示名稱。 |
-|Path |表示新服務的二進位檔路徑。 |
+|路徑 |表示新服務的二進位檔路徑。 |
 
 ## <a name="common-properties"></a>通用屬性
 

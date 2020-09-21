@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 資源撰寫檢查清單
-ms.openlocfilehash: 85e0963d46358cd37cb87ea94fe6d1178a4f6a4a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500616"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217639"
 ---
 # <a name="resource-authoring-checklist"></a>資源撰寫檢查清單
 
@@ -35,7 +35,7 @@ xPSDesiredStateConfiguration
 
 ## <a name="resource-and-schema-are-correct"></a>資源和結構描述正確
 
-驗證資源結構描述 (*.schema.mof) 檔案。 您可以使用 [DSC 資源設計工具](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)協助開發及測試您的結構描述。 請確認：
+驗證資源結構描述 (`*.schema.mof`) 檔案。 您可以使用 [DSC 資源設計工具](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)協助開發及測試您的結構描述。 請確認：
 
 - 屬性類型正確 (例如，接受數值的屬性不使用字串，應改用 UInt32 或其他數值類型)
 - 已正確指定屬性 (property) 屬性 (attribute)：([key]、[required]、[write]、[read])
@@ -55,7 +55,7 @@ xPSDesiredStateConfiguration
 
 - 每個欄位都有具意義的描述。 PowerShell GitHub 存放庫有很好的範例，例如[用於 xRemoteFile 的 .schema.mof](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof)
 
-另外，您應使用 [DSC 資源設計工具](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)的 **Test-xDscResource** 和 **Test-xDscSchema** Cmdlet 自動驗證資源和結構描述：
+此外，建議使用 [DSC Resource Designer](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0) (DSC 資源設計工具) 的 `Test-xDscResource` 和 `Test-xDscSchema` Cmdlet 來自動驗證資源和結構描述：
 
 ```
 Test-xDscResource <Resource_folder>
@@ -99,29 +99,29 @@ File file {
 透過變更電腦狀態，然後重新執行 DSC，您就可以驗證 `Set-TargetResource` 和 `Test-TargetResource` 是否正確執行。 以下為應該採取的步驟：
 
 1. 請從不在預期狀態的資源開始。
-2. 以資源執行設定
-3. 驗證 `Test-DscConfiguration` 會傳回 True
-4. 將已設定的項目修改為不在所需狀態
-5. 驗證 `Test-DscConfiguration` 會傳回 False
+1. 以資源執行設定
+1. 驗證 `Test-DscConfiguration` 會傳回 True
+1. 將已設定的項目修改為不在所需狀態
+1. 驗證 `Test-DscConfiguration` 會傳回 False
 
 以下是更具體的登錄資源使用範例：
 
 1. 請從不在預期狀態的登錄機碼開始
-2. 搭配設定執行 `Start-DscConfiguration`，以使其進入預期狀態，並驗證它會通過。
-3. 執行 `Test-DscConfiguration`，並驗證它會傳回 True
-4. 修改機碼值，使它不在預期狀態
-5. 執行 `Test-DscConfiguration`，並驗證它會傳回 False
-6. 已使用 `Get-DscConfiguration` 驗證 `Get-TargetResource` 功能
+1. 搭配設定執行 `Start-DscConfiguration`，以使其進入預期狀態，並驗證它會通過。
+1. 執行 `Test-DscConfiguration`，並驗證它會傳回 True
+1. 修改機碼值，使它不在預期狀態
+1. 執行 `Test-DscConfiguration`，並驗證它會傳回 False
+1. 已使用 `Get-DscConfiguration` 驗證 `Get-TargetResource` 功能
 
 `Get-TargetResource` 應該會傳回資源目前狀態的詳細資料。 確定會以下列方法進行測試：在套用設定後呼叫 `Get-DscConfiguration`，並驗證輸出會正確反映電腦目前的狀態。 請務必分開測試，因為呼叫 `Start-DscConfiguration` 時，不會顯示這個區域的任何問題。
 
 ## <a name="call-getsettest-targetresource-functions-directly"></a>直接呼叫 **Get/Set/Test-TargetResource** 函式
 
-請務必測試在資源中實作的 **Get/Set/Test-TargetResource** 函式，方法是直接呼叫這些函式並確認其如預期般運作。
+請務必測試在資源中實作的 `Get/Set/Test-TargetResource` 函式，方法是直接呼叫這些函式並確認其如預期般運作。
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>使用 **Start-DscConfiguration** 驗證端對端
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>使用 Start-DscConfiguration 驗證端對端
 
-以直接呼叫的方式測試這些 **Get/Set/Test-TargetResource** 函式很重要，但並非所有的問題都能以這種方式發現。 測試重點應該放在使用 `Start-DscConfiguration` 或提取伺服器上。 事實上，這就是使用者使用資源的方法，所以請勿低估這種測試的重要性。 可能有的問題類型：
+以直接呼叫的方式測試這些 `Get/Set/Test-TargetResource` 函式很重要，但並非所有的問題都能以這種方式發現。 測試重點應該放在使用 `Start-DscConfiguration` 或提取伺服器上。 事實上，這就是使用者使用資源的方法，所以請勿低估這種測試的重要性。 可能有的問題類型：
 
 - 因為 DSC 代理程式以服務方式執行，所以認證/工作階段的行為可能不同。 請務必在此端對端測試所有功能。
 - `Start-DscConfiguration` 所輸出的錯誤和直接呼叫 `Set-TargetResource` 函式所顯示的錯誤可能不同。
@@ -148,9 +148,9 @@ File file {
 - 後續的範例應建置於這些範例上 (例如，從 VHD 建立 VM、移除 VM、修改 VM)，顯示進階的功能 (例如，建立具有動態記憶體的 VM)
 - 範例設定應該參數化 (所有值都應該當做參數傳遞至設定，不該有任何硬式編碼值)：
 
-  ```powershell
-  configuration Sample_xRemoteFile_DownloadFile
-  {
+```powershell
+configuration Sample_xRemoteFile_DownloadFile
+{
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -180,23 +180,23 @@ File file {
             Headers = $headers
         }
     }
-  }
-  ```
+}
+```
 
 - 包含一個如何呼叫在範例指令碼結尾有實際值設定的 (註解化) 範例，是個不錯的做法。 例如，在上述設定中，將 UserAgent 指定為下列項目，很明顯地不是最佳做法：
 
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` 在註解可以釐清設定預期執行的案例中︰
 
-  ```powershell
-  <#
-  Sample use (parameter values need to be changed according to your scenario):
+```powershell
+<#
+Sample use (parameter values need to be changed according to your scenario):
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
-  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-  #>
-  ```
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+-userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+#>
+```
 
 - 每個範例請撰寫簡短的描述，說明其用途及參數意義。
 - 請確定範例涵蓋資源多數的重要案例，且如果沒有任何缺漏，請確認它們是否都可執行，並能讓電腦處於預期狀態。
@@ -271,7 +271,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 ## <a name="resource-does-not-require-interactive-input"></a>資源不需要互動式輸入
 
-**Get/Set/Test-TargetResource** 函式應該要自動執行，絕不能等到使用者在執行的任何階段輸入時才動作 (例如，不應在這些函式內使用 `Get-Credential`)。 如果您需要提供使用者輸入，就應該在編譯階段將它當作參數傳遞至設定。
+`Get/Set/Test-TargetResource` 函式應該要自動執行，絕不能等到使用者在執行的任何階段輸入時才動作 (例如，不應在這些函式內使用 `Get-Credential`)。 如果您需要提供使用者輸入，就應該在編譯階段將它當作參數傳遞至設定。
 
 ## <a name="resource-functionality-was-thoroughly-tested"></a>已徹底測試資源功能
 
@@ -279,30 +279,14 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 ## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>最佳做法：資源模組包含具有 ResourceDesignerTests.ps1 指令碼的測試資料夾
 
-這是個不錯的做法：在資源模組內建立 "Tests" 資料夾、建立 `ResourceDesignerTests.ps1` 檔案，並使用 **Test-xDscResource** 和 **Test-xDscSchema** 為指定模組中的所有資源新增測試。 如此，就可以快速驗證指定模組中所有資源的結構描述，並在發行前執行例行性檢查。 針對 xRemoteFile，`ResourceTests.ps1` 可能看起來很簡單：
+良好的做法是在資源模組中建立 "Tests" 資料夾，建立 `ResourceDesignerTests.ps1` 檔案，然後使用 `Test-xDscResource` 和 `Test-xDscSchema` 為所有指定模組中的資源新增測試。 如此，就可以快速驗證指定模組中所有資源的結構描述，並在發行前執行例行性檢查。 針對 xRemoteFile，`ResourceTests.ps1` 可能看起來很簡單：
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>最佳做法：資源資料夾包含用於產生結構描述的資源設計工具指令碼
-
-每個資源都應該包含資源設計工具指令碼，它會產生資源的 MOF 結構描述。 這個檔案應該放在 `<ResourceName>\ResourceDesignerScripts` 中並命名為 Generate `<ResourceName>Schema.ps1`。針對 xRemoteFile 資源，這個檔案會稱為 `GenerateXRemoteFileSchema.ps1`，並包含：
-
-```powershell
-$DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
-$Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
-$Headers = New-xDscResourceProperty -Name Headers -Type Hashtable[] -Attribute Write -Description 'Headers of the web request.'
-$UserAgent = New-xDscResourceProperty -Name UserAgent -Type String -Attribute Write -Description 'User agent for the web request.'
-$Ensure = New-xDscResourceProperty -Name Ensure -Type String -Attribute Read -ValidateSet "Present", "Absent" -Description 'Says whether DestinationPath exists on the machine'
-$Credential = New-xDscResourceProperty -Name Credential -Type PSCredential -Attribute Write -Description 'Specifies a user account that has permission to send the request.'
-$CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -Type String -Attribute Write -Description 'Digital public key certificate that is used to send the request.'
-
-New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
-```
-
-## <a name="best-practice-resource-supports--whatif"></a>最佳做法：資源支援 -WhatIf
+## <a name="best-practice-resource-supports--whatif"></a>最佳做法︰資源支援 -WhatIf
 
 如果資源執行的是「危險」作業，實作 `-WhatIf` 功能是個不錯的做法。 完成後，請確定 `-WhatIf` 輸出會正確描述不使用 `-WhatIf` 參數執行命令時，作業會發生的狀況。 另請確認，當使用 `–WhatIf` 參數時，作業不會執行 (不會變更節點狀態)。 例如，假設現在要測試檔案資源。 以下簡單設定會建立含有內容 "Tests" 的檔案 `test.txt`：
 

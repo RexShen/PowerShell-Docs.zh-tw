@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
-ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500580"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777826"
 ---
 # <a name="frequently-asked-questions"></a>常見問題集
 
-## <a name="what-is-a-powershell-module"></a>什麼是 PowerShell 模組？
+## <a name="what-is-a-powershell-module"></a>什麼是 PowerShell 課程模組？
 
 PowerShell 模組是包含一些 PowerShell 功能的可重複使用套件。 PowerShell 中的所有項目 (函數、變數、DSC 資源等) 都可以封裝成模組。 通常，模組是資料夾，內含特定路徑上所儲存的特定檔案類型。 這裡有數種不同類型的 PowerShell 模組。
 
@@ -36,7 +36,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 **您不需要註冊或登入資源庫，就可以安裝或儲存套件。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>我收到『無法處理要求。 「指定的 API 金鑰無效，或沒有存取所指定套件的權限。」。 遠端伺服器傳回錯誤：(403) 已禁止。』 錯誤。 這是什麼意思？
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>我收到『無法處理要求。 「指定的 API 金鑰無效，或沒有存取所指定套件的權限。」。 遠端伺服器傳回錯誤：(403) 已禁止。』 錯誤。 這代表什麼？
 
 下列原因會發生此錯誤：
 
@@ -56,7 +56,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>將模組發行至 PowerShell 資源庫的需求為何？
 
-任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」  (.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
+任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」**(.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
 
 - 版本
 - 描述
@@ -85,7 +85,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 在文字方塊中，輸入您要尋找的內容。 例如，如果您想要尋找與 Azure SQL 相關的模組，只需要輸入 "azure sql"。 搜尋引擎會在所有已發行的套件中 (包括在標題、描述和中繼資料中) 尋找那些關鍵字。 然後，根據加權的品質分數，就會顯示最接近的相符項目。 您也可以在下列欄位的搜尋查詢中使用 field:"value" 語法，以依特定欄位進行搜尋：
 
 - Tags
-- Functions
+- 函式
 - 指令程式
 - DscResources
 - PowerShellVersion
@@ -127,7 +127,7 @@ PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerSh
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>是否表示我可以使用 NuGet.exe 來處理 Gallery？
 
-是。
+可以。
 
 ## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>PackageManagement 實際上與 PowerShellGet 的關聯為何？ (技術詳細資料)
 
@@ -137,7 +137,7 @@ PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerSh
 
 在 PackageManagement 套件提供者層，PSModule 套件提供者實際上會呼叫其他 PackageManagement 套件提供者。 例如，當您處理 NuGet 型組件庫 (例如 PowerShell Gallery) 時，PSModule 套件提供者會使用 NuGet 套件提供者來處理存放庫。
 
-![PowerShellGet 架構](media/faqs/powershellgetArchitecture.png)
+![PowerShellGet 架構圖](media/faqs/powershellgetArchitecture.png)
 
 圖 1：PowerShellGet 架構
 

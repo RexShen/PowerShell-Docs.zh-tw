@@ -2,12 +2,12 @@
 title: 如何在 Visual Studio Code 中複寫 ISE 體驗
 description: 如何在 Visual Studio Code 中複寫 ISE 體驗
 ms.date: 08/06/2018
-ms.openlocfilehash: 899e1c393fd49b0659631b88d610e80ec885e69e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6b0b8ce054695d6cc0fc578290c554e2dc1472bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809594"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784617"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>如何在 Visual Studio Code 中複寫 ISE 體驗
 
@@ -25,7 +25,7 @@ ms.locfileid: "83809594"
 
 此命令會自動套用下面所述設定。結果看起來像這樣：
 
-![ISE 模式](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+![ISE 模式中的 Visual Studio Code](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
 ## <a name="ise-mode-configuration-settings"></a>ISE 模式組態設定
 
@@ -53,7 +53,7 @@ ISE 模式會對 VS Code 設定進行下列變更。
 
   這些設定會隱藏下方紅色方塊內的「活動列」與「偵錯側邊欄」區段：
 
-  ![醒目提示的區段包含活動列與偵錯側邊欄](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+  ![醒目提示的區段包含活動列與偵錯提要欄位](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
   最終結果如下所示：
 
@@ -122,7 +122,7 @@ ISE 模式會對 VS Code 設定進行下列變更。
 
 - 4sysops 有一篇[非常棒的文章][4sysops]，內容說明如何將 VS Code 設定成更像 ISE。
 - Mike F Robbins 貼了一篇[很棒的貼文][mikefrobbins]，內容說明如何設定 VS Code。
-- Learn PowerShell 有一篇[絕佳文章][learnpwsh]，內容說明如何針對 PowerShell 設定。
+<!-- - Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell. -->
 
 ## <a name="vs-code-tips"></a>VS Code 提示
 
@@ -134,7 +134,7 @@ ISE 模式會對 VS Code 設定進行下列變更。
 
 - 停用偵錯主控台
 
-  如果您只打算使用 VS Code 來撰寫 PowerShell 指令碼，您可以隱藏 [偵錯主控台]  ，因為 PowerShell 擴充功能不會加以使用。 若要這樣做，請以滑鼠右鍵按一下 [偵錯主控台]  ，然後按一下核取記號來加以隱藏。
+  如果您只打算使用 VS Code 來撰寫 PowerShell 指令碼，您可以隱藏 [偵錯主控台]，因為 PowerShell 擴充功能不會加以使用。 若要這樣做，請以滑鼠右鍵按一下 [偵錯主控台]，然後按一下核取記號來加以隱藏。
 
 ## <a name="more-settings"></a>更多設定
 
@@ -144,8 +144,8 @@ ISE 模式會對 VS Code 設定進行下列變更。
 
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[[命令選擇區]]: #vs-code-tips
-[在這裡提出問題]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[命令選擇區]: #vs-code-tips
+[建立問題]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/

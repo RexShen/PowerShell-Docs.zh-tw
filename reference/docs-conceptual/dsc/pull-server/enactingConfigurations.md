@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: dsc,powershell,設定,安裝
 title: 施行設定
-ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277881"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783070"
 ---
 # <a name="enacting-configurations"></a>施行設定
 
@@ -17,7 +17,7 @@ PowerShell 預期狀態設定 (DSC) 設定有兩種施行方式：Push 模式和
 
 ## <a name="push-mode"></a>Push 模式
 
-![Push 模式](media/enactingConfigurations/pushModel.png "Push 模式的運作方式")
+![推送模式概觀](media/enactingConfigurations/pushModel.png "Push 模式的運作方式")
 
 Push 模式指的是使用者呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet，將設定積極套用至目標節點。
 
@@ -28,7 +28,7 @@ Push 模式指的是使用者呼叫 [Start-DscConfiguration](/powershell/module/
 
 ## <a name="pull-mode"></a>Pull 模式
 
-![Pull 模式](media/enactingConfigurations/pullModel.png "Pull 模式的運作方式")
+![提取模式概觀](media/enactingConfigurations/pullModel.png "Pull 模式的運作方式")
 
 在 Pull 模式中，提取用戶端會設定成從遠端提取服務取得其所需的狀態設定。 同樣地，提取服務已設為 DSC 服務主機，並已佈建提取用戶端所需要的設定和資源。 每個提取用戶端都有排定的事件，會針對節點的設定執行定期的合規性檢查。 事件初次觸發時，提取用戶端上的本機設定管理員 (LCM) 會向提取服務提出要求，以取得於 LCM 中指定的設定。 如果提取服務上有該設定，且它通過初始驗證檢查，設定就會被下載至提取用戶端，而 LCM 將會在那裡執行它。
 
@@ -40,6 +40,6 @@ LCM 會依照 LCM 的 **ConfigurationModeFrequencyMins** 屬性所指定的固�
 
 下列主題會說明提取服務和用戶端：
 
-- [Azure 自動化 DSC 概觀](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Azure 自動化 DSC 概觀](/azure/automation/automation-dsc-overview)
 - [設定 SMB 提取伺服器](pullServerSMB.md)
 - [設定提取用戶端](pullClientConfigID.md)

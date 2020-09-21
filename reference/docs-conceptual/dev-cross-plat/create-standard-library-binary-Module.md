@@ -3,12 +3,12 @@ title: 如何建立標準程式庫的二進位模組
 description: PowerShell 標準程式庫可讓我們建立跨平台模組，以便在 PowerShell Core 和 Windows PowerShell 5.1 中使用。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 51734fd9232e7c33b11c6c5a6abddbcc1f28413c
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: ff6a49f70a3fb77f5a30cc909d53bb77b3cd7d43
+ms.sourcegitcommit: 8c01e56f0c10ff2637955dc892ea78432d563a7b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149411"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88702740"
 ---
 # <a name="how-to-create-a-standard-library-binary-module"></a>如何建立標準程式庫的二進位模組
 
@@ -247,7 +247,7 @@ Import-Module ".\Output\$module\$module.psd1"
 
 我瞭解 `dotnet` 工具具有 `PSModule` 範本。
 
-上面所述的所有步驟仍然有效，但此範本會減少了許多證明作業。它仍然是一個非常新的範本，仍然有待進一步完善。 期待它此後會日益完善。
+上面所述的所有步驟仍然有效，但此範本減少了許多步驟。它仍然是一個非常新的範本，仍然有待進一步完善。 期待它此後會日益完善。
 
 這是您使用 install 和使用 PSModule 範本的方式。
 

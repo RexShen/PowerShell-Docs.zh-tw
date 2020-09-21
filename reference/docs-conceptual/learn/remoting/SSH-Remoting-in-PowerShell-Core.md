@@ -1,13 +1,13 @@
 ---
 title: 透過 SSH 的 PowerShell 遠端處理
 description: 使用 SSH 在 PowerShell Core 中遠端
-ms.date: 09/30/2019
-ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
-ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
+ms.date: 07/23/2020
+ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
+ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82174123"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133464"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -25,7 +25,7 @@ SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShe
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-若要建立遠端工作階段，您可以使用 `HostName` 參數來指定目標電腦，並使用 `UserName` 來提供使用者名稱。 以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。 您也可以搭配 `KeyFilePath` 參數使用私密金鑰檔案，來使用 SSH 金鑰驗證。
+若要建立遠端工作階段，請使用 **HostName** 參數來指定目標電腦，並使用 **UserName** 來提供使用者名稱。 以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。 您也可以搭配 **KeyFilePath** 參數使用私密金鑰檔案來設定 SSH 金鑰驗證。
 
 ## <a name="general-setup-information"></a>一般安裝資訊
 
@@ -64,7 +64,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    在遠端電腦上建立裝載 PowerShell 處理程序的 SSH 子系統：
 
    ```
-   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -122,7 +122,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    新增 PowerShell 子系統項目：
 
    ```
-   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -168,7 +168,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    新增 PowerShell 子系統項目：
 
    ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -191,12 +191,14 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
 
 透過 SSH 的 PowerShell 遠端功能需要在 SSH 用戶端與 SSH 服務之間交換驗證，且本身不會實作任何驗證配置。 結果是，任何已設定的驗證配置 (包括多重要素驗證) 都是由 SSH 處理，與 PowerShell 無關。 例如，您可以設定 SSH 服務要求公開金鑰驗證及單次密碼來增強安全性。 設定多重要素驗證不在本文件的討論範圍內。 請參閱 SSH 文件，以了解如何正確地設定多重要素驗證，並驗證它在 PowerShell 之外是否運作正常，再嘗試與 PowerShell 遠端功能搭配使用。
 
+> [!NOTE]
+> 使用者會在遠端工作階段中保留相同的權限。 也就是說，系統管理員可存取提高權限的 Shell，而一般使用者則無法存取。
+
 ## <a name="powershell-remoting-example"></a>PowerShell 遠端範例
 
 測試遠端功能的最簡單方式是在單一電腦上進行試用。 在此範例中，我們會建立回到相同 Linux 電腦的遠端工作階段。 我們會以互動方式使用 PowerShell Cmdlet；因此，我們會看到要求驗證主機電腦的 SSH 提示以及密碼提示。 您可以在 Windows 電腦上執行相同的動作以確保遠端功能正在運作。 接著，透過變更主機名稱，在電腦之間執行遠端功能。
 
 ```powershell
-#
 # Linux to Linux
 #
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
@@ -249,7 +251,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```Output
+```
 PTestName@WinVM1s password:
 ```
 
@@ -318,9 +320,13 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a>已知問題
+### <a name="limitations"></a>限制
 
-**sudo** 命令不適用於 Linux 電腦的遠端工作階段。
+- **sudo** 命令不適用於 Linux 電腦的遠端工作階段。
+
+- 透過 SSH 的 PSRemoting 不支援設定檔，且沒有 `$PROFILE` 的存取權。 一旦進入工作階段之後，即可透過完整的 FilePath，使用點執行來載入設定檔。 這與 SSH 設定檔無關。 您可將 SSH 伺服器設定為使用 PowerShell 作為預設的 Shell，並透過 SSH 載入設定檔。 如需詳細資訊，請參閱 SSH 文件。
+
+- 在 PowerShell 7.1 之前，透過 SSH 進行遠端處理不支援第二躍點遠端工作階段。 這項功能僅限於使用 WinRM 的工作階段。 PowerShell 7.1 可讓 `Enter-PSSession` 與 `Enter-PSHostProcess` 在任何互動式遠端工作階段中作業。
 
 ## <a name="see-also"></a>另請參閱
 

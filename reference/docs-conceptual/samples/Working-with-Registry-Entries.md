@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用登錄項目
-ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f8ee87cebb8b220570bcb969445071a72a68526
+ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030726"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87758477"
 ---
 # <a name="working-with-registry-entries"></a>使用登錄項目
 
@@ -111,7 +111,7 @@ DevicePath   : C:\WINDOWS\inf
 此命令會傳回標準的 Windows PowerShell 屬性與 **DevicePath** 屬性。
 
 > [!NOTE]
-> 雖然 `Get-ItemProperty` 包含 **Filter**、**Include** 與 **Exclude** 參數，但您無法使用它們來篩選屬性名稱。 這些參數指的是登錄機碼，它們是項目路徑，不是登錄項目。 登錄項目是項目屬性。
+> 雖然 `Get-ItemProperty` 包含 **Filter**、**Include** 與 **Exclude** 參數，但您無法使用它們來篩選屬性名稱。 這些參數指的是登錄機碼 (即項目路徑，而非登錄項目)，即項目屬性。
 
 另一個選項是使用 Reg.exe 命令列工具。 如需 reg.exe 的說明，請在命令提示字元中輸入 `reg.exe /?`。 若要尋找 DevicePath 項目，請使用 reg.exe，如下列命令所示：
 

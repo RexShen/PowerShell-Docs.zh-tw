@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 開始使用 Linux 預期狀態設定 (DSC)
-ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 64657dda04fa2df97fa2ad7c7a5c2d15b66a270a
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73933841"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301330"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -22,18 +22,7 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 - Oracle Linux 5、6 和 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5、6 和 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11 和 12 (x86/x64)
-- Ubuntu Server 12.04 LTS、14.04 LTS 及 16.04 LTS (x86/x64)
-
-下表描述 DSC for Linux 必要的套件相依性。
-
-|  必要的套件 |  描述 |  最小版本 |
-|---|---|---|
-| glibc| GNU 程式庫| 2…4 – 31.30|
-| Python| Python| 2.4 – 3.4|
-| omiserver| 開放式管理基礎結構| 1.0.8.1|
-| openssl| OpenSSL 程式庫| 0.9.8 或 1.0|
-| ctypes| Python CTypes 程式庫| 必須符合 Python 版本|
-| libcurl| cURL http 用戶端程式庫| 7.15.1|
+- Ubuntu Server 12.04 LTS、14.04 LTS、16.04 LTS (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>安裝 DSC for Linux
 
@@ -41,7 +30,7 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 
 ### <a name="installing-omi"></a>安裝 OMI
 
-Linux 的 Desired State Configuration 需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1 或更新的版本。 OMI 可以從開放式群組下載：[開放式管理基礎結構 (OMI)](https://github.com/Microsoft/omi)。
+Linux 的 Desired State Configuration 需要開放式管理基礎結構 (OMI) CIM 伺服器版本 1.0.8.1 或更新的版本。 OMI 可以從 The Open Group 下載：[開放式管理基礎結構 (OMI)](https://github.com/Microsoft/omi)。
 
 若要安裝 OMI，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
 
@@ -54,7 +43,7 @@ Linux 的 Desired State Configuration 需要開放式管理基礎結構 (OMI) CI
 
 ### <a name="installing-dsc"></a>安裝 DSC
 
-您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294)下載 Linux 的 DSC。
+您可以從[這裡](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294)下載 DSC for Linux。
 
 若要安裝 DSC，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
 
@@ -109,7 +98,7 @@ Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就�
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
 
-設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 推送至 Linux 電腦。 若要從遠端針對 Linux 電腦使用此 Cmdlet 及 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) \(英文\) 或 [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) \(英文\) Cmdlet，您必須使用 CIMSession。 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) Cmdlet 用來建立 Linux 電腦的 CIMSession。
+設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 推送至 Linux 電腦。 若要從遠端針對 Linux 電腦使用此 Cmdlet 及 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) \(英文\) 或 [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) \(英文\) Cmdlet，您必須使用 CIMSession。 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) Cmdlet 會用來建立 Linux 電腦的 CIMSession。
 
 下列程式碼示範如何建立 DSC for Linux 的 CIMSession。
 
@@ -129,7 +118,7 @@ $Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Aut
 > 針對 [推送] 模式，使用者認證必須是在 Linux 電腦上的根使用者。
 > DSC for Linux 僅支援 SSL/TLS 連線，必須使用 `New-CimSession` 並將 –UseSSL 參數設為 $true。
 > OMI (DSC) 所使用的 SSL 憑證在此檔案中指定：`/etc/opt/omi/conf/omiserver.conf`，屬性為：pemfile 和 keyfile。
-> 如果此憑證不受您正在執行 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項：`-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true` 選擇忽略憑證驗證
+> 如果此憑證不受您正在執行 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) Cmdlet 的 Windows 電腦信任，您可以使用 CIMSession 選項 `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true` 選擇忽略憑證驗證
 
 執行下列命令，將 DSC 設定推送至 Linux 節點。
 

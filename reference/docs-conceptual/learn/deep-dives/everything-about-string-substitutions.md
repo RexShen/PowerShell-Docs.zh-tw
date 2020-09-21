@@ -3,12 +3,12 @@ title: 如何在字串中替代變數
 description: 在字串中使用變數來建立格式化文字的方法很多。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1e65e90ffa09b34f62bc49ad64b062d429483c33
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 786526fb98dbf1b3ec7c5c6c985ac95b85a96259
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149461"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301313"
 ---
 # <a name="everything-you-wanted-to-know-about-variable-substitution-in-strings"></a>如何在字串中替代變數
 
@@ -19,7 +19,7 @@ ms.locfileid: "84149461"
 
 ## <a name="concatenation"></a>串連
 
-第一種方法可以稱為「串連」。 基本上，這種方法就是把好幾個字串聯結在一起。 使用串連來建置格式化字串是一個已經行之有年的方法。
+第一種方法可稱為串連。 基本上，這種方法就是把好幾個字串聯結在一起。 使用串連來建置格式化字串是一個已經行之有年的方法。
 
 ```powershell
 $name = 'Kevin Marquette'

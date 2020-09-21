@@ -1,18 +1,18 @@
 ---
-title: IF 陳述式的完整說明
+title: If 陳述式的完整說明
 description: 就像許多其他語言一樣，PowerShell 提供的陳述式也可讓您在指令碼中按條件執行程式碼。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6ffb70af694e80430d31991045b9fadc1a2cc3f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: b6bafb99bfb8ecd0152bae841e5c58d4c27ccd3e
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149521"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469747"
 ---
-# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>IF 陳述式的完整說明
+# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>`if` 陳述式的完整說明
 
-就像許多其他語言一樣，PowerShell 提供的陳述式也可讓您在指令碼中按條件執行程式碼。 其中一個陳述式就是 [if][] 陳述式。 今天，我們將深入探討 PowerShell 其中一個最基本的命令。
+就像許多其他語言一樣，PowerShell 提供的陳述式也可讓您在指令碼中按條件執行程式碼。 其中一個陳述式就是 [If][] 陳述式。 今天，我們將深入探討 PowerShell 其中一個最基本的命令。
 
 > [!NOTE]
 > [原文][]出自 [@KevinMarquette][] 所撰寫的部落格。 PowerShell 小組感謝 Kevin 分享此內容。 請前往 [PowerShellExplained.com][] 瀏覽他的部落格。
@@ -22,7 +22,7 @@ ms.locfileid: "84149521"
 您的指令碼經常必須做出決策，並根據這些決策執行不同的邏輯。
 這就是我所謂的條件式執行。 您可以使用一個陳述式或值來進行評估，然後根據該評估結果執行不同的程式碼區段。 這就是 `if` 陳述式的功能所在。
 
-## <a name="the-if-statement"></a>if 陳述式
+## <a name="the-if-statement"></a>`if` 陳述式
 
 以下是 `if` 陳述式的基本範例：
 
@@ -60,7 +60,7 @@ if ( 5 -eq $value )
 
 其中一個可能的使用案例是先檢查值的狀態，然後再對其採取動作。 您可以取得某個服務，並確認其為執行狀態，然後呼叫 `Restart-Service`。
 
-C# 等其他語言常會使用 `==` 來表示相等 (例如 `5 == $value`)，但 PowerShell 不適用此方法。 另一個常見的錯誤是使用專門用來指派值給變數的等號 (例如 `5 = $value`)。 此外，將已知值放在左側，也是非常可怕的錯誤。
+C# 等其他語言常會使用 `==` 來表示相等 (例如 `5 == $value`)，但 PowerShell 不適用此方法。 另一個常見的錯誤是使用專門用來指派值給變數的等號 (例如 `5 = $value`)。 此外，將已知值放在左側，這會造成更可怕的錯誤。
 
 這個運算子 (和其他運算子) 有一些變化。
 
@@ -533,7 +533,7 @@ else
 }
 ```
 
-每個指令碼區塊都會將結果、命令或值放入管線中， 然後我們再將 if 陳述式的結果指派給 `$discount` 變數。 此範例可以輕鬆地將這些值直接指派給每個指令碼區塊中的 `$discount` 變數。 說實話，我不常這樣搭配使用 `if` 陳述式，但我最近確實有這麼一個使用範例。
+每個指令碼區塊都會將結果、命令或值放入管線中， 然後再將 `if` 陳述式的結果指派給 `$discount` 變數。 此範例可以輕鬆地將這些值直接指派給每個指令碼區塊中的 `$discount` 變數。 說實話，我不常這樣搭配使用 `if` 陳述式，但我最近確實有這麼一個使用範例。
 
 ### <a name="array-inline"></a>陣列內嵌
 
@@ -567,7 +567,7 @@ $snowSqlParam = @(
 
 ## <a name="simplify-complex-operations"></a>簡化複雜的作業
 
-有時候，當您要檢查的比較項目太多時，您的 if 陳述式會從畫面右側一路跑到底。
+有時候，當要檢查的比較項目太多時，`If` 陳述式會從畫面右側一路跑到底。
 
 ```powershell
 $user = Get-ADUser -Identity $UserName
@@ -599,7 +599,7 @@ if ($null -ne $user -and
 
 ### <a name="pre-calculating-results"></a>預先計算結果
 
-我們可以將上面的陳述式從 if 陳述式中獨立出來，並只檢查結果。
+我們可將上面的陳述式從 `if` 陳述式中獨立出來，並只檢查結果。
 
 ```powershell
 $needsSecureHomeDrive = $null -ne $user -and
@@ -691,11 +691,11 @@ if ( -not (Test-Path -Path $folder) )
 `if` 陳述式是非常簡單的陳述式，但卻是 PowerShell 的基礎。 幾乎在您撰寫的每個指令碼中，都會多次使用這個陳述式。 希望您對相關內容有更清楚的了解。
 
 <!-- link references -->
-[原文]: https://powershellexplained.com/2019-08-11-PowerShell-if-then-else-equals-operator/
+[原文]: https://powershellexplained.com/2019-08-11-Powershell-if-then-else-equals-operator/
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [if]: /powershell/module/microsoft.powershell.core/about/about_if
-[位元運算子]: https://powershellexplained.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
+[位元運算子]: /powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
 [使用 RegEx 的許多方式]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
 [例外狀況的完整說明]: everything-about-exceptions.md
 [$null 的完整說明]: everything-about-null.md

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692224"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217554"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -15,17 +15,19 @@ ms.locfileid: "83692224"
 
 您可以利用 Windows PowerShell 5.0 引入的 PowerShell 類別，藉由建立類別來定義 DSC 資源。 類別會定義結構描述和資源實作，所以不必建立個別的 MOF 檔案。 以類別為基礎的資源資料夾結構也比較簡單，因為不需要 **DSCResources** 資料夾。
 
-在以類別為基礎的 DSC 資源中，結構描述會定義為類別屬性，它可以使用屬性 (attribute) 修改以指定屬性 (property) 類型。 資源是由 **Get()** 、**Set()** 和 **Test()** 方法實作，它們相當於指令碼資源的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
+在以類別為基礎的 DSC 資源中，結構描述會定義為類別屬性，它可以使用屬性 (attribute) 修改以指定屬性 (property) 類型。 資源是由 `Get()` 、`Set()` 和 `Test()` 方法實作，它們相當於指令碼資源的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式。
 
 本主題會建立名為 **FileResource** 的簡單資源，管理指定路徑的檔案。
 
 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 
->**注意：** 以類別為基礎的資源不支援泛型集合。
+> [!Note]
+> 以類別為基礎的資源不支援泛型集合。
 
 ## <a name="folder-structure-for-a-class-resource"></a>類別資源的資料夾結構
 
-若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。 此類別在 **MyDscResource.psm1** 中定義，而模組資訊清單則在 **MyDscResource.psd1** 中定義。
+若要使用 PowerShell 類別實作 DSC 自訂資源，請建立下列資料夾結構。
+此類別在 `MyDscResource.psm1` 中定義，而模組資訊清單則在 `MyDscResource.psd1` 中定義。
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -36,7 +38,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## <a name="create-the-class"></a>建立類別
 
-您要使用類別關鍵字來建立 PowerShell 類別。 若要明確指出類別是 DSC 資源，請使用 **DscResource()** 屬性。 類別名稱是 DSC 資源的名稱。
+您要使用類別關鍵字來建立 PowerShell 類別。 若要明確指出類別是 DSC 資源，請使用 `DscResource()` 屬性。 類別名稱是 DSC 資源的名稱。
 
 ```powershell
 [DscResource()]
@@ -66,10 +68,10 @@ DSC 資源結構描述會定義為類別的屬性。 我們會宣告三個屬性
 
 - **DscProperty(Key)** ：此為必要屬性。 此屬性為索引鍵。 所有標示為索引鍵的屬性值都必須結合，以在設定內唯一識別資源執行個體。
 - **DscProperty(Mandatory)** ：此為必要屬性。
-- **DscProperty(NotConfigurable)** ：此為唯讀屬性。 標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 **Get()** 方法填入。
+- **DscProperty(NotConfigurable)** ：此為唯讀屬性。 標示了這個屬性 (Attribute) 的屬性 (Property) 無法由設定進行設定，但出現時會由 `Get()` 方法填入。
 - **DscProperty()** ：此為可設定但非必要的屬性。
 
-**$Path** 和 **$SourcePath** 屬性都是字串。 **$CreationTime** 是 [DateTime](/dotnet/api/system.datetime) 屬性。 **$Ensure** 屬性是列舉類型，定義如下。
+`$Path` 和 `$SourcePath` 屬性都是字串。 `$CreationTime` 是 [DateTime](/dotnet/api/system.datetime) 屬性。 `$Ensure` 屬性是列舉類型，定義如下。
 
 ```powershell
 enum Ensure
@@ -81,9 +83,9 @@ enum Ensure
 
 ### <a name="implementing-the-methods"></a>實作方法
 
-**Get()** 、**Set()** 和 **Test()** 方法類似於指令碼資源中的 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource** 函式。
+`Get()` 、`Set()` 和 `Test()` 方法類似於指令碼資源中的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式。
 
-這個程式碼也包含 CopyFile() 函式，這是會將檔案從 **$SourcePath** 複製到 **$Path** 的 Helper 函式。
+這段程式碼也包含 `CopyFile()` 函式，這是能將檔案從 `$SourcePath` 複製到 `$Path` 的 Helper 函式。
 
 ```powershell
     <#
@@ -416,7 +418,7 @@ class FileResource
 
 ## <a name="create-a-manifest"></a>建立資訊清單
 
-若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 **DscResourcesToExport** 陳述式。 我們的資訊清單看起來像這樣︰
+若要向 DSC 引擎提供以類別為基礎的資源，指示模組匯出資源的資訊清單檔中必須包含 `DscResourcesToExport` 陳述式。 我們的資訊清單看起來像這樣︰
 
 ```powershell
 @{
@@ -473,15 +475,13 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：** PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。
+> [注意] PowerShell 5.0 及更新版本支援 **PsDscRunAsCredential**。
 
-您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
-如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
+您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>針對您的資源要求使用或不允許使用 PsDscRunAsCredential
 
-**DscResource()** 屬性可接受選擇性的參數 **RunAsCredential**。
-此參數可接受下列三個值其中之一：
+`DscResource()` 屬性可接受選擇性的參數 **RunAsCredential**。 此參數可接受下列三個值其中之一：
 
 - 對呼叫此資源的設定來說，可以選擇是否使用 `Optional` **PsDscRunAsCredential**。 這是預設值。
 - 對呼叫此資源的所有設定來說，必須使用 `Mandatory` **PsDscRunAsCredential**。
@@ -511,7 +511,7 @@ class FileResource {
            |- SecondResource.psm1
    ```
 
-2. 在 **DSCResources** 資料夾下方定義所有資源。
+1. 在 **DSCResources** 資料夾下方定義所有資源。
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)

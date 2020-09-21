@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: b492e59f340f4cec92c177ad44bbab9dc95da5da
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808854"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782526"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -54,7 +54,7 @@ ms.locfileid: "83808854"
    1. 提要欄位上隨即開啟 [延伸模組]  檢視。 從 Microsoft 選取 PowerShell 延伸模組。
       您應該會看到類似下圖的 Visual Studio Code 畫面：
 
-      ![Visual Studio Code](media/using-vscode/vscode.png)
+      ![Visual Studio Code - PowerShell 延伸模組的檢視](media/using-vscode/vscode.png)
 
    1. 從 Microsoft 按一下 PowerShell 延伸模組的 [安裝]  按鈕。
    1. 安裝之後，若您看到 [安裝]  按鈕變成 [重新載入]  ，請按一下 [重新載入]  。
@@ -190,7 +190,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 
 首先，開啟 [延伸模組] 窗格，然後搜尋 `PowerShell`。 然後按一下齒輪，並選取 [安裝其他版本]  。
 
-![安裝其他版本...](media/using-vscode/install-another-version.png)
+![功能表項目 - 安裝其他版本...](media/using-vscode/install-another-version.png)
 
 然後選取 **2020.1.0** 版。 此版本的延伸模組是支援 v3 與 v4 的最後一個版本。 請務必新增下列設定，讓您的擴充功能版本不會自動更新：
 

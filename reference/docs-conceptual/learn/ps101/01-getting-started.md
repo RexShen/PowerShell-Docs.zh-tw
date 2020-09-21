@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 0f72fb5baf5b829142b18ed774261e9b3b66291b
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438019"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786742"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>第 1 章 - PowerShell 使用者入門
 
@@ -29,7 +29,7 @@ ms.locfileid: "84438019"
 
 在 Windows 10 上尋找 PowerShell 最簡單的方式，就是在搜尋列中輸入 **PowerShell** (如圖1-1 所示)。
 
-![圖 1-1](media/figure1-1.png)
+![圖 1-1 - 在 [開始] 功能表中搜尋 PowerShell](media/figure1-1.png)
 
 請注意，圖 1-1 中顯示 PowerShell 的四個不同捷徑。 本書中用來示範的電腦是執行 64 位元版本的 Windows 10，因此如同捷徑上 (x86) 尾碼所示，有 64 位元版本和 32 位元版本的 PowerShell 主控台和 PowerShell ISE (整合式指令碼環境)。 如果您執行的是 32 位元版本的 Windows 10，則只會有兩個捷徑。 這些項目沒有 (x86) 尾碼，但為 32 位元版本。 如果您使用的是 64 位元的作業系統，建議您執行 64 位元版本的 PowerShell (除非有特定原因需要執行 32 位元版本)。
 
@@ -41,7 +41,7 @@ ms.locfileid: "84438019"
 
 我已透過點選「Windows PowerShell」捷徑，啟動 PowerShell 主控台 (如圖 1-1 所示)。
 
-![圖 1-4](media/figure1-4.png)
+![圖 1-4 - PowerShell 視窗的標題列](media/figure1-4.png)
 
 請注意，PowerShell 主控台的標題列會顯示「Windows PowerShell」 (如圖 1-4 所示)。 有些命令運作順利，但 PowerShell 無法參與使用者存取控制 (UAC)。 這表示它無法針對需要系統管理員核准的工作提示提高權限。
 系統會產生下列錯誤訊息：
@@ -66,7 +66,7 @@ At line:1 char:29
 
 關閉 PowerShell。 重新開機 PowerShell 主控台，但這次請在 [Windows PowerShell] 捷徑上按一下滑鼠右鍵，然後選取 [以系統管理員身分執行] (如圖 1-5 所示)。
 
-![圖 1-5](media/figure1-5.png)
+![圖 1-5 - 操作功能表 - [以系統管理員身分執行]](media/figure1-5.png)
 
 如果您是以一般使用者的身分登入 Windows，系統會提示您輸入認證。 我會輸入使用者帳戶的認證，其身分為網域使用者和本機系統管理員 (如圖 1-6 所示)。
 
@@ -86,11 +86,11 @@ At line:1 char:29
 
 在現在已釘選到工作列的 PowerShell 快捷方式上按一下滑鼠右鍵，然後選取 [屬性]，如圖1-9 所示。
 
-![圖 1-9](media/figure1-9.png)
+![圖 1-9 - 使用者帳戶控制 - 輸入認證](media/figure1-9.png)
 
 按一下圖 1-10 中 #1 所表示的 [進階]，然後勾選圖 1-10 中 #2 所表示的 [以系統管理員身分執行] 核取方塊，然後按兩下 [確定] 以接受變更並退出兩個對話方塊。
 
-![圖 1-10](media/figure1-10.png)
+![圖 1-10 - 顯示「系統管理員」的標題列](media/figure1-10.png)
 
 您永遠無需再擔心如何尋找 PowerShell，或 PowerShell 是否以系統管理員身分執行。
 
@@ -217,13 +217,15 @@ Start-Service -Name w32time
 若需深入瞭解本章所提到的主題，建議閱讀下列 PowerShell 說明主題。
 
 - [about_Automatic_Variables][]
+- [about_Hash_Tables][]
 - [about_Execution_Policies][]
 
 在下一章中，您將瞭解 PowerShell 中命令的可搜尋性。 包括如何更新 PowerShell，以便直接從 PowerShell 內查看這些說明主題，而不需要在網際網路上查看。
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[about_Execution_Policies]: /powershell//powershell/module/microsoft.powershell.core/about/about_execution_policies
+[about_Hash_Tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
+[about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [升級現有的 Windows PowerShell]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [安裝 PowerShell]: /powershell/scripting/install/installing-powershell
 [啟動 Windows PowerShell]: /powershell/scripting/windows-powershell/starting-windows-powershell

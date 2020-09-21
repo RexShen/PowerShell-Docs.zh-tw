@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 了解 DSC 在 CI/CD 管線中的角色
-ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500813"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783104"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>了解 DSC 在 CI/CD 管線中的角色
 
 本文描述可用於結合設定和資源的方法類型。
 每個案例的目標都相同，那就是在想要使用多項設定來達到伺服器部署結束狀態時降低其複雜度。 其中一個例子是多個小組參與伺服器部署的結果；例如，應用程式擁有者維護應用程式狀態，而核心小組將變更發行至安全性基準。 以下詳細說明每種方法的細微差異，包括優點和風險。
 
-![管線](media/authoringAdvanced/Pipeline.jpg)
+![CI/CD 管線的處理流程](media/authoringAdvanced/Pipeline.jpg)
 
 ## <a name="types-of-collaborative-authoring-techniques"></a>共同撰寫技術類型
 
@@ -33,7 +33,7 @@ ms.locfileid: "80500813"
 
 使用部分設定時，本機設定管理員會設定為獨立管理多項設定。 這些設定會獨立編譯，再指派給節點。 這需要使用每項設定的名稱事先設定 LCM。
 
-![PartialConfiguration](media/authoringAdvanced/PartialConfiguration.jpg)
+![部分組態圖](media/authoringAdvanced/PartialConfiguration.jpg)
 
 部分設定提供兩個 (含) 以上的小組對伺服器設定的完整控制權，通常沒有通訊或共同作業優點。
 
@@ -45,7 +45,7 @@ ms.locfileid: "80500813"
 
 在下圖中，小組 B 將其部分設定發行至小組 A。小組 A 接著對已同時套用兩項設定的伺服器執行其測試。 在此模型中，只有一個授權單位有權在生產環境中進行變更。
 
-![PartialSinglePipeline](media/authoringAdvanced/PartialSinglePipeline.jpg)
+![部分單一管線圖](media/authoringAdvanced/PartialSinglePipeline.jpg)
 
 當小組 B 需要變更時，他們應該對小組 A 的原始檔控制環境提交提取要求。 小組 A 會接著使用測試自動化檢閱變更，並在確認變更不會在伺服器所裝載的應用程式或服務中造成錯誤時將它發行至生產環境。
 
@@ -53,7 +53,7 @@ ms.locfileid: "80500813"
 
 複合資源只是封裝成資源的 DSC 設定。 設定 LCM 接受複合資源沒有特殊需求。 這些資源會在新設定中使用，而且每次編譯都會產生一個 MOF 檔案。
 
-![CompositeResource](media/authoringAdvanced/CompositeResource.jpg)
+![複合資源圖](media/authoringAdvanced/CompositeResource.jpg)
 
 複合資源有兩個常見的案例。 第一個是降低複雜度及提取獨特概念。 第二個是允許封裝基準，讓應用程式小組在所有測試皆成功之後，透過其發行管線安全地部署到生產環境。
 

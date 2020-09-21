@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: Windows PowerShell 5.0 的新功能
-ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809214"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216000"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 的新功能
 
@@ -187,7 +187,7 @@ Windows PowerShell 5.0 根據預設會安裝在 Windows Server 2016 技術預覽
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE 的新功能
 
-- 現在，您可以透過執行 Enter-PSSession 來在存有您欲編輯檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit \<遠端電腦上的路徑及檔案名稱\>** ，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
+- 現在，您可透過執行 Enter-PSSession 以於存在所要編輯檔案的電腦上啟動遠端工作階段，然後執行 **PSEdit \<path and file name on the remote computer\>** ，以在 Windows PowerShell ISE 本機複本中編輯遠端 Windows PowerShell 指令碼和檔案。 這項功能可減輕 Windows PowerShell 檔案的編輯工作，這些檔案是儲存在 Windows Server 的 Server Core 安裝選項上，該位置並無法執行 Windows PowerShell ISE。
 - Windows PowerShell ISE 現可支援 Start-Transcript Cmdlet。
 - 現在，您可以在 Windows PowerShell ISE 中偵錯遠端指令碼。
 - 新的功能表命令 「全部中斷」  (Ctrl+B) 可中斷在本機和遠端執行指令碼的偵錯工具。
@@ -353,7 +353,7 @@ Windows PowerShell 工作階段為 Windows PowerShell 帶來 Windows Workflow Fo
 
 Windows PowerShell Web 存取是一項 Windows Server 2012 功能，可讓使用者在網頁式主控台中執行 Windows PowerShell 命令與指令碼。 使用網頁式主控台的裝置不需要 Windows PowerShell、遠端管理軟體，或瀏覽器外掛程式安裝。 只要有正確設定的 Windows PowerShell Web 存取閘道，以及支援 JavaScript 並接受 Cookie 的用戶端裝置瀏覽器即可。
 
-如需詳細資訊，請參閱[部署 Windows PowerShell Web 存取](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)。
+如需詳細資訊，請參閱[部署 Windows PowerShell Web 存取](/previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)。
 
 ### <a name="new-windows-powershell-ise-features"></a>新的 Windows PowerShell ISE 功能
 

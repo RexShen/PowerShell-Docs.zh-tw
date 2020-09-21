@@ -3,16 +3,16 @@ title: 我們管理提取要求的方式
 description: 此文章說明 PowerShell-Docs 小組管理提取要求的方式。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060383"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158168"
 ---
 # <a name="managing-pull-requests"></a>管理提取要求
 
-此文章記錄我們管理 PowerShell-Docs 存放庫中提取要求的方式。 此文章是設計來輔助 PowerShell-Docs 小組成員的工作之用。 在此發佈的原因，是為了向我們的公共參與者提供流程上的透明度。
+本文會記錄如何管理 PowerShell-Docs 存放庫中的提取要求。 此文章是設計來輔助 PowerShell-Docs 小組成員的工作之用。 在此發佈的原因，是為了向我們的公共參與者提供流程上的透明度。
 
 ## <a name="best-practices"></a>最佳作法
 

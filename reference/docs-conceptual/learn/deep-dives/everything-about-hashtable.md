@@ -3,12 +3,12 @@ title: 您想知道有關雜湊表的一切
 description: 雜湊表在 PowerShell 中是極其重要的，因此務必加以充分了解。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
-ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
+ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307124"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85353816"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>您想知道有關雜湊表的一切
 
@@ -777,12 +777,13 @@ Name                           Value
 
 ```powershell
 $key = $ht.keys[0]
-$ht.$key
+$ht.$($key)
+a
 $ht[$key]
 a
 ```
 
-使用成員存取 (`.`) 標記法不會傳回任何內容。 但是使用陣列索引 (`[]`) 標記法則有用。
+當索引鍵是陣列時，即必須將 `$key` 變數包裝在子運算式中，使其可與成員存取 (`.`) 標記法搭配使用。 或者，您也可使用陣列索引 (`[]`) 標記法。
 
 ## <a name="use-in-automatic-variables"></a>用於自動變數
 
@@ -962,7 +963,7 @@ function Get-DeepClone
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [雜湊表]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
 [陣列]: /powershell/module/microsoft.powershell.core/about/about_arrays
-[若效能至上，請將其進行測試]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best%20Practices/Performance.md
+[若效能至上，請將其進行測試]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [展開]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
 [JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8

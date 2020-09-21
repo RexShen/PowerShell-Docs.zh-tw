@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 檔案資源
-ms.openlocfilehash: 54f4de9b3d337a6b9ad36c143eac70d5ef6b1c15
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 28e9ea3a590a0972e505912efae4a934bc39ba1d
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560469"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799599"
 ---
 # <a name="dsc-file-resource"></a>DSC 檔案資源
 
@@ -46,7 +46,7 @@ File [string] #ResourceName
 |內容 |只有在搭配**類型** **檔案**類型使用時才有效。 表示在目標檔案中要確認的內容為 **Present** 或 **Absent** 與 **Ensure**。 |
 |認證 |存取資源所需的認證，例如來源檔案。 |
 |Force |覆寫會導致錯誤的存取作業 (例如覆寫檔案，或刪除不是空的目錄)。 預設值為 `$false`。 |
-|Recurse |只有在搭配**類型** **目錄**使用時才有效。 以遞迴方式在所有子目錄中執行狀態作業。 預設值為 `$false`。 |
+|Recurse |只有在搭配**類型** **目錄**使用時才有效。 以遞迴方式對所有目錄內容、子目錄和子目錄內容執行狀態作業。 預設值為 `$false`。 |
 |SourcePath |要從中複製檔案或資料夾資源的路徑。 |
 |類型 |要設定的資源類型。 有效值為 **Directory** 和 **File**。 預設值為 **File**。 |
 |MatchSource |判斷資源是否應該監視在初始複本之後新增至來源目錄的新檔案。 若值為 `$true`，即表示在初始複本之後，任何新的原始程式檔都應該複製到目的地。 若設為 `$false`，資源就會快取來源目錄的內容，並忽略任何初始複本之後新增的檔案。 預設值為 `$false`。 |
@@ -69,6 +69,7 @@ File [string] #ResourceName
 
 - 當您只指定 **DestinationPath** 時，資源可確保路徑存在 (若為 **Present**) 或不存在 (若為 **Absent**)。
 - 當您以 **Directory** 的 **Type** 值指定 **SourcePath** 和 **DestinationPath** 時，資源會將來源目錄複寫到目的地路徑。 屬性 **Recurse**、**Force** 和 **MatchSource** 會變更所執行的複製作業類型，而 **Credential** 會判斷要使用哪一個帳戶來存取來源目錄。
+- 如果未在複製目錄時將 **Recurse** 屬性設定為 `$true`，即不會複製現有目錄的任何內容。 只會複製指定的目錄。
 - 如果您為 **Attributes** 屬性和 **DestinationPath** 指定了 **ReadOnly** 值，則 **Ensure** **Present** 會建立指定的路徑，而 **Contents** 會設定檔案的內容。 **Ensure** **Absent** 設定會完全忽略 **Attributes** 屬性，並移除指定路徑上的任何檔案。
 
 ## <a name="example"></a>範例

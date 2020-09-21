@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫帳戶設定
-ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560452"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771782"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 資源庫帳戶設定
 
@@ -36,7 +36,7 @@ PowerShell 資源庫提供下列通知選項：
 - 使用者可以透過 PowerShell 資源庫與我連絡
 - 當使用我的帳戶將套件推送至 PowerShell 資源庫時通知我
 
-![變更電子郵件地址](media/managing-account/PSGallery_AccountEmailOptions.png)
+![選取電子郵件地址各選項](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 如頁面所示，無法停用來自 PowerShell 資源庫的重大通知。
 其中包括：
@@ -49,20 +49,20 @@ PowerShell 資源庫提供下列通知選項：
 
 若要變更登入帳戶，您必須使用目前的帳戶登入。 請使用下列步驟以完成變更。
 
-![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountSettings.png)
+![變更登入帳戶設定](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. 按一下 [變更帳戶]  。 快顯視窗說明變更登入帳戶會套用至在 PowerShell 資源庫中使用該帳戶的所有情況。 檢閱資訊，然後按一下 [確定]  繼續。
 
-   ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-1.png)
+   ![確認變更 - [確定]/[取消]](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. 接著系統會提示您使用「新帳戶」  登入。
 
-   ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-2.png)
+   ![使用新的帳戶登入](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. 當您按一下 [下一步]  時，您會看到一則訊息，指出您使用目前的帳戶登入。
    按一下 [登出並以不同帳戶登入]  。
 
-   ![[登入帳戶] 設定](media/managing-account/PSGallery_LoginAccountChange-3.png)
+   ![登出並使用其他帳戶登入](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. 輸入新帳戶的密碼。 輸入密碼之後，您會回到 [帳戶設定] 頁面，其中顯示登入帳戶已更新。
 

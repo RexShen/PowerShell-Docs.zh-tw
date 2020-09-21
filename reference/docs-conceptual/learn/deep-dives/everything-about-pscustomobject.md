@@ -1,14 +1,14 @@
 ---
 title: 您想知道有關 PSCustomObject 的一切
 description: PSCustomObject 可讓您用簡單的方法來建立結構化資料。
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fbc8b5b6d2cfafaa75fa820f420762a1804074ac
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149491"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410133"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>您想知道有關 PSCustomObject 的一切
 
@@ -71,7 +71,7 @@ $myObject = New-Object -TypeName PSObject -Property $myHashtable
 
 ### <a name="saving-to-a-file"></a>儲存至檔案
 
-我發現將雜湊表儲存至檔案的最佳方式是將其儲存為 JSON。 您可以將其匯入回 `[PSCusomObject]`
+我發現將雜湊表儲存至檔案的最佳方式是將其儲存為 JSON。 您可以將其匯入回 `[PSCustomObject]`
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
@@ -139,7 +139,7 @@ $myObject.$property
 
 我知道這看起來很奇怪，但這會正常運作。
 
-### <a name="convert-pscustomboject-into-a-hashtable"></a>將 pscustomboject 轉換成雜湊表
+### <a name="convert-pscustombobject-into-a-hashtable"></a>將 PSCustombObject 轉換成雜湊表
 
 若要繼續上一節的內容，您可以以動態方式逐步存取屬性，並從中建立雜湊表。
 
@@ -254,6 +254,9 @@ $myObject = [PSCustomObject]@{
 ```
 
 我非常喜歡這種方法，因為這相當適用於程式設計語言。 現在我們有了具備適當類型名稱的物件，可以進行更多操作。
+
+> [!NOTE]
+> 您也可使用 PowerShell 類別建立自訂的 PowerShell 類型。 如需詳細資訊，請參閱 [PowerShell 類別概觀](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes)。
 
 ## <a name="using-defaultpropertyset-the-long-way"></a>使用 DefaultPropertySet (較慢的方式)
 

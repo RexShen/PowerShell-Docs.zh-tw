@@ -1,12 +1,12 @@
 ---
 title: PowerShell 7 模組相容性
 ms.date: 02/03/2020
-ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565058"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722808"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7 模組相容性
 
@@ -69,13 +69,14 @@ Install-WindowsFeature -Name ActiveDirectory
 | 模組名稱                        | 狀態                               | 支援的 OS                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | ActiveDirectory                    | 原生相容                  | 具有 RSAT-AD-PowerShell 的 Windows Server 1809+<br>具有 Rsat.ActiveDirectory.DS-LDS.Tools 的 Windows 10 1809+ |
+| ADDSDeployment                     | 搭配相容性階層作業       |  Windows Server 2019 1809+         |
 | ADFS                               | 未搭配相容性層進行測試    |                                    |
 | AppBackgroundTask                  | 原生相容                  | Windows 10 1903+                   |
 | AppLocker                          | 未搭配相容性層進行測試    |                                    |
 | AppvClient                         | 未搭配相容性層進行測試    |                                    |
 | Appx                               | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+ |
 | AssignedAccess                     | 原生相容                  | Windows 10 1809+                   |
-| BestPractices                      | 未搭配相容性層進行測試    |                                    |
+| BestPractices                      | 不支援相容性階層 |                                    |
 | BitLocker                          | 原生相容                  | 具有 BitLocker 的 Windows Server 1809+<br>Windows 10 1809+ |
 | BitsTransfer                       | 原生相容                  | Windows Server 20H1<br>Windows 10 20H1 |
 | BootEventCollector                 | 未搭配相容性層進行測試    |                                        |
@@ -148,7 +149,7 @@ Install-WindowsFeature -Name ActiveDirectory
 | 佈建                       | 未搭配相容性層進行測試    |                                               |
 | PSDesiredStateConfiguration        | 部分                            | 內建於 PowerShell 7                       |
 | PSDiagnostics                      | 原生相容                  | 內建於 PowerShell 7                       |
-| PSScheduledJob                     | 無法搭配相容性層運作 | 內建於 PowerShell 5.1                     |
+| PSScheduledJob                     | 不支援相容性階層 | 內建於 PowerShell 5.1                     |
 | PSWorkflow                         | 未搭配相容性層進行測試    |                                               |
 | PSWorkflowUtility                  | 未搭配相容性層進行測試    |                                               |
 | RemoteAccess                       | 未搭配相容性層進行測試    |                                               |
@@ -156,7 +157,7 @@ Install-WindowsFeature -Name ActiveDirectory
 | ScheduledTasks                     | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | SecureBoot                         | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | ServerCore                         | 未搭配相容性層進行測試    |                                               |
-| ServerManager                      | 未搭配相容性層進行測試    |                                               |
+| ServerManager                      | 原生相容                  | Windows Server 1809+<br>具有 Rsat.ServerManager.Tools 的 Windows 10 1809+<br>_請參閱下列附註_ |
 | ServerManagerTasks                 | 未搭配相容性層進行測試    |                                               |
 | ShieldedVMDataFile                 | 原生相容                  | 具有 RSAT-Shielded-VM-Tools 的 Windows Server 1903+<br>具有 Rsat.Shielded.VM.Tools 的 Windows 10 1903+ |
 | ShieldedVMProvisioning             | 原生相容                  | 具有 HostGuardian 的 Windows Server 1809+<br>具有 HostGuardian 的 Windows 10 1809+  |
@@ -164,7 +165,7 @@ Install-WindowsFeature -Name ActiveDirectory
 | SmbShare                           | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | SmbWitness                         | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | SMISConfig                         | 原生相容                  | 具有 WindowsStorageManagementService 的 Windows Server 1903+ |
-| sms                                | 未搭配相容性層進行測試    |                                               |
+| SMS                                | 未搭配相容性層進行測試    |                                               |
 | SoftwareInventoryLogging           | 原生相容                  | Windows Server 1809+                          |
 | StartLayout                        | 原生相容                  | 具有桌面體驗的 Windows Server 1809+<br>Windows 10 1809+ |
 | 儲存體                            | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
@@ -178,7 +179,7 @@ Install-WindowsFeature -Name ActiveDirectory
 | TroubleshootingPack                | 原生相容                  | Windows 10 1903+                              |
 | TrustedPlatformModule              | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | UEV                                | 原生相容                  | Windows Server ??具有桌面體驗之伺服器的未來版本??<br>Windows 10 1903+ |
-| UpdateServices                     | 無法搭配相容性層運作 |                                               |
+| UpdateServices                     | 不支援相容性階層 |                                               |
 | VpnClient                          | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | Wdac                               | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+      |
 | WebAdministration                  | 未搭配相容性層進行測試    |                                               |
@@ -189,3 +190,10 @@ Install-WindowsFeature -Name ActiveDirectory
 | WindowsServerBackup                | 原生相容                  | 具有 Windows-Server-Backup 的 Windows Server 19H2 |
 | WindowsUpdate                      | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+       |
 | WindowsUpdateProvider              | 原生相容                  | Windows Server 1809+<br>Windows 10 1809+       |
+
+## <a name="notes"></a>注意
+
+### <a name="servermanager-module"></a>ServerManager 模組
+
+在 PowerShell 7 中，此模組在格式化輸出時會發生些微相容性問題。 例如，`Get-WindowsFeature` Cmdlet 會傳回包含所有屬性的適當物件，但預設的顯示格式設定會讓某些屬性變成空白。 您可使用 `Select-Object` 或直接成員存取，在物件屬性中取得實際的值。
+

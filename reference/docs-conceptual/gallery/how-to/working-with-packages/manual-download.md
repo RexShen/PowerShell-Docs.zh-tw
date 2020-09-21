@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: gallery,powershell,psgallery,資源庫
 title: 手動下載套件
-ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 3e29437c4e35e47ab2028a7eea9f408daf1a59e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278698"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782849"
 ---
 # <a name="manual-package-download"></a>手動下載套件
 
@@ -22,7 +22,7 @@ Powershell 資源庫支援直接從網站下載套件，而不需要使用 Power
 
 每個頁面會有 [手動下載] 連結，如下所示：
 
-![手動下載](media/manual-download/packagedisplaypagewithpseditions.png)
+![包含安裝選項的套件顯示頁面](media/manual-download/packagedisplaypagewithpseditions.png)
 
 若要手動下載，請按一下 [Download the raw nupkg file] \(下載原始 nupkg 檔案\)  。 這會將套件複本複製到您瀏覽器中的下載資料夾 (名為 `<name>.<version>.nupkg`)。
 

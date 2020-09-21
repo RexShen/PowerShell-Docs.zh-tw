@@ -3,12 +3,12 @@ title: 如何提交提取要求
 description: 此文章說明如何將提取要求提交至 PowerShell-Docs 存放庫。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690954"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782645"
 ---
 # <a name="how-to-submit-pull-requests"></a>如何提交提取要求
 
@@ -56,9 +56,9 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 您將看見下列行為：
 
 1. 您提交 PR。
-1. 在指出 PR 狀態的 GitHub 留言中，您會在存放庫上看到「檢查」狀態已啟用。 請注意，在此範例中，已啟用兩個檢查，「認可驗證」與 "OpenPublishing.Build"：
+1. 在指出 PR 狀態的 GitHub 註解中，您會看到存放庫已啟用「檢查」狀態。 請注意，在此範例中，已啟用兩個檢查，「認可驗證」與 "OpenPublishing.Build"：
 
-   ![某些檢查失敗](media/pull-requests/validation-failed.png)
+   ![驗證狀態 - 部分檢查失敗](media/pull-requests/validation-failed.png)
 
    即使認可驗證失敗，建置也可以通過。
 
@@ -66,7 +66,7 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 1. 在 [Details] \(詳細資料\) 頁面上，您會看到所有失敗的驗證檢查，以及如何修正問題的相關資訊。
 1. 驗證成功時，系統會將下列留言新增至 PR：
 
-   ![建置驗證](media/pull-requests/build-validation.png)
+   ![驗證狀態：成功](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > 如果您是外部 (不是 Microsoft 員工) 參與者，則無法存取詳細的建置報告或預覽連結。

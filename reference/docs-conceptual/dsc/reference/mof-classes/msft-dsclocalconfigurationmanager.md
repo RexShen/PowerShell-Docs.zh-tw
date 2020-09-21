@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: dsc,powershell,設定,安裝
 title: MSFT_DSCLocalConfigurationManager 類別
-ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953265"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464276"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager 類別
 
@@ -36,10 +36,10 @@ class MSFT_DSCLocalConfigurationManager
 
 |方法 |描述 |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| 使用設定代理程式套用擱置中的設定。|
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| 停用 DSC 資源偵錯。|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| 啟用 DSC 資源偵錯。|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| 將設定文件傳送到受管理的節點，並使用設定代理程式的 **Get** 方法來套用設定。|
+| [ApplyConfiguration(boolean)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| 使用設定代理程式套用擱置中的設定。|
+| [DisableDebugConfiguration()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| 停用 DSC 資源偵錯。|
+| [EnableDebugConfiguration(boolean)](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| 啟用 DSC 資源偵錯。|
+| [GetConfiguration()](msft-dsclocalconfigurationmanager-getconfiguration.md)| 將設定文件傳送到受管理的節點，並使用設定代理程式的 **Get** 方法來套用設定。|
 | [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| 取得與特定工作相關的設定代理程式輸出。|
 | [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| 取得設定狀態歷程記錄。|
 | [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| 取得用於控制設定代理程式的 LCM 設定。|

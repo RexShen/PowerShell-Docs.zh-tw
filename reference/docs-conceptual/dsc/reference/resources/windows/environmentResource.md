@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 環境資源
-ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954715"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464412"
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境資源
 
@@ -22,6 +22,7 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
+    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -35,6 +36,7 @@ Environment [string] #ResourceName
 |---|---|
 |名稱 |指出您要確保其特定狀態的環境變數名稱。 |
 |Path |定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設定為 `$true`；否則請設定為 `$false`。 預設值為 `$false`。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。 |
+|目標| 指出擷取變數的位置：電腦或處理序。 若同時指定兩者，則只會傳回來自電腦的值。 預設為兩者，因為這是資源其餘部分的預設。 |
 |值 |要指派給環境變數的值。 |
 
 ## <a name="common-properties"></a>通用屬性

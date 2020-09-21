@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
-ms.openlocfilehash: 7dd107431e756e5cbfc2d6babec41331b89743cc
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: ba857fa504bfd84accfd7f260b1fff1228db40ba
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692237"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217520"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
@@ -21,7 +21,7 @@ ms.locfileid: "83692237"
 
 ### <a name="folder-structure-for-a-mof-resource"></a>MOF 資源的資料夾結構
 
-若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 Demo_IISWebsite.schema.mof 檔案中，而資源指令碼是定義在 Demo_IISWebsite.psm1 中。 您也可以建立模組資訊清單 (psd1) 檔案。
+若要使用 MOF 結構描述實作 DSC 自訂資源，請建立下列資料夾結構。 MOF 結構描述是定義在 `Demo_IISWebsite.schema.mof` 檔案中，資源指令碼則是定義在 `Demo_IISWebsite.psm1` 中。 您也可以建立模組資訊清單 (psd1) 檔案。
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -33,11 +33,12 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
                 |- Demo_IISWebsite.schema.mof (file, required)
 ```
 
-請注意，你必須在最上層的資料夾下建立名為 DSCResources 的資料夾，而且每個資源的資料夾都必須和資源同名。
+> [!NOTE]
+> 您必須在最上層資料夾下建立名為 DSCResources 的資料夾，且每個資源的資料夾都必須和資源同名。
 
 ### <a name="the-contents-of-the-mof-file"></a>MOF 檔案的內容
 
-下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 *Demo_IISWebsite.schema.mof*。
+下面的範例 MOF 檔案可用於自訂的網站資源。 若要依此範例操作，請將這個結構描述儲存至檔案，並呼叫檔案 `Demo_IISWebsite.schema.mof`。
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")]
@@ -56,23 +57,24 @@ class Demo_IISWebsite : OMI_BaseResource
 
 前列程式碼請注意下列事項：
 
-* `FriendlyName` 定義的名稱，可用來參考 DSC 設定指令碼的這個自訂資源。 在本例中，`Website` 相當於內建 Archive 資源的易記名稱 `Archive`。
-* 您為自訂資源定義的類別必須衍生自 `OMI_BaseResource`。
-* 屬性上的類型限定詞 `[Key]`，表示這個屬性會唯一識別資源執行個體。 至少有一個 `[Key]` 屬性是必要屬性。
-* `[Required]` 限定詞表示必要屬性 (使用這項資源的任何設定指令碼都必須指定的值)。
-* `[write]` 限定詞表示，在設定指令碼中使用自訂資源時，這是選擇性屬性。 `[read]` 限定詞表示設定不能設定屬性，且限用於報告。
-* `Values` 限制可指派給在 `ValueMap` 定義的值清單之屬性的值。 如需詳細資訊，請參閱 [ValueMap and Value Qualifiers (ValueMap 和值限定詞)](/windows/desktop/WmiSdk/value-map)。
-* 建議您在資源中包含名為 `Ensure`且值為 `Present` 和 `Absent` 的屬性，以便和內建的 DSC 資源維持一致的樣式。
-* 依下列方式命名自訂資源的結構描述檔案：`classname.schema.mof`，其中 `classname` 是遵循結構描述定義 `class` 關鍵字的識別碼。
+- `FriendlyName` 定義的名稱，可用來參考 DSC 設定指令碼的這個自訂資源。 在本例中，`Website` 相當於內建 Archive 資源的易記名稱 `Archive`。
+- 您為自訂資源定義的類別必須衍生自 `OMI_BaseResource`。
+- 屬性上的類型限定詞 `[Key]`，表示這個屬性會唯一識別資源執行個體。 至少有一個 `[Key]` 屬性是必要屬性。
+- `[Required]` 限定詞表示必要屬性 (使用這項資源的任何設定指令碼都必須指定的值)。
+- `[write]` 限定詞表示，在設定指令碼中使用自訂資源時，這是選擇性屬性。 `[read]` 限定詞表示設定不能設定屬性，且限用於報告。
+- `Values` 限制可指派給在 `ValueMap` 定義的值清單之屬性的值。 如需詳細資訊，請參閱 [ValueMap and Value Qualifiers (ValueMap 和值限定詞)](/windows/desktop/WmiSdk/value-map)。
+- 建議您在資源中包含名為 `Ensure`且值為 `Present` 和 `Absent` 的屬性，以便和內建的 DSC 資源維持一致的樣式。
+- 依下列方式命名自訂資源的結構描述檔案：`classname.schema.mof`，其中 `classname` 是遵循結構描述定義 `class` 關鍵字的識別碼。
 
 ### <a name="writing-the-resource-script"></a>撰寫資源指令碼
 
-資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：**Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在名為 `<ResourceName>.psm1` 的檔案中。 在下例中，這些函式存放在 Demo_IISWebsite.psm1 檔案中。
+資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：`Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource`。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在名為 `<ResourceName>.psm1` 的檔案中。
+在下列範例中，這些函式儲存在 `Demo_IISWebsite.psm1` 檔案中。
 
 > [!NOTE]
-> 當您在資源上多次執行相同的設定指令碼時，您應該不會收到任何錯誤，而且資源的狀態也應該和只執行一次指令碼的狀態相同。 若要達成這個目標，請確認 **Get-TargetResource** 和 **Test-TargetResource** 函式不變更資源，而且以相同參數順序值多次叫用 **Set-TargetResource** 函式永遠等於只叫用一次。
+> 當您在資源上多次執行相同的設定指令碼時，您應該不會收到任何錯誤，而且資源的狀態也應該和只執行一次指令碼的狀態相同。 若要達成這個目標，請確認 `Get-TargetResource` 和 `Test-TargetResource` 函式不變更資源，而且以相同參數順序值多次叫用 `Set-TargetResource` 函式永遠等於只叫用一次。
 
-在 **Get-TargetResource** 函式的實作中，使用提供為參數的重要資源屬性值，檢查指定的資源執行個體狀態。 這個函式必須傳回雜湊表，將所有的資源屬性列為索引鍵，這些屬性的實際值列為對應值。 範例請見下列程式碼。
+在 `Get-TargetResource` 函式的實作中，使用提供為參數的重要資源屬性值，檢查指定的資源執行個體狀態。 這個函式必須傳回雜湊表，將所有的資源屬性列為索引鍵，這些屬性的實際值列為對應值。 範例請見下列程式碼。
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
@@ -109,25 +111,25 @@ function Get-TargetResource
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
         $getTargetResourceResult = @{
-                                      Name = $Website.Name;
-                                        Ensure = $ensureResult;
-                                        PhysicalPath = $Website.physicalPath;
-                                        State = $Website.state;
-                                        ID = $Website.id;
-                                        ApplicationPool = $Website.applicationPool;
-                                        Protocol = $Website.bindings.Collection.protocol;
-                                        Binding = $Website.bindings.Collection.bindingInformation;
-                                    }
+            Name = $Website.Name
+            Ensure = $ensureResult
+            PhysicalPath = $Website.physicalPath
+            State = $Website.state
+            ID = $Website.id
+            ApplicationPool = $Website.applicationPool
+            Protocol = $Website.bindings.Collection.protocol
+            Binding = $Website.bindings.Collection.bindingInformation
+        }
 
-        $getTargetResourceResult;
+        $getTargetResourceResult
 }
 ```
 
-依據設定指令碼中為資源屬性指定的值，**Set-TargetResource** 必須執行下列其中一項：
+依據設定指令碼中為資源屬性指定的值，`Set-TargetResource` 必須執行下列其中一項：
 
-* 建立新的網站
-* 更新現有的網站
-* 刪除現有的網站
+- 建立新的網站
+- 更新現有的網站
+- 刪除現有的網站
 
 下列範例將說明這點。
 
@@ -166,62 +168,63 @@ function Set-TargetResource
 }
 ```
 
-最後，**Test-TargetResource** 函式必須和 **Get-TargetResource** 及 **Set-TargetResource** 使用相同的參數集。 在 **Test-TargetResource** 的實作中，檢查於索引鍵參數中指定的資源執行個體狀態。 如果資源執行個體的實際狀態不符合參數集指定的值，則傳回 **$false**。 否則傳回 **$true**。
+最後，`Test-TargetResource` 函式必須和 `Get-TargetResource` 及 `Set-TargetResource` 使用相同的參數集。 在 `Test-TargetResource` 的實作中，檢查於索引鍵參數中指定的資源執行個體狀態。 如果資源執行個體的實際狀態不符合參數集指定的值，則傳回 `$false`。 否則，傳回 `$true`。
 
-下列程式碼會實作 **Test-TargetResource** 函式。
+下列程式碼會實作 `Test-TargetResource` 函式。
 
 ```powershell
 function Test-TargetResource
 {
-[CmdletBinding()]
-[OutputType([System.Boolean])]
-param
-(
-[ValidateSet("Present","Absent")]
-[System.String]
-$Ensure,
+    [CmdletBinding()]
+    [OutputType([System.Boolean])]
+    param
+    (
+        [ValidateSet("Present","Absent")]
+        [System.String]
+        $Ensure,
 
-[parameter(Mandatory = $true)]
-[System.String]
-$Name,
+        [parameter(Mandatory = $true)]
+        [System.String]
+        $Name,
 
-[parameter(Mandatory = $true)]
-[System.String]
-$PhysicalPath,
+        [parameter(Mandatory = $true)]
+        [System.String]
+        $PhysicalPath,
 
-[ValidateSet("Started","Stopped")]
-[System.String]
-$State,
+        [ValidateSet("Started","Stopped")]
+        [System.String]
+        $State,
 
-[System.String[]]
-$Protocol,
+        [System.String[]]
+        $Protocol,
 
-[System.String[]]
-$BindingData,
+        [System.String[]]
+        $BindingData,
 
-[System.String]
-$ApplicationPool
-)
+        [System.String]
+        $ApplicationPool
+    )
 
-#Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Get the current state
+    $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-#Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    #Write-Verbose "Use this cmdlet to deliver information about command processing."
 
+    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-#Include logic to
-$result = [System.Boolean]
-#Add logic to test whether the website is present and its status mathes the supplied parameter values. If it does, return true. If it does not, return false.
-$result
+    #Include logic to
+    $result = [System.Boolean]
+    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    $result
 }
 ```
 
-**注意**：為方便偵錯，請在前述三個函式實作中使用 **Write-Verbose** Cmdlet。
->這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。
->預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
+> [!Note]
+> 為方便偵錯，請在前述三個函式實作中使用 `Write-Verbose` Cmdlet。 這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。 預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
 
 ### <a name="creating-the-module-manifest"></a>建立模組資訊清單
 
-最後，使用 **New-ModuleManifest** Cmdlet，定義自訂資源模組的 `<ResourceName>.psd1` 檔案。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 **Get-TargetResource**、**Set-TargetResource** 和 **Test-TargetResource**。 以下為資訊清單檔案範例。
+最後，使用 `New-ModuleManifest` Cmdlet，定義自訂資源模組的 `<ResourceName>.psd1` 檔案。 當您叫用這個 Cmdlet 時，請參考上節所述的指令碼模組 (.psm1) 檔案。 在要匯出的函式清單中包含 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource`。 以下為資訊清單檔案範例。
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -277,10 +280,10 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
->**注意：** PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。
+> [!Note]
+> PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。
 
-您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。
-如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
+您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
 
 若要從自訂資源內存取使用者內容，您可以使用自動變數 `$PsDscContext`。
 
@@ -303,4 +306,5 @@ if (PsDscContext.RunAsUser) {
 $global:DSCMachineStatus = 1
 ```
 
-為了讓 LCM 重新啟動節點，**RebootNodeIfNeeded** 旗標必須設為 `$true`。 **ActionAfterReboot** 設定也應設為 **ContinueConfiguration** (預設值)。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。
+為了讓 LCM 重新啟動節點，**RebootNodeIfNeeded** 旗標必須設為 `$true`。
+**ActionAfterReboot** 設定也應設為 **ContinueConfiguration** (預設值)。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。

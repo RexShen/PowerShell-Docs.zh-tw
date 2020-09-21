@@ -1,19 +1,19 @@
 ---
-ms.date: 08/14/2018
+ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: 執行遠端命令
-ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030324"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799616"
 ---
 # <a name="running-remote-commands"></a>執行遠端命令
 
 您可以使用單一 PowerShell 命令，在一部或數百部電腦上執行命令。 Windows PowerShell 透過使用各種技術 (包括 WMI、RPC 與 WS) 支援遠端運算。
 
-PowerShell Core 支援 WMI、WS-Management 與 SSH 遠端功能。 不再支援 RPC。
+PowerShell Core 支援 WMI、WS-Management 與 SSH 遠端功能。 在 PowerShell 6 中，不再支援 RPC。 在 PowerShell 7 及以上版本中，只有 Windows 支援 RPC。
 
 如需 PowerShell Core 中遠端功能的詳細資訊，請參閱下列文章：
 
@@ -55,8 +55,7 @@ Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parame
 
 ### <a name="start-an-interactive-session"></a>啟動互動式工作階段
 
-若要啟動與單一遠端電腦的互動式工作階段，請使用 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet。
-例如，若要啟動與 Server01 遠端電腦的互動式工作階段，請輸入：
+若要啟動與遠端電腦的互動式工作階段，請使用 [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) Cmdlet。 例如，若要啟動與 Server01 遠端電腦的互動式工作階段，請輸入：
 
 ```powershell
 Enter-PSSession Server01

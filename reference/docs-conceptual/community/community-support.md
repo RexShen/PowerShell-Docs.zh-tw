@@ -2,12 +2,12 @@
 title: PowerShell 社群支援資源
 description: 針對 PowerShell 使用者，以及由 PowerShell 使用者建立的資源清單
 ms.date: 04/29/2020
-ms.openlocfilehash: f35524c8a1a457ffd6cccf0d2165cc340f7519ca
-ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+ms.openlocfilehash: c82abc17a61bca958dfb04471678eb406df12d42
+ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630830"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85794829"
 ---
 # <a name="getting-support-from-the-community"></a>從社群取得支援
 
@@ -21,7 +21,8 @@ PowerShell 社群可以在我們的 [GitHub](https://github.com/powershell/power
 - [PowerShell.org](https://powershell.org/) \(英文\)
 - [StackOverFlow](https://stackoverflow.com/questions/tagged/powershell) \(英文\)
 - [r/PowerShell subreddit](https://www.reddit.com/r/PowerShell/) \(英文\)
-- [PowerShell Slack](https://join.slack.com/t/powershell/shared_invite/enQtNjk2ODE4MTkxNTY4LWJlOTU3NzBiYWFiMjM3Mzg3M2E5OGJiNGE4YjVhODVlNWNlY2I2ZWRkNGY2NjE4MThiYTg4OWI5NjA4MDM3ZjQ) \(英文\)
-- [PowerShell Discord](https://discord.gg/Ju25cw6) \(英文\)
+- 透過下列方式加入 PowerShell 虛擬使用者群組：
+  - [Slack](https://aka.ms/psslack)
+  - [Discord](https://aka.ms/psdiscord)
 
 如需我們支援原則的相關資訊，請參閱 [PowerShell 支援生命週期](/powershell/scripting/powershell-support-lifecycle)。

@@ -3,12 +3,12 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: 使用本機 PSRepository
-ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415828"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837574"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>使用私人 PowerShellGet 存放庫
 
@@ -109,16 +109,16 @@ Register-PSRepository -Default
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
 ```
+
+> [!IMPORTANT]
+> 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。 手動執行命令時，不應為免記錄而以純文字方式傳遞 API 金鑰，使用 `Read-Host` Cmdlet 即可安全傳遞 API 金鑰的值。
 
 ```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
-
-> [!IMPORTANT]
-> 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。
 
 ### <a name="publishing-a-module-from-the-psgallery"></a>從 PSGallery 發佈模組
 
@@ -179,18 +179,20 @@ Install-PowerShellGetOffline -LocalFolder 'F:\OfflinePowerShellGet'
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
+```
 
+> [!IMPORTANT]
+> 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。 手動執行命令時，不應為免記錄而以純文字方式傳遞 API 金鑰，使用 `Read-Host` Cmdlet 即可安全傳遞 API 金鑰的值。
+
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
 
 ## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>使用封裝解決方案來裝載 PowerShellGet 存放庫
 
-您也可以使用封裝解決方案 (例如 Azure Artifacts) 來裝載私人或公用 PowerShellGet 存放庫。 如需詳細資訊和指示，請參閱 [Azure Artifacts 文件](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library) \(英文\)。
-
-> [!IMPORTANT]
-> 為確保安全性，不應將 API 金鑰硬式編碼於指令碼中。 使用安全金鑰管理系統。
+您也可以使用封裝解決方案 (例如 Azure Artifacts) 來裝載私人或公用 PowerShellGet 存放庫。 如需詳細資訊和指示，請參閱 [Azure Artifacts 文件](/azure/devops/artifacts/tutorials/private-powershell-library) \(英文\)。
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1

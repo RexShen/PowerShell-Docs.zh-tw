@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 封存資源
-ms.openlocfilehash: 679de8b965304c149b10321e73e42b224f49ecc5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560367"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463783"
 ---
 # <a name="dsc-archive-resource"></a>DSC 封存資源
 
@@ -23,6 +23,7 @@ Archive [string] #ResourceName
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
+    [ Credential = [PSCredential] ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
     [ Ensure = [string] { Absent | Present } ]
@@ -35,11 +36,12 @@ Archive [string] #ResourceName
 
 |屬性 |描述 |
 |---|---|
-|Destination |指定您想要確保的封存內容解壓縮位置。 |
-|Path |指定封存檔案的來源路徑。 |
-|總和檢查碼 |定義判斷兩個檔案是否相同時所使用的類型。 如不指定 **Checksum**，只會使用檔案或目錄名稱進行比較。 有效值包括：**SHA-1**、**SHA-256**、**SHA-512**、**createdDate**、**modifiedDate**。 如果指定 **Checksum** 但無 **Validate**，設定會失敗。 |
-|Force |某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **[False]** 。 |
-|Validate| 使用 **Checksum** 屬性判斷封存是否符合簽章。 如果指定 **Checksum** 但無 **Validate**，設定會失敗。 如果指定 **Validate** 但未指定 **Checksum**，預設會使用 _SHA-256_ **總和檢查碼**。 |
+| Destination | 指定您想要確保的封存內容解壓縮位置。 |
+| Path | 指定封存檔案的來源路徑。 |
+| 總和檢查碼 | 定義判斷兩個檔案是否相同時所使用的類型。 如不指定 **Checksum**，只會使用檔案或目錄名稱進行比較。 有效值包括：**SHA-1**、**SHA-256**、**SHA-512**、**createdDate**、**modifiedDate**。 如果指定 **Checksum** 但無 **Validate**，設定會失敗。 |
+| 認證 | 有權存取指定封存路徑和目的地的使用者帳戶認證 (如有需要)。 |
+| Force | 某些檔案作業 (例如覆寫檔案，或刪除不是空的目錄) 會導致錯誤。 使用 **Force** 屬性會覆寫此類錯誤。 預設值為 **[False]** 。 |
+| Validate| 使用 **Checksum** 屬性判斷封存是否符合簽章。 如果指定 **Checksum** 但無 **Validate**，設定會失敗。 如果指定 **Validate** 但無 **Checksum**，則預設會使用 _SHA-256_ **Checksum**。 |
 
 ## <a name="common-properties"></a>通用屬性
 
@@ -54,7 +56,7 @@ Archive [string] #ResourceName
 
 ## <a name="example"></a>範例
 
-下列範例示範如何使用封存資源以確保 `Test.zip` 封存檔案的內容存在，並會解壓縮在指定的目的地。
+下例示範如何使用封存資源以確保 `Test.zip` 封存檔案的內容確實存在，並使用授權將內容解壓縮在指定的目的地。
 
 ```powershell
 Archive ArchiveExample {

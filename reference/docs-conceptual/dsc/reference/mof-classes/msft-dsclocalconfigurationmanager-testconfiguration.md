@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: dsc,powershell,設定,安裝
 title: TestConfiguration 方法
-ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 0611c4d5543c49b879bef9b60cafdd0b055c9b86
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954865"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464293"
 ---
 # <a name="testconfiguration-method"></a>TestConfiguration 方法
 
@@ -26,13 +26,13 @@ uint32 TestConfiguration(
 
 ## <a name="parameters"></a>參數
 
-*configurationData* \[in\] 設定的環境資料。
+**configurationData** \[in\] 組態的環境資料。
 
-*InDesiredState* \[out\] 傳回時，指定受控節點是否為設定文件所指定的狀態。
+**InDesiredState** \[out\] 傳回時，指定受控節點是否為設定文件所指定的狀態。
 
-*ResourcesInDesiredState* \[out\] 傳回時，包含指定資源為所需狀態之 **MSFT_ResourceInDesiredState** 類別的內嵌執行個體。
+**ResourcesInDesiredState** \[out\] 傳回時，包含指定資源為所需狀態之 **MSFT_ResourceInDesiredState** 類別的內嵌執行個體。
 
-*ResourcesNotInDesiredState* \[out\] 傳回時，包含指定資源不為所需狀態之 **MSFT_ResourceNotInDesiredState** 類別的內嵌執行個體。
+**ResourcesNotInDesiredState** \[out\] 傳回時，包含指定資源不為所需狀態之 **MSFT_ResourceNotInDesiredState** 類別的內嵌執行個體。
 
 ## <a name="return-value"></a>傳回值
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 02/28/2020
+ms.date: 07/23/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 資源
-ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692211"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777933"
 ---
 # <a name="dsc-resources"></a>DSC 資源
 
@@ -22,11 +22,11 @@ ms.locfileid: "83692211"
 每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。
 您可以透過下列方式定義資源的結構描述：
 
-- `Schema.Mof` 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 '.schema.mof' 檔案中定義其「結構描述」。
+- `Schema.Mof` 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 `schema.mof` 檔案中定義其「結構描述」。
 - `<Resource Name>.schema.psm1` 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)，在 `<ResourceName>.schema.psm1` 檔案中定義其「結構描述」。
 - `<Resource Name>.psm1` 檔案：以類別為基礎的 DSC 資源會在類別定義中定義其「結構描述」。 語法項目會標示為 Class 屬性。 如需詳細資訊，請參閱 [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
 
-若要擷取 DSC 資源的語法，請搭配 `-Syntax` 參數使用 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet。 此使用方式類似於搭配 `-Syntax` 參數使用 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) 來取得 Cmdlet 語法。 您看到的輸出將顯示針對您指定之資源的資源區塊所使用的範本。
+若要擷取 DSC 資源的語法，請使用 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet 加上 **Syntax** 參數。 此用法類似使用 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) 加上 **Syntax** 參數，以取得 Cmdlet 語法。 您看到的輸出將顯示針對您指定之資源的資源區塊所使用的範本。
 
 ```powershell
 Get-DscResource -Syntax Service
@@ -54,6 +54,9 @@ Service [String] #ResourceName
     [State = [string]{ Running | Stopped }]
 }
 ```
+
+> [!NOTE]
+> 在 7.0 版以前的 PowerShell 中，`Get-DscResource` 不會尋找類別型的 DSC 資源。
 
 在設定內部，**服務**資源區塊可能看起來像這樣，以**確保**多工緩衝處理器服務正在執行。
 
@@ -106,7 +109,7 @@ Configuration TestConfig
 > [!NOTE]
 > 從 PowerShell 5.0 開始，已針對 DSC 新增 IntelliSense。 此新功能可讓您使用 <kbd>TAB</kbd> 與 <kbd>Ctr</kbd>+<kbd>空格鍵</kbd>來自動完成機碼名稱。
 
-![資源 Tab 鍵自動完成](media/resources/resource-tabcompletion.png)
+![使用 Tab 鍵自動完成的資源 IntelliSense](media/resources/resource-tabcompletion.png)
 
 ## <a name="types-of-resources"></a>資源類型
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: 使用 FilterHashtable 建立 Get-WinEvent 查詢
-ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 002d84515368663e0e807f48ffe883bd533be1d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563929"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786640"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>使用 FilterHashtable 建立 Get-WinEvent 查詢
 
@@ -97,7 +97,7 @@ Get-WinEvent -FilterHashtable @{
 
 繼續使用 **ProviderName** 機碼建置雜湊表。 **ProviderName** 是 **Windows 事件檢視器**中 [來源] 欄位中顯示的名稱。 例如，下列螢幕擷取畫面中的 **.NET Runtime**：
 
-![Windows 事件檢視器來源的影像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![Windows 事件檢視器來源的影像](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 更新雜湊表，並包含機碼為 **ProviderName**，值為 **.NET Runtime** 的**機碼值**組。
 
@@ -127,7 +127,7 @@ Get-WinEvent -FilterHashtable @{
 開啟 **Windows 事件檢視器**，然後從 [動作] 窗格中，按一下 [篩選目前的記錄]。
 **Keywords** 下拉式功能表會顯示可用的關鍵字，如下列螢幕擷取畫面所示：
 
-![Windows 事件檢視器關鍵字的影像。](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![Windows 事件檢視器關鍵字的影像](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 使用下列命令來顯示 `StandardEventKeywords` 屬性名稱。
 

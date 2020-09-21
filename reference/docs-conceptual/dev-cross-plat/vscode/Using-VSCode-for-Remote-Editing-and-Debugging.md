@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 來進行遠端編輯與偵錯
 description: 使用 Visual Studio Code 來進行遠端編輯與偵錯
 ms.date: 06/13/2019
-ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 0394348b4dfbe813549c02035e9d3b035cba72e4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809274"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784634"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>使用 Visual Studio Code 來進行遠端編輯與偵錯
 
@@ -47,11 +47,11 @@ ms.locfileid: "83809274"
 
 - 在巡覽邊新增中斷點
 
-  ![在巡覽邊新增中斷點](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![將中斷點新增至裝訂邊](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - 按 F5 以針對 PowerShell 指令碼進行偵錯。
 
-  ![針對 PowerShell 本機指令碼進行偵錯](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![偵錯本機的 PowerShell 指令碼](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 偵錯時，可以與偵錯主控台互動，查看左側範圍中和所有其他標準偵錯工具中的變數。
 
@@ -73,13 +73,13 @@ ms.locfileid: "83809274"
 
 首先，在整合式主控台中，執行 `Enter-PSSession`。 當 `[<hostname>]` 顯示於您提示字元的最左邊時，表示您已連線到遠端工作階段。
 
-![呼叫 Enter-PSSession](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![呼叫 Enter-PSSession 以連線到遠端工作階段](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 現在，我們可以執行與編輯本機指令碼相同的步驟。
 
 1. 執行 `Open-EditorFile test.ps1` 或 `psedit test.ps1` 以開啟遠端 `test.ps1` 檔案
 
-  ![Open-EditorFile test.ps1 檔案](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![編輯遠端系統上的指令碼](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. 編輯檔案/設定中斷點
 
@@ -87,6 +87,6 @@ ms.locfileid: "83809274"
 
 1. 開始針對遠端檔案進行偵錯 (F5)
 
-   ![針對遠端檔案進行偵錯](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![偵錯遠端指令碼](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 如果您有任何問題，您可以在 [GitHub 存放庫](https://github.com/powershell/vscode-powershell) \(英文\) 中提出問題。
