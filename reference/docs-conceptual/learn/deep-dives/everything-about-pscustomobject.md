@@ -3,12 +3,12 @@ title: 您想知道有關 PSCustomObject 的一切
 description: PSCustomObject 可讓您用簡單的方法來建立結構化資料。
 ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
+ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410133"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804775"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>您想知道有關 PSCustomObject 的一切
 
@@ -139,7 +139,7 @@ $myObject.$property
 
 我知道這看起來很奇怪，但這會正常運作。
 
-### <a name="convert-pscustombobject-into-a-hashtable"></a>將 PSCustombObject 轉換成雜湊表
+### <a name="convert-pscustomobject-into-a-hashtable"></a>將 PSCustomObject 轉換成雜湊表
 
 若要繼續上一節的內容，您可以以動態方式逐步存取屬性，並從中建立雜湊表。
 
