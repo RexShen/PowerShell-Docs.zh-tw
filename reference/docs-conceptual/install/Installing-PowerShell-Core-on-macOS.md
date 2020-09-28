@@ -1,13 +1,13 @@
 ---
 title: 在 macOS 上安裝 PowerShell
 description: 在 macOS 上安裝 PowerShell 的相關資訊
-ms.date: 08/24/2020
-ms.openlocfilehash: 8f38d573d9d67276dbc95cfb70f1fde80af62bb6
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.date: 09/23/2020
+ms.openlocfilehash: 86647888910fb27528fb78c46a457fa1da856eb0
+ms.sourcegitcommit: 51104c7932a185b4d3293dbca306625369687468
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88857896"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91224679"
 ---
 # <a name="installing-powershell-on-macos"></a>在 macOS 上安裝 PowerShell
 
@@ -48,7 +48,7 @@ pwsh
 
 ```sh
 brew update
-brew cask upgrade powershell
+brew upgrade powershell --cask
 ```
 
 > [!NOTE]
@@ -80,7 +80,7 @@ pwsh-preview
 
 ```sh
 brew update
-brew cask upgrade powershell-preview
+brew upgrade powershell-preview --cask
 ```
 
 > [!NOTE]
