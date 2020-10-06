@@ -3,12 +3,12 @@ title: 您想知道有關於陣列的一切
 description: 陣列是大部分程式設計語言的基礎語言功能。
 ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
+ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092094"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91543367"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>您想知道有關於陣列的一切
 
@@ -752,7 +752,10 @@ if ( -not ( $results -ne 'Passed') )
 
 ## <a name="adding-to-arrays"></a>新增至陣列
 
-此時，您會開始對如何將項目新增至陣列感到懷疑。 簡單明瞭的答案就是您無法將項目新增至陣列。 陣列在記憶體中的大小是固定的。 如果您需要擴充陣列或在其中加入單一項目，則需要建立新的陣列，並將所有的值複製到舊陣列。 就跟很多工作一樣，這聽起來所費不貲；不過，PowerShell 會隱藏建立新陣列的複雜性。
+此時，您會開始對如何將項目新增至陣列感到懷疑。 簡單明瞭的答案就是您無法將項目新增至陣列。 陣列在記憶體中的大小是固定的。 如果您需要擴充陣列或在其中加入單一項目，則需要建立新的陣列，並將所有的值複製到舊陣列。 就跟很多工作一樣，這聽起來十分費工；不過，PowerShell 會隱藏建立新陣列的複雜性。 PowerShell 會為陣列實作新增運算子 (`+`)。
+
+> [!NOTE]
+> PowerShell 不會實作減法運算。 如果您想要有彈性的陣列替代方案，則必須使用[泛型`List`](#generic-list)物件。
 
 ### <a name="array-addition"></a>新增陣列
 
@@ -814,8 +817,6 @@ $array = foreach ( $node in (1..5))
     "ATX-SQL-$node"
 }
 ```
-
-藉由將 `foreach` 的結果指派至變數，我們會捕捉所有物件，並建立單一陣列。
 
 ## <a name="array-types"></a>陣列類型
 
