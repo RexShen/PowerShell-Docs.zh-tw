@@ -2,12 +2,12 @@
 ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: 執行遠端命令
-ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
+ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88799616"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91814730"
 ---
 # <a name="running-remote-commands"></a>執行遠端命令
 
@@ -129,7 +129,7 @@ Windows PowerShell 遠端管理在這裡開始。 使用 Windows PowerShell 安�
 
 Windows PowerShell 包含 WSMan 提供者。 提供者會建立 `WSMAN:` 磁碟機，讓您可以完整瀏覽本機電腦與遠端電腦上組態設定的階層。
 
-如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/library/dd819476.aspx) \(英文\) 與[關於 WS-Management Cmdlet](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets)，或在 Windows PowerShell 主控台中，輸入 `Get-Help wsman`。
+如需 WSMan 提供者的詳細資訊，請參閱 [WSMan 提供者](https://technet.microsoft.com/library/dd819476.aspx) \(英文\) 與[關於 WS-Management Cmdlet](/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets)，或在 Windows PowerShell 主控台中，輸入 `Get-Help wsman`。
 
 如需詳細資訊，請參閱
 

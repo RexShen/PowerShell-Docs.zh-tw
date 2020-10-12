@@ -1,14 +1,14 @@
 ---
 title: 您想知道有關於陣列的一切
 description: 陣列是大部分程式設計語言的基礎語言功能。
-ms.date: 07/07/2020
+ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
-ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
+ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
+ms.sourcegitcommit: 3445a343e0683124652f64abef6fe911f9eb989f
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "91543367"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91852556"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>您想知道有關於陣列的一切
 
@@ -706,7 +706,7 @@ if ( $null -eq $array )
 ```powershell
 if ( $array.count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -724,7 +724,7 @@ $null
 ```powershell
 if ( @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
@@ -733,7 +733,7 @@ if ( @($array).count -gt 0 )
 ```powershell
 if ( $null -ne $array -and @($array).count -gt 0 )
 {
-    'Array isn't empty'
+    "Array isn't empty"
 }
 ```
 
