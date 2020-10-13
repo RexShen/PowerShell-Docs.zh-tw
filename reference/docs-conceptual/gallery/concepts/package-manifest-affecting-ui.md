@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
-ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d5e0b85a635c4090f8ccb814277a1a6dd6a951e2
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560418"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772298"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -33,8 +33,8 @@ ms.locfileid: "83560418"
 | **Copyright** (著作權) | 這是模組資訊清單中的 [Copyright] 欄位，而在指令碼資訊清單中是 .COPYRIGHT。 | 是 | 是 |
 | **FileList** (檔案清單) | 當套件發佈到 PowerShell 資源庫時，會從套件取得檔案清單。 它不是由資訊清單資訊控制。 注意：每個套件在 PowerShell 資源庫中都列出一個額外的 .nuspec 檔案，但是在系統上安裝套件之後不會顯示該檔案。 這是該套件的 Nuget 套件資訊清單，可以忽略它。 | 否 | 否 |
 | **Tags** (標籤) | 針對模組，Tags 包含在 PSData\PrivateData 之下。 針對指令碼，該區段標記為 .TAGS。 請注意，標籤不能包含空格，即使當它們在引號中亦然。 標籤具有其他需求和意義，稍後會在本主題的＜標籤詳細資訊＞一節中說明。 | 是 | 是 |
-| **Cmdlet** | 此項目在模組資訊清單中使用 CmdletsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可以改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
-| **函數** | 此項目在模組資訊清單中使用 FunctionsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可以改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
+| **Cmdlet** | 此項目在模組資訊清單中使用 CmdletsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
+| **函數** | 此項目在模組資訊清單中使用 FunctionsToExport 來提供。 請注意，最佳做法是明確地列出項目，這樣可改善使用者的載入模組效能，而不是使用萬用字元 "*"。 | 是 | 否 |
 | **DSC 資源** | 針對將會用於 PowerShell 5.0 版和以上版本的模組，此項目在資訊清單中是使用 DscResourcesToExport 來提供。 如果模組是在 PowerShell 4 中使用，則不應使用 DSCResourcesToExport，因為它不是受支援的資訊清單金鑰 (PowerShell 4 之前的版本不支援 DSC)。 | 是 | 否 |
 | **工作流程** | 工作流程會以指令碼的形式發佈到 PowerShell 資源庫，並在程式碼中識別為工作流程 (如需範例，請參閱 [Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1))。 此項目不是由資訊清單控制。 | 否 | 否 |
 | **Role capabilities** (角色功能) | 當模組發佈到 PowerShell 資源庫且包含一或多個角色功能 (.psrc) 檔案 (由 JEA 使用) 時，系統會列出此清單。 如需[角色功能](/powershell/scripting/learn/remoting/jea/role-capabilities)的詳細資訊，請參閱 JEA 文件。 | 是 | 否 |
@@ -44,7 +44,7 @@ ms.locfileid: "83560418"
 | **Version History** (版本歷程記錄) | 版本歷程記錄反映對 PowerShell 資源庫中的模組進行的更新。 如果使用 Delete 功能隱藏套件的版本，則除了對套件擁有者之外，系統將不會在版本歷程記錄中顯示版本。 | 否 | 否 |
 | **Project Site** (專案網站) | 模組的專案網站是在模組資訊清單中的 Privatedata\PSData 區段以 ProjectURI 提供。 在指令碼資訊清單中，是透過指定 .PROJECTURI 來控制。 | 是 | 是 |
 | **授權** | 模組的授權連結是在模組資訊清單中的 Privatedata\PSData 區段以 LicenseURI 提供。 在指令碼資訊清單中，是透過指定 .LICENSEURI 來控制。 請務必注意，如果授權不是透過 LicenseURI 提供，或在模組中提供，則該套件的使用規定是由 PowerShell 資源庫使用規定來指定。 如需詳細資訊，請參閱使用規定。 | 是 | 是 |
-| **圖示** | 您可以在指令碼資訊清單或模組資訊清單的 Privatedata-PSData 區段中提供 IconURI 旗標，為 PowerShell 資源庫中的任何套件指定圖示。 IconURI 應該指向具有透明背景的 32x32 影像。 URI **必須**是直接影像 URL，**不得**連至包含該影像的網頁，或 PowerShell 資源庫套件中的檔案。 | 是 | 是 |
+| **圖示** | 您可以在指令碼資訊清單或模組資訊清單的 Privatedata-PSData 區段中提供 IconURI 旗標，為 PowerShell 資源庫中的任何套件指定圖示。 IconURI 應該指向具有透明背景的 85x85 影像。 URI **必須**是直接影像 URL，**不得**連至包含該影像的網頁，或 PowerShell 資源庫套件中的檔案。 | 是 | 是 |
 
 ## <a name="editing-package-details"></a>編輯套件詳細資料
 

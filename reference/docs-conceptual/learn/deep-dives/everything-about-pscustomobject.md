@@ -1,14 +1,14 @@
 ---
 title: 您想知道有關 PSCustomObject 的一切
 description: PSCustomObject 可讓您用簡單的方法來建立結構化資料。
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
-ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
+ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804775"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772315"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>您想知道有關 PSCustomObject 的一切
 
@@ -159,10 +159,10 @@ foreach( $property in $myobject.psobject.properties.name )
 if( $null -ne $myObject.ID )
 ```
 
-但如果該值為 `$null`，您仍然需要對其進行檢查，您可以使用 `psobject.properties` 來檢查該屬性。
+但是，如果該值可能為 `$null`，則可檢查 `psobject.properties` 以確定該值是否存在。
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## <a name="adding-object-methods"></a>新增物件方法
@@ -264,7 +264,7 @@ $myObject = [PSCustomObject]@{
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```
