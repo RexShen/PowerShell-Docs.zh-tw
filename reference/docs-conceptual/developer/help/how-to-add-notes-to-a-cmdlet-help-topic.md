@@ -1,32 +1,28 @@
 ---
 title: 如何新增附註至 Cmdlet 說明主題
-ms.date: 09/12/2016
-ms.openlocfilehash: d3679126ea34d7e86bcda700d0d050d8312a7aa2
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
-ms.translationtype: MT
+ms.date: 10/20/2020
+ms.openlocfilehash: 7f8be34a82de2c12cfd2a05deed139ddb30da95f
+ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893402"
+ms.lasthandoff: 10/21/2020
+ms.locfileid: "92298302"
 ---
 # <a name="how-to-add-notes-to-a-cmdlet-help-topic"></a>如何新增附註至 Cmdlet 說明主題
 
-本節說明如何將**附注**區段新增至 PowerShell Cmdlet 說明主題。 **附注**區段是用來說明無法輕易地放入其他結構化區段的詳細資料，例如參數的更詳細說明。 此內容可能包含關於 Cmdlet 如何與特定提供者搭配使用的批註、一些獨特但重要的用法、Cmdlet，或避免可能發生錯誤狀況的方法。
+此節描述如何將 [附註] 小節新增到 PowerShell Cmdlet 說明主題。 [附註] 小節是用來解釋無法輕鬆放入其他結構化小節的詳細資料，例如更詳細的參數說明。 此內容可能包括關於 Cmdlet 如何與特定提供者搭配使用的註解、一些獨特但重要的 Cmdlet 用法，或有助於避免可能發生錯誤狀況的方法。
 
-您可以新增至附注區段的便箋數目沒有限制。 針對每個便箋，將一對 `<maml:alert>` 標記新增至 `<maml:alertset>` 節點。 每個便箋的內容都會加入一組標記內 `<maml:para>` 。 使用空白 `<maml:para>` 標記來進行間距。
-
-下列 XML 顯示 `<maml:alertset>` 具有兩個附注的節點。 請注意，每個便箋都有一個選擇性 `<maml:title>` 標記（標題可以用來分組任何一組 `<maml:alert>` 標記），而且每個便箋的內容後面都會有一個空白行。
+[附註] 小節是使用單一 `<maml:alertset>` 節點來定義的。 您可以新增到 [附註] 小節的附註數目沒有限制。 針對每個附註，將一對 `<maml:alert>` 標記新增至 `<maml:alertset>` 節點。 每個附註的內容都會新增到一組 `<maml:para>` 標記內。 使用空白 `<maml:para>` 標記來加上間距。
 
 ```xml
 <maml:alertSet>
-  <maml:title>title for Note 1</maml:title>
+  <maml:title>Optional title for Note</maml:title>
   <maml:alert>
-    <maml:para> Note 1</maml:para>
-    <maml:para></maml:para>
+    <maml:para>Note 1</maml:para>
+    <maml:para>Note a</maml:para>
   </maml:alert>
-  <maml:title>title for Note 2</maml:title>
   <maml:alert>
-    <maml:para> Note 1</maml:para>
-    <maml:para></maml:para>
+    <maml:para>Note 2</maml:para>
   </maml:alert>
 </maml:alertSet>
 ```
