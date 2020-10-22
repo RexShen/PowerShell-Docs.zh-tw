@@ -1,46 +1,46 @@
 ---
-title: 安裝 PowerShell 模組 |Microsoft Docs
+title: 安裝 PowerShell 模組 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
-ms.translationtype: MT
+ms.openlocfilehash: 201679c97acdccae9aa4c2be641ee1da09a8275c
+ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
+ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784855"
+ms.lasthandoff: 10/19/2020
+ms.locfileid: "92197820"
 ---
-# <a name="installing-a-powershell-module"></a><span data-ttu-id="c2616-102">安裝 PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="c2616-102">Installing a PowerShell Module</span></span>
+# <a name="installing-a-powershell-module"></a><span data-ttu-id="fadd9-102">安裝 PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-102">Installing a PowerShell Module</span></span>
 
-<span data-ttu-id="c2616-103">建立 PowerShell 模組之後，您可能會想要在系統上安裝模組，讓您或其他人可以使用它。</span><span class="sxs-lookup"><span data-stu-id="c2616-103">After you have created your PowerShell module, you will likely want to install the module on a system, so that you or others may use it.</span></span> <span data-ttu-id="c2616-104">一般來說，這包括將模組檔案 (ie、.psm1 或二進位元件、模組資訊清單，以及任何其他相關聯的檔案) 複製到該電腦上的目錄。</span><span class="sxs-lookup"><span data-stu-id="c2616-104">Generally speaking, this consists of copying the module files (ie, the .psm1, or the binary assembly, the module manifest, and any other associated files) onto a directory on that computer.</span></span> <span data-ttu-id="c2616-105">對於非常小型的專案，這可能就像是將檔案以 Windows Explorer 複製並貼到單一遠端電腦一樣簡單;不過，對於較大型的解決方案，您可能會想要使用更複雜的安裝程式。</span><span class="sxs-lookup"><span data-stu-id="c2616-105">For a very small project, this may be as simple as copying and pasting the files with Windows Explorer onto a single remote computer; however, for larger solutions you may wish to use a more sophisticated installation process.</span></span> <span data-ttu-id="c2616-106">無論您如何將模組放入系統，PowerShell 都可以使用一些技術，讓使用者尋找和使用您的模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-106">Regardless of how you get your module onto the system, PowerShell can use a number of techniques that will let users find and use your modules.</span></span> <span data-ttu-id="c2616-107">因此，安裝的主要問題是確保 PowerShell 能夠找到您的模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-107">Therefore, the main issue for installation is ensuring that PowerShell will be able to find your module.</span></span> <span data-ttu-id="c2616-108">如需詳細資訊，請參閱匯[入 PowerShell 模組](./importing-a-powershell-module.md)。</span><span class="sxs-lookup"><span data-stu-id="c2616-108">For more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).</span></span>
+<span data-ttu-id="fadd9-103">在您建立 PowerShell 模組之後，您可能想要將該模組安裝到系統上，讓您或其他人可以加以使用。</span><span class="sxs-lookup"><span data-stu-id="fadd9-103">After you have created your PowerShell module, you will likely want to install the module on a system, so that you or others may use it.</span></span> <span data-ttu-id="fadd9-104">一般來說，這包含將模組檔案 (也就是 .psm1 或二進位組件、模組資訊清單，以及任何其他相關聯的檔案) 複製到該電腦上的目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-104">Generally speaking, this consists of copying the module files (ie, the .psm1, or the binary assembly, the module manifest, and any other associated files) onto a directory on that computer.</span></span> <span data-ttu-id="fadd9-105">對於非常小的專案來說，您可能只需使用 [Windows 檔案總管] 將這些檔案複製並貼到單一遠端電腦即可；不過，對於較大型的解決方案來說，您可能需要使用更複雜的安裝程序。</span><span class="sxs-lookup"><span data-stu-id="fadd9-105">For a very small project, this may be as simple as copying and pasting the files with Windows Explorer onto a single remote computer; however, for larger solutions you may wish to use a more sophisticated installation process.</span></span> <span data-ttu-id="fadd9-106">無論您是以何種方式將模組移至系統上，PowerShell 都可以使用數種技術來讓使用者尋找並使用您的模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-106">Regardless of how you get your module onto the system, PowerShell can use a number of techniques that will let users find and use your modules.</span></span> <span data-ttu-id="fadd9-107">因此，安裝的主要問題在於確保 PowerShell 能夠找到您的模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-107">Therefore, the main issue for installation is ensuring that PowerShell will be able to find your module.</span></span> <span data-ttu-id="fadd9-108">如需詳細資訊，請參閱[匯入 PowerShell 模組](./importing-a-powershell-module.md)。</span><span class="sxs-lookup"><span data-stu-id="fadd9-108">For more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md).</span></span>
 
-## <a name="rules-for-installing-modules"></a><span data-ttu-id="c2616-109">安裝模組的規則</span><span class="sxs-lookup"><span data-stu-id="c2616-109">Rules for Installing Modules</span></span>
+## <a name="rules-for-installing-modules"></a><span data-ttu-id="fadd9-109">安裝模組的規則</span><span class="sxs-lookup"><span data-stu-id="fadd9-109">Rules for Installing Modules</span></span>
 
-<span data-ttu-id="c2616-110">下列資訊適用于所有模組，包括您為自己的用途所建立的模組、從其他方取得的模組，以及您散發給其他人的模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-110">The following information pertains to all modules, including modules that you create for your own use, modules that you get from other parties, and modules that you distribute to others.</span></span>
+<span data-ttu-id="fadd9-110">下列資訊適用於所有模組，包括您建立以供自己使用的模組、從其他合作對象取得的模組，以及您發佈給其他人的模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-110">The following information pertains to all modules, including modules that you create for your own use, modules that you get from other parties, and modules that you distribute to others.</span></span>
 
-### <a name="install-modules-in-psmodulepath"></a><span data-ttu-id="c2616-111">在 PSModulePath 中安裝模組</span><span class="sxs-lookup"><span data-stu-id="c2616-111">Install Modules in PSModulePath</span></span>
+### <a name="install-modules-in-psmodulepath"></a><span data-ttu-id="fadd9-111">在 PSModulePath 中安裝模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-111">Install Modules in PSModulePath</span></span>
 
-<span data-ttu-id="c2616-112">盡可能將所有模組安裝在**PSModulePath**環境變數中所列的路徑，或將模組路徑新增至**PSModulePath**環境變數值。</span><span class="sxs-lookup"><span data-stu-id="c2616-112">Whenever possible, install all modules in a path that is listed in the **PSModulePath** environment variable or add the module path to the **PSModulePath** environment variable value.</span></span>
+<span data-ttu-id="fadd9-112">請盡可能將所有模組安裝到列於 **PSModulePath** 環境變數中的路徑，或是將模組路徑新增到 **PSModulePath** 環境變數值。</span><span class="sxs-lookup"><span data-stu-id="fadd9-112">Whenever possible, install all modules in a path that is listed in the **PSModulePath** environment variable or add the module path to the **PSModulePath** environment variable value.</span></span>
 
-<span data-ttu-id="c2616-113">**PSModulePath**環境變數 ($Env:P smodulepath) 包含 Windows PowerShell 模組的位置。</span><span class="sxs-lookup"><span data-stu-id="c2616-113">The **PSModulePath** environment variable ($Env:PSModulePath) contains the locations of Windows PowerShell modules.</span></span> <span data-ttu-id="c2616-114">Cmdlet 會依賴此環境變數的值來尋找模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-114">Cmdlets rely on the value of this environment variable to find modules.</span></span>
+<span data-ttu-id="fadd9-113">**PSModulePath** 環境變數 ($Env:PSModulePath) 包含 Windows PowerShell 模組的位置。</span><span class="sxs-lookup"><span data-stu-id="fadd9-113">The **PSModulePath** environment variable ($Env:PSModulePath) contains the locations of Windows PowerShell modules.</span></span> <span data-ttu-id="fadd9-114">Cmdlet 需仰賴此環境變數的值來尋找模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-114">Cmdlets rely on the value of this environment variable to find modules.</span></span>
 
-<span data-ttu-id="c2616-115">根據預設， **PSModulePath**環境變數值包含下列系統和使用者模組目錄，但是您可以加入並編輯值。</span><span class="sxs-lookup"><span data-stu-id="c2616-115">By default, the **PSModulePath** environment variable value contains the following system and user module directories, but you can add to and edit the value.</span></span>
+<span data-ttu-id="fadd9-115">根據預設，**PSModulePath** 環境變數值包含下列系統與使用者模組目錄，但您可以對該值進行新增及編輯。</span><span class="sxs-lookup"><span data-stu-id="fadd9-115">By default, the **PSModulePath** environment variable value contains the following system and user module directories, but you can add to and edit the value.</span></span>
 
-- <span data-ttu-id="c2616-116">`$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules) </span><span class="sxs-lookup"><span data-stu-id="c2616-116">`$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)</span></span>
+- <span data-ttu-id="fadd9-116">`$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)</span><span class="sxs-lookup"><span data-stu-id="fadd9-116">`$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)</span></span>
 
   > [!WARNING]
-  > <span data-ttu-id="c2616-117">這個位置會保留給 Windows 隨附的模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-117">This location is reserved for modules that ship with Windows.</span></span> <span data-ttu-id="c2616-118">請勿將模組安裝到這個位置。</span><span class="sxs-lookup"><span data-stu-id="c2616-118">Do not install modules to this location.</span></span>
+  > <span data-ttu-id="fadd9-117">此位置是保留給 Windows 隨附的模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-117">This location is reserved for modules that ship with Windows.</span></span> <span data-ttu-id="fadd9-118">請勿將模組安裝到此位置。</span><span class="sxs-lookup"><span data-stu-id="fadd9-118">Do not install modules to this location.</span></span>
 
-- <span data-ttu-id="c2616-119">`$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules) </span><span class="sxs-lookup"><span data-stu-id="c2616-119">`$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)</span></span>
+- <span data-ttu-id="fadd9-119">`$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)</span><span class="sxs-lookup"><span data-stu-id="fadd9-119">`$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)</span></span>
 
-- <span data-ttu-id="c2616-120">`$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules) </span><span class="sxs-lookup"><span data-stu-id="c2616-120">`$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)</span></span>
+- <span data-ttu-id="fadd9-120">`$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)</span><span class="sxs-lookup"><span data-stu-id="fadd9-120">`$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)</span></span>
 
-  <span data-ttu-id="c2616-121">若要取得**PSModulePath**環境變數的值，請使用下列其中一個命令。</span><span class="sxs-lookup"><span data-stu-id="c2616-121">To get the value of the **PSModulePath** environment variable, use either of the following commands.</span></span>
+  <span data-ttu-id="fadd9-121">若要取得 **PSModulePath** 環境變數的值，請使用下列其中一個命令。</span><span class="sxs-lookup"><span data-stu-id="fadd9-121">To get the value of the **PSModulePath** environment variable, use either of the following commands.</span></span>
 
   ```powershell
   $Env:PSModulePath
   [Environment]::GetEnvironmentVariable("PSModulePath")
   ```
 
-  <span data-ttu-id="c2616-122">若要將模組路徑新增至**PSModulePath**環境變數值的值，請使用下列命令格式。</span><span class="sxs-lookup"><span data-stu-id="c2616-122">To add a module path to value of the **PSModulePath** environment variable value, use the following command format.</span></span> <span data-ttu-id="c2616-123">此格式會使用**system.object**類別的**SetEnvironmentVariable**方法，對**PSModulePath**環境變數進行與會話無關的變更。</span><span class="sxs-lookup"><span data-stu-id="c2616-123">This format uses the **SetEnvironmentVariable** method of the **System.Environment** class to make a session-independent change to the **PSModulePath** environment variable.</span></span>
+  <span data-ttu-id="fadd9-122">若要將模組路徑新增到 **PSModulePath** 環境變數值的值，請使用下列命令格式。</span><span class="sxs-lookup"><span data-stu-id="fadd9-122">To add a module path to value of the **PSModulePath** environment variable value, use the following command format.</span></span> <span data-ttu-id="fadd9-123">此格式使用 **System.Environment** 類別的 **SetEnvironmentVariable** 方法，來對 **PSModulePath** 環境變數進行與工作階段無關的變更。</span><span class="sxs-lookup"><span data-stu-id="fadd9-123">This format uses the **SetEnvironmentVariable** method of the **System.Environment** class to make a session-independent change to the **PSModulePath** environment variable.</span></span>
 
   ```powershell
   #Save the current value in the $p variable.
@@ -55,15 +55,15 @@ ms.locfileid: "87784855"
   ```
 
   > [!IMPORTANT]
-  > <span data-ttu-id="c2616-124">將路徑新增至**PSModulePath**之後，您應該廣播有關此變更的環境訊息。</span><span class="sxs-lookup"><span data-stu-id="c2616-124">Once you have added the path to **PSModulePath**, you should broadcast an environment message about the change.</span></span> <span data-ttu-id="c2616-125">廣播變更可讓其他應用程式（例如 shell）收取變更。</span><span class="sxs-lookup"><span data-stu-id="c2616-125">Broadcasting the change allows other applications, such as the shell, to pick up the change.</span></span> <span data-ttu-id="c2616-126">若要廣播變更，請讓您的產品安裝程式碼傳送**WM_SETTINGCHANGE**訊息，並 `lParam` 將設定為「環境」字串。</span><span class="sxs-lookup"><span data-stu-id="c2616-126">To broadcast the change, have your product installation code send a **WM_SETTINGCHANGE** message with `lParam` set to the string "Environment".</span></span> <span data-ttu-id="c2616-127">在您的模組安裝程式碼更新**PSModulePath**之後，請務必傳送該訊息。</span><span class="sxs-lookup"><span data-stu-id="c2616-127">Be sure to send the message after your module installation code has updated **PSModulePath**.</span></span>
+  > <span data-ttu-id="fadd9-124">在您將路徑新增到 **PSModulePath** 之後，便應該廣播關於該變更的環境訊息。</span><span class="sxs-lookup"><span data-stu-id="fadd9-124">Once you have added the path to **PSModulePath**, you should broadcast an environment message about the change.</span></span> <span data-ttu-id="fadd9-125">廣播變更可讓其他應用程式 (例如殼層) 取得該變更。</span><span class="sxs-lookup"><span data-stu-id="fadd9-125">Broadcasting the change allows other applications, such as the shell, to pick up the change.</span></span> <span data-ttu-id="fadd9-126">若要廣播變更，請讓您的產品安裝程式碼傳送將 `lParam` 設定為 "Environment" 字串的 **WM_SETTINGCHANGE** 訊息。</span><span class="sxs-lookup"><span data-stu-id="fadd9-126">To broadcast the change, have your product installation code send a **WM_SETTINGCHANGE** message with `lParam` set to the string "Environment".</span></span> <span data-ttu-id="fadd9-127">請務必在模組安裝程式碼具有更新的 **PSModulePath** 之後傳送該訊息。</span><span class="sxs-lookup"><span data-stu-id="fadd9-127">Be sure to send the message after your module installation code has updated **PSModulePath**.</span></span>
 
-### <a name="use-the-correct-module-directory-name"></a><span data-ttu-id="c2616-128">使用正確的模組目錄名稱</span><span class="sxs-lookup"><span data-stu-id="c2616-128">Use the Correct Module Directory Name</span></span>
+### <a name="use-the-correct-module-directory-name"></a><span data-ttu-id="fadd9-128">使用正確的模組目錄名稱</span><span class="sxs-lookup"><span data-stu-id="fadd9-128">Use the Correct Module Directory Name</span></span>
 
-<span data-ttu-id="c2616-129">格式正確的模組是儲存在目錄中的模組，其名稱與模組目錄中至少一個檔案的基底名稱相同。</span><span class="sxs-lookup"><span data-stu-id="c2616-129">A well-formed module is a module that is stored in a directory that has the same name as the base name of at least one file in the module directory.</span></span> <span data-ttu-id="c2616-130">如果模組的格式不正確，Windows PowerShell 就無法將它辨識為模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-130">If a module is not well-formed, Windows PowerShell does not recognize it as a module.</span></span>
+<span data-ttu-id="fadd9-129">一個格式正確的模組，應該要儲存在與模組目錄中至少一個檔案的基底名稱具有相同名稱的目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-129">A well-formed module is a module that is stored in a directory that has the same name as the base name of at least one file in the module directory.</span></span> <span data-ttu-id="fadd9-130">如果模組的格式不正確，Windows PowerShell 便無法將其辨識為模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-130">If a module is not well-formed, Windows PowerShell does not recognize it as a module.</span></span>
 
-<span data-ttu-id="c2616-131">檔案的「基底名稱」是沒有副檔名的名稱。</span><span class="sxs-lookup"><span data-stu-id="c2616-131">The "base name" of a file is the name without the file name extension.</span></span> <span data-ttu-id="c2616-132">在格式正確的模組中，包含模組檔案的目錄名稱必須符合模組中至少一個檔案的基底名稱。</span><span class="sxs-lookup"><span data-stu-id="c2616-132">In a well-formed module, the name of the directory that contains the module files must match the base name of at least one file in the module.</span></span>
+<span data-ttu-id="fadd9-131">檔案的「基底名稱」是不含副檔名的名稱。</span><span class="sxs-lookup"><span data-stu-id="fadd9-131">The "base name" of a file is the name without the file name extension.</span></span> <span data-ttu-id="fadd9-132">在格式正確的模組中，包含模組檔案之目錄的名稱必須符合模組中至少一個檔案的基底名稱。</span><span class="sxs-lookup"><span data-stu-id="fadd9-132">In a well-formed module, the name of the directory that contains the module files must match the base name of at least one file in the module.</span></span>
 
-<span data-ttu-id="c2616-133">例如，在範例 Fabrikam 模組中，包含模組檔案的目錄會命名為 "Fabrikam"，而且至少有一個檔案包含 "Fabrikam" 基底名稱。</span><span class="sxs-lookup"><span data-stu-id="c2616-133">For example, in the sample Fabrikam module, the directory that contains the module files is named "Fabrikam" and at least one file has the "Fabrikam" base name.</span></span> <span data-ttu-id="c2616-134">在此情況下，Fabrikam.psd1 和 Fabrikam.dll 都有 "Fabrikam" 基底名稱。</span><span class="sxs-lookup"><span data-stu-id="c2616-134">In this case, both Fabrikam.psd1 and Fabrikam.dll have the "Fabrikam" base name.</span></span>
+<span data-ttu-id="fadd9-133">例如，在範例 Fabrikam 模組中，包含模組檔案的目錄名為 "Fabrikam"，且至少有一個檔案具有 "Fabrikam" 基底名稱。</span><span class="sxs-lookup"><span data-stu-id="fadd9-133">For example, in the sample Fabrikam module, the directory that contains the module files is named "Fabrikam" and at least one file has the "Fabrikam" base name.</span></span> <span data-ttu-id="fadd9-134">在此情況下，Fabrikam.psd1 與 Fabrikam.dll 都具有 "Fabrikam" 基底名稱。</span><span class="sxs-lookup"><span data-stu-id="fadd9-134">In this case, both Fabrikam.psd1 and Fabrikam.dll have the "Fabrikam" base name.</span></span>
 
 ```
 C:\Program Files
@@ -76,52 +76,52 @@ C:\Program Files
 
 ```
 
-### <a name="effect-of-incorrect-installation"></a><span data-ttu-id="c2616-135">安裝不正確的效果</span><span class="sxs-lookup"><span data-stu-id="c2616-135">Effect of Incorrect Installation</span></span>
+### <a name="effect-of-incorrect-installation"></a><span data-ttu-id="fadd9-135">不正確安裝的影響</span><span class="sxs-lookup"><span data-stu-id="fadd9-135">Effect of Incorrect Installation</span></span>
 
-<span data-ttu-id="c2616-136">如果模組的格式不正確，且其位置並未包含在**PSModulePath**環境變數的值中，則 Windows PowerShell 的基本探索功能（如下列）將無法運作。</span><span class="sxs-lookup"><span data-stu-id="c2616-136">If the module is not well-formed and its location is not included in the value of the **PSModulePath** environment variable, basic discovery features of Windows PowerShell, such as the following, do not work.</span></span>
+<span data-ttu-id="fadd9-136">如果模組格式不正確，且其位置未包含在 **PSModulePath** 環境變數的值中，則 Windows PowerShell 的基本探索功能 (例如下列功能) 將無法運作。</span><span class="sxs-lookup"><span data-stu-id="fadd9-136">If the module is not well-formed and its location is not included in the value of the **PSModulePath** environment variable, basic discovery features of Windows PowerShell, such as the following, do not work.</span></span>
 
-- <span data-ttu-id="c2616-137">模組自動載入功能無法自動匯入模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-137">The Module Auto-Loading feature cannot import the module automatically.</span></span>
+- <span data-ttu-id="fadd9-137">模組自動載入功能無法自動匯入模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-137">The Module Auto-Loading feature cannot import the module automatically.</span></span>
 
-- <span data-ttu-id="c2616-138">`ListAvailable`[取得模組](/powershell/module/Microsoft.PowerShell.Core/Get-Module)Cmdlet 的參數找不到模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-138">The `ListAvailable` parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet cannot find the module.</span></span>
+- <span data-ttu-id="fadd9-138">[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的 `ListAvailable` 參數找不到模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-138">The `ListAvailable` parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet cannot find the module.</span></span>
 
-- <span data-ttu-id="c2616-139">[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 找不到模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-139">The [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet cannot find the module.</span></span> <span data-ttu-id="c2616-140">若要匯入模組，您必須提供根模組檔案或模組資訊清單檔案的完整路徑。</span><span class="sxs-lookup"><span data-stu-id="c2616-140">To import the module, you must provide the full path to the root module file or module manifest file.</span></span>
+- <span data-ttu-id="fadd9-139">[Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 找不到模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-139">The [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet cannot find the module.</span></span> <span data-ttu-id="fadd9-140">若要匯入模組，您必須提供根模組檔案或模組資訊清單檔的完整路徑。</span><span class="sxs-lookup"><span data-stu-id="fadd9-140">To import the module, you must provide the full path to the root module file or module manifest file.</span></span>
 
-  <span data-ttu-id="c2616-141">除非將模組匯入會話，否則其他功能（例如下列）無法正常執行。</span><span class="sxs-lookup"><span data-stu-id="c2616-141">Additional features, such as the following, do not work unless the module is imported into the session.</span></span> <span data-ttu-id="c2616-142">在**PSModulePath**環境變數中格式正確的模組中，即使模組未匯入會話，這些功能仍可運作。</span><span class="sxs-lookup"><span data-stu-id="c2616-142">In well-formed modules in the **PSModulePath** environment variable, these features work even when the module is not imported into the session.</span></span>
+  <span data-ttu-id="fadd9-141">除非將模組匯入工作階段，否則其他功能 (例如下列功能) 將無法運作。</span><span class="sxs-lookup"><span data-stu-id="fadd9-141">Additional features, such as the following, do not work unless the module is imported into the session.</span></span> <span data-ttu-id="fadd9-142">對於位於 **PSModulePath** 環境變數中且格式正確的模組來說，即使模組未匯入工作階段，這些功能也仍然可以運作。</span><span class="sxs-lookup"><span data-stu-id="fadd9-142">In well-formed modules in the **PSModulePath** environment variable, these features work even when the module is not imported into the session.</span></span>
 
-- <span data-ttu-id="c2616-143">[Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) Cmdlet 在模組中找不到命令。</span><span class="sxs-lookup"><span data-stu-id="c2616-143">The [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet cannot find commands in the module.</span></span>
+- <span data-ttu-id="fadd9-143">[Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) Cmdlet 無法在模組中找到命令。</span><span class="sxs-lookup"><span data-stu-id="fadd9-143">The [Get-Command](/powershell/module/Microsoft.PowerShell.Core/Get-Command) cmdlet cannot find commands in the module.</span></span>
 
-- <span data-ttu-id="c2616-144">[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)和[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) Cmdlet 無法更新或儲存模組的說明。</span><span class="sxs-lookup"><span data-stu-id="c2616-144">The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) and [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets cannot update or save help for the module.</span></span>
+- <span data-ttu-id="fadd9-144">[Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) 與 [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) Cmdlet 無法更新或儲存模組的說明。</span><span class="sxs-lookup"><span data-stu-id="fadd9-144">The [Update-Help](/powershell/module/Microsoft.PowerShell.Core/Update-Help) and [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help) cmdlets cannot update or save help for the module.</span></span>
 
-- <span data-ttu-id="c2616-145">[顯示命令](/powershell/module/Microsoft.PowerShell.Utility/Show-Command)Cmdlet 找不到並顯示模組中的命令。</span><span class="sxs-lookup"><span data-stu-id="c2616-145">The [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) cmdlet cannot find and display the commands in the module.</span></span>
+- <span data-ttu-id="fadd9-145">[Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) Cmdlet 無法在模組中找到並顯示命令。</span><span class="sxs-lookup"><span data-stu-id="fadd9-145">The [Show-Command](/powershell/module/Microsoft.PowerShell.Utility/Show-Command) cmdlet cannot find and display the commands in the module.</span></span>
 
-  <span data-ttu-id="c2616-146">Windows PowerShell 整合式腳本環境中的視窗遺漏了模組中的命令 `Show-Command` (ISE) 。</span><span class="sxs-lookup"><span data-stu-id="c2616-146">The commands in the module are missing from the `Show-Command` window in Windows PowerShell Integrated Scripting Environment (ISE).</span></span>
+  <span data-ttu-id="fadd9-146">Windows PowerShell 整合式指令碼環境 (ISE) 中的 `Show-Command` 視窗遺失模組中的命令。</span><span class="sxs-lookup"><span data-stu-id="fadd9-146">The commands in the module are missing from the `Show-Command` window in Windows PowerShell Integrated Scripting Environment (ISE).</span></span>
 
-## <a name="where-to-install-modules"></a><span data-ttu-id="c2616-147">模組的安裝位置</span><span class="sxs-lookup"><span data-stu-id="c2616-147">Where to Install Modules</span></span>
+## <a name="where-to-install-modules"></a><span data-ttu-id="fadd9-147">安裝模組的位置</span><span class="sxs-lookup"><span data-stu-id="fadd9-147">Where to Install Modules</span></span>
 
-<span data-ttu-id="c2616-148">本節說明檔案系統中安裝 Windows PowerShell 模組的位置。</span><span class="sxs-lookup"><span data-stu-id="c2616-148">This section explains where in the file system to install Windows PowerShell modules.</span></span> <span data-ttu-id="c2616-149">位置取決於模組的使用方式。</span><span class="sxs-lookup"><span data-stu-id="c2616-149">The location depends on how the module is used.</span></span>
+<span data-ttu-id="fadd9-148">此節說明在檔案系統中安裝 Windows PowerShell 模組的位置。</span><span class="sxs-lookup"><span data-stu-id="fadd9-148">This section explains where in the file system to install Windows PowerShell modules.</span></span> <span data-ttu-id="fadd9-149">該位置會取決於模組的使用方式。</span><span class="sxs-lookup"><span data-stu-id="fadd9-149">The location depends on how the module is used.</span></span>
 
-### <a name="installing-modules-for-a-specific-user"></a><span data-ttu-id="c2616-150">為特定使用者安裝模組</span><span class="sxs-lookup"><span data-stu-id="c2616-150">Installing Modules for a Specific User</span></span>
+### <a name="installing-modules-for-a-specific-user"></a><span data-ttu-id="fadd9-150">為特定使用者安裝模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-150">Installing Modules for a Specific User</span></span>
 
-<span data-ttu-id="c2616-151">如果您建立自己的模組，或從另一方取得模組，例如 Windows PowerShell 社區網站，而且您想要讓模組僅供您的使用者帳戶使用，請在您的使用者特定模組目錄中安裝模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-151">If you create your own module or get a module from another party, such as a Windows PowerShell community website, and you want the module to be available for your user account only, install the module in your user-specific Modules directory.</span></span>
+<span data-ttu-id="fadd9-151">如果您是自行建立模組，或是從另一個合作對象 (例如 Windows PowerShell 社群網站) 取得模組，且您只想要讓該模組供您的使用者帳戶使用，請將模組安裝到您的使用者特定 [Modules] 目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-151">If you create your own module or get a module from another party, such as a Windows PowerShell community website, and you want the module to be available for your user account only, install the module in your user-specific Modules directory.</span></span>
 
 `$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
-<span data-ttu-id="c2616-152">根據預設，會將使用者特定的模組目錄新增至**PSModulePath**環境變數的值。</span><span class="sxs-lookup"><span data-stu-id="c2616-152">The user-specific Modules directory is added to the value of the **PSModulePath** environment variable by default.</span></span>
+<span data-ttu-id="fadd9-152">使用者特定 [Modules] 目錄預設已新增至 **PSModulePath** 環境變數的值中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-152">The user-specific Modules directory is added to the value of the **PSModulePath** environment variable by default.</span></span>
 
-### <a name="installing-modules-for-all-users-in-program-files"></a><span data-ttu-id="c2616-153">針對 Program Files 中的所有使用者安裝模組</span><span class="sxs-lookup"><span data-stu-id="c2616-153">Installing Modules for all Users in Program Files</span></span>
+### <a name="installing-modules-for-all-users-in-program-files"></a><span data-ttu-id="fadd9-153">為所有使用者在 [Program Files] 中安裝模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-153">Installing Modules for all Users in Program Files</span></span>
 
-<span data-ttu-id="c2616-154">如果您想要將模組提供給電腦上的所有使用者帳戶，請將模組安裝在 Program Files 位置。</span><span class="sxs-lookup"><span data-stu-id="c2616-154">If you want a module to be available to all user accounts on the computer, install the module in the Program Files location.</span></span>
+<span data-ttu-id="fadd9-154">如果您想要讓模組供電腦上所有使用者帳戶使用，請將模組安裝到 [Program Files] 位置中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-154">If you want a module to be available to all user accounts on the computer, install the module in the Program Files location.</span></span>
 
 `$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
-> <span data-ttu-id="c2616-155">在 Windows PowerShell 4.0 和更新版本中，預設會將 Program Files 位置新增至 PSModulePath 環境變數的值。</span><span class="sxs-lookup"><span data-stu-id="c2616-155">The Program Files location is added to the value of the PSModulePath environment variable by default in Windows PowerShell 4.0 and later.</span></span> <span data-ttu-id="c2616-156">對於舊版的 Windows PowerShell，您可以手動建立程式檔案位置 ( # A1% ProgramFiles% \ WindowsPowerShell \ 模組) ，並將此路徑新增至您的 PSModulePath 環境變數，如上面所述。</span><span class="sxs-lookup"><span data-stu-id="c2616-156">For earlier versions of Windows PowerShell, you can manually create the Program Files location ((%ProgramFiles%\WindowsPowerShell\Modules) and add this path to your PSModulePath environment variable as described above.</span></span>
+> <span data-ttu-id="fadd9-155">在 Windows PowerShell 4.0 與更新版本中，[Program Files] 位置預設已新增至 PSModulePath 環境變數的值中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-155">The Program Files location is added to the value of the PSModulePath environment variable by default in Windows PowerShell 4.0 and later.</span></span> <span data-ttu-id="fadd9-156">針對舊版的 Windows PowerShell，您可以手動建立 [Program Files] 位置 (%ProgramFiles%\WindowsPowerShell\Modules)，並以上述方式將此路徑新增至您的 PSModulePath 環境變數。</span><span class="sxs-lookup"><span data-stu-id="fadd9-156">For earlier versions of Windows PowerShell, you can manually create the Program Files location (%ProgramFiles%\WindowsPowerShell\Modules) and add this path to your PSModulePath environment variable as described above.</span></span>
 
-### <a name="installing-modules-in-a-product-directory"></a><span data-ttu-id="c2616-157">在產品目錄中安裝模組</span><span class="sxs-lookup"><span data-stu-id="c2616-157">Installing Modules in a Product Directory</span></span>
+### <a name="installing-modules-in-a-product-directory"></a><span data-ttu-id="fadd9-157">在產品目錄中安裝模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-157">Installing Modules in a Product Directory</span></span>
 
-<span data-ttu-id="c2616-158">如果您要將課程模組散發給其他人，請使用上述的預設程式檔案位置，或建立您自己的公司專屬或產品特定的% ProgramFiles% 目錄子目錄。</span><span class="sxs-lookup"><span data-stu-id="c2616-158">If you are distributing the module to other parties, use the default Program Files location described above, or create your own company-specific or product-specific subdirectory of the %ProgramFiles% directory.</span></span>
+<span data-ttu-id="fadd9-158">如果您是要將模組發佈至其他合作對象，請使用上述的預設 [Program Files] 位置，或是在 %ProgramFiles% 目錄中自行建立公司特定或產品特定的子目錄。</span><span class="sxs-lookup"><span data-stu-id="fadd9-158">If you are distributing the module to other parties, use the default Program Files location described above, or create your own company-specific or product-specific subdirectory of the %ProgramFiles% directory.</span></span>
 
-<span data-ttu-id="c2616-159">例如，Fabrikam 技術是一家虛構的公司，它會為其 Fabrikam Manager 產品運送 Windows PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-159">For example, Fabrikam Technologies, a fictitious company, is shipping a Windows PowerShell module for their Fabrikam Manager product.</span></span> <span data-ttu-id="c2616-160">其模組安裝程式會在 Fabrikam Manager 產品子目錄中建立模組子目錄。</span><span class="sxs-lookup"><span data-stu-id="c2616-160">Their module installer creates a Modules subdirectory in the Fabrikam Manager product subdirectory.</span></span>
+<span data-ttu-id="fadd9-159">例如，假設 Fabrikam Technologies 這家虛構公司正在為他們的 Fabrikam Manager 產品推出 Windows PowerShell 模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-159">For example, Fabrikam Technologies, a fictitious company, is shipping a Windows PowerShell module for their Fabrikam Manager product.</span></span> <span data-ttu-id="fadd9-160">他們的模組安裝程式會在 Fabrikam Manager 產品子目錄中建立 [Modules] 子目錄。</span><span class="sxs-lookup"><span data-stu-id="fadd9-160">Their module installer creates a Modules subdirectory in the Fabrikam Manager product subdirectory.</span></span>
 
 ```
 C:\Program Files
@@ -134,7 +134,7 @@ C:\Program Files
 
 ```
 
-<span data-ttu-id="c2616-161">若要啟用 Windows PowerShell 模組探索功能以尋找 Fabrikam 模組，Fabrikam 模組安裝程式會將模組位置新增至**PSModulePath**環境變數的值。</span><span class="sxs-lookup"><span data-stu-id="c2616-161">To enable the Windows PowerShell module discovery features to find the Fabrikam module, the Fabrikam module installer adds the module location to the value of the **PSModulePath** environment variable.</span></span>
+<span data-ttu-id="fadd9-161">為了讓 Windows PowerShell 模組探索功能找到 Fabrikam 模組，Fabrikam 模組安裝程式會將該模組位置新增到 **PSModulePath** 環境變數的值中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-161">To enable the Windows PowerShell module discovery features to find the Fabrikam module, the Fabrikam module installer adds the module location to the value of the **PSModulePath** environment variable.</span></span>
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
@@ -142,11 +142,11 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-### <a name="installing-modules-in-the-common-files-directory"></a><span data-ttu-id="c2616-162">在通用檔案目錄中安裝模組</span><span class="sxs-lookup"><span data-stu-id="c2616-162">Installing Modules in the Common Files Directory</span></span>
+### <a name="installing-modules-in-the-common-files-directory"></a><span data-ttu-id="fadd9-162">在 [Common Files] 目錄中安裝模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-162">Installing Modules in the Common Files Directory</span></span>
 
-<span data-ttu-id="c2616-163">如果產品的多個元件或產品的多個版本使用模組，請在%ProgramFiles%\Common Files\Modules 子目錄的模組特定子目錄中安裝模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-163">If a module is used by multiple components of a product or by multiple versions of a product, install the module in a module-specific subdirectory of the %ProgramFiles%\Common Files\Modules subdirectory.</span></span>
+<span data-ttu-id="fadd9-163">如果模組會用於某個產品的多個元件或多個版本，請將該模組安裝到 %ProgramFiles%\Common Files\Modules 的模組特定子目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-163">If a module is used by multiple components of a product or by multiple versions of a product, install the module in a module-specific subdirectory of the %ProgramFiles%\Common Files\Modules subdirectory.</span></span>
 
-<span data-ttu-id="c2616-164">在下列範例中，Fabrikam 模組會安裝在子目錄的 Fabrikam 子目錄中 `%ProgramFiles%\Common Files\Modules` 。</span><span class="sxs-lookup"><span data-stu-id="c2616-164">In the following example, the Fabrikam module is installed in a Fabrikam subdirectory of the `%ProgramFiles%\Common Files\Modules` subdirectory.</span></span> <span data-ttu-id="c2616-165">請注意，每個模組都位於模組子目錄中自己的子目錄中。</span><span class="sxs-lookup"><span data-stu-id="c2616-165">Note that each module resides in its own subdirectory in the Modules subdirectory.</span></span>
+<span data-ttu-id="fadd9-164">在下列範例中，Fabrikam 模組會安裝到 `%ProgramFiles%\Common Files\Modules` 子目錄的 [Fabrikam] 子目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-164">In the following example, the Fabrikam module is installed in a Fabrikam subdirectory of the `%ProgramFiles%\Common Files\Modules` subdirectory.</span></span> <span data-ttu-id="fadd9-165">請注意，在 [Modules] 子目錄中，每個模組都位於其自己的子目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-165">Note that each module resides in its own subdirectory in the Modules subdirectory.</span></span>
 
 ```
 C:\Program Files
@@ -157,7 +157,7 @@ C:\Program Files
         Fabrikam.dll (module assembly)
 ```
 
-<span data-ttu-id="c2616-166">然後，安裝程式會確保**PSModulePath**環境變數的值包含 common files 模組子目錄的路徑。</span><span class="sxs-lookup"><span data-stu-id="c2616-166">Then, the installer assures the value of the **PSModulePath** environment variable includes the path of the common files modules subdirectory.</span></span>
+<span data-ttu-id="fadd9-166">然後，安裝程式會確保 **PSModulePath** 環境變數的值會包含 Common Files\Modules 子目錄的路徑。</span><span class="sxs-lookup"><span data-stu-id="fadd9-166">Then, the installer assures the value of the **PSModulePath** environment variable includes the path of the common files modules subdirectory.</span></span>
 
 ```powershell
 $m = $env:ProgramFiles + '\Common Files\Modules'
@@ -170,17 +170,17 @@ $p = $q -join ';'
 [Environment]::SetEnvironmentVariable("PSModulePath", $p)
 ```
 
-## <a name="installing-multiple-versions-of-a-module"></a><span data-ttu-id="c2616-167">安裝多個版本的模組</span><span class="sxs-lookup"><span data-stu-id="c2616-167">Installing Multiple Versions of a Module</span></span>
+## <a name="installing-multiple-versions-of-a-module"></a><span data-ttu-id="fadd9-167">安裝模組的多個版本</span><span class="sxs-lookup"><span data-stu-id="fadd9-167">Installing Multiple Versions of a Module</span></span>
 
-<span data-ttu-id="c2616-168">若要安裝相同模組的多個版本，請使用下列程式。</span><span class="sxs-lookup"><span data-stu-id="c2616-168">To install multiple versions of the same module, use the following procedure.</span></span>
+<span data-ttu-id="fadd9-168">若要安裝相同模組的多個版本，請使用下列程序。</span><span class="sxs-lookup"><span data-stu-id="fadd9-168">To install multiple versions of the same module, use the following procedure.</span></span>
 
-1. <span data-ttu-id="c2616-169">為每個模組版本建立一個目錄。</span><span class="sxs-lookup"><span data-stu-id="c2616-169">Create a directory for each version of the module.</span></span> <span data-ttu-id="c2616-170">在目錄名稱中包含版本號碼。</span><span class="sxs-lookup"><span data-stu-id="c2616-170">Include the version number in the directory name.</span></span>
-2. <span data-ttu-id="c2616-171">為模組的每個版本建立模組資訊清單。</span><span class="sxs-lookup"><span data-stu-id="c2616-171">Create a module manifest for each version of the module.</span></span> <span data-ttu-id="c2616-172">在資訊清單中**ModuleVersion**索引鍵的值，輸入模組版本號碼。</span><span class="sxs-lookup"><span data-stu-id="c2616-172">In the value of the **ModuleVersion** key in the manifest, enter the module version number.</span></span> <span data-ttu-id="c2616-173">將資訊清單檔案儲存 ( .psd1) 在模組的版本特定目錄中。</span><span class="sxs-lookup"><span data-stu-id="c2616-173">Save the manifest file (.psd1) in the version-specific directory for the module.</span></span>
-3. <span data-ttu-id="c2616-174">將模組根資料夾路徑新增至**PSModulePath**環境變數的值，如下列範例所示。</span><span class="sxs-lookup"><span data-stu-id="c2616-174">Add the module root folder path to the value of the **PSModulePath** environment variable, as shown in the following examples.</span></span>
+1. <span data-ttu-id="fadd9-169">為模組的每個版本建立目錄。</span><span class="sxs-lookup"><span data-stu-id="fadd9-169">Create a directory for each version of the module.</span></span> <span data-ttu-id="fadd9-170">在目錄名稱中包含版本號碼。</span><span class="sxs-lookup"><span data-stu-id="fadd9-170">Include the version number in the directory name.</span></span>
+2. <span data-ttu-id="fadd9-171">為模組的每個版本建立模組資訊清單。</span><span class="sxs-lookup"><span data-stu-id="fadd9-171">Create a module manifest for each version of the module.</span></span> <span data-ttu-id="fadd9-172">在資訊清單 **ModuleVersion** 機碼的值中，輸入模組版本號碼。</span><span class="sxs-lookup"><span data-stu-id="fadd9-172">In the value of the **ModuleVersion** key in the manifest, enter the module version number.</span></span> <span data-ttu-id="fadd9-173">將資訊清單檔 (.psd1) 儲存到該模組的版本特定目錄中。</span><span class="sxs-lookup"><span data-stu-id="fadd9-173">Save the manifest file (.psd1) in the version-specific directory for the module.</span></span>
+3. <span data-ttu-id="fadd9-174">將模組根資料夾路徑新增到 **PSModulePath** 環境變數的值中，如下列範例所示。</span><span class="sxs-lookup"><span data-stu-id="fadd9-174">Add the module root folder path to the value of the **PSModulePath** environment variable, as shown in the following examples.</span></span>
 
-<span data-ttu-id="c2616-175">若要匯入特定版本的模組，終端使用者可以使用 `MinimumVersion` `RequiredVersion` [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的或參數。</span><span class="sxs-lookup"><span data-stu-id="c2616-175">To import a particular version of the module, the end-user can use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.</span></span>
+<span data-ttu-id="fadd9-175">若要匯入模組的特定版本，終端使用者可以使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 參數。</span><span class="sxs-lookup"><span data-stu-id="fadd9-175">To import a particular version of the module, the end-user can use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.</span></span>
 
-<span data-ttu-id="c2616-176">例如，如果在8.0 和9.0 版中提供 Fabrikam 模組，Fabrikam 模組目錄結構可能如下所示。</span><span class="sxs-lookup"><span data-stu-id="c2616-176">For example, if the Fabrikam module is available in versions 8.0 and 9.0, the Fabrikam module directory structure might resemble the following.</span></span>
+<span data-ttu-id="fadd9-176">例如，如果 Fabrikam 模組提供 8.0 與 9.0 版，Fabrikam 模組目錄結構可能如下所示。</span><span class="sxs-lookup"><span data-stu-id="fadd9-176">For example, if the Fabrikam module is available in versions 8.0 and 9.0, the Fabrikam module directory structure might resemble the following.</span></span>
 
  ```
 C:\Program Files
@@ -195,7 +195,7 @@ Fabrikam Manager
       Fabrikam.dll (module assembly)
 ```
 
-<span data-ttu-id="c2616-177">安裝程式會將這兩個模組路徑新增至**PSModulePath**環境變數值。</span><span class="sxs-lookup"><span data-stu-id="c2616-177">The installer adds both of the module paths to the **PSModulePath** environment variable value.</span></span>
+<span data-ttu-id="fadd9-177">安裝程式會將這兩個模組路徑新增到 **PSModulePath** 環境變數值。</span><span class="sxs-lookup"><span data-stu-id="fadd9-177">The installer adds both of the module paths to the **PSModulePath** environment variable value.</span></span>
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
@@ -203,28 +203,28 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-<span data-ttu-id="c2616-178">當這些步驟完成時， [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的**ListAvailable**參數會取得這兩個 Fabrikam 模組。</span><span class="sxs-lookup"><span data-stu-id="c2616-178">When these steps are complete, the **ListAvailable** parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet gets both of the Fabrikam modules.</span></span> <span data-ttu-id="c2616-179">若要匯入特定模組，請 `MinimumVersion` 使用 `RequiredVersion` [import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的或參數。</span><span class="sxs-lookup"><span data-stu-id="c2616-179">To import a particular module, use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.</span></span>
+<span data-ttu-id="fadd9-178">完成這些步驟時，[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的 **ListAvailable** 參數便會取得這兩個 Fabrikam 模組。</span><span class="sxs-lookup"><span data-stu-id="fadd9-178">When these steps are complete, the **ListAvailable** parameter of the [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) cmdlet gets both of the Fabrikam modules.</span></span> <span data-ttu-id="fadd9-179">若要匯入特定模組，請使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 參數。</span><span class="sxs-lookup"><span data-stu-id="fadd9-179">To import a particular module, use the `MinimumVersion` or `RequiredVersion` parameters of the [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) cmdlet.</span></span>
 
-<span data-ttu-id="c2616-180">如果這兩個模組都匯入相同的會話中，而且模組包含具有相同名稱的 Cmdlet，則最後匯入的 Cmdlet 就會在會話中生效。</span><span class="sxs-lookup"><span data-stu-id="c2616-180">If both modules are imported into the same session, and the modules contain cmdlets with the same names, the cmdlets that are imported last are effective in the session.</span></span>
+<span data-ttu-id="fadd9-180">如果這兩個模組都匯入相同的工作階段，且兩個模組都包含具有相同名稱的 Cmdlet，則最後匯入的 Cmdlet 便會在工作階段中生效。</span><span class="sxs-lookup"><span data-stu-id="fadd9-180">If both modules are imported into the same session, and the modules contain cmdlets with the same names, the cmdlets that are imported last are effective in the session.</span></span>
 
-## <a name="handling-command-name-conflicts"></a><span data-ttu-id="c2616-181">處理命令名稱衝突</span><span class="sxs-lookup"><span data-stu-id="c2616-181">Handling Command Name Conflicts</span></span>
+## <a name="handling-command-name-conflicts"></a><span data-ttu-id="fadd9-181">處理命令名稱衝突</span><span class="sxs-lookup"><span data-stu-id="fadd9-181">Handling Command Name Conflicts</span></span>
 
-<span data-ttu-id="c2616-182">當模組匯出的命令與使用者會話中的命令同名時，可能會發生命令名稱衝突。</span><span class="sxs-lookup"><span data-stu-id="c2616-182">Command name conflicts can occur when the commands that a module exports have the same name as commands in the user's session.</span></span>
+<span data-ttu-id="fadd9-182">命令名稱衝突可能會在模組匯出的命令與使用者工作階段中的命令具有相同名稱時發生。</span><span class="sxs-lookup"><span data-stu-id="fadd9-182">Command name conflicts can occur when the commands that a module exports have the same name as commands in the user's session.</span></span>
 
-<span data-ttu-id="c2616-183">當會話包含兩個具有相同名稱的命令時，Windows PowerShell 會執行優先的命令類型。</span><span class="sxs-lookup"><span data-stu-id="c2616-183">When a session contains two commands that have the same name, Windows PowerShell runs the command type that takes precedence.</span></span> <span data-ttu-id="c2616-184">當會話包含兩個具有相同名稱和相同類型的命令時，Windows PowerShell 會執行最近新增至會話的命令。</span><span class="sxs-lookup"><span data-stu-id="c2616-184">When a session contains two commands that have the same name and the same type, Windows PowerShell runs the command that was added to the session most recently.</span></span> <span data-ttu-id="c2616-185">若要執行預設不會執行的命令，使用者可以使用模組名稱來限定命令名稱。</span><span class="sxs-lookup"><span data-stu-id="c2616-185">To run a command that is not run by default, users can qualify the command name with the module name.</span></span>
+<span data-ttu-id="fadd9-183">當工作階段包含兩個具有相同名稱的命令時，Windows PowerShell 會執行具優先順序的命令類型。</span><span class="sxs-lookup"><span data-stu-id="fadd9-183">When a session contains two commands that have the same name, Windows PowerShell runs the command type that takes precedence.</span></span> <span data-ttu-id="fadd9-184">當工作階段包含兩個具有相同名稱與相同類型的命令時，Windows PowerShell 會執行最近新增到工作階段的命令。</span><span class="sxs-lookup"><span data-stu-id="fadd9-184">When a session contains two commands that have the same name and the same type, Windows PowerShell runs the command that was added to the session most recently.</span></span> <span data-ttu-id="fadd9-185">若要執行預設不會執行的命令，使用者可以使用模組名稱來限定命令名稱。</span><span class="sxs-lookup"><span data-stu-id="fadd9-185">To run a command that is not run by default, users can qualify the command name with the module name.</span></span>
 
-<span data-ttu-id="c2616-186">例如，如果會話包含函式 `Get-Date` 和 `Get-Date` Cmdlet，Windows PowerShell 預設會執行函數。</span><span class="sxs-lookup"><span data-stu-id="c2616-186">For example, if the session contains a `Get-Date` function and the `Get-Date` cmdlet, Windows PowerShell runs the function by default.</span></span> <span data-ttu-id="c2616-187">若要執行此 Cmdlet，請在命令前面加上模組名稱，例如：</span><span class="sxs-lookup"><span data-stu-id="c2616-187">To run the cmdlet, preface the command with the module name, such as:</span></span>
+<span data-ttu-id="fadd9-186">例如，若某個工作階段包含 `Get-Date` 函式與 `Get-Date` Cmdlet，Windows PowerShell 預設會執行函式。</span><span class="sxs-lookup"><span data-stu-id="fadd9-186">For example, if the session contains a `Get-Date` function and the `Get-Date` cmdlet, Windows PowerShell runs the function by default.</span></span> <span data-ttu-id="fadd9-187">若要執行 Cmdlet，請在命令前面加上模組名稱，例如：</span><span class="sxs-lookup"><span data-stu-id="fadd9-187">To run the cmdlet, preface the command with the module name, such as:</span></span>
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
 ```
 
-<span data-ttu-id="c2616-188">為避免名稱衝突，模組作者可以使用模組資訊清單中的**DefaultCommandPrefix**索引鍵，為從模組匯出的所有命令指定名詞前置詞。</span><span class="sxs-lookup"><span data-stu-id="c2616-188">To prevent name conflicts, module authors can use the **DefaultCommandPrefix** key in the module manifest to specify a noun prefix for all commands exported from the module.</span></span>
+<span data-ttu-id="fadd9-188">若要避免名稱衝突，模組作者可以在模組資訊清單中使用 **DefaultCommandPrefix** 機碼，來針對從模組匯出的所有命令指定名詞前置詞。</span><span class="sxs-lookup"><span data-stu-id="fadd9-188">To prevent name conflicts, module authors can use the **DefaultCommandPrefix** key in the module manifest to specify a noun prefix for all commands exported from the module.</span></span>
 
-<span data-ttu-id="c2616-189">使用者可以使用 Cmdlet 的**prefix**參數 `Import-Module` 來使用替代的前置詞。</span><span class="sxs-lookup"><span data-stu-id="c2616-189">Users can use the **Prefix** parameter of the `Import-Module` cmdlet to use an alternate prefix.</span></span> <span data-ttu-id="c2616-190">**Prefix**參數的值會優先于**DefaultCommandPrefix**索引鍵的值。</span><span class="sxs-lookup"><span data-stu-id="c2616-190">The value of the **Prefix** parameter takes precedence over the value of the **DefaultCommandPrefix** key.</span></span>
+<span data-ttu-id="fadd9-189">使用者可以使用 `Import-Module` Cmdlet 的 **Prefix** 參數來使用替代的前置詞。</span><span class="sxs-lookup"><span data-stu-id="fadd9-189">Users can use the **Prefix** parameter of the `Import-Module` cmdlet to use an alternate prefix.</span></span> <span data-ttu-id="fadd9-190">**Prefix** 參數的值會優先於 **DefaultCommandPrefix** 機碼的值。</span><span class="sxs-lookup"><span data-stu-id="fadd9-190">The value of the **Prefix** parameter takes precedence over the value of the **DefaultCommandPrefix** key.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c2616-191">另請參閱</span><span class="sxs-lookup"><span data-stu-id="c2616-191">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fadd9-191">另請參閱</span><span class="sxs-lookup"><span data-stu-id="fadd9-191">See Also</span></span>
 
-[<span data-ttu-id="c2616-192">about_Command_Precedence</span><span class="sxs-lookup"><span data-stu-id="c2616-192">about_Command_Precedence</span></span>](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
+[<span data-ttu-id="fadd9-192">about_Command_Precedence</span><span class="sxs-lookup"><span data-stu-id="fadd9-192">about_Command_Precedence</span></span>](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
 
-[<span data-ttu-id="c2616-193">撰寫 Windows PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="c2616-193">Writing a Windows PowerShell Module</span></span>](./writing-a-windows-powershell-module.md)
+[<span data-ttu-id="fadd9-193">撰寫 Windows PowerShell 模組</span><span class="sxs-lookup"><span data-stu-id="fadd9-193">Writing a Windows PowerShell Module</span></span>](./writing-a-windows-powershell-module.md)
