@@ -81,7 +81,7 @@
           items:
             - name: 概觀
               href: learn/remoting/jea/overview.md
-            - name: Prerequisites
+            - name: 必要條件
               href: learn/remoting/jea/prerequisites.md
             - name: 角色功能
               href: learn/remoting/jea/role-capabilities.md
@@ -778,12 +778,14 @@
       items:
         - name: 使用 Visual Studio Code
           href: dev-cross-plat/vscode/using-vscode.md
-        - name: 如何在 Visual Studio Code 中複寫 ISE 體驗
+        - name: 如何在 VS Code 中複寫 ISE 體驗
           href: dev-cross-plat/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-        - name: 使用 Visual Studio Code 來進行遠端編輯與偵錯
+        - name: 使用 VS Code 進行遠端編輯和偵錯
           href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
         - name: 了解 VS Code 及 PowerShell 中的檔案編碼
           href: dev-cross-plat/vscode/understanding-file-encoding.md
+        - name: 使用 VS Code 來偵錯已編譯的 Cmdlet
+          href: dev-cross-plat/vscode/using-vscode-for-debugging-compiled-cmdlets.md
     - name: 撰寫可攜式模組
       href: dev-cross-plat/writing-portable-modules.md
     - name: 使用 PlatyPS 建立模組說明
