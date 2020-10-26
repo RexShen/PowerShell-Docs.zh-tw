@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 上的稽核和報告
-ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 稽核有助於您評估正確的人員是否具有 JEA 端點存取權，以及他們的指派角色是否仍然適當。
+ms.openlocfilehash: 2140d6b756ae38d82e4943c373e8a75beea30e28
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017789"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500006"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA 上的稽核和報告
 
@@ -31,7 +32,7 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
                 CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-端點的有效權限列於 **Permission** 屬性中。 這些使用者有權連線至 JEA 端點。 但是，他們能存取哪些角色和命令則由用來註冊端點之[工作階段設定檔](session-configurations.md)中的 **RoleDefinitions** 欄位決定。 展開 **RoleDefinitions** 屬性中的資料，以評估已註冊的 JEA 端點中角色對應。
+端點的有效權限列於 **Permission** 屬性中。 這些使用者有權連線至 JEA 端點。 但是，他們能存取哪些角色和命令則由用來註冊端點之 [工作階段設定檔](session-configurations.md)中的 **RoleDefinitions** 欄位決定。 展開 **RoleDefinitions** 屬性中的資料，以評估已註冊的 JEA 端點中角色對應。
 
 ```powershell
 # Get the desired session configuration
@@ -87,14 +88,14 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 
 每個事件記錄檔項目會包含命令執行所在工作階段的相關資訊。 針對 JEA 工作階段，事件包含 **ConnectedUser** 和 **RunAsUser** 的相關資訊。 **ConnectedUser** 是建立 JEA 工作階段的實際使用者。 **RunAsUser** 用來執行命令的帳戶 JEA。
 
-應用程式事件記錄檔會顯示正在由 **RunAsUser** 進行的變更。 因此必須啟用模組和指令碼記錄，才能將特定的命令引動過程追蹤回 **ConnectedUser**。
+應用程式事件記錄檔會顯示正在由 **RunAsUser** 進行的變更。 因此必須啟用模組和指令碼記錄，才能將特定的命令引動過程追蹤回 **ConnectedUser** 。
 
 ## <a name="application-event-logs"></a>應用程式事件記錄檔
 
 在與外部應用程式或服務互動之 JEA 工作階段中執行的命令，可能會將事件記錄至自己的事件記錄檔。 不同於 PowerShell 記錄檔和文字記錄，其他記錄機制不會擷取 JEA 工作階段的連線使用者。 反之，這些應用程式只會記錄虛擬執行身分使用者。
 若要判斷誰執行了命令，您必須參閱[工作階段文字記錄](#session-transcripts)，或相互關聯 PowerShell 事件記錄檔與應用程式事件記錄檔中顯示的時間和使用者。
 
-WinRM 記錄檔也可協助您相互關聯應用程式事件記錄檔中的執行身分使用者與連線使用者。 **Microsoft-Windows-Windows 遠端管理/作業**記錄檔中的事件識別碼 **193** 會針對每個新的 JEA 工作階段，記錄連線使用者與執行身分使用者的安全性識別碼 (SID) 和帳戶名稱。
+WinRM 記錄檔也可協助您相互關聯應用程式事件記錄檔中的執行身分使用者與連線使用者。 **Microsoft-Windows-Windows 遠端管理/作業** 記錄檔中的事件識別碼 **193** 會針對每個新的 JEA 工作階段，記錄連線使用者與執行身分使用者的安全性識別碼 (SID) 和帳戶名稱。
 
 ## <a name="session-transcripts"></a>工作階段文字記錄
 
@@ -133,8 +134,8 @@ Running  Dns                DNS Server
 
 **CommandInvocation** 行是針對使用者執行的每個命令所撰寫。 **ParameterBindings** 會記錄命令所提供的每個參數和值。 在上述範例中，您可以看到參數 **Name** 以值 **Dns** 提供給 `Get-Service` Cmdlet。
 
-每個命令的輸出也會觸發 **CommandInvocation**，通常為 `Out-Default`。 `Out-Default` 的 **InputObject** 是由命令傳回的 PowerShell 物件。 物件的詳細資料會列印在下面幾行，密切模擬使用者會看到的情況。
+每個命令的輸出也會觸發 **CommandInvocation** ，通常為 `Out-Default`。 `Out-Default` 的 **InputObject** 是由命令傳回的 PowerShell 物件。 物件的詳細資料會列印在下面幾行，密切模擬使用者會看到的情況。
 
 ## <a name="see-also"></a>另請參閱
 
-[*PowerShell ♥ 藍色小組*安全性部落格文章](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
+[*PowerShell ♥ 藍色小組* 安全性部落格文章](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 工作階段設定
-ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 工作階段設定定義誰可以使用 JEA 端點，以及他們可以存取哪些角色。
+ms.openlocfilehash: b616d5bf260bbdfe89b6422fd4a8b4866f7fdc67
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70017729"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501553"
 ---
 # <a name="jea-session-configurations"></a>JEA 工作階段設定
 
@@ -107,11 +108,11 @@ GroupManagedServiceAccount = 'Domain\MyJEAGMSA'
 TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ```
 
-**本機系統**帳戶會將文字記錄寫入資料夾，這需要該目錄的讀取和寫入權限。 標準使用者應該無法存取此資料夾。 限制有權稽核文字記錄的安全性系統管理員數目。
+**本機系統** 帳戶會將文字記錄寫入資料夾，這需要該目錄的讀取和寫入權限。 標準使用者應該無法存取此資料夾。 限制有權稽核文字記錄的安全性系統管理員數目。
 
 ### <a name="user-drive"></a>使用者磁碟機
 
-如果您的連線使用者需要在 JEA 端點來回複製檔案，您可在工作階段設定檔中啟用使用者磁碟機。 使用者磁碟機是 **PSDrive**，且對應至每個連線使用者的唯一資料夾。 這個資料夾允許使用者在系統中來回複製檔案，但不讓他們存取完整的檔案系統，也不公開 FileSystem 提供者。 使用者磁碟機內容會在工作階段之間持續存在，以應付網路連線可能中斷的情況。
+如果您的連線使用者需要在 JEA 端點來回複製檔案，您可在工作階段設定檔中啟用使用者磁碟機。 使用者磁碟機是 **PSDrive** ，且對應至每個連線使用者的唯一資料夾。 這個資料夾允許使用者在系統中來回複製檔案，但不讓他們存取完整的檔案系統，也不公開 FileSystem 提供者。 使用者磁碟機內容會在工作階段之間持續存在，以應付網路連線可能中斷的情況。
 
 ```powershell
 MountUserDrive = $true
@@ -157,11 +158,11 @@ RoleDefinitions = @{
 
 ### <a name="role-capability-search-order"></a>角色功能搜尋順序
 
-如上述範例所示，會以角色功能檔案的基底名稱來參考角色功能。 檔案的基底名稱是不含副檔名的檔名。 如果系統上有多個同名的角色功能，PowerShell 會使用其隱含搜尋順序，來選取有效的角色功能檔案。 JEA **不會**提供存取權給同名的所有角色功能檔案。
+如上述範例所示，會以角色功能檔案的基底名稱來參考角色功能。 檔案的基底名稱是不含副檔名的檔名。 如果系統上有多個同名的角色功能，PowerShell 會使用其隱含搜尋順序，來選取有效的角色功能檔案。 JEA **不會** 提供存取權給同名的所有角色功能檔案。
 
 JEA 使用 `$env:PSModulePath` 環境變數來判斷要掃描哪些路徑以取得角色功能檔案。 在每個路徑中，JEA 會尋找包含 "RoleCapabilities" 子資料夾的有效 PowerShell 模組。 如同匯入模組一般，相較於具有相同名稱的自訂角色功能，JEA 較偏好 Windows 隨附的角色功能。
 
-針對所有其他的命名衝突，則由 Windows 在目錄中列舉檔案的順序來決定先後順序。 順序不一定依字母順序排列。 第一個符合指定名稱的角色功能檔案會用於連線使用者。 因為角色功能搜尋順序不具決定性，所以**強烈建議**角色功能使用唯一的檔名。
+針對所有其他的命名衝突，則由 Windows 在目錄中列舉檔案的順序來決定先後順序。 順序不一定依字母順序排列。 第一個符合指定名稱的角色功能檔案會用於連線使用者。 因為角色功能搜尋順序不具決定性，所以 **強烈建議** 角色功能使用唯一的檔名。
 
 ### <a name="conditional-access-rules"></a>條件式存取原則
 
@@ -213,7 +214,7 @@ Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 
 若要變更 JEA 工作階段設定的屬性，包括將使用者對應至角色，您必須[取消登錄](register-jea.md#unregistering-jea-configurations)。 然後，使用更新的工作階段設定檔，[重新登錄](register-jea.md) JEA 工作階段設定。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 - [登錄 JEA 設定](register-jea.md)
 - [編寫 JEA 角色](role-capabilities.md)

@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 登錄 JEA 設定
-ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 向系統註冊 JEA 端點，將能使該端點可供使用者和自動化引擎使用。
+ms.openlocfilehash: 6e7f8cdc1e7a666bddaa42034d70fcbcf55c1972
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706201"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499904"
 ---
 # <a name="registering-jea-configurations"></a>登錄 JEA 設定
 
@@ -61,7 +62,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 - 您的認證可在每部電腦上執行系統管理動作，或存取用來管理電腦的 DSC 提取伺服器。
 - 您已下載 [JEA DSC 資源](https://github.com/powershell/JEA/tree/master/DSC%20Resource)。
 
-在目標電腦或提取伺服器上建立 JEA 端點的 DSC 設定。 在此設定中，**JustEnoughAdministration** DSC 資源會定義工作階段設定檔，而 **File** 資源則會從檔案共用複製角色功能。
+在目標電腦或提取伺服器上建立 JEA 端點的 DSC 設定。 在此設定中， **JustEnoughAdministration** DSC 資源會定義工作階段設定檔，而 **File** 資源則會從檔案共用複製角色功能。
 
 下列屬性可以使用 DSC 資源來設定︰
 
@@ -118,6 +119,6 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 > [!WARNING]
 > 取消登錄 JEA 端點會導致 WinRM 服務重新啟動。 這會中斷大部分正在進行中的遠端管理作業，包括其他的 PowerShell 工作階段、WMI 引動過程，以及某些管理工具。 只在計劃的維護期間取消登錄 PowerShell 端點。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 [測試 JEA 端點](using-jea.md)

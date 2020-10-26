@@ -2,17 +2,17 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 必要條件
-ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文描述必須滿足才能開始使用 JEA 的必要條件。
+ms.openlocfilehash: 5cc70a06887a2d0a840cc83117f865d3148056e1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416722"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501723"
 ---
-# <a name="prerequisites"></a>Prerequisites
+# <a name="prerequisites"></a>必要條件
 
 Just Enough Administration 是 PowerShell 5.0 和更高版本隨附的功能。 本文描述必須滿足才能開始使用 JEA 的必要條件。
-
 
 ## <a name="check-which-version-of-powershell-is-installed"></a>檢查已安裝哪個版本的 PowerShell
 
@@ -47,7 +47,7 @@ JEA 適用於 PowerShell 5.0 和更高版本。 如需完整的功能，建議�
 | Windows 8、8.1          | 具完整功能性的 WMF 5.1                      |
 | Windows 7               | 功能有限 <sup>1</sup> 的 WMF 5.1       |
 
-- <sup>1</sup> 在 Windows Server 2008 R2 或 Windows 7 上無法設定 JEA 使用群組受控服務帳戶。 *支援*虛擬帳戶和其他 JEA 功能。
+- <sup>1</sup> 在 Windows Server 2008 R2 或 Windows 7 上無法設定 JEA 使用群組受控服務帳戶。 *支援* 虛擬帳戶和其他 JEA 功能。
 
 - <sup>2</sup> Windows 10 1511 版和 1603 版不支援下列 JEA 功能：
 
@@ -85,18 +85,18 @@ Enable-PSRemoting
 1. 在工作站上開啟本機群組原則編輯器，或在 Active Directory 網域控制站上的群組原則管理主控台上開啟群組原則物件
 2. 瀏覽至 [電腦設定]\\[系統管理範本]\\[Windows 元件]\\[Windows PowerShell]
 3. 按兩下 [開啟模組記錄] 
-4. 按一下 [啟用] 
-5. 在 [選項] 區段中，按一下模組名稱旁邊的 [顯示] 
+4. 按一下 [啟用]
+5. 在 [選項] 區段中，按一下模組名稱旁邊的 [顯示]
 6. 在快顯視窗中鍵入 `*`，記錄來自所有模組的命令。
-7. 按一下 [確定]  設定原則
+7. 按一下 [確定] 設定原則
 8. 按兩下 [開啟 PowerShell 指令碼區塊記錄] 
-9. 按一下 [啟用] 
-10. 按一下 [確定]  設定原則
+9. 按一下 [啟用]
+10. 按一下 [確定] 設定原則
 11. (僅限已加入網域的電腦) 執行 `gpupdate` 或等待群組原則處理已更新的原則並套用設定
 
 您也可以透過 [群組原則] 啟用全系統 PowerShell 文字記錄。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 [建立角色功能檔案](role-capabilities.md)
 

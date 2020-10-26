@@ -3,12 +3,13 @@ ms.date: 11/13/2018
 keywords: powershell,cmdlet
 title: 從正在執行的處理序解碼 PowerShell 命令
 author: randomnote1
-ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章會說明如何將正在執行 PowerShell 處理序的指令碼區塊解碼。
+ms.openlocfilehash: 95b4b806665bf8137712ebb183329039bc1e1deb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "66470976"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500482"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>從正在執行的處理序解碼 PowerShell 命令
 
@@ -33,7 +34,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>檢視處理序
 
-正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。 如果命令是編碼命令，**CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
+正在執行 PowerShell 的命令主體會儲存在 [Win32_Process][] 類別的 **CommandLine** 屬性中。 如果命令是編碼命令， **CommandLine** 屬性就會包含 "EncodedCommand" 字串。 只要透過以下程序使用此資訊，就能識別編碼命令。
 
 以系統管理員身分啟動 PowerShell。 這很重要，PowerShell 必須以系統管理員身分執行，否則在查詢執行的處理序時不會傳回任何結果。
 
@@ -81,7 +82,7 @@ $commandDetails[0]
 
 現在可以透過選取解碼命令屬性來檢閱解碼後的命令。
 
-```output
+```Output
 ProcessId      : 8752
 EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACAAIAAgAHcAaABpAGwAZQAgACgAIAAkAGkAIAAtAG
                  wAZQAgADEAMAAgACkAIAAKAAoACgAgAAoAIAAgACAAIAB7ACAACgAKAAoAIAAKACAAIAAgACAAIAAgACAAIABXAHIAaQB0AGUALQBP

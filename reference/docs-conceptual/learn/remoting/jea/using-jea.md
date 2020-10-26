@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: 使用 JEA
-ms.openlocfilehash: 46d0cc3d1cbad7454a8723f34d6a0aa34af3277f
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+description: 本文描述您可以連線到並使用 JEA 端點的各種方式。
+ms.openlocfilehash: b3d81cc0aa76549c81136e5a1a5af28df9c6fa7a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "86953279"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501536"
 ---
 # <a name="using-jea"></a>使用 JEA
 
@@ -30,7 +31,7 @@ $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-如果您目前的使用者帳戶可以存取 JEA 端點，則可以省略**認證**參數。
+如果您目前的使用者帳戶可以存取 JEA 端點，則可以省略 **認證** 參數。
 
 當 PowerShell 命令提示字元變更為 `[localhost]: PS>`，您會知道現在正在與遠端 JEA 工作階段互動。 您可以執行 `Get-Command` 以檢查可用的命令。 請洽詢系統管理員以了解可用的參數，或允許的參數值是否有任何限制。
 

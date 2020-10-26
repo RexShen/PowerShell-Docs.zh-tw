@@ -2,12 +2,13 @@
 ms.date: 08/03/2020
 keywords: powershell,cmdlet
 title: 附錄 1 相容性別名
-ms.openlocfilehash: e5bd170fea6b6109d2ef4fd58863d6cc8a0e3ae1
-ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
+description: PowerShell 有數個別名，可讓 UNIX 和 cmd.exe 使用者使用熟悉的命令。
+ms.openlocfilehash: 8cbbd5a358de9018fcb5c840e711cd76f7a9a353
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758494"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500737"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>附錄 1 - 相容性別名
 
@@ -16,10 +17,10 @@ PowerShell 有數個別名，可讓 **UNIX** 和 **cmd.exe** 使用者使用熟�
 
 |            cmd.exe 命令            | UNIX 命令 | PowerShell Cmdlet | PowerShell 別名 |
 | ------------------------------------- | ------------ | ----------------- | ---------------- |
-| **cd**、**chdir**                     | **cd**       | `Set-Location`    | `sl`             |
+| **cd** 、 **chdir**                     | **cd**       | `Set-Location`    | `sl`             |
 | **cls**                               | **清除**    | `Clear-Host`      | `cls`            |
 | **copy**                              | **cp**       | `Copy-Item`       | `cpi`            |
-| **del**、**erase**、**rd**、**rmdir** | **rm**       | `Remove-Item`     | `ri`             |
+| **del** 、 **erase** 、 **rd** 、 **rmdir** | **rm**       | `Remove-Item`     | `ri`             |
 | **dir**                               | **ls**       | `Get-ChildItem`   | `gci`            |
 | **echo**                              | **echo**     | `Write-Output`    | `write`          |
 | **md**                                | **mkdir**    | `New-Item`        | `ni`             |
