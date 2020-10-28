@@ -1,12 +1,14 @@
 ---
-title: 安裝 PowerShell 模組 | Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 201679c97acdccae9aa4c2be641ee1da09a8275c
-ms.sourcegitcommit: d073e69708bd499ea42642b4b923ce5f11cca295
+ms.topic: reference
+title: 安裝 PowerShell 模組
+description: 安裝 PowerShell 模組
+ms.openlocfilehash: 3c7a4413168934ca4de1912c9615a6ae0fc45788
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92197820"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645337"
 ---
 # <a name="installing-a-powershell-module"></a>安裝 PowerShell 模組
 
@@ -22,7 +24,7 @@ ms.locfileid: "92197820"
 
 **PSModulePath** 環境變數 ($Env:PSModulePath) 包含 Windows PowerShell 模組的位置。 Cmdlet 需仰賴此環境變數的值來尋找模組。
 
-根據預設，**PSModulePath** 環境變數值包含下列系統與使用者模組目錄，但您可以對該值進行新增及編輯。
+根據預設， **PSModulePath** 環境變數值包含下列系統與使用者模組目錄，但您可以對該值進行新增及編輯。
 
 - `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
@@ -203,7 +205,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-完成這些步驟時，[Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的 **ListAvailable** 參數便會取得這兩個 Fabrikam 模組。 若要匯入特定模組，請使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 參數。
+完成這些步驟時， [Get-Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module) Cmdlet 的 **ListAvailable** 參數便會取得這兩個 Fabrikam 模組。 若要匯入特定模組，請使用 [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) Cmdlet 的 `MinimumVersion` 或 `RequiredVersion` 參數。
 
 如果這兩個模組都匯入相同的工作階段，且兩個模組都包含具有相同名稱的 Cmdlet，則最後匯入的 Cmdlet 便會在工作階段中生效。
 
