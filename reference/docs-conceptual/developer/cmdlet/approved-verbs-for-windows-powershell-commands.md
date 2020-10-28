@@ -1,16 +1,14 @@
 ---
-title: 已核准的 PowerShell 命令動詞 | Microsoft Docs
 ms.date: 09/07/2018
-helpviewer_keywords:
-- action names [PowerShell SDK]
-- verb names [PowerShell SDK]
-- cmdlets [PowerShell SDK], verb names
-ms.openlocfilehash: 96ba7397f46bfcb7036f0242da1367c3df5d3de9
-ms.sourcegitcommit: 0e18be0a2869beaa711ba3eca7a8a15514e5e962
+ms.topic: reference
+title: 已核准的 PowerShell 命令動詞
+description: 已核准的 PowerShell 命令動詞
+ms.openlocfilehash: 237355ba9729cfe16c335b39f19ab20e40999457
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899851"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655832"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>已核准的 PowerShell 命令動詞
 
@@ -24,7 +22,7 @@ PowerShell 會針對 Cmdlet 的名稱與其所衍生 .NET 類別使用成對的�
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 -->
 
-每個已核准的動詞都擁有所定義對應的_別名前置詞_。
+每個已核准的動詞都擁有所定義對應的 _別名前置詞_ 。
 我們會在使用該動詞的命令別名中，使用此別名前置詞。
 例如，`Import` 的別名前置詞為 `ip`；相對地，`Import-Module` 的別名為 `ipmo`。  這是建議而非規則；特別是其無須遵守命令別名，就能從其他環境模擬已知的命令。
 
