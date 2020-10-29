@@ -145,7 +145,7 @@ ISE 模式會對 VS Code 設定進行下列變更。
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [命令選擇區]: #vs-code-tips
-[建立問題]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[在這裡提出問題]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/
