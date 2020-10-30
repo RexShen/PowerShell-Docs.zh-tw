@@ -2,12 +2,13 @@
 ms.date: 07/29/2020
 keywords: powershell,cmdlet
 title: 如何使用 PowerShell 文件
-ms.openlocfilehash: 1cfeb9eea564e7618062e1b8ada4948bd9e22969
-ms.sourcegitcommit: 9f9eb95bc859e9e0fed48101327a602b2ced351d
+description: 本文說明如何使用此網站的功能，包含搜尋篩選與版本選擇。
+ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87821524"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501111"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>如何使用 PowerShell 文件
 

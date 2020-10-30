@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: powershell, core
 title: PowerShell 6.0 的中斷性變更
-ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+description: 本文摘要說明 Windows PowerShell 5.1 與 PowerShell 6.0 之間的差異。
+ms.openlocfilehash: 7ed6e811b9136cb1c35422a9d682ba2bfaa136a0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158185"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501689"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x 的中斷性變更
 
@@ -214,7 +215,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 先前，使用 `Export-CSV` 匯出的物件如果具有以 `ConvertFrom-Csv` 匯入的 `TypeInformation`，並不會保留該類型資訊。 這項變更會在 CSV 檔案中有可用的類型資訊時，將該資訊新增至 `PSTypeNames` 成員。
 
-### <a name="-notypeinformation-should-be-default-on-export-csv-5131"></a>`-NoTypeInformation` 應該是 `Export-Csv` 上的預設值 [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
+### <a name="-notypeinformation-should-be-default-on-export-csv-5131"></a>`-NoTypeInformation` 應該是  上的預設值 `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
 這項變更是為了處理客戶對下列預設行為的意見反應：`Export-CSV` 會包含類型資訊。
 
@@ -253,11 +254,11 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 不正確的參數位置導致引數被當作輸入來傳遞，而不是當成引數。
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903"></a>從 `-showwindow` 中移除不支援的 `Get-Help` 參數 [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903"></a>從  中移除不支援的 `-showwindow` 參數 `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
 
 `-showwindow` 倚賴 WPF，但在 CoreCLR 上並不支援 WPF。
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866"></a>允許在 `Remove-Item` 的登錄路徑中使用 * [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866"></a>允許在  的登錄路徑中使用 * `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
 先前，將萬用字元指定給 `-LiteralPath` 時，它會將其視為與 `-Path` 相同，而如果該萬用字元找不到任何檔案，它就會以無訊息模式結束。 正確的行為應該是 `-LiteralPath` 為常值，因此如果檔案不存在，它應該發生錯誤。 這項變更是要將與 `-Literal` 搭配使用的萬用字元視為常值。
 
@@ -279,9 +280,9 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036"></a>Executing PowerShell script with bool parameter does not work[#4036](https://github.com/PowerShell/PowerShell/issues/4036) (以布林值參數執行 PowerShell 指令碼無法運作 #4036)
 
-先前，使用 **powershell.exe** (現在為 **pwsh.exe**) 以 `-File` 執行 PowerShell 指令碼時，無法傳遞 `$true`/`$false` 作為參數值。 已新增將 `$true`/`$false` 作為參數剖析值的支援。 此外，也支援參數值，因為目前記載的語法無法運作。
+先前，使用 **powershell.exe** (現在為 **pwsh.exe** ) 以 `-File` 執行 PowerShell 指令碼時，無法傳遞 `$true`/`$false` 作為參數值。 已新增將 `$true`/`$false` 作為參數剖析值的支援。 此外，也支援參數值，因為目前記載的語法無法運作。
 
-### <a name="remove-clrversion-property-from-psversiontable-4027"></a>從 `ClrVersion` 中移除 `$PSVersionTable` 屬性 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027"></a>從  中移除 `ClrVersion` 屬性 `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
 `$PSVersionTable` 的 `ClrVersion` 屬性對 CoreCLR 來說沒有用，使用者不應該使用該值來判斷相容性。
 
@@ -344,7 +345,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482"></a>在 `Import-Csv` 中新增對 W3C 延伸記錄檔格式的支援 [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482"></a>在  中新增對 W3C 延伸記錄檔格式的支援 `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
 
 先前，無法使用 `Import-Csv` Cmdlet 來直接匯入 W3C 延伸記錄檔格式的記錄檔，而需要採取額外的動作。 有了這項變更之後，便可支援 W3C 延伸記錄檔格式。
 
@@ -352,7 +353,7 @@ CoreCLR 上不支援 Windows Presentation Framework。 受影響的 Cmdlet 如�
 
 `ValueFromRemainingArguments` 現在會以陣列的形式傳回值，而不是傳回本身為陣列的單一值。
 
-### <a name="buildversion-is-removed-from-psversiontable-1415"></a>從 `BuildVersion` 中移除 `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415"></a>從  中移除 `BuildVersion``$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
 從 `$PSVersionTable` 中移除 `BuildVersion` 屬性。 此屬性已繫結至 Windows 組建版本。 相反地，建議您使用 `GitCommitId` 擷取 PowerShell Core 的確切組建版本。
 

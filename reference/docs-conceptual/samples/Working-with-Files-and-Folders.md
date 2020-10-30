@@ -2,16 +2,17 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用檔案及資料夾
-ms.openlocfilehash: 8876ff70adbd10c9019f6d80ce7ad327f2932c74
-ms.sourcegitcommit: 08acbea14c69a347f2f46aafcb215a5233c7d830
+description: 本文探討如何使用 PowerShell 來處理特定檔案和資料夾操作工作。
+ms.openlocfilehash: c0c3abb082b05296daa480ac06bcbfa3a784e0c9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82691493"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500023"
 ---
 # <a name="working-with-files-and-folders"></a>使用檔案及資料夾
 
-瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本節會討論如何使用 PowerShell 來處理特定檔案和資料夾操作工作。
+瀏覽 Windows PowerShell 磁碟機和操作磁碟機上的項目，類似於在 Windows 實體磁碟機上操作檔案和資料夾。 本文探討如何使用 PowerShell 來處理特定檔案和資料夾操作工作。
 
 ## <a name="listing-all-the-files-and-folders-within-a-folder"></a>列出資料夾內所有的檔案和資料夾
 
@@ -27,7 +28,7 @@ Get-ChildItem -Path C:\ -Force
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-`Get-ChildItem` 可以使用項目的 **Path**、**Filter**、**Include** 與 **Exclude** 參數來加以篩選，但那些參數通常只以名稱為基礎。 您可以使用 `Where-Object` 以根據項目的其他屬性來執行複雜的篩選。
+`Get-ChildItem` 可以使用項目的 **Path** 、 **Filter** 、 **Include** 與 **Exclude** 參數來加以篩選，但那些參數通常只以名稱為基礎。 您可以使用 `Where-Object` 以根據項目的其他屬性來執行複雜的篩選。
 
 下列命令會在 Program Files 資料夾內尋找在 2005 年 10 月 1 日之後修改的、介於 1 MB 到 10 MB 之間的全部可執行檔︰
 
@@ -63,7 +64,7 @@ Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-您仍然可以使用其他工具執行檔案系統複製。 XCOPY、ROBOCOPY 和 COM 物件，如 **Scripting.FileSystemObject**，在 Windows PowerShell 中都有效。 例如，您可以使用 Windows Script Host **Scripting.FileSystem COM** 類別將 `C:\boot.ini` 備份到 `C:\boot.bak`︰
+您仍然可以使用其他工具執行檔案系統複製。 XCOPY、ROBOCOPY 和 COM 物件，如 **Scripting.FileSystemObject** ，在 Windows PowerShell 中都有效。 例如，您可以使用 Windows Script Host **Scripting.FileSystem COM** 類別將 `C:\boot.ini` 備份到 `C:\boot.bak`︰
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')

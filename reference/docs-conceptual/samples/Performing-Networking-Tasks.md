@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 執行網路工作
-ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文說明如何使用 PowerShell 中的 WMI 類別來管理 Windows 中的網路組態設定。
+ms.openlocfilehash: 95b05c193f4168cdcdf8414399c4f8c569bff754
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737197"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500244"
 ---
 # <a name="performing-networking-tasks"></a>執行網路工作
 
@@ -75,7 +76,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 
 ## <a name="pinging-computers"></a>對電腦執行 Ping
 
-您可以使用 **Win32_PingStatus**，對電腦執行簡單的 Ping。 下列命令會執行 Ping，但傳回冗長的輸出：
+您可以使用 **Win32_PingStatus** ，對電腦執行簡單的 Ping。 下列命令會執行 Ping，但傳回冗長的輸出：
 
 ```powershell
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
@@ -211,7 +212,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>釋出和更新所有介面卡上的 DHCP 租用
 
-您可以使用 **Win32_NetworkAdapterConfiguration** 方法 (**ReleaseDHCPLeaseAll** 和 **RenewDHCPLeaseAll**)，在所有介面卡上執行全域 DHCP 位址釋出或更新。
+您可以使用 **Win32_NetworkAdapterConfiguration** 方法 ( **ReleaseDHCPLeaseAll** 和 **RenewDHCPLeaseAll** )，在所有介面卡上執行全域 DHCP 位址釋出或更新。
 不過，此命令必須套用至 WMI 類別，而不是特定介面卡，因為全域釋出和更新租用會在類別上執行，而不是在特定介面卡上執行。
 
 您可以列出所有 WMI 類別，然後依名稱只選取所需的類別，來取得 WMI 類別的參考，而不是類別執行個體。 例如，下列命令會傳回 **Win32_NetworkAdapterConfiguration** 類別︰

@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理目前的位置
-ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 使用名詞 Location 來參照工作目錄，並實作一系列的 Cmdlet 來檢查及操作您的位置。
+ms.openlocfilehash: 0ce9ed1269921233b0d6b07da832c12e159a84dc
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030194"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500465"
 ---
 # <a name="managing-current-location"></a>管理目前的位置
 
@@ -51,7 +52,7 @@ C:\WINDOWS
 
 您可以指定目前位置的相對路徑，就像您在大部分的 UNIX 與 Windows 命令殼層中所指定一樣。 在相對路徑的標準標記法中，句點 ( **.** ) 代表目前的資料夾，而雙句點 ( **..** ) 代表目前位置的上層目錄。
 
-例如，若目前資料夾為 **C:\\Windows**，則句點 ( **.** ) 代表 **C:\\Windows**，而雙句點 ( **..** ) 代表 **C:** 。 輸入下列命令，即可從目前的位置變更到 C: 磁碟機的根目錄：
+例如，若目前資料夾為 **C:\\Windows** ，則句點 ( **.** ) 代表 **C:\\Windows** ，而雙句點 ( **..** ) 代表 **C:** 。 輸入下列命令，即可從目前的位置變更到 C: 磁碟機的根目錄：
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -110,7 +111,7 @@ C:\Documents and Settings\PowerUser
 ```
 
 > [!NOTE]
-> *堆疊*一詞在許多程式設計設定中具有特殊意義，包括 .NET Framework。 就像項目的實體堆疊，您最後放入堆疊中的項目，是您可以從堆疊中取出第一個項目。 將項目新增到堆疊是將項目「推送」到堆疊。 從堆疊取出項目是將項目從堆疊「取出」。
+> 「堆疊」  一詞在許多程式設計設定中具有特殊意義，包括 .NET Framework。 就像項目的實體堆疊，您最後放入堆疊中的項目，是您可以從堆疊中取出第一個項目。 將項目新增到堆疊是將項目「推送」到堆疊。 從堆疊取出項目是將項目從堆疊「取出」。
 
 若要將目前位置推送到堆疊，然後將它移動到 Local Settings 資料夾，請輸入：
 

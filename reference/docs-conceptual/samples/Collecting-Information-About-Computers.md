@@ -2,16 +2,17 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 收集電腦的相關資訊
-ms.openlocfilehash: 9407ff15b3c3ca6b3adab60d4d01d957c599e79e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文說明如何使用 WMI 與 CIM Cmdlet，收集電腦組態的相關資訊。
+ms.openlocfilehash: 5088960ab7c049085a9d7c05ec4571b6fd7e3545
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737231"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500584"
 ---
 # <a name="collecting-information-about-computers"></a>收集電腦的相關資訊
 
-針對一般系統管理作業，**CimCmdlet** 模組的 Cmdlet 是最重要的 Cmdlet。 所有重要的子系統設定都是透過 WMI 公開。 此外，WMI 會將資料視為一或多個項目集合中的物件。 由於 Windows PowerShell 也適用於物件，並具有管線可讓您以相同的方式來處理單一物件或多個物件，因此一般 WMI 存取可讓您不費吹灰之力就能執行一些進階工作。
+針對一般系統管理作業， **CimCmdlet** 模組的 Cmdlet 是最重要的 Cmdlet。 所有重要的子系統設定都是透過 WMI 公開。 此外，WMI 會將資料視為一或多個項目集合中的物件。 由於 Windows PowerShell 也適用於物件，並具有管線可讓您以相同的方式來處理單一物件或多個物件，因此一般 WMI 存取可讓您不費吹灰之力就能執行一些進階工作。
 
 ## <a name="listing-desktop-settings"></a>列出桌面設定
 
@@ -92,7 +93,7 @@ Source Description     HotFixID  InstalledBy   InstalledOn PSComputerName
        Security Update KB4048951 Administrator 12/16/2017  .
 ```
 
-如需更簡潔的輸出，您可能需要排除一些屬性。 雖然您可以使用 `Get-CimInstance` 的 **Property** 參數來僅選擇 **HotFixID**，但這麼做實際上會傳回更多資訊，因為預設為顯示所有中繼資料︰
+如需更簡潔的輸出，您可能需要排除一些屬性。 雖然您可以使用 `Get-CimInstance` 的 **Property** 參數來僅選擇 **HotFixID** ，但這麼做實際上會傳回更多資訊，因為預設為顯示所有中繼資料︰
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixID
@@ -236,7 +237,7 @@ PSComputerName :
 
 ## <a name="displaying-service-status"></a>顯示服務狀態
 
-若要檢視特定電腦的所有服務狀態，您可以在本機上使用 `Get-Service` Cmdlet。 若為遠端系統，您可以使用 **Win32_Service** WMI 類別。 如果您同時使用 `Select-Object` 將結果篩選為 **Status**、**Name** 和 **DisplayName**，輸出格式會與 `Get-Service` 的輸出格式幾乎完全相同：
+若要檢視特定電腦的所有服務狀態，您可以在本機上使用 `Get-Service` Cmdlet。 若為遠端系統，您可以使用 **Win32_Service** WMI 類別。 如果您同時使用 `Select-Object` 將結果篩選為 **Status** 、 **Name** 和 **DisplayName** ，輸出格式會與 `Get-Service` 的輸出格式幾乎完全相同：
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service | Select-Object -Property Status,Name,DisplayName

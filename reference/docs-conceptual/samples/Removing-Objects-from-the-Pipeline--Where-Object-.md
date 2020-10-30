@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 從管線中移除物件 Where Object
-ms.openlocfilehash: 370e7745341b70c0794352a690d5750d21f53ac2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Where-Object Cmdlet 可讓您篩選在管線上傳遞的物件。
+ms.openlocfilehash: e744dc671303711f1cbe8cc724a97c3327c1da85
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737180"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500108"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>從管線中移除物件 (Where-Object)
 
@@ -17,7 +18,7 @@ PowerShell 包含了 `Where-Object` Cmdlet，可讓您測試管線中的每個�
 
 ## <a name="performing-simple-tests-with-where-object"></a>使用 Where-Object 執行簡單的測試
 
-**FilterScript** 的值是評估為 true 或 false 的「指令碼區塊」  (以大括弧 `{}` 括住的一或多個 PowerShell 命令)。 這些指令碼區塊可以很簡單，但若要建立它們，需要了解另一個 PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以連字號字元 (`-`) 開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
+ (以大括弧 `{}` 括住的一或多個 PowerShell 命令)。 這些指令碼區塊可以很簡單，但若要建立它們，需要了解另一個 PowerShell 概念：比較運算子。 比較運算子會比較出現在運算子兩側的項目。 比較運算子是以連字號字元 (`-`) 開頭，後面接著名稱。 基本比較運算子適用於幾乎任何類型的物件。 更進階的比較運算子只適用於文字或陣列。
 
 > [!NOTE]
 > 根據預設，搭配文字使用時，PowerShell 比較運算子不區分大小寫。
@@ -49,7 +50,7 @@ PowerShell 包含了 `Where-Object` Cmdlet，可讓您測試管線中的每個�
 
 因為 `$_` 參照了目前的管線物件，所以我們可以針對測試來存取其屬性。
 
-舉例來說，我們可以檢視 WMI 中的 **Win32_SystemDriver** 類別。 一部系統上可能會有數百個系統驅動程式，但您可能只對某一組系統驅動程式感興趣，例如目前執行中的驅動程式。 針對 **Win32_SystemDriver** 類別，相關屬性為 **State**。 您可以輸入下列命令來篩選系統驅動程式，只選取執行中的驅動程式︰
+舉例來說，我們可以檢視 WMI 中的 **Win32_SystemDriver** 類別。 一部系統上可能會有數百個系統驅動程式，但您可能只對某一組系統驅動程式感興趣，例如目前執行中的驅動程式。 針對 **Win32_SystemDriver** 類別，相關屬性為 **State** 。 您可以輸入下列命令來篩選系統驅動程式，只選取執行中的驅動程式︰
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

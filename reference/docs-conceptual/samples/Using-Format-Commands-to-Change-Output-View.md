@@ -2,12 +2,13 @@
 ms.date: 11/22/2019
 keywords: powershell,cmdlet
 title: 使用格式命令變更輸出檢視
-ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 具有可擴充的格式系統，可讓您將輸出顯示在清單、資料表或自訂配置中。
+ms.openlocfilehash: ebb285a19c7fe1bc80608385f9e2842469e95817
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417599"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500941"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>使用格式命令變更輸出檢視
 
@@ -37,7 +38,7 @@ PowerShell 中的每個物件類型都有預設屬性，可在您未指定要顯
 Get-Process -Name iexplore
 ```
 
-**程序**物件的預設格式會顯示如下所示的屬性：
+**程序** 物件的預設格式會顯示如下所示的屬性：
 
 ```Output
  NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
@@ -138,7 +139,7 @@ Get-Process -Name iexplore | Format-List -Property *
 
 ## <a name="using-format-table-for-tabular-output"></a>針對表格式輸出使用 Format-Table
 
-如果您使用未指定屬性名稱的 `Format-Table` Cmdlet 來設定 `Get-Process` 命令輸出格式，則收到的輸出會與未使用 `Format` Cmdlet 的情況相同。 根據預設，PowerShell 會以表格格式格式顯示**程序**物件。
+如果您使用未指定屬性名稱的 `Format-Table` Cmdlet 來設定 `Get-Process` 命令輸出格式，則收到的輸出會與未使用 `Format` Cmdlet 的情況相同。 根據預設，PowerShell 會以表格格式格式顯示 **程序** 物件。
 
 ```powershell
 Get-Service -Name win* | Format-Table
@@ -240,7 +241,7 @@ FileVersion                          Path                                       
 
 ### <a name="organizing-table-output--groupby"></a>組織資料表輸出 (-GroupBy)
 
-表格式輸出控制項的另一個有用參數是 **GroupBy**。 較長的表格式清單尤其很難進行比較。 **GroupBy** 參數會根據屬性值將輸出群組在一起。 例如，我們可以依 **StartType** 將服務分組，並省略屬性清單中的 **StartType** 值，以方便檢查︰
+表格式輸出控制項的另一個有用參數是 **GroupBy** 。 較長的表格式清單尤其很難進行比較。 **GroupBy** 參數會根據屬性值將輸出群組在一起。 例如，我們可以依 **StartType** 將服務分組，並省略屬性清單中的 **StartType** 值，以方便檢查︰
 
 ```powershell
 Get-Service -Name win* | Sort-Object StartType | Format-Table -GroupBy StartType

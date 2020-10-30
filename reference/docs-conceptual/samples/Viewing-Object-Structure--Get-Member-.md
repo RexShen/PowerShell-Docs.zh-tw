@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 檢視物件結構 Get Member
-ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Get-Member 是一種功能強大的工具，可讓您在 PowerShell 中查看物件的類型與結構。
+ms.openlocfilehash: 3c294fe47294e2cf8daf125aac55661dd38cf9bb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030713"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501213"
 ---
 # <a name="viewing-object-structure-get-member"></a>檢視物件結構 (Get-Member)
 
@@ -23,7 +24,7 @@ Get-Process | Get-Member | Out-Host -Paging
 
 此命令的輸出看起來如下︰
 
-```output
+```Output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition
@@ -38,7 +39,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-我們可以篩選想要查看的元素，以讓這份長資訊清單更為有用。 **Get-Member** 命令可讓您只列出為屬性的成員。 有數種形式的屬性。 如果我們將 **Get-Member MemberType** 參數設為值 **Properties**，則這個 Cmdlet 會顯示任何類型的屬性。 產生的清單仍然很長，但更容易管理︰
+我們可以篩選想要查看的元素，以讓這份長資訊清單更為有用。 **Get-Member** 命令可讓您只列出為屬性的成員。 有數種形式的屬性。 如果我們將 **Get-Member MemberType** 參數設為值 **Properties** ，則這個 Cmdlet 會顯示任何類型的屬性。 產生的清單仍然很長，但更容易管理︰
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties

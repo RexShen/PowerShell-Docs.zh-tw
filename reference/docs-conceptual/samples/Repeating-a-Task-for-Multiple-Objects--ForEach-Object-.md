@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 針對多個物件重複工作 ForEach Object
-ms.openlocfilehash: bf89070fd9b006fa9b0b262ab63ffadd81072ecc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: ForEach-Object 可讓您針對每個透過管線傳遞的物件重複執行一組命令。
+ms.openlocfilehash: 7353be833dc8bf77dd18b7fc45bdd97e092ff6ef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736874"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499950"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>針對多個物件重複工作 (ForEach-Object)
 
@@ -36,7 +37,7 @@ Get-CimInstance -Class Win32_LogicalDisk |
 48318.01171875
 ```
 
-不過，輸出現在會是沒有相關聯標籤的資料。 因為此類 WMI 屬性是唯讀的，所以您無法直接轉換 **FreeSpace**。 如果您輸入︰
+不過，輸出現在會是沒有相關聯標籤的資料。 因為此類 WMI 屬性是唯讀的，所以您無法直接轉換 **FreeSpace** 。 如果您輸入︰
 
 ```powershell
 Get-CimInstance -Class Win32_LogicalDisk |

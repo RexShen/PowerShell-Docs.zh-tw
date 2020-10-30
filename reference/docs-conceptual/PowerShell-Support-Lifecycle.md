@@ -1,20 +1,19 @@
 ---
 title: PowerShell Core 支援週期
-description: 控管 PowerShell Core 支援的原則
+description: 詳細說明控管 PowerShell 支援的原則
 ms.date: 03/09/2020
-ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236198"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501740"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell 支援生命週期
 
 PowerShell 是一組與 Windows PowerShell 分開出貨、安裝及設定的不同工具與元件。 PowerShell 未包含在 Windows 授權合約中。
 
-PowerShell 是由傳統 Microsoft 支援合約支援，包含[付費支援][]、[Microsoft Enterprise 合約][enterprise-agreement]與 [Microsoft 軟體保證][assurance]。
-您也可以透過提出您問題的支援要求，付費獲得 PowerShell 的[輔助支援][]。
+PowerShell 是由傳統 Microsoft 支援合約支援，包含[付費支援][]、[Microsoft Enterprise 合約][enterprise-agreement]與 [Microsoft 軟體保證][assurance]。 您也可以透過提出您問題的支援要求，付費獲得 PowerShell 的[輔助支援][]。
 
 ## <a name="community-support"></a>社群支援
 
@@ -98,7 +97,7 @@ PowerShell Core 先前是使用 [Microsoft 現代化生命週期原則][modern]�
 |   6.0   | 2019 年 2 月 13 日  |
 
 > [!NOTE]
-> 本文件是關於 PowerShell Core 6 與 PowerShell 7 的支援。 Windows PowerShell (1.0 - 5.1) 是 Windows OS 的元件。 元件會收到與其父系產品或平台的相同支援。 如需詳細資訊，請參閱[產品與服務生命週期資訊](/lifecycle/products/)
+> 本文件是關於 PowerShell Core 6 與 PowerShell 7 的支援。 Windows PowerShell (1.0 - 5.1) 是 Windows OS 的元件。 元件會收到與其父系產品或平台的相同支援。 如需詳細資訊，請參閱[產品與服務生命週期資訊](/lifecycle/products/)。
 
 ## <a name="unsupported-platforms"></a>不支援的平台
 

@@ -2,21 +2,22 @@
 ms.date: 05/14/2020
 keywords: powershell,cmdlet
 title: 在 PowerShell 遠端中進行第二次跳躍
-ms.openlocfilehash: 3a9db11726d4c02dc69e52c45da304f7422def39
-ms.sourcegitcommit: 843756c8277e7afb874867703963248abc8a6c91
+description: 本文說明為 PowerShell 遠端設定第二躍點驗證的各種方法，包含安全性含意與建議。
+ms.openlocfilehash: 905b27b4e6c612249c945a741bbe0d2ba9ae28aa
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83439371"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501366"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>在 PowerShell 遠端中進行第二次跳躍
 
 「第二個躍點問題」是指如下所示的情況︰
 
-1. 您已登入 _ServerA_。
-2. 從 _ServerA_，啟動遠端 PowerShell 工作階段，連線到 _ServerB_。
+1. 您已登入 _ServerA_ 。
+2. 從 _ServerA_ ，啟動遠端 PowerShell 工作階段，連線到 _ServerB_ 。
 3. 您透過 PowerShell 遠端工作階段在 _ServerB_ 上執行的命令，會嘗試存取 _ServerC_ 上的資源。
-4. 已拒絕 _ServerC_ 上的資源存取，因為您用來建立 PowerShell 遠端工作階段的認證未從 _ServerB_ 傳遞至 _ServerC_。
+4. 已拒絕 _ServerC_ 上的資源存取，因為您用來建立 PowerShell 遠端工作階段的認證未從 _ServerB_ 傳遞至 _ServerC_ 。
 
 解決這個問題的方法有數種︰ 下表依喜好設定的順序列出方法。
 
@@ -33,7 +34,7 @@ ms.locfileid: "83439371"
 ## <a name="credssp"></a>CredSSP
 
 您可以使用[認證安全性支援提供者 (CredSSP)][credssp] 進行驗證。
-CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
+CredSSP 會在遠端伺服器上快取認證 ( _ServerB_ )，因此在使用時，可能會讓您暴露在認證遭竊的攻擊風險中。 如果遠端電腦遭到入侵，攻擊者就能存取使用者的認證。 預設會停用 CredSSP (用戶端與伺服器電腦皆是)。 只有在最受信任的環境中才應啟用 CredSSP。 例如，因為網域控制站為高度受信任，所以網域系統管理員會連線到網域控制站。
 
 如需使用 PowerShell 遠端的 CredSSP 時，安全性考量的詳細資訊，請參閱[意外妨害：注意 CredSSP][beware] \(英文\)。
 
@@ -64,17 +65,17 @@ CredSSP 會在遠端伺服器上快取認證 (_ServerB_)，因此在使用時，
 
 - 不支援 WinRM 的第二個躍點。
 - 需要網域系統管理員的權限才能設定。
-- 必須在遠端伺服器 (_ServerB_) 的 Active Directory 物件上設定。
+- 必須在遠端伺服器 ( _ServerB_ ) 的 Active Directory 物件上設定。
 - 僅限一個網域。 無法跨網域或樹系。
 - 需要更新物件和服務主體名稱 (SPN) 的權限。
-- _ServerB_ 不需要使用者操作，就能直接代表使用者，將 Kerberos 票證擷取至 _ServerC_。
+- _ServerB_ 不需要使用者操作，就能直接代表使用者，將 Kerberos 票證擷取至 _ServerC_ 。
 
 > [!NOTE]
 > 無法委派已設定 [這是機密帳戶，無法委派] 屬性的 Active Directory 帳戶。 如需詳細資訊，請參閱[安全性焦點：分析特殊權限帳戶的「這是機密帳戶，無法委派」][blog] \(英文\) 和 [Kerberos 驗證工具和設定][ktools] \(英文\)
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>以資源為基礎的 Kerberos 限制委派
 
-使用以資源為基礎的 Kerberos 限制委派 (在 Windows Server 2012 中引入) 時，您會設定資源所在伺服器物件上的認證委派。 在上述第二個躍點情節中，您設定了 _ServerC_，以指定其接受之委派認證的來源。
+使用以資源為基礎的 Kerberos 限制委派 (在 Windows Server 2012 中引入) 時，您會設定資源所在伺服器物件上的認證委派。 在上述第二個躍點情節中，您設定了 _ServerC_ ，以指定其接受之委派認證的來源。
 
 **優點**
 
@@ -117,7 +118,7 @@ Cmdlet      Set-ADServiceAccount ActiveDirectory
 Cmdlet      Set-ADUser           ActiveDirectory
 ```
 
-**PrincipalsAllowedToDelegateToAccount** 參數會設定 Active Directory 物件屬性 **msDS-AllowedToActOnBehalfOfOtherIdentity**，此屬性包含存取控制清單 (ACL)，指定哪些帳戶有權委派認證給相關聯的帳戶 (在本例中是 _ServerA_ 的電腦帳戶)。
+**PrincipalsAllowedToDelegateToAccount** 參數會設定 Active Directory 物件屬性 **msDS-AllowedToActOnBehalfOfOtherIdentity** ，此屬性包含存取控制清單 (ACL)，指定哪些帳戶有權委派認證給相關聯的帳戶 (在本例中是 _ServerA_ 的電腦帳戶)。
 
 現在，讓我們設定將用來代表伺服器的變數︰
 
@@ -154,7 +155,7 @@ $x.'msDS-AllowedToActOnBehalfOfOtherIdentity'.Access
 Get-ADComputer -Identity $ServerC -Properties PrincipalsAllowedToDelegateToAccount
 ```
 
-Kerberos [金鑰發佈中心 (KDC)](/windows/win32/secauthn/key-distribution-center) 會快取拒絕存取的存取嘗試 (負快取) 達 15 分鐘。 如果 _ServerB_ 先前曾嘗試存取 _ServerC_，您必須叫用下列命令清除 _ServerB_ 上的快取︰
+Kerberos [金鑰發佈中心 (KDC)](/windows/win32/secauthn/key-distribution-center) 會快取拒絕存取的存取嘗試 (負快取) 達 15 分鐘。 如果 _ServerB_ 先前曾嘗試存取 _ServerC_ ，您必須叫用下列命令清除 _ServerB_ 上的快取︰
 
 ```powershell
 Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
@@ -164,7 +165,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 
 您也可以重新啟動電腦，或等待至少 15 分鐘的時間以清除快取。
 
-清除快取之後，便可以成功執行程式碼，從 _ServerA_ 經過 _ServerB_ 再到 _ServerC_：
+清除快取之後，便可以成功執行程式碼，從 _ServerA_ 經過 _ServerB_ 再到 _ServerC_ ：
 
 ```powershell
 # Capture a credential
@@ -181,7 +182,7 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 在此範例中，`$using` 變數用來使 _ServerB_ 可看見 `$ServerC` 變數。
 如需 `$using` 變數的詳細資訊，請參閱 [about_Remote_Variables](/powershell/module/Microsoft.PowerShell.Core/About/about_Remote_Variables)。
 
-若要允許多部伺服器委派認證給 _ServerC_，請將 _ServerC_ 上 **PrincipalsAllowedToDelegateToAccount** 參數的值設為陣列︰
+若要允許多部伺服器委派認證給 _ServerC_ ，請將 _ServerC_ 上 **PrincipalsAllowedToDelegateToAccount** 參數的值設為陣列︰
 
 ```powershell
 # Set up variables for each server
@@ -240,13 +241,13 @@ JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行�
 **缺點**
 
 - 需要 WMF 5.0 或更新版本。
-- 需要在每個中繼伺服器 (_ServerB_) 上設定。
+- 需要在每個中繼伺服器 ( _ServerB_ ) 上設定。
 
 ## <a name="pssessionconfiguration-using-runas"></a>使用 RunAs 的 PSSessionConfiguration
 
 您可以在 _ServerB_ 上建立工作階段設定，並設定其 **RunAsCredential** 參數。
 
-如需使用 **PSSessionConfiguration** 與 **RunAs** 來解決第二個躍點問題的資訊，請參閱[另一種解決 PowerShell 遠端多個躍點問題的方法][pssessionconfig]。
+如需使用 **PSSessionConfiguration** 與 **RunAs** 來解決第二個躍點問題的資訊，請參閱 [另一種解決 PowerShell 遠端多個躍點問題的方法][pssessionconfig]。
 
 **優點**
 
@@ -254,7 +255,7 @@ JEA 可讓您限制系統管理員可以在 PowerShell 工作階段期間執行�
 
 **缺點**
 
-- 需要在每個中繼伺服器 (_ServerB_) 設定 **PSSessionConfiguration** 和 **RunAs**。
+- 需要在每個中繼伺服器 ( _ServerB_ ) 設定 **PSSessionConfiguration** 和 **RunAs** 。
 - 使用網域 **RunAs** 帳戶時需要密碼維護
 
 ## <a name="pass-credentials-inside-an-invoke-command-script-block"></a>在 Invoke-Command 指令碼區塊內傳遞認證

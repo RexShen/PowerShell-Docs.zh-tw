@@ -2,16 +2,18 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 排序物件
-ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Sort-Object Cmdlet 可讓您在一或多個屬性上排序物件的集合。
+ms.openlocfilehash: 836207adfc566003e9714e45920d9b4e24a677e9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030779"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501009"
 ---
 # <a name="sorting-objects"></a>排序物件
 
-我們會組織顯示的資料，讓您可以使用 `Sort-Object` Cmdlet 更輕鬆地進行掃描。 `Sort-Object` 會使用一或多個屬性的名稱作為排序依據，並傳回根據這些屬性值進行排序的資料。
+我們會組織顯示的資料，讓您可以使用 `Sort-Object` Cmdlet 更輕鬆地進行掃描。
+`Sort-Object` 會使用一或多個屬性的名稱作為排序依據，並傳回根據這些屬性值進行排序的資料。
 
 ## <a name="basic-sorting"></a>基本排序
 
@@ -136,7 +138,7 @@ sort LastWriteTime, Name
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-在這個範例中，**e** 代表 **Expression**、**d** 代表 **Descending**，而 **a** 代表 **Ascending**。
+在這個範例中， **e** 代表 **Expression** 、 **d** 代表 **Descending** ，而 **a** 代表 **Ascending** 。
 
 為提升可讀性，您可以將雜湊表放入個別的變數中：
 

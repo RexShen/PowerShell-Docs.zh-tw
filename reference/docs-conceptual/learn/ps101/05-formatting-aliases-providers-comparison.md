@@ -4,12 +4,13 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: eb23b048a50f10ea83d156c0499772b1be439336
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: 本章介紹輸出格式、命令別名、提供者和比較作業的概念。
+ms.openlocfilehash: efe70d2d220f8451e781603b6000c3553dda910c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84437999"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501604"
 ---
 # <a name="chapter-5---formatting-aliases-providers-comparison"></a>第 5 章 - 格式、別名、提供者、比較
 
@@ -564,7 +565,7 @@ SQL Sat - Baton Rouge
 SQL Saturday - Baton Rouge
 ```
 
-請注意，在上一個範例中，並未取代 "Saturday" 這個字。 這是因為指定了與原始不同的大小寫。 以與原始相同的大小寫指定 "Saturday" 這個字時，**Replace ()** 方法會如預期般加以取代。
+請注意，在上一個範例中，並未取代 "Saturday" 這個字。 這是因為指定了與原始不同的大小寫。 以與原始相同的大小寫指定 "Saturday" 這個字時， **Replace ()** 方法會如預期般加以取代。
 
 ```powershell
 'SQL Saturday - Baton Rouge'.Replace('Saturday','Sat')
@@ -574,7 +575,7 @@ SQL Saturday - Baton Rouge
 SQL Sat - Baton Rouge
 ```
 
-使用方法來轉換資料時請小心，因為您可能會遇到未預期的問題，例如使得_土耳其測試_失敗。 如需範例，請參閱標題為[使用 Pester 測試 PowerShell 程式碼與其他文化特性][]的部落格文章。 我的建議是盡可能使用運算子，而不是方法來避免這些類型的問題。
+使用方法來轉換資料時請小心，因為您可能會遇到未預期的問題，例如使得 _土耳其測試_ 失敗。 如需範例，請參閱標題為[使用 Pester 測試 PowerShell 程式碼與其他文化特性][]的部落格文章。 我的建議是盡可能使用運算子，而不是方法來避免這些類型的問題。
 
 雖然可以如先前範例所示使用比較運算子，但我通常會發現自己是使用 `Where-Object` Cmdlet 來執行某種類型的篩選。
 

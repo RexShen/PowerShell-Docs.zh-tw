@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 使用登錄機碼
-ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文討論如何使用 PowerShell 來處理登錄機碼。
+ms.openlocfilehash: 90e8417fc3454b959dc2a86fc63e722832bdab23
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736840"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501383"
 ---
 # <a name="working-with-registry-keys"></a>使用登錄機碼
 
@@ -63,7 +64,7 @@ Get-ChildItem HKCU:
 Get-ChildItem -Path HKCU:\ -Recurse
 ```
 
-`Get-ChildItem` 可透過其 **Path**、**Filter**、**Include** 與 **Exclude** 參數執行複雜的篩選功能，但這些參數通常只以名稱為基礎。 您可以使用 `Where-Object` Cmdlet 根據項目的其他屬性來執行複雜的篩選。 下列命令會尋找 `HKCU:\Software` 內只有一個子機碼且僅有四個值的所有機碼︰
+`Get-ChildItem` 可透過其 **Path** 、 **Filter** 、 **Include** 與 **Exclude** 參數執行複雜的篩選功能，但這些參數通常只以名稱為基礎。 您可以使用 `Where-Object` Cmdlet 根據項目的其他屬性來執行複雜的篩選。 下列命令會尋找 `HKCU:\Software` 內只有一個子機碼且僅有四個值的所有機碼︰
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse |
@@ -84,7 +85,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination H
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU: -Recurse
 ```
 
-您仍然可以使用現有的其他工具執行檔案系統複製作業。 您可以從 Windows PowerShell 中使用任何登錄編輯工具，包括 **reg.exe**、**regini.exe**、**regedit.exe** 及支援登錄編輯的 COM 物件 (例如 **WScript.Shell** 和 WMI 的 **StdRegProv** 類別)。
+您仍然可以使用現有的其他工具執行檔案系統複製作業。 您可以從 Windows PowerShell 中使用任何登錄編輯工具，包括 **reg.exe** 、 **regini.exe** 、 **regedit.exe** 及支援登錄編輯的 COM 物件 (例如 **WScript.Shell** 和 WMI 的 **StdRegProv** 類別)。
 
 ## <a name="creating-keys"></a>建立機碼
 

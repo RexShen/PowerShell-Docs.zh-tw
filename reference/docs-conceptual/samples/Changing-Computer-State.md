@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 變更電腦狀態
-ms.openlocfilehash: 9278df55ba027134a61c8ed4e89b5b839d460b29
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此範例會示範如何使用 PowerShell 中的外部命令來管理電腦組態。
+ms.openlocfilehash: 341f29f24d7e4bd341ccc0954b16d4b75880678b
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736908"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500669"
 ---
 # <a name="changing-computer-state"></a>變更電腦狀態
 
@@ -22,7 +23,7 @@ ms.locfileid: "75736908"
 rundll32.exe user32.dll,LockWorkStation
 ```
 
-此命令會立即鎖定工作站。 它使用執行 Windows DLL (並儲存其程式庫以供重複使用) 的 **rundll32.exe**，來執行 Windows 管理函式程式庫 `user32.dll`。
+此命令會立即鎖定工作站。 它使用執行 Windows DLL (並儲存其程式庫以供重複使用) 的 **rundll32.exe** ，來執行 Windows 管理函式程式庫 `user32.dll`。
 
 如果您在啟用 [快速切換使用者] 時鎖定工作站 (例如在 Windows XP 上)，電腦會顯示在使用者登入畫面，而不是啟動目前使用者的螢幕保護裝置。
 

@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用處理程序 Cmdlet 管理處理程序
-ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 提供數個 Cmdlet，可協助管理本機和遠端電腦上的處理序。
+ms.openlocfilehash: 977a3459eeac22536341753ccd59357d718745f2
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870739"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500431"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>使用處理程序 Cmdlet 管理處理程序
 
@@ -15,7 +16,7 @@ ms.locfileid: "75870739"
 
 ## <a name="getting-processes-get-process"></a>取得處理程序 (Get-Process)
 
-若要取得在本機電腦上執行的處理程序，請在不使用參數的情況下執行 **Get-Process**。
+若要取得在本機電腦上執行的處理程序，請在不使用參數的情況下執行 **Get-Process** 。
 
 您可以藉由指定處理程序的名稱或識別碼，來取得特定處理程序。 下列命令會取得閒置處理程序︰
 
@@ -143,7 +144,7 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-您可以在其他情況下使用相同的方法。 例如，假設當使用者啟動另一個應用程式時，次要通知區域應用程式會自動執行。 您可能會發現這在終端機服務工作階段中無法正常運作，但您仍然想要在實體電腦主控台上執行的工作階段中予以保留。 連線到實體電腦桌面之工作階段的工作階段識別碼一律為 0，因此您可以使用 **Where-Object** 和處理程序 **SessionId**，停止該處理程序在其他工作階段中的所有執行個體：
+您可以在其他情況下使用相同的方法。 例如，假設當使用者啟動另一個應用程式時，次要通知區域應用程式會自動執行。 您可能會發現這在終端機服務工作階段中無法正常運作，但您仍然想要在實體電腦主控台上執行的工作階段中予以保留。 連線到實體電腦桌面之工作階段的工作階段識別碼一律為 0，因此您可以使用 **Where-Object** 和處理程序 **SessionId** ，停止該處理程序在其他工作階段中的所有執行個體：
 
 ```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process

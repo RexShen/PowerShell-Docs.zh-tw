@@ -2,27 +2,22 @@
 title: PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 description: 使用 WSMan 在 PowerShell Core 中遠端
 ms.date: 08/06/2018
-ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fdc4159279db28b8ee60bc0853e19512a1f9ec14
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058874"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501298"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core 中的 WS-Management (WSMan) 遠端處理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>建立遠端端點的指示
 
-PowerShell Core for Windows 套件包含 `$PSHome` 中的 WinRM 外掛程式 (`pwrshplugin.dll`) 和安裝指令碼 (`Install-PowerShellRemoting.ps1`)。
-這些檔案讓 PowerShell 在指定其端點時接受連入的 PowerShell 遠端連線。
+PowerShell Core for Windows 套件包含 `$PSHome` 中的 WinRM 外掛程式 (`pwrshplugin.dll`) 和安裝指令碼 (`Install-PowerShellRemoting.ps1`)。 這些檔案讓 PowerShell 在指定其端點時接受連入的 PowerShell 遠端連線。
 
 ### <a name="motivation"></a>動機
 
-PowerShell 安裝可以使用 `New-PSSession` 和 `Enter-PSSession` 建立遠端電腦的 PowerShell 工作階段。
-若要啟用它來接受連入的 PowerShell 遠端連線，使用者必須建立 WinRM 遠端端點。
-這是使用者執行 Install-PowerShellRemoting.ps1 建立 WinRM 端點的明確加入案例。
-將額外功能新增至 `Enable-PSRemoting` 以執行相同動作之前，安裝指令碼是短期解決方案。
-如需詳細資料，請參閱問題 [#1193](https://github.com/PowerShell/PowerShell/issues/1193)。
+PowerShell 安裝可以使用 `New-PSSession` 和 `Enter-PSSession` 建立遠端電腦的 PowerShell 工作階段。 若要啟用它來接受連入的 PowerShell 遠端連線，使用者必須建立 WinRM 遠端端點。 這是使用者執行 Install-PowerShellRemoting.ps1 建立 WinRM 端點的明確加入案例。 將額外功能新增至 `Enable-PSRemoting` 以執行相同動作之前，安裝指令碼是短期解決方案。 如需詳細資料，請參閱問題 [#1193](https://github.com/PowerShell/PowerShell/issues/1193)。
 
 ### <a name="script-actions"></a>指令碼動作
 
@@ -56,7 +51,8 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**注意：** 遠端註冊指令碼將重新啟動 WinRM，因此所有現有 PSRP 工作階段會在指令碼執行之後立即終止。 如果在遠端工作階段期間執行，這會終止連線。
+> [!NOTE]
+> 遠端註冊指令碼會重新啟動 WinRM。 所有現有的 PSRP 工作階段都會在執行指令碼之後立即終止。 若在遠端工作階段期間執行，指令碼會終止連線。
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>如何連線至新端點
 

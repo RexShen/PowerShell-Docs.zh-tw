@@ -2,12 +2,13 @@
 ms.date: 08/21/2020
 keywords: powershell,cmdlet
 title: 執行遠端命令
-ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+description: 說明使用 PowerShell 在遠端系統上執行命令的方法。
+ms.openlocfilehash: e9e07fec96cbd93d3bf06be2a1f98ec7aa7d8f19
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814730"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501349"
 ---
 # <a name="running-remote-commands"></a>執行遠端命令
 

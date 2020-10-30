@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用靜態類別和方法
-ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文說明如何辨識並使用 .NET 靜態類別的屬性與方法。
+ms.openlocfilehash: 2e83fe442f7b3fdf62ceaab587450251ac4e7958
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030743"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501247"
 ---
 # <a name="using-static-classes-and-methods"></a>使用靜態類別和方法
 
@@ -27,7 +28,7 @@ At line:1 char:11
 + New-Object  <<<< System.Math
 ```
 
-這些錯誤的發生原因是沒有方法可透過這些類別建立新的物件。 這些類別是未變更狀態之方法和屬性的參考程式庫。 您不需要建立它們，而只需要使用它們。 這類類別和方法稱為*靜態類別*，因為不會建立、破壞或變更它們。 為了讓這個概念更為清楚，我們將提供使用靜態類別的範例。
+這些錯誤的發生原因是沒有方法可透過這些類別建立新的物件。 這些類別是未變更狀態之方法和屬性的參考程式庫。 您不需要建立它們，而只需要使用它們。 這類類別和方法稱為 *靜態類別* ，因為不會建立、破壞或變更它們。 為了讓這個概念更為清楚，我們將提供使用靜態類別的範例。
 
 ## <a name="getting-environment-data-with-systemenvironment"></a>使用 System.Environment 取得環境資料
 
@@ -35,7 +36,7 @@ At line:1 char:11
 
 ### <a name="referring-to-the-static-systemenvironment-class"></a>參考靜態 System.Environment 類別
 
-使用方括弧括住類別名稱，即可參考靜態類別。 例如，在方括弧內輸入名稱，即可參考 **System.Environment**。 這麼做會顯示一些泛型類型資訊︰
+使用方括弧括住類別名稱，即可參考靜態類別。 例如，在方括弧內輸入名稱，即可參考 **System.Environment** 。 這麼做會顯示一些泛型類型資訊︰
 
 ```
 PS> [System.Environment]
@@ -46,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 如前所述，Windows PowerShell 會自動將 '**System.** ' 加到類型名稱的前面 (使用 **New-Object** 時)。 使用以方括弧括住的類型名稱時會發生相同的作業，因此您可以將 **\[System.Environment]** 指定為 **\[Environment]** 。
+> 如前所述，Windows PowerShell 會自動將 ' **System.** ' 加到類型名稱的前面 (使用 **New-Object** 時)。 使用以方括弧括住的類型名稱時會發生相同的作業，因此您可以將 **\[System.Environment]** 指定為 **\[Environment]** 。
 
 **System.Environment** 類別包含目前處理處序之運作環境的一般資訊 (在 Windows PowerShell 內運作時為 powershell.exe)。
 
-如果您輸入 **\[System.Environment] | Get-Member** 來嘗試檢視這個類別的詳細資訊，則物件類型會回報為 **System.RuntimeType**，而非 **System.Environment**：
+如果您輸入 **\[System.Environment] | Get-Member** 來嘗試檢視這個類別的詳細資訊，則物件類型會回報為 **System.RuntimeType** ，而非 **System.Environment** ：
 
 ```
 PS> [System.Environment] | Get-Member

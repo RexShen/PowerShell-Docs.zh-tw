@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 建立 .NET 和 COM 物件 New Object
-ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 為物件導向的指令碼語言，同時支援 .NET 與 COM 型物件。 本文說明如何建立這些物件並與之互動。
+ms.openlocfilehash: e6189ba465749dd045add7015fc82223c31c7e32
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325175"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500567"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>建立 .NET 和 COM 物件 (New-Object)
 
@@ -28,7 +29,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 ### <a name="using-constructors-with-new-object"></a>搭配使用建構函式和 New-Object
 
-若要參考特定事件記錄檔，您需要指定記錄檔的名稱。 **New-Object** 具有 **ArgumentList** 參數。 物件的特殊啟動方法會使用您以值傳遞給這個參數的引數。 該方法稱為*建構函式*，因為它可用來建構物件。 例如，若要取得應用程式記錄檔參考，您會將字串 'Application' 指定為引數︰
+若要參考特定事件記錄檔，您需要指定記錄檔的名稱。 **New-Object** 具有 **ArgumentList** 參數。 物件的特殊啟動方法會使用您以值傳遞給這個參數的引數。 該方法稱為 *建構函式* ，因為它可用來建構物件。 例如，若要取得應用程式記錄檔參考，您會將字串 'Application' 指定為引數︰
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
@@ -63,7 +64,7 @@ PS> $AppLog
 
 ### <a name="accessing-a-remote-event-log-with-new-object"></a>使用 New-Object 存取遠端事件記錄檔
 
-上一節所使用的命令是以本機電腦為目標；**Get-EventLog** Cmdlet 可以執行該作業。 若要存取遠端電腦上的應用程式記錄檔，您必須同時提供記錄檔名稱和電腦名稱 (或 IP 位址) 作為引數。
+上一節所使用的命令是以本機電腦為目標； **Get-EventLog** Cmdlet 可以執行該作業。 若要存取遠端電腦上的應用程式記錄檔，您必須同時提供記錄檔名稱和電腦名稱 (或 IP 位址) 作為引數。
 
 ```
 PS> $RemoteAppLog = New-Object -TypeName System.Diagnostics.EventLog Application,192.168.1.81
@@ -78,7 +79,7 @@ PS> $RemoteAppLog
 
 ### <a name="clearing-an-event-log-with-object-methods"></a>使用物件方法清除事件記錄檔
 
-物件通常具有可呼叫以執行工作的方法。 您可以使用 **Get-Member**，顯示與物件相關聯的方法。 下列命令和選取的輸出顯示 EventLog 類別的一些方法︰
+物件通常具有可呼叫以執行工作的方法。 您可以使用 **Get-Member** ，顯示與物件相關聯的方法。 下列命令和選取的輸出顯示 EventLog 類別的一些方法︰
 
 ```
 PS> $RemoteAppLog | Get-Member -MemberType Method
@@ -120,9 +121,9 @@ PS> $RemoteAppLog
 ## <a name="creating-com-objects-with-new-object"></a>使用 New-Object 建立 COM 物件
 您可以使用 **New-Object** 來處理元件物件模型 (COM) 元件。 元件範圍從 Windows Script Host (WSH) 隨附的各種程式庫，到安裝在大多數系統上的 ActiveX 應用程式 (例如 Internet Explorer)。
 
-**New-Object** 使用 .NET Framework 執行階段可呼叫包裝函式來建立 COM 物件，因此與呼叫 COM 物件時具有相同的 .NET Framework 限制。 若要建立 COM 物件，您需要指定 **ComObject** 參數，並提供所要使用之 COM 類別的程式設計識別碼 (或 *ProgID*)。 COM 使用限制及判斷系統上可用 ProgID 的完整探討不在本使用者指南的討論範圍內，但 WSH 等環境中的大部分已知物件都可以在 Windows PowerShell 中使用。
+**New-Object** 使用 .NET Framework 執行階段可呼叫包裝函式來建立 COM 物件，因此與呼叫 COM 物件時具有相同的 .NET Framework 限制。 若要建立 COM 物件，您需要指定 **ComObject** 參數，並提供所要使用之 COM 類別的程式設計識別碼 (或 *ProgID* )。 COM 使用限制及判斷系統上可用 ProgID 的完整探討不在本使用者指南的討論範圍內，但 WSH 等環境中的大部分已知物件都可以在 Windows PowerShell 中使用。
 
-您可以透過指定下列 ProgID 來建立 WSH 物件︰**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary** 和 **Scripting.FileSystemObject**。 下列命令會建立這些物件：
+您可以透過指定下列 ProgID 來建立 WSH 物件︰ **WScript.Shell** 、 **WScript.Network** 、 **Scripting.Dictionary** 和 **Scripting.FileSystemObject** 。 下列命令會建立這些物件：
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -155,7 +156,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get-Member** 具有選擇性 **InputObject** 參數，您可以改用此參數提供輸入而不是傳送到 **Get-Member**。 如果您改用命令 **Get-Member -InputObject $WshShell**，會得到如上所示的相同輸出。 如果您使用 **InputObject**，它會將其引數視為單一項目。 這表示如果您在變數中有數個物件，**Get-Member** 會將其視為物件的陣列。 例如：
+**Get-Member** 具有選擇性 **InputObject** 參數，您可以改用此參數提供輸入而不是傳送到 **Get-Member** 。 如果您改用命令 **Get-Member -InputObject $WshShell** ，會得到如上所示的相同輸出。 如果您使用 **InputObject** ，它會將其引數視為單一項目。 這表示如果您在變數中有數個物件， **Get-Member** 會將其視為物件的陣列。 例如：
 
 ```
 PS> $a = 1,2,"three"
@@ -167,7 +168,7 @@ Count              AliasProperty Count = Length
 ...
 ```
 
-**WScript.Shell CreateShortcut** 方法接受單一引數，也就是要建立的捷徑檔案路徑。 我們可以輸入桌面的完整路徑，但還有更簡單的方法。 桌面通常會以目前使用者的主資料夾內名為 [桌面] 的資料夾來表示。 Windows PowerShell 有一個包含此資料夾路徑的變數 **$Home**。 我們可以使用此變數指定主資料夾的路徑，然後加入 [桌面] 資料夾的名稱及要建立的捷徑名稱，請輸入︰
+**WScript.Shell CreateShortcut** 方法接受單一引數，也就是要建立的捷徑檔案路徑。 我們可以輸入桌面的完整路徑，但還有更簡單的方法。 桌面通常會以目前使用者的主資料夾內名為 [桌面] 的資料夾來表示。 Windows PowerShell 有一個包含此資料夾路徑的變數 **$Home** 。 我們可以使用此變數指定主資料夾的路徑，然後加入 [桌面] 資料夾的名稱及要建立的捷徑名稱，請輸入︰
 
 ```powershell
 $lnk = $WshShell.CreateShortcut("$Home\Desktop\PSHome.lnk")
@@ -182,7 +183,7 @@ PS> '$Home\Desktop\PSHome.lnk'
 $Home\Desktop\PSHome.lnk
 ```
 
-我們現在有一個名為 **$lnk** 的變數，其中包含新的捷徑參考。 如果您想要查看其成員，您可以將其傳送到 **Get-Member**。 以下的輸出顯示完成建立捷徑所需使用的成員︰
+我們現在有一個名為 **$lnk** 的變數，其中包含新的捷徑參考。 如果您想要查看其成員，您可以將其傳送到 **Get-Member** 。 以下的輸出顯示完成建立捷徑所需使用的成員︰
 
 ```
 PS> $lnk | Get-Member
@@ -195,7 +196,7 @@ Save             Method       void Save ()
 TargetPath       Property     string TargetPath () {get} {set}
 ```
 
-我們需要指定 Windows PowerShell 的應用程式資料夾 **TargetPath**，然後再呼叫 **Save** 方法來儲存捷徑 **$lnk**。 Windows PowerShell 應用程式資料夾路徑儲存在變數 **$PSHome** 中，因此我們可以輸入下列命令來執行此作業︰
+我們需要指定 Windows PowerShell 的應用程式資料夾 **TargetPath** ，然後再呼叫 **Save** 方法來儲存捷徑 **$lnk** 。 Windows PowerShell 應用程式資料夾路徑儲存在變數 **$PSHome** 中，因此我們可以輸入下列命令來執行此作業︰
 
 ```powershell
 $lnk.TargetPath = $PSHome
@@ -215,9 +216,9 @@ $ie = New-Object -ComObject InternetExplorer.Application
 此命令會啟動但不會顯示 Internet Explorer。 如果您輸入 Get-Process，您可以看到名為 iexplore 的處理序正在執行。 事實上，如果您結束 Windows PowerShell，該處理序會繼續執行。 您必須重新啟動電腦或使用工作管理員等工具，才能結束 iexplore 處理序。
 
 > [!NOTE]
-> 以個別處理序啟動的 COM 物件通常稱為*ActiveX 可執行檔*，啟動時不一定會顯示使用者介面視窗。 像是 Internet Explorer，如果建立但未顯示視窗，通常會將焦點移至 Windows 桌面，而您必須顯示視窗才能與其互動。
+> 以個別處理序啟動的 COM 物件通常稱為 *ActiveX 可執行檔* ，啟動時不一定會顯示使用者介面視窗。 像是 Internet Explorer，如果建立但未顯示視窗，通常會將焦點移至 Windows 桌面，而您必須顯示視窗才能與其互動。
 
-您可以輸入 **$ie | Get-Member**，以檢視 Internet Explorer 的內容和方法。 若要看到 Internet Explorer 視窗，請輸入下列命令將 Visible 屬性設定為 $true︰
+您可以輸入 **$ie | Get-Member** ，以檢視 Internet Explorer 的內容和方法。 若要看到 Internet Explorer 視窗，請輸入下列命令將 Visible 屬性設定為 $true︰
 
 ```powershell
 $ie.Visible = $true
@@ -263,7 +264,7 @@ Remove-Variable ie
 
 ## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>取得 .NET Framework 包裝之 COM 物件的相關警告
 
-在某些情況下，COM 物件可能會有相關聯的 .NET Framework *執行階段可呼叫包裝函式* (或 RCW)，**New-Object** 將會使用此包裝函式。 因為 RCW 的行為可能與一般 COM 物件的行為不同，所以 **New-Object** 提供了 **Strict** 參數，以警告您 RCW 的存取。 如果您指定 **Strict** 參數，然後建立使用 RCW 的 COM 物件，您會收到警告訊息︰
+在某些情況下，COM 物件可能會有相關聯的 .NET Framework *執行階段可呼叫包裝函式* (或 RCW)， **New-Object** 將會使用此包裝函式。 因為 RCW 的行為可能與一般 COM 物件的行為不同，所以 **New-Object** 提供了 **Strict** 參數，以警告您 RCW 的存取。 如果您指定 **Strict** 參數，然後建立使用 RCW 的 COM 物件，您會收到警告訊息︰
 
 ```
 PS> $xl = New-Object -ComObject Excel.Application -Strict

@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,cmdlet
 title: 處理軟體安裝
-ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文說明如何使用 WMI 來管理安裝於 Windows 中的軟體。
+ms.openlocfilehash: 3cf8e3c58e9f2814e2551b3602bd7b47b375aed8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996115"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500873"
 ---
 # <a name="working-with-software-installations"></a>處理軟體安裝
 
@@ -75,7 +76,7 @@ CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
 CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ```
 
-或者，您可以使用 `Get-CimInstance`**Filter** 參數，以只選取 Microsoft .NET 2.0 執行階段。 **Filter** 參數的值使用 WMI 查詢語言 (WQL) 語法，而不是 Windows PowerShell 語法。 例如：
+或者，您可以使用 `Get-CimInstance` **Filter** 參數，以只選取 Microsoft .NET 2.0 執行階段。 **Filter** 參數的值使用 WMI 查詢語言 (WQL) 語法，而不是 Windows PowerShell 語法。 例如：
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.5 (x64)'" |
@@ -103,7 +104,7 @@ IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 
 因為大部分的標準應用程式會向 Windows 登錄解除安裝程式，所以我們可以透過在 Windows 登錄中尋找這些應用程式，以在本機處理它們。 沒有方式保證能找出系統上的每個應用程式。 不過，在下列登錄機碼中找出在 [新增或移除程式]  中顯示清單的所有程式是可能的：
 
-第 1 課：建立 Windows Azure 儲存體物件`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`。
+`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
 
 我們可以檢查此機碼來尋找應用程式。 為了讓您更輕鬆地檢視 Uninstall 機碼，我們可以將 PowerShell 磁碟機對應至此登錄位置：
 
@@ -184,7 +185,7 @@ BB71E00}                       Comments            :
 
 ## <a name="installing-applications"></a>安裝應用程式
 
-您可以在遠端或本機使用 **Win32_Product** 類別來安裝 Windows Installer 封裝。
+您可以在遠端或本機使用 **Win32_Product** 類別來安裝 Windows Installer 套件。
 
 > [!NOTE]
 > 若要安裝應用程式，您必須使用 [以系統管理員身分執行] 選項來啟動 PowerShell。
@@ -199,7 +200,7 @@ Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{Packa
 
 ## <a name="removing-applications"></a>移除應用程式
 
-使用 PowerShell 移除 Windows Installer 套件的方法，與安裝套件的方法大致相同。 以下是範例，其中根據封裝的名稱選取要解除安裝的封裝；在某些情況下，使用 **IdentifyingNumber** 來篩選可能會比較容易：
+使用 PowerShell 移除 Windows Installer 套件的方法，與安裝套件的方法大致相同。 以下是範例，其中根據套件的名稱選取要解除安裝的套件；在某些情況下，使用 **IdentifyingNumber** 來篩選可能會比較容易：
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='ILMerge'" | Invoke-CimMethod -MethodName Uninstall

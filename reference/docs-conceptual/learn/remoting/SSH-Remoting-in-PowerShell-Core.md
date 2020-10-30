@@ -1,13 +1,13 @@
 ---
 title: 透過 SSH 的 PowerShell 遠端處理
-description: 使用 SSH 在 PowerShell Core 中遠端
-ms.date: 07/23/2020
-ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
-ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
+ms.date: 10/19/2020
+description: 說明如何為 PowerShell 遠端設定 SSH 通訊協定。
+ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133464"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501332"
 ---
 # <a name="powershell-remoting-over-ssh"></a>透過 SSH 的 PowerShell 遠端處理
 
@@ -25,15 +25,15 @@ SSH 遠端功能可讓您在 Windows 與 Linux 電腦之間執行基本 PowerShe
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-若要建立遠端工作階段，請使用 **HostName** 參數來指定目標電腦，並使用 **UserName** 來提供使用者名稱。 以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。 您也可以搭配 **KeyFilePath** 參數使用私密金鑰檔案來設定 SSH 金鑰驗證。
+若要建立遠端工作階段，請使用 **HostName** 參數來指定目標電腦，並使用 **UserName** 來提供使用者名稱。 以互動方式執行 Cmdlet 時，系統會提示您輸入密碼。 您也可以搭配 **KeyFilePath** 參數使用私密金鑰檔案來設定 SSH 金鑰驗證。 建立 SSH 驗證金鑰的步驟會因平台而有所不同。
 
 ## <a name="general-setup-information"></a>一般安裝資訊
 
-PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 與 Windows Server 2019 中使用。 如需詳細資訊，請參閱[使用 OpenSSH 管理 Windows](/windows-server/administration/openssh/openssh_overview)。 針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 而且，您也必須設定啟用**密碼**或**金鑰型**的驗證。
+PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同時安裝 SSH 用戶端 (`ssh.exe`) 與伺服器 (`sshd.exe`)，讓您可從遠端往返電腦。 適用於 Windows 的 OpenSSH 現在已可在 Windows 10 組建 1809 與 Windows Server 2019 中使用。 如需詳細資訊，請參閱[使用 OpenSSH 管理 Windows](/windows-server/administration/openssh/openssh_overview)。 針對 Linux，安裝您平台適用的 SSH (包括 sshd 伺服器)。 您也需要從 GitHub 安裝 PowerShell 來取得 SSH 遠端功能。 SSH 伺服器必須設定為建立 SSH 子系統，以便在遠端電腦上裝載 PowerShell 處理序。 而且，您也必須設定啟用 **密碼** 或 **金鑰型** 的驗證。
 
 ## <a name="set-up-on-a-windows-computer"></a>在 Windows 電腦上設定
 
-1. 安裝最新版的 PowerShell，請參閱[在 Windows 上安裝 PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)。
+1. 安裝最新版的 PowerShell。 如需詳細資訊，請參閱[在 Windows 上安裝 PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)。
 
    您可以列出 `New-PSSession` 參數集來確認 PowerShell 具有 SSH 遠端支援。 您會注意到以 **SSH** 開頭的參數集名稱。 這些參數集包括 **SSH** 參數。
 
@@ -119,6 +119,14 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    PasswordAuthentication yes
    ```
 
+   選擇性啟用金鑰驗證：
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   如需在 Ubuntu 上建立 SSH 金鑰的相關詳細資訊，請參閱 [ssh-keygen](http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html) 的手冊頁。
+
    新增 PowerShell 子系統項目：
 
    ```
@@ -134,15 +142,15 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
    PubkeyAuthentication yes
    ```
 
-1. 重新啟動 **sshd** 服務。
+1. 重新啟動 **ssh** 服務。
 
    ```bash
-   sudo service sshd restart
+   sudo service ssh restart
    ```
 
 ## <a name="set-up-on-a-macos-computer"></a>在 macOS 電腦上設定
 
-1. 安裝最新版的 PowerShell，請參閱[在 macOS 上安裝 PowerShell Core](../../install/installing-powershell-core-on-macos.md)。
+1. 安裝最新版的 PowerShell。 如需詳細資訊，請參閱[在 macOS 上安裝 PowerShell Core](../../install/installing-powershell-core-on-macos.md)。
 
    確定已遵循下列步驟來啟用 SSH 遠端：
 
@@ -153,7 +161,7 @@ PowerShell 6 或更新版本，且必須在所有電腦上安裝 SSH。 請同�
 
 1. 編輯 `/private/etc/ssh/sshd_config` 位置中的 `sshd_config` 檔案。
 
-   開啟文字編輯器，例如 **nano**：
+   開啟文字編輯器，例如 **nano** ：
 
    ```bash
    sudo nano /private/etc/ssh/sshd_config

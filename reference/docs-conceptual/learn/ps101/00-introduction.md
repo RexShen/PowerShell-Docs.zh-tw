@@ -4,12 +4,13 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: c48340b2fa6141d207c3f7948063f81971183780
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: Mike F. Robbins 所撰寫的 PowerShell 101 書籍簡介。
+ms.openlocfilehash: d85590c2ef34c4e8b5cb7f2707bd9d6dd9b84b89
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438219"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501502"
 ---
 # <a name="introduction"></a>簡介
 
@@ -38,7 +39,7 @@ ms.locfileid: "84438219"
 
 ## <a name="about-the-author"></a>關於作者
 
-Mike F Robbins 是前 Microsoft MVP、_Windows PowerShell TFM 第 4 版_的合著者，以及 _PowerShell 深層探討_一書的共同作者。 Mike 一直是 PowerShell 社群的強力支持者，目前是 Microsoft [Azure PowerShell][] 的首席作者。 他在 [mikefrobbins.com][] 發表部落格，並可在 twitter [@mikefrobbins][] 找到他。
+Mike F Robbins 是前 Microsoft MVP、 _Windows PowerShell TFM 第 4 版_ 的合著者，以及 _PowerShell 深層探討_ 一書的共同作者。 Mike 一直是 PowerShell 社群的強力支持者，目前是 Microsoft [Azure PowerShell][] 的首席作者。 他在 [mikefrobbins.com][] 發表部落格，並可在 twitter [@mikefrobbins][] 找到他。
 
 ## <a name="lab-environment"></a>實驗室環境
 

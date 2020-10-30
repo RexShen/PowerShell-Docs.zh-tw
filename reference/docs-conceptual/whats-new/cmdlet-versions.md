@@ -2,16 +2,17 @@
 ms.date: 02/03/2020
 keywords: powershell, core
 title: 模組與 Cmdlet 的發行歷程記錄
-ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
-ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
+description: 本文列出內含於各種 PowerShell 版本的模組與 Cmdlet。
+ms.openlocfilehash: cefd84c5d3785d19670ee649f5af951d5975912c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83751334"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501655"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>模組與 Cmdlet 的發行歷程記錄
 
-此文章列出各種 PowerShell 版本隨附的模組與 Cmdlet。 這是在版本資訊中找到的資訊摘要。 您可以在版本資訊中找到更多詳細資訊：
+本文列出內含於各種 PowerShell 版本的模組與 Cmdlet。 這是在版本資訊中找到的資訊摘要。 您可以在版本資訊中找到更多詳細資訊：
 
 - [PowerShell Core 6.2 的新功能](what-s-new-in-powershell-core-62.md)
 - [PowerShell Core 6.1 的新功能](what-s-new-in-powershell-core-61.md)
@@ -312,7 +313,7 @@ ms.locfileid: "83751334"
 | Get-AuthenticodeSignature | &check; | &check; | &check; | &check; | 僅限 Windows                            |
 | Get-CmsMessage            | &check; | &check; | &check; | &check; | 7\.1 中新增的 Linux/macOS 支援    |
 | Get-Credential            | &check; | &check; | &check; | &check; |                                         |
-| Get-executionpolicy       | &check; | &check; | &check; | &check; | 在 Linux/macOS 上傳回**未受限制** |
+| Get-executionpolicy       | &check; | &check; | &check; | &check; | 在 Linux/macOS 上傳回 **未受限制** |
 | Get-PfxCertificate        | &check; | &check; | &check; | &check; |                                         |
 | New-FileCatalog           | &check; | &check; | &check; | &check; | 僅限 Windows                            |
 | Protect-CmsMessage        | &check; | &check; | &check; | &check; | 7\.1 中新增的 Linux/macOS 支援    |

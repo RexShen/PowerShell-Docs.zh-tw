@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Out Cmdlet 重新導向資料
-ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文說明如何使用在 PowerShell 中管理輸出的 Cmdlet。
+ms.openlocfilehash: 3a9e3b1ac06f5be4e6f3bbc52a15c4afb5b12cef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030072"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500210"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>使用 Out-* Cmdlet 重新導向資料
 
@@ -15,7 +16,7 @@ Windows PowerShell 提供幾個可讓您直接控制資料輸出的 Cmdlet。 �
 
 首先，它們通常會將資料轉換成某種文字格式。 這樣做是因為它們會將資料輸出至需要文字輸入的系統元件， 所以必須以文字表示物件。 因此，文字會格式化為您在 Windows PowerShell 主控台視窗中看到的樣子。
 
-其次，這些 Cmdlet 使用 Windows PowerShell 動詞 **Out**，因為它們會將資訊從 Windows PowerShell 送出至其他位置。 **Out-Host** Cmdlet 也不例外︰主機視窗顯示會在 Windows PowerShell 之外。 這點很重要，因為當資料從 Windows PowerShell 送出時，實際上會遭到移除。 如果您嘗試建立管線將資料分頁至主機視窗，然後嘗試將其格式化為清單，就會看到這種情況，如下所示︰
+其次，這些 Cmdlet 使用 Windows PowerShell 動詞 **Out** ，因為它們會將資訊從 Windows PowerShell 送出至其他位置。 **Out-Host** Cmdlet 也不例外︰主機視窗顯示會在 Windows PowerShell 之外。 這點很重要，因為當資料從 Windows PowerShell 送出時，實際上會遭到移除。 如果您嘗試建立管線將資料分頁至主機視窗，然後嘗試將其格式化為清單，就會看到這種情況，如下所示︰
 
 ```powershell
 Get-Process | Out-Host -Paging | Format-List
@@ -75,7 +76,7 @@ Name    : explorer
 Get-Command | Out-Host -Paging
 ```
 
-您也可以使用 **more** 函式將資料分頁。 在 Windows PowerShell 中，**more** 是呼叫 **Out-Host -Paging** 的函式。 下列命令示範如何使用 **more** 函式將 Get-Command 的輸出分頁︰
+您也可以使用 **more** 函式將資料分頁。 在 Windows PowerShell 中， **more** 是呼叫 **Out-Host -Paging** 的函式。 下列命令示範如何使用 **more** 函式將 Get-Command 的輸出分頁︰
 
 ```powershell
 Get-Command | more
@@ -112,7 +113,7 @@ At line:1 char:12
 
 ## <a name="printing-data-out-printer"></a>列印資料 (Out-Printer)
 
-您可以使用 **Out-Printer** Cmdlet 列印資料。 如果您未提供印表機名稱，**Out-Printer** Cmdlet 會使用預設印表機。 您可以使用任何 Windows 印表機，方法是指定其顯示名稱。 您不需要任何印表機連接埠對應，或甚至是真正的實體印表機。 例如，如果您已安裝 Microsoft Office Document Imaging 工具，您可以輸入下列命令將資料傳送至影像檔︰
+您可以使用 **Out-Printer** Cmdlet 列印資料。 如果您未提供印表機名稱， **Out-Printer** Cmdlet 會使用預設印表機。 您可以使用任何 Windows 印表機，方法是指定其顯示名稱。 您不需要任何印表機連接埠對應，或甚至是真正的實體印表機。 例如，如果您已安裝 Microsoft Office Document Imaging 工具，您可以輸入下列命令將資料傳送至影像檔︰
 
 ```powershell
 Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Writer'
@@ -120,7 +121,7 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 
 ## <a name="saving-data-out-file"></a>儲存資料 (Out-File)
 
-您可以使用 **Out-File** Cmdlet 將輸出傳送至檔案，而不是主控台視窗。 下列命令列會將處理程序清單傳送至檔案 **C:\\temp\\processlist.txt**：
+您可以使用 **Out-File** Cmdlet 將輸出傳送至檔案，而不是主控台視窗。 下列命令列會將處理程序清單傳送至檔案 **C:\\temp\\processlist.txt** ：
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
@@ -150,10 +151,10 @@ Cmdlet          Add-History                     Add-History [[-InputObject] ...
 ...
 ```
 
-若要取得不會強制行換行以符合螢幕寬度的輸出，您可以使用**Width** 參數指定行的寬度。 因為 **Width** 是 32 位元整數參數，所有可以有最大值 2147483647。 請輸入下列命令將行的寬度設定為此最大值︰
+若要取得不會強制行換行以符合螢幕寬度的輸出，您可以使用 **Width** 參數指定行的寬度。 因為 **Width** 是 32 位元整數參數，所有可以有最大值 2147483647。 請輸入下列命令將行的寬度設定為此最大值︰
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
-當您想要以輸出主控台上的顯示格式來儲存輸出時，**Out-File** Cmdlet 會很有用。 如需更細微地控制輸出格式，您需要更進階的工具。 我們將在下一章探討這些工具，以及有關物件操作的一些詳細資訊。
+當您想要以輸出主控台上的顯示格式來儲存輸出時， **Out-File** Cmdlet 會很有用。 如需更細微地控制輸出格式，您需要更進階的工具。 我們將在下一章探討這些工具，以及有關物件操作的一些詳細資訊。

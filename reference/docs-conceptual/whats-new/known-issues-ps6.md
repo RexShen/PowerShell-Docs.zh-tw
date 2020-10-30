@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: powershell, core
 title: PowerShell Core 6.0 的已知問題
-ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此為 PowerShell 6 的已知問題或限制摘要
+ms.openlocfilehash: 528315eff660167513045542227dce335355a7b8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996109"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501672"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell Core 6.0 的已知問題
 
@@ -15,7 +16,7 @@ ms.locfileid: "76996109"
 
 Linux 和 macOS 上的 Alpha 版 PowerShell 大部分功能都可運作，但有一些重大的限制和可用性問題。 Linux 和 macOS 上的 Beta 版 PowerShell 比 Alpha 版功能完整且穩定，但仍可能缺少某個功能集，而且可能包含錯誤 (bug)。 在某些情況下，這些問題只是尚未修正的錯誤 (bug)。 而針對其他情況 (像是 ls、cp 等的預設別名情況)，我們則正在向社群尋求有關我們所做選擇的意見反應。
 
-注意:由於許多基礎子系統都很相似，因此 Linux 和 macOS 上的 PowerShell 在功能和錯誤 (Bug) 方面都趨向於擁有相同的成熟度。 除了下列所述之外，此節中的問題都同時適用於這兩種作業系統。
+注意：由於許多基礎子系統都很相似，因此 Linux 和 macOS 上的 PowerShell 在功能和錯誤 (bug) 方面都趨向於擁有相同的成熟度。 除了下列所述之外，此節中的問題都同時適用於這兩種作業系統。
 
 ### <a name="case-sensitivity-in-powershell"></a>PowerShell 中的大小寫之分
 
@@ -102,12 +103,12 @@ Linux/macOS 上的 PowerShell 目前不支援可建立有限系統管理 (JEA) �
 
 下表列出已知在 Linux/macOS 上的 PowerShell 中無法運作的命令。
 
-|命令|作業狀態|注意|
+|命令|作業狀態|備註|
 |--------|-----------------|-----|
-|`Get-Service`、`New-Service`、`Restart-Service`、`Resume-Service`、`Set-Service`、`Start-Service`、`Stop-Service`、`Suspend-Service`|無法使用。|無法辨識這些命令。 在未來的版本中應該會修正此問題。|
-|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|無法使用。|無法辨識這些命令。 在未來的版本中應該會修正此問題。|
+|`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|無法使用。|無法辨識這些命令。 在未來的版本中應該會修正此問題。|
+|`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|不適用。|無法辨識這些命令。 在未來的版本中應該會修正此問題。|
 |`Wait-Process`|可以使用，但無法正確運作。 |例如 `Start-Process gvim -PassThru | Wait-Process` 沒有作用；無法等候處理序。|
-|`Connect-PSSession`、`Disable-PSRemoting`、`Disable-PSSessionConfiguration`、`Disconnect-PSSession`、`Enable-PSRemoting`、`Enable-PSSessionConfiguration`、`Get-PSSessionCapability`、`Get-PSSessionConfiguration`、`New-PSSessionConfigurationFile`、`Receive-PSSession`、`Register-PSSessionConfiguration`、`Set-PSSessionConfiguration`、`Test-PSSessionConfigurationFile`、`Unregister-PSSessionConfiguration`|無法使用。|無法辨識這些命令。 在未來的版本中應該會修正此問題。|
+|`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|無法使用。|無法辨識這些命令。 在未來的版本中應該會修正此問題。|
 |`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|可以使用，但沒有任何可用的事件來源。|PowerShell 事件處理命令存在，但與這些命令搭配使用的大多數事件來源 (例如 System.Timers.Timer) 在 Linux 上都未提供，使得這些命令在 Alpha 版中毫無用處。|
 |`Set-ExecutionPolicy`|可以使用，但沒有作用。|會傳回一則訊息，指出在此平台上並不支援。 執行原則是一個以使用者為焦點的「安全帶」，可協助防止使用者犯下重大錯誤。 它不是一個安全性界限。|
 |`New-PSSessionOption`, `New-PSTransportOption`|可以使用，但 `New-PSSession` 沒有作用。|`New-PSSessionOption` 和 `New-PSTransportOption` 目前尚未通過驗證來運作以使 `New-PSSession` 產生作用。|

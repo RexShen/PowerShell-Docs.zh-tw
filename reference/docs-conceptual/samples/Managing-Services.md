@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 管理服務
-ms.openlocfilehash: 7a238a3fea857c5dac1c12ca0d0371a49e6bf58c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 提供數個 Cmdlet，可協助管理本機和遠端電腦上的服務。
+ms.openlocfilehash: 003803cdaa37e51b3788f3f897cbec7d6e243ca8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870518"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500346"
 ---
 # <a name="managing-services"></a>管理服務
 

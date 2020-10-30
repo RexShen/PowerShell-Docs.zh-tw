@@ -2,12 +2,13 @@
 ms.date: 05/22/2020
 keywords: powershell,cmdlet
 title: 什麼是 PowerShell？
-ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
-ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
+description: 本文介紹 PowerShell 指令碼環境及其功能。
+ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83868474"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500771"
 ---
 # <a name="what-is-powershell"></a>什麼是 PowerShell？
 
@@ -44,7 +45,7 @@ PowerShell 是跨平台的工作自動化及設定管理架構，由命令列殼
 
 `cmd.exe` 之類的介面無法讓您直接擴充內建的命令集。 您可以建立外部命令列工具在 `cmd.exe` 中執行。 但這些外部工具不會提供任何服務，例如說明整合。 `cmd.exe` 自己不會知道這些外部工具是有效的命令。
 
-PowerShell 中的命令稱為 _Cmdlet_。 您可以個別使用每個 Cmdlet，但合併使用來執行複雜的工作時，更見其功效。 如同許多殼層，PowerShell 可讓您存取電腦上的檔案系統。 PowerShell「提供者」可讓您像存取檔案系統般容易地存取其他資料存放區 (如登錄及憑證存放區)。
+PowerShell 中的命令稱為 _Cmdlet_ 。 您可以個別使用每個 Cmdlet，但合併使用來執行複雜的工作時，更見其功效。 如同許多殼層，PowerShell 可讓您存取電腦上的檔案系統。 PowerShell「提供者」可讓您像存取檔案系統般容易地存取其他資料存放區 (如登錄及憑證存放區)。
 
 您可以使用經過編譯的程式碼或指令碼，建立自己的 Cmdlet 與函式模組。 模組可將 Cmdlet 與提供者新增到殼層。 PowerShell 也支援類似於 UNIX 殼層指令碼及 `cmd.exe` 批次檔案的指令碼。
 
@@ -149,7 +150,7 @@ ProviderPath Property   string ProviderPath {get;}
 
 ## <a name="next-steps"></a>後續步驟
 
-若要深入了解 PowerShell，請參閱此網站的＜**了解 PowerShell**＞一節。
+若要深入了解 PowerShell，請參閱此網站的＜ **了解 PowerShell** ＞一節。
 
 <!-- link references -->
 

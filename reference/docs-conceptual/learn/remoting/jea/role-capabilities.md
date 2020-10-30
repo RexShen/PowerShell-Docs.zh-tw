@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: jea,powershell,安全性
 title: JEA 角色功能
-ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 角色功能是具有 .psrc 副檔名的 PowerShell 資料檔案，列出可供連線使用者使用的所有 Cmdlet、函數、提供者，以及外部程式。
+ms.openlocfilehash: 233d9081f4a8f977f0959addb5573c4566f885d0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402395"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499989"
 ---
 # <a name="jea-role-capabilities"></a>JEA 角色功能
 
@@ -19,11 +20,11 @@ ms.locfileid: "79402395"
 
 您進行此處理程序的方式，取決於您的組織和目標。 下列祕訣可協助確保您採用正確的方法。
 
-1. **識別**使用者用來完成工作的命令。 這可能需要調查 IT 人員、檢查自動化指令碼，或分析 PowerShell 工作階段文字記錄和記錄檔。
-2. 可能的話，將命令列工具的使用**更新**為 PowerShell 對等用法，以得到最佳的稽核和 JEA 自訂體驗。 外部程式無法像原生 PowerShell Cmdlet 和 JEA 函式那樣精細地限制。
+1. **識別** 使用者用來完成工作的命令。 這可能需要調查 IT 人員、檢查自動化指令碼，或分析 PowerShell 工作階段文字記錄和記錄檔。
+2. 可能的話，將命令列工具的使用 **更新** 為 PowerShell 對等用法，以得到最佳的稽核和 JEA 自訂體驗。 外部程式無法像原生 PowerShell Cmdlet 和 JEA 函式那樣精細地限制。
 3. **限制** Cmdlet 的範圍，只允許特定的參數或參數值。 如果使用者只應管理部分系統，則這點特別重要。
-4. **建立**自訂函式來取代複雜命令或 JEA 中難以限制的命令。 包裝複雜命令或套用額外驗證邏輯的簡單函式，可以提供系統管理員更多的控制，以及使用者的簡便性。
-5. **測試**使用者或自動化服務可允許命令的範圍清單，並視需要調整。
+4. **建立** 自訂函式來取代複雜命令或 JEA 中難以限制的命令。 包裝複雜命令或套用額外驗證邏輯的簡單函式，可以提供系統管理員更多的控制，以及使用者的簡便性。
+5. **測試** 使用者或自動化服務可允許命令的範圍清單，並視需要調整。
 
 ### <a name="examples-of-potentially-dangerous-commands"></a>有潛在危險的命令範例
 
@@ -41,7 +42,7 @@ ms.locfileid: "79402395"
 
 ## <a name="create-a-role-capability-file"></a>建立角色功能檔案
 
-您可以使用 [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile?view=powershell-6) Cmdlet 建立新的 PowerShell 角色功能檔案。
+您可以使用 [New-PSRoleCapabilityFile](/powershell/module/microsoft.powershell.core/new-psrolecapabilityfile) Cmdlet 建立新的 PowerShell 角色功能檔案。
 
 ```powershell
 New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
@@ -92,9 +93,9 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 
 您無法將 **ValidatePattern** 和 **ValidateSet** 同時套用至相同的 Cmdlet 或函式。
 
-如果您這樣做，**ValidatePattern** 會覆寫 **ValidateSet**。
+如果您這樣做， **ValidatePattern** 會覆寫 **ValidateSet** 。
 
-如需 **ValidatePattern** 的詳細資訊，請參閱[這篇 *Hey, Scripting Guy!* 文章](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 規則運算式](/powershell/module/microsoft.powershell.core/about/about_regular_expressions)參考內容。
+如需 **ValidatePattern** 的詳細資訊，請參閱 [這篇 *Hey, Scripting Guy!* 文章](https://devblogs.microsoft.com/scripting/validate-powershell-parameters-before-running-the-script/)和 [PowerShell 規則運算式](/powershell/module/microsoft.powershell.core/about/about_regular_expressions)參考內容。
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>允許外部命令及 PowerShell 指令碼
 
@@ -181,7 +182,7 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 如需 PowerShell 模組的詳細資訊，請參閱[了解 PowerShell 模組](/powershell/scripting/developer/windows-powershell)。
 
-從 PowerShell 6 開始，**RoleDefinitions** 屬性已新增至工作階段設定檔。 此屬性可讓您為角色定義指定角色設定檔的位置。 請查看 [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile) 中的範例。
+從 PowerShell 6 開始， **RoleDefinitions** 屬性已新增至工作階段設定檔。 此屬性可讓您為角色定義指定角色設定檔的位置。 請查看 [New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile) 中的範例。
 
 ## <a name="updating-role-capabilities"></a>更新角色功能
 
@@ -247,6 +248,6 @@ $mergedAandB = @{
 請小心確保來自一個角色功能之提供者組合集和來自另一個角色功能的 Cmdlet/函式/命令不會允許使用者意外存取系統資源。
 例如，如果一個角色允許 `Remove-Item` Cmdlet，另一個允許 `FileSystem` 提供者，便會有 JEA 使用者刪除您電腦上任意檔案的風險。 如需識別使用者有效權限的詳細資訊，請參閱[稽核 JEA](audit-and-report.md) 一文。
 
-## <a name="next-steps"></a>後續步驟
+## <a name="next-steps"></a>下一步
 
 [建立工作階段設定檔](session-configurations.md)
