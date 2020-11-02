@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC WindowsFeature 資源
-ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsFeature 資源
+ms.openlocfilehash: 0089e1d2a045e9398aa53a3cedc3f64285c7cd58
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464106"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142985"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsFeature** 資源提供一個機制，確保可在目標節點上新增或移除角色和功能。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -44,7 +47,7 @@ WindowsFeature [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |表示角色或功能是否新增。 若要確保新增角色或功能，請將此屬性設定為 **Present**。 若要確保移除角色或功能，請將此屬性設定為 **Absent**。 預設值為 **Present**。 |
+|Ensure |表示角色或功能是否新增。 若要確保新增角色或功能，請將此屬性設定為 **Present** 。 若要確保移除角色或功能，請將此屬性設定為 **Absent** 。 預設值為 **Present** 。 |
 |PsDscRunAsCredential |設定用於執行整個資源的認證。 |
 
 > [!NOTE]

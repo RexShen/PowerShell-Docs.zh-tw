@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC 使用者資源
-ms.openlocfilehash: 340fce45a2074930ae14ca1aaeef7eff78531916
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC 使用者資源
+ms.openlocfilehash: b14f8d434ef3e1eb220fe7b0b18a011014c9ae6c
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463766"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142595"
 ---
 # <a name="dsc-user-resource"></a>DSC 使用者資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **User** 資源，會提供在目標節點管理本機使用者帳戶的機制。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -52,7 +55,7 @@ User [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |表示帳戶是否存在。 將此屬性設定為 **Present** 以確保帳戶存在，而設定為 **Absent** 可確保帳戶不存在。 預設值為 **Present**。 |
+|Ensure |表示帳戶是否存在。 將此屬性設定為 **Present** 以確保帳戶存在，而設定為 **Absent** 可確保帳戶不存在。 預設值為 **Present** 。 |
 |PsDscRunAsCredential |設定用於執行整個資源的認證。 |
 
 > [!NOTE]

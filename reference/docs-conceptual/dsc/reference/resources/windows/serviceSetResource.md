@@ -1,21 +1,24 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC ServiceSet 資源
-ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC ServiceSet 資源
+ms.openlocfilehash: bcb8382440d80c37179cdc1d1e17376b2511c3f3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464395"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142951"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
-Windows PowerShell 預期狀態設定 (DSC) 的 **ServiceSet** 資源提供了管理目標節點服務的機制。 此資源是為 **Name** 屬性中所指定每項服務呼叫 [Service 資源](serviceResource.md)的[複合資源](../../../resources/authoringResourceComposite.md)。
+Windows PowerShell 預期狀態設定 (DSC) 的 **ServiceSet** 資源提供了管理目標節點服務的機制。 此資源是為 **Name** 屬性中所指定每項服務呼叫 [Service 資源](serviceResource.md)的 [複合資源](../../../resources/authoringResourceComposite.md)。
 
 當您想要將多項服務設定成相同的狀態，請使用此資源。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -38,9 +41,9 @@ ServiceSet [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |名稱 |表示服務名稱。 請注意，有時候和顯示名稱不同。 您可以使用 `Get-Service` Cmdlet 取得服務清單及其目前狀態。 |
-|StartupType |表示服務的啟動類型。 這個屬性所允許的值為：**Automatic**、**Disabled** 和 **Manual**。 |
-|BuiltInAccount |表示用於服務的登入帳戶。 這個屬性所允許的值為：**LocalService**、**LocalSystem** 和 **NetworkService**。 |
-|State |表示您要確保的服務狀態：**Stopped** 或 **Running**。 |
+|StartupType |表示服務的啟動類型。 這個屬性所允許的值為： **Automatic** 、 **Disabled** 和 **Manual** 。 |
+|BuiltInAccount |表示用於服務的登入帳戶。 這個屬性所允許的值為： **LocalService** 、 **LocalSystem** 和 **NetworkService** 。 |
+|State |表示您要確保的服務狀態： **Stopped** 或 **Running** 。 |
 |認證 |表示執行服務資源的帳戶認證。 這個屬性與 **BuiltinAccount** 屬性不能同時使用。 |
 
 ## <a name="common-properties"></a>通用屬性
@@ -48,7 +51,7 @@ ServiceSet [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |表示系統上是否有服務。 請將此屬性設為 **Absent** 以確保服務不存在。 屬性設定為 **Present**，可確保目標服務存在。 預設值為 **Present**。 |
+|Ensure |表示系統上是否有服務。 請將此屬性設為 **Absent** 以確保服務不存在。 屬性設定為 **Present** ，可確保目標服務存在。 預設值為 **Present** 。 |
 |PsDscRunAsCredential |設定用於執行整個資源的認證。 |
 
 > [!NOTE]

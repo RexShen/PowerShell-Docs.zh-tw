@@ -1,24 +1,27 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC WaitForAll 資源
-ms.openlocfilehash: a0cf553af96ecc3df4968581f8f393b72fc3dabf
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WaitForAll 資源
+ms.openlocfilehash: a477584cf97a56815bda9973cb2befc9b71d14d1
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464361"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143104"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll 資源
 
 > 適用於：Windows PowerShell 5.x
 
-您可以在 [DSC 設定](../../../configurations/configurations.md)中的節點區塊內使用 **WaitForAll**「預期狀態設定」(DSC) 資源，以指定與其他節點上之設定的相依性。
+您可以在 [DSC 設定](../../../configurations/configurations.md)中的節點區塊內使用 **WaitForAll** 「預期狀態設定」(DSC) 資源，以指定與其他節點上之設定的相依性。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 如果 **ResourceName** 屬性所指定的資源在 **NodeName** 屬性所定義的所有目標節點上都處於預期狀態，此資源即可視為成功。
 
 > [!NOTE]
-> **WaitForAll** 資源使用 Windows 遠端管理來檢查其他節點的狀態。 如需 WinRM 連接埠和安全性需求的詳細資訊，請參閱 [PowerShell 遠端安全性考量](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)。
+> **WaitForAll** 資源使用 Windows 遠端管理來檢查其他節點的狀態。 如需 WinRM 連接埠和安全性需求的詳細資訊，請參閱 [PowerShell 遠端安全性考量](/powershell/scripting/learn/remoting/winrmsecurity)。
 
 ## <a name="syntax"></a>語法
 

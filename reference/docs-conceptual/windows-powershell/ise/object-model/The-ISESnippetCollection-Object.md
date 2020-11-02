@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISESnippetCollection 物件
-ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISESnippetCollection 物件是 ISESnippet 物件的集合。 與 PowerShellTab 物件相關聯的檔案集合是這個類別的成員。
+ms.openlocfilehash: e6170ddf72d5ead840aa3015d4de1dcb21dbfeff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808574"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655984"
 ---
 # <a name="the-isesnippetcollection-object"></a>ISESnippetCollection 物件
 

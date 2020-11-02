@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC for Linux nxGroup 資源
-ms.openlocfilehash: f196c74b94ec27818d58b59d1e489facd8ab0a65
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC for Linux nxGroup 資源
+ms.openlocfilehash: 3544bee763c0a4456002f9a02fde38de5d4fb65c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464429"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664265"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>DSC for Linux nxGroup 資源
 
@@ -43,7 +44,7 @@ nxGroup <string> #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |決定是否要檢查群組存在。 將此屬性設定為 **Present** 以確保群組存在。 將其設定為 **Absent** 以確保此群組不存在。 預設值為 **Present**。 |
+|Ensure |決定是否要檢查群組存在。 將此屬性設定為 **Present** 以確保群組存在。 將其設定為 **Absent** 以確保此群組不存在。 預設值為 **Present** 。 |
 
 ## <a name="example"></a>範例
 

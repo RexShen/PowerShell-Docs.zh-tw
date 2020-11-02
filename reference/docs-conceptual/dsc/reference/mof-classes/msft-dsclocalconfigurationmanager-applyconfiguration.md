@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: ApplyConfiguration 方法
-ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ApplyConfiguration 方法
+ms.openlocfilehash: aa99221b33d39c3ecc70156a11eaee10b540e2dc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463834"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664280"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration 方法
 
@@ -19,7 +20,7 @@ ms.locfileid: "86463834"
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
@@ -27,7 +28,7 @@ uint32 ApplyConfiguration(
 
 ### <a name="force"></a>force
 
-如果這是 **true**，就算有擱置中的設定，也會重新套用目前的設定。
+如果這是 **true** ，就算有擱置中的設定，也會重新套用目前的設定。
 
 ## <a name="return-value"></a>傳回值
 
@@ -41,7 +42,7 @@ uint32 ApplyConfiguration(
 
 **MOF：** DscCore.mof
 
-**Namespace**：Root\Microsoft\Windows\DesiredStateConfiguration
+**Namespace** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

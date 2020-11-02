@@ -1,13 +1,13 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEEditor 物件
-ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEEditor 物件是 Microsoft.PowerShell.Host.ISE.ISEEditor 類別的執行個體。 主控台窗格是 ISEEditor 物件。
+ms.openlocfilehash: ffcb6e35e1160beab6efb29cc84847fa9ffd012b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809694"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654051"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor 物件
 
@@ -58,7 +58,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 
 **lineNumber** 要取得長度的行號。
 
-**Returns** 位於指定行號的行長度。
+**Returns** 位於指定行號之行的行長度。
 
 ```powershell
 # Gets the length of the first line in the text of the Command pane.
@@ -90,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GoToMatch()
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-從 **startLine**、**startColumn**、**endLine** 及 **endColumn** 參數選取文字。
+從 **startLine** 、 **startColumn** 、 **endLine** 及 **endColumn** 參數選取文字。
 
 **startLine** - 整數：選取範圍開始位置的行。
 

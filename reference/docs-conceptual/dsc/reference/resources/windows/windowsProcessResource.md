@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC WindowsProcess 資源
-ms.openlocfilehash: a1f8840a5894049efd27c5d213a66363cd8dbebc
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsProcess 資源
+ms.openlocfilehash: 3076e9cb857b78953c164253351b23e7da9b40c6
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464123"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143002"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess 資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **WindowsProcess** 資源提供了在目標節點設定程序的機制。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -50,5 +53,5 @@ WindowsProcess [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |表示處理程序是否存在。 將此屬性設定為 **Present** 以確保處理程序存在。 否則，請設定為 **Absent**。 預設值為 **Present**。 |
+|Ensure |表示處理程序是否存在。 將此屬性設定為 **Present** 以確保處理程序存在。 否則，請設定為 **Absent** 。 預設值為 **Present** 。 |
 |PsDscRunAsCredential |設定用於執行整個資源的認證。 |

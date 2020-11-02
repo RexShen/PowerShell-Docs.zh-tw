@@ -1,24 +1,27 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC WaitForSome 資源
-ms.openlocfilehash: ea2618fbb77dd24a0c73fd9357e87862da514b66
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WaitForSome 資源
+ms.openlocfilehash: bc9c3df2b476e7046ccfe6257acc1d1641e7594b
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464378"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143087"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome 資源
 
 > 適用於：Windows PowerShell 5.x
 
-您可以在 [DSC 設定](../../../configurations/configurations.md)中的節點區塊內使用 **WaitForSome**「預期狀態設定」(DSC) 資源，以指定與其他節點上之設定的相依性。
+您可以在 [DSC 設定](../../../configurations/configurations.md)中的節點區塊內使用 **WaitForSome** 「預期狀態設定」(DSC) 資源，以指定與其他節點上之設定的相依性。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 如果 **ResourceName** 屬性所指定的資源處於預期狀態的節點達到 **NodeName** 屬性所定義的節點數目下限 (由 **NodeCount** 指定)，此資源即可視為成功。
 
 > [!NOTE]
-> **WaitForSome** 資源使用 Windows 遠端管理來檢查其他節點的狀態。 如需 WinRM 連接埠和安全性需求的詳細資訊，請參閱 [PowerShell 遠端安全性考量](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)。
+> **WaitForSome** 資源使用 Windows 遠端管理來檢查其他節點的狀態。 如需 WinRM 連接埠和安全性需求的詳細資訊，請參閱 [PowerShell 遠端安全性考量](/powershell/scripting/learn/remoting/winrmsecurity)。
 
 ## <a name="syntax"></a>語法
 

@@ -2,12 +2,13 @@
 ms.date: 10/11/2019
 keywords: dsc,powershell,設定,安裝
 title: 適合決策者的預期狀態設定概觀
-ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文件說明使用 PowerShell 預期狀態設定 (DSC) 的商業優勢，它不是技術指南。
+ms.openlocfilehash: fc28c9290c993131fc7bf2046eb64b144d3da609
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870790"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654149"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>適用於決策者的預期狀態設定概觀
 
@@ -25,7 +26,7 @@ DSC 內建監視和報告功能。 如果系統不再相容，DSC 會引發警�
 
 設定的設計可簡化讀取、儲存及更新設定的方式。 設定會宣告目標裝置的狀態，不需要撰寫如何讓裝置進入該狀態的指示。 這些因素可降低透過 DSC 學習、採用及維護設定的成本。
 
-建立設定即表示，已在單一位置將複雜的部署步驟擷取為**單一事實來源**。 設定讓特定電腦集合的重複部署更不容易出錯。 此外，部署更快速且更可靠，藉此縮短複雜部署的完成時間。
+建立設定即表示，已在單一位置將複雜的部署步驟擷取為 **單一事實來源** 。 設定讓特定電腦集合的重複部署更不容易出錯。 此外，部署更快速且更可靠，藉此縮短複雜部署的完成時間。
 
 設定也可以透過 [PowerShell 資源庫](https://powershellgallery.com)共用。 您需要完成的工作可能已有常見案例和最佳做法。
 

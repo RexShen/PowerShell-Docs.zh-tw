@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC 記錄檔資源
-ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC 記錄檔資源
+ms.openlocfilehash: 281d1f8aeeb4d075f073419ac02a0f81888ed2b5
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464021"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142458"
 ---
 # <a name="dsc-log-resource"></a>DSC 記錄檔資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell 預期狀態設定 (DSC) 的 **Log** 資源會提供一個機制，將訊息寫入 Microsoft Windows 預期狀態設定/分析事件記錄檔。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -50,7 +53,7 @@ Log [string] #ResourceName
 下列範例示範如何將訊息加入 Microsoft Windows 預期狀態設定/分析事件記錄檔中。
 
 > [!NOTE]
-> 如果您在設定此資源的情況下執行 [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1)，則一律會傳回 **$false**。
+> 如果您在設定此資源的情況下執行 [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration)，則一律會傳回 **$false** 。
 
 ```powershell
 Configuration logResourceTest

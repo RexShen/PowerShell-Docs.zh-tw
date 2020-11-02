@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC 環境資源
-ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC 環境資源
+ms.openlocfilehash: c7995fc5e7efdfb9a1dbae3da9f824d33c67085c
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464412"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142577"
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
-Windows PowerShell 預期狀態設定 (DSC) 的**環境**資源會提供管理系統環境變數的機制。
+Windows PowerShell 預期狀態設定 (DSC) 的 **環境** 資源會提供管理系統環境變數的機制。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +25,6 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
-    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -36,7 +38,6 @@ Environment [string] #ResourceName
 |---|---|
 |名稱 |指出您要確保其特定狀態的環境變數名稱。 |
 |Path |定義設定中的環境變數。 如果變數是 **Path** 變數，請將這個屬性設定為 `$true`；否則請設定為 `$false`。 預設值為 `$false`。 如果要設定的變數是 **Path** 變數，則透過 **Value** 屬性提供的值就會附加至現有的值。 |
-|目標| 指出擷取變數的位置：電腦或處理序。 若同時指定兩者，則只會傳回來自電腦的值。 預設為兩者，因為這是資源其餘部分的預設。 |
 |值 |要指派給環境變數的值。 |
 
 ## <a name="common-properties"></a>通用屬性
@@ -52,7 +53,7 @@ Environment [string] #ResourceName
 
 ## <a name="example"></a>範例
 
-下例確保 TestEnvironmentVariable 存在，且有值 _TestValue_。 如果不存在，就會建立它。
+下例確保 TestEnvironmentVariable 存在，且有值 _TestValue_ 。 如果不存在，就會建立它。
 
 ```powershell
 Environment EnvironmentExample

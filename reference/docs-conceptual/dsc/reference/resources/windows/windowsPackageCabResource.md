@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC WindowsPackageCab 資源
-ms.openlocfilehash: 7205a454d100bb369fd6cf0c5ac419585c8bbe86
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsPackageCab 資源
+ms.openlocfilehash: 3ac10eb2a7da502b8cac23ab8bfee869a4e26fd3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464140"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143019"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab 資源
 
@@ -16,6 +17,8 @@ ms.locfileid: "86464140"
 Windows PowerShell 預期狀態設定 (DSC) 中的 **WindowsPackageCab** 資源提供一個機制，可在目標節點上安裝或解除安裝 Windows 封包 (.cab) 套件。
 
 目標節點上必須安裝 DISM PowerShell 模組。 如需相關資訊，請參閱[在 Windows PowerShell 中使用 DISM](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 

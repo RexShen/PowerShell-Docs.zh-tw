@@ -2,31 +2,27 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用設定資料
-ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本主題將說明 ConfigurationData 雜湊表的結構。 這可讓您建立可用於多個節點或不同環境的單一設定。
+ms.openlocfilehash: aa4a0545aec529dbc923908612d2e1f9e60b3c9c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954185"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647109"
 ---
 # <a name="using-configuration-data-in-dsc"></a>使用 DSC 中的設定資料
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-您可以使用內建的 DSC **ConfigurationData** 參數，定義可用於設定中的資料。
-這可讓您建立可用於多個節點或不同環境的單一設定。
-例如，如果您要開發應用程式，您可以針對開發和生產環境使用一個設定，並使用設定資料來指定每個環境的資料。
+您可以使用內建的 DSC **ConfigurationData** 參數，定義可用於設定中的資料。 這可讓您建立可用於多個節點或不同環境的單一設定。 例如，如果您要開發應用程式，您可以針對開發和生產環境使用一個設定，並使用設定資料來指定每個環境的資料。
 
-本主題將說明 **ConfigurationData** 雜湊表的結構。
-如需如何使用設定資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
+本主題將說明 **ConfigurationData** 雜湊表的結構。 如需如何使用設定資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
 
 ## <a name="the-configurationdata-common-parameter"></a>ConfigurationData 一般參數
 
-DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所指定的參數。
-如需編譯設定的詳細資訊，請參閱 [DSC 設定](configurations.md)。
+DSC 設定採用 **ConfigurationData** 一般參數，這是編譯設定時所指定的參數。 如需編譯設定的詳細資訊，請參閱 [DSC 設定](configurations.md)。
 
-**ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。
-它也可以包含一或多個其他索引鍵。
+**ConfigurationData** 參數是至少必須有一個名為 **AllNodes** 之索引鍵的雜湊表。 它也可以包含一或多個其他索引鍵。
 
 > [!NOTE]
 > 本主題中的範例使用名為 `NonNodeData` 的單一額外索引鍵 (而不是具名 **AllNodes** 索引鍵)，但是您可以包含任意數目的額外索引鍵，並將它們任意命名。
@@ -94,8 +90,7 @@ $MyData =
 }
 ```
 
-若要將屬性套用至所有節點，您可以建立 **AllNodes** 陣列的成員，其 **NodeName** 為 `*`。
-例如，您可以如下為每個節點提供 `LogPath` 屬性：
+若要將屬性套用至所有節點，您可以建立 **AllNodes** 陣列的成員，其 **NodeName** 為 `*`。 例如，您可以如下為每個節點提供 `LogPath` 屬性：
 
 ```powershell
 $MyData =
@@ -136,8 +131,7 @@ $MyData =
 
 ## <a name="defining-the-configurationdata-hashtable"></a>定義 ConfigurationData 雜湊表
 
-您可以將 **ConfigurationData** 定義為與設定位於相同指令碼檔內的變數 (如上述範例)，或個別 `.psd1` 檔案中的變數。
-若要在 `.psd1` 檔案中定義 **ConfigurationData**，請建立只包含代表設定資料之雜湊表的檔案。
+您可以將 **ConfigurationData** 定義為與設定位於相同指令碼檔內的變數 (如上述範例)，或個別 `.psd1` 檔案中的變數。 若要在 `.psd1` 檔案中定義 **ConfigurationData** ，請建立只包含代表設定資料之雜湊表的檔案。
 
 例如，您可以建立具有下列內容的檔案，並命名為 `MyData.psd1`：
 
@@ -162,8 +156,7 @@ $MyData =
 
 若要編譯您已為其定義設定資料的設定，請將設定資料當作 **ConfigurationData** 參數的值來傳遞。
 
-這會為 **AllNodes** 陣列中的每個項目建立一個 MOF 檔案。
-每個 MOF 檔案都會以對應之陣列項目的 `NodeName` 屬性來命名。
+這會為 **AllNodes** 陣列中的每個項目建立一個 MOF 檔案。 每個 MOF 檔案都會以對應之陣列項目的 `NodeName` 屬性來命名。
 
 例如，如果您依上述 `MyData.psd1` 檔案中的方式定義設定資料，則編譯設定將會同時建立 `VM-1.mof` 和 `VM-2.mof` 檔案。
 
@@ -189,15 +182,13 @@ DSC 提供下列特殊變數，可用於設定指令碼中︰
 
 - **$AllNodes** 代表 **ConfigurationData** 中所定義的整個節點集合。 您可以使用 **.Where()** 和 **.ForEach()** 篩選 **AllNodes** 集合。
 - **ConfigurationData** 代表編譯設定時，當做參數傳遞的整個雜湊表。
-- **MyTypeName** 包含變數所用的[設定](configurations.md)名稱。 例如，在設定 `MyDscConfiguration` 中，`$MyTypeName` 的值為 `MyDscConfiguration`。
+- **MyTypeName** 包含變數所用的 [設定](configurations.md)名稱。 例如，在設定 `MyDscConfiguration` 中，`$MyTypeName` 的值為 `MyDscConfiguration`。
 - **Node** 代表 **AllNodes** 集合使用 **.Where()** 或 **.ForEach()** 篩選後所包含的特定項目。
   - 您可以在 [about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays) 中深入閱讀這些方法
 
 ## <a name="using-non-node-data"></a>使用非節點資料
 
-如我們在先前的範例中所見，**ConfigurationData** 雜湊表除了必要的 **AllNodes** 索引鍵之外，還可以有一或多個索引鍵。
-在本主題的範例中，我們只使用了單一額外節點，並將它命名為 `NonNodeData`。
-不過，您可以定義任何數目的額外索引鍵，並將它們任意命名。
+如我們在先前的範例中所見， **ConfigurationData** 雜湊表除了必要的 **AllNodes** 索引鍵之外，還可以有一或多個索引鍵。 在本主題的範例中，我們只使用了單一額外節點，並將它命名為 `NonNodeData`。 不過，您可以定義任何數目的額外索引鍵，並將它們任意命名。
 
 如需有關使用非節點資料的範例，請參閱[分離設定和環境資料](separatingEnvData.md)。
 

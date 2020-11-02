@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC Script 資源
-ms.openlocfilehash: 9b89981c17e87b3681c6416c7dee44a75c432ea1
-ms.sourcegitcommit: eb6a7c01e6385809656ac828b9211683e0b1a6fe
+description: DSC Script 資源
+ms.openlocfilehash: f404bf3137caa9f57ad56034895cb15c8944ec07
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89041124"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142968"
 ---
 # <a name="dsc-script-resource"></a>DSC Script 資源
 
@@ -15,6 +16,8 @@ ms.locfileid: "89041124"
 
 Windows PowerShell 預期狀態設定 (DSC) 的 `Script` 資源提供了在目標節點執行 Windows PowerShell 指令碼區塊的機制。 `Script` 資源會使用 `GetScript`
 `SetScript` 和 `TestScript` 屬性，其包含定義來執行對應 DSC 狀態作業的指令碼區塊。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -141,7 +144,7 @@ Configuration ScriptTest
 ### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>範例 3：利用指令碼資源中的參數
 
 此範例使用 `using` 範圍，存取指令碼資源中的參數。
-請注意，您可以使用類似方式存取 **ConfigurationData**。 一如範例 2，版本會儲存在目標節點的本機檔案中。 然而，因為本機檔案路徑與版本均可設定，所以會將程式碼與設定資料分離。
+請注意，您可以使用類似方式存取 **ConfigurationData** 。 一如範例 2，版本會儲存在目標節點的本機檔案中。 然而，因為本機檔案路徑與版本均可設定，所以會將程式碼與設定資料分離。
 
 ```powershell
 Configuration ScriptTest

@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC 套件資源
-ms.openlocfilehash: faeebc5bac7caad733600720f1c9f3d916d4c0a8
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC 套件資源
+ms.openlocfilehash: 4bcc6dc68a37ebe434e30339452cd7269f984ae9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464004"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142866"
 ---
 # <a name="dsc-package-resource"></a>DSC 套件資源
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell 預期狀態設定 (DSC) 中的 **Package** 資源，提供一個機制在目標節點上安裝或解除安裝套件，例如 Windows Installer 和 setup.exe 套件。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>語法
 
@@ -50,7 +53,7 @@ Package [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |指出是否要安裝此套件。 將此屬性設定為 **Absent** 以確保不會安裝此套件 (或如果已安裝，請解除安裝此套件)。 將其設定為 **Present** 以確保已安裝此套件。 預設值為 **Present**。 |
+|Ensure |指出是否要安裝此套件。 將此屬性設定為 **Absent** 以確保不會安裝此套件 (或如果已安裝，請解除安裝此套件)。 將其設定為 **Present** 以確保已安裝此套件。 預設值為 **Present** 。 |
 |PsDscRunAsCredential |設定用於執行整個資源的認證。 |
 
 > [!NOTE]

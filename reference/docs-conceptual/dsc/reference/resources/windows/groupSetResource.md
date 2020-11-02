@@ -1,14 +1,14 @@
 ---
 ms.date: 09/20/2019
-keywords: dsc,powershell,設定,安裝
-description: 提供在目標節點管理本機群組的機制。
+ms.topic: reference
 title: DSC GroupSet 資源
-ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC GroupSet 資源
+ms.openlocfilehash: a9d1803aca40ac3571d42a5fd762489c03ed274e
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464190"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142883"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet 資源
 
@@ -18,10 +18,12 @@ Windows PowerShell 預期狀態設定 (DSC) 的 **GroupSet** 資源會提供一�
 
 當您想要新增及 (或) 移除多個群組的相同成員清單、移除多個群組，或新增具有相同成員清單的多個群組時，請使用此資源。
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## <a name="syntax"></a>語法
 
 ```Syntax
-Group [string] #ResourceName
+GroupSet [string] #ResourceName
 {
     GroupName = [string[]]
     [ MembersToInclude = [string[]] ]
@@ -48,7 +50,7 @@ Group [string] #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |表示群組是否存在。 將此屬性設定為 **Absent** 以確保群組不存在。 設定此群組為 **Present** 以確保群組存在。 預設值為 **Present**。 |
+|Ensure |表示群組是否存在。 將此屬性設定為 **Absent** 以確保群組不存在。 設定此群組為 **Present** 以確保群組存在。 預設值為 **Present** 。 |
 |PsDscRunAsCredential |設定用於執行整個資源的認證。 |
 
 > [!NOTE]
