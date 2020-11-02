@@ -75,13 +75,15 @@
           href: learn/deep-dives/everything-about-shouldprocess.md
         - name: 執行多執行緒時的寫入進度
           href: learn/deep-dives/write-progress-across-multiple-threads.md
+        - name: 新增認證支援到 PowerShell 函式
+          href: learn/deep-dives/add-credentials-to-powershell-functions.md
     - name: PowerShell 遠端
       items:
         - name: Just Enough Administration (JEA)
           items:
             - name: 概觀
               href: learn/remoting/jea/overview.md
-            - name: 必要條件
+            - name: Prerequisites
               href: learn/remoting/jea/prerequisites.md
             - name: 角色功能
               href: learn/remoting/jea/role-capabilities.md
@@ -564,6 +566,8 @@
       href: community/hall-of-fame.md
     - name: Docs 的新功能
       items:
+        - name: 2020-Q4
+          href: community/2020-Q4.md
         - name: 2020-Q3
           href: community/2020-Q3.md
         - name: 2020-Q2
