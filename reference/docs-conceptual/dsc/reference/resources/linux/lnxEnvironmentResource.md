@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC for Linux nxEnvironment 資源
-ms.openlocfilehash: 2f673dfbc3b6e93d7e186e4a63b75d16a31b5181
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC for Linux nxEnvironment 資源
+ms.openlocfilehash: 86ed538732254967cb4a3bb55af4f6b179947e52
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463681"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644667"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>DSC for Linux nxEnvironment 資源
 
@@ -39,13 +40,13 @@ nxEnvironment <string> #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |決定是否要檢查變數存在。 將此屬性設定為 **Present** 以確保變數存在。 將其設定為 **Absent** 以確保此變數不存在。 預設值為 **Present**。 |
+|Ensure |決定是否要檢查變數存在。 將此屬性設定為 **Present** 以確保變數存在。 將其設定為 **Absent** 以確保此變數不存在。 預設值為 **Present** 。 |
 
 ## <a name="additional-information"></a>其他資訊
 
 - 如果 **Path** 不存在，或設定為 `$false`，則環境變數會在 `/etc/environment` 中受到管理。
   您的程式或指令碼可能需要設定為以 `/etc/environment` 檔為來源，以存取受管理的環境變數。
-- 如果 **Path** 設定為 `$true`，則環境變數會在檔案 `/etc/profile.d/DSCenvironment.sh` 中受到管理。 如果不存在，則會建立這個檔案。 如果 **Ensure** 設定成 **Absent**，而 **Path** 設定成 `$true`，則現有的環境變數只會從 `/etc/profile.d/DSCenvironment.sh` 中移除，而不會從其他檔案中移除。
+- 如果 **Path** 設定為 `$true`，則環境變數會在檔案 `/etc/profile.d/DSCenvironment.sh` 中受到管理。 如果不存在，則會建立這個檔案。 如果 **Ensure** 設定成 **Absent** ，而 **Path** 設定成 `$true`，則現有的環境變數只會從 `/etc/profile.d/DSCenvironment.sh` 中移除，而不會從其他檔案中移除。
 
 ## <a name="example"></a>範例
 

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: StopConfiguration 方法
-ms.openlocfilehash: 76e50c98b09dca86983320918c6899082580672a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: StopConfiguration 方法
+ms.openlocfilehash: 854c0dbe8554c08413735a5a7bc872776e0b0a6c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463698"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644630"
 ---
 # <a name="stopconfiguration-method"></a>StopConfiguration 方法
 
@@ -17,7 +18,7 @@ ms.locfileid: "86463698"
 
 ```mof
 uint32 StopConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
@@ -35,9 +36,9 @@ uint32 StopConfiguration(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF** ：DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

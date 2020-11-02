@@ -1,12 +1,13 @@
 ---
 ms.date: 07/29/2020
 title: PowerShell 5.0 的新語言功能
-ms.openlocfilehash: dada39c4121a810c7ce87a642f232934152104e5
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: PowerShell 5.0 新增了功能，可使用類似其他物件導向程式設計語言的正式語法和語意，來定義類別和其他使用者定義類型。
+ms.openlocfilehash: 31ff54ba6f2800a0680c1a2db3832ca97246973d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410167"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663310"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 的新語言功能
 
@@ -61,7 +62,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 
 ### <a name="implementingassembly"></a>ImplementingAssembly
 
-已將新欄位 **ImplementingAssembly** 新增至 **ModuleInfo**。 如果指令碼定義類別，它會設定成為指令碼模組所建立的動態組件，或二進位模組的載入組件。 若 **ModuleType** 為 **Manifest**，則不會設定它。
+已將新欄位 **ImplementingAssembly** 新增至 **ModuleInfo** 。 如果指令碼定義類別，它會設定成為指令碼模組所建立的動態組件，或二進位模組的載入組件。 若 **ModuleType** 為 **Manifest** ，則不會設定它。
 
 **ImplementingAssembly** 欄位的反映會探索模組中的資源。 這表示您可以探索以 PowerShell 或其他 Managed 語言撰寫的資源。
 

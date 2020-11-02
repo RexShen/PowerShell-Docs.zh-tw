@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: GetConfigurationStatus 方法
-ms.openlocfilehash: c2c478151428052d656832fb4079f12d666a910d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: GetConfigurationStatus 方法
+ms.openlocfilehash: fe25d17069d9011e931ac50fec27cb9ebafba365
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464040"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650857"
 ---
 # <a name="getconfigurationstatus-method"></a>GetConfigurationStatus 方法
 
@@ -17,14 +18,14 @@ ms.locfileid: "86464040"
 
 ```mof
 uint32 GetConfigurationStatus(
-  [in]  boolean                     All,
-  [out] MSFT_DSCConfigurationStatus configurationStatus[]
+  [in]  boolean                     All,
+  [out] MSFT_DSCConfigurationStatus configurationStatus[]
 );
 ```
 
 ## <a name="parameters"></a>參數
 
-**All** \[in\] 若此方法應傳回電腦上所執行所有設定的相關資訊，包括設定應用程式與一致性檢查，即為 **true**。
+**All** \[in\] 若此方法應傳回電腦上所執行所有設定的相關資訊，包括設定應用程式與一致性檢查，即為 **true** 。
 
 **configurationStatus** \[out\] 在傳回時會包含定義設定的 **MSFT_DSCConfigurationStatus** 類別之內嵌執行個體。
 
@@ -38,9 +39,9 @@ uint32 GetConfigurationStatus(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF** ：DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

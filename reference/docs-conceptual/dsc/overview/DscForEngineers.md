@@ -2,12 +2,13 @@
 ms.date: 10/13/2017
 keywords: dsc,powershell,設定,安裝
 title: 適合工程師的預期狀態設定概觀
-ms.openlocfilehash: dbed274d5333c216970247b88d2a0956025e969d
-ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
+description: 本文件適合開發人員及作業小組了解 PowerShell 預期狀態設定 (DSC) 的優勢。
+ms.openlocfilehash: c98295d0e78f4dc89e5df429e3c1de9a0c024054
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82584518"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646942"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>適合工程師的預期狀態設定概觀
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: ISESnippetObject
-ms.openlocfilehash: f810e6b26f0ded04be15bdc37f336d7890e29dad
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISESnippet 物件是 Microsoft.PowerShell.Host.ISE.ISESnippet 類別的執行個體。
+ms.openlocfilehash: 602b344686cbcfb1e994914d4e26438ff7e4b1de
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809574"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663415"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 

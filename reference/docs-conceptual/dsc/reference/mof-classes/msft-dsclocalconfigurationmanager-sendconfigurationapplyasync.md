@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: SendConfigurationApplyAsync 方法
-ms.openlocfilehash: 4cfac5edb5fed94ee69deb98d7aa6be56b51c5b3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: SendConfigurationApplyAsync 方法
+ms.openlocfilehash: 92c9d03a7653e72b1ff04084caea4a8b5aadb0e5
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463732"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644797"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync 方法
 
@@ -17,9 +18,9 @@ ms.locfileid: "86463732"
 
 ```mof
 uint32 SendConfigurationApplyAsync(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force,
-  [in] string  jobId
+  [in] uint8   ConfigurationData[],
+  [in] boolean force,
+  [in] string  jobId
 );
 ```
 
@@ -41,9 +42,9 @@ uint32 SendConfigurationApplyAsync(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF** ：DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

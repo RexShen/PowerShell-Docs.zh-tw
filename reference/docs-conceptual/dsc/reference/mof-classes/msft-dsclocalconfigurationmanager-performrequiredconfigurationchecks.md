@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: PerformRequiredConfigurationChecks 方法
-ms.openlocfilehash: ea4294ffdcb2580fa7b39b18966b642d58073eb6
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: PerformRequiredConfigurationChecks 方法
+ms.openlocfilehash: c5e847cda6376f4266cc771dc947032a279e25f4
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464446"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650828"
 ---
 # <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks 方法
 
@@ -17,7 +18,7 @@ ms.locfileid: "86464446"
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
-  [in] uint32 Flags
+  [in] uint32 Flags
 );
 ```
 
@@ -42,9 +43,9 @@ uint32 PerformRequiredConfigurationChecks(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF** ：DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

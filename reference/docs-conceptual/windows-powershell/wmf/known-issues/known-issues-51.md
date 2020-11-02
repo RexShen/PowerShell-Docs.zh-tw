@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: wmf,powershell,設定
 title: WMF 5.1 的已知問題
-ms.openlocfilehash: 4f4c85e1f4984d9e91ea74ba65fdbf7188c5c7ab
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.1 的已知問題
+ms.openlocfilehash: 7d27bc570108a0ae1470ae06f5bdf5fcd7849d16
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808704"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663327"
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 的已知問題
 
@@ -20,7 +20,7 @@ ms.locfileid: "83808704"
 
 在此版本中，當您在 Nano 伺服器使用 Pester 時有兩個問題應該要注意︰
 
-- 因為完整 CLR 和核心 CLR 之間的差異，針對 Pester 本身執行測試時會導致某些失敗。 特別是，**XmlDocument** 類型中無法使用 **Validate** 方法。 已知有六個嘗試驗證 NUnit 輸出記錄檔結構描述的測試會失敗。
+- 因為完整 CLR 和核心 CLR 之間的差異，針對 Pester 本身執行測試時會導致某些失敗。 特別是， **XmlDocument** 類型中無法使用 **Validate** 方法。 已知有六個嘗試驗證 NUnit 輸出記錄檔結構描述的測試會失敗。
 - 有一個程式碼涵蓋範圍測試失敗，因為 Nano 伺服器中沒有 **WindowsFeature** DSC 資源存在。 不過，這些失敗通常是無害的，可以放心地忽略。
 
 ## <a name="operation-validation"></a>作業驗證

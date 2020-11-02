@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC for Linux nxPackage 資源
-ms.openlocfilehash: f61b337f6fbb8e2ea48128642874f050787fc576
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC for Linux nxPackage 資源
+ms.openlocfilehash: b84c7963297e8a88e729cd67611245b017c27fb7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464480"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648835"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>DSC for Linux nxPackage 資源
 
@@ -34,7 +35,7 @@ nxPackage <string> #ResourceName
 |屬性 |描述 |
 |---|---|
 |名稱 |您要確保其特定狀態的套件名稱。 |
-|PackageManager |支援的值為 **yum**、**apt** 和 **zypper**。 指定安裝套件時所使用的套件管理員。 如果 **FilePath** 已指定，則使用提供的路徑，以安裝套件。 否則，套件管理員將用於從預先設定的儲存機制安裝套件。 如果沒有提供 **PackageManager** 或 **FilePath**，則會使用系統的預設套件管理員。 |
+|PackageManager |支援的值為 **yum** 、 **apt** 和 **zypper** 。 指定安裝套件時所使用的套件管理員。 如果 **FilePath** 已指定，則使用提供的路徑，以安裝套件。 否則，套件管理員將用於從預先設定的儲存機制安裝套件。 如果沒有提供 **PackageManager** 或 **FilePath** ，則會使用系統的預設套件管理員。 |
 |PackageGroup |若為 `$true`，則 **Name** 預計會是套件群組的名稱，用以搭配 **PackageManager** 群組使用。 **PackageGroup** 在提供 **FilePath** 時無效。 |
 |引數 |將傳遞至套件的引數字串，與所提供者完全相同。 |
 |ReturnCode |預期的傳回碼。 如果實際的傳回碼不符這裡提供的預期值，此設定就會傳回錯誤。 |
@@ -45,7 +46,7 @@ nxPackage <string> #ResourceName
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |決定是否要檢查套件存在。 將此屬性設定為 **Present** 以確保套件存在。 將其設定為 **Absent** 以確保此套件不存在。 預設值為 **Present**。 |
+|Ensure |決定是否要檢查套件存在。 將此屬性設定為 **Present** 以確保套件存在。 將其設定為 **Absent** 以確保此套件不存在。 預設值為 **Present** 。 |
 
 ## <a name="example"></a>範例
 

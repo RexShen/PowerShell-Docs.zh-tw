@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC for Linux nxScript 資源
-ms.openlocfilehash: e39808e110d5ee4bf9d0ccd418ca3b15ac9fe420
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC for Linux nxScript 資源
+ms.openlocfilehash: c92d7ac76323d39167512734ef743c299857c9a6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463647"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648797"
 ---
 # <a name="dsc-for-linux-nxscript-resource"></a>DSC for Linux nxScript 資源
 
@@ -32,8 +33,8 @@ nxScript <string> #ResourceName
 |屬性 |描述 |
 |---|---|
 |GetScript |提供指令碼以傳回機器目前狀態。 當您叫用 [GetDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，此指令碼會執行。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。 |
-|SetScript |提供讓機器處於正確狀態的指令碼。 當您叫用 [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，**TestScript** 會先執行。 如果 **TestScript** 區塊傳回的結束代碼不是 0，則 **SetScript** 區塊將會執行。 如果 **TestScript** 傳回的結束代碼是 0，則 **SetScript** 區塊將不會執行。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。 |
-|TestScript |提供評估節點目前是否處於正確狀態的指令碼。 當您叫用 [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，此指令碼會執行。 如果傳回的結束代碼不是 0，則 **SetScript** 將會執行。 如果傳回的結束代碼是 0，則 **SetScript** 將不會執行。 當您叫用 [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，**TestScript** 也會執行。 不過，在此情況下，無論從 **TestScript** 傳回何種結束碼，**SetScript** 都不會執行。 如果實際設定符合目前的預期狀態設定，則 **TestScript** 必須包含內容且傳回的結束代碼必須為 0，如果不符合，則結束碼不是 0。 目前的預期狀態設定，是上次使用 DSC 之節點上施行的設定。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。 |
+|SetScript |提供讓機器處於正確狀態的指令碼。 當您叫用 [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時， **TestScript** 會先執行。 如果 **TestScript** 區塊傳回的結束代碼不是 0，則 **SetScript** 區塊將會執行。 如果 **TestScript** 傳回的結束代碼是 0，則 **SetScript** 區塊將不會執行。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。 |
+|TestScript |提供評估節點目前是否處於正確狀態的指令碼。 當您叫用 [StartDscConfiguration.py](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時，此指令碼會執行。 如果傳回的結束代碼不是 0，則 **SetScript** 將會執行。 如果傳回的結束代碼是 0，則 **SetScript** 將不會執行。 當您叫用 [TestDscConfiguration](https://github.com/Microsoft/PowerShell-DSC-for-Linux#performing-dsc-operations-from-the-linux-computer) \(英文\) 指令碼時， **TestScript** 也會執行。 不過，在此情況下，無論從 **TestScript** 傳回何種結束碼， **SetScript** 都不會執行。 如果實際設定符合目前的預期狀態設定，則 **TestScript** 必須包含內容且傳回的結束代碼必須為 0，如果不符合，則結束碼不是 0。 目前的預期狀態設定，是上次使用 DSC 之節點上施行的設定。 指令碼的開頭必須是由井號和驚嘆號構成的字元序列，例如 `#!/bin/bash`。 |
 |User |要執行指令碼的使用者。 |
 |群組 |要執行指令碼的群組。 |
 

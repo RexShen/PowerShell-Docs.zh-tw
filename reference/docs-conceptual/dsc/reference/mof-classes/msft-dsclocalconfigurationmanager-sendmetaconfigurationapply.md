@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: SendMetaConfigurationApply 方法
-ms.openlocfilehash: 896afe2f3370e108b48583aafb33ee7b0eb1301b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: SendMetaConfigurationApply 方法
+ms.openlocfilehash: 27c58819c0249ace011c475e500e565e5daed9bb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463715"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648956"
 ---
 # <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply 方法
 
@@ -17,8 +18,8 @@ ms.locfileid: "86463715"
 
 ```mof
 uint32 SendMetaConfigurationApply(
-  [in] uint8   ConfigurationData[],
-  [in] boolean force
+  [in] uint8   ConfigurationData[],
+  [in] boolean force
 );
 ```
 
@@ -38,9 +39,9 @@ uint32 SendMetaConfigurationApply(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF** ：DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 

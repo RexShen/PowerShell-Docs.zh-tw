@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中撰寫和執行指令碼
-ms.openlocfilehash: 2e3122a3b436ba878d2c5f9d72d4f9e024d4d031
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 此文章 說明如何在指令碼窗格中建立、編輯、執行及儲存指令碼。
+ms.openlocfilehash: 8e85da1d4eecbb975f2dd799c91512e0081309d2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808754"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663652"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中撰寫和執行指令碼
 
@@ -30,7 +30,7 @@ ms.locfileid: "83808754"
 
 ### <a name="to-close-a-script-tab"></a>關閉指令碼索引標籤
 
-按一下您要關閉之檔案索引標籤的**關閉**圖示 (**X**)，或選取 [檔案]  功能表，然後按一下 [關閉]  。
+按一下您要關閉之檔案索引標籤的 **關閉** 圖示 ( **X** )，或選取 [檔案]  功能表，然後按一下 [關閉]  。
 
 如果檔案自上次儲存後已變更，系統會提示您儲存或捨棄該檔案。
 
@@ -87,24 +87,24 @@ ms.locfileid: "83808754"
 
 1. 在指令碼窗格中，選取您要複製的文字。
 
-2. 按 <kbd>CTRL</kbd>+<kbd>C</kbd>、按一下工具列上的**複製**圖示，或按一下 [編輯]  功能表上的 [複製]  。
+2. 按 <kbd>CTRL</kbd>+<kbd>C</kbd>、按一下工具列上的 **複製** 圖示，或按一下 [編輯]  功能表上的 [複製]  。
 
 ### <a name="to-cut-text-in-the-script-pane"></a>在指令碼窗格中剪下文字
 
 1. 在指令碼窗格中，選取您要剪下的文字。
-2. 按 <kbd>CTRL</kbd>+<kbd>X</kbd>、按一下工具列上的**剪下**圖示，或按一下 [編輯]  功能表上的 [剪下]  。
+2. 按 <kbd>CTRL</kbd>+<kbd>X</kbd>、按一下工具列上的 **剪下** 圖示，或按一下 [編輯]  功能表上的 [剪下]  。
 
 ### <a name="to-paste-text-into-the-script-pane"></a>在指令碼窗格中貼上文字
 
-按 <kbd>CTRL</kbd>+<kbd>V</kbd>、按一下工具列上的**貼上**圖示，或按一下 [編輯]  功能表上的 [貼上]  。
+按 <kbd>CTRL</kbd>+<kbd>V</kbd>、按一下工具列上的 **貼上** 圖示，或按一下 [編輯]  功能表上的 [貼上]  。
 
 ### <a name="to-undo-an-action-in-the-script-pane"></a>在指令碼窗格中復原動作
 
-按 <kbd>CTRL</kbd>+<kbd>Z</kbd>、按一下工具列上的**復原**圖示，或按一下 [編輯]  功能表上的 [復原]  。
+按 <kbd>CTRL</kbd>+<kbd>Z</kbd>、按一下工具列上的 **復原** 圖示，或按一下 [編輯]  功能表上的 [復原]  。
 
 ### <a name="to-redo-an-action-in-the-script-pane"></a>在指令碼窗格中取消復原動作
 
-按 <kbd>CTRL</kbd>+<kbd>Y</kbd>、按一下工具列上的**取消復原**圖示，或按一下 [編輯]  功能表上的 [取消復原]  。
+按 <kbd>CTRL</kbd>+<kbd>Y</kbd>、按一下工具列上的 **取消復原** 圖示，或按一下 [編輯]  功能表上的 [取消復原]  。
 
 ## <a name="how-to-save-a-script"></a>如何儲存指令碼
 
@@ -112,7 +112,7 @@ ms.locfileid: "83808754"
 
 ### <a name="to-save-a-script"></a>儲存指令碼
 
-按 <kbd>CTRL</kbd>+<kbd>S</kbd>、按一下工具列上的**儲存**圖示，或按一下 [檔案]  功能表上的 [儲存]  。
+按 <kbd>CTRL</kbd>+<kbd>S</kbd>、按一下工具列上的 **儲存** 圖示，或按一下 [檔案]  功能表上的 [儲存]  。
 
 ### <a name="to-save-and-name-a-script"></a>儲存並命名指令碼
 

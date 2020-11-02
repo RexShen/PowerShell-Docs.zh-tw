@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: 資訊串流
-ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
-ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
+description: PowerShell 5.0 新增了新的結構化 **資訊** 串流，可在指令碼與其主機之間傳送結構化資料。
+ms.openlocfilehash: 818c99ce281f5ada596ff92cd7bafb8b7cacf709
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567836"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646716"
 ---
 # <a name="information-stream"></a>資訊串流
 
-PowerShell 5.0 新增了新的結構化**資訊**串流，可在指令碼與其主機之間傳送結構化資料。 `Write-Host` 也已更新，可將其輸出發出到**資訊**串流，您現在可在其中擷取輸出或將其轉為無回應。 搭配 `Write-Information`InformationVariable**和**InformationAction**一般參數使用的新** Cmdlet 能夠提供更多彈性和功能。
+PowerShell 5.0 新增了新的結構化 **資訊** 串流，可在指令碼與其主機之間傳送結構化資料。 `Write-Host` 也已更新，可將其輸出發出到 **資訊** 串流，您現在可在其中擷取輸出或將其轉為無回應。 搭配 `Write-Information`InformationVariable **和** InformationAction **一般參數使用的新** Cmdlet 能夠提供更多彈性和功能。
 
-下列函式會使用利用新**資訊**串流的 Cmdlet。
+下列函式會使用利用新 **資訊** 串流的 Cmdlet。
 
 ```powershell
 function OutputGusher {
@@ -60,7 +60,7 @@ $r.Id
 4008
 ```
 
-不同於 `Write-Host` Cmdlet，使用 **的**InformationVariable`Write-Information` 參數可讓您擷取變數中的輸出。 使用**標記**，您可以針對要傳送到**資訊**串流的訊息建立不同通道。
+不同於 `Write-Host` Cmdlet，使用 **的** InformationVariable`Write-Information` 參數可讓您擷取變數中的輸出。 使用 **標記** ，您可以針對要傳送到 **資訊** 串流的訊息建立不同通道。
 
 ```powershell
 $r = OutputGusher -InformationVariable iv
@@ -83,7 +83,7 @@ Process              {System.Diagnostics.Process (powershell)}
 PSHOST               {Preparing to give you output!, =============================, I , <3 ...}
 ```
 
-當您使用標記來將訊息傳送到**資訊**串流時，該訊息不會顯示於主應用程式中，但可使用標記名稱來擷取。 例如：
+當您使用標記來將訊息傳送到 **資訊** 串流時，該訊息不會顯示於主應用程式中，但可使用標記名稱來擷取。 例如：
 
 ```powershell
 $iv | where Tags -eq 'LogHigh'

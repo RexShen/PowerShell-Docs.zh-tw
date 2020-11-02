@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC for Linux nxService 資源
-ms.openlocfilehash: 2aec8b943d386fad33dfc1cfdd916c5e18039eaa
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC for Linux nxService 資源
+ms.openlocfilehash: 4eefe491c491c9245732def1cc85260f368ef9e1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463630"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648790"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>DSC for Linux nxService 資源
 
@@ -33,7 +34,7 @@ nxService <string> #ResourceName
 |名稱 |要設定的服務/精靈名稱。 |
 |控制器 |設定服務時所要使用的服務控制站類型。 |
 |啟用 |指出是否在開機時啟動服務。 |
-|State |表示服務是否正在執行。 將此屬性設定為 **Stopped**，以確保服務未正在執行中。 將其設定為 **Running**，以確保服務未正在執行中。 |
+|State |表示服務是否正在執行。 將此屬性設定為 **Stopped** ，以確保服務未正在執行中。 將其設定為 **Running** ，以確保服務未正在執行中。 |
 
 ## <a name="common-properties"></a>通用屬性
 
@@ -43,7 +44,7 @@ nxService <string> #ResourceName
 
 ## <a name="additional-information"></a>其他資訊
 
-如果服務定義或服務的指令碼不存在，**nxService** 資源將不會建立服務定義或服務的指令碼。 您可以使用 PowerShell 預期狀態設定 **nxFile** 資源資源，以管理服務定義檔或指令碼的內容是否存在。
+如果服務定義或服務的指令碼不存在， **nxService** 資源將不會建立服務定義或服務的指令碼。 您可以使用 PowerShell 預期狀態設定 **nxFile** 資源資源，以管理服務定義檔或指令碼的內容是否存在。
 
 ## <a name="example"></a>範例
 

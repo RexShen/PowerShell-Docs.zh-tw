@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: WMF 5.0 中的已知問題
-ms.openlocfilehash: 1db656884736c742ef78354b7452879e319d4a0a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.0 中的已知問題
+ms.openlocfilehash: 3f8dcf0f7aab27ff9d3c3a17377959988844a430
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809084"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663361"
 ---
 # <a name="known-issues-in-wmf-50"></a>WMF 5.0 中的已知問題
 
@@ -24,7 +24,7 @@ ms.locfileid: "83809084"
 
 在 Windows 7 上，使用 PowerShell 模組和 DSC 資源可能導致報告有關 ExecutionPolicy 的錯誤。
 
-**解決方案：** 在提高權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，藉以將 ExecutionPolicy 設定為 **RemoteSigned**：
+**解決方案：** 在提高權限的 PowerShell 工作階段 (以系統管理員身分執行) 中執行下列命令，藉以將 ExecutionPolicy 設定為 **RemoteSigned** ：
 
 ```powershell
 Set-ExecutionPolicy RemoteSigned

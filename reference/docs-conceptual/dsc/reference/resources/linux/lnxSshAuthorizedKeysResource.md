@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: DSC for Linux nxSshAuthorizedKeys 資源
-ms.openlocfilehash: 3a62bb7a3dbdebae4f0ca6084db1624c1b76ab1f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC for Linux nxSshAuthorizedKeys 資源
+ms.openlocfilehash: 881e94aa583a745cdac7f01b6e445352ef4ca937
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464463"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662754"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>DSC for Linux nxSshAuthorizedKeys 資源
 
@@ -31,15 +32,15 @@ nxAuthorizedKeys <string> #ResourceName
 |屬性 |描述 |
 |---|---|
 |KeyComment |金鑰的唯一註解。 這用來唯一識別金鑰。 |
-|使用者名稱 |要為其管理 SSH 授權金鑰的使用者名稱。 如果未定義，則預設使用者為 **root**。 |
-|Key |金鑰的內容。 如果 **Ensure** 設定為 **Present**，則此項目為必要。|
+|使用者名稱 |要為其管理 SSH 授權金鑰的使用者名稱。 如果未定義，則預設使用者為 **root** 。 |
+|Key |金鑰的內容。 如果 **Ensure** 設定為 **Present** ，則此項目為必要。|
 
 ## <a name="common-properties"></a>通用屬性
 
 |屬性 |描述 |
 |---|---|
 |DependsOn |表示必須先執行另一個資源的設定，再設定這個資源。 例如，如果第一個想要執行的資源設定指令碼區塊識別碼是 ResourceName，而其類型是 ResourceType，則使用這個屬性的語法就是 `DependsOn = "[ResourceType]ResourceName"`。 |
-|Ensure |指定是否已定義金鑰。 將此屬性設定為 **Absent** 以確保索引鍵不存在於使用者的授權金鑰檔案中。 將其設定為 **Present**，以確保使用者的授權金鑰檔中定義了金鑰。 |
+|Ensure |指定是否已定義金鑰。 將此屬性設定為 **Absent** 以確保索引鍵不存在於使用者的授權金鑰檔案中。 將其設定為 **Present** ，以確保使用者的授權金鑰檔中定義了金鑰。 |
 
 ## <a name="example"></a>範例
 

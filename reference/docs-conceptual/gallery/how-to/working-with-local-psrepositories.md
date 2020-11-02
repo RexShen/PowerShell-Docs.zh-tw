@@ -1,14 +1,13 @@
 ---
 ms.date: 11/06/2018
-contributor: JKeithB
-keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: 使用本機 PSRepository
-ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: PowerShellGet 模組支援 PowerShell 資源庫以外的存放庫。 本文說明如何設定本機 PowerShell 存放庫。
+ms.openlocfilehash: 24a2fd23124b3897952d64a347d103d9ee10248f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837574"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662355"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>使用私人 PowerShellGet 存放庫
 
@@ -72,7 +71,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-請記下這兩個命令如何處理 **ScriptSourceLocation** 之間的差異。 針對以檔案共用為基礎的存放庫，**SourceLocation** 和 **ScriptSourceLocation** 必須相符。 針對以 Web 為基礎的存放庫，它們必須不同，因此在此範例中，會在 **SourceLocation** 尾端新增 "/"。
+請記下這兩個命令如何處理 **ScriptSourceLocation** 之間的差異。 針對以檔案共用為基礎的存放庫， **SourceLocation** 和 **ScriptSourceLocation** 必須相符。 針對以 Web 為基礎的存放庫，它們必須不同，因此在此範例中，會在 **SourceLocation** 尾端新增 "/"。
 
 如果您想要使新建的 PSRepository 成為預設存放庫，就必須取消註冊所有其他 PSRepository。 例如：
 

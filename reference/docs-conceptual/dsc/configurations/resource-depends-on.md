@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用 DependsOn 的資源相依性
-ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 但隨著您的設定越來越大、越來越複雜，您可以使用 `DependsOn` 索引鍵，透過指定該資源相依於另一個資源，來管理您資源的套用順序。
+ms.openlocfilehash: 18f19a3606834ede0737213930e6af0e251225ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954475"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645096"
 ---
 # <a name="resource-dependencies-using-dependson"></a>使用 DependsOn 的資源相依性
 
@@ -118,7 +119,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-這也可以確保若 **FirewallProfile** 資源因任何原因失敗，**Firewall** 區塊便不會執行，即使其已先經過定義也一樣。 `DependsOn` 索引鍵可讓您在群組資源區塊時擁有更多彈性，並確保在資源執行前解析相依項目。
+這也可以確保若 **FirewallProfile** 資源因任何原因失敗， **Firewall** 區塊便不會執行，即使其已先經過定義也一樣。 `DependsOn` 索引鍵可讓您在群組資源區塊時擁有更多彈性，並確保在資源執行前解析相依項目。
 
 在更進階的設定中，您也可以使用[跨節點相依性](crossNodeDependencies.md)來進行更細微的控制 (例如，確保網域控制站已在將用戶端加入網域前進行設定)。
 

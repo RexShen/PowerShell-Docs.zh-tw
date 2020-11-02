@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中使用主控台窗格
-ms.openlocfilehash: f0ef07e410ed494f5732eab360c4e050c9c09a7f
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 如何在 Windows PowerShell ISE 中使用主控台窗格
+ms.openlocfilehash: 7f6d3f5a3e4e596beb0d5c0bc395e3e7bf39906d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808724"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663660"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用主控台窗格
 
@@ -19,11 +19,11 @@ Windows PowerShell 整合式指令碼環境 (ISE) 的 [主控台] 窗格與獨�
 
 從 Windows PowerShell v3 開始，輸出窗格已與主控台窗格結合。 這樣做的優點是其運作方式就像是獨立的 Windows PowerShell 主控台，因而可消除分開時所需程序的差異。 您可以：
 
-- 從主控台窗格選取文字並複製到 [剪貼簿]，以貼到任何其他視窗。 若要選取文字，請在輸出窗格中您要擷取的文字上，按住滑鼠進行拖曳。 您也可以在按住 <kbd>SHIFT</kbd> 鍵的同時，使用方向鍵選取文字。 然後按 <kbd>CTRL</kbd>+<kbd>C</kbd>，或按一下工具列中的**複製**圖示。
+- 從主控台窗格選取文字並複製到 [剪貼簿]，以貼到任何其他視窗。 若要選取文字，請在輸出窗格中您要擷取的文字上，按住滑鼠進行拖曳。 您也可以在按住 <kbd>SHIFT</kbd> 鍵的同時，使用方向鍵選取文字。 然後按 <kbd>CTRL</kbd>+<kbd>C</kbd>，或按一下工具列中的 **複製** 圖示。
 
-- 在目前的游標位置貼上選取的文字。 按一下工具列中的**貼上**圖示。
+- 在目前的游標位置貼上選取的文字。 按一下工具列中的 **貼上** 圖示。
 
-- 清除主控台窗格中的所有文字。 若要清除 [主控台] 窗格，您可以按一下工具列中的**清除主控台窗格**圖示，或是執行命令 `Clear-Host` 或其別名 `cls`。
+- 清除主控台窗格中的所有文字。 若要清除 [主控台] 窗格，您可以按一下工具列中的 **清除主控台窗格** 圖示，或是執行命令 `Clear-Host` 或其別名 `cls`。
 
 ## <a name="see-also"></a>另請參閱
 

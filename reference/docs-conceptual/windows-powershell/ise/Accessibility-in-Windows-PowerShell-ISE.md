@@ -1,13 +1,13 @@
 ---
 ms.date: 12/19/2019
-keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的協助工具
-ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 本主題說明 Windows PowerShell 整合式指令碼環境 (ISE) 的協助工具功能，對您來說可能很實用。
+ms.openlocfilehash: 18acf447965eaaa7f93bb4c443a304b37216a9ba
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808514"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663849"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE 的協助工具
 
@@ -46,15 +46,15 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 
 執行下列其中一個動作：
 
-- 若要將指令碼窗格移動到主控台窗格上方，請按 <kbd>CTRL</kbd>+<kbd>1</kbd>，或者按一下工具列的靠上的**顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠上顯示指令碼窗格]  。
+- 若要將指令碼窗格移動到主控台窗格上方，請按 <kbd>CTRL</kbd>+<kbd>1</kbd>，或者按一下工具列的靠上的 **顯示指令碼窗格** 圖示，或在 [檢視]  功能表中，按一下 [靠上顯示指令碼窗格]  。
 
-- 若要將指令碼窗格移動到主控台窗格右方，請按 <kbd>CTRL</kbd>+<kbd>2</kbd>，或者按一下工具列的**靠右顯示指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [靠右顯示指令碼窗格]  。
+- 若要將指令碼窗格移動到主控台窗格右方，請按 <kbd>CTRL</kbd>+<kbd>2</kbd>，或者按一下工具列的 **靠右顯示指令碼窗格** 圖示，或在 [檢視]  功能表中，按一下 [靠右顯示指令碼窗格]  。
 
-- 若要將指令碼窗格最大化，請按<kbd>CTRL</kbd>+<kbd>3</kbd>，或者按一下工具列的**顯示最大化的指令碼窗格**圖示，或在 [檢視]  功能表中，按一下 [顯示最大化的指令碼窗格]  。
+- 若要將指令碼窗格最大化，請按 <kbd>CTRL</kbd>+<kbd>3</kbd>，或者按一下工具列的 **顯示最大化的指令碼窗格** 圖示，或在 [檢視]  功能表中，按一下 [顯示最大化的指令碼窗格]  。
 
-- 若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下**隱藏指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
+- 若要將主控台窗格最大化，並將指令碼窗格隱藏在索引標籤資料列最右側，請按一下 **隱藏指令碼窗格** 圖示；或在 **[檢視]** 功能表中，按一下以取消選取 **[顯示指令碼窗格]** 功能表選項。
 
-- 若要在主控台窗格最大化時顯示指令碼窗格，請按一下**顯示指令碼窗格**圖示；或在 **[檢視]** 功能表中，按一下以選取 **[顯示指令碼窗格]** 功能表選項。
+- 若要在主控台窗格最大化時顯示指令碼窗格，請按一下 **顯示指令碼窗格** 圖示；或在 **[檢視]** 功能表中，按一下以選取 **[顯示指令碼窗格]** 功能表選項。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>編輯文字的鍵盤快速鍵
 
@@ -148,7 +148,7 @@ Microsoft 致力於讓所有使用者都能輕鬆使用其產品與服務。 下
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始和結束的鍵盤快速鍵
 
-您可以使用下列鍵盤快速鍵，啟動 Windows PowerShell 主控台 (**PowerShell.exe**) 或結束 Windows PowerShell ISE。
+您可以使用下列鍵盤快速鍵，啟動 Windows PowerShell 主控台 ( **PowerShell.exe** ) 或結束 Windows PowerShell ISE。
 
 |                        動作                         |               鍵盤快速鍵               |
 | ----------------------------------------------------- | --------------------------------------------- |

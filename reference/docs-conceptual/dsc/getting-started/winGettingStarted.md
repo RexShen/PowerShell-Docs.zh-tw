@@ -2,17 +2,17 @@
 ms.date: 08/15/2019
 keywords: dsc,powershell,設定,安裝
 title: 開始使用適用於 Windows 的 Desired State Configuration (DSC)
-ms.openlocfilehash: 00e1cf545b19f054b4b1ff468c9f6ad94e5cef55
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: 此主題說明如何開始使用適用於 Windows 的 PowerShell Desired State Configuration (DSC)。
+ms.openlocfilehash: 2b9ddba2023a3933e3ad70d7bfee798ff07f0484
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236317"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662805"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>開始使用適用於 Windows 的 Desired State Configuration (DSC)
 
-此主題說明如何開始使用適用於 Windows 的 PowerShell Desired State Configuration (DSC)。
-如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](../overview/overview.md)。
+此主題說明如何開始使用適用於 Windows 的 PowerShell Desired State Configuration (DSC)。 如需 DSC 的一般資訊，請參閱[開始使用 Windows PowerShell 預期狀態設定](../overview/overview.md)。
 
 ## <a name="supported-windows-operation-system-versions"></a>支援的 Windows 作業系統版本
 
@@ -115,8 +115,7 @@ Remove-DscConfigurationDocument -Stage Current -Verbose
 
 #### <a name="configure-settings-in-local-configuration-manager"></a>設定本機 Configuration Manager 中的設定
 
-使用 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) Cmdlet，將中繼設定 MOF 檔案套用至電腦。
-需要中繼設定 MOF 路徑。
+使用 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) Cmdlet，將中繼設定 MOF 檔案套用至電腦。 需要中繼設定 MOF 路徑。
 
 ```powershell
 Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose

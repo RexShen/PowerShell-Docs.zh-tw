@@ -1,20 +1,19 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,設定
 title: WMF 5.x 版本資訊
-ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.x 版本資訊
+ms.openlocfilehash: d783592104262b08815b12bd8de01adf13b60372
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809874"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655846"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x 版本資訊
 
 ## <a name="wmf-50-changes"></a>WMF 5.0 變更
 
-- PowerShell 5.0 會新增新的結構化**資訊**串流
+- PowerShell 5.0 會新增新的結構化 **資訊** 串流
 - 對 DSC 的改進包括四個新 DSC 資源：
   - WindowsFeatureSet
   - WindowsOptionalFeatureSet
@@ -49,8 +48,8 @@ WMF 5.1 包含已搭配 Windows Server 2016 發行的 PowerShell、WMI、WinRM�
 
 從 5.1 版開始，PowerShell 適用於代表各種功能集及平台相容性的不同版本。
 
-- **Desktop Edition︰** 建置在 .NET Framework 上，與在完整使用量的 Windows 版本 (如 Server Core 和 Windows Desktop) 上執行之 PowerShell 版本的指令碼和模組相容。
-- **Core Edition︰** 建置在 .NET Core 上，與在降低使用量的 Windows 版本 (如 Nano Server 和 Windows IoT) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Desktop Edition：** 建置在 .NET Framework 上，並與目標為完整版 Windows (Server Core 和 Windows Desktop 等) 上執行之 PowerShell 版本的指令碼和模組相容。
+- **Core Edition：** 建置在 .NET Core 上，並與目標為縮減版 Windows (Nano Server 和 Windows IoT 等) 上執行之 PowerShell 版本的指令碼和模組相容。
 
 ### <a name="learn-more-about-using-powershell-editions"></a>深入了解使用 PowerShell 版本
 
@@ -92,13 +91,13 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 在 WMF 5.1 中：
 
-- 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)。
+- 您可以使用 [ModuleSpecification 建構函式 (雜湊表)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)。
 
   此雜湊表與 `Get-Module -FullyQualifiedName` 的格式相同。
 
   **範例：** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-- 如果模組有多個版本，PowerShell 會使用與 `Import-Module`**相同的解析邏輯**，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
+- 如果模組有多個版本，PowerShell 會使用與 `Import-Module`**相同的解析邏輯** ，不傳回錯誤，和 `Import-Module` 及 `Import-DscResource` 的行為一樣。
 
 ## <a name="improvements-to-pester"></a>Pester 的改善
 

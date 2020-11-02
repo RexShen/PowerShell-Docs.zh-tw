@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: dsc,powershell,設定,安裝
+ms.topic: reference
 title: RemoveConfiguration 方法
-ms.openlocfilehash: ef15c873d8dfaf28e5cdeb611b72a70921c099be
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: RemoveConfiguration 方法
+ms.openlocfilehash: d5988ac014c457407c56a097c9a376427376eb3f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464344"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650725"
 ---
 # <a name="removeconfiguration-method"></a>RemoveConfiguration 方法
 
@@ -17,8 +18,8 @@ ms.locfileid: "86464344"
 
 ```mof
 uint32 RemoveConfiguration(
-  [in] uint32  Stage,
-  [in] boolean Force
+  [in] uint32  Stage,
+  [in] boolean Force
 );
 ```
 
@@ -28,9 +29,9 @@ uint32 RemoveConfiguration(
 
 |值 |描述 |
 |:--- |:---|
-|**1** | **目前的**設定文件 (current.mof)。 |
-|**2** | **擱置中的**設定文件 (pending.mof)。  |
-|**4** | **之前的**設定文件 (previous.mof)。 |
+|**1** | **目前的** 設定文件 (current.mof)。 |
+|**2** | **擱置中的** 設定文件 (pending.mof)。  |
+|**4** | **之前的** 設定文件 (previous.mof)。 |
 
 *Force* \[in\] **true** 表示強制移除設定。
 
@@ -44,9 +45,9 @@ uint32 RemoveConfiguration(
 
 ## <a name="requirements"></a>需求
 
-**MOF**：DscCore.mof
+**MOF** ：DscCore.mof
 
-**命名空間**：Root\Microsoft\Windows\DesiredStateConfiguration
+**命名空間** ：Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>另請參閱
 
