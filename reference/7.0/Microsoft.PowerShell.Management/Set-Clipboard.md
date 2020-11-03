@@ -7,12 +7,12 @@ ms.date: 08/09/2019
 online version: https://go.microsoft.com/fwlink/?linkid=526220
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: c4a4d4c98f0da892d16a9953b2cdc890dda41bd0
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 271d9191a0968b03b1e7ec3d283eacc36e633516
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201907"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239799"
 ---
 # Set-Clipboard
 
@@ -29,7 +29,7 @@ Set-Clipboard [-Value] <string[]> [-Append] [-WhatIf] [-Confirm] [<CommonParamet
 
 `Set-Clipboard`Cmdlet 會設定剪貼簿的內容。
 
-[!NOTE]
+> [!NOTE]
 > 在 Linux 上，此 Cmdlet 要求 `xclip` 公用程式必須在路徑中。
 
 ## 範例

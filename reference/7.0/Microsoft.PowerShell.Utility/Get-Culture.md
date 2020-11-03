@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 03/28/2019
+ms.date: 11/01/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Culture
-ms.openlocfilehash: c496293ea198a01b4eeb984bad5cdff1a5718021
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: afb6a8067bba477e2849a44386550729eadc24d8
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201332"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239809"
 ---
 # Get-Culture
 
@@ -41,25 +41,29 @@ Get-Culture [-ListAvailable] [<CommonParameters>]
 
 ## DESCRIPTION
 
-`Get-Culture`Cmdlet 會取得目前文化特性設定的相關資訊。
-這包括與系統上目前語言設定相關的資訊，例如鍵盤配置及項目顯示格式，像是數字、貨幣和日期。
+`Get-Culture`Cmdlet 會取得目前文化特性設定的相關資訊。 這包括與系統上目前語言設定相關的資訊，例如鍵盤配置及項目顯示格式，像是數字、貨幣和日期。
 
-您也可以使用 `Get-UICulture` Cmdlet，此 Cmdlet 會取得系統上的目前使用者介面文化特性，以及國際模組中的 [設定文化](/powershell/module/international/set-culture?view=win10-ps) 特性 Cmdlet。
-使用者介面 (UI) 文化特性會決定要將哪些文字字串用於使用者介面元素，例如功能表和訊息。
+您也可以使用 `Get-UICulture` Cmdlet，此 Cmdlet 會取得系統上的目前使用者介面文化特性，以及國際模組中的 [設定文化](/powershell/module/international/set-culture) 特性 Cmdlet。 使用者介面 (UI) 文化特性會決定要將哪些文字字串用於使用者介面元素，例如功能表和訊息。
 
 ## 範例
 
 ### 範例1：取得文化特性設定
 
+```powershell
+Get-Culture
 ```
-PS C:\> Get-Culture
+
+```Output
+LCID             Name             DisplayName
+----             ----             -----------
+1033             en-US            English (United States)
 ```
 
 這個命令會顯示與電腦上地區設定相關的資訊。
 
 ### 範例2：設定文化特性物件的屬性格式
 
-```
+```powershell
 PS C:\> $C = Get-Culture
 PS C:\> $C | Format-List -Property *
 Parent                         : en
@@ -82,14 +86,18 @@ DateTimeFormat                 : System.Globalization.DateTimeFormatInfo
 Calendar                       : System.Globalization.GregorianCalendar
 OptionalCalendars              : {System.Globalization.GregorianCalendar, System.Globalization.GregorianCalendar}
 UseUserOverride                : True
-IsReadOnly                     : False PS C:\> $C.Calendar
+IsReadOnly                     : False
+
+PS C:\> $C.Calendar
 MinSupportedDateTime : 1/1/0001 12:00:00 AM
 MaxSupportedDateTime : 12/31/9999 11:59:59 PM
 AlgorithmType        : SolarCalendar
 CalendarType         : Localized
 Eras                 : {1}
 TwoDigitYearMax      : 2029
-IsReadOnly           : False PS C:\> $C.DateTimeFormat
+IsReadOnly           : False
+
+PS C:\> $C.DateTimeFormat
 AMDesignator                     : AM
 Calendar                         : System.Globalization.GregorianCalendar
 DateSeparator                    : /
@@ -115,43 +123,39 @@ MonthNames                       : {January, February, March, April...}
 IsReadOnly                       : False
 NativeCalendarName               : Gregorian Calendar
 AbbreviatedMonthGenitiveNames    : {Jan, Feb, Mar, Apr...}
-MonthGenitiveNames               : {January, February, March, April...} PS C:\> $C.DateTimeFormat.FirstDayOfWeek
+MonthGenitiveNames               : {January, February, March, April...}
+
+PS C:\> $C.DateTimeFormat.FirstDayOfWeek
 Sunday
 ```
 
-這個範例示範文化特性物件中的大量資料。
-它示範如何顯示物件的屬性和子屬性。
+這個範例示範文化特性物件中的大量資料。 它示範如何顯示物件的屬性和子屬性。
 
-第一個命令會使用「 **取得文化** 特性」 Cmdlet 來取得電腦上目前的文化特性設定。
-它會將產生的文化特性物件儲存在 $C 變數中。
+第一個命令會使用 `Get-Culture` Cmdlet 來取得電腦上目前的文化特性設定。
+它會將產生的文化特性物件儲存在 `$C` 變數中。
 
-第二個命令會顯示文化特性物件的所有屬性。
-它使用管線運算子 (|) 將文化特性物件傳送 `$C` 至 `Format-List` Cmdlet。
-它會使用 **Property** 參數來顯示 \* 物件的所有 () 屬性。
-此命令可以縮寫為 `$c | fl *` 。
+第二個命令會顯示文化特性物件的所有屬性。 它使用管線運算子 (`|`) 將文化特性物件傳送 `$C` 至 `Format-List` Cmdlet。 它會使用 **Property** 參數來顯示 `*` 物件的所有 () 屬性。 此命令可以縮寫為 `$c | fl *` 。
 
-剩餘的命令會藉由使用點標記法來顯示物件屬性的值，以探索文化特性物件的屬性。
-您可以使用這個標記法來顯示物件的任何屬性值。
+剩餘的命令會藉由使用點標記法來顯示物件屬性的值，以探索文化特性物件的屬性。 您可以使用這個標記法來顯示物件的任何屬性值。
 
 第三個命令使用點標記法來顯示文化特性物件之 **Calendar** 屬性的值。
 
 第四個命令會使用點標記法來顯示文化特性物件的 **之 datatimeformat** 屬性值。
 
-許多物件屬性都有屬性。
-第五個命令使用點標記法來顯示 **DateTimeFormat** 屬性之 **FirstDayOfWeek** 屬性的值。
+許多物件屬性都有屬性。 第五個命令使用點標記法來顯示 **DateTimeFormat** 屬性之 **FirstDayOfWeek** 屬性的值。
 
 ### 範例3：取得特定文化特性
 
-取得美國英文的 CultureInfo 物件。
+取得法國法文的 CultureInfo 物件。
 
 ```powershell
-Get-Culture -Name en-US
+Get-Culture -Name fr-FR
 ```
 
-```output
+```Output
 LCID             Name             DisplayName
 ----             ----             -----------
-1033             en-US            English (United States)
+1036             fr-FR            French (France)
 ```
 
 ## PARAMETERS
@@ -232,6 +236,6 @@ Accept wildcard characters: False
 
 ## 相關連結
 
-[Set-Culture](/powershell/module/international/set-culture?view=win10-ps)
+[Set-Culture](/powershell/module/international/set-culture)
 
 [Get-UICulture](Get-UICulture.md)

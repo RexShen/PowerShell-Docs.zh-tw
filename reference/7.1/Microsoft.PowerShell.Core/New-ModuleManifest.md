@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: caf67f951beb054e9bedb46d010fe1a5d8db7ab8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5fbd197f6c22de0ca50b4d2b6b76a914b85f7120
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205024"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239769"
 ---
 # New-ModuleManifest
 
@@ -1082,6 +1082,9 @@ Accept wildcard characters: False
 
 若要在目錄中新增或變更檔案 `$pshome\Modules` ，請使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell。
 
+> [!NOTE]
+> 從 PowerShell 6.2 開始，PowerShell 會嘗試載入模組資訊清單的 **FileList** 屬性中所列的所有 DLL 檔案。 **FileList** 中的原生 dll 無法在進程中載入，而且會忽略錯誤。 所有 managed Dll 都會載入到進程中。 此行為已在 PowerShell 7.1 中移除。
+
 在 PowerShell 2.0 中，許多的參數 `New-ModuleManifest` 都是強制性的，即使在模組資訊清單中不需要它們也是一樣。 從 PowerShell 3.0 開始，只有 **Path** 參數是必要的。
 
 會話是 PowerShell 執行環境的實例。 工作階段可以有一或多個工作階段狀態。 依預設，工作階段只有全域工作階段狀態，但每個匯入的模組有自己的工作階段狀態。 工作階段狀態允許執行模組中的命令，而不會影響全域工作階段狀態。
@@ -1103,4 +1106,3 @@ Accept wildcard characters: False
 [Test-ModuleManifest](Test-ModuleManifest.md)
 
 [about_Modules](./About/about_Modules.md)
-

@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: c84105db4079766c6bf329d1076d5db571c1fbfe
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d72bc32ffa96720a9eb2451ff28ad126b69f0d7a
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204496"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239779"
 ---
 # New-ModuleManifest
 
@@ -1028,6 +1028,9 @@ Accept wildcard characters: False
 模組資訊清單通常為選擇性。 不過，需要模組資訊清單才能匯出安裝在全域組件快取中的組件。
 
 若要在目錄中新增或變更檔案 `$pshome\Modules` ，請使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell。
+
+> [!NOTE]
+> 從 PowerShell 6.2 開始，PowerShell 會嘗試載入模組資訊清單的 **FileList** 屬性中所列的所有 DLL 檔案。 **FileList** 中的原生 dll 無法在進程中載入，而且會忽略錯誤。 所有 managed Dll 都會載入到進程中。 此行為已在 PowerShell 7.1 中移除。
 
 在 PowerShell 2.0 中，許多的參數 `New-ModuleManifest` 都是強制性的，即使在模組資訊清單中不需要它們也是一樣。 從 PowerShell 3.0 開始，只有 **Path** 參數是必要的。
 
