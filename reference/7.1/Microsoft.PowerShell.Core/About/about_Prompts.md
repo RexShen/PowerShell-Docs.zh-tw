@@ -244,7 +244,7 @@ function prompt {
 
 就像任何函式一樣， `Prompt` 函數只存在於目前的會話中。 若要在 `Prompt` 未來的會話中儲存函式，請將它新增至您的 PowerShell 設定檔。 如需設定檔的詳細資訊，請參閱 [about_Profiles](about_Profiles.md)。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [Get-Location](xref:Microsoft.PowerShell.Management.Get-Location)
 
