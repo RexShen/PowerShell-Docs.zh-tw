@@ -2,18 +2,19 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 直接操作項目
-ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 提供數個 Cmdlet，可協助管理本機和遠端電腦上的項目。 項目是由 PowerShell 提供者所公開的物件，例如檔案系統、登錄、憑證等。
+ms.openlocfilehash: 20132b63a8ff4ef24b1d8346066315dbb053e59c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030137"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500312"
 ---
 # <a name="manipulating-items-directly"></a>直接操作項目
 
-您在 Windows PowerShell 磁碟機中看到的項目 (例如檔案系統磁碟機中的檔案與資料夾，以及 Windows PowerShell 登錄磁碟機中的登錄機碼) 在 Windows PowerShell 中稱為*項目*。 用於處理項目之 Cmdlet 的名稱中具有名詞 **Item**。
+您在 Windows PowerShell 磁碟機中看到的項目 (例如檔案系統磁碟機中的檔案與資料夾，以及 Windows PowerShell 登錄磁碟機中的登錄機碼) 在 Windows PowerShell 中稱為「項目」。 用於處理項目之 Cmdlet 的名稱中具有名詞 **Item** 。
 
-**Get-Command -Noun Item** 命令的輸出顯示有九個 Windows PowerShell 項目 Cmdlet。
+**Get-Command -Noun Item** 命令的輸出會顯示有九個 Windows PowerShell item Cmdlet。
 
 ```
 PS> Get-Command -Noun Item
@@ -33,7 +34,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 
 ## <a name="creating-new-items-new-item"></a>建立新項目 (New-Item)
 
-若要在檔案系統中建立新項目，請使用 **New-Item** Cmdlet。 包含 **Path** 參數並指定項目路徑作為參數值，以及包含 **ItemType** 參數並指定 "file" 或 "directory" 的值。
+若要在檔案系統中建立新項目，請使用 **New-Item** Cmdlet。 包含 **Path** 參數並指定項目路徑做為參數值，並包含 **ItemType** 參數並指定 "file" 或 "directory" 的值。
 
 例如，若要在 C:\\Temp 目錄中建立名為 "New.Directory" 的新目錄，請輸入：
 
@@ -59,7 +60,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-您可以使用相同的方式來建立新的登錄機碼。 事實上，建立登錄機碼的方式較簡單，因為 Windows 登錄中唯一的項目類型是機碼。 (登錄項目是項目*屬性*。)例如，若要在 CurrentVersion 子機碼中建立名為 "_Test" 的機碼，請輸入：
+您可以使用相同的方式來建立新的登錄機碼。 事實上，建立登錄機碼的方式較簡單，因為 Windows 登錄中唯一的項目類型是機碼。 (登錄項目是項目 *屬性* 。)例如，若要在 CurrentVersion 子機碼中建立名為 "_Test" 的機碼，請輸入：
 
 ```
 PS> New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion_Test
@@ -96,7 +97,7 @@ SKC  VC Name                           Property
 
 ## <a name="renaming-existing-items-rename-item"></a>重新命名現有的項目 (Rename-Item)
 
-若要變更檔案或資料夾的名稱，請使用 **Rename-Item** Cmdlet。 下列命令會將 **file1.txt** 檔案的名稱變更為 **fileOne.txt**。
+若要變更檔案或資料夾的名稱，請使用 **Rename-Item** Cmdlet。 下列命令會將 **file1.txt** 檔案的名稱變更為 **fileOne.txt** 。
 
 ```powershell
 Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
@@ -115,7 +116,7 @@ At line:1 char:12
 
 若要移動檔案或資料夾，請使用 **Move-Item** Cmdlet。
 
-例如，下列命令會將 New.Directory 目錄從 C:\\temp 目錄移動到 C: 磁碟機的根目錄。 若要確定項目已移動，請包含 **Move-Item** Cmdlet 的 **PassThru** 參數。 若未指定 **Passthru**，**Move-Item** Cmdlet 不會顯示任何結果。
+例如，下列命令會將 New.Directory 目錄從 C:\\temp 目錄移動到 C: 磁碟機的根目錄。 若要確定項目已移動，請包含 **Move-Item** Cmdlet 的 **PassThru** 參數。 若未指定 **Passthru** ， **Move-Item** Cmdlet 不會顯示任何結果。
 
 ```
 PS> Move-Item -Path C:\temp\New.Directory -Destination C:\ -PassThru
@@ -168,7 +169,7 @@ Mode                LastWriteTime     Length Name
 
 ## <a name="deleting-items-remove-item"></a>刪除項目 (Remove-Item)
 
-若要刪除檔案與資料夾，請使用 **Remove-Item** Cmdlet。 會造成大幅且無法復原之變更的 Windows PowerShell Cmdlet (例如 **Remove-Item**) 通常會在您輸入其命令時提示您確認。 例如，若嘗試移除 **New.Directory** 資料夾，系統會提示您確認要執行該命令，因為資料夾包含檔案：
+若要刪除檔案與資料夾，請使用 **Remove-Item** Cmdlet。 會造成大幅且無法復原之變更的 Windows PowerShell Cmdlet (例如 **Remove-Item** ) 通常會在您輸入其命令時提示您確認。 例如，若嘗試移除 **New.Directory** 資料夾，系統會提示您確認要執行該命令，因為資料夾包含檔案：
 
 ```
 PS> Remove-Item C:\New.Directory
@@ -181,7 +182,7 @@ specified. If you continue, all children will be removed with the item. Are you
 (default is "Y"):
 ```
 
-因為 **[是]** 是預設回應，若要刪除資料夾與其中的檔案，請按 **Enter** 鍵。 若要在不確認的情況下移除資料夾，請使用 **-Recurse** 參數。
+因為 [是] 是預設回應，若要刪除資料夾與其中的檔案，請按下 **Enter** 鍵。 若要在不確認的情況下移除資料夾，請使用 **-Recurse** 參數。
 
 ```powershell
 Remove-Item C:\temp\New.Directory -Recurse

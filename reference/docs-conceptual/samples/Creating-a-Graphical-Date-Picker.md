@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 建立圖形化日期選擇器
-ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 本文說明如何使用 Windows PowerShell 中的 .NET Framework 表單建置功能，建立自訂日曆樣式控制項。
+ms.openlocfilehash: b73c9ba78817af7c38c20642402752765a7a3674
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706118"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500499"
 ---
 # <a name="creating-a-graphical-date-picker"></a>建立圖形化日期選擇器
 
@@ -60,7 +61,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-指令碼一開始會載入兩個 .NET Framework 類別：**System.Drawing** 和 **System.Windows.Forms**。 接著，您會啟動新的 .NET Framework 類別 **Windows.Forms.Form** 的執行個體，這樣可以提供空白表單或視窗讓您可以開始新增控制項。
+指令碼一開始會載入兩個 .NET Framework 類別： **System.Drawing** 和 **System.Windows.Forms** 。 接著，您會啟動新的 .NET Framework 類別 **Windows.Forms.Form** 的執行個體，這樣可以提供空白表單或視窗讓您可以開始新增控制項。
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -73,14 +74,14 @@ $form = New-Object Windows.Forms.Form -Property @{
 
 此範例會使用 **Property** 屬性與雜湊表為此類別的四個屬性指派值。
 
-1. **StartPosition**：若未新增此屬性，Windows 會在表單開啟時選取一個位置。 透過將此屬性 設定為 **CenterScreen**，您可以在每次載入表單時，將表單自動顯示在畫面中間。
+1. **StartPosition** ：若未新增此屬性，Windows 會在表單開啟時選取一個位置。 將此屬性設定為 **CenterScreen** ，您就可以讓表單在每次載入時，自動顯示在畫面中間。
 
-2. **Size**：這是表單的大小，單位為像素。
+2. **Size** ：這是表單的大小，單位為像素。
    上述指令碼會建立 243 像素寬、230 像素高的表單。
 
-3. **Text**：這會成為視窗的標題。
+3. **Text** ：這會成為視窗的標題。
 
-4. **Topmost**：透過將此屬性設定為 `$true`，您可以強制視窗開啟在其他已開啟視窗與對話方塊的上方。
+4. **Topmost** ：透過將此屬性設定為 `$true`，您可以強制視窗開啟在其他已開啟視窗與對話方塊的上方。
 
 接著，在您的表單中建立並新增日曆控制項。
 在此範例中，目前的日期並未反白顯示或圈起來。
@@ -94,7 +95,7 @@ $calendar = New-Object Windows.Forms.MonthCalendar -Property @{
 $form.Controls.Add($calendar)
 ```
 
-接著，為您的表單建立 **[確定]** 按鈕。 指定 **[確定]** 按鈕的大小與行為。 在此範例中，按鈕位置是距離表單上邊緣 165 像素，並距離左邊緣 38 像素。 按鈕高度是 23 像素，而按鈕寬度是 75 像素。 指令碼會使用預先定義的 Windows Forms 類型來決定按鈕行為。
+接著，為您的表單建立 **[確定]** 按鈕。 指定 **[確定]** 按鈕的大小與行為。 在此範例中，按鈕位置會距離表單上邊緣 165 像素，並距離左邊緣 38 像素。 按鈕高度是 23 像素，而按鈕寬度是 75 像素。 指令碼會使用預先定義的 Windows Forms 類型來決定按鈕行為。
 
 ```powershell
 $okButton = New-Object Windows.Forms.Button -Property @{
@@ -108,7 +109,7 @@ $form.Controls.Add($okButton)
 ```
 
 同樣地，您也會建立 **[取消]** 按鈕。
-**[取消]** 按鈕距離上邊緣 165 像素，但距離視窗左邊緣 113 像素。
+[Cancel] 按鈕距離上邊緣 165 像素，但距離視窗左邊緣 113 像素。
 
 ```powershell
 $cancelButton = New-Object Windows.Forms.Button -Property @{
@@ -127,7 +128,7 @@ $form.Controls.Add($cancelButton)
 $result = $form.ShowDialog()
 ```
 
-最後， `if` 區塊內的程式碼會指示 Windows 當使用者選取日曆上的日期並按一下 [確定]  按鈕或按下 **Enter** 鍵時要執行的表單動作。 Windows PowerShell 會將選取的日期顯示給使用者。
+最後， `if` 區塊內的程式碼會指示 Windows 當使用者選取日曆上的日期並按一下 [確定] 按鈕或按下 **Enter** 鍵時要執行的表單動作。 Windows PowerShell 會將選取的日期顯示給使用者。
 
 ```powershell
 if ($result -eq [Windows.Forms.DialogResult]::OK) {
@@ -138,5 +139,5 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>另請參閱
 
-- [GitHub：Dave Wyatt 的 WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) \(英文\)
-- [本週 Windows PowerShell 祕訣︰建立圖形化日期選擇器](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10)) \(英文\)
+- [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
+- [本週 Windows PowerShell 秘訣︰建立圖形化日期選擇器](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
