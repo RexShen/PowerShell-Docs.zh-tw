@@ -1,0 +1,304 @@
+---
+description: 描述 PowerShell 提供者如何提供無法在命令列輕鬆存取之資料和元件的存取權。 資料是以一致的格式呈現，類似于檔案系統磁片磁碟機。
+keywords: powershell,cmdlet
+Locale: en-US
+ms.date: 03/27/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_providers?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: about_Providers
+ms.openlocfilehash: 952ab618f1e47f0f912209ba56c37a667c596aaf
+ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.translationtype: MT
+ms.contentlocale: zh-TW
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "93207595"
+---
+# <a name="about-providers"></a><span data-ttu-id="da9bf-105">關於提供者</span><span class="sxs-lookup"><span data-stu-id="da9bf-105">About Providers</span></span>
+
+## <a name="short-description"></a><span data-ttu-id="da9bf-106">簡短描述</span><span class="sxs-lookup"><span data-stu-id="da9bf-106">Short description</span></span>
+<span data-ttu-id="da9bf-107">描述 PowerShell 提供者如何提供無法在命令列輕鬆存取之資料和元件的存取權。</span><span class="sxs-lookup"><span data-stu-id="da9bf-107">Describes how PowerShell providers provide access to data and components that wouldn't otherwise be easily accessible at the command line.</span></span>
+<span data-ttu-id="da9bf-108">資料是以一致的格式呈現，類似于檔案系統磁片磁碟機。</span><span class="sxs-lookup"><span data-stu-id="da9bf-108">The data is presented in a consistent format that resembles a file system drive.</span></span>
+
+## <a name="long-description"></a><span data-ttu-id="da9bf-109">完整描述</span><span class="sxs-lookup"><span data-stu-id="da9bf-109">Long description</span></span>
+
+<span data-ttu-id="da9bf-110">PowerShell 提供者是 .NET 程式，可讓您存取特定的資料存放區，以便更輕鬆地進行流覽和管理。</span><span class="sxs-lookup"><span data-stu-id="da9bf-110">PowerShell providers are .NET programs that provide access to specialized data stores for easier viewing and management.</span></span> <span data-ttu-id="da9bf-111">資料會出現在磁片磁碟機中，您可以像在硬碟一樣存取路徑中的資料。</span><span class="sxs-lookup"><span data-stu-id="da9bf-111">The data appears in a drive, and you access the data in a path like you would on a hard disk drive.</span></span> <span data-ttu-id="da9bf-112">您可以使用提供者支援的任何內建 Cmdlet 來管理提供者磁片磁碟機中的資料。</span><span class="sxs-lookup"><span data-stu-id="da9bf-112">You can use any of the built-in cmdlets that the provider supports to manage the data in the provider drive.</span></span> <span data-ttu-id="da9bf-113">而且，您可以使用特別針對資料設計的自訂 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="da9bf-113">And, you can use custom cmdlets that are designed especially for the data.</span></span>
+
+<span data-ttu-id="da9bf-114">提供者也可以將動態參數新增至內建的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="da9bf-114">The providers can also add dynamic parameters to the built-in cmdlets.</span></span> <span data-ttu-id="da9bf-115">只有當您搭配提供者資料使用 Cmdlet 時，才能使用這些參數。</span><span class="sxs-lookup"><span data-stu-id="da9bf-115">These parameters are only available when you use the cmdlet with the provider data.</span></span>
+
+## <a name="built-in-providers"></a><span data-ttu-id="da9bf-116">內建提供者</span><span class="sxs-lookup"><span data-stu-id="da9bf-116">Built-in providers</span></span>
+
+<span data-ttu-id="da9bf-117">PowerShell 包含一組內建提供者，可讓您用來存取不同類型的資料存放區。</span><span class="sxs-lookup"><span data-stu-id="da9bf-117">PowerShell includes a set of built-in providers that you can use to access the different types of data stores.</span></span>
+
+| <span data-ttu-id="da9bf-118">提供者</span><span class="sxs-lookup"><span data-stu-id="da9bf-118">Provider</span></span>   |   <span data-ttu-id="da9bf-119">磁片磁碟機 (s) </span><span class="sxs-lookup"><span data-stu-id="da9bf-119">Drive(s)</span></span>  |<span data-ttu-id="da9bf-120">OutputType</span><span class="sxs-lookup"><span data-stu-id="da9bf-120">OutputType</span></span>                                                    |
+|----------- |------------ |--------------------------------------------------------------|
+|<span data-ttu-id="da9bf-121">Alias</span><span class="sxs-lookup"><span data-stu-id="da9bf-121">Alias</span></span>       |<span data-ttu-id="da9bf-122">Alias:</span><span class="sxs-lookup"><span data-stu-id="da9bf-122">Alias:</span></span>       |<span data-ttu-id="da9bf-123">System.Management.Automation.AliasInfo</span><span class="sxs-lookup"><span data-stu-id="da9bf-123">System.Management.Automation.AliasInfo</span></span>                        |
+|<span data-ttu-id="da9bf-124">憑證</span><span class="sxs-lookup"><span data-stu-id="da9bf-124">Certificate</span></span> |<span data-ttu-id="da9bf-125">Cert:</span><span class="sxs-lookup"><span data-stu-id="da9bf-125">Cert:</span></span>        |<span data-ttu-id="da9bf-126">Microsoft.powershell.commands.x509storelocation。</span><span class="sxs-lookup"><span data-stu-id="da9bf-126">Microsoft.PowerShell.Commands.X509StoreLocation</span></span>               |
+|            |             |<span data-ttu-id="da9bf-127">System.Security.Cryptography.X509Certificates.X509Certificate2</span><span class="sxs-lookup"><span data-stu-id="da9bf-127">System.Security.Cryptography.X509Certificates.X509Certificate2</span></span>|
+|<span data-ttu-id="da9bf-128">環境</span><span class="sxs-lookup"><span data-stu-id="da9bf-128">Environment</span></span> |<span data-ttu-id="da9bf-129">Env:</span><span class="sxs-lookup"><span data-stu-id="da9bf-129">Env:</span></span>         |<span data-ttu-id="da9bf-130">DictionaryEntry</span><span class="sxs-lookup"><span data-stu-id="da9bf-130">System.Collections.DictionaryEntry</span></span>                            |
+|<span data-ttu-id="da9bf-131">FileSystem</span><span class="sxs-lookup"><span data-stu-id="da9bf-131">FileSystem</span></span>  |<span data-ttu-id="da9bf-132">C： ( \* ) </span><span class="sxs-lookup"><span data-stu-id="da9bf-132">C: (\*)</span></span>       |<span data-ttu-id="da9bf-133">System.IO.FileInfo</span><span class="sxs-lookup"><span data-stu-id="da9bf-133">System.IO.FileInfo</span></span>                                            |
+|            |             |<span data-ttu-id="da9bf-134">DirectoryInfo</span><span class="sxs-lookup"><span data-stu-id="da9bf-134">System.IO.DirectoryInfo</span></span>                                       |
+|<span data-ttu-id="da9bf-135">函式</span><span class="sxs-lookup"><span data-stu-id="da9bf-135">Function</span></span>    |<span data-ttu-id="da9bf-136">函式：</span><span class="sxs-lookup"><span data-stu-id="da9bf-136">Function:</span></span>    |<span data-ttu-id="da9bf-137">System.Management.Automation.FunctionInfo</span><span class="sxs-lookup"><span data-stu-id="da9bf-137">System.Management.Automation.FunctionInfo</span></span>                     |
+|<span data-ttu-id="da9bf-138">登錄</span><span class="sxs-lookup"><span data-stu-id="da9bf-138">Registry</span></span>    |<span data-ttu-id="da9bf-139">HKLM： HKCU：</span><span class="sxs-lookup"><span data-stu-id="da9bf-139">HKLM: HKCU:</span></span>  |<span data-ttu-id="da9bf-140">Microsoft. RegistryKey</span><span class="sxs-lookup"><span data-stu-id="da9bf-140">Microsoft.Win32.RegistryKey</span></span>                                   |
+|<span data-ttu-id="da9bf-141">變數</span><span class="sxs-lookup"><span data-stu-id="da9bf-141">Variable</span></span>    |<span data-ttu-id="da9bf-142">Variable:</span><span class="sxs-lookup"><span data-stu-id="da9bf-142">Variable:</span></span>    |<span data-ttu-id="da9bf-143">System.Management.Automation.PSVariable</span><span class="sxs-lookup"><span data-stu-id="da9bf-143">System.Management.Automation.PSVariable</span></span>                       |
+|<span data-ttu-id="da9bf-144">WSMan</span><span class="sxs-lookup"><span data-stu-id="da9bf-144">WSMan</span></span>       |<span data-ttu-id="da9bf-145">WSMan:</span><span class="sxs-lookup"><span data-stu-id="da9bf-145">WSMan:</span></span>       |<span data-ttu-id="da9bf-146">Microsoft.WSMan.Management.WSManConfigContainerElement</span><span class="sxs-lookup"><span data-stu-id="da9bf-146">Microsoft.WSMan.Management.WSManConfigContainerElement</span></span>        |
+
+<span data-ttu-id="da9bf-147"> (\ * ) 每個系統上的 FileSystem 磁片磁碟機各不相同。</span><span class="sxs-lookup"><span data-stu-id="da9bf-147">(\*) The FileSystem drives vary on each system.</span></span>
+
+<span data-ttu-id="da9bf-148">您也可以建立自己的 PowerShell 提供者，而且可以安裝其他人所開發的提供者。</span><span class="sxs-lookup"><span data-stu-id="da9bf-148">You can also create your own PowerShell providers, and you can install providers that others develop.</span></span> <span data-ttu-id="da9bf-149">若要列出您的會話中可用的提供者，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-149">To list the providers that are available in your session, type:</span></span>
+
+```powershell
+Get-PSProvider
+```
+
+## <a name="installing-and-removing-providers"></a><span data-ttu-id="da9bf-150">安裝和移除提供者</span><span class="sxs-lookup"><span data-stu-id="da9bf-150">Installing and removing providers</span></span>
+
+<span data-ttu-id="da9bf-151">提供者通常會透過 PowerShell 模組安裝。</span><span class="sxs-lookup"><span data-stu-id="da9bf-151">Providers are typically installed via PowerShell modules.</span></span> <span data-ttu-id="da9bf-152">匯入模組會將提供者載入您的會話中。</span><span class="sxs-lookup"><span data-stu-id="da9bf-152">Importing the module loads the provider into your session.</span></span> <span data-ttu-id="da9bf-153">您無法卸載內建的提供者。</span><span class="sxs-lookup"><span data-stu-id="da9bf-153">You can't uninstall the built-in providers.</span></span> <span data-ttu-id="da9bf-154">您可以卸載其他模組所載入的提供者。</span><span class="sxs-lookup"><span data-stu-id="da9bf-154">You can uninstall providers loaded by other modules.</span></span>
+
+<span data-ttu-id="da9bf-155">您可以使用 Cmdlet 從目前的會話中卸載提供者 `Remove-Module` 。</span><span class="sxs-lookup"><span data-stu-id="da9bf-155">You can unload a provider from the current session using the `Remove-Module` cmdlet.</span></span> <span data-ttu-id="da9bf-156">此 Cmdlet 不會卸載提供者，但它會讓提供者無法在會話中使用。</span><span class="sxs-lookup"><span data-stu-id="da9bf-156">This cmdlet doesn't uninstall the provider, but it makes the provider unavailable in the session.</span></span>
+
+<span data-ttu-id="da9bf-157">您也可以使用 `Remove-PSDrive` Cmdlet 來移除目前會話中的任何磁片磁碟機。</span><span class="sxs-lookup"><span data-stu-id="da9bf-157">You can also use the `Remove-PSDrive` cmdlet to remove any drive from the current session.</span></span> <span data-ttu-id="da9bf-158">磁片磁碟機上的此資料不會受到影響，但該會話無法再使用該磁片磁碟機。</span><span class="sxs-lookup"><span data-stu-id="da9bf-158">This data on the drive isn't affected, but the drive is no longer available in that session.</span></span>
+
+## <a name="viewing-providers"></a><span data-ttu-id="da9bf-159">查看提供者</span><span class="sxs-lookup"><span data-stu-id="da9bf-159">Viewing providers</span></span>
+
+<span data-ttu-id="da9bf-160">若要在您的電腦上查看 PowerShell 提供者，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-160">To view the PowerShell providers on your computer, type:</span></span>
+
+```powershell
+Get-PSProvider
+```
+
+<span data-ttu-id="da9bf-161">輸出會列出內建提供者，以及您新增至會話的提供者。</span><span class="sxs-lookup"><span data-stu-id="da9bf-161">The output lists the built-in providers and the providers that you added to the session.</span></span>
+
+## <a name="the-provider-cmdlets"></a><span data-ttu-id="da9bf-162">提供者 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-162">The provider cmdlets</span></span>
+
+<span data-ttu-id="da9bf-163">下列 Cmdlet 是針對與任何提供者公開的資料搭配使用所設計。</span><span class="sxs-lookup"><span data-stu-id="da9bf-163">The following cmdlets are designed to work with the data exposed by any provider.</span></span> <span data-ttu-id="da9bf-164">您可以用相同的方式使用相同的 Cmdlet 來管理提供者公開的不同資料類型。</span><span class="sxs-lookup"><span data-stu-id="da9bf-164">You can use the same cmdlets in the same way to manage the different types of data that providers expose.</span></span> <span data-ttu-id="da9bf-165">在您瞭解如何管理某個提供者的資料之後，您可以使用來自任何提供者之資料的相同程式。</span><span class="sxs-lookup"><span data-stu-id="da9bf-165">After you learn to manage the data of one provider, you can use the same procedures with the data from any provider.</span></span>
+
+<span data-ttu-id="da9bf-166">例如，Cmdlet 會 `New-Item` 建立新專案。</span><span class="sxs-lookup"><span data-stu-id="da9bf-166">For example, the `New-Item` cmdlet creates a new item.</span></span> <span data-ttu-id="da9bf-167">在 `C:` **FileSystem** 提供者所支援的磁片磁碟機中，您可以使用 `New-Item` 建立新的檔案或資料夾。</span><span class="sxs-lookup"><span data-stu-id="da9bf-167">In the `C:` drive that is supported by the **FileSystem** provider, you can use `New-Item` to create a new file or folder.</span></span> <span data-ttu-id="da9bf-168">在 **登錄提供者所支援的磁片** 磁碟機中，您可以使用 `New-Item` 建立新的登錄機碼。</span><span class="sxs-lookup"><span data-stu-id="da9bf-168">In the drives that are supported by the **Registry** provider, you can use `New-Item` to create a new registry key.</span></span> <span data-ttu-id="da9bf-169">在 `Alias:` 磁片磁碟機中，您可以使用 `New-Item` 建立新的別名。</span><span class="sxs-lookup"><span data-stu-id="da9bf-169">In the `Alias:` drive, you can use `New-Item` to create a new alias.</span></span>
+
+<span data-ttu-id="da9bf-170">如需下列任何 Cmdlet 的詳細資訊，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-170">For detailed information about any of the following cmdlets, type:</span></span>
+
+```
+Get-Help <cmdlet-name> -Detailed
+```
+
+### <a name="childitem-cmdlets"></a><span data-ttu-id="da9bf-171">Get-childitem Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-171">ChildItem cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-172">Get-ChildItem</span><span class="sxs-lookup"><span data-stu-id="da9bf-172">Get-ChildItem</span></span>](xref:Microsoft.PowerShell.Management.Get-ChildItem)
+
+### <a name="content-cmdlets"></a><span data-ttu-id="da9bf-173">Content Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-173">Content Cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-174">Add-Content</span><span class="sxs-lookup"><span data-stu-id="da9bf-174">Add-Content</span></span>](xref:Microsoft.PowerShell.Management.Add-Content)
+- [<span data-ttu-id="da9bf-175">Clear-Content</span><span class="sxs-lookup"><span data-stu-id="da9bf-175">Clear-Content</span></span>](xref:Microsoft.PowerShell.Management.Clear-Content)
+- [<span data-ttu-id="da9bf-176">Get-Content</span><span class="sxs-lookup"><span data-stu-id="da9bf-176">Get-Content</span></span>](xref:Microsoft.PowerShell.Management.Get-Content)
+- [<span data-ttu-id="da9bf-177">Set-Content</span><span class="sxs-lookup"><span data-stu-id="da9bf-177">Set-Content</span></span>](xref:Microsoft.PowerShell.Management.Set-Content)
+
+### <a name="item-cmdlets"></a><span data-ttu-id="da9bf-178">Item Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-178">Item Cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-179">Clear-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-179">Clear-Item</span></span>](xref:Microsoft.PowerShell.Management.Clear-Item)
+- [<span data-ttu-id="da9bf-180">Copy-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-180">Copy-Item</span></span>](xref:Microsoft.PowerShell.Management.Copy-Item)
+- [<span data-ttu-id="da9bf-181">Get-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-181">Get-Item</span></span>](xref:Microsoft.PowerShell.Management.Get-Item)
+- [<span data-ttu-id="da9bf-182">Invoke-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-182">Invoke-Item</span></span>](xref:Microsoft.PowerShell.Management.Invoke-Item)
+- [<span data-ttu-id="da9bf-183">Move-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-183">Move-Item</span></span>](xref:Microsoft.PowerShell.Management.Move-Item)
+- [<span data-ttu-id="da9bf-184">New-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-184">New-Item</span></span>](xref:Microsoft.PowerShell.Management.New-Item)
+- [<span data-ttu-id="da9bf-185">Remove-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-185">Remove-Item</span></span>](xref:Microsoft.PowerShell.Management.Remove-Item)
+- [<span data-ttu-id="da9bf-186">Rename-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-186">Rename-Item</span></span>](xref:Microsoft.PowerShell.Management.Rename-Item)
+- [<span data-ttu-id="da9bf-187">Set-Item</span><span class="sxs-lookup"><span data-stu-id="da9bf-187">Set-Item</span></span>](xref:Microsoft.PowerShell.Management.Set-Item)
+
+### <a name="itemproperty-cmdlets"></a><span data-ttu-id="da9bf-188">ItemProperty Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-188">ItemProperty cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-189">Clear-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-189">Clear-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Clear-ItemProperty)
+- [<span data-ttu-id="da9bf-190">Copy-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-190">Copy-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Copy-ItemProperty)
+- [<span data-ttu-id="da9bf-191">Get-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-191">Get-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Get-ItemProperty)
+- [<span data-ttu-id="da9bf-192">Move-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-192">Move-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Move-ItemProperty)
+- [<span data-ttu-id="da9bf-193">New-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-193">New-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.New-ItemProperty)
+- [<span data-ttu-id="da9bf-194">Remove-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-194">Remove-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Remove-ItemProperty)
+- [<span data-ttu-id="da9bf-195">Rename-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-195">Rename-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Rename-ItemProperty)
+- [<span data-ttu-id="da9bf-196">Set-ItemProperty</span><span class="sxs-lookup"><span data-stu-id="da9bf-196">Set-ItemProperty</span></span>](xref:Microsoft.PowerShell.Management.Set-ItemProperty)
+
+### <a name="location-cmdlets"></a><span data-ttu-id="da9bf-197">Location Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-197">Location cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-198">Get-Location</span><span class="sxs-lookup"><span data-stu-id="da9bf-198">Get-Location</span></span>](xref:Microsoft.PowerShell.Management.Get-Location)
+- [<span data-ttu-id="da9bf-199">Pop-Location</span><span class="sxs-lookup"><span data-stu-id="da9bf-199">Pop-Location</span></span>](xref:Microsoft.PowerShell.Management.Pop-Location)
+- [<span data-ttu-id="da9bf-200">Push-Location</span><span class="sxs-lookup"><span data-stu-id="da9bf-200">Push-Location</span></span>](xref:Microsoft.PowerShell.Management.Push-Location)
+- [<span data-ttu-id="da9bf-201">Set-Location</span><span class="sxs-lookup"><span data-stu-id="da9bf-201">Set-Location</span></span>](xref:Microsoft.PowerShell.Management.Set-Location)
+
+### <a name="path-cmdlets"></a><span data-ttu-id="da9bf-202">路徑 Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-202">Path cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-203">Join-Path</span><span class="sxs-lookup"><span data-stu-id="da9bf-203">Join-Path</span></span>](xref:Microsoft.PowerShell.Management.Join-Path)
+- [<span data-ttu-id="da9bf-204">Convert-Path</span><span class="sxs-lookup"><span data-stu-id="da9bf-204">Convert-Path</span></span>](xref:Microsoft.PowerShell.Management.Convert-Path)
+- [<span data-ttu-id="da9bf-205">Split-Path</span><span class="sxs-lookup"><span data-stu-id="da9bf-205">Split-Path</span></span>](xref:Microsoft.PowerShell.Management.Split-Path)
+- [<span data-ttu-id="da9bf-206">Resolve-Path</span><span class="sxs-lookup"><span data-stu-id="da9bf-206">Resolve-Path</span></span>](xref:Microsoft.PowerShell.Management.Resolve-Path)
+- [<span data-ttu-id="da9bf-207">Test-Path</span><span class="sxs-lookup"><span data-stu-id="da9bf-207">Test-Path</span></span>](xref:Microsoft.PowerShell.Management.Test-Path)
+
+### <a name="psdrive-cmdlets"></a><span data-ttu-id="da9bf-208">New-psdrive Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-208">PSDrive cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-209">Get-PSDrive</span><span class="sxs-lookup"><span data-stu-id="da9bf-209">Get-PSDrive</span></span>](xref:Microsoft.PowerShell.Management.Get-PSDrive)
+- [<span data-ttu-id="da9bf-210">New-PSDrive</span><span class="sxs-lookup"><span data-stu-id="da9bf-210">New-PSDrive</span></span>](xref:Microsoft.PowerShell.Management.New-PSDrive)
+- [<span data-ttu-id="da9bf-211">Remove-PSDrive</span><span class="sxs-lookup"><span data-stu-id="da9bf-211">Remove-PSDrive</span></span>](xref:Microsoft.PowerShell.Management.Remove-PSDrive)
+
+### <a name="psprovider-cmdlets"></a><span data-ttu-id="da9bf-212">PSProvider Cmdlet</span><span class="sxs-lookup"><span data-stu-id="da9bf-212">PSProvider Cmdlets</span></span>
+
+- [<span data-ttu-id="da9bf-213">Get-PSProvider</span><span class="sxs-lookup"><span data-stu-id="da9bf-213">Get-PSProvider</span></span>](xref:Microsoft.PowerShell.Management.Get-PSProvider)
+
+## <a name="viewing-provider-data"></a><span data-ttu-id="da9bf-214">查看提供者資料</span><span class="sxs-lookup"><span data-stu-id="da9bf-214">Viewing provider data</span></span>
+
+<span data-ttu-id="da9bf-215">提供者的主要優點是它會以熟悉且一致的方式公開其資料。</span><span class="sxs-lookup"><span data-stu-id="da9bf-215">The primary benefit of a provider is that it exposes its data in a familiar and consistent way.</span></span> <span data-ttu-id="da9bf-216">資料展示的模型是檔案系統磁片磁碟機。</span><span class="sxs-lookup"><span data-stu-id="da9bf-216">The model for data presentation is a file system drive.</span></span>
+
+<span data-ttu-id="da9bf-217">此提供者可讓您查看、流覽和變更資料存放區中的專案，就好像它們是檔案系統中的資料一樣。</span><span class="sxs-lookup"><span data-stu-id="da9bf-217">The provider allows you to view, navigate, and change items in the data store as though they were data in a file system.</span></span> <span data-ttu-id="da9bf-218">資料存放區是由它所支援的磁片磁碟機名稱存取。</span><span class="sxs-lookup"><span data-stu-id="da9bf-218">The data store is accessed by the name of the drive that it supports.</span></span>
+
+<span data-ttu-id="da9bf-219">磁片磁碟機會列在 Cmdlet 的預設顯示中 `Get-PSProvider` ，但您可以使用 Cmdlet 取得提供者磁片磁碟機的相關資訊 `Get-PSDrive` 。</span><span class="sxs-lookup"><span data-stu-id="da9bf-219">The drive is listed in the default display of the `Get-PSProvider` cmdlet, but you can get information about the provider drive using the `Get-PSDrive` cmdlet.</span></span> <span data-ttu-id="da9bf-220">例如，若要取得 Function：磁片磁碟機的所有屬性，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-220">For example, to get all the properties of the Function: drive, type:</span></span>
+
+```powershell
+Get-PSDrive Function | Format-List *
+```
+
+<span data-ttu-id="da9bf-221">您可以在提供者磁片磁碟機中查看和移動資料，就像在檔案系統磁片磁碟機上一樣。</span><span class="sxs-lookup"><span data-stu-id="da9bf-221">You can view and move through the data in a provider drive just as you would on a file system drive.</span></span>
+
+<span data-ttu-id="da9bf-222">若要查看提供者磁片磁碟機的內容，請使用 Get-Item 或 Get-ChildItem Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="da9bf-222">To view the contents of a provider drive, use the Get-Item or Get-ChildItem cmdlets.</span></span> <span data-ttu-id="da9bf-223">輸入磁片磁碟機名稱，後面接著冒號 (： ) 。</span><span class="sxs-lookup"><span data-stu-id="da9bf-223">Type the drive name followed by a colon (:).</span></span> <span data-ttu-id="da9bf-224">例如，若要查看 Alias：磁片磁碟機的內容，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-224">For example, to view the contents of the Alias: drive, type:</span></span>
+
+```powershell
+Get-Item alias:
+```
+
+<span data-ttu-id="da9bf-225">您可以在路徑中包含磁片磁碟機名稱，以從另一個磁片磁碟機查看及管理任何磁片磁碟機中的資料。</span><span class="sxs-lookup"><span data-stu-id="da9bf-225">You can view and manage the data in any drive from another drive by including the drive name in the path.</span></span> <span data-ttu-id="da9bf-226">例如，若要從另一個磁片磁碟機查看 HKLM：磁片磁碟機中的 HKLM\Software 登錄機碼，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-226">For example, to view the HKLM\Software registry key in the HKLM: drive from another drive, type:</span></span>
+
+```powershell
+Get-ChildItem HKLM:\SOFTWARE\
+```
+
+<span data-ttu-id="da9bf-227">若要開啟磁片磁碟機，請使用 Set-Location Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="da9bf-227">To open the drive, use the Set-Location cmdlet.</span></span> <span data-ttu-id="da9bf-228">當您指定磁片磁碟機路徑時，請記住冒號。</span><span class="sxs-lookup"><span data-stu-id="da9bf-228">Remember the colon when you specify the drive path.</span></span> <span data-ttu-id="da9bf-229">例如，若要將您的位置變更為 Cert：磁片磁碟機的根目錄，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-229">For example, to change your location to the root directory of the Cert: drive, type:</span></span>
+
+```powershell
+Set-Location cert:
+```
+
+<span data-ttu-id="da9bf-230">然後，若要查看 Cert：磁片磁碟機的內容，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-230">Then, to view the contents of the Cert: drive, type:</span></span>
+
+```powershell
+Get-ChildItem
+```
+
+## <a name="moving-through-hierarchical-data"></a><span data-ttu-id="da9bf-231">透過階層式資料移動</span><span class="sxs-lookup"><span data-stu-id="da9bf-231">Moving through hierarchical data</span></span>
+
+<span data-ttu-id="da9bf-232">您可以透過提供者磁片磁碟機來移動，就像硬碟一樣。</span><span class="sxs-lookup"><span data-stu-id="da9bf-232">You can move through a provider drive just as you would a hard disk drive.</span></span>
+<span data-ttu-id="da9bf-233">如果資料是在專案內的專案階層中排列，請使用反斜線 (`\`) 來表示子專案。</span><span class="sxs-lookup"><span data-stu-id="da9bf-233">If the data is arranged in a hierarchy of items within items, use a backslash (`\`) to indicate a child item.</span></span> <span data-ttu-id="da9bf-234">請使用下列格式：</span><span class="sxs-lookup"><span data-stu-id="da9bf-234">Use the following format:</span></span>
+
+```
+drive:\location\child-location\...
+```
+
+<span data-ttu-id="da9bf-235">例如，若要將您的位置變更為 HKLM\Software 登錄機碼，請輸入 Set-Location 命令，例如：</span><span class="sxs-lookup"><span data-stu-id="da9bf-235">For example, to change your location to the HKLM\Software registry key, type a Set-Location command, such as:</span></span>
+
+```powershell
+Set-Location HKLM:\SOFTWARE\
+```
+
+<span data-ttu-id="da9bf-236">如果完整名稱中的任何元素包含空格，您必須將名稱括在雙引號中 (`"`) 。</span><span class="sxs-lookup"><span data-stu-id="da9bf-236">If any element in the fully qualified name includes spaces, you must enclose the name in double-quotation marks (`"`).</span></span> <span data-ttu-id="da9bf-237">下列範例顯示包含空格的完整路徑。</span><span class="sxs-lookup"><span data-stu-id="da9bf-237">The following example shows a fully qualified path that includes spaces.</span></span>
+
+```
+"C:\Program Files\Internet Explorer\iexplore.exe"
+```
+
+<span data-ttu-id="da9bf-238">您也可以使用位置的相對參考。</span><span class="sxs-lookup"><span data-stu-id="da9bf-238">You can also use relative references to locations.</span></span> <span data-ttu-id="da9bf-239">點 (`.`) 代表目前的位置。</span><span class="sxs-lookup"><span data-stu-id="da9bf-239">A dot (`.`) represents the current location.</span></span> <span data-ttu-id="da9bf-240">例如，如果您是在登錄機 `HKLM:\Software\Microsoft` 碼中，而您想要列出機碼中的登錄子機碼 `HKLM:\Software\Microsoft\PowerShell` ，請輸入下列命令：</span><span class="sxs-lookup"><span data-stu-id="da9bf-240">For example, if you are in the `HKLM:\Software\Microsoft` registry key, and you want to list the registry subkeys in the `HKLM:\Software\Microsoft\PowerShell` key, type the following command:</span></span>
+
+```powershell
+Get-ChildItem .\PowerShell
+```
+
+<span data-ttu-id="da9bf-241">此外，雙點 (`..`) 指的是您目前位置正上方的目錄或容器。</span><span class="sxs-lookup"><span data-stu-id="da9bf-241">Also, double-dots (`..`) refers to the directory or container directly above your current location.</span></span> <span data-ttu-id="da9bf-242">您可以使用雙點 (`..`) 來流覽提供者階層。</span><span class="sxs-lookup"><span data-stu-id="da9bf-242">You can use double-dots (`..`) to navigate through a provider hierarchy.</span></span>
+
+```
+PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanServer\Parameters\> cd ..\..\LanmanWorkstation\Parameters
+PS HKLM:\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters>
+```
+
+## <a name="provider-home"></a><span data-ttu-id="da9bf-243">提供者首頁</span><span class="sxs-lookup"><span data-stu-id="da9bf-243">Provider Home</span></span>
+
+<span data-ttu-id="da9bf-244">提供者也有一個 **主** 位置。</span><span class="sxs-lookup"><span data-stu-id="da9bf-244">Providers also have a **Home** location.</span></span>  <span data-ttu-id="da9bf-245">此位置會由 `PSDrives` 提供者的所有支援共用。</span><span class="sxs-lookup"><span data-stu-id="da9bf-245">This location is shared by all `PSDrives` backed by the provider.</span></span> <span data-ttu-id="da9bf-246">您可以藉由查看提供者的 **Home** 屬性來加以取出。</span><span class="sxs-lookup"><span data-stu-id="da9bf-246">It can be retrieved by viewing the **Home** property of the provider.</span></span>
+
+```powershell
+Get-PSProvider | Format-Table Name, Home
+```
+
+```Output
+Name        Home
+----        ----
+Registry
+Alias
+Environment
+FileSystem  C:\Users\username
+Function
+Variable
+Certificate
+```
+
+<span data-ttu-id="da9bf-247">**FileSystem** 提供者是唯一具有 **Home** 預設值的提供者。</span><span class="sxs-lookup"><span data-stu-id="da9bf-247">The **FileSystem** provider is the only provider that has a default value for **Home** .</span></span> <span data-ttu-id="da9bf-248">它的值與相同 `$Home` 。</span><span class="sxs-lookup"><span data-stu-id="da9bf-248">It's the same value as `$Home`.</span></span> <span data-ttu-id="da9bf-249">如需詳細資訊，請參閱 [about_Automatic_Variables](about_Automatic_Variables.md)。</span><span class="sxs-lookup"><span data-stu-id="da9bf-249">For more information, see [about_Automatic_Variables](about_Automatic_Variables.md).</span></span>
+
+<span data-ttu-id="da9bf-250">您可以使用屬性，為目前的會話設定提供者的 **主** 目錄。</span><span class="sxs-lookup"><span data-stu-id="da9bf-250">You can set the **Home** directory for a provider, for the current session, using its property.</span></span>
+
+```powershell
+(Get-PSProvider FileSystem).Home = "C:\"
+```
+
+<span data-ttu-id="da9bf-251">`~`字元可以用來代表提供者的主目錄。</span><span class="sxs-lookup"><span data-stu-id="da9bf-251">The `~` character can be used to represent the provider's home directory.</span></span>
+<span data-ttu-id="da9bf-252">如果提供者沒有設定 **主** 位置，您會看到錯誤。</span><span class="sxs-lookup"><span data-stu-id="da9bf-252">If the provider doesn't have a **Home** location set, you see an error.</span></span>
+
+```powershell
+Cert:\> Set-Location ~
+```
+
+```Output
+Set-Location : Home location for this provider isn't set. To set the home
+location, call "(get-psprovider 'Certificate').Home = 'path'".
+At line:1 char:1
++ Set-Location ~
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Set-Location],
+                              PSInvalidOperationException
+...
+```
+
+## <a name="finding-dynamic-parameters"></a><span data-ttu-id="da9bf-253">尋找動態參數</span><span class="sxs-lookup"><span data-stu-id="da9bf-253">Finding dynamic parameters</span></span>
+
+<span data-ttu-id="da9bf-254">動態參數是由提供者新增至 Cmdlet 的 Cmdlet 參數。</span><span class="sxs-lookup"><span data-stu-id="da9bf-254">Dynamic parameters are cmdlet parameters that are added to a cmdlet by a provider.</span></span> <span data-ttu-id="da9bf-255">只有當 Cmdlet 與新增的提供者搭配使用時，才能使用這些參數。</span><span class="sxs-lookup"><span data-stu-id="da9bf-255">These parameters are available only when the cmdlet is used with the provider that added them.</span></span>
+
+<span data-ttu-id="da9bf-256">例如， `Cert:` 磁片磁碟機會將 **CodeSigningCert** 參數新增至 `Get-Item` 和 `Get-ChildItem` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="da9bf-256">For example, the `Cert:` drive adds the **CodeSigningCert** parameter to the `Get-Item` and `Get-ChildItem` cmdlets.</span></span> <span data-ttu-id="da9bf-257">只有當您在 `Get-Item` `Get-ChildItem` 磁片磁碟機中使用或時，才能使用此參數 `Cert:` 。</span><span class="sxs-lookup"><span data-stu-id="da9bf-257">You can use this parameter only when you use `Get-Item` or `Get-ChildItem` in the `Cert:` drive.</span></span>
+
+<span data-ttu-id="da9bf-258">如需提供者所支援動態參數的清單，請參閱提供者的說明檔。</span><span class="sxs-lookup"><span data-stu-id="da9bf-258">For a list of the dynamic parameters that a provider supports, see the Help file for the provider.</span></span> <span data-ttu-id="da9bf-259">輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-259">Type:</span></span>
+
+```
+Get-Help <provider-name>
+```
+
+<span data-ttu-id="da9bf-260">例如：</span><span class="sxs-lookup"><span data-stu-id="da9bf-260">For example:</span></span>
+
+```powershell
+Get-Help certificate
+```
+
+## <a name="learning-about-providers"></a><span data-ttu-id="da9bf-261">瞭解提供者</span><span class="sxs-lookup"><span data-stu-id="da9bf-261">Learning about providers</span></span>
+
+<span data-ttu-id="da9bf-262">雖然所有提供者資料都會出現在磁片磁碟機中，而且您可以使用相同的方法來移動它們，但相似性會停止。</span><span class="sxs-lookup"><span data-stu-id="da9bf-262">Although all provider data appears in drives and you use the same methods to move through them, the similarity stops there.</span></span> <span data-ttu-id="da9bf-263">提供者所公開的資料存放區，可以像 Active Directory 位置和 Microsoft Exchange Server 信箱一樣變化。</span><span class="sxs-lookup"><span data-stu-id="da9bf-263">The data stores that the provider exposes can be as varied as Active Directory locations and Microsoft Exchange Server mailboxes.</span></span>
+
+<span data-ttu-id="da9bf-264">如需個別 PowerShell 提供者的相關資訊，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-264">For information about individual PowerShell providers, type:</span></span>
+
+```
+Get-Help <ProviderName>
+```
+
+<span data-ttu-id="da9bf-265">例如：</span><span class="sxs-lookup"><span data-stu-id="da9bf-265">For example:</span></span>
+
+```powershell
+Get-Help registry
+```
+
+<span data-ttu-id="da9bf-266">如需提供者的說明主題清單，請輸入：</span><span class="sxs-lookup"><span data-stu-id="da9bf-266">For a list of Help topics about the providers, type:</span></span>
+
+```powershell
+Get-Help * -Category Provider
+```
+
+## <a name="see-also"></a><span data-ttu-id="da9bf-267">另請參閱</span><span class="sxs-lookup"><span data-stu-id="da9bf-267">See also</span></span>
+
+[<span data-ttu-id="da9bf-268">about_Locations</span><span class="sxs-lookup"><span data-stu-id="da9bf-268">about_Locations</span></span>](about_Locations.md)
+
+[<span data-ttu-id="da9bf-269">about_Path_Syntax</span><span class="sxs-lookup"><span data-stu-id="da9bf-269">about_Path_Syntax</span></span>](about_Path_Syntax.md)
