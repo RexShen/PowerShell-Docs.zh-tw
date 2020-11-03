@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/14/2020
+ms.date: 11/02/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-modulemanifest?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-ModuleManifest
-ms.openlocfilehash: 750204ed64c18b123d858abdb3edd7b1fe869e47
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 8177b1ed45f6d6cdabf13670e36be4fcbb55a77b
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201492"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239949"
 ---
 # New-ModuleManifest
 
@@ -337,7 +337,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -CLRVersion
+### -ClrVersion
 
 指定模組所需要的 Microsoft .NET Framework Common Language Runtime (CLR) 最低版本。
 
@@ -1060,6 +1060,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
 
 ## 輸入
@@ -1081,6 +1082,9 @@ Accept wildcard characters: False
 模組資訊清單通常為選擇性。 不過，需要模組資訊清單才能匯出安裝在全域組件快取中的組件。
 
 若要在目錄中新增或變更檔案 `$pshome\Modules` ，請使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell。
+
+> [!NOTE]
+> 從 PowerShell 6.2 開始，PowerShell 會嘗試載入模組資訊清單的 **FileList** 屬性中所列的所有 DLL 檔案。 **FileList** 中的原生 dll 無法在進程中載入，而且會忽略錯誤。 所有 managed Dll 都會載入到進程中。 此行為已在 PowerShell 7.1 中移除。
 
 在 PowerShell 2.0 中，許多的參數 `New-ModuleManifest` 都是強制性的，即使在模組資訊清單中不需要它們也是一樣。 從 PowerShell 3.0 開始，只有 **Path** 參數是必要的。
 
