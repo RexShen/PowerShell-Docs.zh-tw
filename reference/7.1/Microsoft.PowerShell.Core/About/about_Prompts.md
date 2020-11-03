@@ -13,46 +13,46 @@ ms.contentlocale: zh-TW
 ms.lasthandoff: 10/13/2020
 ms.locfileid: "93208308"
 ---
-# <a name="about-prompts"></a><span data-ttu-id="94c4b-104">關於提示字元</span><span class="sxs-lookup"><span data-stu-id="94c4b-104">About Prompts</span></span>
+# <a name="about-prompts"></a><span data-ttu-id="1a913-104">關於提示字元</span><span class="sxs-lookup"><span data-stu-id="1a913-104">About Prompts</span></span>
 
-## <a name="short-description"></a><span data-ttu-id="94c4b-105">簡短描述</span><span class="sxs-lookup"><span data-stu-id="94c4b-105">Short description</span></span>
-<span data-ttu-id="94c4b-106">描述函式 `Prompt` ，並示範如何建立自訂 `Prompt` 函數。</span><span class="sxs-lookup"><span data-stu-id="94c4b-106">Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.</span></span>
+## <a name="short-description"></a><span data-ttu-id="1a913-105">簡短描述</span><span class="sxs-lookup"><span data-stu-id="1a913-105">Short description</span></span>
+<span data-ttu-id="1a913-106">描述函式 `Prompt` ，並示範如何建立自訂 `Prompt` 函數。</span><span class="sxs-lookup"><span data-stu-id="1a913-106">Describes the `Prompt` function and demonstrates how to create a custom `Prompt` function.</span></span>
 
-## <a name="long-description"></a><span data-ttu-id="94c4b-107">完整描述</span><span class="sxs-lookup"><span data-stu-id="94c4b-107">Long description</span></span>
+## <a name="long-description"></a><span data-ttu-id="1a913-107">完整描述</span><span class="sxs-lookup"><span data-stu-id="1a913-107">Long description</span></span>
 
-<span data-ttu-id="94c4b-108">PowerShell 命令提示字元指出 PowerShell 已準備好執行命令：</span><span class="sxs-lookup"><span data-stu-id="94c4b-108">The PowerShell command prompt indicates that PowerShell is ready to run a command:</span></span>
+<span data-ttu-id="1a913-108">PowerShell 命令提示字元指出 PowerShell 已準備好執行命令：</span><span class="sxs-lookup"><span data-stu-id="1a913-108">The PowerShell command prompt indicates that PowerShell is ready to run a command:</span></span>
 
 ```
 PS C:\>
 ```
 
-<span data-ttu-id="94c4b-109">PowerShell 提示字元是由內建函數所決定 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-109">The PowerShell prompt is determined by the built-in `Prompt` function.</span></span> <span data-ttu-id="94c4b-110">您可以藉由建立自己的函 `Prompt` 式，並將它儲存在您的 PowerShell 設定檔中，來自訂提示。</span><span class="sxs-lookup"><span data-stu-id="94c4b-110">You can customize the prompt by creating your own `Prompt` function and saving it in your PowerShell profile.</span></span>
+<span data-ttu-id="1a913-109">PowerShell 提示字元是由內建函數所決定 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="1a913-109">The PowerShell prompt is determined by the built-in `Prompt` function.</span></span> <span data-ttu-id="1a913-110">您可以藉由建立自己的函 `Prompt` 式，並將它儲存在您的 PowerShell 設定檔中，來自訂提示。</span><span class="sxs-lookup"><span data-stu-id="1a913-110">You can customize the prompt by creating your own `Prompt` function and saving it in your PowerShell profile.</span></span>
 
-## <a name="about-the-prompt-function"></a><span data-ttu-id="94c4b-111">關於 Prompt 函數</span><span class="sxs-lookup"><span data-stu-id="94c4b-111">About the Prompt function</span></span>
+## <a name="about-the-prompt-function"></a><span data-ttu-id="1a913-111">關於 Prompt 函數</span><span class="sxs-lookup"><span data-stu-id="1a913-111">About the Prompt function</span></span>
 
-<span data-ttu-id="94c4b-112">此函式會 `Prompt` 判斷 PowerShell 提示字元的外觀。</span><span class="sxs-lookup"><span data-stu-id="94c4b-112">The `Prompt` function determines the appearance of the PowerShell prompt.</span></span>
-<span data-ttu-id="94c4b-113">PowerShell 隨附內建 `Prompt` 功能，但您可以藉由定義自己的函式來覆寫它 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-113">PowerShell comes with a built-in `Prompt` function, but you can override it by defining your own `Prompt` function.</span></span>
+<span data-ttu-id="1a913-112">此函式會 `Prompt` 判斷 PowerShell 提示字元的外觀。</span><span class="sxs-lookup"><span data-stu-id="1a913-112">The `Prompt` function determines the appearance of the PowerShell prompt.</span></span>
+<span data-ttu-id="1a913-113">PowerShell 隨附內建 `Prompt` 功能，但您可以藉由定義自己的函式來覆寫它 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="1a913-113">PowerShell comes with a built-in `Prompt` function, but you can override it by defining your own `Prompt` function.</span></span>
 
-<span data-ttu-id="94c4b-114">`Prompt`函數具有下列語法：</span><span class="sxs-lookup"><span data-stu-id="94c4b-114">The `Prompt` function has the following syntax:</span></span>
+<span data-ttu-id="1a913-114">`Prompt`函數具有下列語法：</span><span class="sxs-lookup"><span data-stu-id="1a913-114">The `Prompt` function has the following syntax:</span></span>
 
 ```powershell
 function Prompt { <function-body> }
 ```
 
-<span data-ttu-id="94c4b-115">`Prompt`函數必須傳回物件。</span><span class="sxs-lookup"><span data-stu-id="94c4b-115">The `Prompt` function must return an object.</span></span> <span data-ttu-id="94c4b-116">最佳做法是傳回字串或格式化為字串的物件。</span><span class="sxs-lookup"><span data-stu-id="94c4b-116">As a best practice, return a string or an object that is formatted as a string.</span></span> <span data-ttu-id="94c4b-117">建議的最大長度為 80 個字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-117">The maximum recommended length is 80 characters.</span></span>
+<span data-ttu-id="1a913-115">`Prompt`函數必須傳回物件。</span><span class="sxs-lookup"><span data-stu-id="1a913-115">The `Prompt` function must return an object.</span></span> <span data-ttu-id="1a913-116">最佳做法是傳回字串或格式化為字串的物件。</span><span class="sxs-lookup"><span data-stu-id="1a913-116">As a best practice, return a string or an object that is formatted as a string.</span></span> <span data-ttu-id="1a913-117">建議的最大長度為 80 個字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-117">The maximum recommended length is 80 characters.</span></span>
 
-<span data-ttu-id="94c4b-118">例如，下列函數會傳回 `Prompt` "Hello，World" 字串，後面接著右角括弧 (`>`) 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-118">For example, the following `Prompt` function returns a "Hello, World" string followed by a  right angle bracket (`>`).</span></span>
+<span data-ttu-id="1a913-118">例如，下列函數會傳回 `Prompt` "Hello，World" 字串，後面接著右角括弧 (`>`) 。</span><span class="sxs-lookup"><span data-stu-id="1a913-118">For example, the following `Prompt` function returns a "Hello, World" string followed by a  right angle bracket (`>`).</span></span>
 
 ```powershell
 PS C:\> function prompt {"Hello, World > "}
 Hello, World >
 ```
 
-### <a name="getting-the-prompt-function"></a><span data-ttu-id="94c4b-119">取得提示字元函式</span><span class="sxs-lookup"><span data-stu-id="94c4b-119">Getting the Prompt function</span></span>
+### <a name="getting-the-prompt-function"></a><span data-ttu-id="1a913-119">取得提示字元函式</span><span class="sxs-lookup"><span data-stu-id="1a913-119">Getting the Prompt function</span></span>
 
-<span data-ttu-id="94c4b-120">若要取得函式 `Prompt` ，請使用 `Get-Command` Cmdlet 或使用函式 `Get-Item` 磁片磁碟機中的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="94c4b-120">To get the `Prompt` function, use the `Get-Command` cmdlet or use the `Get-Item` cmdlet in the Function drive.</span></span>
+<span data-ttu-id="1a913-120">若要取得函式 `Prompt` ，請使用 `Get-Command` Cmdlet 或使用函式 `Get-Item` 磁片磁碟機中的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1a913-120">To get the `Prompt` function, use the `Get-Command` cmdlet or use the `Get-Item` cmdlet in the Function drive.</span></span>
 
-<span data-ttu-id="94c4b-121">例如：</span><span class="sxs-lookup"><span data-stu-id="94c4b-121">For example:</span></span>
+<span data-ttu-id="1a913-121">例如：</span><span class="sxs-lookup"><span data-stu-id="1a913-121">For example:</span></span>
 
 ```powershell
 PS C:\> Get-Command Prompt
@@ -62,9 +62,9 @@ CommandType     Name      ModuleName
 Function        prompt
 ```
 
-<span data-ttu-id="94c4b-122">若要取得設定提示值的腳本，請使用點方法來取得函數的 **ScriptBlock** 屬性 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-122">To get the script that sets the value of the prompt, use the dot method to get the **ScriptBlock** property of the `Prompt` function.</span></span>
+<span data-ttu-id="1a913-122">若要取得設定提示值的腳本，請使用點方法來取得函數的 **ScriptBlock** 屬性 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="1a913-122">To get the script that sets the value of the prompt, use the dot method to get the **ScriptBlock** property of the `Prompt` function.</span></span>
 
-<span data-ttu-id="94c4b-123">例如：</span><span class="sxs-lookup"><span data-stu-id="94c4b-123">For example:</span></span>
+<span data-ttu-id="1a913-123">例如：</span><span class="sxs-lookup"><span data-stu-id="1a913-123">For example:</span></span>
 
 ```powershell
 (Get-Command Prompt).ScriptBlock
@@ -77,35 +77,35 @@ Function        prompt
 # .ExternalHelp System.Management.Automation.dll-help.xml
 ```
 
-<span data-ttu-id="94c4b-124">就像所有的函式一樣，此函式 `Prompt` 會儲存在 `Function:` 磁片磁碟機中。</span><span class="sxs-lookup"><span data-stu-id="94c4b-124">Like all functions, the `Prompt` function is stored in the `Function:` drive.</span></span>
-<span data-ttu-id="94c4b-125">若要顯示用來建立目前函數的腳本 `Prompt` ，請輸入：</span><span class="sxs-lookup"><span data-stu-id="94c4b-125">To display the script that creates the current `Prompt` function, type:</span></span>
+<span data-ttu-id="1a913-124">就像所有的函式一樣，此函式 `Prompt` 會儲存在 `Function:` 磁片磁碟機中。</span><span class="sxs-lookup"><span data-stu-id="1a913-124">Like all functions, the `Prompt` function is stored in the `Function:` drive.</span></span>
+<span data-ttu-id="1a913-125">若要顯示用來建立目前函數的腳本 `Prompt` ，請輸入：</span><span class="sxs-lookup"><span data-stu-id="1a913-125">To display the script that creates the current `Prompt` function, type:</span></span>
 
 ```powershell
 (Get-Item function:prompt).ScriptBlock
 ```
 
-### <a name="the-default-prompt"></a><span data-ttu-id="94c4b-126">預設提示字元</span><span class="sxs-lookup"><span data-stu-id="94c4b-126">The default prompt</span></span>
+### <a name="the-default-prompt"></a><span data-ttu-id="1a913-126">預設提示字元</span><span class="sxs-lookup"><span data-stu-id="1a913-126">The default prompt</span></span>
 
-<span data-ttu-id="94c4b-127">只有當 `Prompt` 函數產生錯誤或未傳回物件時，才會顯示預設提示字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-127">The default prompt appears only when the `Prompt` function generates an error or does not return an object.</span></span>
+<span data-ttu-id="1a913-127">只有當 `Prompt` 函數產生錯誤或未傳回物件時，才會顯示預設提示字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-127">The default prompt appears only when the `Prompt` function generates an error or does not return an object.</span></span>
 
-<span data-ttu-id="94c4b-128">預設的 PowerShell 提示字元是：</span><span class="sxs-lookup"><span data-stu-id="94c4b-128">The default PowerShell prompt is:</span></span>
+<span data-ttu-id="1a913-128">預設的 PowerShell 提示字元是：</span><span class="sxs-lookup"><span data-stu-id="1a913-128">The default PowerShell prompt is:</span></span>
 
 ```
 PS>
 ```
 
-<span data-ttu-id="94c4b-129">例如，下列命令會將函數設定 `Prompt` 為 `$null` ，這是不正確。</span><span class="sxs-lookup"><span data-stu-id="94c4b-129">For example, the following command sets the `Prompt` function to `$null`, which is invalid.</span></span> <span data-ttu-id="94c4b-130">因此會顯示預設提示字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-130">As a result, the default prompt appears.</span></span>
+<span data-ttu-id="1a913-129">例如，下列命令會將函數設定 `Prompt` 為 `$null` ，這是不正確。</span><span class="sxs-lookup"><span data-stu-id="1a913-129">For example, the following command sets the `Prompt` function to `$null`, which is invalid.</span></span> <span data-ttu-id="1a913-130">因此會顯示預設提示字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-130">As a result, the default prompt appears.</span></span>
 
 ```powershell
 PS C:\> function prompt {$null}
 PS>
 ```
 
-<span data-ttu-id="94c4b-131">因為 PowerShell 隨附內建提示，所以您通常不會看到預設提示字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-131">Because PowerShell comes with a built-in prompt, you usually do not see the default prompt.</span></span>
+<span data-ttu-id="1a913-131">因為 PowerShell 隨附內建提示，所以您通常不會看到預設提示字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-131">Because PowerShell comes with a built-in prompt, you usually do not see the default prompt.</span></span>
 
-### <a name="built-in-prompt"></a><span data-ttu-id="94c4b-132">內建提示</span><span class="sxs-lookup"><span data-stu-id="94c4b-132">Built-in prompt</span></span>
+### <a name="built-in-prompt"></a><span data-ttu-id="1a913-132">內建提示</span><span class="sxs-lookup"><span data-stu-id="1a913-132">Built-in prompt</span></span>
 
-<span data-ttu-id="94c4b-133">PowerShell 包含內建 `Prompt` 函數。</span><span class="sxs-lookup"><span data-stu-id="94c4b-133">PowerShell includes a built-in `Prompt` function.</span></span>
+<span data-ttu-id="1a913-133">PowerShell 包含內建 `Prompt` 函數。</span><span class="sxs-lookup"><span data-stu-id="1a913-133">PowerShell includes a built-in `Prompt` function.</span></span>
 
 ```powershell
 function prompt {
@@ -115,81 +115,81 @@ function prompt {
 }
 ```
 
-<span data-ttu-id="94c4b-134">此函式 `Test-Path` 會使用 Cmdlet 來判斷是否 `$PSDebugContext` 已填入自動變數。</span><span class="sxs-lookup"><span data-stu-id="94c4b-134">The function uses the `Test-Path` cmdlet to determine whether the `$PSDebugContext` automatic variable is populated.</span></span> <span data-ttu-id="94c4b-135">如果 `$PSDebugContext` 已填入，則您處於「偵測」模式，並且 `[DBG]:` 會新增至提示字元，如下所示：</span><span class="sxs-lookup"><span data-stu-id="94c4b-135">If `$PSDebugContext` is populated, you are in debugging mode, and `[DBG]:` is added to the prompt, as follows:</span></span>
+<span data-ttu-id="1a913-134">此函式 `Test-Path` 會使用 Cmdlet 來判斷是否 `$PSDebugContext` 已填入自動變數。</span><span class="sxs-lookup"><span data-stu-id="1a913-134">The function uses the `Test-Path` cmdlet to determine whether the `$PSDebugContext` automatic variable is populated.</span></span> <span data-ttu-id="1a913-135">如果 `$PSDebugContext` 已填入，則您處於「偵測」模式，並且 `[DBG]:` 會新增至提示字元，如下所示：</span><span class="sxs-lookup"><span data-stu-id="1a913-135">If `$PSDebugContext` is populated, you are in debugging mode, and `[DBG]:` is added to the prompt, as follows:</span></span>
 
 ```Output
 [DBG]: PS C:\ps-test>
 ```
 
-<span data-ttu-id="94c4b-136">如果 `$PSDebugContext` 未填入，則函式會新增 `PS` 到提示字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-136">If `$PSDebugContext` is not populated, the function adds `PS` to the prompt.</span></span>
-<span data-ttu-id="94c4b-137">而且，此函式會使用 `Get-Location` Cmdlet 來取得目前的檔案系統目錄位置。</span><span class="sxs-lookup"><span data-stu-id="94c4b-137">And, the function uses the `Get-Location` cmdlet to get the current file system directory location.</span></span> <span data-ttu-id="94c4b-138">然後，它會將右角括弧新增 (`>`) 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-138">Then, it adds a right angle bracket (`>`).</span></span>
+<span data-ttu-id="1a913-136">如果 `$PSDebugContext` 未填入，則函式會新增 `PS` 到提示字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-136">If `$PSDebugContext` is not populated, the function adds `PS` to the prompt.</span></span>
+<span data-ttu-id="1a913-137">而且，此函式會使用 `Get-Location` Cmdlet 來取得目前的檔案系統目錄位置。</span><span class="sxs-lookup"><span data-stu-id="1a913-137">And, the function uses the `Get-Location` cmdlet to get the current file system directory location.</span></span> <span data-ttu-id="1a913-138">然後，它會將右角括弧新增 (`>`) 。</span><span class="sxs-lookup"><span data-stu-id="1a913-138">Then, it adds a right angle bracket (`>`).</span></span>
 
-<span data-ttu-id="94c4b-139">例如：</span><span class="sxs-lookup"><span data-stu-id="94c4b-139">For example:</span></span>
+<span data-ttu-id="1a913-139">例如：</span><span class="sxs-lookup"><span data-stu-id="1a913-139">For example:</span></span>
 
 ```Output
 PS C:\ps-test>
 ```
 
-<span data-ttu-id="94c4b-140">如果您是在嵌套的提示字元中，函式會將兩個角括弧新增 (`>>`) 到提示字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-140">If you are in a nested prompt, the function adds two angle brackets (`>>`) to the prompt.</span></span> <span data-ttu-id="94c4b-141">如果自動變數的值大於1，則 (您在嵌套提示字元中 `$NestedPromptLevel` 。 ) </span><span class="sxs-lookup"><span data-stu-id="94c4b-141">(You are in a nested prompt if the value of the `$NestedPromptLevel` automatic variable is greater than 1.)</span></span>
+<span data-ttu-id="1a913-140">如果您是在嵌套的提示字元中，函式會將兩個角括弧新增 (`>>`) 到提示字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-140">If you are in a nested prompt, the function adds two angle brackets (`>>`) to the prompt.</span></span> <span data-ttu-id="1a913-141">如果自動變數的值大於1，則 (您在嵌套提示字元中 `$NestedPromptLevel` 。 ) </span><span class="sxs-lookup"><span data-stu-id="1a913-141">(You are in a nested prompt if the value of the `$NestedPromptLevel` automatic variable is greater than 1.)</span></span>
 
-<span data-ttu-id="94c4b-142">例如，當您在巢狀的提示字元中偵錯時，提示字元會類似下列提示字元︰</span><span class="sxs-lookup"><span data-stu-id="94c4b-142">For example, when you are debugging in a nested prompt, the prompt resembles the following prompt:</span></span>
+<span data-ttu-id="1a913-142">例如，當您在巢狀的提示字元中偵錯時，提示字元會類似下列提示字元︰</span><span class="sxs-lookup"><span data-stu-id="1a913-142">For example, when you are debugging in a nested prompt, the prompt resembles the following prompt:</span></span>
 
 ```Output
 [DBG] PS C:\ps-test>>>
 ```
 
-### <a name="changes-to-the-prompt"></a><span data-ttu-id="94c4b-143">提示的變更</span><span class="sxs-lookup"><span data-stu-id="94c4b-143">Changes to the prompt</span></span>
+### <a name="changes-to-the-prompt"></a><span data-ttu-id="1a913-143">提示的變更</span><span class="sxs-lookup"><span data-stu-id="1a913-143">Changes to the prompt</span></span>
 
-<span data-ttu-id="94c4b-144">Cmdlet 會將 `Enter-PSSession` 遠端電腦的名稱加到目前的函式 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-144">The `Enter-PSSession` cmdlet prepends the name of the remote computer to the current `Prompt` function.</span></span> <span data-ttu-id="94c4b-145">當您使用 `Enter-PSSession` 指令程式來啟動遠端電腦的會話時，命令提示字元會變更為包含遠端電腦的名稱。</span><span class="sxs-lookup"><span data-stu-id="94c4b-145">When you use the `Enter-PSSession` cmdlet to start a session with a remote computer, the command prompt changes to include the name of the remote computer.</span></span> <span data-ttu-id="94c4b-146">例如：</span><span class="sxs-lookup"><span data-stu-id="94c4b-146">For example:</span></span>
+<span data-ttu-id="1a913-144">Cmdlet 會將 `Enter-PSSession` 遠端電腦的名稱加到目前的函式 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="1a913-144">The `Enter-PSSession` cmdlet prepends the name of the remote computer to the current `Prompt` function.</span></span> <span data-ttu-id="1a913-145">當您使用 `Enter-PSSession` 指令程式來啟動遠端電腦的會話時，命令提示字元會變更為包含遠端電腦的名稱。</span><span class="sxs-lookup"><span data-stu-id="1a913-145">When you use the `Enter-PSSession` cmdlet to start a session with a remote computer, the command prompt changes to include the name of the remote computer.</span></span> <span data-ttu-id="1a913-146">例如：</span><span class="sxs-lookup"><span data-stu-id="1a913-146">For example:</span></span>
 
 ```Output
 PS Hello, World> Enter-PSSession Server01
 [Server01]: PS Hello, World>
 ```
 
-<span data-ttu-id="94c4b-147">其他 PowerShell 主機應用程式和替代 shell 可能會有自己的自訂命令提示字元。</span><span class="sxs-lookup"><span data-stu-id="94c4b-147">Other PowerShell host applications and alternate shells might have their own custom command prompts.</span></span>
+<span data-ttu-id="1a913-147">其他 PowerShell 主機應用程式和替代 shell 可能會有自己的自訂命令提示字元。</span><span class="sxs-lookup"><span data-stu-id="1a913-147">Other PowerShell host applications and alternate shells might have their own custom command prompts.</span></span>
 
-<span data-ttu-id="94c4b-148">如需 `$PSDebugContext` 和自動變數的詳細資訊 `$NestedPromptLevel` ，請參閱 [about_Automatic_Variables](about_Automatic_Variables.md)。</span><span class="sxs-lookup"><span data-stu-id="94c4b-148">For more information about the `$PSDebugContext` and `$NestedPromptLevel` automatic variables, see [about_Automatic_Variables](about_Automatic_Variables.md).</span></span>
+<span data-ttu-id="1a913-148">如需 `$PSDebugContext` 和自動變數的詳細資訊 `$NestedPromptLevel` ，請參閱 [about_Automatic_Variables](about_Automatic_Variables.md)。</span><span class="sxs-lookup"><span data-stu-id="1a913-148">For more information about the `$PSDebugContext` and `$NestedPromptLevel` automatic variables, see [about_Automatic_Variables](about_Automatic_Variables.md).</span></span>
 
-### <a name="how-to-customize-the-prompt"></a><span data-ttu-id="94c4b-149">如何自訂提示</span><span class="sxs-lookup"><span data-stu-id="94c4b-149">How to customize the prompt</span></span>
+### <a name="how-to-customize-the-prompt"></a><span data-ttu-id="1a913-149">如何自訂提示</span><span class="sxs-lookup"><span data-stu-id="1a913-149">How to customize the prompt</span></span>
 
-<span data-ttu-id="94c4b-150">若要自訂提示，請撰寫新的函式 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-150">To customize the prompt, write a new `Prompt` function.</span></span> <span data-ttu-id="94c4b-151">函式未受保護，因此可以覆寫。</span><span class="sxs-lookup"><span data-stu-id="94c4b-151">The function is not protected, so you can overwrite it.</span></span>
+<span data-ttu-id="1a913-150">若要自訂提示，請撰寫新的函式 `Prompt` 。</span><span class="sxs-lookup"><span data-stu-id="1a913-150">To customize the prompt, write a new `Prompt` function.</span></span> <span data-ttu-id="1a913-151">函式未受保護，因此可以覆寫。</span><span class="sxs-lookup"><span data-stu-id="1a913-151">The function is not protected, so you can overwrite it.</span></span>
 
-<span data-ttu-id="94c4b-152">若要撰寫 `Prompt` 函數，請輸入下列內容：</span><span class="sxs-lookup"><span data-stu-id="94c4b-152">To write a `Prompt` function, type the following:</span></span>
+<span data-ttu-id="1a913-152">若要撰寫 `Prompt` 函數，請輸入下列內容：</span><span class="sxs-lookup"><span data-stu-id="1a913-152">To write a `Prompt` function, type the following:</span></span>
 
 ```powershell
 function prompt { }
 ```
 
-<span data-ttu-id="94c4b-153">然後在大括弧之間輸入命令或建立提示字元的字串。</span><span class="sxs-lookup"><span data-stu-id="94c4b-153">Then, between the braces, enter the commands or the string that creates your prompt.</span></span>
+<span data-ttu-id="1a913-153">然後在大括弧之間輸入命令或建立提示字元的字串。</span><span class="sxs-lookup"><span data-stu-id="1a913-153">Then, between the braces, enter the commands or the string that creates your prompt.</span></span>
 
-<span data-ttu-id="94c4b-154">例如，下列提示字元包含您的電腦名稱︰</span><span class="sxs-lookup"><span data-stu-id="94c4b-154">For example, the following prompt includes your computer name:</span></span>
+<span data-ttu-id="1a913-154">例如，下列提示字元包含您的電腦名稱︰</span><span class="sxs-lookup"><span data-stu-id="1a913-154">For example, the following prompt includes your computer name:</span></span>
 
 ```powershell
 function prompt {"PS [$env:COMPUTERNAME]> "}
 ```
 
-<span data-ttu-id="94c4b-155">在 Server01 電腦上，提示字元會類似下列提示字元︰</span><span class="sxs-lookup"><span data-stu-id="94c4b-155">On the Server01 computer, the prompt resembles the following prompt:</span></span>
+<span data-ttu-id="1a913-155">在 Server01 電腦上，提示字元會類似下列提示字元︰</span><span class="sxs-lookup"><span data-stu-id="1a913-155">On the Server01 computer, the prompt resembles the following prompt:</span></span>
 
 ```Output
 PS [Server01] >
 ```
 
-<span data-ttu-id="94c4b-156">下列 `Prompt` 函數包含目前的日期和時間：</span><span class="sxs-lookup"><span data-stu-id="94c4b-156">The following `Prompt` function includes the current date and time:</span></span>
+<span data-ttu-id="1a913-156">下列 `Prompt` 函數包含目前的日期和時間：</span><span class="sxs-lookup"><span data-stu-id="1a913-156">The following `Prompt` function includes the current date and time:</span></span>
 
 ```powershell
 function prompt {"$(Get-Date)> "}
 ```
 
-<span data-ttu-id="94c4b-157">提示字元類似下列提示字元︰</span><span class="sxs-lookup"><span data-stu-id="94c4b-157">The prompt resembles the following prompt:</span></span>
+<span data-ttu-id="1a913-157">提示字元類似下列提示字元︰</span><span class="sxs-lookup"><span data-stu-id="1a913-157">The prompt resembles the following prompt:</span></span>
 
 ```Output
 03/15/2012 17:49:47>
 ```
 
-<span data-ttu-id="94c4b-158">您也可以變更預設 `Prompt` 函數：</span><span class="sxs-lookup"><span data-stu-id="94c4b-158">You can also change the default `Prompt` function:</span></span>
+<span data-ttu-id="1a913-158">您也可以變更預設 `Prompt` 函數：</span><span class="sxs-lookup"><span data-stu-id="1a913-158">You can also change the default `Prompt` function:</span></span>
 
-<span data-ttu-id="94c4b-159">例如，下列修改過的函式 `Prompt` `[ADMIN]:` 會在使用 [以 **系統管理員身分執行** ] 選項開啟 powershell 時，新增至內建的 powershell 提示字元：</span><span class="sxs-lookup"><span data-stu-id="94c4b-159">For example, the following modified `Prompt` function adds `[ADMIN]:` to the built-in PowerShell prompt when PowerShell is opened by using the **Run as administrator** option:</span></span>
+<span data-ttu-id="1a913-159">例如，下列修改過的函式 `Prompt` `[ADMIN]:` 會在使用 [以 **系統管理員身分執行** ] 選項開啟 powershell 時，新增至內建的 powershell 提示字元：</span><span class="sxs-lookup"><span data-stu-id="1a913-159">For example, the following modified `Prompt` function adds `[ADMIN]:` to the built-in PowerShell prompt when PowerShell is opened by using the **Run as administrator** option:</span></span>
 
 ```powershell
 function prompt {
@@ -205,13 +205,13 @@ function prompt {
 }
 ```
 
-<span data-ttu-id="94c4b-160">當您使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell 時，會出現類似下列提示的提示：</span><span class="sxs-lookup"><span data-stu-id="94c4b-160">When you start PowerShell by using the **Run as administrator** option, a prompt that resembles the following prompt appears:</span></span>
+<span data-ttu-id="1a913-160">當您使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell 時，會出現類似下列提示的提示：</span><span class="sxs-lookup"><span data-stu-id="1a913-160">When you start PowerShell by using the **Run as administrator** option, a prompt that resembles the following prompt appears:</span></span>
 
 ```Output
 [ADMIN]: PS C:\ps-test>
 ```
 
-<span data-ttu-id="94c4b-161">下列函式會 `Prompt` 顯示下一個命令的歷程記錄識別碼。</span><span class="sxs-lookup"><span data-stu-id="94c4b-161">The following `Prompt` function displays the history ID of the next command.</span></span> <span data-ttu-id="94c4b-162">若要查看命令歷程記錄，請使用 `Get-History` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="94c4b-162">To view the command history, use the `Get-History` cmdlet.</span></span>
+<span data-ttu-id="1a913-161">下列函式會 `Prompt` 顯示下一個命令的歷程記錄識別碼。</span><span class="sxs-lookup"><span data-stu-id="1a913-161">The following `Prompt` function displays the history ID of the next command.</span></span> <span data-ttu-id="1a913-162">若要查看命令歷程記錄，請使用 `Get-History` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1a913-162">To view the command history, use the `Get-History` cmdlet.</span></span>
 
 ```powershell
 function prompt {
@@ -229,7 +229,7 @@ function prompt {
 }
 ```
 
-<span data-ttu-id="94c4b-163">下列提示 `Write-Host` 會使用和 `Get-Random` Cmdlet 來建立隨機變更色彩的提示。</span><span class="sxs-lookup"><span data-stu-id="94c4b-163">The following prompt uses the `Write-Host` and `Get-Random` cmdlets to create a prompt that changes color randomly.</span></span> <span data-ttu-id="94c4b-164">因為 `Write-Host` 寫入目前的主應用程式，但不會傳回物件，所以此函式會包含 `Return` 語句。</span><span class="sxs-lookup"><span data-stu-id="94c4b-164">Because `Write-Host` writes to the current host application but does not return an object, this function includes a `Return` statement.</span></span> <span data-ttu-id="94c4b-165">如果沒有，PowerShell 就會使用預設的提示字元 `PS>` 。</span><span class="sxs-lookup"><span data-stu-id="94c4b-165">Without it, PowerShell uses the default prompt, `PS>`.</span></span>
+<span data-ttu-id="1a913-163">下列提示 `Write-Host` 會使用和 `Get-Random` Cmdlet 來建立隨機變更色彩的提示。</span><span class="sxs-lookup"><span data-stu-id="1a913-163">The following prompt uses the `Write-Host` and `Get-Random` cmdlets to create a prompt that changes color randomly.</span></span> <span data-ttu-id="1a913-164">因為 `Write-Host` 寫入目前的主應用程式，但不會傳回物件，所以此函式會包含 `Return` 語句。</span><span class="sxs-lookup"><span data-stu-id="1a913-164">Because `Write-Host` writes to the current host application but does not return an object, this function includes a `Return` statement.</span></span> <span data-ttu-id="1a913-165">如果沒有，PowerShell 就會使用預設的提示字元 `PS>` 。</span><span class="sxs-lookup"><span data-stu-id="1a913-165">Without it, PowerShell uses the default prompt, `PS>`.</span></span>
 
 ```powershell
 function prompt {
@@ -240,29 +240,29 @@ function prompt {
 }
 ```
 
-### <a name="saving-the-prompt-function"></a><span data-ttu-id="94c4b-166">儲存 Prompt 函數</span><span class="sxs-lookup"><span data-stu-id="94c4b-166">Saving the Prompt function</span></span>
+### <a name="saving-the-prompt-function"></a><span data-ttu-id="1a913-166">儲存 Prompt 函數</span><span class="sxs-lookup"><span data-stu-id="1a913-166">Saving the Prompt function</span></span>
 
-<span data-ttu-id="94c4b-167">就像任何函式一樣， `Prompt` 函數只存在於目前的會話中。</span><span class="sxs-lookup"><span data-stu-id="94c4b-167">Like any function, the `Prompt` function exists only in the current session.</span></span> <span data-ttu-id="94c4b-168">若要在 `Prompt` 未來的會話中儲存函式，請將它新增至您的 PowerShell 設定檔。</span><span class="sxs-lookup"><span data-stu-id="94c4b-168">To save the `Prompt` function for future sessions, add it to your PowerShell profiles.</span></span> <span data-ttu-id="94c4b-169">如需設定檔的詳細資訊，請參閱 [about_Profiles](about_Profiles.md)。</span><span class="sxs-lookup"><span data-stu-id="94c4b-169">For more information about profiles, see [about_Profiles](about_Profiles.md).</span></span>
+<span data-ttu-id="1a913-167">就像任何函式一樣， `Prompt` 函數只存在於目前的會話中。</span><span class="sxs-lookup"><span data-stu-id="1a913-167">Like any function, the `Prompt` function exists only in the current session.</span></span> <span data-ttu-id="1a913-168">若要在 `Prompt` 未來的會話中儲存函式，請將它新增至您的 PowerShell 設定檔。</span><span class="sxs-lookup"><span data-stu-id="1a913-168">To save the `Prompt` function for future sessions, add it to your PowerShell profiles.</span></span> <span data-ttu-id="1a913-169">如需設定檔的詳細資訊，請參閱 [about_Profiles](about_Profiles.md)。</span><span class="sxs-lookup"><span data-stu-id="1a913-169">For more information about profiles, see [about_Profiles](about_Profiles.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="94c4b-170">另請參閱</span><span class="sxs-lookup"><span data-stu-id="94c4b-170">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1a913-170">請參閱</span><span class="sxs-lookup"><span data-stu-id="1a913-170">See also</span></span>
 
-[<span data-ttu-id="94c4b-171">Get-Location</span><span class="sxs-lookup"><span data-stu-id="94c4b-171">Get-Location</span></span>](xref:Microsoft.PowerShell.Management.Get-Location)
+[<span data-ttu-id="1a913-171">Get-Location</span><span class="sxs-lookup"><span data-stu-id="1a913-171">Get-Location</span></span>](xref:Microsoft.PowerShell.Management.Get-Location)
 
-[<span data-ttu-id="94c4b-172">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="94c4b-172">Enter-PSSession</span></span>](xref:Microsoft.PowerShell.Core.Enter-PSSession)
+[<span data-ttu-id="1a913-172">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="1a913-172">Enter-PSSession</span></span>](xref:Microsoft.PowerShell.Core.Enter-PSSession)
 
-[<span data-ttu-id="94c4b-173">Get-History</span><span class="sxs-lookup"><span data-stu-id="94c4b-173">Get-History</span></span>](xref:Microsoft.PowerShell.Core.Get-History)
+[<span data-ttu-id="1a913-173">Get-History</span><span class="sxs-lookup"><span data-stu-id="1a913-173">Get-History</span></span>](xref:Microsoft.PowerShell.Core.Get-History)
 
-[<span data-ttu-id="94c4b-174">Get-Random</span><span class="sxs-lookup"><span data-stu-id="94c4b-174">Get-Random</span></span>](xref:Microsoft.PowerShell.Utility.Get-Random)
+[<span data-ttu-id="1a913-174">Get-Random</span><span class="sxs-lookup"><span data-stu-id="1a913-174">Get-Random</span></span>](xref:Microsoft.PowerShell.Utility.Get-Random)
 
-[<span data-ttu-id="94c4b-175">Write-Host</span><span class="sxs-lookup"><span data-stu-id="94c4b-175">Write-Host</span></span>](xref:Microsoft.PowerShell.Utility.Write-Host)
+[<span data-ttu-id="1a913-175">Write-Host</span><span class="sxs-lookup"><span data-stu-id="1a913-175">Write-Host</span></span>](xref:Microsoft.PowerShell.Utility.Write-Host)
 
-[<span data-ttu-id="94c4b-176">about_Profiles</span><span class="sxs-lookup"><span data-stu-id="94c4b-176">about_Profiles</span></span>](about_Profiles.md)
+[<span data-ttu-id="1a913-176">about_Profiles</span><span class="sxs-lookup"><span data-stu-id="1a913-176">about_Profiles</span></span>](about_Profiles.md)
 
-[<span data-ttu-id="94c4b-177">about_Functions</span><span class="sxs-lookup"><span data-stu-id="94c4b-177">about_Functions</span></span>](about_Functions.md)
+[<span data-ttu-id="1a913-177">about_Functions</span><span class="sxs-lookup"><span data-stu-id="1a913-177">about_Functions</span></span>](about_Functions.md)
 
-[<span data-ttu-id="94c4b-178">about_Scopes</span><span class="sxs-lookup"><span data-stu-id="94c4b-178">about_Scopes</span></span>](about_Scopes.md)
+[<span data-ttu-id="1a913-178">about_Scopes</span><span class="sxs-lookup"><span data-stu-id="1a913-178">about_Scopes</span></span>](about_Scopes.md)
 
-[<span data-ttu-id="94c4b-179">about_Debuggers</span><span class="sxs-lookup"><span data-stu-id="94c4b-179">about_Debuggers</span></span>](about_Debuggers.md)
+[<span data-ttu-id="1a913-179">about_Debuggers</span><span class="sxs-lookup"><span data-stu-id="1a913-179">about_Debuggers</span></span>](about_Debuggers.md)
 
-[<span data-ttu-id="94c4b-180">about_Automatic_Variables</span><span class="sxs-lookup"><span data-stu-id="94c4b-180">about_Automatic_Variables</span></span>](about_Automatic_Variables.md)
+[<span data-ttu-id="1a913-180">about_Automatic_Variables</span><span class="sxs-lookup"><span data-stu-id="1a913-180">about_Automatic_Variables</span></span>](about_Automatic_Variables.md)
 
