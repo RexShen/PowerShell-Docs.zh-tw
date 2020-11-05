@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: WMF 5.1 的主控台改善
-ms.openlocfilehash: ae3d08a34a09bc32d40a8a45788999ee9c54a562
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.1 針對 Windows PowerShell 5.1 的主控台體驗新增了新功能。
+ms.openlocfilehash: 9a86a2ed4787554e7255bedf1c2ae6e798fefa45
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808984"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660754"
 ---
 # <a name="console-improvements-in-wmf-51"></a>WMF 5.1 的主控台改善
 

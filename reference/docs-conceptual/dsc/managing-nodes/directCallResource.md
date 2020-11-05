@@ -2,21 +2,22 @@
 ms.date: 08/11/2020
 keywords: dsc,powershell,設定,安裝
 title: 直接呼叫 DSC 資源方法
-ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+description: Invoke-DscResource Cmdlet 可以用來呼叫 DSC 資源的函式或方法。 其可由想要使用 DSC 資源的協力廠商使用，或是作為開發資源時的有用工具。
+ms.openlocfilehash: 5ccf0f589b60cef4ec197d1e0a583af9ed60d5e7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162489"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650999"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>直接呼叫 DSC 資源方法
 
->適用於：Windows PowerShell 5.0
+> 適用於：Windows PowerShell 5.0
 
-您可使用[Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) Cmdlet，直接呼叫 DSC 資源的函式或方法 (MOF 形資源的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式，或類別形資源的 **Get**、**Set** 和 **Test** 方法)。 這類方法適用於協力廠商想要使用 DSC 資源時，或是作為開發資源的有力工具。
+您可使用 [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) Cmdlet，直接呼叫 DSC 資源的函式或方法 (MOF 形資源的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式，或類別形資源的 **Get** 、 **Set** 和 **Test** 方法)。 這類方法適用於協力廠商想要使用 DSC 資源時，或是作為開發資源的有力工具。
 
 > [!NOTE]
-> 在 PowerShell 7.0 以上的版本中，`Invoke-DscResource` 不再支援叫用 WMI DSC 資源。 這包括 **PSDesiredStateConfiguration** 中的**檔案**和**記錄**資源。
+> 在 PowerShell 7.0 以上的版本中，`Invoke-DscResource` 不再支援叫用 WMI DSC 資源。 這包括 **PSDesiredStateConfiguration** 中的 **檔案** 和 **記錄** 資源。
 
 這個 Cmdlet 通常搭配中繼設定屬性 `refreshMode = 'Disabled'` 一起使用，但可用於任何 **refreshMode** 設定。
 
@@ -51,7 +52,7 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->[!NOTE]
+> [!NOTE]
 > 不支援直接呼叫複合資源方法。 請改為呼叫組成複合資源之基礎資源的方法。
 
 ## <a name="see-also"></a>另請參閱

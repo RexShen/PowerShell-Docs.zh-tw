@@ -1,15 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB, SydneyhSmith
-keywords: gallery,powershell,cmdlet,psgallery
-description: 發行者的指導方針
+description: 此文章描述的建議步驟可確保發佈至 PowerShell 資源庫的套件會受到廣泛採用，並為使用者提供高價值。
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: c58b23b0021e0745ee690a78f7e42c821d59cdb0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777864"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656144"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -85,10 +83,9 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 
 正確地對意見反應做出回應的套件擁有者在社群中會享有高評價。 提供具建設性意見反應的使用者是重要的回應對象，因為他們對套件的興趣大到足以嘗試協助改進該套件。
 
-「PowerShell 資源庫」中提供兩種意見反應方法：
+PowerShell 資源庫中提供一種意見反應方法：
 
 - 連絡擁有者：這可讓使用者傳送電子郵件給套件擁有者。 如果您是套件擁有者，請務必隨時注意與「PowerShell 資源庫」套件搭配使用的電子郵件地址，並針對提出的問題進行回應。 此方法有一個缺點，就是只有使用者和擁有者可以看到溝通內容，因此擁有者可能必須回答相同的問題許多次。
-- 註解：套件頁面底部有一個 [註解]  欄位。 此系統的優點是其他使用者可以看到評論和回應，減少了必須回答任何單一問題的次數。 如果您是套件擁有者，強烈建議您「關注」針對每個套件提出的評論。 如需相關做法的詳細資料，請參閱[透過社群媒體或評論來提供意見反應](../how-to/working-with-packages/social-media-feedback.md) \(英文\)。
 
 以具建設性的方式回應意見反應的擁有者會受到社群激賞。 使用報表中的商機來要求詳細資訊。 如有需要，請提供因應措施，或識別更新是否能修正問題。
 
@@ -142,7 +139,7 @@ Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="
 
 ## <a name="include-andor-link-to-license-terms"></a>包含和/或連結至授權條款
 
-所有發行至「PowerShell 資源庫」的套件都必須指定授權條款，或是受到[使用規定](https://www.powershellgallery.com/policies/Terms) \(英文\) 底下「附錄 A」  中所包含的授權約束。指定不同授權的最佳方法是在 **PSData** 中使用 **LicenseURI** 來提供授權的連結。 如需詳細資訊，請參閱[套件資訊清單與資源庫 UI](package-manifest-affecting-ui.md)。
+所有發行至「PowerShell 資源庫」的套件都必須指定授權條款，或是受到 [使用規定](https://www.powershellgallery.com/policies/Terms) \(英文\) 底下「附錄 A」  中所包含的授權約束。指定不同授權的最佳方法是在 **PSData** 中使用 **LicenseURI** 來提供授權的連結。 如需詳細資訊，請參閱[套件資訊清單與資源庫 UI](package-manifest-affecting-ui.md)。
 
 ```powershell
 PrivateData = @{
@@ -195,13 +192,13 @@ PowerShell 資源庫並不適合作為測試發行程序的目標。 若要測�
   這個方法的設定較為複雜，但是能夠驗證更多需求。值得注意的是，不論您發行時目標是否有相依性，都能使用 API 金鑰進行驗證。
 - 將檔案共用設定為測試「存放庫」  。 這很容易設定，但因為其為檔案共用，所以無法執行上述的驗證。 在此案例中，因為檔案共用不會檢查 (必要的) API 金鑰，所以您可以使用發行到 PowerShell 資源庫的相同金鑰，這可以說是潛在優點。
 
-有了上述任何解決方案，請使用 `Register-PSRepository` 來定義新**存放庫**，您可以在 `Publish-Module` 的 `-Repository` 參數中使用它。
+有了上述任何解決方案，請使用 `Register-PSRepository` 來定義新 **存放庫** ，您可以在 `Publish-Module` 的 `-Repository` 參數中使用它。
 
 另外為測試發行補充一點：您發行到 PowerShell 資源庫的任何套件都必須在營運團隊的協助下才能刪除，因此他們會確認沒有任何內容相依於您要發行的套件。 基於此原因，我們不支援將 PowerShell 資源庫用作測試目標，且會與任何這樣做的發行者連絡。
 
 ## <a name="use-powershellget-to-publish"></a>使用 PowerShellGet 發佈
 
-強烈建議發行者搭配 PowerShell 資源庫使用 `Publish-Module` 和 `Publish-Script` Cmdlet。 已建立 **PowerShellGet**，因此您不需要記住透過發佈至 PowerShell 資源庫進行安裝的重要詳細資料。 有時候，發行者會選擇略過 **PowerShellGet** 並使用 **NuGet** 用戶端或 **PackageManagement** Cmdlet，而不是使用 `Publish-Module`。 有幾個容易忽略的詳細資料會導致各種不同的支援要求。
+強烈建議發行者搭配 PowerShell 資源庫使用 `Publish-Module` 和 `Publish-Script` Cmdlet。 已建立 **PowerShellGet** ，因此您不需要記住透過發佈至 PowerShell 資源庫進行安裝的重要詳細資料。 有時候，發行者會選擇略過 **PowerShellGet** 並使用 **NuGet** 用戶端或 **PackageManagement** Cmdlet，而不是使用 `Publish-Module`。 有幾個容易忽略的詳細資料會導致各種不同的支援要求。
 
 如果您有無法使用 `Publish-Module` 或 `Publish-Script` 的原因，請讓我們知道。
 請在 **PowerShellGet** GitHub 存放庫中提出問題，並提供導致您選擇 **NuGet** 或 **PackageManagement** 的詳細原因。

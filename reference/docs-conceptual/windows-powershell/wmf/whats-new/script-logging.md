@@ -1,17 +1,17 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: 指令碼追蹤和記錄
-ms.openlocfilehash: dd18453c041428d5a6537c413c3ebe324a62dfee
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5.x 新增了新的事件記錄，可讓您稽核指令碼區塊執行。
+ms.openlocfilehash: d47fb6fdd1ee4b9372fab7b81e6dc94fb45b8880
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809864"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663116"
 ---
 # <a name="script-tracing-and-logging"></a>指令碼追蹤和記錄
 
-雖然 PowerShell 已有 **LogPipelineExecutionDetails** 群組原則設定會記錄 Cmdlet 的引動過程，但 PowerShell 的指令碼語言仍具備數個您可能想要記錄和稽核的功能。 新的詳細指令碼追蹤功能會在系統上提供 PowerShell 指令碼活動的詳細追蹤和分析。 啟用詳細指令碼追蹤之後，PowerShell 會將所有指令碼區塊記錄於 ETW 事件記錄檔中：**Microsoft-Windows-PowerShell/Operational**。 例如，若指令碼區塊會建立另一個指令碼區塊，則透過呼叫 `Invoke-Expression`，也會記錄叫用的指令碼區塊。
+雖然 PowerShell 已有 **LogPipelineExecutionDetails** 群組原則設定會記錄 Cmdlet 的引動過程，但 PowerShell 的指令碼語言仍具備數個您可能想要記錄和稽核的功能。 新的詳細指令碼追蹤功能會在系統上提供 PowerShell 指令碼活動的詳細追蹤和分析。 啟用詳細指令碼追蹤之後，PowerShell 會將所有指令碼區塊記錄於 ETW 事件記錄檔中： **Microsoft-Windows-PowerShell/Operational** 。 例如，若指令碼區塊會建立另一個指令碼區塊，則透過呼叫 `Invoke-Expression`，也會記錄叫用的指令碼區塊。
 
 您可以透過 [打開 PowerShell 指令碼區塊記錄]  群組原則設定 (位於 [系統管理範本]   -> [Windows 元件]   ->  [Windows PowerShell]  ) 來啟用記錄。
 
@@ -41,7 +41,7 @@ ms.locfileid: "83809864"
 
 識別碼是代表指令碼區塊的 GUID (可與事件識別碼 0x1008 相互關聯)，Runspace 識別碼則代表之前執行這個指令碼區塊的 Runspace。
 
-引動過程訊息中的百分比符號代表結構化的 ETW 屬性。 雖以訊息文字中的實際值取代了它們，但更健全的存取方式是以 Get-WinEvent Cmdlet 擷取訊息，然後使用訊息的**屬性**陣列。
+引動過程訊息中的百分比符號代表結構化的 ETW 屬性。 雖以訊息文字中的實際值取代了它們，但更健全的存取方式是以 Get-WinEvent Cmdlet 擷取訊息，然後使用訊息的 **屬性** 陣列。
 
 下例說明這項功能如何協助解除包裝加密和模糊化指令碼的惡意嘗試：
 

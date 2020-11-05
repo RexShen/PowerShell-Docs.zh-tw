@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEFile 物件
-ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEFile 物件代表 Windows PowerShell ISE 中的檔案。
+ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809884"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662134"
 ---
 # <a name="the-isefile-object"></a>ISEFile 物件
 
-**ISEFile** 物件代表 Windows PowerShell® 整合式指令碼環境 (ISE) 中的檔案。 它是 **Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。 本主題列出其成員方法和成員屬性。 `$psISE.CurrentFile` 以及 PowerShell 索引標籤上檔案集合中的檔案，都是 \*\***Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。
+**ISEFile** 物件代表 Windows PowerShell&reg; 整合式指令碼環境 (ISE) 中的檔案。 它是 **Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。 本主題列出其成員方法和成員屬性。 `$psISE.CurrentFile` 以及 PowerShell 索引標籤上檔案集合中的檔案，都是 \*\***Microsoft.PowerShell.Host.ISE.ISEFile** 類別的執行個體。
 
 ## <a name="methods"></a>方法
 
@@ -21,11 +21,11 @@ ms.locfileid: "83809884"
 
 將檔案儲存至磁碟。
 
-**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
+**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8** 。
 
 ### <a name="exceptions"></a>例外狀況
 
-- **System.IO.IOException**︰無法儲存檔案。
+- **System.IO.IOException** ︰無法儲存檔案。
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -47,13 +47,13 @@ $myfile.Encoding
 
 **filename** - 字串：要用來儲存檔案的名稱。
 
-**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8**。
+**\[saveEncoding\]** - 選擇性 [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) 可供所儲存檔案使用的選擇性字元編碼參數。 預設值為 **UTF8** 。
 
 ### <a name="exceptions"></a>例外狀況
 
-- **System.ArgumentNullException**：**filename** 參數為 Null。
-- **System.ArgumentException**：**filename** 參數是空的。
-- **System.IO.IOException**︰無法儲存檔案。
+- **System.ArgumentNullException** ： **filename** 參數為 Null。
+- **System.ArgumentException** ： **filename** 參數是空的。
+- **System.IO.IOException** ︰無法儲存檔案。
 
 ```powershell
 # Save the file with a full path and name.

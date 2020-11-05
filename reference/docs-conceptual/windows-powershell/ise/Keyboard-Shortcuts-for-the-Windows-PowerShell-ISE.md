@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: Windows PowerShell ISE 的鍵盤快速鍵
-ms.openlocfilehash: 36fa3f983dc2d8440dd3b87aefd92eb49c028dc9
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+description: 此文章是 PowerShell ISE 中所使用的鍵盤快速鍵清單。
+ms.openlocfilehash: b7749f49d3ac2923b097e2ab94488263436980bd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092111"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663460"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
-使用下列鍵盤快速鍵，在 Windows PowerShell® 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](https://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。
+使用下列鍵盤快速鍵，在 Windows PowerShell&reg; 整合式指令碼環境 (ISE) 中執行動作。 Windows PowerShell ISE 隨附於 Windows Server 和 Windows 用戶端作業系統，但也可當做 [Windows Management Framework 4.0 下載套件](https://go.microsoft.com/fwlink/?LinkID=293881)的一部分安裝到某些舊版的 Windows 作業系統。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>編輯文字的鍵盤快速鍵
 

@@ -1,17 +1,17 @@
 ---
 ms.date: 08/25/2017
-keywords: powershell,cmdlet
 title: ObjectModelRoot 物件
-ms.openlocfilehash: cd94e69de2e62f7ce9fac413e15458ae9986540e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: $psISE 物件 (PowerShell ISE 中的主體根物件) 是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 類別的執行個體。 本主題描述 ObjectModelRoot 物件的屬性。
+ms.openlocfilehash: c8ae703c2663256ca037090fd3b1eb239cfc431a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809564"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660946"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot 物件
 
-`$psISE` 物件 (Windows PowerShell® 整合式指令碼環境中 (ISE) 的主要根物件) 是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 類別的執行個體。 本主題描述 **ObjectModelRoot** 物件的屬性。
+`$psISE` 物件 (Windows PowerShell&reg; 整合式指令碼環境 (ISE) 中的主體根物件) 是 Microsoft.PowerShell.Host.ISE.ObjectModelRoot 類別的執行個體。 本主題描述 **ObjectModelRoot** 物件的屬性。
 
 ## <a name="properties"></a>屬性
 
@@ -39,7 +39,7 @@ ms.locfileid: "83809564"
 
 唯讀屬性，可取得目前顯示於編輯器右邊垂直工具窗格的 Windows PowerShell ISE 附加元件工具。
 
-### <a name="options"></a>選項。
+### <a name="options"></a>選項
 
 > 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 

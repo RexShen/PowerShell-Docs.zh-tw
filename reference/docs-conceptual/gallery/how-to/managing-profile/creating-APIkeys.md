@@ -1,14 +1,13 @@
 ---
 ms.date: 09/10/2018
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 管理 API 金鑰
-ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: PowerShell 資源庫使用 API 金鑰來驗證內容發行者對資源庫的存取權。
+ms.openlocfilehash: 4b70ac7d56fc1d63719c2acf93da3dd4ac22abed
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777587"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661128"
 ---
 # <a name="managing-api-keys"></a>管理 API 金鑰
 
@@ -63,7 +62,7 @@ PowerShell 資源庫支援建立多個 API 金鑰，以支援各種不同的發�
 
 若要變更受金鑰控制的套件，您可以從清單中選擇個別套件，或變更 Glob 模式。
 
-按一下 [重新產生]  會建立新的金鑰值。 如同初始建立金鑰，您必須在更新金鑰之後**複製**其值。 一旦離開此頁面，就無法使用 [複製]  選項。
+按一下 [重新產生]  會建立新的金鑰值。 如同初始建立金鑰，您必須在更新金鑰之後 **複製** 其值。 一旦離開此頁面，就無法使用 [複製]  選項。
 
 按一下 [刪除]  會顯示確認訊息。 金鑰一旦刪除，就無法使用。
 

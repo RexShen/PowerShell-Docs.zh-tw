@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 封裝資源並上傳到提取伺服器
-ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 此文章說明如何將資源上傳到提取伺服器，使其可以由 DSC 所管理之節點上的設定下載。
+ms.openlocfilehash: a19d04346a0ae546cfcaf70701fde870d3839f65
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782883"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661698"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>封裝資源並上傳到提取伺服器
 
@@ -16,7 +17,7 @@ ms.locfileid: "87782883"
 - [設定 DSC SMB 提取伺服器](pullServerSmb.md)
 - [設定 DSC HTTP 提取伺服器](pullServer.md)
 
-每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 本文將示範如何上傳資源，讓它們可供下載，並設定用戶端以自動下載資源。 當節點收到指派的設定時，透過**提取**或**推送** (v5)，它就會自動從 LCM 中指定的位置下載設定所需的任何資源。
+每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 本文將示範如何上傳資源，讓它們可供下載，並設定用戶端以自動下載資源。 當節點收到指派的設定時，透過 **提取** 或 **推送** (v5)，它就會自動從 LCM 中指定的位置下載設定所需的任何資源。
 
 ## <a name="package-resource-modules"></a>封裝資源模組
 
@@ -41,7 +42,7 @@ ms.locfileid: "87782883"
 
 ### <a name="create-checksums"></a>建立總和檢查碼
 
-一旦將資源模組壓縮並重新命名之後，您必須建立**總和檢查碼**。 用戶端上的 LCM 會使用**總和檢查碼**來判斷資源是否已變更且需要再次下載。 您可以使用 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet 來建立**總和檢查碼**，如以下範例所示。
+一旦將資源模組壓縮並重新命名之後，您必須建立 **總和檢查碼** 。 用戶端上的 LCM 會使用 **總和檢查碼** 來判斷資源是否已變更且需要再次下載。 您可以使用 [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) Cmdlet 來建立 **總和檢查碼** ，如以下範例所示。
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
@@ -53,7 +54,7 @@ New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 
 #### <a name="on-a-dsc-http-pull-server"></a>在 DSC HTTP 提取伺服器上
 
-當您設定 HTTP 提取伺服器時，如[設定 DSC HTTP 提取伺服器](pullServer.md)中所述，您會針對 **ModulePath** 和 **ConfigurationPath** 索引碼指定目錄。 **ConfigurationPath** 索引碼指出應儲存所有 ".mof" 檔案的位置。 **ModulePath** 指出應儲存所有 DSC 資源模組的位置。
+當您設定 HTTP 提取伺服器時，如 [設定 DSC HTTP 提取伺服器](pullServer.md)中所述，您會針對 **ModulePath** 和 **ConfigurationPath** 索引碼指定目錄。 **ConfigurationPath** 索引碼指出應儲存所有 ".mof" 檔案的位置。 **ModulePath** 指出應儲存所有 DSC 資源模組的位置。
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -68,7 +69,7 @@ New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 
 #### <a name="on-an-smb-share"></a>在 SMB 共用上
 
-如果您指定了 **ResourceRepositoryShare**，當您設定提取用戶端時，需將封存與總和檢查碼儲存於 **ResourceRepositoryShare** 區塊的 **SourcePath** 目錄中。
+如果您指定了 **ResourceRepositoryShare** ，當您設定提取用戶端時，需將封存與總和檢查碼儲存於 **ResourceRepositoryShare** 區塊的 **SourcePath** 目錄中。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +83,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-如果您只指定 **ConfigurationRepositoryShare**，當您設定提取用戶端時，則需將封存與總和檢查碼儲存於 **ConfigurationRepositoryShare** 區塊的 **SourcePath** 目錄中。
+如果您只指定 **ConfigurationRepositoryShare** ，當您設定提取用戶端時，則需將封存與總和檢查碼儲存於 **ConfigurationRepositoryShare** 區塊的 **SourcePath** 目錄中。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer

@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 資源, 資源庫, 安裝, 設定
 title: 安裝額外的 DSC 資源
-ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章列出包含在 PSDesiredStateConfiguration 模組中的 DSC 資源。 其也涵蓋如何從 PowerShell 資源庫尋找資源並加以安裝。
+ms.openlocfilehash: e75561ed539e06716c9a103f905b9d1e4f3e71d3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417788"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645138"
 ---
 # <a name="install-additional-dsc-resources"></a>安裝額外的 DSC 資源
 
@@ -18,20 +19,20 @@ PowerShell 包含幾個適用於 Desired State Configuration (DSC) 的立即可�
 > [!NOTE]
 > 此清單並不完整，因為 OOB 資源的數量會隨著 PowerShell 的每個版本而增加。
 
-|資源  |描述  |
-|---------|---------|
-|**檔案**|控制檔案和目錄的狀態。 在**來源**變更時將檔案從**來源**複製到**目的地**，並藉由比較日期、總和檢查碼和雜湊更新檔案。|
-|**封存**|將封存和指定位置解除封裝。 驗證封存具有指定的**總和檢查碼**。|
-|**環境**|管理環境變數。|
-|**群組**|管理本機群組並控制群組成員資格。|
-|**Log**|將訊息寫入至 `Microsoft-Windows-Desired State Configuration/Analytic` 事件記錄檔。|
-|**套件**|使用**引數**、**LogPath**、**ReturnCode** 和其他設定安裝套件或解除安裝套件。|
-|**登錄**|管理登錄機碼和值。|
-|**指令碼**|可讓您設計自己的[取得-測試-設定](../resources/get-test-set.md)指令碼區塊。|
-|**服務**|設定 Windows 服務。|
-|**使用者** |管理本機使用者和屬性。|
-|**WindowsFeature**|管理角色和功能。|
-|**WindowsProcess**|設定 Windows 處理序。|
+|      資源      |                                                                                       描述                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **檔案**           | 控制檔案和目錄的狀態。 在 **來源** 變更時將檔案從 **來源** 複製到 **目的地** ，並藉由比較日期、總和檢查碼和雜湊更新檔案。 |
+| **封存**        | 將封存和指定位置解除封裝。 驗證封存具有指定的 **總和檢查碼** 。                                                                                         |
+| **環境**    | 管理環境變數。                                                                                                                                                           |
+| **群組**          | 管理本機群組並控制群組成員資格。                                                                                                                                      |
+| **Log**            | 將訊息寫入至 `Microsoft-Windows-Desired State Configuration/Analytic` 事件記錄檔。                                                                                               |
+| **套件**        | 使用 **引數** 、 **LogPath** 、 **ReturnCode** 和其他設定安裝套件或解除安裝套件。                                                                                        |
+| **登錄**       | 管理登錄機碼和值。                                                                                                                                                        |
+| **指令碼**         | 可讓您設計自己的[取得-測試-設定](../resources/get-test-set.md)指令碼區塊。                                                                                                |
+| **服務**        | 設定 Windows 服務。                                                                                                                                                             |
+| **使用者**           | 管理本機使用者和屬性。                                                                                                                                                      |
+| **WindowsFeature** | 管理角色和功能。                                                                                                                                                              |
+| **WindowsProcess** | 設定 Windows 處理序。                                                                                                                                                            |
 
 OOB 資源是適合一般作業的良好起點。 如果 OOB 資源不能滿足您的需求，您可以撰寫自己的[自訂資源](../resources/authoringResource.md)。 在撰寫自訂資源來解決問題之前，您應該先瀏覽由 Microsoft 和 PowerShell 社群建立的大量 DSC 資源。
 
@@ -39,7 +40,7 @@ OOB 資源是適合一般作業的良好起點。 如果 OOB 資源不能滿足�
 
 ## <a name="installing-powershellget"></a>安裝 PowerShellGet
 
-若要判斷您是否已有 **PowerShellGet**，或是要取得安裝協助，請參閱下列指南：[安裝 PowerShellGet](/powershell/scripting/gallery/installing-psget)。
+若要判斷您是否已有 **PowerShellGet** ，或是要取得安裝協助，請參閱下列指南：[安裝 PowerShellGet](/powershell/scripting/gallery/installing-psget)。
 
 ## <a name="finding-dsc-resources-using-powershellget"></a>使用 PowerShellGet 尋找 DSC 資源
 
@@ -51,11 +52,11 @@ OOB 資源是適合一般作業的良好起點。 如果 OOB 資源不能滿足�
 PS> Find-DSCResource
 
 NuGet provider is required to continue
-PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The
-NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or
-'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider
- by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to
-install and import the NuGet provider now?
+PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based
+repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies'
+or 'C:\Users\xAdministrator\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install
+the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201
+-Force'. Do you want PowerShellGet to install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
@@ -104,7 +105,7 @@ TimeZone                            6.0.0.0    ComputerManagementDsc            
 
 ## <a name="installing-dsc-resources-using-powershellget"></a>使用 PowerShellGet 安裝 DSC 資源
 
-若要安裝 DSC 資源，請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet，指定搜尋結果中顯示在**模組**名稱底下的模組名稱。
+若要安裝 DSC 資源，請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet，指定搜尋結果中顯示在 **模組** 名稱底下的模組名稱。
 
 "TimeZone" 資源存在於 "ComputerManagementDSC" 模組中，也就是此範例會安裝的模組。
 
@@ -115,9 +116,9 @@ TimeZone                            6.0.0.0    ComputerManagementDsc            
 PS> Install-Module -Name ComputerManagementDSC
 
 Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
+You are installing the modules from an untrusted repository. If you trust this repository, change
+its InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to
+install the modules from 'PSGallery'?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 

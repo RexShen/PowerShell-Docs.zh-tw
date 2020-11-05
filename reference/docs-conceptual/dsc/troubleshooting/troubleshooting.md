@@ -2,18 +2,19 @@
 ms.date: 10/30/2018
 keywords: dsc,powershell,設定,安裝
 title: 疑難排解 DSC
-ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: 此文章提供常見錯誤的疑難排解指示。
+ms.openlocfilehash: 2ac86689fa2695add247995bfb91c0ea85e22d60
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692302"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656254"
 ---
 # <a name="troubleshooting-dsc"></a>疑難排解 DSC
 
-_適用於：Windows PowerShell 4.0、Windows PowerShell 5.0_
+> 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-本主題會說明問題發生時針對 DSC 進行疑難排解的方法。
+此文章提供常見錯誤的疑難排解指示。
 
 ## <a name="winrm-dependency"></a>WinRM 相依性
 
@@ -82,14 +83,14 @@ PSComputerName        :
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>我的指令碼不執行：使用 DSC 記錄診斷指令碼錯誤
 
-像所有的 Windows 軟體一樣，DSC 會在[記錄檔](/windows/desktop/EventLog/about-event-logging)中記錄錯誤和事件，[[事件檢視器]](https://support.microsoft.com/hub/4338813/windows-help) 可檢視這些記錄。
-檢查這些記錄檔可以幫助您了解特定作業失敗的原因，以及如何避免失敗再度發生。 撰寫設定指令碼可能很困難，因此為方便您在撰寫時追蹤錯誤，請使用 DSC 記錄資源在 DSC 分析事件記錄檔中追蹤設定進度。
+像所有的 Windows 軟體一樣，DSC 會在[記錄](/windows/desktop/EventLog/about-event-logging)中記錄錯誤和事件，並可從[事件檢視器](https://support.microsoft.com/hub/4338813/windows-help)加以檢視。 檢查這些記錄檔可以幫助您了解特定作業失敗的原因，以及如何避免失敗再度發生。
+撰寫設定指令碼可能很困難，因此為方便您在撰寫時追蹤錯誤，請使用 DSC 記錄資源在 DSC 分析事件記錄檔中追蹤設定進度。
 
 ## <a name="where-are-dsc-event-logs"></a>DSC 事件記錄檔在哪裡？
 
-在 [事件檢視器] 中，DSC 事件位於：**Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
+在事件檢視器中，DSC 事件位於： **Applications and Services Logs/Microsoft/Windows/Desired State Configuration**
 
-您也可以執行對應的 PowerShell Cmdlet，[Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)，來檢視事件記錄檔：
+您也可以執行對應的 PowerShell Cmdlet [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)，來檢視事件記錄檔：
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -101,8 +102,9 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-如上所示，DSC 的主要記錄檔名稱是 **Microsoft->Windows->DSC** (為畫面簡潔起見，這裡不顯示 Windows 下的其他記錄檔名稱)。 主要名稱會附加在通道名稱後面，以建立完整的記錄檔名稱。 DSC 引擎主要會寫入三種記錄檔：[操作、分析和偵錯記錄檔](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))。 因為分析和偵錯記錄檔預設是關閉的，您應該在 [事件檢視器] 中啟用它們。 啟用方法是在 Windows PowerShell 中輸入 Show-EventLog；或依序按一下 **[開始]** 按鈕、 **[控制台]** 、 **[系統管理工具]** 和 **[事件檢視器]** 。
-在 [事件檢視器] 的 **[檢視]** 功能表中，按一下 **[顯示分析與偵錯記錄檔]** 。 分析通道的記錄檔名稱是 **Microsoft-Windows-Dsc/Analytic**，偵錯通道則是 **Microsoft-Windows-Dsc/Debug**。 您也可以使用 [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) 公用程式來啟用記錄檔，如下例所示。
+如上所示，DSC 的主要記錄檔名稱是 **Microsoft->Windows->DSC** (為畫面簡潔起見，這裡不顯示 Windows 下的其他記錄檔名稱)。 主要名稱會附加在通道名稱後面，以建立完整的記錄檔名稱。 DSC 引擎主要會寫入三種記錄：[作業、分析和偵錯記錄](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))。
+因為分析和偵錯記錄檔預設是關閉的，您應該在 [事件檢視器] 中啟用它們。
+啟用方法是在 Windows PowerShell 中輸入 Show-EventLog；或依序按一下 [開始] 按鈕、[控制台]、[系統管理工具] 和 [事件檢視器]。 在事件檢視器的 [檢視] 功能表中，按一下 [顯示分析與偵錯記錄]。 分析通道的記錄名稱是 **Microsoft-Windows-Dsc/Analytic** ，偵錯通道則是 **Microsoft-Windows-Dsc/Debug** 。 您也可以使用 [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) 公用程式來啟用記錄，如下例所示。
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
@@ -197,7 +199,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="1-operations-failures"></a>1：作業失敗
 
-所有的事件都有[嚴重性層級](/windows/desktop/WES/defining-severity-levels)。 這項資訊可以用來識別錯誤事件：
+所有的事件都有[嚴重性等級](/windows/desktop/WES/defining-severity-levels)。 這項資訊可以用來識別錯誤事件：
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -254,8 +256,8 @@ PS C:\> $myFailedEvent.Message
 
 Job {5BCA8BE7-5BB6-11E3-BF41-00155D553612} :
 DSC Engine Error :
- Error Message Current configuration does not exist. Execute Start-DscConfiguration command with -Path pa
-rameter to specify a configuration file and create a current configuration first.
+ Error Message Current configuration does not exist. Execute Start-DscConfiguration command with
+ -Path parameter to specify a configuration file and create a current configuration first.
 Error Code : 1
 ```
 
@@ -471,7 +473,7 @@ SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32
 
 若要順利回收設定和清除快取卻不重新開機，您必須停止然後再重新啟動主機處理程序。 您可以對每個執行個體都執行識別、停止和重新啟動程序。 或者如下文所示，使用 `DebugMode` 重新載入 PowerShell DSC 資源。
 
-若要識別出並停止每個執行個體上主控 DSC 引擎的處理程序，您可以列出主控 DSC 引擎的 WmiPrvSE 處理程序識別碼。 然後，更新提供者、使用下列命令停止 WmiPrvSE 處理程序，再執行一次 **Start-DscConfiguration**。
+若要識別出並停止每個執行個體上主控 DSC 引擎的處理程序，您可以列出主控 DSC 引擎的 WmiPrvSE 處理程序識別碼。 然後，更新提供者、使用下列命令停止 WmiPrvSE 處理程序，再執行一次 **Start-DscConfiguration** 。
 
 ```powershell
 ###
@@ -489,7 +491,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## <a name="using-debugmode"></a>使用 DebugMode
 
-您可以設定 DSC 本機設定管理員 (LCM) 使用 `DebugMode` 在重新啟動主機處理程序時，一律清除快取。 設為 **TRUE** 時，會讓引擎一律重新載入 PowerShell DSC 資源。 資源完成撰寫後，您就可以將它設回 **FALSE**，引擎會還原成快取模組行為。
+您可以設定 DSC 本機設定管理員 (LCM) 使用 `DebugMode` 在重新啟動主機處理程序時，一律清除快取。 設為 **TRUE** 時，會讓引擎一律重新載入 PowerShell DSC 資源。 資源完成撰寫後，您就可以將其設回 **FALSE** ，引擎會還原成快取模組行為。
 
 下面的示範會說明 `DebugMode` 如何自動重新整理快取。 首先，我們來看一下預設設定：
 
@@ -565,7 +567,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-您將會看到檔案的內容：`$env:SystemDrive\OutputFromTestProviderDebugMode.txt` 是 **1**。
+您將會看到檔案的內容：`$env:SystemDrive\OutputFromTestProviderDebugMode.txt` 是 **1** 。
 
 現在使用下列指令碼來更新提供者程式碼：
 
@@ -602,7 +604,7 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-這個指令碼會產生一個隨機數字，以此更新提供者程式碼。 若 `DebugMode` 設定為 false，檔案內容 " **$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" 就一律不會變更。
+這個指令碼會產生一個隨機數字，以此更新提供者程式碼。 在將 `DebugMode` 設定為 False 的情況下，`$env:SystemDrive\OutputFromTestProviderDebugMode.txt` 檔案的內容一律不會變更。
 
 現在，在設定指令碼中將 `DebugMode` 設為 **"ForceModuleImport"** ：
 
@@ -633,16 +635,15 @@ onlyProperty                            PSComputerName
 
 將中繼設定套用至伺服器，以向 Windows 提取伺服器的執行個體註冊時，您可能會發生下列錯誤。
 
-```PowerShell
-Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+```
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server
 https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
     + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
     + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
     + PSComputerName        : <computername>
 ```
 
-當伺服器上用來加密流量的憑證通用名稱 (CN) 與節點用來解析 URL 的 DNS 名稱不同時，就可能發生此問題。
-更新 Windows 提取伺服器執行個體，以使用名稱經更正的憑證。
+當伺服器上用來加密流量的憑證通用名稱 (CN) 與節點用來解析 URL 的 DNS 名稱不同時，就可能發生此問題。 更新 Windows 提取伺服器執行個體，以使用名稱經更正的憑證。
 
 ## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>在套用 DSC 組態後，執行 Sysprep 時發生錯誤
 
@@ -652,7 +653,7 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-不支援在使用 Windows PowerShell Desired State Configuration 設定伺服器後將伺服器一般化。  請改為在 Windows 安裝程式的特殊化階段完成之後，將組態套用至 Windows。
+不支援在使用 Windows PowerShell Desired State Configuration 設定伺服器後將伺服器一般化。 請改為在 Windows 安裝程式的特殊化階段完成之後，將組態套用至 Windows。
 
 ## <a name="see-also"></a>另請參閱
 

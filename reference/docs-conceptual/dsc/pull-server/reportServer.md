@@ -2,28 +2,30 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 報表伺服器
-ms.openlocfilehash: 1ccd4f96b782b41b7d7c953735cb41b3ba3d2bce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 節點的本機設定管理員 (LCM) 可以設定為將其設定狀態相關報表傳送至提取伺服器，然後可查詢以擷取該資料。
+ms.openlocfilehash: 58ff1684bbe1d23fa68296aa56dd94ba6bc5b148
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953575"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92653718"
 ---
 # <a name="using-a-dsc-report-server"></a>使用 DSC 報表伺服器
 
 適用於：Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 提取伺服器 (Windows 功能「DSC 服務」  ) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
+> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 >
 > [!NOTE]
 > 本主題所描述的報表伺服器不適用於 PowerShell 4.0。
 
-節點的本機設定管理員 (LCM) 可以設定為將設定狀態相關報表傳送至提取伺服器，然後可查詢以擷取該資料。 每次節點檢查並套用設定時，皆會將報表傳送至報表伺服器。 這些報表會儲存在伺服器上的資料庫，而且可以藉由呼叫報告 Web 服務來擷取。 每份報表包含已套用的設定、是否成功套用、使用的資源、所擲回的任何錯誤，以及開始和完成時間等資訊。
+節點的本機設定管理員 (LCM) 可以設定為將其設定狀態相關報表傳送至提取伺服器，然後可查詢以擷取該資料。 每次節點檢查並套用設定時，皆會將報表傳送至報表伺服器。 這些報表會儲存在伺服器上的資料庫，而且可以藉由呼叫報告 Web 服務來擷取。
+每份報表包含已套用的設定、是否成功套用、使用的資源、所擲回的任何錯誤，以及開始和完成時間等資訊。
 
 ## <a name="configuring-a-node-to-send-reports"></a>設定要傳送報表的節點
 
-您可告知節點將報表傳送至伺服器，方法是使用該節點 LCM 設定內的 **ReportServerWeb** 區塊 (如需關於設定 LCM 的相關資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md))。 節點傳送報表的目標伺服器必須設定為 Web 提取伺服器 (您無法將報表傳送至 SMB 共用)。 如需設定提取伺服器的資訊，請參閱[設定 DSC Web 提取伺服器](pullServer.md)。 報表伺服器的服務可以與節點從中提取設定和取得資源的服務相同，或可以是不同的服務。
+您可告知節點將報表傳送至伺服器，方法是使用該節點 LCM 設定內的 **ReportServerWeb** 區塊 (如需關於設定 LCM 的相關資訊，請參閱 [設定本機設定管理員](../managing-nodes/metaConfig.md))。 節點傳送報表的目標伺服器必須設定為 Web 提取伺服器 (您無法將報表傳送至 SMB 共用)。 如需設定提取伺服器的資訊，請參閱[設定 DSC Web 提取伺服器](pullServer.md)。 報表伺服器的服務可以與節點從中提取設定和取得資源的服務相同，或可以是不同的服務。
 
 在 **ReportServerWeb** 區塊中，您可指定提取服務的 URL 和該伺服器已知的註冊金鑰。
 
@@ -98,7 +100,10 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>取得報表資料
 
-傳送到提取伺服器的報表會輸入到該伺服器上的資料庫中。 可透過呼叫 Web 服務使用報表。 若要擷取特定節點的報告，請以下列形式將 HTTP 要求傳送到報表 Web 服務：`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+傳送到提取伺服器的報表會輸入到該伺服器上的資料庫中。 可透過呼叫 Web 服務使用報表。 若要擷取特定節點的報告，請以下列形式將 HTTP 要求傳送到報表 Web 服務：
+
+`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId='MyNodeAgentId')/Reports`
+
 其中 `MyNodeAgentId` 是您要取得報表之節點的 AgentId。 您也可以呼叫該節點上的 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) 以取得節點的 AgentID。
 
 報表會以 JSON 物件的陣列傳回。
@@ -110,7 +115,7 @@ function GetReport
 {
     param
     (
-        $AgentId = "$((glcm).AgentId)", 
+        $AgentId = "$((glcm).AgentId)",
         $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc"
     )
 
@@ -125,7 +130,7 @@ function GetReport
 
 ## <a name="viewing-report-data"></a>檢視報表資料
 
-如果您將變數設定為 **GetReport** 函式的結果，您就可以在傳回陣列的項目中檢視個別欄位：
+如果您將變數設為 **GetReport** 函式的結果，您就可以在傳回陣列的項目中檢視個別欄位：
 
 ```powershell
 $reports = GetReport
@@ -173,7 +178,7 @@ $reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -D
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-請注意，**StatusData** 屬性是具有一些屬性的物件。 這是大部分報告資料的所在位置。 讓我們看看最新報表之 **StatusData** 屬性的個別欄位：
+請注意， **StatusData** 屬性是具有一些屬性的物件。 這是大部分報告資料的所在位置。 讓我們看看最新報表之 **StatusData** 屬性的個別欄位：
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -233,7 +238,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-請注意，這些範例主要供您了解可以如何處理報表資料。 如需在 PowerShell 中搭配使用 JSON 的簡介，請參閱[Playing with JSON and PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/) (以 JSON 和 PowerShell 播放)。
+請注意，這些範例主要供您了解可以如何處理報表資料。 如需在 PowerShell 中搭配使用 JSON 的簡介，請參閱[Playing with JSON and PowerShell](https://devblogs.microsoft.com/scripting/playing-with-json-and-powershell/) (以 JSON 和 PowerShell 播放)。
 
 ## <a name="see-also"></a>另請參閱
 

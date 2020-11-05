@@ -1,13 +1,13 @@
 ---
 ms.date: 08/14/2018
-keywords: powershell,cmdlet
 title: Windows PowerShell ISE 簡介
-ms.openlocfilehash: 3e4471d0982ba4d7ef1a9d59906a9ff297f6f7cb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: PowerShell ISE 是適用於 Windows PowerShell 的主應用程式，讓您能夠執行命令，並在以 Windows 為基礎的單一圖形化使用者介面中撰寫及測試指令碼，並對其進行偵錯。
+ms.openlocfilehash: ab2b11e5d81933b166d404c0b24c96aa73253895
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808714"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663607"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 

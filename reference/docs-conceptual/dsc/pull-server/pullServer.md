@@ -2,19 +2,22 @@
 ms.date: 01/08/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 提取服務
-ms.openlocfilehash: c4e725569db776fe0dbd5395b2f0f8b8e70cbbeb
-ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
+description: 本機設定管理員 (LCM) 可由提取服務解決方案集中管理。 使用這個方法時，受控節點會向服務註冊，然後得到 LCM 設定中的組態指派。
+ms.openlocfilehash: 67d405deda23569964e5eb401a4405a584369430
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85837472"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92659131"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration 提取服務
 
 > [!IMPORTANT]
-> 提取伺服器 (Windows 功能「DSC 服務」  ) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
+> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
-本機設定管理員 (LCM) 可由提取服務解決方案集中管理。 使用這個方法時，受控節點會向服務註冊，然後得到 LCM 設定中的組態指派。 組態及需要當成組態相依性的所有 DSC 資源都會下載到電腦，供 LCM 用來管理組態。 受控電腦的狀態相關資訊會上傳到服務以供回報。 這個概念就是「提取服務」。
+本機設定管理員 (LCM) 可由提取服務解決方案集中管理。 使用這個方法時，受控節點會向服務註冊，然後得到 LCM 設定中的組態指派。 組態及需要當成組態相依性的所有 DSC 資源都會下載到電腦，供 LCM 用來管理組態。
+受控電腦的狀態相關資訊會上傳到服務以供回報。
+這個概念就是「提取服務」。
 
 目前針對提取服務的選項包括：
 
@@ -25,7 +28,7 @@ ms.locfileid: "85837472"
 
 每個解決方案的建議規模如下所示：
 
-|                   解決方法                   |              用戶端節點              |
+|                   解決方案                   |              用戶端節點              |
 | -------------------------------------------- | -------------------------------------- |
 | 使用 MDB/ESENT 資料庫的 Windows 提取伺服器 | 最多 500 個節點                        |
 | 使用 SQL 資料庫的 Windows 提取伺服器       | 最多 3500 個節點                       |
@@ -50,7 +53,7 @@ Azure 服務可以管理私人資料中心內部部署的節點，或是如 Azur
 
 ## <a name="dsc-pull-service-in-windows-server"></a>Windows Server 中的 DSC 提取服務
 
-您可以設定提取服務，以在 Windows Server 上執行。 請注意，Windows Server 中包括的提取服務解決方案僅含有儲存設定/模組以供下載，以及將報告資料擷取到資料庫的功能。 有許多 Azure 服務提供的功能並未包含在內，因此不是評估服務使用方式的良好工具。
+您可以設定提取服務，以在 Windows Server 上執行。 請注意，Windows Server 中包括的提取服務解決方案僅含有儲存設定與模組以供下載，以及將報告資料擷取到資料庫的功能。 有許多 Azure 服務提供的功能並未包含在內，因此不是評估服務使用方式的良好工具。
 
 Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目標節點要求 DSC 組態檔時，會使用 OData 介面讓這些節點能夠使用這些組態檔。
 
@@ -70,19 +73,19 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (預設值)、MDB | ESENT (預設值)、MDB | ESENT (預設值)、SQL Server、MDB               |
 
-從 Windows Server 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 DSC-Service  ) 的支援選項。 這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
+從 Windows Server 的 17090 版開始，SQL Server 是提取服務 (Windows 功能 DSC-Service) 的支援選項。 這會提供新選項，用於調整尚未移轉至 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) 的大型 DSC 環境的規模。
 
 > [!NOTE]
 > SQL Server 支援將不會新增至舊版的 WMF 5.1 (或更早版本)，且只能在高於或等於 17090 的 Windows Server 版本上使用。
 
 若要設定提取伺服器以使用 SQL Server，請將 **SqlProvider** 設定至 `$true` 並將 **SqlConnectionString** 設定至有效的 SQL Server 連接字串。 如需詳細資訊，請參閱 [SqlClient 連接字串](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)。
-如需具有 **xDscWebService** 的 SQL Server 設定範例，請先閱讀[使用 xDscWebService 資源](#using-the-xdscwebservice-resource)，然後檢閱 [Sample_xDscWebServiceRegistration_GitHub 上的 UseSQLProvider.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)。
+如需具有 **xDscWebService** 的 SQL Server 設定範例，請先閱讀 [使用 xDscWebService 資源](#using-the-xdscwebservice-resource)，然後檢閱 [Sample_xDscWebServiceRegistration_GitHub 上的 UseSQLProvider.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)。
 
 ### <a name="using-the-xdscwebservice-resource"></a>使用 xDscWebService 資源
 
 設定 Web 提取伺服器的最簡單方式，是使用包含在 **xPSDesiredStateConfiguration** 模組的 **xDscWebService** 資源。 下列步驟說明如何在設定 Web 服務的 `Configuration` 中使用該資源。
 
-1. 呼叫 [Install-Module](/powershell/module/PowerShellGet/Install-Module) Cmdlet 以安裝 **xPSDesiredStateConfiguration** 模組。
+1. 呼叫 [Install-Module](/powershell/module/PowerShellGet/Install-Module) Cmdlet，以安裝 **xPSDesiredStateConfiguration** 模組。
 
    > [!NOTE]
    > `Install-Module` 已納入 **PowerShellGet** 模組中，此模組隨附於 PowerShell 5.0 和更新版本。
@@ -91,7 +94,7 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 1. 在將成為 DSC 提取伺服器的節點上，於預設位置安裝憑證 (應為 `CERT:\LocalMachine\My`)。
    - 記下憑證指紋。
 1. 選取要作為註冊金鑰使用的 GUID。 若要使用 PowerShell 產生一個 GUID，請在 PS 命令提示字元中輸入下列命令，然後按 Enter 鍵：`[guid]::newGuid()` 或 `New-Guid`。 用戶端節點會使用此金鑰作為共用金鑰，以在註冊期間進行驗證。 如需詳細資訊，請參閱下面的＜註冊金鑰＞一節。
-1. 在 PowerShell ISE 中，啟動 (<kbd>F5</kbd>) 下列設定指令碼 (以 `Sample_xDscWebServiceRegistration.ps1` 的形式包含在 **xPSDesiredStateConfiguration** 模組的資料夾中)。 此指令碼會設定提取伺服器。
+1. 在 PowerShell ISE 中，啟動 ( <kbd>F5</kbd>) 下列設定指令碼 (以 `Sample_xDscWebServiceRegistration.ps1` 的形式包含在 **xPSDesiredStateConfiguration** 模組的資料夾中)。 此指令碼會設定提取伺服器。
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -150,8 +153,10 @@ Windows Server 中提供的提取服務是 IIS 中的一種 Web 服務，在目�
 1. 執行設定，傳遞 SSL 憑證的指紋作為 **certificateThumbPrint** 參數，以及 GUID 註冊金鑰作為 **RegistrationKey** 參數：
 
     ```powershell
-    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
-    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all
+    # certificates in your local store and then copy the thumbprint for the appropriate certificate
+    # by     reviewing the certificate subjects
+
     dir Cert:\LocalMachine\my
 
     # Then include this thumbprint when running the configuration
@@ -248,15 +253,16 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
    範例如下：
 
     ```powershell
-        # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
-         $moduleList = @('xWebAdministration', 'xPhp')
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
+    # Example 1 - Package all versions of given modules installed locally and MOF files are in c:\LocalDepot
+    $moduleList = @('xWebAdministration', 'xPhp')
+    Publish-DSCModuleAndMof -Source C:\LocalDepot -ModuleNameList $moduleList
 
-         # Example 2 - Package modules and mof documents from c:\LocalDepot
-         Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
+    # Example 2 - Package modules and mof documents from c:\LocalDepot
+    Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
     ```
 
-1. 驗證提取伺服器是否正確設定的指令碼。 [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1)。
+1. 驗證提取伺服器是否正確設定的指令碼。
+   [PullServerSetupTests.ps1](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/Modules/DscPullServerSetup/DscPullServerSetupTest/DscPullServerSetupTest.ps1)。
 
 ## <a name="community-solutions-for-pull-service"></a>適用於提取服務的社群解決方案
 
@@ -276,7 +282,7 @@ DSC 社群撰寫了多個解決方案來實作提取服務通訊協定。 對於
 ## <a name="see-also"></a>另請參閱
 
 - [Windows PowerShell Desired State Configuration 概觀](../overview/overview.md)
-- [制定組態](enactingConfigurations.md)
+- [施行設定](enactingConfigurations.md)
 - [使用 DSC 報表伺服器](reportServer.md)
 - [[MS-DSCPM]：預期狀態設定提取模型通訊協定](/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
 - [[MS-DSCPM]：預期狀態設定提取模型通訊協定 Errata](/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)

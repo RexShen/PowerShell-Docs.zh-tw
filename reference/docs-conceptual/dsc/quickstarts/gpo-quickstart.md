@@ -2,12 +2,13 @@
 ms.date: 07/09/2019
 keywords: dsc,gpo,powershell,configuration,setup
 title: 快速入門 - 將群組原則轉換至 DSC
-ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: 此快速入門說明將 Windows 群組原則轉換為 DSC 設定的必要步驟。
+ms.openlocfilehash: b67f6dd2cf6c91d90fa6ac5b6367f9efc7f40ee0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236232"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644702"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>快速入門：將群組原則轉換至 DSC
 
@@ -16,7 +17,7 @@ ms.locfileid: "89236232"
 您可以從群組原則或 Azure 資訊安全中心基準產生 DSC 設定。 [BaselineManagement](https://www.powershellgallery.com/packages/BaselineManagement) 模組包含下列可完成這項工作的命令。
 
 - `ConvertFrom-GPO` - 轉換群組原則，儲存為檔案。 您也可以指定包含多個原則的目錄，這些原則會合併為單一組態。
-  - 若要將群組原則匯出至您的環境，請使用 [Backup-GPO](/powershell/module/grouppolicy/backup-gpo?view=win10-ps) Cmdlet，或遵循[將 GPO 匯出到檔案](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file)中的指示。
+  - 若要將群組原則匯出至您的環境，請使用 [Backup-GPO](/powershell/module/grouppolicy/backup-gpo) Cmdlet，或遵循[將 GPO 匯出到檔案](/microsoft-desktop-optimization-pack/agpm/export-a-gpo-to-a-file)中的指示。
 - `ConvertFrom-SCM` - 轉換安全性合規性管理員基準，儲存為 `.xml` 檔案。
 - `ConvertFrom-ASC` - 轉換 Azure 安全性中心基準，儲存為 `.json` 檔案。
 - `Merge-GPOs` - 轉換群組原則，套用至目標電腦。
@@ -57,5 +58,5 @@ Mode                LastWriteTime     Length Name
 ## <a name="next-steps"></a>後續步驟
 
 - 若要將您的設定指令碼上傳至 Azure 自動化狀態設定，請參閱[開始使用](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)。
-- 將 **SecurityPolicyDSC** 和 **AuditPolicyDSC** 模組新增至您的[自動化帳戶](/azure/automation/shared-resources/modules)。
+- 將 **SecurityPolicyDSC** 和 **AuditPolicyDSC** 模組新增至您的 [自動化帳戶](/azure/automation/shared-resources/modules)。
 - 在 [PowerShell 資源庫 (英文)](https://www.powershellgallery.com/) 中尋找 DSC 設定和資源。

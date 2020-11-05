@@ -1,15 +1,13 @@
 ---
 ms.date: 06/10/2020
-ms.topic: conceptual
-keywords: wmf,powershell,設定
-contributor: keithb
 title: 安裝與設定 WMF 5.1
-ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
-ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
+description: 此文章描述如何安裝 WMF 5.1 與其必要條件。
+ms.openlocfilehash: 0e076bfab684b6c83d62d236eea3bbd7ab2ad411
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84671388"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660845"
 ---
 # <a name="install-and-configure-wmf-51"></a>安裝與設定 WMF 5.1
 
@@ -38,7 +36,7 @@ ms.locfileid: "84671388"
 
 - 安裝 WMF 5.1 RTM 之前，必須先解除安裝 WMF 5.1 Preview。
 - WMF 5.1 可直接透過 WMF 5.0 或 WMF 4.0 安裝。
-- 在 Windows 7 和 Windows Server 2008 R2 上安裝 WMF 5.1 之前，**不需要**先安裝 WMF 4.0。
+- 在 Windows 7 和 Windows Server 2008 R2 上安裝 WMF 5.1 之前， **不需要** 先安裝 WMF 4.0。
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>安裝適用於 Windows Server 2008 R2 和 Windows 7 的 WMF 5.1
 
@@ -50,7 +48,7 @@ ms.locfileid: "84671388"
 在 Windows Server 2008 R2 SP1 或 Windows 7 SP1 上安裝 WMF 5.1 需要下列各項：
 
 - 必須安裝最新的 Service Pack。
-- 「不可以」安裝 WMF 3.0。 在具有 WMF 3.0 的情況下安裝 WMF 5.1 會導致 **PSModulePath** (`$env:PSModulePath`) 遺失，這可能造成其他應用程式失敗。 在安裝 WMF 5.1 之前，您必須解除安裝 WMF 3.0，或是儲存 **PSModulePath**，並在完成 WMF 5.1 安裝之後手動將其還原。
+- 「不可以」安裝 WMF 3.0。 在具有 WMF 3.0 的情況下安裝 WMF 5.1 會導致 **PSModulePath** (`$env:PSModulePath`) 遺失，這可能造成其他應用程式失敗。 在安裝 WMF 5.1 之前，您必須解除安裝 WMF 3.0，或是儲存 **PSModulePath** ，並在完成 WMF 5.1 安裝之後手動將其還原。
 - WMF 5.1 需要至少[.NET Framework 4.5.2](https://www.microsoft.com/download/details.aspx?id=42642)。 您可以遵循下載位置的指示來安裝 Microsoft.NET Framework 4.5.2。
 
 ### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>在 Windows Server 2008 R2 和 Windows 7 上安裝 WMF 5.1
@@ -65,8 +63,8 @@ ms.locfileid: "84671388"
 
    `Install-WMF5.1.ps1` 會採用下列參數以簡化針對 Windows Server 2008 R2 和 Windows 7 上安裝的自動化：
 
-   - **AcceptEula**：當包含此參數時，會自動接受 EULA 且不會顯示。
-   - **AllowRestart**：此參數只能在指定 AcceptEula 時使用。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
+   - **AcceptEula** ：當包含此參數時，會自動接受 EULA 且不會顯示。
+   - **AllowRestart** ：此參數只能在指定 AcceptEula 時使用。 如果包含此參數，且安裝 WMF 5.1 之後需要重新啟動，則在完成安裝之後會立即重新啟動而不提示。
 
 ## <a name="winrm-dependency"></a>WinRM 相依性
 

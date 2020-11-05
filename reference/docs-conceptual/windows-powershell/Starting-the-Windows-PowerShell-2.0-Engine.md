@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Windows PowerShell 2.0 引擎
-ms.openlocfilehash: c5ac92159d63e5669643908016186ed32dfb46db
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: 只有在現有指令碼或主機程式無法執行時才會使用 Windows PowerShell 2.0 引擎，因為針對 Windows PowerShell 2.0 撰寫且使用 CLR 2.0 編譯的主機程式無法在未經修改的情況下執行。
+ms.openlocfilehash: 214b87b7314f31974801bb07f98ddea3b68008f0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216017"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664010"
 ---
 # <a name="using-the-windows-powershell-20-engine"></a>使用 Windows PowerShell 2.0 引擎
 
@@ -40,7 +41,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-remote-session-with-the-windows-powershell-20-engine"></a>如何啟動含 Windows PowerShell 2.0 引擎的遠端工作階段
 
-若要在遠端工作階段中執行 Windows PowerShell 2.0 引擎，請在載入 Windows PowerShell 2.0 引擎的遠端電腦上建立工作階段設定 (又稱_端點_)。 工作階段組態會儲存於遠端電腦上，而且任何授權使用者皆可用來建立使用 Windows PowerShell 2.0 引擎的工作階段。
+若要在遠端工作階段中執行 Windows PowerShell 2.0 引擎，請在載入 Windows PowerShell 2.0 引擎的遠端電腦上建立工作階段設定 (又稱 _端點_ )。 工作階段組態會儲存於遠端電腦上，而且任何授權使用者皆可用來建立使用 Windows PowerShell 2.0 引擎的工作階段。
 
 這是通常由系統管理員所執行的進階工作。
 

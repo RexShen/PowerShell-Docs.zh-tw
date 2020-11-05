@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 開始使用 PowerShell Gallery
-ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章說明如何開始使用 PowerShell 資源庫與 PowerShellGet Cmdlet
+ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81219688"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661426"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>開始使用 PowerShell 資源庫
 
@@ -19,30 +18,30 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>從 PowerShell 資源庫探索套件
 
-您可以使用 PowerShell 資源庫[首頁](https://www.powershellgallery.com) \(英文\) 上的**搜尋**控制項，或從[套件頁面](https://www.powershellgallery.com/packages) \(英文\) 完整瀏覽模組和指令碼，藉以在 PowerShell 資源庫中尋找套件。 您也可以搭配 `-Repository PSGallery` 執行 [Find-Module][]、[Find-DscResource] 及 [Find-Script][] Cmdlet (視套件類型而定)，來尋找 PowerShell 資源庫中的套件。
+您可以使用 PowerShell 資源庫 [首頁](https://www.powershellgallery.com) \(英文\) 上的 **搜尋** 控制項，或從 [套件頁面](https://www.powershellgallery.com/packages) \(英文\) 完整瀏覽模組和指令碼，藉以在 PowerShell 資源庫中尋找套件。 您也可以搭配 `-Repository PSGallery` 執行 [Find-Module][]、[Find-DscResource] 及 [Find-Script][] Cmdlet (視套件類型而定)，來尋找 PowerShell 資源庫中的套件。
 
 您可以使用下列參數，從資源庫中篩選結果：
 
-- 名稱
+- Name
 - AllVersions
 - MinimumVersion
 - RequiredVersion
-- Tag
+- 標籤
 - Includes
 - DscResource
 - RoleCapability
 - Command
 - Filter
 
-如果您只想要探索資源庫中的特定 DSC 資源，則可以執行 [Find-DscResource][] Cmdlet。 Find-DscResource 會傳回資源庫中所含 DSC 資源的資料。 因為 DSC 資源一律傳遞為模組的一部分，所以您仍然需要執行 [Install-Module][] 來安裝這些 DSC 資源。
+如果您只想要探索 Gallery 中的特定 DSC 資源，則可以執行 [Find-DscResource][] Cmdlet。 Find-DscResource 會傳回資源庫中所含 DSC 資源的資料。 由於 DSC 資源一律是隨著模組一起傳遞，因此您仍然需要執行 [Install-Module][] 來安裝這些 DSC 資源。
 
 ## <a name="learning-about-packages-in-the-powershell-gallery"></a>在 PowerShell 資源庫中了解套件
 
 在您找出自己感興趣的套件之後，可能會想要深入了解它。 您可以透過檢查該套件在資源庫上的特定頁面來這麼做。 在該頁面上，您將可以看到所有與該套件一起上傳的中繼資料。 此中繼資料是由套件的作者所提供，且未經 Microsoft 驗證。 套件的擁有者與用來發行該套件的資源庫帳戶具有緊密的關聯性，因此會比 [Author] \(作者\) 欄位中的資訊更為可靠。
 
-如果您發現可能未以誠信心態發行的套件，請按一下該套件頁面上的 [Report Abuse]  \(檢舉不當使用\)。
+如果您發現可能未以誠信心態發行的套件，請按一下該套件頁面上的 [Report Abuse] \(檢舉不當使用\)。
 
-如果您是執行 [Find-Module][] 或 [Find-Script][]，則可以在所傳回的 PSGetModuleInfo 物件中檢視這個資料。 例如，執行 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` 可傳回資源庫中 PSReadLine 模組的資料。
+如果您執行的是 [Find-Module][] 或 [Find-Script][]，則可以在所傳回的 PSGetModuleInfo 物件中檢視此資料。 例如，執行 `Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` 可傳回資源庫中 PSReadLine 模組的資料。
 
 ## <a name="downloading-packages-from-the-powershell-gallery"></a>從 PowerShell 資源庫下載套件
 
@@ -54,7 +53,7 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 
 這些套件有一部分是由 Microsoft 所撰寫，其他則是由 PowerShell 社群所撰寫。 Microsoft 建議您先檢閱此資源庫上的套件內容和程式碼，然後再進行安裝。
 
-如果您發現可能未以誠信心態發行的套件，請按一下該套件頁面上的 [Report Abuse]  \(檢舉不當使用\)。
+如果您發現可能未以誠信心態發行的套件，請按一下該套件頁面上的 [Report Abuse] \(檢舉不當使用\)。
 
 ### <a name="install"></a>安裝
 
@@ -70,7 +69,7 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 
 ### <a name="deploy"></a>部署
 
-若要將套件從 PowerShell 資源庫部署至 Azure 自動化，按一下 [Azure 自動化]  ，然後按一下套件詳細資料頁面上的 [部署至 Azure 自動化]  。 系統會將您重新導向至 Azure 管理入口網站，而您必須使用 Azure 帳戶認證來登入。 請注意，部署含相依性的套件會將所有相依性部署至 Azure 自動化。 若要停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕，請將 **AzureAutomationNotSupported** 標記新增至套件中繼資料。
+若要將套件從 PowerShell 資源庫部署至 Azure 自動化，按一下 [Azure 自動化]，然後按一下套件詳細資料頁面上的 [部署至 Azure 自動化]。 系統會將您重新導向至 Azure 管理入口網站，而您必須使用 Azure 帳戶認證來登入。 請注意，部署含相依性的套件會將所有相依性部署至 Azure 自動化。 若要停用 [Deploy to Azure Automation] \(部署至 Azure 自動化) 按鈕，請將 **AzureAutomationNotSupported** 標記新增至套件中繼資料。
 
 若要深入了解 Azure 自動化，請參閱 [Azure 自動化](/azure/automation)文件。
 
@@ -82,9 +81,9 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>列出已從 PowerShell 資源庫安裝的套件
 
-若要找出您已從 PowerShell 資源庫安裝的模組，請執行 [Get-InstalledModule][] Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有模組。
+若要找出您已從 PowerShell Gallery 安裝的模組，請執行 [Get-InstalledModule][] Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有模組。
 
-同樣地，若要找出您已從 PowerShell 資源庫安裝的指令碼，請執行 [Get-InstalledScript][] Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。
+同樣地，若要找出您已從 PowerShell Gallery 安裝的指令碼，請執行 [Get-InstalledScript][] Cmdlet。 這個命令會列出系統上直接從 PowerShell Gallery 安裝的所有指令碼。
 
 ## <a name="network-access-to-the-powershell-gallery"></a>PowerShell 資源庫的網路存取權
 

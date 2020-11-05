@@ -1,18 +1,18 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISEMenuItem 物件
-ms.openlocfilehash: c3ffe6e8f0b28987543fe0a873c552292dc5158a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEMenuItem 物件是 Microsoft.PowerShell.Host.ISE.ISEMenuItem 類別的執行個體。 [附加元件] 功能表上的所有功能表物件都是 ISEMenuItem 類別的執行個體。
+ms.openlocfilehash: 15036e3551687a21dfbe50834a89247c80949656
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809314"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663447"
 ---
 # <a name="the-isemenuitem-object"></a>ISEMenuItem 物件
 
 **ISEMenuItem** 物件是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
-[附加元件]  功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
+[附加元件] 功能表上的所有功能表物件都是 **Microsoft.PowerShell.Host.ISE.ISEMenuItem** 類別的執行個體。
 
 ## <a name="properties"></a>屬性
 
@@ -81,7 +81,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 # Add an Add-ons menu item with an shortcut and fast access key.
-# Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
+# Note the use of "_"  as opposed to the "&" for mapping to the fast access key letter for the menu item.
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add('_Process', {Get-Process}, 'Alt+P')
 # Add a nested menu - a parent and a child submenu item.
 $parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('Parent', $null, $null)

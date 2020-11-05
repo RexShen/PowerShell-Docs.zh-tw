@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: 軟體清查記錄 (SIL)
-ms.openlocfilehash: b12cfc4ae1e505bbc4d47596bed9352ce53a98f2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.x 新增軟體清查記錄功能，可讓您在中央位置收集已安裝軟體的相關資訊，以便更輕鬆地進行管理及稽核。
+ms.openlocfilehash: 85e261782a3df5fe5561a80529ba699d686a8779
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808464"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646613"
 ---
 # <a name="software-inventory-logging-sil"></a>軟體清查記錄 (SIL)
 
@@ -18,6 +18,6 @@ ms.locfileid: "83808464"
 
 雖然您也能透過直接查詢每部電腦來記錄軟體清查資料，但是軟體清查記錄能使用由每部伺服器啟動的轉送 (經由網路) 架構，這樣可以克服一般會在許多軟體清查和資產管理案例中遇到的伺服器探索難題。 軟體清查記錄使用 SSL 保護透過 HTTPS 轉送到彙總伺服器的資料。 將資料存放在一個地方可以在有需要時更輕鬆地分析、操控及共用資料。
 
-此功能不會將這份資料傳送給 Microsoft。 軟體清查記錄資料和功能僅供伺服器軟體授權擁有者及系統管理員使用。
+此功能不會將這份資料傳送給 Microsoft。 軟體清查記錄資料與功能僅供伺服器軟體授權的擁有者與管理員使用。
 
 如需軟體清查記錄 Cmdlet 的詳細資訊和相關文件，請參閱[在 Windows Server 2012 R2 中管理軟體清查記錄](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn383584(v=ws.11))。

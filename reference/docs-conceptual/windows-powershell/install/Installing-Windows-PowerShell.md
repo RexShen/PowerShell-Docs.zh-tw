@@ -1,13 +1,13 @@
 ---
 ms.date: 08/09/2017
-keywords: powershell,cmdlet,下載,安裝,安裝程式,windows 10, windows 8.1, windows 8.0,windows 7
 title: 安裝 Windows PowerShell
-ms.openlocfilehash: 26675eb0b213818eaa72e148f0814545ee9f960e
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: 此文章說明如何在各種 Windows 版本中安裝 Windows PowerShell。
+ms.openlocfilehash: 04e6d791e6895dd50825c58c905ff9cf8fa86ca8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236215"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663993"
 ---
 # <a name="installing-windows-powershell"></a>安裝 Windows PowerShell
 
@@ -17,7 +17,7 @@ ms.locfileid: "89236215"
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>在 Windows 10、8.1、8.0 和 7 中尋找 PowerShell
 
-由於 PowerShell 主控台或 ISE (整合式指令碼環境) 的位置會從某個 Windows 版本移到另一版，因此要在 Windows 中找到並不容易。
+有時，由於 PowerShell 主控台或整合式指令碼環境 (ISE) 的位置會從某個 Windows 版本移到下一個版本，因此要在 Windows 中找到並不容易。
 
 下表有助於在您的 Windows 版本中找到 PowerShell。 此處列出的所有版本都是發行之後未經更新的原始版本。
 
@@ -34,18 +34,18 @@ ms.locfileid: "89236215"
 |     版本      |                                                            Location                                                            |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------ |
 | Windows 10       | 按一下左下角 Windows 圖示，開始鍵入 ISE                                                                         |
-| Windows 8.1、8.0 | 在開始畫面上，鍵入 **PowerShell ISE**。<br/>如果在桌面上，則按一下左下角 Windows 圖示，鍵入 **PowerShell ISE** |
+| Windows 8.1、8.0 | 在開始畫面上，鍵入 **PowerShell ISE** 。<br/>如果在桌面上，則按一下左下角 Windows 圖示，鍵入 **PowerShell ISE** |
 | Windows 7 SP1    | 按一下左下角 Windows 圖示，在搜尋方塊開始鍵入 PowerShell                                                |
 
 ## <a name="finding-powershell-in-windows-server-versions"></a>在 Windows Server 版本中尋找 PowerShell
 
-從 Windows Server 2008 R2 開始，可以不使用圖形化使用者介面 (GUI) 安裝 Windows 作業系統。 不含 GUI 的 Windows Server 版本會命名為 **Core** 版本，而含 GUI 的版本會命名為 **Desktop**。
+從 Windows Server 2008 R2 開始，可以不使用圖形化使用者介面 (GUI) 安裝 Windows 作業系統。 不含 GUI 的 Windows Server 版本會命名為 **Core** 版本，而含 GUI 的版本會命名為 **Desktop** 。
 
 ### <a name="windows-server-core-editions"></a>Windows Server Core 版本
 
 在所有 Core 版本中，當您登入伺服器時，會看到 Windows 命令提示字元視窗。
 
-鍵入 `powershell` 並按 **ENTER**，以在命令提示字元工作階段內啟動 PowerShell。 鍵入 `exit` 以終止 PowerShell 工作階段，並返回命令提示字元。
+鍵入 `powershell` 並按 **ENTER** ，以在命令提示字元工作階段內啟動 PowerShell。 鍵入 `exit` 以終止 PowerShell 工作階段，並返回命令提示字元。
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server Desktop 版本
 
@@ -55,7 +55,7 @@ ms.locfileid: "89236215"
 
 ## <a name="how-to-check-the-version-of-powershell"></a>如何檢查 PowerShell 版本
 
-若要知道您安裝的 PowerShell 是哪個版本，請開啟 PowerShell 主控台 (或 ISE)，鍵入 `$PSVersionTable` 並按 **ENTER**。 尋找 `PSVersion` 值。
+若要知道您安裝的 PowerShell 是哪個版本，請開啟 PowerShell 主控台 (或 ISE)，鍵入 `$PSVersionTable` 並按 **ENTER** 。 尋找 `PSVersion` 值。
 
 ## <a name="upgrading-existing-windows-powershell"></a>升級現有的 Windows PowerShell
 
@@ -75,7 +75,7 @@ PowerShell 的安裝套件隨附於 WMF 安裝程式。 WMF 安裝程式的版�
 
 ## <a name="need-azure-powershell"></a>Microsoft Azure PowerShell
 
-如果您要尋找 **Azure PowerShell**，可以從 [Azure PowerShell 概觀](/powershell/azure/overview)著手。
+如果您要尋找 **Azure PowerShell** ，可以從 [Azure PowerShell 概觀](/powershell/azure/overview)著手。
 
 否則，您可能需要[安裝與設定 Azure PowerShell](/powershell/azure/install-az-ps)
 

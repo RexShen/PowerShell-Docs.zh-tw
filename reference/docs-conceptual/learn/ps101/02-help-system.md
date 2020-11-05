@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 8325a32ad8ec137781300e9d46cab52705f0805a
-ms.sourcegitcommit: eaac7af89171379df2e20464ebee9fc7e7d7674a
+ms.openlocfilehash: 98876cf324b367fd5bb3c3462cb90ea6d7c7d5b9
+ms.sourcegitcommit: 0942a6de384f4a1c624e89b1889434a30d22f4d6
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89493652"
+ms.lasthandoff: 11/01/2020
+ms.locfileid: "93143308"
 ---
 # <a name="chapter-2---the-help-system"></a>第 2 章 - 說明系統
 
@@ -94,7 +94,7 @@ Get-Help -Name Get-Help
 - 參數
 - ShowWindow
 
-在語法區段中，所有晦澀的語法 (例如方括弧和角括弧) 均分別代表某些含義，我們將在本書的附錄 A 中討論。 儘管這些語法很重要，但對於不熟悉且不常用到 PowerShell 的使用者而言，通常很難記住這些晦澀的語法。
+在語法區段中，所有晦澀的語法 (例如方括弧和角括弧) 均分別代表某些含義，我們將在本書的附錄 A 中討論。 儘管這些語法很重要，但對於不熟悉且可能不會每天用到 PowerShell 的使用者而言，通常很難了解這些晦澀的語法。
 
 如需更深入瞭解晦澀語法，請參閱[附錄 A][]。
 
@@ -121,7 +121,7 @@ Get-Help -Name Get-Help -Full
 
 請注意，使用 **Full** 參數會傳回數個額外的區段，其中一個是 PARAMETERS 區段，其提供的資訊比晦澀的 SYNTAX 區段更多。
 
-**Full** 參數是切換參數。 不需要值的參數稱為「切換參數」。 已指定切換參數時，其值為 true，否則為 false。
+**Full** 參數是切換參數。 不需要值的參數稱為「切換參數」。 若指定了切換參數，其值為 True，否則為 False。
 
 如果您已在 PowerShell 主控台中完成本章的作業，會注意到在您還來不及閱讀前畫面上已掠過上一個顯示 `Get-Help` 完整說明主題的命令。 還有一個更好的辦法。
 
@@ -181,7 +181,7 @@ help Get-Help -Parameter Name
 
 根據這些結果，您可以看到 **Name** 參數是位置參數，而且在按位置使用時必須在位置零 (第一個位置) 指定。 如果指定了參數名稱，則參數的指定順序並不重要。
 
-另一個重要的資訊是，**Name** 參數值的預期資料類型必須是單一字串，並且以 `<String>` 表示。 如果它接受多個字串，則資料類型會列為 `<String[]>`。
+另一個重要的資訊是， **Name** 參數值的預期資料類型必須是單一字串，並且以 `<String>` 表示。 如果它接受多個字串，則資料類型會列為 `<String[]>`。
 
 有時候您不想要顯示命令的所有說明主題。 除了 **Full** 外，還可以使用 `Get-Help` 或 `Help` 等其他參數來指定。 嘗試在 Windows 10 實驗室環境電腦上執行下列命令：
 
@@ -400,7 +400,7 @@ REMARKS
 
 請注意，在上一個範例中，`more` 沒有說明主題，但是 PowerShell 中的 `Help` 系統可以找到它。 它只會找到一個相符的項目，並傳回基本語法資訊，因此，當命令沒有說明主題時，您就會看到基本語法資訊。
 
-PowerShell 包含許多概念 (關於) 的說明主題。 下列命令可用來傳回有關系統上所有**關於**說明主題的清單。
+PowerShell 包含許多概念 (關於) 的說明主題。 下列命令可用來傳回有關系統上所有 **關於** 說明主題的清單。
 
 ```powershell
 help About_*
@@ -412,7 +412,7 @@ help About_*
 help about_Updatable_Help
 ```
 
-您必須更新 PowerShell 中的說明系統，才會顯示**關於**的說明主題。 若因為某些原因而導致電腦上的說明系統初始更新失敗，則在 `Update-Help` Cmdlet 成功執行之前，檔案將無法使用。
+您必須更新 PowerShell 中的說明系統，才會顯示 **關於** 的說明主題。 若因為某些原因而導致電腦上的說明系統初始更新失敗，則在 `Update-Help` Cmdlet 成功執行之前，檔案將無法使用。
 
 ## <a name="get-command"></a>Get-Command
 
@@ -434,7 +434,7 @@ Cmdlet          Wait-Process                                       3.1.0.0    Mi
 
 請注意，在上一個範例執行 `Get-Command` 時，使用 **Noun** 參數，並將 `Process` 指定為 **Noun** 參數的值。 如果您不知道如何使用 `Get-Command` Cmdlet，該怎麼辦？ 您可以使用 `Get-Help` 來顯示 `Get-Command` 的說明主題。
 
-**Name**、**Noun** 和 **Verb** 參數都接受萬用字元。 下列範例會顯示如何搭配使用 **Name** 參數和萬用字元：
+**Name** 、 **Noun** 和 **Verb** 參數都接受萬用字元。 下列範例會顯示如何搭配使用 **Name** 參數和萬用字元：
 
 ```Output
 Get-Command -Name *service*

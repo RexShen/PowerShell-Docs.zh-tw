@@ -1,16 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫常見問題集
-ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 關於 PowerShell 資源庫的常見問題集
+ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777826"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654152"
 ---
-# <a name="frequently-asked-questions"></a>常見問題集
+# <a name="frequently-asked-questions-about-the-powershell-gallery"></a>關於 PowerShell 資源庫的常見問題集
 
 ## <a name="what-is-a-powershell-module"></a>什麼是 PowerShell 課程模組？
 
@@ -56,7 +55,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>將模組發行至 PowerShell 資源庫的需求為何？
 
-任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」**(.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
+任何一種 PowerShell 模組 (指令碼模組、二進位模組或資訊清單模組) 都可以發行至組件庫。 若要發行模組，PowerShellGet 需要知道它的一些事項：版本、描述、作者和授權方式。 會從「模組資訊清單」(.psd1) 檔案或從 [Publish-Module][] Cmdlet 的 **LicenseUri** 參數值中讀取這項資訊，作為發佈程序的一部分。 所有發行至資源庫的模組都必須具有模組資訊清單。 任何在資訊清單中包含下列資訊的模組都可以發行至資源庫：
 
 - 版本
 - 描述
@@ -65,7 +64,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>如何建立格式正確的模組資訊清單？
 
-建立模組資訊清單最簡單的方式是執行 [New-ModuleManifest][] Cmdlet。 在 PowerShell 5.0 或更新版本中，New-ModuleManifest 會使用有用中繼資料的空白欄位來產生格式正確的模組資訊清單 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的資訊清單作為正確格式的範例。
+建立模組資訊清單最簡單的方式是執行 [New-ModuleManifest][] Cmdlet。 在 PowerShell 5.0 或更新版本中，New-ModuleManifest 會使用有用中繼資料的空白欄位來產生格式正確的模組資訊清單 (例如 **ProjectUri** 、 **LicenseUri** 和 **Tags** )。 只要填上空白，或使用產生的資訊清單作為正確格式的範例。
 
 若要驗證已正確地填入所有必要中繼資料欄位，請使用 [Test-ModuleManifest][] Cmdlet。
 
@@ -94,7 +93,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>如何建立格式正確的指令檔？
 
-建立格式正確指令檔的簡單方式是執行 [New-ScriptFileInfo][] Cmdlet。 在 PowerShell 5.0 中，New-ScriptFileInfo 會使用有用中繼資料的空白欄位來產生格式正確的指令檔 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的指令檔作為正確格式的範例。
+建立格式正確指令檔的簡單方式是執行 [New-ScriptFileInfo][] Cmdlet。 在 PowerShell 5.0 中，New-ScriptFileInfo 會使用有用中繼資料的空白欄位來產生格式正確的指令檔 (例如 **ProjectUri** 、 **LicenseUri** 和 **Tags** )。 只要填上空白，或使用產生的指令檔作為正確格式的範例。
 
 若要驗證已正確地填入所有必要中繼資料欄位，請使用 [Test-ScriptFileInfo][] Cmdlet。
 
@@ -145,9 +144,9 @@ PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerSh
 
 一般建議挑選最新版本的 PowerShellGet 模組 (請注意，需要 .NET 4.5)。
 
-**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本**。
+**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本** 。
 
-因此，**PowerShellGet** 需要下列其中一個作業系統：
+因此， **PowerShellGet** 需要下列其中一個作業系統：
 
 - Windows 10
 - Windows 8.1 專業版

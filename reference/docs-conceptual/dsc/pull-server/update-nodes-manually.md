@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 從提取伺服器更新節點
-ms.openlocfilehash: fa59a2f6574db2dbc96621be4326f1d5a55e5de9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章說明如何更新來自提取伺服器的 DSC 受控節點
+ms.openlocfilehash: 7256a0e1fdfaa8e56150c4f7299640bc95b82cee
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500667"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656768"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>從提取伺服器更新節點
 
@@ -16,7 +17,7 @@ ms.locfileid: "80500667"
 - [設定 DSC SMB 提取伺服器](pullServerSmb.md)
 - [設定 DSC HTTP 提取伺服器](pullServer.md)
 
-每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 本文將示範如何上傳資源，讓它們可供下載，並設定用戶端以自動下載資源。 當節點收到指派的設定時，透過**提取**或**推送** (v5)，它就會自動從 LCM 中指定的位置下載設定所需的任何資源。
+每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 本文將示範如何上傳資源，讓它們可供下載，並設定用戶端以自動下載資源。 當節點收到指派的設定時，透過 **提取** 或 **推送** (v5)，它就會自動從 LCM 中指定的位置下載設定所需的任何資源。
 
 ## <a name="using-the-update-dscconfiguration-cmdlet"></a>使用 Update-DSCConfiguration Cmdlet
 

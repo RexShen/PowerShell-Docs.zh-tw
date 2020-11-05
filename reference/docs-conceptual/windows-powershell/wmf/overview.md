@@ -2,12 +2,13 @@
 ms.date: 04/19/2019
 keywords: wmf,powershell,設定
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 是 Windows PowerShell 的一個必要條件。 此文章說明 WMF 版本的歷程，並提供如何尋找及安裝 WMF 的相關資訊。
+ms.openlocfilehash: 339b140325befea0b28aa470d4249170937f2c37
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808684"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654046"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -51,8 +52,8 @@ WMF 安裝新增及 (或) 更新下列功能︰
 | Windows Server 2003<br>*支援終止* |              |                             |              |              | 是          |
 | Windows XP<br>*支援終止*          |              |                             |              | 是          | 是          |
 
-- **隨產品出貨**：所指定 WMF 版本的功能已與指出版本的 Windows 用戶端或 Windows Server 一起出貨。
-- **支援終止**：Microsoft 不再支援這些產品。 您必須升級至支援的新版本。 如需詳細資訊，請參閱 [Microsoft 週期原則][]頁面。
+- **隨產品出貨** ：所指定 WMF 版本的功能已與指出版本的 Windows 用戶端或 Windows Server 一起出貨。
+- **支援終止** ：Microsoft 不再支援這些產品。 您必須升級至支援的新版本。 如需詳細資訊，請參閱 [Microsoft 週期原則][]頁面。
 
 > [!NOTE]
 > WMF 5.0 安裝程式已不再提供或支援。 它已被 WMF 5.1 取代。

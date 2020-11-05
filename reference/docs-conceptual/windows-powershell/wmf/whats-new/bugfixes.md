@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,設定
 title: WMF 5.1 的 Bug 修正
-ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 此文章列出 WMF 5.1 發行版本中已修正的錯誤 (Bug)。
+ms.openlocfilehash: 2673860852ecd6e0b6582f6f69076f8c463eeccc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809304"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660779"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 的 Bug 修正
 
@@ -49,7 +48,7 @@ $obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
-**SendKeys** 方法預期的是字串，但 PowerShell 並未將字元轉換成字串，將轉換延後至 **IDispatch::Invoke**，其使用 **VariantChangeType** 進行轉換。 在此範例中，這導致所傳送的是索引鍵 '1'、'7' 和 '3'，而非預期的 **Volume.Mute** 索引鍵。
+**SendKeys** 方法預期的是字串，但 PowerShell 並未將字元轉換成字串，將轉換延後至 **IDispatch::Invoke** ，其使用 **VariantChangeType** 進行轉換。 在此範例中，這導致所傳送的是索引鍵 '1'、'7' 和 '3'，而非預期的 **Volume.Mute** 索引鍵。
 
 #### <a name="enumerable-com-objects-not-always-handled-correctly"></a>不一定會正確處理可列舉的 COM 物件
 

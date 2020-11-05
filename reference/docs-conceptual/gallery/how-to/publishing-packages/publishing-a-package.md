@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 建立及發行項目
-ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章涵蓋準備指令碼或模組，並將其發行至 PowerShell 資源庫的機制與重要步驟
+ms.openlocfilehash: be846799aff71d38bdd0c98b3f43eaee5aef7798
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71327919"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662511"
 ---
 # <a name="creating-and-publishing-an-item"></a>建立及發行項目
 
@@ -67,7 +66,8 @@ PowerShell 資源庫是可供您發佈及與更廣大 PowerShell 使用者社群
 
 [PowerShell 指令碼分析程式](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) 是一個靜態的程式碼分析工具，會掃描您的程式碼以確保它符合基本的 PowerShell 程式碼編寫指導方針。 此工具會識別您程式碼中的一般和重大問題，在開發期間應該定期執行，以協助您備妥項目以供發行。 「PowerShell 指令碼分析工具」會提供識別為「錯誤」、「警告」及「資訊」的問題清單。 您必須解決所有錯誤，才能將項目發行至「PowerShell 資源庫」。 警告需要經過檢閱，且大多數都應該加以解決。 每次在「PowerShell 資源庫」中發行或更新項目時，都會執行「PowerShell 指令碼分析工具」。 「資源庫作業」小組將會連絡項目擁有者來解決所發現的問題。
 
-如果「PowerShell 資源庫」基礎結構無法讀取您項目中的資訊清單資訊，您將無法發行該項目。 [Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) 會捕捉將造成模組在安裝後無法使用的常見問題。 您必須先針對每個模組執行此 Cmdlet，才能將模組發行至「PowerShell 資源庫」。
+如果「PowerShell 資源庫」基礎結構無法讀取您項目中的資訊清單資訊，您將無法發行該項目。
+[Test-ModuleManifest](/powershell/module/microsoft.powershell.core/test-modulemanifest) 會捕捉將造成模組在安裝後無法使用的常見問題。 您必須先針對每個模組執行此 Cmdlet，才能將模組發行至「PowerShell 資源庫」。
 
 同樣地，[Test-ScriptFileInfo](/powershell/module/PowerShellGet/test-scriptfileinfo)會驗證指令碼中的中繼資料，且必須在發佈到 PowerShell 資源庫前，先在每個指令碼上執行 (與模組分開發佈)。
 
@@ -94,4 +94,3 @@ PowerShell 資源庫是可供您發佈及與更廣大 PowerShell 使用者社群
 將項目發行至「PowerShell 資源庫」之後，您將必須監看有關項目的意見反應。
 
 - 請務必監看與用來發行之帳戶相關的電子郵件地址。 使用者及「PowerShell 資源庫作業」小組將會透過提供該帳戶提供意見反應，包括來自 PSSA 或防毒軟體掃描的問題。 如果該電子郵件帳戶無效，或將嚴重問題回報給該帳戶而長時間未獲得解決，系統就可能將項目視為已遭捨棄，而將會如[使用規定](https://www.powershellgallery.com/policies/Terms)所述，從「PowerShell 資源庫」中移除。
-- 建議您訂閱您所發行之每個「PowerShell 資源庫」項目的「評論」。 如此一來，當任何使用者對您在「PowerShell 資源庫」中的項目提出評論時，您便會收到通知。 這是選擇性選項，因為這需要使用 LiveFyre 來建立帳戶。

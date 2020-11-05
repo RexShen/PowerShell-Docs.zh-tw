@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 description: 此文件提供最佳做法，可協助部署 DSC 提取伺服器的工程師完成其工作。
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: 99009fd73ea08ca4ac42832a055e914a3ce6dbcf
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846944"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664323"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 提取伺服器 (Windows 功能「DSC 服務」**) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
+> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
 摘要︰本文件旨在包含程序和擴充性以協助準備解決方案的工程師。 詳細資訊應該提供客戶找到的最佳做法，經產品小組驗證後確認所提供的建議可穩定應對未來問題。
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 包含名為 DSC 服務的功能。 DSC 服務功能提�
 
 ### <a name="dsc-resource"></a>DSC 資源
 
-佈建使用 DSC 設定指令碼的服務，可以簡化提取伺服器部署。 本文件包含可用來部署生產就緒伺服器節點的設定指令碼。 若要使用設定指令碼，需要不包含在 Windows Server 中的 DSC 模組。 所需模組名稱是 **xPSDesiredStateConfiguration**，其中包含 DSC 資源 **xDscWebService**。 您可以在[這裡](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)下載 xPSDesiredStateConfiguration 模組。
+佈建使用 DSC 設定指令碼的服務，可以簡化提取伺服器部署。 本文件包含可用來部署生產就緒伺服器節點的設定指令碼。 若要使用設定指令碼，需要不包含在 Windows Server 中的 DSC 模組。 所需模組名稱是 **xPSDesiredStateConfiguration** ，其中包含 DSC 資源 **xDscWebService** 。 您可以在[這裡](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)下載 xPSDesiredStateConfiguration 模組。
 
 使用 **PowerShellGet** 模組的 `Install-Module` Cmdlet。
 
@@ -119,8 +119,7 @@ Install-Module xPSDesiredStateConfiguration
 
 DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。 其他名稱記錄的目的，是如果以後需要變更時能夠增加彈性。 CNAME 可以協助隔離用戶端設定，以便伺服器環境的變更，例如取代提取伺服器或新增其他提取伺服器，不需要與用戶端設定相對應的變更。
 
-在選擇 DNS 記錄名稱時，請牢記解決方案架構。
-如果使用負載平衡，則用來保護 HTTPS 流量的憑證就需要與 DNS 記錄共用相同的名稱。
+在選擇 DNS 記錄名稱時，請牢記解決方案架構。 如果使用負載平衡，則用來保護 HTTPS 流量的憑證就需要與 DNS 記錄共用相同的名稱。
 
 |       狀況        |                                                                                         最佳做法
 |:--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -142,7 +141,7 @@ DNS CNAME 可讓您建立指向主機 (A) 記錄的別名。 其他名稱記錄�
 現今大部分的組織都需要網路流量，特別是包含伺服器設定方式等機密資料的流量，必須在傳送時驗證及/或加密。
 雖然您可以部署使用 HTTP 的提取伺服器來方便用戶端以純文字提出要求，但最好的做法卻是保護使用 HTTPS 的流量。 您可以在 DSC 資源 **xPSDesiredStateConfiguration** 中使用一組參數，設定服務使用 HTTPS。
 
-保護提取伺服器 HTTPS 流量的憑證需求，和保護任何其他 HTTPS 網站的沒有不同。 Windows Server 憑證服務的 **Web 伺服器**範本符合所需功能。
+保護提取伺服器 HTTPS 流量的憑證需求，和保護任何其他 HTTPS 網站的沒有不同。 Windows Server 憑證服務的 **Web 伺服器** 範本符合所需功能。
 
 規劃工作
 
@@ -203,16 +202,16 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 
 #### <a name="dsc-configurations"></a>DSC 組態
 
-提取伺服器的目的是提供集中式機制，將 DSC 設定散發到用戶端節點。 設定在伺服器上儲存為 MOF 文件。 每份文件都會以唯一的 **GUID** 命名。 當用戶端設定成要與提取伺服器連線時，也會收到其應要求的設定 **GUID**。 這個依 **GUID** 參考設定的系統能保證全域唯一性，而且十分靈活，讓設定能夠以細微到節點的程度套用，也能以角色設定形式套用，以橫跨多個應該具有相同設定的伺服器。
+提取伺服器的目的是提供集中式機制，將 DSC 設定散發到用戶端節點。 設定在伺服器上儲存為 MOF 文件。 每份文件都會以唯一的 **GUID** 命名。 當用戶端設定成要與提取伺服器連線時，也會收到其應要求的設定 **GUID** 。 這個依 **GUID** 參考設定的系統能保證全域唯一性，而且十分靈活，讓設定能夠以細微到節點的程度套用，也能以角色設定形式套用，以橫跨多個應該具有相同設定的伺服器。
 
 #### <a name="guids"></a>GUID
 
 當您在考量整個提取伺服器部署時，設定 **GUID** 的規劃值得多加留意。 處理 **GUID** 的方式並沒有明確要求，而且每個環境的程序很可能各不相同。 程序從簡單到複雜︰集中儲存的 CSV 檔案、簡易 SQL 資料表、CMDB 或需要整合其他工具或軟體方案的複雜解決方案。 有兩種一般方法︰
 
-- **依伺服器指派 GUID**：提供確保個別控制每部伺服器設定的量值。 這會提供更新前後一定程度的準確性，在只有幾部伺服器的環境中運作良好。
-- **依伺服器角色指派 GUID**：執行相同函式的所有伺服器 (例如網頁伺服器) 都使用相同的 GUID 參考所需的設定資料。 請注意，如果有許多伺服器共用相同的 GUID，設定變更時，它們全部都會同時更新。
+- **依伺服器指派 GUID** ：提供確保個別控制每部伺服器設定的量值。 這會提供更新前後一定程度的準確性，在只有幾部伺服器的環境中運作良好。
+- **依伺服器角色指派 GUID** ：執行相同函式的所有伺服器 (例如網頁伺服器) 都使用相同的 GUID 參考所需的設定資料。 請注意，如果有許多伺服器共用相同的 GUID，設定變更時，它們全部都會同時更新。
 
-  GUID 應該視為機密資訊，因為它可用來進行惡意攻擊，取得您環境如何部署與設定伺服器的情報。 如需詳細資訊，請參閱 [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (在 PowerShell Desired State Configuration 提取模式中安全地配置 GUID)。
+  GUID 應該視為機密資訊，因為它可用來進行惡意攻擊，取得您環境如何部署與設定伺服器的情報。 如需詳細資訊，請參閱 [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://devblogs.microsoft.com/powershell/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (在 PowerShell Desired State Configuration 提取模式中安全地配置 GUID)。
 
 規劃工作
 
@@ -247,7 +246,7 @@ Install-Module xPSDesiredStateConfiguration
 
 部署 DSC 提取伺服器的最佳方法是使用 DSC 設定指令碼。 本文件顯示的指令碼，包括只設定 DSC Web 服務的基本設定，以及設定 Windows Server 端對端 (包括 DSC Web 服務) 的進階設定。
 
-注意︰目前 `xPSDesiredStateConfiguration` DSC 模組需要伺服器使用 EN-US 地區設定。
+注意：目前 `xPSDesiredStateConfiguration` DSC 模組需要伺服器使用 EN-US 地區設定。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 基本設定
 
@@ -537,7 +536,7 @@ Update-DscConfiguration –Wait -Verbose
 
 儲存資料檔案是為了建立含 OData Web 服務的提取伺服器在部署期間的資訊。 檔案類型視作業系統而定，如下所述。
 
-- **Windows Server 2012** 檔案類型一律為 .mdb
-- **Windows Server 2012 R2** 除非設定中指定 .mdb，否則檔案類型預設為 .edb
+- **Windows Server 2012** - 檔案類型一律為 `.mdb`
+- **Windows Server 2012 R2** - 除非設定中指定 `.mdb`，否則檔案類型預設為 `.edb`
 
 在安裝提取伺服器的[進階範例指令碼](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)中，您也會找到如何自動控制 web.config 檔案設定，防止因檔案類型而發生任何錯誤的範例。

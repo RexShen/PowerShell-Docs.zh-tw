@@ -1,17 +1,17 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: ISEAddOnTool 物件
-ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEAddonTool 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。
+ms.openlocfilehash: cc2d50881b7d0033e08de9af5d4cc9e1a9aa55db
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809724"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667125"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool 物件
 
-**ISEAddonTool** 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。 **命令**工具即為一例，您可以依序按一下 [檢視]  和 [顯示命令附加元件]  來顯示此工具。 您接著可以藉由操作各種可用的 **ISEAddOnTool** 物件來存取此工具。
+**ISEAddonTool** 物件代表一個已安裝的附加元件工具，可為 Windows PowerShell ISE 提供額外的功能。 **命令** 工具即為一例，您可以依序按一下 [檢視]  和 [顯示命令附加元件]  來顯示此工具。 您接著可以藉由操作各種可用的 **ISEAddOnTool** 物件來存取此工具。
 
 每個附加元件工具都可以與垂直窗格或水平窗格產生關聯。 垂直窗格會停駐於 Windows PowerShell ISE 的右邊。 水平窗格則會停駐於底部。
 

@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 資源, 資源庫, 安裝, 設定
 title: 將參數新增至設定
-ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC 設定可以參數化，以根據使用者輸入來進行更動態的設定。
+ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80263147"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656819"
 ---
 # <a name="add-parameters-to-a-configuration"></a>將參數新增至設定
 
@@ -36,13 +37,13 @@ Configuration TestConfig
 
 與函式不同，[CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) 屬性不會新增任何功能。 除了[一般參數](/powershell/module/microsoft.powershell.core/about/about_commonparameters)之外，Configuration 也能夠使用下列內建參數，您不需要定義它們。
 
-|        參數        |                                         描述                                          |
+|        參數        |                                         Description                                          |
 | ----------------------- | -------------------------------------------------------------------------------------------- |
 | `-InstanceName`         | 用於定義[複合設定](compositeconfigs.md)                             |
 | `-DependsOn`            | 用於定義[複合設定](compositeconfigs.md)                             |
 | `-PSDSCRunAsCredential` | 用於定義[複合設定](compositeconfigs.md)                             |
 | `-ConfigurationData`    | 用於傳遞在 Configuration 中使用的結構化[設定資料](configData.md)。 |
-| `-OutputPath`           | 用於指定將要編譯的 "\<computername\>.mof" 檔案位置                      |
+| `-OutputPath`           | 用於指定要編譯 "\<computername\>.mof" 檔案的位置                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>將自己的參數加入 Configuration
 
@@ -96,7 +97,7 @@ Configuration TestConfig
 {
     param
     (
-        [String]
+        [String[]]
         $ComputerName="localhost"
     )
 
@@ -119,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>Configuration 中的進階參數
 
 除了 `-ComputerName` 參數以外，我們還可以加入服務名稱和狀態的參數。
-下列範例區塊會加入具有 `-ServiceName` 參數的參數區塊，並使用它以動態方式定義 **Service** 資源區塊。 還會加入 `-State` 參數以動態方式定義 **Service** 資源區塊中的 **State**。
+下列範例區塊會加入具有 `-ServiceName` 參數的參數區塊，並使用它以動態方式定義 **Service** 資源區塊。 還會加入 `-State` 參數以動態方式定義 **Service** 資源區塊中的 **State** 。
 
 ```powershell
 Configuration TestConfig
@@ -170,7 +171,7 @@ $ServiceName="Spooler"
 $ServiceName
 ```
 
-您可以將引數指定到每個 `parameter` 屬性，來控制所定義之參數的各層面。 下列範例會使 `$ServiceName` 成為**強制**參數。
+您可以將引數指定到每個 `parameter` 屬性，來控制所定義之參數的各層面。 下列範例會使 `$ServiceName` 成為 **強制** 參數。
 
 ```powershell
 [parameter(Mandatory)]
@@ -178,7 +179,7 @@ $ServiceName
 $ServiceName
 ```
 
-對於 `$State` 參數，我們想防止使用者指定預先定義值組 (例如 Running、Stopped) 以外的值，而 `ValidationSet*` 屬性將可防止使用者指定預先定義值組 (例如 Running、Stopped) 以外的值。 下列範例會將 `ValidationSet` 屬性加入 `$State` 參數。 由於我們不想讓 `$State` 參數成為**強制**參數，我們必須為它加入預設值。
+對於 `$State` 參數，我們想防止使用者指定預先定義值組 (例如 Running、Stopped) 以外的值，而 `ValidationSet*` 屬性將可防止使用者指定預先定義值組 (例如 Running、Stopped) 以外的值。 下列範例會將 `ValidationSet` 屬性加入 `$State` 參數。 由於我們不想讓 `$State` 參數成為 **強制** 參數，我們必須為它加入預設值。
 
 ```powershell
 [ValidateSet("Running", "Stopped")]

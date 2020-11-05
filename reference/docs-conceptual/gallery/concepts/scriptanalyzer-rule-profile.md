@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 資源庫的 ScriptAnazlyer 規則設定檔
-ms.openlocfilehash: 939f01dece56b283dbe6e03c888f42ff866707af
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 說明 PowerShell ScriptAnalyzer 如何與 PowerShell 資源庫整合。
+ms.openlocfilehash: 3af710e8811f0fabfb02f5317d5b4ff9c320f29a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328469"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646773"
 ---
 # <a name="scriptanalyzer-rule-profile-for-gallery"></a>資源庫的 ScriptAnazlyer 規則設定檔
 

@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 在 Nano Server 上使用 DSC
-ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC 是選擇性套件，其可在您針對 Windows Nano Server 建立 VHD 時加以安裝。
+ms.openlocfilehash: 18585323359abd85515d4db194dae4adbad7c3d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953855"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92647064"
 ---
 # <a name="using-dsc-on-nano-server"></a>在 Nano Server 上使用 DSC
 
@@ -32,7 +33,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - 完整版 Windows Server 的所有現有 DSC Cmdlet 包括︰
 - [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager)
 - [Set-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager)
-- [啟用-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
+- [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)
 - [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug)
 - [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
@@ -44,13 +45,13 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
+- [Find-DscResource](/powershell/module/powershellget/find-dscresource)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
 - 編譯設定 (請參閱 [DSC 設定](../configurations/configurations.md))。
 
-  **問題︰** 密碼加密 (請參閱[保護 MOF 檔案](../pull-server/secureMOF.md)) 在設定編譯期間無法運作。
+  **問題︰** 密碼加密 (請參閱 [保護 MOF 檔案](../pull-server/secureMOF.md)) 在設定編譯期間無法運作。
 
 - 編譯中繼設定 (請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md))
 
@@ -60,9 +61,9 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 為 DSC 資源偵錯 (請參閱[為 DSC 資源偵錯](../troubleshooting/debugResource.md))
 
-  **問題︰** 如果資源使用 PsDscRunAsCredential 則無法運作 (請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md))
+  **問題︰** 如果資源使用 PsDscRunAsCredential 則無法運作 (請參閱 [以使用者認證執行 DSC](../configurations/runAsUser.md))
 
-- [指定節點之間的相依性](../configurations/crossNodeDependencies.md)
+- [指定跨節點相依性](../configurations/crossNodeDependencies.md)
 
 - [資源的版本管理](../configurations/sxsResource.md)
 
@@ -80,34 +81,38 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 
 - 可完全正常運作的資源
 
-- **封存**
-- **環境**
-- **檔案**
-- **Log**
-- **ProcessSet**
-- **登錄**
-- **指令碼**
-- **WindowsPackageCab**
-- **WindowsProcess**
-- **WaitForAll** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
-- **WaitForAny** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
-- **WaitForSome** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
+  - **封存**
+  - **環境**
+  - **檔案**
+  - **Log**
+  - **ProcessSet**
+  - **登錄**
+  - **指令碼**
+  - **WindowsPackageCab**
+  - **WindowsProcess**
+  - **WaitForAll** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
+  - **WaitForAny** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
+  - **WaitForSome** (請參閱[指定跨節點相依性](../configurations/crossNodeDependencies.md))
 
 - 部分運作的資源
-- **群組**
-- **GroupSet**
 
-  **問題︰** 若呼叫特定執行個體兩次 (執行兩次相同的設定)，則上述資源會失敗
+  - **群組**
+  - **GroupSet**
 
-- **服務**
-- **ServiceSet**
+    **問題︰** 若呼叫特定執行個體兩次 (執行兩次相同的設定)，則上述資源會失敗
 
-  **問題︰** 只適用於開始/停止 (狀態) 服務。 如果嘗試變更啟動類型、認證、描述等其他服務屬性，則會失敗。 擲回的錯誤類似如下︰
+  - **服務**
+  - **ServiceSet**
 
-  找不到類型 [management.managementobject]：請確認已載入包含此類型的組件。 
+    **問題︰** 只適用於開始/停止 (狀態) 服務。 如果嘗試變更啟動類型、認證、描述等其他服務屬性，則會失敗。 擲回的錯誤類似如下︰
+
+    ```
+    Cannot find type [management.managementobject]: verify that the assembly containing this type is loaded.
+    ```
 
 - 無法正常運作的資源
-- **使用者**
+
+  - **使用者**
 
 ## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server 上不提供的 DSC 功能
 

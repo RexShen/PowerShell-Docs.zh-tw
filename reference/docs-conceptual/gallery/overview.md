@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: 資源庫,powershell,cmdlet,psgallery,psget
 title: PowerShell 資源庫
-ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell 資源庫是 PowerShell 模組、指令碼與 DSC 資源的集中存放庫。
+ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500571"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662114"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell 資源庫
 
@@ -27,15 +26,15 @@ PowerShellGet 模組包含適用於探索、安裝、更新及發行 PowerShell 
 
 ## <a name="supported-operating-systems"></a>支援的作業系統
 
-**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本**。
+**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本** 。
 
 **PowerShellGet** 需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
 
-由於 **PowerShell Core** 的跨平台特性，使它能在 Windows、Linux 和 MacOS 上運作，這也代表 **PowerShellGet** 可在那些系統上使用。 如需 **PowerShell Core** 所支援之系統的完整清單，請參閱[安裝 PowerShell](/powershell/scripting/install/installing-powershell)。
+由於 **PowerShell Core** 的跨平台特性，使它能在 Windows、Linux 和 MacOS 上運作，這也代表 **PowerShellGet** 可在那些系統上使用。 如需 **PowerShell Core** 所支援之系統的完整清單，請參閱 [安裝 PowerShell](/powershell/scripting/install/installing-powershell)。
 
 資源庫中裝載的眾多模組將會支援不同的 OS 並具有額外的需求。
 如需詳細資訊，請參考模組的文件。
 
-## <a name="got-a-question-have-feedback"></a>有任何問題嗎？ 想提供任何意見？
+## <a name="got-a-question-have-feedback"></a>有任何問題嗎？ 有任何意見嗎？
 
 如需 PowerShell 資源庫與 PowerShellGet 的詳細資料，請前往[開始使用](getting-started.md)頁面。 請使用 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) 提供意見反應及回報問題。

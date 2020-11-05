@@ -2,12 +2,13 @@
 ms.date: 06/22/2020
 keywords: dsc,powershell,設定,服務,安裝
 title: 撰寫、編譯及套用設定
-ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
-ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
+description: 這個練習逐步解說如何從頭開始完整地建立並套用 DSC 設定。 在下列範例中，您將會了解如何撰寫及套用非常簡單的設定
+ms.openlocfilehash: f173fe0dc6cd73e2b49bb8c44a9ee1a53eab475f
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85295670"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645030"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>撰寫、編譯及套用設定
 
@@ -69,7 +70,7 @@ Configuration HelloWorld {
 
 ## <a name="compile-the-configuration"></a>編譯設定
 
-DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。 執行組態 (例如函式)，會針對 `Node` 區塊定義的每個節點編譯一個 `.mof` 檔案。 若要執行執行此組態，您需要將`HelloWorld.ps1` 指令碼「點執行」到目前的範圍。 如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)。
+DSC 設定若要套用至節點，便必須先編譯成 MOF 檔案。 執行組態 (例如函式)，會針對 `Node` 區塊定義的每個節點編譯一個 `.mof` 檔案。 若要執行執行此組態，您需要將`HelloWorld.ps1` 指令碼「點執行」到目前的範圍。 如需詳細資訊，請參閱 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts#script-scope-and-dot-sourcing)。
 
 <!-- markdownlint-disable MD038 -->
 藉由鍵入儲存 `HelloWorld.ps1` 指令碼的路徑 (於 `. ` (點、空格) 之後)，「點執行」該指令碼。 然後，您即可像呼叫函式一樣呼叫該項目來執行組態。 您也可以在指令碼底部叫用組態函式，如此即無須進行「點執行」。
@@ -100,7 +101,7 @@ Mode                LastWriteTime         Length Name
 使用下列程式碼執行 `Start-DSCConfiguration` Cmdlet。 將儲存 `localhost.mof` 的目錄路徑指定給 **Path** 參數。 `Start-DSCConfiguration` Cmdlet 會查看是否有針對任何 `<computername>.mof` 檔案指定的路徑。 `Start-DSCConfiguration` Cmdlet 會嘗試將其找到的每個 `.mof` 檔案套用到檔案名稱 ("localhost"、"server01"、"dc-02" 等等) 所指定 `computername`。
 
 > [!NOTE]
-> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的**詳細資訊**輸出。 `-Wait` 和 `-Verbose` 都是選用參數。
+> 如未指定 `-Wait` 參數，`Start-DSCConfiguration` 就會建立背景作業來執行作業。 指定 `-Verbose` 參數可讓您監看作業的 **詳細資訊** 輸出。 `-Wait` 和 `-Verbose` 都是選用參數。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait

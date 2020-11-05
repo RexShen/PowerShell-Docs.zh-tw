@@ -1,14 +1,13 @@
 ---
 ms.date: 09/26/2017
-contributor: keithb
-keywords: 資源庫,powershell,cmdlet,psget
 title: 發行前模組版本
-ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShellGet 模組支援使用語意化版本控制系統，將版本大於 1.0.0 的模組標記為發行前版本。
+ms.openlocfilehash: f794722f0a89f98f8f445ecd45dad9d3d2d7f3cb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328139"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661521"
 ---
 # <a name="prerelease-module-versions"></a>發行前模組版本
 
@@ -52,7 +51,7 @@ PowerShellGet 對發行前版本的支援需要使用模組資訊清單內的兩
 - 只有當 Major.Minor.Build 的 ModuleVersion 為 3 個區段時，才能指定發行前版本字串。 這與 SemVer 1.0.0 版相符。
 - 連字號是組建編號和發行前版本字串之間的分隔符號。 連字號只能作為第一個字元，包含在發行前版本字串中。
 - 發行前版本字串只能包含 ASCII 英數字元 [0-9A-Za-z-]。 發行前版本字串最好是以英數字元開始，因為在掃描套件的清單時，可以更容易分辨這是發行前版本字串。
-- 目前只支援 SemVer 1.0.0 版的發行前版本字串。 發行前版本字串**不得**包含 SemVer 2.0 中允許使用的句號或 + [.+]。
+- 目前只支援 SemVer 1.0.0 版的發行前版本字串。 發行前版本字串 **不得** 包含 SemVer 2.0 中允許使用的句號或 + [.+]。
 - 支援的發行前版本字串範例包括：-alpha、-alpha1、-BETA、-update20171020
 
 ### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>發行前版本設定對排序次序和安裝資料夾的影響
@@ -68,7 +67,7 @@ PowerShellGet 對發行前版本的支援需要使用模組資訊清單內的兩
 PowerShellGet 模組命令中此狀況的唯一例外是 Get-InstalledModule，以及在某些情況下的 Uninstall-Module。
 
 - Get-InstalledModule 一律會自動顯示模組版本字串中的發行前版本資訊。
-- Uninstall-Module 在__未指定版本__時，預設將解除安裝最新的模組版本。 該行為尚未變更。 但是，如果已使用 -RequiredVersion　指定了發行前版本，則需要 -AllowPrerelease。
+- Uninstall-Module 在 __未指定版本__ 時，預設將解除安裝最新的模組版本。 該行為尚未變更。 但是，如果已使用 -RequiredVersion　指定了發行前版本，則需要 -AllowPrerelease。
 
 ## <a name="examples"></a>範例
 
@@ -123,7 +122,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-如果模組的版本僅僅因為指定的發行前版本而有所不同，則不支援並行安裝模組的各版本。 使用 PowerShellGet 安裝模組時，透過使用 ModuleVersion 建立資料夾名稱，可並行安裝相同模組的不同版本。 不含發行前版本字串的 ModuleVersion 可作為資料夾名稱使用。 如果使用者安裝 MyModule 2.5.0-alpha 版，它將安裝至 `MyModule\2.5.0` 資料夾。 如果使用者接著安裝 2.5.0-beta，則 2.5.0-beta 版將**覆寫**`MyModule\2.5.0` 資料夾的內容。 這種方法的其中一個優點是，安裝已準備好投入生產環境的版本之後，不需要解除安裝發行前版本。 下列範例示範預期的結果：
+如果模組的版本僅僅因為指定的發行前版本而有所不同，則不支援並行安裝模組的各版本。 使用 PowerShellGet 安裝模組時，透過使用 ModuleVersion 建立資料夾名稱，可並行安裝相同模組的不同版本。 不含發行前版本字串的 ModuleVersion 可作為資料夾名稱使用。 如果使用者安裝 MyModule 2.5.0-alpha 版，它將安裝至 `MyModule\2.5.0` 資料夾。 如果使用者接著安裝 2.5.0-beta，則 2.5.0-beta 版將 **覆寫**`MyModule\2.5.0` 資料夾的內容。 這種方法的其中一個優點是，安裝已準備好投入生產環境的版本之後，不需要解除安裝發行前版本。 下列範例示範預期的結果：
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions

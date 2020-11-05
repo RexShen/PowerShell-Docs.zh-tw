@@ -1,14 +1,14 @@
 ---
 ms.date: 10/17/2017
-contributor: keithb
-keywords: 資源庫,powershell,cmdlet,psget
 title: 指令碼的發行前版本
-ms.openlocfilehash: c0198c2f575d2c004949ccebab49d93ce54716be
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShellGet 模組支援使用語意化版本控制系統，將版本大於 1.0.0 的指令碼標記為發行前版本。
+ms.openlocfilehash: e9873a69148fd80553e566b31c7455a4ecaee5ce
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328479"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661478"
+---
 ---
 # <a name="prerelease-versions-of-scripts"></a>指令碼的發行前版本
 
@@ -45,12 +45,12 @@ ms.locfileid: "71328479"
 - 只有當 Major.Minor.Build 的 Version 為 3 個區段時，才能指定發行前版本的尾碼。
   這與 SemVer 1.0.0 版相符
 - 發行前版本的尾碼是以連字號開頭的字串，而且可能包含 ASCII 英數字元 [0-9A-Za-z-]
-- 目前只支援 SemVer 1.0.0 版的發行前版本字串，因此發行前版本的尾碼**不得**包含 SemVer 2.0 中允許使用的句號或 + [.+]
+- 目前只支援 SemVer 1.0.0 版的發行前版本字串，因此發行前版本的尾碼 **不得** 包含 SemVer 2.0 中允許使用的句號或 + [.+]
 - 支援的 PrereleaseString 字串範例包括：-alpha、-alpha1、-BETA、-update20171020
 
 ### <a name="prerelease-versioning-impact-on-sort-order-and-installation-folders"></a>發行前版本設定對排序次序和安裝資料夾的影響
 
-使用發行前版本時，排序順序會變更，這在發行至 PowerShell 資源庫以及使用 PowerShellGet 命令安裝指令碼時非常重要。 如果兩個指令碼版本有該版本號碼，則排序順序是根據連字號後面的字串部分。 因此，版本 2.5.0-alpha 小於 2.5.0-beta，而 2.5.0-beta 小於 2.5.0-gamma。 如果兩個指令碼的版本號碼相同，而且只有一個具有 PrereleaseString 時，**沒有**發行前版本尾碼的指令碼會假設為已準備好投入生產環境的版本，並且會排序為比發行前版本更高的版本。 例如，比較版本 2.5.0 和 2.5.0-beta 時，2.5.0 版會視為兩個版本中的較高版本。
+使用發行前版本時，排序順序會變更，這在發行至 PowerShell 資源庫以及使用 PowerShellGet 命令安裝指令碼時非常重要。 如果兩個指令碼版本有該版本號碼，則排序順序是根據連字號後面的字串部分。 因此，版本 2.5.0-alpha 小於 2.5.0-beta，而 2.5.0-beta 小於 2.5.0-gamma。 如果兩個指令碼的版本號碼相同，而且只有一個具有 PrereleaseString 時， **沒有** 發行前版本尾碼的指令碼會假設為已準備好投入生產環境的版本，並且會排序為比發行前版本更高的版本。 例如，比較版本 2.5.0 和 2.5.0-beta 時，2.5.0 版會視為兩個版本中的較高版本。
 
 發行至 PowerShell 資源庫時，根據預設，所發行的指令碼版本必須比 PowerShell 資源庫中任何先前已發行的版本更高。 發行者可能會使用 2.5.0-beta 或 2.5.0 (不含發行前版本尾碼) 更新版本 2.5.0-alpha。
 
@@ -61,7 +61,7 @@ ms.locfileid: "71328479"
 PowerShellGet 指令碼命令中此狀況的唯一例外是 Get-InstalledScript，以及在某些情況下的 Uninstall-Scrip。
 
 - Get-InstalledScript 一律會自動顯示版本字串中現存的發行前版本資訊。
-- Uninstall-Script 在**未指定版本**時，預設將解除安裝最新的指令碼版本。 該行為尚未變更。 但是，如果已使用 `-RequiredVersion` 指定了發行前版本，則需要 `-AllowPrerelease`。
+- Uninstall-Script 在 **未指定版本** 時，預設將解除安裝最新的指令碼版本。 該行為尚未變更。 但是，如果已使用 `-RequiredVersion` 指定了發行前版本，則需要 `-AllowPrerelease`。
 
 ## <a name="examples"></a>範例
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
-keywords: 資源庫,powershell,cmdlet,psget
 title: 疑難排解 Cmdlet
-ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章提供使用 PowerShell 資源庫來對錯誤進行疑難排解的資訊與步驟
+ms.openlocfilehash: db9e58c185c6f3bca26ff3639af85fa2dba48909
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "72352119"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661064"
 ---
 # <a name="troubleshooting-cmdlets"></a>疑難排解 Cmdlet
 

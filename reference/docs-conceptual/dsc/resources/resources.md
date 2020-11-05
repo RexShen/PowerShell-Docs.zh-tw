@@ -2,12 +2,13 @@
 ms.date: 07/23/2020
 keywords: dsc,powershell,設定,安裝
 title: DSC 資源
-ms.openlocfilehash: 6ab831c9d423c6189951b43bfab92f800366ceca
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: DSC 資源提供 DSC 設定的建置組塊。 資源會公開可以設定的屬性 (結構描述)，而且包含 LCM 用來套用設定的 PowerShell 指令碼函式。
+ms.openlocfilehash: 1634db84deff8de3b33c941ad738dc21cf3017ac
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777933"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658452"
 ---
 # <a name="dsc-resources"></a>DSC 資源
 
@@ -19,11 +20,10 @@ ms.locfileid: "87777933"
 
 資源可以建立某些物件的模型，像檔案一樣平常或如 IIS 伺服器設定一樣專用。 類似資源的群組會併入 DSC 模組，將所有必要的檔案組織到可攜式結構中，而且包含中繼資料以識別資源的原訂用法。
 
-每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。
-您可以透過下列方式定義資源的結構描述：
+每個資源都有一個*結構描述，可判斷在[設定](../configurations/configurations.md)中使用資源所需的語法。 您可以透過下列方式定義資源的結構描述：
 
 - `Schema.Mof` 檔案：大部分的資源都會使用[受控物件格式](/windows/desktop/wmisdk/managed-object-format--mof-)，在 `schema.mof` 檔案中定義其「結構描述」。
-- `<Resource Name>.schema.psm1` 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)，在 `<ResourceName>.schema.psm1` 檔案中定義其「結構描述」。
+- `<Resource Name>.schema.psm1` 檔案：[複合資源](../configurations/compositeConfigs.md)會使用[參數區塊](/powershell/module/microsoft.powershell.core/about/about_functions#functions-with-parameters)，在 `<ResourceName>.schema.psm1` 檔案中定義其「結構描述」。
 - `<Resource Name>.psm1` 檔案：以類別為基礎的 DSC 資源會在類別定義中定義其「結構描述」。 語法項目會標示為 Class 屬性。 如需詳細資訊，請參閱 [about_Classes](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)。
 
 若要擷取 DSC 資源的語法，請使用 [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) Cmdlet 加上 **Syntax** 參數。 此用法類似使用 [Get-Command](/powershell/module/microsoft.powershell.core/get-command) 加上 **Syntax** 參數，以取得 Cmdlet 語法。 您看到的輸出將顯示針對您指定之資源的資源區塊所使用的範本。
@@ -58,7 +58,7 @@ Service [String] #ResourceName
 > [!NOTE]
 > 在 7.0 版以前的 PowerShell 中，`Get-DscResource` 不會尋找類別型的 DSC 資源。
 
-在設定內部，**服務**資源區塊可能看起來像這樣，以**確保**多工緩衝處理器服務正在執行。
+在設定內部， **服務** 資源區塊可能看起來像這樣，以 **確保** 多工緩衝處理器服務正在執行。
 
 > [!NOTE]
 > 在設定中使用資源之前，您必須先使用 [Import-DSCResource](../configurations/import-dscresource.md) 來匯入該資源。
@@ -66,11 +66,13 @@ Service [String] #ResourceName
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as l
+        # ong as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
@@ -80,23 +82,26 @@ Configuration TestConfig
 }
 ```
 
-設定可以包含相同資源類型的多個執行個體。 每個執行個體都必須具有唯一名稱。 在下列範例中，會新增第二個**服務**資源區塊來設定 "DHCP" 服務。
+設定可以包含相同資源類型的多個執行個體。 每個執行個體都必須具有唯一名稱。 在下列範例中，會新增第二個 **服務** 資源區塊來設定 "DHCP" 服務。
 
 ```powershell
 Configuration TestConfig
 {
-    # It is best practice to always directly import resources, even if the resource is a built-in resource.
+    # It is best practice to always directly import resources, even if the
+    # resource is a built-in resource.
     Import-DSCResource -Name Service
     Node localhost
     {
-        # The name of this resource block, can be anything you choose, as long as it is of type [String] as indicated by the schema.
+        # The name of this resource block, can be anything you choose, as
+        # long as it is of type [String] as indicated by the schema.
         Service "Spooler:Running"
         {
             Name = "Spooler"
             State = "Running"
         }
 
-        # To configure a second service resource block, add another Service resource block and use a unique name.
+        # To configure a second service resource block, add another Service
+        # resource block and use a unique name.
         Service "DHCP:Running"
         {
             Name = "DHCP"
@@ -113,7 +118,7 @@ Configuration TestConfig
 
 ## <a name="types-of-resources"></a>資源類型
 
-Windows 具有內建資源，而 Linux 則具有 OS 特定資源。 有適用於[跨節點相依性](../configurations/crossNodeDependencies.md)的資源、套件管理資源，以及[由社群所有及維護的資源](https://github.com/dsccommunity) \(英文\)。 您可以使用上述步驟來判斷這些資源的語法以及其使用方式。 提供這些資源的頁面都已封存於**參考**下方。
+Windows 具有內建資源，而 Linux 則具有 OS 特定資源。 有適用於[跨節點相依性](../configurations/crossNodeDependencies.md)的資源、套件管理資源，以及[由社群所有及維護的資源](https://github.com/dsccommunity) \(英文\)。 您可以使用上述步驟來判斷這些資源的語法以及其使用方式。 提供這些資源的頁面都已封存於 **參考** 下方。
 
 ### <a name="windows-built-in-resources"></a>Windows 內建資源
 

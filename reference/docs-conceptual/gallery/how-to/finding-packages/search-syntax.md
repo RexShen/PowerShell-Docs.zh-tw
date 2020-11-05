@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 組件庫搜尋語法
-ms.openlocfilehash: 9eaabc22090655076dabe177f04130738e081179
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+description: 此文章描述用來搜尋 PowerShell 資源庫內容的使用者介面。
+ms.openlocfilehash: 7ad486095647f99056b37c2ca1a50db099a166c0
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846995"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661365"
 ---
 # <a name="gallery-search-syntax"></a>組件庫搜尋語法
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: 必須接受授權的模組
-ms.openlocfilehash: a2f7ed72aae8579a6723f65b86dd0993f1a22afd
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章說明如何使用在 PowerShell 資源庫中所發佈、要求您必須接受終端使用者授權的模組。
+ms.openlocfilehash: a9486e10b10569ce8bcde47d5c8acf0796a93851
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082821"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656108"
 ---
 # <a name="modules-requiring-license-acceptance"></a>必須接受授權的模組
 
@@ -27,8 +26,8 @@ ms.locfileid: "80082821"
 
 ## <a name="impact-on-installsaveupdate-module"></a>對 Install/Save/Update-Module 的影響
 
-- 安裝/儲存/更新 Cmdlet 支援新的參數 **AcceptLicense**，該參數的行為將會有如使用者已看見授權。
-- 若 **RequiredLicenseAcceptance** 為 True 且未指定 **AcceptLicense**，系統將為使用者顯示 `license.txt`，並提示：`Do you accept these license terms
+- 安裝/儲存/更新 Cmdlet 支援新的參數 **AcceptLicense** ，該參數的行為將會有如使用者已看見授權。
+- 若 **RequiredLicenseAcceptance** 為 True 且未指定 **AcceptLicense** ，系統將為使用者顯示 `license.txt`，並提示：`Do you accept these license terms
   (Yes/No/YesToAll/NoToAll)`。
   - 若授權已被接受
     - **Save-Module：** 系統會將模組複製到使用者的系統
@@ -36,7 +35,7 @@ ms.locfileid: "80082821"
     - **Update-Module：** 系統會更新模組。
   - 若授權已被拒絕。
     - 操作已取消。
-    - 所有 Cmdlet 都會針對表示必須接受授權的中繼資料 (**requireLicenseAcceptance** 與格式版本) 進行檢查
+    - 所有 Cmdlet 都會針對表示必須接受授權的中繼資料 ( **requireLicenseAcceptance** 與格式版本) 進行檢查
     - 若用戶端的格式版本早於 2.0 版，作業會失敗並要求使用者更新用戶端。
     - 若模組是以早於 2.0 版的格式版本發行，則系統會忽略 requireLicenseAcceptance 旗標。
 
@@ -116,7 +115,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
 
 ### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>範例 5：Install 模組具有要求接受授權的相依性
 
-模組 **ModuleWithDependency** 相依於模組 **ModuleRequireLicenseAcceptance**。 系統會提示使用者接受授權。
+模組 **ModuleWithDependency** 相依於模組 **ModuleRequireLicenseAcceptance** 。 系統會提示使用者接受授權。
 
 ```powershell
 Install-Module -Name ModuleWithDependency
@@ -138,7 +137,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>範例 6：Install 模組具有必須接受授權的相依性和 -AcceptLicense
 
-模組 **ModuleWithDependency** 相依於模組 **ModuleRequireLicenseAcceptance**。 由於已指定 **AcceptLicense**，系統不會提示使用者接受授權。
+模組 **ModuleWithDependency** 相依於模組 **ModuleRequireLicenseAcceptance** 。 由於已指定 **AcceptLicense** ，系統不會提示使用者接受授權。
 
 ```powershell
 Install-Module -Name ModuleWithDependency -AcceptLicense

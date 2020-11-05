@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
-keywords: wmf,powershell,設定
 title: WMF 5.1 的 DSC 改善
-ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 此文章列出 WMF 5.1 內含之 Desired State Configuration (DSC) 的改善
+ms.openlocfilehash: 564cf0e8321b6b2b2e5d856acd4d3644d6566100
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771544"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667208"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 的預期狀態設定 (DSC) 改善
 
@@ -227,7 +226,7 @@ Configuration WebApplication
 }
 ```
 
-在舊版中，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 執行個體在盡力確保 「網頁伺服器」 角色已安裝時發生衝突，因此會出現編譯失敗的結果。 請注意在這兩種設定中，*所有*正在設定的屬性都是相同的。 由於這兩個資源中的*所有*屬性相同，現在這會讓編譯成功完成。
+在舊版中，因為 WindowsFeature FE_IIS 和 WindowsFeature Worker_IIS 執行個體在盡力確保 「網頁伺服器」 角色已安裝時發生衝突，因此會出現編譯失敗的結果。 請注意在這兩種設定中， *所有* 正在設定的屬性都是相同的。 由於這兩個資源中的 *所有* 屬性相同，現在這會讓編譯成功完成。
 
 如果這兩個資源之間有任何不同的屬性，則不會將它們視為相同，且編譯將會失敗。
 

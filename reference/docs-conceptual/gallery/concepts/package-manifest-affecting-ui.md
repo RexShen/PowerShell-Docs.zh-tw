@@ -1,14 +1,13 @@
 ---
 ms.date: 06/09/2017
-schema: 2.0.0
-keywords: powershell
 title: 影響 PowerShell 資源庫 UI 的套件資訊清單值
-ms.openlocfilehash: d5e0b85a635c4090f8ccb814277a1a6dd6a951e2
-ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
+description: 此文章記載 PowerShell 資源庫所使用之模組資訊清單中的值。
+ms.openlocfilehash: c59f65e72874a8a4ef946c954e1e8f12aad62b29
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91772298"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664143"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>影響 PowerShell 資源庫 UI 的套件資訊清單值
 
@@ -44,7 +43,7 @@ ms.locfileid: "91772298"
 | **Version History** (版本歷程記錄) | 版本歷程記錄反映對 PowerShell 資源庫中的模組進行的更新。 如果使用 Delete 功能隱藏套件的版本，則除了對套件擁有者之外，系統將不會在版本歷程記錄中顯示版本。 | 否 | 否 |
 | **Project Site** (專案網站) | 模組的專案網站是在模組資訊清單中的 Privatedata\PSData 區段以 ProjectURI 提供。 在指令碼資訊清單中，是透過指定 .PROJECTURI 來控制。 | 是 | 是 |
 | **授權** | 模組的授權連結是在模組資訊清單中的 Privatedata\PSData 區段以 LicenseURI 提供。 在指令碼資訊清單中，是透過指定 .LICENSEURI 來控制。 請務必注意，如果授權不是透過 LicenseURI 提供，或在模組中提供，則該套件的使用規定是由 PowerShell 資源庫使用規定來指定。 如需詳細資訊，請參閱使用規定。 | 是 | 是 |
-| **圖示** | 您可以在指令碼資訊清單或模組資訊清單的 Privatedata-PSData 區段中提供 IconURI 旗標，為 PowerShell 資源庫中的任何套件指定圖示。 IconURI 應該指向具有透明背景的 85x85 影像。 URI **必須**是直接影像 URL，**不得**連至包含該影像的網頁，或 PowerShell 資源庫套件中的檔案。 | 是 | 是 |
+| **圖示** | 您可以在指令碼資訊清單或模組資訊清單的 Privatedata-PSData 區段中提供 IconURI 旗標，為 PowerShell 資源庫中的任何套件指定圖示。 IconURI 應該指向具有透明背景的 85x85 影像。 URI **必須** 是直接影像 URL， **不得** 連至包含該影像的網頁，或 PowerShell 資源庫套件中的檔案。 | 是 | 是 |
 
 ## <a name="editing-package-details"></a>編輯套件詳細資料
 

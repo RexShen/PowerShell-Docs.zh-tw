@@ -1,14 +1,13 @@
 ---
 ms.date: 09/11/2018
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 建立 PowerShell 資源庫帳戶
-ms.openlocfilehash: f43d7e65bb8bf9a9bbdda9790cc622786377fa38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章描述 PowerShell 資源庫的使用者帳戶需求
+ms.openlocfilehash: 24c7531e61128415a284d1b438b43f3af0d1053a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278770"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662601"
 ---
 # <a name="creating-a-powershell-gallery-account"></a>建立 PowerShell 資源庫帳戶
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: Just Enough Administration (JEA) 的改善功能
-ms.openlocfilehash: 9bb45ad2ddd459b99fc58610dfd8145992093624
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: JEA 是 WMF 5.0 中的新功能，可透過 PowerShell 遠端來啟用以角色為基礎的系統管理。 它藉由允許非系統管理員以系統管理員身分執行特定的命令、指令碼和可執行檔，來擴充現有受條件約束的端點基礎結構。
+ms.openlocfilehash: f255d0ecbd4bbd9a5ade4b6e19f066cc007481fb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808914"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654031"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) 的改善功能
 
@@ -65,7 +65,7 @@ RunAsVirtualAccount = $false
 
 ## <a name="conditional-access-policies"></a>條件式存取原則
 
-JEA 對於限制連接至系統且要管理系統的人員可做事項而言很實用，但若您同時想限制人員*何時*可使用 JEA 呢？ 我們已在工作階段設定檔 (.pssc) 中加入設定選項，以讓您指定使用者必須屬於哪個安全性群組才能建立 JEA 工作階段。 若您的環境中具有 Just In Time (JIT) 系統，且想要讓使用者先提高他們的權限，然後再存取高權限的 JEA 端點，則此作業相當實用。
+JEA 對於限制連接至系統且要管理系統的人員可做事項而言很實用，但若您同時想限制人員 *何時* 可使用 JEA 呢？ 我們已在工作階段設定檔 (.pssc) 中加入設定選項，以讓您指定使用者必須屬於哪個安全性群組才能建立 JEA 工作階段。 若您的環境中具有 Just In Time (JIT) 系統，且想要讓使用者先提高他們的權限，然後再存取高權限的 JEA 端點，則此作業相當實用。
 
 PSSC 檔案中新的 *RequiredGroups* 欄位可讓您指定邏輯，以判斷使用者是否可連接到 JEA。 其包含指定雜湊表 (選擇性地為巢狀)，該雜湊表會使用 'And' 及 'Or' 索引鍵來建構您的規則。 以下是如何使用此欄位的一些範例：
 

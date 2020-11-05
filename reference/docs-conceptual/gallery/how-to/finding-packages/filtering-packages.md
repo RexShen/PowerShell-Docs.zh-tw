@@ -1,21 +1,19 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: 篩選搜尋結果
-ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: 此文章描述用來篩選 PowerShell 資源庫內容的使用者介面。
+ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691474"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661409"
 ---
 # <a name="filtering-search-results"></a>篩選搜尋結果
 
 [套件索引標籤](https://www.powershellgallery.com/packages) \(英文\) 會顯示 PowerShell 資源庫中的所有可用套件。
 
-有數種方式可篩選、排序和搜尋套件。
-若要查看特定套件的更多詳細資料，請按一下 [套件]。
+有數種方式可篩選、排序和搜尋套件。 若要查看特定套件的更多詳細資料，請按一下 [套件]。
 
 ## <a name="filter-by"></a>篩選依據
 
@@ -38,15 +36,10 @@ ms.locfileid: "83691474"
   - 角色功能
   - 工作流程
 
-若只要查看 PowerShell 資源庫中的模組，請選取 [套件類型] 中的 [模組]。
-同樣地，若只要查看 PowerShell 資源庫中的指令碼，請選取 [套件類型] 中的 [指令碼]。
+若只要查看 PowerShell 資源庫中的模組，請選取 [套件類型] 中的 [模組]。 同樣地，若只要查看 PowerShell 資源庫中的指令碼，請選取 [套件類型] 中的 [指令碼]。
 
 > [!NOTE]
-> 篩選條件是內含的。
-> 範例：若已核取 [Cmdlet] 或 [函式] (或兩者)，將會顯示同時包含 Cmdlet 和函式的套件。
-> 如果未選取兩者，則不會顯示套件。
-> 同樣地，如果選取所有類別，則只會顯示包含其中一種類別的套件。
-> **不屬於所有這些類別的套件都不會出現。**
+> 篩選條件是內含的。 範例：若已核取 [Cmdlet] 或 [函式] (或兩者)，將會顯示同時包含 Cmdlet 和函式的套件。 如果未選取兩者，則不會顯示套件。 同樣地，如果選取所有類別，則只會顯示包含其中一種類別的套件。 **不屬於所有這些類別的套件都不會出現。**
 
 ## <a name="sort-by"></a>排序依據
 

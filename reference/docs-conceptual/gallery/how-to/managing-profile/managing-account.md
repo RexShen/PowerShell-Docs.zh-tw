@@ -1,14 +1,13 @@
 ---
 ms.date: 09/05/2018
-contributor: JKeithB
-keywords: gallery,powershell,cmdlet,psgallery
 title: PowerShell 資源庫帳戶設定
-ms.openlocfilehash: b71c7f0658c24ec2eeddb050e48b777a37c11917
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 此文章描述您在 PowerShell 資源庫中帳戶設定檔的設定
+ms.openlocfilehash: ab0e09aae6fea26ac6d85a35e30c8d06f31b121a
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771782"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662738"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell 資源庫帳戶設定
 

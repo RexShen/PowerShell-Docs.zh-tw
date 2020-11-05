@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: 解除安裝 WMF 5.0
-ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: 此文章說明如何從舊版 Windows 解除安裝 WMF。
+ms.openlocfilehash: d8078ea918db2c1cf9a7ddd6ea8d1413b593c0ff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236300"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92660814"
 ---
 # <a name="uninstallation-instructions"></a>解除安裝指示
 
@@ -39,4 +39,4 @@ wusa /uninstall /kb:3134760
 1. 開啟 **[控制台]** 。
 2. 開啟 **[程式集]** ，然後開啟 **[解除安裝程式]** 。
 3. 按一下 **[檢視安裝的更新]** 。
-4. 從已安裝的更新清單中選取 **[Windows Management Framework 5.0]** 。 這會對應到 *KB3134758*、*KB3134759* 或 *KB3134760*。 按一下 **[解除安裝]** 。
+4. 從已安裝的更新清單中選取 **[Windows Management Framework 5.0]** 。 這會對應到 *KB3134758* 、 *KB3134759* 或 *KB3134760* 。 按一下 **[解除安裝]** 。

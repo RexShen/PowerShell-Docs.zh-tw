@@ -2,12 +2,12 @@
 title: 了解 VS Code 及 PowerShell 中的檔案編碼
 description: 設定 VS Code 及 PowerShell 中的檔案編碼
 ms.date: 02/28/2019
-ms.openlocfilehash: a4b13bcfbe5cffc4e015a37a5fd64fbb8b91f949
-ms.sourcegitcommit: 01a1c253f48b61c943f6d6aca4e603118014015f
+ms.openlocfilehash: afad189ff20a4e73d25f15c48d6c4982b18f29a3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87900001"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142543"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>了解 VS Code 及 PowerShell 中的檔案編碼
 
@@ -15,9 +15,9 @@ ms.locfileid: "87900001"
 
 ## <a name="what-is-file-encoding-and-why-is-it-important"></a>什麼是檔案編碼，以及它為何如此重要？
 
-VS Code 會管理緩衝區中人工輸入的字元字串與檔案系統位元組之讀取/寫入區塊間的介面。 當 VS Code 儲存檔案時，其會使用文字編碼來決定每個字元會變成多少位元組。
+VS Code 會管理緩衝區中人工輸入的字元字串與檔案系統位元組之讀取/寫入區塊間的介面。 當 VS Code 儲存檔案時，其會使用文字編碼來決定每個字元會變成多少位元組。 如需詳細資訊，請參閱 [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)。
 
-同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VS Code 寫入檔案，而 PowerShell 讀取檔案，所以兩者需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為：_位元組_ -> _字元_ -> _權杖_ -> _抽象語法樹_ -> _執行_。
+同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VS Code 寫入檔案，而 PowerShell 讀取檔案，所以兩者需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為： _位元組_ -> _字元_ -> _權杖_ -> _抽象語法樹_ -> _執行_ 。
 
 VS Code 與 PowerShell 都使用合理的預設編碼設定來安裝。 不過，PowerShell 使用的預設編碼已隨著 PowerShell Core (v6.x) 發行而變更。 為確保在 VS Code 中使用 PowerShell 或 PowerShell 擴充功能時沒有任何問題，您需要正確設定 VS Code 與 PowerShell 設定。
 
@@ -41,27 +41,27 @@ VS Code 與 PowerShell 都使用合理的預設編碼設定來安裝。 不過�
 
 ### <a name="how-to-tell-when-you-have-encoding-issues"></a>如何分辨發生編碼問題
 
-編碼錯誤通常會顯示為指令碼的剖析錯誤。 如果您發現指令碼中有奇怪的字元序列，這可能就是問題。 在下列範例中，短破折號 (`–`) 顯示為字元 `â€"`：
+編碼錯誤通常會顯示為指令碼的剖析錯誤。 如果您發現指令碼中有奇怪的字元序列，這可能就是問題。 在下列範例中，短破折號 (`–`) 顯示為字元 `â&euro;"`：
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â€"From $from â€"To $recipient1 â€"Subject $subject  ...
++ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
 ```
 
-此問題發生的原因是 VS Code 將 `–` 字元以 UTF-8 編碼為位元組 `0xE2 0x80 0x93`。 當這些位元組解碼為 Windows-1252 時，它們就會解譯為字元 `â€"`。
+此問題發生的原因是 VS Code 將 `–` 字元以 UTF-8 編碼為位元組 `0xE2 0x80 0x93`。 當這些位元組解碼為 Windows-1252 時，它們就會解譯為字元 `â&euro;"`。
 
 您可能看到的一些奇怪字元序列包括：
 
 <!-- markdownlint-disable MD038 -->
-- `â€"`，而非`–`
-- `â€"`，而非`—`
+- `â&euro;"`，而非`–`
+- `â&euro;"`，而非`—`
 - `Ã„2`，而非`Ä`
-- `Â`，而非 ` ` (不分行空格)
-- `Ã©`，而非`é`
+- `Â`，而非 ` ` (不分行空格)
+- `Ã&copy;`，而非`é`
 <!-- markdownlint-enable MD038 -->
 
 這份方便的[參考](https://www.i18nqa.com/debug/utf8-debug.html)列出指出 UTF-8/Windows-1252 編碼問題的常見模式。
@@ -88,7 +88,7 @@ Unicode 編碼方式也有位元組順序標記 (BOM) 的概念。 BOM 發生在
 
 BOM 為選擇性，且使用情況不像在 Linux 環境中那麼熱門，因為各處普遍使用可靠的 UTF-8 慣例。 大部分的 Linux 應用程式假設文字輸入使用 UTF-8 編碼。 雖然許多 Linux 應用程式會辨識並正確處理 BOM，但也有很多不能，以致要使用這些應用程式操作文字中的成品。
 
-**因此**：
+**因此** ：
 
 - 如果您主要使用 Windows 應用程式和 Windows PowerShell，您應該會比較偏好使用 BOM 的 UTF-8 或 UTF-16 這類編碼。
 - 如果您跨平台工作，您應該會偏好使用 BOM 的 UTF-8。
@@ -131,6 +131,8 @@ VS Code 的預設編碼為不使用 BOM 的 UTF-8。
     "files.autoGuessEncoding": true
 }
 ```
+
+建議您考慮安裝適用於 Visual Studio Code 的 [Gremlins 追蹤器][]。 此延伸模組會顯示某些容易損毀的 Unicode 字元，因為其不可見或是看起來像其他一般字元。
 
 ## <a name="configuring-powershell"></a>設定 PowerShell
 
@@ -194,7 +196,7 @@ finally
 
 ### <a name="existing-scripts"></a>現有的指令碼
 
-檔案系統中現有指令碼可能需要重新編碼成您新選擇的編碼。 在 VS Code 的底部列中，您將會看到 UTF-8 標籤。 按一下它開啟動作列，然後選取 **以編碼方式儲存**。 您現在可為該檔案選擇新的編碼。 如需完整指示，請參閱 [VS Code 的編碼][]。
+檔案系統中現有指令碼可能需要重新編碼成您新選擇的編碼。 在 VS Code 的底部列中，您將會看到 UTF-8 標籤。 按一下它開啟動作列，然後選取 **以編碼方式儲存** 。 您現在可為該檔案選擇新的編碼。 如需完整指示，請參閱 [VS Code 的編碼][]。
 
 如果您需要重新編碼多個檔案，您可以使用下列指令碼：
 
@@ -254,6 +256,7 @@ ISE 應該會接受 BOM，但它也可能使用反映來[設定編碼](https://b
 
 有幾篇關於編碼和 PowerShell 設定編碼的文章值得閱讀：
 
+- [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)
 - [StackOverflow 上有關 PowerShell 編碼之 [@mklement0] 的摘要 ](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
 - 之前提出有關 VS Code-PowerShell 的編碼問題：
   - [#1308](https://github.com/PowerShell/VSCode-powershell/issues/1308)
@@ -273,3 +276,4 @@ ISE 應該會接受 BOM，但它也可能使用反映來[設定編碼](https://b
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [語言伺服器通訊協定]: https://microsoft.github.io/language-server-protocol/
 [VS Code 的編碼]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[Gremlins 追蹤器]: https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins \(英文\)

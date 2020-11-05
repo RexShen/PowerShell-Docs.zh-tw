@@ -2,19 +2,20 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 在 PowerShell 5.0 及更新版本中使用設定名稱來設定提取用戶端
-ms.openlocfilehash: d591e2a757130ccecaf4eaf9f363f607fca82b93
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章說明如何在 PowerShell 5.0 與更新版本中使用設定名稱來設定提取用戶端
+ms.openlocfilehash: db2b08605dd8bc7e48d9d5153861ce9b36118e21
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953625"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92644910"
 ---
 # <a name="set-up-a-pull-client-using-configuration-names-in-powershell-50-and-later"></a>在 PowerShell 5.0 及更新版本中使用設定名稱來設定提取用戶端
 
 > 適用於：Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> 提取伺服器 (Windows 功能「DSC 服務」  ) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
+> 提取伺服器 (Windows 功能「DSC 服務」) 是支援的 Windows Server 元件，但未計劃提供新特性或功能。 建議開始將受控用戶端轉換為 [Azure 自動化 DSC](/azure/automation/automation-dsc-getting-started) (包括 Windows Server 上提取伺服器以外的功能)，或[此處](pullserver.md#community-solutions-for-pull-service)列出的其中一個社群解決方案。
 
 在設定提取用戶端前，您應先設定提取伺服器。 雖然此順序非必要，但它有助於疑難排解，且可協助您確認註冊成功。 若要設定提取伺服器，您可以使用下列指南：
 
@@ -24,8 +25,7 @@ ms.locfileid: "71953625"
 每個目標節點都設定為下載設定、資源，甚至是報告其狀態。 下列各節會示範如何使用 SMB 共用或 HTTP DSC 提取伺服器來設定提取用戶端。 當節點的 LCM 重新整理時，它會連到設定的位置來下載任何所指派設定。 若有任何必要資源不存在於節點上，則其會自動從設定的位置下載它們。 若節點已使用[報表伺服器](reportServer.md)進行設定，它接著便會報告作業的狀態。
 
 > [!NOTE]
-> 本主題適用於 PowerShell 5.0。
-> 如需在 PowerShell 4.0 中設定提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)
+> 本主題適用於 PowerShell 5.0。 如需在 PowerShell 4.0 中設定提取用戶端的資訊，請參閱[在 PowerShell 4.0 中使用設定識別碼設定提取用戶端](pullClientConfigID4.md)
 
 ## <a name="configure-the-pull-client-lcm"></a>設定提取用戶端 LCM
 
@@ -43,20 +43,15 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>設定提取用戶端來下載設定
 
-每個用戶端都必須在**提取**模式中設定，並提供儲存其設定的提取伺服器 URL。 若要這樣做，您必須使用必要的資訊來設定本機設定管理員 (LCM)。 若要設定 LCM，必須先建立一種特殊設定，再加上 **DSCLocalConfigurationManager** 屬性裝飾。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)。
+每個用戶端都必須在 **提取** 模式中設定，並提供儲存其設定的提取伺服器 URL。 若要這樣做，您必須使用必要的資訊來設定本機設定管理員 (LCM)。 若要設定 LCM，必須先建立一種特殊設定，再加上 **DSCLocalConfigurationManager** 屬性裝飾。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)。
 
 下列指令碼會設定 LCM 從名為 "CONTOSO-PullSrv" 的伺服器提取設定。
 
-- 在此指令碼中，**ConfigurationRepositoryWeb** 區塊會定義提取伺服器。 **ServerURL** 屬性會指定提取伺服器的端點。
+- 在此指令碼中， **ConfigurationRepositoryWeb** 區塊會定義提取伺服器。 **ServerURL** 屬性會指定提取伺服器的端點。
 
-- **RegistrationKey** 屬性是提取伺服器的所有用戶端節點與該提取伺服器之間的共用金鑰。 相同的值儲存在提取伺服器上的檔案。
-  > [!NOTE]
-  > 註冊金鑰僅適用於 **Web** 提取伺服器。 您在 **SMB** 提取伺服器仍必須使用 **ConfigurationID**。
-  > 如需使用 **ConfigurationID** 設定提取伺服器的資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigId.md)
+- **RegistrationKey** 屬性是提取伺服器的所有用戶端節點與該提取伺服器之間的共用金鑰。 相同的值儲存在提取伺服器上的檔案。 > [!NOTE] > 註冊金鑰僅適用於 **Web** 提取伺服器。 您在 **SMB** 提取伺服器仍必須使用 **ConfigurationID** 。 > 如需使用 **ConfigurationID** 設定提取伺服器的資訊，請參閱[使用設定識別碼設定提取用戶端](pullClientConfigId.md)
 
-- **ConfigurationNames** 屬性是陣列，會指定用於用戶端節點的設定名稱。
-  >**注意：** 如果您在 **ConfigurationNames**指定一個以上的值，就也必須在設定中指定 **PartialConfiguration** 區塊。
-  >如需部分設定的相關資訊，請參閱 [PowerShell 預期狀態設定部分設定](partialConfigs.md)。
+- **ConfigurationNames** 屬性是陣列，會指定用於用戶端節點的設定名稱。 >**注意：** 如果您在 **ConfigurationNames** 中指定多個值，就也必須在設定中指定 **PartialConfiguration** 區塊。 > 如需部分設定的相關資訊，請參閱 [PowerShell Desired State Configuration 部分設定](partialConfigs.md)。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -153,5 +148,5 @@ PullClientConfigNames
 
 ## <a name="see-also"></a>另請參閱
 
-* [以設定識別碼設定提取用戶端](PullClientConfigNames.md)
-* [設定 DSC Web 提取伺服器](pullServer.md)
+- [以設定識別碼設定提取用戶端](PullClientConfigNames.md)
+- [設定 DSC Web 提取伺服器](pullServer.md)

@@ -2,18 +2,19 @@
 ms.date: 12/06/2019
 keywords: powershell,cmdlet
 title: Windows PowerShell 系統需求
-ms.openlocfilehash: 883da2f91c4a0b46e4bccbacd9933a52f8f476f6
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+description: 本文列出 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 與 Windows PowerShell 5.1 的系統需求，
+ms.openlocfilehash: a82c0b1d6bf53e4a97db8414050a122ae5b7745d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236079"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663835"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell 系統需求
 
 本文列出 Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0 與 Windows PowerShell 5.1 的系統需求， 以及特殊功能，例如 Windows PowerShell 整合式指令碼環境 (ISE)、通用訊息模型 (CIM) 命令與工作流程。
 
-Windows® 8.1 和 Windows Server® 2012 R2 包含所有必要的程式。 本文是專為舊版 Windows 使用者所撰寫。
+Windows&reg; 8.1 與 Windows Server&reg; 2012 R2 包含所有必要的程式。 本文是專為舊版 Windows 使用者所撰寫。
 
 ## <a name="operating-system-requirements"></a>作業系統需求
 
@@ -57,8 +58,8 @@ Windows PowerShell 4.0 是在下列版本的 Windows 上執行。 若要執行 W
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8.1                                 | 依預設安裝                                                                                       |
 | Windows Server 2012 R2                      | 依預設安裝                                                                                       |
-| Windows® 7 (含 Service Pack 1)              | 安裝 [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
-| Windows Server® 2008 R2 (含 Service Pack 1) | 安裝 [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows&reg; 7 (含 Service Pack 1)              | 安裝 [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
+| Windows Server&reg; 2008 R2 (含 Service Pack 1) | 安裝 [Windows Management Framework 4.0](https://www.microsoft.com/download/details.aspx?id=40855) |
 
 ### <a name="windows-powershell-30"></a>Windows PowerShell 3.0
 
@@ -68,8 +69,8 @@ Windows PowerShell 3.0 是在下列版本的 Windows 上執行。 若要執行 W
 | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Windows 8                                   | 依預設安裝                                                                                       |
 | Windows Server 2012                         | 依預設安裝                                                                                       |
-| Windows® 7 (含 Service Pack 1)              | 安裝 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
-| Windows Server® 2008 R2 (含 Service Pack 1) | 安裝 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows&reg; 7 (含 Service Pack 1)              | 安裝 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
+| Windows Server&reg; 2008 R2 (含 Service Pack 1) | 安裝 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
 | Windows Server 2008 (含 Service Pack 2)     | 安裝 [Windows Management Framework 3.0](https://www.microsoft.com/download/details.aspx?id=34595) |
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework 需求
@@ -137,7 +138,7 @@ Windows PowerShell 2.0 引擎的最低需求為 Microsoft .NET Framework 2.0.507
 
 Windows PowerShell 2.0、Windows PowerShell 3.0 和 Windows PowerShell 4.0 能在 Windows 預先安裝環境 (Windows PE) 中執行。 不過，不支援下列 Cmdlet。
 
-- 背景智慧型傳送服務 (BITS) Cmdlet。 如需詳細資訊，請參閱 [BitsTransfer](/powershell/module/bitstransfer/?view=win10-ps)。
+- 背景智慧型傳送服務 (BITS) Cmdlet。 如需詳細資訊，請參閱 [BitsTransfer](/powershell/module/bitstransfer/)。
 - [Get-EventLog](/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 - [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 - [Save-Help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)

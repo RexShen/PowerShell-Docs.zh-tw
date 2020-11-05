@@ -2,19 +2,19 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 使用 [資源設計工具] 工具
-ms.openlocfilehash: 04fd2fbcc5afd9f1c7cbfaa44d6bdfde93bca399
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: 資源設計工具是一組 Cmdlet，由 xDscResourceDesigner 模組所公開，可讓建立 PowerShell DSC 資源變得更為容易。
+ms.openlocfilehash: efe36d045ac3fba3823cb1f812bb5761d238fdf1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217486"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656488"
 ---
 # <a name="using-the-resource-designer-tool"></a>使用 [資源設計工具] 工具
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
-在本主題中，我們會建立管理 Active Directory 使用者的 DSC 資源。 請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xDscResourceDesigner** 模組。
+資源設計工具是一組 Cmdlet 工具，由 **xDscResourceDesigner** 模組所公開，讓建立 Windows PowerShell 預期狀態設定 (DSC) 資源變得更為容易。 這項資源中的 Cmdlet 會協助您建立新資源的 MOF 結構描述、指令碼模組和目錄結構。 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。 在此文章中，我們將會建立管理 Active Directory 使用者的 DSC 資源。 請使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 安裝 **xDscResourceDesigner** 模組。
 
 ## <a name="creating-resource-properties"></a>建立資源屬性
 
@@ -22,10 +22,10 @@ ms.locfileid: "86217486"
 
 參數名稱描述
 
-- **UserName**：唯一識別使用者的索引鍵屬性。
-- **Ensure**：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
-- **DomainCredential**：使用者的網域密碼。
-- **Password**：使用者視需要允許設定變更使用者密碼所要使用的密碼。
+- **UserName** ：唯一識別使用者的索引鍵屬性。
+- **Ensure** ：指定使用者帳戶應為 Present 或 Absent。 這個參數只會有兩個可能的值。
+- **DomainCredential** ：使用者的網域密碼。
+- **Password** ：使用者視需要允許設定變更使用者密碼所要使用的密碼。
 
 我們使用 `New-xDscResourceProperty` Cmdlet 建立屬性。 下列 PowerShell 命令會建立上述的屬性。
 

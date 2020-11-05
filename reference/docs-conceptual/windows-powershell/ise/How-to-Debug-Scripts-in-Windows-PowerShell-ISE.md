@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中偵錯指令碼
-ms.openlocfilehash: 6fbe340cbff832b5d0e2a5515ef432cec574a3c1
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 此文章描述如何使用 Windows PowerShell ISE 視覺化偵錯功能，對本機電腦上的指令碼進行偵錯。
+ms.openlocfilehash: c2e45e3b165e16c9dcd6852550d13fc2426986fa
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809344"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663807"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中偵錯指令碼
 
@@ -20,7 +20,7 @@ ms.locfileid: "83809344"
 
 您可以在 Windows PowerShell 偵錯環境中，設定三種中斷點類型︰
 
-1. **行中斷點**： 在指令碼作業期間，當到達指定的行時，就會暫停指令碼
+1. **行中斷點** ： 在指令碼作業期間，當到達指定的行時，就會暫停指令碼
 
 1. **變數中斷點。** 當指定的變數值變更時，指令碼就會暫停。
 
@@ -118,11 +118,11 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 ### <a name="to-start-debugging"></a>開始偵錯
 
-按 <kbd>F5</kbd> 鍵；按一下工具列中的**執行指令碼**圖示；或在 [偵錯]  功能表上，按一下 [執行/繼續]  。 指令碼會執行，直到它遇到第一個中斷點為止。 然後它會在此暫停作業，並反白暫停的行。
+按 <kbd>F5</kbd> 鍵；按一下工具列中的 **執行指令碼** 圖示；或在 [偵錯]  功能表上，按一下 [執行/繼續]  。 指令碼會執行，直到它遇到第一個中斷點為止。 然後它會在此暫停作業，並反白暫停的行。
 
 ### <a name="to-continue-debugging"></a>繼續偵錯
 
-請執行下列其中一個動作：按 <kbd>F5</kbd> 鍵、按一下工具列中的**執行指令碼**圖示、在 [偵錯]  功能表上，按一下 [執行/繼續]  、在主控台窗格中輸入 `C`，然後按 <kbd>ENTER</kbd>。 這會使指令碼繼續執行到下一個中斷點，或到指令碼結尾 (如果未遇到任何其他中斷點)。
+請執行下列其中一個動作：按 <kbd>F5</kbd> 鍵、按一下工具列中的 **執行指令碼** 圖示、在 [偵錯]  功能表上，按一下 [執行/繼續]  、在主控台窗格中輸入 `C`，然後按 <kbd>ENTER</kbd>。 這會使指令碼繼續執行到下一個中斷點，或到指令碼結尾 (如果未遇到任何其他中斷點)。
 
 ### <a name="to-view-the-call-stack"></a>檢視呼叫堆疊
 

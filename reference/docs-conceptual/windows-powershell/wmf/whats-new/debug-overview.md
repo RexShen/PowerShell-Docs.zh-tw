@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: wmf,powershell,設定
 title: PowerShell 指令碼偵錯的增強功能
-ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.0 在 Windows PowerShell 中新增了新的偵錯功能。
+ms.openlocfilehash: 5703343e1b85024931638e8b04a09f7208ea123c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808944"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646728"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell 指令碼偵錯的增強功能
 
@@ -19,7 +20,7 @@ PowerShell 主控台和 PowerShell ISE 現在可讓您針對執行中的指令�
 
 在主控台中，按下 <kbd>Ctrl</kbd>+<kbd>Break</kbd>。
 
-在 ISE 中，按下 <kbd>Ctrl</kbd>+<kbd>B</kbd>，或使用 [偵錯] -> [全部中斷]  功能表命令。
+在 ISE 中，按下 <kbd>Ctrl</kbd>+<kbd>B</kbd>，或使用 [偵錯] -> [全部中斷] 功能表命令。
 
 ## <a name="remote-debugging-and-remote-file-editing-in-powershell-ise"></a>PowerShell ISE 中的遠端偵錯和遠端檔案編輯
 

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: 預期狀態設定 (DSC) 的已知問題和限制
-ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5.x 中 DSC 的已知問題與限制
+ms.openlocfilehash: 1163ed9e130430f6bbca98405a8993bb054dd1a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808694"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662045"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>預期狀態設定 (DSC) 的已知問題和限制
 
@@ -44,19 +44,19 @@ mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 
 ## <a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>在 DebugMode 中使用 Get-DscConfiguration 時，LCM 可能會陷入不穩定的狀態
 
-如果 LCM 處於 DebugMode，按下 CTRL + C 以停止處理 `Get-DscConfiguration`，可能造成 LCM 進入不穩定狀態，而使得大部分的 DSC Cmdlet 都將無法運作。
+如果 LCM 處於 DebugMode，按下 CTRL+C 以停止處理 `Get-DscConfiguration`，可能會造成 LCM 進入不穩定狀態，而使得大部分的 DSC Cmdlet 都將無法運作。
 
-**解決方案：** 偵錯 `Get-DscConfiguration` Cmdlet 時，請勿按下 CTRL+C。
+**解決方案：** 對 `Get-DscConfiguration` Cmdlet 進行偵錯時，請勿按下 CTRL+C。
 
 ## <a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-DscConfiguration 在 DebugMode 中可能不會回應
 
 如果 LCM 處於 DebugMode，則嘗試停止 `Get-DscConfiguration` 所啟動的作業時，`Stop-DscConfiguration` 可能不會回應
 
-**解決方案：** 完成對 `Get-DscConfiguration` 所啟動的作業進行偵錯，如[偵錯 DSC 資源](/powershell/scripting/dsc/troubleshooting/debugResource)中所述。
+**解決方案：** 完成對 `Get-DscConfiguration` 所啟動的作業進行偵錯，如 [偵錯 DSC 資源](/powershell/scripting/dsc/troubleshooting/debugResource)中所述。
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>在 DebugMode 中不顯示詳細的錯誤訊息
 
-如果 LCM 處於 **DebugMode**，則 DSC 資源不會顯示詳細的錯誤訊息。
+如果 LCM 處於 **DebugMode** ，則 DSC 資源不會顯示詳細的錯誤訊息。
 
 **解決方案：** 停用 **DebugMode** 以查看資源中的詳細訊息
 
@@ -66,9 +66,9 @@ mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof
 
 **解決方案：** 無。
 
-## <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus 傳回提取循環作業，作為類型**一致性**
+## <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus 傳回提取循環作業，作為類型 **一致性**
 
-將節點設定為 PULL 重新整理模式時，對於每個執行的提取作業，`Get-DscConfigurationStatus` Cmdlet 會將作業類型報告為**一致性**，而非「初始」  。
+將節點設定為 PULL 重新整理模式時，對於每個執行的提取作業，`Get-DscConfigurationStatus` Cmdlet 會將作業類型報告為 **一致性** ，而非「初始」  。
 
 **解決方案：** 無。
 
@@ -156,7 +156,7 @@ Start-DscConfiguration -UseExisting -CimSession $session
 
 ## <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>Get-DscResource-Syntax 並未正確反映 PsDscRunAsCredential
 
-當資源將 **PsDscRunAsCredential** 標記為強制或不支援它時，**Syntax** 參數就不會正確反映它。
+當資源將 **PsDscRunAsCredential** 標記為強制或不支援它時， **Syntax** 參數就不會正確反映它。
 
 **解決方案：** 無。 不過，使用 IntelliSense 時，在 ISE 中撰寫設定會反映有關 **PsDscRunAsCredential** 屬性的正確中繼資料。
 

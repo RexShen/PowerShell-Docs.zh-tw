@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 設定資料的認證選項
-ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC 允許您提供認證，使您可以在特定使用者帳戶的內容 (而非本機系統帳戶) 中套用組態設定。
+ms.openlocfilehash: 41478dc042ca59fb70aa033de81b589a4a8c09c7
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870552"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658652"
 ---
 # <a name="credentials-options-in-configuration-data"></a>設定資料的認證選項
 
@@ -61,7 +62,7 @@ Group [String] #ResourceName
 
 DSC 在 `Local System` 下執行，所以它已有可變更本機使用者和群組的權限。 如果新增成員是本機帳戶，就不需要認證。 如果 `Group` 資源在本機群組中加入網域帳戶，就需要認證。
 
-Active Directory 不允許匿名查詢。 `Group` 資源的 `Credential` 屬性是用來查詢 Active Directory 的網域帳戶。 就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以*讀取* Active Directory 大部分的物件。
+Active Directory 不允許匿名查詢。 `Group` 資源的 `Credential` 屬性是用來查詢 Active Directory 的網域帳戶。 就多數情況而言，這可能是一般的使用者帳戶，因為使用者預設可以 *讀取* Active Directory 大部分的物件。
 
 ## <a name="example-configuration"></a>設定範例
 
@@ -205,9 +206,9 @@ ModuleVersion = "1.0";
 ### <a name="credentials-in-transit-and-at-rest"></a>傳輸中和待用的認證
 
 - **PSDscAllowPlainTextPassword** 旗標允許編譯包含純文字密碼的 MOF 檔案。 儲存包含純文字密碼的 MOF 檔案時，請採取預防措施。
-- 當 MOF 檔案以**推送**模式傳送到節點時，WinRM 會加密通訊以保護純文字密碼，除非您使用 **AllowUnencrypted** 參數覆寫預設值。
+- 當 MOF 檔案以 **推送** 模式傳送到節點時，WinRM 會加密通訊以保護純文字密碼，除非您使用 **AllowUnencrypted** 參數覆寫預設值。
   - 使用憑證加密 MOF，可以在 MOF 檔案套用到節點之前保護待用檔案。
-- 在**提取**模式中，您可以將 Windows 提取伺服器設定為使用 HTTPS，以使用 Internet Information Server 中所指定的通訊協定來加密流量。 如需詳細資訊，請參閱[設定 DSC 提取用戶端](../pull-server/pullclient.md)和[使用憑證保護 MOF 檔案](../pull-server/secureMOF.md)文章。
+- 在 **提取** 模式中，您可以將 Windows 提取伺服器設定為使用 HTTPS，以使用 Internet Information Server 中所指定的通訊協定來加密流量。 如需詳細資訊，請參閱[設定 DSC 提取用戶端](../pull-server/pullclient.md)和[使用憑證保護 MOF 檔案](../pull-server/secureMOF.md)文章。
   - 在 [Azure 自動化狀態設定](/azure/automation/automation-dsc-overview) \(機器翻譯\) 服務中，提取流量一律會加密。
 - 在節點上，MOF 檔案在待用時加密 (從 PowerShell 5.0 開始)。
   - 在 PowerShell 4.0 中，MOF 檔案在待用時是未加密的，除非它們在推送或提取至節點時使用憑證加密。
@@ -224,7 +225,7 @@ ModuleVersion = "1.0";
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-在上述的 DSC `Group` 資源範例中，查詢 Active Directory 網域*需要*網域帳戶。 發生這種情況時，請將 `PSDscAllowDomainUser` 屬性加入 `ConfigurationData` 區塊中，如下所示：
+在上述的 DSC `Group` 資源範例中，查詢 Active Directory 網域 *需要* 網域帳戶。 發生這種情況時，請將 `PSDscAllowDomainUser` 屬性加入 `ConfigurationData` 區塊中，如下所示：
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force

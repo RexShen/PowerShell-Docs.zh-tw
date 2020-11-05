@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,cmdlet
 title: PowerShellTab 物件
-ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: PowerShellTab 物件代表 Windows PowerShell 執行階段環境。
+ms.openlocfilehash: ac89875e408a41a92d7e3d1a83a849466296c3c6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809554"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663389"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab 物件
 
@@ -45,7 +45,7 @@ $psISE.PowerShellTabs[1].Invoke({dir})
 
 **\[useNewScope\]** - 預設為 `$true` 的選擇性布林值，若設定為 `$true`，就會建立一個在其中執行命令的新範圍。 它不會修改由命令指定之 PowerShell 索引標籤的執行階段環境。
 
-**\[millisecondsTimeout\]** - 選用的整數，預設為 **500**。
+**\[millisecondsTimeout\]** - 選用的整數，預設為 **500** 。
 如果命令沒有在指定的時間內完成，則命令會產生 **TimeoutException** 並顯示「作業逾時」訊息。
 
 ```powershell
@@ -109,7 +109,7 @@ $secondTab.CanInvoke
 
 ### <a name="consolepane"></a>ConsolePane
 
-在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane**。
+在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。 在 Windows PowerShell ISE 2.0 中，這名為 **CommandPane** 。
 
 唯讀屬性，可取得主控台窗格 [editor](The-ISEEditor-Object.md) 物件。
 
@@ -169,7 +169,7 @@ $psISE.CurrentPowerShellTab.output.clear()
 
 在 Windows PowerShell ISE 2.0 與更新的版本中支援。
 
-唯讀屬性，可取得目前的提示文字。 注意：**Prompt** 功能可以透過使用者設定檔覆寫。 如果結果不是簡單字串，則此屬性不會傳回任何項目。
+唯讀屬性，可取得目前的提示文字。 注意： **Prompt** 函式可以透過使用者&trade;設定檔加以覆寫。 如果結果不是簡單字串，則此屬性不會傳回任何項目。
 
 ```powershell
 # Gets the current prompt text.

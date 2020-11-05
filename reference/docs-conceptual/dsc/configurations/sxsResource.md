@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 匯入所安裝資源的特定版本
-ms.openlocfilehash: 5ed81e11aa67eb6590d958647f48a33b1b5f1c0e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章說明如何安裝特定版本的資源模組並將其匯入您的設定。
+ms.openlocfilehash: bb7b3273a5a3fed94fecd90dd3ea1e623fbc332b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953985"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645046"
 ---
 # <a name="import-a-specific-version-of-an-installed-resource"></a>匯入所安裝資源的特定版本
 
@@ -17,19 +18,19 @@ ms.locfileid: "71953985"
 
 ## <a name="installing-separate-resource-versions-side-by-side"></a>並存安裝各個資源版本
 
-您可以使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 的 **MinimumVersion**、**MaximumVersion** 與 **RequiredVersion** 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
+您可以使用 [Install-Module](/powershell/module/PowershellGet/Install-Module) Cmdlet 的 **MinimumVersion** 、 **MaximumVersion** 與 **RequiredVersion** 參數，指定要安裝的模組版本。 呼叫 **Install-Module** 但未指定版本，會安裝最新的版本。
 
-例如，**xFailOverCluster** 模組有多個版本，每個模組各包含一個 **xCluster** 資源。 呼叫 **Install-Module** 但未指定版本號碼，就會安裝最新版的模組。
+例如， **xFailOverCluster** 模組有多個版本，每個模組各包含一個 **xCluster** 資源。 呼叫 **Install-Module** 但未指定版本號碼，就會安裝最新版的模組。
 
 ```powershell
 PS> Install-Module xFailOverCluster
 PS> Get-DscResource xCluster
 ```
 
-```output
-ImplementedAs   Name                      ModuleName                     Version    Properties
--------------   ----                      ----------                     -------    ----------
-PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, ...
+```Output
+ImplementedAs   Name          ModuleName           Version    Properties
+-------------   ----          ----------           -------    ----------
+PowerShell      xCluster      xFailOverCluster     1.2.0.0    {DomainAdministratorCredential, ...
 ```
 
 若要安裝特定版本的模組，請將 **RequiredVersion** 指定為 1.1.0.0。 這會並存安裝指定的版本與已安裝的版本。
@@ -44,11 +45,11 @@ PS> Install-Module xFailOverCluster -RequiredVersion 1.1
 PS> Get-DscResource xCluster
 ```
 
-```output
-ImplementedAs   Name                      ModuleName                     Version    Properties
--------------   ----                      ----------                     -------    ----------
-PowerShell      xCluster                  xFailOverCluster               1.1        {DomainAdministratorCredential, Name, ...
-PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, Name, ...
+```Output
+ImplementedAs   Name          ModuleName            Version    Properties
+-------------   ----          ----------            -------    ----------
+PowerShell      xCluster      xFailOverCluster      1.1        {DomainAdministratorCredential, Name, ...
+PowerShell      xCluster      xFailOverCluster      1.2.0.0    {DomainAdministratorCredential, Name, ...
 ```
 
 ## <a name="specifying-a-resource-version-in-a-configuration"></a>在設定中指定資源版本
@@ -74,7 +75,7 @@ configuration VersionTest
 }
 ```
 
->注意︰PowerShell 4.0 中無法使用 Import-DscResource 的 ModuleVersion 參數。 在 PowerShell 4.0 中您可以指定模組版本，方法是將模組規格物件傳遞至 Import-DscResource 的 ModuleName 參數。 模組規格物件是包含 ModuleName 與 RequiredVersion 索引鍵的雜湊表。 例如：
+PowerShell 4.0 中無法使用 Import-DscResource 的 ModuleVersion 參數。 在 PowerShell 4.0 中您可以指定模組版本，方法是將模組規格物件傳遞至 Import-DscResource 的 ModuleName 參數。 模組規格物件是包含 ModuleName 與 RequiredVersion 機碼的雜湊表。 例如：
 
 ```powershell
 configuration VersionTest

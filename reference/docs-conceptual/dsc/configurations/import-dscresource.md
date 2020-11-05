@@ -2,17 +2,17 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,設定,安裝
 title: 使用 Import-DSCResource
-ms.openlocfilehash: 0fa11755558510b986ac24df120579ea15a43689
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: Import-DSCResource 是動態關鍵字，只能在設定指令碼區塊中使用。 其是用來匯入設定中所需的資源模組。
+ms.openlocfilehash: f6dcad2c56848ec25eb79332c96fe6b0d438fe95
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786708"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658505"
 ---
 # <a name="using-import-dscresource"></a>使用 Import-DSCResource
 
-`Import-DScResource` 是動態關鍵字，只能在設定指令碼區塊中使用。 `Import-DSCResource` 關鍵字用於匯入設定中所需的任何資源。
-`$pshome` 下的資源會自動匯入，但明確地匯入[設定](Configurations.md)中使用的所有資源仍被視為最佳做法。
+`Import-DSCResource` 是動態關鍵字，只能在設定指令碼區塊中使用，以匯入設定中所需的任何資源。 `$PSHOME` 下的資源會自動匯入，但明確地匯入[設定](Configurations.md)中使用的所有資源仍被視為最佳做法。
 
 `Import-DSCResource` 語法如下所示。 依名稱指定模組時，需要在新行上列出每個模組。
 
@@ -125,14 +125,14 @@ Present, Absent.
 Intellisense 和結構描述驗證允許您在剖析和編譯時間擷取更多的錯誤，從而避免在執行階段出現複雜情況。
 
 > [!NOTE]
-> 每個 DSC 資源都可以有一個名稱，以及由結構描述所定義的 **FriendlyName**。 以下是 "MSFT_ServiceResource.shema.mof" 的前兩行。
+> 每個 DSC 資源都可以有一個名稱，以及由結構描述所定義的 **FriendlyName** 。 以下是 "MSFT_ServiceResource.shema.mof" 的前兩行。
 >
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
 >
-> 在設定中使用此資源時，您可以指定 **MSFT_ServiceResource** 或 **Service**。
+> 在設定中使用此資源時，您可以指定 **MSFT_ServiceResource** 或 **Service** 。
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 和 v5 的差異
 

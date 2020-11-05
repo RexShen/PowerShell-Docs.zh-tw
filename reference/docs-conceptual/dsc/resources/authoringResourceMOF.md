@@ -2,18 +2,20 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 撰寫自訂的 DSC 資源與 MOF
-ms.openlocfilehash: ba857fa504bfd84accfd7f260b1fff1228db40ba
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: 此文章在 MOF 檔案中定義 DSC 自訂資源的結構描述，並將該資源實作到 PowerShell 指令檔中。
+ms.openlocfilehash: e79a37699c468b2c55c307c96f1c193a2c1595b3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217520"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667176"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>撰寫自訂的 DSC 資源與 MOF
 
 > 適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-本主題中，我們會在 MOF 檔案中定義 Windows PowerShell 預期狀態設定 (DSC) 自訂資源的結構描述，並在 Windows PowerShell 指令碼檔案中實作資源。 這個自訂的資源是用於建立和維護網站。
+在此文章中，我們會在 MOF 檔案中定義 Windows PowerShell Desired State Configuration (DSC) 自訂資源的結構描述，並在 Windows PowerShell 指令檔中實作該資源。
+這個自訂的資源是用於建立和維護網站。
 
 ## <a name="creating-the-mof-schema"></a>建立 MOF 結構描述
 
@@ -68,8 +70,7 @@ class Demo_IISWebsite : OMI_BaseResource
 
 ### <a name="writing-the-resource-script"></a>撰寫資源指令碼
 
-資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：`Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource`。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在名為 `<ResourceName>.psm1` 的檔案中。
-在下列範例中，這些函式儲存在 `Demo_IISWebsite.psm1` 檔案中。
+資源指令碼會實作資源的邏輯。 這個模組中必須包含三個函式，它們是：`Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource`。 這三個函式都必須使用與您為資源建立的 MOF 結構描述所定義之屬性集相同的參數集。 在本文件中，這個屬性集稱為「資源屬性」。 將這三個函式存放在名為 `<ResourceName>.psm1` 的檔案中。 在下列範例中，這些函式儲存在 `Demo_IISWebsite.psm1` 檔案中。
 
 > [!NOTE]
 > 當您在資源上多次執行相同的設定指令碼時，您應該不會收到任何錯誤，而且資源的狀態也應該和只執行一次指令碼的狀態相同。 若要達成這個目標，請確認 `Get-TargetResource` 和 `Test-TargetResource` 函式不變更資源，而且以相同參數順序值多次叫用 `Set-TargetResource` 函式永遠等於只叫用一次。
@@ -77,7 +78,8 @@ class Demo_IISWebsite : OMI_BaseResource
 在 `Get-TargetResource` 函式的實作中，使用提供為參數的重要資源屬性值，檢查指定的資源執行個體狀態。 這個函式必須傳回雜湊表，將所有的資源屬性列為索引鍵，這些屬性的實際值列為對應值。 範例請見下列程式碼。
 
 ```powershell
-# DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
+# DSC uses the Get-TargetResource function to fetch the status of the resource instance
+# specified in the parameters for the target machine
 function Get-TargetResource
 {
     param
@@ -105,8 +107,11 @@ function Get-TargetResource
 
         $getTargetResourceResult = $null;
 
-        <# Insert logic that uses the mandatory parameter values to get the website and assign it to a variable called $Website #>
-        <# Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise #>
+        <#
+          Insert logic that uses the mandatory parameter values to get the website and
+          assign it to a variable called $Website
+          Set $ensureResult to "Present" if the requested website exists and to "Absent" otherwise
+        #>
 
         # Add all Website properties to the hash table
         # This simple example assumes that $Website is not null
@@ -161,10 +166,14 @@ function Set-TargetResource
         [string[]]$Protocol
     )
 
-    <# If Ensure is set to "Present" and the website specified in the mandatory input parameters does not exist, then create it using the specified parameter values #>
-    <# Else, if Ensure is set to "Present" and the website does exist, then update its properties to match the values provided in the non-mandatory parameter values #>
-    <# Else, if Ensure is set to "Absent" and the website does not exist, then do nothing #>
-    <# Else, if Ensure is set to "Absent" and the website does exist, then delete the website #>
+    <#
+        If Ensure is set to "Present" and the website specified in the mandatory input parameters
+          does not exist, then create it using the specified parameter values
+        Else, if Ensure is set to "Present" and the website does exist, then update its properties
+          to match the values provided in the non-mandatory parameter values
+        Else, if Ensure is set to "Absent" and the website does not exist, then do nothing
+        Else, if Ensure is set to "Absent" and the website does exist, then delete the website
+    #>
 }
 ```
 
@@ -208,18 +217,19 @@ function Test-TargetResource
     # Get the current state
     $currentState = Get-TargetResource -Ensure $Ensure -Name $Name -PhysicalPath $PhysicalPath -State $State -ApplicationPool $ApplicationPool -BindingInfo $BindingInfo -Protocol $Protocol
 
-    #Write-Verbose "Use this cmdlet to deliver information about command processing."
+    # Write-Verbose "Use this cmdlet to deliver information about command processing."
 
-    #Write-Debug "Use this cmdlet to write debug information while troubleshooting."
+    # Write-Debug "Use this cmdlet to write debug information while troubleshooting."
 
-    #Include logic to
+    # Include logic to
     $result = [System.Boolean]
-    #Add logic to test whether the website is present and its status matches the supplied parameter values. If it does, return true. If it does not, return false.
+    # Add logic to test whether the website is present and its status matches the supplied
+    # parameter values. If it does, return true. If it does not, return false.
     $result
 }
 ```
 
-> [!Note]
+> [!NOTE]
 > 為方便偵錯，請在前述三個函式實作中使用 `Write-Verbose` Cmdlet。 這個 Cmdlet 會將文字寫入詳細資訊訊息串流中。 預設不顯示詳細資訊訊息串流，但您可以變更 **$VerbosePreference** 變數的值或在 DSC cmdlets = new 中使用 **Verbose** 參數來顯示它。
 
 ### <a name="creating-the-module-manifest"></a>建立模組資訊清單
@@ -281,7 +291,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
 > [!Note]
-> PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential**。
+> PowerShell 5.0 或更新版本中支援 **PsDscRunAsCredential** 。
 
 您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
 
@@ -306,5 +316,5 @@ if (PsDscContext.RunAsUser) {
 $global:DSCMachineStatus = 1
 ```
 
-為了讓 LCM 重新啟動節點，**RebootNodeIfNeeded** 旗標必須設為 `$true`。
+為了讓 LCM 重新啟動節點， **RebootNodeIfNeeded** 旗標必須設為 `$true`。
 **ActionAfterReboot** 設定也應設為 **ContinueConfiguration** (預設值)。 如需設定 LCM 的詳細資訊，請參閱[設定本機設定管理員](../managing-nodes/metaConfig.md)或[設定本機設定管理員 (v4)](../managing-nodes/metaConfig4.md)。

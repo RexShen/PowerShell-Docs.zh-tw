@@ -1,17 +1,17 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: 探索 Windows PowerShell ISE
-ms.openlocfilehash: 03728a8c83962894b27738609a5b1bec841fdb13
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 此文章是 Windows PowerShell ISE 的功能概觀
+ms.openlocfilehash: f389ac60da13141329d81baf08e9100b144022c3
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809824"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663816"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探索 Windows PowerShell ISE
 
-您可以使用 Windows PowerShell® 整合式指令碼環境 (ISE) 建立及執行命令和指令碼，並對其偵錯。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
+您可以使用 Windows PowerShell&reg; 整合式指令碼環境 (ISE)，來建立及執行命令與指令碼，並對其偵錯。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
 
 > [!NOTE]
 > 從 Windows PowerShell ISE 3.0 開始，命令窗格和輸出窗格已合併為單一主控台窗格。

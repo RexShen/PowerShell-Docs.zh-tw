@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,cmdlet
 title: ISE 物件模型階層
-ms.openlocfilehash: 1ec5810fc5e7b765c2a08af83bce0415dd61a54b
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 此文章說明屬於 Windows PowerShell ISE 一部分的物件階層。
+ms.openlocfilehash: 00980cda72f05bc6ccb398079b129de13a98f783
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809734"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658332"
 ---
 # <a name="the-ise-object-model-hierarchy"></a>ISE 物件模型階層
 
-本主題說明隸屬於 Windows PowerShell 整合式指令碼環境 (ISE) 一部分的物件階層。 Windows PowerShell ISE 隨附於 Windows PowerShell 3.0、4.0 和 5.1。 按一下物件，即會帶領您進入定義物件之類別的參考文件。
+此文章說明屬於 Windows PowerShell 整合式指令碼環境 (ISE) 一部分的物件階層。 Windows PowerShell ISE 隨附於 Windows PowerShell 3.0、4.0 和 5.1。 按一下物件，即會帶領您進入定義物件之類別的參考文件。
 
 ## <a name="psise-object"></a>$psISE 物件
 

@@ -2,12 +2,13 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: 使用 PowerShell 類別撰寫自訂的 DSC 資源
-ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+description: 此文章說明如何建立能管理位於指定路徑之檔案的簡單資源。
+ms.openlocfilehash: 72a828795c29e10ff66f164b8871b0fea7a1e0a8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217554"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667312"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>使用 PowerShell 類別撰寫自訂的 DSC 資源
 
@@ -17,7 +18,7 @@ ms.locfileid: "86217554"
 
 在以類別為基礎的 DSC 資源中，結構描述會定義為類別屬性，它可以使用屬性 (attribute) 修改以指定屬性 (property) 類型。 資源是由 `Get()` 、`Set()` 和 `Test()` 方法實作，它們相當於指令碼資源的 `Get-TargetResource`、`Set-TargetResource` 和 `Test-TargetResource` 函式。
 
-本主題會建立名為 **FileResource** 的簡單資源，管理指定路徑的檔案。
+在此文章中，我們會建立名為 **FileResource** 的簡單資源，以管理位於指定路徑的檔案。
 
 如需 DSC 資源的詳細資訊，請參閱[建置自訂的 Windows PowerShell 預期狀態設定資源](authoringResource.md)。
 
@@ -475,20 +476,20 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>支援 PsDscRunAsCredential
 
-> [注意] PowerShell 5.0 及更新版本支援 **PsDscRunAsCredential**。
+> [注意] PowerShell 5.0 及更新版本支援 **PsDscRunAsCredential** 。
 
 您可以在 [DSC 設定](../configurations/configurations.md)資源區塊中使用 **PsDscRunAsCredential** 特性，以指定該資源應該在一組指定的認證下執行。 如需詳細資訊，請參閱[以使用者認證執行 DSC](../configurations/runAsUser.md)。
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>針對您的資源要求使用或不允許使用 PsDscRunAsCredential
 
-`DscResource()` 屬性可接受選擇性的參數 **RunAsCredential**。 此參數可接受下列三個值其中之一：
+`DscResource()` 屬性可接受選擇性的參數 **RunAsCredential** 。 此參數可接受下列三個值其中之一：
 
-- 對呼叫此資源的設定來說，可以選擇是否使用 `Optional` **PsDscRunAsCredential**。 這是預設值。
-- 對呼叫此資源的所有設定來說，必須使用 `Mandatory` **PsDscRunAsCredential**。
-- `NotSupported`：呼叫此資源的設定無法使用 **PsDscRunAsCredential**。
+- 對呼叫此資源的設定來說，可以選擇是否使用 `Optional` **PsDscRunAsCredential** 。 這是預設值。
+- 對呼叫此資源的所有設定來說，必須使用 `Mandatory` **PsDscRunAsCredential** 。
+- `NotSupported`：呼叫此資源的設定無法使用 **PsDscRunAsCredential** 。
 - `Default`：與 `Optional` 相同。
 
-例如，使用下列屬性可以指定您的自訂資源不支援使用 **PsDscRunAsCredential**：
+例如，使用下列屬性可以指定您的自訂資源不支援使用 **PsDscRunAsCredential** ：
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]

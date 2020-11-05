@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
-keywords: 資源庫,powershell,cmdlet,psget
 title: 具備相容 PowerShell 版本的指令碼
-ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 此文章說明 PowerShellGet Cmdlet 如何支援 Desktop 與 Core 版本的 PowerShell 指令碼。
+ms.openlocfilehash: c9d8af24be8138283027263c62140b3fd04d6b24
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328059"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656048"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>具備相容 PowerShell 版本的指令碼
 

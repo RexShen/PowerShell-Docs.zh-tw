@@ -1,14 +1,13 @@
 ---
 ms.date: 12/11/2018
-contributor: JKeithB, SydneyhSmith
-keywords: gallery,powershell,cmdlet,psgallery
 title: 具有相容 PowerShell 版本或作業系統的套件
-ms.openlocfilehash: fce1383fa604a555a40b050ce92c5cc45ca7054c
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: 此文章描述如何根據與特定平台或版本的相容性來搜尋 PowerShell 資源庫。
+ms.openlocfilehash: 9806c09c85febfd74bb69adf3d294fb4f559ff23
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691442"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661242"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>具有相容 PowerShell 版本或作業系統的套件
 
@@ -32,18 +31,17 @@ PowerShell 的兩個版本為：
 
 使用 Tags:"PSEdition_Desktop" 和 Tags:"PSEdition_Core" 篩選 PowerShell Gallery 上的套件。
 
-### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>使用 Tags:"PSEdition_Core" 搜尋與 PowerShell Core 版本相容的項目。
+### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>使用 Tags:"PSEdition_Core" 來搜尋與 PowerShell Core 版本相容的項目
 
 ![與 Core PSEdition 相容之項目的搜尋結果](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
-### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>使用 Tags:"PSEdition_Desktop" 搜尋與 PowerShell Desktop 版本相容的項目。
+### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>使用 Tags:"PSEdition_Desktop" 來搜尋與 PowerShell Desktop 版本相容的項目
 
 ![與 Desktop PSEdition 相容之項目的搜尋結果](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>使用 PowerShell 來搜尋套件以尋找相容的版本
-您可以指定標籤來篩選 PowerShell 版本和 OS。
-您可以使用 `Find-Package` Cmdlet，指定 `-Tag` 參數來指定您瞄準的目標版本 (和 OS)。
-例如：
+
+您可以指定標籤來篩選 PowerShell 版本和 OS。 您可以使用 `Find-Package` Cmdlet，指定 `-Tag` 參數來指定您瞄準的目標版本 (和 OS)。 例如：
 
 ```powershell
 # Find modules compatible with PowerShell Core:

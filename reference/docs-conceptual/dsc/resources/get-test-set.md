@@ -2,21 +2,22 @@
 ms.date: 07/08/2020
 keywords: dsc,powershell,設定,安裝
 title: Get-Test-Set
-ms.openlocfilehash: f7b7e947a85832365a783e40c25a25bfaa9fff8d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: 此文章說明如何在 DSC 設定中實作 Get、Test 與 Set 方法。
+ms.openlocfilehash: e0da1452a1237c550f52a4a4f9e4400f801ed7cd
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771510"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646806"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >適用於：Windows PowerShell 4.0、Windows PowerShell 5.0
 
-PowerShell 預期狀態設定是圍繞著**取得**、**測試**及**設定**流程所建構的。 每個 DSC [資源](resources.md)均包含可用以完成上述各項作業的方法。
-在[設定](../configurations/configurations.md)中，您會定義資源區塊來填滿索引鍵，以成為適用於資源之**取得**、**測試**及**設定**方法的參數。
+PowerShell 預期狀態設定是圍繞著 **取得** 、 **測試** 及 **設定** 流程所建構的。 每個 DSC [資源](resources.md)均包含可用以完成上述各項作業的方法。
+在 [設定](../configurations/configurations.md)中，您會定義資源區塊來填滿索引鍵，以成為適用於資源之 **取得** 、 **測試** 及 **設定** 方法的參數。
 
-這是適用於**服務**資源區塊的語法。 **服務**資源會設定 Windows 服務。
+這是適用於 **服務** 資源區塊的語法。 **服務** 資源會設定 Windows 服務。
 
 ```syntax
 Service [String] #ResourceName
@@ -36,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-**服務**資源的**取得**、**測試**及**設定**方法將具備可接受這些值的參數區塊。
+**服務** 資源的 **取得** 、 **測試** 及 **設定** 方法將具備可接受這些值的參數區塊。
 
 ```powershell
 param
@@ -85,9 +86,9 @@ param
 ```
 
 > [!NOTE]
-> 用來定義資源的語言和方法會決定將如何定義**取得**、**測試**及**設定**方法。
+> 用來定義資源的語言和方法會決定將如何定義 **取得** 、 **測試** 及 **設定** 方法。
 
-因為**服務**資源只有一個必要的索引鍵 (`Name`)，所以**服務**區塊資源可能如下所示般簡單：
+因為 **服務** 資源只有一個必要的索引鍵 (`Name`)，所以 **服務** 區塊資源可能如下所示般簡單：
 
 ```powershell
 Configuration TestConfig
@@ -120,16 +121,16 @@ ModuleVersion = "1.0";
 };
 ```
 
-套用時，[本機設定管理員](../managing-nodes/metaConfig.md) (LCM) 會從 `.mof` 檔案讀取值 "Spooler"，傳遞給 **Service** 資源其 "MyService" 執行個體的 **Get**、**Test** 和 **Set** 方法的 **Name** 參數。
+套用時， [本機設定管理員](../managing-nodes/metaConfig.md) (LCM) 會從 `.mof` 檔案讀取值 "Spooler"，傳遞給 **Service** 資源其 "MyService" 執行個體的 **Get** 、 **Test** 和 **Set** 方法的 **Name** 參數。
 
 ## <a name="get"></a>Get
 
-資源的**取得**方法會在目標節點上設定資源時擷取其狀態。 此狀態會當成[雜湊表](/powershell/module/microsoft.powershell.core/about/about_hash_tables)傳回。
-**雜湊表**的索引鍵將是資源接受的可設定值或參數。
+資源的 **取得** 方法會在目標節點上設定資源時擷取其狀態。 此狀態會當成[雜湊表](/powershell/module/microsoft.powershell.core/about/about_hash_tables)傳回。 **雜湊表** 的索引鍵將是資源接受的可設定值或參數。
 
-**取得**方法會直接對應至 [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) Cmdlet。 當您呼叫 `Get-DSCConfiguration` 時，LCM 會在目前套用的設定中執行每個資源的**取得**方法。 LCM 會使用儲存在 `.mof` 檔案中的索引鍵值，以作為每個對應資源執行個體的參數。
+**取得** 方法會直接對應至 [Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) Cmdlet。
+當您呼叫 `Get-DSCConfiguration` 時，LCM 會在目前套用的設定中執行每個資源的 **取得** 方法。 LCM 會使用儲存在 `.mof` 檔案中的索引鍵值，以作為每個對應資源執行個體的參數。
 
-這是設定 "Spooler" 服務的**服務**資源範例輸出。
+這是設定 "Spooler" 服務的 **服務** 資源範例輸出。
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +156,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-輸出會顯示目前可由**服務**資源設定的值屬性。
+輸出會顯示目前可由 **服務** 資源設定的值屬性。
 
 ```syntax
 Service [String] #ResourceName
@@ -177,9 +178,9 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>測試
 
-資源的**測試**方法會判斷目標節點目前是否符合資源「期望狀態」__ 的規範。 **測試**方法只會傳回 `$true` 或 `$false`，以指出節點是否符合規範。 當您呼叫 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) 時，LCM 會在目前套用的設定中呼叫每個資源的**取得**方法。 LCM 會使用儲存於 ".mof" 檔案的索引鍵值作為每個對應資源執行個體的參數。
+資源的 **測試** 方法會判斷目標節點目前是否符合資源「期望狀態」的規範。 **測試** 方法只會傳回 `$true` 或 `$false`，以指出節點是否符合規範。 當您呼叫 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) 時，LCM 會在目前套用的設定中呼叫每個資源的 **取得** 方法。 LCM 會使用儲存於 ".mof" 檔案的索引鍵值作為每個對應資源執行個體的參數。
 
-如果任何個別資源的**測試**結果是 `$false`，`Test-DSCConfiguration` 會傳回 `$false`，指出節點不符合規範。 如果所有資源的**測試**方法會傳回 `$true`，`Test-DSCConfiguration` 會傳回 `$true`，以指出節點符合規範。
+如果任何個別資源的 **測試** 結果是 `$false`，`Test-DSCConfiguration` 會傳回 `$false`，指出節點不符合規範。 如果所有資源的 **測試** 方法會傳回 `$true`，`Test-DSCConfiguration` 會傳回 `$true`，以指出節點符合規範。
 
 ```powershell
 Test-DSCConfiguration
@@ -205,9 +206,9 @@ localhost       {[Service]Spooler}                                            Tr
 
 ## <a name="set"></a>設定
 
-資源的**設定**方法會嘗試強制節點符合資源「期望狀態」** 的規範。 **設定**方法意味著**等冪**，這表示**設定**會多次執行，且一律取得相同結果且不會有任何錯誤。 當您執行 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) 時，LCM 會在目前套用的設定中循環執行每個資源。 LCM 會在 ".mof" 檔案中擷取目前資源執行個體的索引鍵值，並使用它們作為**測試**方法的參數。 如果**測試**方法傳回 `$true`，則該節點符合目前資源的規範，且會跳過**設定**方法。 如果**測試**傳回 `$false`，則節點不符合規範。 LCM 會將資源執行個體的索引鍵值當作參數傳遞給資源的**設定**方法，還原節點以符合規範。
+資源的 **設定** 方法會嘗試強制節點符合資源「期望狀態」的規範。 **設定** 方法意味著 **等冪** ，這表示 **設定** 會多次執行，且一律取得相同結果且不會有任何錯誤。 當您執行 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) 時，LCM 會在目前套用的設定中循環執行每個資源。 LCM 會在 ".mof" 檔案中擷取目前資源執行個體的索引鍵值，並使用它們作為 **測試** 方法的參數。 如果 **測試** 方法傳回 `$true`，則該節點符合目前資源的規範，且會跳過 **設定** 方法。 如果 **測試** 傳回 `$false`，則節點不符合規範。 LCM 會將資源執行個體的索引鍵值當作參數傳遞給資源的 **設定** 方法，還原節點以符合規範。
 
-指定 **Verbose** 和 **Wait** 參數，即可監看 `Start-DSCConfiguration` Cmdlet 的進度。 在此範例中，節點已經符合規範。 `Verbose` 輸出指出已跳過**設定**方法。
+指定 **Verbose** 和 **Wait** 參數，即可監看 `Start-DSCConfiguration` Cmdlet 的進度。 在此範例中，節點已經符合規範。 `Verbose` 輸出指出已跳過 **設定** 方法。
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting

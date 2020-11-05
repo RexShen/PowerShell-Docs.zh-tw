@@ -2,12 +2,13 @@
 ms.date: 06/12/2017
 keywords: dsc,powershell,設定,安裝
 title: 偵錯 DSC 資源
-ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+description: 此文章說明如何啟用對 DSC 設定的偵錯。
+ms.openlocfilehash: 5dda217e8dc9cc4b8699c82153c1a588d405d99e
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83691965"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654130"
 ---
 # <a name="debugging-dsc-resources"></a>偵錯 DSC 資源
 
@@ -16,8 +17,8 @@ ms.locfileid: "83691965"
 在 PowerShell 5.0 中，預期狀態設定 (DSC) 引進了新功能，可讓您將 DSC 資源當作已套用的設定偵錯。
 
 ## <a name="enabling-dsc-debugging"></a>啟用 DSC 偵錯
-偵錯資源之前，您必須先呼叫 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) Cmdlet 啟用偵錯。
-這個 Cmdlet 使用強制參數 **BreakAll**。
+
+為資源偵錯前，您必須先呼叫 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) Cmdlet 以啟用偵錯。 這個 Cmdlet 使用強制參數 **BreakAll** 。
 
 您可以查看呼叫 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) 的結果，確認是否已啟用偵錯。
 
@@ -41,8 +42,8 @@ PS C:\DebugTest>
 ```
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>啟動啟用偵錯的設定
-若要偵錯 DSC 資源，您要啟動設定呼叫該資源。
-本例中，我們會探討呼叫 **WindowsFeature** 資源的簡單設定，確定已安裝 "WindowsPowerShellWebAccess" 功能：
+
+若要偵錯 DSC 資源，您要啟動設定呼叫該資源。 本例中，我們會探討呼叫 **WindowsFeature** 資源的簡單設定，確定已安裝 "WindowsPowerShellWebAccess" 功能：
 
 ```powershell
 Configuration PSWebAccess
@@ -60,9 +61,7 @@ Configuration PSWebAccess
 PSWebAccess
 ```
 
-編譯設定之後，再呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 加以啟動。
-設定停止的時機為本機設定管理員 (LCM) 叫入設定的第一個資源。
-如果使用 `-Verbose` 和 `-Wait` 參數，輸出會顯示您需要輸入的程式行以開始偵錯。
+編譯設定之後，再呼叫 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 加以啟動。 設定停止的時機為本機設定管理員 (LCM) 叫入設定的第一個資源。 如果使用 `-Verbose` 和 `-Wait` 參數，輸出會顯示您需要輸入的程式行以開始偵錯。
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -85,27 +84,24 @@ Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
 
-此時，LCM 已呼叫資源且來到第一個中斷點。
-輸出中的最後三行會示範如何附加至處理程序，並開始偵錯資源指令碼。
+此時，LCM 已呼叫資源且來到第一個中斷點。 輸出中的最後三行會示範如何附加至處理程序，並開始偵錯資源指令碼。
 
 ## <a name="debugging-the-resource-script"></a>偵錯資源指令碼
 
-啟動 PowerShell ISE 的新執行個體。
-在主控台窗格中，輸入 `Start-DscConfiguration` 輸出的最後三行輸出作為命令，將 `<credentials>` 替換成有效的使用者認證。
-您現在應該會看到類似這樣的提示︰
+啟動 PowerShell ISE 的新執行個體。 在主控台窗格中，輸入 `Start-DscConfiguration` 輸出的最後三行輸出作為命令，將 `<credentials>` 替換成有效的使用者認證。 您現在應該會看到類似這樣的提示︰
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-此資源指令碼會在指令碼窗格中開啟，且偵錯工具會停在 **Test-TargetResource** 函式的第一行 (以類別為基礎之資源的 **Test()** 方法)。
-現在您可以在 ISE 中使用偵錯命令逐步執行資源指令碼、查看變數值、檢視呼叫堆疊，並執行其他工作。 請記住，資源指令碼 (或類別) 中的每一行均已設為中斷點。
+此資源指令碼會在指令碼窗格中開啟，且偵錯工具會停在 **Test-TargetResource** 函式的第一行 (以類別為基礎之資源的 **Test()** 方法)。 現在您可以在 ISE 中使用偵錯命令逐步執行資源指令碼、查看變數值、檢視呼叫堆疊，並執行其他工作。 請記住，資源指令碼 (或類別) 中的每一行均已設為中斷點。
 
 ## <a name="disabling-dsc-debugging"></a>停用 DSC 偵錯
 
 呼叫 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug) 後，所有對 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) 的呼叫將會導致設定中斷並進入偵錯工具。 若要使設定正常執行，您必須透過呼叫 [Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) Cmdlet 來停用偵錯。
 
->**注意︰** 重新開機不會變更 LCM 的偵錯狀態。 若啟用偵錯，則重新開機後啟動設定時仍然會中斷並進入偵錯工具。
+> [!NOTE]
+> 重新開機不會變更 LCM 的偵錯狀態。 若啟用偵錯，則重新開機後啟動設定時仍然會中斷並進入偵錯工具。
 
 ## <a name="see-also"></a>另請參閱
 

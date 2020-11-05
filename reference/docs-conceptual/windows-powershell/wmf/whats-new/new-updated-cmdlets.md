@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: wmf,powershell,設定
 title: 新增與更新的 Cmdlet
-ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell 5.1 包含許多新的或更新的 Cmdlet。
+ms.openlocfilehash: bdfbe5a263864a172aefb0aa5731f59b95ab43ca
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809114"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663229"
 ---
 # <a name="new-and-updated-cmdlets"></a>新增與更新的 Cmdlet
 
@@ -102,7 +102,7 @@ ProductVersion    : 10.0.17763.1
 
 ## <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem 具有 -Depth 參數
 
-`Get-ChildItem` 現在提供**Depth** 參數，可搭配 **Recurse** 用來限制遞迴：
+`Get-ChildItem` 現在提供 **Depth** 參數，可搭配 **Recurse** 用來限制遞迴：
 
 ## <a name="modules-support-for-declaring-version-ranges-1-etc"></a>宣告版本範圍 (1.* 等等) 的模組支援
 
@@ -151,7 +151,7 @@ Get-Content .\Example.txt
 This is a single sentence.
 ```
 
-如未指定 **NoNewline**，每個片段都會放在不同行：
+如未指定 **NoNewline** ，每個片段都會放在不同行：
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt
@@ -192,7 +192,7 @@ New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 
 ### <a name="hard-links"></a>永久連結
 
-允許相同的**路徑**和**名稱**組合，如前所述。
+允許相同的 **路徑** 和 **名稱** 組合，如前所述。
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
@@ -200,7 +200,7 @@ New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshom
 
 ### <a name="directory-junctions"></a>目錄接合
 
-允許相同的**路徑**和**名稱**組合，如前所述。
+允許相同的 **路徑** 和 **名稱** 組合，如前所述。
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
@@ -286,7 +286,7 @@ ODataUtils 模組允許從支援 OData 的 REST 端點產生 PowerShell Cmdlet�
 - 使用 -Select 參數進行伺服器端篩選
 - Web 要求標頭的支援
 
-`Export-ODataEndPointProxy` Cmdlet 所產生的 Proxy Cmdlet 可提供來自**資訊**串流上伺服器端 OData 端點的其他資訊。
+`Export-ODataEndPointProxy` Cmdlet 所產生的 Proxy Cmdlet 可提供來自 **資訊** 串流上伺服器端 OData 端點的其他資訊。
 
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
@@ -297,7 +297,7 @@ Export-ODataEndpointProxy -Uri $uri -OutputModule $generatedProxyModuleDir -Forc
 
 在下列範例中，我們要擷取熱門產品，並擷取 `$infoStream` 變數中的輸出。
 
-藉由指定 **IncludeTotalResponseCount** 參數，我們會取得伺服器上可用之所有**產品**記錄的總計數。
+藉由指定 **IncludeTotalResponseCount** 參數，我們會取得伺服器上可用之所有 **產品** 記錄的總計數。
 
 ```powershell
 Import-Module $generatedProxyModuleDir -Force

@@ -1,25 +1,25 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,cmdlet
 title: 如何在 Windows PowerShell ISE 中使用設定檔
-ms.openlocfilehash: da7dc2f234ad0c2968fbb213e9e57da875f456e4
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: 此文章說明如何在 Windows PowerShell ISE 中使用設定檔。
+ms.openlocfilehash: e677a4aaa3b2b8b76f289b0797aaa75c80c2b370
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808814"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663747"
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>如何在 Windows PowerShell ISE 中使用設定檔
 
-本主題說明如何在 Windows PowerShell® 整合式指令碼環境 (ISE) 中使用設定檔。 建議您在執行本節所述的工作之前，先檢閱 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)，或在 [主控台] 窗格中輸入 `Get-Help about_Profiles`，然後按 <kbd>ENTER</kbd> 鍵。
+此文章說明如何在 Windows PowerShell&reg; 整合式指令碼環境 (ISE) 中使用設定檔。 建議您在執行本節所述的工作之前，先檢閱 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)，或在 [主控台] 窗格中輸入 `Get-Help about_Profiles`，然後按 <kbd>ENTER</kbd> 鍵。
 
 設定檔是當您啟動新的工作階段時自動執行的 Windows PowerShell ISE 指令碼。
 您可以為 Windows PowerShell ISE 建立一或多個 Windows PowerShell 設定檔，然後使用這些設定檔來新增 Windows PowerShell 或 Windows PowerShell ISE 環境的設定、準備環境供您使用，以及提供您所需的變數、別名、函式、色彩和字型喜好設定。 設定檔會影響您啟動的每個 Windows PowerShell ISE 工作階段。
 
 > [!NOTE]
 > Windows PowerShell 執行原則會決定您是否可以執行指令碼並載入設定檔。
-> 預設執行原則 “Restricted” 可防止所有指令碼執行，包括設定檔。
-> 如果使用 “Restricted” 原則，則無法載入設定檔。 如需執行原則的詳細資訊，請參閱 [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
+> 預設執行原則 (「限制」) 可防止所有指令碼執行，包括設定檔。
+> 如果使用「限制」原則，則無法載入設定檔。 如需執行原則的詳細資訊，請參閱 [about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)。
 
 ## <a name="selecting-a-profile-to-use-in-the-windows-powershell-ise"></a>選取要在 Windows PowerShell ISE 中使用的設定檔
 
@@ -42,28 +42,28 @@ Windows PowerShell ISE 支援目前使用者和所有使用者的設定檔。 �
 
 ## <a name="to-create-a-new-profile"></a>建立新的設定檔
 
-若要建立新的 “Current user, Windows PowerShell ISE” 設定檔，請執行下列命令︰
+若要建立新的「目前的使用者，Windows PowerShell ISE」設定檔，請執行下列命令：
 
 ```powershell
 if (!(Test-Path -Path $PROFILE ))
 { New-Item -Type File -Path $PROFILE -Force }
 ```
 
-若要建立新的 “All users, Windows PowerShell ISE” 設定檔，請執行下列命令︰
+若要建立新的「所有使用者，Windows PowerShell ISE」設定檔，請執行下列命令：
 
 ```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersCurrentHost))
 { New-Item -Type File -Path $PROFILE.AllUsersCurrentHost -Force }
 ```
 
-若要建立新的 “Current user, All Hosts” 設定檔，請執行下列命令︰
+若要建立新的「目前的使用者，所有主機」設定檔，請執行下列命令：
 
 ```powershell
 if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts))
 { New-Item -Type File -Path $PROFILE.CurrentUserAllHosts -Force }
 ```
 
-若要建立新的 “All users, All Hosts” 設定檔，請輸入︰
+若要建立新的「所有使用者，所有主機」設定檔，請輸入：
 
 ```powershell
 if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
@@ -72,7 +72,7 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>編輯設定檔
 
-1. 若要開啟設定檔，請執行命令 `psEdit`，並提供指定您要編輯之設定檔的變數。 例如，若要開啟 “Current user, Windows PowerShell ISE” 設定檔，請輸入︰`psEdit $PROFILE`
+1. 若要開啟設定檔，請執行命令 `psEdit`，並提供指定您要編輯之設定檔的變數。 例如，若要開啟「目前的使用者，Windows PowerShell ISE」設定檔，請輸入：`psEdit $PROFILE`
 
 2. 將一些項目新增至您的設定檔。 以下是一些可協助您開始的範例︰
 

@@ -1,13 +1,13 @@
 ---
 title: 在 Windows 上安裝 PowerShell
 description: 在 Windows 上安裝 PowerShell 的相關資訊
-ms.date: 09/14/2020
-ms.openlocfilehash: 8f1b60ef6bfef5c2434b0affabb5e0e7af392b96
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.date: 10/30/2020
+ms.openlocfilehash: 1b341b496cef34a2a98afeac9d24f0a51e8dbda0
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574448"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142781"
 ---
 # <a name="installing-powershell-on-windows"></a>在 Windows 上安裝 PowerShell
 
@@ -95,7 +95,16 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />安裝 ZIP 套件
 
-有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 安裝 ZIP 封存並不會像 MSI 套件一樣檢查必要條件。 從 [[版本]][releases] 頁面下載 ZIP 封存。 依據您下載檔案的方式，可能需要使用 `Unblock-File`Cmdlet 以將檔案解除封鎖。 將內容解壓縮至您選擇的位置，並從該處執行 `pwsh.exe`。 若要使遠端功能能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
+有 PowerShell 二進位 ZIP 封存，以啟用進階的部署案例。 從[發行版本][releases]頁面下載下列其中一個 ZIP 封存。
+
+- PowerShell-7.0.3-win-x64.zip
+- PowerShell-7.0.3-win-x86.zip
+- PowerShell-7.0.3-win-arm64.zip
+- PowerShell-7.0.3-win-arm32.zip
+
+依據您下載檔案的方式，可能需要使用 `Unblock-File`Cmdlet 以將檔案解除封鎖。 將內容解壓縮至您選擇的位置，並從該處執行 `pwsh.exe`。 與安裝 MSI 套件不同，安裝 ZIP 封存不會檢查先決條件。 若要使遠端功能能透過 WSMan 正常運作，請確定您已符合[必要條件](#prerequisites)。
+
+使用此方法，在 Microsoft Surface Pro X 之類的電腦上安裝 ARM 型 PowerShell 版本。為獲得最佳結果，請將 PowerShell 安裝到 `$env:ProgramFiles\PowerShell\7` 資料夾。
 
 ## <a name="deploying-on-windows-10-iot-enterprise"></a>在 Windows 10 IoT 企業版上部署
 
@@ -132,26 +141,25 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
-   # You'll get an error message and will be disconnected from the device because it has to restart WinRM
+   # You'll get an error message and will be disconnected from the device because
+   # it has to restart WinRM
    ```
 
 1. 連線到裝置上的 PowerShell 7 端點
 
    ```powershell
-   # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
+   # Be sure to use the -Configuration parameter. If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
 
 ## <a name="deploying-on-windows-10-iot-core"></a>在 Windows 10 IoT 核心版上部署
 
-當您包含 *IOT_POWERSHELL* 功能 (可供我們用來部署 PowerShell 7) 時，Windows 10 IoT 核心版會新增 Windows PowerShell。
-針對 Windows 10 IoT 企業版所定義的步驟也可以用於 IoT 核心版。
+當您包含 _IOT_POWERSHELL_ 功能 (可供我們用來部署 PowerShell 7) 時，Windows 10 IoT 核心版會新增 Windows PowerShell。 針對 Windows 10 IoT 企業版所定義的步驟也可以用於 IoT 核心版。
 
-若要在出貨映像中新增最新的 powershell，請使用 [Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) 命令在工作區包括套件，並新增 *OPENSRC_POWERSHELL* 功能到您的映像。
+若要在出貨映像中新增最新的 PowerShell，請使用 [Import-PSCoreRelease][] 命令以在工作區包括套件，並將 _OPENSRC_POWERSHELL_ 功能新增到您的映像。
 
 > [!NOTE]
-> 針對 ARM64 架構，當您包括 *IOT_POWERSHELL* 時，不會新增 Windows Powershell。 因此，以 zip 為基礎的安裝將無法使用。
-> 您將必須使用 Import-PSCoreRelease 命令，將其加入映像中。
+> 針對 ARM64 架構，當您包括 _IOT_POWERSHELL_ 時，不會新增 Windows PowerShell。 因此，以 zip 為基礎的安裝將無法使用。 您將必須使用 `Import-PSCoreRelease` 命令，以將其新增至映像中。
 
 ## <a name="deploying-on-nano-server"></a>在 Nano Server 上部署
 
@@ -169,7 +177,7 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
 1. 使用您最愛的 ZIP 公用程式將套件解壓縮至已掛接 Nano Server 映像的目錄。
 1. 取消掛接映像和開機映像。
 1. 連線到 Windows PowerShell 的內建執行個體。
-1. 請遵循下列指示來建立使用[另一個執行個體技術](../learn/remoting/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
+1. 請遵循下列指示來建立使用[另一個執行個體技術][]的遠端端點。
 
 ### <a name="online-deployment-of-powershell"></a>PowerShell 的線上部署
 
@@ -200,7 +208,7 @@ Windows 10 IoT 企業版隨附 Windows PowerShell，我們可以將其用來部�
   Expand-Archive -Path C:\powershell-<version>-win-x64.zip -DestinationPath "C:\PowerShell_<version>"
   ```
 
-- 如需 WSMan 型的遠端功能，請遵循下列指示來建立使用[另一個執行個體技術](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)的遠端端點。
+- 如需 WSMan 型的遠端功能，請遵循下列指示來建立使用[另一個執行個體技術][]的遠端端點。
 
 ## <a name="install-as-a-net-global-tool"></a>安裝為 .NET 全域工具
 
@@ -218,7 +226,7 @@ Dotnet 工具安裝程式會將 `$env:USERPROFILE\dotnet\tools` 新增至您的 
 
 > [!NOTE]
 > `winget` 工具目前處於預覽狀態。 目前並非所有已規劃的功能都可用。
-> 工具的選項與功能可能會變更。 您不應該在生產部署案例中使用此方法。 如需系統需求清單與安裝指示，請參閱 [winget] 文件。
+> 您不應該在生產部署案例中使用此方法。 如需系統需求清單與安裝指示，請參閱 [winget] 文件。
 
 您可以透過下列命令使用已發佈的 `winget` 套件來安裝 PowerShell：
 
@@ -249,6 +257,10 @@ PowerShell 支援透過 WSMan 與 SSH 的 PowerShell 遠端通訊協定 (PSRP)�
 - [PowerShell Core 中的 SSH 遠端功能][ssh-remoting]
 - [PowerShell Core 中的 WSMan 遠端功能][wsman-remoting]
 
+## <a name="upgrading-an-existing-installation"></a>升級現有的安裝
+
+為了在升級時獲得最佳結果，您應該使用第一次安裝 PowerShell 時所使用的相同安裝方法。 每個安裝方法都會將 PowerShell 安裝於不同的位置。 如果您不確定 PowerShell 的安裝方式，則可將安裝的位置與此文章中的套件資訊進行比較。 如果您已透過 MSI 套件安裝，該資訊便會顯示於 [程式和功能] 控制台中。
+
 ## <a name="installation-support"></a>安裝支援
 
 Microsoft 支援此文件中的安裝方法。 其他來源可能會提供其他安裝方法。 雖然那些工具與方法都有用，但 Microsoft 無法支援那些方法。
@@ -260,3 +272,5 @@ Microsoft 支援此文件中的安裝方法。 其他來源可能會提供其他
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
 [winget]: /windows/package-manager/winget
+[「另一個執行個體技術」]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register
+[Import-PSCoreRelease]: https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease
