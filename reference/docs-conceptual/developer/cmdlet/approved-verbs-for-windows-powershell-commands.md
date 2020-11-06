@@ -3,12 +3,12 @@ ms.date: 09/07/2018
 ms.topic: reference
 title: 已核准的 PowerShell 命令動詞
 description: 已核准的 PowerShell 命令動詞
-ms.openlocfilehash: 237355ba9729cfe16c335b39f19ab20e40999457
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92655832"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355097"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>已核准的 PowerShell 命令動詞
 
@@ -18,13 +18,7 @@ PowerShell 會針對 Cmdlet 的名稱與其所衍生 .NET 類別使用成對的�
 > [!NOTE]
 > 即使單字並非英文語言的標準動詞，PowerShell 還是會使用「動詞」一詞來描述此隱含動作的單字。 例如，即使 _New_ 一詞並非英文語言的動詞，因為其隱含動作，所以還是有效的 PowerShell 動詞名稱。
 
-<!--
-01234567890123456789012345678901234567890123456789012345678901234567890123456789
--->
-
-每個已核准的動詞都擁有所定義對應的 _別名前置詞_ 。
-我們會在使用該動詞的命令別名中，使用此別名前置詞。
-例如，`Import` 的別名前置詞為 `ip`；相對地，`Import-Module` 的別名為 `ipmo`。  這是建議而非規則；特別是其無須遵守命令別名，就能從其他環境模擬已知的命令。
+每個已核准的動詞都擁有所定義對應的 _別名前置詞_ 。 我們會在使用該動詞的命令別名中，使用此別名前置詞。 例如，`Import` 的別名前置詞為 `ip`；相對地，`Import-Module` 的別名為 `ipmo`。 這是建議而非規則；特別是其無須遵守命令別名，就能從其他環境模擬已知的命令。
 
 ## <a name="verb-naming-recommendations"></a>動詞命名建議
 
@@ -35,13 +29,13 @@ PowerShell 會針對 Cmdlet 的名稱與其所衍生 .NET 類別使用成對的�
 - 請勿使用已核准動詞的同義字。 例如，一律使用 `Remove`，一律不使用 `Delete` 或 `Eliminate`。
 - 只使用此主題所列出每個動詞的形式。 例如，使用 `Get`，但不要使用 `Getting` 或 `Gets`。
 - 請勿使用下列保留的動詞或別名。 PowerShell 語言或其中少數的 Cmdlet 會在例外情況下使用這些動詞。
-    - ForEach (Foreach)
-    - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)：以指定的表單或版面配置來排列物件
-    - [Group](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)：排列一或多個資源，或將一或多個資源建立關聯
-    - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (pi)
-    - Sort (sr)
-    - TEE (te)
-    - Where (wh)
+  - ForEach (Foreach)
+  - [Format](/dotnet/api/System.Management.Automation.VerbsCommon.Format) (f)：以指定的表單或版面配置來排列物件
+  - [Group](/dotnet/api/System.Management.Automation.VerbsData.Group) (gp)：排列一或多個資源，或將一或多個資源建立關聯
+  - [Ping](/dotnet/api/System.Management.Automation.VerbsDiagnostic.Ping) (pi)
+  - Sort (sr)
+  - TEE (te)
+  - Where (wh)
 
 您可使用 `Get-Verb` Cmdlet 取得完整的動詞清單。
 
@@ -174,7 +168,7 @@ PowerShell 會使用 [System.Management.Automation.VerbsLifeCycle](/dotnet/api/S
 |[Approve](/dotnet/api/System.Management.Automation.VerbsLifecycle.Approve) (ap)|確認或同意資源或處理序的狀態。||
 |[Assert](/dotnet/api/System.Management.Automation.VerbsLifecycle.Assert) (as)|確認資源的狀態。|Certify|
 |[Build](/dotnet/api/System.Management.Automation.VerbsLifecycle.Build) (bd)|從幾組輸入檔 (通常是原始程式碼或宣告式文件) 中建立成品 (通常是二進位檔或文件)。此動詞已在 PowerShell 6 中新增。||
-|[Complete](/dotnet/api/system.management.automation.host.buffercelltype?view=powershellsdk-1.1.0) (cp)|結束作業。||
+|[Complete](/dotnet/api/system.management.automation.host.buffercelltype) (cp)|結束作業。||
 |[Confirm](/dotnet/api/System.Management.Automation.VerbsLifecycle.Confirm) (cn)|認可、確認或驗證資源或處理序的狀態。|Acknowledge、Agree、Certify、Validate、Verify|
 |[Deny](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deny) (dn)|拒絕、反對、封鎖或抵制資源或處理序的狀態。|Block、Object、Refuse、Reject|
 |[Deploy](/dotnet/api/System.Management.Automation.VerbsLifecycle.Deploy) (dp)|將應用程式、網站或解決方案傳送至遠端目標，讓該解決方案的取用者能夠在部署完成之後加以存取。 此動詞已在 PowerShell 6 中新增。||

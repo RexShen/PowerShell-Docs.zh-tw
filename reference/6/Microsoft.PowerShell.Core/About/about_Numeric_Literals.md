@@ -5,12 +5,12 @@ ms.date: 04/09/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 關於數值常值
-ms.openlocfilehash: 62f00ae9f3643724808146134fd03b6f01c29bce
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: dc1a55dbec1f0de99e06011645e6884b37480233
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93208631"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354822"
 ---
 # <a name="about-numeric-literals"></a>關於數值常值
 
@@ -108,7 +108,7 @@ PS> 0x12Lpb
 
 PowerShell 支援下列類型加速器：
 
-| 加速器 |         注意         |           Description            |
+| 加速器 |         注意         |           描述            |
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | Byte (不帶正負號的)                   |
 | `[sbyte]`   |                      | 已簽署的位元組 ()                     |
@@ -210,4 +210,4 @@ Int32
 前兩個範例的運作方式不會將常值括在括弧中，因為 PowerShell 剖析器可以判斷數值常值結束的位置，以及 **GetType** 方法的啟動位置。
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

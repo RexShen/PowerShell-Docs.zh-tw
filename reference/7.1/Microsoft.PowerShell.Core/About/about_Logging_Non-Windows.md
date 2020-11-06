@@ -6,17 +6,16 @@ ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_non-windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging_Non-Windows
-ms.openlocfilehash: 5face386a479a0264f5ff2ba3f6665cb1e218a4a
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f70e2cb2c04287e36ecdf21a97dd099fcfd23d65
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206516"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355488"
 ---
 # <a name="about-logging-non-windows"></a>關於記錄非 Windows
 
 ## <a name="short-description"></a>簡短描述
-
 PowerShell 會記錄引擎、提供者和 Cmdlet 的內部作業。
 
 ## <a name="long-description"></a>完整描述
@@ -230,7 +229,7 @@ PowerShell 預設會啟用操作通道的資訊記錄。 這表示，PowerShell 
 |           |工作階段       |                                             |
 |           |ManagedPlugin |                                             |
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 針對 Linux **syslog** 和 **rsyslog** 資訊，請參閱 linux 電腦的本機 `man` 頁面。
 
@@ -242,4 +241,3 @@ PowerShell 預設會啟用操作通道的資訊記錄。 這表示，PowerShell 
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-

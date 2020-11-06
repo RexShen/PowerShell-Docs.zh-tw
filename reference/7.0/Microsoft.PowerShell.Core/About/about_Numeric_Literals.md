@@ -5,12 +5,12 @@ ms.date: 04/12/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 關於數值常值
-ms.openlocfilehash: 8e26e8c67b1acadc75a67cd51bd6adb07fb7daf3
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f9d23a37c06c8285c23328ea8ddcebf8d6caae9e
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206779"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354723"
 ---
 # <a name="about-numeric-literals"></a>關於數值常值
 
@@ -112,7 +112,7 @@ PS> 0x12Lpb
 
 PowerShell 支援下列類型加速器：
 
-| 加速器 |         注意         |           Description            |
+| 加速器 |         注意         |           描述            |
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | Byte (不帶正負號的)                   |
 | `[sbyte]`   |                      | 已簽署的位元組 ()                     |
@@ -175,7 +175,7 @@ PowerShell 支援下列類型加速器：
 在二進位和十六進位常值上指定不帶正負號的尾碼會忽略正負號位。 例如，會 `0xFFFFFFFF` 傳回 `-1` ，但是會傳回 `0xFFFFFFFFu` `[uint]::MaxValue` 4294967295 的。
 
 在常值前面加上 `0` 將會略過此值，並將其視為未簽署。
-例如： `0b011111111` 。 當使用範圍中的常值時，這是必要 `[bigint]` 的，因為 `u` 和 `n` 尾碼無法合併。
+例如：`0b011111111`。 當使用範圍中的常值時，這是必要 `[bigint]` 的，因為 `u` 和 `n` 尾碼無法合併。
 
 您也可以使用前置詞來否定二進位和十六進位常值 `-` 。 這可能會導致正數，因為允許使用正負號位。
 
@@ -267,7 +267,7 @@ PowerShell 7.0 變更了數值常值的剖析方式，以啟用新功能。
 
 ### <a name="parsing-large-value-literals"></a>剖析大型值常值
 
-先前，在轉換成任何其他類型之前，會將較高的整數值剖析為雙精度浮點數。 這會導致較高範圍的有效位數遺失。 例如：
+先前，在轉換成任何其他類型之前，會將較高的整數值剖析為雙精度浮點數。 這會導致較高範圍的有效位數遺失。 例如︰
 
 ```
 PS> [bigint]111111111111111111111111111111111111111111111111111111
@@ -291,4 +291,4 @@ PS> 111111111111111111111111111111111111111111111111111111n
 此外 `[ulong]::MaxValue` ，和之間 `[decimal]::MaxValue` 的值應該使用小數尾碼來表示 `D` 精確度。 如果沒有尾碼，這些值就會 `[Double]` 剖析為使用實際剖析模式。
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger

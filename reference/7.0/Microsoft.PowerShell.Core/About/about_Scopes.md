@@ -2,16 +2,16 @@
 description: 說明 PowerShell 中的範圍概念，並示範如何設定和變更元素的範圍。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 03/13/2020
+ms.date: 11/04/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_scopes
-ms.openlocfilehash: 2149a1dec14e4de9c6ff1021e98689ca93307cb8
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 33a849d9dcd2c8f6d02f771630b718f0978b2ada
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206595"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354553"
 ---
 # <a name="about-scopes"></a>關於範圍
 
@@ -36,7 +36,7 @@ PowerShell 會限制對變數、別名、函式和 PowerShell 磁片磁碟機的
 
 PowerShell 支援下列範圍：
 
-- Global： PowerShell 啟動時作用中的範圍。 在全域範圍中建立 PowerShell 啟動時所出現的變數和函式，例如自動變數和喜好設定變數。 您 PowerShell 設定檔中的變數、別名和函式也會在全域範圍中建立。
+- 全域：當 PowerShell 啟動時，或當您建立新的會話或執行時間時生效的範圍。 在全域範圍中建立 PowerShell 啟動時所出現的變數和函式，例如自動變數和喜好設定變數。 您 PowerShell 設定檔中的變數、別名和函式也會在全域範圍中建立。 全域範圍是會話中的根父範圍。
 
 - Local：目前的範圍。 區域範圍可以是全域範圍或任何其他範圍。
 
@@ -47,11 +47,15 @@ PowerShell 支援下列範圍：
 
 ## <a name="parent-and-child-scopes"></a>父系和子範圍
 
-您可以藉由執行腳本或函式、建立會話，或啟動新的 PowerShell 實例來建立新的範圍。 當您建立新的範圍時，結果會是 (原始範圍) 的父範圍，以及 () 建立之範圍的子範圍。
-
-在 PowerShell 中，所有範圍都是全域範圍的子範圍，但您可以建立許多範圍和許多遞迴範圍。
+您可以藉由呼叫腳本或函式來建立新的子範圍。 呼叫範圍是父範圍。 呼叫的腳本或函數是子範圍。
+您呼叫的函式或腳本可能會呼叫其他函式，建立根範圍是全域範圍的子範圍階層。
 
 除非您明確地將專案設為私用，否則父範圍中的專案可供子範圍使用。 不過，除非您在建立專案時明確指定範圍，否則您在子範圍中建立和變更的專案不會影響父範圍。
+
+> [!NOTE]
+> 模組中的函式不會在呼叫範圍的子範圍中執行。
+> 模組會有自己的會話狀態，並連結至全域範圍。
+> 所有模組程式碼會在具有自己的根範圍之範圍的模組特定階層中執行。
 
 ## <a name="inheritance"></a>繼承
 
@@ -85,7 +89,7 @@ Get-Variable -Scope global
 - `using:` -用來存取在另一個範圍中定義的變數，並透過如和的 Cmdlet 執行腳本 `Start-Job` `Invoke-Command` 。
 - `workflow:` -指定名稱存在於工作流程中。 注意： PowerShell Core 中不支援工作流程。
 - `<variable-namespace>` -PowerShell New-psdrive 提供者所建立的修飾詞。
-  例如：
+  例如︰
 
   |  命名空間  |                    描述                     |
   | ----------- | -------------------------------------------------- |
@@ -478,7 +482,7 @@ Invoke-Command $s {
 } -ArgumentList $Cred
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [about_Variables](about_Variables.md)
 

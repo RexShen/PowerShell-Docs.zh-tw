@@ -1,23 +1,22 @@
 ---
-description: PowerShell 會記錄引擎、提供者和 Cmdlet 的內部作業。
+description: PowerShell 會將引擎、提供者和 Cmdlet 的內部作業記錄至 Windows 事件記錄檔。
 keywords: powershell
 Locale: en-US
 ms.date: 03/30/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_logging_windows?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Logging-Windows
-ms.openlocfilehash: dbc11e15642673d3159d4f02a40147e68fbf1d7d
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 960394838097e4bfad1af5f4f0af7a813a50e761
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206515"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355012"
 ---
 # <a name="about-logging-windows"></a>關於記錄視窗
 
 ## <a name="short-description"></a>簡短描述
-
-PowerShell 會記錄引擎、提供者和 Cmdlet 的內部作業。
+PowerShell 會將引擎、提供者和 Cmdlet 的內部作業記錄至 Windows 事件記錄檔。
 
 ## <a name="long-description"></a>完整描述
 
@@ -32,14 +31,14 @@ PowerShell 會記錄 PowerShell 作業的詳細資料，例如啟動和停止引
 
 啟用腳本區塊記錄時，PowerShell 會將下列事件記錄到記錄檔中 `PowerShellCore/Operational` ：
 
-|欄位| 值|
-|-|-|
-|EventId|`4104` / `0x1008`|
-|管道|`Operational`|
-|層級|`Verbose`|
-|OpCode|`Create`|
-|工作|`CommandStart`|
-|關鍵字|`Runspace`|
+|  欄位  |       值       |
+| ------- | ----------------- |
+| EventId | `4104` / `0x1008` |
+| 通路 | `Operational`     |
+| 層級   | `Verbose`         |
+| OpCode  | `Create`          |
+| Task    | `CommandStart`    |
+| 關鍵字 | `Runspace`        |
 
 ### <a name="registering-the-powershell-event-provider-on-windows"></a>在 Windows 上註冊 PowerShell 事件提供者
 
@@ -134,7 +133,7 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
   Where-Object Id -eq 4104 | Unprotect-CmsMessage
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [about_Logging_Non-Windows](about_Logging_Non-Windows.md)
 
@@ -144,4 +143,3 @@ Get-WinEvent Microsoft-Windows-PowerShell/Operational |
 
 <!-- link references -->
 [SIEM]: https://wikipedia.org/wiki/Security_information_and_event_management
-
