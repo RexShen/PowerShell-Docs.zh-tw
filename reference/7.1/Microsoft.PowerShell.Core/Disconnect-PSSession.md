@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disconnect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disconnect-PSSession
-ms.openlocfilehash: efe80ab22af8552860e3dfa8f9e2766b07bcfd5d
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 2588d0d0a8d7ce9cddf65c94dcc79700df9deeb7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205620"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345556"
 ---
 # Disconnect-PSSession
 
@@ -444,6 +444,8 @@ Accept wildcard characters: False
 
 ## 注意
 
+此 Cmdlet 僅適用于 Windows 平臺。
+
 - `Disconnect-PSSession`只有當本機和遠端電腦執行 PowerShell 3.0 或更新版本時，此 Cmdlet 才會運作。
 - 如果您在已 `Disconnect-PSSession` 中斷連線的會話上使用此 Cmdlet，此命令對會話沒有任何作用，且不會產生錯誤。
 - 具有互動式安全性權杖 (使用 **EnableNetworkAccess** 參數所建立) 且已中斷連線的回送工作階段只能從當初建立該工作階段的電腦重新連線。 此限制可防止電腦遭受惡意存取。
@@ -486,4 +488,3 @@ Accept wildcard characters: False
 [about_Remote](About/about_Remote.md)
 
 [about_Remote_Disconnected_Sessions](About/about_Remote_Disconnected_Sessions.md)
-

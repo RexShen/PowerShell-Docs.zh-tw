@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
-ms.openlocfilehash: d56d71dccc54c07154a6f3302634b84779c00129
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 0ee32b680aee940df36d3219e4b24ab594e79284
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205667"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345811"
 ---
 # Unregister-PSSessionConfiguration
 
@@ -203,11 +203,13 @@ Accept wildcard characters: False
 
 ## 輸出
 
-### 無
+### None
 
 此 Cmdlet 不會傳回任何物件。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 若要執行此 Cmdlet，您必須使用 [ **以系統管理員身分執行** ] 選項啟動 PowerShell。
 
@@ -236,4 +238,3 @@ Accept wildcard characters: False
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

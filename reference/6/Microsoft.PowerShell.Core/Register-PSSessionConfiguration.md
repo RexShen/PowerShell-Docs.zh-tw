@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: ce52714d93cfce55ca36f89f16e37092b35c6b24
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6417881880cb7f317e7a42d6749b8b7f2cb712fb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204879"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345471"
 ---
 # Register-PSSessionConfiguration
 
@@ -458,7 +458,7 @@ Accept wildcard characters: False
 指定使用工作階段設定建立之工作階段的類型。 此參數可接受的值為：
 
 - 空白。 依預設，不會將任何模組新增至會話。 使用此 Cmdlet 的參數將模組、函式、指令碼及其他功能新增至工作階段。
-- 預設值： 將 Microsoft. Core 新增至會話。 `Import-Module`除非您明確禁止 Cmdlet，否則此模組包含使用者可以用來匯入其他模組的 Cmdlet。
+- 預設值。 將 Microsoft. Core 新增至會話。 `Import-Module`除非您明確禁止 Cmdlet，否則此模組包含使用者可以用來匯入其他模組的 Cmdlet。
 - RestrictedRemoteServer. 只包含下列 Cmdlet： `Exit-PSSession` 、 `Get-Command` 、 `Get-FormatData` 、 `Get-Help` 、 `Measure-Object` 、 `Out-Default` 和 `Select-Object` 。 使用工作階段設定檔中的指令碼、組件或索引鍵，以新增工作階段的模組、函式、指令碼以及其他功能。
 
 預設值為 Default。
@@ -638,7 +638,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
@@ -647,6 +647,8 @@ Accept wildcard characters: False
 ### Microsoft.WSMan.Management.WSManConfigContainerElement
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 若要執行此 Cmdlet，您必須使用 [ **以系統管理員身分執行** ] 選項啟動 PowerShell。
 

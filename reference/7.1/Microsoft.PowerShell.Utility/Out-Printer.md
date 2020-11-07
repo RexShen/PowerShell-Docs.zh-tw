@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/out-printer?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Out-Printer
-ms.openlocfilehash: 69d78550d68457c92deb3e4d690483bf742544b0
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: bc16c7129dff2f2982d1756d5642d86481cd573d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204971"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344349"
 ---
 # Out-Printer
 
@@ -111,11 +111,13 @@ Accept wildcard characters: False
 
 ## 輸出
 
-### 無
+### None
 
 `Out-Printer` 不會傳回任何物件。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 包含動詞的 Cmdlet `Out` 不會將物件格式化。 它們只會轉譯它們並傳送至指定的顯示目的地。 如果您將未格式化的物件傳送至 `Out` Cmdlet，此 Cmdlet 會將它傳送到格式化 Cmdlet，然後才轉譯它。
 
@@ -126,4 +128,3 @@ Accept wildcard characters: False
 [Out-File](Out-File.md)
 
 [Out-String](Out-String.md)
-

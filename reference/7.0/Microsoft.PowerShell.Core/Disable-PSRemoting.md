@@ -7,12 +7,12 @@ ms.date: 01/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/disable-psremoting?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Disable-PSRemoting
-ms.openlocfilehash: b51d5c2d21734a8db31a6e257579cca68809ebc5
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f4fe65ec687ca39c1356dd5c9a590899c8b3789c
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201784"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345998"
 ---
 # Disable-PSRemoting
 
@@ -463,17 +463,19 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法透過管線將任何物件傳送至此 Cmdlet。
 
 ## 輸出
 
-### 無
+### None
 
 此 Cmdlet 不會產生任何輸出。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 - 停用會話設定不會復原或 Cmdlet 所做的所有變更 `Enable-PSRemoting` `Enable-PSSessionConfiguration` 。 您可能必須手動復原下列變更。
 

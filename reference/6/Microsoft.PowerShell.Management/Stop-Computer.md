@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/stop-computer?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Computer
-ms.openlocfilehash: e7732c1eb243c0a4737c3f08a413fd20bbf2bf38
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 8c6d70622f48183ed2f6bcd4526c305c70fe6eb2
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205592"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345080"
 ---
 # Stop-Computer
 
@@ -228,15 +228,17 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法透過管道傳送輸入至此 Cmdlet。
 
 ## 輸出
 
-### 無
+### None
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 此 Cmdlet 僅適用于 Windows，並使用 **Win32_OperatingSystem** WMI 類別的 **Win32Shutdown** 方法。 此方法需要針對用來重新開機電腦的使用者帳戶啟用 **SeShutdownPrivilege** 許可權。
 

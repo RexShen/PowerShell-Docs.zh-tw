@@ -7,12 +7,12 @@ ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.openlocfilehash: f7cad4b85a8501081152768c2e3bfdf7fb3e59fd
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 939dc011307b4c98340bb376032b96289e1c1bc3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205008"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345947"
 ---
 # New-PSSessionConfigurationFile
 
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 
 ### -公司名稱
 
-指定建立會話設定或設定檔的公司。 預設值為 [未知]  。 此參數的值會出現在工作階段設定中，但它不是工作階段物件的屬性。
+指定建立會話設定或設定檔的公司。 預設值為 [未知]。 此參數的值會出現在工作階段設定中，但它不是工作階段物件的屬性。
 
 ```yaml
 Type: System.String
@@ -940,17 +940,19 @@ Accept wildcard characters: True
 
 ## 輸入
 
-### 無
+### None
 
 您無法透過管線將任何物件傳送至此 Cmdlet。
 
 ## 輸出
 
-### 無
+### None
 
 此 Cmdlet 不會產生任何輸出。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 - 參數（例如 **VisibleCmdlets** 和 **VisibleProviders** ）不會將專案匯入到會話中。 而是會從匯入工作階段的項目中選取。 例如，如果 **VisibleProviders** 參數的值為 certificate 提供者，但 **ModulesToImport** 參數未指定包含憑證提供者的 **安全性** 模組，則會話中不會顯示憑證提供者。
 - `New-PSSessionConfigurationFile` 在您于 **path** 參數中指定的路徑中，建立副檔名為 .pssc 的會話設定檔。 當您使用會話設定檔建立會話設定時，此 Cmdlet 會 `Register-PSSessionConfiguration` 複製設定檔，並將檔案的使用中複本儲存在目錄的 **SessionConfig** 子目錄中 `$PSHOME` 。

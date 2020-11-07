@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 005e495ff5f532cc947edf894a67c078e524a72c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 35218a3860db9746b99ec441e122fcd5e2370f72
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204312"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344757"
 ---
 # Register-EngineEvent
 
@@ -44,7 +44,9 @@ Register-EngineEvent [-SourceIdentifier] <String> [[-Action] <ScriptBlock>] [-Me
 
 ```powershell
 $S = New-PSSession -ComputerName "Server01, Server02"
-Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+Invoke-Command -Session $S {
+Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward
+}
 ```
 
 `New-PSSession` 在每一部遠端電腦上建立使用者管理的會話 (PSSession) 。此 `Invoke-Command` Cmdlet 會 `Register-EngineEvent` 在遠端會話中執行命令。
@@ -245,7 +247,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法透過管道傳送輸入 `Register-EngineEvent` 。
 
@@ -256,6 +258,8 @@ Accept wildcard characters: False
 如果您使用 **Action** 參數，會傳回 `Register-EngineEvent` **PSEventJob** 物件。 否則，它不會產生任何輸出。
 
 ## 注意
+
+Linux 或 macOS 平臺上沒有可用的事件來源。
 
 事件、事件訂閱與事件佇列僅存在目前工作階段中。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
 

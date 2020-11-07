@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: 43f9823f19df9ceec44f1e27d5183cca418647ba
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: b0177a00bbbf93659775ee94f7d4898a99f570f3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205531"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345573"
 ---
 # Receive-PSSession
 
@@ -758,6 +758,8 @@ Accept wildcard characters: False
 此 Cmdlet 會傳回在已中斷連線會話中執行的命令結果（如果有的話）。 如果 **OutTarget** 參數的值或預設值為 job，則會傳回 `Receive-PSSession` 工作物件。 否則，它會傳回代表該命令結果的物件。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 `Receive-PSSession` 只從已中斷連線的會話取得結果。 只有在執行 PowerShell 3.0 或更新版本的電腦上連線或終止的會話，才能中斷連線並重新連接。
 

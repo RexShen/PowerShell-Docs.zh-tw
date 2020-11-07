@@ -7,12 +7,12 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/register-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSSessionConfiguration
-ms.openlocfilehash: e3b8a075b42d7d612aed1acd6c8c71452d842cb6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 028e28e071bf6e19f2d0aef72b4eec45da6c45b7
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204800"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345879"
 ---
 # Register-PSSessionConfiguration
 
@@ -610,7 +610,7 @@ Accept wildcard characters: False
 
 指定要使用之執行緒模組的單元狀態。 可接受的值如下：
 
-- Unknown
+- 未知
 - MTA
 - STA
 
@@ -632,7 +632,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
@@ -641,6 +641,8 @@ Accept wildcard characters: False
 ### Microsoft.WSMan.Management.WSManConfigContainerElement
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 若要執行此 Cmdlet，您必須使用 [ **以系統管理員身分執行** ] 選項啟動 PowerShell。
 
@@ -669,4 +671,3 @@ Accept wildcard characters: False
 [about_Session_Configurations](About/about_Session_Configurations.md)
 
 [about_Session_Configuration_Files](About/about_Session_Configuration_Files.md)
-

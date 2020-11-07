@@ -7,12 +7,12 @@ ms.date: 3/22/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-executionpolicy
-ms.openlocfilehash: a846c3605c4adf469b12bfadaa3f90e585558dea
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: f798aaef7032db450a13d79589eb7dd0ca762cd6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204755"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344825"
 ---
 # Get-executionpolicy
 
@@ -197,13 +197,15 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 `Get-ExecutionPolicy` 不接受來自管線的輸入。
 
 ## 輸出
 
 ### Microsoft.PowerShell.ExecutionPolicy
+
+在 Linux 和 macOS 平臺上，此 Cmdlet 一律會傳回不 **受限制** 。
 
 ## 注意
 
