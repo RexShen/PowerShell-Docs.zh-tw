@@ -7,85 +7,80 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
-ms.openlocfilehash: 5ad6fb4d39b604834bb77935b14686e088bb61f2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: fee113e20b178c2b86b8f95cd3147f991aed8efe
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202220"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346627"
 ---
-# <span data-ttu-id="32552-103">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="32552-103">Restart-Service</span></span>
+# <span data-ttu-id="74f5d-103">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-103">Restart-Service</span></span>
 
-## <span data-ttu-id="32552-104">概要</span><span class="sxs-lookup"><span data-stu-id="32552-104">SYNOPSIS</span></span>
-<span data-ttu-id="32552-105">停止然後啟動一或多個服務。</span><span class="sxs-lookup"><span data-stu-id="32552-105">Stops and then starts one or more services.</span></span>
+## <span data-ttu-id="74f5d-104">概要</span><span class="sxs-lookup"><span data-stu-id="74f5d-104">SYNOPSIS</span></span>
+<span data-ttu-id="74f5d-105">停止然後啟動一或多個服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-105">Stops and then starts one or more services.</span></span>
 
-## <span data-ttu-id="32552-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="32552-106">SYNTAX</span></span>
+## <span data-ttu-id="74f5d-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="74f5d-106">SYNTAX</span></span>
 
-### <span data-ttu-id="32552-107">InputObject (預設值)</span><span class="sxs-lookup"><span data-stu-id="32552-107">InputObject (Default)</span></span>
+### <span data-ttu-id="74f5d-107">InputObject (預設值)</span><span class="sxs-lookup"><span data-stu-id="74f5d-107">InputObject (Default)</span></span>
 
 ```
 Restart-Service [-Force] [-InputObject] <ServiceController[]> [-PassThru] [-Include <String[]>]
  [-Exclude <String[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="32552-108">預設</span><span class="sxs-lookup"><span data-stu-id="32552-108">Default</span></span>
+### <span data-ttu-id="74f5d-108">預設</span><span class="sxs-lookup"><span data-stu-id="74f5d-108">Default</span></span>
 
 ```
 Restart-Service [-Force] [-Name] <String[]> [-PassThru] [-Include <String[]>] [-Exclude <String[]>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="32552-109">DisplayName</span><span class="sxs-lookup"><span data-stu-id="32552-109">DisplayName</span></span>
+### <span data-ttu-id="74f5d-109">DisplayName</span><span class="sxs-lookup"><span data-stu-id="74f5d-109">DisplayName</span></span>
 
 ```
 Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]>] [-Exclude <String[]>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="32552-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="32552-110">DESCRIPTION</span></span>
+## <span data-ttu-id="74f5d-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="74f5d-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="32552-111">**Restart-Service** Cmdlet 可針對指定的服務向 Windows 服務控制器傳送停止訊息，然後再傳送啟動訊息。</span><span class="sxs-lookup"><span data-stu-id="32552-111">The **Restart-Service** cmdlet sends a stop message and then a start message to the Windows Service Controller for a specified service.</span></span>
-<span data-ttu-id="32552-112">如果服務已停止，它會啟動而不會以錯誤訊息通知您。</span><span class="sxs-lookup"><span data-stu-id="32552-112">If a service was already stopped, it is started without notifying you of an error.</span></span>
-<span data-ttu-id="32552-113">您可以依服務的服務名稱或顯示名稱來指定服務，或是使用 *InputObject* 參數來傳送代表每個要重新啟動之服務的物件。</span><span class="sxs-lookup"><span data-stu-id="32552-113">You can specify the services by their service names or display names, or you can use the *InputObject* parameter to pass an object that represents each service that you want to restart.</span></span>
+<span data-ttu-id="74f5d-111">Cmdlet 會傳送 `Restart-Service` 停止訊息，然後將啟動訊息傳送至指定服務的 Windows 服務控制器。</span><span class="sxs-lookup"><span data-stu-id="74f5d-111">The `Restart-Service` cmdlet sends a stop message and then a start message to the Windows Service Controller for a specified service.</span></span> <span data-ttu-id="74f5d-112">如果服務已停止，它會啟動而不會以錯誤訊息通知您。</span><span class="sxs-lookup"><span data-stu-id="74f5d-112">If a service was already stopped, it is started without notifying you of an error.</span></span> <span data-ttu-id="74f5d-113">您可以依服務的服務名稱或顯示名稱來指定服務，或是使用 **InputObject** 參數來傳送代表每個要重新啟動之服務的物件。</span><span class="sxs-lookup"><span data-stu-id="74f5d-113">You can specify the services by their service names or display names, or you can use the **InputObject** parameter to pass an object that represents each service that you want to restart.</span></span>
 
-## <span data-ttu-id="32552-114">範例</span><span class="sxs-lookup"><span data-stu-id="32552-114">EXAMPLES</span></span>
+## <span data-ttu-id="74f5d-114">範例</span><span class="sxs-lookup"><span data-stu-id="74f5d-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="32552-115">範例 1：重新啟動本機電腦上的服務</span><span class="sxs-lookup"><span data-stu-id="32552-115">Example 1: Restart a service on the local computer</span></span>
+### <span data-ttu-id="74f5d-115">範例 1：重新啟動本機電腦上的服務</span><span class="sxs-lookup"><span data-stu-id="74f5d-115">Example 1: Restart a service on the local computer</span></span>
 
 ```powershell
 PS C:\> Restart-Service -Name winmgmt
 ```
 
-<span data-ttu-id="32552-116">此命令會重新啟動本機電腦上的 Windows Management Instrumentation 服務 (WinMgmt)。</span><span class="sxs-lookup"><span data-stu-id="32552-116">This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.</span></span>
+<span data-ttu-id="74f5d-116">此命令會重新啟動本機電腦上的 Windows Management Instrumentation 服務 (WinMgmt)。</span><span class="sxs-lookup"><span data-stu-id="74f5d-116">This command restarts the Windows Management Instrumentation service (WinMgmt) on the local computer.</span></span>
 
-### <span data-ttu-id="32552-117">範例 2：排除服務</span><span class="sxs-lookup"><span data-stu-id="32552-117">Example 2: Exclude a service</span></span>
+### <span data-ttu-id="74f5d-117">範例 2：排除服務</span><span class="sxs-lookup"><span data-stu-id="74f5d-117">Example 2: Exclude a service</span></span>
 
 ```powershell
 PS C:\> Restart-Service -DisplayName "net*" -Exclude "net logon"
 ```
 
-<span data-ttu-id="32552-118">此命令會重新啟動除了 Net Logon 服務之外，所有顯示名稱開頭為 Net 的服務。</span><span class="sxs-lookup"><span data-stu-id="32552-118">This command restarts the services that have a display name that starts with Net, except for the Net Logon service.</span></span>
+<span data-ttu-id="74f5d-118">此命令會重新啟動除了 Net Logon 服務之外，所有顯示名稱開頭為 Net 的服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-118">This command restarts the services that have a display name that starts with Net, except for the Net Logon service.</span></span>
 
-### <span data-ttu-id="32552-119">範例 3：啟動所有已停止的網路服務</span><span class="sxs-lookup"><span data-stu-id="32552-119">Example 3: Start all stopped network services</span></span>
+### <span data-ttu-id="74f5d-119">範例 3：啟動所有已停止的網路服務</span><span class="sxs-lookup"><span data-stu-id="74f5d-119">Example 3: Start all stopped network services</span></span>
 
 ```powershell
 PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Restart-Service
 ```
 
-<span data-ttu-id="32552-120">此命令啟動電腦上所有已停止的網路服務。</span><span class="sxs-lookup"><span data-stu-id="32552-120">This command starts all of the stopped network services on the computer.</span></span>
+<span data-ttu-id="74f5d-120">此命令啟動電腦上所有已停止的網路服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-120">This command starts all of the stopped network services on the computer.</span></span>
 
-<span data-ttu-id="32552-121">此命令會使用 Get-Service Cmdlet 取得代表服務名稱開頭為 net 之服務的物件。</span><span class="sxs-lookup"><span data-stu-id="32552-121">This command uses the Get-Service cmdlet to get objects that represent the services whose service name starts with net.</span></span>
-<span data-ttu-id="32552-122">管線運算子 (|) 會將服務物件傳送至 Where-Object Cmdlet，它只會選取狀態為 stopped 的服務。</span><span class="sxs-lookup"><span data-stu-id="32552-122">The pipeline operator (|) sends the services object to the Where-Object cmdlet, which selects only the services that have a status of stopped.</span></span>
-<span data-ttu-id="32552-123">另一個管線運算子會將選取的服務傳送至 **Restart-Service** 。</span><span class="sxs-lookup"><span data-stu-id="32552-123">Another pipeline operator sends the selected services to **Restart-Service** .</span></span>
+<span data-ttu-id="74f5d-121">此命令會使用 `Get-Service` Cmdlet 取得代表服務名稱以 net 開頭之服務的物件。</span><span class="sxs-lookup"><span data-stu-id="74f5d-121">This command uses the `Get-Service` cmdlet to get objects that represent the services whose service name starts with net.</span></span> <span data-ttu-id="74f5d-122">管線運算子 (`|`) 會將服務物件傳送至 `Where-Object` Cmdlet，此 Cmdlet 只會選取狀態為 [已停止] 的服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-122">The pipeline operator (`|`) sends the services object to the `Where-Object` cmdlet, which selects only the services that have a status of stopped.</span></span> <span data-ttu-id="74f5d-123">另一個管線運算子會將選取的服務傳送至 `Restart-Service` 。</span><span class="sxs-lookup"><span data-stu-id="74f5d-123">Another pipeline operator sends the selected services to `Restart-Service`.</span></span>
 
-<span data-ttu-id="32552-124">在實務上，您會先使用 *WhatIf* 參數來判斷此命令的效果，然後再執行它。</span><span class="sxs-lookup"><span data-stu-id="32552-124">In practice, you would use the *WhatIf* parameter to determine the effect of the command before you run it.</span></span>
+<span data-ttu-id="74f5d-124">在實務上，您會先使用 **WhatIf** 參數來判斷此命令的效果，然後再執行它。</span><span class="sxs-lookup"><span data-stu-id="74f5d-124">In practice, you would use the **WhatIf** parameter to determine the effect of the command before you run it.</span></span>
 
-## <span data-ttu-id="32552-125">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="32552-125">PARAMETERS</span></span>
+## <span data-ttu-id="74f5d-125">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="74f5d-125">PARAMETERS</span></span>
 
-### <span data-ttu-id="32552-126">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="32552-126">-DisplayName</span></span>
+### <span data-ttu-id="74f5d-126">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="74f5d-126">-DisplayName</span></span>
 
-<span data-ttu-id="32552-127">指定要重新啟動之服務的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="32552-127">Specifies the display names of services to restarted.</span></span>
-<span data-ttu-id="32552-128">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="32552-128">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="74f5d-127">指定要重新啟動之服務的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="74f5d-127">Specifies the display names of services to restarted.</span></span> <span data-ttu-id="74f5d-128">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="74f5d-128">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -99,12 +94,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="32552-129">-Exclude</span><span class="sxs-lookup"><span data-stu-id="32552-129">-Exclude</span></span>
+### <span data-ttu-id="74f5d-129">-Exclude</span><span class="sxs-lookup"><span data-stu-id="74f5d-129">-Exclude</span></span>
 
-<span data-ttu-id="32552-130">指定此 Cmdlet 省略的服務。</span><span class="sxs-lookup"><span data-stu-id="32552-130">Specifies services that this cmdlet omits.</span></span>
-<span data-ttu-id="32552-131">此參數的值會限定 *Name* 參數。</span><span class="sxs-lookup"><span data-stu-id="32552-131">The value of this parameter qualifies the *Name* parameter.</span></span>
-<span data-ttu-id="32552-132">輸入名稱元素或模式，例如 s\*。</span><span class="sxs-lookup"><span data-stu-id="32552-132">Enter a name element or pattern, such as s\*.</span></span>
-<span data-ttu-id="32552-133">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="32552-133">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="74f5d-130">指定此 Cmdlet 省略的服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-130">Specifies services that this cmdlet omits.</span></span> <span data-ttu-id="74f5d-131">此參數的值會限定 **Name** 參數。</span><span class="sxs-lookup"><span data-stu-id="74f5d-131">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="74f5d-132">輸入名稱元素或模式，例如 s\*。</span><span class="sxs-lookup"><span data-stu-id="74f5d-132">Enter a name element or pattern, such as s\*.</span></span> <span data-ttu-id="74f5d-133">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="74f5d-133">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -118,9 +110,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="32552-134">-Force</span><span class="sxs-lookup"><span data-stu-id="32552-134">-Force</span></span>
+### <span data-ttu-id="74f5d-134">-Force</span><span class="sxs-lookup"><span data-stu-id="74f5d-134">-Force</span></span>
 
-<span data-ttu-id="32552-135">強制執行命令而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="32552-135">Forces the command to run without asking for user confirmation.</span></span>
+<span data-ttu-id="74f5d-135">強制執行命令而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="74f5d-135">Forces the command to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -134,12 +126,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="32552-136">-Include</span><span class="sxs-lookup"><span data-stu-id="32552-136">-Include</span></span>
+### <span data-ttu-id="74f5d-136">-Include</span><span class="sxs-lookup"><span data-stu-id="74f5d-136">-Include</span></span>
 
-<span data-ttu-id="32552-137">指定此 Cmdlet 重新開機的服務。</span><span class="sxs-lookup"><span data-stu-id="32552-137">Specifies services that this cmdlet restarts.</span></span>
-<span data-ttu-id="32552-138">此參數的值會限定 *Name* 參數。</span><span class="sxs-lookup"><span data-stu-id="32552-138">The value of this parameter qualifies the *Name* parameter.</span></span>
-<span data-ttu-id="32552-139">輸入名稱元素或模式，例如 s\*。</span><span class="sxs-lookup"><span data-stu-id="32552-139">Enter a name element or pattern, such as s\*.</span></span>
-<span data-ttu-id="32552-140">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="32552-140">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="74f5d-137">指定此 Cmdlet 重新開機的服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-137">Specifies services that this cmdlet restarts.</span></span> <span data-ttu-id="74f5d-138">此參數的值會限定 **Name** 參數。</span><span class="sxs-lookup"><span data-stu-id="74f5d-138">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="74f5d-139">輸入名稱元素或模式，例如 s\*。</span><span class="sxs-lookup"><span data-stu-id="74f5d-139">Enter a name element or pattern, such as s\*.</span></span> <span data-ttu-id="74f5d-140">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="74f5d-140">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -153,10 +142,9 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="32552-141">-InputObject</span><span class="sxs-lookup"><span data-stu-id="32552-141">-InputObject</span></span>
+### <span data-ttu-id="74f5d-141">-InputObject</span><span class="sxs-lookup"><span data-stu-id="74f5d-141">-InputObject</span></span>
 
-<span data-ttu-id="32552-142">指定代表要重新開機之服務的 **ServiceController** 物件。</span><span class="sxs-lookup"><span data-stu-id="32552-142">Specifies **ServiceController** objects that represent the services to restart.</span></span>
-<span data-ttu-id="32552-143">輸入包含物件的變數，或輸入可取得物件的命令或運算式。</span><span class="sxs-lookup"><span data-stu-id="32552-143">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
+<span data-ttu-id="74f5d-142">指定代表要重新開機之服務的 **ServiceController** 物件。</span><span class="sxs-lookup"><span data-stu-id="74f5d-142">Specifies **ServiceController** objects that represent the services to restart.</span></span> <span data-ttu-id="74f5d-143">輸入包含物件的變數，或輸入可取得物件的命令或運算式。</span><span class="sxs-lookup"><span data-stu-id="74f5d-143">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -170,9 +158,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="32552-144">-Name</span><span class="sxs-lookup"><span data-stu-id="32552-144">-Name</span></span>
+### <span data-ttu-id="74f5d-144">-Name</span><span class="sxs-lookup"><span data-stu-id="74f5d-144">-Name</span></span>
 
-<span data-ttu-id="32552-145">指定要重新啟動之服務的服務名稱。</span><span class="sxs-lookup"><span data-stu-id="32552-145">Specifies the service names of the services to restart.</span></span>
+<span data-ttu-id="74f5d-145">指定要重新啟動之服務的服務名稱。</span><span class="sxs-lookup"><span data-stu-id="74f5d-145">Specifies the service names of the services to restart.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -186,10 +174,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="32552-146">-PassThru</span><span class="sxs-lookup"><span data-stu-id="32552-146">-PassThru</span></span>
+### <span data-ttu-id="74f5d-146">-PassThru</span><span class="sxs-lookup"><span data-stu-id="74f5d-146">-PassThru</span></span>
 
-<span data-ttu-id="32552-147">傳回代表服務的物件。</span><span class="sxs-lookup"><span data-stu-id="32552-147">Returns an object that represents the service.</span></span>
-<span data-ttu-id="32552-148">根據預設，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="32552-148">By default, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="74f5d-147">傳回代表服務的物件。</span><span class="sxs-lookup"><span data-stu-id="74f5d-147">Returns an object that represents the service.</span></span> <span data-ttu-id="74f5d-148">根據預設，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="74f5d-148">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -203,9 +190,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="32552-149">-Confirm</span><span class="sxs-lookup"><span data-stu-id="32552-149">-Confirm</span></span>
+### <span data-ttu-id="74f5d-149">-Confirm</span><span class="sxs-lookup"><span data-stu-id="74f5d-149">-Confirm</span></span>
 
-<span data-ttu-id="32552-150">在執行 Cmdlet 前提示您確認。</span><span class="sxs-lookup"><span data-stu-id="32552-150">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="74f5d-150">在執行 Cmdlet 前提示您確認。</span><span class="sxs-lookup"><span data-stu-id="74f5d-150">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -219,10 +206,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="32552-151">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="32552-151">-WhatIf</span></span>
+### <span data-ttu-id="74f5d-151">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="74f5d-151">-WhatIf</span></span>
 
-<span data-ttu-id="32552-152">顯示執行 Cmdlet 後會發生的情況。</span><span class="sxs-lookup"><span data-stu-id="32552-152">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="32552-153">Cmdlet 並不會執行。</span><span class="sxs-lookup"><span data-stu-id="32552-153">The cmdlet is not run.</span></span>
+<span data-ttu-id="74f5d-152">顯示執行 Cmdlet 後會發生的情況。</span><span class="sxs-lookup"><span data-stu-id="74f5d-152">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="74f5d-153">Cmdlet 並不會執行。</span><span class="sxs-lookup"><span data-stu-id="74f5d-153">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -236,43 +222,44 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="32552-154">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="32552-154">CommonParameters</span></span>
+### <span data-ttu-id="74f5d-154">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="74f5d-154">CommonParameters</span></span>
 
-<span data-ttu-id="32552-155">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="32552-155">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="32552-156">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="32552-156">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="74f5d-155">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="74f5d-155">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="74f5d-156">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="74f5d-156">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="32552-157">輸入</span><span class="sxs-lookup"><span data-stu-id="32552-157">INPUTS</span></span>
+## <span data-ttu-id="74f5d-157">輸入</span><span class="sxs-lookup"><span data-stu-id="74f5d-157">INPUTS</span></span>
 
-### <span data-ttu-id="32552-158">System.ServiceProcess.ServiceController、System.String</span><span class="sxs-lookup"><span data-stu-id="32552-158">System.ServiceProcess.ServiceController, System.String</span></span>
+### <span data-ttu-id="74f5d-158">System.ServiceProcess.ServiceController、System.String</span><span class="sxs-lookup"><span data-stu-id="74f5d-158">System.ServiceProcess.ServiceController, System.String</span></span>
 
-<span data-ttu-id="32552-159">您可以使用管線將服務物件或包含服務名稱的字串傳送至此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="32552-159">You can pipe a service object or a string that contains a service name to this cmdlet.</span></span>
+<span data-ttu-id="74f5d-159">您可以使用管線將服務物件或包含服務名稱的字串傳送至此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="74f5d-159">You can pipe a service object or a string that contains a service name to this cmdlet.</span></span>
 
-## <span data-ttu-id="32552-160">輸出</span><span class="sxs-lookup"><span data-stu-id="32552-160">OUTPUTS</span></span>
+## <span data-ttu-id="74f5d-160">輸出</span><span class="sxs-lookup"><span data-stu-id="74f5d-160">OUTPUTS</span></span>
 
-### <span data-ttu-id="32552-161">無、System.ServiceProcess.ServiceController</span><span class="sxs-lookup"><span data-stu-id="32552-161">None, System.ServiceProcess.ServiceController</span></span>
+### <span data-ttu-id="74f5d-161">無、System.ServiceProcess.ServiceController</span><span class="sxs-lookup"><span data-stu-id="74f5d-161">None, System.ServiceProcess.ServiceController</span></span>
 
-<span data-ttu-id="32552-162">如果您指定 *PassThru* 參數，此 Cmdlet 會產生代表重新啟動之服務的 **System.ServiceProcess.ServiceController** 物件。</span><span class="sxs-lookup"><span data-stu-id="32552-162">This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the restarted service, if you specify the *PassThru* parameter.</span></span>
-<span data-ttu-id="32552-163">否則，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="32552-163">Otherwise, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="74f5d-162">如果您指定 **PassThru** 參數，此 Cmdlet 會產生代表重新啟動之服務的 **System.ServiceProcess.ServiceController** 物件。</span><span class="sxs-lookup"><span data-stu-id="74f5d-162">This cmdlet generates a **System.ServiceProcess.ServiceController** object that represents the restarted service, if you specify the **PassThru** parameter.</span></span> <span data-ttu-id="74f5d-163">否則，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="74f5d-163">Otherwise, this cmdlet does not generate any output.</span></span>
 
-## <span data-ttu-id="32552-164">注意</span><span class="sxs-lookup"><span data-stu-id="32552-164">NOTES</span></span>
+## <span data-ttu-id="74f5d-164">注意</span><span class="sxs-lookup"><span data-stu-id="74f5d-164">NOTES</span></span>
 
-* <span data-ttu-id="32552-165">只有當目前的使用者具有控制服務的權限時， **Restart-Service** 才能控制服務。</span><span class="sxs-lookup"><span data-stu-id="32552-165">**Restart-Service** can control services only when the current user has permission to do this.</span></span> <span data-ttu-id="32552-166">若命令無法正確運作，您可能沒有必要的權限。</span><span class="sxs-lookup"><span data-stu-id="32552-166">If a command does not work correctly, you might not have the required permissions.</span></span>
-* <span data-ttu-id="32552-167">若要尋找系統上服務的服務名稱和顯示名稱，請輸入 **Get service** 。</span><span class="sxs-lookup"><span data-stu-id="32552-167">To find the service names and display names of the services on your system, type **Get-Service** ".</span></span> <span data-ttu-id="32552-168">服務名稱會出現在 [ **名稱** ] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。</span><span class="sxs-lookup"><span data-stu-id="32552-168">The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.</span></span>
+<span data-ttu-id="74f5d-165">此 Cmdlet 僅適用于 Windows 平臺。</span><span class="sxs-lookup"><span data-stu-id="74f5d-165">This cmdlet is only available on Windows platforms.</span></span>
 
-## <span data-ttu-id="32552-169">相關連結</span><span class="sxs-lookup"><span data-stu-id="32552-169">RELATED LINKS</span></span>
+- <span data-ttu-id="74f5d-166">`Restart-Service` 只有當目前的使用者有權進行此作業時，才能控制服務。</span><span class="sxs-lookup"><span data-stu-id="74f5d-166">`Restart-Service` can control services only when the current user has permission to do this.</span></span> <span data-ttu-id="74f5d-167">若命令無法正確運作，您可能沒有必要的權限。</span><span class="sxs-lookup"><span data-stu-id="74f5d-167">If a command does not work correctly, you might not have the required permissions.</span></span>
+- <span data-ttu-id="74f5d-168">若要尋找系統上服務的服務名稱和顯示名稱，請輸入 `Get-Service` "。</span><span class="sxs-lookup"><span data-stu-id="74f5d-168">To find the service names and display names of the services on your system, type `Get-Service`".</span></span>
+  <span data-ttu-id="74f5d-169">服務名稱會出現在 [ **名稱** ] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。</span><span class="sxs-lookup"><span data-stu-id="74f5d-169">The service names appear in the **Name** column, and the display names appear in the **DisplayName** column.</span></span>
 
-[<span data-ttu-id="32552-170">Get-Service</span><span class="sxs-lookup"><span data-stu-id="32552-170">Get-Service</span></span>](Get-Service.md)
+## <span data-ttu-id="74f5d-170">相關連結</span><span class="sxs-lookup"><span data-stu-id="74f5d-170">RELATED LINKS</span></span>
 
-[<span data-ttu-id="32552-171">New-Service</span><span class="sxs-lookup"><span data-stu-id="32552-171">New-Service</span></span>](New-Service.md)
+[<span data-ttu-id="74f5d-171">Get-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-171">Get-Service</span></span>](Get-Service.md)
 
-[<span data-ttu-id="32552-172">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="32552-172">Resume-Service</span></span>](Resume-Service.md)
+[<span data-ttu-id="74f5d-172">New-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-172">New-Service</span></span>](New-Service.md)
 
-[<span data-ttu-id="32552-173">Set-Service</span><span class="sxs-lookup"><span data-stu-id="32552-173">Set-Service</span></span>](Set-Service.md)
+[<span data-ttu-id="74f5d-173">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-173">Resume-Service</span></span>](Resume-Service.md)
 
-[<span data-ttu-id="32552-174">Start-Service</span><span class="sxs-lookup"><span data-stu-id="32552-174">Start-Service</span></span>](Start-Service.md)
+[<span data-ttu-id="74f5d-174">Set-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-174">Set-Service</span></span>](Set-Service.md)
 
-[<span data-ttu-id="32552-175">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="32552-175">Stop-Service</span></span>](Stop-Service.md)
+[<span data-ttu-id="74f5d-175">Start-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-175">Start-Service</span></span>](Start-Service.md)
 
-[<span data-ttu-id="32552-176">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="32552-176">Suspend-Service</span></span>](Suspend-Service.md)
+[<span data-ttu-id="74f5d-176">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-176">Stop-Service</span></span>](Stop-Service.md)
 
-[<span data-ttu-id="32552-177">Remove-Service</span><span class="sxs-lookup"><span data-stu-id="32552-177">Remove-Service</span></span>](Remove-Service.md)
+[<span data-ttu-id="74f5d-177">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-177">Suspend-Service</span></span>](Suspend-Service.md)
 
+[<span data-ttu-id="74f5d-178">Remove-Service</span><span class="sxs-lookup"><span data-stu-id="74f5d-178">Remove-Service</span></span>](Remove-Service.md)
