@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Service
-ms.openlocfilehash: 71b9ac57b2ab27e26f3a7454662f231b6e1dd764
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a79bcdaa60c420c4436276749c1b4d298158f8a6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204371"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343006"
 ---
 # Start-Service
 
@@ -252,12 +252,14 @@ Accept wildcard characters: False
 
 ## 注意
 
-* 您也可以 `Start-Service` 使用內建的別名來參考 `sasv` 。 如需詳細資訊，請參閱 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)。
-* `Start-Service` 只有在目前的使用者有權進行此作業時，才能控制服務。 若命令無法正確運作，您可能沒有必要的權限。
-* 若要尋找系統上服務的服務名稱和顯示名稱，請輸入 `Get-Service`。
+此 Cmdlet 僅適用于 Windows 平臺。
+
+- 您也可以 `Start-Service` 使用內建的別名來參考 `sasv` 。 如需詳細資訊，請參閱 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)。
+- `Start-Service` 只有在目前的使用者有權進行此作業時，才能控制服務。 若命令無法正確運作，您可能沒有必要的權限。
+- 若要尋找系統上服務的服務名稱和顯示名稱，請輸入 `Get-Service`。
   服務名稱會出現在 [ **名稱** ] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。
-* 您只能啟動啟動類型為 [手動]、[自動] 或 [自動] (延遲開始) 的服務。 您無法啟動啟動類型是 Disabled 的服務。 如果 `Start-Service` 命令因訊息而失敗 `Cannot start service \<service-name\> on computer` ，請使用 `Get-CimInstance` 來尋找服務的啟動類型，如果您需要的話，請使用 `Set-Service` Cmdlet 來變更服務的啟動類型。
-* 某些服務，例如效能記錄及警示 (SysmonLog)，在沒有執行任何工作時會自動停止。 當 PowerShell 啟動幾乎立即停止的服務時，它會顯示下列訊息： `Service \<display-name\> start failed.`
+- 您只能啟動啟動類型為 [手動]、[自動] 或 [自動] (延遲開始) 的服務。 您無法啟動啟動類型是 Disabled 的服務。 如果 `Start-Service` 命令因訊息而失敗 `Cannot start service \<service-name\> on computer` ，請使用 `Get-CimInstance` 來尋找服務的啟動類型，如果您需要的話，請使用 `Set-Service` Cmdlet 來變更服務的啟動類型。
+- 某些服務，例如效能記錄及警示 (SysmonLog)，在沒有執行任何工作時會自動停止。 當 PowerShell 啟動幾乎立即停止的服務時，它會顯示下列訊息： `Service \<display-name\> start failed.`
 
 ## 相關連結
 
@@ -276,4 +278,3 @@ Accept wildcard characters: False
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/new-event?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Event
-ms.openlocfilehash: 6056861bc6b472e389939e446d922d2bc4302294
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 6b44322c21549c31f62c7b35e2fef1732f9f0c25
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204572"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343431"
 ---
 # New-Event
 
@@ -28,16 +28,13 @@ New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments]
 
 ## DESCRIPTION
 
-**New 事件** Cmdlet 會建立新的自訂事件。
+`New-Event`Cmdlet 會建立新的自訂事件。
 
 您可以使用自訂事件來通知使用者關於程式的狀態變更，以及您的程式可偵測到的任何變更，包括硬體或系統狀況、應用程式狀態、磁碟狀態、網路狀態或背景工作完成。
 
-自訂事件每次引發時會自動新增至您工作階段的事件佇列，不需要訂閱它們。
-不過，如果您想將事件轉送到本機工作階段，或想指定回應事件的動作，請使用 Register-EngineEvent Cmdlet 訂閱自訂事件。
+自訂事件每次引發時會自動新增至您工作階段的事件佇列，不需要訂閱它們。 但是，如果您想要將事件轉送到本機會話，或指定回應事件的動作，請使用 `Register-EngineEvent` Cmdlet 來訂閱自訂事件。
 
-當您訂閱自訂事件時，會將事件訂閱者新增到您的工作階段中。
-如果您使用 Unregister-Event Cmdlet 取消事件訂閱，也會從工作階段中刪除事件訂閱者與自訂事件。
-如果您沒有訂閱自訂事件，必須變更程式條件或關閉 PowerShell 會話，才能刪除事件。
+當您訂閱自訂事件時，會將事件訂閱者新增到您的工作階段中。 如果您使用 Cmdlet 取消事件訂閱 `Unregister-Event` ，則會從會話刪除事件訂閱者和自訂事件。 如果您沒有訂閱自訂事件，必須變更程式條件或關閉 PowerShell 會話，才能刪除事件。
 
 ## 範例
 
@@ -47,8 +44,7 @@ New-Event [-SourceIdentifier] <String> [[-Sender] <PSObject>] [[-EventArguments]
 PS C:\> New-Event -SourceIdentifier Timer -Sender windows.timer -MessageData "Test"
 ```
 
-此命令會在 PowerShell 事件佇列中建立新的事件。
-它會使用 **Windows Timer** 物件來傳送事件。
+此命令會在 PowerShell 事件佇列中建立新的事件。 它會使用 **Windows Timer** 物件來傳送事件。
 
 ### 範例2：引發事件以回應另一個事件
 
@@ -65,11 +61,9 @@ PS C:\> function Enable-ProcessCreationEvent
 }
 ```
 
-這個範例函式會使用 **New 事件** Cmdlet 來引發事件，以回應另一個事件。
-命令使用 Register-ObjectEvent Cmdlet 訂閱新處理程序建立時引發的 Windows Management Instrumentation (WMI) 事件。
-此命令會使用 Cmdlet 的 *Action* 參數來呼叫 **new 事件** Cmdlet，此 Cmdlet 會建立新的事件。
+這個範例函式會使用 `New-Event` Cmdlet 來引發事件以回應另一個事件。 此命令會使用 `Register-ObjectEvent` Cmdlet 來訂閱在新的進程建立時所引發的 Windows Management Instrumentation (WMI) 事件。 此命令會使用 Cmdlet 的 **Action** 參數來呼叫 `New-Event` Cmdlet，以建立新的事件。
 
-由於 **新事件** 引發的事件會自動新增至 PowerShell 事件佇列，因此不需要註冊該事件。
+由於引發的事件會 `New-Event` 自動新增至 PowerShell 事件佇列，因此不需要註冊該事件。
 
 ## PARAMETERS
 
@@ -91,8 +85,7 @@ Accept wildcard characters: False
 
 ### -MessageData
 
-指定與事件關聯的其他資料。
-此參數的值會顯示在事件物件的 **MessageData** 屬性。
+指定與事件關聯的其他資料。 此參數的值會顯示在事件物件的 **MessageData** 屬性。
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -108,8 +101,7 @@ Accept wildcard characters: False
 
 ### -寄件者
 
-指定引發事件的物件。
-預設值為 PowerShell 引擎。
+指定引發事件的物件。 預設值為 PowerShell 引擎。
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -125,8 +117,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-指定新事件的名稱。
-此為必要參數，它在工作階段中必須是唯一的。
+指定新事件的名稱。 此為必要參數，它在工作階段中必須是唯一的。
 
 此參數的值會出現在事件的 **SourceIdentifier** 屬性中。
 
@@ -148,7 +139,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
@@ -158,7 +149,10 @@ Accept wildcard characters: False
 
 ## 注意
 
-新的自訂事件、事件訂閱與事件佇列只會存在目前的工作階段。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
+Linux 或 macOS 平臺上沒有可用的事件來源。
+
+新的自訂事件、事件訂閱與事件佇列只會存在目前的工作階段。
+若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
 
 ## 相關連結
 

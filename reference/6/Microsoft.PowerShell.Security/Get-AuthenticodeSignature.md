@@ -7,12 +7,12 @@ ms.date: 04/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-authenticodesignature?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-AuthenticodeSignature
-ms.openlocfilehash: 49dda60cbe0e9233f89061c7240e52ae33e87b11
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 351d666efad82d48d6d0390f98b472316602db1d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204340"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343703"
 ---
 # Get-AuthenticodeSignature
 
@@ -166,6 +166,8 @@ Accept wildcard characters: False
 `Get-AuthenticodeSignature` 傳回其取得之每個簽章的簽章物件。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 如需 PowerShell 中 Authenticode 簽章的相關資訊，請參閱 [about_Signing](../Microsoft.PowerShell.Core/About/about_Signing.md)。
 

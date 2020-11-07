@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Service
-ms.openlocfilehash: ad1fd47291cbe8977bd2f2ada4981589714c93a3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a5c156dcf83b3c60123b0bdde002c8657081602e
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202416"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343754"
 ---
 # Set-Service
 
@@ -391,6 +391,8 @@ Accept wildcard characters: False
 依預設， `Set-Service` 不會傳回任何物件。 使用 **PassThru** 參數輸出 **ServiceController** 物件。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 `Set-Service` 需要較高的許可權。 使用 [ **以系統管理員身分執行** ] 選項。
 

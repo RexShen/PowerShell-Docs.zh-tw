@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 17b28b14a9610dd48a03cc8c654806e75d3d97e3
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 0963e90f1f994a9bd6f3f61e80bf56eebff09384
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201764"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343108"
 ---
 # New-Service
 
@@ -186,8 +186,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-指定服務的名稱。
-這是必要參數。
+指定服務的名稱。 這是必要參數。
 
 ```yaml
 Type: System.String
@@ -261,8 +260,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-顯示執行 Cmdlet 後會發生的情況。
-Cmdlet 並不會執行。
+顯示執行 Cmdlet 後會發生的情況。 Cmdlet 並不會執行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -282,7 +280,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
@@ -294,7 +292,9 @@ Accept wildcard characters: False
 
 ## 注意
 
-若要在 Windows Vista 和更新版本的 Windows 作業系統上執行此 Cmdlet，請使用 [以系統管理員身分執行] 選項啟動 PowerShell。
+此 Cmdlet 僅適用于 Windows 平臺。
+
+若要執行此 Cmdlet，請使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell。
 
 ## 相關連結
 

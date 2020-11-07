@@ -7,12 +7,12 @@ ms.date: 05/20/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-hotfix?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-HotFix
-ms.openlocfilehash: 33da44a4a228b57296b85fbafb40da51657df1c1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: cb0fb1a6d7de033438c3165d44d5b8f8c03ba9a4
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204019"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342989"
 ---
 # Get-HotFix
 
@@ -28,7 +28,7 @@ Get-HotFix [[-Id] <String[]>] [-ComputerName <String[]>] [-Credential <PSCredent
 [<CommonParameters>]
 ```
 
-### Description
+### 說明
 
 ```
 Get-HotFix [-Description <String[]>] [-ComputerName <String[]>] [-Credential <PSCredential>]
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### String
+### 字串
 
 您可以透過管道將一或多個電腦名稱稱傳送至 Get-修正程式。
 
@@ -183,6 +183,8 @@ Accept wildcard characters: False
 `Get-HotFix` 傳回物件，代表電腦上的修正程式。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 **Win32_QuickFixEngineering** [WMI 類別](/windows/desktop/WmiSdk/retrieving-a-class)代表一小段全系統更新，通常稱為快速修正工程 (QFE) update，套用至目前的作業系統。 這個類別只會傳回以元件為基礎的服務 (CBS) 所提供的更新。 這些更新不會列在登錄中。 **Win32_QuickFixEngineering** 不會傳回 Microsoft WINDOWS INSTALLER (MSI) 或 [Windows Update](https://update.microsoft.com)網站所提供的更新。 如需詳細資訊，請參閱 [Win32_QuickFixEngineering 類別](/windows/desktop/CIMWin32Prov/win32-quickfixengineering)。
 

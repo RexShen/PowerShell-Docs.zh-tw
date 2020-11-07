@@ -7,12 +7,12 @@ ms.date: 07/16/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSRemoting
-ms.openlocfilehash: 2e05348e3741b84b8ad40bcb6ad542a54354176f
-ms.sourcegitcommit: 0e0f45d0d8deb8c9088a4f4a32218edde052b686
+ms.openlocfilehash: 6dd0b6a997551aba0df2da666eb21dddeb2e1fcf
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "93205299"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344077"
 ---
 # Enable-PSRemoting
 
@@ -256,7 +256,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
@@ -267,6 +267,8 @@ Accept wildcard characters: False
 此 Cmdlet 會傳回描述其結果的字串。
 
 ## 注意
+
+此 Cmdlet 僅適用于 Windows 平臺。
 
 在伺服器版本的 Windows 作業系統上， `Enable-PSRemoting` 會針對允許遠端存取的私人和網域網路建立防火牆規則，並為公用網路建立防火牆規則，以允許從相同本機子網的電腦進行遠端存取。
 

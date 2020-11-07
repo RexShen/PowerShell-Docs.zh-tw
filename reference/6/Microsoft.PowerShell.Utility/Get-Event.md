@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-event?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Event
-ms.openlocfilehash: 1920d7a834de133b377cdab7e16851c86477c3da
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9a66c7ce0d892b7702aab74fc278b20e59d06a98
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204643"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343448"
 ---
 # Get-Event
 
@@ -35,15 +35,11 @@ Get-Event [-EventIdentifier] <Int32> [<CommonParameters>]
 
 ## DESCRIPTION
 
-**取得事件** Cmdlet 會取得目前會話之 PowerShell 事件佇列中的事件。
-您可以取得所有事件，或使用 *EventIdentifier* 或 *SourceIdentifier* 參數來指定事件。
+Cmdlet 會取得 `Get-Event` 目前會話的 PowerShell 事件佇列中的事件。 您可以取得所有事件，或使用 **EventIdentifier** 或 **SourceIdentifier** 參數來指定事件。
 
-發生事件時，它會新增到事件佇列。
-事件佇列包含您已註冊的事件、使用 New-Event Cmdlet 所建立的事件，以及 PowerShell 結束時引發的事件。
-您可以使用 **Get-Event** 或 Wait-Event 來取得事件。
+發生事件時，它會新增到事件佇列。 事件佇列包含您已註冊的事件、使用指令程式所建立的事件 `New-Event` ，以及在 PowerShell 結束時引發的事件。 您可以使用 `Get-Event` 或 `Wait-Event` 來取得事件。
 
-這個 Cmdlet 不會從事件檢視器記錄檔取得事件。
-如果要取得這些事件，請使用 Get-WinEvent 或 Get-EventLog。
+這個 Cmdlet 不會從事件檢視器記錄檔取得事件。 若要取得這些事件，請使用 `Get-WinEvent` 或 `Get-EventLog` 。
 
 ## 範例
 
@@ -90,13 +86,11 @@ MessageData      :
 
 這個範例示範如何使用 SourceIdentifier 以外的屬性來取得事件。
 
-第一個命令會取得事件佇列中所有的事件，並將其儲存在 $Events 變數中。
+第一個命令會取得事件佇列中的所有事件，並將它們儲存在 `$Events` 變數中。
 
-第二個命令會使用陣列標記法，取得 $Events 變數中陣列的第一個 (0-index) 事件。
-命令使用管線運算子 (|) 將事件傳送至 Format-List 命令，此命令會在清單中顯示事件的所有屬性。
-這可讓您檢視事件物件的屬性。
+第二個命令會使用陣列標記法，取得變數中陣列中的第一個 (0 索引) 事件 `$Events` 。 此命令會使用管線運算子 (`|`) 將事件傳送至 `Format-List` 命令，此命令會在清單中顯示事件的所有屬性。 這可讓您檢視事件物件的屬性。
 
-第三個命令示範如何根據事件所產生的時間，使用 Where-Object Cmdlet 來取得事件。
+第三個命令會顯示如何使用指令 `Where-Object` 程式，以根據產生的時間取得事件。
 
 ### 範例 4︰依識別碼取得事件
 
@@ -126,9 +120,7 @@ Accept wildcard characters: False
 
 ### -SourceIdentifier
 
-指定此 Cmdlet 用以取得事件的來源識別碼。
-預設為事件佇列中的所有事件。
-不允許使用萬用字元。
+指定此 Cmdlet 用以取得事件的來源識別碼。 預設為事件佇列中的所有事件。 不允許使用萬用字元。
 
 ```yaml
 Type: System.String
@@ -148,7 +140,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
@@ -156,52 +148,34 @@ Accept wildcard characters: False
 
 ### System.Management.Automation.PSEventArgs
 
-**Get-Event** 會針對每個事件傳回一個 **PSEventArgs** 物件。
-如果要查看此物件的描述，請輸入 `Get-Help Get-Event -Full`，並參閱說明主題的＜附註＞一節。
+`Get-Event` 傳回每個事件的 **PSEventArgs** 物件。 如果要查看此物件的描述，請輸入 `Get-Help Get-Event -Full`，並參閱說明主題的＜附註＞一節。
 
 ## 注意
 
-* 事件、事件訂閱與事件佇列僅存在目前工作階段中。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
+Linux 或 macOS 平臺上沒有可用的事件來源。
 
-  **取得事件** Cmdlet 會傳回 **PSEventArgs** 物件， ( **PSEventArgs** ) 具有下列屬性：
+事件、事件訂閱與事件佇列僅存在目前工作階段中。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
 
-  - ComputerName。
-發生事件之電腦的名稱。
-從遠端電腦轉送事件時，才會填入這個屬性值。
+Cmdlet 會傳回 `Get-Event` **PSEventArgs** 物件， ( **PSEventArgs** ) 具有下列屬性：
 
-  - RunspaceId。
-可唯一識別發生事件之工作階段的 GUID。
-從遠端電腦轉送事件時，才會填入這個屬性值。
+- ComputerName。 發生事件之電腦的名稱。 從遠端電腦轉送事件時，才會填入這個屬性值。
 
-  - EventIdentifier。
-可唯一識別目前工作階段中之事件通知的整數 (Int32)。
+- RunspaceId。 可唯一識別發生事件之工作階段的 GUID。 從遠端電腦轉送事件時，才會填入這個屬性值。
 
-  - Sender。
-產生事件的物件。
-在 *Action* 參數的值中，$Sender 自動變數會包含傳送者物件。
+- EventIdentifier。 可唯一識別目前工作階段中之事件通知的整數 (Int32)。
 
-  - SourceEventArgs。
-衍生自 EventArgs 的第一個參數 (如果存在的話)。
-例如，在簽章格式為 Object sender, Timers.ElapsedEventArgs e 的計時器已經歷事件中，SourceEventArgs 屬性會包含 Timers.ElapsedEventArgs。
-在 *Action* 參數的值中，$EventArgs 自動變數會包含此值。
+- Sender。 產生事件的物件。 在 **Action** 參數的值中， `$Sender` 自動變數包含傳送者物件。
 
-  - SourceArgs。
-原始事件簽章的所有參數。
-對於標準事件簽章，$Args\[0\] 代表傳送者，而 $Args\[1\] 代表 SourceEventArgs。
-在 *Action* 參數的值中，$Args 自動變數會包含此值。
+- SourceEventArgs。 衍生自 EventArgs 的第一個參數 (如果存在的話)。 例如，在計時器經過的事件中，簽章的表單物件為 **timers.elapsedeventargs** e， **SourceEventArgs** 屬性會包含 **timers.elapsedeventargs** 。 在 **Action** 參數的值中， `$EventArgs` 自動變數包含此值。
 
-  - SourceIdentifier。
-識別事件訂閱的字串。
-在 *Action* 參數的值中，$Event 自動變數的 SourceIdentifier 屬性會包含此值。
+- SourceArgs。 原始事件簽章的所有參數。 若為標準事件簽章，表示傳送者 `$Args[0]` ，並 `$Args[1]` 代表 **SourceEventArgs** 。 在 **Action** 參數的值中， `$Args` 自動變數包含此值。
 
-  - TimeGenerated。
-代表產生該事件時間的 **DateTime** 物件。
-在 *Action* 參數的值中，$Event 自動變數的 TimeGenerated 屬性會包含此值。
+- SourceIdentifier。 識別事件訂閱的字串。 在 **Action** 參數的值中，自動變數的 **SourceIdentifier** 屬性會 `$Event` 包含此值。
 
-  - MessageData.
-與事件訂閱相關聯的資料。
-使用者註冊事件時，會指定此資料。
-在 *Action* 參數的值中，$Event 自動變數的 MessageData 屬性會包含此值。
+- TimeGenerated。 代表產生該事件時間的 **DateTime** 物件。
+  在 **Action** 參數的值中，自動變數的 **TimeGenerated** 屬性會 `$Event` 包含此值。
+
+- MessageData. 與事件訂閱相關聯的資料。 使用者註冊事件時，會指定此資料。 在 **Action** 參數的值中，自動變數的 **MessageData** 屬性會 `$Event` 包含此值。
 
 ## 相關連結
 

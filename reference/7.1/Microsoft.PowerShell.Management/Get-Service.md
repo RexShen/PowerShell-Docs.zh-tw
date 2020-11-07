@@ -7,12 +7,12 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 7f44f1d363c5fae79722fdfb5bd894cb24e00d0c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1cbecd37217c4c0113079dfa9ac7008dd0d91823
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205227"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342224"
 ---
 # Get-Service
 
@@ -298,6 +298,8 @@ Accept wildcard characters: True
 
 ## 注意
 
+此 Cmdlet 僅適用于 Windows 平臺。
+
 從 PowerShell 6.0 開始，會將下列屬性新增至 **ServiceController** 物件： **UserName** 、 **Description** 、 **DelayedAutoStart** 、 **BinaryPathName** 和 **StartupType** 。
 
 您也可以 `Get-Service` 使用內建的別名來參考 `gsv` 。 如需詳細資訊，請參閱 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)。
@@ -325,4 +327,3 @@ Accept wildcard characters: True
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

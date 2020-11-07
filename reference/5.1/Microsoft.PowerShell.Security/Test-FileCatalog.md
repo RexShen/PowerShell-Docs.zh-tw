@@ -7,17 +7,16 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 128405fdbcf0c1d059287191850ffdca53278ec1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 8f5e11fca51bf92386c19a77fa9a66503b2d47a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203387"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343237"
 ---
 # Test-FileCatalog
 
 ## 概要
-
 `Test-FileCatalog` 驗證目錄檔案中包含的雜湊 ( .cat) 是否符合實際檔案的雜湊，以便驗證其真實性。
 
 只有在 Windows 上才支援此 Cmdlet。
@@ -31,10 +30,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## DESCRIPTION
 
-`Test-FileCatalog` 藉由比較類別目錄檔案 ( 的檔案雜湊來驗證檔案的真實性，並將實際檔案的雜湊與磁片上的實際檔案雜湊) 。
-如果偵測到任何不符的狀況，則會以 >validationfailed 的形式傳回狀態。 使用者可以使用 -Detailed 參數來擷取此資訊的完整內容。
-它也會在 [簽章] 屬性中顯示目錄的簽章狀態，這相當於 `Get-AuthenticodeSignature` 在類別目錄檔案上呼叫 Cmdlet。
-使用者也可以使用 -FilesToSkip 參數，在驗證期間略過任何檔案。
+`Test-FileCatalog` 藉由比較類別目錄檔案 ( 的檔案雜湊來驗證檔案的真實性，並將實際檔案的雜湊與磁片上的實際檔案雜湊) 。 如果偵測到任何不符的狀況，則會以 >validationfailed 的形式傳回狀態。 使用者可以使用 -Detailed 參數來擷取此資訊的完整內容。 它也會在 [簽章] 屬性中顯示目錄的簽章狀態，這相當於 `Get-AuthenticodeSignature` 在類別目錄檔案上呼叫 Cmdlet。 使用者也可以使用 -FilesToSkip 參數，在驗證期間略過任何檔案。
 
 只有在 Windows 上才支援此 Cmdlet。
 
@@ -154,8 +150,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-顯示執行 Cmdlet 後會發生的情況。
-Cmdlet 並不會執行。
+顯示執行 Cmdlet 後會發生的情況。 Cmdlet 並不會執行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
