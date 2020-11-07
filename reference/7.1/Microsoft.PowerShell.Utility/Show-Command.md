@@ -7,12 +7,12 @@ ms.date: 10/29/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/show-command?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Show-Command
-ms.openlocfilehash: 86253a8a0bd02a60980cc3655af7bb961acf88ac
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: b5758fdb9fc3e8f604b24fb9c64cad3f95047ec3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202168"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347766"
 ---
 # Show-Command
 
@@ -40,7 +40,7 @@ Show-Command [[-Name] <String>] [-Height <Double>] [-Width <Double>] [-NoCommonP
 
 在 (ISE) 的 PowerShell 整合式腳本環境中， `Show-Command` 預設會顯示視窗的變化。 如需使用此命令視窗的詳細資訊，請參閱 PowerShell ISE 說明主題。
 
-PowerShell 7 中已重新引入此 Cmdlet。 
+PowerShell 7 中已重新引入此 Cmdlet。
 
 由於此 Cmdlet 需要使用者介面，因此無法在 Windows Server Core 或 Windows Nano Server 上運作。 只有支援 Windows 桌面的 Windows 系統才能使用此 Cmdlet。
 
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法透過管道傳送輸入 `Show-Command` 。
 
@@ -272,7 +272,8 @@ Accept wildcard characters: False
 
 ## 注意
 
+此 Cmdlet 僅適用于 Windows 平臺。
+
 `Show-Command` 在遠端會話中無法運作。
 
 ## 相關連結
-

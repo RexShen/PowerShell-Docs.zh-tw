@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 2adcbcc9e3c933e5c28521f26ec3ae2db03e50f7
-ms.sourcegitcommit: f58e4a04240e3419772f9eaa031b626800b615d7
+ms.openlocfilehash: 968cea73cd31bb5bf7b0341e5dbf40e297bb5edd
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "93205807"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347681"
 ---
 # Register-EngineEvent
 
@@ -247,7 +247,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法透過管道傳送輸入 `Register-EngineEvent` 。
 
@@ -258,6 +258,8 @@ Accept wildcard characters: False
 如果您使用 **Action** 參數，會傳回 `Register-EngineEvent` **PSEventJob** 物件。 否則，它不會產生任何輸出。
 
 ## 注意
+
+Linux 或 macOS 平臺上沒有可用的事件來源。
 
 事件、事件訂閱與事件佇列僅存在目前工作階段中。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
 
@@ -274,4 +276,3 @@ Accept wildcard characters: False
 [Unregister-Event](Unregister-Event.md)
 
 [Wait-Event](Wait-Event.md)
-

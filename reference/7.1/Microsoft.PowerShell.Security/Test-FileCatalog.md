@@ -7,12 +7,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 7e2102963df66988d4d7bc2d67ac054d8b7414b8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4ea34f547e296567fc0ad728d9279392615836d3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203667"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346389"
 ---
 # Test-FileCatalog
 
@@ -30,10 +30,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## DESCRIPTION
 
-`Test-FileCatalog` 藉由比較類別目錄檔案 ( 的檔案雜湊來驗證檔案的真實性，並將實際檔案的雜湊與磁片上的實際檔案雜湊) 。
-如果偵測到任何不符的狀況，則會以 >validationfailed 的形式傳回狀態。 使用者可以使用 -Detailed 參數來擷取此資訊的完整內容。
-它也會在 [簽章] 屬性中顯示目錄的簽章狀態，這相當於 `Get-AuthenticodeSignature` 在類別目錄檔案上呼叫 Cmdlet。
-使用者也可以使用 -FilesToSkip 參數，在驗證期間略過任何檔案。
+`Test-FileCatalog` 藉由比較類別目錄檔案 ( 的檔案雜湊來驗證檔案的真實性，並將實際檔案的雜湊與磁片上的實際檔案雜湊) 。 如果偵測到任何不符的狀況，則會以 >validationfailed 的形式傳回狀態。 使用者可以使用 -Detailed 參數來擷取此資訊的完整內容。 它也會在 [簽章] 屬性中顯示目錄的簽章狀態，這相當於 `Get-AuthenticodeSignature` 在類別目錄檔案上呼叫 Cmdlet。 使用者也可以使用 -FilesToSkip 參數，在驗證期間略過任何檔案。
 
 只有在 Windows 上才支援此 Cmdlet。
 
@@ -153,8 +150,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-顯示執行 Cmdlet 後會發生的情況。
-Cmdlet 並不會執行。
+顯示執行 Cmdlet 後會發生的情況。 Cmdlet 並不會執行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -170,7 +166,7 @@ Accept wildcard characters: False
 
 ### CommonParameters
 
-這個 Cmdlet 支援一般參數： `-Debug` 、 `-ErrorAction` 、 `-ErrorVariable` 、 `-InformationAction` 、、、、、 `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` 、 `-WarningAction` 和 `-WarningVariable` 。 如需詳細資訊，請參閱 [about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)。
+這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
 
 ## 輸入
 
@@ -190,9 +186,10 @@ Accept wildcard characters: False
 
 ## 注意
 
+此 Cmdlet 僅適用于 Windows 平臺。
+
 ## 相關連結
 
 [New-FileCatalog](New-FileCatalog.md)
 
 [PowerShellGet](/powershell/module/PowerShellGet)
-

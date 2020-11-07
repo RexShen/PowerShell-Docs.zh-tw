@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/set-acl?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Acl
-ms.openlocfilehash: a4c25d199b97be24277092bcb815a640a09360dd
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 314734957eea971338ac886ad82e9ce9eeb6a242
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202467"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346559"
 ---
 # Set-Acl
 
@@ -135,11 +135,9 @@ Set-Acl -Path "C:\Pets\Dog.txt" -AclObject $NewAcl
 
 第一個命令會使用 `Get-Acl` Cmdlet 取得 Dog.txt 檔案的安全描述項。
 
-系統會建立下一個變數，以授與 **BUILTIN\Administrators** 群組 Dog.txt 檔案的完整控制權。 `$identity`設定為[使用者帳戶](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor)名稱的變數。
-將 `$fileSystemRights` 變數設定為 FullControl，而且可以是任何一個指定與存取規則相關聯之作業類型的 [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) 值。 將 `$type` 變數設定為「允許」以指定是否要允許或拒絕作業。 `$fileSystemAccessRuleArgumentList`變數是在建立新的 **system.security.accesscontrol.filesystemaccessrule** 物件時，要傳遞的引數清單。 然後會建立新的 **system.security.accesscontrol.filesystemaccessrule** 物件，並將 **system.security.accesscontrol.filesystemaccessrule** 物件傳遞給 **SetAccessRule ( # B1** 方法，以加入新的存取規則。
+系統會建立下一個變數，以授與 **BUILTIN\Administrators** 群組 Dog.txt 檔案的完整控制權。 `$identity`設定為[使用者帳戶](/dotnet/api/system.security.accesscontrol.filesystemaccessrule.-ctor)名稱的變數。 將 `$fileSystemRights` 變數設定為 FullControl，而且可以是任何一個指定與存取規則相關聯之作業類型的 [FileSystemRights](/dotnet/api/system.security.accesscontrol.filesystemrights) 值。 將 `$type` 變數設定為「允許」以指定是否要允許或拒絕作業。 `$fileSystemAccessRuleArgumentList`變數是在建立新的 **system.security.accesscontrol.filesystemaccessrule** 物件時，要傳遞的引數清單。 然後會建立新的 **system.security.accesscontrol.filesystemaccessrule** 物件，並將 **system.security.accesscontrol.filesystemaccessrule** 物件傳遞給 **SetAccessRule ( # B1** 方法，以加入新的存取規則。
 
-最後一個命令會使用將的 `Set-Acl` 安全描述項套用至 Dog.txt。
-當命令完成時， **BUILTIN\Administrators** 群組將擁有 Dog.txt 的完整控制權。
+最後一個命令會使用將的 `Set-Acl` 安全描述項套用至 Dog.txt。 當命令完成時， **BUILTIN\Administrators** 群組將擁有 Dog.txt 的完整控制權。
 
 ## PARAMETERS
 
@@ -349,13 +347,13 @@ Accept wildcard characters: False
 
 ### AccessControl. System.security.accesscontrol.filesecurity
 
-依預設，不 `Set-Acl` 會產生任何輸出。
-不過，如果您使用 **Passthru** 參數，它會產生安全性物件。
-安全性物件的類型需視項目的類型而定。
+依預設，不 `Set-Acl` 會產生任何輸出。 不過，如果您使用 **Passthru** 參數，它會產生安全性物件。 安全性物件的類型需視項目的類型而定。
 
 ## 注意
 
- `Set-Acl`PowerShell 檔案系統和登錄提供者支援此 Cmdlet。 這表示您可以用它來變更檔案、目錄和登錄機碼的安全性描述元。
+此 Cmdlet 僅適用于 Windows 平臺。
+
+`Set-Acl`PowerShell 檔案系統和登錄提供者支援此 Cmdlet。 這表示您可以用它來變更檔案、目錄和登錄機碼的安全性描述元。
 
 ## 相關連結
 

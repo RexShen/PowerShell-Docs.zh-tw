@@ -3,16 +3,16 @@ external help file: System.Management.Automation.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 06/09/2017
+ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/exit-pshostprocess?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Exit-PSHostProcess
-ms.openlocfilehash: 381d7d9cb32ed4682729ad304e82bb994a21190d
-ms.sourcegitcommit: 2e497178126b2b33a169ff04c31e251e0b59e89b
+ms.openlocfilehash: 40d60ae57f4d2431defe0b176cbd0b786d5c1073
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "93200942"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347409"
 ---
 # Exit-PSHostProcess
 
@@ -27,7 +27,7 @@ Exit-PSHostProcess [<CommonParameters>]
 
 ## DESCRIPTION
 
-**>enter-pshostprocess** 指令程式會透過執行 Enter-PSHostProcess Cmdlet，關閉您已開啟的本機進程的互動式會話。 當您完成對在進程中執行的腳本進行錯錯或疑難排解時，您可以從進程內執行 **>enter-pshostprocess 指令程式** 。
+此 `Exit-PSHostProcess` Cmdlet 會關閉具有本機進程的互動式會話，您可以執行此 Cmdlet 來開啟 `Enter-PSHostProcess` 。 `Exit-PSHostProcess`當您完成對在進程中執行的腳本進行偵錯工具或針對其進行疑難排解時，您可以從進程內執行 Cmdlet。 從 PowerShell 6.2 開始，非 Windows 平臺支援此 Cmdlet。
 
 ## 範例
 
@@ -38,8 +38,8 @@ Exit-PSHostProcess [<CommonParameters>]
 PS>
 ```
 
-在此範例中，您已在使用中的進程中處理，以在進程的運行空間中對執行的腳本進行 debug 錯，如 >enter-pshostprocess 中所述。 輸入 **exit** 命令以結束偵錯工具之後，請執行 **>enter-pshostprocess** 指令程式，以關閉進程的互動式會話。
-此 Cmdlet 會關閉進程中的會話，並讓您回到 PS C： \\ \> 提示字元。
+在此範例中，您已在使用中的進程中處理，以依照中的說明，在進程的運行空間中對執行的腳本進行 debug 錯 `Enter-PSHostProcess` 。 鍵入 `exit` 命令以結束偵錯工具之後，請執行 Cmdlet， `Exit-PSHostProcess` 以關閉進程的互動式會話。
+此 Cmdlet 會關閉進程中的會話，並將您返回 `PS C:\>` 提示字元。
 
 ## PARAMETERS
 

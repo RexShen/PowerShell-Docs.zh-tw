@@ -7,12 +7,12 @@ ms.date: 10/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/clear-recyclebin?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Clear-RecycleBin
-ms.openlocfilehash: 7e34db6eb29bf60da5ce1217653db815347d69ae
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: caae499b6d6b896acad94e2d83462676d0225165
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205087"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347443"
 ---
 # Clear-RecycleBin
 
@@ -148,9 +148,10 @@ Accept wildcard characters: False
 
 ## 輸出
 
-### 無
+### None
 
 ## 注意
 
-## 相關連結
+此 Cmdlet 僅適用于 Windows 平臺。
 
+## 相關連結

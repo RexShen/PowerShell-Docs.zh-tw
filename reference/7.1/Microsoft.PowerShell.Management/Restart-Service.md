@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/restart-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Restart-Service
-ms.openlocfilehash: 5ad6fb4d39b604834bb77935b14686e088bb61f2
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: fee113e20b178c2b86b8f95cd3147f991aed8efe
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202220"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94346627"
 ---
 # Restart-Service
 
@@ -44,9 +44,7 @@ Restart-Service [-Force] [-PassThru] -DisplayName <String[]> [-Include <String[]
 
 ## DESCRIPTION
 
-**Restart-Service** Cmdlet 可針對指定的服務向 Windows 服務控制器傳送停止訊息，然後再傳送啟動訊息。
-如果服務已停止，它會啟動而不會以錯誤訊息通知您。
-您可以依服務的服務名稱或顯示名稱來指定服務，或是使用 *InputObject* 參數來傳送代表每個要重新啟動之服務的物件。
+Cmdlet 會傳送 `Restart-Service` 停止訊息，然後將啟動訊息傳送至指定服務的 Windows 服務控制器。 如果服務已停止，它會啟動而不會以錯誤訊息通知您。 您可以依服務的服務名稱或顯示名稱來指定服務，或是使用 **InputObject** 參數來傳送代表每個要重新啟動之服務的物件。
 
 ## 範例
 
@@ -74,18 +72,15 @@ PS C:\> Get-Service -Name "net*" | Where-Object {$_.Status -eq "Stopped"} | Rest
 
 此命令啟動電腦上所有已停止的網路服務。
 
-此命令會使用 Get-Service Cmdlet 取得代表服務名稱開頭為 net 之服務的物件。
-管線運算子 (|) 會將服務物件傳送至 Where-Object Cmdlet，它只會選取狀態為 stopped 的服務。
-另一個管線運算子會將選取的服務傳送至 **Restart-Service** 。
+此命令會使用 `Get-Service` Cmdlet 取得代表服務名稱以 net 開頭之服務的物件。 管線運算子 (`|`) 會將服務物件傳送至 `Where-Object` Cmdlet，此 Cmdlet 只會選取狀態為 [已停止] 的服務。 另一個管線運算子會將選取的服務傳送至 `Restart-Service` 。
 
-在實務上，您會先使用 *WhatIf* 參數來判斷此命令的效果，然後再執行它。
+在實務上，您會先使用 **WhatIf** 參數來判斷此命令的效果，然後再執行它。
 
 ## PARAMETERS
 
 ### -DisplayName
 
-指定要重新啟動之服務的顯示名稱。
-允許使用萬用字元。
+指定要重新啟動之服務的顯示名稱。 允許使用萬用字元。
 
 ```yaml
 Type: System.String[]
@@ -101,10 +96,7 @@ Accept wildcard characters: True
 
 ### -Exclude
 
-指定此 Cmdlet 省略的服務。
-此參數的值會限定 *Name* 參數。
-輸入名稱元素或模式，例如 s*。
-允許使用萬用字元。
+指定此 Cmdlet 省略的服務。 此參數的值會限定 **Name** 參數。 輸入名稱元素或模式，例如 s*。 允許使用萬用字元。
 
 ```yaml
 Type: System.String[]
@@ -136,10 +128,7 @@ Accept wildcard characters: False
 
 ### -Include
 
-指定此 Cmdlet 重新開機的服務。
-此參數的值會限定 *Name* 參數。
-輸入名稱元素或模式，例如 s*。
-允許使用萬用字元。
+指定此 Cmdlet 重新開機的服務。 此參數的值會限定 **Name** 參數。 輸入名稱元素或模式，例如 s*。 允許使用萬用字元。
 
 ```yaml
 Type: System.String[]
@@ -155,8 +144,7 @@ Accept wildcard characters: True
 
 ### -InputObject
 
-指定代表要重新開機之服務的 **ServiceController** 物件。
-輸入包含物件的變數，或輸入可取得物件的命令或運算式。
+指定代表要重新開機之服務的 **ServiceController** 物件。 輸入包含物件的變數，或輸入可取得物件的命令或運算式。
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -188,8 +176,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-傳回代表服務的物件。
-根據預設，此 Cmdlet 不會產生任何輸出。
+傳回代表服務的物件。 根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -221,8 +208,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-顯示執行 Cmdlet 後會發生的情況。
-Cmdlet 並不會執行。
+顯示執行 Cmdlet 後會發生的情況。 Cmdlet 並不會執行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -250,13 +236,15 @@ Accept wildcard characters: False
 
 ### 無、System.ServiceProcess.ServiceController
 
-如果您指定 *PassThru* 參數，此 Cmdlet 會產生代表重新啟動之服務的 **System.ServiceProcess.ServiceController** 物件。
-否則，此 Cmdlet 不會產生任何輸出。
+如果您指定 **PassThru** 參數，此 Cmdlet 會產生代表重新啟動之服務的 **System.ServiceProcess.ServiceController** 物件。 否則，此 Cmdlet 不會產生任何輸出。
 
 ## 注意
 
-* 只有當目前的使用者具有控制服務的權限時， **Restart-Service** 才能控制服務。 若命令無法正確運作，您可能沒有必要的權限。
-* 若要尋找系統上服務的服務名稱和顯示名稱，請輸入 **Get service** 。 服務名稱會出現在 [ **名稱** ] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。
+此 Cmdlet 僅適用于 Windows 平臺。
+
+- `Restart-Service` 只有當目前的使用者有權進行此作業時，才能控制服務。 若命令無法正確運作，您可能沒有必要的權限。
+- 若要尋找系統上服務的服務名稱和顯示名稱，請輸入 `Get-Service` "。
+  服務名稱會出現在 [ **名稱** ] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。
 
 ## 相關連結
 
@@ -275,4 +263,3 @@ Accept wildcard characters: False
 [Suspend-Service](Suspend-Service.md)
 
 [Remove-Service](Remove-Service.md)
-

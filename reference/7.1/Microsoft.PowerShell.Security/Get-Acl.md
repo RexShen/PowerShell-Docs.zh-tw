@@ -7,12 +7,12 @@ ms.date: 03/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-acl?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Acl
-ms.openlocfilehash: 0a247be8c7a8067455e3153ac48cacde78eaa26d
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 118c3e563743cee03dc7a75ca68e0979c1522f07
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205051"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347069"
 ---
 # Get-Acl
 
@@ -241,6 +241,8 @@ Accept wildcard characters: False
 
 ## 注意
 
+此 Cmdlet 僅適用于 Windows 平臺。
+
 依預設，會 `Get-Acl` 顯示資源 (的 PowerShell 路徑 `<provider>::<resource-path>`) 、資源的擁有者，以及「存取」，這是在資源的任意存取控制清單中) 存取控制專案的清單 (陣列 (DACL) 。 DACL 清單是由資源擁有者所控制。
 
 當您將結果格式化為清單時， `Get-Acl | Format-List` 除了路徑、擁有者及存取清單之外， () ，PowerShell 還會顯示下列屬性和屬性值：
@@ -254,4 +256,3 @@ Accept wildcard characters: False
 ## 相關連結
 
 [Set-Acl](Set-Acl.md)
-

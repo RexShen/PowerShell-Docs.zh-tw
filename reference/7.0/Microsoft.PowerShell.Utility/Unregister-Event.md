@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/unregister-event?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-Event
-ms.openlocfilehash: b132e842167bb6684519bfd196a3f4a03d078a62
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: b7aab2ef1e97ae1cc19d42b07145bd7a057f33fc
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201975"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347749"
 ---
 # Unregister-Event
 
@@ -34,13 +34,12 @@ Unregister-Event [-SubscriptionId] <Int32> [-Force] [-WhatIf] [-Confirm] [<Commo
 ```
 
 ## DESCRIPTION
-**Unregister-Event** Cmdlet 會取消使用 Register-EngineEvent、Register-ObjectEvent 或 Register-WmiEvent Cmdlet 建立的事件訂閱。
 
-取消事件訂閱時，會從工作階段刪除事件訂閱者，也不會再將訂閱的事件新增至事件佇列。
-當您取消訂閱使用 New-Event Cmdlet 建立的事件時，也會從工作階段刪除新的事件。
+此 `Unregister-Event` Cmdlet 會取消使用 `Register-EngineEvent` 、或 Cmdlet 所建立的事件訂閱 `Register-ObjectEvent` `Register-WmiEvent` 。
 
-**Unregister-Event** 不會從事件佇列刪除事件。
-若要刪除事件，請使用 Remove-Event Cmdlet。
+取消事件訂閱時，會從工作階段刪除事件訂閱者，也不會再將訂閱的事件新增至事件佇列。 當您取消使用指令程式所建立之事件的訂閱時 `New-Event` ，也會從會話中刪除新的事件。
+
+`Unregister-Event` 不會刪除事件佇列中的事件。 若要刪除事件，請使用 `Remove-Event` Cmdlet。
 
 ## 範例
 
@@ -52,8 +51,7 @@ PS C:\> Unregister-Event -SourceIdentifier "ProcessStarted"
 
 此命令會取消來源識別碼為 ProcessStarted 的事件訂閱。
 
-若要尋找事件的來源識別碼，請使用 Get-Event Cmdlet。
-若要尋找事件訂閱的來源識別碼，請使用 **Get-EventSubscriber** Cmdlet。
+若要尋找事件的來源識別碼，請使用 `Get-Event` Cmdlet。 若要尋找事件訂用帳戶的來源識別碼，請使用 `Get-EventSubscriber` Cmdlet。
 
 ### 範例 2︰依訂閱識別碼取消事件訂閱
 
@@ -63,7 +61,7 @@ PS C:\> Unregister-Event -SubscriptionId 2
 
 此命令會取消訂閱識別碼為 2 的事件訂閱。
 
-若要尋找事件訂閱的訂閱識別碼，請使用 **Get-EventSubscriber** Cmdlet。
+若要尋找事件訂用帳戶的訂用帳戶識別碼，請使用 `Get-EventSubscriber` Cmdlet。
 
 ### 範例 3︰取消所有事件訂閱
 
@@ -73,15 +71,15 @@ PS C:\> Get-EventSubscriber -Force | Unregister-Event -Force
 
 此命令會取消工作階段中的所有事件訂閱。
 
-此命令會使用 **Get-EventSubscriber** Cmdlet 取得工作階段中的所有事件訂閱者物件，包括使用事件註冊 Cmdlet 之 *SupportEvent* 參數隱藏的訂閱者。
+此命令會使用 `Get-EventSubscriber` Cmdlet 來取得會話中的所有事件訂閱者物件，包括使用事件註冊 Cmdlet 的 **SupportEvent** 參數隱藏的訂閱者。
 
-它會使用管線運算子 (|) 將訂閱者物件傳送給 **Unregister-Event** ，這會將它們從工作階段中刪除。
-若要完成工作， **Unregister-Event** 中也需有 *Force* 參數。
+它使用管線運算子 (`|`) 將訂閱者物件傳送至 `Unregister-Event` ，這會將它們從會話中刪除。 若要完成此工作，在上也需要 **Force** 參數 `Unregister-Event` 。
 
 ## PARAMETERS
 
 ### -Force
-取消所有事件訂閱，包括使用 **Register-ObjectEvent** 、 **Register-WmiEvent** 及 **Register-EngineEvent** 的 *SupportEvent* 參數隱藏的訂閱。
+
+取消所有事件訂閱，包括使用、和之 **SupportEvent** 參數隱藏的訂閱 `Register-ObjectEvent` `Register-WmiEvent` `Register-EngineEvent` 。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -96,9 +94,10 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
+
 指定此 Cmdlet 取消事件訂閱的來源識別碼。
 
-每個命令中必須包含 *SourceIdentifier* 或 *SubscriptionId* 參數。
+每個命令中必須包含 **SourceIdentifier** 或 **SubscriptionId** 參數。
 
 ```yaml
 Type: System.String
@@ -113,9 +112,10 @@ Accept wildcard characters: False
 ```
 
 ### -SubscriptionId
+
 指定此 Cmdlet 取消事件訂閱的來源識別碼 ID。
 
-每個命令中必須包含 *SourceIdentifier* 或 *SubscriptionId* 參數。
+每個命令中必須包含 **SourceIdentifier** 或 **SubscriptionId** 參數。
 
 ```yaml
 Type: System.Int32
@@ -130,6 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 在執行 Cmdlet 前提示您確認。
 
 ```yaml
@@ -145,8 +146,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-顯示執行 Cmdlet 後會發生的情況。
-Cmdlet 並不會執行。
+
+顯示執行 Cmdlet 後會發生的情況。 Cmdlet 並不會執行。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -161,26 +162,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
 
 ## 輸入
 
 ### System.Management.Automation.PSEventSubscriber
-您可以使用管線將輸出從 Get-EventSubscriber 傳送至 **Unregister-Event** 。
+
+您可以透過管道將輸出傳送 `Get-EventSubscriber` 至 `Unregister-Event` 。
 
 ## 輸出
 
-### 無
+### None
+
 此 Cmdlet 不會傳回任何輸出。
 
 ## 注意
 
-* 事件、事件訂閱與事件佇列僅存在目前工作階段中。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
+Linux 或 macOS 平臺上沒有可用的事件來源。
 
-  **Unregister-Event** 無法刪除使用 New-Event Cmdlet 建立的事件，除非您已經使用 **Register-EngineEvent** Cmdlet 訂閱事件。
-若要從工作階段刪除自訂事件，您必須以程式設計方式將它移除，或關閉工作階段。
+事件、事件訂閱與事件佇列僅存在目前工作階段中。 若關閉目前工作階段，便會捨棄事件佇列，並取消事件訂閱。
 
-*
+`Unregister-Event``New-Event`除非您已使用 Cmdlet 訂閱事件，否則無法刪除使用指令程式所建立的事件 `Register-EngineEvent` 。 若要從工作階段刪除自訂事件，您必須以程式設計方式將它移除，或關閉工作階段。
 
 ## 相關連結
 
