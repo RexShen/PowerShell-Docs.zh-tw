@@ -7,47 +7,47 @@ ms.date: 09/18/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-timezone?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-TimeZone
-ms.openlocfilehash: bfeb838ca8f67bac7c257ef3485eff9b55753933
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3acf02b567c1fecd8089b12fac7c32b42abfec77
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203496"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343176"
 ---
-# <span data-ttu-id="a5548-103">Set-TimeZone</span><span class="sxs-lookup"><span data-stu-id="a5548-103">Set-TimeZone</span></span>
+# <span data-ttu-id="9a54d-103">Set-TimeZone</span><span class="sxs-lookup"><span data-stu-id="9a54d-103">Set-TimeZone</span></span>
 
-## <span data-ttu-id="a5548-104">概要</span><span class="sxs-lookup"><span data-stu-id="a5548-104">SYNOPSIS</span></span>
-<span data-ttu-id="a5548-105">將系統時區設定為指定的時區。</span><span class="sxs-lookup"><span data-stu-id="a5548-105">Sets the system time zone to a specified time zone.</span></span>
+## <span data-ttu-id="9a54d-104">概要</span><span class="sxs-lookup"><span data-stu-id="9a54d-104">SYNOPSIS</span></span>
+<span data-ttu-id="9a54d-105">將系統時區設定為指定的時區。</span><span class="sxs-lookup"><span data-stu-id="9a54d-105">Sets the system time zone to a specified time zone.</span></span>
 
-## <span data-ttu-id="a5548-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="a5548-106">SYNTAX</span></span>
+## <span data-ttu-id="9a54d-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="9a54d-106">SYNTAX</span></span>
 
-### <span data-ttu-id="a5548-107">Name (預設值)</span><span class="sxs-lookup"><span data-stu-id="a5548-107">Name (Default)</span></span>
+### <span data-ttu-id="9a54d-107">Name (預設值)</span><span class="sxs-lookup"><span data-stu-id="9a54d-107">Name (Default)</span></span>
 
 ```
 Set-TimeZone [-Name] <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a5548-108">Id</span><span class="sxs-lookup"><span data-stu-id="a5548-108">Id</span></span>
+### <span data-ttu-id="9a54d-108">Id</span><span class="sxs-lookup"><span data-stu-id="9a54d-108">Id</span></span>
 
 ```
 Set-TimeZone -Id <String> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a5548-109">InputObject</span><span class="sxs-lookup"><span data-stu-id="a5548-109">InputObject</span></span>
+### <span data-ttu-id="9a54d-109">InputObject</span><span class="sxs-lookup"><span data-stu-id="9a54d-109">InputObject</span></span>
 
 ```
 Set-TimeZone [-InputObject] <TimeZoneInfo> [-PassThru] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a5548-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="a5548-110">DESCRIPTION</span></span>
+## <span data-ttu-id="9a54d-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="9a54d-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="a5548-111">`Set-TimeZone`Cmdlet 會將系統時區設定為指定的時區。</span><span class="sxs-lookup"><span data-stu-id="a5548-111">The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.</span></span>
+<span data-ttu-id="9a54d-111">`Set-TimeZone`Cmdlet 會將系統時區設定為指定的時區。</span><span class="sxs-lookup"><span data-stu-id="9a54d-111">The `Set-TimeZone` cmdlet sets the system time zone to a specified time zone.</span></span>
 
-## <span data-ttu-id="a5548-112">範例</span><span class="sxs-lookup"><span data-stu-id="a5548-112">EXAMPLES</span></span>
+## <span data-ttu-id="9a54d-112">範例</span><span class="sxs-lookup"><span data-stu-id="9a54d-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="a5548-113">範例1：依識別碼設定時區</span><span class="sxs-lookup"><span data-stu-id="a5548-113">Example 1: Set the time zone by Id</span></span>
+### <span data-ttu-id="9a54d-113">範例1：依識別碼設定時區</span><span class="sxs-lookup"><span data-stu-id="9a54d-113">Example 1: Set the time zone by Id</span></span>
 
-<span data-ttu-id="a5548-114">此範例會將本機電腦上的時區設定為俄文標準時間。</span><span class="sxs-lookup"><span data-stu-id="a5548-114">This example sets the time zone on the local computer to Russian Standard Time.</span></span>
+<span data-ttu-id="9a54d-114">此範例會將本機電腦上的時區設定為俄文標準時間。</span><span class="sxs-lookup"><span data-stu-id="9a54d-114">This example sets the time zone on the local computer to Russian Standard Time.</span></span>
 
 ```powershell
 Set-TimeZone -Id "Russian Standard Time" -PassThru
@@ -62,22 +62,22 @@ BaseUtcOffset              : 03:00:00
 SupportsDaylightSavingTime : True
 ```
 
-### <span data-ttu-id="a5548-115">範例2：依名稱設定時區</span><span class="sxs-lookup"><span data-stu-id="a5548-115">Example 2: Set the time zone by name</span></span>
+### <span data-ttu-id="9a54d-115">範例2：依名稱設定時區</span><span class="sxs-lookup"><span data-stu-id="9a54d-115">Example 2: Set the time zone by name</span></span>
 
-<span data-ttu-id="a5548-116">此範例會將本機電腦上的時區設定為俄文標準時間。</span><span class="sxs-lookup"><span data-stu-id="a5548-116">This example sets the time zone on the local computer to Russian Standard Time.</span></span>
+<span data-ttu-id="9a54d-116">此範例會將本機電腦上的時區設定為俄文標準時間。</span><span class="sxs-lookup"><span data-stu-id="9a54d-116">This example sets the time zone on the local computer to Russian Standard Time.</span></span>
 
 ```powershell
 Set-TimeZone -Name "Russia TZ 2 Standard Time"
 ```
 
-<span data-ttu-id="a5548-117">如先前範例中所見，時區的 **識別碼** 和 **名稱** 不一定相符。</span><span class="sxs-lookup"><span data-stu-id="a5548-117">As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.</span></span>
-<span data-ttu-id="a5548-118">**Name** 參數必須符合 **TimeZoneInfo** 物件的 **StandardName** 或 **DaylightName** 屬性。</span><span class="sxs-lookup"><span data-stu-id="a5548-118">The **Name** parameter must match the **StandardName** or **DaylightName** properties of the **TimeZoneInfo** object.</span></span>
+<span data-ttu-id="9a54d-117">如先前範例中所見，時區的 **識別碼** 和 **名稱** 不一定相符。</span><span class="sxs-lookup"><span data-stu-id="9a54d-117">As we saw in the previous example, the **Id** and the **Name** of the Time Zone do not always match.</span></span>
+<span data-ttu-id="9a54d-118">**Name** 參數必須符合 **TimeZoneInfo** 物件的 **StandardName** 或 **DaylightName** 屬性。</span><span class="sxs-lookup"><span data-stu-id="9a54d-118">The **Name** parameter must match the **StandardName** or **DaylightName** properties of the **TimeZoneInfo** object.</span></span>
 
-## <span data-ttu-id="a5548-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a5548-119">PARAMETERS</span></span>
+## <span data-ttu-id="9a54d-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9a54d-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="a5548-120">-Id</span><span class="sxs-lookup"><span data-stu-id="a5548-120">-Id</span></span>
+### <span data-ttu-id="9a54d-120">-Id</span><span class="sxs-lookup"><span data-stu-id="9a54d-120">-Id</span></span>
 
-<span data-ttu-id="a5548-121">指定此 Cmdlet 設定的時區識別碼。</span><span class="sxs-lookup"><span data-stu-id="a5548-121">Specifies the ID of the time zone that this cmdlet sets.</span></span> <span data-ttu-id="a5548-122">您可以藉由執行下列命令來取得時區識別碼的完整清單： `Get-TimeZone -ListAvailable` 。</span><span class="sxs-lookup"><span data-stu-id="a5548-122">A full list of Time Zone IDs can be obtained by running the following command: `Get-TimeZone -ListAvailable`.</span></span>
+<span data-ttu-id="9a54d-121">指定此 Cmdlet 設定的時區識別碼。</span><span class="sxs-lookup"><span data-stu-id="9a54d-121">Specifies the ID of the time zone that this cmdlet sets.</span></span> <span data-ttu-id="9a54d-122">您可以藉由執行下列命令來取得時區識別碼的完整清單： `Get-TimeZone -ListAvailable` 。</span><span class="sxs-lookup"><span data-stu-id="9a54d-122">A full list of Time Zone IDs can be obtained by running the following command: `Get-TimeZone -ListAvailable`.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a5548-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="a5548-123">-InputObject</span></span>
+### <span data-ttu-id="9a54d-123">-InputObject</span><span class="sxs-lookup"><span data-stu-id="9a54d-123">-InputObject</span></span>
 
-<span data-ttu-id="a5548-124">指定要做為輸入使用的 **TimeZoneInfo** 物件。</span><span class="sxs-lookup"><span data-stu-id="a5548-124">Specifies a **TimeZoneInfo** object to use as input.</span></span>
+<span data-ttu-id="9a54d-124">指定要做為輸入使用的 **TimeZoneInfo** 物件。</span><span class="sxs-lookup"><span data-stu-id="9a54d-124">Specifies a **TimeZoneInfo** object to use as input.</span></span>
 
 ```yaml
 Type: System.TimeZoneInfo
@@ -107,9 +107,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a5548-125">-Name</span><span class="sxs-lookup"><span data-stu-id="a5548-125">-Name</span></span>
+### <span data-ttu-id="9a54d-125">-Name</span><span class="sxs-lookup"><span data-stu-id="9a54d-125">-Name</span></span>
 
-<span data-ttu-id="a5548-126">指定此 Cmdlet 設定的時區名稱。</span><span class="sxs-lookup"><span data-stu-id="a5548-126">Specifies the name of the time zone that this cmdlet sets.</span></span> <span data-ttu-id="a5548-127">您可以藉由執行下列命令來取得時區名稱的完整清單： `Get-TimeZone -ListAvailable` 。</span><span class="sxs-lookup"><span data-stu-id="a5548-127">A full list of Time Zone names can be obtained by running the following command: `Get-TimeZone -ListAvailable`.</span></span>
+<span data-ttu-id="9a54d-126">指定此 Cmdlet 設定的時區名稱。</span><span class="sxs-lookup"><span data-stu-id="9a54d-126">Specifies the name of the time zone that this cmdlet sets.</span></span> <span data-ttu-id="9a54d-127">您可以藉由執行下列命令來取得時區名稱的完整清單： `Get-TimeZone -ListAvailable` 。</span><span class="sxs-lookup"><span data-stu-id="9a54d-127">A full list of Time Zone names can be obtained by running the following command: `Get-TimeZone -ListAvailable`.</span></span>
 
 ```yaml
 Type: System.String
@@ -123,9 +123,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a5548-128">-PassThru</span><span class="sxs-lookup"><span data-stu-id="a5548-128">-PassThru</span></span>
+### <span data-ttu-id="9a54d-128">-PassThru</span><span class="sxs-lookup"><span data-stu-id="9a54d-128">-PassThru</span></span>
 
-<span data-ttu-id="a5548-129">傳回代表您正在使用之項目的物件。</span><span class="sxs-lookup"><span data-stu-id="a5548-129">Returns an object representing the item with which you are working.</span></span> <span data-ttu-id="a5548-130">根據預設，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="a5548-130">By default, this cmdlet does not generate any output.</span></span>
+<span data-ttu-id="9a54d-129">傳回代表您正在使用之項目的物件。</span><span class="sxs-lookup"><span data-stu-id="9a54d-129">Returns an object representing the item with which you are working.</span></span> <span data-ttu-id="9a54d-130">根據預設，此 Cmdlet 不會產生任何輸出。</span><span class="sxs-lookup"><span data-stu-id="9a54d-130">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -139,9 +139,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a5548-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="a5548-131">-Confirm</span></span>
+### <span data-ttu-id="9a54d-131">-Confirm</span><span class="sxs-lookup"><span data-stu-id="9a54d-131">-Confirm</span></span>
 
-<span data-ttu-id="a5548-132">在執行 Cmdlet 前提示您確認。</span><span class="sxs-lookup"><span data-stu-id="a5548-132">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="9a54d-132">在執行 Cmdlet 前提示您確認。</span><span class="sxs-lookup"><span data-stu-id="9a54d-132">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -155,9 +155,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a5548-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="a5548-133">-WhatIf</span></span>
+### <span data-ttu-id="9a54d-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="9a54d-133">-WhatIf</span></span>
 
-<span data-ttu-id="a5548-134">顯示執行 Cmdlet 後會發生的情況。</span><span class="sxs-lookup"><span data-stu-id="a5548-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="a5548-135">Cmdlet 並不會執行。</span><span class="sxs-lookup"><span data-stu-id="a5548-135">The cmdlet is not run.</span></span>
+<span data-ttu-id="9a54d-134">顯示執行 Cmdlet 後會發生的情況。</span><span class="sxs-lookup"><span data-stu-id="9a54d-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="9a54d-135">Cmdlet 並不會執行。</span><span class="sxs-lookup"><span data-stu-id="9a54d-135">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -171,18 +171,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a5548-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="a5548-136">CommonParameters</span></span>
+### <span data-ttu-id="9a54d-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9a54d-136">CommonParameters</span></span>
 
-<span data-ttu-id="a5548-137">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="a5548-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a5548-138">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="a5548-138">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="9a54d-137">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="9a54d-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9a54d-138">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="9a54d-138">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a5548-139">輸入</span><span class="sxs-lookup"><span data-stu-id="a5548-139">INPUTS</span></span>
+## <span data-ttu-id="9a54d-139">輸入</span><span class="sxs-lookup"><span data-stu-id="9a54d-139">INPUTS</span></span>
 
-### <span data-ttu-id="a5548-140">System.string、TimeZoneInfo、System.string</span><span class="sxs-lookup"><span data-stu-id="a5548-140">System.String, System.TimeZoneInfo, System.String</span></span>
+### <span data-ttu-id="9a54d-140">System.string、TimeZoneInfo、System.string</span><span class="sxs-lookup"><span data-stu-id="9a54d-140">System.String, System.TimeZoneInfo, System.String</span></span>
 
-## <span data-ttu-id="a5548-141">輸出</span><span class="sxs-lookup"><span data-stu-id="a5548-141">OUTPUTS</span></span>
+## <span data-ttu-id="9a54d-141">輸出</span><span class="sxs-lookup"><span data-stu-id="9a54d-141">OUTPUTS</span></span>
 
-## <span data-ttu-id="a5548-142">注意</span><span class="sxs-lookup"><span data-stu-id="a5548-142">NOTES</span></span>
+## <span data-ttu-id="9a54d-142">注意</span><span class="sxs-lookup"><span data-stu-id="9a54d-142">NOTES</span></span>
 
-## <span data-ttu-id="a5548-143">相關連結</span><span class="sxs-lookup"><span data-stu-id="a5548-143">RELATED LINKS</span></span>
+## <span data-ttu-id="9a54d-143">相關連結</span><span class="sxs-lookup"><span data-stu-id="9a54d-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a5548-144">Get-TimeZone</span><span class="sxs-lookup"><span data-stu-id="a5548-144">Get-TimeZone</span></span>](Get-TimeZone.md)
+[<span data-ttu-id="9a54d-144">Get-TimeZone</span><span class="sxs-lookup"><span data-stu-id="9a54d-144">Get-TimeZone</span></span>](Get-TimeZone.md)

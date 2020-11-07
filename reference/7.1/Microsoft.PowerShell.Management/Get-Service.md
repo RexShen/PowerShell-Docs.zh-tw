@@ -7,96 +7,96 @@ ms.date: 10/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Service
-ms.openlocfilehash: 7f44f1d363c5fae79722fdfb5bd894cb24e00d0c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1cbecd37217c4c0113079dfa9ac7008dd0d91823
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205227"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342224"
 ---
-# <span data-ttu-id="1c020-103">Get-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-103">Get-Service</span></span>
+# <span data-ttu-id="929bb-103">Get-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-103">Get-Service</span></span>
 
-## <span data-ttu-id="1c020-104">概要</span><span class="sxs-lookup"><span data-stu-id="1c020-104">SYNOPSIS</span></span>
-<span data-ttu-id="1c020-105">取得電腦上的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-105">Gets the services on the computer.</span></span>
+## <span data-ttu-id="929bb-104">概要</span><span class="sxs-lookup"><span data-stu-id="929bb-104">SYNOPSIS</span></span>
+<span data-ttu-id="929bb-105">取得電腦上的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-105">Gets the services on the computer.</span></span>
 
-## <span data-ttu-id="1c020-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="1c020-106">SYNTAX</span></span>
+## <span data-ttu-id="929bb-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="929bb-106">SYNTAX</span></span>
 
-### <span data-ttu-id="1c020-107">Default (預設值)</span><span class="sxs-lookup"><span data-stu-id="1c020-107">Default (Default)</span></span>
+### <span data-ttu-id="929bb-107">Default (預設值)</span><span class="sxs-lookup"><span data-stu-id="929bb-107">Default (Default)</span></span>
 
 ```
 Get-Service [[-Name] <String[]>] [-DependentServices] [-RequiredServices] [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1c020-108">DisplayName</span><span class="sxs-lookup"><span data-stu-id="1c020-108">DisplayName</span></span>
+### <span data-ttu-id="929bb-108">DisplayName</span><span class="sxs-lookup"><span data-stu-id="929bb-108">DisplayName</span></span>
 
 ```
 Get-Service [-DependentServices] [-RequiredServices] -DisplayName <String[]> [-Include <String[]>]
  [-Exclude <String[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1c020-109">InputObject</span><span class="sxs-lookup"><span data-stu-id="1c020-109">InputObject</span></span>
+### <span data-ttu-id="929bb-109">InputObject</span><span class="sxs-lookup"><span data-stu-id="929bb-109">InputObject</span></span>
 
 ```
 Get-Service [-DependentServices] [-RequiredServices] [-Include <String[]>] [-Exclude <String[]>]
  [-InputObject <ServiceController[]>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="1c020-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="1c020-110">DESCRIPTION</span></span>
+## <span data-ttu-id="929bb-110">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="929bb-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="1c020-111">`Get-Service`Cmdlet 會取得代表電腦上之服務的物件，包括執行中和已停止的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-111">The `Get-Service` cmdlet gets objects that represent the services on a computer, including running and stopped services.</span></span> <span data-ttu-id="1c020-112">依預設，當 `Get-Service` 執行時沒有參數時，會傳回所有本機電腦的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-112">By default, when `Get-Service` is run without parameters, all the local computer's services are returned.</span></span>
+<span data-ttu-id="929bb-111">`Get-Service`Cmdlet 會取得代表電腦上之服務的物件，包括執行中和已停止的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-111">The `Get-Service` cmdlet gets objects that represent the services on a computer, including running and stopped services.</span></span> <span data-ttu-id="929bb-112">依預設，當 `Get-Service` 執行時沒有參數時，會傳回所有本機電腦的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-112">By default, when `Get-Service` is run without parameters, all the local computer's services are returned.</span></span>
 
-<span data-ttu-id="1c020-113">您可以藉由指定服務的服務名稱或顯示名稱，或使用管線將服務物件傳送至此 Cmdlet，來指示此 Cmdlet 只取得特定的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-113">You can direct this cmdlet to get only particular services by specifying the service name or the display name of the services, or you can pipe service objects to this cmdlet.</span></span>
+<span data-ttu-id="929bb-113">您可以藉由指定服務的服務名稱或顯示名稱，或使用管線將服務物件傳送至此 Cmdlet，來指示此 Cmdlet 只取得特定的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-113">You can direct this cmdlet to get only particular services by specifying the service name or the display name of the services, or you can pipe service objects to this cmdlet.</span></span>
 
-## <span data-ttu-id="1c020-114">範例</span><span class="sxs-lookup"><span data-stu-id="1c020-114">EXAMPLES</span></span>
+## <span data-ttu-id="929bb-114">範例</span><span class="sxs-lookup"><span data-stu-id="929bb-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="1c020-115">範例1：取得電腦上的所有服務</span><span class="sxs-lookup"><span data-stu-id="1c020-115">Example 1: Get all services on the computer</span></span>
+### <span data-ttu-id="929bb-115">範例1：取得電腦上的所有服務</span><span class="sxs-lookup"><span data-stu-id="929bb-115">Example 1: Get all services on the computer</span></span>
 
-<span data-ttu-id="1c020-116">此範例會取得電腦上的所有服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-116">This example gets all of the services on the computer.</span></span> <span data-ttu-id="1c020-117">它的行為就像您輸入 `Get-Service *` 的一樣。</span><span class="sxs-lookup"><span data-stu-id="1c020-117">It behaves as though you typed `Get-Service *`.</span></span> <span data-ttu-id="1c020-118">預設顯示會展示狀態、服務名稱及每個服務的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="1c020-118">The default display shows the status, service name, and display name of each service.</span></span>
+<span data-ttu-id="929bb-116">此範例會取得電腦上的所有服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-116">This example gets all of the services on the computer.</span></span> <span data-ttu-id="929bb-117">它的行為就像您輸入 `Get-Service *` 的一樣。</span><span class="sxs-lookup"><span data-stu-id="929bb-117">It behaves as though you typed `Get-Service *`.</span></span> <span data-ttu-id="929bb-118">預設顯示會展示狀態、服務名稱及每個服務的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="929bb-118">The default display shows the status, service name, and display name of each service.</span></span>
 
 ```powershell
 Get-Service
 ```
 
-### <span data-ttu-id="1c020-119">範例2：取得以搜尋字串開頭的服務</span><span class="sxs-lookup"><span data-stu-id="1c020-119">Example 2: Get services that begin with a search string</span></span>
+### <span data-ttu-id="929bb-119">範例2：取得以搜尋字串開頭的服務</span><span class="sxs-lookup"><span data-stu-id="929bb-119">Example 2: Get services that begin with a search string</span></span>
 
-<span data-ttu-id="1c020-120">此範例會使用以 WMI 為開頭 (Windows Management Instrumentation) 的服務名稱，來抓取服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-120">This example retrieves services with service names that begin with WMI (Windows Management Instrumentation).</span></span>
+<span data-ttu-id="929bb-120">此範例會使用以 WMI 為開頭 (Windows Management Instrumentation) 的服務名稱，來抓取服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-120">This example retrieves services with service names that begin with WMI (Windows Management Instrumentation).</span></span>
 
 ```powershell
 Get-Service "wmi*"
 ```
 
-### <span data-ttu-id="1c020-121">範例3：顯示包含搜尋字串的服務</span><span class="sxs-lookup"><span data-stu-id="1c020-121">Example 3: Display services that include a search string</span></span>
+### <span data-ttu-id="929bb-121">範例3：顯示包含搜尋字串的服務</span><span class="sxs-lookup"><span data-stu-id="929bb-121">Example 3: Display services that include a search string</span></span>
 
-<span data-ttu-id="1c020-122">此範例會顯示顯示名稱包含「網路」文字的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-122">This example displays services with a display name that includes the word network.</span></span> <span data-ttu-id="1c020-123">搜尋顯示名稱，即使服務名稱不包含 Net （例如 xmlprov (）網路布建服務，也會尋找網路相關的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-123">Searching the display name finds network-related services even when the service name doesn't include Net, such as xmlprov, the Network Provisioning Service.</span></span>
+<span data-ttu-id="929bb-122">此範例會顯示顯示名稱包含「網路」文字的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-122">This example displays services with a display name that includes the word network.</span></span> <span data-ttu-id="929bb-123">搜尋顯示名稱，即使服務名稱不包含 Net （例如 xmlprov (）網路布建服務，也會尋找網路相關的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-123">Searching the display name finds network-related services even when the service name doesn't include Net, such as xmlprov, the Network Provisioning Service.</span></span>
 
 ```powershell
 Get-Service -Displayname "*network*"
 ```
 
-### <span data-ttu-id="1c020-124">範例4：取得以搜尋字串和排除開頭的服務</span><span class="sxs-lookup"><span data-stu-id="1c020-124">Example 4: Get services that begin with a search string and an exclusion</span></span>
+### <span data-ttu-id="929bb-124">範例4：取得以搜尋字串和排除開頭的服務</span><span class="sxs-lookup"><span data-stu-id="929bb-124">Example 4: Get services that begin with a search string and an exclusion</span></span>
 
-<span data-ttu-id="1c020-125">此範例只會取得服務名稱開頭為 **win** 的服務，但 WinRM 服務除外。</span><span class="sxs-lookup"><span data-stu-id="1c020-125">This example only gets the services with service names that begin with **win** , except for the WinRM service.</span></span>
+<span data-ttu-id="929bb-125">此範例只會取得服務名稱開頭為 **win** 的服務，但 WinRM 服務除外。</span><span class="sxs-lookup"><span data-stu-id="929bb-125">This example only gets the services with service names that begin with **win** , except for the WinRM service.</span></span>
 
 ```powershell
 Get-Service -Name "win*" -Exclude "WinRM"
 ```
 
-### <span data-ttu-id="1c020-126">範例5：顯示目前作用中的服務</span><span class="sxs-lookup"><span data-stu-id="1c020-126">Example 5: Display services that are currently active</span></span>
+### <span data-ttu-id="929bb-126">範例5：顯示目前作用中的服務</span><span class="sxs-lookup"><span data-stu-id="929bb-126">Example 5: Display services that are currently active</span></span>
 
-<span data-ttu-id="1c020-127">此範例只會顯示狀態為 [正在執行] 的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-127">This example displays only the services with a status of Running.</span></span>
+<span data-ttu-id="929bb-127">此範例只會顯示狀態為 [正在執行] 的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-127">This example displays only the services with a status of Running.</span></span>
 
 ```powershell
 Get-Service | Where-Object {$_.Status -eq "Running"}
 ```
 
-<span data-ttu-id="1c020-128">`Get-Service` 取得電腦上的所有服務，並將物件沿著管線向下傳送。</span><span class="sxs-lookup"><span data-stu-id="1c020-128">`Get-Service` gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="1c020-129">`Where-Object`Cmdlet 只會選取 **Status** 屬性等於正在執行的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-129">The `Where-Object` cmdlet, selects only the services with a **Status** property that equals Running.</span></span>
+<span data-ttu-id="929bb-128">`Get-Service` 取得電腦上的所有服務，並將物件沿著管線向下傳送。</span><span class="sxs-lookup"><span data-stu-id="929bb-128">`Get-Service` gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="929bb-129">`Where-Object`Cmdlet 只會選取 **Status** 屬性等於正在執行的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-129">The `Where-Object` cmdlet, selects only the services with a **Status** property that equals Running.</span></span>
 
-<span data-ttu-id="1c020-130">Status 只是服務物件的一個屬性。</span><span class="sxs-lookup"><span data-stu-id="1c020-130">Status is only one property of service objects.</span></span> <span data-ttu-id="1c020-131">若要查看所有屬性，請輸入 `Get-Service | Get-Member` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-131">To see all of the properties, type `Get-Service | Get-Member`.</span></span>
+<span data-ttu-id="929bb-130">Status 只是服務物件的一個屬性。</span><span class="sxs-lookup"><span data-stu-id="929bb-130">Status is only one property of service objects.</span></span> <span data-ttu-id="929bb-131">若要查看所有屬性，請輸入 `Get-Service | Get-Member` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-131">To see all of the properties, type `Get-Service | Get-Member`.</span></span>
 
-### <span data-ttu-id="1c020-132">範例6：列出電腦上具有相依服務的服務</span><span class="sxs-lookup"><span data-stu-id="1c020-132">Example 6: List the services on the computer that have dependent services</span></span>
+### <span data-ttu-id="929bb-132">範例6：列出電腦上具有相依服務的服務</span><span class="sxs-lookup"><span data-stu-id="929bb-132">Example 6: List the services on the computer that have dependent services</span></span>
 
-<span data-ttu-id="1c020-133">此範例會取得具有相依服務的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-133">This example gets services that have dependent services.</span></span>
+<span data-ttu-id="929bb-133">此範例會取得具有相依服務的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-133">This example gets services that have dependent services.</span></span>
 
 ```powershell
 Get-Service |
@@ -117,15 +117,15 @@ NoOfDependentServices : 1
 ...
 ```
 
-<span data-ttu-id="1c020-134">`Get-Service`Cmdlet 會取得電腦上的所有服務，並將物件沿著管線向下傳送。</span><span class="sxs-lookup"><span data-stu-id="1c020-134">The `Get-Service` cmdlet gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="1c020-135">`Where-Object`Cmdlet 會選取其 **DependentServices** 屬性不是 null 的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-135">The `Where-Object` cmdlet selects the services whose **DependentServices** property isn't null.</span></span>
+<span data-ttu-id="929bb-134">`Get-Service`Cmdlet 會取得電腦上的所有服務，並將物件沿著管線向下傳送。</span><span class="sxs-lookup"><span data-stu-id="929bb-134">The `Get-Service` cmdlet gets all the services on the computer and sends the objects down the pipeline.</span></span> <span data-ttu-id="929bb-135">`Where-Object`Cmdlet 會選取其 **DependentServices** 屬性不是 null 的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-135">The `Where-Object` cmdlet selects the services whose **DependentServices** property isn't null.</span></span>
 
-<span data-ttu-id="1c020-136">結果會向下傳送至 `Format-List` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1c020-136">The results are sent down the pipeline to the `Format-List` cmdlet.</span></span> <span data-ttu-id="1c020-137">**Property** 參數會顯示服務的名稱、相依服務的名稱，以及顯示每個服務的相依服務數目的計算屬性。</span><span class="sxs-lookup"><span data-stu-id="1c020-137">The **Property** parameter displays the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services for each service.</span></span>
+<span data-ttu-id="929bb-136">結果會向下傳送至 `Format-List` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="929bb-136">The results are sent down the pipeline to the `Format-List` cmdlet.</span></span> <span data-ttu-id="929bb-137">**Property** 參數會顯示服務的名稱、相依服務的名稱，以及顯示每個服務的相依服務數目的計算屬性。</span><span class="sxs-lookup"><span data-stu-id="929bb-137">The **Property** parameter displays the name of the service, the name of the dependent services, and a calculated property that displays the number of dependent services for each service.</span></span>
 
-### <span data-ttu-id="1c020-138">範例7：依屬性值排序服務</span><span class="sxs-lookup"><span data-stu-id="1c020-138">Example 7: Sort services by property value</span></span>
+### <span data-ttu-id="929bb-138">範例7：依屬性值排序服務</span><span class="sxs-lookup"><span data-stu-id="929bb-138">Example 7: Sort services by property value</span></span>
 
-<span data-ttu-id="1c020-139">此範例顯示當您依 [ **狀態** ] 屬性的值以遞增順序排序服務時，已停止的服務會在執行服務之前出現。</span><span class="sxs-lookup"><span data-stu-id="1c020-139">This example shows that when you sort services in ascending order by the value of their **Status** property, stopped services appear before running services.</span></span> <span data-ttu-id="1c020-140">原因是 **狀態** 的值是列舉，其中已停止的值為1，且執行的值為4。</span><span class="sxs-lookup"><span data-stu-id="1c020-140">The reason is because the value of **Status** is an enumeration, in which Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="1c020-141">如需詳細資訊，請參閱 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus)。</span><span class="sxs-lookup"><span data-stu-id="1c020-141">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
+<span data-ttu-id="929bb-139">此範例顯示當您依 [ **狀態** ] 屬性的值以遞增順序排序服務時，已停止的服務會在執行服務之前出現。</span><span class="sxs-lookup"><span data-stu-id="929bb-139">This example shows that when you sort services in ascending order by the value of their **Status** property, stopped services appear before running services.</span></span> <span data-ttu-id="929bb-140">原因是 **狀態** 的值是列舉，其中已停止的值為1，且執行的值為4。</span><span class="sxs-lookup"><span data-stu-id="929bb-140">The reason is because the value of **Status** is an enumeration, in which Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="929bb-141">如需詳細資訊，請參閱 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus)。</span><span class="sxs-lookup"><span data-stu-id="929bb-141">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
 
-<span data-ttu-id="1c020-142">若要先列出執行中的服務，請使用 Cmdlet 的 **遞減** 參數 `Sort-Object` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-142">To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.</span></span>
+<span data-ttu-id="929bb-142">若要先列出執行中的服務，請使用 Cmdlet 的 **遞減** 參數 `Sort-Object` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-142">To list running services first, use the **Descending** parameter of the `Sort-Object` cmdlet.</span></span>
 
 ```powershell
 Get-Service "s*" | Sort-Object status
@@ -149,27 +149,27 @@ Running  SENS               System Event Notification
 Running  seclogon           Secondary Logon
 ```
 
-### <span data-ttu-id="1c020-143">範例8：取得服務的相依服務</span><span class="sxs-lookup"><span data-stu-id="1c020-143">Example 8: Get the dependent services of a service</span></span>
+### <span data-ttu-id="929bb-143">範例8：取得服務的相依服務</span><span class="sxs-lookup"><span data-stu-id="929bb-143">Example 8: Get the dependent services of a service</span></span>
 
-<span data-ttu-id="1c020-144">此範例會取得 WinRM 服務所需的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-144">This example gets the services that the WinRM service requires.</span></span> <span data-ttu-id="1c020-145">傳回服務之 **ServicesDependedOn** 屬性的值。</span><span class="sxs-lookup"><span data-stu-id="1c020-145">The value of the service's **ServicesDependedOn** property is returned.</span></span>
+<span data-ttu-id="929bb-144">此範例會取得 WinRM 服務所需的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-144">This example gets the services that the WinRM service requires.</span></span> <span data-ttu-id="929bb-145">傳回服務之 **ServicesDependedOn** 屬性的值。</span><span class="sxs-lookup"><span data-stu-id="929bb-145">The value of the service's **ServicesDependedOn** property is returned.</span></span>
 
 ```powershell
 Get-Service "WinRM" -RequiredServices
 ```
 
-### <span data-ttu-id="1c020-146">範例9：透過管線運算子取得服務</span><span class="sxs-lookup"><span data-stu-id="1c020-146">Example 9: Get a service through the pipeline operator</span></span>
+### <span data-ttu-id="929bb-146">範例9：透過管線運算子取得服務</span><span class="sxs-lookup"><span data-stu-id="929bb-146">Example 9: Get a service through the pipeline operator</span></span>
 
-<span data-ttu-id="1c020-147">這個範例會取得本機電腦上的 WinRM 服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-147">This example gets the WinRM service on the local computer.</span></span> <span data-ttu-id="1c020-148">服務名稱字串（以引號括住）會沿著管線向下傳送至 `Get-Service` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-148">The service name string, enclosed in quotation marks, is sent down the pipeline to `Get-Service`.</span></span>
+<span data-ttu-id="929bb-147">這個範例會取得本機電腦上的 WinRM 服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-147">This example gets the WinRM service on the local computer.</span></span> <span data-ttu-id="929bb-148">服務名稱字串（以引號括住）會沿著管線向下傳送至 `Get-Service` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-148">The service name string, enclosed in quotation marks, is sent down the pipeline to `Get-Service`.</span></span>
 
 ```powershell
 "WinRM" | Get-Service
 ```
 
-## <span data-ttu-id="1c020-149">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="1c020-149">PARAMETERS</span></span>
+## <span data-ttu-id="929bb-149">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="929bb-149">PARAMETERS</span></span>
 
-### <span data-ttu-id="1c020-150">-DependentServices</span><span class="sxs-lookup"><span data-stu-id="1c020-150">-DependentServices</span></span>
+### <span data-ttu-id="929bb-150">-DependentServices</span><span class="sxs-lookup"><span data-stu-id="929bb-150">-DependentServices</span></span>
 
-<span data-ttu-id="1c020-151">指出此 Cmdlet 只會取得相依于指定服務的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-151">Indicates that this cmdlet gets only the services that depend upon the specified service.</span></span>
+<span data-ttu-id="929bb-151">指出此 Cmdlet 只會取得相依于指定服務的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-151">Indicates that this cmdlet gets only the services that depend upon the specified service.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -183,9 +183,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1c020-152">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="1c020-152">-DisplayName</span></span>
+### <span data-ttu-id="929bb-152">-DisplayName</span><span class="sxs-lookup"><span data-stu-id="929bb-152">-DisplayName</span></span>
 
-<span data-ttu-id="1c020-153">以字串陣列指定要抓取之服務的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="1c020-153">Specifies, as a string array, the display names of services to be retrieved.</span></span> <span data-ttu-id="1c020-154">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="1c020-154">Wildcards are permitted.</span></span>
+<span data-ttu-id="929bb-153">以字串陣列指定要抓取之服務的顯示名稱。</span><span class="sxs-lookup"><span data-stu-id="929bb-153">Specifies, as a string array, the display names of services to be retrieved.</span></span> <span data-ttu-id="929bb-154">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="929bb-154">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -199,26 +199,10 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="1c020-155">-Exclude</span><span class="sxs-lookup"><span data-stu-id="1c020-155">-Exclude</span></span>
+### <span data-ttu-id="929bb-155">-Exclude</span><span class="sxs-lookup"><span data-stu-id="929bb-155">-Exclude</span></span>
 
-<span data-ttu-id="1c020-156">以字串陣列指定此 Cmdlet 從作業中排除的服務或服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-156">Specifies, as a string array, a service or services that this cmdlet excludes from the operation.</span></span>
-<span data-ttu-id="1c020-157">此參數的值會限定 **Name** 參數。</span><span class="sxs-lookup"><span data-stu-id="1c020-157">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="1c020-158">輸入名稱元素或模式，例如 `s*` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-158">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="1c020-159">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="1c020-159">Wildcards are permitted.</span></span>
-
-```yaml
-Type: System.String[]
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: True
-```
-
-### <span data-ttu-id="1c020-160">-Include</span><span class="sxs-lookup"><span data-stu-id="1c020-160">-Include</span></span>
-
-<span data-ttu-id="1c020-161">以字串陣列指定此 Cmdlet 在作業中包含的服務或服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-161">Specifies, as a string array, a service or services that this cmdlet includes in the operation.</span></span> <span data-ttu-id="1c020-162">此參數的值會限定 **Name** 參數。</span><span class="sxs-lookup"><span data-stu-id="1c020-162">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="1c020-163">輸入名稱元素或模式，例如 `s*` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-163">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="1c020-164">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="1c020-164">Wildcards are permitted.</span></span>
+<span data-ttu-id="929bb-156">以字串陣列指定此 Cmdlet 從作業中排除的服務或服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-156">Specifies, as a string array, a service or services that this cmdlet excludes from the operation.</span></span>
+<span data-ttu-id="929bb-157">此參數的值會限定 **Name** 參數。</span><span class="sxs-lookup"><span data-stu-id="929bb-157">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="929bb-158">輸入名稱元素或模式，例如 `s*` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-158">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="929bb-159">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="929bb-159">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -232,9 +216,25 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="1c020-165">-InputObject</span><span class="sxs-lookup"><span data-stu-id="1c020-165">-InputObject</span></span>
+### <span data-ttu-id="929bb-160">-Include</span><span class="sxs-lookup"><span data-stu-id="929bb-160">-Include</span></span>
 
-<span data-ttu-id="1c020-166">指定代表要抓取之服務的 **ServiceController** 物件。</span><span class="sxs-lookup"><span data-stu-id="1c020-166">Specifies **ServiceController** objects representing the services to be retrieved.</span></span> <span data-ttu-id="1c020-167">輸入包含物件的變數，或輸入可取得物件的命令或運算式。</span><span class="sxs-lookup"><span data-stu-id="1c020-167">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span> <span data-ttu-id="1c020-168">您可以使用管線將服務物件傳送至此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1c020-168">You can pipe a service object to this cmdlet.</span></span>
+<span data-ttu-id="929bb-161">以字串陣列指定此 Cmdlet 在作業中包含的服務或服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-161">Specifies, as a string array, a service or services that this cmdlet includes in the operation.</span></span> <span data-ttu-id="929bb-162">此參數的值會限定 **Name** 參數。</span><span class="sxs-lookup"><span data-stu-id="929bb-162">The value of this parameter qualifies the **Name** parameter.</span></span> <span data-ttu-id="929bb-163">輸入名稱元素或模式，例如 `s*` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-163">Enter a name element or pattern, such as `s*`.</span></span> <span data-ttu-id="929bb-164">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="929bb-164">Wildcards are permitted.</span></span>
+
+```yaml
+Type: System.String[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: True
+```
+
+### <span data-ttu-id="929bb-165">-InputObject</span><span class="sxs-lookup"><span data-stu-id="929bb-165">-InputObject</span></span>
+
+<span data-ttu-id="929bb-166">指定代表要抓取之服務的 **ServiceController** 物件。</span><span class="sxs-lookup"><span data-stu-id="929bb-166">Specifies **ServiceController** objects representing the services to be retrieved.</span></span> <span data-ttu-id="929bb-167">輸入包含物件的變數，或輸入可取得物件的命令或運算式。</span><span class="sxs-lookup"><span data-stu-id="929bb-167">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span> <span data-ttu-id="929bb-168">您可以使用管線將服務物件傳送至此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="929bb-168">You can pipe a service object to this cmdlet.</span></span>
 
 ```yaml
 Type: System.ServiceProcess.ServiceController[]
@@ -248,9 +248,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1c020-169">-Name</span><span class="sxs-lookup"><span data-stu-id="1c020-169">-Name</span></span>
+### <span data-ttu-id="929bb-169">-Name</span><span class="sxs-lookup"><span data-stu-id="929bb-169">-Name</span></span>
 
-<span data-ttu-id="1c020-170">指定要抓取之服務的服務名稱。</span><span class="sxs-lookup"><span data-stu-id="1c020-170">Specifies the service names of services to be retrieved.</span></span> <span data-ttu-id="1c020-171">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="1c020-171">Wildcards are permitted.</span></span>
+<span data-ttu-id="929bb-170">指定要抓取之服務的服務名稱。</span><span class="sxs-lookup"><span data-stu-id="929bb-170">Specifies the service names of services to be retrieved.</span></span> <span data-ttu-id="929bb-171">允許使用萬用字元。</span><span class="sxs-lookup"><span data-stu-id="929bb-171">Wildcards are permitted.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -264,9 +264,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="1c020-172">-RequiredServices</span><span class="sxs-lookup"><span data-stu-id="1c020-172">-RequiredServices</span></span>
+### <span data-ttu-id="929bb-172">-RequiredServices</span><span class="sxs-lookup"><span data-stu-id="929bb-172">-RequiredServices</span></span>
 
-<span data-ttu-id="1c020-173">指出此 Cmdlet 只會取得此服務所需的服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-173">Indicates that this cmdlet gets only the services that this service requires.</span></span> <span data-ttu-id="1c020-174">此參數會取得服務之 **ServicesDependedOn** 屬性的值。</span><span class="sxs-lookup"><span data-stu-id="1c020-174">This parameter gets the value of the **ServicesDependedOn** property of the service.</span></span>
+<span data-ttu-id="929bb-173">指出此 Cmdlet 只會取得此服務所需的服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-173">Indicates that this cmdlet gets only the services that this service requires.</span></span> <span data-ttu-id="929bb-174">此參數會取得服務之 **ServicesDependedOn** 屬性的值。</span><span class="sxs-lookup"><span data-stu-id="929bb-174">This parameter gets the value of the **ServicesDependedOn** property of the service.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -280,49 +280,50 @@ Accept pipeline input: False
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="1c020-175">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1c020-175">CommonParameters</span></span>
+### <span data-ttu-id="929bb-175">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="929bb-175">CommonParameters</span></span>
 
-<span data-ttu-id="1c020-176">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="1c020-176">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1c020-177">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="1c020-177">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="929bb-176">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="929bb-176">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="929bb-177">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="929bb-177">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="1c020-178">輸入</span><span class="sxs-lookup"><span data-stu-id="1c020-178">INPUTS</span></span>
+## <span data-ttu-id="929bb-178">輸入</span><span class="sxs-lookup"><span data-stu-id="929bb-178">INPUTS</span></span>
 
-### <span data-ttu-id="1c020-179">System.ServiceProcess.ServiceController、System.String</span><span class="sxs-lookup"><span data-stu-id="1c020-179">System.ServiceProcess.ServiceController, System.String</span></span>
+### <span data-ttu-id="929bb-179">System.ServiceProcess.ServiceController、System.String</span><span class="sxs-lookup"><span data-stu-id="929bb-179">System.ServiceProcess.ServiceController, System.String</span></span>
 
-<span data-ttu-id="1c020-180">您可以使用管線將服務物件或服務名稱傳送至此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="1c020-180">You can pipe a service object or a service name to this cmdlet.</span></span>
+<span data-ttu-id="929bb-180">您可以使用管線將服務物件或服務名稱傳送至此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="929bb-180">You can pipe a service object or a service name to this cmdlet.</span></span>
 
-## <span data-ttu-id="1c020-181">輸出</span><span class="sxs-lookup"><span data-stu-id="1c020-181">OUTPUTS</span></span>
+## <span data-ttu-id="929bb-181">輸出</span><span class="sxs-lookup"><span data-stu-id="929bb-181">OUTPUTS</span></span>
 
-### <span data-ttu-id="1c020-182">System.ServiceProcess.ServiceController</span><span class="sxs-lookup"><span data-stu-id="1c020-182">System.ServiceProcess.ServiceController</span></span>
+### <span data-ttu-id="929bb-182">System.ServiceProcess.ServiceController</span><span class="sxs-lookup"><span data-stu-id="929bb-182">System.ServiceProcess.ServiceController</span></span>
 
-<span data-ttu-id="1c020-183">此 Cmdlet 會傳回代表電腦上服務的物件。</span><span class="sxs-lookup"><span data-stu-id="1c020-183">This cmdlet returns objects that represent the services on the computer.</span></span>
+<span data-ttu-id="929bb-183">此 Cmdlet 會傳回代表電腦上服務的物件。</span><span class="sxs-lookup"><span data-stu-id="929bb-183">This cmdlet returns objects that represent the services on the computer.</span></span>
 
-## <span data-ttu-id="1c020-184">注意</span><span class="sxs-lookup"><span data-stu-id="1c020-184">NOTES</span></span>
+## <span data-ttu-id="929bb-184">注意</span><span class="sxs-lookup"><span data-stu-id="929bb-184">NOTES</span></span>
 
-<span data-ttu-id="1c020-185">從 PowerShell 6.0 開始，會將下列屬性新增至 **ServiceController** 物件： **UserName** 、 **Description** 、 **DelayedAutoStart** 、 **BinaryPathName** 和 **StartupType** 。</span><span class="sxs-lookup"><span data-stu-id="1c020-185">Beginning in PowerShell 6.0, the following properties are added to the **ServiceController** objects: **UserName** , **Description** , **DelayedAutoStart** , **BinaryPathName** , and **StartupType** .</span></span>
+<span data-ttu-id="929bb-185">此 Cmdlet 僅適用于 Windows 平臺。</span><span class="sxs-lookup"><span data-stu-id="929bb-185">This cmdlet is only available on Windows platforms.</span></span>
 
-<span data-ttu-id="1c020-186">您也可以 `Get-Service` 使用內建的別名來參考 `gsv` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-186">You can also refer to `Get-Service` by its built-in alias, `gsv`.</span></span> <span data-ttu-id="1c020-187">如需詳細資訊，請參閱 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)。</span><span class="sxs-lookup"><span data-stu-id="1c020-187">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
+<span data-ttu-id="929bb-186">從 PowerShell 6.0 開始，會將下列屬性新增至 **ServiceController** 物件： **UserName** 、 **Description** 、 **DelayedAutoStart** 、 **BinaryPathName** 和 **StartupType** 。</span><span class="sxs-lookup"><span data-stu-id="929bb-186">Beginning in PowerShell 6.0, the following properties are added to the **ServiceController** objects: **UserName** , **Description** , **DelayedAutoStart** , **BinaryPathName** , and **StartupType** .</span></span>
 
-<span data-ttu-id="1c020-188">只有當目前的使用者具有查看服務的許可權時，此 Cmdlet 才會顯示服務。</span><span class="sxs-lookup"><span data-stu-id="1c020-188">This cmdlet can display services only when the current user has permission to see them.</span></span> <span data-ttu-id="1c020-189">如果此 Cmdlet 未顯示服務，您可能沒有查看服務的許可權。</span><span class="sxs-lookup"><span data-stu-id="1c020-189">If this cmdlet does not display services, you might not have permission to see them.</span></span>
+<span data-ttu-id="929bb-187">您也可以 `Get-Service` 使用內建的別名來參考 `gsv` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-187">You can also refer to `Get-Service` by its built-in alias, `gsv`.</span></span> <span data-ttu-id="929bb-188">如需詳細資訊，請參閱 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)。</span><span class="sxs-lookup"><span data-stu-id="929bb-188">For more information, see [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md).</span></span>
 
-<span data-ttu-id="1c020-190">若要尋找您系統上每個服務的服務名稱和顯示名稱，請輸入 `Get-Service` 。</span><span class="sxs-lookup"><span data-stu-id="1c020-190">To find the service name and display name of each service on your system, type `Get-Service`.</span></span> <span data-ttu-id="1c020-191">服務名稱會出現在 [名稱] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。</span><span class="sxs-lookup"><span data-stu-id="1c020-191">The service names appear in the Name column, and the display names appear in the **DisplayName** column.</span></span>
+<span data-ttu-id="929bb-189">只有當目前的使用者具有查看服務的許可權時，此 Cmdlet 才會顯示服務。</span><span class="sxs-lookup"><span data-stu-id="929bb-189">This cmdlet can display services only when the current user has permission to see them.</span></span> <span data-ttu-id="929bb-190">如果此 Cmdlet 未顯示服務，您可能沒有查看服務的許可權。</span><span class="sxs-lookup"><span data-stu-id="929bb-190">If this cmdlet does not display services, you might not have permission to see them.</span></span>
 
-<span data-ttu-id="1c020-192">當您依 **Status** 屬性的值以遞增順序排序時，已停止的服務會在執行服務之前出現。</span><span class="sxs-lookup"><span data-stu-id="1c020-192">When you sort in ascending order by the **Status** property's value, Stopped services appear before Running services.</span></span> <span data-ttu-id="1c020-193">服務的 **status** 屬性是一個列舉值，而狀態名稱則代表整數值。</span><span class="sxs-lookup"><span data-stu-id="1c020-193">The service's **Status** property is an enumerated value and the status names represent integer values.</span></span> <span data-ttu-id="1c020-194">排序次序是以整數值為基礎，而不是名稱。</span><span class="sxs-lookup"><span data-stu-id="1c020-194">The sort order is based on the integer value, not the name.</span></span> <span data-ttu-id="1c020-195">因為已停止的值為1，且執行的值為4，所以已停止。</span><span class="sxs-lookup"><span data-stu-id="1c020-195">Stopped appears before because Running because Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="1c020-196">如需詳細資訊，請參閱 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus)。</span><span class="sxs-lookup"><span data-stu-id="1c020-196">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
+<span data-ttu-id="929bb-191">若要尋找您系統上每個服務的服務名稱和顯示名稱，請輸入 `Get-Service` 。</span><span class="sxs-lookup"><span data-stu-id="929bb-191">To find the service name and display name of each service on your system, type `Get-Service`.</span></span> <span data-ttu-id="929bb-192">服務名稱會出現在 [名稱] 資料行中，而顯示名稱會出現在 [ **DisplayName** ] 欄位中。</span><span class="sxs-lookup"><span data-stu-id="929bb-192">The service names appear in the Name column, and the display names appear in the **DisplayName** column.</span></span>
 
-## <span data-ttu-id="1c020-197">相關連結</span><span class="sxs-lookup"><span data-stu-id="1c020-197">RELATED LINKS</span></span>
+<span data-ttu-id="929bb-193">當您依 **Status** 屬性的值以遞增順序排序時，已停止的服務會在執行服務之前出現。</span><span class="sxs-lookup"><span data-stu-id="929bb-193">When you sort in ascending order by the **Status** property's value, Stopped services appear before Running services.</span></span> <span data-ttu-id="929bb-194">服務的 **status** 屬性是一個列舉值，而狀態名稱則代表整數值。</span><span class="sxs-lookup"><span data-stu-id="929bb-194">The service's **Status** property is an enumerated value and the status names represent integer values.</span></span> <span data-ttu-id="929bb-195">排序次序是以整數值為基礎，而不是名稱。</span><span class="sxs-lookup"><span data-stu-id="929bb-195">The sort order is based on the integer value, not the name.</span></span> <span data-ttu-id="929bb-196">因為已停止的值為1，且執行的值為4，所以已停止。</span><span class="sxs-lookup"><span data-stu-id="929bb-196">Stopped appears before because Running because Stopped has a value of 1, and Running has a value of 4.</span></span> <span data-ttu-id="929bb-197">如需詳細資訊，請參閱 [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus)。</span><span class="sxs-lookup"><span data-stu-id="929bb-197">For more information, see [ServiceControllerStatus](/dotnet/api/system.serviceprocess.servicecontrollerstatus).</span></span>
 
-[<span data-ttu-id="1c020-198">New-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-198">New-Service</span></span>](New-Service.md)
+## <span data-ttu-id="929bb-198">相關連結</span><span class="sxs-lookup"><span data-stu-id="929bb-198">RELATED LINKS</span></span>
 
-[<span data-ttu-id="1c020-199">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-199">Restart-Service</span></span>](Restart-Service.md)
+[<span data-ttu-id="929bb-199">New-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-199">New-Service</span></span>](New-Service.md)
 
-[<span data-ttu-id="1c020-200">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-200">Resume-Service</span></span>](Resume-Service.md)
+[<span data-ttu-id="929bb-200">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-200">Restart-Service</span></span>](Restart-Service.md)
 
-[<span data-ttu-id="1c020-201">Set-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-201">Set-Service</span></span>](Set-Service.md)
+[<span data-ttu-id="929bb-201">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-201">Resume-Service</span></span>](Resume-Service.md)
 
-[<span data-ttu-id="1c020-202">Start-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-202">Start-Service</span></span>](Start-Service.md)
+[<span data-ttu-id="929bb-202">Set-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-202">Set-Service</span></span>](Set-Service.md)
 
-[<span data-ttu-id="1c020-203">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-203">Stop-Service</span></span>](Stop-Service.md)
+[<span data-ttu-id="929bb-203">Start-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-203">Start-Service</span></span>](Start-Service.md)
 
-[<span data-ttu-id="1c020-204">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-204">Suspend-Service</span></span>](Suspend-Service.md)
+[<span data-ttu-id="929bb-204">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-204">Stop-Service</span></span>](Stop-Service.md)
 
-[<span data-ttu-id="1c020-205">Remove-Service</span><span class="sxs-lookup"><span data-stu-id="1c020-205">Remove-Service</span></span>](Remove-Service.md)
+[<span data-ttu-id="929bb-205">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-205">Suspend-Service</span></span>](Suspend-Service.md)
 
+[<span data-ttu-id="929bb-206">Remove-Service</span><span class="sxs-lookup"><span data-stu-id="929bb-206">Remove-Service</span></span>](Remove-Service.md)
