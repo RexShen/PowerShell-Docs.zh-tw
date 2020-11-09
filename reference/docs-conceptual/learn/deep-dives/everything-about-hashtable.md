@@ -3,12 +3,12 @@ title: 您想知道有關雜湊表的一切
 description: 雜湊表在 PowerShell 中是極其重要的，因此務必加以充分了解。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85353816"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354417"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>您想知道有關雜湊表的一切
 
@@ -19,11 +19,11 @@ ms.locfileid: "85353816"
 
 ## <a name="hashtable-as-a-collection-of-things"></a>雜湊表即事件集合
 
-我想要您先將**雜湊表**看成雜湊表傳統定義中的集合。 此定義可讓您在稍後將其用於更進階的內容時，對其運作方式有基本的了解。 略過這項了解通常是造成困惑的來源。
+我想要您先將 **雜湊表** 看成雜湊表傳統定義中的集合。 此定義可讓您在稍後將其用於更進階的內容時，對其運作方式有基本的了解。 略過這項了解通常是造成困惑的來源。
 
 ## <a name="what-is-an-array"></a>什麼是陣列？
 
-在跳到什麼是**雜湊表**之前，我必須先提到[陣列][]。 基於此討論的目的，陣列是值或物件的清單或集合。
+在跳到什麼是 **雜湊表** 之前，我必須先提到 [陣列][]。 基於此討論的目的，陣列是值或物件的清單或集合。
 
 ```powershell
 $array = @(1,2,3,5,7,11)
@@ -966,7 +966,7 @@ function Get-DeepClone
 [若效能至上，請將其進行測試]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [展開]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
-[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
+[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
 [PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [自動預設值]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/

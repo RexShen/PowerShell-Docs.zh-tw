@@ -2,41 +2,41 @@
 title: PowerShell Core 6.1 的新功能
 description: PowerShell Core 6.1 中發行的新功能與變更
 ms.date: 09/13/2018
-ms.openlocfilehash: 16159059285f89c2ddd85b506b0920f0aa8748ae
-ms.sourcegitcommit: d757d64ea8c8af4d92596e8fbe15f2f40d48d3ac
+ms.openlocfilehash: 4ff70be239197c7a4f64019d2aab42433f82f36c
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90846910"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354655"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 的新功能
 
 以下是 PowerShell Core 6.1 中已引進的一些主要新功能與變更精選。
 
-還有**許多**「乏味的項目」讓 PowerShell 變得更快且更穩定 (外加許許多多的 Bug 修正)！ 如需變更的完整清單，請參閱 [GitHub 上的變更記錄](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)。
+還有 **許多** 「乏味的項目」讓 PowerShell 變得更快且更穩定 (外加許許多多的 Bug 修正)！ 如需變更的完整清單，請參閱 [GitHub 上的變更記錄](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)。
 
 此外，除了下文所提到的一些名字，我們也感謝[所有社群參與者](https://github.com/PowerShell/PowerShell/graphs/contributors)協助實現這次的發行。
 
 ## <a name="net-core-21"></a>.NET Core 2.1
 
-PowerShell Core 6.1 已移至 [5 月發行](https://blogs.msdn.microsoft.com/dotnet/2018/05/30/announcing-net-core-2-1/)的 .NET Core 2.1，並對 PowerShell 做出許多改善，包括：
+PowerShell Core 6.1 已移至 [5 月發行](https://devblogs.microsoft.com/dotnet/announcing-net-core-2-1/)的 .NET Core 2.1，並對 PowerShell 做出許多改善，包括：
 
 - 效能改善 (請參閱[下文](#performance-improvements))
 - Alpine Linux 支援 (預覽)
 - [.NET 通用工具支援](/dotnet/core/tools/global-tools) - 即將在 PowerShell 中推出
-- [`Span<T>`](/dotnet/api/system.span-1?view=netcore-2.1)
+- [`Span<T>`](/dotnet/api/system.span-1)
 
 ## <a name="windows-compatibility-pack-for-net-core"></a>適用於 .NET Core 的 Windows 相容性套件
 
-在 Windows 上，.NET 小組提供[適用於 .NET Core 的 Windows 相容性套件](https://blogs.msdn.microsoft.com/dotnet/2017/11/16/announcing-the-windows-compatibility-pack-for-net-core/)，此組件集將一些已移除的 API 重新新增至 Windows 上的 .NET Core。
+在 Windows 上，.NET 小組提供[適用於 .NET Core 的 Windows 相容性套件](https://devblogs.microsoft.com/dotnet/announcing-the-windows-compatibility-pack-for-net-core/)，此組件集將一些已移除的 API 重新新增至 Windows 上的 .NET Core。
 
 我們已將 Windows 相容性套件新增至 PowerShell Core 6.1 版，讓任何使用這些 API 的模組或指令碼都可以依賴這些套件提供使用。
 
-Windows 相容性組件可讓 PowerShell Core 使用**隨附於 Windows 10 2018 年 10 月更新和 Windows Server 2019 中 1900 個以上的 Cmdlet**。
+Windows 相容性組件可讓 PowerShell Core 使用 **隨附於 Windows 10 2018 年 10 月更新和 Windows Server 2019 中 1900 個以上的 Cmdlet** 。
 
 ## <a name="support-for-application-allow-lists"></a>支援應用程式允許清單
 
-PowerShell Core 6.1 與 Windows PowerShell 5.1 同樣支援 [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 應用程式允許清單。 應用程式允許清單可供細微控制哪些二進位檔才能搭配使用 PowerShell [受限語言模式](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)執行。
+PowerShell Core 6.1 與 Windows PowerShell 5.1 同樣支援 [AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) 和 [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) 應用程式允許清單。 應用程式允許清單可供細微控制哪些二進位檔才能搭配使用 PowerShell [受限語言模式](https://devblogs.microsoft.com/powershell/powershell-constrained-language-mode/)執行。
 
 ## <a name="performance-improvements"></a>效能改善
 
