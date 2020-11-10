@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/write-eventlog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Write-EventLog
-ms.openlocfilehash: cae34c4cf942d9aa4abb9a2d716ef9854f70de2e
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 4044453cb46b407344619f1edd3227213bf67250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203435"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388241"
 ---
 # Write-EventLog
 
@@ -27,12 +27,11 @@ Write-EventLog [-LogName] <String> [-Source] <String> [[-EntryType] <EventLogEnt
 ```
 
 ## DESCRIPTION
-**寫入 EventLog** Cmdlet 會將事件寫入事件記錄檔。
+Cmdlet 會將 `Write-EventLog` 事件寫入事件記錄檔。
 
 若要將事件寫入事件記錄檔，事件記錄檔必須存在於電腦上，並且必須為事件記錄檔登錄來源。
 
-包含 **eventlog** 名詞 ( **eventlog** Cmdlet 的指令程式) 只會在傳統事件記錄檔上運作。
-在 Windows Vista 和更新版本的 Windows 作業系統中，若要從使用「Windows 事件記錄檔」技術的記錄檔中取得事件，請使用 Get-WinEvent Cmdlet。
+包含 **eventlog** 名詞 ( **eventlog** Cmdlet 的指令程式) 只會在傳統事件記錄檔上運作。 若要在 Windows Vista 和更新版本的 Windows 作業系統中，從使用 Windows 事件記錄檔技術的記錄檔中取得事件，請使用 `Get-WinEvent` Cmdlet。
 
 ## 範例
 
@@ -55,8 +54,8 @@ PS C:\> Write-EventLog -ComputerName "Server01" -LogName Application -Source "My
 ## PARAMETERS
 
 ### -Category
-指定事件的工作類別。
-輸入與事件記錄檔之類別訊息檔案中的字串關聯的整數。
+
+指定事件的工作類別。 輸入與事件記錄檔之類別訊息檔案中的字串關聯的整數。
 
 ```yaml
 Type: System.Int16
@@ -71,13 +70,12 @@ Accept wildcard characters: False
 ```
 
 ### -ComputerName
-指定遠端電腦。
-預設是本機電腦。
+
+指定遠端電腦。 預設是本機電腦。
 
 輸入遠端電腦的 NetBIOS 名稱、IP 位址或完整網域名稱。
 
-此參數不必依賴 Windows PowerShell 遠端功能。
-即使您的電腦未設定為執行遠端命令，您仍然可以使用 Get-EventLog Cmdlet 的 *ComputerName* 參數。
+此參數不必依賴 Windows PowerShell 遠端功能。 **ComputerName** `Get-EventLog` 即使您的電腦未設定為執行遠端命令，您也可以使用此 Cmdlet 的 ComputerName 參數。
 
 ```yaml
 Type: System.String
@@ -92,11 +90,10 @@ Accept wildcard characters: False
 ```
 
 ### -EntryType
-指定事件的項目類型。
-這個參數可接受的值如下︰Error、Warning、Information、SuccessAudit 和 FailureAudit。
-預設值為 Information。
 
-如需這些值的描述，請參閱 MSDN library 中的 [EventLogEntryType 列舉](https://go.microsoft.com/fwlink/?LinkId=143599) 。
+指定事件的項目類型。 這個參數可接受的值如下︰Error、Warning、Information、SuccessAudit 和 FailureAudit。 預設值為 Information。
+
+如需值的描述，請參閱 [EventLogEntryType 列舉](/dotnet/api/system.diagnostics.eventlogentrytype)。
 
 ```yaml
 Type: System.Diagnostics.EventLogEntryType
@@ -112,9 +109,8 @@ Accept wildcard characters: False
 ```
 
 ### -EventId
-指定事件識別碼。
-這是必要參數。
-適用於 *EventId* 參數的最大值為 65535。
+
+指定事件識別碼。 這是必要參數。 適用於 **EventId** 參數的最大值為 65535。
 
 ```yaml
 Type: System.Int32
@@ -129,10 +125,8 @@ Accept wildcard characters: False
 ```
 
 ### -LogName
-指定要在其中寫入事件之記錄檔的名稱。
-輸入記錄檔名稱。
-記錄檔名稱是 **Log** 屬性的值，而不是 **LogDisplayName** 的值。
-不允許使用萬用字元。
+
+指定要在其中寫入事件之記錄檔的名稱。 輸入記錄檔名稱。 記錄檔名稱是 **Log** 屬性的值，而不是 **LogDisplayName** 的值。 不允許使用萬用字元。
 這是必要參數。
 
 ```yaml
@@ -148,8 +142,8 @@ Accept wildcard characters: False
 ```
 
 ### -Message
-指定事件訊息。
-這是必要參數。
+
+指定事件訊息。 這是必要參數。
 
 ```yaml
 Type: System.String
@@ -164,6 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -RawData
+
 指定與事件關聯的二進位資料 (單位為位元組)。
 
 ```yaml
@@ -179,6 +174,7 @@ Accept wildcard characters: False
 ```
 
 ### -Source
+
 指定事件來源，這通常是正在將事件寫入記錄檔之應用程式的名稱。
 
 ```yaml
@@ -194,6 +190,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
+
 這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。 如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。
 
 ## 輸入
@@ -208,9 +205,7 @@ Accept wildcard characters: False
 
 ## 注意
 
-* 若要使用 **Write-EventLog** ，請使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell。
-
-*
+若要使用 `Write-EventLog` ，請使用 [以系統管理員身分執行] 選項啟動 Windows PowerShell。
 
 ## 相關連結
 

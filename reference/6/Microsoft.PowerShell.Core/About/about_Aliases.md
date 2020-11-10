@@ -6,16 +6,17 @@ ms.date: 11/27/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_aliases?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Aliases
-ms.openlocfilehash: 5595c1595a36ebbc6ae7c77afb45f95996815f8f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 9094e34d4d3cbb8ee951593e15411e8e3234fa1a
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207203"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387765"
 ---
 # <a name="about-aliases"></a>關於別名
 
 ## <a name="short-description"></a>簡短描述
+
 說明如何在 PowerShell 中使用 Cmdlet 和命令的替代名稱。
 
 ## <a name="long-description"></a>詳細描述
@@ -171,7 +172,7 @@ Get-Help about_Functions
 
 ## <a name="alias-objects"></a>別名物件
 
-PowerShell 別名會以 System.management.automation.aliasinfo 類別實例的物件來表示。 如需此類型之物件的詳細資訊，請參閱 Microsoft 開發人員 Network (MSDN) library 中的 [System.management.automation.aliasinfo 類別][aliasinfo] 。
+PowerShell 別名會以 System.management.automation.aliasinfo 類別實例的物件來表示。 如需此類型之物件的詳細資訊，請參閱 PowerShell SDK 中的 [System.management.automation.aliasinfo 類別][aliasinfo] 。
 
 若要查看別名物件的屬性和方法，請取得別名。
 然後，將它們輸送至 Get-Member Cmdlet。 例如：

@@ -6,16 +6,17 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem 提供者
-ms.openlocfilehash: 24c30e311ba43842e759e884424ce3abfb92aae7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 3464dbcbc1a7f357cdbc5368dc7a1e4d21f5ed5e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207119"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387588"
 ---
 # <a name="filesystem-provider"></a>FileSystem 提供者
 
 ## <a name="provider-name"></a>提供者名稱
+
 FileSystem
 
 ## <a name="drives"></a>磁碟機
@@ -205,7 +206,7 @@ $e[0]
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-如需此物件的詳細資訊，請將命令輸送至 [取得成員](xref:Microsoft.PowerShell.Utility.Get-Member) Cmdlet。 或者，請參閱 MSDN (Microsoft 開發人員網路) 程式庫中的「[System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) 類別」。
+如需此物件的詳細資訊，請將命令輸送至 [取得成員](xref:Microsoft.PowerShell.Utility.Get-Member) Cmdlet。 或者，請參閱 [System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) 類別。
 
 ### <a name="modify-the-acl-for-a-file"></a>修改檔案的 ACL
 

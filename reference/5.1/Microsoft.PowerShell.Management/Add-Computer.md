@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/add-computer?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Computer
-ms.openlocfilehash: c1527c04d795206b8de968daf62456837627a098
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e3d1c5c071a334bddbfbc547ef2cc07e9e5c90aa
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204096"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388343"
 ---
 # Add-Computer
 
@@ -40,8 +40,7 @@ Add-Computer [-ComputerName <String[]>] [-LocalCredential <PSCredential>] [-Cred
 
 ## DESCRIPTION
 
-`Add-Computer`Cmdlet 會將本機電腦或遠端電腦新增到網域或工作組，或將它們從一個網域移到另一個網域。
-如果將電腦新增到網域時沒有帳戶，它也會一併建立網域帳戶。
+`Add-Computer`Cmdlet 會將本機電腦或遠端電腦新增到網域或工作組，或將它們從一個網域移到另一個網域。 如果將電腦新增到網域時沒有帳戶，它也會一併建立網域帳戶。
 
 您可以使用這個 Cmdlet 的參數來指定組織單位 (OU) 和網域控制站，或是執行非安全性加入。
 
@@ -90,10 +89,7 @@ Add-Computer -DomainName Domain02 -OUPath "OU=testOU,DC=domain,DC=Domain,DC=com"
 Add-Computer -ComputerName Server01 -LocalCredential Server01\Admin01 -DomainName Domain02 -Credential Domain02\Admin02 -Restart -Force
 ```
 
-這個命令會將 Server01 電腦新增到 Domain02 網域。
-它使用 **LocalCredential** 參數來指定具有連線到 Server01 電腦之權限的使用者帳戶。
-它使用 **Credential** 參數來指定具有將電腦加入網域之權限的使用者帳戶。
-它使用 **Restart** 參數，以在加入操作完成後重新啟動電腦，並且使用 **Force** 參數，以抑制使用者確認訊息。
+這個命令會將 Server01 電腦新增到 Domain02 網域。 它使用 **LocalCredential** 參數來指定具有連線到 Server01 電腦之權限的使用者帳戶。 它使用 **Credential** 參數來指定具有將電腦加入網域之權限的使用者帳戶。 它使用 **Restart** 參數，以在加入操作完成後重新啟動電腦，並且使用 **Force** 參數，以抑制使用者確認訊息。
 
 ### 範例6：將電腦群組移至新網域
 
@@ -103,9 +99,7 @@ Add-Computer -ComputerName Server01, Server02, localhost -DomainName Domain02 -L
 
 這個命令會將 Server01 和 Server02 電腦以及本機電腦從 Domain01 移到 Domain02。
 
-它使用 **LocalCredential** 參數來指定具有連線到這三部受影響電腦之權限的使用者帳戶。
-它使用 **UnjoinDomainCredential** 參數來指定具有將電腦從 Domain01 網域退出之權限的使用者帳戶，並且使用 **Credential** 參數來指定具有將電腦加入 Domain02 網域之權限的使用者帳戶。
-它使用 **Restart** 參數，以在完成移動後重新啟動這三部電腦。
+它使用 **LocalCredential** 參數來指定具有連線到這三部受影響電腦之權限的使用者帳戶。 它使用 **UnjoinDomainCredential** 參數來指定具有將電腦從 Domain01 網域退出之權限的使用者帳戶，並且使用 **Credential** 參數來指定具有將電腦加入 Domain02 網域之權限的使用者帳戶。 它使用 **Restart** 參數，以在完成移動後重新啟動這三部電腦。
 
 ### 範例7：將電腦移至新網域，並變更電腦的名稱
 
@@ -115,8 +109,7 @@ Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Cre
 
 這個命令會將 Server01 電腦移到 Domain02，並將電腦名稱變更為 Server044。
 
-此命令使用目前使用者的認證來連線到 Server01 電腦，以及將它從其目前的網域退出。
-它使用 **Credential** 參數來指定具有將電腦加入 Domain02 網域之權限的使用者帳戶。
+此命令使用目前使用者的認證來連線到 Server01 電腦，以及將它從其目前的網域退出。 它會使用 **Credential** 參數來指定具有將電腦加入 Domain02 網域之許可權的使用者帳戶。
 
 ### 範例8：將檔案中列出的電腦新增至新的網域
 
@@ -124,9 +117,7 @@ Add-Computer -ComputerName Server01 -DomainName Domain02 -NewName Server044 -Cre
 Add-Computer -ComputerName (Get-Content Servers.txt) -DomainName Domain02 -Credential Domain02\Admin02 -Options Win9xUpgrade  -Restart
 ```
 
-這個命令會將 Servers.txt 檔案中所列的電腦新增到 Domain02 網域。
-它使用 **Options** 參數來指定 **Win9xUpgrade** 選項。
-**Restart** 參數會在加入操作完成後，重新啟動所有新加入的電腦。
+這個命令會將 Servers.txt 檔案中所列的電腦新增到 Domain02 網域。 它使用 **Options** 參數來指定 **Win9xUpgrade** 選項。 **Restart** 參數會在加入操作完成後，重新啟動所有新加入的電腦。
 
 ### 範例9：使用預先定義的電腦認證將電腦新增至網域
 
@@ -144,8 +135,7 @@ $joinCred = New-Object pscredential -ArgumentList ([pscustomobject]@{
 Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential $joinCred
 ```
 
-這項命令組合會使用已加入網域的現有電腦，在網域中建立具有預先定義名稱和暫時聯結密碼的新電腦帳戶。
-接著，如果電腦具有預先定義的名稱，則只會使用電腦名稱稱和暫時聯結密碼來加入網域。
+這項命令組合會使用已加入網域的現有電腦，在網域中建立具有預先定義名稱和暫時聯結密碼的新電腦帳戶。 接著，如果電腦具有預先定義的名稱，則只會使用電腦名稱稱和暫時聯結密碼來加入網域。
 預先定義的密碼只是用來支援聯結作業，而且會在電腦完成聯結之後，被取代為一般電腦帳戶程式的一部分。
 
 ## PARAMETERS
@@ -155,11 +145,9 @@ Add-Computer -Domain "Domain03" -Options UnsecuredJoin,PasswordPass -Credential 
 指定要新增到網域或工作群組的電腦。
 預設是本機電腦。
 
-輸入每部遠端電腦的 NetBIOS 名稱、網際網路通訊協定 (IP) 位址或完整網域名稱。
-若要指定本機電腦，請輸入電腦名稱、句點 (.)，或者 "localhost"。
+輸入 NetBIOS 名稱、網際網路通訊協定 (IP) 位址，或每部遠端電腦的完整功能變數名稱。 若要指定本機電腦，請輸入電腦名稱稱、點 (`.`) 或 "localhost"。
 
-此參數不必依賴 Windows PowerShell 遠端功能。
-**ComputerName** `Add-Computer` 即使您的電腦未設定為執行遠端命令，您也可以使用 ComputerName 參數。
+此參數不必依賴 Windows PowerShell 遠端功能。 **ComputerName** `Add-Computer` 即使您的電腦未設定為執行遠端命令，您也可以使用 ComputerName 參數。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -180,11 +168,9 @@ Accept wildcard characters: False
 指定具有將電腦加入新網域之權限的使用者帳戶。
 預設為目前使用者。
 
-輸入使用者名稱，例如 "User01" 或 "Domain01\User01"，或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。
-若您輸入使用者名稱，將會提示您輸入密碼。
+輸入使用者名稱，例如 "User01" 或 "Domain01\User01"，或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。 若您輸入使用者名稱，將會提示您輸入密碼。
 
-若要指定具有將電腦從其目前網域中移除之權限的使用者帳戶，請使用 **UnjoinDomainCredential** 參數。
-若要指定具有連線到遠端電腦之權限的使用者帳戶，請使用 **LocalCredential** 參數。
+若要指定具有將電腦從其目前網域中移除之權限的使用者帳戶，請使用 **UnjoinDomainCredential** 參數。 若要指定具有連線到遠端電腦之權限的使用者帳戶，請使用 **LocalCredential** 參數。
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -200,8 +186,7 @@ Accept wildcard characters: False
 
 ### -DomainName
 
-指定要將電腦新增到其中的網域。
-將電腦新增到網域時，必須使用這個參數。
+指定要將電腦新增到其中的網域。 將電腦新增到網域時，必須使用這個參數。
 
 ```yaml
 Type: System.String
@@ -217,8 +202,7 @@ Accept wildcard characters: False
 
 ### -Force
 
-抑制使用者確認提示。
-如果沒有這個參數， `Add-Computer` 則會要求您確認新增每部電腦。
+抑制使用者確認提示。 如果沒有這個參數， `Add-Computer` 則會要求您確認新增每部電腦。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -236,14 +220,11 @@ Accept wildcard characters: False
 
 ### -LocalCredential
 
-指定具有連線到 **ComputerName** 參數所指定電腦之權限的使用者帳戶。
-預設為目前使用者。
+指定具有連線到 **ComputerName** 參數所指定電腦之權限的使用者帳戶。 預設為目前使用者。
 
-輸入使用者名稱，例如 "User01" 或 "Domain01\User01"，或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。
-若您輸入使用者名稱，將會提示您輸入密碼。
+輸入使用者名稱，例如 "User01" 或 "Domain01\User01"，或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。 若您輸入使用者名稱，將會提示您輸入密碼。
 
-若要指定具有將電腦新增到新網域之權限的使用者帳戶，請使用 **Credential** 參數。
-若要指定具有將電腦從其目前網域中移除之權限的使用者帳戶，請使用 **UnjoinDomainCredential** 參數。
+若要指定具有將電腦新增到新網域之權限的使用者帳戶，請使用 **Credential** 參數。 若要指定具有將電腦從其目前網域中移除之權限的使用者帳戶，請使用 **UnjoinDomainCredential** 參數。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -261,8 +242,7 @@ Accept wildcard characters: False
 
 ### -NewName
 
-指定新網域中電腦的新名稱。
-這個參數只有在新增或移除電腦時才有效。
+指定新網域中電腦的新名稱。 這個參數只有在新增或移除電腦時才有效。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -280,8 +260,7 @@ Accept wildcard characters: False
 
 ### -選項
 
-指定 **載入電腦** 聯結作業的 advanced 選項。
-請以逗號分隔的字串方式輸入一個或多個值。
+指定 **載入電腦** 聯結作業的 advanced 選項。 請以逗號分隔的字串方式輸入一個或多個值。
 
 此參數可接受的值為：
 
@@ -297,7 +276,8 @@ Accept wildcard characters: False
 
 - **JoinReadOnly** ：使用現有的電腦帳戶將電腦加入唯讀網域控制站。 您必須將電腦帳戶新增到密碼複寫原則的允許清單中，而且必須先將帳戶密碼複寫到唯讀網域控制站，才能進行聯結操作。
 
-- **InstallInvoke** ：設定 **JoinDomainOrWorkgroup** 方法之 **joindomainorworkgroup** 參數的 create (0x2) 和 delete (0x4) 旗標。 如需 **JoinDomainOrWorkgroup** 方法的詳細資訊，請參閱 MSDN library 中 [的 Win32_ComputerSystem 類別的 JoinDomainOrWorkgroup 方法](https://msdn.microsoft.com/library/aa392154) 。 如需這些選項的詳細資訊，請參閱 MSDN library 中的 [NetJoinDomain 函數](https://msdn.microsoft.com/library/aa370433) 。
+- **InstallInvoke** ：設定 **JoinDomainOrWorkgroup** 方法之 **joindomainorworkgroup** 參數的 create (0x2) 和 delete (0x4) 旗標。 如需 **JoinDomainOrWorkgroup** 方法的詳細資訊，請參閱 [Win32_ComputerSystem 類別的 JoinDomainOrWorkgroup 方法](/windows/win32/cimwin32prov/joindomainorworkgroup-method-in-class-win32-computersystem)。
+  如需這些選項的詳細資訊，請參閱 [NetJoinDomain 函數](/windows/win32/api/lmjoin/nf-lmjoin-netjoindomain)。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -316,9 +296,7 @@ Accept wildcard characters: False
 
 ### -OUPath
 
-指定網域帳戶的組織單位 (OU)。
-請以引號括住的方式輸入 OU 的完整辨別名稱。
-預設值是網域中電腦物件的預設 OU。
+指定網域帳戶的組織單位 (OU)。 請以引號括住的方式輸入 OU 的完整辨別名稱。 預設值是網域中電腦物件的預設 OU。
 
 ```yaml
 Type: System.String
@@ -334,8 +312,7 @@ Accept wildcard characters: False
 
 ### -PassThru
 
-傳回代表您正在使用之項目的物件。
-根據預設，此 Cmdlet 不會產生任何輸出。
+傳回代表您正在使用之項目的物件。 根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -351,8 +328,7 @@ Accept wildcard characters: False
 
 ### -Restart
 
-重新啟動已新增到網域或工作群組的電腦。
-通常必須重新啟動才能使變更生效。
+重新啟動已新增到網域或工作群組的電腦。 通常必須重新啟動才能使變更生效。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -370,9 +346,7 @@ Accept wildcard characters: False
 
 ### -Server
 
-指定將電腦新增到網域的網域控制站名稱。
-請以 DomainName\ComputerName 格式輸入名稱。
-預設不會指定任何網域控制站。
+指定將電腦新增到網域的網域控制站名稱。 請以 DomainName\ComputerName 格式輸入名稱。 預設不會指定任何網域控制站。
 
 ```yaml
 Type: System.String
@@ -388,15 +362,11 @@ Accept wildcard characters: False
 
 ### -UnjoinDomainCredential
 
-指定具有將電腦從其目前網域中移除之權限的使用者帳戶。
-預設為目前使用者。
+指定具有將電腦從其目前網域中移除之權限的使用者帳戶。 預設為目前使用者。
 
-輸入使用者名稱，例如 "User01" 或 "Domain01\User01"，或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。
-若您輸入使用者名稱，將會提示您輸入密碼。
+輸入使用者名稱，例如 "User01" 或 "Domain01\User01"，或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。 若您輸入使用者名稱，將會提示您輸入密碼。
 
-當您要將電腦移到不同的網域時，請使用此參數。
-若要指定具有將電腦加入新網域之權限的使用者帳戶，請使用 **Credential** 參數。
-若要指定具有連線到遠端電腦之權限的使用者帳戶，請使用 **LocalCredential** 參數。
+當您要將電腦移到不同的網域時，請使用此參數。 若要指定具有將電腦加入新網域之權限的使用者帳戶，請使用 **Credential** 參數。 若要指定具有連線到遠端電腦之權限的使用者帳戶，請使用 **LocalCredential** 參數。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -430,8 +400,7 @@ Accept wildcard characters: False
 
 ### -WorkgroupName
 
-指定要將電腦新增到其中的工作群組名稱。
-預設值為 "WORKGROUP"。
+指定要將電腦新增到其中的工作群組名稱。 預設值為 "WORKGROUP"。
 
 ```yaml
 Type: System.String

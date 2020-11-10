@@ -7,12 +7,12 @@ ms.date: 5/15/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 8aff8a2b3962b3bf09d158247c06b36f99eaf527
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3352055e9c77dd944ffd66fa5db9863166ad7e95
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342513"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388802"
 ---
 # Connect-PSSession
 
@@ -213,7 +213,6 @@ Id Name            ComputerName    State         ConfigurationName     Availabil
 使用 **ConnectionURI** 參數時，遠端目的地可傳回重新導向至不同 URI 的指示。 根據預設，PowerShell 不會重新導向連線，但是您可以使用此參數允許它重新導向連接。
 
 您也可以變更 **MaximumConnectionRedirectionCount** 工作階段選項值，限制連線重新導向的次數。 使用 Cmdlet 的 **MaximumRedirection** 參數， `New-PSSessionOption` 或設定 **$PSSessionOption** 喜好設定變數的 **MaximumConnectionRedirectionCount** 屬性。 預設值為 5。
-預設值為 5。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +260,7 @@ Accept wildcard characters: False
 
 預設值為 Default。
 
-如需此參數值的詳細資訊，請參閱 MSDN library 中的 [AuthenticationMechanism 列舉](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) 。
+如需此參數值的詳細資訊，請參閱 [AuthenticationMechanism 列舉](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)。
 
 > [!CAUTION]
 > 使用者認證會傳遞至要驗證之遠端電腦的「認證安全性支援提供者 (CredSSP)」驗證，是設計用於需要在一個以上資源進行驗證的命令，例如存取遠端網路共用。 此機制會使得遠端作業的安全性風險變高。 若遠端電腦遭到入侵，傳遞給它的認證便可用來控制網路工作階段。
@@ -611,9 +610,9 @@ Accept wildcard characters: False
 
   **Availability** 值為 None 表示您可以連線工作階段。 「忙碌」值表示您無法連接到 **PSSession** ，因為它已連接到另一個會話。
 
-  如需會話的 **State** 屬性值的詳細資訊，請參閱 MSDN library 中的 [ runspacestate 列舉](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) 。
+  如需會話的 **State** 屬性值的詳細資訊，請參閱 [ runspacestate 列舉](/dotnet/api/system.management.automation.runspaces.runspacestate)。
 
-  如需會話的 **Availability** 屬性值的詳細資訊，請參閱 MSDN library 中的 [RunspaceAvailability 列舉](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) 。
+  如需會話的 **Availability** 屬性值的詳細資訊，請參閱 [RunspaceAvailability 列舉](/dotnet/api/system.management.automation.runspaces.runspaceavailability)。
 
 - 當您連接到 **pssession** 時，無法變更 **PSSession** 的空閒超時值。 的 **SessionOption** 參數 `Connect-PSSession` 會採用具有 **IdleTimeout** 值的 **SessionOption** 物件。 不過， **IdleTimeout** **SessionOption** **IdleTimeout** `$PSSessionOption` 連接至 **PSSession** 時，會忽略 SessionOption 物件的 idletimeout 值和變數的 idletimeout 值。
 

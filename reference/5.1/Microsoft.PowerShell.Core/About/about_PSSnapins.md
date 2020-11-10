@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_pssnapins?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSSnapins
-ms.openlocfilehash: cc22f8de0b9d8a55dcfa12f3b47f3852d891e67b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 494b3275e4fe8a3aacdc358317950542962957cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207619"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388887"
 ---
 # <a name="about-pssnapins"></a>關於 PSSnapins
 
@@ -57,7 +57,7 @@ Get-Command -Module <snap-in_name>
 
 Windows PowerShell 嵌入式管理單元是以編譯成 .dll 檔案的 .NET Framework 語言撰寫的程式。 若要在嵌入式管理單元中使用提供者和 Cmdlet，您必須先註冊嵌入式管理單元， (將它新增至登錄) 。
 
-大部分的嵌入式管理單元都包含一個安裝程式， (.exe 或 .msi 檔案) 為您註冊 .dll 檔案。 但是，如果您以 .dll 檔案的形式接收嵌入式管理單元，您可以在系統上註冊。 如需詳細資訊，請參閱 MSDN library 中的 [如何註冊 Cmdlet、提供者和主機應用程式](https://go.microsoft.com/fwlink/?LinkID=143619) 。
+大部分的嵌入式管理單元都包含一個安裝程式， (.exe 或 .msi 檔案) 為您註冊 .dll 檔案。 但是，如果您以 .dll 檔案的形式接收嵌入式管理單元，您可以在系統上註冊。 如需詳細資訊，請參閱 [如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))。
 
 若要取得系統上所有已註冊的嵌入式管理單元，或確認已註冊嵌入式管理單元，請輸入：
 

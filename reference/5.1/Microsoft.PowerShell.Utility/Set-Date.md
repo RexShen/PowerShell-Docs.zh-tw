@@ -7,12 +7,12 @@ ms.date: 4/30/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Date
-ms.openlocfilehash: c3cc162fdb8b3d04236f2186438fa14b8a0b42b3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 36e49d36ffe7e4000926cf821767dfb158efcf46
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203136"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387969"
 ---
 # Set-Date
 
@@ -131,12 +131,9 @@ Accept wildcard characters: False
 
 指定要顯示日期和時間的哪些元素。此參數可接受的值包括：
 
-- **日期** 。
-  只顯示日期。
-- **時間** 。
-  只顯示時間。
-- **日期時間** 。
-  顯示日期和時間。
+- **日期** -只顯示日期。
+- **時間** -只顯示時間。
+- **DateTime** ：顯示日期和時間。
 
 此參數只會影響顯示。
 它不會影響抓取的 **DateTime** 物件 `Get-Date` 。
@@ -208,10 +205,10 @@ Accept wildcard characters: False
 - 變更電腦上的日期和時間時，請小心使用此 Cmdlet。 變更可能會導致電腦無法接收日期或時間觸發的全系統事件和更新。 使用 **WhatIf** 並 **確認** 參數，以避免發生錯誤。
 - 您可以使用標準的 .NET 方法搭配搭配使用的 **DateTime** 和 **TimeSpan** 物件 `Set-Date` ，例如 **AddDays** 、 **AddMonths** 和 **FromFileTime** 。 如需詳細資訊，請參閱 [DateTime 方法](/dotnet/api/system.datetime) 和
 
-  MSDN library 中的[TimeSpan 方法](/dotnet/api/system.timespan)。
+  .NET SDK 中的[TimeSpan 方法](/dotnet/api/system.timespan)。
 
 ## 相關連結
 
-[Get-Date](Get-Date.md)
+[取得日期](Get-Date.md)
 
 [New-TimeSpan](New-TimeSpan.md)

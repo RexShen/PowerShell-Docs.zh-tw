@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/add-pssnapin?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-PSSnapin
-ms.openlocfilehash: 5adba912d91369250ee9891ee2bb2ca0f8cba796
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: a21c2974fd66a9b02929752ae487c8995579b8a7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202348"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388819"
 ---
 # Add-PSSnapin
 
@@ -136,15 +136,15 @@ Accept wildcard characters: False
 
 ## 注意
 
-* 從 Windows PowerShell 3.0 開始，與 Windows PowerShell 一起安裝的核心命令已經封裝成模組。 在 Windows PowerShell 2.0，以及在較新版本的 Windows PowerShell 中建立舊版會話的主機程式中，核心命令會封裝在嵌入式管理單元 (PSSnapins) 中。 **Microsoft.PowerShell.Core** 是一個例外，它一律是一個嵌入式管理單元。 此外，遠端工作階段 (例如由 New-PSSession cmdlet 所啟動的遠端工作階段) 都是包含核心嵌入式管理單元的舊式工作階段。
+- 從 Windows PowerShell 3.0 開始，與 Windows PowerShell 一起安裝的核心命令已經封裝成模組。 在 Windows PowerShell 2.0，以及在較新版本的 Windows PowerShell 中建立舊版會話的主機程式中，核心命令會封裝在嵌入式管理單元 (PSSnapins) 中。 **Microsoft.PowerShell.Core** 是一個例外，它一律是一個嵌入式管理單元。 此外，遠端工作階段 (例如由 New-PSSession cmdlet 所啟動的遠端工作階段) 都是包含核心嵌入式管理單元的舊式工作階段。
 
-  如需有關使用核心模組建立較新樣式會話的 **CreateDefault2** 方法的詳細資訊，請參閱 MSDN library 中的 [CreateDefault2 方法](https://msdn.microsoft.com/library/system.management.automation.runspaces.initialsessionstate.createdefault2) 。
+  如需使用核心模組建立較新樣式會話之 **CreateDefault2** 方法的詳細資訊，請參閱 [CreateDefault2 方法](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2#System_Management_Automation_Runspaces_InitialSessionState_CreateDefault2)。
 
-* 如需嵌入式管理單元的詳細資訊，請參閱 [about_PSSnapins](About/about_PSSnapins.md) 以及 [如何建立 Windows PowerShell 嵌入式管理](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in)單元。
-* `Add-PSSnapin` 僅將嵌入式管理單元新增至目前的會話。 若要將嵌入式管理單元新增至所有 Windows PowerShell 工作階段，請將它新增至您的 Windows PowerShell 設定檔。 如需詳細資訊，請參閱 about_Profiles。
-* 您可以新增任何已使用 Microsoft .NET Framework 安裝公用程式註冊的嵌入式管理單元。 如需詳細資訊，請參閱 [如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))。
-* 若要取得已在電腦上註冊的嵌入式管理單元清單，請輸入 `Get-PSSnapin -Registered` 。
-* 在新增嵌入式管理單元之前，請先檢查嵌入式管理單元的 `Add-PSSnapin` 版本，以確認它是否與 Windows PowerShell 的目前版本相容。 如果嵌入式管理單元版本檢查失敗，Windows PowerShell 會回報錯誤。
+- 如需嵌入式管理單元的詳細資訊，請參閱 [about_PSSnapins](About/about_PSSnapins.md) 以及 [如何建立 Windows PowerShell 嵌入式管理](/powershell/scripting/developer/cmdlet/how-to-create-a-windows-powershell-snap-in)單元。
+- `Add-PSSnapin` 僅將嵌入式管理單元新增至目前的會話。 若要將嵌入式管理單元新增至所有 Windows PowerShell 工作階段，請將它新增至您的 Windows PowerShell 設定檔。 如需詳細資訊，請參閱 about_Profiles。
+- 您可以新增任何已使用 Microsoft .NET Framework 安裝公用程式註冊的嵌入式管理單元。 如需詳細資訊，請參閱 [如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions//ms714644(v=vs.85))。
+- 若要取得已在電腦上註冊的嵌入式管理單元清單，請輸入 `Get-PSSnapin -Registered` 。
+- 在新增嵌入式管理單元之前，請先檢查嵌入式管理單元的 `Add-PSSnapin` 版本，以確認它是否與 Windows PowerShell 的目前版本相容。 如果嵌入式管理單元版本檢查失敗，Windows PowerShell 會回報錯誤。
 
 ## 相關連結
 

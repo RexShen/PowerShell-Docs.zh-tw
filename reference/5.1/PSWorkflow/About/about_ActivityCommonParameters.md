@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_activitycommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_ActivityCommonParameters
-ms.openlocfilehash: b745bf17e4ae26156042ecdc25211830177bc692
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 93fdcdb9c5afe0b73e843baf2474ec7d3f96a6cf
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207244"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387799"
 ---
 # <a name="about-activitycommonparameters"></a>關於 ActivityCommonParameters
 
@@ -150,7 +150,7 @@ WinRM 服務會使用應用程式名稱來選取要用來為連線要求提供�
 
 指定在連接到目的電腦時，用來驗證使用者認證的機制。 有效值為 Default、Basic、Credssp、Digest、Kerberos、Negotiate 與 NegotiateWithImplicitCredential。 預設值為 Default。 此活動一般參數也是工作流程一般參數。
 
-如需此參數值的相關資訊，請參閱 MSDN 中 **System.Management.Automation.Runspaces.AuthenticationMechanism** 列舉的說明。
+如需此參數值的詳細資訊，請參閱 PowerShell SDK 中 **AuthenticationMechanism** 列舉的說明。
 
 > [!WARNING]
 > 使用者認證會傳遞至要驗證之遠端電腦的「認證安全性服務提供者 (CredSSP)」驗證，是設計用於需要在一個以上資源進行驗證的命令，例如存取遠端網路共用。 此機制會使得遠端作業的安全性風險變高。 若遠端電腦遭到入侵，傳遞給它的認證便可用來控制網路工作階段。

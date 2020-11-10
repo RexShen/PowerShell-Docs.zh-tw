@@ -7,12 +7,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: ff1b709b363684e27a1f4eb8fdeada2d5ae1d588
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 5aa9b9967ec6a79a569c9f0e7ca93db9e9e4d5b6
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201804"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387034"
 ---
 # Export-PSSession
 
@@ -213,7 +213,7 @@ Accept wildcard characters: True
 - ExternalScript. Path 環境變數所列路徑中的所有 ps1 檔案都 (`$env:path`) 。
 - 篩選和函數。 所有 PowerShell 函數。
 - 指令碼： 目前工作階段中的指令碼區塊。
-- 流程。 PowerShell 工作流程。 如需詳細資訊，請參閱 [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)。
+- 流程。 PowerShell 工作流程。 如需詳細資訊，請參閱 [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -243,7 +243,6 @@ Accept wildcard characters: False
 - `utf8BOM`：使用 (BOM) 的位元組順序標記來編碼 UTF-8 格式
 - `utf8NoBOM`：以不含位元組順序標記的 UTF-8 格式來編碼 (BOM) 
 - `utf32`：以 UTF-32 格式編碼。
-
 
 從 PowerShell 6.2 開始， **編碼** 參數也會允許已註冊字碼頁的數值識別碼 (例如 `-Encoding 1251`) 或已註冊字碼頁的字串名稱 (例如 `-Encoding "windows-1251"`) 。 如需詳細資訊，請參閱 .NET 檔中的 [編碼字碼頁](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)。
 
@@ -300,16 +299,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-指定以 **ModuleSpecification** 物件形式指定之名稱的模組。
-請參閱 [ModuleSpecification (雜湊表) ](https://msdn.microsoft.com/library/jj136290)的「備註」一節。
+指定以 **ModuleSpecification** 物件形式指定之名稱的模組。 請參閱 [ModuleSpecification (雜湊表) ](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)的「備註」一節。
 
 例如， **FullyQualifiedModule** 參數會接受以下列其中一種格式指定的模組名稱：
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**ModuleName** 和 **ModuleVersion** 是必要參數，但 **Guid** 是選擇性參數。 您無法在與 **模組** 參數相同的命令中指定 **FullyQualifiedModule** 參數;這兩個參數是互斥的。
+**ModuleName** 和 **ModuleVersion** 是必要參數，但 **Guid** 是選擇性參數。 您無法在與 **模組** 參數相同的命令中指定 **FullyQualifiedModule** 參數。 這兩個參數是互斥的。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

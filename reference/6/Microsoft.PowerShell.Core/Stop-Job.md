@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/stop-job?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Stop-Job
-ms.openlocfilehash: 5b023efa2c1545da574f447b8542bfbfe9b5d861
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 56dc7462e2625768db8b52370d3b7d38c8defafe
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204864"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387255"
 ---
 # Stop-Job
 
@@ -59,19 +59,13 @@ Stop-Job [-PassThru] [-Filter] <Hashtable> [-WhatIf] [-Confirm] [<CommonParamete
 
 ## DESCRIPTION
 
-**停止工作** Cmdlet 會停止進行中的 PowerShell 背景工作。
-您可以使用這個 Cmdlet 來停止所有工作，或根據其名稱、識別碼、實例識別碼或狀態來停止選取的工作，或將工作物件傳遞給 **停止工作** 。
+此 `Stop-Job` Cmdlet 會停止進行中的 PowerShell 背景工作。 您可以使用這個 Cmdlet 來停止所有工作，或根據其名稱、識別碼、實例識別碼或狀態來停止選取的工作，或將工作物件傳遞給 `Stop-Job` 。
 
-您可以使用 **Stop-Job** Cmdlet 停止背景工作，例如使用 Start-Job Cmdlet 或任何 Cmdlet 的 *AsJob* 參數啟動的工作。
-當您停止背景工作時，PowerShell 會完成該工作佇列中所有擱置中的工作，然後結束該工作。
-在送出這個命令之後，就不會再新增任何新工作到佇列中。
+您可以使用 `Stop-Job` 來停止背景工作，例如使用 `Start-Job` Cmdlet 或任何 Cmdlet 的 **AsJob** 參數啟動的工作。 當您停止背景工作時，PowerShell 會完成該工作佇列中所有擱置中的工作，然後結束該工作。 在送出這個命令之後，就不會再新增任何新工作到佇列中。
 
-此 Cmdlet 不會刪除背景工作。
-若要刪除工作，使用 Remove-Job Cmdlet。
+此 Cmdlet 不會刪除背景工作。 若要刪除作業，請使用 `Remove-Job` Cmdlet。
 
-從 Windows PowerShell 3.0 開始， **Stop-Job** 也可停止自訂工作類型，例如工作流程工作和排程工作的執行個體。
-若要讓 **Stop-Job** 停止具自訂工作類型的工作，請使用 Import-Module cmdlet 或是使用或取得模組中的 Cmdlet，先將支援自訂工作類型的模組匯入工作階段，然後執行 **Stop-Job** 命令。
-如需有關特定自訂工作類型的資訊，請參閱自訂工作類型功能的文件。
+從 Windows PowerShell 3.0 開始， `Stop-Job` 也會停止自訂工作類型，例如工作流程工作和排程工作的實例。 若要啟用 `Stop-Job` 以自訂工作類型停止作業，請 `Stop-Job` 使用 `Import-Module` Cmdlet 或使用或取得模組中的 Cmdlet，先將支援自訂工作類型的模組匯入會話中，再執行命令。 如需有關特定自訂工作類型的資訊，請參閱自訂工作類型功能的文件。
 
 ## 範例
 
@@ -83,25 +77,18 @@ $j = Invoke-Command -Session $s -ScriptBlock {Start-Job -ScriptBlock {Get-EventL
 Invoke-Command -Session $s -ScriptBlock { Stop-job -Job $Using:j }
 ```
 
-此範例示範如何使用 **Stop-Job** Cmdlet，停止在遠端電腦上執行的工作。
+此範例示範如何使用指令 `Stop-Job` 程式來停止在遠端電腦上執行的作業。
 
-由於工作是使用 Invoke-Command Cmdlet 從遠端執行 **Start-Job** 命令啟動，所以工作物件會儲存在遠端電腦上。
-您必須使用另一個 **Invoke-Command** 命令從遠端執行 **Stop-Job** 命令。
-如需有關遠端背景工作的詳細資訊，請參閱 about_Remote_Jobs。
+因為作業是使用 `Invoke-Command` Cmdlet `Start-Job` 從遠端執行命令來啟動，所以會將工作物件儲存在遠端電腦上。 您必須使用另一個 `Invoke-Command` 命令 `Stop-Job` 從遠端執行命令。 如需有關遠端背景工作的詳細資訊，請參閱 about_Remote_Jobs。
 
-第一個命令會在 Server01 電腦上建立 ( **PSSession** ) 的 PowerShell 會話，然後將會話物件儲存在 $s 變數中。
-命令使用網域系統管理員的認證。
+第一個命令會在 Server01 電腦上建立 ( **PSSession** ) 的 PowerShell 會話，然後將會話物件儲存在 `$s` 變數中。 命令使用網域系統管理員的認證。
 
-第二個命令使用 **Invoke-Command** Cmdlet 在工作階段中執行 **Start-Job** 命令。
-工作中的命令取得 System 事件記錄檔中的所有事件。
-產生的工作物件會儲存在 $j 變數中。
+第二個命令會使用 `Invoke-Command` Cmdlet `Start-Job` 在會話中執行命令。 工作中的命令取得 System 事件記錄檔中的所有事件。 產生的工作物件會儲存在 `$j` 變數中。
 
-第三個命令停止工作。
-它使用 **Invoke-Command** Cmdlet 在 Server01 上的 **PSSession** 中執行 **Stop-Job** 命令。
-由於工作物件是儲存在本機電腦上的 $j 變數中，因此命令會使用 Using 範圍修飾符來將 $j 識別為區域變數。
+第三個命令停止工作。 它會使用 `Invoke-Command` Cmdlet 在 `Stop-Job` Server01 上的 **PSSession** 中執行命令。 由於工作物件是儲存在 `$j` 本機電腦上的變數中，因此命令會使用 Using 範圍修飾符來識別 `$j` 為本機變數。
 如需 Using 範圍修飾符的詳細資訊，請參閱 [about_Remote_Variables](about/about_Remote_Variables.md)。
 
-當命令完成時，工作會停止，而 $s 中的 **PSSession** 就可供使用。
+當命令完成時，會停止工作，且中 **PSSession** 的 PSSession `$s` 可供使用。
 
 ### 範例 2︰停止背景工作
 
@@ -157,12 +144,9 @@ Stop-Job -InstanceId e3bbfed1-9c53-401a-a2c3-a8db34336adf
 
 這些命令示範如何根據工作的執行個體識別碼來停止工作。
 
-第一個命令使用 Get-Job Cmdlet 取得目前工作階段中的工作。
-命令使用管線運算子 (|) 將工作傳送至 Format-Table 命令，這會顯示一個含有每個工作之指定屬性的表格。
-此表格包含每個工作的執行個體識別碼。
-它使用計算的屬性來顯示工作狀態。
+第一個命令會使用 `Get-Job` Cmdlet 取得目前會話中的工作。 此命令會使用管線運算子 (`|`) 將作業傳送至 `Format-Table` 命令，該命令會顯示每個工作的指定屬性資料表。 此表格包含每個工作的執行個體識別碼。 它使用計算的屬性來顯示工作狀態。
 
-第二個命令使用有 *InstanceID* 參數的 **Stop-Job** 命令來停止選取的工作。
+第二個命令使用 `Stop-Job` 具有 **InstanceID** 參數的命令，以停止選取的作業。
 
 ### 範例 7︰停止遠端電腦上的工作
 
@@ -177,20 +161,16 @@ Id    Name    State      HasMoreData     Location         Command
 5     Job5    Stopped    True            user01-tablet    get-eventlog system
 ```
 
-此範例示範如何使用 **Stop-Job** Cmdlet，停止在遠端電腦上執行的工作。
+此範例示範如何使用指令 `Stop-Job` 程式來停止在遠端電腦上執行的作業。
 
-由於工作是使用 **Invoke-Command** Cmdlet 的 *AsJob* 參數來啟動，因此即使工作是在遠端電腦上執行，工作物件仍然會位於本機電腦上。
-因此，您可以使用本機的 **Stop-Job** 命令來停止該工作。
+因為作業是使用指令程式的 **AsJob** 參數來啟動 `Invoke-Command` ，所以即使工作是在遠端電腦上執行，工作物件仍位於本機電腦上。 因此，您可以使用本機 `Stop-Job` 命令來停止工作。
 
-第一個命令使用 **Invoke-Command** Cmdlet 在 Server01 電腦上啟動背景工作。
-命令使用 *AsJob* 參數將遠端命令當作背景工作來執行。
+第一個命令會使用 `Invoke-Command` Cmdlet 在 Server01 電腦上啟動背景工作。 命令使用 **AsJob** 參數將遠端命令當作背景工作來執行。
 
-此命令會傳回一個工作物件，與 **Start-Job** Cmdlet 傳回的工作物件相同。
-命令將工作物件儲存在 $j 變數中。
+此命令會傳回工作物件，此物件與 Cmdlet 所傳回的工作物件相同 `Start-Job` 。
+此命令會將工作物件儲存在 `$j` 變數中。
 
-第二個命令使用管線運算子將 $j 變數中的工作傳送至 Stop-Job。
-命令使用 *PassThru* 參數指示 **Stop-Job** 傳回工作物件。
-工作物件顯示會確認工作的狀態為 Stopped。
+第二個命令會使用管線運算子，將變數中的工作傳送 `$j` 至 `Stop-Job` 。 此命令會使用 **PassThru** 參數來指示傳回 `Stop-Job` 工作物件。 工作物件顯示會確認工作的狀態為 Stopped。
 
 如需有關遠端背景工作的詳細資訊，請參閱 about_Remote_Jobs。
 
@@ -198,13 +178,10 @@ Id    Name    State      HasMoreData     Location         Command
 
 ### -Filter
 
-指定條件的雜湊表。
-此 Cmdlet 會停止符合所有條件的工作。
+指定條件的雜湊表。 此 Cmdlet 會停止符合所有條件的工作。
 輸入索引鍵為工作屬性且值為工作屬性值的雜湊表。
 
-這個參數只適用於自訂工作類型，例如，工作流程工作和已排程的工作。
-它無法在標準背景工作上運作，例如使用 **啟動工作** Cmdlet 所建立的工作。
-如需支援此參數的詳細資訊，請參閱工作類型的說明主題。
+這個參數只適用於自訂工作類型，例如，工作流程工作和已排程的工作。 它無法在標準背景工作上運作，例如使用 Cmdlet 所建立的工作 `Start-Job` 。 如需支援此參數的詳細資訊，請參閱工作類型的說明主題。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -222,13 +199,9 @@ Accept wildcard characters: False
 
 ### -Id
 
-指定此 Cmdlet 停止之工作的識別碼。
-預設為目前工作階段中的所有工作。
+指定此 Cmdlet 停止之工作的識別碼。 預設為目前工作階段中的所有工作。
 
-識別碼是一個整數，可唯一識別目前工作階段中的工作。
-與執行個體識別碼相比，它比較容易記住並輸入，但是它只有在目前的工作階段內是唯一的。
-您可以輸入一個或多個識別碼，以逗號分隔。
-若要尋找工作的識別碼，請輸入 `Get-Job`。
+識別碼是一個整數，可唯一識別目前工作階段中的工作。 與執行個體識別碼相比，它比較容易記住並輸入，但是它只有在目前的工作階段內是唯一的。 您可以輸入一個或多個識別碼，以逗號分隔。 若要尋找工作的識別碼，請輸入 `Get-Job`。
 
 ```yaml
 Type: System.Int32[]
@@ -244,11 +217,9 @@ Accept wildcard characters: False
 
 ### -InstanceId
 
-指定此 Cmdlet 停止之工作的執行個體識別碼。
-預設為所有工作。
+指定此 Cmdlet 停止之工作的執行個體識別碼。 預設為所有工作。
 
-執行個體識別碼是 GUID，可唯一識別電腦上的工作。
-若要尋找工作的執行個體識別碼，請使用 Get-Job。
+執行個體識別碼是 GUID，可唯一識別電腦上的工作。 若要尋找工作的實例識別碼，請使用 `Get-Job` 。
 
 ```yaml
 Type: System.Guid[]
@@ -264,10 +235,7 @@ Accept wildcard characters: False
 
 ### -Job
 
-指定此 Cmdlet 停止的工作。
-輸入包含工作的變數，或輸入可取得工作的命令。
-您也可以使用管線運算子將作業提交至 **停止工作** Cmdlet。
-根據預設， **停止作業** 會刪除在目前會話中啟動的所有工作。
+指定此 Cmdlet 停止的工作。 輸入包含工作的變數，或輸入可取得工作的命令。 您也可以使用管線運算子將作業提交至 `Stop-Job` Cmdlet。 預設 `Stop-Job` 會刪除在目前會話中啟動的所有工作。
 
 ```yaml
 Type: System.Management.Automation.Job[]
@@ -283,11 +251,9 @@ Accept wildcard characters: False
 
 ### -Name
 
-指定此 Cmdlet 停止之工作的好記名稱。
-請以逗號分隔的清單方式輸入工作名稱，或使用萬用字元 (*) 來輸入工作名稱模式。
-根據預設， **停止作業** 會停止在目前會話中建立的所有作業。
+指定此 Cmdlet 停止之工作的好記名稱。 請以逗號分隔的清單方式輸入工作名稱，或使用萬用字元 (*) 來輸入工作名稱模式。 預設會 `Stop-Job` 停止在目前會話中建立的所有作業。
 
-由於易記名稱不保證是唯一的，因此請在依名稱停止工作時使用 *WhatIf* 和 *Confirm* 參數。
+由於易記名稱不保證是唯一的，因此請在依名稱停止工作時使用 **WhatIf** 和 **Confirm** 參數。
 
 ```yaml
 Type: System.String[]
@@ -303,8 +269,7 @@ Accept wildcard characters: True
 
 ### -PassThru
 
-傳回代表您正在使用之項目的物件。
-根據預設，此 Cmdlet 不會產生任何輸出。
+傳回代表您正在使用之項目的物件。 根據預設，此 Cmdlet 不會產生任何輸出。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -320,9 +285,7 @@ Accept wildcard characters: False
 
 ### -State
 
-指定工作狀態。
-此 Cmdlet 只停止處於指定狀態的工作。
-此參數可接受的值為：
+指定工作狀態。 此 Cmdlet 只停止處於指定狀態的工作。 此參數可接受的值為：
 
 - NotStarted
 - 執行中
@@ -335,7 +298,7 @@ Accept wildcard characters: False
 - Suspending
 - 停止中
 
-如需有關工作狀態的詳細資訊，請參閱 MSDN library 中的 [JobState 列舉](https://msdn.microsoft.com/library/system.management.automation.jobstate) 。
+如需有關工作狀態的詳細資訊，請參閱 [JobState 列舉](/dotnet/api/system.management.automation.jobstate)。
 
 ```yaml
 Type: System.Management.Automation.JobState
@@ -397,8 +360,7 @@ Accept wildcard characters: False
 
 ### 無、System.Management.Automation.PSRemotingJob
 
-如果您指定 *PassThru* 參數，此 Cmdlet 會傳回工作物件。
-否則，此 Cmdlet 不會產生任何輸出。
+如果您指定 **PassThru** 參數，此 Cmdlet 會傳回工作物件。 否則，此 Cmdlet 不會產生任何輸出。
 
 ## 注意
 

@@ -6,12 +6,12 @@ ms.date: 07/23/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_desiredstateconfiguration?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_DesiredStateConfiguration
-ms.openlocfilehash: 2f043104c67078b98355b3e54171a8993e534837
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 5d088934ffc953ad19be401bce72f6287f0fde07
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93208731"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387017"
 ---
 # <a name="about_desiredstateconfiguration"></a>about_DesiredStateConfiguration
 
@@ -27,12 +27,12 @@ DSC 提供一組 PowerShell 語言擴充功能、新的 Cmdlet 和資源，您�
 
 DSC 是在 PowerShell 4.0 中引進。
 
-如需 DSC 的詳細資訊，請參閱 TechNet Library 中的 [PowerShell Desired State Configuration 總覽](/powershell/scripting/dsc/overview/overview) 。
+如需 DSC 的詳細資訊，請參閱 [PowerShell Desired State Configuration 總覽](/powershell/scripting/dsc/overview/overview)。
 
 ## <a name="developing-dsc-resources-with-classes"></a>使用類別開發 DSC 資源
 
 從 PowerShell 5.0 開始，您可以使用類別來開發 DSC 資源。
-如需詳細資訊，請參閱 Microsoft TechNet 上的 [about_Classes](about_Classes.md)，以及 [使用 PowerShell 類別撰寫自訂 DSC 資源](/previous-versions//dn948461(v=technet.10)) 。
+如需詳細資訊，請參閱 [about_Classes](about_Classes.md)，以及 [使用 PowerShell 類別撰寫自訂 DSC 資源](/powershell/scripting/dsc/resources/authoringresourceclass)。
 
 ## <a name="using-dsc"></a>使用 DSC
 
@@ -102,12 +102,12 @@ Test-DscConfiguration -CimSession $session
 
 您可以在設定腳本中使用下列內建資源：
 
-|Name                  |屬性                                         |
+|名稱                  |屬性                                         |
 |----------------------|---------------------------------------------------|
 |檔案                  |{DestinationPath，屬性，總和檢查碼，內容 ...}|
 |封存               |{Destination、Path、Checksum、Credential ...}       |
 |環境           |{Name，DependsOn，確定，Path ...}                 |
-|Group                 |{身分、Credential、DependsOn、Description ...} |
+|群組                 |{身分、Credential、DependsOn、Description ...} |
 |記錄                   |{Message，DependsOn，PsDscRunAsCredential}         |
 |套件               |{Name、Path、ProductId、Arguments ...}              |
 |登錄              |{Key，ValueName，DependsOn，確定 ...}             |

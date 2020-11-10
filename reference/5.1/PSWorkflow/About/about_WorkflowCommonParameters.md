@@ -6,12 +6,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/psworkflow/about/about_workflowcommonparameters?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WorkflowCommonParameters
-ms.openlocfilehash: 386200475c1dab9735921edd60abbde20ee354c4
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: c371666d4f58386848e7ef715b7c804dc1e8f28e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207215"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387782"
 ---
 # <a name="about-workflowcommonparameters"></a>關於 WorkflowCommonParameters
 
@@ -79,7 +79,7 @@ WinRM 服務會使用應用程式名稱來選取要用來為連線要求提供�
 
 預設值為 **Default** 。
 
-如需此參數值的詳細資訊，請參閱 `System.Management.Automation.Runspaces.AuthenticationMechanism` MSDN 中的列舉描述。
+如需此參數值的詳細資訊，請參閱 `System.Management.Automation.Runspaces.AuthenticationMechanism` POWERSHELL SDK 中列舉的描述。
 
 > [!WARNING]
 > 使用者認證會傳遞至要驗證之遠端電腦的「認證安全性服務提供者 (CredSSP)」驗證，是設計用於需要在一個以上資源進行驗證的命令，例如存取遠端網路共用。 此機制會使得遠端作業的安全性風險變高。 若遠端電腦遭到入侵，傳遞給它的認證便可用來控制網路工作階段。
@@ -91,11 +91,11 @@ WinRM 服務會使用應用程式名稱來選取要用來為連線要求提供�
 
 有效值為：
 
-|Name |描述 |
+|名稱 |描述 |
 |---------|---------|
 |**未變更** | 驗證等級與前一個命令相同。 |
 |**預設值** | Windows 驗證。 |
-|**無** | 沒有 COM 驗證。   |
+|**None** | 沒有 COM 驗證。   |
 |**[連接]** | 連接層級 COM 驗證。|
 |**呼叫** | 呼叫層級 COM 驗證。   |
 |**包** | 封包層級 COM 驗證。|

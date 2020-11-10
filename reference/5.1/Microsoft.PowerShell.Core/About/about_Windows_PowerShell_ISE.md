@@ -6,12 +6,12 @@ ms.date: 01/03/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Windows_PowerShell_ISE
-ms.openlocfilehash: ec99dec9ea5012b41c10a56a688b23a6fa2c9dd8
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: ff543024d7c62c70217eeaf3ded192a5a24c4757
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207871"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94388836"
 ---
 # <a name="about-windows-powershell-ise"></a>關於 Windows PowerShell ISE
 
@@ -121,7 +121,7 @@ Windows PowerShell ISE 是選用的 Windows 功能，預設會在用戶端和伺
 由於 Windows PowerShell ISE 需要使用者介面，因此無法在 Windows Server 的 Server Core 安裝上運作。 但是，如果您新增 Windows PowerShell ISE 功能，安裝會自動以 GUI 轉換成伺服器。
 
 Windows PowerShell ISE 建置於 Windows Presentation Foundation (WPF) 上。
-如果 Windows PowerShell ISE 的圖形化元素無法在您的系統上正確轉譯，您可以在系統上新增或調整「停用 WPF 硬體加速」圖形轉譯設定，以解決此問題。 如需詳細資訊，請參閱 MSDN library 中的圖形轉譯登錄 [設定](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings) 。
+如果 Windows PowerShell ISE 的圖形化元素無法在您的系統上正確轉譯，您可以在系統上新增或調整「停用 WPF 硬體加速」圖形轉譯設定，以解決此問題。 如需詳細資訊，請參閱[圖形轉譯登錄設定](/dotnet/framework/wpf/graphics-multimedia/graphics-rendering-registry-settings)。
 
 ## <a name="see-also"></a>另請參閱
 

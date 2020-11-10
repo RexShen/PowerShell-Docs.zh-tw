@@ -6,12 +6,12 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem 提供者
-ms.openlocfilehash: 3b37f6e4eb53ef7291c30cbc9820caf83641a9bb
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 204a90dc346e6d4ff483777b9adf7a70017ef093
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208032"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94386903"
 ---
 # <a name="filesystem-provider"></a>FileSystem 提供者
 
@@ -206,7 +206,7 @@ $e[0]
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-如需此物件的詳細資訊，請將命令輸送至 [取得成員](xref:Microsoft.PowerShell.Utility.Get-Member) Cmdlet。 或者，請參閱 MSDN (Microsoft 開發人員網路) 程式庫中的「[System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) 類別」。
+如需此物件的詳細資訊，請將命令輸送至 [取得成員](xref:Microsoft.PowerShell.Utility.Get-Member) Cmdlet。 或者，請參閱 [System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) 類別。
 
 ### <a name="modify-the-acl-for-a-file"></a>修改檔案的 ACL
 
@@ -517,10 +517,6 @@ Get-ChildItem -Attributes Compressed,Encrypted
 ### <a name="raw-switchparameter"></a>Raw \<SwitchParameter\>
 
 忽略新行字元。 以單一項目形式傳回內容。
-
-#### <a name="cmdlets-supported"></a>支援的 Cmdlet
-
-- [Get-Content](xref:Microsoft.PowerShell.Management.Get-Content)
 
 #### <a name="cmdlets-supported"></a>支援的 Cmdlet
 
