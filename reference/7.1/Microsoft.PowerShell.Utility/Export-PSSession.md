@@ -7,12 +7,12 @@ ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-PSSession
-ms.openlocfilehash: 2fda80c934db3e868f0e49e131e6721c7b899f7c
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 5d5841720c6187863902a929632e15d1687685e1
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "93205291"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389397"
 ---
 # Export-PSSession
 
@@ -213,7 +213,7 @@ Accept wildcard characters: True
 - ExternalScript. Path 環境變數所列路徑中的所有 ps1 檔案都 (`$env:path`) 。
 - 篩選和函數。 所有 PowerShell 函數。
 - 指令碼： 目前工作階段中的指令碼區塊。
-- 流程。 PowerShell 工作流程。 如需詳細資訊，請參閱 [about_Workflows](/powershell/module/psworkflow/about/about_workflows?view=powershell-5.1)。
+- 流程。 PowerShell 工作流程。 如需詳細資訊，請參閱 [about_Workflows](/powershell/module/PSWorkflow/About/about_Workflows)。
 
 ```yaml
 Type: System.Management.Automation.CommandTypes
@@ -300,16 +300,14 @@ Accept wildcard characters: False
 
 ### -FullyQualifiedModule
 
-指定以 **ModuleSpecification** 物件形式指定之名稱的模組。
-請參閱 [ModuleSpecification (雜湊表) ](https://msdn.microsoft.com/library/jj136290)的「備註」一節。
+指定以 **ModuleSpecification** 物件形式指定之名稱的模組。 請參閱 [ModuleSpecification (雜湊表) ](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_)的「備註」一節。
 
 例如， **FullyQualifiedModule** 參數會接受以下列其中一種格式指定的模組名稱：
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"}`
+- `@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
 
-`@{ModuleName = "modulename"; ModuleVersion = "version_number"; Guid = "GUID"}`
-
-**ModuleName** 和 **ModuleVersion** 是必要參數，但 **Guid** 是選擇性參數。 您無法在與 **模組** 參數相同的命令中指定 **FullyQualifiedModule** 參數;這兩個參數是互斥的。
+**ModuleName** 和 **ModuleVersion** 是必要參數，但 **Guid** 是選擇性參數。 您無法在與 **模組** 參數相同的命令中指定 **FullyQualifiedModule** 參數。 這兩個參數是互斥的。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ModuleSpecification[]

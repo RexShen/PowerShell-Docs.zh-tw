@@ -6,12 +6,12 @@ ms.date: 04/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Methods
-ms.openlocfilehash: 1de1d2f85a878d671669ba632a381f4c2b46f96c
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 25056ff8b3c0bc8828be1426463b2d087e23a131
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207376"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390995"
 ---
 # <a name="about-methods"></a>關於方法
 
@@ -81,7 +81,7 @@ this is rock science
 
 ### <a name="learning-about-methods"></a>瞭解方法
 
-若要了解物件的方法定義，請移至 MSDN 中物件類型的說明主題，並尋找其方法頁面。 例如，下列頁面描述進程物件的方法：處理 [程式](/dotnet/api/system.diagnostics.process#methods)。
+若要尋找物件之方法的定義，請移至 [物件類型] 的 [說明] 主題，並尋找其 [方法] 頁面。 例如，下列頁面描述進程物件的方法：處理 [程式](/dotnet/api/system.diagnostics.process#methods)。
 
 若要判斷方法的引數，請檢查方法定義，這就像是 PowerShell Cmdlet 的語法圖。
 

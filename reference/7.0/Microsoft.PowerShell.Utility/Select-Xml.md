@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/select-xml?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Select-Xml
-ms.openlocfilehash: 85d5869650a95a011f705612927b55acf4901ed3
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: fdb6787c3c2e7497208a6d04fe05d7dcefb4a11a
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93205484"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391148"
 ---
 # Select-Xml
 
@@ -327,7 +327,7 @@ Accept wildcard characters: False
 
 ## 注意
 
-* XPath 是一種設計來識別 XML 文件組件的標準語言。 如需有關 XPath 語言的詳細資訊，請參閱 MSDN library 中[事件選取專案](https://msdn.microsoft.com/library/aa385231)的 [ [xpath 參考](https://msdn.microsoft.com/library/ms256115)] 和 [選取篩選] 區段。
+XPath 是一種設計來識別 XML 文件組件的標準語言。 如需有關 XPath 語言的詳細資訊，請參閱[事件選取專案](/previous-versions//aa385231(v=vs.85))的 [ [xpath 參考](/dotnet/standard/data/xml/select-nodes-using-xpath-navigation)] 和 [選取篩選] 區段。
 
 ## 相關連結
 

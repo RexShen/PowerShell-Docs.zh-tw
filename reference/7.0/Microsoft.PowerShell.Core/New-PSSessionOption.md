@@ -7,12 +7,12 @@ ms.date: 02/07/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionoption?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionOption
-ms.openlocfilehash: 3a9336fedece67c2c84532f226cec01de14cbb2a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 6002003b413cede3cbdb0eeeb40646facb566f61
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201623"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389754"
 ---
 # New-PSSessionOption
 
@@ -532,7 +532,7 @@ Accept wildcard characters: False
 
 預設值為 None。
 
-如需此參數值的詳細資訊，請參閱 [System.management.automation.remoting.proxyaccesstype 列舉](/dotnet/api/system.management.automation.remoting.proxyaccesstype?redirectedfrom=MSDN&view=powershellsdk-1.1.0)。
+如需此參數值的詳細資訊，請參閱 [System.management.automation.remoting.proxyaccesstype 列舉](/dotnet/api/system.management.automation.remoting.proxyaccesstype)。
 
 ```yaml
 Type: System.Management.Automation.Remoting.ProxyAccessType
@@ -551,7 +551,7 @@ Accept wildcard characters: False
 
 指定用於 Proxy 解析的驗證方法。 此參數可接受的值包括： **基本** 、 **摘要** 和 **協商** 。 預設值為 **Negotiate** 。
 
-如需此參數值的詳細資訊，請參閱 [AuthenticationMechanism 列舉](/dotnet/api/system.management.automation.runspaces.authenticationmechanism?redirectedfrom=MSDN&view=powershellsdk-1.1.0)。
+如需此參數值的詳細資訊，請參閱 [AuthenticationMechanism 列舉](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)。
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism

@@ -7,12 +7,12 @@ ms.date: 4/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/add-member?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Add-Member
-ms.openlocfilehash: 29a39e88d6d39659df1dd9d2e05318351dc47f3a
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 8c27ebe1c5f1a0c53f5012f1faa17a9fdb1cdcff
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201467"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391029"
 ---
 # Add-Member
 
@@ -244,7 +244,7 @@ Accept wildcard characters: False
 - ScriptMethod
 - CodeMethod
 
-如需這些值的詳細資訊，請參閱 MSDN library 中的 [ Psmembertypes 列舉](/dotnet/api/system.management.automation.psmembertypes) 。
+如需這些值的詳細資訊，請參閱 PowerShell SDK 中的 [ Psmembertypes 列舉](/dotnet/api/system.management.automation.psmembertypes) 。
 
 並非所有物件都有每個類型的成員。
 如果您指定物件沒有的成員類型，PowerShell 會傳回錯誤。

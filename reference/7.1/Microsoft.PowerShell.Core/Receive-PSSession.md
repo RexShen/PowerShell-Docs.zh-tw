@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: e9b99b824a0ffe59e4572a57998010667788b59d
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3c22bb28357a5dd0a5e402eafe1597cabdc3ed84
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345930"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390689"
 ---
 # Receive-PSSession
 
@@ -789,7 +789,7 @@ Accept wildcard characters: False
 - **State** 屬性的值是相對於目前工作階段。 值為「已中斷連線」表示 **PSSession** 未連接到目前的會話。 但是，它並不表示 **PSSession** 與所有會話中斷連接。 它可能連線不同的工作階段。
   若要判斷是否可以連線或重新連線工作階段，請使用 **Availability** 屬性。
 - **Availability** 值為 None 表示您可以連線工作階段。 「忙碌」值表示您無法連接到 **PSSession** ，因為它已連接到另一個會話。
-- 如需會話的 **State** 屬性值的詳細資訊，請參閱 MSDN library 中的 [ runspacestate](/dotnet/api/system.management.automation.runspaces.runspacestate) 。
+- 如需會話的 **State** 屬性值的詳細資訊，請參閱 [ runspacestate](/dotnet/api/system.management.automation.runspaces.runspacestate)。
 - 如需會話的 **Availability** 屬性值的詳細資訊，請參閱 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)。
 
 ## 相關連結
@@ -819,4 +819,3 @@ Accept wildcard characters: False
 [New-PSTransportOption](New-PSTransportOption.md)
 
 [Remove-PSSession](Remove-PSSession.md)
-

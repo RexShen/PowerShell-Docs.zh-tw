@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Process
-ms.openlocfilehash: 543c2b683ca3631e2e05f57d9c70ff4455071e4b
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 1d4881638b616d93414851b98b0a75fca72169ff
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205052"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389788"
 ---
 # Get-Process
 
@@ -59,13 +59,11 @@ Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 
 ## DESCRIPTION
 
-`Get-Process`Cmdlet 會取得本機電腦上的處理常式。
+`Get-Process`Cmdlet 會取得本機或遠端電腦上的處理常式。
 
-如果沒有參數，這個 Cmdlet 會取得本機電腦上的所有處理常式。
-您也可以使用進程名稱或處理序識別碼 (PID 來指定特定處理常式) 或透過管線將處理常式物件傳遞至此 Cmdlet。
+如果沒有參數，這個 Cmdlet 會取得本機電腦上的所有處理常式。 您也可以使用進程名稱或處理序識別碼 (PID 來指定特定處理常式) 或透過管線將處理常式物件傳遞至此 Cmdlet。
 
-根據預設，此 Cmdlet 會傳回包含此進程之詳細資訊的處理常式物件，並支援可讓您啟動和停止進程的方法。
-您也可以使用 Cmdlet 的參數 `Get-Process` 來取得在處理常式中執行之程式的檔案版本資訊，以及取得處理常式所載入的模組。
+根據預設，此 Cmdlet 會傳回包含此進程之詳細資訊的處理常式物件，並支援可讓您啟動和停止進程的方法。 您也可以使用 Cmdlet 的參數 `Get-Process` 來取得在處理常式中執行之程式的檔案版本資訊，以及取得處理常式所載入的模組。
 
 ## 範例
 
@@ -75,8 +73,7 @@ Get-Process -InputObject <Process[]> -IncludeUserName [<CommonParameters>]
 Get-Process
 ```
 
-此命令會取得在本機電腦上執行之所有使用中進程的清單。
-如需每個資料行的定義，請參閱 [附注](#notes) 一節。
+此命令會取得在本機電腦上執行之所有使用中進程的清單。 如需每個資料行的定義，請參閱 [附注](#notes) 一節。
 
 ### 範例2：取得一或多個處理常式的所有可用資料
 
@@ -84,12 +81,9 @@ Get-Process
 Get-Process winword, explorer | Format-List *
 ```
 
-此命令取得電腦上 Winword 和 Explorer 處理程序的所有可用相關資料。
-它會使用 **Name** 參數來指定處理常式，但會省略選擇性的參數名稱。
-管線運算子會將 `|` 資料傳遞至 `Format-List` Cmdlet，此 Cmdlet 會顯示 `*` Winword 和 Explorer 處理常式物件的所有可用屬性。
+此命令取得電腦上 Winword 和 Explorer 處理程序的所有可用相關資料。 它會使用 **Name** 參數來指定處理常式，但會省略選擇性的參數名稱。 管線運算子會將 `|` 資料傳遞至 `Format-List` Cmdlet，此 Cmdlet 會顯示 `*` Winword 和 Explorer 處理常式物件的所有可用屬性。
 
-您也可以依處理程序識別碼來識別處理程序。
-例如， `Get-Process -Id 664, 2060` 。
+您也可以依處理程序識別碼來識別處理程序。 例如， `Get-Process -Id 664, 2060` 。
 
 ### 範例3：取得工作集大於指定大小的所有處理常式
 
@@ -97,13 +91,9 @@ Get-Process winword, explorer | Format-List *
 Get-Process | Where-Object {$_.WorkingSet -gt 20000000}
 ```
 
-此命令取得工作集大於 20 MB 的所有處理程序。
-它會使用 `Get-Process`  Cmdlet 來取得所有執行中的處理常式。
-管線運算子會將 `|` 處理常式物件傳遞至 `Where-Object` Cmdlet，此 Cmdlet 只會選取值大於20000000個位元組的物件給工作 **WorkingSet** 人員屬性。
+此命令取得工作集大於 20 MB 的所有處理程序。 它會使用 `Get-Process` Cmdlet 來取得所有執行中的處理常式。 管線運算子會將 `|` 處理常式物件傳遞至 `Where-Object` Cmdlet，此 Cmdlet 只會選取值大於20000000個位元組的物件給工作 **WorkingSet** 人員屬性。
 
-集 **量是處理** 程式物件的眾多屬性之一。
-若要查看所有屬性，請輸入 `Get-Process | Get-Member` 。
-根據預設，所有數量屬性都是以位元組為單位，即使預設顯示是以 KB 和 MB 來列示它們。
+集 **量是處理** 程式物件的眾多屬性之一。 若要查看所有屬性，請輸入 `Get-Process | Get-Member` 。 根據預設，所有數量屬性都是以位元組為單位，即使預設顯示是以 KB 和 MB 來列示它們。
 
 ### 範例4：根據優先順序列出電腦上的進程
 
@@ -112,8 +102,7 @@ $A = Get-Process
 $A | Get-Process | Format-Table -View priority
 ```
 
-這些命令會根據其優先順序類別，將電腦上的處理常式列示在群組中。
-第一個命令會取得電腦上的所有處理常式，然後將它們儲存在 `$A` 變數中。
+這些命令會根據其優先順序類別，將電腦上的處理常式列示在群組中。 第一個命令會取得電腦上的所有處理常式，然後將它們儲存在 `$A` 變數中。
 
 第二個命令會使用管線將儲存在變數中的 **處理** 程式物件傳送 `$A` 至 `Get-Process` Cmdlet，然後傳送至 `Format-Table` Cmdlet，以使用 **優先權** 視圖來格式化處理常式。
 
@@ -139,7 +128,7 @@ NPM(K) PM(K) WS(K) VM(M) CPU(s)   Id MachineName ProcessName
     27 54572 54520   576 5.52   4428 .           pwsh
 ```
 
-這個範例會提供 `Format-Table` 將 **MachineName** 屬性新增至標準 `Get-Process` 輸出顯示的命令。
+此範例會從本機電腦和遠端電腦 (S1) 中取出處理常式。 取出的進程會以管道傳送至 `Format-Table` 命令，將 **MachineName** 屬性新增至標準 `Get-Process` 輸出顯示。
 
 ### 範例6：取得處理常式的版本資訊
 
@@ -207,8 +196,7 @@ NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
     83    96.21      77.53       4.39    1192  10 pwsh
 ```
 
-這些命令會示範如何使用 `$PID` 自動變數來識別裝載目前 PowerShell 會話的處理常式。
-您可以使用這個方法來區別主機進程與其他您可能想要停止或關閉的 PowerShell 進程。
+這些命令會示範如何使用 `$PID` 自動變數來識別裝載目前 PowerShell 會話的處理常式。 您可以使用這個方法來區別主機進程與其他您可能想要停止或關閉的 PowerShell 進程。
 
 第一個命令會取得目前會話中的所有 PowerShell 處理常式。
 
@@ -222,8 +210,7 @@ Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWin
 
 此命令取得具有主視窗標題的所有處理程序，並將它們顯示在含有處理程序識別碼和處理程序名稱的表格中。
 
-**MainWindowTitle** 屬性只是傳回之 **處理** 程式物件的許多實用屬性之一 `Get-Process` 。
-若要查看所有屬性，請使用管線將命令的結果傳送 `Get-Process` 至 `Get-Member` Cmdlet `Get-Process | Get-Member` 。
+**MainWindowTitle** 屬性只是傳回之 **處理** 程式物件的許多實用屬性之一 `Get-Process` 。 若要查看所有屬性，請使用管線將命令的結果傳送 `Get-Process` 至 `Get-Member` Cmdlet `Get-Process | Get-Member` 。
 
 ## PARAMETERS
 
@@ -235,9 +222,7 @@ Get-Process | Where-Object {$_.mainWindowTitle} | Format-Table Id, Name, mainWin
 
 若要取得遠端電腦上處理常式的檔案版本資訊，請使用 `Invoke-Command` Cmdlet。
 
-使用這個參數相當於取得每個處理常式物件的 **mainmodule.fileversioninfo. FileVersionInfo** 屬性。
-當您使用這個參數時， `Get-Process` 會傳回 **FileVersionInfo** 物件 FileVersionInfo，而不是處理 **程式** 物件。
-因此，您無法使用管線將命令的輸出傳送到預期處理常式物件的 Cmdlet，例如 `Stop-Process` 。
+使用這個參數相當於取得每個處理常式物件的 **mainmodule.fileversioninfo. FileVersionInfo** 屬性。 當您使用這個參數時， `Get-Process` 會傳回 **FileVersionInfo** 物件 FileVersionInfo，而不是處理 **程式** 物件。 因此，您無法使用管線將命令的輸出傳送到預期處理常式物件的 Cmdlet，例如 `Stop-Process` 。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -253,9 +238,7 @@ Accept wildcard characters: False
 
 ### -Id
 
-依處理程序識別碼 (PID) 指定一個或多個處理程序。
-若要指定多個識別碼，請使用逗號來分隔識別碼。
-若要尋找處理程序的 PID，請輸入 `Get-Process`。
+依處理程序識別碼 (PID) 指定一個或多個處理程序。 若要指定多個識別碼，請使用逗號來分隔識別碼。 若要尋找處理程序的 PID，請輸入 `Get-Process`。
 
 ```yaml
 Type: System.Int32[]
@@ -287,8 +270,7 @@ Accept wildcard characters: False
 
 ### -InputObject
 
-指定一個或多個處理程序物件。
-輸入包含物件的變數，或輸入可取得物件的命令或運算式。
+指定一個或多個處理程序物件。 輸入包含物件的變數，或輸入可取得物件的命令或運算式。
 
 ```yaml
 Type: System.Diagnostics.Process[]
@@ -306,13 +288,11 @@ Accept wildcard characters: False
 
 指出此 Cmdlet 會取得處理常式所載入的模組。
 
-在 Windows Vista 和更新版本的 Windows 上，您必須使用 [以系統管理員身分執行] 選項開啟 PowerShell，才能在不是您所擁有的處理常式上使用這個參數。
+在 Windows Vista 和更新版本的 Windows 上，您必須使用 [以 **系統管理員身分執行** ] 選項開啟 PowerShell，才能在不是您所擁有的處理常式上使用這個參數。
 
 若要取得遠端電腦上的處理常式所載入的模組，請使用 `Invoke-Command` Cmdlet。
 
-這個參數相當於取得每個處理常式物件的 **模組** 屬性。
-當您使用此參數時，此 Cmdlet 會傳回 **ProcessModule** 物件 ProcessModule，而不是處理 **程式** 物件。
-因此，您無法使用管線將命令的輸出傳送到預期處理常式物件的 Cmdlet，例如 `Stop-Process` 。
+這個參數相當於取得每個處理常式物件的 **模組** 屬性。 當您使用此參數時，此 Cmdlet 會傳回 **ProcessModule** 物件 ProcessModule，而不是處理 **程式** 物件。 因此，您無法使用管線將命令的輸出傳送到預期處理常式物件的 Cmdlet，例如 `Stop-Process` 。
 
 當您在同一個命令中同時使用 *Module* 和 **FileVersionInfo** 參數時，此 Cmdlet 會傳回 **FileVersionInfo** 物件，其中包含所有模組之檔案版本的相關資訊。
 
@@ -330,9 +310,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-依處理程序名稱指定一個或多個處理程序。
-您可以輸入多個處理程序名稱 (以逗號分隔) 及使用萬用字元。
-參數名稱 ("Name") 為選擇性。
+依處理程序名稱指定一個或多個處理程序。 您可以輸入多個處理程序名稱 (以逗號分隔) 及使用萬用字元。 參數名稱 ("Name") 為選擇性。
 
 ```yaml
 Type: System.String[]
@@ -360,16 +338,14 @@ Accept wildcard characters: True
 
 ### FileVersionInfo，ProcessModule 的程式，系統診斷。
 
-根據預設，此 Cmdlet 會傳回 **system.object** 物件。
-如果您使用 **FileVersionInfo** 參數，它會傳回 **FileVersionInfo** 物件。
-如果您使用 **Module** 參數，但沒有 **FileVersionInfo** 參數，則會傳回 **ProcessModule** 物件。
+根據預設，此 Cmdlet 會傳回 **system.object** 物件。 如果您使用 **FileVersionInfo** 參數，它會傳回 **FileVersionInfo** 物件。 如果您使用 **Module** 參數，但沒有 **FileVersionInfo** 參數，則會傳回 **ProcessModule** 物件。
 
 ## 注意
 
 - 您也可以透過內建的別名（ps 和 gps）來參考這個 Cmdlet。 如需詳細資訊，請參閱 [about_Aliases](../Microsoft.PowerShell.Core/About/about_Aliases.md)。
 - 在執行64位版 Windows 的電腦上，64位版本的 PowerShell 只會取得64位的進程模組，而32位版本的 PowerShell 只會取得32位的進程模組。
 - 您可以在 PowerShell 中使用 Windows Management Instrumentation (WMI) Win32_Process 物件的屬性和方法。 如需詳細資訊，請參閱 `Get-WmiObject` 和 WMI SDK。
-- 處理程序的預設顯示是一個包含下列欄位的表格。 如需處理常式物件的所有屬性描述，請參閱 MSDN library 中的 [處理常式屬性](/dotnet/api/system.diagnostics.process) 。
+- 處理程序的預設顯示是一個包含下列欄位的表格。 如需處理常式物件的所有屬性描述，請參閱 [進程屬性](/dotnet/api/system.diagnostics.process)。
   - 控制碼：進程已開啟的控制碼數目。
   - NPM (K) ：進程正在使用的非分頁式記憶體數量（以 kb 為單位）。
   - PM (K) ：進程正在使用的可分頁記憶體數量（以 kb 為單位）。
@@ -379,8 +355,7 @@ Accept wildcard characters: True
     虛擬記憶體包括磁碟上分頁檔案中的儲存體。
   - CPU (s) ：進程已在所有處理器上使用的處理器時間量（以秒為單位）。
   - 識別碼：進程的處理序識別碼 (PID) 。
-  - ProcessName：進程的名稱。
-    如需處理程序相關概念的說明，請參閱 [說明及支援中心] 中的 [詞彙] 和 [工作管理員] 的 [說明]。
+  - ProcessName：進程的名稱。 如需處理程序相關概念的說明，請參閱 [說明及支援中心] 中的 [詞彙] 和 [工作管理員] 的 [說明]。
 - 您也可以使用所提供之進程的內建替代視圖 `Format-Table` ，例如 **StartTime** 和 **Priority** ，也可以設計自己的觀點。
 
 ## 相關連結
@@ -394,4 +369,3 @@ Accept wildcard characters: True
 [Stop-Process](Stop-Process.md)
 
 [Wait-Process](Wait-Process.md)
-

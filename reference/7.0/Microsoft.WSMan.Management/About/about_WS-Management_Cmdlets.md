@@ -6,12 +6,12 @@ ms.date: 01/04/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.wsman.management/about/about_ws-management_cmdlets?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_WS Management_Cmdlets
-ms.openlocfilehash: 9e1042247b54bb7bde2451adb5344003bbf26ca0
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: d11b8ca72951409a1b9a508623b3f39cae46e318
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208147"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390468"
 ---
 # <a name="about-ws-management-cmdlets"></a>關於 WS-Management Cmdlet
 
@@ -90,7 +90,7 @@ WS-Management 的功能是透過包含一組 Cmdlet 和 WSMan 提供者的模組
 
 ## <a name="additional-ws-management-information"></a>其他 WS-Management 資訊
 
-如需 WS-MANAGEMENT 的詳細資訊，請參閱 MSDN (Microsoft 開發人員網路) 程式庫中的下列主題。
+如需 WS 管理的詳細資訊，請參閱 Windows 檔中的下列主題。
 
 [Windows 遠端管理](/windows/win32/winrm/portal)
 
