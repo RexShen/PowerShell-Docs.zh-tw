@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 2904a614baa81f3baafef6394c82b682a8c4f032
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 62e5081854fbef46554cafcde0b227ee49fd273e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94346729"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391437"
 ---
 # Connect-PSSession
 
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 
 預設值為 Default。
 
-如需此參數值的詳細資訊，請參閱 MSDN library 中的 [AuthenticationMechanism 列舉](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) 。
+如需此參數值的詳細資訊，請參閱 [AuthenticationMechanism 列舉](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)。
 
 > [!CAUTION]
 > 使用者認證會傳遞至要驗證之遠端電腦的「認證安全性支援提供者 (CredSSP)」驗證，是設計用於需要在一個以上資源進行驗證的命令，例如存取遠端網路共用。 此機制會使得遠端作業的安全性風險變高。 若遠端電腦遭到入侵，傳遞給它的認證便可用來控制網路工作階段。
@@ -610,9 +610,9 @@ Accept wildcard characters: False
 
   **Availability** 值為 None 表示您可以連線工作階段。 「忙碌」值表示您無法連接到 **PSSession** ，因為它已連接到另一個會話。
 
-  如需會話的 **State** 屬性值的詳細資訊，請參閱 MSDN library 中的 [ runspacestate 列舉](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) 。
+  如需會話的 **State** 屬性值的詳細資訊，請參閱 [ runspacestate 列舉](/dotnet/api/system.management.automation.runspaces.runspacestate)。
 
-  如需會話的 **Availability** 屬性值的詳細資訊，請參閱 MSDN library 中的 [RunspaceAvailability 列舉](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) 。
+  如需會話的 **Availability** 屬性值的詳細資訊，請參閱 [RunspaceAvailability 列舉](/dotnet/api/system.management.automation.runspaces.runspaceavailability)。
 
 - 當您連接到 **pssession** 時，無法變更 **PSSession** 的空閒超時值。 的 **SessionOption** 參數 `Connect-PSSession` 會採用具有 **IdleTimeout** 值的 **SessionOption** 物件。 不過， **IdleTimeout** **SessionOption** **IdleTimeout** `$PSSessionOption` 連接至 **PSSession** 時，會忽略 SessionOption 物件的 idletimeout 值和變數的 idletimeout 值。
 

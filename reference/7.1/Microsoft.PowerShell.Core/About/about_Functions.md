@@ -6,12 +6,12 @@ ms.date: 2/27/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Functions
-ms.openlocfilehash: bef1f9f0b672f45c30626a1bbe4f2c6a7dfa540b
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2e1a94659b3a0b8368b0b2611f470a0e676edd55
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208331"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391454"
 ---
 # <a name="about-functions"></a>關於函式
 
@@ -390,7 +390,7 @@ End:   The input is:
 
 如需詳細資訊，請參閱[使用枚舉](about_Automatic_Variables.md#using-enumerators)器
 
-## <a name="filters"></a>篩選條件
+## <a name="filters"></a>篩選器
 
 篩選是在管線中的每個物件上執行的函式類型。 篩選準則類似于函式及其在區塊中的所有語句 `Process` 。
 
@@ -486,7 +486,7 @@ Get-Help Get-MyDisks
 
   若要將函式與以 XML 為基礎的說明主題產生關聯，請使用以 `.ExternalHelp` 批註為基礎的說明關鍵字。 如果沒有這個關鍵字，則找不到函式 `Get-Help` 說明主題，而且對 `Get-Help` 函數的呼叫只會傳回自動產生的說明。
 
-  如需關鍵字的詳細資訊 `ExternalHelp` ，請參閱 [about_Comment_Based_Help](about_Comment_Based_Help.md)。 如需以 XML 為基礎之說明的詳細資訊，請參閱 MSDN library 中的 [如何撰寫 Cmdlet 說明](https://go.microsoft.com/fwlink/?LinkID=123415) 。
+  如需關鍵字的詳細資訊 `ExternalHelp` ，請參閱 [about_Comment_Based_Help](about_Comment_Based_Help.md)。 如需以 XML 為基礎之說明的詳細資訊，請參閱 [如何撰寫 Cmdlet 說明](/powershell/scripting/developer/help/writing-help-for-windows-powershell-cmdlets)。
 
 ## <a name="see-also"></a>另請參閱
 
@@ -513,4 +513,3 @@ Get-Help Get-MyDisks
 [about_Script_Blocks](about_Script_Blocks.md)
 
 [about_Function_provider](about_Function_provider.md)
-
