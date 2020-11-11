@@ -2,16 +2,16 @@
 description: 依優先順序列出 PowerShell 操作員。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/08/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operator_precedence?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operator_Precedence
-ms.openlocfilehash: 0510d63eec199c4dbc23d562c6fb64f296d42b9f
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 8f0f69f2328343b9655ebd0d7515a469565ff5f5
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208116"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483091"
 ---
 # <a name="about-operator-precedence"></a>關於運算子優先順序
 
@@ -32,7 +32,7 @@ PowerShell 操作員可讓您建立簡單但功能強大的運算式。 本主�
 
 |         OPERATOR         |           參考            |
 | ------------------------ | ------------------------------ |
-| `$() @() ()`             | [about_Operators][]            |
+| `$() @() () @{}`         | [about_Operators][]            |
 | `. ?.` (成員存取)    | [about_Operators][]            |
 | `::` (靜態)             | [about_Operators][]            |
 | `[0] ?[0]` (索引運算子)  | [about_Operators][]         |

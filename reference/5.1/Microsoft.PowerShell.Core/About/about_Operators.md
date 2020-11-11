@@ -2,16 +2,16 @@
 description: 描述 PowerShell 所支援的運算子。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: a8c9c60c9c1513e1ee4ce71c8c880e20bf1df7b3
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: b783d2cb76fe8a0a66ec77b67ef915f3b78def04
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93208927"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94482989"
 ---
 # <a name="about-operators"></a>關於運算子
 
@@ -121,6 +121,11 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>雜湊表常值語法 `@{}`
+
+類似于陣列子運算式，這個語法是用來宣告雜湊表。
+如需詳細資訊，請參閱 [about_Hash_Tables](about_Hash_Tables.md)。
 
 #### <a name="call-operator-"></a>呼叫運算子 `&`
 
@@ -336,7 +341,7 @@ $myProcess.peakWorkingSet
 'MinValue', 'MaxValue' | Foreach-Object { [int]:: $_ }
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
 

@@ -2,16 +2,16 @@
 description: 描述 PowerShell 所支援的運算子。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 10/28/2020
+ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: d442a64be77934cef4636e905c098d9630451b8f
-ms.sourcegitcommit: c1e4739f5d52282fb05a8cff92b0f5d10e2edac1
+ms.openlocfilehash: 736ca53ff4992ea430ec89ad1795dcf278b0da41
+ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93208939"
+ms.lasthandoff: 11/11/2020
+ms.locfileid: "94483123"
 ---
 # <a name="about-operators"></a>關於運算子
 
@@ -117,6 +117,11 @@ Folder list: Program Files, Program Files (x86), Users, Windows
 ```powershell
 @(Get-CimInstance win32_logicalDisk)
 ```
+
+#### <a name="hash-table-literal-syntax-"></a>雜湊表常值語法 `@{}`
+
+類似于陣列子運算式，這個語法是用來宣告雜湊表。
+如需詳細資訊，請參閱 [about_Hash_Tables](about_Hash_Tables.md)。
 
 #### <a name="call-operator-"></a>呼叫運算子 `&`
 
@@ -498,8 +503,6 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 
 Null 條件運算子會在運算元評估為非 null 的情況下，將成員存取、 `?.` 或專案存取權套用 `?[]` 至其運算元; 否則，它會傳回 null。
 
-由於 PowerShell 允許 `?` 作為變數名稱的一部分，因此，使用這些運算子時需要變數名稱的型式規格。 因此，必須在 `${a}` 之類的變數名稱前後，或是當 `?` 為變數名稱 `${a?}` 的一部分時，使用 `{}`。
-
 在下列範例中，會傳回 **PropName** 的值。
 
 ```powershell
@@ -536,7 +539,12 @@ $a = $null
 ${a}?[0]
 ```
 
-## <a name="see-also"></a>另請參閱
+> [!NOTE]
+> 由於 PowerShell 允許 `?` 作為變數名稱的一部分，因此，使用這些運算子時需要變數名稱的型式規格。 因此，必須在 `${a}` 之類的變數名稱前後，或是當 `?` 為變數名稱 `${a?}` 的一部分時，使用 `{}`。
+>
+> 的變數名稱語法 `${<name>}` 不應與 `$()` 子運算式運算子混淆。 如需詳細資訊，請參閱 [about_Variables](about_Variables.md#Variable-names-that-include-special-characters)的變數名稱一節。
+
+## <a name="see-also"></a>請參閱
 
 [about_Arithmetic_Operators](about_Arithmetic_Operators.md)
 
