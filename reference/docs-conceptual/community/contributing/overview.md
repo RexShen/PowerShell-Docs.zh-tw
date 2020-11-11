@@ -1,14 +1,14 @@
 ---
 title: 對 PowerShell 文件做出貢獻
-description: 此文章是如何以 PowerShell 文件參與者身分開始貢獻的概觀。
+description: 本文說明參與 PowerShell 文件的所需步驟。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158151"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354397"
 ---
 # <a name="contributing-to-powershell-documentation"></a>對 PowerShell 文件做出貢獻
 

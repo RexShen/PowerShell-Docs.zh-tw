@@ -2,12 +2,12 @@
 title: PowerShell 7.0 的新功能
 description: PowerShell 7.0 中發行的新功能與變更
 ms.date: 03/04/2020
-ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
-ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
+ms.openlocfilehash: 3a5a1aaa0bd9dd1e0df7d6f5e6021678ed21dce4
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88162455"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93355267"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 的新功能
 
@@ -42,14 +42,14 @@ PowerShell 7 在 x64 上目前支援下列作業系統，包括：
 
 此外，PowerShell 7.0 支援 Debian、Ubuntu 和 ARM64 Alpine Linux 的 ARM32 和 ARM64 變體。
 
-請查看適用於您慣用作業系統 [Windows](/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7)、[macOS](/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-7) 或 [Linux](/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-7) 的安裝指示。
+請查看適用於您慣用作業系統 [Windows](/powershell/scripting/install/installing-powershell-core-on-windows)、[macOS](/powershell/scripting/install/installing-powershell-core-on-macos) 或 [Linux](/powershell/scripting/install/installing-powershell-core-on-linux) 的安裝指示。
 
 雖然尚未正式支援，但該社群也會提供適用於 [Arch](https://aur.archlinux.org/packages/powershell/) 和 Kali Linux 的套件。
 
 > [!NOTE]
-> Debian 10 和 CentOS 8 目前不支援 WinRM 遠端處理。 如需設定 SSH 型遠端處理的詳細資訊，請參閱[透過 SSH 的 PowerShell 遠端處理](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core?view=powershell-7)。
+> Debian 10 和 CentOS 8 目前不支援 WinRM 遠端處理。 如需設定 SSH 型遠端處理的詳細資訊，請參閱[透過 SSH 的 PowerShell 遠端處理](/powershell/scripting/learn/remoting/ssh-remoting-in-powershell-core)。
 
-如需更多有關支援的作業系統和支援週期的最新資訊，請參閱 [PowerShell 支援週期](/powershell/scripting/powershell-support-lifecycle?view=powershell-7)。
+如需更多有關支援的作業系統和支援週期的最新資訊，請參閱 [PowerShell 支援週期](/powershell/scripting/powershell-support-lifecycle)。
 
 ## <a name="running-powershell-7"></a>執行中的 PowerShell 7
 
@@ -72,7 +72,7 @@ PowerShell 7 安裝程式套件會升級舊版的 PowerShell Core 6.x：
 
 PowerShell 7.0 會標記要移轉到 .NET Core 3.1，大幅提高與現有的 Windows PowerShell 模組的回溯相容性。 這在 Windows 上包含許多模組，其需要 `Out-GridView` 和 `Show-Command` 之類的 GUI 功能，以及 Windows 隨附的許多角色管理模組。
 
-針對 Windows，已將新的切換參數 **UseWindowsPowerShell** 新增至 `Import-Module`。 此參數會在 PowerShell 7 中建立 Proxy 模組，以使用本機 Windows PowerShell 處理序，隱含地執行該模組中包含的所有 Cmdlet。 如需詳細資訊，請參閱 [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7)。
+針對 Windows，已將新的切換參數 **UseWindowsPowerShell** 新增至 `Import-Module`。 此參數會在 PowerShell 7 中建立 Proxy 模組，以使用本機 Windows PowerShell 處理序，隱含地執行該模組中包含的所有 Cmdlet。 如需詳細資訊，請參閱 [Import-Module](/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&preserve-view=true)。
 
 如需哪些 Microsoft 模組使用 PowerShell 7.0 的詳細資訊，請參閱[模組相容性表格](https://aka.ms/PSModuleCompat) \(英文\)。
 
@@ -102,7 +102,7 @@ $logEntries.Count
 
 在指令碼區塊中，使用 `$_` 變數來代表目前的輸入物件。 使用 `$using:` 範圍，將變數參考傳遞至執行中的指令碼區塊。
 
-如需詳細資訊，請參閱 [ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7)。
+如需詳細資訊，請參閱 [ForEach-Object](/powershell/module/microsoft.powershell.core/foreach-object?view=powershell-7&preserve-view=true)。
 
 ## <a name="ternary-operator"></a>三元運算子
 
@@ -113,7 +113,7 @@ PowerShell 的三元運算子會根據 C# 三元運算子語法嚴密地進行�
 <condition> ? <if-true> : <if-false>
 ```
 
-條件運算式一律會進行評估，並將結果轉換成**布林值**，以判斷下一個要評估的分支：
+條件運算式一律會進行評估，並將結果轉換成 **布林值** ，以判斷下一個要評估的分支：
 
 - 如果 `<condition>` 運算式為 True，就會執行 `<if-true>` 運算式
 - 如果 `<condition>` 運算式為 False，就會執行 `<if-false>` 運算式
@@ -124,13 +124,13 @@ PowerShell 的三元運算子會根據 C# 三元運算子語法嚴密地進行�
 $message = (Test-Path $path) ? "Path exists" : "Path not found"
 ```
 
-在此範例中，如果路徑存在，就會顯示 **Path exists**。 如果路徑不存在，則會顯示 **Path not found**。
+在此範例中，如果路徑存在，就會顯示 **Path exists** 。 如果路徑不存在，則會顯示 **Path not found** 。
 
-如需詳細資訊，請參閱[關於 If](/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7)。
+如需詳細資訊，請參閱[關於 If](/powershell/module/microsoft.powershell.core/about/about_if)。
 
 ## <a name="pipeline-chain-operators"></a>管線鏈結運算子
 
-PowerShell 7 會實作 `&&` 和 `||` 運算子，有條件地鏈結管線。 這些運算子在 PowerShell 中稱為「管線鏈結運算子」，類似於 **Bash** 和 **Zsh** 等殼層中的 AND 和 OR 清單，以及 Windows 命令殼層 (**cmd.exe**) 中的條件式處理符號。
+PowerShell 7 會實作 `&&` 和 `||` 運算子，有條件地鏈結管線。 這些運算子在 PowerShell 中稱為「管線鏈結運算子」，類似於 **Bash** 和 **Zsh** 等殼層中的 AND 和 OR 清單，以及 Windows 命令殼層 ( **cmd.exe** ) 中的條件式處理符號。
 
 如果左側管線成功，`&&` 運算子就會執行右側管線。 反過來說，如果左側管線失敗，`||` 運算子就會執行右側管線。
 
@@ -179,7 +179,7 @@ Write-Error 'Bad'
 Second
 ```
 
-如需詳細資訊，請參閱[關於管線鏈結運算子](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7)。
+如需詳細資訊，請參閱[關於管線鏈結運算子](/powershell/module/microsoft.powershell.core/about/about_pipeline_chain_operators?view=powershell-7&preserve-view=true)。
 
 ## <a name="null-coalescing-assignment-and-conditional-operators"></a>Null 聯合、指派和條件運算子
 
@@ -226,7 +226,7 @@ $todaysDate ??= (Get-Date).ToShortDateString()
 ### <a name="null-conditional-member-access-operators--and--experimental"></a>Null 條件式成員存取運算子 ?. 和 ?[] (實驗性)
 
 > [!NOTE]
-> 這是名為 **PSNullConditionalOperators** 的實驗性功能。 深入了解[關於實驗性功能](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7)。
+> 這是名為 **PSNullConditionalOperators** 的實驗性功能。 如需詳細資訊，請參閱[使用實驗性功能](/powershell/scripting/learn/experimental-features)。
 
 Null 條件運算子只有在其運算元評估為非 Null 時，才會允許對該運算元進行成員存取 `?.` 或元素存取 `?[]`；否則就會傳回 Null。
 
@@ -241,7 +241,7 @@ ${Service}?.status
 Stopped
 ```
 
-下列範例會傳回 Null，而不會嘗試存取成員名稱 **Status**：
+下列範例會傳回 Null，而不會嘗試存取成員名稱 **Status** ：
 
 ```powershell
 $service = $Null
@@ -263,13 +263,13 @@ $a = $null
 ${a}?[0]
 ```
 
-如需詳細資訊，請參閱[關於運算元](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7)。
+如需詳細資訊，請參閱[關於運算元](/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&preserve-view=true)。
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>新增 ConciseView 檢視和 Get-Error Cmdlet
 
-PowerShell 7.0 增強了錯誤訊息的顯示方式，以新的預設檢視 **ConciseView**，改進互動式與指令碼錯誤的可讀性。 使用者可以透過喜好設定變數 `$ErrorView` 來選取這些檢視。
+PowerShell 7.0 增強了錯誤訊息的顯示方式，以新的預設檢視 **ConciseView** ，改進互動式與指令碼錯誤的可讀性。 使用者可以透過喜好設定變數 `$ErrorView` 來選取這些檢視。
 
-使用 **ConciseView**，如果錯誤不是來自指令碼或剖析器錯誤，則會是單行錯誤訊息：
+使用 **ConciseView** ，如果錯誤不是來自指令碼或剖析器錯誤，則會是單行錯誤訊息：
 
 ```powershell
 Get-Childitem -Path c:\NotReal
@@ -283,7 +283,7 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 
 ![指令碼的錯誤顯示](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-PowerShell 7 中的預設檢視為 **ConciseView**。 先前的預設檢視為 **NormalView**。您可以設定喜好設定變數 `$ErrorView` 來選取此檢視。
+PowerShell 7 中的預設檢視為 **ConciseView** 。 先前的預設檢視為 **NormalView** 。您可以設定喜好設定變數 `$ErrorView` 來選取此檢視。
 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
@@ -311,7 +311,7 @@ $Error | Get-Error
 Get-Error -Newest 3 # Displays the lst three errors that occurred in the session
 ```
 
-如需詳細資訊，請參閱 [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7)。
+如需詳細資訊，請參閱 [Get-Error](/powershell/module/microsoft.powershell.utility/get-error?view=powershell-7&preserve-view=true)。
 
 ## <a name="new-version-notification"></a>新版本通知
 
@@ -346,12 +346,12 @@ $Env:POWERSHELL_UPDATECHECK = 'LTS'
 $Env:POWERSHELL_UPDATECHECK = 'Default'
 ```
 
-如需詳細資訊，請參閱[關於更新通知](/powershell/module/microsoft.powershell.core/about/about_update_notifications?view=powershell-7)。
+如需詳細資訊，請參閱[關於更新通知](/powershell/module/microsoft.powershell.core/about/about_update_notifications)。
 
 ## <a name="new-dsc-resource-support-with-invoke-dscresource-experimental"></a>使用 Invoke-DSCResource 新增 DSC 資源支援 (實驗性)
 
 > [!NOTE]
-> 這是名為 **PSDesiredStateConfiguration.InvokeDscResource** 的實驗性功能。 深入了解[關於實驗性功能](/powershell/module/microsoft.powershell.core/about/about_experimental_features?view=powershell-7)。
+> 這是名為 **PSDesiredStateConfiguration.InvokeDscResource** 的實驗性功能。 如需詳細資訊，請參閱[使用實驗性功能](/powershell/scripting/learn/experimental-features)。
 
 `Invoke-DscResource` Cmdlet 會執行指定之 PowerShell Desired State Configuration (DSC) 資源的方法。
 
@@ -366,7 +366,7 @@ Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateCo
 }
 ```
 
-如需詳細資訊，請參閱 [Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7)。
+如需詳細資訊，請參閱 [Invoke-DSCResource](/powershell/module/psdesiredstateconfiguration/invoke-dscresource?view=powershell-7&preserve-view=true)。
 
 ## <a name="breaking-changes-and-improvements"></a>中斷性變更和改進
 

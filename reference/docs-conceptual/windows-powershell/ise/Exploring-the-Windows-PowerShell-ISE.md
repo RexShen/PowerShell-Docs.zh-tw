@@ -2,30 +2,28 @@
 ms.date: 01/02/2020
 title: 探索 Windows PowerShell ISE
 description: 此文章是 Windows PowerShell ISE 的功能概觀
-ms.openlocfilehash: f389ac60da13141329d81baf08e9100b144022c3
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.topic: landing-page
+ms.custom: ISE-F1-page
+ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
+ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92663816"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93296363"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探索 Windows PowerShell ISE
 
-您可以使用 Windows PowerShell&reg; 整合式指令碼環境 (ISE)，來建立及執行命令與指令碼，並對其偵錯。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
-
-> [!NOTE]
-> 從 Windows PowerShell ISE 3.0 開始，命令窗格和輸出窗格已合併為單一主控台窗格。
+您可以使用 Windows PowerShell 整合式指令碼環境 (ISE)，來建立及執行命令與指令碼，並對其偵錯。 Windows PowerShell ISE 是由功能表列、Windows PowerShell 索引標籤、工具列、指令碼索引標籤、指令碼窗格、主控台窗格、狀態列、文字大小滑桿和即時線上說明所組成。
 
 ## <a name="menu-bar"></a>功能表列
 
 功能表列包含 [檔案]  、[編輯]  、[檢視]  、[工具]  、[偵錯]  、[附加元件]  和 [說明]  功能表。 功能表上的按鈕可讓您在 Windows PowerShell ISE 中執行與寫入和執行指令碼，以及執行命令相關的工作。 此外，您可以執行使用 [ISE 物件模型階層](object-model/The-ISE-Object-Model-Hierarchy.md)的指令碼，將[附加元件工具](object-model/The-ISEAddOnTool-Object.md)放在功能表列上。
 
-> [!NOTE]
-> 在 Windows PowerShell ISE 2.0 中，不提供 [工具]  和 [附加元件]  功能表。
-
 ## <a name="windows-powershell-tabs"></a>Windows PowerShell 索引標籤
 
 Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境。 您可以在 Windows PowerShell ISE 中開啟新的 Windows PowerShell 索引標籤，在您的本機電腦或遠端電腦上建立個別環境。 您最多可以同時開啟 8 個 PowerShell 索引標籤。
+
+如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中建立 PowerShell 索引標籤](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)。
 
 ## <a name="toolbar"></a>工具列
 
@@ -59,15 +57,17 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 ## <a name="script-pane"></a>指令碼窗格
 
-可讓您建立及執行指令碼。 您可以在指令碼窗格中開啟、編輯及執行現有的指令碼。
+可讓您建立及執行指令碼。 您可以在指令碼窗格中開啟、編輯及執行現有的指令碼。 如需詳細資訊，請參閱[如何在 Windows PowerShell ISE 中撰寫和執行指令碼](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)。
 
-## <a name="output-pane"></a>輸出窗格
+## <a name="console-pane"></a>主控台窗格
 
-顯示已執行的命令和指令碼結果。 您也可以複製並清除輸出窗格中的內容。
+顯示已執行的命令和指令碼結果。 您可以在主控台窗格中執行命令， 也可以複製並清除主控台窗格中的內容。
 
-## <a name="command-pane"></a>命令窗格
+如需詳細資訊，請參閱下列文章：
 
-可讓您撰寫命令。 您可以在命令窗格中執行一或多行命令。 按 <kbd>SHIFT</kbd>+<kbd>ENTER</kbd> 可輸入多行命令的每一行，而在最後一行後面按 <kbd>ENTER</kbd> 鍵可執行多行命令。 出現在命令窗格頂端的提示會顯示目前工作目錄的路徑。
+- [如何在 Windows PowerShell ISE 中使用主控台窗格](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [如何在 Windows PowerShell ISE 中針對指令碼進行偵錯](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
+- [如何在指令碼窗格和主控台窗格中使用 TAB 鍵自動完成](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 
 ## <a name="status-bar"></a>狀態列
 
@@ -79,9 +79,11 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 ## <a name="help"></a>説明
 
-您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 [說明] 功能表上按一下 [Windows PowerShell ISE 說明]，或在任何位置按下 <kbd>F1</kbd> 鍵，但游標不可以是在指令碼窗格或主控台窗格中的 Cmdlet 名稱上方。
-您也可以從 [說明]  功能表執行 `Update-Help` Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
+您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 [說明] 功能表上按一下 [Windows PowerShell ISE 說明]，或在任何位置按下 <kbd>F1</kbd> 鍵，但游標不可以是在指令碼窗格或主控台窗格中的 Cmdlet 名稱上方。 您也可以從 [說明]  功能表執行 `Update-Help` Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
 
 ## <a name="see-also"></a>另請參閱
 
 - [Windows PowerShell ISE 簡介](Introducing-the-Windows-PowerShell-ISE.md)
+- [如何在 Windows PowerShell ISE 中使用設定檔](How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE 的協助工具](Accessibility-in-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE 的鍵盤快速鍵](Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
