@@ -2,20 +2,20 @@
 description: PSModulePath 環境變數包含要搜尋以尋找模組和資源的資料夾位置清單。
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 04/13/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_PSModulePath?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_PSModulePath
-ms.openlocfilehash: 60373e534fb319195c187b8cb26c6aabc0f3b8b7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6e0307996bf619bc887b076a1f8c0faa619964fe
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207620"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524454"
 ---
 # <a name="about-psmodulepath"></a>關於 PSModulePath
 
-`$env:PSModulePath`環境變數包含要搜尋以尋找模組和資源的資料夾位置清單。
+`$env:PSModulePath`環境變數包含要搜尋以尋找模組和資源的資料夾位置清單。 PowerShell 會以遞迴方式搜尋模組 (或) 檔案的每個資料夾 `.psd1` `.psm1` 。
 
 依預設，指派給的有效位置 `$env:PSModulePath` 為：
 
@@ -130,6 +130,21 @@ PowerShell Core 6 覆寫 `$env:PSModulePath` 。 未進行任何變更。
 ### <a name="starting-powershell-7-from-powershell-6"></a>從 PowerShell 6 啟動 PowerShell 7
 
 PowerShell 7 啟動會繼續進行，並新增 PowerShell Core 6 新增的繼承路徑。 由於 PS7 特定的路徑會加上前置詞，因此沒有任何功能性問題。
+
+## <a name="module-search-behavior"></a>模組搜尋行為
+
+PowerShell 會以遞迴方式在 **PSModulePath** 中搜尋模組 (`.psd1` 或) 檔案的每個資料夾 `.psm1` 。 此搜尋模式允許在不同的資料夾中安裝相同模組的多個版本。 例如：
+
+```Output
+    Directory: C:\Program Files\WindowsPowerShell\Modules\PowerShellGet
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/14/2020  5:56 PM                1.0.0.1
+d----           9/13/2019  3:53 PM                2.1.2
+```
+
+根據預設，當找到多個版本時，PowerShell 會載入模組的最高版本號碼。 若要載入特定版本，請使用 `Import-Module` With **FullyQualifiedName** 參數。 如需詳細資訊，請參閱 [Import-Module](xref:Microsoft.PowerShell.Core.Import-Module)。
 
 ## <a name="see-also"></a>另請參閱
 

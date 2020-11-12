@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: a221c6126bbbf22dffb493828f759bcbd4cfe759
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 53c06982abcf980897c049b6f6bd0c159f2eb4b5
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93205816"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524683"
 ---
 # Start-Process
 
@@ -117,6 +117,19 @@ runasuser
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### 範例8：在 Linux 上建立卸離的進程
+
+在 Windows 上， `Start-Process` 建立獨立的進程，其會獨立于啟動 shell 之外繼續執行。 在非 Windows 平臺上，新啟動的進程會附加至啟動的 shell。 如果啟動 shell 已關閉，就會終止子進程。
+
+若要避免在類似 Unix 的平臺上終止子進程，您可以 `Start-Process` 結合 `nohup` 。 下列範例會在 Linux 上啟動 PowerShell 的背景實例，即使在關閉啟動會話之後仍會保持運作。 此 `nohup` 命令會收集目前目錄中檔案的輸出 `nohup.out` 。
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+在此範例中，正在 `Start-Process` 執行 Linux `nohup` 命令，它會以卸 `pwsh` 離的進程啟動。 如需詳細資訊，請參閱 [nohup](https://linux.die.net/man/1/nohup)的 man 頁面。
 
 ## PARAMETERS
 
@@ -421,7 +434,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### 無
+### None
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
