@@ -55,24 +55,26 @@
       items:
         - name: 概觀
           href: learn/deep-dives/overview.md
-        - name: 您想知道有關陣列的一切
-          href: learn/deep-dives/everything-about-arrays.md
-        - name: 您想知道有關雜湊表的一切
-          href: learn/deep-dives/everything-about-hashtable.md
-        - name: 您想知道有關 PSCustomObject 的一切
-          href: learn/deep-dives/everything-about-pscustomobject.md
-        - name: 您想知道有關替代字串的一切
-          href: learn/deep-dives/everything-about-string-substitutions.md
-        - name: 您想知道有關 if/then/else 的一切
-          href: learn/deep-dives/everything-about-if.md
-        - name: 您想知道有關切換的一切
-          href: learn/deep-dives/everything-about-switch.md
-        - name: 您想知道有關例外狀況的一切
-          href: learn/deep-dives/everything-about-exceptions.md
-        - name: 您想知道有關 $null 的一切
-          href: learn/deep-dives/everything-about-null.md
-        - name: 您想知道有關於 ShouldProcess 的一切
-          href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: 這些說明讓您全面了解...
+          items:
+            - name: 您想知道有關陣列的一切
+              href: learn/deep-dives/everything-about-arrays.md
+            - name: 您想知道有關雜湊表的一切
+              href: learn/deep-dives/everything-about-hashtable.md
+            - name: 您想知道有關 PSCustomObject 的一切
+              href: learn/deep-dives/everything-about-pscustomobject.md
+            - name: 您想知道有關替代字串的一切
+              href: learn/deep-dives/everything-about-string-substitutions.md
+            - name: 您想知道有關 if/then/else 的一切
+              href: learn/deep-dives/everything-about-if.md
+            - name: 您想知道有關切換的一切
+              href: learn/deep-dives/everything-about-switch.md
+            - name: 您想知道有關例外狀況的一切
+              href: learn/deep-dives/everything-about-exceptions.md
+            - name: 您想知道有關 $null 的一切
+              href: learn/deep-dives/everything-about-null.md
+            - name: 您想知道有關於 ShouldProcess 的一切
+              href: learn/deep-dives/everything-about-shouldprocess.md
         - name: 執行多執行緒時的寫入進度
           href: learn/deep-dives/write-progress-across-multiple-threads.md
         - name: 新增認證支援到 PowerShell 函式
@@ -120,6 +122,8 @@
   items:
     - name: PowerShell 7.x 的新功能
       items:
+        - name: What's new in PowerShell 7.1 的新功能
+          href: whats-new/what-s-new-in-powershell-71.md
         - name: PowerShell 7.0 的新功能
           href: whats-new/what-s-new-in-powershell-70.md
     - name: PowerShell Core 6.x 的新功能
