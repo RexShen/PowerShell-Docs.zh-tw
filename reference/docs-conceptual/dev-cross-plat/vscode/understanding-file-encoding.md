@@ -17,7 +17,7 @@ ms.locfileid: "93142543"
 
 VS Code 會管理緩衝區中人工輸入的字元字串與檔案系統位元組之讀取/寫入區塊間的介面。 當 VS Code 儲存檔案時，其會使用文字編碼來決定每個字元會變成多少位元組。 如需詳細資訊，請參閱 [about_Character_Encoding](/powershell/module/microsoft.powershell.core/about/about_character_encoding)。
 
-同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VS Code 寫入檔案，而 PowerShell 讀取檔案，所以兩者需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為： _位元組_ -> _字元_ -> _權杖_ -> _抽象語法樹_ -> _執行_ 。
+同樣地，當 PowerShell 執行指令碼時，它必須將檔案中的位元組轉換成字元，以在 PowerShell 程式中重建檔案。 因為 VS Code 寫入檔案，而 PowerShell 讀取檔案，所以兩者需要使用相同的編碼系統。 這個剖析 PowerShell 指令碼的程序為：_位元組_ -> _字元_ -> _權杖_ -> _抽象語法樹_ -> _執行_。
 
 VS Code 與 PowerShell 都使用合理的預設編碼設定來安裝。 不過，PowerShell 使用的預設編碼已隨著 PowerShell Core (v6.x) 發行而變更。 為確保在 VS Code 中使用 PowerShell 或 PowerShell 擴充功能時沒有任何問題，您需要正確設定 VS Code 與 PowerShell 設定。
 
@@ -88,7 +88,7 @@ Unicode 編碼方式也有位元組順序標記 (BOM) 的概念。 BOM 發生在
 
 BOM 為選擇性，且使用情況不像在 Linux 環境中那麼熱門，因為各處普遍使用可靠的 UTF-8 慣例。 大部分的 Linux 應用程式假設文字輸入使用 UTF-8 編碼。 雖然許多 Linux 應用程式會辨識並正確處理 BOM，但也有很多不能，以致要使用這些應用程式操作文字中的成品。
 
-**因此** ：
+**因此**：
 
 - 如果您主要使用 Windows 應用程式和 Windows PowerShell，您應該會比較偏好使用 BOM 的 UTF-8 或 UTF-16 這類編碼。
 - 如果您跨平台工作，您應該會偏好使用 BOM 的 UTF-8。
@@ -196,7 +196,7 @@ finally
 
 ### <a name="existing-scripts"></a>現有的指令碼
 
-檔案系統中現有指令碼可能需要重新編碼成您新選擇的編碼。 在 VS Code 的底部列中，您將會看到 UTF-8 標籤。 按一下它開啟動作列，然後選取 **以編碼方式儲存** 。 您現在可為該檔案選擇新的編碼。 如需完整指示，請參閱 [VS Code 的編碼][]。
+檔案系統中現有指令碼可能需要重新編碼成您新選擇的編碼。 在 VS Code 的底部列中，您將會看到 UTF-8 標籤。 按一下它開啟動作列，然後選取 **以編碼方式儲存**。 您現在可為該檔案選擇新的編碼。 如需完整指示，請參閱 [VS Code 的編碼][]。
 
 如果您需要重新編碼多個檔案，您可以使用下列指令碼：
 
