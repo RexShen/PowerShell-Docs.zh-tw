@@ -186,8 +186,8 @@ finally
 您可以使用設定檔設定，設定 PowerShell 更廣泛使用指定的編碼。
 查看下列文章：
 
-- StackOverflow 上有關 PowerShell 編碼之 [@mklement0] 的[解答](https://stackoverflow.com/a/40098904)。
-- 在 PowerShell 中處理無 BOM UTF-8 輸入之 [@rkeithhill][ 的部落格文章](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/)。
+- StackOverflow 上有關 PowerShell 編碼之 [@mklement0] 的 [解答](https://stackoverflow.com/a/40098904)。
+- 在 PowerShell 中處理無 BOM UTF-8 輸入之 [@rkeithhill] [ 的部落格文章](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/)。
 
 您無法強制 PowerShell 使用特定的輸入編碼。 在地區設定為 en-us 的 Windows 上執行 PowerShell 5.1 及更低版本時，如果沒有 BOM，則預設會使用 Windows-1252 編碼。 其他地區設定可能會使用不同的編碼。 為確保互通性，最好使用 BOM 來儲存 Unicode 格式的指令碼。
 
