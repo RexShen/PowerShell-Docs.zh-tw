@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: ca48f3020fa306f8a24328bd18648d5954c48a94
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: 9554c0b4d3932b7371201f7b08c8b9d26a567f5e
+ms.sourcegitcommit: e85e56d6614cbd30e01965a5cf03fb3f5ca78103
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438199"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "94589121"
 ---
 # <a name="chapter-9---functions"></a>第 9 章 - 函式
 
@@ -22,7 +22,7 @@ ms.locfileid: "84438199"
 
 ## <a name="naming"></a>命名
 
-在 PowerShell 中命名您的函式時，請使用 [Pascal 命名法的大小寫][] 名稱搭配已核准的動詞和單數名詞。 我也建議為名詞加上前置詞。 例如： `<ApprovedVerb>-<Prefix><SingularNoun>` 。
+在 PowerShell 中為您的函式命名時，請使用 [Pascal 命名法的大小寫][] 名稱搭配已核准的動詞和單數名詞。 我也建議為名詞加上前置詞。 例如： `<ApprovedVerb>-<Prefix><SingularNoun>` 。
 
 在 PowerShell 中，您可以藉由執行 `Get-Verb` 來取得已核准的特定動詞清單。
 
@@ -133,7 +133,7 @@ Watch       Common
 Write       Communications
 ```
 
-在上述範例中，我已依照**動詞**資料行排序結果。 **群組**資料行可讓您對於如何使用這些動詞有些概念。 將函式新增至模組時，請務必在 PowerShell 中選擇已核准的動詞。 如果您選擇未核准的動詞，模組會在載入時產生警告訊息。 該警告訊息會讓您的函式看起來不專業。 未核准的動詞也會限制函式的可探索性。
+在上述範例中，我已依照 **動詞** 資料行排序結果。 **群組** 資料行可讓您對於如何使用這些動詞有些概念。 將函式新增至模組時，請務必在 PowerShell 中選擇已核准的動詞。 如果您選擇未核准的動詞，模組會在載入時產生警告訊息。 該警告訊息會讓您的函式看起來不專業。 未核准的動詞也會限制函式的可探索性。
 
 ## <a name="a-simple-function"></a>簡單函式
 
@@ -268,7 +268,7 @@ function Get-MrParameterCount {
 }
 ```
 
-如您在下面所示的結果中所見，有 39 個命令具有 **ComputerName** 參數。 沒有任何 Cmdlet 具有參數 (例如**Computer**、**ServerName**、**Host** 或 **Machine**)。
+如您在下面所示的結果中所見，有 39 個命令具有 **ComputerName** 參數。 沒有任何 Cmdlet 具有參數 (例如 **Computer**、**ServerName**、**Host** 或 **Machine**)。
 
 ```powershell
 Get-MrParameterCount -ParameterName ComputerName, Computer, ServerName, Host, Machine
@@ -793,4 +793,5 @@ function Get-MrAutoStoppedService {
 [about_Functions_Advanced]: /powershell/module/microsoft.powershell.core/about/about_functions_advanced
 [about_Try_Catch_Finally]: /powershell/module/microsoft.powershell.core/about/about_try_catch_finally
 [about_Comment_Based_Help]: /powershell/module/microsoft.powershell.core/about/about_comment_based_help
-[影片：使用進階函式和指令碼模組的 PowerShell 工具製作]： https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/) [Pascal 命名法的大小寫]：/dotnet/standard/design-guidelines/capitalization-conventionss
+[影片：使用進階函式和指令碼模組的 PowerShell 工具製作]: https://mikefrobbins.com/2016/05/26/video-powershell-toolmaking-with-advanced-functions-and-script-modules/
+[Pascal 命名法的大小寫]: /dotnet/standard/design-guidelines/capitalization-conventions
