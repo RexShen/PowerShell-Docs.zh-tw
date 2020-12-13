@@ -1,20 +1,22 @@
 ---
-title: 擴充輸出物件 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 48f4f2996159d84257ad72d499e3a796aeaa9116
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 延伸輸出物件
+description: 延伸輸出物件
+ms.openlocfilehash: 9fea476e3032002bd206609313581cc6373dfddc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784311"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652909"
 ---
 # <a name="extending-output-objects"></a>延伸輸出物件
 
-您可以使用 (. types.ps1xml) 的類型檔案，擴充 Cmdlet、函式和腳本所傳回的 .NET Framework 物件。 類型檔案是以 XML 為基礎的檔案，可讓您將屬性和方法加入至現有的物件。 例如，Windows PowerShell 提供 Types.ps1的 xml 檔案，此檔案會將元素新增至數個現有的 .NET Framework 物件。 Types.ps1的 xml 檔案位於 Windows PowerShell 安裝目錄 (`$pshome`) 。 您可以建立自己的類型檔案，進一步擴充這些物件或擴充其他物件。 當您使用類型檔案來擴充物件時，物件的任何實例都會以新元素擴充。
+您可以使用 ( .ps1xml) 的類型檔案，擴充 Cmdlet、函式和腳本所傳回的 .NET Framework 物件。 類型檔案是以 XML 為基礎的檔案，可讓您將屬性和方法新增至現有的物件。 例如，Windows PowerShell 提供 Types.ps1的 xml 檔，這會將專案新增至數個現有的 .NET Framework 物件。 Types.ps1xml 檔案位於 Windows PowerShell 安裝目錄 (`$pshome`) 。 您可以建立自己的類型檔案，進一步擴充這些物件或擴充其他物件。 當您使用類型檔案來擴充物件時，會以新的元素擴充物件的任何實例。
 
-## <a name="extending-the-systemarray-object"></a>擴充 System.object 物件
+## <a name="extending-the-systemarray-object"></a>擴充 System.object 陣列物件
 
-下列範例顯示 Windows PowerShell 如何擴充 Types.ps1xml 檔案中的[system.object](/dotnet/api/System.Array)物件。 根據預設， [system.object](/dotnet/api/System.Array)物件的 `Length` 屬性會列出陣列中的物件數目。 不過，因為名稱「長度」並未清楚描述屬性，所以 Windows PowerShell 會加入 `Count` alias 屬性，它會顯示與屬性相同的值 `Length` 。 下列 XML 會將 `Count` 屬性加入至[system.object](/dotnet/api/System.Array)類型。
+下列範例顯示 Windows PowerShell 如何擴充 Types.ps1xml 檔案中的 [system.object](/dotnet/api/System.Array) 物件。 依預設， [system.object](/dotnet/api/System.Array) 物件有一個 `Length` 屬性，會列出陣列中的物件數目。 不過，因為名稱 "length" 並不清楚地描述屬性，Windows PowerShell 加入 `Count` alias 屬性，它會顯示與屬性相同的值 `Length` 。 下列 XML 會將 `Count` 屬性加入至 [system.object](/dotnet/api/System.Array) 型別。
 
 ```xml
 <Type>
@@ -29,7 +31,7 @@ ms.locfileid: "87784311"
 
 ```
 
-若要查看這個新的別名屬性，請在任何陣列上使用[Get Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)命令，如下列範例所示。
+若要查看這個新的別名屬性，請使用任何陣列上的 [Get 成員](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) 命令，如下列範例所示。
 
 ```powershell
 Get-Member -InputObject (1,2,3,4)
@@ -70,24 +72,24 @@ PS> (1, 2, 3, 4).Length
 
 ## <a name="custom-types-files"></a>自訂類型檔案
 
-若要建立自訂類型檔案，請先複製現有的類型檔案。 新檔案可以有任何名稱，但它的副檔名必須是 types.ps1xml。 當您複製檔案時，可以將新檔案放在 Windows PowerShell 可存取的任何目錄中，但是將檔案放在 Windows PowerShell 安裝目錄中 (`$pshome`) 或安裝目錄的子目錄中，會很有用。
+若要建立自訂類型檔案，請從複製現有的類型檔案開始。 新檔案可以有任何名稱，但它的副檔名必須是 .ps1xml。 當您複製檔案時，可以將新檔案放在 Windows PowerShell 可存取的任何目錄中，但是將檔案放在 Windows PowerShell 安裝目錄 (`$pshome`) 或安裝目錄的子目錄中會很有用。
 
-若要將您自己的擴充類型新增至檔案，請為每個您要擴充的物件加入 types 元素。 下列主題提供範例。
+若要將您自己的擴充類型加入至檔案中，請為您想要擴充的每個物件加入類型元素。 下列主題提供範例。
 
-- 如需新增屬性和屬性集的詳細資訊，請參閱[擴充屬性](./extending-properties-for-objects.md)。
+- 如需加入屬性和屬性集的詳細資訊，請參閱 [擴充屬性](./extending-properties-for-objects.md)
 
-- 如需新增方法的詳細資訊，請參閱[擴充方法](./defining-default-methods-for-objects.md)。
+- 如需新增方法的詳細資訊，請參閱 [擴充方法](./defining-default-methods-for-objects.md)。
 
-- 如需有關加入成員集的詳細資訊，請參閱[擴充成員集](./defining-default-member-sets-for-objects.md)。
+- 如需新增成員集的詳細資訊，請參閱 [擴充成員集合](./defining-default-member-sets-for-objects.md)。
 
-定義您自己的擴充類型之後，請使用下列其中一種方法，讓擴充物件可供使用：
+在您定義自己的擴充類型之後，請使用下列其中一種方法來讓您的擴充物件可供使用：
 
-- 若要讓目前的會話能夠使用擴充類型檔案，請使用[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 來新增檔案。 如果您想要讓類型優先于其他類型檔案中所定義的類型 (包括 Types.ps1xml 檔案) ，請使用 `PrependData` [TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 的參數。
-- 若要讓擴充類型檔案可供所有未來的會話使用，請將類型檔案新增至模組、匯出目前的會話，或將[TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)命令新增至您的 Windows PowerShell 設定檔。
+- 若要讓您的擴充類型檔案可用於目前的會話，請使用 [TypeData 指令程式](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) 來新增檔案。 如果您想要讓您的類型優先于其他類型檔案中定義的類型 (包括 Types.ps1xml 檔案) ，請使用 `PrependData` [TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) Cmdlet 的參數。
+- 若要讓您的擴充類型檔案可供所有未來的會話使用，請將類型檔案新增至模組、匯出目前的會話，或將 [TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData) 命令新增至您的 Windows PowerShell 設定檔。
 
 ## <a name="signing-types-files"></a>簽署類型檔案
 
-類型檔案應該以數位方式簽署，以防止進行篡改，因為 XML 可以包含腳本區塊。 如需新增數位簽章的詳細資訊，請參閱[about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing)
+類型檔案應經過數位簽署，以防止篡改，因為 XML 可以包含腳本區塊。 如需有關新增數位簽章的詳細資訊，請參閱 [about_Signing](/powershell/module/microsoft.powershell.core/about/about_signing)
 
 ## <a name="see-also"></a>另請參閱
 

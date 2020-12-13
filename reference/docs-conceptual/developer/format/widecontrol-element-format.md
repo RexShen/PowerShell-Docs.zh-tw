@@ -1,18 +1,20 @@
 ---
-title: WideControl 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b6f19cf94dcb440eeaf53547db407287e5462520
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl 元素 (格式)
+description: WideControl 元素 (格式)
+ms.openlocfilehash: f88e1ce18f87e5e47de473298b3ecf070b71c192
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784974"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651267"
 ---
 # <a name="widecontrol-element-format"></a>WideControl 元素 (格式)
 
-定義視圖的寬 (單一值) 清單格式。 此視圖會顯示每個物件的單一屬性值或腳本值。
+為視圖定義寬 (單一值) 清單格式。 這個視圖會顯示每個物件的單一屬性值或腳本值。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 元素 (格式) 
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) WideControl 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -26,7 +28,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `WideControl` 。 您不能 `AutoSize` 同時指定和 `ColumnNumber` 元素。
+下列各節描述專案的屬性、子項目和父元素 `WideControl` 。 您無法同時指定 `AutoSize` 和 `ColumnNumber` 元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,27 +38,27 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[WideControl 的 AutoSize 元素 (格式)](./autosize-element-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定是否根據資料大小來調整資料行大小和資料行數目。|
-|[WideControl 的 ColumnNumber 元素 (格式)](./columnnumber-element-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定在寬視圖中顯示的資料行數目。|
+|[WideControl 的 AutoSize 元素 (格式)](./autosize-element-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定是否根據資料的大小調整資料行大小和資料行數目。|
+|[WideControl 的 ColumnNumber 元素 (格式)](./columnnumber-element-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定以寬視圖顯示的資料行數目。|
 |[WideEntries 元素 (格式) ](./wideentries-element-for-widecontrol-format.md)|必要元素。<br /><br /> 提供寬視圖的定義。|
 
 ### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[檢視元素 (格式)](./view-element-format.md)|定義用來顯示一個或多個 .NET 物件的視圖。|
+|[檢視元素 (格式)](./view-element-format.md)|定義用來顯示一或多個 .NET 物件的視圖。|
 
 ## <a name="remarks"></a>備註
 
-定義寬視圖時，您可以加入 `AutoSize` 元素或， `ColumnNumber` 但無法同時新增兩者。
+定義廣泛的視圖時，您可以加入 `AutoSize` 元素或， `ColumnNumber` 但無法同時加入兩者。
 
-在大部分情況下，每個寬視圖只需要一個定義，但是如果您想要使用相同的視圖來顯示不同的 .NET 物件，則可能會有多個定義。 在這些情況下，您可以為每個物件或一組物件提供個別的定義。
+在大部分的情況下，每個寬視圖都只需要一個定義，但如果您想要使用相同的視圖來顯示不同的 .NET 物件，則可以有多個定義。 在這些情況下，您可以為每個物件或一組物件提供個別的定義。
 
-如需有關寬視圖元件的詳細資訊，請參閱[寬視圖元件](./creating-a-wide-view.md)。
+如需廣泛視圖元件的詳細資訊，請參閱 [Wide View 元件](./creating-a-wide-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示 `WideControl` 用來顯示 system.servicemodel 物件之屬性的元素。 [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)
+下列範例顯示的專案 `WideControl` 是用來顯示 [system.object](/dotnet/api/System.Diagnostics.Process) 物件的屬性。
 
 ```xml
 <View>
@@ -70,7 +72,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 </View>
 ```
 
-如需寬視圖的完整範例，請參閱[寬視圖 (基本) ](./wide-view-basic.md)。
+如需完整的完整範例，請參閱 [ (基本) 的寬量視圖 ](./wide-view-basic.md)。
 
 ## <a name="see-also"></a>另請參閱
 

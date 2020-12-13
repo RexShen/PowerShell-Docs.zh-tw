@@ -1,16 +1,18 @@
 ---
-title: Runspace01 (VB.NET) 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d40424283057b389d8a4aafeb8ddfa44284f3ba1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 (VB.NET) 程式碼範例
+description: Runspace01 (VB.NET) 程式碼範例
+ms.openlocfilehash: 69211662c166c40e6e99e287083f7bd53f9f536f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778659"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653855"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) 程式碼範例
 
-以下是[建立主控台應用程式（可執行指定的命令](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)）中所述之運行空間的程式碼範例。 若要這樣做，應用程式會叫用運行空間，然後叫用命令。  (請注意，此應用程式不會指定執行空間設定資訊，也不會明確建立管線。 ) 所叫用的命令是 `Get-Process` Cmdlet。
+以下是 [建立執行指定命令的主控台應用程式](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)中所述之運行空間的程式碼範例。 若要這樣做，應用程式會叫用運行空間，然後再叫用命令。  (請注意，此應用程式不會指定運行時設定資訊，也不會明確建立管線。 ) 叫用的命令是 `Get-Process` Cmdlet。
 
 ## <a name="code-sample"></a>程式碼範例
 

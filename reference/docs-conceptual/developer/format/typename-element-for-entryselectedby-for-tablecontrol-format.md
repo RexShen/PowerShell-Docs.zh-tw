@@ -1,18 +1,20 @@
 ---
-title: 之 entryselectedby for TableControl (格式的 TypeName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c514d3e6155278ddd3a0565c87e9377dc8419356
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
+description: TableControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
+ms.openlocfilehash: 5a9f5cda1810d461d19ffb48a1cfa2d41f87ca96
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780197"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651428"
 ---
 # <a name="typename-element-for-entryselectedby-for-tablecontrol-format"></a>TableControl 之 EntrySelectedBy 的 TypeName 元素 (格式)
 
-指定使用此資料表視圖專案的 .NET 類型。 可以針對資料表專案指定的類型數目沒有限制。
+指定使用此資料表視圖專案的 .NET 型別。 可以針對資料表專案指定的類型數目沒有任何限制。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableRowEntries 專案 (格式) TableRowEntry 專案 (格式) 之 entryselectedby 元素 (格式) 之 entryselectedby 的 TypeName 元素 TableRowEntry (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableRowEntries 元素 (格式) TableRowEntry 專案 (格式) 之 entryselectedby 專案 (格式) 之 entryselectedby 的 TableRowEntry (類型) 格式
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[之 entryselectedby 元素 (格式) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義使用此專案的 .NET 類型，或必須存在才能使用此專案的條件。|
+|[之 entryselectedby 元素 (格式) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|定義使用此專案的 .NET 型別，或必須存在才能使用此專案的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -44,9 +46,9 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-每個清單專案都必須定義至少一個型別名稱、選擇集或選取條件。
+每個清單專案都必須定義至少一個類型名稱、選取集或選取條件。
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="see-also"></a>另請參閱
 

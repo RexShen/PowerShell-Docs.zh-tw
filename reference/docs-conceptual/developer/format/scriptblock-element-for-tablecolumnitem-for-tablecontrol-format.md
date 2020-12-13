@@ -1,18 +1,20 @@
 ---
-title: 之 tablecolumnitem for TableControl (格式的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 676d2462de077213a933eff632a4e3d23757b731
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 TableColumnItem 的 ScriptBlock 元素 (格式)
+description: TableControl 之 TableColumnItem 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: 5928a67fc09ddc2dcace64635fee055c620b17d3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783427"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651942"
 ---
 # <a name="scriptblock-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl 之 TableColumnItem 的 ScriptBlock 元素 (格式)
 
-指定其值顯示在資料列資料行中的腳本。
+指定其值會顯示在資料列的資料行中的腳本。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableRowEntries 專案 (格式) TableRowEntry 專案 (格式) TableColumnItems 元素 (格式) 之 tablecolumnitem 元素 (格式) ScriptBlock 元素用於之 tablecolumnitem (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableRowEntries 元素 (格式) TableRowEntry 專案 (格式) TableColumnItems 專案 (格式) 之 tablecolumnitem 專案 (格式) 之 tablecolumnitem 專案的 (ScriptBlock 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[之 tablecolumnitem 元素 (格式) ](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|定義屬性或腳本，其值會顯示在資料列的資料行中。|
+|[之 tablecolumnitem 元素 (格式) ](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|定義其值會顯示在資料列的資料行中的屬性或腳本。|
 
 ## <a name="text-value"></a>文字值
 
@@ -44,7 +46,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="see-also"></a>另請參閱
 

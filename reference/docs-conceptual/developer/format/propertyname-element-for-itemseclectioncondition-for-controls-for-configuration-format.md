@@ -1,18 +1,20 @@
 ---
-title: 設定 (格式) 之控制項的 Itemselectioncondition 的 PropertyName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0e304af1dbe816753d6dcd1dd8149f950f2a0941
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
+description: 設定之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
+ms.openlocfilehash: 860683eb54b2a3579767640c1d3f0937897b8f8e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785586"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92655137"
 ---
 # <a name="propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>設定之控制項的 ItemSelectionCondition 的 PropertyName 元素 (格式)
 
-指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為時 `true` ，就會符合條件，並使用控制項。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為時，就 `true` 會符合條件，並且會使用控制項。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 專案 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的 CustomControl 的 CustomEntries 元素) 格式 (CustomEntry 元素適用于 CustomControl 的控制項設定 (格式) CustomItem 元素，用於 CustomEntry 的 Configuration ExpressionBinding 專案的 CustomItem for 控制項設定 (格式) ItemSelectionCondition 元素（針對設定 (格式的控制項) PropertyName 元素） (
+設定元素 (格式) 控制項的設定元素 (格式) 控制項的設定 (格式) CustomControl 專案的設定 (格式) CustomEntry 專案的 CustomControl 設定 (格式) 元素，用於 CustomControl 的控制項設定 (格式) CustomItem 元素，用於 CustomEntry 控制項的設定 ExpressionBinding 專案 CustomItem 的設定 (格式) ItemSelectionCondition 專案的設定 (格式) 的 ExpressionBinding 控制項設定 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -40,11 +42,11 @@ Configuration 專案 (格式) Controls 設定的控制項元素 (格式設定的
 
 ## <a name="text-value"></a>文字值
 
-指定觸發條件之 .NET 屬性的名稱。
+指定觸發條件的 .NET 屬性名稱。
 
 ## <a name="remarks"></a>備註
 
-如果使用這個元素，則在定義選取條件時，不能指定[ScriptBlock](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)元素。
+如果使用此元素，則在定義選取條件時，不能指定 [ScriptBlock](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md) 元素。
 
 ## <a name="see-also"></a>另請參閱
 

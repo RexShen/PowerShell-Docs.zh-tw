@@ -1,16 +1,18 @@
 ---
-title: GetProc01 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 53a761bafdb8b46e06b15cf9e887579c92a5201e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc01 程式碼範例
+description: GetProc01 程式碼範例
+ms.openlocfilehash: 3484e8a544520ea67cd9aa86f8af45b607584254
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778910"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654521"
 ---
 # <a name="getproc01-code-samples"></a>GetProc01 程式碼範例
 
-以下是 GetProc01 範例 Cmdlet 的程式碼範例。 這是 `Get-Process` [建立您的第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)中所述的基本 Cmdlet 範例。 `Get-Process`Cmdlet 的設計是用來抓取本機電腦上執行之所有進程的相關資訊。
+以下是 GetProc01 範例 Cmdlet 的程式碼範例。 此為[建立第一個 Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md) 中所描述基本 `Get-Process` Cmdlet 範例。 `Get-Process`Cmdlet 是設計來取得在本機電腦上執行之所有處理常式的相關資訊。
 
 如需完整的範例程式碼，請參閱下列主題。
 

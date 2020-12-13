@@ -1,19 +1,21 @@
 ---
-title: GetProc02 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 463786cfa679b89f29a3acb6b40a31409634d256
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc02 程式碼範例
+description: GetProc02 程式碼範例
+ms.openlocfilehash: f3fdef32af6bc12179da02ad19228603ad348f7d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778733"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654440"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02 程式碼範例
 
-以下是 GetProc02 範例 Cmdlet 的程式碼範例。 這是 `Get-Process` [新增處理命令列輸入的參數](../cmdlet/adding-parameters-that-process-command-line-input.md)中所述的 Cmdlet 範例。 此 Cmdlet 會根據程式的名稱來抓取 `Get-Process` 進程，然後在命令列顯示進程的相關資訊。
+以下是 GetProc02 範例 Cmdlet 的程式碼範例。 此為[新增可處理命令列輸入的參數](../cmdlet/adding-parameters-that-process-command-line-input.md)中所描述 `Get-Process` Cmdlet 範例。 此 `Get-Process` Cmdlet 會根據其名稱抓取程式，然後在命令列上顯示處理常式的相關資訊。
 
 > [!NOTE]
-> 您可以使用適用于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，為這個 getproc02.cs) 下載 c # 原始程式檔 (。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
+> 您可以使用適用于 Windows Vista 的 Microsoft Windows 軟體開發套件和 .NET Framework 3.0 執行時間元件，下載此 Get-Proc Cmdlet 的 c # 原始程式檔 (getproc02.cs) 。 如需下載指示，請參閱 [如何安裝 Windows PowerShell 及下載 WINDOWS POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
 >
 > 下載的來源檔案可在目錄中取得 **\<PowerShell Samples>** 。
 

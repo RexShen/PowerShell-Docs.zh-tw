@@ -1,24 +1,26 @@
 ---
-title: GetProcessSample04 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4858c44302f7315625be02dd0dc1d335b9c3f158
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample04 範例
+description: GetProcessSample04 範例
+ms.openlocfilehash: 4b2b7f7ed5fd87711d0d7872caaf75d453de4832
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774417"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652736"
 ---
 # <a name="getprocesssample04-sample"></a>GetProcessSample04 範例
 
-這個範例示範如何執行可抓取本機電腦上處理常式的 Cmdlet。 如果在抓取進程時發生錯誤，就會產生非終止錯誤。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 所提供之 Cmdlet 的簡化版本。
+此範例示範如何執行可在本機電腦上抓取進程的 Cmdlet。 如果其在擷取處理序時發生錯誤，會產生非終止錯誤。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 提供的簡化版 Cmdlet。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample04 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample04。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 GetProcessSample04 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample04。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "87774417"
 
     `Import-module getprossessample04`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
     `get-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -54,15 +56,15 @@ ms.locfileid: "87774417"
 
 - 指定參數的位置。
 
-- 指定參數接受管線的輸入。 輸入可以從物件取得，或從屬性名稱與參數名稱相同之物件的屬性值。
+- 指定參數接受來自管線的輸入。 輸入可以從物件取得，或從屬性名稱與參數名稱相同的物件屬性取得值。
 
 - 宣告參數輸入的驗證屬性。
 
-- 捕捉非終止錯誤，並將錯誤訊息寫入錯誤資料流程。
+- 陷阱非終止錯誤，並將錯誤訊息寫入至錯誤資料流程。
 
 ## <a name="example"></a>範例
 
-這個範例示範如何建立 Cmdlet 來處理非終止錯誤，並將錯誤訊息寫入錯誤資料流程。
+這個範例示範如何建立 Cmdlet 來處理非終止錯誤，並將錯誤訊息寫入錯誤串流。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

@@ -1,25 +1,25 @@
 ---
-title: 如何驗證引數集 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateSet attribute, example
-ms.openlocfilehash: 6173f1380583f5b27e2b188990a5ea041f447c57
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 如何驗證引數集
+description: 如何驗證引數集
+ms.openlocfilehash: 50ec0a48277893584d896e14ad6aa843682a28cc
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781999"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650377"
 ---
 # <a name="how-to-validate-an-argument-set"></a>如何驗證引數集
 
-這個範例示範如何指定 Windows PowerShell 執行時間可用來檢查參數引數的驗證規則，然後再執行 Cmdlet。 此驗證規則會為參數引數提供一組有效的值。
+這個範例示範如何指定 Windows PowerShell 執行時間可在執行 Cmdlet 之前用來檢查參數引數的驗證規則。 這項驗證規則會為參數引數提供一組有效值。
 
 > [!NOTE]
-> 如需定義此屬性之類別的詳細資訊，請參閱[Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)。
+> 如需定義這個屬性之類別的詳細資訊，請參閱 [Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)。
 
 ## <a name="to-validate-an-argument-set"></a>驗證引數集
 
-- 新增 ValidateSet 屬性，如下列程式碼所示。 這個範例會為參數指定三個可能值的集合 `UserName` 。
+- 加入 ValidateSet 屬性，如下列程式碼所示。 此範例會為參數指定三個可能值的集合 `UserName` 。
 
     ```csharp
     [ValidateSet("Steve", "Mary", "Carl", IgnoreCase = true)]
@@ -33,7 +33,7 @@ ms.locfileid: "87781999"
     private string userName;
     ```
 
-如需如何宣告這個屬性的詳細資訊，請參閱[ValidateSet 屬性](./validateset-attribute-declaration.md)宣告。
+如需如何宣告這個屬性的詳細資訊，請參閱 [ValidateSet 屬性聲明](./validateset-attribute-declaration.md)。
 
 ## <a name="see-also"></a>另請參閱
 

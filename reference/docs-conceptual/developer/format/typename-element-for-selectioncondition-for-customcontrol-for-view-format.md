@@ -1,18 +1,20 @@
 ---
-title: CustomControl for View (格式的 SelectionCondition 的 TypeName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 28409604b8905440890161f66981264748bc2c33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)
+description: 檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)
+ms.openlocfilehash: ab02c6921985dbe86e5adcbc6565c76f6617399a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785059"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651293"
 ---
 # <a name="typename-element-for-selectioncondition-for-customcontrol-for-view--format"></a>檢視之 CustomControl 的 SelectionCondition 的 TypeName 元素 (格式)
 
-指定觸發條件的 .NET 類型。 定義自訂控制項視圖時，會使用這個元素。
+指定觸發條件的 .NET 型別。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl for view (格式的 CustomEntries 專案) 格式 (CustomEntry for CustomEntries for view) CustomControl 元素 CustomItem for CustomEntry for view (format) CustomControl 元素 for SelectionCondition for view (格式的之 entryselectedby for CustomControl for) SelectionCondition 元素
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomEntries 元素 for View (Format) 元素 for CustomControl for View (format) 元素 for CustomEntry for CustomEntries for view (format) CustomControl for CustomItem for CustomEntry for view (CustomControl 專案) 格式 (的 SelectionCondition 專案之 entryselectedby
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +39,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Forma
 
 |元素|描述|
 |-------------|-----------------|
-|[CustomControl for View (格式) 的之 entryselectedby 的 SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|定義必須存在的條件，才能使用控制項定義。|
+|[適用于 CustomControl 的之 entryselectedby SelectionCondition 元素 (格式) ](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)|定義必須存在才能使用控制項定義的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -47,6 +49,6 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Forma
 
 ## <a name="see-also"></a>另請參閱
 
-[CustomControl for View (格式) 的之 entryselectedby 的 SelectionCondition 元素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+[適用于 CustomControl 的之 entryselectedby SelectionCondition 元素 (格式) ](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

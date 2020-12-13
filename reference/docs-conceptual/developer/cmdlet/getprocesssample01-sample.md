@@ -1,24 +1,26 @@
 ---
-title: GetProcessSample01 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 84956fbafdd58623ca4f332efc940fb93b421c6e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample01 範例
+description: GetProcessSample01 範例
+ms.openlocfilehash: 159c277d17a8551d2b5c52377a230babacafc9ab
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784243"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652764"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01 範例
 
-這個範例示範如何執行可抓取本機電腦上處理常式的 Cmdlet。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 所提供之 Cmdlet 的簡化版本。
+此範例示範如何執行可在本機電腦上抓取進程的 Cmdlet。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 提供的 Cmdlet 簡化版本。
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 來建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample01 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 >getprocesssample01 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
   範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "87784243"
 
    `Add-PSSnapin GetProcPSSnapIn01`
 
-6. 輸入下列命令以執行 Cmdlet。 `get-proc`
+6. 輸入下列命令來執行 Cmdlet。 `get-proc`
 
    `get-proc`
 
-   這是遵循這些步驟所產生的範例輸出。
+   這是遵循下列步驟所產生的範例輸出。
 
    ```output
    Id              Name            State      HasMoreData     Location             Command
@@ -57,7 +59,7 @@ ms.locfileid: "87784243"
    A file was created in the TEMP directory
    ```
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 1.0 或更新版本。
 
@@ -69,11 +71,11 @@ ms.locfileid: "87784243"
 
 - 使用 Cmdlet 屬性定義 Cmdlet 類別。
 
-- 建立可與 Windows PowerShell 1.0 和 Windows PowerShell 2.0 搭配運作的嵌入式管理單元。 後續的範例會使用模組，而不是嵌入式管理單元，因此需要 Windows PowerShell 2.0。
+- 建立適用于 Windows PowerShell 1.0 和 Windows PowerShell 2.0 的嵌入式管理單元。 後續的範例會使用模組（而不是嵌入式管理單元），因此需要 Windows PowerShell 2.0。
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何建立簡單的 Cmdlet 和其嵌入式管理單元。
+此範例說明如何建立簡單的 Cmdlet 和其嵌入式管理單元。
 
 ```csharp
 using System;

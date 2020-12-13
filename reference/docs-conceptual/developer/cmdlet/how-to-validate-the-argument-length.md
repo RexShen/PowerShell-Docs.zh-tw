@@ -1,21 +1,21 @@
 ---
-title: 如何驗證引數長度 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateLength attribute, example
-ms.openlocfilehash: aa0545def6d9628f6b41090a425f0c5af25f6ad7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 如何驗證引數長度
+description: 如何驗證引數長度
+ms.openlocfilehash: 460aedbe6847033f976cb7bf70b6c77ac5a3a3c9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784073"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92652638"
 ---
 # <a name="how-to-validate-the-argument-length"></a>如何驗證引數長度
 
-這個範例示範如何指定 Windows PowerShell 執行時間可用來檢查字元數的驗證規則， (在執行 Cmdlet 之前，參數引數的長度) 。 您可以藉由宣告 ValidateLength 屬性來設定此驗證規則。
+這個範例示範如何指定 Windows PowerShell 執行時間可在執行 Cmdlet 之前，用來檢查參數引數) 長度 (字元數的驗證規則。 您可以藉由宣告 ValidateLength 屬性來設定此驗證規則。
 
 > [!NOTE]
-> 如需定義此屬性之類別的詳細資訊，請參閱[Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)。
+> 如需定義這個屬性之類別的詳細資訊，請參閱 [Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)。
 
 ## <a name="to-validate-the-argument-length"></a>驗證引數長度
 
@@ -32,7 +32,7 @@ ms.locfileid: "87784073"
     private string userName;
     ```
 
-如需如何宣告這個屬性的詳細資訊，請參閱[ValidateLength 屬性](./validatelength-attribute-declaration.md)宣告。
+如需如何宣告這個屬性的詳細資訊，請參閱 [ValidateLength 屬性聲明](./validatelength-attribute-declaration.md)。
 
 ## <a name="see-also"></a>另請參閱
 

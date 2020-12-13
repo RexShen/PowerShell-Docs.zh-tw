@@ -1,18 +1,20 @@
 ---
-title: TableControl (格式的 TableRowEntries 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4cc5d354df3e552e181a95148caa020f0041db92
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 的 TableRowEntries 元素 (格式)
+description: TableControl 的 TableRowEntries 元素 (格式)
+ms.openlocfilehash: 1df63e645234da8276c7ccc5af34e81a56475e43
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785110"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651469"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableControl 的 TableRowEntries 元素 (格式)
 
 定義資料表的資料列。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableControl (格式的 TableRowEntries 元素) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) TableControl 元素 (格式) TableControl (格式的 TableRowEntries 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -24,7 +26,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `TableRowEntries` 。
+下列各節描述專案的屬性、子項目和父元素 `TableRowEntries` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -34,7 +36,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義在資料表的資料列中顯示的資料。|
+|[TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義顯示在資料表資料列中的資料。|
 
 ### <a name="parent-elements"></a>父項目
 
@@ -44,13 +46,13 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-您必須為數據表視圖指定一個或多個 `TableRowEntry` 元素。 可以新增的專案數沒有最大限制， `TableRowEntry` 也沒有順序重要性。
+您必須為數據表視圖指定一個或多個 `TableRowEntry` 元素。 可以加入的專案數目沒有最大限制，也不會影響 `TableRowEntry` 其順序。
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示的專案 `TableRowEntries` 會定義一個資料列，以顯示 system.servicemodel 物件的兩個屬性[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)值。
+下列範例顯示的專案 `TableRowEntries` 會定義一個資料列，該資料列會顯示 system.string 物件之[](/dotnet/api/System.Diagnostics.Process)兩個屬性的值。
 
 ```xml
 <TableRowEntries>

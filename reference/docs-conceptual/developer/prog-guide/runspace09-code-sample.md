@@ -1,17 +1,19 @@
 ---
-title: RunSpace09 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fc5d8d4d182cca6bfc42d63c68a14a7a5e5f9c97
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RunSpace09 程式碼範例
+description: RunSpace09 程式碼範例
+ms.openlocfilehash: 52ebfa5dcfd6c12d2ded78a41a6090caa5087149
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784668"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92654200"
 ---
 # <a name="runspace09-code-sample"></a>RunSpace09 程式碼範例
 
-以下是[建立可非同步叫用管線之主控台應用程式](https://msdn.microsoft.com/198c1c94-2a06-457e-93ce-c0d910618e47)中所述 Runspace09 範例的原始程式碼。
-這個範例應用程式會建立並開啟一個運行時、建立和非同步叫用管線，然後使用管線事件以非同步方式處理腳本。 此應用程式所執行的腳本會在0.5 秒間隔內建立整數1到10， (500 ms) 。
+以下是 [建立以非同步方式叫用管線的主控台應用程式](https://msdn.microsoft.com/198c1c94-2a06-457e-93ce-c0d910618e47)中所述之 Runspace09 範例的原始程式碼。
+這個範例應用程式會建立並開啟運行空間、建立和非同步叫用管線，然後使用管線事件以非同步方式處理腳本。 此應用程式所執行的腳本會在0.5 秒的間隔內建立整數1到10， (500 ms) 。
 
 ## <a name="code-sample"></a>程式碼範例
 
