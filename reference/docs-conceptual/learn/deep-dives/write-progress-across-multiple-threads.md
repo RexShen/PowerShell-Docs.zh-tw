@@ -3,10 +3,10 @@ title: 在多重執行緒處理時顯示進度
 description: 透過 Foreach-Object -Parallel 在多個執行緒之間使用 Write-Progress 的方法
 ms.date: 08/02/2020
 ms.openlocfilehash: 909fc1bbdeded8845b1955e3384fb55db7173030
-ms.sourcegitcommit: 640646992955116def23d16dd12c221857d37b68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/03/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "89410837"
 ---
 # <a name="writing-progress-across-multiple-threads-with-foreach-parallel"></a>使用 Foreach Parallel 在多個執行緒之間寫入進度
@@ -127,7 +127,7 @@ while($job.State -eq 'Running')
 }
 ```
 
-`$job` 變數包含父**作業**，並具有每個模擬處理序的子**作業**。 當任一子作業仍在執行時，父作業的 **State** 就會維持在 "Running"。 這可供使用 `while` 迴圈來持續更新每個處理序的進度，直到所有處理序都完成為止。
+`$job` 變數包含父 **作業**，並具有每個模擬處理序的子 **作業**。 當任一子作業仍在執行時，父作業的 **State** 就會維持在 "Running"。 這可供使用 `while` 迴圈來持續更新每個處理序的進度，直到所有處理序都完成為止。
 
 在 while 迴圈中，我們會針對 `$sync` 變數中的每個索引鍵進行迴圈。 因為是同步雜湊表，所以仍然可在不斷更新的狀態下存取，且不會擲回任何錯誤。
 

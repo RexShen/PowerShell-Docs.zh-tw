@@ -1,24 +1,26 @@
 ---
-title: StopProcessSample04 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a256d29b9e0be878d805a82ddf5a538461d283d6
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample04 範例
+description: StopProcessSample04 範例
+ms.openlocfilehash: 65588b4d60034d1e6a1e17441a4a640caaacdce8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786419"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650123"
 ---
 # <a name="stopprocesssample04-sample"></a>StopProcessSample04 範例
 
-這個範例會示範如何撰寫宣告參數集的 Cmdlet、指定預設參數集，以及接受輸入物件。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
+這個範例會示範如何撰寫 Cmdlet 來宣告參數集、指定預設參數集，而且可以接受輸入物件。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 來建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample04 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 StopProcessSample04 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "87786419"
 
     `import-module stopprossessample04`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
     `stop-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -52,7 +54,7 @@ ms.locfileid: "87786419"
 
 - 使用參數屬性宣告 Cmdlet 參數。
 
-- 加入可接受輸入物件的參數。
+- 加入接受輸入物件的參數。
 
 - 將參數加入至參數集
 
@@ -60,7 +62,7 @@ ms.locfileid: "87786419"
 
 ## <a name="example"></a>範例
 
-下列程式碼示範如何執行可宣告參數集的 Stop-Proc Cmdlet，並指定預設參數集，並可接受輸入物件。
+下列程式碼顯示宣告參數集的 Stop-Proc Cmdlet 的執行、指定預設參數集，而且可以接受輸入物件。
 
 這個範例會顯示輸入物件、如何宣告參數集，以及如何指定要使用的預設參數集。
 

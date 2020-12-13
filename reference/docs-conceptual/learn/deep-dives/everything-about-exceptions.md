@@ -4,10 +4,10 @@ description: 在撰寫程式碼時，錯誤處理只是生命必經的歷程。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: cd17ae6b5ded052c93923b648155a4dda8956b34
-ms.sourcegitcommit: 94c39b0d36b948d3a62707ae8a3be00efe606434
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 09/11/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "90012556"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>您想知道有關於例外狀況的一切 (英文)

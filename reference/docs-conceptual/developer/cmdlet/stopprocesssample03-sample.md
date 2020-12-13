@@ -1,24 +1,26 @@
 ---
-title: StopProcessSample03 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 76a74c099a3c82cfb55e93e5b6173d728ac88b93
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample03 範例
+description: StopProcessSample03 範例
+ms.openlocfilehash: b633161dd7a329dffa076d828862ee39fb256429
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787830"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92650165"
 ---
 # <a name="stopprocesssample03-sample"></a>StopProcessSample03 範例
 
-這個範例示範如何撰寫其參數具有別名，且其參數支援萬用字元的 Cmdlet。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
+此範例示範如何撰寫參數具有別名且參數支援萬用字元的 Cmdlet。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 來建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample03 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 StopProcessSample03 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "87787830"
 
     `import-module stopprossessample03`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
     `stop-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -52,13 +54,13 @@ ms.locfileid: "87787830"
 
 - 使用參數屬性宣告 Cmdlet 參數。
 
-- 正在將別名加入至參數宣告。
+- 正在將別名加入參數宣告中。
 
 - 將萬用字元支援新增至參數。
 
 ## <a name="example"></a>範例
 
-這個範例示範如何宣告參數別名和支援萬用字元。
+這個範例會示範如何宣告參數別名和支援萬用字元。
 
 ```csharp
 using System;

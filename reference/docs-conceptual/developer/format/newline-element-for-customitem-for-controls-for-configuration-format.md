@@ -1,18 +1,20 @@
 ---
-title: " (格式) 設定之控制項的 CustomItem 的新行元素 |Microsoft Docs"
 ms.date: 09/13/2016
-ms.openlocfilehash: ff17484e368ad84d45935bf139e9a95bc293523e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 CustomItem 的 NewLine 元素 (格式)
+description: 設定之控制項的 CustomItem 的 NewLine 元素 (格式)
+ms.openlocfilehash: 4f6912530b27979c8fd0b30b02e39c7d102d55bb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773210"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647939"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-configuration-format"></a>設定之控制項的 CustomItem 的 NewLine 元素 (格式)
 
-將空白行加入控制項的顯示中。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+在控制項的顯示中加入空白行。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 專案 (格式) 控制設定的控制項元素 (格式設定 (格式的控制項) 控制元素) 設定 (格式的 CustomControl 的 CustomEntries 元素) 設定 (格式) CustomControl 元素適用于設定 (格式之控制項的 CustomItem 的設定)  (格式的控制專案的 CustomEntry 的 CustomEntry 元素
+設定專案 (格式) 控制項的設定專案 (格式設定的控制項) 控制項專案 (格式) CustomEntries 專案的 CustomControl 設定 (格式) CustomControl 專案的設定 (格式) CustomItem 專案的設定 (格式) CustomEntry 的控制項設定 (格式) 格式的控制項的 CustomItem 控制項
 
 ## <a name="syntax"></a>語法
 
@@ -36,12 +38,12 @@ Configuration 專案 (格式) 控制設定的控制項元素 (格式設定 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的 CustomEntry 的 CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|定義自訂控制項視圖的控制項。|
+|[適用于設定之控制項的 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|定義自訂控制項視圖的控制項。|
 
 ## <a name="remarks"></a>備註
 
 ## <a name="see-also"></a>另請參閱
 
-[設定之控制項的 CustomEntry 的 CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
+[適用于設定之控制項的 CustomEntry CustomItem 元素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

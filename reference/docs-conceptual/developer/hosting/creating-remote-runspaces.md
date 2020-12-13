@@ -1,22 +1,24 @@
 ---
-title: 建立遠端空間 |Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 2b3c76eeae70de9ef116851313953bba1a1d890f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 建立遠端 Runspace
+description: 建立遠端 Runspace
+ms.openlocfilehash: 4a2af4094ff2503fc12ee460d49565f035f0e4fe
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779585"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649368"
 ---
 # <a name="creating-remote-runspaces"></a>建立遠端 Runspace
 
-採用**ComputerName**參數的 PowerShell 命令可以在任何執行 powershell 的電腦上執行。 若要執行不採用**ComputerName**參數的命令，您可以使用 ws-management 來設定連線到指定電腦的執行時間，並在該電腦上執行命令。
+採用 **ComputerName** 參數的 PowerShell 命令可以在任何執行 powershell 的電腦上執行。 若要執行不採用 **ComputerName** 參數的命令，您可以使用 WS-Management 來設定連接到指定電腦的執行空間，並在該電腦上執行命令。
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>使用 WSManConnection 建立遠端運行空間
 
- 若要建立連接到遠端電腦的運行時，請建立[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件。 您可以藉由設定物件的[WSManConnectionInfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)屬性來指定連接的目標端點。 接著，您可以藉由呼叫[RunspaceFactory. CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法，將[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件指定為參數，以建立一個運行時的功能 `connectionInfo` 。
+ 若要建立連接至遠端電腦的運行空間，請建立 [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件。 您可以藉由設定物件的 [>wsmanconnectioninfo. ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) 屬性來指定連接的目標端點。 然後，您可以藉由呼叫[RunspaceFactory CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)方法，並指定[>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件做為參數，來建立一個運行空間（）。 `connectionInfo`
 
- 下列範例示範如何建立連接到遠端電腦的執行時間。 在此範例中， `RemoteComputerUri` 會用來做為遠端電腦實際 URI 的預留位置。
+ 下列範例示範如何建立連線到遠端電腦的執行時間。 在此範例中， `RemoteComputerUri` 是用來做為遠端電腦實際 URI 的預留位置。
 
 ```csharp
 namespace Samples

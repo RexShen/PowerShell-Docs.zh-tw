@@ -1,18 +1,20 @@
 ---
-title: GroupBy (格式) 的 CustomControl 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b8265e872d34ea5dbcedfaa1668d21df8c3b35eb
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy 的 CustomControl 元素 (格式)
+description: GroupBy 的 CustomControl 元素 (格式)
+ms.openlocfilehash: 633cfcbd10206dc8d7fb4bc1d0092f19aa5bde7c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786062"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646106"
 ---
 # <a name="customcontrol-element-for-groupby-format"></a>GroupBy 的 CustomControl 元素 (格式)
 
 定義顯示新群組的自訂控制項。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素（適用于 GroupBy (格式) CustomControl 元素） (
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) groupby (格式) groupby (格式) 的 CustomControl 元素
 
 ## <a name="syntax"></a>語法
 
@@ -24,7 +26,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `CustomControl` 。 您可以指定任意數目的子項目，並依任何順序列出它們。
+下列各節描述專案的屬性、子項目和父元素 `CustomControl` 。 您可以指定任意數目的子項目，並以任何順序列出它們。
 
 ### <a name="attributes"></a>屬性
 

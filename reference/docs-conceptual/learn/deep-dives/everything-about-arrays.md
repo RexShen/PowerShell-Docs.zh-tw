@@ -4,10 +4,10 @@ description: 陣列是大部分程式設計語言的基礎語言功能。
 ms.date: 10/08/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: b26aa11aadbeea1984b2754cfcad061c7fa3ff1e
-ms.sourcegitcommit: 3445a343e0683124652f64abef6fe911f9eb989f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/08/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "91852556"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>您想知道有關於陣列的一切

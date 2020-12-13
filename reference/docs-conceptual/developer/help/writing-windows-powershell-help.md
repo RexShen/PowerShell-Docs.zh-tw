@@ -1,16 +1,18 @@
 ---
-title: 撰寫 Windows PowerShell 說明
 ms.date: 09/13/2016
-ms.openlocfilehash: 8807fe48c6354022900738de0b912c55dec9febb
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: 撰寫 Windows PowerShell 說明
+description: 撰寫 Windows PowerShell 說明
+ms.openlocfilehash: 3e34d76b61ed50ae47e8bfa7e6fe5e990e36dd68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86892892"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649494"
 ---
 # <a name="writing-windows-powershell-help"></a>撰寫 Windows PowerShell 說明
 
-本檔是針對撰寫 PowerShell Cmdlet、提供者和相關概念的說明內容的任何人員所撰寫，這些主題可以使用 Cmdlet 在命令列中查看 `Get-Help` 。
+這份檔是針對撰寫 PowerShell Cmdlet 的說明內容、提供者和概念的人員所撰寫，您可以使用 Cmdlet 在命令列中查看這些主題 `Get-Help` 。
 
 ## <a name="cmdlet-help"></a>Cmdlet 說明
 
@@ -20,6 +22,6 @@ ms.locfileid: "86892892"
 
 ## <a name="psmaml-schema"></a>PSMAML 架構
 
- Windows PowerShell 會使用 PSMAML 架構來定義 Cmdlet 和提供者說明檔案的 XML 檔案元素。
+ Windows PowerShell 使用 PSMAML 架構來定義 Cmdlet 和提供者說明檔的 XML 檔案元素。
 
 ## <a name="see-also"></a>另請參閱

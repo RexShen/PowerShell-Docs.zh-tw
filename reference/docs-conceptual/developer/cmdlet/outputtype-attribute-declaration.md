@@ -1,16 +1,18 @@
 ---
-title: OutputType 屬性宣告 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a4cc874031bba092cfef6041bef0e19e6af3f09c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: OutputType 屬性宣告
+description: OutputType 屬性宣告
+ms.openlocfilehash: b5e33346e9ac29c13323781d62daffab892573a4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786538"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646459"
 ---
 # <a name="outputtype-attribute-declaration"></a>OutputType 屬性宣告
 
-`OutputType`屬性會識別 Cmdlet、函數或腳本所傳回的 .NET Framework 類型。
+`OutputType`屬性會識別 Cmdlet、函式或腳本所傳回的 .NET Framework 類型。
 
 ## <a name="syntax"></a>語法
 
@@ -23,11 +25,11 @@ ms.locfileid: "87786538"
 
 #### <a name="parameters"></a>參數
 
-輸入 (`string[]` 或 `Type[]` 必要) 。 指定 Cmdlet 函數或腳本所傳回的類型。
+輸入 (`string[]` 或 `Type[]`) 需要。 指定 Cmdlet 函數或腳本所傳回的類型。
 
-ParameterSetName (string [] ) 選擇性。 指定傳回參數中指定之類型的參數集 `type` 。
+ParameterSetName (string [] ) 選擇性。 指定傳回參數中所指定類型的參數集 `type` 。
 
-providerCmdlet 選擇性。 指定傳回參數中所指定類型的提供者 Cmdlet `type` 。
+providerCmdlet 選擇性。 指定可傳回參數中所指定類型的提供者 Cmdlet `type` 。
 
 ## <a name="see-also"></a>另請參閱
 

@@ -1,18 +1,20 @@
 ---
-title: GroupBy (格式的 CustomItem 的 Text 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 811dc3a6f83f93513bd8380a7c3b66a813fe7801
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy 之 CustomItem 的文字元素 (格式)
+description: GroupBy 之 CustomItem 的文字元素 (格式)
+ms.openlocfilehash: 4c8158c9c8e77044732e473f57291194280f4e79
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783359"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649749"
 ---
 # <a name="text-element-for-customitem-for-groupby-format"></a>GroupBy 之 CustomItem 的文字元素 (格式)
 
-指定要加入控制項所顯示之資料的文字，例如標籤、用來括住資料的括弧，以及用來縮排資料的空格。 此元素是在定義新物件群組的顯示方式時使用。
+指定要加入至控制項所顯示之資料的文字，例如標籤、用來括住資料的括弧，以及用來縮排資料的空格。 定義如何顯示新的物件群組時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素（GroupBy (格式）) CustomEntries 專案（適用于 CustomEntry 的 groupby (格式)  (CustomControl 元素的 CustomItem 專案，適用于 CustomEntry 的 groupby) 格式 (Text 元素) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 專案的視圖 (格式) CustomEntries 元素適用于 GroupBy (格式) 元素用於 CustomEntry 的 groupby (格式) CustomControl 專案用於 CustomItem 的 groupby (格式)  (的 Text 元素格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -40,7 +42,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="text-value"></a>文字值
 
-針對您要顯示的資料，指定控制項的文字。
+針對您想要顯示的資料，指定控制項的文字。
 
 ## <a name="remarks"></a>備註
 

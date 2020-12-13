@@ -1,12 +1,14 @@
 ---
-title: SelectionSet 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: cf47229993458492c712d28e04913e75d1bde386
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSet 元素 (格式)
+description: SelectionSet 元素 (格式)
+ms.openlocfilehash: 944aa83569ad8ca789746a71f60e5da5c19fbf01
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783393"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647866"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet 元素 (格式)
 
@@ -25,7 +27,7 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案和元素的父元素 `SelectionSet` 。 每個選取範圍都必須要有名稱，而且必須指定集合的 .NET 物件。
+下列章節說明屬性、子專案和元素的父元素 `SelectionSet` 。 每個選擇集都必須有名稱，而且必須指定集合的 .NET 物件。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,19 +38,19 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 
 |元素|描述|
 |-------------|-----------------|
 |[SelectionSet 的名稱元素 (格式)](./name-element-for-selectionset-format.md)|必要元素。<br /><br /> 指定用來參考選取集的名稱。|
-|[Types 元素 (格式) ](./types-element-for-selectionset-format.md)|必要元素。<br /><br /> 定義選取集中的 .NET 物件。|
+|[類型元素 (格式) ](./types-element-for-selectionset-format.md)|必要元素。<br /><br /> 定義選取專案集中的 .NET 物件。|
 
 ### <a name="parent-elements"></a>父項目
 
 |元素|描述|
 |-------------|-----------------|
-|[SelectionSets 元素格式](./selectionsets-element-format.md)|定義一組通用的 .NET 物件，可供格式化檔案的所有視圖使用。|
+|[SelectionSets 元素格式](./selectionsets-element-format.md)|定義可供格式化檔案的所有視圖使用的通用 .NET 物件集。|
 
 ## <a name="remarks"></a>備註
 
-當您有一組想要使用單一名稱來參考的相關物件（例如透過繼承相關的一組物件）時，您可以使用 [選擇集]。 定義您的視圖時，您可以使用選取範圍的名稱來指定物件集合，而不會列出每個視圖內的所有物件。
+當您有一組要使用單一名稱來參考的相關物件時，例如一組透過繼承相關的物件，您可以使用選取集。 定義您的視圖時，您可以使用選取集的名稱來指定物件集合，而不是列出每個視圖內的所有物件。
 
-定義格式檔案的觀點或 views 定義時，會以名稱指定一般選取範圍。 在這些情況下， `SelectionSetName` 和元素的子 `ViewSelectedBy` 專案 `EntrySelectedBy` 會指定要使用的集合。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
+在定義格式化檔案的視圖或視圖的定義時，會以名稱指定常用的選取集。 在這些情況下， `SelectionSetName` 和元素的子 `ViewSelectedBy` 元素 `EntrySelectedBy` 會指定要使用的集合。 如需選取集的詳細資訊，請參閱 [定義物件集](./defining-selection-sets.md)。
 
 ## <a name="example"></a>範例
 
@@ -76,6 +78,6 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 
 
 [SelectionSets 元素 (格式)](./selectionsets-element-format.md)
 
-[Types 元素 (格式) ](./types-element-for-selectionset-format.md)
+[類型元素 (格式) ](./types-element-for-selectionset-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

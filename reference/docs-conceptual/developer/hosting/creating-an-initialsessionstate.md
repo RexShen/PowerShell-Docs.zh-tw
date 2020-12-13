@@ -1,30 +1,32 @@
 ---
-title: 建立 InitialSessionState |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 建立 InitialSessionState
+description: 建立 InitialSessionState
+ms.openlocfilehash: d58a32c2ae8a22132f3095d093e3cb322f65c486
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779721"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649418"
 ---
 # <a name="creating-an-initialsessionstate"></a>建立 InitialSessionState
 
-PowerShell 命令會在運行空間中執行。
+PowerShell 命令會在執行空間中執行。
 若要在您的應用程式中裝載 PowerShell，您必須建立[system.servicemodel 物件。](/dotnet/api/System.Management.Automation.Runspaces.Runspace)
-每個執行時間都有相關聯的[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
-InitialSessionState 指定運行空間的特性，例如可供該運行空間使用的命令、變數和模組。
+每個執行時間都有與其相關聯的 [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件。
+>initialsessionstate 會指定運行空間的特性，例如可供該運行空間使用的命令、變數和模組。
 
-## <a name="create-a-default-initialsessionstate"></a>建立預設 InitialSessionState
+## <a name="create-a-default-initialsessionstate"></a>建立預設 >initialsessionstate
 
-**InitialSessionState**類別的[CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)和[CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)方法可以用來建立**InitialSessionState**物件。
-**CreateDefault**方法會建立已載入所有內建命令的**InitialSessionState** ，而**CreateDefault2**方法只會載入裝載 PowerShell 所需的命令， (來自) 的命令。
+**>initialsessionstate** 類別的 [CreateDefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)和 [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)方法可以用來建立 **>initialsessionstate** 物件。
+**CreateDefault** 方法會建立一個 **>initialsessionstate** ，其中包含所有載入的內建命令，而 **CreateDefault2** 方法只會載入裝載 PowerShell 的必要命令， () 的命令。
 
-如果您想要進一步限制主機應用程式中可用的命令，您必須建立受限的運行空間。
-如需相關資訊，請參閱[建立受限的運行空間](creating-a-constrained-runspace.md)。
+如果您想要進一步限制主機應用程式中可用的命令，您必須建立受限的運行時。
+如需詳細資訊，請參閱 [建立受限的運行](creating-a-constrained-runspace.md)時。
 
-下列程式碼示範如何建立**InitialSessionState**、將它指派給執行時間、將命令新增至該執行時間中的管線，以及叫用命令。
-如需新增和叫用命令的詳細資訊，請參閱[新增和](adding-and-invoking-commands.md)叫用命令。
+下列程式碼示範如何建立 **>initialsessionstate**、將它指派給執行時間、將命令新增至該執行時間中的管線，以及叫用命令。
+如需新增和叫用命令的詳細資訊，請參閱 [新增和](adding-and-invoking-commands.md)叫用命令。
 
 ```csharp
 namespace SampleHost

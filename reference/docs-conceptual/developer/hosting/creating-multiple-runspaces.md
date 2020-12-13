@@ -1,20 +1,22 @@
 ---
-title: 建立多個空間 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1047492d2b859ae14ddd279e25e5e1dff0013820
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 建立多個 Runspace
+description: 建立多個 Runspace
+ms.openlocfilehash: 2dc9cc0397178d679a4d418b7b19fb0895a4e1b7
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779620"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649392"
 ---
 # <a name="creating-multiple-runspaces"></a>建立多個 Runspace
 
-如果您建立大量的運行空間，您可能會考慮建立運行空間集區。 使用[Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool)物件，而不是以相同的特性建立大量的個別執行，可以改善效能。
+如果您建立大量的運行空間，可以考慮建立運行空間集區。 使用 [Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) 物件，而不是使用相同的特性來建立大量的個別執行空間，可以改善效能。
 
 ## <a name="creating-and-using-a-runspace-pool"></a>建立和使用運行空間集區。
 
- 下列範例將示範如何建立執行時間集區，以及如何在集區的執行時間中以非同步方式執行命令。
+ 下列範例顯示如何建立執行時間集區，以及如何在集區的執行時間中以非同步方式執行命令。
 
 ```csharp
 namespace HostRunspacePool

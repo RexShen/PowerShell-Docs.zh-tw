@@ -1,26 +1,28 @@
 ---
-title: GetProcessSample05 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample05 範例
+description: GetProcessSample05 範例
+ms.openlocfilehash: d4bfaf52b00bb68cf11d8bbebf72487472d73f6e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784192"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646514"
 ---
 # <a name="getprocesssample05-sample"></a>GetProcessSample05 範例
 
-這個範例會顯示完整版的 Get Proc Cmdlet。
+此範例顯示 Get-Proc Cmdlet 的完整版本。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
-1. 開啟 Windows Explorer 並流覽至 Samples 目錄底下的 GetProcessSample05 目錄。
+1. 開啟 Windows 檔案總管，然後流覽至範例目錄下的 GetProcessSample05 目錄。
 
-   安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample05 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05。
+   安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 GetProcessSample05 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
    範例的程式庫會建立在預設的 \bin 或 \bin\debug 目錄中。
 
@@ -38,11 +40,11 @@ ms.locfileid: "87784192"
 
    `Import-module getprossessample05`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
    `get-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -56,7 +58,7 @@ ms.locfileid: "87784192"
 
 - 指定參數的位置。
 
-- 指定參數可以接受來自管線的輸入。 輸入可以從物件取得，或從屬性名稱與參數名稱相同之物件的屬性值。
+- 指定參數可以從管線取得輸入。 輸入可以從物件取得，或從屬性名稱與參數名稱相同的物件屬性取得值。
 
 - 宣告參數輸入的驗證屬性。
 
@@ -66,7 +68,7 @@ ms.locfileid: "87784192"
 
 ## <a name="example"></a>範例
 
-這個範例示範如何建立 Cmdlet，以顯示指定的進程清單。
+這個範例示範如何建立可顯示指定進程清單的 Cmdlet。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

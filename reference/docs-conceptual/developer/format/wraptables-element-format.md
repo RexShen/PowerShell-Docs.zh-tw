@@ -1,16 +1,18 @@
 ---
-title: WrapTables 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bb0bf4785eed0c2d271e01968cf2ccbc862d94c7
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WrapTables 元素 (格式)
+description: WrapTables 元素 (格式)
+ms.openlocfilehash: 005aea73126b7187645c3aa34cc318b142c56666
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772309"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647793"
 ---
 # <a name="wraptables-element-format"></a>WrapTables 元素 (格式)
 
-指定如果資料的長度超過資料行的寬度，則會將資料表單元格中的資料移至下一行。
+指定當資料的長度超過資料行的寬度時，資料表資料格中的資料會移至下一行。
 
 Configuration 元素 (格式) DefaultSettings 元素 (格式) WrapTables 元素 (格式) 
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) DefaultSettings 元素 (格式) WrapTables 元素 
 
 |元素|描述|
 |-------------|-----------------|
-|[DefaultSettings 元素 (格式)](./defaultsettings-element-format.md)|定義套用至格式化檔案所有視圖的一般設定。|
+|[DefaultSettings 元素 (格式)](./defaultsettings-element-format.md)|定義適用于格式檔案所有視圖的一般設定。|
 
 ## <a name="remarks"></a>備註
 

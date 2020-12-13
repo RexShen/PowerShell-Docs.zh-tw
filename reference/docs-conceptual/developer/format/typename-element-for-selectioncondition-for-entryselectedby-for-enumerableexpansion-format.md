@@ -1,18 +1,20 @@
 ---
-title: SelectionCondition for 之 entryselectedby for EnumerableExpansion (Format 的 TypeName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f47384be10705b913d52b5cc8cb4ecf9ba83f17c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
+description: EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
+ms.openlocfilehash: 1ed638f9b2194745f9ac9cab9aa3331985924886
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787337"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92649724"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 的 TypeName 元素 (格式)
 
-指定觸發條件的 .NET 類型。
+指定觸發條件的 .NET 型別。
 
-Configuration 元素 DefaultSettings 元素 (格式) EnumerableExpansions 元素 (格式) EnumerableExpansions 專案 (格式) EnumerableExpansion (格式) SelectionCondition 元素（之 entryselectedby for EnumerableExpansion 的 SelectionCondition (TypeName 元素)  (格式) 
+Configuration Element DefaultSettings 元素 (格式) EnumerableExpansions 元素 (格式) EnumerableExpansions 元素 (格式) EnumerableExpansion 的 SelectionCondition (格式) 之 entryselectedby 專案 EnumerableExpansion (格式) SelectionCondition for 之 entryselectedby 的 EnumerableExpansion (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 DefaultSettings 元素 (格式) EnumerableExpansions 元素
 
 |元素|描述|
 |-------------|-----------------|
-|[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在的條件，才能展開這個定義的集合物件。|
+|[EnumerableExpansion 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)|定義必須存在才能展開這個定義之集合物件的條件。|
 
 ## <a name="text-value"></a>文字值
 

@@ -1,18 +1,20 @@
 ---
-title: WideControl (格式的之 wideitem 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6b2f7c97978c20350caeec894589c5995ae7ccc4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl 的 WideItem 元素 (格式)
+description: WideControl 的 WideItem 元素 (格式)
+ms.openlocfilehash: b9c416bbe3befcd689b8a2c0b72a8ff1301b9659
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779891"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647806"
 ---
 # <a name="wideitem-element-for-widecontrol-format"></a>WideControl 的 WideItem 元素 (格式)
 
 定義顯示其值的屬性或腳本。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 元素 (格式) WideEntries 專案 (格式) WideEntry 專案 (格式) 之 wideitem 元素 (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) WideControl 元素 (格式) WideEntries 元素 (格式) WideEntry 專案 (格式) 之 wideitem 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -26,7 +28,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案和元素的父元素 `WideItem` 。 `FormatString` 則是選擇性元素。 不過，您必須指定 `PropertyName` 或專案 `ScriptBlock` ，但不能同時指定這兩個專案。
+下列章節說明屬性、子專案和元素的父元素 `WideItem` 。 `FormatString` 則是選擇性元素。 不過，您必須指定 `PropertyName` 或 `ScriptBlock` 元素，但不能同時指定兩者。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,9 +38,9 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[WideControl 之 WideItem 的 FormatString 元素 (格式)](./formatstring-element-for-wideitem-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定定義屬性或腳本值在視圖中顯示方式的格式模式。|
+|[WideControl 之 WideItem 的 FormatString 元素 (格式)](./formatstring-element-for-wideitem-for-widecontrol-format.md)|選擇性項目。<br /><br /> 指定格式模式，定義屬性或腳本值在視圖中的顯示方式。|
 |[之 wideitem (格式的 PropertyName 元素) ](./propertyname-element-for-wideitem-for-widecontrol-format.md)|指定物件的屬性，其值會顯示在寬視圖中。|
-|[之 wideitem (格式的 ScriptBlock 元素) ](./scriptblock-element-for-wideitem-for-widecontrol-format.md)|指定在寬視圖中顯示其值的腳本。|
+|[之 wideitem (格式的 ScriptBlock 元素) ](./scriptblock-element-for-wideitem-for-widecontrol-format.md)|指定以寬視圖顯示其值的腳本。|
 
 ### <a name="parent-elements"></a>父項目
 
@@ -48,7 +50,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如需有關寬視圖元件的詳細資訊，請參閱[Wide view](./creating-a-wide-view.md)。
+如需廣泛視圖元件的詳細資訊，請參閱 [Wide view](./creating-a-wide-view.md)。
 
 ## <a name="example"></a>範例
 
@@ -62,7 +64,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 </WideEntry>
 ```
 
-如需寬視圖的完整範例，請參閱[寬視圖 (基本) ](./wide-view-basic.md)。
+如需完整的完整範例，請參閱 [ (基本) 的寬量視圖 ](./wide-view-basic.md)。
 
 ## <a name="see-also"></a>另請參閱
 

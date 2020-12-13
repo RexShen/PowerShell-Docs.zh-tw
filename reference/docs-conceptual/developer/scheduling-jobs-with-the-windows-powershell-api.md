@@ -1,20 +1,22 @@
 ---
-title: 透過 Windows PowerShell API 對作業進行排程
 ms.date: 09/13/2016
-ms.openlocfilehash: 19962d3140b6e20164c378e63a317b888120e13b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 透過 Windows PowerShell API 對作業進行排程
+description: 透過 Windows PowerShell API 對作業進行排程
+ms.openlocfilehash: c42b3ea311a5db4dcb6e11bb587f01f3deefe49b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786725"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92647131"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>透過 Windows PowerShell API 對作業進行排程
 
-您可以使用 N:Microsoft.PowerShell.ScheduledJob 命名空間所公開的物件來建立排程工作、定義執行的時間，以及取得已完成之工作執行後的結果。
+您可以使用 N:Microsoft.PowerShell.ScheduledJob 命名空間所公開的物件來建立排程工作、定義其執行的時間，以及取得已完成作業執行後的相關結果。
 
 ## <a name="triggering-the-job"></a>觸發作業
 
-建立排程工作的第一個步驟是指定作業應該執行的時間。 若要這麼做，請建立並設定 T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger 物件。 下列程式碼會建立一個觸發程式，將作業排程為在未來20秒執行一次。
+建立排程工作的第一個步驟是在作業執行時指定。 若要這麼做，請建立並設定 T:Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger 物件。 下列程式碼會建立一個觸發程式，將作業排程為在未來20秒執行一次。
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -28,18 +30,18 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>定義作業
 
-您可以藉由建立參數字典來定義 Windows PowerShell 作業。 支援下列參數。
+您可以藉由建立參數字典來定義 Windows PowerShell 的作業。 支援下列參數。
 
 |參數名稱|描述|
 |---|---|
 |名稱|作業的名稱。|
-|ScriptBock|指定作業作用的 Windows PowerShell 腳本區塊。|
-|FilePath|包含 Windows PowerShell 腳本區塊的檔案路徑，指定工作的用途。|
-|InitializationScript|初始化工作的 Windows PowerShell 腳本區塊。|
-|ArgumentList|物件的陣列，指定作業所需的引數。|
-|RunAs32|布林值，指定是否要在32位進程中執行作業。|
+|ScriptBock|指定作業用途的 Windows PowerShell 腳本區塊。|
+|FilePath|檔案的路徑，該檔案包含指定作業用途 Windows PowerShell 腳本區塊。|
+|InitializationScript|初始化作業的 Windows PowerShell 腳本區塊。|
+|ArgumentList|物件的陣列，這個陣列會指定作業所採用的引數。|
+|RunAs32|布林值，指定是否要在32位處理常式中執行作業。|
 
-下列程式碼會建立參數字典物件，並設定 Name 和 ScriptBlock 參數。
+下列程式碼會建立一個參數字典物件，並設定名稱和 ScriptBlock 參數。
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -53,7 +55,7 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>建立調用和作業定義物件
 
-接著，您可以建立 ScheduledJobInvocationInfo 和 ScheduledJobDefinition 物件來執行作業。 下列程式碼可示範這項處理。
+然後，您可以建立 ScheduledJobInvocationInfo 和 >scheduledjobdefinition 物件來執行此作業。 下列程式碼可示範這項處理。
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -68,7 +70,7 @@ schedJobDefinition = new ScheduledJobDefinition(
                                                 // in default Task Scheduler process, account.
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>向工作排程器註冊作業
+## <a name="registering-the-job-with-the-task-scheduler"></a>使用工作排程器註冊作業
 
 下列程式碼會向 Windows 工作排程器註冊作業。
 
