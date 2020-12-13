@@ -1,34 +1,36 @@
 ---
-title: RemoteRunspace01 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f9ae846d70412858b32bfe32ba5bfbf2063d9eb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RemoteRunspace01 範例
+description: RemoteRunspace01 範例
+ms.openlocfilehash: 13c6213089700e779eb185fe48a67c1616fad437
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783206"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658011"
 ---
-# <a name="remoterunspace01-sample"></a><span data-ttu-id="f1a79-102">RemoteRunspace01 範例</span><span class="sxs-lookup"><span data-stu-id="f1a79-102">RemoteRunspace01 Sample</span></span>
+# <a name="remoterunspace01-sample"></a><span data-ttu-id="62db6-103">RemoteRunspace01 範例</span><span class="sxs-lookup"><span data-stu-id="62db6-103">RemoteRunspace01 Sample</span></span>
 
-<span data-ttu-id="f1a79-103">這個範例會示範如何建立用來建立遠端連線的遠端執行時間。</span><span class="sxs-lookup"><span data-stu-id="f1a79-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
+<span data-ttu-id="62db6-104">這個範例示範如何建立用來建立遠端連線的遠端執行時間。</span><span class="sxs-lookup"><span data-stu-id="62db6-104">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="f1a79-104">需求</span><span class="sxs-lookup"><span data-stu-id="f1a79-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="62db6-105">規格需求</span><span class="sxs-lookup"><span data-stu-id="62db6-105">Requirements</span></span>
 
- <span data-ttu-id="f1a79-105">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="f1a79-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="62db6-106">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="62db6-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="f1a79-106">示範</span><span class="sxs-lookup"><span data-stu-id="f1a79-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="62db6-107">示範</span><span class="sxs-lookup"><span data-stu-id="62db6-107">Demonstrates</span></span>
 
-- <span data-ttu-id="f1a79-107">建立 Wsmanconnectioninfo 物件的的[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。</span><span class="sxs-lookup"><span data-stu-id="f1a79-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="62db6-108">正在建立 [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件的。</span><span class="sxs-lookup"><span data-stu-id="62db6-108">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="f1a79-108">設定 system.servicemodel. [Runspaceconnectioninfo. Operationtimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)物件的屬性（property），請將其設為.. 管理[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。</span><span class="sxs-lookup"><span data-stu-id="f1a79-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="62db6-109">設定 [Runspaceconnectioninfo. Operationtimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) 和 [Runspaceconnectioninfo... Opentimeout \*. \*. \*.](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件的屬性。</span><span class="sxs-lookup"><span data-stu-id="62db6-109">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="f1a79-109">建立使用[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的遠端運行時，以建立遠端連線。</span><span class="sxs-lookup"><span data-stu-id="f1a79-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="62db6-110">建立遠端運行空間，以使用 [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件來建立遠端連線。</span><span class="sxs-lookup"><span data-stu-id="62db6-110">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="f1a79-110">關閉遠端運行空間以釋放遠端連線。</span><span class="sxs-lookup"><span data-stu-id="f1a79-110">Closing the remote runspace to release the remote connection.</span></span>
+- <span data-ttu-id="62db6-111">關閉遠端運行空間以釋出遠端連線。</span><span class="sxs-lookup"><span data-stu-id="62db6-111">Closing the remote runspace to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="f1a79-111">範例</span><span class="sxs-lookup"><span data-stu-id="f1a79-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="62db6-112">範例</span><span class="sxs-lookup"><span data-stu-id="62db6-112">Example</span></span>
 
-<span data-ttu-id="f1a79-112">這個範例會定義遠端連線，然後使用該連接資訊來建立遠端連線。</span><span class="sxs-lookup"><span data-stu-id="f1a79-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
+<span data-ttu-id="62db6-113">這個範例會定義遠端連線，然後使用該連接資訊來建立遠端連線。</span><span class="sxs-lookup"><span data-stu-id="62db6-113">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
