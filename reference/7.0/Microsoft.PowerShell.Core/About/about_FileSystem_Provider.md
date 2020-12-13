@@ -2,16 +2,16 @@
 description: FileSystem
 keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 06/18/2019
+ms.date: 11/13/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem 提供者
-ms.openlocfilehash: fad55a7fb7651dbb006e1765c513bf2546a73891
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 085d714fce8475dd3eeee656d1cd17db02e772a6
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390825"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661387"
 ---
 # <a name="filesystem-provider"></a>FileSystem 提供者
 
@@ -25,7 +25,7 @@ FileSystem
 
 ## <a name="capabilities"></a>功能
 
-**篩選** 、 **ShouldProcess**
+**篩選**、 **ShouldProcess**
 
 ## <a name="short-description"></a>簡短描述
 
@@ -35,12 +35,12 @@ FileSystem
 
 PowerShell **FileSystem** 提供者可讓您在 powershell 中取得、新增、變更、清除和刪除檔案和目錄。
 
-**FileSystem** 磁片磁碟機是階層式命名空間，其中包含您電腦上的目錄和檔案。 **FileSystem** 磁片磁碟機可以是邏輯或 phsyical 磁片磁碟機、目錄或對應的網路共用。
+**FileSystem** 磁片磁碟機是階層式命名空間，其中包含您電腦上的目錄和檔案。 **FileSystem** 磁片磁碟機可以是邏輯或實體磁片磁碟機、目錄或對應的網路共用。
 
 名為的磁片磁碟機 `TEMP:` 將會對應至使用者的臨時目錄路徑。
 
 >[!NOTE]
-> TEMP：磁片磁碟機中的內容不會被 PowerShell 自動移除，而是由使用者或作業系統進行管理。
+> TEMP：磁片磁碟機中的內容不會被 PowerShell 自動移除，而是由使用者或作業系統進行管理。 這項功能已移出 PowerShell 7.0 版中的實驗性功能
 
 **FileSystem** 提供者支援下列 Cmdlet，這些 Cmdlet 將在本文中討論。
 
@@ -65,11 +65,11 @@ PowerShell **FileSystem** 提供者可讓您在 powershell 中取得、新增、
 
 ## <a name="types-exposed-by-this-provider"></a>此提供者公開的類型
 
-檔案是 [FileInfo](/dotnet/api/system.io.fileinfo) 類別的實例。  目錄是 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) 類別的實例。
+檔案是 [FileInfo](/dotnet/api/system.io.fileinfo) 類別的實例。 目錄是 [DirectoryInfo](/dotnet/api/system.io.directoryinfo) 類別的實例。
 
 ## <a name="navigating-the-filesystem-drives"></a>流覽檔案系統磁片磁碟機
 
-**FileSystem** 提供者會將電腦上的任何邏輯磁碟機對應為 PowerShell 磁片磁碟機，以公開其資料存放區。 若要使用 **檔案系統** 磁片磁碟機，您可以將位置變更為磁片磁碟機，uing 磁片磁碟機名稱後面接著冒號 (`:`) 。
+**FileSystem** 提供者會將電腦上的任何邏輯磁碟機對應為 PowerShell 磁片磁碟機，以公開其資料存放區。 若要使用 **檔案系統** 磁片磁碟機，您可以使用磁片磁碟機名稱，後面接著冒號 () ，將您的位置變更為磁片磁碟機 `:` 。
 
 ```powershell
 Set-Location C:
@@ -340,18 +340,18 @@ Get-ChildItem -Attributes Compressed,Encrypted
 
 指定檔案的編碼方式。 預設值為 ASCII。
 
-- **Ascii** ：使用 ascii (7 位) 字元集的編碼方式。
-- **BigEndianUnicode** ：使用位元組由大到小的位元組順序，以 Utf-16 格式編碼。
-- **字串** ：使用字串的編碼類型。
-- **Unicode** ：使用位元組由大到小的位元組順序，以 Utf-16 格式編碼。
-- **UTF7** ：以 Utf-7 格式編碼。
-- **UTF8** ：以 Utf-8 格式編碼。
-- **UTF8BOM** ：使用 (BOM) 的位元組順序標記來編碼 utf-8 格式
-- **UF8NOBOM** ：以不含位元組順序標記的 Utf-8 格式來編碼 (BOM) 
-- **UTF32** ：以 UTF-32 格式編碼。
-- **預設** ：在預設安裝的字碼頁中進行編碼。
-- **OEM** ：對 MS-DOS 和主控台程式使用預設編碼。
-- **未知** ：編碼類型未知或無效。 資料可視為二進位檔。
+- **Ascii**：使用 ascii (7 位) 字元集的編碼方式。
+- **BigEndianUnicode**：使用位元組由大到小的位元組順序，以 Utf-16 格式編碼。
+- **字串**：使用字串的編碼類型。
+- **Unicode**：使用位元組由大到小的位元組順序，以 Utf-16 格式編碼。
+- **UTF7**：以 Utf-7 格式編碼。
+- **UTF8**：以 Utf-8 格式編碼。
+- **UTF8BOM**：使用 (BOM) 的位元組順序標記來編碼 utf-8 格式
+- **UF8NOBOM**：以不含位元組順序標記的 Utf-8 格式來編碼 (BOM) 
+- **UTF32**：以 UTF-32 格式編碼。
+- **預設**：在預設安裝的字碼頁中進行編碼。
+- **OEM**：對 MS-DOS 和主控台程式使用預設編碼。
+- **未知**：編碼類型未知或無效。 資料可視為二進位檔。
 
 #### <a name="cmdlets-supported"></a>支援的 Cmdlet
 
@@ -564,6 +564,6 @@ Get-Help Get-ChildItem
 Get-Help Get-ChildItem -Path c:
 ```
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 [about_Providers](../About/about_Providers.md)

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 description: 此文件提供最佳做法，可協助部署 DSC 提取伺服器的工程師完成其工作。
 keywords: dsc,powershell,設定,安裝
 title: 提取伺服器最佳做法
-ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6c754e6d035cc714a86da86ec916ba2c7f833268
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664323"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389380"
 ---
 # <a name="pull-server-best-practices"></a>提取伺服器最佳做法
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 包含名為 DSC 服務的功能。 DSC 服務功能提�
 
 ### <a name="dsc-resource"></a>DSC 資源
 
-佈建使用 DSC 設定指令碼的服務，可以簡化提取伺服器部署。 本文件包含可用來部署生產就緒伺服器節點的設定指令碼。 若要使用設定指令碼，需要不包含在 Windows Server 中的 DSC 模組。 所需模組名稱是 **xPSDesiredStateConfiguration** ，其中包含 DSC 資源 **xDscWebService** 。 您可以在[這裡](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)下載 xPSDesiredStateConfiguration 模組。
+佈建使用 DSC 設定指令碼的服務，可以簡化提取伺服器部署。 本文件包含可用來部署生產就緒伺服器節點的設定指令碼。 若要使用設定指令碼，需要不包含在 Windows Server 中的 DSC 模組。 所需模組名稱是 **xPSDesiredStateConfiguration**，其中包含 DSC 資源 **xDscWebService**。 您可以在[這裡](https://github.com/dsccommunity/xPSDesiredStateConfiguration)下載 xPSDesiredStateConfiguration 模組。
 
 使用 **PowerShellGet** 模組的 `Install-Module` Cmdlet。
 
@@ -202,14 +202,14 @@ New-DscChecksum -ConfigurationPath .\ -OutPath .\
 
 #### <a name="dsc-configurations"></a>DSC 組態
 
-提取伺服器的目的是提供集中式機制，將 DSC 設定散發到用戶端節點。 設定在伺服器上儲存為 MOF 文件。 每份文件都會以唯一的 **GUID** 命名。 當用戶端設定成要與提取伺服器連線時，也會收到其應要求的設定 **GUID** 。 這個依 **GUID** 參考設定的系統能保證全域唯一性，而且十分靈活，讓設定能夠以細微到節點的程度套用，也能以角色設定形式套用，以橫跨多個應該具有相同設定的伺服器。
+提取伺服器的目的是提供集中式機制，將 DSC 設定散發到用戶端節點。 設定在伺服器上儲存為 MOF 文件。 每份文件都會以唯一的 **GUID** 命名。 當用戶端設定成要與提取伺服器連線時，也會收到其應要求的設定 **GUID**。 這個依 **GUID** 參考設定的系統能保證全域唯一性，而且十分靈活，讓設定能夠以細微到節點的程度套用，也能以角色設定形式套用，以橫跨多個應該具有相同設定的伺服器。
 
 #### <a name="guids"></a>GUID
 
 當您在考量整個提取伺服器部署時，設定 **GUID** 的規劃值得多加留意。 處理 **GUID** 的方式並沒有明確要求，而且每個環境的程序很可能各不相同。 程序從簡單到複雜︰集中儲存的 CSV 檔案、簡易 SQL 資料表、CMDB 或需要整合其他工具或軟體方案的複雜解決方案。 有兩種一般方法︰
 
-- **依伺服器指派 GUID** ：提供確保個別控制每部伺服器設定的量值。 這會提供更新前後一定程度的準確性，在只有幾部伺服器的環境中運作良好。
-- **依伺服器角色指派 GUID** ：執行相同函式的所有伺服器 (例如網頁伺服器) 都使用相同的 GUID 參考所需的設定資料。 請注意，如果有許多伺服器共用相同的 GUID，設定變更時，它們全部都會同時更新。
+- **依伺服器指派 GUID**：提供確保個別控制每部伺服器設定的量值。 這會提供更新前後一定程度的準確性，在只有幾部伺服器的環境中運作良好。
+- **依伺服器角色指派 GUID**：執行相同函式的所有伺服器 (例如網頁伺服器) 都使用相同的 GUID 參考所需的設定資料。 請注意，如果有許多伺服器共用相同的 GUID，設定變更時，它們全部都會同時更新。
 
   GUID 應該視為機密資訊，因為它可用來進行惡意攻擊，取得您環境如何部署與設定伺服器的情報。 如需詳細資訊，請參閱 [Securely allocating Guids in PowerShell Desired State Configuration Pull Mode](https://devblogs.microsoft.com/powershell/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/) (在 PowerShell Desired State Configuration 提取模式中安全地配置 GUID)。
 

@@ -6,12 +6,12 @@ ms.date: 02/10/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 關於 PSReadLine
-ms.openlocfilehash: 890f8e92172f2d492b6b817b558d4f25c70e8949
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: f5ae99a7c8bdae82372423a3e4d8261d95ab83d5
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206560"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692202"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -21,7 +21,7 @@ ms.locfileid: "93206560"
 
 PSReadLine 在 PowerShell 主控台中提供改良的命令列編輯體驗。
 
-## <a name="long-description"></a>詳細描述
+## <a name="long-description"></a>完整描述
 
 PSReadLine 2.0 為 PowerShell 主控台提供功能強大的命令列編輯體驗。 它提供：
 
@@ -35,10 +35,10 @@ PSReadLine 2.0 為 PowerShell 主控台提供功能強大的命令列編輯體�
 - Emacs yank/kill-環形
 - 以 PowerShell 權杖為基礎的「單字」移動和終止
 
-下列函式可在類別 **[PSConsoleReadLine]** 中使用。
-
 > [!NOTE]
 > 從 PowerShell 7.0 開始，如果偵測到螢幕讀取程式，PowerShell 會略過在 Windows 上自動載入 PSReadLine。 PSReadLine 目前無法與螢幕讀取器順利搭配運作。 Windows 上 PowerShell 7.0 的預設轉譯和格式可正常運作。 如有必要，您可以手動載入模組。
+
+下列函式可在類別 **[PSConsoleReadLine]** 中使用。
 
 ## <a name="basic-editing-functions"></a>基本編輯函數
 
@@ -1288,10 +1288,6 @@ bool TryGetArgAsInt(System.Object arg, [ref] int numericArg,
 ```
 
 ## <a name="note"></a>注意
-
-### <a name="powershell-compatibility"></a>POWERSHELL 相容性
-
-PSReadLine 需要 PowerShell 3.0 或更新版本，以及主控台主機。 它無法在 PowerShell ISE 中運作。 它會在 Visual Studio Code 的主控台中運作。
 
 ### <a name="command-history"></a>命令歷程記錄
 

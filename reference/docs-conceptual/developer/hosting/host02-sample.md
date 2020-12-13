@@ -1,34 +1,36 @@
 ---
-title: Host02 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ed95cdcdcf20de6687f463b9d560a69510638c79
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host02 範例
+description: Host02 範例
+ms.openlocfilehash: 7bb07dec3fd6b7ac5844d247a7a06cbda67c619e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772247"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355454"
 ---
 # <a name="host02-sample"></a>Host02 範例
 
-這個範例示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機的文化特性設定為德文、執行 [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) Cmdlet，並顯示您使用 pwrsh.exe 時會看到的結果，然後以德文列印目前的日期和時間。
+這個範例會示範如何撰寫使用 Windows PowerShell 執行時間以及自訂主機執行的主應用程式。 主應用程式會將主機的文化特性設定為德文、執行 [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) Cmdlet，並顯示您使用 pwrsh.exe 時會看到的結果，然後以德文列印目前的日期和時間。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
- 此範例需要 Windows PowerShell 2.0。
+此範例需要 Windows PowerShell 2.0。
 
 ## <a name="demonstrates"></a>示範
 
-- 建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別（class）的實例（system. 管理層。）。
+- 建立自訂主控制項，其類別衍生自 [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 類別、 [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 類別，以及 [PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 類別的自訂主控制項（自訂主機的類別）。
 
 - 建立使用自訂主機的運行時。
 
 - 將主機文化特性設定為德文。
 
-- 建立會執行腳本來抓取和排序處理常式的[system.web](/dotnet/api/system.management.automation.powershell)物件，然後取得以德文顯示的目前日期。
+- 建立執行腳本的 [系統管理](/dotnet/api/system.management.automation.powershell) 物件，以取出並排序處理常式，然後抓取以德文顯示的目前日期。
 
-## <a name="example"></a>範例
+## <a name="example-1"></a>範例 1
 
- 下列程式碼顯示使用自訂主機的主應用程式的執行。
+下列程式碼顯示使用自訂主應用程式的主應用程式的執行。
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -125,9 +127,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-2"></a>範例 2
 
- 下列程式碼是這個主應用程式所使用的[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別的執行方式。 未執行的元素會擲回例外狀況或不傳回任何專案。
+下列程式碼是這個主應用程式所使用之 [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 類別的實作為。 未實作為的元素會擲回例外狀況或不傳回任何專案。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -307,9 +309,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-3"></a>範例 3
 
- 下列程式碼是這個主應用程式所使用的[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別的執行方式。
+下列程式碼是這個主應用程式所使用之 [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 類別的實作為。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -558,9 +560,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-4"></a>範例 4
 
- 下列程式碼是這個主應用程式所使用的[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的執行方式。 未執行的元素會擲回例外狀況或不傳回任何專案。
+下列程式碼是這個主應用程式所使用之 [PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 類別的實作為。 未實作為的元素會擲回例外狀況或不傳回任何專案。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -779,10 +781,10 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## <a name="see-also"></a>另請參閱
 
- [[系統管理]。 Powershell](/dotnet/api/system.management.automation.powershell)
+ [系統管理。 Powershell](/dotnet/api/system.management.automation.powershell)
 
- [System.web. PSHost。](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [PSHost （管理）](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.web. Pshostuserinterface。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [Pshostuserinterface （管理）](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.web. Pshostrawuserinterface。](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [Pshostrawuserinterface （管理）](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

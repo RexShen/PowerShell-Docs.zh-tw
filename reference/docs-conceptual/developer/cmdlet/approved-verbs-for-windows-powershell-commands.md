@@ -4,10 +4,10 @@ ms.topic: reference
 title: 已核准的 PowerShell 命令動詞
 description: 已核准的 PowerShell 命令動詞
 ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355097"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>已核准的 PowerShell 命令動詞
@@ -18,7 +18,7 @@ PowerShell 會針對 Cmdlet 的名稱與其所衍生 .NET 類別使用成對的�
 > [!NOTE]
 > 即使單字並非英文語言的標準動詞，PowerShell 還是會使用「動詞」一詞來描述此隱含動作的單字。 例如，即使 _New_ 一詞並非英文語言的動詞，因為其隱含動作，所以還是有效的 PowerShell 動詞名稱。
 
-每個已核准的動詞都擁有所定義對應的 _別名前置詞_ 。 我們會在使用該動詞的命令別名中，使用此別名前置詞。 例如，`Import` 的別名前置詞為 `ip`；相對地，`Import-Module` 的別名為 `ipmo`。 這是建議而非規則；特別是其無須遵守命令別名，就能從其他環境模擬已知的命令。
+每個已核准的動詞都擁有所定義對應的 _別名前置詞_。 我們會在使用該動詞的命令別名中，使用此別名前置詞。 例如，`Import` 的別名前置詞為 `ip`；相對地，`Import-Module` 的別名為 `ipmo`。 這是建議而非規則；特別是其無須遵守命令別名，就能從其他環境模擬已知的命令。
 
 ## <a name="verb-naming-recommendations"></a>動詞命名建議
 

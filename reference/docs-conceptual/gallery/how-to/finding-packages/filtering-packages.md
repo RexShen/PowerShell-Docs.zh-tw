@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: 篩選搜尋結果
 description: 此文章描述用來篩選 PowerShell 資源庫內容的使用者介面。
-ms.openlocfilehash: cc375f3ddb35c95ed134776500bd326bc3db6b1a
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a769daae903e614b96be1056e3ff14eca41970bd
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661409"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389822"
 ---
 # <a name="filtering-search-results"></a>篩選搜尋結果
 
@@ -22,7 +22,7 @@ ms.locfileid: "92661409"
 - Include Prerelease (包括發行前版本)
 - Stable Only (僅限穩定)
 
-如需「發行前版本」與「穩定版本」的相關資訊，請參閱 PowerShell 小組部落格中的 [PowerShellGet 與 PowerShell 資源庫新增了發行前版本的版本設定](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) \(英文\)。
+如需「發行前版本」與「穩定版本」的相關資訊，請參閱 PowerShell 小組部落格中的 [PowerShellGet 與 PowerShell 資源庫新增了發行前版本的版本設定](https://devblogs.microsoft.com/powershell/prerelease-versioning-added-to-powershellget-and-powershell-gallery/) \(英文\)。
 
 下拉式清單之下的核取方塊可讓使用者依據下列條件來篩選結果：
 

@@ -1,31 +1,33 @@
 ---
-title: 撰寫導覽提供者 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2fd27314a2b8547a15dd1bb72aa8f970d40b18cc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 撰寫瀏覽提供者
+description: 撰寫瀏覽提供者
+ms.openlocfilehash: 3123672d3365c97714557bd0e72a6e444ac228a0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786776"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355216"
 ---
 # <a name="writing-a-navigation-provider"></a>撰寫瀏覽提供者
 
-本主題描述如何執行 Windows PowerShell 提供者的方法，以支援 (多層級資料存放區的嵌套容器，) 、移動專案和相對路徑。 導覽提供者必須是衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別。
+本主題說明如何執行 Windows PowerShell 提供者的方法，以支援 (多層級資料存放區) 、移動專案和相對路徑的嵌套容器。 流覽提供者必須衍生自 >navigationCmdletprovider 類別，才能使用此 [功能](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 。
 
-本主題的範例中的提供者會使用 Access 資料庫作為其資料存放區。 有數個 helper 方法和類別可用來與資料庫互動。 如需包含 helper 方法的完整範例，請參閱[AccessDBProviderSample05](./accessdbprovidersample05.md)。
+本主題中的範例提供者使用 Access 資料庫作為其資料存放區。 有幾個 helper 方法和類別可用來與資料庫互動。 如需包含 helper 方法的完整範例，請參閱 [AccessDBProviderSample05](./accessdbprovidersample05.md)。
 
-如需 Windows PowerShell 提供者的詳細資訊，請參閱[Windows Powershell 提供者總覽](./windows-powershell-provider-overview.md)。
+如需有關 Windows PowerShell 提供者的詳細資訊，請參閱 [Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)。
 
-## <a name="implementing-navigation-methods"></a>執行導覽方法
+## <a name="implementing-navigation-methods"></a>執行流覽方法
 
-[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別會實作為支援嵌套容器、相對路徑和移動專案的方法。 如需這些方法的完整清單，請參閱[NavigationCmdletProvider 方法](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods)。
+[>navigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別會實作為支援嵌套容器、相對路徑和移動專案的方法。 如需這些方法的完整清單，請參閱 [>navigationCmdletprovider 方法](/dotnet/api/system.management.automation.provider.navigationcmdletprovider#methods)。
 
 > [!NOTE]
-> 本主題是以[Windows PowerShell 提供者快速入門](./windows-powershell-provider-quickstart.md)中的資訊為基礎。 本主題未涵蓋如何設定提供者專案的基本概念，或如何執行繼承自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別的方法，以建立和移除磁片磁碟機。 本主題也不會涵蓋如何執行[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)或[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別所公開的方法，而不會有任何說明。 如需示範如何執行 item Cmdlet 的範例，請參閱[撰寫專案提供者](./writing-an-item-provider.md)。 如需示範如何執行容器 Cmdlet 的範例，請參閱[撰寫容器提供者](./writing-a-container-provider.md)。
+> 本主題是以 [Windows PowerShell 提供者快速入門](./windows-powershell-provider-quickstart.md)中的資訊為基礎。 本主題並未涵蓋如何設定提供者專案的基本概念，或如何執行繼承自 [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) 類別的方法，以建立和移除磁片磁碟機。 本主題也不會討論如何實 [system.management.automation.provider.itemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) 或 [ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) 類別所公開的方法，以執行此項操作。 如需示範如何執行專案 Cmdlet 的範例，請參閱 [撰寫專案提供者](./writing-an-item-provider.md)。 如需示範如何執行容器 Cmdlet 的範例，請參閱 [撰寫容器提供者](./writing-a-container-provider.md)。
 
 ### <a name="declaring-the-provider-class"></a>宣告提供者類別
 
-宣告提供者，以衍生自[NavigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)類別，並使用[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)來裝飾該服務的程式，並將其裝飾。
+宣告提供者，以衍生自 [>navigationCmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 類別，並使用 Cmdletproviderattribute 來裝飾該提供者的裝飾 [元件](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)。
 
 ```
 [CmdletProvider("AccessDB", ProviderCapabilities.None)]
@@ -37,7 +39,7 @@ ms.locfileid: "87786776"
 
 ### <a name="implementing-isitemcontainer"></a>執行 IsItemContainer
 
-[NavigationCmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)方法會檢查指定路徑中的專案是否為一個容器。
+[>navigationCmdletprovider. Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)方法會檢查位於指定路徑的專案是否為容器，。
 
 ```csharp
 protected override bool IsItemContainer(string path)
@@ -70,7 +72,7 @@ protected override bool IsItemContainer(string path)
 
 ### <a name="implementing-getchildname"></a>執行 GetChildName
 
-[NavigationCmdletprovider. Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)方法會取得位於指定路徑之子專案的 name 屬性（property）。 如果指定路徑的專案不是容器的子系，則這個方法應該會傳回路徑。
+[>navigationCmdletprovider. Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)方法會取得指定路徑之子專案的 name 屬性（property）。 如果指定路徑的專案不是容器的子系，則這個方法應該會傳回路徑。
 
 ```csharp
 protected override string GetChildName(string path)
@@ -104,7 +106,7 @@ protected override string GetChildName(string path)
 
 ### <a name="implementing-getparentpath"></a>執行 GetParentPath
 
-[NavigationCmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)方法會取得位於指定路徑的專案之父系的路徑（parent）。 如果指定路徑的專案是資料存放區的根 (因此沒有父) ，則這個方法應該會傳回根路徑。
+[>navigationCmdletprovider. Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)方法會取得位於指定路徑之專案的父代路徑（）。 如果指定路徑的專案是資料存放區的根目錄 (因此沒有父) ，則這個方法應該會傳回根路徑。
 
 ```csharp
 protected override string GetParentPath(string path, string root)
@@ -125,7 +127,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>執行 MakePath
 
-[NavigationCmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法會聯結指定的父路徑和指定的子路徑，以建立提供者內部路徑 (如需提供者可支援之路徑類型的相關資訊，請參閱[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)。 當使用者呼叫[JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
+[>navigationCmdletprovider. Makepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)方法會聯結指定的父路徑和指定的子路徑來建立提供者內部路徑 (如需提供者可支援之路徑類型的詳細資訊，請參閱[Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)。 當使用者呼叫 [JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -184,7 +186,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>執行 NormalizeRelativePath
 
-[NavigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法會採用 `path` 和 `basepath` 參數，並傳回相當於參數的正規化路徑， `path` 以及與參數相對的 `basepath` 。
+[>navigationCmdletprovider. Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)方法會採用 `path` 和 `basepath` 參數，並傳回相當於參數的正規化路徑 `path` 和參數的相對路徑 `basepath` 。
 
 ```csharp
 protected override string NormalizeRelativePath(string path,
@@ -214,7 +216,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>執行 MoveItem
 
-[NavigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法會將專案從指定的路徑移動到指定的目的地路徑。 當使用者呼叫[MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
+[>navigationCmdletprovider. Moveitem *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)方法會將專案從指定的路徑移動到指定的目的地路徑。 當使用者呼叫 [MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
 
 ```csharp
 protected override void MoveItem(string path, string destination)

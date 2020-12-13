@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 description: 此文章描述的建議步驟可確保發佈至 PowerShell 資源庫的套件會受到廣泛採用，並為使用者提供高價值。
 title: PowerShell 資源庫發行指導方針與最佳做法
-ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 97af3761fad1efb849b7197761a3855c9f1b05a4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656144"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391165"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell 資源庫發行指導方針與最佳做法
 
@@ -188,17 +188,17 @@ PowerShell 的建立時間是在 SemVer 發行前，因此它支援 SemVer 的�
 PowerShell 資源庫並不適合作為測試發行程序的目標。 若要測試發行至 PowerShell 資源庫的端點對端點程序，最佳方式為設定並使用您自己的本機存放庫。 這可以由以下方法達成：
 
 - 在 GitHub 中使用 [PS 私人資源庫專案](https://github.com/PowerShell/PSPrivateGallery)來設定本機 PowerShell 資源庫執行個體。 此預覽專案會協助您設定 PowerShell 資源庫執行個體，讓您可以控制及用於測試。
-- 設定[內部 NuGet 存放庫](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/)。
+- 設定[內部 NuGet 存放庫](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/)。
   這個方法的設定較為複雜，但是能夠驗證更多需求。值得注意的是，不論您發行時目標是否有相依性，都能使用 API 金鑰進行驗證。
 - 將檔案共用設定為測試「存放庫」  。 這很容易設定，但因為其為檔案共用，所以無法執行上述的驗證。 在此案例中，因為檔案共用不會檢查 (必要的) API 金鑰，所以您可以使用發行到 PowerShell 資源庫的相同金鑰，這可以說是潛在優點。
 
-有了上述任何解決方案，請使用 `Register-PSRepository` 來定義新 **存放庫** ，您可以在 `Publish-Module` 的 `-Repository` 參數中使用它。
+有了上述任何解決方案，請使用 `Register-PSRepository` 來定義新 **存放庫**，您可以在 `Publish-Module` 的 `-Repository` 參數中使用它。
 
 另外為測試發行補充一點：您發行到 PowerShell 資源庫的任何套件都必須在營運團隊的協助下才能刪除，因此他們會確認沒有任何內容相依於您要發行的套件。 基於此原因，我們不支援將 PowerShell 資源庫用作測試目標，且會與任何這樣做的發行者連絡。
 
 ## <a name="use-powershellget-to-publish"></a>使用 PowerShellGet 發佈
 
-強烈建議發行者搭配 PowerShell 資源庫使用 `Publish-Module` 和 `Publish-Script` Cmdlet。 已建立 **PowerShellGet** ，因此您不需要記住透過發佈至 PowerShell 資源庫進行安裝的重要詳細資料。 有時候，發行者會選擇略過 **PowerShellGet** 並使用 **NuGet** 用戶端或 **PackageManagement** Cmdlet，而不是使用 `Publish-Module`。 有幾個容易忽略的詳細資料會導致各種不同的支援要求。
+強烈建議發行者搭配 PowerShell 資源庫使用 `Publish-Module` 和 `Publish-Script` Cmdlet。 已建立 **PowerShellGet**，因此您不需要記住透過發佈至 PowerShell 資源庫進行安裝的重要詳細資料。 有時候，發行者會選擇略過 **PowerShellGet** 並使用 **NuGet** 用戶端或 **PackageManagement** Cmdlet，而不是使用 `Publish-Module`。 有幾個容易忽略的詳細資料會導致各種不同的支援要求。
 
 如果您有無法使用 `Publish-Module` 或 `Publish-Script` 的原因，請讓我們知道。
 請在 **PowerShellGet** GitHub 存放庫中提出問題，並提供導致您選擇 **NuGet** 或 **PackageManagement** 的詳細原因。

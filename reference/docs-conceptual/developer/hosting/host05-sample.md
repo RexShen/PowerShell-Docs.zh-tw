@@ -1,46 +1,45 @@
 ---
-title: Host05 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 043d359fe6db6ebfa68d97002bdb8e5842e4aca5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host05 範例
+description: Host05 範例
+ms.openlocfilehash: 87769fc3b3c4991cd4f94e97415ac5ab0b81f6da
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783257"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355403"
 ---
 # <a name="host05-sample"></a>Host05 範例
 
-這個範例示範如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 這個主應用程式也支援使用 [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 和 [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) Cmdlet 呼叫遠端電腦。
+這個範例示範如何建立互動式主控台主機應用程式，以從命令列讀取命令、執行命令，然後將結果顯示在主控台中。 這個主應用程式也支援使用 [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) 和 [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) Cmdlet 呼叫遠端電腦。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 - 此範例需要 Windows PowerShell 2.0。
 
-- 此應用程式必須在提高許可權的模式下執行 (以系統管理員身分執行) 。
+- 此應用程式必須在提高許可權的模式下執行， (以系統管理員身分執行) 。
 
 ## <a name="demonstrates"></a>示範
 
-- 建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別（class）的實例（system. 管理層。）。
+- 建立自訂主控制項，其類別衍生自 [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 類別，以及 [Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 類別的自訂主控制項（自訂主機的類別）。
 
-- 建立主控台應用程式，以使用這些主機類別來建立互動式 Windows PowerShell shell。
+- 建立主控台應用程式，該應用程式會使用這些主機類別來建立互動式的 Windows PowerShell shell。
 
 - 建立 `$profile` 變數並載入下列設定檔。
 
-  - 目前的使用者，目前的主控制項
-
+  - 目前的使用者，目前的主機
   - 目前的使用者，所有主機
-
   - 所有使用者、目前的主機
-
   - 所有使用者、所有主機
 
-- 將[Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)介面執行為。
+- 將 [IHostUISupportsMultipleChoiceSelection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) 介面執行為。
 
-- 使用[Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)和[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) Cmdlet 來執行 Ihostsupportsinteractivesession 介面，以支援互動式遠端[功能](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)。
+- 使用[輸入-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)和[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) Cmdlet 來執行[IHostSupportsInteractiveSession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)介面，以支援互動式遠端處理。
 
-## <a name="example"></a>範例
+## <a name="example-1"></a>範例 1
 
- 這個範例可讓使用者在命令列中輸入命令、處理這些命令，然後列印結果。
+此範例可讓使用者在命令列輸入命令、處理這些命令，然後印出結果。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -394,9 +393,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-2"></a>範例 2
 
- 下列程式碼是這個主應用程式所使用的[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別的執行方式。 未執行的元素會擲回例外狀況或不傳回任何專案。
+下列程式碼是這個主應用程式所使用之 [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 類別的實作為。 未實作為的元素會擲回例外狀況或不傳回任何專案。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -627,9 +626,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-3"></a>範例 3
 
- 下列程式碼是這個主應用程式所使用的[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別的執行方式。
+下列程式碼是這個主應用程式所使用之 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 類別的實作為。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1146,9 +1145,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-4"></a>範例 4
 
- 下列程式碼是這個主應用程式所使用的[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的執行方式。 未執行的元素會擲回例外狀況或不傳回任何專案。
+下列程式碼是這個主應用程式所使用之 [Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 類別的實作為。 未實作為的元素會擲回例外狀況或不傳回任何專案。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1360,8 +1359,8 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## <a name="see-also"></a>另請參閱
 
- [System.web. PSHost。](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [PSHost （管理）](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.web. Pshostuserinterface。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [Pshostuserinterface （管理）](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.web. Pshostrawuserinterface。](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [Pshostrawuserinterface （管理）](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

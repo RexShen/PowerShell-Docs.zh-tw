@@ -1,29 +1,26 @@
 ---
-title: Events01 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c7b0f759ca6f3c078649a462eac1713e8214a237
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Events01 範例
+description: Events01 範例
+ms.openlocfilehash: ed8b7903537504609602e27693351847d322f904
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774452"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "94390400"
 ---
 # <a name="events01-sample"></a>Events01 範例
 
-這個範例會示範如何建立 Cmdlet，讓使用者註冊[FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher)所引發的事件。
-使用此 Cmdlet 時，使用者可以註冊在特定目錄下建立檔案時要執行的動作。
-這個範例是衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基類。
+這個範例會示範如何建立 Cmdlet，讓使用者註冊 [FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher)所引發的事件。 使用此 Cmdlet 時，使用者可以在特定目錄下建立檔案時，註冊要執行的動作。 此範例會衍生自 [ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) 基類。
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 來建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 Events01 資料夾。
-   預設位置為 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 Events01 資料夾。 預設位置為 `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。
-   這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
-   範例的程式庫會建立在預設 `\bin` 或 `\bin\debug` 資料夾中。
+3. 在 [建置] 功能表中，選取 [建置方案]。 範例的程式庫會建立在預設 `\bin` 或 `\bin\debug` 資料夾中。
 
 ### <a name="how-to-run-the-sample"></a>如何執行範例
 
@@ -35,19 +32,19 @@ ms.locfileid: "87774452"
 
 3. 啟動 Windows PowerShell。
 
-4. 執行下列命令，將 Cmdlet 載入 Windows PowerShell：
+4. 執行下列命令，以將 Cmdlet 載入 Windows PowerShell：
 
     ```powershell
     import-module events01
     ```
 
-5. 使用 FileSystemEvent 指令程式註冊在臨時目錄下建立檔案時，將會寫入訊息的動作。
+5. 使用 Register-FileSystemEvent Cmdlet 註冊在臨時目錄下建立檔案時，將會寫入訊息的動作。
 
     ```powershell
     Register-FileSystemEvent $env:temp Created -filter "*.txt" -action { Write-Host "A file was created in the TEMP directory" }
     ```
 
-6. 在 TEMP 目錄下建立檔案，並請注意，會執行動作 (訊息會) 顯示。
+6. 在臨時目錄下建立檔案，並請注意， () 顯示訊息時，就會執行此動作。
 
 這是依照下列步驟所產生的範例輸出。
 
@@ -66,7 +63,7 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -76,12 +73,11 @@ A file was created in the TEMP directory
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>如何撰寫事件註冊的 Cmdlet
 
-此 Cmdlet 衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)類別，可提供 Cmdlet 通用參數的支援 `Register-*Event` 。
-衍生自[自 objecteventregistrationbase Cmdlet](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)的 Cmdlet 只需要定義其特定參數，並覆寫 `GetSourceObject` 和 `GetSourceObjectEventName` 抽象方法。
+Cmdlet 衍生自 [ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) 類別，其提供 Cmdlet 通用參數的支援， `Register-*Event` 。 衍生自 [ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase) 的 Cmdlet 只需要定義其特定參數，並覆寫 `GetSourceObject` 和 `GetSourceObjectEventName` 抽象方法。
 
 ## <a name="example"></a>範例
 
-這個範例示範如何註冊[FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher)所引發的事件。
+這個範例會示範如何註冊 [FileSystemWatcher](/dotnet/api/System.IO.FileSystemWatcher)所引發的事件。
 
 ```csharp
 namespace Sample
@@ -122,7 +118,7 @@ namespace Sample
         /// Gets or sets the name of the event to which the cmdlet registers.
         /// <para>
         /// Currently System.IO.FileSystemWatcher exposes 6 events: Changed, Created,
-        /// Deleted, Disposed, Error, and Renamed. Check the MSDN documentation of
+        /// Deleted, Disposed, Error, and Renamed. Check the documentation of
         /// FileSystemWatcher for details on each event.
         /// </para>
         /// </summary>

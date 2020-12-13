@@ -1,30 +1,32 @@
 ---
-title: Host03 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: cba6e82c86da581b676adfebe3409e9555b63c84
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Host03 範例
+description: Host03 範例
+ms.openlocfilehash: 8fcdb294f6bf2bea6a7204bd91b003f5789565c3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783291"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93355437"
 ---
 # <a name="host03-sample"></a>Host03 範例
 
-這個範例示範如何建立互動式主控台主機應用程式，從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
+這個範例示範如何建立互動式主控台主機應用程式，以從命令列讀取命令、執行命令，然後將結果顯示在主控台中。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
- 此範例需要 Windows PowerShell 2.0。
+此範例需要 Windows PowerShell 2.0。
 
 ## <a name="demonstrates"></a>示範
 
-- 建立自訂主控制項，其類別衍生自[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別、 [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別，以及[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別（class）的實例（system. 管理層。）。
+- 建立自訂主控制項，其類別衍生自 [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 類別、 [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 類別，以及 [PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 類別的自訂主控制項（自訂主機的類別）。
 
-- 建立主控台應用程式，以使用這些主機類別來建立互動式 Windows PowerShell shell。
+- 建立主控台應用程式，該應用程式會使用這些主機類別來建立互動式的 Windows PowerShell shell。
 
-## <a name="example"></a>範例
+## <a name="example-1"></a>範例 1
 
- 這個範例可讓使用者在命令列中輸入命令、處理這些命令，然後列印結果。
+此範例可讓使用者在命令列輸入命令、處理這些命令，然後印出結果。
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -310,9 +312,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-2"></a>範例 2
 
- 下列程式碼是這個主應用程式所使用的[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)類別的執行方式。 未執行的元素會擲回例外狀況或不傳回任何專案。
+下列程式碼是這個主應用程式所使用之 [PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) 類別的實作為。 未實作為的元素會擲回例外狀況或不傳回任何專案。
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -551,9 +553,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-3"></a>範例 3
 
- 下列程式碼是這個主應用程式所使用的[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)類別的執行方式。
+下列程式碼是這個主應用程式所使用之 [PSHostUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) 類別的實作為。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -956,9 +958,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a>範例
+## <a name="example-4"></a>範例 4
 
- 下列程式碼是這個主應用程式所使用的[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)類別的執行方式。 未執行的元素會擲回例外狀況或不傳回任何專案。
+下列程式碼是這個主應用程式所使用之 [PSHostRawUserInterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) 類別的實作為。 未實作為的元素會擲回例外狀況或不傳回任何專案。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1170,8 +1172,8 @@ namespace Microsoft.Samples.PowerShell.Host
 
 ## <a name="see-also"></a>另請參閱
 
- [System.web. PSHost。](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [PSHost （管理）](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [System.web. Pshostuserinterface。](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [Pshostuserinterface （管理）](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [System.web. Pshostrawuserinterface。](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [Pshostrawuserinterface （管理）](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

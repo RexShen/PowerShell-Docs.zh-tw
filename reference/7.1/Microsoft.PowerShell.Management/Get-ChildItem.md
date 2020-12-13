@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-ChildItem
-ms.openlocfilehash: c29a938fc73b8b69ea1bbf96f12f5d42d16f79bf
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0bcd46e49559ad625621a7ff81162af695f6f93c
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93205116"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661319"
 ---
 # Get-ChildItem
 
@@ -72,7 +72,7 @@ d-----        2/15/2019     08:29                Logs
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-依預設，會 `Get-ChildItem` 列出 ( **屬性** ) 、 **LastWriteTime** 、檔案大小 ( **長度** ) 和專案 **名稱** 的模式。 **模式** 屬性中的字母可解讀如下：
+依預設，會 `Get-ChildItem` 列出 (**屬性**) 、 **LastWriteTime**、檔案大小 (**長度**) 和專案 **名稱** 的模式。 **模式** 屬性中的字母可解讀如下：
 
 - `l` (連結) 
 - `d` (directory) 
@@ -173,13 +173,13 @@ Mode                LastWriteTime         Length Name
 -ar---        2/12/2019     14:31             27 ReadOnlyFile.txt
 ```
 
-此 `Get-ChildItem` Cmdlet 會使用 **Path** 參數來指定目錄 **C:\Test** 。 **Path** 參數包含尾端星號 (`*`) 萬用字元來指定目錄的內容。
+此 `Get-ChildItem` Cmdlet 會使用 **Path** 參數來指定目錄 **C:\Test**。 **Path** 參數包含尾端星號 (`*`) 萬用字元來指定目錄的內容。
 **Include** 參數使用星號 (`*`) 萬用字元來指定副檔名為 **.txt** 的所有檔案。
 
-使用 **Include** 參數時， **Path** 參數需要尾端星號 (`*`) 萬用字元來指定目錄的內容。 例如： `-Path C:\Test\*` 。
+使用 **Include** 參數時， **Path** 參數需要尾端星號 (`*`) 萬用字元來指定目錄的內容。 例如 `-Path C:\Test\*`。
 
-- 如果將 **遞迴** 參數加入至命令，則 Path 參數中的尾端星號 (`*`) **Path** 是選擇性的。 **遞迴** 參數會從 **路徑** 目錄及其子目錄中取得專案。 例如， `-Path C:\Test\ -Recurse -Include *.txt`
-- 如果尾端的星號 (`*`) 不包含在 **Path** 參數中，則此命令不會傳回任何輸出，並返回 PowerShell 提示字元。 例如： `-Path C:\Test\` 。
+- 如果將 **遞迴** 參數加入至命令，則 Path 參數中的尾端星號 (`*`) 是選擇性的。 **遞迴** 參數會從 **路徑** 目錄及其子目錄中取得專案。 例如， `-Path C:\Test\ -Recurse -Include *.txt`
+- 如果尾端的星號 (`*`) 不包含在 **Path** 參數中，則此命令不會傳回任何輸出，並返回 PowerShell 提示字元。 例如 `-Path C:\Test\`。
 
 ### 範例5：使用 Exclude 參數取得子專案
 
@@ -217,7 +217,7 @@ d-----        2/15/2019     13:21                Backup
 ```
 
 此 `Get-ChildItem` Cmdlet 會使用 **Path** 參數來指定目錄 `C:\Test\Logs` 。
-**Exclude** 參數會使用星號 (`*`) 萬用字元來指定以或開頭的任何檔案或目錄 **A** ，並 **a** 從輸出中排除。
+**Exclude** 參數會使用星號 (`*`) 萬用字元來指定以或開頭的任何檔案或目錄 ，並從輸出中排除。
 
 使用 **Exclude** 參數時， `*` **Path** 參數中 () 的尾端星號是選擇性的。 例如，`-Path C:\Test\Logs` 或 `-Path C:\Test\Logs\*`。
 
@@ -307,7 +307,7 @@ d-----        2/14/2019     10:22                SubDir_Level3
 -a----        2/13/2019     08:55             26 file.txt
 ```
 
-此 `Get-ChildItem` Cmdlet 會使用 **Path** 參數來指定 **C:\Parent** 。 **Depth** 參數會指定兩個層級的遞迴。 `Get-ChildItem` 顯示 **Path** 參數所指定之目錄的內容，以及兩個子目錄層級。
+此 `Get-ChildItem` Cmdlet 會使用 **Path** 參數來指定 **C:\Parent**。 **Depth** 參數會指定兩個層級的遞迴。 `Get-ChildItem` 顯示 **Path** 參數所指定之目錄的內容，以及兩個子目錄層級。
 
 ### 範例9：取得永久連結資訊
 
@@ -317,9 +317,9 @@ d-----        2/14/2019     10:22                SubDir_Level3
 Get-ChildItem -Path C:\PathContainingHardLink | Format-Table -View childrenWithHardLink
 ```
 
-### 範例9：實驗性功能 PSUnixFileStat 的輸出
+### 範例9：非 Windows 作業系統的輸出
 
-在 Unix 系統上的 PowerShell 7 中，實驗性功能 **PSUnixFileStat** 提供類似 Unix 的輸出：
+在 Unix 系統上的 PowerShell 7.1 中， `Get-ChildItem` 提供類似 Unix 的輸出：
 
 ```powershell
 PS> Get-ChildItem /etc/r*
@@ -349,6 +349,9 @@ lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/reso
 - **群組** 是群組擁有者
 - **大小** 是 Unix 系統上表示的檔案或目錄大小
 
+> [!NOTE]
+> 這項功能已從實驗性移至 PowerShell 7.1 中的主流。
+
 ## 參數
 
 ### -Attributes
@@ -359,7 +362,7 @@ lrwxr-xr-x root wheel  11/8/2019 15:35   22 resolv.conf -> /private/var/run/reso
 
 `Get-ChildItem -Attributes !Directory+!System+Encrypted, !Directory+!System+Compressed`
 
-若要尋找具有常用屬性的檔案和資料夾，請使用 **attributes** 參數。 或參數 **目錄** 、 **File** 、 **Hidden** 、 **ReadOnly** 和 **System** 。
+若要尋找具有常用屬性的檔案和資料夾，請使用 **attributes** 參數。 或參數 **目錄**、 **File**、 **Hidden**、 **ReadOnly** 和 **System**。
 
 **Attributes** 參數支援下列屬性：
 
@@ -433,7 +436,7 @@ Accept wildcard characters: False
 
 ### -Directory
 
-若要取得目錄清單，請使用 **directory** 參數或 **Attributes** 參數搭配 **directory** 屬性。 您可以使用 **遞迴** 參數搭配 **目錄** 。
+若要取得目錄清單，請使用 **directory** 參數或 **Attributes** 參數搭配 **directory** 屬性。 您可以使用 **遞迴** 參數搭配 **目錄**。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -468,7 +471,7 @@ Accept wildcard characters: True
 
 ### -File
 
-若要取得檔案的清單，請使用 **File** 參數。 您可以使用 **遞迴** 參數搭配 **File** 。
+若要取得檔案的清單，請使用 **File** 參數。 您可以使用 **遞迴** 參數搭配 **File**。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

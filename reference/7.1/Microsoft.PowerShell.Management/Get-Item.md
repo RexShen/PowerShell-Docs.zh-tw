@@ -7,12 +7,12 @@ ms.date: 03/27/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-item?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Item
-ms.openlocfilehash: 25d07028430d6ad6719136bd484d39e116d81516
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d9c8d13f992e6631ff5982b4a33542c661991562
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204523"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661353"
 ---
 # Get-Item
 
@@ -130,9 +130,9 @@ Get-Item C:\Windows\*.* -Exclude "w*"
 Get-Item -Path C:\PathWhichIsAHardLink | Format-Table -View childrenWithHardlink
 ```
 
-### 範例9：實驗性功能 PSUnixFileStat 的輸出
+### 範例9：非 Windows 作業系統的輸出
 
-在 Unix 系統上的 PowerShell 7 中，實驗性功能 **PSUnixFileStat** 提供類似 Unix 的輸出：
+在 Unix 系統上的 PowerShell 7.1 中，此 `Get-Item` Cmdlet 提供類似 Unix 的輸出：
 
 ```powershell
 PS> Get-Item /Users
@@ -152,6 +152,9 @@ drwxr-xr-x  root  admin   12/20/2019 11:46   192   Users
 - **使用者** 是檔案擁有者
 - **群組** 是群組擁有者
 - **大小** 是 Unix 系統上表示的檔案或目錄大小
+
+> [!NOTE]
+> 這項功能已從實驗性移至 PowerShell 7.1 中的主流。
 
 ## PARAMETERS
 
@@ -315,7 +318,7 @@ Accept wildcard characters: True
 若要以遞迴方式取得專案的內容，請使用 `Get-ChildItem` 。
 
 若要流覽登錄，請使用此 Cmdlet 來取得登錄機碼和， `Get-ItemProperty` 以取得登錄值和資料。 登錄值可視為是登錄機碼的屬性。
-  
+
 此 Cmdlet 是針對與任何提供者公開的資料搭配使用所設計。 若要列出工作階段中可用的提供者，請輸入 `Get-PsProvider`。 如需詳細資訊，請參閱 [about_Providers](../Microsoft.PowerShell.Core/About/about_Providers.md)。
 
 ## 相關連結

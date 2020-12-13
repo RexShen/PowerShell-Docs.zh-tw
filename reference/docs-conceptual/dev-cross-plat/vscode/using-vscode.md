@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 開發 PowerShell
 description: 使用 Visual Studio Code 開發 PowerShell
 ms.date: 11/07/2019
-ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 8a4ceb3da669716915449af2d211aaf2ae61bb4f
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782526"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390284"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>使用 Visual Studio Code 開發 PowerShell
 
@@ -42,9 +42,9 @@ ms.locfileid: "87782526"
 
    下列為每個平台的安裝指示：
 
-   - **Windows**：遵循[在 Windows 上執行 Visual Studio Code][vsc-setup-win] \(英文\) 頁面的安裝指示操作。
-   - **macOS**：遵循[在 macOS 上執行 Visual Studio Code][vsc-setup-macOS] \(英文\) 頁面的安裝指示操作。
-   - **Linux**：遵循[在 Linux 上執行 Visual Studio Code][vsc-setup-linux] \(英文\) 頁面的安裝指示操作。
+   - **Windows**：遵循 [在 Windows 上執行 Visual Studio Code][vsc-setup-win] \(英文\) 頁面的安裝指示操作。
+   - **macOS**：遵循 [在 macOS 上執行 Visual Studio Code][vsc-setup-macOS] \(英文\) 頁面的安裝指示操作。
+   - **Linux**：遵循 [在 Linux 上執行 Visual Studio Code][vsc-setup-linux] \(英文\) 頁面的安裝指示操作。
 
 1. 安裝 PowerShell 延伸模組。
 
@@ -76,7 +76,7 @@ Language server startup failed.
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-系統會提示您**要執行來自這個不受信任的發行者的軟體嗎？** 輸入 `A` 以執行檔案。 然後，開啟 Visual Studio Code 並檢查 PowerShell 延伸模組是否正常運作。 如果您仍有關於開始使用的問題，請透過 [GitHub 問題][]讓我們知道。
+系統會提示您 **要執行來自這個不受信任的發行者的軟體嗎？** 輸入 `A` 以執行檔案。 然後，開啟 Visual Studio Code 並檢查 PowerShell 延伸模組是否正常運作。 如果您仍有關於開始使用的問題，請透過 [GitHub 問題][]讓我們知道。
 
 > [!NOTE]
 > 適用於 Visual Studio Code 的 PowerShell 延伸模組不支援在限制語言模式中執行。 如需詳細資訊，請參閱 [GitHub 問題 #606][i606]。
@@ -88,7 +88,7 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 使用下列步驟來選擇版本：
 
 1. 按下 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 來開啟 Windows 或 Linux 上的 [命令選擇區]  。 若為 macOS，請按下 <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>。
-1. 搜尋**工作階段**。
+1. 搜尋 **工作階段**。
 1. 按一下 [PowerShell:  顯示工作階段功能表]。
 1. 從清單中選擇要使用的 PowerShell 版本，例如：**PowerShell Core**。
 
@@ -264,7 +264,7 @@ Visual Studio Code 會在工作區資料夾的根目錄中建立目錄與檔案 
 }
 ```
 
-此檔案表示常見的偵錯案例。 當在編輯器中開啟這個檔案時，您會看到 [新增設定...]  按鈕。 您可以按一下此按鈕來新增多個 PowerShell 偵錯設定。 PowerShell: **啟動指令碼**是可以新增的方便設定。 使用此設定時，您可以指定包含選擇性引數的檔案，無論編輯器中當時作用中的是哪個檔案，只要按下 <kbd>F5</kbd> 就會加以使用。
+此檔案表示常見的偵錯案例。 當在編輯器中開啟這個檔案時，您會看到 [新增設定...]  按鈕。 您可以按一下此按鈕來新增多個 PowerShell 偵錯設定。 PowerShell: **啟動指令碼** 是可以新增的方便設定。 使用此設定時，您可以指定包含選擇性引數的檔案，無論編輯器中當時作用中的是哪個檔案，只要按下 <kbd>F5</kbd> 就會加以使用。
 
 建立偵錯設定之後，您可以選取在偵錯工作階段期間想要使用的設定。 從 [偵錯]  檢視工具列的 [偵錯設定] 下拉式清單中選取設定。
 
@@ -317,7 +317,7 @@ Visual Studio Code 會在工作區資料夾的根目錄中建立目錄與檔案 
 [getting-started]:        https://devblogs.microsoft.com/scripting/get-started-with-powershell-development-in-visual-studio-code/
 [psdbgblog]:              https://johnpapa.net/debugging-with-visual-studio-code/
 [psdbg-gh]:               https://github.com/PowerShell/vscode-powershell/tree/master/examples
-[pscdn]:                  https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
+[pscdn]:                  https://docs.microsoft.com/archive/blogs/cdndevs/visual-studio-code-powershell-extension
 
 <!-- issues -->
 [GitHub 問題]:          https://github.com/PowerShell/vscode-powershell/issues

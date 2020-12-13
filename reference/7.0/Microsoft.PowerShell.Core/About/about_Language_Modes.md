@@ -6,12 +6,12 @@ ms.date: 09/09/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_language_modes?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Language_Modes
-ms.openlocfilehash: c560101dd70c94c131e3ca9d8e9958d3a278de40
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 2cf232fd170ee9175f40693579cca60f69ccbcdd
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93207392"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625732"
 ---
 # <a name="about-language-modes"></a>關於語言模式
 
@@ -199,13 +199,6 @@ ConstrainedLanguage
 當您 `$ExecutionContext.SessionState.LanguageMode` 在 NoLanguage 會話中執行命令時，PowerShell 會傳回 ScriptsNotAllowed 錯誤訊息。
 
 - ScriptsNotAllowed：此執行空間不支援語法。 這可能是因為它在無語言模式中。
-
-## <a name="keywords"></a>關鍵 字
-
-- about_ConstrainedLanguage
-- about_FullLanguage
-- about_NoLanguage
-- about_RestrictedLanguage
 
 ## <a name="see-also"></a>另請參閱
 

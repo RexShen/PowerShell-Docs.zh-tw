@@ -1,31 +1,33 @@
 ---
-title: 撰寫容器提供者 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: da91f18226d6e6c236c6a6e469db0f692af48abf
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 撰寫容器提供者
+description: 撰寫容器提供者
+ms.openlocfilehash: 17ec3e11258ee77a8e569df1af3a0e9bcd9798b6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786793"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "93354927"
 ---
 # <a name="writing-a-container-provider"></a>撰寫容器提供者
 
-本主題描述如何執行 Windows PowerShell 提供者的方法，以支援包含其他專案（例如檔案系統提供者中的資料夾）的專案。 若要能夠支援容器，提供者必須衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別（provider）。
+本主題說明如何執行 Windows PowerShell 提供者的方法，以支援包含其他專案的專案，例如檔案系統提供者中的資料夾。 若要能夠支援容器，提供者必須衍生自 [ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) 類別（provider）。
 
-本主題的範例中的提供者會使用 Access 資料庫作為其資料存放區。 有數個 helper 方法和類別可用來與資料庫互動。 如需包含 helper 方法的完整範例，請參閱[AccessDBProviderSample04](./accessdbprovidersample04.md)。
+本主題中的範例提供者使用 Access 資料庫作為其資料存放區。 有幾個 helper 方法和類別可用來與資料庫互動。 如需包含 helper 方法的完整範例，請參閱 [AccessDBProviderSample04](./accessdbprovidersample04.md)。
 
-如需 Windows PowerShell 提供者的詳細資訊，請參閱[Windows Powershell 提供者總覽](./windows-powershell-provider-overview.md)。
+如需有關 Windows PowerShell 提供者的詳細資訊，請參閱 [Windows PowerShell 提供者總覽](./windows-powershell-provider-overview.md)。
 
 ## <a name="implementing-container-methods"></a>執行容器方法
 
-[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別會實作為支援容器的方法，以及建立、複製和移除專案。 如需這些方法的完整清單，請參閱[ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods)。
+[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別會實作為支援容器的方法，以及建立、複製和移除專案。 如需這些方法的完整清單，請參閱 [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider#methods)。
 
 > [!NOTE]
-> 本主題是以[Windows PowerShell 提供者快速入門](./windows-powershell-provider-quickstart.md)中的資訊為基礎。 本主題未涵蓋如何設定提供者專案的基本概念，或如何執行繼承自[DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)類別的方法，以建立和移除磁片磁碟機。 本主題也不會涵蓋如何執行[ItemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)類別所公開的方法。 如需示範如何執行 item Cmdlet 的範例，請參閱[撰寫專案提供者](./writing-an-item-provider.md)。
+> 本主題是以 [Windows PowerShell 提供者快速入門](./windows-powershell-provider-quickstart.md)中的資訊為基礎。 本主題並未涵蓋如何設定提供者專案的基本概念，或如何執行繼承自 [DriveCmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) 類別的方法，以建立和移除磁片磁碟機。 本主題也不會討論如何實 [system.management.automation.provider.itemCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) 類別所公開的方法。 如需示範如何執行專案 Cmdlet 的範例，請參閱 [撰寫專案提供者](./writing-an-item-provider.md)。
 
 ### <a name="declaring-the-provider-class"></a>宣告提供者類別
 
-宣告提供者，以衍生自[ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)類別，並使用[Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)來裝飾該服務的程式，並將其裝飾。
+宣告提供者，以衍生自 [ContainerCmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) 類別，並使用 Cmdletproviderattribute 來裝飾該提供者的裝飾 [元件](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)。
 
 ```csharp
 [CmdletProvider("AccessDB", ProviderCapabilities.None)]
@@ -37,9 +39,9 @@ ms.locfileid: "87786793"
 
 ### <a name="implementing-getchilditems"></a>執行 GetChildItems
 
-當使用者呼叫[GetChildItemCommand 指令](/dotnet/api/Microsoft.PowerShell.Commands.Getchilditemcommand)程式時，PowerShell 引擎會呼叫[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法（此為系統管理員）。 這個方法會取得位於指定路徑之專案子系的專案。
+當使用者呼叫[GetChildItemCommand 指令](/dotnet/api/Microsoft.PowerShell.Commands.Getchilditemcommand)程式時，PowerShell 引擎會呼叫[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法（Cmdlet）。 這個方法會取得專案，而這些專案是位於指定路徑之專案的子系。
 
-在 Access 資料庫範例中， [ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法的行為取決於指定之專案的型別。 如果專案是磁片磁碟機，則子系是資料表，而方法會從資料庫傳回資料表的集合。 如果指定的專案是資料表，則子系是該資料表的資料列。 如果專案是資料列，則不會有任何子系，而且方法只會傳回該資料列。 所有子專案都會由[Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)方法傳送回 PowerShell 引擎。」。
+在 Access 資料庫範例中， [ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems) 方法的行為取決於指定之專案的型別。 如果專案是磁片磁碟機，則子系為數據表，而且方法會傳回資料庫中的一組資料表。 如果指定的專案是資料表，則子系是該資料表的資料列。 如果專案是資料列，則不會有子系，而且方法只會傳回該資料列。 所有子專案都是由 [Cmdletprovider. Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) 方法傳送回 PowerShell 引擎中。
 
 ```csharp
 protected override void GetChildItems(string path, bool recurse)
@@ -98,7 +100,7 @@ protected override void GetChildItems(string path, bool recurse)
 
 ### <a name="implementing-getchildnames"></a>執行 GetChildNames
 
-[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法與[ContainerCmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法類似，不同之處在于它只會傳回專案的 name 屬性，而不會傳回這些專案本身的名稱屬性。
+[ContainerCmdletprovider. Getchildnames *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)方法類似于[ContainerCmdletprovider.. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)方法，不同之處在于它只會傳回專案的 name 屬性，而不會傳回專案本身的名稱屬性。
 
 ```csharp
 protected override void GetChildNames(string path,
@@ -148,9 +150,9 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>執行 NewItem
 
-[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法會在指定的路徑上建立指定之類型的新專案。 當使用者呼叫[NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
+[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法會在指定的路徑上建立指定之類型的新專案。 當使用者呼叫 [NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
 
-在此範例中，方法會執行邏輯來判斷路徑和類型是否相符。 也就是說，只有一個資料表可以直接建立在 (資料庫) 的磁片磁碟機底下，而且只有一個資料列可以在資料表下建立。 如果指定的路徑和專案類型不符合此方式，則方法會擲回例外狀況。
+在此範例中，方法會執行邏輯，以判斷路徑和類型相符。 也就是說，只有資料表可以直接建立在資料庫)  (磁片磁碟機，而且只有在資料表下才能建立資料列。 如果指定的路徑和專案類型不符合此方式，則方法會擲回例外狀況。
 
 ```csharp
 protected override void NewItem(string path, string type,
@@ -326,9 +328,9 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>執行 CopyItem
 
-[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)會將指定的專案複製到指定的路徑。 當使用者呼叫[CopyItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.copyitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。 這個方法也可以是遞迴的，除了專案本身之外，還會複製所有專案子系。
+[ContainerCmdletProvider. CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)會將指定的專案複製到指定的路徑。 當使用者呼叫 [CopyItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.copyitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。 這個方法也可以是遞迴的，除了專案本身之外，也會複製所有專案子系。
 
-類似于[ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)方法，這個方法會執行邏輯，以確保指定的專案對於要複製的目標路徑而言是正確的類型。 例如，如果目的地路徑是一個資料表，則要複製的專案必須是一個資料列。
+類似于 [ContainerCmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) 方法，這個方法會執行邏輯，以確定指定的專案是否為其所要複製之路徑的正確類型。 例如，如果目的地路徑是資料表，則要複製的專案必須是資料列。
 
 ```csharp
 protected override void CopyItem(string path, string copyPath, bool recurse)
@@ -459,7 +461,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>執行 RemoveItem
 
-[ContainerCmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法會移除指定路徑中的專案。 當使用者呼叫[RemoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.removeitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
+[ContainerCmdletprovider. Removeitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)方法會移除指定路徑上的專案。 當使用者呼叫 [RemoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.removeitemcommand) Cmdlet 時，PowerShell 引擎會呼叫這個方法。
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)
@@ -531,7 +533,8 @@ protected override void RemoveItem(string path, bool recurse)
 
 ## <a name="next-steps"></a>後續步驟
 
-一般的真實世界提供者可以將專案從某個路徑移到磁片磁碟機內的另一個路徑。 如需支援移動專案之提供者的範例，請參閱[撰寫導覽提供者](./writing-a-navigation-provider.md)。
+一般的真實世界提供者能夠將專案從某個路徑移至磁片磁碟機中的另一個路徑。
+如需支援移動專案的提供者範例，請參閱 [撰寫流覽提供者](./writing-a-navigation-provider.md)。
 
 ## <a name="see-also"></a>另請參閱
 
