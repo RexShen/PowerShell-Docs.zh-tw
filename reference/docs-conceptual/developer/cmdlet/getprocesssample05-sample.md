@@ -1,72 +1,74 @@
 ---
-title: GetProcessSample05 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2332d260c6f470d435234c847a59e59fe56f809a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample05 範例
+description: GetProcessSample05 範例
+ms.openlocfilehash: d4bfaf52b00bb68cf11d8bbebf72487472d73f6e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784192"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92646514"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="7684d-102">GetProcessSample05 範例</span><span class="sxs-lookup"><span data-stu-id="7684d-102">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="529e3-103">GetProcessSample05 範例</span><span class="sxs-lookup"><span data-stu-id="529e3-103">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="7684d-103">這個範例會顯示完整版的 Get Proc Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="7684d-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="529e3-104">此範例顯示 Get-Proc Cmdlet 的完整版本。</span><span class="sxs-lookup"><span data-stu-id="529e3-104">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="7684d-104">如何使用 Visual Studio 建立範例。</span><span class="sxs-lookup"><span data-stu-id="7684d-104">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="529e3-105">如何使用 Visual Studio 建立範例。</span><span class="sxs-lookup"><span data-stu-id="529e3-105">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="7684d-105">開啟 Windows Explorer 並流覽至 Samples 目錄底下的 GetProcessSample05 目錄。</span><span class="sxs-lookup"><span data-stu-id="7684d-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="529e3-106">開啟 Windows 檔案總管，然後流覽至範例目錄下的 GetProcessSample05 目錄。</span><span class="sxs-lookup"><span data-stu-id="529e3-106">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="7684d-106">安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample05 資料夾。</span><span class="sxs-lookup"><span data-stu-id="7684d-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="7684d-107">預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05。</span><span class="sxs-lookup"><span data-stu-id="7684d-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="529e3-107">安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 GetProcessSample05 資料夾。</span><span class="sxs-lookup"><span data-stu-id="529e3-107">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="529e3-108">預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05。</span><span class="sxs-lookup"><span data-stu-id="529e3-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="7684d-108">按兩下方案的圖示 ( .sln) 檔案。</span><span class="sxs-lookup"><span data-stu-id="7684d-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="7684d-109">這會在 Visual Studio 中開啟範例專案。</span><span class="sxs-lookup"><span data-stu-id="7684d-109">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="529e3-109">按兩下方案 ( .sln) 檔案的圖示。</span><span class="sxs-lookup"><span data-stu-id="529e3-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="529e3-110">這會在 Visual Studio 中開啟範例專案。</span><span class="sxs-lookup"><span data-stu-id="529e3-110">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="7684d-110">在 [建置]\*\*\*\* 功能表中，選取 [建置方案]\*\*\*\*。</span><span class="sxs-lookup"><span data-stu-id="7684d-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="529e3-111">在 [建置] 功能表中，選取 [建置方案]。</span><span class="sxs-lookup"><span data-stu-id="529e3-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-   <span data-ttu-id="7684d-111">範例的程式庫會建立在預設的 \bin 或 \bin\debug 目錄中。</span><span class="sxs-lookup"><span data-stu-id="7684d-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="529e3-112">範例的程式庫會建立在預設的 \bin 或 \bin\debug 目錄中。</span><span class="sxs-lookup"><span data-stu-id="529e3-112">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="7684d-112">如何執行範例</span><span class="sxs-lookup"><span data-stu-id="7684d-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="529e3-113">如何執行範例</span><span class="sxs-lookup"><span data-stu-id="529e3-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="7684d-113">建立下列模組資料夾：</span><span class="sxs-lookup"><span data-stu-id="7684d-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="529e3-114">建立下列模組資料夾：</span><span class="sxs-lookup"><span data-stu-id="529e3-114">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="7684d-114">將範例元件複製到模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="7684d-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="529e3-115">將範例元件複製到模組資料夾。</span><span class="sxs-lookup"><span data-stu-id="529e3-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="7684d-115">啟動 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="7684d-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="529e3-116">啟動 Windows PowerShell。</span><span class="sxs-lookup"><span data-stu-id="529e3-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="7684d-116">執行下列命令，將元件載入 Windows PowerShell：</span><span class="sxs-lookup"><span data-stu-id="7684d-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="529e3-117">執行下列命令，將元件載入 Windows PowerShell：</span><span class="sxs-lookup"><span data-stu-id="529e3-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="7684d-117">執行下列命令來執行 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="7684d-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="529e3-118">執行下列命令以執行 Cmdlet：</span><span class="sxs-lookup"><span data-stu-id="529e3-118">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="7684d-118">需求</span><span class="sxs-lookup"><span data-stu-id="7684d-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="529e3-119">規格需求</span><span class="sxs-lookup"><span data-stu-id="529e3-119">Requirements</span></span>
 
-<span data-ttu-id="7684d-119">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="7684d-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="529e3-120">此範例需要 Windows PowerShell 2.0。</span><span class="sxs-lookup"><span data-stu-id="529e3-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="7684d-120">示範</span><span class="sxs-lookup"><span data-stu-id="7684d-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="529e3-121">示範</span><span class="sxs-lookup"><span data-stu-id="529e3-121">Demonstrates</span></span>
 
-<span data-ttu-id="7684d-121">這個範例會示範下列各項。</span><span class="sxs-lookup"><span data-stu-id="7684d-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="529e3-122">這個範例會示範下列各項。</span><span class="sxs-lookup"><span data-stu-id="529e3-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="7684d-122">使用 Cmdlet 屬性宣告 Cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="7684d-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="529e3-123">使用 Cmdlet 屬性宣告 Cmdlet 類別。</span><span class="sxs-lookup"><span data-stu-id="529e3-123">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="7684d-123">使用參數屬性宣告 Cmdlet 參數。</span><span class="sxs-lookup"><span data-stu-id="7684d-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="529e3-124">使用參數屬性宣告 Cmdlet 參數。</span><span class="sxs-lookup"><span data-stu-id="529e3-124">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="7684d-124">指定參數的位置。</span><span class="sxs-lookup"><span data-stu-id="7684d-124">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="529e3-125">指定參數的位置。</span><span class="sxs-lookup"><span data-stu-id="529e3-125">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="7684d-125">指定參數可以接受來自管線的輸入。</span><span class="sxs-lookup"><span data-stu-id="7684d-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="7684d-126">輸入可以從物件取得，或從屬性名稱與參數名稱相同之物件的屬性值。</span><span class="sxs-lookup"><span data-stu-id="7684d-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="529e3-126">指定參數可以從管線取得輸入。</span><span class="sxs-lookup"><span data-stu-id="529e3-126">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="529e3-127">輸入可以從物件取得，或從屬性名稱與參數名稱相同的物件屬性取得值。</span><span class="sxs-lookup"><span data-stu-id="529e3-127">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="7684d-127">宣告參數輸入的驗證屬性。</span><span class="sxs-lookup"><span data-stu-id="7684d-127">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="529e3-128">宣告參數輸入的驗證屬性。</span><span class="sxs-lookup"><span data-stu-id="529e3-128">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="7684d-128">處理錯誤和例外狀況。</span><span class="sxs-lookup"><span data-stu-id="7684d-128">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="529e3-129">處理錯誤和例外狀況。</span><span class="sxs-lookup"><span data-stu-id="529e3-129">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="7684d-129">撰寫 debug 訊息。</span><span class="sxs-lookup"><span data-stu-id="7684d-129">Writing debug messages.</span></span>
+- <span data-ttu-id="529e3-130">撰寫 debug 訊息。</span><span class="sxs-lookup"><span data-stu-id="529e3-130">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="7684d-130">範例</span><span class="sxs-lookup"><span data-stu-id="7684d-130">Example</span></span>
+## <a name="example"></a><span data-ttu-id="529e3-131">範例</span><span class="sxs-lookup"><span data-stu-id="529e3-131">Example</span></span>
 
-<span data-ttu-id="7684d-131">這個範例示範如何建立 Cmdlet，以顯示指定的進程清單。</span><span class="sxs-lookup"><span data-stu-id="7684d-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="529e3-132">這個範例示範如何建立可顯示指定進程清單的 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="529e3-132">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -472,6 +474,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="7684d-132">另請參閱</span><span class="sxs-lookup"><span data-stu-id="7684d-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="529e3-133">另請參閱</span><span class="sxs-lookup"><span data-stu-id="529e3-133">See Also</span></span>
 
-[<span data-ttu-id="7684d-133">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="7684d-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="529e3-134">撰寫 Windows PowerShell Cmdlet</span><span class="sxs-lookup"><span data-stu-id="529e3-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
