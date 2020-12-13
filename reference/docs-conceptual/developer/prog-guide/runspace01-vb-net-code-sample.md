@@ -1,18 +1,20 @@
 ---
-title: Runspace01 (VB.NET) 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d40424283057b389d8a4aafeb8ddfa44284f3ba1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace01 (VB.NET) 程式碼範例
+description: Runspace01 (VB.NET) 程式碼範例
+ms.openlocfilehash: 69211662c166c40e6e99e287083f7bd53f9f536f
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778659"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92653855"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="d9217-102">Runspace01 (VB.NET) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="d9217-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="37b29-103">Runspace01 (VB.NET) 程式碼範例</span><span class="sxs-lookup"><span data-stu-id="37b29-103">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="d9217-103">以下是[建立主控台應用程式（可執行指定的命令](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)）中所述之運行空間的程式碼範例。</span><span class="sxs-lookup"><span data-stu-id="d9217-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="d9217-104">若要這樣做，應用程式會叫用運行空間，然後叫用命令。</span><span class="sxs-lookup"><span data-stu-id="d9217-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="d9217-105"> (請注意，此應用程式不會指定執行空間設定資訊，也不會明確建立管線。 ) 所叫用的命令是 `Get-Process` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="d9217-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="37b29-104">以下是 [建立執行指定命令的主控台應用程式](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)中所述之運行空間的程式碼範例。</span><span class="sxs-lookup"><span data-stu-id="37b29-104">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="37b29-105">若要這樣做，應用程式會叫用運行空間，然後再叫用命令。</span><span class="sxs-lookup"><span data-stu-id="37b29-105">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="37b29-106"> (請注意，此應用程式不會指定運行時設定資訊，也不會明確建立管線。 ) 叫用的命令是 `Get-Process` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="37b29-106">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="d9217-106">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="d9217-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="37b29-107">程式碼範例</span><span class="sxs-lookup"><span data-stu-id="37b29-107">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -64,6 +66,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="d9217-107">另請參閱</span><span class="sxs-lookup"><span data-stu-id="d9217-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="37b29-108">另請參閱</span><span class="sxs-lookup"><span data-stu-id="37b29-108">See Also</span></span>
 
-[<span data-ttu-id="d9217-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="d9217-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="37b29-109">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="37b29-109">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
