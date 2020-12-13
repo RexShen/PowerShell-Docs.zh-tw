@@ -1,22 +1,20 @@
 ---
-title: ValidateSet 屬性聲明 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- attributes, ValidateSet
-- ValidateSet attribute, described
-- ValidateSet attribute
-ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ValidateSet 屬性宣告
+description: ValidateSet 屬性宣告
+ms.openlocfilehash: 7894d00561366ada492911e8147acbd8d3454a55
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787762"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660475"
 ---
 # <a name="validateset-attribute-declaration"></a>ValidateSet 屬性宣告
 
 ValidateSetAttribute 屬性會指定 Cmdlet 參數引數的一組可能值。 Windows PowerShell 函數也可以使用這個屬性。
 
-當指定這個屬性時，Windows PowerShell 執行時間會判斷 Cmdlet 參數所提供的引數是否符合所提供元素集中的元素。 只有當參數引數符合集合中的元素時，才會執行此 Cmdlet。 如果找不到相符的結果，Windows PowerShell 執行時間會擲回錯誤。
+當指定這個屬性時，Windows PowerShell 執行時間會判斷提供的 Cmdlet 參數所提供的引數是否符合提供之元素集內的專案。 只有當參數引數符合集合中的元素時，才會執行此 Cmdlet。 如果找不到相符項，Windows PowerShell 執行時間會擲回錯誤。
 
 ## <a name="syntax"></a>語法
 
@@ -27,22 +25,22 @@ ValidateSetAttribute 屬性會指定 Cmdlet 參數引數的一組可能值。 Wi
 
 #### <a name="parameters"></a>參數
 
-`ValidValues`需要 ([system.string](/dotnet/api/System.String)) 。 指定有效的參數元素值。 下列範例示範如何指定一個或多個元素。
+`ValidValues` 需要 ([system.string](/dotnet/api/System.String)) 。 指定有效的參數元素值。 下列範例示範如何指定一個專案或多個元素。
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` ([的布林值](/dotnet/api/System.Boolean)) 選擇性的具名引數。 的預設值 `true` 表示忽略大小寫。 的值 `false` 會讓 Cmdlet 區分大小寫。
+`IgnoreCase` ([system.string) 選擇性的命名](/dotnet/api/System.Boolean) 參數。 的預設值 `true` 表示忽略大小寫。 的值 `false` 可讓 Cmdlet 區分大小寫。
 
 ## <a name="remarks"></a>備註
 
-- 每個參數只能使用此屬性一次。
+- 此屬性每個參數只能使用一次。
 
-- 如果參數值為數組，則陣列的每個元素都必須符合屬性集的專案。
+- 如果參數值是陣列，則陣列的每個元素都必須符合屬性集的元素。
 
-- ValidateSetAttribute 屬性是由[ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)類別所定義。
+- ValidateSetAttribute 屬性是由 [ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute) 類別所定義。
 
 ## <a name="see-also"></a>另請參閱
 

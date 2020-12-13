@@ -1,18 +1,20 @@
 ---
-title: TableControl (格式) 的 TableRowEntries 的 TableRowEntry 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 83076ae5b2c48992ce5e621c65fc9937efb68b87
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)
+description: TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)
+ms.openlocfilehash: 60d64b7c14b40e87825ada36e19f52a66fe8b6cb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787405"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659762"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)
 
-定義在資料表的資料列中顯示的資料。
+定義顯示在資料表資料列中的資料。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableControl (格式) TableRowEntry 元素用於 TableRowEntries 的 TableControl (格式) 
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) TableControl 元素 (format) TableRowEntries 元素 for TableControl (Format) TableRowEntry 元素 for TableRowEntries for TableControl (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -26,7 +28,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `TableRowEntry` 。
+下列各節描述專案的屬性、子項目和父元素 `TableRowEntry` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,9 +38,9 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl (格式的 TableRowEntry 的之 entryselectedby 元素) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義物件，其屬性值會顯示在資料列中。|
-|[TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義要顯示其值的屬性或腳本。|
-|[TableControl (格式的 TableRowEntry 的 Wrap 元素) ](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定超過欄寬度的文字會顯示在下一行。|
+|[適用于 TableRowEntry 的 TableControl (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義其屬性值會顯示在資料列中的物件。|
+|[TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|必要元素。<br /><br /> 定義顯示其值的屬性或腳本。|
+|[適用于 TableControl (格式的 TableRowEntry Wrap 元素) ](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|選擇性項目。<br /><br /> 指定在下一行顯示超過欄寬度的文字。|
 
 ### <a name="parent-elements"></a>父項目
 
@@ -48,13 +50,13 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-`TableColumnItems`必須指定一個專案和一個 `EntrySelectedBy` 元素。
+`TableColumnItems`必須指定一個元素和一個 `EntrySelectedBy` 元素。
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示的專案 `TableRowEntry` 會定義一個資料列，以顯示 system.servicemodel 物件的兩個屬性[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)值。
+下列範例顯示的專案 `TableRowEntry` 會定義一個資料列，該資料列會顯示 system.string 物件之[](/dotnet/api/System.Diagnostics.Process)兩個屬性的值。
 
 ```xml
 <TableRowEntry>
@@ -76,12 +78,12 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 [建立表格檢視](./creating-a-table-view.md)
 
-[TableControl (格式的 TableRowEntry 的之 entryselectedby 元素) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
+[適用于 TableRowEntry 的 TableControl (格式的之 entryselectedby 元素) ](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
 
 [TableControl 之 TableRowEntry 的 TableColumnItems 元素 (格式)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
 
 [TableControl 的 TableRowEntries 元素 (格式)](./tablerowentries-element-for-tablecontrol-format.md)
 
-[TableControl (格式的 TableRowEntry 的 Wrap 元素) ](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
+[適用于 TableControl (格式的 TableRowEntry Wrap 元素) ](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

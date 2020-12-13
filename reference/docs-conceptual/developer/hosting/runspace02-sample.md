@@ -1,18 +1,20 @@
 ---
-title: Runspace02 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a2dce436aceb1d8744377c37671a66398614851
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace02 範例
+description: Runspace02 範例
+ms.openlocfilehash: 0206e1a80f3e5488fd2dd5628985756a5ca343c8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784957"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657901"
 ---
 # <a name="runspace02-sample"></a>Runspace02 範例
 
-這個範例示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別，以同步方式執行[Get 進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)和[排序物件](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)Cmdlet。 [取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式會針對在本機電腦上執行的每個進程傳回[system.web](/dotnet/api/System.Diagnostics.Process)物件，並 `Sort-Object` 根據物件的[System.Diagnostics.Process.Id *](/dotnet/api/System.Diagnostics.Process.Id)屬性來排序物件。 這些命令的結果會使用[system.web](/dotnet/api/System.Windows.Forms.DataGridView)控制項來顯示。
+這個範例會示範如何使用 system.string [類別，](/dotnet/api/system.management.automation.powershell) 以同步方式執行 [Get 進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process) 和 [排序物件](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) Cmdlet。 [取得進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)指令程式會傳回在本機電腦上執行之每個處理[程式的處理常式](/dotnet/api/System.Diagnostics.Process)物件，並 `Sort-Object` 根據物件的[System.Diagnostics.Process.Id *](/dotnet/api/System.Diagnostics.Process.Id)屬性來排序物件。 這些命令的結果會使用 [ [system.object](/dotnet/api/System.Windows.Forms.DataGridView) ] 控制項來顯示。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -20,17 +22,17 @@ ms.locfileid: "87784957"
 
 這個範例會示範下列各項。
 
-- 建立要執行命令的[system.web](/dotnet/api/system.management.automation.powershell)物件。
+- 建立要執行命令的 [系統. 管理. Powershell](/dotnet/api/system.management.automation.powershell) 物件。
 
-- 將命令新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線。
+- 將命令加入至 [system.object](/dotnet/api/system.management.automation.powershell) 物件的管線。
 
-- 同步執行命令。
+- 以同步方式執行命令。
 
-- 使用[system.web](/dotnet/api/System.Windows.Forms.DataGridView)控制項在 Windows Forms 應用程式中顯示命令的輸出。
+- 使用 [ [system.object](/dotnet/api/System.Windows.Forms.DataGridView) ] 控制項，在 Windows Forms 應用程式中顯示命令的輸出。
 
 ## <a name="example"></a>範例
 
-這個範例會在 Windows PowerShell 所提供的預設執行時間中，以同步方式執行「[取得進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)」和「[排序物件](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)」 Cmdlet。 輸出會以表單的形式顯示，並使用[system.web](/dotnet/api/System.Windows.Forms.DataGridView)控制項。
+此範例會在 Windows PowerShell 所提供的預設執行空間中，同步執行 [Get 進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process) 和 [排序物件](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) Cmdlet。 輸出會以表單顯示在表單[中。](/dotnet/api/System.Windows.Forms.DataGridView)
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

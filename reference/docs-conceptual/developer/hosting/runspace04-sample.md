@@ -1,18 +1,20 @@
 ---
-title: Runspace04 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 73f48c797a4ce9bf4bc78ff34abb5efa41cda121
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace04 範例
+description: Runspace04 範例
+ms.openlocfilehash: 5a2e1137963e02def419bb924c63b0d651b0fdfa
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779500"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657743"
 ---
 # <a name="runspace04-sample"></a>Runspace04 範例
 
-這個範例會示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別來執行命令，以及如何攔截執行命令時所擲回的終止錯誤。 執行了兩個命令，而最後一個命令傳遞了無效的參數引數。 如此便不會傳回任何物件，且會擲回終止錯誤。
+此範例示範如何使用 [system.servicemodel 類別來](/dotnet/api/system.management.automation.powershell) 執行命令，以及如何捕捉在執行命令時所擲回的終止錯誤。 執行了兩個命令，而最後一個命令傳遞了無效的參數引數。 如此便不會傳回任何物件，且會擲回終止錯誤。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -20,23 +22,23 @@ ms.locfileid: "87779500"
 
 這個範例會示範下列各項。
 
-- 建立一個[system.web](/dotnet/api/system.management.automation.powershell)物件。
+- 建立 [系統管理](/dotnet/api/system.management.automation.powershell) 物件。
 
-- 將命令新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線中。
+- 將命令加入至 [system.object](/dotnet/api/system.management.automation.powershell) 物件的管線。
 
-- 將參數引數加入至管線。
+- 將參數引數新增至管線。
 
-- 同步叫用命令。
+- 以同步方式叫用命令。
 
-- 使用[system.web](/dotnet/api/System.Management.Automation.PSObject)物件，從命令所傳回的物件中，解壓縮並顯示內容。
+- 使用 [system.string](/dotnet/api/System.Management.Automation.PSObject) 物件，從命令所傳回的物件中解壓縮並顯示內容。
 
-- 抓取和顯示在執行命令期間所產生的錯誤記錄。
+- 抓取和顯示命令執行期間所產生的錯誤記錄。
 
-- 捕捉和顯示命令擲回的終止例外狀況。
+- 攔截和顯示命令所擲回的終止例外狀況。
 
 ## <a name="example"></a>範例
 
-這個範例會在 Windows PowerShell 所提供的預設執行時間中，以同步方式執行命令。 最後一個命令會擲回終止錯誤，因為不正確參數引數會傳遞給命令。 會攔截並顯示終止錯誤。
+此範例會在 Windows PowerShell 所提供的預設執行空間中，以同步方式執行命令。 最後一個命令會擲回終止錯誤，因為不正確參數引數會傳遞至命令。 終止錯誤會被攔截並顯示。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

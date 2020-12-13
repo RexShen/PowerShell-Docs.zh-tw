@@ -1,18 +1,20 @@
 ---
-title: SelectionCondition for 之 entryselectedby for TableControl (Format 的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: a23d3515749393e9f5a2053634a44d1a817ebf38
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+description: TableControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: a984bda6b8fba3a5cb9485576ffd847f0d366d3e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783444"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659890"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>TableControl 之 EntrySelectedBy 的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本區塊。 當此腳本評估為時 `true` ，會符合條件，並使用資料表專案。
+指定觸發條件的腳本區塊。 當此腳本評估為時 `true` ，就會符合條件，並且會使用資料表專案。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableRowEntries 專案 (格式) TableRowEntry 專案 (格式) 之 entryselectedby 元素（TableRowEntry 的 SelectionCondition (格式) 之 entryselectedby 元素，TableRowEntry 適用于 SelectionCondition (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableRowEntries 元素 (格式) TableRowEntry 專案 (格式) 之 entryselectedby 專案 (格式) 專案 (格式) TableRowEntry 專案的 SelectionCondition (格式) 之 entryselectedby for TableRowEntry 的 SelectionCondition 格式之 entryselectedby 元素
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableRowEntry (格式的之 entryselectedby 的 SelectionCondition 元素) ](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|定義必須存在才能使用此資料表專案的條件。|
+|[適用于之 entryselectedby 的 TableRowEntry (格式的 SelectionCondition 元素) ](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|定義必須存在才能使用此資料表專案的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -44,18 +46,18 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-選取條件必須指定至少一個腳本區塊或屬性名稱，但不能同時指定兩者。 如需如何使用選取條件的詳細資訊，請參閱[定義使用視圖專案或專案時的條件](./defining-conditions-for-displaying-data.md)。
+選取條件必須指定至少一個腳本區塊或屬性名稱，但不能同時指定兩者。 如需如何使用選取條件的詳細資訊，請參閱 [定義使用視圖專案或專案的條件](./defining-conditions-for-displaying-data.md)。
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="see-also"></a>另請參閱
 
 [建立表格檢視](./creating-a-table-view.md)
 
-[定義資料顯示時的條件](./defining-conditions-for-displaying-data.md)
+[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)
 
 [TableRowEntry 之 EntrySelectedBy 的 SelectionCondition 的 PropertyName 元素 (格式)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)
 
-[TableRowEntry (格式的之 entryselectedby 的 SelectionCondition 元素) ](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
+[適用于之 entryselectedby 的 TableRowEntry (格式的 SelectionCondition 元素) ](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

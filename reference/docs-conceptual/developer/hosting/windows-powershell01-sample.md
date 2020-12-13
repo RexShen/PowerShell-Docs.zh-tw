@@ -1,18 +1,20 @@
 ---
-title: Windows PowerShell01 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6e799f35c0c5e3820c6471b49c8b0d8c47b1c6b2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell01 範例
+description: Windows PowerShell01 範例
+ms.openlocfilehash: 70ae67bfc2da9d3cc085ecb42de9cef4b163418d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87771935"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657369"
 ---
 # <a name="windows-powershell01-sample"></a>Windows PowerShell01 範例
 
-這個範例示範如何使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件來限制執行時間的功能。 這個範例的輸出示範如何限制執行時間的語言模式、如何將 Cmdlet 標示為私用、如何新增和移除 Cmdlet 和提供者、如何新增 proxy 命令等。 這個範例著重于如何以程式設計方式限制執行時間。 限制執行空間的腳本替代方案包括 $ExecutionCoNtext. SessionState. LanguageMode 和 Enable-pssessionconfiguration 命令。
+這個範例示範如何使用 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件來限制執行時間的功能。 此範例的輸出會示範如何限制執行時間的語言模式、如何將 Cmdlet 標記為私用、如何新增和移除 Cmdlet 和提供者、如何新增 proxy 命令等等。 此範例著重于如何以程式設計方式限制執行時間。 限制執行空間的腳本替代方案包括 $ExecutionCoNtext. LanguageMode 和 PSSessionConfiguration 命令。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -20,21 +22,21 @@ ms.locfileid: "87771935"
 
 本範例示範以下項目:
 
-- 藉由設定System.Management.Automation.Runspaces.Initialsessionstate 來限制語言[。Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)屬性。
+- 藉由設定System.Management.Automation.Runspaces.Initialsessionstate 來限制語言 [ 。Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) 屬性。
 
-- 藉由使用 Sessionstatealiasentry，將別名新增至初始會話狀態。 [Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)物件。
+- 使用 Sessionstatealiasentry 將別名新增至初始會話狀態 [中？。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) 物件。
 
 - 將命令標示為私用。
 
-- 使用System.Management.Automation.Runspaces.Initialsessionstate，從初始會話狀態移除提供者[。提供者](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)屬性。
+- 使用System.Management.Automation.Runspaces.Initialsessionstate 從初始會話狀態移除提供者 [ 。提供者](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) 屬性。
 
-- 使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) ] 屬性，從初始會話狀態移除命令。
+- 使用 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) ] 屬性，將命令從初始會話狀態移除。
 
-- 將命令和提供者加入至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+- 將命令和提供者加入 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件中。
 
 ## <a name="example"></a>範例
 
-這個範例會示範數種限制運行空間功能的方式。
+此範例顯示數種限制運行空間功能的方式。
 
 ```csharp
 namespace Sample

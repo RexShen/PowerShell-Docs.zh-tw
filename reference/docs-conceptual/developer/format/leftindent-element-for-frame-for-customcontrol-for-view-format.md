@@ -1,18 +1,20 @@
 ---
-title: CustomControl for View (格式) 的框架的 LeftIndent 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c11002f92a35ca34a7d2c6aa26924d846076b001
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之 CustomControl 的框架的 LeftIndent 元素 (格式)
+description: 檢視之 CustomControl 的框架的 LeftIndent 元素 (格式)
+ms.openlocfilehash: d3253544c3b4c7f9214222010bfab519564b64fd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783563"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660038"
 ---
 # <a name="leftindent-element-for-frame-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的框架的 LeftIndent 元素 (格式)
 
-指定資料從左邊界下移的字元數。 定義自訂控制項視圖時，會使用這個元素。
+指定資料從左邊界向外移動的字元數。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) CustomControl 專案 (格式) CustomControl for view (CustomEntry 元素，CustomEntries for view) format (CustomItem 專案（CustomEntry 的 CustomControlView for view) CustomItem 元素的 CustomControl (格式) LeftIndent 元素
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) CustomControl 元素 (格式) CustomEntries 專案 (格式) 元素 (格式) CustomEntry 專案 (格式) CustomEntries 專案 CustomItem for CustomEntry 的 CustomControlView 專案 (格式) CustomItem 專案
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `LeftIndent` 。
+下列各節描述專案的屬性、子項目和父元素 `LeftIndent` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,11 +38,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[檢視之 CustomControl 的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|定義資料的顯示方式，例如將資料向左或向右移位。|
+|[檢視之 CustomControl 的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|定義顯示資料的方式，例如將資料向左或向右移動。|
 
 ## <a name="text-value"></a>文字值
 
-指定您想要將資料向左移位的字元數。
+指定您想要將資料向左移動的字元數。
 
 ## <a name="remarks"></a>備註
 

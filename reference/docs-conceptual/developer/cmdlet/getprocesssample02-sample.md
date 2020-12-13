@@ -1,24 +1,26 @@
 ---
-title: GetProcessSample02 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: fa10774508b70f4aab4546cf4d6fbe8978032f1b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProcessSample02 範例
+description: GetProcessSample02 範例
+ms.openlocfilehash: a0f43806b707359cb454817341f2c4972033c46a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784226"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660526"
 ---
 # <a name="getprocesssample02-sample"></a>GetProcessSample02 範例
 
-這個範例會示範如何撰寫 Cmdlet 來抓取本機電腦上的處理常式。 它會提供 `Name` 參數，可用來指定要抓取的進程。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 所提供之 Cmdlet 的簡化版本。
+此範例示範如何撰寫可在本機電腦上抓取進程的 Cmdlet。 它會提供一個 `Name` 參數，可用來指定要抓取的進程。 此 Cmdlet 是 `Get-Process` Windows PowerShell 2.0 提供的簡化版 Cmdlet。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 GetProcessSample02 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 >getprocesssample02 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "87784226"
 
     `import-module getprossessample02`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
     `get-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -58,7 +60,7 @@ ms.locfileid: "87784226"
 
 ## <a name="example"></a>範例
 
-這個範例會顯示包含參數的 Get-Proc Cmdlet 的執行 `Name` 。
+此範例顯示包含參數的 Get-Proc Cmdlet 的執行 `Name` 。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands

@@ -1,12 +1,14 @@
 ---
-title: TableHeaders 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: b3176cbe1316d5b30cb61831d9915a80389709a5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableHeaders 元素 (格式)
+description: TableHeaders 元素 (格式)
+ms.openlocfilehash: 5ac4dccae746c167ebf95add9f3d18030a2b3a99
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787422"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659827"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders 元素 (格式)
 
@@ -25,7 +27,7 @@ ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `TableHeaders` 。 要顯示之物件的每個屬性都必須要有一個子項目。 資料行標頭資訊會以指定子項目的順序顯示。
+下列各節描述專案的屬性、子項目和父元素 `TableHeaders` 。 要顯示之物件的每個屬性都必須要有一個子項目。 資料行標頭資訊會以指定子項目的順序顯示。
 
 ### <a name="attributes"></a>屬性
 
@@ -45,7 +47,7 @@ ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式
 
 ## <a name="remarks"></a>備註
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 

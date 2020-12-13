@@ -1,18 +1,20 @@
 ---
-title: Runspace03 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: d4fa3bca883fb8d78ca1bc8b0c0f9b70f304be06
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace03 範例
+description: Runspace03 範例
+ms.openlocfilehash: fff699bf0545bb1419aa45b8c46bbd9c2cf0a99e
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772173"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657856"
 ---
 # <a name="runspace03-sample"></a>Runspace03 範例
 
-這個範例會示範如何使用[system.web](/dotnet/api/system.management.automation.powershell)類別，以同步方式執行腳本，以及如何處理非終止錯誤。 指令碼會接收處理序名稱的清單，然後擷取這些處理序。 指令碼的結果會顯示在主控台視窗中，包括執行指令碼時所產生的任何非終止錯誤在內。
+這個範例會示範如何使用 system.string [類別來](/dotnet/api/system.management.automation.powershell) 同步執行腳本，以及如何處理非終止錯誤。 指令碼會接收處理序名稱的清單，然後擷取這些處理序。 指令碼的結果會顯示在主控台視窗中，包括執行指令碼時所產生的任何非終止錯誤在內。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -20,21 +22,21 @@ ms.locfileid: "87772173"
 
 這個範例會示範下列各項。
 
-- 建立要執行腳本的[system.web](/dotnet/api/system.management.automation.powershell)物件。
+- 建立要執行腳本的 [系統. 管理. Powershell](/dotnet/api/system.management.automation.powershell) 物件。
 
-- 將腳本新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線。
+- 將腳本加入至 [system.object](/dotnet/api/system.management.automation.powershell) 物件的管線。
 
 - 將輸入物件從呼叫程式傳遞至腳本。
 
-- 同步執行腳本。
+- 以同步方式執行腳本。
 
-- 使用[system.web](/dotnet/api/System.Management.Automation.PSObject)物件，從腳本傳回的物件中，解壓縮並顯示內容。
+- 使用 [system.string](/dotnet/api/System.Management.Automation.PSObject) 物件，從腳本所傳回的物件中解壓縮並顯示內容。
 
-- 正在抓取和顯示腳本執行時所產生的錯誤記錄。
+- 抓取並顯示腳本執行時所產生的錯誤記錄。
 
 ## <a name="example"></a>範例
 
-這個範例會在 Windows PowerShell 所提供的預設執行時間中，以同步方式執行腳本。 腳本的輸出和任何產生的非終止錯誤都會顯示在主控台視窗中。
+這個範例會在 Windows PowerShell 所提供的預設執行空間中，以同步方式執行腳本。 腳本的輸出和產生的任何非終止錯誤都會顯示在主控台視窗中。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

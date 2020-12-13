@@ -1,16 +1,18 @@
 ---
-title: 如何準備可更新的說明 CAB 檔案
 ms.date: 09/03/2012
-ms.openlocfilehash: 7f3ed2fcf03585a41e571eb2a5ebb4d850d64e01
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.topic: reference
+title: 如何準備可更新的說明 CAB 檔案
+description: 如何準備可更新的說明 CAB 檔案
+ms.openlocfilehash: df403bd025601fd88f8384efed9452c139f85a82
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893317"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658910"
 ---
 # <a name="how-to-prepare-updatable-help-cab-files"></a>如何準備可更新的說明 CAB 檔案
 
-本主題說明在 Windows PowerShell 可更新說明中的封包（1）檔案的內容和使用方式。
+本主題說明 Windows PowerShell 可更新說明中的封包 (1) 檔案的內容和用法。
 
 本節包含下列主題。
 

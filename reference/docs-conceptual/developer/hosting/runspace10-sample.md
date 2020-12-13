@@ -1,18 +1,20 @@
 ---
-title: Runspace10 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4d858c432c6221f2347f6de664d1e4ee299f5801
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace10 範例
+description: Runspace10 範例
+ms.openlocfilehash: fd58cea553e6b830a56df7edfa7901d39f46a06c
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784940"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657584"
 ---
 # <a name="runspace10-sample"></a>Runspace10 範例
 
-這個範例會示範如何建立預設初始會話狀態、如何將 Cmdlet 新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、如何建立使用初始會話狀態的執行時間，以及如何使用[system.web](/dotnet/api/system.management.automation.powershell)物件來執行命令。
+這個範例示範如何建立預設的初始會話狀態、如何將指令程式新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)、如何建立使用初始會話狀態的執行時間，以及如何使用[system.servicemodel 物件執行命令。](/dotnet/api/system.management.automation.powershell)
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -20,21 +22,21 @@ ms.locfileid: "87784940"
 
 這個範例會示範下列各項。
 
-- 建立[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+- 建立 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件。
 
-- 將主機應用程式) 定義的 Cmdlet (新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+- 將主機應用程式所定義的 Cmdlet (新增) 至 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件。
 
-- 建立使用物件的[system.web 工作空間](/dotnet/api/System.Management.Automation.Runspaces.Runspace)物件。
+- 建立使用物件的 system.servicemodel. [運行](/dotnet/api/System.Management.Automation.Runspaces.Runspace) 時物件。
 
-- 建立使用[管理元件](/dotnet/api/System.Management.Automation.Runspaces.Runspace)[物件的 system.servicemodel 物件，](/dotnet/api/system.management.automation.powershell)它會使用工作空間。
+- 建立使用[system.servicemodel 物件的](/dotnet/api/System.Management.Automation.Runspaces.Runspace)[系統. 管理](/dotnet/api/system.management.automation.powershell)... a m 物件。
 
-- 將命令新增至[system.web](/dotnet/api/system.management.automation.powershell)物件的管線。
+- 將命令加入至 [system.object](/dotnet/api/system.management.automation.powershell) 物件的管線。
 
-- 從命令所傳回的[system.web](/dotnet/api/System.Management.Automation.PSObject)物件中，解壓縮屬性。
+- 從命令所傳回的 [system.object](/dotnet/api/System.Management.Automation.PSObject) 物件中解壓縮屬性。
 
 ## <a name="example"></a>範例
 
-這個範例會建立一個使用[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件的執行時間，以定義當執行時間開啟時可用的元素。 在此範例中，主機應用程式) 所定義的 (，會新增至初始會話狀態，而 Cmdlet 會使用[system.web](/dotnet/api/system.management.automation.powershell)物件同步執行。
+這個範例會建立一個使用 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件的執行時間，以定義在開啟執行時間時可用的元素。 在此範例中，主機應用) 程式所定義的 Get-Proc Cmdlet (會新增至初始會話狀態，而此 Cmdlet 會使用 system.servicemodel 物件以同步[方式執行。](/dotnet/api/system.management.automation.powershell)
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

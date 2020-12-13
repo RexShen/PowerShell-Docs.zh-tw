@@ -1,24 +1,26 @@
 ---
-title: StopProcessSample01 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6d4737d0526a7d142b4a986986974bcbdc12ec7e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample01 範例
+description: StopProcessSample01 範例
+ms.openlocfilehash: 9024f5c66330f3a1748c28b82e91b3915e956207
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786453"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92660531"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 範例
 
-這個範例示範如何撰寫 Cmdlet，以在嘗試停止進程之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，表示使用者想要 Cmdlet 傳回物件。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
+此範例示範如何撰寫 Cmdlet，以在使用者嘗試停止處理常式之前要求使用者提供意見反應，以及如何執行 `PassThru` 參數，指出使用者想要讓此 Cmdlet 傳回物件。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 來建立範例。
 
-1. 安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample01 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01。
+1. 安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 StopProcessSample01 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -36,11 +38,11 @@ ms.locfileid: "87786453"
 
     `import-module stopprossessample01`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
     `stop-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -54,11 +56,11 @@ ms.locfileid: "87786453"
 
 - 呼叫 ShouldProcess 方法以要求確認。
 
-- 執行 `PassThru` 參數，指出使用者是否想要 Cmdlet 傳回物件。 根據預設，此 Cmdlet 不會將物件傳回至管線。
+- 執行 `PassThru` 參數，指出使用者是否希望 Cmdlet 傳回物件。 根據預設，此 Cmdlet 不會將物件傳回至管線。
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何執行參數，以 `PassThru` 指出使用者希望 Cmdlet 傳回物件，以及如何透過呼叫和方法來要求使用者意見反應 `ShouldProcess` `ShouldContinue` 。
+這個範例示範如何執行一個 `PassThru` 參數，該參數表示使用者想要 Cmdlet 傳回物件，以及如何透過呼叫和方法來要求使用者意見反應 `ShouldProcess` `ShouldContinue` 。
 
 ```csharp
 using System;

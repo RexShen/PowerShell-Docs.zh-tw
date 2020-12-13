@@ -1,18 +1,20 @@
 ---
-title: TableControl (格式的之 tablecolumnheader 寬度元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9540d3d351041ad7cb98a21bb360ebea7eca117
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 TableColumnHeader 的寬度元素 (格式)
+description: TableControl 之 TableColumnHeader 的寬度元素 (格式)
+ms.openlocfilehash: bde84f1d33b3d6b3b8c4462f870f978611cb434b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779908"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92658258"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl 之 TableColumnHeader 的寬度元素 (格式)
 
-定義資料行之字元) 的寬度 (。
+定義資料行) 字元 (的寬度。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableControl (格式) 之 tablecolumnheader 元素 TableHeaders 針對 TableControl (format) Width 元素之 tablecolumnheader (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) TableControl 元素 (format) TableHeaders 元素 for TableControl (Format) 之 tablecolumnheader Element TableHeaders for TableControl (format) 之 tablecolumnheader for TableControl 的 (Width 元素) 格式
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明定義資料行標頭時所使用之元素的屬性、子專案和父項目 `Width` 。
+下列各節描述定義資料行標頭時所使用專案的屬性、子項目和父元素 `Width` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,19 +38,19 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl (格式的 TableHeaders 的之 tablecolumnheader 元素) ](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
+|[適用于 TableHeaders 的 TableControl (格式的之 tablecolumnheader 元素) ](./tablecolumnheader-element-format.md)|定義資料表之資料行的標籤、寬度和對齊方式。|
 
 ## <a name="text-value"></a>文字值
 
-可能的話，請指定寬度 (字元) 大於顯示內容值的長度。
+如果有可能的話，請將寬度 (指定為大於所顯示內容值長度的字元) 。
 
 ## <a name="remarks"></a>備註
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示 `TableColumnHeader` 其寬度為16個字元的元素。
+下列範例 `TableColumnHeader` 會顯示其寬度為16個字元的元素。
 
 ```xml
 <TableColumnHeader>
@@ -62,6 +64,6 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 [建立表格檢視](./creating-a-table-view.md)
 
-[TableControl (格式的 TableHeader 的之 tablecolumnheader 元素) ](./tablecolumnheader-element-format.md)
+[適用于 TableHeader 的 TableControl (格式的之 tablecolumnheader 元素) ](./tablecolumnheader-element-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

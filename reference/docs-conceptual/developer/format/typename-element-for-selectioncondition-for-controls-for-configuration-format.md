@@ -1,18 +1,20 @@
 ---
-title: 設定 (格式) 之控制項的 SelectionCondition 的 TypeName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2db856d1b84dded315204d8c8574ae86acb63515
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 SelectionCondition 的 TypeName 元素 (格式)
+description: 設定之控制項的 SelectionCondition 的 TypeName 元素 (格式)
+ms.openlocfilehash: fddb8ddbac7c9292a05cadfa31f98db6439a557d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780061"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659672"
 ---
 # <a name="typename-element-for-selectioncondition-for-controls-for-configuration-format"></a>設定之控制項的 SelectionCondition 的 TypeName 元素 (格式)
 
-指定觸發條件的 .NET 類型。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+指定觸發條件的 .NET 型別。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的控制項的 CustomControl 的 CustomEntries 元素) CustomEntry 元素針對設定 (格式的控制項的 CustomControl) 之 entryselectedby 元素，用於 CustomEntry 的之 entryselectedby for CustomEntry for configuration (Format) TypeName 元素 For SelectionCondition for configuration (格式) )  (
+設定元素 (格式) 控制項的設定專案 (格式) 控制項的控制項專案 (格式) CustomEntry 專案的設定 (格式控制項的 CustomControl) 格式 (針對 configuration (格式的控制項的 CustomControl 格式) 之 entryselectedby 元素，用於 CustomEntry 的控制項設定 (格式) SelectionCondition 專案（之 entryselectedby for CustomEntry for SelectionCondition for for configuration (格式）) 
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +39,7 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的
 
 |元素|描述|
 |-------------|-----------------|
-|[適用于 CustomEntry 之之 entryselectedby 的 SelectionCondition 元素 (格式) ](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在的條件，才能使用控制項定義。|
+|[適用于 CustomEntry 之之 entryselectedby 的 SelectionCondition 元素 (格式設定格式) ](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在才能使用控制項定義的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -47,6 +49,6 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的
 
 ## <a name="see-also"></a>另請參閱
 
-[適用于 CustomEntry 之之 entryselectedby 的 SelectionCondition 元素 (格式) ](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+[適用于 CustomEntry 之之 entryselectedby 的 SelectionCondition 元素 (格式設定格式) ](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 [撰寫 PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

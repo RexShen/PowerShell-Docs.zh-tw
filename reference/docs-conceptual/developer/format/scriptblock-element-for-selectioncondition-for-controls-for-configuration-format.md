@@ -1,18 +1,20 @@
 ---
-title: 設定 (格式) 之控制項的 SelectionCondition 的 ScriptBlock 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 24584aacd7869abd3dcfc6ff546e6dea4c2c04fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
+description: 設定之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: 42e9d2b00f7690e46242b2c4602245e4bf391bbf
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785433"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664947"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-controls-for-configuration-format"></a>設定之控制項的 SelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為時 `true` ，會符合條件，並使用定義。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+指定觸發條件的腳本。 當此腳本評估為時 `true` ，就會符合條件，並使用定義。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定 (格式的控制項) 控制項專案，) 設定 (格式的 CustomControl 的 CustomEntries 元素) 格式 (CustomEntry 元素設定 (格式的控制項的 CustomControl) 之 entryselectedby 元素適用于 configuration (格式) SelectionCondition 元素適用于設定 (格式) ScriptBlock 元素之 entryselectedby 的控制設定 (格式) 
+設定元素 (格式) 控制項的設定元素 (格式) 控制項的設定 (格式) CustomEntries 專案 CustomControl 的設定 (格式) CustomEntry 專案的 CustomControl 適用于設定的控制項 (格式) 之 entryselectedby 元素，用於 CustomEntry 的設定 (格式) SelectionCondition 元素，用於之 entryselectedby for configuration (格式的控制項)  (
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定 (�
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在的條件，才能使用通用控制項定義。|
+|[設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|定義必須存在才能使用通用控制項定義的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -44,7 +46,7 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定 (�
 
 ## <a name="remarks"></a>備註
 
-選取條件必須指定至少一個要評估的腳本或屬性名稱，但不能同時指定兩者。 如需如何使用選取條件的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
+選取條件必須指定至少一個要評估的腳本或屬性名稱，但不能同時指定兩者。 如需如何使用選取條件的詳細資訊，請參閱 [定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="see-also"></a>另請參閱
 

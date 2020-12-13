@@ -1,16 +1,18 @@
 ---
-title: GetProc05 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 66758028bc964912495d636af90947101dd37923
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GetProc05 程式碼範例
+description: GetProc05 程式碼範例
+ms.openlocfilehash: 1280048aeec35512f1e6061bdf58919d83a461cd
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87778725"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92661841"
 ---
 # <a name="getproc05-code-samples"></a>GetProc05 程式碼範例
 
-以下是 GetProc05 範例 Cmdlet 的程式碼範例。 此 `Get-Process` Cmdlet 類似于[將非終止錯誤報表新增至您的 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)中所述的 Cmdlet。
+以下是 GetProc05 範例 Cmdlet 的程式碼範例。 此為與[新增持續錯誤報告至 Cmdlet](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md) 中所描述 Cmdlet 相似的 `Get-Process` Cmdlet 範例。
 
 |語言|主題|
 |--------------|-----------|

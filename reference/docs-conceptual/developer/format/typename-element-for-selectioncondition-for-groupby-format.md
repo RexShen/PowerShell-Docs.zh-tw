@@ -1,18 +1,20 @@
 ---
-title: GroupBy (格式的 SelectionCondition 的 TypeName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ea1e0cb50c3a749f6c26d13fff4b001240ce6b95
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy 之 SelectionCondition 的 TypeName 元素 (格式)
+description: GroupBy 之 SelectionCondition 的 TypeName 元素 (格式)
+ms.openlocfilehash: 096d2355e113a7e44cc6ae31ea23efc3f01080a0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772547"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664632"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>GroupBy 之 SelectionCondition 的 TypeName 元素 (格式)
 
-指定觸發條件的 .NET 類型。 此元素是在定義新物件群組的顯示方式時使用。
+指定觸發條件的 .NET 型別。 定義如何顯示新的物件群組時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) GroupBy 元素用於 CustomEntries 的專案 (格式的 CustomControl 的 CustomControl 專案) format (格式) CustomEntry 元素的 CustomControl 的 groupby (格式)  (之 entryselectedby 元素 CustomEntry 的 groupby) 格式的 SelectionCondition 專案 (的之 entryselectedby 專案
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 專案的視圖 (格式) CustomEntries 元素用於 GroupBy (格式) 元素用於 CustomEntry 的 groupby (格式) CustomControl 專案用於之 entryselectedby 的 groupby (格式) 專案的 CustomEntry 專案 (格式)  (格式的 SelectionCondition 元素
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +39,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Forma
 
 |元素|描述|
 |-------------|-----------------|
-|[GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|定義必須存在的條件，才能使用控制項定義。|
+|[GroupBy 之 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|定義必須存在才能使用控制項定義的條件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -45,7 +47,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Forma
 
 ## <a name="remarks"></a>備註
 
-當指定此元素時，您無法指定 `SelectionSetName` 元素。 如需定義選取條件的詳細資訊，請參閱[定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
+當指定這個專案時，您不能指定此 `SelectionSetName` 元素。 如需定義選取條件的詳細資訊，請參閱 [定義顯示資料的條件](./defining-conditions-for-displaying-data.md)。
 
 ## <a name="see-also"></a>另請參閱
 

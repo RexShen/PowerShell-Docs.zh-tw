@@ -1,18 +1,20 @@
 ---
-title: 類型的 TypeName 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 40fad73c66124d6c3b0d969b4268713a492c963a
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 類型的 TypeName 元素 (格式)
+description: 類型的 TypeName 元素 (格式)
+ms.openlocfilehash: c656b8e7e5877b72ff2164e5b417857273cada61
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772530"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92664612"
 ---
 # <a name="typename-element-for-types-format"></a>類型的 TypeName 元素 (格式)
 
 指定屬於選取集之物件的 .NET 類型。
 
-Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 專案 (格式) 類型元素 (格式) 格式的類型名稱元素 (
+Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 專案 (格式) 類型專案 (格式) 格式 (類型) 格式
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 專案 
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案和元素的父元素 `TypeName` 。 `TypeName`選取範圍中至少必須包含一個元素。
+下列章節說明屬性、子專案和元素的父元素 `TypeName` 。 `TypeName`選取專案集中必須包含至少一個元素。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 專案 
 
 |元素|描述|
 |-------------|-----------------|
-|[Types 元素 (格式) ](./types-element-for-selectionset-format.md)|定義選取集中的 .NET 物件。|
+|[類型元素 (格式) ](./types-element-for-selectionset-format.md)|定義選取專案集中的 .NET 物件。|
 
 ## <a name="text-value"></a>文字值
 
@@ -44,9 +46,9 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 專案 
 
 ## <a name="remarks"></a>備註
 
-當您有一組想要使用單一名稱來參考的相關物件（例如透過繼承相關的一組物件）時，您可以使用 [選擇集]。 定義您的視圖時，您可以使用選取範圍的名稱來指定物件集合，而不會列出每個視圖內的所有物件。
+當您有一組要使用單一名稱來參考的相關物件時，例如一組透過繼承相關的物件，您可以使用選取集。 定義您的視圖時，您可以使用選取集的名稱來指定物件集合，而不是列出每個視圖內的所有物件。
 
-定義格式設定檔案的視圖時，會以名稱指定一般選取範圍。 在這些情況下， `SelectionSetName` view 元素的子項目會 `ViewSelectedBy` 指定集合。 不過，不同的視圖專案也可以指定僅適用于該視圖專案的選擇集。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
+定義格式化檔案的視圖時，會依名稱來指定常用的選取集。 在這些情況下， `SelectionSetName` view 專案的子項目會 `ViewSelectedBy` 指定集合。 不過，view 的不同專案也可以指定僅套用至該專案的選項組。 如需選取集的詳細資訊，請參閱 [定義物件集](./defining-selection-sets.md)。
 
 ## <a name="example"></a>範例
 
@@ -74,6 +76,6 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 專案 
 
 [SelectionSets 元素 (格式)](./selectionsets-element-format.md)
 
-[Types 元素 (格式) ](./types-element-for-selectionset-format.md)
+[類型元素 (格式) ](./types-element-for-selectionset-format.md)
 
 [撰寫 Windows PowerShell 格式設定檔案](./writing-a-powershell-formatting-file.md)

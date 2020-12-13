@@ -1,18 +1,20 @@
 ---
-title: TableRowEntry for TableControl (Format 的 Wrap 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1ef1f6133f9e5e7da685933cfe90d39a0519ff44
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
+description: TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
+ms.openlocfilehash: 1937427c9869c3d301faef0bc8ccea42eb0e7365
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779874"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659541"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl 之 TableRowEntry 的 Wrap 元素 (格式)
 
-指定超過欄寬度的文字會顯示在下一行。 根據預設，系統會截斷超過欄寬度的文字。
+指定在下一行顯示超過欄寬度的文字。 根據預設，系統會截斷超過欄寬度的文字。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableControl (Format) TableRowEntry 元素用於 TableRowEntries 的 TableControl (format) Wrap 元素 for TableRowEntry (Format) 
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) TableControl 元素 (format) TableRowEntries 元素 for TableControl (Format) TableRowEntry TableRowEntries for TableControl for TableRowEntry (format) TableControl for (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `Wrap` 。
+下列章節說明屬性、子專案和元素的父元素 `Wrap` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,11 +38,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定義在資料表的資料列中顯示的資料。|
+|[TableControl 之 TableRowEntries 的 TableRowEntry 元素 (格式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|定義顯示在資料表資料列中的資料。|
 
 ## <a name="remarks"></a>備註
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="see-also"></a>另請參閱
 

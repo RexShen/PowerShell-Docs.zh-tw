@@ -1,52 +1,52 @@
 ---
-title: 撰寫 Windows PowerShell 嵌入式管理單元 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], PSSnapin example
-ms.openlocfilehash: 02603c54fb9852a8b78ecf68e3ee387d1fd418fc
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 撰寫 Windows PowerShell 嵌入式管理單元
+description: 撰寫 Windows PowerShell 嵌入式管理單元
+ms.openlocfilehash: f658c2fa1211bfb77d2e8edd3999ce7f92df13bb
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779098"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659451"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>撰寫 Windows PowerShell 嵌入式管理單元
 
-這個範例示範如何撰寫 Windows PowerShell 嵌入式管理單元，可用來在元件中註冊所有的 Cmdlet 和 Windows PowerShell 提供者。
+此範例示範如何撰寫 Windows PowerShell 的嵌入式管理單元，可用來註冊元件中的所有 Cmdlet 和 Windows PowerShell 提供者。
 
-使用這種類型的嵌入式管理單元時，您不會選取要註冊的 Cmdlet 和提供者。 若要撰寫可讓您選取已註冊內容的嵌入式管理單元，請參閱[撰寫自訂的 Windows PowerShell 嵌入式管理單元](./writing-a-custom-windows-powershell-snap-in.md)。
+使用這種類型的嵌入式管理單元時，不會選取您要註冊的 Cmdlet 和提供者。 若要撰寫可讓您選取已註冊內容的嵌入式管理單元，請參閱 [撰寫自訂 Windows PowerShell 嵌入式管理單元](./writing-a-custom-windows-powershell-snap-in.md)。
 
 ### <a name="writing-a-windows-powershell-snap-in"></a>撰寫 Windows PowerShell 嵌入式管理單元
 
 1. 加入 RunInstallerAttribute 屬性。
 
-2. 建立衍生自[PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)類別的公用類別。
+2. 建立衍生自 [PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) 類別的公用類別。
 
     在此範例中，類別名稱為 "GetProcPSSnapIn01"。
 
-3. 新增 (所需的嵌入式管理單元名稱) 的公用屬性。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、、 `(` `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、`*`
+3. 新增嵌入式管理單元名稱的公用屬性 (所需的) 。 命名嵌入式管理單元時，請勿使用下列任何字元： `#` 、 `.` 、 `,` 、 `(` 、 `)` 、 `{` 、 `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、、 `*`
 
-    在此範例中，嵌入式管理單元的名稱是 "GetProcPSSnapIn01"。
+    在此範例中，嵌入式管理單元的名稱為 "GetProcPSSnapIn01"。
 
-4. 新增嵌入式管理單元廠商的公用屬性， (所需的) 。
+4. 為嵌入式管理單元的廠商新增公用屬性 (必要的) 。
 
-    在此範例中，廠商是 "Microsoft"。
+    在此範例中，廠商為 "Microsoft"。
 
-5. 新增嵌入式管理單元之廠商資源的公用屬性 (選擇性) 。
+5. 為嵌入式管理單元的廠商資源新增公用屬性 (選擇性) 。
 
-    在此範例中，廠商資源為 "GetProcPSSnapIn01，Microsoft"。
+    在此範例中，廠商資源是「GetProcPSSnapIn01，Microsoft」。
 
-6. 針對所需的嵌入式管理單元 (，新增 [公用] 屬性) 。
+6. 新增嵌入式管理單元描述 (所需) 的公用屬性。
 
-    在此範例中，描述是「這是註冊了 get proc Cmdlet 的 Windows PowerShell 嵌入式管理單元」。
+    在此範例中，描述為「這是註冊 proc Cmdlet 的 Windows PowerShell 嵌入式管理單元」。
 
-7. 新增嵌入式管理單元之 [描述] 資源的 [公用] 屬性 (選擇性) 。
+7. 為嵌入式管理單元的描述資源新增公用屬性 (選擇性) 。
 
-    在此範例中，廠商資源是 "GetProcPSSnapIn01，這是一個 Windows PowerShell 嵌入式管理單元，它會註冊「get-proc」 Cmdlet」。
+    在此範例中，廠商資源是「GetProcPSSnapIn01，這是註冊 proc Cmdlet 的 Windows PowerShell 嵌入式管理單元」。
 
 ## <a name="example"></a>範例
 
-這個範例示範如何撰寫 Windows PowerShell 嵌入式管理單元，以在 Windows PowerShell shell 中用來註冊該程式。 請注意，在此範例中，完整的元件只會包含 GetProcPSSnapIn01 嵌入式管理單元類別和 `Get-Proc` Cmdlet 類別。
+此範例示範如何撰寫 Windows PowerShell 的嵌入式管理單元，可用來在 Windows PowerShell shell 中註冊 Get-Proc Cmdlet。 請注意，在此範例中，完整的元件只會包含 GetProcPSSnapIn01 嵌入式管理單元類別和 `Get-Proc` Cmdlet 類別。
 
 ```csharp
 [RunInstaller(true)]
@@ -123,4 +123,4 @@ public class GetProcPSSnapIn01 : PSSnapIn
 
 [如何註冊 Cmdlet、提供者和主機應用程式](/previous-versions/ms714644(v=vs.85))
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell 殼層 SDK](../windows-powershell-reference.md)

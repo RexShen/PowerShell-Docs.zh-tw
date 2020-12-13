@@ -1,36 +1,38 @@
 ---
-title: RemoteRunspacePool01 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 77283008f1c6bce79cec60d426e3933508fced64
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: RemoteRunspacePool01 範例
+description: RemoteRunspacePool01 範例
+ms.openlocfilehash: 6594faca17b472140b6b0843bf8ede8e803675e3
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783189"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657970"
 ---
 # <a name="remoterunspacepool01-sample"></a>RemoteRunspacePool01 範例
 
-這個範例會示範如何建立遠端執行時間集區，以及如何使用此集區同時執行多個命令。
+這個範例示範如何建立遠端執行空間集區，以及如何使用此集區同時執行多個命令。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
  此範例需要 Windows PowerShell 2.0。
 
 ## <a name="demonstrates"></a>示範
 
-- 建立 Wsmanconnectioninfo 物件的的[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。
+- 正在建立 [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件的。
 
-- 設定 system.servicemodel. [Runspaceconnectioninfo. Operationtimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)和[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)物件的屬性（property），請將其設為.. 管理[元件](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)。
+- 設定 [Runspaceconnectioninfo. Operationtimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) 和 [Runspaceconnectioninfo... Opentimeout *. *. *.](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件的屬性。
 
-- 建立使用[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)物件的遠端運行時，以建立遠端連線。
+- 建立遠端運行空間，以使用 [>wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) 物件來建立遠端連線。
 
-- 使用遠端運行空間集區同時執行[取得進程](/powershell/module/Microsoft.PowerShell.Management/Get-Process)和[取得服務](/powershell/module/microsoft.powershell.management/get-service)Cmdlet。
+- 使用遠端運行空間集區同時執行 [取得程式](/powershell/module/Microsoft.PowerShell.Management/Get-Process) 和 [取得服務](/powershell/module/microsoft.powershell.management/get-service) Cmdlet。
 
-- 關閉遠端運行空間集區以釋放遠端連線。
+- 關閉遠端運行空間集區以釋出遠端連線。
 
 ## <a name="example"></a>範例
 
- 這個範例會示範如何建立遠端執行時間集區，以及如何使用此集區同時執行多個命令。
+ 這個範例示範如何建立遠端執行空間集區，以及如何使用此集區同時執行多個命令。
 
 ```csharp
 namespace Samples

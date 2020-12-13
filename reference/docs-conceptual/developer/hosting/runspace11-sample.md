@@ -1,18 +1,20 @@
 ---
-title: Runspace11 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6e8a4080bb4fb33f7e0d428e24483b5cfac5c70e
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Runspace11 範例
+description: Runspace11 範例
+ms.openlocfilehash: bb2fac179d6d3b939ed145fe98c208c202a97623
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784923"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92657567"
 ---
 # <a name="runspace11-sample"></a>Runspace11 範例
 
-這個範例會示範如何使用[Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)類別來建立 proxy 命令，以呼叫現有的 Cmdlet，但會限制可用的參數集合。 Proxy 命令接著會加入用來建立受限 Runspace 的初始工作階段狀態。 這表示使用者只能透過 Proxy 命令使用此 Cmdlet 的功能。
+這個範例會示範如何使用 [Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) 類別來建立 proxy 命令，以呼叫現有的 Cmdlet，但會限制可用參數的集合。 Proxy 命令接著會加入用來建立受限 Runspace 的初始工作階段狀態。 這表示使用者只能透過 Proxy 命令使用此 Cmdlet 的功能。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -20,25 +22,25 @@ ms.locfileid: "87784923"
 
 這個範例會示範下列各項。
 
-- 建立[Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata)物件，以描述現有 Cmdlet 的中繼資料。
+- 建立 [Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) 物件，以描述現有 Cmdlet 的中繼資料。
 
-- 建立[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件。
+- 建立 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件。
 
 - 修改 Cmdlet 中繼資料以移除 Cmdlet 的參數。
 
-- 將 Cmdlet 新增至[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)物件，並將此 Cmdlet 設為私用。
+- 將 Cmdlet 新增至 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) 物件，並將 Cmdlet 設為私用。
 
-- 建立可呼叫現有 Cmdlet 的 proxy 函式，但只會公開一組受限的參數。
+- 建立會呼叫現有 Cmdlet 的 proxy 函式，但只公開一組有限的參數。
 
 - 將 proxy 函式加入至初始會話狀態。
 
-- 建立使用[管理元件](/dotnet/api/System.Management.Automation.Runspaces.Runspace)[物件的 system.servicemodel 物件，](/dotnet/api/system.management.automation.powershell)它會使用工作空間。
+- 建立使用[system.servicemodel 物件的](/dotnet/api/System.Management.Automation.Runspaces.Runspace)[系統. 管理](/dotnet/api/system.management.automation.powershell)... a m 物件。
 
-- 使用[system.web](/dotnet/api/system.management.automation.powershell)物件呼叫私用 Cmdlet 和 proxy 函式，以示範受限的運行空間。
+- 使用 [system.string 物件呼叫](/dotnet/api/system.management.automation.powershell) 私用 Cmdlet 和 proxy 函式，以示範受限的運行時。
 
 ## <a name="example"></a>範例
 
-這會建立私用 Cmdlet 的 proxy 命令，以示範受限的運行空間。
+這會為私用 Cmdlet 建立 proxy 命令，以示範受限的運行時。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
