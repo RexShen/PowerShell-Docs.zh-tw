@@ -1,28 +1,30 @@
 ---
-title: Cmdlet 集合 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9595c9ca09148de05c69d60a2ede5688c3db61b0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Cmdlet 集合
+description: Cmdlet 集合
+ms.openlocfilehash: b4bcb6548f9d64a8cc5e3fc3a66c671a5566001d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774808"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668230"
 ---
 # <a name="cmdlet-sets"></a>Cmdlet 集合
 
-當您設計 Cmdlet 時，您可能會遇到需要在相同資料片段上執行數個動作的情況。 例如，您可能需要取得並設定資料，或啟動和停止進程。 雖然您將需要建立個別的 Cmdlet 來執行每個動作，但您的 Cmdlet 設計應該包含一個基類，而這些類別會衍生自各個 Cmdlet 的類別。
+當您設計 Cmdlet 時，您可能會遇到需要在相同資料片段上執行數個動作的情況。 例如，您可能需要取得和設定資料，或啟動和停止進程。 雖然您將需要建立個別的 Cmdlet 來執行每個動作，但您的 Cmdlet 設計應該包含基類，以供個別 Cmdlet 的類別衍生。
 
 在執行基類時，請記住下列事項。
 
-- 宣告基類中所有衍生的 Cmdlet 所使用的任何一般參數。
+- 宣告基類中所有衍生 Cmdlet 所使用的任何一般參數。
 
-- 將 Cmdlet 特定的參數新增至適當的 Cmdlet 類別。
+- 將 Cmdlet 專用的參數新增至適當的 Cmdlet 類別。
 
 - 覆寫基類中適當的輸入處理方法。
 
-- 在所有 Cmdlet 類別上宣告[CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)屬性，但不要在基類上宣告它。
+- 宣告所有 Cmdlet 類別上的 [CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) 屬性，但不要在基類上宣告它。
 
-- 執行[PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)或[Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)類別，其名稱和描述會反映一組指令一集。
+- 執行 [PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) 或 [Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) 類別，其名稱和描述會反映一組指令程式（class）。
 
 ## <a name="example"></a>範例
 

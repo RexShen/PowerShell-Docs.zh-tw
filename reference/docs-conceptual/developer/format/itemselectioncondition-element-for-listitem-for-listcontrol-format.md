@@ -1,18 +1,20 @@
 ---
-title: ListControl (格式之專案的 ItemSelectionCondition 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f5c388928668e03b96923130fb5849f637548f12
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
+description: ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
+ms.openlocfilehash: 13d925da10c2386123983d52b109c03a0c3c63ab
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783614"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667805"
 ---
 # <a name="itemselectioncondition-element-for-listitem-for-listcontrol-format"></a>ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)
 
 定義必須存在才能使用此清單專案的條件。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 專案 (格式) ListControl (格式) ListEntry 元素，ListEntries for ListControl (format) ListItems 元素用於 ListEntry 的 ListControl (format) ListItems 元素的 ListControl (format) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) ListControl 元素 (format) ListEntries 元素 for ListControl (Format) ListEntry for ListEntries for ListControl (ListItems 專案 ListEntry) 格式 (ListControl 元素適用于 ListItems 的 ListControl) 格式 (
 
 ## <a name="syntax"></a>語法
 
@@ -46,7 +48,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-您可以為此條件指定一個屬性名稱或腳本，但不能同時指定這兩者。
+您可以為此條件指定一個屬性名稱或腳本，但不能同時指定兩者。
 
 ## <a name="see-also"></a>另請參閱
 

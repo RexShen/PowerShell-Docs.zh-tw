@@ -1,18 +1,20 @@
 ---
-title: View (Format) 之控制項的 CustomItem 的分行符號元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e55e07ede3c394cabbda25aa1ec3bf03683c1c6b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之控制項的 CustomItem 的 NewLine 元素 (格式)
+description: 檢視之控制項的 CustomItem 的 NewLine 元素 (格式)
+ms.openlocfilehash: 3b368f021fcbd2ecabf2032b951afe2979a3d027
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785654"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666428"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-view-format"></a>檢視之控制項的 CustomItem 的 NewLine 元素 (格式)
 
-將空白行加入控制項的顯示中。 定義可供視圖使用的控制項時，會使用這個元素。
+在控制項的顯示中加入空白行。 當定義可供視圖使用的控制項時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 控制項專案 (格式控制項的) 控制項專案 (格式) CustomEntries 專案的控制項的控制項 (的 CustomControl 元素針對 view 的 CustomControl (格式) CustomEntry 元素 CustomEntries 的 view (Format) CustomItem 元素用於 view (format) CustomEntry for 控制項 (分行符號元素) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 控制項專案 (格式) 控制項專案 (格式) CustomEntries 專案的視圖控制項的控制項 (格式若為 CustomControl for View (格式) CustomEntry 元素，用於 CustomEntries 的控制項 (格式) CustomEntry for 控制項的 CustomItem 專案 (格式)  () 格式的控制項
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[檢視之控制項的 CustomEntry 的 CustomItem 元素 (格式)](./customitem-element-for-customentry-for-controls-for-view-format.md)|定義控制項所顯示的資料及其顯示方式。|
+|[檢視之控制項的 CustomEntry 的 CustomItem 元素 (格式)](./customitem-element-for-customentry-for-controls-for-view-format.md)|定義控制項顯示的資料以及其顯示方式。|
 
 ## <a name="remarks"></a>備註
 

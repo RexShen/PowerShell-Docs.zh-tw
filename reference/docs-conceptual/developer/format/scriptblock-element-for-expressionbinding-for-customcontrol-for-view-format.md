@@ -1,18 +1,20 @@
 ---
-title: ExpressionBinding for CustomControl for View (Format) 的 ScriptBlock 元素Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: de8dc60ac92d92b85c88f222db0d8e237cd5c858
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之 CustomControl 的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+description: 檢視之 CustomControl 的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: 343f4e8621b52f9c268b725a89c97746599ef14a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785467"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665319"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 ExpressionBinding 的 ScriptBlock 元素 (格式)
 
 指定控制項顯示其值的腳本。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl for view (格式的 CustomEntries 專案) 格式 (CustomEntry for CustomEntries for view) CustomControl 元素的 CustomItem for CustomEntry for view (format) CustomControl 元素 for ExpressionBinding for view (格式) CustomItem 元素（CustomControl for ExpressionBinding for view (format) ScriptBlock 元素） (
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomEntries 元素 for View (Format) 元素 for CustomControl for View (format) 元素 for CustomEntry for CustomEntries for CustomControl for view (format) CustomItem 專案 for CustomEntry for CustomControl for view (format) ExpressionBinding for CustomItem for CustomControl 的 ExpressionBinding 專案 (格式) 
 
 ## <a name="syntax"></a>語法
 

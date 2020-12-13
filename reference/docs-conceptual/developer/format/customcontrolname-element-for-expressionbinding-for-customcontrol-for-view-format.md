@@ -1,18 +1,20 @@
 ---
-title: CustomControl for View (格式) 的 ExpressionBinding 的 CustomControlName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6f1ffca045b7efcecb4dce4e788a8c508fa6ef08
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之 CustomControl 的 ExpressionBinding 的 CustomControlName 元素 (格式)
+description: 檢視之 CustomControl 的 ExpressionBinding 的 CustomControlName 元素 (格式)
+ms.openlocfilehash: 24b27428c07d7178f0069f6d0e5b7ffc555efe34
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783750"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666802"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>檢視之 CustomControl 的 ExpressionBinding 的 CustomControlName 元素 (格式)
 
 指定通用控制項或 view 控制項的名稱。 定義自訂控制項視圖時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl 元素 for view (format) CustomControl for view (format) CustomEntry 元素，CustomEntries for view (format) CustomItem 專案 for CustomEntry (Format) ExpressionBinding 元素 for CustomItem 的 Expression Binding (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) CustomControl 元素 for View (format) CustomEntries 元素 for view (format) 元素 for CustomEntry for view (format) CustomEntries 專案 for CustomItem (format) CustomEntry 元素 for ExpressionBinding (format 的運算式系結) CustomItem 專案 (
 
 ## <a name="syntax"></a>語法
 
@@ -44,7 +46,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Forma
 
 ## <a name="remarks"></a>備註
 
-您可以建立可供格式化檔案的所有視圖使用的通用控制項，而且可以建立可供特定視圖使用的 view 控制項。 這些控制項的名稱是由下列元素所指定。
+您可以建立可供格式化檔案的所有視圖使用的通用控制項，也可以建立可供特定視圖使用的 view 控制項。 這些控制項的名稱是由下列元素所指定。
 
 - [設定之控制項的控制項的名稱元素 (格式)](./name-element-for-control-for-controls-for-configuration-format.md)
 

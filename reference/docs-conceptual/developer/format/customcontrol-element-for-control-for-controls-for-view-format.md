@@ -1,18 +1,20 @@
 ---
-title: 控制項的 CustomControl 元素，用於 View (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2020725bf6afb086901e14a976abbdc04366869c
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之控制項的控制項 CustomControl 元素 (格式)
+description: 檢視之控制項的控制項 CustomControl 元素 (格式)
+ms.openlocfilehash: 141e44d80ab27861baac39d5a5ae1ff1f673e99b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786096"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668026"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>檢視之控制項的控制項 CustomControl 元素 (格式)
 
 定義視圖所使用的控制項。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) 視圖專案 (格式) 控制項專案 (格式控制項的) 控制項專案， (格式控制項的 Control) CustomControl 專案 (
+設定元素 (格式) ViewDefinitions 元素 (格式) View 專案 (格式) 控制項專案 (格式) 控制項專案 (格式) 控制項控制項的控制項，以控制 View (格式的控制項) 
 
 ## <a name="syntax"></a>語法
 

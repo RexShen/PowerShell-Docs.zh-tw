@@ -1,26 +1,28 @@
 ---
-title: StopProcessSample02 範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: StopProcessSample02 範例
+description: StopProcessSample02 範例
+ms.openlocfilehash: 96171413f9f04d12460d48ba91c2c927e1856fd1
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87786436"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666887"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 範例
 
-這個範例會示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時，寫入 debug (WriteDebug) 、verbose (WriteVerbose) 和 warning (WriteWarning) 訊息。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
+此範例示範如何撰寫 Cmdlet，以在停止本機電腦上的處理常式時，將 debug (WriteDebug) 、verbose (WriteVerbose) 和警告 (WriteWarning) 訊息。 此 Cmdlet 類似于 `Stop-Process` Windows PowerShell 2.0 所提供的 Cmdlet。
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 建立範例。
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a>如何使用 Visual Studio 來建立範例。
 
-1. 開啟 Windows Internet Explorer，然後流覽至範例目錄底下的 StopProcessSample02 目錄。
+1. 開啟 [Windows Internet Explorer，然後流覽至範例目錄下的 StopProcessSample02 目錄。
 
-    安裝 Windows PowerShell 2.0 SDK 之後，流覽至 StopProcessSample02 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。
+    安裝 Windows PowerShell 2.0 SDK 之後，請流覽至 StopProcessSample02 資料夾。 預設位置為 C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02。
 
-2. 按兩下方案的圖示 ( .sln) 檔案。 這會在 Microsoft Visual Studio 中開啟範例專案。
+2. 按兩下方案 ( .sln) 檔案的圖示。 這會在 Microsoft Visual Studio 中開啟範例專案。
 
-3. 在 [建置]**** 功能表中，選取 [建置方案]****。
+3. 在 [建置] 功能表中，選取 [建置方案]。
 
     範例的程式庫會建立在預設的 \bin 或 \bin\debug 資料夾中。
 
@@ -38,11 +40,11 @@ ms.locfileid: "87786436"
 
     `import-module stopprossessample02`
 
-5. 執行下列命令來執行 Cmdlet：
+5. 執行下列命令以執行 Cmdlet：
 
     `stop-proc`
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>規格需求
 
 此範例需要 Windows PowerShell 2.0。
 
@@ -54,15 +56,15 @@ ms.locfileid: "87786436"
 
 - 使用參數屬性宣告 Cmdlet 參數。
 
-- 撰寫詳細訊息。 如需用來撰寫詳細訊息之方法的詳細資訊，請參閱[WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。
+- 寫入詳細資訊訊息。 如需用來寫入詳細資訊訊息之方法的詳細資訊，請參閱 [WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)。
 
-- 寫入錯誤訊息。 如需用來撰寫錯誤訊息之方法的詳細資訊，請參閱[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。
+- 寫入錯誤訊息。 如需用來寫入錯誤訊息之方法的詳細資訊，請參閱 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)。
 
-- 寫入警告訊息。 如需用來撰寫警告訊息之方法的詳細資訊，請參閱[WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。
+- 寫入警告訊息。 如需用來寫入警告訊息之方法的詳細資訊，請參閱 [WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)。
 
 ## <a name="example"></a>範例
 
-這個範例會示範如何使用 `WriteDebug` 、和方法來撰寫 debug、verbose 和 warning 訊息 `WriteVerbose` `WriteWarning` 。
+這個範例示範如何使用 `WriteDebug` 、和方法，撰寫 debug、verbose 和 warning 訊息 `WriteVerbose` `WriteWarning` 。
 
 ```csharp
 using System;

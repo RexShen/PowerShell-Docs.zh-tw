@@ -1,18 +1,20 @@
 ---
-title: " (格式) 設定之控制項的框架的 LeftIndent 元素 |Microsoft Docs"
 ms.date: 09/13/2016
-ms.openlocfilehash: 8de21173780047cb8af6bb76ea51c092b38d30a9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的框架的 LeftIndent 元素 (格式)
+description: 設定之控制項的框架的 LeftIndent 元素 (格式)
+ms.openlocfilehash: 9a6b2832b8c06d4217e743a2a13958b883959b57
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783580"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667771"
 ---
 # <a name="leftindent-element-for-frame-for-controls-for-configuration-format"></a>設定之控制項的框架的 LeftIndent 元素 (格式)
 
-指定資料從左邊界下移的字元數。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+指定資料從左邊界向外移動的字元數。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的 CustomControl 的 CustomEntries 元素) CustomEntry 元素如需設定 (格式的控制項的 CustomControl) CustomItem 元素用於 CustomEntry 的設定框架元素 CustomItem 的控制項設定 (格式的控制項) LeftIndent 元素)  (
+設定元素 (格式) 控制項的設定元素 (格式) 控制項的設定 (格式) CustomControl 元素，用於 CustomControl 的設定 (格式) CustomEntry 元素針對設定 (格式的控制項的 CustomControl 格式) CustomItem 元素，用於 CustomEntry 的設定框架專案控制項的設定 (格式 (設定的控制項框架) LeftIndent 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `LeftIndent` 。
+下列各節描述專案的屬性、子項目和父元素 `LeftIndent` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,11 +38,11 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|定義資料的顯示方式，例如將資料向左或向右移位。|
+|[設定之控制項的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|定義顯示資料的方式，例如將資料向左或向右移動。|
 
 ## <a name="text-value"></a>文字值
 
-指定您想要將資料向左移位的字元數。
+指定您想要將資料向左移動的字元數。
 
 ## <a name="remarks"></a>備註
 

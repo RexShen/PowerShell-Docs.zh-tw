@@ -1,25 +1,25 @@
 ---
-title: 如何驗證引數範圍 |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- ValidateRange attribute, example
-ms.openlocfilehash: b48b1b87425add51e855c48ec700c78c3ae296c1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 如何驗證引數範圍
+description: 如何驗證引數範圍
+ms.openlocfilehash: 1c1c53d43350a38beb2193200de3bd6b689366a4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87782067"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666921"
 ---
 # <a name="how-to-validate-an-argument-range"></a>如何驗證引數範圍
 
-這個範例示範如何指定 Windows PowerShell 執行時間可用來檢查參數引數的最小和最大值，然後再執行 Cmdlet 的驗證規則。 您可以藉由宣告 ValidateRange 屬性來設定此驗證規則。
+這個範例示範如何指定 Windows PowerShell 執行時間可在執行 Cmdlet 之前，用來檢查參數引數的最小值和最大值的驗證規則。 您可以藉由宣告 ValidateRange 屬性來設定此驗證規則。
 
 > [!NOTE]
-> 如需定義此屬性之類別的詳細資訊，請參閱[Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)。
+> 如需定義這個屬性之類別的詳細資訊，請參閱 [Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)。
 
 ### <a name="to-validate-an-argument-range"></a>驗證引數範圍
 
-- 新增 ValidateRange 屬性，如下列程式碼所示。 這個範例會針對參數指定0到5的範圍 `InputData` 。
+- 加入 ValidateRange 屬性，如下列程式碼所示。 此範例指定參數的範圍為0到 5 `InputData` 。
 
     ```csharp
     [ValidateRange(0, 5)]
@@ -32,7 +32,7 @@ ms.locfileid: "87782067"
     private int inputData;
     ```
 
-如需如何宣告這個屬性的詳細資訊，請參閱[ValidateRange 屬性](./validaterange-attribute-declaration.md)宣告。
+如需如何宣告這個屬性的詳細資訊，請參閱 [ValidateRange 屬性聲明](./validaterange-attribute-declaration.md)。
 
 ## <a name="see-also"></a>另請參閱
 

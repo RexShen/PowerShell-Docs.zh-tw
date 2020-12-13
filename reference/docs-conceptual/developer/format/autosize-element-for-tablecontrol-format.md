@@ -1,18 +1,20 @@
 ---
-title: TableControl (格式的 AutoSize 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: f29b3eb278fd9ff29d2f6f4fbd000513dcaeec7b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 的 AutoSize 元素 (格式)
+description: TableControl 的 AutoSize 元素 (格式)
+ms.openlocfilehash: 39d2f6f10796266cb6e9f1613b68337fb489278a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783886"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668111"
 ---
 # <a name="autosize-element-for-tablecontrol-format"></a>TableControl 的 AutoSize 元素 (格式)
 
-指定是否根據資料大小來調整資料行大小和資料行數目。
+指定是否根據資料的大小調整資料行大小和資料行數目。
 
-ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableControl (格式的 AutoSize 元素) 
+ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableControl (格式的 AutoSize 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -40,7 +42,7 @@ ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式
 
 ## <a name="remarks"></a>備註
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="see-also"></a>另請參閱
 

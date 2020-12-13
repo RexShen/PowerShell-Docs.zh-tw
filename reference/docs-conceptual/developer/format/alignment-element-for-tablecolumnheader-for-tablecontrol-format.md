@@ -1,18 +1,20 @@
 ---
-title: TableControl (格式的之 tablecolumnheader 的對齊元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1bf395b84af90d725c14b2f0ef569f72b5fcc613
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 TableColumnHeader 的對齊元素 (格式)
+description: TableControl 之 TableColumnHeader 的對齊元素 (格式)
+ms.openlocfilehash: cf8b90c12c28951283b5870186e2c88d427318a5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783920"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666819"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl 之 TableColumnHeader 的對齊元素 (格式)
 
-定義資料行標頭中的資料顯示方式。
+定義如何顯示資料行標題中的資料。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableHeaders 專案 (格式) 之 tablecolumnheader 專案 (格式) 之 tablecolumnheader (格式的對齊元素) 
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) TableControl 元素 (format) TableHeaders 元素 (format) 之 tablecolumnheader 專案 (格式)  (的對齊元素) 格式
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `Alignment` 。
+下列各節描述專案的屬性、子項目和父元素 `Alignment` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,25 +38,25 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[TableColumnHeader 元素 (格式)](./tablecolumnheader-element-format.md)|定義資料表資料行的標籤、寬度和對齊方式。|
+|[TableColumnHeader 元素 (格式)](./tablecolumnheader-element-format.md)|定義資料表之資料行的標籤、寬度和對齊方式。|
 
 ## <a name="text-value"></a>文字值
 
 指定下列其中一個值。 這些值不會區分大小寫。
 
-靠左對齊資料行中顯示的資料。如果未指定此元素，則為預設值。
+如果未指定這個元素，則靠左對齊資料行中顯示的資料，這是預設值。
 
-靠右對齊右側資料行中顯示的資料。
+靠右對齊資料行中顯示的資料。
 
-置中：在資料行中顯示的資料中心。
+置中：將資料行中顯示的資料置中。
 
 ## <a name="remarks"></a>備註
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[建立資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [建立資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-這個範例會顯示 `TableColumnHeader` 其資料在左側對齊的元素。
+這個範例會顯示 `TableColumnHeader` 其資料在左邊對齊的元素。
 
 ```xml
 <TableColumnHeader>

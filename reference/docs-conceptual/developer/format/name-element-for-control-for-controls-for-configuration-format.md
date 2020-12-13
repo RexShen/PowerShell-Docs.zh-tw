@@ -1,18 +1,20 @@
 ---
-title: 設定 (格式) 的控制項之控制項的名稱元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 3d45ba98b909ebee18e01d2b6985a48906ce39d9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的控制項的名稱元素 (格式)
+description: 設定之控制項的控制項的名稱元素 (格式)
+ms.openlocfilehash: 0c1c83f827482886ca742f2c0174e8383f87fb52
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783529"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666496"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>設定之控制項的控制項的名稱元素 (格式)
 
-指定控制項的名稱。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+指定控制項的名稱。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) Name 元素用於設定 (格式的控制項) 
+Configuration 專案 (格式) 控制項的設定 (格式設定 (格式的控制項元素) 控制項，以控制) 格式的控制項 (
 
 ## <a name="syntax"></a>語法
 
@@ -37,7 +39,7 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的控制項元素 (格式)](./control-element-for-controls-for-configuration-format.md)|定義可供格式檔案的所有視圖使用的通用控制項，以及用來參考控制項的名稱。|
+|[設定之控制項的控制項元素 (格式)](./control-element-for-controls-for-configuration-format.md)|定義通用控制項，可供格式化檔案的所有視圖和用來參考控制項的名稱使用。|
 
 ## <a name="text-value"></a>文字值
 
@@ -45,13 +47,13 @@ Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的
 
 ## <a name="remarks"></a>備註
 
-這裡指定的名稱可用於下列專案，以參考此控制項。
+此處指定的名稱可用於下列元素，以參考此控制項。
 
-- 建立 [資料表]、[清單]、[寬] 或 [自訂] 控制項時，下列專案可以指定控制項： [view (格式的 GroupBy 元素) ](./groupby-element-for-view-format.md)
+- 當您建立資料表、清單、寬或自訂控制項時，您可以透過下列元素指定控制項： [view (格式的 GroupBy 元素) ](./groupby-element-for-view-format.md)
 
-- 建立另一個通用控制項時，這個控制項可以由下列元素指定： [CustomItem 的 ExpressionBinding 元素，用於設定 (格式的控制項) ](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+- 建立另一個通用控制項時，此控制項可以由下列元素指定：適用于 [CustomItem 的 ExpressionBinding 元素，用於設定 (格式的控制項) ](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-- 建立可供視圖使用的控制項時，這個控制項可以由下列元素指定： [CustomItem 的 ExpressionBinding 元素，用於 view (格式的控制項) ](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
+- 建立可供視圖使用的控制項時，此控制項可以由下列元素指定： [view (格式之控制項的 CustomItem 的 ExpressionBinding 元素) ](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 
 ## <a name="see-also"></a>另請參閱
 

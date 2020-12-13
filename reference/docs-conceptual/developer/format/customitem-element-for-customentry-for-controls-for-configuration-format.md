@@ -1,18 +1,20 @@
 ---
-title: CustomEntry 之控制項的 CustomItem 元素，用於設定 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bb8124242496f192717127f201674bc1428e5de0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 CustomEntry 的 CustomItem 元素 (格式)
+description: 設定之控制項的 CustomEntry 的 CustomItem 元素 (格式)
+ms.openlocfilehash: 06c399e982b6ac0fba9c11e20c468fe8bef6f694
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785858"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666768"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>設定之控制項的 CustomEntry 的 CustomItem 元素 (格式)
 
-定義控制項所顯示的資料及其顯示方式。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+定義控制項顯示的資料以及其顯示方式。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 專案 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的 CustomControl 的 CustomControl 元素 CustomControl 的設定) 格式 (CustomItem 元素適用于設定的控制項的 CustomEntry 的 CustomEntry 元素
+設定元素 (格式) 控制項的設定專案 (格式設定的控制項) 控制項專案 (格式) CustomEntries 專案的 CustomControl 設定 (格式) 的設定 (格式) CustomControl 專案的格式 (CustomItem 專案設定的控制項
 
 ## <a name="syntax"></a>語法
 
@@ -38,8 +40,8 @@ Configuration 專案 (格式) Controls 設定的控制項元素 (格式設定的
 |元素|描述|
 |-------------|-----------------|
 |[設定之控制項的 CustomItem 的 ExpressionBinding 元素 (格式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義控制項所顯示的資料。|
-|[設定之控制項的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義資料的顯示方式，例如將資料向左或向右移位。|
-|[設定之控制項的 CustomItem 的 NewLine 元素 (格式)](./newline-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 將空白行加入控制項的顯示中。|
+|[設定之控制項的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義顯示資料的方式，例如將資料向左或向右移動。|
+|[設定之控制項的 CustomItem 的 NewLine 元素 (格式)](./newline-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 在控制項的顯示中加入空白行。|
 |[設定之控制項的 CustomItem 的文字元素 (格式)](./text-element-for-customitem-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 將文字（例如括弧或括弧）新增至控制項的顯示。|
 
 ### <a name="parent-elements"></a>父項目
@@ -56,7 +58,7 @@ Configuration 專案 (格式) Controls 設定的控制項元素 (格式設定的
 
 - 您可以指定的序列數目沒有上限。
 
-- 在每個序列中， `ExpressionBinding` 您可以使用的元素數目沒有上限。
+- 在每個序列中，您可以使用的元素數目沒有最大限制 `ExpressionBinding` 。
 
 ## <a name="see-also"></a>另請參閱
 

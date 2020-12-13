@@ -1,18 +1,20 @@
 ---
-title: CustomEntry 之控制項的之 entryselectedby 元素，用於設定 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e9467c8c2d80e46c0a47c31569efbddbabe25bb1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
+description: 設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
+ms.openlocfilehash: fadcdb69ac71269ba2f2f80baf139bb363d4acba
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774264"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666666"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>設定之控制項的 CustomEntry 的 EntrySelectedBy 元素 (格式)
 
-定義使用通用控制項定義的 .NET 類型，或必須存在才能使用此控制項的條件。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+定義 .NET 型別，這些型別會使用通用控制項的定義或必須存在才能使用此控制項的條件。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 專案 (格式) 控制設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的 CustomControl 的 CustomEntries 元素)  (格式) CustomControl 元素適用于設定 (格式之控制項的之 entryselectedby 專案) 
+設定專案 (格式) 控制項的設定專案 (格式設定的控制項) 控制項專案 (格式) CustomEntries 專案的 CustomControl 設定 (格式) 的格式 (格式) CustomControl 專案設定 (格式)  (格式的控制項) 格式
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 專案 (格式) 控制設定的控制項元素 (格式設定的控
 
 |元素|描述|
 |-------------|-----------------|
-|[設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義必須存在的條件，才能使用通用控制項定義。|
+|[設定之控制項的 EntrySelectedBy 的 SelectionCondition 元素 (格式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 定義要使用的通用控制項定義必須存在的條件。|
 |[設定之控制項的 EntrySelectedBy 的 SelectionSetName 元素 (格式)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定一組使用此通用控制項定義的 .NET 類型。|
 |[設定之控制項的 EntrySelectedBy 的 TypeName 元素 (格式)](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|選擇性項目。<br /><br /> 指定使用此通用控制項定義的 .NET 類型。|
 
@@ -48,7 +50,7 @@ Configuration 專案 (格式) 控制設定的控制項元素 (格式設定的控
 
 ## <a name="remarks"></a>備註
 
-每個定義至少必須指定一個 .NET 類型、選取範圍或選取條件。 您可以指定的類型、選擇集或選取條件的數目沒有上限。
+每個定義至少必須指定一個 .NET 類型、選取集或選取條件。 您可以指定的類型、選取集或選取條件數目沒有最大限制。
 
 ## <a name="see-also"></a>另請參閱
 

@@ -1,18 +1,20 @@
 ---
-title: GroupBy (格式的 ItemSelectionCondition 的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7738b180f328c7360275058cdb9dea01df6ea285
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+description: GroupBy 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: fe366fa31b93e8d69409cc49c3fe2c350d4d06d9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787643"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665079"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-groupby-format"></a>GroupBy 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為時 `true` ，會符合條件，並使用控制項。 此元素是在定義新物件群組的顯示方式時使用。
+指定觸發條件的腳本。 當此腳本評估為時 `true` ，就會符合條件，並且會使用控制項。 定義如何顯示新的物件群組時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素的視圖 (格式) CustomEntries 專案的 groupby (格式) CustomEntry 元素用於 CustomControl 若為 GroupBy (格式) 適用于 GroupBy 的 CustomEntry 的 CustomItem 專案 (格式) CustomItem 的 ExpressionBinding 專案為 groupby (格式) ItemSelectionCondition 元素用於 groupby (格式的 ExpressionBinding) ScriptBlock 元素 (
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy (格式) CustomEntries 元素適用于 CustomEntry 的 CustomControl 專案 (格式) CustomControl 元素針對 groupby (格式) CustomItem 元素，用於 CustomEntry 的 GroupBy (格式) ExpressionBinding 元素（CustomItem 的 groupby (格式）) ItemSelectionCondition 專案（ExpressionBinding 的 groupby (格式）)  (格式的 ItemSelectionCondition 專案) 
 
 ## <a name="syntax"></a>語法
 
@@ -44,7 +46,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如果使用這個元素，則在定義選取條件時，不能指定[PropertyName](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)元素。
+如果使用此元素，則在定義選取條件時，不能指定 [PropertyName](./propertyname-element-for-itemselectioncondition-for-groupby-format.md) 元素。
 
 ## <a name="see-also"></a>另請參閱
 

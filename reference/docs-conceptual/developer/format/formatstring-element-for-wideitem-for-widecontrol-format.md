@@ -1,18 +1,20 @@
 ---
-title: 之 wideitem for WideControl (Format) 的格式字串元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 4f1f0826a1cebb1526858875df640baac9d4ce48
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl 之 WideItem 的 FormatString 元素 (格式)
+description: WideControl 之 WideItem 的 FormatString 元素 (格式)
+ms.openlocfilehash: f67a18e3ec4f1323e7f9be8904db518c679d53e5
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781523"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667873"
 ---
 # <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a>WideControl 之 WideItem 的 FormatString 元素 (格式)
 
-指定定義屬性或腳本值在視圖中顯示方式的格式模式。
+指定格式模式，定義屬性或腳本值在視圖中的顯示方式。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 專案 (格式) WideEntries 專案 (格式) WideControl (格式) 之 wideitem 元素用於 WideControl (format) 格式元素，之 wideitem (格式) 
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) WideControl 元素 (format) WideEntries 元素 (format) WideControl (format) format 元素 (format 專案) 格式 (之 wideitem 的 WideControl) 格式
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案和元素的父元素 `FormatString` 。
+下列章節說明屬性、子專案和元素的父元素 `FormatString` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -40,17 +42,17 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="text-value"></a>文字值
 
-指定用來格式化資料的模式。 例如，您可以使用此模式來格式化[System. Timespan](/dotnet/api/System.TimeSpan)： {0： MMM} {0： dd} {0： HH}： {0： mm} 類型之任何屬性的值。
+指定用於格式化資料的模式。 例如，您可以使用此模式來格式化屬於 [system.string： {](/dotnet/api/System.TimeSpan)0： MMM} {0： dd} {0： HH}： {0： mm} 類型之任何屬性的值。
 
 ## <a name="remarks"></a>備註
 
-建立資料表視圖、清單視圖、寬視圖或自訂視圖時，可以使用格式字串。 如需有關格式化顯示在視圖中之值的詳細資訊，請參閱[格式化顯示的資料](./formatting-displayed-data.md)。
+您可以在建立資料表視圖、清單視圖、寬視圖或自訂視圖時使用格式字串。 如需有關如何將顯示在視圖中的值格式化的詳細資訊，請參閱 [格式化顯示的資料](./formatting-displayed-data.md)。
 
-如需在寬視圖中使用格式字串的詳細資訊，請參閱[建立寬視圖](./creating-a-wide-view.md)。
+如需在寬型視圖中使用格式字串的詳細資訊，請參閱 [建立廣泛的視圖](./creating-a-wide-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示如何為屬性的值定義格式化字串 `StartTime` 。
+下列範例顯示如何定義屬性值的格式化字串 `StartTime` 。
 
 ```xml
 <WideItem>
@@ -65,4 +67,4 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 [WideControl 的 WideItem 元素 (格式)](./wideitem-element-for-widecontrol-format.md)
 
-[撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)
+[寫入 Windows PowerShell 格式和類型檔案](./writing-a-powershell-formatting-file.md)

@@ -1,18 +1,20 @@
 ---
-title: ListControl 元素 (格式) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 0173b9797bffcca74f1a32903686f771366ebb1b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl 元素 (格式)
+description: ListControl 元素 (格式)
+ms.openlocfilehash: cd5687ac8e94e2245d1ae2de8b2206185e5b8ca4
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785722"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666581"
 ---
 # <a name="listcontrol-element-format"></a>ListControl 元素 (格式)
 
 定義視圖的清單格式。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 元素 (格式) 
+Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (Format) ListControl 元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -25,7 +27,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節說明屬性、子專案和元素的父元素 `ListControl` 。 此元素必須只包含單一子專案。
+下列章節說明屬性、子專案和元素的父元素 `ListControl` 。 這個元素必須只包含單一子項目。
 
 ### <a name="attributes"></a>屬性
 
@@ -45,11 +47,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如需建立清單視圖的詳細資訊，請參閱[建立清單視圖](./creating-a-list-view.md)。
+如需建立清單視圖的詳細資訊，請參閱 [建立清單視圖](./creating-a-list-view.md)。
 
 ## <a name="example"></a>範例
 
-這個範例會顯示[system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件的清單視圖。
+此範例顯示 [system.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) 物件的清單視圖。
 
 ```
 <View>
@@ -73,4 +75,4 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 [建立清單檢視](./creating-a-list-view.md)
 
-[撰寫 Windows PowerShell 格式化和類型檔案](./writing-a-powershell-formatting-file.md)
+[寫入 Windows PowerShell 格式和類型檔案](./writing-a-powershell-formatting-file.md)

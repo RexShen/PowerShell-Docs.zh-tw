@@ -1,21 +1,23 @@
 ---
-title: AccessDbProviderSample03 程式碼範例 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 6eddbec6369fd861a3a67bbbebe3d6f98c4bc164
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: AccessDbProviderSample03 程式碼範例
+description: AccessDbProviderSample03 程式碼範例
+ms.openlocfilehash: 2a8ae91a96fc9d2f123709480234296c2d75392b
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787286"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667550"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 程式碼範例
 
-下列程式碼示範如何執行[建立 Windows Powershell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 windows powershell 提供者。
+下列程式碼示範如何執行 [建立 Windows PowerShell 專案提供者](./creating-a-windows-powershell-item-provider.md)中所述的 Windows PowerShell 提供者。
 此提供者可運算元據存放區中的資料。
 
 > [!NOTE]
-> 您可以使用適用于 Windows Vista 和 .NET Framework 3.0 執行時間元件的 Microsoft Windows 軟體發展工具組，下載此提供者的 c # 原始程式檔 (AccessDBSampleProvider03.cs) 。 如需下載指示，請參閱[如何安裝 Windows powershell 和下載 Windows POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
-> 下載的來源檔案可在目錄中取得 **\<PowerShell Samples>** 。 如需其他 Windows PowerShell 提供者執行的詳細資訊，請參閱[設計您的 Windows Powershell 提供者](./designing-your-windows-powershell-provider.md)。
+> 您可以使用適用于 Windows Vista 的 Microsoft Windows 軟體開發套件和 .NET Framework 3.0 執行時間元件，下載此提供者的 c # 原始程式檔 (AccessDBSampleProvider03.cs) 。 如需下載指示，請參閱 [如何安裝 Windows PowerShell 及下載 WINDOWS POWERSHELL SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk)。
+> 下載的來源檔案可在目錄中取得 **\<PowerShell Samples>** 。 如需其他 Windows PowerShell 提供者實現的詳細資訊，請參閱 [設計您的 Windows PowerShell 提供者](./designing-your-windows-powershell-provider.md)。
 
 ## <a name="code-sample"></a>程式碼範例
 

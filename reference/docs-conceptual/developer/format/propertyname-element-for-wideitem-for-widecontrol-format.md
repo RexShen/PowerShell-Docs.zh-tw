@@ -1,18 +1,20 @@
 ---
-title: 之 wideitem for WideControl (格式的 PropertyName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7728f960a67faa99eaafb4a4934674e119b8af27
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: WideControl 之 WideItem 的 PropertyName 元素 (格式)
+description: WideControl 之 WideItem 的 PropertyName 元素 (格式)
+ms.openlocfilehash: 1d4d5eaf7708dfbd7997122fac156a36487538ea
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780469"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665612"
 ---
 # <a name="propertyname-element-for-wideitem-for-widecontrol-format"></a>WideControl 之 WideItem 的 PropertyName 元素 (格式)
 
 指定物件的屬性，其值會顯示在寬視圖中。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) WideControl 專案 (格式) WideEntries 專案 (格式) WideEntry 專案 (格式) 之 wideitem 元素 (格式) 之 wideitem 的 PropertyName 元素 (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) WideControl 元素 (格式) WideEntries 元素 (格式) WideEntry 專案 (格式) 之 wideitem 專案 (格式) 之 wideitem (格式的 PropertyName 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `PropertyName` 。
+下列各節描述專案的屬性、子項目和父元素 `PropertyName` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[之 wideitem 元素 (格式) ](./wideitem-element-for-widecontrol-format.md)|定義屬性或腳本，其值會顯示在寬視圖中。|
+|[之 wideitem 元素 (格式) ](./wideitem-element-for-widecontrol-format.md)|定義其值顯示在寬視圖中的屬性或腳本。|
 
 ## <a name="text-value"></a>文字值
 
@@ -44,11 +46,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如需有關寬視圖元件的詳細資訊，請參閱[建立寬視圖](./creating-a-wide-view.md)。
+如需有關廣泛視圖元件的詳細資訊，請參閱 [建立廣泛的視圖](./creating-a-wide-view.md)。
 
 ## <a name="example"></a>範例
 
-這個範例顯示的寬視圖，會顯示[system.object](/dotnet/api/System.Diagnostics.Process)物件的 ProcessName 屬性值。
+此範例顯示的寬視野，會顯示 ProcessName 屬性的[值。](/dotnet/api/System.Diagnostics.Process)
 
 ```xml
 View>

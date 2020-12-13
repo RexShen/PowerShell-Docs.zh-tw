@@ -1,18 +1,20 @@
 ---
-title: View (Format) 的控制項之框架的 RightIndent 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a688997791dc901e81236c5d467425ad145eb33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之控制項的框架的 RightIndent 元素 (格式)
+description: 檢視之控制項的框架的 RightIndent 元素 (格式)
+ms.openlocfilehash: 6bd7e0239777e1015f34827e3bad75e5fd560fc0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780452"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665491"
 ---
 # <a name="rightindent-element-for-frame-for-controls-for-view-format"></a>檢視之控制項的框架的 RightIndent 元素 (格式)
 
-指定資料從右邊界向外移動的字元數。 定義可供視圖使用的控制項時，會使用這個元素。
+指定資料從右邊界向外移動的字元數。 當定義可供視圖使用的控制項時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 控制項專案 (格式控制項的) 控制項專案 CustomControl， (格式控制項的控制項) CustomEntries 元素用於 view (格式) CustomEntries 的控制項適用于 view (Format) CustomItem 元素的 CustomEntry for view (Format) Frame 元素 for view (format) CustomItem 元素的控制項 (格式的控制項
+設定元素 (格式) ViewDefinitions 元素 (格式) View 專案 (格式) 控制項專案 (格式) 控制項專案 () 格式控制項的控制項專案 (格式) CustomEntries 元素用於查看 CustomControl 的視圖 (針對 view (Format 的控制項格式化) CustomEntry 元素) CustomItem 專案 CustomEntry for view 的元素 (格式) view (format 控制項框架的 CustomItem 元素) 格式 (
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `RightIndent` 。
+下列各節描述專案的屬性、子項目和父元素 `RightIndent` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,11 +38,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[檢視之控制項的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-controls-for-view-format.md)|定義資料的顯示方式，例如將資料向左或向右移位。|
+|[檢視之控制項的 CustomItem 的框架元素 (格式)](./frame-element-for-customitem-for-controls-for-view-format.md)|定義顯示資料的方式，例如將資料向左或向右移動。|
 
 ## <a name="text-value"></a>文字值
 
-指定您想要將資料向右移位的字元數。
+指定您想要將資料向右移動的字元數。
 
 ## <a name="remarks"></a>備註
 

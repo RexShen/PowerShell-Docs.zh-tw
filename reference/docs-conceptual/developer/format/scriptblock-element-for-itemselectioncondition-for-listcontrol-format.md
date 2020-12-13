@@ -1,18 +1,20 @@
 ---
-title: ItemSelectionCondition for ListControl (格式的 ScriptBlock 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 38dc952bfadd6aed24bae8cbef05adcd22e61dd4
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+description: ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: 1e518f898e0e1e62ca64f9897b1323cc6dd89ae9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87787626"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665061"
 ---
 # <a name="scriptblock-element-for-itemselectioncondition-for-listcontrol-format"></a>ListControl 之 ItemSelectionCondition 的 ScriptBlock 元素 (格式)
 
-指定觸發條件的腳本。 當此腳本評估為時 `true` ，會符合條件，且會使用清單專案。 定義清單視圖時，會使用這個元素。
+指定觸發條件的腳本。 當此腳本評估為時 `true` ，就會符合條件，並且會使用清單專案。 定義清單視圖時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 元素 (格式) ListEntry for ListEntries 的 ListControl 專案的 ListControl (format) ListItems 元素（ListEntry for ListControl (format) ListItems 專案 for ItemSelectionCondition for ListControl (format) ScriptBlock 元素 for ItemSelectionCondition 的 ListControl (format) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) ListControl 元素 (format) ListEntries 元素 for ListControl (Format) ListEntry 專案 for ListEntries for ListControl (format) ListItems for ListEntry for ListControl 的 ListItems 專案 (格式) ItemSelectionCondition 的 ListControl 專案 (格式) ItemSelectionCondition 專案的 ListControl (格式) 元素 (
 
 ## <a name="syntax"></a>語法
 
@@ -44,7 +46,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如果使用這個元素，則在 `PropertyName` 定義選取條件時，不能指定元素。
+如果使用此元素，則在 `PropertyName` 定義選取條件時，不能指定元素。
 
 ## <a name="see-also"></a>另請參閱
 

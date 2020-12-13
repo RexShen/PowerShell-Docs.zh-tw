@@ -1,18 +1,20 @@
 ---
-title: ItemSelectionCondition for ListControl (格式的 PropertyName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 8bdbb05326f7ff5ccffa46215631a5c954080dc1
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
+description: ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
+ms.openlocfilehash: c515efe70afdb1c1186c0a07fe1f52dc49ad57b9
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780860"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665986"
 ---
 # <a name="propertyname-element-for-itemselectioncondition-for-listcontrol-format"></a>ListControl 之 ItemSelectionCondition 的 PropertyName 元素 (格式)
 
-指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為時 `true` ，就會符合條件，並使用此視圖。 定義清單視圖時，會使用這個元素。
+指定觸發條件的 .NET 屬性。 當這個屬性存在或評估為時， `true` 就會符合條件，並使用 view。 定義清單視圖時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) ListControl 專案 (格式) ListEntries 專案 (格式) ListControl (格式) ListItems 專案（ListEntry 的 ListControl 的 ListItems 專案 (格式) ListControl 元素，ItemSelectionCondition 的 ListControls 的 PropertyName 元素 (格式 ItemSelectionCondition) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) ListControl 元素 (format) ListEntries 專案 (format) ListEntry (格式) ListControl 專案的 ListItems (格式) ListEntry 專案的 ListControl (格式) ListItems 專案 ListControl 的 ItemSelectionCondition 屬性 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -44,11 +46,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ## <a name="remarks"></a>備註
 
-如果使用這個元素，則在定義選取條件時，不能指定[ScriptBlock](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)元素。
+如果使用此元素，則在定義選取條件時，不能指定 [ScriptBlock](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md) 元素。
 
 ## <a name="see-also"></a>另請參閱
 
-[ItemSelectionCondition for ListIControl (格式的 ScriptBlock 元素) ](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
+[適用于 ListIControl 的 ItemSelectionCondition 的 ScriptBlock 元素 (格式) ](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)
 
 [ListControl 之 ListItem 的 ItemSelectionCondition 元素 (格式)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)
 

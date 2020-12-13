@@ -1,18 +1,20 @@
 ---
-title: GroupBy (格式的 PropertyName 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: e83ebd49e4f3087c817b3cc8772889dbe85113aa
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: GroupBy 的 PropertyName 元素 (格式)
+description: GroupBy 的 PropertyName 元素 (格式)
+ms.openlocfilehash: 44351c46ff2386f967644fef4f423b3858dc1619
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785603"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666139"
 ---
 # <a name="propertyname-element-for-groupby-format"></a>GroupBy 的 PropertyName 元素 (格式)
 
-指定在每次其值變更時啟動新群組的 .NET 屬性。
+指定每當新群組值變更時，會啟動新群組的 .NET 屬性。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) GroupBy 元素用於 GroupBy (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) groupby (格式的 groupby 元素) 
 
 ## <a name="syntax"></a>語法
 
@@ -36,7 +38,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[檢視的 GroupBy 元素 (格式)](./groupby-element-for-view-format.md)|定義一組 .NET 物件的顯示方式。|
+|[檢視的 GroupBy 元素 (格式)](./groupby-element-for-view-format.md)|定義如何顯示 .NET 物件的群組。|
 
 ## <a name="text-value"></a>文字值
 
@@ -46,11 +48,11 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 每當這個屬性的值變更時，Windows PowerShell 就會啟動新的群組。
 
-當指定此元素時，您無法指定[ScriptBlock](./scriptblock-element-for-groupby-format.md)元素來啟動新的群組。
+當指定這個專案時，您無法指定 [ScriptBlock](./scriptblock-element-for-groupby-format.md) 元素來啟動新群組。
 
 ## <a name="example"></a>範例
 
-下列範例示範當屬性的值變更時，如何啟動新的群組。
+下列範例示範如何在屬性值變更時，啟動新的群組。
 
 ```xml
 <GroupBy>
@@ -60,7 +62,7 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 ```
 
-如需包含此元素的完整格式檔案範例，請參閱[Wide View (GroupBy) ](./wide-view-groupby.md)。
+如需包含此專案之完整格式化檔案的範例，請參閱 [Wide View (GroupBy) ](./wide-view-groupby.md)。
 
 ## <a name="see-also"></a>另請參閱
 

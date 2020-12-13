@@ -1,27 +1,29 @@
 ---
-title: 如何從 Cmdlet 內叫用 Cmdlet |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 如何從 Cmdlet 內叫用 Cmdlet
+description: 如何從 Cmdlet 內叫用 Cmdlet
+ms.openlocfilehash: d137ac895f66000329de76a2c16a74b02c0e82ca
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784141"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667040"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>如何從 Cmdlet 內叫用 Cmdlet
 
-這個範例示範如何從另一個 Cmdlet 叫用 Cmdlet，這可讓您將叫用 Cmdlet 的功能新增至您正在開發的 Cmdlet 中。 在此範例中， `Get-Process` 會叫用 Cmdlet 來取得在本機電腦上執行的處理常式。 對 Cmdlet 的呼叫 `Get-Process` 相當於下列命令。 此命令會抓取名稱開頭為 "a" 到 "t" 字元的所有進程。
+此範例示範如何從另一個 Cmdlet 中叫用 Cmdlet，此 Cmdlet 可讓您將叫用 Cmdlet 的功能新增到您正在開發的 Cmdlet。 在此範例中， `Get-Process` 會叫用 Cmdlet 來取得在本機電腦上執行的處理常式。 對 Cmdlet 的呼叫 `Get-Process` 相當於下列命令。 此命令會抓取所有名稱開頭為 "a" 到 "t" 字元的進程。
 
 ```powershell
 Get-Process -name [a-t]
 ```
 
 > [!IMPORTANT]
-> 您只能叫用直接衍生自[system.object](/dotnet/api/System.Management.Automation.Cmdlet)類別的 Cmdlet。 您不能叫用衍生自[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)類別的 Cmdlet。
+> 您只能叫用直接衍生自 [system.object](/dotnet/api/System.Management.Automation.Cmdlet) 類別的 Cmdlet。 您無法叫用衍生自 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) 類別的 Cmdlet。
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>從 Cmdlet 內叫用 Cmdlet
 
-1. 請確定已參考定義要叫用之 Cmdlet 的元件，並已新增適當的 `using` 語句。 在此範例中，會加入下列命名空間。
+1. 確定已參考定義要叫用之 Cmdlet 的元件，並已加入適當的 `using` 語句。 在此範例中，會新增下列命名空間。
 
     ```csharp
     using System.Diagnostics;
@@ -29,14 +31,14 @@ Get-Process -name [a-t]
     using Microsoft.PowerShell.Commands;  // Windows PowerShell assembly.
     ```
 
-2. 在 Cmdlet 的輸入處理方法中，建立要叫用之 Cmdlet 的新實例。 在此範例中，會建立[Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand)類型的物件，以及包含叫用 Cmdlet 時所使用之引數的字串。
+2. 在 Cmdlet 的輸入處理方法中，建立要叫用之 Cmdlet 的新實例。 在此範例中，會建立 [Getprocesscommand](/dotnet/api/Microsoft.PowerShell.Commands.GetProcessCommand) 類型的物件，以及包含叫用 Cmdlet 時所使用之引數的字串。
 
     ```csharp
     GetProcessCommand gp = new GetProcessCommand();
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. 呼叫[system.web *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)方法，以叫用 `Get-Process` Cmdlet。
+3. 呼叫 system.servicemodel. [invoke *](/dotnet/api/System.Management.Automation.Cmdlet.Invoke) 方法以叫用 `Get-Process` Cmdlet。
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -48,7 +50,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>範例
 
-在此範例中， `Get-Process` 會從 Cmdlet 的[BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)方法中叫用 Cmdlet。
+在此範例中， `Get-Process` 會從 Cmdlet 的 [BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) 方法中叫用 Cmdlet。
 
 ```csharp
 using System;

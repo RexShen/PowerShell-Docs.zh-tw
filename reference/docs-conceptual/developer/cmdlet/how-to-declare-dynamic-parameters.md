@@ -1,26 +1,28 @@
 ---
-title: 如何宣告動態參數 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: c8839aa8841bf94a9b7f8f930ca315fe0ccedb30
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 如何宣告動態參數
+description: 如何宣告動態參數
+ms.openlocfilehash: 0f5a8f249b414663aa9702a908ea5c8ca24755ff
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87784175"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667074"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>如何宣告動態參數
 
-這個範例示範如何定義在執行時間新增至 Cmdlet 的動態參數。 在此範例中， `Department` 每當使用者指定切換參數時，都會將參數新增至 Cmdlet `Employee` 。 如需動態參數的詳細資訊，請參閱[Cmdlet 動態參數](./cmdlet-dynamic-parameters.md)。
+此範例示範如何定義在執行時間新增至 Cmdlet 的動態參數。 在此範例中， `Department` 每當使用者指定切換參數時，就會將參數新增至 Cmdlet `Employee` 。 如需動態參數的詳細資訊，請參閱 [Cmdlet 動態參數](./cmdlet-dynamic-parameters.md)。
 
 ## <a name="to-define-dynamic-parameters"></a>若要定義動態參數
 
-1. 在 Cmdlet 類別宣告中，新增[Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters)介面，如下所示。
+1. 在 Cmdlet 類別宣告中，加入 [Idynamicparameters](/dotnet/api/System.Management.Automation.IDynamicParameters) 介面，如下所示。
 
    ```csharp
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. 呼叫[Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)方法，它會傳回已定義動態參數的物件。 在此範例中，當指定參數時，會呼叫方法 `Employee` 。
+2. 呼叫 [Idynamicparameters. Getdynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters) 方法，這個方法會傳回定義動態參數的物件。 在此範例中，當指定參數時，會呼叫方法 `Employee` 。
 
    ```csharp
    public object GetDynamicParameters()
@@ -35,7 +37,7 @@ ms.locfileid: "87784175"
    private SendGreetingCommandDynamicParameters context;
    ```
 
-3. 宣告定義要加入之動態參數的類別。 您可以使用您用來宣告靜態 Cmdlet 參數的屬性，以宣告動態參數。
+3. 宣告定義要加入之動態參數的類別。 您可以使用您用來宣告靜態 Cmdlet 參數的屬性來宣告動態參數。
 
    ```csharp
    public class SendGreetingCommandDynamicParameters
@@ -53,7 +55,7 @@ ms.locfileid: "87784175"
 
 ## <a name="example"></a>範例
 
-在此範例中， `Department` 每當使用者指定參數時，就會新增參數 `Employee` 。 `Department`參數是選擇性參數，而 ValidateSet 屬性則是用來指定允許的引數。
+在此範例中， `Department` 每當使用者指定參數時，就會加入參數 `Employee` 。 `Department`參數是選擇性參數，而 ValidateSet 屬性是用來指定允許的引數。
 
 ```csharp
 using System;

@@ -1,18 +1,20 @@
 ---
-title: View (格式的 Name 元素) |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 670b089f850fa4b39b7b100ca1e1ce45b05ea72d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視的名稱元素 (格式)
+description: 檢視的名稱元素 (格式)
+ms.openlocfilehash: 5781bcdf7a0e1eb5e9c7e97bb6acc0a383dc0262
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773227"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666447"
 ---
 # <a name="name-element-for-view-format"></a>檢視的名稱元素 (格式)
 
-指定用來識別此視圖的名稱。
+指定用來識別視圖的名稱。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (format) Name 元素 (格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 名稱元素 (格式) 
 
 ## <a name="syntax"></a>語法
 
@@ -40,15 +42,15 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (forma
 
 ## <a name="text-value"></a>文字值
 
-為視圖指定唯一的易記名稱。 這個名稱可以包含檢視類型的參考 (例如資料表視圖或清單視圖) 、物件或物件集使用此視圖、哪個命令會傳回物件，或其組合。
+為視圖指定唯一的易記名稱。 這個名稱可以包含檢視類型的參考 (例如，資料表視圖或清單視圖) 、使用 view 的物件或物件集、哪個命令傳回物件或這些的組合。
 
 ## <a name="remarks"></a>備註
 
-如需不同類型之視圖的詳細資訊，請參閱下列主題：[資料表視圖](./creating-a-table-view.md)、[清單視圖](./creating-a-list-view.md)、[寬視圖](./creating-a-wide-view.md)和[自訂視圖](./creating-custom-controls.md)。
+如需不同類型之視圖的詳細資訊，請參閱下列主題： [資料表視圖](./creating-a-table-view.md)、 [清單視圖](./creating-a-list-view.md)、 [寬視圖](./creating-a-wide-view.md)和 [自訂視圖](./creating-custom-controls.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示的 `View` 元素會定義[System.serviceprocess.dll. Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)物件的資料表視圖。 此視圖的名稱為 "service"。
+下列範例 `View` 會顯示定義 [system.serviceprocess.dll Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController) 物件之資料表視圖的元素。 視圖的名稱為「服務」。
 
 ```xml
 <View>

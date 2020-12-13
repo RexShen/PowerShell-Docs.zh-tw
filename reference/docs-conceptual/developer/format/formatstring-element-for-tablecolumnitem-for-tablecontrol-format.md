@@ -1,18 +1,20 @@
 ---
-title: 之 tablecolumnitem for TableControl (Format) 的格式字串元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 848583e697d0ab7bd5b017c14c47aba3c51a3c17
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: TableControl 之 TableColumnItem 的 FormatString 元素 (格式)
+description: TableControl 之 TableColumnItem 的 FormatString 元素 (格式)
+ms.openlocfilehash: 3d386e61ac321c05e0b298019c2298f76b391b21
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87781540"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667890"
 ---
 # <a name="formatstring-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl 之 TableColumnItem 的 FormatString 元素 (格式)
 
-指定定義如何顯示資料表之屬性或腳本值的格式模式。
+指定格式模式，定義資料表的屬性或腳本值的顯示方式。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 專案 (格式) TableRowEntries 專案 (格式) TableRowEntry 專案 (格式) TableColumnItems 元素 (格式) 之 tablecolumnitem 元素 (格式) 之 tablecolumnitem (格式的字串格式) 
+設定元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) TableControl 元素 (格式) TableRowEntries 元素 (格式) TableRowEntry 專案 (格式)  (格式專案) 格式 () 
 
 ## <a name="syntax"></a>語法
 
@@ -36,21 +38,21 @@ Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格�
 
 |元素|描述|
 |-------------|-----------------|
-|[之 tablecolumnitem 元素 (格式) ](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|定義屬性或腳本，其值會顯示在資料列的資料行中。|
+|[之 tablecolumnitem 元素 (格式) ](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|定義其值會顯示在資料列的資料行中的屬性或腳本。|
 
 ## <a name="text-value"></a>文字值
 
-指定用來格式化資料的模式。 例如，您可以使用此模式來格式化[System. Timespan](/dotnet/api/System.TimeSpan)： {0： MMM} {0： dd} {0： HH}： {0： mm} 類型之任何屬性的值。
+指定用於格式化資料的模式。 例如，您可以使用此模式來格式化 [任何類型為](/dotnet/api/System.TimeSpan)system.string： {0： MMM} {0： dd} {0： HH}： {0： mm} 的屬性值。
 
 ## <a name="remarks"></a>備註
 
-建立資料表視圖、清單視圖、寬視圖或自訂視圖時，可以使用格式字串。 如需有關格式化顯示在視圖中之值的詳細資訊，請參閱[格式化顯示的資料](./formatting-displayed-data.md)。
+您可以在建立資料表視圖、清單視圖、寬視圖或自訂視圖時使用格式字串。 如需有關如何將顯示在視圖中的值格式化的詳細資訊，請參閱 [格式化顯示的資料](./formatting-displayed-data.md)。
 
-如需有關資料表視圖之元件的詳細資訊，請參閱[資料表視圖](./creating-a-table-view.md)。
+如需有關資料表視圖元件的詳細資訊，請參閱 [資料表視圖](./creating-a-table-view.md)。
 
 ## <a name="example"></a>範例
 
-下列範例顯示如何為屬性的值定義格式化字串 `StartTime` 。
+下列範例顯示如何定義屬性值的格式化字串 `StartTime` 。
 
 ```xml
 <TableColumnItem>

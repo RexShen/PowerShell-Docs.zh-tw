@@ -1,18 +1,20 @@
 ---
-title: 設定 (格式) 之控制項的 ExpressionBinding 的 ScriptBlock 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: ea7df6f523ad0e1939f4d02b9fbdc9f72eb4bb9b
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 設定之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+description: 設定之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
+ms.openlocfilehash: d984c28a47afe8a998effbb4205c95f3e74411ca
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87785501"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665340"
 ---
 # <a name="scriptblock-element-for-expressionbinding-for-controls-for-configuration-format"></a>設定之控制項的 ExpressionBinding 的 ScriptBlock 元素 (格式)
 
-指定由通用控制項顯示其值的腳本。 此元素是在定義可供格式檔案中的所有視圖使用的通用控制項時使用。
+指定由通用控制項顯示其值的腳本。 當定義可供格式化檔案中所有視圖使用的通用控制項時，會使用這個元素。
 
-Configuration 元素 (格式) Controls 設定的控制項元素 (格式設定的控制項) 控制項專案 (格式) 設定 (格式的 CustomControl 的 CustomEntries 元素) CustomEntry 元素如需設定 (格式的控制項的 CustomControl) CustomItem 元素用於 CustomEntry 的 configuration ExpressionBinding 元素 CustomItem For 控制項的) ScriptBlock 元素 (格式的控制項 ExpressionBinding (
+設定元素 (格式) 控制項的設定元素 (格式) 控制項的設定 (格式) CustomControl 元素，用於 CustomControl 的設定 (格式) CustomEntry 元素針對 configuration (格式的控制項的 CustomControl 格式) CustomItem 元素，用於 CustomEntry 的控制項，以設定 (格式之控制項的 CustomItem) ScriptBlock 元素)  (
 
 ## <a name="syntax"></a>語法
 

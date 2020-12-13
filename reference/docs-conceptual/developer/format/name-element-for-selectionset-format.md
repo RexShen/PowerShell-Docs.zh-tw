@@ -1,18 +1,20 @@
 ---
-title: SelectionSet (格式) 的 Name 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 1fc33eeb87a6912ed6793629ab1969cd65b5f0c5
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: SelectionSet 的名稱元素 (格式)
+description: SelectionSet 的名稱元素 (格式)
+ms.openlocfilehash: 98c13be6ea352055231fbdb3a60f0eb508f661b8
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773295"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666448"
 ---
 # <a name="name-element-for-selectionset-format"></a>SelectionSet 的名稱元素 (格式)
 
 指定用來參考選取集的名稱。
 
-Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 (格式) SelectionSet 的 Name 元素 (格式) 
+設定元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 (格式) SelectionSet (格式) 名稱元素
 
 ## <a name="syntax"></a>語法
 
@@ -22,7 +24,7 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 
 
 ## <a name="attributes-and-elements"></a>屬性和項目
 
-下列各節描述元素的屬性、子專案和父項目 `Name` 。
+下列各節描述專案的屬性、子項目和父元素 `Name` 。
 
 ### <a name="attributes"></a>屬性
 
@@ -36,19 +38,19 @@ Configuration 元素 (格式) SelectionSets 元素 (格式) SelectionSet 元素 
 
 |元素|描述|
 |-------------|-----------------|
-|[SelectionSet 元素 (格式)](./selectionset-element-format.md)|定義一組可由集合名稱參考的 .NET 物件。|
+|[SelectionSet 元素 (格式)](./selectionset-element-format.md)|定義可由集合名稱參考的一組 .NET 物件。|
 
 ## <a name="text-value"></a>文字值
 
-指定要參考選取集的名稱。 對於可使用的字元沒有任何限制。
+指定參考選取集的名稱。 可以使用的字元沒有任何限制。
 
 ## <a name="remarks"></a>備註
 
-此處指定的名稱用於 `SelectionSetName` 元素中。 View 所能使用的選取範圍 (views 的定義可以) 多個定義，或指定選取條件時。 如需選取集的詳細資訊，請參閱[定義物件的集合](./defining-selection-sets.md)。
+此處指定的名稱用於 `SelectionSetName` 元素中。 可供視圖使用的選取範圍， (views 的 view 定義可以有多個定義) 或指定選取條件。 如需選取集的詳細資訊，請參閱 [定義物件集](./defining-selection-sets.md)。
 
 ## <a name="example"></a>範例
 
-這個範例會顯示 `SelectionSet` 定義四個 .net 類型的元素。 選取集的名稱是 "FileSystemTypes"。
+此範例顯示 `SelectionSet` 定義四個 .net 類型的元素。 選擇組的名稱為 "FileSystemTypes"。
 
 ```xml
 <SelectionSets>

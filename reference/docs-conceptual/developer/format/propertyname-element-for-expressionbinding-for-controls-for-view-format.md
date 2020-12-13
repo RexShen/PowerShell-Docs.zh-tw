@@ -1,18 +1,20 @@
 ---
-title: View (Format) 的控制項之 ExpressionBinding 的 PropertyName 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: bf0c03ec7a34eb8bc9e2c5418d60986887c50b8f
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
+description: 檢視之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
+ms.openlocfilehash: f53f966456746e85d01503c9c151f2538c89006a
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87773193"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666207"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-view-format"></a>檢視之控制項的 ExpressionBinding 的 PropertyName 元素 (格式)
 
-指定控制項顯示其值的 .NET 屬性。 定義可供視圖使用的控制項時，會使用這個元素。
+指定控制項顯示其值的 .NET 屬性。 當定義可供視圖使用的控制項時，會使用這個元素。
 
-Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 控制項專案 (格式控制項的) 控制項專案 CustomControl， (格式控制項的控制項) CustomEntries 元素用於 view (針對 (格式的控制項，) CustomEntry 元素格式) CustomItem 專案的 CustomEntry for view (Format) ExpressionBinding 元素 for view (format CustomItem for Controls 的 ExpressionBinding 專案) 格式的控制項
+設定元素 (格式) ViewDefinitions 元素 (格式) View 專案 (格式) 控制項專案 (格式) 控制項專案 () 格式控制項的控制項專案 (格式) CustomEntries 元素用於查看 CustomControl 的視圖 (針對 view (format 的控制項格式化) CustomEntry 元素) CustomItem 專案 CustomEntry For view 的格式專案格式) ExpressionBinding 控制項的 CustomItem 專案 (格式) ExpressionBinding 的控制項 ( (
 
 ## <a name="syntax"></a>語法
 
