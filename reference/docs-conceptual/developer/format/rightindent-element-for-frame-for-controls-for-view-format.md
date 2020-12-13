@@ -1,51 +1,53 @@
 ---
-title: View (Format) 的控制項之框架的 RightIndent 元素 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 7a688997791dc901e81236c5d467425ad145eb33
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 檢視之控制項的框架的 RightIndent 元素 (格式)
+description: 檢視之控制項的框架的 RightIndent 元素 (格式)
+ms.openlocfilehash: 6bd7e0239777e1015f34827e3bad75e5fd560fc0
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780452"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92665491"
 ---
-# <a name="rightindent-element-for-frame-for-controls-for-view-format"></a><span data-ttu-id="45964-102">檢視之控制項的框架的 RightIndent 元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="45964-102">RightIndent Element for Frame for Controls for View (Format)</span></span>
+# <a name="rightindent-element-for-frame-for-controls-for-view-format"></a><span data-ttu-id="671e9-103">檢視之控制項的框架的 RightIndent 元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="671e9-103">RightIndent Element for Frame for Controls for View (Format)</span></span>
 
-<span data-ttu-id="45964-103">指定資料從右邊界向外移動的字元數。</span><span class="sxs-lookup"><span data-stu-id="45964-103">Specifies how many characters the data is shifted away from the right margin.</span></span> <span data-ttu-id="45964-104">定義可供視圖使用的控制項時，會使用這個元素。</span><span class="sxs-lookup"><span data-stu-id="45964-104">This element is used when defining controls that can be used by a view.</span></span>
+<span data-ttu-id="671e9-104">指定資料從右邊界向外移動的字元數。</span><span class="sxs-lookup"><span data-stu-id="671e9-104">Specifies how many characters the data is shifted away from the right margin.</span></span> <span data-ttu-id="671e9-105">當定義可供視圖使用的控制項時，會使用這個元素。</span><span class="sxs-lookup"><span data-stu-id="671e9-105">This element is used when defining controls that can be used by a view.</span></span>
 
-<span data-ttu-id="45964-105">Configuration 元素 (格式) ViewDefinitions 元素 (格式) View 元素 (格式) 控制項專案 (格式控制項的) 控制項專案 CustomControl， (格式控制項的控制項) CustomEntries 元素用於 view (格式) CustomEntries 的控制項適用于 view (Format) CustomItem 元素的 CustomEntry for view (Format) Frame 元素 for view (format) CustomItem 元素的控制項 (格式的控制項</span><span class="sxs-lookup"><span data-stu-id="45964-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) Controls Element (Format) Control Element for Controls for View (Format) CustomControl Element for Control for Controls for View (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for Controls for View (Format) CustomItem Element for CustomEntry for Controls for View (Format) Frame Element for CustomItem for Controls for View (Format) RightIndent Element of Frame of Controls of View (Format)</span></span>
+<span data-ttu-id="671e9-106">設定元素 (格式) ViewDefinitions 元素 (格式) View 專案 (格式) 控制項專案 (格式) 控制項專案 () 格式控制項的控制項專案 (格式) CustomEntries 元素用於查看 CustomControl 的視圖 (針對 view (Format 的控制項格式化) CustomEntry 元素) CustomItem 專案 CustomEntry for view 的元素 (格式) view (format 控制項框架的 CustomItem 元素) 格式 (</span><span class="sxs-lookup"><span data-stu-id="671e9-106">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) Controls Element (Format) Control Element for Controls for View (Format) CustomControl Element for Control for Controls for View (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for Controls for View (Format) CustomItem Element for CustomEntry for Controls for View (Format) Frame Element for CustomItem for Controls for View (Format) RightIndent Element of Frame of Controls of View (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="45964-106">語法</span><span class="sxs-lookup"><span data-stu-id="45964-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="671e9-107">語法</span><span class="sxs-lookup"><span data-stu-id="671e9-107">Syntax</span></span>
 
 ```xml
 <RightIndent>CharactersToShift</RightIndent>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="45964-107">屬性和項目</span><span class="sxs-lookup"><span data-stu-id="45964-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="671e9-108">屬性和項目</span><span class="sxs-lookup"><span data-stu-id="671e9-108">Attributes and Elements</span></span>
 
-<span data-ttu-id="45964-108">下列各節描述元素的屬性、子專案和父項目 `RightIndent` 。</span><span class="sxs-lookup"><span data-stu-id="45964-108">The following sections describe attributes, child elements, and parent element of the `RightIndent` element.</span></span>
+<span data-ttu-id="671e9-109">下列各節描述專案的屬性、子項目和父元素 `RightIndent` 。</span><span class="sxs-lookup"><span data-stu-id="671e9-109">The following sections describe attributes, child elements, and parent element of the `RightIndent` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="45964-109">屬性</span><span class="sxs-lookup"><span data-stu-id="45964-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="671e9-110">屬性</span><span class="sxs-lookup"><span data-stu-id="671e9-110">Attributes</span></span>
 
-<span data-ttu-id="45964-110">無。</span><span class="sxs-lookup"><span data-stu-id="45964-110">None.</span></span>
+<span data-ttu-id="671e9-111">無。</span><span class="sxs-lookup"><span data-stu-id="671e9-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="45964-111">子元素</span><span class="sxs-lookup"><span data-stu-id="45964-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="671e9-112">子元素</span><span class="sxs-lookup"><span data-stu-id="671e9-112">Child Elements</span></span>
 
-<span data-ttu-id="45964-112">無。</span><span class="sxs-lookup"><span data-stu-id="45964-112">None.</span></span>
+<span data-ttu-id="671e9-113">無。</span><span class="sxs-lookup"><span data-stu-id="671e9-113">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="45964-113">父項目</span><span class="sxs-lookup"><span data-stu-id="45964-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="671e9-114">父項目</span><span class="sxs-lookup"><span data-stu-id="671e9-114">Parent Elements</span></span>
 
-|<span data-ttu-id="45964-114">元素</span><span class="sxs-lookup"><span data-stu-id="45964-114">Element</span></span>|<span data-ttu-id="45964-115">描述</span><span class="sxs-lookup"><span data-stu-id="45964-115">Description</span></span>|
+|<span data-ttu-id="671e9-115">元素</span><span class="sxs-lookup"><span data-stu-id="671e9-115">Element</span></span>|<span data-ttu-id="671e9-116">描述</span><span class="sxs-lookup"><span data-stu-id="671e9-116">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="45964-116">檢視之控制項的 CustomItem 的框架元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="45964-116">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)|<span data-ttu-id="45964-117">定義資料的顯示方式，例如將資料向左或向右移位。</span><span class="sxs-lookup"><span data-stu-id="45964-117">Defines how the data is displayed, such as shifting the data to the left or right.</span></span>|
+|[<span data-ttu-id="671e9-117">檢視之控制項的 CustomItem 的框架元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="671e9-117">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)|<span data-ttu-id="671e9-118">定義顯示資料的方式，例如將資料向左或向右移動。</span><span class="sxs-lookup"><span data-stu-id="671e9-118">Defines how the data is displayed, such as shifting the data to the left or right.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="45964-118">文字值</span><span class="sxs-lookup"><span data-stu-id="45964-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="671e9-119">文字值</span><span class="sxs-lookup"><span data-stu-id="671e9-119">Text Value</span></span>
 
-<span data-ttu-id="45964-119">指定您想要將資料向右移位的字元數。</span><span class="sxs-lookup"><span data-stu-id="45964-119">Specify the number of characters that you want to shift the data to the right.</span></span>
+<span data-ttu-id="671e9-120">指定您想要將資料向右移動的字元數。</span><span class="sxs-lookup"><span data-stu-id="671e9-120">Specify the number of characters that you want to shift the data to the right.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="45964-120">備註</span><span class="sxs-lookup"><span data-stu-id="45964-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="671e9-121">備註</span><span class="sxs-lookup"><span data-stu-id="671e9-121">Remarks</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="45964-121">另請參閱</span><span class="sxs-lookup"><span data-stu-id="45964-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="671e9-122">另請參閱</span><span class="sxs-lookup"><span data-stu-id="671e9-122">See Also</span></span>
 
-[<span data-ttu-id="45964-122">檢視之控制項的 CustomItem 的框架元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="45964-122">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)
+[<span data-ttu-id="671e9-123">檢視之控制項的 CustomItem 的框架元素 (格式)</span><span class="sxs-lookup"><span data-stu-id="671e9-123">Frame Element for CustomItem for Controls for View (Format)</span></span>](./frame-element-for-customitem-for-controls-for-view-format.md)
 
-[<span data-ttu-id="45964-123">撰寫 PowerShell 格式設定檔案</span><span class="sxs-lookup"><span data-stu-id="45964-123">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="671e9-124">撰寫 PowerShell 格式設定檔案</span><span class="sxs-lookup"><span data-stu-id="671e9-124">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
