@@ -2,16 +2,16 @@
 description: PSReadLine 在 PowerShell 主控台中提供改良的命令列編輯體驗。
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 關於 PSReadLine
-ms.openlocfilehash: ad6e85a30f866cb332c89a4c36f42231f511f5ae
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: 25fc3a9a814728057b1ebc7e721d3fba84ae72c2
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93208747"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692304"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -21,7 +21,7 @@ ms.locfileid: "93208747"
 
 PSReadLine 在 PowerShell 主控台中提供改良的命令列編輯體驗。
 
-## <a name="long-description"></a>詳細描述
+## <a name="long-description"></a>完整描述
 
 PSReadLine 2.0 為 PowerShell 主控台提供功能強大的命令列編輯體驗。 它提供：
 
@@ -34,6 +34,8 @@ PSReadLine 2.0 為 PowerShell 主控台提供功能強大的命令列編輯體�
 - Bash 樣式完成 (在 Cmd 模式中為選擇性，預設為 Emacs 模式) 
 - Emacs yank/kill-環形
 - 以 PowerShell 權杖為基礎的「單字」移動和終止
+
+PSReadLine 需要 PowerShell 3.0 或更新版本，以及主控台主機。 它無法在 PowerShell ISE 中運作。 它會在 Visual Studio Code 的主控台中運作。
 
 下列函式可在類別 **[PSConsoleReadLine]** 中使用。
 
@@ -1285,10 +1287,6 @@ bool TryGetArgAsInt(System.Object arg, [ref] int numericArg,
 ```
 
 ## <a name="note"></a>注意
-
-### <a name="powershell-compatibility"></a>POWERSHELL 相容性
-
-PSReadLine 需要 PowerShell 3.0 或更新版本，以及主控台主機。 它無法在 PowerShell ISE 中運作。 它會在 Visual Studio Code 的主控台中運作。
 
 ### <a name="command-history"></a>命令歷程記錄
 

@@ -2,16 +2,16 @@
 description: PSReadLine 在 PowerShell 主控台中提供改良的命令列編輯體驗。
 keywords: powershell
 Locale: en-US
-ms.date: 02/10/2020
+ms.date: 11/16/2020
 online version: https://docs.microsoft.com/powershell/module/psreadline/about/about_psreadline?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 關於 PSReadLine
-ms.openlocfilehash: 1188b8dc0b4099a7c1dcc472e3b02c2d4fa908bc
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 6d52bb04118914a9ccca5d3442a9d1915c1c2818
+ms.sourcegitcommit: 95d41698c7a2450eeb70ef2fb6507fe7e6eff3b6
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93206691"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94692270"
 ---
 # <a name="psreadline"></a>PSReadLine
 
@@ -21,9 +21,9 @@ ms.locfileid: "93206691"
 
 PSReadLine 在 PowerShell 主控台中提供改良的命令列編輯體驗。
 
-## <a name="long-description"></a>詳細描述
+## <a name="long-description"></a>完整描述
 
-PSReadLine 2.0 為 PowerShell 主控台提供功能強大的命令列編輯體驗。 它提供：
+PSReadLine 2.1 為 PowerShell 主控台提供功能強大的命令列編輯體驗。 它提供：
 
 - 命令列的語法著色
 - 語法錯誤的視覺指示
@@ -34,11 +34,41 @@ PSReadLine 2.0 為 PowerShell 主控台提供功能強大的命令列編輯體�
 - Bash 樣式完成 (在 Cmd 模式中為選擇性，預設為 Emacs 模式) 
 - Emacs yank/kill-環形
 - 以 PowerShell 權杖為基礎的「單字」移動和終止
+- 預測性 IntelliSense
 
-下列函式可在類別 **[PSConsoleReadLine]** 中使用。
+PSReadLine 需要 PowerShell 3.0 或更新版本，以及主控台主機。 它無法在 PowerShell ISE 中運作。 它會在 Visual Studio Code 的主控台中運作。
+
+PSReadLine 2.1.0 隨附于 PowerShell 7.1，並支援所有支援的 PowerShell 版本。 您可以從 PowerShell 資源庫安裝。
+若要在支援的 PowerShell 版本中安裝 PSReadLine 2.1.0，請執行下列命令。
+
+```powershell
+Install-Module -Name PSReadLine -RequiredVersion 2.1.0
+```
 
 > [!NOTE]
 > 從 PowerShell 7.0 開始，如果偵測到螢幕讀取程式，PowerShell 會略過在 Windows 上自動載入 PSReadLine。 PSReadLine 目前無法與螢幕讀取器順利搭配運作。 Windows 上 PowerShell 7.0 的預設轉譯和格式可正常運作。 如有必要，您可以手動載入模組。
+
+## <a name="predictive-intellisense"></a>預測性 IntelliSense
+
+預測性 IntelliSense 是 tab 鍵自動完成概念的補充，可協助使用者成功完成命令。 它可讓使用者根據使用者歷程記錄和其他網域專屬外掛程式的相符預測，來探索、編輯及執行完整的命令。
+
+### <a name="enable-predictive-intellisense"></a>啟用預測性 IntelliSense
+
+預設會停用預測性 IntelliSense。 若要啟用預測，請執行下列命令：
+
+```powershell
+Set-PSReadLineOption -PredictionSource History
+```
+
+**PredictionSource** 參數也可以接受適用于網域專屬和自訂需求的外掛程式。
+
+若要停用預測性 IntelliSense，請直接執行：
+
+```powershell
+Set-PSReadLineOption -PredictionSource None
+```
+
+下列函式可在類別 **[PSConsoleReadLine]** 中使用。
 
 ## <a name="basic-editing-functions"></a>基本編輯函數
 
@@ -1104,6 +1134,24 @@ Yank 前一個歷程記錄行中的最後一個引數。 使用引數時，第�
 
 - Emacs： `<Ctrl+@>`
 
+## <a name="predictive-intellisense-functions"></a>預測性 IntelliSense 函數
+
+> [!NOTE]
+> 必須啟用預測性 IntelliSense 才能使用這些函數。
+
+### <a name="acceptnextwordsuggestion"></a>AcceptNextWordSuggestion
+
+接受預測性 IntelliSense 中的下一個字組內嵌建議。
+您可以藉由執行下列命令，使用<kbd>Ctrl</kbd>F 來系結此函數 + <kbd></kbd> 。
+
+```powershell
+Set-PSReadLineKeyHandler -Chord "Ctrl+f" -Function ForwardWord
+```
+
+### <a name="acceptsuggestion"></a>AcceptSuggestion
+
+當游標位於目前行的結尾時，藉由按下 <kbd>向右鍵</kbd> ，接受預測性 IntelliSense 的目前內嵌建議。
+
 ## <a name="search-functions"></a>搜尋函數
 
 ### <a name="charactersearch"></a>CharacterSearch
@@ -1342,10 +1390,6 @@ bool TryGetArgAsInt(System.Object arg, [ref] int numericArg,
 
 ## <a name="note"></a>注意
 
-### <a name="powershell-compatibility"></a>POWERSHELL 相容性
-
-PSReadLine 需要 PowerShell 3.0 或更新版本，以及主控台主機。 它無法在 PowerShell ISE 中運作。 它會在 Visual Studio Code 的主控台中運作。
-
 ### <a name="command-history"></a>命令歷程記錄
 
 PSReadLine 會維護一個記錄檔，其中包含您從命令列輸入的所有命令和資料。 這可能包含機密資料，包括密碼。 例如，如果您使用指令 `ConvertTo-SecureString` 程式，密碼就會以純文字的形式記錄在記錄檔中。 記錄檔是名為的檔案 `$($host.Name)_history.txt` 。 在 Windows 系統上，歷程記錄檔案會儲存在中 `$env:APPDATA\Microsoft\Windows\PowerShell\PSReadLine` 。 在非 Windows 系統上，記錄檔會儲存在 `$env:XDG_DATA_HOME/powershell/PSReadLine` 或 `$env:HOME/.local/share/powershell/PSReadLine` 。
@@ -1359,4 +1403,3 @@ PSReadLine 會維護一個記錄檔，其中包含您從命令列輸入的所有
 ## <a name="see-also"></a>另請參閱
 
 PSReadLine 會受到 GNU [readline](https://tiswww.case.edu/php/chet/readline/rltop.html) 程式庫的高度影響。
-
