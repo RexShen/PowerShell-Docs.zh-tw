@@ -126,7 +126,7 @@
           href: whats-new/what-s-new-in-powershell-71.md
         - name: PowerShell 7.0 的新功能
           href: whats-new/what-s-new-in-powershell-70.md
-    - name: PowerShell Core 6.x 的新功能
+    - name: PowerShell Core 6.x 版本資訊
       items:
         - name: PowerShell Core 6.2 的新功能
           href: whats-new/what-s-new-in-powershell-core-62.md
@@ -590,8 +590,6 @@
           href: community/contributing/pull-requests.md
         - name: PowerShell-Docs 樣式指南
           href: community/contributing/powershell-style-guide.md
-        - name: 編輯 Cmdlet 參考
-          href: community/contributing/editing-cmdlet-ref.md
         - name: 其他資源
           items:
             - name: 編輯檢查清單
