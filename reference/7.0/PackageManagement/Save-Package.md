@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/save-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Package
-ms.openlocfilehash: 97ba55f4185d784e4b32bbe669296d44989f72d2
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: b46bf983120a71a530fdc9715b68eff0b1ce3af6
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201499"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892717"
 ---
 # Save-Package
 
@@ -81,7 +81,7 @@ Save-Package [-Path <String>] [-LiteralPath <String>] [-Credential <PSCredential
 ## DESCRIPTION
 
 `Save-Package`Cmdlet 會將套件儲存至本機電腦，但不會安裝套件。
-除非您指定 **RequiredVerion** ，否則此 Cmdlet 會儲存套件的最新版本。 **Path** 和 **LiteralPath** 參數彼此互斥，而且無法加入至相同的命令。
+除非您指定 **RequiredVerion**，否則此 Cmdlet 會儲存套件的最新版本。 **Path** 和 **LiteralPath** 參數彼此互斥，而且無法加入至相同的命令。
 
 ## 範例
 
@@ -719,6 +719,13 @@ Accept wildcard characters: False
 ### 此 Cmdlet 不會產生任何輸出。
 
 ## 注意
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

@@ -7,12 +7,12 @@ ms.date: 03/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Module
-ms.openlocfilehash: 33b7861f4e776b992d3483b9b0776c32a88599fc
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c6468d2f8226cb26ec5385c7d5a8a895155ad673
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201347"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892649"
 ---
 # Find-Module
 
@@ -39,7 +39,7 @@ Find-Module [[-Name] <string[]>] [-MinimumVersion <string>] [-MaximumVersion <st
 第一次 `Find-Module` 嘗試使用存放庫時，系統可能會提示您安裝更新。
 如果未向 Cmdlet 註冊存放庫來源 `Register-PSRepository` ，則會傳回錯誤。
 
-`Find-Module` 如果未使用任何參數來限制版本，則會傳回最新版本的模組。 若要取得存放庫的模組版本清單，請使用參數 **allversions 進行篩選** 。
+`Find-Module` 如果未使用任何參數來限制版本，則會傳回最新版本的模組。 若要取得存放庫的模組版本清單，請使用參數 **allversions 進行篩選**。
 
 如果指定了 **MinimumVersion** 參數， `Find-Module` 會傳回等於或大於最小值的模組版本。 如果存放庫中有較新的版本可用，則會傳回較新的版本。
 
@@ -101,7 +101,7 @@ Version   Name             Repository     Description
 2.1.0     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
 ```
 
-此 `Find-Module` Cmdlet 會使用 **Name** 參數來指定 **PowerShellGet** 模組。 **MinimumVersion** 指定版本 **1.6.5** 。 `Find-Module` 會傳回 PowerShellGet 版本 **2.1.0** ，因為它超過最小版本，而且是最新版本。
+此 `Find-Module` Cmdlet 會使用 **Name** 參數來指定 **PowerShellGet** 模組。 **MinimumVersion** 指定版本 **1.6.5**。 `Find-Module` 會傳回 PowerShellGet 版本 **2.1.0** ，因為它超過最小版本，而且是最新版本。
 
 ### 範例4：依特定版本尋找模組
 
@@ -117,7 +117,7 @@ Version   Name             Repository     Description
 1.6.5     PowerShellGet    PSGallery      PowerShell module with commands for discovering...
 ```
 
-此 `Find-Module` Cmdlet 會使用 **Name** 參數來指定 **PowerShellGet** 模組。 **RequiredVersion** 參數指定 version **1.6.5** 。
+此 `Find-Module` Cmdlet 會使用 **Name** 參數來指定 **PowerShellGet** 模組。 **RequiredVersion** 參數指定 version **1.6.5**。
 
 ### 範例5：在特定存放庫中尋找模組
 
@@ -151,9 +151,9 @@ PSGallery     2.0.0.0   ContosoServer    Cmdlets and DSC resources for managing 
 MySource      1.2.0.0   ContosoClient    Cmdlets and DSC resources for managing Contoso Client...
 ```
 
-`Register-PSRepository`Cmdlet 會註冊新的存放庫。 **Name** 參數會指派名稱 **MySource** 。 **SourceLocation** 參數會指定存放庫的位址。
+`Register-PSRepository`Cmdlet 會註冊新的存放庫。 **Name** 參數會指派名稱 **MySource**。 **SourceLocation** 參數會指定存放庫的位址。
 
-此 `Find-Module` Cmdlet 會使用 **Name** 參數搭配星號 (`*`) 萬用字元來指定 **Contoso** 模組。 存放 **庫** 參數指定要搜尋兩個儲存機制： **PSGallery** 和 **MySource** 。
+此 `Find-Module` Cmdlet 會使用 **Name** 參數搭配星號 (`*`) 萬用字元來指定 **Contoso** 模組。 存放 **庫** 參數指定要搜尋兩個儲存機制： **PSGallery** 和 **MySource**。
 
 ### 範例7：尋找包含 DSC 資源的模組
 
@@ -174,8 +174,8 @@ Version     Name                            Repository    Description
 3.1.0.0     xPowerShellExecutionPolicy      PSGallery     This DSC resource can change the user...
 ```
 
-此 `Find-Module` Cmdlet 會使用存放 **庫** 參數來搜尋存放庫 **PSGallery** 。
-**Include** 參數會指定 **DscResource** ，這是參數可以在儲存機制中搜尋的功能。
+此 `Find-Module` Cmdlet 會使用存放 **庫** 參數來搜尋存放庫 **PSGallery**。
+**Include** 參數會指定 **DscResource**，這是參數可以在儲存機制中搜尋的功能。
 
 ### 範例8：尋找具有篩選的模組
 
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 
 ### -AllVersions
 
-指定要在結果中包含模組的所有版本。 您無法搭配 **MinimumVersion** 、 **MaximumVersion** 或 **RequiredVersion** 參數使用 **allversions 進行篩選** 參數。
+指定要在結果中包含模組的所有版本。 您無法搭配 **MinimumVersion**、 **MaximumVersion** 或 **RequiredVersion** 參數使用 **allversions 進行篩選** 參數。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -463,7 +463,7 @@ Accept wildcard characters: False
 
 ### -Tag
 
-指定標記的陣列。 範例標記包括 **DesiredStateConfiguration** 、 **DSC** 、 **DSCResourceKit** 或 **PSModule** 。
+指定標記的陣列。 範例標記包括 **DesiredStateConfiguration**、 **DSC**、 **DSCResourceKit** 或 **PSModule**。
 
 ```yaml
 Type: System.String[]
@@ -499,7 +499,12 @@ Accept wildcard characters: False
 
 ## 注意
 
-此 Cmdlet 會在 powershell 5.0 或更新版本的 PowerShell、Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上執行。
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

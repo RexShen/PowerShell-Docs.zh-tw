@@ -7,12 +7,12 @@ ms.date: 08/25/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Date
-ms.openlocfilehash: f550d352ca6e400307feba9ec16cea4632603b62
-ms.sourcegitcommit: ea9270bacee7dd1b9df2519384de277576357ce2
+ms.openlocfilehash: cbf87c2a2d6ab0f08e514ba971a622ea9f1904aa
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93206147"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514930"
 ---
 # Get-Date
 
@@ -59,7 +59,7 @@ Tuesday, June 25, 2019 14:53:32
 
 ### 範例2：取得目前日期和時間的元素
 
-這個範例會示範如何使用 `Get-Date` 來取得日期或時間元素。 參數會使用引數 **Date** 、 **Time** 或 **DateTime** 。
+這個範例會示範如何使用 `Get-Date` 來取得日期或時間元素。 參數會使用引數 **Date**、 **Time** 或 **DateTime**。
 
 ```powershell
 Get-Date -DisplayHint Date
@@ -140,7 +140,7 @@ Tuesday 06/25/2019 16:19 -07
 366
 ```
 
-`Get-Date` 使用三個參數來指定日期： **Year** 、 **Month** 和 **Day** 。 此命令會以括弧括住，以便 **DayofYear** 屬性評估結果。
+`Get-Date` 使用三個參數來指定日期： **Year**、 **Month** 和 **Day**。 此命令會以括弧括住，以便 **DayofYear** 屬性評估結果。
 
 ### 範例6：檢查是否已針對日光節約時間調整日期
 
@@ -226,7 +226,7 @@ Accept wildcard characters: False
 
 指定要顯示的月份日期。 輸入從 1 到 31 的值。
 
-如果指定的值大於一個月中的天數，則 PowerShell 會將天數加上月份。 例如， `Get-Date -Month 2 -Day 31` 顯示 3 **月 3** 日，而不是 **2 月31日** 。
+如果指定的值大於一個月中的天數，則 PowerShell 會將天數加上月份。 例如， `Get-Date -Month 2 -Day 31` 顯示 3 **月 3** 日，而不是 **2 月31日**。
 
 ```yaml
 Type: System.Int32
@@ -246,9 +246,9 @@ Accept wildcard characters: False
 
 接受的值如下：
 
-- **Date** ：只顯示日期
-- **時間** ：只顯示時間
-- **DateTime** ：顯示日期和時間
+- **Date**：只顯示日期
+- **時間**：只顯示時間
+- **DateTime**：顯示日期和時間
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.DisplayHintType
@@ -270,18 +270,18 @@ Accept wildcard characters: False
 
 如需可用 .NET 格式規範的清單，請參閱 [自訂日期和時間格式字串](/dotnet/standard/base-types/custom-date-and-time-format-strings?view=netframework-4.8)。
 
-使用 **Format** 參數時，只會 `Get-Date` 取得顯示日期所需的 **DateTime** 物件屬性。 如此一來， **DateTime** 物件的部分屬性和方法可能無法使用。
+使用 **Format** 參數時，只會 `Get-Date` 取得顯示日期所需的 **DateTime** 物件屬性。 如此一來，**DateTime** 物件的部分屬性和方法可能無法使用。
 
 從 PowerShell 5.0 開始，您可以使用下列其他格式作為 **Format** 參數的值。
 
-- **FileDate** 。 以本機時程表示的目前日期的檔案或路徑易記表示。 格式 `yyyyMMdd` (區分大小寫，使用4位數年份、2位數月份和2位數的日) 。 例如：
+- **FileDate**。 以本機時程表示的目前日期的檔案或路徑易記表示。 格式 `yyyyMMdd` (區分大小寫，使用4位數年份、2位數月份和2位數的日) 。 例如：
   20190627.
 
-- **FileDateUniversal** 。 以通用時程表示的目前日期的檔案或路徑易記表示 (UTC) 。 格式 `yyyyMMddZ` (區分大小寫，使用4位數的年份、2位數的月份、2位數的日期，以及 `Z` 做為 UTC 指標) 的字母。 例如：20190627Z。
+- **FileDateUniversal**。 以通用時程表示的目前日期的檔案或路徑易記表示 (UTC) 。 格式 `yyyyMMddZ` (區分大小寫，使用4位數的年份、2位數的月份、2位數的日期，以及 `Z` 做為 UTC 指標) 的字母。 例如：20190627Z。
 
-- **FileDateTime** 。 以24小時制格式，以本機時程表示的目前日期和時間的檔案或路徑易記表示。 格式 `yyyyMMddTHHmmssffff` (區分大小寫、使用4位數的年份、2位數的月份、2位數的日期、 `T` 以時間分隔符號表示的字母、2位數的小時、2位數分鐘、2位數的秒數，以及4位數的毫秒) 。 例如：20190627T0840107271。
+- **FileDateTime**。 以24小時制格式，以本機時程表示的目前日期和時間的檔案或路徑易記表示。 格式 `yyyyMMddTHHmmssffff` (區分大小寫、使用4位數的年份、2位數的月份、2位數的日期、 `T` 以時間分隔符號表示的字母、2位數的小時、2位數分鐘、2位數的秒數，以及4位數的毫秒) 。 例如：20190627T0840107271。
 
-- **FileDateTimeUniversal** 。 以24小時格式表示的目前日期和時間的檔案或路徑易記標記法 (UTC) 。 格式 `yyyyMMddTHHmmssffffZ` (區分大小寫、使用4位數的年份、2位數的月份、2位數的日期、 `T` 以時間分隔符號表示的字母、2位數的小時、2位數分鐘、2位數秒、4位數毫秒，以及 `Z` 做為 UTC 指標) 的字母。 例如：20190627T1540500718Z。
+- **FileDateTimeUniversal**。 以24小時格式表示的目前日期和時間的檔案或路徑易記標記法 (UTC) 。 格式 `yyyyMMddTHHmmssffffZ` (區分大小寫、使用4位數的年份、2位數的月份、2位數的日期、 `T` 以時間分隔符號表示的字母、2位數的小時、2位數分鐘、2位數秒、4位數毫秒，以及 `Z` 做為 UTC 指標) 的字母。 例如：20190627T1540500718Z。
 
 ```yaml
 Type: System.String
@@ -383,7 +383,7 @@ Accept wildcard characters: False
 
 **UFormat** 規範的前面會加上百分比符號 (`%`) ，例如、 `%m` `%d` 和 `%Y` 。 [附注](#notes)區段包含有效 **UFormat** 規範的資料表。
 
-使用 **UFormat** 參數時，只會 `Get-Date` 取得顯示日期所需的 **DateTime** 物件屬性。 如此一來， **DateTime** 物件的部分屬性和方法可能無法使用。
+使用 **UFormat** 參數時，只會 `Get-Date` 取得顯示日期所需的 **DateTime** 物件屬性。 如此一來，**DateTime** 物件的部分屬性和方法可能無法使用。
 
 ```yaml
 Type: System.String
@@ -421,7 +421,7 @@ Accept wildcard characters: False
 
 ### 管線輸入
 
-`Get-Date` 接受管線輸入。 例如： `Get-ChildItem | Get-Date` 。
+`Get-Date` 接受管線輸入。 例如 `Get-ChildItem | Get-Date`。
 
 ## 輸出
 
@@ -434,13 +434,16 @@ Accept wildcard characters: False
 方法會 `(Get-Date).ToString()` 將 **DateTime** 物件轉換成 **String** 物件。
 
 若要顯示物件的屬性和方法，請將物件沿著管線向下傳送至 `Get-Member` 。
-例如： `Get-Date | Get-Member` 。
+例如 `Get-Date | Get-Member`。
 
 ## 注意
 
 **DateTime** 物件是適用于系統地區設定的完整日期和完整時間格式。
 
 有效的 **UFormat** 規範會顯示在下表中：
+
+> [!IMPORTANT]
+> 較新版本的 PowerShell 會新增其他 **UFormat** 規範。 例如， `%F` 已在 PowerShell 6.2 中新增，因此 Windows PowerShell 5.1 或更舊版本中無法使用。 在設計成在多個 PowerShell 版本上執行的腳本中使用 **UFormat** 規範時，請記住這一點。
 
 | 格式規範 |                                 意義                     |         範例          |
 | ---- | ----------------------------------------------------------------------- | ------------------------ |
@@ -452,7 +455,7 @@ Accept wildcard characters: False
 | `%c` | 日期和時間-縮寫                                             | 星期四6月 27 08:44:18 2019 |
 | `%D` | 日期（mm/dd/yy 格式）                                                 | 06/27/19                 |
 | `%d` | 月中的日-2 位數                                             | 05                       |
-| `%e` | 月份中的日期-前面加上空格的數位                            | \<space\>.5               |
+| `%e` | 月中的日-如果只有一個數位，則前面加上一個空格           | \<space\>.5               |
 | `%G` | 與 ' Y ' 相同                                                             |                          |
 | `%g` | 與 ' y ' 相同                                                             |                          |
 | `%H` | 24小時制的小時                                                  | 17                       |

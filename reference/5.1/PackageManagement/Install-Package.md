@@ -7,12 +7,12 @@ ms.date: 05/23/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-package?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Package
-ms.openlocfilehash: 058ed7f90e63bd7ca7a29cf6c89864a30255662a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9fcf71462e1bf411f3c7c5d8322e6b6f3a667b9f
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202932"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892809"
 ---
 # Install-Package
 
@@ -128,7 +128,7 @@ Install-Package [-Credential <PSCredential>] [-Proxy <Uri>] [-ProxyCredential <P
 PS> Install-Package -Name NuGet.Core -Source MyNuGet -Credential Contoso\TestUser
 ```
 
-`Install-Package` 使用參數來指定封裝 **名稱** 和 **來源** 。 **Credential** 參數使用具有安裝套件許可權的網域使用者帳戶。 此命令會提示您輸入使用者帳戶密碼。
+`Install-Package` 使用參數來指定封裝 **名稱** 和 **來源**。 **Credential** 參數使用具有安裝套件許可權的網域使用者帳戶。 此命令會提示您輸入使用者帳戶密碼。
 
 ### 範例2：使用 Find-Package 安裝套件
 
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 
 ### -Credential
 
-指定擁有存取電腦和執行命令之許可權的使用者帳戶。 輸入使用者名稱（例如 **User01** 、 **Domain01\User01** ），或輸入由 Cmdlet 產生的 **PSCredential** 物件 `Get-Credential` 。 如果您輸入使用者名稱，系統就會提示您輸入密碼。
+指定擁有存取電腦和執行命令之許可權的使用者帳戶。 輸入使用者名稱（例如 **User01**、 **Domain01\User01**），或輸入由 Cmdlet 產生的 **PSCredential** 物件 `Get-Credential` 。 如果您輸入使用者名稱，系統就會提示您輸入密碼。
 
 如果未指定 **Credential** 參數，會 `Install-Package` 使用目前的使用者。
 
@@ -892,6 +892,13 @@ Accept wildcard characters: False
 ## 注意
 
 在命令中包含封裝提供者可以讓 Cmdlet 提供動態參數。 動態參數是封裝提供者專用的。 此 `Get-Help` Cmdlet 會列出 Cmdlet 的參數集，並包含提供者的參數集。 例如， `Install-Package` 具有 **PowerShellGet** 參數集，其中包含 `-NoPathUpdate` 、 `AllowClobber` 和 `SkipPublisherCheck` 。
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

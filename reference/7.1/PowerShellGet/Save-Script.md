@@ -7,12 +7,12 @@ ms.date: 07/02/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Script
-ms.openlocfilehash: 539131ad5a22671984079988ce589b5b7a2fd15b
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 3d5b661f333d03b71f90098d29cf806825ed9324
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202600"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892135"
 ---
 # Save-Script
 
@@ -358,6 +358,13 @@ Accept wildcard characters: False
 
 ## 注意
 
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
+
 ## 相關連結
 
 [Find-Script](Find-Script.md)
@@ -371,4 +378,3 @@ Accept wildcard characters: False
 [Uninstall-Script](Uninstall-Script.md)
 
 [Update-Script](Update-Script.md)
-

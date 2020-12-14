@@ -7,12 +7,12 @@ ms.date: 08/03/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Module
-ms.openlocfilehash: e2e4dc34fb84a54fb92cc4c809c84d67beafe576
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 463853778b6f2892ae36d55dcd4d886727b1dd51
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93205832"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892482"
 ---
 # Install-Module
 
@@ -218,7 +218,7 @@ Accept wildcard characters: False
 
 ### -MaximumVersion
 
-指定要安裝之單一模組的最大版本。 安裝的版本必須小於或等於 **MaximumVersion** 。 如果您想要安裝多個模組，則不能使用 **MaximumVersion** 。 無法在同一個命令中使用 **MaximumVersion** 和 **RequiredVersion** `Install-Module` 。
+指定要安裝之單一模組的最大版本。 安裝的版本必須小於或等於 **MaximumVersion**。 如果您想要安裝多個模組，則不能使用 **MaximumVersion**。 無法在同一個命令中使用 **MaximumVersion** 和 **RequiredVersion** `Install-Module` 。
 
 ```yaml
 Type: System.String
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-指定要安裝之單一模組的最小版本。 安裝的版本必須大於或等於 **MinimumVersion** 。 如果有較新版本的模組可供使用，則會安裝較新的版本。 如果您想要安裝多個模組，則無法使用 **MinimumVersion** 。
+指定要安裝之單一模組的最小版本。 安裝的版本必須大於或等於 **MinimumVersion**。 如果有較新版本的模組可供使用，則會安裝較新的版本。 如果您想要安裝多個模組，則無法使用 **MinimumVersion**。
 **MinimumVersion** 和 **RequiredVersion** 無法在相同的命令中使用 `Install-Module` 。
 
 ```yaml
@@ -330,7 +330,7 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-指定要安裝之單一模組的確切版本。 如果指定版本的存放庫中沒有相符的，則會顯示錯誤。 如果您想要安裝多個模組，則無法使用 **RequiredVersion** 。 **RequiredVersion** 無法在與 `Install-Module` **MinimumVersion** 或 **MaximumVersion** 相同的命令中使用。
+指定要安裝之單一模組的確切版本。 如果指定版本的存放庫中沒有相符的，則會顯示錯誤。 如果您想要安裝多個模組，則無法使用 **RequiredVersion**。 **RequiredVersion** 無法在與 `Install-Module` **MinimumVersion** 或 **MaximumVersion** 相同的命令中使用。
 
 ```yaml
 Type: System.String
@@ -346,7 +346,7 @@ Accept wildcard characters: False
 
 ### -Scope
 
-指定模組的安裝範圍。 此參數可接受的值為 **AllUsers** 和 **CurrentUser** 。
+指定模組的安裝範圍。 此參數可接受的值為 **AllUsers** 和 **CurrentUser**。
 
 **AllUsers** 範圍會在可供電腦的所有使用者存取的位置中安裝模組：
 
@@ -358,8 +358,8 @@ Accept wildcard characters: False
 
 未定義 **範圍** 時，會根據 PowerShellGet 版本設定預設值。
 
-- 在 PowerShellGet 版本2.0.0 和更新版本中，預設值為 **CurrentUser** ，不需要提高安裝的許可權。
-- 在 PowerShellGet 1.x 版中，預設值為 **AllUsers** ，這需要提高安裝的許可權。
+- 在 PowerShellGet 版本2.0.0 和更新版本中，預設值為 **CurrentUser**，不需要提高安裝的許可權。
+- 在 PowerShellGet 1.x 版中，預設值為 **AllUsers**，這需要提高安裝的許可權。
 
 ```yaml
 Type: System.String
@@ -436,11 +436,18 @@ Accept wildcard characters: False
 
 `Install-Module` 在 Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上，于 PowerShell 5.0 或更新版本上執行。
 
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
+
 安全性最佳作法是在第一次執行任何 Cmdlet 或函式之前，先評估模組的程式碼。 為了避免執行包含惡意程式碼的模組，安裝之後不會自動匯入已安裝的模組。
 
 如果存放庫中沒有 **名稱** 參數所指定的模組名稱，則會傳回 `Install-Module` 錯誤。
 
-若要安裝多個模組，請使用 **Name** 參數，並指定以逗號分隔的模組名稱陣列。 如果您指定多個模組名稱，則無法使用 **MinimumVersion** 、 **MaximumVersion** 或 **RequiredVersion** 。 `Find-Module` 建立可以向下傳送到管線的 **PSRepositoryItemInfo** 物件 `Install-Module` 。 管線是另一種方式，可指定要在單一命令中安裝的多個模組。
+若要安裝多個模組，請使用 **Name** 參數，並指定以逗號分隔的模組名稱陣列。 如果您指定多個模組名稱，則無法使用 **MinimumVersion**、 **MaximumVersion** 或 **RequiredVersion**。 `Find-Module` 建立可以向下傳送到管線的 **PSRepositoryItemInfo** 物件 `Install-Module` 。 管線是另一種方式，可指定要在單一命令中安裝的多個模組。
 
 根據預設，會將 **AllUsers** 範圍的模組安裝在中 `$env:ProgramFiles\PowerShell\Modules` 。 當您安裝 PowerShell Desired State Configuration (DSC) 資源時，預設值會造成混淆。
 

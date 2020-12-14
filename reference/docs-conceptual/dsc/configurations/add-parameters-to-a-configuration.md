@@ -3,12 +3,12 @@ ms.date: 12/12/2018
 keywords: dsc, powershell, 資源, 資源庫, 安裝, 設定
 title: 將參數新增至設定
 description: DSC 設定可以參數化，以根據使用者輸入來進行更動態的設定。
-ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 72f3cf9efb5d99170e71992bed86a20a57132250
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656819"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470327"
 ---
 # <a name="add-parameters-to-a-configuration"></a>將參數新增至設定
 
@@ -120,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>Configuration 中的進階參數
 
 除了 `-ComputerName` 參數以外，我們還可以加入服務名稱和狀態的參數。
-下列範例區塊會加入具有 `-ServiceName` 參數的參數區塊，並使用它以動態方式定義 **Service** 資源區塊。 還會加入 `-State` 參數以動態方式定義 **Service** 資源區塊中的 **State** 。
+下列範例區塊會加入具有 `-ServiceName` 參數的參數區塊，並使用它以動態方式定義 **Service** 資源區塊。 還會加入 `-State` 參數以動態方式定義 **Service** 資源區塊中的 **State**。
 
 ```powershell
 Configuration TestConfig
@@ -210,7 +210,7 @@ Configuration TestConfig
         $State="Running",
 
         [String]
-        $ComputerName="localhost",
+        $ComputerName="localhost"
     )
 
     # It is best practice to explicitly import any required resources or modules.

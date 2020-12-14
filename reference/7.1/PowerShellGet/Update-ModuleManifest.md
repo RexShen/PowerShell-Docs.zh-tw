@@ -7,12 +7,12 @@ ms.date: 07/08/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-modulemanifest?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-ModuleManifest
-ms.openlocfilehash: 2977992a04e5a94f5124ec85abd980dc3d4f129f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: f5dc6d086f609b5a3f82a035c3ac5c7433e8d236
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204951"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891695"
 ---
 # Update-ModuleManifest
 
@@ -61,7 +61,7 @@ $Parms = @{
 Update-ModuleManifest @Parms
 ```
 
-`$Parms` 是儲存 **路徑** 、 **作者** 、 **公司名稱** 和 **著作權** 之參數值的 splat。 `Update-ModuleManifest` 從取得參數值 `@Parms` ，並更新 **TestManifest.psd1** 的模組資訊清單。
+`$Parms` 是儲存 **路徑**、 **作者**、 **公司名稱** 和 **著作權** 之參數值的 splat。 `Update-ModuleManifest` 從取得參數值 `@Parms` ，並更新 **TestManifest.psd1** 的模組資訊清單。
 
 ## PARAMETERS
 
@@ -707,7 +707,7 @@ Accept wildcard characters: False
 
 若要從 `.psm1` 具有資訊清單之模組中的或檔案匯出成員 `.dll` ，則必須在資訊清單中的 **RootModule** 或 **NestedModules** 索引鍵的值中指定這些檔案的名稱。 否則，不會匯出其成員。
 
-在 PowerShell 2.0 中，此機碼稱為 **ModuleToProcess** 。
+在 PowerShell 2.0 中，此機碼稱為 **ModuleToProcess**。
 
 ```yaml
 Type: System.String
@@ -822,5 +822,12 @@ Accept wildcard characters: False
 ### System.Object
 
 ## 注意
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結

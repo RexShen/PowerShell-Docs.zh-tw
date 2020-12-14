@@ -7,12 +7,12 @@ ms.date: 10/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/publish-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Publish-Module
-ms.openlocfilehash: 169a286fba9f8ce266294d611437247acc71cff8
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f167990361a332f3b6f696d934e5d2835de849ed
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201835"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892615"
 ---
 # Publish-Module
 
@@ -46,7 +46,7 @@ Publish-Module -Path <String> [-NuGetApiKey <String>] [-Repository <String>]
 
 當您依名稱指定模組時， `Publish-Module` 會發佈可透過執行所找到的第一個模組 `Get-Module -ListAvailable <Name>` 。 如果您指定要發佈之模組的最低版本，則 `Publish-Module` 會發行第一個版本大於或等於您所指定之最小版本的模組。
 
-發行模組時需要在模組之資源庫頁面上所顯示的中繼資料。 必要的中繼資料包含模組名稱、版本、描述和作者。 雖然大部分的中繼資料都是取自模組資訊清單，但有些中繼資料必須在參數中指定 `Publish-Module` ，例如 **Tag** 、 **ReleaseNote** 、 **IconUri** 、 **ProjectUri** 和 **LicenseUri** ，因為這些參數符合以 NuGet 為基礎的資源庫中的欄位。
+發行模組時需要在模組之資源庫頁面上所顯示的中繼資料。 必要的中繼資料包含模組名稱、版本、描述和作者。 雖然大部分的中繼資料都是取自模組資訊清單，但有些中繼資料必須在參數中指定 `Publish-Module` ，例如 **Tag**、 **ReleaseNote**、 **IconUri**、 **ProjectUri** 和 **LicenseUri**，因為這些參數符合以 NuGet 為基礎的資源庫中的欄位。
 
 ## 範例
 
@@ -281,7 +281,7 @@ Accept wildcard characters: False
 
 ### -Repository
 
-指定由執行註冊之存放庫的易記名稱 `Register-PSRepository` 。 存放庫必須具有 **PublishLocation** ，這是有效的 NuGet URI。
+指定由執行註冊之存放庫的易記名稱 `Register-PSRepository` 。 存放庫必須具有 **PublishLocation**，這是有效的 NuGet URI。
 您可以藉由執行來設定 **PublishLocation** `Set-PSRepository` 。
 
 ```yaml
@@ -378,7 +378,14 @@ Accept wildcard characters: False
 
 `Publish-Module` 在 Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上，于 powershell 3.0 或更新版本的 PowerShell 上執行。
 
-發行模組時需要在模組之資源庫頁面上所顯示的中繼資料。 必要的中繼資料包含模組名稱、版本、描述和作者。 大部分的中繼資料都是取自模組資訊清單，但有些中繼資料可以在參數中指定 `Publish-Module` ，例如 **Tag** 、 **ReleaseNote** 、 **IconUri** 、 **ProjectUri** 和 **LicenseUri** 。 如需詳細資訊，請參閱 [影響 POWERSHELL 資源庫 UI 的套件資訊清單值](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)。
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
+
+發行模組時需要在模組之資源庫頁面上所顯示的中繼資料。 必要的中繼資料包含模組名稱、版本、描述和作者。 大部分的中繼資料都是取自模組資訊清單，但有些中繼資料可以在參數中指定 `Publish-Module` ，例如 **Tag**、 **ReleaseNote**、 **IconUri**、 **ProjectUri** 和 **LicenseUri**。 如需詳細資訊，請參閱 [影響 POWERSHELL 資源庫 UI 的套件資訊清單值](/powershell/scripting/gallery/concepts/package-manifest-affecting-ui)。
 
 ## 相關連結
 

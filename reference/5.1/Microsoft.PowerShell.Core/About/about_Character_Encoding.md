@@ -1,16 +1,16 @@
 ---
-title: about_Character_Encoding
 description: 描述 PowerShell 如何針對字串資料的輸入和輸出使用字元編碼。
-ms.date: 10/21/2020
 Locale: en-US
+ms.date: 10/21/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_character_encoding?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
-ms.openlocfilehash: 3067a97a00da6f6f759ad874f98c06fe7ad6d923
-ms.sourcegitcommit: df80c558e9a4b89c9798f084bd04012ece15155c
+title: about_Character_Encoding
+ms.openlocfilehash: 48a33903bd44db68a3c581183f83ec23ea97161a
+ms.sourcegitcommit: cc72c40315fd2981d3009b335accbfa52d57640c
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "93208859"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "96349800"
 ---
 # <a name="about_character_encoding"></a>about_Character_Encoding
 
@@ -43,7 +43,7 @@ PowerShell 預設會使用 Unicode 字元集。 不過，有數個 Cmdlet 具有
 
 ## <a name="the-byte-order-mark"></a>位元組順序標記
 
-位元組順序標記 (BOM) 是在檔案或文字資料流程的前幾個位元組中的 _unicode_ 簽章，指出用於資料的 unicode 編碼方式。 如需詳細資訊，請參閱維琪百科中的 [位元組順序標記](https://wikipedia.org/wiki/Byte_order_mark) 文章。
+位元組順序標記 (BOM) 是在檔案或文字資料流程的前幾個位元組中的 _unicode_ 簽章，指出用於資料的 unicode 編碼方式。 如需詳細資訊，請參閱 [位元組順序標記](/globalization/encoding/byte-order-mark) 檔。
 
 在 Windows PowerShell 中，除了以外的任何 Unicode 編碼 `UTF7` 一律會建立 BOM。 `utf8NoBOM`所有文字輸出的 PowerShell Core 預設為。
 
@@ -157,7 +157,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 
 自動變數 `$OutputEncoding` 會影響 PowerShell 用來與外部程式通訊的編碼方式。 它不會影響輸出重新導向運算子和 PowerShell Cmdlet 用來儲存至檔案的編碼方式。
 
-## <a name="see-also"></a>另請參閱
+## <a name="see-also"></a>請參閱
 
 - [.NET 中的字元編碼簡介](/dotnet/standard/base-types/character-encoding-introduction)
 - [字碼頁-Win32 應用程式](/windows/win32/intl/code-pages)

@@ -7,12 +7,12 @@ ms.date: 07/16/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/update-module?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Update-Module
-ms.openlocfilehash: 719eaa019dd721b156b26d2e38e8790e6b9af584
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: ee94ba7808cb364306826325cfbc3df2cf9834a5
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203871"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892581"
 ---
 # Update-Module
 
@@ -57,7 +57,7 @@ Update-Module
 Update-Module -Name SpeculationControl
 ```
 
-`Update-Module` 使用 **Name** 參數來更新特定模組（ **SpeculationControl** ）。
+`Update-Module` 使用 **Name** 參數來更新特定模組（ **SpeculationControl**）。
 
 ### 範例3：查看 Update-Module 的執行
 
@@ -84,7 +84,7 @@ What if: Performing the operation "Update-Module" on target "Version '1.0.10' of
 Update-Module -Name SpeculationControl -RequiredVersion 1.0.14
 ```
 
-`Update-Module` 使用 **Name** 參數來指定模組（ **SpeculationControl** ）。 **RequiredVersion** 參數會指定版本 **1.0.14** 。
+`Update-Module` 使用 **Name** 參數來指定模組（ **SpeculationControl**）。 **RequiredVersion** 參數會指定版本 **1.0.14**。
 
 ### 範例5：不確認即更新模組
 
@@ -94,7 +94,7 @@ Update-Module -Name SpeculationControl -RequiredVersion 1.0.14
 Update-Module -Name SpeculationControl -Force
 ```
 
-`Update-Module` 使用 **Name** 參數來指定模組（ **SpeculationControl** ）。 **Force** 參數會更新模組，而不會要求使用者確認。
+`Update-Module` 使用 **Name** 參數來指定模組（ **SpeculationControl**）。 **Force** 參數會更新模組，而不會要求使用者確認。
 
 ## PARAMETERS
 
@@ -262,7 +262,7 @@ Accept wildcard characters: False
 
 ### -RequiredVersion
 
-指定要將現有已安裝的模組更新至哪一個正確版本。 **RequiredVersion** 指定的版本必須存在於線上元件庫中，否則會顯示錯誤。 如果在單一命令中更新一個以上的模組，您就無法使用 **RequiredVersion** 。
+指定要將現有已安裝的模組更新至哪一個正確版本。 **RequiredVersion** 指定的版本必須存在於線上元件庫中，否則會顯示錯誤。 如果在單一命令中更新一個以上的模組，您就無法使用 **RequiredVersion**。
 
 ```yaml
 Type: System.String
@@ -278,7 +278,7 @@ Accept wildcard characters: False
 
 ### -Scope
 
-指定模組的安裝範圍。 此參數可接受的值為 **AllUsers** 和 **CurrentUser** 。 如果未指定 **範圍** ，則更新會安裝在 **CurrentUser** 範圍中。
+指定模組的安裝範圍。 此參數可接受的值為 **AllUsers** 和 **CurrentUser**。 如果未指定 **範圍** ，則更新會安裝在 **CurrentUser** 範圍中。
 
 **AllUsers** 範圍需要較高的許可權，並將模組安裝在可供電腦的所有使用者存取的位置：
 
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 未定義 **範圍** 時，會根據 PowerShellGet 版本設定預設值。
 
 - 在 PowerShellGet 版本2.0.0 和更新版本中，針對所有其他的會話執行提高許可權的會話和 **CurrentUser** 時，預設值為 **AllUsers** 。
-- 在 PowerShellGet 1.x 版中，預設值為 **AllUsers** ，這需要提高安裝的許可權。
+- 在 PowerShellGet 1.x 版中，預設值為 **AllUsers**，這需要提高安裝的許可權。
 
 ```yaml
 Type: System.String
@@ -342,7 +342,14 @@ Accept wildcard characters: False
 
 ## 注意
 
-針對 PowerShell 5.1 或以下，提高許可權的會話中的預設範圍是 **AllUsers** ，而在非提高許可權的會話中， **CurrentUser** 。 **AllUsers** 、的模組更新 `$env:ProgramFiles\PowerShell\Modules` 需要較高的許可權。 **CurrentUser** 、的模組更新 `$home\Documents\PowerShell\Modules` 不需要較高的許可權。
+針對 PowerShell 5.1 或以下，提高許可權的會話中的預設範圍是 **AllUsers**，而在非提高許可權的會話中， **CurrentUser**。 **AllUsers**、的模組更新 `$env:ProgramFiles\PowerShell\Modules` 需要較高的許可權。 **CurrentUser**、的模組更新 `$home\Documents\PowerShell\Modules` 不需要較高的許可權。
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 `Update-Module` 在 Windows 7 或 Windows 2008 R2 和更新版本的 Windows 上，于 powershell 3.0 或更新版本的 PowerShell 上執行。
 
@@ -362,4 +369,4 @@ Accept wildcard characters: False
 
 [Publish-Module](Publish-Module.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[卸載模組](Uninstall-Module.md)

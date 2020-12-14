@@ -6,12 +6,12 @@ ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: 736ca53ff4992ea430ec89ad1795dcf278b0da41
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: 88369b1ccf3157e56dd5266784d8ca16e55b1f8f
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483123"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892516"
 ---
 # <a name="about-operators"></a>關於運算子
 
@@ -96,7 +96,7 @@ PowerShell 支援數種可協助您操作值的運算子類型。
   True
   ```
 
-- 當做管線的第一個區段使用時，以括弧括住命令或運算式，會造成運算式結果的 _列舉_ 。 如果括弧包裝一個 _命令_ ，則會使用 _記憶體中收集_ 到的所有輸出來執行完成，然後才會透過管線傳送結果。
+- 當做管線的第一個區段使用時，以括弧括住命令或運算式，會造成運算式結果的 _列舉_ 。 如果括弧包裝一個 _命令_，則會使用 _記憶體中收集_ 到的所有輸出來執行完成，然後才會透過管線傳送結果。
 
 #### <a name="subexpression-operator--"></a>子運算式運算子 `$( )`
 
@@ -398,7 +398,7 @@ foreach ($a in 1..$max) {Write-Host $a}
 5..-5 | ForEach-Object {Write-Output $_}
 ```
 
-從 PowerShell 6 開始，範圍運算子適用于 **字元** 和 **整數** 。
+從 PowerShell 6 開始，範圍運算子適用于 **字元** 和 **整數**。
 
 若要建立字元範圍，請將界限字元括在引號中。
 
@@ -514,7 +514,7 @@ ${a}?.PropName
 100
 ```
 
-下列範例將會傳回 null，而不會嘗試存取成員名稱 **PropName** 。
+下列範例將會傳回 null，而不會嘗試存取成員名稱 **PropName**。
 
 ```powershell
 $a = $null
@@ -542,7 +542,7 @@ ${a}?[0]
 > [!NOTE]
 > 由於 PowerShell 允許 `?` 作為變數名稱的一部分，因此，使用這些運算子時需要變數名稱的型式規格。 因此，必須在 `${a}` 之類的變數名稱前後，或是當 `?` 為變數名稱 `${a?}` 的一部分時，使用 `{}`。
 >
-> 的變數名稱語法 `${<name>}` 不應與 `$()` 子運算式運算子混淆。 如需詳細資訊，請參閱 [about_Variables](about_Variables.md#Variable-names-that-include-special-characters)的變數名稱一節。
+> 的變數名稱語法 `${<name>}` 不應與 `$()` 子運算式運算子混淆。 如需詳細資訊，請參閱 [about_Variables](about_Variables.md#variable-names-that-include-special-characters)的變數名稱一節。
 
 ## <a name="see-also"></a>請參閱
 

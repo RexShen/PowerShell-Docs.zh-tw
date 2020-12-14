@@ -7,12 +7,12 @@ ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
-ms.openlocfilehash: 88ce556a366e67a911bf32eb5c13161a543f103f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9aff0ff794bea42da7690a77357c1d76f747a004
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204107"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892152"
 ---
 # Save-Module
 
@@ -82,7 +82,7 @@ d-----         7/1/2019     13:31                PackageManagement
 d-----         7/1/2019     13:31                PowerShellGet
 ```
 
-`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet** ）。 **Path** 參數指定要儲存已下載模組的位置。 存放 **庫** 參數會指定已註冊的存放庫 **PSGallery** 。 下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。
+`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet**）。 **Path** 參數指定要儲存已下載模組的位置。 存放 **庫** 參數會指定已註冊的存放庫 **PSGallery**。 下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。
 
 ### 範例2：儲存特定版本的模組
 
@@ -101,7 +101,7 @@ Mode                LastWriteTime         Length Name
 d-----         7/1/2019     13:40                2.1.0
 ```
 
-`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet** ）。 **Path** 參數指定要儲存已下載模組的位置。 存放 **庫** 參數會指定已註冊的存放庫 **PSGallery** 。 **MaximumVersion** 指定下載並儲存版本 **2.1.0** 。 下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。
+`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet**）。 **Path** 參數指定要儲存已下載模組的位置。 存放 **庫** 參數會指定已註冊的存放庫 **PSGallery**。 **MaximumVersion** 指定下載並儲存版本 **2.1.0** 。 下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。
 
 ### 範例3：尋找並儲存特定版本的模組
 
@@ -121,7 +121,7 @@ Mode                LastWriteTime         Length Name
 d-----         7/1/2019     14:04                1.6.5
 ```
 
-`Find-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet** ）。 存放 **庫** 參數會指定已註冊的存放庫 **PSGallery** 。 **RequiredVersion** 指定版本 **1.6.5** 。
+`Find-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet**）。 存放 **庫** 參數會指定已註冊的存放庫 **PSGallery**。 **RequiredVersion** 指定版本 **1.6.5**。
 
 物件會向下傳送到管線 `Save-Module` 。 **Path** 參數指定要儲存已下載模組的位置。 下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。
 
@@ -405,5 +405,11 @@ Accept wildcard characters: False
 
 ## 注意
 
-## 相關連結
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
+## 相關連結
