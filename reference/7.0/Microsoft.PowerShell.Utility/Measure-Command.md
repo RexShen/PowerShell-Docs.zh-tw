@@ -3,52 +3,52 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2020
+ms.date: 12/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
-ms.openlocfilehash: 970c72d5661796c25d6beb30eb08b6cd7032ceb1
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: a7aed986ccd94472fe2dc89a43cc6b4d054494ca
+ms.sourcegitcommit: 165d10405d9db3a68c417a239d3181378fd02b9b
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201879"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935913"
 ---
-# <span data-ttu-id="1f9bf-103">Measure-Command</span><span class="sxs-lookup"><span data-stu-id="1f9bf-103">Measure-Command</span></span>
+# <span data-ttu-id="9cecc-103">Measure-Command</span><span class="sxs-lookup"><span data-stu-id="9cecc-103">Measure-Command</span></span>
 
-## <span data-ttu-id="1f9bf-104">概要</span><span class="sxs-lookup"><span data-stu-id="1f9bf-104">SYNOPSIS</span></span>
-<span data-ttu-id="1f9bf-105">測量執行指令碼區塊和 Cmdlet 所需的時間。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-105">Measures the time it takes to run script blocks and cmdlets.</span></span>
+## <span data-ttu-id="9cecc-104">概要</span><span class="sxs-lookup"><span data-stu-id="9cecc-104">SYNOPSIS</span></span>
+<span data-ttu-id="9cecc-105">測量執行指令碼區塊和 Cmdlet 所需的時間。</span><span class="sxs-lookup"><span data-stu-id="9cecc-105">Measures the time it takes to run script blocks and cmdlets.</span></span>
 
-## <span data-ttu-id="1f9bf-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="1f9bf-106">SYNTAX</span></span>
+## <span data-ttu-id="9cecc-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="9cecc-106">SYNTAX</span></span>
 
 ```
 Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
-## <span data-ttu-id="1f9bf-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="1f9bf-107">DESCRIPTION</span></span>
+## <span data-ttu-id="9cecc-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="9cecc-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="1f9bf-108">此 `Measure-Command` Cmdlet 會在內部執行腳本區塊或 Cmdlet、執行作業的次數，並傳回執行時間。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-108">The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.</span></span>
+<span data-ttu-id="9cecc-108">此 `Measure-Command` Cmdlet 會在內部執行腳本區塊或 Cmdlet、執行作業的次數，並傳回執行時間。</span><span class="sxs-lookup"><span data-stu-id="9cecc-108">The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="1f9bf-109">腳本區塊執行的方式是 `Measure-Command` 在目前的範圍中執行，而不是子範圍。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-109">Script blocks run by `Measure-Command` run in the current scope, not a child scope.</span></span>
+> <span data-ttu-id="9cecc-109">腳本區塊執行的方式是 `Measure-Command` 在目前的範圍中執行，而不是子範圍。</span><span class="sxs-lookup"><span data-stu-id="9cecc-109">Script blocks run by `Measure-Command` run in the current scope, not a child scope.</span></span>
 
-## <span data-ttu-id="1f9bf-110">範例</span><span class="sxs-lookup"><span data-stu-id="1f9bf-110">EXAMPLES</span></span>
+## <span data-ttu-id="9cecc-110">範例</span><span class="sxs-lookup"><span data-stu-id="9cecc-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="1f9bf-111">範例1：測量命令</span><span class="sxs-lookup"><span data-stu-id="1f9bf-111">Example 1: Measure a command</span></span>
+### <span data-ttu-id="9cecc-111">範例1：測量命令</span><span class="sxs-lookup"><span data-stu-id="9cecc-111">Example 1: Measure a command</span></span>
 
-<span data-ttu-id="1f9bf-112">這個範例會測量執行命令的時間，此 `Get-EventLog` 命令會取得 Windows PowerShell 事件記錄檔中的事件。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-112">This example measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.</span></span>
+<span data-ttu-id="9cecc-112">這個範例會測量執行命令的時間，此 `Get-EventLog` 命令會取得 Windows PowerShell 事件記錄檔中的事件。</span><span class="sxs-lookup"><span data-stu-id="9cecc-112">This example measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.</span></span>
 
 ```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
-### <span data-ttu-id="1f9bf-113">範例2：比較 Measure-Command 的兩個輸出</span><span class="sxs-lookup"><span data-stu-id="1f9bf-113">Example 2: Compare two outputs from Measure-Command</span></span>
+### <span data-ttu-id="9cecc-113">範例2：比較 Measure-Command 的兩個輸出</span><span class="sxs-lookup"><span data-stu-id="9cecc-113">Example 2: Compare two outputs from Measure-Command</span></span>
 
-<span data-ttu-id="1f9bf-114">第一個命令會測量處理遞迴命令所花費的時間 `Get-ChildItem` ，此命令會使用 **Path** 參數來取得 `.txt` `C:\Windows` 目錄及其子目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-114">The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its subdirectories.</span></span>
+<span data-ttu-id="9cecc-114">第一個命令會測量處理遞迴命令所花費的時間 `Get-ChildItem` ，此命令會使用 **Path** 參數來取得 `.txt` `C:\Windows` 目錄及其子目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="9cecc-114">The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its subdirectories.</span></span>
 
-<span data-ttu-id="1f9bf-115">第二個命令會測量處理遞迴命令所需的時間 `Get-ChildItem` ，此命令使用提供者特定的 ' 參數。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-115">The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific \` parameter.</span></span>
+<span data-ttu-id="9cecc-115">第二個命令會測量處理遞迴命令所需的時間 `Get-ChildItem` ，此命令使用提供者特定的 ' 參數。</span><span class="sxs-lookup"><span data-stu-id="9cecc-115">The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific \` parameter.</span></span>
 
-<span data-ttu-id="1f9bf-116">這些命令會顯示在 PowerShell 命令中使用提供者特定篩選器的值。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-116">These commands show the value of using a provider-specific filter in PowerShell commands.</span></span>
+<span data-ttu-id="9cecc-116">這些命令會顯示在 PowerShell 命令中使用提供者特定篩選器的值。</span><span class="sxs-lookup"><span data-stu-id="9cecc-116">These commands show the value of using a provider-specific filter in PowerShell commands.</span></span>
 
 ```powershell
 Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
@@ -86,9 +86,9 @@ TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
 
-### <span data-ttu-id="1f9bf-117">範例3：將輸入輸送至 Measure-Command</span><span class="sxs-lookup"><span data-stu-id="1f9bf-117">Example 3: Piping input to Measure-Command</span></span>
+### <span data-ttu-id="9cecc-117">範例3：將輸入輸送至 Measure-Command</span><span class="sxs-lookup"><span data-stu-id="9cecc-117">Example 3: Piping input to Measure-Command</span></span>
 
-<span data-ttu-id="1f9bf-118">`Measure-Command`傳送至 **運算式** 參數的腳本區塊可以使用輸送至的物件。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-118">Objects that are piped to `Measure-Command` are available to the script block that is passed to the **Expression** parameter.</span></span> <span data-ttu-id="1f9bf-119">腳本區塊會針對管線上的每個物件執行一次。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-119">The script block is executed once for each object on the pipeline.</span></span>
+<span data-ttu-id="9cecc-118">`Measure-Command`傳送至 **運算式** 參數的腳本區塊可以使用輸送至的物件。</span><span class="sxs-lookup"><span data-stu-id="9cecc-118">Objects that are piped to `Measure-Command` are available to the script block that is passed to the **Expression** parameter.</span></span> <span data-ttu-id="9cecc-119">腳本區塊會針對管線上的每個物件執行一次。</span><span class="sxs-lookup"><span data-stu-id="9cecc-119">The script block is executed once for each object on the pipeline.</span></span>
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
@@ -110,9 +110,9 @@ TotalSeconds      : 0.0122672
 TotalMilliseconds : 12.2672
 ```
 
-### <span data-ttu-id="1f9bf-120">範例4：顯示已測量命令的輸出</span><span class="sxs-lookup"><span data-stu-id="1f9bf-120">Example 4: Displaying output of measured command</span></span>
+### <span data-ttu-id="9cecc-120">範例4：顯示已測量命令的輸出</span><span class="sxs-lookup"><span data-stu-id="9cecc-120">Example 4: Displaying output of measured command</span></span>
 
-<span data-ttu-id="1f9bf-121">若要在中顯示運算式的輸出， `Measure-Command` 您可以使用管道 `Out-Default` 。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-121">To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.</span></span>
+<span data-ttu-id="9cecc-121">若要在中顯示運算式的輸出， `Measure-Command` 您可以使用管道 `Out-Default` 。</span><span class="sxs-lookup"><span data-stu-id="9cecc-121">To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.</span></span>
 
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.
@@ -139,9 +139,9 @@ TotalSeconds      : 0.0113745
 TotalMilliseconds : 11.3745
 ```
 
-### <span data-ttu-id="1f9bf-122">範例5：測量子範圍中的執行</span><span class="sxs-lookup"><span data-stu-id="1f9bf-122">Example 5: Measuring execution in a child scope</span></span>
+### <span data-ttu-id="9cecc-122">範例5：測量子範圍中的執行</span><span class="sxs-lookup"><span data-stu-id="9cecc-122">Example 5: Measuring execution in a child scope</span></span>
 
-<span data-ttu-id="1f9bf-123">`Measure-Command` 在目前的範圍中執行腳本區塊，因此腳本區塊可以修改目前範圍中的值。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-123">`Measure-Command` runs the script block in the current scope, so the script block can modify values in the current scope.</span></span> <span data-ttu-id="1f9bf-124">若要避免變更目前的範圍，您必須將腳本區塊包裝在大括弧 (`{}`) ，並使用叫用運算子 (`&`) 在子範圍中執行區塊。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-124">To avoid changes to the current scope, you must wrap the script block in braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.</span></span>
+<span data-ttu-id="9cecc-123">`Measure-Command` 在目前的範圍中執行腳本區塊，因此腳本區塊可以修改目前範圍中的值。</span><span class="sxs-lookup"><span data-stu-id="9cecc-123">`Measure-Command` runs the script block in the current scope, so the script block can modify values in the current scope.</span></span> <span data-ttu-id="9cecc-124">若要避免變更目前的範圍，您必須將腳本區塊包裝在大括弧 (`{}`) ，並使用叫用運算子 (`&`) 在子範圍中執行區塊。</span><span class="sxs-lookup"><span data-stu-id="9cecc-124">To avoid changes to the current scope, you must wrap the script block in braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.</span></span>
 
 ```powershell
 $foo = 'Value 1'
@@ -156,13 +156,13 @@ Value 2
 Value 2
 ```
 
-<span data-ttu-id="1f9bf-125">如需調用運算子的詳細資訊，請參閱 [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-)。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-125">For more information about the invocation operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span></span>
+<span data-ttu-id="9cecc-125">如需調用運算子的詳細資訊，請參閱 [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-)。</span><span class="sxs-lookup"><span data-stu-id="9cecc-125">For more information about the invocation operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span></span>
 
-## <span data-ttu-id="1f9bf-126">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="1f9bf-126">PARAMETERS</span></span>
+## <span data-ttu-id="9cecc-126">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9cecc-126">PARAMETERS</span></span>
 
-### <span data-ttu-id="1f9bf-127">-Expression</span><span class="sxs-lookup"><span data-stu-id="1f9bf-127">-Expression</span></span>
+### <span data-ttu-id="9cecc-127">-Expression</span><span class="sxs-lookup"><span data-stu-id="9cecc-127">-Expression</span></span>
 
-<span data-ttu-id="1f9bf-128">指定正在計時的運算式。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-128">Specifies the expression that is being timed.</span></span> <span data-ttu-id="1f9bf-129">以大括弧括住運算式 (`{}`) 。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-129">Enclose the expression in braces (`{}`).</span></span>
+<span data-ttu-id="9cecc-128">指定正在計時的運算式。</span><span class="sxs-lookup"><span data-stu-id="9cecc-128">Specifies the expression that is being timed.</span></span> <span data-ttu-id="9cecc-129">以大括弧括住運算式 (`{}`) 。</span><span class="sxs-lookup"><span data-stu-id="9cecc-129">Enclose the expression in braces (`{}`).</span></span>
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -176,9 +176,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1f9bf-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="1f9bf-130">-InputObject</span></span>
+### <span data-ttu-id="9cecc-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="9cecc-130">-InputObject</span></span>
 
-<span data-ttu-id="1f9bf-131">系結至 **InputObject** 參數的物件是傳遞至 **Expression** 參數之腳本區塊的選擇性輸入。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-131">Objects bound to the **InputObject** parameter are optional input for the script block passed to the **Expression** parameter.</span></span> <span data-ttu-id="1f9bf-132">在腳本區塊內， `$_` 可以用來參考管線中的目前物件。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-132">Inside the script block, `$_` can be used to reference the current object in the pipeline.</span></span>
+<span data-ttu-id="9cecc-131">系結至 **InputObject** 參數的物件是傳遞至 **Expression** 參數之腳本區塊的選擇性輸入。</span><span class="sxs-lookup"><span data-stu-id="9cecc-131">Objects bound to the **InputObject** parameter are optional input for the script block passed to the **Expression** parameter.</span></span> <span data-ttu-id="9cecc-132">在腳本區塊內， `$_` 可以用來參考管線中的目前物件。</span><span class="sxs-lookup"><span data-stu-id="9cecc-132">Inside the script block, `$_` can be used to reference the current object in the pipeline.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -192,26 +192,26 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1f9bf-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1f9bf-133">CommonParameters</span></span>
+### <span data-ttu-id="9cecc-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9cecc-133">CommonParameters</span></span>
 
-<span data-ttu-id="1f9bf-134">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1f9bf-135">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="9cecc-134">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="9cecc-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9cecc-135">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="9cecc-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="1f9bf-136">輸入</span><span class="sxs-lookup"><span data-stu-id="1f9bf-136">INPUTS</span></span>
+## <span data-ttu-id="9cecc-136">輸入</span><span class="sxs-lookup"><span data-stu-id="9cecc-136">INPUTS</span></span>
 
-### <span data-ttu-id="1f9bf-137">System.Management.Automation.PSObject</span><span class="sxs-lookup"><span data-stu-id="1f9bf-137">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="9cecc-137">System.Management.Automation.PSObject</span><span class="sxs-lookup"><span data-stu-id="9cecc-137">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="1f9bf-138">您可以使用管線將物件傳送至 `Measure-Command` 。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-138">You can pipe an object to `Measure-Command`.</span></span>
+<span data-ttu-id="9cecc-138">您可以使用管線將物件傳送至 `Measure-Command` 。</span><span class="sxs-lookup"><span data-stu-id="9cecc-138">You can pipe an object to `Measure-Command`.</span></span>
 
-## <span data-ttu-id="1f9bf-139">輸出</span><span class="sxs-lookup"><span data-stu-id="1f9bf-139">OUTPUTS</span></span>
+## <span data-ttu-id="9cecc-139">輸出</span><span class="sxs-lookup"><span data-stu-id="9cecc-139">OUTPUTS</span></span>
 
-### <span data-ttu-id="1f9bf-140">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="1f9bf-140">System.TimeSpan</span></span>
+### <span data-ttu-id="9cecc-140">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="9cecc-140">System.TimeSpan</span></span>
 
-<span data-ttu-id="1f9bf-141">`Measure-Command` 傳回代表結果的時間範圍物件。</span><span class="sxs-lookup"><span data-stu-id="1f9bf-141">`Measure-Command` returns a time span object that represents the result.</span></span>
+<span data-ttu-id="9cecc-141">`Measure-Command` 傳回代表結果的時間範圍物件。</span><span class="sxs-lookup"><span data-stu-id="9cecc-141">`Measure-Command` returns a time span object that represents the result.</span></span>
 
-## <span data-ttu-id="1f9bf-142">注意</span><span class="sxs-lookup"><span data-stu-id="1f9bf-142">NOTES</span></span>
+## <span data-ttu-id="9cecc-142">注意</span><span class="sxs-lookup"><span data-stu-id="9cecc-142">NOTES</span></span>
 
-## <span data-ttu-id="1f9bf-143">相關連結</span><span class="sxs-lookup"><span data-stu-id="1f9bf-143">RELATED LINKS</span></span>
+## <span data-ttu-id="9cecc-143">相關連結</span><span class="sxs-lookup"><span data-stu-id="9cecc-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="1f9bf-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="1f9bf-144">Invoke-Command</span></span>](../Microsoft.PowerShell.Core/Invoke-Command.md)
+[<span data-ttu-id="9cecc-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="9cecc-144">Invoke-Command</span></span>](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[<span data-ttu-id="1f9bf-145">Trace-Command</span><span class="sxs-lookup"><span data-stu-id="1f9bf-145">Trace-Command</span></span>](Trace-Command.md)
+[<span data-ttu-id="9cecc-145">Trace-Command</span><span class="sxs-lookup"><span data-stu-id="9cecc-145">Trace-Command</span></span>](Trace-Command.md)

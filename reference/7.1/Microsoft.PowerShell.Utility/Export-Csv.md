@@ -1,27 +1,26 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2020
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: ad2b2a2b32fa1dfbf722ff0af25bfafaf57de84a
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f920130ec8354b61b0bb3617e061520271df0eed
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93206127"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913231"
 ---
-# <span data-ttu-id="83881-103">Export-Csv</span><span class="sxs-lookup"><span data-stu-id="83881-103">Export-Csv</span></span>
+# <span data-ttu-id="cb358-102">Export-Csv</span><span class="sxs-lookup"><span data-stu-id="cb358-102">Export-Csv</span></span>
 
-## <span data-ttu-id="83881-104">概要</span><span class="sxs-lookup"><span data-stu-id="83881-104">SYNOPSIS</span></span>
-<span data-ttu-id="83881-105">將物件轉換成一系列的逗號分隔值 (CSV) 字串，並將字串儲存至檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-105">Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a file.</span></span>
+## <span data-ttu-id="cb358-103">概要</span><span class="sxs-lookup"><span data-stu-id="cb358-103">SYNOPSIS</span></span>
+<span data-ttu-id="cb358-104">將物件轉換成一系列的逗號分隔值 (CSV) 字串，並將字串儲存至檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-104">Converts objects into a series of comma-separated value (CSV) strings and saves the strings to a file.</span></span>
 
-## <span data-ttu-id="83881-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="83881-106">SYNTAX</span></span>
+## <span data-ttu-id="cb358-105">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="cb358-105">SYNTAX</span></span>
 
-### <span data-ttu-id="83881-107">Delimiter (預設值)</span><span class="sxs-lookup"><span data-stu-id="83881-107">Delimiter (Default)</span></span>
+### <span data-ttu-id="cb358-106">Delimiter (預設值)</span><span class="sxs-lookup"><span data-stu-id="cb358-106">Delimiter (Default)</span></span>
 
 ```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
@@ -30,7 +29,7 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="83881-108">UseCulture</span><span class="sxs-lookup"><span data-stu-id="83881-108">UseCulture</span></span>
+### <span data-ttu-id="cb358-107">UseCulture</span><span class="sxs-lookup"><span data-stu-id="cb358-107">UseCulture</span></span>
 
 ```
 Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-Force] [-NoClobber]
@@ -38,17 +37,17 @@ Export-Csv -InputObject <PSObject> [[-Path] <String>] [-LiteralPath <String>] [-
  [-QuoteFields <String[]>] [-UseQuotes <QuoteKind>] [-WhatIf] [-Confirm]  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="83881-109">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="83881-109">DESCRIPTION</span></span>
+## <span data-ttu-id="cb358-108">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="cb358-108">DESCRIPTION</span></span>
 
-<span data-ttu-id="83881-110">`Export-CSV`Cmdlet 會建立您所提交之物件的 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-110">The `Export-CSV` cmdlet creates a CSV file of the objects that you submit.</span></span> <span data-ttu-id="83881-111">每個物件都是一個資料列，其中包含以逗號分隔的物件屬性值清單。</span><span class="sxs-lookup"><span data-stu-id="83881-111">Each object is a row that includes a comma-separated list of the object's property values.</span></span> <span data-ttu-id="83881-112">您可以使用 `Export-CSV` Cmdlet 來建立試算表，並與接受 CSV 檔案做為輸入的程式共用資料。</span><span class="sxs-lookup"><span data-stu-id="83881-112">You can use the `Export-CSV` cmdlet to create spreadsheets and share data with programs that accept CSV files as input.</span></span>
+<span data-ttu-id="cb358-109">`Export-CSV`Cmdlet 會建立您所提交之物件的 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-109">The `Export-CSV` cmdlet creates a CSV file of the objects that you submit.</span></span> <span data-ttu-id="cb358-110">每個物件都是一個資料列，其中包含以逗號分隔的物件屬性值清單。</span><span class="sxs-lookup"><span data-stu-id="cb358-110">Each object is a row that includes a comma-separated list of the object's property values.</span></span> <span data-ttu-id="cb358-111">您可以使用 `Export-CSV` Cmdlet 來建立試算表，並與接受 CSV 檔案做為輸入的程式共用資料。</span><span class="sxs-lookup"><span data-stu-id="cb358-111">You can use the `Export-CSV` cmdlet to create spreadsheets and share data with programs that accept CSV files as input.</span></span>
 
-<span data-ttu-id="83881-113">將物件傳送至 Cmdlet 之前，請勿先將物件格式化 `Export-CSV` 。</span><span class="sxs-lookup"><span data-stu-id="83881-113">Do not format objects before sending them to the `Export-CSV` cmdlet.</span></span> <span data-ttu-id="83881-114">如果 `Export-CSV` 接收格式化的物件，則 CSV 檔案會包含格式屬性，而不是物件屬性。</span><span class="sxs-lookup"><span data-stu-id="83881-114">If `Export-CSV` receives formatted objects the CSV file contains the format properties rather than the object properties.</span></span> <span data-ttu-id="83881-115">若只要匯出選取的物件屬性，請使用 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-115">To export only selected properties of an object, use the `Select-Object` cmdlet.</span></span>
+<span data-ttu-id="cb358-112">將物件傳送至 Cmdlet 之前，請勿先將物件格式化 `Export-CSV` 。</span><span class="sxs-lookup"><span data-stu-id="cb358-112">Do not format objects before sending them to the `Export-CSV` cmdlet.</span></span> <span data-ttu-id="cb358-113">如果 `Export-CSV` 接收格式化的物件，則 CSV 檔案會包含格式屬性，而不是物件屬性。</span><span class="sxs-lookup"><span data-stu-id="cb358-113">If `Export-CSV` receives formatted objects the CSV file contains the format properties rather than the object properties.</span></span> <span data-ttu-id="cb358-114">若只要匯出選取的物件屬性，請使用 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-114">To export only selected properties of an object, use the `Select-Object` cmdlet.</span></span>
 
-## <span data-ttu-id="83881-116">範例</span><span class="sxs-lookup"><span data-stu-id="83881-116">EXAMPLES</span></span>
+## <span data-ttu-id="cb358-115">範例</span><span class="sxs-lookup"><span data-stu-id="cb358-115">EXAMPLES</span></span>
 
-### <span data-ttu-id="83881-117">範例1：將進程屬性匯出至 CSV 檔案</span><span class="sxs-lookup"><span data-stu-id="83881-117">Example 1: Export process properties to a CSV file</span></span>
+### <span data-ttu-id="cb358-116">範例1：將進程屬性匯出至 CSV 檔案</span><span class="sxs-lookup"><span data-stu-id="cb358-116">Example 1: Export process properties to a CSV file</span></span>
 
-<span data-ttu-id="83881-118">此範例會選取具有特定屬性的 **處理** 程式物件，並將物件匯出至 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-118">This example selects **Process** objects with specific properties, exports the objects to a CSV file.</span></span>
+<span data-ttu-id="cb358-117">此範例會選取具有特定屬性的 **處理** 程式物件，並將物件匯出至 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-117">This example selects **Process** objects with specific properties, exports the objects to a CSV file.</span></span>
 
 ```powershell
 Get-Process -Name WmiPrvSE | Select-Object -Property BasePriority,Id,SessionId,WorkingSet |
@@ -68,11 +67,11 @@ BasePriority Id    SessionId WorkingSet
 8            54632 0         9502720
 ```
 
-<span data-ttu-id="83881-119">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="83881-119">The `Get-Process` cmdlet gets the **Process** objects.</span></span> <span data-ttu-id="83881-120">**Name** 參數會篩選輸出，只包含 WmiPrvSE 處理物件。</span><span class="sxs-lookup"><span data-stu-id="83881-120">The **Name** parameter filters the output to include only the WmiPrvSE process objects.</span></span> <span data-ttu-id="83881-121">處理常式物件會向下傳送至 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-121">The process objects are sent down the pipeline to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="83881-122">`Select-Object` 使用 **Property** 參數來選取處理常式物件屬性的子集。</span><span class="sxs-lookup"><span data-stu-id="83881-122">`Select-Object` uses the **Property** parameter to select a subset of process object properties.</span></span> <span data-ttu-id="83881-123">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-123">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-124">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-124">`Export-Csv` converts the process objects to a series of CSV strings.</span></span> <span data-ttu-id="83881-125">**Path** 參數指定 WmiData.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-125">The **Path** parameter specifies that the WmiData.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-126">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-126">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-127">此 `Import-Csv` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-127">The `Import-Csv` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-118">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-118">The `Get-Process` cmdlet gets the **Process** objects.</span></span> <span data-ttu-id="cb358-119">**Name** 參數會篩選輸出，只包含 WmiPrvSE 處理物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-119">The **Name** parameter filters the output to include only the WmiPrvSE process objects.</span></span> <span data-ttu-id="cb358-120">處理常式物件會向下傳送至 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-120">The process objects are sent down the pipeline to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="cb358-121">`Select-Object` 使用 **Property** 參數來選取處理常式物件屬性的子集。</span><span class="sxs-lookup"><span data-stu-id="cb358-121">`Select-Object` uses the **Property** parameter to select a subset of process object properties.</span></span> <span data-ttu-id="cb358-122">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-122">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-123">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-123">`Export-Csv` converts the process objects to a series of CSV strings.</span></span> <span data-ttu-id="cb358-124">**Path** 參數指定 WmiData.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-124">The **Path** parameter specifies that the WmiData.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-125">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-125">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-126">此 `Import-Csv` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-126">The `Import-Csv` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-128">範例2：將進程匯出至逗號分隔的檔案</span><span class="sxs-lookup"><span data-stu-id="83881-128">Example 2: Export processes to a comma-delimited file</span></span>
+### <span data-ttu-id="cb358-127">範例2：將進程匯出至逗號分隔的檔案</span><span class="sxs-lookup"><span data-stu-id="cb358-127">Example 2: Export processes to a comma-delimited file</span></span>
 
-<span data-ttu-id="83881-129">這個範例會取得 **處理** 程式物件，並將物件匯出至 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-129">This example gets **Process** objects and exports the objects to a CSV file.</span></span>
+<span data-ttu-id="cb358-128">這個範例會取得 **處理** 程式物件，並將物件匯出至 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-128">This example gets **Process** objects and exports the objects to a CSV file.</span></span>
 
 ```powershell
 Get-Process | Export-Csv -Path .\Processes.csv -NoTypeInformation
@@ -84,12 +83,12 @@ Get-Content -Path .\Processes.csv
 "ApplicationFrameHost","4","511","2203597099008","35364864","21979136","30048", ...
 ```
 
-<span data-ttu-id="83881-130">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="83881-130">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="83881-131">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-131">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-132">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-132">`Export-Csv` converts the process objects to a series of CSV strings.</span></span>
-<span data-ttu-id="83881-133">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-133">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-134">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-134">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-135">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-135">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-129">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-129">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="cb358-130">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-130">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-131">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-131">`Export-Csv` converts the process objects to a series of CSV strings.</span></span>
+<span data-ttu-id="cb358-132">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-132">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-133">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-133">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-134">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-134">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-136">範例3：將進程匯出至分號分隔的檔案</span><span class="sxs-lookup"><span data-stu-id="83881-136">Example 3: Export processes to a semicolon delimited file</span></span>
+### <span data-ttu-id="cb358-135">範例3：將進程匯出至分號分隔的檔案</span><span class="sxs-lookup"><span data-stu-id="cb358-135">Example 3: Export processes to a semicolon delimited file</span></span>
 
-<span data-ttu-id="83881-137">此範例會取得 **處理** 程式物件，並將物件匯出為具有分號分隔符號的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-137">This example gets **Process** objects and exports the objects to a file with a semicolon delimiter.</span></span>
+<span data-ttu-id="cb358-136">此範例會取得 **處理** 程式物件，並將物件匯出為具有分號分隔符號的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-136">This example gets **Process** objects and exports the objects to a file with a semicolon delimiter.</span></span>
 
 ```powershell
 Get-Process | Export-Csv -Path .\Processes.csv -Delimiter ';' -NoTypeInformation
@@ -101,12 +100,12 @@ Get-Content -Path .\Processes.csv
 "ApplicationFrameHost";"4";"509";"2203595321344";"34807808";"21770240";"29504"; ...
 ```
 
-<span data-ttu-id="83881-138">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="83881-138">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="83881-139">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-139">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-140">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-140">`Export-Csv` converts the process objects to a series of CSV strings.</span></span>
-<span data-ttu-id="83881-141">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-141">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-142">**分隔符號** 參數會指定分號來分隔字串值。</span><span class="sxs-lookup"><span data-stu-id="83881-142">The **Delimiter** parameter specifies a semicolon to separate the string values.</span></span> <span data-ttu-id="83881-143">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-143">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-144">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-144">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-137">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-137">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="cb358-138">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-138">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-139">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-139">`Export-Csv` converts the process objects to a series of CSV strings.</span></span>
+<span data-ttu-id="cb358-140">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-140">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-141">**分隔符號** 參數會指定分號來分隔字串值。</span><span class="sxs-lookup"><span data-stu-id="cb358-141">The **Delimiter** parameter specifies a semicolon to separate the string values.</span></span> <span data-ttu-id="cb358-142">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-142">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-143">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-143">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-145">範例4：使用目前文化特性的清單分隔符號來匯出進程</span><span class="sxs-lookup"><span data-stu-id="83881-145">Example 4: Export processes using the current culture's list separator</span></span>
+### <span data-ttu-id="cb358-144">範例4：使用目前文化特性的清單分隔符號來匯出進程</span><span class="sxs-lookup"><span data-stu-id="cb358-144">Example 4: Export processes using the current culture's list separator</span></span>
 
-<span data-ttu-id="83881-146">這個範例會取得 **處理** 程式物件，並將物件匯出到檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-146">This example gets **Process** objects and exports the objects to a file.</span></span> <span data-ttu-id="83881-147">分隔符號是目前文化特性的清單分隔符號。</span><span class="sxs-lookup"><span data-stu-id="83881-147">The delimiter is the current culture's list separator.</span></span>
+<span data-ttu-id="cb358-145">這個範例會取得 **處理** 程式物件，並將物件匯出到檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-145">This example gets **Process** objects and exports the objects to a file.</span></span> <span data-ttu-id="cb358-146">分隔符號是目前文化特性的清單分隔符號。</span><span class="sxs-lookup"><span data-stu-id="cb358-146">The delimiter is the current culture's list separator.</span></span>
 
 ```powershell
 (Get-Culture).TextInfo.ListSeparator
@@ -119,12 +118,12 @@ Get-Content -Path .\Processes.csv
 "ApplicationFrameHost","4","511","2203597099008","35364864","21979136","30048", ...
 ```
 
-<span data-ttu-id="83881-148">此 `Get-Culture` Cmdlet 會使用 **TextInfo** 和 **ListSeparator** 的 nested 屬性，並顯示目前文化特性的預設清單分隔符號。</span><span class="sxs-lookup"><span data-stu-id="83881-148">The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays the current culture's default list separator.</span></span> <span data-ttu-id="83881-149">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="83881-149">The `Get-Process` cmdlet gets **Process** objects.</span></span>
-<span data-ttu-id="83881-150">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-150">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-151">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-151">`Export-Csv` converts the process objects to a series of CSV strings.</span></span> <span data-ttu-id="83881-152">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-152">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-153">**UseCulture** 參數會使用目前文化特性的預設清單分隔符號做為分隔符號。</span><span class="sxs-lookup"><span data-stu-id="83881-153">The **UseCulture** parameter uses the current culture's default list separator as the delimiter.</span></span> <span data-ttu-id="83881-154">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-154">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-155">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-155">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-147">此 `Get-Culture` Cmdlet 會使用 **TextInfo** 和 **ListSeparator** 的 nested 屬性，並顯示目前文化特性的預設清單分隔符號。</span><span class="sxs-lookup"><span data-stu-id="cb358-147">The `Get-Culture` cmdlet uses the nested properties **TextInfo** and **ListSeparator** and displays the current culture's default list separator.</span></span> <span data-ttu-id="cb358-148">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-148">The `Get-Process` cmdlet gets **Process** objects.</span></span>
+<span data-ttu-id="cb358-149">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-149">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-150">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-150">`Export-Csv` converts the process objects to a series of CSV strings.</span></span> <span data-ttu-id="cb358-151">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-151">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-152">**UseCulture** 參數會使用目前文化特性的預設清單分隔符號做為分隔符號。</span><span class="sxs-lookup"><span data-stu-id="cb358-152">The **UseCulture** parameter uses the current culture's default list separator as the delimiter.</span></span> <span data-ttu-id="cb358-153">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-153">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-154">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-154">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-156">範例5：匯出具有類型資訊的處理常式</span><span class="sxs-lookup"><span data-stu-id="83881-156">Example 5: Export processes with type information</span></span>
+### <span data-ttu-id="cb358-155">範例5：匯出具有類型資訊的處理常式</span><span class="sxs-lookup"><span data-stu-id="cb358-155">Example 5: Export processes with type information</span></span>
 
-<span data-ttu-id="83881-157">此範例說明如何在 CSV 檔案中包含 **#TYPE** 的標頭資訊。</span><span class="sxs-lookup"><span data-stu-id="83881-157">This example explains how to include the **#TYPE** header information in a CSV file.</span></span> <span data-ttu-id="83881-158">在 PowerShell 6.0 之前的版本中， **#TYPE** 標頭是預設值。</span><span class="sxs-lookup"><span data-stu-id="83881-158">The **#TYPE** header is the default in versions prior to PowerShell 6.0.</span></span>
+<span data-ttu-id="cb358-156">此範例說明如何在 CSV 檔案中包含 **#TYPE** 的標頭資訊。</span><span class="sxs-lookup"><span data-stu-id="cb358-156">This example explains how to include the **#TYPE** header information in a CSV file.</span></span> <span data-ttu-id="cb358-157">在 PowerShell 6.0 之前的版本中， **#TYPE** 標頭是預設值。</span><span class="sxs-lookup"><span data-stu-id="cb358-157">The **#TYPE** header is the default in versions prior to PowerShell 6.0.</span></span>
 
 ```powershell
 Get-Process | Export-Csv -Path .\Processes.csv -IncludeTypeInformation
@@ -137,12 +136,12 @@ Get-Content -Path .\Processes.csv
 "ApplicationFrameHost","4","507","2203595001856","35139584","20934656","29504", ...
 ```
 
-<span data-ttu-id="83881-159">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="83881-159">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="83881-160">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-160">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-161">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-161">`Export-Csv` converts the process objects to a series of CSV strings.</span></span>
-<span data-ttu-id="83881-162">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-162">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-163">**IncludeTypeInformation** 會在 CSV 輸出中包含 **#TYPE** 資訊標頭。</span><span class="sxs-lookup"><span data-stu-id="83881-163">The **IncludeTypeInformation** includes the **#TYPE** information header in the CSV output.</span></span> <span data-ttu-id="83881-164">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-164">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-158">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-158">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="cb358-159">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-159">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-160">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-160">`Export-Csv` converts the process objects to a series of CSV strings.</span></span>
+<span data-ttu-id="cb358-161">**Path** 參數指定 Processes.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-161">The **Path** parameter specifies that the Processes.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-162">**IncludeTypeInformation** 會在 CSV 輸出中包含 **#TYPE** 資訊標頭。</span><span class="sxs-lookup"><span data-stu-id="cb358-162">The **IncludeTypeInformation** includes the **#TYPE** information header in the CSV output.</span></span> <span data-ttu-id="cb358-163">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-163">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-165">範例6：匯出和附加物件至 CSV 檔案</span><span class="sxs-lookup"><span data-stu-id="83881-165">Example 6: Export and append objects to a CSV file</span></span>
+### <span data-ttu-id="cb358-164">範例6：匯出和附加物件至 CSV 檔案</span><span class="sxs-lookup"><span data-stu-id="cb358-164">Example 6: Export and append objects to a CSV file</span></span>
 
-<span data-ttu-id="83881-166">此範例說明如何將物件匯出至 CSV 檔案，並使用 **Append** 參數將物件加入至現有的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-166">This example describes how to export objects to a CSV file and use the **Append** parameter to add objects to an existing file.</span></span>
+<span data-ttu-id="cb358-165">此範例說明如何將物件匯出至 CSV 檔案，並使用 **Append** 參數將物件加入至現有的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-165">This example describes how to export objects to a CSV file and use the **Append** parameter to add objects to an existing file.</span></span>
 
 ```powershell
 $AppService = (Get-Service -DisplayName *Application* | Select-Object -Property DisplayName, Status)
@@ -162,15 +161,15 @@ Get-Content -Path .\Services.Csv
 "Windows Event Log","Running"
 ```
 
-<span data-ttu-id="83881-167">`Get-Service`Cmdlet 會取得服務物件。</span><span class="sxs-lookup"><span data-stu-id="83881-167">The `Get-Service` cmdlet gets service objects.</span></span> <span data-ttu-id="83881-168">**DisplayName** 參數會傳回包含 Word 應用程式的服務。</span><span class="sxs-lookup"><span data-stu-id="83881-168">The **DisplayName** parameter returns services that contain the word Application.</span></span> <span data-ttu-id="83881-169">服務物件會向下傳送至 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-169">The service objects are sent down the pipeline to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="83881-170">`Select-Object` 使用 **Property** 參數來指定 **DisplayName** 和 **Status** 屬性。</span><span class="sxs-lookup"><span data-stu-id="83881-170">`Select-Object` uses the **Property** parameter to specify the **DisplayName** and **Status** properties.</span></span> <span data-ttu-id="83881-171">`$AppService`變數會儲存物件。</span><span class="sxs-lookup"><span data-stu-id="83881-171">The `$AppService` variable stores the objects.</span></span>
+<span data-ttu-id="cb358-166">`Get-Service`Cmdlet 會取得服務物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-166">The `Get-Service` cmdlet gets service objects.</span></span> <span data-ttu-id="cb358-167">**DisplayName** 參數會傳回包含 Word 應用程式的服務。</span><span class="sxs-lookup"><span data-stu-id="cb358-167">The **DisplayName** parameter returns services that contain the word Application.</span></span> <span data-ttu-id="cb358-168">服務物件會向下傳送至 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-168">The service objects are sent down the pipeline to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="cb358-169">`Select-Object` 使用 **Property** 參數來指定 **DisplayName** 和 **Status** 屬性。</span><span class="sxs-lookup"><span data-stu-id="cb358-169">`Select-Object` uses the **Property** parameter to specify the **DisplayName** and **Status** properties.</span></span> <span data-ttu-id="cb358-170">`$AppService`變數會儲存物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-170">The `$AppService` variable stores the objects.</span></span>
 
-<span data-ttu-id="83881-172">這些 `$AppService` 物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-172">The `$AppService` objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-173">`Export-Csv` 將服務物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-173">`Export-Csv` converts the service objects to a series of CSV strings.</span></span> <span data-ttu-id="83881-174">**Path** 參數指定 Services.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-174">The **Path** parameter specifies that the Services.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-175">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-175">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-176">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-176">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-171">這些 `$AppService` 物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-171">The `$AppService` objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-172">`Export-Csv` 將服務物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-172">`Export-Csv` converts the service objects to a series of CSV strings.</span></span> <span data-ttu-id="cb358-173">**Path** 參數指定 Services.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-173">The **Path** parameter specifies that the Services.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-174">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-174">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-175">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-175">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-<span data-ttu-id="83881-177">`Get-Service`和 `Select-Object` Cmdlet 會針對包含 word 視窗的服務重複執行。</span><span class="sxs-lookup"><span data-stu-id="83881-177">The `Get-Service` and `Select-Object` cmdlets are repeated for services that contain the word Windows.</span></span> <span data-ttu-id="83881-178">`$WinService`變數會儲存服務物件。</span><span class="sxs-lookup"><span data-stu-id="83881-178">The `$WinService` variable stores the service objects.</span></span> <span data-ttu-id="83881-179">指令 `Export-Csv` 程式會使用 **Append** 參數來指定將 `$WinService` 物件加入至現有的 Services.csv 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-179">The `Export-Csv` cmdlet uses the **Append** parameter to specify that the `$WinService` objects are added to the existing Services.csv file.</span></span> <span data-ttu-id="83881-180">此 `Get-Content` Cmdlet 會重複顯示已更新的檔案，其中包含附加的資料。</span><span class="sxs-lookup"><span data-stu-id="83881-180">The `Get-Content` cmdlet is repeated to display the updated file that includes the appended data.</span></span>
+<span data-ttu-id="cb358-176">`Get-Service`和 `Select-Object` Cmdlet 會針對包含 word 視窗的服務重複執行。</span><span class="sxs-lookup"><span data-stu-id="cb358-176">The `Get-Service` and `Select-Object` cmdlets are repeated for services that contain the word Windows.</span></span> <span data-ttu-id="cb358-177">`$WinService`變數會儲存服務物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-177">The `$WinService` variable stores the service objects.</span></span> <span data-ttu-id="cb358-178">指令 `Export-Csv` 程式會使用 **Append** 參數來指定將 `$WinService` 物件加入至現有的 Services.csv 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-178">The `Export-Csv` cmdlet uses the **Append** parameter to specify that the `$WinService` objects are added to the existing Services.csv file.</span></span> <span data-ttu-id="cb358-179">此 `Get-Content` Cmdlet 會重複顯示已更新的檔案，其中包含附加的資料。</span><span class="sxs-lookup"><span data-stu-id="cb358-179">The `Get-Content` cmdlet is repeated to display the updated file that includes the appended data.</span></span>
 
-### <span data-ttu-id="83881-181">範例7：管線中的 Format Cmdlet 會建立非預期的結果</span><span class="sxs-lookup"><span data-stu-id="83881-181">Example 7: Format cmdlet within a pipeline creates unexpected results</span></span>
+### <span data-ttu-id="cb358-180">範例7：管線中的 Format Cmdlet 會建立非預期的結果</span><span class="sxs-lookup"><span data-stu-id="cb358-180">Example 7: Format cmdlet within a pipeline creates unexpected results</span></span>
 
-<span data-ttu-id="83881-182">此範例示範為什麼在管線內不使用 format Cmdlet 是很重要的。</span><span class="sxs-lookup"><span data-stu-id="83881-182">This example shows why it is important not to use a format cmdlet within a pipeline.</span></span> <span data-ttu-id="83881-183">收到未預期的輸出時，請針對管線語法進行疑難排解。</span><span class="sxs-lookup"><span data-stu-id="83881-183">When unexpected output is received, troubleshoot the pipeline syntax.</span></span>
+<span data-ttu-id="cb358-181">此範例示範為什麼在管線內不使用 format Cmdlet 是很重要的。</span><span class="sxs-lookup"><span data-stu-id="cb358-181">This example shows why it is important not to use a format cmdlet within a pipeline.</span></span> <span data-ttu-id="cb358-182">收到未預期的輸出時，請針對管線語法進行疑難排解。</span><span class="sxs-lookup"><span data-stu-id="cb358-182">When unexpected output is received, troubleshoot the pipeline syntax.</span></span>
 
 ```powershell
 Get-Date | Select-Object -Property DateTime, Day, DayOfWeek, DayOfYear |
@@ -198,13 +197,13 @@ Get-Content -Path .\FTDateTime.csv
 "cf522b78d86c486691226b40aa69e95c",,,,,
 ```
 
-<span data-ttu-id="83881-184">`Get-Date`Cmdlet 會取得 **DateTime** 物件。</span><span class="sxs-lookup"><span data-stu-id="83881-184">The `Get-Date` cmdlet gets the **DateTime** object.</span></span> <span data-ttu-id="83881-185">物件會向下傳送至 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-185">The object is sent down the pipeline to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="83881-186">`Select-Object` 使用 **Property** 參數來選取物件屬性的子集。</span><span class="sxs-lookup"><span data-stu-id="83881-186">`Select-Object` uses the **Property** parameter to select a subset of object properties.</span></span> <span data-ttu-id="83881-187">物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-187">The object is sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-188">`Export-Csv` 將物件轉換成 CSV 格式。</span><span class="sxs-lookup"><span data-stu-id="83881-188">`Export-Csv` converts the object to a CSV format.</span></span> <span data-ttu-id="83881-189">**Path** 參數指定 DateTime.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-189">The **Path** parameter specifies that the DateTime.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-190">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-190">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-191">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-191">The `Get-Content` cmdlet uses the **Path** parameter to display the CSV file located in the current directory.</span></span>
+<span data-ttu-id="cb358-183">`Get-Date`Cmdlet 會取得 **DateTime** 物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-183">The `Get-Date` cmdlet gets the **DateTime** object.</span></span> <span data-ttu-id="cb358-184">物件會向下傳送至 `Select-Object` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-184">The object is sent down the pipeline to the `Select-Object` cmdlet.</span></span> <span data-ttu-id="cb358-185">`Select-Object` 使用 **Property** 參數來選取物件屬性的子集。</span><span class="sxs-lookup"><span data-stu-id="cb358-185">`Select-Object` uses the **Property** parameter to select a subset of object properties.</span></span> <span data-ttu-id="cb358-186">物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-186">The object is sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-187">`Export-Csv` 將物件轉換成 CSV 格式。</span><span class="sxs-lookup"><span data-stu-id="cb358-187">`Export-Csv` converts the object to a CSV format.</span></span> <span data-ttu-id="cb358-188">**Path** 參數指定 DateTime.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-188">The **Path** parameter specifies that the DateTime.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-189">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-189">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-190">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-190">The `Get-Content` cmdlet uses the **Path** parameter to display the CSV file located in the current directory.</span></span>
 
-<span data-ttu-id="83881-192">在 `Format-Table` 管線中使用 Cmdlet 來選取屬性時，會收到未預期的結果。</span><span class="sxs-lookup"><span data-stu-id="83881-192">When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results are received.</span></span> <span data-ttu-id="83881-193">`Format-Table` 將表格格式物件沿著管線向下傳送至 `Export-Csv` Cmdlet，而不是 **DateTime** 物件。</span><span class="sxs-lookup"><span data-stu-id="83881-193">`Format-Table` sends table format objects down the pipeline to the `Export-Csv` cmdlet rather than the **DateTime** object.</span></span> <span data-ttu-id="83881-194">`Export-Csv` 將表格格式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-194">`Export-Csv` converts the table format objects to a series of CSV strings.</span></span> <span data-ttu-id="83881-195">此 `Get-Content` Cmdlet 會顯示包含表格格式物件的 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-195">The `Get-Content` cmdlet displays the CSV file which contains the table format objects.</span></span>
+<span data-ttu-id="cb358-191">在 `Format-Table` 管線中使用 Cmdlet 來選取屬性時，會收到未預期的結果。</span><span class="sxs-lookup"><span data-stu-id="cb358-191">When the `Format-Table` cmdlet is used within the pipeline to select properties unexpected results are received.</span></span> <span data-ttu-id="cb358-192">`Format-Table` 將表格格式物件沿著管線向下傳送至 `Export-Csv` Cmdlet，而不是 **DateTime** 物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-192">`Format-Table` sends table format objects down the pipeline to the `Export-Csv` cmdlet rather than the **DateTime** object.</span></span> <span data-ttu-id="cb358-193">`Export-Csv` 將表格格式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-193">`Export-Csv` converts the table format objects to a series of CSV strings.</span></span> <span data-ttu-id="cb358-194">此 `Get-Content` Cmdlet 會顯示包含表格格式物件的 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-194">The `Get-Content` cmdlet displays the CSV file which contains the table format objects.</span></span>
 
-### <span data-ttu-id="83881-196">範例8：使用 Force 參數來覆寫唯讀檔案</span><span class="sxs-lookup"><span data-stu-id="83881-196">Example 8: Using the Force parameter to overwrite read-only files</span></span>
+### <span data-ttu-id="cb358-195">範例8：使用 Force 參數來覆寫唯讀檔案</span><span class="sxs-lookup"><span data-stu-id="cb358-195">Example 8: Using the Force parameter to overwrite read-only files</span></span>
 
-<span data-ttu-id="83881-197">這個範例會建立一個空白的唯讀檔案，並使用 **Force** 參數來更新檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-197">This example creates an empty, read-only file and uses the **Force** parameter to update the file.</span></span>
+<span data-ttu-id="cb358-196">這個範例會建立一個空白的唯讀檔案，並使用 **Force** 參數來更新檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-196">This example creates an empty, read-only file and uses the **Force** parameter to update the file.</span></span>
 
 ```powershell
 New-Item -Path .\ReadOnly.csv -ItemType File
@@ -231,13 +230,13 @@ Get-Content -Path .\ReadOnly.csv
 "ApplicationFrameHost";"4";"509";"2203595321344";"34807808";"21770240";"29504"; ...
 ```
 
-<span data-ttu-id="83881-198">此 `New-Item` Cmdlet 會使用 **Path** 和 **ItemType** 參數，在目前的目錄中建立 ReadOnly.csv 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-198">The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the ReadOnly.csv file in the current directory.</span></span> <span data-ttu-id="83881-199">此 `Set-ItemProperty` Cmdlet 會使用 **Name** 和 **Value** 參數將檔案的 **IsReadOnly** 屬性變更為 true。</span><span class="sxs-lookup"><span data-stu-id="83881-199">The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters to change the file's **IsReadOnly** property to true.</span></span> <span data-ttu-id="83881-200">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="83881-200">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="83881-201">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-201">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-202">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-202">`Export-Csv` converts the process objects to a series of CSV strings.</span></span> <span data-ttu-id="83881-203">**Path** 參數指定 ReadOnly.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-203">The **Path** parameter specifies that the ReadOnly.csv file is saved in the current directory.</span></span> <span data-ttu-id="83881-204">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-204">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="83881-205">輸出顯示未寫入檔案，因為拒絕存取。</span><span class="sxs-lookup"><span data-stu-id="83881-205">The output shows that the file is not written because access is denied.</span></span>
+<span data-ttu-id="cb358-197">此 `New-Item` Cmdlet 會使用 **Path** 和 **ItemType** 參數，在目前的目錄中建立 ReadOnly.csv 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-197">The `New-Item` cmdlet uses the **Path** and **ItemType** parameters to create the ReadOnly.csv file in the current directory.</span></span> <span data-ttu-id="cb358-198">此 `Set-ItemProperty` Cmdlet 會使用 **Name** 和 **Value** 參數將檔案的 **IsReadOnly** 屬性變更為 true。</span><span class="sxs-lookup"><span data-stu-id="cb358-198">The `Set-ItemProperty` cmdlet uses the **Name** and **Value** parameters to change the file's **IsReadOnly** property to true.</span></span> <span data-ttu-id="cb358-199">`Get-Process`Cmdlet 會取得 **處理** 程式物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-199">The `Get-Process` cmdlet gets **Process** objects.</span></span> <span data-ttu-id="cb358-200">處理常式物件會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-200">The process objects are sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-201">`Export-Csv` 將處理常式物件轉換成一系列的 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-201">`Export-Csv` converts the process objects to a series of CSV strings.</span></span> <span data-ttu-id="cb358-202">**Path** 參數指定 ReadOnly.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-202">The **Path** parameter specifies that the ReadOnly.csv file is saved in the current directory.</span></span> <span data-ttu-id="cb358-203">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-203">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span> <span data-ttu-id="cb358-204">輸出顯示未寫入檔案，因為拒絕存取。</span><span class="sxs-lookup"><span data-stu-id="cb358-204">The output shows that the file is not written because access is denied.</span></span>
 
-<span data-ttu-id="83881-206">**Force** 參數會新增至 `Export-Csv` Cmdlet，以強制匯出寫入檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-206">The **Force** parameter is added to the `Export-Csv` cmdlet to force the export to write to the file.</span></span> <span data-ttu-id="83881-207">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-207">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-205">**Force** 參數會新增至 `Export-Csv` Cmdlet，以強制匯出寫入檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-205">The **Force** parameter is added to the `Export-Csv` cmdlet to force the export to write to the file.</span></span> <span data-ttu-id="cb358-206">此 `Get-Content` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-206">The `Get-Content` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-208">範例9：使用 Force 參數搭配 Append</span><span class="sxs-lookup"><span data-stu-id="83881-208">Example 9: Using the Force parameter with Append</span></span>
+### <span data-ttu-id="cb358-207">範例9：使用 Force 參數搭配 Append</span><span class="sxs-lookup"><span data-stu-id="cb358-207">Example 9: Using the Force parameter with Append</span></span>
 
-<span data-ttu-id="83881-209">這個範例示範如何使用 **Force** 與 **Append** 參數。</span><span class="sxs-lookup"><span data-stu-id="83881-209">This example shows how to use the **Force** and **Append** parameters.</span></span> <span data-ttu-id="83881-210">結合這些參數時，可以將不相符的物件屬性寫入 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-210">When these parameters are combined, mismatched object properties can be written to a CSV file.</span></span>
+<span data-ttu-id="cb358-208">這個範例示範如何使用 **Force** 與 **Append** 參數。</span><span class="sxs-lookup"><span data-stu-id="cb358-208">This example shows how to use the **Force** and **Append** parameters.</span></span> <span data-ttu-id="cb358-209">結合這些參數時，可以將不相符的物件屬性寫入 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-209">When these parameters are combined, mismatched object properties can be written to a CSV file.</span></span>
 
 ```powershell
 $Content = [PSCustomObject]@{Name = 'PowerShell Core'; Version = '6.0'}
@@ -270,15 +269,15 @@ PowerShell Core    6.0
 Windows PowerShell
 ```
 
-<span data-ttu-id="83881-211">運算式會建立具有 **Name** 和 **Version** 屬性的 **PSCustomObject** 。</span><span class="sxs-lookup"><span data-stu-id="83881-211">An expression creates the **PSCustomObject** with **Name** and **Version** properties.</span></span> <span data-ttu-id="83881-212">這些值會儲存在 `$Content` 變數中。</span><span class="sxs-lookup"><span data-stu-id="83881-212">The values are stored in the `$Content` variable.</span></span> <span data-ttu-id="83881-213">此 `$Content` 變數會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-213">The `$Content` variable is sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-214">`Export-Csv` 使用 **Path** 參數，並將 ParmFile.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="83881-214">`Export-Csv` uses the **Path** parameter and saves the ParmFile.csv file in the current directory.</span></span> <span data-ttu-id="83881-215">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="83881-215">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
+<span data-ttu-id="cb358-210">運算式會建立具有 **Name** 和 **Version** 屬性的 **PSCustomObject** 。</span><span class="sxs-lookup"><span data-stu-id="cb358-210">An expression creates the **PSCustomObject** with **Name** and **Version** properties.</span></span> <span data-ttu-id="cb358-211">這些值會儲存在 `$Content` 變數中。</span><span class="sxs-lookup"><span data-stu-id="cb358-211">The values are stored in the `$Content` variable.</span></span> <span data-ttu-id="cb358-212">此 `$Content` 變數會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-212">The `$Content` variable is sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-213">`Export-Csv` 使用 **Path** 參數，並將 ParmFile.csv 檔案儲存在目前的目錄中。</span><span class="sxs-lookup"><span data-stu-id="cb358-213">`Export-Csv` uses the **Path** parameter and saves the ParmFile.csv file in the current directory.</span></span> <span data-ttu-id="cb358-214">**NoTypeInformation** 參數會從 CSV 輸出移除 **#TYPE** 資訊標頭，且在 PowerShell 6 中不需要。</span><span class="sxs-lookup"><span data-stu-id="cb358-214">The **NoTypeInformation** parameter removes the **#TYPE** information header from the CSV output and is not required in PowerShell 6.</span></span>
 
-<span data-ttu-id="83881-216">另一個運算式會以 **Name** 和 **Edition** 屬性來建立 **PSCustomObject** 。</span><span class="sxs-lookup"><span data-stu-id="83881-216">Another expression creates a **PSCustomObject** with the **Name** and **Edition** properties.</span></span> <span data-ttu-id="83881-217">這些值會儲存在 `$AdditionalContent` 變數中。</span><span class="sxs-lookup"><span data-stu-id="83881-217">The values are stored in the `$AdditionalContent` variable.</span></span> <span data-ttu-id="83881-218">此 `$AdditionalContent` 變數會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="83881-218">The `$AdditionalContent` variable is sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="83881-219">**Append** 參數是用來將資料新增至檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-219">The **Append** parameter is used to add the data to the file.</span></span> <span data-ttu-id="83881-220">附加失敗，因為 **版本\*\*\*\*與版本之間** 的屬性名稱不相符。</span><span class="sxs-lookup"><span data-stu-id="83881-220">The append fails because there is a property name mismatch between **Version** and **Edition** .</span></span>
+<span data-ttu-id="cb358-215">另一個運算式會以 **Name** 和 **Edition** 屬性來建立 **PSCustomObject** 。</span><span class="sxs-lookup"><span data-stu-id="cb358-215">Another expression creates a **PSCustomObject** with the **Name** and **Edition** properties.</span></span> <span data-ttu-id="cb358-216">這些值會儲存在 `$AdditionalContent` 變數中。</span><span class="sxs-lookup"><span data-stu-id="cb358-216">The values are stored in the `$AdditionalContent` variable.</span></span> <span data-ttu-id="cb358-217">此 `$AdditionalContent` 變數會向下傳送至 `Export-Csv` Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="cb358-217">The `$AdditionalContent` variable is sent down the pipeline to the `Export-Csv` cmdlet.</span></span> <span data-ttu-id="cb358-218">**Append** 參數是用來將資料新增至檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-218">The **Append** parameter is used to add the data to the file.</span></span> <span data-ttu-id="cb358-219">附加失敗，因為 **版本\*\*\*\*與版本之間** 的屬性名稱不相符。</span><span class="sxs-lookup"><span data-stu-id="cb358-219">The append fails because there is a property name mismatch between **Version** and **Edition**.</span></span>
 
-<span data-ttu-id="83881-221">`Export-Csv`Cmdlet **force** 參數是用來強制匯出寫入檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-221">The `Export-Csv` cmdlet **Force** parameter is used to force the export to write to the file.</span></span> <span data-ttu-id="83881-222">已捨棄 **版本** 屬性。</span><span class="sxs-lookup"><span data-stu-id="83881-222">The **Edition** property is discarded.</span></span> <span data-ttu-id="83881-223">此 `Import-Csv` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-223">The `Import-Csv` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
+<span data-ttu-id="cb358-220">`Export-Csv`Cmdlet **force** 參數是用來強制匯出寫入檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-220">The `Export-Csv` cmdlet **Force** parameter is used to force the export to write to the file.</span></span> <span data-ttu-id="cb358-221">已捨棄 **版本** 屬性。</span><span class="sxs-lookup"><span data-stu-id="cb358-221">The **Edition** property is discarded.</span></span> <span data-ttu-id="cb358-222">此 `Import-Csv` Cmdlet 會使用 **Path** 參數來顯示位於目前的目錄中的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-222">The `Import-Csv` cmdlet uses the **Path** parameter to display the file located in the current directory.</span></span>
 
-### <span data-ttu-id="83881-224">範例10：使用引號括住兩個數據行來匯出至 CSV</span><span class="sxs-lookup"><span data-stu-id="83881-224">Example 10: Export to CSV with quotes around two columns</span></span>
+### <span data-ttu-id="cb358-223">範例10：使用引號括住兩個數據行來匯出至 CSV</span><span class="sxs-lookup"><span data-stu-id="cb358-223">Example 10: Export to CSV with quotes around two columns</span></span>
 
-<span data-ttu-id="83881-225">這個範例會將 **DateTime** 物件轉換成 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-225">This example converts a **DateTime** object to a CSV string.</span></span>
+<span data-ttu-id="cb358-224">這個範例會將 **DateTime** 物件轉換成 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-224">This example converts a **DateTime** object to a CSV string.</span></span>
 
 ```powershell
 Get-Date | Export-Csv  -QuoteFields "DateTime","Date" -Path .\FTDateTime.csv
@@ -290,9 +289,9 @@ DisplayHint,"DateTime","Date",Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minu
 DateTime,"Thursday, August 22, 2019 11:27:34 AM","8/22/2019 12:00:00 AM",22,Thursday,234,11,Local,569,27,8,34,637020700545699784,11:27:34.5699784,2019
 ```
 
-### <span data-ttu-id="83881-226">範例11：只有在需要時才使用引號匯出至 CSV</span><span class="sxs-lookup"><span data-stu-id="83881-226">Example 11: Export to CSV with quotes only when needed</span></span>
+### <span data-ttu-id="cb358-225">範例11：只有在需要時才使用引號匯出至 CSV</span><span class="sxs-lookup"><span data-stu-id="cb358-225">Example 11: Export to CSV with quotes only when needed</span></span>
 
-<span data-ttu-id="83881-227">這個範例會將 **DateTime** 物件轉換成 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-227">This example converts a **DateTime** object to a CSV string.</span></span>
+<span data-ttu-id="cb358-226">這個範例會將 **DateTime** 物件轉換成 CSV 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-226">This example converts a **DateTime** object to a CSV string.</span></span>
 
 ```powershell
 Get-Date | Export-Csv  -UseQuotes AsNeeded -Path .\FTDateTime.csv
@@ -304,13 +303,13 @@ DisplayHint,DateTime,Date,Day,DayOfWeek,DayOfYear,Hour,Kind,Millisecond,Minute,M
 DateTime,"Thursday, August 22, 2019 11:31:00 AM",8/22/2019 12:00:00 AM,22,Thursday,234,11,Local,713,31,8,0,637020702607132640,11:31:00.7132640,2019
 ```
 
-## <span data-ttu-id="83881-228">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="83881-228">PARAMETERS</span></span>
+## <span data-ttu-id="cb358-227">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="cb358-227">PARAMETERS</span></span>
 
-### <span data-ttu-id="83881-229">-Append</span><span class="sxs-lookup"><span data-stu-id="83881-229">-Append</span></span>
+### <span data-ttu-id="cb358-228">-Append</span><span class="sxs-lookup"><span data-stu-id="cb358-228">-Append</span></span>
 
-<span data-ttu-id="83881-230">使用這個參數 `Export-CSV` 可將 CSV 輸出新增至指定檔案的結尾。</span><span class="sxs-lookup"><span data-stu-id="83881-230">Use this parameter so that `Export-CSV` adds CSV output to the end of the specified file.</span></span> <span data-ttu-id="83881-231">如果沒有這個參數， `Export-CSV` 則會取代檔案內容而不發出警告。</span><span class="sxs-lookup"><span data-stu-id="83881-231">Without this parameter, `Export-CSV` replaces the file contents without warning.</span></span>
+<span data-ttu-id="cb358-229">使用這個參數 `Export-CSV` 可將 CSV 輸出新增至指定檔案的結尾。</span><span class="sxs-lookup"><span data-stu-id="cb358-229">Use this parameter so that `Export-CSV` adds CSV output to the end of the specified file.</span></span> <span data-ttu-id="cb358-230">如果沒有這個參數， `Export-CSV` 則會取代檔案內容而不發出警告。</span><span class="sxs-lookup"><span data-stu-id="cb358-230">Without this parameter, `Export-CSV` replaces the file contents without warning.</span></span>
 
-<span data-ttu-id="83881-232">此參數是在 Windows PowerShell 3.0 引進。</span><span class="sxs-lookup"><span data-stu-id="83881-232">This parameter was introduced in Windows PowerShell 3.0.</span></span>
+<span data-ttu-id="cb358-231">此參數是在 Windows PowerShell 3.0 引進。</span><span class="sxs-lookup"><span data-stu-id="cb358-231">This parameter was introduced in Windows PowerShell 3.0.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -324,9 +323,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-233">-Delimiter</span><span class="sxs-lookup"><span data-stu-id="83881-233">-Delimiter</span></span>
+### <span data-ttu-id="cb358-232">-Delimiter</span><span class="sxs-lookup"><span data-stu-id="cb358-232">-Delimiter</span></span>
 
-<span data-ttu-id="83881-234">指定分隔符號以區隔屬性值。</span><span class="sxs-lookup"><span data-stu-id="83881-234">Specifies a delimiter to separate the property values.</span></span> <span data-ttu-id="83881-235">預設值是逗號 (`,`) 。</span><span class="sxs-lookup"><span data-stu-id="83881-235">The default is a comma (`,`).</span></span> <span data-ttu-id="83881-236">輸入字元，例如冒號 (`:`) 。</span><span class="sxs-lookup"><span data-stu-id="83881-236">Enter a character, such as a colon (`:`).</span></span> <span data-ttu-id="83881-237">若要指定分號 (`;`) ，請將它括在引號中。</span><span class="sxs-lookup"><span data-stu-id="83881-237">To specify a semicolon (`;`), enclose it in quotation marks.</span></span>
+<span data-ttu-id="cb358-233">指定分隔符號以區隔屬性值。</span><span class="sxs-lookup"><span data-stu-id="cb358-233">Specifies a delimiter to separate the property values.</span></span> <span data-ttu-id="cb358-234">預設值是逗號 (`,`) 。</span><span class="sxs-lookup"><span data-stu-id="cb358-234">The default is a comma (`,`).</span></span> <span data-ttu-id="cb358-235">輸入字元，例如冒號 (`:`) 。</span><span class="sxs-lookup"><span data-stu-id="cb358-235">Enter a character, such as a colon (`:`).</span></span> <span data-ttu-id="cb358-236">若要指定分號 (`;`) ，請將它括在引號中。</span><span class="sxs-lookup"><span data-stu-id="cb358-236">To specify a semicolon (`;`), enclose it in quotation marks.</span></span>
 
 ```yaml
 Type: System.Char
@@ -340,27 +339,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-238">-Encoding</span><span class="sxs-lookup"><span data-stu-id="83881-238">-Encoding</span></span>
+### <span data-ttu-id="cb358-237">-Encoding</span><span class="sxs-lookup"><span data-stu-id="cb358-237">-Encoding</span></span>
 
-<span data-ttu-id="83881-239">指定匯出之 CSV 檔案的編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-239">Specifies the encoding for the exported CSV file.</span></span> <span data-ttu-id="83881-240">預設值是 `utf8NoBOM`。</span><span class="sxs-lookup"><span data-stu-id="83881-240">The default value is `utf8NoBOM`.</span></span>
+<span data-ttu-id="cb358-238">指定匯出之 CSV 檔案的編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-238">Specifies the encoding for the exported CSV file.</span></span> <span data-ttu-id="cb358-239">預設值是 `utf8NoBOM`。</span><span class="sxs-lookup"><span data-stu-id="cb358-239">The default value is `utf8NoBOM`.</span></span>
 
-<span data-ttu-id="83881-241">此參數可接受的值如下：</span><span class="sxs-lookup"><span data-stu-id="83881-241">The acceptable values for this parameter are as follows:</span></span>
+<span data-ttu-id="cb358-240">此參數可接受的值如下：</span><span class="sxs-lookup"><span data-stu-id="cb358-240">The acceptable values for this parameter are as follows:</span></span>
 
-- <span data-ttu-id="83881-242">`ascii`：使用 ASCII (7 位) 字元集的編碼方式。</span><span class="sxs-lookup"><span data-stu-id="83881-242">`ascii`: Uses the encoding for the ASCII (7-bit) character set.</span></span>
-- <span data-ttu-id="83881-243">`bigendianunicode`：使用位元組由大到小的位元組順序，以 UTF-16 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-243">`bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.</span></span>
-- <span data-ttu-id="83881-244">`bigendianutf32`：使用位元組由大到小的順序，以 UTF-32 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-244">`bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.</span></span>
-- <span data-ttu-id="83881-245">`oem`：針對 MS-DOS 和主控台程式使用預設編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-245">`oem`: Uses the default encoding for MS-DOS and console programs.</span></span>
-- <span data-ttu-id="83881-246">`unicode`：使用位元組由大到小的位元組順序，以 UTF-16 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-246">`unicode`: Encodes in UTF-16 format using the little-endian byte order.</span></span>
-- <span data-ttu-id="83881-247">`utf7`：以 UTF-7 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-247">`utf7`: Encodes in UTF-7 format.</span></span>
-- <span data-ttu-id="83881-248">`utf8`：以 UTF-8 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-248">`utf8`: Encodes in UTF-8 format.</span></span>
-- <span data-ttu-id="83881-249">`utf8BOM`：使用 (BOM) 的位元組順序標記來編碼 UTF-8 格式</span><span class="sxs-lookup"><span data-stu-id="83881-249">`utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)</span></span>
-- <span data-ttu-id="83881-250">`utf8NoBOM`：以不含位元組順序標記的 UTF-8 格式來編碼 (BOM) </span><span class="sxs-lookup"><span data-stu-id="83881-250">`utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)</span></span>
-- <span data-ttu-id="83881-251">`utf32`：以 UTF-32 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="83881-251">`utf32`: Encodes in UTF-32 format.</span></span>
+- <span data-ttu-id="cb358-241">`ascii`：使用 ASCII (7 位) 字元集的編碼方式。</span><span class="sxs-lookup"><span data-stu-id="cb358-241">`ascii`: Uses the encoding for the ASCII (7-bit) character set.</span></span>
+- <span data-ttu-id="cb358-242">`bigendianunicode`：使用位元組由大到小的位元組順序，以 UTF-16 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-242">`bigendianunicode`: Encodes in UTF-16 format using the big-endian byte order.</span></span>
+- <span data-ttu-id="cb358-243">`bigendianutf32`：使用位元組由大到小的順序，以 UTF-32 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-243">`bigendianutf32`: Encodes in UTF-32 format using the big-endian byte order.</span></span>
+- <span data-ttu-id="cb358-244">`oem`：針對 MS-DOS 和主控台程式使用預設編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-244">`oem`: Uses the default encoding for MS-DOS and console programs.</span></span>
+- <span data-ttu-id="cb358-245">`unicode`：使用位元組由大到小的位元組順序，以 UTF-16 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-245">`unicode`: Encodes in UTF-16 format using the little-endian byte order.</span></span>
+- <span data-ttu-id="cb358-246">`utf7`：以 UTF-7 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-246">`utf7`: Encodes in UTF-7 format.</span></span>
+- <span data-ttu-id="cb358-247">`utf8`：以 UTF-8 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-247">`utf8`: Encodes in UTF-8 format.</span></span>
+- <span data-ttu-id="cb358-248">`utf8BOM`：使用 (BOM) 的位元組順序標記來編碼 UTF-8 格式</span><span class="sxs-lookup"><span data-stu-id="cb358-248">`utf8BOM`: Encodes in UTF-8 format with Byte Order Mark (BOM)</span></span>
+- <span data-ttu-id="cb358-249">`utf8NoBOM`：以不含位元組順序標記的 UTF-8 格式來編碼 (BOM) </span><span class="sxs-lookup"><span data-stu-id="cb358-249">`utf8NoBOM`: Encodes in UTF-8 format without Byte Order Mark (BOM)</span></span>
+- <span data-ttu-id="cb358-250">`utf32`：以 UTF-32 格式編碼。</span><span class="sxs-lookup"><span data-stu-id="cb358-250">`utf32`: Encodes in UTF-32 format.</span></span>
 
-<span data-ttu-id="83881-252">從 PowerShell 6.2 開始， **編碼** 參數也會允許已註冊字碼頁的數值識別碼 (例如 `-Encoding 1251`) 或已註冊字碼頁的字串名稱 (例如 `-Encoding "windows-1251"`) 。</span><span class="sxs-lookup"><span data-stu-id="83881-252">Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code pages (like `-Encoding 1251`) or string names of registered code pages (like `-Encoding "windows-1251"`).</span></span> <span data-ttu-id="83881-253">如需詳細資訊，請參閱 .NET 檔中的 [編碼字碼頁](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)。</span><span class="sxs-lookup"><span data-stu-id="83881-253">For more information, see the .NET documentation for [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).</span></span>
+<span data-ttu-id="cb358-251">從 PowerShell 6.2 開始， **編碼** 參數也會允許已註冊字碼頁的數值識別碼 (例如 `-Encoding 1251`) 或已註冊字碼頁的字串名稱 (例如 `-Encoding "windows-1251"`) 。</span><span class="sxs-lookup"><span data-stu-id="cb358-251">Beginning with PowerShell 6.2, the **Encoding** parameter also allows numeric IDs of registered code pages (like `-Encoding 1251`) or string names of registered code pages (like `-Encoding "windows-1251"`).</span></span> <span data-ttu-id="cb358-252">如需詳細資訊，請參閱 .NET 檔中的 [編碼字碼頁](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)。</span><span class="sxs-lookup"><span data-stu-id="cb358-252">For more information, see the .NET documentation for [Encoding.CodePage](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="83881-254">您不再建議使用 **utf-7** \*。</span><span class="sxs-lookup"><span data-stu-id="83881-254">**UTF-7** \* is no longer recommended to use.</span></span> <span data-ttu-id="83881-255">在 PowerShell 7.1 中，如果您 `utf7` 針對 **編碼** 參數指定，就會寫入警告。</span><span class="sxs-lookup"><span data-stu-id="83881-255">In PowerShell 7.1, a warning is written if you specify `utf7` for the **Encoding** parameter.</span></span>
+> <span data-ttu-id="cb358-253">不再建議使用 **utf-7** _。</span><span class="sxs-lookup"><span data-stu-id="cb358-253">**UTF-7** _ is no longer recommended to use.</span></span> <span data-ttu-id="cb358-254">在 PowerShell 7.1 中，如果您 `utf7` 為 _ *編碼*\* 參數指定，就會寫入警告。</span><span class="sxs-lookup"><span data-stu-id="cb358-254">In PowerShell 7.1, a warning is written if you specify `utf7` for the _ *Encoding*\* parameter.</span></span>
 
 ```yaml
 Type: System.Text.Encoding
@@ -375,11 +374,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-256">-Force</span><span class="sxs-lookup"><span data-stu-id="83881-256">-Force</span></span>
+### <span data-ttu-id="cb358-255">-Force</span><span class="sxs-lookup"><span data-stu-id="cb358-255">-Force</span></span>
 
-<span data-ttu-id="83881-257">此參數可讓您 `Export-Csv` 以 **唯讀** 屬性覆寫檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-257">This parameter allows `Export-Csv` to overwrite files with the **Read Only** attribute.</span></span>
+<span data-ttu-id="cb358-256">此參數可讓您 `Export-Csv` 以 **唯讀** 屬性覆寫檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-256">This parameter allows `Export-Csv` to overwrite files with the **Read Only** attribute.</span></span>
 
-<span data-ttu-id="83881-258">結合 **Force** 和 **Append** 參數時，包含不相符之屬性的物件可以寫入 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-258">When **Force** and **Append** parameters are combined, objects that contain mismatched properties can be written to a CSV file.</span></span> <span data-ttu-id="83881-259">只有符合的屬性會寫入至檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-259">Only the properties that match are written to the file.</span></span> <span data-ttu-id="83881-260">捨棄不相符的屬性。</span><span class="sxs-lookup"><span data-stu-id="83881-260">The mismatched properties are discarded.</span></span>
+<span data-ttu-id="cb358-257">結合 **Force** 和 **Append** 參數時，包含不相符之屬性的物件可以寫入 CSV 檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-257">When **Force** and **Append** parameters are combined, objects that contain mismatched properties can be written to a CSV file.</span></span> <span data-ttu-id="cb358-258">只有符合的屬性會寫入至檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-258">Only the properties that match are written to the file.</span></span> <span data-ttu-id="cb358-259">捨棄不相符的屬性。</span><span class="sxs-lookup"><span data-stu-id="cb358-259">The mismatched properties are discarded.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -393,11 +392,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-261">-IncludeTypeInformation</span><span class="sxs-lookup"><span data-stu-id="83881-261">-IncludeTypeInformation</span></span>
+### <span data-ttu-id="cb358-260">-IncludeTypeInformation</span><span class="sxs-lookup"><span data-stu-id="cb358-260">-IncludeTypeInformation</span></span>
 
-<span data-ttu-id="83881-262">使用這個參數時，CSV 輸出的第一行會包含 **#TYPE** ，後面接著物件類型的完整名稱。</span><span class="sxs-lookup"><span data-stu-id="83881-262">When this parameter is used the first line of the CSV output contains **#TYPE** followed by the fully qualified name of the object type.</span></span> <span data-ttu-id="83881-263">例如， **#TYPE 的系統診斷** 。</span><span class="sxs-lookup"><span data-stu-id="83881-263">For example, **#TYPE System.Diagnostics.Process** .</span></span>
+<span data-ttu-id="cb358-261">使用這個參數時，CSV 輸出的第一行會包含 **#TYPE** ，後面接著物件類型的完整名稱。</span><span class="sxs-lookup"><span data-stu-id="cb358-261">When this parameter is used the first line of the CSV output contains **#TYPE** followed by the fully qualified name of the object type.</span></span> <span data-ttu-id="cb358-262">例如， **#TYPE 的系統診斷**。</span><span class="sxs-lookup"><span data-stu-id="cb358-262">For example, **#TYPE System.Diagnostics.Process**.</span></span>
 
-<span data-ttu-id="83881-264">此參數是在 PowerShell 6.0 中引進。</span><span class="sxs-lookup"><span data-stu-id="83881-264">This parameter was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="cb358-263">此參數是在 PowerShell 6.0 中引進。</span><span class="sxs-lookup"><span data-stu-id="cb358-263">This parameter was introduced in PowerShell 6.0.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -411,9 +410,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-265">-InputObject</span><span class="sxs-lookup"><span data-stu-id="83881-265">-InputObject</span></span>
+### <span data-ttu-id="cb358-264">-InputObject</span><span class="sxs-lookup"><span data-stu-id="cb358-264">-InputObject</span></span>
 
-<span data-ttu-id="83881-266">指定要匯出為 CSV 字串的物件。</span><span class="sxs-lookup"><span data-stu-id="83881-266">Specifies the objects to export as CSV strings.</span></span> <span data-ttu-id="83881-267">輸入包含物件的變數，或輸入可取得物件的命令或運算式。</span><span class="sxs-lookup"><span data-stu-id="83881-267">Enter a variable that contains the objects or type a command or expression that gets the objects.</span></span> <span data-ttu-id="83881-268">您也可以透過管線將物件傳送至 `Export-CSV` 。</span><span class="sxs-lookup"><span data-stu-id="83881-268">You can also pipe objects to `Export-CSV`.</span></span>
+<span data-ttu-id="cb358-265">指定要匯出為 CSV 字串的物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-265">Specifies the objects to export as CSV strings.</span></span> <span data-ttu-id="cb358-266">輸入包含物件的變數，或輸入可取得物件的命令或運算式。</span><span class="sxs-lookup"><span data-stu-id="cb358-266">Enter a variable that contains the objects or type a command or expression that gets the objects.</span></span> <span data-ttu-id="cb358-267">您也可以透過管線將物件傳送至 `Export-CSV` 。</span><span class="sxs-lookup"><span data-stu-id="cb358-267">You can also pipe objects to `Export-CSV`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -427,9 +426,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-269">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="83881-269">-LiteralPath</span></span>
+### <span data-ttu-id="cb358-268">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="cb358-268">-LiteralPath</span></span>
 
-<span data-ttu-id="83881-270">指定 CSV 輸出檔案的路徑。</span><span class="sxs-lookup"><span data-stu-id="83881-270">Specifies the path to the CSV output file.</span></span> <span data-ttu-id="83881-271">與 **Path** 不同， **LiteralPath** 參數值將完全依照其輸入值來使用。</span><span class="sxs-lookup"><span data-stu-id="83881-271">Unlike **Path** , the value of the **LiteralPath** parameter is used exactly as it is typed.</span></span> <span data-ttu-id="83881-272">沒有字元會被視為萬用字元。</span><span class="sxs-lookup"><span data-stu-id="83881-272">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="83881-273">如果路徑包含 escape 字元，請使用單引號。</span><span class="sxs-lookup"><span data-stu-id="83881-273">If the path includes escape characters, use single quotation marks.</span></span> <span data-ttu-id="83881-274">單引號可告知 PowerShell 不要將任何字元解釋為 escape 序列。</span><span class="sxs-lookup"><span data-stu-id="83881-274">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
+<span data-ttu-id="cb358-269">指定 CSV 輸出檔案的路徑。</span><span class="sxs-lookup"><span data-stu-id="cb358-269">Specifies the path to the CSV output file.</span></span> <span data-ttu-id="cb358-270">與 **Path** 不同，**LiteralPath** 參數值將完全依照其輸入值來使用。</span><span class="sxs-lookup"><span data-stu-id="cb358-270">Unlike **Path**, the value of the **LiteralPath** parameter is used exactly as it is typed.</span></span> <span data-ttu-id="cb358-271">沒有字元會被視為萬用字元。</span><span class="sxs-lookup"><span data-stu-id="cb358-271">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="cb358-272">如果路徑包含 escape 字元，請使用單引號。</span><span class="sxs-lookup"><span data-stu-id="cb358-272">If the path includes escape characters, use single quotation marks.</span></span> <span data-ttu-id="cb358-273">單引號可告知 PowerShell 不要將任何字元解釋為 escape 序列。</span><span class="sxs-lookup"><span data-stu-id="cb358-273">Single quotation marks tell PowerShell not to interpret any characters as escape sequences.</span></span>
 
 ```yaml
 Type: System.String
@@ -443,9 +442,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-275">-NoClobber</span><span class="sxs-lookup"><span data-stu-id="83881-275">-NoClobber</span></span>
+### <span data-ttu-id="cb358-274">-NoClobber</span><span class="sxs-lookup"><span data-stu-id="cb358-274">-NoClobber</span></span>
 
-<span data-ttu-id="83881-276">使用此參數，就 `Export-CSV` 不會覆寫現有的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-276">Use this parameter so that `Export-CSV` does not overwrite an existing file.</span></span> <span data-ttu-id="83881-277">根據預設，如果檔案存在指定的路徑中， `Export-CSV` 會覆寫檔案而不發出警告。</span><span class="sxs-lookup"><span data-stu-id="83881-277">By default, if the file exists in the specified path, `Export-CSV` overwrites the file without warning.</span></span>
+<span data-ttu-id="cb358-275">使用此參數，就 `Export-CSV` 不會覆寫現有的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-275">Use this parameter so that `Export-CSV` does not overwrite an existing file.</span></span> <span data-ttu-id="cb358-276">根據預設，如果檔案存在指定的路徑中， `Export-CSV` 會覆寫檔案而不發出警告。</span><span class="sxs-lookup"><span data-stu-id="cb358-276">By default, if the file exists in the specified path, `Export-CSV` overwrites the file without warning.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -459,9 +458,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-278">-NoTypeInformation</span><span class="sxs-lookup"><span data-stu-id="83881-278">-NoTypeInformation</span></span>
+### <span data-ttu-id="cb358-277">-NoTypeInformation</span><span class="sxs-lookup"><span data-stu-id="cb358-277">-NoTypeInformation</span></span>
 
-<span data-ttu-id="83881-279">從輸出中移除 **#TYPE** 資訊標頭。</span><span class="sxs-lookup"><span data-stu-id="83881-279">Removes the **#TYPE** information header from the output.</span></span> <span data-ttu-id="83881-280">此參數會成為 PowerShell 6.0 中的預設值，並包含以提供回溯相容性。</span><span class="sxs-lookup"><span data-stu-id="83881-280">This parameter became the default in PowerShell 6.0 and is included for backwards compatibility.</span></span>
+<span data-ttu-id="cb358-278">從輸出中移除 **#TYPE** 資訊標頭。</span><span class="sxs-lookup"><span data-stu-id="cb358-278">Removes the **#TYPE** information header from the output.</span></span> <span data-ttu-id="cb358-279">此參數會成為 PowerShell 6.0 中的預設值，並包含以提供回溯相容性。</span><span class="sxs-lookup"><span data-stu-id="cb358-279">This parameter became the default in PowerShell 6.0 and is included for backwards compatibility.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -475,9 +474,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-281">-Path</span><span class="sxs-lookup"><span data-stu-id="83881-281">-Path</span></span>
+### <span data-ttu-id="cb358-280">-Path</span><span class="sxs-lookup"><span data-stu-id="cb358-280">-Path</span></span>
 
-<span data-ttu-id="83881-282">必要參數，指定要儲存 CSV 輸出檔的位置。</span><span class="sxs-lookup"><span data-stu-id="83881-282">A required parameter that specifies the location to save the CSV output file.</span></span>
+<span data-ttu-id="cb358-281">必要參數，指定要儲存 CSV 輸出檔的位置。</span><span class="sxs-lookup"><span data-stu-id="cb358-281">A required parameter that specifies the location to save the CSV output file.</span></span>
 
 ```yaml
 Type: System.String
@@ -491,9 +490,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-283">-UseCulture</span><span class="sxs-lookup"><span data-stu-id="83881-283">-UseCulture</span></span>
+### <span data-ttu-id="cb358-282">-UseCulture</span><span class="sxs-lookup"><span data-stu-id="cb358-282">-UseCulture</span></span>
 
-<span data-ttu-id="83881-284">使用目前文化特性的清單分隔字元做為專案分隔符號。</span><span class="sxs-lookup"><span data-stu-id="83881-284">Uses the list separator for the current culture as the item delimiter.</span></span> <span data-ttu-id="83881-285">若要尋找文化特性的清單分隔符號，請使用下列命令： `(Get-Culture).TextInfo.ListSeparator` 。</span><span class="sxs-lookup"><span data-stu-id="83881-285">To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.</span></span>
+<span data-ttu-id="cb358-283">使用目前文化特性的清單分隔字元做為專案分隔符號。</span><span class="sxs-lookup"><span data-stu-id="cb358-283">Uses the list separator for the current culture as the item delimiter.</span></span> <span data-ttu-id="cb358-284">若要尋找文化特性的清單分隔符號，請使用下列命令： `(Get-Culture).TextInfo.ListSeparator` 。</span><span class="sxs-lookup"><span data-stu-id="cb358-284">To find the list separator for a culture, use the following command: `(Get-Culture).TextInfo.ListSeparator`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -507,9 +506,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-286">-Confirm</span><span class="sxs-lookup"><span data-stu-id="83881-286">-Confirm</span></span>
+### <span data-ttu-id="cb358-285">-Confirm</span><span class="sxs-lookup"><span data-stu-id="cb358-285">-Confirm</span></span>
 
-<span data-ttu-id="83881-287">在執行 Cmdlet 前提示您確認。</span><span class="sxs-lookup"><span data-stu-id="83881-287">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="cb358-286">在執行 Cmdlet 前提示您確認。</span><span class="sxs-lookup"><span data-stu-id="cb358-286">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -523,9 +522,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-288">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="83881-288">-WhatIf</span></span>
+### <span data-ttu-id="cb358-287">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="cb358-287">-WhatIf</span></span>
 
-<span data-ttu-id="83881-289">防止 Cmdlet 進行處理或變更。</span><span class="sxs-lookup"><span data-stu-id="83881-289">Prevents the cmdlet from being processed or making changes.</span></span> <span data-ttu-id="83881-290">輸出會顯示執行 Cmdlet 後會發生的狀況。</span><span class="sxs-lookup"><span data-stu-id="83881-290">The output shows what would happen if the cmdlet were run.</span></span>
+<span data-ttu-id="cb358-288">防止 Cmdlet 進行處理或變更。</span><span class="sxs-lookup"><span data-stu-id="cb358-288">Prevents the cmdlet from being processed or making changes.</span></span> <span data-ttu-id="cb358-289">輸出會顯示執行 Cmdlet 後會發生的狀況。</span><span class="sxs-lookup"><span data-stu-id="cb358-289">The output shows what would happen if the cmdlet were run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -539,9 +538,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-291">-QuoteFields</span><span class="sxs-lookup"><span data-stu-id="83881-291">-QuoteFields</span></span>
+### <span data-ttu-id="cb358-290">-QuoteFields</span><span class="sxs-lookup"><span data-stu-id="cb358-290">-QuoteFields</span></span>
 
-<span data-ttu-id="83881-292">指定應該加上引號的資料行名稱。</span><span class="sxs-lookup"><span data-stu-id="83881-292">Specifies the names of the columns that should be quoted.</span></span> <span data-ttu-id="83881-293">使用這個參數時，只會加上指定的資料行。</span><span class="sxs-lookup"><span data-stu-id="83881-293">When this parameter is used, only the specified columns are quoted.</span></span>
+<span data-ttu-id="cb358-291">指定應該加上引號的資料行名稱。</span><span class="sxs-lookup"><span data-stu-id="cb358-291">Specifies the names of the columns that should be quoted.</span></span> <span data-ttu-id="cb358-292">使用這個參數時，只會加上指定的資料行。</span><span class="sxs-lookup"><span data-stu-id="cb358-292">When this parameter is used, only the specified columns are quoted.</span></span> <span data-ttu-id="cb358-293">此參數已新增至 PowerShell 7.0。</span><span class="sxs-lookup"><span data-stu-id="cb358-293">This parameter was added in PowerShell 7.0.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -555,13 +554,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-294">-UseQuotes</span><span class="sxs-lookup"><span data-stu-id="83881-294">-UseQuotes</span></span>
+### <span data-ttu-id="cb358-294">-UseQuotes</span><span class="sxs-lookup"><span data-stu-id="cb358-294">-UseQuotes</span></span>
 
-<span data-ttu-id="83881-295">指定 CSV 檔案中使用引號的時機。</span><span class="sxs-lookup"><span data-stu-id="83881-295">Specifies when quotes are used in the CSV files.</span></span> <span data-ttu-id="83881-296">可能的值包括：</span><span class="sxs-lookup"><span data-stu-id="83881-296">Possible values are:</span></span>
+<span data-ttu-id="cb358-295">指定 CSV 檔案中使用引號的時機。</span><span class="sxs-lookup"><span data-stu-id="cb358-295">Specifies when quotes are used in the CSV files.</span></span> <span data-ttu-id="cb358-296">可能的值包括：</span><span class="sxs-lookup"><span data-stu-id="cb358-296">Possible values are:</span></span>
 
-- <span data-ttu-id="83881-297">永遠不會引述任何事</span><span class="sxs-lookup"><span data-stu-id="83881-297">Never - don't quote anything</span></span>
-- <span data-ttu-id="83881-298">一律將所有專案加上引號 (預設行為) </span><span class="sxs-lookup"><span data-stu-id="83881-298">Always - quote everything (default behavior)</span></span>
-- <span data-ttu-id="83881-299">>asneeded-僅包含分隔符號的引號欄位</span><span class="sxs-lookup"><span data-stu-id="83881-299">AsNeeded - only quote fields that contain a delimiter character</span></span>
+- <span data-ttu-id="cb358-297">永遠不會引述任何事</span><span class="sxs-lookup"><span data-stu-id="cb358-297">Never - don't quote anything</span></span>
+- <span data-ttu-id="cb358-298">一律將所有專案加上引號 (預設行為) </span><span class="sxs-lookup"><span data-stu-id="cb358-298">Always - quote everything (default behavior)</span></span>
+- <span data-ttu-id="cb358-299">>asneeded-僅包含分隔符號的引號欄位</span><span class="sxs-lookup"><span data-stu-id="cb358-299">AsNeeded - only quote fields that contain a delimiter character</span></span>
+
+<span data-ttu-id="cb358-300">此參數已新增至 PowerShell 7.0。</span><span class="sxs-lookup"><span data-stu-id="cb358-300">This parameter was added in PowerShell 7.0.</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -575,52 +576,51 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="83881-300">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="83881-300">CommonParameters</span></span>
+### <span data-ttu-id="cb358-301">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="cb358-301">CommonParameters</span></span>
 
-<span data-ttu-id="83881-301">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="83881-301">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="83881-302">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="83881-302">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="cb358-302">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="cb358-302">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="cb358-303">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="cb358-303">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="83881-303">輸入</span><span class="sxs-lookup"><span data-stu-id="83881-303">INPUTS</span></span>
+## <span data-ttu-id="cb358-304">輸入</span><span class="sxs-lookup"><span data-stu-id="cb358-304">INPUTS</span></span>
 
-### <span data-ttu-id="83881-304">System.Management.Automation.PSObject</span><span class="sxs-lookup"><span data-stu-id="83881-304">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="cb358-305">System.Management.Automation.PSObject</span><span class="sxs-lookup"><span data-stu-id="cb358-305">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="83881-305">您可以使用管線將任何具有擴充類型系統 (ETS) adapter 的物件傳送至 `Export-CSV` 。</span><span class="sxs-lookup"><span data-stu-id="83881-305">You can pipe any object with an Extended Type System (ETS) adapter to `Export-CSV`.</span></span>
+<span data-ttu-id="cb358-306">您可以使用管線將任何具有擴充類型系統 (ETS) adapter 的物件傳送至 `Export-CSV` 。</span><span class="sxs-lookup"><span data-stu-id="cb358-306">You can pipe any object with an Extended Type System (ETS) adapter to `Export-CSV`.</span></span>
 
-## <span data-ttu-id="83881-306">輸出</span><span class="sxs-lookup"><span data-stu-id="83881-306">OUTPUTS</span></span>
+## <span data-ttu-id="cb358-307">輸出</span><span class="sxs-lookup"><span data-stu-id="cb358-307">OUTPUTS</span></span>
 
-### <span data-ttu-id="83881-307">System.String</span><span class="sxs-lookup"><span data-stu-id="83881-307">System.String</span></span>
+### <span data-ttu-id="cb358-308">System.String</span><span class="sxs-lookup"><span data-stu-id="cb358-308">System.String</span></span>
 
-<span data-ttu-id="83881-308">CSV 清單會傳送至 Path 參數中指定的檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-308">The CSV list is sent to the file designated in the Path parameter.</span></span>
+<span data-ttu-id="cb358-309">CSV 清單會傳送至 Path 參數中指定的檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-309">The CSV list is sent to the file designated in the Path parameter.</span></span>
 
-## <span data-ttu-id="83881-309">注意</span><span class="sxs-lookup"><span data-stu-id="83881-309">NOTES</span></span>
+## <span data-ttu-id="cb358-310">注意</span><span class="sxs-lookup"><span data-stu-id="cb358-310">NOTES</span></span>
 
-<span data-ttu-id="83881-310">`Export-CSV`Cmdlet 會將您提交的物件轉換成一系列的 CSV 字串，並將它們儲存在指定的文字檔中。</span><span class="sxs-lookup"><span data-stu-id="83881-310">The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves them in the specified text file.</span></span> <span data-ttu-id="83881-311">您可以使用將 `Export-CSV -IncludeTypeInformation` 物件儲存在 csv 檔案中，然後使用 `Import-Csv` CMDLET 從 csv 檔案中的文字建立物件。</span><span class="sxs-lookup"><span data-stu-id="83881-311">You can use `Export-CSV -IncludeTypeInformation` to save objects in a CSV file and then use the `Import-Csv` cmdlet to create objects from the text in the CSV file.</span></span>
+<span data-ttu-id="cb358-311">`Export-CSV`Cmdlet 會將您提交的物件轉換成一系列的 CSV 字串，並將它們儲存在指定的文字檔中。</span><span class="sxs-lookup"><span data-stu-id="cb358-311">The `Export-CSV` cmdlet converts the objects that you submit into a series of CSV strings and saves them in the specified text file.</span></span> <span data-ttu-id="cb358-312">您可以使用將 `Export-CSV -IncludeTypeInformation` 物件儲存在 csv 檔案中，然後使用 `Import-Csv` CMDLET 從 csv 檔案中的文字建立物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-312">You can use `Export-CSV -IncludeTypeInformation` to save objects in a CSV file and then use the `Import-Csv` cmdlet to create objects from the text in the CSV file.</span></span>
 
-<span data-ttu-id="83881-312">在 CSV 檔案中，每個物件都會利用以逗號分隔的物件屬性值清單來表示。</span><span class="sxs-lookup"><span data-stu-id="83881-312">In the CSV file, each object is represented by a comma-separated list of the property values of the object.</span></span> <span data-ttu-id="83881-313">屬性值會使用 **ToString ( # B1** 方法轉換成字串。</span><span class="sxs-lookup"><span data-stu-id="83881-313">The property values are converted to strings using the **ToString()** method.</span></span> <span data-ttu-id="83881-314">字串會以屬性值名稱表示。</span><span class="sxs-lookup"><span data-stu-id="83881-314">The strings are represented by the property value name.</span></span> <span data-ttu-id="83881-315">`Export-CSV -IncludeTypeInformation` 不會匯出物件的方法。</span><span class="sxs-lookup"><span data-stu-id="83881-315">`Export-CSV -IncludeTypeInformation` does not export the methods of the object.</span></span>
+<span data-ttu-id="cb358-313">在 CSV 檔案中，每個物件都會利用以逗號分隔的物件屬性值清單來表示。</span><span class="sxs-lookup"><span data-stu-id="cb358-313">In the CSV file, each object is represented by a comma-separated list of the property values of the object.</span></span> <span data-ttu-id="cb358-314">屬性值會使用 **ToString ( # B1** 方法轉換成字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-314">The property values are converted to strings using the **ToString()** method.</span></span> <span data-ttu-id="cb358-315">字串會以屬性值名稱表示。</span><span class="sxs-lookup"><span data-stu-id="cb358-315">The strings are represented by the property value name.</span></span> <span data-ttu-id="cb358-316">`Export-CSV -IncludeTypeInformation` 不會匯出物件的方法。</span><span class="sxs-lookup"><span data-stu-id="cb358-316">`Export-CSV -IncludeTypeInformation` does not export the methods of the object.</span></span>
 
-<span data-ttu-id="83881-316">CSV 字串的輸出如下所示：</span><span class="sxs-lookup"><span data-stu-id="83881-316">The CSV strings are output as follows:</span></span>
+<span data-ttu-id="cb358-317">CSV 字串的輸出如下所示：</span><span class="sxs-lookup"><span data-stu-id="cb358-317">The CSV strings are output as follows:</span></span>
 
-- <span data-ttu-id="83881-317">如果使用 **IncludeTypeInformation** ，則第一個字串會包含 **#TYPE** 資訊標頭，後面接著物件類型的完整名稱。</span><span class="sxs-lookup"><span data-stu-id="83881-317">If **IncludeTypeInformation** is used, the first string contains the **#TYPE** information header followed by the object type's fully qualified name.</span></span>
-  <span data-ttu-id="83881-318">例如， **#TYPE 的系統診斷** 。</span><span class="sxs-lookup"><span data-stu-id="83881-318">For example, **#TYPE System.Diagnostics.Process** .</span></span>
-- <span data-ttu-id="83881-319">如果未使用 **IncludeTypeInformation** ，則第一個字串會包含資料行標頭。</span><span class="sxs-lookup"><span data-stu-id="83881-319">If **IncludeTypeInformation** is not used the first string includes the column headers.</span></span> <span data-ttu-id="83881-320">標頭包含第一個物件的屬性名稱，做為逗點分隔清單。</span><span class="sxs-lookup"><span data-stu-id="83881-320">The headers contain the first object's property names as a comma-separated list.</span></span>
-- <span data-ttu-id="83881-321">其餘的字串包含每個物件之屬性值的逗號分隔清單。</span><span class="sxs-lookup"><span data-stu-id="83881-321">The remaining strings contain comma-separated lists of each object's property values.</span></span>
+- <span data-ttu-id="cb358-318">如果使用 **IncludeTypeInformation** ，則第一個字串會包含 **#TYPE** 資訊標頭，後面接著物件類型的完整名稱。</span><span class="sxs-lookup"><span data-stu-id="cb358-318">If **IncludeTypeInformation** is used, the first string contains the **#TYPE** information header followed by the object type's fully qualified name.</span></span>
+  <span data-ttu-id="cb358-319">例如， **#TYPE 的系統診斷**。</span><span class="sxs-lookup"><span data-stu-id="cb358-319">For example, **#TYPE System.Diagnostics.Process**.</span></span>
+- <span data-ttu-id="cb358-320">如果未使用 **IncludeTypeInformation** ，則第一個字串會包含資料行標頭。</span><span class="sxs-lookup"><span data-stu-id="cb358-320">If **IncludeTypeInformation** is not used the first string includes the column headers.</span></span> <span data-ttu-id="cb358-321">標頭包含第一個物件的屬性名稱，做為逗點分隔清單。</span><span class="sxs-lookup"><span data-stu-id="cb358-321">The headers contain the first object's property names as a comma-separated list.</span></span>
+- <span data-ttu-id="cb358-322">其餘的字串包含每個物件之屬性值的逗號分隔清單。</span><span class="sxs-lookup"><span data-stu-id="cb358-322">The remaining strings contain comma-separated lists of each object's property values.</span></span>
 
-<span data-ttu-id="83881-322">從 PowerShell 6.0 開始，的預設行為 `Export-CSV` 是不包含 CSV 中的 **#TYPE** 資訊，而且 **NoTypeInformation** 是隱含的。</span><span class="sxs-lookup"><span data-stu-id="83881-322">Beginning with PowerShell 6.0 the default behavior of `Export-CSV` is to not include the **#TYPE** information in the CSV and **NoTypeInformation** is implied.</span></span> <span data-ttu-id="83881-323">**IncludeTypeInformation** 可以用來包含 **#TYPE** 資訊，並模擬 `Export-CSV` PowerShell 6.0 之前的預設行為。</span><span class="sxs-lookup"><span data-stu-id="83881-323">**IncludeTypeInformation** can be used to include the **#TYPE** Information and emulate the default behavior of `Export-CSV` prior to PowerShell 6.0.</span></span>
+<span data-ttu-id="cb358-323">從 PowerShell 6.0 開始，的預設行為 `Export-CSV` 是不包含 CSV 中的 **#TYPE** 資訊，而且 **NoTypeInformation** 是隱含的。</span><span class="sxs-lookup"><span data-stu-id="cb358-323">Beginning with PowerShell 6.0 the default behavior of `Export-CSV` is to not include the **#TYPE** information in the CSV and **NoTypeInformation** is implied.</span></span> <span data-ttu-id="cb358-324">**IncludeTypeInformation** 可以用來包含 **#TYPE** 資訊，並模擬 `Export-CSV` PowerShell 6.0 之前的預設行為。</span><span class="sxs-lookup"><span data-stu-id="cb358-324">**IncludeTypeInformation** can be used to include the **#TYPE** Information and emulate the default behavior of `Export-CSV` prior to PowerShell 6.0.</span></span>
 
-<span data-ttu-id="83881-324">當您將多個物件提交至時 `Export-CSV` ，會 `Export-CSV` 根據您所提交之第一個物件的屬性來組織檔案。</span><span class="sxs-lookup"><span data-stu-id="83881-324">When you submit multiple objects to `Export-CSV`, `Export-CSV` organizes the file based on the properties of the first object that you submit.</span></span> <span data-ttu-id="83881-325">如果其餘的物件不具有指定之屬性的其中之一，該物件的屬性值會是 null，以兩個連續的逗號表示。</span><span class="sxs-lookup"><span data-stu-id="83881-325">If the remaining objects do not have one of the specified properties, the property value of that object is null, as represented by two consecutive commas.</span></span> <span data-ttu-id="83881-326">如果其餘的物件有其他屬性，那些屬性值將不會包含在檔案中。</span><span class="sxs-lookup"><span data-stu-id="83881-326">If the remaining objects have additional properties, those property values are not included in the file.</span></span>
+<span data-ttu-id="cb358-325">當您將多個物件提交至時 `Export-CSV` ，會 `Export-CSV` 根據您所提交之第一個物件的屬性來組織檔案。</span><span class="sxs-lookup"><span data-stu-id="cb358-325">When you submit multiple objects to `Export-CSV`, `Export-CSV` organizes the file based on the properties of the first object that you submit.</span></span> <span data-ttu-id="cb358-326">如果其餘的物件不具有指定之屬性的其中之一，該物件的屬性值會是 null，以兩個連續的逗號表示。</span><span class="sxs-lookup"><span data-stu-id="cb358-326">If the remaining objects do not have one of the specified properties, the property value of that object is null, as represented by two consecutive commas.</span></span> <span data-ttu-id="cb358-327">如果其餘的物件有其他屬性，那些屬性值將不會包含在檔案中。</span><span class="sxs-lookup"><span data-stu-id="cb358-327">If the remaining objects have additional properties, those property values are not included in the file.</span></span>
 
-<span data-ttu-id="83881-327">您可以使用 `Import-Csv` Cmdlet，從檔案中的 CSV 字串重新建立物件。</span><span class="sxs-lookup"><span data-stu-id="83881-327">You can use the `Import-Csv` cmdlet to recreate objects from the CSV strings in the files.</span></span> <span data-ttu-id="83881-328">產生的物件是 CSV 版本的原始物件，包含屬性值的字串表示，而且不含方法。</span><span class="sxs-lookup"><span data-stu-id="83881-328">The resulting objects are CSV versions of the original objects that consist of string representations of the property values and no methods.</span></span>
+<span data-ttu-id="cb358-328">您可以使用 `Import-Csv` Cmdlet，從檔案中的 CSV 字串重新建立物件。</span><span class="sxs-lookup"><span data-stu-id="cb358-328">You can use the `Import-Csv` cmdlet to recreate objects from the CSV strings in the files.</span></span> <span data-ttu-id="cb358-329">產生的物件是 CSV 版本的原始物件，包含屬性值的字串表示，而且不含方法。</span><span class="sxs-lookup"><span data-stu-id="cb358-329">The resulting objects are CSV versions of the original objects that consist of string representations of the property values and no methods.</span></span>
 
-<span data-ttu-id="83881-329">`ConvertTo-Csv`和 `ConvertFrom-Csv` Cmdlet 會將物件轉換成 csv 字串和 csv 字串。</span><span class="sxs-lookup"><span data-stu-id="83881-329">The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets convert objects to CSV strings and from CSV strings.</span></span> <span data-ttu-id="83881-330">`Export-CSV` 與相同 `ConvertTo-CSV` ，不同之處在于它會將 CSV 字串儲存在檔案中。</span><span class="sxs-lookup"><span data-stu-id="83881-330">`Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a file.</span></span>
+<span data-ttu-id="cb358-330">`ConvertTo-Csv`和 `ConvertFrom-Csv` Cmdlet 會將物件轉換成 csv 字串和 csv 字串。</span><span class="sxs-lookup"><span data-stu-id="cb358-330">The `ConvertTo-Csv` and `ConvertFrom-Csv` cmdlets convert objects to CSV strings and from CSV strings.</span></span> <span data-ttu-id="cb358-331">`Export-CSV` 與相同 `ConvertTo-CSV` ，不同之處在于它會將 CSV 字串儲存在檔案中。</span><span class="sxs-lookup"><span data-stu-id="cb358-331">`Export-CSV` is the same as `ConvertTo-CSV`, except that it saves the CSV strings in a file.</span></span>
 
-## <span data-ttu-id="83881-331">相關連結</span><span class="sxs-lookup"><span data-stu-id="83881-331">RELATED LINKS</span></span>
+## <span data-ttu-id="cb358-332">相關連結</span><span class="sxs-lookup"><span data-stu-id="cb358-332">RELATED LINKS</span></span>
 
-[<span data-ttu-id="83881-332">ConvertFrom-Csv</span><span class="sxs-lookup"><span data-stu-id="83881-332">ConvertFrom-Csv</span></span>](ConvertFrom-Csv.md)
+[<span data-ttu-id="cb358-333">ConvertFrom-Csv</span><span class="sxs-lookup"><span data-stu-id="cb358-333">ConvertFrom-Csv</span></span>](ConvertFrom-Csv.md)
 
-[<span data-ttu-id="83881-333">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="83881-333">ConvertTo-Csv</span></span>](ConvertTo-Csv.md)
+[<span data-ttu-id="cb358-334">ConvertTo-Csv</span><span class="sxs-lookup"><span data-stu-id="cb358-334">ConvertTo-Csv</span></span>](ConvertTo-Csv.md)
 
-[<span data-ttu-id="83881-334">Format-Table</span><span class="sxs-lookup"><span data-stu-id="83881-334">Format-Table</span></span>](Format-Table.md)
+[<span data-ttu-id="cb358-335">Format-Table</span><span class="sxs-lookup"><span data-stu-id="cb358-335">Format-Table</span></span>](Format-Table.md)
 
-[<span data-ttu-id="83881-335">Import-Csv</span><span class="sxs-lookup"><span data-stu-id="83881-335">Import-Csv</span></span>](Import-Csv.md)
+[<span data-ttu-id="cb358-336">Import-Csv</span><span class="sxs-lookup"><span data-stu-id="cb358-336">Import-Csv</span></span>](Import-Csv.md)
 
-[<span data-ttu-id="83881-336">Select-Object</span><span class="sxs-lookup"><span data-stu-id="83881-336">Select-Object</span></span>](Select-Object.md)
-
+[<span data-ttu-id="cb358-337">Select-Object</span><span class="sxs-lookup"><span data-stu-id="cb358-337">Select-Object</span></span>](Select-Object.md)
