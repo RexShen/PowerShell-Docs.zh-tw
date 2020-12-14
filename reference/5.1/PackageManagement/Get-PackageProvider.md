@@ -7,75 +7,60 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-packageprovider?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-PackageProvider
-ms.openlocfilehash: 03bb3f427f86867fdfe392b7b153c14b333e0fe3
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 66a6bfeda557894e224753018ff9087de9887cc7
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202936"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892844"
 ---
-# <span data-ttu-id="31683-103">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="31683-103">Get-PackageProvider</span></span>
+# <span data-ttu-id="9c059-103">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="9c059-103">Get-PackageProvider</span></span>
 
-## <span data-ttu-id="31683-104">概要</span><span class="sxs-lookup"><span data-stu-id="31683-104">SYNOPSIS</span></span>
-<span data-ttu-id="31683-105">傳回連接到套件管理的封裝提供者清單。</span><span class="sxs-lookup"><span data-stu-id="31683-105">Returns a list of package providers that are connected to Package Management.</span></span>
+## <span data-ttu-id="9c059-104">概要</span><span class="sxs-lookup"><span data-stu-id="9c059-104">SYNOPSIS</span></span>
+<span data-ttu-id="9c059-105">傳回連接到套件管理的封裝提供者清單。</span><span class="sxs-lookup"><span data-stu-id="9c059-105">Returns a list of package providers that are connected to Package Management.</span></span>
 
-## <span data-ttu-id="31683-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="31683-106">SYNTAX</span></span>
+## <span data-ttu-id="9c059-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="9c059-106">SYNTAX</span></span>
 
 ```
 Get-PackageProvider [[-Name] <String[]>] [-ListAvailable] [-Force] [-ForceBootstrap] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="31683-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="31683-107">DESCRIPTION</span></span>
-<span data-ttu-id="31683-108">**Install-packageprovider** 指令程式會傳回連接至套件管理的封裝提供者清單。</span><span class="sxs-lookup"><span data-stu-id="31683-108">The **Get-PackageProvider** cmdlet returns a list of package providers that are connected to Package Management.</span></span>
-<span data-ttu-id="31683-109">這些提供者的範例包括 PSModule、NuGet 和 Chocolatey。</span><span class="sxs-lookup"><span data-stu-id="31683-109">Examples of these providers include PSModule, NuGet, and Chocolatey.</span></span>
-<span data-ttu-id="31683-110">您可以根據一或多個提供者名稱的所有或部分來篩選結果。</span><span class="sxs-lookup"><span data-stu-id="31683-110">You can filter the results based on all or part of one or more provider names.</span></span>
+## <span data-ttu-id="9c059-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="9c059-107">DESCRIPTION</span></span>
+<span data-ttu-id="9c059-108">**Install-packageprovider** 指令程式會傳回連接至套件管理的封裝提供者清單。</span><span class="sxs-lookup"><span data-stu-id="9c059-108">The **Get-PackageProvider** cmdlet returns a list of package providers that are connected to Package Management.</span></span>
+<span data-ttu-id="9c059-109">這些提供者的範例包括 PSModule、NuGet 和 Chocolatey。</span><span class="sxs-lookup"><span data-stu-id="9c059-109">Examples of these providers include PSModule, NuGet, and Chocolatey.</span></span>
+<span data-ttu-id="9c059-110">您可以根據一或多個提供者名稱的所有或部分來篩選結果。</span><span class="sxs-lookup"><span data-stu-id="9c059-110">You can filter the results based on all or part of one or more provider names.</span></span>
 
-## <span data-ttu-id="31683-111">範例</span><span class="sxs-lookup"><span data-stu-id="31683-111">EXAMPLES</span></span>
+## <span data-ttu-id="9c059-111">範例</span><span class="sxs-lookup"><span data-stu-id="9c059-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="31683-112">範例1：取得所有目前載入的封裝提供者</span><span class="sxs-lookup"><span data-stu-id="31683-112">Example 1: Get all currently loaded package providers</span></span>
+### <span data-ttu-id="9c059-112">範例1：取得所有目前載入的封裝提供者</span><span class="sxs-lookup"><span data-stu-id="9c059-112">Example 1: Get all currently loaded package providers</span></span>
 
 ```
 PS C:\> Get-PackageProvider
 ```
 
-<span data-ttu-id="31683-113">此命令會取得目前在本機電腦上載入之所有封裝提供者的清單。</span><span class="sxs-lookup"><span data-stu-id="31683-113">This command gets a list of all the package providers that are currently loaded on the local computer.</span></span>
+<span data-ttu-id="9c059-113">此命令會取得目前在本機電腦上載入之所有封裝提供者的清單。</span><span class="sxs-lookup"><span data-stu-id="9c059-113">This command gets a list of all the package providers that are currently loaded on the local computer.</span></span>
 
-### <span data-ttu-id="31683-114">範例2：取得所有可用的封裝提供者</span><span class="sxs-lookup"><span data-stu-id="31683-114">Example 2: Get all available package providers</span></span>
+### <span data-ttu-id="9c059-114">範例2：取得所有可用的封裝提供者</span><span class="sxs-lookup"><span data-stu-id="9c059-114">Example 2: Get all available package providers</span></span>
 
 ```
 PS C:\> Get-PackageProvider -ListAvailable
 ```
 
-<span data-ttu-id="31683-115">此命令會取得本機電腦上可用的所有封裝提供者清單。</span><span class="sxs-lookup"><span data-stu-id="31683-115">This command gets a list of all package providers that are available on the local computer.</span></span>
+<span data-ttu-id="9c059-115">此命令會取得本機電腦上可用的所有封裝提供者清單。</span><span class="sxs-lookup"><span data-stu-id="9c059-115">This command gets a list of all package providers that are available on the local computer.</span></span>
 
-### <span data-ttu-id="31683-116">範例3：動態取得封裝提供者</span><span class="sxs-lookup"><span data-stu-id="31683-116">Example 3: Dynamically get a package provider</span></span>
+### <span data-ttu-id="9c059-116">範例3：動態取得封裝提供者</span><span class="sxs-lookup"><span data-stu-id="9c059-116">Example 3: Dynamically get a package provider</span></span>
 
 ```
 PS C:\> Get-PackageProvider -Name "Chocolatey" -ForceBootstrap
 ```
 
-<span data-ttu-id="31683-117">如果您的電腦未安裝 Chocolatey 提供者，此命令會自動安裝 Chocolatey 提供者。</span><span class="sxs-lookup"><span data-stu-id="31683-117">This command automatically installs the Chocolatey provider if your computer does not have the Chocolatey provider installed.</span></span>
+<span data-ttu-id="9c059-117">如果您的電腦未安裝 Chocolatey 提供者，此命令會自動安裝 Chocolatey 提供者。</span><span class="sxs-lookup"><span data-stu-id="9c059-117">This command automatically installs the Chocolatey provider if your computer does not have the Chocolatey provider installed.</span></span>
 
-## <span data-ttu-id="31683-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="31683-118">PARAMETERS</span></span>
+## <span data-ttu-id="9c059-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="9c059-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="31683-119">-Force</span><span class="sxs-lookup"><span data-stu-id="31683-119">-Force</span></span>
-<span data-ttu-id="31683-120">指出此 Cmdlet 會使用可強制執行的這個 Cmdlet 來強制執行所有其他動作。</span><span class="sxs-lookup"><span data-stu-id="31683-120">Indicates that this cmdlet forces all other actions with this cmdlet that can be forced.</span></span>
-<span data-ttu-id="31683-121">在 **install-packageprovider** 中，這表示 *Force* 參數的作用與 *ForceBootstrap* 參數相同。</span><span class="sxs-lookup"><span data-stu-id="31683-121">In **Get-PackageProvider** , this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="31683-122">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="31683-122">-ForceBootstrap</span></span>
-<span data-ttu-id="31683-123">指出此 Cmdlet 會強制套件管理自動安裝封裝提供者。</span><span class="sxs-lookup"><span data-stu-id="31683-123">Indicates that this cmdlet forces Package Management to automatically install the package provider.</span></span>
+### <span data-ttu-id="9c059-119">-Force</span><span class="sxs-lookup"><span data-stu-id="9c059-119">-Force</span></span>
+<span data-ttu-id="9c059-120">指出此 Cmdlet 會使用可強制執行的這個 Cmdlet 來強制執行所有其他動作。</span><span class="sxs-lookup"><span data-stu-id="9c059-120">Indicates that this cmdlet forces all other actions with this cmdlet that can be forced.</span></span>
+<span data-ttu-id="9c059-121">在 **install-packageprovider** 中，這表示 *Force* 參數的作用與 *ForceBootstrap* 參數相同。</span><span class="sxs-lookup"><span data-stu-id="9c059-121">In **Get-PackageProvider**, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -89,13 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31683-124">-ListAvailable</span><span class="sxs-lookup"><span data-stu-id="31683-124">-ListAvailable</span></span>
-<span data-ttu-id="31683-125">取得所有已安裝的提供者。</span><span class="sxs-lookup"><span data-stu-id="31683-125">Gets all installed providers.</span></span>
-<span data-ttu-id="31683-126">**Install-packageprovider** 會取得 **PSModulePath** 環境變數所列路徑中的提供者，以及套件提供者元件資料夾：</span><span class="sxs-lookup"><span data-stu-id="31683-126">**Get-PackageProvider** gets provider in paths listed in the **PSModulePath** environment variable as well as the package provider assembly folders:</span></span>
-
-<span data-ttu-id="31683-127">**$env:P rogramFiles\PackageManagement\ProviderAssemblies \* \* \* \* $env： Localappdata\packagemanagement\providerassemblies 有舊版**</span><span class="sxs-lookup"><span data-stu-id="31683-127">**$env:ProgramFiles\PackageManagement\ProviderAssemblies\*\*\*\*$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies**</span></span>
-
-<span data-ttu-id="31683-128">如果沒有這個參數， **install-packageprovider** 只會取得目前會話中載入的提供者。</span><span class="sxs-lookup"><span data-stu-id="31683-128">Without this parameter, **Get-PackageProvider** gets only the providers loaded in the current session.</span></span>
+### <span data-ttu-id="9c059-122">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="9c059-122">-ForceBootstrap</span></span>
+<span data-ttu-id="9c059-123">指出此 Cmdlet 會強制套件管理自動安裝封裝提供者。</span><span class="sxs-lookup"><span data-stu-id="9c059-123">Indicates that this cmdlet forces Package Management to automatically install the package provider.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -109,10 +89,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31683-129">-Name</span><span class="sxs-lookup"><span data-stu-id="31683-129">-Name</span></span>
-<span data-ttu-id="31683-130">指定一或多個提供者名稱，或部分提供者名稱。</span><span class="sxs-lookup"><span data-stu-id="31683-130">Specifies one or more provider names, or partial provider names.</span></span>
-<span data-ttu-id="31683-131">以逗號分隔多個提供者名稱。</span><span class="sxs-lookup"><span data-stu-id="31683-131">Separate multiple provider names with commas.</span></span>
-<span data-ttu-id="31683-132">這個參數的有效值包括您隨封裝安裝的提供者名稱;PackageManagement 隨附一組預設的提供者，包括 **PSModule** 和 **MSI** 提供者。</span><span class="sxs-lookup"><span data-stu-id="31683-132">Valid values for this parameter include names of providers that you have installed with packages; PackageManagement ships with a set of default providers, including the **PSModule** and **MSI** providers.</span></span>
+### <span data-ttu-id="9c059-124">-ListAvailable</span><span class="sxs-lookup"><span data-stu-id="9c059-124">-ListAvailable</span></span>
+<span data-ttu-id="9c059-125">取得所有已安裝的提供者。</span><span class="sxs-lookup"><span data-stu-id="9c059-125">Gets all installed providers.</span></span>
+<span data-ttu-id="9c059-126">**Install-packageprovider** 會取得 **PSModulePath** 環境變數所列路徑中的提供者，以及套件提供者元件資料夾：</span><span class="sxs-lookup"><span data-stu-id="9c059-126">**Get-PackageProvider** gets provider in paths listed in the **PSModulePath** environment variable as well as the package provider assembly folders:</span></span>
+
+<span data-ttu-id="9c059-127">**$env:P rogramFiles\PackageManagement\ProviderAssemblies \* \* \* \* $env： Localappdata\packagemanagement\providerassemblies 有舊版**</span><span class="sxs-lookup"><span data-stu-id="9c059-127">**$env:ProgramFiles\PackageManagement\ProviderAssemblies\*\*\*\*$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies**</span></span>
+
+<span data-ttu-id="9c059-128">如果沒有這個參數， **install-packageprovider** 只會取得目前會話中載入的提供者。</span><span class="sxs-lookup"><span data-stu-id="9c059-128">Without this parameter, **Get-PackageProvider** gets only the providers loaded in the current session.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="9c059-129">-Name</span><span class="sxs-lookup"><span data-stu-id="9c059-129">-Name</span></span>
+<span data-ttu-id="9c059-130">指定一或多個提供者名稱，或部分提供者名稱。</span><span class="sxs-lookup"><span data-stu-id="9c059-130">Specifies one or more provider names, or partial provider names.</span></span>
+<span data-ttu-id="9c059-131">以逗號分隔多個提供者名稱。</span><span class="sxs-lookup"><span data-stu-id="9c059-131">Separate multiple provider names with commas.</span></span>
+<span data-ttu-id="9c059-132">這個參數的有效值包括您隨封裝安裝的提供者名稱;PackageManagement 隨附一組預設的提供者，包括 **PSModule** 和 **MSI** 提供者。</span><span class="sxs-lookup"><span data-stu-id="9c059-132">Valid values for this parameter include names of providers that you have installed with packages; PackageManagement ships with a set of default providers, including the **PSModule** and **MSI** providers.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -126,23 +126,30 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="31683-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="31683-133">CommonParameters</span></span>
-<span data-ttu-id="31683-134">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="31683-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="31683-135">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="31683-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="9c059-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="9c059-133">CommonParameters</span></span>
+<span data-ttu-id="9c059-134">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="9c059-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="9c059-135">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="9c059-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="31683-136">輸入</span><span class="sxs-lookup"><span data-stu-id="31683-136">INPUTS</span></span>
+## <span data-ttu-id="9c059-136">輸入</span><span class="sxs-lookup"><span data-stu-id="9c059-136">INPUTS</span></span>
 
-## <span data-ttu-id="31683-137">輸出</span><span class="sxs-lookup"><span data-stu-id="31683-137">OUTPUTS</span></span>
+## <span data-ttu-id="9c059-137">輸出</span><span class="sxs-lookup"><span data-stu-id="9c059-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="31683-138">Install-packageprovider []</span><span class="sxs-lookup"><span data-stu-id="31683-138">PackageProvider[]</span></span>
+### <span data-ttu-id="9c059-138">Install-packageprovider []</span><span class="sxs-lookup"><span data-stu-id="9c059-138">PackageProvider[]</span></span>
 
-## <span data-ttu-id="31683-139">注意</span><span class="sxs-lookup"><span data-stu-id="31683-139">NOTES</span></span>
+## <span data-ttu-id="9c059-139">注意</span><span class="sxs-lookup"><span data-stu-id="9c059-139">NOTES</span></span>
 
-## <span data-ttu-id="31683-140">相關連結</span><span class="sxs-lookup"><span data-stu-id="31683-140">RELATED LINKS</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="9c059-140">從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。</span><span class="sxs-lookup"><span data-stu-id="9c059-140">As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS) versions 1.0 and 1.1.</span></span> <span data-ttu-id="9c059-141">如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。</span><span class="sxs-lookup"><span data-stu-id="9c059-141">If you are not using TLS 1.2 or higher, you will receive an error when trying to access the PowerShell Gallery.</span></span> <span data-ttu-id="9c059-142">使用下列命令，以確保您使用的是 TLS 1.2：</span><span class="sxs-lookup"><span data-stu-id="9c059-142">Use the following command to ensure you are using TLS 1.2:</span></span>
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> <span data-ttu-id="9c059-143">如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。</span><span class="sxs-lookup"><span data-stu-id="9c059-143">For more information, see the [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the PowerShell blog.</span></span>
 
-[<span data-ttu-id="31683-141">about_PackageManagement</span><span class="sxs-lookup"><span data-stu-id="31683-141">about_PackageManagement</span></span>](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
+## <span data-ttu-id="9c059-144">相關連結</span><span class="sxs-lookup"><span data-stu-id="9c059-144">RELATED LINKS</span></span>
 
-[<span data-ttu-id="31683-142">Get-PackageSource</span><span class="sxs-lookup"><span data-stu-id="31683-142">Get-PackageSource</span></span>](Get-PackageSource.md)
+[<span data-ttu-id="9c059-145">about_PackageManagement</span><span class="sxs-lookup"><span data-stu-id="9c059-145">about_PackageManagement</span></span>](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
 
-[<span data-ttu-id="31683-143">Register-PackageSource</span><span class="sxs-lookup"><span data-stu-id="31683-143">Register-PackageSource</span></span>](Register-PackageSource.md)
+[<span data-ttu-id="9c059-146">Get-PackageSource</span><span class="sxs-lookup"><span data-stu-id="9c059-146">Get-PackageSource</span></span>](Get-PackageSource.md)
 
-[<span data-ttu-id="31683-144">Unregister-PackageSource</span><span class="sxs-lookup"><span data-stu-id="31683-144">Unregister-PackageSource</span></span>](Unregister-PackageSource.md)
+[<span data-ttu-id="9c059-147">Register-PackageSource</span><span class="sxs-lookup"><span data-stu-id="9c059-147">Register-PackageSource</span></span>](Register-PackageSource.md)
+
+[<span data-ttu-id="9c059-148">Unregister-PackageSource</span><span class="sxs-lookup"><span data-stu-id="9c059-148">Unregister-PackageSource</span></span>](Unregister-PackageSource.md)

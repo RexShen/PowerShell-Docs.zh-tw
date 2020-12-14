@@ -7,19 +7,19 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-script?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Script
-ms.openlocfilehash: dcbe4efc6c351ff404405ee469c91769f86fd0e6
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 443795160fcf5b11ffdc2d7d4e6f5d265b160002
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204140"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892414"
 ---
-# <span data-ttu-id="43b6b-103">Find-Script</span><span class="sxs-lookup"><span data-stu-id="43b6b-103">Find-Script</span></span>
+# <span data-ttu-id="24920-103">Find-Script</span><span class="sxs-lookup"><span data-stu-id="24920-103">Find-Script</span></span>
 
-## <span data-ttu-id="43b6b-104">概要</span><span class="sxs-lookup"><span data-stu-id="43b6b-104">SYNOPSIS</span></span>
-<span data-ttu-id="43b6b-105">尋找腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-105">Finds a script.</span></span>
+## <span data-ttu-id="24920-104">概要</span><span class="sxs-lookup"><span data-stu-id="24920-104">SYNOPSIS</span></span>
+<span data-ttu-id="24920-105">尋找腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-105">Finds a script.</span></span>
 
-## <span data-ttu-id="43b6b-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="43b6b-106">SYNTAX</span></span>
+## <span data-ttu-id="24920-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="24920-106">SYNTAX</span></span>
 
 ```
 Find-Script [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <String>]
@@ -28,13 +28,13 @@ Find-Script [[-Name] <String[]>] [-MinimumVersion <String>] [-MaximumVersion <St
  [-Repository <String[]>] [-Credential <PSCredential>] [-AllowPrerelease] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="43b6b-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="43b6b-107">DESCRIPTION</span></span>
+## <span data-ttu-id="24920-107">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="24920-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="43b6b-108">**Find 腳本** Cmdlet 會在已註冊的存放庫中尋找指定的腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-108">The **Find-Script** cmdlet finds a specified script in registered repositories.</span></span>
+<span data-ttu-id="24920-108">**Find 腳本** Cmdlet 會在已註冊的存放庫中尋找指定的腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-108">The **Find-Script** cmdlet finds a specified script in registered repositories.</span></span>
 
-## <span data-ttu-id="43b6b-109">範例</span><span class="sxs-lookup"><span data-stu-id="43b6b-109">EXAMPLES</span></span>
+## <span data-ttu-id="24920-109">範例</span><span class="sxs-lookup"><span data-stu-id="24920-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="43b6b-110">範例1：尋找所有可用的腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-110">Example 1: Find all available scripts</span></span>
+### <span data-ttu-id="24920-110">範例1：尋找所有可用的腳本</span><span class="sxs-lookup"><span data-stu-id="24920-110">Example 1: Find all available scripts</span></span>
 
 ```
 PS C:\> Find-Script
@@ -54,9 +54,9 @@ Version    Name                                Type       Repository           D
 1.0        TestRunbook                         Script     LocalRepo1           Contoso Script example
 ```
 
-<span data-ttu-id="43b6b-111">此命令會尋找所有可用的腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-111">This command finds all available scripts.</span></span>
+<span data-ttu-id="24920-111">此命令會尋找所有可用的腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-111">This command finds all available scripts.</span></span>
 
-### <span data-ttu-id="43b6b-112">範例2：依名稱尋找腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-112">Example 2: Find a script by name</span></span>
+### <span data-ttu-id="24920-112">範例2：依名稱尋找腳本</span><span class="sxs-lookup"><span data-stu-id="24920-112">Example 2: Find a script by name</span></span>
 
 ```
 PS C:\> Find-Script -Name "Start-WFContosoServer"
@@ -65,17 +65,17 @@ Version    Name                                Type       Repository           D
 2.0        Start-WFContosoServer               Script     LocalRepo1           Start-WFContosoServer Script example
 ```
 
-<span data-ttu-id="43b6b-113">此命令會尋找名為 WFContosoServer 的腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-113">This command find the script named Start-WFContosoServer.</span></span>
+<span data-ttu-id="24920-113">此命令會尋找名為 WFContosoServer 的腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-113">This command find the script named Start-WFContosoServer.</span></span>
 
-### <span data-ttu-id="43b6b-114">範例3：依名稱、所需的版本，以及從指定的存放庫尋找腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-114">Example 3: Find a script by name, required version, and from a specified repository</span></span>
+### <span data-ttu-id="24920-114">範例3：依名稱、所需的版本，以及從指定的存放庫尋找腳本</span><span class="sxs-lookup"><span data-stu-id="24920-114">Example 3: Find a script by name, required version, and from a specified repository</span></span>
 
 ```
 PS C:\> Find-Script -Name "Required-Script2" -RequiredVersion 2.0 -Repository "LocalRepo01"
 ```
 
-<span data-ttu-id="43b6b-115">此命令會依名稱尋找腳本，並在 LocalRepo01 儲存機制中尋找所需的版本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-115">This command finds a script by name and required version in the LocalRepo01 repository.</span></span>
+<span data-ttu-id="24920-115">此命令會依名稱尋找腳本，並在 LocalRepo01 儲存機制中尋找所需的版本。</span><span class="sxs-lookup"><span data-stu-id="24920-115">This command finds a script by name and required version in the LocalRepo01 repository.</span></span>
 
-### <span data-ttu-id="43b6b-116">範例4：尋找腳本並將輸出格式化為清單</span><span class="sxs-lookup"><span data-stu-id="43b6b-116">Example 4: Find a script and format the output as a list</span></span>
+### <span data-ttu-id="24920-116">範例4：尋找腳本並將輸出格式化為清單</span><span class="sxs-lookup"><span data-stu-id="24920-116">Example 4: Find a script and format the output as a list</span></span>
 
 ```
 PS C:\> Find-Script -Name "Required-Script2" -RequiredVersion 2.0 -Repository "LocalRepo1" | Format-List * -Force
@@ -100,9 +100,9 @@ Repository                 : LocalRepo01
 PackageManagementProvider  : NuGet
 ```
 
-<span data-ttu-id="43b6b-117">此命令會在 LocalRepo1 儲存機制中尋找 Required-Script2，然後將產生的 **PSRepositoryItemInfo** 物件傳遞給 Format-List Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="43b6b-117">This command finds Required-Script2 in the LocalRepo1 repository, and then passes the resulting **PSRepositoryItemInfo** object to the Format-List cmdlet.</span></span>
+<span data-ttu-id="24920-117">此命令會在 LocalRepo1 儲存機制中尋找 Required-Script2，然後將產生的 **PSRepositoryItemInfo** 物件傳遞給 Format-List Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="24920-117">This command finds Required-Script2 in the LocalRepo1 repository, and then passes the resulting **PSRepositoryItemInfo** object to the Format-List cmdlet.</span></span>
 
-### <span data-ttu-id="43b6b-118">範例5：在指定的版本範圍中尋找腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-118">Example 5: Find a script in the specified version range</span></span>
+### <span data-ttu-id="24920-118">範例5：在指定的版本範圍中尋找腳本</span><span class="sxs-lookup"><span data-stu-id="24920-118">Example 5: Find a script in the specified version range</span></span>
 
 ```
 PS C:\> Find-Script -Name "Required-Script2" -MinimumVersion 2.1 -MaximumVersion 2.5 -Repository "LocalRepo1"
@@ -111,9 +111,9 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 ```
 
-<span data-ttu-id="43b6b-119">此命令會在 LocalRepo1 存放庫中尋找2.1 和2.5 版之間的所有 RequiredScript2 版本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-119">This command finds all versions of RequiredScript2 between versions 2.1 and 2.5 in the LocalRepo1 respository.</span></span>
+<span data-ttu-id="24920-119">此命令會在 LocalRepo1 存放庫中尋找2.1 和2.5 版之間的所有 RequiredScript2 版本。</span><span class="sxs-lookup"><span data-stu-id="24920-119">This command finds all versions of RequiredScript2 between versions 2.1 and 2.5 in the LocalRepo1 respository.</span></span>
 
-### <span data-ttu-id="43b6b-120">範例6：尋找腳本的所有版本</span><span class="sxs-lookup"><span data-stu-id="43b6b-120">Example 6: Find all versions of a script</span></span>
+### <span data-ttu-id="24920-120">範例6：尋找腳本的所有版本</span><span class="sxs-lookup"><span data-stu-id="24920-120">Example 6: Find all versions of a script</span></span>
 
 ```
 PS C:\> Find-Script -Name "Required-Script02" -AllVersions
@@ -125,9 +125,9 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 ```
 
-<span data-ttu-id="43b6b-121">此命令會尋找所需的所有版本-Script02。</span><span class="sxs-lookup"><span data-stu-id="43b6b-121">This command finds all versions of Required-Script02.</span></span>
+<span data-ttu-id="24920-121">此命令會尋找所需的所有版本-Script02。</span><span class="sxs-lookup"><span data-stu-id="24920-121">This command finds all versions of Required-Script02.</span></span>
 
-### <span data-ttu-id="43b6b-122">範例7：尋找腳本和其相依性</span><span class="sxs-lookup"><span data-stu-id="43b6b-122">Example 7: Find a script and its dependencies</span></span>
+### <span data-ttu-id="24920-122">範例7：尋找腳本和其相依性</span><span class="sxs-lookup"><span data-stu-id="24920-122">Example 7: Find a script and its dependencies</span></span>
 
 ```
 PS C:\> Find-Script -Name "Script-WithDependencies1" -IncludeDependencies -Repository "LocalRepo1"
@@ -139,9 +139,9 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script2                    Script     LocalRepo1           Description for the Required-Script2 script
 ```
 
-<span data-ttu-id="43b6b-123">此命令會尋找腳本及其相依性。</span><span class="sxs-lookup"><span data-stu-id="43b6b-123">This command finds a script and its dependencies.</span></span>
+<span data-ttu-id="24920-123">此命令會尋找腳本及其相依性。</span><span class="sxs-lookup"><span data-stu-id="24920-123">This command finds a script and its dependencies.</span></span>
 
-### <span data-ttu-id="43b6b-124">範例8：尋找具有指定標記的腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-124">Example 8: Find scripts with the specified tag</span></span>
+### <span data-ttu-id="24920-124">範例8：尋找具有指定標記的腳本</span><span class="sxs-lookup"><span data-stu-id="24920-124">Example 8: Find scripts with the specified tag</span></span>
 
 ```
 PS C:\> Find-Script -Tag "Tag1" -Repository "LocalRepo1"
@@ -150,9 +150,9 @@ Version    Name                                Type       Repository           D
 1.0        Fabrikam-ClientScript               Script     LocalRepo1           Description for the Fabrikam-ClientScript script
 ```
 
-<span data-ttu-id="43b6b-125">此命令會在 LocalRepo1 存放庫中尋找具有標記 Tag1 的腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-125">This command finds scripts that have the tag Tag1 in the LocalRepo1 repository</span></span>
+<span data-ttu-id="24920-125">此命令會在 LocalRepo1 存放庫中尋找具有標記 Tag1 的腳本</span><span class="sxs-lookup"><span data-stu-id="24920-125">This command finds scripts that have the tag Tag1 in the LocalRepo1 repository</span></span>
 
-### <span data-ttu-id="43b6b-126">範例9：尋找具有指定命令名稱的腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-126">Example 9: Find scripts with specified command name</span></span>
+### <span data-ttu-id="24920-126">範例9：尋找具有指定命令名稱的腳本</span><span class="sxs-lookup"><span data-stu-id="24920-126">Example 9: Find scripts with specified command name</span></span>
 
 ```
 PS C:\> Find-Script -Command Test-FunctionFromScript_Required-Script3 -Repository "LocalRepo1"
@@ -161,9 +161,9 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script3                    Script     LocalRepo1           Description for the Required-Script3 script
 ```
 
-<span data-ttu-id="43b6b-127">此命令會尋找包含指定命令名稱的腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-127">This command finds a script that contains the specified command name.</span></span>
+<span data-ttu-id="24920-127">此命令會尋找包含指定命令名稱的腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-127">This command finds a script that contains the specified command name.</span></span>
 
-### <span data-ttu-id="43b6b-128">範例10：使用工作流程尋找腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-128">Example 10: Find scripts with workflows</span></span>
+### <span data-ttu-id="24920-128">範例10：使用工作流程尋找腳本</span><span class="sxs-lookup"><span data-stu-id="24920-128">Example 10: Find scripts with workflows</span></span>
 
 ```
 PS C:\> Find-Script -Includes "Workflow" -Repository "LocalRepo1"
@@ -173,9 +173,9 @@ Version    Name                                Type       Repository           D
 1.0        Fabrikam-Script                     Script     LocalRepo1           Description for the Fabrikam-Script script
 ```
 
-<span data-ttu-id="43b6b-129">此命令會尋找 LocalRepo1 存放庫中的工作流程腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-129">This command finds workflow scripts in the LocalRepo1 repository.</span></span>
+<span data-ttu-id="24920-129">此命令會尋找 LocalRepo1 存放庫中的工作流程腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-129">This command finds workflow scripts in the LocalRepo1 repository.</span></span>
 
-### <span data-ttu-id="43b6b-130">範例11：使用萬用字元尋找腳本</span><span class="sxs-lookup"><span data-stu-id="43b6b-130">Example 11: Find scripts using wildcards</span></span>
+### <span data-ttu-id="24920-130">範例11：使用萬用字元尋找腳本</span><span class="sxs-lookup"><span data-stu-id="24920-130">Example 11: Find scripts using wildcards</span></span>
 
 ```
 PS C:\> Find-Script -Name "Required-Script*" -Repository "LocalRepo1"
@@ -186,29 +186,13 @@ Version    Name                                Type       Repository           D
 2.5        Required-Script3                    Script     local1               Description for the Required-Script3 script
 ```
 
-<span data-ttu-id="43b6b-131">此命令會使用萬用字元 ( \* ) 來尋找以必要-Script 開頭的腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-131">This command uses the wildcard character (\*) to find scripts that begin with Required-Script.</span></span>
+<span data-ttu-id="24920-131">此命令會使用萬用字元 ( \* ) 來尋找以必要-Script 開頭的腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-131">This command uses the wildcard character (\*) to find scripts that begin with Required-Script.</span></span>
 
-## <span data-ttu-id="43b6b-132">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="43b6b-132">PARAMETERS</span></span>
+## <span data-ttu-id="24920-132">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="24920-132">PARAMETERS</span></span>
 
-### <span data-ttu-id="43b6b-133">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="43b6b-133">-AllowPrerelease</span></span>
+### <span data-ttu-id="24920-133">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="24920-133">-AllowPrerelease</span></span>
 
-<span data-ttu-id="43b6b-134">包含在標記為發行前版本的結果腳本中。</span><span class="sxs-lookup"><span data-stu-id="43b6b-134">Includes in the results scripts marked as a prerelease.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="43b6b-135">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="43b6b-135">-AllVersions</span></span>
-
-<span data-ttu-id="43b6b-136">指出此作業會尋找所有的腳本版本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-136">Indicates that this operation finds all script versions.</span></span>
+<span data-ttu-id="24920-134">包含在標記為發行前版本的結果腳本中。</span><span class="sxs-lookup"><span data-stu-id="24920-134">Includes in the results scripts marked as a prerelease.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -222,10 +206,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-137">-Command</span><span class="sxs-lookup"><span data-stu-id="43b6b-137">-Command</span></span>
+### <span data-ttu-id="24920-135">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="24920-135">-AllVersions</span></span>
 
-<span data-ttu-id="43b6b-138">指定要在腳本中尋找的命令陣列。</span><span class="sxs-lookup"><span data-stu-id="43b6b-138">Specifies an array of commands to find in scripts.</span></span>
-<span data-ttu-id="43b6b-139">命令可以是函數或工作流程。</span><span class="sxs-lookup"><span data-stu-id="43b6b-139">A command can be a function or workflow.</span></span>
+<span data-ttu-id="24920-136">指出此作業會尋找所有的腳本版本。</span><span class="sxs-lookup"><span data-stu-id="24920-136">Indicates that this operation finds all script versions.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24920-137">-Command</span><span class="sxs-lookup"><span data-stu-id="24920-137">-Command</span></span>
+
+<span data-ttu-id="24920-138">指定要在腳本中尋找的命令陣列。</span><span class="sxs-lookup"><span data-stu-id="24920-138">Specifies an array of commands to find in scripts.</span></span>
+<span data-ttu-id="24920-139">命令可以是函數或工作流程。</span><span class="sxs-lookup"><span data-stu-id="24920-139">A command can be a function or workflow.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -239,7 +239,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-140">-Credential</span><span class="sxs-lookup"><span data-stu-id="43b6b-140">-Credential</span></span>
+### <span data-ttu-id="24920-140">-Credential</span><span class="sxs-lookup"><span data-stu-id="24920-140">-Credential</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -253,9 +253,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-141">-Filter</span><span class="sxs-lookup"><span data-stu-id="43b6b-141">-Filter</span></span>
+### <span data-ttu-id="24920-141">-Filter</span><span class="sxs-lookup"><span data-stu-id="24920-141">-Filter</span></span>
 
-<span data-ttu-id="43b6b-142">根據 PackageManagement 提供者特定的搜尋語法尋找腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-142">Finds scripts based on the PackageManagement provider-specific search syntax.</span></span>
+<span data-ttu-id="24920-142">根據 PackageManagement 提供者特定的搜尋語法尋找腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-142">Finds scripts based on the PackageManagement provider-specific search syntax.</span></span>
 
 ```yaml
 Type: System.String
@@ -269,9 +269,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-143">-Includedependencies 來</span><span class="sxs-lookup"><span data-stu-id="43b6b-143">-IncludeDependencies</span></span>
+### <span data-ttu-id="24920-143">-Includedependencies 來</span><span class="sxs-lookup"><span data-stu-id="24920-143">-IncludeDependencies</span></span>
 
-<span data-ttu-id="43b6b-144">指出此作業會取得相依于 *Name* 參數中指定之腳本的所有腳本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-144">Indicates that this operation gets all scripts that are dependent upon the script specified in the *Name* parameter.</span></span>
+<span data-ttu-id="24920-144">指出此作業會取得相依于 *Name* 參數中指定之腳本的所有腳本。</span><span class="sxs-lookup"><span data-stu-id="24920-144">Indicates that this operation gets all scripts that are dependent upon the script specified in the *Name* parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -285,10 +285,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-145">-Include</span><span class="sxs-lookup"><span data-stu-id="43b6b-145">-Includes</span></span>
+### <span data-ttu-id="24920-145">-Include</span><span class="sxs-lookup"><span data-stu-id="24920-145">-Includes</span></span>
 
-<span data-ttu-id="43b6b-146">指定要取得的腳本類型。</span><span class="sxs-lookup"><span data-stu-id="43b6b-146">Specifies type of script to get.</span></span>
-<span data-ttu-id="43b6b-147">此參數可接受的值為： Function、Workflow。</span><span class="sxs-lookup"><span data-stu-id="43b6b-147">The acceptable values for this parameter are: Function, Workflow.</span></span>
+<span data-ttu-id="24920-146">指定要取得的腳本類型。</span><span class="sxs-lookup"><span data-stu-id="24920-146">Specifies type of script to get.</span></span>
+<span data-ttu-id="24920-147">此參數可接受的值為： Function、Workflow。</span><span class="sxs-lookup"><span data-stu-id="24920-147">The acceptable values for this parameter are: Function, Workflow.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -303,27 +303,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-148">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="43b6b-148">-MaximumVersion</span></span>
+### <span data-ttu-id="24920-148">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="24920-148">-MaximumVersion</span></span>
 
-<span data-ttu-id="43b6b-149">指定要尋找之腳本的最大或最新版本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-149">Specifies the maximum, or newest, version of the script to find.</span></span>
-<span data-ttu-id="43b6b-150">*MaximumVersion* 和 *RequiredVersion* 參數是互斥的；您無法在相同的命令中使用這兩個參數。</span><span class="sxs-lookup"><span data-stu-id="43b6b-150">The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="43b6b-151">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="43b6b-151">-MinimumVersion</span></span>
-
-<span data-ttu-id="43b6b-152">指定要尋找之腳本的最小版本。</span><span class="sxs-lookup"><span data-stu-id="43b6b-152">Specifies the minimum version of the script to find.</span></span>
-<span data-ttu-id="43b6b-153">*MinimumVersion* 和 *RequiredVersion* 參數是互斥的；您無法在相同的命令中使用這兩個參數。</span><span class="sxs-lookup"><span data-stu-id="43b6b-153">The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
+<span data-ttu-id="24920-149">指定要尋找之腳本的最大或最新版本。</span><span class="sxs-lookup"><span data-stu-id="24920-149">Specifies the maximum, or newest, version of the script to find.</span></span>
+<span data-ttu-id="24920-150">*MaximumVersion* 和 *RequiredVersion* 參數是互斥的；您無法在相同的命令中使用這兩個參數。</span><span class="sxs-lookup"><span data-stu-id="24920-150">The *MaximumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -337,9 +320,26 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-154">-Name</span><span class="sxs-lookup"><span data-stu-id="43b6b-154">-Name</span></span>
+### <span data-ttu-id="24920-151">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="24920-151">-MinimumVersion</span></span>
 
-<span data-ttu-id="43b6b-155">指定要尋找之腳本的名稱陣列。</span><span class="sxs-lookup"><span data-stu-id="43b6b-155">Specifies an array of names of scripts to find.</span></span>
+<span data-ttu-id="24920-152">指定要尋找之腳本的最小版本。</span><span class="sxs-lookup"><span data-stu-id="24920-152">Specifies the minimum version of the script to find.</span></span>
+<span data-ttu-id="24920-153">*MinimumVersion* 和 *RequiredVersion* 參數是互斥的；您無法在相同的命令中使用這兩個參數。</span><span class="sxs-lookup"><span data-stu-id="24920-153">The *MinimumVersion* and *RequiredVersion* parameters are mutually exclusive; you cannot use both parameters in the same command.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="24920-154">-Name</span><span class="sxs-lookup"><span data-stu-id="24920-154">-Name</span></span>
+
+<span data-ttu-id="24920-155">指定要尋找之腳本的名稱陣列。</span><span class="sxs-lookup"><span data-stu-id="24920-155">Specifies an array of names of scripts to find.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -353,9 +353,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="43b6b-156">-Proxy</span><span class="sxs-lookup"><span data-stu-id="43b6b-156">-Proxy</span></span>
+### <span data-ttu-id="24920-156">-Proxy</span><span class="sxs-lookup"><span data-stu-id="24920-156">-Proxy</span></span>
 
-<span data-ttu-id="43b6b-157">指定要求的 proxy 伺服器，而不是直接連接到網際網路資源。</span><span class="sxs-lookup"><span data-stu-id="43b6b-157">Specifies a proxy server for the request, rather than connecting directly to the Internet resource.</span></span>
+<span data-ttu-id="24920-157">指定要求的 proxy 伺服器，而不是直接連接到網際網路資源。</span><span class="sxs-lookup"><span data-stu-id="24920-157">Specifies a proxy server for the request, rather than connecting directly to the Internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -369,9 +369,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-158">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="43b6b-158">-ProxyCredential</span></span>
+### <span data-ttu-id="24920-158">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="24920-158">-ProxyCredential</span></span>
 
-<span data-ttu-id="43b6b-159">指定具有使用 **Proxy** 參數所指定 Proxy 伺服器之權限的使用者帳戶。</span><span class="sxs-lookup"><span data-stu-id="43b6b-159">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
+<span data-ttu-id="24920-159">指定具有使用 **Proxy** 參數所指定 Proxy 伺服器之權限的使用者帳戶。</span><span class="sxs-lookup"><span data-stu-id="24920-159">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -385,9 +385,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-160">-Repository</span><span class="sxs-lookup"><span data-stu-id="43b6b-160">-Repository</span></span>
+### <span data-ttu-id="24920-160">-Repository</span><span class="sxs-lookup"><span data-stu-id="24920-160">-Repository</span></span>
 
-<span data-ttu-id="43b6b-161">指定由執行 PSRepository 註冊之存放庫的易記名稱。</span><span class="sxs-lookup"><span data-stu-id="43b6b-161">Specifies the friendly name of a repository that has been registered by running Register-PSRepository.</span></span>
+<span data-ttu-id="24920-161">指定由執行 PSRepository 註冊之存放庫的易記名稱。</span><span class="sxs-lookup"><span data-stu-id="24920-161">Specifies the friendly name of a repository that has been registered by running Register-PSRepository.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -401,9 +401,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-162">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="43b6b-162">-RequiredVersion</span></span>
+### <span data-ttu-id="24920-162">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="24920-162">-RequiredVersion</span></span>
 
-<span data-ttu-id="43b6b-163">指定要尋找之腳本的確切版本號碼。</span><span class="sxs-lookup"><span data-stu-id="43b6b-163">Specifies the exact version number of the script to find.</span></span>
+<span data-ttu-id="24920-163">指定要尋找之腳本的確切版本號碼。</span><span class="sxs-lookup"><span data-stu-id="24920-163">Specifies the exact version number of the script to find.</span></span>
 
 ```yaml
 Type: System.String
@@ -417,9 +417,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-164">-Tag</span><span class="sxs-lookup"><span data-stu-id="43b6b-164">-Tag</span></span>
+### <span data-ttu-id="24920-164">-Tag</span><span class="sxs-lookup"><span data-stu-id="24920-164">-Tag</span></span>
 
-<span data-ttu-id="43b6b-165">指定標記的陣列。</span><span class="sxs-lookup"><span data-stu-id="43b6b-165">Specifies an array of tags.</span></span>
+<span data-ttu-id="24920-165">指定標記的陣列。</span><span class="sxs-lookup"><span data-stu-id="24920-165">Specifies an array of tags.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -433,35 +433,41 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="43b6b-166">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="43b6b-166">CommonParameters</span></span>
+### <span data-ttu-id="24920-166">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="24920-166">CommonParameters</span></span>
 
-<span data-ttu-id="43b6b-167">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="43b6b-167">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="43b6b-168">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="43b6b-168">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="24920-167">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="24920-167">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="24920-168">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="24920-168">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="43b6b-169">輸入</span><span class="sxs-lookup"><span data-stu-id="43b6b-169">INPUTS</span></span>
+## <span data-ttu-id="24920-169">輸入</span><span class="sxs-lookup"><span data-stu-id="24920-169">INPUTS</span></span>
 
-### <span data-ttu-id="43b6b-170">System.String[]</span><span class="sxs-lookup"><span data-stu-id="43b6b-170">System.String[]</span></span>
+### <span data-ttu-id="24920-170">System.String[]</span><span class="sxs-lookup"><span data-stu-id="24920-170">System.String[]</span></span>
 
-### <span data-ttu-id="43b6b-171">System.String</span><span class="sxs-lookup"><span data-stu-id="43b6b-171">System.String</span></span>
+### <span data-ttu-id="24920-171">System.String</span><span class="sxs-lookup"><span data-stu-id="24920-171">System.String</span></span>
 
-### <span data-ttu-id="43b6b-172">System.Uri</span><span class="sxs-lookup"><span data-stu-id="43b6b-172">System.Uri</span></span>
+### <span data-ttu-id="24920-172">System.Uri</span><span class="sxs-lookup"><span data-stu-id="24920-172">System.Uri</span></span>
 
-### <span data-ttu-id="43b6b-173">System.Management.Automation.PSCredential</span><span class="sxs-lookup"><span data-stu-id="43b6b-173">System.Management.Automation.PSCredential</span></span>
+### <span data-ttu-id="24920-173">System.Management.Automation.PSCredential</span><span class="sxs-lookup"><span data-stu-id="24920-173">System.Management.Automation.PSCredential</span></span>
 
-## <span data-ttu-id="43b6b-174">輸出</span><span class="sxs-lookup"><span data-stu-id="43b6b-174">OUTPUTS</span></span>
+## <span data-ttu-id="24920-174">輸出</span><span class="sxs-lookup"><span data-stu-id="24920-174">OUTPUTS</span></span>
 
-### <span data-ttu-id="43b6b-175">PSRepositoryItemInfo</span><span class="sxs-lookup"><span data-stu-id="43b6b-175">PSRepositoryItemInfo</span></span>
+### <span data-ttu-id="24920-175">PSRepositoryItemInfo</span><span class="sxs-lookup"><span data-stu-id="24920-175">PSRepositoryItemInfo</span></span>
 
-## <span data-ttu-id="43b6b-176">注意</span><span class="sxs-lookup"><span data-stu-id="43b6b-176">NOTES</span></span>
+## <span data-ttu-id="24920-176">注意</span><span class="sxs-lookup"><span data-stu-id="24920-176">NOTES</span></span>
 
-## <span data-ttu-id="43b6b-177">相關連結</span><span class="sxs-lookup"><span data-stu-id="43b6b-177">RELATED LINKS</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="24920-177">從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。</span><span class="sxs-lookup"><span data-stu-id="24920-177">As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS) versions 1.0 and 1.1.</span></span> <span data-ttu-id="24920-178">如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。</span><span class="sxs-lookup"><span data-stu-id="24920-178">If you are not using TLS 1.2 or higher, you will receive an error when trying to access the PowerShell Gallery.</span></span> <span data-ttu-id="24920-179">使用下列命令，以確保您使用的是 TLS 1.2：</span><span class="sxs-lookup"><span data-stu-id="24920-179">Use the following command to ensure you are using TLS 1.2:</span></span>
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> <span data-ttu-id="24920-180">如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。</span><span class="sxs-lookup"><span data-stu-id="24920-180">For more information, see the [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the PowerShell blog.</span></span>
 
-[<span data-ttu-id="43b6b-178">Install-Script</span><span class="sxs-lookup"><span data-stu-id="43b6b-178">Install-Script</span></span>](Install-Script.md)
+## <span data-ttu-id="24920-181">相關連結</span><span class="sxs-lookup"><span data-stu-id="24920-181">RELATED LINKS</span></span>
 
-[<span data-ttu-id="43b6b-179">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="43b6b-179">Publish-Script</span></span>](Publish-Script.md)
+[<span data-ttu-id="24920-182">Install-Script</span><span class="sxs-lookup"><span data-stu-id="24920-182">Install-Script</span></span>](Install-Script.md)
 
-[<span data-ttu-id="43b6b-180">Save-Script</span><span class="sxs-lookup"><span data-stu-id="43b6b-180">Save-Script</span></span>](Save-Script.md)
+[<span data-ttu-id="24920-183">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="24920-183">Publish-Script</span></span>](Publish-Script.md)
 
-[<span data-ttu-id="43b6b-181">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="43b6b-181">Uninstall-Script</span></span>](Uninstall-Script.md)
+[<span data-ttu-id="24920-184">Save-Script</span><span class="sxs-lookup"><span data-stu-id="24920-184">Save-Script</span></span>](Save-Script.md)
 
-[<span data-ttu-id="43b6b-182">Update-Script</span><span class="sxs-lookup"><span data-stu-id="43b6b-182">Update-Script</span></span>](Update-Script.md)
+[<span data-ttu-id="24920-185">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="24920-185">Uninstall-Script</span></span>](Uninstall-Script.md)
 
+[<span data-ttu-id="24920-186">Update-Script</span><span class="sxs-lookup"><span data-stu-id="24920-186">Update-Script</span></span>](Update-Script.md)

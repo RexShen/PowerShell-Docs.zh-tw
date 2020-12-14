@@ -7,21 +7,21 @@ ms.date: 11/11/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/save-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Save-Module
-ms.openlocfilehash: 88ce556a366e67a911bf32eb5c13161a543f103f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 9aff0ff794bea42da7690a77357c1d76f747a004
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204107"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892152"
 ---
-# <span data-ttu-id="b69cb-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="b69cb-103">Save-Module</span></span>
+# <span data-ttu-id="ae5f6-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="ae5f6-103">Save-Module</span></span>
 
-## <span data-ttu-id="b69cb-104">概要</span><span class="sxs-lookup"><span data-stu-id="b69cb-104">SYNOPSIS</span></span>
-<span data-ttu-id="b69cb-105">將模組及其相依性儲存在本機電腦上，但不會安裝模組。</span><span class="sxs-lookup"><span data-stu-id="b69cb-105">Saves a module and its dependencies on the local computer but doesn't install the module.</span></span>
+## <span data-ttu-id="ae5f6-104">概要</span><span class="sxs-lookup"><span data-stu-id="ae5f6-104">SYNOPSIS</span></span>
+<span data-ttu-id="ae5f6-105">將模組及其相依性儲存在本機電腦上，但不會安裝模組。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-105">Saves a module and its dependencies on the local computer but doesn't install the module.</span></span>
 
-## <span data-ttu-id="b69cb-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="b69cb-106">SYNTAX</span></span>
+## <span data-ttu-id="ae5f6-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ae5f6-106">SYNTAX</span></span>
 
-### <span data-ttu-id="b69cb-107">NameAndPathParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="b69cb-107">NameAndPathParameterSet (Default)</span></span>
+### <span data-ttu-id="ae5f6-107">NameAndPathParameterSet (預設) </span><span class="sxs-lookup"><span data-stu-id="ae5f6-107">NameAndPathParameterSet (Default)</span></span>
 
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
@@ -30,7 +30,7 @@ Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
  [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b69cb-108">NameAndLiteralPathParameterSet</span><span class="sxs-lookup"><span data-stu-id="b69cb-108">NameAndLiteralPathParameterSet</span></span>
+### <span data-ttu-id="ae5f6-108">NameAndLiteralPathParameterSet</span><span class="sxs-lookup"><span data-stu-id="ae5f6-108">NameAndLiteralPathParameterSet</span></span>
 
 ```
 Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <String>]
@@ -39,7 +39,7 @@ Save-Module [-Name] <String[]> [-MinimumVersion <String>] [-MaximumVersion <Stri
  [-AcceptLicense] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b69cb-109">InputObjectAndLiteralPathParameterSet</span><span class="sxs-lookup"><span data-stu-id="b69cb-109">InputObjectAndLiteralPathParameterSet</span></span>
+### <span data-ttu-id="ae5f6-109">InputObjectAndLiteralPathParameterSet</span><span class="sxs-lookup"><span data-stu-id="ae5f6-109">InputObjectAndLiteralPathParameterSet</span></span>
 
 ```
 Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
@@ -47,7 +47,7 @@ Save-Module [-InputObject] <PSObject[]> -LiteralPath <String> [-Proxy <Uri>]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="b69cb-110">InputObjectAndPathParameterSet</span><span class="sxs-lookup"><span data-stu-id="b69cb-110">InputObjectAndPathParameterSet</span></span>
+### <span data-ttu-id="ae5f6-110">InputObjectAndPathParameterSet</span><span class="sxs-lookup"><span data-stu-id="ae5f6-110">InputObjectAndPathParameterSet</span></span>
 
 ```
 Save-Module [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
@@ -55,18 +55,18 @@ Save-Module [-InputObject] <PSObject[]> [-Path] <String> [-Proxy <Uri>]
  [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="b69cb-111">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="b69cb-111">DESCRIPTION</span></span>
+## <span data-ttu-id="ae5f6-111">DESCRIPTION</span><span class="sxs-lookup"><span data-stu-id="ae5f6-111">DESCRIPTION</span></span>
 
-<span data-ttu-id="b69cb-112">此 `Save-Module` Cmdlet 會從已註冊的存放庫下載模組和任何相依性。</span><span class="sxs-lookup"><span data-stu-id="b69cb-112">The `Save-Module` cmdlet downloads a module and any dependencies from a registered repository.</span></span>
-<span data-ttu-id="b69cb-113">`Save-Module` 下載並儲存模組的最新版本。</span><span class="sxs-lookup"><span data-stu-id="b69cb-113">`Save-Module` downloads and saves the most current version of a module.</span></span> <span data-ttu-id="b69cb-114">檔案會儲存至本機電腦上的指定路徑。</span><span class="sxs-lookup"><span data-stu-id="b69cb-114">The files are saved to a specified path on the local computer.</span></span> <span data-ttu-id="b69cb-115">未安裝此模組，但內容可供系統管理員進行檢查。</span><span class="sxs-lookup"><span data-stu-id="b69cb-115">The module isn't installed, but the contents are available for inspection by an administrator.</span></span> <span data-ttu-id="b69cb-116">然後可以將儲存的模組複製到 `$env:PSModulePath` 離線電腦的適當位置。</span><span class="sxs-lookup"><span data-stu-id="b69cb-116">The saved module can then be copied into the appropriate `$env:PSModulePath` location of the offline machine.</span></span>
+<span data-ttu-id="ae5f6-112">此 `Save-Module` Cmdlet 會從已註冊的存放庫下載模組和任何相依性。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-112">The `Save-Module` cmdlet downloads a module and any dependencies from a registered repository.</span></span>
+<span data-ttu-id="ae5f6-113">`Save-Module` 下載並儲存模組的最新版本。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-113">`Save-Module` downloads and saves the most current version of a module.</span></span> <span data-ttu-id="ae5f6-114">檔案會儲存至本機電腦上的指定路徑。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-114">The files are saved to a specified path on the local computer.</span></span> <span data-ttu-id="ae5f6-115">未安裝此模組，但內容可供系統管理員進行檢查。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-115">The module isn't installed, but the contents are available for inspection by an administrator.</span></span> <span data-ttu-id="ae5f6-116">然後可以將儲存的模組複製到 `$env:PSModulePath` 離線電腦的適當位置。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-116">The saved module can then be copied into the appropriate `$env:PSModulePath` location of the offline machine.</span></span>
 
-<span data-ttu-id="b69cb-117">`Get-PSRepository` 顯示本機電腦的已註冊存放庫。</span><span class="sxs-lookup"><span data-stu-id="b69cb-117">`Get-PSRepository` displays the local computer's registered repositories.</span></span> <span data-ttu-id="b69cb-118">您可以使用 `Find-Module` Cmdlet 來搜尋已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="b69cb-118">You can use the `Find-Module` cmdlet to search registered repositories.</span></span>
+<span data-ttu-id="ae5f6-117">`Get-PSRepository` 顯示本機電腦的已註冊存放庫。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-117">`Get-PSRepository` displays the local computer's registered repositories.</span></span> <span data-ttu-id="ae5f6-118">您可以使用 `Find-Module` Cmdlet 來搜尋已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-118">You can use the `Find-Module` cmdlet to search registered repositories.</span></span>
 
-## <span data-ttu-id="b69cb-119">範例</span><span class="sxs-lookup"><span data-stu-id="b69cb-119">EXAMPLES</span></span>
+## <span data-ttu-id="ae5f6-119">範例</span><span class="sxs-lookup"><span data-stu-id="ae5f6-119">EXAMPLES</span></span>
 
-### <span data-ttu-id="b69cb-120">範例1：儲存模組</span><span class="sxs-lookup"><span data-stu-id="b69cb-120">Example 1: Save a module</span></span>
+### <span data-ttu-id="ae5f6-120">範例1：儲存模組</span><span class="sxs-lookup"><span data-stu-id="ae5f6-120">Example 1: Save a module</span></span>
 
-<span data-ttu-id="b69cb-121">在此範例中，模組和其相依性會儲存至本機電腦。</span><span class="sxs-lookup"><span data-stu-id="b69cb-121">In this example, a module and its dependencies are saved to the local computer.</span></span>
+<span data-ttu-id="ae5f6-121">在此範例中，模組和其相依性會儲存至本機電腦。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-121">In this example, a module and its dependencies are saved to the local computer.</span></span>
 
 ```powershell
 Save-Module -Name PowerShellGet -Path C:\Test\Modules -Repository PSGallery
@@ -82,11 +82,11 @@ d-----         7/1/2019     13:31                PackageManagement
 d-----         7/1/2019     13:31                PowerShellGet
 ```
 
-<span data-ttu-id="b69cb-122">`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet** ）。</span><span class="sxs-lookup"><span data-stu-id="b69cb-122">`Save-Module` uses the **Name** parameter to specify the module, **PowerShellGet** .</span></span> <span data-ttu-id="b69cb-123">**Path** 參數指定要儲存已下載模組的位置。</span><span class="sxs-lookup"><span data-stu-id="b69cb-123">The **Path** parameter specifies where to store the downloaded module.</span></span> <span data-ttu-id="b69cb-124">存放 **庫** 參數會指定已註冊的存放庫 **PSGallery** 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-124">The **Repository** parameter specifies a registered repository, **PSGallery** .</span></span> <span data-ttu-id="b69cb-125">下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。</span><span class="sxs-lookup"><span data-stu-id="b69cb-125">After the download is finished, `Get-ChildItem` displays the contents of **Path** where the files are stored.</span></span>
+<span data-ttu-id="ae5f6-122">`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet**）。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-122">`Save-Module` uses the **Name** parameter to specify the module, **PowerShellGet**.</span></span> <span data-ttu-id="ae5f6-123">**Path** 參數指定要儲存已下載模組的位置。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-123">The **Path** parameter specifies where to store the downloaded module.</span></span> <span data-ttu-id="ae5f6-124">存放 **庫** 參數會指定已註冊的存放庫 **PSGallery**。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-124">The **Repository** parameter specifies a registered repository, **PSGallery**.</span></span> <span data-ttu-id="ae5f6-125">下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-125">After the download is finished, `Get-ChildItem` displays the contents of **Path** where the files are stored.</span></span>
 
-### <span data-ttu-id="b69cb-126">範例2：儲存特定版本的模組</span><span class="sxs-lookup"><span data-stu-id="b69cb-126">Example 2: Save a specific version of a module</span></span>
+### <span data-ttu-id="ae5f6-126">範例2：儲存特定版本的模組</span><span class="sxs-lookup"><span data-stu-id="ae5f6-126">Example 2: Save a specific version of a module</span></span>
 
-<span data-ttu-id="b69cb-127">此範例示範如何使用參數（例如 **MaximumVersion** 或 **RequiredVersion** ）來指定模組版本。</span><span class="sxs-lookup"><span data-stu-id="b69cb-127">This example shows how to use a parameter such as **MaximumVersion** , or **RequiredVersion** to specify a module version.</span></span>
+<span data-ttu-id="ae5f6-127">此範例示範如何使用參數（例如 **MaximumVersion** 或 **RequiredVersion** ）來指定模組版本。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-127">This example shows how to use a parameter such as **MaximumVersion**, or **RequiredVersion** to specify a module version.</span></span>
 
 ```powershell
 Save-Module -Name PowerShellGet -Path C:\Test\Modules -Repository PSGallery -MaximumVersion 2.1.0
@@ -101,11 +101,11 @@ Mode                LastWriteTime         Length Name
 d-----         7/1/2019     13:40                2.1.0
 ```
 
-<span data-ttu-id="b69cb-128">`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet** ）。</span><span class="sxs-lookup"><span data-stu-id="b69cb-128">`Save-Module` uses the **Name** parameter to specify the module, **PowerShellGet** .</span></span> <span data-ttu-id="b69cb-129">**Path** 參數指定要儲存已下載模組的位置。</span><span class="sxs-lookup"><span data-stu-id="b69cb-129">The **Path** parameter specifies where to store the downloaded module.</span></span> <span data-ttu-id="b69cb-130">存放 **庫** 參數會指定已註冊的存放庫 **PSGallery** 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-130">The **Repository** parameter specifies a registered repository, **PSGallery** .</span></span> <span data-ttu-id="b69cb-131">**MaximumVersion** 指定下載並儲存版本 **2.1.0** 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-131">**MaximumVersion** specifies that version **2.1.0** is downloaded and saved.</span></span> <span data-ttu-id="b69cb-132">下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。</span><span class="sxs-lookup"><span data-stu-id="b69cb-132">After the download is finished, `Get-ChildItem` displays the contents of **Path** where the files are stored.</span></span>
+<span data-ttu-id="ae5f6-128">`Save-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet**）。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-128">`Save-Module` uses the **Name** parameter to specify the module, **PowerShellGet**.</span></span> <span data-ttu-id="ae5f6-129">**Path** 參數指定要儲存已下載模組的位置。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-129">The **Path** parameter specifies where to store the downloaded module.</span></span> <span data-ttu-id="ae5f6-130">存放 **庫** 參數會指定已註冊的存放庫 **PSGallery**。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-130">The **Repository** parameter specifies a registered repository, **PSGallery**.</span></span> <span data-ttu-id="ae5f6-131">**MaximumVersion** 指定下載並儲存版本 **2.1.0** 。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-131">**MaximumVersion** specifies that version **2.1.0** is downloaded and saved.</span></span> <span data-ttu-id="ae5f6-132">下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-132">After the download is finished, `Get-ChildItem` displays the contents of **Path** where the files are stored.</span></span>
 
-### <span data-ttu-id="b69cb-133">範例3：尋找並儲存特定版本的模組</span><span class="sxs-lookup"><span data-stu-id="b69cb-133">Example 3: Find and save a specific version of a module</span></span>
+### <span data-ttu-id="ae5f6-133">範例3：尋找並儲存特定版本的模組</span><span class="sxs-lookup"><span data-stu-id="ae5f6-133">Example 3: Find and save a specific version of a module</span></span>
 
-<span data-ttu-id="b69cb-134">在此範例中，在存放庫中找到必要的模組版本，並儲存到本機電腦。</span><span class="sxs-lookup"><span data-stu-id="b69cb-134">In this example, a required module version is found in the repository and saved to the local computer.</span></span>
+<span data-ttu-id="ae5f6-134">在此範例中，在存放庫中找到必要的模組版本，並儲存到本機電腦。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-134">In this example, a required module version is found in the repository and saved to the local computer.</span></span>
 
 ```powershell
 Find-Module -Name PowerShellGet -Repository PSGallery -RequiredVersion 1.6.5 |
@@ -121,15 +121,15 @@ Mode                LastWriteTime         Length Name
 d-----         7/1/2019     14:04                1.6.5
 ```
 
-<span data-ttu-id="b69cb-135">`Find-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet** ）。</span><span class="sxs-lookup"><span data-stu-id="b69cb-135">`Find-Module` uses the **Name** parameter to specify the module, **PowerShellGet** .</span></span> <span data-ttu-id="b69cb-136">存放 **庫** 參數會指定已註冊的存放庫 **PSGallery** 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-136">The **Repository** parameter specifies a registered repository, **PSGallery** .</span></span> <span data-ttu-id="b69cb-137">**RequiredVersion** 指定版本 **1.6.5** 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-137">**RequiredVersion** specifies version **1.6.5** .</span></span>
+<span data-ttu-id="ae5f6-135">`Find-Module` 使用 **Name** 參數來指定模組（ **PowerShellGet**）。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-135">`Find-Module` uses the **Name** parameter to specify the module, **PowerShellGet**.</span></span> <span data-ttu-id="ae5f6-136">存放 **庫** 參數會指定已註冊的存放庫 **PSGallery**。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-136">The **Repository** parameter specifies a registered repository, **PSGallery**.</span></span> <span data-ttu-id="ae5f6-137">**RequiredVersion** 指定版本 **1.6.5**。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-137">**RequiredVersion** specifies version **1.6.5**.</span></span>
 
-<span data-ttu-id="b69cb-138">物件會向下傳送到管線 `Save-Module` 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-138">The object is sent down the pipeline to `Save-Module`.</span></span> <span data-ttu-id="b69cb-139">**Path** 參數指定要儲存已下載模組的位置。</span><span class="sxs-lookup"><span data-stu-id="b69cb-139">The **Path** parameter specifies where to store the downloaded module.</span></span> <span data-ttu-id="b69cb-140">下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。</span><span class="sxs-lookup"><span data-stu-id="b69cb-140">After the download is finished, `Get-ChildItem` displays the contents of **Path** where the files are stored.</span></span>
+<span data-ttu-id="ae5f6-138">物件會向下傳送到管線 `Save-Module` 。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-138">The object is sent down the pipeline to `Save-Module`.</span></span> <span data-ttu-id="ae5f6-139">**Path** 參數指定要儲存已下載模組的位置。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-139">The **Path** parameter specifies where to store the downloaded module.</span></span> <span data-ttu-id="ae5f6-140">下載完成之後，會 `Get-ChildItem` 顯示儲存檔案的 **路徑** 內容。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-140">After the download is finished, `Get-ChildItem` displays the contents of **Path** where the files are stored.</span></span>
 
-## <span data-ttu-id="b69cb-141">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b69cb-141">PARAMETERS</span></span>
+## <span data-ttu-id="ae5f6-141">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ae5f6-141">PARAMETERS</span></span>
 
-### <span data-ttu-id="b69cb-142">-AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="b69cb-142">-AcceptLicense</span></span>
+### <span data-ttu-id="ae5f6-142">-AcceptLicense</span><span class="sxs-lookup"><span data-stu-id="ae5f6-142">-AcceptLicense</span></span>
 
-<span data-ttu-id="b69cb-143">如果套件需要，則自動接受授權合約。</span><span class="sxs-lookup"><span data-stu-id="b69cb-143">Automatically accept the license agreement if the package requires it.</span></span>
+<span data-ttu-id="ae5f6-143">如果套件需要，則自動接受授權合約。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-143">Automatically accept the license agreement if the package requires it.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -143,9 +143,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-144">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="b69cb-144">-AllowPrerelease</span></span>
+### <span data-ttu-id="ae5f6-144">-AllowPrerelease</span><span class="sxs-lookup"><span data-stu-id="ae5f6-144">-AllowPrerelease</span></span>
 
-<span data-ttu-id="b69cb-145">可讓您儲存標記為發行前版本的模組。</span><span class="sxs-lookup"><span data-stu-id="b69cb-145">Allows you to save a module marked as a prerelease.</span></span>
+<span data-ttu-id="ae5f6-145">可讓您儲存標記為發行前版本的模組。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-145">Allows you to save a module marked as a prerelease.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,9 +159,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-146">-Confirm</span><span class="sxs-lookup"><span data-stu-id="b69cb-146">-Confirm</span></span>
+### <span data-ttu-id="ae5f6-146">-Confirm</span><span class="sxs-lookup"><span data-stu-id="ae5f6-146">-Confirm</span></span>
 
-<span data-ttu-id="b69cb-147">在執行之前提示您確認 `Save-Module` 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-147">Prompts you for confirmation before running the `Save-Module`.</span></span>
+<span data-ttu-id="ae5f6-147">在執行之前提示您確認 `Save-Module` 。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-147">Prompts you for confirmation before running the `Save-Module`.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,9 +175,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-148">-Credential</span><span class="sxs-lookup"><span data-stu-id="b69cb-148">-Credential</span></span>
+### <span data-ttu-id="ae5f6-148">-Credential</span><span class="sxs-lookup"><span data-stu-id="ae5f6-148">-Credential</span></span>
 
-<span data-ttu-id="b69cb-149">指定有權儲存模組的使用者帳戶。</span><span class="sxs-lookup"><span data-stu-id="b69cb-149">Specifies a user account that has rights to save a module.</span></span>
+<span data-ttu-id="ae5f6-149">指定有權儲存模組的使用者帳戶。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-149">Specifies a user account that has rights to save a module.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -191,9 +191,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-150">-Force</span><span class="sxs-lookup"><span data-stu-id="b69cb-150">-Force</span></span>
+### <span data-ttu-id="ae5f6-150">-Force</span><span class="sxs-lookup"><span data-stu-id="ae5f6-150">-Force</span></span>
 
-<span data-ttu-id="b69cb-151">強制 `Save-Module` 執行而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="b69cb-151">Forces `Save-Module` to run without asking for user confirmation.</span></span>
+<span data-ttu-id="ae5f6-151">強制 `Save-Module` 執行而不要求使用者確認。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-151">Forces `Save-Module` to run without asking for user confirmation.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -207,9 +207,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-152">-InputObject</span><span class="sxs-lookup"><span data-stu-id="b69cb-152">-InputObject</span></span>
+### <span data-ttu-id="ae5f6-152">-InputObject</span><span class="sxs-lookup"><span data-stu-id="ae5f6-152">-InputObject</span></span>
 
-<span data-ttu-id="b69cb-153">接受 **PSRepositoryItemInfo** 物件。</span><span class="sxs-lookup"><span data-stu-id="b69cb-153">Accepts a **PSRepositoryItemInfo** object.</span></span> <span data-ttu-id="b69cb-154">例如，輸出 `Find-Module` 到變數，並使用該變數作為 **InputObject** 引數。</span><span class="sxs-lookup"><span data-stu-id="b69cb-154">For example, output `Find-Module` to a variable and use that variable as the **InputObject** argument.</span></span>
+<span data-ttu-id="ae5f6-153">接受 **PSRepositoryItemInfo** 物件。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-153">Accepts a **PSRepositoryItemInfo** object.</span></span> <span data-ttu-id="ae5f6-154">例如，輸出 `Find-Module` 到變數，並使用該變數作為 **InputObject** 引數。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-154">For example, output `Find-Module` to a variable and use that variable as the **InputObject** argument.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject[]
@@ -223,9 +223,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-155">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="b69cb-155">-LiteralPath</span></span>
+### <span data-ttu-id="ae5f6-155">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="ae5f6-155">-LiteralPath</span></span>
 
-<span data-ttu-id="b69cb-156">指定一個或多個位置的路徑。</span><span class="sxs-lookup"><span data-stu-id="b69cb-156">Specifies a path to one or more locations.</span></span> <span data-ttu-id="b69cb-157">**LiteralPath** 參數的值會完全依照輸入的方式使用。</span><span class="sxs-lookup"><span data-stu-id="b69cb-157">The value of the **LiteralPath** parameter is used exactly as entered.</span></span> <span data-ttu-id="b69cb-158">沒有字元會被視為萬用字元。</span><span class="sxs-lookup"><span data-stu-id="b69cb-158">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="b69cb-159">如果路徑包含 escape 字元，請用單引號括住。</span><span class="sxs-lookup"><span data-stu-id="b69cb-159">If the path includes escape characters, enclose them in single quotation marks.</span></span> <span data-ttu-id="b69cb-160">PowerShell 不會將以單引號括住的任何字元視為 escape 序列來解讀。</span><span class="sxs-lookup"><span data-stu-id="b69cb-160">PowerShell does not interpret any characters enclosed in single quotation marks as escape sequences.</span></span>
+<span data-ttu-id="ae5f6-156">指定一個或多個位置的路徑。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-156">Specifies a path to one or more locations.</span></span> <span data-ttu-id="ae5f6-157">**LiteralPath** 參數的值會完全依照輸入的方式使用。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-157">The value of the **LiteralPath** parameter is used exactly as entered.</span></span> <span data-ttu-id="ae5f6-158">沒有字元會被視為萬用字元。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-158">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="ae5f6-159">如果路徑包含 escape 字元，請用單引號括住。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-159">If the path includes escape characters, enclose them in single quotation marks.</span></span> <span data-ttu-id="ae5f6-160">PowerShell 不會將以單引號括住的任何字元視為 escape 序列來解讀。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-160">PowerShell does not interpret any characters enclosed in single quotation marks as escape sequences.</span></span>
 
 ```yaml
 Type: System.String
@@ -239,25 +239,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-161">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="b69cb-161">-MaximumVersion</span></span>
+### <span data-ttu-id="ae5f6-161">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="ae5f6-161">-MaximumVersion</span></span>
 
-<span data-ttu-id="b69cb-162">指定要儲存之模組的最大或最新版本。</span><span class="sxs-lookup"><span data-stu-id="b69cb-162">Specifies the maximum, or newest, version of the module to save.</span></span> <span data-ttu-id="b69cb-163">在相同的命令中不能使用 **MaximumVersion** 和 **RequiredVersion** 參數。</span><span class="sxs-lookup"><span data-stu-id="b69cb-163">The **MaximumVersion** and **RequiredVersion** parameters can't be used in the same command.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="b69cb-164">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="b69cb-164">-MinimumVersion</span></span>
-
-<span data-ttu-id="b69cb-165">指定要儲存之單一模組的最小版本。</span><span class="sxs-lookup"><span data-stu-id="b69cb-165">Specifies the minimum version of a single module to save.</span></span> <span data-ttu-id="b69cb-166">如果您嘗試安裝多個模組，就無法新增此參數。</span><span class="sxs-lookup"><span data-stu-id="b69cb-166">You cannot add this parameter if you are attempting to install multiple modules.</span></span> <span data-ttu-id="b69cb-167">**MinimumVersion** 和 **RequiredVersion** 參數無法在相同的命令中使用。</span><span class="sxs-lookup"><span data-stu-id="b69cb-167">The **MinimumVersion** and **RequiredVersion** parameters can't be used in the same command.</span></span>
+<span data-ttu-id="ae5f6-162">指定要儲存之模組的最大或最新版本。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-162">Specifies the maximum, or newest, version of the module to save.</span></span> <span data-ttu-id="ae5f6-163">在相同的命令中不能使用 **MaximumVersion** 和 **RequiredVersion** 參數。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-163">The **MaximumVersion** and **RequiredVersion** parameters can't be used in the same command.</span></span>
 
 ```yaml
 Type: System.String
@@ -271,9 +255,25 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-168">-Name</span><span class="sxs-lookup"><span data-stu-id="b69cb-168">-Name</span></span>
+### <span data-ttu-id="ae5f6-164">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="ae5f6-164">-MinimumVersion</span></span>
 
-<span data-ttu-id="b69cb-169">指定要儲存的模組名稱陣列。</span><span class="sxs-lookup"><span data-stu-id="b69cb-169">Specifies an array of names of modules to save.</span></span>
+<span data-ttu-id="ae5f6-165">指定要儲存之單一模組的最小版本。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-165">Specifies the minimum version of a single module to save.</span></span> <span data-ttu-id="ae5f6-166">如果您嘗試安裝多個模組，就無法新增此參數。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-166">You cannot add this parameter if you are attempting to install multiple modules.</span></span> <span data-ttu-id="ae5f6-167">**MinimumVersion** 和 **RequiredVersion** 參數無法在相同的命令中使用。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-167">The **MinimumVersion** and **RequiredVersion** parameters can't be used in the same command.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NameAndPathParameterSet, NameAndLiteralPathParameterSet
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ae5f6-168">-Name</span><span class="sxs-lookup"><span data-stu-id="ae5f6-168">-Name</span></span>
+
+<span data-ttu-id="ae5f6-169">指定要儲存的模組名稱陣列。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-169">Specifies an array of names of modules to save.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -287,9 +287,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-170">-Path</span><span class="sxs-lookup"><span data-stu-id="b69cb-170">-Path</span></span>
+### <span data-ttu-id="ae5f6-170">-Path</span><span class="sxs-lookup"><span data-stu-id="ae5f6-170">-Path</span></span>
 
-<span data-ttu-id="b69cb-171">指定本機電腦上儲存已儲存模組的位置。</span><span class="sxs-lookup"><span data-stu-id="b69cb-171">Specifies the location on the local computer to store a saved module.</span></span> <span data-ttu-id="b69cb-172">接受萬用字元。</span><span class="sxs-lookup"><span data-stu-id="b69cb-172">Accepts wildcard characters.</span></span>
+<span data-ttu-id="ae5f6-171">指定本機電腦上儲存已儲存模組的位置。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-171">Specifies the location on the local computer to store a saved module.</span></span> <span data-ttu-id="ae5f6-172">接受萬用字元。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-172">Accepts wildcard characters.</span></span>
 
 ```yaml
 Type: System.String
@@ -303,9 +303,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="b69cb-173">-Proxy</span><span class="sxs-lookup"><span data-stu-id="b69cb-173">-Proxy</span></span>
+### <span data-ttu-id="ae5f6-173">-Proxy</span><span class="sxs-lookup"><span data-stu-id="ae5f6-173">-Proxy</span></span>
 
-<span data-ttu-id="b69cb-174">指定要求的 proxy 伺服器，而不是直接連接到網際網路資源。</span><span class="sxs-lookup"><span data-stu-id="b69cb-174">Specifies a proxy server for the request, rather than connecting directly to the internet resource.</span></span>
+<span data-ttu-id="ae5f6-174">指定要求的 proxy 伺服器，而不是直接連接到網際網路資源。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-174">Specifies a proxy server for the request, rather than connecting directly to the internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -319,9 +319,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-175">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="b69cb-175">-ProxyCredential</span></span>
+### <span data-ttu-id="ae5f6-175">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="ae5f6-175">-ProxyCredential</span></span>
 
-<span data-ttu-id="b69cb-176">指定具有使用 **Proxy** 參數所指定 Proxy 伺服器之權限的使用者帳戶。</span><span class="sxs-lookup"><span data-stu-id="b69cb-176">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
+<span data-ttu-id="ae5f6-176">指定具有使用 **Proxy** 參數所指定 Proxy 伺服器之權限的使用者帳戶。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-176">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -335,9 +335,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-177">-Repository</span><span class="sxs-lookup"><span data-stu-id="b69cb-177">-Repository</span></span>
+### <span data-ttu-id="ae5f6-177">-Repository</span><span class="sxs-lookup"><span data-stu-id="ae5f6-177">-Repository</span></span>
 
-<span data-ttu-id="b69cb-178">指定由執行註冊之存放庫的易記名稱 `Register-PSRepository` 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-178">Specifies the friendly name of a repository that has been registered by running `Register-PSRepository`.</span></span> <span data-ttu-id="b69cb-179">用 `Get-PSRepository` 來顯示已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="b69cb-179">Use `Get-PSRepository` to display registered repositories.</span></span>
+<span data-ttu-id="ae5f6-178">指定由執行註冊之存放庫的易記名稱 `Register-PSRepository` 。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-178">Specifies the friendly name of a repository that has been registered by running `Register-PSRepository`.</span></span> <span data-ttu-id="ae5f6-179">用 `Get-PSRepository` 來顯示已註冊的存放庫。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-179">Use `Get-PSRepository` to display registered repositories.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -351,9 +351,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-180">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="b69cb-180">-RequiredVersion</span></span>
+### <span data-ttu-id="ae5f6-180">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="ae5f6-180">-RequiredVersion</span></span>
 
-<span data-ttu-id="b69cb-181">指定要儲存之模組的確切版本號碼。</span><span class="sxs-lookup"><span data-stu-id="b69cb-181">Specifies the exact version number of the module to save.</span></span>
+<span data-ttu-id="ae5f6-181">指定要儲存之模組的確切版本號碼。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-181">Specifies the exact version number of the module to save.</span></span>
 
 ```yaml
 Type: System.String
@@ -367,9 +367,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-182">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b69cb-182">-WhatIf</span></span>
+### <span data-ttu-id="ae5f6-182">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ae5f6-182">-WhatIf</span></span>
 
-<span data-ttu-id="b69cb-183">顯示執行時所發生的情況 `Save-Module` 。</span><span class="sxs-lookup"><span data-stu-id="b69cb-183">Shows what would happen if the `Save-Module` runs.</span></span> <span data-ttu-id="b69cb-184">不會執行此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="b69cb-184">The cmdlet isn't run.</span></span>
+<span data-ttu-id="ae5f6-183">顯示執行時所發生的情況 `Save-Module` 。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-183">Shows what would happen if the `Save-Module` runs.</span></span> <span data-ttu-id="ae5f6-184">不會執行此 Cmdlet。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-184">The cmdlet isn't run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -383,27 +383,33 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="b69cb-185">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b69cb-185">CommonParameters</span></span>
+### <span data-ttu-id="ae5f6-185">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ae5f6-185">CommonParameters</span></span>
 
-<span data-ttu-id="b69cb-186">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="b69cb-186">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b69cb-187">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="b69cb-187">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="ae5f6-186">這個 Cmdlet 支援一般參數：-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction 和 -WarningVariable。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-186">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ae5f6-187">如需詳細資訊，請參閱 [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-187">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="b69cb-188">輸入</span><span class="sxs-lookup"><span data-stu-id="b69cb-188">INPUTS</span></span>
+## <span data-ttu-id="ae5f6-188">輸入</span><span class="sxs-lookup"><span data-stu-id="ae5f6-188">INPUTS</span></span>
 
-### <span data-ttu-id="b69cb-189">System.String[]</span><span class="sxs-lookup"><span data-stu-id="b69cb-189">System.String[]</span></span>
+### <span data-ttu-id="ae5f6-189">System.String[]</span><span class="sxs-lookup"><span data-stu-id="ae5f6-189">System.String[]</span></span>
 
-### <span data-ttu-id="b69cb-190">管理. PSObject []</span><span class="sxs-lookup"><span data-stu-id="b69cb-190">System.Management.Automation.PSObject[]</span></span>
+### <span data-ttu-id="ae5f6-190">管理. PSObject []</span><span class="sxs-lookup"><span data-stu-id="ae5f6-190">System.Management.Automation.PSObject[]</span></span>
 
-### <span data-ttu-id="b69cb-191">System.String</span><span class="sxs-lookup"><span data-stu-id="b69cb-191">System.String</span></span>
+### <span data-ttu-id="ae5f6-191">System.String</span><span class="sxs-lookup"><span data-stu-id="ae5f6-191">System.String</span></span>
 
-### <span data-ttu-id="b69cb-192">System.Uri</span><span class="sxs-lookup"><span data-stu-id="b69cb-192">System.Uri</span></span>
+### <span data-ttu-id="ae5f6-192">System.Uri</span><span class="sxs-lookup"><span data-stu-id="ae5f6-192">System.Uri</span></span>
 
-### <span data-ttu-id="b69cb-193">System.Management.Automation.PSCredential</span><span class="sxs-lookup"><span data-stu-id="b69cb-193">System.Management.Automation.PSCredential</span></span>
+### <span data-ttu-id="ae5f6-193">System.Management.Automation.PSCredential</span><span class="sxs-lookup"><span data-stu-id="ae5f6-193">System.Management.Automation.PSCredential</span></span>
 
-## <span data-ttu-id="b69cb-194">輸出</span><span class="sxs-lookup"><span data-stu-id="b69cb-194">OUTPUTS</span></span>
+## <span data-ttu-id="ae5f6-194">輸出</span><span class="sxs-lookup"><span data-stu-id="ae5f6-194">OUTPUTS</span></span>
 
-### <span data-ttu-id="b69cb-195">System.Object</span><span class="sxs-lookup"><span data-stu-id="b69cb-195">System.Object</span></span>
+### <span data-ttu-id="ae5f6-195">System.Object</span><span class="sxs-lookup"><span data-stu-id="ae5f6-195">System.Object</span></span>
 
-## <span data-ttu-id="b69cb-196">注意</span><span class="sxs-lookup"><span data-stu-id="b69cb-196">NOTES</span></span>
+## <span data-ttu-id="ae5f6-196">注意</span><span class="sxs-lookup"><span data-stu-id="ae5f6-196">NOTES</span></span>
 
-## <span data-ttu-id="b69cb-197">相關連結</span><span class="sxs-lookup"><span data-stu-id="b69cb-197">RELATED LINKS</span></span>
+> [!IMPORTANT]
+> <span data-ttu-id="ae5f6-197">從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-197">As of April 2020, the PowerShell Gallery no longer supports Transport Layer Security (TLS) versions 1.0 and 1.1.</span></span> <span data-ttu-id="ae5f6-198">如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-198">If you are not using TLS 1.2 or higher, you will receive an error when trying to access the PowerShell Gallery.</span></span> <span data-ttu-id="ae5f6-199">使用下列命令，以確保您使用的是 TLS 1.2：</span><span class="sxs-lookup"><span data-stu-id="ae5f6-199">Use the following command to ensure you are using TLS 1.2:</span></span>
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> <span data-ttu-id="ae5f6-200">如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。</span><span class="sxs-lookup"><span data-stu-id="ae5f6-200">For more information, see the [announcement](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) in the PowerShell blog.</span></span>
 
+## <span data-ttu-id="ae5f6-201">相關連結</span><span class="sxs-lookup"><span data-stu-id="ae5f6-201">RELATED LINKS</span></span>
