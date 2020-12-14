@@ -7,12 +7,12 @@ ms.date: 04/03/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/find-package?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Package
-ms.openlocfilehash: 9bbcda92b98410835a2380296a06fd053c01b52c
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 83336a97f13dc100943c3d0008ee97d28873adfb
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201744"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890295"
 ---
 # Find-Package
 
@@ -69,7 +69,7 @@ bootstrap          4.3.1     MyNuGet    Bootstrap framework in CSS. Includes fon
 NuGet.Core         2.14.0    MyNuGet    NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` 使用 **provider** 參數指定提供者 **NuGet** 。
+`Find-Package` 使用 **provider** 參數指定提供者 **NuGet**。
 
 ### 範例2：從套件來源尋找套件
 
@@ -85,7 +85,7 @@ Name         Version   Source    Summary
 NuGet.Core   2.14.0    MyNuGet   NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` 使用 **Name** 參數來指定套件名稱 **nuget.exe** 。 **Source** 參數會指定在 **MyNuGet** 中搜尋封裝。
+`Find-Package` 使用 **Name** 參數來指定套件名稱 **nuget.exe**。 **Source** 參數會指定在 **MyNuGet** 中搜尋封裝。
 
 ### 範例3：尋找套件的所有版本
 
@@ -106,7 +106,7 @@ NuGet.Core    1.1.229.159      MyNuGet      NuGet.Core is the core framework ass
 Nuget.Core    1.0.1120.104     MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` 使用 **Name** 參數來指定套件 **nuget.exe** 。 **ProviderName** 參數指定要在 **MyNuGet** 中搜尋封裝。 **Allversions 進行篩選** 指定傳回所有可用的版本。
+`Find-Package` 使用 **Name** 參數來指定套件 **nuget.exe**。 **ProviderName** 參數指定要在 **MyNuGet** 中搜尋封裝。 **Allversions 進行篩選** 指定傳回所有可用的版本。
 
 ### 範例4：尋找具有特定名稱和版本的套件
 
@@ -122,7 +122,7 @@ Name          Version          Source       Summary
 NuGet.Core    2.9.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` 使用 **Name** 參數來指定套件名稱 **nuget.exe** 。 **ProviderName** 參數指定要在 **NuGet** 中搜尋套件。 **RequiredVersion** 指定只傳回版本 **2.9.0 版** 。
+`Find-Package` 使用 **Name** 參數來指定套件名稱 **nuget.exe**。 **ProviderName** 參數指定要在 **NuGet** 中搜尋套件。 **RequiredVersion** 指定只傳回版本 **2.9.0 版** 。
 
 ### 範例5：尋找版本範圍內的套件
 
@@ -141,13 +141,13 @@ NuGet.Core    2.8.0            MyNuGet      NuGet.Core is the core framework ass
 NuGet.Core    2.7.0            MyNuGet      NuGet.Core is the core framework assembly for NuGet...
 ```
 
-`Find-Package` 使用 **Name** 參數來指定套件名稱 **nuget.exe** 。 **ProviderName** 參數指定要在 **NuGet** 中搜尋套件。 **MinimumVersion** 會指定最低版本的 **2.7.0** 。 **MaximumVersion** 指定最高版本的 **2.9.0 版** 。
+`Find-Package` 使用 **Name** 參數來指定套件名稱 **nuget.exe**。 **ProviderName** 參數指定要在 **NuGet** 中搜尋套件。 **MinimumVersion** 會指定最低版本的 **2.7.0**。 **MaximumVersion** 指定最高版本的 **2.9.0 版**。
 **Allversions 進行篩選** 會根據最小值和最大值來判斷傳回的範圍。
 
 ### 範例6：尋找檔案系統中的封裝
 
 此命令會尋找副檔名 `.nupkg` 儲存在本機電腦上的封裝。
-這些檔案是從資源庫（例如 **NuGet** ）下載的套件。
+這些檔案是從資源庫（例如 **NuGet**）下載的套件。
 
 ```
 PS> Find-Package -Source C:\LocalPkg
@@ -687,6 +687,13 @@ Accept wildcard characters: False
 `Find-Package` 輸出 **SoftwareIdentity** 物件。
 
 ## 注意
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/install-script?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-Script
-ms.openlocfilehash: dd4e8169310f23182697ba6bf4263d916f747b84
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: c8191f8b5bbf6337fdc11dc3d15774991029151b
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201836"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891187"
 ---
 # Install-Script
 
@@ -42,7 +42,7 @@ Install-Script [-InputObject] <PSObject[]> [-Scope <String>] [-NoPathUpdate] [-P
 
 `Install-Script`Cmdlet 會從存放庫取得腳本承載、確認承載是有效的 PowerShell 腳本，並將腳本檔案複製到指定的安裝位置。
 
-預設的存放庫 `Install-Script` 操作可透過 `Register-PSRepository` 、 `Set-PSRepository` 、 `Unregister-PSRepository` 和 Cmdlet 來設定 `Get-PSRepository` 。 針對多個存放庫操作時， `Install-Script` 會從第一個存放庫安裝符合指定搜尋條件的第一個腳本， ( **名稱** 、 **MinimumVersion** 或 **MaximumVersion** ) ，而不會發生任何錯誤。
+預設的存放庫 `Install-Script` 操作可透過 `Register-PSRepository` 、 `Set-PSRepository` 、 `Unregister-PSRepository` 和 Cmdlet 來設定 `Get-PSRepository` 。 針對多個存放庫操作時， `Install-Script` 會從第一個存放庫安裝符合指定搜尋條件的第一個腳本， (**名稱**、 **MinimumVersion** 或 **MaximumVersion**) ，而不會發生任何錯誤。
 
 ## 範例
 
@@ -499,6 +499,13 @@ Accept wildcard characters: False
 ### System.Object
 
 ## 注意
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

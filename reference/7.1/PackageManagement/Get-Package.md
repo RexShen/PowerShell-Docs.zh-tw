@@ -7,12 +7,12 @@ ms.date: 05/22/2019
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/get-package?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Package
-ms.openlocfilehash: 89525867f9c3377cc0129daefd3f54f2a10d5d82
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d635a1f037194380c143190e48d654e828f88bc8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202727"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890159"
 ---
 # Get-Package
 
@@ -68,7 +68,7 @@ posh-git       0.7.3        https://www.powershellgallery.com/api/v2   PowerShel
 PS> Invoke-Command -ComputerName Server01 -Credential CONTOSO\TestUser -ScriptBlock {Get-Package}
 ```
 
-`Invoke-Command` 使用 **ComputerName** 參數來指定遠端電腦 **Server01** 。 **Credential** 參數指定具有在電腦上執行命令之許可權的網域和使用者名稱。 **ScriptBlock** 參數會 `Get-Package` 在遠端電腦上執行 Cmdlet。
+`Invoke-Command` 使用 **ComputerName** 參數來指定遠端電腦 **Server01**。 **Credential** 參數指定具有在電腦上執行命令之許可權的網域和使用者名稱。 **ScriptBlock** 參數會 `Get-Package` 在遠端電腦上執行 Cmdlet。
 
 ### 範例3：取得指定提供者的封裝
 
@@ -87,7 +87,7 @@ posh-git              0.7.3        https://www.powershellgallery.com/api/v2   Po
 PowerShellGet         2.0.1        https://www.powershellgallery.com/api/v2   PowerShellGet
 ```
 
-`Get-Package` 使用 **ProviderName** 參數來指定特定提供者（ **PowerShellGet** ）。
+`Get-Package` 使用 **ProviderName** 參數來指定特定提供者（ **PowerShellGet**）。
 **所有版本** 參數會顯示每個已安裝的版本。
 
 ### 範例4：取得特定封裝的精確版本
@@ -104,7 +104,7 @@ Name                  Version      Source                                     Pr
 PackageManagement     1.3.1        https://www.powershellgallery.com/api/v2   PowerShellGet
 ```
 
-`Get-Package` 使用 **Name** 參數來指定封裝名稱， **PackageManagement** 。 **ProviderName** 參數會指定提供者（ **PowerShellGet** ）。 **必要的版本** 參數指定已安裝的版本。
+`Get-Package` 使用 **Name** 參數來指定封裝名稱， **PackageManagement**。 **ProviderName** 參數會指定提供者（ **PowerShellGet**）。 **必要的版本** 參數指定已安裝的版本。
 
 ### 範例5：卸載套件
 
@@ -114,7 +114,7 @@ PackageManagement     1.3.1        https://www.powershellgallery.com/api/v2   Po
 Get-Package -Name posh-git -RequiredVersion 0.7.3 | Uninstall-Package
 ```
 
-`Get-Package` 使用 **Name** 參數來指定封裝名稱 **posh-git** 。 **RequiredVersion** 參數是封裝的特定版本。 物件會向下傳送至 `Uninstall-Package` Cmdlet。 `Uninstall-Package` 移除封裝。
+`Get-Package` 使用 **Name** 參數來指定封裝名稱 **posh-git**。 **RequiredVersion** 參數是封裝的特定版本。 物件會向下傳送至 `Uninstall-Package` Cmdlet。 `Uninstall-Package` 移除封裝。
 
 ## PARAMETERS
 
@@ -440,6 +440,13 @@ Accept wildcard characters: False
 
 在命令中包含封裝提供者可以讓 Cmdlet 提供動態參數。 動態參數是封裝提供者專用的。 此 `Get-Help` Cmdlet 會列出 Cmdlet 的參數集，並包含提供者的參數集。 例如， `Get-Package` 具有 **PowerShellGet** 參數集，其中包含 `-NoPathUpdate` 、 `AllowClobber` 和 `SkipPublisherCheck` 。
 
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
+
 ## 相關連結
 
 [about_PackageManagement](../Microsoft.PowerShell.Core/About/about_PackageManagement.md)
@@ -461,4 +468,3 @@ Accept wildcard characters: False
 [Save-Package](Save-Package.md)
 
 [Uninstall-Package](Uninstall-Package.md)
-

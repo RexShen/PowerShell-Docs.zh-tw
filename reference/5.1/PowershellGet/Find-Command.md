@@ -7,12 +7,12 @@ ms.date: 06/03/2019
 online version: https://docs.microsoft.com/powershell/module/powershellget/find-command?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Find-Command
-ms.openlocfilehash: 71ea79cab9bb00c31f1cc78d70b1624f85a5a714
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: eb305801bb6f8c84ffdf0ff34936ec3156ba5b0e
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93202896"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891249"
 ---
 # Find-Command
 
@@ -80,7 +80,7 @@ Get-TargetResource    1.0.0      xInternetExplorerHomePage       PSGallery
 Get-TargetResource    1.2.0.0    SystemLocaleDsc                 PSGallery
 ```
 
-`Find-Command` 使用存放 **庫** 參數來搜尋 **PSGallery** 。 **Name** 參數會指定 **get-targetresource** 命令。
+`Find-Command` 使用存放 **庫** 參數來搜尋 **PSGallery**。 **Name** 參數會指定 **get-targetresource** 命令。
 
 ### 範例3：依名稱尋找命令並安裝模組
 
@@ -98,7 +98,7 @@ Version   Name               Repository   Description
 1.2.0.0   SystemLocaleDsc    PSGallery    This DSC Resource allows configuration of the Windows...
 ```
 
-`Find-Command` 使用 **Name** 參數來指定 **get-targetresource** 命令。 存放 **庫** 參數會搜尋 **PSGallery** 。 **ModuleName** 參數指定您想要安裝的模組（ **SystemLocaleDsc** ）。 物件會沿著管線向下傳送 `Install-Module` ，而且會安裝模組。 安裝完成之後，您可以使用 `Get-InstalledModule` 來顯示結果。
+`Find-Command` 使用 **Name** 參數來指定 **get-targetresource** 命令。 存放 **庫** 參數會搜尋 **PSGallery**。 **ModuleName** 參數指定您想要安裝的模組（ **SystemLocaleDsc**）。 物件會沿著管線向下傳送 `Install-Module` ，而且會安裝模組。 安裝完成之後，您可以使用 `Get-InstalledModule` 來顯示結果。
 
 ### 範例 4︰尋找命令並儲存其模組
 
@@ -321,6 +321,13 @@ Accept wildcard characters: False
 
 ## 注意
 
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
+
 ## 相關連結
 
 [Get-InstalledModule](Get-InstalledModule.md)
@@ -331,4 +338,4 @@ Accept wildcard characters: False
 
 [Select-Object](../Microsoft.PowerShell.Utility/Select-Object.md)
 
-[Uninstall-Module](Uninstall-Module.md)
+[卸載模組](Uninstall-Module.md)

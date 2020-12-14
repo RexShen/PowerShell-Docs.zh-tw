@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/powershellget/register-psrepository?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-PSRepository
-ms.openlocfilehash: be7ffa38a0409fa7ef0d01649b863a32732e34de
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: f0ec2f4bc0ce598b046c1159619aed5555b1bc79
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201828"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890210"
 ---
 # Register-PSRepository
 
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 
 存放庫的安裝原則會指定從該存放庫安裝時的 PowerShell 行為。 從不受信任的存放庫安裝模組時，系統會提示使用者進行確認。
 
-您可以使用 Cmdlet **InstallationPolicy** 來設定 >installationpolicy `Set-PSRepository` 。
+您可以使用 Cmdlet 來設定 >installationpolicy `Set-PSRepository` 。
 
 ```yaml
 Type: System.String
@@ -269,6 +269,13 @@ Accept wildcard characters: False
 ### System.Object
 
 ## 注意
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

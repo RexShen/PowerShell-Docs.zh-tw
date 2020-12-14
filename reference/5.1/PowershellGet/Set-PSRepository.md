@@ -7,12 +7,12 @@ ms.date: 04/22/2020
 online version: https://docs.microsoft.com/powershell/module/powershellget/set-psrepository?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSRepository
-ms.openlocfilehash: 0734bda0a3462e39f799570c853cffa3e267c5db
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 2b23a121249c5cc9037e0440dfaed17a1a9f76e9
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203895"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891552"
 ---
 # Set-PSRepository
 
@@ -40,7 +40,7 @@ Set-PSRepository [-Name] <String> [[-SourceLocation] <Uri>] [-PublishLocation <U
 Set-PSRepository -Name "myInternalSource" -InstallationPolicy Trusted
 ```
 
-此命令會將 **myInternalSource** 存放庫的安裝原則設定為 **受信任** ，如此一來，在從該來源安裝模組之前，系統不會提示您。
+此命令會將 **myInternalSource** 存放庫的安裝原則設定為 **受信任**，如此一來，在從該來源安裝模組之前，系統不會提示您。
 
 ### 範例2：設定存放庫的來源和發佈位置
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 
 ### ->installationpolicy
 
-指定安裝原則。 有效的值為： **信任** 、 **不受** 信任。
+指定安裝原則。 有效的值為： **信任**、 **不受** 信任。
 
 ```yaml
 Type: System.String
@@ -228,6 +228,13 @@ Accept wildcard characters: False
 ### System.Object
 
 ## 注意
+
+> [!IMPORTANT]
+> 從2020年4月起，PowerShell 資源庫不再支援傳輸層安全性 (TLS) 1.0 和1.1 版。 如果您不是使用 TLS 1.2 或更高版本，當您嘗試存取 PowerShell 資源庫時，將會收到錯誤。 使用下列命令，以確保您使用的是 TLS 1.2：
+>
+> `[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12`
+>
+> 如需詳細資訊，請參閱 PowerShell blog 中的 [公告](https://devblogs.microsoft.com/powershell/powershell-gallery-tls-support/) 。
 
 ## 相關連結
 

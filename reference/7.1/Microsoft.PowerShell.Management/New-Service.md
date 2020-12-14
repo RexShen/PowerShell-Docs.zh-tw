@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 10/25/2019
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 81920303d130a306674033b2b1ba57a3e71c949c
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 39c03ec53056c5ec8e2d68f9b71a17a6f4a8ea8a
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347426"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94890411"
 ---
 # New-Service
 
@@ -38,7 +38,7 @@ New-Service [-Name] <String> [-BinaryPathName] <String> [-DisplayName <String>] 
 ### 範例1：建立服務
 
 ```powershell
-New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+New-Service -Name "TestService" -BinaryPathName '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
 ```
 
 此命令會建立名為 TestService 的服務。
@@ -48,7 +48,7 @@ New-Service -Name "TestService" -BinaryPathName "C:\WINDOWS\System32\svchost.exe
 ```powershell
 $params = @{
   Name = "TestService"
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName = "Test Service"
   StartupType = "Manual"
@@ -83,7 +83,7 @@ Status    : OK
 ```powershell
 $SDDL = "D:(A;;CCLCSWRPWPDTLOCRRC;;;SY)(A;;CCDCLCSWRPWPDTLOCRSDRCWDWO;;;BA)(A;;CCLCSWLOCRRC;;;SU)"
 $params = @{
-  BinaryPathName = "C:\WINDOWS\System32\svchost.exe -k netsvcs"
+  BinaryPathName = '"C:\WINDOWS\System32\svchost.exe -k netsvcs"'
   DependsOn = "NetLogon"
   DisplayName "Test Service"
   StartupType = "Manual"
@@ -101,6 +101,12 @@ New-Service @params
 
 指定服務的可執行檔路徑。 這是必要參數。
 
+服務二進位檔案的完整路徑。 如果路徑包含空格，則必須以引號括住，才能正確地解讀。 例如， `d:\my share\myservice.exe` 應該指定為 `'"d:\my share\myservice.exe"'` 。
+
+路徑也可以包含自動啟動服務的引數。 例如 `'"d:\myshare\myservice.exe arg1 arg2"'`。 這些引數會傳遞至服務進入點。
+
+如需詳細資訊，請參閱 [CreateServiceW](/windows/win32/api/winsvc/nf-winsvc-createservicew) API 的 **lpBinaryPathName** 參數。
+
 ```yaml
 Type: System.String
 Parameter Sets: (All)
@@ -117,7 +123,7 @@ Accept wildcard characters: False
 
 將服務所使用的帳戶指定為 [服務登入帳戶](/windows/desktop/ad/about-service-logon-accounts)。
 
-輸入使用者名稱（例如 **User01** 或 **Domain01\User01** ），或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。 如果您輸入使用者名稱，此 Cmdlet 會提示您輸入密碼。
+輸入使用者名稱（例如 **User01** 或 **Domain01\User01**），或輸入 **PSCredential** 物件，例如 Cmdlet 所產生的物件 `Get-Credential` 。 如果您輸入使用者名稱，此 Cmdlet 會提示您輸入密碼。
 
 認證會儲存在 [PSCredential](/dotnet/api/system.management.automation.pscredential) 物件中，而密碼會儲存為 [SecureString](/dotnet/api/system.security.securestring)。
 
@@ -211,7 +217,7 @@ Accept wildcard characters: False
 - **InvalidValue** -不支援此值。 使用此值會導致錯誤。
 - **手動** -此服務只會由使用者以手動方式啟動，使用服務控制管理員或由應用程式啟動。
 
- 預設值為 [ **自動** ]。
+ 預設值為 [ **自動**]。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.ServiceStartupType
@@ -280,7 +286,7 @@ Accept wildcard characters: False
 
 ## 輸入
 
-### None
+### 無
 
 您無法使用管線傳送輸入至此 Cmdlet。
 
