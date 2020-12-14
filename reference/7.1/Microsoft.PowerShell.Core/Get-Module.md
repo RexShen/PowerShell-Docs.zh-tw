@@ -1,23 +1,22 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 5/15/2019
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/get-module?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Module
-ms.openlocfilehash: 63f7bb9b9ed411fa9a440974e19b63d572481d8d
-ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
+ms.openlocfilehash: 1f06d1e7114a84ea89097167b188ded605f81aa0
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94390944"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564532"
 ---
 # Get-Module
 
 ## 概要
-取得已匯入或可匯入目前工作階段的模組。
+列出在目前會話中匯入的模組，或可從 PSModulePath 匯入的模組。
 
 ## SYNTAX
 
@@ -51,19 +50,18 @@ Get-Module [[-Name] <String[]>] [-FullyQualifiedName <ModuleSpecification[]>] [-
 
 ## DESCRIPTION
 
-此 `Get-Module` Cmdlet 會取得已匯入或可匯入至 powershell 會話的 powershell 模組。 傳回的模組物件 `Get-Module` 包含有關模組的重要資訊。 您也可以透過管線將模組物件傳送至其他 Cmdlet，例如 `Import-Module` 和 `Remove-Module` Cmdlet。
+此 `Get-Module` Cmdlet 會列出已匯入或可匯入至 powershell 會話的 powershell 模組。 如果沒有參數，會 `Get-Module` 取得已匯入目前會話的模組。 **ListAvailable** 參數是用來列出可從 PSModulePath 環境變數中指定的路徑匯入的模組 (`$env:PSModulePath`) 。
 
-如果沒有參數，會 `Get-Module` 取得已匯入目前會話的模組。 若要取得所有已安裝的模組，請指定 **ListAvailable** 參數。
+傳回的模組物件 `Get-Module` 包含有關模組的重要資訊。 您也可以透過管線將模組物件傳送至其他 Cmdlet，例如 `Import-Module` 和 `Remove-Module` Cmdlet。
 
-`Get-Module` 取得模組，但不會將它們匯入。 從 Windows PowerShell 3.0 開始，當您使用模組中的命令時，系統會自動匯入模組，但命令不會 `Get-Module` 觸發自動匯入。 您也可以使用 Cmdlet，將模組匯入到您的會話 `Import-Module` 。
+`Get-Module` 列出模組，但不會將它們匯入。 從 Windows PowerShell 3.0 開始，當您使用模組中的命令時，系統會自動匯入模組，但命令不會 `Get-Module` 觸發自動匯入。 您也可以使用 Cmdlet，將模組匯入到您的會話 `Import-Module` 。
 
 從 Windows PowerShell 3.0 開始，您可以從遠端會話匯入模組，然後匯入本機會話。 此策略使用 PowerShell 的隱含遠端功能，相當於使用 `Import-PSSession` Cmdlet。 當您在從另一個會話匯入的模組中使用命令時，命令會隱含地在遠端會話中執行。 這項功能可讓您從本機會話管理遠端電腦。
 
-此外，從 Windows PowerShell 3.0 開始，您可以使用 `Get-Module` 和 `Import-Module` 來取得和匯入通用訊息模型 (CIM) 模組，其中的 Cmdlet 定義于 CMDLET 定義 XML (CDXML) 檔中。 這項功能可讓您使用在非受控程式碼元件中執行的 Cmdlet，例如以 c + + 撰寫的 Cmdlet。
+此外，從 Windows PowerShell 3.0 開始，您可以使用 `Get-Module` 和 `Import-Module` 來取得通用訊息模型 (CIM) 模組並加以匯入。 CIM 模組會在 Cmdlet 定義 XML (CDXML) 檔中定義 Cmdlet。 這項功能可讓您使用在非受控程式碼元件中執行的 Cmdlet，例如以 c + + 撰寫的 Cmdlet。
 
-利用這些新功能， `Get-Module` 和 `Import-Module` Cmdlet 成為管理異類企業的主要工具，包括執行 Windows 作業系統的電腦和執行其他作業系統的電腦。
-
-若要管理執行 Windows 作業系統且已啟用 PowerShell 和 PowerShell 遠端功能的遠端電腦，請在遠端電腦上建立 **pssession** ，然後使用的 **Pssession** 參數 `Get-Module` 取得 **pssession** 中的 PowerShell 模組。 當您匯入模組，然後在目前的會話中使用匯入的命令時，命令會隱含地在遠端電腦上的 **PSSession** 中執行。 您可以使用這個策略來管理遠端電腦。
+您可以使用隱含遠端來管理已啟用 PowerShell 遠端功能的遠端電腦。
+在遠端電腦上建立 **pssession** ，然後使用的 **pssession** 參數 `Get-Module` 取得遠端會話中的 PowerShell 模組。 當您從遠端會話匯入模組時，匯入的命令會在遠端電腦的會話中執行。
 
 您可以使用類似的策略來管理未啟用 PowerShell 遠端功能的電腦。
 這些包括不是執行 Windows 作業系統的電腦，以及具有 PowerShell 但未啟用 PowerShell 遠端功能的電腦。
@@ -166,7 +164,7 @@ Version
 
 您可以使用屬性來格式化和篩選模組物件。 如需屬性的詳細資訊，請參閱 [PSModuleInfo 屬性](/dotnet/api/system.management.automation.psmoduleinfo)。
 
-輸出包含在 Windows PowerShell 3.0 中引進的新屬性，例如 **Author** 和 **公司名稱** 。
+輸出包含在 Windows PowerShell 3.0 中引進的新屬性，例如 **Author** 和 **公司名稱**。
 
 ### 範例6：依名稱將所有模組分組
 
@@ -456,7 +454,7 @@ Accept wildcard characters: True
 此參數可接受的值為：
 
 - 桌上型
-- 核心版
+- 核心
 
 Get-Module Cmdlet 會針對指定的值檢查 **PSModuleInfo** 物件的 **CompatiblePSEditions** 屬性，並只傳回已設定的模組。
 
@@ -479,7 +477,7 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-取得指定之使用者管理的 PowerShell 會話中的模組 ( **PSSession** ) 。 輸入包含會話的變數、可取得會話的命令（例如 `Get-PSSession` 命令）或建立會話的命令（例如 `New-PSSession` 命令）。
+取得指定之使用者管理的 PowerShell 會話中的模組 (**PSSession**) 。 輸入包含會話的變數、可取得會話的命令（例如 `Get-PSSession` 命令）或建立會話的命令（例如 `New-PSSession` 命令）。
 
 當會話連線到遠端電腦時，您必須指定 **ListAvailable** 參數。
 
@@ -505,7 +503,7 @@ Accept wildcard characters: False
 
 這個參數是專為開發和測試案例所設計，在這類案例中，模組的內容會在工作階段開始後變更。
 
-當您在命令中指定 **Refresh** 參數時，必須指定 **ListAvailable** 。
+當您在命令中指定 **Refresh** 參數時，必須指定 **ListAvailable**。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -562,24 +560,25 @@ Accept wildcard characters: False
 
 ## 注意
 
-- 從 Windows PowerShell 3.0 開始，PowerShell 隨附的核心命令會封裝在模組中。 例外狀況是 **PSSnapin** ) 的嵌入式管理單元 **(。** 依照預設，只會新增 **Microsoft.PowerShell.Core** 嵌入式管理單元至工作階段。
-模組會在第一次使用時自動匯入，而您可以使用 `Import-Module` Cmdlet 將它們匯入。
-- 從 Windows PowerShell 3.0 開始，隨 PowerShell 安裝的核心命令會封裝在模組中。 在 Windows PowerShell 2.0，以及在較新版本的 PowerShell 中建立舊版會話的主機程式中，會將核心命令封裝在嵌入式管理單元中， ( **PSSnapins** ) 。 **Microsoft.PowerShell.Core** 是一個例外，它一律是一個嵌入式管理單元。 此外，遠端會話（例如由 Cmdlet 啟動的會話） `New-PSSession` 都是包含核心嵌入式管理單元的較舊樣式會話。
+- 從 Windows PowerShell 3.0 開始，PowerShell 隨附的核心命令會封裝在模組中。 例外狀況是 **PSSnapin**) 的嵌入式管理單元 **(。** 依照預設，只會新增 **Microsoft.PowerShell.Core** 嵌入式管理單元至工作階段。 模組會在第一次使用時自動匯入，而您可以使用 `Import-Module` Cmdlet 將它們匯入。
+
+- 在 Windows PowerShell 2.0，以及在較新版本的 PowerShell 中建立舊版會話的主機程式中，會將核心命令封裝在嵌入式管理單元中， (**PSSnapins**) 。 **Microsoft.PowerShell.Core** 是一個例外，它一律是一個嵌入式管理單元。 此外，遠端會話（例如由 Cmdlet 啟動的會話） `New-PSSession` 都是包含核心嵌入式管理單元的較舊樣式會話。
 
   如需使用核心模組建立較新樣式會話之 **CreateDefault2** 方法的詳細資訊，請參閱 [CreateDefault2 方法](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)。
 
-- `Get-Module` 只會取得位置中的模組，這些位置會儲存在 **PSModulePath** 環境變數的值 ($Env:P smodulepath) 中。 您可以使用 Cmdlet 的 **Path** 參數 `Import-Module` ，在其他位置匯入模組，但您無法使用 `Get-Module` Cmdlet 來取得它們。
-- 此外，從 PowerShell 3.0 開始，已在傳回的物件中加入新的屬性，讓您可以在匯 `Get-Module` 入模組之前，更輕鬆地瞭解它們。 所有屬性都會在匯入之前填入。 其中包括 **ExportedCommands** 、 **ExportedCmdlets** 和 **ExportedFunctions** 屬性，這些屬性會列出模組匯出的命令。
+- `Get-Module` 只會取得位置中的模組，這些位置會儲存在 **PSModulePath** 環境變數的值 ($Env:P smodulepath) 中。 `Import-Module`Cmdlet 可以在其他位置匯入模組，但您無法使用 `Get-Module` Cmdlet 來取得它們。
+
+- 此外，從 PowerShell 3.0 開始，已在傳回的物件中加入新的屬性，讓您可以在匯 `Get-Module` 入模組之前，更輕鬆地瞭解它們。 所有屬性都會在匯入之前填入。 其中包括 **ExportedCommands**、 **ExportedCmdlets** 和 **ExportedFunctions** 屬性，這些屬性會列出模組匯出的命令。
+
 - **ListAvailable** 參數只會取得格式正確的模組，也就是至少包含一個檔案的資料夾，其基底名稱與模組資料夾的名稱相同。 基底名稱是不含副檔名的名稱。 包含具有不同名稱之檔案的資料夾會被視為容器，而非模組。
 
-  若要取得實作為 .dll 檔案，但未包含在模組資料夾中的模組，請同時指定 **ListAvailable** 和 **All** 參數。
+  若要取得實作為 DLL 檔案，但未包含在模組資料夾中的模組，請同時指定 **ListAvailable** 和 **All** 參數。
 
 - 若要使用 CIM 工作階段功能，遠端電腦必須具備 WS-Management 遠端功能和 Windows Management Instrumentation (WMI)，這是 Microsoft 實作的「通用訊息模型 (CIM)」標準。 電腦也必須擁有具有相同基本功能的「模組探索」WMI 提供者或替代 WMI 提供者。
 
   您可以在未執行 Windows 作業系統的電腦上，以及在具有 PowerShell 但未啟用 PowerShell 遠端功能的 Windows 電腦上，使用 CIM 會話功能。
 
-  您也可以使用 CIM 參數，從已啟用 PowerShell 遠端功能的電腦取得 CIM 模組。 這包括本機電腦。
-當您在本機電腦上建立 CIM 會話時，PowerShell 會使用 DCOM （而不是 WMI）來建立會話。
+  您也可以使用 CIM 參數，從已啟用 PowerShell 遠端功能的電腦取得 CIM 模組。 這包括本機電腦。 當您在本機電腦上建立 CIM 會話時，PowerShell 會使用 DCOM （而不是 WMI）來建立會話。
 
 ## 相關連結
 

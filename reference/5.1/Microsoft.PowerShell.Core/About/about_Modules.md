@@ -1,17 +1,16 @@
 ---
 description: 說明如何安裝、匯入及使用 PowerShell 模組。
-keywords: powershell,cmdlet
 Locale: en-US
-ms.date: 07/30/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Modules
-ms.openlocfilehash: 2668c722bfc7bb49517054767491a17a716a0720
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 30af4ed84e2332aecd60838f3bcd7741965c2ba1
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93208007"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564334"
 ---
 # <a name="about-modules"></a>關於模組
 
@@ -20,7 +19,7 @@ ms.locfileid: "93208007"
 
 ## <a name="long-description"></a>完整描述
 
-模組是包含 PowerShell 命令（例如 Cmdlet、提供者、函式、工作流程、變數和別名）的套件。
+模組是包含 PowerShell 成員（例如 Cmdlet、提供者、函式、工作流程、變數和別名）的套件。
 
 撰寫命令者可以使用模組來組織其命令，並與其他人分享。 接收模組的人員可以將模組中的命令新增至其 PowerShell 會話，並如同內建命令一般使用它們。
 
@@ -28,13 +27,13 @@ ms.locfileid: "93208007"
 
 ## <a name="what-is-a-module"></a>什麼是模組？
 
-模組是命令的套件。 您會話中的所有 Cmdlet 和提供者都是由模組或嵌入式管理單元新增。
+模組是包含 PowerShell 成員（例如 Cmdlet、提供者、函式、工作流程、變數和別名）的套件。 此封裝的成員可以在 PowerShell 腳本、已編譯的 DLL 或兩者的組合中執行。 這些檔案通常會在單一目錄中群組在一起。 如需詳細資訊，請參閱 SDK 檔中的 [瞭解 Windows PowerShell 模組](/powershell/scripting/developer/module/understanding-a-windows-powershell-module) 。
 
 ## <a name="module-auto-loading"></a>模組自動載入
 
 從 PowerShell 3.0 開始，當您第一次在已安裝的模組中執行任何命令時，PowerShell 會自動匯入模組。 您現在可以使用模組中的命令，而不需要任何設定或設定檔設定，因此在電腦上安裝模組之後不需要進行管理。
 
-模組中的命令也比較容易找到。 `Get-Command`Cmdlet 現在會取得所有已安裝模組中的所有命令（即使它們尚未存在於會話中），因此您可以找到命令並在未匯入的情況下使用。
+模組中的命令也比較容易找到。 `Get-Command`Cmdlet 現在會取得所有已安裝模組中的所有命令，即使它們尚未在會話中也一樣。 您可以尋找命令並使用它，而不需要先匯入模組。
 
 下列每個範例都會將包含的 CimCmdlets 模組匯 `Get-CimInstance` 入到您的會話。
 
@@ -60,7 +59,7 @@ ms.locfileid: "93208007"
 
 只有儲存在 PSModulePath 環境變數所指定之位置中的模組才會自動匯入。 您必須執行 Cmdlet 來匯入其他位置中的模組 `Import-Module` 。
 
-此外，使用 PowerShell 提供者的命令不會自動匯入模組。 例如，如果您使用需要 WSMan：磁片磁碟機的命令（例如 `Get-PSSessionConfiguration` Cmdlet），您可能需要執行指令程式 `Import-Module` 來匯入包含該磁片磁碟機的「 **Microsoft WSMan. 管理** 」模組。 `WSMan:`
+此外，使用 PowerShell 提供者的命令不會自動匯入模組。 例如，如果您使用需要 WSMan：磁片磁碟機的命令（例如 `Get-PSSessionConfiguration` Cmdlet），您可能需要執行指令程式 `Import-Module` 來匯入包含該磁片磁碟機的「 **Microsoft WSMan. 管理**」模組。 `WSMan:`
 
 您仍然可以執行 `Import-Module` 命令以匯入模組，並使用 `$PSModuleAutoloadingPreference` 變數來啟用、停用及設定自動匯入模組。 如需詳細資訊，請參閱 [about_Preference_Variables](about_Preference_Variables.md)。
 
@@ -231,14 +230,14 @@ Remove-Module BitsTransfer
 
 - 使用者專屬的模組：這些是使用者在使用者範圍內所安裝的模組。 `Install-Module` 具有 **範圍** 參數，可讓您指定是否為目前的使用者或所有使用者安裝模組。 如需詳細資訊，請參閱 [Install 模組](xref:PowerShellGet.Install-Module)。
 
-  Windows 上使用者專屬的 **CurrentUser** 位置是 `PowerShell\Modules` 位於使用者設定檔中檔 **Documents** 位置的資料夾。 該位置的特定路徑會因 Windows 版本而異，以及您是否正在使用資料夾重新導向。 Microsoft OneDrive 也可以變更您的 [ **檔** ] 資料夾的位置。
+  Windows 上使用者專屬的 **CurrentUser** 位置是 `PowerShell\Modules` 位於使用者設定檔中檔位置的資料夾。 該位置的特定路徑會因 Windows 版本而異，以及您是否正在使用資料夾重新導向。 Microsoft OneDrive 也可以變更您的 [ **檔** ] 資料夾的位置。
 
   根據預設，在 Windows 10 上，該位置為 `$HOME\Documents\PowerShell\Modules` 。 在 Linux 或 Mac 上， **CurrentUser** 位置為 `$HOME/.local/share/powershell/Modules` 。
 
   > [!NOTE]
   > 您可以使用下列命令來確認 [ **檔** ] 資料夾的位置： `[Environment]::GetFolderPath('MyDocuments')` 。
 
-- **AllUsers** 位置是 `$env:PROGRAMFILES\WindowsPowerShell\Modules` 在 Windows 上。
+- **AllUsers** 位置是 `$env:PROGRAMFILES\PowerShell\Modules` 在 Windows 上。 在 Linux 或 Mac 上，模組會儲存在中 `/usr/local/share/powershell/Modules` 。
 
 > [!NOTE]
 > 若要在目錄中新增或變更檔案 `$env:Windir\System32` ，請使用 [以 **系統管理員身分執行** ] 選項啟動 PowerShell。
@@ -293,7 +292,7 @@ $Env:PSModulePath + ";C:\ps-test\Modules"
 
 若要避免名稱衝突，請使用 Cmdlet 的 **NoClobber** 或 **Prefix** 參數 `Import-Module` 。 **Prefix** 參數會將前置詞加入至已匯入命令的名稱，使其在會話中是唯一的。 **NoClobber** 參數不會匯入任何會隱藏或取代會話中現有命令的命令。
 
-您也可以使用的 **Alias** 、 **Cmdlet** 、 **Function** 和 **Variable** 參數， `Import-Module` 只選取您要匯入的命令，而且您可以排除在您的會話中造成名稱衝突的命令。
+您也可以使用的 **Alias**、 **Cmdlet**、 **Function** 和 **Variable** 參數， `Import-Module` 只選取您要匯入的命令，而且您可以排除在您的會話中造成名稱衝突的命令。
 
 模組作者可以使用模組資訊清單的 **DefaultCommandPrefix** 屬性，將預設前置詞加入至所有命令名稱，藉以防止名稱衝突。
 **Prefix** 參數的值會優先于 **DefaultCommandPrefix** 的值。

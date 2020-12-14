@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 04/23/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: 5a76f8ec454ad8144f193d8927f913b89a429fec
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 17c3ef3046ba8f0cca9a85cf41aaf683212a58e9
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203307"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913336"
 ---
 # Export-Csv
 
@@ -375,7 +374,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-指定 CSV 輸出檔案的路徑。 與 **Path** 不同， **LiteralPath** 參數值將完全依照其輸入值來使用。 沒有字元會被視為萬用字元。 如果路徑包含 escape 字元，請使用單引號。 單引號可告知 PowerShell 不要將任何字元解釋為 escape 序列。
+指定 CSV 輸出檔案的路徑。 與 **Path** 不同，**LiteralPath** 參數值將完全依照其輸入值來使用。 沒有字元會被視為萬用字元。 如果路徑包含 escape 字元，請使用單引號。 單引號可告知 PowerShell 不要將任何字元解釋為 escape 序列。
 
 ```yaml
 Type: System.String
@@ -509,7 +508,7 @@ CSV 清單會傳送至 Path 參數中指定的檔案。
 
 CSV 字串的輸出如下所示：
 
-- 依預設，第一個字串包含 **#TYPE** 資訊標頭，後面接著物件類型的完整名稱。 例如， **#TYPE 的系統診斷** 。
+- 依預設，第一個字串包含 **#TYPE** 資訊標頭，後面接著物件類型的完整名稱。 例如， **#TYPE 的系統診斷**。
 - 如果使用 **NoTypeInformation** ，則第一個字串會包含資料行標頭。 標頭包含第一個物件的屬性名稱，做為逗點分隔清單。
 - 其餘的字串包含每個物件之屬性值的逗號分隔清單。
 

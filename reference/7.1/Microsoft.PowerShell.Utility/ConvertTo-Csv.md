@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 1/7/2019
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertto-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: ConvertTo-Csv
-ms.openlocfilehash: e4cc40e7a9a5fdcd12b6a787607e4979ddbb3273
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 7ad8dc837bd843c2df48587ad809d9f65a4cf8a7
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93204239"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913214"
 ---
 # ConvertTo-Csv
 
@@ -21,7 +20,7 @@ ms.locfileid: "93204239"
 
 ## SYNTAX
 
-### 分隔符號
+### Delimiter (預設值)
 
 ```
 ConvertTo-Csv [-InputObject] <PSObject> [[-Delimiter] <Char>] [-IncludeTypeInformation]
@@ -139,7 +138,7 @@ Accept wildcard characters: False
 
 ### -IncludeTypeInformation
 
-使用這個參數時，輸出的第一行會包含 **#TYPE** ，後面接著物件類型的完整名稱。 例如， **#TYPE 的系統診斷** 。
+使用這個參數時，輸出的第一行會包含 **#TYPE** ，後面接著物件類型的完整名稱。 例如， **#TYPE 的系統診斷**。
 
 此參數是在 PowerShell 6.0 中引進。
 
@@ -205,7 +204,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-指定應該加上引號的資料行名稱。 使用這個參數時，只會將指定的資料行加上引號。
+指定應該加上引號的資料行名稱。 使用這個參數時，只會將指定的資料行加上引號。 此參數已新增至 PowerShell 7.0。
 
 ```yaml
 Type: System.String[]
@@ -226,6 +225,8 @@ Accept wildcard characters: False
 - 永遠不會引述任何事
 - 一律將所有專案加上引號 (預設行為) 
 - >asneeded-僅包含分隔符號的引號欄位
+
+此參數已新增至 PowerShell 7.0。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -261,7 +262,7 @@ CSV 輸出會以字串集合的形式傳回。
 
 CSV 字串的輸出如下所示：
 
-- 如果使用 **IncludeTypeInformation** ，則第一個字串是由 **#TYPE** 後面接著物件類型的完整名稱所組成。 例如， **#TYPE 的系統診斷** 。
+- 如果使用 **IncludeTypeInformation** ，則第一個字串是由 **#TYPE** 後面接著物件類型的完整名稱所組成。 例如， **#TYPE 的系統診斷**。
 - 如果未使用 **IncludeTypeInformation** ，則第一個字串會包含資料行標頭。 標頭包含第一個物件的屬性名稱，做為逗點分隔清單。
 - 其餘的字串包含每個物件之屬性值的逗號分隔清單。
 
@@ -273,7 +274,6 @@ CSV 字串的輸出如下所示：
 
 [ConvertFrom-Csv](ConvertFrom-Csv.md)
 
-[Export-Csv](Export-Csv.md)
+[匯出-Csv](Export-Csv.md)
 
 [Import-Csv](Import-Csv.md)
-

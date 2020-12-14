@@ -1,18 +1,17 @@
 ---
 external help file: System.Management.Automation.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Core
-ms.date: 04/08/2020
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/import-module?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Import-Module
-ms.openlocfilehash: efb82cb938f7b044b863a8192f4c66673d47a4e0
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 218a4cb447c85a7362efebe9b50a917703cccc35
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93201927"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564440"
 ---
 # Import-Module
 
@@ -114,13 +113,13 @@ Import-Module [-Global] [-Prefix <String>] [-Function <String[]>] [-Cmdlet <Stri
 
 模組是一個套件，其中包含可在 PowerShell 中使用的成員。 成員包括 Cmdlet、提供者、腳本、函式、變數和其他工具和檔案。 在匯入模組之後，您可以在工作階段中使用模組成員。 如需模組的詳細資訊，請參閱 [about_Modules](About/about_Modules.md)。
 
-根據預設， `Import-Module` 會匯入模組匯出的所有成員，但您可以使用 **別名** 、 **Function** 函式、 **Cmdlet** 和 **變數** 參數來限制要匯入的成員。 **NoClobber** 參數會防止匯 `Import-Module` 入與目前會話中的成員具有相同名稱的成員。
+根據預設， `Import-Module` 會匯入模組匯出的所有成員，但您可以使用 **別名**、 函式、 **Cmdlet** 和 **變數** 參數來限制要匯入的成員。 **NoClobber** 參數會防止匯 `Import-Module` 入與目前會話中的成員具有相同名稱的成員。
 
 `Import-Module` 只將模組匯入到目前的會話。 若要將模組匯入到每個新的會話，請將 `Import-Module` 命令新增至您的 PowerShell 設定檔。 如需設定檔的詳細資訊，請參閱 [about_Profiles](About/about_Profiles.md)。
 
-您可以在遠端電腦上建立 **PSSession** ，以管理已啟用 PowerShell 遠端功能的遠端 Windows 電腦。 然後使用的 **PSSession** 參數 `Import-Module` ，匯入在遠端電腦上安裝的模組。 您現在可以在目前的會話中使用匯入的命令。 命令會隱含地在遠端電腦上執行。
+您可以在遠端電腦上建立 **PSSession** ，以管理已啟用 PowerShell 遠端功能的遠端 Windows 電腦。 然後使用的 **PSSession** 參數 `Import-Module` ，匯入在遠端電腦上安裝的模組。 當您在目前的會話中使用匯入的命令時，命令會隱含地在遠端電腦上執行。
 
-從 Windows PowerShell 3.0 開始，您可以使用匯 `Import-Module` 入通用訊息模型 (CIM) 模組，其中的 Cmdlet 定義于 Cmdlet 定義 XML (CDXML) 檔中。 這個功能讓您能夠使用在不受管理程式碼組件中實作的 Cmdlet，例如使用 C++ 撰寫的組件。
+從 Windows PowerShell 3.0 開始，您可以使用匯 `Import-Module` 入通用訊息模型 (CIM) 模組。 CIM 模組會在 Cmdlet 定義 XML (CDXML) 檔中定義 Cmdlet。 這項功能可讓您使用在非受控程式碼元件中執行的 Cmdlet，例如以 c + + 撰寫的 Cmdlet。
 
 針對未啟用 PowerShell 遠端處理的遠端電腦，包括不是執行 Windows 作業系統的電腦，您可以使用的 **CIMSession** 參數， `Import-Module` 從遠端電腦匯入 CIM 模組。 匯入的命令會隱含地在遠端電腦上執行。 **CIMSession** 是連線到遠端電腦上的 WINDOWS MANAGEMENT INSTRUMENTATION (WMI) 的連接。
 
@@ -172,11 +171,11 @@ VERBOSE: Exporting function 'Get-SpecDetails'.
 ```
 
 使用 **Verbose** 參數會導致在 `Import-Module` 載入模組時報告進度。
-如果沒有 **Verbose** 、 **PassThru** 或 **AsCustomObject** 參數， `Import-Module` 則在匯入模組時不會產生任何輸出。
+如果沒有 **Verbose**、 **PassThru** 或 **AsCustomObject** 參數， `Import-Module` 則在匯入模組時不會產生任何輸出。
 
 ### 範例5：限制匯入到會話的模組成員
 
-此範例顯示如何限制將哪些模組成員匯入會話，以及此命令在會話上的效果。 **函數** 參數會限制從模組匯入的成員。 您也可以使用 **別名** 、 **變數** 和 **Cmdlet** 參數來限制模組所匯入的其他成員。
+此範例顯示如何限制將哪些模組成員匯入會話，以及此命令在會話上的效果。 **函數** 參數會限制從模組匯入的成員。 您也可以使用 **別名**、 **變數** 和 **Cmdlet** 參數來限制模組所匯入的其他成員。
 
 `Get-Module`Cmdlet 會取得代表 **PSDiagnostics** 模組的物件。 **ExportedCmdlets** 屬性會列出模組匯出的所有 Cmdlet，即使它們並未全部匯入也一樣。
 
@@ -250,7 +249,7 @@ Function        Stop-xTrace                            6.1.0.0    PSDiagnostics
 
 ### 範例7：取得和使用自訂物件
 
-此範例示範如何取得和使用 **import-module** 所傳回的自訂物件。
+這個範例示範如何取得和使用所傳回的自訂物件 `Import-Module` 。
 
 自訂物件包括代表每個匯入之模組成員的綜合成員。 例如，模組中的 Cmdlet 和函式會轉換成自訂物件的指令碼方法。
 
@@ -292,15 +291,15 @@ Show-Calendar ScriptMethod System.Object Show-Calendar();
 $a."Show-Calendar"()
 ```
 
-**顯示行事曆** 腳本模組是使用 **AsCustomObject** 參數匯入，以要求自訂物件，並使用 **PassThru** 參數來傳回物件。 產生的自訂物件會儲存在 `$a` 變數中。
+`Show-Calendar`使用 **AsCustomObject** 參數匯入腳本模組，以要求自訂物件，並使用 **PassThru** 參數來傳回物件。 產生的自訂物件會儲存在 `$a` 變數中。
 
-此 `$a` 變數會透過管道傳送至 `Get-Member` Cmdlet，以顯示已儲存物件的屬性和方法。 輸出會顯示行事 **曆** 腳本方法。
+此 `$a` 變數會透過管道傳送至 `Get-Member` Cmdlet，以顯示已儲存物件的屬性和方法。 輸出會顯示 `Show-Calendar` 腳本方法。
 
-若要呼叫 **顯示行事曆** 腳本方法，方法名稱必須以引號括住，因為名稱包含連字號。
+若要呼叫 `Show-Calendar` 腳本方法，方法名稱必須以引號括住，因為名稱包含連字號。
 
 ### 範例8：將模組重新匯入到相同的會話
 
-這個範例示範 **Force** `Import-Module` 當您在相同的會話中重新匯入模組時，如何使用的 Force 參數。 **Force** 參數會移除載入的模組，然後重新匯入。
+這個範例示範 `Import-Module` 當您在相同的會話中重新匯入模組時，如何使用的 Force 參數。 **Force** 參數會移除載入的模組，然後重新匯入。
 
 ```powershell
 Import-Module PSDiagnostics
@@ -455,11 +454,11 @@ Windows Remote Management (HTTP-In)                      WINRM-HTTP-In-TCP-PUBLI
 Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TCP
 ```
 
-`New-PSSession` 建立 ( **PSSession** ) 至 Server01 電腦的遠端會話。 **PSSession** 會儲存在變數中 `$s` 。
+`New-PSSession` 建立 (**PSSession**) 至 Server01 電腦的遠端會話。 **PSSession** 會儲存在變數中 `$s` 。
 
 `Get-Module`以 **PSSession** 參數執行時，會顯示已在遠端電腦上安裝並使用 **NetSecurity** 模組。 此命令相當於使用 `Invoke-Command` Cmdlet `Get-Module` 在遠端會話中執行命令。 例如： (`Invoke-Command $s {Get-Module -ListAvailable -Name NetSecurity`
 
-`Import-Module`以 **PSSession** 參數執行時，會將 **NetSecurity** 模組從遠端電腦匯入到目前的會話。 此 `Get-Command` Cmdlet 是用來取得以 **get** 開頭的命令，並從 **NetSecurity** 模組包含 **防火牆** 。 輸出會確認模組及其 Cmdlet 已匯入至目前的會話。
+`Import-Module`以 **PSSession** 參數執行時，會將 **NetSecurity** 模組從遠端電腦匯入到目前的會話。 此 `Get-Command` Cmdlet 是用來取得以 **get** 開頭的命令，並從 **NetSecurity** 模組包含 **防火牆**。 輸出會確認模組及其 Cmdlet 已匯入至目前的會話。
 
 接著， `Get-NetFirewallRule` Cmdlet 會取得 Server01 電腦上 Windows 遠端管理的防火牆規則。 這相當於使用 `Invoke-Command` Cmdlet `Get-NetFirewallRule` 在遠端會話上執行。
 
@@ -468,7 +467,7 @@ Windows Remote Management - Compatibility Mode (HTTP-In) WINRM-HTTP-Compat-In-TC
 在此範例中，電腦的系統管理員已安裝「模組探索」 WMI 提供者，可讓您使用專為提供者設計的 CIM 命令。
 
 此 `New-CimSession` Cmdlet 會在名為 RSDGF03 的遠端電腦上建立會話。 會話會連接到遠端電腦上的 WMI 服務。 CIM 會話會儲存在變數中 `$cs` 。
-`Import-Module`使用中 **CimSession** 的 CimSession `$cs` ，從 RSDGF03 電腦匯入 **儲存體** CIM 模組。
+`Import-Module`使用中的 CimSession `$cs` ，從 RSDGF03 電腦匯入 **儲存體** CIM 模組。
 
 此 `Get-Command` Cmdlet 會 `Get-Disk` 在 **儲存體** 模組中顯示命令。 當您將 CIM 模組匯入本機會話時，PowerShell 會將每個命令的 CDXML 檔案轉換成 PowerShell 腳本，這會在本機會話中以函式的形式出現。
 
@@ -524,7 +523,7 @@ Accept wildcard characters: True
 
 指定在命令期間傳遞至腳本模組的引數或參數值陣列 `Import-Module` 。 只有在匯入腳本模組時，此參數才有效。
 
-您也可以使用其別名（ **args** ）來參考 **ArgumentList** 參數。 如需有關 **ArgumentList** 行為的詳細資訊，請參閱 [about_Splatting](about/about_Splatting.md#splatting-with-arrays)。
+您也可以使用其別名（ **args**）來參考 **ArgumentList** 參數。 如需有關 **ArgumentList** 行為的詳細資訊，請參閱 [about_Splatting](about/about_Splatting.md#splatting-with-arrays)。
 
 ```yaml
 Type: System.Object[]
@@ -779,7 +778,7 @@ Accept wildcard characters: False
 
 ### -MinimumVersion
 
-指定最小版本。 此 Cmdlet 只會匯入大於或等於指定值的模組版本。 使用 **MinimumVersion** 參數名稱或它的別名， **Version** 。 如果沒有任何版本符合資格，就會 `Import-Module` 產生錯誤。
+指定最小版本。 此 Cmdlet 只會匯入大於或等於指定值的模組版本。 使用 **MinimumVersion** 參數名稱或它的別名，**Version**。 如果沒有任何版本符合資格，就會 `Import-Module` 產生錯誤。
 
 若要指定確切的版本，請使用 **RequiredVersion** 參數。 您也可以使用 **#Requires** 關鍵字的 **module** 和 **Version** 參數，要求在腳本中使用特定版本的模組。
 
@@ -820,6 +819,9 @@ Accept wildcard characters: False
 如果您省略路徑，會 `Import-Module` 在環境變數中所儲存的路徑中尋找模組 `$env:PSModulePath` 。
 
 盡可能只指定模組名稱。 當您指定檔案名稱時，只會匯入該檔案中實作的成員。 如果模組包含其他檔案，則不會匯入它們，而且您可能會遺失模組的重要成員。
+
+> [!NOTE]
+> 雖然可以將腳本 () 檔匯入 `.ps1` 為模組，但腳本檔案通常不像腳本模組檔案 () 檔一樣 `.psm1` 。 匯入腳本檔案並不保證可作為模組使用。 如需詳細資訊，請參閱 [about_Modules](about/about_Modules.md)。
 
 ```yaml
 Type: System.String[]
@@ -893,7 +895,7 @@ Accept wildcard characters: False
 
 ### -PSSession
 
-指定 PowerShell 使用者管理的會話 ( **PSSession** ) ，此 Cmdlet 會將模組匯入目前的會話中。 輸入包含 **pssession** 的變數，或輸入可取得 **pssession** 的命令，例如 `Get-PSSession` 命令。
+指定 PowerShell 使用者管理的會話 (**PSSession**) ，此 Cmdlet 會將模組匯入目前的會話中。 輸入包含 **pssession** 的變數，或輸入可取得 **pssession** 的命令，例如 `Get-PSSession` 命令。
 
 當您將不同工作階段的模組匯入到目前工作階段時，您可以使用目前的工作階段之模組的 Cmdlet，就如同您使用本機模組的 Cmdlet 一樣。 使用遠端 Cmdlet 的命令會在遠端會話中執行，但遠端處理詳細資料是由 PowerShell 在背景中管理。
 
@@ -945,14 +947,14 @@ Accept wildcard characters: False
 
 此參數可接受的值為：
 
-- **Global** 。 適用於工作階段中的所有命令。 等同於 **Global** 參數。
-- **本機** 。 只適用於目前的範圍。
+- **Global**。 適用於工作階段中的所有命令。 等同於 **Global** 參數。
+- **本機**。 只適用於目前的範圍。
 
-根據預設，當 `Import-Module` 從命令提示字元、腳本檔或 scriptblock 呼叫 Cmdlet 時，會將所有命令匯入到全域會話狀態。 您可以使用 **-Scope** 參數搭配 **Local** 的值，將模組內容匯入腳本或 scriptblock 範圍中。
+根據預設，當 `Import-Module` 從命令提示字元、腳本檔或 scriptblock 呼叫 Cmdlet 時，會將所有命令匯入到全域會話狀態。 您可以使用 `-Scope Local` 參數將模組內容匯入至腳本或 scriptblock 範圍中。
 
 從其他模組叫用時，Cmdlet 會將 `Import-Module` 模組中的命令（包括從嵌套模組載入的命令）匯入至呼叫端的會話狀態。 指定 `-Scope Global` 或 `-Global` 表示此 Cmdlet 會將模組匯入到全域會話狀態，使其可供會話中的所有命令使用。
 
-**Global** 參數相當於 **範圍** 參數，其值為 Global。
+**Global** 參數等同於值為 **Global** 的 **Scope** 參數。
 
 此參數是在 Windows PowerShell 3.0 引進。
 
@@ -1056,19 +1058,17 @@ Accept wildcard characters: False
 
 - 若要更新已從模組匯入之命令的格式設定資料，請使用 `Update-FormatData` Cmdlet。 `Update-FormatData` 也會在會話中，針對從模組匯入的命令更新格式化資料。 如果模組的格式化檔案變更，您可以執行 `Update-FormatData` 命令來更新匯入命令的格式化資料。 您不需要再次匯入模組。
 
-- 從 Windows PowerShell 3.0 開始，隨 PowerShell 安裝的核心命令會封裝在模組中。 在 Windows PowerShell 2.0，以及在較新版本的 PowerShell 中建立舊版會話的主機程式中，會將核心命令封裝在嵌入式管理單元中， ( **PSSnapins** ) 。 **Microsoft.PowerShell.Core** 是一個例外，它一律是一個嵌入式管理單元。 此外，遠端會話（例如由 Cmdlet 啟動的會話） `New-PSSession` 都是包含核心嵌入式管理單元的較舊樣式會話。
+- 從 Windows PowerShell 3.0 開始，隨 PowerShell 安裝的核心命令會封裝在模組中。 在 Windows PowerShell 2.0，以及在較新版本的 PowerShell 中建立舊版會話的主機程式中，會將核心命令封裝在嵌入式管理單元中， (**PSSnapins**) 。 **Microsoft.PowerShell.Core** 是一個例外，它一律是一個嵌入式管理單元。 此外，遠端會話（例如由 Cmdlet 啟動的會話） `New-PSSession` 都是包含核心嵌入式管理單元的較舊樣式會話。
 
   如需使用核心模組建立較新樣式會話之 **CreateDefault2** 方法的詳細資訊，請參閱 [CreateDefault2 方法](/dotnet/api/system.management.automation.runspaces.initialsessionstate.createdefault2)。
 
-- `Import-Module` 無法從另一個會話匯入 PowerShell Core 模組。 PowerShell Core 的模組都有開頭為的名稱 `Microsoft.PowerShell` 。
+- 在 Windows PowerShell 2.0 中，模組物件的某些屬性值（例如 **ExportedCmdlets** 和 **NestedModules** 屬性值），在匯入模組之前都不會填入。
 
-- 在 Windows PowerShell 2.0 中，模組物件的某些屬性值（例如 **ExportedCmdlets** 和 **NestedModules** 屬性值）在匯入模組之前不會填入，而 **PassThru** 參數傳回的模組物件上無法使用此模組。 在 Windows PowerShell 3.0 中，所有的模組屬性值都已填入。
-
-- 如果您嘗試匯入包含與 Windows PowerShell 3.0 不相容之混合模式元件的模組，則會傳回 `Import-Module` 類似下列的錯誤訊息。
+- 如果您嘗試匯入包含與 Windows PowerShell 3.0 + 不相容之混合模式元件的模組，則會傳回 `Import-Module` 類似下列的錯誤訊息。
 
   > Import-Module：混合模式元件是針對執行時間的版本 ' v 2.0.50727 ' 所建立，而且無法在4.0 執行時間中載入，而不需要額外的設定資訊。
 
-  針對 Windows PowerShell 2.0 設計的模組至少包含一個混合模組元件（也就是同時包含 managed 和非 managed 程式碼的元件，例如 c + + 和 c #）時，就會發生這個錯誤。
+  針對 Windows PowerShell 2.0 設計的模組至少包含一個混合模組元件時，就會發生此錯誤。 混合模組元件，其中包括 managed 和非 managed 程式碼，例如 c + + 和 c #。
 
   若要匯入包含混合模式元件的模組，請使用下列命令啟動 Windows PowerShell 2.0，然後 `Import-Module` 再次嘗試命令。
 
@@ -1087,9 +1087,11 @@ Accept wildcard characters: False
   > [!NOTE]
   > `Get-Module` 顯示目前會話中載入的所有模組。 這包括在子系範圍中本機載入的模組。 使用 `Get-Command -Module modulename` 以查看哪些成員會在目前的範圍中載入。
 
-  如果模組包含類別和列舉定義，請 `using module` 在腳本的開頭使用。 這會匯入腳本，包括類別和列舉定義。 如需詳細資訊，請參閱 [about_Using](About/about_Using.md)。
+  `Import-Module` 未在模組中載入類別和列舉定義。 使用 `using module` 腳本開頭的語句。 這會匯入模組，包括類別和列舉定義。 如需詳細資訊，請參閱 [about_Using](About/about_Using.md)。
 
 ## 相關連結
+
+[about_Modules](about/about_Modules.md)
 
 [Export-ModuleMember](Export-ModuleMember.md)
 

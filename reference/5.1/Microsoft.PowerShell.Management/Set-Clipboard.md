@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 06/09/2017
+ms.date: 12/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/set-clipboard?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-Clipboard
-ms.openlocfilehash: f3230c247296d5fd907d580e719cbbbc560183a9
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: c1cf126e41a5e918afffbc41d30f957e650efdf5
+ms.sourcegitcommit: 7b376314e7640c39a53aac9f0db8bb935514a960
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93203520"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "96564497"
 ---
 # Set-Clipboard
 
@@ -59,10 +58,18 @@ Set-Clipboard -Value "This is a test string"
 
 ### 範例 2︰將目錄的內容複製到剪貼簿
 
-此命令會將指定資料夾的內容複製到剪貼簿。
+此範例會將指定資料夾的內容複寫到剪貼簿。
 
 ```powershell
 Set-Clipboard -Path "C:\Staging\"
+```
+
+### 範例3：將檔案的內容複寫到剪貼簿
+
+這個範例會使用管線將檔案的內容傳送至剪貼簿。 在此範例中，我們會取得公開 ssh 金鑰，讓它可以貼到另一個應用程式，例如 GitHub。
+
+```powershell
+Get-Content C:\Users\user1\.ssh\id_ed25519.pub | Set-Clipboard
 ```
 
 ## PARAMETERS
@@ -101,7 +108,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-指定要複製到剪貼簿的項目路徑。 與 **Path** 不同， **LiteralPath** 的值將完全依照其輸入值來使用。 沒有字元會被視為萬用字元。 如果路徑包含逸出字元，請將它括在單引號中。 單引號告知 Windows PowerShell 不要將任何字元視為逸出序列。
+指定要複製到剪貼簿的項目路徑。 與 **Path** 不同，**LiteralPath** 的值將完全依照其輸入值來使用。 沒有字元會被視為萬用字元。 如果路徑包含逸出字元，請將它括在單引號中。 單引號告知 Windows PowerShell 不要將任何字元視為逸出序列。
 
 ```yaml
 Type: System.String[]

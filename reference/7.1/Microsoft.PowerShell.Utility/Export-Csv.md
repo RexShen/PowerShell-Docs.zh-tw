@@ -1,18 +1,17 @@
 ---
 external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
-keywords: powershell,cmdlet
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 08/18/2020
+ms.date: 12/08/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Export-Csv
-ms.openlocfilehash: ad2b2a2b32fa1dfbf722ff0af25bfafaf57de84a
-ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
+ms.openlocfilehash: f920130ec8354b61b0bb3617e061520271df0eed
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: MT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "93206127"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913231"
 ---
 # Export-Csv
 
@@ -360,7 +359,7 @@ Accept wildcard characters: False
 從 PowerShell 6.2 開始， **編碼** 參數也會允許已註冊字碼頁的數值識別碼 (例如 `-Encoding 1251`) 或已註冊字碼頁的字串名稱 (例如 `-Encoding "windows-1251"`) 。 如需詳細資訊，請參閱 .NET 檔中的 [編碼字碼頁](/dotnet/api/system.text.encoding.codepage?view=netcore-2.2)。
 
 > [!NOTE]
-> 您不再建議使用 **utf-7** *。 在 PowerShell 7.1 中，如果您 `utf7` 針對 **編碼** 參數指定，就會寫入警告。
+> 不再建議使用 **utf-7** _。 在 PowerShell 7.1 中，如果您 `utf7` 為 _ *編碼** 參數指定，就會寫入警告。
 
 ```yaml
 Type: System.Text.Encoding
@@ -395,7 +394,7 @@ Accept wildcard characters: False
 
 ### -IncludeTypeInformation
 
-使用這個參數時，CSV 輸出的第一行會包含 **#TYPE** ，後面接著物件類型的完整名稱。 例如， **#TYPE 的系統診斷** 。
+使用這個參數時，CSV 輸出的第一行會包含 **#TYPE** ，後面接著物件類型的完整名稱。 例如， **#TYPE 的系統診斷**。
 
 此參數是在 PowerShell 6.0 中引進。
 
@@ -429,7 +428,7 @@ Accept wildcard characters: False
 
 ### -LiteralPath
 
-指定 CSV 輸出檔案的路徑。 與 **Path** 不同， **LiteralPath** 參數值將完全依照其輸入值來使用。 沒有字元會被視為萬用字元。 如果路徑包含 escape 字元，請使用單引號。 單引號可告知 PowerShell 不要將任何字元解釋為 escape 序列。
+指定 CSV 輸出檔案的路徑。 與 **Path** 不同，**LiteralPath** 參數值將完全依照其輸入值來使用。 沒有字元會被視為萬用字元。 如果路徑包含 escape 字元，請使用單引號。 單引號可告知 PowerShell 不要將任何字元解釋為 escape 序列。
 
 ```yaml
 Type: System.String
@@ -541,7 +540,7 @@ Accept wildcard characters: False
 
 ### -QuoteFields
 
-指定應該加上引號的資料行名稱。 使用這個參數時，只會加上指定的資料行。
+指定應該加上引號的資料行名稱。 使用這個參數時，只會加上指定的資料行。 此參數已新增至 PowerShell 7.0。
 
 ```yaml
 Type: System.String[]
@@ -562,6 +561,8 @@ Accept wildcard characters: False
 - 永遠不會引述任何事
 - 一律將所有專案加上引號 (預設行為) 
 - >asneeded-僅包含分隔符號的引號欄位
+
+此參數已新增至 PowerShell 7.0。
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.BaseCsvWritingCommand+QuoteKind
@@ -600,7 +601,7 @@ CSV 清單會傳送至 Path 參數中指定的檔案。
 CSV 字串的輸出如下所示：
 
 - 如果使用 **IncludeTypeInformation** ，則第一個字串會包含 **#TYPE** 資訊標頭，後面接著物件類型的完整名稱。
-  例如， **#TYPE 的系統診斷** 。
+  例如， **#TYPE 的系統診斷**。
 - 如果未使用 **IncludeTypeInformation** ，則第一個字串會包含資料行標頭。 標頭包含第一個物件的屬性名稱，做為逗點分隔清單。
 - 其餘的字串包含每個物件之屬性值的逗號分隔清單。
 
@@ -623,4 +624,3 @@ CSV 字串的輸出如下所示：
 [Import-Csv](Import-Csv.md)
 
 [Select-Object](Select-Object.md)
-
