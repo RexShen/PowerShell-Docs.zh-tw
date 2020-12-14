@@ -3,12 +3,12 @@ title: 解析 PowerShell 模組組件的相依性衝突
 description: 使用 C# 撰寫二進位 PowerShell 模組時，為提供功能而相依於其他套件或程式庫是很自然的事。
 ms.date: 06/25/2020
 ms.custom: rjmholt
-ms.openlocfilehash: 536bcfd1ced536faccde0d6c5bc483cdaf31ce68
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.openlocfilehash: 93bb39bdd440c7f97c27aa81e68f68331569b69e
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87775174"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810397"
 ---
 # <a name="resolving-powershell-module-assembly-dependency-conflicts"></a>解析 PowerShell 模組組件的相依性衝突
 
@@ -500,7 +500,7 @@ namespace AlcModule.Cmdlets
 
         public AlcModuleAssemblyLoadContext(string dependencyDirPath)
         {
-            _depdendencyDirPath = dependencyDirPath;
+            _dependencyDirPath = dependencyDirPath;
         }
 
         protected override Assembly Load(AssemblyName assemblyName)
@@ -509,7 +509,7 @@ namespace AlcModule.Cmdlets
             // looking for an assembly of the given name
             // in the configured dependency directory
             string assemblyPath = Path.Combine(
-                s_dependencyDirPath,
+                _dependencyDirPath,
                 $"{assemblyName.Name}.dll");
 
             // The ALC must use inherited methods to load assemblies
@@ -819,7 +819,7 @@ LoadFileModule/
 
 在此結構就緒後，**LoadFileModule** 現可支援與其他模組一起載入，且有 **CsvHelper** 相依性。
 
-因為處理常式適用於整個應用程式定義域的**所有** `AssemblyResolve` 事件，所以我們必須在此設計一些特定選項：
+因為處理常式適用於整個應用程式定義域的 **所有** `AssemblyResolve` 事件，所以我們必須在此設計一些特定選項：
 
 - 為縮小事件可能會干擾其他載入的時間範圍，我們只會在載入 `LoadFileModule.Engine.dll` 之後，再開始處理一般相依性載入。
 - 我們會將 `LoadFileModule.Engine.dll` 推送至相依性目錄，使其由 `LoadFile()` 呼叫載入，而不是由 PowerShell 載入。 這表示它自己的相依性載入一律會引發 `AssemblyResolve` 事件，即使 PowerShell 中已載入另一個 (例如) `CsvHelper.dll`。
