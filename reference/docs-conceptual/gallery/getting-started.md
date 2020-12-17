@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: 開始使用 PowerShell Gallery
 description: 此文章說明如何開始使用 PowerShell 資源庫與 PowerShellGet Cmdlet
-ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a5045e4ecee2eb8bc9aa373a6b8ec3a940b4de33
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661426"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913268"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>開始使用 PowerShell 資源庫
 
@@ -90,10 +90,14 @@ PowerShell 資源庫是一個套件存放庫，其中包含您可以下載並利
 PowerShell 資源庫使用下列主機名稱。
 
 - `psg-prod-eastus.azureedge.net` - CDN 主機名稱
+- `az818661.vo.msecnd.net` - CDN 主機名稱
 - `devopsgallerystorage.blob.core.windows.net` - 儲存體帳戶主機名稱
 - `*.powershellgallery.com` - 網站
+- `go.microsoft.com` - 重新導向服務
 
 這些主機名稱應新增至控制您的網路存取的允許清單。
+
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

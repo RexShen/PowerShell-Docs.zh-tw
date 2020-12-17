@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 多重選擇清單方塊
 description: 本文說明如何使用 Windows PowerShell 中的 .NET Framework 表單建置功能，建立多重選擇清單方塊控制項。
-ms.openlocfilehash: e11d1f545f748e0503b92c02bc7a101d8014bd96
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 2724188695f054d1115b385987cda8a578c102de
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500278"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391522"
 ---
 # <a name="multiple-selection-list-boxes"></a>多重選擇清單方塊
 
@@ -74,7 +74,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-指令碼一開始會載入兩個 .NET Framework 類別： **System.Drawing** 和 **System.Windows.Forms** 。 接著，您會啟動新的 .NET Framework 類別 **System.Windows.Forms.Form** 的執行個體，這樣可以提供空白表單或視窗讓您可以開始新增控制項。
+指令碼一開始會載入兩個 .NET Framework 類別：**System.Drawing** 和 **System.Windows.Forms**。 接著，您會啟動新的 .NET Framework 類別 **System.Windows.Forms.Form** 的執行個體，這樣可以提供空白表單或視窗讓您可以開始新增控制項。
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -82,11 +82,12 @@ $form = New-Object System.Windows.Forms.Form
 
 建立 Form 類別的執行個體之後，指派值給此類別的三個屬性。
 
-- **Text** 。 這會成為視窗的標題。
+- **Text**。 這會成為視窗的標題。
 
-- **Size** 。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
+- **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
 
-- **StartingPosition** 。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen** 。 若未新增此屬性，Windows 會在表單開啟時選取一個位置。 將 **StartingPosition** 設定為 **CenterScreen** ，您就可以讓表單在每次載入時，自動顯示在畫面中間。
+- **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。
+  若未新增此屬性，Windows 會在表單開啟時選取一個位置。 將 **StartingPosition** 設定為 **CenterScreen**，您就可以讓表單在每次載入時，自動顯示在畫面中間。
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -128,7 +129,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-新增控制項 (在此情況下為清單方塊)，讓使用者提供您在標籤文字中描述的資訊。 除了文字方塊外，還有許多其他您可以套用的控制項；如需更多控制項，請參閱 MSDN 上的 [System.Windows.Forms Namespace (System.Windows.Forms 命名空間)](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)。
+新增控制項 (在此情況下為清單方塊)，讓使用者提供您在標籤文字中描述的資訊。 除了文字方塊外，還有許多其他您可以套用的控制項；如需更多控制項，請參閱 [System.Windows.Forms 命名空間](/dotnet/api/system.windows.forms)。
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -171,7 +172,7 @@ $form.Topmost = $true
 $result = $form.ShowDialog()
 ```
 
-最後， **If** 區塊內的程式碼會指示 Windows 當使用者在清單方塊中選取一或多個並按一下 **[確定]** 或按 **Enter** 鍵時要執行的表單動作。
+最後，**If** 區塊內的程式碼會指示 Windows 當使用者在清單方塊中選取一或多個並按一下 **[確定]** 或按 **Enter** 鍵時要執行的表單動作。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -183,6 +184,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>另請參閱
 
-- [Weekend Scripter：修正 PowerShell GUI 範例](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Weekend Scripter：修正 PowerShell GUI 範例](https://devblogs.microsoft.com/scripting/weekend-scripter-fixing-powershell-gui-examples/)
 - [GitHub：Dave Wyatt's WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates) (GitHub：Dave Wyatt 的 WinFormsExampleUpdates)
-- [本週 Windows PowerShell 秘訣：複選清單方塊 -- 及其他事項！](https://technet.microsoft.com/library/ff730950.aspx)
+- [本週 Windows PowerShell 祕訣︰本週 Windows PowerShell 秘訣︰複選清單方塊 - 及其他事項！](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730950(v=technet.10)) \(英文\)

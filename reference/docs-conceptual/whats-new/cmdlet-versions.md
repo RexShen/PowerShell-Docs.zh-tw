@@ -3,23 +3,18 @@ ms.date: 02/03/2020
 keywords: powershell, core
 title: 模組與 Cmdlet 的發行歷程記錄
 description: 本文列出內含於各種 PowerShell 版本的模組與 Cmdlet。
-ms.openlocfilehash: 43ea0cde106e9f0aafe9c18726589f931724b35f
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: e79735e516c9aaa485c6513fb80de623014f06f5
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342853"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810346"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>模組與 Cmdlet 的發行歷程記錄
 
 本文列出內含於各種 PowerShell 版本的模組與 Cmdlet。 這是在版本資訊中找到的資訊摘要。 您可以在版本資訊中找到更多詳細資訊：
 
 - [PowerShell 7.0 的新功能](what-s-new-in-powershell-70.md)
-- [PowerShell 6.2 的新功能](what-s-new-in-powershell-core-62.md)
-- [PowerShell 6.1 的新功能](what-s-new-in-powershell-core-61.md)
-- [PowerShell 6.0 的新功能](what-s-new-in-powershell-core-60.md)
-- [PowerShell 6.0 中的中斷性變更](breaking-changes-ps6.md)
-- [PowerShell 6.0 中的已知問題](known-issues-ps6.md)
 
 這是正在處理的工作。 請協助我們將此資訊維持在最新狀態。
 
@@ -45,7 +40,8 @@ ms.locfileid: "94342853"
 | PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
 | PSDiagnostics                             | &check; | &check; | &check; | &check; | 僅限 Windows |
 | PSReadline 1.x                            | &check; |         |         |         | 僅限 Windows |
-| PSReadline 2.x                            |         | &check; | &check; | &check; |              |
+| PSReadline 2.0                            |         | &check; | &check; |         |              |
+| PSReadline 2.1                            |         |         |         | &check; |              |
 | PSScheduledJob                            | &check; |         |         |         | 僅限 Windows |
 | PSWorkflow                                | &check; |         |         |         | 僅限 Windows |
 | PSWorkflowUtility                         | &check; |         |         |         | 僅限 Windows |

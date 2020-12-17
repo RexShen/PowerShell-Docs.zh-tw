@@ -2,14 +2,14 @@
 ms.date: 01/02/2020
 title: 探索 Windows PowerShell ISE
 description: 此文章是 Windows PowerShell ISE 的功能概觀
-ms.topic: landing-page
+ms.topic: conceptual
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.openlocfilehash: 91161763c817972a62b4da1558a7ca119d8c8616
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296363"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090441"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>探索 Windows PowerShell ISE
 
@@ -79,7 +79,8 @@ Windows PowerShell 索引標籤是 Windows PowerShell 指令碼的執行環境�
 
 ## <a name="help"></a>説明
 
-您可以在 Web 上的 TechNet Library 中取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 [說明] 功能表上按一下 [Windows PowerShell ISE 說明]，或在任何位置按下 <kbd>F1</kbd> 鍵，但游標不可以是在指令碼窗格或主控台窗格中的 Cmdlet 名稱上方。 您也可以從 [說明]  功能表執行 `Update-Help` Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
+您可以在 docs.microsoft.com 上取得 Windows PowerShell ISE 的說明。 開啟 [說明] 的方式是在 [說明] 功能表上按一下 [Windows PowerShell ISE 說明]，或在任何位置按下 <kbd>F1</kbd> 鍵，但游標不可以是在指令碼窗格或主控台窗格中的 Cmdlet 名稱上方。
+您也可以從 [說明]  功能表執行 `Update-Help` Cmdlet，並顯示命令視窗，透過顯示 Cmdlet 的所有參數並讓您在容易使用的表單中填入參數，來協助您建構命令。
 
 ## <a name="see-also"></a>另請參閱
 

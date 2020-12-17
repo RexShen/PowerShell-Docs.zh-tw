@@ -1,13 +1,13 @@
 ---
-ms.date: 10/15/2020
+ms.date: 11/11/2020
 title: 在 PowerShell 中使用實驗性功能
 description: 列出目前可供使用的實驗性功能與其使用方式。
-ms.openlocfilehash: e98b1222755f3d4ffbd432af6b01d56f63307bb2
-ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
+ms.openlocfilehash: 4df3601cd38120fedecbbad8a3c63a95240c5f15
+ms.sourcegitcommit: fb1a4bc4b249afd3513663de2e1ba3025d63467e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92156570"
+ms.lasthandoff: 11/14/2020
+ms.locfileid: "94625698"
 ---
 # <a name="using-experimental-features-in-powershell"></a>在 PowerShell 中使用實驗性功能
 
@@ -28,12 +28,12 @@ PowerShell 中的「實驗性功能」支援能提供一個機制，使實驗性
 | ---------------------------------------------------------- | :-----: | :-----: | :-----: |
 | PSTempDrive (在 PS 7.0+ 中為主要功能)                        | &check; |         |         |
 | PSUseAbbreviationExpansion (在 PS 7.0+ 中為主要功能)         | &check; |         |         |
+| PSNullConditionalOperators (PS 7.1+ 中的主流)         |         | &check; |         |
+| PSUnixFileStat (僅限非 Windows - 於 PS 7.1+ 中獲得主要支援)  |         | &check; |         |
 | PSCommandNotFoundSuggestion                                | &check; | &check; | &check; |
 | PSImplicitRemotingBatching                                 | &check; | &check; | &check; |
 | Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace |         | &check; | &check; |
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
-| PSNullConditionalOperators (PS 7.1+ 中的主流)         |         | &check; |         |
-| PSUnixFileStat (僅限非 Windows)                          |         | &check; | &check; |
 | PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
@@ -212,6 +212,9 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 -rw-r--r-- jimtru    staff         11/8/2019 10:37      112858 build.psm1
 -rw-r--r-- jimtru    staff         11/8/2019 10:37      201297 CHANGELOG.md
 ```
+
+> [!NOTE]
+> 此功能已移出實驗性階段，而且是 PowerShell 7.1 與更新版本中的主流功能。
 
 ## <a name="psuseabbreviationexpansion"></a>PSUseAbbreviationExpansion
 

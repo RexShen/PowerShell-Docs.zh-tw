@@ -2,12 +2,12 @@
 ms.date: 12/31/2019
 title: ISEOptions 物件
 description: ISEOptions 物件代表適用於 Windows PowerShell ISE 的各種設定。
-ms.openlocfilehash: 4f790550796f40c7a2d4882cc0444fa7a55eeee9
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 9823a4a0ea32420d830735a0a61a6c03a6458fb7
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661027"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391505"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions 物件
 
@@ -492,7 +492,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense = $true
 
 在 Windows PowerShell ISE 3.0 與更新的版本中支援，而且不存在於之前的版本。
 
-指定當您將游標放置於關鍵字中並按下 <kbd>F1</kbd> 時，是否要顯示本機安裝的說明或線上 TechNet Library 說明。 如果設定為 `$true`，則快顯視窗會顯示本機安裝的說明內容。 您可以執行 `Update-Help` 命令來安裝說明檔。 如果設定為 `$false`，則您的瀏覽器會開啟至 TechNet Library 中的頁面。
+指定當您將游標放置於關鍵字中並按下 <kbd>F1</kbd> 時，要顯示本機安裝的說明或線上說明。 如果設定為 `$true`，則快顯視窗會顯示本機安裝的說明內容。 您可以執行 `Update-Help` 命令來安裝說明檔。 如果設定為 `$false`，則您的瀏覽器會開啟 docs.microsoft.com 上的頁面。
 
 ```powershell
 # Sets the option for the online help to be displayed.

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d94024926a8ff8c33df08b4a8b58e9f8b0430f9b
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 61a70db9ae7a38d6731f1cefb011072c12d1e39a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239879"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514913"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft 開放原始碼管理辦法
 
@@ -34,9 +34,9 @@ ms.locfileid: "93239879"
 - `assets` - 包含本文件中連結的可下載檔案
 - `reference` - 包含發佈至 [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/) 的文件。 包含參考與概念內容。
   - `5.1` - 包含 Cmdlet 參考與 PowerShell 5.1 的相關主題
-  - `6` - 包含 Cmdlet 參考與 PowerShell 6 的相關主題
   - `7.0` - 包含 Cmdlet 參考與 PowerShell 7.0 的相關主題
   - `7.1` - 包含 Cmdlet 參考與 PowerShell 7.1 的相關主題
+  - `7.2` - 包含適用於 PowerShell 7.2 (預覽) 的 Cmdlet 參考與關於主題
   - `bread` - 包含用於軌跡瀏覽的目錄
   - `docs-conceptual` - 包含發佈至 Docs 網站的概念文章。 一般而言，資料夾結構會建立鏡像目錄 (TOC)。
   - `mapping` - 包含建置系統所使用的版本對應組態

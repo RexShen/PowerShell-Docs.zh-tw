@@ -3,12 +3,12 @@ ms.date: 07/06/2020
 keywords: dsc,powershell,設定,安裝
 title: 保護 MOF 檔案
 description: 此文章描述如何確保目標節點已將 MOF 檔案加密。
-ms.openlocfilehash: e8b495a5c3c18dca5cde29cbbcf7d3f3cdab8f48
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: ca94a901468626e5644880574457d899a012d311
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662802"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090342"
 ---
 # <a name="securing-the-mof-file"></a>保護 MOF 檔案
 
@@ -25,10 +25,10 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 若要成功地加密用來保護 DSC 設定的認證，請確定您具備下列項目：
 
-- **發行與散發憑證的一些方法** 。 本主題和範例假設您使用的是 Active Directory 憑證授權單位。 如需有關 Active Directory 憑證服務的詳細資訊，請參閱 [Active Directory 憑證服務概觀](https://technet.microsoft.com/library/hh831740.aspx)和 [Windows Server 2008 的 Active Directory 憑證服務](https://technet.microsoft.com/windowsserver/dd448615.aspx)。
-- **目標節點或節點的系統管理存取權** 。
-- **每個目標節點在其個人存放區都儲存了支援加密的憑證** 。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用「工作站驗證」範本，您可在[預設憑證範本](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx)中找到它和其他憑證範本。
-- 如果在目標節點以外的電腦上執行這項設定，請 **匯出憑證的公開金鑰** ，將它匯入要執行設定的電腦。 確定只匯出 **公用** 金鑰，妥善保管私密金鑰。
+- **發行與散發憑證的一些方法**。 本主題和範例假設您使用的是 Active Directory 憑證授權單位。 如需 Active Directory 憑證服務的詳細背景資訊，請參閱 [Active Directory 憑證服務概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831740(v=ws.11))。
+- **目標節點或節點的系統管理存取權**。
+- **每個目標節點在其個人存放區都儲存了支援加密的憑證**。 在 Windows PowerShell 中，存放區的路徑是 Cert:\LocalMachine\My。 本主題中的範例會使用「工作站驗證」範本，您可在[預設憑證範本](/previous-versions/windows/it-pro/windows-server-2003/cc740061(v=ws.10))中找到它和其他憑證範本。
+- 如果在目標節點以外的電腦上執行這項設定，請 **匯出憑證的公開金鑰**，將它匯入要執行設定的電腦。 確定只匯出 **公用** 金鑰，妥善保管私密金鑰。
 
 > [!NOTE]
 > 指令碼資源具有一些加密限制。 如需詳細資訊，請參閱[指令碼資源](../reference/resources/windows/scriptResource.md#known-limitations)
@@ -46,10 +46,10 @@ DSC 會藉由套用儲存在 MOF 檔案中的資訊來管理伺服器節點的�
 
 若要制定認證加密，用來撰寫 DSC 設定之電腦所 **信任** 的 _目標節點_ 上必須有公開金鑰憑證可用。 此公開金鑰憑證具有可讓其用於 DSC 認證加密的特定需求︰
 
-1. **金鑰使用方法** ：
+1. **金鑰使用方法**：
    - 必須包含：'KeyEncipherment' 和 'DataEncipherment'。
    - 「不得」包含：「數位簽章」。
-1. **增強金鑰使用方法** ：
+1. **增強金鑰使用方法**：
    - 必須包含：文件加密 (1.3.6.1.4.1.311.80.1)。
    - 「不得」包含：用戶端驗證 (1.3.6.1.5.5.7.3.2) 與伺服器驗證 (1.3.6.1.5.5.7.3.1)。
 1. *Target Node_ 上有憑證的私密金鑰可用。
@@ -88,12 +88,12 @@ $cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-匯出之後，必須將 `DscPublicKey.cer` 複製到 **撰寫節點** 。
+匯出之後，必須將 `DscPublicKey.cer` 複製到 **撰寫節點**。
 
 > 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 
 > [!WARNING]
-> 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。 替代方法是從 Microsoft 指令碼中心下載 [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) \(英文\) 指令碼，並改為加以使用來建立憑證︰
+> 因為在比 Windows 10 和 Windows Server 2016 更早的 Windows 作業系統上，`New-SelfSignedCertificate` Cmdlet 不支援 **Type** 參數，所以在這些作業系統上需要建立此憑證的替代方法。 在此情況下，可以使用 `makecert.exe` 或 `certutil.exe` 來建立憑證。 此範例會使用來自 Microsoft 指令碼中心的 [New-SelfSignedCertificateEx.ps1](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6) \(英文\) 指令碼，作為建立憑證的替代方法。 您可以在 PowerShell 資源庫的 [PSPKI](https://www.powershellgallery.com/packages/PSPKI/) \(英文\) 模組中找到此指令碼的更新版本。
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -119,7 +119,7 @@ $Cert = Get-ChildItem -Path cert:\LocalMachine\My | Where-Object {
 $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 
-匯出之後，必須將 ```DscPublicKey.cer``` 複製到 **撰寫節點** 。
+匯出之後，必須將 ```DscPublicKey.cer``` 複製到 **撰寫節點**。
 
 #### <a name="on-the-authoring-node-import-the-certs-public-key"></a>在撰寫節點上︰匯入憑證的公開金鑰
 
@@ -154,7 +154,7 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-匯出之後，必須將 `DscPrivateKey.pfx` 複製到 **目標節點** 。
+匯出之後，必須將 `DscPrivateKey.pfx` 複製到 **目標節點**。
 
 > 目標節點：Windows Server 2012 R2/Windows 8.1 及更早版本
 

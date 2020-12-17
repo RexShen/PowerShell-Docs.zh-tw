@@ -3,19 +3,20 @@ ms.date: 07/29/2020
 keywords: powershell,cmdlet
 title: 如何使用 PowerShell 文件
 description: 本文說明如何使用此網站的功能，包含搜尋篩選與版本選擇。
-ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7e036fce0abb12f6c1ab4c0092784321a41a916
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501111"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810295"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>如何使用 PowerShell 文件
 
 歡迎使用 PowerShell 線上文件。 此網站包含適用於下列 PowerShell 版本的 Cmdlet 參考：
 
-- PowerShell 7
-- PowerShell 6
+- PowerShell 7.2 (發行前版本)
+- PowerShell 7.1 (目前)
+- PowerShell 7.0 (LTS)
 - PowerShell 5.1
 
 ## <a name="finding-articles-and-selecting-a-version"></a>尋找文章並選取版本
@@ -51,5 +52,6 @@ Major  Minor  Build  Revision
 - PowerShell 3.0
 - PowerShell 4.0
 - PowerShell 5.0
+- PowerShell 6
 - PowerShell 工作流程
 - PowerShell Web 存取

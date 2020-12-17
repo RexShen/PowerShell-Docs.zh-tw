@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: PowerShell 資源庫常見問題集
 description: 關於 PowerShell 資源庫的常見問題集
-ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 52c89d570041e1fce3466f574af7de25f05ec4c5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92654152"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389887"
 ---
 # <a name="frequently-asked-questions-about-the-powershell-gallery"></a>關於 PowerShell 資源庫的常見問題集
 
@@ -17,14 +17,14 @@ PowerShell 模組是包含一些 PowerShell 功能的可重複使用套件。 Po
 
 ## <a name="what-is-a-powershell-script"></a>什麼是 PowerShell 指令碼？
 
-PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重複使用和共用。 PowerShell 工作流程也是 PowerShell 指令碼，可概述一組工作並提供這些工作的序列。 如需詳細資訊，請參閱[開始使用 PowerShell 工作流程](https://technet.microsoft.com/library/jj134242.aspx)。
+PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重複使用和共用。 PowerShell 工作流程也是 PowerShell 指令碼，可概述一組工作並提供這些工作的序列。 如需詳細資訊，請參閱[開始使用 PowerShell 工作流程](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11))。
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>PowerShell 指令碼與 PowerShell 模組的差異為何？
 
 模組一般最適合用於共用，但是我們將啟用指令碼共用，讓您更輕鬆地將工作流程和指令碼提供給社群。 如需詳細資訊，請參閱下列部落格︰
 
-- [不要撰寫指令碼，撰寫 PowerShell 模組](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [了解 PowerShell 模組](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [不要撰寫指令碼，撰寫 PowerShell 模組](https://devblogs.microsoft.com/scripting/dont-write-scripts-write-powershell-modules/)
+- [了解 PowerShell 模組](https://devblogs.microsoft.com/scripting/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>如何發行至 PowerShell 資源庫？
 
@@ -64,7 +64,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>如何建立格式正確的模組資訊清單？
 
-建立模組資訊清單最簡單的方式是執行 [New-ModuleManifest][] Cmdlet。 在 PowerShell 5.0 或更新版本中，New-ModuleManifest 會使用有用中繼資料的空白欄位來產生格式正確的模組資訊清單 (例如 **ProjectUri** 、 **LicenseUri** 和 **Tags** )。 只要填上空白，或使用產生的資訊清單作為正確格式的範例。
+建立模組資訊清單最簡單的方式是執行 [New-ModuleManifest][] Cmdlet。 在 PowerShell 5.0 或更新版本中，New-ModuleManifest 會使用有用中繼資料的空白欄位來產生格式正確的模組資訊清單 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的資訊清單作為正確格式的範例。
 
 若要驗證已正確地填入所有必要中繼資料欄位，請使用 [Test-ModuleManifest][] Cmdlet。
 
@@ -93,7 +93,7 @@ PowerShell 指令碼是儲存在 .ps1 檔案中的一系列命令，可啟用重
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>如何建立格式正確的指令檔？
 
-建立格式正確指令檔的簡單方式是執行 [New-ScriptFileInfo][] Cmdlet。 在 PowerShell 5.0 中，New-ScriptFileInfo 會使用有用中繼資料的空白欄位來產生格式正確的指令檔 (例如 **ProjectUri** 、 **LicenseUri** 和 **Tags** )。 只要填上空白，或使用產生的指令檔作為正確格式的範例。
+建立格式正確指令檔的簡單方式是執行 [New-ScriptFileInfo][] Cmdlet。 在 PowerShell 5.0 中，New-ScriptFileInfo 會使用有用中繼資料的空白欄位來產生格式正確的指令檔 (例如 **ProjectUri**、**LicenseUri** 和 **Tags**)。 只要填上空白，或使用產生的指令檔作為正確格式的範例。
 
 若要驗證已正確地填入所有必要中繼資料欄位，請使用 [Test-ScriptFileInfo][] Cmdlet。
 
@@ -144,9 +144,9 @@ PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerSh
 
 一般建議挑選最新版本的 PowerShellGet 模組 (請注意，需要 .NET 4.5)。
 
-**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本** 。
+**PowerShellGet** 模組需要 **PowerShell 3.0 或更新版本**。
 
-因此， **PowerShellGet** 需要下列其中一個作業系統：
+因此，**PowerShellGet** 需要下列其中一個作業系統：
 
 - Windows 10
 - Windows 8.1 專業版
@@ -156,7 +156,7 @@ PowerShellGet 使用 NuGet 提供者來處理 NuGet 型存放庫 (例如 PowerSh
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 您可以從[這裡](https://msdn.microsoft.com/library/5a4x27ek.aspx)安裝 .NET Framework 4.5 或更新版本。
+**PowerShellGet** 也需要 .NET Framework 4.5 或更新版本。 如需詳細資訊，請參閱[安裝適用於開發人員的 .NET Framework](/dotnet/framework/install/guide-for-developers)。
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>是否可以為預計在未來發行的套件保留名稱？
 

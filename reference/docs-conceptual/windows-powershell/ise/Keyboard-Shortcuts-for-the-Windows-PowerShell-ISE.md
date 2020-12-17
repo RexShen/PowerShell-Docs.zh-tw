@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 title: Windows PowerShell ISE 的鍵盤快速鍵
 description: 此文章是 PowerShell ISE 中所使用的鍵盤快速鍵清單。
-ms.openlocfilehash: b7749f49d3ac2923b097e2ab94488263436980bd
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: d4e78c5e8e8e172ef3cdd30b0099d56ce6b6b01e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92663460"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391199"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE 的鍵盤快速鍵
 
@@ -19,7 +19,7 @@ ms.locfileid: "92663460"
 
 |              動作              |       鍵盤快速鍵       |                                                                                                                                                 使用位置                                                                                                                                                 |
 | -------------------------------- | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **說明**                         | <kbd>F1</kbd>                  | 指令碼窗格 **重要︰** 您可以指定 <kbd>F1</kbd> 說明來自 Web 上的 TechNet Library 或下載的說明 (請參閱 `Update-Help`)。 若要選取，請按一下 [工具]  、[選項]  ，然後在 [一般設定]  索引標籤上，設定或清除 [使用本機說明內容而非線上內容]  。 |
+| **說明**                         | <kbd>F1</kbd>                  | 指令碼窗格 **重要︰** 您可以指定 <kbd>F1</kbd> 說明是來自 docs.microsoft.com 或下載的說明 (請參閱 `Update-Help`)。 若要選取，請按一下 [工具]  、[選項]  ，然後在 [一般設定]  索引標籤上，設定或清除 [使用本機說明內容而非線上內容]  。 |
 | **複製**                         | <kbd>CTRL</kbd>+<kbd>C</kbd>   | 指令碼窗格, 命令窗格, 輸出窗格                                                                                                                                                                                                                                                                 |
 | **剪下**                          | <kbd>CTRL</kbd>+<kbd>X</kbd>   | 指令碼窗格, 命令窗格                                                                                                                                                                                                                                                                              |
 | **展開或摺疊大綱** | <kbd>CTRL</kbd>+<kbd>M</kbd>   | 指令碼窗格                                                                                                                                                                                                                                                                                            |

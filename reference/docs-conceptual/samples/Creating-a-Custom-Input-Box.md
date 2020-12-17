@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 建立自訂輸入方塊
 description: 本文說明如何使用 Windows PowerShell 中的 .NET Framework 表單建置功能，建立自訂輸入方塊。
-ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: b7786706d2461c329da429c1bd4971d7dc874d6d
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500550"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94390077"
 ---
 # <a name="creating-a-custom-input-box"></a>建立自訂輸入方塊
 
@@ -66,7 +66,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-指令碼一開始會載入兩個 .NET Framework 類別： **System.Drawing** 和 **System.Windows.Forms** 。 接著，您會啟動新的 .NET Framework 類別 **System.Windows.Forms.Form** 的執行個體，這樣可以提供空白表單或視窗讓您可以開始新增控制項。
+指令碼一開始會載入兩個 .NET Framework 類別：**System.Drawing** 和 **System.Windows.Forms**。 接著，您會啟動新的 .NET Framework 類別 **System.Windows.Forms.Form** 的執行個體，這樣可以提供空白表單或視窗讓您可以開始新增控制項。
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -74,12 +74,12 @@ $form = New-Object System.Windows.Forms.Form
 
 建立 Form 類別的執行個體之後，指派值給此類別的三個屬性。
 
-- **Text** 。 這會成為視窗的標題。
+- **Text**。 這會成為視窗的標題。
 
-- **Size** 。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
+- **Size**。 這是表單的大小，單位為像素。 上述指令碼會建立 300 像素寬、200 像素高的表單。
 
-- **StartingPosition** 。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen** 。
-  若未新增此屬性，Windows 會在表單開啟時選取一個位置。 將 **StartingPosition** 設定為 **CenterScreen** ，您就可以讓表單在每次載入時，自動顯示在畫面中間。
+- **StartingPosition**。 此選擇性屬性在上述指令碼中是設定為 **CenterScreen**。
+  若未新增此屬性，Windows 會在表單開啟時選取一個位置。 將 **StartingPosition** 設定為 **CenterScreen**，您就可以讓表單在每次載入時，自動顯示在畫面中間。
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -121,7 +121,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-新增控制項 (在此情況下為文字方塊)，讓使用者提供您在標籤文字中描述的資訊。 除了文字方塊外，還有許多其他您可以套用的控制項；如需更多控制項，請參閱 MSDN 上的 [System.Windows.Forms Namespace (System.Windows.Forms 命名空間)](/dotnet/api/system.windows.forms)。
+新增控制項 (在此情況下為文字方塊)，讓使用者提供您在標籤文字中描述的資訊。 除了文字方塊外，還有許多其他您可以套用的控制項；如需更多控制項，請參閱 [System.Windows.Forms 命名空間](/dotnet/api/system.windows.forms)。
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -130,7 +130,7 @@ $textBox.Size = New-Object System.Drawing.Size(260,20)
 $form.Controls.Add($textBox)
 ```
 
-將 **Topmost** 屬性設定為 **$true** ，以強制視窗開啟在其他已開啟視窗與對話方塊的上方。
+將 **Topmost** 屬性設定為 **$true**，以強制視窗開啟在其他已開啟視窗與對話方塊的上方。
 
 ```powershell
 $form.Topmost = $true
@@ -148,7 +148,7 @@ $form.Add_Shown({$textBox.Select()})
 $result = $form.ShowDialog()
 ```
 
-最後， **If** 區塊內的程式碼會指示 Windows 當使用者在文字方塊中提供文字並按一下 [OK] 按鈕或按下 **Enter** 鍵時要執行的表單動作。
+最後，**If** 區塊內的程式碼會指示 Windows 當使用者在文字方塊中提供文字並按一下 [OK] 按鈕或按下 **Enter** 鍵時要執行的表單動作。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)

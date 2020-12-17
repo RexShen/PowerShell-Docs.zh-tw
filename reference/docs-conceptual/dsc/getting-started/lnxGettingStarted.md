@@ -1,14 +1,14 @@
 ---
-ms.date: 06/12/2017
+ms.date: 11/20/2020
 keywords: dsc,powershell,設定,安裝
 title: 開始使用 Linux 預期狀態設定 (DSC)
 description: 本主題說明如何開始使用 Linux 的 PowerShell 預期狀態設定 (DSC)。
-ms.openlocfilehash: 826707654a297306c39d4dfcfd3941f56b7cf91d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: df9cab07284a7d6fa199f5524a8719ea490192d0
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92651123"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514995"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>開始使用 Linux 預期狀態設定 (DSC)
 
@@ -24,7 +24,7 @@ DSC for Linux 支援下列 Linux 作業系統版本。
 - Oracle Linux 5、6 和 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5、6 和 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11 和 12 (x86/x64)
-- Ubuntu Server 12.04 LTS、14.04 LTS、16.04 LTS (x86/x64)
+- Ubuntu Server 12.04 LTS、14.04 LTS、16.04 LTS、18.04 (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>安裝 DSC for Linux
 
@@ -45,7 +45,7 @@ Linux 的 Desired State Configuration 需要開放式管理基礎結構 (OMI) CI
 
 ### <a name="installing-dsc"></a>安裝 DSC
 
-適用於 Linux 的 DSC 可從存放庫中的 [PowerShell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294) \(英文\) 存放庫下載。
+適用於 Linux 的 DSC 可從存放庫中的 [PowerShell-DSC-for-Linux](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-926) \(英文\) 存放庫下載。
 
 若要安裝 DSC，請安裝適用於您的 Linux 系統 (.rpm 或.deb) 和 OpenSSL 版本 (ssl_098 或 ssl_100) 與架構 (x64/x86) 的套件。 RPM 套件適用於 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server 和 Oracle Linux。 DEB 套件適用於 Debian GNU/Linux 和 Ubuntu Server。 ssl_098 套件則適用於安裝 OpenSSL 0.9.8 的電腦，而 ssl_100 套件則適用於安裝 OpenSSL 1.0 的電腦。
 
@@ -100,7 +100,7 @@ Windows PowerShell 設定關鍵字可用來建立 Windows 電腦的設定，就�
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>將設定推送至 Linux 電腦
 
-設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 推送至 Linux 電腦。 若要從遠端針對 Linux 電腦使用此 Cmdlet 及 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) \(英文\) 或 [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) \(英文\) Cmdlet，您必須使用 CIMSession。 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) Cmdlet 是用來針對 Linux 電腦建立 **CIMSession** 。
+設定文件 (MOF 檔案) 可以使用 [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) Cmdlet 推送至 Linux 電腦。 若要從遠端針對 Linux 電腦使用此 Cmdlet 及 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) \(英文\) 或 [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) \(英文\) Cmdlet，您必須使用 CIMSession。 [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) Cmdlet 是用來針對 Linux 電腦建立 **CIMSession**。
 
 下列程式碼示範如何建立 DSC for Linux 的 CIMSession。
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: powershell,cmdlet
 title: 使用 Tab 鍵擴充
 description: 說明如何在 PowerShell 中使用 Tab 鍵擴充功能。
-ms.openlocfilehash: d3408aac8cc9325666082577a7b00bc3362bfca3
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.openlocfilehash: 658cdf5ddf78bbd6dd431c2170cd5ff643e6bf95
+ms.sourcegitcommit: 7f712e12ec5b3f3f3e695da804b050ea0ce58b3a
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92500040"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "94661336"
 ---
 # <a name="using-tab-expansion"></a>使用 Tab 鍵擴充
 
@@ -20,6 +20,9 @@ ms.locfileid: "92500040"
 若要自動從可用的選項中填入檔案名稱或路徑，請輸入部分名稱，然後按 <kbd>Tab</kbd> 鍵。 PowerShell 會自動將名稱擴充到找到的第一個相符項目。 重複按 <kbd>Tab</kbd> 鍵，會循環顯示所有可用選項。
 
 Cmdlet 名稱的 Tab 鍵擴充略有不同。 若要對 Cmdlet 名稱使用 Tab 鍵擴充，請輸入名稱的完整第一個部分 (動詞) 和後面的連字號。 您可以填入名稱的更多部分來進行局部比對。 例如，如果您鍵入 `get-co`，然後按 <kbd>Tab</kbd> 鍵，則 PowerShell 會自動將此項目展開到 `Get-Command` Cmdlet (請注意，這也會將字母的大小寫變更為其標準形式)。 如果您再次按下 <kbd>Tab</kbd> 鍵，PowerShell 會以僅有的其他相符 Cmdlet 名稱 (`Get-Content`) 取代此項目。
+
+> [!NOTE]
+> 從 PowerShell 7.0 開始，<kbd>Tab</kbd> 也會展開縮寫的 Cmdlet 與函式。 例如 `i-psdf<tab>` 會傳回 `Import-PowerShellDataFile`。
 
 您可以對同一行重複使用 Tab 鍵擴充。 例如，您可以對 `Get-Content` Cmdlet 的名稱使用 Tab 鍵展開，方法是輸入：
 

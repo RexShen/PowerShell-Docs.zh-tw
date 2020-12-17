@@ -1,13 +1,13 @@
 ---
 title: PowerShell Core 支援週期
 description: 詳細說明控管 PowerShell 支援的原則
-ms.date: 03/09/2020
-ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
-ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
+ms.date: 11/11/2020
+ms.openlocfilehash: f2a1df0fabdfb624db666d240172930dc60f1bfe
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92501740"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810380"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell 支援生命週期
 
@@ -29,24 +29,6 @@ PowerShell 是由傳統 Microsoft 支援合約支援，包含[付費支援][]、
 > [!IMPORTANT]
 > 您必須安裝最新的修補程式更新以符合支援資格。 例如，如果您正在執行 PowerShell 7.0，且 7.0.1 已經發行，您便必須更新至 7.0.1 以符合支援資格。
 
-## <a name="lifecycle-of-powershell-core-6x"></a>PowerShell Core 6.x 的生命週期
-
-PowerShell Core 先前是使用 [Microsoft 現代化生命週期原則][modern]。 此支援生命週期是要保持客戶的最新版本最新資訊。
-
-先前大約每六個月會更新 PowerShell Core 的 6.x 版分支一次 (例如：6.0、6.1、6.2 等等)。 不過，在發行 PowerShell 7 之後，便不會再發行任何 6.x 的次要版本。 PowerShell 6.2.x 在支援期間將會持續接收到服務更新。
-
-> [!IMPORTANT]
-> 您必須在每個新次要版本發行之後的六個月內進行更新，才能持續接收支援。
-
-例如，如果 PowerShell Core 6.1 是在 2018 年 7 月1 日發行，就必須在 2019 年 1 月 1 日之前更新至 PowerShell Core 6.1 以繼續獲得支援。
-
-> [!IMPORTANT]
-> 您必須在每個新修補程式版本發行之後的 30 天內進行更新，才能繼續接收支援。
-
-例如，如果您是執行 PowerShell Core 6.1，而且 6.1.3 在 2019 年 2 月19 日發行，您就必須在 2019 年 3 月 21 日 (也就是發行之後的第 30 天) 之前更新至 PowerShell Core 6.1.3 以繼續獲得支援。 如果需要修補程式，我們會在下一次累計更新中發行。
-
-現代化生命週期原則也需要 Microsoft 在中斷產品 (即 PowerShell Core) 支援之前的 12 個月通知客戶。
-
 ## <a name="supported-platforms"></a>支援的平台
 
 若要確認您使用的平台與 PowerShell Core 版本是受支援的，請參閱下表。
@@ -55,55 +37,58 @@ PowerShell Core 先前是使用 [Microsoft 現代化生命週期原則][modern]�
 
 列為 `Experimental` 的平台為非正式支援，但可用於實驗和提供意見反應。
 
-| 平台                                          |      6.2      |    7.0    |
-| ------------------------------------------------- | :-----------: | :-------: |
-| Windows 8.1 和 10                               |   支援   | 支援 |
-| Windows Server 2012 R2、2016                      |   支援   | 支援 |
-| [Windows Server 半年通道][semi-annual] |   支援   | 支援 |
-| Ubuntu 16.04 和 18.04                            |   支援   | 支援 |
-| Ubuntu 19.10 (透過 Snap 套件)                   |   社群   | 社群 |
-| Ubuntu 20.04 (透過 Snap 套件)                   |   社群   | 社群 |
-| Debian 9                                          |   支援   | 支援 |
-| Debian 10                                         | 不支援 | 支援 |
-| CentOS 7                                          |   支援   | 支援 |
-| CentOS 8                                          | 不支援 | 支援 |
-| Red Hat Enterprise Linux 7                        |   支援   | 支援 |
-| Red Hat Enterprise Linux 8                        | 不支援 | 支援 |
-| Fedora 30                                         | 不支援 | 支援 |
-| Alpine 3.8                                        |   查看注意事項    | 查看注意事項  |
-| Alpine 3.9 與 3.10                               | 不支援 | 查看注意事項  |
-| macOS 10.12+                                      |   支援   | 支援 |
-| Arch                                              |   社群   | 社群 |
-| Raspbian                                          |   社群   | 社群 |
-| Kali                                              |   社群   | 社群 |
-| AppImage (作用於多個 Linux 平台)      |   社群   | 社群 |
-| [Snap 套件](https://snapcraft.io/powershell)   |   請參閱備註    | 請參閱備註  |
+<!-- TODO: update OS list -->
+
+|                     平台                      |      7.0      |      7.1      |
+| ------------------------------------------------- | :-----------: | :-----------: |
+| Windows 8.1 和 10                               |   支援   |   支援   |
+| Windows Server 2012 R2、2016、2019                |   支援   |   支援   |
+| [Windows Server 半年通道][semi-annual] |   支援   |   支援   |
+| Ubuntu 16.04、18.04                               |   支援   |   支援   |
+| Ubuntu 20.04                                      | 不支援 |   支援   |
+| Ubuntu 19.10、20.10 (透過 Snap 套件)            |   社群   |   支援   |
+| Debian 9                                          |   支援   |   支援   |
+| Debian 10                                         |   支援   |   支援   |
+| CentOS 7                                          |   支援   |   支援   |
+| CentOS 8                                          |   支援   |   支援   |
+| Red Hat Enterprise Linux 7                        |   支援   |   支援   |
+| Red Hat Enterprise Linux 8                        |   支援   |   支援   |
+| Fedora 31+                                        |   支援   | 不支援 |
+| Alpine 3.10                                       |   請參閱附註 1  | 不支援 |
+| Alpine 3.11+                                      |   請參閱附註 1  |   請參閱附註 1  |
+| macOS 10.13+                                      |   支援   |   支援   |
+| Arch                                              |   社群   |   社群   |
+| Raspbian                                          |   社群   |   社群   |
+| Kali                                              |   社群   |   社群   |
+| AppImage (作用於多個 Linux 平台)      |   社群   |   社群   |
+| [Snap 套件](https://snapcraft.io/powershell)   |   請參閱附註 2  |   請參閱備註    |
 
 > [!NOTE]
-> 和您執行套件所在的發行版本一樣，也支援 Snap 套件。
-
-> [!NOTE]
-> Alpine 不支援 CIM、PowerShell Remoting 與 DSC。
+> - 1 - Alpine 不支援 CIM、PowerShell 遠端與 DSC。
+> - 2 - Snap 套件的支援情況和您執行套件所在的發行版本相同。
 
 ## <a name="powershell-releases-end-of-life"></a>PowerShell 版本生命週期結束
 
 根據 [PowerShell 的生命週期](#lifecycle-of-powershell-7)，下表會列出各種版本的停止支援日期。
 
-| 版本 |    生命週期結束     |
-| :-----: | ------------------ |
-|   7.0   | 2022 年 12 月 3 日   |
-|   6.2   | 2020 年 9 月 4 日  |
-|   6.1   | 2019 年 9 月 28 日 |
-|   6.0   | 2019 年 2 月 13 日  |
+| 版本 |          生命週期結束           |
+| :-----: | ------------------------------ |
+|   7.1   | 2022 年 2 月中 (預計) |
+|   7.0   | 2022 年 12 月 3 日               |
+|   6.2   | 2020 年 9 月 4 日              |
+|   6.1   | 2019 年 9 月 28 日             |
+|   6.0   | 2019 年 2 月 13 日              |
 
 > [!NOTE]
-> 本文件是關於 PowerShell Core 6 與 PowerShell 7 的支援。 Windows PowerShell (1.0 - 5.1) 是 Windows OS 的元件。 元件會收到與其父系產品或平台的相同支援。 如需詳細資訊，請參閱[產品與服務生命週期資訊](/lifecycle/products/)。
+> 此文件是關於 PowerShell Core 的支援。 Windows PowerShell (1.0 - 5.1) 是 Windows OS 的元件。 元件會收到與其父系產品或平台的相同支援。 如需詳細資訊，請參閱[產品與服務生命週期資訊](/lifecycle/products/)。
 
 ## <a name="unsupported-platforms"></a>不支援的平台
 
 當平台版本到達平台擁有者所定義的生命週期結束時間時，PowerShell Core 也會停止支援該平台版本。 先前推出的套件仍然可供需要存取的客戶取得，但將不再提供任何類型的正式支援和更新。
 
 這表示發行版本擁有者已停止支援下列版本，因此不再支援。
+
+<!-- TODO: Update this table Jason-->
 
 |    平台    | 版本 |                                                         生命週期結束                                                          |
 | -------------- | :-----: | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -156,16 +141,17 @@ PowerShell 遵循[適用於 Windows 的 Microsoft 安全性服務準則][] (英�
 
 下表包含 PowerShell 主要版本的時間表。 此表格僅供作為歷程記錄參考。 不適合用來判斷支援週期。
 
-|       版本        | 發行日期 |                                                                     附註                                                                      |
-| -------------------- | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| PowerShell 7.0 (LTS) |   2020 年 3 月   | 以 .NET Core 3.1 (LTS) 建置                                                                                                                  |
-| PowerShell 6.0       |   2018 年 1 月   | 第一版，以 .NET Core 2.1 建置。 可在 Windows、Linux 與 macOS 上安裝。                                                              |
-| PowerShell 5.1       |   2016 年 8 月   | 於 Windows 10 年度更新版與 Windows Server 2016 中發行                                                                             |
-| PowerShell 5.0       |   2016 年 2 月   | 於 Windows Management Framework (WMF) 5.0 中發行                                                                                            |
-| PowerShell 4.0       |   2013 年 10 月   | 與 Windows Server 2012 R2 整合於 Windows 8.1 中。 可在 Windows 7 SP1、Windows Server 2008 R2 SP1 與 Windows Server 2012 上安裝。 |
-| PowerShell 3.0       |   2012 年 10 月   | 與 Windows Server 2012 整合於 Windows 8 中。 可在 Windows 7 SP1、Windows Server 2008 SP1 與 Windows Server 2008 R2 SP1 上安裝。  |
-| PowerShell 2.0       |   2009 年 7 月   | 與 Windows Server 2008 R2 整合於 Windows 7 中。 可在 Windows XP SP3、Windows Server 2003 SP2 與 Windows Vista SP1 上安裝。            |
-| PowerShell 1.0       |   2006 年 11 月   | 可在 Windows XP SP2、Windows Server 2003 SP1 與 Windows Vista 上安裝。 為 Windows Server 2008 的選用元件。                          |
+|         版本          | 發行日期 |                                                                     附註                                                                      |
+| ------------------------ | :----------: | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| PowerShell 7.1 (目前) |   2020 年 11 月   | 以 .NET Core 5.0 為基礎建置 (目前)                                                                                                              |
+| PowerShell 7.0 (LTS)     |   2020 年 3 月   | 以 .NET Core 3.1 (LTS) 建置                                                                                                                  |
+| PowerShell 6.0           |   2018 年 1 月   | 第一版，以 .NET Core 2.1 建置。 可在 Windows、Linux 與 macOS 上安裝。                                                              |
+| PowerShell 5.1           |   2016 年 8 月   | 於 Windows 10 年度更新版與 Windows Server 2016 中發行                                                                             |
+| PowerShell 5.0           |   2016 年 2 月   | 於 Windows Management Framework (WMF) 5.0 中發行                                                                                            |
+| PowerShell 4.0           |   2013 年 10 月   | 與 Windows Server 2012 R2 整合於 Windows 8.1 中。 可在 Windows 7 SP1、Windows Server 2008 R2 SP1 與 Windows Server 2012 上安裝。 |
+| PowerShell 3.0           |   2012 年 10 月   | 與 Windows Server 2012 整合於 Windows 8 中。 可在 Windows 7 SP1、Windows Server 2008 SP1 與 Windows Server 2008 R2 SP1 上安裝。  |
+| PowerShell 2.0           |   2009 年 7 月   | 與 Windows Server 2008 R2 整合於 Windows 7 中。 可在 Windows XP SP3、Windows Server 2003 SP2 與 Windows Vista SP1 上安裝。            |
+| PowerShell 1.0           |   2006 年 11 月   | 可在 Windows XP SP2、Windows Server 2003 SP1 與 Windows Vista 上安裝。 為 Windows Server 2008 的選用元件。                          |
 
 <!-- hyperlink references -->
 [付費支援]: https://support.microsoft.com/hub/4343728/support-for-business

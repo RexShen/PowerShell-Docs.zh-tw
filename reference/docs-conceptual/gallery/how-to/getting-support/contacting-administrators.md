@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: 連絡資源庫系統管理員
 description: 此文章描述連絡 PowerShell 資源庫管理員的方式與時機
-ms.openlocfilehash: 500fff8ccc8f595d92b66e79c64ebf5e66185313
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6e3dccc44242e451fc6062aad6b8ae5a0ca54a9d
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661179"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470361"
 ---
 # <a name="contact-gallery-administrators"></a>連絡資源庫系統管理員
 
@@ -25,4 +25,4 @@ ms.locfileid: "92661179"
 
 1. 傳送電子郵件給我們：cgadmin@microsoft.com。
 1. 若您要檢舉不當使用的套件，可於左方面板套件資訊下方找到 [檢舉不當使用] 連結。
-1. 若為任何其他資源庫相關的一般問題，請將您的問題提交至 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell)
+1. 針對任何其他資源庫相關的一般問題，請將您的問題提交至 GitHub 上的 [PowerShell 資源庫問題](https://github.com/PowerShell/PowerShellGallery/issues) \(英文\) 頁面。
