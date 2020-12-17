@@ -1,14 +1,14 @@
 ---
-ms.date: 06/12/2017
+ms.date: 11/09/2020
 keywords: dsc,powershell,設定,安裝
 title: 使用 DSC 在初始開機時設定虛擬機器
 description: 此文章說明如何使用 DSC 在初始開機時設定虛擬機器
-ms.openlocfilehash: 9fa8c4a21486aaef87e1c0a3097e5983a378d98d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 09449053ff085209dec6ccbfa800e5d112d1c769
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656197"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389992"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>使用 DSC 在初始開機時設定虛擬機器
 
@@ -18,11 +18,11 @@ ms.locfileid: "92656197"
 ## <a name="requirements"></a>規格需求
 
 > [!NOTE]
-> 本主題所述的 **DSCAutomationHostEnabled** 登錄機碼無法在 PowerShell 4.0 中使用。 如需如何在 PowerShell 4.0 初始開機時設定新的虛擬機器，請參閱 [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) (想要使用 DSC 在初始開機時自動設定您的電腦嗎？)
+> 本主題所述的 **DSCAutomationHostEnabled** 登錄機碼無法在 PowerShell 4.0 中使用。 如需如何在 PowerShell 4.0 初始開機時設定新的虛擬機器，請參閱 [Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://devblogs.microsoft.com/powershell/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) (想要使用 DSC 在初始開機時自動設定您的電腦嗎？)
 
 若要執行這些範例，您需要︰
 
-- 可開機使用的 VHD。 您可以從 [TechNet 評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。
+- 可開機使用的 VHD。 您可以從[評估中心](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016)下載評估版 Windows Server 2016 的 ISO。
   您可以在 [Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10)) (建立可開機的虛擬硬碟) 中尋找如何從 ISO 建立 VHD 的指示。
 - 已啟用 HYPER-V 的主機電腦。 如需資訊，請參閱 [HYPER-V 概觀](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))。
 
@@ -69,7 +69,7 @@ Configuration SampleIISInstall
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-1. 在執行 PowerShell 5.0 或更新版本的電腦上，將上述組態 ( **SampleIISInstall** ) 另存為 PowerShell 指令碼 (.ps1) 檔案。
+1. 在執行 PowerShell 5.0 或更新版本的電腦上，將上述組態 (**SampleIISInstall**) 另存為 PowerShell 指令碼 (.ps1) 檔案。
 
 1. 在 PowerShell 主控台中，瀏覽至用以儲存.ps1 檔案的資料夾。
 
@@ -101,7 +101,7 @@ Configuration SampleIISInstall
 
 您也可以將中繼設定作為 VHD 的 `MetaConfig.mof` 檔案插入 VHD，將電腦設定成在初始開機時提取設定 (請參閱[設定本機設定管理員 (LCM)](../managing-nodes/metaConfig.md))。 若 **DSCAutomationHostEnabled** 登錄機碼已設定為 2 (預設值)，則在電腦第一次開機時，DSC 會將 `MetaConfig.mof` 所定義的中繼設定套用到 LCM。 若中繼設定指定 LCM 應從提取伺服器提取設定，電腦就會嘗試在初始開機時從該提取伺服器提取設定。 如需設定 DSC 提取伺服器的資訊，請參閱[設定 DSC Web 提取伺服器](../pull-server/pullServer.md)。
 
-在此範例中，我們將會同時使用上一節所述的組態 ( **SampleIISInstall** ) 及下列中繼設定：
+在此範例中，我們將會同時使用上一節所述的組態 (**SampleIISInstall**) 及下列中繼設定：
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -135,7 +135,7 @@ configuration PullClientBootstrap
 
 1. [設定 DSC Web 提取伺服器](../pull-server/pullServer.md)，並將 **SampleIISInistall** 設定儲存到適當的資料夾。
 
-1. 在執行 PowerShell 5.0 或更新版本的電腦上，將上述繼設定 ( **PullClientBootstrap** ) 另存為 PowerShell 指令碼 (.ps1) 檔案。
+1. 在執行 PowerShell 5.0 或更新版本的電腦上，將上述繼設定 (**PullClientBootstrap**) 另存為 PowerShell 指令碼 (.ps1) 檔案。
 
 1. 在 PowerShell 主控台中，瀏覽至用以儲存.ps1 檔案的資料夾。
 
@@ -177,25 +177,18 @@ configuration PullClientBootstrap
 1. 呼叫 `reg load`，以從 VHD 載入登錄 `HKLM\Software` 子機碼。
 
    ```powershell
-   reg load HKLM\Vhd E:\Windows\System32\Config\Software`
+   reg load HKLM\Vhd E:\Windows\System32\Config\Software
    ```
 
-1. 使用 PowerShell 登錄提供者瀏覽至 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`。
+1. 在載入的登錄區中將 `DSCAutomationHostEnabled` 的值變更為 0。
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
+   reg add "HKLM\Vhd\Software\Microsoft\Windows\CurrentVersion\Policies\System" /v DSCAutomationHostEnabled /t REG_DWORD /d 0 /f
    ```
 
-1. 將 `DSCAutomationHostEnabled` 的值變更為 0。
+1. 執行下列命令，以卸載此機碼︰
 
    ```powershell
-   Set-ItemProperty -Path . -Name DSCAutomationHostEnabled -Value 0
-   ```
-
-5. 執行下列命令，以卸載此機碼︰
-
-   ```powershell
-   [gc]::Collect()
    reg unload HKLM\Vhd
    ```
 
