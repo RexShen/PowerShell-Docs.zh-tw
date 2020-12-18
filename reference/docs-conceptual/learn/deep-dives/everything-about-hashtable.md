@@ -4,10 +4,10 @@ description: 雜湊表在 PowerShell 中是極其重要的，因此務必加以�
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: HT
 ms.contentlocale: zh-TW
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/17/2020
 ms.locfileid: "93354417"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>您想知道有關雜湊表的一切
